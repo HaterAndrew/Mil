@@ -2,8 +2,7 @@
 GLOSSARY — DATA LITERACY AND FOUNDRY/MAVEN TERMS
 Combined Reference for USAREUR-AF Operational Data Team
 
-HEADQUARTERS
-UNITED STATES ARMY EUROPE AND AFRICA
+HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA
 Wiesbaden, Germany
 
 2026
@@ -12,6 +11,11 @@ PURPOSE: This glossary equates general data concepts to their Palantir Foundry/M
 System equivalents. Use it as a translator between data science terminology and the Maven
 Smart System platform vocabulary. Every entry identifies the corresponding Foundry construct
 so a Soldier fluent in Army data concepts can navigate the platform immediately.
+
+This publication supports USAREUR-AF data operations aligned with the Army Data Plan 2022
+and the DoD Data Strategy. All roles, policies, and architectural terms reflect current Army
+CIO guidance, including the Army Data Stewardship Policy (April 2024) and the Unified
+Network Plan 2.0 (March 2025).
 
 DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.
 ```
@@ -538,6 +542,20 @@ Example: An incremental SITREP transform records a watermark after each run. The
 
 ---
 
+**VAUTI**
+*Foundry Equivalent: Foundry's data governance features — markings, lineage, ontology, and @check validators — are the mechanisms by which VAUTI compliance is achieved.*
+Definition: The DoD data quality framework established in the DoD Data Strategy (2020). Data must be Visible (findable in a catalog or directory), Accessible (retrievable by authorized users), Understandable (meaning is clearly defined), Trustable (quality and provenance are documented and verified), and Interoperable (usable across systems using common standards). VAUTI is the authoritative standard for DoD and Army data quality. All Army data systems, including Maven Smart System, are assessed against VAUTI criteria. *Source: DoD Data Strategy, 2020.*
+Example: A readiness dataset achieves VAUTI compliance when: it appears in the MSS catalog (Visible), credentialed users can query it (Accessible), all columns carry clear definitions (Understandable), it has documented lineage and @check validators (Trustable), and it uses standard unit identifiers shared across G1/G3/G4 systems (Interoperable).
+
+---
+
+**5-Layer Data Stack**
+*Foundry Equivalent: Maps directly to Foundry's platform layers — connectors/storage (Layers 1-2), ontology (Layer 3), Quiver/Contour/Workshop (Layer 4), AIP/Actions/OSDK (Layer 5).*
+Definition: The USAREUR-AF implementation model for organizing data capabilities into five functional layers: (1) Infrastructure — compute, storage, and connectivity; (2) Integration — pipelines, ingestion, and ETL/ELT; (3) Semantic — ontology, data meaning, and governance; (4) Analytics — analysis, dashboards, and reporting; (5) Activation — applications, decisions, and automated actions. This model is maintained in the USAREUR-AF Cross-Domain Architecture (CDA) portal (learn-data.armydev.com). The Maven Smart System implements all five layers within the Army data enterprise. *Source: USAREUR-AF CDA portal.*
+Example: A Workshop readiness dashboard operates at Layer 5 (Activation). It is fed by a transform at Layer 2 (Integration), uses Object Types defined at Layer 3 (Semantic), and runs on cloud infrastructure at Layer 1 (Infrastructure).
+
+---
+
 ## SECTION 2 — FOUNDRY/MAVEN PLATFORM TERMS
 
 This section defines Palantir Foundry and Maven Smart System platform-specific terms. These are the operational vocabulary of the MSS developer. All definitions are grounded in the platform's actual function within the USAREUR-AF context.
@@ -872,6 +890,54 @@ Example: The USAREUR-AF G6, as system owner for the MSS deployment, reviews secu
 
 ---
 
+**Command Chief Data & Analytics Officer (C2DAO)**
+*MSS Equivalent: The USAREUR-AF data team lead who manages the Maven Smart System environment.*
+Definition: Command-level data and analytics officer responsible for consuming and enforcing Army enterprise data policy within a command (e.g., USAREUR-AF). The C2DAO does not create Army enterprise data policy — that authority resides with the Army Chief Data & Analytics Officer and the Mission Area Data Officers. The C2DAO advises the commander on data governance, data quality, and platform utilization, and is responsible for implementing enterprise policies within the command's MSS environment. *Established by Army CIO Memorandum, April 2024.*
+Example: The USAREUR-AF C2DAO implements Army enterprise data governance standards within the theater MSS deployment, advises the USAREUR-AF commander on data readiness, and coordinates with MADOs on policy execution.
+
+---
+
+**Mission Area Data Officer (MADO)**
+*Foundry Equivalent: N/A — organizational role above command level.*
+Definition: One of four senior officials appointed by the Army CIO, each responsible for data governance within a mission area: Warfighter, Intelligence, Business, and Enterprise IT. MADOs set enterprise data policy within their domain, appoint Data Stewards, and report to the Army Chief Data & Analytics Officer (CDAO). MADOs are nominated by three-star Deputy Chiefs of Staff or SES civilians and approved by the CDAO. At command level, the equivalent implementing role is the C2DAO. *Established by Army CIO Memorandum, April 2024.*
+Example: The Warfighter Mission Area Data Officer establishes access, quality, and retention policy for all operational data — including readiness, logistics, and personnel data — that commands like USAREUR-AF then implement through their C2DAO.
+
+---
+
+**Data Steward**
+*MSS Equivalent: Project owner or dataset steward in Foundry who controls access and quality standards for a specific dataset or domain.*
+Definition: An official appointed by a Mission Area Data Officer to establish access policies, retention requirements, and data generation standards for a specific data type or domain. The Data Steward is the primary point of accountability for data quality, access control, and schema governance within their assigned domain. They maintain the data dictionary, monitor quality checks, approve access requests, apply markings, and communicate schema changes to downstream consumers. In Foundry, data steward responsibilities are executed through project owner roles, marking management, and @check configurations. *Established by Army CIO Memorandum, April 2024. See also: Data Steward entry in Section 1 for the general operational definition.*
+Example: The USAREUR-AF G6 data steward for the logistics domain manages markings on all supply chain datasets, reviews the data dictionary quarterly, and approves or denies access requests from analysts needing logistics data.
+
+---
+
+**Functional Data Manager**
+*MSS Equivalent: Pipeline owner or transform maintainer in Foundry who executes day-to-day data management operations.*
+Definition: Typically a Program Executive Officer (PEO) or Project Manager (PM) appointed by a Data Steward to execute day-to-day data management operations for a specific system or data product. The Functional Data Manager implements the policies set by the Data Steward — maintaining pipelines, managing ingestion schedules, enforcing schema standards, and ensuring data quality at the system level. In Foundry, this role maps to the engineer who owns the Code Repository and curated dataset for a given pipeline. *Established by Army CIO Memorandum, April 2024.*
+Example: The PM responsible for the personnel management system is the Functional Data Manager for personnel data — maintaining the ingestion pipeline, applying the Data Steward's access policies, and ensuring nightly syncs complete successfully.
+
+---
+
+**Chief Data and Analytics Officer (CDAO)**
+*Foundry Equivalent: N/A — organizational role*
+Definition: The senior Army official responsible for data governance across the enterprise. Reviews and approves Mission Area Data Officer nominations. Established formal data stewardship hierarchy in April 2024 memo.
+
+---
+
+**Unified Data Reference Architecture (UDRA)**
+*MSS Equivalent: The Foundry ontology-driven architecture implements UDRA principles through the semantic layer — distributed dataset ownership by domain teams, shared Object Types for cross-domain queries, and federated governance through project-level permissions and markings.*
+Definition: The Army's reference architecture for implementing data management based on data mesh principles: distributed data ownership, domain-aligned data products, and federated governance. UDRA v1.1 (February 2025) supersedes the architectural guidance in the Army Data Plan (2022) and establishes the standard for how Army commands, including USAREUR-AF, should organize their data environments. Key principles: each domain owns its data; data products are the unit of exchange; governance is federated across domains while maintaining enterprise interoperability standards. *Source: Unified Data Reference Architecture v1.1, February 2025.*
+Example: Under UDRA principles, the USAREUR-AF G4 logistics domain owns and maintains its supply chain data products within MSS, while the G3 operations domain owns readiness data — both publishing to the shared Ontology for cross-domain analysis without central ownership of all data.
+
+---
+
+**Data Mesh**
+*MSS Equivalent: In Foundry, data mesh maps to domain-specific projects with dataset ownership by the teams that generate the data, publishing shared Object Types to the common Ontology for cross-domain consumption.*
+Definition: An architectural approach where data ownership is distributed to domain teams rather than centralized in a single data engineering group. Each domain produces and maintains its own data products, treats data as a product with defined quality and access standards, and shares through a federated governance model. The Army's UDRA v1.1 (February 2025) is grounded in data mesh principles. Data mesh does not mean no governance — it means governance is distributed to the teams closest to the data, with enterprise standards ensuring interoperability. *Source: UDRA v1.1, February 2025.*
+Example: Under a data mesh model at USAREUR-AF, each warfighting function (fires, sustainment, personnel) owns its own data domain within MSS — maintaining pipelines, quality standards, and access controls — while publishing objects to the shared Ontology for cross-domain analysis by the commander's staff.
+
+---
+
 ## SECTION 4 — CLASSIFICATION AND SECURITY TERMS
 
 This section defines data security and classification terminology as it applies to the Foundry/Maven environment at USAREUR-AF. These terms bridge Army information security doctrine and Foundry's technical access control mechanisms.
@@ -962,11 +1028,50 @@ Example: Personnel data containing DODID numbers, home addresses, and medical in
 
 ---
 
+**Attribute-Based Access Control (ABAC)**
+*Foundry Equivalent: Markings + Property-Level Policies (combined)*
+Definition: An access control model that grants or denies access based on attributes of the user, data, and environment — rather than fixed role assignments. Replaces or supplements CBAC as the Army's direction per Unified Network Plan 2.0 (March 2025). More granular than role-based or classification-based access.
+Example: ABAC allows a user with "NATO Allied" + "intelligence clearance" attributes to access specific object types without requiring a separate account per data domain.
+
+---
+
+**Zero Trust Architecture (ZTA)**
+*Foundry Equivalent: Foundry's project-level permissions + marking enforcement + property policies*
+Definition: A security model that assumes no user or system is trusted by default, even inside the network perimeter. Every access request is verified. Mandated by Army Unified Network Plan 2.0 (March 2025). Applies to all Army systems including MSS.
+Example: A user must re-authenticate and have their attributes verified each time they access a sensitive dataset in MSS, even if already logged in.
+
+---
+
+**Data Mesh**
+*Foundry Equivalent: Distributed Foundry projects with federated ontology + shared Object Types*
+Definition: An architectural approach treating data as a product, with domain-specific teams owning their data pipelines and surfaces while sharing through a common governance model. Army is implementing data mesh principles to integrate enterprise and tactical environments per 2024 Army CIO policy.
+Example: Each warfighting function (fires, sustainment, personnel) owns its own data domain within MSS but publishes objects to the shared Ontology for cross-domain analysis.
+
+---
+
+**VAUTI Framework**
+*Foundry Equivalent: The design goal for any well-built Foundry pipeline and Ontology*
+Definition: DoD Data Strategy's five data properties: Visible (data is findable), Accessible (authorized users can get to it), Understandable (meaning is clear), Trustable (quality and provenance are known), Interoperable (can be used across systems). All Army data systems must meet VAUTI standards.
+Example: A readiness dataset is VAUTI-compliant when: it appears in the MSS catalog (Visible), all credentialed users can query it (Accessible), columns are labeled with clear definitions (Understandable), it has documented provenance and @check validators (Trustable), and it uses standard identifiers shared across G1/G3/G4 systems (Interoperable).
+
+---
+
+**5-Layer Data Stack (USAREUR-AF)**
+*Foundry Equivalent: Maps directly to Foundry's architecture*
+Definition: USAREUR-AF's standard data architecture model, maintained in the Cross-Domain Architecture (CDA) Portal at learn-data.armydev.com. Five layers: (1) Infrastructure — compute, storage, connectivity; (2) Integration — pipelines, ingestion, ETL; (3) Semantic — ontology, meaning, governance; (4) Analytics — analysis, dashboards, reporting; (5) Activation — applications, decisions, actions. The Maven Smart System implements all five layers.
+Example: A readiness dashboard lives at Layer 5 (Activation), fed by a transform at Layer 2 (Integration), using Object Types defined at Layer 3 (Semantic), running on cloud infrastructure at Layer 1 (Infrastructure).
+
+---
+
 ## SECTION 5 — ABBREVIATIONS AND ACRONYMS
 
 Master list of abbreviations used across USAREUR-AF Maven/Foundry publications and this glossary.
 
 ---
+
+**ABAC** — Attribute-Based Access Control
+
+**ADP** — Army Data Plan (also: Army Doctrine Publication — context determines meaning)
 
 **AIP** — AI Platform (Palantir's AI layer within Foundry)
 
@@ -978,11 +1083,19 @@ Master list of abbreviations used across USAREUR-AF Maven/Foundry publications a
 
 **ARL** — Army Research Laboratory (DEVCOM Army Research Laboratory)
 
+**ASCC** — Army Service Component Command
+
 **ATO** — Authority to Operate
 
 **BYOM** — Bring Your Own Model (AIP capability for customer-managed LLMs)
 
+**C2DAO** — Command Chief Data and Analytics Officer
+
 **CBAC** — Classification-Based Access Control
+
+**CDA** — Cross-Domain Architecture
+
+**CDAO** — Chief Data and Analytics Officer
 
 **CDC** — Change Data Capture
 
@@ -1022,6 +1135,8 @@ Master list of abbreviations used across USAREUR-AF Maven/Foundry publications a
 
 **ISR** — Intelligence, Surveillance, and Reconnaissance
 
+**JADC2** — Joint All-Domain Command and Control
+
 **JC3IEDM** — Joint Command, Control, and Consultation Information Exchange Data Model
 
 **JWC** — Joint Warfare Centre (NATO)
@@ -1032,11 +1147,17 @@ Master list of abbreviations used across USAREUR-AF Maven/Foundry publications a
 
 **MAC** — Mandatory Access Control
 
+**MADO** — Mission Area Data Officer
+
+**MDO** — Multi-Domain Operations
+
 **MIM** — Multilateral Interoperability Programme information model
 
 **ML** — Machine Learning
 
 **MSS** — Maven Smart System
+
+**NAFv4** — NATO Architecture Framework version 4
 
 **NGA** — National Geospatial-Intelligence Agency
 
@@ -1094,11 +1215,23 @@ Master list of abbreviations used across USAREUR-AF Maven/Foundry publications a
 
 **TSC** — Theater Sustainment Command
 
+**ZTA** — Zero Trust Architecture
+
 **TUID** — Table of Organization and Equipment Unit Identifier
+
+**UDRA** — Unified Data Reference Architecture (Army, v1.1, February 2025)
+
+**AJP** — Allied Joint Publication (NATO doctrine series)
 
 **USAREUR-AF** — United States Army Europe and Africa
 
+**USEUCOM** — United States European Command
+
 **UTC** — Coordinated Universal Time
+
+**V Corps** — Fifth Corps (Forward)
+
+**VAUTI** — Visible, Accessible, Understandable, Trustable, Interoperable
 
 ---
 

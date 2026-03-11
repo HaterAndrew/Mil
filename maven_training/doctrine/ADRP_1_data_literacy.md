@@ -2,11 +2,15 @@ ADRP 1 — DATA LITERACY
 
 HEADQUARTERS
 UNITED STATES ARMY EUROPE AND AFRICA
+Unit 29351
+APO AE 09014
 Wiesbaden, Germany
 
 2026
 
 DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.
+
+PROPONENT: Headquarters, United States Army Europe and Africa (USAREUR-AF), G6/Data
 
 ---
 
@@ -15,10 +19,22 @@ ADRP 1, Data Literacy
 This publication is new.
 
 This Army Doctrine Reference Publication (ADRP) establishes doctrine for data literacy across
-USAREUR-AF and the broader Army. It expands on the Army Data Plan and provides the
+United States Army Europe and Africa (USAREUR-AF) and the broader Army. It provides the
 foundational reference for all personnel who produce, manage, analyze, or consume data in
 support of military operations. It is platform-agnostic. Concepts apply regardless of system
 or tool.
+
+The Army Data Plan (2022) established the foundational framework; current governance and
+architecture are codified in subsequent Army CIO guidance (2024) and the Unified Data
+Reference Architecture (UDRA) v1.1 (2025). This publication incorporates those authorities.
+
+USAREUR-AF is the Army Service Component Command (ASCC) to United States European Command
+(USEUCOM), responsible for theater land operations from Iceland to the Caucasus. USAREUR-AF
+supports NATO Article 5 collective defense commitments and is integrated into Joint
+All-Domain Command and Control (JADC2). Subordinate commands include V Corps (Forward),
+21st Theater Sustainment Command (21 TSC), and 7th Army Training Command (7ATC). Data
+literacy is foundational to USAREUR-AF's ability to operate effectively across this
+multi-nation, multi-domain theater.
 
 ---
 
@@ -36,6 +52,7 @@ or tool.
 - Chapter 10 — Principles of Data-Driven Operations ............................... 10-1
 - Appendix A — Data Literacy Self-Assessment ....................................... A-1
 - Appendix B — Data Quality Checklist .............................................. B-1
+- Appendix C — References and Related Publications ................................. C-1
 - Glossary ........................................................................ GL-1
 
 ---
@@ -117,6 +134,16 @@ inside a spreadsheet or dashboard.
 data and brief findings to the commander in decision cycle time has a competitive advantage
 over one that cannot. Data literacy is therefore a component of tempo. Units that are not
 data-literate operate slower and with less confidence than those that are.
+
+1-2e. Decision dominance. The enduring Army operational objective is decision dominance:
+the ability to make better decisions, faster, than the adversary across the full competition
+continuum. Decision dominance is not achieved by having more data — it is achieved by
+having better-understood, better-managed, and more rapidly analyzed data than the adversary.
+In the USAREUR-AF AOR, where the threat employs sophisticated information operations and
+electronic warfare to degrade Allied situational awareness, decision dominance requires
+formations that can maintain data quality under pressure and extract decision-relevant insight
+faster than threat forces can deny or degrade the data. Data literacy is the human component
+of this competitive advantage.
 
 **WARNING:** Speed of analysis is not the same as accuracy of analysis. Commanders must
 resist the temptation to accept fast-delivered data products without validating the
@@ -217,7 +244,32 @@ status are all data-dependent. The Personnel Status (PERSTAT) report, the Unit S
 (USR), and casualty reporting all require personnel at the lowest levels to enter data
 accurately and on time.
 
-**1-5f. Responsibilities at Each Echelon.**
+**1-5f. Nesting Under ADP 3-13, Information.**
+
+1-5g. This publication implements ADP 3-13, Information, by establishing the data literacy
+foundation required for information advantage in the USAREUR-AF AOR. ADP 3-13 establishes
+that information is combat power — that commanders who can generate, protect, and exploit
+information more effectively than the adversary gain a decisive advantage. Data literacy is
+the prerequisite for that capability. Formations that cannot accurately collect, manage,
+analyze, and communicate data cannot achieve the information advantage that ADP 3-13
+describes. Every chapter of this publication supports the broader information operations
+framework of ADP 3-13 by building the competencies that make information advantage possible.
+
+NOTE: ADP 3-13 addresses information at the conceptual level. This ADRP addresses the
+foundational data skills — collection, quality, analysis, security, and integration into
+planning — that operationalize ADP 3-13 in USAREUR-AF formations.
+
+**1-5g. NATO and EUCOM AOR Context.**
+
+1-5h. USAREUR-AF operates in the USEUCOM area of responsibility (AOR), which encompasses
+NATO Allied nations from the Atlantic to the Black Sea. Data operations in this theater must
+account for coalition interoperability. Data systems, data products, and data sharing
+practices must align with NATO Architecture Framework version 4 (NAFv4) and support
+interoperability with Allied Joint Publications (AJP-01, AJP-3, AJP-5). Data literacy
+requirements in this publication apply to multinational operations and exercises as well as
+unilateral Army operations.
+
+**1-5h. Responsibilities at Each Echelon.**
 
 | Echelon | Primary Data Responsibility |
 |---|---|
@@ -628,23 +680,59 @@ should use open, well-documented formats.
 
 ---
 
-**3-7. Data Provenance and Lineage**
+**3-7. USAREUR-AF 5-Layer Data Stack Architecture**
 
-3-7a. Data provenance is the origin of a dataset — where the data came from, how it was
+3-7a. USAREUR-AF manages operational data across a structured five-layer architecture. This
+model defines how data systems are organized from physical infrastructure through to
+operational decisions. All personnel working with USAREUR-AF data systems should understand
+which layer they are operating in and what responsibilities that layer carries.
+
+| Layer | Name | Description | Military Operational Example |
+|---|---|---|---|
+| Layer 1 | Infrastructure | Physical and virtual storage, compute resources, and connectivity that all data systems rely on | NIPRNET/SIPRNET transport, cloud compute nodes in theater, forward-deployed storage |
+| Layer 2 | Integration | Data ingestion, pipeline processing, and ETL (Extract-Transform-Load) that moves data between systems | Automated feed from GCSS-Army logistics system into the theater analytical environment; bulk upload of daily readiness reports |
+| Layer 3 | Semantic | Ontology, data meaning, governance, and cross-system definitions — the layer where data acquires consistent meaning across systems and organizations | Foundry Ontology models for unit readiness, equipment status, and route conditions; NATO-aligned data dictionaries ensuring a "vehicle" means the same thing in every subordinate system |
+| Layer 4 | Analytics | Analysis, reporting, and dashboards that transform integrated, semantically consistent data into decision-relevant products | Theater readiness dashboard; ISR collection gap analysis; sustainment forecast for V Corps (Forward) |
+| Layer 5 | Activation | Applications, automated workflows, and command decisions that act on analytical outputs | Automated resupply triggers based on Class III consumption thresholds; commander decision to request OPCON forces based on readiness threshold crossing |
+
+3-7b. Each layer depends on the integrity of the layers below it. A dashboard at Layer 4
+that draws on poorly integrated data at Layer 2 will produce inaccurate products regardless
+of the quality of the visualization. Commanders and staff who identify data quality problems
+must diagnose which layer is the source — the fix at a Layer 4 product (the dashboard) may
+actually require a correction at Layer 2 (the pipeline) or Layer 1 (the source system feed).
+
+3-7c. The 5-Layer Data Stack is the USAREUR-AF standard architecture for operational data
+systems. It is implemented consistent with the Army's Unified Data Reference Architecture
+(UDRA) v1.1 (February 2025), which provides the Army's current reference architecture based
+on data mesh principles: distributed data ownership, domain-aligned data products, and
+federated governance. In practice, this means data ownership and management responsibility
+rests with the functional domain (S1, S2, S4, etc.) closest to the data, rather than
+centralizing all data management in a single IT element. For detailed technical
+implementation guidance, see the USAREUR-AF Cross-Domain Architecture (CDA) Portal
+(listed in the References section of this publication).
+
+**NOTE:** The UDRA v1.1 and supporting enterprise architecture documentation are available
+through the USAREUR-AF CDA Portal at learn-data.armydev.com. The portal contains the
+Object Type Cookbook v2 (canonical ontology reference), the DDOF Playbook, the Enterprise
+Architecture series, and NATO doctrine crosswalks.
+
+**3-8. Data Provenance and Lineage**
+
+3-8a. Data provenance is the origin of a dataset — where the data came from, how it was
 collected, and who created it. Data lineage is the record of how data has moved and changed
 from its origin to its current state. Together, provenance and lineage establish the
 trustworthiness of a data product.
 
-3-7b. A data product without documented provenance and lineage cannot be independently
+3-8b. A data product without documented provenance and lineage cannot be independently
 verified. If the analysis is questioned — and in operational decision-making, analysis will
 be questioned — there is no way to trace the numbers back to their source to confirm or
 correct them.
 
-3-7c. Every data product presented to a commander must be able to answer: Where did this
+3-8c. Every data product presented to a commander must be able to answer: Where did this
 come from? When was it collected? What was done to it between collection and now? Who is
 responsible for its accuracy?
 
-3-7d. Lineage documentation does not require a sophisticated tool. A simple notation in a
+3-8d. Lineage documentation does not require a sophisticated tool. A simple notation in a
 report or briefing slide ("Source: GCSS-Army, pulled 01MAR2026 at 0600Z; filtered to units
 in EUCOM AOR; aggregated by brigade") satisfies the minimum standard.
 
@@ -818,6 +906,22 @@ before presenting findings based on it.
 
 4-7b. Automated checks are a first line of defense, not a complete solution. They must be
 supplemented by human review and periodic verification against authoritative sources.
+
+---
+
+**4-8. The VAUTI Standard**
+
+The Department of Defense Data Strategy establishes five essential properties for all Army data: Visible, Accessible, Understandable, Trustable, and Interoperable (VAUTI). All data products in USAREUR-AF must be evaluated against VAUTI standards before operational use.
+
+| VAUTI Property | Definition | How to Evaluate |
+|---|---|---|
+| **Visible** | Data is discoverable — users can find it in the data catalog | Can you find this dataset without already knowing where it is? |
+| **Accessible** | Authorized users can retrieve it | Can all users who need it actually access it? |
+| **Understandable** | Meaning is clear — columns, fields, and context are documented | Does it have a data dictionary or column descriptions? |
+| **Trustable** | Quality and provenance are known and validated | Is there a documented source, refresh schedule, and quality check? |
+| **Interoperable** | Can be used across systems without manual translation | Does it use standard identifiers shared with other data sources? |
+
+NOTE: A data product that fails any VAUTI property is not operationally ready. Commanders should require VAUTI compliance certification before incorporating any new data source into decision-making.
 
 ---
 
@@ -1178,9 +1282,43 @@ in secure spaces mitigate this risk.
 
 ---
 
-**7-6. Responsibilities of Data Owners, Stewards, and Consumers**
+**7-6. NATO Classification Markings and Coalition Data Interoperability**
 
-7-6a. Data security responsibility is distributed across three roles:
+7-6a. USAREUR-AF operates in a coalition environment. Data products shared with or received
+from NATO and partner nation forces carry NATO classification markings that differ from U.S.
+national classification markings. All USAREUR-AF personnel handling multinational data must
+understand the equivalency and handling requirements for both systems.
+
+7-6b. NATO classification levels are UNCLASSIFIED, NATO RESTRICTED, NATO CONFIDENTIAL,
+NATO SECRET, and COSMIC TOP SECRET. The general equivalency to U.S. classifications is as
+follows: NATO RESTRICTED approximates CUI; NATO CONFIDENTIAL approximates U.S.
+CONFIDENTIAL; NATO SECRET approximates U.S. SECRET; COSMIC TOP SECRET approximates U.S.
+TOP SECRET. However, these are not exact equivalencies. When in doubt about the appropriate
+handling of NATO-marked material, consult the unit security officer.
+
+7-6c. Data sharing with NATO and Allied partners must comply with applicable Technical
+Arrangements, Memoranda of Understanding (MOU), and NATO security policy. Data products
+that aggregate U.S.-origin and NATO-origin information may carry multiple marking
+requirements. The more restrictive handling requirement governs the combined product.
+
+7-6d. USAREUR-AF data systems must comply with NATO Architecture Framework version 4
+(NAFv4) to ensure interoperability with Allied data environments. NATO NAFv4 alignment
+is particularly relevant for data products, system interfaces, and ontology definitions
+shared across the coalition. For NAFv4 implementation guidance, reference the USAREUR-AF
+CDA Portal listed in the References section.
+
+7-6e. Coalition data sharing requirements in the EUCOM AOR are further governed by
+NATO Allied Joint Publications. AJP-3 (Allied Joint Doctrine for the Conduct of Operations)
+and AJP-3.2 (Allied Joint Doctrine for Land Operations) establish data sharing obligations
+for combined land operations; AJP-5 (Allied Joint Doctrine for the Planning of Operations)
+governs information requirements in multinational planning. USAREUR-AF data products
+generated in support of combined operations must satisfy the data interoperability
+requirements established in these publications. NATO doctrine crosswalks are available
+through the USAREUR-AF CDA Portal at learn-data.armydev.com.
+
+**7-7. Responsibilities of Data Owners, Stewards, and Consumers**
+
+7-7a. Data security responsibility is distributed across three roles:
 
 **Data Owner.** The organizational element responsible for a dataset. The data owner
 authorizes access, establishes classification, and is accountable for the data's security
@@ -1194,15 +1332,29 @@ monitors for quality problems, and coordinates with system owners.
 using data only within their authorized access, handling it according to its classification,
 and reporting security incidents or quality problems.
 
-7-6b. These roles are not mutually exclusive. A staff officer may be a data steward for
+7-7b. These roles are not mutually exclusive. A staff officer may be a data steward for
 their section's data while simultaneously being a consumer of data from other sections.
 Clear role assignment prevents accountability gaps.
+
+---
+
+**7-8. Zero Trust Architecture**
+
+The Army Unified Network Plan 2.0 (March 2025) mandates Zero Trust Architecture (ZTA) across all Army systems, including the Maven Smart System. ZTA operates on the principle that no user, device, or system is trusted by default — even inside the network perimeter. Every access request is verified against user attributes, device posture, and data sensitivity. In practice, ZTA means:
+- Users must authenticate and have their attributes verified for each access request
+- Access grants are time-limited and context-specific, not permanent
+- All access is logged and auditable
+- The combination of CBAC markings and attribute-based policies in MSS implements ZTA at the data layer
 
 ---
 
 # CHAPTER 8
 
 # DATA IN THE MDMP AND DECISION-MAKING PROCESS
+
+**Data in Multi-Domain Operations.** The Army Data Plan (2022) grounds data requirements in Multi-Domain Operations (MDO). MDO integrates capabilities across land, air, sea, space, and cyberspace — and data is the connective tissue. USAREUR-AF operates in a contested, degraded, and operationally limited (CDO/CDOL) environment where adversaries actively target data infrastructure, communications, and command systems. In this environment, data literacy is not a staff function — it is a warfighting requirement. Units that cannot ingest, understand, and act on data faster than their adversaries will be at a decision disadvantage.
+
+---
 
 **BLUF:** The Military Decision-Making Process (MDMP) is a structured analytical process
 that is fundamentally data-dependent. Data quality problems that exist before MDMP begins
@@ -1286,13 +1438,40 @@ of the data on which it is based.
 
 ---
 
-**8-7. After-Action Data Collection and Lessons Learned Pipelines**
+**8-7. Data Literacy, Information Advantage, and ADP 3-13**
 
-8-7a. The After-Action Review (AAR) process generates operational lessons. AARs that rely solely on human memory are less reliable than those supplemented by operational data. What actually happened — as recorded in logs, communications, and reporting — may differ from what participants remember.
+8-7a. ADP 3-13, Information, establishes that information is combat power. The ability to
+generate, protect, and exploit information more effectively than the adversary constitutes
+information advantage — a decisive operational asset in the USAREUR-AF AOR and across the
+USEUCOM theater. Data literacy is the prerequisite for information advantage.
 
-8-7b. Establish data collection practices before and during operations to support post-operation analysis. Define what data will be recorded, by whom, and in what format. This preparation enables higher-quality AARs and richer lessons learned products.
+8-7b. The MDMP produces information requirements (PIRs, FFIRs, IRs) precisely because
+information — derived from quality data — shapes every planning step. A formation that
+cannot reliably collect, manage, and analyze operational data cannot satisfy its own
+information requirements, cannot produce accurate staff products, and cannot generate the
+quality analytical outputs that information advantage demands. Data quality failures at the
+staff level are therefore not administrative deficiencies — they are direct degradation to
+the command's ability to achieve information advantage.
 
-8-7c. Lessons learned that are not systematically captured and disseminated are lost. A formal lessons learned pipeline — collection, analysis, validation, dissemination, and incorporation — preserves institutional knowledge and prevents repeating avoidable mistakes.
+8-7c. In the USAREUR-AF AOR, information advantage has particular operational weight.
+USAREUR-AF supports NATO Article 5 commitments and joint operations under USEUCOM. The
+adversary in this theater invests heavily in information operations, deception, and
+electronic warfare specifically to degrade allied situational awareness. USAREUR-AF
+formations that produce high-quality, well-sourced, timely data products are more resistant
+to adversary deception and better positioned to identify and exploit adversary data gaps.
+
+8-7d. Data literacy in the MDMP is therefore not merely procedural competence — it directly
+contributes to the information advantage that ADP 3-13 defines as central to modern
+operations. Commanders must treat staff data literacy as an enabler of the broader
+information operations framework.
+
+**8-8. After-Action Data Collection and Lessons Learned Pipelines**
+
+8-8a. The After-Action Review (AAR) process generates operational lessons. AARs that rely solely on human memory are less reliable than those supplemented by operational data. What actually happened — as recorded in logs, communications, and reporting — may differ from what participants remember.
+
+8-8b. Establish data collection practices before and during operations to support post-operation analysis. Define what data will be recorded, by whom, and in what format. This preparation enables higher-quality AARs and richer lessons learned products.
+
+8-8c. Lessons learned that are not systematically captured and disseminated are lost. A formal lessons learned pipeline — collection, analysis, validation, dissemination, and incorporation — preserves institutional knowledge and prevents repeating avoidable mistakes.
 
 ---
 
@@ -1397,6 +1576,39 @@ assign and enforce data roles explicitly.
 | Data-Specific Roles (S2 analysts, G6 data staff) | Data Level 4 or 5 | Functional area training; Army Warrant Officer courses; civilian education |
 
 9-6c. Data literacy qualification is a readiness consideration. A unit with systematically low data literacy across the staff cannot produce the quality of analytical products required for complex operations. Commanders must assess and develop data literacy as part of overall readiness.
+
+---
+
+**9-7. Army Data Governance Structure — The 4-Tier Stewardship Hierarchy**
+
+9-7a. The Army CIO Memo (April 2024) establishes a four-tier data stewardship hierarchy
+governing how data policy is set, enforced, and executed across the Army enterprise.
+All USAREUR-AF personnel with data management responsibilities must understand where their
+role fits within this structure.
+
+| Tier | Role | Authority | Scope |
+|---|---|---|---|
+| 1 | **Mission Area Data Officers (MADOs)** | Set enterprise data policy within their mission area | Four appointed officials covering Warfighter, Intelligence, Business, and Enterprise IT mission areas |
+| 2 | **Data Stewards** | Establish access policies, retention requirements, and data generation standards for specific data types | Appointed by MADOs; authority is domain-specific |
+| 3 | **Functional Data Managers** | Execute day-to-day data management for specific programs and systems | Typically PEOs and PMs; operational implementation |
+| 4 | **Command Chief Data and Analytics Officers (C2DAOs)** | Consume and enforce enterprise data policy at the command level | Command-level; do NOT create Army enterprise data policy |
+
+9-7b. USAREUR-AF's Chief Data and Analytics Officer (CDAO) function operates at Tier 4.
+USAREUR-AF consumes and enforces enterprise data policy established by MADOs and Data
+Stewards. USAREUR-AF does not create Army enterprise data policy. Within the USAREUR-AF
+AOR, the C2DAO establishes command-level data standards that implement, but do not supersede,
+Army enterprise policy.
+
+9-7c. This hierarchy is not a reporting chain — it is a policy chain. Data policy flows
+downward from MADOs through Data Stewards to Functional Data Managers and C2DAOs.
+Operational data problems that require policy changes above the command level must be
+escalated through the appropriate MADO or Data Steward, not resolved at command level
+through workaround procedures.
+
+**NOTE:** For current USAREUR-AF data governance contacts, policy memoranda, and
+implementation guidance, access the USAREUR-AF CDA Portal at learn-data.armydev.com.
+The portal is updated as enterprise policy changes and is the authoritative reference for
+USAREUR-AF data governance implementation.
 
 ---
 
@@ -1680,6 +1892,72 @@ to the data type and operational context.
 
 ---
 
+# APPENDIX C
+
+# REFERENCES AND RELATED PUBLICATIONS
+
+## Governing References
+
+- **Army Data Plan (2022), Office of the Army Chief Information Officer** — Establishes the Army-wide framework for data management, governance, and analytics in support of Multi-Domain Operations.
+- **Army CIO Data Stewardship Policy (April 2, 2024)** — Establishes the data stewardship
+  hierarchy (MADO, Data Steward, Functional Data Manager, C2DAO) and data chain of
+  responsibility. Current authoritative governance reference.
+- **Unified Data Reference Architecture (UDRA) v1.1 (February 2025), Army Chief Information
+  Officer** — Provides the Army's current reference architecture for data systems based on
+  data mesh principles: distributed data ownership, domain-aligned data products, and
+  federated governance. Supersedes prior architecture guidance.
+- **DoD Data Strategy (2020)** — Establishes the VAUTI framework (Visible, Accessible,
+  Understandable, Trustable, Interoperable) as the DoD standard for data quality and
+  interoperability. VAUTI remains the authoritative DoD-level data quality standard.
+
+## Army Doctrine
+
+- **ADP 3-13, Information** — Establishes doctrine for information as combat power and the
+  foundation for information advantage. This ADRP implements ADP 3-13 at the data literacy
+  level.
+- **ADP 5-0, The Operations Process** — Defines the Military Decision-Making Process (MDMP)
+  and the role of information in planning and execution.
+- **ATP 2-01.3, Intelligence Preparation of the Battlefield (IPB)** — Defines IPB methodology
+  and its data requirements.
+- **AR 25-400-2, The Army Records Information Management System (ARIMS)** — Governs
+  operational data retention requirements.
+
+## NATO Publications
+
+- **NATO Architecture Framework version 4 (NAFv4)** — The NATO standard for architectural
+  descriptions of systems, capabilities, and data. USAREUR-AF data systems must align to
+  NAFv4 to ensure coalition interoperability within the EUCOM AOR.
+- **AJP-01, Allied Joint Doctrine** — Overarching Allied Joint Publication governing NATO
+  joint operations.
+- **AJP-3, Allied Joint Doctrine for the Conduct of Operations** — Establishes data sharing
+  requirements for combined operations. Applicable to all USAREUR-AF combined exercise and
+  operational data products.
+- **AJP-3.2, Allied Joint Doctrine for Land Operations** — Establishes data sharing and
+  interoperability requirements for combined land operations in the EUCOM AOR. Primary
+  reference for USAREUR-AF/NATO land force data integration.
+- **AJP-5, Allied Joint Doctrine for the Planning of Operations** — NATO planning doctrine,
+  including multinational information requirements for combined planning.
+
+## USAREUR-AF Resources
+
+- **USAREUR-AF Cross-Domain Architecture (CDA) Portal** — Accessible at
+  learn-data.armydev.com. The CDA Portal is the authoritative technical reference for
+  USAREUR-AF operational data architecture. Contains technical architecture guides, course
+  materials, ontology reference documentation, NATO NAFv4 alignment resources, and the
+  USAREUR-AF 5-Layer Data Stack implementation documentation.
+
+**NOTE:** The CDA Portal contains the following authoritative resources:
+- Object Type Cookbook v2 — canonical ontology reference for USAREUR-AF data types
+- DDOF Playbook — data domain operations framework guidance
+- Enterprise Architecture series — technical implementation guides for all 5-Layer Data Stack components
+- NATO doctrine crosswalks — alignment guides between Army data standards and NATO AJP/NAFv4 requirements
+- UDRA v1.1 implementation guidance — command-level implementation of the Army reference architecture
+
+Access requires a valid CAC and USAREUR-AF network account. Contact your unit S6 or
+G6/Data for access provisioning.
+
+---
+
 # GLOSSARY
 
 **Accuracy** — The degree to which data correctly represents the real-world entity or event it describes.
@@ -1707,6 +1985,12 @@ to the data type and operational context.
 **Causation** — A relationship in which one variable directly produces a change in another.
 
 **Classification** — The formal designation of information as Confidential, Secret, or Top Secret based on the harm its unauthorized disclosure would cause.
+
+**C2DAO (Command Chief Data and Analytics Officer)** — The command-level official responsible
+for consuming and enforcing Army enterprise data policy within a command's AOR. The USAREUR-AF
+C2DAO operates at Tier 4 of the Army data stewardship hierarchy. C2DAOs do not create Army
+enterprise data policy; they implement it. (Authority: Army CIO Data Stewardship Policy, April
+2024.)
 
 **COA (Course of Action)** — A possible plan for accomplishing a mission, developed and compared during the MDMP.
 
@@ -1910,11 +2194,39 @@ to the data type and operational context.
 
 **WARNO (Warning Order)** — A preliminary notice of an order or action that is to follow.
 
+**5-Layer Data Stack** — The USAREUR-AF standard architecture for operational data systems,
+organizing data capabilities across Infrastructure, Integration, Semantic, Analytics, and
+Activation layers.
+
+**CDA Portal (Cross-Domain Architecture Portal)** — The USAREUR-AF portal at
+learn-data.armydev.com containing technical architecture guides and implementation
+resources for USAREUR-AF data systems.
+
+**Information Advantage** — As defined in ADP 3-13, the operational condition achieved when
+a force can generate, protect, and exploit information more effectively than the adversary.
+Data literacy is a prerequisite for information advantage.
+
+**JADC2 (Joint All-Domain Command and Control)** — The DoD concept for connecting sensors,
+shooters, and decision-makers across all domains to enable faster, better-informed command
+decisions.
+
+**NAFv4 (NATO Architecture Framework version 4)** — The NATO standard for describing
+systems, capabilities, and data architectures to ensure coalition interoperability.
+
+**USAREUR-AF (United States Army Europe and Africa)** — The Army Service Component Command
+(ASCC) to USEUCOM, responsible for theater land operations across the European and African
+portions of the USEUCOM AOR.
+
+**USEUCOM (United States European Command)** — The Combatant Command responsible for
+military operations across Europe, portions of Asia, the Arctic, and the Atlantic Ocean.
+
 ---
 
 *ADRP 1, Data Literacy*
-*Headquarters, United States Army Europe and Africa*
+*Headquarters, United States Army Europe and Africa (USAREUR-AF)*
 *Wiesbaden, Germany*
 *2026*
+
+*By order of the Commanding General, United States Army Europe and Africa.*
 
 *DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.*

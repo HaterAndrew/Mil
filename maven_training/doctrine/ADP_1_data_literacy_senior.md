@@ -2,11 +2,15 @@ ADP 1 — DATA LITERACY FOR SENIOR LEADERS
 
 HEADQUARTERS
 UNITED STATES ARMY EUROPE AND AFRICA
+Unit 29351
+APO AE 09014
 Wiesbaden, Germany
 
 2026
 
 DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.
+
+PROPONENT: Headquarters, United States Army Europe and Africa (USAREUR-AF), G6/Data
 
 ---
 
@@ -19,6 +23,10 @@ NOTE: This publication is the senior leader companion to ADRP 1, Data Literacy. 
 ## PREFACE
 
 This publication establishes principles and command responsibilities for data literacy across United States Army Europe and Africa (USAREUR-AF). It is written for O-5 and above, Command Sergeant Major (CSM) and Sergeant Major (SGM), and senior civilian equivalents.
+
+USAREUR-AF is the Army Service Component Command (ASCC) to United States European Command (USEUCOM), responsible for theater land operations from Iceland to the Caucasus. Subordinate commands include V Corps (Forward), 21st Theater Sustainment Command (21 TSC), and 7th Army Training Command (7ATC). USAREUR-AF supports NATO Article 5 collective defense commitments and operates in a coalition environment requiring data interoperability with Allied nations. These realities make data literacy more operationally consequential here than in any peacetime garrison environment. USAREUR-AF formations operate in a contested information environment in which adversary forces actively exploit data gaps and exploit analytical failures.
+
+This publication implements ADP 3-13, Information, by establishing the data literacy foundation required for information advantage in the USAREUR-AF AOR. ADP 3-13 defines information as combat power. Data literacy is what makes that power accessible to commanders. This publication tells senior leaders what they are responsible for and why it matters in the context of that broader doctrine.
 
 Data literacy is a command competency. It is not a technical skill reserved for analysts. Commanders who understand how to direct, evaluate, and act on data products will make faster, better decisions than those who do not. Those who cannot are vulnerable to surprise, manipulation, and misinformed action.
 
@@ -75,6 +83,10 @@ Data literacy for senior leaders is a combat multiplier.
 
 1-10. A battalion's intelligence section consistently reported high-confidence threat assessments. Pressure from senior leaders for clear, actionable products had led analysts to remove uncertainty language from their reports. The battalion operated for weeks with misplaced confidence in threat assessments that had significant gaps. When contact occurred in an unexpected location, the commander was surprised. The staff had known about the gaps. They had learned not to report them.
 
+### 1-4a. The MDO Data Requirement
+
+**The MDO Data Requirement.** Multi-Domain Operations require commanders to synthesize information from more sources, at greater speed, across a wider geographic area than any previous operational concept. The Army Data Plan (2022) states explicitly: the purpose of Army data management is to give the Warfighter decision dominance — the right data, at the right time, at the right place. Data literacy is how commanders and Soldiers fulfill that requirement.
+
 ### 1-5. The Commander's Role in Building a Data-Literate Formation
 
 1-11. Culture is set by command. If the commander does not ask data-driven questions, subordinates will not prepare data-driven answers. If the commander accepts charts without questioning their sources, staff will produce charts without validating their sources. The standard the commander walks past is the standard the formation adopts.
@@ -82,6 +94,20 @@ Data literacy for senior leaders is a combat multiplier.
 1-12. Building a data-literate formation requires three things from senior leaders. First, demand honest data products — including uncertainty. Second, resource the capability to produce them. Third, model data-critical behavior in every briefing, planning session, and after-action review (AAR).
 
 1-13. This is not an additional task. It is the commander's job, applied to the information domain.
+
+### 1-6. Doctrinal Foundation — ADP 3-13 and Information Advantage
+
+1-14. This publication implements ADP 3-13, Information, by establishing the data literacy foundation required for information advantage in the USAREUR-AF AOR. ADP 3-13 establishes that information is combat power — that commanders who can generate, protect, and exploit information more effectively than the adversary gain a decisive operational advantage.
+
+1-15. Data literacy is not separate from information operations. It is its prerequisite. A commander who cannot direct and evaluate data products cannot generate the quality analytical outputs that information advantage requires. A formation that produces poor-quality data cannot supply the situational awareness that information advantage depends on. Building data literacy in a formation is, therefore, directly building the command's capacity for information operations as defined in ADP 3-13.
+
+1-16. In the USAREUR-AF AOR, this connection is operationally urgent. USAREUR-AF operates in a contested information environment across the USEUCOM theater. Adversary forces invest heavily in deception, electronic warfare, and information operations precisely to degrade Allied situational awareness. USAREUR-AF formations that produce rigorous, sourced, timely data products are more resistant to that adversary effort than those that do not.
+
+### 1-7. NATO and EUCOM AOR Context
+
+1-17. USAREUR-AF data operations must comply with NATO Architecture Framework version 4 (NAFv4) and support interoperability with Allied Joint Publications (AJP-01, AJP-3, AJP-5). In practical terms, this means that data systems, data products, and data sharing practices must be designed for coalition use — not only for unilateral Army operations. Commanders must ensure that data products created for sharing with Allied or partner nation forces are appropriately marked under both U.S. and NATO classification standards and that data systems can exchange information with Allied equivalents.
+
+1-18. Data literacy requirements in this publication and in ADRP 1 apply equally to multinational operations and to unilateral Army operations. The analytical standards, quality requirements, and security disciplines described here are not reduced in coalition contexts — they are essential to coalition effectiveness.
 
 ---
 
@@ -413,10 +439,65 @@ The following terms are used throughout this publication. Definitions are provid
 
 **Uncertainty** — Acknowledged limits of confidence in data or analytical conclusions.
 
+**ADP 3-13** — Army Doctrine Publication 3-13, Information. Establishes information as
+combat power and defines information advantage as a key operational objective.
+
+**CDA Portal (Cross-Domain Architecture Portal)** — The USAREUR-AF portal at
+learn-data.armydev.com containing technical architecture resources for USAREUR-AF
+operational data systems.
+
+**Information Advantage** — As defined in ADP 3-13, the operational condition achieved when
+a force can generate, protect, and exploit information more effectively than the adversary.
+Data literacy is a prerequisite for information advantage.
+
+**JADC2 (Joint All-Domain Command and Control)** — The DoD concept for connecting sensors,
+shooters, and decision-makers across all domains. USAREUR-AF is integrated into JADC2.
+
+**NAFv4 (NATO Architecture Framework version 4)** — The NATO standard for data and system
+architecture, required for coalition interoperability.
+
+**USEUCOM (United States European Command)** — The Combatant Command to which USAREUR-AF
+is the ASCC.
+
+---
+
+## REFERENCES AND RELATED PUBLICATIONS
+
+**Army Data Plan (2022), Office of the Army Chief Information Officer** — Establishes the Army-wide framework for data management, governance, and analytics in support of Multi-Domain Operations.
+
+**DoD Data Strategy (2020)** — Establishes the VAUTI framework (Visible, Accessible, Understandable, Trustable, Interoperable) as the DoD standard for data quality and interoperability.
+
+**Army CIO Data Stewardship Policy (April 2, 2024)** — Establishes the data stewardship hierarchy (MADO, Data Steward, Functional Data Manager, C2DAO) and data chain of responsibility.
+
+**ADP 3-13, Information** — Establishes information as combat power and the foundation for
+information advantage. This publication implements ADP 3-13 at the senior leader level.
+
+**ADP 5-0, The Operations Process** — Defines the MDMP and the role of information in
+planning and execution.
+
+**ADRP 1, Data Literacy** — The technical companion to this publication. Contains procedural
+guidance, analytical methods, data lifecycle doctrine, and the USAREUR-AF 5-Layer Data Stack
+architecture. Senior leaders requiring technical depth should consult ADRP 1.
+
+**NATO Architecture Framework version 4 (NAFv4)** — The NATO standard for data and system
+architecture descriptions. USAREUR-AF data operations must align to NAFv4 for coalition
+interoperability.
+
+**Allied Joint Publications (AJP-01, AJP-3, AJP-5)** — NATO joint doctrine governing
+operations, conduct, and planning. USAREUR-AF data products and analytical processes must
+support interoperability with these publications.
+
+**USAREUR-AF Cross-Domain Architecture (CDA) Portal** — Accessible at
+learn-data.armydev.com. Contains technical architecture guides, course materials, Foundry
+ontology cookbooks, NATO NAFv4 alignment resources, and the USAREUR-AF 5-Layer Data Stack
+implementation documentation. Senior leaders seeking to understand the technical
+architecture underpinning USAREUR-AF data operations should reference the CDA Portal or
+direct their data staff to do so.
+
 ---
 
 *ADP 1 — DATA LITERACY FOR SENIOR LEADERS*
-*HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA*
+*HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA (USAREUR-AF)*
 *Wiesbaden, Germany*
 *2026*
 
