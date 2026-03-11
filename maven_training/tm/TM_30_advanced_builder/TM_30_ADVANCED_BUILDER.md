@@ -1,1678 +1,1983 @@
-# TM-30 — MAVEN SMART SYSTEM (MSS)
-## ADVANCED BUILDER TECHNICAL MANUAL
+```
+TM-30 — MAVEN SMART SYSTEM (MSS)
+ADVANCED NO-CODE BUILDER TECHNICAL MANUAL
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
+HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA
 Wiesbaden, Germany
 
 2026
 
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; ADRP 1, Data Literacy (required)
-
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+PREREQUISITE PUBLICATIONS: TM-10, Maven User; TM-20, Builder; ADRP 1, Data Literacy
+APPLIES TO: Data-adjacent specialists (17/25-series, S6/G6/G2/G9, operational data analysts)
+           Foundry Workshop, Pipeline Builder, Contour, Quiver, AIP Logic (UI only)
+DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.
+```
 
 ---
 
 ## SAFETY SUMMARY
 
-Advanced builders operate at the operational-technical boundary of MSS. At TM-30 level, you design solutions that affect shared infrastructure, coalition-facing data products, and enterprise ontology models that underpin applications used across the entire formation.
+Advanced builders operate at the level where decisions directly affect production data environments
+shared across the USAREUR-AF formation. Errors at this level do not affect one application — they
+affect readiness reporting, operational picture, and coalition data sharing for the entire AOR.
 
-Before performing any task at TM-30 level:
+Before operating at TM-30 level:
 
-- Understand the full downstream impact of ontology changes, schema modifications, and pipeline alterations before initiating them
-- Coordinate with data stewards and the USAREUR-AF C2DAO before modifying any shared production resource
-- Never prototype or test in the production environment — use Foundry branching for all development work
-- AIP Logic workflows that operate on operational data require authorization review before deployment
-- Data products accessible to Mission Partner Environment (MPE) or coalition-facing systems require C2DAO coordination and NAFv4 compliance review — this is a hard gate, not a suggestion
-- If you are unsure whether your design requires a -40 developer to implement, it probably does — escalate before building
+- Coordinate with the designated Data Steward before modifying any shared production resource
+- Never develop or test in the production environment — use a dedicated branch
+- Understand the downstream impact of ontology and schema changes before publishing
+- All production promotions require peer review and Data Steward sign-off per C2DAO governance
+- AIP Logic configurations require authorization review before activation in production
 
-> **WARNING: Advanced builders are responsible for the integrity of shared data infrastructure. Errors at this level do not affect one application — they affect the data environment of the entire formation, including coalition partners. Apply engineering discipline to every design decision.**
+**WARNING:** Deleting or restructuring an Object Type that is referenced by active Workshop
+applications, Actions, or Quiver analyses will break those downstream products without warning.
+Always audit downstream dependencies before modifying shared ontology resources.
+
+**CAUTION:** Pipeline Builder joins on large, unfiltered datasets can generate outputs that exceed
+storage quotas or degrade platform performance for other users. Profile source datasets before
+building multi-source joins in production.
 
 ---
 
 ## TABLE OF CONTENTS
 
-- Chapter 1 — Introduction: The Advanced Builder Role
-- Chapter 2 — Advanced Workshop Application Design
+- Chapter 1 — Introduction and Scope
+- Chapter 2 — Advanced Workshop Applications
 - Chapter 3 — Advanced Pipeline Builder
-- Chapter 4 — Ontology Design Methodology
-- Chapter 5 — Advanced Action Design via UI
+- Chapter 4 — Ontology Design Through the UI
+- Chapter 5 — Advanced Analytics: Contour and Quiver
 - Chapter 6 — AIP Logic Configuration
-- Chapter 7 — Advanced Contour and Quiver
-- Chapter 8 — Data Governance and Stewardship
-- Chapter 9 — Environment Management and Production Discipline
-- Chapter 10 — NATO and Coalition Data Considerations
-- Appendix A — -30 to -40 Handoff Guide (Technical Requirements Template)
-- Appendix B — Application Design Checklist
-- Appendix C — UDRA Alignment Checklist
+- Chapter 7 — Data Governance and Lineage
+- Chapter 8 — Environment Management
+- Chapter 9 — Standards, Conventions, and Best Practices
+- Appendix A — Advanced Builder Checklist
+- Appendix B — Design Patterns Reference
 - Glossary
 
 ---
 
-## CHAPTER 1 — INTRODUCTION: THE ADVANCED BUILDER ROLE
-
-### 1-1. Purpose and Scope
-
-This manual provides design-level instruction for advanced builders operating on the Maven Smart System (MSS). MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. TM-30 qualified personnel are the operational-technical bridge between mission requirements and technical implementation.
-
-**TM-30 covers:**
-- Designing complex, multi-page Workshop applications with conditional logic and parameter passing
-- Designing advanced Pipeline Builder workflows using the visual UI (multi-source joins, transformations, scheduling)
-- Designing Ontology models — Object Types, Link Types, and Actions — for operational use cases
-- Configuring advanced Actions via the UI (multi-step workflows, approval chains, conditional logic)
-- Configuring AIP Logic workflows and writing prompts that connect AI to operational ontology data
-- Advanced Contour analysis and Quiver dashboard design
-- Reading and acting on data lineage graphs
-- Data quality governance and stewardship responsibilities
-- Environment management, branching strategy, and production discipline
-- NATO and coalition data considerations
-
-**TM-30 does NOT cover:**
-- Python, PySpark, or any scripting or coding — see TM-40 (Developer)
-- SQL query writing — see TM-40
-- TypeScript, Functions on Objects, or OSDK development — see TM-40
-- Code Workspaces or any IDE-based development — see TM-40
-- Agent Studio application development — see TM-40
-- @incremental transform logic — see TM-40
-
-> **NOTE:** The TM-30 graduate designs solutions. A TM-40 developer implements technical components. Understanding where this boundary falls is the most important skill in this manual. Chapter 4 addresses this explicitly.
-
-Complete TM-10 and TM-20 before beginning this manual. TM-30 assumes full fluency in all TM-20 material. If you cannot independently build a basic Workshop application, configure an Object Type, and create an Action, stop and complete TM-20 first.
+# CHAPTER 1 — INTRODUCTION AND SCOPE
+
+**BLUF:** TM-30 qualifies data-adjacent specialists to build advanced no-code solutions on the
+Maven Smart System — complex Workshop applications, multi-source pipelines, well-designed ontology
+models, and advanced analytics — while operating within USAREUR-AF C2DAO governance requirements.
+
+## 1-1. Scope and Purpose
+
+1-1. This manual qualifies advanced builders who operate entirely through the MSS platform user
+interface. No code is required at the TM-30 level. All tasks in this manual are accomplished
+through Foundry's graphical tools: Workshop, Pipeline Builder, Ontology Manager, Contour, Quiver,
+and AIP Logic.
 
----
-
-### 1-2. The Advanced Builder's Role in USAREUR-AF
-
-United States Army Europe and Africa (USAREUR-AF) is the Army Service Component Command (ASCC) to United States European Command (USEUCOM), responsible for theater land operations across the European AOR and integration with NATO Allied command structures and Joint All-Domain Command and Control (JADC2). Major subordinate commands — V Corps, 21st Theater Sustainment Command (TSC), 7th Army Training Command (ATC), USAREUR-AF G2, and multinational force elements — all generate and consume data through MSS.
-
-The advanced builder is the operational-technical bridge in this formation. You translate what the G2 analyst needs to see, what the S6 NCO needs to track, and what the G9 coordinator needs to report — into a design specification that can be built. You operate at the intersection of domain expertise and platform capability.
-
-**The -30 role in the USAREUR-AF data chain:**
-
-```
-MISSION REQUIREMENT
-        |
-        v
-   -30 BUILDER                <- You are here
-   (Design + Configure)
-        |
-        v
-   -40 DEVELOPER              <- Technical implementation when required
-   (Code + Deploy)
-        |
-        v
-   DATA PRODUCT
-   (Ontology + Application)
-        |
-        v
-   -10 USER
-   (Consume + Act)
-```
-
-A sharp G2 all-source analyst qualified at TM-30 can design a complete ISR tracking application — specifying the Object Types, Link Types, Action flows, Workshop layout, filter logic, and data lineage — and hand a complete technical requirements package to a -40 developer for any components requiring code. That analyst need never touch Python or TypeScript. Their value is knowing what to build and how to specify it precisely.
-
----
-
-### 1-3. What -30 Graduates Can Design
-
-| Capability | -30 Can Design | -40 Required For |
-|---|---|---|
-| Workshop applications | Multi-page, conditional layouts, parameter passing, linked widgets | Custom JavaScript, complex external integrations |
-| Pipeline Builder workflows | Multi-source joins, transformations, scheduling, error monitoring | PySpark, @incremental, custom connectors, complex deduplication logic |
-| Ontology models | Object Types, Link Types, properties, Actions, Action Forms | Functions on Objects (TypeScript), OSDK, derived property logic |
-| Actions | Multi-step, conditional logic, approval chains, form design | Webhook integration, external system write-back, complex validation logic |
-| AIP Logic | Workflow configuration, prompt writing, ontology data connections | Agent Studio development, custom function integration, TypeScript logic |
-| Contour / Quiver | Formula editor, aggregations, pivot tables, cross-dataset analysis | Custom chart plugins, programmatic report generation |
-| Data governance | Lineage review, quality check review, stewardship coordination | Custom @check logic, automated quality gate coding |
-| Environment management | Branch management (UI), review coordination, publish decisions | CI/CD pipeline code, automated testing |
-
-The -30 builder is not blocked by not knowing code. The -30 builder is blocked only by insufficient understanding of the platform and the operational domain. Both are correctable.
-
----
-
-### 1-4. The USAREUR-AF 5-Layer Data Stack
-
-All TM-30 work occurs within the USAREUR-AF 5-Layer Data Stack. Understanding which layer your design affects determines who you coordinate with and what governance steps apply.
-
-```
-+---------------------------------------------------------------+
-|  LAYER 5: ACTIVATION                                          |
-|  (Decisions, Actions, AIP outputs, external system feeds)     |
-+---------------------------------------------------------------+
-|  LAYER 4: ANALYTICS                                           |
-|  (Workshop apps, Contour, Quiver, AIP Logic dashboards)       |
-+---------------------------------------------------------------+
-|  LAYER 3: SEMANTIC (ONTOLOGY)                                 |
-|  (Object Types, Link Types, Actions, AIP-connected objects)   |
-+---------------------------------------------------------------+
-|  LAYER 2: INTEGRATION                                         |
-|  (Pipeline Builder, transforms, staging and curated datasets) |
-+---------------------------------------------------------------+
-|  LAYER 1: INFRASTRUCTURE                                      |
-|  (Connectors, sources, access control, cross-domain arch)     |
-+---------------------------------------------------------------+
-```
-
-**TM-30 Chapter to 5-Layer Stack Mapping:**
-
-| Chapter | Topic | Primary Layer |
-|---|---|---|
-| Chapter 2 | Advanced Workshop Design | Layer 4 |
-| Chapter 3 | Advanced Pipeline Builder | Layer 2 |
-| Chapter 4 | Ontology Design Methodology | Layer 3 |
-| Chapter 5 | Advanced Action Design | Layer 3 / Layer 5 |
-| Chapter 6 | AIP Logic Configuration | Layer 4 / Layer 5 |
-| Chapter 7 | Advanced Contour and Quiver | Layer 4 |
-| Chapter 8 | Data Governance and Stewardship | Layer 1 / Layer 2 |
-| Chapter 9 | Environment Management | Layer 2 / Layer 3 |
-| Chapter 10 | NATO/Coalition Data | Layer 1 (cross-layer) |
-
----
-
-### 1-5. UDRA Alignment and Governance Responsibilities
-
-All data products designed at TM-30 level must align with the Unified Data Reference Architecture (UDRA) v1.1 (February 2025) and Army CIO Data Stewardship Policy (April 2, 2024).
-
-**Core UDRA requirements for -30 builders:**
-
-1. **Domain ownership.** Every data product must be traceable to a defined data domain with an identified domain owner. You cannot design a data product in isolation — identify the domain before you begin design.
-2. **Federated governance.** Data governance is distributed. The C2DAO sets architecture standards; domain stewards govern content. Know which steward owns the data you are designing against.
-3. **Data product thinking.** Treat every output — dataset, Ontology object, Workshop application — as a product with a defined consumer, a stated SLA, and documented quality standards.
-4. **Layer verification.** Before publishing, verify your product is operating at the correct layer and not bypassing governance gates (e.g., a Workshop app reading directly from raw data — not authorized).
-
-> **NOTE:** The VAUTI framework (Visible, Accessible, Understandable, Trustable, Interoperable) from DoD Data Strategy (2020) applies to all MSS data products. Advanced builders are responsible for ensuring their designs meet all five criteria before publication.
-
-See Appendix C for the UDRA Alignment Checklist. Complete this checklist for every data product before publishing to production.
-
----
-
-### 1-6. Governing References
-
-| Document | Relevance |
-|---|---|
-| Army CIO Data Stewardship Policy (April 2, 2024) | Data stewardship hierarchy, governance chain, data product standards |
-| UDRA v1.1 (February 2025) | Unified Data Reference Architecture — domain ownership, federated governance |
-| DoD Data Strategy (2020) | VAUTI framework — Visible, Accessible, Understandable, Trustable, Interoperable |
-| USAREUR-AF C2DAO Guidance | Theater-level architecture standards for MSS data products |
-| NATO Architecture Framework v4 (NAFv4) | Coalition data architecture standards for MPE-accessible products |
-| AJP-3.2 | Allied land operations doctrine and data exchange requirements |
-
-> **NOTE:** Advanced builders should consult `learn-data.armydev.com` for authoritative design patterns and reference implementations:
-> - **Object Type Cookbook v2 + Addendum A** — canonical ontology modeling reference for operational Object Types
-> - **DDOF Playbook** — Doctrine-Driven Ontology Framework design patterns
-> - **Doctrine-Driven Development** — aligning ontology models to Army operational doctrine
-> - **ADP to JP to NATO Crosswalk** — mapping Army, Joint, and NATO data constructs
-> - **Engagement Ontology (YAML v2.0)** — reference implementation for operational event modeling
-
----
-
-### 1-7. Prerequisites and Access Requirements
-
-Before performing any TM-30 level work on MSS, confirm the following:
-
-**Knowledge prerequisites:**
-- [ ] TM-10 (Maven User) completed
-- [ ] TM-20 (Builder) completed — fluency confirmed by team lead
-- [ ] ADRP 1, Data Literacy completed (required at TM-30 level)
-
-**Access requirements:**
-- [ ] Advanced Builder role requested and approved through chain of command
-- [ ] Editor/Owner role on relevant project folders confirmed
-- [ ] Ontology Editor role confirmed
-- [ ] AIP Logic access confirmed (if applicable to your role)
-- [ ] Data steward for your primary data domain identified
-
-**Orientation requirements:**
-- [ ] Reviewed the data lineage graph for your team's primary pipeline
-- [ ] Located and reviewed the Ontology model for your primary data domain
-- [ ] Identified the C2DAO architecture authority and your domain data steward
-- [ ] Reviewed at least one existing complex Workshop application end-to-end (not as a user — as a builder examining the design)
-
-Do not begin TM-30 level design work until all items above are confirmed. The elevated access you hold at this level can affect production systems. Orientation is not optional.
-
----
-
-## CHAPTER 2 — ADVANCED WORKSHOP APPLICATION DESIGN
-
-### 2-1. The Multi-Page Application Model
-
-TM-20 Workshop applications are typically single-page, purpose-specific tools. TM-30 applications are multi-page, cross-functional platforms that serve multiple user roles within a single application experience. A well-designed multi-page application reduces application sprawl, maintains consistent data context across views, and reduces the burden on end users who would otherwise navigate between multiple tools.
-
-**When to build multi-page vs. multiple single-page applications:**
-
-| Scenario | Recommendation |
-|---|---|
-| Same user roles, different analytical views of the same data | Multi-page application |
-| Same data domain, different user roles with different access requirements | Multi-page with role-based visibility |
-| Completely different data domains used by different formations | Separate applications |
-| One application is a summary; others are detailed drill-downs | Multi-page with navigation links |
-| Theater-level readiness dashboard (G3/G4/G6 shared view) | Multi-page — one app per staff section is application sprawl |
-
-**Operational example:** A Grafenwöhr exercise support platform might have four pages: (1) Unit Readiness Status, (2) Logistics Tracking, (3) ISR Event Log, and (4) SITREP Submission Form. All four use overlapping data (unit identifiers, grid references, DTGs) and serve overlapping users. A single multi-page application is the correct design.
-
----
-
-**TASK 2-1. DESIGN A MULTI-PAGE WORKSHOP APPLICATION**
-
-**CONDITIONS:** Given an existing Workshop project and a set of user requirements covering multiple analytical views or user roles, when designing a new application structure.
-
-**STANDARDS:** The builder will produce a multi-page application with logical page organization, consistent navigation, and a documented page map before building any individual page.
-
-**PROCEDURE:**
-1. Open Workshop and navigate to the target project folder in Compass.
-2. Create a new Workshop application. Name it per USAREUR-AF naming conventions: `[Formation] [Function] [Application Type]` (e.g., `USAREUR-AF G3 Readiness Platform`).
-3. Before adding any widget, create the page structure. In the left panel, select **Pages** and add pages for each major view. Name pages plainly: `Readiness Overview`, `Unit Detail`, `Logistics Tracker`, `SITREP Submission`.
-4. Create a Page Map document (outside MSS — a whiteboard sketch, notes document, or Appendix B checklist). Document: page name, primary user role, primary Object Types displayed, and Actions available on each page.
-5. Configure the navigation bar on each page to include links to all other pages. Do not hide pages from navigation unless role-based access requires it.
-6. Identify shared parameters (filters, selections) that must persist across page navigation. Document these before building widgets. See Task 2-3 for parameter design.
-7. Build pages in order: start with the page that contains the most data-intensive view (typically the overview or map page). Resolve data binding issues on the hardest page first before replicating patterns to simpler pages.
-
-> **NOTE:** Page count is not a quality metric. Three well-designed pages that answer the user's questions are better than eight pages of redundant views. Review your page map with the end user before building.
-
----
-
-### 2-2. Conditional Layouts
-
-Conditional layouts allow a single application to present different content based on user role, selected object state, or dynamic filter values. This eliminates the need for separate applications for different user types and reduces maintenance burden.
-
-**Common conditional layout patterns in USAREUR-AF applications:**
-
-| Pattern | Use Case |
-|---|---|
-| Role-based visibility | G2 users see ISR fields; G4 users see logistics fields; same application |
-| Object state-driven content | Show AMBER status detail panel only when a unit's readiness is below threshold |
-| Empty state handling | Display a placeholder panel when no object is selected in a list |
-| Filter result handling | Show a "no results" message when a filter combination returns zero objects |
-
----
-
-**TASK 2-2. CONFIGURE CONDITIONAL VISIBILITY ON A WORKSHOP WIDGET**
-
-**CONDITIONS:** Given a Workshop application with multiple user roles defined, when a widget or panel should display only under specific conditions.
-
-**STANDARDS:** The builder will configure the conditional visibility expression so that the widget renders correctly for the intended condition and is hidden otherwise, with no widget errors in either state.
-
-**PROCEDURE:**
-1. Select the widget or container panel to which you want to apply conditional visibility.
-2. In the right-hand properties panel, locate the **Visibility** section.
-3. Select **Conditional** (not Always Visible or Always Hidden).
-4. Open the expression editor. The expression must evaluate to true (show) or false (hide).
-5. For role-based visibility: reference the built-in `currentUser.groups` variable. Example: show a panel only to users in the `G2-ISR-Analysts` group.
-6. For object-state-driven visibility: reference the selected object's property. Example: show an escalation panel only when `UnitStatus.readinessLevel` equals `AMBER` or `RED`.
-7. For empty state handling: use the `isNull()` or `isEmpty()` functions against the relevant variable.
-8. After configuring the expression, use the Workshop preview mode to test both the visible and hidden states.
-
-> **CAUTION: Conditional visibility hides widgets — it does not restrict data access. A user who can access the application can still access the underlying data even if a widget displaying that data is hidden from their view. For true access restriction, use Foundry object-level security configured by your platform admin. Do not use conditional visibility as a security control.**
-
----
-
-### 2-3. Variable and Parameter Design
-
-Variables and parameters are the connective tissue of complex Workshop applications. They allow user selections on one widget to drive content on other widgets, across multiple pages, and within Action forms. Poor variable design is the most common cause of complex application performance problems.
-
-**Variable types and when to use each:**
-
-| Variable Type | Best For | Avoid For |
-|---|---|---|
-| Object Set Variable | Driving lists, tables, maps from a filtered object set | Storing single values — use a property variable instead |
-| String/Number Variable | Capturing filter values, storing user input for display | Large data payloads |
-| URL Parameters | Sharing application state via link; deep-linking to a specific object | Sensitive data — URL parameters are visible |
-| Temporary Variable | Local state within a single page | Cross-page state — temporary variables do not persist across navigation |
-
----
-
-**TASK 2-3. CONFIGURE A CROSS-PAGE PARAMETER TO PASS OBJECT SELECTION BETWEEN PAGES**
-
-**CONDITIONS:** Given a multi-page Workshop application where a user selects an object on Page 1 (e.g., a unit from a readiness table) and needs to see that object's detail view on Page 2.
-
-**STANDARDS:** The selected object on Page 1 persists as the context object on Page 2 without requiring the user to re-select. Page 2 displays detail content for the object selected on Page 1.
-
-**PROCEDURE:**
-1. On Page 1, identify the widget that contains the primary object selection (e.g., a Table or List widget displaying `UnitStatus` objects).
-2. In the Page 1 variable panel, create a new **Object Variable** of the appropriate Object Type (e.g., `UnitStatus`).
-3. Bind the Table widget's "selected row" output to this Object Variable.
-4. On the Page 1 navigation button or link that routes to Page 2, open the **Pass Variables** configuration.
-5. Map the Page 1 Object Variable to a corresponding Object Variable on Page 2. Create the Page 2 variable if it does not yet exist.
-6. On Page 2, build widgets that reference the passed Object Variable as their data source.
-7. Configure the empty state for Page 2 widgets to display a meaningful message when no object has been passed (i.e., the user navigated to Page 2 directly without selecting an object on Page 1).
-8. Test the full flow: select an object on Page 1, navigate to Page 2, verify the correct object's data appears, navigate back, select a different object, verify Page 2 updates.
-
-> **NOTE:** URL parameters are an alternative to page-level variable passing. URL parameters allow deep-linking — a user can share a URL that opens the application directly to a specific object. Use URL parameters when you need shareable links (e.g., a SITREP that links directly to the unit detail view for a specific reporting unit). Configure URL parameters in the Application Settings panel.
-
----
-
-### 2-4. Complex Filter Chains
-
-Complex filter chains allow Workshop applications to support multi-dimensional operational analysis — for example, filtering a Baltic flank readiness view by AOR, readiness tier, reporting period, and unit type simultaneously. Poorly designed filter chains degrade application performance and confuse users.
-
-**Design principles for complex filter chains:**
-
-1. **Order filters from most selective to least.** Apply the filter that reduces the object set the most first. For USAREUR-AF use cases, AOR or formation filters are almost always the most selective and should be applied first.
-2. **Use dependent filters.** A dependent filter's options update based on the selection in a prior filter (e.g., after selecting V Corps as the formation, the unit list filter shows only V Corps units). Configure dependency in the filter widget's data source expression.
-3. **Provide a "clear all filters" control.** Users will inevitably filter themselves into a zero-result state. A single button that resets all filter variables to their default values prevents confusion.
-4. **Document the filter chain in your design.** Before building, draw the filter dependency graph. Filters with circular dependencies will cause infinite loops.
-
----
-
-**TASK 2-4. BUILD A DEPENDENT FILTER CHAIN FOR AN OPERATIONAL READINESS VIEW**
-
-**CONDITIONS:** Given a Workshop application displaying `UnitStatus` objects for USAREUR-AF formations, when a user needs to filter by theater, then corps, then division, then brigade in sequence.
-
-**STANDARDS:** Each filter in the chain updates its available options based on the prior selection. Selecting V Corps in the Corps filter shows only V Corps divisions in the Division filter. The object view updates after all filters are applied.
-
-**PROCEDURE:**
-1. Create String Variables for each filter level: `selectedTheater`, `selectedCorps`, `selectedDivision`, `selectedBrigade`.
-2. Add a Dropdown widget for Theater. Set its data source to the distinct values of `UnitStatus.theaterLevel`. Bind its output to `selectedTheater`.
-3. Add a Dropdown widget for Corps. Set its data source to the distinct values of `UnitStatus.corpsLevel` filtered where `theaterLevel` equals `selectedTheater`. Bind its output to `selectedCorps`.
-4. Repeat this pattern for Division and Brigade, each filtered by the preceding selection.
-5. Configure the primary Object Set (the data source for the readiness table or map) to apply all four filters: `UnitStatus` where all four level variables match. Use null-safe comparisons so that if a filter variable is empty (not yet selected), that filter does not constrain the result.
-6. Add a **Clear Filters** Button widget. Configure its click action to reset all four String Variables to null/empty.
-7. Test all filter combinations, including the empty state (no filters selected) and the fully-filtered state (all four filters selected).
-
-> **CAUTION: Dependent filter chains that reference large object sets without indexed properties can significantly degrade application load time. If a filter chain over more than 50,000 objects is responding slowly, escalate to a -40 developer to review the underlying object set and index configuration before deploying to production.**
-
----
-
-### 2-5. Linked Widgets and Synchronized Views
-
-Linked widgets allow user interaction with one widget (e.g., selecting a row in a table) to drive updates in other widgets simultaneously (e.g., a map zooms to that unit's location, a detail panel shows that unit's properties, a chart filters to that unit's historical data). This pattern is the foundation of operational dashboards.
-
----
-
-**TASK 2-5. CONFIGURE LINKED WIDGETS FOR A SITREP DASHBOARD**
-
-**CONDITIONS:** Given a SITREP aggregation application with a unit roster table, a theater map, a readiness trend chart, and a detail panel, when a user selects a unit in the table.
-
-**STANDARDS:** Selecting a unit in the table simultaneously (a) highlights that unit's marker on the map, (b) updates the trend chart to show that unit's data only, and (c) populates the detail panel with that unit's current SITREP properties.
-
-**PROCEDURE:**
-1. Create an Object Variable `selectedUnit` of type `UnitStatus`.
-2. On the Table widget: bind the "selected row" output to `selectedUnit`.
-3. On the Map widget: configure the "highlight layer" or "selected object" binding to reference `selectedUnit`. The map will highlight the marker for the selected object.
-4. On the Trend Chart widget: set the data filter to `UnitStatus where objectId = selectedUnit.objectId`. The chart will update to show only the selected unit's historical data.
-5. On the Detail Panel container: set each property display widget's data source to the corresponding property of `selectedUnit`. The panel will update all fields simultaneously when `selectedUnit` changes.
-6. Set the empty state for the map highlight, chart, and detail panel to display appropriate placeholder content when `selectedUnit` is null.
-7. Test by selecting multiple rows in the table sequentially and verifying all linked widgets update correctly.
-
-> **NOTE:** Do not attempt to link more than five to seven widgets to a single Object Variable without testing performance. Each widget re-renders on selection change. Applications with 15 or more linked widgets may exhibit noticeable lag on large object sets. Test with realistic data volumes, not sample data.
-
----
-
-### 2-6. Application Performance Considerations
-
-Performance is a design responsibility. A slow application that serves the right data is functionally unusable in an operational environment. Understand the common causes of Workshop application performance problems before designing at TM-30 level.
-
-**Performance design principles:**
-
-| Principle | Action |
-|---|---|
-| Filter early | Apply the most restrictive filters at the object set level, not at the widget level |
-| Paginate large tables | Do not display more than 200-500 rows without pagination — configure page size in Table widget settings |
-| Avoid deeply nested containers | More than three levels of nested containers increases render time |
-| Minimize real-time refresh intervals | Default auto-refresh is sufficient for most operational views; do not set sub-minute refresh without a specific requirement |
-| Use object-level security, not widget-level visibility, for access control | Widget visibility checks run client-side; object security runs server-side and is more efficient |
-| Limit concurrent linked widgets | See Task 2-5 note above |
-
-**When to escalate to a -40 developer:**
-- Application takes more than 5 seconds to load on the first page render with production-volume data
-- A filter operation on a large object set (100,000 or more objects) consistently hangs or times out
-- A required feature cannot be achieved with available Workshop widgets and formula functions
-
----
-
-## CHAPTER 3 — ADVANCED PIPELINE BUILDER
-
-### 3-1. Pipeline Builder Capabilities at TM-30 Level
-
-Pipeline Builder is MSS's visual ETL tool. TM-20 covered single-source ingestion pipelines with basic transformations. TM-30 covers multi-source joins, complex transformations using the visual transform library, error handling, scheduling optimization, and pipeline monitoring.
-
-> **NOTE:** Pipeline Builder is a no-code visual tool. TM-30 builders configure pipelines entirely through the UI. If a pipeline requirement cannot be achieved in Pipeline Builder's visual interface — for example, complex deduplication logic, @incremental watermark patterns, or custom Python transformations — that requirement belongs to a -40 developer. Design what you can; specify the rest. See Chapter 4 and Appendix A for the handoff process.
-
-**When Pipeline Builder is sufficient (TM-30 can own):**
-- Multi-source joins with standard join types (inner, left, full outer)
-- Column renaming, type casting, filtering, and calculated columns using built-in formula functions
-- Schema harmonization across sources with compatible field names and types
-- Aggregations: group-by, sum, count, average, min, max
-- Scheduled execution with standard recurrence patterns
-- Basic deduplication using row-number ranking on a key column
-
-**When a -40 developer is required:**
-- @incremental (watermark-based) pipelines
-- Custom deduplication logic requiring complex business rules
-- PySpark transformations
-- External API calls or custom connectors
-- Complex date/time business logic beyond built-in functions
-- Pipelines processing more than approximately 10 million rows that require execution optimization
-
----
-
-### 3-2. Multi-Source Join Design
-
-Joining multiple data sources in Pipeline Builder requires careful design. The most common errors in multi-source pipelines are (a) join key mismatches due to data quality issues, (b) fan-out (unintended row multiplication from one-to-many joins), and (c) performance degradation from large cross-joins.
-
-**Join design principles:**
-
-1. **Identify join keys before opening Pipeline Builder.** Know the exact field names and data types of every join key across all sources. Data type mismatches (e.g., joining a string unit ID to an integer unit ID) will silently drop rows.
-2. **Profile both sides before joining.** Use the Column Statistics view in the dataset preview to check null rates and distinct value counts on join key columns before building the join node.
-3. **Understand cardinality.** A one-to-many join will multiply rows. An ISR event table joined to a unit roster where one unit has 50 events will produce 50 rows per unit. Design downstream aggregations accordingly.
-4. **Validate row counts after every join.** After adding a join node, preview the output and check: input row count vs. expected output based on relationship type. If it does not match, the join condition is wrong.
-
----
-
-**TASK 3-1. BUILD A MULTI-SOURCE JOIN PIPELINE IN PIPELINE BUILDER**
-
-**CONDITIONS:** Given two curated datasets — a unit status dataset and a location dataset — that share a common unit identifier, when building a pipeline to produce a unified unit profile dataset.
-
-**STANDARDS:** The output dataset contains one row per unit, with columns from both source datasets correctly joined. Row count equals the number of unique unit identifiers in the status dataset. No duplicate rows. No unexpected nulls on expected join-key fields.
-
-**PROCEDURE:**
-1. Open Compass and navigate to your project's pipeline folder.
-2. Create a new Pipeline. Name it per USAREUR-AF naming conventions.
-3. Add the first Source node. Configure it to reference the unit status curated dataset.
-4. Add the second Source node. Configure it to reference the unit location curated dataset.
-5. Add a **Join** node. Connect both Source nodes to the Join node.
-6. Configure the Join type. For a standard unit roster join: use **Left Join** (keep all units from the status dataset; add location data where available; null location fields where the unit has no location record).
-7. Set the join condition: `status.unitId = location.unitId`. Confirm both fields are the same data type in the column headers.
-8. Preview the Join output. Check: row count matches the unit status source row count. If row count is higher, there are duplicate keys in the location dataset — resolve before proceeding.
-9. Add a **Select Columns** node downstream of the Join. Remove duplicate key columns (the join produces two copies of `unitId`). Retain only required columns.
-10. Add the Output node. Configure the output path per naming conventions (using the `/curated` tier path).
-11. Run the pipeline manually. Review the build log for warnings (e.g., type coercion warnings indicate silent data conversion).
-12. Preview the final output. Spot-check five to ten rows against source records to verify field alignment.
-
-> **CAUTION: Do not join raw datasets. Always join curated or staging datasets where data quality has been validated. Joining raw datasets propagates upstream data quality problems into joined outputs, and these problems are difficult to trace after the fact.**
-
----
-
-### 3-3. Calculated Columns and Transformations
-
-Pipeline Builder's **Derived Column** node allows creation of calculated columns using the built-in formula language. This is the primary TM-30 mechanism for data enrichment — adding readiness scores, normalizing status codes, computing time deltas, and flagging records that meet operational thresholds.
-
-**Common operational calculated columns:**
-
-| Use Case | Formula Pattern |
-|---|---|
-| Days since last SITREP | `dateDiff(today(), lastSitrepDate, "day")` |
-| Readiness tier flag | `if(readinessScore >= 90, "GREEN", if(readinessScore >= 75, "AMBER", "RED"))` |
-| Unit display name normalization | `concat(echelon, " ", unitDesignation, " (", bia, ")")` |
-| Null-safe status label | `coalesce(reportedStatus, "UNKNOWN")` |
-| DTG to readable format | `dateFormat(dtgTimestamp, "DDHHMMZ MMM YYYY")` |
-
----
-
-**TASK 3-2. ADD A READINESS TIER CALCULATED COLUMN**
-
-**CONDITIONS:** Given a pipeline with a unit status dataset containing a numeric `readinessScore` field (0-100), when the downstream Ontology and Workshop application require a categorical readiness tier field (GREEN, AMBER, RED).
-
-**STANDARDS:** The output dataset contains a `readinessTier` column populated with the correct categorical value for every row. No nulls in `readinessTier` (use UNKNOWN as default for null input scores).
-
-**PROCEDURE:**
-1. Downstream of the source or join node (but before the output node), add a **Derived Column** node.
-2. Name the new column `readinessTier`.
-3. Open the formula editor.
-4. Enter the conditional expression: `if(isNull(readinessScore), "UNKNOWN", if(readinessScore >= 90, "GREEN", if(readinessScore >= 75, "AMBER", "RED")))`.
-5. Preview the Derived Column output. Verify that the formula correctly categorizes sample rows across the GREEN, AMBER, RED, and null-input cases.
-6. Check the distinct values of `readinessTier` in the Column Statistics view. Verify no unexpected values appear.
-
-> **NOTE:** The formula language in Pipeline Builder's Derived Column node uses the same syntax as Contour's calculated column editor (see Chapter 7). Mastery of this formula language is a high-leverage TM-30 skill — it applies across Pipeline Builder, Contour, and Workshop formula-driven widgets.
-
----
-
-### 3-4. Error Handling and Pipeline Monitoring
-
-TM-30 builders own the operational health of the pipelines they design. A pipeline that silently produces incorrect output is more dangerous than one that fails loudly.
-
-**Pipeline error categories and response:**
-
-| Error Category | Symptom | TM-30 Action |
-|---|---|---|
-| Schema change in source | Pipeline fails with "column not found" | Investigate source dataset, update Select Columns node, notify data steward |
-| Join key null spike | Row count drops unexpectedly | Check null rate on join key in source; notify upstream data steward |
-| Type coercion warning | Numeric column shows string values | Add explicit type cast node upstream; check source data quality |
-| Execution timeout | Pipeline marked failed after long run | Reduce payload (add filter node); escalate to -40 developer for optimization |
-| Missing output rows | Output row count lower than expected | Check join type, filter conditions, and source freshness |
-
----
-
-**TASK 3-3. CONFIGURE PIPELINE FAILURE ALERTING**
-
-**CONDITIONS:** Given a production pipeline running on a scheduled cadence, when the pipeline fails or produces output below an expected row count threshold.
-
-**STANDARDS:** The designated team lead receives an MSS notification within 15 minutes of a pipeline failure. The notification includes the pipeline name, failure timestamp, and last successful run time.
-
-**PROCEDURE:**
-1. Open the target pipeline in Pipeline Builder.
-2. Navigate to the **Schedule and Alerts** configuration panel.
-3. Under **Alerts**, select **Add Alert**.
-4. Configure trigger condition: **On Failure** — alerts when the pipeline build fails for any reason.
-5. Optionally add a second alert: **On Row Count Below Threshold** — configure the expected minimum row count for the output dataset (e.g., if the unit status dataset should never contain fewer than 50 rows, set threshold at 50).
-6. Set notification recipients: add the team lead's MSS username and any other required recipients.
-7. Set the notification channel: MSS in-platform notification (default) or email (if configured by your platform admin).
-8. Save alert configuration and confirm it appears in the pipeline's alert summary.
-9. Document the alert configuration in the pipeline description field.
-
----
-
-### 3-5. Scheduling Optimization
-
-Pipeline scheduling must be designed to balance data freshness requirements against platform resource constraints. Not every pipeline needs to run every hour.
-
-**Scheduling design guidance for USAREUR-AF pipelines:**
-
-| Data Type | Recommended Cadence | Rationale |
-|---|---|---|
-| SITREP aggregations | Every 2-4 hours during operational hours | SITREPs are submitted on 6-12 hour cycles; more frequent refresh provides no value |
-| ISR event feeds | Every 30-60 minutes (if source updates at this rate) | ISR data has time-sensitivity; match pipeline cadence to source update rate |
-| Readiness/personnel data | Daily (off-peak hours) | PERSTAT/readiness data changes on daily cycles; hourly runs waste resources |
-| Logistics visibility | Every 4-6 hours | Logistics transactions process in batches; match cadence to batch cycle |
-| Exercise support pipelines | On-demand or every 15-30 minutes during exercise window only | High-tempo during exercise; disable or extend to daily after exercise concludes |
-
-> **CAUTION: Setting pipeline schedules more frequently than the source data update rate provides no benefit and consumes platform resources shared across the entire formation. Coordinate with the source system owner to understand the actual data update cadence before configuring pipeline schedule.**
-
----
-
-**TASK 3-4. CONFIGURE A PIPELINE SCHEDULE**
-
-**CONDITIONS:** Given a production pipeline that must run during operational hours at the required cadence, when configuring the pipeline's execution schedule.
-
-**STANDARDS:** The pipeline runs at the configured cadence within the operational window. The schedule is documented in the pipeline description.
-
-**PROCEDURE:**
-1. Open the target pipeline in Pipeline Builder.
-2. Navigate to **Schedule and Alerts** (same panel as Task 3-3).
-3. Enable the **Schedule** toggle.
-4. Select the recurrence pattern: hourly, daily, weekly, or custom cron expression.
-5. For operationally-sensitive pipelines (e.g., SITREP aggregation before a commander's daily update brief), use a custom cron expression to ensure the pipeline completes at least 30 minutes before the brief time.
-6. Set the time zone to `Europe/Berlin` (CET/CEST) for USAREUR-AF headquarters pipelines. Confirm with your team lead for pipelines supporting units in other time zones.
-7. If the pipeline only needs to run during exercises or operational events: configure a **Start Date** and **End Date** for the schedule. This prevents the pipeline from consuming resources outside the operational window.
-8. Click **Save Schedule**. Verify the next scheduled run time displays correctly.
-9. Document the schedule and rationale in the pipeline description field (e.g., "Runs every 2 hours 0600-2200 CET. Aligned to USAREUR-AF daily SITREP cycle. Disable outside exercise windows.").
-
----
-
-## CHAPTER 4 — ONTOLOGY DESIGN METHODOLOGY
-
-### 4-1. The -30 Builder's Role in Ontology Design
-
-The Ontology is the semantic layer of MSS. It translates data tables into operational concepts — a row in a dataset becomes a `UnitStatus`, a `LogisticsShipment`, or an `ISREvent`. The Ontology is shared infrastructure. Changes to it affect every application and pipeline that references the modified objects.
-
-At TM-30 level, you **design** Ontology models. You define the Object Types, Link Types, properties, and Actions that are required to meet an operational need. Some of this design work you can implement yourself through the Ontology Manager UI. Some of it — Functions on Objects, derived properties requiring TypeScript, OSDK integration — requires a -40 developer to implement. Your job is to produce a design specification precise enough that a developer can implement it without needing to re-derive the requirements.
-
-This chapter covers:
-- How to think about Object Type design
-- How to design Link Types that reflect operational relationships
-- How to design Actions that support operational workflows
-- How to write technical requirements for a -40 developer
-- Reference resources and design patterns from `learn-data.armydev.com`
-
-> **NOTE:** The Object Type Cookbook v2 at `learn-data.armydev.com` is the authoritative reference for Object Type design in the USAREUR-AF environment. Addendum A covers operational Object Types specific to Army warfighting functions. Review both before designing any new Object Type.
-
----
-
-### 4-2. Object Type Design Methodology
-
-Object Types must reflect operational concepts, not database schema. The question "what is a record in this table?" is a data question. The question "what is the operational entity this data represents, and how do commanders and staff reason about it?" is an Ontology design question.
-
-**Object Type design decision framework:**
-
-| Question | Guidance |
-|---|---|
-| What real-world operational concept does this represent? | Name the Object Type after the concept, not the table (e.g., `UnitStatus`, not `unit_status_curated`) |
-| Who uses this object and what decisions do they make with it? | Properties must support the user's decision — include the properties that matter; exclude irrelevant database fields |
-| How does this object relate to other objects in the Ontology? | Identify Link Types before finalizing properties — some relationships will drive additional property requirements |
-| Will this object need to be searched, filtered, or aggregated at scale? | Identify search-eligible and indexed properties during design |
-| Will this object's properties ever be computed (not directly stored)? | Flag these for -40 developer implementation as derived properties or Functions on Objects |
-| Does this object type already exist in the Ontology? | Check the Ontology Manager and Object Type Cookbook before creating a new type — avoid duplication |
-
-**Design anti-patterns to avoid:**
-
-| Anti-Pattern | Why It Fails |
-|---|---|
-| Creating an Object Type for every dataset table | Object Types represent concepts, not tables. One concept may draw from multiple tables. |
-| Naming Object Types after systems or source feeds | `AFATDSEvent` is a system name; `FireMissionRequest` is an operational concept |
-| Including every column from the source table as a property | More properties equals more maintenance; include only operationally relevant properties |
-| Creating separate Object Types for status variations | `ActiveUnitStatus` and `InactiveUnitStatus` should be one type with a `status` property |
-| Designing without checking existing Ontology | May duplicate existing Object Types and create parallel, conflicting models |
-
----
-
-### 4-3. Link Type Design
-
-Link Types represent relationships between Object Types. A `UnitStatus` is linked to `PersonnelRecord` objects (the soldiers assigned to it). An `ISREvent` is linked to `GridReference` objects (where it occurred) and `UnitStatus` objects (the reporting unit). Link Types are how the Ontology models operational context.
-
-**Link Type design principles:**
-
-1. **Name Link Types as verb phrases** from the perspective of the source object. `UnitStatus` assigns to `GarrisonLocation`. Read naturally: "A UnitStatus is assigned to a GarrisonLocation."
-2. **Define cardinality explicitly.** One-to-one, one-to-many, or many-to-many. Cardinality affects how Workshop applications can traverse links and how Contour can aggregate across them.
-3. **Only create Link Types that serve a business need.** If no application or analysis will traverse the link, the link adds maintenance burden without value.
-4. **Document the foreign key.** Every Link Type must have an identified foreign key relationship between the backing datasets. Document this in the Link Type description field.
-5. **Consult the Engagement Ontology (YAML v2.0) at `learn-data.armydev.com`** before designing links for operational event models. The Engagement Ontology provides the canonical link model for combat events, ISR events, and unit interactions.
-
----
-
-### 4-4. Designing Actions
-
-Actions are the mechanism through which users write data back to the Ontology. TM-20 covers basic single-step Actions. TM-30 designs Actions that support complex operational workflows — multi-step submission flows, conditional logic, approval chains, and integration with other Actions.
-
-Action design is separate from Action configuration. Designing an Action means:
-1. Defining the operational workflow the Action supports
-2. Specifying the inputs (form fields) required
-3. Specifying the validation rules that must pass before submission
-4. Specifying what data changes (which Object Type properties, which objects)
-5. Determining whether the Action requires approval before execution
-6. Identifying any downstream notifications or follow-on actions
-
-Design this on paper or in a requirements document before opening the Ontology Manager. Configuration follows design.
-
----
-
-### 4-5. Writing Technical Requirements for a -40 Developer
-
-When your design requires a -40 developer to implement technical components (Functions on Objects, derived properties, OSDK integration, @incremental pipeline logic, complex Action validation), you must provide a complete and precise technical requirements document.
-
-> **NOTE:** A vague handoff to a developer wastes time and produces incorrect implementations. The requirements document in Appendix A is the standard template for all -30 to -40 handoffs on USAREUR-AF MSS projects. Use it every time.
-
-**What a good -30 to -40 requirements document covers:**
-
-| Section | Content Required |
-|---|---|
-| Operational context | What mission problem this solves; who the users are; what decision they make |
-| Data inputs | Source datasets (by path), relevant columns, known data quality issues |
-| Object Types and Link Types | Which existing types are involved; which new types are needed (with full property specs) |
-| Required technical components | Specific functions, pipelines, or integrations needed — with inputs, outputs, and logic description |
-| Non-functional requirements | Performance expectations, refresh rate, data volume |
-| Acceptance criteria | How will you verify the implementation is correct? Specific, measurable. |
-| Timeline and priority | When this is needed; priority relative to other work |
-| Point of contact | Who owns the requirement; who to ask for clarification |
-
-See Appendix A for the full template.
-
----
-
-**TASK 4-1. DESIGN AN OBJECT TYPE FOR AN OPERATIONAL USE CASE**
-
-**CONDITIONS:** Given a G2 requirement to track ISR collection events on the Baltic flank — including event type, grid reference, collection asset, reporting unit, DTG, and analyst assessment — when designing the corresponding Ontology model.
-
-**STANDARDS:** The builder will produce a complete Object Type design document (outside MSS, prior to any implementation) specifying: Object Type name, all properties with data type and source field mapping, linked Object Types, required Link Types with cardinality, and a list of any components requiring -40 developer implementation.
-
-**PROCEDURE:**
-1. Review the source data available: identify the dataset(s) that will back the Object Type. Note the dataset paths, column names, and data types.
-2. Name the Object Type. Use PascalCase, singular noun, operational concept name: `ISRCollectionEvent`.
-3. List all properties. For each property, document:
-   - Property name (camelCase)
-   - Data type (string, integer, timestamp, boolean, geo-point)
-   - Source dataset column name
-   - Whether this property is search-eligible (can users search for it?)
-   - Whether this property is required to be non-null
-4. Identify related Object Types: `UnitStatus` (reporting unit), `GridReference` (location of event), `CollectionAsset` (sensor or platform). Check the Ontology Manager to confirm these Object Types already exist before designing new ones.
-5. Define Link Types. For each: name (verb phrase from `ISRCollectionEvent`'s perspective), target Object Type, cardinality, foreign key.
-6. Identify derived properties or computed values (e.g., "time since collection event" is time-relative — requires a Function on Objects). Flag each as requiring -40 developer implementation.
-7. Document the design in the -30 to -40 handoff template (Appendix A) and review with your team lead before beginning implementation in Ontology Manager.
-
-> **NOTE:** Consult the DDOF Playbook at `learn-data.armydev.com` for the Doctrine-Driven Ontology Framework design patterns before designing Object Types for ISR, fires, or maneuver tracking use cases. The Doctrine-Driven Development framework provides Army doctrine-aligned patterns for these domains that have been validated against ADP 3-0, FM 3-55, and NATO doctrine equivalents.
-
-> **NOTE:** The ADP to JP to NATO Crosswalk at `learn-data.armydev.com` provides mappings between Army doctrine terms, Joint doctrine equivalents, and NATO/STANAG terminology. Use this reference when designing Object Types for products that will be shared with joint or coalition partners — use the NATO-compatible term as the canonical Object Type name where applicable.
-
----
-
-## CHAPTER 5 — ADVANCED ACTION DESIGN VIA UI
-
-### 5-1. Actions at TM-30 Level
-
-TM-20 Actions are single-step: a user fills out a form, submits it, and one object is updated. TM-30 Actions support operational workflows: multi-step submission processes, conditional routing based on submitted values, approval chains requiring sign-off before data changes are applied, and form logic that dynamically adjusts what fields are shown based on prior inputs.
-
-All TM-30 Action design is performed through the Action Editor UI in Ontology Manager. No code is required. If a workflow requirement cannot be achieved through the Action Editor UI — for example, calling an external system API on submission, or executing complex server-side validation logic — that requirement belongs to a -40 developer. Design the workflow; specify the technical gap; hand it off.
-
----
-
-### 5-2. Multi-Step Action Workflows
-
-Multi-step Actions guide users through a structured process with distinct phases. A SITREP submission workflow might have three steps: (1) Unit identification and reporting period, (2) Status data entry by warfighting function, (3) Commander's narrative and certification. Each step uses previously submitted data from prior steps.
-
----
-
-**TASK 5-1. CONFIGURE A MULTI-STEP ACTION WORKFLOW**
-
-**CONDITIONS:** Given an operational requirement for a structured unit status report submission with three phases (identification, data entry, certification), when configuring the Action in Ontology Manager.
-
-**STANDARDS:** The Action presents users with three distinct form sections in sequence. Users cannot advance to Step 2 without completing required fields in Step 1. Step 3 shows a summary of all entered data before final submission. On submission, the designated `UnitStatus` object is updated with all submitted values.
-
-**PROCEDURE:**
-1. Open Ontology Manager and navigate to the target Object Type (`UnitStatus`).
-2. Select **Actions** then **New Action**.
-3. Name the Action operationally: `Submit Unit Status Report`.
-4. In the Action Editor, select **Multi-Step Form** layout.
-5. Configure Step 1 — Identification:
-   - Add fields: `reportingUnit` (Object selector, linked to `UnitStatus`), `reportingPeriod` (date range picker), `reportingOfficer` (current user, auto-populated).
-   - Mark all three fields as **Required**.
-6. Configure Step 2 — Status Data:
-   - Add fields for each warfighting function status (personnel, readiness, logistics, maintenance, communications) as appropriate dropdown or numeric fields.
-   - Use conditional field visibility: show the `maintenanceDetailNotes` text field only if `maintenanceStatus` is set to AMBER or RED.
-7. Configure Step 3 — Certification:
-   - Set this step as read-only summary mode — display all values from Steps 1 and 2.
-   - Add a single **Certify and Submit** checkbox: "I certify this report is accurate and complete."
-   - Mark the checkbox as **Required** before submission is enabled.
-8. Configure the **Effect** (what the Action does on submission): update the `UnitStatus` object properties with the submitted values. Map each form field to the corresponding Object Type property.
-9. Configure the **Confirmation Message**: display the unit name and reporting period in the confirmation.
-10. Test the Action using the Ontology Manager preview. Submit a test record and verify the target object updates correctly.
-
-> **CAUTION: Multi-step Actions that modify production objects must be tested against a non-production Ontology branch before deployment. Test with a designated test object, not a live operational record. Confirm with your team lead before publishing any Action that modifies shared operational data.**
-
----
-
-### 5-3. Conditional Logic in Actions
-
-Conditional logic in Actions controls which fields are displayed, which fields are required, and which validation rules apply based on the values submitted in the same or prior steps. This allows a single Action to support multiple scenarios without creating separate Actions for each case.
-
-**Common conditional patterns in USAREUR-AF Actions:**
-
-| Scenario | Conditional Logic |
-|---|---|
-| Show maintenance notes only for AMBER/RED maintenance status | Show `maintenanceNotes` field if `maintenanceStatus` is AMBER or RED |
-| Require commander signature for RED readiness submissions | Mark `commanderSignature` field required if `overallReadiness` equals RED |
-| Show coalition sharing confirmation only for non-SECRET reports | Show `mpeShareConfirmation` checkbox if `reportClassification` is not SECRET |
-| Route logistics shortfall to G4 Action queue | On submission: if `criticalShortfall` is true, trigger G4 notification Action |
-
----
-
-**TASK 5-2. CONFIGURE CONDITIONAL FIELD VISIBILITY IN AN ACTION FORM**
-
-**CONDITIONS:** Given an Action form for SITREP submission, when a conditional field should display only when specific conditions are met in a prior field selection.
-
-**STANDARDS:** The conditional field is hidden by default. It becomes visible and required immediately when the triggering condition is met. It returns to hidden (and its value cleared) if the triggering condition is removed before submission.
-
-**PROCEDURE:**
-1. In the target Action's form editor, locate the trigger field (the field whose value controls visibility of the conditional field).
-2. Add the conditional field below the trigger field.
-3. In the conditional field's settings, locate the **Visibility** control.
-4. Set visibility to **Conditional on field value**: select the trigger field and specify the triggering value(s) (e.g., show when `maintenanceStatus` is AMBER or RED).
-5. In the conditional field's **Required** setting, enable **Conditionally Required**: required when visible (trigger condition met); not required when hidden.
-6. Enable **Clear on hide**: ensures the conditional field's value is cleared if the user changes the trigger field back to a non-triggering value before submitting.
-7. Preview the form. Test by setting the trigger field to a non-triggering value (confirm conditional field is hidden), then to the triggering value (confirm it appears and is required), then back to non-triggering (confirm it hides and clears).
-
----
-
-### 5-4. Approval Chain Configuration
-
-Approval chains require one or more designated reviewers to approve an Action submission before the Effect is applied to the Ontology. This is required for operational workflows where data changes require command authority — for example, changing a unit's readiness rating, publishing a theater logistics assessment, or updating an ISR collection priority.
-
----
-
-**TASK 5-3. CONFIGURE AN APPROVAL CHAIN FOR A HIGH-IMPACT ACTION**
-
-**CONDITIONS:** Given an Action that modifies a unit's official readiness status, when this modification requires review and approval by the unit's S3 or G3 before taking effect.
-
-**STANDARDS:** On submission, the Action enters a pending state and routes a notification to the designated approver(s). The Ontology object is not updated until the approver explicitly approves the submission. Rejection returns the submission to the submitter with rejection comments.
-
-**PROCEDURE:**
-1. In the target Action's editor, navigate to the **Approval** settings section.
-2. Enable **Requires Approval**.
-3. Configure the **Approver** assignment:
-   - Static approver: designate a specific MSS user or group (e.g., the `G3-ReadinessApprovers` group) as required approvers.
-   - Dynamic approver: if the approver should vary based on the submitted data (e.g., the approver is the supervisor of the reporting unit), configure a dynamic approver lookup using the relevant Ontology link. This requires the `supervisor` or `commandingOfficer` link to be properly configured on the Object Type.
-4. Set the **Approval Deadline**: configure an auto-escalation if the approval is not completed within a specified time (e.g., 24 hours escalates to the next level).
-5. Configure the **Rejection Flow**: enable a rejection reason comment field. Route the rejection back to the original submitter as an MSS notification with the reviewer's comment.
-6. Configure the **Notification**: ensure approvers receive an MSS notification with the pending Action details and a direct link to the approval queue.
-7. Test the approval flow using two test accounts: submit with the submitter account; approve or reject with the approver account. Verify the Ontology object updates only on approval, not on initial submission.
-
-> **NOTE:** Approval chains are only as effective as the process governance around them. An approval chain with no defined SLA for review is a bottleneck, not a control. Define and communicate the expected review window to designated approvers before deploying any approval-gated Action to production.
-
----
-
-## CHAPTER 6 — AIP LOGIC CONFIGURATION
-
-### 6-1. AIP Logic at TM-30 Level
-
-AIP Logic is MSS's framework for integrating large language models and AI reasoning into operational workflows. At TM-30 level, the advanced builder configures AIP Logic workflows — defining inputs, writing prompts, connecting AI outputs to ontology data, and designing human review gates — entirely through the AIP Logic configuration UI.
-
-TM-30 builders do not write code in AIP Logic configuration. You design the workflow logic, write prompts, and connect the AI to ontology data sources. If a workflow requires custom TypeScript logic, external API calls, or Functions on Objects integration, that work is for a -40 developer.
-
-> **WARNING: AIP Logic workflows that operate on operational data — particularly ISR products, personnel data, or readiness assessments — require authorization review by your chain of command and coordination with the USAREUR-AF C2DAO before deployment. AI-assisted outputs that inform operational decisions must include human review gates. Do not deploy AIP Logic workflows that produce outputs used directly in operational reports without a documented human-in-the-loop checkpoint.**
-
----
-
-### 6-2. AIP Logic Workflow Design
-
-Before configuring anything in the AIP Logic UI, design the workflow on paper. A poorly designed AIP Logic workflow that produces plausible-sounding but incorrect outputs is worse than no AI integration — it introduces confident errors into operational products.
-
-**AIP Logic workflow design checklist:**
-
-- [ ] What operational question is the AI answering? State it in one sentence.
-- [ ] What data inputs does the AI need to answer that question? (Ontology objects, dataset fields, user-provided context)
-- [ ] What is the expected output format? (Structured JSON, natural language summary, classification label, ranked list)
-- [ ] How will the output be validated before use? Who reviews it? Is there a documented review gate?
-- [ ] What happens when the AI produces an incorrect or low-confidence output? Is there a fallback?
-- [ ] Is there a requirement to retain a record of AI inputs and outputs for auditability?
-- [ ] Has this use case been reviewed for authorization compliance?
-
----
-
-### 6-3. Prompt Engineering Basics
-
-Prompt quality determines output quality. Advanced builders writing prompts for operational AIP Logic workflows must apply basic prompt engineering discipline.
-
-**Prompt design principles:**
-
-1. **Be explicit about role and context.** Tell the model who it is and what context it is operating in. Example: "You are an operational data analyst supporting USAREUR-AF readiness reporting. You are reviewing SITREP submissions from subordinate units in the V Corps AOR."
-2. **Specify output format precisely.** If you need structured output, specify the exact format in the prompt: "Return your assessment as a JSON object with the fields: `readinessTier` (GREEN, AMBER, or RED), `primaryConcern` (one sentence), and `recommendedAction` (one sentence)."
-3. **Provide constraints.** Tell the model what it must not do: "Do not speculate about future operations. Do not reference specific classified information. Do not produce assessments for units not included in the provided data."
-4. **Include examples where applicable (few-shot prompting).** For classification tasks, provide one to three examples of correct input-output pairs in the prompt. This significantly improves consistency.
-5. **Test with edge cases.** Deliberately test your prompt with incomplete data, conflicting values, and boundary conditions. Prompt behavior at the edges is often worse than at the center.
-
----
-
-**TASK 6-1. CONFIGURE AN AIP LOGIC WORKFLOW FOR SITREP SUMMARIZATION**
-
-**CONDITIONS:** Given AIP Logic access and a `UnitSITREP` Object Type containing structured readiness data from multiple subordinate units, when configuring a workflow that generates a commander's summary of theater readiness from current SITREP data.
-
-**STANDARDS:** The workflow accepts a filtered set of `UnitSITREP` objects as input, generates a structured readiness summary in the configured output format, and routes the output to a human reviewer queue before the summary is published to any application. The workflow completes in under 30 seconds for inputs of up to 50 SITREP records.
-
-**PROCEDURE:**
-1. Open AIP Logic from the left navigation panel.
-2. Create a new Logic workflow. Name it: `USAREUR-AF Daily Readiness Summarization`.
-3. Configure the **Input** node:
-   - Select **Object Set** as input type.
-   - Link the input to the `UnitSITREP` Object Type.
-   - Configure input filters: allow the calling application (Workshop) to pass a filtered object set (e.g., filtered by reporting period and AOR).
-4. Configure the **Prompt** node:
-   - Write the system prompt per the principles in section 6-3. Begin with explicit role and context framing.
-   - Reference input object properties in the prompt using the available property insertion syntax. Insert `reportingUnit`, `reportingPeriod`, `personnelReadiness`, `equipmentReadiness`, and `commanderNote` fields from each SITREP object.
-   - Specify output format: require a JSON structure with `overallTheaterAssessment`, `criticalShortfalls` (list), `units_at_risk` (list of unit names), and `recommendedActions` (list).
-5. Configure the **Output** node:
-   - Set output type to **Structured JSON** matching the format specified in the prompt.
-   - Map the output fields to a `ReadinessSummary` Object Type (configure this object type first if it does not exist).
-6. Configure the **Human Review Gate**:
-   - Enable **Requires Human Review** before the output is committed to the Ontology.
-   - Route the review task to the designated reviewer group (e.g., `G3-ReadinessReviewers`).
-   - Set the review deadline (e.g., 2 hours).
-7. Test the workflow using a sample SITREP object set. Verify output format, review gate routing, and response time.
-
-> **CAUTION: AIP Logic outputs must not be automatically published to coalition-accessible data products without both human review and C2DAO coordination. Any AIP-generated product that could reach MPE systems or coalition partners requires a separate authorization review.**
-
----
-
-### 6-4. Connecting AIP Logic to Ontology Data
-
-AIP Logic workflows that connect to real Ontology data produce more contextually accurate outputs than workflows operating on raw text inputs. Connecting AI to structured Ontology data allows the model to reason about operational entities — units, locations, events — with the same semantic context that your Workshop applications use.
-
-**Key connection patterns:**
-
-| Pattern | Use Case |
-|---|---|
-| Object Set input | Pass a filtered set of Ontology objects as the AI's primary data source (see Task 6-1) |
-| Link traversal in prompt context | Provide not just the primary object's properties but also linked objects' properties (e.g., provide the unit's current location and garrison alongside its status report) |
-| Object property output | Write the AI's output back to a specific Ontology object property (e.g., write the generated summary to `ReadinessSummary.aiGeneratedNarrative`) |
-| Object creation output | Have the AI create new Ontology objects (e.g., generate a `RiskFlag` object for each identified shortfall) — configure via Action-type output in AIP Logic |
-
-> **NOTE:** Link traversal in AIP Logic prompts requires that the relevant Link Types are properly configured on the Object Type. Verify link configuration in Ontology Manager before designing a workflow that depends on linked object properties. If the required links do not exist, design them (per Chapter 4) before proceeding.
-
----
-
-## CHAPTER 7 — ADVANCED CONTOUR AND QUIVER
-
-### 7-1. Contour at TM-30 Level
-
-Contour is MSS's data analysis workspace. TM-20 covered basic filtering, sorting, and simple aggregations. TM-30 covers the formula editor for calculated columns, complex multi-table aggregations, pivot table analysis, and cross-dataset joins within Contour. These capabilities support the G2, G9, and logistics analysis workflows that require operational analytics beyond what Workshop dashboards provide.
-
----
-
-### 7-2. The Contour Formula Editor
-
-The formula editor allows creation of calculated columns using Contour's built-in function library. This is the TM-30 mechanism for operational analytics — computing derived metrics, normalizing data, and creating display-ready fields without modifying the underlying dataset.
-
-**Contour formula function categories:**
-
-| Category | Key Functions | Operational Use |
-|---|---|---|
-| Conditional | `if()`, `case()`, `coalesce()` | Readiness tier classification, null handling |
-| Date/time | `dateDiff()`, `dateAdd()`, `dateFormat()`, `daysOld()` | Days since SITREP, reporting lag analysis |
-| String | `concat()`, `trim()`, `left()`, `right()`, `replace()` | Unit display name formatting, DTG normalization |
-| Math | `round()`, `abs()`, `min()`, `max()`, `percentage()` | Readiness score calculations, fill rate percentages |
-| Aggregation | `sum()`, `count()`, `countDistinct()`, `avg()` | Unit counts by status, aggregate readiness |
-| Lookup | `lookup()` | Cross-dataset reference lookups |
-
----
-
-**TASK 7-1. CREATE A CALCULATED COLUMN IN CONTOUR**
-
-**CONDITIONS:** Given a Contour analysis with a unit status dataset containing a `lastSitrepDate` timestamp field, when the analysis requires a "days since last SITREP" column for staleness analysis.
-
-**STANDARDS:** The calculated column `daysSinceLastSitrep` correctly computes the number of whole days between `lastSitrepDate` and today's date. The column displays correctly for all rows including null `lastSitrepDate` values (display N/A for nulls).
-
-**PROCEDURE:**
-1. Open the target Contour analysis. Verify the dataset containing `lastSitrepDate` is loaded.
-2. In the column header row, select **+ Add Column** then **Calculated Column**.
-3. Name the column: `daysSinceLastSitrep`.
-4. Open the formula editor.
-5. Enter: `if(isNull(lastSitrepDate), "N/A", string(dateDiff(today(), lastSitrepDate, "day")))`.
-6. Click **Preview** to validate the formula against sample rows.
-7. Verify: rows with valid `lastSitrepDate` show a positive integer. Rows with null `lastSitrepDate` show N/A.
-8. Apply the column. Sort by `daysSinceLastSitrep` descending to identify units with the most stale reporting.
-
-> **NOTE:** The formula language in Contour's calculated column editor uses the same syntax as Pipeline Builder's Derived Column node (see Chapter 3). Formulas developed and validated in Contour can be transferred to Pipeline Builder when the calculation needs to be made persistent in the dataset. This two-step workflow — prototype in Contour, promote to Pipeline Builder — is the recommended approach for new calculated columns.
-
----
-
-### 7-3. Pivot Table Analysis
-
-Pivot tables in Contour aggregate data across two or more categorical dimensions simultaneously. For USAREUR-AF operational analysis, pivot tables answer questions like: "What is the distribution of readiness tiers across formations and warfighting functions?" or "How many ISR events were recorded by collection type and by Baltic flank sector this week?"
-
----
-
-**TASK 7-2. BUILD A PIVOT TABLE FOR THEATER READINESS ANALYSIS**
+1-2. TM-30 is the advanced tier for data-adjacent specialists — personnel who work deeply with
+data but whose primary role is operational, analytical, or systems-oriented rather than software
+development. This includes 17-series and 25-series signal soldiers, S6/G6 staff, G2 analysts,
+G9 civil affairs, and operational data analysts embedded in brigade and division staffs.
 
-**CONDITIONS:** Given a Contour analysis with a unit status dataset containing `formation`, `warfightingFunction`, and `readinessTier` fields, when performing cross-dimensional readiness analysis.
-
-**STANDARDS:** The pivot table displays formations as rows, warfighting functions as columns, and count of records in cells. The analyst can identify at a glance which formation-function combinations have the highest concentration of AMBER/RED status.
-
-**PROCEDURE:**
-1. In the Contour analysis, select **Transform** then **Pivot**.
-2. Set **Row dimension**: `formation`.
-3. Set **Column dimension**: `warfightingFunction`.
-4. Set **Value**: Count of UnitStatus records.
-5. Apply a conditional color format (heat map) to the cells: green background for cells where no RED tiers are present; amber background for cells with any AMBER; red background for cells with any RED.
-6. Add a filter on `reportingPeriod` to restrict the analysis to the current reporting window.
-7. Export the pivot table to a Contour View (saved analysis) named per USAREUR-AF naming conventions for reuse.
-
----
-
-### 7-4. Cross-Dataset Analysis
-
-Contour supports joining datasets within an analysis — analogous to Pipeline Builder joins, but performed analytically without modifying underlying datasets. This supports ad hoc analysis that bridges data domains without requiring a new integration pipeline.
-
-> **CAUTION: Cross-dataset joins in Contour are analytical — they produce results in the analysis workspace, not persistent new datasets. If an analysis join produces valuable curated data that should be shared with other users or applications, promote it to a Pipeline Builder pipeline (coordinating with your team lead) rather than using Contour as a data production tool. Contour is for analysis; Pipeline Builder is for data production.**
-
----
-
-**TASK 7-3. PERFORM A CROSS-DATASET ANALYSIS IN CONTOUR**
-
-**CONDITIONS:** Given a readiness dataset and a separate logistics dataset sharing a `unitId` key, when performing an analysis to identify correlations between logistics shortfalls and readiness degradation.
-
-**STANDARDS:** The analysis workspace contains a joined view of both datasets on `unitId`. The analyst can create calculated columns and pivot tables that reference fields from both source datasets simultaneously. The analysis is saved as a Contour View for team access.
-
-**PROCEDURE:**
-1. Open Contour and load the readiness dataset as the primary source.
-2. Select **Join Dataset** from the transform toolbar.
-3. Select the logistics dataset as the secondary source.
-4. Configure join type: **Left Join** on `unitId = unitId`. Verify column name disambiguation for any duplicate column names (e.g., rename `logistics.reportingDate` to `logisticsReportingDate`).
-5. Preview the joined output. Check row count equals primary dataset row count (assuming one-to-one relationship).
-6. Create a calculated column: `logisticsShortfallFlag = if(criticalShortfallCount > 0, "YES", "NO")`.
-7. Create a scatter plot: X axis = `readinessScore`, Y axis = `criticalShortfallCount`, color = `readinessTier`. Assess visual correlation.
-8. Save the analysis as a Contour View. Name it per conventions. Set access to the appropriate team group.
-
----
-
-### 7-5. Advanced Quiver Dashboards
-
-Quiver is MSS's linked analysis and visualization environment. Quiver dashboards allow multiple chart views to be linked — selecting a data point in one chart updates all other charts in the dashboard simultaneously. Quiver is appropriate for analytical deep-dives; Workshop is appropriate for operational dashboards used in daily operations. Both are TM-30 tools.
-
-**Quiver vs. Workshop selection guide:**
-
-| Criterion | Quiver | Workshop |
-|---|---|---|
-| Primary audience | Analysts (G2, G9, S2 shops) | Operators, commanders, staff at all levels |
-| Interaction pattern | Click to explore, drill down | Monitor status, submit updates, take action |
-| Data modification | Read-only | Actions and write-back supported |
-| Layout flexibility | Analysis-optimized, chart-dense | Flexible, operationally designed |
-| Embedding | Embeddable in Workshop as an iframe | Native Workshop |
-
----
-
-**TASK 7-4. BUILD A LINKED QUIVER DASHBOARD FOR ISR EVENT ANALYSIS**
-
-**CONDITIONS:** Given ISR event data from the Baltic flank in a Contour analysis, when an ISR analyst needs a linked dashboard showing event distribution by type, time, and grid sector simultaneously.
-
-**STANDARDS:** The Quiver dashboard contains at least three linked chart views: (1) event count by type (bar chart), (2) event timeline (time series), (3) event density by grid sector (map or heat map). Selecting a bar in chart 1 filters both chart 2 and chart 3 to that event type. All charts update simultaneously on selection.
-
-**PROCEDURE:**
-1. Open the source Contour analysis containing the ISR event data.
-2. Select **Create Quiver Dashboard** from the analysis toolbar.
-3. In the Quiver dashboard editor, add the first panel: **Bar Chart** — event count by `eventType`.
-4. Add the second panel: **Time Series** — event count over time, grouped by `eventType`.
-5. Add the third panel: **Map** (or **Heat Map** if precise grid coordinates are available) — event density by grid sector.
-6. Enable **Link Selections**: in the dashboard settings, configure all three panels to share a common selection state on the `eventType` field.
-7. Test linked behavior: click a bar in chart 1. Verify charts 2 and 3 update to show only events of the selected type.
-8. Configure the dashboard title, description, and access group.
-9. To embed this Quiver dashboard in a Workshop application: copy the embed URL from the dashboard share settings. In Workshop, add an **Iframe** widget and paste the embed URL. Size the iframe appropriately within the Workshop layout.
-
-> **NOTE:** Quiver dashboards embedded in Workshop via iframe do not inherit Workshop's variable context. A user's selection in a Workshop object table will not automatically filter the embedded Quiver dashboard. If synchronized filtering between Workshop and embedded Quiver is required, coordinate with a -40 developer — this integration requires URL parameter passing that goes beyond standard Quiver embed configuration.
-
----
-
-## CHAPTER 8 — DATA GOVERNANCE AND STEWARDSHIP
-
-### 8-1. The -30 Builder's Governance Responsibilities
-
-Advanced builders are not just consumers of the data governance framework — at TM-30 level, you are active participants in it. You are responsible for the quality, lineage, and domain alignment of the data products you design and publish.
-
-**Governance responsibilities at TM-30 level:**
-
-| Responsibility | What It Means in Practice |
-|---|---|
-| Lineage documentation | Every pipeline you design must have documented lineage. After build, verify the lineage graph is complete and correct. |
-| Data quality review | Review quality check results for datasets your pipelines produce. Investigate and resolve flagged issues. |
-| Steward coordination | Coordinate with the domain data steward before modifying shared Object Types, publishing new data products, or changing access controls. |
-| UDRA alignment | Complete the UDRA Alignment Checklist (Appendix C) for every new data product. |
-| Domain assignment | Every dataset and Object Type you create must have a domain assignment. Confirm the correct domain with your steward before creating resources. |
-| Data product SLA | Define and document the refresh rate, acceptable downtime, and quality floor for every data product you own. |
-
----
-
-### 8-2. Reading and Interpreting Data Lineage Graphs
-
-Data lineage in MSS tracks the path of data from its source through every transformation, join, and enrichment step to its final output. The lineage graph is your primary tool for: (a) understanding how a downstream error propagated from an upstream source, (b) assessing the impact of a planned change to a shared dataset, and (c) documenting provenance for governance audits.
-
----
-
-**TASK 8-1. TRACE A DATA QUALITY ISSUE USING THE LINEAGE GRAPH**
-
-**CONDITIONS:** Given a downstream Workshop application displaying incorrect readiness values, when the root cause is unknown and must be traced through the data pipeline.
-
-**STANDARDS:** The builder identifies the specific transform or pipeline node where the incorrect values originate, documents the finding, and notifies the relevant data steward and/or pipeline owner for remediation.
-
-**PROCEDURE:**
-1. Open Compass. Navigate to the output dataset backing the affected Workshop application (identify the dataset from the Workshop widget's data source binding).
-2. Open the dataset preview. Identify a specific row with the incorrect value and note the record's unique identifier.
-3. Select **View Lineage** from the dataset options menu. The lineage graph opens showing all upstream dependencies.
-4. Starting from the output dataset, trace upstream one hop at a time. At each node (transform, join, source dataset), preview that dataset and look up the same record by its unique identifier.
-5. When you find the first hop where the value is incorrect, you have identified the transform or source data where the problem originates.
-6. If the problem is in a transform node: note the transform name and the specific logic step. Escalate to the pipeline owner or -40 developer with: the affected dataset RID, the record identifier, the incorrect value, the expected value, and the lineage path.
-7. If the problem is in the source data: note the source dataset and the record. Notify the source system data steward.
-8. Document your findings in the team's issue tracking log.
-
-> **NOTE:** The lineage graph also supports impact analysis — the reverse direction. Before modifying a shared dataset, use lineage to view all downstream consumers. Any dataset, Object Type, or Workshop application that depends on the dataset you are about to modify will be shown. Review all downstream consumers before making changes to shared production resources.
-
----
-
-### 8-3. Data Quality Review and Stewardship
-
-MSS runs automated data quality checks on configured datasets. At TM-30 level, you review these check results, investigate failures, and coordinate remediation with upstream data owners and -40 developers.
-
-**Quality check severity levels:**
-
-| Severity | Meaning | Required Action |
-|---|---|---|
-| ERROR | Check failed; data does not meet quality standard | Pipeline should not proceed to downstream consumers until resolved; escalate immediately |
-| WARNING | Check flagged a potential issue; data may still be usable | Investigate within 24 hours; document disposition; notify data steward |
-| INFO | Informational check; no action required but worth noting | Review during routine pipeline monitoring |
-
----
-
-**TASK 8-2. REVIEW DATA QUALITY CHECK RESULTS AND ESCALATE APPROPRIATELY**
-
-**CONDITIONS:** Given a production dataset with configured quality checks, when the quality check report for the most recent pipeline run is available for review.
-
-**STANDARDS:** The builder reviews all check results, documents any failures or warnings, assesses impact on downstream consumers, and escalates ERROR-level failures within the required time window.
-
-**PROCEDURE:**
-1. Open the target dataset in Compass.
-2. Select the **Quality Checks** tab (or navigate to the pipeline's build log and select the checks view).
-3. Review all check results from the most recent run. Note: check name, severity, expected value, actual value, affected row count.
-4. For each ERROR-level failure:
-   a. Assess downstream impact using the lineage graph (which applications and Object Types consume this dataset?).
-   b. Determine if downstream consumers should be paused or flagged as potentially unreliable.
-   c. Escalate to the pipeline owner (or -40 developer if the check involves custom logic) within 2 hours.
-   d. Notify the domain data steward.
-   e. If downstream applications are actively displaying data to operational users, notify the application owner so they can alert users to the data quality issue.
-5. For each WARNING-level failure:
-   a. Investigate the root cause.
-   b. Document in the team issue log: check name, actual value, expected value, suspected cause.
-   c. Notify the data steward within 24 hours.
-6. Document all actions taken in the team's issue tracking log with timestamps.
-
----
-
-### 8-4. UDRA Domain Alignment
-
-All data products created on MSS must align with UDRA v1.1. Domain alignment means assigning every dataset, Object Type, and application to a specific data domain with a designated domain owner responsible for its governance.
-
-**USAREUR-AF primary data domains (representative):**
-
-| Domain | Covers | Primary Steward |
-|---|---|---|
-| Personnel and Readiness | PERSTAT, readiness ratings, strength data | G1 / C2DAO |
-| Intelligence | ISR events, collection assets, threat assessments | G2 |
-| Operations | SITREPs, task organization, operational reports | G3 |
-| Logistics | Supply, maintenance, transportation, distribution | G4 |
-| Plans | OPORD-related data, course of action products | G5 |
-| Comms / C2 Systems | Network status, C2 systems data | G6 / S6 |
-| Civil Affairs | CMO assessments, host nation data, HCA projects | G9 |
-| Coalition/MPE | Partner nation data products, MPE-shared resources | C2DAO / G6 |
-
-> **NOTE:** Confirm your data domain assignment with the USAREUR-AF C2DAO data governance team before creating any new data product. Domain assignments affect access control, stewardship responsibility, and downstream sharing eligibility. An incorrectly assigned domain can result in a data product being blocked from the users who need it or shared with users who should not have it.
-
----
-
-### 8-5. Coordinating with the Data Steward and C2DAO
-
-The data steward is the operational authority for a data domain. The C2DAO is the USAREUR-AF architecture authority. Know when to coordinate with each.
-
-**When to contact the data steward:**
-- Before creating a new Object Type in their domain
-- Before modifying properties on a shared Object Type
-- When a quality check ERROR is detected on a dataset in their domain
-- Before publishing a new data product to production
-- When access controls for a domain dataset need to change
-
-**When to contact the C2DAO:**
-- Before publishing any data product accessible to MPE or coalition-facing systems
-- Before designing a new data domain or sub-domain
-- When a design decision has enterprise-wide architecture implications
-- Before integrating a new external data source into MSS
-- Before deploying an AIP Logic workflow on operationally significant data
-
----
-
-## CHAPTER 9 — ENVIRONMENT MANAGEMENT AND PRODUCTION DISCIPLINE
-
-### 9-1. The MSS Development Lifecycle
-
-MSS supports a branched development lifecycle that separates development work from production resources. At TM-30 level, understanding and following the branching strategy is not optional — it is how you protect shared infrastructure from your own development work.
-
-**Standard USAREUR-AF MSS development lifecycle stages:**
-
-```
-DEVELOPMENT BRANCH
-(Personal or feature branch — safe to break)
-        |
-        v
-TEAM REVIEW
-(Pull request or branch review — peer check)
-        |
-        v
-STAGING / TEST
-(Integrated test environment — validated against production data volume)
-        |
-        v
-PRODUCTION
-(Main branch — live operational data, commander visibility)
-```
-
-Nothing enters production without passing through team review. Nothing skips staging for "quick fixes." There are no quick fixes in production data infrastructure.
-
----
-
-### 9-2. Ontology Branch Management
-
-The Ontology is a shared resource. Multiple builders may be working on different features simultaneously. Ontology branches allow each builder to work on their feature without interfering with others and without affecting production.
-
----
-
-**TASK 9-1. CREATE AND MANAGE AN ONTOLOGY DEVELOPMENT BRANCH**
-
-**CONDITIONS:** Given a new Ontology design task (e.g., adding a new Object Type or modifying Link Type cardinality), when beginning development on the shared Ontology.
-
-**STANDARDS:** All development occurs on a named development branch. No changes are made to the main Ontology branch. The development branch is reviewed and approved before merge.
-
-**PROCEDURE:**
-1. Open Ontology Manager.
-2. In the branch selector (top of the Ontology Manager interface), select **Create New Branch**.
-3. Name the branch: `dev-[feature]` or `dev-[your-name]-[feature]` (e.g., `dev-isr-event-object`, `dev-smith-readiness-action`).
-4. Confirm you are working on the named branch (the branch name should be displayed in the Ontology Manager header at all times during your session).
-5. Make all Object Type, Link Type, and Action changes on this branch.
-6. When development is complete, request a branch review from your team lead. Provide: the branch name, a summary of all changes made, and the test results from your functional testing.
-7. After review approval, merge the branch to main. Do not self-approve — a second set of eyes is required for all Ontology changes.
-8. After merge, confirm the changes are visible in the main branch and verify no unexpected impacts on existing Workshop applications (check application health indicators in Workshop after the merge).
-
-> **CAUTION: Deleting an Object Type or Link Type property from a production Ontology branch immediately breaks every Workshop application widget, Contour analysis, and Pipeline Builder node that references that property. Before removing any property, search for all references using the Ontology Manager's "find usages" function. Coordinate with all application owners before proceeding.**
-
----
-
-### 9-3. Dataset and Pipeline Branching
-
-Pipeline Builder supports branching for dataset development. Like Ontology branching, dataset branches allow you to develop and test pipeline changes against a copy of production data without affecting the production dataset.
-
----
-
-**TASK 9-2. MANAGE A PIPELINE DEVELOPMENT BRANCH**
-
-**CONDITIONS:** Given a modification to a production pipeline (e.g., adding a new calculated column or modifying join logic), when the change cannot be tested in production.
-
-**STANDARDS:** The modification is developed and tested on a named branch. The branch output is validated against a production-representative data sample before merge. The modification reaches production only after team lead approval.
-
-**PROCEDURE:**
-1. In Pipeline Builder, open the target pipeline.
-2. Select **Create Branch** from the pipeline options menu.
-3. Name the branch per conventions. Confirm the branch name is displayed in the pipeline editor header.
-4. Make all modifications on the branch.
-5. Run the branch pipeline against the full dataset (or a representative sample if full-volume testing is impractical).
-6. Validate output: check row counts, spot-check calculated column values, verify no quality check failures.
-7. Document test results: the expected output vs. actual output for at least three representative records.
-8. Submit the branch for team lead review. Include: branch name, change summary, test results, and downstream impact assessment (from lineage review).
-9. After approval, merge to main and monitor the first scheduled run in production.
-
----
-
-### 9-4. Production Gate Criteria
-
-**A data product is ready for production when:**
-
-- [ ] All development and testing completed on a named development branch
-- [ ] Branch review completed and approved by team lead
-- [ ] Quality checks pass (no ERROR-level failures on staging run)
-- [ ] Data lineage graph is complete and accurate
-- [ ] UDRA Alignment Checklist (Appendix C) completed
-- [ ] Application Design Checklist (Appendix B) completed (for Workshop applications)
-- [ ] Data steward has been notified and has approved publication
-- [ ] All downstream consumers have been identified via lineage review
-- [ ] Access controls configured correctly and verified
-- [ ] Pipeline alerts configured (for pipelines)
-- [ ] If MPE/coalition-accessible: C2DAO coordination complete and documented
-
-**A data product is NOT ready for production if:**
-
-- Testing was performed on the production branch
-- Quality checks have unresolved ERROR-level failures
-- The data steward has not been notified
-- Downstream impact has not been assessed
-- Access controls have not been verified
-
----
-
-### 9-5. Coordinating with -40 Developers in the Development Lifecycle
-
-When your design includes components that require a -40 developer, the development lifecycle has an additional coordination layer.
-
-**-30 to -40 coordination protocol:**
-
-1. **Before development begins.** Provide the -40 developer with the complete requirements document (Appendix A template). Do not begin any implementation work — in Pipeline Builder, Ontology Manager, or Workshop — until the -40 developer has reviewed and confirmed the requirements are complete and implementable.
-2. **During development.** Coordinate on branch strategy. If the -40 developer's code changes and your Ontology/Pipeline changes are interdependent, agree on the order of implementation and the integration test plan before either party begins.
-3. **Before production.** Participate in the integration review. As the -30 designer, you are the acceptance authority — verify that the implemented system meets the operational requirements you specified.
-4. **After production.** You own the operational monitoring. The -40 developer owns the technical components. Alert the -40 developer when a quality check or performance anomaly suggests a problem in the technical implementation.
-
----
-
-## CHAPTER 10 — NATO AND COALITION DATA CONSIDERATIONS
-
-### 10-1. The Coalition Data Environment
-
-USAREUR-AF operates in an inherently coalition environment. V Corps functions as a NATO corps headquarters. Exercise DEFENDER and associated operations involve forces from across the Alliance. The Suwałki Gap defense concept and Baltic flank posture require near-seamless data sharing with Estonian, Latvian, Lithuanian, and Polish forces, as well as other NATO Allies.
-
-MSS is a U.S. national system. Coalition partners access shared data products through the Mission Partner Environment (MPE). Data products designed on MSS that will be shared with coalition partners cross a domain boundary when they enter the MPE. This boundary has governance, technical, and security implications that TM-30 builders must understand — not to implement solutions to, but to recognize when escalation is required.
-
-> **CAUTION: Data products shared with NATO partners or accessible in the Mission Partner Environment must comply with NAFv4 architecture standards and applicable STANAG requirements. Coordinate with G6/S6 and the USAREUR-AF C2DAO before publishing any cross-domain data product. Failure to comply may result in the product being blocked from coalition-facing distribution or revoked post-publication.**
-
----
-
-### 10-2. MPE Data Handling
-
-The Mission Partner Environment is a separate network environment from the U.S. national network hosting MSS. Data products that need to be available to coalition partners must be explicitly authorized, formatted for cross-domain transfer, and reviewed by the C2DAO and G6 before transfer to the MPE.
-
-**What TM-30 builders must know about MPE:**
-
-| Topic | What -30 Needs to Know |
-|---|---|
-| MPE eligibility | Not all data products are eligible for MPE sharing. Eligibility is determined by classification, releasability markings, and C2DAO review — not by the builder. |
-| Data markings | MPE-eligible data products must carry correct releasability markings (e.g., REL TO USA, [PARTNER NATIONS]). Markings are configured in dataset settings and must be set correctly before any MPE transfer. |
-| NAFv4 format requirements | Data products shared via MPE must conform to NAFv4 architecture standards. This includes standardized vocabulary, NATO-compatible terminology, and documented data element definitions. |
-| STANAG compliance | Specific STANAGs govern data exchange for specific domains (e.g., STANAG 5516 for tactical data links). Identify applicable STANAGs before designing any product intended for coalition exchange. |
-| C2DAO coordination | The C2DAO is the approval authority for MSS data products entering the MPE. No data crosses the boundary without C2DAO sign-off. |
-| G6/S6 coordination | G6/S6 manages the technical cross-domain solution (CDS). They must be involved in any discussion of MPE data transfer — they own the pipes. |
-
----
-
-### 10-3. NAFv4 Awareness for Builders
-
-NATO Architecture Framework version 4 (NAFv4) is the enterprise architecture standard for NATO and Allied systems. TM-30 builders are not expected to implement NAFv4 compliance — that is a C2DAO and G6 responsibility. But you must be aware of NAFv4 requirements during the design phase, because retroactively making a non-compliant data product NAFv4-compliant after it has been published to coalition partners is expensive and sometimes impossible.
-
-**NAFv4 design considerations for -30 builders:**
-
-1. **Use NATO-compatible terminology in Object Type names and properties where applicable.** The ADP to JP to NATO Crosswalk at `learn-data.armydev.com` provides the mapping between Army, Joint, and NATO data terms. If your data product might reach coalition partners, use the NATO-compatible term in your design.
-2. **Document data element definitions.** NAFv4 requires that all shared data elements be defined in a shared data dictionary. For any Object Type property that will be in a coalition-shared product, write a clear definition in the property description field — not just the field name.
-3. **Flag potential MPE-eligible products early.** If you suspect during design that a data product might eventually need to be shared with coalition partners — even if it is not the immediate requirement — flag this in your design document. It is far easier to design for MPE eligibility from the start than to retrofit it later.
-4. **Do not design around the boundary.** Some builders attempt to design workarounds that avoid the MPE governance process. This is a security violation. The boundary exists for a reason. Escalate; do not circumvent.
-
-> **NOTE:** For operational data products supporting Suwałki Gap defense planning, Baltic flank posture assessments, or exercises involving the Enhanced Forward Presence (eFP) battlegroups in Estonia, Latvia, Lithuania, or Poland — initiate C2DAO and G6 coordination at the design stage, before any implementation. These products have a high likelihood of requiring coalition data sharing and benefit from early governance engagement.
-
----
-
-### 10-4. When to Escalate
-
-Knowing when to escalate — and to whom — is a primary TM-30 competency for coalition data issues.
-
-**Escalation matrix for coalition data questions:**
-
-| Situation | Escalate To |
-|---|---|
-| Data product may be shared with coalition partners | C2DAO (architecture review) + G6/S6 (CDS/MPE technical) |
-| Unsure of releasability marking for a dataset | Data steward for the domain + G2 (for classification questions) |
-| NAFv4 or STANAG compliance question | C2DAO architecture authority |
-| Coalition partner requests access to an MSS data product | G6/S6 + C2DAO — do not grant access directly; route through governance |
-| A coalition partner's data needs to be ingested into MSS | G6/S6 (source connectivity) + C2DAO (domain assignment) + data steward (quality/governance) |
-| AIP Logic output may be shared with MPE | C2DAO + G6/S6 + chain of command (AIP authorization review) |
-| Existing data product is already on MPE and needs to be modified | C2DAO — modification of a cross-domain product requires re-review |
-
-> **WARNING: Do not independently initiate data sharing with coalition partners or MPE systems. Even if the data appears unclassified and the intent is benign, unauthorized cross-domain data transfer is a security incident. Route all coalition data sharing requests through G6/S6 and the C2DAO without exception.**
-
----
-
-### 10-5. NATO Exercises and Multi-National Data Environments
-
-During major exercises — DEFENDER, IRON WOLF, SABER STRIKE, STEADFAST DEFENDER — the MSS data environment expands significantly. Additional users from Allied and partner nation formations access shared data products. Exercise data volumes increase. New data feeds are often stood up with compressed timelines.
-
-**Advanced builder responsibilities during exercise support:**
-
-1. **Pre-exercise data product review.** Review all data products your team owns for exercise-period relevance. Update pipelines, schedules, and alert thresholds for exercise tempo before the exercise start date.
-2. **Coalition user access coordination.** If coalition partners will access your applications during the exercise, coordinate access provisioning through G6/S6 and C2DAO at least two weeks before the exercise. Access provisioning at the start of an exercise is a common failure point.
-3. **Exercise-specific pipelines.** If the exercise requires new pipelines or Object Types, build them well in advance. Post-exercise cleanup — archiving or decommissioning exercise-specific data products — must be planned before the exercise, not after.
-4. **Data segregation.** Exercise data and live operational data must not be commingled in shared Object Types without explicit design intent and data steward approval. If an exercise-specific Object Type is required, create it with an `EX-` prefix in the name to indicate exercise data.
-5. **After-action data preservation.** Exercise data products that have analytical or doctrinal value should be archived, not deleted. Coordinate with G2/G3/C2DAO on exercise data retention requirements before the exercise ends.
-
----
-
-## APPENDIX A — -30 TO -40 HANDOFF GUIDE: TECHNICAL REQUIREMENTS TEMPLATE
-
-This appendix provides the standard template for -30 advanced builders to communicate design requirements to -40 developers when technical implementation components are required. Complete every section. Incomplete requirements documents waste developer time and produce incorrect implementations.
-
----
-
-**TECHNICAL REQUIREMENTS DOCUMENT**
-
-**Date:** ___________
-
-**Requesting Builder (Name / Unit / Role):** ___________
-
-**Developer Assigned:** ___________
-
-**Priority:** URGENT / HIGH / ROUTINE
-
-**Required Completion Date:** ___________
-
----
-
-**SECTION 1: OPERATIONAL CONTEXT**
-
-What mission problem does this solve?
-
-___________
-
-Who are the users? What decisions do they make with this product?
-
-___________
-
-What does success look like? Describe the operational state when this requirement is met.
-
-___________
-
----
-
-**SECTION 2: DATA INPUTS**
-
-| Dataset | Path in Compass (RID if known) | Relevant Columns | Known Data Quality Issues |
-|---|---|---|---|
-| | | | |
-| | | | |
-
-Is this dataset already in MSS, or does it need to be ingested? If ingestion is required, describe the source.
-
-___________
-
----
-
-**SECTION 3: ONTOLOGY MODEL**
-
-List all existing Object Types involved. Confirm they exist in Ontology Manager before completing this section.
-
-| Object Type | Existing or New? | Properties Involved |
-|---|---|---|
-| | | |
-
-If new Object Types are needed, provide the full specification:
-
-| Property Name | Data Type | Source Field | Required? | Searchable? | Notes |
-|---|---|---|---|---|---|
-| | | | | | |
-
-List all Link Types needed (existing or new):
-
-| Link Type (Verb Phrase) | From Object Type | To Object Type | Cardinality | Foreign Key |
-|---|---|---|---|---|
-| | | | | |
-
----
-
-**SECTION 4: TECHNICAL COMPONENTS REQUIRED**
-
-Describe each component requiring -40 implementation. Be specific.
-
-| Component | Type (FOO / Transform / OSDK / Other) | Inputs | Expected Output | Logic Description |
-|---|---|---|---|---|
-| | | | | |
-
-If the component requires specific business logic (e.g., a deduplication rule or a calculation formula), describe the logic precisely. Do not write code — write the logic in plain language with examples.
-
-___________
-
----
-
-**SECTION 5: NON-FUNCTIONAL REQUIREMENTS**
-
-| Requirement | Value |
-|---|---|
-| Expected data volume (rows) | |
-| Required refresh rate | |
-| Maximum acceptable latency | |
-| Concurrent user estimate | |
-| Availability requirement (e.g., 0600-2200 CET) | |
-
----
-
-**SECTION 6: ACCEPTANCE CRITERIA**
-
-How will you verify the implementation is correct? List specific, measurable checks.
-
-1. ___________
-2. ___________
-3. ___________
-
-What are the edge cases that must be tested?
-
-1. ___________
-2. ___________
-
----
-
-**SECTION 7: TIMELINE, DEPENDENCIES, AND CONTACTS**
-
-Is this requirement dependent on any other work in progress?
-
-___________
-
-Who must be consulted before implementation begins? (Data steward, C2DAO, G6, etc.)
-
-___________
-
-Requesting builder contact (phone / SIPR):
-
-___________
-
-Approving team lead (signature):
-
-___________
-
----
-
-## APPENDIX B — APPLICATION DESIGN CHECKLIST
-
-Complete this checklist for every Workshop application before publishing to production. No application is published without a completed checklist on file.
-
-**Application Information:**
-- Application Name: ___________
-- Builder Name / Unit: ___________
-- Target User Group: ___________
-- Primary Object Type(s): ___________
-- Completion Date: ___________
-
----
-
-**DESIGN**
-- [ ] Page map completed and reviewed with end user before build began
-- [ ] User roles defined and documented
-- [ ] Required data (Object Types, Link Types) confirmed to exist in Ontology
-- [ ] No raw datasets used as application data sources (curated only)
-- [ ] Variable and parameter design documented before building
-
-**BUILD QUALITY**
-- [ ] All filter chains tested — including zero-result and all-results states
-- [ ] All conditional visibility logic tested for both visible and hidden states
-- [ ] Empty states configured for all widgets that display object data
-- [ ] Multi-page navigation tested for all page combinations
-- [ ] Cross-page parameter passing tested end-to-end
-- [ ] Conditional visibility used only for UX, not for access control
-
-**PERFORMANCE**
-- [ ] Application tested with production-representative data volume (not sample data)
-- [ ] Page load time under 5 seconds for primary page with production data
-- [ ] Table widgets configured with pagination for sets over 200 rows
-- [ ] No more than 7 linked widgets bound to a single Object Variable
-- [ ] Auto-refresh intervals justified and documented (if configured below 30 minutes)
-
-**GOVERNANCE**
-- [ ] All widgets sourcing data from Ontology objects (not raw datasets)
-- [ ] Application name follows USAREUR-AF naming conventions
-- [ ] All widgets have descriptive titles or labels
-- [ ] Access group configured — application is not world-readable unless required
-- [ ] UDRA domain alignment confirmed with data steward
-- [ ] Appendix C (UDRA Alignment Checklist) completed
-- [ ] If MPE/coalition-accessible: C2DAO coordination complete and documented
-
-**REVIEW**
-- [ ] Team lead reviewed the application before publication
-- [ ] End user(s) tested the application in staging before publication
-- [ ] Any Actions in the application tested with test objects (not production records)
-- [ ] Approval chains (if any) tested end-to-end with test accounts
-
----
-
-## APPENDIX C — UDRA ALIGNMENT CHECKLIST
-
-Complete this checklist for every new data product (dataset, Object Type, Workshop application, Pipeline) before publishing to production. UDRA v1.1 compliance is required for all MSS data products in the USAREUR-AF environment.
-
-**Data Product Information:**
-- Product Name: ___________
-- Product Type (Dataset / Object Type / Application / Pipeline): ___________
-- Builder Name / Unit: ___________
-- Completion Date: ___________
-
----
-
-**DOMAIN OWNERSHIP**
-- [ ] Data domain assigned (see Chapter 8, section 8-4 for domain list)
-- [ ] Domain assignment confirmed with USAREUR-AF C2DAO or designated domain steward
-- [ ] Domain data steward identified by name and contact
-- [ ] Product registered in the USAREUR-AF data product catalog (if applicable)
-
-**DATA PRODUCT THINKING**
-- [ ] Consumer(s) identified: who will use this product and what decisions do they make?
-- [ ] Product owner designated (the -30 builder or delegated owner responsible for ongoing quality)
-- [ ] Product description written — clear, jargon-free, accessible to a new user
-- [ ] SLA defined: refresh rate, acceptable downtime, minimum quality floor
-
-**LAYER VERIFICATION**
-- [ ] Layer assignment confirmed: which of the 5 layers does this product operate at?
-- [ ] No Workshop application reads from raw or staging datasets (curated only)
-- [ ] No Object Type backed by an unvalidated source dataset
-- [ ] Pipeline output passes all configured quality checks before downstream consumption
-
-**FEDERATED GOVERNANCE**
-- [ ] Data steward notified and approved publication
-- [ ] Modifications to shared Object Types coordinated with all dependent application owners
-- [ ] Access controls set per least-privilege principle — users have access to data they need, not broader access
-- [ ] Data retention and archival policy identified (how long will this product be maintained?)
-
-**DATA QUALITY (VAUTI)**
-- [ ] Visible: product is discoverable in Compass with an accurate description
-- [ ] Accessible: correct users have access; incorrect users do not
-- [ ] Understandable: all fields/properties have descriptions; units and formats are documented
-- [ ] Trustable: quality checks are configured; pipeline alerts are configured; lineage is complete
-- [ ] Interoperable: if coalition-shared — NAFv4 compliance review completed (C2DAO); STANAG applicability assessed
-
-**NATO/COALITION (if applicable)**
-- [ ] MPE eligibility assessed (not assumed)
-- [ ] Releasability markings correct and applied
-- [ ] C2DAO coordination complete for any MPE-accessible product
-- [ ] G6/S6 coordination complete for any cross-domain data transfer
-- [ ] NATO-compatible terminology used in Object Type names and property names where applicable
-- [ ] ADP to JP to NATO Crosswalk consulted for terminology alignment
-
----
-
-## GLOSSARY
-
-**Action.** An Ontology-configured workflow that allows MSS users to write data back to an Object Type. Actions have defined inputs (form fields), validation rules, effects (what changes), and optionally an approval chain. Configured in Ontology Manager.
-
-**AIP Logic.** MSS's framework for integrating AI capabilities into operational workflows. AIP Logic allows advanced builders to configure AI-assisted workflows — including prompt design and ontology data connections — through a visual UI without writing code.
-
-**Approval Chain.** A governance mechanism within an Action that requires designated reviewer(s) to approve a submission before the Action's effect is applied to the Ontology. Used for high-impact data changes that require command authority.
-
-**C2DAO (Command and Control Data Architecture Office).** USAREUR-AF's designated architecture authority for MSS and the enterprise data environment. The C2DAO sets data architecture standards, approves domain assignments, and serves as the cross-domain authorization authority for MPE-eligible data products.
-
-**Calculated Column.** A column derived from a formula expression applied to existing data fields. In Contour, calculated columns are analytical and do not modify the source dataset. In Pipeline Builder's Derived Column node, calculated columns become persistent in the output dataset.
-
-**Conditional Layout.** A Workshop application design pattern in which the visibility or content of a widget or container panel is controlled by an expression rather than being static. Enables role-based views and state-driven UI without building separate applications.
-
-**Contour.** MSS's data analysis workspace. Supports filtering, calculated columns, aggregations, pivot tables, cross-dataset joins, and chart visualizations. Analytical outputs in Contour are not persistent datasets unless explicitly promoted to Pipeline Builder.
-
-**Cross-Domain Solution (CDS).** The technical infrastructure that enables controlled data transfer between separate network domains (e.g., from the U.S. national network to the MPE). Owned and operated by G6/S6. All data crossing the CDS boundary requires C2DAO approval.
-
-**Data Domain.** A defined grouping of related data assets under the governance of a designated domain owner. In UDRA v1.1, all MSS data products must be assigned to a domain. Domain examples: Personnel and Readiness, Intelligence, Operations, Logistics.
-
-**Data Lineage.** The documented path of data from its source through every transformation, join, and enrichment step to its final output. Viewed in MSS as the lineage graph. Used for root cause analysis of data quality issues and for impact assessment before modifying shared resources.
-
-**Data Product.** In UDRA v1.1 terms, any MSS resource — dataset, Object Type, Workshop application, pipeline — that has a defined consumer, a documented purpose, a designated owner, and a stated quality SLA. All TM-30 outputs should be designed and managed as data products.
-
-**Data Steward.** The operational authority for a data domain. Responsible for the quality, accuracy, and governance of all data products within their domain. The data steward is the first point of contact for all domain-related governance questions.
-
-**DDOF (Doctrine-Driven Ontology Framework).** A design framework, documented at `learn-data.armydev.com`, for modeling Army operational concepts in the MSS Ontology using Army doctrinal definitions as the authoritative source for Object Type names and semantics.
-
-**Dependent Filter.** A Workshop filter widget whose available options are constrained by the selection in a prior filter. Dependent filters prevent users from selecting filter combinations that yield no results and reduce the options presented at each step.
-
-**eFP (Enhanced Forward Presence).** NATO's deterrence posture in the Baltic states and Poland, consisting of multinational battlegroups in Estonia, Latvia, Lithuania, and Poland. USAREUR-AF data products supporting eFP are among the highest-probability candidates for coalition data sharing.
-
-**Federated Governance.** The UDRA model in which data governance authority is distributed among domain stewards, with the C2DAO setting architecture standards but domain stewards owning content governance for their respective domains.
-
-**Link Type.** An Ontology configuration that defines a relationship between two Object Types. Named as a verb phrase from the perspective of the source object. Has defined cardinality (one-to-one, one-to-many, many-to-many).
-
-**Mission Partner Environment (MPE).** The network environment through which authorized coalition partners access shared U.S. data products. Separate from the U.S. national network. All data transfer to the MPE crosses a domain boundary requiring CDS and C2DAO authorization.
-
-**Multi-Step Action.** An Action configured with a sequential form that guides users through distinct phases of a workflow (e.g., identification, data entry, certification). Users cannot advance to the next step without completing required fields in the current step.
-
-**NAFv4 (NATO Architecture Framework version 4).** The enterprise architecture standard governing all systems and data products operating in the NATO/EUCOM coalition environment. Data products shared with coalition partners via the MPE must comply with NAFv4 standards.
-
-**Object Set Variable.** A Workshop variable type that holds a filtered collection of Ontology objects. Used to drive lists, tables, maps, and charts from a dynamically filtered view of an Object Type.
-
-**Object Type.** The fundamental Ontology construct in MSS. Represents an operational concept (e.g., `UnitStatus`, `ISRCollectionEvent`) and is backed by a curated dataset. Has properties, Links, and Actions.
-
-**Object Type Cookbook v2.** The authoritative reference for Object Type design patterns in the USAREUR-AF MSS environment, available at `learn-data.armydev.com`. Addendum A covers operational Object Types for Army warfighting functions.
-
-**Ontology.** The semantic layer of MSS (Layer 3 of the 5-Layer Data Stack). Translates dataset rows into operational concepts with named properties, relationships (Link Types), and configurable workflows (Actions).
-
-**Pipeline Builder.** MSS's visual (no-code) ETL tool. Allows builders to configure data ingestion, multi-source joins, column transformations, calculated columns, and scheduled execution through a drag-and-drop interface.
-
-**Pivot Table.** An aggregation view in Contour that cross-tabulates data across two or more categorical dimensions. Displays aggregate values (count, sum, average) at each dimension intersection.
-
-**Production Discipline.** The practice of developing all changes on named development branches, requiring review before merge, and never testing in the production environment. A foundational TM-30 professional standard.
-
-**Prompt Engineering.** The practice of writing effective input instructions for an AI model to produce useful and accurate outputs. For TM-30 builders configuring AIP Logic, prompt engineering involves specifying role, context, output format, constraints, and examples.
-
-**Quiver.** MSS's linked analysis and visualization environment. Supports multiple chart views linked by a common selection state, allowing interactive exploration across multiple analytical dimensions simultaneously. Embeddable in Workshop applications.
-
-**STANAG (Standardization Agreement).** NATO standards governing specific technical domains, including data exchange formats and protocols for coalition interoperability. Applicable STANAGs vary by data domain (e.g., STANAG 5516 for tactical data links).
-
-**UDRA v1.1 (Unified Data Reference Architecture, version 1.1, February 2025).** The Army's unified architecture standard for data products, requiring domain ownership, federated governance, data product thinking, layer verification, and VAUTI compliance.
-
-**URL Parameter.** A Workshop application parameter passed through the application URL. Enables deep-linking — sharing a URL that opens the application with a pre-applied filter or selected object. URL parameters are visible in the URL and should not contain sensitive data.
-
-**VAUTI.** The DoD data quality framework from the DoD Data Strategy (2020): Visible, Accessible, Understandable, Trustable, Interoperable. All MSS data products must meet all five criteria.
-
-**Workshop.** MSS's drag-and-drop application builder. The primary tool for creating operational dashboards, data entry forms, and action-enabled applications for end users. Applications are built on Ontology Object Types and support Actions for write-back.
-
----
+1-3. TM-40 covers code-level development (Python transforms, TypeScript Functions on Objects,
+OSDK). If your task requires writing code, reference TM-40. TM-30 stops at the UI boundary.
 
-*TM-30 — MAVEN SMART SYSTEM (MSS) ADVANCED BUILDER TECHNICAL MANUAL*
+> **NOTE:** All items above require a TM-40 developer. For TM-20 (no-code builder) capabilities, refer to TM-20, Chapter 1. TM-30 operates at the boundary between TM-20 no-code building and TM-40 code-based development. When in doubt whether a task is TM-20 or TM-30, refer to TM-20, Chapter 1-1 (Purpose and Scope) to assess scope before escalating.
 
-*HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA, Wiesbaden, Germany*
+1-4. Prerequisites. Before beginning TM-30 tasks, personnel must be qualified on:
+- TM-10 (Maven User): platform navigation, object search, consuming data products
+- TM-20 (Builder): basic Workshop, basic Pipeline Builder, basic Object Type configuration,
+  basic Contour and Quiver
+- ADRP 1, Data Literacy: data governance principles, Army data policy, command data authority
 
-*2026*
+Before beginning TM-30 design work, confirm you can independently perform — without manual reference — all TM-10 operator tasks (Chapters 2-7) and all TM-20 builder tasks including Workshop application building (TM-20, Chapter 5), Ontology configuration (TM-20, Chapter 4), pipeline management (TM-20, Chapter 3), and branching/governance (TM-20, Chapter 7). If you cannot confidently perform any of these tasks without reference, complete the relevant TM before advancing.
 
-*By order of the Commanding General, United States Army Europe and Africa.*
+## 1-2. What TM-30 Advances Beyond TM-20
 
-*Distribution: Approved for public release; distribution is unlimited.*
+| Capability Area | TM-20 Level | TM-30 Level |
+|-----------------|-------------|-------------|
+| Workshop | Single-page apps, basic widgets | Multi-page apps, conditional logic, variable passing |
+| Pipeline Builder | Single-source transforms, basic filters | Multi-source joins, aggregations, calculated columns |
+| Ontology | Configure existing Object Types | Design Object Types, Link Types, and Actions from scratch |
+| Contour | Basic charts and filters | Pivots, calculated columns, saved analysis views |
+| Quiver | Single-object analysis | Multi-object dashboards, linked views, custom object sets |
+| AIP Logic | Awareness | Configure and manage existing AI workflows |
+| Governance | Follow naming conventions | Enforce them, review peers, coordinate with Data Stewards |
+| Environment Mgmt | Aware of branching | Execute branching, review, and promotion workflows |
+
+> **NOTE:** Advanced builders design solutions that TM-10 operators and TM-20 builders will use. Before designing at TM-30 level, understand the operator workflows from TM-10, Chapter 1 (Introduction and Overview) and TM-10, Chapter 4 (Using Workshop Applications). Your design decisions directly affect operator productivity and data quality at the operational level.
+
+## 1-3. USAREUR-AF Operational Context
+
+1-5. USAREUR-AF is the Army Service Component Command (ASCC) to United States European Command
+(USEUCOM). Advanced builders operating in this theater support land operations across the European
+AOR and integration with NATO Allied command structures. The data products built at TM-30 level
+feed readiness reporting, logistics visibility, intelligence products, and operational dashboards
+used by commanders at brigade through theater level.
+
+1-6. Errors at TM-30 level have formation-wide impact. A broken Workshop application that
+misrepresents equipment readiness affects commanders' decisions. A poorly designed pipeline join
+that duplicates records inflates SITREP counts. A misconfigured Action that overwrites data without
+validation corrupts the operational picture. Build with the same discipline you apply to any
+operational task.
+
+1-7. Governance Authority. All MSS data products built within USAREUR-AF are governed by the
+Command and Control Data Authoritative Organization (C2DAO). Advanced builders are accountable
+to C2DAO for:
+- Naming convention compliance (datasets, Object Types, pipelines, applications)
+- Access control configuration — who can view, edit, and interact with your products
+- Data quality standards and issue reporting
+- Production promotion approval workflows
+
+## 1-4. Governing Policy References
+
+1-8. The following policy documents govern advanced builder work. Builders must be familiar with
+the relevant sections.
+
+| Document | Authority | Key Provisions for Builders |
+|----------|-----------|------------------------------|
+| Army CIO Memorandum (April 2024) | Army CIO/G-6 | Data governance, data product ownership, access controls |
+| UDRA v1.1 (February 2025) | Army Enterprise | Unified Data Reference Architecture — domain alignment |
+| USAREUR-AF C2DAO Standards | USAREUR-AF G6 | Naming conventions, promotion gates, stewardship roles |
+| CDA Portal (learn-data.armydev.com) | Army CDA | Training resources, design patterns, reference implementations |
+
+1-9. CDA Portal. The Common Data Architecture (CDA) Portal at learn-data.armydev.com is the
+authoritative training and reference resource for Army data platform work. Advanced builders
+should consult the following CDA resources:
+- Object Type Cookbook v2 + Addendum A — authoritative Object Type design guidance
+- DDOF Playbook — Doctrine-Driven Ontology Framework design patterns
+- Doctrine-Driven Development framework — aligning ontology models to Army operational doctrine
+- ADP to JP to NATO Crosswalk — mapping Army, Joint, and NATO data constructs
+
+---
+
+# CHAPTER 2 — ADVANCED WORKSHOP APPLICATIONS
+
+**BLUF:** Advanced Workshop builders design multi-page applications with dynamic behavior —
+conditional visibility, variable-driven filtering, inter-page navigation, and complex layouts —
+that serve as the operational data interface for commanders and staff.
+
+## 2-1. Overview of Advanced Workshop Capability
+
+2-1. Workshop applications built at TM-30 level go beyond single-page dashboards. They serve as
+the primary operational interface for staff sections — a G2 intelligence dashboard with linked
+pages for threat assessment, unit tracking, and historical trends; an S4 readiness tracker that
+lets commanders drill from fleet overview to individual equipment status; a G9 civil-military
+operations board that filters by AOR, time period, and activity type simultaneously.
+
+2-2. Advanced Workshop requires mastery of three interconnected concepts: variables, conditional
+logic, and multi-page navigation. These three elements, combined, allow you to build applications
+that behave like purpose-built operational software — without writing a line of code.
+
+## 2-2. Variables and State Management
+
+**CONDITIONS:** Access to a Workshop application in edit mode; TM-20 qualification.
+
+**STANDARDS:** Builder configures application variables correctly, demonstrates variable passing
+between widgets and pages, and verifies dynamic behavior through test interactions before
+publishing.
+
+**EQUIPMENT:** MSS platform access; Workshop edit permissions on the target application.
+
+### 2-2a. Understanding Application Variables
+
+2-3. Variables in Workshop are named containers that store a value the user selects or that the
+application computes. Widgets read variables to filter their display; user interactions write to
+variables. This read/write loop is what makes Workshop applications dynamic.
+
+2-4. Variable types available in Workshop:
+
+| Variable Type | Use Case | Example |
+|---------------|----------|---------|
+| String | Text filter, selected category | Selected unit name, status code |
+| Number | Numeric threshold, count | Days since last inspection |
+| Boolean | Toggle, show/hide flag | Show classified records (true/false) |
+| Date/DateTime | Time window selection | Report date, inspection DTG |
+| Object | Selected ontology object | Selected vehicle record |
+| Object Set | Filtered set of objects | All vehicles in a brigade with status RED |
+
+2-5. **PROCEDURE — Create an Application Variable:**
+1. Open the application in Workshop edit mode.
+2. Navigate to the Variables panel (left sidebar or top menu depending on Workshop version).
+3. Select **Add Variable**.
+4. Name the variable using the C2DAO naming convention: [domain]_[descriptor]_[type] —
+   for example equip_selected_unit_string or ops_date_filter_date.
+5. Set the variable type from the dropdown.
+6. Set a default value appropriate to the expected initial state of the application.
+7. Save the variable. It is now available to all widgets on all pages of the application.
+
+**NOTE:** Variable names must be unique within the application and should be descriptive enough
+that another builder can understand the variable's purpose without opening a widget that uses it.
+
+### 2-2b. Connecting Widgets to Variables
+
+2-6. Every interactive widget in Workshop — dropdowns, date pickers, search boxes, object pickers
+— can be configured to write its selected value to a variable. Every display widget — tables,
+charts, object sets, maps — can be configured to read a variable and apply it as a filter.
+
+2-7. **PROCEDURE — Connect a Dropdown to a Variable (Write):**
+1. Select the dropdown widget in edit mode.
+2. Open widget **Configuration**.
+3. Under **On Selection**, set **Write to Variable** and select the target variable.
+4. Define the source of dropdown options: static list, property of an Object Type, or a dataset
+   column.
+5. Verify that the selected value matches the variable type (string to string, etc.).
+6. Save.
+
+2-8. **PROCEDURE — Connect a Table to a Variable (Read/Filter):**
+1. Select the table widget in edit mode.
+2. Open widget **Configuration**.
+3. Under **Filters**, add a new filter condition.
+4. Set the filter property (e.g., unit_name), set the operator (equals), and set the value
+   source to **Variable**, then select the target variable.
+5. Optionally configure behavior when the variable is empty: show all records, show no records,
+   or show a default filtered set.
+6. Save and test by interacting with the dropdown in preview mode.
+
+**CAUTION:** Configuring a table to show all records when the filter variable is empty can return
+extremely large datasets on production Object Types. Set a default value for variables used as
+table filters, or configure the table to show no records until a selection is made.
+
+### 2-2c. Variable Chaining
+
+2-9. Variable chaining creates cascading filter behavior — the selection in one widget writes a
+variable that filters the options available in a second widget. This is the pattern for
+hierarchical navigation (theater to division to brigade to battalion to unit).
+
+2-10. **PROCEDURE — Configure Cascading Dropdowns:**
+1. Create two variables: ops_selected_division_string and ops_selected_brigade_string.
+2. Configure the first dropdown (Division) to write to ops_selected_division_string.
+3. Configure the second dropdown (Brigade) to:
+   a. Source its options from the Brigade Object Type.
+   b. Apply a pre-filter on the options list using ops_selected_division_string (filter to
+      brigades where parent_division equals the variable).
+   c. Write the user's brigade selection to ops_selected_brigade_string.
+4. Configure downstream tables and charts to filter on ops_selected_brigade_string.
+5. Test the complete chain: select a division, verify brigade dropdown updates, select a brigade,
+   verify tables filter correctly.
+
+**NOTE:** Always consider what should happen when a parent variable changes. If a user selects
+a new division, the brigade variable retains its previous value until the user makes a new
+brigade selection. If the previous brigade does not belong to the new division, downstream
+widgets will show no results. Add a reset mechanism (a button that clears child variables) or
+configure the brigade dropdown to auto-clear when the division variable changes.
+
+## 2-3. Conditional Logic and Visibility
+
+**CONDITIONS:** Existing multi-widget Workshop application; TM-20 qualification.
+
+**STANDARDS:** Builder correctly applies conditional visibility rules so that widgets and panels
+display or hide based on application state, without any visible layout breaks in the published
+application.
+
+> **NOTE:** Conditional layouts determine which panels or pages operators (TM-10) see based on their role or selected data state. Test your conditional layout logic against the operator workflows in TM-10, Chapter 4. Do not hide information from operators without a security or role-based justification. Refer to TM-10, Task 4-4 (Navigate Between Modules/Pages) and Task 4-3 (Apply Filters to a Dashboard) to validate layout behavior from the operator's perspective.
+
+### 2-3a. Conditional Widget Visibility
+
+2-11. Conditional visibility controls whether a widget is shown or hidden based on the value of
+a variable. This allows one application to present different interfaces to different users, or to
+reveal detail panels only after a user makes a selection.
+
+2-12. **PROCEDURE — Configure Conditional Visibility:**
+1. Select the widget or panel to be conditionally shown/hidden.
+2. Open widget **Configuration** then **Visibility**.
+3. Select **Conditional**.
+4. Define the condition: Variable, Operator, Value. Example: show this panel only when
+   ops_selected_unit_string is not empty.
+5. Use compound conditions (AND/OR) for more complex logic. Example: show only when
+   ops_selected_unit_string is not empty AND ops_view_mode_string equals detail.
+6. Save and test in preview mode.
+
+2-13. Common conditional visibility patterns for operational applications:
+
+| Pattern | Implementation |
+|---------|----------------|
+| Detail panel on selection | Show detail widget when selected-object variable is not empty |
+| Role-based view | Show admin controls when user-role variable equals steward |
+| Empty state message | Show "Select a unit to view status" when filter variable is empty |
+| Progressive disclosure | Show advanced filters when show_advanced_boolean is true |
+| Alert banner | Show warning panel when data_staleness_hours variable exceeds threshold |
+
+### 2-3b. Conditional Widget Content
+
+2-14. Beyond visibility, certain widgets support conditional content — displaying different values,
+colors, or icons based on data conditions. This is distinct from visibility rules and operates
+within the widget itself.
+
+2-15. Conditional formatting in tables: Most table widgets support row-level conditional
+formatting. Configure a column to display a colored indicator (red/amber/green) based on a
+status field value. This is configured within the column properties, not the variable system.
+
+**PROCEDURE — Configure Traffic Light Status in a Table Column:**
+1. Select the table widget.
+2. Open **Column Configuration** for the status column.
+3. Enable **Conditional Formatting**.
+4. Add rules:
+   - Value equals NON-MISSION CAPABLE — Red background or red icon
+   - Value equals PARTIALLY MISSION CAPABLE — Amber background or amber icon
+   - Value equals FULLY MISSION CAPABLE — Green background or green icon
+5. Set a fallback format for unexpected values (gray or default).
+6. Save and preview.
+
+**NOTE:** Use the Army standard readiness categories (FMC, PMC, NMC) consistently. Do not
+invent status labels — align to the authoritative data source definitions.
+
+## 2-4. Multi-Page Application Architecture
+
+**CONDITIONS:** Workshop application with more than one logical section or audience; edit
+permissions.
+
+**STANDARDS:** Builder creates a logical page structure with clear navigation, passes variables
+across pages correctly, and verifies that the published application loads each page without
+error.
+
+### 2-4a. Page Design Principles
+
+> **NOTE:** Decision framework — single-page vs. multi-page: If your application serves a single user role or a single operational workflow, design single-page (TM-20 scope — refer to TM-20, Chapter 5-3, Workshop Interface Overview). If your application serves multiple user roles simultaneously (e.g., G3 operations, G4 logistics, G6 data), or integrates multiple workflows into a unified interface, design multi-page (TM-30 scope). Multi-page application navigation is what operators experience via TM-10, Task 4-4 (Navigate Between Modules/Pages). Test your navigation design against that task.
+
+2-16. Before building a multi-page Workshop application, design the page structure on paper or
+a whiteboard. Define:
+- What is the primary question each page answers?
+- Who uses each page and what action do they take on it?
+- What data flows from one page to the next (what variables carry across)?
+- What is the navigation pattern (menu, breadcrumb, button-driven drill-down)?
+
+2-17. Standard page patterns for USAREUR-AF operational applications:
+
+| Page Type | Purpose | Common Widgets |
+|-----------|---------|----------------|
+| Overview | Command summary, fleet or force status at a glance | Metric tiles, status chart, map |
+| Drill-Down | Detail for a selected unit, asset, or event | Object detail panel, linked table |
+| Filter/Search | User-driven exploration of a large dataset | Search bar, multi-filter panel, results table |
+| Admin | Data entry, action execution, record updates | Forms, Action buttons, validation messages |
+| Governance | Data quality flags, issue reports, stewardship views | Issue queue table, action buttons |
+
+### 2-4b. Page Navigation Configuration
+
+2-18. **PROCEDURE — Create Multi-Page Navigation:**
+1. In the application editor, open **Page Manager** (accessible from top navigation or sidebar).
+2. Add pages using **Add Page** — name each page clearly using the pattern
+   [Number]_[PageName] (e.g., 01_Overview, 02_UnitDetail, 03_Readiness).
+3. Set the landing page (the page users see on first load).
+4. Add a **Navigation** widget or a **Button** widget to each page that links to other pages.
+5. For sidebar navigation: configure the navigation widget with the list of page names and
+   their target pages.
+6. For button-driven drill-down: configure each button's **On Click** action to navigate to
+   the target page.
+7. Test navigation in preview mode: verify all page links resolve, no broken navigation exists.
+
+### 2-4c. Passing Variables Across Pages
+
+2-19. Variables defined at the application level are available on all pages. When a user selects
+a unit on the Overview page and navigates to the UnitDetail page, the selection variable retains
+its value — the UnitDetail page reads the same variable to display detail for the selected unit.
+
+2-20. **PROCEDURE — Implement Selection-Driven Navigation:**
+1. On the Overview page, add an Object Set or Table widget that displays units.
+2. Configure the widget's **On Row Click** or **On Object Select** to write the selected object
+   to a variable (e.g., ops_selected_unit_object).
+3. Add a button or auto-navigate action that transitions to the UnitDetail page on selection.
+4. On the UnitDetail page, configure all widgets to filter or resolve using the
+   ops_selected_unit_object variable.
+5. Add a **Back** button that navigates to the Overview page.
+6. Test the complete flow end-to-end.
+
+**NOTE:** When navigating back to the Overview page, the selection variable retains the previous
+value unless you explicitly clear it. This is usually desirable — users can see their previous
+selection highlighted. If you need a clean state, add a button action that clears the variable
+before navigating back.
+
+## 2-5. Complex Widget Configuration
+
+### 2-5a. Tables with Computed Columns
+
+2-21. Workshop table widgets support computed columns — values derived from other columns in the
+same row using no-code formula expressions. This removes the need to pre-compute values in the
+pipeline and allows builders to surface derived metrics directly in the application.
+
+2-22. **PROCEDURE — Add a Computed Column to a Table:**
+1. Open the table widget configuration.
+2. Under **Columns**, select **Add Computed Column**.
+3. Name the column clearly: days_since_inspection, readiness_pct, shortfall_count.
+4. Build the formula using the formula editor. Common operations available:
+   - Arithmetic: property_a + property_b, or property_a / property_b * 100
+   - Date math: today() - last_inspection_date (returns days as integer)
+   - Conditional: if(status == "NMC", 0, 1)
+   - String: concat(unit_name, " - ", equipment_type)
+5. Set the column data type (number, string, date) to match the formula output.
+6. Apply conditional formatting to the computed column if useful (e.g., red when days > 30).
+7. Save and verify values are correct against known records.
+
+**CAUTION:** Computed columns in Workshop tables are calculated at display time for the current
+page of results. They do not create a permanent dataset. If you need the computed value
+available in pipelines, Actions, or other applications, compute it in Pipeline Builder instead
+and store the result in a dataset.
+
+### 2-5b. Nested Filters and Dynamic Object Sets
+
+2-23. An Object Set widget displays a collection of ontology objects. At TM-30 level, builders
+configure Object Sets with compound filter logic — multiple conditions combined with AND/OR
+logic, including variable-driven conditions.
+
+2-24. **PROCEDURE — Configure a Multi-Condition Dynamic Object Set:**
+1. Add or select an Object Set widget.
+2. Open **Filter Configuration**.
+3. Add the first filter condition: property, operator, value (or variable).
+4. Select **Add Condition** and choose AND or OR.
+5. Add the second condition. Repeat for additional conditions.
+6. To use a variable as a filter value: set the value source to **Variable** and select the
+   target variable.
+7. Configure the **Empty Variable Behavior**: show all, show none, or show a default set.
+8. Set the **Sort Order** to control display priority (e.g., sort by readiness_status
+   ascending so NMC records appear first).
+9. Configure visible properties to show only columns relevant to the current page.
+10. Save and test.
+
+### 2-5c. Map Widgets — Advanced Configuration
+
+2-25. Workshop map widgets at TM-30 level support layered display, pop-up detail configuration,
+and variable-driven filtering. Operational maps in USAREUR-AF applications commonly display unit
+locations, equipment distribution, and event markers.
+
+2-26. Advanced map configuration tasks:
+- **Layer management:** Add multiple object sets as separate map layers, each with distinct
+  marker styles (icon, color, size) based on object type or property value.
+- **Pop-up configuration:** Define what properties appear when a user clicks a map marker —
+  include the most operationally relevant fields (unit, status, last update DTG).
+- **Variable integration:** Connect map selections to application variables so that clicking
+  a map marker selects the object and drives detail panels on the same page.
+- **Basemap selection:** Choose the appropriate basemap for the operational context. Avoid
+  consumer map services for sensitive operational overlays.
+
+**NOTE:** Map widgets require that Object Types have geometry or coordinate properties
+configured in the Ontology. If the Object Type lacks location data, the map widget will not
+display objects. Coordinate with the Data Steward to verify location property availability
+before designing a map-dependent application.
+
+---
+
+# CHAPTER 3 — ADVANCED PIPELINE BUILDER
+
+**BLUF:** Advanced Pipeline Builder work at TM-30 level involves joining multiple source datasets,
+applying complex transformations and aggregations, and producing analysis-ready outputs — all
+through the visual pipeline interface without writing code.
+
+## 3-1. Pipeline Builder Review and TM-30 Scope
+
+> **NOTE:** TM-20, Chapter 3 covered single-source ingestion pipelines with basic transformations. TM-30 advances to multi-source joins, complex business logic transforms, error handling that prevents silent failures, and monitoring strategy. Before designing a TM-30 pipeline, confirm the requirement genuinely exceeds TM-20 pipeline capabilities (TM-20, Chapter 3-1). If the requirement can be met with a single-source pipeline and basic transforms, build it at TM-20 level and do not escalate unnecessarily.
+
+3-1. TM-20 covered single-source Pipeline Builder work: reading a dataset, applying column
+selection, basic filters, and renaming. TM-30 advances to multi-source operations — joins,
+unions, aggregations, and derived columns using Pipeline Builder's visual transform library.
+
+3-2. Pipeline Builder represents each transformation as a visual node connected by data flow
+edges. At TM-30 level, pipelines will include multiple input branches that merge, transform,
+and flow into one or more outputs. Readability of the pipeline graph is itself a quality
+standard — other builders must be able to read your pipeline diagram and understand what it does.
+
+## 3-2. Multi-Source Joins
+
+**CONDITIONS:** Two or more source datasets with a common key field; Pipeline Builder access;
+verified knowledge of source dataset schemas.
+
+**STANDARDS:** Builder completes a join correctly, verifies row counts before and after to confirm
+join logic, identifies and handles NULL values from unmatched rows, and documents the join key
+in the pipeline node description.
+
+### 3-2a. Join Types and When to Use Them
+
+3-3. Pipeline Builder supports the standard join operations. Selecting the wrong join type is
+the most common advanced pipeline error.
+
+| Join Type | Returns | Use When |
+|-----------|---------|----------|
+| Inner Join | Only rows that match in both datasets | You only want records that exist in both sources |
+| Left Join | All rows from left dataset; NULLs where no right match | You want all records from the primary dataset, with optional enrichment from secondary |
+| Right Join | All rows from right dataset; NULLs where no left match | Same as left, with datasets reversed |
+| Full Outer Join | All rows from both datasets; NULLs on both sides where no match | You need a complete picture including unmatched records on either side |
+
+3-4. **USAREUR-AF Example:** Joining a vehicle fleet dataset (left) to a maintenance record
+dataset (right). Use a Left Join — you want every vehicle, whether or not it has a maintenance
+record. Vehicles with no maintenance record will show NULL in maintenance fields. An Inner Join
+would silently drop vehicles with no maintenance history, underreporting fleet size.
+
+### 3-2b. Performing a Join in Pipeline Builder
+
+3-5. **PROCEDURE — Configure a Two-Source Join:**
+1. Open Pipeline Builder and create or open a pipeline.
+2. Add two **Dataset** input nodes — one for each source. Label each node clearly
+   (right-click then rename): src_vehicle_fleet, src_maintenance_records.
+3. Add a **Join** transform node from the transform library.
+4. Connect the left dataset edge to the Join node's left input port.
+5. Connect the right dataset edge to the Join node's right input port.
+6. Open the Join node configuration.
+7. Select the join type (Inner, Left, Right, or Full Outer).
+8. Define the join key: select the matching column from the left dataset and the matching
+   column from the right dataset. These must be the same data type (string-to-string,
+   integer-to-integer).
+9. If joining on multiple keys (composite key), add additional key pairs using **Add Key Pair**.
+10. Review the output schema preview — verify expected columns are present.
+11. Add a **Row Count** check (using a branch to a Count node) to verify the output row count
+    is within expected range before proceeding.
+
+**CAUTION:** Joining on a column that contains NULL values in either dataset will cause those
+rows to not match. If the join key may contain NULLs, add a **Filter** node upstream to remove
+or handle NULL keys before the join.
+
+**NOTE:** After a join, column names from both datasets are merged into one schema. If both
+datasets have a column with the same name (other than the join key), Pipeline Builder will
+prefix them. Rename these columns immediately after the join using a **Rename Columns** node
+for readability.
+
+### 3-2c. Multi-Source Union
+
+3-6. A Union combines rows from two datasets with the same schema into a single dataset. Use
+Union when you have the same type of data from multiple sources (e.g., SITREP records from
+multiple subordinate units) and need to combine them into one analysis-ready dataset.
+
+3-7. **PROCEDURE — Configure a Union:**
+1. Add two or more **Dataset** input nodes with compatible schemas.
+2. Add a **Union** transform node.
+3. Connect all input datasets to the Union node.
+4. Open Union configuration and verify column mapping — Pipeline Builder will attempt to
+   auto-map columns by name. Review the mapping and correct any mismatches.
+5. Enable **Deduplicate** if the same record may appear in multiple sources.
+6. Preview output and verify row count equals the expected sum of input rows
+   (minus duplicates if deduplication is enabled).
+
+## 3-3. Aggregations and Summarization
+
+**CONDITIONS:** Source dataset with repeating rows that need to be summarized; clear definition
+of the grouping key and the aggregation metrics required.
+
+**STANDARDS:** Builder configures aggregation grouping and metrics correctly, verifies output
+row count is less than input (confirming rollup occurred), and names output columns
+descriptively.
+
+### 3-3a. Group By Aggregation
+
+3-8. Aggregation in Pipeline Builder uses a **Group By** transform node. It collapses multiple
+rows into a single summary row per unique combination of grouping keys.
+
+3-9. **PROCEDURE — Configure a Group By Aggregation:**
+1. Add a **Group By** transform node downstream of your data source or join.
+2. Open Group By configuration.
+3. Under **Group By Keys**, add the columns that define each unique group. Example:
+   unit_name and equipment_type — one output row per unique combination.
+4. Under **Aggregations**, add the metrics:
+   - COUNT(*) — total records in the group
+   - SUM(column) — total value
+   - AVG(column) — mean value
+   - MAX(column) / MIN(column) — range
+   - COUNT_DISTINCT(column) — unique value count
+5. Name each aggregated output column clearly: total_vehicles, avg_readiness_pct,
+   max_days_overdue.
+6. Preview output and verify the number of rows equals the expected number of unique groups.
+
+3-10. **USAREUR-AF Example — Readiness Rollup by Unit:**
+Group By keys: battalion_name, equipment_category
+Aggregations: COUNT(*) to vehicle_count, SUM(is_fmc) to fmc_count,
+AVG(readiness_pct) to avg_readiness_pct
+Output: one row per battalion per equipment category showing fleet count and average readiness.
+
+### 3-3b. Calculated Columns (Derived Fields)
+
+3-11. After aggregation, add a **Calculated Column** transform node to derive additional metrics
+from aggregated values. This is where you compute ratios, percentages, and composite scores
+that are not directly stored in source data.
+
+3-12. **PROCEDURE — Add a Calculated Column:**
+1. Add a **Calculated Column** node downstream of the Group By node.
+2. Open configuration and select **Add Column**.
+3. Name the new column: readiness_rate_pct.
+4. Build the formula using the no-code formula editor:
+   - Arithmetic: fmc_count / vehicle_count * 100
+   - Conditional: if(readiness_rate_pct >= 90, "GREEN", if(readiness_rate_pct >= 70, "AMBER", "RED"))
+   - Date math: date_diff(today(), last_inspection_date, "days")
+5. Set the output data type.
+6. Preview and verify values against known records.
+
+**NOTE:** Calculated columns in Pipeline Builder produce a permanent column in the output
+dataset — unlike Workshop computed columns, which are display-only. Use Pipeline Builder
+calculated columns when the value will be used in the Ontology, in Actions, or in other
+downstream pipelines.
+
+## 3-4. Advanced Transformation Patterns
+
+### 3-4a. Pivot and Unpivot
+
+3-13. Pivot transforms rotate a dataset from long format (one row per category per unit) to wide
+format (one row per unit, one column per category). Use Pivot when downstream consumers need
+side-by-side comparison across categories.
+
+3-14. **PROCEDURE — Configure a Pivot Transform:**
+1. Add a **Pivot** transform node.
+2. Set the **Row Key**: the column that identifies each unique row in the output (unit_name).
+3. Set the **Pivot Column**: the column whose unique values become new column headers
+   (equipment_type).
+4. Set the **Value Column**: the column whose values fill the pivoted cells (vehicle_count).
+5. Set the **Aggregation**: if multiple rows exist per row key plus pivot column combination,
+   how to aggregate them (SUM, AVG, MAX, etc.).
+6. Preview output — verify columns match the expected pivot structure.
+
+**CAUTION:** Pivot creates one output column for each unique value in the Pivot Column. If
+the Pivot Column has high cardinality (hundreds of unique values), the output will have hundreds
+of columns, which degrades performance and readability. Limit pivot operations to low-cardinality
+categorical fields (fewer than 20 unique values).
+
+### 3-4b. Handling Null Values
+
+3-15. Production data contains NULL values. Pipelines that do not explicitly handle NULLs
+produce outputs with missing data that downstream applications and the Ontology cannot reliably
+use. Apply null handling immediately after source input nodes.
+
+3-16. NULL handling patterns:
+
+| Situation | Transform | Configuration |
+|-----------|-----------|---------------|
+| Drop rows with NULL in a required field | Filter | column IS NOT NULL |
+| Replace NULL with a default value | Calculated Column or Coalesce | coalesce(column, "UNKNOWN") |
+| Flag records with NULLs for review | Calculated Column | if(column IS NULL, true, false) into a has_missing_data boolean |
+| Count NULLs for data quality reporting | Aggregation | COUNT on a flag column |
+
+### 3-4c. Dataset Partitioning Awareness
+
+3-17. Advanced builders do not configure partitioning in the UI — that is a TM-40 code-level
+task — but they must understand how partitioning affects their pipelines and must design with
+it in mind.
+
+3-18. A partitioned dataset stores data in segments organized by a partition key (typically a
+date column). Pipeline Builder reads only the partitions that satisfy your filter conditions —
+this is called partition pruning. A pipeline that filters on the partition key reads far less
+data than one that scans the full dataset.
+
+3-19. Design guidance for partition-aware pipelines:
+- Always apply date filters on partition keys as early as possible in the pipeline (immediately
+  after the source node, before any joins).
+- Ask the Data Steward or dataset owner whether a source dataset is partitioned and on what key.
+- Do not build joins that scan full unpartitioned history when only recent data is needed —
+  add an upstream date filter.
+- If your pipeline is slow or consumes excessive resources, the most common cause is a missing
+  or late-applied partition filter.
+
+## 3-5. Pipeline Naming and Documentation Standards
+
+> **NOTE:** When a TM-30 pipeline fails, the downstream impact is broad. Operators (TM-10, Task 5-1, View and Read a Dataset) see stale or missing data. Workshop applications fed by the pipeline display errors. Complex data products may serve dozens of operators or downstream pipelines. Refer to TM-10, Chapter 8-1 (Common Problems and Solutions) to understand the operator experience of a pipeline failure, then design your monitoring and alerting to detect failures before operators report them.
+
+3-20. Every pipeline produced at TM-30 level must conform to C2DAO naming and documentation
+standards. A pipeline that cannot be identified, understood, or maintained by another builder
+is a governance deficiency.
+
+3-21. **Pipeline naming convention:**
+[domain]_[source-description]_[output-description]_[version]
+Example: log_vehicle-fleet-maintenance-join_readiness-rollup_v1
+
+3-22. **Required pipeline documentation:**
+- **Pipeline Description:** What does this pipeline produce? What question does it answer?
+- **Source Datasets:** List all input datasets with dataset names and owners.
+- **Output Dataset:** Name, intended consumer (Workshop app, Ontology Object Type, Contour view).
+- **Join Keys:** Document all join keys and join types with rationale.
+- **Refresh Cadence:** How often should this pipeline run? On schedule or on-demand?
+- **Data Steward:** Who is responsible for this pipeline?
+
+3-23. Add this documentation in the Pipeline Builder description field and maintain it in the
+C2DAO pipeline registry if one is maintained for your domain.
+
+---
+
+# CHAPTER 4 — ONTOLOGY DESIGN THROUGH THE UI
+
+**BLUF:** Advanced builders design Object Types, Link Types, and Actions through the Ontology
+Manager UI — making deliberate design decisions that affect all downstream applications,
+analytics, and workflows that consume the Ontology. Good design prevents downstream pain;
+poor design forces expensive rework.
+
+## 4-1. Ontology as Operational Data Model
+
+4-1. The Ontology is the shared data model of the platform. It defines what things exist in your
+operational environment (Object Types), how they relate to each other (Link Types), and what
+users can do to them (Actions). Every Workshop application, Quiver analysis, Contour chart,
+and AIP Logic workflow that touches operational data does so through the Ontology.
+
+4-2. Ontology design decisions are not easily reversed. Changing a property name, deleting a
+Link Type, or restructuring an Object Type after other teams have built applications against it
+causes those applications to break. Design carefully. Review with Data Stewards before publishing.
+
+4-3. TM-30 scope: This chapter covers designing Object Types, Link Types, and Actions through
+the Ontology Manager graphical interface. Writing TypeScript Functions on Objects (FOO) or
+code-level ontology configuration is TM-40 scope.
+
+> **NOTE:** TM-20 Ontology configuration (TM-20, Chapter 4) is limited to: (1) simple Object Types with straightforward properties; (2) one-to-one and one-to-many Link Types without junction complexity; (3) single-step Actions with direct form-to-field mapping. If a design requires multi-step Actions, conditional routing, derived properties with complex logic, or many-to-many Link Types beyond a simple junction, it is TM-30 scope. When assessing complexity, use TM-20, Chapter 4-2 (Ontology Manager Interface Overview) as the boundary reference.
+
+## 4-2. Object Type Design
+
+**CONDITIONS:** Identified operational entity to model; understanding of source data schema;
+coordination with Data Steward on naming and property standards.
+
+**STANDARDS:** Builder creates an Object Type with a correctly defined primary key, well-named
+properties with correct data types, appropriate visibility settings, and documentation in the
+description field. Object Type passes Data Steward review before publication to production.
+
+### 4-2a. Object Type Design Principles
+
+4-4. An Object Type represents a real operational entity — a vehicle, a unit, a maintenance
+event, a personnel record, a facility, an equipment line item. Before creating an Object Type,
+answer these questions:
+
+1. **What is the primary key?** Every object instance must be uniquely identifiable. What field
+   guarantees uniqueness? (UIC for units, NSN plus serial for equipment, DODAAC plus document
+   number for transactions.)
+2. **What properties describe this entity?** List the fields that will be stored on each object
+   instance. Resist the urge to include everything — include what is operationally meaningful
+   and what downstream consumers will actually use.
+3. **What does this entity link to?** What other Object Types does it relate to? (A vehicle
+   links to its unit; a maintenance event links to the vehicle it services.)
+4. **Who owns this data?** Who is the Data Steward? Who authorizes changes?
+5. **What is the source dataset?** What Pipeline Builder output backs this Object Type?
+
+### 4-2b. Creating an Object Type
+
+4-5. **PROCEDURE — Create an Object Type in Ontology Manager:**
+1. Navigate to Ontology Manager in the platform.
+2. Select **Create Object Type**.
+3. Set the Object Type **Name**: use PascalCase, singular noun.
+   C2DAO convention: [Domain][EntityName] — example: LogVehicle, OpsUnit, MedFacility.
+4. Set the **API Name** (auto-generated from name — verify it follows convention).
+5. Set the **Description**: one to three sentences describing the entity, its source, and its
+   operational purpose.
+6. Set the **Primary Key Property**: select the property that uniquely identifies each object.
+   This is typically the UIC, serial number, equipment ID, or document number.
+7. Add **Properties** for each attribute:
+   - Name: camelCase, descriptive (unitName, equipmentStatus, lastInspectionDate)
+   - Data type: String, Integer, Double, Boolean, Timestamp, Date — match the source data type
+   - Mark required properties as required
+   - Add a description to each property that is not self-evident
+8. Set **Visibility**: who can see this Object Type? Apply the least-permissive setting that
+   meets operational requirements.
+9. Review configuration. Request Data Steward review before publishing.
+
+**NOTE:** Do not create an Object Type for every dataset you have. Object Types are for entities
+that need to be tracked, searched, acted upon, or related to other entities over time. Reference
+data and lookup tables that are only consumed within pipelines do not need Object Types.
+
+### 4-2c. Property Design Standards
+
+> **NOTE:** When designing properties for an Object Type, consider how operators (TM-10) will understand and use them. Refer to TM-10, Task 5-3 (Use Quiver to Explore Ontology Objects) and Task 4-3 (Apply Filters to a Dashboard) to see how operators interact with your property names and values. Use clear operational terminology. Avoid technical abbreviations operators will not recognize in their daily workflow.
+
+4-6. Properties are the most frequently misdesigned element of Object Types. Common errors:
+
+| Error | Impact | Correct Practice |
+|-------|--------|-----------------|
+| Using String for a numeric value | Cannot sort numerically, cannot aggregate | Use Integer or Double for numeric fields |
+| Using String for a date | Cannot perform date math, cannot filter by range | Use Date or Timestamp |
+| Over-generic property names | Other builders cannot use the Object Type without documentation | Use descriptive names matching operational terminology |
+| Including PII without authorization | Data governance violation | Coordinate with Data Steward and legal before including PII |
+| Omitting description on non-obvious properties | Downstream builders don't know what the field means | Add a description to every property where the name alone is insufficient |
+
+4-7. Status properties deserve particular attention. If a status field has a defined set of valid
+values (FMC, PMC, NMC; GREEN, AMBER, RED; ACTIVE, INACTIVE), document those values in the
+property description. This enables downstream builders to configure accurate Workshop filters
+and Contour charts.
+
+## 4-3. Link Type Design
+
+**CONDITIONS:** Two existing Object Types with a defined operational relationship; coordination
+with Data Steward.
+
+**STANDARDS:** Builder creates a Link Type with the correct directionality, cardinality, and
+naming. Link Type is documented and passes Data Steward review.
+
+### 4-3a. Link Type Concepts
+
+4-8. A Link Type defines the relationship between two Object Types. Links are what enable
+Quiver's multi-object analysis, Workshop drill-down navigation, and AIP Logic contextual
+reasoning across related objects.
+
+4-9. Link Type design decisions:
+
+| Decision | Options | Guidance |
+|----------|---------|---------|
+| Directionality | One-directional or bi-directional | Most operational links are bi-directional (a vehicle belongs to a unit; the unit has vehicles) |
+| Cardinality | One-to-one, one-to-many, many-to-many | Reflect the actual operational reality — a vehicle has one primary unit; a unit has many vehicles |
+| Link name | Should read naturally in both directions | LogVehicle to OpsUnit: forward = "assigned to", reverse = "has assigned" |
+
+### 4-3b. Creating a Link Type
+
+4-10. **PROCEDURE — Create a Link Type:**
+1. In Ontology Manager, navigate to **Link Types** and select **Create Link Type**.
+2. Set the **Name**: use descriptive language that reflects the relationship.
+   Convention: [ObjectTypeA]_[RelationshipVerb]_[ObjectTypeB]
+   Example: LogVehicle_assignedTo_OpsUnit
+3. Set the **Source Object Type** (the "from" side of the relationship).
+4. Set the **Target Object Type** (the "to" side of the relationship).
+5. Set cardinality: select one-to-one, one-to-many, or many-to-many.
+6. Set **Link Labels**: the label used to describe the relationship in each direction.
+   Source to Target: "is assigned to"; Target to Source: "has assigned vehicle"
+7. Define the **Link Key**: the shared property that connects the two object types
+   (e.g., unit_uic present on both LogVehicle and OpsUnit).
+8. Add a description explaining the operational meaning of this link.
+9. Submit for Data Steward review before publishing.
+
+**WARNING:** Creating a Link Type on the wrong property pair creates incorrect relationships
+that appear valid in the UI but produce misleading results in Quiver, Workshop, and AIP Logic.
+Verify the link key produces the expected relationships by previewing a sample of linked objects
+before publishing.
+
+## 4-4. Action Design
+
+> **NOTE:** Distinguish TM-20 Actions from TM-30 Actions: TM-20 Actions (TM-20, Chapter 4-2) are single-step — operator fills form, field is updated. TM-30 Actions support multi-step workflows, conditional routing, and approval chains. If an Action requires: (1) sequential submission steps; (2) conditional field visibility; (3) multi-record writes; (4) command authority approval — it is TM-30 scope, covered in Chapter 5 of this manual.
+
+**CONDITIONS:** Identified workflow where users need to create, update, or delete ontology object
+data through the platform UI; Data Steward authorization to create write-back capability.
+
+**STANDARDS:** Builder creates an Action with correct parameter definitions, appropriate
+validation rules, clear user-facing labels, and appropriate authorization controls. Action is
+tested end-to-end in a non-production environment before promotion.
+
+### 4-4a. What Actions Do
+
+> **NOTE:** TM-20 Actions (TM-20, Chapter 4-2) are single-step: operator fills a form, clicks Submit, one Object property is updated. TM-30 expands this to multi-step submission processes, conditional routing between paths, and approval chains requiring authority sign-off. If a workflow can be expressed as a single form-to-field write, do not design it at TM-30 level — hand it back to a TM-20 builder. Reserve TM-30 Action design for workflows that genuinely require the additional complexity.
+
+4-11. Actions are the write-back mechanism of the Ontology. They allow authorized users to
+create new object instances, update properties on existing objects, or delete objects — directly
+from Workshop applications or Quiver views. Actions execute against the Ontology directly; they
+do not require a pipeline run.
+
+4-12. Common USAREUR-AF Action use cases:
+- S4 NCO updates equipment status from NMC to PMC after partial repair
+- G2 analyst flags an intelligence report as reviewed and adds a confidence rating
+- Unit administrator creates a new equipment record when a vehicle arrives in theater
+- Data Steward marks a data quality issue as resolved
+- Operations officer logs a significant activity event with location and description
+
+### 4-4b. Creating an Action
+
+4-13. **PROCEDURE — Create an Action in Ontology Manager:**
+1. Navigate to **Actions** in Ontology Manager and select **Create Action**.
+2. Set the **Action Name**: use an imperative verb phrase that describes what the action does
+   from the user's perspective. Example: Update Equipment Status, Log Maintenance Event,
+   Flag Data Quality Issue.
+3. Set the **Action Type**: Create Object, Modify Object, Delete Object, or Batch Modify.
+4. Select the **Target Object Type**.
+5. Define **Parameters** — the fields the user will fill in when executing the action:
+   - Parameter name (label shown to the user)
+   - Data type (String, Integer, Boolean, Date, Object reference)
+   - Required or optional
+   - Default value if applicable
+   - Validation rules (see 4-4c)
+6. Map parameters to **Object Properties**: which parameter value writes to which property
+   on the object.
+7. Set **Authorization**: who can execute this action? Apply least-privilege — limit to the
+   role that genuinely needs write access.
+8. Set the **Confirmation Message**: what does the user see before the action executes?
+   Make it specific enough that the user understands what will change.
+9. Set the **Success Message**: what does the user see after the action executes?
+10. Test the action in a non-production environment. Verify parameter mapping is correct.
+    Verify authorization allows the intended users and blocks unauthorized users.
+
+### 4-4c. Action Validation Rules
+
+4-14. Validation rules prevent bad data from entering the Ontology through Actions. Every Action
+parameter that accepts user input should have at least one validation rule.
+
+4-15. Validation types available in Action configuration:
+
+| Validation Type | Use Case | Example |
+|-----------------|----------|---------|
+| Required field | Prevent empty submissions | Status update requires a status value |
+| Allowed values list | Limit input to valid options | Status must be FMC, PMC, or NMC |
+| Minimum / Maximum | Numeric range enforcement | Readiness percentage must be 0-100 |
+| Date range | Prevent impossible dates | Event date cannot be in the future |
+| Length limit | String field size control | Notes field maximum 500 characters |
+| Pattern match | Format enforcement | UIC must match the defined UIC format |
+
+4-16. Configure validation rules in the parameter definition within Action configuration.
+Add a clear, user-facing validation error message for each rule so users understand what
+correction is needed.
+
+**NOTE:** Validation rules in Actions are the last line of defense before data enters the
+Ontology. Treat them as critically as input validation at any other system boundary. A missing
+validation rule is a data quality risk that will require remediation after the fact.
+
+---
+
+# CHAPTER 5 — ADVANCED ANALYTICS: CONTOUR AND QUIVER
+
+**BLUF:** Advanced analytics at TM-30 level moves beyond basic charts into complex aggregations,
+cross-object analysis, and saved analytical views that become persistent operational intelligence
+products.
+
+## 5-1. Advanced Contour
+
+> **NOTE:** Contour at TM-20 level (TM-20, Chapter 6) supports basic filtering, sorting, and simple aggregations. Operators use Contour via TM-10, Task 5-2 (Use Contour for No-Code Analysis). TM-30 Contour adds the formula editor for calculated columns, complex multi-table aggregations, and pivot analysis. Before designing at TM-30 level, confirm the analysis requirement exceeds TM-20 Contour capabilities (TM-20, Chapter 6-2). If TM-20 Contour can handle the requirement, build there first.
+
+**CONDITIONS:** Published dataset or Object Type with sufficient data for analysis; Contour access.
+
+**STANDARDS:** Builder produces analysis with correct aggregations, meaningful calculated columns,
+saved views configured for reuse, and shared appropriately with the intended audience.
+
+### 5-1a. Complex Aggregations in Contour
+
+5-1. Contour's aggregation capabilities extend beyond simple counts and sums. At TM-30 level,
+builders use multi-level grouping, conditional aggregation, and window functions to produce
+sophisticated analytical outputs.
+
+5-2. **PROCEDURE — Multi-Level Group By in Contour:**
+1. Open Contour and select your dataset or Object Type.
+2. In the analysis pane, add a **Group By** operation.
+3. Add the primary grouping key (e.g., division_name).
+4. Add a secondary grouping key (e.g., equipment_category).
+5. Add aggregation metrics: COUNT, SUM, AVG, MAX, MIN.
+6. Run the analysis and verify output structure.
+7. Add additional **Calculated Column** operations to derive ratios or composite metrics
+   from the aggregated values.
+
+5-3. Conditional aggregation — counting or summing only rows that meet a condition — is
+achieved in Contour by combining a calculated column with an aggregation:
+1. Add a **Calculated Column**: is_nmc = if(status == "NMC", 1, 0).
+2. Add an **Aggregation**: SUM(is_nmc) to produce nmc_count.
+3. Add another **Calculated Column**: nmc_rate = nmc_count / total_count * 100.
+
+### 5-1b. Pivot Tables in Contour
+
+5-4. Contour supports pivot analysis natively — rotating a grouped dataset into a cross-tabular
+format for side-by-side comparison.
+
+5-5. **PROCEDURE — Create a Pivot in Contour:**
+1. Add a **Pivot** transform in the analysis pane.
+2. Set the **Row Keys** (left-side group): battalion_name.
+3. Set the **Pivot Column** (column headers): equipment_category.
+4. Set the **Value**: the metric to display in cells (readiness_rate_pct).
+5. Set the **Aggregation**: how to combine multiple values per cell (AVG, SUM, etc.).
+6. Run and verify the pivot structure matches the expected layout.
+7. Add a **Total** row or column if the analysis requires summary margins.
+
+### 5-1c. Calculated Columns in Contour
+
+5-6. Contour calculated columns are ephemeral — they exist in the analysis session and saved
+views, but do not persist in the underlying dataset. This makes Contour ideal for exploratory
+analysis and reporting without modifying source data.
+
+5-7. Formula capabilities in Contour calculated columns mirror Pipeline Builder's formula
+editor. Apply the same discipline: name columns descriptively, verify output values against
+known records, and add a comment in the view description explaining non-obvious formulas.
+
+### 5-1d. Saved Views and Operational Analysis Products
+
+5-8. A Contour saved view is a persistent, shareable snapshot of a configured analysis —
+including all filter settings, groupings, calculated columns, and chart configurations. Saved
+views are the mechanism for creating repeatable analytical products.
+
+5-9. **PROCEDURE — Create and Share a Saved View:**
+1. Configure the analysis in Contour: filters, groupings, calculated columns, chart type.
+2. Select **Save View** (or **Save As** for a new view from an existing one).
+3. Name the view using the C2DAO naming convention:
+   [domain]_[product-name]_[frequency-or-audience]
+   Example: log_readiness-by-unit_weekly, ops_sitrep-trend_monthly.
+4. Add a description: what is this analysis? Who uses it? What question does it answer?
+5. Set sharing: share with specific users, groups, or make available to all authorized users.
+6. Add to the relevant Workshop application if this analysis is an embedded product.
+
+5-10. For recurring reporting products (weekly readiness summary, monthly SITREP trend),
+configure Contour views to use dynamic date filters — "last 7 days," "current month" — so
+the view always reflects the current period without manual reconfiguration.
+
+### 5-1e. Chart Types and When to Use Them
+
+| Chart Type | Best For | Avoid When |
+|------------|----------|------------|
+| Bar chart | Comparing values across categories | More than approximately 15 categories |
+| Line chart | Trends over time | Non-time-series data |
+| Scatter plot | Correlation between two numeric values | Categorical data |
+| Heat map | Intensity across two categorical dimensions | Fewer than 5 categories per axis |
+| Pie/donut | Part-to-whole relationships | More than 6 slices |
+| Table | Precise values, multiple metrics per row | Data is better communicated visually |
+| Map | Geographic distribution | Data has no meaningful geographic component |
+
+## 5-2. Advanced Quiver
+
+**CONDITIONS:** Published Ontology with defined Object Types and Link Types; Quiver access.
+
+**STANDARDS:** Builder creates multi-object analyses, configures linked views, defines custom
+object sets, and produces shareable analytical modules that link correctly across object types.
+
+### 5-2a. Object Set Analysis
+
+5-11. Quiver's fundamental unit is the object set — a filtered collection of objects from an
+Object Type. At TM-30 level, builders create precise, reusable object sets using compound
+filter logic and saved configurations.
+
+5-12. **PROCEDURE — Create a Compound Filter Object Set:**
+1. Open Quiver and select an Object Type.
+2. In the filter panel, add the first filter condition.
+3. Add additional conditions using AND/OR operators.
+4. Use property-level filters: equals, not equals, greater than, less than, contains, is NULL.
+5. Use object relationship filters — filter based on properties of a linked Object Type.
+6. Name and save the object set for reuse.
+
+5-13. Saved object sets in Quiver can be embedded in Workshop applications as the data source
+for Object Set widgets. This creates a single definition of a critical operational set (e.g.,
+"All NMC vehicles in 21st TSC") that is used consistently across multiple applications.
+
+### 5-2b. Multi-Object Dashboards
+
+5-14. Quiver supports dashboard layouts that display analysis across multiple Object Types
+simultaneously, with views linked so that selecting an object in one view filters the display
+in related views.
+
+5-15. **PROCEDURE — Build a Multi-Object Quiver Dashboard:**
+1. Open a new Quiver dashboard or layout.
+2. Add an **Object Set View** for the primary Object Type (e.g., Units).
+3. Add a second **Object Set View** for a related Object Type (e.g., Vehicles assigned to units).
+4. Configure **Linked Views**: in the Vehicle view, set the filter source to the Unit view's
+   selection — when a user selects a unit in the Unit view, the Vehicle view automatically
+   filters to that unit's vehicles.
+5. Add metrics and charts to each view as needed.
+6. Add a **Summary Panel** at the top showing aggregate counts across both object types.
+7. Save and share the dashboard.
+
+### 5-2c. Custom Metrics in Quiver
+
+5-16. Quiver supports custom metrics at the Object Type level — calculated values that appear
+as additional columns in object tables and can be used in filters and sorting. These are distinct
+from Workshop computed columns and Contour calculated columns.
+
+5-17. Custom metrics are configured in Quiver's metric builder and may reference:
+- Properties of the current Object Type (arithmetic, conditional logic)
+- Properties of linked Object Types (aggregate metrics across links — e.g., count of linked
+  NMC vehicles per unit)
+
+5-18. **PROCEDURE — Create a Custom Metric in Quiver:**
+1. In the Object Type's Quiver configuration, select **Add Custom Metric**.
+2. Name the metric clearly: nmc_vehicle_count, avg_readiness_pct.
+3. Define the formula using the metric builder:
+   - For a simple calculated value: use arithmetic on existing properties.
+   - For an aggregation over linked objects: select the Link Type, the target Object Type,
+     and the aggregation (COUNT, SUM, AVG) on a target property.
+4. Set the display format: number, percentage, date.
+5. Preview the metric on sample objects.
+6. Save. The metric is now available in all Quiver analyses on this Object Type.
+
+---
+
+# CHAPTER 6 — AIP LOGIC CONFIGURATION
+
+**BLUF:** At TM-30 level, builders configure and manage AIP Logic workflows and their operational
+parameters through the UI — activating, tuning, and monitoring AI-assisted processes without
+authoring underlying model logic.
+
+## 6-1. AIP Logic Overview
+
+> **NOTE:** AIP Logic is TM-30 only. TM-20 builders do not configure AI workflows. TM-10 operators use AIP Logic workflows that TM-30 builders design — see TM-10, Task 6-1 (Use an AIP Logic Workflow) and Task 6-2 (Interact with an AIP Agent) for the operator's perspective. Operators must review and validate AI outputs before acting on them (emphasized in TM-10, Chapter 6). Design your AIP Logic workflows so outputs are easy for operators to validate quickly. Workflows that produce outputs requiring extensive operator review are operationally inefficient.
+
+6-1. AIP Logic is the AI workflow layer of the platform. It enables AI-assisted analysis,
+automated reasoning, and natural language interfaces to operational data. At TM-30 level,
+builders do not author AIP Logic workflows — that is TM-40 scope. TM-30 builders:
+- Configure the operational parameters of existing AIP Logic workflows
+- Connect workflows to appropriate data sources and Object Types
+- Activate and deactivate workflows in production
+- Monitor workflow health and output quality
+- Report configuration issues to TM-40-level developers
+
+6-2. **CAUTION:** AIP Logic workflows that consume operational data can produce outputs that
+appear authoritative. Before activating an AIP Logic workflow in production:
+- Verify the workflow has been reviewed and approved by the responsible Data Steward
+- Verify users will see clear labeling indicating outputs are AI-generated
+- Confirm the command authority understands the scope and limitations of AI-assisted analysis
+- Ensure the workflow has a human-in-the-loop review step for any decision-relevant output
+
+## 6-2. Configuring AIP Logic Workflows
+
+**CONDITIONS:** Existing AIP Logic workflow created by a TM-40 developer; appropriate
+configuration access granted by Data Steward.
+
+**STANDARDS:** Builder correctly configures workflow parameters, connects data sources, tests
+with representative sample data, and documents the configuration for future reference.
+
+### 6-2a. Workflow Parameter Configuration
+
+6-3. **PROCEDURE — Configure an AIP Logic Workflow:**
+1. Navigate to AIP Logic in the platform.
+2. Open the target workflow. Verify you have configuration access (not just view access).
+3. Review the workflow's purpose and expected behavior as documented by the TM-40 developer.
+4. Under **Configuration**, review each configurable parameter:
+   - Data source connections (which Object Types or datasets the workflow reads)
+   - Output target (where the workflow writes its results)
+   - Prompt configuration (if the workflow uses configurable natural language prompts —
+     these can be adjusted for operational context without writing code)
+   - Scheduling: on-demand, triggered by data change, or scheduled interval
+   - Confidence threshold: the minimum confidence score before an output is surfaced to users
+5. Make parameter changes according to the documented operational requirements.
+6. Save the configuration.
+
+### 6-2b. Connecting Workflows to Data Sources
+
+6-4. AIP Logic workflows read from Ontology Object Types, datasets, or prior workflow outputs.
+Advanced builders configure these connections through the workflow's data source panel.
+
+6-5. **PROCEDURE — Update a Workflow Data Source Connection:**
+1. In the workflow configuration, navigate to **Data Sources**.
+2. Review existing connections — verify each connection points to the correct Object Type or
+   dataset.
+3. To update a connection: select the connection, choose the replacement Object Type or dataset,
+   verify the field mapping (workflow input fields mapped to data source properties).
+4. If the replacement data source has a different schema than the previous source, the field
+   mapping will need to be reconfigured. Do not deploy a workflow with unmapped required fields.
+5. Save and test with a sample data query before activating in production.
+
+### 6-2c. Workflow Monitoring
+
+6-6. Active AIP Logic workflows require monitoring. Advanced builders are responsible for
+first-line monitoring of workflows they have configured.
+
+6-7. Monitoring tasks:
+
+| Task | Frequency | Action on Issue |
+|------|-----------|-----------------|
+| Review workflow execution logs | Weekly | Identify errors or failed executions |
+| Spot-check AI output quality | Bi-weekly | Compare AI outputs to known-correct answers on sample records |
+| Verify data source freshness | Weekly | Confirm source data is updating on schedule |
+| Review user feedback flags | As received | Investigate flagged outputs, report to TM-40 developer |
+| Check confidence score distribution | Monthly | Significant shift may indicate data drift |
+
+6-8. If monitoring reveals a workflow producing systematically incorrect outputs, deactivate
+it immediately and escalate to the TM-40 developer and Data Steward. Do not leave an incorrect
+AI workflow active in production while investigating — it will continue to surface bad outputs
+to users.
+
+## 6-3. Natural Language Query Configuration
+
+> **NOTE:** Operators (TM-10, Task 6-2, Interact with an AIP Agent) validate AI outputs against source data before acting. When engineering prompts, design with that human-review requirement in mind. Prompts should produce outputs that operators can quickly verify. Refer to TM-10, Task 6-2 for the validation workflow operators follow — then design your prompts to produce outputs compatible with that workflow.
+
+6-9. Some AIP Logic deployments include a natural language query interface — a chat or Q&A
+widget in Workshop that allows users to ask questions about operational data in plain English.
+Advanced builders configure these interfaces and manage the scope of data they can access.
+
+6-10. **PROCEDURE — Configure a Natural Language Query Scope:**
+1. Navigate to the AIP Logic query interface configuration.
+2. Under **Data Scope**, define which Object Types and datasets the interface can query.
+   Apply least-privilege — only include data the intended users are authorized to access.
+3. Under **Prompt Guidance**, configure any operational context that helps the AI produce
+   relevant responses. Example: adding a glossary of command-specific terminology, unit
+   abbreviations, or equipment codes.
+4. Configure **Output Format**: what format should responses take? Tabular, narrative,
+   a combination?
+5. Enable **Source Citation**: configure the interface to cite the specific records it used
+   to produce each answer, enabling user verification.
+6. Test with representative operational questions. Verify the responses are accurate,
+   appropriately scoped, and clearly labeled as AI-generated.
+
+---
+
+# CHAPTER 7 — DATA GOVERNANCE AND LINEAGE
+
+**BLUF:** Advanced builders are frontline data governance actors — they read and understand
+lineage graphs, identify and report data quality issues, work with Data Stewards on resolution,
+and enforce governance standards in everything they build.
+
+> **NOTE:** TM-20 builders follow governance standards defined in TM-20, Chapter 8 (Builder Standards and Governance). TM-30 builders have additional stewardship responsibilities because your designs affect shared infrastructure and downstream systems. At TM-30 level you are responsible for: (1) understanding operator access expectations (TM-10, Chapter 7, Security, Classification, and Markings); (2) ensuring TM-20 builders can implement your designs without overstepping their scope; (3) coordinating with data stewards before modifying any shared production resource; (4) designing for the full downstream impact across all consumers, not only the immediate use case.
+
+## 7-1. Data Lineage
+
+**CONDITIONS:** Access to the Lineage view for a dataset, Object Type, or pipeline;
+understanding of the upstream data sources that feed the product.
+
+**STANDARDS:** Builder correctly interprets a lineage graph, identifies all upstream
+dependencies, traces a quality issue to its source, and documents findings clearly for
+Data Steward review.
+
+### 7-1a. Reading the Lineage Graph
+
+7-1. The lineage graph is a directed graph showing data flow from source to output. Every
+dataset, pipeline, and Object Type on the platform has a lineage view. Advanced builders read
+lineage graphs to:
+- Understand where a dataset's data comes from
+- Identify the impact of a source change on downstream products
+- Trace the origin of a data quality issue
+- Verify that an output is derived from authoritative sources
+
+7-2. Lineage graph elements:
+
+| Element | Shape/Color | Meaning |
+|---------|-------------|---------|
+| Source dataset | Rectangle, source icon | Raw or ingested data — where data enters the platform |
+| Pipeline | Arrow with transform icon | A Pipeline Builder or code transform that produced an output |
+| Output dataset | Rectangle | A derived dataset produced by a pipeline |
+| Object Type | Object icon | An Ontology Object Type backed by a dataset |
+| External source | Cloud icon | Data from outside the platform (file upload, external feed) |
+| Edge (arrow) | Directional arrow | Data flows from source to target |
+
+7-3. **PROCEDURE — Read a Lineage Graph for an Output Dataset:**
+1. Navigate to the target dataset or Object Type.
+2. Open the **Lineage** tab or view.
+3. Identify the immediate upstream inputs (what datasets or transforms produced this one).
+4. Follow each branch upstream to the source — find the original ingestion points.
+5. Note the names and owners of all upstream datasets.
+6. Identify any external sources — these are data outside the platform and may have different
+   quality, freshness, and reliability characteristics.
+7. Document your findings: "This Object Type is produced by pipeline X, which joins dataset A
+   (owned by S4) and dataset B (owned by G4 logistics). Dataset A originates from the PBUSE
+   feed ingested daily at 0600Z."
+
+### 7-1b. Impact Assessment Before Making Changes
+
+7-4. Before modifying any shared resource — a dataset schema, an Object Type property, a
+pipeline output format — perform a downstream impact assessment using the lineage graph.
+
+7-5. **PROCEDURE — Downstream Impact Assessment:**
+1. Open the lineage graph for the resource you plan to modify.
+2. Switch to **Downstream** view — this shows all resources that depend on this one.
+3. List all downstream datasets, Object Types, Workshop applications, Contour views, and
+   Quiver analyses.
+4. For each downstream resource, identify the owner and notify them of the planned change.
+5. Assess whether the change is breaking (schema change, property rename, type change) or
+   non-breaking (new column added, description updated).
+6. For breaking changes: coordinate a maintenance window, get Data Steward approval, and
+   notify all downstream owners before executing.
+7. For non-breaking changes: notify downstream owners as a courtesy and document the change.
+
+**WARNING:** Renaming a property on an Object Type is a breaking change for every Workshop
+application, Contour view, Quiver analysis, and AIP Logic workflow that references that
+property by name. Never rename a production property without a full downstream assessment and
+coordinated cutover plan.
+
+## 7-2. Data Quality Workflows
+
+> **NOTE:** Operators (TM-10, Chapter 5, Working with Data) expect data to be current, accurate, and correctly marked. Use TM-10, Task 5-4 (Verify Data Currency and Source) as the benchmark for what operators require from your data products. If your pipeline or Ontology design creates data quality issues that operators cannot resolve themselves (TM-10, Chapter 5-2, What to Do When Data Looks Wrong), you are responsible for identifying and fixing the root cause.
+
+**CONDITIONS:** Identified data quality issue in a dataset or Object Type; Data Steward contact.
+
+**STANDARDS:** Builder correctly identifies and documents a data quality issue, reports it
+through the appropriate channel, and follows up until resolution is confirmed.
+
+### 7-2a. Identifying Data Quality Issues
+
+7-6. Advanced builders encounter data quality issues during pipeline development, analysis, and
+application testing. Common issue types:
+
+| Issue Type | Example | Severity |
+|------------|---------|----------|
+| Missing data | Key field is NULL on 30% of records | High — analysis results are incomplete |
+| Duplicate records | Same vehicle appears twice with different status | High — counts and aggregations are incorrect |
+| Stale data | Fleet dataset last updated 5 days ago; should update daily | Medium — analysis is out of date |
+| Invalid values | Status field contains "n/a" when valid values are FMC/PMC/NMC | Medium — filters and charts break |
+| Schema mismatch | Column renamed in upstream source, pipeline now fails | High — output not updating |
+| Referential integrity | Vehicle records reference unit UICs that don't exist in the unit dataset | Medium — joins produce NULLs |
+
+### 7-2b. Reporting Data Quality Issues
+
+7-7. **PROCEDURE — Report a Data Quality Issue:**
+1. Document the issue with specificity:
+   - What is the affected dataset or Object Type (full name)?
+   - What is the issue? Be specific: "15% of records in the LogVehicle Object Type have NULL
+     values in the assigned_unit_uic property as of 11 March 2026."
+   - What is the operational impact? "This causes Quiver unit-to-vehicle link analysis to
+     omit approximately 200 vehicles from unit rollups."
+   - What is the likely source? Trace upstream using the lineage graph.
+   - When was the issue first observed?
+2. Identify the responsible Data Steward from the C2DAO registry.
+3. Submit the issue report through the approved governance channel (data quality issue tracker,
+   C2DAO issue log, or direct coordination with Data Steward per local SOP).
+4. Retain a copy of the report with timestamp.
+5. Do not attempt to fix a data quality issue in another team's dataset without explicit
+   authorization from the Data Steward — you may be working with a copy or a view, not the
+   authoritative source.
+
+### 7-2c. Data Steward Coordination
+
+7-8. Data Stewards are the designated authority for data quality, access control, naming
+compliance, and governance within their data domain. Advanced builders work with Data Stewards
+on a routine basis.
+
+7-9. Routine Data Steward interactions for advanced builders:
+- **Before creating a new Object Type or dataset:** confirm naming convention, verify the
+  entity is not already modeled elsewhere
+- **Before modifying a shared resource:** notify and get approval
+- **When reporting a quality issue:** submit through the Data Steward's designated channel
+- **Before publishing a production application:** request governance review
+- **When assigning access:** confirm the access level is appropriate and approved
+
+7-10. If you cannot identify the Data Steward for a dataset or Object Type, escalate to the
+C2DAO authority for your domain. Do not proceed with modifications to unowned data without
+coordination.
+
+## 7-3. Access Control Management
+
+> **NOTE:** Before designing coalition-facing data products at TM-30 level, understand TM-10, Chapter 7 (Security, Classification, and Markings), especially Task 7-1 (Verify Markings and Access Level). Coalition data must be correctly marked and access-controlled from ingestion through final product. Errors in releasability markings can result in data shared with unauthorized coalition partners — this is a hard governance gate, not a best practice. Coordinate with the USAREUR-AF C2DAO before any coalition-facing design decision.
+
+**CONDITIONS:** Workshop application, dataset, or Object Type requiring access configuration;
+appropriate administrative rights.
+
+**STANDARDS:** Builder configures access using least-privilege principle, documents the access
+rationale, and verifies the configuration grants access to intended users and denies access to
+all others before publishing.
+
+### 7-3a. Access Control Principles
+
+7-11. Access control on the platform operates at multiple levels:
+- **Dataset level:** who can read or write the underlying dataset
+- **Object Type level:** who can view objects, who can execute Actions
+- **Application level:** who can view the Workshop application, who can edit it
+- **Analysis level:** who can view a Contour or Quiver saved view
+
+7-12. The three access control questions to answer for every resource you publish:
+1. **Who needs to see this?** Configure view access for those users or groups only.
+2. **Who needs to edit this?** Configure edit access for those users or groups only —
+   typically just you and your Data Steward at initial publication.
+3. **Who should never see this?** Verify that access is not inherited from a broader group
+   that includes unauthorized personnel.
+
+### 7-3b. Configuring Access in the UI
+
+7-13. **PROCEDURE — Set Access Controls on a Workshop Application:**
+1. Open the application in edit mode.
+2. Navigate to **Sharing and Permissions** (application settings).
+3. Remove any default "all users" access if the application contains controlled data.
+4. Add specific users or groups with the appropriate role:
+   - **Viewer:** can interact with the published application, cannot edit
+   - **Editor:** can modify the application in edit mode
+   - **Owner:** full administrative control
+5. If the application references Object Types or datasets with restricted access, verify
+   that the access controls on those underlying resources match the application's access.
+   Granting application view access does not grant underlying data access — both must be
+   configured.
+6. Document the access configuration in the application description: "Authorized for
+   USAREUR-AF G4 staff (viewer), G4 data team (editor)."
+7. Test access by verifying a member of each access group can interact as expected.
+
+---
+
+# CHAPTER 8 — ENVIRONMENT MANAGEMENT
+
+**BLUF:** Advanced builders manage the full development lifecycle — creating branches for
+development work, reviewing changes, and executing the promotion workflow to production —
+entirely through the platform UI without scripting or CI/CD configuration.
+
+## 8-1. Branching and the Development Lifecycle
+
+> **NOTE:** TM-20 builders follow a development lifecycle defined in TM-20, Chapter 7 (Branching and Environment Management): develop on a branch, test, request merge, get approval, merge to main. TM-30 development follows the same pattern with more rigorous testing gates because your changes affect shared infrastructure. Operators (TM-10) only access the main/production branch. Every merge to main is a production release. Apply engineering discipline — test against TM-10 operator workflows (Chapter 4) before merging.
+
+8-1. The platform uses a branching model to separate development work from production. A branch
+is an isolated copy of the environment where changes can be made, tested, and reviewed without
+affecting the production environment that other users depend on.
+
+8-2. The three environments for USAREUR-AF builders:
+
+| Environment | Purpose | Who Works Here |
+|-------------|---------|----------------|
+| Production (main branch) | The live environment used by all consumers | No one develops here; promotion only |
+| Development branch | Where new features and changes are built | The builder working on the change |
+| Review branch (pre-production) | Staging area for Data Steward and peer review before promotion | Reviewer and Data Steward |
+
+8-3. Never develop directly on the production branch. If you are making changes in production,
+you are doing it wrong.
+
+## 8-2. Creating and Managing a Development Branch
+
+**CONDITIONS:** Identified change to implement; Data Steward awareness of the planned change.
+
+**STANDARDS:** Builder creates a named branch with a descriptive name, completes all development
+in the branch, and does not merge to production without peer review and Data Steward sign-off.
+
+8-4. **PROCEDURE — Create a Development Branch:**
+1. Navigate to the **Branch Manager** or **Environment Manager** in the platform.
+2. Select **Create Branch** from the production branch (or from main).
+3. Name the branch using the convention: [builder-id]_[change-description]_[YYYYMMDD]
+   Example: sgt-jones_readiness-dashboard-v2_20260311
+4. Confirm the branch is created from the correct base (production).
+5. Switch to the new branch in your workspace — verify you are working in the branch,
+   not in production.
+
+8-5. While working in the branch:
+- Make all changes (pipeline updates, Workshop edits, ontology changes) in the branch only
+- Test all changes thoroughly in the branch
+- Do not promote until all tests pass and the change is ready for review
+
+## 8-3. Peer Review Process
+
+**CONDITIONS:** Completed development in a branch; ready for review.
+
+**STANDARDS:** Builder submits a review request with complete documentation of changes.
+Reviewer examines all changes, tests functionality, and provides written approval or documented
+change requests before promotion is authorized.
+
+8-6. **PROCEDURE — Submit a Branch for Review:**
+1. In the Branch Manager, locate your development branch.
+2. Select **Request Review** or **Create Review Request**.
+3. Complete the review request form:
+   - **Summary of changes:** what was built or modified?
+   - **Test results:** what did you test? What was the outcome?
+   - **Downstream impact:** what downstream products are affected?
+   - **Rollback plan:** if the change breaks something in production, how will it be reversed?
+   - **Data Steward notification:** confirm the Data Steward has been notified.
+4. Assign the reviewer (a qualified peer or the Data Steward).
+5. Submit the request.
+
+8-7. **PROCEDURE — Review a Branch (as Reviewer):**
+1. Open the review request.
+2. Switch to the branch being reviewed.
+3. Examine all changes:
+   - Pipeline changes: verify logic, verify output schema, run a test execution and check results.
+   - Workshop changes: test all interactive elements, verify variable behavior, check all pages.
+   - Ontology changes: verify naming conventions, check downstream impact.
+   - Access controls: verify access is configured correctly.
+4. Document your review findings.
+5. Approve the review (no issues found) or request changes (document specific items to address
+   before promotion).
+
+## 8-4. Production Promotion
+
+**CONDITIONS:** Approved review; Data Steward sign-off; scheduled promotion window.
+
+**STANDARDS:** Builder executes promotion during the authorized window, confirms production
+environment is healthy after promotion, and notifies downstream application owners.
+
+8-8. **PROCEDURE — Promote a Branch to Production:**
+1. Confirm all review approvals are recorded.
+2. Confirm Data Steward has provided sign-off.
+3. Coordinate with downstream application owners — if the promotion will cause a brief
+   downtime or change a data schema, notify consumers in advance.
+4. Schedule the promotion during an approved maintenance window if the change is significant.
+5. In the Branch Manager, select the reviewed branch and initiate **Promote to Production**.
+6. Monitor the promotion progress in the platform logs.
+7. After promotion completes:
+   - Verify the production environment is healthy: open the promoted application, run a
+     pipeline, check that the promoted changes are visible and correct.
+   - Verify that other applications that share the changed resources are still functioning.
+   - Notify downstream owners that the promotion is complete.
+8. If issues are identified post-promotion, execute the rollback plan immediately. Do not
+   attempt to fix issues with additional changes while production is impaired — rollback first.
+
+**WARNING:** Promoting a change that breaks a downstream application or pipeline in production
+is a significant governance event. Report the incident to the Data Steward immediately. Follow
+the post-incident review process to document root cause and corrective action.
+
+## 8-5. Production Discipline
+
+8-9. Production discipline is the set of behaviors that maintain trust in the production
+environment. Advanced builders are directly responsible for production discipline in everything
+they promote.
+
+8-10. Production discipline standards:
+
+| Standard | Requirement |
+|----------|-------------|
+| No direct production edits | All changes through branches with review — no exceptions |
+| Test before review | All changes tested in the development branch before requesting review |
+| Review before promotion | No self-approved promotions — another qualified individual must review |
+| Document all promotions | Maintain a log of what was promoted, when, by whom, and for what purpose |
+| Notify downstream owners | Any promotion that affects shared resources requires advance notification |
+| Rollback plan | Every significant promotion must have a documented rollback procedure |
+| Incident reporting | Any production issue caused by a promotion must be reported within 24 hours |
+
+---
+
+# CHAPTER 9 — STANDARDS, CONVENTIONS, AND BEST PRACTICES
+
+**BLUF:** Consistent standards across all products built by USAREUR-AF advanced builders
+create a coherent, maintainable data environment. This chapter specifies the naming conventions,
+design patterns, and quality standards that apply to everything built at TM-30 level.
+
+## 9-1. Naming Conventions
+
+9-1. All resources created on the MSS platform by USAREUR-AF builders must follow C2DAO
+naming conventions. Non-compliant naming is a governance deficiency and will be flagged in
+Data Steward reviews.
+
+### 9-1a. Resource Naming Reference
+
+9-2. **Dataset naming:**
+[domain]_[source-or-description]_[output-type]_v[version]
+Examples:
+- log_pbuse-vehicle-fleet_cleaned_v1
+- ops_sitrep-events_aggregated-daily_v2
+- med_patient-encounters_anonymized_v1
+
+9-3. **Pipeline naming:**
+[domain]_[input-description]_[output-description]_v[version]
+Examples:
+- log_vehicle-fleet-maintenance_readiness-join_v1
+- ops_sitrep-raw_dedup-aggregated_v3
+
+9-4. **Object Type naming:**
+PascalCase, singular noun, prefixed with domain abbreviation: [DomainAbbrev][EntityName]
+Examples:
+- LogVehicle — Logistics domain, Vehicle entity
+- OpsUnit — Operations domain, Unit entity
+- MedFacility — Medical domain, Facility entity
+- G2IntelligenceReport — G2 domain, Intelligence Report entity
+
+9-5. **Workshop application naming:**
+[Domain] - [Audience] - [Application Purpose]
+Examples:
+- LOG - G4 Staff - Equipment Readiness Dashboard
+- OPS - BCT CDR - Operations Summary Board
+- G2 - All Staff - Intelligence Overview
+
+9-6. **Contour and Quiver saved views:**
+[domain]_[analysis-purpose]_[frequency-or-audience]
+Examples:
+- log_readiness-by-unit_weekly
+- g2_threat-trend_cdre-brief
+
+9-7. **Pipeline Builder node labels (within the pipeline graph):**
+Label every node. Format: [action]_[subject] using snake_case.
+Examples: src_vehicle_fleet, filter_active_only, join_maintenance_records,
+agg_by_unit_category, out_readiness_rollup
+
+9-8. **Variable naming (Workshop):**
+[domain]_[descriptor]_[type]
+Examples: ops_selected_unit_string, log_date_filter_date, g2_show_classified_boolean
+
+### 9-1b. Domain Abbreviations
+
+| Domain | Abbreviation | Responsible Staff |
+|--------|--------------|-------------------|
+| Logistics | log | G4 / S4 |
+| Operations | ops | G3 / S3 |
+| Medical | med | G4 / Surgeon |
+| Intelligence | g2 | G2 / S2 |
+| Signal/Comms | sig | G6 / S6 |
+| Civil Affairs | g9 | G9 |
+| Personnel | g1 | G1 / S1 |
+| Finance | fin | G8 |
+
+## 9-2. Design Best Practices
+
+### 9-2a. Application Design
+
+9-9. Design principles for Workshop applications:
+
+1. **Start with the question, not the data.** What decision does this application support?
+   Design the layout around the answer, then connect the data.
+
+2. **One page, one question.** Each page should answer one operational question clearly.
+   Resist the urge to put everything on one page.
+
+3. **Design for the user's time.** Operational users are often time-constrained. The most
+   important information should be visible without any clicks or scrolling.
+
+4. **Use progressive disclosure.** Show summary first, detail on selection. Do not display
+   maximum detail by default.
+
+5. **Empty states are content.** Design what the user sees when no data matches the filters.
+   "No records match the selected filters" is better than a blank page.
+
+6. **Label everything.** Every widget should have a clear title. Every metric tile should have
+   a unit of measure. Every table column should have a readable header.
+
+7. **Consistent color use.** Use platform-standard colors for status (red/amber/green). Do not
+   invent a color scheme that conflicts with other applications in the environment.
+
+### 9-2b. Pipeline Design
+
+9-10. Design principles for Pipeline Builder:
+
+1. **Profile before you build.** Before joining or aggregating, examine source datasets. Know
+   the row counts, key distributions, and NULL rates before designing your pipeline.
+
+2. **Filter early.** Apply date and key filters as early in the pipeline as possible to
+   minimize the data volume processed through downstream transforms.
+
+3. **Document join decisions.** For every join node, add a description explaining why this
+   join type was chosen, what the join key is, and what the expected row count ratio is.
+
+4. **Test with known data.** Validate pipeline output against records you know the expected
+   result for. If you are building a readiness rollup, manually compute the expected output
+   for one battalion and compare to pipeline output.
+
+5. **Plan for NULL.** Every production dataset contains NULLs. Add explicit NULL handling
+   after every source node.
+
+6. **Readable graphs.** Arrange pipeline nodes so the flow direction is clear (left to right
+   or top to bottom). Label all nodes. Group related transforms visually.
+
+### 9-2c. Ontology Design
+
+9-11. Design principles for Ontology work:
+
+1. **Model the entity, not the dataset.** An Object Type represents a real-world operational
+   entity — not a row in a spreadsheet. Design properties around what the entity IS, not what
+   columns happen to exist in the source data.
+
+2. **Fewer, better properties.** Include only properties that downstream consumers will
+   actually use. Unused properties add schema complexity and maintenance burden.
+
+3. **Status fields need valid value documentation.** Any property with a defined set of valid
+   values must document those values in the property description.
+
+4. **Link Types represent real relationships.** Only create a Link Type if the relationship
+   between two Object Types is operationally meaningful and will be traversed in downstream
+   analysis or applications.
+
+5. **Primary key is sacred.** The primary key must be truly unique and stable. Changing the
+   primary key on a production Object Type is a major breaking change.
+
+## 9-3. Performance Considerations
+
+9-12. Advanced builders are responsible for the performance characteristics of what they build.
+An application that loads slowly or a pipeline that takes hours degrades the operational
+environment for all users.
+
+9-13. Performance checklist before publishing to production:
+
+| Check | How to Verify | Action if Failing |
+|-------|---------------|-------------------|
+| Application page load time | Preview in an incognito browser session; time the load | Reduce widget count, add filters with default values, paginate large tables |
+| Object Set size | Check row count on Object Set widget | Add a default filter to limit initial load; implement pagination |
+| Pipeline run time | Check pipeline execution metrics | Add early filters, verify partition pruning is active on date filters |
+| Map widget object count | Preview map with production data | Limit objects displayed; add a filter requiring user selection before map populates |
+| Table row count | Preview table with production data | Implement server-side pagination; add a mandatory filter before results appear |
+
+## 9-4. USAREUR-AF C2DAO Governance Checklist Summary
+
+9-14. Every product published to production must satisfy the following governance requirements:
+
+**Naming Compliance:**
+- [ ] Dataset, pipeline, Object Type, and application names follow C2DAO naming conventions
+- [ ] All pipeline nodes are labeled descriptively
+- [ ] All Workshop variables follow the naming convention
+
+**Documentation:**
+- [ ] Dataset and pipeline descriptions are complete (source, purpose, owner, refresh cadence)
+- [ ] Object Type description explains the entity, source, and operational purpose
+- [ ] Object Type properties have descriptions for non-obvious fields
+- [ ] Actions have clear user-facing labels and confirmation messages
+
+**Access Control:**
+- [ ] Access is configured to least-privilege for the intended audience
+- [ ] No unintended "all users" access on products containing sensitive or controlled data
+- [ ] Access configuration is documented in the product description
+
+**Quality:**
+- [ ] NULL handling is implemented in all pipelines
+- [ ] Join types are documented and correct
+- [ ] Action validation rules are configured for all user-input parameters
+- [ ] Downstream impact assessment completed for any change to shared resources
+
+**Review and Promotion:**
+- [ ] Development completed in a branch (not production)
+- [ ] Peer review completed and documented
+- [ ] Data Steward review and sign-off obtained
+- [ ] Promotion window coordinated with downstream owners
+
+---
+
+# APPENDIX A — ADVANCED BUILDER CHECKLIST
+
+> **NOTE:** Before initiating a TM-40 handoff, confirm the requirement genuinely exceeds TM-30 capability. Use this checklist: (1) Can this be built using TM-20 no-code tools? If yes — hand back to TM-20 builder, do not escalate to TM-40. (2) Can this be designed using TM-30 UI tools (Workshop, Ontology Manager UI, Pipeline Builder UI, AIP Logic UI)? If yes — build at TM-30 level, do not escalate. (3) Does implementation require writing code (Python, PySpark, TypeScript, SQL)? If yes — use this template and initiate TM-40 handoff. Unnecessary TM-40 escalation consumes developer capacity and delays delivery.
+
+Use this checklist when delivering any new or significantly modified MSS data product.
+
+## Pre-Build Checklist
+
+- [ ] Requirement defined: what operational question does this product answer?
+- [ ] Audience identified: who uses it and in what context?
+- [ ] Data sources identified: what datasets or Object Types are the inputs?
+- [ ] Data Steward notified: coordinated with the relevant Data Steward?
+- [ ] Existing products checked: is this already built somewhere that could be reused or extended?
+- [ ] Naming convention selected: what will the product be named per C2DAO standards?
+- [ ] Branch created: development branch created from production?
+
+## Build Checklist
+
+- [ ] All work done in branch (not production)
+- [ ] Source datasets profiled (row counts, key distributions, NULL rates)
+- [ ] NULL handling implemented in all pipelines
+- [ ] Join types documented in node descriptions
+- [ ] Calculated columns verified against known records
+- [ ] Workshop variables follow naming convention
+- [ ] All Workshop pages tested (navigation, conditional visibility, variable behavior)
+- [ ] Computed columns verified for correctness
+- [ ] Access controls configured to least-privilege
+- [ ] Empty states handled in Workshop (no blank pages when filters return zero results)
+- [ ] Action validation rules configured for all user-input parameters
+- [ ] AIP Logic configurations documented and tested with sample data
+
+## Review and Promotion Checklist
+
+- [ ] Self-review completed — tested with production-representative data
+- [ ] Downstream impact assessment completed
+- [ ] Downstream owners notified of changes
+- [ ] Peer review requested and completed
+- [ ] Data Steward review and sign-off obtained
+- [ ] Rollback plan documented
+- [ ] Promotion executed in authorized window
+- [ ] Post-promotion verification completed
+- [ ] Downstream application owners notified of successful promotion
+
+---
+
+# APPENDIX B — DESIGN PATTERNS REFERENCE
+
+> **NOTE:** This is the TM-30 checklist for advanced multi-page, cross-functional applications. If your application is single-page and purpose-specific, use the TM-20 checklist (TM-20, Appendix C, Workshop Application Pre-Publish Checklist) instead. Before publishing any application, test it against operator workflows in TM-10, Chapter 4 (Using Workshop Applications). An application that a trained operator cannot navigate using TM-10 procedures is not ready for publication.
+
+## Pattern 1: Commander's Dashboard
+
+**Purpose:** Give a commander an at-a-glance operational picture with drill-down capability.
+
+**Structure:**
+- Page 1 (Overview): Metric tiles (key readiness numbers), status bar chart, map of unit locations
+- Page 2 (Unit Detail): Triggered by unit selection on Page 1; shows selected unit's detail
+- Page 3 (Trend): Time-series charts showing readiness trend over the past 30/60/90 days
+
+**Key patterns:**
+- Variable: ops_selected_unit_object — written by map or table selection, read by Page 2
+- Default filter on Page 1 table: current reporting period only (avoid loading full history)
+- Conditional visibility on Page 2: show only when ops_selected_unit_object is not empty
+- Date range picker on Page 3: dynamic "last N days" filter driven by a variable
+
+---
+
+## Pattern 2: Status Board with Write-Back
+
+**Purpose:** Allow authorized users to update equipment or personnel status from within the
+application.
+
+**Structure:**
+- Left panel: filtered table of records (user selects a record)
+- Right panel: detail view of selected record (appears on selection)
+- Bottom of right panel: Action button(s) to update status
+
+**Key patterns:**
+- Variable: log_selected_record_object — written by table row click, read by detail panel
+  and Action
+- Conditional visibility: right panel visible only when log_selected_record_object is not empty
+- Action configuration: pre-populate parameters from the selected object's properties where
+  possible
+- Confirmation message: shows the specific record being updated and the new value before
+  execution
+
+---
+
+## Pattern 3: Readiness Rollup Pipeline
+
+**Purpose:** Produce a unit-level readiness summary from an equipment dataset and maintenance
+records.
+
+**Pipeline structure:**
+1. src_equipment_fleet — source dataset
+2. filter_active_vehicles — filter: status is not DISPOSED AND reporting_period is current
+3. src_maintenance_records — source dataset
+4. filter_recent_maintenance — filter: maintenance_date within last 30 days
+5. join_fleet_maintenance — Left Join on vehicle_id
+6. calc_is_fmc — calculated column: if maint_status equals "FMC" then 1 else 0
+7. agg_by_unit_category — Group By unit_uic and equipment_category; COUNT(*) to vehicle_count,
+   SUM(is_fmc) to fmc_count
+8. calc_readiness_rate — calculated column: fmc_count / vehicle_count * 100
+9. calc_status_color — calculated column: if/else producing GREEN, AMBER, or RED
+10. out_readiness_rollup — output dataset
+
+---
+
+## Pattern 4: Hierarchical Object Type Model
+
+**Purpose:** Model an operational hierarchy (Theater — Corps — Division — Brigade — Battalion —
+Unit).
+
+**Object Types:**
+- OpsTheater — Theater-level entity
+- OpsCorps — Corps entity, linked to OpsTheater
+- OpsDivision — Division entity, linked to OpsCorps
+- OpsBrigade — Brigade entity, linked to OpsDivision
+- OpsBattalion — Battalion entity, linked to OpsBrigade
+- OpsUnit — Company/detachment entity, linked to OpsBattalion
+
+**Link pattern:** Each Link Type is one-to-many (one Corps has many Divisions, etc.)
+**Workshop pattern:** Cascading dropdown variables drive filter from Theater down to Unit level.
+**Quiver pattern:** Traverse links upward and downward; aggregate metrics across the hierarchy.
+
+---
+
+## Pattern 5: Data Quality Dashboard
+
+**Purpose:** Give Data Stewards visibility into data quality issues across their domain.
+
+**Structure:**
+- Page 1 (Summary): Counts of open issues by severity, source dataset, and age
+- Page 2 (Issue Queue): Table of all open issues with filters by status, severity, and dataset
+- Page 3 (Issue Detail): Detail view for a selected issue with resolution actions
+
+**Key patterns:**
+- Data quality issues stored as an Object Type (GovDataQualityIssue)
+- Actions on Issue Detail page: Mark Resolved, Escalate, Add Comment
+- Variable: gov_selected_issue_object — drives Page 3 detail view
+- Default filter on Page 2: show only open and in-progress issues (not resolved)
+- Trend chart on Page 1: shows issue count by week over rolling 90 days
+
+---
+
+# GLOSSARY
+
+**Action**
+A configured workflow on the Ontology that allows authorized users to create, modify, or delete
+object data through the platform UI. Actions execute validation rules before writing data.
+
+**AIP Logic**
+The AI workflow layer of the MSS platform. Enables AI-assisted analysis, automated reasoning,
+and natural language query interfaces. TM-30 builders configure existing AIP Logic workflows;
+authoring is TM-40 scope.
+
+**API Name**
+The machine-readable identifier for an Object Type, property, or Action. Distinct from the
+human-readable display name. Once published to production, the API name should not change
+without a coordinated downstream impact assessment.
+
+**Branching**
+The platform mechanism for isolating development work from the production environment. Builders
+create a branch from production, develop in the branch, and promote to production only after
+review and approval.
+
+**C2DAO**
+Command and Control Data Authoritative Organization. The USAREUR-AF governance body responsible
+for data product standards, naming conventions, access control policy, and production promotion
+approvals.
+
+**Calculated Column**
+A derived data column whose value is computed from a formula applied to other columns. In
+Pipeline Builder, calculated columns are permanent and stored in the output dataset. In Workshop
+and Contour, they are display-only and not stored.
+
+**Cardinality**
+In data modeling, the numerical relationship between two linked Object Types. One-to-one,
+one-to-many, or many-to-many. Determines how Link Types are configured in the Ontology.
+
+**CDA Portal**
+Common Data Architecture Portal. The Army's authoritative training and reference resource for
+data platform work, hosted at learn-data.armydev.com.
+
+**Conditional Visibility**
+A Workshop configuration that shows or hides a widget based on the value of an application
+variable. Used to create dynamic, responsive application layouts.
+
+**Contour**
+The MSS platform's visual analytics tool. Allows builders and analysts to query, aggregate,
+pivot, and chart data without writing code. Produces saved analysis views that can be shared
+and embedded.
+
+**Data Product Owner**
+The individual responsible for the operational accuracy, quality, and maintenance of a data
+product (dataset, Object Type, or application). Designated per Army CIO Memorandum (April 2024).
+
+**Data Steward**
+The designated authority for data quality, access control, naming compliance, and governance
+within a data domain. Builders coordinate with Data Stewards before creating, modifying, or
+promoting shared resources.
+
+**Downstream Impact**
+The effect of a change to a shared data resource on all products that depend on it —
+applications, pipelines, Object Types, analytics views. Assessment of downstream impact is
+required before any production change.
+
+**Empty State**
+The visual condition of a Workshop widget when no data matches the current filter or no
+selection has been made. Advanced builders design explicit empty states rather than leaving
+blank panels.
+
+**Full Outer Join**
+A join operation that returns all rows from both source datasets, with NULLs where no match
+exists in the other dataset.
+
+**Governance**
+The set of policies, standards, and processes that ensure data products are accurate, accessible
+to authorized users, consistently named, and maintained over time. Governed by C2DAO within
+USAREUR-AF.
+
+**Group By**
+A pipeline or analysis transform that collapses multiple rows into a single summary row per
+unique combination of grouping keys, applying aggregation functions to the non-key columns.
+
+**Inner Join**
+A join operation that returns only rows that have a match in both source datasets. Rows without
+a match in either dataset are excluded from the output.
+
+**Left Join**
+A join operation that returns all rows from the left (primary) dataset, with NULLs in right-
+side columns where no match exists in the right dataset.
+
+**Lineage Graph**
+A visual representation of data flow showing the chain of sources, pipelines, and outputs that
+produced a given dataset or Object Type. Used for impact assessment, quality investigation, and
+governance audits.
+
+**Link Type**
+An Ontology construct that defines a named relationship between two Object Types. Enables
+multi-object analysis in Quiver and relationship traversal in Workshop and AIP Logic.
+
+**Null Handling**
+Explicit pipeline logic that addresses NULL (missing) values in source data — filtering,
+replacing with defaults, or flagging for review — before NULLs can propagate into outputs
+and cause analysis errors.
+
+**Object Set**
+A filtered collection of objects from an Object Type, defined by one or more filter conditions.
+Used as the data source for Quiver analyses and Workshop Object Set widgets.
+
+**Object Type**
+The fundamental ontology construct representing a class of real-world operational entities
+(e.g., LogVehicle, OpsUnit). Each object instance represents one specific entity.
+
+**Ontology**
+The shared data model of the MSS platform. Defines what entities exist (Object Types), how
+they relate (Link Types), and what users can do to them (Actions).
+
+**Ontology Manager**
+The platform UI for creating, configuring, and publishing Object Types, Link Types, and Actions.
+
+**Partition Pruning**
+The platform behavior of reading only the partitions of a dataset that satisfy the filter
+conditions applied to the partition key. Requires that filters on the partition key are applied
+early in the pipeline.
+
+**Pipeline Builder**
+The MSS platform's visual, no-code data transformation tool. Allows builders to read, join,
+filter, aggregate, and output datasets without writing code.
+
+**Pivot**
+A transform that rotates a long-format dataset (one row per category per entity) into a wide-
+format dataset (one row per entity, one column per category). Available in both Pipeline Builder
+and Contour.
+
+**Primary Key**
+The property (or combination of properties) that uniquely identifies each object instance in
+an Object Type. Must be unique and stable across the lifetime of the Object Type.
+
+**Production Branch**
+The live environment that operational users depend on. No development occurs in production —
+all changes are promoted from reviewed development branches.
+
+**Progressive Disclosure**
+A UX design pattern in which summary information is displayed first and detail is revealed
+on user selection or interaction. Reduces cognitive load and application load time.
+
+**Property**
+A named attribute of an Object Type instance. Properties store the data about each object —
+its name, status, location, identifier, and other characteristics.
+
+**Quiver**
+The MSS platform's object-centric analysis tool. Allows builders and analysts to explore
+Object Types, traverse Link Types, define object sets, and build multi-object dashboards.
+
+**Saved View**
+A persistently saved Contour analysis or Quiver dashboard configuration, including all filter
+settings, calculated columns, and chart configurations. Enables repeatable, shareable
+analytical products.
+
+**UDRA**
+Unified Data Reference Architecture. Army enterprise architecture standard (v1.1, February 2025)
+that defines data domains, governance roles, and architectural patterns. All USAREUR-AF data
+products must align to a UDRA domain.
+
+**Union**
+A pipeline transform that combines rows from two or more datasets with compatible schemas into
+a single output dataset.
+
+**Variable (Workshop)**
+A named container in a Workshop application that stores a value set by user interaction or
+application logic. Variables enable dynamic filtering, conditional visibility, and state
+management across pages.
+
+**Workshop**
+The MSS platform's no-code application builder. Allows builders to create interactive,
+data-driven operational interfaces using configurable widgets without writing code.
+
+---
+
+*TM-30 — Maven Smart System Advanced No-Code Builder Technical Manual*
+*Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026*
+*Distribution Restriction: Approved for public release; distribution is unlimited.*

@@ -47,13 +47,17 @@ All Staff ───────────────────────�
                                                 ▼
 Data-Adjacent Specialists ───────────────► TM-30 (Advanced Builder)
                                                 │
-                                                ▼
-[FUTURE] Developers ────────────────────► TM-40 series:
-                                            TM-40A (AI Eng) | TM-40B (SWE) | TM-40C (MLE)
-                                            TM-40D (ORSA)   | TM-40E (PM)  | TM-40F (KM)
-                                                 │
-                                                 ▼
-                                         TM-50 series (advanced, per track)
+                                    ┌───────────┴────────────┐
+                                    ▼                        ▼
+                         Developer tracks           Non-developer tracks
+                         (prereq: TM-30)            (prereq: TM-20)
+                         TM-40A (ORSA)              TM-40D (PM)
+                         TM-40B (AI Eng)            TM-40E (KM)
+                         TM-40C (MLE)
+                         TM-40F (SWE)
+                                    │
+                                    ▼
+                         [FUTURE] TM-50 series (advanced, per track)
 ```
 
 ### Step 3 — Reference the Glossary
@@ -80,16 +84,21 @@ At any point, consult the [Data & Foundry Glossary](doctrine/GLOSSARY_data_found
 | **TM-20** — Builder | [tm/TM_20_builder/TM_20_BUILDER.md](tm/TM_20_builder/TM_20_BUILDER.md) | All staff | TM-10 |
 | **TM-30** — Advanced Builder | [tm/TM_30_advanced_builder/TM_30_ADVANCED_BUILDER.md](tm/TM_30_advanced_builder/TM_30_ADVANCED_BUILDER.md) | Data-adjacent specialists | TM-10, TM-20 |
 
+### TM-40 Series — Technical Specialist Tracks (Prerequisite: TM-30)
+
+| Publication | File | Audience | Prerequisite |
+|-------------|------|----------|--------------|
+| **TM-40A** — ORSA | [tm/TM_40A_orsa/TM_40A_ORSA.md](tm/TM_40A_orsa/TM_40A_ORSA.md) | Operations Research analysts | TM-30 |
+| **TM-40B** — AI Engineer | [tm/TM_40B_ai_engineer/TM_40B_AI_ENGINEER.md](tm/TM_40B_ai_engineer/TM_40B_AI_ENGINEER.md) | AI/ML specialists | TM-30 |
+| **TM-40C** — Machine Learning Engineer | [tm/TM_40C_ml_engineer/TM_40C_ML_ENGINEER.md](tm/TM_40C_ml_engineer/TM_40C_ML_ENGINEER.md) | MLEs | TM-30 |
+| **TM-40D** — Program Manager | [tm/TM_40D_program_manager/TM_40D_PROGRAM_MANAGER.md](tm/TM_40D_program_manager/TM_40D_PROGRAM_MANAGER.md) | PMs, resource managers, G8/S8 | TM-20 |
+| **TM-40E** — Knowledge Manager | [tm/TM_40E_knowledge_manager/TM_40E_KNOWLEDGE_MANAGER.md](tm/TM_40E_knowledge_manager/TM_40E_KNOWLEDGE_MANAGER.md) | KMOs, 37F, S2/S3/S6 KM roles | TM-20 |
+| **TM-40F** — Software Engineer | [tm/TM_40F_software_engineer/TM_40F_SOFTWARE_ENGINEER.md](tm/TM_40F_software_engineer/TM_40F_SOFTWARE_ENGINEER.md) | SWEs | TM-30 |
+
 ### Planned Publications (Not Yet Produced)
 
 | Publication | Audience | Notes |
 |-------------|----------|-------|
-| **TM-40A** — AI Engineer Track | AI/ML specialists | AIP Logic authoring, Agent Studio, LLM integration, AI safety |
-| **TM-40B** — Software Engineer Track | SWEs | OSDK, full-stack Foundry apps, Platform SDK, Slate |
-| **TM-40C** — Machine Learning Engineer Track | MLEs | Code Workspaces, model training, evaluation, deployment |
-| **TM-40D** — ORSA Track | Operations Research analysts | Statistical modeling, Monte Carlo, optimization, wargame analytics |
-| **TM-40E** — Program Manager Track | PMs, resource managers | PM dashboards, milestone tracking, portfolio analysis, reporting pipelines |
-| **TM-40F** — Knowledge Manager Track | KMOs, 37F, S2/S3/S6 KM roles | Knowledge repositories, AIP summarization, lessons learned pipelines, AAR capture |
 | **TM-50A–F** — Advanced Developer Tracks | Senior developers (all tracks) | Advanced versions of each TM-40 track |
 
 ---

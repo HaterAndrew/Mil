@@ -60,6 +60,8 @@ Builders have elevated privileges on MSS. Errors in pipelines, Ontology configur
 
 This Technical Manual (TM) provides task-level instruction for USAREUR-AF personnel who build on the Maven Smart System (MSS) using no-code tools. It is written for all staff -- officer, warrant, NCO, civilian -- who completed TM-10 and have been granted builder access. No programming background is required. If you can use a web browser and fill out forms, you can do everything in this manual.
 
+> **NOTE:** Before beginning TM-20 work, verify you can independently perform the following TM-10 tasks without referencing the manual: Task 2-1 through 2-4 (account setup, MFA, access); Task 3-1 through 3-3 (navigation and resource discovery); Task 5-1 (dataset viewing); Chapter 7 (security markings and access controls). Builders must understand operator-level data security requirements before building. If you are uncertain about any TM-10 task, review TM-10 before proceeding.
+
 **This manual covers:**
 
 - Creating and managing projects via the Compass UI
@@ -95,6 +97,8 @@ United States Army Europe and Africa (USAREUR-AF) is the Army Service Component 
 As a builder, the tools you create directly affect readiness visibility and operational decision-making across this formation. A Workshop application you build may display unit status to a V Corps G3 in Poznan or track logistics readiness for a 21st TSC officer in Kaiserslautern. A pipeline you configure may feed the data behind a theater-level briefing. Understand the operational weight of what you are building before you begin.
 
 **Per ADP 3-13, information is combat power.** Builders are one of the primary means by which raw data becomes operationally useful information for commanders.
+
+> **NOTE:** As a builder, understand the operator's perspective before you build. Refer to TM-10, Chapter 4 (Using Workshop Applications) to see how operators use the applications you create. Refer to TM-10, Chapter 5 (Working with Data) to understand what operators expect in terms of data quality and currency. Build with the operator experience in mind at all times.
 
 ---
 
@@ -212,7 +216,7 @@ Do not begin building until you understand the existing system. Adding to someth
 - Army CIO Data Stewardship Policy Memorandum, April 2, 2024
 - USAREUR-AF C2DAO Data Governance SOP (current version)
 - Palantir Foundry Product Documentation (in-platform Help)
-- learn-data.armydev.com: Object Type Cookbook v2, DDOF Playbook, Data Modeling Fundamentals
+- USAREUR-AF G6/Data: ontology design standards, doctrine-aligned Object Type patterns, data modeling guidance
 
 ---
 
@@ -265,6 +269,8 @@ Within an authorized project, create folders following this standard structure.
 ```
 
 NOTE: Dataset paths are permanent. You cannot rename a dataset path without breaking all downstream pipelines and Ontology objects. Plan folder and dataset names before creating any resource. When in doubt, ask your team lead.
+
+> **NOTE:** The folder structure you create is what operators navigate using TM-10, Chapter 3 (Navigating the Platform), specifically Task 3-2 (Navigate Using Compass). Poor folder structure and unclear naming conventions create confusion for operators downstream. Test your folder organization by navigating it as an operator would before finalizing.
 
 ---
 
@@ -388,6 +394,8 @@ Pipeline Builder is MSS's visual, no-code ETL (Extract, Transform, Load) tool. U
 - Custom business logic
 - Machine learning or statistical computation
 - Writeback to external systems
+
+> **NOTE:** The pipelines you build in Pipeline Builder become the data sources that operators access via TM-10, Task 5-1 (View and Read a Dataset) and in Workshop applications. Pipeline failures directly impact operators' ability to access operational data. Refer to TM-10, Chapter 8 (Troubleshooting and Support) to understand the operator experience when a pipeline fails — build your monitoring accordingly.
 
 ---
 
@@ -560,6 +568,10 @@ NOTE: Schedule times are in UTC. USAREUR-AF is UTC+1 (CET) or UTC+2 (CEST in sum
 | Authentication failure | Connector credentials expired | Contact Data Steward -- do not attempt to update credentials yourself |
 | Row count zero | Source has no data for this run | Investigate source; may be expected for some time windows |
 | Build timed out | Pipeline too large for scheduled window | Escalate to data engineer (TM-30) |
+| Output dataset missing / stale | Operator impact: TM-10, Task 5-1 | Check schedule; fix broken node; notify data steward |
+| Schema mismatch after source change | Breaking change — operator impact | Escalate to TM-30 builder if multi-source; fix schema mapping |
+
+> **NOTE:** When a pipeline fails, operators using TM-10, Task 5-1 see the failure in their data views and in Workshop applications. Fix pipeline issues promptly and document what failed and why. If the root cause is outside your TM-20 capability (e.g., requires @incremental logic, complex deduplication, Python transforms), escalate to a TM-30 builder or TM-40 developer.
 
 7. After fixing the issue, click **Build Now** to confirm the fix resolves the failure.
 8. Document the failure and fix in the pipeline's description field (right panel, **Edit Description**).
@@ -607,7 +619,9 @@ The Foundry Ontology is the semantic layer of MSS -- it translates raw data tabl
 
 **Build the Ontology last, after your data is clean.** The Ontology reads from your curated dataset. If your curated dataset has schema issues, the Ontology configuration will fail or produce unreliable objects.
 
-NOTE: The authoritative reference for Ontology design is the **Object Type Cookbook v2** at learn-data.armydev.com. Before creating any new Object Type, review the Cookbook to check whether a standard pattern exists for your use case. Also review the DDOF Playbook and the Data Modeling Fundamentals course at the same address. Do not design Object Types from scratch if a cookbook pattern covers your use case.
+NOTE: Before creating any new Object Type, check the Ontology Manager to confirm no existing type already covers your use case. USAREUR-AF maintains established design patterns for common operational Object Types — consult your team lead or data steward before designing from scratch.
+
+> **NOTE:** The Object Types and properties you configure in the Ontology become what operators see in Workshop applications and in Quiver (TM-10, Task 5-3, Use Quiver to Explore Ontology Objects). A poorly designed Object Type — unclear property names, missing properties, wrong cardinality — creates friction for every operator who uses it. Refer to TM-10, Chapter 4 and Task 5-3 to understand the operator experience of your Ontology design before publishing.
 
 ---
 
@@ -720,7 +734,9 @@ NOTE: Renaming a property changes what Workshop apps display -- it does not chan
 
 NOTE: If linked objects do not appear in preview, verify that foreign key values in the source dataset match primary key values in the target dataset. A mismatch in data types (integer vs. string) is a common cause of broken links.
 
-NOTE: For complex relationship modeling, consult the Object Type Cookbook v2 at learn-data.armydev.com before building. Incorrect link configurations are difficult to fix after they are in production use.
+NOTE: For complex relationship modeling, consult your team lead or data steward before building. Incorrect link configurations are difficult to fix after they are in production use.
+
+> **NOTE:** If an Ontology design requires any of the following, it exceeds TM-20 scope and must be escalated to a TM-30 advanced builder: (1) Many-to-many Link Types with complex junction logic; (2) Multi-step Actions with conditional routing or approval chains; (3) Derived properties requiring formula logic beyond the basic UI; (4) Ontology models that feed coalition-facing or MPE data products. Refer to TM-30, Chapter 4 (Ontology Design Methodology) for the TM-30 design process, and to TM-30, Chapter 5 (Advanced Action Design via UI) for complex Action patterns.
 
 ---
 
@@ -767,6 +783,8 @@ Workshop applications read from the Ontology. They do not read directly from dat
 Data (Pipeline Builder) -> Ontology (Object Types, Links, Actions) -> Workshop App
 ```
 
+> **NOTE:** The Workshop applications you build are consumed by operators working from TM-10. Before building, read TM-10, Chapter 4 (Using Workshop Applications) — specifically Task 4-1 (Open and Orient to a Workshop Application), Task 4-3 (Apply Filters to a Dashboard), Task 4-4 (Navigate Between Modules/Pages), and Task 4-5 (Submit Data Using an Action Form). Build your application so an operator following those TM-10 tasks can use it without confusion.
+
 ---
 
 ## 5-2. Workshop Widget Library
@@ -801,6 +819,8 @@ Data (Pipeline Builder) -> Ontology (Object Types, Links, Actions) -> Workshop A
 | **Preview mode** | Top toolbar toggle | Switch between edit and user view |
 | **Publish button** | Top toolbar | Make the app available to users |
 | **Branch selector** | Top toolbar | Confirm you are on a development branch |
+
+> **NOTE:** When designing filter panels and navigation, test them from the operator's perspective. An operator following TM-10, Task 4-3 (Apply Filters to a Dashboard) expects predictable filter behavior and clear labeling. An operator following TM-10, Task 4-4 (Navigate Between Modules/Pages) expects consistent navigation. Test your application against TM-10 Chapter 4 tasks before publishing.
 
 ---
 
@@ -946,6 +966,8 @@ NOTE: Test the application at 1920x1080 resolution -- the standard government wo
 
 **TASK 5-6. PUBLISH AND SHARE A WORKSHOP APPLICATION**
 
+> **CAUTION:** Before publishing, assess whether your application design is within TM-20 scope. If your design includes: multiple pages with conditional navigation between them; widgets that pass parameters to other widgets; role-based conditional layouts — your application is likely TM-30 scope. Refer to TM-30, Chapter 2 (Advanced Workshop Application Design), specifically Section 2-1 (The Multi-Page Application Model), to determine whether your design should be escalated to a TM-30 qualified builder before publication.
+
 **CONDITIONS:** Workshop application is complete; all widgets render correctly in Preview; branch has been merged (Chapter 7); Data Steward has reviewed and approved publication; access list is defined.
 
 **STANDARDS:** The builder will publish the application, configure access so only authorized users can open it, verify that a test user (View-only access) can access and use the application, and notify intended users.
@@ -987,6 +1009,8 @@ Use Contour when you need to explore a dataset, build a table/chart for analysis
 Use Quiver when you need a simple, shareable dashboard with a few metrics and charts and do not need the full Workshop widget library or Action capability.
 
 Use Workshop when you need a full interactive application with filters, forms, Actions, and complex layout.
+
+> **NOTE:** Operators interact with Contour and Quiver using TM-10, Task 5-2 (Use Contour for No-Code Analysis) and Task 5-3 (Use Quiver to Explore Ontology Objects). When building saved analyses or Quiver configurations, understand the operator's analysis workflow from TM-10. Build analyses that support workflows operators actually perform. For advanced Contour capabilities (formula editor, multi-table aggregations, pivot analysis), refer to TM-30, Chapter 7 (Advanced Contour and Quiver).
 
 ---
 
@@ -1111,6 +1135,8 @@ Branching is how MSS protects production data and applications from work-in-prog
 
 Working without a branch is the equivalent of making changes to a live operational system without testing.
 
+> **NOTE:** Operators (TM-10) work only with the main/production branch of MSS resources. They do not see development branches. When you merge your development branch to main, operators immediately see the changes in their next refresh. A faulty merge directly affects operational users. Refer to TM-10, Chapter 8 (Troubleshooting and Support) to understand what operators experience when a bad merge breaks an application. Treat every merge to main as a production release.
+
 ---
 
 ## 7-2. Foundry Branching Concepts
@@ -1222,6 +1248,8 @@ NOTE: When in doubt on a conflict, do not guess. Contact the team member whose b
 
 ## 8-1. Overview
 
+> **NOTE:** Builder standards exist because builders have elevated privileges that operators (TM-10) do not have. Before building, understand the security markings and access controls that govern operator data access (TM-10, Chapter 7, Security, Classification, and Markings). Your applications, pipelines, and Ontology configurations must respect those controls. For TM-30-level governance responsibilities on shared infrastructure, refer to TM-30, Chapter 8 (Data Governance and Stewardship).
+
 Builder standards are not optional. They exist to maintain data quality, operational reliability, and security across the USAREUR-AF MSS environment. All TM-20 builders are accountable for the quality and compliance of everything they publish.
 
 ---
@@ -1332,6 +1360,8 @@ Complete this checklist for every pipeline, Ontology change, and Workshop applic
 | 9 | Schedule is configured and tested (first run completed successfully) | [ ] |
 | 10 | On-failure notification configured (builder + team lead) | [ ] |
 
+- [ ] Pipeline complexity is within TM-20 scope (single data source, basic joins, standard transformations). If pipeline requires multi-source deduplication, @incremental patterns, custom Python transforms, or complex error-handling logic — escalate to TM-30 builder before proceeding (TM-30, Chapter 3).
+
 ---
 
 ## A-2. Ontology Pre-Publish Checklist
@@ -1349,6 +1379,8 @@ Complete this checklist for every pipeline, Ontology change, and Workshop applic
 | 9 | Changes checked in with descriptive commit messages | [ ] |
 | 10 | Merge request includes change description, test results, breaking changes noted | [ ] |
 | 11 | Merge request assigned to correct reviewer (not yourself) | [ ] |
+
+- [ ] Ontology design is within TM-20 scope (simple Object Types, one-to-one/one-to-many links, single-step Actions). If design requires many-to-many links, multi-step Actions, derived properties with complex logic, or coalition-facing access — escalate to TM-30 before proceeding (TM-30, Chapter 4).
 
 ---
 
@@ -1374,6 +1406,8 @@ Complete this checklist for every pipeline, Ontology change, and Workshop applic
 # APPENDIX B -- COMMON PIPELINE BUILDER PATTERNS
 
 The following patterns address the most common USAREUR-AF data ingestion scenarios.
+
+> **NOTE:** The design patterns in this appendix are TM-20 level — they use Pipeline Builder, Ontology Manager, and Workshop without code. As your data products grow in complexity, some patterns will need to evolve into TM-30 designs. If a pattern requires multi-step Actions, complex Link Type logic, or advanced transform rules, refer to TM-30, Chapter 4 (Ontology Design Methodology) and TM-30, Chapter 3 (Advanced Pipeline Builder) to assess whether TM-30 or TM-40 resources are needed.
 
 ---
 

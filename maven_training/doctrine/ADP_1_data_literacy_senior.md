@@ -551,7 +551,7 @@ The following terms are used throughout this publication. Definitions are provid
 
 **Allied Joint Publications (AJP-01, AJP-3, AJP-5)** — NATO joint doctrine governing operations, conduct, and planning. USAREUR-AF data products and analytical processes must support interoperability with these publications.
 
-**USAREUR-AF Cross-Domain Architecture (CDA) Portal** — Contains technical architecture guides, course materials, NATO NAFv4 alignment resources, and the USAREUR-AF 5-Layer Data Stack implementation documentation. Senior leaders seeking to understand the technical architecture underpinning USAREUR-AF data operations should reference the CDA Portal or direct their data staff to do so.
+**USAREUR-AF G6/Data** — The authoritative source for technical architecture guidance, ontology standards, NATO NAFv4 alignment resources, and the USAREUR-AF 5-Layer Data Stack implementation documentation. Senior leaders seeking to understand the technical architecture underpinning USAREUR-AF data operations should direct their data staff to coordinate with G6/Data.
 
 ---
 

@@ -551,7 +551,7 @@ Example: A readiness dataset achieves VAUTI compliance when: it appears in the M
 
 **5-Layer Data Stack**
 *Foundry Equivalent: Maps directly to Foundry's platform layers — connectors/storage (Layers 1-2), ontology (Layer 3), Quiver/Contour/Workshop (Layer 4), AIP/Actions/OSDK (Layer 5).*
-Definition: The USAREUR-AF implementation model for organizing data capabilities into five functional layers: (1) Infrastructure — compute, storage, and connectivity; (2) Integration — pipelines, ingestion, and ETL/ELT; (3) Semantic — ontology, data meaning, and governance; (4) Analytics — analysis, dashboards, and reporting; (5) Activation — applications, decisions, and automated actions. This model is maintained in the USAREUR-AF Cross-Domain Architecture (CDA) portal (learn-data.armydev.com). The Maven Smart System implements all five layers within the Army data enterprise. *Source: USAREUR-AF CDA portal.*
+Definition: The USAREUR-AF implementation model for organizing data capabilities into five functional layers: (1) Infrastructure — compute, storage, and connectivity; (2) Integration — pipelines, ingestion, and ETL/ELT; (3) Semantic — ontology, data meaning, and governance; (4) Analytics — analysis, dashboards, and reporting; (5) Activation — applications, decisions, and automated actions. The Maven Smart System implements all five layers within the Army data enterprise.
 Example: A Workshop readiness dashboard operates at Layer 5 (Activation). It is fed by a transform at Layer 2 (Integration), uses Object Types defined at Layer 3 (Semantic), and runs on cloud infrastructure at Layer 1 (Infrastructure).
 
 ---
@@ -1058,7 +1058,7 @@ Example: A readiness dataset is VAUTI-compliant when: it appears in the MSS cata
 
 **5-Layer Data Stack (USAREUR-AF)**
 *Foundry Equivalent: Maps directly to Foundry's architecture*
-Definition: USAREUR-AF's standard data architecture model, maintained in the Cross-Domain Architecture (CDA) Portal at learn-data.armydev.com. Five layers: (1) Infrastructure — compute, storage, connectivity; (2) Integration — pipelines, ingestion, ETL; (3) Semantic — ontology, meaning, governance; (4) Analytics — analysis, dashboards, reporting; (5) Activation — applications, decisions, actions. The Maven Smart System implements all five layers.
+Definition: USAREUR-AF's standard data architecture model. Five layers: (1) Infrastructure — compute, storage, connectivity; (2) Integration — pipelines, ingestion, ETL; (3) Semantic — ontology, meaning, governance; (4) Analytics — analysis, dashboards, reporting; (5) Activation — applications, decisions, actions. The Maven Smart System implements all five layers.
 Example: A readiness dashboard lives at Layer 5 (Activation), fed by a transform at Layer 2 (Integration), using Object Types defined at Layer 3 (Semantic), running on cloud infrastructure at Layer 1 (Infrastructure).
 
 ---

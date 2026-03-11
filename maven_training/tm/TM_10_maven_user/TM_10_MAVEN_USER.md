@@ -74,6 +74,8 @@ This Technical Manual (TM) provides operator-level instruction for the Maven Sma
 
 Those tasks are covered in TM-20 (Workshop Builder) and TM-30 (Advanced Builder). If a task you need to perform is not in this manual, contact your unit data steward before attempting it.
 
+> **NOTE:** If a task in this manual indicates it requires a builder or engineer, do not attempt it yourself. The escalation path is: (1) TM-10 operator attempt fails or is out of scope → (2) Contact your unit data steward → (3) Data steward routes to TM-20 builder (Workshop apps, basic pipelines, Ontology configuration) or TM-30 advanced builder (complex design, AIP Logic, enterprise Ontology) or TM-40 developer (code required). Chapter 8 of this manual contains the full escalation decision guide.
+
 ---
 
 ## 1-2. What the Maven Smart System Is
@@ -163,7 +165,7 @@ NOTE: The USAREUR-AF C2DAO office is responsible for implementing and enforcing 
 
 **Recommended (not required) prior reading:**
 - ADRP 1 (Data Literacy)
-- TM-10 Supplemental Training on the USAREUR-AF CDA Portal (learn-data.armydev.com)
+- Supplemental training materials available through your unit data steward or G6/Data
 
 **Account provisioning takes 3 to 5 business days.** If you have an upcoming deployment, exercise, or TDY requiring MSS access, start the account request process early.
 
@@ -411,6 +413,8 @@ NOTE: Bookmarks are personal — they affect only your view. Bookmarking a resou
 
 **BLUF:** Workshop is the main interface most MSS users will see every day. A developer in your unit or on the MSS team has built an application — a dashboard, a form, a report — and published it for your unit to use. You interact with it the same way you use any website: clicking, reading, filtering, and submitting forms. You do not need to understand how it was built.
 
+> **NOTE:** You are using an application that a TM-20 builder created. If an application is missing a feature you need, is broken, or needs modification, do not attempt to edit it yourself. Contact your unit data steward and reference TM-20, Chapter 5 (Building Workshop Applications) as the appropriate level to address the issue.
+
 ---
 
 ## 4-1. What Workshop Applications Look Like
@@ -558,6 +562,8 @@ CAUTION: Data submitted through a form writes directly to live operational recor
 WARNING: Do not submit data on behalf of another Soldier using your credentials unless you are specifically authorized and directed to do so in your unit SOP. All submissions are logged with your user identity. Submitting records under your credentials that belong to another Soldier is a records integrity violation.
 
 EXAMPLE: PFC Rodriguez is the readiness NCO for HHC, 2nd BCT in Vilseck. He submits the daily SITREP through the unit's Workshop SITREP application. He selects his unit from the dropdown, enters the readiness numbers for each status category, adds a remarks note, and clicks Submit. The green confirmation message "SITREP submitted successfully — 111845Z MAR 26" appears. He screenshots the confirmation for his records.
+
+> **NOTE:** The action form you are submitting was configured by a TM-20 builder using the Ontology Manager. If an action is missing, not functioning correctly, or needs a new field, this is a TM-20 or TM-30 builder task. Report the issue to your data steward. Refer to TM-20, Chapter 4-2 (Ontology Manager Interface Overview) for builder-level action configuration. Complex multi-step action workflows are TM-30 level — refer to TM-30, Chapter 5 (Advanced Action Design via UI).
 
 ---
 
@@ -780,6 +786,12 @@ If you see data that appears incorrect — wrong unit, wrong number, a value tha
 
 CAUTION: Guessing at corrections, editing records outside of authorized interfaces, or working around incorrect data without reporting it degrades data integrity for everyone who uses that data downstream. One bad record can cascade into multiple bad reports.
 
+> **NOTE:** Distinguish between data that looks wrong due to user error (operator-fixable) and systematic data quality problems (builder/engineer responsibility):
+> - **Operator-fixable:** Wrong filter applied, stale view (refresh), user-level permissions issue.
+> - **Escalate to data steward → TM-20 builder:** Pipeline configuration error, incorrect transform logic, broken data feed from a known source.
+> - **Escalate to data steward → TM-30 advanced builder or TM-40 developer:** Systematic data corruption, incorrect schema mapping, validation failures at ingestion.
+> Do not attempt to modify pipelines or datasets yourself. Refer to TM-30, Chapter 3 (Advanced Pipeline Builder) for builder-level pipeline diagnostic context.
+
 ---
 
 # CHAPTER 6 — AIP AND AI INTERFACES
@@ -822,6 +834,8 @@ WARNING: AI-generated content in MSS is NOT authoritative and is NOT always corr
 
 **EQUIPMENT:** Active MSS session, Workshop application with AIP Logic workflow.
 
+> **NOTE:** AIP Logic workflows are designed and configured by TM-30 advanced builders. You are using a workflow that has been built for you. If the workflow produces unexpected outputs, follow the human review steps in this task. If the workflow itself is broken or needs modification, report to your data steward — do not attempt to reconfigure it. For TM-30 builder reference, see TM-30, Chapter 6 (AIP Logic Configuration).
+
 **PROCEDURE:**
 
 1. AIP Logic workflows appear in Workshop applications as **automated alerts or recommendations.** They may display as:
@@ -848,6 +862,8 @@ EXAMPLE: SGT Okonkwo is monitoring the readiness dashboard for 1-9 FA in Grafenw
 **STANDARDS:** Operator enters a clear, specific query, receives a response, verifies the key facts against source records, and uses the response appropriately after verification.
 
 **EQUIPMENT:** Active MSS session, AIP Agent interface.
+
+> **NOTE:** AIP Agents are AI interfaces designed for operator use, configured by TM-30 builders. Your role is to interact with the agent and validate its outputs before acting on them. If the agent produces consistently incorrect, outdated, or operationally unsound information, report to your data steward with screenshots or a summary of the issue. Do not alter the agent configuration. See TM-30, Chapter 6 for builder-level AIP configuration.
 
 **PROCEDURE:**
 
@@ -1010,6 +1026,8 @@ Data does not become less sensitive just because you moved it out of MSS. When y
 - MSS links work only for users who have authorization to the resource. A link shared with an unauthorized user will result in an "Access Denied" error — this is normal and intentional.
 - Do not attempt to share data by other means (screenshots, email attachments) if the recipient does not have MSS access. Instead, work with your data steward to ensure the right people have appropriate MSS access.
 
+> **NOTE:** Builders who create data products (pipelines, datasets, Workshop applications) are responsible for ensuring those products carry correct classification markings before publication. If you receive an export or data product with markings that appear incorrect, report it immediately to your data steward before sharing or acting on the data. Refer to TM-20, Chapter 8 (Builder Standards and Governance) for builder-level data marking responsibilities.
+
 ---
 
 ## 7-4. Aggregation Risk
@@ -1069,6 +1087,10 @@ After reporting a security incident, preserve all records (browser history, scre
 | "Access Denied" on a resource | You do not have permission for that resource | Contact data steward — do not attempt to access through alternate routes |
 | Session expired, kicked back to login | Normal session timeout | Log back in with your CAC — this is expected behavior |
 | Cannot see export button | Export not authorized for that application | Contact data steward — do not use other methods to extract data |
+| Application widget not displaying / action form broken | Workshop configuration error | Contact data steward → TM-20 builder (TM-20, Ch. 5) |
+| Data consistently wrong or missing across all users | Pipeline or transform issue | Contact data steward → TM-30 builder or TM-40 developer (TM-30, Ch. 3) |
+| AIP workflow producing wrong outputs | AIP Logic configuration | Contact data steward → TM-30 builder (TM-30, Ch. 6) |
+| Need new dataset, new Object Type, or new action | Build request | Contact data steward → TM-20 or TM-30 builder depending on complexity |
 
 ---
 
@@ -1130,6 +1152,14 @@ Collect the following before making contact:
 | Application bug or feature request | USAREUR-AF MSS Help Desk (provide application name and error details) | MSS development team via Help Desk |
 
 NOTE: Current phone numbers and email addresses for the USAREUR-AF MSS Help Desk and the C2DAO office are maintained by your unit S6/G6 and in your unit SOP. This manual does not list them because they change. Obtain current contact information before you need it.
+
+> **NOTE:** The escalation path for MSS issues follows TM capability levels:
+> 1. **TM-10 (Operator):** Self-diagnose using Chapter 8 of this manual. Use the self-help checklist before escalating.
+> 2. **Data Steward:** First point of escalation. The steward triages and routes.
+> 3. **TM-20 Builder:** Workshop application issues, basic pipeline failures, Ontology configuration errors.
+> 4. **TM-30 Advanced Builder:** Complex pipeline design, Ontology architecture, AIP Logic configuration, multi-page application design.
+> 5. **TM-40 Developer (code required):** Python/PySpark transforms, TypeScript functions, OSDK development, Agent Studio.
+> Refer to TM-20, Chapter 1 and TM-30, Chapter 1 for role descriptions at each level.
 
 ---
 

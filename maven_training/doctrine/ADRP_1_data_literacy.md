@@ -32,8 +32,7 @@ This edition incorporates the following updates from the initial publication:
   Army operational objective.
 - **NATO references.** Adds AJP-3.2 (Allied Joint Doctrine for Land Operations) to
   interoperability section and references.
-- **CDA Portal.** Expands CDA Portal reference to include all authoritative resources
-  available at learn-data.armydev.com.
+- **Architecture resources.** Expands reference to USAREUR-AF technical architecture and implementation resources available through G6/Data.
 
 This Army Doctrine Reference Publication (ADRP) establishes doctrine for data literacy across
 United States Army Europe and Africa (USAREUR-AF) and the broader Army. It provides the
@@ -752,10 +751,7 @@ centralizing all data management in a single IT element. For detailed technical
 implementation guidance, see the USAREUR-AF Cross-Domain Architecture (CDA) Portal
 (listed in the References section of this publication).
 
-**NOTE:** The UDRA v1.1 and supporting enterprise architecture documentation are available
-through the USAREUR-AF CDA Portal at learn-data.armydev.com. The portal contains the
-Object Type Cookbook v2 (canonical ontology reference), the DDOF Playbook, the Enterprise
-Architecture series, and NATO doctrine crosswalks.
+**NOTE:** The UDRA v1.1 and supporting enterprise architecture documentation are available through USAREUR-AF G6/Data. Contact your unit data steward or G6/Data for implementation guidance, ontology design references, and NATO doctrine crosswalks.
 
 **3-8. Data Provenance and Lineage**
 
@@ -1345,8 +1341,7 @@ requirements. The more restrictive handling requirement governs the combined pro
 7-6d. USAREUR-AF data systems must comply with NATO Architecture Framework version 4
 (NAFv4) to ensure interoperability with Allied data environments. NATO NAFv4 alignment
 is particularly relevant for data products, system interfaces, and ontology definitions
-shared across the coalition. For NAFv4 implementation guidance, reference the USAREUR-AF
-CDA Portal listed in the References section.
+shared across the coalition. For NAFv4 implementation guidance, contact USAREUR-AF G6/Data.
 
 7-6e. Coalition data sharing requirements in the EUCOM AOR are further governed by
 NATO Allied Joint Publications. AJP-3 (Allied Joint Doctrine for the Conduct of Operations)
@@ -1354,8 +1349,7 @@ and AJP-3.2 (Allied Joint Doctrine for Land Operations) establish data sharing o
 for combined land operations; AJP-5 (Allied Joint Doctrine for the Planning of Operations)
 governs information requirements in multinational planning. USAREUR-AF data products
 generated in support of combined operations must satisfy the data interoperability
-requirements established in these publications. NATO doctrine crosswalks are available
-through the USAREUR-AF CDA Portal at learn-data.armydev.com.
+requirements established in these publications. NATO doctrine crosswalks are available through USAREUR-AF G6/Data.
 
 **7-7. Responsibilities of Data Owners, Stewards, and Consumers**
 
@@ -1657,10 +1651,7 @@ through workaround procedures.
 
 9-7d. **Governance must be upstream.** The most common failure mode in enterprise data programs is treating governance as a documentation exercise — something that happens after systems are built and data is flowing. Effective data governance requires participation in requirements definition, funding decisions, and acquisition processes *before* systems are fielded. A data architecture built without governance participation will be technically coherent but operationally inconsistent: different systems will define the same entity differently, access will be granted inconsistently, and quality will degrade at every handoff. Architecture without governance is documentation. Governance without architecture is policy without mechanism. Both are required. This principle applies at every tier of the Army data stewardship hierarchy and at the command level within the USAREUR-AF AOR. Data personnel must have a seat at the table during system acquisition and requirements development, not just during post-fielding integration.
 
-**NOTE:** For current USAREUR-AF data governance contacts, policy memoranda, and
-implementation guidance, access the USAREUR-AF CDA Portal at learn-data.armydev.com.
-The portal is updated as enterprise policy changes and is the authoritative reference for
-USAREUR-AF data governance implementation.
+**NOTE:** For current USAREUR-AF data governance contacts and policy memoranda, contact USAREUR-AF G6/Data or your unit data steward.
 
 ---
 
@@ -1995,18 +1986,7 @@ to the data type and operational context.
 
 ## USAREUR-AF Resources
 
-- **USAREUR-AF Cross-Domain Architecture (CDA) Portal** — Accessible at
-  learn-data.armydev.com. The CDA Portal is the authoritative technical reference for
-  USAREUR-AF operational data architecture. Contains technical architecture guides, course
-  materials, ontology reference documentation, NATO NAFv4 alignment resources, and the
-  USAREUR-AF 5-Layer Data Stack implementation documentation.
-
-**NOTE:** The CDA Portal contains the following authoritative resources:
-- Object Type Cookbook v2 — canonical ontology reference for USAREUR-AF data types
-- DDOF Playbook — data domain operations framework guidance
-- Enterprise Architecture series — technical implementation guides for all 5-Layer Data Stack components
-- NATO doctrine crosswalks — alignment guides between Army data standards and NATO AJP/NAFv4 requirements
-- UDRA v1.1 implementation guidance — command-level implementation of the Army reference architecture
+- **USAREUR-AF G6/Data** — The authoritative point of contact for USAREUR-AF operational data architecture, ontology design references, technical implementation guidance, NATO NAFv4 alignment resources, and the USAREUR-AF 5-Layer Data Stack implementation documentation. Contact your unit data steward or G6/Data directly for current resources.
 
 Access requires a valid CAC and USAREUR-AF network account. Contact your unit S6 or
 G6/Data for access provisioning.
@@ -2250,8 +2230,7 @@ Policy, April 2024.)
 architecture for data systems (February 2025), issued by the Army Chief Information Officer.
 Based on data mesh principles: distributed data ownership, domain-aligned data products, and
 federated governance. The authoritative Army architecture reference; supersedes prior
-centralized data architecture guidance. Implemented at USAREUR-AF level through the CDA
-Portal at learn-data.armydev.com.
+centralized data architecture guidance. Implemented at USAREUR-AF level through G6/Data.
 
 **Unstructured Data** — Data with no predefined format or schema.
 
@@ -2276,9 +2255,7 @@ products must satisfy VAUTI standards before operational use. (See paragraph 4-8
 organizing data capabilities across Infrastructure, Integration, Semantic, Analytics, and
 Activation layers.
 
-**CDA Portal (Cross-Domain Architecture Portal)** — The USAREUR-AF portal at
-learn-data.armydev.com containing technical architecture guides and implementation
-resources for USAREUR-AF data systems.
+**Cross-Domain Architecture (CDA)** — The USAREUR-AF enterprise architecture framework governing data systems design, ontology standards, and NAFv4 alignment. Implementation guidance available through USAREUR-AF G6/Data.
 
 **Information Advantage** — As defined in ADP 3-13, the operational condition achieved when
 a force can generate, protect, and exploit information more effectively than the adversary.
