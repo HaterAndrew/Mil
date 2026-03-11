@@ -1,1711 +1,1806 @@
-# TM-40D — MAVEN SMART SYSTEM (MSS)
-## PROGRAM MANAGER TECHNICAL MANUAL
+```
+TM-40D
+TECHNICAL MANUAL
+PROGRAM MANAGER (TECHNICAL)
+MAVEN SMART SYSTEM
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
+HEADQUARTERS
+UNITED STATES ARMY EUROPE AND AFRICA
 Wiesbaden, Germany
 
 2026
 
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; ADRP 1, Data Literacy (required)
-
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+PREREQUISITE PUBLICATIONS: TM-30, Advanced Builder (required); TM-10, Maven User; TM-20, Builder;
+                            ADRP 1, Data Literacy (required)
+APPLIES TO:  Technical Project Managers, Product Owners, Team Leads managing data/AI/software
+             capability builds on MSS. Civilian tech PMs, officer/NCO project leads,
+             ORSA/MLE/SWE/KM team leads.
+DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.
+```
 
 ---
 
 ## SAFETY SUMMARY
 
-Program managers operating at TM-40D level build and maintain tracking infrastructure that senior leaders depend on for operational decisions. Errors in PM systems — incorrect milestone dates, wrong funding figures, missed risk escalations — affect resource allocation, commander assessments, and operational outcomes.
+Technical PMs managing MSS projects make decisions that affect production data environments, live
+dashboards, and AI-driven tools that operational users depend on. An incorrect release, a broken
+model, or a misconfigured access control is not an IT inconvenience — it degrades the operational
+picture for USAREUR-AF formations in the AOR.
 
 Before performing any task at TM-40D level:
 
-- Validate all data inputs at ingestion boundaries. PM systems often aggregate data from multiple source systems (GCSS-Army, GFEBS, IPPS-A, manual submissions). Each boundary is a potential corruption point.
-- Never publish a dashboard to production without a documented data lineage path from source to display. Senior leaders must be able to trace any displayed figure to an authoritative source.
-- Coordinate with the USAREUR-AF C2DAO before creating new Object Types that intersect with shared enterprise ontology domains (Personnel, Equipment, Finance).
-- Automated reporting pipelines that generate SITREP, LOGREP, or PERSTAT data products require C2DAO review before scheduling in production. These pipelines feed command reporting chains.
-- Access control on PM systems must be explicitly configured. Budget figures, risk registers, and personnel data are sensitive — default-open permissions are not acceptable.
-- Changes to production reporting pipelines require a 24-hour notification to downstream consumers before implementation.
+- Do not promote a data product to production without completing the Definition of Done checklist
+  (Appendix B). Partial releases create false confidence in downstream consumers.
+- Do not grant Foundry project access outside the least-privilege model. Data products built on MSS
+  may contain operationally sensitive ontology objects. Coordinate access decisions with the
+  USAREUR-AF C2DAO.
+- Do not scope-creep a data/AI project into production ML without involving TM-40C (ML Engineer)
+  and TM-40B (AI Engineer) resources. Deploying an untested model as a "quick prototype" is a
+  data quality risk that can corrupt downstream operational products.
+- Never schedule an automated pipeline to overwrite production data without a rollback path. Define
+  the rollback procedure before the deployment window opens.
+- When deploying a new capability to operational users, communicate the change 48 hours in advance
+  to unit data points of contact. Silent deployments that change workflows cause user resistance
+  and loss of trust in the platform.
 
-> **WARNING: PM systems at TM-40D level directly support command reporting chains. An error in an automated SITREP pipeline or a corrupted funding dashboard can result in a commander briefing incorrect data to USAREUR-AF or USEUCOM leadership. Apply the same rigor to data system changes that a unit applies to a FRAGO — confirm, coordinate, and communicate before executing.**
+> **WARNING: MSS data products built under TM-40D oversight directly support commander decision
+> making at the theater level. A PM who approves a defective release, ships a dashboard with
+> incorrect business logic, or fails to validate model outputs before production is accountable
+> for the downstream operational impact. Apply a mission brief standard to every release decision:
+> confirm, coordinate, communicate before execution.**
 
 ---
 
 ## TABLE OF CONTENTS
 
-- Chapter 1 — Introduction: The PM Track
-- Chapter 2 — PM System Architecture
-- Chapter 3 — Status and Milestone Tracking
-- Chapter 4 — Resource and Budget Tracking
-- Chapter 5 — Risk Register Design
-- Chapter 6 — Reporting Pipelines
-- Chapter 7 — Senior Leader Dashboards
-- Chapter 8 — Portfolio Analysis
-- Chapter 9 — PM System Governance
-- Appendix A — PM System Design Checklist
-- Appendix B — Army Reporting Requirements Cross-Reference
-- Appendix C — Dashboard Design Standards for Senior Leaders
+- Chapter 1 — Introduction: The Technical PM Role
+- Chapter 2 — Agile Project Management for Data and AI Projects
+- Chapter 3 — Managing ML and AI Project Lifecycles
+- Chapter 4 — Stakeholder Management and Requirements Translation
+- Chapter 5 — Building Project Tracking Systems on MSS
+- Chapter 6 — Risk and Dependency Management
+- Chapter 7 — Delivery Planning and Production Readiness
+- Chapter 8 — Change Management and User Adoption
+- Appendix A — Project Kickoff Checklist
+- Appendix B — Definition of Done — Data Product Standards
 - Glossary
 
 ---
 
-## CHAPTER 1 — INTRODUCTION: THE PM TRACK
+# CHAPTER 1 — INTRODUCTION: THE TECHNICAL PM ROLE
 
-### 1-1. Purpose and Scope
+## 1-1. Purpose and Scope
 
-**BLUF:** TM-40D qualifies program managers, project managers, resource managers, and S-shop staff managers to design, build, and sustain program management tracking systems on the Maven Smart System (MSS). This track is the MSS authority for PM-domain system design.
+**BLUF:** TM-40D qualifies Technical Project Managers, Product Owners, and Team Leads to plan,
+execute, and govern data, AI, and software capability builds on the Maven Smart System (MSS).
+This track bridges technical execution (TM-40A through TM-40F developers) and operational
+requirements (commanders, staff, end users).
 
-This manual provides task-level instruction for building PM tracking infrastructure on MSS. It covers the full lifecycle of a PM system: design, build, operation, reporting, and governance. TM-40D graduates design and operate the tracking systems their programs depend on — from milestone boards to risk registers to automated SITREP pipelines to senior leader dashboards.
+This manual provides task-level instruction for managing the full lifecycle of a data or AI
+project on MSS — from initial stakeholder requirements through sprint planning, execution, release,
+and sustainment. TM-40D graduates serve as the connective tissue between technical build teams
+and the operational units they support.
 
 **TM-40D covers:**
-- Designing PM tracking Object Type models for programs, milestones, tasks, risks, resources, and personnel
-- Building milestone and schedule tracking systems with date-based logic and schedule risk indicators
-- Designing risk registers with likelihood/impact scoring and automated escalation
-- Building resource and budget tracking systems (funding, obligation, equipment, personnel)
-- Building automated reporting pipelines that generate SITREP, LOGREP, and PERSTAT data products on schedule
-- Designing senior leader dashboards for commander consumption in briefings
-- Conducting portfolio analysis across multiple programs using Contour
-- Governing PM systems: access control, audit trails, data stewardship, and sustainment planning
+
+- Agile project management methods adapted for data and AI projects in a military operational
+  context
+- Backlog management: writing user stories and acceptance criteria for data products and dashboards
+- Managing ML and AI project lifecycles from research through production and sustainment
+- Translating operational requirements from commanders and staff into actionable technical tasks
+- Building live project tracking systems on MSS using Workshop, Ontology, and Pipeline Builder
+- Risk and dependency management specific to data availability, model performance, and technical debt
+- Delivery planning: scope, timeline, and quality tradeoffs for data product releases
+- Coordinating across technical tracks: when to pull in TM-40A (AI Engineer), TM-40B (Software
+  Engineer), TM-40C (ML Engineer), TM-40E (Knowledge Manager), and TM-40F (SWE)
+- Change management: deploying new MSS capabilities to operational users who resist change
+- Platform governance from a PM perspective: Foundry project permissions, resource allocation,
+  and access stewardship
 
 **TM-40D does NOT cover:**
-- Raw coding of custom transforms, API integrations, or Functions on Objects — see TM-40B (Software Engineer) for those requirements
-- Machine learning model development — see TM-40C (ML Engineer)
-- AI workflow automation and Agent Studio — see TM-40A (AI Engineer)
-- Advanced statistical analysis and modeling — see TM-40D (ORSA)
 
-> **NOTE:** TM-40D is a no-code/low-code track. PM-series personnel may write light Python or SQL in reporting pipelines (Chapter 6), but the primary toolset is Foundry Workshop, Pipeline Builder, Contour, and Ontology design. Personnel without any Python background can complete this manual. Personnel who do write Python should consult TM-40B for code standards.
+- Raw coding of Foundry transforms, Functions on Objects, or API integrations — see TM-40F
+- Machine learning model development and validation — see TM-40C (ML Engineer)
+- AI agent and workflow automation build — see TM-40B (AI Engineer)
+- Advanced statistical analysis and modeling — see TM-40A (ORSA)
+- Knowledge management architecture and data dictionary design — see TM-40E (KM)
+
+> **NOTE:** TM-40D is a management and coordination track. The PM does not need to write code.
+> The PM must understand enough about each technical discipline to write accurate user stories,
+> identify blockers, assess risk, and make scope tradeoff decisions. Technical depth comes from
+> the TM-40 specialists the PM leads.
 
 ---
 
-### 1-2. The PM Role in the MSS Ecosystem
+## 1-2. The Technical PM in the MSS Ecosystem
 
-Program managers in USAREUR-AF operate at the intersection of mission execution and resource management. A PM supporting a theater modernization program tracks dozens of milestones, hundreds of line items, cross-functional dependencies, risk factors, contract actions, and personnel assignments — simultaneously, across multiple phases of execution. The volume and velocity of tracking data exceeds what SharePoint spreadsheets, email threads, or manual tracking boards can handle at USAREUR-AF scale.
+USAREUR-AF data and AI capability builds operate at speed. Theater requirements generate demands
+for new dashboards, new data pipelines, new AI-assisted tools, and new integrations faster than
+any single developer can absorb. Technical PMs manage the backlog, prioritize the work, protect
+the team from scope sprawl, and ensure that what ships is operationally sound.
 
-MSS provides the PM with a purpose-built tracking environment: structured Object Types that enforce data consistency, Action-based update workflows that route updates through defined chains, automated pipelines that generate required reports on schedule, and dashboards that give commanders real-time program status without requiring a briefer to manually compile slides.
+The MSS ecosystem involves multiple technical disciplines that must be coordinated:
 
-**The PM's role in the MSS data chain:**
+| Track  | Role                          | What They Build                                              |
+|--------|-------------------------------|--------------------------------------------------------------|
+| TM-40A | ORSA                          | Quantitative models, statistical analysis, analytical products |
+| TM-40B | AI Engineer                   | AI agents, AIP Logic, automated workflows, LLM integrations  |
+| TM-40C | ML Engineer                   | ML models, training pipelines, model evaluation and deployment |
+| TM-40D | Program Manager (Technical)   | Project tracking, stakeholder mgmt, delivery coordination    |
+| TM-40E | Knowledge Manager             | Data dictionaries, ontology governance, data stewardship     |
+| TM-40F | Software Engineer             | Custom Foundry code, Functions, API integrations, services   |
+
+The PM does not manage people's performance in the HR sense. The PM manages scope, timeline,
+risk, and stakeholder communication. The PM shields the technical team from requirements churn
+and ensures the team delivers the right thing to the right standard at the right time.
+
+---
+
+## 1-3. Prerequisites and Entry Standards
+
+### Conditions
+
+Personnel seeking TM-40D qualification have completed TM-30 (Advanced Builder) and can operate
+MSS at the advanced no-code level. They are assigned or designated as a project lead, product
+owner, or team lead for a data or AI capability build.
+
+### Standards
+
+Upon completion of TM-40D, the Technical PM can:
+
+1. Stand up an Agile project structure (backlog, sprint cadence, ceremonies) for a data/AI project
+2. Write user stories and acceptance criteria that TM-40A through TM-40F developers can execute
+   without ambiguity
+3. Manage an ML/AI project from research brief through production release using the MSS lifecycle
+   model
+4. Translate a commander or staff requirement into a structured requirements document and prioritized
+   backlog
+5. Build a live project tracking dashboard on MSS Workshop visible to all project stakeholders
+6. Identify and track top five project risks and dependency blockers at any point in the project
+7. Conduct a production readiness review against the Definition of Done (Appendix B)
+8. Execute a change management plan for a new MSS capability deployment to operational users
+
+### Equipment
+
+- MSS account with Builder access (TM-30 level)
+- Foundry Workshop, Pipeline Builder, and Ontology UI access
+- Access to the USAREUR-AF C2DAO project space for coordination
+- Connectivity to project communication channels (Teams, SharePoint, or MSS-hosted)
+
+---
+
+## 1-4. TM-40D in the Curriculum Architecture
+
+TM-40D sits at the top of the no-code track and the entry point of the management track.
 
 ```
-PROGRAM EXECUTION
-        |
-        v
-   DATA INGESTION             <- Source system feeds + manual Action inputs
-   (GCSS-Army, GFEBS,
-    IPPS-A, manual)
-        |
-        v
-   PM TRACKING SYSTEM         <- TM-40D operates here
-   (Object Types, Actions,
-    Pipelines, Governance)
-        |
-        v
-   REPORTING PRODUCTS         <- Automated SITREP, LOGREP, PERSTAT
-   (Scheduled transforms,
-    Workshop dashboards)
-        |
-        v
-   SENIOR LEADER CONSUMPTION  <- Commander dashboards, briefing products
-   (-10 users at command level)
+TM-10 (User) → TM-20 (Builder) → TM-30 (Advanced Builder) → TM-40D (Technical PM)
+                                                           ↘ TM-40A (ORSA)
+                                                           ↘ TM-40B (AI Engineer)
+                                                           ↘ TM-40C (ML Engineer)
+                                                           ↘ TM-40E (KM)
+                                                           ↘ TM-40F (SWE)
 ```
 
-The PM is both a system designer and a data steward. You design the tracking infrastructure, ensure data quality through the full pipeline, govern access and audit trails, and sustain the system as the program evolves. This is a higher governance obligation than the TM-30 advanced builder role — PM systems are operational infrastructure, not analytical experiments.
+The PM must have completed TM-30 to understand what each specialist track builds and why decisions
+have technical consequences. A PM who has never built on MSS cannot accurately estimate effort,
+identify blockers, or write meaningful acceptance criteria for MSS-based deliverables.
 
 ---
 
-### 1-3. PM Responsibilities in System Design
+# CHAPTER 2 — AGILE PROJECT MANAGEMENT FOR DATA AND AI PROJECTS
 
-TM-40D graduates accept system design responsibilities that extend beyond tool operation. Before building any PM tracking system on MSS, you are responsible for:
+## 2-1. Why Agile for Data Projects
 
-1. **Defining the data model.** What are the entities in your program? What are the relationships? What properties does each entity carry? Chapter 2 provides the methodology.
-2. **Establishing data ownership.** For every data element in your system, identify who is authoritative. A milestone date entered by a contractor's PM and the same date entered by the G4 cannot coexist without a defined authority hierarchy.
-3. **Designing update workflows.** How do data inputs flow into the system? Manual Action forms, scheduled ingestion from source systems, or both? Every update path must be documented and enforced.
-4. **Governing access.** Who can view what? Who can edit what? PM systems often contain sensitive budget data, personnel information, and risk assessments that require role-based access control.
-5. **Sustaining the system.** Programs change. Milestones get added. Risks materialize. Funding lines shift. The PM system must be designed for change — with a documented process for adding, modifying, and retiring Object Types and properties.
+**BLUF:** Traditional waterfall project management fails for data and AI projects because
+requirements evolve as the data is understood. Agile methods — particularly Scrum and Kanban —
+accommodate the iterative, discovery-driven nature of data work.
 
-> **NOTE:** Consult `learn-data.armydev.com` for the Object Type Cookbook v2 and DDOF Playbook before beginning any new PM system design. These reference materials provide canonical patterns for program management Object Types used across the Army data ecosystem.
+Data and AI projects have characteristics that make fixed-scope, fixed-timeline planning
+unreliable:
 
----
+- **Data availability is unknown until the data is examined.** A pipeline that looks straightforward
+  may hit schema changes, missing records, or access barriers that were not visible during scoping.
+- **Model performance is uncertain.** An ML model may require three iterations to reach acceptable
+  accuracy. The PM cannot know the final timeline until the data is cleaned, features are
+  engineered, and baselines are established.
+- **Operational requirements change.** Commanders get new missions. Staff priorities shift. A
+  dashboard built for one reporting cycle may need to change format before the next cycle.
+- **Technical dependencies are interdependent.** A data pipeline feeds a model that feeds a
+  dashboard. A block at any layer propagates up. Fixed waterfall schedules cannot absorb these
+  cascading delays without scope cuts or deadline slips.
 
-### 1-4. Governing References
+Agile methods address these realities by delivering value in short increments (sprints), surfacing
+blockers early (daily standups), and recalibrating scope and priorities based on what the team
+learns each sprint.
 
-| Document | Relevance |
-|---|---|
-| Army CIO Data Stewardship Policy (April 2, 2024) | Data stewardship hierarchy, governance chain, PM data product standards |
-| UDRA v1.1 (February 2025) | Unified Data Reference Architecture — domain ownership, federated governance |
-| DoD Data Strategy (2020) | VAUTI framework — Visible, Accessible, Understandable, Trustable, Interoperable |
-| USAREUR-AF C2DAO Guidance | Theater-level architecture standards for MSS data products |
-| AR 11-2 | Managers' Internal Control Program — relevant for audit trail requirements |
-| AR 70-1 | Army Acquisition Policy — milestone authority definitions for ACAT programs |
-| DA PAM 30-22 | Operations Management of the Army Food Program (LOGSTAT context) |
-| ADP 4-0 | Sustainment — LOGREP and LOGSTAT doctrinal context |
-| FM 6-0 | Commander and Staff Organization — SITREP doctrinal context, MDMP integration |
-| EUCOM EXORD | Theater-specific reporting requirements applicable to USAREUR-AF programs |
-
-> **NOTE:** All PM data products published on MSS must trace to an authoritative Army or DoD policy source. "We have always tracked it this way" is not sufficient justification for a new Object Type or data field in a shared production system.
-
----
-
-### 1-5. Prerequisites and Access Requirements
-
-Before performing TM-40D level work on MSS, confirm the following:
-
-**Knowledge prerequisites:**
-- [ ] TM-10 (Maven User) completed
-- [ ] TM-20 (Builder) completed
-- [ ] TM-30 (Advanced Builder) completed — fluency confirmed by team lead or chain of command
-- [ ] ADRP 1, Data Literacy completed (required at TM-40 level)
-- [ ] Familiarity with your program's reporting requirements (SITREP, LOGREP, PERSTAT, USR as applicable)
-
-**Access requirements:**
-- [ ] PM Builder role requested and approved through chain of command
-- [ ] Editor or Owner role on your program's designated MSS project folder
-- [ ] Read access to relevant source system datasets (GCSS-Army feed, GFEBS feed, IPPS-A feed, as applicable) coordinated with data stewards
-- [ ] C2DAO coordination completed if new shared Object Types are required
-
-**System design prerequisites:**
-- [ ] Program charter or equivalent defining program scope, milestones, and reporting requirements
-- [ ] Identification of all data consumers (who will use the dashboards and reports)
-- [ ] Identification of all data producers (who will enter and update data)
-- [ ] Governing reporting schedule (daily, weekly, monthly, event-driven)
+> **NOTE:** Agile does not mean undisciplined. It means structured iteration with explicit
+> decisions about scope and priority at each cycle boundary. The PM is responsible for that
+> discipline. Undisciplined "agile" is just disorganized waterfall.
 
 ---
 
-## CHAPTER 2 — PM SYSTEM ARCHITECTURE
+## 2-2. Scrum Framework for MSS Projects
 
-### 2-1. Overview
+### Conditions
 
-**BLUF:** PM system architecture on MSS is an Ontology design problem. Get the Object Type model right before building anything else. A well-designed data model makes every downstream task — dashboards, reports, risk registers, portfolio analysis — faster and more reliable. A poorly designed model creates technical debt that compounds as the program evolves.
+The PM is standing up a new data or AI project on MSS with a team of two to eight personnel
+across TM-40 tracks.
 
-This chapter provides a methodology for designing the complete Object Type model for a PM tracking system. Apply this methodology before touching Foundry tools. The output of this chapter is a documented design specification you can implement in Chapter 3 through 8 and hand to a -40 developer for any technical implementation beyond your capability.
+### Standards
 
----
+The PM establishes a Scrum structure that includes: defined roles (PM as Scrum Master/Product
+Owner), a groomed product backlog, a sprint cadence (one or two weeks), and the four core
+ceremonies (sprint planning, daily standup, sprint review, retrospective).
 
-### 2-2. Core PM Object Type Model
+### Procedure — Standing Up a Scrum Project
 
-Every USAREUR-AF PM system on MSS begins with a standard set of Object Types. This canonical model is validated against Army doctrine, EUCOM program management requirements, and UDRA v1.1. Do not deviate from this model without C2DAO coordination.
+1. **Define the product.** Write a one-paragraph product vision statement: what the product does,
+   who uses it, and what operational outcome it enables. Post this in the project space. All
+   backlog prioritization decisions reference this statement.
 
-**Standard PM Object Type Set:**
+2. **Identify team members and tracks.** List each team member and their TM-40 track. Clarify
+   who contributes to what layer of the product (data pipeline, model, dashboard, API).
 
-| Object Type | Primary Key | Purpose |
-|---|---|---|
-| Program | Program ID | Top-level program entity — the anchor for all other objects |
-| Milestone | Milestone ID | Key events with date, authority, and completion status |
-| Task | Task ID | Work packages nested under milestones |
-| Risk | Risk ID | Documented risks with scoring, status, and mitigation |
-| Issue | Issue ID | Materialized risks and blockers requiring active management |
-| Action Item | Action ID | Assigned actions with owner, due date, and status |
-| Resource Line | Resource ID | Funding lines, equipment allocations, personnel billets |
-| Contract | Contract ID | Contract actions linked to program funding |
-| Personnel | Personnel ID | Key personnel assignments linked to tasks and roles |
-| Organization | Org ID | Units and organizations involved in the program |
+3. **Set sprint length.** Recommend: two-week sprints for projects with six or more team members
+   or complex ML components. One-week sprints for small teams or dashboard-only projects requiring
+   rapid stakeholder feedback.
 
-**Mandatory Link Types:**
+4. **Establish sprint cadence calendar.** Block recurring times for:
+   - Sprint Planning: first day of sprint, 60-90 minutes
+   - Daily Standup: every working day, 15 minutes (async acceptable if team is distributed)
+   - Sprint Review: last day of sprint, 30-45 minutes with stakeholder attendance
+   - Retrospective: last day of sprint, 30 minutes (team only)
 
-| Link Type | From Object | To Object | Cardinality |
-|---|---|---|---|
-| hasParentProgram | Milestone | Program | Many-to-One |
-| hasParentMilestone | Task | Milestone | Many-to-One |
-| hasDependency | Milestone | Milestone | Many-to-Many |
-| isLinkedToRisk | Milestone | Risk | Many-to-Many |
-| isLinkedToRisk | Task | Risk | Many-to-Many |
-| hasResourceLine | Program | Resource Line | One-to-Many |
-| hasContract | Resource Line | Contract | One-to-Many |
-| isAssignedTo | Task | Personnel | Many-to-One |
-| isOwnedBy | Risk | Personnel | Many-to-One |
-| belongsTo | Personnel | Organization | Many-to-One |
+5. **Build the initial product backlog.** See task 2-3 for user story format. Initial backlog
+   should contain enough stories to fill two to three sprints before the first sprint starts.
 
-> **NOTE:** This model is the minimum. Your program may require additional Object Types (e.g., Deliverable, Dependency, Change Request). Add Object Types at the margin — extending a well-designed core model is significantly less costly than refactoring a poorly designed one.
+6. **Define the sprint goal format.** Each sprint has one sentence stating what the team will
+   demonstrate at the sprint review. Example: "At the end of this sprint, stakeholders can view
+   live equipment readiness by unit on the Workshop dashboard."
 
----
+7. **Create the project tracking workspace on MSS.** See Chapter 5 for build instructions.
+   The Scrum board must be live on MSS before sprint 1 begins — not in a spreadsheet.
 
-### 2-3. Object Type Property Design
-
-Each Object Type requires a defined property set. Properties fall into three categories: identifier properties (unique keys), status properties (current state), and reference properties (links to doctrine, contracts, or external systems).
-
-**Program Object Type — Required Properties:**
-
-| Property | Type | Description | Required |
-|---|---|---|---|
-| Program ID | String | Unique identifier (follow Army program numbering convention) | Yes |
-| Program Name | String | Official program name (match EUCOM/HQDA documentation) | Yes |
-| Program Phase | String (enum) | Concept / Development / Production / Sustainment / Closeout | Yes |
-| Program Manager | String | Name or EDIPI of designated PM | Yes |
-| Sponsor Organization | String | Funding sponsor unit/command | Yes |
-| Start Date | Date | Approved program start | Yes |
-| End Date | Date | Approved program end / completion | Yes |
-| Program Status | String (enum) | On Track / At Risk / Off Track / Paused / Complete | Yes |
-| Overall Health Score | Integer | Composite score (0–100) from milestone + risk + resource health | Computed |
-| Last Updated | Timestamp | Auto-populated on any edit | Yes |
-| ACAT Level | String | ACAT I / ACAT II / ACAT III / Below ACAT (acquisition programs) | Conditional |
-| Classification | String (enum) | UNCLASSIFIED / CUI / FOUO | Yes |
-
-**Milestone Object Type — Required Properties:**
-
-| Property | Type | Description | Required |
-|---|---|---|---|
-| Milestone ID | String | Unique identifier | Yes |
-| Milestone Name | String | Official milestone title | Yes |
-| Milestone Type | String (enum) | Planning / Decision / Delivery / Review / Reporting | Yes |
-| Scheduled Date | Date | Approved baseline date | Yes |
-| Forecast Date | Date | Current projected completion date | Yes |
-| Actual Date | Date | Actual completion date (null if incomplete) | Conditional |
-| Status | String (enum) | Not Started / In Progress / Complete / Delayed / Cancelled | Yes |
-| Schedule Variance | Integer | Forecast Date minus Scheduled Date (days, computed) | Computed |
-| Responsible Owner | String | Name or EDIPI of milestone owner | Yes |
-| Authority | String | Who approves milestone completion | Yes |
-| Completion Criteria | String | Documnted criteria for declaring completion | Yes |
-| Notes | String | Free text for status comments | No |
-
-> **CAUTION: Never define Scheduled Date as editable after program baseline is approved. Schedule Variance is only meaningful if Scheduled Date is locked. Use a separate Rebaseline Date property and a corresponding Action with approval workflow if the baseline must change. Allowing direct edits to Scheduled Date destroys schedule integrity.**
-
-**Task Object Type — Required Properties:**
-
-| Property | Type | Description | Required |
-|---|---|---|---|
-| Task ID | String | Unique identifier | Yes |
-| Task Name | String | Descriptive task title | Yes |
-| Task Type | String (enum) | Action / Analysis / Coordination / Procurement / Training | Yes |
-| Assigned To | String | Personnel or organization responsible | Yes |
-| Start Date | Date | Planned start | Yes |
-| Due Date | Date | Planned completion | Yes |
-| Completion Date | Date | Actual completion (null if incomplete) | Conditional |
-| Percent Complete | Integer | 0–100, updated by action workflow | Yes |
-| Status | String (enum) | Not Started / In Progress / Complete / Blocked / Cancelled | Yes |
-| Blocking Factor | String | Description of block if Status = Blocked | Conditional |
-| Priority | String (enum) | High / Medium / Low | Yes |
+> **CAUTION:** Do not run sprints without a defined sprint goal. Teams without a sprint goal
+> default to ticket-grinding with no coherent output for the stakeholder review. The sprint goal
+> is the PM's tool for maintaining delivery focus.
 
 ---
 
-### 2-4. Designing for Army Reporting Requirements
+## 2-3. Backlog Management and User Stories
 
-PM tracking systems must be designed from the start to support required Army reporting outputs. Each reporting requirement maps to specific Object Type properties and pipeline logic. Design the data model to support reporting outputs — do not retrofit reporting onto a completed Object Type model.
+### 2-3a. User Story Format
 
-**Reporting Requirements to Object Type Property Mapping:**
-
-| Report | Primary Object Type | Required Properties | Output Format |
-|---|---|---|---|
-| SITREP (Weekly) | Program, Milestone, Risk | Status, Schedule Variance, Risk Score | Tabular summary per program |
-| LOGREP / LOGSTAT | Resource Line, Contract | Obligation Rate, Delivery Status | Equipment/supply status |
-| PERSTAT | Personnel | Assignment Status, Duty Position, Present/Absent | Personnel count by category |
-| USR (Unit Status Report) | Program, Resource Line | Readiness Rating, Equipment Availability | S-category readiness format |
-| Risk Register | Risk | Likelihood, Impact, Score, Mitigation Status | Risk matrix table |
-| Commander's Update Brief | Program, Milestone, Risk | All status properties | Dashboard / briefing product |
-
-> **NOTE:** Define all properties required for reporting outputs before you begin building Object Types. A property you discover is needed after Object Types are published requires an ontology change request — a coordination step that adds time. Front-load the design work.
-
----
-
-### 2-5. Phased Build Approach
-
-Build PM systems in phases. Attempting to build the complete system in a single sprint produces an unvalidated system with high error rates.
-
-**Recommended Build Sequence:**
-
-| Phase | Tasks | Duration |
-|---|---|---|
-| Phase 1: Foundation | Program, Milestone, Task Object Types; basic status dashboard | Week 1–2 |
-| Phase 2: Risk and Issues | Risk and Issue Object Types; risk dashboard; escalation actions | Week 2–3 |
-| Phase 3: Resources | Resource Line, Contract Object Types; budget dashboard | Week 3–4 |
-| Phase 4: Reporting | SITREP pipeline; LOGREP integration; scheduled transforms | Week 4–5 |
-| Phase 5: Senior Leader | Commander dashboard; brief-ready products; portfolio view | Week 5–6 |
-| Phase 6: Governance | Access control review; audit trail verification; sustainment plan | Week 6 |
-
-Do not proceed to the next phase until the current phase has been validated with at least one actual data consumer. A milestone dashboard that the S3 cannot use is not a working system.
-
----
-
-### 2-6. Task: Design a PM System Object Type Model
-
-**CONDITIONS:** You have a program charter or equivalent scope document. You have identified the primary data consumers. You have access to the Ontology Manager in MSS at Advanced Builder level or higher.
-
-**STANDARDS:** Complete Object Type model documented, covering all entities in the program scope. All Object Types have defined required and optional properties. All Link Types defined with stated cardinality. Reporting requirements mapped to properties. Design reviewed by program manager and C2DAO coordinator before implementation begins.
-
-**EQUIPMENT:** MSS access (Ontology Manager), `learn-data.armydev.com` (Object Type Cookbook v2), program charter, reporting requirements list.
-
-**PROCEDURE:**
-
-1. Read the program charter and identify all trackable entities. Create a list.
-2. Map each entity to a Core PM Object Type (para 2-2). Note any entities that do not map to a standard type — these are candidates for custom Object Types.
-3. For each Object Type, list all properties required for reporting (use para 2-4 mapping table). Add properties required for operational tracking.
-4. Assign each property a data type (String, Integer, Date, Boolean, Enum). Flag all computed properties.
-5. Define all Link Types. For each Link Type, specify cardinality (One-to-One, One-to-Many, Many-to-Many).
-6. For each computed property, write the formula in plain English. Flag for -40B developer implementation if the logic requires TypeScript Functions on Objects.
-7. Map all Object Types to the 5-Layer Data Stack (para 1-4 of TM-30). Confirm Layers 2 and 3 are appropriately separated (pipeline → ontology, not pipeline directly to Workshop).
-8. Present design to program manager for validation. Confirm all required reporting fields are captured.
-9. Coordinate with C2DAO if any new Object Types will be published to shared enterprise ontology domains.
-10. Document the approved design. This document is your build specification for Chapters 3 through 8.
-
-> **NOTE:** A well-documented design specification is the most important output of Chapter 2. Every hour spent on design saves three hours of rework in implementation.
-
----
-
-## CHAPTER 3 — STATUS AND MILESTONE TRACKING
-
-### 3-1. Overview
-
-**BLUF:** Milestone tracking is the core PM function on MSS. Build a system where milestone status is always current, schedule variance is immediately visible, and delayed milestones automatically surface for commander attention. The system works when a PM can open the dashboard at 0600 and brief the commander by 0700 without any manual data compilation.
-
----
-
-### 3-2. Date-Based Property Logic
-
-Foundry Ontology supports date and timestamp properties natively. PM systems rely heavily on date arithmetic for schedule variance, days-until-due, and overdue calculations.
-
-**Core date properties every Milestone Object Type must carry:**
-
-| Property | Logic | Usage |
-|---|---|---|
-| Scheduled Date | Locked at baseline approval | Schedule baseline anchor |
-| Forecast Date | Updated via Action workflow | Current projected completion |
-| Actual Date | Set by completion Action | Records actual performance |
-| Schedule Variance (SV) | Forecast Date − Scheduled Date (days) | Positive = delayed; negative = ahead |
-| Days Until Due | Scheduled Date − Today (days) | Time remaining to baseline date |
-| Overdue Flag | Boolean: Today > Scheduled Date AND Status ≠ Complete | Triggers alert styling in Workshop |
-| At-Risk Flag | Boolean: SV > threshold (default: 14 days) | Triggers amber status |
-
-> **CAUTION: Date arithmetic in Foundry Pipeline Builder uses UTC. If your reporting consumers expect local time (CET/CEST for USAREUR-AF), configure timezone conversion in the transform before computing Schedule Variance. A milestone showing as overdue due to a UTC/CET mismatch will generate unnecessary command attention and erode trust in the system.**
-
----
-
-### 3-3. Schedule Risk Indicators
-
-Schedule risk indicators provide automated, visual cues on the status of milestones without requiring a PM to manually flag each one. Define thresholds at system design time and enforce them through computed properties and Workshop conditional formatting.
-
-**Standard Schedule Risk Indicator Thresholds:**
-
-| Color Code | Condition | Action Required |
-|---|---|---|
-| GREEN | SV ≤ 7 days AND no blocking factors | No action |
-| AMBER | SV 8–30 days OR blocking factor present | PM action: update forecast, document mitigation |
-| RED | SV > 30 days OR Overdue Flag = True | Commander attention: brief in next update cycle |
-| BLUE | Status = Complete | Closed |
-| GREY | Status = Cancelled OR Status = Not Started (future) | Informational |
-
-Implement color codes as computed string properties on the Milestone Object Type (e.g., `ScheduleRiskColor`). Workshop conditional formatting reads this property to apply cell or card background colors automatically.
-
-> **NOTE:** Define threshold values as configurable properties on a Program Settings object, not as hardcoded values in pipelines or Workshop functions. Different programs have different reporting tolerances. A program with a 90-day reporting cycle will have different amber/red thresholds than one with a 7-day cycle.
-
----
-
-### 3-4. Action Item Management
-
-Action items are the currency of PM execution. Every review meeting generates action items. A PM system that does not track action items rigorously will revert to email tracking within weeks.
-
-**Action Item Object Type — Extended Properties:**
-
-| Property | Type | Description |
-|---|---|---|
-| Action ID | String | Unique identifier (auto-generated) |
-| Title | String | Short descriptive title |
-| Description | String | Full description of required action |
-| Source Event | String | Meeting, review, or EXORD that generated the action |
-| Assigned To | String (Personnel link) | Person responsible for completion |
-| Assigned By | String | Person who assigned the action |
-| Priority | Enum: High / Medium / Low | — |
-| Due Date | Date | Completion deadline |
-| Status | Enum: Open / In Progress / Complete / Overdue | — |
-| Completion Date | Date | Actual completion (null if open) |
-| Days Overdue | Integer | Computed: Today − Due Date if Status ≠ Complete |
-| Escalation Flag | Boolean | Auto-set if Days Overdue > 7 |
-| Comments | String | Latest status comment |
-| Last Updated | Timestamp | Auto-populated |
-
-**Action Item Update Workflow Design:**
-
-Design a three-step Action workflow for action item updates:
-1. **Assignee Update**: Assignee updates Percent Complete, Status, and Comments. System auto-populates Last Updated timestamp.
-2. **Completion Confirmation**: When Status is set to Complete, system prompts for Completion Date and brief summary. Notification sent to assigning officer.
-3. **Escalation**: When Days Overdue exceeds threshold, system sets Escalation Flag = True. AIP Logic can be configured to generate an escalation notification to the PM.
-
----
-
-### 3-5. Task: Build the Milestone Tracking Dashboard
-
-**CONDITIONS:** Program Object Type model from Chapter 2 is implemented and populated with at least one program's baseline data. You have Workshop Editor access. At least three milestones are entered with Scheduled Date, Forecast Date, and Status properties populated.
-
-**STANDARDS:** Dashboard displays all milestones for the selected program with color-coded schedule risk indicators. Schedule variance is visible for each milestone. Overdue milestones surface in a dedicated alert section. Dashboard refreshes on page load without manual intervention.
-
-**EQUIPMENT:** MSS Workshop, Program and Milestone Object Types with linked data, Schedule Risk Color computed property configured on Milestone.
-
-**PROCEDURE:**
-
-1. Open Workshop. Create a new application: "Program Status — [Program Name]."
-2. Page 1: Program Summary.
-   - Add a Program selector widget (Object Set Filter on Program Object Type).
-   - Add four KPI tiles: Total Milestones, On Track (GREEN), At Risk (AMBER), Overdue (RED). Use Object Set aggregation with ScheduleRiskColor filter for each count.
-   - Add a Timeline widget configured against Scheduled Date and Forecast Date properties. This shows baseline vs. current schedule at a glance.
-3. Page 2: Milestone Detail.
-   - Add a Table widget showing all Milestone objects linked to the selected Program.
-   - Configure columns: Milestone Name, Type, Scheduled Date, Forecast Date, Schedule Variance, Responsible Owner, Status.
-   - Apply conditional row formatting: background color = ScheduleRiskColor property.
-   - Sort default: Schedule Variance descending (most delayed at top).
-4. Page 3: Overdue and At-Risk Alerts.
-   - Add filtered Object Set showing only milestones where Overdue Flag = True.
-   - Add separate filtered Object Set showing milestones where ScheduleRiskColor = AMBER.
-   - Display as cards with: Milestone Name, Days Until Due, Responsible Owner, Last Notes.
-5. Page 4: Action Items.
-   - Add Table widget on Action Item Object Type, filtered to current program.
-   - Columns: Title, Assigned To, Due Date, Days Overdue, Status, Last Updated.
-   - Conditional formatting: red row if Days Overdue > 0.
-   - Add Quick Update Action button inline: opens Action form for Assignee Update workflow.
-6. Configure page-level security: restrict Pages 3 and 4 (alerts and action items) to PM and above. Allow all program stakeholders read access to Pages 1 and 2.
-7. Test with real data. Verify color coding fires correctly. Verify Schedule Variance calculations are correct against manual spot check.
-8. Publish to program stakeholder group. Brief users on the update workflow (how to enter Actual Dates, how to update Action Items).
-
-> **WARNING: Do not publish the dashboard to production until you have verified that Overdue Flag and ScheduleRiskColor computed properties are producing correct values. An erroneous RED status on a milestone that is actually on track will damage PM system credibility and prompt stakeholders to revert to manual tracking.**
-
----
-
-### 3-6. Update Workflow Design Principles
-
-The milestone tracking system is only as good as the data feeding it. Design update workflows that minimize friction for data providers while enforcing data quality.
-
-**Workflow Design Principles:**
-
-1. **Single entry point.** Each data element has exactly one authorized update path. If both the contractor PM and the G4 can update the same Forecast Date independently, you will have conflicting data within one update cycle.
-2. **Role-based edit access.** Configure Action permissions so only the designated Responsible Owner can update a specific milestone's Forecast Date. The PM can update any milestone. No one edits Scheduled Date without an approval workflow.
-3. **Mandatory fields at update.** When Forecast Date is changed, require a Comments entry explaining the change. Undocumented date changes create an audit trail gap.
-4. **Timestamp everything.** Every update Action must auto-populate a Last Updated timestamp. Build dashboards to display "Data as of [timestamp]" so consumers know when data was last refreshed.
-5. **Notification on status change.** Configure AIP Logic or email notification when a milestone status changes to DELAYED or when Overdue Flag is set. The PM should not be the last to know a milestone is at risk.
-
----
-
-## CHAPTER 4 — RESOURCE AND BUDGET TRACKING
-
-### 4-1. Overview
-
-**BLUF:** Resource tracking in PM systems covers three categories: funding (GFEBS), equipment (GCSS-Army), and personnel (IPPS-A). Each has a distinct data model, a different authoritative source system, and a different update cadence. Build separate Object Types for each category. Do not attempt to force all resource data into a single generic "Resource" Object Type — the properties are too different and the reporting requirements diverge.
-
----
-
-### 4-2. Funding Object Type Design
-
-Funding tracking is the most sensitive data category in a PM system. Budget figures, obligation rates, and expenditure data are directly linked to command accountability.
-
-**Funding Line Object Type — Required Properties:**
-
-| Property | Type | Description | Authority |
-|---|---|---|---|
-| Funding Line ID | String | Unique identifier (align with GFEBS line item) | System |
-| Line Item Description | String | Official program element description | GFEBS |
-| Appropriation | Enum | O&M / MILCON / RDTE / PROC / MILPERS / Other | GFEBS |
-| Fiscal Year | Integer | FY of appropriation | GFEBS |
-| Total Authorized | Decimal | Total authorized amount (USD) | GFEBS |
-| Obligated | Decimal | Amount obligated to date (USD) | GFEBS |
-| Expended | Decimal | Amount expended to date (USD) | GFEBS |
-| Uncommitted | Decimal | Computed: Authorized − Obligated | Computed |
-| Obligation Rate | Decimal | Computed: (Obligated / Authorized) × 100 | Computed |
-| Expenditure Rate | Decimal | Computed: (Expended / Authorized) × 100 | Computed |
-| Obligation Target | Decimal | Planned obligation rate for current date (based on execution plan) | PM input |
-| Obligation Variance | Decimal | Computed: Obligation Rate − Obligation Target | Computed |
-| Data As Of | Date | Date of most recent GFEBS extract | GFEBS feed |
-| Status | Enum | On Plan / Under Execution / At Risk / Overrun / Closed | Computed |
-
-> **CAUTION: Funding data ingested from GFEBS is authoritative. Never allow manual overwrite of Obligated or Expended values. Manual edits to authoritative financial data can create discrepancies between MSS and GFEBS that result in anti-deficiency violations or audit findings. All financial figures must trace to a GFEBS extract with a documented data-as-of date.**
-
-**Obligation Status Computation Logic:**
-
-| Condition | Status |
-|---|---|
-| Obligation Variance within ±5% of target | On Plan |
-| Obligation Rate below target by 5–15% | Under Execution |
-| Obligation Rate below target by >15% | At Risk |
-| Obligated > Authorized | Overrun (flag immediately) |
-| Funding Line ID closed in GFEBS | Closed |
-
----
-
-### 4-3. Contract Object Type Design
-
-Contracts are a distinct tracking entity from funding lines. A single funding line may support multiple contracts. A single contract may draw from multiple funding lines. Track them separately with an explicit link.
-
-**Contract Object Type — Required Properties:**
-
-| Property | Type | Description |
-|---|---|---|
-| Contract Number | String | Official contract number (matches FPDS-NG) |
-| Vendor Name | String | Contractor name |
-| Contract Type | Enum | FFP / T&M / CPFF / IDIQ / BPA / Other |
-| Period of Performance Start | Date | Contract start |
-| Period of Performance End | Date | Contract end (base period) |
-| Option End Date | Date | End of all options exercised |
-| Total Contract Value | Decimal | Total awarded value |
-| Obligated to Date | Decimal | Amount obligated against this contract |
-| COTR | String | Contracting Officer Technical Representative (name or EDIPI) |
-| Status | Enum | Pre-Award / Active / Option Period / Closeout / Complete |
-| Days Until Expiration | Integer | Computed: Period of Performance End − Today |
-| Option Exercise Required By | Date | Date by which option must be exercised |
-| Days Until Option Decision | Integer | Computed: Option Exercise Required By − Today |
-
-> **NOTE:** Configure an alert threshold for Days Until Expiration ≤ 90 days and Days Until Option Decision ≤ 60 days. These are standard lead times for contract actions. A dashboard that surfaces expiring contracts 90 days out gives the PM and contracting officer sufficient time to act. Discovery at 30 days is a crisis; discovery at 90 days is a workflow.
-
----
-
-### 4-4. Equipment and Personnel Resource Tracking
-
-**Equipment Resource Object Type (GCSS-Army aligned):**
-
-| Property | Type | Description |
-|---|---|---|
-| Equipment ID | String | GCSS-Army bumper number or LIN |
-| Equipment Type | String | Nomenclature |
-| Assigned Unit | String (Org link) | Unit of assignment |
-| Readiness Status | Enum | FMC / PMC / NMC |
-| Location | String | Current location or AOR |
-| Maintenance Due Date | Date | Next scheduled service |
-| Days Until Maintenance | Integer | Computed |
-| Program Link | String | Program ID (links to Program Object Type) |
-
-**Personnel Billet Object Type (IPPS-A aligned):**
-
-| Property | Type | Description |
-|---|---|---|
-| Billet ID | String | Authorized position ID |
-| Position Title | String | Duty position title |
-| Required Grade | String | Required grade/rank |
-| MOS / AOC | String | Required MOS or AOC |
-| Fill Status | Enum | Filled / Vacant / Excess / TDA Change |
-| Incumbent | String | Current occupant (name or EDIPI) — leave null if vacant |
-| Projected Fill Date | Date | If vacant: projected fill date |
-| Program Link | String | Program ID |
-| Organization | String (Org link) | Unit of assignment |
-
----
-
-### 4-5. Resource Dashboard Design
-
-**Resource Dashboard — Required Sections:**
-
-1. **Funding Summary KPIs.** Four tiles: Total Authorized, Total Obligated, Obligation Rate, Variance vs. Plan. Color-code: GREEN if Variance ±5%, AMBER if −5% to −15%, RED if <−15% or overrun.
-2. **Funding Line Table.** All funding lines for selected program, sorted by Obligation Variance (worst first). Include Appropriation, FY, Authorized, Obligated, Rate, Variance, Status.
-3. **Contract Expiration Alert.** Filtered view: contracts with Days Until Expiration ≤ 90 or Days Until Option Decision ≤ 60. Display COTR, expiration date, contract value.
-4. **Obligation Execution Trend.** Contour chart showing cumulative obligation rate over time vs. planned execution curve. This is the single most important funding visualization for a commander brief.
-5. **Personnel Fill Status.** Summary table: Total Authorized Billets, Filled, Vacant, Vacancy Rate. Filtered list of vacant billets with Projected Fill Date.
-6. **Equipment Readiness Summary.** FMC/PMC/NMC count with percentages. Table of NMC equipment with Maintenance Due Date.
-
----
-
-### 4-6. Task: Build the Resource Tracking Dashboard
-
-**CONDITIONS:** Funding Line, Contract, Personnel Billet, and Equipment Object Types implemented and populated with program data. GFEBS feed ingested (or sample data loaded for initial build). Workshop Editor access confirmed.
-
-**STANDARDS:** Dashboard displays current obligation rates, contract expiration alerts, personnel fill status, and equipment readiness in a single unified view. All financial figures display with a "Data as of [date]" label. Obligation Variance color coding matches thresholds from para 4-2. Contract expiration alerts surface contracts within 90-day threshold.
-
-**EQUIPMENT:** MSS Workshop, Resource Object Types, GFEBS extract dataset.
-
-**PROCEDURE:**
-
-1. Create a new Workshop page: "Resource Status — [Program Name]."
-2. Add a Global Object Set Filter on Program ID. All widgets on this page inherit the program filter.
-3. Add Funding Summary KPI tiles (para 4-5, item 1). Use Object Set aggregation: SUM(Total Authorized), SUM(Obligated), computed Obligation Rate.
-4. Add a "Data as of" display: pull the maximum Data As Of date from the Funding Line Object Set. This label must appear adjacent to all financial figures.
-5. Add Funding Line Table (para 4-5, item 2). Configure conditional row formatting using Obligation Status property.
-6. Add Contract Expiration Alert section with filtered table (Days Until Expiration ≤ 90). Sort ascending by expiration date. Add badge/count of contracts in threshold window.
-7. Add an Obligation Execution chart. Use Contour embedded in Workshop if the trend data requires time-series aggregation from a separate pipeline output dataset.
-8. Add Personnel Fill and Equipment Readiness sections (para 4-5, items 5 and 6).
-9. Lock all financial display widgets to read-only. No edit actions on the Resource Dashboard page — updates happen through the designated update workflow, not inline editing.
-10. Test with actual GFEBS extract data. Verify computed rates match manual calculation.
-11. Present to program's resource manager for validation before publishing.
-
----
-
-## CHAPTER 5 — RISK REGISTER DESIGN
-
-### 5-1. Overview
-
-**BLUF:** A risk register that nobody updates is worse than no risk register — it creates false confidence. Design the risk register for minimal update friction, maximum visibility, and automatic escalation. The PM's job is to ensure risks are identified early and mitigated before they become issues. The system's job is to make that easy.
-
----
-
-### 5-2. Risk Object Type Design
-
-**Risk Object Type — Required Properties:**
-
-| Property | Type | Description |
-|---|---|---|
-| Risk ID | String | Unique identifier (auto-generated, e.g., RISK-001) |
-| Risk Title | String | Short descriptive title (max 80 characters) |
-| Risk Description | String | Full description of the risk condition |
-| Risk Category | Enum | Schedule / Cost / Technical / Resource / External / Dependency |
-| Likelihood | Integer | 1–5 score (1 = Rare, 5 = Almost Certain) |
-| Impact | Integer | 1–5 score (1 = Minimal, 5 = Critical) |
-| Risk Score | Integer | Computed: Likelihood × Impact (1–25) |
-| Risk Level | Enum | Low / Medium / High / Critical | Computed from Score |
-| Risk Owner | String (Personnel link) | Person responsible for monitoring and mitigation |
-| Status | Enum | Open / Monitoring / Mitigating / Accepted / Closed / Realized |
-| Mitigation Strategy | String | Documented approach to reducing likelihood or impact |
-| Contingency Plan | String | Response plan if risk is realized |
-| Target Mitigation Date | Date | Date by which mitigation should be complete |
-| Residual Likelihood | Integer | 1–5, after mitigation |
-| Residual Impact | Integer | 1–5, after mitigation |
-| Residual Score | Integer | Computed: Residual Likelihood × Residual Impact |
-| Linked Milestones | Object links | Milestones affected by this risk |
-| Linked Funding Lines | Object links | Funding lines affected by this risk |
-| Date Identified | Date | When risk was first recorded |
-| Last Review Date | Date | Date of last formal risk review |
-| Days Since Review | Integer | Computed: Today − Last Review Date |
-| Stale Flag | Boolean | True if Days Since Review > 30 |
-| Escalation Flag | Boolean | True if Risk Level = Critical OR Days Since Review > 45 |
-
-**Risk Level Thresholds:**
-
-| Score | Risk Level | Color | Required Action |
-|---|---|---|---|
-| 1–4 | Low | GREEN | Document and monitor |
-| 5–9 | Medium | AMBER | Mitigation plan required |
-| 10–19 | High | RED | PM brief at next update cycle |
-| 20–25 | Critical | RED (flashing/priority) | Immediate commander notification |
-
----
-
-### 5-3. Issue Object Type Design
-
-Issues are risks that have been realized — they require active management, not just monitoring. Track issues separately from risks. A risk that becomes an issue should be linked between both Object Types for traceability.
-
-**Issue Object Type — Required Properties:**
-
-| Property | Type | Description |
-|---|---|---|
-| Issue ID | String | Unique identifier (e.g., ISSUE-001) |
-| Issue Title | String | Short descriptive title |
-| Description | String | Full description of the issue and current impact |
-| Source Risk | Risk link | Risk that generated this issue (if applicable) |
-| Category | Enum | Schedule / Cost / Technical / Resource / External |
-| Impact Statement | String | Documented impact on program (scope, schedule, cost) |
-| Schedule Impact | Integer | Days of schedule impact (positive = delay) |
-| Cost Impact | Decimal | Estimated cost impact (USD) |
-| Issue Owner | String (Personnel link) | Person responsible for resolution |
-| Priority | Enum | Critical / High / Medium / Low |
-| Status | Enum | Open / In Resolution / Resolved / Escalated / Closed |
-| Resolution Plan | String | Documented plan to resolve |
-| Target Resolution Date | Date | Planned resolution date |
-| Actual Resolution Date | Date | Actual resolution (null if open) |
-| Days Open | Integer | Computed: Today − Date Identified |
-| Escalated To | String | Commander or authority issue was escalated to |
-
----
-
-### 5-4. Risk Dashboard Design
-
-**Risk Dashboard — Required Sections:**
-
-1. **Risk Summary Matrix.** A 5×5 heat map visualization showing risk distribution by Likelihood × Impact. Risks plotted as points. Color zones: green (low), amber (medium), red (high/critical). This is the primary risk visualization for commander briefs.
-2. **Risk Register Table.** Full risk register with columns: Risk ID, Title, Category, Score, Risk Level, Owner, Status, Target Mitigation Date, Days Since Review. Sort default: Score descending.
-3. **Critical and High Risk Alert Panel.** Filtered view showing only Risk Level = Critical or High. Display as high-visibility cards with escalation flag indicator.
-4. **Stale Risk Alert.** Filtered view: risks where Stale Flag = True (Days Since Review > 30). Surfaces risks that have not been reviewed recently. A stale risk register is an unmanaged risk register.
-5. **Issue Tracker.** Open issues with schedule and cost impact columns visible. Sort by Days Open descending.
-6. **Risk Trend Chart.** Count of Open/Mitigating/Closed risks over time. Shows whether the risk profile is improving (closing risks) or degrading (new risks opening faster than old ones close).
-
----
-
-### 5-5. Automated Risk Escalation Design
-
-Design AIP Logic workflows to automate risk escalation notifications. Escalation should not depend on a PM remembering to escalate — the system escalates automatically based on defined triggers.
-
-**Escalation Trigger Configuration:**
-
-| Trigger | Action |
-|---|---|
-| Risk Score increases to ≥ 20 (Critical) | Auto-set Escalation Flag = True; notify PM via AIP Logic message |
-| Days Since Review > 30 | Auto-set Stale Flag = True; surface on Stale Risk dashboard section |
-| Days Since Review > 45 | Auto-set Escalation Flag = True; notify PM and Risk Owner |
-| Issue Days Open > 14 with Status = Open | Auto-escalate Issue Priority to Critical; notify PM |
-| Target Mitigation Date passes with Status ≠ Closed | Flag as overdue; notify Risk Owner and PM |
-
-> **NOTE:** Configure escalation notification recipients at the Program level (Program Object Type property: PM EDIPI, Deputy PM EDIPI, Senior Advisor EDIPI). This allows escalation to route correctly for each program without hardcoding personnel in workflow logic.
-
----
-
-### 5-6. Task: Build the Risk Register and Dashboard
-
-**CONDITIONS:** Risk and Issue Object Types implemented with properties from para 5-2 and 5-3. At least five Risk objects entered with full property sets. Workshop Editor access confirmed. AIP Logic available for escalation workflow configuration.
-
-**STANDARDS:** Risk dashboard displays heat map, risk register table, critical/high alert panel, stale risk alert, and issue tracker. All filter and sort controls functional. Risk Score and Risk Level computed correctly. Escalation flags auto-populate based on threshold logic.
-
-**EQUIPMENT:** MSS Workshop, Risk and Issue Object Types, AIP Logic (for escalation notification).
-
-**PROCEDURE:**
-
-1. Verify all computed properties on Risk Object Type (Risk Score, Risk Level, Days Since Review, Stale Flag, Escalation Flag) are producing correct values before building the dashboard.
-2. Create a new Workshop page: "Risk Register — [Program Name]."
-3. Build the Risk Summary Matrix. If a native 5×5 heat map widget is available in Workshop, use it. If not, build a scatter plot using Likelihood (X-axis) and Impact (Y-axis) with Risk Level as the color property.
-4. Add Risk Register Table. Configure all required columns. Apply conditional row formatting: Risk Level drives row color.
-5. Add Critical and High Risk Alert Panel as a filtered card layout above the full table.
-6. Add Stale Risk Alert section. Include count badge ("X risks not reviewed in 30+ days"). Sort by Days Since Review descending.
-7. Add Issue Tracker table on Risk page or as a separate tab. Include Schedule Impact and Cost Impact columns.
-8. Add Risk Trend Chart. This requires a pipeline output dataset that records risk counts by status and date. If this dataset does not yet exist, document the requirement and build the pipeline (Chapter 6 covers pipeline development).
-9. Configure AIP Logic escalation workflow per para 5-5 trigger table.
-10. Test escalation triggers with a test risk object. Verify flags set and notifications route correctly.
-11. Present to program manager for validation. Brief risk review process: who reviews, on what schedule, using what Action workflow.
-12. Publish. Brief all risk owners on the update workflow — especially the requirement to update Last Review Date after each review.
-
----
-
-## CHAPTER 6 — REPORTING PIPELINES
-
-### 6-1. Overview
-
-**BLUF:** Automated reporting pipelines eliminate the manual compilation burden from routine Army reporting requirements. A pipeline built once runs on schedule, generates consistent outputs, and frees PM staff from spending hours each week aggregating data for reports that a well-designed system can produce automatically. This chapter covers pipeline design for SITREP, LOGREP, and PERSTAT reporting — the three most common PM-level reporting requirements in USAREUR-AF.
-
----
-
-### 6-2. Pipeline Architecture for PM Reporting
-
-PM reporting pipelines follow a standard three-stage architecture:
+User stories for data products follow the standard Agile format adapted for operational context:
 
 ```
-STAGE 1: EXTRACT
-Source Ontology Objects
-(Program, Milestone, Risk,
- Resource, Personnel)
-        |
-        v
-STAGE 2: TRANSFORM
-Aggregation and Formatting
-(Python/SQL transforms
- in Pipeline Builder)
-        |
-        v
-STAGE 3: LOAD
-Output Dataset
-(Formatted report table,
- readable by Workshop and
- downstream consumers)
+AS A [type of user — commander, analyst, logistics officer, data engineer]
+I WANT [a specific capability or information need]
+SO THAT [the operational or analytical outcome it enables]
 ```
 
-All PM reporting pipelines must be:
-- **Scheduled:** Run on the reporting cadence, not manually triggered.
-- **Idempotent:** Running the pipeline twice should produce the same output as running it once. Use INSERT OR REPLACE logic or watermark-based incremental patterns.
-- **Documented:** Every pipeline has a README dataset describing inputs, transformation logic, outputs, and the reporting requirement it satisfies.
-- **Validated:** Pipeline output is spot-checked against authoritative source data on first run and after any structural change.
+**Examples — good user stories for MSS data products:**
 
----
+| Story                                                                                                                | Track Owner | Size  |
+|----------------------------------------------------------------------------------------------------------------------|-------------|-------|
+| As a G4 officer, I want a live equipment readiness dashboard filtered by subordinate unit so that I can identify maintenance bottlenecks before the morning update. | TM-40F / TM-30 | M     |
+| As a data scientist, I want a cleaned and deduplicated personnel roster dataset refreshed daily so that my models have current input data. | TM-40F      | S     |
+| As a G2 analyst, I want the anomaly detection model to flag records scoring above 0.85 probability with an explanation of contributing features so that I can triage alerts without reviewing all raw data. | TM-40C      | L     |
+| As a battalion S6, I want a Workshop form that submits equipment status updates directly to the MSS ontology so that I no longer re-key data from paper forms. | TM-40F / TM-30 | M     |
 
-### 6-3. SITREP Automation Pipeline
+**Bad user story patterns to reject:**
 
-The SITREP (Situation Report) is the standard weekly reporting product for Army programs. USAREUR-AF programs typically submit SITREPs to the appropriate brigade/division/corps headquarters on a defined schedule. An automated SITREP pipeline reads current Object data and generates a structured SITREP output dataset that the PM reviews, validates, and submits.
+- "Build the data pipeline." (No user, no outcome — this is a task, not a story)
+- "Improve model performance." (No specific acceptance criteria — unmeasurable)
+- "Fix the dashboard." (No description of what is broken or what done looks like)
 
-**SITREP Output Dataset Schema:**
+### 2-3b. Acceptance Criteria
 
-| Column | Source | Description |
-|---|---|---|
-| report_date | Pipeline runtime | Date of SITREP generation |
-| program_id | Program OT | Unique program identifier |
-| program_name | Program OT | Official program name |
-| program_status | Program OT | Overall program status (enum) |
-| health_score | Program OT | Composite health score (0–100) |
-| milestones_total | Milestone OT (count) | Total milestones in program |
-| milestones_complete | Milestone OT (count) | Milestones with Status = Complete |
-| milestones_delayed | Milestone OT (count) | Milestones where SV > 0 |
-| milestones_overdue | Milestone OT (count) | Milestones where Overdue Flag = True |
-| next_milestone_name | Milestone OT | Name of next scheduled milestone |
-| next_milestone_date | Milestone OT | Scheduled Date of next milestone |
-| risk_high_critical_count | Risk OT (count) | Count of High + Critical risks |
-| top_risk_title | Risk OT | Title of highest-scored open risk |
-| obligation_rate | Funding Line OT | Current overall obligation rate (%) |
-| personnel_fill_rate | Personnel Billet OT | Current fill rate (%) |
-| commander_summary | PM input | Free-text commander's summary (PM enters weekly) |
-| primary_concern | PM input | Primary concern statement (PM enters weekly) |
-| significant_activities | PM input | Key activities this reporting period |
+Every user story requires explicit acceptance criteria (AC). AC are the conditions the PM uses
+to determine whether a story is complete. Write AC as testable statements.
 
-**SITREP Pipeline Python Transform (Foundry Code Repository):**
-
-> **NOTE:** The following transform is a reference implementation. Implement in a Foundry Code Repository or Pipeline Builder Python step. Coordinate with a TM-40B developer if Code Repository access is not available to your role.
-
-```python
-# sitrep_generator.py
-# Generates weekly SITREP output dataset from PM tracking Object Types
-# Runs on scheduled cadence (every Sunday 2000L CET)
-# Consult TM-40B for Code Repository deployment procedures
-
-from transforms.api import transform_df, Input, Output
-import pyspark.sql.functions as F
-from datetime import datetime, timezone
-
-@transform_df(
-    Output("/programs/{program_id}/reporting/sitrep_weekly"),
-    milestones=Input("/programs/{program_id}/ontology/milestones_dataset"),
-    risks=Input("/programs/{program_id}/ontology/risks_dataset"),
-    funding=Input("/programs/{program_id}/ontology/funding_lines_dataset"),
-    personnel=Input("/programs/{program_id}/ontology/personnel_billets_dataset"),
-    program=Input("/programs/{program_id}/ontology/program_dataset"),
-)
-def compute(milestones, risks, funding, personnel, program):
-    """
-    Aggregates current-state PM tracking data into SITREP output format.
-    Output is one row per program per reporting period.
-    Commander summary fields (free text) are populated via separate
-    Action workflow and merged in final step.
-    """
-    report_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-
-    # Milestone aggregations
-    milestone_summary = milestones.agg(
-        F.count("milestone_id").alias("milestones_total"),
-        F.sum(F.when(F.col("status") == "Complete", 1).otherwise(0))
-         .alias("milestones_complete"),
-        F.sum(F.when(F.col("schedule_variance") > 0, 1).otherwise(0))
-         .alias("milestones_delayed"),
-        F.sum(F.when(F.col("overdue_flag") == True, 1).otherwise(0))
-         .alias("milestones_overdue"),
-    )
-
-    # Next upcoming milestone (nearest Scheduled Date, not yet complete)
-    next_milestone = (
-        milestones
-        .filter(F.col("status") != "Complete")
-        .orderBy("scheduled_date")
-        .limit(1)
-        .select(
-            F.col("milestone_name").alias("next_milestone_name"),
-            F.col("scheduled_date").alias("next_milestone_date"),
-        )
-    )
-
-    # Risk aggregations
-    risk_summary = risks.filter(
-        F.col("status").isin(["Open", "Monitoring", "Mitigating"])
-    ).agg(
-        F.sum(
-            F.when(F.col("risk_level").isin(["High", "Critical"]), 1).otherwise(0)
-        ).alias("risk_high_critical_count")
-    )
-
-    # Top risk (highest score, open)
-    top_risk = (
-        risks
-        .filter(F.col("status").isin(["Open", "Monitoring", "Mitigating"]))
-        .orderBy(F.col("risk_score").desc())
-        .limit(1)
-        .select(F.col("risk_title").alias("top_risk_title"))
-    )
-
-    # Obligation rate (overall, across all funding lines)
-    funding_summary = funding.agg(
-        (F.sum("obligated") / F.sum("total_authorized") * 100)
-        .alias("obligation_rate")
-    )
-
-    # Personnel fill rate
-    fill_summary = personnel.agg(
-        (
-            F.sum(F.when(F.col("fill_status") == "Filled", 1).otherwise(0))
-            / F.count("billet_id") * 100
-        ).alias("personnel_fill_rate")
-    )
-
-    # Program base row
-    program_base = program.select(
-        "program_id",
-        "program_name",
-        "program_status",
-        "overall_health_score",
-    )
-
-    # Assemble final output — cross join single-row summaries
-    result = (
-        program_base
-        .crossJoin(milestone_summary)
-        .crossJoin(next_milestone)
-        .crossJoin(risk_summary)
-        .crossJoin(top_risk)
-        .crossJoin(funding_summary)
-        .crossJoin(fill_summary)
-        .withColumn("report_date", F.lit(report_date))
-    )
-
-    return result
-```
-
-> **CAUTION: The transform above uses crossJoin on single-row aggregation DataFrames. This is correct only when each aggregation step produces exactly one row (one program, one report period). If your pipeline runs across multiple programs, add a program_id join key to all aggregations and replace crossJoin with a keyed join. A crossJoin on multi-row DataFrames will produce a cartesian product and corrupt your output.**
-
----
-
-### 6-4. LOGREP / LOGSTAT Integration
-
-LOGREP (Logistics Report) and LOGSTAT (Logistics Status) track equipment and supply status. For PM systems supporting sustainment programs, LOGREP integration with GCSS-Army feeds is critical.
-
-**LOGREP Output Dataset Schema (standard fields):**
-
-| Column | Source | Description |
-|---|---|---|
-| report_date | Pipeline | Date of report |
-| program_id | Program OT | Program identifier |
-| equipment_line | Equipment OT | Equipment nomenclature |
-| total_on_hand | Equipment OT (count) | Total equipment in inventory |
-| fmc_count | Equipment OT (count) | Fully Mission Capable |
-| pmc_count | Equipment OT (count) | Partially Mission Capable |
-| nmc_count | Equipment OT (count) | Non-Mission Capable |
-| fmc_rate | Computed | FMC / Total × 100 |
-| maintenance_due_30days | Equipment OT (count) | Equipment with maintenance due in ≤30 days |
-| supply_fill_rate | Supply Line OT | Supply fill rate (%) if tracked |
-| critical_shortfalls | Equipment OT | List of NMC items with critical mission impact |
-
-> **NOTE:** GCSS-Army feeds into MSS through a connector managed by the USAREUR-AF C2DAO. Do not attempt to build a direct GCSS-Army connector — use the enterprise feed. Coordinate with the C2DAO data steward for the Equipment domain to confirm feed availability and schema before designing your LOGREP pipeline.
-
----
-
-### 6-5. PERSTAT Pipeline Design
-
-PERSTAT (Personnel Status) is reported daily or on commander's requirement. For PM systems with personnel tracking, PERSTAT automation reduces a daily manual compilation task to a pipeline review.
-
-**PERSTAT Output Dataset Schema:**
-
-| Column | Source | Description |
-|---|---|---|
-| report_date | Pipeline | Date and time of report (DTG format) |
-| program_id | Program OT | — |
-| org_name | Organization OT | Reporting unit |
-| authorized_strength | Personnel Billet OT | Total authorized billets |
-| assigned_strength | Personnel OT (count) | Total personnel assigned |
-| present_for_duty | Personnel OT (count) | Personnel present (not TDY, leave, etc.) |
-| tdy_count | Personnel OT (count) | Personnel on TDY |
-| leave_count | Personnel OT (count) | Personnel on leave |
-| other_absent | Personnel OT (count) | Other absences |
-| percent_present | Computed | Present / Assigned × 100 |
-| vacant_billets | Personnel Billet OT (count) | Unfilled positions |
-
-> **CAUTION: PERSTAT data contains personnel assignment and duty status information. This dataset must be classified appropriately (minimum FOUO) and access restricted to authorized personnel in the reporting chain. Do not publish PERSTAT pipeline outputs to open-access folders. Configure folder-level access control before the first pipeline run.**
-
----
-
-### 6-6. Scheduling Pipeline Transforms
-
-All PM reporting pipelines run on defined schedules. Configure schedules in Pipeline Builder using the scheduling interface.
-
-**Standard Reporting Cadences for USAREUR-AF:**
-
-| Report | Cadence | Suggested Run Time | Notes |
-|---|---|---|---|
-| SITREP | Weekly | Sunday 2000L CET | Allows PM review before Monday morning brief |
-| LOGREP | Weekly | Friday 1800L CET | Aligns to end-of-week equipment status |
-| PERSTAT | Daily | 0600L CET | Morning accountability cycle |
-| USR | Monthly | Last day of month, 1800L CET | End-of-month readiness snapshot |
-| Risk Register Summary | Weekly | Sunday 2000L CET | Companion to SITREP |
-| Obligation Execution | Weekly | Monday 0600L CET | Beginning-of-week financial status |
-
-> **NOTE:** Schedule all pipelines to run at least 2 hours before the first consumer review of that data. A SITREP pipeline that runs at 0700 Monday when the PM needs to review by 0800 creates unnecessary risk. Front-load the processing window.
-
-**Pipeline Failure Notification:**
-
-Configure Pipeline Builder failure alerts for all scheduled PM reporting transforms. Designate at least two notification recipients (PM and a backup). A failed SITREP pipeline that nobody notices until the report is due is a PM system failure, not a technical curiosity.
-
----
-
-### 6-7. Task: Build and Schedule the SITREP Pipeline
-
-**CONDITIONS:** Program, Milestone, Risk, Funding Line, and Personnel Billet Object Type datasets are available as Foundry datasets (backed by pipeline from Ontology). Pipeline Builder access confirmed. Code Repository access confirmed for Python transform deployment (or TM-40B developer identified for implementation).
-
-**STANDARDS:** SITREP pipeline produces correct output dataset with all columns from para 6-3 schema. Pipeline runs on Sunday 2000L CET schedule. Pipeline failure notification routes to PM and backup. Output dataset is read-accessible to SITREP review Workshop page.
-
-**EQUIPMENT:** MSS Pipeline Builder, Code Repository, Program Object Type datasets.
-
-**PROCEDURE:**
-
-1. Confirm all input datasets exist and have fresh data. Check lineage for each input dataset to verify it is being populated by current Object Type write-back.
-2. In Code Repository, create a new Python transform file: `sitrep_generator.py`. Implement the transform from para 6-3. Adjust column names to match your Object Type property names exactly.
-3. Configure Input and Output paths. Output path: `/programs/[program_id]/reporting/sitrep_weekly`.
-4. Test locally using Foundry's preview functionality. Verify row count (should equal number of programs in scope), verify computed aggregations against manual counts from the Milestone dashboard.
-5. In Pipeline Builder, add the Code Repository transform as a node. Connect input dataset nodes for each source dataset.
-6. Configure schedule: Weekly, Sunday, 2000 CET. Enable.
-7. Configure failure notification: add PM EDIPI and backup EDIPI as notification recipients for pipeline failure events.
-8. Create a SITREP Review Workshop page. Display the SITREP output dataset in a structured table. Add a "Review and Certify" Action that allows the PM to add Commander Summary, Primary Concern, and Significant Activities free text before the report is submitted.
-9. Run the pipeline manually for the first execution. Verify output.
-10. Brief the PM on the review workflow: pipeline runs automatically, PM reviews and certifies in Workshop, certified output is the submittable SITREP.
-
----
-
-## CHAPTER 7 — SENIOR LEADER DASHBOARDS
-
-### 7-1. Overview
-
-**BLUF:** Senior leader dashboards are the primary interface between the PM system and the command. They must be visually unambiguous, instantly readable, and require zero training to interpret. A commander at a battle update brief should be able to look at the dashboard and answer "what is the program status?" in under 10 seconds without asking a follow-up question.
-
----
-
-### 7-2. Senior Leader Dashboard Design Principles
-
-**Principle 1: One question, one screen.** Each dashboard page answers exactly one question. "What is the overall program status?" is one question. "Which milestones are delayed?" is a different question. Do not combine both on one page.
-
-**Principle 2: Color communicates status, not aesthetics.** Use RED/AMBER/GREEN for status indicators only. Do not use color for visual variety. A commander who sees red assumes something is wrong. If you use red for a header bar, you have diluted your status signaling.
-
-**Principle 3: Numbers need context.** "Obligation Rate: 67%" means nothing without context. "Obligation Rate: 67% (Target: 72%, Variance: -5%)" is actionable. Every KPI must display its target and variance.
-
-**Principle 4: Minimize cognitive load.** Eliminate all decorative elements. No logos, no gradients, no animation. Every pixel on a senior leader dashboard should carry information.
-
-**Principle 5: Brief-ready by default.** The dashboard should look the same at 0700 when the PM is reviewing it and at 0800 when it is on the screen during the battle update brief. No pre-brief manipulation required.
-
-**Principle 6: Action-oriented.** Every flagged item (overdue milestone, critical risk, expiring contract) must have a clear path to action. If the commander asks "what are we doing about this?" the answer should be accessible from the dashboard.
-
----
-
-### 7-3. Commander's Program Summary Page Layout
-
-The Commander's Program Summary is the opening page of the senior leader dashboard. It provides a single-screen, complete status snapshot of the program.
-
-**Required Layout — Commander's Program Summary:**
+**Format:**
 
 ```
-+--------------------------------------------------+
-| PROGRAM: [Name]          DATA AS OF: [DTG]       |
-| PM: [Name]               PHASE: [Phase]          |
-+--------------------------------------------------+
-|  STATUS     |  MILESTONE  |   RISK    |  BUDGET  |
-|  [GREEN]    |  [AMBER]    |  [RED]    |  [GREEN] |
-|  On Track   |  2 Delayed  |  1 Crit.  |  On Plan |
-+--------------------------------------------------+
-|  SCHEDULE         |  RISK SUMMARY                |
-|  Timeline view    |  5x5 matrix (compact)        |
-|  baseline vs.     |  or Risk count by level      |
-|  current forecast |                              |
-+--------------------------------------------------+
-|  UPCOMING MILESTONES         |  TOP ISSUES        |
-|  Next 3 milestones with      |  Top 3 open issues |
-|  dates and owners            |  with impact       |
-+--------------------------------------------------+
-|  COMMANDER'S SUMMARY                             |
-|  [Free text field - PM certified this period]    |
-+--------------------------------------------------+
+GIVEN [the system state or precondition]
+WHEN [the user takes a specific action]
+THEN [the expected result that confirms the story is done]
 ```
 
-> **NOTE:** The four status tiles at top (Status / Milestone / Risk / Budget) are the most important visual elements on the page. They must be large enough to read across a room during a brief. Configure minimum tile height to 120px and font size ≥ 24pt for the status label.
+**Example — acceptance criteria for the G4 readiness dashboard story:**
+
+```
+GIVEN I am logged into MSS Workshop with G4 role
+WHEN I open the Equipment Readiness Dashboard
+THEN I see a filterable table of readiness rates by subordinate unit, updated within the last
+24 hours, with drill-down to individual equipment records
+AND records with readiness below 70% are flagged in red
+AND I can export the current view to PDF without requesting developer assistance
+```
+
+> **NOTE:** The PM writes acceptance criteria in collaboration with the stakeholder — not in
+> isolation. AC written without stakeholder input often miss the actual operational requirement.
+> Always walk the stakeholder through the AC before the story enters the sprint.
+
+### 2-3c. Story Sizing and Velocity
+
+Size stories using T-shirt sizing (S/M/L/XL) or story points (Fibonacci: 1/2/3/5/8/13).
+For MSS projects, T-shirt sizing is recommended for teams new to Agile:
+
+| Size | Description                                                                 | Typical Duration     |
+|------|-----------------------------------------------------------------------------|----------------------|
+| S    | Single-layer change: one dataset, one Workshop widget, one configuration    | <1 day               |
+| M    | Two-layer change: pipeline + dashboard, or model update + evaluation        | 1-3 days             |
+| L    | Multi-layer: new ontology type + pipeline + dashboard + access control      | 3-7 days             |
+| XL   | New capability end-to-end: new data source, model, product, governance      | >1 sprint — decompose |
+
+> **CAUTION:** Stories sized XL should be decomposed before entering the sprint. An undecomposed
+> XL story in a sprint almost always carries over unfinished. Decompose into L or M stories with
+> their own acceptance criteria.
+
+**Velocity:** Track how many story points or T-shirt sizes the team completes each sprint.
+After three sprints, use average velocity to forecast delivery dates. Do not commit to external
+stakeholder deadlines based on sprint 1 velocity alone — it takes three to four sprints for a
+team to establish a reliable throughput baseline.
 
 ---
 
-### 7-4. Drill-Down Page Design
+## 2-4. Kanban for Operational Support Work
 
-Senior leader dashboards must support drill-down from summary to detail without requiring navigation to a different application. Design two drill-down pages: Milestone Detail and Risk Detail.
+Kanban is appropriate for MSS teams performing ongoing support and enhancement work rather than
+building a defined new product. Use Kanban when:
 
-**Milestone Detail Page:**
-- Timeline visualization (all milestones, baseline vs. current)
-- Full milestone table with all status properties
-- Schedule variance chart (bar chart, one bar per milestone)
-- Delayed/overdue milestone detail cards
-- Comparison: planned vs. actual percent complete
+- The team is in sustainment mode for a production product
+- Work arrives continuously from multiple stakeholders at unpredictable rates
+- There is no defined end state or launch date
 
-**Risk Detail Page:**
-- 5×5 risk heat map (full size)
-- Risk register table with full property set
-- Issue tracker table
-- Risk trend chart (open/closed over time)
-- Mitigation status tracker
+### Kanban Board Structure for MSS Support Teams
 
-**Resource Detail Page:**
-- Obligation execution trend chart
-- Funding line table
-- Contract expiration alerts
-- Personnel and equipment status
+| Column         | Definition                                                                         |
+|----------------|------------------------------------------------------------------------------------|
+| Backlog        | All requested work, unscheduled                                                    |
+| Ready          | Groomed, sized, assigned, has acceptance criteria — ready to start                |
+| In Progress    | Actively being worked — WIP limit: 2 per developer                                |
+| In Review      | Built, pending PM or peer review before promoting to production                    |
+| Done           | Accepted by stakeholder and promoted to production (or closed as won't do)        |
 
-Configure navigation tiles on the Commander's Summary page that open each detail page. Use consistent naming: "Milestone Detail," "Risk Detail," "Resource Detail."
+**WIP Limits.** Work-in-progress (WIP) limits are the single most important Kanban discipline.
+A developer with five items In Progress finishes nothing. WIP limit of two per developer forces
+completion before starting new work. Enforce WIP limits. Resist requests to bypass them.
 
 ---
 
-### 7-5. Brief-Ready Configuration Standards
+## 2-5. Sprint Ceremonies — Execution Standards
 
-Dashboards used directly in command briefs require specific configuration to function reliably in presentation conditions.
+### 2-5a. Sprint Planning
 
-**Brief-Ready Configuration Checklist:**
+**Duration:** 60 minutes for a one-week sprint; 90 minutes for a two-week sprint.
 
-| Requirement | Configuration |
-|---|---|
-| Background color | White or very light grey — projectors wash out dark backgrounds |
-| Text size | Minimum 14pt for table cells, 24pt for KPI tiles |
-| Color contrast | All text meets WCAG AA contrast ratio (4.5:1) |
-| Auto-refresh | Configure Workshop page to auto-refresh every 5 minutes |
-| No loading spinners visible | Pre-load all Object Sets before brief. Spinners during a brief indicate poor design. |
-| Date/time display | Always show "Data as of [DTG]" on every page |
-| Responsive layout | Test on the display resolution of the conference room projector/screen |
-| Print/export | Configure Workshop PDF export for post-brief distribution |
-| No draft or development indicators | Verify no "dev" or "test" labels appear on production dashboard |
-| Bookmark URL | Configure a stable Workshop URL that can be bookmarked by the commander's staff |
+**Procedure:**
 
----
+1. PM presents the sprint goal (one sentence).
+2. PM walks the top backlog items in priority order. Team asks clarifying questions.
+3. Each team member pulls stories they are committing to deliver by sprint end.
+4. Team confirms: does the sum of committed stories match the sprint goal?
+5. PM records the committed sprint scope in the MSS tracking board (Chapter 5).
+6. Close: team and PM confirm the sprint start date, standup time, and review date.
 
-### 7-6. Task: Build the Commander's Program Summary Dashboard
+> **NOTE:** Sprint planning is not a negotiation session. The PM holds final authority on
+> priority order. Developers hold final authority on technical feasibility within the sprint.
+> If a developer says a story cannot be completed in the sprint as scoped, the PM either
+> rescopes the story or moves it to the next sprint. Do not override developer effort estimates.
 
-**CONDITIONS:** All PM Object Types implemented and populated. SITREP pipeline operational. Risk dashboard (Chapter 5) and Resource dashboard (Chapter 4) complete and validated. Workshop Editor access confirmed.
+### 2-5b. Daily Standup
 
-**STANDARDS:** Commander's Program Summary page displays all required sections per para 7-3 layout. Four status tiles are color-coded and data-current. Drill-down navigation functional to Milestone, Risk, and Resource detail pages. Dashboard passes all brief-ready configuration checks from para 7-5.
+**Duration:** 15 minutes. Timebox strictly.
 
-**EQUIPMENT:** MSS Workshop, all PM Object Types, SITREP pipeline output dataset.
+**Format:** Each team member answers three questions:
+1. What did I complete since last standup?
+2. What will I complete before next standup?
+3. What is blocking me?
 
-**PROCEDURE:**
+The PM records blockers in the risk/dependency tracker (Chapter 6). The standup is not a status
+meeting for the PM — it is a synchronization mechanism for the team. Take problem-solving
+offline. Do not let standup run over 15 minutes regardless of how many blockers surface.
 
-1. Create a new Workshop application: "[Program Name] — Commander's Dashboard."
-2. Configure page 1: "Program Summary." Build per para 7-3 layout.
-   - Pull STATUS tile from Program Object Type `program_status` property.
-   - Pull MILESTONE tile from SITREP pipeline output: count of milestones_delayed.
-   - Pull RISK tile from Risk Object Type: count where Risk Level = Critical or High.
-   - Pull BUDGET tile from Funding Line Object Type: Obligation Variance vs. target.
-   - Add Timeline widget for scheduled/forecast milestone dates.
-   - Add compact risk summary (count by level or embedded small heat map).
-   - Add Upcoming Milestones card list: filter to next 3 by Scheduled Date.
-   - Add Top Issues card list: filter to Issues where Status = Open, sort by Priority.
-   - Add Commander's Summary text block: pull from SITREP output dataset `commander_summary` column.
-3. Configure pages 2, 3, 4: Milestone Detail, Risk Detail, Resource Detail per para 7-4.
-4. Add navigation tiles on page 1 linking to pages 2, 3, 4.
-5. Apply brief-ready configuration per para 7-5 checklist. Test each item explicitly.
-6. Add "Data as of [DTG]" display to every page. Pull from the maximum `report_date` in the SITREP output dataset.
-7. Configure Workshop application permissions: read access to all stakeholders, no edit access on dashboard pages.
-8. Test on target display hardware if possible (projector or large-format display).
-9. Present to PM for final review. Present to commander or XO for acceptance. Document any change requests.
-10. Publish to production. Provide commander's staff with bookmarked URL.
+### 2-5c. Sprint Review
 
-> **WARNING: Do not brief an untested dashboard to the commander for the first time. The first brief using a new dashboard should be a rehearsal with the PM present, not the live BUB. Discover layout issues in rehearsal, not in front of the command.**
+**Duration:** 30-45 minutes. Stakeholders attend.
 
----
+**Procedure:**
 
-## CHAPTER 8 — PORTFOLIO ANALYSIS
+1. PM presents the sprint goal and whether it was achieved.
+2. Each developer demonstrates what they built — live in MSS, not PowerPoint slides.
+3. Stakeholders provide direct feedback.
+4. PM notes any stories not completed and explains whether they carry forward or are rescoped.
+5. PM presents the updated product roadmap showing projected delivery for remaining features.
 
-### 8-1. Overview
+> **WARNING: Do not demo a feature that is not deployed to the review environment. Demoing
+> locally and saying "it will work the same way in production" is a PM failure mode. The
+> sprint review demo must use the actual deployed product.**
 
-**BLUF:** Portfolio analysis answers the questions that single-program dashboards cannot: Which programs are collectively at risk? Where are resource conflicts across the portfolio? What does overall portfolio health look like to USAREUR-AF leadership? Contour is the primary tool for portfolio-level analysis — it provides the aggregation, comparison, and trend analysis that Workshop dashboards do not.
+### 2-5d. Retrospective
 
----
+**Duration:** 30 minutes. Team only — no stakeholders.
 
-### 8-2. Portfolio Object Type Design
+**Format:** Three questions, time-boxed discussion, one to two action items maximum:
 
-Portfolio analysis requires a Portfolio Object Type that aggregates across multiple Programs.
+1. What went well this sprint? (Keep doing)
+2. What did not go well? (Stop doing or change)
+3. What will we try differently next sprint? (One to two specific, ownable changes)
 
-**Portfolio Object Type — Required Properties:**
-
-| Property | Type | Description |
-|---|---|---|
-| Portfolio ID | String | Unique identifier |
-| Portfolio Name | String | Official portfolio name (e.g., "USAREUR-AF FY26 Modernization Portfolio") |
-| Portfolio Manager | String | Senior PM or G-staff officer responsible |
-| Sponsor | String | Command or HQDA sponsor |
-| Programs | Object links | All Program Objects in this portfolio |
-| Total Authorized Budget | Decimal | Sum of all authorized funding (computed) |
-| Total Obligated | Decimal | Sum of all obligated funding (computed) |
-| Portfolio Obligation Rate | Decimal | Computed |
-| Programs On Track | Integer | Count of programs with status = On Track (computed) |
-| Programs At Risk | Integer | Count of programs with status = At Risk (computed) |
-| Programs Off Track | Integer | Count of programs with status = Off Track (computed) |
-| High Critical Risk Count | Integer | Sum of high/critical risks across all programs (computed) |
-| Portfolio Health Score | Integer | Weighted composite of all program health scores (computed) |
+The PM owns tracking retrospective action items. If a retro action item is not tracked and
+followed up, retrospectives become a venting session with no effect on team performance.
 
 ---
 
-### 8-3. Contour Analysis Patterns for Portfolio PMs
+# CHAPTER 3 — MANAGING ML AND AI PROJECT LIFECYCLES
 
-Contour provides the analytical workspace for portfolio-level analysis. These are the standard analysis patterns for USAREUR-AF portfolio PMs.
+## 3-1. The ML/AI Project Lifecycle
 
-**Pattern 1: Cross-Program Schedule Performance Analysis**
+**BLUF:** ML and AI projects do not follow the same lifecycle as dashboard or pipeline builds.
+They have a research-to-production funnel that the PM must manage explicitly. Most ML projects
+fail not because the model is bad — they fail because the PM did not manage the funnel correctly.
 
-Purpose: Compare schedule variance across all programs in the portfolio to identify systemic schedule issues vs. program-specific issues.
+The MSS ML/AI lifecycle has six phases:
 
-Steps:
-1. In Contour, open the Milestone Object Type dataset scoped to all programs in the portfolio.
-2. Pivot by Program Name (rows) and Milestone Type (columns).
-3. Value: average Schedule Variance (days) for each cell.
-4. Highlight cells where average variance > 14 days.
-5. Interpretation: If one program shows high variance across all milestone types, the issue is program-specific. If high variance concentrates in one milestone type across multiple programs (e.g., all programs are late on "Decision" milestones), the issue is systemic.
+```
+[1] PROBLEM DEFINITION → [2] DATA AUDIT → [3] PROTOTYPE → [4] EVALUATION → [5] PRODUCTION → [6] SUSTAINMENT
+```
 
-**Pattern 2: Portfolio Budget Execution Variance**
-
-Purpose: Identify which programs are at risk of year-end under-execution or over-run.
-
-Steps:
-1. Open Funding Line Object Type dataset scoped to portfolio.
-2. Pivot by Program Name (rows) and Fiscal Quarter (columns).
-3. Value: Obligation Variance (actual rate minus planned rate) for each program/quarter cell.
-4. Sort rows by current-quarter Obligation Variance ascending (most at-risk programs at top).
-5. Programs with persistent negative Obligation Variance (under-executing) are at risk of fiscal year-end lapse. Escalate to resource manager.
-
-**Pattern 3: Risk Profile Comparison**
-
-Purpose: Compare risk posture across programs. Identify which programs carry disproportionate portfolio risk.
-
-Steps:
-1. Open Risk Object Type dataset scoped to portfolio.
-2. Group by Program Name. Aggregate: count of High+Critical risks, average Risk Score, count of Stale risks.
-3. Sort by count of High+Critical risks descending.
-4. Cross-reference with Program Health Score. A program with few risks but low health score has unmeasured or underreported risk — investigate.
-
-**Pattern 4: Milestone Completion Trend Analysis**
-
-Purpose: Project portfolio completion trajectory based on historical milestone completion rates.
-
-Steps:
-1. Open historical SITREP output dataset (requires SITREP pipeline to have been running for ≥ 4 reporting periods).
-2. Plot milestones_complete over time for each program.
-3. Fit trend line. Project to program end date.
-4. Programs where trajectory does not intersect with required completion count by end date require schedule intervention.
+Each phase has a PM gate — a decision point where the PM reviews outputs and decides whether to
+proceed, iterate, or stop.
 
 ---
 
-### 8-4. Portfolio Reporting to USAREUR-AF Leadership
+## 3-2. Phase 1 — Problem Definition
 
-Portfolio-level reporting supports USAREUR-AF headquarters reporting requirements. The standard portfolio report structure for USAREUR-AF programs:
+### Conditions
 
-**USAREUR-AF Portfolio Brief Structure:**
+The PM has received a stakeholder requirement for an AI or ML capability and must determine
+whether it is technically feasible and operationally scoped correctly before committing
+development resources.
 
-1. **Portfolio Summary.** Total programs, overall health distribution (count by status), total portfolio authorized budget, overall obligation rate, high/critical risk count.
-2. **Program-by-Program Status Matrix.** Table with one row per program: Program Name, Phase, Status (color-coded), Milestone Health, Risk Level, Budget Status, PM.
-3. **Top Issues Across Portfolio.** Issues from all programs where Priority = Critical or High, sorted by Schedule Impact.
-4. **Schedule Performance Summary.** Programs with Schedule Variance > 30 days on any milestone, with explanation.
-5. **Budget Execution Summary.** Programs with Obligation Variance < −10%, with explanation and proposed mitigation.
-6. **Recommendations.** PM's recommended actions for command decision. Specific, actionable, with proposed decision dates.
+### Standards
 
-Configure a Portfolio Dashboard in Workshop with a dedicated "Portfolio View" page that generates this brief structure from live data. This page is read-only for all users except the Portfolio Manager.
+The PM produces a one-page Problem Definition document containing: the operational question
+the model must answer, the input data sources, the output format, the success metric, and the
+recommended TM-40 tracks to assign.
 
----
+### Procedure
 
-### 8-5. Task: Build the Portfolio Analysis View in Contour
+1. **State the operational question precisely.** "Use AI to help G2" is not a problem definition.
+   "Predict which equipment records are most likely to require unscheduled maintenance in the
+   next 30 days, ranked by probability, so the G4 can pre-position maintenance teams" is a
+   problem definition.
 
-**CONDITIONS:** Portfolio Object Type implemented and linked to ≥ 2 Program objects. Historical SITREP pipeline output dataset available (≥ 4 reporting periods). Contour analysis access confirmed.
+2. **Identify the input data.** What datasets does the model need? Where do they live on MSS?
+   What is the refresh rate? Who owns them? Pull in TM-40E (KM) to validate data availability
+   and quality before committing to a model approach.
 
-**STANDARDS:** Portfolio analysis view in Contour displays cross-program schedule performance, budget execution variance, and risk profile comparison. Pivot tables produce correct aggregations validated against source data. Analysis is saved as a named Contour view, accessible to Portfolio Manager.
+3. **Define the output format.** A ranked list? A probability score per record? A binary
+   flag? A natural language explanation? The output format drives the model architecture and
+   the Workshop display design. Define it before building.
 
-**EQUIPMENT:** MSS Contour, Portfolio and Program Object Type datasets, historical SITREP output dataset.
+4. **Define the success metric.** How will the PM know the model is good enough to release?
+   Examples: precision/recall thresholds, false positive rate limits, agreement rate with
+   subject matter expert review, stakeholder acceptance rate in evaluation. Write this down
+   before modeling begins — do not let TM-40C define done post hoc.
 
-**PROCEDURE:**
+5. **Assign tracks.** Typical ML project assignment:
+   - TM-40C: model development, training pipeline, evaluation
+   - TM-40F: data pipeline, feature engineering code
+   - TM-40A: baseline statistical analysis, performance benchmarking
+   - TM-40B: AIP integration if model output feeds an AI agent or workflow
+   - TM-40E: data dictionary, ontology objects for model inputs/outputs
+   - TM-40D (PM): project tracking, stakeholder communication, gate reviews
 
-1. Open Contour. Load the Milestone Object Type dataset.
-2. Build Pattern 1 (Cross-Program Schedule Performance) per para 8-3. Save as named view: "Portfolio — Schedule Performance."
-3. Load the Funding Line Object Type dataset. Build Pattern 2 (Budget Execution Variance) per para 8-3. Save as "Portfolio — Budget Execution."
-4. Load the Risk Object Type dataset. Build Pattern 3 (Risk Profile Comparison) per para 8-3. Save as "Portfolio — Risk Profile."
-5. Load the SITREP output dataset. Build Pattern 4 (Milestone Completion Trend) per para 8-3. Save as "Portfolio — Completion Trend."
-6. In Workshop, create a Portfolio page in the Commander's Dashboard application. Embed key portfolio views (or replicate with Workshop aggregations if Contour embedding is not configured).
-7. Add Program-by-Program Status Matrix table per para 8-4.
-8. Validate all aggregations. Cross-check total portfolio obligation rate against sum of individual program rates.
-9. Brief Portfolio Manager on the four Contour analysis patterns. Ensure they can reproduce and update the analysis independently.
-
----
-
-## CHAPTER 9 — PM SYSTEM GOVERNANCE
-
-### 9-1. Overview
-
-**BLUF:** PM systems are operational infrastructure. They require ongoing governance — access control, audit trails, data stewardship, change management, and sustainment planning — from the day they are published. Governance is not an afterthought. A PM system with no governance degrades within one reporting cycle.
-
----
-
-### 9-2. Access Control Design
-
-PM systems contain sensitive data: budget figures, risk registers, personnel assignments, and program strategies. Access control must be explicitly designed and enforced from the outset.
-
-**Access Control Matrix — Standard PM System:**
-
-| Role | Program Summary Page | Resource Dashboard | Risk Register | SITREP Pipeline Output | Action Edit Rights |
-|---|---|---|---|---|---|
-| Commander / XO | Read | Read (aggregated only) | Read | Read | None |
-| Program Manager | Read/Write | Read/Write | Read/Write | Read/Write | All Actions |
-| Deputy PM | Read/Write | Read | Read/Write | Read | Assigned Actions |
-| Resource Manager | Read | Read/Write | Read | Read | Resource Actions |
-| Risk Officer | Read | Read | Read/Write | Read | Risk Actions |
-| Staff (general) | Read (Pages 1-2 only) | None | None | None | None |
-| Contractor Support | Read (limited scope) | None | Read (own risks only) | None | Assigned Task Actions |
-
-> **NOTE:** This matrix is a minimum baseline. Adjust based on program classification level and command-specific access policies. If any data in the system is classified CUI or higher, access control must be reviewed by the security officer before publication. Do not rely on Foundry role configuration alone — confirm with your security officer that the Foundry access configuration meets classification handling requirements for CUI data.
-
-**Access Control Implementation Steps:**
-
-1. In the Foundry project folder, configure role-based access groups aligned to the matrix above.
-2. Create Workshop-level page permissions for each page (e.g., Resource Dashboard page restricted to Resource Manager role and PM).
-3. Configure Action permissions on each Action to match the matrix (who can execute which Actions).
-4. Document the access matrix in the PM system README dataset. Review at each quarterly governance cycle.
+> **NOTE:** Engage TM-40E at problem definition, not after the model is built. Data quality
+> issues surface early if the KM is involved in assessing input sources. Discovering a critical
+> data quality problem after two sprints of model development is a PM failure.
 
 ---
 
-### 9-3. Audit Trail Requirements
+## 3-3. Phase 2 — Data Audit
 
-PM systems that support Army reporting chains (SITREP, LOGREP, PERSTAT submission) require audit trails. An audit trail answers: who changed what, when, and why.
+### Conditions
 
-**Audit Trail Requirements by Data Category:**
+The team has identified input data sources for the ML project and must assess whether the
+data is sufficient to train, validate, and run the model in production.
 
-| Data Category | Minimum Audit Requirement | Retention |
-|---|---|---|
-| Milestone Scheduled Date changes | Action log: who changed, old value, new value, reason | Program lifetime |
-| Risk Score changes | Action log with old/new Likelihood and Impact | Program lifetime |
-| Funding figures (Authorized, Obligated) | System log + GFEBS extract reconciliation log | 7 years (financial records) |
-| SITREP certification | PM digital signature equivalent (Action with EDIPI capture) | 2 years |
-| Access control changes | Admin action log | 2 years |
-| Personnel Billet changes | Action log with old/new values | Program lifetime |
+### Standards
 
-**Foundry Audit Implementation:**
+TM-40C and TM-40E deliver a Data Audit Report. The PM reviews the report and makes a
+go/no-go decision before authorizing prototype development.
 
-Foundry's Object Type history feature tracks all property changes with timestamp and user information. This is the primary audit trail for Object Type data. Verify that Foundry Object history is enabled on all sensitive Object Types. For financial data, configure an additional audit log pipeline that writes all Funding Line changes to a separate, restricted audit dataset.
+### Procedure
 
----
+1. **Pull TM-40C and TM-40E to audit each data source.** For each source, document:
 
-### 9-4. Data Stewardship Responsibilities
+   | Attribute            | Question to Answer                                                    |
+   |----------------------|-----------------------------------------------------------------------|
+   | Completeness         | What percentage of records have the key fields populated?             |
+   | Timeliness           | How current is the data? What is the refresh lag?                     |
+   | Historical depth     | How far back does history go? Is it sufficient for training?          |
+   | Label availability   | For supervised models: are ground truth labels available?             |
+   | Class balance        | For classification: are rare events represented in sufficient volume? |
+   | Access               | Does the team have read access to the source dataset on MSS?          |
+   | Schema stability     | Has the schema changed in the last 12 months? Will it change again?   |
 
-The PM is the data steward for the PM tracking system. Data stewardship responsibilities are defined by the Army CIO Data Stewardship Policy (April 2, 2024) and UDRA v1.1.
+2. **PM gate — Data Audit Review.** Review the completed Data Audit Report. Gate criteria:
+   - If critical fields are less than 80% complete: stop. Require data remediation before
+     proceeding. Assign TM-40F to build a data quality pipeline.
+   - If historical depth is insufficient for training: stop. Present the constraint to the
+     stakeholder. Offer alternative: rule-based heuristics instead of ML, or a simpler
+     statistical model that requires less history.
+   - If labels are unavailable for a supervised approach: reassess model type. Unsupervised
+     or semi-supervised methods may apply; engage TM-40C for recommendation.
+   - If access is blocked: escalate to C2DAO immediately. Do not let access blockers sit.
 
-**PM Data Steward Responsibilities:**
+3. **Document the data audit decision.** Record in the project tracker: data sources approved,
+   known quality limitations, and any data remediation tasks added to the backlog.
 
-| Responsibility | Cadence | Action |
-|---|---|---|
-| Data quality review | Weekly (before SITREP) | Review Object Type data for completeness, accuracy, and timeliness. Flag stale records. |
-| Access control review | Quarterly | Review and certify user access list. Remove departed personnel. Add new team members. |
-| Object Type schema review | Quarterly | Review whether current Object Types still match program needs. Document any required changes. |
-| Pipeline health check | Weekly | Verify all scheduled pipelines ran successfully. Investigate and resolve any failures. |
-| Downstream consumer survey | Quarterly | Contact dashboard consumers. Collect feedback on accuracy and usability. |
-| Governance documentation update | At each structural change | Update README dataset, data dictionary, and lineage documentation when any structural change is made. |
-| C2DAO coordination | Before any shared OT change | Coordinate with C2DAO before any change to Object Types that are shared with other programs or enterprise ontology. |
-
----
-
-### 9-5. Change Management for PM Systems
-
-PM systems change as programs evolve. A well-designed change management process prevents uncoordinated changes from corrupting production data.
-
-**Change Categories and Approval Authority:**
-
-| Change Type | Examples | Approval Required | Process |
-|---|---|---|---|
-| Minor property addition | Adding an optional text field to an existing OT | PM approval | Implement in dev branch, test, publish |
-| Required property change | Changing enum values, renaming existing property | PM + C2DAO coordination | Design review, impact assessment, change notification to users, 48-hr notice before implementation |
-| New Object Type | Adding a new entity to the tracking system | PM + C2DAO | Full design review per Chapter 2 methodology |
-| Pipeline logic change | Modifying SITREP aggregation logic | PM + pipeline owner | Test in non-production environment, spot-check output, 24-hr notice to downstream consumers |
-| Access control change | Adding or removing roles | PM + security officer review | Document change, update access matrix |
-| Decommission Object Type | Retiring an unused Object Type | PM + C2DAO | Archive data, update lineage, notify all consumers, 30-day notice |
-
-> **CAUTION: Never modify a production Object Type schema or pipeline logic without testing in a development branch first. Foundry branching is available for this purpose. A schema change deployed directly to production without testing can corrupt all downstream applications and reports in the program's data stack simultaneously.**
+> **WARNING: Skipping the data audit and proceeding directly to prototype is the most common
+> cause of ML project failure. A model trained on incomplete or misunderstood data will not
+> generalize. The PM who authorizes prototype work without a data audit owns the subsequent
+> failure.**
 
 ---
 
-### 9-6. Sustainment Planning
+## 3-4. Phase 3 — Prototype
 
-PM systems require a sustainment plan from the day they are published. People rotate. Programs evolve. Technology changes. A system with no sustainment plan becomes unmaintainable within one PCS cycle.
+### Conditions
 
-**PM System Sustainment Plan — Required Elements:**
+The data audit is complete. Data sources are accessible, sufficiently complete, and historically
+deep enough to support model training. The prototype sprint begins.
 
-1. **System Owner.** Named individual responsible for the system. Updated whenever the PM rotates. Succession plan: who assumes ownership on PCS/separation?
-2. **Technical Point of Contact (TPOC).** TM-40D qualified individual responsible for technical maintenance. Must not be the same person as system owner — single point of failure risk.
-3. **User Documentation.** Workshop user guide (how to use the dashboard), data entry guide (how to update milestones, risks, resources), and pipeline documentation (what runs when, what to do if it fails).
-4. **Quarterly Review.** Scheduled quarterly governance review: data quality, access control, schema currency, consumer feedback, pipeline health.
-5. **Training Plan.** How are new users trained on the system? Minimum: one structured onboarding session per new user. Recommended: document onboarding checklist in the system README.
-6. **Data Archive Plan.** What happens to system data when the program closes? Define data retention, archival procedures, and who is responsible for closeout actions.
-7. **Dependency Documentation.** What enterprise feeds does the system depend on? (GCSS-Army, GFEBS, IPPS-A feeds.) Who is the C2DAO contact for each? What is the process if a feed goes down?
+### Standards
 
----
+At the end of the prototype phase, TM-40C delivers a working model that can run on the
+approved input data and produce output in the defined format, with preliminary performance
+metrics against the defined success criteria.
 
-### 9-7. Task: Conduct PM System Governance Review
+### Procedure — PM Actions During Prototype Phase
 
-**CONDITIONS:** PM system is in production with at least one full reporting cycle complete. Access control matrix is documented. All pipeline schedules are configured and running.
+1. **Scope the prototype sprint(s) tightly.** The prototype is not the production model. It is
+   a proof of feasibility. Resist stakeholder requests to add features, expand the data scope,
+   or integrate the prototype with production Workshop before evaluation is complete.
 
-**STANDARDS:** Governance review produces a written summary covering: data quality findings, access control currency, pipeline health status, consumer feedback, and outstanding change requests. Review completed within 30 days of system going to production, then quarterly thereafter.
+2. **Protect TM-40C from distraction.** Model development requires sustained focus. Do not pull
+   TM-40C into stakeholder demonstrations, unrelated tasks, or data pipeline work during
+   prototype sprints unless it is directly required for the model.
 
-**EQUIPMENT:** MSS admin access, access control documentation, pipeline health dashboard, consumer feedback (collected via survey or direct contact).
+3. **Check in daily on blockers — not on model progress.** Ask: "Are you blocked on anything?"
+   not "How accurate is the model today?" Premature accuracy questions push developers toward
+   overfitting and rushed evaluation.
 
-**PROCEDURE:**
+4. **Track prototype milestones:**
+   - Milestone 1: First model version runs end-to-end on training data
+   - Milestone 2: Initial performance metrics generated against holdout dataset
+   - Milestone 3: Model output presented to PM in defined output format
 
-1. Pull the full user access list from the Foundry project folder. Cross-reference against current assigned personnel roster. Identify any accounts for personnel who have PCS'd, separated, or changed roles.
-2. Remove or modify access for all personnel identified in step 1. Document changes in access control log.
-3. Review pipeline run history for all scheduled pipelines. Identify any failures or partial runs. Investigate root cause for any failures.
-4. Open all Object Types. Review record completeness. Flag records where required properties are null. Contact responsible data owners for updates.
-5. Check Stale Risk flags. Contact Risk Owners for all risks where Days Since Review > 30.
-6. Check Action Item Days Overdue. Escalate any action items overdue > 14 days to PM for direct follow-up.
-7. Review the access control matrix against current program requirements. Are current roles still appropriate? Are any roles needed that do not yet exist?
-8. Contact at least two dashboard consumers and collect feedback. Document feedback.
-9. Review outstanding change requests. Prioritize. Schedule implementation for approved changes.
-10. Produce written governance review summary. Distribute to PM and chain of command as appropriate.
-11. Schedule next quarterly review.
+5. **Do not show prototype outputs to operational stakeholders.** A prototype is not a product.
+   Showing prototype model outputs to a commander before evaluation is complete risks anchoring
+   the stakeholder on incomplete results.
 
 ---
 
-## APPENDIX A — PM SYSTEM DESIGN CHECKLIST
+## 3-5. Phase 4 — Evaluation
 
-Use this checklist before beginning any PM system build on MSS. The checklist is also the acceptance criteria for system sign-off before production publication.
+### Conditions
 
-### A-1. Pre-Build Design Checklist
+The prototype model produces output. The PM must now determine whether the model meets the
+defined success metric and is ready to enter a production readiness review.
 
-**Program Scope:**
-- [ ] Program charter reviewed and understood
-- [ ] All trackable entities identified and mapped to Object Types
-- [ ] All reporting requirements identified (SITREP, LOGREP, PERSTAT, USR, other)
-- [ ] Reporting frequencies and consumers documented
+### Standards
 
-**Object Type Design:**
-- [ ] All required Object Types defined per Chapter 2 standard model
-- [ ] All required properties defined for each Object Type
-- [ ] Computed properties identified and formulas documented
-- [ ] All Link Types defined with cardinality
-- [ ] Data authority defined for each property (authoritative source system or manual entry)
-- [ ] Reporting property mapping completed (para 2-4)
+The PM conducts an Evaluation Review with TM-40C, TM-40A (for independent statistical
+assessment), and at least one operational subject matter expert (SME). The review produces a
+documented pass/fail/iterate decision.
 
-**Governance Pre-Build:**
-- [ ] Domain ownership identified (who is the data domain owner for each OT?)
-- [ ] C2DAO coordination completed for any shared enterprise OT domains
-- [ ] Access control matrix drafted
-- [ ] Data classification reviewed (any CUI/sensitive data? Security officer consulted?)
-- [ ] System Owner and TPOC designated
+### Procedure
 
-### A-2. Build Completion Checklist
+1. **Assemble the evaluation package.** TM-40C delivers:
+   - Performance metrics (precision, recall, F1, AUC, or task-appropriate metrics)
+   - Confusion matrix or error analysis
+   - Feature importance or model explanation summary
+   - Examples of correct predictions and failure cases
 
-**Object Types:**
-- [ ] All Object Types published in correct project folder
-- [ ] All required properties present on each OT
-- [ ] All computed properties producing correct values (spot-checked against manual calculation)
-- [ ] All Link Types functional (traverse links from at least 3 objects to verify)
+2. **Assign TM-40A to conduct independent validation.** TM-40A (ORSA) independently reviews
+   the methodology and performance claims. The ORSA does not re-train the model — they
+   validate the evaluation process and flag any statistical concerns.
 
-**Workshop Dashboards:**
-- [ ] Milestone tracking dashboard (Chapter 3) built and validated
-- [ ] Resource dashboard (Chapter 4) built and validated
-- [ ] Risk Register dashboard (Chapter 5) built and validated
-- [ ] Senior Leader dashboard (Chapter 7) built and validated
-- [ ] Brief-ready configuration checklist (para 7-5) completed
+3. **Conduct SME review.** Present the model outputs to an operational SME (the stakeholder's
+   representative who understands the domain). Ask: Do these outputs make operational sense?
+   Are the false positives operationally tolerable? Are the false negatives operationally
+   tolerable?
 
-**Pipelines:**
-- [ ] SITREP pipeline built, scheduled, and tested (Chapter 6)
-- [ ] LOGREP pipeline built, scheduled, and tested (if applicable)
-- [ ] PERSTAT pipeline built, scheduled, and tested (if applicable)
-- [ ] All pipelines have failure notification configured
+4. **PM Evaluation Gate decision:**
 
-**Governance:**
-- [ ] Access control implemented per matrix
-- [ ] Audit trail enabled on sensitive Object Types
-- [ ] Data stewardship responsibilities documented and assigned
-- [ ] Sustainment plan completed
-- [ ] User documentation written
-- [ ] System README dataset created with: description, data dictionary, lineage notes, contact information
+   | Outcome           | Condition                                                           | PM Action                                      |
+   |-------------------|---------------------------------------------------------------------|------------------------------------------------|
+   | Pass              | Metrics meet threshold; SME accepts output quality                  | Proceed to Phase 5 (Production)                |
+   | Iterate           | Metrics near threshold; specific failure mode identified and fixable| Return to prototype with scoped improvement task|
+   | Stop — Redesign   | Fundamental data or approach problem; metrics far from threshold    | Restart at Phase 1 or 2 with revised approach  |
+   | Stop — Descope    | Model not feasible given data; simpler heuristic approach better    | Descope ML; proceed with rule-based product     |
 
-### A-3. Pre-Production Sign-Off
-
-Before publishing to production, the following must be complete:
-- [ ] PM validation: data accuracy confirmed against source records
-- [ ] Consumer validation: at least one designated dashboard consumer has reviewed and accepted the dashboard
-- [ ] Security review: classification and access control confirmed
-- [ ] C2DAO notification: C2DAO notified of new production system
-- [ ] UDRA compliance: VAUTI criteria checklist completed (Visible, Accessible, Understandable, Trustable, Interoperable)
+> **CAUTION: Do not iterate indefinitely. Set a maximum of two iteration cycles before making
+> a Stop decision. Unlimited iteration on a failing model is a resource drain and delays delivery
+> of an alternative solution that might actually work.**
 
 ---
 
-## APPENDIX B — ARMY REPORTING REQUIREMENTS CROSS-REFERENCE
+## 3-6. Phase 5 — Production
 
-### B-1. SITREP (Situation Report)
+### Conditions
 
-| Element | Doctrinal Reference | MSS Source | Update Cadence |
-|---|---|---|---|
-| Unit / Program Status | FM 6-0 | Program Object Type: `program_status` | Weekly |
-| Current Operations Summary | FM 6-0 | PM manual input via Workshop Action | Weekly |
-| Significant Activities | FM 6-0 | PM manual input | Weekly |
-| Personnel Status (brief) | FM 6-0 | PERSTAT pipeline output | Weekly |
-| Equipment Status (brief) | FM 6-0 | LOGREP pipeline output | Weekly |
-| Logistics Status | ADP 4-0 | Resource Line Object Type | Weekly |
-| Risk Summary | FM 6-0 | Risk Object Type aggregation | Weekly |
-| Next Period Actions | FM 6-0 | Action Item Object Type (upcoming) | Weekly |
+The model passes evaluation. The PM must now manage the production deployment process.
 
-### B-2. LOGREP / LOGSTAT
+### Standards
 
-| Element | Doctrinal Reference | MSS Source | Update Cadence |
-|---|---|---|---|
-| Equipment on hand | ADP 4-0, GCSS-Army | Equipment Object Type | Daily / on demand |
-| FMC/PMC/NMC rates | DA Pam 750-8 | Equipment Object Type: `readiness_status` | Daily |
-| Supply fill rates | ADP 4-0 | Supply Line Object Type (if tracked) | Weekly |
-| Class IX demand | GCSS-Army | GCSS-Army enterprise feed | On demand |
-| Maintenance due | DA Pam 750-8 | Equipment Object Type: `maintenance_due_date` | Weekly |
+The PM completes the Definition of Done checklist (Appendix B), coordinates a production
+release plan with TM-40F and TM-40C, and communicates the release to operational users
+before deployment.
 
-### B-3. PERSTAT (Personnel Status)
+### Procedure
 
-| Element | Doctrinal Reference | MSS Source | Update Cadence |
-|---|---|---|---|
-| Authorized strength | AR 600-8-105 | Personnel Billet Object Type: count | Daily |
-| Assigned strength | AR 600-8-105 | Personnel Object Type: count assigned | Daily |
-| Present for duty | AR 600-8-105 | Personnel Object Type: duty status filter | Daily |
-| Absent (TDY/Leave/Other) | AR 600-8-105 | Personnel Object Type: absence category | Daily |
-| Vacancy breakdown | AR 600-8-105 | Personnel Billet: Fill Status = Vacant | Daily |
+1. **Complete the Definition of Done checklist.** Do not abbreviate or skip items.
+   If any DoD item is not satisfied, the release does not proceed.
 
-### B-4. USR (Unit Status Report)
+2. **Build the production monitoring plan.** Define:
+   - How will model performance be monitored in production? (Input data distribution shifts,
+     output confidence score distribution, user override rate)
+   - Who is the model owner responsible for monitoring? (Typically TM-40C)
+   - What threshold triggers a model review? (Define numerically — not "if it seems off")
+   - What is the rollback procedure if the model degrades?
 
-| Element | Doctrinal Reference | MSS Source | Update Cadence |
-|---|---|---|---|
-| S1 (Personnel) | AR 220-1 | PERSTAT pipeline output | Monthly |
-| S2 (Equipment/Fill Rate) | AR 220-1 | Equipment Object Type aggregation | Monthly |
-| S3 (Training) | AR 220-1 | Training Milestone Object Type (if tracked) | Monthly |
-| S4 (Supply/Maintenance) | AR 220-1 | LOGREP pipeline output | Monthly |
-| Overall Rating | AR 220-1 | Computed from S1–S4 inputs | Monthly |
+3. **Coordinate the deployment window.** Schedule the production deployment during a low-
+   operational-tempo window. Notify downstream users 48 hours in advance per the Safety Summary.
 
-> **NOTE:** USR computation rules (S-category rating thresholds, overall rating algorithm) are defined in AR 220-1. Do not implement custom rating logic — implement the AR 220-1 algorithm exactly. Any deviation constitutes a materially false report. If in doubt, coordinate with the unit S1/G1 before implementing USR logic.
+4. **Execute the deployment with TM-40F and TM-40C present.** Run the deployment against the
+   production environment. Validate model outputs after deployment before declaring success.
 
-### B-5. Risk Register (No Standard Army Form — Best Practice)
-
-Risk registers are not prescribed by a specific Army form, but are required by Army audit policy and command risk management doctrine (AR 11-2 Managers' Internal Control Program). The MSS risk register constitutes the program's risk management record. Ensure:
-
-- All risks are documented before submission of any external program status report.
-- Risk register is reviewed at each formal program review.
-- Critical risks are escalated to command per para 5-5 escalation policy.
-- Risk register is retained for the life of the program and for the prescribed records retention period after closeout.
+5. **Brief the operational stakeholder.** Walk the stakeholder through the production product:
+   how to read the outputs, what confidence thresholds mean, how to report anomalies, and who
+   to contact if the model produces results that seem wrong.
 
 ---
 
-## APPENDIX C — DASHBOARD DESIGN STANDARDS FOR SENIOR LEADERS
+## 3-7. Phase 6 — Sustainment
 
-### C-1. Visual Design Standards
+**BLUF:** A model in production is not done — it is a system that requires active management.
+Model performance degrades as input data drifts, operational contexts change, and upstream
+data sources change schema or refresh rates.
 
-**Color Standards:**
+### PM Sustainment Responsibilities
 
-| Use | Color | Hex Code |
-|---|---|---|
-| Status GREEN | Army Green | #4CAF50 |
-| Status AMBER | Army Amber | #FF9800 |
-| Status RED | Army Red | #F44336 |
-| Status BLUE (Complete) | Neutral Blue | #2196F3 |
-| Status GREY (N/A or Future) | Light Grey | #9E9E9E |
-| Background | White | #FFFFFF |
-| Primary text | Near-black | #212121 |
-| Secondary text | Medium grey | #616161 |
-| Table alternating row | Light grey | #F5F5F5 |
+1. **Schedule quarterly model reviews.** TM-40C reviews performance metrics quarterly.
+   PM reviews the report and decides: sustain, retrain, or retire.
 
-> **NOTE:** Do not use Army green (#4B5320 / OD Green) for status indicators. It is visually similar to amber when projected. Use the hex codes above, which are optimized for both screen and projector display.
+2. **Track upstream data source changes.** If a TM-40F pipeline engineer or a TM-40E KM
+   flags that an input data source has changed schema or refresh rate, escalate immediately.
+   A changed input can silently degrade model performance without triggering any obvious error.
 
-**Typography Standards:**
+3. **Maintain the model registry entry on MSS.** The model registry (managed by TM-40C)
+   must reflect the current version, training date, performance metrics, and owner.
+   PM ensures this is updated after every retrain.
 
-| Element | Size | Weight |
-|---|---|---|
-| KPI tile status label | 28pt minimum | Bold |
-| KPI tile value | 36pt minimum | Bold |
-| Page title | 20pt | Bold |
-| Section header | 16pt | Bold |
-| Table header | 12pt | Bold |
-| Table cell | 11pt | Regular |
-| Footer / data-as-of | 10pt | Regular, italic |
-
-### C-2. Layout Standards
-
-**KPI Tiles:**
-- Minimum height: 120px
-- Display order (left to right): Overall Status, Schedule, Risk, Budget
-- Each tile: Status label (top), value or count (center, large), trend indicator (bottom right, optional)
-- Tile background: white with colored left border (5px, status color) OR solid status color tile
-
-**Tables:**
-- Maximum columns visible without horizontal scroll: 8
-- Always include a "Last Updated" column
-- Default sort: by status severity (Critical/RED first) or by date (soonest first)
-- Alternate row shading: #F5F5F5 for even rows
-- No column headers that require abbreviation to fit — resize columns or reduce column count
-
-**Charts:**
-- Timeline charts: baseline date shown as solid line, forecast as dashed line
-- Bar charts: horizontal bars preferred over vertical for long labels
-- No 3D chart styles — they distort values and are unreadable at distance
-- All chart axes labeled with units
-- All charts include a legend if more than one data series
-
-### C-3. What Not to Include on Senior Leader Dashboards
-
-The following elements degrade senior leader dashboard quality and must be excluded:
-
-| Element | Reason |
-|---|---|
-| Decorative images, logos, clip art | Add cognitive load, waste screen space |
-| Animated elements | Distracting, can cause display issues during brief |
-| Dense prose blocks | Commanders do not read paragraphs on dashboards |
-| More than 5 items in any list | If more than 5, create a drill-down page |
-| Unexplained acronyms | Define on first use or in a visible legend |
-| Data with no source attribution | Every figure needs a "Data as of [date]" anchor |
-| Trend charts with fewer than 3 data points | Trends require data; 2 points is a line, not a trend |
-| Raw IDs or system codes in primary display | Show human-readable names; IDs belong in drill-down |
-| Grids or tables with more than 10 rows | Paginate or filter; commanders do not scroll |
+4. **Manage model retirement.** When a model is retired (superseded, no longer operationally
+   relevant, or failing sustainment review), the PM coordinates: stakeholder notification,
+   shutdown of the Workshop display, archival of the model artifacts, and documentation of
+   the retirement decision.
 
 ---
 
-## GLOSSARY
+# CHAPTER 4 — STAKEHOLDER MANAGEMENT AND REQUIREMENTS TRANSLATION
 
-**Action (Foundry)** — A configured workflow in Foundry Ontology that allows users to create, edit, or update Object properties through a defined form interface. PM systems use Actions as the primary data update mechanism.
+## 4-1. The Translation Problem
 
-**Action Item** — A task assigned to a specific individual with a due date and completion criteria. Tracked as an Object Type in MSS PM systems.
+**BLUF:** The PM's most critical skill is translating between two languages: the operational
+language of commanders and staff and the technical language of developers and data scientists.
+Failure to translate accurately in both directions is the leading cause of delivering the wrong
+product.
 
-**ADP 4-0** — Army Doctrine Publication 4-0, Sustainment. Doctrinal reference for logistics reporting (LOGREP, LOGSTAT) context.
+The translation problem manifests in two directions:
 
-**AIP Logic** — Palantir's AI workflow configuration tool within Foundry. Used in TM-40D for automated escalation notifications, anomaly detection alerts, and AI-assisted report generation.
+**Direction 1 — Operational to Technical:** A commander says "I need better situational
+awareness on logistics." The PM must translate this into: a specific dataset, a refresh
+cadence, a display format, a user story, and acceptance criteria that TM-40F can build.
 
-**ASAT** — Automated Status and Accountability Tool. Army system for personnel accountability; PERSTAT data may originate from ASAT.
+**Direction 2 — Technical to Operational:** A TM-40C says "the model has an AUC of 0.87
+but the recall on the minority class is 0.61 at the 0.5 threshold." The PM must translate
+this into: "The model correctly identifies roughly six out of every ten high-risk events,
+which means it misses four. For this use case, missing four out of ten is operationally
+acceptable because the cost of a false alarm is low."
 
-**Audit Trail** — A chronological record of all changes to a dataset or Object, including who made the change, when, and what the old and new values were. Required for financial and personnel data in PM systems.
-
-**Baseline Schedule** — The approved project schedule with locked milestone dates used as the reference point for schedule variance calculation. Never modified without a formal rebaseline action.
-
-**Billet** — An authorized position on a unit's Table of Distribution and Allowances (TDA) or Table of Organization and Equipment (TOE). Tracked in the Personnel Billet Object Type.
-
-**C2DAO** — Command and Control Data Architecture Office. USAREUR-AF's data architecture governance authority. All shared Object Type changes and new shared data products require C2DAO coordination.
-
-**Commander's Dashboard** — The Workshop application designed for senior leader consumption, optimized for brief-readiness and immediate status comprehension.
-
-**Computed Property** — An Object Type property whose value is automatically derived from other properties (e.g., Schedule Variance = Forecast Date − Scheduled Date). Implemented via Functions on Objects (TypeScript, -40B) or pipeline transform.
-
-**Contour** — Foundry's analytical workbench for pivot analysis, aggregation, trend analysis, and cross-dataset comparison. Primary tool for portfolio-level PM analysis.
-
-**Contract Object Type** — MSS Object Type representing a contract action, tracking period of performance, value, obligation, COTR, and expiration status.
-
-**CUI** — Controlled Unclassified Information. Designation for sensitive but unclassified information requiring specific handling. Budget data and personnel data in PM systems may carry CUI designation.
-
-**Data Steward** — Individual responsible for the quality, accuracy, and governance of a specific data domain or dataset. The PM is the data steward for the PM tracking system.
-
-**DTG** — Date-Time Group. Standard military time expression format (e.g., 111200ZMAR26). Used in SITREP and all automated reporting products.
-
-**EDIPI** — Electronic Data Interchange Personal Identifier. DoD-standard unique identifier for individuals. Use EDIPI rather than names in system properties wherever possible to reduce PII exposure and enable cross-system linking.
-
-**Escalation Flag** — A Boolean property on Risk or Action Item objects that triggers elevated visibility when automated threshold conditions are met.
-
-**FM 6-0** — Field Manual 6-0, Commander and Staff Organization and Operations. Primary doctrinal reference for SITREP structure and staff reporting requirements.
-
-**Foundry** — Palantir Foundry. The underlying platform for MSS. All MSS data products are built on Foundry infrastructure.
-
-**GFEBS** — General Fund Enterprise Business System. Army financial management system. The authoritative source for obligation and expenditure data in PM funding tracking.
-
-**GCSS-Army** — Global Combat Support System-Army. Army logistics information system. Authoritative source for equipment status and supply data in LOGREP tracking.
-
-**Health Score** — A computed 0–100 composite score representing the overall health of a Program object, derived from weighted contributions of schedule, risk, budget, and personnel status.
-
-**Idempotent Pipeline** — A data pipeline that produces the same correct output regardless of how many times it is run. PM reporting pipelines must be idempotent to support reruns without data corruption.
-
-**IPPS-A** — Integrated Personnel and Pay System-Army. Army human resources system. Authoritative source for personnel data in PERSTAT tracking.
-
-**Issue** — A risk that has been realized (has actually occurred and is causing program impact). Tracked separately from Risks in MSS PM systems.
-
-**KPI** — Key Performance Indicator. Summarized metric displayed prominently in dashboard tiles for rapid status assessment.
-
-**LOGREP** — Logistics Report. Standard Army report on equipment, supply, and logistics status. Required for sustainment programs.
-
-**Link Type** — A defined relationship between two Object Types in Foundry Ontology. PM systems use Link Types to connect Programs to Milestones, Milestones to Risks, etc.
-
-**Milestone** — A key program event with a defined date, completion criteria, and authority. The primary unit of schedule tracking in PM systems.
-
-**MSS** — Maven Smart System. USAREUR-AF's enterprise AI/data platform, built on Palantir Foundry.
-
-**Object Type** — A defined entity class in Foundry Ontology. PM systems define Object Types for Programs, Milestones, Risks, Resources, Personnel, and other trackable entities.
-
-**Obligation Rate** — The percentage of authorized funding that has been legally committed (obligated) to date. Key financial health indicator for PM systems.
-
-**Ontology** — Foundry's semantic data layer. The collection of Object Types, Link Types, and Actions that represent real-world entities and their relationships on MSS.
-
-**OPDATA** — Operational Data. Umbrella term for data generated by and required for military operations. PM tracking data is a category of OPDATA.
-
-**PERSTAT** — Personnel Status Report. Daily Army report on unit strength and duty status.
-
-**Pipeline Builder** — Foundry's visual data pipeline design tool. Used for building scheduled transforms that generate PM reporting outputs.
-
-**Portfolio** — A collection of related programs managed by a senior PM or G-staff officer. Portfolio analysis aggregates data across multiple programs.
-
-**Program Manager (PM)** — Individual assigned responsibility for a specific program, with authority and accountability for program execution, reporting, and resource management.
-
-**Rebaseline** — Formal process of resetting the baseline schedule dates for a program, typically requiring approval authority action. Must be tracked as a distinct event in the PM system, not a silent overwrite.
-
-**Risk Register** — Structured record of all identified risks for a program, including likelihood, impact, scoring, mitigation status, and ownership.
-
-**Schedule Variance (SV)** — The difference in days between a milestone's forecasted completion date and its baseline scheduled date. Positive SV indicates delay.
-
-**SITREP** — Situation Report. Standard Army report on current status, significant activities, and near-term operations.
-
-**TDA** — Table of Distribution and Allowances. Document defining authorized positions for a unit. Personnel Billet Object Types should align to TDA structure.
-
-**UDRA** — Unified Data Reference Architecture. Army's federated data architecture framework, v1.1 published February 2025. Governs all MSS data product design.
-
-**USR** — Unit Status Report. Monthly report on unit readiness across personnel, equipment, training, and supply categories, per AR 220-1.
-
-**VAUTI** — Visible, Accessible, Understandable, Trustable, Interoperable. The five data quality criteria from DoD Data Strategy (2020). All MSS PM data products must meet VAUTI standards.
-
-**Workshop** — Foundry's no-code application builder. Primary tool for PM dashboard and tracking application construction in TM-40D.
+Neither translation is automatic. Both require the PM to understand enough of both domains
+to bridge them accurately.
 
 ---
 
-*TM-40D — Program Manager Technical Manual*
-*Headquarters, United States Army Europe and Africa*
-*Wiesbaden, Germany — 2026*
-*DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.*
+## 4-2. Requirements Elicitation
 
-*For questions and corrections, contact the USAREUR-AF C2DAO at Wiesbaden.*
-*Reference: learn-data.armydev.com*
+### Conditions
+
+The PM has been assigned to scope a new data or AI capability. The operational stakeholder
+has expressed a requirement in vague or general terms.
+
+### Standards
+
+The PM produces a Requirements Document containing: the stakeholder's operational need,
+the current workaround or pain point, the proposed MSS solution, the input data required,
+the output format, the users and roles, the success metric, and the out-of-scope boundaries.
+
+### Procedure
+
+1. **Conduct a discovery interview with the operational stakeholder.** Ask:
+   - Walk me through your current workflow for [the task]. What are you doing today?
+   - Where does that process break down or slow down?
+   - What would done look like? What would you be able to do that you cannot do today?
+   - Who else uses this information? Who are the downstream consumers?
+   - How often does this need to update? Real-time, daily, weekly?
+   - What would make you not use this product? What would make it wrong?
+
+2. **Resist accepting the stakeholder's proposed solution as the requirement.** Stakeholders
+   often bring a solution ("I need a dashboard") when the PM needs to understand the problem
+   ("I cannot track equipment readiness across all subordinate units without calling each S4").
+   The PM's job is to validate whether the proposed solution actually solves the problem.
+
+3. **Draft the Requirements Document.** Use the template:
+
+   ```
+   REQUIREMENT: [One sentence — what operational outcome the product enables]
+   STAKEHOLDER: [Name, role, unit]
+   CURRENT STATE: [How the stakeholder handles this today — the workaround or manual process]
+   PROPOSED SOLUTION: [What will be built on MSS]
+   INPUT DATA: [Datasets required — names, sources, owners, refresh rates]
+   OUTPUT FORMAT: [Dashboard / alert / export / API / model score — be specific]
+   USERS AND ROLES: [Who will use the product — by role, not by name]
+   SUCCESS METRIC: [How the PM and stakeholder will know it is working]
+   OUT OF SCOPE: [What this product will NOT do — prevents scope creep]
+   PRIORITY: [Must have / Should have / Nice to have]
+   ```
+
+4. **Review the Requirements Document with the stakeholder before starting work.** Read back
+   the requirement, success metric, and out-of-scope section explicitly. Confirm agreement
+   before the document is baselined and backlog items are created.
+
+> **NOTE:** A signed-off Requirements Document does not prevent requirements from changing.
+> It creates a baseline for managing change. When a stakeholder requests a scope change, the
+> PM compares the request to the baselined requirements, estimates impact, and presents
+> options — not just "yes" and not just "no."
+
+---
+
+## 4-3. Managing Stakeholder Expectations
+
+### 4-3a. Setting Delivery Expectations
+
+Do not commit to a delivery date before three sprints of velocity data exist. Use this
+language with stakeholders:
+
+| Stage               | What to Say                                                                                         |
+|---------------------|-----------------------------------------------------------------------------------------------------|
+| Project kickoff     | "We will have an initial estimate after two sprints. First sprint is scoping and data validation." |
+| After sprint 1      | "Still building velocity baseline. Initial sense is [X sprints] but that may change."              |
+| After sprint 3      | "Based on velocity, we project delivery of [feature set] by [date range] +/- one sprint."         |
+| Confirmed forecast  | "We are committed to [feature set] by [date]. Scope changes after this point require a tradeoff."  |
+
+### 4-3b. Stakeholder Communication Cadence
+
+| Stakeholder Type       | Recommended Touchpoint                                       | Format                                          |
+|------------------------|--------------------------------------------------------------|-------------------------------------------------|
+| Direct operational user| Sprint review attendance (every sprint)                      | Live demo on MSS                                |
+| Commanding officer     | Monthly project status update                                | MSS dashboard (Chapter 5) — not a slide deck   |
+| Technical leadership   | Sprint review + async update in project channel              | MSS board + brief written summary              |
+| C2DAO / platform team  | As needed for governance events (access, ontology, deploys)  | Coordination via C2DAO workflow                 |
+
+> **NOTE:** Commander-level project status should be served from a live MSS Workshop dashboard,
+> not a PowerPoint deck. A static briefing slide is stale the moment it is printed. A live
+> dashboard shows real data. Chapter 5 covers building the commander-facing project status
+> dashboard.
+
+---
+
+## 4-4. Managing the Technical Team
+
+### 4-4a. PM Authority vs. Technical Authority
+
+The PM holds authority over: scope, priority, stakeholder communication, release timing, and
+project tracking. The PM does not hold authority over: how a developer implements a feature,
+which algorithm a TM-40C uses, or how TM-40F structures code.
+
+Attempting to micro-manage technical implementation decisions creates friction, reduces team
+ownership, and produces worse outcomes. Delegate technical decisions to the appropriate TM-40
+track and hold them accountable to the acceptance criteria — not to the implementation method.
+
+### 4-4b. Protecting the Team from Scope Sprawl
+
+Scope sprawl is the most common project killer in operational data environments. Stakeholders
+who see a working dashboard immediately want to add filters, additional datasets, new metrics,
+and new features — before the current sprint is complete.
+
+PM procedure for incoming scope requests during a sprint:
+
+1. Record the request in the backlog immediately.
+2. Acknowledge the stakeholder: "Logged. We will assess priority in sprint planning."
+3. Do not add the request to the current sprint unless it is a blocking defect.
+4. At sprint planning, assess priority against current backlog. Let the stakeholder make
+   the tradeoff: "If we add this to the sprint, we move [existing item] to the next sprint.
+   Which do you prefer?"
+
+### 4-4c. Cross-Track Coordination
+
+When a story requires multiple TM-40 tracks, the PM must sequence the work and manage the
+hand-off points:
+
+| Dependency Pattern                              | PM Action                                                                          |
+|-------------------------------------------------|------------------------------------------------------------------------------------|
+| TM-40F pipeline must complete before TM-40C can train | Make pipeline story a sprint 1 item; model story a sprint 2 item with explicit dependency noted |
+| TM-40E ontology object must exist before TM-40F can write to it | TM-40E story goes in sprint backlog; TM-40F story blocked until merged |
+| TM-40B agent workflow depends on TM-40C model output format | PM defines the output schema interface in sprint planning; both tracks work to that contract |
+| TM-30 Workshop dashboard depends on TM-40F pipeline | Pipeline completes and is validated before Workshop build begins                    |
+
+---
+
+# CHAPTER 5 — BUILDING PROJECT TRACKING SYSTEMS ON MSS
+
+## 5-1. Why Track on MSS, Not Spreadsheets
+
+**BLUF:** Project tracking on MSS provides live visibility to all stakeholders without the
+version-control and distribution problems of spreadsheets. A Workshop-based project tracker
+is the single source of truth, accessible to every team member with the correct Foundry role,
+updated in real time.
+
+A Jira-style spreadsheet or SharePoint tracker has the following failure modes in USAREUR-AF
+operations:
+
+- Multiple versions in circulation with no authoritative copy
+- Commander-level visibility requires manual compilation into a briefing slide
+- Status updates depend on someone remembering to update a cell
+- No automated alert when a milestone slips or a blocker exceeds SLA
+
+An MSS-based tracker eliminates all of these. This chapter covers the procedure for building it.
+
+---
+
+## 5-2. Designing the Project Tracker Ontology
+
+### Conditions
+
+The PM is setting up a new project on MSS and needs a tracking infrastructure. This task is
+performed in coordination with TM-40E (Knowledge Manager) if a new ontology design is needed,
+or by the PM using an existing project tracker template if one is available in the USAREUR-AF
+project tracker library.
+
+### Standards
+
+The project tracker Ontology contains the following Object Types at minimum: Project, Sprint,
+Story (or Task), Team Member, Risk, and Dependency. Links connect Stories to Sprint, Sprint to
+Project, and Team Member to Stories (as assignee).
+
+### Procedure — Ontology Design for Project Tracker
+
+1. **Check the USAREUR-AF project tracker library first.** The C2DAO maintains reusable
+   Ontology templates. Do not rebuild from scratch if a validated template exists.
+
+2. **Define the Object Types.** For each type, define the properties:
+
+   **Project Object Type**
+
+   | Property          | Type     | Notes                                       |
+   |-------------------|----------|---------------------------------------------|
+   | project_name      | String   | Short name, used as display label           |
+   | product_vision    | String   | One-paragraph product vision statement      |
+   | pm_owner          | String   | PM name and TM-40D track                   |
+   | start_date        | Date     |                                             |
+   | target_end_date   | Date     | Expected delivery — not a commitment        |
+   | current_status    | Enum     | On Track / At Risk / Blocked / Complete     |
+   | stakeholder_org   | String   | Unit or directorate of primary stakeholder  |
+
+   **Sprint Object Type**
+
+   | Property          | Type     | Notes                                       |
+   |-------------------|----------|---------------------------------------------|
+   | sprint_name       | String   | e.g., "Sprint 4 — 10-21 Mar 2026"          |
+   | sprint_goal       | String   | One sentence                                |
+   | start_date        | Date     |                                             |
+   | end_date          | Date     |                                             |
+   | velocity_planned  | Integer  | Story points or T-shirt size count planned  |
+   | velocity_actual   | Integer  | Completed at sprint end                     |
+   | status            | Enum     | Planning / Active / Review / Complete       |
+
+   **Story Object Type**
+
+   | Property          | Type     | Notes                                       |
+   |-------------------|----------|---------------------------------------------|
+   | story_id          | String   | Unique ID (auto-generated or manual)        |
+   | story_title       | String   | Short title for board display               |
+   | story_text        | String   | Full "As a / I want / So that" text         |
+   | acceptance_criteria | String | Full AC text                               |
+   | size              | Enum     | S / M / L / XL                             |
+   | status            | Enum     | Backlog / Ready / In Progress / In Review / Done |
+   | assignee          | String   | TM-40 track + name                         |
+   | track             | Enum     | 40A / 40B / 40C / 40E / 40F / 30           |
+   | blocked           | Boolean  | True if blocker exists                      |
+   | blocker_description | String | Description of blocker (if blocked = true) |
+   | sprint_link       | Link     | → Sprint                                    |
+
+   **Risk Object Type** — see Chapter 6.
+
+   **Dependency Object Type** — see Chapter 6.
+
+3. **Create the Object Types in the Foundry Ontology UI.** Use the UI to create types and
+   properties. Coordinate with TM-40E if the project tracker will share any Object Types
+   with the enterprise ontology (e.g., linking Team Members to an existing Personnel object).
+
+4. **Configure write access for all team members.** Each team member must have write access
+   to update their own Story records. The PM configures role-based access in the Foundry
+   project settings.
+
+> **NOTE:** If TM-40E has already designed a standard project tracker ontology for USAREUR-AF,
+> use it. Ontology proliferation — every PM designing their own object types — creates
+> governance debt that TM-40E must clean up. Check before designing.
+
+---
+
+## 5-3. Building the Sprint Board in Workshop
+
+### Conditions
+
+The Ontology is defined and populated with at least one Sprint and its associated Stories.
+The PM is building the Scrum board view in Foundry Workshop.
+
+### Standards
+
+The Workshop application displays: the current sprint goal, a Kanban-style board with Story
+cards grouped by status column, a blockers panel, and a velocity chart. The board updates in
+real time as team members change Story status.
+
+### Procedure
+
+1. **Create a new Workshop application** in the MSS project space. Name it:
+   `[Project Name] — Sprint Board`.
+
+2. **Add a Sprint Selector widget** at the top of the page. This allows users to switch between
+   viewing the current sprint and historical sprints for reference.
+
+3. **Add a Kanban Board widget** linked to the Story Object Type, filtered to the selected
+   sprint. Configure columns: Backlog | Ready | In Progress | In Review | Done. Each card
+   shows: story_title, assignee, size, and a red indicator if blocked = true.
+
+4. **Add a Sprint Goal banner** at the top: a text widget that displays the sprint_goal
+   property of the selected Sprint object.
+
+5. **Add a Blockers Panel** below the Kanban board. Filter Stories where blocked = true.
+   Display: story_title, assignee, blocker_description. This panel is visible to all
+   stakeholders and creates accountability for blocker resolution.
+
+6. **Add a Velocity Chart** on a second Workshop tab. Display a bar chart of velocity_planned
+   vs. velocity_actual for all completed sprints in the project. This is the PM's forecasting
+   tool.
+
+7. **Configure Workshop publication permissions.** The sprint board should be visible to:
+   the full project team (read/write for own stories), the PM (read/write all), and the
+   stakeholder (read-only). Do not publish to a wider audience than required — story-level
+   tracking data may contain information about resourcing and capability gaps.
+
+> **CAUTION: Do not use the same Workshop application for internal team tracking and
+> commander-facing status reporting. These are different audiences with different information
+> needs. Build separate applications — see 5-4 for commander-facing status.**
+
+---
+
+## 5-4. Commander-Facing Project Status Dashboard
+
+### Conditions
+
+The PM must provide project status visibility to a commanding officer, directorate chief, or
+senior leader who does not need sprint-level detail but requires accurate project health
+information.
+
+### Standards
+
+The commander-facing dashboard displays: project name, current status (On Track / At Risk /
+Blocked), sprint velocity trend, top risks (by severity), and projected delivery milestones.
+The dashboard is designed for a 90-second read in a senior leader's workspace.
+
+### Design Principles for Senior Leader Dashboards
+
+| Principle             | Application                                                                          |
+|-----------------------|--------------------------------------------------------------------------------------|
+| BLUF first            | Status indicator (green/amber/red) visible at top of page, no scrolling required    |
+| Numbers over narrative| Show metrics — velocity, risk count, days to milestone — not prose explanations      |
+| Drill-down, don't flatten | Summary view on top; detail available on click/expand — not all on one page     |
+| Current as of label   | Always display "Data as of [timestamp]" — never let staleness go unlabeled           |
+| No jargon             | Story points, sprint velocity, AUC — not visible on commander dashboard. Translate.  |
+
+### Procedure
+
+1. **Create a new Workshop application** named: `[Project Name] — Status`.
+
+2. **Add a Status Header block** at the top:
+   - Project name (large text)
+   - Current status indicator: a colored badge (green/amber/red) driven by the `current_status`
+     property on the Project object
+   - "As of [last_updated]" timestamp
+
+3. **Add a Milestone Table** showing the next three to five major milestones:
+   - Milestone name
+   - Target date
+   - Status (On Track / At Risk / Complete)
+   - Color-coded by status
+
+4. **Add a Progress Summary panel:**
+   - Stories completed / total stories (shown as a fraction and progress bar)
+   - Current sprint number and goal (one sentence)
+   - Projected completion date range (derived from velocity trend)
+
+5. **Add a Top Risks panel** showing the top three risks by severity score (Chapter 6).
+   Display: risk description, severity, and current mitigation status. If no critical risks
+   exist, show "No critical risks currently identified."
+
+6. **Set publication permissions** to read-only for all stakeholder roles. The PM updates
+   the Project object status field — the dashboard reflects the change automatically.
+
+> **NOTE:** The commander dashboard does not replace verbal briefs. It supplements them.
+> When a senior leader asks for a project update, the PM points to the live dashboard
+> rather than producing a new slide. This builds trust in MSS as the authoritative source.
+
+---
+
+## 5-5. Automated Status Alerts
+
+### Conditions
+
+The PM wants to receive automated notification when a blocker exceeds a defined SLA, a
+milestone passes its target date without being marked complete, or project status changes.
+
+### Standards
+
+The PM configures at least two automated alerts using MSS Pipeline Builder or AIP Logic:
+a blocker-aging alert (fires when a story has been blocked for more than 48 hours) and a
+milestone-slip alert (fires when today's date exceeds a milestone target date and status is
+not Complete).
+
+### Procedure
+
+1. **Coordinate with TM-40B** to configure the alert logic using AIP Logic or a lightweight
+   Pipeline Builder scheduled transform.
+
+2. **Define the alert recipients** in the notification configuration. Do not configure alerts
+   to send to commanders or senior leaders directly — route to the PM, who then decides
+   whether to escalate.
+
+3. **Test the alerts** in a non-production sprint before relying on them in a live project.
+   Verify that the trigger condition fires correctly and that the notification reaches the
+   intended recipient.
+
+---
+
+# CHAPTER 6 — RISK AND DEPENDENCY MANAGEMENT
+
+## 6-1. Risk Management for Data Projects
+
+**BLUF:** Data and AI projects have a specific risk profile that differs from general software
+projects. The PM must manage technical risks, data risks, and operational risks simultaneously.
+
+The three risk domains for MSS data/AI projects:
+
+| Domain     | Examples                                                                                           |
+|------------|----------------------------------------------------------------------------------------------------|
+| Data       | Source dataset unavailable, schema changed, quality below threshold, access blocked               |
+| Technical  | Model accuracy insufficient, pipeline latency too high, platform capacity constraints             |
+| Operational| Stakeholder changes requirements, end users resist adoption, organizational priority shifts       |
+
+---
+
+## 6-2. Risk Register
+
+### Conditions
+
+The PM is managing an active project and must maintain a risk register that is visible to the
+project team and relevant stakeholders.
+
+### Standards
+
+The risk register is an MSS Ontology Object Type populated with all identified risks. Each risk
+has: description, domain, likelihood, impact, severity score, owner, mitigation strategy, and
+current status. The register is reviewed at every sprint planning session.
+
+### Risk Object Type Properties
+
+| Property          | Type     | Notes                                                       |
+|-------------------|----------|-------------------------------------------------------------|
+| risk_id           | String   | Auto or manual unique ID                                    |
+| description       | String   | Plain-language description of what could go wrong          |
+| domain            | Enum     | Data / Technical / Operational                              |
+| likelihood        | Enum     | Low (1) / Medium (2) / High (3)                            |
+| impact            | Enum     | Low (1) / Medium (2) / High (3)                            |
+| severity_score    | Integer  | Computed: likelihood × impact (1-9)                        |
+| owner             | String   | Team member responsible for monitoring and mitigation       |
+| mitigation        | String   | Specific action being taken to reduce likelihood or impact  |
+| contingency       | String   | What will be done if the risk materializes                  |
+| status            | Enum     | Open / Mitigated / Accepted / Closed                        |
+| last_reviewed     | Date     | Date of last PM review                                      |
+
+### Risk Severity Matrix
+
+|                  | Low Impact (1) | Medium Impact (2) | High Impact (3) |
+|------------------|---------------|-------------------|-----------------|
+| **High Likely (3)**  | 3             | 6                 | **9 — Critical**    |
+| **Med Likely (2)**   | 2             | 4                 | **6 — High**        |
+| **Low Likely (1)**   | 1             | 2                 | **3 — Moderate**    |
+
+Severity 7-9 (Critical): Escalate to project sponsor/stakeholder leadership immediately.
+Severity 4-6 (High): Active mitigation required; review weekly.
+Severity 1-3 (Moderate): Monitor; review at sprint planning.
+
+### Procedure — Sprint Risk Review
+
+1. At each sprint planning session, open the risk register in Workshop.
+2. Review all Open risks with severity ≥ 4.
+3. For each: has likelihood or impact changed? Has mitigation progressed?
+4. Update the risk record. Change status to Mitigated if the risk has been addressed.
+5. Add any new risks identified during the previous sprint.
+6. Present any new Critical risks to the project sponsor before the sprint begins.
+
+---
+
+## 6-3. Dependency Management
+
+**BLUF:** Data projects have more cross-team dependencies than most software projects.
+A pipeline must exist before a model can train. An Ontology type must be published before
+a Workshop view can display it. Managing these dependencies is a primary PM function.
+
+### Dependency Object Type Properties
+
+| Property          | Type     | Notes                                                         |
+|-------------------|----------|---------------------------------------------------------------|
+| dependency_id     | String   | Unique ID                                                     |
+| description       | String   | What does Story A need from Story B (or external source)?     |
+| blocking_story    | Link     | → Story that is blocked                                       |
+| provider          | String   | Team member or external team providing the dependency        |
+| expected_date     | Date     | When will the dependency be resolved?                        |
+| actual_date       | Date     | When was it actually resolved?                               |
+| status            | Enum     | Open / At Risk / Resolved                                    |
+
+### Common Dependency Patterns
+
+| Pattern                                               | PM Action                                                          |
+|-------------------------------------------------------|--------------------------------------------------------------------|
+| Data pipeline (TM-40F) blocks model training (TM-40C) | Sequence sprints; pipeline in sprint N, model in sprint N+1       |
+| External data source access blocked by C2DAO          | Escalate at sprint planning; do not let access requests age        |
+| TM-40E ontology design blocks TM-40F coding           | Start ontology design in sprint 1 even if build is sprint 2 work  |
+| TM-40B agent depends on TM-40C model endpoint         | Define API contract in sprint planning; both tracks work to spec   |
+| MSS platform upgrade changes Workshop component API   | Track platform release calendar; coordinate with TM-40F on timing |
+
+> **WARNING: Do not assume external dependencies will resolve on schedule. Treat all
+> external dependencies (C2DAO access requests, data source onboarding, platform upgrades)
+> as risks with a separate risk record. If an external dependency is on the critical path,
+> escalate immediately — do not wait for the blocked sprint to surface it.**
+
+---
+
+## 6-4. Technical Debt Management
+
+Technical debt accumulates in data projects when shortcuts are taken to meet delivery dates:
+hardcoded values instead of config files, missing documentation, untested pipeline logic,
+a model deployed without a monitoring plan, or Workshop widgets that bypass the Ontology.
+
+The PM is responsible for managing the technical debt backlog — not just the feature backlog.
+
+### Procedure
+
+1. **Create a "Tech Debt" label or tag in the Story tracker.** Any story addressing technical
+   debt is tagged so it can be tracked separately from feature work.
+
+2. **Reserve 15-20% of each sprint's capacity for tech debt.** Do not let technical debt
+   stories compete with feature stories without a dedicated capacity allocation. Stakeholders
+   will always want features; tech debt will never win if unprotected.
+
+3. **Conduct a tech debt review at each quarterly retrospective.** TM-40F and TM-40C identify
+   the highest-impact debt items. PM prioritizes the top three into the next quarter's capacity.
+
+4. **Never allow tech debt to accumulate in production monitoring.** An ML model in production
+   without a monitoring dashboard is not a debt item — it is an active risk. Treat it as
+   severity-6 risk (Chapter 6-2).
+
+---
+
+# CHAPTER 7 — DELIVERY PLANNING AND PRODUCTION READINESS
+
+## 7-1. Scope, Timeline, and Quality Tradeoffs
+
+**BLUF:** The PM cannot simultaneously guarantee scope, timeline, and quality. At any decision
+point, one of these three is the constraint that others must flex around. Define the constraint
+explicitly before making delivery tradeoff decisions.
+
+| Constraint Mode      | Fixed        | Can Flex                              | When to Use                                                |
+|----------------------|--------------|---------------------------------------|------------------------------------------------------------|
+| Fixed Deadline       | Timeline     | Scope (cut features) or Quality risk  | Hard operational deadline (exercise, OPORD, command review)|
+| Fixed Scope          | Scope        | Timeline (slip the date)              | Safety-critical product where partial is unacceptable     |
+| Fixed Quality        | Quality      | Timeline and scope                    | Production ML model or regulated data product              |
+
+The PM must communicate the constraint mode to both the technical team and the stakeholder.
+Failing to name the constraint results in the team trying to hold all three — which produces
+a late, descoped, low-quality product.
+
+---
+
+## 7-2. Release Planning
+
+### 7-2a. Milestone Types
+
+| Milestone Type    | Definition                                                             |
+|-------------------|------------------------------------------------------------------------|
+| Internal Milestone| Checkpoint within the team (data audit complete, model trained)        |
+| Alpha Release     | First build available for stakeholder feedback — incomplete, unstable  |
+| Beta Release      | Feature-complete build for operational user testing — not production   |
+| Production Release| DoD-complete, validated, deployed to production audience               |
+| Patch Release     | Bug fix or minor update to a production product                        |
+| Major Release     | Significant new capability added to an existing production product     |
+
+### 7-2b. Release Planning Procedure
+
+1. **Define release milestones at project kickoff.** Include them in the commander-facing
+   dashboard from day one. Milestone dates are projections — flag them as projections until
+   three-sprint velocity baseline establishes a credible forecast.
+
+2. **Run a release readiness review before every production release.** The release readiness
+   review is a PM-led meeting with TM-40F, TM-40C (if ML involved), and TM-40E. The agenda:
+   - Is the Definition of Done checklist complete?
+   - Are all known defects triaged — none outstanding at Critical severity?
+   - Is the monitoring plan in place?
+   - Is the rollback procedure documented and tested?
+   - Have operational users been notified of the release?
+
+3. **Do not release on Fridays or the day before a low-staffing period.** If a production
+   deployment fails or produces bad data, the team must be available to respond.
+
+---
+
+## 7-3. Definition of Done — Data Product
+
+The Definition of Done (DoD) is the PM's quality gate for every data product release.
+See Appendix B for the complete checklist. The DoD has five sections:
+
+| Section           | What It Covers                                                                  |
+|-------------------|---------------------------------------------------------------------------------|
+| Data Quality      | Input data validated, lineage documented, refresh pipeline tested               |
+| Product Function  | All acceptance criteria met and tested, no critical defects open                |
+| Access Control    | Role-based access configured; least-privilege verified; C2DAO review completed  |
+| Documentation     | User guide exists, data dictionary updated, model card complete (if ML)         |
+| Operability       | Monitoring plan active, rollback procedure documented, stakeholder briefed      |
+
+No section may be skipped. If any DoD item cannot be satisfied, the release is blocked until
+it is resolved or formally accepted as a known risk with documented rationale.
+
+---
+
+## 7-4. What "Production Ready" Means for a Data Product
+
+Production ready is not a feeling. It is a checklist result.
+
+For a dashboard or data pipeline product:
+
+- All source data is connected to the live Ontology (not a static snapshot)
+- The pipeline runs on schedule without manual intervention
+- Access control is configured to production roles (not the developer's personal account)
+- The product has been demonstrated to at least one operational user who confirmed it meets
+  the requirement
+- A data steward (TM-40E) has reviewed and accepted the ontology design
+- The PM has completed Appendix B and no items are outstanding at Critical severity
+
+For an ML/AI model product (in addition to the above):
+
+- Model performance meets the defined success metric from Phase 1 (3-2)
+- The model has been evaluated on data it was not trained on (holdout or production sample)
+- A model card documenting training data, performance metrics, known failure modes, and
+  appropriate use cases exists and is stored in the project space
+- A monitoring plan is active and the model owner (TM-40C) has accepted monitoring
+  responsibility
+- The stakeholder has been briefed on how to interpret model outputs, including what the
+  model does not do and what to do when the output seems wrong
+
+---
+
+## 7-5. Post-Release Review
+
+Within two weeks of a production release, the PM conducts a Post-Release Review. This is
+not a retrospective on the project — it is a review of whether the product is performing
+as intended in production.
+
+**Post-Release Review Agenda:**
+
+1. Are users accessing the product? (Check Workshop usage analytics)
+2. Are users taking the actions the product was designed to enable?
+3. Have any data quality issues surfaced in production that were not caught in testing?
+4. Have users reported any defects or usability problems?
+5. Is the monitoring pipeline running on schedule?
+6. For ML products: is the model performance distribution in production consistent with
+   evaluation performance?
+
+**PM Action:** If answers to questions 1-2 indicate the product is not being used, escalate
+to Chapter 8 (Change Management). Low adoption in the first two weeks after release is the
+leading indicator of a change management problem, not a product quality problem.
+
+---
+
+# CHAPTER 8 — CHANGE MANAGEMENT AND USER ADOPTION
+
+## 8-1. Why Operational Users Resist New Data Products
+
+**BLUF:** Building a technically excellent data product does not guarantee adoption. Operational
+users in USAREUR-AF have established workflows, high operational tempo, and limited patience for
+tools that require learning investment before delivering value. The PM must manage adoption
+actively — it does not happen automatically.
+
+Resistance to new MSS capabilities is not irrational. It comes from:
+
+| Resistance Source                  | What Users Are Actually Saying                                         |
+|------------------------------------|------------------------------------------------------------------------|
+| "I don't have time to learn this"  | The tool's learning curve is longer than the value delivered per use  |
+| "I don't trust the data"           | The data has been wrong before, or they cannot verify it              |
+| "My current process already works" | The new tool does not improve their workflow enough to justify change  |
+| "Nobody told me about this"        | The deployment was silent; users discovered it without context        |
+| "It's too complicated"             | The interface was designed for builders, not operators               |
+
+Each of these is a PM problem — not a user problem. The PM must address the root cause, not
+dismiss the resistance.
+
+---
+
+## 8-2. Change Management Planning
+
+### Conditions
+
+The PM has a production-ready data product that will change the workflow of an operational
+unit or staff element. The PM must plan and execute the transition from the old workflow to
+the new product.
+
+### Standards
+
+The PM completes a Change Management Plan before the production release date. The plan
+covers: stakeholder mapping, communication plan, training plan, adoption metrics, and
+rollback communication plan.
+
+### Procedure — Change Management Plan
+
+1. **Map the affected stakeholders.** For each group that will change their workflow:
+
+   | Stakeholder Group   | Current Workflow         | New Workflow              | Impact Level |
+   |---------------------|--------------------------|---------------------------|--------------|
+   | G4 officers         | Weekly Excel tracker     | Live MSS dashboard        | High         |
+   | Unit S4s            | Phone calls + email      | Workshop form submission  | High         |
+   | G4 staff            | Manual compilation       | Automated pipeline output | Medium       |
+
+2. **Identify change sponsors.** For high-impact stakeholder groups, identify a senior person
+   within the group who understands the new product and will champion it internally. A change
+   sponsor is not a trainer — they are a peer voice who signals that the new way is endorsed
+   at the unit level.
+
+3. **Build the communication plan.** Minimum communication events:
+
+   | Timing                  | Event                                  | Audience                     |
+   |-------------------------|----------------------------------------|------------------------------|
+   | T-30 days               | Announcement: "New product coming"     | All affected stakeholders    |
+   | T-14 days               | Demo / preview session                 | Key users and change sponsors|
+   | T-7 days                | Training session                       | End users                    |
+   | T-2 days                | Final reminder + link to user guide    | All affected stakeholders    |
+   | T+0 (release day)       | Go-live announcement + support contact | All affected stakeholders    |
+   | T+14 days               | Adoption check-in / feedback session   | Users + change sponsors      |
+
+4. **Build the training plan.** For MSS Workshop products, training should be:
+   - 30 minutes maximum for a dashboard user
+   - Hands-on in MSS — not slides about MSS
+   - Recorded for users who cannot attend the live session
+   - Followed by a user guide (see 8-3 for user guide standards)
+
+5. **Define adoption metrics.** How will the PM know adoption is occurring?
+   - Workshop application open rate (first 30 days)
+   - Form submission volume (if the product includes user input)
+   - Reduction in manual workaround behavior (e.g., no more weekly Excel distribution)
+   - Stakeholder self-reported satisfaction at T+30 days
+
+6. **Define the rollback communication plan.** If the product must be pulled back or a critical
+   defect surfaces post-release, the PM communicates to all affected stakeholders within four
+   hours. The rollback communication includes: what happened, what users should do in the
+   interim, and when the fix will be deployed.
+
+---
+
+## 8-3. User Guide Standards
+
+Every production MSS product requires a user guide. The user guide is not a technical
+architecture document — it is written for the operational user, not the developer.
+
+**User Guide Minimum Contents:**
+
+| Section               | Content                                                                         |
+|-----------------------|---------------------------------------------------------------------------------|
+| Purpose               | One paragraph: what this product does and who it is for                        |
+| Access                | How to access the product on MSS (URL/link + role required)                    |
+| Navigating the product| Screenshots with labeled callouts of each panel and its function               |
+| How to [Task 1]       | Step-by-step instructions for the primary user task                            |
+| How to [Task 2]       | Repeat for each additional user task                                           |
+| Interpreting outputs  | For ML/AI products: what the scores, flags, or recommendations mean            |
+| Known limitations     | What the product does NOT do; data quality caveats; refresh lag                |
+| How to report a problem| Contact, channel, and what information to include when reporting a defect      |
+
+**Format standards:**
+- Maximum 10 pages for any single user guide
+- Screenshots from the actual production environment — not mockups
+- Plain language — define any technical term used
+- Reviewed by one actual end user before publication
+
+---
+
+## 8-4. Managing Resistance During Rollout
+
+### When Low Adoption Surfaces at the T+14 Check-In
+
+If the T+14 adoption check-in shows low uptake, diagnose before escalating:
+
+1. **Is it an access problem?** Check if affected users have the correct Foundry role. Access
+   provisioning gaps are the most common early-adoption blocker.
+
+2. **Is it an awareness problem?** Check whether the communication reached all intended
+   recipients. USAREUR-AF distribution lists are imperfect. Personal outreach via change
+   sponsors often reaches users that mass distribution does not.
+
+3. **Is it a usability problem?** Observe a user attempting to use the product without
+   assistance. Does the interface make the primary task obvious? If users cannot complete
+   the primary task without asking for help, the interface needs revision — not more training.
+
+4. **Is it a trust problem?** Ask users directly: "Is there anything about the data that
+   seems wrong or that you don't trust?" Data trust problems require evidence. Pull the data
+   lineage, walk the user through the source-to-display chain, and demonstrate that the
+   numbers are correct. A single trust failure that goes unaddressed destroys adoption.
+
+5. **Is it a change sponsor problem?** If the unit-level change sponsor is not using or
+   endorsing the product, junior users will not adopt it. Re-engage the sponsor. If the
+   sponsor has concerns, address them before expecting the team to follow.
+
+---
+
+## 8-5. Platform Governance — PM Perspective
+
+The PM is responsible for the governance of the MSS project space associated with their
+product. This includes:
+
+**Access Management:**
+- Review project membership quarterly. Remove accounts of personnel who have PCS'd, completed
+  TDY, or no longer require access.
+- Coordinate all access additions and removals with TM-40E (KM/Data Steward) and the C2DAO.
+- Do not grant admin or builder access to users who only need consumer access. Apply
+  least-privilege.
+
+**Resource Allocation:**
+- Monitor dataset storage usage in the project. Unmanaged pipeline output accumulation can
+  hit storage quotas and degrade platform performance for other users in the AOR.
+- Coordinate with TM-40F to implement dataset retention policies on pipeline outputs that
+  generate large volumes.
+- Report resource constraint concerns to the C2DAO before they become capacity incidents.
+
+**Ontology Governance:**
+- Do not modify shared enterprise Ontology types (managed by TM-40E) without C2DAO review.
+- When a project-local Object Type matures to the point where it should be promoted to the
+  enterprise ontology, coordinate the promotion with TM-40E — do not attempt it directly.
+
+**Audit Trails:**
+- MSS maintains activity logs for Object edits, pipeline runs, and Workshop access.
+- Preserve audit logs for all production data products per USAREUR-AF data retention policy.
+- If a data quality incident occurs, the audit trail is the PM's first diagnostic resource.
+
+---
+
+# APPENDIX A — PROJECT KICKOFF CHECKLIST
+
+## A-1. Purpose
+
+This checklist is completed by the Technical PM before sprint 1 begins. No sprint work
+starts until all items are complete or formally accepted as known gaps with a plan to close.
+
+---
+
+## A-2. Checklist
+
+**Section 1 — Scope and Requirements**
+
+- [ ] Product vision statement written and posted in the project space
+- [ ] Requirements Document drafted, reviewed with stakeholder, and baselined
+- [ ] Out-of-scope boundaries explicitly documented and agreed by stakeholder
+- [ ] Success metrics defined and measurable (not "it works" — specific thresholds)
+- [ ] Priority tiers established (Must Have / Should Have / Nice to Have)
+- [ ] Initial product backlog contains at least 2 sprints of groomed, sized, AC-complete stories
+
+**Section 2 — Team Structure**
+
+- [ ] All team members identified by name and TM-40 track
+- [ ] PM role confirmed (Scrum Master / Product Owner)
+- [ ] TM-40E (Knowledge Manager) identified for ontology and data dictionary coordination
+- [ ] TM-40F (or appropriate developer track) assigned to pipeline work
+- [ ] Cross-track dependencies mapped and initial dependency records created
+
+**Section 3 — MSS Project Setup**
+
+- [ ] Foundry project space created in the correct USAREUR-AF environment
+- [ ] All team members have appropriate Foundry role access (not admin unless required)
+- [ ] Project tracker Ontology types created (Project, Sprint, Story, Risk, Dependency)
+- [ ] Sprint Board Workshop application built and accessible to all team members
+- [ ] Commander-facing Status dashboard built (even if placeholder) and stakeholder has access
+- [ ] At least one Sprint object created with sprint goal, start date, and end date
+
+**Section 4 — Data and Platform**
+
+- [ ] Input data sources identified for each pipeline or model component
+- [ ] Data access confirmed — team can read all required source datasets on MSS
+- [ ] Data Audit initiated (or scheduled for sprint 1) if ML components are involved
+- [ ] No blocking dependencies on external data sources that are not yet on MSS
+- [ ] Platform resource constraints assessed — no current storage or compute flags
+
+**Section 5 — Governance**
+
+- [ ] C2DAO coordination initiated if project involves shared enterprise Ontology types
+- [ ] Access control plan documented (who gets which role on production product)
+- [ ] Data classification of all input sources confirmed with TM-40E
+- [ ] Change management stakeholder map drafted
+- [ ] Communication plan for production release drafted (even if T-0 is months away)
+
+**Section 6 — Sprint Cadence**
+
+- [ ] Sprint length confirmed (1 week or 2 week)
+- [ ] Sprint 1 start date and end date confirmed
+- [ ] Sprint ceremony calendar blocked for all team members (planning, standup, review, retro)
+- [ ] Sprint 1 scope committed and visible on MSS sprint board
+
+---
+
+# APPENDIX B — DEFINITION OF DONE — DATA PRODUCT STANDARDS
+
+## B-1. Purpose
+
+The Definition of Done (DoD) is the PM's quality gate for every production release. No data
+product is released to production without all DoD items satisfied or explicitly waived with
+documented rationale. The PM signs off on the DoD — not the developer, not the stakeholder.
+
+**How to use this checklist:**
+- Run through the checklist at the production readiness review (7-2b)
+- Each item is PASS, FAIL, or WAIVED (with written rationale)
+- A FAIL on any Critical item blocks the release
+- A WAIVED item requires PM signature and a documented plan to close within 30 days
+
+---
+
+## B-2. DoD Checklist — All Data Products
+
+**Section 1 — Data Quality**
+
+| # | Item | Priority | Status |
+|---|------|----------|--------|
+| 1.1 | Input data sources are connected to live Foundry datasets — no manual file uploads in the production pipeline | Critical | |
+| 1.2 | Data lineage is documented from source to display (which dataset flows to which transform to which ontology object to which Workshop widget) | Critical | |
+| 1.3 | All input datasets have a documented refresh schedule and the pipeline runs on that schedule without manual intervention | Critical | |
+| 1.4 | Missing value handling is documented and tested — the pipeline does not silently produce incorrect outputs when upstream data is null or delayed | High | |
+| 1.5 | Schema changes in input datasets have been accounted for — the pipeline handles variations seen in the past 12 months | High | |
+| 1.6 | A data quality check (TM-40C: @check, or equivalent validation step) runs on critical input fields before outputs are published | High | |
+
+**Section 2 — Product Function**
+
+| # | Item | Priority | Status |
+|---|------|----------|--------|
+| 2.1 | All user stories in the production scope have acceptance criteria that have been tested and passed | Critical | |
+| 2.2 | Zero open defects at Critical severity | Critical | |
+| 2.3 | Zero open defects at High severity (or all waived with stakeholder sign-off) | High | |
+| 2.4 | The product has been tested in the production environment (not only in a dev branch) | Critical | |
+| 2.5 | At least one operational user (not a developer) has tested the product and confirmed it meets the stated requirement | Critical | |
+| 2.6 | The product degrades gracefully when data is unavailable — it shows a "data unavailable as of [timestamp]" state, not a blank or error screen | High | |
+
+**Section 3 — Access Control**
+
+| # | Item | Priority | Status |
+|---|------|----------|--------|
+| 3.1 | Production roles are configured — access is not running under a developer's personal account | Critical | |
+| 3.2 | Least-privilege applied — users have the minimum access level required for their role | Critical | |
+| 3.3 | Access control reviewed and signed off by TM-40E (Data Steward) | High | |
+| 3.4 | C2DAO coordination complete for any ontology types shared with the enterprise | High | |
+| 3.5 | No test accounts, sandbox credentials, or temporary access grants present in the production configuration | Critical | |
+
+**Section 4 — Documentation**
+
+| # | Item | Priority | Status |
+|---|------|----------|--------|
+| 4.1 | User guide complete and reviewed by at least one end user | High | |
+| 4.2 | Data dictionary entry updated in the project's TM-40E-managed data dictionary for all new datasets or ontology types | High | |
+| 4.3 | Pipeline documentation updated — transform logic, schedule, and dependencies documented | High | |
+| 4.4 | Known limitations section in the user guide accurately describes what the product does NOT do | High | |
+
+**Section 5 — Operability**
+
+| # | Item | Priority | Status |
+|---|------|----------|--------|
+| 5.1 | Monitoring is active — PM knows how to detect if the product stops working | Critical | |
+| 5.2 | Rollback procedure is documented and has been tested (or tested in a prior comparable deployment) | Critical | |
+| 5.3 | Operational users notified of the release at least 48 hours in advance | High | |
+| 5.4 | Support contact identified and communicated to users — someone to call if the product fails | High | |
+| 5.5 | Change management plan for post-release adoption is in place (Chapter 8) | Medium | |
+
+---
+
+## B-3. Additional DoD Items — ML/AI Products
+
+Complete Section B-2 first. Then complete these additional items for any product that includes
+a trained ML model, AI agent, or LLM integration.
+
+| # | Item | Priority | Status |
+|---|------|----------|--------|
+| ML-1 | Model card exists and is stored in the project space: documents training data, algorithm, evaluation metrics, known failure modes, and appropriate use cases | Critical | |
+| ML-2 | Model was evaluated on held-out data (not the training set). Evaluation metrics meet the defined success threshold from the Problem Definition (3-2) | Critical | |
+| ML-3 | TM-40A (ORSA) has conducted independent validation of the evaluation methodology | High | |
+| ML-4 | Operational SME has reviewed sample model outputs and accepted output quality | Critical | |
+| ML-5 | Model output display includes confidence scores or uncertainty indicators — not bare binary outputs without context | High | |
+| ML-6 | The product UI communicates what the model does NOT predict and where it should not be used | High | |
+| ML-7 | Model monitoring is configured: TM-40C has accepted model owner responsibility and defined the threshold that triggers a model review | Critical | |
+| ML-8 | Model version and training date are tracked in the MSS model registry | High | |
+| ML-9 | Retraining schedule or trigger is documented (time-based or performance-based) | High | |
+
+---
+
+# GLOSSARY
+
+**Acceptance Criteria (AC)** — Testable conditions that define when a user story is
+complete. Written in GIVEN/WHEN/THEN format. The PM uses AC to verify that a story meets
+the stakeholder's requirement before marking it Done.
+
+**Agile** — An iterative approach to project management that delivers value in short
+cycles (sprints), adapts to change, and emphasizes working products over comprehensive
+plans. Contrast with waterfall (fixed scope, fixed timeline, single delivery).
+
+**AIP Logic** — The Maven Smart System capability for configuring AI-driven workflow
+automation and agent behaviors without writing code. Managed by TM-40B (AI Engineer).
+
+**Backlog** — The prioritized list of all work items (user stories, tasks, defects) for
+a project. Maintained by the PM. Groomed continuously as new requirements arrive or
+priorities change.
+
+**Blocker** — An impediment that prevents a team member from progressing on a story.
+Identified at daily standup. Tracked as a Boolean flag on the Story object and visible
+on the sprint board. The PM is responsible for resolving blockers, not just recording them.
+
+**C2DAO** — Command and Control Data Architecture Office. The USAREUR-AF governance
+authority for MSS platform configuration, enterprise Ontology design, and access decisions
+that cross project boundaries.
+
+**Change Management** — The process of planning and executing the transition of
+operational users from an existing workflow to a new data product. Includes communication,
+training, sponsor engagement, and adoption monitoring.
+
+**Change Sponsor** — A peer-level advocate within an affected stakeholder group who
+champions adoption of a new data capability. Not a trainer — a credible voice within
+the organization that signals the change is endorsed.
+
+**Daily Standup** — A 15-minute daily synchronization ceremony for the sprint team.
+Three questions: What did I complete? What will I complete? What is blocking me?
+Not a status meeting — a coordination mechanism.
+
+**Data Audit** — A structured assessment of an input data source prior to ML model
+development. Covers completeness, timeliness, historical depth, label availability, and
+schema stability. PM gate before prototype authorization.
+
+**Definition of Done (DoD)** — The PM-owned quality gate checklist for production
+releases. All items must pass (or be formally waived) before a data product is deployed
+to production. See Appendix B.
+
+**Dependency** — A constraint where one story or deliverable cannot be completed until
+another task or external input is available. Tracked as a Dependency Object in the project
+tracker. Managed actively by the PM to prevent sprint-level blocks.
+
+**Feature** — A discrete, user-facing capability of a data product. Composed of one or
+more user stories. Features are prioritized in the backlog; stories are scheduled into sprints.
+
+**Foundry** — The underlying Palantir platform on which the Maven Smart System (MSS) is
+built. TM-40D personnel interact with Foundry primarily through Workshop, Ontology UI,
+Pipeline Builder, and Contour.
+
+**Kanban** — An Agile method that manages continuous flow of work using a visual board
+with WIP limits, rather than fixed-length sprints. Used for sustainment and support work
+where demand is continuous and variable.
+
+**Model Card** — A documentation artifact for a deployed ML model. Contains: training
+data description, algorithm, evaluation metrics, known failure modes, intended use cases,
+and out-of-scope uses. Required for all production ML deployments under the DoD checklist.
+
+**Model Drift** — Degradation of an ML model's production performance over time as
+input data distribution shifts away from the training distribution. Detected through
+production monitoring. Triggers a retraining review.
+
+**MSS (Maven Smart System)** — The USAREUR-AF operational data and AI platform built
+on Palantir Foundry. The platform within which all TM-40D project tracking, dashboards,
+and data products are built and operated.
+
+**Ontology** — The structured, semantic data model in Foundry that defines Object Types,
+their properties, and the links between them. The foundation of all MSS Workshop
+applications and Analytics. Governed by TM-40E (KM/Data Steward) at the enterprise level.
+
+**OPDATA** — Operational data. Data generated by or supporting theater operations.
+The primary source of requirements for MSS capability builds in USAREUR-AF.
+
+**Product Backlog** — See Backlog.
+
+**Product Owner** — In Scrum, the role responsible for backlog prioritization and
+stakeholder representation. At USAREUR-AF, TM-40D TMs typically fulfill this role
+alongside Scrum Master responsibilities.
+
+**Production Ready** — A state in which a data product meets all Definition of Done
+criteria and is deployable to operational users. Not a judgment — a checklist result.
+
+**Retrospective** — A sprint ceremony conducted at the end of each sprint, for the
+team only. Reviews what went well, what did not, and what to improve next sprint.
+PM owns tracking and following up on retrospective action items.
+
+**Risk Register** — The PM-maintained log of identified project risks, including
+likelihood, impact, severity score, owner, mitigation, and status. Maintained as an
+MSS Ontology Object and reviewed at every sprint planning session.
+
+**Scrum** — An Agile framework using fixed-length sprints (typically 1-2 weeks) with
+four ceremonies: Sprint Planning, Daily Standup, Sprint Review, and Retrospective.
+Suited for data/AI projects with defined product outcomes and moderate team sizes.
+
+**Scrum Master** — In Scrum, the role responsible for facilitating ceremonies, removing
+blockers, and protecting the team from external disruption. At USAREUR-AF, TM-40D TMs
+typically fulfill this role.
+
+**Sprint** — A fixed-length development cycle (1 or 2 weeks) in Scrum. Each sprint has
+a goal, a committed scope, and a deliverable product increment. Managed via the MSS
+sprint board.
+
+**Sprint Goal** — A one-sentence statement of what the team will demonstrate at the sprint
+review. Set at sprint planning. The PM's primary alignment tool during the sprint.
+
+**Sprint Review** — A sprint ceremony at the end of each sprint where the team demonstrates
+completed work to stakeholders via live demo in MSS. Not a PowerPoint slide deck.
+
+**Stakeholder** — Any person or organization with an interest in the outcome of a data
+product. Includes operational users, commanding officers, and data governance stakeholders
+(C2DAO, TM-40E).
+
+**Story Points** — A unit of effort estimation for user stories. Often uses Fibonacci
+sequence (1/2/3/5/8/13). Used to measure sprint velocity and forecast delivery timelines.
+TM-40D tracks use T-shirt sizing (S/M/L/XL) as a simpler equivalent.
+
+**Technical Debt** — Work deferred to meet a delivery deadline that must eventually be
+completed to maintain product quality and operability. Examples: hardcoded values, missing
+tests, undocumented transforms. PM manages tech debt as a reserved backlog capacity item.
+
+**TM-40 Track** — Specialized capability track for data/AI professionals on MSS.
+Tracks: TM-40A (ORSA), TM-40B (AI Engineer), TM-40C (ML Engineer), TM-40D (Technical PM),
+TM-40E (KM), TM-40F (SWE). TM-40D coordinates across all tracks.
+
+**UDRA** — Unified Data Reference Architecture, version 1.1 (February 2025). The Army's
+authoritative data architecture guidance. Informs MSS data product design standards and
+data governance practices.
+
+**User Story** — A brief description of a feature from the perspective of the user who
+will benefit from it. Format: "As a [user], I want [capability], so that [outcome]."
+The primary unit of backlog work in Scrum.
+
+**Velocity** — The average number of story points (or T-shirt size equivalents) a team
+completes per sprint. Calculated after three or more sprints. The PM uses velocity to
+forecast delivery timelines and plan release milestones.
+
+**WIP Limit** — Work-in-progress limit. A Kanban discipline that caps the number of
+stories a team member can have In Progress simultaneously. Enforces completion before
+starting new work. Recommended: 2 per developer.
+
+**Workshop** — The Foundry application builder tool. TM-40D PMs build sprint boards,
+stakeholder-facing dashboards, and commander status products in Workshop. The primary
+PM-facing tool for project tracking on MSS.
+
+---
+
+*TM-40D — Technical Manual: Program Manager (Technical), Maven Smart System*
+*Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
+*Army CIO Memo (April 2024) — Unified Data Reference Architecture v1.1 (February 2025)*
+*UNCLASSIFIED — Distribution: Approved for public release; distribution is unlimited.*
