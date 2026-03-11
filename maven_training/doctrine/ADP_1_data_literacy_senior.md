@@ -18,13 +18,19 @@ NOTE: This publication is the senior leader companion to ADRP 1, Data Literacy. 
 
 ---
 
+## COMMANDING GENERAL'S NOTE
+
+*[INSERT: General Donahue's signed data guidance — to be provided by G6/Data and inserted here prior to publication.]*
+
+---
+
 # ADP 1 — DATA LITERACY FOR SENIOR LEADERS
 
 ## PREFACE
 
 This publication establishes principles and command responsibilities for data literacy across United States Army Europe and Africa (USAREUR-AF). It is written for O-5 and above, Command Sergeant Major (CSM) and Sergeant Major (SGM), and senior civilian equivalents.
 
-USAREUR-AF is the Army Service Component Command (ASCC) to United States European Command (USEUCOM), responsible for theater land operations from Iceland to the Caucasus. Subordinate commands include V Corps (Forward), 21st Theater Sustainment Command (21 TSC), and 7th Army Training Command (7ATC). USAREUR-AF supports NATO Article 5 collective defense commitments and operates in a coalition environment requiring data interoperability with Allied nations. These realities make data literacy more operationally consequential here than in any peacetime garrison environment. USAREUR-AF formations operate in a contested information environment in which adversary forces actively exploit data gaps and exploit analytical failures.
+USAREUR-AF is the Army Service Component Command (ASCC) to United States European Command (USEUCOM), responsible for theater land operations from Iceland to the Caucasus. Subordinate commands include V Corps (Forward), 21st Theater Sustainment Command (21 TSC), and 7th Army Training Command (7ATC). USAREUR-AF supports NATO Article 5 collective defense commitments and operates in a coalition environment requiring data interoperability with Allied nations. These realities make data literacy more operationally consequential here than in any peacetime garrison environment. USAREUR-AF formations operate in a contested information environment in which adversary forces actively exploit data gaps and analytical failures.
 
 This publication implements ADP 3-13, Information, by establishing the data literacy foundation required for information advantage in the USAREUR-AF AOR. ADP 3-13 defines information as combat power. Data literacy is what makes that power accessible to commanders. This publication tells senior leaders what they are responsible for and why it matters in the context of that broader doctrine.
 
@@ -46,11 +52,15 @@ Data literacy for senior leaders is a combat multiplier.
 
 ### 1-2. The Operational Reality
 
-1-2. Commanders already depend on data, whether they recognize it or not. Every Common Operating Picture (COP) update is a data product. Every readiness report is a data product. Every intelligence summary is built from raw data that has been collected, processed, and assessed. The question is not whether commanders use data — they do. The question is whether they use it deliberately, critically, and effectively.
+1-2. The Commanding General of USAREUR-AF has stated directly: **"The race to harness live data will determine who wins the next war."** This is not a warning about future conflict. It is a description of the competition underway now. In Europe, USAREUR-AF and NATO ground forces are already integrating allied sensors, data, and AI-powered machine learning tools into real-time decision-making. As the CG has noted: **"This is not a projected capability or an operational needs statement to inform future investment. This is what we are doing today."** The implications for command are immediate. Formations whose leaders cannot direct, evaluate, and integrate data products are already behind.
 
-1-3. In USAREUR-AF's operational environment, the volume of data available to commanders has increased faster than formations' capacity to use it. Sensors, digital sustainment systems, personnel databases, and joint feeds produce more information than any individual can process. Without data-literate leaders directing the analytical effort, formations either drown in data or ignore it entirely. Both outcomes degrade decision quality.
+1-3. Commanders already depend on data, whether they recognize it or not. Every Common Operating Picture (COP) update is a data product. Every readiness report is a data product. Every intelligence summary is built from raw data that has been collected, processed, and assessed. The question is not whether commanders use data — they do. The question is whether they use it deliberately, critically, and effectively.
 
-1-4. The commander's data challenge is not access — it is direction, evaluation, and integration. A formation that can collect data but cannot interpret it honestly, question its reliability, or integrate it into planning has not gained an advantage. It has added noise.
+1-4. In USAREUR-AF's operational environment, the volume of data available to commanders has increased faster than formations' capacity to use it. Sensors, digital sustainment systems, personnel databases, and joint feeds produce more information than any individual can process. Without data-literate leaders directing the analytical effort, formations either drown in data or ignore it entirely. Both outcomes degrade decision quality.
+
+1-5. The commander's data challenge is not access — it is direction, evaluation, and integration. A formation that can collect data but cannot interpret it honestly, question its reliability, or integrate it into planning has not gained an advantage. It has added noise.
+
+> **NOTE:** The command-and-control system USAREUR-AF has built in Europe represents a level of transformation comparable to radio-enabled command in World War II. The CG has directed that this system be rapidly scaled and connected globally. Data-literate leaders at every echelon are required to sustain and extend that advantage.
 
 ### 1-3. What Data Literacy Means for a Senior Leader
 
@@ -69,45 +79,83 @@ Data literacy for senior leaders is a combat multiplier.
 
 1-7. These competencies are exercised in the same way commanders exercise all other leadership skills: through deliberate practice, by demanding standards, and by modeling the behavior they expect from their subordinates.
 
-### 1-4. The Cost of Data Illiteracy — Three Vignettes
+### 1-4. The VAUTI Standard — What Makes Data Trustworthy
+
+1-8. Not all data is equally useful. Before acting on a data product, commanders and staff must assess it against five criteria derived from the DoD Data Strategy (2020): Visible, Accessible, Understandable, Trustworthy, and Interoperable — the VAUTI standard.
+
+| Criterion | Meaning | Commander's Question |
+|---|---|---|
+| Visible | Data is discoverable — personnel know it exists | Can we find this data when we need it? |
+| Accessible | Data can be retrieved by those who need it | Do the right people have access? |
+| Understandable | Data meaning, context, and limitations are clear | Does the staff know what this actually measures? |
+| Trustworthy | Data is accurate, current, and from a verified source | Do we have confidence in the source and method? |
+| Interoperable | Data can be shared and used across systems and organizations | Can we exchange this with joint and Allied partners? |
+
+1-9. VAUTI is not a checklist — it is a decision framework. A data product that fails any VAUTI criterion introduces risk into the decision it supports. Commanders must require that data products used for significant decisions are explicitly evaluated against all five criteria.
+
+1-10. In the USEUCOM AOR, interoperability carries additional weight. Data products shared with NATO Allies or partner nations must meet both U.S. standards and applicable NATO data exchange standards. A product that is trustworthy within a U.S. system but not interoperable outside it limits coalition effectiveness. The CG USAREUR-AF has identified interoperability as Allied nations' **"number one concern"** and has been direct about the root cause: **"It's trust. That's all that is. We can solve it."** Data standards, disciplined handling, and rigorous security protocols are how commanders build that trust at the working level.
+
+### 1-5. Decision Dominance
+
+1-11. Decision dominance is the operational objective of superior data and analytical capability: to make better decisions than the adversary, faster, and at higher confidence. It is not a technological state — it is a command state achieved through disciplined data collection, rigorous analysis, and effective integration of information into command decisions.
+
+1-12. Decision dominance is an enduring objective regardless of the operational environment. In the USAREUR-AF AOR, where adversary forces invest heavily in deception operations, electronic warfare, and information operations designed to degrade Allied situational awareness, decision dominance is a competitive requirement. USAREUR-AF formations that consistently produce timely, high-quality data products — and whose commanders know how to use them — maintain the operational initiative. Those that do not cede it.
+
+1-13. Senior leaders are responsible for building and maintaining their formation's capacity for decision dominance. This means investing in data capability as a readiness priority — not as an administrative task.
+
+### 1-6. The Cost of Data Illiteracy — Three Vignettes
 
 **Vignette 1 — The Invisible Readiness Gap**
 
-1-8. A brigade commander reviewed weekly readiness reports and consistently saw green across all subordinate units. Three days before a major exercise, the brigade discovered that one battalion had been manually entering estimated values for deadline equipment rather than pulling live data from the maintenance system. The exercise launched with a shortfall of 22 percent deadlined vehicles that no one at brigade level had known about. The commander had never asked how the data was collected or validated.
+1-14. A brigade commander reviewed weekly readiness reports and consistently saw green across all subordinate units. Three days before a V Corps exercise at Grafenwöhr, the brigade discovered that one battalion had been manually entering estimated values for deadline equipment rather than pulling live data from the maintenance system. The exercise launched with a shortfall of 22 percent deadlined vehicles that no brigade-level leader had known about. The commander had never asked how the data was collected or validated.
 
 **Vignette 2 — The Confident Wrong Answer**
 
-1-9. A staff officer presented a route analysis showing three viable MSRs (Main Supply Routes) into an assembly area, supported by a detailed chart with color coding and statistics. The commander approved the plan. During execution, the lead element encountered an impassable bridge — a condition documented in an engineer survey from the previous week that had not been integrated into the analysis. The data product had looked authoritative. The commander had not asked what data sources it drew from or how current they were.
+1-15. A staff officer presented a route analysis showing three viable MSRs (Main Supply Routes) into an assembly area near the Suwałki Gap, supported by a detailed chart with color coding and statistics. The commander approved the plan. During execution, the lead element encountered an impassable bridge — a condition documented in an engineer survey from the previous week that had not been integrated into the analysis. The data product had looked authoritative. The commander had not asked what data sources it drew from or how current they were.
 
 **Vignette 3 — The Culture That Punished Honesty**
 
-1-10. A battalion's intelligence section consistently reported high-confidence threat assessments. Pressure from senior leaders for clear, actionable products had led analysts to remove uncertainty language from their reports. The battalion operated for weeks with misplaced confidence in threat assessments that had significant gaps. When contact occurred in an unexpected location, the commander was surprised. The staff had known about the gaps. They had learned not to report them.
+1-16. A battalion intelligence section consistently reported high-confidence threat assessments. Pressure from senior leaders for clear, actionable products had led analysts to remove uncertainty language from their reports. The battalion operated for weeks with misplaced confidence in threat assessments that had significant gaps. When contact occurred in an unexpected location along a Baltic flank corridor, the commander was surprised. The staff had known about the gaps. They had learned not to report them.
 
-### 1-4a. The MDO Data Requirement
+### 1-7. The Commander's Role in Building a Data-Literate Formation
 
-**The MDO Data Requirement.** Multi-Domain Operations require commanders to synthesize information from more sources, at greater speed, across a wider geographic area than any previous operational concept. The Army Data Plan (2022) states explicitly: the purpose of Army data management is to give the Warfighter decision dominance — the right data, at the right time, at the right place. Data literacy is how commanders and Soldiers fulfill that requirement.
+1-17. Culture is set by command. If the commander does not ask data-driven questions, subordinates will not prepare data-driven answers. If the commander accepts charts without questioning their sources, staff will produce charts without validating their sources. The standard the commander walks past is the standard the formation adopts.
 
-### 1-5. The Commander's Role in Building a Data-Literate Formation
+1-18. Building a data-literate formation requires three things from senior leaders. First, demand honest data products — including uncertainty. Second, resource the capability to produce them. Third, model data-critical behavior in every briefing, planning session, and after-action review (AAR).
 
-1-11. Culture is set by command. If the commander does not ask data-driven questions, subordinates will not prepare data-driven answers. If the commander accepts charts without questioning their sources, staff will produce charts without validating their sources. The standard the commander walks past is the standard the formation adopts.
+1-19. This is not an additional task. It is the commander's job, applied to the information domain.
 
-1-12. Building a data-literate formation requires three things from senior leaders. First, demand honest data products — including uncertainty. Second, resource the capability to produce them. Third, model data-critical behavior in every briefing, planning session, and after-action review (AAR).
+### 1-8. Doctrinal Foundation — ADP 3-13 and Information Advantage
 
-1-13. This is not an additional task. It is the commander's job, applied to the information domain.
+---
 
-### 1-6. Doctrinal Foundation — ADP 3-13 and Information Advantage
+**SIDEBAR: ADP 3-13 — Data Is the Raw Material of Combat Power**
 
-1-14. This publication implements ADP 3-13, Information, by establishing the data literacy foundation required for information advantage in the USAREUR-AF AOR. ADP 3-13 establishes that information is combat power — that commanders who can generate, protect, and exploit information more effectively than the adversary gain a decisive operational advantage.
+ADP 3-13, *Information* (2023), establishes that information is combat power. It defines *information advantage* as the operational condition achieved when a force generates, protects, and exploits information more effectively than the adversary.
 
-1-15. Data literacy is not separate from information operations. It is its prerequisite. A commander who cannot direct and evaluate data products cannot generate the quality analytical outputs that information advantage requires. A formation that produces poor-quality data cannot supply the situational awareness that information advantage depends on. Building data literacy in a formation is, therefore, directly building the command's capacity for information operations as defined in ADP 3-13.
+**Data literacy is the prerequisite for that advantage.**
 
-1-16. In the USAREUR-AF AOR, this connection is operationally urgent. USAREUR-AF operates in a contested information environment across the USEUCOM theater. Adversary forces invest heavily in deception, electronic warfare, and information operations precisely to degrade Allied situational awareness. USAREUR-AF formations that produce rigorous, sourced, timely data products are more resistant to that adversary effort than those that do not.
+Information advantage begins with data. Without disciplined data collection, rigorous data quality, and leaders who can direct and evaluate data products, no formation can generate the analytical outputs that information advantage requires. A formation with excellent data practices is more resistant to adversary deception, better able to maintain situational awareness under pressure, and faster to recognize and act on opportunity.
 
-### 1-7. NATO and EUCOM AOR Context
+For USAREUR-AF, operating within a coalition theater where adversaries actively contest the information environment, this connection is operationally urgent. Building data literacy is not separate from information operations — it is its foundation.
 
-1-17. USAREUR-AF data operations must comply with NATO Architecture Framework version 4 (NAFv4) and support interoperability with Allied Joint Publications (AJP-01, AJP-3, AJP-5). In practical terms, this means that data systems, data products, and data sharing practices must be designed for coalition use — not only for unilateral Army operations. Commanders must ensure that data products created for sharing with Allied or partner nation forces are appropriately marked under both U.S. and NATO classification standards and that data systems can exchange information with Allied equivalents.
+Senior leaders who invest in their formation's data capability are building information power as defined in ADP 3-13.
 
-1-18. Data literacy requirements in this publication and in ADRP 1 apply equally to multinational operations and to unilateral Army operations. The analytical standards, quality requirements, and security disciplines described here are not reduced in coalition contexts — they are essential to coalition effectiveness.
+---
+
+1-20. This publication implements ADP 3-13, Information, by establishing the data literacy foundation required for information advantage in the USAREUR-AF AOR. ADP 3-13 establishes that information is combat power — that commanders who can generate, protect, and exploit information more effectively than the adversary gain a decisive operational advantage.
+
+1-21. Data literacy is not separate from information operations. It is its prerequisite. A commander who cannot direct and evaluate data products cannot generate the quality analytical outputs that information advantage requires. A formation that produces poor-quality data cannot supply the situational awareness that information advantage depends on. Building data literacy in a formation is, therefore, directly building the command's capacity for information operations as defined in ADP 3-13.
+
+1-22. In the USAREUR-AF AOR, this connection is operationally urgent. USAREUR-AF operates in a contested information environment across the USEUCOM theater. Adversary forces invest heavily in deception, electronic warfare, and information operations precisely to degrade Allied situational awareness. USAREUR-AF formations that produce rigorous, sourced, timely data products are more resistant to that adversary effort than those that do not.
+
+### 1-9. NATO and EUCOM AOR Context
+
+1-23. USAREUR-AF data operations must comply with NATO Architecture Framework version 4 (NAFv4) and support interoperability with Allied Joint Publications (AJP-01, AJP-3, AJP-5). In practical terms, this means that data systems, data products, and data sharing practices must be designed for coalition use — not only for unilateral Army operations. Commanders must ensure that data products created for sharing with Allied or partner nation forces are appropriately marked under both U.S. and NATO classification standards and that data systems can exchange information with Allied equivalents.
+
+1-24. The CG USAREUR-AF has described Europe as the **"premier battle laboratory"** for building the lethal, data-driven force required to meet any adversary. The real-time command and control system established in USAREUR-AF — integrating Allied sensors, data, and AI-powered analytical tools — must now be scaled globally. USAREUR-AF commanders and formations that master data-driven operations in this theater are building the template the Army will export worldwide.
+
+1-25. Data literacy requirements in this publication and in ADRP 1 apply equally to multinational operations and to unilateral Army operations. The analytical standards, quality requirements, and security disciplines described here are not reduced in coalition contexts — they are essential to coalition effectiveness.
 
 ---
 
@@ -151,15 +199,39 @@ Data literacy for senior leaders is a combat multiplier.
 
 ## CHAPTER 3 — COMMANDER'S DATA RESPONSIBILITIES
 
-**BLUF: Commanders have six core data responsibilities. These are not delegated tasks — they are command functions that require commander attention, direction, and enforcement.**
+**BLUF: Commanders have seven core data responsibilities. These are not delegated tasks — they are command functions that require commander attention, direction, and enforcement. The C2DAO is the commander's primary advisor and enforcer across all of them.**
 
-### 3-1. Establishing Data Requirements
+### 3-1. The Command Chief Data and Analytics Officer (C2DAO)
 
-3-1. Data requirements must be linked to decisions. Every CCIR — whether a PIR or FFIR — implies a data requirement. Commanders must be able to answer: what data will tell me whether this requirement has been satisfied? Vague CCIRs produce vague data collection and analysis. Precise requirements produce focused, actionable products.
+3-1. USAREUR-AF operates a Command Chief Data and Analytics Officer (C2DAO). The C2DAO is the commander's primary advisor on data governance, data quality, platform use, and compliance with Army enterprise data policy. This officer does not create Army enterprise data policy — that authority resides at HQDA. The C2DAO consumes, implements, and enforces that policy at the command level.
 
-3-2. Commanders establish data requirements during mission analysis and refine them throughout the Military Decision-Making Process (MDMP). Data requirements should be reviewed when the operational situation changes significantly enough to alter what information matters most. Stale requirements produce stale data effort.
+3-2. The chain of authority for data governance flows as follows:
 
-3-3. The following questions help commanders establish effective data requirements:
+| Echelon | Role |
+|---|---|
+| HQDA MADOs (Major Army Data Owners) | Establish enterprise data standards and policy |
+| Data Stewards | Own and enforce standards for designated data domains |
+| Functional Data Managers | Manage data within functional areas (personnel, logistics, intelligence) |
+| C2DAO (Command Level) | Advise the commander; integrate governance across functions; enforce compliance |
+
+3-3. The C2DAO is effective only to the extent the commander empowers the role. A C2DAO without resourcing, access to leadership, and command backing cannot enforce standards across a formation. Commanders are responsible for resourcing and empowering their C2DAO. Failure to do so is a command decision, and the formation's data quality will reflect it.
+
+3-4. Commanders should use the C2DAO as a trusted advisor in the following areas:
+- Assessing the formation's data governance posture.
+- Evaluating readiness of data systems before major operations or exercises.
+- Reviewing compliance with Army CIO guidance (2024) and the Unified Data Reference Architecture (UDRA) v1.1 (2025).
+- Advising on data sharing arrangements with NATO Allies and partner nations.
+- Escalating data quality or security issues that cross functional boundaries.
+
+3-5. The C2DAO role is not a technical position in isolation. It is a command-level governance function. Commanders who treat it as an administrative billet misunderstand its operational value.
+
+### 3-2. Establishing Data Requirements
+
+3-6. Data requirements must be linked to decisions. Every CCIR — whether a PIR or FFIR — implies a data requirement. Commanders must be able to answer: what data will tell me whether this requirement has been satisfied? Vague CCIRs produce vague data collection and analysis. Precise requirements produce focused, actionable products.
+
+3-7. Commanders establish data requirements during mission analysis and refine them throughout the Military Decision-Making Process (MDMP). Data requirements should be reviewed when the operational situation changes significantly enough to alter what information matters most. Stale requirements produce stale data effort.
+
+3-8. The following questions help commanders establish effective data requirements:
 
 | Question | Purpose |
 |---|---|
@@ -169,19 +241,19 @@ Data literacy for senior leaders is a combat multiplier.
 | What is the acceptable confidence level? | Defines quality standard up front |
 | What happens if I don't get it? | Forces assessment of the decision risk |
 
-### 3-2. Appointing and Supporting Data Stewards
+### 3-3. Appointing and Supporting Data Stewards
 
-3-4. Every formation that manages significant data — whether personnel records, logistics status, intelligence products, or training databases — needs a data steward. A data steward is the individual responsible for the accuracy, completeness, and appropriate handling of a specific dataset or system.
+3-9. Every formation that manages significant data — whether personnel records, logistics status, intelligence products, or training databases — needs a data steward. A data steward is the individual responsible for the accuracy, completeness, and appropriate handling of a specific dataset or system.
 
-3-5. Commanders must formally appoint data stewards and define their responsibilities in writing. Appointment without authority is ineffective. Data stewards must have the authority to enforce data entry standards, flag inaccuracies to leadership, and decline to sign off on products that do not meet quality standards.
+3-10. Commanders must formally appoint data stewards and define their responsibilities in writing. Appointment without authority is ineffective. Data stewards must have the authority to enforce data entry standards, flag inaccuracies to leadership, and decline to sign off on products that do not meet quality standards.
 
-3-6. Data stewards are not administrators. They are quality owners. Commanders who treat the data steward role as an additional duty managed at the lowest possible rank will get the data quality that posture deserves.
+3-11. Data stewards are not administrators. They are quality owners. Commanders who treat the data steward role as an additional duty managed at the lowest possible rank will get the data quality that posture deserves.
 
-### 3-3. Demanding Data Quality Standards
+### 3-4. Demanding Data Quality Standards
 
-3-7. Commanders define quality by what they accept. A formation that routinely produces data products with undocumented sources, outdated figures, or missing uncertainty statements will continue to do so until the commander stops accepting them.
+3-12. Commanders define quality by what they accept. A formation that routinely produces data products with undocumented sources, outdated figures, or missing uncertainty statements will continue to do so until the commander stops accepting them.
 
-3-8. Commanders should apply the following minimum standards when receiving data products in any formal setting:
+3-13. Commanders should apply the following minimum standards when receiving data products in any formal setting:
 
 - Source and collection method are identified.
 - Data currency (age) is stated.
@@ -189,11 +261,11 @@ Data literacy for senior leaders is a combat multiplier.
 - Confidence levels are expressed — not implied.
 - Derived figures (calculations, estimates) are distinguished from raw collected data.
 
-3-9. These standards should be enforced consistently, not just in high-stakes briefings. The formation learns from everyday practice. Inconsistent standards produce inconsistent quality.
+3-14. These standards should be enforced consistently, not just in high-stakes briefings. The formation learns from everyday practice. Inconsistent standards produce inconsistent quality.
 
-### 3-4. Data in the MDMP
+### 3-5. Data in the MDMP
 
-3-10. Data requirements are established and refined at each step of the MDMP. The commander's role at each step is distinct:
+3-15. Data requirements are established and refined at each step of the MDMP. The commander's role at each step is distinct:
 
 | MDMP Step | Commander's Data Role |
 |---|---|
@@ -205,13 +277,13 @@ Data literacy for senior leaders is a combat multiplier.
 | Orders Production | Ensure data requirements and reporting triggers are included in the OPORD |
 | Execution and Assessment | Monitor CCIR status; adjust collection effort as the situation develops |
 
-3-11. Data literacy in MDMP is not a new step. It is the habit of treating information products with the same rigor applied to other planning products — and holding the staff accountable for the same standards.
+3-16. Data literacy in MDMP is not a new step. It is the habit of treating information products with the same rigor applied to other planning products — and holding the staff accountable for the same standards.
 
-### 3-5. Resourcing Data Capability
+### 3-6. Resourcing Data Capability
 
-3-12. Data capability does not self-generate. It requires people with skills, tools that work, time to do the analysis, and a command climate that rewards doing it well. Commanders must resource data capability deliberately, as they resource any other operational function.
+3-17. Data capability does not self-generate. It requires people with skills, tools that work, time to do the analysis, and a command climate that rewards doing it well. Commanders must resource data capability deliberately, as they resource any other operational function.
 
-3-13. Commanders should assess their formation's data capability against three factors:
+3-18. Commanders should assess their formation's data capability against three factors:
 
 **People.** Do staff sections have personnel with sufficient skill to collect, manage, and analyze operational data? Are those personnel employed on data tasks or diverted to other duties? Is there a training path that develops data skills over time?
 
@@ -219,13 +291,13 @@ Data literacy for senior leaders is a combat multiplier.
 
 **Time.** Is analytical effort protected from being consumed by administrative tasks? Is there time in the battle rhythm for analysis — not just reporting? Are deadlines realistic given the available data and analytical capacity?
 
-3-14. Underfunding data capability while demanding data products is a command contradiction. Commanders must close the gap between what they ask for and what they resource.
+3-19. Underfunding data capability while demanding data products is a command contradiction. Commanders must close the gap between what they ask for and what they resource.
 
-### 3-6. Enforcing Data Security and Classification Discipline
+### 3-7. Enforcing Data Security and Classification Discipline
 
-3-15. Commanders are responsible for the classification and access control practices of their formation. This includes digital data — files, databases, reports, and shared drives — as well as physical products.
+3-20. Commanders are responsible for the classification and access control practices of their formation. This includes digital data — files, databases, reports, and shared drives — as well as physical products.
 
-3-16. Commanders must ensure their formations observe the following:
+3-21. Commanders must ensure their formations observe the following:
 
 - Data products are classified at the appropriate level based on content, including aggregation effects.
 - Access to sensitive data systems is granted on a need-to-know basis, not convenience.
@@ -233,7 +305,9 @@ Data literacy for senior leaders is a combat multiplier.
 - Data sharing with partner nations, joint forces, or external agencies follows applicable security agreements.
 - Data breaches or suspected unauthorized access are reported immediately through proper channels.
 
-3-17. Classification discipline is not the S-6's problem. It is a command problem. Commanders who treat it as a technical issue rather than a command responsibility will eventually own the consequences of that posture.
+3-22. In the USEUCOM AOR, coalition data sharing carries additional complexity. Data products shared with NATO Allies must comply with both U.S. classification standards and applicable NATO handling requirements. Commanders must ensure their C2DAO and security staff are synchronized on this requirement before any data exchange arrangement is established with a partner nation.
+
+3-23. Classification discipline is not the S-6's problem. It is a command problem. Commanders who treat it as a technical issue rather than a command responsibility will eventually own the consequences of that posture.
 
 ---
 
@@ -288,7 +362,7 @@ Data literacy for senior leaders is a combat multiplier.
 
 4-8. Correlation means two things move together. Causation means one thing causes another. Confusing them is one of the most common analytical errors in briefings, and it leads commanders to take actions that do not produce expected results.
 
-4-9. Example: A unit observes that incidents increase on days when a particular patrol route is used. That is correlation. The cause may be the route — or the cause may be that the route is used when conditions are already elevated. Acting on correlation as if it were causation (stopping the route) may not reduce incidents if the route was not the cause.
+4-9. Example: A unit observes that incidents increase on days when a particular patrol route is used along a contested corridor in the eastern AOR. That is correlation. The cause may be the route — or the cause may be that the route is used when threat conditions are already elevated. Acting on correlation as if it were causation (stopping the route) may not reduce incidents if the route was not the cause.
 
 4-10. Commanders should require analysts to explicitly state whether a relationship is correlational or causal, and to explain the basis for that claim. The question "how do we know this causes that, rather than just being associated with it?" is always appropriate.
 
@@ -409,6 +483,8 @@ The following terms are used throughout this publication. Definitions are provid
 
 **Audit Trail** — Documentation of data origin, handling, and transformations.
 
+**C2DAO (Command Chief Data and Analytics Officer)** — The commander's primary advisor on data governance, data quality, platform use, and compliance with Army enterprise data policy at the command level. The C2DAO implements and enforces enterprise policy established by HQDA MADOs; does not create that policy.
+
 **CCIR (Commander's Critical Information Requirements)** — Information the commander requires to make timely decisions; includes PIR and FFIR.
 
 **Confidence Level** — Expressed degree of certainty in an analytical assessment.
@@ -429,7 +505,11 @@ The following terms are used throughout this publication. Definitions are provid
 
 **Data Steward** — Individual responsible for accuracy and appropriate handling of a dataset.
 
+**Decision Dominance** — The operational state in which a force makes better decisions than the adversary, faster, and at higher confidence — achieved through superior data collection, analytical rigor, and effective command use of information products.
+
 **FFIR (Friendly Force Information Requirements)** — Information the commander needs about friendly forces to make decisions.
+
+**HQDA MADOs (Major Army Data Owners)** — HQDA organizations with enterprise authority over designated Army data domains. They establish the standards and policy that Data Stewards, Functional Data Managers, and C2DAOs implement at command level.
 
 **MDMP (Military Decision-Making Process)** — Army's deliberate planning process; seven steps from receipt of mission through orders production.
 
@@ -437,62 +517,41 @@ The following terms are used throughout this publication. Definitions are provid
 
 **Red Flag** — Characteristic of a data product that warrants additional scrutiny before use.
 
+**UDRA (Unified Data Reference Architecture)** — The Army's enterprise data architecture standard. UDRA v1.1 (2025) is the current version codifying data structure and governance requirements across Army systems.
+
 **Uncertainty** — Acknowledged limits of confidence in data or analytical conclusions.
 
-**ADP 3-13** — Army Doctrine Publication 3-13, Information. Establishes information as
-combat power and defines information advantage as a key operational objective.
+**VAUTI** — The DoD Data Strategy (2020) criteria for trustworthy data: Visible, Accessible, Understandable, Trustworthy, and Interoperable. Used by commanders to assess data product quality before acting on findings.
 
-**CDA Portal (Cross-Domain Architecture Portal)** — The USAREUR-AF portal at
-learn-data.armydev.com containing technical architecture resources for USAREUR-AF
-operational data systems.
+**ADP 3-13** — Army Doctrine Publication 3-13, Information. Establishes information as combat power and defines information advantage as a key operational objective. Data literacy is a prerequisite for information advantage.
 
-**Information Advantage** — As defined in ADP 3-13, the operational condition achieved when
-a force can generate, protect, and exploit information more effectively than the adversary.
-Data literacy is a prerequisite for information advantage.
+**Information Advantage** — As defined in ADP 3-13, the operational condition achieved when a force can generate, protect, and exploit information more effectively than the adversary.
 
-**JADC2 (Joint All-Domain Command and Control)** — The DoD concept for connecting sensors,
-shooters, and decision-makers across all domains. USAREUR-AF is integrated into JADC2.
+**JADC2 (Joint All-Domain Command and Control)** — The DoD concept for connecting sensors, shooters, and decision-makers across all domains. USAREUR-AF is integrated into JADC2.
 
-**NAFv4 (NATO Architecture Framework version 4)** — The NATO standard for data and system
-architecture, required for coalition interoperability.
+**NAFv4 (NATO Architecture Framework version 4)** — The NATO standard for data and system architecture, required for coalition interoperability.
 
-**USEUCOM (United States European Command)** — The Combatant Command to which USAREUR-AF
-is the ASCC.
+**USEUCOM (United States European Command)** — The Combatant Command to which USAREUR-AF is the ASCC.
 
 ---
 
 ## REFERENCES AND RELATED PUBLICATIONS
 
-**Army Data Plan (2022), Office of the Army Chief Information Officer** — Establishes the Army-wide framework for data management, governance, and analytics in support of Multi-Domain Operations.
+**ADP 3-13, Information** — Establishes information as combat power and the foundation for information advantage. This publication implements ADP 3-13 at the senior leader level.
 
-**DoD Data Strategy (2020)** — Establishes the VAUTI framework (Visible, Accessible, Understandable, Trustable, Interoperable) as the DoD standard for data quality and interoperability.
+**ADP 5-0, The Operations Process** — Defines the MDMP and the role of information in planning and execution.
 
-**Army CIO Data Stewardship Policy (April 2, 2024)** — Establishes the data stewardship hierarchy (MADO, Data Steward, Functional Data Manager, C2DAO) and data chain of responsibility.
+**ADRP 1, Data Literacy** — The technical companion to this publication. Contains procedural guidance, analytical methods, data lifecycle doctrine, and the USAREUR-AF 5-Layer Data Stack architecture. Senior leaders requiring technical depth should consult ADRP 1.
 
-**ADP 3-13, Information** — Establishes information as combat power and the foundation for
-information advantage. This publication implements ADP 3-13 at the senior leader level.
+**DoD Data Strategy (2020)** — Establishes the VAUTI framework (Visible, Accessible, Understandable, Trustworthy, Interoperable) as the standard for enterprise data quality and use. Referenced in this publication for the VAUTI decision framework and the principle of decision dominance.
 
-**ADP 5-0, The Operations Process** — Defines the MDMP and the role of information in
-planning and execution.
+**Army CIO Guidance (2024) and Unified Data Reference Architecture (UDRA) v1.1 (2025)** — The Army Data Plan (2022) established the foundational framework; current governance and architecture are codified in subsequent Army CIO guidance (2024) and the Unified Data Reference Architecture (UDRA) v1.1 (2025). The C2DAO is responsible for ensuring USAREUR-AF compliance with these documents.
 
-**ADRP 1, Data Literacy** — The technical companion to this publication. Contains procedural
-guidance, analytical methods, data lifecycle doctrine, and the USAREUR-AF 5-Layer Data Stack
-architecture. Senior leaders requiring technical depth should consult ADRP 1.
+**NATO Architecture Framework version 4 (NAFv4)** — The NATO standard for data and system architecture descriptions. USAREUR-AF data operations must align to NAFv4 for coalition interoperability.
 
-**NATO Architecture Framework version 4 (NAFv4)** — The NATO standard for data and system
-architecture descriptions. USAREUR-AF data operations must align to NAFv4 for coalition
-interoperability.
+**Allied Joint Publications (AJP-01, AJP-3, AJP-5)** — NATO joint doctrine governing operations, conduct, and planning. USAREUR-AF data products and analytical processes must support interoperability with these publications.
 
-**Allied Joint Publications (AJP-01, AJP-3, AJP-5)** — NATO joint doctrine governing
-operations, conduct, and planning. USAREUR-AF data products and analytical processes must
-support interoperability with these publications.
-
-**USAREUR-AF Cross-Domain Architecture (CDA) Portal** — Accessible at
-learn-data.armydev.com. Contains technical architecture guides, course materials, Foundry
-ontology cookbooks, NATO NAFv4 alignment resources, and the USAREUR-AF 5-Layer Data Stack
-implementation documentation. Senior leaders seeking to understand the technical
-architecture underpinning USAREUR-AF data operations should reference the CDA Portal or
-direct their data staff to do so.
+**USAREUR-AF Cross-Domain Architecture (CDA) Portal** — Contains technical architecture guides, course materials, NATO NAFv4 alignment resources, and the USAREUR-AF 5-Layer Data Stack implementation documentation. Senior leaders seeking to understand the technical architecture underpinning USAREUR-AF data operations should reference the CDA Portal or direct their data staff to do so.
 
 ---
 

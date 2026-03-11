@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MSS Information Hub — USAREUR-AF</title>
+  <style>
+    /* ============================================================
+       USAREUR-AF DESIGN TOKENS
+    ============================================================ */
+    :root {
+      --od-green:       #3D4F1C;
+      --od-green-dark:  #28351A;
+      --od-green-light: #5A7028;
+      --gold:           #C8A951;
+      --gold-light:     #E2C876;
+      --gold-dark:      #9E7E30;
+      --cream:          #F4F1E8;
+      --white:          #FFFFFF;
+      --gray-100:       #F0EDE4;
+      --gray-200:       #DDD9CC;
+      --gray-400:       #9A9585;
+      --gray-700:       #4A4740;
+      --gray-900:       #1E1C18;
+      --warning-red:    #8B1A1A;
+      --caution-amber:  #C87C1A;
+      --note-blue:      #1A4A7A;
+      --radius:         4px;
+      --font-body:      'Courier New', Courier, monospace;
+      --font-heading:   Arial, Helvetica, sans-serif;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--gray-900);
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ============================================================
+       CLASSIFICATION BANNERS
+    ============================================================ */
+    .classification-banner {
+      background: #2E7D32;
+      color: #FFFFFF;
+      text-align: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 3px;
+      padding: 4px 0;
+    }
+
+    /* ============================================================
+       HEADER
+    ============================================================ */
+    header {
+      background: linear-gradient(135deg, var(--od-green-dark) 0%, var(--od-green) 60%, var(--od-green-light) 100%);
+      color: var(--white);
+      padding: 0;
+      border-bottom: 4px solid var(--gold);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 28px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* USAREUR-AF crest — SVG placeholder (shield shape) */
+    .crest {
+      flex-shrink: 0;
+      width: 72px;
+      height: 72px;
+    }
+
+    .header-text {
+      flex: 1;
+    }
+
+    .header-unit {
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .header-title {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+    }
+
+    .header-subtitle {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--gold-light);
+      margin-top: 4px;
+      letter-spacing: 1px;
+    }
+
+    .header-right {
+      text-align: right;
+      font-family: var(--font-body);
+      font-size: 11px;
+      color: var(--gold-light);
+      line-height: 1.7;
+    }
+
+    .header-right .badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--od-green-dark);
+      font-family: var(--font-heading);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      padding: 2px 8px;
+      border-radius: var(--radius);
+      margin-bottom: 4px;
+    }
+
+    /* ============================================================
+       NAVIGATION TABS
+    ============================================================ */
+    nav {
+      background: var(--od-green-dark);
+      border-bottom: 2px solid var(--gold-dark);
+    }
+
+    .nav-inner {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .nav-tab {
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gray-200);
+      padding: 12px 20px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+      position: relative;
+      top: 2px;
+    }
+
+    .nav-tab:hover {
+      color: var(--gold-light);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .nav-tab.active {
+      color: var(--gold);
+      border-bottom: 3px solid var(--gold);
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* ============================================================
+       MAIN LAYOUT
+    ============================================================ */
+    main {
+      flex: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 28px 28px 48px;
+    }
+
+    /* ============================================================
+       CONTENT PANELS
+    ============================================================ */
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    /* ============================================================
+       SECTION TITLE
+    ============================================================ */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--gold-dark);
+    }
+
+    .section-badge {
+      background: var(--od-green);
+      color: var(--gold);
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 4px 12px;
+      border-radius: var(--radius);
+      border: 1px solid var(--gold-dark);
+      white-space: nowrap;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--od-green);
+    }
+
+    .section-subtitle {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--gray-400);
+      margin-left: auto;
+      text-align: right;
+    }
+
+    /* ============================================================
+       CARDS
+    ============================================================ */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-top: 4px solid var(--od-green);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+    }
+
+    .card.gold-top { border-top-color: var(--gold-dark); }
+    .card.red-top  { border-top-color: var(--warning-red); }
+
+    .card-label {
+      font-family: var(--font-heading);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 6px;
+    }
+
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+    }
+
+    .card-body {
+      font-size: 13px;
+      color: var(--gray-700);
+      line-height: 1.55;
+    }
+
+    /* ============================================================
+       TABLES
+    ============================================================ */
+    .table-wrap {
+      overflow-x: auto;
+      margin-bottom: 24px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    thead tr {
+      background: var(--od-green);
+      color: var(--white);
+    }
+
+    thead th {
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    tbody tr { background: var(--white); }
+    tbody tr:nth-child(even) { background: var(--gray-100); }
+
+    tbody td {
+      padding: 9px 14px;
+      border-bottom: 1px solid var(--gray-200);
+      vertical-align: top;
+    }
+
+    /* ============================================================
+       CALLOUT BOXES
+    ============================================================ */
+    .callout {
+      border-left: 4px solid;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .callout-label {
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+    }
+
+    .callout-body { font-size: 13px; line-height: 1.55; }
+
+    .callout.warning {
+      border-color: var(--warning-red);
+      background: #FDF0F0;
+    }
+    .callout.warning .callout-label { color: var(--warning-red); }
+
+    .callout.caution {
+      border-color: var(--caution-amber);
+      background: #FDF5E8;
+    }
+    .callout.caution .callout-label { color: var(--caution-amber); }
+
+    .callout.note {
+      border-color: var(--note-blue);
+      background: #EEF3FA;
+    }
+    .callout.note .callout-label { color: var(--note-blue); }
+
+    .callout.bluf {
+      border-color: var(--gold-dark);
+      background: #FAF6E8;
+    }
+    .callout.bluf .callout-label { color: var(--gold-dark); }
+
+    /* ============================================================
+       TASK BLOCKS
+    ============================================================ */
+    .task-block {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .task-header {
+      background: var(--od-green);
+      color: var(--white);
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 10px 16px;
+      text-transform: uppercase;
+    }
+
+    .task-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .task-meta-item {
+      padding: 8px 14px;
+      border-right: 1px solid var(--gray-200);
+      font-size: 12px;
+    }
+
+    .task-meta-item:last-child { border-right: none; }
+
+    .task-meta-label {
+      font-family: var(--font-heading);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--gray-400);
+      text-transform: uppercase;
+    }
+
+    .task-meta-value { color: var(--gray-900); margin-top: 2px; }
+
+    .task-body { padding: 16px; }
+
+    .task-steps {
+      padding-left: 20px;
+      margin: 8px 0;
+    }
+
+    .task-steps li {
+      margin-bottom: 6px;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    /* ============================================================
+       CODE BLOCKS
+    ============================================================ */
+    pre {
+      background: #1E1E1E;
+      color: #D4D4D4;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 12px;
+      padding: 16px;
+      border-radius: var(--radius);
+      overflow-x: auto;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    code {
+      background: #E8E4D9;
+      color: var(--od-green-dark);
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 12px;
+      padding: 1px 5px;
+      border-radius: 2px;
+    }
+
+    pre code { background: none; color: inherit; padding: 0; }
+
+    /* ============================================================
+       LEARNING PATH / TIMELINE
+    ============================================================ */
+    .path-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 24px;
+    }
+
+    .path-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .path-connector {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+      width: 36px;
+    }
+
+    .path-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--od-green);
+      color: var(--white);
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 3px solid var(--gold-dark);
+    }
+
+    .path-dot.optional {
+      background: var(--gray-400);
+      border-color: var(--gray-200);
+    }
+
+    .path-line {
+      width: 2px;
+      height: 24px;
+      background: var(--gold-dark);
+    }
+
+    .path-line.dashed {
+      background: repeating-linear-gradient(
+        to bottom,
+        var(--gray-200) 0px,
+        var(--gray-200) 4px,
+        transparent 4px,
+        transparent 8px
+      );
+    }
+
+    .path-content {
+      flex: 1;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      margin-bottom: 0;
+    }
+
+    .path-tm {
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--gold-dark);
+    }
+
+    .path-name {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gray-900);
+    }
+
+    .path-audience {
+      font-size: 12px;
+      color: var(--gray-400);
+      margin-top: 2px;
+    }
+
+    .path-spacer { height: 12px; }
+
+    /* ============================================================
+       QUICK REF — STACK DIAGRAM
+    ============================================================ */
+    .stack-diagram {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      margin: 16px auto;
+      max-width: 360px;
+    }
+
+    .stack-layer {
+      width: 100%;
+      text-align: center;
+      padding: 10px 16px;
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .stack-arrow {
+      font-size: 18px;
+      color: var(--gold-dark);
+      line-height: 1.2;
+    }
+
+    .layer-1 { background: var(--od-green);       color: var(--white);     }
+    .layer-2 { background: var(--od-green-light);  color: var(--white);     }
+    .layer-3 { background: var(--gold-dark);       color: var(--white);     }
+    .layer-4 { background: var(--gold-light);      color: var(--gray-900);  }
+    .layer-5 { background: var(--gray-200);        color: var(--gray-900);  }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--od-green-dark);
+      color: var(--gold-light);
+      font-family: var(--font-body);
+      font-size: 11px;
+      text-align: center;
+      padding: 12px 28px;
+      border-top: 2px solid var(--gold-dark);
+      line-height: 2;
+    }
+
+    footer strong { color: var(--white); }
+
+    /* ============================================================
+       UTILITY
+    ============================================================ */
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--od-green);
+      margin: 24px 0 10px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin: 16px 0 8px;
+    }
+
+    p { margin-bottom: 12px; font-size: 13px; line-height: 1.65; }
+
+    ul, ol { padding-left: 20px; margin-bottom: 12px; }
+    li { margin-bottom: 4px; font-size: 13px; }
+
+    strong { color: var(--gray-900); }
+
+    .mt-24 { margin-top: 24px; }
+    .mb-8  { margin-bottom: 8px; }
+
+    /* Tag chip */
+    .chip {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin-right: 4px;
+    }
+    .chip-green  { background: var(--od-green);  color: var(--white);    }
+    .chip-gold   { background: var(--gold-dark); color: var(--white);    }
+    .chip-gray   { background: var(--gray-200);  color: var(--gray-700); }
+  </style>
+</head>
+<body>
+
+<!-- CLASSIFICATION BANNER TOP -->
+<div class="classification-banner">UNCLASSIFIED</div>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header>
+  <div class="header-inner">
+
+    <!-- USAREUR-AF Crest (SVG — no external fetch) -->
+    <svg class="crest" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" aria-label="USAREUR-AF Crest">
+      <!-- Shield base -->
+      <path d="M6 8 h60 v38 Q66 66 36 70 Q6 66 6 46 Z" fill="#28351A" stroke="#C8A951" stroke-width="2"/>
+      <!-- Gold horizontal stripe -->
+      <rect x="6" y="28" width="60" height="10" fill="#C8A951"/>
+      <!-- Stars row -->
+      <text x="36" y="22" text-anchor="middle" font-size="8" fill="#C8A951" font-family="Arial">★ ★ ★ ★ ★</text>
+      <!-- USAREUR-AF text -->
+      <text x="36" y="44" text-anchor="middle" font-size="6.5" font-weight="bold" fill="#28351A" font-family="Arial">USAREUR-AF</text>
+      <!-- Bottom text -->
+      <text x="36" y="60" text-anchor="middle" font-size="5.5" fill="#C8A951" font-family="Arial">WIESBADEN, GERMANY</text>
+    </svg>
+
+    <div class="header-text">
+      <div class="header-unit">United States Army Europe and Africa</div>
+      <div class="header-title">Maven Smart System</div>
+      <div class="header-subtitle">Operator Information Hub &nbsp;|&nbsp; USAREUR-AF Operational Data Team</div>
+    </div>
+
+    <div class="header-right">
+      <div class="badge">MSS INFO HUB</div><br/>
+      WIESBADEN, GERMANY<br/>
+      VERSION 1.0 &mdash; 2026<br/>
+      DIST: UNLIMITED
+    </div>
+
+  </div>
+</header>
+
+<!-- ============================================================
+     NAV TABS
+============================================================ -->
+<nav>
+  <div class="nav-inner">
+    <button class="nav-tab active" onclick="showPanel('home')">&#9632; HOME</button>
+    <button class="nav-tab" onclick="showPanel('tm10')">TM-10 &mdash; USER</button>
+    <button class="nav-tab" onclick="showPanel('tm20')">TM-20 &mdash; BUILDER</button>
+    <button class="nav-tab" onclick="showPanel('tm30')">TM-30 &mdash; ADVANCED</button>
+    <button class="nav-tab" onclick="showPanel('doctrine')">DOCTRINE</button>
+    <button class="nav-tab" onclick="showPanel('quickref')">QUICK REF</button>
+    <button class="nav-tab" onclick="showPanel('support')">SUPPORT</button>
+  </div>
+</nav>
+
+<!-- ============================================================
+     MAIN
+============================================================ -->
+<main>
+
+  <!-- ======================================================
+       HOME PANEL
+  ====================================================== -->
+  <div id="panel-home" class="panel active">
+
+    <div class="section-header">
+      <span class="section-badge">HOME</span>
+      <span class="section-title">MSS Training Curriculum &mdash; USAREUR-AF</span>
+      <span class="section-subtitle">TM-10 &bull; TM-20 &bull; TM-30 &bull; ADP/ADRP 1</span>
+    </div>
+
+    <div class="callout bluf">
+      <div class="callout-label">BLUF</div>
+      <div class="callout-body">This hub tells you everything you need to know to start using the Maven Smart System (MSS). Find your level below, follow the training path, and use the tabs above to navigate to your specific guidance.</div>
+    </div>
+
+    <h2>FIND YOUR LEVEL</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>You Are&hellip;</th>
+            <th>Start Here</th>
+            <th>Then</th>
+            <th>Tab</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Any Soldier, officer, or civilian using MSS to access data</td>
+            <td><strong>TM-10 (User)</strong></td>
+            <td>&mdash;</td>
+            <td><span class="chip chip-green">TM-10</span></td>
+          </tr>
+          <tr>
+            <td>Staff building dashboards, forms, or basic pipelines</td>
+            <td><strong>TM-10</strong></td>
+            <td>TM-20 (Builder)</td>
+            <td><span class="chip chip-green">TM-20</span></td>
+          </tr>
+          <tr>
+            <td>Data-adjacent specialist (17/25-series, S6/G6, G2/G9)</td>
+            <td><strong>TM-10 &rarr; TM-20</strong></td>
+            <td>TM-30 (Advanced)</td>
+            <td><span class="chip chip-gold">TM-30</span></td>
+          </tr>
+          <tr>
+            <td>Senior leader (O-5+, CSM+) directing a data-capable formation</td>
+            <td><strong>ADP 1</strong></td>
+            <td>Optional: ADRP 1</td>
+            <td><span class="chip chip-gray">DOCTRINE</span></td>
+          </tr>
+          <tr>
+            <td>Anyone wanting data literacy background before touching MSS</td>
+            <td><strong>ADRP 1</strong></td>
+            <td>TM-10</td>
+            <td><span class="chip chip-gray">DOCTRINE</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>TRAINING PATH</h2>
+
+    <div class="path-flow">
+      <div class="path-step">
+        <div class="path-connector">
+          <div class="path-dot optional" title="O-5+ / CSM+ only">A</div>
+          <div class="path-line dashed"></div>
+        </div>
+        <div class="path-content">
+          <div class="path-tm">ADP 1 &mdash; OPTIONAL</div>
+          <div class="path-name">Data Literacy for Senior Leaders</div>
+          <div class="path-audience">Audience: O-5+, CSM+, Senior Civilians &mdash; Command responsibilities and decision frameworks</div>
+        </div>
+      </div>
+      <div class="path-spacer"></div>
+
+      <div class="path-step">
+        <div class="path-connector">
+          <div class="path-dot optional" title="Recommended, not required">B</div>
+          <div class="path-line dashed"></div>
+        </div>
+        <div class="path-content">
+          <div class="path-tm">ADRP 1 &mdash; RECOMMENDED</div>
+          <div class="path-name">Data Literacy Reference</div>
+          <div class="path-audience">Audience: All personnel &mdash; Comprehensive platform-agnostic data literacy reference</div>
+        </div>
+      </div>
+      <div class="path-spacer"></div>
+
+      <div class="path-step">
+        <div class="path-connector">
+          <div class="path-dot">1</div>
+          <div class="path-line"></div>
+        </div>
+        <div class="path-content">
+          <div class="path-tm">TM-10 &mdash; REQUIRED FOR ALL</div>
+          <div class="path-name">Maven User Manual</div>
+          <div class="path-audience">Audience: All personnel &mdash; Login, navigation, Workshop apps, data viewing, security</div>
+        </div>
+      </div>
+      <div class="path-spacer"></div>
+
+      <div class="path-step">
+        <div class="path-connector">
+          <div class="path-dot">2</div>
+          <div class="path-line"></div>
+        </div>
+        <div class="path-content">
+          <div class="path-tm">TM-20 &mdash; ALL STAFF</div>
+          <div class="path-name">Builder Manual</div>
+          <div class="path-audience">Prerequisite: TM-10 &mdash; Dashboard builds, Pipeline Builder, Ontology basics, Workshop applications</div>
+        </div>
+      </div>
+      <div class="path-spacer"></div>
+
+      <div class="path-step">
+        <div class="path-connector">
+          <div class="path-dot">3</div>
+        </div>
+        <div class="path-content">
+          <div class="path-tm">TM-30 &mdash; DATA-ADJACENT SPECIALISTS</div>
+          <div class="path-name">Advanced Builder Manual</div>
+          <div class="path-audience">Prerequisite: TM-10 + TM-20 &mdash; PySpark, incremental pipelines, advanced Ontology, AIP, OSDK</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout note mt-24">
+      <div class="callout-label">NOTE &mdash; ACCOUNT ACCESS</div>
+      <div class="callout-body">MSS access requires a provisioned account. Contact your unit S6 or data steward to initiate a request. Account provisioning takes 3&ndash;5 business days. Do not wait until the last minute before a deployment or exercise.</div>
+    </div>
+
+  </div><!-- /panel-home -->
+
+
+  <!-- ======================================================
+       TM-10 PANEL
+  ====================================================== -->
+  <div id="panel-tm10" class="panel">
+
+    <div class="section-header">
+      <span class="section-badge">TM-10</span>
+      <span class="section-title">Maven User Manual &mdash; All Personnel</span>
+      <span class="section-subtitle">No technical background required</span>
+    </div>
+
+    <div class="callout bluf">
+      <div class="callout-label">BLUF</div>
+      <div class="callout-body">TM-10 teaches you how to log in, navigate MSS, read dashboards, submit data through forms, and stay within authorized boundaries. Required for all personnel before operating MSS.</div>
+    </div>
+
+    <h2>1. WHAT IS MSS?</h2>
+    <p>MSS is a secure, web-based platform where your unit&rsquo;s data lives and can be analyzed and acted upon. Think of it like a shared operations center for data: information from logistics, personnel, readiness, and other systems is collected, organized, and made accessible through applications your unit uses every day.</p>
+    <p>MSS is built on the Palantir Foundry platform, authorized for Army use under the Maven Smart System program.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">MSS DOES</div>
+        <div class="card-body">
+          <ul>
+            <li>Stores data from Army systems in a single, organized location</li>
+            <li>Makes data visible through applications</li>
+            <li>Enables units to update records, report status, and track readiness</li>
+            <li>Provides analysis tools for authorized personnel</li>
+            <li>Supports AI-assisted analysis through authorized tools</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card red-top">
+        <div class="card-label">MSS IS NOT</div>
+        <div class="card-body">
+          <ul>
+            <li>Not a replacement for official Army systems of record (DCPDS, GCSS-A, MEDPROS, etc.)</li>
+            <li>Not classified by default &mdash; classification depends on data and markings</li>
+            <li>Not a public system &mdash; access is controlled and audited</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card gold-top">
+        <div class="card-label">USAREUR-AF MISSION AREAS</div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Personnel Readiness</strong> &mdash; soldier readiness status</li>
+            <li><strong>Logistics</strong> &mdash; equipment availability &amp; maintenance</li>
+            <li><strong>Operational Reporting</strong> &mdash; SITREPs and updates</li>
+            <li><strong>Planning</strong> &mdash; orders, unit positions, task org</li>
+            <li><strong>C2</strong> &mdash; unit status across the AOR</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2>2. SECURITY RESPONSIBILITIES</h2>
+
+    <div class="callout warning">
+      <div class="callout-label">WARNING</div>
+      <div class="callout-body">Unauthorized access to, disclosure of, or modification of data in MSS may constitute a violation of 18 U.S.C. &sect; 1030 (Computer Fraud and Abuse Act) and applicable Army regulations. Violations may result in disciplinary action, loss of access, and criminal prosecution.</div>
+    </div>
+
+    <ol>
+      <li>Use only your own credentials. Do not share your CAC, PIN, or any access tokens.</li>
+      <li>Access only data you are authorized to view.</li>
+      <li>Report misrouted data immediately. If you see data at a higher classification than your clearance &mdash; stop and report it. Do not read, copy, or act on that data.</li>
+      <li>Do not export data without authorization. Exports are logged.</li>
+      <li>Log out when done. Do not leave an MSS session unattended on an unlocked workstation.</li>
+      <li>Report incidents immediately to your supervisor and unit security officer.</li>
+    </ol>
+
+    <h2>3. TASKS</h2>
+
+    <div class="task-block">
+      <div class="task-header">TASK: ACCESS THE MAVEN SMART SYSTEM</div>
+      <div class="task-meta">
+        <div class="task-meta-item">
+          <div class="task-meta-label">Conditions</div>
+          <div class="task-meta-value">Provisioned MSS account, CAC reader, approved workstation and browser</div>
+        </div>
+        <div class="task-meta-item">
+          <div class="task-meta-label">Standards</div>
+          <div class="task-meta-value">Successfully authenticate with CAC and reach the MSS home screen</div>
+        </div>
+        <div class="task-meta-item">
+          <div class="task-meta-label">Equipment</div>
+          <div class="task-meta-value">CAC, CAC reader, workstation, MSS portal URL (from unit S6)</div>
+        </div>
+      </div>
+      <div class="task-body">
+        <ol class="task-steps">
+          <li>Insert your CAC into the CAC reader.</li>
+          <li>Open an approved web browser (Chrome or Firefox recommended).</li>
+          <li>Navigate to the MSS portal URL provided by your unit S6.</li>
+          <li>When prompted, select your <strong>authentication certificate</strong> (not your email certificate).</li>
+          <li>Enter your CAC PIN when prompted.</li>
+          <li>MSS home screen loads &mdash; you are now logged in.</li>
+        </ol>
+        <div class="callout caution mb-8">
+          <div class="callout-label">CAUTION</div>
+          <div class="callout-body">Do not save your PIN in the browser. Do not allow the browser to remember your login. MSS sessions may contain sensitive information.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="task-block">
+      <div class="task-header">TASK: NAVIGATE THE MSS HOME SCREEN</div>
+      <div class="task-meta">
+        <div class="task-meta-item">
+          <div class="task-meta-label">Conditions</div>
+          <div class="task-meta-value">Logged into MSS</div>
+        </div>
+        <div class="task-meta-item">
+          <div class="task-meta-label">Standards</div>
+          <div class="task-meta-value">Identify all major navigation elements; locate search, notifications, and profile</div>
+        </div>
+      </div>
+      <div class="task-body">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Element</th><th>Location</th><th>Purpose</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Search bar</td><td>Top center</td><td>Find datasets, applications, and projects</td></tr>
+              <tr><td>Notification bell</td><td>Top right</td><td>System alerts, workflow updates</td></tr>
+              <tr><td>User profile icon</td><td>Top right</td><td>Account settings, markings, logout</td></tr>
+              <tr><td>Compass (file explorer)</td><td>Left sidebar</td><td>Browse all MSS resources</td></tr>
+              <tr><td>Home button (logo)</td><td>Top left</td><td>Return to home screen from anywhere</td></tr>
+              <tr><td>Pinned items</td><td>Home main area</td><td>Shortcuts to frequently used resources</td></tr>
+              <tr><td>Recent activity</td><td>Home main area</td><td>Recently visited datasets and apps</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="task-block">
+      <div class="task-header">TASK: LOCATE A PROJECT</div>
+      <div class="task-meta">
+        <div class="task-meta-item">
+          <div class="task-meta-label">Conditions</div>
+          <div class="task-meta-value">Logged into MSS, assigned to a unit project</div>
+        </div>
+        <div class="task-meta-item">
+          <div class="task-meta-label">Standards</div>
+          <div class="task-meta-value">Navigate to unit project space and identify its contents</div>
+        </div>
+      </div>
+      <div class="task-body">
+        <ol class="task-steps">
+          <li>Click <strong>Compass</strong> in the left sidebar.</li>
+          <li>Navigate the folder tree to find your unit&rsquo;s project, OR use the search bar: type your unit name and press Enter.</li>
+          <li>Click the project folder to open it.</li>
+          <li>Note subfolders for datasets, applications, and other resources.</li>
+        </ol>
+        <div class="callout note">
+          <div class="callout-label">NOTE</div>
+          <div class="callout-body">If you cannot find your unit&rsquo;s project, your account may not have access yet. Contact your data steward. Do not attempt to access other units&rsquo; projects.</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>4. GETTING ACCESS</h2>
+    <ol>
+      <li>Contact your unit S6 or data steward to initiate an account request.</li>
+      <li>Supervisor submits request with your name, unit, role, and required access level.</li>
+      <li>MSS admin team provisions your account and assigns markings.</li>
+      <li>You receive notification when account is active.</li>
+      <li>Log in via the MSS portal URL provided by your unit.</li>
+    </ol>
+    <div class="callout note mt-24">
+      <div class="callout-label">NOTE &mdash; PROVISIONING TIME</div>
+      <div class="callout-body">Account provisioning may take 3&ndash;5 business days. Plan accordingly before a deployment or exercise requiring MSS access.</div>
+    </div>
+
+    <h2>5. REPORTING PROBLEMS</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Problem Type</th><th>Who to Contact</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Cannot log in</td><td>Unit S6 or MSS Help Desk</td></tr>
+          <tr><td>Cannot access a project</td><td>Unit data steward</td></tr>
+          <tr><td>Data appears incorrect</td><td>Unit data steward (do not correct it yourself)</td></tr>
+          <tr><td>System error or crash</td><td>MSS Help Desk (provide error code and screenshot)</td></tr>
+          <tr><td>Security incident</td><td>Supervisor and unit security officer &mdash; IMMEDIATELY</td></tr>
+          <tr><td>Application not working</td><td>MSS Help Desk</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- /panel-tm10 -->
+
+
+  <!-- ======================================================
+       TM-20 PANEL
+  ====================================================== -->
+  <div id="panel-tm20" class="panel">
+
+    <div class="section-header">
+      <span class="section-badge">TM-20</span>
+      <span class="section-title">Builder Manual &mdash; All Staff</span>
+      <span class="section-subtitle">Prerequisite: TM-10</span>
+    </div>
+
+    <div class="callout bluf">
+      <div class="callout-label">BLUF</div>
+      <div class="callout-body">TM-20 teaches you how to ingest data, write basic transforms, build Workshop applications, create Object Types, and follow builder standards. Prerequisite: TM-10 complete.</div>
+    </div>
+
+    <h2>COMPETENCIES UPON COMPLETION</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">DATA INGEST</div>
+        <div class="card-body">
+          <ul>
+            <li>Create and manage Foundry projects and code repositories</li>
+            <li>Ingest data using Pipeline Builder and basic connectors</li>
+            <li>Understand raw / staging / curated dataset layers</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">TRANSFORMS</div>
+        <div class="card-body">
+          <ul>
+            <li>Write basic Python transforms (<code>@transform_df</code>)</li>
+            <li>Enforce schema on outputs</li>
+            <li>Write basic <code>@check</code> data quality validators</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">ONTOLOGY</div>
+        <div class="card-body">
+          <ul>
+            <li>Create Object Types and set primary keys</li>
+            <li>Create Link Types between objects</li>
+            <li>Build basic Actions</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">WORKSHOP</div>
+        <div class="card-body">
+          <ul>
+            <li>Build and publish Workshop applications</li>
+            <li>Add dashboards, forms, and filters</li>
+            <li>Follow naming conventions and builder standards</li>
+            <li>Manage dev/prod discipline using Foundry branching</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2>THE FOUNDRY STACK</h2>
+    <p>Data in MSS flows through layers. As a builder, you work in the middle layers. Never modify raw data.</p>
+    <div class="stack-diagram">
+      <div class="stack-layer layer-1">Workshop App / AIP Agent</div>
+      <div class="stack-arrow">&#x25B2;</div>
+      <div class="stack-layer layer-2">Ontology (Objects, Links, Actions)</div>
+      <div class="stack-arrow">&#x25B2;</div>
+      <div class="stack-layer layer-3">Curated Dataset</div>
+      <div class="stack-arrow">&#x25B2;</div>
+      <div class="stack-layer layer-4">Staging Dataset</div>
+      <div class="stack-arrow">&#x25B2;</div>
+      <div class="stack-layer layer-5">Raw Dataset (never touch)</div>
+    </div>
+
+    <h2>BASIC TRANSFORM SKELETON</h2>
+    <pre><code>from transforms.api import transform_df, Input, Output
+import pyspark.sql.functions as F
+
+@transform_df(
+    Output("/Project/AOR/source/curated/my_dataset"),
+    source=Input("/Project/AOR/source/staging/my_dataset"),
+)
+def compute(source):
+    return (
+        source
+        .filter(F.col("required_field").isNotNull())
+        .dropDuplicates(["id"])
+        .withColumn("processed_dt", F.current_timestamp())
+    )</code></pre>
+
+    <h2>WORKSHOP WIDGET SELECTION</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Need</th><th>Widget to Use</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Show many objects / records</td><td>Object Table</td></tr>
+          <tr><td>Show detail for one object</td><td>Object Detail</td></tr>
+          <tr><td>Let users filter data</td><td>Filter Panel / Dropdown</td></tr>
+          <tr><td>Show a chart</td><td>Bar / Line / Pie Chart Widget</td></tr>
+          <tr><td>Show a map</td><td>Map Widget</td></tr>
+          <tr><td>Write / update data</td><td>Button + Action or Action Form</td></tr>
+          <tr><td>Show a key metric</td><td>Metric Tile</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>NAMING CONVENTIONS</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Object Type</th><th>Convention</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Datasets</td><td><code>/Project/AOR/source/raw|staging|curated</code></td><td><code>/USAREUR/EUR/personnel/curated/soldier_status</code></td></tr>
+          <tr><td>Object Types</td><td><code>PascalCase</code></td><td><code>UnitStatus</code></td></tr>
+          <tr><td>Code Repositories</td><td><code>kebab-case</code></td><td><code>unit-status-transforms</code></td></tr>
+          <tr><td>Functions / Transforms</td><td><code>snake_case</code></td><td><code>raw_to_staging</code></td></tr>
+          <tr><td>Properties (API name)</td><td><code>camelCase</code></td><td><code>unitName</code></td></tr>
+          <tr><td>Properties (display)</td><td>Title Case</td><td><code>Unit Name</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>ONTOLOGY SETUP ORDER</h2>
+    <ol>
+      <li>Build curated dataset (transform chain must be complete)</li>
+      <li>Create Object Type &rarr; set primary key</li>
+      <li>Map properties from curated dataset</li>
+      <li>Create Link Types between related Object Types</li>
+      <li>Add Computed Properties if needed</li>
+      <li>Test in Object Explorer before building Workshop app</li>
+    </ol>
+
+    <h2>PERMISSIONS REQUIRED (request from team lead)</h2>
+    <ul>
+      <li>Editor on project folder</li>
+      <li>Editor on ontology branch</li>
+      <li>Developer on Code Repos</li>
+      <li>Viewer on source datasets</li>
+    </ul>
+
+  </div><!-- /panel-tm20 -->
+
+
+  <!-- ======================================================
+       TM-30 PANEL
+  ====================================================== -->
+  <div id="panel-tm30" class="panel">
+
+    <div class="section-header">
+      <span class="section-badge">TM-30</span>
+      <span class="section-title">Advanced Builder &mdash; Data-Adjacent Specialists</span>
+      <span class="section-subtitle">Prerequisite: TM-10 + TM-20 &bull; 17/25-series &bull; S6/G6 &bull; G2/G9</span>
+    </div>
+
+    <div class="callout bluf">
+      <div class="callout-label">BLUF</div>
+      <div class="callout-body">TM-30 covers advanced transforms, incremental pipelines, complex ontology modeling, AIP Logic integration, OSDK external applications, and production CI/CD workflows. Requires TM-10 and TM-20 as prerequisites.</div>
+    </div>
+
+    <h2>COMPETENCIES UPON COMPLETION</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">TRANSFORMS</div>
+        <div class="card-body">
+          <ul>
+            <li>Write optimized PySpark transforms with partitioning and schema enforcement</li>
+            <li>Implement incremental pipelines with <code>@incremental</code> and watermark patterns</li>
+            <li>Conduct advanced analysis in Quiver and Contour</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">ONTOLOGY</div>
+        <div class="card-body">
+          <ul>
+            <li>Model complex ontology patterns (interfaces, derived properties, link properties)</li>
+            <li>Write Functions on Objects (FOO) in TypeScript</li>
+            <li>Build and test complex Actions with validation logic</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">AIP &amp; INTEGRATION</div>
+        <div class="card-body">
+          <ul>
+            <li>Integrate AIP Logic workflows and Agent Studio into applications</li>
+            <li>Develop external applications using the OSDK</li>
+            <li>Manage data lineage and production CI/CD workflows</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2>DECORATOR SELECTION GUIDE</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Data Size</th><th>Needs History / Incremental</th><th>Use</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Large</td><td>No</td><td><code>@transform_df</code></td></tr>
+          <tr><td>Large</td><td>Yes (append only)</td><td><code>@incremental</code></td></tr>
+          <tr><td>Small</td><td>No</td><td><code>@lightweight_transform</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>INCREMENTAL PIPELINE PATTERN</h2>
+    <pre><code>from transforms.api import incremental, Input, Output
+import pyspark.sql.functions as F
+
+@incremental(
+    require_incremental=True,
+    semantic_version=1,
+)
+@transform_df(
+    Output("/Project/AOR/source/curated/events_incremental"),
+    source=Input("/Project/AOR/source/staging/events"),
+)
+def compute(source, ctx):
+    # Only process new data since last run
+    if ctx.is_incremental:
+        source = source.filter(
+            F.col("event_dt") > ctx.last_run_input_watermark
+        )
+    return source.dropDuplicates(["event_id"])</code></pre>
+
+    <h2>COMMON PYSPARK OPERATIONS</h2>
+    <pre><code># Filter rows
+df.filter(F.col("status") == "ACTIVE")
+
+# Add / transform column
+df.withColumn("unit_upper", F.upper(F.col("unit_name")))
+
+# Rename column
+df.withColumnRenamed("old_col", "new_col")
+
+# Remove duplicates
+df.dropDuplicates(["id"])
+
+# Join datasets
+df1.join(df2, "unit_id", "left")
+
+# Group and count
+df.groupBy("unit").agg(F.count("*").alias("record_count"))
+
+# Cast data type
+df.withColumn("count", F.col("count").cast("integer"))
+
+# Fill nulls
+df.fillna({"status": "UNKNOWN"})
+
+# Current timestamp
+F.current_timestamp()
+
+# Parse timestamp string
+F.to_timestamp(F.col("dtg_str"), "yyyy-MM-dd HH:mm:ss")</code></pre>
+
+    <h2>TROUBLESHOOTING ADVANCED PIPELINES</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Symptom</th><th>First Action</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Build fails</td><td>Read the full error &mdash; find &ldquo;Caused by:&rdquo; for root cause</td></tr>
+          <tr><td>Empty output dataset</td><td>Check your filters; add <code>.count()</code> to a debug stage</td></tr>
+          <tr><td>Schema mismatch</td><td>Delete output dataset and rebuild from scratch</td></tr>
+          <tr><td>Workshop app not showing objects</td><td>Verify ontology branch is correct and published</td></tr>
+          <tr><td>Object not searchable</td><td>Confirm primary key is set and unique</td></tr>
+          <tr><td>Action fails</td><td>Check validation rules and user permissions on the action</td></tr>
+          <tr><td>Incremental not processing</td><td>Check watermark value; consider resetting for a full rebuild</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- /panel-tm30 -->
+
+
+  <!-- ======================================================
+       DOCTRINE PANEL
+  ====================================================== -->
+  <div id="panel-doctrine" class="panel">
+
+    <div class="section-header">
+      <span class="section-badge">DOCTRINE</span>
+      <span class="section-title">Data Literacy Publications &mdash; ADP 1 &amp; ADRP 1</span>
+      <span class="section-subtitle">Foundational doctrine &bull; Platform-agnostic</span>
+    </div>
+
+    <div class="callout bluf">
+      <div class="callout-label">BLUF</div>
+      <div class="callout-body">Before touching MSS, understand <em>why</em> data matters. ADP 1 is written for commanders and senior leaders. ADRP 1 is the comprehensive reference for all personnel.</div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card gold-top">
+        <div class="card-label">ADP 1 &mdash; SENIOR LEADERS</div>
+        <div class="card-title">Data Literacy for Senior Leaders</div>
+        <div class="card-body">
+          <p>Written for O-5+, CSM+, and senior civilians. Covers command responsibilities, evaluating data products, directing a data-capable formation, and decision frameworks.</p>
+          <p><strong>Format:</strong> Short (~20&ndash;30pp). Principles, not procedures.</p>
+          <p><strong>Key topics:</strong> Commander&rsquo;s data responsibilities &bull; Evaluating analytical products &bull; Standing up MSS capability in your unit &bull; Data governance and stewardship</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">ADRP 1 &mdash; ALL PERSONNEL</div>
+        <div class="card-title">Data Literacy Reference</div>
+        <div class="card-body">
+          <p>Comprehensive platform-agnostic data literacy reference for all personnel. Recommended prior reading before TM-10.</p>
+          <p><strong>Format:</strong> Long (~50&ndash;100pp). Examples, vignettes, detailed explanations.</p>
+          <p><strong>Key topics:</strong> Data types and structures &bull; Pipeline concepts &bull; Data quality &bull; Analysis fundamentals &bull; Security and classification &bull; Operational data integration</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>PUBLICATION COMPARISON</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Publication</th><th>Audience</th><th>Length</th><th>Purpose</th><th>When to Read</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ADP 1</strong></td>
+            <td>O-5+, CSM+, Senior Civilians</td>
+            <td>~20&ndash;30 pp</td>
+            <td>Principles, command responsibilities</td>
+            <td>Before directing MSS use</td>
+          </tr>
+          <tr>
+            <td><strong>ADRP 1</strong></td>
+            <td>All personnel</td>
+            <td>~50&ndash;100 pp</td>
+            <td>Comprehensive data literacy reference</td>
+            <td>Before TM-10 (recommended)</td>
+          </tr>
+          <tr>
+            <td><strong>TM-10</strong></td>
+            <td>All personnel</td>
+            <td>Task-based</td>
+            <td>Operate MSS as an end user</td>
+            <td>Before first MSS access</td>
+          </tr>
+          <tr>
+            <td><strong>TM-20</strong></td>
+            <td>All staff</td>
+            <td>Task-based</td>
+            <td>Build Workshop apps and pipelines</td>
+            <td>After TM-10</td>
+          </tr>
+          <tr>
+            <td><strong>TM-30</strong></td>
+            <td>Data-adjacent specialists</td>
+            <td>Task-based</td>
+            <td>Advanced development</td>
+            <td>After TM-10 + TM-20</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>CORE DATA LITERACY CONCEPTS (ADRP 1 SUMMARY)</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">DATA TYPES</div>
+        <div class="card-body">Structured (tables, rows, columns) &bull; Semi-structured (JSON, XML) &bull; Unstructured (documents, images). MSS ingests all three types from Army source systems.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">DATA PIPELINE</div>
+        <div class="card-body">Raw &rarr; Staging &rarr; Curated &rarr; Ontology &rarr; Application. Each layer adds quality, structure, and meaning. Never modify raw data &mdash; it is the source of truth.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">DATA QUALITY</div>
+        <div class="card-body">Accuracy, completeness, consistency, timeliness, uniqueness. Bad decisions follow bad data. Report quality issues to your data steward rather than working around them.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">DATA GOVERNANCE</div>
+        <div class="card-body">Ownership, stewardship, access control, classification markings. Every dataset has an owner. Every user has a role. Access is audited. Misuse is tracked.</div>
+      </div>
+    </div>
+
+  </div><!-- /panel-doctrine -->
+
+
+  <!-- ======================================================
+       QUICK REFERENCE PANEL
+  ====================================================== -->
+  <div id="panel-quickref" class="panel">
+
+    <div class="section-header">
+      <span class="section-badge">QUICK REF</span>
+      <span class="section-title">Quick Reference Card &mdash; Keep Open While You Work</span>
+    </div>
+
+    <div class="callout bluf">
+      <div class="callout-label">BLUF</div>
+      <div class="callout-body">Fast lookup for transforms, decorators, Workshop widgets, naming rules, ontology setup order, and troubleshooting steps.</div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card gold-top">
+        <div class="card-label">WHERE TO GO FOR MORE</div>
+        <div class="card-body">
+          <ul>
+            <li><strong>New to MSS?</strong> &rarr; TM-10 tab</li>
+            <li><strong>Building dashboards?</strong> &rarr; TM-20 tab</li>
+            <li><strong>Advanced transforms / AIP / OSDK?</strong> &rarr; TM-30 tab</li>
+            <li><strong>Senior leader briefing?</strong> &rarr; Doctrine tab (ADP 1)</li>
+            <li><strong>Term definitions?</strong> &rarr; Doctrine tab (ADRP 1 + Glossary)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">DECORATOR QUICK PICK</div>
+        <div class="card-body">
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Size</th><th>History?</th><th>Use</th></tr></thead>
+              <tbody>
+                <tr><td>Large</td><td>No</td><td><code>@transform_df</code></td></tr>
+                <tr><td>Large</td><td>Yes</td><td><code>@incremental</code></td></tr>
+                <tr><td>Small</td><td>No</td><td><code>@lightweight_transform</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">WORKSHOP WIDGET PICK</div>
+        <div class="card-body">
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Need</th><th>Widget</th></tr></thead>
+              <tbody>
+                <tr><td>Many objects</td><td>Object Table</td></tr>
+                <tr><td>One object</td><td>Object Detail</td></tr>
+                <tr><td>Filter</td><td>Filter Panel / Dropdown</td></tr>
+                <tr><td>Chart</td><td>Bar / Line / Pie</td></tr>
+                <tr><td>Map</td><td>Map Widget</td></tr>
+                <tr><td>Write data</td><td>Button + Action</td></tr>
+                <tr><td>Key metric</td><td>Metric Tile</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>ONTOLOGY SETUP ORDER</h2>
+    <ol>
+      <li>Build curated dataset (transform chain complete)</li>
+      <li>Create Object Type &rarr; set primary key</li>
+      <li>Map properties from curated dataset</li>
+      <li>Create Link Types</li>
+      <li>Add Computed Properties (optional)</li>
+      <li>Test in Object Explorer</li>
+    </ol>
+
+    <h2>NAMING QUICK RULES</h2>
+    <ul>
+      <li>Datasets: <code>/Project/AOR/source/raw|staging|curated</code></li>
+      <li>Object Types: <code>PascalCase</code> (e.g., <code>UnitStatus</code>)</li>
+      <li>Code Repos: <code>kebab-case</code> (e.g., <code>unit-status-transforms</code>)</li>
+      <li>Functions/Transforms: <code>snake_case</code> (e.g., <code>raw_to_staging</code>)</li>
+      <li>Properties (API): <code>camelCase</code> &mdash; Properties (display): Title Case</li>
+    </ul>
+
+    <h2>IF SOMETHING IS BROKEN</h2>
+    <ol>
+      <li><strong>Build fails</strong> &rarr; read the full error, find &ldquo;Caused by:&rdquo;</li>
+      <li><strong>Empty output</strong> &rarr; check your filters, add <code>.count()</code> to debug</li>
+      <li><strong>Schema mismatch</strong> &rarr; delete output dataset, rebuild</li>
+      <li><strong>App not showing objects</strong> &rarr; check ontology branch is correct and published</li>
+      <li><strong>Object not searchable</strong> &rarr; check primary key is set and unique</li>
+      <li><strong>Action fails</strong> &rarr; check validation rules and user permissions</li>
+    </ol>
+
+    <h2>COMMON PYSPARK QUICK REFERENCE</h2>
+    <pre><code># Filter          df.filter(F.col("x") == "Y")
+# Add column      df.withColumn("new", F.upper(F.col("old")))
+# Rename          df.withColumnRenamed("old", "new")
+# Drop dupes      df.dropDuplicates(["id"])
+# Join            df1.join(df2, "id", "left")
+# Group/count     df.groupBy("unit").agg(F.count("*").alias("n"))
+# Cast            df.withColumn("x", F.col("x").cast("integer"))
+# Null fill       df.fillna({"col": "DEFAULT"})
+# Timestamp now   F.current_timestamp()
+# Date parse      F.to_timestamp(F.col("s"), "yyyy-MM-dd HH:mm:ss")</code></pre>
+
+  </div><!-- /panel-quickref -->
+
+
+  <!-- ======================================================
+       SUPPORT PANEL
+  ====================================================== -->
+  <div id="panel-support" class="panel">
+
+    <div class="section-header">
+      <span class="section-badge">SUPPORT</span>
+      <span class="section-title">Getting Help &mdash; USAREUR-AF</span>
+    </div>
+
+    <div class="callout bluf">
+      <div class="callout-label">BLUF</div>
+      <div class="callout-body">Know who to call before you have a problem. Route issues correctly. Collect information before calling for help.</div>
+    </div>
+
+    <h2>CONTACT ROUTING</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Issue</th><th>Route To</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Cannot log in / CAC issues</td><td>Unit S6 or MSS Help Desk</td><td>Normal</td></tr>
+          <tr><td>No access to a project or dataset</td><td>Unit data steward</td><td>Normal</td></tr>
+          <tr><td>Data appears incorrect</td><td>Unit data steward (do not self-correct)</td><td>Normal</td></tr>
+          <tr><td>System error, crash, or outage</td><td>MSS Help Desk + screenshot + error code</td><td>Normal</td></tr>
+          <tr><td>Application broken or not loading</td><td>MSS Help Desk</td><td>Normal</td></tr>
+          <tr><td><strong>Security incident</strong></td><td><strong>Supervisor + unit security officer</strong></td><td><strong>IMMEDIATE</strong></td></tr>
+          <tr><td>Building question / Foundry how-to</td><td>Unit data lead or USAREUR-AF data team</td><td>Normal</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>BEFORE CALLING FOR HELP &mdash; COLLECT</h2>
+    <ul>
+      <li>Your username</li>
+      <li>Name of the application or dataset you were using</li>
+      <li>Exact error message (screenshot preferred)</li>
+      <li>Time the error occurred</li>
+      <li>Steps that led to the error (what you did, in order)</li>
+    </ul>
+
+    <div class="callout warning">
+      <div class="callout-label">WARNING &mdash; SECURITY INCIDENTS</div>
+      <div class="callout-body">If you suspect a security violation (data at wrong classification level, unauthorized access, suspicious activity), report immediately to your supervisor and unit security officer. Do not attempt to investigate or resolve it yourself. Preserve the screen state if possible.</div>
+    </div>
+
+    <h2>PREREQUISITES BEFORE FIRST LOGIN</h2>
+    <ol>
+      <li><strong>Annual Cyber Awareness training</strong> &mdash; required for all DoD personnel</li>
+      <li><strong>MSS User Onboarding Brief</strong> &mdash; provided by unit data steward or G6/S6</li>
+      <li><strong>Account request approved</strong> &mdash; submit through unit S6, allow 3&ndash;5 business days</li>
+    </ol>
+
+    <h2>USAREUR-AF DATA TEAM</h2>
+    <div class="card-grid">
+      <div class="card gold-top">
+        <div class="card-label">LOCATION</div>
+        <div class="card-title">Wiesbaden, Germany</div>
+        <div class="card-body">Headquarters, United States Army Europe and Africa<br/>USAREUR-AF Operational Data Team</div>
+      </div>
+      <div class="card">
+        <div class="card-label">PUBLICATIONS</div>
+        <div class="card-body">
+          All training publications (TM-10, TM-20, TM-30, ADP 1, ADRP 1, Glossary) are maintained by the USAREUR-AF Operational Data Team. Contact your unit data steward for access.
+        </div>
+      </div>
+    </div>
+
+    <div class="callout note mt-24">
+      <div class="callout-label">NOTE &mdash; DISTRIBUTION</div>
+      <div class="callout-body">All publications in this curriculum are UNCLASSIFIED and approved for public release. Distribution is unlimited. Do not assume these publications apply to classified MSS configurations without consulting your data steward.</div>
+    </div>
+
+  </div><!-- /panel-support -->
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+  <strong>HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA</strong> &nbsp;&mdash;&nbsp;
+  USAREUR-AF OPERATIONAL DATA TEAM &nbsp;&mdash;&nbsp;
+  WIESBADEN, GERMANY<br/>
+  TM-10 &bull; TM-20 &bull; TM-30 &bull; ADP 1 &bull; ADRP 1 &nbsp;&mdash;&nbsp;
+  VERSION 1.0 &nbsp;&mdash;&nbsp; 2026 &nbsp;&mdash;&nbsp;
+  DIST: APPROVED FOR PUBLIC RELEASE &mdash; DISTRIBUTION UNLIMITED
+</footer>
+
+<!-- CLASSIFICATION BANNER BOTTOM -->
+<div class="classification-banner">UNCLASSIFIED</div>
+
+<!-- ============================================================
+     TAB SWITCHING LOGIC
+============================================================ -->
+<script>
+  function showPanel(id) {
+    // Hide all panels
+    document.querySelectorAll('.panel').forEach(function(p) {
+      p.classList.remove('active');
+    });
+    // Deactivate all tabs
+    document.querySelectorAll('.nav-tab').forEach(function(t) {
+      t.classList.remove('active');
+    });
+    // Show target panel
+    var panel = document.getElementById('panel-' + id);
+    if (panel) panel.classList.add('active');
+    // Activate clicked tab
+    var tabs = document.querySelectorAll('.nav-tab');
+    var tabMap = { home: 0, tm10: 1, tm20: 2, tm30: 3, doctrine: 4, quickref: 5, support: 6 };
+    if (tabMap[id] !== undefined) {
+      tabs[tabMap[id]].classList.add('active');
+    }
+    // Scroll to top of main
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>

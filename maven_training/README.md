@@ -26,6 +26,7 @@ This curriculum provides progressive, doctrine-aligned training for all USAREUR-
 | All personnel | A Soldier, officer, or civilian who uses MSS to access operational data | TM-10 |
 | All staff, light builders | Building dashboards, forms, or basic pipelines on MSS | TM-20 (after TM-10) |
 | Data-adjacent specialists | Assigned to a data/analytical role (17/25-series, S6/G6, G2/G9) | TM-30 (after TM-20) |
+| Developers / technical specialists | Writing code, building external apps, ML models | TM-40 (track) after TM-30 |
 | Senior leaders (O-5+, CSM+) | Commanding or directing a data-capable formation | ADP 1 |
 | All — background reading | Anyone who wants to understand data concepts before touching MSS | ADRP 1 |
 
@@ -47,7 +48,12 @@ All Staff ───────────────────────�
 Data-Adjacent Specialists ───────────────► TM-30 (Advanced Builder)
                                                 │
                                                 ▼
-[FUTURE] Developers ────────────────────► TM-40 series (AI Eng / SWE / MLE tracks)
+[FUTURE] Developers ────────────────────► TM-40 series:
+                                            TM-40A (AI Eng) | TM-40B (SWE) | TM-40C (MLE)
+                                            TM-40D (ORSA)   | TM-40E (PM)  | TM-40F (KM)
+                                                 │
+                                                 ▼
+                                         TM-50 series (advanced, per track)
 ```
 
 ### Step 3 — Reference the Glossary
@@ -78,10 +84,13 @@ At any point, consult the [Data & Foundry Glossary](doctrine/GLOSSARY_data_found
 
 | Publication | Audience | Notes |
 |-------------|----------|-------|
-| **TM-40A** — AI Engineer Track | AI/ML specialists | AIP, model development, Agent Studio, LLM integration |
-| **TM-40B** — Software Engineer Track | SWEs | OSDK, full-stack Foundry applications, platform SDK |
+| **TM-40A** — AI Engineer Track | AI/ML specialists | AIP Logic authoring, Agent Studio, LLM integration, AI safety |
+| **TM-40B** — Software Engineer Track | SWEs | OSDK, full-stack Foundry apps, Platform SDK, Slate |
 | **TM-40C** — Machine Learning Engineer Track | MLEs | Code Workspaces, model training, evaluation, deployment |
-| **TM-50A/B/C** — Advanced Developer Tracks | Senior developers | Advanced versions of TM-40 tracks |
+| **TM-40D** — ORSA Track | Operations Research analysts | Statistical modeling, Monte Carlo, optimization, wargame analytics |
+| **TM-40E** — Program Manager Track | PMs, resource managers | PM dashboards, milestone tracking, portfolio analysis, reporting pipelines |
+| **TM-40F** — Knowledge Manager Track | KMOs, 37F, S2/S3/S6 KM roles | Knowledge repositories, AIP summarization, lessons learned pipelines, AAR capture |
+| **TM-50A–F** — Advanced Developer Tracks | Senior developers (all tracks) | Advanced versions of each TM-40 track |
 
 ---
 
@@ -102,27 +111,28 @@ At any point, consult the [Data & Foundry Glossary](doctrine/GLOSSARY_data_found
 ### TM-20 — Builder (-20 Level)
 **Audience:** All staff
 **Competencies upon completion:**
-- Create and manage Foundry projects and code repositories
-- Ingest data using Pipeline Builder and basic connectors
-- Write basic Python transforms (`@transform_df`, schema enforcement)
-- Create Object Types, Link Types, and basic Actions in the Ontology
+- Create and organize Foundry projects via UI
+- Ingest data using Pipeline Builder (visual, no code)
+- Create basic Object Types and Link Types via Ontology Manager UI
+- Create simple Actions via Action Editor UI
 - Build and publish Workshop applications with dashboards, forms, and filters
-- Write basic `@check` data quality validators
-- Follow naming conventions and builder standards
-- Manage development/production discipline using Foundry branching
+- Manage project access and permissions via UI
+- Use Foundry branching to build and promote via UI
+- Follow USAREUR-AF naming conventions and builder standards
 
 ### TM-30 — Advanced Builder (-30 Level)
 **Audience:** Data-adjacent specialists (17/25-series, S6/G6, G2/G9, operational data analysts)
 **Competencies upon completion:**
-- Write optimized PySpark transforms with partitioning and schema enforcement
-- Implement incremental pipelines with `@incremental` and watermark patterns
-- Model complex ontology patterns (interfaces, derived properties, link properties)
-- Write Functions on Objects (FOO) in TypeScript
-- Build and test complex Actions with validation logic
-- Integrate AIP Logic workflows and Agent Studio into applications
-- Develop external applications using the OSDK
-- Conduct advanced analysis in Quiver and Contour
-- Manage data lineage and production CI/CD workflows
+- Design and build complex multi-page Workshop applications with conditional logic and variable passing
+- Build advanced Pipeline Builder pipelines with multi-source joins and aggregations (visual)
+- Design Ontology structures (Object Types, Link Types, Actions) using the UI — architecture thinking, not coding
+- Conduct advanced analysis in Contour (complex aggregations, pivots, calculated columns, saved views)
+- Build advanced Quiver dashboards with multi-object analysis and linked views
+- Configure AIP Logic workflows (not author them)
+- Review and interpret data lineage graphs
+- Manage governance workflows with Data Stewards
+- Manage branching and production promotion via UI
+- Apply USAREUR-AF C2DAO governance standards and naming conventions
 
 ---
 

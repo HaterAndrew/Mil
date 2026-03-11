@@ -1,1864 +1,1678 @@
-```
-TM-30 — MAVEN SMART SYSTEM (MSS)
-ADVANCED BUILDER TECHNICAL MANUAL
+# TM-30 — MAVEN SMART SYSTEM (MSS)
+## ADVANCED BUILDER TECHNICAL MANUAL
 
-HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA
+**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
 Wiesbaden, Germany
 
 2026
 
-PREREQUISITE PUBLICATIONS: TM-10, Maven User; TM-20, Builder; ADRP 1, Data Literacy
-DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.
+**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; ADRP 1, Data Literacy (required)
+
+**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
 
 ---
-SAFETY SUMMARY
 
-Advanced builders have broad privileges on MSS production infrastructure. Actions
-at this level can affect the entire formation's data environment.
+## SAFETY SUMMARY
 
-Before operating at TM-30 level:
-- Understand the full downstream impact of ontology changes, schema modifications,
-  and incremental pipeline alterations
-- Coordinate with data stewards before modifying shared production resources
-- Never test in production — use Foundry branching for all development work
-- AIP integrations require additional authorization review before deployment
-```
+Advanced builders operate at the operational-technical boundary of MSS. At TM-30 level, you design solutions that affect shared infrastructure, coalition-facing data products, and enterprise ontology models that underpin applications used across the entire formation.
+
+Before performing any task at TM-30 level:
+
+- Understand the full downstream impact of ontology changes, schema modifications, and pipeline alterations before initiating them
+- Coordinate with data stewards and the USAREUR-AF C2DAO before modifying any shared production resource
+- Never prototype or test in the production environment — use Foundry branching for all development work
+- AIP Logic workflows that operate on operational data require authorization review before deployment
+- Data products accessible to Mission Partner Environment (MPE) or coalition-facing systems require C2DAO coordination and NAFv4 compliance review — this is a hard gate, not a suggestion
+- If you are unsure whether your design requires a -40 developer to implement, it probably does — escalate before building
+
+> **WARNING: Advanced builders are responsible for the integrity of shared data infrastructure. Errors at this level do not affect one application — they affect the data environment of the entire formation, including coalition partners. Apply engineering discipline to every design decision.**
 
 ---
 
 ## TABLE OF CONTENTS
 
-- Chapter 1 — Introduction and Scope
-- Chapter 2 — Advanced Python Transforms
-- Chapter 3 — Incremental Transforms and Pipeline Patterns
-- Chapter 4 — Advanced Ontology and Object Modeling
-- Chapter 5 — Functions on Objects (FOO)
-- Chapter 6 — Actions and Write-Back Patterns
-- Chapter 7 — AIP Integration
-- Chapter 8 — OSDK (Ontology SDK)
-- Chapter 9 — Analytics: Quiver and Contour (Advanced)
-- Chapter 10 — Data Lineage and CI/CD
-- Appendix A — Advanced PySpark Reference
-- Appendix B — Ontology Design Patterns
-- Appendix C — AIP Authorization Checklist
-- Appendix D — TM-30 Change Management Checklist
-- Appendix E — UDRA v1.1 Alignment Reference
+- Chapter 1 — Introduction: The Advanced Builder Role
+- Chapter 2 — Advanced Workshop Application Design
+- Chapter 3 — Advanced Pipeline Builder
+- Chapter 4 — Ontology Design Methodology
+- Chapter 5 — Advanced Action Design via UI
+- Chapter 6 — AIP Logic Configuration
+- Chapter 7 — Advanced Contour and Quiver
+- Chapter 8 — Data Governance and Stewardship
+- Chapter 9 — Environment Management and Production Discipline
+- Chapter 10 — NATO and Coalition Data Considerations
+- Appendix A — -30 to -40 Handoff Guide (Technical Requirements Template)
+- Appendix B — Application Design Checklist
+- Appendix C — UDRA Alignment Checklist
 - Glossary
 
 ---
 
-# CHAPTER 1 — INTRODUCTION AND SCOPE
+## CHAPTER 1 — INTRODUCTION: THE ADVANCED BUILDER ROLE
 
-## 1-1. TM-30 Scope vs. TM-20
+### 1-1. Purpose and Scope
 
-TM-20 (Builder) qualified you to create datasets, write basic transforms, configure Object Types with standard properties, build Workshop applications, and configure Actions. That level covers the majority of day-to-day MSS development work.
+This manual provides design-level instruction for advanced builders operating on the Maven Smart System (MSS). MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. TM-30 qualified personnel are the operational-technical bridge between mission requirements and technical implementation.
 
-TM-30 advances beyond builder fundamentals into production-grade capability. At this level you are responsible for:
+**TM-30 covers:**
+- Designing complex, multi-page Workshop applications with conditional logic and parameter passing
+- Designing advanced Pipeline Builder workflows using the visual UI (multi-source joins, transformations, scheduling)
+- Designing Ontology models — Object Types, Link Types, and Actions — for operational use cases
+- Configuring advanced Actions via the UI (multi-step workflows, approval chains, conditional logic)
+- Configuring AIP Logic workflows and writing prompts that connect AI to operational ontology data
+- Advanced Contour analysis and Quiver dashboard design
+- Reading and acting on data lineage graphs
+- Data quality governance and stewardship responsibilities
+- Environment management, branching strategy, and production discipline
+- NATO and coalition data considerations
 
-- Authoring optimized PySpark transforms that execute efficiently at scale
-- Designing and implementing incremental pipeline architectures
-- Modeling complex ontology structures including Interfaces and derived properties
-- Writing Functions on Objects (TypeScript) that compute against the Ontology at query time
-- Building and deploying AIP Logic workflows and Agents
-- Developing external applications via the Ontology SDK (OSDK)
-- Managing production infrastructure through Foundry branching and CI/CD gates
+**TM-30 does NOT cover:**
+- Python, PySpark, or any scripting or coding — see TM-40 (Developer)
+- SQL query writing — see TM-40
+- TypeScript, Functions on Objects, or OSDK development — see TM-40
+- Code Workspaces or any IDE-based development — see TM-40
+- Agent Studio application development — see TM-40
+- @incremental transform logic — see TM-40
 
-Do not use this manual to re-learn baseline tasks. Reference TM-20 for Object Type creation, basic transforms, Workshop widget configuration, and basic Action setup. TM-30 assumes fluency in all TM-20 material.
+> **NOTE:** The TM-30 graduate designs solutions. A TM-40 developer implements technical components. Understanding where this boundary falls is the most important skill in this manual. Chapter 4 addresses this explicitly.
 
-## 1-2. USAREUR-AF Advanced Builder Context
+Complete TM-10 and TM-20 before beginning this manual. TM-30 assumes full fluency in all TM-20 material. If you cannot independently build a basic Workshop application, configure an Object Type, and create an Action, stop and complete TM-20 first.
 
-United States Army Europe and Africa (USAREUR-AF) is the Army Service Component Command (ASCC) to United States European Command (USEUCOM), responsible for theater land operations across the European Area of Responsibility (AOR) and integration with NATO Allied command structures and Joint All-Domain Command and Control (JADC2). Advanced builders operating in this environment are the data infrastructure for a NATO-integrated theater. The pipelines, ontology models, and external applications built at TM-30 level must align with the USAREUR-AF 5-Layer Data Stack and cross-domain architecture standards. Errors at this level do not affect one application — they affect the data environment of the entire formation, including coalition partners.
+---
 
-Advanced builders operate under Army CIO data governance policy (April 2024) and must align all data products to USAREUR-AF C2DAO standards and the Unified Data Reference Architecture (UDRA) v1.1 (February 2025). All pipelines, datasets, and ontology models produced at TM-30 level must be traceable to a UDRA-aligned domain and must have a designated data product owner. See section 1-9 for UDRA v1.1 alignment details.
+### 1-2. The Advanced Builder's Role in USAREUR-AF
 
-Advanced builders operate across all five layers of the USAREUR-AF data architecture. This manual covers Layer 2 (advanced transforms, incremental pipelines), Layer 3 (complex ontology, Functions on Objects (FOO), Actions), Layer 4 (advanced Quiver/Contour, custom dashboards), and Layer 5 (AIP integration, OSDK, Actions with complex validation). For Layer 1 infrastructure and cross-domain connectivity, see the CDA Portal NAFv4 resources at learn-data.armydev.com.
+United States Army Europe and Africa (USAREUR-AF) is the Army Service Component Command (ASCC) to United States European Command (USEUCOM), responsible for theater land operations across the European AOR and integration with NATO Allied command structures and Joint All-Domain Command and Control (JADC2). Major subordinate commands — V Corps, 21st Theater Sustainment Command (TSC), 7th Army Training Command (ATC), USAREUR-AF G2, and multinational force elements — all generate and consume data through MSS.
 
-> **NOTE:** Advanced builders should consult `learn-data.armydev.com` for authoritative design patterns and reference implementations, including:
-> - Object Type Cookbook v2 + Addendum A — authoritative Object Type design guidance
-> - DDOF Playbook — Doctrine-Driven Ontology Framework design patterns
-> - Doctrine-Driven Development framework — aligning ontology models to Army operational doctrine
-> - ADP ↔ JP ↔ NATO Crosswalk — mapping Army, Joint, and NATO data constructs
-> - Engagement Ontology (YAML v2.0) — reference implementation for operational event modeling
+The advanced builder is the operational-technical bridge in this formation. You translate what the G2 analyst needs to see, what the S6 NCO needs to track, and what the G9 coordinator needs to report — into a design specification that can be built. You operate at the intersection of domain expertise and platform capability.
 
-**TM-30 Chapter to 5-Layer Data Stack Mapping:**
+**The -30 role in the USAREUR-AF data chain:**
 
-| TM-30 Chapter | Chapter Title | Stack Layer | Layer Name | Key Capabilities |
-|---|---|---|---|---|
-| Chapter 2 | Advanced Python Transforms | Layer 2 | Integration | Advanced transforms, PySpark optimization, multi-input joins |
-| Chapter 3 | Incremental Transforms and Pipeline Patterns | Layer 2 | Integration | @incremental, watermark pattern, late-data handling |
-| Chapter 4 | Advanced Ontology and Object Modeling | Layer 3 | Semantic (Ontology) | Complex Object Types, Interfaces, derived properties |
-| Chapter 5 | Functions on Objects (FOO) | Layer 3 | Semantic (Ontology) | TypeScript FOO, computed properties, link traversal |
-| Chapter 6 | Actions and Write-Back Patterns | Layer 3 | Semantic (Ontology) | Actions with complex validation, batch write-back |
-| Chapter 7 | AIP Integration | Layer 4 / Layer 5 | Analytics / Activation | AIP Logic, Agent Studio, Code Workspaces |
-| Chapter 8 | OSDK (Ontology SDK) | Layer 5 | Activation | External apps, OSDK client, Actions with complex validation |
-| Chapter 9 | Analytics: Quiver and Contour | Layer 4 | Analytics | Advanced Quiver pivots, Contour multi-dataset joins, scheduled reports |
-| Chapter 10 | Data Lineage and CI/CD | Layer 1 / Layer 2 | Infrastructure / Integration | Lineage graph, branching workflow, automated checks |
+```
+MISSION REQUIREMENT
+        |
+        v
+   -30 BUILDER                <- You are here
+   (Design + Configure)
+        |
+        v
+   -40 DEVELOPER              <- Technical implementation when required
+   (Code + Deploy)
+        |
+        v
+   DATA PRODUCT
+   (Ontology + Application)
+        |
+        v
+   -10 USER
+   (Consume + Act)
+```
 
-Advanced builders must understand which layer their work affects and coordinate accordingly with data stewards and the USAREUR-AF C2DAO architecture authority before promoting changes to production.
+A sharp G2 all-source analyst qualified at TM-30 can design a complete ISR tracking application — specifying the Object Types, Link Types, Action flows, Workshop layout, filter logic, and data lineage — and hand a complete technical requirements package to a -40 developer for any components requiring code. That analyst need never touch Python or TypeScript. Their value is knowing what to build and how to specify it precisely.
 
-## 1-3. NATO Interoperability Requirements
+---
 
-Advanced builders operating in the USAREUR-AF environment must account for NATO interoperability requirements across all data products that touch coalition systems or personnel.
+### 1-3. What -30 Graduates Can Design
 
-**Governing standards:**
+| Capability | -30 Can Design | -40 Required For |
+|---|---|---|
+| Workshop applications | Multi-page, conditional layouts, parameter passing, linked widgets | Custom JavaScript, complex external integrations |
+| Pipeline Builder workflows | Multi-source joins, transformations, scheduling, error monitoring | PySpark, @incremental, custom connectors, complex deduplication logic |
+| Ontology models | Object Types, Link Types, properties, Actions, Action Forms | Functions on Objects (TypeScript), OSDK, derived property logic |
+| Actions | Multi-step, conditional logic, approval chains, form design | Webhook integration, external system write-back, complex validation logic |
+| AIP Logic | Workflow configuration, prompt writing, ontology data connections | Agent Studio development, custom function integration, TypeScript logic |
+| Contour / Quiver | Formula editor, aggregations, pivot tables, cross-dataset analysis | Custom chart plugins, programmatic report generation |
+| Data governance | Lineage review, quality check review, stewardship coordination | Custom @check logic, automated quality gate coding |
+| Environment management | Branch management (UI), review coordination, publish decisions | CI/CD pipeline code, automated testing |
 
-- **NATO Architecture Framework v4 (NAFv4)** governs enterprise architecture for all systems operating in the EUCOM AOR. Data pipelines, ontology models, and applications that feed coalition-shared products must comply with NAFv4 viewpoints and architecture standards.
-- **AJP-3 (Allied Joint Publication 3)** establishes joint operations doctrine and the data sharing framework for combined operations in the EUCOM AOR.
-- **AJP-3.2** governs land operations doctrine and associated data exchange requirements for USAREUR-AF-led or contributed land force operations across Germany, Poland, Romania, and the Baltic states.
-- **AJP-5** governs joint operational planning and the planning data standards applicable to combined USAREUR-AF/NATO planning products.
-- Advanced builders working with **Mission Partner Environment (MPE)** data must ensure compliance with NATO data standards, applicable STANAGs, and USAREUR-AF cross-domain authorization requirements before exposing any data product to the MPE or coalition-accessible systems.
+The -30 builder is not blocked by not knowing code. The -30 builder is blocked only by insufficient understanding of the platform and the operational domain. Both are correctable.
+
+---
+
+### 1-4. The USAREUR-AF 5-Layer Data Stack
+
+All TM-30 work occurs within the USAREUR-AF 5-Layer Data Stack. Understanding which layer your design affects determines who you coordinate with and what governance steps apply.
+
+```
++---------------------------------------------------------------+
+|  LAYER 5: ACTIVATION                                          |
+|  (Decisions, Actions, AIP outputs, external system feeds)     |
++---------------------------------------------------------------+
+|  LAYER 4: ANALYTICS                                           |
+|  (Workshop apps, Contour, Quiver, AIP Logic dashboards)       |
++---------------------------------------------------------------+
+|  LAYER 3: SEMANTIC (ONTOLOGY)                                 |
+|  (Object Types, Link Types, Actions, AIP-connected objects)   |
++---------------------------------------------------------------+
+|  LAYER 2: INTEGRATION                                         |
+|  (Pipeline Builder, transforms, staging and curated datasets) |
++---------------------------------------------------------------+
+|  LAYER 1: INFRASTRUCTURE                                      |
+|  (Connectors, sources, access control, cross-domain arch)     |
++---------------------------------------------------------------+
+```
+
+**TM-30 Chapter to 5-Layer Stack Mapping:**
+
+| Chapter | Topic | Primary Layer |
+|---|---|---|
+| Chapter 2 | Advanced Workshop Design | Layer 4 |
+| Chapter 3 | Advanced Pipeline Builder | Layer 2 |
+| Chapter 4 | Ontology Design Methodology | Layer 3 |
+| Chapter 5 | Advanced Action Design | Layer 3 / Layer 5 |
+| Chapter 6 | AIP Logic Configuration | Layer 4 / Layer 5 |
+| Chapter 7 | Advanced Contour and Quiver | Layer 4 |
+| Chapter 8 | Data Governance and Stewardship | Layer 1 / Layer 2 |
+| Chapter 9 | Environment Management | Layer 2 / Layer 3 |
+| Chapter 10 | NATO/Coalition Data | Layer 1 (cross-layer) |
+
+---
+
+### 1-5. UDRA Alignment and Governance Responsibilities
+
+All data products designed at TM-30 level must align with the Unified Data Reference Architecture (UDRA) v1.1 (February 2025) and Army CIO Data Stewardship Policy (April 2, 2024).
+
+**Core UDRA requirements for -30 builders:**
+
+1. **Domain ownership.** Every data product must be traceable to a defined data domain with an identified domain owner. You cannot design a data product in isolation — identify the domain before you begin design.
+2. **Federated governance.** Data governance is distributed. The C2DAO sets architecture standards; domain stewards govern content. Know which steward owns the data you are designing against.
+3. **Data product thinking.** Treat every output — dataset, Ontology object, Workshop application — as a product with a defined consumer, a stated SLA, and documented quality standards.
+4. **Layer verification.** Before publishing, verify your product is operating at the correct layer and not bypassing governance gates (e.g., a Workshop app reading directly from raw data — not authorized).
+
+> **NOTE:** The VAUTI framework (Visible, Accessible, Understandable, Trustable, Interoperable) from DoD Data Strategy (2020) applies to all MSS data products. Advanced builders are responsible for ensuring their designs meet all five criteria before publication.
+
+See Appendix C for the UDRA Alignment Checklist. Complete this checklist for every data product before publishing to production.
+
+---
+
+### 1-6. Governing References
+
+| Document | Relevance |
+|---|---|
+| Army CIO Data Stewardship Policy (April 2, 2024) | Data stewardship hierarchy, governance chain, data product standards |
+| UDRA v1.1 (February 2025) | Unified Data Reference Architecture — domain ownership, federated governance |
+| DoD Data Strategy (2020) | VAUTI framework — Visible, Accessible, Understandable, Trustable, Interoperable |
+| USAREUR-AF C2DAO Guidance | Theater-level architecture standards for MSS data products |
+| NATO Architecture Framework v4 (NAFv4) | Coalition data architecture standards for MPE-accessible products |
+| AJP-3.2 | Allied land operations doctrine and data exchange requirements |
+
+> **NOTE:** Advanced builders should consult `learn-data.armydev.com` for authoritative design patterns and reference implementations:
+> - **Object Type Cookbook v2 + Addendum A** — canonical ontology modeling reference for operational Object Types
+> - **DDOF Playbook** — Doctrine-Driven Ontology Framework design patterns
+> - **Doctrine-Driven Development** — aligning ontology models to Army operational doctrine
+> - **ADP to JP to NATO Crosswalk** — mapping Army, Joint, and NATO data constructs
+> - **Engagement Ontology (YAML v2.0)** — reference implementation for operational event modeling
+
+---
+
+### 1-7. Prerequisites and Access Requirements
+
+Before performing any TM-30 level work on MSS, confirm the following:
+
+**Knowledge prerequisites:**
+- [ ] TM-10 (Maven User) completed
+- [ ] TM-20 (Builder) completed — fluency confirmed by team lead
+- [ ] ADRP 1, Data Literacy completed (required at TM-30 level)
+
+**Access requirements:**
+- [ ] Advanced Builder role requested and approved through chain of command
+- [ ] Editor/Owner role on relevant project folders confirmed
+- [ ] Ontology Editor role confirmed
+- [ ] AIP Logic access confirmed (if applicable to your role)
+- [ ] Data steward for your primary data domain identified
+
+**Orientation requirements:**
+- [ ] Reviewed the data lineage graph for your team's primary pipeline
+- [ ] Located and reviewed the Ontology model for your primary data domain
+- [ ] Identified the C2DAO architecture authority and your domain data steward
+- [ ] Reviewed at least one existing complex Workshop application end-to-end (not as a user — as a builder examining the design)
+
+Do not begin TM-30 level design work until all items above are confirmed. The elevated access you hold at this level can affect production systems. Orientation is not optional.
+
+---
+
+## CHAPTER 2 — ADVANCED WORKSHOP APPLICATION DESIGN
+
+### 2-1. The Multi-Page Application Model
+
+TM-20 Workshop applications are typically single-page, purpose-specific tools. TM-30 applications are multi-page, cross-functional platforms that serve multiple user roles within a single application experience. A well-designed multi-page application reduces application sprawl, maintains consistent data context across views, and reduces the burden on end users who would otherwise navigate between multiple tools.
+
+**When to build multi-page vs. multiple single-page applications:**
+
+| Scenario | Recommendation |
+|---|---|
+| Same user roles, different analytical views of the same data | Multi-page application |
+| Same data domain, different user roles with different access requirements | Multi-page with role-based visibility |
+| Completely different data domains used by different formations | Separate applications |
+| One application is a summary; others are detailed drill-downs | Multi-page with navigation links |
+| Theater-level readiness dashboard (G3/G4/G6 shared view) | Multi-page — one app per staff section is application sprawl |
+
+**Operational example:** A Grafenwöhr exercise support platform might have four pages: (1) Unit Readiness Status, (2) Logistics Tracking, (3) ISR Event Log, and (4) SITREP Submission Form. All four use overlapping data (unit identifiers, grid references, DTGs) and serve overlapping users. A single multi-page application is the correct design.
+
+---
+
+**TASK 2-1. DESIGN A MULTI-PAGE WORKSHOP APPLICATION**
+
+**CONDITIONS:** Given an existing Workshop project and a set of user requirements covering multiple analytical views or user roles, when designing a new application structure.
+
+**STANDARDS:** The builder will produce a multi-page application with logical page organization, consistent navigation, and a documented page map before building any individual page.
+
+**PROCEDURE:**
+1. Open Workshop and navigate to the target project folder in Compass.
+2. Create a new Workshop application. Name it per USAREUR-AF naming conventions: `[Formation] [Function] [Application Type]` (e.g., `USAREUR-AF G3 Readiness Platform`).
+3. Before adding any widget, create the page structure. In the left panel, select **Pages** and add pages for each major view. Name pages plainly: `Readiness Overview`, `Unit Detail`, `Logistics Tracker`, `SITREP Submission`.
+4. Create a Page Map document (outside MSS — a whiteboard sketch, notes document, or Appendix B checklist). Document: page name, primary user role, primary Object Types displayed, and Actions available on each page.
+5. Configure the navigation bar on each page to include links to all other pages. Do not hide pages from navigation unless role-based access requires it.
+6. Identify shared parameters (filters, selections) that must persist across page navigation. Document these before building widgets. See Task 2-3 for parameter design.
+7. Build pages in order: start with the page that contains the most data-intensive view (typically the overview or map page). Resolve data binding issues on the hardest page first before replicating patterns to simpler pages.
+
+> **NOTE:** Page count is not a quality metric. Three well-designed pages that answer the user's questions are better than eight pages of redundant views. Review your page map with the end user before building.
+
+---
+
+### 2-2. Conditional Layouts
+
+Conditional layouts allow a single application to present different content based on user role, selected object state, or dynamic filter values. This eliminates the need for separate applications for different user types and reduces maintenance burden.
+
+**Common conditional layout patterns in USAREUR-AF applications:**
+
+| Pattern | Use Case |
+|---|---|
+| Role-based visibility | G2 users see ISR fields; G4 users see logistics fields; same application |
+| Object state-driven content | Show AMBER status detail panel only when a unit's readiness is below threshold |
+| Empty state handling | Display a placeholder panel when no object is selected in a list |
+| Filter result handling | Show a "no results" message when a filter combination returns zero objects |
+
+---
+
+**TASK 2-2. CONFIGURE CONDITIONAL VISIBILITY ON A WORKSHOP WIDGET**
+
+**CONDITIONS:** Given a Workshop application with multiple user roles defined, when a widget or panel should display only under specific conditions.
+
+**STANDARDS:** The builder will configure the conditional visibility expression so that the widget renders correctly for the intended condition and is hidden otherwise, with no widget errors in either state.
+
+**PROCEDURE:**
+1. Select the widget or container panel to which you want to apply conditional visibility.
+2. In the right-hand properties panel, locate the **Visibility** section.
+3. Select **Conditional** (not Always Visible or Always Hidden).
+4. Open the expression editor. The expression must evaluate to true (show) or false (hide).
+5. For role-based visibility: reference the built-in `currentUser.groups` variable. Example: show a panel only to users in the `G2-ISR-Analysts` group.
+6. For object-state-driven visibility: reference the selected object's property. Example: show an escalation panel only when `UnitStatus.readinessLevel` equals `AMBER` or `RED`.
+7. For empty state handling: use the `isNull()` or `isEmpty()` functions against the relevant variable.
+8. After configuring the expression, use the Workshop preview mode to test both the visible and hidden states.
+
+> **CAUTION: Conditional visibility hides widgets — it does not restrict data access. A user who can access the application can still access the underlying data even if a widget displaying that data is hidden from their view. For true access restriction, use Foundry object-level security configured by your platform admin. Do not use conditional visibility as a security control.**
+
+---
+
+### 2-3. Variable and Parameter Design
+
+Variables and parameters are the connective tissue of complex Workshop applications. They allow user selections on one widget to drive content on other widgets, across multiple pages, and within Action forms. Poor variable design is the most common cause of complex application performance problems.
+
+**Variable types and when to use each:**
+
+| Variable Type | Best For | Avoid For |
+|---|---|---|
+| Object Set Variable | Driving lists, tables, maps from a filtered object set | Storing single values — use a property variable instead |
+| String/Number Variable | Capturing filter values, storing user input for display | Large data payloads |
+| URL Parameters | Sharing application state via link; deep-linking to a specific object | Sensitive data — URL parameters are visible |
+| Temporary Variable | Local state within a single page | Cross-page state — temporary variables do not persist across navigation |
+
+---
+
+**TASK 2-3. CONFIGURE A CROSS-PAGE PARAMETER TO PASS OBJECT SELECTION BETWEEN PAGES**
+
+**CONDITIONS:** Given a multi-page Workshop application where a user selects an object on Page 1 (e.g., a unit from a readiness table) and needs to see that object's detail view on Page 2.
+
+**STANDARDS:** The selected object on Page 1 persists as the context object on Page 2 without requiring the user to re-select. Page 2 displays detail content for the object selected on Page 1.
+
+**PROCEDURE:**
+1. On Page 1, identify the widget that contains the primary object selection (e.g., a Table or List widget displaying `UnitStatus` objects).
+2. In the Page 1 variable panel, create a new **Object Variable** of the appropriate Object Type (e.g., `UnitStatus`).
+3. Bind the Table widget's "selected row" output to this Object Variable.
+4. On the Page 1 navigation button or link that routes to Page 2, open the **Pass Variables** configuration.
+5. Map the Page 1 Object Variable to a corresponding Object Variable on Page 2. Create the Page 2 variable if it does not yet exist.
+6. On Page 2, build widgets that reference the passed Object Variable as their data source.
+7. Configure the empty state for Page 2 widgets to display a meaningful message when no object has been passed (i.e., the user navigated to Page 2 directly without selecting an object on Page 1).
+8. Test the full flow: select an object on Page 1, navigate to Page 2, verify the correct object's data appears, navigate back, select a different object, verify Page 2 updates.
+
+> **NOTE:** URL parameters are an alternative to page-level variable passing. URL parameters allow deep-linking — a user can share a URL that opens the application directly to a specific object. Use URL parameters when you need shareable links (e.g., a SITREP that links directly to the unit detail view for a specific reporting unit). Configure URL parameters in the Application Settings panel.
+
+---
+
+### 2-4. Complex Filter Chains
+
+Complex filter chains allow Workshop applications to support multi-dimensional operational analysis — for example, filtering a Baltic flank readiness view by AOR, readiness tier, reporting period, and unit type simultaneously. Poorly designed filter chains degrade application performance and confuse users.
+
+**Design principles for complex filter chains:**
+
+1. **Order filters from most selective to least.** Apply the filter that reduces the object set the most first. For USAREUR-AF use cases, AOR or formation filters are almost always the most selective and should be applied first.
+2. **Use dependent filters.** A dependent filter's options update based on the selection in a prior filter (e.g., after selecting V Corps as the formation, the unit list filter shows only V Corps units). Configure dependency in the filter widget's data source expression.
+3. **Provide a "clear all filters" control.** Users will inevitably filter themselves into a zero-result state. A single button that resets all filter variables to their default values prevents confusion.
+4. **Document the filter chain in your design.** Before building, draw the filter dependency graph. Filters with circular dependencies will cause infinite loops.
+
+---
+
+**TASK 2-4. BUILD A DEPENDENT FILTER CHAIN FOR AN OPERATIONAL READINESS VIEW**
+
+**CONDITIONS:** Given a Workshop application displaying `UnitStatus` objects for USAREUR-AF formations, when a user needs to filter by theater, then corps, then division, then brigade in sequence.
+
+**STANDARDS:** Each filter in the chain updates its available options based on the prior selection. Selecting V Corps in the Corps filter shows only V Corps divisions in the Division filter. The object view updates after all filters are applied.
+
+**PROCEDURE:**
+1. Create String Variables for each filter level: `selectedTheater`, `selectedCorps`, `selectedDivision`, `selectedBrigade`.
+2. Add a Dropdown widget for Theater. Set its data source to the distinct values of `UnitStatus.theaterLevel`. Bind its output to `selectedTheater`.
+3. Add a Dropdown widget for Corps. Set its data source to the distinct values of `UnitStatus.corpsLevel` filtered where `theaterLevel` equals `selectedTheater`. Bind its output to `selectedCorps`.
+4. Repeat this pattern for Division and Brigade, each filtered by the preceding selection.
+5. Configure the primary Object Set (the data source for the readiness table or map) to apply all four filters: `UnitStatus` where all four level variables match. Use null-safe comparisons so that if a filter variable is empty (not yet selected), that filter does not constrain the result.
+6. Add a **Clear Filters** Button widget. Configure its click action to reset all four String Variables to null/empty.
+7. Test all filter combinations, including the empty state (no filters selected) and the fully-filtered state (all four filters selected).
+
+> **CAUTION: Dependent filter chains that reference large object sets without indexed properties can significantly degrade application load time. If a filter chain over more than 50,000 objects is responding slowly, escalate to a -40 developer to review the underlying object set and index configuration before deploying to production.**
+
+---
+
+### 2-5. Linked Widgets and Synchronized Views
+
+Linked widgets allow user interaction with one widget (e.g., selecting a row in a table) to drive updates in other widgets simultaneously (e.g., a map zooms to that unit's location, a detail panel shows that unit's properties, a chart filters to that unit's historical data). This pattern is the foundation of operational dashboards.
+
+---
+
+**TASK 2-5. CONFIGURE LINKED WIDGETS FOR A SITREP DASHBOARD**
+
+**CONDITIONS:** Given a SITREP aggregation application with a unit roster table, a theater map, a readiness trend chart, and a detail panel, when a user selects a unit in the table.
+
+**STANDARDS:** Selecting a unit in the table simultaneously (a) highlights that unit's marker on the map, (b) updates the trend chart to show that unit's data only, and (c) populates the detail panel with that unit's current SITREP properties.
+
+**PROCEDURE:**
+1. Create an Object Variable `selectedUnit` of type `UnitStatus`.
+2. On the Table widget: bind the "selected row" output to `selectedUnit`.
+3. On the Map widget: configure the "highlight layer" or "selected object" binding to reference `selectedUnit`. The map will highlight the marker for the selected object.
+4. On the Trend Chart widget: set the data filter to `UnitStatus where objectId = selectedUnit.objectId`. The chart will update to show only the selected unit's historical data.
+5. On the Detail Panel container: set each property display widget's data source to the corresponding property of `selectedUnit`. The panel will update all fields simultaneously when `selectedUnit` changes.
+6. Set the empty state for the map highlight, chart, and detail panel to display appropriate placeholder content when `selectedUnit` is null.
+7. Test by selecting multiple rows in the table sequentially and verifying all linked widgets update correctly.
+
+> **NOTE:** Do not attempt to link more than five to seven widgets to a single Object Variable without testing performance. Each widget re-renders on selection change. Applications with 15 or more linked widgets may exhibit noticeable lag on large object sets. Test with realistic data volumes, not sample data.
+
+---
+
+### 2-6. Application Performance Considerations
+
+Performance is a design responsibility. A slow application that serves the right data is functionally unusable in an operational environment. Understand the common causes of Workshop application performance problems before designing at TM-30 level.
+
+**Performance design principles:**
+
+| Principle | Action |
+|---|---|
+| Filter early | Apply the most restrictive filters at the object set level, not at the widget level |
+| Paginate large tables | Do not display more than 200-500 rows without pagination — configure page size in Table widget settings |
+| Avoid deeply nested containers | More than three levels of nested containers increases render time |
+| Minimize real-time refresh intervals | Default auto-refresh is sufficient for most operational views; do not set sub-minute refresh without a specific requirement |
+| Use object-level security, not widget-level visibility, for access control | Widget visibility checks run client-side; object security runs server-side and is more efficient |
+| Limit concurrent linked widgets | See Task 2-5 note above |
+
+**When to escalate to a -40 developer:**
+- Application takes more than 5 seconds to load on the first page render with production-volume data
+- A filter operation on a large object set (100,000 or more objects) consistently hangs or times out
+- A required feature cannot be achieved with available Workshop widgets and formula functions
+
+---
+
+## CHAPTER 3 — ADVANCED PIPELINE BUILDER
+
+### 3-1. Pipeline Builder Capabilities at TM-30 Level
+
+Pipeline Builder is MSS's visual ETL tool. TM-20 covered single-source ingestion pipelines with basic transformations. TM-30 covers multi-source joins, complex transformations using the visual transform library, error handling, scheduling optimization, and pipeline monitoring.
+
+> **NOTE:** Pipeline Builder is a no-code visual tool. TM-30 builders configure pipelines entirely through the UI. If a pipeline requirement cannot be achieved in Pipeline Builder's visual interface — for example, complex deduplication logic, @incremental watermark patterns, or custom Python transformations — that requirement belongs to a -40 developer. Design what you can; specify the rest. See Chapter 4 and Appendix A for the handoff process.
+
+**When Pipeline Builder is sufficient (TM-30 can own):**
+- Multi-source joins with standard join types (inner, left, full outer)
+- Column renaming, type casting, filtering, and calculated columns using built-in formula functions
+- Schema harmonization across sources with compatible field names and types
+- Aggregations: group-by, sum, count, average, min, max
+- Scheduled execution with standard recurrence patterns
+- Basic deduplication using row-number ranking on a key column
+
+**When a -40 developer is required:**
+- @incremental (watermark-based) pipelines
+- Custom deduplication logic requiring complex business rules
+- PySpark transformations
+- External API calls or custom connectors
+- Complex date/time business logic beyond built-in functions
+- Pipelines processing more than approximately 10 million rows that require execution optimization
+
+---
+
+### 3-2. Multi-Source Join Design
+
+Joining multiple data sources in Pipeline Builder requires careful design. The most common errors in multi-source pipelines are (a) join key mismatches due to data quality issues, (b) fan-out (unintended row multiplication from one-to-many joins), and (c) performance degradation from large cross-joins.
+
+**Join design principles:**
+
+1. **Identify join keys before opening Pipeline Builder.** Know the exact field names and data types of every join key across all sources. Data type mismatches (e.g., joining a string unit ID to an integer unit ID) will silently drop rows.
+2. **Profile both sides before joining.** Use the Column Statistics view in the dataset preview to check null rates and distinct value counts on join key columns before building the join node.
+3. **Understand cardinality.** A one-to-many join will multiply rows. An ISR event table joined to a unit roster where one unit has 50 events will produce 50 rows per unit. Design downstream aggregations accordingly.
+4. **Validate row counts after every join.** After adding a join node, preview the output and check: input row count vs. expected output based on relationship type. If it does not match, the join condition is wrong.
+
+---
+
+**TASK 3-1. BUILD A MULTI-SOURCE JOIN PIPELINE IN PIPELINE BUILDER**
+
+**CONDITIONS:** Given two curated datasets — a unit status dataset and a location dataset — that share a common unit identifier, when building a pipeline to produce a unified unit profile dataset.
+
+**STANDARDS:** The output dataset contains one row per unit, with columns from both source datasets correctly joined. Row count equals the number of unique unit identifiers in the status dataset. No duplicate rows. No unexpected nulls on expected join-key fields.
+
+**PROCEDURE:**
+1. Open Compass and navigate to your project's pipeline folder.
+2. Create a new Pipeline. Name it per USAREUR-AF naming conventions.
+3. Add the first Source node. Configure it to reference the unit status curated dataset.
+4. Add the second Source node. Configure it to reference the unit location curated dataset.
+5. Add a **Join** node. Connect both Source nodes to the Join node.
+6. Configure the Join type. For a standard unit roster join: use **Left Join** (keep all units from the status dataset; add location data where available; null location fields where the unit has no location record).
+7. Set the join condition: `status.unitId = location.unitId`. Confirm both fields are the same data type in the column headers.
+8. Preview the Join output. Check: row count matches the unit status source row count. If row count is higher, there are duplicate keys in the location dataset — resolve before proceeding.
+9. Add a **Select Columns** node downstream of the Join. Remove duplicate key columns (the join produces two copies of `unitId`). Retain only required columns.
+10. Add the Output node. Configure the output path per naming conventions (using the `/curated` tier path).
+11. Run the pipeline manually. Review the build log for warnings (e.g., type coercion warnings indicate silent data conversion).
+12. Preview the final output. Spot-check five to ten rows against source records to verify field alignment.
+
+> **CAUTION: Do not join raw datasets. Always join curated or staging datasets where data quality has been validated. Joining raw datasets propagates upstream data quality problems into joined outputs, and these problems are difficult to trace after the fact.**
+
+---
+
+### 3-3. Calculated Columns and Transformations
+
+Pipeline Builder's **Derived Column** node allows creation of calculated columns using the built-in formula language. This is the primary TM-30 mechanism for data enrichment — adding readiness scores, normalizing status codes, computing time deltas, and flagging records that meet operational thresholds.
+
+**Common operational calculated columns:**
+
+| Use Case | Formula Pattern |
+|---|---|
+| Days since last SITREP | `dateDiff(today(), lastSitrepDate, "day")` |
+| Readiness tier flag | `if(readinessScore >= 90, "GREEN", if(readinessScore >= 75, "AMBER", "RED"))` |
+| Unit display name normalization | `concat(echelon, " ", unitDesignation, " (", bia, ")")` |
+| Null-safe status label | `coalesce(reportedStatus, "UNKNOWN")` |
+| DTG to readable format | `dateFormat(dtgTimestamp, "DDHHMMZ MMM YYYY")` |
+
+---
+
+**TASK 3-2. ADD A READINESS TIER CALCULATED COLUMN**
+
+**CONDITIONS:** Given a pipeline with a unit status dataset containing a numeric `readinessScore` field (0-100), when the downstream Ontology and Workshop application require a categorical readiness tier field (GREEN, AMBER, RED).
+
+**STANDARDS:** The output dataset contains a `readinessTier` column populated with the correct categorical value for every row. No nulls in `readinessTier` (use UNKNOWN as default for null input scores).
+
+**PROCEDURE:**
+1. Downstream of the source or join node (but before the output node), add a **Derived Column** node.
+2. Name the new column `readinessTier`.
+3. Open the formula editor.
+4. Enter the conditional expression: `if(isNull(readinessScore), "UNKNOWN", if(readinessScore >= 90, "GREEN", if(readinessScore >= 75, "AMBER", "RED")))`.
+5. Preview the Derived Column output. Verify that the formula correctly categorizes sample rows across the GREEN, AMBER, RED, and null-input cases.
+6. Check the distinct values of `readinessTier` in the Column Statistics view. Verify no unexpected values appear.
+
+> **NOTE:** The formula language in Pipeline Builder's Derived Column node uses the same syntax as Contour's calculated column editor (see Chapter 7). Mastery of this formula language is a high-leverage TM-30 skill — it applies across Pipeline Builder, Contour, and Workshop formula-driven widgets.
+
+---
+
+### 3-4. Error Handling and Pipeline Monitoring
+
+TM-30 builders own the operational health of the pipelines they design. A pipeline that silently produces incorrect output is more dangerous than one that fails loudly.
+
+**Pipeline error categories and response:**
+
+| Error Category | Symptom | TM-30 Action |
+|---|---|---|
+| Schema change in source | Pipeline fails with "column not found" | Investigate source dataset, update Select Columns node, notify data steward |
+| Join key null spike | Row count drops unexpectedly | Check null rate on join key in source; notify upstream data steward |
+| Type coercion warning | Numeric column shows string values | Add explicit type cast node upstream; check source data quality |
+| Execution timeout | Pipeline marked failed after long run | Reduce payload (add filter node); escalate to -40 developer for optimization |
+| Missing output rows | Output row count lower than expected | Check join type, filter conditions, and source freshness |
+
+---
+
+**TASK 3-3. CONFIGURE PIPELINE FAILURE ALERTING**
+
+**CONDITIONS:** Given a production pipeline running on a scheduled cadence, when the pipeline fails or produces output below an expected row count threshold.
+
+**STANDARDS:** The designated team lead receives an MSS notification within 15 minutes of a pipeline failure. The notification includes the pipeline name, failure timestamp, and last successful run time.
+
+**PROCEDURE:**
+1. Open the target pipeline in Pipeline Builder.
+2. Navigate to the **Schedule and Alerts** configuration panel.
+3. Under **Alerts**, select **Add Alert**.
+4. Configure trigger condition: **On Failure** — alerts when the pipeline build fails for any reason.
+5. Optionally add a second alert: **On Row Count Below Threshold** — configure the expected minimum row count for the output dataset (e.g., if the unit status dataset should never contain fewer than 50 rows, set threshold at 50).
+6. Set notification recipients: add the team lead's MSS username and any other required recipients.
+7. Set the notification channel: MSS in-platform notification (default) or email (if configured by your platform admin).
+8. Save alert configuration and confirm it appears in the pipeline's alert summary.
+9. Document the alert configuration in the pipeline description field.
+
+---
+
+### 3-5. Scheduling Optimization
+
+Pipeline scheduling must be designed to balance data freshness requirements against platform resource constraints. Not every pipeline needs to run every hour.
+
+**Scheduling design guidance for USAREUR-AF pipelines:**
+
+| Data Type | Recommended Cadence | Rationale |
+|---|---|---|
+| SITREP aggregations | Every 2-4 hours during operational hours | SITREPs are submitted on 6-12 hour cycles; more frequent refresh provides no value |
+| ISR event feeds | Every 30-60 minutes (if source updates at this rate) | ISR data has time-sensitivity; match pipeline cadence to source update rate |
+| Readiness/personnel data | Daily (off-peak hours) | PERSTAT/readiness data changes on daily cycles; hourly runs waste resources |
+| Logistics visibility | Every 4-6 hours | Logistics transactions process in batches; match cadence to batch cycle |
+| Exercise support pipelines | On-demand or every 15-30 minutes during exercise window only | High-tempo during exercise; disable or extend to daily after exercise concludes |
+
+> **CAUTION: Setting pipeline schedules more frequently than the source data update rate provides no benefit and consumes platform resources shared across the entire formation. Coordinate with the source system owner to understand the actual data update cadence before configuring pipeline schedule.**
+
+---
+
+**TASK 3-4. CONFIGURE A PIPELINE SCHEDULE**
+
+**CONDITIONS:** Given a production pipeline that must run during operational hours at the required cadence, when configuring the pipeline's execution schedule.
+
+**STANDARDS:** The pipeline runs at the configured cadence within the operational window. The schedule is documented in the pipeline description.
+
+**PROCEDURE:**
+1. Open the target pipeline in Pipeline Builder.
+2. Navigate to **Schedule and Alerts** (same panel as Task 3-3).
+3. Enable the **Schedule** toggle.
+4. Select the recurrence pattern: hourly, daily, weekly, or custom cron expression.
+5. For operationally-sensitive pipelines (e.g., SITREP aggregation before a commander's daily update brief), use a custom cron expression to ensure the pipeline completes at least 30 minutes before the brief time.
+6. Set the time zone to `Europe/Berlin` (CET/CEST) for USAREUR-AF headquarters pipelines. Confirm with your team lead for pipelines supporting units in other time zones.
+7. If the pipeline only needs to run during exercises or operational events: configure a **Start Date** and **End Date** for the schedule. This prevents the pipeline from consuming resources outside the operational window.
+8. Click **Save Schedule**. Verify the next scheduled run time displays correctly.
+9. Document the schedule and rationale in the pipeline description field (e.g., "Runs every 2 hours 0600-2200 CET. Aligned to USAREUR-AF daily SITREP cycle. Disable outside exercise windows.").
+
+---
+
+## CHAPTER 4 — ONTOLOGY DESIGN METHODOLOGY
+
+### 4-1. The -30 Builder's Role in Ontology Design
+
+The Ontology is the semantic layer of MSS. It translates data tables into operational concepts — a row in a dataset becomes a `UnitStatus`, a `LogisticsShipment`, or an `ISREvent`. The Ontology is shared infrastructure. Changes to it affect every application and pipeline that references the modified objects.
+
+At TM-30 level, you **design** Ontology models. You define the Object Types, Link Types, properties, and Actions that are required to meet an operational need. Some of this design work you can implement yourself through the Ontology Manager UI. Some of it — Functions on Objects, derived properties requiring TypeScript, OSDK integration — requires a -40 developer to implement. Your job is to produce a design specification precise enough that a developer can implement it without needing to re-derive the requirements.
+
+This chapter covers:
+- How to think about Object Type design
+- How to design Link Types that reflect operational relationships
+- How to design Actions that support operational workflows
+- How to write technical requirements for a -40 developer
+- Reference resources and design patterns from `learn-data.armydev.com`
+
+> **NOTE:** The Object Type Cookbook v2 at `learn-data.armydev.com` is the authoritative reference for Object Type design in the USAREUR-AF environment. Addendum A covers operational Object Types specific to Army warfighting functions. Review both before designing any new Object Type.
+
+---
+
+### 4-2. Object Type Design Methodology
+
+Object Types must reflect operational concepts, not database schema. The question "what is a record in this table?" is a data question. The question "what is the operational entity this data represents, and how do commanders and staff reason about it?" is an Ontology design question.
+
+**Object Type design decision framework:**
+
+| Question | Guidance |
+|---|---|
+| What real-world operational concept does this represent? | Name the Object Type after the concept, not the table (e.g., `UnitStatus`, not `unit_status_curated`) |
+| Who uses this object and what decisions do they make with it? | Properties must support the user's decision — include the properties that matter; exclude irrelevant database fields |
+| How does this object relate to other objects in the Ontology? | Identify Link Types before finalizing properties — some relationships will drive additional property requirements |
+| Will this object need to be searched, filtered, or aggregated at scale? | Identify search-eligible and indexed properties during design |
+| Will this object's properties ever be computed (not directly stored)? | Flag these for -40 developer implementation as derived properties or Functions on Objects |
+| Does this object type already exist in the Ontology? | Check the Ontology Manager and Object Type Cookbook before creating a new type — avoid duplication |
+
+**Design anti-patterns to avoid:**
+
+| Anti-Pattern | Why It Fails |
+|---|---|
+| Creating an Object Type for every dataset table | Object Types represent concepts, not tables. One concept may draw from multiple tables. |
+| Naming Object Types after systems or source feeds | `AFATDSEvent` is a system name; `FireMissionRequest` is an operational concept |
+| Including every column from the source table as a property | More properties equals more maintenance; include only operationally relevant properties |
+| Creating separate Object Types for status variations | `ActiveUnitStatus` and `InactiveUnitStatus` should be one type with a `status` property |
+| Designing without checking existing Ontology | May duplicate existing Object Types and create parallel, conflicting models |
+
+---
+
+### 4-3. Link Type Design
+
+Link Types represent relationships between Object Types. A `UnitStatus` is linked to `PersonnelRecord` objects (the soldiers assigned to it). An `ISREvent` is linked to `GridReference` objects (where it occurred) and `UnitStatus` objects (the reporting unit). Link Types are how the Ontology models operational context.
+
+**Link Type design principles:**
+
+1. **Name Link Types as verb phrases** from the perspective of the source object. `UnitStatus` assigns to `GarrisonLocation`. Read naturally: "A UnitStatus is assigned to a GarrisonLocation."
+2. **Define cardinality explicitly.** One-to-one, one-to-many, or many-to-many. Cardinality affects how Workshop applications can traverse links and how Contour can aggregate across them.
+3. **Only create Link Types that serve a business need.** If no application or analysis will traverse the link, the link adds maintenance burden without value.
+4. **Document the foreign key.** Every Link Type must have an identified foreign key relationship between the backing datasets. Document this in the Link Type description field.
+5. **Consult the Engagement Ontology (YAML v2.0) at `learn-data.armydev.com`** before designing links for operational event models. The Engagement Ontology provides the canonical link model for combat events, ISR events, and unit interactions.
+
+---
+
+### 4-4. Designing Actions
+
+Actions are the mechanism through which users write data back to the Ontology. TM-20 covers basic single-step Actions. TM-30 designs Actions that support complex operational workflows — multi-step submission flows, conditional logic, approval chains, and integration with other Actions.
+
+Action design is separate from Action configuration. Designing an Action means:
+1. Defining the operational workflow the Action supports
+2. Specifying the inputs (form fields) required
+3. Specifying the validation rules that must pass before submission
+4. Specifying what data changes (which Object Type properties, which objects)
+5. Determining whether the Action requires approval before execution
+6. Identifying any downstream notifications or follow-on actions
+
+Design this on paper or in a requirements document before opening the Ontology Manager. Configuration follows design.
+
+---
+
+### 4-5. Writing Technical Requirements for a -40 Developer
+
+When your design requires a -40 developer to implement technical components (Functions on Objects, derived properties, OSDK integration, @incremental pipeline logic, complex Action validation), you must provide a complete and precise technical requirements document.
+
+> **NOTE:** A vague handoff to a developer wastes time and produces incorrect implementations. The requirements document in Appendix A is the standard template for all -30 to -40 handoffs on USAREUR-AF MSS projects. Use it every time.
+
+**What a good -30 to -40 requirements document covers:**
+
+| Section | Content Required |
+|---|---|
+| Operational context | What mission problem this solves; who the users are; what decision they make |
+| Data inputs | Source datasets (by path), relevant columns, known data quality issues |
+| Object Types and Link Types | Which existing types are involved; which new types are needed (with full property specs) |
+| Required technical components | Specific functions, pipelines, or integrations needed — with inputs, outputs, and logic description |
+| Non-functional requirements | Performance expectations, refresh rate, data volume |
+| Acceptance criteria | How will you verify the implementation is correct? Specific, measurable. |
+| Timeline and priority | When this is needed; priority relative to other work |
+| Point of contact | Who owns the requirement; who to ask for clarification |
+
+See Appendix A for the full template.
+
+---
+
+**TASK 4-1. DESIGN AN OBJECT TYPE FOR AN OPERATIONAL USE CASE**
+
+**CONDITIONS:** Given a G2 requirement to track ISR collection events on the Baltic flank — including event type, grid reference, collection asset, reporting unit, DTG, and analyst assessment — when designing the corresponding Ontology model.
+
+**STANDARDS:** The builder will produce a complete Object Type design document (outside MSS, prior to any implementation) specifying: Object Type name, all properties with data type and source field mapping, linked Object Types, required Link Types with cardinality, and a list of any components requiring -40 developer implementation.
+
+**PROCEDURE:**
+1. Review the source data available: identify the dataset(s) that will back the Object Type. Note the dataset paths, column names, and data types.
+2. Name the Object Type. Use PascalCase, singular noun, operational concept name: `ISRCollectionEvent`.
+3. List all properties. For each property, document:
+   - Property name (camelCase)
+   - Data type (string, integer, timestamp, boolean, geo-point)
+   - Source dataset column name
+   - Whether this property is search-eligible (can users search for it?)
+   - Whether this property is required to be non-null
+4. Identify related Object Types: `UnitStatus` (reporting unit), `GridReference` (location of event), `CollectionAsset` (sensor or platform). Check the Ontology Manager to confirm these Object Types already exist before designing new ones.
+5. Define Link Types. For each: name (verb phrase from `ISRCollectionEvent`'s perspective), target Object Type, cardinality, foreign key.
+6. Identify derived properties or computed values (e.g., "time since collection event" is time-relative — requires a Function on Objects). Flag each as requiring -40 developer implementation.
+7. Document the design in the -30 to -40 handoff template (Appendix A) and review with your team lead before beginning implementation in Ontology Manager.
+
+> **NOTE:** Consult the DDOF Playbook at `learn-data.armydev.com` for the Doctrine-Driven Ontology Framework design patterns before designing Object Types for ISR, fires, or maneuver tracking use cases. The Doctrine-Driven Development framework provides Army doctrine-aligned patterns for these domains that have been validated against ADP 3-0, FM 3-55, and NATO doctrine equivalents.
+
+> **NOTE:** The ADP to JP to NATO Crosswalk at `learn-data.armydev.com` provides mappings between Army doctrine terms, Joint doctrine equivalents, and NATO/STANAG terminology. Use this reference when designing Object Types for products that will be shared with joint or coalition partners — use the NATO-compatible term as the canonical Object Type name where applicable.
+
+---
+
+## CHAPTER 5 — ADVANCED ACTION DESIGN VIA UI
+
+### 5-1. Actions at TM-30 Level
+
+TM-20 Actions are single-step: a user fills out a form, submits it, and one object is updated. TM-30 Actions support operational workflows: multi-step submission processes, conditional routing based on submitted values, approval chains requiring sign-off before data changes are applied, and form logic that dynamically adjusts what fields are shown based on prior inputs.
+
+All TM-30 Action design is performed through the Action Editor UI in Ontology Manager. No code is required. If a workflow requirement cannot be achieved through the Action Editor UI — for example, calling an external system API on submission, or executing complex server-side validation logic — that requirement belongs to a -40 developer. Design the workflow; specify the technical gap; hand it off.
+
+---
+
+### 5-2. Multi-Step Action Workflows
+
+Multi-step Actions guide users through a structured process with distinct phases. A SITREP submission workflow might have three steps: (1) Unit identification and reporting period, (2) Status data entry by warfighting function, (3) Commander's narrative and certification. Each step uses previously submitted data from prior steps.
+
+---
+
+**TASK 5-1. CONFIGURE A MULTI-STEP ACTION WORKFLOW**
+
+**CONDITIONS:** Given an operational requirement for a structured unit status report submission with three phases (identification, data entry, certification), when configuring the Action in Ontology Manager.
+
+**STANDARDS:** The Action presents users with three distinct form sections in sequence. Users cannot advance to Step 2 without completing required fields in Step 1. Step 3 shows a summary of all entered data before final submission. On submission, the designated `UnitStatus` object is updated with all submitted values.
+
+**PROCEDURE:**
+1. Open Ontology Manager and navigate to the target Object Type (`UnitStatus`).
+2. Select **Actions** then **New Action**.
+3. Name the Action operationally: `Submit Unit Status Report`.
+4. In the Action Editor, select **Multi-Step Form** layout.
+5. Configure Step 1 — Identification:
+   - Add fields: `reportingUnit` (Object selector, linked to `UnitStatus`), `reportingPeriod` (date range picker), `reportingOfficer` (current user, auto-populated).
+   - Mark all three fields as **Required**.
+6. Configure Step 2 — Status Data:
+   - Add fields for each warfighting function status (personnel, readiness, logistics, maintenance, communications) as appropriate dropdown or numeric fields.
+   - Use conditional field visibility: show the `maintenanceDetailNotes` text field only if `maintenanceStatus` is set to AMBER or RED.
+7. Configure Step 3 — Certification:
+   - Set this step as read-only summary mode — display all values from Steps 1 and 2.
+   - Add a single **Certify and Submit** checkbox: "I certify this report is accurate and complete."
+   - Mark the checkbox as **Required** before submission is enabled.
+8. Configure the **Effect** (what the Action does on submission): update the `UnitStatus` object properties with the submitted values. Map each form field to the corresponding Object Type property.
+9. Configure the **Confirmation Message**: display the unit name and reporting period in the confirmation.
+10. Test the Action using the Ontology Manager preview. Submit a test record and verify the target object updates correctly.
+
+> **CAUTION: Multi-step Actions that modify production objects must be tested against a non-production Ontology branch before deployment. Test with a designated test object, not a live operational record. Confirm with your team lead before publishing any Action that modifies shared operational data.**
+
+---
+
+### 5-3. Conditional Logic in Actions
+
+Conditional logic in Actions controls which fields are displayed, which fields are required, and which validation rules apply based on the values submitted in the same or prior steps. This allows a single Action to support multiple scenarios without creating separate Actions for each case.
+
+**Common conditional patterns in USAREUR-AF Actions:**
+
+| Scenario | Conditional Logic |
+|---|---|
+| Show maintenance notes only for AMBER/RED maintenance status | Show `maintenanceNotes` field if `maintenanceStatus` is AMBER or RED |
+| Require commander signature for RED readiness submissions | Mark `commanderSignature` field required if `overallReadiness` equals RED |
+| Show coalition sharing confirmation only for non-SECRET reports | Show `mpeShareConfirmation` checkbox if `reportClassification` is not SECRET |
+| Route logistics shortfall to G4 Action queue | On submission: if `criticalShortfall` is true, trigger G4 notification Action |
+
+---
+
+**TASK 5-2. CONFIGURE CONDITIONAL FIELD VISIBILITY IN AN ACTION FORM**
+
+**CONDITIONS:** Given an Action form for SITREP submission, when a conditional field should display only when specific conditions are met in a prior field selection.
+
+**STANDARDS:** The conditional field is hidden by default. It becomes visible and required immediately when the triggering condition is met. It returns to hidden (and its value cleared) if the triggering condition is removed before submission.
+
+**PROCEDURE:**
+1. In the target Action's form editor, locate the trigger field (the field whose value controls visibility of the conditional field).
+2. Add the conditional field below the trigger field.
+3. In the conditional field's settings, locate the **Visibility** control.
+4. Set visibility to **Conditional on field value**: select the trigger field and specify the triggering value(s) (e.g., show when `maintenanceStatus` is AMBER or RED).
+5. In the conditional field's **Required** setting, enable **Conditionally Required**: required when visible (trigger condition met); not required when hidden.
+6. Enable **Clear on hide**: ensures the conditional field's value is cleared if the user changes the trigger field back to a non-triggering value before submitting.
+7. Preview the form. Test by setting the trigger field to a non-triggering value (confirm conditional field is hidden), then to the triggering value (confirm it appears and is required), then back to non-triggering (confirm it hides and clears).
+
+---
+
+### 5-4. Approval Chain Configuration
+
+Approval chains require one or more designated reviewers to approve an Action submission before the Effect is applied to the Ontology. This is required for operational workflows where data changes require command authority — for example, changing a unit's readiness rating, publishing a theater logistics assessment, or updating an ISR collection priority.
+
+---
+
+**TASK 5-3. CONFIGURE AN APPROVAL CHAIN FOR A HIGH-IMPACT ACTION**
+
+**CONDITIONS:** Given an Action that modifies a unit's official readiness status, when this modification requires review and approval by the unit's S3 or G3 before taking effect.
+
+**STANDARDS:** On submission, the Action enters a pending state and routes a notification to the designated approver(s). The Ontology object is not updated until the approver explicitly approves the submission. Rejection returns the submission to the submitter with rejection comments.
+
+**PROCEDURE:**
+1. In the target Action's editor, navigate to the **Approval** settings section.
+2. Enable **Requires Approval**.
+3. Configure the **Approver** assignment:
+   - Static approver: designate a specific MSS user or group (e.g., the `G3-ReadinessApprovers` group) as required approvers.
+   - Dynamic approver: if the approver should vary based on the submitted data (e.g., the approver is the supervisor of the reporting unit), configure a dynamic approver lookup using the relevant Ontology link. This requires the `supervisor` or `commandingOfficer` link to be properly configured on the Object Type.
+4. Set the **Approval Deadline**: configure an auto-escalation if the approval is not completed within a specified time (e.g., 24 hours escalates to the next level).
+5. Configure the **Rejection Flow**: enable a rejection reason comment field. Route the rejection back to the original submitter as an MSS notification with the reviewer's comment.
+6. Configure the **Notification**: ensure approvers receive an MSS notification with the pending Action details and a direct link to the approval queue.
+7. Test the approval flow using two test accounts: submit with the submitter account; approve or reject with the approver account. Verify the Ontology object updates only on approval, not on initial submission.
+
+> **NOTE:** Approval chains are only as effective as the process governance around them. An approval chain with no defined SLA for review is a bottleneck, not a control. Define and communicate the expected review window to designated approvers before deploying any approval-gated Action to production.
+
+---
+
+## CHAPTER 6 — AIP LOGIC CONFIGURATION
+
+### 6-1. AIP Logic at TM-30 Level
+
+AIP Logic is MSS's framework for integrating large language models and AI reasoning into operational workflows. At TM-30 level, the advanced builder configures AIP Logic workflows — defining inputs, writing prompts, connecting AI outputs to ontology data, and designing human review gates — entirely through the AIP Logic configuration UI.
+
+TM-30 builders do not write code in AIP Logic configuration. You design the workflow logic, write prompts, and connect the AI to ontology data sources. If a workflow requires custom TypeScript logic, external API calls, or Functions on Objects integration, that work is for a -40 developer.
+
+> **WARNING: AIP Logic workflows that operate on operational data — particularly ISR products, personnel data, or readiness assessments — require authorization review by your chain of command and coordination with the USAREUR-AF C2DAO before deployment. AI-assisted outputs that inform operational decisions must include human review gates. Do not deploy AIP Logic workflows that produce outputs used directly in operational reports without a documented human-in-the-loop checkpoint.**
+
+---
+
+### 6-2. AIP Logic Workflow Design
+
+Before configuring anything in the AIP Logic UI, design the workflow on paper. A poorly designed AIP Logic workflow that produces plausible-sounding but incorrect outputs is worse than no AI integration — it introduces confident errors into operational products.
+
+**AIP Logic workflow design checklist:**
+
+- [ ] What operational question is the AI answering? State it in one sentence.
+- [ ] What data inputs does the AI need to answer that question? (Ontology objects, dataset fields, user-provided context)
+- [ ] What is the expected output format? (Structured JSON, natural language summary, classification label, ranked list)
+- [ ] How will the output be validated before use? Who reviews it? Is there a documented review gate?
+- [ ] What happens when the AI produces an incorrect or low-confidence output? Is there a fallback?
+- [ ] Is there a requirement to retain a record of AI inputs and outputs for auditability?
+- [ ] Has this use case been reviewed for authorization compliance?
+
+---
+
+### 6-3. Prompt Engineering Basics
+
+Prompt quality determines output quality. Advanced builders writing prompts for operational AIP Logic workflows must apply basic prompt engineering discipline.
+
+**Prompt design principles:**
+
+1. **Be explicit about role and context.** Tell the model who it is and what context it is operating in. Example: "You are an operational data analyst supporting USAREUR-AF readiness reporting. You are reviewing SITREP submissions from subordinate units in the V Corps AOR."
+2. **Specify output format precisely.** If you need structured output, specify the exact format in the prompt: "Return your assessment as a JSON object with the fields: `readinessTier` (GREEN, AMBER, or RED), `primaryConcern` (one sentence), and `recommendedAction` (one sentence)."
+3. **Provide constraints.** Tell the model what it must not do: "Do not speculate about future operations. Do not reference specific classified information. Do not produce assessments for units not included in the provided data."
+4. **Include examples where applicable (few-shot prompting).** For classification tasks, provide one to three examples of correct input-output pairs in the prompt. This significantly improves consistency.
+5. **Test with edge cases.** Deliberately test your prompt with incomplete data, conflicting values, and boundary conditions. Prompt behavior at the edges is often worse than at the center.
+
+---
+
+**TASK 6-1. CONFIGURE AN AIP LOGIC WORKFLOW FOR SITREP SUMMARIZATION**
+
+**CONDITIONS:** Given AIP Logic access and a `UnitSITREP` Object Type containing structured readiness data from multiple subordinate units, when configuring a workflow that generates a commander's summary of theater readiness from current SITREP data.
+
+**STANDARDS:** The workflow accepts a filtered set of `UnitSITREP` objects as input, generates a structured readiness summary in the configured output format, and routes the output to a human reviewer queue before the summary is published to any application. The workflow completes in under 30 seconds for inputs of up to 50 SITREP records.
+
+**PROCEDURE:**
+1. Open AIP Logic from the left navigation panel.
+2. Create a new Logic workflow. Name it: `USAREUR-AF Daily Readiness Summarization`.
+3. Configure the **Input** node:
+   - Select **Object Set** as input type.
+   - Link the input to the `UnitSITREP` Object Type.
+   - Configure input filters: allow the calling application (Workshop) to pass a filtered object set (e.g., filtered by reporting period and AOR).
+4. Configure the **Prompt** node:
+   - Write the system prompt per the principles in section 6-3. Begin with explicit role and context framing.
+   - Reference input object properties in the prompt using the available property insertion syntax. Insert `reportingUnit`, `reportingPeriod`, `personnelReadiness`, `equipmentReadiness`, and `commanderNote` fields from each SITREP object.
+   - Specify output format: require a JSON structure with `overallTheaterAssessment`, `criticalShortfalls` (list), `units_at_risk` (list of unit names), and `recommendedActions` (list).
+5. Configure the **Output** node:
+   - Set output type to **Structured JSON** matching the format specified in the prompt.
+   - Map the output fields to a `ReadinessSummary` Object Type (configure this object type first if it does not exist).
+6. Configure the **Human Review Gate**:
+   - Enable **Requires Human Review** before the output is committed to the Ontology.
+   - Route the review task to the designated reviewer group (e.g., `G3-ReadinessReviewers`).
+   - Set the review deadline (e.g., 2 hours).
+7. Test the workflow using a sample SITREP object set. Verify output format, review gate routing, and response time.
+
+> **CAUTION: AIP Logic outputs must not be automatically published to coalition-accessible data products without both human review and C2DAO coordination. Any AIP-generated product that could reach MPE systems or coalition partners requires a separate authorization review.**
+
+---
+
+### 6-4. Connecting AIP Logic to Ontology Data
+
+AIP Logic workflows that connect to real Ontology data produce more contextually accurate outputs than workflows operating on raw text inputs. Connecting AI to structured Ontology data allows the model to reason about operational entities — units, locations, events — with the same semantic context that your Workshop applications use.
+
+**Key connection patterns:**
+
+| Pattern | Use Case |
+|---|---|
+| Object Set input | Pass a filtered set of Ontology objects as the AI's primary data source (see Task 6-1) |
+| Link traversal in prompt context | Provide not just the primary object's properties but also linked objects' properties (e.g., provide the unit's current location and garrison alongside its status report) |
+| Object property output | Write the AI's output back to a specific Ontology object property (e.g., write the generated summary to `ReadinessSummary.aiGeneratedNarrative`) |
+| Object creation output | Have the AI create new Ontology objects (e.g., generate a `RiskFlag` object for each identified shortfall) — configure via Action-type output in AIP Logic |
+
+> **NOTE:** Link traversal in AIP Logic prompts requires that the relevant Link Types are properly configured on the Object Type. Verify link configuration in Ontology Manager before designing a workflow that depends on linked object properties. If the required links do not exist, design them (per Chapter 4) before proceeding.
+
+---
+
+## CHAPTER 7 — ADVANCED CONTOUR AND QUIVER
+
+### 7-1. Contour at TM-30 Level
+
+Contour is MSS's data analysis workspace. TM-20 covered basic filtering, sorting, and simple aggregations. TM-30 covers the formula editor for calculated columns, complex multi-table aggregations, pivot table analysis, and cross-dataset joins within Contour. These capabilities support the G2, G9, and logistics analysis workflows that require operational analytics beyond what Workshop dashboards provide.
+
+---
+
+### 7-2. The Contour Formula Editor
+
+The formula editor allows creation of calculated columns using Contour's built-in function library. This is the TM-30 mechanism for operational analytics — computing derived metrics, normalizing data, and creating display-ready fields without modifying the underlying dataset.
+
+**Contour formula function categories:**
+
+| Category | Key Functions | Operational Use |
+|---|---|---|
+| Conditional | `if()`, `case()`, `coalesce()` | Readiness tier classification, null handling |
+| Date/time | `dateDiff()`, `dateAdd()`, `dateFormat()`, `daysOld()` | Days since SITREP, reporting lag analysis |
+| String | `concat()`, `trim()`, `left()`, `right()`, `replace()` | Unit display name formatting, DTG normalization |
+| Math | `round()`, `abs()`, `min()`, `max()`, `percentage()` | Readiness score calculations, fill rate percentages |
+| Aggregation | `sum()`, `count()`, `countDistinct()`, `avg()` | Unit counts by status, aggregate readiness |
+| Lookup | `lookup()` | Cross-dataset reference lookups |
+
+---
+
+**TASK 7-1. CREATE A CALCULATED COLUMN IN CONTOUR**
+
+**CONDITIONS:** Given a Contour analysis with a unit status dataset containing a `lastSitrepDate` timestamp field, when the analysis requires a "days since last SITREP" column for staleness analysis.
+
+**STANDARDS:** The calculated column `daysSinceLastSitrep` correctly computes the number of whole days between `lastSitrepDate` and today's date. The column displays correctly for all rows including null `lastSitrepDate` values (display N/A for nulls).
+
+**PROCEDURE:**
+1. Open the target Contour analysis. Verify the dataset containing `lastSitrepDate` is loaded.
+2. In the column header row, select **+ Add Column** then **Calculated Column**.
+3. Name the column: `daysSinceLastSitrep`.
+4. Open the formula editor.
+5. Enter: `if(isNull(lastSitrepDate), "N/A", string(dateDiff(today(), lastSitrepDate, "day")))`.
+6. Click **Preview** to validate the formula against sample rows.
+7. Verify: rows with valid `lastSitrepDate` show a positive integer. Rows with null `lastSitrepDate` show N/A.
+8. Apply the column. Sort by `daysSinceLastSitrep` descending to identify units with the most stale reporting.
+
+> **NOTE:** The formula language in Contour's calculated column editor uses the same syntax as Pipeline Builder's Derived Column node (see Chapter 3). Formulas developed and validated in Contour can be transferred to Pipeline Builder when the calculation needs to be made persistent in the dataset. This two-step workflow — prototype in Contour, promote to Pipeline Builder — is the recommended approach for new calculated columns.
+
+---
+
+### 7-3. Pivot Table Analysis
+
+Pivot tables in Contour aggregate data across two or more categorical dimensions simultaneously. For USAREUR-AF operational analysis, pivot tables answer questions like: "What is the distribution of readiness tiers across formations and warfighting functions?" or "How many ISR events were recorded by collection type and by Baltic flank sector this week?"
+
+---
+
+**TASK 7-2. BUILD A PIVOT TABLE FOR THEATER READINESS ANALYSIS**
+
+**CONDITIONS:** Given a Contour analysis with a unit status dataset containing `formation`, `warfightingFunction`, and `readinessTier` fields, when performing cross-dimensional readiness analysis.
+
+**STANDARDS:** The pivot table displays formations as rows, warfighting functions as columns, and count of records in cells. The analyst can identify at a glance which formation-function combinations have the highest concentration of AMBER/RED status.
+
+**PROCEDURE:**
+1. In the Contour analysis, select **Transform** then **Pivot**.
+2. Set **Row dimension**: `formation`.
+3. Set **Column dimension**: `warfightingFunction`.
+4. Set **Value**: Count of UnitStatus records.
+5. Apply a conditional color format (heat map) to the cells: green background for cells where no RED tiers are present; amber background for cells with any AMBER; red background for cells with any RED.
+6. Add a filter on `reportingPeriod` to restrict the analysis to the current reporting window.
+7. Export the pivot table to a Contour View (saved analysis) named per USAREUR-AF naming conventions for reuse.
+
+---
+
+### 7-4. Cross-Dataset Analysis
+
+Contour supports joining datasets within an analysis — analogous to Pipeline Builder joins, but performed analytically without modifying underlying datasets. This supports ad hoc analysis that bridges data domains without requiring a new integration pipeline.
+
+> **CAUTION: Cross-dataset joins in Contour are analytical — they produce results in the analysis workspace, not persistent new datasets. If an analysis join produces valuable curated data that should be shared with other users or applications, promote it to a Pipeline Builder pipeline (coordinating with your team lead) rather than using Contour as a data production tool. Contour is for analysis; Pipeline Builder is for data production.**
+
+---
+
+**TASK 7-3. PERFORM A CROSS-DATASET ANALYSIS IN CONTOUR**
+
+**CONDITIONS:** Given a readiness dataset and a separate logistics dataset sharing a `unitId` key, when performing an analysis to identify correlations between logistics shortfalls and readiness degradation.
+
+**STANDARDS:** The analysis workspace contains a joined view of both datasets on `unitId`. The analyst can create calculated columns and pivot tables that reference fields from both source datasets simultaneously. The analysis is saved as a Contour View for team access.
+
+**PROCEDURE:**
+1. Open Contour and load the readiness dataset as the primary source.
+2. Select **Join Dataset** from the transform toolbar.
+3. Select the logistics dataset as the secondary source.
+4. Configure join type: **Left Join** on `unitId = unitId`. Verify column name disambiguation for any duplicate column names (e.g., rename `logistics.reportingDate` to `logisticsReportingDate`).
+5. Preview the joined output. Check row count equals primary dataset row count (assuming one-to-one relationship).
+6. Create a calculated column: `logisticsShortfallFlag = if(criticalShortfallCount > 0, "YES", "NO")`.
+7. Create a scatter plot: X axis = `readinessScore`, Y axis = `criticalShortfallCount`, color = `readinessTier`. Assess visual correlation.
+8. Save the analysis as a Contour View. Name it per conventions. Set access to the appropriate team group.
+
+---
+
+### 7-5. Advanced Quiver Dashboards
+
+Quiver is MSS's linked analysis and visualization environment. Quiver dashboards allow multiple chart views to be linked — selecting a data point in one chart updates all other charts in the dashboard simultaneously. Quiver is appropriate for analytical deep-dives; Workshop is appropriate for operational dashboards used in daily operations. Both are TM-30 tools.
+
+**Quiver vs. Workshop selection guide:**
+
+| Criterion | Quiver | Workshop |
+|---|---|---|
+| Primary audience | Analysts (G2, G9, S2 shops) | Operators, commanders, staff at all levels |
+| Interaction pattern | Click to explore, drill down | Monitor status, submit updates, take action |
+| Data modification | Read-only | Actions and write-back supported |
+| Layout flexibility | Analysis-optimized, chart-dense | Flexible, operationally designed |
+| Embedding | Embeddable in Workshop as an iframe | Native Workshop |
+
+---
+
+**TASK 7-4. BUILD A LINKED QUIVER DASHBOARD FOR ISR EVENT ANALYSIS**
+
+**CONDITIONS:** Given ISR event data from the Baltic flank in a Contour analysis, when an ISR analyst needs a linked dashboard showing event distribution by type, time, and grid sector simultaneously.
+
+**STANDARDS:** The Quiver dashboard contains at least three linked chart views: (1) event count by type (bar chart), (2) event timeline (time series), (3) event density by grid sector (map or heat map). Selecting a bar in chart 1 filters both chart 2 and chart 3 to that event type. All charts update simultaneously on selection.
+
+**PROCEDURE:**
+1. Open the source Contour analysis containing the ISR event data.
+2. Select **Create Quiver Dashboard** from the analysis toolbar.
+3. In the Quiver dashboard editor, add the first panel: **Bar Chart** — event count by `eventType`.
+4. Add the second panel: **Time Series** — event count over time, grouped by `eventType`.
+5. Add the third panel: **Map** (or **Heat Map** if precise grid coordinates are available) — event density by grid sector.
+6. Enable **Link Selections**: in the dashboard settings, configure all three panels to share a common selection state on the `eventType` field.
+7. Test linked behavior: click a bar in chart 1. Verify charts 2 and 3 update to show only events of the selected type.
+8. Configure the dashboard title, description, and access group.
+9. To embed this Quiver dashboard in a Workshop application: copy the embed URL from the dashboard share settings. In Workshop, add an **Iframe** widget and paste the embed URL. Size the iframe appropriately within the Workshop layout.
+
+> **NOTE:** Quiver dashboards embedded in Workshop via iframe do not inherit Workshop's variable context. A user's selection in a Workshop object table will not automatically filter the embedded Quiver dashboard. If synchronized filtering between Workshop and embedded Quiver is required, coordinate with a -40 developer — this integration requires URL parameter passing that goes beyond standard Quiver embed configuration.
+
+---
+
+## CHAPTER 8 — DATA GOVERNANCE AND STEWARDSHIP
+
+### 8-1. The -30 Builder's Governance Responsibilities
+
+Advanced builders are not just consumers of the data governance framework — at TM-30 level, you are active participants in it. You are responsible for the quality, lineage, and domain alignment of the data products you design and publish.
+
+**Governance responsibilities at TM-30 level:**
+
+| Responsibility | What It Means in Practice |
+|---|---|
+| Lineage documentation | Every pipeline you design must have documented lineage. After build, verify the lineage graph is complete and correct. |
+| Data quality review | Review quality check results for datasets your pipelines produce. Investigate and resolve flagged issues. |
+| Steward coordination | Coordinate with the domain data steward before modifying shared Object Types, publishing new data products, or changing access controls. |
+| UDRA alignment | Complete the UDRA Alignment Checklist (Appendix C) for every new data product. |
+| Domain assignment | Every dataset and Object Type you create must have a domain assignment. Confirm the correct domain with your steward before creating resources. |
+| Data product SLA | Define and document the refresh rate, acceptable downtime, and quality floor for every data product you own. |
+
+---
+
+### 8-2. Reading and Interpreting Data Lineage Graphs
+
+Data lineage in MSS tracks the path of data from its source through every transformation, join, and enrichment step to its final output. The lineage graph is your primary tool for: (a) understanding how a downstream error propagated from an upstream source, (b) assessing the impact of a planned change to a shared dataset, and (c) documenting provenance for governance audits.
+
+---
+
+**TASK 8-1. TRACE A DATA QUALITY ISSUE USING THE LINEAGE GRAPH**
+
+**CONDITIONS:** Given a downstream Workshop application displaying incorrect readiness values, when the root cause is unknown and must be traced through the data pipeline.
+
+**STANDARDS:** The builder identifies the specific transform or pipeline node where the incorrect values originate, documents the finding, and notifies the relevant data steward and/or pipeline owner for remediation.
+
+**PROCEDURE:**
+1. Open Compass. Navigate to the output dataset backing the affected Workshop application (identify the dataset from the Workshop widget's data source binding).
+2. Open the dataset preview. Identify a specific row with the incorrect value and note the record's unique identifier.
+3. Select **View Lineage** from the dataset options menu. The lineage graph opens showing all upstream dependencies.
+4. Starting from the output dataset, trace upstream one hop at a time. At each node (transform, join, source dataset), preview that dataset and look up the same record by its unique identifier.
+5. When you find the first hop where the value is incorrect, you have identified the transform or source data where the problem originates.
+6. If the problem is in a transform node: note the transform name and the specific logic step. Escalate to the pipeline owner or -40 developer with: the affected dataset RID, the record identifier, the incorrect value, the expected value, and the lineage path.
+7. If the problem is in the source data: note the source dataset and the record. Notify the source system data steward.
+8. Document your findings in the team's issue tracking log.
+
+> **NOTE:** The lineage graph also supports impact analysis — the reverse direction. Before modifying a shared dataset, use lineage to view all downstream consumers. Any dataset, Object Type, or Workshop application that depends on the dataset you are about to modify will be shown. Review all downstream consumers before making changes to shared production resources.
+
+---
+
+### 8-3. Data Quality Review and Stewardship
+
+MSS runs automated data quality checks on configured datasets. At TM-30 level, you review these check results, investigate failures, and coordinate remediation with upstream data owners and -40 developers.
+
+**Quality check severity levels:**
+
+| Severity | Meaning | Required Action |
+|---|---|---|
+| ERROR | Check failed; data does not meet quality standard | Pipeline should not proceed to downstream consumers until resolved; escalate immediately |
+| WARNING | Check flagged a potential issue; data may still be usable | Investigate within 24 hours; document disposition; notify data steward |
+| INFO | Informational check; no action required but worth noting | Review during routine pipeline monitoring |
+
+---
+
+**TASK 8-2. REVIEW DATA QUALITY CHECK RESULTS AND ESCALATE APPROPRIATELY**
+
+**CONDITIONS:** Given a production dataset with configured quality checks, when the quality check report for the most recent pipeline run is available for review.
+
+**STANDARDS:** The builder reviews all check results, documents any failures or warnings, assesses impact on downstream consumers, and escalates ERROR-level failures within the required time window.
+
+**PROCEDURE:**
+1. Open the target dataset in Compass.
+2. Select the **Quality Checks** tab (or navigate to the pipeline's build log and select the checks view).
+3. Review all check results from the most recent run. Note: check name, severity, expected value, actual value, affected row count.
+4. For each ERROR-level failure:
+   a. Assess downstream impact using the lineage graph (which applications and Object Types consume this dataset?).
+   b. Determine if downstream consumers should be paused or flagged as potentially unreliable.
+   c. Escalate to the pipeline owner (or -40 developer if the check involves custom logic) within 2 hours.
+   d. Notify the domain data steward.
+   e. If downstream applications are actively displaying data to operational users, notify the application owner so they can alert users to the data quality issue.
+5. For each WARNING-level failure:
+   a. Investigate the root cause.
+   b. Document in the team issue log: check name, actual value, expected value, suspected cause.
+   c. Notify the data steward within 24 hours.
+6. Document all actions taken in the team's issue tracking log with timestamps.
+
+---
+
+### 8-4. UDRA Domain Alignment
+
+All data products created on MSS must align with UDRA v1.1. Domain alignment means assigning every dataset, Object Type, and application to a specific data domain with a designated domain owner responsible for its governance.
+
+**USAREUR-AF primary data domains (representative):**
+
+| Domain | Covers | Primary Steward |
+|---|---|---|
+| Personnel and Readiness | PERSTAT, readiness ratings, strength data | G1 / C2DAO |
+| Intelligence | ISR events, collection assets, threat assessments | G2 |
+| Operations | SITREPs, task organization, operational reports | G3 |
+| Logistics | Supply, maintenance, transportation, distribution | G4 |
+| Plans | OPORD-related data, course of action products | G5 |
+| Comms / C2 Systems | Network status, C2 systems data | G6 / S6 |
+| Civil Affairs | CMO assessments, host nation data, HCA projects | G9 |
+| Coalition/MPE | Partner nation data products, MPE-shared resources | C2DAO / G6 |
+
+> **NOTE:** Confirm your data domain assignment with the USAREUR-AF C2DAO data governance team before creating any new data product. Domain assignments affect access control, stewardship responsibility, and downstream sharing eligibility. An incorrectly assigned domain can result in a data product being blocked from the users who need it or shared with users who should not have it.
+
+---
+
+### 8-5. Coordinating with the Data Steward and C2DAO
+
+The data steward is the operational authority for a data domain. The C2DAO is the USAREUR-AF architecture authority. Know when to coordinate with each.
+
+**When to contact the data steward:**
+- Before creating a new Object Type in their domain
+- Before modifying properties on a shared Object Type
+- When a quality check ERROR is detected on a dataset in their domain
+- Before publishing a new data product to production
+- When access controls for a domain dataset need to change
+
+**When to contact the C2DAO:**
+- Before publishing any data product accessible to MPE or coalition-facing systems
+- Before designing a new data domain or sub-domain
+- When a design decision has enterprise-wide architecture implications
+- Before integrating a new external data source into MSS
+- Before deploying an AIP Logic workflow on operationally significant data
+
+---
+
+## CHAPTER 9 — ENVIRONMENT MANAGEMENT AND PRODUCTION DISCIPLINE
+
+### 9-1. The MSS Development Lifecycle
+
+MSS supports a branched development lifecycle that separates development work from production resources. At TM-30 level, understanding and following the branching strategy is not optional — it is how you protect shared infrastructure from your own development work.
+
+**Standard USAREUR-AF MSS development lifecycle stages:**
+
+```
+DEVELOPMENT BRANCH
+(Personal or feature branch — safe to break)
+        |
+        v
+TEAM REVIEW
+(Pull request or branch review — peer check)
+        |
+        v
+STAGING / TEST
+(Integrated test environment — validated against production data volume)
+        |
+        v
+PRODUCTION
+(Main branch — live operational data, commander visibility)
+```
+
+Nothing enters production without passing through team review. Nothing skips staging for "quick fixes." There are no quick fixes in production data infrastructure.
+
+---
+
+### 9-2. Ontology Branch Management
+
+The Ontology is a shared resource. Multiple builders may be working on different features simultaneously. Ontology branches allow each builder to work on their feature without interfering with others and without affecting production.
+
+---
+
+**TASK 9-1. CREATE AND MANAGE AN ONTOLOGY DEVELOPMENT BRANCH**
+
+**CONDITIONS:** Given a new Ontology design task (e.g., adding a new Object Type or modifying Link Type cardinality), when beginning development on the shared Ontology.
+
+**STANDARDS:** All development occurs on a named development branch. No changes are made to the main Ontology branch. The development branch is reviewed and approved before merge.
+
+**PROCEDURE:**
+1. Open Ontology Manager.
+2. In the branch selector (top of the Ontology Manager interface), select **Create New Branch**.
+3. Name the branch: `dev-[feature]` or `dev-[your-name]-[feature]` (e.g., `dev-isr-event-object`, `dev-smith-readiness-action`).
+4. Confirm you are working on the named branch (the branch name should be displayed in the Ontology Manager header at all times during your session).
+5. Make all Object Type, Link Type, and Action changes on this branch.
+6. When development is complete, request a branch review from your team lead. Provide: the branch name, a summary of all changes made, and the test results from your functional testing.
+7. After review approval, merge the branch to main. Do not self-approve — a second set of eyes is required for all Ontology changes.
+8. After merge, confirm the changes are visible in the main branch and verify no unexpected impacts on existing Workshop applications (check application health indicators in Workshop after the merge).
+
+> **CAUTION: Deleting an Object Type or Link Type property from a production Ontology branch immediately breaks every Workshop application widget, Contour analysis, and Pipeline Builder node that references that property. Before removing any property, search for all references using the Ontology Manager's "find usages" function. Coordinate with all application owners before proceeding.**
+
+---
+
+### 9-3. Dataset and Pipeline Branching
+
+Pipeline Builder supports branching for dataset development. Like Ontology branching, dataset branches allow you to develop and test pipeline changes against a copy of production data without affecting the production dataset.
+
+---
+
+**TASK 9-2. MANAGE A PIPELINE DEVELOPMENT BRANCH**
+
+**CONDITIONS:** Given a modification to a production pipeline (e.g., adding a new calculated column or modifying join logic), when the change cannot be tested in production.
+
+**STANDARDS:** The modification is developed and tested on a named branch. The branch output is validated against a production-representative data sample before merge. The modification reaches production only after team lead approval.
+
+**PROCEDURE:**
+1. In Pipeline Builder, open the target pipeline.
+2. Select **Create Branch** from the pipeline options menu.
+3. Name the branch per conventions. Confirm the branch name is displayed in the pipeline editor header.
+4. Make all modifications on the branch.
+5. Run the branch pipeline against the full dataset (or a representative sample if full-volume testing is impractical).
+6. Validate output: check row counts, spot-check calculated column values, verify no quality check failures.
+7. Document test results: the expected output vs. actual output for at least three representative records.
+8. Submit the branch for team lead review. Include: branch name, change summary, test results, and downstream impact assessment (from lineage review).
+9. After approval, merge to main and monitor the first scheduled run in production.
+
+---
+
+### 9-4. Production Gate Criteria
+
+**A data product is ready for production when:**
+
+- [ ] All development and testing completed on a named development branch
+- [ ] Branch review completed and approved by team lead
+- [ ] Quality checks pass (no ERROR-level failures on staging run)
+- [ ] Data lineage graph is complete and accurate
+- [ ] UDRA Alignment Checklist (Appendix C) completed
+- [ ] Application Design Checklist (Appendix B) completed (for Workshop applications)
+- [ ] Data steward has been notified and has approved publication
+- [ ] All downstream consumers have been identified via lineage review
+- [ ] Access controls configured correctly and verified
+- [ ] Pipeline alerts configured (for pipelines)
+- [ ] If MPE/coalition-accessible: C2DAO coordination complete and documented
+
+**A data product is NOT ready for production if:**
+
+- Testing was performed on the production branch
+- Quality checks have unresolved ERROR-level failures
+- The data steward has not been notified
+- Downstream impact has not been assessed
+- Access controls have not been verified
+
+---
+
+### 9-5. Coordinating with -40 Developers in the Development Lifecycle
+
+When your design includes components that require a -40 developer, the development lifecycle has an additional coordination layer.
+
+**-30 to -40 coordination protocol:**
+
+1. **Before development begins.** Provide the -40 developer with the complete requirements document (Appendix A template). Do not begin any implementation work — in Pipeline Builder, Ontology Manager, or Workshop — until the -40 developer has reviewed and confirmed the requirements are complete and implementable.
+2. **During development.** Coordinate on branch strategy. If the -40 developer's code changes and your Ontology/Pipeline changes are interdependent, agree on the order of implementation and the integration test plan before either party begins.
+3. **Before production.** Participate in the integration review. As the -30 designer, you are the acceptance authority — verify that the implemented system meets the operational requirements you specified.
+4. **After production.** You own the operational monitoring. The -40 developer owns the technical components. Alert the -40 developer when a quality check or performance anomaly suggests a problem in the technical implementation.
+
+---
+
+## CHAPTER 10 — NATO AND COALITION DATA CONSIDERATIONS
+
+### 10-1. The Coalition Data Environment
+
+USAREUR-AF operates in an inherently coalition environment. V Corps functions as a NATO corps headquarters. Exercise DEFENDER and associated operations involve forces from across the Alliance. The Suwałki Gap defense concept and Baltic flank posture require near-seamless data sharing with Estonian, Latvian, Lithuanian, and Polish forces, as well as other NATO Allies.
+
+MSS is a U.S. national system. Coalition partners access shared data products through the Mission Partner Environment (MPE). Data products designed on MSS that will be shared with coalition partners cross a domain boundary when they enter the MPE. This boundary has governance, technical, and security implications that TM-30 builders must understand — not to implement solutions to, but to recognize when escalation is required.
 
 > **CAUTION: Data products shared with NATO partners or accessible in the Mission Partner Environment must comply with NAFv4 architecture standards and applicable STANAG requirements. Coordinate with G6/S6 and the USAREUR-AF C2DAO before publishing any cross-domain data product. Failure to comply may result in the product being blocked from coalition-facing distribution or revoked post-publication.**
 
-NAFv4 and AJP compliance are not post-build checklist items — they must be considered during design. If your pipeline or ontology model will feed a product accessed by Allied or partner nation personnel, initiate coordination with the data steward and USAREUR-AF C2DAO architecture authority before beginning development.
+---
 
-## 1-4. Advanced Builder Responsibilities and Elevated Risk Profile
+### 10-2. MPE Data Handling
 
-The advanced builder operates at the intersection of data engineering, software development, and operational architecture. Unlike a standard builder whose mistakes are typically scoped to one application or dataset, an advanced builder's actions touch shared infrastructure.
+The Mission Partner Environment is a separate network environment from the U.S. national network hosting MSS. Data products that need to be available to coalition partners must be explicitly authorized, formatted for cross-domain transfer, and reviewed by the C2DAO and G6 before transfer to the MPE.
 
-**What you own at TM-30 level:**
+**What TM-30 builders must know about MPE:**
 
-| Area | Your Responsibility |
-|------|---------------------|
-| Production pipelines | Correctness, performance, incremental behavior |
-| Ontology structure | Interfaces, derived properties, link type design |
-| Functions on Objects | TypeScript logic correctness and performance impact |
-| AIP integrations | Authorization compliance, human review gates |
-| OSDK applications | Auth model, token management, security review |
-| CI/CD gates | Check definitions, test coverage, merge standards |
+| Topic | What -30 Needs to Know |
+|---|---|
+| MPE eligibility | Not all data products are eligible for MPE sharing. Eligibility is determined by classification, releasability markings, and C2DAO review — not by the builder. |
+| Data markings | MPE-eligible data products must carry correct releasability markings (e.g., REL TO USA, [PARTNER NATIONS]). Markings are configured in dataset settings and must be set correctly before any MPE transfer. |
+| NAFv4 format requirements | Data products shared via MPE must conform to NAFv4 architecture standards. This includes standardized vocabulary, NATO-compatible terminology, and documented data element definitions. |
+| STANAG compliance | Specific STANAGs govern data exchange for specific domains (e.g., STANAG 5516 for tactical data links). Identify applicable STANAGs before designing any product intended for coalition exchange. |
+| C2DAO coordination | The C2DAO is the approval authority for MSS data products entering the MPE. No data crosses the boundary without C2DAO sign-off. |
+| G6/S6 coordination | G6/S6 manages the technical cross-domain solution (CDS). They must be involved in any discussion of MPE data transfer — they own the pipes. |
 
-Every one of these areas, if misconfigured, can degrade the data environment for the entire formation — from battalion S2 analysts to G9 reporting. Own that risk.
+---
 
-## 1-5. Production vs. Development Discipline at TM-30 Level
+### 10-3. NAFv4 Awareness for Builders
 
-> **CAUTION: Never develop directly on the production ontology or master branch. All development requires a feature branch. All merges to master require peer review and passing CI checks.**
+NATO Architecture Framework version 4 (NAFv4) is the enterprise architecture standard for NATO and Allied systems. TM-30 builders are not expected to implement NAFv4 compliance — that is a C2DAO and G6 responsibility. But you must be aware of NAFv4 requirements during the design phase, because retroactively making a non-compliant data product NAFv4-compliant after it has been published to coalition partners is expensive and sometimes impossible.
 
-The discipline standard at TM-30 is stricter than TM-20 because the blast radius is larger. Specific requirements:
+**NAFv4 design considerations for -30 builders:**
 
-1. All code changes start on a named feature branch (`feature/description-here`).
-2. All branches must build cleanly before requesting review.
-3. All transforms touching shared curated datasets require a second reviewer.
-4. Ontology changes (new Object Types, Interface modifications, property additions/removals) require data steward coordination before merge.
-5. AIP and OSDK deployments require command authorization review (see Appendix C).
-6. No hotfixes to production without documented coordination. Use the emergency branch process if a production break requires immediate remediation.
+1. **Use NATO-compatible terminology in Object Type names and properties where applicable.** The ADP to JP to NATO Crosswalk at `learn-data.armydev.com` provides the mapping between Army, Joint, and NATO data terms. If your data product might reach coalition partners, use the NATO-compatible term in your design.
+2. **Document data element definitions.** NAFv4 requires that all shared data elements be defined in a shared data dictionary. For any Object Type property that will be in a coalition-shared product, write a clear definition in the property description field — not just the field name.
+3. **Flag potential MPE-eligible products early.** If you suspect during design that a data product might eventually need to be shared with coalition partners — even if it is not the immediate requirement — flag this in your design document. It is far easier to design for MPE eligibility from the start than to retrofit it later.
+4. **Do not design around the boundary.** Some builders attempt to design workarounds that avoid the MPE governance process. This is a security violation. The boundary exists for a reason. Escalate; do not circumvent.
 
-## 1-6. Overview of TM-30 Capability Areas
+> **NOTE:** For operational data products supporting Suwałki Gap defense planning, Baltic flank posture assessments, or exercises involving the Enhanced Forward Presence (eFP) battlegroups in Estonia, Latvia, Lithuania, or Poland — initiate C2DAO and G6 coordination at the design stage, before any implementation. These products have a high likelihood of requiring coalition data sharing and benefit from early governance engagement.
 
-| Capability Area | Chapter | Description |
-|-----------------|---------|-------------|
-| Advanced Python Transforms | 2 | Partitioning, schema enforcement, multi-input joins, lightweight pattern |
-| Incremental Pipelines | 3 | @incremental decorator, watermark pattern, late-data handling |
-| Advanced Ontology | 4 | Interfaces, derived properties, complex link types, Object Storage V2 |
-| Functions on Objects (FOO) | 5 | TypeScript functions, computed properties, Workshop binding |
-| Actions / Write-Back | 6 | Complex validation, batch actions, development testing workflow |
-| AIP Integration | 7 | Logic, Agents, Code Workspaces, output integration |
-| OSDK | 8 | External app development, object queries, Action invocation |
-| Analytics (Advanced) | 9 | Quiver pivots, Contour multi-dataset joins, scheduled reports |
-| Lineage and CI/CD | 10 | Lineage graph reading, branching workflow, automated checks |
+---
 
-## 1-7. Authorization Requirements for TM-30 Activities
+### 10-4. When to Escalate
 
-Before performing TM-30 activities, confirm you hold the following:
+Knowing when to escalate — and to whom — is a primary TM-30 competency for coalition data issues.
 
-- **Foundry role:** Editor on the production ontology branch and relevant code repositories
-- **Team lead endorsement:** Written or tracked approval that you are operating at TM-30 level
-- **AIP authorization:** Separate command approval required before any AIP Logic or Agent deployment to production (see Appendix C)
-- **OSDK deployment authorization:** Security review required before deploying any OSDK-backed external application
-- **Data steward coordination:** Required before modifying any shared Object Type, Interface, or curated dataset schema
+**Escalation matrix for coalition data questions:**
 
-If you do not hold these authorizations, build and test on your development branch. Do not promote to production.
+| Situation | Escalate To |
+|---|---|
+| Data product may be shared with coalition partners | C2DAO (architecture review) + G6/S6 (CDS/MPE technical) |
+| Unsure of releasability marking for a dataset | Data steward for the domain + G2 (for classification questions) |
+| NAFv4 or STANAG compliance question | C2DAO architecture authority |
+| Coalition partner requests access to an MSS data product | G6/S6 + C2DAO — do not grant access directly; route through governance |
+| A coalition partner's data needs to be ingested into MSS | G6/S6 (source connectivity) + C2DAO (domain assignment) + data steward (quality/governance) |
+| AIP Logic output may be shared with MPE | C2DAO + G6/S6 + chain of command (AIP authorization review) |
+| Existing data product is already on MPE and needs to be modified | C2DAO — modification of a cross-domain product requires re-review |
 
-## 1-8. Code Review and Change Management Requirements
+> **WARNING: Do not independently initiate data sharing with coalition partners or MPE systems. Even if the data appears unclassified and the intent is benign, unauthorized cross-domain data transfer is a security incident. Route all coalition data sharing requests through G6/S6 and the C2DAO without exception.**
 
-All TM-30 production changes require:
+---
 
-1. Pull request (PR) opened against the `dev` integration branch
-2. Passing CI build with no check failures
-3. At least one peer review approval from another qualified builder
-4. For ontology changes: data steward sign-off in PR comments
-5. PR merged to `dev`, integration testing completed
-6. Separate PR opened against `master`
-7. Lead data engineer or team lead approval before merge to `master`
+### 10-5. NATO Exercises and Multi-National Data Environments
 
-See Appendix D for the full TM-30 Change Management Checklist.
+During major exercises — DEFENDER, IRON WOLF, SABER STRIKE, STEADFAST DEFENDER — the MSS data environment expands significantly. Additional users from Allied and partner nation formations access shared data products. Exercise data volumes increase. New data feeds are often stood up with compressed timelines.
 
-## 1-9. UDRA v1.1 Alignment — Data Product Principles
+**Advanced builder responsibilities during exercise support:**
 
-Advanced builders operate under the Unified Data Reference Architecture (UDRA) v1.1 (February 2025), which establishes the USAREUR-AF standard for how data products are designed, owned, and governed. TM-30 activities map directly to four UDRA principles. Apply these principles to every pipeline, dataset, and ontology model you build.
+1. **Pre-exercise data product review.** Review all data products your team owns for exercise-period relevance. Update pipelines, schedules, and alert thresholds for exercise tempo before the exercise start date.
+2. **Coalition user access coordination.** If coalition partners will access your applications during the exercise, coordinate access provisioning through G6/S6 and C2DAO at least two weeks before the exercise. Access provisioning at the start of an exercise is a common failure point.
+3. **Exercise-specific pipelines.** If the exercise requires new pipelines or Object Types, build them well in advance. Post-exercise cleanup — archiving or decommissioning exercise-specific data products — must be planned before the exercise, not after.
+4. **Data segregation.** Exercise data and live operational data must not be commingled in shared Object Types without explicit design intent and data steward approval. If an exercise-specific Object Type is required, create it with an `EX-` prefix in the name to indicate exercise data.
+5. **After-action data preservation.** Exercise data products that have analytical or doctrinal value should be archived, not deleted. Coordinate with G2/G3/C2DAO on exercise data retention requirements before the exercise ends.
 
-| UDRA v1.1 Principle | What It Means for TM-30 Builders | USAREUR-AF Application |
+---
+
+## APPENDIX A — -30 TO -40 HANDOFF GUIDE: TECHNICAL REQUIREMENTS TEMPLATE
+
+This appendix provides the standard template for -30 advanced builders to communicate design requirements to -40 developers when technical implementation components are required. Complete every section. Incomplete requirements documents waste developer time and produce incorrect implementations.
+
+---
+
+**TECHNICAL REQUIREMENTS DOCUMENT**
+
+**Date:** ___________
+
+**Requesting Builder (Name / Unit / Role):** ___________
+
+**Developer Assigned:** ___________
+
+**Priority:** URGENT / HIGH / ROUTINE
+
+**Required Completion Date:** ___________
+
+---
+
+**SECTION 1: OPERATIONAL CONTEXT**
+
+What mission problem does this solve?
+
+___________
+
+Who are the users? What decisions do they make with this product?
+
+___________
+
+What does success look like? Describe the operational state when this requirement is met.
+
+___________
+
+---
+
+**SECTION 2: DATA INPUTS**
+
+| Dataset | Path in Compass (RID if known) | Relevant Columns | Known Data Quality Issues |
+|---|---|---|---|
+| | | | |
+| | | | |
+
+Is this dataset already in MSS, or does it need to be ingested? If ingestion is required, describe the source.
+
+___________
+
+---
+
+**SECTION 3: ONTOLOGY MODEL**
+
+List all existing Object Types involved. Confirm they exist in Ontology Manager before completing this section.
+
+| Object Type | Existing or New? | Properties Involved |
 |---|---|---|
-| **Distributed ownership** | Every pipeline and dataset must have a designated owner — the functional equivalent of a Functional Data Manager. Ownership does not default to the builder. Identify the operational owner before publishing to production. | For SITREP pipelines: G3 owns readiness data; for LOGSTAT: G4. Coordinate with the appropriate staff section before deployment. |
-| **Domain-aligned data products** | Organize transforms and ontology by operational domain, not by source system. Design for the consumer's operational picture, not the ingestion architecture. | Domains: readiness, logistics, fires, maneuver, ISR, personnel. A unit readiness Object Type belongs to the readiness domain regardless of whether data originates from SAMS-E, MTOE feed, or manual input. |
-| **Federated governance** | Advanced builders coordinate with USAREUR-AF C2DAO and unit Data Stewards for cross-domain decisions. Not all decisions route through a central authority — governance is distributed to the domain level. Do not centralize all schema and policy decisions in one team. | Readiness schema decisions: coordinate with G3 Data Steward. Logistics schema: G4 Data Steward. Cross-domain changes that affect multiple stewards: escalate to C2DAO. |
-| **Data product thinking** | Treat each dataset and ontology as a product. Every data product requires: a designated owner, a defined SLA (freshness/availability), documented quality standards, and identified consumers. Unnamed, unowned, undocumented datasets are not data products — they are technical debt. | Before publishing any production dataset or Object Type: document owner, SLA, quality checks, and consumer applications. Use the TM-30 Change Management Checklist (Appendix D) as the minimum standard. |
+| | | |
 
-> **NOTE:** UDRA v1.1 alignment is required for all data products promoted to the USAREUR-AF production environment. A pipeline that does not have a documented owner, domain assignment, and quality standard does not meet the UDRA v1.1 minimum. Contact the USAREUR-AF C2DAO for guidance on domain assignment and data product registration.
+If new Object Types are needed, provide the full specification:
 
-See Appendix E for the UDRA v1.1 Alignment Reference checklist.
+| Property Name | Data Type | Source Field | Required? | Searchable? | Notes |
+|---|---|---|---|---|---|
+| | | | | | |
 
-## 1-10. Governing References
+List all Link Types needed (existing or new):
 
-The following documents govern TM-30 build activities and data handling policy in USAREUR-AF:
-
-- **Army Data Plan (2022), Office of the Army Chief Information Officer** — Establishes the Army-wide framework for data management, governance, and analytics in support of Multi-Domain Operations.
-- **DoD Data Strategy (2020)** — Establishes the VAUTI framework (Visible, Accessible, Understandable, Trustable, Interoperable) as the DoD standard for data quality and interoperability.
-- **Army CIO Data Stewardship Policy (April 2, 2024)** — Establishes the data stewardship hierarchy (MADO, Data Steward, Functional Data Manager, C2DAO) and data chain of responsibility.
+| Link Type (Verb Phrase) | From Object Type | To Object Type | Cardinality | Foreign Key |
+|---|---|---|---|---|
+| | | | | |
 
 ---
 
-# CHAPTER 2 — ADVANCED PYTHON TRANSFORMS
+**SECTION 4: TECHNICAL COMPONENTS REQUIRED**
 
-## 2-1. Transform Optimization Principles
+Describe each component requiring -40 implementation. Be specific.
 
-Foundry runs transforms on Apache Spark — a distributed compute engine. Spark's power comes from parallelism, but poorly written transforms waste that parallelism and consume excessive cluster resources, delaying the entire formation's data pipeline.
+| Component | Type (FOO / Transform / OSDK / Other) | Inputs | Expected Output | Logic Description |
+|---|---|---|---|---|
+| | | | | |
 
-Three principles govern optimized transform authorship:
+If the component requires specific business logic (e.g., a deduplication rule or a calculation formula), describe the logic precisely. Do not write code — write the logic in plain language with examples.
 
-**a. Column Pruning.** Select only the columns you need before any join or aggregation. Every extra column carried through a shuffle adds memory and I/O cost.
-
-**b. Predicate Pushdown.** Filter early. Apply `.filter()` before `.join()`, before `.groupBy()`, before any expensive operation. Spark can push predicates down to the source in many cases, avoiding full dataset reads.
-
-**c. Partition Alignment.** When joining two large datasets, partition them on the join key first with `.repartition()`. Avoids expensive full shuffles at join time.
-
-> **CAUTION: Calling `.count()`, `.collect()`, or `.toPandas()` on a large Spark DataFrame inside a production transform triggers a full materialization. Avoid these except in lightweight transforms or during development/debugging. Never leave `.show()` or `.collect()` calls in production code.**
+___________
 
 ---
 
-### TASK 2-A: WRITE AN OPTIMIZED PYSPARK TRANSFORM
+**SECTION 5: NON-FUNCTIONAL REQUIREMENTS**
 
-**CONDITIONS:** You have a large, growing unit readiness dataset with tens of millions of rows. A downstream analyst application requires a quarterly aggregated summary per unit. The full-scan version of this transform is taking over 20 minutes to build.
-
-**STANDARDS:** Transform builds in under 5 minutes. Output schema is enforced. Only required columns are read. Filters are applied before aggregation.
-
-**EQUIPMENT:** Foundry Code Repository (Transforms type), Editor role on input/output datasets.
-
-**PROCEDURE:**
-
-1. Open your Code Repository. Navigate to the appropriate transform file.
-2. Import required modules:
-
-```python
-from transforms.api import transform, Input, Output
-from pyspark.sql import functions as F
-from pyspark.sql.types import (
-    StructType, StructField, StringType, IntegerType, DoubleType, TimestampType
-)
-```
-
-3. Define the output schema explicitly (step 4 will reference this):
-
-```python
-OUTPUT_SCHEMA = StructType([
-    StructField("unit_id",         StringType(),    nullable=False),
-    StructField("fy_quarter",      IntegerType(),   nullable=False),
-    StructField("avg_personnel",   DoubleType(),    nullable=True),
-    StructField("min_readiness",   DoubleType(),    nullable=True),
-])
-```
-
-4. Write the transform with early filtering and column pruning:
-
-```python
-@transform(
-    output=Output("/USAREUR-AF/operational/processed/unit_readiness_quarterly"),
-    source=Input("/USAREUR-AF/operational/curated/unit_readiness"),
-)
-def compute_readiness_quarterly(ctx, source, output):
-    df = source.dataframe()
-
-    # Predicate pushdown: filter before any expensive operation
-    df = df.filter(F.col("status").isin(["ACTIVE", "DEPLOYED"]))
-
-    # Column pruning: select only what downstream needs
-    df = df.select(
-        "unit_id",
-        "personnel_count",
-        "readiness_level",
-        "report_date",
-    )
-
-    # Derive partition column before groupBy
-    df = df.withColumn("fy_quarter", F.quarter(F.col("report_date")))
-
-    # Aggregation
-    result = (
-        df.groupBy("unit_id", "fy_quarter")
-          .agg(
-              F.avg("personnel_count").alias("avg_personnel"),
-              F.min("readiness_level").alias("min_readiness"),
-          )
-    )
-
-    # Enforce output schema — catches type drift before it breaks downstream
-    result = ctx.spark_session.createDataFrame(result.rdd, OUTPUT_SCHEMA)
-
-    output.write_dataframe(result)
-```
-
-5. Build on your feature branch. Verify output row count and schema match expectations.
-6. Check build logs for shuffle read/write sizes. If shuffle reads exceed input size significantly, review join strategy.
+| Requirement | Value |
+|---|---|
+| Expected data volume (rows) | |
+| Required refresh rate | |
+| Maximum acceptable latency | |
+| Concurrent user estimate | |
+| Availability requirement (e.g., 0600-2200 CET) | |
 
 ---
 
-### TASK 2-B: ENFORCE SCHEMA IN A TRANSFORM
+**SECTION 6: ACCEPTANCE CRITERIA**
 
-**CONDITIONS:** A source feed intermittently delivers columns with wrong types (e.g., `personnel_count` arrives as string instead of integer). Downstream ontology-backed applications break when the schema drifts.
+How will you verify the implementation is correct? List specific, measurable checks.
 
-**STANDARDS:** Transform enforces output schema on every build. Type mismatches are caught at the transform layer, not downstream.
+1. ___________
+2. ___________
+3. ___________
 
-**PROCEDURE:**
+What are the edge cases that must be tested?
 
-1. Define `StructType` for the output:
-
-```python
-from pyspark.sql.types import (
-    StructType, StructField, StringType, IntegerType, DoubleType, TimestampType
-)
-
-STAGING_SCHEMA = StructType([
-    StructField("unit_id",          StringType(),    nullable=False),
-    StructField("readiness_pct",    DoubleType(),    nullable=True),
-    StructField("c_rating",         StringType(),    nullable=True),
-    StructField("report_dtg",       TimestampType(), nullable=False),
-    StructField("personnel_count",  IntegerType(),   nullable=True),
-    StructField("_processed_at",    TimestampType(), nullable=False),
-])
-```
-
-2. Cast columns explicitly in the transform body rather than relying on Spark inference:
-
-```python
-df = (df
-    .withColumn("unit_id",         F.upper(F.trim(F.col("unit_id"))).cast(StringType()))
-    .withColumn("readiness_pct",   F.col("readiness_pct").cast(DoubleType()))
-    .withColumn("personnel_count", F.col("personnel_count").cast(IntegerType()))
-    .withColumn("report_dtg",      F.to_timestamp(F.col("report_dtg_raw"), "ddHHmm'Z' MMM yy"))
-    .withColumn("_processed_at",   F.current_timestamp())
-)
-```
-
-3. Apply schema at write time:
-
-```python
-result = ctx.spark_session.createDataFrame(df.rdd, STAGING_SCHEMA)
-output.write_dataframe(result)
-```
-
-4. If a cast fails (returns null for non-nullable field), Spark raises an exception at the `createDataFrame` step — the build fails cleanly rather than writing corrupt data.
-
-> **CAUTION: Removing a column from STAGING_SCHEMA after objects are mapped to it in the Ontology will break the backing dataset and cause Object Type property resolution failures. Coordinate with data stewards before removing columns.**
+1. ___________
+2. ___________
 
 ---
 
-### TASK 2-C: WRITE A MULTI-INPUT TRANSFORM
+**SECTION 7: TIMELINE, DEPENDENCIES, AND CONTACTS**
 
-**CONDITIONS:** You need to join unit readiness data with personnel strength data to produce a combined curated dataset. Both inputs are maintained by different upstream teams.
+Is this requirement dependent on any other work in progress?
 
-**STANDARDS:** Join executes without full shuffle. Null handling on the left join is documented. Output is idempotent.
+___________
 
-**PROCEDURE:**
+Who must be consulted before implementation begins? (Data steward, C2DAO, G6, etc.)
 
-```python
-from transforms.api import transform, Input, Output
-from pyspark.sql import functions as F
+___________
 
-@transform(
-    output=Output("/USAREUR-AF/operational/curated/unit_combined"),
-    unit_data=Input("/USAREUR-AF/operational/processed/unit_readiness_clean"),
-    personnel_data=Input("/USAREUR-AF/operational/processed/personnel_strength"),
-)
-def compute_unit_combined(ctx, unit_data, personnel_data, output):
-    units = unit_data.dataframe()
-    personnel = personnel_data.dataframe()
+Requesting builder contact (phone / SIPR):
 
-    # Column pruning on personnel before join
-    personnel_slim = personnel.select(
-        "unit_id",
-        "assigned_strength",
-        "present_for_duty",
-        "mos_fill_pct",
-    )
+___________
 
-    # Left join: keep all units even if no personnel record exists
-    # Repartition on join key to avoid full shuffle on large dataset
-    joined = (
-        units.repartition(200, "unit_id")
-             .join(
-                 personnel_slim.repartition(200, "unit_id"),
-                 on="unit_id",
-                 how="left",
-             )
-    )
+Approving team lead (signature):
 
-    # Null-fill personnel columns for units with no personnel record
-    joined = joined.fillna({
-        "assigned_strength": 0,
-        "present_for_duty":  0,
-        "mos_fill_pct":      0.0,
-    })
-
-    # Deduplicate on primary key — idempotency guarantee
-    result = joined.dropDuplicates(["unit_id", "report_dtg"])
-
-    output.write_dataframe(result)
-```
+___________
 
 ---
 
-### TASK 2-D: USE @lightweight_transform FOR SMALL DATASETS
+## APPENDIX B — APPLICATION DESIGN CHECKLIST
 
-**CONDITIONS:** You need to process a lookup table or reference dataset (unit hierarchy, AOR boundaries, MOS codes) that is under 500,000 rows. The logic requires complex Python operations not easily expressed in PySpark.
+Complete this checklist for every Workshop application before publishing to production. No application is published without a completed checklist on file.
 
-**STANDARDS:** Transform runs in lightweight (non-Spark) container. Logic is correct. Pandas operations are used appropriately.
-
-**WHEN TO USE:**
-- Dataset is under 1 million rows
-- Logic requires complex Python (custom parsers, ML inference, external lookups)
-- Spark startup overhead is larger than actual compute time
-
-**WHEN NOT TO USE:**
-- Dataset grows over time (use `@transform` with Spark)
-- Join with large datasets (Spark required)
-- Memory requirements exceed lightweight container limits (~4 GB)
-
-```python
-from transforms.api import lightweight_transform, Input, Output
-import pandas as pd
-
-@lightweight_transform(
-    output=Output("/USAREUR-AF/reference/mos_classification"),
-    raw=Input("/USAREUR-AF/reference/mos_codes_raw"),
-)
-def compute_mos_classification(output, raw):
-    df = raw.dataframe()  # Returns pandas DataFrame in lightweight context
-
-    # Complex Python logic — not feasible in PySpark without UDFs
-    df["branch"] = df["mos_code"].str[:2].map({
-        "11": "Infantry",
-        "13": "Field Artillery",
-        "17": "Cyber",
-        "25": "Signal",
-        "35": "Military Intelligence",
-        "88": "Transportation",
-        "91": "Ordnance",
-    }).fillna("Other")
-
-    df["is_critical_mos"] = df["vacancy_rate"] > 0.20
-
-    df["_processed_at"] = pd.Timestamp.utcnow()
-
-    output.write_dataframe(df)
-```
-
-> **CAUTION: Do not use `@lightweight_transform` for datasets that are growing or will grow beyond 1 million rows. Lightweight containers have a fixed memory ceiling. A transform that works today on 200K rows will fail silently or OOM when the dataset grows to 2 million rows. Use `@transform` (Spark) for any dataset with ongoing operational growth.**
+**Application Information:**
+- Application Name: ___________
+- Builder Name / Unit: ___________
+- Target User Group: ___________
+- Primary Object Type(s): ___________
+- Completion Date: ___________
 
 ---
 
-## 2-2. PySpark Advanced Operations Reference
+**DESIGN**
+- [ ] Page map completed and reviewed with end user before build began
+- [ ] User roles defined and documented
+- [ ] Required data (Object Types, Link Types) confirmed to exist in Ontology
+- [ ] No raw datasets used as application data sources (curated only)
+- [ ] Variable and parameter design documented before building
 
-| Operation | Pattern | Use Case |
-|-----------|---------|----------|
-| Window rank | `F.row_number().over(Window.partitionBy("unit_id").orderBy(F.desc("report_dtg")))` | Latest record per unit |
-| Lag/lead | `F.lag("readiness_pct", 1).over(w)` | Period-over-period comparison |
-| Running total | `F.sum("count").over(Window.partitionBy("aor").orderBy("report_dtg").rowsBetween(Window.unboundedPreceding, 0))` | Cumulative ops metrics |
-| Explode array | `F.explode(F.col("equipment_list"))` | Flatten nested arrays |
-| Struct extract | `F.col("location.grid_ref")` | Access nested struct fields |
-| Pivot | `.groupBy("unit_id").pivot("c_rating").agg(F.count("*"))` | Cross-tab readiness by C-rating |
-| Broadcast join | `df1.join(F.broadcast(small_df), "unit_id")` | Join large + small dataset |
+**BUILD QUALITY**
+- [ ] All filter chains tested — including zero-result and all-results states
+- [ ] All conditional visibility logic tested for both visible and hidden states
+- [ ] Empty states configured for all widgets that display object data
+- [ ] Multi-page navigation tested for all page combinations
+- [ ] Cross-page parameter passing tested end-to-end
+- [ ] Conditional visibility used only for UX, not for access control
 
-## 2-3. Transform Performance Troubleshooting
+**PERFORMANCE**
+- [ ] Application tested with production-representative data volume (not sample data)
+- [ ] Page load time under 5 seconds for primary page with production data
+- [ ] Table widgets configured with pagination for sets over 200 rows
+- [ ] No more than 7 linked widgets bound to a single Object Variable
+- [ ] Auto-refresh intervals justified and documented (if configured below 30 minutes)
 
-| Symptom | Likely Cause | Resolution |
-|---------|-------------|------------|
-| Build takes >30 min | Full scan, no predicate pushdown | Add `.filter()` before join/agg |
-| OOM error on Spark executor | Skewed join key or too-large partitions | Repartition on join key; use `salting` for skewed keys |
-| Output schema changes break downstream | No schema enforcement | Define `StructType`, enforce at write |
-| Incremental transform runs full scan | `require_incremental=True` missing | See Chapter 3 |
-| Duplicate rows in output | Missing `dropDuplicates()` | Add dedup on primary key |
-| Build succeeds but output is empty | Filter removes all rows | Check filter logic; add `.count()` test pre-filter |
-| Lightweight OOM | Dataset exceeds container memory | Switch to Spark `@transform` |
+**GOVERNANCE**
+- [ ] All widgets sourcing data from Ontology objects (not raw datasets)
+- [ ] Application name follows USAREUR-AF naming conventions
+- [ ] All widgets have descriptive titles or labels
+- [ ] Access group configured — application is not world-readable unless required
+- [ ] UDRA domain alignment confirmed with data steward
+- [ ] Appendix C (UDRA Alignment Checklist) completed
+- [ ] If MPE/coalition-accessible: C2DAO coordination complete and documented
 
----
-
-# CHAPTER 3 — INCREMENTAL TRANSFORMS AND PIPELINE PATTERNS
-
-## 3-1. Why Incremental Matters
-
-Operational data in MSS grows continuously. SITREP feeds append new records every reporting cycle. Equipment maintenance logs grow daily. Personnel transactions accumulate over months. Full recompute on every pipeline trigger is neither efficient nor sustainable.
-
-A transform that takes 45 seconds on one month of data takes 45 minutes on 60 months of data — with identical resource cost per run. Incremental transforms solve this by processing only data added since the last successful run. For high-frequency operational feeds, incremental is the only acceptable architecture at production scale.
-
-## 3-2. The Watermark Pattern
-
-A watermark is a stored marker indicating the last successfully processed state. On each run, the transform reads only data newer than the watermark, processes it, then advances the watermark.
-
-Foundry manages the watermark automatically for transforms decorated with `@incremental` — it tracks transaction IDs on the source dataset. For pipelines external to Foundry (feeding data in via API), use an explicit watermark store. See `data_skills/13_foundry_patterns/incremental_transforms.py` for the `WatermarkPipeline` implementation pattern.
+**REVIEW**
+- [ ] Team lead reviewed the application before publication
+- [ ] End user(s) tested the application in staging before publication
+- [ ] Any Actions in the application tested with test objects (not production records)
+- [ ] Approval chains (if any) tested end-to-end with test accounts
 
 ---
 
-### TASK 3-A: WRITE AN INCREMENTAL TRANSFORM WITH @incremental
+## APPENDIX C — UDRA ALIGNMENT CHECKLIST
 
-**CONDITIONS:** A SITREP feed dataset receives hundreds of new records per reporting cycle. The staging transform currently full-scans the input on every build. Build time exceeds the reporting cycle interval.
+Complete this checklist for every new data product (dataset, Object Type, Workshop application, Pipeline) before publishing to production. UDRA v1.1 compliance is required for all MSS data products in the USAREUR-AF environment.
 
-**STANDARDS:** Transform processes only new rows since last successful build. First run performs full snapshot. Output is append-only. Build completes within the reporting cycle interval.
-
-**EQUIPMENT:** Foundry Code Repository, input dataset with Foundry transaction support.
-
-> **CAUTION: `require_incremental=True` causes the transform to fail if the input dataset does not support incremental mode. Use this setting for production transforms to prevent silent fallback to full-scan. Omit it only on datasets where full-scan fallback is acceptable (e.g., small reference tables).**
-
-**PROCEDURE:**
-
-```python
-from transforms.api import transform, Input, Output, incremental
-from pyspark.sql import functions as F
-
-@incremental(require_incremental=True)
-@transform(
-    output=Output("/USAREUR-AF/operational/processed/sitrep_normalized"),
-    source=Input("/USAREUR-AF/operational/raw/sitrep_feed"),
-)
-def compute_sitrep_incremental(ctx, source, output):
-    # Retrieve only rows added since last successful run.
-    # On first run (no prior successful build), returns the full dataset.
-    new_data = source.dataframe(ctx, "added")
-
-    # Guard: no new data — nothing to do
-    if new_data.rdd.isEmpty():
-        return
-
-    # Normalize and enrich
-    processed = (
-        new_data
-        .withColumn("unit_id",       F.upper(F.trim(F.col("unit_id"))))
-        .withColumn("processed_at",  F.current_timestamp())
-        .withColumn("c_rating",
-            F.when(F.col("readiness_pct") >= 85, "C1")
-             .when(F.col("readiness_pct") >= 65, "C2")
-             .when(F.col("readiness_pct") >= 35, "C3")
-             .otherwise("C4")
-        )
-        .withColumn("is_late",
-            (F.unix_timestamp(F.col("processed_at")) -
-             F.unix_timestamp(F.col("report_dtg"))) / 3600 > 6
-        )
-    )
-
-    # Append-only write — do not use output.write_dataframe() in incremental context
-    output.set_mode("modify")
-    output.write_dataframe(processed)
-```
+**Data Product Information:**
+- Product Name: ___________
+- Product Type (Dataset / Object Type / Application / Pipeline): ___________
+- Builder Name / Unit: ___________
+- Completion Date: ___________
 
 ---
 
-### TASK 3-B: IMPLEMENT A WATERMARK-BASED PIPELINE
+**DOMAIN OWNERSHIP**
+- [ ] Data domain assigned (see Chapter 8, section 8-4 for domain list)
+- [ ] Domain assignment confirmed with USAREUR-AF C2DAO or designated domain steward
+- [ ] Domain data steward identified by name and contact
+- [ ] Product registered in the USAREUR-AF data product catalog (if applicable)
 
-**CONDITIONS:** You are building a pipeline that ingests data from an external system into Foundry via the Datasets API. The external system does not support transaction-level change tracking. You must track processed state yourself.
+**DATA PRODUCT THINKING**
+- [ ] Consumer(s) identified: who will use this product and what decisions do they make?
+- [ ] Product owner designated (the -30 builder or delegated owner responsible for ongoing quality)
+- [ ] Product description written — clear, jargon-free, accessible to a new user
+- [ ] SLA defined: refresh rate, acceptable downtime, minimum quality floor
 
-**STANDARDS:** Pipeline processes only records newer than last successful run. Watermark advances only after successful write. Pipeline is idempotent — running twice on the same data produces no duplicates.
+**LAYER VERIFICATION**
+- [ ] Layer assignment confirmed: which of the 5 layers does this product operate at?
+- [ ] No Workshop application reads from raw or staging datasets (curated only)
+- [ ] No Object Type backed by an unvalidated source dataset
+- [ ] Pipeline output passes all configured quality checks before downstream consumption
 
-**PROCEDURE:**
+**FEDERATED GOVERNANCE**
+- [ ] Data steward notified and approved publication
+- [ ] Modifications to shared Object Types coordinated with all dependent application owners
+- [ ] Access controls set per least-privilege principle — users have access to data they need, not broader access
+- [ ] Data retention and archival policy identified (how long will this product be maintained?)
 
-The `WatermarkPipeline` class in `data_skills/13_foundry_patterns/incremental_transforms.py` implements this pattern. For production use, the database path becomes a managed state store (SQLite for small-scale, or a Foundry dataset for production):
+**DATA QUALITY (VAUTI)**
+- [ ] Visible: product is discoverable in Compass with an accurate description
+- [ ] Accessible: correct users have access; incorrect users do not
+- [ ] Understandable: all fields/properties have descriptions; units and formats are documented
+- [ ] Trustable: quality checks are configured; pipeline alerts are configured; lineage is complete
+- [ ] Interoperable: if coalition-shared — NAFv4 compliance review completed (C2DAO); STANAG applicability assessed
 
-```python
-from watermark_pipeline import WatermarkPipeline  # your local module
-import pandas as pd
-import os
-
-PIPELINE_ID = "sitrep-external-feed"
-STATE_DB = os.environ["PIPELINE_STATE_DB"]  # never hardcode
-
-pipeline = WatermarkPipeline(db_path=STATE_DB)
-
-def run_incremental_load(source_df: pd.DataFrame) -> None:
-    """
-    Load only new records from source_df into Foundry.
-    Watermark tracks the maximum report_dtg seen in previous runs.
-    """
-    processed = pipeline.run(
-        pipeline_id=PIPELINE_ID,
-        source_df=source_df,
-        timestamp_col="report_dtg",
-    )
-
-    if processed.empty:
-        return  # No new data this cycle
-
-    # Deduplicate on report_id before writing to Foundry
-    processed = processed.drop_duplicates(subset=["report_id"])
-
-    # Write to Foundry via Datasets API
-    # (implementation uses foundry_client.datasets.upload_dataframe)
-    write_to_foundry(processed)
-    # Watermark already advanced inside pipeline.run() on success
-```
+**NATO/COALITION (if applicable)**
+- [ ] MPE eligibility assessed (not assumed)
+- [ ] Releasability markings correct and applied
+- [ ] C2DAO coordination complete for any MPE-accessible product
+- [ ] G6/S6 coordination complete for any cross-domain data transfer
+- [ ] NATO-compatible terminology used in Object Type names and property names where applicable
+- [ ] ADP to JP to NATO Crosswalk consulted for terminology alignment
 
 ---
 
-### TASK 3-C: HANDLE LATE-ARRIVING DATA
+## GLOSSARY
 
-**CONDITIONS:** Operational reports sometimes arrive hours or days after the event they describe. Your incremental pipeline has already processed the time window when the late data should have been included. The curated dataset now has gaps.
+**Action.** An Ontology-configured workflow that allows MSS users to write data back to an Object Type. Actions have defined inputs (form fields), validation rules, effects (what changes), and optionally an approval chain. Configured in Ontology Manager.
 
-**STANDARDS:** Late-arriving data is detected and flagged. Reprocessing logic is documented. Pipeline does not silently discard late records.
+**AIP Logic.** MSS's framework for integrating AI capabilities into operational workflows. AIP Logic allows advanced builders to configure AI-assisted workflows — including prompt design and ontology data connections — through a visual UI without writing code.
 
-**PROCEDURE:**
+**Approval Chain.** A governance mechanism within an Action that requires designated reviewer(s) to approve a submission before the Action's effect is applied to the Ontology. Used for high-impact data changes that require command authority.
 
-1. Store two timestamps on every record: `report_dtg` (when the event occurred) and `received_at` (when Foundry ingested it).
+**C2DAO (Command and Control Data Architecture Office).** USAREUR-AF's designated architecture authority for MSS and the enterprise data environment. The C2DAO sets data architecture standards, approves domain assignments, and serves as the cross-domain authorization authority for MPE-eligible data products.
 
-2. In your incremental transform, compute the lag:
+**Calculated Column.** A column derived from a formula expression applied to existing data fields. In Contour, calculated columns are analytical and do not modify the source dataset. In Pipeline Builder's Derived Column node, calculated columns become persistent in the output dataset.
 
-```python
-processed = processed.withColumn(
-    "arrival_lag_hours",
-    (F.unix_timestamp("received_at") - F.unix_timestamp("report_dtg")) / 3600
-)
-processed = processed.withColumn(
-    "is_late_arrival",
-    F.col("arrival_lag_hours") > 6.0  # 6-hour SLA for USAREUR-AF SITREP cycle
-)
-```
+**Conditional Layout.** A Workshop application design pattern in which the visibility or content of a widget or container panel is controlled by an expression rather than being static. Enables role-based views and state-driven UI without building separate applications.
 
-3. Route late arrivals to a separate output dataset for review:
+**Contour.** MSS's data analysis workspace. Supports filtering, calculated columns, aggregations, pivot tables, cross-dataset joins, and chart visualizations. Analytical outputs in Contour are not persistent datasets unless explicitly promoted to Pipeline Builder.
 
-```python
-on_time  = processed.filter(~F.col("is_late_arrival"))
-late     = processed.filter(F.col("is_late_arrival"))
+**Cross-Domain Solution (CDS).** The technical infrastructure that enables controlled data transfer between separate network domains (e.g., from the U.S. national network to the MPE). Owned and operated by G6/S6. All data crossing the CDS boundary requires C2DAO approval.
 
-output.set_mode("modify")
-output.write_dataframe(on_time)
+**Data Domain.** A defined grouping of related data assets under the governance of a designated domain owner. In UDRA v1.1, all MSS data products must be assigned to a domain. Domain examples: Personnel and Readiness, Intelligence, Operations, Logistics.
 
-late_output.set_mode("modify")
-late_output.write_dataframe(late)
-```
+**Data Lineage.** The documented path of data from its source through every transformation, join, and enrichment step to its final output. Viewed in MSS as the lineage graph. Used for root cause analysis of data quality issues and for impact assessment before modifying shared resources.
 
-4. For reprocessing, do not modify the watermark manually. Instead, trigger a full snapshot rebuild on the affected time window by temporarily setting `require_incremental=False`, running once, then restoring.
+**Data Product.** In UDRA v1.1 terms, any MSS resource — dataset, Object Type, Workshop application, pipeline — that has a defined consumer, a documented purpose, a designated owner, and a stated quality SLA. All TM-30 outputs should be designed and managed as data products.
 
-> **CAUTION: Do not advance the watermark past records you have not yet processed. A watermark that has moved ahead of actual data creates permanent gaps in your pipeline output. These gaps will not be caught until a downstream analyst notices missing data in a report.**
+**Data Steward.** The operational authority for a data domain. Responsible for the quality, accuracy, and governance of all data products within their domain. The data steward is the first point of contact for all domain-related governance questions.
 
----
+**DDOF (Doctrine-Driven Ontology Framework).** A design framework, documented at `learn-data.armydev.com`, for modeling Army operational concepts in the MSS Ontology using Army doctrinal definitions as the authoritative source for Object Type names and semantics.
 
-## 3-3. Incremental vs. Full-Recompute Decision Matrix
+**Dependent Filter.** A Workshop filter widget whose available options are constrained by the selection in a prior filter. Dependent filters prevent users from selecting filter combinations that yield no results and reduce the options presented at each step.
 
-| Factor | Use Incremental | Use Full-Recompute |
-|--------|-----------------|-------------------|
-| Dataset row count | > 1 million and growing | < 1 million or static |
-| Build time (full scan) | > 10 minutes | < 2 minutes |
-| Data arrives in append-only fashion | Yes | No |
-| Source supports transaction tracking | Yes | No |
-| Late-arriving data requires reprocessing | Handle separately | Built-in |
-| First build of new dataset | N/A | Yes — snapshot first |
+**eFP (Enhanced Forward Presence).** NATO's deterrence posture in the Baltic states and Poland, consisting of multinational battlegroups in Estonia, Latvia, Lithuania, and Poland. USAREUR-AF data products supporting eFP are among the highest-probability candidates for coalition data sharing.
 
-## 3-4. Monitoring Incremental Pipelines
+**Federated Governance.** The UDRA model in which data governance authority is distributed among domain stewards, with the C2DAO setting architecture standards but domain stewards owning content governance for their respective domains.
 
-Configure these alerts in Foundry pipeline monitoring for every incremental production transform:
+**Link Type.** An Ontology configuration that defines a relationship between two Object Types. Named as a verb phrase from the perspective of the source object. Has defined cardinality (one-to-one, one-to-many, many-to-many).
 
-- **Build failure alert:** Immediate notification. A failed incremental build means data has stopped flowing.
-- **No new data alert:** If new_data count = 0 for more than 2× the expected reporting cycle interval, the source feed may have stopped.
-- **Late arrival rate:** Alert when `is_late_arrival` rate exceeds 15% — may indicate upstream system issues.
-- **Watermark drift:** Alert when the watermark is more than 24 hours behind current time — indicates pipeline lag.
+**Mission Partner Environment (MPE).** The network environment through which authorized coalition partners access shared U.S. data products. Separate from the U.S. national network. All data transfer to the MPE crosses a domain boundary requiring CDS and C2DAO authorization.
 
----
+**Multi-Step Action.** An Action configured with a sequential form that guides users through distinct phases of a workflow (e.g., identification, data entry, certification). Users cannot advance to the next step without completing required fields in the current step.
 
-# CHAPTER 4 — ADVANCED ONTOLOGY AND OBJECT MODELING
+**NAFv4 (NATO Architecture Framework version 4).** The enterprise architecture standard governing all systems and data products operating in the NATO/EUCOM coalition environment. Data products shared with coalition partners via the MPE must comply with NAFv4 standards.
 
-## 4-1. Advanced Ontology Design Principles
+**Object Set Variable.** A Workshop variable type that holds a filtered collection of Ontology objects. Used to drive lists, tables, maps, and charts from a dynamically filtered view of an Object Type.
 
-The Ontology is the semantic core of MSS. At TM-20 level, you learned to create Object Types and link them. At TM-30 level, you design the ontology architecture itself.
+**Object Type.** The fundamental Ontology construct in MSS. Represents an operational concept (e.g., `UnitStatus`, `ISRCollectionEvent`) and is backed by a curated dataset. Has properties, Links, and Actions.
 
-**When to create a new Object Type:**
-- The entity has its own lifecycle (created, modified, deleted independently)
-- The entity has relationships to other objects
-- Multiple applications need to query or display the entity
-- The entity needs its own permissions or markings
+**Object Type Cookbook v2.** The authoritative reference for Object Type design patterns in the USAREUR-AF MSS environment, available at `learn-data.armydev.com`. Addendum A covers operational Object Types for Army warfighting functions.
 
-**When to extend an existing Object Type:**
-- You are adding properties to something already modeled
-- The entity is simply additional detail on an existing object (add properties, not a new type)
+**Ontology.** The semantic layer of MSS (Layer 3 of the 5-Layer Data Stack). Translates dataset rows into operational concepts with named properties, relationships (Link Types), and configurable workflows (Actions).
 
-**When to create an Interface instead:**
-- Multiple Object Types share a common set of properties
-- Applications need to query across multiple Object Types using a unified API
-- You want to enforce a property contract (e.g., all "reportable" entities have `last_report_dtg`)
+**Pipeline Builder.** MSS's visual (no-code) ETL tool. Allows builders to configure data ingestion, multi-source joins, column transformations, calculated columns, and scheduled execution through a drag-and-drop interface.
 
-## 4-2. Interfaces — Shared Property Contracts
+**Pivot Table.** An aggregation view in Contour that cross-tabulates data across two or more categorical dimensions. Displays aggregate values (count, sum, average) at each dimension intersection.
 
-An Interface defines a set of properties that multiple Object Types must implement. It is analogous to an interface in TypeScript or an abstract base class in Python.
+**Production Discipline.** The practice of developing all changes on named development branches, requiring review before merge, and never testing in the production environment. A foundational TM-30 professional standard.
 
-**Use case for USAREUR-AF:** Units, Personnel, and Equipment all have a `readiness_status`. Rather than defining the property three times with potentially inconsistent types, define an Interface `HasReadinessStatus` and implement it on all three Object Types.
+**Prompt Engineering.** The practice of writing effective input instructions for an AI model to produce useful and accurate outputs. For TM-30 builders configuring AIP Logic, prompt engineering involves specifying role, context, output format, constraints, and examples.
+
+**Quiver.** MSS's linked analysis and visualization environment. Supports multiple chart views linked by a common selection state, allowing interactive exploration across multiple analytical dimensions simultaneously. Embeddable in Workshop applications.
+
+**STANAG (Standardization Agreement).** NATO standards governing specific technical domains, including data exchange formats and protocols for coalition interoperability. Applicable STANAGs vary by data domain (e.g., STANAG 5516 for tactical data links).
+
+**UDRA v1.1 (Unified Data Reference Architecture, version 1.1, February 2025).** The Army's unified architecture standard for data products, requiring domain ownership, federated governance, data product thinking, layer verification, and VAUTI compliance.
+
+**URL Parameter.** A Workshop application parameter passed through the application URL. Enables deep-linking — sharing a URL that opens the application with a pre-applied filter or selected object. URL parameters are visible in the URL and should not contain sensitive data.
+
+**VAUTI.** The DoD data quality framework from the DoD Data Strategy (2020): Visible, Accessible, Understandable, Trustable, Interoperable. All MSS data products must meet all five criteria.
+
+**Workshop.** MSS's drag-and-drop application builder. The primary tool for creating operational dashboards, data entry forms, and action-enabled applications for end users. Applications are built on Ontology Object Types and support Actions for write-back.
 
 ---
 
-### TASK 4-A: CREATE AN INTERFACE
+*TM-30 — MAVEN SMART SYSTEM (MSS) ADVANCED BUILDER TECHNICAL MANUAL*
 
-**CONDITIONS:** Multiple Object Types in your ontology need to support readiness status tracking. Workshop applications and AIP agents need to query across these types using a unified property contract.
+*HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA, Wiesbaden, Germany*
 
-**STANDARDS:** Interface is defined with correct property types. All target Object Types implement the Interface. Interface properties are queryable from Workshop and OSDK.
+*2026*
 
-**PROCEDURE:**
+*By order of the Commanding General, United States Army Europe and Africa.*
 
-1. In Ontology Manager, navigate to **Interfaces** → **New Interface**.
-2. Name the Interface: `HasReadinessStatus` (PascalCase, descriptive).
-3. Add the following shared properties to the Interface:
-
-| Property API Name | Type | Nullable | Description |
-|-------------------|------|----------|-------------|
-| `readinessStatus` | String | No | Current operational readiness status |
-| `lastAssessedDtg` | Timestamp | Yes | When readiness was last assessed |
-| `c_rating` | String | Yes | Army C-rating (C1–C4) |
-
-4. Save and publish the Interface.
-5. Open each target Object Type (e.g., `Unit`, `Personnel`, `EquipmentItem`).
-6. Navigate to **Interfaces** tab → **Implement Interface** → select `HasReadinessStatus`.
-7. Map each Interface property to the corresponding Object Type property.
-8. Build and verify Interface resolution in Object Explorer.
-
-> **CAUTION: Modifying or removing properties from a published Interface that is implemented by multiple Object Types will break all implementing types simultaneously. Treat Interface changes as a formation-wide schema change — coordinate with all affected teams before modifying.**
-
----
-
-### TASK 4-B: CONFIGURE DERIVED PROPERTIES
-
-**CONDITIONS:** You need to expose a property on `Unit` objects that represents the number of days since the last SITREP was submitted. This value changes daily without any data update. Storing it as a computed column in the transform would require a daily full-refresh.
-
-**STANDARDS:** Property computes correctly at query time. Performance impact is understood and accepted. Backing function is tested on development branch.
-
-**PROCEDURE:**
-
-1. In Ontology Manager, open the `Unit` Object Type.
-2. Navigate to **Properties** → **Add Property** → type: **Derived Property**.
-3. Select the computation type:
-   - **Formula-based:** For simple arithmetic (e.g., `TODAY() - lastSitrepDate`). No code required.
-   - **Function-backed:** For complex logic. Requires a TypeScript Function (see Chapter 5).
-4. For a formula-based derived property (`daysSinceLastSitrep`):
-   - Formula: `DATEDIFF(NOW(), lastSitrepDtg, "days")`
-   - Return type: Integer
-5. Name the property, set display name, publish.
-
-**Performance note:** Derived properties compute at query time — every time an object is loaded, the formula runs. For high-cardinality object sets (thousands of objects in a table), derived properties with expensive computations will noticeably slow Workshop application load time. If the value only needs to be current to within one reporting cycle, pre-compute it in the transform and store it as a regular property.
-
----
-
-### TASK 4-C: MODEL COMPLEX LINK TYPES
-
-**CONDITIONS:** Units have a many-to-many relationship with Personnel through assignments. An individual Soldier can be attached to multiple units (primary unit + OPCON attachment). You need to model this relationship with an assignment date on the link itself.
-
-**STANDARDS:** Link type is correctly defined as many-to-many. Link property (assignment date) is accessible from both sides of the relationship.
-
-**PROCEDURE:**
-
-1. Ontology Manager → **Link Types** → **New Link Type**.
-2. Configure:
-   - **Name:** `personnel_assignment`
-   - **Display name:** "Assignment"
-   - **Object Type A:** `Personnel`
-   - **Object Type B:** `Unit`
-   - **Cardinality:** Many-to-Many
-3. Add link properties (values stored on the link itself, not on either object):
-   - `assignmentStartDtg` — Timestamp
-   - `assignmentType` — String (PRIMARY, OPCON, TACON, ATTACHED)
-4. Map the backing dataset — you need a junction dataset with columns for both primary keys plus the link properties.
-5. Configure the backing dataset:
-   - `personnel_id` (FK to Personnel)
-   - `unit_id` (FK to Unit)
-   - `assignment_start_dtg`
-   - `assignment_type`
-6. Publish the link type.
-7. Verify traversal in Object Explorer: from a Personnel object, navigate to their assigned Units; from a Unit object, navigate to assigned Personnel.
-
----
-
-### TASK 4-D: CONFIGURE OBJECT STORAGE V2
-
-**CONDITIONS:** A high-cardinality Object Type (millions of Personnel objects) is experiencing slow search and filter performance in Workshop. Object Storage V2 provides indexing and property-level policy controls.
-
-**STANDARDS:** Indexing configuration matches the most common query patterns. Property-level markings are applied correctly.
-
-**PROCEDURE:**
-
-1. Ontology Manager → Object Type → **Storage** tab.
-2. Enable **Object Storage V2**.
-3. Configure search indexing — index properties that are commonly used as filters:
-   - `unit_id` — indexed (high-frequency filter in all applications)
-   - `c_rating` — indexed
-   - `aor` — indexed
-   - `narrative` (free text) — indexed for full-text search if needed
-4. Properties that do not need indexing (rarely filtered, large text, attachments) — leave unindexed to reduce storage cost.
-5. Configure property-level policies:
-   - Properties containing PII: add classification marking
-   - Properties visible only to S2: apply appropriate marking
-6. Publish and rebuild the Object Type.
-
-> **CAUTION: Changing the indexing configuration on a high-cardinality Object Type triggers a full re-index. This can take hours on large datasets and temporarily degrades search performance. Schedule re-index operations during low-usage windows and notify application users.**
-
----
-
-## 4-3. Ontology Anti-Patterns
-
-| Anti-Pattern | Why It Fails | Correct Approach |
-|-------------|-------------|------------------|
-| One Object Type per data source | Fragments the semantic model; applications must know source, not concept | Model the concept; join sources in transforms |
-| Derived properties for bulk displays | N+1 compute per object; table of 1000 objects = 1000 function calls | Pre-compute in transform; use derived only for per-object views |
-| Link types without backing datasets | Relationships lost on rebuild | Always back link types with a persistent junction dataset |
-| Removing properties without notification | Breaks all downstream applications using that property | Deprecate (mark nullable, stop writing); remove only after all consumers migrate |
-| Storing raw dataset columns as Object properties | Exposes dirty/unstable data to applications | Always back Object Types with curated datasets only |
-
----
-
-# CHAPTER 5 — FUNCTIONS ON OBJECTS (FOO)
-
-## 5-1. What Functions on Objects Are
-
-Functions on Objects (FOO) are TypeScript functions that execute against the Ontology at query time. They allow complex logic — including traversal of links to related objects, conditional scoring, and multi-object aggregations — to be encapsulated in the semantic model rather than duplicated across applications.
-
-FOO functions live in a **Function Repository** (Code Repository, type: Functions). They are written in TypeScript and published to the Ontology, where they back computed properties or are called directly from Workshop widgets, AIP agents, and OSDK consumers.
-
-## 5-2. When to Use FOO
-
-| Use FOO | Use Transform-Computed Values | Use Derived Property Formula |
-|---------|------------------------------|------------------------------|
-| Logic requires traversing links to related objects | Value can be computed from columns in one dataset | Simple arithmetic on existing properties |
-| Value must reflect current state of related objects | Value only needs to update on schedule | No TypeScript required |
-| Complex scoring or classification logic | Bulk aggregation across millions of objects | Low query volume |
-| Action side effects or validation | Static reference data enrichment | |
-| Real-time queries requiring live data | | |
-
-> **CAUTION: FOO functions are NOT suitable for bulk operations. If a Workshop table displays 10,000 objects and each has a FOO-backed computed property, the function executes 10,000 times on every page load. Pre-compute high-volume values in transforms. Use FOO for per-object detail views and low-volume computations.**
-
----
-
-### TASK 5-A: WRITE A BASIC FUNCTION ON OBJECTS
-
-**CONDITIONS:** You need to compute a composite readiness score for each Unit object that weights personnel fill and equipment serviceability. The formula is not expressible as a simple formula-based derived property.
-
-**STANDARDS:** Function returns correct Integer result. Function is tested in development branch before publishing. Function is attached to Unit Object Type as a computed property.
-
-**EQUIPMENT:** Foundry Function Repository (TypeScript), Editor role on Ontology.
-
-**PROCEDURE:**
-
-1. Create a new Code Repository (type: Functions) named `unit-readiness-functions`.
-2. In `src/index.ts`:
-
-```typescript
-import { Function, Integer, Double } from "@palantir/functions-api";
-import { Objects } from "@foundry/ontology-api";
-import { Unit } from "@foundry/ontology-api";
-
-export class UnitReadinessFunctions {
-
-  /**
-   * Composite readiness score: 60% personnel fill, 40% equipment serviceability.
-   * Returns 0–100 integer. Returns null if data is insufficient.
-   */
-  @Function()
-  public async getCompositeReadinessScore(unit: Unit): Promise<Integer | null> {
-    const personnelFill = await unit.personnelFillPct;
-    const equipmentSvc  = await unit.equipmentServiceablePct;
-
-    // Guard: cannot compute without both inputs
-    if (personnelFill == null || equipmentSvc == null) {
-      return null;
-    }
-
-    const score = (personnelFill * 0.6) + (equipmentSvc * 0.4);
-    return Math.round(score);
-  }
-}
-```
-
-3. Build the repository. Fix TypeScript compilation errors.
-4. In Ontology Manager → `Unit` Object Type → Properties → Add Property → **Function-Backed Property**.
-5. Select repository `unit-readiness-functions`, function `getCompositeReadinessScore`.
-6. Map parameter `unit` to the current object.
-7. Publish on development branch. Test in Object Explorer with known units.
-8. After validation, merge to production via PR.
-
----
-
-### TASK 5-B: BIND A FUNCTION TO A WORKSHOP WIDGET
-
-**CONDITIONS:** A Workshop readiness dashboard needs to display the composite readiness score alongside standard properties in an Object Table.
-
-**STANDARDS:** Function-backed property appears as a column in the Widget. Values load within acceptable latency for the table size.
-
-**PROCEDURE:**
-
-1. Open Workshop application → Module → Object Table widget.
-2. In Columns configuration → **Add Column** → **Property** → select `compositeReadinessScore` (the function-backed property you published in Task 5-A).
-3. Apply conditional formatting: green if > 80, yellow if 65–80, red if < 65.
-4. Test with a small filtered object set (one brigade's units) before enabling for large object sets.
-5. If load time is slow: move the table to a detail view (single object) rather than a bulk table display. See 5-2 for guidance on FOO performance limits.
-
----
-
-### TASK 5-C: WRITE A FUNCTION WITH MULTIPLE OBJECT INPUTS AND LINK TRAVERSAL
-
-**CONDITIONS:** You need to compute a unit's SITREP compliance rate — the percentage of expected SITREPs submitted on time over the past 30 days. This requires traversing the `Unit → Sitrep` link.
-
-```typescript
-import { Function, Double } from "@palantir/functions-api";
-import { Unit } from "@foundry/ontology-api";
-
-export class SitrepComplianceFunctions {
-
-  @Function()
-  public async getSitrepComplianceRate(unit: Unit): Promise<Double | null> {
-    // Traverse the link to related SITREP objects
-    const sitreps = await unit.sitreps.all();
-
-    if (sitreps.length === 0) {
-      return null;
-    }
-
-    // Filter to last 30 days
-    const thirtyDaysAgo = new Date();
-    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-
-    const recent = sitreps.filter(s =>
-      s.reportDtg != null && new Date(s.reportDtg) >= thirtyDaysAgo
-    );
-
-    if (recent.length === 0) {
-      return 0.0;
-    }
-
-    // Compliance: on-time submissions / total submissions
-    const onTime = recent.filter(s => s.isLate === false).length;
-    return Math.round((onTime / recent.length) * 100) / 100;
-  }
-}
-```
-
-> **CAUTION: Link traversal functions (calling `.all()` on a link) load all related objects into memory. For Object Types with high-cardinality links (a unit with thousands of SITREPs), use `.filter()` before `.all()` to limit the set, or pre-aggregate in a transform and expose as a regular property.**
-
----
-
-# CHAPTER 6 — ACTIONS AND WRITE-BACK PATTERNS
-
-## 6-1. Actions Architecture
-
-Reference TM-20 Chapter 8 for baseline Actions concepts. At TM-30 level, you design complex Actions with multi-field validation, conditional logic, and batch operations.
-
-When a user executes an Action in Workshop:
-1. Workshop validates the Action's parameters against the Action Type's validation rules.
-2. If validation passes, Foundry submits the Action to the Ontology layer.
-3. The Ontology layer applies the configured logic: creates, modifies, or deletes objects.
-4. An audit record is written automatically — user, timestamp, parameters, outcome.
-5. The backing dataset is updated; downstream transforms and Object Types refresh on next build cycle.
-
-## 6-2. Action Types
-
-| Type | Use Case | USAREUR-AF Example |
-|------|----------|-------------------|
-| Create Object | New record submission | Submit new SITREP, register new equipment item |
-| Modify Object | Update existing record | Update unit readiness status, close an open event |
-| Delete Object | Remove a record | Delete a duplicate SITREP (restricted — log carefully) |
-| Batch | Operate on multiple objects at once | Bulk update status on all units in an AOR |
-
----
-
-### TASK 6-A: CREATE A COMPLEX ACTION WITH VALIDATION
-
-**CONDITIONS:** S6/G6 analysts need to submit updated unit readiness assessments via a Workshop form. The Action must enforce: `readinessPct` is 0–100, `cRating` matches the `readinessPct` range, `submittedBy` is present, and `assessmentDtg` is not in the future.
-
-**STANDARDS:** All four validation rules enforce correctly. Invalid submissions are rejected with descriptive error messages. Valid submissions write correctly to the `Unit` Object Type.
-
-**PROCEDURE:**
-
-1. Ontology Manager → **Action Types** → **New Action Type** → type: **Modify Object** → target: `Unit`.
-2. Define parameters:
-
-| Parameter | Type | Required | Display Label |
-|-----------|------|----------|---------------|
-| `unitId` | String | Yes | Unit ID |
-| `readinessPct` | Double | Yes | Readiness % (0–100) |
-| `cRating` | String | Yes | C-Rating |
-| `submittedBy` | String | Yes | Submitted By (name/rank) |
-| `assessmentDtg` | Timestamp | Yes | Assessment DTG |
-| `narrative` | String | No | Narrative |
-
-3. Add validation rules:
-   - `readinessPct >= 0 AND readinessPct <= 100` — message: "Readiness must be between 0 and 100."
-   - Conditional: `IF readinessPct >= 85 THEN cRating == "C1"` — message: "C-Rating must be C1 for readiness >= 85%."
-   - Conditional: `IF readinessPct >= 65 AND readinessPct < 85 THEN cRating IN ("C1", "C2")` — message: "C-Rating C2 or better required for this readiness range."
-   - `assessmentDtg <= NOW()` — message: "Assessment DTG cannot be in the future."
-4. Define logic: map each parameter to the corresponding `Unit` property.
-5. Publish on development branch. Test with invalid inputs to verify each validation fires correctly.
-6. Promote to production via PR after validation testing is complete.
-
-> **CAUTION: Actions execute against the production Ontology when published. There is no "undo" — modified objects are modified, created objects exist. Test every validation rule exhaustively on a development branch before promoting. Confirm with the data steward that the Action modifies only the intended properties.**
-
----
-
-### TASK 6-B: CREATE A BATCH ACTION
-
-**CONDITIONS:** The G9 data team needs to bulk-update the `aorStatus` property on all units in a given AOR simultaneously when an AOR boundary changes. Updating hundreds of units individually is not operationally feasible.
-
-**STANDARDS:** Batch Action operates on a filtered object set. User confirms the scope before execution. Audit trail captures all modified object IDs.
-
-**PROCEDURE:**
-
-1. Ontology Manager → **Action Types** → **New Action Type** → type: **Modify Object** → enable **Batch Mode**.
-2. Define parameters:
-   - `newAorStatus` — String (required)
-   - `effectiveDtg` — Timestamp (required)
-3. In Workshop, configure the Batch Action trigger:
-   - Object Table widget → select rows → **Batch Action** button
-   - Map `newAorStatus` and `effectiveDtg` from form inputs
-   - Enable confirmation dialog: "You are updating [N] units. This cannot be undone. Confirm?"
-4. Test on a small filtered subset (2–3 units) before running on the full AOR object set.
-
----
-
-### TASK 6-C: TEST AN ACTION IN A DEVELOPMENT BRANCH
-
-**PROCEDURE:**
-
-1. Create a Foundry branch: `dev/action-test-[your-name]`.
-2. In Ontology Manager, switch to the dev branch.
-3. Publish your Action Type on the dev branch only.
-4. Create a Workshop application on the same branch.
-5. Execute the Action with valid and invalid test inputs.
-6. Verify object modifications in Object Explorer on the dev branch.
-7. After successful testing, open a PR to merge the Action Type definition to `dev` integration branch, then to `master`.
-8. Production Workshop applications will see the Action after the `master` merge.
-
----
-
-## 6-3. Action Security Model
-
-Every Action execution is automatically logged with:
-- User identity (Foundry principal)
-- Timestamp (UTC)
-- Action Type name
-- Parameter values submitted
-- Objects modified (by RID)
-- Success/failure status
-
-These logs are accessible in Foundry's audit trail and are retained per the MSS data retention policy. Do not create Actions that bypass required parameter fields to circumvent audit logging.
-
----
-
-# CHAPTER 7 — AIP INTEGRATION
-
-## 7-1. AIP Architecture Review
-
-AIP (AI Platform) is the AI layer of MSS. It connects approved large language models (LLMs) to the Ontology, enabling natural-language querying, automated logic workflows, and AI-assisted analysis. AIP is not a standalone tool — it operates on top of the Ontology you have built.
-
-| Component | Function |
-|-----------|----------|
-| AIP Logic | Event-driven automation on Ontology object changes |
-| AIP Agent Studio | Conversational AI agents backed by Ontology tools |
-| AIP Assist | In-app copilot widget for end users |
-| Code Workspaces | Jupyter-based environment for model development against Foundry datasets |
-
-## 7-2. Authorization Requirements
-
-> **WARNING: AIP integrations require command authorization review before deployment to production. AI outputs, if acted upon without human review, can introduce errors into operational data. No AIP Logic or Agent may be deployed to production without: (a) command approval documented in writing, (b) human review gates built into the workflow, and (c) testing on a development branch with synthetic or historical data. See Appendix C for the full AIP Authorization Checklist.**
-
----
-
-### TASK 7-A: BUILD AN AIP LOGIC WORKFLOW
-
-**CONDITIONS:** When a `Unit` object's `cRating` property changes to `C3` or `C4`, the G3 requires an automatic notification object to be created in MSS for tracking.
-
-**STANDARDS:** Logic fires correctly on the triggering condition. Notification object is created with correct properties. Logic does not fire on non-triggering changes. Human review gate is documented.
-
-**PROCEDURE:**
-
-1. AIP → **Logic** → **New Logic Workflow**.
-2. Configure trigger:
-   - Object Type: `Unit`
-   - Property: `cRating`
-   - Condition: `new value IN ["C3", "C4"]`
-3. Add a **Function** node: call a TypeScript function that constructs the notification parameters.
-4. Add an **Action** node: execute `create_readiness_notification` Action with the constructed parameters.
-5. Add a **Human Review** gate: before the Action node, require a designated reviewer to approve notifications above a configured threshold (e.g., more than 5 units degraded in one cycle).
-6. Test the workflow on a development branch by manually setting a Unit's `cRating` to `C3` via a test Action.
-7. Review the Logic execution log. Verify the notification object was created with correct properties.
-8. Submit for command authorization review (Appendix C) before promoting to production.
-
----
-
-### TASK 7-B: CREATE AN AIP AGENT
-
-**CONDITIONS:** G2 analysts need to query SITREP and unit readiness data using natural language rather than constructing Workshop filters manually.
-
-**STANDARDS:** Agent answers questions accurately using Ontology data. Agent does not speculate beyond available data. Agent has restricted tool access (read-only, no Actions with write access). System prompt enforces operational scope.
-
-**PROCEDURE:**
-
-1. AIP → **Agent Studio** → **New Agent**.
-2. Write the system prompt — this is the most critical configuration step:
-
-```
-You are a SITREP and readiness analysis assistant for USAREUR-AF.
-You answer questions about unit readiness, SITREP compliance, and
-equipment status using data from the MSS Ontology.
-
-You have access to:
-- Unit objects: readiness status, C-rating, AOR, personnel fill
-- Sitrep objects: submission history, on-time/late status
-- EquipmentItem objects: FMC/PMC/NMC status, maintenance dates
-
-Rules:
-- Only report what the data shows. Never estimate or speculate.
-- Use military time (ZULU) for all timestamps.
-- If data is unavailable, say so explicitly.
-- Do not execute any Actions that write or modify data.
-- Respond concisely. Use bulleted lists for multi-unit summaries.
-```
-
-3. Add tools (read-only):
-   - Object Type: `Unit` — query, filter, summarize
-   - Object Type: `Sitrep` — query, filter
-   - Object Type: `EquipmentItem` — query, filter
-   - Function: `getSitrepComplianceRate`
-   - Function: `getCompositeReadinessScore`
-4. Do not add Actions with write access until command authorization review is complete.
-5. Test in the Agent Studio playground with representative queries.
-6. Embed in Workshop: add an **Agent Widget** to your application module. Link to the published Agent.
-
----
-
-### TASK 7-C: INTEGRATE AIP OUTPUT INTO A WORKSHOP APPLICATION
-
-**PROCEDURE:**
-
-1. In Workshop, open the module where AIP output will display.
-2. Add an **AIP Widget** (type: Agent Chat or Logic Output, depending on your use case).
-3. For Agent Chat: link to your published Agent. Configure the widget to pass the currently selected Object Set as context (e.g., selected unit or filtered set).
-4. Add a clearly labeled **Human Review** section adjacent to AIP output:
-   - Static text: "AI-generated output. Review before operational use."
-   - Optionally: an Action button allowing the analyst to mark the output as "Reviewed" — this creates an audit record.
-5. Never auto-populate operational fields from AIP output without explicit human confirmation.
-
-> **WARNING: AI outputs require mandatory human review before operational use. Do not build Workshop workflows that automatically write AIP-generated values to production Object properties without an explicit human confirmation step. Automated action on AI output without review is prohibited.**
-
----
-
-### TASK 7-D: USE CODE WORKSPACES FOR MODEL DEVELOPMENT
-
-**CONDITIONS:** You need to develop and test a readiness forecasting model using historical SITREP data. Code Workspaces provide a Jupyter-based environment within the MSS boundary that can mount Foundry datasets directly.
-
-**PROCEDURE:**
-
-1. Navigate to **Code Workspaces** → **New Workspace**.
-2. Select an appropriate compute profile (standard for EDA; GPU profile for model training if available and authorized).
-3. Mount datasets:
-   - Input dataset: `/USAREUR-AF/operational/processed/sitrep_normalized` (read-only)
-   - Output dataset: `/USAREUR-AF/models/readiness_forecast_output` (write)
-4. In the notebook, access datasets via the Foundry Python SDK:
-
-```python
-import foundry
-import pandas as pd
-
-# Authenticate via workspace token (auto-injected in Code Workspaces)
-client = foundry.FoundryClient()
-
-# Load dataset as pandas DataFrame
-sitrep_df = client.datasets.read_table(
-    dataset_rid="ri.foundry.main.dataset.XXXX",
-    branch="master",
-)
-
-# EDA
-print(sitrep_df.shape)
-print(sitrep_df.dtypes)
-print(sitrep_df["c_rating"].value_counts())
-```
-
-5. Develop and validate your model in the notebook.
-6. Write outputs to the designated output dataset for downstream consumption by transforms or Workshop.
-7. Do not store intermediate model artifacts containing real operational data outside the MSS boundary.
-
----
-
-## 7-3. AIP Error Handling
-
-| Error Type | Symptom | Response |
-|------------|---------|---------|
-| Model timeout | Agent returns no response | Reduce context size; limit object set passed to agent |
-| Hallucinated data | Agent cites non-existent objects | Review system prompt; restrict tools to specific Object Types |
-| Logic trigger loop | Logic fires repeatedly on same object | Add cooldown condition to Logic trigger; check for circular updates |
-| Unexpected Action execution | Logic executes Actions not intended | Review Logic node configuration; add human review gate |
-
----
-
-# CHAPTER 8 — OSDK (ONTOLOGY SDK)
-
-## 8-1. What the OSDK Is
-
-The Ontology SDK (OSDK) allows external applications — running outside the Foundry UI — to read and write MSS Ontology data programmatically. An external Python script, a REST API, a mobile application, or an automated reporting tool can all interact with MSS objects and execute Actions via the OSDK.
-
-The OSDK is generated from your Ontology definition. It produces a strongly-typed client library in Python (or TypeScript) where every Object Type, property, and Action corresponds to a Python class or method.
-
-## 8-2. OSDK vs. Direct Foundry Access
-
-| Method | When to Use |
-|--------|-------------|
-| Workshop (UI) | Human users interacting with data directly |
-| OSDK (Python/TypeScript) | Automated tools, external integrations, programmatic reporting |
-| Foundry Platform SDK | Low-level dataset read/write; not Ontology-aware |
-| REST API (Datasets API) | Raw dataset ingestion from external systems |
-
-Use OSDK when the consumer is a program, not a human, and when the program needs to work with the semantic model (Objects, Actions) rather than raw datasets.
-
-> **CAUTION: OSDK applications require an authorization review before deployment. OSDK tokens grant programmatic write access to the Ontology via Actions. A misconfigured or compromised OSDK application can modify production Ontology data at scale. Coordinate with security before deploying any OSDK-backed application to a network-connected system.**
-
-NOTE: Zero Trust Architecture requirements apply to all OSDK-built applications. External applications must implement token-based authentication with limited-scope tokens. Do not build applications that cache credentials or bypass re-authentication requirements.
-
----
-
-### TASK 8-A: GENERATE OSDK CLIENT
-
-**PROCEDURE:**
-
-1. In Foundry, navigate to **Developer Console** → **SDK Generator**.
-2. Select the Object Types to include in the generated SDK (principle of least privilege — include only what the application needs).
-3. Select target language: Python or TypeScript.
-4. Generate and download the SDK package.
-5. Install in your application environment:
-
-```bash
-pip install ./foundry-sdk-usareur-af-0.1.0.tar.gz
-```
-
-6. Configure authentication via environment variable — never hardcode tokens:
-
-```bash
-export FOUNDRY_TOKEN="your-token-here"
-export FOUNDRY_HOST="your-instance.palantirfoundry.com"
-```
-
----
-
-### TASK 8-B: READ OBJECTS VIA OSDK
-
-**CONDITIONS:** An automated reporting script needs to query all units with C-rating of C3 or C4 and generate a daily readiness summary without human interaction.
-
-**STANDARDS:** Query is correctly filtered. Results are paginated to handle large object sets. Credentials are managed via environment variables. No operational data is written to plaintext log files.
-
-**PROCEDURE:**
-
-```python
-import os
-from foundry import FoundryClient
-from foundry.auth import UserTokenAuth
-
-# Credentials from environment — never hardcode
-client = FoundryClient(
-    auth=UserTokenAuth(token=os.environ["FOUNDRY_TOKEN"]),
-    hostname=os.environ["FOUNDRY_HOST"],
-)
-
-# Query degraded units (C3 or C4)
-degraded_units = (
-    client.ontology.objects.Unit
-    .where(
-        client.ontology.objects.Unit.c_rating.is_in(["C3", "C4"])
-    )
-    .order_by(client.ontology.objects.Unit.readiness_pct.asc())
-)
-
-# Paginate — never load all objects into memory at once
-for unit in degraded_units.iterate():
-    # Process each unit individually
-    print(f"{unit.unit_id}: {unit.c_rating} ({unit.readiness_pct:.1f}%)")
-    # Write summary to output — not raw operational data
-```
-
-> **CAUTION: Do not call `.all()` on large object sets. `.all()` loads every matching object into memory simultaneously. Use `.iterate()` for large queries. If you need aggregate statistics, use Contour or a pre-computed transform rather than iterating over thousands of objects in a script.**
-
----
-
-### TASK 8-C: WRITE OBJECTS VIA OSDK (ACTIONS)
-
-**CONDITIONS:** An automated pipeline needs to update `Unit` readiness status after processing an incoming data feed. Write-back is done by executing Actions, not by directly modifying datasets.
-
-**STANDARDS:** Action execution is logged. Error handling covers API failures. Action parameters are validated before submission.
-
-```python
-import os
-from foundry import FoundryClient
-from foundry.auth import UserTokenAuth
-import logging
-
-logger = logging.getLogger(__name__)
-
-client = FoundryClient(
-    auth=UserTokenAuth(token=os.environ["FOUNDRY_TOKEN"]),
-    hostname=os.environ["FOUNDRY_HOST"],
-)
-
-def update_unit_readiness(unit_id: str, readiness_pct: float, c_rating: str, submitted_by: str) -> None:
-    """Execute the update_readiness_assessment Action via OSDK."""
-    if not (0.0 <= readiness_pct <= 100.0):
-        raise ValueError(f"readiness_pct out of range: {readiness_pct}")
-    if c_rating not in {"C1", "C2", "C3", "C4"}:
-        raise ValueError(f"Invalid c_rating: {c_rating}")
-
-    try:
-        client.ontology.actions.update_readiness_assessment(
-            unit_id=unit_id,
-            readiness_pct=readiness_pct,
-            c_rating=c_rating,
-            submitted_by=submitted_by,
-        )
-        logger.info(f"Action executed: update_readiness_assessment for {unit_id}")
-    except Exception as e:
-        logger.error(f"Action failed for {unit_id}: {e}")
-        raise
-```
-
----
-
-## 8-3. Authentication and Token Management
-
-| Requirement | Implementation |
-|-------------|---------------|
-| Token storage | Environment variables or secrets manager; never in code or config files checked into git |
-| Token scope | Request minimum required permissions — read-only if application does not write |
-| Token rotation | Rotate on personnel change or if token exposure is suspected |
-| Token logging | Log token usage events (object count, Actions executed) but never log the token itself |
-| Multi-environment | Separate tokens for dev and production environments |
-
----
-
-# CHAPTER 9 — ANALYTICS: QUIVER AND CONTOUR (ADVANCED)
-
-## 9-1. Advanced Quiver
-
-Quiver is the MSS object-based analytics tool. It queries Object Types directly, respecting Ontology permissions and markings. At TM-30 level, you build reusable analyses with pivots and computed metrics that other analysts can clone and adapt.
-
-Reference TM-20 for basic Quiver usage. This section covers advanced patterns.
-
----
-
-### TASK 9-A: BUILD AN ADVANCED QUIVER ANALYSIS
-
-**CONDITIONS:** The G3 needs a pivot analysis showing the distribution of units by C-rating across AORs, updated daily.
-
-**STANDARDS:** Analysis uses a dynamic object set filter. Pivot table is correctly configured. Analysis is saved and shared with the G3 group. Auto-refresh is scheduled.
-
-**PROCEDURE:**
-
-1. Open **Quiver** → **New Analysis** → select Object Type `Unit`.
-2. Apply base filter: status = ACTIVE or DEPLOYED.
-3. Add metrics:
-   - Count of units
-   - Average readiness_pct
-   - Minimum readiness_pct (worst unit in each group)
-4. Configure pivot: Rows = `aor`, Columns = `c_rating`, Values = Count of units.
-5. Add a secondary metric tile: total units at C3/C4 (computed metric: filter `c_rating IN ["C3","C4"]`, count).
-6. Add conditional formatting: cells with count > 0 in C3/C4 columns highlighted red.
-7. Save as "G3 Daily Readiness Pivot". Share with G3 Quiver group.
-8. Schedule: Settings → **Auto-Refresh** → daily at 0700L (0600Z for USAREUR-AF).
-
----
-
-### TASK 9-B: CREATE A CONTOUR ANALYSIS WITH JOINS
-
-**CONDITIONS:** You need to join unit readiness data with SITREP compliance data to produce a combined analysis. The two datasets are backed by different Object Types. Contour operates at the dataset level and can join across sources.
-
-**STANDARDS:** Join produces correct output. Aggregation matches expected counts. Analysis is exported as a reusable template.
-
-**PROCEDURE:**
-
-1. Open **Contour** → **New Analysis**.
-2. Add first dataset: `/USAREUR-AF/operational/processed/unit_readiness_clean` (curated tier — never raw).
-3. Add a **Join** step:
-   - Join type: Left join
-   - Second dataset: `/USAREUR-AF/operational/processed/sitrep_compliance_summary`
-   - Join key: `unit_id`
-4. Add **Aggregate** step: group by `aor`, `c_rating`; compute count of units, average compliance rate, average readiness_pct.
-5. Add **Filter** step: remove units with `status = INACTIVE`.
-6. Add a **Sort** step: sort by `c_rating` ascending, then `aor` ascending.
-7. Preview the result. Verify row counts match expected unit counts per AOR.
-8. Save as a reusable template: File → **Save as Template** → "Unit Readiness + SITREP Compliance".
-
----
-
-### TASK 9-C: CREATE REUSABLE ANALYSIS TEMPLATES
-
-**PROCEDURE:**
-
-1. Complete the analysis to the point of a finalized, validated output.
-2. Contour: File → **Save as Template**. Name with standard convention: `[AOR]-[subject]-[frequency]` (e.g., `EUCOM-readiness-daily`).
-3. Quiver: **Save Analysis** → configure sharing: add all intended consumer groups.
-4. Both tools: configure scheduled refresh aligned to the reporting cycle.
-5. Document the template in your team's internal wiki: inputs required, expected output schema, refresh schedule, point of contact.
-6. Share with your team lead for review before publishing broadly.
-
----
-
-## 9-2. Tool Selection — Quiver vs. Contour vs. Workshop
-
-| Need | Tool |
-|------|------|
-| Analyze objects with Ontology permissions applied | Quiver |
-| Join raw/curated datasets without Ontology layer | Contour |
-| Build an interactive application for end users | Workshop |
-| Ad-hoc pivot analysis for analyst consumption | Quiver |
-| Complex multi-dataset ETL result verification | Contour |
-| Embed analysis in an operational application | Workshop (embed Quiver widget) |
-| Share a reusable analysis template with a team | Quiver (save and share) or Contour (template) |
-
----
-
-# CHAPTER 10 — DATA LINEAGE AND CI/CD
-
-## 10-1. Reading the Lineage Graph
-
-Foundry's Data Lineage tool shows the full directed acyclic graph (DAG) of data flow from ingestion through transforms to Ontology to applications. At TM-30 level, you read the lineage graph to:
-
-- Understand the impact radius of a change before making it
-- Debug unexpected data values by tracing upstream to the source of the error
-- Identify orphaned datasets (no downstream consumers) for cleanup
-- Verify that your changes rebuilt all dependent datasets
-
-**How to read lineage:**
-1. Open any dataset or Object Type in Compass.
-2. Click the **Lineage** icon (three interconnected nodes).
-3. The graph shows: upstream (left, what feeds this) and downstream (right, what this feeds).
-4. Click any node to navigate to that dataset or transform.
-5. Color coding: green = recently built successfully; yellow = stale (needs rebuild); red = build failure.
-
----
-
-### TASK 10-A: TRACE DATA LINEAGE FOR A PRODUCTION DATASET
-
-**CONDITIONS:** Analysts report that `Unit.readiness_pct` values appear incorrect. You need to trace the lineage from the Object Type back to the raw ingest to identify where the error was introduced.
-
-**STANDARDS:** Root cause identified to a specific transform or source dataset. Impact on downstream consumers assessed before any fix is applied.
-
-**PROCEDURE:**
-
-1. Open `unit_readiness_clean` dataset in Compass → click **Lineage**.
-2. Navigate upstream: identify the transform that produced this dataset.
-3. Open that transform's code. Review the `readiness_pct` transformation logic.
-4. Navigate further upstream to the raw dataset. Preview data to compare raw values vs. cleaned values.
-5. If error is in raw data: document and escalate to the data owner of the source system.
-6. If error is in transform logic: identify the specific bug, document it, then:
-   a. Create a feature branch.
-   b. Fix the transform.
-   c. Build on the branch — verify output is correct.
-   d. Check downstream consumers in lineage view — all must be notified before merge.
-   e. Submit PR with the fix and impact assessment.
-
----
-
-### TASK 10-B: MANAGE A FOUNDRY BRANCH FOR DEVELOPMENT
-
-**CONDITIONS:** You are implementing a significant ontology change (new Interface + two Object Type modifications) that should not affect production until fully tested.
-
-**STANDARDS:** All development occurs on a named branch. Production (`master`) is never directly modified. Branch is merged only after review and passing builds.
-
-**PROCEDURE:**
-
-1. In Compass, navigate to your project. Click **Branches** → **New Branch**.
-2. Name the branch: `dev/interface-readiness-[date]`. Branch from `master`.
-3. All work (transform edits, ontology changes, Workshop updates) is done on this branch.
-4. Build your changes on the branch. Verify outputs in dataset preview and Object Explorer.
-5. Open a PR: branch → `dev` (integration). Add reviewers. Describe scope of change.
-6. After `dev` integration testing is complete and no regressions are found, open a second PR: `dev` → `master`.
-7. Merge to `master` only after lead approval. Production updates take effect after the merge completes and builds run.
-
-> **CAUTION: Never commit directly to `master`. Never skip the PR review process for production changes. Even trivial-looking changes (renaming a property display name) can break downstream Workshop applications that reference the API name. Every change requires review.**
-
----
-
-### TASK 10-C: SET UP AUTOMATED CHECKS IN CI
-
-**CONDITIONS:** Your transforms currently have no automated data quality checks. A bad build produced incorrect C-rating values and it was not caught until an analyst reported it three days later.
-
-**STANDARDS:** Checks run automatically after every build. ERROR-severity check failures block the pipeline. WARNING-severity check failures log but do not block. Check results are visible in the build log.
-
-**PROCEDURE:**
-
-The check pattern is implemented in `data_skills/13_foundry_patterns/foundry_checks.py`. For production, define checks alongside your transform:
-
-```python
-from transforms.api import check, Check
-from transforms.api import transform, Input, Output
-from pyspark.sql import functions as F
-
-@check(outputs=Output("/USAREUR-AF/operational/processed/unit_readiness_clean"))
-def check_no_null_unit_ids(output):
-    """ERROR: null unit_id values block downstream consumers."""
-    df = output.dataframe()
-    null_count = df.filter(F.col("unit_id").isNull()).count()
-    assert null_count == 0, f"{null_count} null unit_id values in output"
-
-@check(outputs=Output("/USAREUR-AF/operational/processed/unit_readiness_clean"))
-def check_readiness_pct_in_range(output):
-    """ERROR: readiness_pct must be 0.0–100.0."""
-    df = output.dataframe()
-    bad = df.filter((F.col("readiness_pct") < 0) | (F.col("readiness_pct") > 100)).count()
-    assert bad == 0, f"{bad} rows with readiness_pct out of [0, 100]"
-
-@check(outputs=Output("/USAREUR-AF/operational/processed/unit_readiness_clean"))
-def check_valid_c_rating(output):
-    """ERROR: only valid C-ratings accepted."""
-    df = output.dataframe()
-    invalid = df.filter(~F.col("c_rating").isin(["C1", "C2", "C3", "C4"])).count()
-    assert invalid == 0, f"{invalid} invalid c_rating values"
-```
-
-In `pipeline-spec.yml`, configure checks to run as part of the build:
-
-```yaml
-checks:
-  - type: python_unit_tests
-    target: transforms-python
-  - type: foundry_checks
-    target: transforms-python
-```
-
----
-
-## 10-2. Change Management Workflow for Production Pipeline Modifications
-
-Before modifying any shared production pipeline:
-
-1. **Impact assessment:** Open the lineage graph. List every downstream dataset, Object Type, and application that will be affected.
-2. **Coordination:** Notify downstream application owners and data stewards. Get written acknowledgment if the change is breaking.
-3. **Feature branch:** All development on a named branch, never on `master`.
-4. **Testing:** Build and validate on the branch. Verify check results. Test downstream applications on the branch.
-5. **PR and review:** Submit PR with impact assessment. Require reviewer approval before merge.
-6. **Merge window:** Merge to `master` during low-usage hours if change affects high-priority applications.
-7. **Post-merge verification:** Verify builds complete successfully. Check that downstream Object Types and applications refresh correctly.
-8. **Rollback plan:** Document how to revert the change if post-merge issues are detected.
-
-See Appendix D for the complete TM-30 Change Management Checklist.
-
----
-
-# APPENDIX A — ADVANCED PYSPARK REFERENCE
-
-## A-1. Window Functions
-
-```python
-from pyspark.sql import functions as F
-from pyspark.sql.window import Window
-
-# Latest record per unit (most recent SITREP)
-w_latest = Window.partitionBy("unit_id").orderBy(F.desc("report_dtg"))
-df = df.withColumn("row_num", F.row_number().over(w_latest))
-latest = df.filter(F.col("row_num") == 1).drop("row_num")
-
-# Period-over-period readiness change
-w_ordered = Window.partitionBy("unit_id").orderBy("report_dtg")
-df = df.withColumn(
-    "prev_readiness", F.lag("readiness_pct", 1).over(w_ordered)
-)
-df = df.withColumn(
-    "readiness_delta", F.col("readiness_pct") - F.col("prev_readiness")
-)
-
-# Cumulative SITREP count per unit
-w_cumulative = Window.partitionBy("unit_id").orderBy("report_dtg").rowsBetween(
-    Window.unboundedPreceding, 0
-)
-df = df.withColumn("sitrep_count_cumulative", F.count("*").over(w_cumulative))
-
-# Rank units by readiness within each AOR
-w_rank = Window.partitionBy("aor").orderBy(F.desc("readiness_pct"))
-df = df.withColumn("aor_readiness_rank", F.rank().over(w_rank))
-```
-
-## A-2. Complex Join Patterns
-
-```python
-# Broadcast join for small lookup tables (avoids shuffle)
-mos_lookup = spark.read.parquet("/path/to/mos_codes")  # small table
-df = df.join(F.broadcast(mos_lookup), on="mos_code", how="left")
-
-# Self-join for unit hierarchy (unit → parent unit)
-units = df.alias("child")
-parents = df.select(
-    F.col("unit_id").alias("parent_unit_id"),
-    F.col("display_name").alias("parent_name")
-).alias("parent")
-hierarchy = units.join(
-    parents,
-    F.col("child.higher_hq_id") == F.col("parent.parent_unit_id"),
-    how="left"
-)
-
-# Anti-join: units with NO sitrep this cycle
-expected = all_units.select("unit_id")
-submitted = sitreps.select("unit_id").distinct()
-missing = expected.join(submitted, on="unit_id", how="left_anti")
-```
-
-## A-3. UDFs — Use With Caution
-
-> **CAUTION: Python UDFs (User Defined Functions) execute row-by-row in a Python process, bypassing Spark's native JVM execution. This typically results in 10–100× slower execution compared to equivalent native Spark functions. Always check `pyspark.sql.functions` for a native equivalent before writing a UDF. If you must use a UDF, prefer Pandas UDFs (vectorized) over row-level UDFs.**
-
-```python
-# AVOID: Row-level UDF (slow)
-from pyspark.sql.functions import udf
-from pyspark.sql.types import StringType
-
-@udf(returnType=StringType())
-def pct_to_c_rating(pct):
-    if pct is None: return None
-    if pct >= 85: return "C1"
-    if pct >= 65: return "C2"
-    if pct >= 35: return "C3"
-    return "C4"
-
-# PREFER: Native Spark (fast)
-df = df.withColumn("c_rating",
-    F.when(F.col("readiness_pct") >= 85, "C1")
-     .when(F.col("readiness_pct") >= 65, "C2")
-     .when(F.col("readiness_pct") >= 35, "C3")
-     .otherwise("C4")
-)
-```
-
-## A-4. Time-Series Patterns
-
-```python
-# Parse military DTG string to timestamp
-df = df.withColumn(
-    "report_ts",
-    F.to_timestamp(F.col("dtg_string"), "ddHHmm'Z' MMM yy")
-)
-
-# All timestamps stored as UTC
-df = df.withColumn("report_ts_utc", F.to_utc_timestamp("report_ts", "UTC"))
-
-# Extract fiscal year (Army FY: Oct 1 – Sep 30)
-df = df.withColumn(
-    "fiscal_year",
-    F.when(F.month("report_ts") >= 10,
-           F.year("report_ts") + 1)
-    .otherwise(F.year("report_ts"))
-)
-
-# 30-day rolling average readiness (window function)
-w_30d = Window.partitionBy("unit_id").orderBy(
-    F.col("report_ts").cast("long")
-).rangeBetween(-30 * 86400, 0)  # 30 days in seconds
-
-df = df.withColumn(
-    "readiness_30d_avg",
-    F.avg("readiness_pct").over(w_30d)
-)
-```
-
----
-
-# APPENDIX B — ONTOLOGY DESIGN PATTERNS
-
-| Use Case | Recommended Pattern | Example | Anti-Pattern to Avoid |
-|----------|--------------------|---------|-----------------------|
-| Cross-type shared properties | Interface | `HasReadinessStatus` on Unit, Personnel, Equipment | Redefine the same property on each type independently |
-| Value computed from multiple source columns | Function-backed derived property | `compositeReadinessScore` from personnel + equipment pcts | Store as a column in raw dataset |
-| Relationship with metadata | Link type with link properties | `personnel_assignment` with `assignmentType`, `startDtg` | Two separate one-to-one link types |
-| High-cardinality historical records | Object Type + incremental backing transform | `Sitrep` backed by incremental sitrep_normalized | Curated dataset rebuilt daily from full historical feed |
-| Lookup / reference data | Separate small Object Type | `MosCode`, `AorBoundary` | Hard-code reference values in transform logic |
-| Hierarchical relationships | Self-referential link type | `Unit.parentUnit` → `Unit` | Flatten hierarchy into columns |
-| Multi-source entity reconciliation | Single Object Type backed by reconciled curated dataset | `Unit` backed by SAMS-E + MTOE join | One Object Type per source system |
-| Time-series property tracking | Separate Object Type for events/readings | `ReadinessSnapshot` with timestamp | Overwrite current value on Unit each cycle |
-
----
-
-# APPENDIX C — AIP AUTHORIZATION CHECKLIST
-
-The following AIP capabilities require written command authorization before production deployment. "Production" means any deployment accessible to operational users or any deployment that writes to production Ontology data.
-
-## C-1. AIP Logic Workflows
-
-- [ ] Triggering condition is documented and reviewed
-- [ ] All Actions in the Logic workflow are read-only OR human review gate is inserted before any write Action
-- [ ] Logic has been tested on development branch with synthetic data
-- [ ] Data steward has reviewed which Object Types are affected
-- [ ] Command authorization obtained in writing (email or tracked ticket)
-- [ ] Rollback plan documented (how to disable Logic if unexpected behavior occurs)
-
-## C-2. AIP Agents
-
-- [ ] System prompt reviewed by team lead
-- [ ] Agent tools are limited to minimum required Object Types and Functions
-- [ ] No write Actions assigned to agent without explicit command approval
-- [ ] Agent has been tested with adversarial queries (attempts to get agent to reveal data outside its scope)
-- [ ] Human review messaging is displayed in the Workshop widget adjacent to Agent output
-- [ ] Command authorization obtained in writing
-- [ ] Agent is not connected to external APIs or services outside the MSS boundary
-
-## C-3. Code Workspace Model Deployment
-
-- [ ] Model does not write operational conclusions directly to Ontology without human review
-- [ ] Input datasets are curated tier only (no raw datasets)
-- [ ] Model outputs are written to a designated output dataset, not to live Object Type properties
-- [ ] Model validation metrics documented
-- [ ] Command authorization obtained before output dataset is consumed by any production application
-
-## C-4. General AIP Authorization Contact
-
-Contact the USAREUR-AF Data Office for command authorization processing. Include:
-- AIP capability type (Logic / Agent / Model)
-- Object Types and Actions accessed
-- User population who will interact with the AIP feature
-- Impact assessment if AIP output is incorrect
-
----
-
-# APPENDIX D — TM-30 CHANGE MANAGEMENT CHECKLIST
-
-Complete before merging any production change to `master`.
-
-## D-1. Pre-Development
-
-- [ ] Impact assessment completed: all downstream datasets, Object Types, and applications identified
-- [ ] Downstream application owners notified of upcoming change
-- [ ] Data steward coordination completed for ontology changes
-- [ ] Feature branch created from `master`: `feature/[description]-[date]`
-- [ ] Authorization obtained for AIP or OSDK changes (Appendix C)
-
-## D-2. Development and Testing
-
-- [ ] All changes made on feature branch — no direct commits to `master` or `dev`
-- [ ] Code builds cleanly on feature branch with no errors or warnings
-- [ ] All automated checks pass (zero ERROR-severity failures)
-- [ ] Schema enforcement validated: output schema matches expected `StructType`
-- [ ] Incremental transforms tested for first-run (full snapshot) and subsequent incremental runs
-- [ ] Actions tested with valid and invalid inputs on development branch
-- [ ] FOO functions tested in development before publishing to Ontology
-- [ ] AIP Logic or Agent tested with synthetic/historical data on dev branch
-- [ ] Downstream applications tested on the feature branch
-
-## D-3. Code Review
-
-- [ ] PR opened against `dev` integration branch
-- [ ] PR description includes: scope, affected resources, test results, rollback plan
-- [ ] At least one peer reviewer has approved
-- [ ] Data steward has approved ontology changes (in PR comments)
-- [ ] Team lead has been notified of the PR
-
-## D-4. Production Merge
-
-- [ ] Feature branch merged to `dev`; integration tests completed on `dev`
-- [ ] PR opened from `dev` to `master`
-- [ ] Lead data engineer or team lead approval obtained
-- [ ] Merge window selected (low-usage hours for high-impact changes)
-- [ ] Post-merge: all builds complete successfully
-- [ ] Post-merge: downstream Object Types and applications verified
-- [ ] Post-merge: monitoring alerts active and checked within 24 hours of merge
-
-## D-5. Rollback
-
-- [ ] Rollback procedure documented before merge
-- [ ] For breaking schema changes: previous schema documented; rollback transform available
-- [ ] For ontology changes: previous ontology state captured on a snapshot branch
-- [ ] For AIP changes: Logic/Agent can be disabled without code changes (kill switch configured)
-
----
-
-# GLOSSARY
-
-| Term | Definition |
-|------|-----------|
-| **@incremental** | Foundry decorator marking a transform to process only new data since last successful run |
-| **@lightweight_transform** | Foundry decorator for non-Spark (pandas) transforms; use for small datasets |
-| **Action** | A user or system-triggered data write operation on the Ontology |
-| **AIP** | AI Platform — the AI/ML layer of MSS (Foundry); includes Logic, Agents, Code Workspaces |
-| **AIP Agent** | A conversational AI assistant backed by Ontology tools and functions |
-| **AIP Logic** | Event-driven automation that fires on Ontology object property changes |
-| **AJP** | Allied Joint Publication — NATO doctrinal publications governing joint/combined operations; AJP-3 (joint ops), AJP-3.2 (land ops), AJP-5 (planning) |
-| **Broadcast join** | Spark optimization: copies a small dataset to all executors to avoid a full shuffle |
-| **C-rating** | Army readiness classification (C1=highest to C4=lowest) |
-| **C2DAO** | Command and Control Data Architecture Office — USAREUR-AF authority for data architecture and governance standards |
-| **Check** | Automated data quality assertion that runs after a transform and can block pipeline progression |
-| **Code Workspace** | Jupyter-based interactive development environment within the MSS boundary |
-| **Column pruning** | Selecting only required columns before expensive Spark operations |
-| **Contour** | MSS dataset-level analytics tool; supports multi-dataset joins and aggregations |
-| **DDOF** | Doctrine-Driven Ontology Framework — USAREUR-AF design pattern for aligning ontology models to operational doctrine |
-| **Derived property** | An Object Type property whose value is computed at query time, not stored |
-| **FOO** | Functions on Objects — TypeScript functions that execute against the Ontology |
-| **Function Repository** | Foundry Code Repository containing TypeScript Functions |
-| **Interface** | An ontology construct defining a shared property contract across multiple Object Types |
-| **Lineage graph** | Foundry visualization of data flow from source to application |
-| **MPE** | Mission Partner Environment — the cross-domain network environment for data sharing with NATO/coalition partners |
-| **NAFv4** | NATO Architecture Framework version 4 — the enterprise architecture standard governing all systems in the EUCOM AOR |
-| **Object Storage V2** | Foundry's advanced object storage backend with indexing and property-level policies |
-| **OPCON** | Operational Control — command relationship |
-| **OSDK** | Ontology SDK — generated client library for external programmatic access to MSS Ontology |
-| **Partitioning** | Distributing Spark data across executors for parallel processing |
-| **Predicate pushdown** | Applying filter conditions as early as possible to reduce data scanned |
-| **Quiver** | MSS object-based analytics tool; queries Object Types directly with Ontology permissions |
-| **require_incremental** | @incremental parameter that fails the build if incremental mode is unavailable |
-| **Schema enforcement** | Defining and applying a `StructType` to validate transform output types |
-| **TACON** | Tactical Control — command relationship |
-| **UDF** | User Defined Function — custom Python function used in Spark; use sparingly (performance penalty) |
-| **UDRA** | Unified Data Reference Architecture — USAREUR-AF data architecture standard (v1.1, February 2025) defining distributed ownership, domain alignment, federated governance, and data product principles |
-| **Watermark** | A stored timestamp or transaction ID marking the last successfully processed state in a pipeline |
-| **Window function** | Spark operation that computes across a partition of rows (rank, lag, rolling average) |
-
-Cross-reference GLOSSARY_data_foundry.md for full platform terminology definitions.
-
----
-
-# APPENDIX E — UDRA v1.1 ALIGNMENT REFERENCE
-
-Complete this checklist before promoting any TM-30 data product (pipeline, dataset, Object Type, or OSDK application) to the USAREUR-AF production environment.
-
-## E-1. Data Product Identity
-
-- [ ] Data product has a documented name following USAREUR-AF naming conventions
-- [ ] Operational domain is assigned: readiness / logistics / fires / maneuver / ISR / personnel / other
-- [ ] Functional Data Manager (owner) is identified by name and position
-- [ ] Consumer applications are documented (at least one must be identified before promotion)
-- [ ] Data product is registered with the USAREUR-AF C2DAO data product registry
-
-## E-2. Distributed Ownership
-
-- [ ] Operational owner (staff section or functional proponent) has reviewed and accepted ownership
-- [ ] Data Steward for the assigned domain has been coordinated with
-- [ ] Cross-domain impacts have been assessed; if the product spans domains, C2DAO coordination is documented
-- [ ] Succession plan exists: ownership does not depend on a single individual
-
-## E-3. Domain Alignment
-
-- [ ] Data model (Object Types, properties, link types) reflects the operational domain's terminology and structure
-- [ ] Design follows the DDOF Playbook patterns for the applicable domain (see learn-data.armydev.com)
-- [ ] Object Type Cookbook v2 guidance has been applied to all new Object Types
-- [ ] If operational event data: Engagement Ontology (YAML v2.0) has been reviewed as a reference implementation
-
-## E-4. Federated Governance
-
-- [ ] Schema changes were coordinated with the domain Data Steward before implementation
-- [ ] Breaking changes were reviewed by the USAREUR-AF C2DAO
-- [ ] NATO/MPE-facing products have been reviewed for NAFv4 and applicable STANAG compliance (see section 1-3)
-- [ ] G6/S6 coordination is documented for any cross-domain or coalition-facing product
-
-## E-5. Data Product Standards (SLA, Quality, Freshness)
-
-- [ ] SLA is documented: expected data freshness (e.g., SITREP data current within 6 hours of reporting cycle)
-- [ ] Availability target is documented (e.g., pipeline builds complete within the reporting cycle interval)
-- [ ] Quality checks are implemented (Appendix D, section D-2) and passing with no ERROR-severity failures
-- [ ] Schema is enforced with a defined `StructType`; no inferred-schema datasets in production
-- [ ] NULL handling is documented for all non-nullable fields
-- [ ] Late-arrival handling is documented for time-series data products
-
-## E-6. UDRA Architecture Layer Verification
-
-Confirm the data product's layer placement aligns with the TM-30 5-Layer Stack table (section 1-2):
-
-- [ ] Layer 2 (Integration): All advanced transforms comply with optimization principles (Chapters 2–3)
-- [ ] Layer 3 (Semantic): Ontology models follow design patterns (Appendix B); Interfaces and FOO reviewed (Chapters 4–5)
-- [ ] Layer 4 (Analytics): Quiver/Contour analyses are reusable templates with documented refresh schedules (Chapter 9)
-- [ ] Layer 5 (Activation): OSDK applications and AIP integrations have completed authorization review (Appendix C)
-
----
-
-*TM-30 — Maven Smart System (MSS) Advanced Builder Technical Manual*
-*USAREUR-AF Operational Data Team*
-*Wiesbaden, Germany | 2026*
-*UNCLASSIFIED — Approved for public release; distribution is unlimited.*
-*Prerequisite: TM-10, TM-20*
+*Distribution: Approved for public release; distribution is unlimited.*
