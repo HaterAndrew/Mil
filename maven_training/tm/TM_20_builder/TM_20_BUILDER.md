@@ -1,8 +1,7 @@
 # TM-20 — MAVEN SMART SYSTEM (MSS)
 ## BUILDER TECHNICAL MANUAL
 
-**HEADQUARTERS**
-**UNITED STATES ARMY EUROPE AND AFRICA**
+**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
 Wiesbaden, Germany
 
 2026
@@ -46,7 +45,9 @@ Review all CAUTIONS and WARNINGS in this manual before beginning build activitie
 
 ### 1-1. Purpose and Scope
 
-This manual provides task-level instruction for personnel who build applications, data pipelines, and analytical products on the Maven Smart System (MSS). MSS is the Army's enterprise AI/data platform, built on Palantir Foundry. All work described in this manual takes place inside the MSS environment at USAREUR-AF.
+This manual provides task-level instruction for personnel who build applications, data pipelines, and analytical products on the Maven Smart System (MSS). MSS is the USAREUR-AF enterprise AI/data platform, built on Palantir Foundry. All work described in this manual takes place inside the MSS environment at USAREUR-AF.
+
+CAUTION: All datasets, pipelines, and applications built on MSS are subject to Army data governance policy (Army CIO Memorandum, April 2024). Builders must coordinate with their unit Data Steward and the USAREUR-AF C2DAO before ingesting new data sources or publishing applications with externally-shared data.
 
 **What TM-20 covers:**
 - Creating projects, repositories, and build environments
@@ -63,9 +64,36 @@ Complete TM-10 before beginning this manual. If you cannot navigate Compass, pre
 
 ---
 
-### 1-2. The Builder's Responsibility
+### 1-2. USAREUR-AF Mission Context and the Builder's Role
+
+United States Army Europe and Africa (USAREUR-AF) is the Army Service Component Command (ASCC) to United States European Command (USEUCOM), responsible for theater land operations across the European Area of Responsibility (AOR) and integration with NATO Allied command structures and Joint All-Domain Command and Control (JADC2). The command's major subordinate commands — V Corps, 21st Theater Sustainment Command (TSC), and 7th Army Training Command (ATC) — each generate and consume data that flows through MSS.
+
+As a builder, the tools you create directly affect readiness visibility and decision-making across this formation. A Workshop application you build may display unit status to a V Corps G3 or track maintenance readiness for a 21st TSC logistics officer. A pipeline you author may be the authoritative source for a theater-level briefing. Understand the operational weight of what you are building before you begin.
+
+Builders should understand where their work sits in the USAREUR-AF 5-Layer Data Stack. Most TM-20 work occurs at Layers 2 (Integration — transforms, pipelines) and 3 (Semantic — Ontology, Object Types). Workshop applications are built at Layer 4 (Analytics) and published to users at Layer 5 (Activation).
+
+NOTE: Detailed architecture guidance, ontology modeling references, and data design patterns are available at learn-data.armydev.com. Key resources for builders include: Object Type Cookbook v2 (canonical ontology modeling reference), DDOF Playbook (data design patterns), and the Data Modeling Fundamentals course.
+
+**TM-20 Activity to USAREUR-AF 5-Layer Data Stack Mapping:**
+
+| TM-20 Activity | Stack Layer | Layer Name | Builder Creates |
+|---|---|---|---|
+| Data ingestion via Pipeline Builder | Layer 2 | Integration | Connectors, ingestion pipelines |
+| Python transforms (raw → staging → curated) | Layer 2 | Integration | Connectors, ingestion pipelines |
+| Data quality and validation checks | Layer 2 | Integration | Connectors, ingestion pipelines |
+| Object Type and Link Type configuration | Layer 3 | Semantic (Ontology) | Object Types, Links, Actions, basic Functions |
+| Actions (write-back) | Layer 3 | Semantic (Ontology) | Object Types, Links, Actions, basic Functions |
+| Workshop application development | Layer 4 | Analytics | Workshop applications, basic dashboards |
+| Dashboard design and data exploration | Layer 4 | Analytics | Workshop applications, basic dashboards |
+| Publishing forms and action-enabled apps | Layer 5 | Activation | Forms, action-enabled apps |
+| Dataset access controls and markings | Layer 1 | Infrastructure | (Administered by platform admin; builder requests) |
+
+---
+
+### 1-3. The Builder's Responsibility
 
 When you receive builder-level access on MSS, you gain the ability to create and modify resources that other users depend on. This is a significant responsibility.
+
 
 **Your actions affect others.** A transform that produces incorrect data will propagate errors into every Workshop application and report that consumes it. A broken Ontology configuration can disable live applications for an entire unit. A dataset without proper markings can expose data to personnel without appropriate access.
 
@@ -78,9 +106,11 @@ When you receive builder-level access on MSS, you gain the ability to create and
 
 Builders are accountable for the quality and security of what they publish.
 
+USAREUR-AF data governance follows Army CIO guidance (April 2024). Builders are responsible for complying with USAREUR-AF C2DAO standards for dataset naming, access control, and data quality.
+
 ---
 
-### 1-3. MSS Build Environment Overview
+### 1-4. MSS Build Environment Overview
 
 The MSS build environment consists of five interconnected components. Understand all five before building anything.
 
@@ -96,7 +126,7 @@ These components are not independent. You build in the order: data first, then O
 
 ---
 
-### 1-4. The Three-Layer Architecture
+### 1-5. The Three-Layer Architecture
 
 MSS is organized in three layers. You must build bottom-up. You cannot build an application until the Ontology is configured. You cannot configure the Ontology until you have clean data.
 
@@ -130,7 +160,7 @@ Never let a Workshop application read from a raw dataset. Raw data is unstable, 
 
 ---
 
-### 1-5. Prerequisites Before You Build
+### 1-6. Prerequisites Before You Build
 
 Complete all of the following before writing any code or creating any resources on MSS.
 
@@ -152,7 +182,7 @@ Do not begin building until you have completed this orientation. You need to und
 
 ---
 
-### 1-6. Key Naming Conventions
+### 1-7. Key Naming Conventions
 
 All builders must follow these conventions. Non-compliant resources will be renamed or removed by the team lead. Consistent naming is essential for maintainability and data lineage.
 
@@ -172,7 +202,7 @@ NOTE: Dataset paths are permanent. You cannot rename a dataset path without brea
 
 ---
 
-### 1-7. Getting Help
+### 1-8. Getting Help
 
 | Resource | Use For |
 |---|---|
@@ -183,6 +213,14 @@ NOTE: Dataset paths are permanent. You cannot rename a dataset path without brea
 | MSS support ticket | Platform errors, access not granted after 48 hours |
 
 When escalating, always include: the resource RID, the error message (exact text), and the steps you took before the error occurred.
+
+### 1-9. Governing References
+
+The following documents govern MSS build activities and data handling policy in USAREUR-AF:
+
+- **Army Data Plan (2022), Office of the Army Chief Information Officer** — Establishes the Army-wide framework for data management, governance, and analytics in support of Multi-Domain Operations.
+- **DoD Data Strategy (2020)** — Establishes the VAUTI framework (Visible, Accessible, Understandable, Trustable, Interoperable) as the DoD standard for data quality and interoperability.
+- **Army CIO Data Stewardship Policy (April 2, 2024)** — Establishes the data stewardship hierarchy (MADO, Data Steward, Functional Data Manager, C2DAO) and data chain of responsibility.
 
 ---
 
@@ -1441,7 +1479,7 @@ from pyspark.sql import functions as F
 from pyspark.sql.types import StringType
 
 def derive_c_rating(df, readiness_col="readiness_pct"):
-    """Derive C-rating from readiness percentage per Army standards."""
+    """Derive C-rating from readiness percentage per USAREUR-AF standards."""
     return df.withColumn(
         "c_rating_derived",
         F.when(F.col(readiness_col) >= 85, "C1")

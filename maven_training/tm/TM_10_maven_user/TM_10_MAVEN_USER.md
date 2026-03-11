@@ -2,8 +2,7 @@
 TM-10 — MAVEN SMART SYSTEM (MSS)
 OPERATOR TECHNICAL MANUAL
 
-HEADQUARTERS
-UNITED STATES ARMY EUROPE AND AFRICA
+HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA
 Wiesbaden, Germany
 
 2026
@@ -48,15 +47,19 @@ Read all WARNINGS and CAUTIONS in this manual before operating the system. If yo
 
 ## 1-1. Purpose and Scope of This Manual
 
-This Technical Manual (TM) provides operator-level instruction for the Maven Smart System (MSS). It is written for all Army and civilian personnel assigned or attached to USAREUR-AF who require access to MSS in the course of their duties.
+This Technical Manual (TM) provides operator-level instruction for the Maven Smart System (MSS). It is written for all USAREUR-AF military and civilian personnel assigned or attached to the command who require access to MSS in the course of their duties.
 
 This manual covers what you need to know to use MSS safely and effectively. It does not cover how to build applications or modify data pipelines. Those tasks are covered in TM-20 (Workshop Builder) and TM-30 (Advanced Developer).
+
+NOTE: The USAREUR-AF Command Chief Data & Analytics Officer (C2DAO) is responsible for implementing and enforcing Army data policy within this command. For data governance questions, access requests, or policy exceptions, contact the USAREUR-AF C2DAO office.
 
 ## 1-2. What the Maven Smart System Is
 
 MSS is a secure, web-based platform where your unit's data lives and can be analyzed and acted upon. Think of it like a shared operations center for data: information from logistics, personnel, readiness, and other systems is collected, organized, and made accessible through applications your unit uses every day.
 
 MSS is built on the Palantir Foundry platform, authorized for Army use under the Maven Smart System program. When you log into MSS, you are logging into Foundry with Army data and Army-approved access controls.
+
+Per ADP 3-13, information is combat power. MSS is the USAREUR-AF platform for converting raw data into the operational information that enables decision dominance.
 
 **What MSS does:**
 
@@ -74,6 +77,10 @@ MSS is built on the Palantir Foundry platform, authorized for Army use under the
 
 ## 1-3. MSS in USAREUR-AF Context
 
+United States Army Europe and Africa (USAREUR-AF) is the Army Service Component Command (ASCC) to United States European Command (USEUCOM). USAREUR-AF is responsible for theater land operations across the European Area of Responsibility (AOR), integration with NATO Allied commands and structures, and U.S. Army contribution to Joint All-Domain Command and Control (JADC2). The command operates across multiple countries and time zones, coordinating with V Corps, 21st Theater Sustainment Command (TSC), 7th Army Training Command (ATC), and numerous Allied and partner nation forces.
+
+MSS is USAREUR-AF's primary data and AI platform. It serves as the command's single integrated environment for theater readiness visibility, logistics status, personnel accountability, intelligence support, and operational planning data. Where other Army systems of record generate data, MSS aggregates, connects, and makes that data actionable across the staff and subordinate commands. MSS is not a standalone tool — it is the data backbone that supports decision-making at every echelon from battalion through theater army.
+
 Within USAREUR-AF, MSS supports the following mission areas:
 
 | Mission Area | Example Use |
@@ -86,6 +93,10 @@ Within USAREUR-AF, MSS supports the following mission areas:
 | Command & Control | Tracking unit status across the AOR |
 
 MSS users in USAREUR-AF range from unit S-shops to the theater staff. Your access level and the applications available to you depend on your role and assigned markings.
+
+**Data Governance Authority:** USAREUR-AF data governance is governed by Army CIO guidance (April 2024) and implemented through the USAREUR-AF Command Chief Data & Analytics Officer (C2DAO). The governance chain is: Army CIO / MADOs → Data Stewards → Functional Data Managers → USAREUR-AF C2DAO → unit data users. All access requests, policy exceptions, and data handling questions flow through this chain.
+
+NOTE: The USAREUR-AF CDA Portal at learn-data.armydev.com provides supplemental training materials, architecture guides, and course content that supports MSS operator proficiency. Users are encouraged to complete available modules relevant to their role prior to initial MSS access.
 
 ## 1-4. What This Manual Covers and Does NOT Cover
 
@@ -141,18 +152,27 @@ NOTE: Account provisioning may take 3-5 business days. Plan accordingly before a
 
 **Account markings** are assigned based on your clearance level and mission role. Your assigned markings determine which data you can see. If you cannot see data you believe you should have access to, contact your unit data steward — do not attempt to work around access controls.
 
+## 1-7a. Governing References
+
+The following documents govern MSS use and data handling policy in USAREUR-AF:
+
+- **Army Data Plan (2022), Office of the Army Chief Information Officer** — Establishes the Army-wide framework for data management, governance, and analytics in support of Multi-Domain Operations.
+- **DoD Data Strategy (2020)** — Establishes the VAUTI framework (Visible, Accessible, Understandable, Trustable, Interoperable) as the DoD standard for data quality and interoperability.
+- **Army CIO Data Stewardship Policy (April 2, 2024)** — Establishes the data stewardship hierarchy (MADO, Data Steward, Functional Data Manager, C2DAO) and data chain of responsibility.
+
 ## 1-8. How to Report Problems
 
 Report system problems through the following channels:
 
 | Problem Type | Who to Contact |
 |---|---|
-| Cannot log in | Unit S6 or MSS Help Desk |
+| Cannot log in | Unit S6/G6 or USAREUR-AF MSS Help Desk |
 | Cannot access a project | Unit data steward |
 | Data appears incorrect | Unit data steward (do not correct it yourself) |
-| System error or crash | MSS Help Desk (provide error code and screenshot) |
+| System error or crash | USAREUR-AF MSS Help Desk (provide error code and screenshot) |
 | Security incident | Supervisor and unit security officer immediately |
-| Application not working | MSS Help Desk |
+| Application not working | USAREUR-AF MSS Help Desk |
+| Data governance or policy question | USAREUR-AF C2DAO office (via chain of command) |
 
 **Before calling for help, collect:**
 - Your username
@@ -689,6 +709,8 @@ If an AIP agent or workflow produces output that appears incorrect, unexpected, 
 
 # CHAPTER 6 — DATA SECURITY AND CLASSIFICATION HANDLING IN MSS
 
+NOTE: The Maven Smart System implements Zero Trust Architecture (ZTA) per Army Unified Network Plan 2.0 (March 2025). Every access request is verified against your credentials and assigned markings. Access is not permanent — sessions expire and re-authentication is required. This is by design, not a system error.
+
 **BLUF:** MSS enforces data security through markings — labels on data that restrict who can see it. This chapter explains what those markings mean and what you must do to handle data properly.
 
 ## 6-1. Markings in MSS — What They Look Like and What They Mean
@@ -764,7 +786,7 @@ Before exporting, sharing, or publishing any analysis that combines multiple dat
 - **Screenshots:** Only take screenshots of data you are authorized to share. Screenshots inherit the classification of the data they contain.
 - **Exports:** Export only through authorized export functions in Workshop. Do not use screen capture to export tabular data.
 - **Sharing:** Share MSS links only with users who have access to the resource. Do not share data files via email or unencrypted channels unless the data marking permits it.
-- **Printing:** Printed MSS output must be handled IAW the classification of the data. Print to approved printers only. Mark the printed document IAW Army marking requirements.
+- **Printing:** Printed MSS output must be handled IAW the classification of the data. Print to approved printers only. Mark the printed document IAW USAREUR-AF and Army marking requirements.
 
 ## 6-6. Incident Reporting Procedures
 
@@ -792,7 +814,7 @@ Before exporting, sharing, or publishing any analysis that combines multiple dat
 | Can log in but cannot see a project | Account not granted access to project | Contact data steward to request access |
 | Dashboard shows no data | Filter returns zero results, or data pipeline failed | Clear all filters first; if still empty, contact data steward |
 | Data in dashboard is stale | Pipeline has not run or failed | Contact data steward; note last-updated timestamp |
-| Application fails to load | Browser or network issue | Refresh page; try a different browser; contact help desk |
+| Application fails to load | Browser or network issue | Refresh page; try a different browser; contact USAREUR-AF MSS Help Desk via unit S6/G6 |
 | Form submission fails | Required field missing, or validation error | Read error message; correct identified field; resubmit |
 | Action fails with an error | Permissions issue or data conflict | Note error message; contact data steward |
 | Contour analysis returns unexpected results | Incorrect grouping or filter | Review analysis configuration; consult data steward |
@@ -817,14 +839,14 @@ Before exporting, sharing, or publishing any analysis that combines multiple dat
 - Data at wrong classification level
 - Unauthorized access or account compromise
 
-**Escalate to help desk:**
+**Escalate to USAREUR-AF MSS Help Desk (via unit S6/G6):**
 - System errors with error codes
 - Application will not load after refresh
 - Cannot access the MSS portal at all
 
 ## 7-3. Information to Collect Before Calling for Help
 
-Before contacting the help desk or data steward, collect the following:
+Before contacting the USAREUR-AF MSS Help Desk or data steward, collect the following:
 
 1. Your username (as shown in your profile)
 2. The name and URL of the application or dataset
@@ -838,13 +860,14 @@ Before contacting the help desk or data steward, collect the following:
 
 | Issue Type | Point of Contact |
 |---|---|
-| Account access | Unit data steward → MSS admin team |
-| Data quality | Unit data steward |
-| System outage | MSS Help Desk |
+| Account access | Unit data steward → USAREUR-AF MSS admin team |
+| Data quality | Unit data steward → Functional Data Manager |
+| Data governance or policy exception | USAREUR-AF C2DAO office |
+| System outage | USAREUR-AF MSS Help Desk (via unit S6/G6) |
 | Security incident | Unit security officer → chain of command |
-| Application bug | MSS Help Desk (reference application name and RID) |
+| Application bug | USAREUR-AF MSS Help Desk (reference application name and RID) |
 
-NOTE: Contact information for your unit's data steward and the MSS Help Desk is maintained by your unit S6. This manual does not list specific phone numbers or email addresses, as they are subject to change. Obtain current contact information from your S6 or unit SOPs.
+NOTE: Contact information for your unit's data steward and the USAREUR-AF MSS Help Desk is maintained by your unit S6 or G6. This manual does not list specific phone numbers or email addresses, as they are subject to change. Obtain current contact information from your S6/G6 or unit SOPs. Data governance questions may be directed to the USAREUR-AF C2DAO office through your chain of command.
 
 ---
 
@@ -958,7 +981,7 @@ CAUTION: Accounts that are not deactivated promptly after departure represent a 
 
 **6. REPORT PROBLEMS**
 - Data issue → unit data steward
-- Login/system issue → unit S6 or MSS Help Desk
+- Login/system issue → unit S6/G6 or USAREUR-AF MSS Help Desk
 - Security incident → supervisor + security officer IMMEDIATELY
 
 **7. SECURITY RULES (ALWAYS)**
@@ -998,6 +1021,7 @@ CAUTION: Accounts that are not deactivated promptly after departure represent a 
 | **AIP** | Artificial Intelligence Platform. The AI layer of MSS that enables natural language queries and automated workflows using approved AI models. |
 | **AOR** | Area of Responsibility. In MSS, an AOR marking restricts data visibility to users assigned to that area. |
 | **Bookmark (Star)** | A saved shortcut to a frequently used resource in MSS. Affects only your personal view. |
+| **C2DAO** | Command Chief Data & Analytics Officer. The USAREUR-AF official responsible for implementing Army data policy within the command. First point of contact for data governance questions, policy exceptions, and access escalations above the unit level. |
 | **CAC** | Common Access Card. Your login credential for MSS. |
 | **Compass** | MSS's file explorer. Displays all resources (datasets, applications, projects) organized by folder. |
 | **Contour** | MSS's no-code analysis tool. Allows users to aggregate, filter, and chart data without writing code. |
@@ -1011,7 +1035,7 @@ CAUTION: Accounts that are not deactivated promptly after departure represent a 
 | **Lineage** | The record of where a dataset came from and what transformations it went through before reaching you. |
 | **Marking** | A label applied to data in MSS that restricts who can see it. Based on classification level and role. |
 | **Module** | One page or screen within a Workshop application. Applications can have multiple modules (e.g., Overview, Detail, Map). |
-| **MSS** | Maven Smart System. The Army's operational data platform, built on Palantir Foundry. |
+| **MSS** | Maven Smart System. USAREUR-AF's operational data and AI platform, built on Palantir Foundry. |
 | **Object** | A record in the MSS Ontology representing a real-world thing — a Soldier, a unit, a vehicle, a report. |
 | **Ontology** | The semantic layer of MSS. Defines what data represents in terms of real-world things and their relationships. |
 | **Project** | A workspace in MSS containing related datasets, applications, and resources for a specific unit or mission area. |

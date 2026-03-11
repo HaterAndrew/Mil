@@ -2,8 +2,7 @@
 TM-30 — MAVEN SMART SYSTEM (MSS)
 ADVANCED BUILDER TECHNICAL MANUAL
 
-HEADQUARTERS
-UNITED STATES ARMY EUROPE AND AFRICA
+HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA
 Wiesbaden, Germany
 
 2026
@@ -43,6 +42,7 @@ Before operating at TM-30 level:
 - Appendix B — Ontology Design Patterns
 - Appendix C — AIP Authorization Checklist
 - Appendix D — TM-30 Change Management Checklist
+- Appendix E — UDRA v1.1 Alignment Reference
 - Glossary
 
 ---
@@ -65,7 +65,54 @@ TM-30 advances beyond builder fundamentals into production-grade capability. At 
 
 Do not use this manual to re-learn baseline tasks. Reference TM-20 for Object Type creation, basic transforms, Workshop widget configuration, and basic Action setup. TM-30 assumes fluency in all TM-20 material.
 
-## 1-2. Advanced Builder Responsibilities and Elevated Risk Profile
+## 1-2. USAREUR-AF Advanced Builder Context
+
+United States Army Europe and Africa (USAREUR-AF) is the Army Service Component Command (ASCC) to United States European Command (USEUCOM), responsible for theater land operations across the European Area of Responsibility (AOR) and integration with NATO Allied command structures and Joint All-Domain Command and Control (JADC2). Advanced builders operating in this environment are the data infrastructure for a NATO-integrated theater. The pipelines, ontology models, and external applications built at TM-30 level must align with the USAREUR-AF 5-Layer Data Stack and cross-domain architecture standards. Errors at this level do not affect one application — they affect the data environment of the entire formation, including coalition partners.
+
+Advanced builders operate under Army CIO data governance policy (April 2024) and must align all data products to USAREUR-AF C2DAO standards and the Unified Data Reference Architecture (UDRA) v1.1 (February 2025). All pipelines, datasets, and ontology models produced at TM-30 level must be traceable to a UDRA-aligned domain and must have a designated data product owner. See section 1-9 for UDRA v1.1 alignment details.
+
+Advanced builders operate across all five layers of the USAREUR-AF data architecture. This manual covers Layer 2 (advanced transforms, incremental pipelines), Layer 3 (complex ontology, Functions on Objects (FOO), Actions), Layer 4 (advanced Quiver/Contour, custom dashboards), and Layer 5 (AIP integration, OSDK, Actions with complex validation). For Layer 1 infrastructure and cross-domain connectivity, see the CDA Portal NAFv4 resources at learn-data.armydev.com.
+
+> **NOTE:** Advanced builders should consult `learn-data.armydev.com` for authoritative design patterns and reference implementations, including:
+> - Object Type Cookbook v2 + Addendum A — authoritative Object Type design guidance
+> - DDOF Playbook — Doctrine-Driven Ontology Framework design patterns
+> - Doctrine-Driven Development framework — aligning ontology models to Army operational doctrine
+> - ADP ↔ JP ↔ NATO Crosswalk — mapping Army, Joint, and NATO data constructs
+> - Engagement Ontology (YAML v2.0) — reference implementation for operational event modeling
+
+**TM-30 Chapter to 5-Layer Data Stack Mapping:**
+
+| TM-30 Chapter | Chapter Title | Stack Layer | Layer Name | Key Capabilities |
+|---|---|---|---|---|
+| Chapter 2 | Advanced Python Transforms | Layer 2 | Integration | Advanced transforms, PySpark optimization, multi-input joins |
+| Chapter 3 | Incremental Transforms and Pipeline Patterns | Layer 2 | Integration | @incremental, watermark pattern, late-data handling |
+| Chapter 4 | Advanced Ontology and Object Modeling | Layer 3 | Semantic (Ontology) | Complex Object Types, Interfaces, derived properties |
+| Chapter 5 | Functions on Objects (FOO) | Layer 3 | Semantic (Ontology) | TypeScript FOO, computed properties, link traversal |
+| Chapter 6 | Actions and Write-Back Patterns | Layer 3 | Semantic (Ontology) | Actions with complex validation, batch write-back |
+| Chapter 7 | AIP Integration | Layer 4 / Layer 5 | Analytics / Activation | AIP Logic, Agent Studio, Code Workspaces |
+| Chapter 8 | OSDK (Ontology SDK) | Layer 5 | Activation | External apps, OSDK client, Actions with complex validation |
+| Chapter 9 | Analytics: Quiver and Contour | Layer 4 | Analytics | Advanced Quiver pivots, Contour multi-dataset joins, scheduled reports |
+| Chapter 10 | Data Lineage and CI/CD | Layer 1 / Layer 2 | Infrastructure / Integration | Lineage graph, branching workflow, automated checks |
+
+Advanced builders must understand which layer their work affects and coordinate accordingly with data stewards and the USAREUR-AF C2DAO architecture authority before promoting changes to production.
+
+## 1-3. NATO Interoperability Requirements
+
+Advanced builders operating in the USAREUR-AF environment must account for NATO interoperability requirements across all data products that touch coalition systems or personnel.
+
+**Governing standards:**
+
+- **NATO Architecture Framework v4 (NAFv4)** governs enterprise architecture for all systems operating in the EUCOM AOR. Data pipelines, ontology models, and applications that feed coalition-shared products must comply with NAFv4 viewpoints and architecture standards.
+- **AJP-3 (Allied Joint Publication 3)** establishes joint operations doctrine and the data sharing framework for combined operations in the EUCOM AOR.
+- **AJP-3.2** governs land operations doctrine and associated data exchange requirements for USAREUR-AF-led or contributed land force operations across Germany, Poland, Romania, and the Baltic states.
+- **AJP-5** governs joint operational planning and the planning data standards applicable to combined USAREUR-AF/NATO planning products.
+- Advanced builders working with **Mission Partner Environment (MPE)** data must ensure compliance with NATO data standards, applicable STANAGs, and USAREUR-AF cross-domain authorization requirements before exposing any data product to the MPE or coalition-accessible systems.
+
+> **CAUTION: Data products shared with NATO partners or accessible in the Mission Partner Environment must comply with NAFv4 architecture standards and applicable STANAG requirements. Coordinate with G6/S6 and the USAREUR-AF C2DAO before publishing any cross-domain data product. Failure to comply may result in the product being blocked from coalition-facing distribution or revoked post-publication.**
+
+NAFv4 and AJP compliance are not post-build checklist items — they must be considered during design. If your pipeline or ontology model will feed a product accessed by Allied or partner nation personnel, initiate coordination with the data steward and USAREUR-AF C2DAO architecture authority before beginning development.
+
+## 1-4. Advanced Builder Responsibilities and Elevated Risk Profile
 
 The advanced builder operates at the intersection of data engineering, software development, and operational architecture. Unlike a standard builder whose mistakes are typically scoped to one application or dataset, an advanced builder's actions touch shared infrastructure.
 
@@ -82,7 +129,7 @@ The advanced builder operates at the intersection of data engineering, software 
 
 Every one of these areas, if misconfigured, can degrade the data environment for the entire formation — from battalion S2 analysts to G9 reporting. Own that risk.
 
-## 1-3. Production vs. Development Discipline at TM-30 Level
+## 1-5. Production vs. Development Discipline at TM-30 Level
 
 > **CAUTION: Never develop directly on the production ontology or master branch. All development requires a feature branch. All merges to master require peer review and passing CI checks.**
 
@@ -95,7 +142,7 @@ The discipline standard at TM-30 is stricter than TM-20 because the blast radius
 5. AIP and OSDK deployments require command authorization review (see Appendix C).
 6. No hotfixes to production without documented coordination. Use the emergency branch process if a production break requires immediate remediation.
 
-## 1-4. Overview of TM-30 Capability Areas
+## 1-6. Overview of TM-30 Capability Areas
 
 | Capability Area | Chapter | Description |
 |-----------------|---------|-------------|
@@ -109,7 +156,7 @@ The discipline standard at TM-30 is stricter than TM-20 because the blast radius
 | Analytics (Advanced) | 9 | Quiver pivots, Contour multi-dataset joins, scheduled reports |
 | Lineage and CI/CD | 10 | Lineage graph reading, branching workflow, automated checks |
 
-## 1-5. Authorization Requirements for TM-30 Activities
+## 1-7. Authorization Requirements for TM-30 Activities
 
 Before performing TM-30 activities, confirm you hold the following:
 
@@ -121,7 +168,7 @@ Before performing TM-30 activities, confirm you hold the following:
 
 If you do not hold these authorizations, build and test on your development branch. Do not promote to production.
 
-## 1-6. Code Review and Change Management Requirements
+## 1-8. Code Review and Change Management Requirements
 
 All TM-30 production changes require:
 
@@ -134,6 +181,29 @@ All TM-30 production changes require:
 7. Lead data engineer or team lead approval before merge to `master`
 
 See Appendix D for the full TM-30 Change Management Checklist.
+
+## 1-9. UDRA v1.1 Alignment — Data Product Principles
+
+Advanced builders operate under the Unified Data Reference Architecture (UDRA) v1.1 (February 2025), which establishes the USAREUR-AF standard for how data products are designed, owned, and governed. TM-30 activities map directly to four UDRA principles. Apply these principles to every pipeline, dataset, and ontology model you build.
+
+| UDRA v1.1 Principle | What It Means for TM-30 Builders | USAREUR-AF Application |
+|---|---|---|
+| **Distributed ownership** | Every pipeline and dataset must have a designated owner — the functional equivalent of a Functional Data Manager. Ownership does not default to the builder. Identify the operational owner before publishing to production. | For SITREP pipelines: G3 owns readiness data; for LOGSTAT: G4. Coordinate with the appropriate staff section before deployment. |
+| **Domain-aligned data products** | Organize transforms and ontology by operational domain, not by source system. Design for the consumer's operational picture, not the ingestion architecture. | Domains: readiness, logistics, fires, maneuver, ISR, personnel. A unit readiness Object Type belongs to the readiness domain regardless of whether data originates from SAMS-E, MTOE feed, or manual input. |
+| **Federated governance** | Advanced builders coordinate with USAREUR-AF C2DAO and unit Data Stewards for cross-domain decisions. Not all decisions route through a central authority — governance is distributed to the domain level. Do not centralize all schema and policy decisions in one team. | Readiness schema decisions: coordinate with G3 Data Steward. Logistics schema: G4 Data Steward. Cross-domain changes that affect multiple stewards: escalate to C2DAO. |
+| **Data product thinking** | Treat each dataset and ontology as a product. Every data product requires: a designated owner, a defined SLA (freshness/availability), documented quality standards, and identified consumers. Unnamed, unowned, undocumented datasets are not data products — they are technical debt. | Before publishing any production dataset or Object Type: document owner, SLA, quality checks, and consumer applications. Use the TM-30 Change Management Checklist (Appendix D) as the minimum standard. |
+
+> **NOTE:** UDRA v1.1 alignment is required for all data products promoted to the USAREUR-AF production environment. A pipeline that does not have a documented owner, domain assignment, and quality standard does not meet the UDRA v1.1 minimum. Contact the USAREUR-AF C2DAO for guidance on domain assignment and data product registration.
+
+See Appendix E for the UDRA v1.1 Alignment Reference checklist.
+
+## 1-10. Governing References
+
+The following documents govern TM-30 build activities and data handling policy in USAREUR-AF:
+
+- **Army Data Plan (2022), Office of the Army Chief Information Officer** — Establishes the Army-wide framework for data management, governance, and analytics in support of Multi-Domain Operations.
+- **DoD Data Strategy (2020)** — Establishes the VAUTI framework (Visible, Accessible, Understandable, Trustable, Interoperable) as the DoD standard for data quality and interoperability.
+- **Army CIO Data Stewardship Policy (April 2, 2024)** — Establishes the data stewardship hierarchy (MADO, Data Steward, Functional Data Manager, C2DAO) and data chain of responsibility.
 
 ---
 
@@ -1138,6 +1208,8 @@ Use OSDK when the consumer is a program, not a human, and when the program needs
 
 > **CAUTION: OSDK applications require an authorization review before deployment. OSDK tokens grant programmatic write access to the Ontology via Actions. A misconfigured or compromised OSDK application can modify production Ontology data at scale. Coordinate with security before deploying any OSDK-backed application to a network-connected system.**
 
+NOTE: Zero Trust Architecture requirements apply to all OSDK-built applications. External applications must implement token-based authentication with limited-scope tokens. Do not build applications that cache credentials or bypass re-authentication requirements.
+
 ---
 
 ### TASK 8-A: GENERATE OSDK CLIENT
@@ -1698,17 +1770,22 @@ Complete before merging any production change to `master`.
 | **AIP** | AI Platform — the AI/ML layer of MSS (Foundry); includes Logic, Agents, Code Workspaces |
 | **AIP Agent** | A conversational AI assistant backed by Ontology tools and functions |
 | **AIP Logic** | Event-driven automation that fires on Ontology object property changes |
+| **AJP** | Allied Joint Publication — NATO doctrinal publications governing joint/combined operations; AJP-3 (joint ops), AJP-3.2 (land ops), AJP-5 (planning) |
 | **Broadcast join** | Spark optimization: copies a small dataset to all executors to avoid a full shuffle |
 | **C-rating** | Army readiness classification (C1=highest to C4=lowest) |
+| **C2DAO** | Command and Control Data Architecture Office — USAREUR-AF authority for data architecture and governance standards |
 | **Check** | Automated data quality assertion that runs after a transform and can block pipeline progression |
 | **Code Workspace** | Jupyter-based interactive development environment within the MSS boundary |
 | **Column pruning** | Selecting only required columns before expensive Spark operations |
 | **Contour** | MSS dataset-level analytics tool; supports multi-dataset joins and aggregations |
+| **DDOF** | Doctrine-Driven Ontology Framework — USAREUR-AF design pattern for aligning ontology models to operational doctrine |
 | **Derived property** | An Object Type property whose value is computed at query time, not stored |
 | **FOO** | Functions on Objects — TypeScript functions that execute against the Ontology |
 | **Function Repository** | Foundry Code Repository containing TypeScript Functions |
 | **Interface** | An ontology construct defining a shared property contract across multiple Object Types |
 | **Lineage graph** | Foundry visualization of data flow from source to application |
+| **MPE** | Mission Partner Environment — the cross-domain network environment for data sharing with NATO/coalition partners |
+| **NAFv4** | NATO Architecture Framework version 4 — the enterprise architecture standard governing all systems in the EUCOM AOR |
 | **Object Storage V2** | Foundry's advanced object storage backend with indexing and property-level policies |
 | **OPCON** | Operational Control — command relationship |
 | **OSDK** | Ontology SDK — generated client library for external programmatic access to MSS Ontology |
@@ -1719,10 +1796,64 @@ Complete before merging any production change to `master`.
 | **Schema enforcement** | Defining and applying a `StructType` to validate transform output types |
 | **TACON** | Tactical Control — command relationship |
 | **UDF** | User Defined Function — custom Python function used in Spark; use sparingly (performance penalty) |
+| **UDRA** | Unified Data Reference Architecture — USAREUR-AF data architecture standard (v1.1, February 2025) defining distributed ownership, domain alignment, federated governance, and data product principles |
 | **Watermark** | A stored timestamp or transaction ID marking the last successfully processed state in a pipeline |
 | **Window function** | Spark operation that computes across a partition of rows (rank, lag, rolling average) |
 
 Cross-reference GLOSSARY_data_foundry.md for full platform terminology definitions.
+
+---
+
+# APPENDIX E — UDRA v1.1 ALIGNMENT REFERENCE
+
+Complete this checklist before promoting any TM-30 data product (pipeline, dataset, Object Type, or OSDK application) to the USAREUR-AF production environment.
+
+## E-1. Data Product Identity
+
+- [ ] Data product has a documented name following USAREUR-AF naming conventions
+- [ ] Operational domain is assigned: readiness / logistics / fires / maneuver / ISR / personnel / other
+- [ ] Functional Data Manager (owner) is identified by name and position
+- [ ] Consumer applications are documented (at least one must be identified before promotion)
+- [ ] Data product is registered with the USAREUR-AF C2DAO data product registry
+
+## E-2. Distributed Ownership
+
+- [ ] Operational owner (staff section or functional proponent) has reviewed and accepted ownership
+- [ ] Data Steward for the assigned domain has been coordinated with
+- [ ] Cross-domain impacts have been assessed; if the product spans domains, C2DAO coordination is documented
+- [ ] Succession plan exists: ownership does not depend on a single individual
+
+## E-3. Domain Alignment
+
+- [ ] Data model (Object Types, properties, link types) reflects the operational domain's terminology and structure
+- [ ] Design follows the DDOF Playbook patterns for the applicable domain (see learn-data.armydev.com)
+- [ ] Object Type Cookbook v2 guidance has been applied to all new Object Types
+- [ ] If operational event data: Engagement Ontology (YAML v2.0) has been reviewed as a reference implementation
+
+## E-4. Federated Governance
+
+- [ ] Schema changes were coordinated with the domain Data Steward before implementation
+- [ ] Breaking changes were reviewed by the USAREUR-AF C2DAO
+- [ ] NATO/MPE-facing products have been reviewed for NAFv4 and applicable STANAG compliance (see section 1-3)
+- [ ] G6/S6 coordination is documented for any cross-domain or coalition-facing product
+
+## E-5. Data Product Standards (SLA, Quality, Freshness)
+
+- [ ] SLA is documented: expected data freshness (e.g., SITREP data current within 6 hours of reporting cycle)
+- [ ] Availability target is documented (e.g., pipeline builds complete within the reporting cycle interval)
+- [ ] Quality checks are implemented (Appendix D, section D-2) and passing with no ERROR-severity failures
+- [ ] Schema is enforced with a defined `StructType`; no inferred-schema datasets in production
+- [ ] NULL handling is documented for all non-nullable fields
+- [ ] Late-arrival handling is documented for time-series data products
+
+## E-6. UDRA Architecture Layer Verification
+
+Confirm the data product's layer placement aligns with the TM-30 5-Layer Stack table (section 1-2):
+
+- [ ] Layer 2 (Integration): All advanced transforms comply with optimization principles (Chapters 2–3)
+- [ ] Layer 3 (Semantic): Ontology models follow design patterns (Appendix B); Interfaces and FOO reviewed (Chapters 4–5)
+- [ ] Layer 4 (Analytics): Quiver/Contour analyses are reusable templates with documented refresh schedules (Chapter 9)
+- [ ] Layer 5 (Activation): OSDK applications and AIP integrations have completed authorization review (Appendix C)
 
 ---
 
