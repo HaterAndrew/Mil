@@ -1,0 +1,427 @@
+ADP 1 — DATA LITERACY FOR SENIOR LEADERS
+
+HEADQUARTERS
+UNITED STATES ARMY EUROPE AND AFRICA
+Wiesbaden, Germany
+
+2026
+
+DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.
+
+---
+
+NOTE: This publication is the senior leader companion to ADRP 1, Data Literacy. It presents foundational principles and command responsibilities without procedural detail. Commanders and senior staff should read this publication; those requiring technical depth should consult ADRP 1.
+
+---
+
+# ADP 1 — DATA LITERACY FOR SENIOR LEADERS
+
+## PREFACE
+
+This publication establishes principles and command responsibilities for data literacy across United States Army Europe and Africa (USAREUR-AF). It is written for O-5 and above, Command Sergeant Major (CSM) and Sergeant Major (SGM), and senior civilian equivalents.
+
+Data literacy is a command competency. It is not a technical skill reserved for analysts. Commanders who understand how to direct, evaluate, and act on data products will make faster, better decisions than those who do not. Those who cannot are vulnerable to surprise, manipulation, and misinformed action.
+
+This ADP does not contain procedures. It contains principles and responsibilities. Technical guidance belongs in ADRP 1. This document tells senior leaders what they are responsible for and why it matters.
+
+---
+
+## CHAPTER 1 — WHY DATA LITERACY MATTERS FOR SENIOR LEADERS
+
+**BLUF: Data-literate commands win. Data-illiterate commands are surprised. The commander sets the standard.**
+
+### 1-1. Bottom Line Up Front
+
+Every modern military operation generates and depends on data. Logistics status, personnel readiness, threat assessments, route conditions, and sensor feeds are all data products. Commanders who understand what data tells them — and what it does not — make better decisions under pressure. Commanders who cannot read, question, or direct data products cede decision advantage to the enemy, to their own biases, and to whatever their staff decides to show them.
+
+Data literacy for senior leaders is a combat multiplier.
+
+### 1-2. The Operational Reality
+
+1-2. Commanders already depend on data, whether they recognize it or not. Every Common Operating Picture (COP) update is a data product. Every readiness report is a data product. Every intelligence summary is built from raw data that has been collected, processed, and assessed. The question is not whether commanders use data — they do. The question is whether they use it deliberately, critically, and effectively.
+
+1-3. In USAREUR-AF's operational environment, the volume of data available to commanders has increased faster than formations' capacity to use it. Sensors, digital sustainment systems, personnel databases, and joint feeds produce more information than any individual can process. Without data-literate leaders directing the analytical effort, formations either drown in data or ignore it entirely. Both outcomes degrade decision quality.
+
+1-4. The commander's data challenge is not access — it is direction, evaluation, and integration. A formation that can collect data but cannot interpret it honestly, question its reliability, or integrate it into planning has not gained an advantage. It has added noise.
+
+### 1-3. What Data Literacy Means for a Senior Leader
+
+1-5. Data literacy for a senior leader is NOT the ability to write code, build databases, or design analytical pipelines. Those are technical skills. Senior leaders require a different competency.
+
+1-6. A data-literate senior leader can do the following:
+
+| Competency | Description |
+|---|---|
+| Direct | Specify what data is needed and why, linked to Commander's Critical Information Requirements (CCIR) |
+| Question | Ask the right questions about a data product before accepting its conclusions |
+| Evaluate | Identify red flags — gaps, inconsistencies, unsupported claims — in data products |
+| Integrate | Connect data products to decisions without over-relying on any single source |
+| Resource | Allocate people, time, and tools to data tasks as deliberate capability investment |
+| Protect | Enforce classification and access control discipline as a command responsibility |
+
+1-7. These competencies are exercised in the same way commanders exercise all other leadership skills: through deliberate practice, by demanding standards, and by modeling the behavior they expect from their subordinates.
+
+### 1-4. The Cost of Data Illiteracy — Three Vignettes
+
+**Vignette 1 — The Invisible Readiness Gap**
+
+1-8. A brigade commander reviewed weekly readiness reports and consistently saw green across all subordinate units. Three days before a major exercise, the brigade discovered that one battalion had been manually entering estimated values for deadline equipment rather than pulling live data from the maintenance system. The exercise launched with a shortfall of 22 percent deadlined vehicles that no one at brigade level had known about. The commander had never asked how the data was collected or validated.
+
+**Vignette 2 — The Confident Wrong Answer**
+
+1-9. A staff officer presented a route analysis showing three viable MSRs (Main Supply Routes) into an assembly area, supported by a detailed chart with color coding and statistics. The commander approved the plan. During execution, the lead element encountered an impassable bridge — a condition documented in an engineer survey from the previous week that had not been integrated into the analysis. The data product had looked authoritative. The commander had not asked what data sources it drew from or how current they were.
+
+**Vignette 3 — The Culture That Punished Honesty**
+
+1-10. A battalion's intelligence section consistently reported high-confidence threat assessments. Pressure from senior leaders for clear, actionable products had led analysts to remove uncertainty language from their reports. The battalion operated for weeks with misplaced confidence in threat assessments that had significant gaps. When contact occurred in an unexpected location, the commander was surprised. The staff had known about the gaps. They had learned not to report them.
+
+### 1-5. The Commander's Role in Building a Data-Literate Formation
+
+1-11. Culture is set by command. If the commander does not ask data-driven questions, subordinates will not prepare data-driven answers. If the commander accepts charts without questioning their sources, staff will produce charts without validating their sources. The standard the commander walks past is the standard the formation adopts.
+
+1-12. Building a data-literate formation requires three things from senior leaders. First, demand honest data products — including uncertainty. Second, resource the capability to produce them. Third, model data-critical behavior in every briefing, planning session, and after-action review (AAR).
+
+1-13. This is not an additional task. It is the commander's job, applied to the information domain.
+
+---
+
+## CHAPTER 2 — CORE PRINCIPLES OF DATA-DRIVEN COMMAND
+
+**BLUF: Eight principles define how commanders should think about and use data. These principles apply regardless of the type of operation, the tool, or the echelon.**
+
+### 2-1. Principle 1 — Data Is Ammunition
+
+2-1. Data is a tactical and operational resource. Like ammunition, it must be collected deliberately, protected from the adversary, and expended at the right time for the right purpose. A formation that collects data carelessly, shares it without access controls, or wastes analytical capacity on low-priority questions is mismanaging a key resource. Commanders must treat data requirements with the same rigor they apply to logistics planning.
+
+### 2-2. Principle 2 — Quality Over Quantity
+
+2-2. One trustworthy data product is worth more than ten unreliable ones. Formations under time pressure will default to the most available data, even if it is poor quality. Commanders must establish and enforce data quality standards before operations, not during them. Accepting degraded data under pressure normalizes the practice. When quality is uncertain, commanders must demand explicit uncertainty statements rather than false precision.
+
+### 2-3. Principle 3 — Context Converts Data Into Intelligence and Decisions
+
+2-3. Raw data has no value without context. A number means nothing without knowing what it measures, when it was collected, how it was collected, and what it is being compared to. A rate of change means nothing without knowing the baseline. Commanders must demand that data products include context — source, collection method, time, and known limitations — not just findings. Analysis without context is assertion.
+
+### 2-4. Principle 4 — Commanders Must Ask the Right Questions
+
+2-4. Analytical effort follows commander guidance. If the commander does not specify what questions need answers, analysts will answer the questions they can answer — which may not be the questions that matter. Establishing Priority Intelligence Requirements (PIR) and Friendly Force Information Requirements (FFIR) is the mechanism by which commanders direct analytical effort. A vague CCIR produces vague data products. A precise requirement produces focused, actionable analysis.
+
+### 2-5. Principle 5 — Automation Enables Scale; Judgment Enables Decisions
+
+2-5. Automated systems can process data at volumes and speeds no human can match. They can flag anomalies, generate reports, and aggregate feeds from across the formation. They cannot exercise judgment. Commanders must understand what their automated systems are and are not doing. Automation does not remove the human from the decision. It informs the human. Commanders who treat automated outputs as decisions — rather than inputs — have surrendered their judgment to their tools.
+
+### 2-6. Principle 6 — Data Lineage Enables Trust and Accountability
+
+2-6. Data lineage is the documented trail of where data came from, who handled it, what transformations were applied, and when. Without lineage, a commander cannot assess whether a data product is trustworthy. Without accountability for data — who collected it, who processed it, who approved it — errors cannot be corrected and bad practices cannot be identified. Commanders must require that data products used for significant decisions include a clear lineage statement.
+
+### 2-7. Principle 7 — Security Is Not Optional
+
+2-7. Data classification and access control are command responsibilities. Operational data, personnel data, intelligence feeds, and logistics systems all carry classification requirements. Data aggregation — combining multiple unclassified elements — can produce a classified product. Commanders must enforce classification discipline and must ensure that data sharing practices within and outside the formation comply with applicable security requirements. A data breach caused by poor access discipline is a command failure.
+
+### 2-8. Principle 8 — Culture Is Set by Command
+
+2-8. If the commander does not use data, neither will the formation. If the commander accepts unsupported assertions in briefings, staff will produce unsupported assertions. If the commander punishes uncertainty — by reacting negatively to "we don't know" answers — the formation will stop reporting uncertainty and start producing false confidence. The commander's daily behavior in briefings, planning sessions, and AARs defines the formation's data culture. No training program can compensate for a command climate that does not value honest, rigorous data use.
+
+---
+
+## CHAPTER 3 — COMMANDER'S DATA RESPONSIBILITIES
+
+**BLUF: Commanders have six core data responsibilities. These are not delegated tasks — they are command functions that require commander attention, direction, and enforcement.**
+
+### 3-1. Establishing Data Requirements
+
+3-1. Data requirements must be linked to decisions. Every CCIR — whether a PIR or FFIR — implies a data requirement. Commanders must be able to answer: what data will tell me whether this requirement has been satisfied? Vague CCIRs produce vague data collection and analysis. Precise requirements produce focused, actionable products.
+
+3-2. Commanders establish data requirements during mission analysis and refine them throughout the Military Decision-Making Process (MDMP). Data requirements should be reviewed when the operational situation changes significantly enough to alter what information matters most. Stale requirements produce stale data effort.
+
+3-3. The following questions help commanders establish effective data requirements:
+
+| Question | Purpose |
+|---|---|
+| What decision does this data support? | Ensures data serves a decision, not a briefing |
+| What does "satisfied" look like? | Creates a clear threshold for action |
+| When do I need it? | Sets a collection and reporting timeline |
+| What is the acceptable confidence level? | Defines quality standard up front |
+| What happens if I don't get it? | Forces assessment of the decision risk |
+
+### 3-2. Appointing and Supporting Data Stewards
+
+3-4. Every formation that manages significant data — whether personnel records, logistics status, intelligence products, or training databases — needs a data steward. A data steward is the individual responsible for the accuracy, completeness, and appropriate handling of a specific dataset or system.
+
+3-5. Commanders must formally appoint data stewards and define their responsibilities in writing. Appointment without authority is ineffective. Data stewards must have the authority to enforce data entry standards, flag inaccuracies to leadership, and decline to sign off on products that do not meet quality standards.
+
+3-6. Data stewards are not administrators. They are quality owners. Commanders who treat the data steward role as an additional duty managed at the lowest possible rank will get the data quality that posture deserves.
+
+### 3-3. Demanding Data Quality Standards
+
+3-7. Commanders define quality by what they accept. A formation that routinely produces data products with undocumented sources, outdated figures, or missing uncertainty statements will continue to do so until the commander stops accepting them.
+
+3-8. Commanders should apply the following minimum standards when receiving data products in any formal setting:
+
+- Source and collection method are identified.
+- Data currency (age) is stated.
+- Known gaps or limitations are disclosed.
+- Confidence levels are expressed — not implied.
+- Derived figures (calculations, estimates) are distinguished from raw collected data.
+
+3-9. These standards should be enforced consistently, not just in high-stakes briefings. The formation learns from everyday practice. Inconsistent standards produce inconsistent quality.
+
+### 3-4. Data in the MDMP
+
+3-10. Data requirements are established and refined at each step of the MDMP. The commander's role at each step is distinct:
+
+| MDMP Step | Commander's Data Role |
+|---|---|
+| Receipt of Mission | Identify initial information gaps; issue initial CCIR |
+| Mission Analysis | Validate data requirements against mission variables; assign collection tasks |
+| COA Development | Specify what data each Course of Action (COA) assumes; flag untested assumptions |
+| COA Analysis (Wargame) | Test COAs against data uncertainty — what if the data is wrong? |
+| COA Comparison | Require explicit data basis for each comparative factor |
+| Orders Production | Ensure data requirements and reporting triggers are included in the OPORD |
+| Execution and Assessment | Monitor CCIR status; adjust collection effort as the situation develops |
+
+3-11. Data literacy in MDMP is not a new step. It is the habit of treating information products with the same rigor applied to other planning products — and holding the staff accountable for the same standards.
+
+### 3-5. Resourcing Data Capability
+
+3-12. Data capability does not self-generate. It requires people with skills, tools that work, time to do the analysis, and a command climate that rewards doing it well. Commanders must resource data capability deliberately, as they resource any other operational function.
+
+3-13. Commanders should assess their formation's data capability against three factors:
+
+**People.** Do staff sections have personnel with sufficient skill to collect, manage, and analyze operational data? Are those personnel employed on data tasks or diverted to other duties? Is there a training path that develops data skills over time?
+
+**Tools.** Do the tools available to the formation meet its data needs? Are they operational, licensed, and maintained? Do personnel know how to use them effectively?
+
+**Time.** Is analytical effort protected from being consumed by administrative tasks? Is there time in the battle rhythm for analysis — not just reporting? Are deadlines realistic given the available data and analytical capacity?
+
+3-14. Underfunding data capability while demanding data products is a command contradiction. Commanders must close the gap between what they ask for and what they resource.
+
+### 3-6. Enforcing Data Security and Classification Discipline
+
+3-15. Commanders are responsible for the classification and access control practices of their formation. This includes digital data — files, databases, reports, and shared drives — as well as physical products.
+
+3-16. Commanders must ensure their formations observe the following:
+
+- Data products are classified at the appropriate level based on content, including aggregation effects.
+- Access to sensitive data systems is granted on a need-to-know basis, not convenience.
+- Personnel transfers and departures are accompanied by prompt access revocation.
+- Data sharing with partner nations, joint forces, or external agencies follows applicable security agreements.
+- Data breaches or suspected unauthorized access are reported immediately through proper channels.
+
+3-17. Classification discipline is not the S-6's problem. It is a command problem. Commanders who treat it as a technical issue rather than a command responsibility will eventually own the consequences of that posture.
+
+---
+
+## CHAPTER 4 — EVALUATING DATA PRODUCTS
+
+**BLUF: Commanders must be active consumers of data products — not passive recipients. Every briefing is an opportunity to enforce standards, identify gaps, and direct the analytical effort.**
+
+### 4-1. Questions Every Commander Should Ask
+
+4-1. When presented with a data product — a chart, a report, an assessment, a dashboard — commanders should ask a consistent set of questions before accepting its conclusions. These questions are not expressions of distrust. They are the minimum standard for informed decision-making.
+
+| Question | What It Uncovers |
+|---|---|
+| What is the source? | Identifies the origin and potential bias of the data |
+| How was this collected? | Reveals method limitations, sampling gaps, or reporting errors |
+| How current is this data? | Flags whether conditions may have changed |
+| What is not included here? | Exposes gaps the product may not advertise |
+| What is the confidence level? | Distinguishes high-quality findings from estimates |
+| What assumption is this built on? | Identifies untested premises that may invalidate the product |
+| What would change this conclusion? | Tests the robustness of the finding |
+| Who produced this and do they have conflicts of interest? | Flags organizational or analytical bias |
+
+4-2. These questions take seconds to ask. They create a command culture that demands accountability from analysts and protects commanders from acting on flawed products.
+
+### 4-2. Red Flags in Data Products
+
+4-3. Certain characteristics of a data product should prompt the commander to pause and dig deeper before acting on its conclusions. These are not disqualifying — but they require explanation.
+
+**Red Flag 1 — No Uncertainty Stated.** Any data product that presents findings without confidence levels, margins, or acknowledgment of limitations is incomplete. Real analysis always has uncertainty. Products with none have had it removed — which is worse than products that never measured it.
+
+**Red Flag 2 — Precision Without Basis.** A report that states "enemy force is 847 personnel" when the collection method is observer reports and imagery should be questioned. False precision signals that numbers have been manipulated to appear more authoritative than the underlying data supports.
+
+**Red Flag 3 — Conclusions That Confirm Existing Assumptions.** If every data product confirms what the commander and staff already believe, the analytical process may be producing advocacy rather than analysis. Honest data frequently surprises. Products that never do may have been shaped to avoid discomfort.
+
+**Red Flag 4 — Missing Data Described as Zero.** "No reports of enemy activity in sector" is not the same as "no enemy activity in sector." Missing data should be disclosed as missing, not treated as evidence of absence.
+
+**Red Flag 5 — No Audit Trail.** If the analyst cannot explain where the data came from, what transformations were applied, and who reviewed it, the product does not meet minimum standards for command-level decisions.
+
+**Red Flag 6 — Single-Source Products for High-Stakes Decisions.** One source — regardless of confidence level — is insufficient for decisions with significant operational consequences. Commanders should require corroboration before acting on single-source products.
+
+### 4-3. Understanding Uncertainty and Confidence Levels
+
+4-4. Uncertainty is not weakness. It is honesty. Commanders who demand certainty from analysts will receive false certainty. Commanders who accept and act on honest uncertainty will make better decisions than those who require false confidence before they can act.
+
+4-5. Confidence levels in analytical products typically reflect two factors: the quality of the underlying data and the strength of the reasoning applied to it. A high-confidence assessment based on poor data is not trustworthy. A low-confidence assessment based on strong data may be more reliable than it appears. Commanders must understand both factors.
+
+4-6. The appropriate response to uncertainty is not paralysis — it is risk management. Commanders identify what they know, what they do not know, and what they need to find out before the decision point. They assign collection tasks to close critical gaps and make decisions with explicit acknowledgment of residual uncertainty.
+
+4-7. NOTE: Intelligence products use defined confidence level terminology (high, moderate, low). When working with non-intelligence data products — logistics, personnel, engineering — commanders should require equivalent language. "We think" and "the data suggests" are not confidence statements. "Based on three independent sources with collection from the last 48 hours, we assess with moderate confidence" is.
+
+### 4-4. Distinguishing Correlation from Causation
+
+4-8. Correlation means two things move together. Causation means one thing causes another. Confusing them is one of the most common analytical errors in briefings, and it leads commanders to take actions that do not produce expected results.
+
+4-9. Example: A unit observes that incidents increase on days when a particular patrol route is used. That is correlation. The cause may be the route — or the cause may be that the route is used when conditions are already elevated. Acting on correlation as if it were causation (stopping the route) may not reduce incidents if the route was not the cause.
+
+4-10. Commanders should require analysts to explicitly state whether a relationship is correlational or causal, and to explain the basis for that claim. The question "how do we know this causes that, rather than just being associated with it?" is always appropriate.
+
+### 4-5. Directing the Analytical Effort
+
+4-11. Commanders direct analytical effort through their requirements, not through telling analysts what conclusions to reach. The distinction is critical. Directing requirements preserves analytical integrity. Directing conclusions corrupts it.
+
+4-12. Commanders should specify:
+- What question needs to be answered.
+- What decision the answer will inform.
+- When the answer is needed.
+- What level of confidence is acceptable given the stakes.
+
+4-13. Commanders should not specify:
+- What answer is expected.
+- What data sources to prioritize in ways that bias the outcome.
+- That uncertainty should be removed from products before briefing.
+
+4-14. Analysts who are directed toward conclusions rather than questions will eventually produce the conclusions the commander wants — regardless of what the data says. That is how formations end up surprised.
+
+---
+
+## CHAPTER 5 — BUILDING A DATA-LITERATE FORMATION
+
+**BLUF: Data literacy is a trained and developed competency, not a natural talent. Commanders build it through deliberate training, integration into collective events, and consistent command climate.**
+
+### 5-1. Training Requirements and the Data Literacy Continuum
+
+5-1. Data literacy exists on a continuum. Not every Soldier needs the same level of proficiency. What matters is that each role has a defined standard, that training is available to meet it, and that leaders enforce the standard.
+
+5-2. The three broad training levels are:
+
+| Level | Target Audience | Core Competency |
+|---|---|---|
+| -10 (Awareness) | All personnel | Understand what data is, why it matters, and personal responsibilities for data accuracy and security |
+| -20 (Practitioner) | Data stewards, S-sections, analysts, key NCOs | Collect, manage, and report data accurately; identify quality issues; apply standards |
+| -30 (Expert) | Data analysts, S-2, S-6, senior staff | Design data pipelines, perform complex analysis, mentor the formation, evaluate data architecture |
+
+5-3. Senior leaders sit at the -10 level for technical skills and at a distinct "Commander" level for direction, evaluation, and command responsibilities. This ADP describes the Commander level. ADRP 1 describes all levels in detail.
+
+### 5-2. Summary of Training Levels
+
+5-4. All training levels are cumulative. A Practitioner is trained to the Awareness standard plus additional competencies. Commanders must ensure their formation has personnel trained to the appropriate level for each data function in use.
+
+5-5. NOTE: Gaps in training coverage are a readiness issue, not an administrative issue. A formation with no personnel trained to the -20 level on a critical data system is as vulnerable as a formation with no personnel qualified on a critical weapons system. Treat it accordingly.
+
+5-6. Key training outcomes by level:
+
+**-10 Awareness (All Personnel)**
+- Understand the difference between data and information.
+- Know their responsibilities for accurate data entry.
+- Recognize and report data quality problems.
+- Observe classification and access control requirements.
+
+**-20 Practitioner (Data Stewards, Key Staff)**
+- Apply data quality standards to collection and reporting.
+- Identify and escalate data integrity issues.
+- Produce basic analytical products from available tools.
+- Support the data requirements process.
+
+**-30 Expert (Analysts, Technical Staff)**
+- Design data collection frameworks.
+- Perform statistical and pattern analysis.
+- Build and maintain analytical pipelines.
+- Evaluate and improve data architecture.
+
+### 5-3. Integrating Data Tasks Into Collective Training
+
+5-7. Data literacy is best developed in context — during the tasks it supports. Training data skills in isolation from operational context produces personnel who understand concepts but cannot apply them under pressure.
+
+5-8. Commanders must integrate data tasks into the following collective training events:
+
+**Situational Training Exercises (STX).** Include data entry, reporting, and quality check tasks in STX lane design. Train Soldiers and NCOs to enter accurate data under time pressure and to flag discrepancies.
+
+**Field Training Exercises (FTX).** Operate the formation's data systems in field conditions. Require data products — readiness reports, logistics status, assessment products — to meet quality standards throughout the exercise. Use AARs to identify and correct data discipline failures.
+
+**Command Post Exercises (CPX).** Exercise the full data product chain — from collection requirement to command-level brief. Require staff to source their briefing products and disclose uncertainty. Practice the commander's questioning routine on every data product presented.
+
+5-9. NOTE: If data quality standards are relaxed during training because of time pressure or administrative convenience, the formation will relax them during operations for the same reasons. Train the standard you intend to enforce.
+
+### 5-4. Creating Conditions for a Data-Driven Culture
+
+5-10. Culture is shaped by what commanders recognize, reward, and require. To build a data-driven culture, commanders must make all three visible and consistent.
+
+**Recognition.** Identify and recognize personnel who catch data errors, produce high-quality analytical products, or improve data practices in their section. Make it visible that the command values data quality — not just data volume.
+
+**Expectation.** Set explicit standards for data products in all formal briefings and planning events. Publish those standards. Review them at leader professional development (LPD) sessions. Apply them consistently, not only when the stakes are obvious.
+
+**Resourcing.** Fund training time, protect analytical personnel from unrelated taskings, and acquire tools that enable the standard. A command that requires excellent data products but does not provide time, tools, or training has made an unfunded mandate — and the staff knows it.
+
+5-11. Senior NCO leadership is critical. CSMs and SGMs who enforce data discipline in unit administration, training management, and NCO development programs reinforce the command climate that the commander sets at the top.
+
+### 5-5. Key Indicators of a Data-Literate Formation
+
+5-12. Commanders can assess their formation's data literacy through observable indicators. These are not metrics — they are behavioral and cultural signs that the formation has internalized the standard.
+
+| Indicator | What It Signals |
+|---|---|
+| Staff volunteers uncertainty in briefings without being asked | Formation trusts that honesty is safe |
+| Data products include source, currency, and confidence level by default | Quality standards are internalized, not enforced by exception |
+| Data errors are reported up, not hidden | Command climate rewards accuracy over appearance |
+| CCIRs drive collection planning, not reporting formats | Data requirements are linked to decisions |
+| Data stewards are empowered to reject non-compliant products | Authority matches responsibility |
+| Collective training events use live data systems under realistic conditions | Training replicates operational conditions |
+| After-action reviews identify and correct data failures, not just tactical failures | Data is treated as an operational domain |
+
+5-13. A formation that exhibits these indicators has internalized data literacy as a command competency. A formation that exhibits none of them has significant vulnerability in the information domain.
+
+---
+
+## KEY TERMS
+
+The following terms are used throughout this publication. Definitions are provided as they apply to this document. More complete definitions appear in ADRP 1 and applicable joint and Army doctrine.
+
+**AAR (After-Action Review)** — Structured review of events to identify what happened and why.
+
+**Analytical Pipeline** — Sequence of steps that transform raw data into an analytical product.
+
+**Audit Trail** — Documentation of data origin, handling, and transformations.
+
+**CCIR (Commander's Critical Information Requirements)** — Information the commander requires to make timely decisions; includes PIR and FFIR.
+
+**Confidence Level** — Expressed degree of certainty in an analytical assessment.
+
+**COP (Common Operating Picture)** — Shared display of relevant operational information.
+
+**Correlation** — Statistical association between two variables; does not imply causation.
+
+**Causation** — One variable directly produces change in another.
+
+**Data Currency** — How recent the data is; the age of a data product.
+
+**Data Lineage** — Documented chain of a dataset's origin, handling, and transformation.
+
+**Data Literacy** — Ability to read, evaluate, direct, and act on data products at a level appropriate to one's role.
+
+**Data Quality** — Degree to which data is accurate, complete, consistent, and timely.
+
+**Data Steward** — Individual responsible for accuracy and appropriate handling of a dataset.
+
+**FFIR (Friendly Force Information Requirements)** — Information the commander needs about friendly forces to make decisions.
+
+**MDMP (Military Decision-Making Process)** — Army's deliberate planning process; seven steps from receipt of mission through orders production.
+
+**PIR (Priority Intelligence Requirements)** — Intelligence the commander needs to understand the threat and environment.
+
+**Red Flag** — Characteristic of a data product that warrants additional scrutiny before use.
+
+**Uncertainty** — Acknowledged limits of confidence in data or analytical conclusions.
+
+---
+
+*ADP 1 — DATA LITERACY FOR SENIOR LEADERS*
+*HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA*
+*Wiesbaden, Germany*
+*2026*
+
+*By order of the Commanding General, United States Army Europe and Africa.*
+
+---
+
+DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.
