@@ -6,6 +6,8 @@ Wiesbaden, Germany
 
 2026
 
+**Version 1.0 | March 2026**
+
 **PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Python proficiency (intermediate or higher); TypeScript proficiency (intermediate or higher)
 
 **DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Reason: operational systems documentation. Other requests must be referred to USAREUR-AF G6.
@@ -39,7 +41,7 @@ Before performing any task at TM-40F level:
 - Chapter 4 — Foundry Platform SDK
 - Chapter 5 — TypeScript Functions on Objects (FOO)
 - Chapter 6 — Actions with Complex Validation
-- Chapter 7 — Slate Applications
+- Chapter 7 — Slate Applications (LEGACY)
 - Chapter 8 — CI/CD and Code Repository Discipline
 - Chapter 9 — Security and Compliance
 - Appendix A — OSDK Quick Reference
@@ -62,7 +64,7 @@ This manual provides task-based instruction for software engineers operating on 
 - Foundry Platform SDK (Python): reading and writing datasets, managing transactions, accessing file resources
 - TypeScript Functions on Objects (FOO): computed properties, bulk query patterns, performance optimization
 - Actions with complex validation: TypeScript validators, multi-step action flows, conditional logic
-- Slate: custom HTML/CSS/JavaScript application development hosted on Foundry
+- Slate: legacy custom HTML/CSS/JavaScript application development hosted on Foundry (documented for maintenance of existing Slate apps only — do not use for new development; see Chapter 7)
 - CI/CD for Foundry: repository structure, automated testing, branch promotion workflows
 - Security: CBAC in external apps, credential management, marking compliance in OSDK queries, audit trails
 - Integration patterns: REST APIs, webhooks, cross-system data flows connecting MSS to external Army systems
@@ -96,7 +98,7 @@ MISSION REQUIREMENT
         v
    -40B ENGINEER             <- You are here
    (OSDK, external apps,
-    FOO, Slate, CI/CD,
+    FOO, CI/CD,
     integration code)
         |
         v
@@ -118,7 +120,7 @@ MISSION REQUIREMENT
 | External application | Web or desktop app consuming MSS Ontology via OSDK | V Corps readiness dashboard consuming unit status objects |
 | SITREP automation | App that reads Ontology objects and pushes formatted reports to external systems | Automated SITREP generation to EUCOM J3 portal |
 | Integration service | Microservice bridging external Army system to MSS via REST/webhook | GCSS-Army feed into MSS equipment ontology |
-| Slate app | Custom HTML/JS application hosted within Foundry | Interactive operational map with custom layers |
+| Slate app | Custom HTML/JS application hosted within Foundry (LEGACY — do not use for new development) | Interactive operational map with custom layers |
 | FOO library | TypeScript computed properties enriching Ontology objects | Readiness score computed from component statuses |
 | CI/CD pipeline | Automated testing and promotion workflow for Foundry code resources | Branch-gated promotion for production transforms |
 
@@ -166,7 +168,7 @@ Complete all of the following before beginning this manual:
 |  --> TM-40F primary operating layer                           |
 +---------------------------------------------------------------+
 |  LAYER 4: ANALYTICS                                           |
-|  Slate apps, custom dashboards, FOO-enriched objects          |
+|  External OSDK apps, custom dashboards, FOO-enriched objects  |
 |  --> TM-40F builds custom analytical applications             |
 +---------------------------------------------------------------+
 |  LAYER 3: SEMANTIC (ONTOLOGY)                                 |
@@ -188,6 +190,8 @@ TM-40F engineers are the primary implementers of Layers 4 and 5 technical compon
 ---
 
 ## CHAPTER 2 — OSDK FUNDAMENTALS
+
+> **CODE EXAMPLES:** Runnable OSDK and Ontology access patterns referenced in this chapter are available in the local development shim at [`data_skills/13_foundry_patterns/ontology_modeling.py`](../../../data_skills/13_foundry_patterns/ontology_modeling.py). Transform and check patterns are in [`python_transforms.py`](../../../data_skills/13_foundry_patterns/python_transforms.py) and [`foundry_checks.py`](../../../data_skills/13_foundry_patterns/foundry_checks.py). Activate the venv: `source data_skills/.venv/bin/activate`.
 
 ### 2-1. What Is the OSDK
 
@@ -308,6 +312,8 @@ const client = createClient(
 
 **STANDARDS:** All queries include explicit pagination. Filter logic does not retrieve data beyond operational need (least-privilege data access). Error handling covers authentication failures, network errors, and empty result sets.
 
+**EQUIPMENT:** Authenticated OSDK client (Python or TypeScript); target Object Type enrolled in application ontology; OSDK package installed in development environment.
+
 **PROCEDURE — Basic object query (Python):**
 
 ```python
@@ -391,6 +397,12 @@ async function getUnitStatusRecords(
 
 **BLUF:** Every OSDK query that returns more than one object must implement explicit pagination. Unbounded queries against large operational object populations will time out or degrade platform performance.
 
+**CONDITIONS:** OSDK client initialized and authenticated. Target Object Type has more than one result in the expected query scope.
+
+**STANDARDS:** All multi-object queries use explicit page sizes. No unbounded queries against operational Object Types. Application handles empty result sets and end-of-page conditions without error.
+
+**EQUIPMENT:** Authenticated OSDK client (Python or TypeScript); target Object Type enrolled in application.
+
 **PROCEDURE — Paginated query with page token (Python):**
 
 ```python
@@ -450,6 +462,12 @@ def paginated_equipment_query(
 ---
 
 ### 2-5. Filtering and Sorting
+
+**CONDITIONS:** OSDK client initialized and authenticated. Target Object Type is enrolled in the application and accessible to the authenticated principal.
+
+**STANDARDS:** Filters are applied server-side. OR filters are profiled against representative data before deployment. Query logic retrieves only data within operational need (least-privilege access).
+
+**EQUIPMENT:** Authenticated OSDK TypeScript client; target Object Type definitions imported from generated OSDK package.
 
 **PROCEDURE — Compound filters and sorting (TypeScript):**
 
@@ -514,6 +532,12 @@ async function getCriticalOrNmcEquipment(
 
 ### 2-6. Traversing Link Types
 
+**CONDITIONS:** OSDK client initialized and authenticated. Parent Object Type and Link Type are enrolled in the application. Authenticated principal has read access to both sides of the link.
+
+**STANDARDS:** Link traversal is batched where possible. Single-object link traversal is not used inside loops over large object populations. Result is bounded and does not load unbounded child sets into memory.
+
+**EQUIPMENT:** Authenticated OSDK Python client; parent Object Type RID; Link Type name.
+
 **PROCEDURE — Follow links from parent to child objects (Python):**
 
 ```python
@@ -562,6 +586,8 @@ def get_unit_with_equipment(
 **CONDITIONS:** Action is defined and deployed in the MSS Ontology by a -30 builder or -40 developer. Your OSDK application enrollment includes the Action in its API scope. The authenticated service account has permission to execute the Action.
 
 **STANDARDS:** Action execution includes parameter validation before submission. Responses are handled for both success and error cases. All Action executions are logged at the application level for audit purposes.
+
+**EQUIPMENT:** Authenticated OSDK client (Python or TypeScript); Action name and parameter schema obtained from -30 builder or Ontology documentation; application-level logger configured.
 
 **PROCEDURE — Execute Action (Python):**
 
@@ -705,6 +731,8 @@ async function submitSitrepEntry(
 
 **STANDARDS:** Subscription handlers are idempotent — duplicate events do not cause duplicate state changes. Subscription errors are caught and logged. Application recovers from dropped connections with backoff retry.
 
+**EQUIPMENT:** Authenticated OSDK TypeScript client with subscription support; stable network path to MSS with WebSocket allowed; application-level logger and error handler configured.
+
 **PROCEDURE — Subscribe to object changes (TypeScript):**
 
 ```typescript
@@ -765,6 +793,12 @@ async function subscribeToUnitStatusChanges(
 
 **BLUF:** When processing multiple objects, use batch query patterns instead of per-object loops. Per-object queries (N+1 pattern) at operational scale will breach rate limits and degrade performance for all MSS users.
 
+**CONDITIONS:** OSDK client initialized and authenticated. List of target object RIDs or filter criteria is known. Object population to process exceeds 10 objects (use single-object queries for smaller sets).
+
+**STANDARDS:** No N+1 query pattern in production code. Batch size is bounded (50 RIDs per chunk default). Total result set is bounded before processing begins.
+
+**EQUIPMENT:** Authenticated OSDK Python client; list of object RIDs or filter parameters.
+
 **PROCEDURE — Bulk load by RID list (Python):**
 
 ```python
@@ -815,6 +849,12 @@ def bulk_get_equipment_by_rid(
 ---
 
 ### 3-4. Error Handling and Retry Patterns
+
+**CONDITIONS:** OSDK client initialized. Application must handle transient network errors and rate-limit responses without losing data or causing duplicate state changes.
+
+**STANDARDS:** All OSDK calls are wrapped in error handling. Retries use exponential backoff. Authentication failures (401/403) are not retried — they are logged and raised immediately. Maximum retry attempts are bounded.
+
+**EQUIPMENT:** Authenticated OSDK Python client; logging configured to capture retry attempts and final failures.
 
 **PROCEDURE — Retry with exponential backoff (Python):**
 
@@ -907,6 +947,12 @@ The Platform SDK is not a general-purpose data lake client. All access must be a
 
 ### 4-2. Client Initialization and Authentication
 
+**CONDITIONS:** Service account token and Foundry base URL are provisioned and stored in environment variables. Platform SDK Python package is installed in the development environment.
+
+**STANDARDS:** Client is initialized from environment variables only. No credentials appear in source code. Connection is verified before any dataset operation begins.
+
+**EQUIPMENT:** Approved development environment; `FOUNDRY_TOKEN` and `FOUNDRY_URL` environment variables set from C2DAO-approved credential store; Platform SDK Python package installed.
+
 **PROCEDURE — Initialize the Platform SDK client (Python):**
 
 ```python
@@ -937,6 +983,12 @@ def build_platform_client() -> FoundryClient:
 ---
 
 ### 4-3. Dataset Operations — Reading
+
+**CONDITIONS:** Platform SDK client initialized and authenticated. Dataset RID is known. Authenticated principal has read access to the target dataset and branch. Data steward authorization obtained for production reads in automated pipelines.
+
+**STANDARDS:** Large dataset reads use column selection or row limits. Full dataset reads are not performed on production datasets without data steward coordination. Schema is validated before downstream processing.
+
+**EQUIPMENT:** Authenticated Platform SDK Python client; dataset RID; target branch name; `pandas` and `pyarrow` packages installed.
 
 **PROCEDURE — Read a Foundry dataset into a pandas DataFrame (Python):**
 
@@ -1016,6 +1068,14 @@ def read_dataset_with_limit(
 | `UPDATE` | Replace dataset contents | Replaces all rows (destructive — coordinate with steward) |
 | `SNAPSHOT` | Replace full dataset atomically | Creates new snapshot; preferred for full-refresh pipelines |
 | `DELETE` | Remove specific rows | Use sparingly; coordinate with data steward |
+
+> **CAUTION:** APPEND transactions are NOT inherently idempotent. Each APPEND call adds data to the dataset without deduplication. To achieve idempotent writes, implement deduplication logic yourself using content hashes or surrogate keys before appending. Use SNAPSHOT transactions for full-dataset atomic replacement.
+
+**CONDITIONS:** Platform SDK client initialized and authenticated. Target dataset RID is known. Authenticated principal has write access to the target branch. Data steward authorization obtained for any write to a shared staging or production dataset. Deduplication logic is implemented if APPEND transaction is used.
+
+**STANDARDS:** All writes use transactions. Transactions are explicitly committed or aborted — no open transactions left on error. Writes target `develop` branch by default; writes to `master` require explicit steward coordination. APPEND transactions include deduplication logic to ensure idempotency.
+
+**EQUIPMENT:** Authenticated Platform SDK Python client; dataset RID; target branch name; `pandas` and `pyarrow` packages installed.
 
 **PROCEDURE — Write to dataset with APPEND transaction (Python):**
 
@@ -1122,6 +1182,12 @@ def snapshot_dataset(
 
 ### 4-5. File Resources
 
+**CONDITIONS:** Platform SDK client initialized and authenticated. Target dataset RID is known. Authenticated principal has read or write access to the target dataset file store. File content is validated before upload.
+
+**STANDARDS:** File uploads use APPEND transactions and are committed or aborted explicitly. File paths are well-defined logical paths — not arbitrary file system paths. Sensitive file content is not logged.
+
+**EQUIPMENT:** Authenticated Platform SDK Python client; dataset RID; target branch name; file content as bytes.
+
 **PROCEDURE — Read and write file resources in Foundry (Python):**
 
 ```python
@@ -1188,6 +1254,12 @@ def download_reference_file(
 ---
 
 ### 4-6. Branch Management
+
+**CONDITIONS:** Platform SDK client initialized and authenticated. Dataset RID is known. Authenticated principal has branch management permissions on the target dataset.
+
+**STANDARDS:** Development branches are created from `master`. Branch names follow the naming convention in NAMING_AND_GOVERNANCE_STANDARDS. Branches are not left open indefinitely after development work completes.
+
+**EQUIPMENT:** Authenticated Platform SDK Python client; dataset RID; desired branch name.
 
 **PROCEDURE — List branches and create a development branch (Python):**
 
@@ -1270,6 +1342,12 @@ my-foo-functions/
 
 ### 5-3. Computed Property Functions
 
+**CONDITIONS:** TypeScript FOO repository is configured per Section 5-2. Target Object Type is registered in the Foundry Ontology. Computation cost is assessed as acceptable for on-demand execution (see decision framework in Concepts Guide Section 5).
+
+**STANDARDS:** FOO function returns a defined type. Null/undefined property values are handled without throwing. Function is stateless — no module-level state accumulated across calls. Unit test coverage meets minimum per Section 8-4.
+
+**EQUIPMENT:** TypeScript development environment; `@foundry/functions-api` and `@foundry/ontology-api` packages; Jest test framework.
+
 **PROCEDURE — Define a computed property FOO function (TypeScript):**
 
 ```typescript
@@ -1325,6 +1403,12 @@ export class ReadinessFunctions {
 ### 5-4. Bulk Query Patterns
 
 **BLUF:** FOO bulk query functions execute server-side against the full object population. Design them to minimize object property access and avoid N+1 link traversals in hot paths.
+
+**CONDITIONS:** Object Type is registered in the Foundry Ontology. ObjectSet passed to the function is pre-filtered by the caller to the relevant population. Computation is assessed as scalable against production object volumes.
+
+**STANDARDS:** Function accesses only the properties it needs. No N+1 link traversal inside object iteration loops. Function is profiled against production-scale data volumes before deployment. Returns empty/zero result for empty ObjectSet without error.
+
+**EQUIPMENT:** TypeScript development environment; `@foundry/functions-api` and `@foundry/ontology-api` packages; production-scale test data for profiling.
 
 **PROCEDURE — Aggregate function across multiple objects (TypeScript):**
 
@@ -1439,6 +1523,12 @@ export class UnitEquipmentFunctions {
 
 ### 5-6. Testing FOO Functions
 
+**CONDITIONS:** FOO function is implemented per Section 5-3 or 5-4. Jest test framework is configured in the repository. Mock object stubs can be constructed from known property values without Foundry connectivity.
+
+**STANDARDS:** At least one test validates correct output for a known input. Edge cases covered: null/undefined properties, empty object sets, boundary values for numeric computations. Test coverage meets 80% line minimum per Section 8-4. Tests run locally without Foundry connectivity.
+
+**EQUIPMENT:** TypeScript development environment; Jest configured; `@foundry/ontology-api` mock types.
+
 **PROCEDURE — Unit test FOO functions (TypeScript, Jest):**
 
 ```typescript
@@ -1511,15 +1601,23 @@ The three validation layers for complex Actions:
 
 | Layer | Where | Who Writes | Purpose |
 |---|---|---|---|
-| Client-side (pre-submit) | External app or Slate | -40B SWE | UX validation; catch obvious errors before API call |
+| Client-side (pre-submit) | External app or Workshop | -40F SWE | UX validation; catch obvious errors before API call |
 | OSDK validation | Action parameter schema | Foundry runtime | Type enforcement; required fields |
-| Server-side TypeScript validator | Foundry Function | -40B SWE | Business rules, cross-object validation, conditional logic |
+| Server-side TypeScript validator | Foundry Function | -40F SWE | Business rules, cross-object validation, conditional logic |
+
+> **NOTE:** Slate is Foundry's legacy application builder and is no longer the recommended path for new development. Use Workshop for internal Foundry applications, or OSDK-backed external applications for public-facing deployments. For client-side validation in new development, implement validation in your Workshop application or external OSDK application — not in a Slate app.
 
 TypeScript server-side validators execute inside Foundry before the Action applies state changes. A validator returning an error prevents the Action from executing.
 
 ---
 
 ### 6-2. Writing TypeScript Action Validators
+
+**CONDITIONS:** Action is defined in the Foundry Ontology by a -30 builder. Business rules for the Action are documented and reviewed by the responsible data steward. TypeScript FOO repository is configured per Section 5-2.
+
+**STANDARDS:** Validation logic is separated from the Action function for testability. All business rules are enforced before the Action applies state changes. Throwing inside an `@ActionEditFunction` prevents execution. Unit test coverage meets 90% line minimum (validators are security-sensitive — higher bar per Section 8-4).
+
+**EQUIPMENT:** TypeScript development environment; `@foundry/functions-api` and `@foundry/ontology-api` packages; Jest test framework; documented business rules from data steward.
 
 **PROCEDURE — TypeScript Action validator for SITREP submission:**
 
@@ -1668,6 +1766,12 @@ export class SitrepActionFunctions {
 
 **BLUF:** Multi-step Actions with conditional paths (e.g., submit → route for review → approve/reject) require a state machine pattern in TypeScript. Design the state machine explicitly — do not encode state in property naming conventions.
 
+**CONDITIONS:** All state transitions and business rules are documented before implementation. Action definitions for each transition step are configured in the Foundry Ontology. Object Types for the primary entity and any audit/review records are defined.
+
+**STANDARDS:** State machine transitions are defined explicitly as a constant — no ad hoc transition logic embedded in conditional branches. Invalid transitions throw before any edits are applied. Audit record is created for every state change. Unit tests cover all valid transitions and all invalid transition attempts.
+
+**EQUIPMENT:** TypeScript development environment; `@foundry/functions-api` and `@foundry/ontology-api` packages; state machine design document; Jest test framework.
+
 **PROCEDURE — Multi-step EXORD processing action (TypeScript):**
 
 ```typescript
@@ -1756,22 +1860,34 @@ export class ExordActionFunctions {
 
 ---
 
-## CHAPTER 7 — SLATE APPLICATIONS
+## CHAPTER 7 — SLATE APPLICATIONS (LEGACY)
+
+> **CAUTION:** Slate is a legacy application builder. Do not use Slate for new development. Use Workshop for internal Foundry applications. For public-facing portals, build an external application using the OSDK or Platform SDK.
 
 ### 7-1. What Is Slate
 
-**BLUF:** Slate is a Foundry-hosted environment for building custom HTML/CSS/JavaScript applications with direct access to Foundry data and the Ontology API. Use Slate when Workshop cannot meet the UX or interaction requirements.
+**BLUF:** Slate is a legacy Foundry-hosted environment for building custom HTML/CSS/JavaScript applications. This chapter is retained for maintenance of existing Slate applications only. All new application development must use Workshop (for internal Foundry users) or OSDK-backed external applications (for users without Foundry access or public-facing portals).
 
-Slate applications:
+> **CAUTION:** Slate is a legacy application builder. Do not use Slate for new development. Use Workshop for internal Foundry applications. For public-facing portals, build an external application using the OSDK or Platform SDK.
+
+Slate applications (legacy characteristics):
 - Run inside the Foundry UI frame (same auth session as the user)
 - Can call Foundry APIs including the OSDK, dataset query endpoints, and ontology endpoints
 - Support full HTML5/CSS3/JavaScript including modern frameworks (React, Vue if bundled)
 - Are deployed and version-controlled as Foundry code resources
 - Inherit the user's CBAC permissions — they cannot access data the user cannot see
 
-**When to use Slate vs. external application:**
+**Application type selection — current guidance:**
 
-| Factor | Slate | External Application |
+| Requirement | Current Approved Tool | Notes |
+|---|---|---|
+| Internal application for Foundry users | Workshop | No-code/low-code; see TM-20 and TM-30 |
+| Public-facing portal or app for non-Foundry users | External application backed by OSDK or Platform SDK | Hosted on external infrastructure with proper authentication (OAuth2, service account) |
+| Existing Slate app (maintenance only) | Slate | Do not extend Slate apps; plan migration to Workshop or OSDK external app |
+
+**DEPRECATED — When to use Slate vs. external application (archived reference for existing apps):**
+
+| Factor | Slate (LEGACY) | External Application (CURRENT) |
 |---|---|---|
 | Auth model | Inherits user's Foundry session — no separate auth | Requires separate credential management (service account or OAuth) |
 | Deployment | Hosted within Foundry — no external infrastructure | Requires external hosting (on-prem server, container) |
@@ -1783,7 +1899,9 @@ Slate applications:
 
 ### 7-2. Slate Application Structure
 
-**Standard Slate project structure:**
+> **CAUTION:** Slate is a legacy application builder. Do not use Slate for new development. Use Workshop for internal Foundry applications. For public-facing portals, build an external application using the OSDK or Platform SDK.
+
+**Standard Slate project structure (maintenance reference only):**
 
 ```
 my-slate-app/
@@ -1808,7 +1926,15 @@ my-slate-app/
 
 ### 7-3. Foundry API Integration from Slate
 
-**PROCEDURE — Query Ontology objects from Slate JavaScript:**
+> **CAUTION:** Slate is a legacy application builder. Do not use Slate for new development. Use Workshop for internal Foundry applications. For public-facing portals, build an external application using the OSDK or Platform SDK.
+
+**CONDITIONS:** Existing Slate application is in maintenance (not new development). Foundry Slate runtime is accessible. `window.foundryContext` is populated by the Slate runtime with base URL and auth token. Target Object Type is accessible to the authenticated user.
+
+**STANDARDS:** Auth tokens are used only in JavaScript scope — never rendered in HTML or logged. All user inputs are sanitized before inclusion in API filter parameters. Error messages exposed to users do not contain raw API error details or schema information.
+
+**EQUIPMENT:** Existing Slate application codebase; Foundry development environment; browser developer tools for local debugging.
+
+**PROCEDURE — Query Ontology objects from Slate JavaScript (maintenance reference only):**
 
 ```javascript
 // api.js — Foundry API abstraction for Slate application
@@ -1901,7 +2027,9 @@ export { getUnitStatusByAor, submitSitrepAction };
 
 ### 7-4. Slate Security Model
 
-**Critical security requirements for Slate applications:**
+> **CAUTION:** Slate is a legacy application builder. Do not use Slate for new development. Use Workshop for internal Foundry applications. For public-facing portals, build an external application using the OSDK or Platform SDK.
+
+**Critical security requirements for Slate applications (maintenance reference only):**
 
 | Requirement | Implementation | Notes |
 |---|---|---|
@@ -2014,6 +2142,12 @@ All Foundry code resource changes go to the `develop` branch first. Promotion to
 ---
 
 ### 8-3. CI/CD Pipeline Configuration
+
+**CONDITIONS:** Git repository is configured with branch protection rules per Section 8-2. GitHub Actions (or equivalent CI system) is available for the repository. ESLint, TypeScript, and Jest are configured in `package.json`.
+
+**STANDARDS:** CI runs on every pull request targeting `develop` or `main`. Lint, type-check, and unit test steps are all required to pass before merge is permitted. Secret scanning step is included to catch committed credentials. Coverage threshold is enforced (80% line minimum for unit tests).
+
+**EQUIPMENT:** GitHub Actions; Node.js 20; `package.json` with `lint`, `type-check`, and `test` scripts configured; `.gitignore` with `.env` listed.
 
 **PROCEDURE — Configure GitHub Actions CI pipeline:**
 
@@ -2128,6 +2262,12 @@ export function createMockOsdkClient(fixtures: {
 
 ### 8-5. Branch Promotion Workflow
 
+**CONDITIONS:** All CI checks pass on the Git `develop` branch. Integration tests have been run against the Foundry dev environment. Peer review is complete. For Ontology or dataset changes, C2DAO data steward coordination is scheduled.
+
+**STANDARDS:** All seven promotion steps are completed in sequence. No step is bypassed, including C2DAO review for schema/CBAC/marking changes. Post-promotion smoke test is executed within 30 minutes. Promotion is documented in the unit data ops log.
+
+**EQUIPMENT:** Git repository access (`develop` and `main` branches); Foundry UI access for branch management; C2DAO ticketing system access; operations log.
+
 **PROCEDURE — Promote Foundry develop branch to master (production):**
 
 ```
@@ -2188,6 +2328,12 @@ STEP 7: Post-promotion verification
 
 ### 9-2. Credential Management
 
+**CONDITIONS:** External application requires authenticated access to MSS OSDK or Platform SDK. C2DAO has provisioned the appropriate credential type. AR 25-2 requirements are understood and being applied.
+
+**STANDARDS:** All credentials are stored in approved storage patterns (preference order listed below). No credentials appear in source code, Dockerfile, docker-compose, log files, or version control history. Token rotation schedule is documented and executed.
+
+**EQUIPMENT:** C2DAO-provisioned credentials; approved secrets manager (CI/CD secrets vault or Army-approved HashiCorp Vault); `.env` file (local dev only, in `.gitignore`); unit security log.
+
 **PROCEDURE — Credential management for deployed external applications:**
 
 ```
@@ -2240,6 +2386,12 @@ Rotation procedure:
 ### 9-3. Marking Compliance in OSDK Queries
 
 **BLUF:** Foundry data markings (CUI, FOUO, coalition restrictions) are enforced at the OSDK layer. However, your application is responsible for propagating these markings in display and output.
+
+**CONDITIONS:** External application retrieves OSDK objects that may carry data markings (CUI, FOUO, coalition restrictions). Application presents data to end users in a UI or report output.
+
+**STANDARDS:** Markings are extracted from every OSDK object response. Highest marking in a result set is determined and displayed as a page/section banner. No marking is stripped before display. CUI data displayed without markings constitutes a spillage event.
+
+**EQUIPMENT:** Authenticated OSDK Python client; UI or report output layer; knowledge of applicable marking categories (CUI, FOUO, REL TO USA/NATO).
 
 **PROCEDURE — Check and propagate markings (Python):**
 
@@ -2309,6 +2461,12 @@ def format_display_banner(marking: DataMarking) -> str:
 ---
 
 ### 9-4. Audit Trail Requirements
+
+**CONDITIONS:** External application executes OSDK queries or Action calls against sensitive Object Types. C2DAO has identified which Object Types require audit logging. Approved log destination is configured (SIEM, approved log aggregator, or local audit log file for dev).
+
+**STANDARDS:** Every query against a sensitive Object Type is logged with user_id, object_type, filter parameters, and result count. Every Action execution is logged with user_id, action name, target RID, and success/failure. Object property values are NOT logged in audit records. Audit log is separate from application log.
+
+**EQUIPMENT:** Python `logging` module; approved log destination (file or SIEM); C2DAO list of Object Types requiring audit logging.
 
 **PROCEDURE — Application-level audit logging (Python):**
 
@@ -2386,6 +2544,12 @@ def audit_log_action(
 ---
 
 ### 9-5. Integration Security — REST APIs and Webhooks
+
+**CONDITIONS:** External application exposes an inbound webhook endpoint or calls outbound REST APIs. HMAC shared secret is provisioned through C2DAO-approved credential store. TLS certificates are in place on all endpoints.
+
+**STANDARDS:** All inbound webhook payloads are signature-verified before processing. Timestamp check enforces maximum request age (default 5 minutes) to prevent replay attacks. All outbound HTTP calls enforce connect and read timeouts. Rate limiting is implemented. Egress is restricted to approved MSS endpoints.
+
+**EQUIPMENT:** Inbound webhook endpoint with HTTPS; HMAC shared secret in environment variable; Python `hmac` and `hashlib` modules; approved firewall egress configuration from G6.
 
 **Security requirements for REST/webhook integrations:**
 
@@ -2597,7 +2761,7 @@ GCSS-Army --> Feed Processor --> Foundry Platform SDK (dataset write)
 ```
 
 **Key implementation decisions:**
-- Write target: Staging dataset (via Platform SDK APPEND transaction) — never write directly to Ontology
+- Write target: Staging dataset (via Platform SDK APPEND transaction) — never write directly to Ontology. CAUTION: APPEND is not inherently idempotent; use surrogate keys to deduplicate before appending.
 - Transform: Pipeline Builder transform (designed by -30 builder) reads staging → curated → Ontology
 - Idempotency: Each record has a source system ID; INSERT OR IGNORE pattern prevents duplicates
 - Error handling: Records failing validation written to error dataset; operations team alerted
@@ -2631,7 +2795,7 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 
 **Action Validator** — TypeScript function deployed as a Foundry code resource that enforces business rules before an Action applies state changes. Written by -40B engineers; configured by -30 builders.
 
-**APPEND Transaction** — A dataset write transaction type that adds rows to an existing dataset without modifying existing data. The standard write pattern for incremental data loads.
+**APPEND Transaction** — A dataset write transaction type that adds rows to an existing dataset without modifying existing data. The standard write pattern for incremental data loads. APPEND transactions are NOT inherently idempotent — each call appends data without deduplication. Implement deduplication logic (content hashes or surrogate keys) before appending if idempotency is required. Use SNAPSHOT transactions for full-dataset atomic replacement.
 
 **AOR (Area of Responsibility)** — Geographic and functional boundary within which a command exercises authority. Relevant to OSDK query filtering — most operational queries scope to a specific AOR.
 
@@ -2705,7 +2869,7 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 
 **SITREP (Situation Report)** — A formatted report summarizing the current status of a unit or operation. SITREP automation (reading from MSS, formatting, pushing to external systems) is a primary TM-40F use case.
 
-**Slate** — A Foundry environment for building custom HTML/CSS/JavaScript applications hosted within the Foundry platform. Applications inherit the user's Foundry session and CBAC.
+**Slate** — A legacy Foundry environment for building custom HTML/CSS/JavaScript applications hosted within the Foundry platform. Applications inherit the user's Foundry session and CBAC. **Slate is deprecated — do not use for new development.** Use Workshop for internal Foundry applications. For public-facing portals, build an external application using the OSDK or Platform SDK.
 
 **Snapshot Transaction** — A dataset write transaction type that replaces all existing data in a dataset atomically. Used for full-refresh pipelines. Requires data steward coordination before use on shared datasets.
 

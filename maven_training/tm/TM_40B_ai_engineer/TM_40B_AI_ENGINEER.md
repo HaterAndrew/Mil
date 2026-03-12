@@ -6,7 +6,9 @@ Wiesbaden, Germany
 
 2026
 
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); ADRP 1, Data Literacy (required)
+**Version 1.0 | March 2026**
+
+**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Data Literacy Technical Reference (required)
 
 **DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to USAREUR-AF G6, Wiesbaden, Germany.
 
@@ -72,10 +74,10 @@ This manual provides technical instruction for AI engineers building AI-enabled 
 
 **TM-40B does NOT cover:**
 - Basic Workshop, Pipeline Builder, or Ontology configuration — see TM-20 and TM-30
-- TypeScript OSDK development — see TM-40B (Software Engineer)
+- TypeScript OSDK development — see TM-40F (Software Engineer)
 - Model training, fine-tuning, or MLOps infrastructure — see TM-40C (ML Engineer)
 - Statistical analysis or operational research methodology — see TM-40D (ORSA)
-- General Python transform development unrelated to AI pipelines — see TM-40B
+- General Python transform development unrelated to AI pipelines — see TM-40F
 
 > **NOTE:** TM-30 is a hard prerequisite. If you cannot independently design a Workshop application, configure an Ontology model, and specify an AIP Logic workflow configuration, complete TM-30 before proceeding. TM-40B assumes TM-30 competency and builds above it — not alongside it.
 
@@ -289,9 +291,11 @@ Agent Studio builds agents that combine LLM reasoning with tool execution. An ag
 Code Workspaces provides a managed JupyterLab and VS Code environment with direct Foundry SDK access. Key capabilities for AI engineers:
 
 - **Dataset read/write** via Foundry SDK — read transform outputs, write evaluation results
-- **Ontology queries** via OSDK — retrieve Object Sets for context construction
+- **Ontology data access** within Code Workspaces — via the Foundry SDK (`foundry.ontology`) or the Transforms API (`from transforms.api import transform_df, Input, Output`), not OSDK
 - **Transform authoring** — write and test Python transforms before committing to pipeline
 - **Experiment notebooks** — iterate on prompts, evaluate outputs, document findings before formalizing in Logic
+
+> **NOTE:** Two distinct access patterns exist and must not be conflated. **Within Code Workspaces and Code Repositories (the transforms context):** use the Transforms API (`from transforms.api import transform_df, Input, Output`) for dataset access and the Foundry SDK for Ontology queries. **OSDK (Ontology SDK)** is designed for external applications built outside Foundry — React front-ends, external Python scripts, TypeScript applications. OSDK is not the standard access pattern inside Code Workspaces. If you are writing a transform or Code Workspace notebook, use the Transforms API and Foundry SDK. If you are building an external application that consumes Ontology data, coordinate with the Software Engineer (TM-40F) who owns OSDK integrations.
 
 **Standard Code Workspaces import pattern:**
 
@@ -877,20 +881,34 @@ def _format_object_for_context(obj: dict) -> str:
 
 For document-heavy use cases (doctrine, SOPs, FRAGORD libraries), semantic search retrieves the most relevant passages rather than filtering by metadata.
 
-**Vector retrieval pattern on MSS:**
+> **NOTE:** Foundry has no native semantic search capability. This pattern must be custom-implemented: train or use an external embedding model, store embeddings as a Foundry dataset column, and implement similarity search in Python within a Code Repository or Code Workspace. This is a custom engineering effort, not a platform feature.
+
+**Custom vector retrieval pattern on MSS:**
+
+The following pattern illustrates how to implement semantic similarity search as a custom engineering effort. This requires: (1) a pre-built embedding model accessible from Code Workspaces, (2) a Foundry dataset that stores document text alongside pre-computed embedding vectors, and (3) Python similarity search logic written and maintained by the AI engineer.
 
 ```python
-from aip_logic_sdk.search import semantic_search
+# CUSTOM IMPLEMENTATION — not a built-in Foundry capability
+# Requires: embedding model, precomputed embedding dataset, cosine similarity logic
+
+import numpy as np
+from foundry import datasets
 
 def retrieve_relevant_passages(
     query: str,
-    document_dataset_rid: str,
+    embedding_dataset_rid: str,
+    embedding_model,          # External embedding model (e.g., sentence-transformers)
     top_k: int = 10,
     min_score: float = 0.75
 ) -> list[dict]:
     """
-    Performs semantic similarity search over a document dataset.
-    Returns top-k passages with similarity scores above min_score threshold.
+    Custom semantic similarity search over a Foundry dataset that stores
+    pre-computed document embeddings.
+
+    This is a CUSTOM PATTERN — not a built-in Foundry/MSS feature.
+    The embedding model must be sourced, validated, and maintained
+    separately. The embedding dataset must be built and kept current
+    by a transform that re-embeds documents when content changes.
 
     The min_score threshold prevents low-relevance passages from polluting
     the context window. 0.75 is a reasonable starting point; tune based on
@@ -898,23 +916,39 @@ def retrieve_relevant_passages(
 
     Args:
         query: Natural language question to match against
-        document_dataset_rid: Foundry RID for the indexed document dataset
+        embedding_dataset_rid: Foundry RID for the pre-embedded document dataset
+        embedding_model: Embedding model instance (custom dependency)
         top_k: Maximum number of passages to return
         min_score: Minimum cosine similarity score (0.0–1.0)
 
     Returns:
         List of passage dicts: {text, source_doc, page, score}
     """
-    results = semantic_search(
-        query=query,
-        dataset_rid=document_dataset_rid,
-        top_k=top_k
+    # Embed the query using the same model used to embed the documents
+    query_embedding = embedding_model.encode(query)
+
+    # Read the pre-computed embedding dataset from Foundry
+    embedding_df = datasets.read(embedding_dataset_rid).toPandas()
+
+    # Compute cosine similarity between query and each stored embedding
+    def cosine_similarity(vec_a, vec_b):
+        return float(np.dot(vec_a, vec_b) / (np.linalg.norm(vec_a) * np.linalg.norm(vec_b)))
+
+    scores = [
+        cosine_similarity(query_embedding, np.array(row["embedding"]))
+        for _, row in embedding_df.iterrows()
+    ]
+
+    embedding_df["score"] = scores
+
+    # Filter by minimum relevance threshold and return top-k results
+    filtered = (
+        embedding_df[embedding_df["score"] >= min_score]
+        .sort_values("score", ascending=False)
+        .head(top_k)
     )
 
-    # Filter below minimum relevance threshold
-    filtered = [r for r in results if r["score"] >= min_score]
-
-    if not filtered:
+    if filtered.empty:
         return [{
             "text": "No relevant passages found above relevance threshold.",
             "source_doc": None,
@@ -922,10 +956,10 @@ def retrieve_relevant_passages(
             "score": 0.0
         }]
 
-    return filtered
+    return filtered[["text", "source_doc", "page", "score"]].to_dict(orient="records")
 ```
 
-> **NOTE:** Semantic search quality depends on the quality of the document index. Before deploying a RAG pipeline that searches doctrine or SOP documents, verify that the document dataset has been properly indexed and that the embedding model used matches the inference model's language patterns. Coordinate with the MSS platform team for index configuration.
+> **NOTE:** Semantic search quality depends on the quality of the document embedding dataset and the embedding model. Before deploying a RAG pipeline that searches doctrine or SOP documents, verify that: (1) the embedding dataset is current and reflects the latest document versions, (2) the same embedding model is used for both indexing and query-time retrieval, and (3) the embedding pipeline is governed as a production transform with appropriate scheduling and data quality checks. Coordinate with the MSS platform team on embedding model selection and compute resource requirements.
 
 ---
 

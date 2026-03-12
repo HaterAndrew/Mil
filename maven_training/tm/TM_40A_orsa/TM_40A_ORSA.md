@@ -6,7 +6,9 @@ Wiesbaden, Germany
 
 2026
 
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; ADRP 1, Data Literacy (all required). Quantitative background equivalent to graduate-level statistics, and working proficiency in R or Python, required before beginning this manual.
+**Version 1.0 | March 2026**
+
+**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (all required). Quantitative background equivalent to graduate-level statistics, and working proficiency in R or Python, required before beginning this manual.
 
 **DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
 
@@ -139,6 +141,8 @@ Every ORSA product delivered to a commander or staff officer must meet the follo
 
 ## CHAPTER 2 — CODE WORKSPACES FOR ORSA
 
+> **CODE EXAMPLES:** Python data pipeline and transform patterns referenced in this chapter are available in the local development shim at [`data_skills/13_foundry_patterns/python_transforms.py`](../../../data_skills/13_foundry_patterns/python_transforms.py) and [`data_skills/13_foundry_patterns/incremental_transforms.py`](../../../data_skills/13_foundry_patterns/incremental_transforms.py). Statistics and ML reference modules are in `data_skills/05_statistics/` and `data_skills/06_machine_learning/`. Activate the venv: `source data_skills/.venv/bin/activate`.
+
 **BLUF:** Code Workspaces provide R and Python environments with direct access to Foundry datasets. Proper workspace configuration is the foundation for all ORSA work on MSS.
 
 ### 2-1. Code Workspace Overview
@@ -268,6 +272,8 @@ glimpse(readiness_df)
 
 **STANDARDS:** Package is installed, documented in the workspace requirements file, and does not conflict with existing environment packages.
 
+**EQUIPMENT:** MSS access (browser-based), Code Workspace with active environment, MSS Administrator contact for approved package list.
+
 **PROCEDURE:**
 
 1. Check whether the package is available in the approved package repository. Not all PyPI/CRAN packages are available in the Foundry-managed environment. Contact your MSS Administrator for the approved list.
@@ -299,6 +305,8 @@ lpSolve>=5.6  # if using R binding via rpy2
 **CONDITIONS:** Your analysis produces results that need to be stored in Foundry for use by Workshop applications, Contour dashboards, or other consumers.
 
 **STANDARDS:** Output dataset is written to the correct project location, schema is documented, and output can be read by downstream consumers.
+
+**EQUIPMENT:** Code Workspace with active Foundry client session, write permissions to the target output dataset location.
 
 **PROCEDURE:**
 
@@ -510,6 +518,8 @@ Classification models predict a categorical outcome — most commonly: will a un
 
 **STANDARDS:** Model F1 score and precision/recall on holdout set are documented. Class imbalance is addressed. Confusion matrix is included in product.
 
+**EQUIPMENT:** Code Workspace with Python, readiness history dataset with labeled degradation events.
+
 **PROCEDURE:**
 
 ```python
@@ -614,6 +624,8 @@ All ORSA models delivered as operational products must meet the validation stand
 
 **STANDARDS:** Stationarity tested, trend characterized with confidence bounds, seasonal decomposition performed if applicable, and plot suitable for commander brief produced.
 
+**EQUIPMENT:** Code Workspace with Python or R, readiness history dataset with at least 24 months of monthly C-rating records.
+
 **PROCEDURE:**
 
 ```python
@@ -679,6 +691,8 @@ plt.close()
 **CONDITIONS:** Stationarity analysis complete. Model order (p, d, q) identified from ACF/PACF or auto-selection. Forecast horizon defined (30/60/90 days or 1/2/3 months ahead).
 
 **STANDARDS:** Model selected by AIC, backtested on holdout, forecast includes 80% and 90% prediction intervals, and commander-ready plot produced.
+
+**EQUIPMENT:** Code Workspace with Python or R, readiness time series dataset (minimum 24 monthly observations per unit), stationarity analysis output from Task 4-1a.
 
 **PROCEDURE:**
 
@@ -823,6 +837,8 @@ ggsave(paste0("readiness_forecast_", unit_uic, ".png"), width = 10, height = 5, 
 
 **STANDARDS:** Seasonal patterns identified, SARIMA model fitted (Army maintenance cycles are seasonal), forecast includes uncertainty bounds, output feeds logistics planning product.
 
+**EQUIPMENT:** Code Workspace with Python, logistics demand dataset (minimum 18 months of monthly Class IX consumption records).
+
 **PROCEDURE:**
 
 ```python
@@ -926,6 +942,8 @@ When comparing courses of action, every input parameter carries uncertainty. Mon
 **CONDITIONS:** Two or more COAs defined with associated input parameters and uncertainty ranges. Utility function or outcome metric defined (e.g., days to operational capability, sustainment cost, personnel risk).
 
 **STANDARDS:** Minimum 10,000 simulation runs per COA, input distributions documented and calibrated to historical data or SME bounds, output includes probability of exceedance curves and summary statistics, sensitivity analysis performed.
+
+**EQUIPMENT:** Code Workspace with Python, COA parameter definitions, historical data or SME-derived distribution bounds for each uncertain input.
 
 **PROCEDURE:**
 
@@ -1036,6 +1054,8 @@ Sensitivity analysis identifies which input uncertainties drive the most outcome
 
 **STANDARDS:** Tornado chart produced showing rank-ordered input contributions to output variance. Correlation coefficients between each input and output documented.
 
+**EQUIPMENT:** Code Workspace with Python, Monte Carlo simulation results and stored component samples from Task 5-1a.
+
 **PROCEDURE:**
 
 ```python
@@ -1083,6 +1103,8 @@ print("Tornado chart saved.")
 **CONDITIONS:** Historical Class IX demand data available. Commander requires a stockage recommendation that provides acceptable risk of stockout over a given resupply interval.
 
 **STANDARDS:** Stockage level recommendation accompanied by explicit probability of stockout at recommended level. Safety stock calculation documented.
+
+**EQUIPMENT:** Code Workspace with Python, historical daily Class IX demand records, commander-specified service level target.
 
 **PROCEDURE:**
 
@@ -1152,6 +1174,8 @@ plt.close()
 **CONDITIONS:** Multiple units with personnel requirements and fill priorities. Limited available personnel pool. Analyst must recommend optimal assignment to maximize aggregate readiness improvement subject to constraints.
 
 **STANDARDS:** Objective function and all constraints documented in plain language before formulation. Solution validated against constraints manually (spot check). Sensitivity/shadow price analysis performed.
+
+**EQUIPMENT:** Code Workspace with Python or R, unit readiness data, commander-approved priority weights and constraint values (minimum fills, maximum capacities, total available personnel).
 
 **PROCEDURE:**
 
@@ -1292,6 +1316,8 @@ if (result$status == 0) {
 
 **STANDARDS:** Schedule accounts for all capacity constraints, priority weights justified and documented, solution presented as a Gantt-style allocation table for direct use by maintenance officer.
 
+**EQUIPMENT:** Code Workspace with Python, maintenance backlog dataset (system ID, hours required, deadline, priority), maintenance officer confirmation of daily mechanic-hour capacity and commander priority weights.
+
 **PROCEDURE:**
 
 ```python
@@ -1379,6 +1405,8 @@ Good exercise analysis begins before the first vehicle moves. ORSA analysts must
 
 **STANDARDS:** Data collection plan coordinated with OC/T teams and J3/G3, Foundry datasets provisioned before exercise execution, data schema documented and versioned, collection instruments tested in tabletop before execution.
 
+**EQUIPMENT:** MSS access with Foundry dataset provisioning rights, Appendix C schema templates, coordination access to G3/J3 and OC/T leadership.
+
 **PROCEDURE:**
 
 1. Define commander's analytical requirements. Work from the commander's intent and the training objectives. Every data collection effort must answer a question the commander needs answered. Table 7-1 provides a standard starting framework.
@@ -1410,6 +1438,8 @@ Good exercise analysis begins before the first vehicle moves. ORSA analysts must
 **CONDITIONS:** Exercise data has been collected across multiple Foundry datasets. Analyst needs to aggregate, clean, and compute derived metrics for post-exercise analysis.
 
 **STANDARDS:** Pipeline is idempotent (can be re-run without corrupting results), data quality validation is embedded, all derived metrics are documented with calculation logic.
+
+**EQUIPMENT:** Code Workspace with Python, read access to all exercise collection datasets (timeline, logistics, C2 events), planned phase timeline for comparison.
 
 **PROCEDURE:**
 
@@ -1517,6 +1547,8 @@ for k, v in summary_metrics.items():
 
 **STANDARDS:** Report includes quantitative findings for each training objective, comparison to standard/benchmark where available, identified trends, and BLUF recommendations.
 
+**EQUIPMENT:** Code Workspace with Python, summary metrics dataset from Task 7-2, training objectives and published standards for comparison, Quiver or Contour access for visualization delivery.
+
 **PROCEDURE:**
 
 1. Structure the report using the standard AAR framework: Planned vs. Actual, Sustains, Improves.
@@ -1557,6 +1589,8 @@ Before building any analytical dashboard or visualization, internalize the follo
 
 **STANDARDS:** Dashboard displays current C-ratings, 90-day forecast, prediction intervals, and highlights units at risk of C3 or below within the forecast horizon. Refreshes automatically on data update.
 
+**EQUIPMENT:** MSS access with Quiver authoring rights, forecast output dataset (from Task 4-2), read access to current readiness dataset.
+
 **PROCEDURE:**
 
 1. In Foundry, navigate to the project Quiver workspace. Create a new workbook: `ORSA_Readiness_Forecast_[BRIGADE_NAME]`.
@@ -1590,6 +1624,8 @@ Before building any analytical dashboard or visualization, internalize the follo
 **CONDITIONS:** G3 requires a product supporting COA comparison briefing. Monte Carlo results from Chapter 5 are stored in a Foundry dataset.
 
 **STANDARDS:** Contour workbook presents probability of exceedance curves, distribution comparison, key percentiles table, and BLUF recommendation — all in a format suitable for direct projection during a briefing.
+
+**EQUIPMENT:** MSS access with Contour authoring rights, Monte Carlo simulation results dataset (from Task 5-1a), sensitivity analysis results dataset (from Task 5-2a).
 
 **PROCEDURE:**
 
@@ -1651,6 +1687,8 @@ Many analysts confuse confidence intervals (CI) and prediction intervals (PI). F
 **CONDITIONS:** You have a forecast or model result that will inform a significant resource or operational decision. Commander has asked how confident you are in the result.
 
 **STANDARDS:** Sensitivity analysis shows how the key conclusions change across a range of assumption values. Output is a table or chart the commander can interpret in under 30 seconds.
+
+**EQUIPMENT:** Code Workspace with Python, the analytical model or forecast being assessed, documented key assumptions and their uncertainty ranges.
 
 **PROCEDURE:**
 

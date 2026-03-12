@@ -1,22 +1,16 @@
-```
-TM-40D
-TECHNICAL MANUAL
-PROGRAM MANAGER (TECHNICAL)
-MAVEN SMART SYSTEM
+# TM-40D — MAVEN SMART SYSTEM (MSS)
+## PROGRAM MANAGER (TECHNICAL) TECHNICAL MANUAL
 
-HEADQUARTERS
-UNITED STATES ARMY EUROPE AND AFRICA
+**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
 Wiesbaden, Germany
 
 2026
 
-PREREQUISITE PUBLICATIONS: TM-30, Advanced Builder (required); TM-10, Maven User; TM-20, Builder;
-                            ADRP 1, Data Literacy (required)
-APPLIES TO:  Technical Project Managers, Product Owners, Team Leads managing data/AI/software
-             capability builds on MSS. Civilian tech PMs, officer/NCO project leads,
-             ORSA/MLE/SWE/KM team leads.
-DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.
-```
+**Version 1.0 | March 2026**
+
+**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Data Literacy Technical Reference (required).
+**APPLIES TO:** Technical Project Managers, Product Owners, Team Leads managing data/AI/software capability builds on MSS. Civilian tech PMs, officer/NCO project leads, ORSA/MLE/SWE/KM team leads.
+**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
 
 ---
 
@@ -43,11 +37,11 @@ Before performing any task at TM-40D level:
   to unit data points of contact. Silent deployments that change workflows cause user resistance
   and loss of trust in the platform.
 
-> **WARNING: MSS data products built under TM-40D oversight directly support commander decision
+> **WARNING:** MSS data products built under TM-40D oversight directly support commander decision
 > making at the theater level. A PM who approves a defective release, ships a dashboard with
 > incorrect business logic, or fails to validate model outputs before production is accountable
 > for the downstream operational impact. Apply a mission brief standard to every release decision:
-> confirm, coordinate, communicate before execution.**
+> confirm, coordinate, communicate before execution.
 
 ---
 
@@ -416,9 +410,9 @@ offline. Do not let standup run over 15 minutes regardless of how many blockers 
 4. PM notes any stories not completed and explains whether they carry forward or are rescoped.
 5. PM presents the updated product roadmap showing projected delivery for remaining features.
 
-> **WARNING: Do not demo a feature that is not deployed to the review environment. Demoing
+> **WARNING:** Do not demo a feature that is not deployed to the review environment. Demoing
 > locally and saying "it will work the same way in production" is a PM failure mode. The
-> sprint review demo must use the actual deployed product.**
+> sprint review demo must use the actual deployed product.
 
 ### 2-5d. Retrospective
 
@@ -541,10 +535,10 @@ go/no-go decision before authorizing prototype development.
 3. **Document the data audit decision.** Record in the project tracker: data sources approved,
    known quality limitations, and any data remediation tasks added to the backlog.
 
-> **WARNING: Skipping the data audit and proceeding directly to prototype is the most common
+> **WARNING:** Skipping the data audit and proceeding directly to prototype is the most common
 > cause of ML project failure. A model trained on incomplete or misunderstood data will not
 > generalize. The PM who authorizes prototype work without a data audit owns the subsequent
-> failure.**
+> failure.
 
 ---
 
@@ -625,9 +619,9 @@ documented pass/fail/iterate decision.
    | Stop — Redesign   | Fundamental data or approach problem; metrics far from threshold    | Restart at Phase 1 or 2 with revised approach  |
    | Stop — Descope    | Model not feasible given data; simpler heuristic approach better    | Descope ML; proceed with rule-based product     |
 
-> **CAUTION: Do not iterate indefinitely. Set a maximum of two iteration cycles before making
+> **CAUTION:** Do not iterate indefinitely. Set a maximum of two iteration cycles before making
 > a Stop decision. Unlimited iteration on a failing model is a resource drain and delays delivery
-> of an alternative solution that might actually work.**
+> of an alternative solution that might actually work.
 
 ---
 
@@ -682,9 +676,7 @@ data sources change schema or refresh rates.
    flags that an input data source has changed schema or refresh rate, escalate immediately.
    A changed input can silently degrade model performance without triggering any obvious error.
 
-3. **Maintain the model registry entry on MSS.** The model registry (managed by TM-40C)
-   must reflect the current version, training date, performance metrics, and owner.
-   PM ensures this is updated after every retrain.
+3. **Maintain model version tracking on MSS.** Model deployment in Foundry follows this pattern: batch inference transforms write predictions to a Foundry dataset, which then serves as the source for computed properties on Object Types, or models are integrated into AIP Logic workflows. The TM-40C model owner must keep the model card and associated dataset documentation current — reflecting version, training date, performance metrics, and owner — after every retrain.
 
 4. **Manage model retirement.** When a model is retired (superseded, no longer operationally
    relevant, or failing sustainment review), the PM coordinates: stakeholder notification,
@@ -986,9 +978,9 @@ real time as team members change Story status.
    stakeholder (read-only). Do not publish to a wider audience than required — story-level
    tracking data may contain information about resourcing and capability gaps.
 
-> **CAUTION: Do not use the same Workshop application for internal team tracking and
+> **CAUTION:** Do not use the same Workshop application for internal team tracking and
 > commander-facing status reporting. These are different audiences with different information
-> needs. Build separate applications — see 5-4 for commander-facing status.**
+> needs. Build separate applications — see 5-4 for commander-facing status.
 
 ---
 
@@ -1176,10 +1168,10 @@ a Workshop view can display it. Managing these dependencies is a primary PM func
 | TM-40B agent depends on TM-40C model endpoint         | Define API contract in sprint planning; both tracks work to spec   |
 | MSS platform upgrade changes Workshop component API   | Track platform release calendar; coordinate with TM-40F on timing |
 
-> **WARNING: Do not assume external dependencies will resolve on schedule. Treat all
+> **WARNING:** Do not assume external dependencies will resolve on schedule. Treat all
 > external dependencies (C2DAO access requests, data source onboarding, platform upgrades)
 > as risks with a separate risk record. If an external dependency is on the critical path,
-> escalate immediately — do not wait for the blocked sprint to surface it.**
+> escalate immediately — do not wait for the blocked sprint to surface it.
 
 ---
 
@@ -1643,7 +1635,7 @@ a trained ML model, AI agent, or LLM integration.
 | ML-5 | Model output display includes confidence scores or uncertainty indicators — not bare binary outputs without context | High | |
 | ML-6 | The product UI communicates what the model does NOT predict and where it should not be used | High | |
 | ML-7 | Model monitoring is configured: TM-40C has accepted model owner responsibility and defined the threshold that triggers a model review | Critical | |
-| ML-8 | Model version and training date are tracked in the MSS model registry | High | |
+| ML-8 | Model version and training date are documented in the model card and associated Foundry dataset records. Model deployment in Foundry follows this pattern: batch inference transforms write predictions to a Foundry dataset, which then serves as the source for computed properties on Object Types, or models are integrated into AIP Logic workflows. | High | |
 | ML-9 | Retraining schedule or trigger is documented (time-based or performance-based) | High | |
 
 ---

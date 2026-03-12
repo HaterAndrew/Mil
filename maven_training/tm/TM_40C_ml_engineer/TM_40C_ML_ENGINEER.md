@@ -6,7 +6,9 @@ Wiesbaden, Germany
 
 2026
 
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; ADRP 1, Data Literacy (required). Proficiency in Python, scikit-learn, PyTorch or statsmodels, and SQL is assumed. Readers who cannot independently write a training loop, build a feature pipeline, and interpret a confusion matrix should complete prerequisite training before beginning this manual.
+**Version 1.0 | March 2026**
+
+**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (required). Proficiency in Python, scikit-learn, PyTorch or statsmodels, and SQL is assumed. Readers who cannot independently write a training loop, build a feature pipeline, and interpret a confusion matrix should complete prerequisite training before beginning this manual.
 
 **DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
 
@@ -304,6 +306,8 @@ df_agg = df_spark.groupBy("unit_uic").agg({"C_rating": "mean"}).toPandas()
 
 **STANDARDS:** Compute is right-sized for the task, not left running idle, and environment state is committed to version control before shutdown.
 
+**EQUIPMENT:** Active Code Workspace (JupyterLab); access to Foundry Manage Workspaces panel.
+
 **PROCEDURE:**
 
 1. **Right-size compute for the task:**
@@ -335,6 +339,8 @@ git commit -m "WIP: [brief description of state]"
 **CONDITIONS:** Active Code Workspace with pending changes.
 
 **STANDARDS:** All code changes committed to a named feature branch, with descriptive commit messages. No uncommitted work lost across sessions.
+
+**EQUIPMENT:** Active Code Workspace (JupyterLab); terminal access within the workspace; Git configured.
 
 **PROCEDURE:**
 
@@ -381,6 +387,8 @@ print("All checks passed. Ready for merge.")
 ---
 
 ## CHAPTER 3 — FEATURE ENGINEERING
+
+> **CODE EXAMPLES:** Runnable Foundry transform patterns used throughout this chapter are available in the local development shim at [`data_skills/13_foundry_patterns/python_transforms.py`](../../../data_skills/13_foundry_patterns/python_transforms.py) and [`data_skills/13_foundry_patterns/incremental_transforms.py`](../../../data_skills/13_foundry_patterns/incremental_transforms.py). These files mirror the real Foundry API and can be executed locally for development and testing. Activate the venv: `source data_skills/.venv/bin/activate`.
 
 ### 3-1. Overview
 
@@ -510,7 +518,6 @@ def compute_features(unit_status, equipment, personnel):
 
 4. Document each feature in a `FEATURE_DEFINITIONS.md` file in the repository:
 
-```
 | Feature | Description | Source | Staleness Tolerance | Imputation |
 |---|---|---|---|---|
 | personnel_fill_rate | Assigned/authorized strength ratio (%) | personnel_strength | 72h | Median fill |
@@ -518,7 +525,6 @@ def compute_features(unit_status, equipment, personnel):
 | c_rating_30d_avg | Rolling 30-day lagged C-rating average | unit_status_reports | 24h | 2.5 (neutral) |
 | days_since_maint | Days since most recent maintenance event | unit_status_reports | 24h | 0 days |
 | training_events_90d | Count of training events in trailing 90 days | unit_status_reports | 24h | Rolling sum |
-```
 
 > **WARNING: TIME LEAKAGE.** Never include any feature that incorporates information about the future relative to the prediction point. For readiness prediction, a feature computed from the same report that contains the target label is a form of leakage if that information would not be available at inference time. The `.shift(1)` in the rolling average above is not optional — it is what prevents the model from learning a trivial identity mapping. Review every feature for leakage before training.
 
@@ -529,6 +535,8 @@ def compute_features(unit_status, equipment, personnel):
 **CONDITIONS:** A completed feature engineering transform producing a stable feature dataset. Multiple models or analysts require the same features.
 
 **STANDARDS:** Feature dataset registered as a shared resource in the project, with documented schema, ownership, and update schedule.
+
+**EQUIPMENT:** Code Workspace; Foundry Transforms; Pipeline Builder; source feature dataset.
 
 **PROCEDURE:**
 
@@ -893,7 +901,11 @@ print("Model artifact saved to Foundry.")
 
 **STANDARDS:** Tuning study logged to MLflow. Best hyperparameters documented. Tuning runtime under 2 hours on Standard compute.
 
+**EQUIPMENT:** Code Workspace; feature dataset (train/validation split prepared); MLflow experiment tracker; Optuna installed in workspace environment.
+
 **PROCEDURE:**
+
+1. Define the Optuna objective function, create a study, and optimize. Log best parameters to MLflow:
 
 ```python
 import optuna
@@ -934,6 +946,10 @@ with mlflow.start_run(run_name="optuna_best"):
     mlflow.log_metric("val_f1_macro", study.best_value)
 ```
 
+2. After the study completes, use `best_params` to retrain the final model on train+validation combined and run against the held-out test set (see Task 4-2, Step 4 for the final evaluation pattern).
+
+3. Document the best hyperparameters in the model card and MLflow run. Record the tuning study name, number of trials, and final validation metric.
+
 ---
 
 ### 4-4. Task: Training a PyTorch Model on Foundry Data
@@ -942,9 +958,13 @@ with mlflow.start_run(run_name="optuna_best"):
 
 **STANDARDS:** Training loop with validation loss tracking, early stopping, model serialization, and full MLflow logging.
 
+**EQUIPMENT:** Code Workspace; feature dataset; PyTorch and MLflow installed in workspace environment; Foundry artifact store dataset for model output.
+
 > **NOTE:** For most tabular MSS use cases, gradient boosting methods (GBM, XGBoost) outperform neural networks and are significantly easier to interpret. Use PyTorch for time-series sequence modeling (LSTM for demand forecasting), image-based use cases, or when an existing research baseline specifically requires a neural architecture.
 
 **PROCEDURE:**
+
+1. Prepare tensors, define the model architecture, configure the optimizer, loss function, and learning rate scheduler. Implement the training loop with early stopping and MLflow logging. Save the best model state and serialize to Foundry on completion:
 
 ```python
 import torch
@@ -1055,6 +1075,10 @@ with mlflow.start_run(run_name="pytorch_readiness_classifier"):
     print(f"Training complete. Best val_loss={best_val_loss:.4f}")
 ```
 
+2. After training completes, serialize the best model state to a Foundry artifact store dataset using the `save_model_to_foundry` pattern from Appendix C-3. Include a `metadata.json` file specifying model architecture, training date range, and feature columns.
+
+3. Proceed to Chapter 5 for evaluation. PyTorch model evaluation uses the same evaluation framework as scikit-learn models — load the model, run inference on the test set, compute classification metrics.
+
 ---
 
 ## CHAPTER 5 — MODEL EVALUATION
@@ -1072,6 +1096,8 @@ Model evaluation is a gate, not a formality. A model that does not pass evaluati
 **CONDITIONS:** Trained model serialized to Foundry. Test dataset available (temporally held out, never used during training or hyperparameter tuning).
 
 **STANDARDS:** Evaluation report covering: overall metrics, per-class metrics, confusion matrix, operationally meaningful error analysis, and cross-validation summary. Report submitted to mission owner and data steward.
+
+**EQUIPMENT:** Code Workspace; serialized model artifact in Foundry; test feature dataset; scikit-learn, SHAP, matplotlib, seaborn installed.
 
 **PROCEDURE:**
 
@@ -1198,6 +1224,8 @@ print("SHAP summary saved.")
 **CONDITIONS:** Model evaluation complete. Model affects assessments of personnel, units, or individual readiness status.
 
 **STANDARDS:** Documented demographic parity analysis, equalized odds analysis, and documented residual risk acceptance by the mission owner and G1 (for personnel-affecting models).
+
+**EQUIPMENT:** Code Workspace; test evaluation dataset with subgroup attribute columns; evaluation results from Task 5-2.
 
 > **WARNING: BIAS IN PERSONNEL-AFFECTING MODELS.** Any model whose output is used to make or inform decisions about individual service members — duty assignments, readiness flags, performance assessments, logistics priority scoring for units of different types — is subject to bias review. This is a DoD AI Ethics requirement and an Army policy obligation. Failing to conduct this review before deployment is not a technical oversight — it is a governance violation.
 
@@ -1384,6 +1412,8 @@ def run_batch_inference(features, model_artifact):
 
 **STANDARDS:** Ontology Object Type updated with a model-backed property that reflects the latest batch inference output. The property displays correctly in Workshop and shows prediction confidence alongside predicted value.
 
+**EQUIPMENT:** Foundry Ontology Manager access (coordinated with -30 builder); prediction output dataset; Code Workspace for validation queries.
+
 > **NOTE:** Adding a model-backed property to a production Ontology Object Type requires coordination with the -30 builder who owns the Object Type design and the data steward who governs that domain. You do not modify the production Ontology unilaterally.
 
 **PROCEDURE:**
@@ -1427,9 +1457,11 @@ for uic in sample_units:
 
 **STANDARDS:** Prediction freshness visible to Workshop users. Stale predictions (>24 hours old) flagged as degraded. Workshop application does not display model predictions without a visible staleness indicator.
 
+**EQUIPMENT:** Foundry Workshop editor access; prediction dataset with inference_timestamp column; Code Workspace for transform-based freshness computation.
+
 **PROCEDURE:**
 
-Add a computed property to the Workshop application that displays prediction freshness:
+1. Add a computed property to the Workshop application that displays prediction freshness using conditional display logic:
 
 ```python
 # In Workshop formula editor or Python transform:
@@ -1453,6 +1485,10 @@ def add_freshness_indicator(df: pd.DataFrame) -> pd.DataFrame:
     return df
 ```
 
+2. Apply the `add_freshness_indicator` function as a step in the batch inference Transform, appending freshness columns to the prediction output dataset before it is synced to the Ontology.
+
+3. In the Workshop application, configure a conditional banner widget: display a warning banner when `prediction_staleness_flag` is STALE or DEGRADED. The banner must include the last inference timestamp so users can assess operational relevance of the displayed predictions.
+
 > **WARNING: STALE PREDICTIONS IN OPERATIONAL CONTEXT.** A readiness prediction that is 96 hours old may reflect pre-exercise manning levels for a unit that is now depleted. A logistics forecast that is 72 hours old during a high-tempo sustainment period may be dangerously misleading. Freshness indicators are not cosmetic — they are operational safety information. Never suppress them to simplify the UI.
 
 ---
@@ -1472,6 +1508,8 @@ The gap between ML prototype and production ML is MLOps. Every model that deploy
 **CONDITIONS:** Model artifact stored in Foundry. Multiple versions may exist over time.
 
 **STANDARDS:** All model versions uniquely identified, stored, and retrievable. A "current production" pointer that can be updated without deleting prior versions. Rollback to any prior version achievable in under 30 minutes.
+
+**EQUIPMENT:** Code Workspace; Foundry artifact store dataset for model binary files; a dedicated Foundry dataset for the version tracking registry.
 
 **PROCEDURE:**
 
@@ -1550,6 +1588,8 @@ def register_model(model_name: str, version: str, status: str,
 **CONDITIONS:** Model deployed to production. Inference Transform running on schedule. Feature dataset and prediction dataset accumulating historical records.
 
 **STANDARDS:** Automated drift detection running on the same schedule as inference. Alerts generated to the data steward and MLE when drift thresholds are exceeded. All drift metrics logged to a monitoring dataset.
+
+**EQUIPMENT:** Code Workspace; Foundry Transforms; production feature dataset; training baseline dataset; Pipeline Builder for alert configuration.
 
 **PROCEDURE:**
 
@@ -1675,6 +1715,8 @@ def compute_prediction_drift(current_preds, baseline_preds):
 **CONDITIONS:** Drift monitoring operational. Model version registry in place. Retraining conditions agreed with the mission owner.
 
 **STANDARDS:** Documented retraining trigger conditions. Automated detection of trigger condition. Retraining does not automatically promote to production — it produces a CANDIDATE model that must pass evaluation and governance gates before promotion.
+
+**EQUIPMENT:** Code Workspace; Foundry Transforms; drift monitoring dataset; model version tracking dataset; Pipeline Builder for alert routing.
 
 **PROCEDURE:**
 
@@ -1962,9 +2004,11 @@ No model progresses from one gate to the next without documented evidence that t
 
 **STANDARDS:** Model card complete, reviewed by the MLE's peer, and submitted to the C2DAO gate package. All required sections populated with non-placeholder content.
 
+**EQUIPMENT:** Model evaluation report; training data documentation; model artifact metadata; C2DAO gate package template; peer reviewer identified.
+
 **PROCEDURE:**
 
-Prepare the model card using the following template. Adapt it to the specific model — no section should contain "TBD" or "N/A" without explanation.
+1. Prepare the model card using the following template. Adapt it to the specific model — no section should contain "TBD" or "N/A" without explanation:
 
 ```markdown
 # MODEL CARD — [MODEL NAME] v[VERSION]
@@ -2037,6 +2081,10 @@ Prepare the model card using the following template. Adapt it to the specific mo
 - Rollback procedure: [steps to revert to prior model version]
 ```
 
+2. Have the completed model card peer-reviewed by a second MLE or senior data engineer before submission. The reviewer must confirm that all evaluation metrics are accurately reported and that no sections contain placeholder content.
+
+3. Submit the model card as part of the C2DAO gate package for the relevant governance gate (Gate 2 for design review; Gate 3 for evaluation acceptance; Gate 4 for pre-production review). Retain a copy in the project repository under `/docs/model_cards/`.
+
 ---
 
 ### 9-4. Task: Manage a Production Model Incident
@@ -2044,6 +2092,8 @@ Prepare the model card using the following template. Adapt it to the specific mo
 **CONDITIONS:** Production model incident detected — either through drift monitoring alerts, mission owner notification, or direct observation of incorrect predictions.
 
 **STANDARDS:** Incident classified within 2 hours. C2DAO notified within 24 hours. Root cause identified within 72 hours. Corrective action implemented or model rolled back before resuming inference.
+
+**EQUIPMENT:** Code Workspace; model version tracking dataset; access to inference Transform configuration; C2DAO incident report template; direct communication path to data steward and C2DAO.
 
 **PROCEDURE:**
 

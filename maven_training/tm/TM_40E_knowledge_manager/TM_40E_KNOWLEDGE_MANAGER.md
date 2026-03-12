@@ -6,7 +6,9 @@ Wiesbaden, Germany
 
 2026
 
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; ADRP 1, Data Literacy (all required)
+**Version 1.0 | March 2026**
+
+**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (all required)
 
 **DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
 
@@ -25,7 +27,7 @@ Before performing any task at TM-40E level:
 - Lessons learned containing operational details, named sources, or sensitive TTPs require classification review before ingestion into any system accessible beyond the originating unit
 - Coordinate with USAREUR-AF C2DAO before publishing any knowledge repository to shared enterprise infrastructure
 
-> **WARNING: Knowledge management systems that fail silently are more dangerous than systems that fail loudly. A broken dashboard is obvious. A knowledge repository that captures incomplete lessons, routes to wrong audiences, or returns stale doctrine will not announce its failure — it will quietly degrade the formation's institutional memory over months and years. Build with validation checkpoints at every stage.**
+> **WARNING:** Knowledge management systems that fail silently are more dangerous than systems that fail loudly. A broken dashboard is obvious. A knowledge repository that captures incomplete lessons, routes to wrong audiences, or returns stale doctrine will not announce its failure — it will quietly degrade the formation's institutional memory over months and years. Build with validation checkpoints at every stage.
 
 ---
 
@@ -199,7 +201,7 @@ Before opening Foundry, define the knowledge domains your system will serve. A k
 
 **Step 5 — Identify the domain owner.** Who is responsible for quality and currency in this domain? Every knowledge domain requires a named owner accountable for content accuracy. No owner, no production deployment.
 
-> **CAUTION: Building a knowledge repository without defined domain ownership creates an abandoned system. Ownerless knowledge repositories accumulate stale content, are never reviewed, and actively mislead users who assume the content is current. Do not deploy to production without a named owner and a documented review cycle.**
+> **CAUTION:** Building a knowledge repository without defined domain ownership creates an abandoned system. Ownerless knowledge repositories accumulate stale content, are never reviewed, and actively mislead users who assume the content is current. Do not deploy to production without a named owner and a documented review cycle.
 
 ---
 
@@ -256,7 +258,7 @@ Property schemas must balance completeness (capturing all useful context) agains
 
 **Classification fields.** Every object type in a classification-aware knowledge system requires a `classification` property: enumeration of [UNCLASSIFIED, CUI, SECRET, NATO SECRET, RELEASABLE TO [country codes]]. Access control on Foundry datasets enforces this; the property provides a visible audit trail and supports filtering in search interfaces.
 
-> **CAUTION: Property schemas, once adopted and populated with data, are difficult to change. Adding a property is safe. Renaming, removing, or changing the type of an existing property breaks downstream pipelines and search indexes. Design property schemas carefully before any data is loaded. Use a staging environment and a test dataset to validate the schema before production deployment.**
+> **CAUTION:** Property schemas, once adopted and populated with data, are difficult to change. Adding a property is safe. Renaming, removing, or changing the type of an existing property breaks downstream pipelines and search indexes. Design property schemas carefully before any data is loaded. Use a staging environment and a test dataset to validate the schema before production deployment.
 
 ---
 
@@ -380,7 +382,7 @@ The AAR capture form in Workshop must balance completeness and speed. An AAR for
 - Required selection: UNCLASSIFIED / CUI / SECRET
 - If SECRET is selected: warning banner displayed, submission routed to classified handling workflow
 
-> **WARNING: Do not submit classified AAR content to an UNCLASSIFIED system. If an exercise generates AARs with classified observations, the capture form on the unclassified system must capture only unclassified content. A separate classified capture workflow must be established for SECRET content. Classify based on the most sensitive element in the entry, not the overall event classification.**
+> **WARNING:** Do not submit classified AAR content to an UNCLASSIFIED system. If an exercise generates AARs with classified observations, the capture form on the unclassified system must capture only unclassified content. A separate classified capture workflow must be established for SECRET content. Classify based on the most sensitive element in the entry, not the overall event classification.
 
 ---
 
@@ -399,7 +401,7 @@ Configure Workshop form validation to enforce data quality at the point of captu
 | Corrective actions | At least one improve action must have a corrective action with a named owner | "Each improve action requires a corrective action and owner." |
 | Classification | Required selection, no default | "Select classification before submitting." |
 
-> **CAUTION: Do not set restrictive validation rules before piloting with actual users. Overly strict validation (e.g., requiring 50-character minimum entries) causes workarounds — users pad entries with nonsense text to pass validation. Pilot with the intended user population, observe behavior, and calibrate validation rules against actual submission patterns.**
+> **CAUTION:** Do not set restrictive validation rules before piloting with actual users. Overly strict validation (e.g., requiring 50-character minimum entries) causes workarounds — users pad entries with nonsense text to pass validation. Pilot with the intended user population, observe behavior, and calibrate validation rules against actual submission patterns.
 
 ---
 
@@ -437,7 +439,7 @@ USAREUR-AF exercises take place across the European AOR, often with limited conn
 - Forms should not require more than 3G-equivalent bandwidth to load
 - Pre-populate all lookup fields (unit codes, event names) before deploying to the field — do not rely on live lookups against large datasets during the exercise
 
-> **CAUTION: Do not design AAR capture workflows that depend on real-time AIP processing in the field. AIP Logic calls require connectivity and introduce latency. Capture first; process after connectivity is restored.**
+> **CAUTION:** Do not design AAR capture workflows that depend on real-time AIP processing in the field. AIP Logic calls require connectivity and introduce latency. Capture first; process after connectivity is restored.
 
 ---
 
@@ -598,7 +600,7 @@ AIP Logic on MSS provides natural language AI capabilities connected to the Foun
 | Knowledge Q&A | Answer natural language questions against the knowledge repository | Verify source citations; treat answers as starting points, not final answers |
 | Translation assist | Summarize or translate partner nation documents (unstructured) | Review translations with a bilingual SME for accuracy |
 
-> **WARNING: AIP outputs on sensitive or classified topics require SME review before any action is taken. AIP can misclassify operational context, misinterpret military-specific terminology, or hallucinate citations. A KM who publishes AIP-generated lesson content without review is not managing knowledge — they are propagating untested AI output as institutional knowledge. Review is non-negotiable.**
+> **WARNING:** AIP outputs on sensitive or classified topics require SME review before any action is taken. AIP can misclassify operational context, misinterpret military-specific terminology, or hallucinate citations. A KM who publishes AIP-generated lesson content without review is not managing knowledge — they are propagating untested AI output as institutional knowledge. Review is non-negotiable.
 
 ---
 
@@ -620,7 +622,7 @@ Use this configuration when you receive an unstructured document (CALL report, e
 6. Test with a non-sensitive exercise report from a previous cycle. Validate that extracted lessons match what a human KM would extract. Adjust the prompt if extraction quality is poor.
 7. Document the workflow configuration, prompt version, and test results. Save to the workflow's documentation object.
 
-> **CAUTION: Prompt changes to AIP workflows in production require testing in a staging environment first. A prompt change that causes the AIP to misformat output will flood the review queue with malformed objects. Version-control your prompts (include a version number in the prompt text) and test before deploying changes.**
+> **CAUTION:** Prompt changes to AIP workflows in production require testing in a staging environment first. A prompt change that causes the AIP to misformat output will flood the review queue with malformed objects. Version-control your prompts (include a version number in the prompt text) and test before deploying changes.
 
 ---
 
@@ -857,7 +859,7 @@ Every SOP has a lifecycle. MSS tracks the lifecycle through the `SOP` Object Typ
 | Superseded | Replaced by a newer version; retained for historical reference | Archive |
 | Archived | No longer current; retained for compliance/reference | No further action |
 
-> **CAUTION: Archiving a SOP does not delete it. Archived SOPs remain in the repository as historical records. Ensure the search interface defaults to filtering for Current status only — users who accidentally access an Archived SOP and follow its procedures may be operating against outdated guidance. Label Archived and Superseded SOPs with a prominent banner in the detail view.**
+> **CAUTION:** Archiving a SOP does not delete it. Archived SOPs remain in the repository as historical records. Ensure the search interface defaults to filtering for Current status only — users who accidentally access an Archived SOP and follow its procedures may be operating against outdated guidance. Label Archived and Superseded SOPs with a prominent banner in the detail view.
 
 ---
 
@@ -989,7 +991,7 @@ The `ExpertiseProfile` Object Type is the foundation of personnel knowledge mapp
 | `availableAsAdvisor` | Boolean | Has the individual agreed to be contacted as an SME? |
 | `advisorContactMethod` | Text | Preferred contact for SME queries (email, DSN) |
 
-> **WARNING: Never auto-populate ExpertiseProfile from HR systems without individual verification. Personnel data imported from external systems may be stale, incorrect, or misclassified. Each profile should be reviewed and confirmed by the individual before being marked as active. An inaccurate expertise directory is worse than no directory — it routes queries to the wrong people and erodes user trust in the system.**
+> **WARNING:** Never auto-populate ExpertiseProfile from HR systems without individual verification. Personnel data imported from external systems may be stale, incorrect, or misclassified. Each profile should be reviewed and confirmed by the individual before being marked as active. An inaccurate expertise directory is worse than no directory — it routes queries to the wrong people and erodes user trust in the system.
 
 ---
 
