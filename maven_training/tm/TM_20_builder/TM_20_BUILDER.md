@@ -14,7 +14,7 @@ Wiesbaden, Germany
 
 **RELATED MANUALS:** TM-30, Advanced Builder/Developer (Python, PySpark, TypeScript, OSDK).
 
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 ---
 
@@ -216,9 +216,9 @@ The table below identifies requirements that exceed TM-20 scope. If your require
 | Multi-page Workshop applications with conditional navigation between pages | TM-30, Chapter 2 |
 | @incremental pipeline patterns | TM-30, Chapter 3 |
 | Many-to-many Link Types with junction dataset logic | TM-30, Chapter 4 |
-| Python, PySpark, or SQL code transforms | TM-40F (Software Engineer) |
-| TypeScript Functions or OSDK | TM-40F (Software Engineer) |
-| Machine learning model integration | TM-40C (ML Engineer) |
+| Python, PySpark, or SQL code transforms | TM-40L (Software Engineer) |
+| TypeScript Functions or OSDK | TM-40L (Software Engineer) |
+| Machine learning model integration | TM-40I (ML Engineer) |
 
 ---
 

@@ -1,12 +1,12 @@
 # POST-TEST — TM-50K: ADVANCED KNOWLEDGE MANAGER
 ## Maven Smart System (MSS) — USAREUR-AF
 
-| | |
+| Field | Detail |
 |---|---|
 | **Course** | TM-50K: Advanced Knowledge Manager |
 | **Form** | Post-Test |
 | **Level** | TM-50K (Advanced Knowledge Management) |
-| **Audience** | Corps/Theater-level KMOs, enterprise KM architects; prerequisite: TM-40E + enterprise KM experience |
+| **Audience** | Corps/Theater-level KMOs, enterprise KM architects; prerequisite: TM-40K + enterprise KM experience |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (42/60) |
 

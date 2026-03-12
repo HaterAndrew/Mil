@@ -11,7 +11,7 @@ Wiesbaden, Germany
 
 **PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; CONCEPTS_GUIDE_TM40F_MISSION_COMMAND (required before beginning this manual). No coding, pipeline development, or transform experience is required or assumed.
 
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 **AUTHORITY:** This publication is issued under authority of the USAREUR-AF C2 Data and Analytics Office (C2DAO). It implements Army CIO Memorandum, Data and Analytics Policy (April 2024), aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025), and supports implementation of ADP 6-0, FM 6-0, FM 5-0, ADP 5-0, ATP 6-0.5, and FM 6-02. Reference learn-data.armydev.com for current platform documentation.
 
@@ -92,8 +92,8 @@ The USAREUR-AF C2DAO built MSS on Palantir Foundry specifically to integrate ope
 
 - Pipeline construction, data transforms, or code development — see TM-30 and TM-40 series technical manuals
 - Ontology design or dataset schema modification — see TM-30
-- Machine learning model management — see TM-40C
-- AI Logic (AIP) application development — see TM-40B
+- Machine learning model management — see TM-40I
+- AI Logic (AIP) application development — see TM-40H
 - Financial management data systems — see unit S6/IMO
 - Building Workshop applications — see TM-20
 
@@ -142,11 +142,11 @@ Before beginning this manual, verify the following:
 | TM-10 | Maven User | Foundation prerequisite. Platform navigation, basic data access. |
 | TM-20 | Builder | Not required. Builds products that TM-40F users consume. |
 | TM-30 | Advanced Builder | Not required. Designs data architecture behind TM-40F products. |
-| TM-40A | ORSA | Companion. ORSA analysts build quantitative products that TM-40F users receive and brief. |
-| TM-40B | AI Engineer | Not required for operational use. Awareness-level: produces AI-enabled alerts in CCIR monitoring. |
-| TM-40C | ML Engineer | Not required for operational use. Awareness-level: produces predictive products on MSS. |
-| TM-40D | Program Manager | Complementary. PM data feeds readiness and portfolio products consumed by S3. |
-| TM-40E | Knowledge Manager | Complementary. KM maintains information products and lessons learned accessible in MSS. |
+| TM-40G | ORSA | Companion. ORSA analysts build quantitative products that TM-40F users receive and brief. |
+| TM-40H | AI Engineer | Not required for operational use. Awareness-level: produces AI-enabled alerts in CCIR monitoring. |
+| TM-40I | ML Engineer | Not required for operational use. Awareness-level: produces predictive products on MSS. |
+| TM-40J | Program Manager | Complementary. PM data feeds readiness and portfolio products consumed by S3. |
+| TM-40K | Knowledge Manager | Complementary. KM maintains information products and lessons learned accessible in MSS. |
 | TM-40F | Mission Command | This manual. |
 | TM-50 Series | Advanced Specialist Tracks | Post-graduate level for technical specialists. Not applicable to operational staff. |
 
@@ -1414,8 +1414,8 @@ At corps level, MSS employment emphasizes planning support for complex, multi-di
 - Corps G3 accesses subordinate division MSS workspaces for aggregated readiness, logistics, and assessment data.
 - Corps-level CCIRs are typically multi-echelon and longer-horizon.
 - Planning workspace at corps supports 72-hour to 7-day planning horizons.
-- ORSA staff (TM-40A) integrated with G35 to support COA analysis and quantitative decision products.
-- AI/ML-enabled products (TM-40B, TM-40C) integrated into corps-level predictive assessments.
+- ORSA staff (TM-40G) integrated with G35 to support COA analysis and quantitative decision products.
+- AI/ML-enabled products (TM-40H, TM-40I) integrated into corps-level predictive assessments.
 
 **Corps COP Architecture:**
 - Division-level COPs are visible within the corps COP (federated display).
@@ -1794,5 +1794,5 @@ Instructions:
 *TM-40F — Maven Smart System (MSS): Mission Command Warfighting Function — Intermediate Operator's Manual*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 *Version 1.0 | March 2026*
-*Distribution: Approved for public release; distribution unlimited.*
+*Distribution: DRAFT — Not yet approved for distribution.*
 *Authority: USAREUR-AF C2DAO*

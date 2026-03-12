@@ -73,7 +73,7 @@ Before using MSS products to support any fires or AMD decision:
 
 1-3a. This manual is organized to move from the general to the specific: Chapter 1 provides orientation and context; Chapters 2 through 4 cover the core FA fires tasks (targeting, fire support planning, fire direction); Chapter 5 covers AMD operations; Chapter 6 covers sensor operations and C-RAM; Chapters 7 through 9 cover joint fires integration, assessment and reporting, and echelon-specific applications; Chapter 10 addresses degraded operations; and Chapter 11 addresses training and proficiency. Read the relevant chapters for your duty position. All fires personnel should read Chapters 1 and 10 regardless of MOS.
 
-1-3b. This manual does not address MSS system administration, data pipeline management, or technical platform architecture. Those topics are addressed in TM-30 (Advanced Builder) and TM-40F (Software Engineer). If a fires task in this manual cannot be executed because of a platform configuration issue, report the issue to the unit S6 and the USAREUR-AF C2DAO fires functional representative rather than attempting technical workarounds.
+1-3b. This manual does not address MSS system administration, data pipeline management, or technical platform architecture. Those topics are addressed in TM-30 (Advanced Builder) and TM-40L (Software Engineer). If a fires task in this manual cannot be executed because of a platform configuration issue, report the issue to the unit S6 and the USAREUR-AF C2DAO fires functional representative rather than attempting technical workarounds.
 
 ---
 

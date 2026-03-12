@@ -11,7 +11,7 @@ Wiesbaden, Germany
 
 **PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; CONCEPTS_GUIDE_TM40E_PROTECTION (required before beginning this manual). No coding, pipeline development, or transform experience is required or assumed.
 
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 **AUTHORITY:** This publication is issued under authority of the USAREUR-AF C2 Data and Analytics Office (C2DAO). It implements Army CIO Memorandum, Data and Analytics Policy (April 2024), aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025), and supports implementation of ADP 3-37, FM 3-37, ATP 3-37.2, ATP 3-37.34, FM 5-19, ATP 3-37.10, FM 3-36, and ADP 3-90. Reference learn-data.armydev.com for current platform documentation.
 

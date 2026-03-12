@@ -73,11 +73,11 @@ This manual provides task-based instruction for software engineers operating on 
 - Workshop application design (no-code/low-code) — see TM-20, TM-30
 - Pipeline Builder visual UI — see TM-20, TM-30
 - Basic Ontology modeling (UI-based) — see TM-30
-- PySpark transforms — see TM-40A (AI Engineer) for AI pipelines; TM-30 for design
+- PySpark transforms — see TM-40H (AI Engineer) for AI pipelines; TM-30 for design
 - AIP Logic configuration — see TM-30
-- Agent Studio development — see TM-40A
+- Agent Studio development — see TM-40H
 
-> **NOTE:** TM-40L is peer to TM-40A (AI Engineer), TM-40C (ML Engineer), and TM-40D (ORSA). All four tracks require TM-30 as prerequisite. Each track owns a distinct technical domain. Coordinate across tracks — operational systems frequently require all four disciplines.
+> **NOTE:** TM-40L is peer to TM-40H (AI Engineer), TM-40I (ML Engineer), and TM-40G (ORSA). All four tracks require TM-30 as prerequisite. Each track owns a distinct technical domain. Coordinate across tracks — operational systems frequently require all four disciplines.
 
 ---
 
@@ -96,7 +96,7 @@ MISSION REQUIREMENT
     Action design specs)
         |
         v
-   -40B ENGINEER             <- You are here
+   -40L SOFTWARE ENGINEER    <- You are here
    (OSDK, external apps,
     FOO, CI/CD,
     integration code)
@@ -1601,9 +1601,9 @@ The three validation layers for complex Actions:
 
 | Layer | Where | Who Writes | Purpose |
 |---|---|---|---|
-| Client-side (pre-submit) | External app or Workshop | -40F SWE | UX validation; catch obvious errors before API call |
+| Client-side (pre-submit) | External app or Workshop | -40L SWE | UX validation; catch obvious errors before API call |
 | OSDK validation | Action parameter schema | Foundry runtime | Type enforcement; required fields |
-| Server-side TypeScript validator | Foundry Function | -40F SWE | Business rules, cross-object validation, conditional logic |
+| Server-side TypeScript validator | Foundry Function | -40L SWE | Business rules, cross-object validation, conditional logic |
 
 > **NOTE:** Slate is Foundry's legacy application builder and is no longer the recommended path for new development. Use Workshop for internal Foundry applications, or OSDK-backed external applications for public-facing deployments. For client-side validation in new development, implement validation in your Workshop application or external OSDK application — not in a Slate app.
 
@@ -2793,7 +2793,7 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 
 **Action (Foundry)** — A defined operation that modifies Ontology object state. Actions enforce validation, authorization, and audit logging. External applications execute Actions via OSDK. Not to be confused with a direct dataset write.
 
-**Action Validator** — TypeScript function deployed as a Foundry code resource that enforces business rules before an Action applies state changes. Written by -40B engineers; configured by -30 builders.
+**Action Validator** — TypeScript function deployed as a Foundry code resource that enforces business rules before an Action applies state changes. Written by -40L engineers; configured by -30 builders.
 
 **APPEND Transaction** — A dataset write transaction type that adds rows to an existing dataset without modifying existing data. The standard write pattern for incremental data loads. APPEND transactions are NOT inherently idempotent — each call appends data without deduplication. Implement deduplication logic (content hashes or surrogate keys) before appending if idempotency is required. Use SNAPSHOT transactions for full-dataset atomic replacement.
 

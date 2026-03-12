@@ -8,7 +8,7 @@ Wiesbaden, Germany
 
 **PURPOSE:** This guide develops the operational mental models required to effectively integrate MSS into Sustainment warfighting function operations. It is a prerequisite companion to TM-40D and must be read before beginning TM-40D task instruction. This guide is conceptual — it develops understanding, not procedures. No step-by-step tasks appear here.
 
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 **PREREQUISITE:** This guide must be read before beginning TM-40D. Completion of TM-10 (Maven User) is required before reading this guide. CONCEPTS_GUIDE completion does not require TM-20 or any builder qualification.
 

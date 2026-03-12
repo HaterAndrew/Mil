@@ -398,7 +398,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-40A (ORSA) — Critical Performance Measures
+## TM-40G (ORSA) — Critical Performance Measures
 
 | Task | Critical Performance Measure | Hard NO-GO |
 |---|---|---|
@@ -409,7 +409,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-40B (AI Engineer) — Critical Performance Measures
+## TM-40H (AI Engineer) — Critical Performance Measures
 
 | Task | Critical Performance Measure | Hard NO-GO |
 |---|---|---|
@@ -419,7 +419,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-40C (MLE) — Critical Performance Measures
+## TM-40I (ML Engineer) — Critical Performance Measures
 
 | Task | Critical Performance Measure | Hard NO-GO |
 |---|---|---|
@@ -429,7 +429,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-40D (Program Manager) — Critical Performance Measures
+## TM-40J (Program Manager) — Critical Performance Measures
 
 | Task | Critical Performance Measure | Hard NO-GO |
 |---|---|---|
@@ -439,7 +439,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-40E (Knowledge Manager) — Critical Performance Measures
+## TM-40K (Knowledge Manager) — Critical Performance Measures
 
 | Task | Critical Performance Measure | Hard NO-GO |
 |---|---|---|
@@ -448,7 +448,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-40F (Software Engineer) — Critical Performance Measures
+## TM-40L (Software Engineer) — Critical Performance Measures
 
 | Task | Critical Performance Measure | Hard NO-GO |
 |---|---|---|

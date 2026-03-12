@@ -259,7 +259,7 @@
 **TLO:** Given an existing AIP Logic workflow template, the trainee will configure input sources, output destinations, trigger conditions, and a human review queue — verifying the workflow routes uncertain outputs to review before writing to production Objects.
 
 **Key Delivery Notes:**
-- Configuration vs. authoring: TM-30 trainees configure pre-built workflows (changing input source, output Object Type, trigger). They do not author the prompt logic — that is TM-40B.
+- Configuration vs. authoring: TM-30 trainees configure pre-built workflows (changing input source, output Object Type, trigger). They do not author the prompt logic — that is TM-40H.
 - Human review queue design: all AIP Logic outputs that write to production Objects must route through a review queue. Configuration: output with status = "Draft" → human review → status = "Published". No direct writes to Published status.
 - Trainees should be able to read the lineage graph and identify what the workflow does before configuring it.
 

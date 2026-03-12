@@ -1,12 +1,12 @@
 # PRE-TEST — TM-50L: ADVANCED SOFTWARE ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
-| | |
+| Field | Detail |
 |---|---|
 | **Course** | TM-50L: Advanced Software Engineer |
 | **Form** | Pre-Test |
 | **Level** | TM-50L (Advanced Software Engineering) |
-| **Audience** | Senior SWEs / platform architects / tech leads; prerequisite: TM-40F + production MSS SWE experience |
+| **Audience** | Senior SWEs / platform architects / tech leads; prerequisite: TM-40L + production MSS SWE experience |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
@@ -120,10 +120,10 @@ B. Writes update both the cache and the underlying database synchronously — th
 C. Reads populate the cache on the first miss; subsequent reads serve from cache
 D. Writes bypass the cache and go directly to the database; the cache is invalidated on write
 
-**15. Platform governance at the TM-50L level includes which responsibility that is NOT present at TM-40F?**
+**15. Platform governance at the TM-50L level includes which responsibility that is NOT present at TM-40L?**
 
 A. Writing TypeScript code that passes Ontology CI checks
-B. Setting and enforcing platform-wide coding standards, conducting architecture reviews of other engineers' designs, and onboarding and developing junior engineers to TM-40F competency
+B. Setting and enforcing platform-wide coding standards, conducting architecture reviews of other engineers' designs, and onboarding and developing junior engineers to TM-40L competency
 C. Submitting pull requests that pass the standard code review checklist
 D. Ensuring personal work is covered by the minimum required test cases
 
@@ -173,7 +173,7 @@ D. Ensuring personal work is covered by the minimum required test cases
 
 &nbsp;
 
-**SA-5. You are onboarding a new TM-40F qualified engineer to the USAREUR-AF MSS platform. Describe the four most important platform-specific concepts you would cover in their onboarding, and explain why each is critical to safe, effective work on the platform.**
+**SA-5. You are onboarding a new TM-40L qualified engineer to the USAREUR-AF MSS platform. Describe the four most important platform-specific concepts you would cover in their onboarding, and explain why each is critical to safe, effective work on the platform.**
 
 &nbsp;
 
@@ -216,7 +216,7 @@ Passing: N/A — Pre-test is diagnostic only.
 12. B — Injection vulnerabilities (unsanitized input in Ontology queries/Action parameters) are the primary OWASP concern for OSDK integrations.
 13. B — Batch writes reduce API call overhead and maintain transaction integrity.
 14. B — Write-through: writes update both cache and database synchronously; cache always consistent.
-15. B — Platform governance = setting standards, architecture reviews, onboarding/developing junior engineers — not present at TM-40F.
+15. B — Platform governance = setting standards, architecture reviews, onboarding/developing junior engineers — not present at TM-40L.
 
 **Short Answer Guidance:**
 

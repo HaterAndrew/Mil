@@ -1,29 +1,20 @@
-# TM-50I
-## TECHNICAL MANUAL
-## ADVANCED MACHINE LEARNING ENGINEERING
-## MAVEN SMART SYSTEM (MSS)
-## USAREUR-AF OPERATIONAL DATA TEAM
+# TM-50I — ADVANCED MACHINE LEARNING ENGINEERING
+## MAVEN SMART SYSTEM (MSS) | USAREUR-AF OPERATIONAL DATA TEAM
 
-**HEADQUARTERS**
-**UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-
-2026
-
-**Version 1.0 | March 2026**
+**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA** | Wiesbaden, Germany | 2026 | Version 1.0
 
 **UNCLASSIFIED**
-Distribution: Approved for public release; distribution is unlimited.
+Distribution: DRAFT — Not yet approved for distribution.
 
 ---
 
-**PREREQUISITE PUBLICATIONS:** TM-40C, Machine Learning Engineer (required, completion verified). TM-40B, AI Engineer (cross-reference for AIP Logic and Agent Studio integration). TM-40A, ORSA (cross-reference for statistical validation methods). Proficiency in production ML systems, Foundry Transforms, model deployment to Ontology, and drift monitoring is assumed. Personnel who cannot independently design a feature pipeline, train and evaluate a model, implement drift detection, and complete the TM-40C governance checklist are not ready for TM-50I.
+**PREREQUISITE PUBLICATIONS:** TM-40I, Machine Learning Engineer (required, completion verified). TM-40H, AI Engineer (cross-reference for AIP Logic and Agent Studio integration). TM-40G, ORSA (cross-reference for statistical validation methods). Proficiency in production ML systems, Foundry Transforms, model deployment to Ontology, and drift monitoring is assumed. Personnel who cannot independently design a feature pipeline, train and evaluate a model, implement drift detection, and complete the TM-40I governance checklist are not ready for TM-50I.
 
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 ---
 
-> **PREREQUISITE WARNING:** TM-50I is **not required** for the majority of ML engineer billets. It is intended for personnel with demonstrated proficiency at TM-40C level who are actively managing production ML pipelines, automated retraining systems, or federated learning infrastructure on MSS. If you are uncertain whether TM-50I applies to your billet, consult your supervisor or the unit data steward before proceeding.
+> **PREREQUISITE WARNING:** TM-50I is **not required** for the majority of ML engineer billets. It is intended for personnel with demonstrated proficiency at TM-40I level who are actively managing production ML pipelines, automated retraining systems, or federated learning infrastructure on MSS. If you are uncertain whether TM-50I applies to your billet, consult your supervisor or the unit data steward before proceeding.
 
 ---
 
@@ -38,7 +29,7 @@ Before performing any task at TM-50I level:
 - **Federated learning across classification boundaries requires explicit data steward authorization for each participating domain.** The absence of data movement does not eliminate access control requirements. Coordinate with the C2DAO and data steward before initiating any cross-domain federated training.
 - **Model compression and quantization alter model behavior.** A compressed model is not the same model. Re-evaluate on operationally representative data after any compression step. Do not assume performance is preserved.
 - **Adversarial robustness testing is a production requirement, not a research exercise.** Any MSS model exposed to external data sources or untrusted inputs must complete adversarial testing before deployment. This includes logistics models ingesting partner-nation data feeds.
-- **All AI/ML governance requirements from TM-40C remain in effect at TM-50I level.** Additional requirements from DoD RAIMTF, Army CIO Memo (April 2024), and UDRA v1.1 (February 2025) layer on top. TM-50I does not reduce governance burden — it increases it, because the systems are more complex and the failure modes are harder to detect.
+- **All AI/ML governance requirements from TM-40I remain in effect at TM-50I level.** Additional requirements from DoD RAIMTF, Army CIO Memo (April 2024), and UDRA v1.1 (February 2025) layer on top. TM-50I does not reduce governance burden — it increases it, because the systems are more complex and the failure modes are harder to detect.
 
 > **WARNING: AUTOMATED MODEL DEPLOYMENT IS A PRIVILEGED CAPABILITY. Automated pipelines that promote model versions to production without human review are classified as high-risk automation under UDRA v1.1. Implementing this pattern without a documented, C2DAO-approved automation design and explicit mission owner sign-off constitutes an unauthorized production change. The senior MLE who designs the pipeline is accountable for every automated promotion it executes.**
 
@@ -46,7 +37,7 @@ Before performing any task at TM-50I level:
 
 > **CAUTION: MODEL COMPRESSION AND PRODUCTION EQUIVALENCE. A quantized or pruned model is a different model from the full-precision original. Performance metrics from the full-precision model do not transfer. Every compressed model variant must be independently evaluated on an operationally representative holdout set before deployment. Failure to re-evaluate may result in silent performance degradation in production.**
 
-> **NOTE: TM-50I targets senior MLEs with production responsibility — personnel designing platform-level infrastructure, leading ML capability for a major MSS program, or serving as the ML technical authority for a command. This is not a follow-on to TM-40C for general practitioners. It is a specialization track for personnel who will own the platform, not just operate it.**
+> **NOTE: TM-50I targets senior MLEs with production responsibility — personnel designing platform-level infrastructure, leading ML capability for a major MSS program, or serving as the ML technical authority for a command. This is not a follow-on to TM-40I for general practitioners. It is a specialization track for personnel who will own the platform, not just operate it.**
 
 ---
 
@@ -70,9 +61,9 @@ Before performing any task at TM-50I level:
 
 ### 1-1. Purpose
 
-**BLUF:** TM-50I qualifies senior machine learning engineers to design, build, and lead production ML platform capability on MSS. This manual extends TM-40C into automated MLOps, advanced neural architectures, federated learning, real-time inference, ML security, and platform architecture leadership.
+**BLUF:** TM-50I qualifies senior machine learning engineers to design, build, and lead production ML platform capability on MSS. This manual extends TM-40I into automated MLOps, advanced neural architectures, federated learning, real-time inference, ML security, and platform architecture leadership.
 
-TM-40C produced MLEs who can build and deploy models. TM-50I produces ML platform engineers — practitioners who design the infrastructure others build on. The distinction matters. A TM-40C MLE asks, "How do I deploy this model?" A TM-50I MLE asks, "What deployment infrastructure should this team use, and what are the failure modes?" TM-50I personnel operate at the level of ML system design: retraining architectures, shared feature stores, model registry standards, inference optimization, and adversarial robustness programs.
+TM-40I produced MLEs who can build and deploy models. TM-50I produces ML platform engineers — practitioners who design the infrastructure others build on. The distinction matters. A TM-40I MLE asks, "How do I deploy this model?" A TM-50I MLE asks, "What deployment infrastructure should this team use, and what are the failure modes?" TM-50I personnel operate at the level of ML system design: retraining architectures, shared feature stores, model registry standards, inference optimization, and adversarial robustness programs.
 
 USAREUR-AF requires this level of capability because MSS is not a collection of individual models — it is an ML platform supporting dozens of use cases across V Corps, 21st TSC, USAREUR-AF G2, and subordinate commands. As that platform scales, it requires practitioners who can design it, secure it, and lead it as a discipline.
 
@@ -90,17 +81,17 @@ USAREUR-AF requires this level of capability because MSS is not a collection of 
 | Real-time inference | Latency optimization, request batching, model compression, quantization, benchmarking |
 | ML security | Adversarial robustness, data poisoning detection, model extraction defense, supply chain |
 | Platform architecture | Feature stores, model registries, experiment tracking, shared ML infrastructure design |
-| Cross-domain ML | AIP Logic integration (TM-40B interface), Agent Studio model consumption patterns |
+| Cross-domain ML | AIP Logic integration (TM-40H interface), Agent Studio model consumption patterns |
 | ML leadership | Code review standards, reproducibility requirements, production readiness gates, team capability development |
 | Model documentation | DoD RAIMTF model cards, AI accountability documentation, Army policy compliance |
 
 **TM-50I does NOT cover:**
 
-- TM-40C prerequisite material — foundational MLE skills are assumed mastered
+- TM-40I prerequisite material — foundational MLE skills are assumed mastered
 - Basic Foundry navigation, Transform authoring, or Ontology consumption — see TM-30
-- AIP Logic application design or Agent Studio development — see TM-40B
-- Statistical optimization and operations research — see TM-40A / TM-50A
-- Program management of ML programs of record — see TM-40D
+- AIP Logic application design or Agent Studio development — see TM-40H
+- Statistical optimization and operations research — see TM-40G / TM-50G
+- Program management of ML programs of record — see TM-40J
 - Foundry platform administration (enrollment, permissions, environment configuration) — contact C2DAO
 
 ### 1-3. The TM-50I MLE in the USAREUR-AF Data Chain
@@ -114,7 +105,7 @@ USAREUR-AF COMMANDER / C2DAO
   (Platform design, automation, security, leadership)
        |
        v
-  TM-40C MLE
+  TM-40I MLE
   (Model build, train, evaluate, deploy)
        |
        v
@@ -122,7 +113,7 @@ USAREUR-AF COMMANDER / C2DAO
   (Production Ontology, inference endpoints, monitoring)
        |
        v
-  TM-40B (AI Eng) / TM-30 (Workshop)
+  TM-40H (AI Eng) / TM-30 (Workshop)
   (Downstream consumers: AIP Logic, dashboards, apps)
        |
        v
@@ -130,23 +121,23 @@ USAREUR-AF COMMANDER / C2DAO
   (Operational decision supported)
 ```
 
-The TM-50I MLE is a force multiplier — not because they write the most code, but because the infrastructure they design determines what the TM-40C practitioners beneath them can build and how safely they can build it. A poorly designed feature store creates incorrect features for every model that uses it. A misconfigured model registry loses experiment reproducibility across the platform. A missing adversarial robustness gate exposes every deployed model to the same attack class.
+The TM-50I MLE is a force multiplier — not because they write the most code, but because the infrastructure they design determines what the TM-40I practitioners beneath them can build and how safely they can build it. A poorly designed feature store creates incorrect features for every model that uses it. A misconfigured model registry loses experiment reproducibility across the platform. A missing adversarial robustness gate exposes every deployed model to the same attack class.
 
 ### 1-4. Prerequisites and Entry Standards
 
-TM-50I entry requires demonstrated proficiency at TM-40C level. The following are entry conditions, not goals.
+TM-50I entry requires demonstrated proficiency at TM-40I level. The following are entry conditions, not goals.
 
 | Prerequisite | Verification Standard |
 |---|---|
-| TM-40C completion | Certification on file, confirmed by supervisor |
+| TM-40I completion | Certification on file, confirmed by supervisor |
 | Production model deployment | Has deployed at least one model to MSS Ontology in a production use case |
 | Drift monitoring implementation | Has implemented and operated a drift detection pipeline on a production model |
-| Model governance completion | Has independently completed TM-40C Appendix A governance checklist for a production model |
+| Model governance completion | Has independently completed TM-40I Appendix A governance checklist for a production model |
 | Python proficiency (advanced) | Can write multi-class sklearn pipelines, custom PyTorch training loops, and Foundry Transform pipelines without reference |
 | MLOps tooling | Familiar with experiment tracking, model versioning, and pipeline orchestration concepts |
 | Git / code review | Has conducted peer code reviews; understands branching strategy for production ML repositories |
 
-Personnel who do not meet these entry standards must complete TM-40C production experience requirements first. There is no accelerated path.
+Personnel who do not meet these entry standards must complete TM-40I production experience requirements first. There is no accelerated path.
 
 ### 1-5. Governing References
 
@@ -164,11 +155,11 @@ Personnel who do not meet these entry standards must complete TM-40C production 
 
 ### 1-6. Advanced Governance Tiers
 
-TM-40C covered the baseline six-gate governance process. TM-50I introduces automation authorization tiers that apply to the more powerful capabilities in this manual.
+TM-40I covered the baseline six-gate governance process. TM-50I introduces automation authorization tiers that apply to the more powerful capabilities in this manual.
 
 | Automation Tier | Description | Additional Approval Required |
 |---|---|---|
-| Tier 0 (Manual) | All model promotions require human review and explicit approval | None (TM-40C standard) |
+| Tier 0 (Manual) | All model promotions require human review and explicit approval | None (TM-40I standard) |
 | Tier 1 (Monitored Automation) | Automated retraining; human approval gate before any production promotion | C2DAO design review of automation architecture |
 | Tier 2 (Gated Automation) | Automated retraining; automated promotion if all production readiness gates pass | C2DAO + mission owner sign-off; automatic rollback required |
 | Tier 3 (Full Automation) | Automated retraining and promotion with no human approval step | Not authorized on MSS without USAREUR-AF CIO exception |
@@ -183,7 +174,7 @@ TM-40C covered the baseline six-gate governance process. TM-50I introduces autom
 
 **BLUF:** Advanced MLOps on MSS means automating the full model lifecycle — data ingestion through production deployment — with explicit governance gates, rollback capability, and comprehensive monitoring. This chapter covers automated retraining pipeline design, A/B model deployment, canary releases, and production readiness gates.
 
-TM-40C introduced drift detection and manual retraining. TM-50I builds the infrastructure that makes retraining automated, auditable, and safe. The distinction is architectural: where TM-40C MLEs respond to drift, TM-50I MLEs design systems that detect drift, validate a new model, and promote it with defined human oversight requirements — consistently, every time, across every model on the platform.
+TM-40I introduced drift detection and manual retraining. TM-50I builds the infrastructure that makes retraining automated, auditable, and safe. The distinction is architectural: where TM-40I MLEs respond to drift, TM-50I MLEs design systems that detect drift, validate a new model, and promote it with defined human oversight requirements — consistently, every time, across every model on the platform.
 
 ### 2-2. Automated Retraining Pipeline Architecture
 
@@ -299,7 +290,7 @@ A canary release is a production deployment pattern where the new model version 
 
 ### 2-6. Production Readiness Gates
 
-Every automated retraining pipeline must enforce a defined set of production readiness gates before any model version reaches production. These gates are not the same as the governance approval gates in TM-40C — they are automated technical checks that run as part of the pipeline.
+Every automated retraining pipeline must enforce a defined set of production readiness gates before any model version reaches production. These gates are not the same as the governance approval gates in TM-40I — they are automated technical checks that run as part of the pipeline.
 
 **Required production readiness gates (automated):**
 
@@ -555,7 +546,7 @@ where:
 
 ### 5-2. SHAP at Production Scale
 
-TM-40C introduced SHAP for model explanation. At TM-50I level, the challenge is not computing SHAP — it is computing SHAP at the volume, frequency, and latency that production operational models require.
+TM-40I introduced SHAP for model explanation. At TM-50I level, the challenge is not computing SHAP — it is computing SHAP at the volume, frequency, and latency that production operational models require.
 
 **SHAP computational complexity by explainer type:**
 
@@ -596,7 +587,7 @@ TM-40C introduced SHAP for model explanation. At TM-50I level, the challenge is 
    - `top_features`: pre-computed array of (feature_name, shap_value) sorted by |shap_value| descending, top 5 — pre-computation reduces dashboard rendering latency
    Registering this schema in the MSS Ontology as a standard property set enables -30 builders to consume explanations without knowing the underlying model.
 
-2. **Implement explainer selection logic.** Write a utility function that, given a trained model artifact, selects the appropriate explainer type (TreeExplainer for tree models, LinearExplainer for linear models, DeepExplainer for neural networks) and instantiates it with a compressed background dataset. This function is the platform library that TM-40C MLEs call — they should not need to implement explainer selection themselves.
+2. **Implement explainer selection logic.** Write a utility function that, given a trained model artifact, selects the appropriate explainer type (TreeExplainer for tree models, LinearExplainer for linear models, DeepExplainer for neural networks) and instantiates it with a compressed background dataset. This function is the platform library that TM-40I MLEs call — they should not need to implement explainer selection themselves.
 
 3. **Integrate explanation into the inference Transform.** Modify the standard inference Transform template to include an explanation step after prediction. For batch models: compute SHAP values for all predictions in the batch, append as columns to the output dataset. For models where TreeExplainer is applicable, this adds < 5% to total inference time at typical MSS batch sizes (10k–100k records).
 
@@ -916,7 +907,7 @@ If any anomaly is detected, quarantine the checkpoint, notify the C2DAO, and do 
 
 ### 8-1. Overview
 
-**BLUF:** TM-50I MLEs design and lead the ML platform that TM-40C practitioners build on. This chapter covers shared feature store design, model registry architecture, experiment tracking at scale, cross-track integration (TM-40B, TM-40A), code review standards for production ML, reproducibility requirements, and the production readiness framework for leading an ML team.
+**BLUF:** TM-50I MLEs design and lead the ML platform that TM-40I practitioners build on. This chapter covers shared feature store design, model registry architecture, experiment tracking at scale, cross-track integration (TM-40H, TM-40G), code review standards for production ML, reproducibility requirements, and the production readiness framework for leading an ML team.
 
 ### 8-2. Shared Feature Store Design
 
@@ -1014,15 +1005,15 @@ Experiment tracking at scale means that every training run is logged, reproducib
 
 Reproducibility requirement: given an experiment run ID, any MLE on the team must be able to reproduce the training run and obtain identical (within floating-point tolerance) model weights. This requires: the exact training dataset version, the exact feature pipeline version, the exact hyperparameter configuration, and the exact random seed — all recorded in the experiment tracker.
 
-### 8-6. Cross-Track Integration: TM-40B (AI Engineer) and TM-40A (ORSA)
+### 8-6. Cross-Track Integration: TM-40H (AI Engineer) and TM-40G (ORSA)
 
 TM-50I MLEs design integration interfaces between the ML platform and adjacent capability tracks. The two most common integration points are:
 
-**Integration with TM-40B (AI Engineer): AIP Logic and Agent Studio**
+**Integration with TM-40H (AI Engineer): AIP Logic and Agent Studio**
 
 AIP Logic enables AI-powered workflows that can call ML model endpoints as part of a broader automated pipeline. Agent Studio enables autonomous agents that can query model outputs, trigger Actions, and orchestrate multi-step workflows.
 
-| Integration Pattern | TM-40B Responsibility | TM-50I MLE Responsibility |
+| Integration Pattern | TM-40H Responsibility | TM-50I MLE Responsibility |
 |---|---|---|
 | Agent calls model endpoint | AI Eng designs the agent workflow and the endpoint call | MLE ensures endpoint is documented, schema-stable, and latency-compliant; model card is readable by AI Eng |
 | AIP Logic uses model output as condition | AI Eng implements the Logic workflow | MLE registers the model output schema in the Ontology; ensures prediction confidence scores are calibrated |
@@ -1030,11 +1021,11 @@ AIP Logic enables AI-powered workflows that can call ML model endpoints as part 
 
 The MLE-AI Eng interface contract: the MLE publishes a stable inference interface (schema, latency SLA, versioning policy) and a readable model card. The AI Eng is a consumer, not a model expert. The MLE cannot expect the AI Eng to debug model behavior — that is the MLE's responsibility.
 
-**Integration with TM-40A (ORSA): Statistical Validation and Uncertainty Quantification**
+**Integration with TM-40G (ORSA): Statistical Validation and Uncertainty Quantification**
 
 ORSA practitioners on MSS are the statistical domain experts. They are the most qualified reviewers of model evaluation methodology, uncertainty quantification approaches, and the interpretation of model outputs in operational decision frameworks.
 
-| Integration Pattern | TM-40A ORSA Responsibility | TM-50I MLE Responsibility |
+| Integration Pattern | TM-40G ORSA Responsibility | TM-50I MLE Responsibility |
 |---|---|---|
 | Validation of evaluation methodology | Reviews evaluation metrics for statistical validity; flags methodological weaknesses | Presents methodology for ORSA review; incorporates feedback; documents disagreements |
 | Uncertainty quantification | Advises on calibration, confidence interval construction, decision thresholds | Implements UQ outputs; surfaces them in model card and dashboard |
@@ -1062,11 +1053,11 @@ Code review in production ML must check correctness properties that standard sof
 | Resource cleanup | Are large objects (training datasets, intermediate tensors) explicitly deleted after use? (Foundry workspace memory is shared; leaking memory affects other jobs) |
 | Governance integration | Are all governance artifacts (evaluation metrics, model card, deployment authorization) generated by the pipeline, not manually assembled post-hoc? |
 
-> **NOTE:** Code review is not optional for production ML code on MSS. Every pull request that touches a production feature pipeline, model training script, or inference Transform must have at least one reviewer who is a TM-40C qualified MLE. Senior code (automated retraining pipelines, shared feature store Transforms, model registry integration) requires a TM-50I qualified reviewer.
+> **NOTE:** Code review is not optional for production ML code on MSS. Every pull request that touches a production feature pipeline, model training script, or inference Transform must have at least one reviewer who is a TM-40I qualified MLE. Senior code (automated retraining pipelines, shared feature store Transforms, model registry integration) requires a TM-50I qualified reviewer.
 
 ### 8-8. Leading ML Capability: Production Readiness Gates and Team Development
 
-The TM-50I MLE's leadership responsibilities extend beyond technical design. They include: setting and enforcing production readiness standards, developing TM-40C practitioners on the team, and building a culture of operational ML accountability.
+The TM-50I MLE's leadership responsibilities extend beyond technical design. They include: setting and enforcing production readiness standards, developing TM-40I practitioners on the team, and building a culture of operational ML accountability.
 
 **Production readiness framework for MSS ML teams:**
 
@@ -1081,18 +1072,18 @@ The TM-50I MLE's leadership responsibilities extend beyond technical design. The
 
 **Team development responsibilities for TM-50I MLEs:**
 
-- Conduct structured code review for all TM-40C practitioners, providing documented, specific, actionable feedback — not just approval/rejection
+- Conduct structured code review for all TM-40I practitioners, providing documented, specific, actionable feedback — not just approval/rejection
 - Lead post-incident reviews for all production ML incidents; publish findings to the team
 - Maintain the team's shared knowledge base: approved patterns, anti-patterns with documented failure modes, lessons from past incidents
 - Review and update production readiness gate criteria annually; incorporate lessons from incidents and from platform evolution
-- Identify knowledge gaps in the TM-40C team; recommend or design targeted training to address them
+- Identify knowledge gaps in the TM-40I team; recommend or design targeted training to address them
 - Represent ML capability requirements to C2DAO in architecture reviews; advocate for platform investments that unblock the team
 
 ---
 
 ## APPENDIX A — ML PRODUCTION READINESS CHECKLIST (ADVANCED)
 
-**Purpose:** This checklist extends the TM-40C governance checklist for models operating under TM-50I scope: automated retraining pipelines, real-time inference endpoints, federated models, or models with advanced neural architectures. Complete all items. Mark N/A only if the item is genuinely inapplicable — document the justification.
+**Purpose:** This checklist extends the TM-40I governance checklist for models operating under TM-50I scope: automated retraining pipelines, real-time inference endpoints, federated models, or models with advanced neural architectures. Complete all items. Mark N/A only if the item is genuinely inapplicable — document the justification.
 
 **Model Identifier:** ____________________________
 **Version:** ____________________________
@@ -1192,7 +1183,7 @@ The TM-50I MLE's leadership responsibilities extend beyond technical design. The
 | 7.4 | Model registered in MSS model registry with all required fields complete | ☐ | |
 | 7.5 | Model card complete per Appendix B; all RAIMTF-required sections present | ☐ | |
 | 7.6 | Code review completed by TM-50I qualified reviewer for all production-scope code | ☐ | |
-| 7.7 | TM-40C governance checklist also completed (this checklist does not replace it) | ☐ | |
+| 7.7 | TM-40I governance checklist also completed (this checklist does not replace it) | ☐ | |
 | 7.8 | C2DAO deployment authorization obtained and logged | ☐ | |
 
 **Section scores:**
@@ -1448,4 +1439,4 @@ Any unchecked item without documented N/A justification is a STOP condition.
 *TM-50I — Advanced Machine Learning Engineering — Maven Smart System*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA*
 *Wiesbaden, Germany*
-*UNCLASSIFIED — Distribution: Approved for public release; distribution is unlimited.*
+*UNCLASSIFIED — Distribution: DRAFT — Not yet approved for distribution.*

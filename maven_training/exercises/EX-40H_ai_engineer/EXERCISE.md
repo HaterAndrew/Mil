@@ -1,26 +1,24 @@
 # EX-40H — AI Engineer
 ## Practical Exercise — TM-40H Proficiency
 
-**Version 1.0 | March 2026**
-**Prerequisite:** TM-40H, AI Engineer Technical Manual (and TM-10 through TM-30)
-**Duration:** 3–4 hours
-**Environment:** MSS with AIP Logic, Agent Studio access; Python Transforms enabled (see ENVIRONMENT_SETUP.md)
-
----
+| | |
+|---|---|
+| **Version** | 1.0 — March 2026 |
+| **Prerequisite** | TM-40H (and TM-10 through TM-30) |
+| **Duration** | 3–4 hours |
+| **Environment** | MSS with AIP Logic, Agent Studio, Python Transforms — see ENVIRONMENT_SETUP.md |
 
 ## SCENARIO
 
-The S2 section has a large corpus of synthetic intelligence summaries (free text). You are the AI Engineer tasked to: build a retrieval pipeline over the corpus, create an AIP Logic workflow that classifies summaries by event type, and stand up a basic Agent Studio agent that answers natural-language queries about the corpus.
+The S2 section has a large corpus of synthetic intelligence summaries (free text). Build a retrieval pipeline over the corpus, create an AIP Logic workflow that classifies summaries by event type, and stand up a basic Agent Studio agent that answers natural-language queries about the corpus.
 
-**Training dataset:** ~200 synthetic INTSUM documents (plain text, unclassified).
-
----
+Training dataset: ~200 synthetic INTSUM documents (plain text, unclassified).
 
 ## TASK LIST
 
 ### Task 1 — Ingest and Chunk Documents (30 min)
 - [ ] Ingest the synthetic INTSUM corpus into Foundry as a dataset
-- [ ] Build a chunking transform: split each document into ~500-token chunks with metadata (doc_id, date, event_type_label)
+- [ ] Build a chunking transform: split each document into ~500-token chunks with metadata (`doc_id`, `date`, `event_type_label`)
 - [ ] Verify chunk count and schema
 - **Go:** Chunks dataset created; metadata columns present; no empty chunks
 - **No-Go:** Chunking fails or metadata is missing
@@ -51,37 +49,29 @@ The S2 section has a large corpus of synthetic intelligence summaries (free text
 - **Go:** Documentation is present and accurate
 - **No-Go:** Documentation absent or contains factual errors
 
----
-
 ## EVALUATOR NOTES
 
-**Scoring:** 5 tasks. Go on 4 of 5 = overall Go. No-Go on Task 2 or Task 4 = automatic No-Go (retrieval and agent tool use are the core AI Engineer competencies).
+**Scoring:** 5 tasks. Go on 4 of 5 = overall Go. No-Go on Task 2 or Task 4 = automatic No-Go.
 
 **Pre-exercise checklist:**
 - Confirm AIP Logic is enabled and at least one LLM is available in the training tenant
 - Confirm Agent Studio is enabled and training accounts can create agents
 - Confirm embedding model is available (required for Task 2)
-- Pre-label 10 documents from the corpus with ground truth event types (see ENVIRONMENT_SETUP.md answer key)
+- Pre-label 10 documents from the corpus with ground truth event types (see ENVIRONMENT_SETUP.md)
 - Verify vector index creation works in the training environment before exercise day
 
 **Common failure modes:**
 
 | Task | Common Failure | Evaluator Guidance |
 |------|---------------|--------------------|
-| Task 1 | Metadata columns missing from chunk dataset | doc_id and date are typically forgotten; event_type_label is often left as None — check schema |
-| Task 2 | Embeddings stored as text, not vector type | This prevents index creation; ask participant to show the column type; if wrong, No-Go |
+| Task 1 | Metadata columns missing from chunk dataset | `doc_id` and `date` are typically forgotten; `event_type_label` often left as None — check schema |
+| Task 2 | Embeddings stored as text, not vector type | This prevents index creation; ask participant to show the column type — if wrong, No-Go |
 | Task 2 | Vector index builds but test query returns unrelated results | Likely embedding mismatch (wrong model or wrong column) — ask participant to walk through their approach |
 | Task 3 | Accuracy checked against wrong ground truth file | Confirm participant used the evaluator-provided ground truth, not self-labeled data |
 | Task 4 | Agent cites non-existent document IDs | Hallucinated citations are automatic No-Go; ask participant to click through one citation |
-| Task 5 | Lineage note describes process but omits source dataset name | Common omission; coaching note only (not No-Go) |
+| Task 5 | Lineage note describes process but omits source dataset name | Coaching note only (not No-Go) |
 
 **Timing notes:**
-- Task 2 (embeddings + index) depends heavily on model availability and index build time — budget 60 min
+- Task 2 (embeddings + index) depends on model availability and index build time — budget 60 min
 - Task 4 (Agent Studio) is often the most time-consuming for first-time users — budget 75 min
-- Participants who have prior RAG or vector DB experience will complete Tasks 1-2 in half the expected time
-
----
-
-## ENVIRONMENT SETUP
-
-See [ENVIRONMENT_SETUP.md](ENVIRONMENT_SETUP.md) for full setup instructions.
+- Participants with prior RAG or vector DB experience will complete Tasks 1–2 in half the expected time

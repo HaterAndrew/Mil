@@ -8,7 +8,7 @@ Wiesbaden, Germany
 
 2026
 
-DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.
+DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.
 
 PROPONENT: Headquarters, United States Army Europe and Africa (USAREUR-AF), G6/Data
 
@@ -1616,8 +1616,9 @@ assign and enforce data roles explicitly.
 | All Soldiers and civilians | TM-10 (Operator) — Navigate Maven, consume data products, follow data handling and security procedures | Unit-level training; TM-10 self-paced course |
 | All personnel | TM-20 (Builder) — Build basic data products; identify and report quality issues | Unit training; TM-20 course (builds on TM-10) |
 | Data-adjacent billets (17/25-series, S6/G6/G2/G9) | TM-30 (Advanced Builder) — Design pipelines and Ontology objects; govern data products | TM-30 course (builds on TM-20); mentored practicum |
-| ORSA, AI Eng, ML Eng, PM, KM, SWE billets | TM-40 Series (Specialist) — Role-specific track at the assigned specialist level | TM-40A through TM-40F per billet type; prerequisite TM-30 |
-| Senior data leads, capability developers, training cadre | TM-50 Series (Advanced Specialist) — Research-grade proficiency; leads and develops capability in specialist track | TM-50A through TM-50F per track; prerequisite TM-40 in same track |
+| WFF functional staff (INT, FIRES, M2, SUST, PROT, MC) | TM-40 Series (WFF Track) — MSS integration within assigned warfighting function | TM-40A through TM-40F per WFF assignment; prerequisite TM-20 |
+| ORSA, AI Eng, ML Eng, PM, KM, SWE billets | TM-40 Series (Technical Specialist) — Role-specific track at the assigned specialist level | TM-40G through TM-40L per billet type; prerequisite TM-30 |
+| Senior data leads, capability developers, training cadre | TM-50 Series (Advanced Specialist) — Research-grade proficiency; leads and develops capability in specialist track | TM-50G through TM-50L per track; prerequisite TM-40G–L in same track |
 | Commander/Senior Leader | Commander-level (direction, evaluation, resourcing) — Not a technical track; governed by this publication and the companion senior leader guide | Data Literacy for Senior Leaders; unit immersion; C2DAO advisory |
 
 9-6c. Data literacy qualification is a readiness consideration. A unit with systematically low data literacy across the staff cannot produce the quality of analytical products required for complex operations. Commanders must assess and develop data literacy as part of overall readiness. TM-10 and TM-20 completion should be tracked as unit-level training metrics comparable to weapons qualification.
@@ -2285,4 +2286,4 @@ military operations across Europe, portions of Asia, the Arctic, and the Atlanti
 
 *By order of the Commanding General, United States Army Europe and Africa.*
 
-*DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.*
+*DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.*

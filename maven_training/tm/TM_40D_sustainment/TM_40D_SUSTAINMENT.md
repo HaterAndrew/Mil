@@ -11,7 +11,7 @@ Wiesbaden, Germany
 
 **PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; CONCEPTS_GUIDE_TM40D_SUSTAINMENT (required before beginning this manual). No coding, pipeline development, or transform experience is required or assumed.
 
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 **AUTHORITY:** This publication is issued under authority of the USAREUR-AF C2 Data and Analytics Office (C2DAO). It implements Army CIO Memorandum, Data and Analytics Policy (April 2024), aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025), and supports implementation of ADP 4-0, FM 4-0, ATP 4-0.1, FM 4-01, ATP 4-42, ATP 4-41, ATP 4-15, and FM 4-30. Reference learn-data.armydev.com for current platform documentation.
 
@@ -184,7 +184,7 @@ Workspace configuration varies by sustainment echelon.
 
 - Building MSS pipelines, transforms, or dashboards — see TM-20 and TM-30
 - Ontology modification or dataset schema changes — see TM-30
-- Machine learning models — see TM-40C (TM-50I)
+- Machine learning models — see TM-40I (TM-50I)
 - GCSS-Army transaction entry procedures — see GCSS-Army user documentation
 - SAMS-E work order entry — see SAMS-E user manuals
 - IPPS-A personnel transactions — see IPPS-A user documentation

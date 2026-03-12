@@ -1,0 +1,8 @@
+INTSUM INTSUM_20250906_020 — OBSERVATION REPORT
+DTG: 060000Z SEP 2025
+Unit: DIV CAV
+
+Summary: OP OP WOLF reported observation of 11 unidentified vehicles moving in convoy formation along ROUTE COPPER at 1250 local. Vehicles: HET. Movement direction: EAST. No hostile action observed. Convoy cleared the AO within 22 minutes.
+
+Assessment: Likely civilian logistics movement. Pattern consistent with previous Thursday observations. Does not meet CCIR threshold at this time.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

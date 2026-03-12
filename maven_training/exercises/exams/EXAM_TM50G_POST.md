@@ -1,12 +1,12 @@
 # POST-TEST — TM-50G: ADVANCED ORSA
 ## Maven Smart System (MSS) — USAREUR-AF
 
-| | |
+| Field | Detail |
 |---|---|
 | **Course** | TM-50G: Advanced ORSA |
 | **Form** | Post-Test |
 | **Level** | TM-50G (Advanced Specialist) |
-| **Audience** | FA49 / senior ORSA analysts; prerequisite: TM-40A + 18 months ORSA experience + graduate quantitative methods |
+| **Audience** | FA49 / senior ORSA analysts; prerequisite: TM-40G + 18 months ORSA experience + graduate quantitative methods |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (42/60) |
 

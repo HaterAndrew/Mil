@@ -8,7 +8,7 @@ Wiesbaden, Germany
 
 **PURPOSE:** This guide develops the operational mental models required to effectively integrate MSS into Mission Command functions. It is a prerequisite companion to TM-40F and must be read before beginning TM-40F task instruction. This guide is conceptual — it develops understanding, not procedures. No step-by-step tasks appear here.
 
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 ---
 
@@ -543,4 +543,4 @@ Before using MSS data to support a commander brief or assessment, confirm each i
 Wiesbaden, Germany
 2026
 
-DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.
+DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.

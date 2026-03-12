@@ -1,7 +1,7 @@
 # LESSON PLAN OUTLINES — TM-40 SPECIALIST TRACKS
 ## USAREUR-AF Operational Data Team — C2DAO
-**Covers:** TM-40A (ORSA) | TM-40B (AI Engineer) | TM-40C (MLE) | TM-40D (PM) | TM-40E (KM) | TM-40F (SWE)
-**Version:** 1.0 — March 2026
+**Covers:** TM-40G (ORSA) | TM-40H (AI Engineer) | TM-40I (MLE) | TM-40J (PM) | TM-40K (KM) | TM-40L (SWE)
+**Version:** 1.1 — March 2026 (updated: specialist tracks renumbered G–L; WFF tracks are TM-40A–F, prereq TM-20)
 
 > Abbreviated LP outlines for TM-40 specialist courses.
 > Instructors at TM-40 level must have deep domain SME background — these outlines supplement SME knowledge, not replace it.
@@ -9,9 +9,9 @@
 
 ---
 
-# PART A — TM-40A: ORSA SPECIALIST
+# PART A — TM-40G: ORSA SPECIALIST
 
-**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** FA49 or equivalent; TM-40A certified or C2DAO ORSA SME
+**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** FA49 or equivalent; TM-40G certified or C2DAO ORSA SME
 
 ---
 
@@ -51,7 +51,7 @@
 **Hours:** 0.75 | **Method:** Lab | **Day:** 1 | **Time:** 1115–1200
 
 **Key Delivery Notes:**
-- Three access patterns: Spark DataFrame (large datasets), pandas (smaller datasets via `.toPandas()`), direct Foundry REST API. For TM-40A, Spark → pandas conversion is the primary pattern.
+- Three access patterns: Spark DataFrame (large datasets), pandas (smaller datasets via `.toPandas()`), direct Foundry REST API. For TM-40G, Spark → pandas conversion is the primary pattern.
 - Schema inspection: `df.printSchema()` or `df.dtypes`. Confirm column names and types match the Ontology definition.
 
 ---
@@ -191,7 +191,7 @@
 
 ---
 
-# PART B — TM-40B: AI ENGINEER
+# PART B — TM-40H: AI ENGINEER
 
 **Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** AIP Logic authoring experience; C2DAO AI SME designation
 
@@ -210,7 +210,7 @@
 - Cover the Army CIO AI policy (April 2024) — prohibited use categories, human oversight requirements, OPSEC implications of AI outputs.
 - Operational context: AI outputs may be used in briefings, decision products, and Ontology records that commanders rely on. An incorrect extraction in a SITREP summary is a readiness reporting error.
 - Human-in-the-loop: NO AIP Logic workflow may write to production Ontology Objects without a tested human checkpoint. This is a non-negotiable design requirement, not a policy preference.
-- Walk through TM-40B Appendix B (Prohibited Use Cases) line by line.
+- Walk through TM-40H Appendix B (Prohibited Use Cases) line by line.
 
 **Assessment:** AIP Authorization Checklist completion is evaluated in Practical Exercise Task 6.
 
@@ -282,7 +282,7 @@
 
 ---
 
-# PART C — TM-40C: ML ENGINEER
+# PART C — TM-40I: ML ENGINEER
 
 **Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** ML production experience; C2DAO MLE SME designation
 
@@ -291,7 +291,7 @@
 ### Block 1 — MLE Role and Model Governance Overview
 **Hours:** 1.0 | **Method:** Brief | **Day:** 1
 
-**Purpose:** Read TM-40C Chapter 9 (governance) first. The governance destination makes the technical work purposeful. Every model must eventually produce a model card.
+**Purpose:** Read TM-40I Chapter 9 (governance) first. The governance destination makes the technical work purposeful. Every model must eventually produce a model card.
 
 **TLO:** The trainee will describe the MLE role on MSS and state the required components of a model governance document (model card).
 
@@ -314,7 +314,7 @@
 **Day:** 2
 
 **Block 6:** Full feature pipeline: raw → feature matrix. Every step documented.
-**Block 7:** Leakage audit. Can any feature be derived from the label? Run the procedure from TM-40C Ch 3. This is evaluated.
+**Block 7:** Leakage audit. Can any feature be derived from the label? Run the procedure from TM-40I Ch 3. This is evaluated.
 **Block 8:** Output to Foundry curated dataset via write transaction. Verify schema.
 **Block 9:** Experiment setup: train/test split, baseline model (majority class), cross-validation configuration.
 
@@ -354,7 +354,7 @@
 
 ---
 
-# PART D — TM-40D: PROGRAM MANAGER
+# PART D — TM-40J: PROGRAM MANAGER
 
 **Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Program management background; TM-30 certified; GFEBS/IMS proficiency
 
@@ -432,7 +432,7 @@
 
 ---
 
-# PART E — TM-40E: KNOWLEDGE MANAGER
+# PART E — TM-40K: KNOWLEDGE MANAGER
 
 **Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** KM background; TM-30 certified; AIP Logic configuration proficiency
 
@@ -492,7 +492,7 @@
 
 **Block 7 (SOP Version Control):** Version tagging. Review notification workflow when SOP review date is passed.
 
-**Block 8 (ExpertiseProfile + Privacy Act):** Skills taxonomy. Privacy Act authorities (TM-40E Section 8-1) apply to skills databases — the evaluator will ask about this.
+**Block 8 (ExpertiseProfile + Privacy Act):** Skills taxonomy. Privacy Act authorities (TM-40K Section 8-1) apply to skills databases — the evaluator will ask about this.
 
 **Block 9 (PCS Transfer):** Key person dependency analysis. Transfer package must name specific Foundry projects, Object Types, pipelines, data quality status, and required contacts. Generic template = No-Go.
 
@@ -503,7 +503,7 @@
 ### Blocks 11–13 — PCS Package Review and Practical Exercise
 **Day:** 3
 
-**Block 11 (PCS Draft Review, 2.25 hrs):** Each trainee presents draft PCS package to instructor. Instructor reviews against TM-40E Ch 9 completeness criteria. Revise based on feedback. **This block is instruction, not optional preparation.**
+**Block 11 (PCS Draft Review, 2.25 hrs):** Each trainee presents draft PCS package to instructor. Instructor reviews against TM-40K Ch 9 completeness criteria. Revise based on feedback. **This block is instruction, not optional preparation.**
 
 **Block 12:** Practical exercise scenario brief.
 
@@ -515,16 +515,16 @@
 
 ---
 
-# PART F — TM-40F: SOFTWARE ENGINEER
+# PART F — TM-40L: SOFTWARE ENGINEER
 
-**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** OSDK/Platform SDK experience; TM-40F certified; C2DAO SWE SME designation
+**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** OSDK/Platform SDK experience; TM-40L certified; C2DAO SWE SME designation
 
 ---
 
 ### Block 1 — SWE Role and OSDK Architecture
 **Hours:** 1.0 | **Method:** Lecture | **Day:** 1
 
-**Purpose:** TM-40F SWEs are building production software on Foundry. Security must be established as a first principle before any code is written. Read TM-40F Chapter 9 (Security) before Day 1.
+**Purpose:** TM-40L SWEs are building production software on Foundry. Security must be established as a first principle before any code is written. Read TM-40L Chapter 9 (Security) before Day 1.
 
 **Key Delivery Notes:**
 - The 5-layer data stack: raw data → pipelines → Ontology → OSDK → applications. SWEs live at layer 4–5.
@@ -568,7 +568,7 @@
 
 **Block 12 (TypeScript FOO):** Repository structure, computed property implementation, function registration. FOO extends the Ontology with computed properties that Foundry evaluates.
 
-**Block 13 (FOO Bulk Query Patterns):** N+1 queries are the most common FOO performance failure. If your FOO makes 1 API call per Object, it will time out at 200+ Objects. Use bulk query patterns from TM-40F Chapter 5.
+**Block 13 (FOO Bulk Query Patterns):** N+1 queries are the most common FOO performance failure. If your FOO makes 1 API call per Object, it will time out at 200+ Objects. Use bulk query patterns from TM-40L Chapter 5.
 
 ---
 
@@ -601,4 +601,4 @@
 ---
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*TM-40 Specialist Lesson Plan Outlines | Version 1.0 | March 2026*
+*TM-40 Specialist Lesson Plan Outlines | Version 1.1 | March 2026*

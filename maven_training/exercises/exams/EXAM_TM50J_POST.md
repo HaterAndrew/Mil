@@ -1,12 +1,12 @@
 # POST-TEST — TM-50J: ADVANCED PROGRAM MANAGER
 ## Maven Smart System (MSS) — USAREUR-AF
 
-| | |
+| Field | Detail |
 |---|---|
 | **Course** | TM-50J: Advanced Program Manager |
 | **Form** | Post-Test |
 | **Level** | TM-50J (Advanced Specialist) |
-| **Audience** | Senior program managers; prerequisite: TM-40D + full-lifecycle MSS project delivery |
+| **Audience** | Senior program managers; prerequisite: TM-40J + full-lifecycle MSS project delivery |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (42/60) |
 
@@ -228,7 +228,7 @@ SA-3. Full credit: retirement risk — the G3 is making operational decisions ba
 
 SA-4. Full credit: governance artifacts — model registry (each system: version, acceptance status, monitoring status, compliance mapping); AI system inventory with ownership; model cards for each system; review cycle: quarterly spot-check (output quality metrics, PSI alerts, monitoring status); annual comprehensive review (acceptance thresholds, compliance mapping to Army CIO + RAIMTF, red-team results); compliance tracking: each system mapped to Army CIO Memo and DoD RAIMTF requirements with pass/fail status; governance review failure procedure: system placed on conditional status with 30-day remediation; if remediation fails, system suspended pending command AI governance board decision; no system deployed without a decommission plan.
 
-SA-5. Full credit: decision framework applied — (1) mission fit: does the standard Workshop/Pipeline Builder capability meet all theater sustainment dashboard requirements? (2) time-to-capability: Workshop/Pipeline Builder can be delivered faster; (3) maintainability: Workshop/Pipeline Builder requires TM-20/30 skills to maintain (widely available); OSDK requires TM-40F SWE skills (scarce); (4) vendor lock-in: both approaches use Foundry — configure approach stays on standard platform; build approach creates custom code dependency; (5) organizational competency: is there a TM-40F qualified SWE available to maintain custom code through PCS cycles?; recommendation: configure (Workshop + Pipeline Builder) unless there are specific capability requirements that cannot be met by the standard platform — custom code should be reserved for cases where the standard platform is insufficient, because it creates a long-term maintenance burden with scarce skills.
+SA-5. Full credit: decision framework applied — (1) mission fit: does the standard Workshop/Pipeline Builder capability meet all theater sustainment dashboard requirements? (2) time-to-capability: Workshop/Pipeline Builder can be delivered faster; (3) maintainability: Workshop/Pipeline Builder requires TM-20/30 skills to maintain (widely available); OSDK requires TM-40L SWE skills (scarce); (4) vendor lock-in: both approaches use Foundry — configure approach stays on standard platform; build approach creates custom code dependency; (5) organizational competency: is there a TM-40L qualified SWE available to maintain custom code through PCS cycles?; recommendation: configure (Workshop + Pipeline Builder) unless there are specific capability requirements that cannot be met by the standard platform — custom code should be reserved for cases where the standard platform is insufficient, because it creates a long-term maintenance burden with scarce skills.
 
 ---
 

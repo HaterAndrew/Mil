@@ -11,7 +11,7 @@ Wiesbaden, Germany
 
 This publication supports USAREUR-AF data operations aligned with the Army Data Plan 2022 and the DoD Data Strategy. All roles, policies, and architectural terms reflect current Army CIO guidance, including the Army Data Stewardship Policy (April 2024) and the Unified Network Plan 2.0 (March 2025).
 
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 ---
 
@@ -1079,13 +1079,6 @@ Example: Battalion S1 officers who submit daily readiness reports through the Wo
 
 ---
 
-**Data Steward**
-*Foundry Equivalent: Assigned role — a person who manages data quality, access, and standards for a domain*
-Definition: The individual responsible for the day-to-day execution of data governance policies for a specific data domain. The data steward maintains the data dictionary, monitors data quality, approves access requests in coordination with the data owner, applies markings, and communicates schema changes to downstream consumers. The data steward is the primary point of contact for questions about a dataset's content and meaning.
-Example: The USAREUR-AF G6 data steward for the logistics domain manages the Foundry markings on all supply chain datasets, reviews the data dictionary monthly, and approves or denies access requests from analysts needing logistics data.
-
----
-
 **GEOINT Analyst**
 *Foundry Equivalent: Gaia user (within MSS); Workshop map widget consumer; GeoPoint/Geoshape property user*
 Definition: An intelligence analyst specializing in geospatial intelligence — deriving intelligence from imagery, mapping data, and location-based analysis. In the Foundry/Maven context, GEOINT analysts are primary consumers of geospatial object properties (GeoPoint, Geoshape), Gaia's visualization layer, and Pipeline Builder geo-join operations. They translate location data into operational understanding.
@@ -1132,13 +1125,6 @@ Example: The USAREUR-AF C2DAO implements Army enterprise data governance standar
 *Foundry Equivalent: N/A — organizational role above command level.*
 Definition: One of four senior officials appointed by the Army CIO, each responsible for data governance within a mission area: Warfighter, Intelligence, Business, and Enterprise IT. MADOs set enterprise data policy within their domain, appoint Data Stewards, and report to the Army Chief Data & Analytics Officer (CDAO). MADOs are nominated by three-star Deputy Chiefs of Staff or SES civilians and approved by the CDAO. At command level, the equivalent implementing role is the C2DAO. *Established by Army CIO Memorandum, April 2024.*
 Example: The Warfighter Mission Area Data Officer establishes access, quality, and retention policy for all operational data — including readiness, logistics, and personnel data — that commands like USAREUR-AF then implement through their C2DAO.
-
----
-
-**Data Steward**
-*MSS Equivalent: Project owner or dataset steward in Foundry who controls access and quality standards for a specific dataset or domain.*
-Definition: An official appointed by a Mission Area Data Officer to establish access policies, retention requirements, and data generation standards for a specific data type or domain. The Data Steward is the primary point of accountability for data quality, access control, and schema governance within their assigned domain. They maintain the data dictionary, monitor quality checks, approve access requests, apply markings, and communicate schema changes to downstream consumers. In Foundry, data steward responsibilities are executed through project owner roles, marking management, and @check configurations. *Established by Army CIO Memorandum, April 2024. See also: Data Steward entry in Section 1 for the general operational definition.*
-Example: The USAREUR-AF G6 data steward for the logistics domain manages markings on all supply chain datasets, reviews the data dictionary quarterly, and approves or denies access requests from analysts needing logistics data.
 
 ---
 
@@ -1273,24 +1259,10 @@ Example: A user must re-authenticate and have their attributes verified each tim
 
 ---
 
-**Data Mesh**
-*Foundry Equivalent: Distributed Foundry projects with federated ontology + shared Object Types*
-Definition: An architectural approach treating data as a product, with domain-specific teams owning their data pipelines and surfaces while sharing through a common governance model. Army is implementing data mesh principles to integrate enterprise and tactical environments per 2024 Army CIO policy.
-Example: Each warfighting function (fires, sustainment, personnel) owns its own data domain within MSS but publishes objects to the shared Ontology for cross-domain analysis.
-
----
-
 **VAUTI Framework**
 *Foundry Equivalent: The design goal for any well-built Foundry pipeline and Ontology*
 Definition: DoD Data Strategy's five data properties: Visible (data is findable), Accessible (authorized users can get to it), Understandable (meaning is clear), Trustable (quality and provenance are known), Interoperable (can be used across systems). All Army data systems must meet VAUTI standards.
 Example: A readiness dataset is VAUTI-compliant when: it appears in the MSS catalog (Visible), all credentialed users can query it (Accessible), columns are labeled with clear definitions (Understandable), it has documented provenance and @check validators (Trustable), and it uses standard identifiers shared across G1/G3/G4 systems (Interoperable).
-
----
-
-**5-Layer Data Stack (USAREUR-AF)**
-*Foundry Equivalent: Maps directly to Foundry's architecture*
-Definition: USAREUR-AF's standard data architecture model. Five layers: (1) Infrastructure — compute, storage, connectivity; (2) Integration — pipelines, ingestion, ETL; (3) Semantic — ontology, meaning, governance; (4) Analytics — analysis, dashboards, reporting; (5) Activation — applications, decisions, actions. The Maven Smart System implements all five layers.
-Example: A readiness dashboard lives at Layer 5 (Activation), fed by a transform at Layer 2 (Integration), using Object Types defined at Layer 3 (Semantic), running on cloud infrastructure at Layer 1 (Infrastructure).
 
 ---
 

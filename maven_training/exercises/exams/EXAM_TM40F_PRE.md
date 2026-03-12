@@ -1,7 +1,7 @@
 # PRE-TEST — TM-40F: MISSION COMMAND
 ## Maven Smart System (MSS) — USAREUR-AF
 
-| | |
+| Field | Detail |
 |---|---|
 | **Course** | TM-40F: Mission Command WFF Track |
 | **Form** | Pre-Test |

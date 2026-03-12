@@ -1,10 +1,9 @@
-# COURSE SYLLABUS
-## TM-50K — ADVANCED KNOWLEDGE MANAGEMENT
-### Maven Smart System (MSS) — USAREUR-AF
+# COURSE SYLLABUS — TM-50K: ADVANCED KNOWLEDGE MANAGEMENT
+## Maven Smart System (MSS) — USAREUR-AF
 
-| | |
+| Field | Detail |
 |---|---|
-| **Level** | TM-50K (Advanced Knowledge Manager Specialist Track) |
+| **Level** | TM-50K — Advanced Knowledge Manager Specialist Track |
 | **Duration** | 3 days (24 hours) |
 | **Prerequisites** | TM-40K complete (Go evaluation on file); 12+ months active KM practice in a military or large organizational context; demonstrated experience designing knowledge systems, not just operating them |
 | **Audience** | Senior KMOs, organizational knowledge architects, KM leads managing enterprise-level institutional knowledge systems on MSS |
@@ -15,26 +14,26 @@
 
 ---
 
-## What This Course Does for You
-
-TM-50K moves beyond individual lessons-learned systems (TM-40K) to the design and governance of enterprise knowledge architectures — multi-domain taxonomies, AI-augmented synthesis and retrieval, knowledge system interoperability, and the organizational discipline required to prevent institutional memory from degrading over time. TM-50K practitioners design systems that outlast individual personnel.
+**BLUF:** TM-50K moves beyond individual lessons-learned systems (TM-40K) to the design and governance of enterprise knowledge architectures — multi-domain taxonomies, AI-augmented synthesis and retrieval, knowledge system interoperability, and the organizational discipline required to prevent institutional memory from degrading over time. TM-50K practitioners design systems that outlast individual personnel.
 
 ---
 
 ## Learning Objectives
 
-By the end of training, you will be able to:
-
-1. Design a multi-domain knowledge architecture for a theater formation: taxonomy design, cross-functional ontology linkage, governance roles and responsibilities
-2. Build AI-augmented knowledge synthesis pipelines: automated tagging, theme extraction, summary generation using AIP Logic, with human review gates at appropriate points
-3. Design knowledge retrieval systems for scale: semantic search architecture, query expansion, relevance feedback, zero-recall failure handling
-4. Implement a knowledge quality governance framework: accuracy auditing, freshness policy, contradiction management, authoritative source designation
-5. Design knowledge transfer and unit continuity systems that survive personnel turnover: handoff protocols, knowledge decay monitoring, reactivation procedures
-6. Evaluate the health of an existing knowledge system: identify staleness, coverage gaps, usage analytics, and recommend a remediation plan
+| # | Objective |
+|---|---|
+| 1 | Design a multi-domain knowledge architecture for a theater formation: taxonomy design, cross-functional ontology linkage, governance roles and responsibilities |
+| 2 | Build AI-augmented knowledge synthesis pipelines: automated tagging, theme extraction, summary generation using AIP Logic, with human review gates at appropriate points |
+| 3 | Design knowledge retrieval systems for scale: semantic search architecture, query expansion, relevance feedback, zero-recall failure handling |
+| 4 | Implement a knowledge quality governance framework: accuracy auditing, freshness policy, contradiction management, authoritative source designation |
+| 5 | Design knowledge transfer and unit continuity systems that survive personnel turnover: handoff protocols, knowledge decay monitoring, reactivation procedures |
+| 6 | Evaluate the health of an existing knowledge system: identify staleness, coverage gaps, usage analytics, and recommend a remediation plan |
 
 ---
 
-## Before You Attend: Pre-Course Checklist
+## Pre-Course Checklist
+
+Complete **5+ duty days before Day 1:**
 
 - [ ] Read TM-50K, Chapter 1 (Enterprise KM Architecture) before Day 1
 - [ ] Prepare a 1-page description of the knowledge system your unit currently operates (or the most significant one you've managed) — gaps, strengths, and your top two challenges
@@ -44,7 +43,7 @@ By the end of training, you will be able to:
 
 ## Daily Schedule
 
-**Day 1 — Enterprise Knowledge Architecture**
+### Day 1 — Enterprise Knowledge Architecture
 
 | Time | Block | Method | Content |
 |---|---|---|---|
@@ -57,11 +56,11 @@ By the end of training, you will be able to:
 | 1500–1515 | — | Break | |
 | 1515–1700 | 5 | Lab | Knowledge system health metrics: usage analytics, query-with-no-results rate, content age distribution, coverage gap identification |
 
-**Evening:** TM-50K, Chapter 3 (AI-Augmented Knowledge Synthesis) — human review gate placement section.
+**Evening reading:** TM-50K, Chapter 3 (AI-Augmented Knowledge Synthesis) — human review gate placement section.
 
 ---
 
-**Day 2 — AI-Augmented KM and Continuity Systems**
+### Day 2 — AI-Augmented KM and Continuity Systems
 
 | Time | Block | Method | Content |
 |---|---|---|---|
@@ -74,11 +73,11 @@ By the end of training, you will be able to:
 | 1500–1515 | — | Break | |
 | 1515–1700 | 9 | Seminar | Cross-organizational KM interoperability: sharing knowledge between formations without duplicating governance complexity; federation patterns |
 
-**Evening:** Prepare Day 3 knowledge system evaluation (bring health metrics from a real or notional system).
+**Evening reading:** Prepare Day 3 knowledge system evaluation (bring health metrics from a real or notional system).
 
 ---
 
-**Day 3 — Knowledge System Evaluation and Practical Exercise**
+### Day 3 — Knowledge System Evaluation and Practical Exercise
 
 | Time | Block | Method | Content |
 |---|---|---|---|
@@ -88,7 +87,7 @@ By the end of training, you will be able to:
 | 1045–1100 | 12 | Brief | Practical evaluation scenario brief |
 | 1100–1200 | — | Prep | Scenario planning |
 | 1200–1300 | — | Lunch | |
-| 1300–1700 | 13 | Eval | **Evaluated exercise:** Design an enterprise knowledge architecture for a notional theater G7 section; produce a taxonomy, governance plan, and AI-augmented synthesis pipeline design; brief to evaluator |
+| 1300–1700 | 13 | **Eval** | **Evaluated exercise:** Design an enterprise knowledge architecture for a notional theater G7 section; produce a taxonomy, governance plan, and AI-augmented synthesis pipeline design; brief to evaluator |
 
 **Go standard:** Architecture covers all required domains; AI pipeline includes human review gate; governance plan addresses freshness and contradiction management; continuity section present.
 

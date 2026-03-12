@@ -1,29 +1,17 @@
----
-TM-50L
-TECHNICAL MANUAL
-ADVANCED SOFTWARE ENGINEERING
-MAVEN SMART SYSTEM
-USAREUR-AF OPERATIONAL DATA TEAM
+# TM-50L — ADVANCED SOFTWARE ENGINEERING
+## MAVEN SMART SYSTEM (MSS) | USAREUR-AF OPERATIONAL DATA TEAM
 
-HEADQUARTERS
-UNITED STATES ARMY EUROPE AND AFRICA
-Wiesbaden, Germany
+**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA** | Wiesbaden, Germany | 2026 | Version 1.0
 
-2026
+**UNCLASSIFIED** | Distribution: DRAFT — Not yet approved for distribution.
 
-**Version 1.0 | March 2026**
-
-UNCLASSIFIED
-Distribution: Approved for public release; distribution is unlimited.
----
-
-**PREREQUISITE PUBLICATIONS:** TM-40F (Software Engineer) — required. TM-40B (AI Engineer) and TM-40C (ML Engineer) — recommended for integration track engineers. Senior-level Python and TypeScript proficiency required.
+**PREREQUISITE PUBLICATIONS:** TM-40L (Software Engineer) — required. TM-40H (AI Engineer) and TM-40I (ML Engineer) — recommended for integration track engineers. Senior-level Python and TypeScript proficiency required.
 
 **DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Reason: operational systems documentation. Other requests must be referred to USAREUR-AF G6.
 
 ---
 
-> **PREREQUISITE WARNING:** TM-50L is **not required** for the majority of software engineer billets. It is intended for personnel with demonstrated proficiency at TM-40F level who are actively building production infrastructure, CBAC frameworks, or external application integrations on MSS. If you are uncertain whether TM-50L applies to your billet, consult your supervisor or the unit data steward before proceeding.
+> **PREREQUISITE WARNING:** TM-50L is **not required** for the majority of software engineer billets. It is intended for personnel with demonstrated proficiency at TM-40L level who are actively building production infrastructure, CBAC frameworks, or external application integrations on MSS. If you are uncertain whether TM-50L applies to your billet, consult your supervisor or the unit data steward before proceeding.
 
 ---
 
@@ -70,11 +58,11 @@ Before performing any task at TM-50L level:
 
 **BLUF:** TM-50L qualifies senior software engineers to lead MSS application development capability — designing platform architecture, enforcing security at scale, optimizing performance, and governing the technical practices of the USAREUR-AF SWE community.
 
-This manual builds directly on TM-40F. It does not repeat TM-40F content. If a concept was covered in TM-40F, this manual references it and extends it. Engineers who have not completed TM-40F will lack the foundational context required for TM-50L tasks.
+This manual builds directly on TM-40L. It does not repeat TM-40L content. If a concept was covered in TM-40L, this manual references it and extends it. Engineers who have not completed TM-40L will lack the foundational context required for TM-50L tasks.
 
 TM-50L scope:
 
-| Domain | TM-40F Baseline | TM-50L Extension |
+| Domain | TM-40L Baseline | TM-50L Extension |
 |---|---|---|
 | Platform SDK | Dataset read/write, transaction management | Infrastructure integrations at scale, branch automation, bulk operations |
 | Performance | Writing functional queries | Query profiling, caching architecture, indexing strategy, compute cost management |
@@ -107,12 +95,12 @@ MISSION REQUIREMENT
    SWE community leadership)
         |
         v
-  TM-40F SWE TEAM           <- Your developers
+  TM-40L SWE TEAM           <- Your developers
   (OSDK apps, FOO, Workshop/OSDK-external,
    integrations, CI/CD)
         |
         v
-  TM-30 / TM-40A/B/C        <- Builders and analysts
+  TM-30 / TM-40G/H/I        <- Builders and analysts
   (Ontology design,
    pipelines, AI/ML)
         |
@@ -121,17 +109,17 @@ MISSION REQUIREMENT
   (Commanders, staff, EUCOM)
 ```
 
-TM-50L engineers are force multipliers. One senior engineer enabling ten TM-40F developers to build correctly produces ten times the correct output. One senior engineer who builds solo produces one application. Lead.
+TM-50L engineers are force multipliers. One senior engineer enabling ten TM-40L developers to build correctly produces ten times the correct output. One senior engineer who builds solo produces one application. Lead.
 
 ### 1-3. Prerequisites
 
 | Prerequisite | Verification Method |
 |---|---|
-| TM-40F (Software Engineer) | Demonstrated proficiency: OSDK Python + TypeScript, Platform SDK, FOO, Workshop/OSDK-external apps, CI/CD, CBAC in apps |
+| TM-40L (Software Engineer) | Demonstrated proficiency: OSDK Python + TypeScript, Platform SDK, FOO, Workshop/OSDK-external apps, CI/CD, CBAC in apps |
 
 > **NOTE:** Slate is Foundry's legacy application builder and is no longer the recommended path for new development. Use Workshop for internal Foundry applications, or OSDK-backed external applications for public-facing deployments.
-| TM-40B (AI Engineer) | Recommended — required for engineers in the integration/AI pipeline track |
-| TM-40C (ML Engineer) | Recommended — required for engineers supporting ML model serving integrations |
+| TM-40H (AI Engineer) | Recommended — required for engineers in the integration/AI pipeline track |
+| TM-40I (ML Engineer) | Recommended — required for engineers supporting ML model serving integrations |
 | Senior Python | Async concurrency, profiling, memory management, packaging, type-checked codebases |
 | Senior TypeScript | Advanced generics, module federation, build optimization, strict mode |
 | Distributed systems | Event-driven architecture, eventual consistency, back-pressure, idempotency |
@@ -160,7 +148,7 @@ Chapter 8 (Platform Leadership) is reference and guidance — not task-based. It
 
 Appendices A and B are operational references used during code review and ATO support activities.
 
-> **NOTE:** Cross-references to TM-40B (AI Engineer) and TM-40C (ML Engineer) appear throughout. These are coordination points, not redundant content. When building systems that span multiple technical domains, engage the relevant TM-40-series engineers — do not attempt to own all domains as a single SWE.
+> **NOTE:** Cross-references to TM-40H (AI Engineer) and TM-40I (ML Engineer) appear throughout. These are coordination points, not redundant content. When building systems that span multiple technical domains, engage the relevant TM-40-series engineers — do not attempt to own all domains as a single SWE.
 
 ---
 
@@ -170,7 +158,7 @@ Appendices A and B are operational references used during code review and ATO su
 
 **BLUF:** The Platform SDK at TM-50L level goes beyond dataset read/write. This chapter covers infrastructure-level operations: bulk dataset management at scale, branch automation, transaction patterns for high-throughput ingestion, dataset lineage management, and the operational patterns required to manage a production MSS data environment programmatically.
 
-TM-40F covered Platform SDK fundamentals: authenticating, reading datasets, writing transactions, accessing file resources. This chapter extends to infrastructure-level use cases that arise when managing the platform at scale.
+TM-40L covered Platform SDK fundamentals: authenticating, reading datasets, writing transactions, accessing file resources. This chapter extends to infrastructure-level use cases that arise when managing the platform at scale.
 
 > **NOTE:** Platform SDK operations at this level can affect shared infrastructure. Bulk deletes, branch merges, and large transaction writes should always be tested in a development or staging environment before execution against production. Coordinate all production operations with C2DAO.
 
@@ -935,7 +923,7 @@ def analyze_query_performance(
 
 **PROCEDURE:**
 1. Identify high-cost patterns using the principles table below.
-2. For full-scan transforms, convert to `@incremental` with watermarks — see TM-40B.
+2. For full-scan transforms, convert to `@incremental` with watermarks — see TM-40H.
 3. For on-demand aggregations, pre-materialize results in a scheduled transform (see example below).
 4. Identify and consolidate redundant transforms computing the same output.
 5. Switch transform schedules from fixed-interval to event-triggered where source data changes are detectable.
@@ -945,7 +933,7 @@ def analyze_query_performance(
 
 | Pattern | Impact | Mitigation |
 |---|---|---|
-| Full dataset scan on each transform run | High CPU/IO | Use @incremental transforms with watermarks — see TM-40B |
+| Full dataset scan on each transform run | High CPU/IO | Use @incremental transforms with watermarks — see TM-40H |
 | FOO property recomputed on every object fetch | High CPU per query | Pre-materialize frequently-used computed properties |
 | On-demand aggregation across millions of objects | High memory/CPU | Pre-aggregate in scheduled transform; serve pre-aggregated results |
 | Redundant transforms (multiple pipelines recomputing the same output) | Wasted compute | Identify shared compute; consolidate to single canonical transform |
@@ -1862,7 +1850,7 @@ class FoundryKinesisIngester:
 
 **BLUF:** DevSecOps integrates security into every phase of the software development lifecycle — not as a gate at the end, but as a continuous practice. For MSS, DevSecOps supports ATO maintenance, reduces time-to-detection for security issues, and ensures code quality across the USAREUR-AF SWE community.
 
-TM-40F covered CI/CD fundamentals. This chapter covers the full DevSecOps pipeline: security scanning, Ontology CI, automated testing at scale, ATO-supporting artifact generation, and the governance processes that connect technical practices to the RMF/ATO lifecycle.
+TM-40L covered CI/CD fundamentals. This chapter covers the full DevSecOps pipeline: security scanning, Ontology CI, automated testing at scale, ATO-supporting artifact generation, and the governance processes that connect technical practices to the RMF/ATO lifecycle.
 
 ### 6-2. CI/CD Pipeline Architecture for MSS
 
@@ -2551,7 +2539,7 @@ class TestCBACBoundaries:
 
 ### 8-2. Architecture Review
 
-**CONDITIONS:** A TM-40F developer or team proposes a new MSS application, integration, or significant change to an existing system.
+**CONDITIONS:** A TM-40L developer or team proposes a new MSS application, integration, or significant change to an existing system.
 
 **STANDARDS:** All new MSS applications and major changes undergo architecture review before development begins. Architecture review is documented. Findings are resolved before development proceeds. Review covers security, performance, multi-tenancy, and maintainability.
 
@@ -2565,7 +2553,7 @@ class TestCBACBoundaries:
 | **Multi-tenancy** | Does this system serve multiple tenants? How is isolation enforced — CBAC, service accounts, code? What happens if isolation fails? |
 | **Performance** | What is the expected query volume? Are there N+1 risks? What is the caching strategy? What is the performance SLA? How was it validated? |
 | **External integrations** | What external systems are connected? How are failures handled? Is the integration idempotent? Has C2DAO authorized the integration? |
-| **Maintainability** | Can a new TM-40F developer understand and maintain this without the original author? Are abstractions well-chosen? Is the test coverage plan realistic? |
+| **Maintainability** | Can a new TM-40L developer understand and maintain this without the original author? Are abstractions well-chosen? Is the test coverage plan realistic? |
 | **Operability** | How will failures be detected? What monitoring and alerting is in place? What is the runbook for common failure modes? |
 | **ATO impact** | Does this change affect the ATO boundary? Does it introduce new data flows, new integrations, or new access patterns that require ATO amendment? |
 
@@ -2603,7 +2591,7 @@ C2DAO Coordination: [TICKET ID or N/A]
 
 ### 8-3. Code Review Standards
 
-**CONDITIONS:** You are conducting code review for a TM-40F developer's pull request.
+**CONDITIONS:** You are conducting code review for a TM-40L developer's pull request.
 
 **STANDARDS:** All code merged to staging or production branches has been reviewed by a TM-50L engineer. Review is substantive — not a rubber stamp. Security findings are blocking. Performance findings are blocking if exceeding defined thresholds. Findings are documented, not just verbally communicated.
 
@@ -2633,7 +2621,7 @@ C2DAO Coordination: [TICKET ID or N/A]
 
 ### 8-4. Developer Onboarding
 
-**CONDITIONS:** A new TM-40F engineer joins the MSS SWE team. You are responsible for onboarding them to team standards and the MSS environment.
+**CONDITIONS:** A new TM-40L engineer joins the MSS SWE team. You are responsible for onboarding them to team standards and the MSS environment.
 
 **STANDARDS:** New engineers can independently build and deploy an MSS application within 30 days of onboarding. Onboarding covers security, tooling, platform access, and team standards. Onboarding is documented — not ad hoc.
 
@@ -2643,7 +2631,7 @@ C2DAO Coordination: [TICKET ID or N/A]
 
 | Week | Activities | Validation |
 |---|---|---|
-| Week 1 | TM-40F review (if not current); C2DAO credentialing; development environment setup; repository access; pre-commit hook installation | Can connect to dev MSS, run test suite |
+| Week 1 | TM-40L review (if not current); C2DAO credentialing; development environment setup; repository access; pre-commit hook installation | Can connect to dev MSS, run test suite |
 | Week 2 | Codebase walkthrough with TM-50L mentor; first PR (small change) reviewed by TM-50L | First merged PR |
 | Week 3 | Assigned first independent task with TM-50L review; security training (Appendix A checklist walkthrough) | Task completed, security checklist reviewed |
 | Week 4 | Architecture review participation (as observer); deployment to staging via CI pipeline | Attended architecture review; deployed to staging independently |
@@ -2953,4 +2941,4 @@ v1.0 - [DATE] - Initial version
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA*
 *Wiesbaden, Germany — 2026*
 *UNCLASSIFIED*
-*Distribution: Approved for public release; distribution is unlimited.*
+*Distribution: DRAFT — Not yet approved for distribution.*

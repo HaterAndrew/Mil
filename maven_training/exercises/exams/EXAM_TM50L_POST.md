@@ -1,12 +1,12 @@
 # POST-TEST — TM-50L: ADVANCED SOFTWARE ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
-| | |
+| Field | Detail |
 |---|---|
 | **Course** | TM-50L: Advanced Software Engineer |
 | **Form** | Post-Test |
 | **Level** | TM-50L (Advanced Software Engineering) |
-| **Audience** | Senior SWEs / platform architects / tech leads; prerequisite: TM-40F + production MSS SWE experience |
+| **Audience** | Senior SWEs / platform architects / tech leads; prerequisite: TM-40L + production MSS SWE experience |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (42/60) |
 
@@ -113,7 +113,7 @@ B. Non-compliant with C2DAO requirements — branch merges to production require
 C. Acceptable for dataset branches; non-compliant only for Ontology schema branches
 D. Acceptable if the pipeline is designated as low-risk by the data steward
 
-**14. When onboarding a new TM-40F engineer to the platform, the FIRST topic to cover per TM-50L onboarding standards is:**
+**14. When onboarding a new TM-40L engineer to the platform, the FIRST topic to cover per TM-50L onboarding standards is:**
 
 A. The OSDK authentication pattern and ResourceIterator pagination
 B. CBAC configuration, tenant isolation architecture, and the absolute prohibition on CBAC bypass — because a misunderstanding of tenant isolation is the failure mode with the highest potential for irreversible data exposure harm

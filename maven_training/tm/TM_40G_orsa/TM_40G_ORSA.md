@@ -10,7 +10,7 @@ Wiesbaden, Germany
 
 **PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (all required). Quantitative background equivalent to graduate-level statistics, and working proficiency in R or Python, required before beginning this manual.
 
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 **AUTHORITY:** This publication is issued under authority of the USAREUR-AF C2 Data and Analytics Office (C2DAO). It implements Army CIO Memorandum, Data and Analytics Policy (April 2024) and aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025). Reference learn-data.armydev.com for current platform documentation.
 
@@ -78,11 +78,11 @@ This manual provides task-level instruction for ORSA officers, NCOs, and quantit
 
 **TM-40G does NOT cover:**
 
-- General Foundry pipeline development — see TM-30 and TM-40G/40B
+- General Foundry pipeline development — see TM-30
 - Ontology design — see TM-30
 - Non-analytical Workshop applications — see TM-20 and TM-30
-- Machine learning model deployment to production — see TM-40C
-- Data architecture and schema design — see TM-30 and TM-40B
+- Machine learning model deployment to production — see TM-40I
+- Data architecture and schema design — see TM-30 and TM-40H
 
 ### 1-2. The ORSA Role in USAREUR-AF
 

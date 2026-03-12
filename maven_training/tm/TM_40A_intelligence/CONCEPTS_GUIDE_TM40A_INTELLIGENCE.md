@@ -13,7 +13,7 @@ Wiesbaden, Germany
 
 **PREREQUISITE:** TM-10 (Maven User). This guide assumes platform familiarity and focuses on conceptual integration — how intelligence doctrine, tradecraft, and the MSS data environment relate to each other.
 
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 ---
 

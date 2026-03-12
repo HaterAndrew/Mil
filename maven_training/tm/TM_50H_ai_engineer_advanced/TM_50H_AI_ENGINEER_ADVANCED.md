@@ -1,29 +1,20 @@
-# TM-50H
-## TECHNICAL MANUAL
-## ADVANCED AI ENGINEERING
-## MAVEN SMART SYSTEM
-## USAREUR-AF OPERATIONAL DATA TEAM
+# TM-50H — ADVANCED AI ENGINEERING
+## MAVEN SMART SYSTEM (MSS) | USAREUR-AF OPERATIONAL DATA TEAM
 
-**HEADQUARTERS**
-**UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-
-2026
-
-**Version 1.0 | March 2026**
+**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA** | Wiesbaden, Germany | 2026 | Version 1.0
 
 **UNCLASSIFIED**
-Distribution: Approved for public release; distribution is unlimited.
+Distribution: DRAFT — Not yet approved for distribution.
 
 ---
 
-**PREREQUISITE PUBLICATIONS:** TM-40B, AI Engineer (required); TM-40C, ML Engineer (recommended); TM-30, Advanced Builder (required); Data Literacy Technical Reference (required).
+**PREREQUISITE PUBLICATIONS:** TM-40H, AI Engineer (required); TM-40I, ML Engineer (recommended); TM-30, Advanced Builder (required); Data Literacy Technical Reference (required).
 
 **APPLIES TO:** Senior AI Engineers, AI Architects, AI Capability Leads. MSS/Palantir Foundry AIP — advanced capability development.
 
 ---
 
-> **PREREQUISITE WARNING:** TM-50H is **not required** for the majority of AI engineer billets. It is intended for personnel with demonstrated proficiency at TM-40B level who are actively designing AI system architectures, retrieval infrastructure, or agent orchestration frameworks on MSS. If you are uncertain whether TM-50H applies to your billet, consult your supervisor or the unit data steward before proceeding.
+> **PREREQUISITE WARNING:** TM-50H is **not required** for the majority of AI engineer billets. It is intended for personnel with demonstrated proficiency at TM-40H level who are actively designing AI system architectures, retrieval infrastructure, or agent orchestration frameworks on MSS. If you are uncertain whether TM-50H applies to your billet, consult your supervisor or the unit data steward before proceeding.
 
 ---
 
@@ -68,9 +59,9 @@ Before operating at TM-50H level:
 > data. Do not train models on data classified above the inference endpoint's authorization level.
 > Coordinate with the USAREUR-AF Information Security Officer before any fine-tuning activity.**
 
-> **NOTE:** TM-40B is a hard prerequisite. TM-50H does not re-teach AIP Logic, Agent Studio,
+> **NOTE:** TM-40H is a hard prerequisite. TM-50H does not re-teach AIP Logic, Agent Studio,
 > RAG fundamentals, or basic evaluation. It extends them to enterprise scale and advanced
-> architecture. If any TM-40B topic is unfamiliar, complete TM-40B first.
+> architecture. If any TM-40H topic is unfamiliar, complete TM-40H first.
 
 ---
 
@@ -90,7 +81,7 @@ Before operating at TM-50H level:
 
 ---
 
-# CHAPTER 1 — INTRODUCTION AND SCOPE
+## CHAPTER 1 — INTRODUCTION AND SCOPE
 
 **BLUF:** TM-50H qualifies senior AI engineers to architect, govern, and lead enterprise AI
 capability development on the Maven Smart System. The focus is on systems — multi-agent
@@ -99,16 +90,16 @@ and the governance structures that make AI trustworthy at operational scale.
 
 ---
 
-## 1-1. Purpose and Scope
+### 1-1. Purpose and Scope
 
 1-1. This manual trains and qualifies personnel to design and lead AI engineering capability
 at the enterprise level on MSS. Personnel completing TM-50H are expected to serve as technical
 leads, architecture reviewers, and AI capability owners — not just individual contributors.
 
-1-2. TM-50H builds directly on TM-40B. The distinction is architectural scope. Where TM-40B
+1-2. TM-50H builds directly on TM-40H. The distinction is architectural scope. Where TM-40H
 teaches you to build an AIP Logic workflow, TM-50H teaches you to design the system of workflows.
-Where TM-40B covers a single RAG pipeline, TM-50H covers hybrid retrieval architectures, corpus
-quality evaluation, re-ranking, and end-to-end evaluation pipelines. Where TM-40B covers
+Where TM-40H covers a single RAG pipeline, TM-50H covers hybrid retrieval architectures, corpus
+quality evaluation, re-ranking, and end-to-end evaluation pipelines. Where TM-40H covers
 deploying an agent, TM-50H covers orchestrating fleets of agents with shared state, circuit
 breakers, and failure isolation.
 
@@ -124,14 +115,14 @@ breakers, and failure isolation.
 | 7       | Multi-Modal AI Systems                            | AI Engineer, AI Architect     |
 | 8       | Enterprise AI Architecture and Governance         | AI Capability Lead, C2DAO     |
 
-1-4. TM-40C (ML Engineer) is the recommended companion publication. Fine-tuning (Chapter 3)
+1-4. TM-40I (ML Engineer) is the recommended companion publication. Fine-tuning (Chapter 3)
 and observability (Chapter 6) have significant overlap with MLOps infrastructure covered in
-TM-40C. Where TM-50H addresses the AI engineering perspective, TM-40C addresses the model
+TM-40I. Where TM-50H addresses the AI engineering perspective, TM-40I addresses the model
 training infrastructure perspective. Senior practitioners should be familiar with both.
 
 ---
 
-## 1-2. The Senior AI Engineer Role in USAREUR-AF
+### 1-2. The Senior AI Engineer Role in USAREUR-AF
 
 1-5. USAREUR-AF spans a multi-national, multi-echelon operational environment stretching from
 the Baltic to the Black Sea. The MSS platform supports V Corps and its subordinate formations,
@@ -150,7 +141,7 @@ DoD RAIMTF requirements (2024), Army CIO Memo (April 2024), and USAREUR-AF C2DAO
 Document accountability. Own the AI production readiness gate for your domain.
 
 **Team Leadership.** Conduct architecture reviews. Establish team coding and evaluation
-standards. Onboard and mentor TM-40B engineers. Review pull requests and promote quality.
+standards. Onboard and mentor TM-40H engineers. Review pull requests and promote quality.
 
 1-7. The senior AI engineer does not operate without oversight. Every AI capability at this
 level requires a named product owner who has accepted documented risk, a data steward who
@@ -159,26 +150,26 @@ of these three elements is missing, the capability does not go to production.
 
 ---
 
-## 1-3. Relationship to Other TM-50 Publications
+### 1-3. Relationship to Other TM-50 Publications
 
 1-8. TM-50 publications cover the advanced tier for each specialized track:
 
 | Publication | Track                          | Key Overlap with TM-50H                         |
 |-------------|--------------------------------|-------------------------------------------------|
-| TM-50A      | ORSA Advanced                  | Evaluation methodology (Chapter 4, 6)           |
+| TM-50G      | ORSA Advanced                  | Evaluation methodology (Chapter 4, 6)           |
 | TM-50H      | AI Engineer Advanced           | THIS DOCUMENT                                   |
-| TM-50C      | ML Engineer Advanced           | Fine-tuning infrastructure (Chapter 3)          |
-| TM-50D      | Program Manager Advanced       | AI governance and acquisition (Chapter 8)       |
-| TM-50E      | Knowledge Manager Advanced     | Corpus design and ontology-RAG integration (Ch4)|
-| TM-50F      | Software Engineer Advanced     | OSDK integration with AI systems (Ch2, Ch7)     |
+| TM-50I      | ML Engineer Advanced           | Fine-tuning infrastructure (Chapter 3)          |
+| TM-50J      | Program Manager Advanced       | AI governance and acquisition (Chapter 8)       |
+| TM-50K      | Knowledge Manager Advanced     | Corpus design and ontology-RAG integration (Ch4)|
+| TM-50L      | Software Engineer Advanced     | OSDK integration with AI systems (Ch2, Ch7)     |
 
 1-9. Cross-references to companion publications appear throughout this manual with the notation
-`[→ TM-40C]` or `[→ TM-50C]`. These are not optional references — senior AI engineers are
+`[→ TM-40I]` or `[→ TM-50I]`. These are not optional references — senior AI engineers are
 expected to coordinate with counterparts in those tracks, not work in isolation.
 
 ---
 
-## 1-4. Policy Framework
+### 1-4. Policy Framework
 
 1-10. The following policy documents govern AI engineering activity on MSS. Senior AI engineers
 must be familiar with the substance — not just aware of the titles.
@@ -199,7 +190,7 @@ the USAREUR-AF G6 in writing.
 
 ---
 
-# CHAPTER 2 — MULTI-AGENT ORCHESTRATION SYSTEMS
+## CHAPTER 2 — MULTI-AGENT ORCHESTRATION SYSTEMS
 
 **BLUF:** Multi-agent systems on MSS enable complex, multi-step operational workflows that
 exceed the scope of a single AIP Logic workflow. This chapter covers the architectural patterns,
@@ -208,9 +199,9 @@ AI agents in coordinated operation.
 
 ---
 
-## 2-1. Overview of Multi-Agent Architecture
+### 2-1. Overview of Multi-Agent Architecture
 
-2-1. A single AIP Logic workflow — as covered in TM-40B — routes a prompt through a defined
+2-1. A single AIP Logic workflow — as covered in TM-40H — routes a prompt through a defined
 sequence of steps: context retrieval, prompt construction, LLM inference, output handling.
 This model works well for bounded tasks: summarize this SITREP, classify this document,
 generate this report section.
@@ -236,7 +227,7 @@ and failure handling between agents.
 
 ---
 
-## 2-2. Orchestration Patterns
+### 2-2. Orchestration Patterns
 
 2-4. Three primary orchestration patterns apply to USAREUR-AF operational use cases:
 
@@ -318,7 +309,7 @@ if not achieved within limit.
 
 ---
 
-## 2-3. Shared State Management
+### 2-3. Shared State Management
 
 2-5. Multi-agent systems that process the same operational context across multiple agents
 require shared state — a common data structure accessible to all agents in the workflow.
@@ -360,7 +351,7 @@ WorkflowContext Object Type
 
 ---
 
-## 2-4. Circuit Breakers and Failure Isolation
+### 2-4. Circuit Breakers and Failure Isolation
 
 2-7. Production multi-agent systems must implement circuit breakers — logic that detects
 failure conditions and halts execution before they propagate. Minimum circuit-breaker
@@ -421,7 +412,7 @@ class AgentCircuitBreaker:
 
 ---
 
-## 2-5. Task: Design a Multi-Agent Orchestration System
+### 2-5. Task: Design a Multi-Agent Orchestration System
 
 **CONDITIONS:** Given a defined operational workflow requirement with multiple interdependent
 steps, a target MSS environment, and C2DAO authorization to deploy a multi-agent system.
@@ -473,7 +464,7 @@ review template.
 
 ---
 
-# CHAPTER 3 — LLM FINE-TUNING AND DOMAIN ADAPTATION
+## CHAPTER 3 — LLM FINE-TUNING AND DOMAIN ADAPTATION
 
 **BLUF:** General-purpose LLMs perform poorly on Army operational terminology, USAREUR-AF
 reporting formats, and domain-specific reasoning tasks. Fine-tuning and domain adaptation
@@ -483,7 +474,7 @@ must be cleared before any fine-tuning activity on operational corpora.
 
 ---
 
-## 3-1. When to Fine-Tune vs. When to Prompt
+### 3-1. When to Fine-Tune vs. When to Prompt
 
 3-1. Fine-tuning is expensive, time-consuming, and carries significant governance overhead.
 Before pursuing fine-tuning, exhaust these lower-cost alternatives:
@@ -513,7 +504,7 @@ Before pursuing fine-tuning, exhaust these lower-cost alternatives:
 
 ---
 
-## 3-2. Policy and Legal Requirements
+### 3-2. Policy and Legal Requirements
 
 3-3. Fine-tuning on operational corpora — any dataset containing USAREUR-AF operational
 data, reporting formats, unit data, or personnel information — requires the following
@@ -550,7 +541,7 @@ fine-tuning training data under any circumstances without specific waiver from U
 
 ---
 
-## 3-3. Training Data Preparation
+### 3-3. Training Data Preparation
 
 3-5. The quality of a fine-tuned model is determined almost entirely by the quality of
 the training dataset. Garbage in, garbage out. At the fine-tuning level, this principle
@@ -652,7 +643,7 @@ def validate_dataset(examples: list[dict], min_count: int = 1000) -> dict:
 
 ---
 
-## 3-4. Fine-Tuning Methods
+### 3-4. Fine-Tuning Methods
 
 3-7. Three fine-tuning approaches are relevant to MSS AI engineering:
 
@@ -661,7 +652,7 @@ def validate_dataset(examples: list[dict], min_count: int = 1000) -> dict:
 All model weights are updated during training. Produces the strongest adaptation but
 requires the most compute, the most data, and carries the highest risk of catastrophic
 forgetting (degrading general capability while specializing). Generally not appropriate
-for Army operational AI unless operating a dedicated model deployment. [→ TM-40C Ch.4]
+for Army operational AI unless operating a dedicated model deployment. [→ TM-40I Ch.4]
 
 **Instruction Fine-Tuning (IFT)**
 
@@ -676,7 +667,7 @@ Only a small set of adapter parameters are trained; base model weights are froze
 Low-Rank Adaptation (LoRA) trains rank-decomposition matrices inserted at specific
 transformer layers. Requires significantly less compute, reduces catastrophic forgetting
 risk, and the adapter can be applied on top of the base model at inference time.
-**This is the recommended approach for MSS fine-tuning projects.** [→ TM-50C for
+**This is the recommended approach for MSS fine-tuning projects.** [→ TM-50I for
 infrastructure implementation]
 
 3-8. LoRA configuration selection guide:
@@ -692,7 +683,7 @@ infrastructure implementation]
 
 ---
 
-## 3-5. Evaluation After Fine-Tuning
+### 3-5. Evaluation After Fine-Tuning
 
 3-9. A fine-tuned model must be evaluated against a held-out test set before any production
 use. The test set must:
@@ -716,7 +707,7 @@ use. The test set must:
 
 ---
 
-## 3-6. Task: Domain Adaptation of an LLM for Army Writing
+### 3-6. Task: Domain Adaptation of an LLM for Army Writing
 
 **CONDITIONS:** Given a cleared fine-tuning corpus, a target LLM accessible through the MSS
 inference endpoint, all five required clearances (3-3) in hand, and a development environment
@@ -762,7 +753,7 @@ clearance documentation.
 
 ---
 
-# CHAPTER 4 — ADVANCED RAG ARCHITECTURE
+## CHAPTER 4 — ADVANCED RAG ARCHITECTURE
 
 **BLUF:** Basic RAG (embed, retrieve, generate) is sufficient for simple document question-
 answering. Operational AI on MSS requires more: hybrid retrieval combining dense and sparse
@@ -772,9 +763,9 @@ USAREUR-AF operational use cases.
 
 ---
 
-## 4-1. Limitations of Baseline RAG
+### 4-1. Limitations of Baseline RAG
 
-4-1. TM-40B covers basic RAG: chunk documents, embed with a vector model, store in a vector
+4-1. TM-40H covers basic RAG: chunk documents, embed with a vector model, store in a vector
 index, retrieve top-k by cosine similarity, inject into prompt context. This approach fails
 predictably in several operational scenarios:
 
@@ -797,7 +788,7 @@ query transformation, corpus quality management, and evaluation pipelines.
 
 ---
 
-## 4-2. Hybrid Retrieval: Dense + Sparse
+### 4-2. Hybrid Retrieval: Dense + Sparse
 
 4-3. **Dense retrieval** uses embedding models to encode queries and documents into a shared
 vector space. Retrieval is by cosine similarity. Strengths: semantic matching, handles
@@ -858,7 +849,7 @@ def reciprocal_rank_fusion(
 
 ---
 
-## 4-3. Re-Ranking
+### 4-3. Re-Ranking
 
 4-7. Retrieval returns candidate chunks ranked by approximate relevance. Re-ranking applies
 a more expensive but more accurate model to re-score the top-N candidates and select the
@@ -934,7 +925,7 @@ def rerank_chunks(
 
 ---
 
-## 4-4. Query Transformation
+### 4-4. Query Transformation
 
 4-10. A user's raw query is often not the best retrieval query. Query transformation
 improves retrieval by rewriting or expanding the query before retrieval:
@@ -999,7 +990,7 @@ def expand_query_abbreviations(query: str) -> str:
 
 ---
 
-## 4-5. Corpus Quality Management
+### 4-5. Corpus Quality Management
 
 4-12. RAG performance is bounded by corpus quality. A well-architected retrieval system
 cannot compensate for a low-quality corpus. Corpus quality management is an ongoing process,
@@ -1031,7 +1022,7 @@ not a one-time ingestion task.
 
 ---
 
-## 4-6. RAG Evaluation Pipeline
+### 4-6. RAG Evaluation Pipeline
 
 4-14. A RAG system cannot be evaluated by human sampling alone at production scale.
 Build an automated evaluation pipeline that runs continuously and surfaces degradation.
@@ -1080,7 +1071,7 @@ Build an automated evaluation pipeline that runs continuously and surfaces degra
 
 ---
 
-## 4-7. Task: Implement Advanced RAG for Intelligence Fusion
+### 4-7. Task: Implement Advanced RAG for Intelligence Fusion
 
 **CONDITIONS:** Given an authorized operational corpus (intelligence summaries, unit reports,
 and doctrine references), a target query workload specification, a labeled evaluation dataset
@@ -1125,7 +1116,7 @@ capability (BM25 or equivalent); platform re-ranker; evaluation dataset.
 
 ---
 
-# CHAPTER 5 — AI RED-TEAMING AND ADVERSARIAL TESTING
+## CHAPTER 5 — AI RED-TEAMING AND ADVERSARIAL TESTING
 
 **BLUF:** AI systems built for operational use must be tested adversarially before deployment.
 This chapter covers the structured process for AI red-teaming: identifying failure modes,
@@ -1135,7 +1126,7 @@ harmful outputs.
 
 ---
 
-## 5-1. Why Red-Team AI Systems
+### 5-1. Why Red-Team AI Systems
 
 5-1. Standard testing — unit tests, integration tests, evaluation metrics — tests for
 expected behavior on expected inputs. Red-teaming tests for unexpected behavior on adversarial
@@ -1155,7 +1146,7 @@ production.
 
 ---
 
-## 5-2. Threat Model for USAREUR-AF AI Systems
+### 5-2. Threat Model for USAREUR-AF AI Systems
 
 5-3. Before red-teaming, define the threat model. The threat model answers: who might
 attempt to adversarially manipulate this system, with what objective, and through what
@@ -1181,7 +1172,7 @@ intelligence is an operational liability.
 
 ---
 
-## 5-3. Adversarial Attack Categories
+### 5-3. Adversarial Attack Categories
 
 5-5. **Prompt Injection.** An attacker embeds instructions in user input or retrieved
 context intended to override the system prompt or change the model's behavior.
@@ -1223,7 +1214,7 @@ intelligence assessment format without the appropriate caveats.
 
 ---
 
-## 5-4. Red-Team Execution Process
+### 5-4. Red-Team Execution Process
 
 5-10. Red-team execution follows a structured process. Do not conduct unstructured
 "let's see what happens" testing. That approach produces low-quality findings and cannot
@@ -1264,7 +1255,7 @@ be reproduced or tracked.
 
 ---
 
-## 5-5. Red-Team Report Template
+### 5-5. Red-Team Report Template
 
 5-11. Every red-team engagement produces a formal report. The report is a governance document
 maintained in the C2DAO registry.
@@ -1309,7 +1300,7 @@ Product Owner Risk Acceptance: _________________ Date: _______
 
 ---
 
-## 5-6. Mitigations and Defensive Patterns
+### 5-6. Mitigations and Defensive Patterns
 
 5-12. Mitigations for common adversarial attack categories:
 
@@ -1352,7 +1343,7 @@ Product Owner Risk Acceptance: _________________ Date: _______
 
 ---
 
-## 5-7. Task: Conduct AI Red-Team Assessment
+### 5-7. Task: Conduct AI Red-Team Assessment
 
 **CONDITIONS:** Given an AI system (AIP Logic workflow or multi-agent system) approved for
 red-team testing, an isolated development environment, a defined threat model, and authorization
@@ -1397,7 +1388,7 @@ case library; red-team report template; C2DAO authorization documentation.
 
 ---
 
-# CHAPTER 6 — PRODUCTION AI OBSERVABILITY
+## CHAPTER 6 — PRODUCTION AI OBSERVABILITY
 
 **BLUF:** Deploying an AI system to production is not the end of the engineering process.
 Production AI systems drift, degrade, and fail in ways that cannot be predicted pre-deployment.
@@ -1406,7 +1397,7 @@ procedures required to maintain operational AI systems on MSS.
 
 ---
 
-## 6-1. Why AI Observability Is Different
+### 6-1. Why AI Observability Is Different
 
 6-1. Traditional software monitoring checks that services are running and latency is acceptable.
 AI monitoring must additionally check that outputs are correct, grounded, consistent, and
@@ -1424,7 +1415,7 @@ not drifting toward failure modes that do not trigger service errors. An AI syst
 
 ---
 
-## 6-2. Service Health Monitoring
+### 6-2. Service Health Monitoring
 
 6-3. Standard service health metrics. All AI services on MSS must emit these metrics
 to the platform monitoring stack:
@@ -1448,7 +1439,7 @@ human review requirement in practice, regardless of the written governance requi
 
 ---
 
-## 6-3. Input Distribution Monitoring
+### 6-3. Input Distribution Monitoring
 
 6-5. Input distribution monitoring detects when users are submitting queries that differ
 significantly from the distribution the system was designed for. This is the earliest
@@ -1468,12 +1459,12 @@ signal of impending output quality degradation.
 
 6-7. Implement a weekly input distribution report that summarizes top query clusters
 and flags emerging query types with no corresponding corpus coverage. Review this report
-with the corpus manager (typically the Knowledge Manager, → TM-50E) to drive corpus
+with the corpus manager (typically the Knowledge Manager, → TM-50K) to drive corpus
 updates.
 
 ---
 
-## 6-4. Retrieval Quality Monitoring
+### 6-4. Retrieval Quality Monitoring
 
 6-8. Retrieval quality degrades when the corpus drifts out of sync with the operational
 environment — publications are superseded, units redeploy, equipment changes. This is
@@ -1492,11 +1483,11 @@ coverage degradation. Alert if rate exceeds 10% of queries in any 24-hour window
 
 **Corpus freshness audit.** Quarterly audit of the retrieval corpus: identify any documents
 older than 12 months, cross-reference against the publication registry to identify superseded
-publications, and remove or update stale content. [→ TM-50E for corpus governance procedures]
+publications, and remove or update stale content. [→ TM-50K for corpus governance procedures]
 
 ---
 
-## 6-5. Output Quality Monitoring and Hallucination Detection
+### 6-5. Output Quality Monitoring and Hallucination Detection
 
 6-10. Output quality monitoring is the most challenging dimension of AI observability.
 Unlike service health metrics (which are objective), output quality requires semantic
@@ -1562,7 +1553,7 @@ model review and possible redeployment.
 
 ---
 
-## 6-6. AI Observability Dashboard
+### 6-6. AI Observability Dashboard
 
 6-13. Every production AI system on MSS must have an associated observability dashboard
 accessible to: the AI capability owner, the product owner, the data steward, and the
@@ -1584,7 +1575,7 @@ and the evidence base for periodic AI system reviews.
 
 ---
 
-## 6-7. Task: Implement AI Observability for a Production System
+### 6-7. Task: Implement AI Observability for a Production System
 
 **CONDITIONS:** Given a production AI system (or a system approved for promotion to
 production), MSS observability tooling, and access to the relevant Ontology objects
@@ -1632,7 +1623,7 @@ configuration; platform faithfulness evaluation model; Code Workspaces for evalu
 
 ---
 
-# CHAPTER 7 — MULTI-MODAL AI SYSTEMS
+## CHAPTER 7 — MULTI-MODAL AI SYSTEMS
 
 **BLUF:** Operational data is not only text. USAREUR-AF generates and consumes imagery,
 PDFs, DOCX reports, tabular data, and structured feeds alongside free-text documents.
@@ -1642,7 +1633,7 @@ multi-modal operational AI on MSS.
 
 ---
 
-## 7-1. Relevant Modalities for USAREUR-AF Operations
+### 7-1. Relevant Modalities for USAREUR-AF Operations
 
 7-1. The following data modalities appear in USAREUR-AF operational AI use cases:
 
@@ -1660,7 +1651,7 @@ multi-modal operational AI on MSS.
 
 ---
 
-## 7-2. Document Ingestion Pipeline
+### 7-2. Document Ingestion Pipeline
 
 7-2. PDF and DOCX documents require a pre-processing pipeline before they can enter a
 RAG corpus or be processed by an AI workflow. Raw document bytes are not usable by LLMs.
@@ -1713,7 +1704,7 @@ digital text).
 
 ---
 
-## 7-3. Structured Data Ingestion for LLM Context
+### 7-3. Structured Data Ingestion for LLM Context
 
 7-4. Tabular data (LOGSTAT, PERSTAT, readiness reports) presents a specific challenge:
 LLMs reason over text, not over tabular data structures. The goal is to convert tabular
@@ -1788,7 +1779,7 @@ def serialize_table_for_llm(
 
 ---
 
-## 7-4. Vision Model Integration
+### 7-4. Vision Model Integration
 
 7-7. Vision-capable LLMs (multi-modal models that accept image inputs alongside text) enable
 AI reasoning over imagery. For USAREUR-AF, relevant vision use cases include:
@@ -1879,7 +1870,7 @@ def prepare_image_for_llm(
 
 ---
 
-## 7-5. Semi-Structured Document Parsing
+### 7-5. Semi-Structured Document Parsing
 
 7-10. USAREUR-AF uses standardized reporting formats — SITREPs, SPOTREPs, LOGSTATs,
 PERSTATs — that have defined structures but variable free-text content. These are
@@ -1966,7 +1957,7 @@ def parse_sitrep(raw_text: str) -> SitrepParsed:
 
 ---
 
-## 7-6. Task: Build a Multi-Modal Ingestion Pipeline
+### 7-6. Task: Build a Multi-Modal Ingestion Pipeline
 
 **CONDITIONS:** Given a corpus of mixed-modality documents (PDFs, DOCX files, tabular
 data exports, and imagery), an MSS development environment, and a target RAG system
@@ -2012,7 +2003,7 @@ library; Pillow for image processing; platform embedding model.
 
 ---
 
-# CHAPTER 8 — ENTERPRISE AI ARCHITECTURE AND GOVERNANCE
+## CHAPTER 8 — ENTERPRISE AI ARCHITECTURE AND GOVERNANCE
 
 **BLUF:** Enterprise AI capability on MSS requires more than good individual systems.
 It requires shared infrastructure, reusable components, clear governance structures,
@@ -2022,7 +2013,7 @@ platform leader, not just system builder.
 
 ---
 
-## 8-1. Enterprise AI Architecture Principles
+### 8-1. Enterprise AI Architecture Principles
 
 8-1. Principles governing AI system architecture on MSS:
 
@@ -2055,7 +2046,7 @@ is preferable to AI that is impressive in demos and unreliable in operations.
 
 ---
 
-## 8-2. Shared AI Infrastructure Components
+### 8-2. Shared AI Infrastructure Components
 
 8-2. The following components should exist as shared platform capabilities — not rebuilt
 per system:
@@ -2082,7 +2073,7 @@ AI engineer on the MSS platform. The AI Capability Lead is responsible for:
 
 ---
 
-## 8-3. Architecture Review Process
+### 8-3. Architecture Review Process
 
 8-4. All AI systems destined for production on MSS require an architecture review before
 implementation. The architecture review is not a rubber stamp — it is a substantive
@@ -2114,7 +2105,7 @@ technical and governance review that has authority to reject or require redesign
 
 ---
 
-## 8-4. Evaluating and Procuring Third-Party AI Models
+### 8-4. Evaluating and Procuring Third-Party AI Models
 
 8-6. Not all AI capability on MSS is built from scratch. The Army procurement process
 and Foundry platform may bring third-party AI models — fine-tuned models, specialty
@@ -2146,7 +2137,7 @@ into production without this documentation.
 
 ---
 
-## 8-5. DoD RAIMTF and Army AI Ethics Compliance
+### 8-5. DoD RAIMTF and Army AI Ethics Compliance
 
 8-9. The DoD Responsible AI Implementation Maturity Tracking Framework (RAIMTF, 2024)
 defines maturity levels for AI systems across six dimensions:
@@ -2181,7 +2172,7 @@ coordination with the C2DAO. Results are documented in the AI System Registry.
 
 ---
 
-## 8-6. AI Governance Documentation Requirements
+### 8-6. AI Governance Documentation Requirements
 
 8-12. For each production AI system on MSS, the following documentation must exist, be
 current, and be maintained in the C2DAO AI System Registry:
@@ -2202,7 +2193,7 @@ current, and be maintained in the C2DAO AI System Registry:
 
 ---
 
-## 8-7. Leading AI Capability Development: Standards and Reviews
+### 8-7. Leading AI Capability Development: Standards and Reviews
 
 8-13. The senior AI engineer leads the team, not just the code. Key leadership
 responsibilities at the TM-50H level:
@@ -2243,7 +2234,7 @@ complete checklist sign-off.
 
 ---
 
-## 8-8. Task: Conduct an AI Production Readiness Review
+### 8-8. Task: Conduct an AI Production Readiness Review
 
 **CONDITIONS:** Given an AI system submitted for production readiness review, the
 complete documentation package per 8-12, and a review panel (AI Capability Lead,
@@ -2287,7 +2278,7 @@ dashboard for the system under review; evaluation report; red-team report.
 
 ---
 
-# APPENDIX A — AI PRODUCTION READINESS CHECKLIST
+## APPENDIX A — AI PRODUCTION READINESS CHECKLIST
 
 **AI PRODUCTION READINESS CHECKLIST**
 **USAREUR-AF Maven Smart System**
@@ -2381,15 +2372,15 @@ Product Owner: ______________________________ Date: ____________
 
 ---
 
-# APPENDIX B — AI EVALUATION FRAMEWORK
+## APPENDIX B — AI EVALUATION FRAMEWORK
 
-## B-1. Evaluation Framework Overview
+### B-1. Evaluation Framework Overview
 
 This appendix defines the standard evaluation framework for AI systems on MSS. All
 production AI systems must be evaluated against this framework before deployment and
 at each major update. The framework covers five evaluation dimensions.
 
-## B-2. Dimension 1: Task Performance
+### B-2. Dimension 1: Task Performance
 
 **Purpose:** Does the system do what it is designed to do, to the required standard?
 
@@ -2406,7 +2397,7 @@ at each major update. The framework covers five evaluation dimensions.
 **Evaluation method:** Automated evaluation pipeline against sealed evaluation dataset.
 Results reviewed and signed off by AI Capability Lead.
 
-## B-3. Dimension 2: Safety and Alignment
+### B-3. Dimension 2: Safety and Alignment
 
 **Purpose:** Does the system behave safely on adversarial and out-of-distribution inputs?
 
@@ -2426,7 +2417,7 @@ Results reviewed and signed off by AI Capability Lead.
 **Evaluation method:** Red-team assessment per Chapter 5. Minimum 50 test cases per
 attack category. Results reviewed by AI Security Lead and AI Capability Lead.
 
-## B-4. Dimension 3: Operational Utility
+### B-4. Dimension 3: Operational Utility
 
 **Purpose:** Does the system create genuine operational value for its intended users?
 
@@ -2443,7 +2434,7 @@ attack category. Results reviewed by AI Security Lead and AI Capability Lead.
 **Evaluation method:** User acceptance testing with 5–10 representative users on
 representative task samples. Facilitated by AI Capability Lead.
 
-## B-5. Dimension 4: Reliability and Consistency
+### B-5. Dimension 4: Reliability and Consistency
 
 **Purpose:** Does the system produce consistent, reliable outputs over time?
 
@@ -2460,7 +2451,7 @@ representative task samples. Facilitated by AI Capability Lead.
 **Evaluation method:** Automated monitoring over a 7-day pre-production evaluation period.
 Load test at 2× expected peak load before production promotion.
 
-## B-6. Dimension 5: Governance Compliance
+### B-6. Dimension 5: Governance Compliance
 
 **Purpose:** Does the system meet all governance requirements?
 
@@ -2468,7 +2459,7 @@ Load test at 2× expected peak load before production promotion.
 This dimension is binary: compliant or non-compliant. A non-compliant system does not
 deploy, regardless of performance on other dimensions.
 
-## B-7. Evaluation Schedule
+### B-7. Evaluation Schedule
 
 | Event                           | Evaluation Dimensions                                     |
 |---------------------------------|-----------------------------------------------------------|
@@ -2481,7 +2472,7 @@ deploy, regardless of performance on other dimensions.
 
 ---
 
-# GLOSSARY
+## GLOSSARY
 
 **AIP (Artificial Intelligence Platform).** The Palantir Foundry product suite enabling
 AI capability on MSS. Comprises AIP Logic (workflow authoring), AIP Agent Studio (agent
@@ -2596,6 +2587,6 @@ shared state across agents in a workflow, providing persistence and audit trail.
 
 *TM-50H, Advanced AI Engineering, Maven Smart System, USAREUR-AF Operational Data Team.*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026.*
-*UNCLASSIFIED. Distribution: Approved for public release; distribution is unlimited.*
+*UNCLASSIFIED. Distribution: DRAFT — Not yet approved for distribution.*
 
-*PREREQUISITE: TM-40B, AI Engineer. Cross-references: TM-40C, ML Engineer; TM-50C, ML Engineer Advanced; TM-50E, Knowledge Manager Advanced; TM-50F, Software Engineer Advanced.*
+*PREREQUISITE: TM-40H, AI Engineer. Cross-references: TM-40I, ML Engineer; TM-50I, ML Engineer Advanced; TM-50K, Knowledge Manager Advanced; TM-50L, Software Engineer Advanced.*

@@ -1,0 +1,8 @@
+INTSUM INTSUM_20250728_023 — IED EVENT
+DTG: 280000Z JUL 2025
+Unit: 1-1 BN
+
+Summary: At 2150 local, a suspected IED was identified by route clearance element in grid 35T733941 along ROUTE COPPER. EOD requested and responded within 29 minutes. Device rendered safe. No personnel casualties. Vehicle sustained minor damage.
+
+Device Description: Pressure-plate initiator, command wire, approx 5kg charge. Collected for exploitation. DNA swabs taken.
+Recommended Action: Restrict movement along ROUTE COPPER until EOD clearance complete. Disseminate grid data to adjacent units.

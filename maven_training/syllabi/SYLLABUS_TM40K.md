@@ -6,7 +6,7 @@
 |---|---|
 | **Level** | TM-40K (Knowledge Manager Specialist Track) |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-10 and TM-20 (both Go evaluations on file). TM-30 recommended. |
+| **Prerequisites** | TM-10, TM-20, and TM-30 (all Go evaluations on file, required). |
 | **Audience** | KMOs, 37F Psychological Operations, S2/S3/S6 knowledge officers, unit knowledge managers |
 | **Format** | Instructor-led lab + design workshop + practical exercise |
 | **Location** | MSS Training Environment (AIP Logic configuration access required) |

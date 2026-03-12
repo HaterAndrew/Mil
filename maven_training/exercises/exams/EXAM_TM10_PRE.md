@@ -1,7 +1,7 @@
 # PRE-TEST — TM-10: MAVEN USER
 ## Maven Smart System (MSS) — USAREUR-AF
 
-| | |
+| Field | Detail |
 |---|---|
 | **Course** | TM-10: Maven User |
 | **Form** | Pre-Test |

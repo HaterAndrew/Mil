@@ -10,7 +10,7 @@ Wiesbaden, Germany
 
 **PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (required). Proficiency in Python, scikit-learn, PyTorch or statsmodels, and SQL is assumed. Readers who cannot independently write a training loop, build a feature pipeline, and interpret a confusion matrix should complete prerequisite training before beginning this manual.
 
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 ---
 
@@ -77,9 +77,9 @@ This manual provides task-based instruction for machine learning engineers (MLEs
 - No-code pipeline building — see TM-20 and TM-30
 - Workshop application design — see TM-30
 - Ontology design methodology — see TM-30 (consumed by MLE, not designed here)
-- TypeScript Functions on Objects or OSDK application development — see TM-40B (Software Engineer)
-- Large language model fine-tuning or Agent Studio development — see TM-40A (AI Engineer)
-- Operations research / statistical modeling for optimization — see TM-40D (ORSA)
+- TypeScript Functions on Objects or OSDK application development — see TM-40L (Software Engineer)
+- Large language model fine-tuning or Agent Studio development — see TM-40H (AI Engineer)
+- Operations research / statistical modeling for optimization — see TM-40G (ORSA)
 
 ---
 
@@ -97,7 +97,7 @@ MISSION REQUIREMENT
   (Requirements + Ontology design)
        |
        v
-  -40C MLE                          <- You are here
+  -40I MLE                          <- You are here
   (Feature pipelines, model training, deployment)
        |
        v
@@ -191,8 +191,8 @@ Code Workspaces are Foundry-managed development environments that execute code o
 | Environment | Language | Primary Use |
 |---|---|---|
 | JupyterLab | Python (3.10+) | ML training, EDA, feature engineering, pipeline development |
-| RStudio | R | Statistical analysis, ORSA workflows (see TM-40D) |
-| VS Code (Preview) | Python / TypeScript | Application development (see TM-40B) |
+| RStudio | R | Statistical analysis, ORSA workflows (see TM-40G) |
+| VS Code (Preview) | Python / TypeScript | Application development (see TM-40L) |
 
 ---
 

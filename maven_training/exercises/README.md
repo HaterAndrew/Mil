@@ -1,71 +1,110 @@
 # MSS Training Exercises
 
-**Version 1.1 | March 2026**
+**Version 2.0 | March 2026**
 
-This directory contains practical exercise packages and written assessments for each level of the MSS training curriculum. Exercise packages define the scenario, tasks, and Go/No-Go criteria. **Exercise data files and MSS environment access must be arranged separately** — see notes in each package.
+Practical exercise packages and written assessments for each MSS training level. Exercise packages define the scenario, tasks, and Go/No-Go criteria. **Exercise data files and MSS environment access must be arranged separately** — see ENVIRONMENT_SETUP.md in each package.
 
 ---
 
 ## Baseline Assessments (Pre-Test / Post-Test)
 
-Written exams for all 15 courses are in [exams/](exams/). Each course has two forms:
+Written exams are in [exams/](exams/). Each course has two forms.
 
-| File Pattern | Purpose | Scoring |
-|---|---|---|
+| Form | Purpose | Scoring |
+|------|---------|---------|
 | `EXAM_[ID]_PRE.md` | Diagnostic — administered before training | No passing score; instructor use only |
-| `EXAM_[ID]_POST.md` | Mastery assessment — administered after training | 70% required (42/60 pts) |
+| `EXAM_[ID]_POST.md` | Mastery assessment — administered after training | 80% required (24/30 pts) |
 
-| Pre/Post Exams | Course | Audience |
-|---|---|---|
-| [TM-10](exams/EXAM_TM10_PRE.md) / [POST](exams/EXAM_TM10_POST.md) | Maven User | All personnel |
-| [TM-20](exams/EXAM_TM20_PRE.md) / [POST](exams/EXAM_TM20_POST.md) | Builder | All staff |
-| [TM-30](exams/EXAM_TM30_PRE.md) / [POST](exams/EXAM_TM30_POST.md) | Advanced Builder | Data-adjacent specialists |
-| [TM-40A](exams/EXAM_TM40A_PRE.md) / [POST](exams/EXAM_TM40A_POST.md) | ORSA | FA49 / ORSA analysts |
-| [TM-40B](exams/EXAM_TM40B_PRE.md) / [POST](exams/EXAM_TM40B_POST.md) | AI Engineer | AI/ML specialists |
-| [TM-40C](exams/EXAM_TM40C_PRE.md) / [POST](exams/EXAM_TM40C_POST.md) | ML Engineer | ML engineers / data scientists |
-| [TM-40D](exams/EXAM_TM40D_PRE.md) / [POST](exams/EXAM_TM40D_POST.md) | Program Manager | PMs / G8-S8 / resource managers |
-| [TM-40E](exams/EXAM_TM40E_PRE.md) / [POST](exams/EXAM_TM40E_POST.md) | Knowledge Manager | KMOs / 37F / knowledge officers |
-| [TM-40F](exams/EXAM_TM40F_PRE.md) / [POST](exams/EXAM_TM40F_POST.md) | Software Engineer | SWEs |
-| [TM-50A](exams/EXAM_TM50A_PRE.md) / [POST](exams/EXAM_TM50A_POST.md) | Advanced ORSA | Senior FA49 / ORSA section chiefs |
-| [TM-50B](exams/EXAM_TM50B_PRE.md) / [POST](exams/EXAM_TM50B_POST.md) | Advanced AI Engineer | AI architects / capability leads |
-| [TM-50C](exams/EXAM_TM50C_PRE.md) / [POST](exams/EXAM_TM50C_POST.md) | Advanced ML Engineer | Senior MLEs / platform engineers |
-| [TM-50D](exams/EXAM_TM50D_PRE.md) / [POST](exams/EXAM_TM50D_POST.md) | Advanced Program Manager | Senior technical PMs |
-| [TM-50E](exams/EXAM_TM50E_PRE.md) / [POST](exams/EXAM_TM50E_POST.md) | Advanced Knowledge Manager | Corps/Theater KM architects |
-| [TM-50F](exams/EXAM_TM50F_PRE.md) / [POST](exams/EXAM_TM50F_POST.md) | Advanced Software Engineer | Senior SWEs / platform leads |
+**Post-test format:** 8 MCQ (2 pts each) + 2 short answer (5 pts each) + 1 scenario (10 pts) = 30 pts total. Instructor answer key in every POST file.
 
-Each exam: 15 MCQ (2 pts) + 5 short answer (6 pts) = 60 pts total. Instructor answer key included in every file.
+### Foundational Tracks
+
+| Course | Pre-Exam | Post-Exam | Audience |
+|--------|---------|----------|---------|
+| TM-10 Maven User | [EXAM_TM10_PRE](exams/EXAM_TM10_PRE.md) | [EXAM_TM10_POST](exams/EXAM_TM10_POST.md) | All personnel |
+| TM-20 Builder | [EXAM_TM20_PRE](exams/EXAM_TM20_PRE.md) | [EXAM_TM20_POST](exams/EXAM_TM20_POST.md) | All staff |
+| TM-30 Advanced Builder | [EXAM_TM30_PRE](exams/EXAM_TM30_PRE.md) | [EXAM_TM30_POST](exams/EXAM_TM30_POST.md) | Data-adjacent specialists |
+
+### TM-40A–F — Warfighting Function Tracks
+
+| Course | Pre-Exam | Post-Exam | Audience |
+|--------|---------|----------|---------|
+| TM-40A Intelligence | [EXAM_TM40A_PRE](exams/EXAM_TM40A_PRE.md) | [EXAM_TM40A_POST](exams/EXAM_TM40A_POST.md) | G2/S2 staff, targeting officers, all-source analysts |
+| TM-40B Fires | [EXAM_TM40B_PRE](exams/EXAM_TM40B_PRE.md) | [EXAM_TM40B_POST](exams/EXAM_TM40B_POST.md) | FSE, fire support officers, targeting teams |
+| TM-40C Movement & Maneuver | [EXAM_TM40C_PRE](exams/EXAM_TM40C_PRE.md) | [EXAM_TM40C_POST](exams/EXAM_TM40C_POST.md) | G3/S3 maneuver staff, operations officers |
+| TM-40D Sustainment | [EXAM_TM40D_PRE](exams/EXAM_TM40D_PRE.md) | [EXAM_TM40D_POST](exams/EXAM_TM40D_POST.md) | G4/S4, FSB/BSB logistics staff |
+| TM-40E Protection | [EXAM_TM40E_PRE](exams/EXAM_TM40E_PRE.md) | [EXAM_TM40E_POST](exams/EXAM_TM40E_POST.md) | Force protection, CBRN, provost marshal |
+| TM-40F Mission Command | [EXAM_TM40F_PRE](exams/EXAM_TM40F_PRE.md) | [EXAM_TM40F_POST](exams/EXAM_TM40F_POST.md) | G3/S3 staff, battle captains, XOs, CDRs |
+
+### TM-40G–L — Technical Specialist Tracks
+
+| Course | Pre-Exam | Post-Exam | Audience |
+|--------|---------|----------|---------|
+| TM-40G ORSA | [EXAM_TM40G_PRE](exams/EXAM_TM40G_PRE.md) | [EXAM_TM40G_POST](exams/EXAM_TM40G_POST.md) | FA49, quantitative analysts |
+| TM-40H AI Engineer | [EXAM_TM40H_PRE](exams/EXAM_TM40H_PRE.md) | [EXAM_TM40H_POST](exams/EXAM_TM40H_POST.md) | AI/ML specialists, AIP Logic developers |
+| TM-40I ML Engineer | [EXAM_TM40I_PRE](exams/EXAM_TM40I_PRE.md) | [EXAM_TM40I_POST](exams/EXAM_TM40I_POST.md) | ML engineers, data scientists |
+| TM-40J Program Manager | [EXAM_TM40J_PRE](exams/EXAM_TM40J_PRE.md) | [EXAM_TM40J_POST](exams/EXAM_TM40J_POST.md) | PMs, G8/S8, resource managers |
+| TM-40K Knowledge Manager | [EXAM_TM40K_PRE](exams/EXAM_TM40K_PRE.md) | [EXAM_TM40K_POST](exams/EXAM_TM40K_POST.md) | KMOs, 37F, knowledge officers |
+| TM-40L Software Engineer | [EXAM_TM40L_PRE](exams/EXAM_TM40L_PRE.md) | [EXAM_TM40L_POST](exams/EXAM_TM40L_POST.md) | SWEs, OSDK developers |
+
+### TM-50G–L — Advanced Specialist Tracks
+
+| Course | Pre-Exam | Post-Exam | Audience |
+|--------|---------|----------|---------|
+| TM-50G Advanced ORSA | [EXAM_TM50G_PRE](exams/EXAM_TM50G_PRE.md) | [EXAM_TM50G_POST](exams/EXAM_TM50G_POST.md) | Senior FA49, ORSA section chiefs |
+| TM-50H Advanced AI Engineer | [EXAM_TM50H_PRE](exams/EXAM_TM50H_PRE.md) | [EXAM_TM50H_POST](exams/EXAM_TM50H_POST.md) | AI architects, capability leads |
+| TM-50I Advanced ML Engineer | [EXAM_TM50I_PRE](exams/EXAM_TM50I_PRE.md) | [EXAM_TM50I_POST](exams/EXAM_TM50I_POST.md) | Senior MLEs, platform engineers |
+| TM-50J Advanced PM | [EXAM_TM50J_PRE](exams/EXAM_TM50J_PRE.md) | [EXAM_TM50J_POST](exams/EXAM_TM50J_POST.md) | Senior technical PMs |
+| TM-50K Advanced KM | [EXAM_TM50K_PRE](exams/EXAM_TM50K_PRE.md) | [EXAM_TM50K_POST](exams/EXAM_TM50K_POST.md) | Corps/Theater KM architects |
+| TM-50L Advanced SWE | [EXAM_TM50L_PRE](exams/EXAM_TM50L_PRE.md) | [EXAM_TM50L_POST](exams/EXAM_TM50L_POST.md) | Senior SWEs, platform leads |
 
 ---
 
 ## Practical Exercise Packages
 
-| Package | Corresponds To | Audience | Status |
-|---------|---------------|----------|--------|
-| [EX-10_operator_basics/](EX-10_operator_basics/) | TM-10 | All personnel | Stub — needs data |
-| [EX-20_no_code_builder/](EX-20_no_code_builder/) | TM-20 | All staff | Stub — needs data |
-| [EX-30_advanced_builder/](EX-30_advanced_builder/) | TM-30 | Data-adjacent specialists | Stub — needs data |
-| [EX-40A_orsa/](EX-40A_orsa/) | TM-40A | ORSA | Stub — needs data |
-| [EX-40B_ai_engineer/](EX-40B_ai_engineer/) | TM-40B | AI Engineers | Stub — needs data |
-| [EX-40C_ml_engineer/](EX-40C_ml_engineer/) | TM-40C | ML Engineers | Stub — needs data |
-| [EX-40D_program_manager/](EX-40D_program_manager/) | TM-40D | Technical PMs | Stub — needs data |
-| [EX-40E_knowledge_manager/](EX-40E_knowledge_manager/) | TM-40E | Knowledge Managers | Stub — needs data |
-| [EX-40F_software_engineer/](EX-40F_software_engineer/) | TM-40F | Software Engineers | Stub — needs data |
+### Foundational Exercises
+
+| Package | Corresponds To | Audience |
+|---------|---------------|---------|
+| [EX-10_operator_basics/](EX-10_operator_basics/) | TM-10 | All personnel |
+| [EX-20_no_code_builder/](EX-20_no_code_builder/) | TM-20 | All staff |
+| [EX-30_advanced_builder/](EX-30_advanced_builder/) | TM-30 | Data-adjacent specialists |
+
+### WFF Track Exercises (TM-40A–F)
+
+| Package | Corresponds To | Audience |
+|---------|---------------|---------|
+| [EX-40A_intelligence/](EX-40A_intelligence/) | TM-40A | G2/S2 staff, targeting officers |
+| [EX-40B_fires/](EX-40B_fires/) | TM-40B | FSE, fire support officers |
+| [EX-40C_movement_maneuver/](EX-40C_movement_maneuver/) | TM-40C | G3/S3 maneuver staff |
+| [EX-40D_sustainment/](EX-40D_sustainment/) | TM-40D | G4/S4, logistics staff |
+| [EX-40E_protection/](EX-40E_protection/) | TM-40E | Force protection, CBRN, PM staff |
+| [EX-40F_mission_command/](EX-40F_mission_command/) | TM-40F | G3/S3 staff, battle captains, CDRs |
+
+### Technical Specialist Exercises (TM-40G–L)
+
+| Package | Corresponds To | Audience |
+|---------|---------------|---------|
+| [EX-40G_orsa/](EX-40G_orsa/) | TM-40G | ORSA analysts |
+| [EX-40H_ai_engineer/](EX-40H_ai_engineer/) | TM-40H | AI engineers |
+| [EX-40I_ml_engineer/](EX-40I_ml_engineer/) | TM-40I | ML engineers |
+| [EX-40J_program_manager/](EX-40J_program_manager/) | TM-40J | Technical PMs |
+| [EX-40K_knowledge_manager/](EX-40K_knowledge_manager/) | TM-40K | Knowledge managers |
+| [EX-40L_software_engineer/](EX-40L_software_engineer/) | TM-40L | Software engineers |
 
 ---
 
-## What "Stub — Needs Data" Means
+## Exercise Package Structure
 
-Each exercise package contains:
-- Scenario framing (OPORD-style context)
-- Task list with Go/No-Go criteria
-- Evaluator notes
-- **Placeholder** for the exercise dataset or MSS environment setup instructions
+Each package contains:
+- `EXERCISE.md` — Scenario, task list with Go/No-Go criteria, evaluator notes
+- `ENVIRONMENT_SETUP.md` — Training environment configuration, data load instructions, inject procedures
 
-To make an exercise operational, an instructor must:
+**To make an exercise operational, the instructor must:**
 1. Obtain or create a synthetic dataset appropriate to the scenario
 2. Load it into an MSS sandbox or training environment
-3. Fill in the `ENVIRONMENT_SETUP.md` within the exercise package
-4. Conduct a dry run and update the evaluator notes accordingly
+3. Complete `ENVIRONMENT_SETUP.md` within the package
+4. Conduct a dry run and update evaluator notes
 
 ---
 

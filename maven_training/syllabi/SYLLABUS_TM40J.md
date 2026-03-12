@@ -6,7 +6,7 @@
 |---|---|
 | **Level** | TM-40J (Program Manager Specialist Track) |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-10 and TM-20 (both Go evaluations on file). TM-30 recommended but not required. |
+| **Prerequisites** | TM-10, TM-20, and TM-30 (all Go evaluations on file, required). |
 | **Audience** | Program managers, resource managers, G8/S8 staff officers, acquisition professionals |
 | **Format** | Instructor-led lab + practical exercise |
 | **Location** | MSS Training Environment |

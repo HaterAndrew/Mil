@@ -1,20 +1,18 @@
 # EX-30 — Advanced Builder
 ## Practical Exercise — TM-30 Proficiency
 
-**Version 1.0 | March 2026**
-**Prerequisite:** TM-30, Advanced No-Code Builder Technical Manual (and TM-10, TM-20)
-**Duration:** 2–3 hours
-**Environment:** MSS training instance with Pipeline Builder and Contour/Quiver access (see ENVIRONMENT_SETUP.md)
-
----
+| | |
+|---|---|
+| **Version** | 1.0 — March 2026 |
+| **Prerequisite** | TM-30 (and TM-10, TM-20) |
+| **Duration** | 2–3 hours |
+| **Environment** | MSS training instance with Pipeline Builder and Contour/Quiver access — see ENVIRONMENT_SETUP.md |
 
 ## SCENARIO
 
-G2 has a raw intelligence summary dataset (synthetic) covering 60 days of SIGACT-type events across a training AOR. You are tasked to build an analytical pipeline that cleans and enriches the data, produces a Contour geospatial view, and builds a Quiver pivot for pattern-of-life analysis. No code required — Pipeline Builder and no-code tools only.
+G2 has a raw intelligence summary dataset (synthetic) covering 60 days of SIGACT-type events across a training AOR. Build an analytical pipeline that cleans and enriches the data, produces a Contour geospatial view, and builds a Quiver pivot for pattern-of-life analysis. No code required — Pipeline Builder and no-code tools only.
 
-**Training dataset:** Synthetic SIGACT-analog events with date, grid, event type, and unit fields.
-
----
+Training dataset: synthetic SIGACT-analog events with date, grid, event type, and unit fields.
 
 ## TASK LIST
 
@@ -30,7 +28,7 @@ G2 has a raw intelligence summary dataset (synthetic) covering 60 days of SIGACT
 - [ ] Fill null unit fields with "UNKNOWN"
 - [ ] Add a derived column: `week_number` from the date field
 - [ ] Output to a clean dataset following naming standards
-- **Go:** Output has no duplicates; no null unit fields; week_number column present and correct
+- **Go:** Output has no duplicates; no null unit fields; `week_number` present and correct
 - **No-Go:** Duplicates remain or derived column is wrong
 
 ### Task 3 — Contour Geospatial View (30 min)
@@ -38,11 +36,11 @@ G2 has a raw intelligence summary dataset (synthetic) covering 60 days of SIGACT
 - [ ] Plot events as points using the grid coordinate field
 - [ ] Color-code by event type
 - [ ] Add a time filter for the past 30 days
-- **Go:** Points render on map; color coding is correct; time filter functions
+- **Go:** Points render on map; color coding correct; time filter functions
 - **No-Go:** Map does not render or color coding is absent
 
 ### Task 4 — Quiver Pattern-of-Life (30 min)
-- [ ] Create a Quiver pivot: rows = week_number, columns = event type, values = count
+- [ ] Create a Quiver pivot: rows = `week_number`, columns = event type, values = count
 - [ ] Add a heat-map color scale
 - [ ] Identify the week with the highest activity (annotate for evaluator)
 - **Go:** Pivot is correct; heat map renders; high-activity week identified accurately
@@ -54,35 +52,27 @@ G2 has a raw intelligence summary dataset (synthetic) covering 60 days of SIGACT
 - **Go:** Rule fires correctly on null grid records
 - **No-Go:** Rule does not fire or fires on wrong records
 
----
-
 ## EVALUATOR NOTES
 
-**Scoring:** 5 tasks. Go on 4 of 5 = overall Go. No-Go on Task 2 = automatic No-Go (data cleaning is the foundational competency).
+**Scoring:** 5 tasks. Go on 4 of 5 = overall Go. No-Go on Task 2 = automatic No-Go.
 
 **Pre-exercise checklist:**
-- Confirm Contour is enabled and the grid projection is configured for the training dataset's coordinate format (WGS84 decimal degrees — see ENVIRONMENT_SETUP.md)
-- Verify the synthetic dataset contains at least 5 duplicate event IDs and at least 3 null unit fields
-- Confirm AIP Logic is available in the training tenant (Task 5)
+- Confirm Contour is enabled and grid projection is configured for WGS84 decimal degrees (see ENVIRONMENT_SETUP.md)
+- Verify synthetic dataset contains at least 5 duplicate event IDs and at least 3 null unit fields
+- Confirm AIP Logic is available in the training tenant
 
 **Common failure modes:**
 
 | Task | Common Failure | Evaluator Guidance |
 |------|---------------|--------------------|
 | Task 1 | Null rate reported as zero | Participant likely previewed a cached/clean version; confirm they loaded the raw dataset |
-| Task 2 | Deduplication removes wrong records | Ask participant which field they deduplicated on; only event ID is correct |
+| Task 2 | Deduplication removes wrong records | Ask which field they deduplicated on; only event ID is correct |
 | Task 2 | Null fill applied to wrong column | Event type or date filled instead of unit — check output schema directly |
-| Task 3 | Map renders but no color coding | Participant used default point style; color-by-field must be explicitly set |
-| Task 3 | Contour projection error | Coordinate format mismatch — see ENVIRONMENT_SETUP.md; this is an environment failure, not participant failure |
-| Task 5 | AIP Logic rule fires on wrong field | Ask participant to show the rule definition; null grid vs. null unit is a common confusion |
+| Task 3 | Map renders but no color coding | Default point style used; color-by-field must be explicitly set |
+| Task 3 | Contour projection error | Coordinate format mismatch — see ENVIRONMENT_SETUP.md; environment failure, not participant failure |
+| Task 5 | AIP Logic rule fires on wrong field | Show rule definition; null grid vs. null unit is a common confusion |
 
 **Timing notes:**
-- Task 3 (Contour) is the most environment-sensitive — budget 45 min total including any setup issues
-- Task 5 (AIP Logic no-code rule) is often faster than expected (~10 min for participants familiar with rule editors)
-- Cohorts with G2/S2 backgrounds typically complete Tasks 3-4 faster than average
-
----
-
-## ENVIRONMENT SETUP
-
-See [ENVIRONMENT_SETUP.md](ENVIRONMENT_SETUP.md) for full setup instructions.
+- Task 3 (Contour) is the most environment-sensitive — budget 45 min total including setup issues
+- Task 5 (AIP Logic) often faster than expected (~10 min for participants familiar with rule editors)
+- Cohorts with G2/S2 backgrounds typically complete Tasks 3–4 faster than average

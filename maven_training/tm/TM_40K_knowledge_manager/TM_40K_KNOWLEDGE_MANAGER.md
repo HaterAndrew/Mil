@@ -55,7 +55,7 @@ Before performing any task at TM-40K level:
 
 **BLUF:** This manual trains Army Knowledge Managers (37F MOS) and staff officers in KM roles to design, build, and sustain knowledge management systems on the Maven Smart System (MSS). KMs are responsible for ensuring the formation's institutional knowledge is captured, organized, findable, and usable — not simply stored.
 
-This manual covers knowledge architecture design, AAR and lessons learned systems, AIP-assisted knowledge workflows, search and discovery interfaces, doctrine version management, personnel expertise mapping, and PCS/ETS knowledge transfer. It does not cover general Foundry platform operation (see TM-10 through TM-30) or developer-level coding (see TM-40A, TM-40B).
+This manual covers knowledge architecture design, AAR and lessons learned systems, AIP-assisted knowledge workflows, search and discovery interfaces, doctrine version management, personnel expertise mapping, and PCS/ETS knowledge transfer. It does not cover general Foundry platform operation (see TM-10 through TM-30) or developer-level coding (see TM-40G, TM-40H).
 
 **TM-40K covers:**
 - Knowledge ontology design: Object Types for documents, lessons, AARs, SOPs, expertise profiles
@@ -70,11 +70,11 @@ This manual covers knowledge architecture design, AAR and lessons learned system
 
 **TM-40K does NOT cover:**
 - General Workshop application construction — see TM-20 and TM-30
-- Python or PySpark coding — see TM-40A, TM-40B
-- SQL query writing — see TM-40B
-- AIP Agent Studio development — see TM-40A
-- TypeScript or OSDK development — see TM-40B
-- Data pipeline construction from scratch — see TM-30 (UI) or TM-40B (code)
+- Python or PySpark coding — see TM-40G, TM-40H
+- SQL query writing — see TM-40H
+- AIP Agent Studio development — see TM-40H
+- TypeScript or OSDK development — see TM-40L
+- Data pipeline construction from scratch — see TM-30 (UI) or TM-40L (code)
 
 > **NOTE:** TM-40K graduates design knowledge systems that outlast their assignments. Every architecture decision should be evaluated against the question: "Will the Soldier replacing me be able to understand, maintain, and extend this system after a two-week handoff?"
 
@@ -407,7 +407,7 @@ Configure Workshop form validation to enforce data quality at the point of captu
 
 ### 3-5. AAR Pipeline: Submission to Object Creation
 
-When a Soldier submits an AAR form in Workshop, a Pipeline Builder workflow converts the form submission into structured Foundry objects. This pipeline is designed at TM-30 level and implemented at TM-40B level if custom logic is required.
+When a Soldier submits an AAR form in Workshop, a Pipeline Builder workflow converts the form submission into structured Foundry objects. This pipeline is designed at TM-30 level and implemented at TM-40L level if custom logic is required.
 
 **Standard AAR pipeline stages:**
 
@@ -460,14 +460,14 @@ USAREUR-AF generates lessons learned from multiple sources simultaneously. A mat
 | Source | Format | Volume | Ingestion Method |
 |---|---|---|---|
 | MSS AAR capture (Chapter 3) | Structured Foundry objects | Medium — exercise-driven | Native (pipeline stage 4) |
-| CALL (Center for Army Lessons Learned) | PDF reports, structured web exports | Medium — continuous | TM-40B pipeline required |
+| CALL (Center for Army Lessons Learned) | PDF reports, structured web exports | Medium — continuous | TM-40L pipeline required |
 | Unit-submitted lessons (email/form) | Unstructured text, email attachments | Variable | Workshop intake form + manual KM review |
 | Exercise observer/controller reports | Word/PDF documents, OC/T structured formats | High during exercises | Batch ingest pipeline |
 | NATO LLDB (Lessons Learned Database) | STANAG 4778 formatted records | Low — periodic | Coordinate with G9/POLAD for access |
-| JLLIS (Joint Lessons Learned Info System) | Structured web export | Medium | TM-40B pipeline required; coordinate with J7 |
+| JLLIS (Joint Lessons Learned Info System) | Structured web export | Medium | TM-40L pipeline required; coordinate with J7 |
 | Partner nation reports | Variable format, variable language | Variable | Manual ingest with AIP translation assist (Chapter 5) |
 
-> **NOTE:** CALL and JLLIS ingestion pipelines require TM-40B developer involvement for automated connectors. Until connectors are established, the KM uses a manual ingest workflow: download reports, use the AIP-assisted extraction workflow (Chapter 5) to structure content, submit via the Workshop intake form for KM review and approval.
+> **NOTE:** CALL and JLLIS ingestion pipelines require TM-40L developer involvement for automated connectors. Until connectors are established, the KM uses a manual ingest workflow: download reports, use the AIP-assisted extraction workflow (Chapter 5) to structure content, submit via the Workshop intake form for KM review and approval.
 
 ---
 

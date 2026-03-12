@@ -1,12 +1,12 @@
 # PRE-TEST — TM-50H: ADVANCED AI ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
-| | |
+| Field | Detail |
 |---|---|
 | **Course** | TM-50H: Advanced AI Engineer |
 | **Form** | Pre-Test |
 | **Level** | TM-50H (Advanced Specialist) |
-| **Audience** | Senior AI engineers; prerequisite: TM-40B + production AI experience |
+| **Audience** | Senior AI engineers; prerequisite: TM-40H + production AI experience |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

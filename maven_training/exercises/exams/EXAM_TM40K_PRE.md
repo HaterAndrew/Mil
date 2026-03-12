@@ -1,7 +1,7 @@
 # PRE-TEST — TM-40K: KNOWLEDGE MANAGER
 ## Maven Smart System (MSS) — USAREUR-AF
 
-| | |
+| Field | Detail |
 |---|---|
 | **Course** | TM-40K: Knowledge Manager |
 | **Form** | Pre-Test |

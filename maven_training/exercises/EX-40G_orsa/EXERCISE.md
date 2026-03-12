@@ -1,20 +1,18 @@
 # EX-40G — ORSA
 ## Practical Exercise — TM-40G Proficiency
 
-**Version 1.0 | March 2026**
-**Prerequisite:** TM-40G, ORSA Technical Manual (and TM-10 through TM-30)
-**Duration:** 3–4 hours
-**Environment:** MSS with Python Transforms enabled; Quiver and Contour access (see ENVIRONMENT_SETUP.md)
-
----
+| | |
+|---|---|
+| **Version** | 1.0 — March 2026 |
+| **Prerequisite** | TM-40G (and TM-10 through TM-30) |
+| **Duration** | 3–4 hours |
+| **Environment** | MSS with Python Transforms enabled; Quiver and Contour access — see ENVIRONMENT_SETUP.md |
 
 ## SCENARIO
 
-The G3 wants a readiness forecast for the next 30 days based on historical maintenance cycle data for a training brigade (synthetic). You are the ORSA. Produce: a descriptive analysis of current state, a regression-based forecast, and a commander's summary dashboard.
+The G3 wants a readiness forecast for the next 30 days based on historical maintenance cycle data for a training brigade (synthetic). Produce: a descriptive analysis of current state, a regression-based forecast, and a commander's summary dashboard.
 
-**Training dataset:** Synthetic PMCS/maintenance cycle data, 180 days, 3 battalions, 4 equipment classes.
-
----
+Training dataset: synthetic PMCS/maintenance cycle data, 180 days, 3 battalions, 4 equipment classes.
 
 ## TASK LIST
 
@@ -46,35 +44,27 @@ The G3 wants a readiness forecast for the next 30 days based on historical maint
 - **Go:** All three components present; data quality note visible; jargon-free for senior audience
 - **No-Go:** Missing component or dashboard requires statistical background to interpret
 
----
-
 ## EVALUATOR NOTES
 
-**Scoring:** 4 tasks. Go on 3 of 4 = overall Go. No-Go on Task 3 = automatic No-Go (statistical forecasting is the core ORSA competency).
+**Scoring:** 4 tasks. Go on 3 of 4 = overall Go. No-Go on Task 3 = automatic No-Go.
 
 **Pre-exercise checklist:**
 - Confirm Python Transforms are enabled for training accounts
-- Confirm training accounts have access to the synthetic PMCS dataset (EX-40G)
-- Confirm evaluator can read participant Python Transform code (evaluator needs Viewer access to the build environment)
+- Confirm training accounts have access to the synthetic PMCS dataset
+- Confirm evaluator can read participant Python Transform code (Viewer access to the build environment)
 - Know the expected trend direction for each battalion from the answer key in ENVIRONMENT_SETUP.md
 
 **Common failure modes:**
 
 | Task | Common Failure | Evaluator Guidance |
 |------|---------------|--------------------|
-| Task 1 | Standard deviation reported but not interpreted | Stats present = Go; interpretation absent = coaching note only (not No-Go at Task 1) |
-| Task 2 | Trend direction wrong for one battalion | Battalion C has a non-obvious degrading trend obscured by noise; accept "stable" if the participant explains the reasoning |
-| Task 3 | R² reported from training set not test set | Ask: "How did you partition your data?" — if no train/test split, this is a No-Go |
+| Task 1 | Standard deviation reported but not interpreted | Stats present = Go; interpretation absent = coaching note only |
+| Task 2 | Trend direction wrong for one battalion | Battalion C has a non-obvious degrading trend obscured by noise; accept "stable" if participant explains the reasoning |
+| Task 3 | R² reported from training set not test set | Ask: "How did you partition your data?" — if no train/test split, No-Go |
 | Task 3 | Poor-fit battalion not flagged | Check whether R² < 0.5 for Battalion B (it should be) — failure to flag is No-Go |
 | Task 4 | Dashboard uses statistical notation without plain-language explanation | Evaluate against "can a CSM understand this without asking" — if not, No-Go |
 
 **Timing notes:**
 - Task 3 is the time sink — budget 75 min total if participant needs to set up the Python Transform environment for the first time
-- Task 4 (dashboard) is often underestimated; participants who produce clean visualizations in Tasks 2-3 may still spend 45 min on dashboard layout
+- Task 4 is often underestimated; participants who produce clean visualizations in Tasks 2–3 may still spend 45 min on dashboard layout
 - If participant uses R instead of Python for Task 3, that is acceptable — verify R is enabled in the Transform environment
-
----
-
-## ENVIRONMENT SETUP
-
-See [ENVIRONMENT_SETUP.md](ENVIRONMENT_SETUP.md) for full setup instructions.

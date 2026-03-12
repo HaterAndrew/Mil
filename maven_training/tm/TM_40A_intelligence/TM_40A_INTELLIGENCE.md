@@ -11,7 +11,7 @@ Wiesbaden, Germany
 
 **PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; CONCEPTS_GUIDE_TM40A_INTELLIGENCE (required before beginning this manual). Familiarity with MSS workspace navigation and basic data querying (TM-10 standard) is assumed. No pipeline development or code experience required.
 
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 **AUTHORITY:** This publication is issued under authority of the USAREUR-AF C2 Data and Analytics Office (C2DAO). It implements Army CIO Memorandum, Data and Analytics Policy (April 2024), aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025), and supports implementation of ADP 2-0, FM 2-0, ATP 2-01.3, ATP 2-01, FM 2-22.3, ATP 2-19.4, and FM 3-60. Reference learn-data.armydev.com for current platform documentation.
 
@@ -66,21 +66,23 @@ Before using MSS to support intelligence functions:
 
 ### 1-1. The Intelligence Warfighting Function and MSS
 
-The Intelligence WFF is the related tasks and systems that facilitate understanding of the operational environment, enemy, terrain and weather, and civil considerations (ADP 2-0, para 1-1). These tasks support the commander's situational understanding and drive the targeting cycle, the operations process, and risk assessment across all warfighting functions.
+The Intelligence WFF facilitates understanding of the operational environment, enemy, terrain and weather, and civil considerations (ADP 2-0, para 1-1). It supports the commander's situational understanding and drives the targeting cycle, operations process, and risk assessment across all warfighting functions.
 
-MSS does not change what intelligence does. It changes how intelligence data is stored, accessed, fused, and delivered to decision-makers. Before MSS, USAREUR-AF intelligence sections maintained separate databases, spreadsheet trackers, and presentation products that were difficult to share across echelons in real time. Each section maintained its own authoritative version of the threat picture, and reconciling those versions at the BUA consumed analyst time that should have been spent on analysis.
+MSS does not change what intelligence does. It changes how intelligence data is stored, accessed, fused, and delivered to decision-makers. Before MSS, sections maintained separate databases and spreadsheet trackers, each keeping its own authoritative threat picture — reconciling those versions at the BUA consumed analyst time that should have been spent on analysis.
 
-On MSS, intelligence datasets, analyst workspaces, geospatial layers, and finished products share a common Ontology. The threat ORBAT built by the division G2 is accessible — at the appropriate access level — by brigade S2 sections. Collection reporting that enters the system from one section is available to analysts across the formation. Products are persistent, not ephemeral.
+On MSS, datasets, workspaces, geospatial layers, and products share a common Ontology. The division G2 threat ORBAT is accessible — at the appropriate access level — by brigade S2 sections. Products are persistent, not ephemeral.
 
-The value of MSS to intelligence practitioners is threefold:
+**Table 1-0. MSS Value to Intelligence Practitioners**
 
-- **Speed of fusion.** Multi-INT data from GEOINT, SIGINT, HUMINT, and OSINT sources can be queried against a common object model. An analyst does not manually reconcile spreadsheets; MSS Ontology links allow direct cross-INT association within the same workspace.
-- **Persistence of products.** A threat model built in MSS on Monday remains accessible and updatable on Friday. It does not become a stale slide deck requiring full reconstruction before the next briefing cycle.
-- **Cross-echelon visibility.** Division G2 and brigade S2 sections can share workspaces, reducing the product cycle time between echelons and improving analytical coherence across the formation.
+| Value | Description |
+|---|---|
+| Speed of fusion | Multi-INT data queried against a common object model; MSS Ontology links allow direct cross-INT association without manual spreadsheet reconciliation |
+| Persistence of products | Threat models remain accessible and updatable — not rebuilt from scratch before each briefing cycle |
+| Cross-echelon visibility | Division G2 and brigade S2 sections share workspaces, reducing product cycle time and improving analytical coherence |
 
 ### 1-2. The Intelligence Cycle in MSS
 
-FM 2-0 defines the Intelligence cycle as Direction, Collection, Processing and Exploitation, Production, and Dissemination. MSS supports each phase of the cycle without replacing the analytical and command functions within it. Understanding where MSS adds the most value — and where human judgment remains primary — determines how the section invests its time on the platform.
+FM 2-0 defines the Intelligence cycle as Direction, Collection, Processing and Exploitation, Production, and Dissemination. MSS supports each phase without replacing the analytical and command functions within it.
 
 **Table 1-1. Intelligence Cycle Phase — MSS Function Cross-Reference**
 
@@ -96,7 +98,7 @@ FM 2-0 defines the Intelligence cycle as Direction, Collection, Processing and E
 
 ### 1-3. Intelligence Data Categories in MSS
 
-MSS aggregates six primary intelligence categories within the USAREUR-AF enterprise environment. Each category has different source origins, different handling requirements, and different representation within the MSS Ontology. Analysts must understand these distinctions before attempting to fuse products across categories.
+MSS aggregates six primary intelligence categories. Each has different source origins, handling requirements, and Ontology representation. Analysts must understand these distinctions before fusing products across categories.
 
 **Table 1-2. Intelligence Categories in MSS**
 
@@ -113,7 +115,7 @@ MSS aggregates six primary intelligence categories within the USAREUR-AF enterpr
 
 ### 1-4. MSS vs. Legacy Intelligence Tools
 
-Intelligence practitioners transitioning to MSS need to understand how MSS relates to — but does not replace — the legacy tools that remain authoritative or primary systems for certain functions. Attempting to replace these tools with MSS before appropriate data feeds and workflows are established will create gaps in intelligence production.
+MSS complements — it does not replace — legacy tools that remain authoritative for certain functions. Replacing these tools with MSS before appropriate data feeds and workflows are established will create gaps in intelligence production.
 
 **Table 1-3. MSS and Legacy Intel Tool Relationship**
 
@@ -129,7 +131,7 @@ Intelligence practitioners transitioning to MSS need to understand how MSS relat
 
 ### 1-5. Authorization and Access Controls for Intelligence Workspaces
 
-Intelligence workspaces in MSS require role-based access controls (RBAC) that exceed the standard MSS access model. The intelligence section is responsible for implementing and maintaining these controls — not the MSS administrator acting independently.
+Intelligence workspaces require RBAC that exceeds the standard MSS access model. The intelligence section implements and maintains these controls — not the MSS administrator acting independently.
 
 - All intelligence workspaces are initialized as restricted access. The workspace owner — G2/S2 section chief or designated IMO — must explicitly grant access to each user before access is permitted.
 - Read-only access grants allow consumers to view dashboards and products without editing underlying data. Apply read-only access for all cross-functional sharing (fires, maneuver, sustainment) unless the user has a documented editing requirement.
@@ -156,26 +158,28 @@ Intelligence workspaces in MSS require role-based access controls (RBAC) that ex
 
 ### 1-6. Intelligence Section MSS Accountability
 
-MSS accountability for the intelligence section is the G2/S2's responsibility. The following functions must be assigned to specific personnel by name and position — not left as general section responsibilities:
+MSS accountability is the G2/S2's responsibility. Assign the following functions to specific personnel by name and position — not as general section responsibilities.
 
-- **Workspace owner.** Each intelligence workspace has a designated owner responsible for access controls, product currency, and workspace health. The workspace owner is the first point of contact when access issues arise.
-- **Product curator.** Each recurring intelligence product (INTSUM, I&W dashboard, threat model) has a designated curator responsible for maintaining currency and enforcing version control.
-- **Collection management owner.** The 35H is the designated collection management owner. No other section member modifies PIR status, collection asset assignments, or RFI entries without 35H coordination.
-- **HUMINT/CI workspace authority.** A designated officer or senior NCO (35X minimum) is responsible for all access decisions on HUMINT and CI workspaces.
+**Table 1-5. Required MSS Accountability Assignments**
 
-These accountability assignments are documented in the section SOP and briefed to all personnel at the start of each operational period or rotation.
+| Function | Responsible | Responsibility |
+|---|---|---|
+| Workspace owner | Designated per workspace | Access controls, product currency, workspace health; first POC for access issues |
+| Product curator | Designated per product | Currency and version control for each recurring product (INTSUM, I&W dashboard, threat model) |
+| Collection management owner | 35H | PIR status, collection asset assignments, RFI entries — no other section member modifies without 35H coordination |
+| HUMINT/CI workspace authority | 35X or designated officer | All access decisions for HUMINT and CI workspaces |
+
+Document assignments in the section SOP and brief all personnel at the start of each operational period or rotation.
 
 ### 1-7. MSS Setup Coordination Requirements
 
-Before the intelligence section can use MSS operationally, coordination must occur across three organizational elements:
+Complete all coordination below during pre-deployment preparation or exercise setup — not during an operational period.
 
-**With the G6/MSS administrator (35T).** Establish workspace creation, data feed authorizations, and RBAC role assignments. Verify network access for all section personnel. Confirm audit log settings for all intelligence workspaces.
-
-**With the security manager and IMO.** Determine appropriate classification levels for each workspace. Obtain authorization for any SIGINT, CI, or HUMINT workspaces. Establish the export and handling procedures for MSS-derived intelligence products.
-
-**With the supported commander and S3/G3.** Coordinate which intelligence products will be shared via MSS workspace access versus traditional report dissemination. Establish the standard product set the commander expects on MSS before each battle rhythm event.
-
-Complete this coordination during the pre-deployment preparation or exercise setup phase. Do not attempt to establish intelligence workspace access and authorizations during an operational period.
+| Coordinate With | Actions Required |
+|---|---|
+| G6/MSS administrator (35T) | Workspace creation, data feed authorizations, RBAC role assignments, network access for all section personnel, audit log settings |
+| Security manager and IMO | Classification levels per workspace, authorization for SIGINT/CI/HUMINT workspaces, export and handling procedures |
+| Supported commander and S3/G3 | Which products are shared via MSS access vs. traditional dissemination; standard product set required before each battle rhythm event |
 
 ---
 
@@ -187,15 +191,15 @@ Complete this coordination during the pre-deployment preparation or exercise set
 
 ATP 2-01.3 defines IPOE as a systematic, continuous process used by intelligence analysts to analyze the mission variables of threat, terrain and weather, and civil considerations in the operational environment (ATP 2-01.3, para 1-1). The four steps are: (1) Define the operational environment; (2) Describe effects of the environment on operations; (3) Evaluate the threat; (4) Determine threat courses of action.
 
-IPOE is not a four-step checklist completed before an operation begins. It is a continuous analytical process that updates as the situation develops, as collection reporting arrives, and as operations unfold. The distinction between IPOE as a static product and IPOE as a continuous process is the most significant conceptual change MSS enables.
+IPOE is a continuous analytical process — not a one-time checklist. It updates as the situation develops, as collection reporting arrives, and as operations unfold.
 
-In a traditional environment, rebuilding IPOE products — overlays, threat assessments, COA briefings — is labor-intensive. Units produce initial IPOE before an operation and then struggle to maintain them as conditions change. MSS removes this constraint. Because IPOE objects are persistent, updating the IPOE picture means updating specific objects, not rebuilding products. A threat unit location update takes minutes; a new NAI can be linked to existing PIRs immediately.
+In a traditional environment, rebuilding IPOE products is labor-intensive. MSS removes this constraint. Because IPOE objects are persistent, updating the picture means updating specific objects, not rebuilding products. A threat unit location update takes minutes; a new NAI links to existing PIRs immediately.
 
 > **NOTE: IPOE products built in MSS must be validated against current intelligence before use in planning. A geospatial layer loaded six months ago may not reflect current terrain trafficability, population changes, or infrastructure modifications. Review layer currency and last-updated timestamps before briefing IPOE products to the commander. Stale IPOE presented as current is worse than no IPOE — it creates false confidence.**
 
 ### 2-2. Step 1 — Define the Operational Environment in MSS
 
-Step 1 establishes the geographic boundaries, actors, and conditions that define the environment within which operations will occur. In MSS, Step 1 produces the foundational workspace structure: boundaries, areas of interest, and civil considerations that all subsequent IPOE steps reference.
+Step 1 establishes geographic boundaries, actors, and conditions defining the operational environment. In MSS, Step 1 produces the foundational workspace structure — boundaries, areas of interest, and civil considerations — that all subsequent IPOE steps reference.
 
 **Key products for Step 1 in MSS:**
 
@@ -227,16 +231,15 @@ Step 1 establishes the geographic boundaries, actors, and conditions that define
 
 ### 2-3. Step 2 — Describe Environmental Effects in MSS
 
-Step 2 analyzes how the environment — terrain, weather, and civil considerations — affects both friendly and threat operations. The analyst produces an assessment, not just a data display. MSS supports environmental effects analysis through geospatial terrain layers, weather overlay integration, and named area datasets.
+Step 2 analyzes how terrain, weather, and civil considerations affect friendly and threat operations. The analyst produces an assessment — not just a data display. MSS supports this through geospatial terrain layers, weather overlay integration, and named area datasets.
 
-The 35G analyst owns terrain-related MSS objects (see Chapter 5 for detailed GEOINT procedures). The 35F all-source analyst synthesizes terrain, weather, and civil data into an effects assessment that addresses:
+The 35G owns terrain-related MSS objects (see Chapter 5). The 35F synthesizes terrain, weather, and civil data into an effects assessment covering:
+- Terrain effects on friendly and threat mounted maneuver
+- Key avenues of approach and the echelon each supports
+- Weather effects on aviation, observation, and communications
+- Civil considerations presenting risk to operations or civilian protection obligations
 
-- How does the terrain affect friendly and threat mounted maneuver?
-- What are the key avenues of approach and what echelon do they support?
-- How do current weather conditions affect aviation, observation, and communications?
-- Which civil considerations present risk to operations or civilian protection obligations?
-
-This assessment is entered as a text object linked to the Step 2 layer group. It is the analyst's analytical product, not a data display.
+This assessment is a text object linked to the Step 2 layer group — the analyst's product, not a data display.
 
 **Table 2-1. Environmental Effects Datasets in MSS**
 
@@ -251,13 +254,13 @@ This assessment is entered as a text object linked to the Step 2 layer group. It
 
 ### 2-4. Step 3 — Evaluate the Threat in MSS
 
-Threat evaluation is the analytical core of IPOE. It requires the analyst to assess threat capabilities, doctrine, and current disposition — and produce a coherent picture of what the threat can do within the operational environment.
+Threat evaluation requires assessing threat capabilities, doctrine, and disposition — producing a coherent picture of what the threat can do in the operational environment.
 
-**Threat ORBAT in MSS.** The threat order of battle is maintained as linked Ontology objects: unit objects (type, echelon, location, condition estimate), equipment objects (type, quantity, location, capability), and aggregate personnel estimates. Objects link hierarchically — regiment to battalion to company — and to geospatial positions, enabling visual ORBAT display at any echelon.
+**Threat ORBAT.** Maintained as linked Ontology objects: unit objects (type, echelon, location, condition estimate), equipment objects (type, quantity, location, capability), and aggregate personnel estimates. Objects link hierarchically — regiment to battalion to company — and to geospatial positions, enabling visual ORBAT display at any echelon.
 
-**Threat capability assessment.** For each threat unit, the 35F/35D analyst enters a capability assessment covering warfighting functions: fires, maneuver, sustainment, EW, air defense, engineer. Each capability element carries an analyst-entered confidence rating.
+**Threat capability assessment.** For each threat unit, the 35F/35D enters a capability assessment by warfighting function (fires, maneuver, sustainment, EW, air defense, engineer), each with an analyst-entered confidence rating.
 
-**Pattern of life analysis.** Pattern of life (POL) analysis tracks threat activity against time and location — establishing normal activity baselines and flagging deviations. See Chapter 4 for detailed procedures.
+**Pattern of life.** POL analysis tracks threat activity against time and location, establishing baselines and flagging deviations. See Chapter 4 for procedures.
 
 > **CAUTION: Threat ORBAT data in MSS must be treated as a working analytical product, not an authoritative database. Verify threat data against current intelligence reporting before using ORBAT for planning or targeting. ORBAT products not reviewed within the last 72 hours in a high-activity environment should be marked "REVIEW REQUIRED — PERISHABILITY NOT CONFIRMED." A stale ORBAT presented as current status has directly contributed to intelligence failures in historical operations.**
 
@@ -273,11 +276,11 @@ Threat evaluation is the analytical core of IPOE. It requires the analyst to ass
 
 ### 2-5. Step 4 — Determine Threat COAs in MSS
 
-Step 4 develops threat COAs — specifically the Most Likely COA (MLCOA) and Most Dangerous COA (MDCOA) — within the framework established by Steps 1–3. MSS supports COA development and visualization but does not generate COAs analytically. The COA determination is an analytical judgment based on doctrinal threat behavior, available intelligence, and terrain analysis.
+Step 4 develops the MLCOA and MDCOA within the framework from Steps 1–3. MSS supports development and visualization — it does not generate COAs analytically. The determination is an analytical judgment based on doctrinal threat behavior, available intelligence, and terrain analysis.
 
-**COA overlays.** Threat COAs are built as geospatial overlays: avenues of approach, objective areas, support-by-fire positions, assembly areas. Each COA overlay is named and versioned: `[UNIT]-THREAT-COA-[MLCOA/MDCOA]-[YYYYMMDD]-V[N]`. Version the overlay on significant updates. Archive previous versions — do not overwrite.
+**COA overlays.** Built as geospatial overlays: avenues of approach, objective areas, support-by-fire positions, assembly areas. Name and version each overlay: `[UNIT]-THREAT-COA-[MLCOA/MDCOA]-[YYYYMMDD]-V[N]`. Version on significant updates; archive previous versions.
 
-**COA indicator lists.** Indicator objects identify specific activities that, if observed, confirm or refute each COA. Indicators are linked to specific NAIs (where the indicator would be observed) and to the collection plan (which asset is tasked against each NAI). In MSS, indicator status (Observed / Not Observed / Ambiguous) updates as collection reporting arrives.
+**COA indicator lists.** Indicator objects identify specific activities that confirm or refute each COA. Each indicator links to a NAI (where observed) and to the collection plan (which asset is tasked). Indicator status (Observed / Not Observed / Ambiguous) updates as collection reporting arrives.
 
 **COA probability assessment.** Each COA overlay carries an analyst-entered probability estimate reviewed at each IPOE update cycle.
 
@@ -321,21 +324,21 @@ MSS workspace access grants enable sharing IPOE products with adjacent S2 sectio
 
 ### 3-1. PIR and IR Management in MSS
 
-Priority Intelligence Requirements (PIRs) are the commander's specific intelligence questions associated with CCIRs. Information Requirements (IRs) are additional requirements established by the G2/S2 below the PIR threshold. Both are tracked in MSS.
+PIRs are the commander's specific intelligence questions associated with CCIRs. IRs are additional requirements below the PIR threshold. Both are tracked in MSS.
 
-**PIR object structure.** Each PIR is a top-level object linking to: the CCIR it supports (coordinated with the S3 CCIR workspace per TM-40F), specific NAIs and indicators in the IPOE workspace, collection tasks and assigned assets, and reporting received in satisfaction or partial satisfaction of the requirement.
+**PIR object structure.** Each PIR links to: the CCIR it supports (coordinated with the S3 CCIR workspace per TM-40F), NAIs and indicators in the IPOE workspace, collection tasks and assigned assets, and reporting received in satisfaction or partial satisfaction.
 
-**PIR data entry requirements.** When entering a PIR in MSS, include: PIR number (sequential within the current OPORD), PIR text (written as a question), associated CCIR number, supporting PIR if applicable, date established, expiration date or condition, and assigned priority.
+**PIR data entry requirements.** PIR number (sequential within current OPORD), PIR text (as a question), associated CCIR number, supporting PIR if applicable, date established, expiration date or condition, and assigned priority.
 
-**PIR status values.** Active / Partially Satisfied / Satisfied / Expired / Transferred to Higher. Review and update PIR status at each battle rhythm event.
+**PIR status values.** Active / Partially Satisfied / Satisfied / Expired / Transferred to Higher. Update at each battle rhythm event.
 
 > **NOTE: PIRs in MSS must be synchronized with the commander's current CCIR list. Before entering a new PIR, confirm it is on the CCIR list approved and signed by the commander. PIR tracking in MSS is a management tool — it does not constitute commander approval of the requirement. MSS PIR updates not reflected in the CCIR list create a gap between what the section is collecting against and what the commander has actually prioritized (FM 6-0).**
 
 ### 3-2. Collection Synchronization Matrix in MSS
 
-The collection synchronization matrix (CSM) is the primary collection planning product. It maps PIRs to collection assets over time, providing visibility on coverage and gaps.
+The CSM is the primary collection planning product, mapping PIRs to collection assets over time to provide visibility on coverage and gaps.
 
-**CSM structure.** The MSS CSM displays: PIRs listed by priority (rows), time periods aligned to the battle rhythm (columns), and cells showing assigned collection asset, tasking authority, collection window, and report receipt status. A gap column highlights PIRs with no coverage.
+**CSM structure.** PIRs by priority (rows), time periods aligned to the battle rhythm (columns), and cells showing assigned collection asset, tasking authority, collection window, and report receipt status. A gap column highlights PIRs with no coverage.
 
 ---
 **TASK BOX 3-1: Establish and Maintain Collection Synchronization Matrix in MSS**
@@ -358,41 +361,41 @@ The collection synchronization matrix (CSM) is the primary collection planning p
 
 ### 3-3. RFI Workflow in MSS
 
-Requests for Information (RFIs) from subordinate or adjacent units are tracked in MSS to prevent duplication, ensure timely response, and maintain collection deconfliction.
+RFIs from subordinate or adjacent units are tracked in MSS to prevent duplication, ensure timely response, and maintain collection deconfliction.
 
-**RFI log structure.** Each RFI object includes: RFI number (IAW Appendix B format), requesting unit, RFI text, associated PIR, priority (Urgent/High/Routine), due date/time group, assigned analyst or collection asset, response status, and response summary on closure.
+**RFI log fields.** RFI number (IAW Appendix B), requesting unit, RFI text, associated PIR, priority (Urgent/High/Routine), due DTG, assigned analyst or collection asset, response status, and response summary on closure.
 
-**RFI submission process.** Units submit RFIs through the established channel per unit SOP. The 35H enters the RFI in MSS and assigns it for action. The CSM dashboard tracks all open RFIs by priority and due date. Overdue RFIs are flagged for G2/S2 attention.
+**RFI submission.** Units submit through the established channel per unit SOP. The 35H enters the RFI in MSS and assigns for action. The CSM dashboard tracks all open RFIs by priority and due date. Overdue RFIs are flagged for G2/S2 attention.
 
 > **CAUTION: MSS RFI tracking does not replace the formal RFI submission process required by unit SOP and higher headquarters guidance. MSS is the tracking tool — the formal submission goes through the approved channel. Entering an RFI in MSS does not constitute submission to the collection node. The 35H must confirm through direct coordination that the RFI has been formally received by the tasking authority.**
 
 ### 3-4. CCIR Linkage to MSS Dashboards
 
-The intelligence section coordinates with the S3/Mission Command workspace (TM-40F) to ensure that PIR-derived CCIR components appear on the commander's unified CCIR dashboard alongside FFIR components. This coordination requires: establishing a shared workspace or dashboard panel that both sections can update, defining which intelligence products populate the CCIR display, and confirming data-as-of timestamps for each element.
+The intelligence section coordinates with the S3/Mission Command workspace (TM-40F) to ensure PIR-derived CCIR components appear on the commander's unified CCIR dashboard alongside FFIR components. Coordination requires: establishing a shared workspace or dashboard panel both sections can update, defining which intelligence products populate the CCIR display, and confirming data-as-of timestamps for each element.
 
 > **NOTE: The CCIR dashboard must display data-as-of timestamps for each CCIR element. A PIR displayed as "Not Observed" is only meaningful if the timestamp confirms the collection cycle is current. Brief the commander on the last collection update cycle before presenting CCIR status at any decision point. A PIR with no recent collection reporting is a gap — not a "Not Observed" finding.**
 
 ### 3-5. Collection Gap Reporting Standards
 
-Collection gaps — PIRs with no current collection coverage — are not administrative problems. They are intelligence failures in progress. A gap that is not reported is a gap that the commander does not know exists. The 35H's responsibility is not only to identify gaps but to report them clearly and track their resolution.
+Collection gaps are not administrative problems — they are intelligence failures in progress. An unreported gap is a gap the commander doesn't know exists. The 35H must identify gaps, report them clearly, and track resolution.
 
-**Collection gap report format.** When briefing collection gaps to the G2/S2, the 35H provides: PIR number and text; reason for the gap (no asset available, asset not reporting, tasking lapsed); duration of the gap (how long has the PIR been uncovered?); recommended resolution (retask organic asset, submit RFI, acknowledge as unresolvable with current assets); and impact on the IPOE assessment if the gap persists.
+**Collection gap report format.** When briefing gaps to the G2/S2, the 35H provides: PIR number and text; reason for the gap (no asset, asset not reporting, tasking lapsed); gap duration; recommended resolution (retask organic asset, submit RFI, or acknowledge as unresolvable); and impact on the IPOE assessment if the gap persists.
 
-**Documenting unresolvable gaps.** When a collection gap cannot be resolved through available means, the G2/S2 formally documents the gap and notifies the supported commander. The commander must know that a PIR is unanswered and why. An undisclosed collection gap is a form of intelligence failure — the commander makes decisions assuming the intelligence picture is more complete than it is.
+**Documenting unresolvable gaps.** When a gap cannot be resolved, the G2/S2 formally documents it and notifies the commander. An undisclosed collection gap is an intelligence failure — the commander must know what PIRs remain unanswered and why.
 
 ### 3-6. Collection Asset Deconfliction
 
-When multiple sections, echelons, or units are tasking the same collection assets against overlapping areas, the 35H uses the collection management workspace to identify conflicts and coordinate resolution.
+When multiple sections, echelons, or units task the same collection assets against overlapping areas, the 35H uses the collection management workspace to identify conflicts and coordinate resolution.
 
-**Deconfliction process.** Review the collection tasking matrix for each asset. If an asset appears tasked to multiple simultaneous requirements, the 35H coordinates with the tasking authority to establish priority and sequencing. Document the deconfliction in the collection management workspace. Brief the resolution to the G2/S2.
+**Deconfliction process.** Review the tasking matrix for each asset. If an asset appears tasked to multiple simultaneous requirements, coordinate with the tasking authority to establish priority and sequencing. Document the deconfliction in the collection management workspace and brief the resolution to the G2/S2.
 
-**Echelon deconfliction.** When the unit's collection assets are being tasked by both organic (S2) and higher headquarters (G2), confirm the tasking authority hierarchy. Organic tasking authority belongs to the lowest echelon with the requirement. Higher headquarters tasking takes precedence unless the S2 has coordinated an exception with the higher G2.
+**Echelon deconfliction.** When collection assets are tasked by both organic (S2) and higher HQ (G2), confirm the tasking authority hierarchy. Organic tasking belongs to the lowest echelon with the requirement. Higher HQ tasking takes precedence unless the S2 has coordinated an exception with the higher G2.
 
-**Deconfliction documentation.** Document all deconfliction decisions in the collection management workspace: which assets were in conflict, which PIR took priority, who made the priority decision, and what collection was rescheduled or deferred. This documentation prevents recurrence of the same conflict and supports lessons learned at the end of the operational period.
+**Deconfliction documentation.** Document all deconfliction decisions: which assets were in conflict, which PIR took priority, who made the priority decision, and what collection was rescheduled or deferred. This prevents recurrence and supports lessons learned.
 
-**Asset availability tracking.** When a collection asset is unavailable — down for maintenance, recalled for higher priority tasking, or temporarily out of communication — the 35H updates the collection asset status in the collection management workspace immediately. A gap that results from an unavailable asset is distinguishable from a gap caused by planning failure. The MSS dashboard must reflect the actual reason for each gap so the G2/S2 can make an informed recommendation to the commander.
+**Asset availability tracking.** When a collection asset is unavailable — maintenance, recall, or comms loss — update asset status in the collection management workspace immediately. The MSS dashboard must reflect the actual reason for each gap so the G2/S2 can make an informed recommendation.
 
-**Cross-echelon asset visibility.** When organic assets are insufficient to cover all PIRs, the 35H coordinates with the higher G2 collection manager to request augmentation. Before making the request, confirm through MSS: which PIRs are uncovered, what organic assets are available, why organic coverage is insufficient, and what collection window is required. A well-documented gap request in MSS demonstrates professional collection management and increases the likelihood of higher headquarters response. An ad hoc verbal request with no MSS documentation is less likely to be prioritized and harder to track to completion.
+**Cross-echelon asset visibility.** When organic assets are insufficient, coordinate with the higher G2 collection manager for augmentation. Before requesting, confirm through MSS: which PIRs are uncovered, what organic assets are available, why organic coverage is insufficient, and what collection window is required. A documented gap request in MSS is more likely to be prioritized and easier to track to completion.
 
 ---
 
@@ -402,7 +405,7 @@ When multiple sections, echelons, or units are tasking the same collection asset
 
 ### 4-1. Multi-INT Fusion in MSS
 
-All-source analysis combines GEOINT, SIGINT, HUMINT, OSINT, and other INT categories to produce assessments no single source can support. MSS enables fusion through linked Ontology objects — a HUMINT report, a geospatial observation, and a SIGINT activity event can be associated within the same analytical workspace, enabling the analyst to inspect their relationship.
+All-source analysis combines GEOINT, SIGINT, HUMINT, OSINT, and other INT categories to produce assessments no single source can support. MSS enables fusion through linked Ontology objects — a HUMINT report, a geospatial observation, and a SIGINT event can be associated within the same analytical workspace.
 
 **Standard all-source analytical workflow:**
 
@@ -416,11 +419,11 @@ All-source analysis combines GEOINT, SIGINT, HUMINT, OSINT, and other INT catego
 
 ### 4-2. Pattern of Life Analysis
 
-Pattern of life (POL) analysis establishes behavioral baselines for threat actors, facilities, and areas of interest. Deviations from baseline constitute indicators of changed threat posture, operational preparation, or emerging activity.
+POL analysis establishes behavioral baselines for threat actors, facilities, and areas of interest. Deviations from baseline indicate changed threat posture, operational preparation, or emerging activity.
 
-**Building a POL baseline.** The analyst queries activity events over a defined time period and geographic area, establishing frequency, timing, and location patterns. The baseline period must be long enough to capture normal variation — at minimum 14 days.
+**Building a POL baseline.** Query activity events over a defined time period and geographic area, establishing frequency, timing, and location patterns. Minimum baseline: 14 days — sufficient to capture normal variation.
 
-**Deviation detection.** The analyst configures a dashboard panel to flag deviations: activity above or below baseline threshold, activity outside the normal location cluster, or activity outside the normal timing window. Deviations require investigation and assessment — not automatic conclusions.
+**Deviation detection.** Configure a dashboard panel to flag deviations: activity above or below baseline threshold, outside the normal location cluster, or outside the normal timing window. Deviations require investigation — not automatic conclusions.
 
 **Table 4-1. Pattern of Life Analysis Parameters**
 
@@ -435,19 +438,19 @@ Pattern of life (POL) analysis establishes behavioral baselines for threat actor
 
 ### 4-3. SIGACT Analysis and Event Management
 
-Security incidents and significant activities (SIGACTs) are the primary record of battlefield events in MSS. Every SIGACT entered in MSS feeds the pattern of life analysis, the threat ORBAT assessment, and the I&W indicator tracking. SIGACT quality determines analytical quality.
+SIGACTs are the primary record of battlefield events in MSS. Every SIGACT entered feeds POL analysis, threat ORBAT assessment, and I&W indicator tracking. SIGACT quality determines analytical quality.
 
-**SIGACT entry standard.** Every SIGACT entered in MSS must include: event type (using the approved taxonomy — do not create ad hoc event types), location (10-digit MGRS), time (in Zulu), associated threat unit (linked to ORBAT object where identified), source of reporting (HUMINT / SIGINT / GEOINT / observer / report), and source reliability rating. The analyst who enters the SIGACT applies the source reliability rating at entry time — not retroactively.
+**SIGACT entry standard.** Every SIGACT must include: event type (approved taxonomy only — no ad hoc types), location (10-digit MGRS), time (Zulu), associated threat unit (linked to ORBAT object where identified), source (HUMINT / SIGINT / GEOINT / observer / report), and source reliability rating applied at entry — not retroactively.
 
-**SIGACT taxonomy consistency.** Event type taxonomy must be consistent across the section and synchronized with higher headquarters taxonomy where applicable. Inconsistent event typing prevents meaningful pattern analysis. The 35X establishes and enforces SIGACT taxonomy as a section standard.
+**SIGACT taxonomy consistency.** Event type taxonomy must be consistent across the section and synchronized with higher HQ taxonomy where applicable. Inconsistent typing prevents meaningful pattern analysis. The 35X establishes and enforces SIGACT taxonomy as a section standard.
 
 **Periodic SIGACT analysis.** See Section 4-2 on Pattern of Life Analysis for the analytical use of SIGACT data. SIGACT entry is a data function; SIGACT analysis is an analytical function. Both are required.
 
 ### 4-5. Link Analysis and Network Mapping
 
-Link analysis identifies relationships between entities — organizations, locations, equipment, events. In MSS, link analysis is performed by querying and visualizing Ontology object relationships, enabling the analyst to map threat networks, supply chains, and command relationships.
+Link analysis identifies relationships between entities — organizations, locations, equipment, events. In MSS, it is performed by querying and visualizing Ontology object relationships to map threat networks, supply chains, and command relationships.
 
-**Network map structure.** Nodes (entities) and edges (relationships). Nodes: organizations, locations, equipment sets, events. Edges represent relationship types: command relationship, logistics link, financial link, known association, observed co-location. Each edge carries: relationship type, basis for the link (source reference), confidence level, and date of last confirmation.
+**Network map structure.** Nodes (entities) and edges (relationships). Node types: organizations, locations, equipment sets, events. Edge types: command relationship, logistics link, financial link, known association, observed co-location. Each edge carries: relationship type, source reference, confidence level, and date of last confirmation.
 
 > **CAUTION: Persons of interest in a network map must be referenced by designated case or contact numbers — never by full name, physical description, or identifying information — in MSS unless the workspace has been specifically authorized for that data category. Coordinate with the CI section (35L) and the unit legal advisor before creating person-linked objects in MSS. Creating a person-linked object without this authorization may violate AR 381-10 and Privacy Act requirements.**
 
@@ -476,7 +479,7 @@ I&W monitoring tracks threat indicators against established warning conditions. 
 
 ### 4-7. Building and Maintaining Threat Models
 
-A threat model in MSS is a persistent analytical product linking threat ORBAT objects, capability assessments, pattern of life data, and COA analysis into a single, queryable representation of the threat in the AOR.
+A threat model in MSS is a persistent analytical product linking threat ORBAT objects, capability assessments, POL data, and COA analysis into a single queryable representation of the threat in the AOR.
 
 **Threat model structure:**
 - Unit objects linked to location, equipment, echelon, and condition
@@ -491,7 +494,7 @@ A threat model in MSS is a persistent analytical product linking threat ORBAT ob
 
 ### 4-8. Threat Model Maintenance Cycle Standards
 
-The threat model requires disciplined maintenance to remain analytically valid. The following maintenance standards apply to all intelligence sections using MSS.
+The following maintenance standards apply to all intelligence sections using MSS.
 
 **Weekly threat model review (minimum).** At least once per week, the section chief or designated 35D reviews the threat model in its entirety:
 
@@ -528,26 +531,26 @@ All reporting objects entered in MSS must carry: source reliability rating (A–
 
 ### 5-1. The 35G Analyst Role in MSS
 
-The 35G manages the geospatial data layer in MSS as the spatial foundation for all other intelligence analysis. Key MSS functions:
+The 35G manages the geospatial data layer in MSS — the spatial foundation for all other intelligence analysis. Key MSS functions:
 
 - Upload and manage geospatial layers (terrain, imagery overlays, infrastructure data, weather)
 - Establish and maintain NAI objects with accurate geospatial boundaries linked to the collection plan
 - Perform MGRS-based analysis for threat location and targeting
-- Integrate KML/KMZ products from higher headquarters and adjacent units
+- Integrate KML/KMZ products from higher HQ and adjacent units
 - Maintain the temporal archive of geospatial products for historical comparison
 - Support targeting with geospatial target packages (Chapter 8)
 
-The 35G is a specialized analyst role. The geospatial picture the 35G builds is the spatial reference for every other analytical product in the workspace. Errors in geospatial data propagate through the entire IPOE and targeting picture.
+Errors in geospatial data propagate through the entire IPOE and targeting picture.
 
 ### 5-2. Imagery Exploitation and Layer Management
 
-Imagery in MSS is managed as geospatial overlays linked to time-stamped ingest records. The 35G uploads approved imagery and annotates it with exploitation findings.
+Imagery in MSS is managed as geospatial overlays linked to timestamped ingest records.
 
-**Imagery upload procedure.** Upload imagery through the Geospatial Layer upload function in the GEOINT workspace. Name each layer: `[UNIT]-IMAGERY-[AREA]-[YYYYMMDD]`. Record the imagery collection date (not the upload date) in the layer metadata — the collection date is the operationally relevant currency indicator.
+**Imagery upload.** Upload through the Geospatial Layer upload function in the GEOINT workspace. Name each layer: `[UNIT]-IMAGERY-[AREA]-[YYYYMMDD]`. Record the collection date (not the upload date) in layer metadata — the collection date is the operationally relevant currency indicator.
 
-**Imagery exploitation annotation.** After upload, annotate the imagery layer with exploitation findings: identified threat equipment (linked to ORBAT objects where possible), activity observations, facility changes, terrain features of interest. Each annotation: object type, location (MGRS), confidence level, and analyst initials.
+**Exploitation annotation.** After upload, annotate with exploitation findings: identified threat equipment (linked to ORBAT objects where possible), activity observations, facility changes, terrain features of interest. Each annotation: object type, location (MGRS), confidence level, analyst initials.
 
-**Layer archiving.** Layers older than 30 days that are not actively referenced in current analysis move to the archive layer group. Archived layers remain queryable for historical comparison. Never delete without G2/S2 authorization.
+**Layer archiving.** Layers older than 30 days not actively referenced in current analysis move to the archive layer group. Archived layers remain queryable. Never delete without G2/S2 authorization.
 
 ---
 **TASK BOX 5-1: Upload and Register Geospatial Layer in MSS**
@@ -581,24 +584,24 @@ All geospatial analysis in MSS uses MGRS as the primary coordinate reference.
 
 ### 5-4. Named Area of Interest (NAI) Management
 
-NAIs are specific geographic areas where collection is focused to confirm or deny threat COAs. In MSS, NAIs are Ontology objects with geospatial boundaries linked to: the supporting PIR, assigned collection assets, indicators monitored within the NAI, and the threat COA the NAI is designed to assess.
+NAIs are specific geographic areas where collection is focused to confirm or deny threat COAs. In MSS, NAIs are Ontology objects with geospatial boundaries linked to: the supporting PIR, assigned collection assets, indicators monitored within the NAI, and the threat COA the NAI assesses.
 
-**NAI creation.** Create each NAI as a geospatial boundary object (polygon). Apply MGRS coordinates for all boundary vertices. Name: `NAI-[NUMBER]-[UNIT]-[YYYYMMDD]`. Review NAIs at each collection plan update: Is this NAI linked to an active PIR? Is the collection asset still tasked? Is the NAI boundary still correct? Close NAIs no longer linked to active PIRs — archive, do not delete.
+**NAI creation.** Create each NAI as a geospatial boundary polygon. Apply MGRS coordinates for all boundary vertices. Name: `NAI-[NUMBER]-[UNIT]-[YYYYMMDD]`. At each collection plan update, review: Is this NAI linked to an active PIR? Is the collection asset still tasked? Is the boundary still correct? Archive (do not delete) NAIs no longer linked to active PIRs.
 
 ### 5-5. KML/KMZ Integration and GIS Layer Management
 
-Higher headquarters GEOINT products and commercial files are typically provided in KML, KMZ, or GeoJSON formats. When receiving from adjacent or higher units, upload to a designated "received products" layer group — separate from unit-produced layers. Label with originating unit, product date, and classification to prevent confusion between own analytical products and externally received data.
+Higher HQ GEOINT products are typically provided in KML, KMZ, or GeoJSON formats. Upload received files to a designated "received products" layer group — separate from unit-produced layers. Label with originating unit, product date, and classification to prevent confusion with own analytical products.
 
 ### 5-6. Supporting Targeting with Geospatial Products
 
 The 35G's primary targeting contributions:
 
 - Target location object with MGRS coordinates and source reference
-- Imagery overlay confirming target description, associated terrain, and adjacent civilian infrastructure
-- Geospatial representation of collateral damage estimation (CDE) buffer zones — the 35G provides the display layer only; CDE analysis is performed by JAG and the targeting officer
-- Post-strike imagery overlay for BDA comparison against pre-strike imagery baseline
+- Imagery overlay confirming target description, terrain, and adjacent civilian infrastructure
+- Geospatial CDE buffer zone display layer (the 35G provides the display layer only; CDE analysis is performed by JAG and the targeting officer)
+- Post-strike imagery overlay for BDA comparison against pre-strike baseline
 
-Coordinate with the fires cell and targeting officer to confirm coordinate reference system and datum before sharing targeting geospatial products. Inconsistent MGRS formats between intelligence and fires create targeting errors.
+Confirm coordinate reference system and datum with the fires cell before sharing targeting geospatial products. Inconsistent MGRS formats between intelligence and fires create targeting errors.
 
 ---
 
@@ -608,7 +611,7 @@ Coordinate with the fires cell and targeting officer to confirm coordinate refer
 
 ### 6-1. SIGINT Analyst Workflow in MSS
 
-The 35N SIGINT analyst operates in a separate, specially authorized workspace. SIGINT data requires authorization beyond standard MSS access. Before the 35N begins any MSS activity, the SIGINT workspace must be authorized by the theater SIGINT authority, the G6, and the unit security manager. This authorization is separate from and in addition to the analyst's standard MSS access credentials.
+The 35N operates in a separate, specially authorized workspace. Before beginning any MSS activity, the SIGINT workspace must be authorized by the theater SIGINT authority, the G6, and the unit security manager — separate from and in addition to standard MSS access credentials.
 
 **35N MSS functions (authorized workspace only):**
 
@@ -623,7 +626,7 @@ The 35N SIGINT analyst operates in a separate, specially authorized workspace. S
 
 ### 6-3. HUMINT Collector Operational Workflow in MSS
 
-The 35M uses MSS to manage contact reports, link reports to collection requirements, and support all-source fusion. MSS does not replace TIGR or HOT-R. MSS provides the analytical management layer.
+The 35M uses MSS to manage contact reports, link reports to collection requirements, and support all-source fusion. MSS does not replace TIGR or HOT-R — it provides the analytical management layer.
 
 **Contact report tracking.** Each completed contact (debrief, elicitation, liaison, screening) generates a contact report. In MSS, contact report objects include: report date, collection date (if different), location (MGRS), collection category, associated PIR, reporting status (submitted to TIGR: Y/N), and link to all-source workspace.
 
@@ -633,7 +636,7 @@ The 35M uses MSS to manage contact reports, link reports to collection requireme
 
 ### 6-4. Source Registry Management in MSS
 
-The source registry in MSS maintains a reference-only record of active sources by case number. MSS records that a source exists (by case number) and links to associated reporting and collection requirements. MSS does not store source biographic, contact, or access data — that information remains in HOT-R.
+The source registry maintains a reference-only record of active sources by case number. MSS records source existence (by case number) and links to associated reporting and collection requirements. Source biographic, contact, and access data remain in HOT-R — not MSS.
 
 **Source registry structure.** Each source object: case number, associated PIRs, reporting history (links to contact report objects), reliability rating, and access areas (geographic or organizational areas where the source has demonstrated collection access).
 
@@ -641,7 +644,7 @@ The source registry in MSS maintains a reference-only record of active sources b
 
 ### 6-5. CI Screening Data Management
 
-The 35L CI agent uses MSS to manage CI screening records, link screening results to threat assessments, and coordinate CI-derived threat indicators with the all-source section.
+The 35L uses MSS to manage CI screening records, link screening results to threat assessments, and coordinate CI-derived threat indicators with the all-source section.
 
 **Screening record objects.** CI screening record objects include: screening event date, location (MGRS), associated operational context, result category (no derogatory / minor derogatory / significant derogatory / referral), and linkage to threat assessment if applicable. No screened individual's identifying information appears in MSS. Reference by event designator only.
 
@@ -651,11 +654,11 @@ The 35L CI agent uses MSS to manage CI screening records, link screening results
 
 All HUMINT and CI data in MSS is subject to the Privacy Act of 1974 and AR 381-10.
 
-**Need-to-know requirement.** Access to any workspace containing HUMINT or CI objects requires documented need-to-know established before access is granted. Rank and clearance level do not substitute for need-to-know. The G2/S2 section chief makes all need-to-know determinations for HUMINT and CI workspaces.
+**Need-to-know.** Access to any workspace containing HUMINT or CI objects requires documented need-to-know established before access is granted. Rank and clearance do not substitute. The G2/S2 section chief makes all need-to-know determinations for HUMINT and CI workspaces.
 
-**Training requirement.** All personnel with access to HUMINT or CI workspaces must have completed required AR 381-10 training prior to access.
+**Training.** All personnel with HUMINT or CI workspace access must complete AR 381-10 training prior to access.
 
-**Audit review.** Audit logs for HUMINT and CI workspaces are reviewed monthly by the G2/S2 section chief or designated representative. Any access anomaly is reported to the unit security manager.
+**Audit review.** Audit logs are reviewed monthly by the G2/S2 section chief or designated representative. Any access anomaly is reported to the unit security manager.
 
 > **CAUTION: MSS access controls are a technical safeguard — they are not a substitute for proper personnel handling training. Access controls prevent unauthorized access from outside the approved group. They do not prevent mishandling by authorized users. All personnel with HUMINT and CI workspace access must be briefed on workspace-specific handling requirements before access is granted, not after.**
 
@@ -687,21 +690,21 @@ The INTSUM is built as a Workshop dashboard displaying: current threat assessmen
 
 **INTSUM dashboard required elements:**
 
-- Classification marking prominently displayed at top of the dashboard
+- Classification marking prominently displayed at top
 - Period covered (from date/time to date/time)
 - Threat assessment summary (current MLCOA assessment, I&W status, threat posture trend)
 - Significant activity (events from the reporting period linked to reporting objects)
 - Collection summary (PIR coverage status, gaps, RFIs answered this period)
 - Intelligence outlook (key decision points anticipated, planned collection)
 - Data-as-of timestamp for each automated data element
-- Analyst assessment text — written by 35D/35F — not auto-generated
+- Analyst assessment text — written by 35D/35F, not auto-generated
 - Analyst name, position, and G2/S2 approval signature
 
-**Analyst assessment text is not optional.** A dashboard displaying only data with no analyst text is not an INTSUM. The analyst must write a current assessment of the threat situation, the significance of recent activity, and the outlook for the next period.
+**Analyst assessment text is not optional.** A dashboard displaying only data is not an INTSUM. The analyst must write a current assessment of the threat situation, the significance of recent activity, and the outlook for the next period.
 
 ### 7-3. MSS Dashboard as Intelligence Product
 
-MSS Workshop dashboards are live intelligence products. They update continuously from source data. The analyst's role shifts from product generator to product curator — ensuring data quality, analytical assessments, and confidence ratings remain current.
+MSS Workshop dashboards are live intelligence products that update continuously from source data. The analyst's role shifts from product generator to product curator — ensuring data quality, analytical assessments, and confidence ratings remain current.
 
 **Product currency standards.** Every intelligence dashboard must display:
 - Product title and classification marking
@@ -712,7 +715,7 @@ MSS Workshop dashboards are live intelligence products. They update continuously
 
 ### 7-4. Dissemination via MSS Workspace Access
 
-MSS dissemination uses workspace access grants. The intelligence product remains in MSS; consumers are given access to read it. This is the preferred method because it maintains classification control, enables updates in place, and provides an audit trail.
+MSS dissemination uses workspace access grants. The intelligence product remains in MSS; consumers receive read access. This is the preferred method — it maintains classification control, enables in-place updates, and provides an audit trail.
 
 **Dissemination access levels:**
 - **Read-only:** Consumer can view dashboards; cannot edit. Appropriate for all cross-functional sharing.
@@ -729,7 +732,7 @@ MSS dissemination uses workspace access grants. The intelligence product remains
 
 ### 7-5. Classification Handling Within MSS
 
-MSS product classification follows derivative classification rules (AR 380-5, E.O. 13526). The classification of a compiled MSS product may exceed the classification of any individual source.
+MSS product classification follows derivative classification rules (AR 380-5, E.O. 13526). A compiled MSS product may be classified higher than any individual source.
 
 **Derivative classification procedure:**
 1. List all source classifications used in the product.
@@ -743,9 +746,9 @@ MSS product classification follows derivative classification rules (AR 380-5, E.
 
 ### 7-6. Product Naming and Version Control
 
-All intelligence products follow Appendix A naming conventions. Version numbers increment on substantive analytical updates — not on routine data refreshes.
+All intelligence products follow Appendix A naming conventions. Version numbers increment on substantive analytical updates only — not routine data refreshes.
 
-**Version increment triggers:** Significant change in threat COA assessment; new PIR satisfied or added; major ORBAT update; change in I&W warning level. Routine collection reporting updates that do not change the analytical assessment do not require version increment.
+**Version increment triggers:** Significant change in threat COA assessment; new PIR satisfied or added; major ORBAT update; change in I&W warning level.
 
 ---
 
@@ -755,13 +758,13 @@ All intelligence products follow Appendix A naming conventions. Version numbers 
 
 ### 8-1. D3A Methodology in MSS
 
-The Decide-Detect-Deliver-Assess (D3A) methodology (FM 3-60) is the targeting framework. Intelligence supports three of the four phases directly.
+D3A (Decide-Detect-Deliver-Assess, FM 3-60) is the targeting framework. Intelligence supports three of the four phases directly.
 
-**Decide phase — Target development.** Intelligence contributes: identifying target sets tied to the commander's objectives, conducting target value analysis, building HVT/HPT nominations, and creating target objects in MSS linked to the threat ORBAT and IPOE.
+**Decide — Target development.** Intelligence identifies target sets tied to the commander's objectives, conducts target value analysis, builds HVT/HPT nominations, and creates target objects in MSS linked to the threat ORBAT and IPOE.
 
-**Detect phase — Target detection and tracking.** Collection management (Chapter 3) and I&W monitoring (Chapter 4) enable detection. When an HVT/HPT is located, the analyst updates the target object with current location, confidence level, and source reference — immediately visible to fires through the shared targeting workspace.
+**Detect — Target detection and tracking.** Collection management (Chapter 3) and I&W monitoring (Chapter 4) enable detection. When an HVT/HPT is located, the analyst updates the target object with current location, confidence level, and source reference — immediately visible to fires through the shared targeting workspace.
 
-**Assess phase — Battle Damage Assessment.** BDA is tracked as a linked object to the original target, enabling direct before/after comparison of pre-strike intelligence with post-strike assessment.
+**Assess — BDA.** BDA is tracked as a linked object to the original target, enabling direct before/after comparison of pre-strike intelligence with post-strike assessment.
 
 > **NOTE: Intelligence does not own targeting. The targeting process is led by the targeting officer under the fires cell. Intelligence provides a critical input — target development, detection, and BDA collection. The targeting decision and attack authorization belong to the commander and targeting officer, not the G2/S2.**
 
@@ -787,19 +790,19 @@ The Decide-Detect-Deliver-Assess (D3A) methodology (FM 3-60) is the targeting fr
 
 ### 8-3. Target Synchronization Matrix in MSS
 
-The TSM is the primary product synchronizing targets, collection, attack systems, and timing. In MSS, the TSM is a Workshop dashboard maintained jointly by intelligence, fires, and the targeting officer.
+The TSM synchronizes targets, collection, attack systems, and timing. In MSS, it is a Workshop dashboard maintained jointly by intelligence, fires, and the targeting officer.
 
 **TSM data ownership:**
-- Intelligence section (35H): collection column — which assets are tasked against each target
-- Intelligence section (35F/35D): intelligence assessment column — current location, confidence, target analysis
-- Fires section (FECC): attack column — assigned attack system, munitions, windows
+- Intelligence (35H): collection column — which assets are tasked against each target
+- Intelligence (35F/35D): intelligence assessment column — current location, confidence, target analysis
+- Fires (FECC): attack column — assigned attack system, munitions, windows
 - Targeting officer: overall TSM review, approval, and re-attack determination
 
-**TSM review cycle.** The targeting officer and G2/S2 review the TSM at each targeting board meeting. Stale targeting data identified during a TSM review must be immediately updated or flagged as a collection gap.
+**TSM review cycle.** The targeting officer and G2/S2 review the TSM at each targeting board. Stale data must be updated or flagged as a collection gap immediately.
 
 ### 8-4. Intelligence-Fires Integration Access Coordination
 
-The most common cause of intelligence-fires integration failure in MSS is late access coordination — workspace access established during a targeting event rather than before. Complete the Appendix D checklist at the beginning of each operational period. Validate that both sections have correct access levels and that all access is confirmed by test login before operations begin.
+The most common cause of intelligence-fires integration failure is late access coordination — workspace access established during a targeting event rather than before. Complete the Appendix D checklist at the beginning of each operational period. Validate that both sections have correct access levels and confirm by test login before operations begin.
 
 ### 8-5. BDA Tracking in MSS
 
@@ -819,9 +822,9 @@ The most common cause of intelligence-fires integration failure in MSS is late a
 
 ### 9-1. BCT S2 Section
 
-The BCT S2 is the primary tactical intelligence effort, responsible for the brigade commander's IPOE, collection management for the MI Company, and intelligence production for the brigade TOC.
+The BCT S2 is responsible for the brigade commander's IPOE, collection management for the MI Company, and intelligence production for the brigade TOC.
 
-**MSS functions at BCT S2:** IPOE workspace (Chapter 2), collection management workspace (Chapter 3), all-source analysis workspace (Chapter 4), targeting workspace (Chapter 8), and INTSUM/threat assessment products delivered to the brigade TOC.
+**MSS functions:** IPOE workspace (Chapter 2), collection management workspace (Chapter 3), all-source analysis workspace (Chapter 4), targeting workspace (Chapter 8), and INTSUM/threat assessment products for the brigade TOC.
 
 **MI Company integration.** The BCT's MI Company provides HUMINT collection teams, a SIGINT platoon, and a GEOINT section. Establish collection reporting feeds and workspace access during pre-deployment setup — not in contact.
 
@@ -838,25 +841,25 @@ The BCT S2 is the primary tactical intelligence effort, responsible for the brig
 
 ### 9-2. Division G2
 
-The Division G2 provides intelligence support to the division commander and enables three subordinate BCTs with production capability exceeding organic BCT capacity.
+The Division G2 provides intelligence support to the division commander and enables subordinate BCTs with production capability exceeding organic BCT capacity.
 
-**MSS functions at Division G2:** IPOE workspace covering the division AOR (products shared read with BCT S2 sections), Analytical Control Element (ACE) workspace aggregating BCT reporting with corps intelligence, division targeting workspace, and strategic collection management coordinating with the MI brigade.
+**MSS functions:** IPOE workspace covering the division AOR (shared read with BCT S2 sections), ACE workspace aggregating BCT reporting with corps intelligence, division targeting workspace, and strategic collection management coordinating with the MI brigade.
 
-**Division-to-BCT product flow.** Division G2 pushes products to BCT S2 sections via MSS read access. BCT S2 sections receive read access to division IPOE and threat products. Division ACE receives read access to BCT all-source workspaces for collection reporting aggregation. Write access does not cross echelon boundaries.
+**Division-to-BCT product flow.** Division G2 pushes products to BCT S2 sections via MSS read access. Division ACE receives read access to BCT all-source workspaces for collection reporting aggregation. Write access does not cross echelon boundaries.
 
 ### 9-3. Corps G2
 
 The Corps G2 operates an all-source production cell, a SIGINT cell, and a collection management section integrating theater, national, and allied intelligence.
 
-**MSS at corps G2:** Multi-division ORBAT workspace, long-range collection synchronization across the corps AOR, corps targeting workspace supporting the corps fires cell, and allied/partner nation intelligence coordination workspaces authorized under applicable MOUs.
+**MSS functions:** Multi-division ORBAT workspace, long-range collection synchronization across the corps AOR, corps targeting workspace, and allied/partner nation intelligence coordination workspaces authorized under applicable MOUs.
 
-**SIGINT cell workspace.** The corps SIGINT cell requires separate workspace authorization beyond standard MSS credentials. Coordinate with the MSS administrator, G6, and theater SIGINT authority for workspace establishment. Do not create a SIGINT workspace without all authorizations confirmed in writing.
+**SIGINT cell workspace.** The corps SIGINT cell requires separate workspace authorization beyond standard MSS credentials. Coordinate with the MSS administrator, G6, and theater SIGINT authority. Do not create a SIGINT workspace without all authorizations confirmed in writing.
 
 ### 9-4. Theater/Army G2 (USAREUR-AF)
 
-At the USAREUR-AF theater level, the G2 coordinates with INSCOM and national-level agencies to provide strategic intelligence production.
+At the USAREUR-AF theater level, the G2 coordinates with INSCOM and national-level agencies for strategic intelligence production.
 
-**Theater MSS functions:** Theater ORBAT workspace (the most current and authoritative ORBAT in the USAREUR-AF enterprise), national-level feed integration workspaces (authorized national products for theater distribution), allied intelligence coordination workspaces (established under bilateral/multilateral sharing agreements), and theater threat assessment production providing the baseline picture for all subordinate echelons.
+**Theater MSS functions:** Theater ORBAT workspace (most current and authoritative in the USAREUR-AF enterprise), national-level feed integration workspaces, allied intelligence coordination workspaces (established under bilateral/multilateral sharing agreements), and theater threat assessment production providing the baseline picture for all subordinate echelons.
 
 **INSCOM support.** When INSCOM provides data feeds into MSS, the theater G2 establishes controlled access workspaces. Corps and division G2 sections receive read access to authorized products — not direct access to the INSCOM feed workspace.
 
@@ -868,7 +871,7 @@ At the USAREUR-AF theater level, the G2 coordinates with INSCOM and national-lev
 
 ### 10-1. Intelligence Operations During MSS Degradation
 
-MSS degradation may result from network outage, cyber incident, CP displacement, or adversary action against communications infrastructure. In USAREUR-AF's operating environment, MSS degradation during high-intensity conflict operations is a planning assumption, not a contingency. The section must maintain minimum essential intelligence functions at all times.
+MSS degradation may result from network outage, cyber incident, CP displacement, or adversary action. In USAREUR-AF's high-intensity conflict environment, MSS degradation is a planning assumption, not a contingency. The section must maintain minimum essential intelligence functions at all times.
 
 **Minimum essential intelligence functions without MSS:**
 - IPOE products — existing printed products (Step 1–4 overlays, threat ORBAT table, COA indicators)
@@ -880,7 +883,7 @@ MSS degradation may result from network outage, cyber incident, CP displacement,
 
 ### 10-2. Pre-Operation Backup Product Generation
 
-Before deployment or each major exercise, the S2 section generates and maintains a current set of printed backup products from MSS. These products are maintained in a classified secure container and updated at each significant IPOE change.
+Before deployment or each major exercise, the S2 section generates a current set of printed backup products from MSS. These are maintained in a classified secure container and updated at each significant IPOE change.
 
 **Table 10-1. Required Printed Backup Products**
 
@@ -946,7 +949,7 @@ When transitioning between PACE tiers, the S2 section chief notifies the G2 and 
 
 ### A-1. General Principles
 
-All intelligence objects and workspaces in MSS follow a hierarchical naming convention identifying owning unit, product type, subject, date, and version.
+All intelligence objects and workspaces follow a hierarchical naming convention identifying owning unit, product type, subject, date, and version.
 
 **Base format:** `[UNIT]-[TYPE]-[SUBJECT/AREA]-[YYYYMMDD]-V[N]`
 
@@ -1331,7 +1334,7 @@ This appendix establishes minimum quality standards for intelligence products pr
 
 ### G-1. Universal Product Quality Standards
 
-Every intelligence product produced on MSS must meet these standards regardless of product type:
+Every intelligence product produced on MSS must meet these standards:
 
 **Standard 1: Classification marking.** Products are marked with the correct overall classification based on derivative classification procedures (AR 380-5). Products that combine sources are assessed for combination classification. The classification appears prominently at the top of every product and at the top of every major section within it.
 
@@ -1379,9 +1382,7 @@ Every intelligence product produced on MSS must meet these standards regardless 
 
 ## APPENDIX H — INTELLIGENCE DOCTRINE CROSS-REFERENCE
 
-This appendix cross-references the primary doctrinal publications governing intelligence operations in USAREUR-AF. Intelligence practitioners using TM-40A should be familiar with these publications. MSS procedures in this manual are derived from — not substitutes for — these doctrinal references.
-
-This appendix cross-references the primary doctrinal publications governing intelligence operations in USAREUR-AF. Intelligence practitioners using TM-40A should be familiar with these publications. MSS procedures in this manual are derived from — not substitutes for — these doctrinal references.
+This appendix cross-references the primary doctrinal publications governing intelligence operations in USAREUR-AF. MSS procedures in this manual are derived from — not substitutes for — these doctrinal references.
 
 ### F-1. Primary Intelligence Doctrine References
 
@@ -1432,7 +1433,7 @@ Before conducting any intelligence function on MSS, confirm:
 
 ## APPENDIX G — INTELLIGENCE SYNCHRONIZATION MEETING CHECKLIST
 
-The Intelligence Synchronization Meeting (ISM) is the battle rhythm event where the G2/S2 presents the intelligence picture, reviews collection coverage, and coordinates intelligence requirements for the next cycle. MSS provides the data foundation for the ISM.
+The ISM is the battle rhythm event where the G2/S2 presents the intelligence picture, reviews collection coverage, and coordinates intelligence requirements for the next cycle. MSS provides the data foundation for the ISM.
 
 ### G-1. ISM Preparation Checklist (Complete Before the Meeting)
 
@@ -1482,7 +1483,7 @@ After each ISM, the following must be documented in the appropriate MSS workspac
 
 ## APPENDIX H — BATTLEFIELD DAMAGE ASSESSMENT STANDARDS REFERENCE
 
-BDA is the intelligence section's primary contribution to the post-strike phase of D3A. This appendix provides quick reference standards for BDA completion in MSS.
+BDA is the intelligence section's primary contribution to the post-strike phase of D3A. Quick reference standards for BDA completion in MSS.
 
 ### H-1. BDA Categories and Standards
 
@@ -1547,7 +1548,7 @@ System damage assessment requires: pre-strike baseline of the target's contribut
 
 ## APPENDIX I — INTELLIGENCE SUPPORT TO THE MDMP
 
-Intelligence support to the MDMP is a primary function of the G2/S2. MSS provides the data environment for MDMP intelligence tasks. This appendix cross-references the MDMP steps with the MSS products and workspaces that support each step.
+MSS provides the data environment for MDMP intelligence tasks. This appendix cross-references MDMP steps with the MSS products and workspaces supporting each step.
 
 ### I-1. MDMP Intelligence Tasks by Step
 
@@ -1588,7 +1589,7 @@ Intelligence support to the MDMP is a primary function of the G2/S2. MSS provide
 
 ### I-2. IPB Integration with MDMP Step 2
 
-IPOE is the primary intelligence contribution to MDMP Step 2 (Mission Analysis). The G2/S2 brief during Mission Analysis covers all four IPOE steps and should present the commander with:
+The G2/S2 brief during Mission Analysis covers all four IPOE steps and presents the commander with:
 
 1. **Operational environment definition.** AOR boundaries, key terrain, adjacent unit positions, civil considerations.
 2. **Environmental effects.** Terrain analysis — avenues of approach, key terrain, obstacles. Weather assessment — operational impact on visibility, mobility, and aviation.
@@ -1599,7 +1600,7 @@ All four steps must be briefable from MSS at the time of the Mission Analysis br
 
 ### I-3. Collection Plan Development During MDMP
 
-Collection planning is the output of MDMP Step 2 (Mission Analysis) and is refined through Step 6 (COA Approval). The 35H builds the collection plan from PIRs developed during Mission Analysis and refines it as the MDMP produces the approved COA and CCIR list.
+The 35H builds the collection plan from PIRs developed during Mission Analysis and refines it as the MDMP produces the approved COA and CCIR list.
 
 **Collection plan MDMP timeline:**
 

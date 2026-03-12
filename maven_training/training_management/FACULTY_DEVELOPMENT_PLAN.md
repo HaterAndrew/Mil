@@ -40,12 +40,18 @@ All instructors must meet the following minimum qualifications before being assi
 | TM-10 | TM-20 Go on file; 90 days active MSS use | Foundry platform fundamentals |
 | TM-20 | TM-30 Go on file; 6+ months Foundry build experience; has built at least 2 production data products | Pipelines, Ontology, Workshop |
 | TM-30 | TM-40 (any track) Go on file or C2DAO SME designation; can conduct Ontology design critiques | Advanced pipeline, Ontology design, AIP Logic configuration |
-| TM-40A | FA49 officer, ORSA-designated civilian, or equivalent quantitative background; TM-40A Go on file or C2DAO ORSA SME designation | Statistical modeling, time series, Monte Carlo, LP |
-| TM-40B | AIP Logic authoring experience (minimum 3 production workflows deployed); C2DAO AI SME designation; TM-40B Go on file | AIP Logic, Agent Studio, RAG, AI safety |
-| TM-40C | ML model deployed to production (minimum 1); TM-40C Go on file; C2DAO MLE SME designation | Feature engineering, model training, MLOps, governance |
-| TM-40D | Program management background (PM-certified preferred); TM-30 Go on file; GFEBS/IMS proficiency | IMS, GFEBS, dashboard standards |
-| TM-40E | Knowledge management background (CKM or equivalent preferred); TM-30 Go on file | KM systems, AIP summarization, PCS continuity |
-| TM-40F | Software engineering background; OSDK/Platform SDK production experience; TM-40F Go on file | OSDK, Platform SDK, TypeScript FOO, Slate, security |
+| TM-40A (INT) | Intelligence professional (35-series preferred); TM-20 Go on file; MSS COP and CCIR experience | INT WFF functions, COP management, CCIR configuration |
+| TM-40B (FIRES) | Fire support officer or NCO (FA preferred); TM-20 Go on file; MSS fires display experience | Fires WFF functions, targeting data, fire support coordination |
+| TM-40C (M2) | Maneuver officer or NCO (infantry/armor preferred); TM-20 Go on file | M2 WFF functions, unit position tracking, route analysis |
+| TM-40D (SUST) | Logistics officer or NCO (88/92-series preferred); TM-20 Go on file | Sustainment WFF functions, LOGSTAT, readiness data |
+| TM-40E (PROT) | Force protection officer or CBRN officer; TM-20 Go on file | Protection WFF functions, force protection CCIRs, PERSTAT |
+| TM-40F (MC) | Operations officer or XO (O-4 or above preferred); TM-20 Go on file | Mission command WFF, BUA products, synchronization matrices |
+| TM-40G | FA49 officer, ORSA-designated civilian, or equivalent quantitative background; TM-40G Go on file or C2DAO ORSA SME designation | Statistical modeling, time series, Monte Carlo, LP |
+| TM-40H | AIP Logic authoring experience (minimum 3 production workflows deployed); C2DAO AI SME designation; TM-40H Go on file | AIP Logic, Agent Studio, RAG, AI safety |
+| TM-40I | ML model deployed to production (minimum 1); TM-40I Go on file; C2DAO MLE SME designation | Feature engineering, model training, MLOps, governance |
+| TM-40J | Program management background (PM-certified preferred); TM-30 Go on file; GFEBS/IMS proficiency | IMS, GFEBS, dashboard standards |
+| TM-40K | Knowledge management background (CKM or equivalent preferred); TM-30 Go on file | KM systems, AIP summarization, PCS continuity |
+| TM-40L | Software engineering background; OSDK/Platform SDK production experience; TM-40L Go on file | OSDK, Platform SDK, TypeScript FOO, Slate, security |
 
 ### 2-2. Evaluator Certification
 
@@ -56,12 +62,18 @@ Evaluators (instructors who conduct Go/No-Go evaluations) must hold a higher cer
 | TM-10 | TM-20 certified instructor |
 | TM-20 | TM-30 certified instructor |
 | TM-30 | TM-40 (any track) certified instructor |
-| TM-40A | FA49 or equivalent; C2DAO ORSA SME designation |
-| TM-40B | C2DAO AI SME; has deployed at least 3 production AIP workflows |
-| TM-40C | MLE with production deployment experience; C2DAO MLE SME designation |
-| TM-40D | PM background; has delivered production PM dashboards on MSS |
-| TM-40E | KM background; C2DAO-designated KM evaluator |
-| TM-40F | Senior SWE; OSDK/Slate production experience; security review background |
+| TM-40A (INT) | INT professional (35-series preferred); MSS COP/CCIR proficiency |
+| TM-40B (FIRES) | Fire support professional (FA preferred); MSS fires display proficiency |
+| TM-40C (M2) | Maneuver officer or NCO; MSS position tracking proficiency |
+| TM-40D (SUST) | Logistics professional (88/92-series preferred); MSS LOGSTAT proficiency |
+| TM-40E (PROT) | Force protection or CBRN officer; MSS CCIR/PERSTAT proficiency |
+| TM-40F (MC) | Operations officer; MSS BUA/synchronization product proficiency |
+| TM-40G | FA49 or equivalent; C2DAO ORSA SME designation |
+| TM-40H | C2DAO AI SME; has deployed at least 3 production AIP workflows |
+| TM-40I | MLE with production deployment experience; C2DAO MLE SME designation |
+| TM-40J | PM background; has delivered production PM dashboards on MSS |
+| TM-40K | KM background; C2DAO-designated KM evaluator |
+| TM-40L | Senior SWE; OSDK/Slate production experience; security review background |
 
 ---
 
@@ -101,7 +113,7 @@ An instructor certified for one course level may be cross-certified for an adjac
 - Phase 2 (Assistant): 1 course iteration
 - Phase 3 (Lead, Observed): 1 course iteration
 
-An instructor certified for TM-30 who wishes to teach TM-40D or TM-40E may use the cross-certification path if they have the domain background requirement.
+An instructor certified for TM-30 who wishes to teach TM-40J or TM-40K may use the cross-certification path if they have the domain background requirement. Instructors teaching WFF tracks (TM-40A–F) require functional domain expertise (INT, FIRES, M2, SUST, PROT, or MC) rather than TM-30 certification — the cross-certification path applies to specialist track instructors only.
 
 ---
 
@@ -161,7 +173,7 @@ Lesson plans must be reviewed and updated at minimum annually, or within 30 days
 
 ### 5-3. Guest Instructors and SME Blocks
 
-For specialist content requiring domain expertise not held by C2DAO staff (e.g., FA49 ORSA evaluators for TM-40A commander brief evaluation, security specialists for TM-40F security block), C2DAO may designate Guest Instructors who:
+For specialist content requiring domain expertise not held by C2DAO staff (e.g., FA49 ORSA evaluators for TM-40G commander brief evaluation, security specialists for TM-40L security block), C2DAO may designate Guest Instructors who:
 - Hold the relevant domain qualification
 - Are briefed by C2DAO Training OIC on course standards and evaluation criteria before their block
 - Receive an orientation to the T&EOs for any blocks they evaluate
@@ -327,13 +339,13 @@ As of: _______________
 Name | Courses Certified | Eval Cert | Last Observed | Platform Currency
 -----|-------------------|-----------|---------------|------------------
      | TM-10, TM-20      | Yes (TM-10/20) | MM/YYYY | Current
-     | TM-30, TM-40D     | Yes (TM-30)    | MM/YYYY | Current
-     | TM-40B            | Yes (TM-40B)   | MM/YYYY | Current
+     | TM-30, TM-40J     | Yes (TM-30)    | MM/YYYY | Current
+     | TM-40H            | Yes (TM-40H)   | MM/YYYY | Current
 
 GUEST INSTRUCTORS:
 Name | Block(s) | Course | Qualification | Last Briefed
 -----|----------|--------|---------------|-------------
-     | ORSA Brief Eval | TM-40A | FA49 | MM/YYYY
+     | ORSA Brief Eval | TM-40G | FA49 | MM/YYYY
 
 Roster Maintained By: ____________________________
 Last Updated: ____________________________________

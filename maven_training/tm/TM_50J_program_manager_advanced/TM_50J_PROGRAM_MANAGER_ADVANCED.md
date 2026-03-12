@@ -1,33 +1,17 @@
----
-title: TM-50J — Advanced Program Manager (Technical)
-series: Maven Smart System Technical Manual Series
-classification: UNCLASSIFIED
-distribution: Approved for public release; distribution is unlimited.
----
+# TM-50J — ADVANCED PROGRAM MANAGER (TECHNICAL)
+## MAVEN SMART SYSTEM (MSS) | USAREUR-AF OPERATIONAL DATA TEAM
 
-# TM-50J
-## TECHNICAL MANUAL
-## ADVANCED PROGRAM MANAGER (TECHNICAL)
-## MAVEN SMART SYSTEM
-## USAREUR-AF OPERATIONAL DATA TEAM
+**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA** | Wiesbaden, Germany | 2026 | Version 1.0
 
-**HEADQUARTERS**
-**UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
+**PREREQUISITE PUBLICATIONS:** TM-40J, Program Manager (Technical) (required). Graduates of TM-40J who have managed at least one full-lifecycle MSS data or AI project from initiation through production release, with demonstrated proficiency in Agile delivery, stakeholder management, and MSS platform governance. Familiarity with TM-40G (ORSA), TM-40H (AI Engineer), TM-40I (ML Engineer), TM-40K (Knowledge Manager), and TM-40L (Software Engineer) track content strongly recommended.
 
-2026
-
-**Version 1.0 | March 2026**
-
-**PREREQUISITE PUBLICATIONS:** TM-40D, Program Manager (Technical) (required). Graduates of TM-40D who have managed at least one full-lifecycle MSS data or AI project from initiation through production release, with demonstrated proficiency in Agile delivery, stakeholder management, and MSS platform governance. Familiarity with TM-40A (ORSA), TM-40B (AI Engineer), TM-40C (ML Engineer), TM-40E (Knowledge Manager), and TM-40F (Software Engineer) track content strongly recommended.
-
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 **AUTHORITY:** This publication is issued under authority of the USAREUR-AF C2 Data and Analytics Office (C2DAO). It implements Army CIO Memorandum, Data and Analytics Policy (April 2024) and aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025). Reference learn-data.armydev.com for current platform documentation.
 
 ---
 
-> **PREREQUISITE WARNING:** TM-50J is **not required** for the majority of technical PM billets. It is intended for personnel with demonstrated proficiency at TM-40D level who have managed at least one full-lifecycle MSS project through production release and are actively leading multi-track data/AI programs. If you are uncertain whether TM-50J applies to your billet, consult your supervisor or the unit data steward before proceeding.
+> **PREREQUISITE WARNING:** TM-50J is **not required** for the majority of technical PM billets. It is intended for personnel with demonstrated proficiency at TM-40J level who have managed at least one full-lifecycle MSS project through production release and are actively leading multi-track data/AI programs. If you are uncertain whether TM-50J applies to your billet, consult your supervisor or the unit data steward before proceeding.
 
 ---
 
@@ -48,7 +32,7 @@ Before performing any task at TM-50J level:
 
 > **CAUTION: Multi-team Agile coordination (SAFe or equivalent) requires explicit dependency management across teams. An undocumented inter-team dependency is a hidden risk. Failure to surface and manage cross-team dependencies during planning creates blocked sprints, delayed releases, and degraded data product quality.**
 
-> **NOTE: This manual assumes full mastery of TM-40D content. Chapter references to TM-40A through TM-40F indicate the technical tracks managed by TM-50J program managers — not prerequisites for the PM role itself. Cross-references are provided to help TM-50J graduates understand the work they are overseeing.**
+> **NOTE: This manual assumes full mastery of TM-40J content. Chapter references to TM-40G through TM-40L indicate the technical tracks managed by TM-50J program managers — not prerequisites for the PM role itself. Cross-references are provided to help TM-50J graduates understand the work they are overseeing.**
 
 ---
 
@@ -75,17 +59,17 @@ Before performing any task at TM-50J level:
 
 ---
 
-# CHAPTER 1 — INTRODUCTION AND SCOPE
+## CHAPTER 1 — INTRODUCTION AND SCOPE
 
-## 1-1. Purpose
+### 1-1. Purpose
 
 **BLUF:** TM-50J qualifies Technical Program Managers to lead the USAREUR-AF MSS data capability at scale — managing multiple concurrent product teams, directing portfolio investment, and advising senior leaders on data as an operational asset.
 
-TM-40D qualified you to manage a project. TM-50J qualifies you to manage a program. The distinction is not cosmetic. A project has a defined scope, timeline, and team. A program is a persistent organizational capability — a collection of projects, products, teams, and people operating simultaneously toward a theater-level mission. Managing a program requires different skills, different tools, and a different mental model.
+TM-40J qualified you to manage a project. TM-50J qualifies you to manage a program. The distinction is not cosmetic. A project has a defined scope, timeline, and team. A program is a persistent organizational capability — a collection of projects, products, teams, and people operating simultaneously toward a theater-level mission. Managing a program requires different skills, different tools, and a different mental model.
 
-At the TM-50J level, your job is not to execute sprints — your team leads do that. Your job is to create the conditions in which multiple teams can execute sprints simultaneously, without stepping on each other, without competing for the same resources, and without delivering products that contradict each other. You set standards. You resolve conflicts TM-40D PMs cannot resolve themselves. You manage the interfaces that connect data products to each other and to the command. You maintain the health of the portfolio so that when a commander asks "what can MSS tell me about force readiness?" the answer reflects coherent, validated, current data — not six disconnected dashboards built by six teams who never talked to each other.
+At the TM-50J level, your job is not to execute sprints — your team leads do that. Your job is to create the conditions in which multiple teams can execute sprints simultaneously, without stepping on each other, without competing for the same resources, and without delivering products that contradict each other. You set standards. You resolve conflicts TM-40J PMs cannot resolve themselves. You manage the interfaces that connect data products to each other and to the command. You maintain the health of the portfolio so that when a commander asks "what can MSS tell me about force readiness?" the answer reflects coherent, validated, current data — not six disconnected dashboards built by six teams who never talked to each other.
 
-## 1-2. Scope of TM-50J
+### 1-2. Scope of TM-50J
 
 TM-50J covers the following capability areas:
 
@@ -104,24 +88,24 @@ TM-50J covers the following capability areas:
 | PM Leadership | Training junior PMs, establishing program standards, conducting PM health assessments |
 | Product Lifecycle | Version management, deprecation, and retirement of MSS products |
 
-## 1-3. Relationship to TM-40D and the Technical Tracks
+### 1-3. Relationship to TM-40J and the Technical Tracks
 
-TM-50J program managers oversee the work of TM-40D project managers and the technical practitioners in tracks TM-40A through TM-40F. Understanding what each track produces — and what failure looks like in each — is essential for program-level oversight.
+TM-50J program managers oversee the work of TM-40J project managers and the technical practitioners in tracks TM-40G through TM-40L. Understanding what each track produces — and what failure looks like in each — is essential for program-level oversight.
 
 **Table 1-2. Technical Tracks Managed by TM-50J**
 
 | Track | Role | What They Build | Common Failure Mode |
 |-------|------|-----------------|---------------------|
-| TM-40A | ORSA | Analytical models, campaign analysis, optimization | Over-engineered models that outrun user comprehension |
-| TM-40B | AI Engineer | AI pipeline architecture, model deployment, AIP | Technically correct pipelines that solve the wrong problem |
-| TM-40C | ML Engineer | ML model development, training, evaluation | Models that degrade silently in production |
-| TM-40D | Tech PM | Project delivery, stakeholder management, product release | On-time delivery of the wrong product |
-| TM-40E | Knowledge Manager | Ontology, data governance, KM architecture | Perfect data models no one uses |
-| TM-40F | Software Engineer | Custom transforms, integrations, API layers | High-quality code solving problems that could be configured |
+| TM-40G | ORSA | Analytical models, campaign analysis, optimization | Over-engineered models that outrun user comprehension |
+| TM-40H | AI Engineer | AI pipeline architecture, model deployment, AIP | Technically correct pipelines that solve the wrong problem |
+| TM-40I | ML Engineer | ML model development, training, evaluation | Models that degrade silently in production |
+| TM-40J | Tech PM | Project delivery, stakeholder management, product release | On-time delivery of the wrong product |
+| TM-40K | Knowledge Manager | Ontology, data governance, KM architecture | Perfect data models no one uses |
+| TM-40L | Software Engineer | Custom transforms, integrations, API layers | High-quality code solving problems that could be configured |
 
 TM-50J graduates must recognize failure modes across all tracks and understand how to intervene at the program level — not by doing the technical work, but by restructuring teams, realigning priorities, removing blockers, or escalating to C2DAO leadership.
 
-## 1-4. Operating Environment
+### 1-4. Operating Environment
 
 The USAREUR-AF MSS operates in an environment characterized by:
 
@@ -131,16 +115,16 @@ The USAREUR-AF MSS operates in an environment characterized by:
 - **Vendor partnership complexity.** Palantir delivers capability through task orders executed by contractors and government personnel simultaneously. The PM must manage both.
 - **Evolving policy environment.** Army CIO data policy (April 2024) and UDRA v1.1 (February 2025) establish the framework, but platform capabilities evolve faster than policy. Program managers must interpret intent, not just follow procedure.
 
-## 1-4A. The TM-50J Program Manager Profile
+### 1-4A. The TM-50J Program Manager Profile
 
-The TM-50J program manager is not the most technically skilled person on the team. The ORSA (TM-50A), AI Engineer (TM-50B), or ML Engineer (TM-50C) will typically have deeper technical expertise in their domains. The TM-50J's value is integrative: the ability to hold a coherent picture of the entire program simultaneously, to make decisions under uncertainty with incomplete information, and to maintain the trust of both senior leaders and technical practitioners.
+The TM-50J program manager is not the most technically skilled person on the team. The ORSA (TM-50G), AI Engineer (TM-50H), or ML Engineer (TM-50I) will typically have deeper technical expertise in their domains. The TM-50J's value is integrative: the ability to hold a coherent picture of the entire program simultaneously, to make decisions under uncertainty with incomplete information, and to maintain the trust of both senior leaders and technical practitioners.
 
 **Table 1-3. TM-50J Competency Profile**
 
 | Competency Domain | Key Behaviors | Development Path |
 |-------------------|--------------|-----------------|
-| Program-level thinking | Sees portfolio risk, not just project risk; understands how individual decisions affect the whole | Managing 3+ concurrent TM-40D-level projects; PI Planning facilitation experience |
-| Technical fluency | Understands enough of each technical track to ask the right questions and recognize when answers are implausible; reads code and data schemas | Completion of TM-40D; familiarity with TM-40A through TM-40F content; regular sprint reviews |
+| Program-level thinking | Sees portfolio risk, not just project risk; understands how individual decisions affect the whole | Managing 3+ concurrent TM-40J-level projects; PI Planning facilitation experience |
+| Technical fluency | Understands enough of each technical track to ask the right questions and recognize when answers are implausible; reads code and data schemas | Completion of TM-40J; familiarity with TM-40G through TM-40L content; regular sprint reviews |
 | Senior stakeholder management | Comfortable briefing GO/SES; can deliver bad news professionally; maintains trust under pressure | Direct GO/SES briefing experience; mentorship from senior military or SES leaders |
 | Quantitative reasoning | Uses delivery data analytically; interprets statistical signals; communicates metrics in operational terms | Statistical literacy; data product familiarity; Chapter 5 of this manual |
 | Change leadership | Reads organizational resistance; designs change for the military context; sustains change through personnel turbulence | Field experience with technology adoption in military formations |
@@ -148,7 +132,7 @@ The TM-50J program manager is not the most technically skilled person on the tea
 
 TM-50J is not a certification that can be earned in a classroom. It is a capability that develops through repeated application — through PI Planning cycles, through program health crises navigated, through GO briefings delivered and difficult conversations had. This manual provides the framework. The development happens in the work.
 
-## 1-5. How to Use This Manual
+### 1-5. How to Use This Manual
 
 This manual is organized by capability area, not by chronological workflow. Program managers should read Chapters 1 through 3 sequentially to establish the program management foundation. Chapters 4 through 8 may be addressed in priority order based on current program needs.
 
@@ -162,21 +146,21 @@ Appendix A (Program Health Assessment) and Appendix B (Product Lifecycle Guide) 
 
 ---
 
-# CHAPTER 2 — SCALED AGILE: MANAGING MULTIPLE CONCURRENT TEAMS
+## CHAPTER 2 — SCALED AGILE: MANAGING MULTIPLE CONCURRENT TEAMS
 
-## 2-1. From Project to Program
+### 2-1. From Project to Program
 
 **BLUF:** Managing one Agile team is project management. Managing five simultaneously is program management. The mechanics differ at every level — planning, execution, dependency management, metrics, and communication.
 
 A single Agile team manages its own backlog, holds its own ceremonies, and tracks its own velocity. When you add a second team, you introduce interface risk: what happens when Team A's pipeline is a prerequisite for Team B's dashboard? Who resolves the conflict when both teams want the same Foundry dataset, but Team A wants to restructure it for their model and Team B needs the existing schema for their production dashboard?
 
-These are program-level problems. No TM-40D PM can resolve them alone — because the answer may require trading off one team's sprint plan against another's. Only the program manager, with visibility across all teams, can make that call.
+These are program-level problems. No TM-40J PM can resolve them alone — because the answer may require trading off one team's sprint plan against another's. Only the program manager, with visibility across all teams, can make that call.
 
-## 2-2. Program Increment (PI) Planning
+### 2-2. Program Increment (PI) Planning
 
 PI Planning is the scaled Agile ceremony that aligns multiple teams to a common set of program-level objectives for a fixed interval (typically 8-12 weeks on MSS). PI Planning is not sprint planning at scale — it is a structured coordination event where teams expose their dependencies to each other and commit to a shared set of Program Increment Objectives (PIOs).
 
-### TASK 2-2A: CONDUCT PI PLANNING FOR MSS PROGRAM
+#### TASK 2-2A: CONDUCT PI PLANNING FOR MSS PROGRAM
 
 **CONDITIONS:** Program manager has assembled team leads for all active MSS product teams. A draft list of program-level priorities and stakeholder requests has been collected for the upcoming PI interval. MSS Workshop is configured with a program-level tracking ontology (see Chapter 3).
 
@@ -206,7 +190,7 @@ PI Planning is the scaled Agile ceremony that aligns multiple teams to a common 
 
 > **CAUTION: Do not allow individual teams to use PI Planning as an opportunity to surface pet projects or low-priority features. The program manager must maintain priority discipline. Any feature not traceable to a PIO or a documented stakeholder request should be deferred to the program backlog.**
 
-## 2-3. Managing Dependencies Across Teams
+### 2-3. Managing Dependencies Across Teams
 
 Inter-team dependencies are the primary source of program-level risk. A single unresolved dependency can block multiple teams simultaneously — cascading from one stalled sprint into a delayed release for the entire program.
 
@@ -219,9 +203,9 @@ Inter-team dependencies are the primary source of program-level risk. A single u
 | Personnel dependency | Team A's tech lead is the only person who can unblock Team B's architecture question | Medium | Document knowledge; establish a program-level SME registry |
 | Contractor deliverable | Team A requires a Palantir-delivered component before they can begin a sprint | High | Establish acceptance criteria in advance; build 2-sprint buffer into planning |
 | Approval gate | A compliance review, C2DAO sign-off, or stakeholder approval blocks Team B | Medium | Map all approval gates at PI Planning; initiate early where possible |
-| External feed | A pipeline depends on a data feed from outside the MSS (S2, G4, partner nation systems) | Very High | Establish SLA with feed owner; build resilience into pipeline design (TM-40F) |
+| External feed | A pipeline depends on a data feed from outside the MSS (S2, G4, partner nation systems) | Very High | Establish SLA with feed owner; build resilience into pipeline design (TM-40L) |
 
-### TASK 2-3A: MAINTAIN THE PROGRAM DEPENDENCY REGISTER
+#### TASK 2-3A: MAINTAIN THE PROGRAM DEPENDENCY REGISTER
 
 **CONDITIONS:** PI Planning is complete. A program tracking workspace exists on MSS Workshop.
 
@@ -243,7 +227,7 @@ Inter-team dependencies are the primary source of program-level risk. A single u
 
 > **NOTE: A dependency register that is not actively maintained provides false assurance. Program managers who discover blocked dependencies through sprint failures — rather than through the register — have lost the early warning function. Protect the register's accuracy.**
 
-## 2-3A. Conflict Resolution Between Teams
+### 2-3A. Conflict Resolution Between Teams
 
 Inter-team conflict is inevitable when multiple teams share resources, depend on each other's outputs, or compete for the same stakeholder attention. The program manager is the court of last resort for conflicts that team leads cannot resolve themselves. Waiting for the program manager to resolve every disagreement creates a bottleneck. Preventing conflicts from escalating requires a clear protocol.
 
@@ -251,7 +235,7 @@ Inter-team conflict is inevitable when multiple teams share resources, depend on
 
 | Conflict Type | First Resolution Attempt | Escalation Path | Timeline |
 |---------------|------------------------|-----------------|----------|
-| Technical disagreement (architecture, naming, schema) | Team leads + Platform Lead (TM-50E/TM-50F) resolve jointly | Program Manager facilitates if unresolved in 48 hours | Resolve within 1 sprint |
+| Technical disagreement (architecture, naming, schema) | Team leads + Platform Lead (TM-50K/TM-50L) resolve jointly | Program Manager facilitates if unresolved in 48 hours | Resolve within 1 sprint |
 | Resource contention (shared dataset, tool access) | C2DAO resource coordinator | Program Manager reallocates or escalates | Resolve within 1 sprint |
 | Priority conflict (two teams competing for same backlog slot with PM) | Program Manager makes priority decision based on operational impact | C2DAO Chief if GO-level stakeholder interests conflict | Resolve before next sprint planning |
 | Dependency dispute (Team A says they delivered; Team B says it's not usable) | Joint walkthrough with both team leads and the relevant technical practitioner | Program Manager reviews documented acceptance criteria | Resolve within 48 hours of dispute surfacing |
@@ -259,7 +243,7 @@ Inter-team conflict is inevitable when multiple teams share resources, depend on
 
 > **NOTE: Most inter-team conflicts are symptoms of insufficient clarity at PI Planning — unclear ownership, undocumented interfaces, or uncommitted dependencies. The best conflict resolution strategy is prevention: invest heavily in clarity during PI Planning and the program will generate fewer conflicts during execution.**
 
-## 2-4. Cross-Team Sprint Ceremonies
+### 2-4. Cross-Team Sprint Ceremonies
 
 Scaled Agile requires additional ceremonies beyond the single-team standard. TM-50J program managers must design a ceremony cadence that provides cross-team coordination without ceremony overload.
 
@@ -277,13 +261,13 @@ Scaled Agile requires additional ceremonies beyond the single-team standard. TM-
 
 ---
 
-# CHAPTER 3 — PORTFOLIO-LEVEL TRACKING AND THEATER VISIBILITY
+## CHAPTER 3 — PORTFOLIO-LEVEL TRACKING AND THEATER VISIBILITY
 
-## 3-1. Why Portfolio Tracking Matters
+### 3-1. Why Portfolio Tracking Matters
 
 **BLUF:** Senior leaders cannot manage what they cannot see. The program manager's responsibility is to maintain a single, authoritative source of truth for MSS program health — one that is always current, always accurate, and always accessible to the right people.
 
-At the TM-40D level, project tracking is focused on one team's sprint board, backlog, and burn-down. At the TM-50J level, the audience changes. You are building dashboards for the USAREUR-AF G6, the C2DAO Chief, and potentially the DCG or CG. These leaders do not need sprint-level detail. They need answers to four questions:
+At the TM-40J level, project tracking is focused on one team's sprint board, backlog, and burn-down. At the TM-50J level, the audience changes. You are building dashboards for the USAREUR-AF G6, the C2DAO Chief, and potentially the DCG or CG. These leaders do not need sprint-level detail. They need answers to four questions:
 
 1. Are we delivering capability on schedule?
 2. Are there risks that require leadership attention?
@@ -292,7 +276,7 @@ At the TM-40D level, project tracking is focused on one team's sprint board, bac
 
 The program tracking architecture must answer all four questions without requiring the reader to dig through raw data.
 
-## 3-2. Program Tracking Ontology Design
+### 3-2. Program Tracking Ontology Design
 
 The MSS program tracker lives in Foundry. Its data model — the ontology — determines what you can and cannot measure. Designing the ontology correctly at the start of the program is far cheaper than restructuring it after six months of data have been collected.
 
@@ -311,9 +295,9 @@ The MSS program tracker lives in Foundry. Its data model — the ontology — de
 
 > **NOTE: Build the ontology to the minimum viable schema first. Add properties only when you can demonstrate they will be populated and queried. A sparse, complete ontology is more valuable than a rich, incomplete one.**
 
-### TASK 3-2A: DESIGN AND BUILD THE PROGRAM TRACKING WORKSPACE
+#### TASK 3-2A: DESIGN AND BUILD THE PROGRAM TRACKING WORKSPACE
 
-**CONDITIONS:** C2DAO has approved the program tracking workspace. The program manager has a list of active projects, teams, and current PI objectives. TM-40D PMs on each project team are responsible for populating project-level data.
+**CONDITIONS:** C2DAO has approved the program tracking workspace. The program manager has a list of active projects, teams, and current PI objectives. TM-40J PMs on each project team are responsible for populating project-level data.
 
 **STANDARDS:** The workspace is operational when: all active projects are represented with current status; all teams and team leads are registered; all PI features are tracked with estimated and actual story points; program health roll-up is visible in a single-view dashboard accessible to C2DAO leadership.
 
@@ -337,7 +321,7 @@ The MSS program tracker lives in Foundry. Its data model — the ontology — de
 
 > **WARNING: Do not populate the program tracker with aspirational data. Status fields must reflect actual current state, not planned state. A dashboard that shows all green because PMs are reporting planned status — not actual delivery — is worse than no dashboard. It misinforms leadership and delays corrective action.**
 
-## 3-3. Designing for GO/SES Readability
+### 3-3. Designing for GO/SES Readability
 
 Senior leaders scan before they read. The executive summary view must communicate program health in under 30 seconds of reading time. Design principles:
 
@@ -352,7 +336,7 @@ Senior leaders scan before they read. The executive summary view must communicat
 | Time-stamped | All data must display the time of last update; stale data is worse than no data |
 | Action-linked | Each red item should link to a risk register entry with a documented mitigation owner |
 
-## 3-3A. Data Quality in the Program Dashboard
+### 3-3A. Data Quality in the Program Dashboard
 
 A program dashboard is only as trustworthy as the data feeding it. Program managers who present dashboards to senior leaders without validating the underlying data quality are creating a liability. When a GO challenges a number in the dashboard — and they will — the program manager must be able to say: "That data is sourced from [X], updated [Y], and has a known quality characteristic of [Z]." The inability to answer that question destroys the dashboard's credibility immediately.
 
@@ -369,7 +353,7 @@ A program dashboard is only as trustworthy as the data feeding it. Program manag
 
 > **NOTE: Build data freshness indicators into every dashboard widget. A timestamp showing "Last updated: 14 days ago" is more honest — and more useful — than a stale green indicator with no date. Senior leaders who see stale data will question whether the dashboard reflects reality. Make staleness visible; it creates accountability for data entry.**
 
-## 3-4. Program Review Briefing Package
+### 3-4. Program Review Briefing Package
 
 The program review brief is not a Workshop dashboard printout. It is a commander's brief format adapted for a data program context: BLUF, current status, key risks, decisions required. The dashboard supports the brief — it does not replace it.
 
@@ -386,13 +370,13 @@ The program review brief is not a Workshop dashboard printout. It is a commander
 
 ---
 
-# CHAPTER 4 — ADVANCED STAKEHOLDER MANAGEMENT AND DATA CULTURE
+## CHAPTER 4 — ADVANCED STAKEHOLDER MANAGEMENT AND DATA CULTURE
 
-## 4-1. Managing Up: Briefing GO/SES Leadership
+### 4-1. Managing Up: Briefing GO/SES Leadership
 
 **BLUF:** Senior leaders invest in what they understand. Your ability to make data capability tangible — and credible — at the GO/SES level determines the program's long-term resource and political viability.
 
-TM-40D stakeholder management focused on working-level relationships: requirements gathering from G-staff analysts, user story validation with battalion S2/S3 shops, and change management with end users adopting new dashboards. TM-50J stakeholder management operates at a different level. You are now communicating with Generals, Senior Executive Service civilians, and senior NATO partners who set budget priorities, sign task orders, and determine whether the MSS program grows or contracts.
+TM-40J stakeholder management focused on working-level relationships: requirements gathering from G-staff analysts, user story validation with battalion S2/S3 shops, and change management with end users adopting new dashboards. TM-50J stakeholder management operates at a different level. You are now communicating with Generals, Senior Executive Service civilians, and senior NATO partners who set budget priorities, sign task orders, and determine whether the MSS program grows or contracts.
 
 The rules change at this level:
 
@@ -401,13 +385,13 @@ The rules change at this level:
 - **Bring options, not problems.** When you escalate a risk to a GO, arrive with a recommended course of action and two alternatives. "We have a problem" without options wastes senior leader time.
 - **Own the bad news.** Senior leaders who are surprised by program failures — especially failures the PM knew about and did not communicate — lose trust permanently. Deliver bad news early, with context and a mitigation plan.
 
-## 4-2. Building Organizational Buy-In for Data Culture Change
+### 4-2. Building Organizational Buy-In for Data Culture Change
 
 **BLUF:** Technology adoption in a military organization is a command climate problem, not a technology problem. Your job is to change behavior, not just deploy software.
 
 MSS is not a self-adopting platform. Units that have operated with SharePoint spreadsheets and slide decks for years will not abandon those workflows because a new dashboard exists. Data culture change requires sustained, deliberate effort over 12-24 months — not a deployment event.
 
-### TASK 4-2A: DEVELOP AND EXECUTE A DATA CULTURE CHANGE PLAN
+#### TASK 4-2A: DEVELOP AND EXECUTE A DATA CULTURE CHANGE PLAN
 
 **CONDITIONS:** A new MSS capability has been developed and is ready for operational deployment to a formation that has not previously used MSS as part of their workflow.
 
@@ -433,7 +417,7 @@ MSS is not a self-adopting platform. Units that have operated with SharePoint sp
 
 > **CAUTION: Do not interpret unit resistance to MSS adoption as evidence that the product is wrong. Resistance to change is normal and expected in high-tempo military environments. Distinguish between substantive feedback (the dashboard doesn't show what I need) and adoption resistance (I don't have time to learn a new tool). The first requires product changes; the second requires change management.**
 
-## 4-3. Navigating Command Climate
+### 4-3. Navigating Command Climate
 
 **BLUF:** In a military organization, data tells truths that some leaders do not want to hear. The program manager must be able to deliver accurate information — including unfavorable information — without losing the trust of the command.
 
@@ -447,7 +431,7 @@ This is not a technical skill. It is a leadership skill. Techniques:
 
 **Document the data, not the politics.** After a briefing where data was challenged or suppressed by leadership direction, document the facts in writing — what data was presented, what the response was, and what decision was made. This protects the program manager and creates an accurate record if the issue surfaces later.
 
-## 4-3A. Vignette: Managing a Commander Who Wants the Wrong Dashboard
+### 4-3A. Vignette: Managing a Commander Who Wants the Wrong Dashboard
 
 **Situation:** The USAREUR-AF Deputy Commanding General (DCG) has requested a new MSS dashboard that shows "real-time unit locations and movement" for all theater formations. The request comes through the G6 as a direct tasking to the MSS program manager. The program manager recognizes immediately that: (1) real-time unit location data at the resolution requested is operationally sensitive and outside the approved data feeds in the current MSS data governance framework; (2) the requirement as stated would require six months of development and a new external data integration; and (3) what the DCG probably wants — theater force posture visibility for readiness planning — can likely be addressed with a two-week enhancement to an existing dashboard.
 
@@ -467,7 +451,7 @@ This is not a technical skill. It is a leadership skill. Techniques:
 
 **Lesson:** Requirement clarification is not pushback — it is professional competence. A program manager who builds what the commander asks for without confirming the underlying need will eventually deliver the right capability too late, or the wrong capability on time.
 
-## 4-4. Stakeholder Mapping at Program Level
+### 4-4. Stakeholder Mapping at Program Level
 
 At program level, stakeholder management requires a formal map — not informal relationship knowledge held in the PM's head.
 
@@ -484,17 +468,17 @@ At program level, stakeholder management requires a formal map — not informal 
 
 ---
 
-# CHAPTER 5 — QUANTITATIVE DELIVERY MANAGEMENT
+## CHAPTER 5 — QUANTITATIVE DELIVERY MANAGEMENT
 
-## 5-1. Using Data to Manage the Data Team
+### 5-1. Using Data to Manage the Data Team
 
 **BLUF:** A data program that does not measure its own delivery performance is practicing intuition management. Use the same analytical discipline on your program that your ORSA team applies to operational problems.
 
-TM-40D introduced delivery planning at the project level — estimating story points, running retrospectives, and adjusting sprint capacity based on velocity. TM-50J extends this to the program level: aggregating metrics across multiple teams, identifying systemic patterns (not just individual sprint anomalies), and using quantitative data to make investment and prioritization decisions.
+TM-40J introduced delivery planning at the project level — estimating story points, running retrospectives, and adjusting sprint capacity based on velocity. TM-50J extends this to the program level: aggregating metrics across multiple teams, identifying systemic patterns (not just individual sprint anomalies), and using quantitative data to make investment and prioritization decisions.
 
 The goal is not to micromanage teams through metrics. The goal is to understand the delivery system well enough to predict its behavior — and to change the system when predictions are consistently wrong.
 
-## 5-2. Core Delivery Metrics
+### 5-2. Core Delivery Metrics
 
 **Table 5-1. Program-Level Delivery Metrics**
 
@@ -509,7 +493,7 @@ The goal is not to micromanage teams through metrics. The goal is to understand 
 | Blocked Time | Fraction of sprint capacity consumed by blockages | Reported at sprint review | Dependency management effectiveness |
 | Team Stability | Average tenure of team members over rolling 6 months | Calculated from roster | Context for velocity interpretation |
 
-### TASK 5-2A: ESTABLISH PROGRAM METRICS BASELINE
+#### TASK 5-2A: ESTABLISH PROGRAM METRICS BASELINE
 
 **CONDITIONS:** At least one PI of delivery history exists. Sprint review data has been collected for all active teams.
 
@@ -529,7 +513,7 @@ The goal is not to micromanage teams through metrics. The goal is to understand 
 
 5. Document the baseline in the program tracker. All future PI metrics will be measured against this baseline to show trend.
 
-## 5-3. Interpreting Metrics: What They Tell You and What They Don't
+### 5-3. Interpreting Metrics: What They Tell You and What They Don't
 
 Delivery metrics are correlational, not causal. A drop in velocity tells you a team delivered fewer points — it does not tell you why. Before acting on a metric signal, investigate the cause.
 
@@ -545,7 +529,7 @@ Delivery metrics are correlational, not causal. A drop in velocity tells you a t
 
 > **WARNING: Do not use delivery metrics to evaluate individual personnel performance. Velocity is a team metric, not an individual metric. Using sprint velocity as a proxy for individual productivity is a well-documented antipattern that destroys team trust and incentivizes gaming the metric. TM-50J program managers who use metrics punitively will degrade the teams they are supposed to enable.**
 
-## 5-3A. Vignette: Reading a Velocity Drop Correctly
+### 5-3A. Vignette: Reading a Velocity Drop Correctly
 
 **Situation:** Team Bravo's velocity has dropped from an average of 42 points per sprint to 24 points per sprint over the past three sprints. The program manager notices this in the weekly metrics review and pulls the team lead aside.
 
@@ -553,9 +537,9 @@ Delivery metrics are correlational, not causal. A drop in velocity tells you a t
 
 **The correct diagnostic process:**
 
-1. **Ask, don't tell.** The program manager asks Team Bravo's TM-40D PM: "I'm seeing a velocity drop over the last three sprints. Walk me through what's been different."
+1. **Ask, don't tell.** The program manager asks Team Bravo's TM-40J PM: "I'm seeing a velocity drop over the last three sprints. Walk me through what's been different."
 
-2. **Look at what changed.** The PM reports: Sprint N-2 was normal; Sprint N-1 began after the senior ML engineer (TM-40C) rotated out; Sprint N began after a major Foundry platform update that required the team to adapt three of their pipelines mid-sprint.
+2. **Look at what changed.** The PM reports: Sprint N-2 was normal; Sprint N-1 began after the senior ML engineer (TM-40I) rotated out; Sprint N began after a major Foundry platform update that required the team to adapt three of their pipelines mid-sprint.
 
 3. **Interpret the data in context.** The velocity drop is explained by two compounding factors: loss of a senior technical contributor mid-PI, and an unplanned platform migration burden. Neither is evidence of underperformance — both are evidence of a program-level risk that was not adequately mitigated.
 
@@ -565,7 +549,7 @@ Delivery metrics are correlational, not causal. A drop in velocity tells you a t
 
 **Lesson:** Velocity is a trailing indicator that reflects past conditions. The program manager's job is to understand the conditions, not react to the number.
 
-## 5-4. Program-Level Predictability Targets
+### 5-4. Program-Level Predictability Targets
 
 **Table 5-3. Program Predictability Benchmarks**
 
@@ -576,7 +560,7 @@ Delivery metrics are correlational, not causal. A drop in velocity tells you a t
 | 55-70% | Low; systemic estimation or scope management issue | Conduct root cause analysis; adjust estimation techniques; tighten change control |
 | <55% | Very low; planning process is broken | Pause new commitments; conduct PI Planning retrospective; consider team restructure |
 
-## 5-5. Communicating Metrics to Leadership
+### 5-5. Communicating Metrics to Leadership
 
 **BLUF:** Metrics presented without narrative mislead senior audiences. Always pair a metric with an interpretation and, if relevant, an action.
 
@@ -589,15 +573,15 @@ When briefing delivery metrics to GO/SES leadership:
 
 ---
 
-# CHAPTER 6 — TECHNICAL DEBT STRATEGY AND BUILD/BUY/CONFIGURE DECISIONS
+## CHAPTER 6 — TECHNICAL DEBT STRATEGY AND BUILD/BUY/CONFIGURE DECISIONS
 
-## 6-1. Technical Debt at Program Scale
+### 6-1. Technical Debt at Program Scale
 
 **BLUF:** Technical debt is the accumulated cost of earlier shortcuts. In a data capability program, unmanaged debt does not merely slow delivery — it accumulates interest, compounds across products, and eventually makes the portfolio brittle enough that a single pipeline failure can cascade into a theater-level data outage.
 
-TM-40D introduced technical debt as a project-level concern — tracking debt items in the backlog and allocating sprint capacity to address them. TM-50J raises the stakes: you are now managing debt across a portfolio of 5-10 MSS products simultaneously, some of which are years old and were built by teams that have since rotated out. Your job is to assess the aggregate debt level of the program, prioritize which debt to address first, and communicate the risk to leadership in operational terms.
+TM-40J introduced technical debt as a project-level concern — tracking debt items in the backlog and allocating sprint capacity to address them. TM-50J raises the stakes: you are now managing debt across a portfolio of 5-10 MSS products simultaneously, some of which are years old and were built by teams that have since rotated out. Your job is to assess the aggregate debt level of the program, prioritize which debt to address first, and communicate the risk to leadership in operational terms.
 
-## 6-2. Debt Classification Framework
+### 6-2. Debt Classification Framework
 
 Not all technical debt is equal. Classify debt before prioritizing it.
 
@@ -612,17 +596,17 @@ Not all technical debt is equal. Classify debt before prioritizing it.
 | Dependency debt | Reliance on deprecated platform features or unsupported library versions | Pipelines using deprecated Foundry APIs; Python transforms relying on pinned library versions no longer supported | Breaking failures during platform upgrades |
 | Configuration debt | Hardcoded values, duplicated logic, inconsistent naming | Magic numbers in transform code; duplicated business logic across three pipelines; inconsistent dataset naming | Costly maintenance; errors when values change |
 
-### TASK 6-2A: CONDUCT A PORTFOLIO-LEVEL DEBT ASSESSMENT
+#### TASK 6-2A: CONDUCT A PORTFOLIO-LEVEL DEBT ASSESSMENT
 
 **CONDITIONS:** The program has at least three active MSS products in production. Team leads have been briefed on the debt classification framework.
 
 **STANDARDS:** Assessment is complete when: all active products have been assessed against the debt classification framework; each identified debt item is categorized, sized (story points or days), and assigned a risk rating; the aggregate debt backlog is documented in the program tracker; a prioritized debt reduction roadmap covers the next two PIs.
 
-**EQUIPMENT:** MSS program tracker (product inventory, backlog), debt classification framework (Table 6-1), access to product documentation for each active MSS product, technical leads (TM-40A through TM-40F) for each product.
+**EQUIPMENT:** MSS program tracker (product inventory, backlog), debt classification framework (Table 6-1), access to product documentation for each active MSS product, technical leads (TM-40G through TM-40L) for each product.
 
 **PROCEDURE:**
 
-1. **Assemble the assessment team.** The debt assessment requires input from the technical practitioners who built and maintain each product. Schedule a half-day workshop with TM-40A through TM-40F leads for each active product. The PM does not lead the technical assessment — they facilitate it and document the outputs.
+1. **Assemble the assessment team.** The debt assessment requires input from the technical practitioners who built and maintain each product. Schedule a half-day workshop with TM-40G through TM-40L leads for each active product. The PM does not lead the technical assessment — they facilitate it and document the outputs.
 
 2. **Assess each product against the six debt categories.** For each category, rate the severity: None, Low, Medium, High. For any Medium or High rating, document the specific debt item, the estimated remediation cost, and the operational risk if the debt is not addressed.
 
@@ -636,7 +620,7 @@ Not all technical debt is equal. Classify debt before prioritizing it.
 
 > **CAUTION: Debt assessment workshops sometimes surface problems that team leads have been hiding — either out of embarrassment or because they feared the PM would use the information to pressure them. Create a safe environment for honest reporting. The goal is to quantify and address the debt, not to assign blame.**
 
-## 6-2A. Communicating Technical Debt to Non-Technical Leaders
+### 6-2A. Communicating Technical Debt to Non-Technical Leaders
 
 Technical debt is an abstract concept for most military leaders. Telling a GO that "we have architectural debt in our pipeline layer" is the equivalent of telling them "we have some software complexity issues." It is not actionable. The program manager's job is to translate debt risk into operational terms that drive appropriate investment decisions.
 
@@ -652,7 +636,7 @@ Technical debt is an abstract concept for most military leaders. Telling a GO th
 
 > **NOTE: When briefing debt risk to senior leaders, always pair the risk with the remediation cost and timeline. "This debt item costs 4 story points to fix and prevents a high-probability production outage" is a complete brief. "We have technical debt" is not.**
 
-## 6-3. Build vs. Buy vs. Configure
+### 6-3. Build vs. Buy vs. Configure
 
 **BLUF:** Every capability request can be met in three ways: write custom code, configure existing MSS platform features, or procure a new capability. The correct answer depends on context — and the wrong answer is costly.
 
@@ -670,17 +654,17 @@ This decision recurs constantly at the program level. A new stakeholder requirem
 
 > **NOTE: The most common mistake at program scale is building what can be configured. When a requirement arrives, the TM-50J program manager's first question is always: "What can MSS do out of the box that addresses this?" Only after a clear negative answer — documented and validated by the technical leads — should a build decision proceed.**
 
-### TASK 6-3A: CONDUCT A BUILD/BUY/CONFIGURE DECISION REVIEW
+#### TASK 6-3A: CONDUCT A BUILD/BUY/CONFIGURE DECISION REVIEW
 
 **CONDITIONS:** A new stakeholder requirement has been received that will require significant development investment (estimated >40 story points or >3 weeks of team capacity).
 
 **STANDARDS:** Decision is documented when: all three options have been evaluated against the framework in Table 6-2; a recommendation is made with supporting rationale; the decision is recorded in the program backlog and communicated to the requesting stakeholder with an expected delivery timeline.
 
-**EQUIPMENT:** Build/Buy/Configure decision framework (Table 6-2), MSS program backlog in program tracker, access to relevant technical leads (TM-40B, TM-40C, TM-40E, TM-40F), C2DAO program inventory for existing procurement options.
+**EQUIPMENT:** Build/Buy/Configure decision framework (Table 6-2), MSS program backlog in program tracker, access to relevant technical leads (TM-40H, TM-40I, TM-40K, TM-40L), C2DAO program inventory for existing procurement options.
 
 **PROCEDURE:**
 
-1. Brief the requirement to the relevant technical leads (TM-40B, TM-40C, TM-40E, TM-40F as appropriate). Ask each to assess: can this requirement be met by an existing platform feature? Rate: Yes (full fit), Partial (80% fit with acceptable gaps), No (platform feature inadequate).
+1. Brief the requirement to the relevant technical leads (TM-40H, TM-40I, TM-40K, TM-40L as appropriate). Ask each to assess: can this requirement be met by an existing platform feature? Rate: Yes (full fit), Partial (80% fit with acceptable gaps), No (platform feature inadequate).
 
 2. If consensus is "Yes" or "Partial": proceed with configure approach. Document the gap between the platform feature and the requirement. If the gap is acceptable to the stakeholder, close the analysis. If the gap is not acceptable, document why the platform feature is insufficient.
 
@@ -694,9 +678,9 @@ This decision recurs constantly at the program level. A new stakeholder requirem
 
 ---
 
-# CHAPTER 7 — VENDOR AND CONTRACTOR MANAGEMENT
+## CHAPTER 7 — VENDOR AND CONTRACTOR MANAGEMENT
 
-## 7-1. The Palantir Partnership Model
+### 7-1. The Palantir Partnership Model
 
 **BLUF:** Palantir operates as a strategic platform partner on MSS, not simply a software vendor. Managing this relationship well requires understanding what Palantir is accountable for, what the government is accountable for, and where those boundaries create gaps.
 
@@ -712,11 +696,11 @@ The MSS operating model combines government staff (military and civilian), Palan
 | Government tech leads (TM-40 series) | Military/civilian/GS | Technical delivery of government-owned products | Palantir-delivered features on task order |
 | Task order contractors | Contractor (non-Palantir) | Deliverables specified in the task order; testing and documentation per acceptance criteria | Scope outside the task order; Palantir platform decisions |
 
-## 7-2. Task Order Management
+### 7-2. Task Order Management
 
 A Palantir task order defines a set of deliverables, a schedule, and a price. The government PM is responsible for: verifying deliverables meet acceptance criteria, accepting or rejecting work, and documenting performance.
 
-### TASK 7-2A: ESTABLISH TASK ORDER ACCEPTANCE CRITERIA
+#### TASK 7-2A: ESTABLISH TASK ORDER ACCEPTANCE CRITERIA
 
 **CONDITIONS:** A new task order or task order modification has been executed. Deliverables are listed in the performance work statement (PWS).
 
@@ -738,7 +722,7 @@ A Palantir task order defines a set of deliverables, a schedule, and a price. Th
 
 > **WARNING: Accepting a task order deliverable without documented acceptance criteria creates a permanent contractual record that the deliverable met the government's requirements — regardless of its actual quality. Once accepted, returning a deliverable for rework requires a contract modification and is significantly more costly than rejecting it correctly the first time. Never accept a deliverable based on verbal assurance that "it works."**
 
-### TASK 7-2B: CONDUCT DELIVERABLE ACCEPTANCE REVIEW
+#### TASK 7-2B: CONDUCT DELIVERABLE ACCEPTANCE REVIEW
 
 **CONDITIONS:** Palantir or contractor has submitted a task order deliverable for government acceptance. Acceptance criteria from Task 7-2A are documented.
 
@@ -760,7 +744,7 @@ A Palantir task order defines a set of deliverables, a schedule, and a price. Th
 
 6. **Document performance.** Record the acceptance outcome, date, and any deficiencies in the program tracker. This documentation supports past performance assessments and future task order negotiations.
 
-## 7-3. Managing the Palantir Relationship Day-to-Day
+### 7-3. Managing the Palantir Relationship Day-to-Day
 
 The Palantir FDE is a technical resource, not a government employee. Their priorities are influenced by their employer's business interests, their utilization targets, and their personal technical preferences. Managing this productively requires clarity about roles and assertive, professional communication when boundaries are crossed.
 
@@ -774,7 +758,7 @@ The Palantir FDE is a technical resource, not a government employee. Their prior
 | FDE turnover | Palantir replaces an FDE mid-task order with a less experienced resource | Document the impact. If delivery is at risk, formally notify the contracting officer and request Palantir mitigation plan. |
 | Platform outage attribution | A production outage is attributed to the platform; Palantir attributes it to government configuration | Document the technical facts. Engage C2DAO to determine root cause. Do not publicly attribute blame before root cause is confirmed. |
 
-## 7-3A. Working with Palantir FDEs: A Practical Guide
+### 7-3A. Working with Palantir FDEs: A Practical Guide
 
 Palantir Forward Deployed Engineers are typically technically excellent and highly motivated. They are also operating under pressures and incentives that differ from the government's. Understanding these dynamics makes the relationship more productive.
 
@@ -793,7 +777,7 @@ Palantir Forward Deployed Engineers are typically technically excellent and high
 - When the FDE makes an architectural recommendation, require a brief document: what they are recommending, why, and what alternatives they considered. This creates accountability for the recommendation and ensures the government team has enough information to evaluate it.
 - When disagreements arise between the government technical lead and the FDE, the government position prevails. The FDE is an advisor; the government owns the product.
 
-## 7-4. Vendor Performance Documentation
+### 7-4. Vendor Performance Documentation
 
 The TM-50J program manager is responsible for maintaining performance documentation that informs future task order awards and modifications.
 
@@ -809,15 +793,15 @@ The TM-50J program manager is responsible for maintaining performance documentat
 
 ---
 
-# CHAPTER 8 — TEAM DESIGN AND PM LEADERSHIP
+## CHAPTER 8 — TEAM DESIGN AND PM LEADERSHIP
 
-## 8-1. Designing the Data Program Team Structure
+### 8-1. Designing the Data Program Team Structure
 
 **BLUF:** There is no universal team structure for a data capability program. The right structure depends on program size, portfolio composition, available personnel, and operational tempo. What does not vary is the principle: structure should serve the work, not the org chart.
 
-At program scale, the TM-50J manager makes structural decisions that TM-40D PMs cannot: how many teams, how large, what skill mix, what reporting relationships, how to handle shared services (data engineering, ontology governance, security). These decisions have long-term consequences — restructuring mid-program is costly and disruptive.
+At program scale, the TM-50J manager makes structural decisions that TM-40J PMs cannot: how many teams, how large, what skill mix, what reporting relationships, how to handle shared services (data engineering, ontology governance, security). These decisions have long-term consequences — restructuring mid-program is costly and disruptive.
 
-## 8-2. Team Topology Options
+### 8-2. Team Topology Options
 
 **Table 8-1. Team Topology Options for MSS Programs**
 
@@ -828,35 +812,35 @@ At program scale, the TM-50J manager makes structural decisions that TM-40D PMs 
 | Stream-Aligned Teams | Teams are aligned to a user workflow or operational stream (readiness stream, logistics stream, intelligence stream) | Programs where operational stakeholders are the organizing principle | Requires clear stream ownership; hard to balance streams of unequal scope |
 | Platform Team + Feature Teams | A shared platform/infrastructure team supports multiple product teams building on top | Programs with significant shared infrastructure (ontology, data feeds, pipelines) | Platform team becomes a bottleneck if not appropriately resourced |
 
-> **NOTE: For most USAREUR-AF MSS programs at current scale, the recommended structure is Platform Team + Stream-Aligned Feature Teams. The platform team (typically TM-40E KM and TM-40F SWE) owns ontology governance, shared pipelines, and data quality standards. Stream-aligned feature teams own product delivery within their operational domain.**
+> **NOTE: For most USAREUR-AF MSS programs at current scale, the recommended structure is Platform Team + Stream-Aligned Feature Teams. The platform team (typically TM-40K KM and TM-40L SWE) owns ontology governance, shared pipelines, and data quality standards. Stream-aligned feature teams own product delivery within their operational domain.**
 
-## 8-3. Skill Mix Planning
+### 8-3. Skill Mix Planning
 
 **Table 8-2. Recommended Skill Mix per MSS Feature Team**
 
 | Role | Track | Count per Team | Notes |
 |------|-------|---------------|-------|
-| Technical PM | TM-40D | 1 | Required; team lead for delivery |
-| ORSA | TM-40A | 1-2 | Required if team is producing analytical products |
-| ML Engineer | TM-40C | 1 | Required if team is building or maintaining ML models |
-| AI Engineer | TM-40B | 0-1 | Required if team is deploying production AI pipelines or AIP integrations |
-| Software Engineer | TM-40F | 1-2 | Required for custom transforms; optional if team is primarily configure-mode |
-| Knowledge Manager | TM-40E | 0-1 | Required if team owns ontology objects; may be shared from platform team |
+| Technical PM | TM-40J | 1 | Required; team lead for delivery |
+| ORSA | TM-40G | 1-2 | Required if team is producing analytical products |
+| ML Engineer | TM-40I | 1 | Required if team is building or maintaining ML models |
+| AI Engineer | TM-40H | 0-1 | Required if team is deploying production AI pipelines or AIP integrations |
+| Software Engineer | TM-40L | 1-2 | Required for custom transforms; optional if team is primarily configure-mode |
+| Knowledge Manager | TM-40K | 0-1 | Required if team owns ontology objects; may be shared from platform team |
 
 **Table 8-3. Platform Team Composition**
 
 | Role | Track | Count | Notes |
 |------|-------|-------|-------|
-| Platform Lead | TM-50F or TM-50E | 1 | Oversees ontology, shared pipelines, governance |
-| Knowledge Manager (Senior) | TM-50E | 1-2 | Owns ontology governance; data standards |
-| Software Engineer (Senior) | TM-50F | 1-2 | Owns shared pipeline infrastructure; code standards |
-| Data Quality Lead | TM-40E or TM-40A | 1 | Owns data quality standards and monitoring |
+| Platform Lead | TM-50L or TM-50K | 1 | Oversees ontology, shared pipelines, governance |
+| Knowledge Manager (Senior) | TM-50K | 1-2 | Owns ontology governance; data standards |
+| Software Engineer (Senior) | TM-50L | 1-2 | Owns shared pipeline infrastructure; code standards |
+| Data Quality Lead | TM-40K or TM-40G | 1 | Owns data quality standards and monitoring |
 
-## 8-4. Personnel Turbulence Planning
+### 8-4. Personnel Turbulence Planning
 
 Military organizations rotate personnel. A program that is not designed to absorb turnover will degrade in capability each rotation cycle — losing institutional knowledge, breaking established processes, and re-fighting resolved architectural debates with each new cohort.
 
-### TASK 8-4A: ESTABLISH PROGRAM KNOWLEDGE CONTINUITY STANDARDS
+#### TASK 8-4A: ESTABLISH PROGRAM KNOWLEDGE CONTINUITY STANDARDS
 
 **CONDITIONS:** Program has been operating for at least one PI with a stable team structure. Rotation of military personnel is anticipated within the next 6-12 months.
 
@@ -878,21 +862,21 @@ Military organizations rotate personnel. A program that is not designed to absor
 
 > **NOTE: Personnel turbulence is the largest long-term risk to a military data program. The technology does not forget — but the people do. A program manager who does not actively manage knowledge continuity will rebuild the same capabilities repeatedly as each generation of personnel rediscovers what the previous generation already knew.**
 
-## 8-5. PM Leadership: Developing Junior PMs
+### 8-5. PM Leadership: Developing Junior PMs
 
-**BLUF:** TM-50J program managers are responsible for the professional development of TM-40D PMs they supervise. This is a leadership function, not just a management function.
+**BLUF:** TM-50J program managers are responsible for the professional development of TM-40J PMs they supervise. This is a leadership function, not just a management function.
 
-### TASK 8-5A: CONDUCT A PM CAPABILITY ASSESSMENT
+#### TASK 8-5A: CONDUCT A PM CAPABILITY ASSESSMENT
 
-**CONDITIONS:** A TM-40D PM is under program manager supervision for at least one PI.
+**CONDITIONS:** A TM-40J PM is under program manager supervision for at least one PI.
 
-**STANDARDS:** Assessment is complete when: the PM's capability profile has been evaluated against TM-40D competencies; development priorities are identified; a 90-day development plan is documented and agreed.
+**STANDARDS:** Assessment is complete when: the PM's capability profile has been evaluated against TM-40J competencies; development priorities are identified; a 90-day development plan is documented and agreed.
 
-**EQUIPMENT:** TM-40D competency framework (Table 8-4), the PM's sprint delivery record for the past PI (from program tracker), development plan template, program tracker (to document and store the development plan).
+**EQUIPMENT:** TM-40J competency framework (Table 8-4), the PM's sprint delivery record for the past PI (from program tracker), development plan template, program tracker (to document and store the development plan).
 
 **PROCEDURE:**
 
-1. **Evaluate against TM-40D competencies.** Review the PM's delivery record for the past PI. Assess: backlog management quality (are user stories well-written, estimated, and linked to stakeholder requirements?); ceremony effectiveness (do sprints start and end on time, are retrospectives producing actionable improvements?); stakeholder management (are requirements clear, is communication timely, are issues surfaced early?); risk management (were risks identified before they became blockers, or discovered at impact?); metrics literacy (does the PM understand and use delivery metrics?).
+1. **Evaluate against TM-40J competencies.** Review the PM's delivery record for the past PI. Assess: backlog management quality (are user stories well-written, estimated, and linked to stakeholder requirements?); ceremony effectiveness (do sprints start and end on time, are retrospectives producing actionable improvements?); stakeholder management (are requirements clear, is communication timely, are issues surfaced early?); risk management (were risks identified before they became blockers, or discovered at impact?); metrics literacy (does the PM understand and use delivery metrics?).
 
 2. **Conduct a 1:1 assessment conversation.** Share your observations. Ask the PM to self-assess against the same competencies. Listen for gaps between self-assessment and your observation — discrepancy is itself informative.
 
@@ -902,9 +886,9 @@ Military organizations rotate personnel. A program that is not designed to absor
 
 5. **Check in monthly.** Development plans not reviewed regularly are not executed. Schedule a monthly 30-minute developmental conversation. Review progress. Adjust the plan if priorities have shifted.
 
-**Table 8-4. TM-40D to TM-50J Development Milestones**
+**Table 8-4. TM-40J to TM-50J Development Milestones**
 
-| Competency | TM-40D Standard | TM-50J Ready Standard |
+| Competency | TM-40J Standard | TM-50J Ready Standard |
 |------------|----------------|----------------------|
 | Backlog management | Manages own project backlog with clean user stories and estimates | Can review another PM's backlog and identify gaps; coaches user story quality |
 | Stakeholder management | Manages working-level stakeholders; escalates to program manager when needed | Independently manages O-6/GS-14 equivalent stakeholders; identifies escalation triggers without prompting |
@@ -913,9 +897,9 @@ Military organizations rotate personnel. A program that is not designed to absor
 | Technical fluency | Understands the work at a task level; can write acceptance criteria for technical deliverables | Can conduct a technical debt assessment with a TM-40 lead; understands build/buy/configure tradeoffs |
 | Change management | Executes a change management plan designed by the program manager | Designs a change management plan; identifies change resistance and tailors approach |
 
-## 8-5A. The PM Peer Review
+### 8-5A. The PM Peer Review
 
-One of the most effective and underused PM development tools is peer review: having one TM-40D PM assess another's sprint artifacts — the backlog, the user stories, the acceptance criteria, the retrospective outputs. Peer review does three things simultaneously: it catches quality issues before they affect delivery, it develops the reviewer's critical thinking, and it reduces the isolation that PMs often feel managing their own project in a silo.
+One of the most effective and underused PM development tools is peer review: having one TM-40J PM assess another's sprint artifacts — the backlog, the user stories, the acceptance criteria, the retrospective outputs. Peer review does three things simultaneously: it catches quality issues before they affect delivery, it develops the reviewer's critical thinking, and it reduces the isolation that PMs often feel managing their own project in a silo.
 
 **Table 8-6. PM Peer Review Rotation**
 
@@ -930,9 +914,9 @@ The program manager should facilitate the first two peer review cycles — struc
 
 > **NOTE: PM peer review is not a performance evaluation. It is a learning exercise. The program manager should reinforce this framing explicitly. If PMs feel they are being graded on their peer review artifacts, they will produce defensively written artifacts rather than honest ones.**
 
-## 8-6. Establishing Program PM Standards
+### 8-6. Establishing Program PM Standards
 
-TM-50J program managers set the standards that all TM-40D PMs on the program are expected to meet. These standards should be written down, communicated at program onboarding, and enforced consistently.
+TM-50J program managers set the standards that all TM-40J PMs on the program are expected to meet. These standards should be written down, communicated at program onboarding, and enforced consistently.
 
 **Table 8-5. Program PM Standards Template**
 
@@ -941,16 +925,16 @@ TM-50J program managers set the standards that all TM-40D PMs on the program are
 | Sprint documentation | Sprint goal, committed features, and retrospective outputs documented in program tracker within 24 hours of ceremony completion |
 | Risk reporting | All new risks entered in the risk register within 48 hours of identification; risk status updated at each sprint review |
 | Stakeholder communication | All stakeholder commitments documented in writing within 24 hours of verbal agreement |
-| Definition of Done | No feature marked complete without full Definition of Done checklist signed off (see TM-40D Appendix B) |
+| Definition of Done | No feature marked complete without full Definition of Done checklist signed off (see TM-40J Appendix B) |
 | Dependency flagging | All dependencies on other teams or contractors logged in the dependency register at PI Planning; status updated at each Program Sync |
 | Metrics reporting | Velocity and predictability reported at each sprint review; no estimate revisions accepted after sprint start without program manager notification |
 | Escalation | Any risk that will prevent PI commitment from being met is escalated to the program manager within the sprint it is identified — not at PI Review |
 
 ---
 
-# CHAPTER 9 — PROGRAM GOVERNANCE AND POLICY COMPLIANCE
+## CHAPTER 9 — PROGRAM GOVERNANCE AND POLICY COMPLIANCE
 
-## 9-0. Why Governance is Not Bureaucracy
+### 9-0. Why Governance is Not Bureaucracy
 
 A common failure mode in Agile programs is to treat governance as the enemy of delivery — a layer of process and approval that slows teams down and exists primarily to satisfy auditors. This is wrong, and a TM-50J program manager who holds this view will build a program that is fast, fragile, and ungovernable.
 
@@ -960,13 +944,13 @@ Good governance is not a gate — it is a clarification of who decides what, com
 
 
 
-## 9-1. Governance at Program Scale
+### 9-1. Governance at Program Scale
 
 **BLUF:** Program governance is the set of rules, processes, and decision authorities that determine how MSS capability is built, changed, and retired. Without explicit governance, the program drifts — decisions accumulate informally, standards diverge across teams, and the portfolio fragments into a collection of incompatible products.
 
-TM-40D introduced project-level governance: Definition of Done, access management, sprint ceremonies, and stakeholder sign-off. TM-50J governance operates at the program level: who can approve changes to the ontology? Who authorizes a new production release? Who decides when to retire a product? These decisions affect multiple teams and multiple operational users simultaneously. They require documented authority and consistent process.
+TM-40J introduced project-level governance: Definition of Done, access management, sprint ceremonies, and stakeholder sign-off. TM-50J governance operates at the program level: who can approve changes to the ontology? Who authorizes a new production release? Who decides when to retire a product? These decisions affect multiple teams and multiple operational users simultaneously. They require documented authority and consistent process.
 
-## 9-2. Program Decision Authority Matrix
+### 9-2. Program Decision Authority Matrix
 
 The Decision Authority Matrix (DAM) defines who can make which decisions at the program level. The DAM prevents the two most common governance failures: decision paralysis (no one knows who can approve) and unauthorized action (someone acts without proper authority).
 
@@ -989,7 +973,7 @@ The Decision Authority Matrix (DAM) defines who can make which decisions at the 
 
 > **NOTE: The DAM is a living document. Update it when authority delegation changes, when the program scales to add new teams, or when a C2DAO policy change shifts approval authority. Publish the DAM in the program tracker and reference it at PI Planning.**
 
-## 9-3. Policy Compliance Framework
+### 9-3. Policy Compliance Framework
 
 The MSS program operates under a layered policy framework. TM-50J program managers are responsible for understanding the requirements at each layer and ensuring program compliance.
 
@@ -1003,7 +987,7 @@ The MSS program operates under a layered policy framework. TM-50J program manage
 | Foundry Platform Security Requirements | C2DAO / ISSO | User account management; workspace permissions; audit logging; connection security for external data feeds |
 | AI Governance (Army CIO, April 2024) | Army CIO | Requirement to document AI-assisted products; human review gates; model performance monitoring; bias assessment |
 
-### TASK 9-3A: CONDUCT A QUARTERLY POLICY COMPLIANCE REVIEW
+#### TASK 9-3A: CONDUCT A QUARTERLY POLICY COMPLIANCE REVIEW
 
 **CONDITIONS:** Program has been operating for at least one quarter. A list of all active MSS products and their technical characteristics (AI-assisted, external data feeds, data classification levels) is available.
 
@@ -1025,7 +1009,7 @@ The MSS program operates under a layered policy framework. TM-50J program manage
 
 6. **Report to C2DAO.** Brief findings to the C2DAO Chief at the next program review. For any Critical or High findings, schedule a dedicated briefing within 10 business days of discovering the gap.
 
-## 9-4. Change Control for Production Systems
+### 9-4. Change Control for Production Systems
 
 Changes to production MSS systems must follow a documented change control process. Unauthorized changes to production pipelines, ontology objects, or dashboard configurations are among the most common causes of data product failures.
 
@@ -1039,7 +1023,7 @@ Changes to production MSS systems must follow a documented change control proces
 | Major change | New pipeline logic, ontology schema change, breaking interface change, new production model | PM recommends; C2DAO approves; downstream user notification; testing required | 1 sprint (2 weeks minimum) |
 | Breaking change | Schema change that requires downstream consumers to modify their code or configuration | PM recommends; C2DAO approves; all downstream teams confirm readiness; parallel period recommended | 2 sprints (4 weeks minimum) |
 
-### TASK 9-4A: EXECUTE A MAJOR CHANGE TO A PRODUCTION MSS PRODUCT
+#### TASK 9-4A: EXECUTE A MAJOR CHANGE TO A PRODUCTION MSS PRODUCT
 
 **CONDITIONS:** A major change to a production pipeline, ontology, or dashboard has been approved by C2DAO. Downstream consumers have been identified.
 
@@ -1065,7 +1049,7 @@ Changes to production MSS systems must follow a documented change control proces
 
 > **WARNING: Never execute a major change to a production MSS product without a documented rollback procedure. The rollback procedure must specify: who executes it, what commands or actions are required, how long it will take, and how consumers will be notified of the rollback. A change with no rollback plan is an outage risk.**
 
-## 9-5. Managing the Program Change Log
+### 9-5. Managing the Program Change Log
 
 Every significant program decision must be recorded. The change log is the institutional memory of the program — the record that answers the question every new arrival asks: "Why is it done this way?"
 
@@ -1084,17 +1068,17 @@ The change log lives in the program tracking workspace on MSS. It is maintained 
 
 ---
 
-# CHAPTER 10 — PROGRAM COMMUNICATION AND REPORTING
+## CHAPTER 10 — PROGRAM COMMUNICATION AND REPORTING
 
-## 10-1. The Program Manager as Information Integrator
+### 10-1. The Program Manager as Information Integrator
 
 **BLUF:** The TM-50J program manager is the single point of integration for information flowing between technical teams, operational stakeholders, and senior leadership. Information that is not surfaced clearly and on time becomes a liability.
 
-At TM-40D level, communication is primarily project-scoped: stakeholder updates on one project, sprint review reports for one team, escalations on one blocker. At TM-50J level, the program manager is synthesizing information from five to ten teams simultaneously, integrating technical status with operational impact, and translating between the language of Agile delivery and the language of military readiness reporting.
+At TM-40J level, communication is primarily project-scoped: stakeholder updates on one project, sprint review reports for one team, escalations on one blocker. At TM-50J level, the program manager is synthesizing information from five to ten teams simultaneously, integrating technical status with operational impact, and translating between the language of Agile delivery and the language of military readiness reporting.
 
 This is an underappreciated skill. A technically excellent PM who cannot communicate program status clearly to a General will fail at the program level just as surely as one who cannot manage a PI.
 
-## 10-2. Communication Architecture
+### 10-2. Communication Architecture
 
 A program communication architecture defines the right information to the right audience at the right cadence. Without it, communication defaults to reactive — the PM responds to questions rather than shaping understanding.
 
@@ -1110,7 +1094,7 @@ A program communication architecture defines the right information to the right 
 | Incident Report | C2DAO, affected stakeholders | Within 24 hours of incident | Written memo | Program Manager |
 | New Capability Announcement | All affected user units | 2 weeks before release | Email + unit brief | Team Lead + PM |
 
-## 10-3. Writing the Program SITREP
+### 10-3. Writing the Program SITREP
 
 The weekly program SITREP is the primary written communication artifact for the C2DAO Chief and G6. It must be: accurate, brief, and action-oriented.
 
@@ -1141,7 +1125,7 @@ PREPARED BY: [Name], Program Manager
 
 > **NOTE: The program SITREP should take no more than 30 minutes to write. If it is taking longer, the program tracker is not current. The SITREP is a synthesis of data that should already be in the tracker — not a data collection exercise.**
 
-## 10-4. Communicating Failure
+### 10-4. Communicating Failure
 
 **BLUF:** The program manager who communicates program failure clearly and early, with a mitigation plan, builds more trust than the PM who papers over problems until they are unavoidable. The ability to communicate bad news well is a core TM-50J competency.
 
@@ -1155,7 +1139,7 @@ Principles for communicating program failure to senior leadership:
 
 **Distinguish recoverable from structural.** Some failures are sprint-level anomalies. Others indicate a structural problem: estimation is consistently wrong, a team is chronically understaffed, a data feed is unreliable. If the root cause is structural, say so — and present the structural solution, not just the sprint-level patch.
 
-## 10-5. Managing Program Narrative Over Time
+### 10-5. Managing Program Narrative Over Time
 
 Senior leaders do not always attend every program review. Their understanding of the MSS program is shaped by fragments: a five-minute hallway conversation with the G6, a slide from a brief they half-attended, an incident they heard about secondhand. The program manager does not control all of these touchpoints — but must be aware that they exist and work actively to shape a coherent narrative.
 
@@ -1171,13 +1155,13 @@ Senior leaders do not always attend every program review. Their understanding of
 
 ---
 
-# CHAPTER 11 — ML/AI PORTFOLIO MANAGEMENT
+## CHAPTER 11 — ML/AI PORTFOLIO MANAGEMENT
 
-## 11-1. Managing Research, Build, and Sustainment Simultaneously
+### 11-1. Managing Research, Build, and Sustainment Simultaneously
 
 **BLUF:** An ML/AI portfolio at program scale contains products at every stage of the lifecycle simultaneously. Some are in active research (early exploration, feasibility unknown), some are in active development (models being trained and evaluated), and some are in production sustainment (models serving operational users and requiring ongoing monitoring). Each stage requires different management attention and different risk posture.
 
-The TM-40C track covers the technical lifecycle of a single ML project. TM-50J covers the portfolio-level challenge: how do you manage five ML projects simultaneously when they are at different stages, competing for the same data scientist resources, and serving different operational stakeholders with different tolerance for model risk?
+The TM-40I track covers the technical lifecycle of a single ML project. TM-50J covers the portfolio-level challenge: how do you manage five ML projects simultaneously when they are at different stages, competing for the same data scientist resources, and serving different operational stakeholders with different tolerance for model risk?
 
 **Table 11-1. ML Portfolio Stage Management**
 
@@ -1189,7 +1173,7 @@ The TM-40C track covers the technical lifecycle of a single ML project. TM-50J c
 | Sustainment Review | Periodic assessment of whether production model remains fit for purpose | Re-evaluate against current requirements; assess drift; decide continue/retrain/retire | Outdated model continues to serve users without reassessment | Quarterly |
 | Retirement | Model being phased out; replacement being built | User transition; data archive; documentation preservation | Dependent products lose their input without notice | 90 days minimum |
 
-## 11-2. The Research Gate
+### 11-2. The Research Gate
 
 Research projects are the highest-discretionary-spend items in the portfolio. They have no guaranteed output, and they compete for scarce ORSA and MLE resources with projects that are already committed to operational users. The program manager must govern research investment deliberately.
 
@@ -1208,12 +1192,12 @@ Every research project must have:
 | Criterion | Threshold | Assessment Method |
 |-----------|-----------|-----------------|
 | Model accuracy | Beats baseline by >X% on hold-out test set | Documented evaluation results |
-| Data availability | Required input data available and stable for >Y% of records | Data quality assessment (TM-40C) |
-| Operational feasibility | Model outputs can be integrated into MSS workflow without >Z weeks of additional development | Technical feasibility review with TM-40B |
+| Data availability | Required input data available and stable for >Y% of records | Data quality assessment (TM-40I) |
+| Operational feasibility | Model outputs can be integrated into MSS workflow without >Z weeks of additional development | Technical feasibility review with TM-40H |
 | Stakeholder acceptance | Operational stakeholder has reviewed sample outputs and confirmed utility | Stakeholder review session documented |
 | Maintenance viability | Team has documented retraining cadence and performance monitoring plan | Sustainment plan document |
 
-## 11-3. AI Governance Responsibilities
+### 11-3. AI Governance Responsibilities
 
 Army CIO Memo (April 2024) establishes requirements for AI system governance. The TM-50J program manager is accountable for ensuring compliance across all AI-assisted MSS products.
 
@@ -1223,20 +1207,20 @@ Army CIO Memo (April 2024) establishes requirements for AI system governance. Th
 |-------------|-------------|-------------|
 | Product documentation | All AI-assisted products documented with model type, training data, intended use, and limitations | Review product documentation in MSS workspace |
 | Human review gates | All AI-generated outputs that inform operational decisions have a defined human review step | Verify workflow documentation; confirm with operational users |
-| Performance monitoring | Model performance metrics tracked; alert thresholds defined | Review monitoring dashboard (TM-40C product) |
+| Performance monitoring | Model performance metrics tracked; alert thresholds defined | Review monitoring dashboard (TM-40I product) |
 | Bias assessment | Training data and outputs assessed for systematic bias relevant to the use case | Review bias assessment documentation |
 | Retraining schedule | Schedule for periodic model retraining defined and calendared | Review sustainment plan |
 | Escalation pathway | Defined process for operational users to flag model outputs they believe are incorrect | Verify user guidance and helpdesk capability |
 
 > **WARNING: Deploying an AI-assisted MSS product without documenting the human review gates is a policy violation under Army CIO Memo (April 2024). More critically, it creates operational risk: an AI system that produces incorrect outputs with no review mechanism can corrupt the operational picture before the error is detected. Verify human review gates at every production release review.**
 
-## 11-4. The ML Model Handoff Problem
+### 11-4. The ML Model Handoff Problem
 
 One of the most common failure modes in ML portfolio management is the model handoff: a research team trains an excellent model, writes a paper-quality evaluation report, hands it to a sustainment team, and walks away. Six months later the model is producing degraded outputs and no one on the sustainment team understands the model well enough to diagnose the problem.
 
 The program manager's job is to ensure this does not happen. The handoff from development to sustainment is not a documentation event — it is a capability transfer that must be verified.
 
-### TASK 11-4A: EXECUTE AN ML MODEL HANDOFF REVIEW
+#### TASK 11-4A: EXECUTE AN ML MODEL HANDOFF REVIEW
 
 **CONDITIONS:** An ML model has completed development and passed its production readiness gate. A sustainment team has been designated to own the model in production.
 
@@ -1260,15 +1244,15 @@ The program manager's job is to ensure this does not happen. The handoff from de
 
 ---
 
-# CHAPTER 12 — PROGRAM FINANCIAL STEWARDSHIP
+## CHAPTER 12 — PROGRAM FINANCIAL STEWARDSHIP
 
-## 12-1. Resource Allocation at Program Level
+### 12-1. Resource Allocation at Program Level
 
 **BLUF:** The TM-50J program manager does not manage contracts or obligation rates. The PM does manage the allocation of team capacity — the most finite and non-recoverable resource in the program. A sprint-week of engineering capacity spent on the wrong priority is gone permanently.
 
 Resource stewardship at the program level means: ensuring each team's capacity is applied to the highest-value work, balancing delivery pressure against maintenance and debt obligations, and protecting team capacity from the entropy of unplanned requests that do not go through the backlog.
 
-## 12-2. Capacity Allocation Policy
+### 12-2. Capacity Allocation Policy
 
 **Table 12-1. Recommended Program Capacity Allocation**
 
@@ -1281,7 +1265,7 @@ Resource stewardship at the program level means: ensuring each team's capacity i
 
 > **CAUTION: Teams that routinely exceed 65% capacity on new feature delivery at the expense of debt reduction are borrowing from the future. After two to three PIs of zero debt reduction allocation, velocity typically begins to decline as accumulated debt creates compounding friction. Protect the debt allocation even under delivery pressure.**
 
-### TASK 12-2A: CONDUCT A PROGRAM CAPACITY ALLOCATION REVIEW
+#### TASK 12-2A: CONDUCT A PROGRAM CAPACITY ALLOCATION REVIEW
 
 **CONDITIONS:** Approaching PI Planning. A list of stakeholder requests for the upcoming PI has been compiled.
 
@@ -1303,7 +1287,7 @@ Resource stewardship at the program level means: ensuring each team's capacity i
 
 6. **Document and brief.** Produce a one-page capacity allocation summary. Brief to C2DAO Chief before PI Planning. Capacity is not available for re-negotiation during PI Planning — commitments are made against the confirmed available capacity.
 
-## 12-3. Protecting Team Capacity from Scope Creep
+### 12-3. Protecting Team Capacity from Scope Creep
 
 Unplanned work that bypasses the backlog is the most common form of capacity waste at program scale. It typically enters through three vectors:
 
@@ -1322,7 +1306,7 @@ All three represent untracked work that consumes capacity committed to PI object
 - Include "work not in the backlog this sprint" as a standing retrospective question. If teams discover shadow work in retrospectives, the intake process is not working.
 - For FDE-initiated work: establish a rule that Palantir FDE activity must be covered by a task order line item or a formally created government backlog item before work begins. Document any FDE activity at the weekly task order status meeting.
 
-## 12-4. Making the Case for Data Investment
+### 12-4. Making the Case for Data Investment
 
 The TM-50J program manager will periodically need to justify the MSS program investment to leadership — especially when budget pressures mount, when a new leader arrives skeptical of data platforms, or when a competing priority threatens to draw resources away from the program.
 
@@ -1340,7 +1324,7 @@ The case for data investment is not made with technical arguments. It is made wi
 
 > **CAUTION: Do not fabricate or embellish data investment arguments. Senior leaders, particularly those with analytical backgrounds, will probe the numbers. One challenged or unsupported claim undermines all the others. Every figure you use in an investment justification must be traceable to a documented source.**
 
-## 12-5. Communicating Capacity Constraints to Stakeholders
+### 12-5. Communicating Capacity Constraints to Stakeholders
 
 The program manager will regularly face requests for new capability that exceed available capacity. Saying no to a GO or senior staff officer is politically difficult — but saying yes without capacity to deliver is worse.
 
@@ -1358,9 +1342,9 @@ The program manager will regularly face requests for new capability that exceed 
 
 ---
 
-# CHAPTER 13 — LEADING THROUGH PROGRAM TRANSITIONS
+## CHAPTER 13 — LEADING THROUGH PROGRAM TRANSITIONS
 
-## 13-1. The Program Manager's Role in Organizational Change
+### 13-1. The Program Manager's Role in Organizational Change
 
 **BLUF:** Data programs operate inside organizations that are themselves changing. Personnel rotate, command priorities shift, platform capabilities evolve, and policy frameworks update. The TM-50J program manager must lead the program through transitions without losing the momentum of ongoing delivery.
 
@@ -1374,9 +1358,9 @@ Transitions at program scale come in several forms:
 
 **Scope transitions.** The program receives a significant new mission — theater-wide expansion of MSS, integration of a new data domain, or a new operational requirement from EUCOM. The PM must absorb the new scope without disrupting ongoing delivery.
 
-## 13-2. Managing Leadership Transitions
+### 13-2. Managing Leadership Transitions
 
-### TASK 13-2A: EXECUTE A PROGRAM LEADERSHIP TRANSITION BRIEF
+#### TASK 13-2A: EXECUTE A PROGRAM LEADERSHIP TRANSITION BRIEF
 
 **CONDITIONS:** A new GO, SES, or senior leader with program oversight authority has assumed their position or is incoming within 60 days.
 
@@ -1398,7 +1382,7 @@ Transitions at program scale come in several forms:
 
 > **NOTE: A new senior leader who does not receive a program brief in their first 30 days will form their opinion of the MSS program from informal channels — other staff officers, their predecessor's notes, or their prior experience with data programs. Control the narrative by briefing proactively.**
 
-## 13-2A. New Leader Orientation — Program Leave-Behind
+### 13-2A. New Leader Orientation — Program Leave-Behind
 
 When briefing a new senior leader, always leave behind a concise one-page document that they can reference after the brief. A GO who attended your orientation brief six months ago will not remember the details — but they will pull the leave-behind when they need to brief their own boss on the data program.
 
@@ -1418,7 +1402,7 @@ When briefing a new senior leader, always leave behind a concise one-page docume
 
 Update this document after every PI Review. Distribute to: the G6 front office, the DCG action officer, the EUCOM J6 rep, and any new unit S6 shops coming online.
 
-## 13-3. Managing Platform Transitions
+### 13-3. Managing Platform Transitions
 
 Palantir releases platform updates that can affect production MSS products. Some updates are transparent to government-built products. Others — particularly changes to ontology APIs, Pipeline Builder syntax, or Workshop widget behavior — can break production configurations without warning.
 
@@ -1436,13 +1420,13 @@ Palantir releases platform updates that can affect production MSS products. Some
 
 | Action | Timing | Owner |
 |--------|--------|-------|
-| Subscribe to Palantir release notes and deprecation notices | Ongoing | Platform Team Lead (TM-50F) |
-| Maintain a platform dependency inventory: which products use which APIs | Quarterly review | Platform Team Lead (TM-50F) |
+| Subscribe to Palantir release notes and deprecation notices | Ongoing | Platform Team Lead (TM-50L) |
+| Maintain a platform dependency inventory: which products use which APIs | Quarterly review | Platform Team Lead (TM-50L) |
 | Reserve 5% of PI capacity for platform adaptation work | Every PI | Program Manager |
 | Coordinate platform update timing with active sprint schedule | Before each Palantir release | Program Manager + FDE |
 | Test all production products in dev environment before major platform updates go live | Before each major release | All team leads |
 
-### TASK 13-3A: MANAGE A PALANTIR PLATFORM DEPRECATION
+#### TASK 13-3A: MANAGE A PALANTIR PLATFORM DEPRECATION
 
 **CONDITIONS:** Palantir has issued a deprecation notice for a platform feature currently used in one or more production MSS products. A deprecation date has been communicated.
 
@@ -1466,7 +1450,7 @@ Palantir releases platform updates that can affect production MSS products. Some
 
 ---
 
-# APPENDIX A — PROGRAM HEALTH ASSESSMENT CHECKLIST
+## APPENDIX A — PROGRAM HEALTH ASSESSMENT CHECKLIST
 
 ## A-1. Purpose
 
@@ -1508,7 +1492,7 @@ The Program Health Assessment (PHA) is a structured review of program status acr
 | Team stability (rolling 6 months) | <25% team membership change | 25-40% team membership change | >40% team membership change; continuity impacted |
 | Morale indicators | Teams meeting, delivering, retrospecting with positive engagement | Some teams showing low engagement; PM has plan | Visible morale issues; attrition risk; retrospectives not being held |
 | Knowledge continuity | All critical knowledge documented; onboarding packages current | Most knowledge documented; some single points of failure | Multiple undocumented single points of failure; rotation risk is high |
-| PM development | All TM-40D PMs have development plans; assessments current | Most PMs assessed; some development plans stale | No PM assessments; no development activity |
+| PM development | All TM-40J PMs have development plans; assessments current | Most PMs assessed; some development plans stale | No PM assessments; no development activity |
 
 **Dimension 5: Vendor/Contractor Health**
 
@@ -1546,7 +1530,7 @@ The Program Health Assessment (PHA) is a structured review of program status acr
 
 ---
 
-# APPENDIX B — DATA PRODUCT LIFECYCLE AND RETIREMENT GUIDE
+## APPENDIX B — DATA PRODUCT LIFECYCLE AND RETIREMENT GUIDE
 
 ## B-1. The Data Product Lifecycle
 
@@ -1582,7 +1566,7 @@ Maintain a changelog in the product's MSS documentation workspace. Each version 
 
 ## B-3. Product Retirement Procedure
 
-### TASK B-3A: RETIRE AN MSS DATA PRODUCT
+#### TASK B-3A: RETIRE AN MSS DATA PRODUCT
 
 **CONDITIONS:** A decision has been made to retire an MSS product from production. The decision has been reviewed by C2DAO and documented. A replacement capability exists or the operational need has been eliminated.
 
@@ -1616,7 +1600,7 @@ Maintain a changelog in the product's MSS documentation workspace. Each version 
 
 ---
 
-# APPENDIX C — SAMPLE PROGRAM INCREMENT OBJECTIVES AND ASSESSMENT
+## APPENDIX C — SAMPLE PROGRAM INCREMENT OBJECTIVES AND ASSESSMENT
 
 ## C-1. Purpose
 
@@ -1629,29 +1613,29 @@ This appendix provides example Program Increment Objectives (PIOs) for a USAREUR
 **PIO 1: Theater Readiness Dashboard — Full Operational Capability**
 Deliver all six readiness metric panels to the USAREUR-AF G3/G4 operational dashboard, enabling daily readiness reporting without manual data compilation by G3 analysts.
 - Success criteria: All six panels display current data from validated feeds; G3 analyst confirms workflow integration; data latency <4 hours from source.
-- Owner: Team Alpha (TM-40D: CPT Rodriguez)
+- Owner: Team Alpha (TM-40J: CPT Rodriguez)
 - Confidence: High (4 of 6 panels complete at PI Planning)
 
 **PIO 2: Supply Chain Pipeline — Phase 2 Integration**
 Extend the existing supply chain pipeline to ingest from two additional data sources (forward logistics element feeds), increasing coverage from 60% to 90% of theater units.
 - Success criteria: Pipeline ingests from both new sources; data quality validation passes for >95% of records; downstream dashboard reflects new coverage.
-- Owner: Team Bravo (TM-40D: Mr. Harrison)
+- Owner: Team Bravo (TM-40J: Mr. Harrison)
 - Confidence: Medium (new data source SLAs not yet confirmed)
 
 **PIO 3: Personnel Readiness ML Model — Production Release**
 Promote the personnel readiness prediction model from development to production, enabling G1 staff to generate 30-day readiness outlooks at formation level.
-- Success criteria: Model passes production readiness gate (TM-40C checklist); G1 chief reviews and accepts model validation results; human review workflow documented and tested with G1 analysts.
-- Owner: Team Charlie (TM-40D: SFC Washington)
+- Success criteria: Model passes production readiness gate (TM-40I checklist); G1 chief reviews and accepts model validation results; human review workflow documented and tested with G1 analysts.
+- Owner: Team Charlie (TM-40J: SFC Washington)
 - Confidence: Medium (model evaluation 80% complete at PI Planning)
 
 **PIO 4: Ontology v2.1 Migration**
 Complete migration of all production products from ontology v2.0 to v2.1, resolving the identified schema fragmentation and enabling cross-product object linking.
 - Success criteria: All 7 affected pipelines migrated and tested; no production outages during migration window; downstream dashboards validated post-migration.
-- Owner: Platform Team (TM-50E: Ms. Nakamura)
+- Owner: Platform Team (TM-50K: Ms. Nakamura)
 - Confidence: High
 
 **PIO 5: PM Capability Development**
-Conduct PM capability assessments for all four TM-40D PMs; develop and begin executing individual development plans.
+Conduct PM capability assessments for all four TM-40J PMs; develop and begin executing individual development plans.
 - Success criteria: All four assessments complete; all four development plans documented and agreed; first check-in meetings scheduled.
 - Owner: Program Manager
 - Confidence: High
@@ -1659,7 +1643,7 @@ Conduct PM capability assessments for all four TM-40D PMs; develop and begin exe
 **Stretch: Intelligence Analysis Dashboard — Concept and Prototype**
 If capacity remains after PIO 1-5, deliver a concept brief and low-fidelity prototype for the G2 intelligence analysis dashboard.
 - Success criteria: Concept brief approved by G2 data lead; prototype demonstrates core workflow.
-- Owner: Team Delta (TM-40D: CW3 Patel)
+- Owner: Team Delta (TM-40J: CW3 Patel)
 - Confidence: Low (stretch only; no commitment)
 
 ## C-3. Example PI Review Assessment
@@ -1679,16 +1663,16 @@ If capacity remains after PIO 1-5, deliver a concept brief and low-fidelity prot
 
 **PI 4 Lessons Learned:**
 - External SLA timelines must be confirmed before committing a PIO with external data dependency. PIO 2 amber was foreseeable. Build explicit SLA confirmation milestone into PI Planning for any PIO dependent on an external organization.
-- Model production release process (PIO 3) worked well. TM-40C checklist and G1 review gate are now standard and should be referenced in next PI's model releases.
+- Model production release process (PIO 3) worked well. TM-40I checklist and G1 review gate are now standard and should be referenced in next PI's model releases.
 - Ontology migration (PIO 4) completed ahead of schedule. Credit to Platform Team for early planning and 48-hour pre-migration testing. Adopt platform migration planning process as program standard.
 
 ---
 
-# APPENDIX D — PM ONBOARDING GUIDE FOR TM-50J PROGRAMS
+## APPENDIX D — PM ONBOARDING GUIDE FOR TM-50J PROGRAMS
 
 ## D-1. Purpose
 
-This appendix provides a structured onboarding guide for a new TM-40D PM joining an active TM-50J-managed program. Use this guide to ensure new PMs have the context, access, and knowledge they need to be productive within their first sprint.
+This appendix provides a structured onboarding guide for a new TM-40J PM joining an active TM-50J-managed program. Use this guide to ensure new PMs have the context, access, and knowledge they need to be productive within their first sprint.
 
 ## D-2. Week 1: Access and Orientation
 
@@ -1722,7 +1706,7 @@ This appendix provides a structured onboarding guide for a new TM-40D PM joining
 
 ## D-4A. Common New PM Mistakes and How to Prevent Them
 
-New TM-40D PMs joining an active program under TM-50J oversight tend to make predictable mistakes. The program manager should brief these proactively — not wait to discover them through sprint failures.
+New TM-40J PMs joining an active program under TM-50J oversight tend to make predictable mistakes. The program manager should brief these proactively — not wait to discover them through sprint failures.
 
 **Table D-1. Common New PM Mistakes**
 
@@ -1736,7 +1720,7 @@ New TM-40D PMs joining an active program under TM-50J oversight tend to make pre
 
 ## D-5. 30-Day Completion Checklist
 
-By the end of 30 days, the incoming TM-40D PM should be able to:
+By the end of 30 days, the incoming TM-40J PM should be able to:
 
 - [ ] Describe the program's current PI objectives and status without referring to notes.
 - [ ] Identify the top three cross-team dependencies relevant to their project area.
@@ -1762,13 +1746,13 @@ By the end of 30 days, the incoming TM-40D PM should be able to:
 
 | Publication | Title | Relationship |
 |-------------|-------|-------------|
-| TM-40D | Program Manager (Technical) | Prerequisite; this manual builds directly on TM-40D content |
-| TM-40A | ORSA | Technical track managed by TM-50J; reference for understanding ORSA deliverables |
-| TM-40B | AI Engineer | Technical track managed by TM-50J; reference for AI pipeline delivery standards |
-| TM-40C | ML Engineer | Technical track managed by TM-50J; reference for ML model lifecycle |
-| TM-40E | Knowledge Manager | Technical track managed by TM-50J; reference for ontology governance |
-| TM-40F | Software Engineer | Technical track managed by TM-50J; reference for custom code standards |
-| TM-50A through TM-50F | Advanced technical tracks | Peer publications; reference for advanced capability expectations in each track |
+| TM-40J | Program Manager (Technical) | Prerequisite; this manual builds directly on TM-40J content |
+| TM-40G | ORSA | Technical track managed by TM-50J; reference for understanding ORSA deliverables |
+| TM-40H | AI Engineer | Technical track managed by TM-50J; reference for AI pipeline delivery standards |
+| TM-40I | ML Engineer | Technical track managed by TM-50J; reference for ML model lifecycle |
+| TM-40K | Knowledge Manager | Technical track managed by TM-50J; reference for ontology governance |
+| TM-40L | Software Engineer | Technical track managed by TM-50J; reference for custom code standards |
+| TM-50G through TM-50L | Advanced technical tracks | Peer publications; reference for advanced capability expectations in each track |
 | Data Literacy Technical Reference | Data Literacy | Doctrinal foundation; establishes organizational data literacy standards |
 | Data Literacy for Senior Leaders | Senior leader data doctrine | Strategic framing for GO/SES briefings on data program value |
 
@@ -1778,11 +1762,11 @@ By the end of 30 days, the incoming TM-40D PM should be able to:
 *Maven Smart System — USAREUR-AF Operational Data Team*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 *2026*
-*UNCLASSIFIED — Distribution: Approved for public release; distribution is unlimited.*
+*UNCLASSIFIED — Distribution: DRAFT — Not yet approved for distribution.*
 *This publication implements Army CIO Memorandum, Data and Analytics Policy (April 2024) and aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025).*
-# GLOSSARY
+## GLOSSARY
 
-**AIP (Artificial Intelligence Platform).** Palantir's framework for building AI-assisted workflows on Foundry, including language model integrations and AI-driven application development. TM-50J program managers oversee TM-40B resources who build and maintain AIP-integrated products.
+**AIP (Artificial Intelligence Platform).** Palantir's framework for building AI-assisted workflows on Foundry, including language model integrations and AI-driven application development. TM-50J program managers oversee TM-40H resources who build and maintain AIP-integrated products.
 
 **Army CIO Memo (April 2024).** Army Chief Information Officer Memorandum on Data and Analytics Policy (April 2024). Establishes Army-wide requirements for data management, AI governance, and data platform standards. All MSS products must comply.
 
@@ -1794,7 +1778,7 @@ By the end of 30 days, the incoming TM-40D PM should be able to:
 
 **Cycle Time.** The elapsed time from when a feature is started (work begun) to when it is delivered (accepted and released). A key process efficiency metric. Long cycle time indicates work-in-progress accumulation, blockages, or large batch sizes.
 
-**Definition of Done (DoD).** The minimum quality standards a feature must meet to be considered complete and releasable. Defined in TM-40D Appendix B. TM-50J program managers enforce DoD compliance across all teams.
+**Definition of Done (DoD).** The minimum quality standards a feature must meet to be considered complete and releasable. Defined in TM-40J Appendix B. TM-50J program managers enforce DoD compliance across all teams.
 
 **Dependency Register.** The program-level tracking artifact that documents all inter-team, inter-product, and external dependencies — including owner, status, due date, and risk rating. Maintained by the program manager and updated by team leads.
 
@@ -1806,7 +1790,7 @@ By the end of 30 days, the incoming TM-40D PM should be able to:
 
 **MSS (Maven Smart System).** The Palantir Foundry instance deployed for USAREUR-AF and EUCOM operational data management, analytics, and AI capability. The operational platform for all MSS technical tracks.
 
-**Ontology.** The MSS data model: the structured representation of operational entities (units, personnel, equipment, tasks) as object types with properties and links. Owned by TM-40E Knowledge Managers. TM-50J program managers govern ontology change management at the program level.
+**Ontology.** The MSS data model: the structured representation of operational entities (units, personnel, equipment, tasks) as object types with properties and links. Owned by TM-40K Knowledge Managers. TM-50J program managers govern ontology change management at the program level.
 
 **PI (Program Increment).** A fixed time interval (typically 8-12 weeks) in which a scaled Agile program plans, executes, and reviews a set of committed objectives. The primary planning unit for multi-team MSS programs.
 

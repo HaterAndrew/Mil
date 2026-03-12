@@ -2,26 +2,21 @@
 ## Maven Smart System (MSS) Training Program
 ### USAREUR-AF Operational Data Team — C2DAO
 
----
-
 > **HOW TO USE THIS TEMPLATE**
-> This template follows Army lesson plan format adapted for MSS technical training.
-> Complete all fields. Do not leave sections blank — write "N/A" if not applicable.
-> Update the Version and Date fields each time the lesson is revised.
-> Lesson plans for TM-10 are complete models; TM-20+ outlines fill in this structure.
+> Army lesson plan format adapted for MSS technical training. Complete all fields. Write "N/A" if not applicable. Update Version and Date fields on each revision. TM-10 lesson plans are complete models; TM-20+ outlines fill in this structure.
 
 ---
 
 ## LESSON PLAN HEADER
 
 | Field | Value |
-|---|---|
+|-------|-------|
 | **Course** | (e.g., TM-20 Builder) |
 | **Lesson Title** | (descriptive title of this block) |
 | **Lesson Number** | (Block number within course, e.g., Block 7) |
 | **POI Reference** | (POI block reference, e.g., TM-20 Block 7) |
 | **Instructional Hours** | (total hours allocated, e.g., 2.0 hours) |
-| **Method of Instruction** | (LAB / LEC / DIS / SEM / BRF / REV / WKS) |
+| **Method of Instruction** | LAB / LEC / DIS / SEM / BRF / REV / WKS |
 | **Location** | MSS Training Environment |
 | **Maximum Students** | (per T:I ratio from POI) |
 | **Date/Version** | (e.g., Version 1.0 — March 2026) |
@@ -39,14 +34,15 @@
 ## SECTION II — LEARNING OBJECTIVES
 
 **Terminal Learning Objective (TLO):**
-> Action: (what the trainee does)
-> Condition: (given what, in what environment, with what tools)
-> Standard: (to what level of performance)
+
+> **Action:** (what the trainee does)
+> **Condition:** (given what, in what environment, with what tools)
+> **Standard:** (to what level of performance)
 
 **Enabling Learning Objectives (ELOs):**
 
 | # | ELO | Method of Assessment |
-|---|---|---|
+|---|-----|----------------------|
 | 1 | | Check on Learning / Practical Exercise |
 | 2 | | Check on Learning / Practical Exercise |
 | 3 | | Check on Learning / Practical Exercise |
@@ -85,10 +81,11 @@
 - Students must not attempt to access the production MSS environment during this lesson
 
 **System Safety:**
-- (Note any risk of accidental data modification with production impact — relevant for any block with write operations)
+- (Note any risk of accidental data modification with production impact — relevant for blocks with write operations)
 - (Note any permissions risk — if students have elevated access for this lesson that should be reduced after)
 
-**Risk Assessment:** LOW — MEDIUM — HIGH (circle one)
+**Risk Assessment:** LOW / MEDIUM / HIGH *(circle one)*
+
 *(Rationale if not LOW):* ___________
 
 ---
@@ -98,13 +95,16 @@
 *Time allocation: approximately 10% of lesson time*
 
 **ATTENTION** *(Hook — connects to operational relevance or a problem the trainee has personally encountered)*
+
 > (Example: "Your unit's SITREP tracker breaks every Monday because the file upload is manual. After this block, you can replace that with a pipeline that runs on schedule without anyone touching it.")
 
 **MOTIVATION** *(Why this matters to the trainee's actual job)*
+
 > (Explain the operational impact. What can the trainee do after this lesson that they could not do before? What problem does this solve?)
 
 **OVERVIEW** *(Brief statement of what will be covered)*
-> (Three-to-five bullet summary of the lesson structure. Set expectations for the pace and what "done" looks like at the end of this block.)
+
+> (Three-to-five bullet summary of the lesson structure. Set expectations for pace and what "done" looks like at the end of this block.)
 
 ---
 
@@ -148,7 +148,7 @@
 ### Common Errors and Interventions
 
 | Common Error | Root Cause | Intervention |
-|---|---|---|
+|--------------|------------|--------------|
 | (what trainees do wrong) | (why it happens) | (what to say/do to correct it) |
 | | | |
 | | | |
@@ -159,27 +159,32 @@
 
 *Time allocation: approximately 10% of lesson time*
 
-**SUMMARY** *(Restate the key points — what did we just learn?)*
+**SUMMARY** *(Restate the key points)*
+
 > (3–5 bullet points of the most important concepts or skills from this lesson. These should map directly to the ELOs.)
 
-**REMOTIVATION** *(Reconnect to the operational relevance)*
-> (One or two sentences: how does what we just practiced connect to what the trainee will do on mission? What is different now that this lesson is complete?)
+**REMOTIVATION** *(Reconnect to operational relevance)*
+
+> (One or two sentences: how does what we just practiced connect to what the trainee will do on mission?)
 
 **CLOSE** *(What comes next)*
+
 > (Brief statement of how this block connects to the next block. Set up the transition.)
 
 ---
 
 ## SECTION VIII — ASSESSMENT
 
-**Assessment Method:** (Practical exercise task / Check on Learning during lesson / Evaluator observation / Design document review)
+**Assessment Method:** Practical exercise task / Check on Learning during lesson / Evaluator observation / Design document review
 
 **Assessment Criteria:**
+
 | Task | Go Standard | No-Go Indicators |
-|---|---|---|
+|------|-------------|-----------------|
 | | | |
 
 **Assessment Notes:**
+
 *(Note any assessment conditions — e.g., "this block is not evaluated independently; it is assessed as part of the Day 5 practical exercise" or "the evaluator will ask students to demonstrate this task during the evaluation")*
 
 ---
@@ -192,14 +197,14 @@
 - Purpose: (one sentence — what should the student be prepared to do when they arrive tomorrow that requires this reading?)
 
 **Optional Preparation:**
-- (Any optional exercises or review activities that help higher performers deepen understanding or prepare for upcoming complex labs)
+- (Optional exercises or review activities for higher performers)
 
 ---
 
 ## SECTION X — LESSON REVISION LOG
 
 | Version | Date | Change | Author |
-|---|---|---|---|
+|---------|------|--------|--------|
 | 1.0 | | Initial publication | |
 | | | | |
 

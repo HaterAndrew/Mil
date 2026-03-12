@@ -8,7 +8,7 @@ Wiesbaden, Germany
 
 **PURPOSE:** This guide develops the operational mental models required to effectively integrate MSS into Movement and Maneuver warfighting function operations. It is a prerequisite companion to TM-40C and must be read before beginning TM-40C task instruction. This guide is conceptual — it develops understanding, not procedures. No step-by-step tasks appear here. The audience is S3/G3 officers, brigade and battalion commanders, and staff officers responsible for combined arms synchronization.
 
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 ---
 
@@ -498,4 +498,4 @@ Practitioners are encouraged to read the doctrinal publications relevant to thei
 *CONCEPTS GUIDE — TM-40C COMPANION: MOVEMENT AND MANEUVER WARFIGHTING FUNCTION*
 *Version 1.0 — March 2026*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA — Wiesbaden, Germany*
-*DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.*
+*DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.*

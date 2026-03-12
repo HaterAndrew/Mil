@@ -10,7 +10,7 @@ Wiesbaden, Germany
 
 **PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; Data Literacy Technical Reference (all required).
 **APPLIES TO:** Data-adjacent specialists (17/25-series, S6/G6/G2/G9, operational data analysts). Covers Foundry Workshop, Pipeline Builder, Contour, Quiver, AIP Logic (UI only).
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 ---
 
@@ -260,12 +260,12 @@ TM-30 covers the full range of no-code, UI-based advanced building on MSS. Certa
 | Multi-source join with grain management | YES | Build per Chapter 3 |
 | Complex Ontology with hierarchical Object Types | YES | Design per Chapter 4 |
 | AIP Logic workflow parameter configuration | YES | Configure per Chapter 6 |
-| Python or PySpark transforms | NO — TM-40 | Refer to TM-40F |
-| TypeScript Functions on Objects (FOO) | NO — TM-40 | Refer to TM-40B/TM-40F |
-| OSDK integration | NO — TM-40 | Refer to TM-40F |
-| Authoring new AIP Logic workflows | NO — TM-40 | Refer to TM-40B |
-| Configuring source connectors (new connector types) | NO — TM-40 | Refer to TM-40F |
-| Writing custom data quality checks in code | NO — TM-40 | Refer to TM-40F |
+| Python or PySpark transforms | NO — TM-40 | Refer to TM-40L |
+| TypeScript Functions on Objects (FOO) | NO — TM-40 | Refer to TM-40H/TM-40L |
+| OSDK integration | NO — TM-40 | Refer to TM-40L |
+| Authoring new AIP Logic workflows | NO — TM-40 | Refer to TM-40H |
+| Configuring source connectors (new connector types) | NO — TM-40 | Refer to TM-40L |
+| Writing custom data quality checks in code | NO — TM-40 | Refer to TM-40L |
 
 If a requirement is not in this table, apply the following rule: if it requires writing, editing, or debugging code in any language — it is TM-40 scope.
 
@@ -1158,9 +1158,9 @@ TM-30 builders CONFIGURE existing AIP Logic workflows — they do not author the
 | Connect a workflow to a new data source (via UI) | TM-30 | Advanced builder |
 | Modify plain-language prompt text for operational context | TM-30 | Advanced builder |
 | Enable/disable natural language query on an Object Type | TM-30 | Advanced builder |
-| Author a new AIP Logic workflow from scratch | TM-40 | AI engineer (TM-40B) |
-| Write TypeScript functions or modify workflow logic code | TM-40 | AI engineer (TM-40B) |
-| Integrate AIP Logic with external systems | TM-40 | AI engineer (TM-40B) |
+| Author a new AIP Logic workflow from scratch | TM-40 | AI engineer (TM-40H) |
+| Write TypeScript functions or modify workflow logic code | TM-40 | AI engineer (TM-40H) |
+| Integrate AIP Logic with external systems | TM-40 | AI engineer (TM-40H) |
 
 **WARNING:** AIP Logic configurations that make autonomous decisions affecting command intent — such as flagging soldiers as non-deployable, modifying readiness records, or triggering escalation actions — require command authorization and legal review before activation. Do not activate production AIP Logic workflows that affect command decision-making without written authorization from your data steward and unit commander.
 
@@ -2047,4 +2047,4 @@ data-driven operational interfaces using configurable widgets without writing co
 
 *TM-30 — Maven Smart System Advanced No-Code Builder Technical Manual*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026*
-*Distribution Restriction: Approved for public release; distribution is unlimited.*
+*Distribution Restriction: DRAFT — Not yet approved for distribution.*

@@ -1,0 +1,17 @@
+AFTER-ACTION REPORT (AAR) — RECORD 01
+Classification: UNCLASSIFIED // TRAINING USE ONLY
+
+date: 2025-01-27
+unit: 2-1 BN
+exercise_name: LIGHTNING FORGE
+category: COMMAND_AND_CONTROL
+priority: H
+
+OBSERVATION:
+Command post communications experienced 45-minute outage during EXORD execution due to generator failure. No backup power source was pre-positioned.
+
+RECOMMENDATION:
+Pre-position a backup generator and conduct weekly power-off drills for CP equipment.
+
+OPR: 2-1 BN S3
+Submitted by: Training NCO

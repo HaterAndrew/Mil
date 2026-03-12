@@ -11,7 +11,7 @@ Wiesbaden, Germany
 
 **AUDIENCE:** Protection officer, G3/S3 with protection responsibility, AT officer, CBRN officer, PMO, ADA officer. This guide supports conceptual understanding before beginning TM-40E procedures.
 
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 ---
 

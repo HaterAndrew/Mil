@@ -1,7 +1,7 @@
 # PRE-TEST — TM-40L: SOFTWARE ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
-| | |
+| Field | Detail |
 |---|---|
 | **Course** | TM-40L: Software Engineer |
 | **Form** | Pre-Test |

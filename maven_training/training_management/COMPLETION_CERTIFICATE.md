@@ -69,7 +69,7 @@
 ║  has successfully completed                                              ║
 ║                                                                          ║
 ║  ___________________________________________________________________     ║
-║         (Course Title, e.g., TM-40A ORSA Specialist Track)              ║
+║         (Course Title, e.g., TM-40G ORSA Specialist Track)              ║
 ║                                                                          ║
 ║  Maven Smart System (MSS) Specialist Training                           ║
 ║  USAREUR-AF Operational Data Team — C2DAO                               ║

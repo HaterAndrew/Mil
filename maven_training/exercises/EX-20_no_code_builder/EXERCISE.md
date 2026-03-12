@@ -1,20 +1,18 @@
 # EX-20 — No-Code Builder
 ## Practical Exercise — TM-20 Proficiency
 
-**Version 1.0 | March 2026**
-**Prerequisite:** TM-20, No-Code Builder Technical Manual (and TM-10)
-**Duration:** 90–120 minutes
-**Environment:** MSS training instance with workshop build permissions (see ENVIRONMENT_SETUP.md)
-
----
+| | |
+|---|---|
+| **Version** | 1.0 — March 2026 |
+| **Prerequisite** | TM-20 (and TM-10) |
+| **Duration** | 90–120 min |
+| **Environment** | MSS training instance with Workshop build permissions — see ENVIRONMENT_SETUP.md |
 
 ## SCENARIO
 
-Your battalion S6 has asked you to build a simple Workshop dashboard showing daily vehicle availability by company for the past 30 days. A raw dataset has been pre-loaded into the training MSS environment. You must ingest it, build a basic pipeline, and produce a usable dashboard — no code required.
+Your battalion S6 needs a Workshop dashboard showing daily vehicle availability by company for the past 30 days. A raw dataset is pre-loaded. Ingest it, build a basic pipeline, and produce a usable dashboard — no code required.
 
-**Training dataset:** Synthetic vehicle readiness data, LOGSTAT-format, 90 days, 4 companies.
-
----
+Training dataset: synthetic vehicle readiness data, LOGSTAT-format, 90 days, 4 companies.
 
 ## TASK LIST
 
@@ -28,7 +26,7 @@ Your battalion S6 has asked you to build a simple Workshop dashboard showing dai
 ### Task 2 — Build a Pipeline Transform (30 min)
 - [ ] Create a new Pipeline Builder transform
 - [ ] Filter to the last 30 days using the date field
-- [ ] Group by company, aggregate average availability per day
+- [ ] Group by company; aggregate average availability per day
 - [ ] Output to a new dataset named per governance standards (see NAMING_AND_GOVERNANCE_STANDARDS.md)
 - **Go:** Transform runs successfully; output dataset contains correct columns and row count
 - **No-Go:** Transform fails or output schema is incorrect
@@ -48,34 +46,26 @@ Your battalion S6 has asked you to build a simple Workshop dashboard showing dai
 - **Go:** Evaluator can open and view; cannot edit
 - **No-Go:** Evaluator cannot access or has unintended edit permissions
 
----
-
 ## EVALUATOR NOTES
 
-**Scoring:** 4 tasks. Go on 3 of 4 = overall Go. No-Go on Task 2 = automatic No-Go (core build competency).
+**Scoring:** 4 tasks. Go on 3 of 4 = overall Go. No-Go on Task 2 = automatic No-Go.
 
 **Pre-exercise checklist:**
-- Confirm "EX-20 Vehicle Availability Training Data" dataset is visible to training accounts
+- Confirm "EX-20 Vehicle Availability Training Data" is visible to training accounts
 - Verify training accounts have Pipeline Builder and Workshop build permissions
-- Confirm naming standards reference is accessible ([NAMING_AND_GOVERNANCE_STANDARDS.md](../../standards/NAMING_AND_GOVERNANCE_STANDARDS.md))
+- Confirm NAMING_AND_GOVERNANCE_STANDARDS.md is accessible to participants
 
 **Common failure modes:**
 
 | Task | Common Failure | Evaluator Guidance |
 |------|---------------|--------------------|
-| Task 1 | Cannot locate dataset | Direct participant to the training project folder — one prompt is allowed without penalty |
-| Task 2 | Output dataset name does not follow naming standards | Mark as No-Go; cite specific standard violated; coach after evaluation |
-| Task 2 | Transform runs but row count is wrong | Verify the 30-day filter is applied correctly; common error is off-by-one on date boundary |
-| Task 3 | Filter widget present but has no effect on chart | This is a wiring issue (widget not connected to chart variable) — automatic No-Go; very common first-time failure |
-| Task 4 | Evaluator has edit access | Participant shared with wrong role; mark Task 4 No-Go, note the specific sharing error |
+| Task 1 | Cannot locate dataset | Direct to training project folder — one prompt allowed without penalty |
+| Task 2 | Output dataset name does not follow naming standards | Mark No-Go; cite specific standard violated; coach after evaluation |
+| Task 2 | Transform runs but row count is wrong | Verify 30-day filter applied correctly; common error is off-by-one on date boundary |
+| Task 3 | Filter widget present but has no effect on chart | Wiring issue (widget not connected to chart variable) — automatic No-Go |
+| Task 4 | Evaluator has edit access | Participant shared with wrong role; mark Task 4 No-Go |
 
 **Timing notes:**
-- Task 2 is the critical path — budget up to 45 min for participants with no prior Pipeline Builder experience
-- Task 3 (Workshop) averages 25 min; participants who have used Workshop before will finish faster
+- Task 2 is critical path — budget up to 45 min for participants with no prior Pipeline Builder experience
+- Task 3 averages 25 min; participants familiar with Workshop finish faster
 - If participant finishes early, ask them to explain their naming choice for the output dataset (verbal check)
-
----
-
-## ENVIRONMENT SETUP
-
-See [ENVIRONMENT_SETUP.md](ENVIRONMENT_SETUP.md) for full setup instructions.

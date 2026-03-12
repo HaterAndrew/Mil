@@ -11,7 +11,7 @@ Wiesbaden, Germany
 
 **PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER (required before beginning this manual). No coding, pipeline development, or transform experience is required or assumed.
 
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 **AUTHORITY:** This publication is issued under authority of the USAREUR-AF C2 Data and Analytics Office (C2DAO). It implements Army CIO Memorandum, Data and Analytics Policy (April 2024), aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025), and supports implementation of ADP 3-0, FM 3-0, ADP 3-90, FM 3-90-1, FM 3-90-2, FM 3-98, ATP 3-90.8, ADP 3-07, and FM 3-96. Reference learn-data.armydev.com for current platform documentation.
 
@@ -1890,4 +1890,4 @@ The following tasks appear in this manual with full Conditions/Standards/Procedu
 
 *TM-40C — MOVEMENT AND MANEUVER WARFIGHTING FUNCTION — Version 1.0 — March 2026*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA — Wiesbaden, Germany*
-*DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.*
+*DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.*

@@ -1,0 +1,8 @@
+INTSUM INTSUM_20251112_022 — OBSERVATION REPORT
+DTG: 120000Z NOV 2025
+Unit: 1-4 BN
+
+Summary: OP OP VIPER reported observation of 11 unidentified vehicles moving in convoy formation along ROUTE COPPER at 1940 local. Vehicles: HET. Movement direction: WEST. No hostile action observed. Convoy cleared the AO within 22 minutes.
+
+Assessment: Likely civilian logistics movement. Pattern consistent with previous Thursday observations. Does not meet CCIR threshold at this time.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

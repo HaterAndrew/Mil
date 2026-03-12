@@ -1,12 +1,12 @@
 # POST-TEST — TM-50I: ADVANCED ML ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
-| | |
+| Field | Detail |
 |---|---|
 | **Course** | TM-50I: Advanced ML Engineer |
 | **Form** | Post-Test |
 | **Level** | TM-50I (Advanced Specialist) |
-| **Audience** | Senior ML engineers / data scientists; prerequisite: TM-40C + production ML experience |
+| **Audience** | Senior ML engineers / data scientists; prerequisite: TM-40I + production ML experience |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (42/60) |
 

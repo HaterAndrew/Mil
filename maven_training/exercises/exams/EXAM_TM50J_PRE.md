@@ -1,12 +1,12 @@
 # PRE-TEST — TM-50J: ADVANCED PROGRAM MANAGER
 ## Maven Smart System (MSS) — USAREUR-AF
 
-| | |
+| Field | Detail |
 |---|---|
 | **Course** | TM-50J: Advanced Program Manager |
 | **Form** | Pre-Test |
 | **Level** | TM-50J (Advanced Specialist) |
-| **Audience** | Senior program managers; prerequisite: TM-40D + full-lifecycle MSS project delivery |
+| **Audience** | Senior program managers; prerequisite: TM-40J + full-lifecycle MSS project delivery |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

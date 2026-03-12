@@ -1,8 +1,10 @@
 # AFTER-ACTION REVIEW (AAR) — MSS TRAINING
 ## Instructor Feedback Template
 
-**Version 1.0 | March 2026**
-**Use:** Complete within 48 hours of each training event. Submit to unit data steward or curriculum owner.
+| Field | Value |
+|-------|-------|
+| **Version** | 1.0 — March 2026 |
+| **Use** | Complete within 48 hours of each training event. Submit to unit data steward or curriculum owner. |
 
 ---
 
@@ -24,7 +26,7 @@
 
 Briefly describe the training objectives for this event (reference TM section and ELO numbers where applicable).
 
-> _[Instructor completes]_
+> *[Instructor completes]*
 
 ---
 
@@ -32,11 +34,11 @@ Briefly describe the training objectives for this event (reference TM section an
 
 Describe actual execution vs. plan. Note: timing deviations, environmental issues, student engagement level, unexpected events.
 
-> _[Instructor completes]_
+> *[Instructor completes]*
 
 ---
 
-## SECTION 4 — SUSTAIN (What worked — repeat this)
+## SECTION 4 — SUSTAIN
 
 List 2–5 specific practices, scenarios, or instructional approaches that worked well and should be retained.
 
@@ -48,9 +50,7 @@ List 2–5 specific practices, scenarios, or instructional approaches that worke
 
 ---
 
-## SECTION 5 — IMPROVE (What needs to change)
-
-List 2–5 specific problems encountered, with a proposed fix for each. Be specific — "it went fine" is not useful.
+## SECTION 5 — IMPROVE
 
 | Problem | Proposed Fix | Owner | Priority (H/M/L) |
 |---------|-------------|-------|-----------------|
@@ -68,13 +68,13 @@ List 2–5 specific problems encountered, with a proposed fix for each. Be speci
 | | | Go / No-Go | |
 | | | Go / No-Go | |
 
-_(Add rows as needed. Do not record PII beyond name/rank for official training records.)_
+*(Add rows as needed. Do not record PII beyond name/rank for official training records.)*
 
 ---
 
 ## SECTION 7 — CURRICULUM DISCREPANCIES
 
-Flag any content that was **out of date, incorrect, or missing** relative to the current MSS platform.
+Flag any content that was out of date, incorrect, or missing relative to the current MSS platform.
 
 | Document | Section / Page | Issue Description | Severity (H/M/L) |
 |----------|---------------|-------------------|-----------------|
@@ -82,14 +82,12 @@ Flag any content that was **out of date, incorrect, or missing** relative to the
 | | | | |
 
 > **NOTE:** Severity H = content causes student error or safety issue; M = content is misleading or outdated; L = minor wording issue.
-
-Submit H-severity discrepancies to the curriculum owner within 24 hours. M/L can be batched in the next quarterly review.
+>
+> Submit H-severity discrepancies to the curriculum owner within 24 hours. M/L can be batched in the next quarterly review.
 
 ---
 
 ## SECTION 8 — ENVIRONMENT ISSUES
-
-List any issues with the MSS training environment (access problems, data not loaded, tools not enabled).
 
 | Issue | Impact on Training | Resolution (if known) |
 |-------|-------------------|----------------------|
@@ -102,7 +100,7 @@ List any issues with the MSS training environment (access problems, data not loa
 
 Free text. What would you change about this training event if you ran it again next week?
 
-> _[Instructor completes]_
+> *[Instructor completes]*
 
 ---
 
@@ -117,4 +115,5 @@ Free text. What would you change about this training event if you ran it again n
 ---
 
 *Submit completed AAR to: [unit data steward / curriculum owner — fill in organizational contact]*
+
 *Retain a copy in the unit training records per AR 350-1.*

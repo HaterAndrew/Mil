@@ -1,10 +1,9 @@
-# COURSE SYLLABUS
-## TM-50J — ADVANCED PROGRAM MANAGEMENT (TECHNICAL)
-### Maven Smart System (MSS) — USAREUR-AF
+# COURSE SYLLABUS — TM-50J: ADVANCED PROGRAM MANAGEMENT (TECHNICAL)
+## Maven Smart System (MSS) — USAREUR-AF
 
-| | |
+| Field | Detail |
 |---|---|
-| **Level** | TM-50J (Advanced PM Specialist Track) |
+| **Level** | TM-50J — Advanced PM Specialist Track |
 | **Duration** | 3 days (24 hours) |
 | **Prerequisites** | TM-40J complete (Go evaluation on file); 18+ months leading technical data, AI, or software delivery programs; demonstrated experience managing multi-team delivery with external dependencies and GO/SES stakeholders |
 | **Audience** | Senior technical PMs, portfolio leads, capability program managers coordinating enterprise-level MSS programs |
@@ -15,26 +14,26 @@
 
 ---
 
-## What This Course Does for You
-
-TM-50J addresses the challenges of program leadership at scale — managing portfolios of interdependent data and AI programs, communicating complex technical tradeoffs to GO/SES audiences, structuring enterprise delivery governance, and leading organizational change when adopting MSS capabilities across a theater formation. TM-40J taught you to manage a project. TM-50J teaches you to manage a program portfolio and shape organizational data culture.
+**BLUF:** TM-50J addresses program leadership at scale — managing portfolios of interdependent data and AI programs, communicating complex technical tradeoffs to GO/SES audiences, structuring enterprise delivery governance, and leading organizational change when adopting MSS capabilities across a theater formation. TM-40J taught project management. TM-50J teaches program portfolio management and organizational data culture leadership.
 
 ---
 
 ## Learning Objectives
 
-By the end of training, you will be able to:
-
-1. Design and manage a portfolio of interdependent data and AI programs: dependency mapping, shared resource allocation, portfolio-level risk aggregation
-2. Structure enterprise delivery governance: stage-gate reviews, portfolio health dashboards, cross-program dependency management, commander decision cycle integration
-3. Develop and present a technical investment brief for GO/SES audience: BLUF, capability gap, proposed solution, cost/schedule/performance tradeoffs, risks, and recommendation
-4. Lead organizational change for MSS capability adoption: stakeholder analysis, resistance mapping, change communication planning, training pipeline integration
-5. Design a portfolio-level risk management framework: aggregate risk exposure, cross-program dependency risk, strategic risk escalation criteria
-6. Apply enterprise delivery metrics: velocity, predictability, portfolio flow, and technical debt accumulation; translate metrics into actionable decisions
+| # | Objective |
+|---|---|
+| 1 | Design and manage a portfolio of interdependent data and AI programs: dependency mapping, shared resource allocation, portfolio-level risk aggregation |
+| 2 | Structure enterprise delivery governance: stage-gate reviews, portfolio health dashboards, cross-program dependency management, commander decision cycle integration |
+| 3 | Develop and present a technical investment brief for GO/SES audience: BLUF, capability gap, proposed solution, cost/schedule/performance tradeoffs, risks, and recommendation |
+| 4 | Lead organizational change for MSS capability adoption: stakeholder analysis, resistance mapping, change communication planning, training pipeline integration |
+| 5 | Design a portfolio-level risk management framework: aggregate risk exposure, cross-program dependency risk, strategic risk escalation criteria |
+| 6 | Apply enterprise delivery metrics: velocity, predictability, portfolio flow, and technical debt accumulation; translate metrics into actionable decisions |
 
 ---
 
-## Before You Attend: Pre-Course Checklist
+## Pre-Course Checklist
+
+Complete **5+ duty days before Day 1:**
 
 - [ ] Read TM-50J, Chapter 1 (Portfolio Management) and Chapter 4 (GO/SES Communication) before Day 1
 - [ ] Prepare a 1-page portfolio overview: list the programs/projects you currently manage (or have recently managed), key interdependencies, and your most significant delivery challenge
@@ -44,7 +43,7 @@ By the end of training, you will be able to:
 
 ## Daily Schedule
 
-**Day 1 — Portfolio Architecture and Enterprise Governance**
+### Day 1 — Portfolio Architecture and Enterprise Governance
 
 | Time | Block | Method | Content |
 |---|---|---|---|
@@ -57,11 +56,11 @@ By the end of training, you will be able to:
 | 1500–1515 | — | Break | |
 | 1515–1700 | 5 | Seminar | Enterprise delivery metrics: what to measure, what to report up, and how to avoid metrics theater |
 
-**Evening:** TM-50J, Chapter 4 (GO/SES Communication and Technical Investment Briefing).
+**Evening reading:** TM-50J, Chapter 4 (GO/SES Communication and Technical Investment Briefing).
 
 ---
 
-**Day 2 — GO/SES Communication and Organizational Change**
+### Day 2 — GO/SES Communication and Organizational Change
 
 | Time | Block | Method | Content |
 |---|---|---|---|
@@ -74,11 +73,11 @@ By the end of training, you will be able to:
 | 1500–1515 | — | Break | |
 | 1515–1700 | 9 | Workshop | Change management planning exercise: develop a 90-day adoption plan for a notional new MSS capability rollout to a BCT |
 
-**Evening:** TM-50J, Chapter 5 (Portfolio Risk) — strategic risk escalation section.
+**Evening reading:** TM-50J, Chapter 5 (Portfolio Risk) — strategic risk escalation section.
 
 ---
 
-**Day 3 — Risk at Scale and Practical Evaluation**
+### Day 3 — Risk at Scale and Practical Evaluation
 
 | Time | Block | Method | Content |
 |---|---|---|---|
@@ -88,7 +87,7 @@ By the end of training, you will be able to:
 | 1045–1100 | 12 | Brief | Practical evaluation scenario brief |
 | 1100–1200 | — | Prep | Scenario planning time |
 | 1200–1300 | — | Lunch | |
-| 1300–1700 | 13 | Eval | **Evaluated exercise:** Portfolio assessment scenario — assess a provided multi-program portfolio for health, produce a GO/SES-ready brief, and lead a 15-minute stakeholder brief with the evaluator in role |
+| 1300–1700 | 13 | **Eval** | **Evaluated exercise:** Portfolio assessment scenario — assess a provided multi-program portfolio for health, produce a GO/SES-ready brief, and lead a 15-minute stakeholder brief with the evaluator in role |
 
 **Go standard:** Portfolio assessment accurate; GO/SES brief meets BLUF + tradeoffs + recommendation standard; stakeholder communication handles at least one challenge question from the evaluator.
 

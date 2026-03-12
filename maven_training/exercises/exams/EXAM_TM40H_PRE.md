@@ -1,7 +1,7 @@
 # PRE-TEST — TM-40H: AI ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
-| | |
+| Field | Detail |
 |---|---|
 | **Course** | TM-40H: AI Engineer |
 | **Form** | Pre-Test |

@@ -132,7 +132,8 @@ Explain the progression clearly. Reference POI Course Summary table.
 - **TM-10 (this course):** All personnel. Consume data products, execute authorized actions, handle exports. No building.
 - **TM-20:** All staff who need to build data products. Visual, no code.
 - **TM-30:** Data-adjacent specialists (17/25-series, S6, G2/G9). Advanced building, Ontology design, analytics.
-- **TM-40A–F:** Role-specific specialist tracks for ORSA, AI engineers, ML engineers, PMs, KMs, and software engineers.
+- **TM-40A–F (WFF tracks):** Role-specific tracks for INT, FIRES, M&M, Sustainment, Protection, and Mission Command functional staff. Prerequisite: TM-20. No coding required.
+- **TM-40G–L (Specialist tracks):** Role-specific specialist tracks for ORSA, AI engineers, ML engineers, PMs, KMs, and software engineers. Prerequisite: TM-30.
 
 Emphasize: TM-10 is the foundation for all higher training. There are no waivers. Senior personnel sometimes push back on this — have a clear, brief response: "The evaluation confirms you can navigate MSS and handle classification procedures correctly. Passing TM-10 is required for TM-20 enrollment. There are no exceptions."
 

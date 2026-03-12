@@ -74,10 +74,10 @@ This manual provides technical instruction for AI engineers building AI-enabled 
 
 **TM-40H does NOT cover:**
 - Basic Workshop, Pipeline Builder, or Ontology configuration — see TM-20 and TM-30
-- TypeScript OSDK development — see TM-40F (Software Engineer)
-- Model training, fine-tuning, or MLOps infrastructure — see TM-40C (ML Engineer)
-- Statistical analysis or operational research methodology — see TM-40D (ORSA)
-- General Python transform development unrelated to AI pipelines — see TM-40F
+- TypeScript OSDK development — see TM-40L (Software Engineer)
+- Model training, fine-tuning, or MLOps infrastructure — see TM-40I (ML Engineer)
+- Statistical analysis or operational research methodology — see TM-40G (ORSA)
+- General Python transform development unrelated to AI pipelines — see TM-40L
 
 > **NOTE:** TM-30 is a hard prerequisite. If you cannot independently design a Workshop application, configure an Ontology model, and specify an AIP Logic workflow configuration, complete TM-30 before proceeding. TM-40H assumes TM-30 competency and builds above it — not alongside it.
 
@@ -99,7 +99,7 @@ MISSION REQUIREMENT
    (Design + Specify)
         |
         v
-   -40A AI ENGINEER         <- You are here
+   -40H AI ENGINEER         <- You are here
    (Code + Build + Deploy)
         |
         v
@@ -121,7 +121,7 @@ The human review gate is not optional. It is a required architectural element of
 
 ### 1-3. Capability Summary by Track
 
-| Capability | -30 Builder | -40A AI Engineer |
+| Capability | -30 Builder | -40H AI Engineer |
 |---|---|---|
 | AIP Logic configuration via UI | Yes | Yes |
 | Prompt writing via UI | Yes | Yes |
@@ -295,7 +295,7 @@ Code Workspaces provides a managed JupyterLab and VS Code environment with direc
 - **Transform authoring** — write and test Python transforms before committing to pipeline
 - **Experiment notebooks** — iterate on prompts, evaluate outputs, document findings before formalizing in Logic
 
-> **NOTE:** Two distinct access patterns exist and must not be conflated. **Within Code Workspaces and Code Repositories (the transforms context):** use the Transforms API (`from transforms.api import transform_df, Input, Output`) for dataset access and the Foundry SDK for Ontology queries. **OSDK (Ontology SDK)** is designed for external applications built outside Foundry — React front-ends, external Python scripts, TypeScript applications. OSDK is not the standard access pattern inside Code Workspaces. If you are writing a transform or Code Workspace notebook, use the Transforms API and Foundry SDK. If you are building an external application that consumes Ontology data, coordinate with the Software Engineer (TM-40F) who owns OSDK integrations.
+> **NOTE:** Two distinct access patterns exist and must not be conflated. **Within Code Workspaces and Code Repositories (the transforms context):** use the Transforms API (`from transforms.api import transform_df, Input, Output`) for dataset access and the Foundry SDK for Ontology queries. **OSDK (Ontology SDK)** is designed for external applications built outside Foundry — React front-ends, external Python scripts, TypeScript applications. OSDK is not the standard access pattern inside Code Workspaces. If you are writing a transform or Code Workspace notebook, use the Transforms API and Foundry SDK. If you are building an external application that consumes Ontology data, coordinate with the Software Engineer (TM-40L) who owns OSDK integrations.
 
 **Standard Code Workspaces import pattern:**
 
@@ -2075,7 +2075,7 @@ Track review dispositions over time. If rejection rate exceeds 15% over a 30-day
 
 **Evaluation framework** — The combination of test cases, automated checks, and human review criteria used to assess AI output quality.
 
-**Fine-tuning** — The process of additional training of an LLM on domain-specific data. Not addressed in TM-40H; see TM-40C (ML Engineer).
+**Fine-tuning** — The process of additional training of an LLM on domain-specific data. Not addressed in TM-40H; see TM-40I (ML Engineer).
 
 **Grounding** — The practice of providing LLM inference with specific source data to anchor responses in verifiable facts rather than model training data.
 

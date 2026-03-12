@@ -1,7 +1,7 @@
 # POST-TEST — TM-40G: ORSA
 ## Maven Smart System (MSS) — USAREUR-AF
 
-| | |
+| Field | Detail |
 |---|---|
 | **Course** | TM-40G: ORSA |
 | **Form** | Post-Test |

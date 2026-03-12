@@ -1,19 +1,14 @@
 # USAREUR-AF MSS NAMING AND GOVERNANCE STANDARDS
 
-```
-HEADQUARTERS
-UNITED STATES ARMY EUROPE AND AFRICA
+**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
 Wiesbaden, Germany
-```
 
-**Proponent:** USAREUR-AF C2DAO (Command and Control Data and Analytics Office)
+**Proponent:** USAREUR-AF C2DAO
 **Authority:** Army CIO Data and Analytics Policy (April 2024); UDRA v1.1 (February 2025)
-**Distribution:** Approved for public release; distribution is unlimited.
+**Distribution:** DRAFT — Not yet approved for distribution.
 **Version:** 1.0 | March 2026
 
----
-
-> **NOTE:** All TMs in the Maven training series reference "USAREUR-AF naming conventions." This document is the authoritative source for those conventions. When in doubt, consult C2DAO or the responsible data steward.
+> **NOTE:** All TMs in the Maven training series reference "USAREUR-AF naming conventions." This document is the authoritative source. When in doubt, consult C2DAO or the responsible data steward.
 
 ---
 
@@ -43,25 +38,20 @@ Wiesbaden, Germany
 ```
 
 | Component | Description | Example |
-|---|---|---|
+|-----------|-------------|---------|
 | UNIT | Unit identifier (USAREUR, VCORPS, 21TSC, G2, G6, S3, etc.) | `VCORPS` |
 | FUNCTION | Functional domain (OPDATA, LOG, PERS, INTL, PM, KM, AI) | `LOG` |
-| DESCRIPTOR | Short, plain-English descriptor of the project's purpose | `FuelTracking` |
+| DESCRIPTOR | Short plain-English descriptor of the project's purpose | `FuelTracking` |
 
-**Examples:**
-- `VCORPS-LOG-FuelTracking`
-- `USAREUR-G2-ThreatAnalysis`
-- `21TSC-PM-ProgramDashboard`
-- `USAREUR-KM-LessonsLearned`
+**Examples:** `VCORPS-LOG-FuelTracking`, `USAREUR-G2-ThreatAnalysis`, `21TSC-PM-ProgramDashboard`, `USAREUR-KM-LessonsLearned`
 
 ### 1-2. Rules
 
-- All caps for unit and function identifiers; CamelCase or snake_case for descriptor
+- Unit and function identifiers: ALL CAPS; descriptor: CamelCase or snake_case
 - No spaces — use hyphens between components
 - Maximum 50 characters
-- Do not include classification markings in project names
-- Do not include personal names, nicknames, or humor
-- Projects in the shared enterprise space require C2DAO coordination before creation
+- No classification markings, personal names, nicknames, or humor in project names
+- Projects in shared enterprise space require C2DAO coordination before creation
 
 ---
 
@@ -74,25 +64,21 @@ Wiesbaden, Germany
 ```
 
 | Component | Description | Example |
-|---|---|---|
-| tier | Pipeline tier (raw, bronze, silver, gold) | `silver` |
+|-----------|-------------|---------|
+| tier | Pipeline tier: `raw`, `bronze`, `silver`, `gold` | `silver` |
 | unit | Unit or system of record | `gcss` |
 | source | Source system or feed | `dailyreport` |
 | content | What the data represents | `equipment_status` |
 
-**Examples:**
-- `raw_gcss_dailyreport_equipment_status`
-- `silver_ipps_weekly_personnel_strength`
-- `gold_g2_monthly_threat_summary`
-- `bronze_manual_sitrep_submissions`
+**Examples:** `raw_gcss_dailyreport_equipment_status`, `silver_ipps_weekly_personnel_strength`, `gold_g2_monthly_threat_summary`, `bronze_manual_sitrep_submissions`
 
 ### 2-2. Rules
 
 - All lowercase, underscores only (no hyphens, no spaces)
-- Tier prefix is mandatory: `raw` → `bronze` → `silver` → `gold`
+- Tier prefix mandatory: `raw` → `bronze` → `silver` → `gold`
 - Do not abbreviate content descriptors to the point of ambiguity
 - Include unit/system of record so consumers know provenance without reading lineage
-- Datasets that aggregate across units use `enterprise` as the unit component (e.g., `gold_enterprise_readiness_summary`)
+- Cross-unit aggregates use `enterprise` as the unit component (e.g., `gold_enterprise_readiness_summary`)
 
 ---
 
@@ -104,26 +90,17 @@ Wiesbaden, Germany
 [Domain][Entity]
 ```
 
-- PascalCase, no underscores, no hyphens
-- Singular noun (not plural)
+- PascalCase, no underscores, no hyphens; singular noun
 - Domain prefix for shared enterprise types; omit for unit-local types
 
-**Examples:**
-- `LogEquipmentItem` (shared enterprise)
-- `PersStrengthRecord` (shared enterprise)
-- `MissionEvent` (unit-local — no domain prefix)
-- `ProgramMilestone`
-- `ThreatIndicator`
-- `LessonLearned`
+**Examples:** `LogEquipmentItem`, `PersStrengthRecord`, `MissionEvent`, `ProgramMilestone`, `ThreatIndicator`, `LessonLearned`
 
 ### 3-2. Property Naming
 
-- camelCase
-- Descriptive, unambiguous
-- Use standardized suffixes:
+camelCase; descriptive and unambiguous. Use standardized suffixes:
 
 | Suffix | Use | Example |
-|---|---|---|
+|--------|-----|---------|
 | `Id` | Unique identifier | `equipmentId`, `unitId` |
 | `Date` | Calendar date (no time) | `reportingDate`, `completionDate` |
 | `Dtg` | Date-time group | `submissionDtg`, `lastUpdatedDtg` |
@@ -133,11 +110,11 @@ Wiesbaden, Germany
 | `Name` | Human-readable label | `unitName`, `programName` |
 | `Code` | Standardized code value | `unitIdentificationCode`, `dodaac` |
 
-### 3-3. Rules
+### 3-3. Property Rules
 
-- Do not use generic property names: `value`, `data`, `info`, `misc` — be specific
-- Date properties store ISO 8601 strings (`YYYY-MM-DD`) unless otherwise documented
-- Enum values: ALL_CAPS_UNDERSCORE (e.g., `MISSION_CAPABLE`, `NOT_READY`, `UNKNOWN`)
+- No generic names: `value`, `data`, `info`, `misc` — be specific
+- Date properties: ISO 8601 (`YYYY-MM-DD`) unless documented otherwise
+- Enum values: `ALL_CAPS_UNDERSCORE` (e.g., `MISSION_CAPABLE`, `NOT_READY`, `UNKNOWN`)
 - Boolean properties: prefix with `is` or `has` (e.g., `isMissionCapable`, `hasOverdueActions`)
 
 ---
@@ -150,20 +127,15 @@ Wiesbaden, Germany
 [SourceObjectType]_[relationship]_[TargetObjectType]
 ```
 
-- snake_case
-- Relationship verb in present tense, directional
+- snake_case; relationship verb in present tense, directional
 
-**Examples:**
-- `LogEquipmentItem_assignedTo_Unit`
-- `MissionEvent_supports_Program`
-- `LessonLearned_appliesTo_MissionEvent`
-- `ProgramMilestone_hasRisk_ProgramRisk`
+**Examples:** `LogEquipmentItem_assignedTo_Unit`, `MissionEvent_supports_Program`, `LessonLearned_appliesTo_MissionEvent`, `ProgramMilestone_hasRisk_ProgramRisk`
 
 ### 4-2. Rules
 
-- Direction matters — link name should read left-to-right as a sentence fragment
-- Avoid generic relationships: `relatedTo`, `linkedTo` — be specific about the relationship
-- Bidirectional links are supported in Foundry; both directions should be named logically
+- Direction matters — link name reads left-to-right as a sentence fragment
+- No generic relationships: `relatedTo`, `linkedTo` — be specific
+- Bidirectional links: both directions named logically
 
 ---
 
@@ -175,21 +147,14 @@ Wiesbaden, Germany
 [Verb][ObjectType][Qualifier]
 ```
 
-- PascalCase
-- Imperative verb (Submit, Update, Approve, Close, Flag, Create, Archive)
+- PascalCase; imperative verb (Submit, Update, Approve, Close, Flag, Create, Archive)
 
-**Examples:**
-- `SubmitSitrep`
-- `UpdateEquipmentStatus`
-- `ApproveMilestone`
-- `FlagThreatIndicator`
-- `ArchiveLessonLearned`
-- `CreateProgramRisk`
+**Examples:** `SubmitSitrep`, `UpdateEquipmentStatus`, `ApproveMilestone`, `FlagThreatIndicator`, `ArchiveLessonLearned`, `CreateProgramRisk`
 
 ### 5-2. Rules
 
-- Verb should accurately reflect the operation (do not use `Edit` for everything — distinguish Create / Update / Delete / Submit / Approve / Archive)
-- Actions that write to shared enterprise Object Types require Data Steward review before publication
+- Verb must accurately reflect the operation — distinguish Create / Update / Delete / Submit / Approve / Archive; do not use `Edit` for everything
+- Actions writing to shared enterprise Object Types require Data Steward review before publication
 - Destructive actions (Delete, Archive) require additional confirmation logic in the Action validator
 
 ---
@@ -202,21 +167,14 @@ Wiesbaden, Germany
 [Unit] [Function] [Dashboard/Form/App] v[N]
 ```
 
-- Title case
-- Version number (v1, v2) appended when multiple versions coexist during transition; drop version when only one exists
-- "Dashboard," "Form," "Tracker," "Report" as appropriate
+- Title case; version number appended only when multiple versions coexist; drop when only one exists
 
-**Examples:**
-- `VCORPS Readiness Dashboard`
-- `21TSC Fuel Status Dashboard v2`
-- `USAREUR Program Health Report`
-- `G6 MSS Access Request Form`
-- `S3 Mission Event Tracker`
+**Examples:** `VCORPS Readiness Dashboard`, `21TSC Fuel Status Dashboard v2`, `USAREUR Program Health Report`, `G6 MSS Access Request Form`, `S3 Mission Event Tracker`
 
 ### 6-2. Rules
 
 - Application title is user-facing — write for the consumer, not the builder
-- Include unit identifier so users in a shared environment know the application's owner
+- Include unit identifier so users in a shared environment know the owner
 - Applications published to shared enterprise space require C2DAO coordination
 - All commander-facing dashboards must display a **data-as-of** timestamp prominently
 
@@ -230,16 +188,12 @@ Wiesbaden, Germany
 [unit]_[source]_to_[destination]_[frequency]
 ```
 
-**Examples:**
-- `gcss_daily_equipment_to_bronze_daily`
-- `ipps_weekly_personnel_to_silver_weekly`
-- `enterprise_readiness_aggregation_to_gold_daily`
+**Examples:** `gcss_daily_equipment_to_bronze_daily`, `ipps_weekly_personnel_to_silver_weekly`, `enterprise_readiness_aggregation_to_gold_daily`
 
 ### 7-2. Code Transform Names (Python)
 
-- snake_case function names
-- Descriptive of the transformation, not the data
-- Include docstring with: input dataset(s), output dataset, transformation logic summary, last-updated date
+- snake_case function names; descriptive of the transformation, not the data
+- Required docstring: input dataset(s), output dataset, transformation logic summary, last-updated date
 
 ```python
 @transform_df(
@@ -263,7 +217,7 @@ def compute_readiness_summary(personnel, equipment):
 
 ### 7-3. Rules
 
-- Do not name transforms after their author or assignment (e.g., not `smith_transform`, `s6_project_may`)
+- Do not name transforms after their author or assignment (not `smith_transform`, `s6_project_may`)
 - Transforms must be idempotent — running twice on the same input produces the same output
 - Incremental transforms must document the watermark column and increment logic in the docstring
 
@@ -278,23 +232,20 @@ def compute_readiness_summary(personnel, equipment):
 ```
 
 | Type | Use |
-|---|---|
+|------|-----|
 | `dev` | Active development branch |
 | `review` | Submitted for Data Steward or C2DAO review |
 | `hotfix` | Emergency production fix |
 
-**Examples:**
-- `dev/vcorps-readiness-dashboard-202603`
-- `review/usareur-threat-ontology-update-202603`
-- `hotfix/sitrep-pipeline-null-fix-202603`
+**Examples:** `dev/vcorps-readiness-dashboard-202603`, `review/usareur-threat-ontology-update-202603`, `hotfix/sitrep-pipeline-null-fix-202603`
 
 ### 8-2. Rules
 
 - Never build directly on `main` — always use a dev branch
-- Branch names must be lowercase with hyphens
-- Delete branches after merge — do not accumulate stale dev branches
+- Branch names: lowercase with hyphens
+- Delete branches after merge — no stale dev branch accumulation
 - Production promotion requires Data Steward sign-off documented in the review ticket
-- `main` branch is the production state — treat it as operational
+- `main` is the production state — treat it as operational
 
 ---
 
@@ -302,15 +253,15 @@ def compute_readiness_summary(personnel, equipment):
 
 ### 9-1. File and Module Naming
 
-- Python modules: `snake_case.py`
-- Config files: `snake_case.yaml` or `snake_case.json`
+- Python modules: `snake_case.py`; config files: `snake_case.yaml` or `snake_case.json`
 - No spaces in any filename committed to version control
 
 ### 9-2. Variable and Function Naming
 
-- Python: `snake_case` for variables and functions; `PascalCase` for classes
-- TypeScript: `camelCase` for variables and functions; `PascalCase` for classes and types
-- Constants: `ALL_CAPS_UNDERSCORE` in both Python and TypeScript
+| Language | Variables/Functions | Classes/Types | Constants |
+|----------|---------------------|---------------|-----------|
+| Python | `snake_case` | `PascalCase` | `ALL_CAPS_UNDERSCORE` |
+| TypeScript | `camelCase` | `PascalCase` | `ALL_CAPS_UNDERSCORE` |
 
 ### 9-3. Commit Message Format
 
@@ -348,7 +299,7 @@ Types: `feat`, `fix`, `refactor`, `docs`, `test`, `chore`
 
 ### 10-2. Before Publishing a Workshop Application
 
-- [ ] Data-as-of timestamp is displayed on all data-backed views
+- [ ] Data-as-of timestamp displayed on all data-backed views
 - [ ] Access controls reviewed — only authorized users can reach sensitive data
 - [ ] Tested with production-representative data (not just synthetic)
 - [ ] C2DAO notified if application writes back to shared enterprise Object Types via Actions
@@ -362,11 +313,11 @@ Types: `feat`, `fix`, `refactor`, `docs`, `test`, `chore`
 - [ ] Data Steward sign-off documented
 - [ ] Branch naming follows standard (Section 8)
 
-### 10-4. Before Deploying Code to Production (TM-40F / TM-40C)
+### 10-4. Before Deploying Code to Production (TM-40L / TM-40I)
 
 See the full governance checklist in the applicable TM appendix:
-- TM-40C Appendix A — Model Governance Checklist
-- TM-40F Appendix B — SWE Security Checklist
+- TM-40I Appendix A — Model Governance Checklist
+- TM-40L Appendix B — SWE Security Checklist
 
 ---
 
@@ -401,8 +352,6 @@ See the full governance checklist in the applicable TM appendix:
 
 ## APPENDIX B — GOVERNANCE CHECKLIST (BEFORE PROMOTING TO PRODUCTION)
 
-Use this checklist for any change to a production MSS project. Tailor to the type of change.
-
 ```
 [ ] Naming conventions followed (this document, applicable section)
 [ ] Data Steward identified and notified
@@ -416,7 +365,7 @@ Use this checklist for any change to a production MSS project. Tailor to the typ
 [ ] No hardcoded credentials or connection strings
 [ ] All SQL parameterized
 [ ] Idempotency verified (for pipelines/transforms)
-[ ] TM-specific governance checklist completed (TM-40C App. A / TM-40F App. B)
+[ ] TM-specific governance checklist completed (TM-40I App. A / TM-40L App. B)
 ```
 
 ---

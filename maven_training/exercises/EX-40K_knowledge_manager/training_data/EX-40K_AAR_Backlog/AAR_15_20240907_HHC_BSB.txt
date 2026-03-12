@@ -1,0 +1,17 @@
+AFTER-ACTION REPORT (AAR) — RECORD 15
+Classification: UNCLASSIFIED // TRAINING USE ONLY
+
+date: 2024-09-07
+unit: HHC BSB
+exercise_name: COMBINED RESOLVE
+category: COMMAND_AND_CONTROL
+priority: H
+
+OBSERVATION:
+Radio frequency conflicts with the adjacent battalion caused significant communication delays. A faster coordination mechanism is needed at battalion level.
+
+RECOMMENDATION:
+Allow battalion S6 to coordinate directly with adjacent units for faster frequency deconfliction.
+
+OPR: HHC BSB S3
+Submitted by: Training NCO
