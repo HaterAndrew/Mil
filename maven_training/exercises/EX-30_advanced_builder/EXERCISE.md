@@ -58,12 +58,31 @@ G2 has a raw intelligence summary dataset (synthetic) covering 60 days of SIGACT
 
 ## EVALUATOR NOTES
 
-> **TODO:** Complete after dry run. Task 3 is highly environment-dependent — confirm Contour has correct grid projection for training data. Adjust timing based on cohort experience level.
+**Scoring:** 5 tasks. Go on 4 of 5 = overall Go. No-Go on Task 2 = automatic No-Go (data cleaning is the foundational competency).
 
-Scoring: 5 tasks. Go on 4 of 5 = overall Go. No-Go on Task 2 = automatic No-Go.
+**Pre-exercise checklist:**
+- Confirm Contour is enabled and the grid projection is configured for the training dataset's coordinate format (WGS84 decimal degrees — see ENVIRONMENT_SETUP.md)
+- Verify the synthetic dataset contains at least 5 duplicate event IDs and at least 3 null unit fields
+- Confirm AIP Logic is available in the training tenant (Task 5)
+
+**Common failure modes:**
+
+| Task | Common Failure | Evaluator Guidance |
+|------|---------------|--------------------|
+| Task 1 | Null rate reported as zero | Participant likely previewed a cached/clean version; confirm they loaded the raw dataset |
+| Task 2 | Deduplication removes wrong records | Ask participant which field they deduplicated on; only event ID is correct |
+| Task 2 | Null fill applied to wrong column | Event type or date filled instead of unit — check output schema directly |
+| Task 3 | Map renders but no color coding | Participant used default point style; color-by-field must be explicitly set |
+| Task 3 | Contour projection error | Coordinate format mismatch — see ENVIRONMENT_SETUP.md; this is an environment failure, not participant failure |
+| Task 5 | AIP Logic rule fires on wrong field | Ask participant to show the rule definition; null grid vs. null unit is a common confusion |
+
+**Timing notes:**
+- Task 3 (Contour) is the most environment-sensitive — budget 45 min total including any setup issues
+- Task 5 (AIP Logic no-code rule) is often faster than expected (~10 min for participants familiar with rule editors)
+- Cohorts with G2/S2 backgrounds typically complete Tasks 3-4 faster than average
 
 ---
 
 ## ENVIRONMENT SETUP
 
-> **TODO:** Pre-load synthetic SIGACT-analog dataset. Confirm Contour access and correct grid projection. Document in `ENVIRONMENT_SETUP.md`.
+See [ENVIRONMENT_SETUP.md](ENVIRONMENT_SETUP.md) for full setup instructions.

@@ -57,8 +57,22 @@ Activate venv: `source data_skills/.venv/bin/activate`
 
 Applied CLI project demonstrating SQLite, Click, Rich, and DTG utilities. Reference implementation for TM-20/30 pipeline and reporting patterns.
 
+**Install and run:**
+
+```bash
+# Option A — install as a package (recommended, works from any directory)
+pip install -e .
+sitrep --help
+
+# Option B — run directly from the sitrep_tracker/ directory
+cd sitrep_tracker/
+python3 cli.py --help
 ```
-python sitrep_tracker/cli.py --help
+
+**Dev setup — restore data_skills symlink** (required after a fresh clone, since `data_skills/` is gitignored):
+
+```bash
+ln -sf "$(pwd)/sitrep_tracker" data_skills/projects/sitrep_tracker
 ```
 
 ---

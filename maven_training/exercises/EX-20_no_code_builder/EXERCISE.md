@@ -52,12 +52,30 @@ Your battalion S6 has asked you to build a simple Workshop dashboard showing dai
 
 ## EVALUATOR NOTES
 
-> **TODO:** Complete after dry run. Confirm dataset is pre-loaded and permissions are correct. Note timing — Task 2 commonly runs long for first-time builders.
+**Scoring:** 4 tasks. Go on 3 of 4 = overall Go. No-Go on Task 2 = automatic No-Go (core build competency).
 
-Scoring: 4 tasks. Go on 3 of 4 = overall Go. No-Go on Task 2 = automatic No-Go (core build competency).
+**Pre-exercise checklist:**
+- Confirm "EX-20 Vehicle Availability Training Data" dataset is visible to training accounts
+- Verify training accounts have Pipeline Builder and Workshop build permissions
+- Confirm naming standards reference is accessible ([NAMING_AND_GOVERNANCE_STANDARDS.md](../../standards/NAMING_AND_GOVERNANCE_STANDARDS.md))
+
+**Common failure modes:**
+
+| Task | Common Failure | Evaluator Guidance |
+|------|---------------|--------------------|
+| Task 1 | Cannot locate dataset | Direct participant to the training project folder — one prompt is allowed without penalty |
+| Task 2 | Output dataset name does not follow naming standards | Mark as No-Go; cite specific standard violated; coach after evaluation |
+| Task 2 | Transform runs but row count is wrong | Verify the 30-day filter is applied correctly; common error is off-by-one on date boundary |
+| Task 3 | Filter widget present but has no effect on chart | This is a wiring issue (widget not connected to chart variable) — automatic No-Go; very common first-time failure |
+| Task 4 | Evaluator has edit access | Participant shared with wrong role; mark Task 4 No-Go, note the specific sharing error |
+
+**Timing notes:**
+- Task 2 is the critical path — budget up to 45 min for participants with no prior Pipeline Builder experience
+- Task 3 (Workshop) averages 25 min; participants who have used Workshop before will finish faster
+- If participant finishes early, ask them to explain their naming choice for the output dataset (verbal check)
 
 ---
 
 ## ENVIRONMENT SETUP
 
-> **TODO:** Pre-load synthetic vehicle availability dataset into training MSS environment. Assign build permissions to training accounts. Document environment URL and dataset path in `ENVIRONMENT_SETUP.md`.
+See [ENVIRONMENT_SETUP.md](ENVIRONMENT_SETUP.md) for full setup instructions.

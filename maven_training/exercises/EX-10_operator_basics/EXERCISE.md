@@ -56,12 +56,31 @@ You are a staff officer at a brigade combat team HQ. Your S2 has asked you to pu
 
 ## EVALUATOR NOTES
 
-> **TODO:** Complete after dry run. Note common failure points, timing adjustments, and scenario details specific to your training environment.
+**Scoring:** 5 tasks. Go on 4 of 5 = overall Go. No-Go on Task 2 or Task 4 = automatic No-Go (core operator competency).
 
-Scoring: 5 tasks. Go on 4 of 5 = overall Go. No-Go on Task 2 or Task 4 = automatic No-Go (core operator competency).
+**Pre-exercise checklist (evaluator actions before exercise begins):**
+- Confirm all training accounts can access the "BCT Readiness — EX-10 Training" dashboard
+- Verify the dashboard shows data for at least 3 units with clearly different readiness values
+- Confirm the data steward contact field is populated in the dashboard metadata
+- Note the correct answer for Task 3 (lowest-readiness unit and driving equipment category) — see ENVIRONMENT_SETUP.md answer key
+
+**Common failure modes:**
+
+| Task | Common Failure | Evaluator Guidance |
+|------|---------------|--------------------|
+| Task 1 | Cannot find the dashboard | Note navigation path taken; searching by name is acceptable; browsing wrong project is No-Go |
+| Task 2 | Filters applied but not reset | Page reload to reset = Go with coaching note; clicking Reset correctly = Go |
+| Task 3 | Identifies wrong low-readiness unit | Check against answer key; any incorrect unit identification = No-Go |
+| Task 4 | Export missing "Last updated" timestamp | Most common cause: CSV export instead of PDF; note format used |
+| Task 5 | Bookmark does not appear on home | Sandbox browser issue — if correct action is demonstrated, retest after cache clear before marking No-Go |
+
+**Timing notes:**
+- Task 3 runs 5–15 min depending on analytical background; do not prompt within the first 10 min
+- If Task 2 exceeds 15 min, ask participant to narrate their approach (do not guide)
+- Total exercise rarely exceeds 50 min for participants current on TM-10
 
 ---
 
 ## ENVIRONMENT SETUP
 
-> **TODO:** Document MSS sandbox URL, training account credentials process, and which dashboard to pre-load for this exercise. See `ENVIRONMENT_SETUP.md` (create from unit data steward guidance).
+See [ENVIRONMENT_SETUP.md](ENVIRONMENT_SETUP.md) for full setup instructions.

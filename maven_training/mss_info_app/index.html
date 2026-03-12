@@ -667,16 +667,14 @@
       transform: rotate(180deg);
     }
     .qr-dropdown-menu {
-      position: absolute;
-      top: calc(100% + 4px);
-      right: 0;
+      position: fixed;
       background: var(--white);
       border: 1px solid var(--gray-100);
       border-top: 3px solid var(--navy);
       border-radius: var(--radius);
       box-shadow: 0 6px 20px rgba(12,35,64,0.18);
       min-width: 200px;
-      z-index: 200;
+      z-index: 1000;
       display: none;
       overflow: hidden;
     }
@@ -976,6 +974,157 @@
     }
 
     footer strong { color: var(--white); }
+
+    /* ============================================================
+       SPECIALIST TRACKS CTA BUTTON
+    ============================================================ */
+    .specialist-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-light) 100%);
+      border: 2px solid var(--gold-dark);
+      border-radius: var(--radius-lg);
+      padding: 22px 28px;
+      margin-top: 32px;
+      box-shadow: 0 4px 18px rgba(12,35,64,0.22);
+      flex-wrap: wrap;
+    }
+
+    .specialist-cta-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .specialist-cta-label {
+      font-family: var(--font-ui);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    .specialist-cta-title {
+      font-family: var(--font-ui);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .specialist-cta-sub {
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+      margin-top: 2px;
+    }
+
+    .specialist-cta-btn {
+      background: var(--gold);
+      color: var(--navy-dark);
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      border: none;
+      border-radius: var(--radius);
+      padding: 13px 26px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s, transform 0.12s, box-shadow 0.12s;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .specialist-cta-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    }
+
+    .specialist-cta-btn .btn-arrow { font-size: 15px; }
+
+    /* ============================================================
+       UPCOMING TRAINING TABLE
+    ============================================================ */
+    .training-section {
+      margin-top: 32px;
+    }
+
+    .training-section h2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .training-section h2 .training-icon {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--gold);
+      font-size: 11px;
+      font-family: var(--font-ui);
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 3px 9px;
+      border-radius: var(--radius);
+      border: 1px solid var(--gold-dark);
+    }
+
+    .seat-open   { color: var(--green-ok);    font-weight: 700; }
+    .seat-low    { color: var(--caution-amber); font-weight: 700; }
+    .seat-full   { color: var(--warning-red);  font-weight: 700; }
+
+    /* Specialists panel — two-column track grid on wide screens */
+    .specialists-section-hdr {
+      background: var(--navy-pale);
+      border-left: 5px solid var(--gold-dark);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 10px 18px;
+      margin: 28px 0 14px;
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.3px;
+    }
+
+    .panel-nav-btns {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .panel-nav-btn {
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      padding: 9px 18px;
+      border: 1px solid var(--navy-mid);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.12s, border-color 0.12s;
+    }
+
+    .panel-nav-btn:hover {
+      background: var(--navy-mid);
+      border-color: var(--gold-dark);
+    }
+
+    .panel-nav-btn.gold {
+      background: var(--gold-dark);
+      color: var(--white);
+      border-color: var(--gold);
+    }
+
+    .panel-nav-btn.gold:hover { background: var(--gold); color: var(--navy-dark); }
 
     /* ============================================================
        DOCUMENT CARDS — anchor tag reset
@@ -1810,10 +1959,11 @@
 
       <div class="splash-title">Maven Smart System</div>
       <div class="splash-sub">Training &amp; Information Hub</div>
+      <div style="margin-top:6px;font-size:10px;letter-spacing:.14em;color:rgba(255,180,0,0.55);text-transform:uppercase;">alpha</div>
 
       <div class="splash-tms">
         TM-10 &nbsp;&#183;&nbsp; TM-20 &nbsp;&#183;&nbsp; TM-30 &nbsp;&#183;&nbsp;
-        TM-40A&ndash;F &nbsp;&#183;&nbsp; TM-50 &nbsp;&#183;&nbsp; Data Lit (SL) &nbsp;&#183;&nbsp; Data Literacy
+        TM-40A&ndash;L &nbsp;&#183;&nbsp; TM-50G&ndash;L &nbsp;&#183;&nbsp; Data Lit (SL) &nbsp;&#183;&nbsp; Data Literacy
       </div>
 
       <div class="splash-rule-sm"></div>
@@ -1876,8 +2026,8 @@
 
 <div class="header-strip">
   <div class="header-strip-inner">
-    <span>TM-10 &bull; TM-20 &bull; TM-30 &bull; TM-40A–F &bull; TM-50A–F &bull; Data Lit (SL) &bull; Data Literacy</span>
-    <span>APPROVED FOR PUBLIC RELEASE &mdash; DISTRIBUTION UNLIMITED</span>
+    <span>TM-10 &bull; TM-20 &bull; TM-30 &bull; TM-40A–L &bull; TM-50G–L &bull; Data Lit (SL) &bull; Data Literacy</span>
+    <span>APPROVED FOR PUBLIC RELEASE &mdash; DISTRIBUTION UNLIMITED &nbsp;&bull;&nbsp; alpha</span>
   </div>
 </div>
 
@@ -1902,6 +2052,12 @@
     <button class="snav-item" data-panel="home">
       <span class="snav-item-icon">&#9632;</span>
       <span class="snav-item-label">Home / Start Here</span>
+    </button>
+
+    <!-- TRAINING SCHEDULE — pinned near top for easy access -->
+    <button class="snav-item" data-panel="schedule" id="snav-schedule" style="border-left:3px solid var(--gold-dark);padding-left:11px;margin-top:2px;">
+      <span class="snav-item-icon" style="color:var(--gold);">&#128197;</span>
+      <span class="snav-item-label" style="color:var(--gold-light);">Training Schedule</span>
     </button>
 
     <div class="snav-divider"></div>
@@ -1929,9 +2085,16 @@
     </div>
 
     <!-- SPECIALIST TRACKS -->
+    <!-- SPECIALIST TRACKS (TM-40 / TM-50 combined landing) -->
+    <button class="snav-item" data-panel="specialists" style="margin-top:6px;border-left:3px solid var(--gold-dark);padding-left:11px;">
+      <span class="snav-item-icon" style="color:var(--gold);">&#9654;</span>
+      <span class="snav-item-label" style="color:var(--gold-light);font-weight:700;">Specialist Tracks (TM-40/50)</span>
+    </button>
+
+    <!-- ADVANCED (direct access for power users) -->
     <div class="snav-group" id="grp-tm40">
       <button class="snav-group-hdr" data-group="tm40">
-        <span>Specialist Tracks</span>
+        <span>TM-40 (detail)</span>
         <span class="snav-group-arrow">&#8964;</span>
       </button>
       <div class="snav-group-items">
@@ -1939,16 +2102,6 @@
           <span class="snav-item-icon">&#9642;</span>
           <span class="snav-item-label">TM-40 Series</span>
         </button>
-      </div>
-    </div>
-
-    <!-- ADVANCED -->
-    <div class="snav-group" id="grp-tm50">
-      <button class="snav-group-hdr" data-group="tm50">
-        <span>Advanced</span>
-        <span class="snav-group-arrow">&#8964;</span>
-      </button>
-      <div class="snav-group-items">
         <button class="snav-item" data-panel="tm50">
           <span class="snav-item-icon">&#9642;</span>
           <span class="snav-item-label">TM-50 Series</span>
@@ -2015,7 +2168,7 @@
 
     <div class="callout info">
       <div class="callout-label">NEW TO MSS?</div>
-      <div class="callout-body"><strong>Start with the Quick Start guide</strong> before reading TM-10. It gets you operational in 30 minutes: log in, navigate, filter data, and export a view. &rarr; <a href="../QUICK_START.md" style="color:var(--navy);font-weight:700;">QUICK_START.md</a></div>
+      <div class="callout-body"><strong>Start with the Quick Start guide</strong> before reading TM-10. It gets you operational in 30 minutes: log in, navigate, filter data, and export a view. &rarr; <a href="../pdf/QUICK_START.pdf" style="color:var(--navy);font-weight:700;">QUICK_START.pdf</a></div>
     </div>
 
     <div class="callout bluf">
@@ -2043,7 +2196,7 @@
             <td><span class="chip chip-navy">TM-20</span></td>
           </tr>
           <tr>
-            <td>Data-adjacent specialist &mdash; 17/25-series, G2/G9, data analyst</td>
+            <td>Data-adjacent specialist &mdash; 17/25-series, G2, data analyst</td>
             <td><strong>TM-10 &rarr; TM-20</strong></td>
             <td>TM-30 (Advanced)</td>
             <td><span class="chip chip-gold">TM-30</span></td>
@@ -2055,7 +2208,7 @@
             <td><span class="chip chip-gold">TM-40</span></td>
           </tr>
           <tr>
-            <td>Senior leader (O-5+, CSM+) directing a data-capable formation</td>
+            <td>Senior leader (O-5+ / SGM+) directing a data-capable formation</td>
             <td><strong>Data Literacy (SL)</strong></td>
             <td>Optional: Data Literacy</td>
             <td><span class="chip chip-gray">DOCTRINE</span></td>
@@ -2078,7 +2231,7 @@
           <div class="path-line dashed"></div>
         </div>
         <div class="path-content">
-          <div class="path-tm">DATA LIT (SL) &mdash; OPTIONAL (O-5+ / CSM+)</div>
+          <div class="path-tm">DATA LIT (SL) &mdash; OPTIONAL (O-5+ / SGM+)</div>
           <div class="path-name">Data Literacy for Senior Leaders</div>
           <div class="path-audience">Principles, command responsibilities, decision frameworks</div>
         </div>
@@ -2142,39 +2295,42 @@
           <div class="path-dot">4</div>
         </div>
         <div class="path-content">
-          <div class="path-tm">TM-40A–F &mdash; TECHNICAL SPECIALIST TRACKS</div>
+          <div class="path-tm">TM-40G–L &mdash; TECHNICAL SPECIALIST TRACKS</div>
           <div class="path-name">Developer Manuals &mdash; 6 Tracks by Role</div>
-          <div class="path-audience">40A (ORSA) &bull; 40B (AI Eng) &bull; 40C (MLE) &bull; 40D (PM) &bull; 40E (KM) &bull; 40F (SWE) &nbsp;&mdash;&nbsp; Advanced versions at TM-50</div>
+          <div class="path-audience">40G (ORSA) &bull; 40H (AI Eng) &bull; 40I (MLE) &bull; 40J (PM) &bull; 40K (KM) &bull; 40L (SWE) &nbsp;&mdash;&nbsp; Advanced versions at TM-50G&ndash;L</div>
         </div>
       </div>
     </div>
 
-    <h2>TM-40 TRACK SELECTION BY MOS / ROLE</h2>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Role / MOS</th><th>Recommended TM-40 Track</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>FA49 &mdash; Operations Research Analyst</td><td><strong>TM-40A (ORSA)</strong></td></tr>
-          <tr><td>G2/S2 analyst</td><td><strong>TM-40A (ORSA)</strong> or TM-40E (KM)</td></tr>
-          <tr><td>17A/17C &mdash; Cyber officer/NCO</td><td><strong>TM-40F (SWE)</strong> or TM-40B (AI Eng)</td></tr>
-          <tr><td>25D &mdash; IT specialist</td><td><strong>TM-40F (SWE)</strong></td></tr>
-          <tr><td>25U &mdash; Signal support</td><td><strong>TM-40F (SWE)</strong> or TM-40D (PM)</td></tr>
-          <tr><td>AI/ML engineer (GS/contractor)</td><td><strong>TM-40B (AI Eng)</strong> or TM-40C (MLE)</td></tr>
-          <tr><td>Data scientist (GS/contractor)</td><td><strong>TM-40A (ORSA)</strong> or TM-40C (MLE)</td></tr>
-          <tr><td>G8/S8 &mdash; Resource manager</td><td><strong>TM-40D (PM)</strong></td></tr>
-          <tr><td>PM / Program Manager</td><td><strong>TM-40D (PM)</strong></td></tr>
-          <tr><td>37F &mdash; Psychological Operations</td><td><strong>TM-40E (KM)</strong></td></tr>
-          <tr><td>KMO / Knowledge Officer</td><td><strong>TM-40E (KM)</strong></td></tr>
-          <tr><td>G9 / Civil Affairs</td><td><strong>TM-40D (PM)</strong> or TM-40E (KM)</td></tr>
-        </tbody>
-      </table>
+    <div class="callout info">
+      <div class="callout-label">TM-40 TRACK SELECTION &mdash; BY MOS / ROLE</div>
+      <div class="callout-body">
+        <strong>ORSA (TM-40G):</strong> FA49, G2/S2 quantitative analysts, wargame specialists<br/>
+        <strong>AI Engineer (TM-40H):</strong> AI/ML specialists, 17A/17C<br/>
+        <strong>ML Engineer (TM-40I):</strong> ML engineers, data scientists (GS/contractor)<br/>
+        <strong>Program Manager (TM-40J):</strong> G8/S8, PMs, resource managers<br/>
+        <strong>Knowledge Manager (TM-40K):</strong> KMOs, 37F, institutional memory leads<br/>
+        <strong>Software Engineer (TM-40L):</strong> 17A/17C, 25D/25U, GS/contractor SWEs<br/>
+        <em>MOS not listed? Ask your commander &mdash; you may need TM-10 only, or be assigned a track based on unit needs.</em><br/><br/>
+        Full MOS-to-track mapping: <button class="qr-link" onclick="showPanel('specialists')">Specialist Tracks &rarr;</button>
+      </div>
     </div>
 
     <div class="callout note mt-24">
       <div class="callout-label">NOTE &mdash; MSS ACCOUNT ACCESS</div>
       <div class="callout-body">MSS access requires a provisioned account. Contact your unit data steward to initiate a request. Allow 3&ndash;5 business days for provisioning. Do not wait until the start of a deployment or exercise.</div>
+    </div>
+
+    <!-- Specialist Tracks CTA -->
+    <div class="specialist-cta">
+      <div class="specialist-cta-text">
+        <div class="specialist-cta-label">Advanced &amp; Technical Tracks</div>
+        <div class="specialist-cta-title">Specialist Tracks &mdash; TM-40 &amp; TM-50 Series</div>
+        <div class="specialist-cta-sub">Role-specific developer manuals for ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, and Software Engineer. Prerequisite: TM-30 complete.</div>
+      </div>
+      <button class="specialist-cta-btn" onclick="showPanel('specialists')">
+        Access Specialist Tracks <span class="btn-arrow">&#8594;</span>
+      </button>
     </div>
 
   </div><!-- /panel-home -->
@@ -2193,12 +2349,34 @@
 
     <div class="callout bluf">
       <div class="callout-label">BLUF</div>
-      <div class="callout-body">TM-10 teaches you how to log in, navigate MSS, read dashboards, submit data through forms, use AI tools, and stay within authorized boundaries. Required for all USAREUR-AF personnel before operating MSS.</div>
+      <div class="callout-body">TM-10 teaches you how to log in, navigate MSS, read dashboards, submit data through forms, use AI tools, and stay within authorized boundaries. Required for all USAREUR-AF personnel before operating MSS. <strong>Request your account before your first class — provisioning takes 3&ndash;5 business days.</strong></div>
     </div>
 
-    <h2>1. WHAT IS MSS?</h2>
+    <div class="callout caution">
+      <div class="callout-label">CAUTION &mdash; REQUEST YOUR ACCOUNT FIRST</div>
+      <div class="callout-body">You cannot log in without a provisioned account. <strong>Do not wait until the first day of class.</strong> Request your account from your unit data steward now &mdash; allow 3&ndash;5 business days. Steps are in Section 1 below.</div>
+    </div>
+
+    <h2>1. GETTING ACCESS &mdash; DO THIS FIRST</h2>
+    <ol>
+      <li>Find your <strong>unit data steward</strong> (your data steward is typically your unit&rsquo;s S-1, S-2, or IT section — ask your squad leader if you&rsquo;re unsure).</li>
+      <li>Ask them to submit an MSS account request with your name, unit, MOS, and required access level.</li>
+      <li>MSS admin team provisions your account and assigns <strong>markings</strong> (markings = the data categories and classification levels you&rsquo;re authorized to see).</li>
+      <li>You receive notification when account is active — typically 3&ndash;5 business days.</li>
+      <li>Receive the MSS portal URL from your unit data steward. This is your login link.</li>
+    </ol>
+    <div class="callout note mt-24">
+      <div class="callout-label">NOTE &mdash; DATA STEWARD</div>
+      <div class="callout-body">Your <strong>unit data steward</strong> manages MSS access for your unit. They are your first point of contact for account requests, access problems, and data errors. If you don&rsquo;t know who they are, ask your squad leader or check with your unit S-1.</div>
+    </div>
+
+    <h2>2. WHAT IS MSS?</h2>
     <p>MSS is a secure, web-based platform where your unit&rsquo;s data lives and can be analyzed and acted upon. Think of it as a shared operations center for data: information from logistics, personnel, readiness, and other systems is collected, organized, and made accessible through applications your unit uses every day.</p>
     <p>MSS is built on the Palantir Foundry platform, authorized for Army use under the Maven Smart System program.</p>
+    <div class="callout note">
+      <div class="callout-label">NOTE &mdash; WHAT IS FOUNDRY?</div>
+      <div class="callout-body">Palantir Foundry is a commercial data platform that Army headquarters selected to run MSS. You do not need to know how it works &mdash; just how to use it. The word &ldquo;Foundry&rdquo; may appear in help documentation and system menus; it refers to the same platform as MSS.</div>
+    </div>
 
     <div class="card-grid">
       <div class="card">
@@ -2237,7 +2415,7 @@
       </div>
     </div>
 
-    <h2>2. SECURITY RESPONSIBILITIES</h2>
+    <h2>3. SECURITY RESPONSIBILITIES</h2>
 
     <div class="callout warning">
       <div class="callout-label">WARNING</div>
@@ -2253,7 +2431,7 @@
       <li>Report security incidents immediately to your supervisor and unit security officer.</li>
     </ol>
 
-    <h2>3. TASKS</h2>
+    <h2>4. TASKS</h2>
 
     <div class="task-block">
       <div class="task-header">TASK: ACCESS THE MAVEN SMART SYSTEM</div>
@@ -2306,7 +2484,7 @@
             <tbody>
               <tr><td>Search bar</td><td>Top center</td><td>Find datasets, applications, and projects</td></tr>
               <tr><td>Notification bell</td><td>Top right</td><td>System alerts, workflow updates</td></tr>
-              <tr><td>User profile icon</td><td>Top right</td><td>Account settings, markings, logout</td></tr>
+              <tr><td>User profile icon</td><td>Top right</td><td>Account settings, markings (your authorized data categories), logout</td></tr>
               <tr><td>Compass (file explorer)</td><td>Left sidebar</td><td>Browse all MSS resources</td></tr>
               <tr><td>Home button (logo)</td><td>Top left</td><td>Return to home screen from anywhere</td></tr>
               <tr><td>Pinned items</td><td>Home main area</td><td>Shortcuts to frequently used resources</td></tr>
@@ -2315,19 +2493,6 @@
           </table>
         </div>
       </div>
-    </div>
-
-    <h2>4. GETTING ACCESS</h2>
-    <ol>
-      <li>Contact your unit data steward to initiate an account request.</li>
-      <li>Supervisor submits request with your name, unit, role, and required access level.</li>
-      <li>MSS admin team provisions your account and assigns markings.</li>
-      <li>You receive notification when account is active.</li>
-      <li>Log in via the MSS portal URL provided by your unit.</li>
-    </ol>
-    <div class="callout note mt-24">
-      <div class="callout-label">NOTE &mdash; PROVISIONING TIME</div>
-      <div class="callout-body">Account provisioning may take 3&ndash;5 business days. Plan accordingly before a deployment or exercise requiring MSS access.</div>
     </div>
 
     <h2>5. REPORTING PROBLEMS</h2>
@@ -2343,6 +2508,64 @@
           <tr><td>Application not working</td><td>MSS Help Desk</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <!-- UPCOMING TRAINING -->
+    <div class="training-section">
+      <h2><span class="training-icon">SCHED</span> UPCOMING TRAINING &mdash; TM-10</h2>
+      <div class="callout note">
+        <div class="callout-label">ENROLLMENT</div>
+        <div class="callout-body">Contact the listed POC to reserve a seat. Bring your CAC and ensure your MSS account request is submitted at least 5 business days before the course start date. Virtual sessions require MS Teams access and a headset.</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Dates</th>
+              <th>Location</th>
+              <th>Format</th>
+              <th>POC</th>
+              <th>Seats</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>14&ndash;15 APR 2026</strong></td>
+              <td>Wiesbaden, Clay Kaserne, Bldg 3312, Rm 104</td>
+              <td>In-Person</td>
+              <td>SSG Johnson</td>
+              <td>20 / 20</td>
+              <td><span class="seat-open">OPEN</span></td>
+            </tr>
+            <tr>
+              <td><strong>05&ndash;06 MAY 2026</strong></td>
+              <td>Grafenw&ouml;hr, Bldg 244, Conf Rm B</td>
+              <td>In-Person</td>
+              <td>SFC Davis</td>
+              <td>8 / 20</td>
+              <td><span class="seat-low">8 SEATS REMAINING</span></td>
+            </tr>
+            <tr>
+              <td><strong>18&ndash;19 JUN 2026</strong></td>
+              <td>Stuttgart, Kelley Bks, Bldg 3357</td>
+              <td>In-Person</td>
+              <td>SSG Martinez</td>
+              <td>20 / 20</td>
+              <td><span class="seat-open">OPEN</span></td>
+            </tr>
+            <tr>
+              <td><strong>09&ndash;10 JUL 2026</strong></td>
+              <td>Virtual (MS Teams)</td>
+              <td>Virtual</td>
+              <td>SSG Johnson</td>
+              <td>30 / 30</td>
+              <td><span class="seat-open">OPEN</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12px;color:var(--gray-400);">Duration: 2 days (16 hours). Course runs 0800&ndash;1700 each day. All dates subject to change &mdash; confirm with POC 5 days prior.</p>
     </div>
 
   </div><!-- /panel-tm10 -->
@@ -2417,12 +2640,13 @@
             <li>Distinguish development from production environments</li>
             <li>Apply USAREUR-AF builder standards</li>
           </ul>
+          <p style="margin-top:8px;font-size:12px;color:var(--gray-600);"><em>Branching = making a test copy of your work before going live. You build in the <strong>dev branch</strong> (your sandbox), test it, then publish to <strong>production</strong> (what users see).</em></p>
         </div>
       </div>
     </div>
 
     <h2>THE FOUNDRY DATA STACK</h2>
-    <p>Data flows through layers. As a TM-20 builder, you work in the middle layers using visual tools. Never modify raw data.</p>
+    <p>Data flows through layers. As a TM-20 builder, you work in the middle layers using visual tools. Never modify raw data — report data errors to your data steward instead.</p>
     <div class="stack-diagram">
       <div class="stack-layer layer-1">Workshop App / AIP Agent (consume)</div>
       <div class="stack-arrow">&#x25B2;</div>
@@ -2482,6 +2706,64 @@
       <div class="callout-body">Changes to shared datasets and Object Types affect all downstream applications and users. Before modifying a shared resource, coordinate with your data steward.</div>
     </div>
 
+    <!-- UPCOMING TRAINING -->
+    <div class="training-section">
+      <h2><span class="training-icon">SCHED</span> UPCOMING TRAINING &mdash; TM-20</h2>
+      <div class="callout note">
+        <div class="callout-label">ENROLLMENT</div>
+        <div class="callout-body">TM-10 must be complete before attending TM-20. Contact the listed POC to reserve a seat. Bring completion certificate from TM-10 on day one.</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Dates</th>
+              <th>Location</th>
+              <th>Format</th>
+              <th>POC</th>
+              <th>Seats</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>21&ndash;23 APR 2026</strong></td>
+              <td>Wiesbaden, Clay Kaserne, Bldg 3312, Rm 104</td>
+              <td>In-Person</td>
+              <td>SFC Chen</td>
+              <td>7 / 15</td>
+              <td><span class="seat-low">7 SEATS REMAINING</span></td>
+            </tr>
+            <tr>
+              <td><strong>12&ndash;14 MAY 2026</strong></td>
+              <td>Grafenw&ouml;hr, Bldg 244, Conf Rm B</td>
+              <td>In-Person</td>
+              <td>SSG Williams</td>
+              <td>3 / 15</td>
+              <td><span class="seat-low">3 SEATS REMAINING</span></td>
+            </tr>
+            <tr>
+              <td><strong>22&ndash;24 JUN 2026</strong></td>
+              <td>Stuttgart, Kelley Bks, Bldg 3357</td>
+              <td>In-Person</td>
+              <td>SFC Chen</td>
+              <td>15 / 15</td>
+              <td><span class="seat-open">OPEN</span></td>
+            </tr>
+            <tr>
+              <td><strong>14&ndash;16 JUL 2026</strong></td>
+              <td>Virtual (MS Teams)</td>
+              <td>Virtual</td>
+              <td>SSG Williams</td>
+              <td>20 / 20</td>
+              <td><span class="seat-open">OPEN</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12px;color:var(--gray-400);">Duration: 3 days (24 hours). Course runs 0800&ndash;1700 each day. Prerequisite: TM-10 complete. All dates subject to change &mdash; confirm with POC 5 days prior.</p>
+    </div>
+
   </div><!-- /panel-tm20 -->
 
 
@@ -2493,7 +2775,7 @@
     <div class="section-header">
       <span class="section-badge">TM-30</span>
       <span class="section-title">Advanced Builder Manual &mdash; Data-Adjacent Specialists</span>
-      <span class="section-subtitle">Prerequisite: TM-10 + TM-20 &bull; 17/25-series &bull; G2/G9</span>
+      <span class="section-subtitle">Prerequisite: TM-10 + TM-20 &bull; 17/25-series &bull; G2 &bull; Data analysts</span>
     </div>
 
     <div class="callout bluf">
@@ -2501,9 +2783,9 @@
       <div class="callout-body">TM-30 is for personnel who design and own MSS solutions. This level covers complex application design, advanced Pipeline Builder, Ontology architecture, AIP Logic configuration, data governance, and C2DAO standards. All work is done via the UI; coding is escalated to TM-40 developers.</div>
     </div>
 
-    <div class="callout warning">
-      <div class="callout-label">WARNING</div>
-      <div class="callout-body">Advanced builders operate at the operational-technical boundary of MSS. Errors at TM-30 level affect the data environment of the entire formation, including coalition partners. Coordinate with data stewards and the USAREUR-AF C2DAO before modifying any shared production resource.</div>
+    <div class="callout caution">
+      <div class="callout-label">CAUTION</div>
+      <div class="callout-body">Modifications to shared datasets or Object Types at TM-30 level affect all downstream applications and users across the formation, including coalition partners. Coordinate with your unit data steward and the USAREUR-AF C2DAO before publishing any changes to production resources.</div>
     </div>
 
     <h2>COMPETENCIES UPON COMPLETION</h2>
@@ -2555,7 +2837,7 @@
         <div class="card-label">AIP LOGIC &amp; CONFIGURATION</div>
         <div class="card-body">
           <ul>
-            <li>Configure AIP Logic workflows via the UI (not author them &mdash; that is TM-40B)</li>
+            <li>Configure AIP Logic workflows via the UI (not author them &mdash; that is TM-40H)</li>
             <li>Connect AIP agents to Workshop applications</li>
             <li>Review and validate AI workflow outputs before production deployment</li>
           </ul>
@@ -2603,7 +2885,171 @@
       </table>
     </div>
 
+    <!-- UPCOMING TRAINING -->
+    <div class="training-section">
+      <h2><span class="training-icon">SCHED</span> UPCOMING TRAINING &mdash; TM-30</h2>
+      <div class="callout note">
+        <div class="callout-label">ENROLLMENT</div>
+        <div class="callout-body">TM-10 and TM-20 must be complete before attending TM-30. Class size is limited. Contact POC early &mdash; seats fill quickly. Bring TM-10 and TM-20 completion certificates on day one.</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Dates</th>
+              <th>Location</th>
+              <th>Format</th>
+              <th>POC</th>
+              <th>Seats</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>28 APR &ndash; 02 MAY 2026</strong></td>
+              <td>Wiesbaden, Clay Kaserne, Bldg 3312, Rm 104</td>
+              <td>In-Person</td>
+              <td>CW3 Thompson</td>
+              <td>4 / 10</td>
+              <td><span class="seat-low">4 SEATS REMAINING</span></td>
+            </tr>
+            <tr>
+              <td><strong>15&ndash;19 JUN 2026</strong></td>
+              <td>Virtual (MS Teams)</td>
+              <td>Virtual</td>
+              <td>CW2 Rodriguez</td>
+              <td>15 / 15</td>
+              <td><span class="seat-open">OPEN</span></td>
+            </tr>
+            <tr>
+              <td><strong>17&ndash;21 AUG 2026</strong></td>
+              <td>Wiesbaden, Clay Kaserne, Bldg 3312, Rm 104</td>
+              <td>In-Person</td>
+              <td>CW3 Thompson</td>
+              <td>10 / 10</td>
+              <td><span class="seat-open">OPEN</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12px;color:var(--gray-400);">Duration: 5 days (40 hours). Course runs 0800&ndash;1700 each day. Prerequisites: TM-10 and TM-20 complete. All dates subject to change &mdash; confirm with POC 5 days prior.</p>
+    </div>
+
+    <!-- Specialist Tracks CTA -->
+    <div class="specialist-cta">
+      <div class="specialist-cta-text">
+        <div class="specialist-cta-label">Next Level &mdash; After TM-30</div>
+        <div class="specialist-cta-title">Specialist Tracks &mdash; TM-40 &amp; TM-50 Series</div>
+        <div class="specialist-cta-sub">Six role-specific tracks for ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, and Software Engineer. Select your track based on MOS/role.</div>
+      </div>
+      <button class="specialist-cta-btn" onclick="showPanel('specialists')">
+        Access Specialist Tracks <span class="btn-arrow">&#8594;</span>
+      </button>
+    </div>
+
   </div><!-- /panel-tm30 -->
+
+
+  <!-- ======================================================
+       SPECIALIST TRACKS PANEL (TM-40 + TM-50 landing)
+  ====================================================== -->
+  <div id="panel-specialists" class="panel">
+
+    <div class="section-header">
+      <span class="section-badge">SPECIALIST TRACKS</span>
+      <span class="section-title">TM-40 &amp; TM-50 Series &mdash; Advanced Technical Manuals</span>
+      <span class="section-subtitle">Prerequisite: TM-30 complete &bull; Six tracks by role</span>
+    </div>
+
+    <div class="callout bluf">
+      <div class="callout-label">BLUF</div>
+      <div class="callout-body">Specialist tracks are for personnel who build, engineer, and maintain MSS solutions at the technical level. Select your track by MOS/role below. All tracks require TM-30 as a prerequisite. Advanced versions (TM-50) are available for personnel who have completed the corresponding TM-40 track.</div>
+    </div>
+
+    <h2>TRACK SELECTION BY MOS / ROLE</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Role / MOS</th><th>Recommended Track</th><th>Advanced</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>FA49 &mdash; Operations Research Analyst</td><td><strong>TM-40G (ORSA)</strong></td><td>TM-50G</td></tr>
+          <tr><td>G2/S2 quantitative analyst</td><td><strong>TM-40G (ORSA)</strong> or TM-40K (KM)</td><td>TM-50G / TM-50K</td></tr>
+          <tr><td>17A/17C &mdash; Cyber officer/NCO</td><td><strong>TM-40L (SWE)</strong> or TM-40H (AI Eng)</td><td>TM-50L / TM-50H</td></tr>
+          <tr><td>25D &mdash; IT specialist</td><td><strong>TM-40L (SWE)</strong></td><td>TM-50L</td></tr>
+          <tr><td>AI/ML engineer (GS/contractor)</td><td><strong>TM-40H (AI Eng)</strong> or TM-40I (MLE)</td><td>TM-50H / TM-50I</td></tr>
+          <tr><td>Data scientist (GS/contractor)</td><td><strong>TM-40G (ORSA)</strong> or TM-40I (MLE)</td><td>TM-50G / TM-50I</td></tr>
+          <tr><td>G8/S8 &mdash; Resource manager</td><td><strong>TM-40J (PM)</strong></td><td>TM-50J</td></tr>
+          <tr><td>Program Manager (PM / GS)</td><td><strong>TM-40J (PM)</strong></td><td>TM-50J</td></tr>
+          <tr><td>KMO / Knowledge Officer / 37F</td><td><strong>TM-40K (KM)</strong></td><td>TM-50K</td></tr>
+          <tr><td>G9 / Civil Affairs</td><td><strong>TM-40J (PM)</strong> or TM-40K (KM)</td><td>TM-50J / TM-50K</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="specialists-section-hdr">TM-40 SERIES &mdash; SPECIALIST TRACKS (Level 1)</div>
+
+    <div class="track-grid">
+      <div class="track-card">
+        <div class="track-card-hdr"><span class="track-tm">TM-40G &mdash; ORSA</span><span class="track-chip">TM-30 Req.</span></div>
+        <div class="track-body">
+          <div class="track-name">Operations Research &amp; Systems Analysis</div>
+          <div class="track-audience">FA49 &bull; G2/S2 quant analysts &bull; Wargame analysts</div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50G &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" onclick="showPanel('tm40')">View TM-40 Series &rarr;</button></div>
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-card-hdr"><span class="track-tm">TM-40H &mdash; AI Engineer</span><span class="track-chip">TM-30 Req.</span></div>
+        <div class="track-body">
+          <div class="track-name">AIP Logic, Agent Studio &amp; LLM Integration</div>
+          <div class="track-audience">AI/ML specialists &bull; 17A/17C</div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50H &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" onclick="showPanel('tm40')">View TM-40 Series &rarr;</button></div>
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-card-hdr"><span class="track-tm">TM-40I &mdash; ML Engineer</span><span class="track-chip">TM-30 Req.</span></div>
+        <div class="track-body">
+          <div class="track-name">Model Development, Validation &amp; Deployment</div>
+          <div class="track-audience">ML engineers &bull; Data scientists (GS/contractor)</div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50I &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" onclick="showPanel('tm40')">View TM-40 Series &rarr;</button></div>
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-card-hdr"><span class="track-tm">TM-40J &mdash; Program Manager</span><span class="track-chip">TM-30 Req.</span></div>
+        <div class="track-body">
+          <div class="track-name">Pipeline Mgmt, Milestones &amp; Portfolio Health</div>
+          <div class="track-audience">G8/S8 &bull; PMs &bull; G9/Civil Affairs</div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50J &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" onclick="showPanel('tm40')">View TM-40 Series &rarr;</button></div>
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-card-hdr"><span class="track-tm">TM-40K &mdash; Knowledge Manager</span><span class="track-chip">TM-30 Req.</span></div>
+        <div class="track-body">
+          <div class="track-name">Forms, Lessons Learned &amp; Institutional Memory</div>
+          <div class="track-audience">KMOs &bull; 37F &bull; G9 / Civil Affairs</div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50K &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" onclick="showPanel('tm40')">View TM-40 Series &rarr;</button></div>
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-card-hdr"><span class="track-tm">TM-40L &mdash; Software Engineer</span><span class="track-chip">TM-30 Req.</span></div>
+        <div class="track-body">
+          <div class="track-name">Python/TypeScript, OSDK &amp; Code Transforms</div>
+          <div class="track-audience">17A/17C &bull; 25D &bull; GS/contractor SWEs</div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50L &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" onclick="showPanel('tm40')">View TM-40 Series &rarr;</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="specialists-section-hdr">TM-50 SERIES &mdash; ADVANCED TRACKS (Level 2)</div>
+    <div class="callout info">
+      <div class="callout-label">NOTE</div>
+      <div class="callout-body">TM-50 tracks are advanced-level continuations requiring the corresponding TM-40 track as a prerequisite. They cover expert-level techniques, production architecture, and operational integration at scale.</div>
+    </div>
+    <div class="panel-nav-btns" style="margin-top:12px;">
+      <button class="panel-nav-btn" onclick="showPanel('tm50')">Open TM-50 Series Full Reference &#8594;</button>
+    </div>
+
+  </div><!-- /panel-specialists -->
 
 
   <!-- ======================================================
@@ -2619,14 +3065,14 @@
 
     <div class="callout bluf">
       <div class="callout-label">BLUF</div>
-      <div class="callout-body">The TM-40 series covers developer-level capabilities that require coding, advanced tooling, or specialized technical expertise. Six tracks are available, each targeting a specific role. Prerequisite for all tracks is TM-30. Select your track using the MOS/Role table on the HOME tab.</div>
+      <div class="callout-body">The TM-40 series covers developer-level capabilities requiring coding, advanced tooling, or specialized technical expertise. Six specialist tracks (TM-40G&ndash;L) target specific technical roles; six warfighting function tracks (TM-40A&ndash;F) are available by functional area. Prerequisite for all tracks is TM-30. Select your track using the MOS/Role table on the HOME tab.</div>
     </div>
 
     <div class="track-grid">
 
       <div class="track-card">
         <div class="track-card-hdr">
-          <span class="track-tm">TM-40A &mdash; ORSA Track</span>
+          <span class="track-tm">TM-40G &mdash; ORSA Track</span>
           <span class="track-chip">TM-30 Required</span>
         </div>
         <div class="track-body">
@@ -2642,13 +3088,13 @@
             <li>Analytical decision support products (Quiver/Contour) to commander standard</li>
             <li>Communicate uncertainty: confidence intervals, sensitivity analysis, briefing standards</li>
           </ul>
-          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50A</div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50G</div>
         </div>
       </div>
 
       <div class="track-card">
         <div class="track-card-hdr">
-          <span class="track-tm">TM-40B &mdash; AI Engineer Track</span>
+          <span class="track-tm">TM-40H &mdash; AI Engineer Track</span>
           <span class="track-chip">TM-30 Required</span>
         </div>
         <div class="track-body">
@@ -2664,13 +3110,13 @@
             <li>Test and red-team AI outputs; evaluate quality against defined standards</li>
             <li>Deploy and monitor AIP Logic workflows in production</li>
           </ul>
-          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50B</div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50H</div>
         </div>
       </div>
 
       <div class="track-card">
         <div class="track-card-hdr">
-          <span class="track-tm">TM-40C &mdash; ML Engineer Track</span>
+          <span class="track-tm">TM-40I &mdash; ML Engineer Track</span>
           <span class="track-chip">TM-30 Required</span>
         </div>
         <div class="track-body">
@@ -2684,13 +3130,13 @@
             <li>Implement MLOps patterns: monitoring, drift detection, retraining triggers</li>
             <li>Apply responsible AI practices and model documentation standards for operational use</li>
           </ul>
-          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50C</div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50I</div>
         </div>
       </div>
 
       <div class="track-card">
         <div class="track-card-hdr">
-          <span class="track-tm">TM-40D &mdash; Program Manager Track</span>
+          <span class="track-tm">TM-40J &mdash; Program Manager Track</span>
           <span class="track-chip">TM-30 Required</span>
         </div>
         <div class="track-body">
@@ -2706,13 +3152,13 @@
             <li>Produce commander-ready IPR/EAB products from MSS without manual PowerPoint updates</li>
             <li>Apply access management, classification, and data stewardship for PM applications</li>
           </ul>
-          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50D</div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50J</div>
         </div>
       </div>
 
       <div class="track-card">
         <div class="track-card-hdr">
-          <span class="track-tm">TM-40E &mdash; Knowledge Manager Track</span>
+          <span class="track-tm">TM-40K &mdash; Knowledge Manager Track</span>
           <span class="track-chip">TM-30 Required</span>
         </div>
         <div class="track-body">
@@ -2728,13 +3174,13 @@
             <li>Build personnel expertise mapping (skills/experience registries)</li>
             <li>Design knowledge transfer and unit continuity processes using MSS</li>
           </ul>
-          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50E</div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50K</div>
         </div>
       </div>
 
       <div class="track-card">
         <div class="track-card-hdr">
-          <span class="track-tm">TM-40F &mdash; Software Engineer Track</span>
+          <span class="track-tm">TM-40L &mdash; Software Engineer Track</span>
           <span class="track-chip">TM-30 Required</span>
         </div>
         <div class="track-body">
@@ -2749,11 +3195,28 @@
             <li>Build Slate applications integrated with the Foundry API</li>
             <li>Apply USAREUR-AF code review and deployment standards for MSS applications</li>
           </ul>
-          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50F</div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50L</div>
         </div>
       </div>
 
     </div>
+
+    <details style="margin-top:20px;" open>
+      <summary style="cursor:pointer;font-size:11px;color:var(--text-muted,#888);letter-spacing:.06em;text-transform:uppercase;user-select:none;list-style:none;display:flex;align-items:center;gap:6px;">
+        <span style="font-size:14px;">&#9662;</span> Warfighting Function Tracks (TM-40A&ndash;F)
+      </summary>
+      <table class="data-table" style="margin-top:10px;font-size:12px;width:auto;">
+        <thead><tr><th>Designation</th><th>Track</th><th>Publication</th></tr></thead>
+        <tbody>
+          <tr><td>TM-40A</td><td>Intelligence</td><td><a href="../pdf/TM_40A_INTELLIGENCE.pdf" target="_blank">TM_40A_INTELLIGENCE.pdf</a></td></tr>
+          <tr><td>TM-40B</td><td>Fires</td><td><a href="../pdf/TM_40B_FIRES.pdf" target="_blank">TM_40B_FIRES.pdf</a></td></tr>
+          <tr><td>TM-40C</td><td>Movement &amp; Maneuver</td><td><a href="../pdf/TM_40C_MOVEMENT_MANEUVER.pdf" target="_blank">TM_40C_MOVEMENT_MANEUVER.pdf</a></td></tr>
+          <tr><td>TM-40D</td><td>Sustainment</td><td><a href="../pdf/TM_40D_SUSTAINMENT.pdf" target="_blank">TM_40D_SUSTAINMENT.pdf</a></td></tr>
+          <tr><td>TM-40E</td><td>Protection</td><td><a href="../pdf/TM_40E_PROTECTION.pdf" target="_blank">TM_40E_PROTECTION.pdf</a></td></tr>
+          <tr><td>TM-40F</td><td>Mission Command</td><td><a href="../pdf/TM_40F_MISSION_COMMAND.pdf" target="_blank">TM_40F_MISSION_COMMAND.pdf</a></td></tr>
+        </tbody>
+      </table>
+    </details>
 
   </div><!-- /panel-tm40 -->
 
@@ -2766,24 +3229,24 @@
     <div class="section-header">
       <span class="section-badge">TM-50</span>
       <span class="section-title">Advanced Developer Tracks</span>
-      <span class="section-subtitle">Prerequisite: TM-40 (by track) &bull; All 6 tracks complete &mdash; March 2026</span>
+      <span class="section-subtitle">Prerequisite: TM-40 (by track) &bull; Tracks TM-50G&ndash;L &bull; All 6 tracks available</span>
     </div>
 
     <div class="callout bluf">
       <div class="callout-label">BLUF &mdash; ADVANCED TRACKS</div>
-      <div class="callout-body">The TM-50 series provides advanced-level instruction for each developer track, building directly on the corresponding TM-40 manual. Intended for senior technical leads, platform architects, and senior developers designing enterprise-scale MSS capabilities. All 6 tracks are complete and available.</div>
+      <div class="callout-body">The TM-50 series provides advanced-level instruction for each developer track, building directly on the corresponding TM-40 specialist manual (TM-40G&ndash;L). Intended for senior technical leads, platform architects, and senior developers designing enterprise-scale MSS capabilities. All 6 tracks are complete and available.</div>
     </div>
 
     <h2>TM-50 SERIES &mdash; PUBLICATIONS</h2>
     <div class="track-grid">
-      <a class="track-card doc-card" href="../pdf/TM_50A_ORSA_ADVANCED.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_50G_ORSA_ADVANCED.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-50A &mdash; ORSA Advanced</div>
+          <div class="track-tm">TM-50G &mdash; ORSA Advanced</div>
           <div class="track-chip">Advanced</div>
         </div>
         <div class="track-body">
           <div class="track-name">Advanced ORSA</div>
-          <div class="track-audience">Prerequisite: TM-40A</div>
+          <div class="track-audience">Prerequisite: TM-40G</div>
           <ul class="track-topics">
             <li>Nonlinear programming, stochastic models</li>
             <li>Agent-based modeling (ABMS)</li>
@@ -2791,14 +3254,14 @@
           </ul>
         </div>
       </a>
-      <a class="track-card doc-card" href="../pdf/TM_50B_AI_ENGINEER_ADVANCED.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_50H_AI_ENGINEER_ADVANCED.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-50B &mdash; AI Engineer Advanced</div>
+          <div class="track-tm">TM-50H &mdash; AI Engineer Advanced</div>
           <div class="track-chip">Advanced</div>
         </div>
         <div class="track-body">
           <div class="track-name">Advanced AI Engineering</div>
-          <div class="track-audience">Prerequisite: TM-40B</div>
+          <div class="track-audience">Prerequisite: TM-40H</div>
           <ul class="track-topics">
             <li>Multi-agent orchestration &amp; shared state</li>
             <li>Advanced RAG, domain-adapted LLMs</li>
@@ -2806,14 +3269,14 @@
           </ul>
         </div>
       </a>
-      <a class="track-card doc-card" href="../pdf/TM_50C_ML_ENGINEER_ADVANCED.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_50I_ML_ENGINEER_ADVANCED.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-50C &mdash; ML Engineer Advanced</div>
+          <div class="track-tm">TM-50I &mdash; ML Engineer Advanced</div>
           <div class="track-chip">Advanced</div>
         </div>
         <div class="track-body">
           <div class="track-name">Advanced ML Engineering</div>
-          <div class="track-audience">Prerequisite: TM-40C</div>
+          <div class="track-audience">Prerequisite: TM-40I</div>
           <ul class="track-topics">
             <li>Automated retraining pipelines</li>
             <li>Transformer fine-tuning, GNNs</li>
@@ -2821,14 +3284,14 @@
           </ul>
         </div>
       </a>
-      <a class="track-card doc-card" href="../pdf/TM_50D_PROGRAM_MANAGER_ADVANCED.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_50J_PROGRAM_MANAGER_ADVANCED.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-50D &mdash; PM Advanced</div>
+          <div class="track-tm">TM-50J &mdash; PM Advanced</div>
           <div class="track-chip">Advanced</div>
         </div>
         <div class="track-body">
           <div class="track-name">Advanced Program Management</div>
-          <div class="track-audience">Prerequisite: TM-40D</div>
+          <div class="track-audience">Prerequisite: TM-40J</div>
           <ul class="track-topics">
             <li>PI planning, cross-team governance</li>
             <li>GO/SES briefing, Palantir partnership</li>
@@ -2836,14 +3299,14 @@
           </ul>
         </div>
       </a>
-      <a class="track-card doc-card" href="../pdf/TM_50E_KNOWLEDGE_MANAGER_ADVANCED.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_50K_KNOWLEDGE_MANAGER_ADVANCED.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-50E &mdash; KM Advanced</div>
+          <div class="track-tm">TM-50K &mdash; KM Advanced</div>
           <div class="track-chip">Advanced</div>
         </div>
         <div class="track-body">
           <div class="track-name">Advanced Knowledge Management</div>
-          <div class="track-audience">Prerequisite: TM-40E</div>
+          <div class="track-audience">Prerequisite: TM-40K</div>
           <ul class="track-topics">
             <li>Federated KM architecture, NATO integration</li>
             <li>STANAG 4778 conformance</li>
@@ -2851,14 +3314,14 @@
           </ul>
         </div>
       </a>
-      <a class="track-card doc-card" href="../pdf/TM_50F_SOFTWARE_ENGINEER_ADVANCED.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_50L_SOFTWARE_ENGINEER_ADVANCED.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-50F &mdash; SWE Advanced</div>
+          <div class="track-tm">TM-50L &mdash; SWE Advanced</div>
           <div class="track-chip">Advanced</div>
         </div>
         <div class="track-body">
           <div class="track-name">Advanced Software Engineering</div>
-          <div class="track-audience">Prerequisite: TM-40F</div>
+          <div class="track-audience">Prerequisite: TM-40L</div>
           <ul class="track-topics">
             <li>Scale, multi-tenancy, event streaming</li>
             <li>OWASP, SAST, authorized pen testing</li>
@@ -2894,7 +3357,7 @@
 
     <div class="card-grid card-grid-2">
       <div class="card gold-top">
-        <div class="card-label">SENIOR LEADERS (O-5+ / CSM+)</div>
+        <div class="card-label">SENIOR LEADERS (O-5+ / SGM+)</div>
         <div class="card-title">Data Literacy for Senior Leaders</div>
         <div class="card-body">
           <p>Written for commanders, senior NCOs, and senior civilians. Covers command responsibilities, evaluating data products, directing a data-capable formation, and decision frameworks.</p>
@@ -2918,18 +3381,18 @@
       <table>
         <thead><tr><th>Publication</th><th>Audience</th><th>Purpose</th><th>When to Read</th></tr></thead>
         <tbody>
-          <tr><td><strong>Data Literacy (SL)</strong></td><td>O-5+, CSM+, Sr Civilians</td><td>Principles, command responsibilities</td><td>Before directing MSS use</td></tr>
+          <tr><td><strong>Data Literacy (SL)</strong></td><td>O-5+ / SGM+, Sr Civilians</td><td>Principles, command responsibilities</td><td>Before directing MSS use</td></tr>
           <tr><td><strong>Data Literacy</strong></td><td>All personnel</td><td>Comprehensive data literacy reference</td><td>Before TM-10 (recommended)</td></tr>
           <tr><td><strong>TM-10</strong></td><td>All personnel</td><td>Operate MSS as end user</td><td>Before first MSS access</td></tr>
           <tr><td><strong>TM-20</strong></td><td>All staff</td><td>Build pipelines, Ontology, Workshop via UI &mdash; no code</td><td>After TM-10</td></tr>
           <tr><td><strong>TM-30</strong></td><td>Data-adjacent specialists</td><td>Design complex apps; governance; C2DAO standards</td><td>After TM-10 + TM-20</td></tr>
-          <tr><td><strong>TM-40A</strong></td><td>ORSA</td><td>Statistical modeling, simulation, wargame analytics</td><td>After TM-30</td></tr>
-          <tr><td><strong>TM-40B</strong></td><td>AI Engineers</td><td>AIP Logic authoring, Agent Studio, LLM integration</td><td>After TM-30</td></tr>
-          <tr><td><strong>TM-40C</strong></td><td>ML Engineers</td><td>Code Workspaces, model training, MLOps</td><td>After TM-30</td></tr>
-          <tr><td><strong>TM-40D</strong></td><td>PMs / G8</td><td>PM dashboards, milestone tracking, portfolio analysis</td><td>After TM-30</td></tr>
-          <tr><td><strong>TM-40E</strong></td><td>KMs / KMOs</td><td>Knowledge repositories, AIP summarization, lessons learned</td><td>After TM-30</td></tr>
-          <tr><td><strong>TM-40F</strong></td><td>SWEs</td><td>OSDK, full-stack Foundry apps, TypeScript Functions</td><td>After TM-30</td></tr>
-          <tr><td><strong>TM-50A&ndash;F</strong></td><td>Senior developers (all tracks)</td><td>Advanced versions of each TM-40 track</td><td>After TM-40 (by track)</td></tr>
+          <tr><td><strong>TM-40G</strong></td><td>ORSA</td><td>Statistical modeling, simulation, wargame analytics</td><td>After TM-30</td></tr>
+          <tr><td><strong>TM-40H</strong></td><td>AI Engineers</td><td>AIP Logic authoring, Agent Studio, LLM integration</td><td>After TM-30</td></tr>
+          <tr><td><strong>TM-40I</strong></td><td>ML Engineers</td><td>Code Workspaces, model training, MLOps</td><td>After TM-30</td></tr>
+          <tr><td><strong>TM-40J</strong></td><td>PMs / G8</td><td>PM dashboards, milestone tracking, portfolio analysis</td><td>After TM-30</td></tr>
+          <tr><td><strong>TM-40K</strong></td><td>KMs / KMOs</td><td>Knowledge repositories, AIP summarization, lessons learned</td><td>After TM-30</td></tr>
+          <tr><td><strong>TM-40L</strong></td><td>SWEs</td><td>OSDK, full-stack Foundry apps, TypeScript Functions</td><td>After TM-30</td></tr>
+          <tr><td><strong>TM-50G&ndash;L</strong></td><td>Senior developers (all tracks)</td><td>Advanced versions of each TM-40 specialist track</td><td>After TM-40 (by track)</td></tr>
         </tbody>
       </table>
     </div>
@@ -2971,18 +3434,18 @@
 
     <div class="callout info">
       <div class="callout-label">NEW TO MSS?</div>
-      <div class="callout-body"><strong>Start with the Quick Start guide</strong> before reading TM-10. It gets you operational in 30 minutes: log in, navigate, filter data, and export a view. &rarr; <a href="../QUICK_START.md" style="color:var(--navy-mid);font-weight:700;">QUICK_START.md</a></div>
+      <div class="callout-body"><strong>Start with the Quick Start guide</strong> before reading TM-10. Operational in 30 minutes: log in via CAC, navigate to your unit&rsquo;s app, filter data, export a view. &rarr; <a href="../pdf/QUICK_START.pdf" style="color:var(--navy-mid);font-weight:700;">QUICK_START.pdf</a> &nbsp;&bull;&nbsp; No account yet? Contact your unit data steward.</div>
     </div>
 
     <div class="callout bluf">
       <div class="callout-label">BLUF</div>
-      <div class="callout-body">Find your level in the table below and follow the training path. All personnel start at TM-10. Builders add TM-20. Data specialists continue to TM-30. Technical roles proceed to the appropriate TM-40 track. Use the sidebar to navigate to your specific guidance.</div>
+      <div class="callout-body">All personnel start at TM-10. Builders add TM-20; data-adjacent specialists continue to TM-30; technical roles select their TM-40 track below.</div>
     </div>
 
     <div class="qr-grid">
 
-      <!-- FIND YOUR MANUAL — span 2 -->
-      <div class="qr-box gold-top qr-span2">
+      <!-- FIND YOUR MANUAL — full width -->
+      <div class="qr-box gold-top qr-span3">
         <div class="qr-label">Find Your Manual</div>
         <div class="table-wrap">
           <table>
@@ -2990,192 +3453,84 @@
             <tbody>
               <tr><td>Any personnel &mdash; viewing data for the first time</td><td>TM-10 &mdash; Maven User</td><td><button class="qr-link" data-panel="tm10">TM-10 &rarr;</button></td></tr>
               <tr><td>Staff building dashboards or simple pipelines (no coding)</td><td>TM-20 &mdash; Builder</td><td><button class="qr-link" data-panel="tm20">TM-20 &rarr;</button></td></tr>
-              <tr><td>Data-adjacent specialist (17/25-series, G2, G9, analyst)</td><td>TM-30 &mdash; Advanced Builder</td><td><button class="qr-link" data-panel="tm30">TM-30 &rarr;</button></td></tr>
-              <tr><td>Technical specialist &mdash; ORSA &bull; AI Eng &bull; ML Eng &bull; PM &bull; KM &bull; SWE</td><td>TM-40 Specialist Track</td><td>
+              <tr><td>Data steward, frequent builder, or data-adjacent role (17/25-series, G2, analyst)</td><td>TM-30 &mdash; Advanced Builder</td><td><button class="qr-link" data-panel="tm30">TM-30 &rarr;</button></td></tr>
+              <tr><td>Technical specialist or warfighting function developer &mdash; ORSA &bull; AI/ML Eng &bull; PM &bull; KM &bull; SWE</td><td>TM-40 Specialist Track</td><td>
                 <div class="qr-dropdown-wrap">
-                  <button class="qr-link qr-dropdown-btn" data-dropdown="dd-tm40-table" aria-expanded="false">TM-40 &#9662;<span class="qr-dropdown-arrow"></span></button>
+                  <button class="qr-link qr-dropdown-btn" data-dropdown="dd-tm40-table" aria-expanded="false">TM-40 &#9662;</button>
                   <div class="qr-dropdown-menu" id="dd-tm40-table">
                     <div class="qr-dropdown-section">Select Your Track</div>
-                    <button class="qr-dropdown-item" data-panel="tm40">TM-40A &mdash; ORSA</button>
-                    <button class="qr-dropdown-item" data-panel="tm40">TM-40B &mdash; AI Engineer</button>
-                    <button class="qr-dropdown-item" data-panel="tm40">TM-40C &mdash; ML Engineer</button>
-                    <button class="qr-dropdown-item" data-panel="tm40">TM-40D &mdash; Program Mgr</button>
-                    <button class="qr-dropdown-item" data-panel="tm40">TM-40E &mdash; Knowledge Mgr</button>
-                    <button class="qr-dropdown-item" data-panel="tm40">TM-40F &mdash; Software Eng</button>
+                    <button class="qr-dropdown-item" data-panel="tm40">TM-40G &mdash; ORSA</button>
+                    <button class="qr-dropdown-item" data-panel="tm40">TM-40H &mdash; AI Engineer</button>
+                    <button class="qr-dropdown-item" data-panel="tm40">TM-40I &mdash; ML Engineer</button>
+                    <button class="qr-dropdown-item" data-panel="tm40">TM-40J &mdash; Program Mgr</button>
+                    <button class="qr-dropdown-item" data-panel="tm40">TM-40K &mdash; Knowledge Mgr</button>
+                    <button class="qr-dropdown-item" data-panel="tm40">TM-40L &mdash; Software Eng</button>
                   </div>
                 </div>
               </td></tr>
               <tr><td>Advanced specialist &mdash; post TM-40 completion</td><td>TM-50 Advanced Track</td><td>
                 <div class="qr-dropdown-wrap">
-                  <button class="qr-link qr-dropdown-btn" data-dropdown="dd-tm50-table" aria-expanded="false">TM-50 &#9662;<span class="qr-dropdown-arrow"></span></button>
+                  <button class="qr-link qr-dropdown-btn" data-dropdown="dd-tm50-table" aria-expanded="false">TM-50 &#9662;</button>
                   <div class="qr-dropdown-menu" id="dd-tm50-table">
                     <div class="qr-dropdown-section">Select Your Track</div>
-                    <button class="qr-dropdown-item" data-panel="tm50">TM-50A &mdash; ORSA Advanced</button>
-                    <button class="qr-dropdown-item" data-panel="tm50">TM-50B &mdash; AI Engineer Advanced</button>
-                    <button class="qr-dropdown-item" data-panel="tm50">TM-50C &mdash; ML Engineer Advanced</button>
-                    <button class="qr-dropdown-item" data-panel="tm50">TM-50D &mdash; Program Mgr Advanced</button>
-                    <button class="qr-dropdown-item" data-panel="tm50">TM-50E &mdash; Knowledge Mgr Advanced</button>
-                    <button class="qr-dropdown-item" data-panel="tm50">TM-50F &mdash; Software Eng Advanced</button>
+                    <button class="qr-dropdown-item" data-panel="tm50">TM-50G &mdash; ORSA Advanced</button>
+                    <button class="qr-dropdown-item" data-panel="tm50">TM-50H &mdash; AI Engineer Advanced</button>
+                    <button class="qr-dropdown-item" data-panel="tm50">TM-50I &mdash; ML Engineer Advanced</button>
+                    <button class="qr-dropdown-item" data-panel="tm50">TM-50J &mdash; Program Mgr Advanced</button>
+                    <button class="qr-dropdown-item" data-panel="tm50">TM-50K &mdash; Knowledge Mgr Advanced</button>
+                    <button class="qr-dropdown-item" data-panel="tm50">TM-50L &mdash; Software Eng Advanced</button>
                   </div>
                 </div>
               </td></tr>
-              <tr><td>O-5 / CSM+ &mdash; directing a data-capable formation</td><td>Data Literacy for Senior Leaders</td><td><button class="qr-link" data-panel="doctrine">Doctrine &rarr;</button></td></tr>
+              <tr><td>O-5 / SGM+ &mdash; directing a data-capable formation</td><td>Data Literacy for Senior Leaders</td><td><button class="qr-link" data-panel="doctrine">Doctrine &rarr;</button></td></tr>
+              <tr><td>All personnel &mdash; foundational data concepts before TM-10</td><td>Data Literacy Technical Reference</td><td><a class="qr-link" href="../pdf/DATA_LITERACY_technical_reference.pdf" target="_blank">PDF &rarr;</a></td></tr>
               <tr><td>Anyone &mdash; unfamiliar term or concept</td><td>Glossary &mdash; Data &amp; Foundry</td><td><button class="qr-link" data-panel="doctrine">Doctrine &rarr;</button></td></tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <!-- TRAINING PATH — span 1 -->
-      <div class="qr-box gold-top">
-        <div class="qr-label">Training Path</div>
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:4px;">
-          <button class="qr-link" data-panel="tm10" style="display:block;background:var(--navy);color:var(--white);padding:10px;border-radius:3px;text-align:left;width:100%;">
-            <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--gold);margin-bottom:3px;">ALL PERSONNEL</div>
-            <div style="font-weight:700;font-size:13px;margin-bottom:2px;color:var(--white);">TM-10</div>
-            <div style="font-size:10px;color:rgba(255,255,255,0.65);">Log in, navigate, view data</div>
-          </button>
-          <button class="qr-link" data-panel="tm20" style="display:block;background:var(--navy-light);color:var(--white);padding:10px;border-radius:3px;text-align:left;width:100%;">
-            <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--gold);margin-bottom:3px;">ALL STAFF</div>
-            <div style="font-weight:700;font-size:13px;margin-bottom:2px;color:var(--white);">TM-20</div>
-            <div style="font-size:10px;color:rgba(255,255,255,0.65);">Build dashboards, no code</div>
-          </button>
-          <button class="qr-link" data-panel="tm30" style="display:block;background:var(--navy-mid);color:var(--white);padding:10px;border-radius:3px;text-align:left;width:100%;">
-            <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--gold);margin-bottom:3px;">DATA-ADJACENT</div>
-            <div style="font-weight:700;font-size:13px;margin-bottom:2px;color:var(--white);">TM-30</div>
-            <div style="font-size:10px;color:rgba(255,255,255,0.65);">Advanced apps, governance</div>
-          </button>
-          <div class="qr-dropdown-wrap" style="width:100%;">
-            <button class="qr-link qr-dropdown-btn" data-dropdown="dd-tm40-tile" aria-expanded="false" style="display:block;background:var(--planned-slate);color:var(--white);padding:10px;border-radius:3px;text-align:left;width:100%;border-bottom:none;">
-              <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--gold);margin-bottom:3px;">SPECIALISTS</div>
-              <div style="font-weight:700;font-size:13px;margin-bottom:2px;color:var(--white);">TM-40 / 50 <span class="qr-dropdown-arrow" style="color:rgba(255,255,255,0.5);font-size:10px;">&#9662;</span></div>
-              <div style="font-size:10px;color:rgba(255,255,255,0.65);">ORSA, AI, ML, PM, KM, SWE</div>
-            </button>
-            <div class="qr-dropdown-menu" id="dd-tm40-tile" style="left:0;right:auto;min-width:190px;">
-              <div class="qr-dropdown-section">TM-40 Tracks</div>
-              <button class="qr-dropdown-item" data-panel="tm40">TM-40A &mdash; ORSA</button>
-              <button class="qr-dropdown-item" data-panel="tm40">TM-40B &mdash; AI Engineer</button>
-              <button class="qr-dropdown-item" data-panel="tm40">TM-40C &mdash; ML Engineer</button>
-              <button class="qr-dropdown-item" data-panel="tm40">TM-40D &mdash; Program Mgr</button>
-              <button class="qr-dropdown-item" data-panel="tm40">TM-40E &mdash; Knowledge Mgr</button>
-              <button class="qr-dropdown-item" data-panel="tm40">TM-40F &mdash; Software Eng</button>
-              <div class="qr-dropdown-section">TM-50 Advanced</div>
-              <button class="qr-dropdown-item" data-panel="tm50">TM-50A &mdash; ORSA Adv.</button>
-              <button class="qr-dropdown-item" data-panel="tm50">TM-50B &mdash; AI Eng. Adv.</button>
-              <button class="qr-dropdown-item" data-panel="tm50">TM-50C &mdash; ML Eng. Adv.</button>
-              <button class="qr-dropdown-item" data-panel="tm50">TM-50D &mdash; PM Adv.</button>
-              <button class="qr-dropdown-item" data-panel="tm50">TM-50E &mdash; KM Adv.</button>
-              <button class="qr-dropdown-item" data-panel="tm50">TM-50F &mdash; SWE Adv.</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- COMMON DAILY TASKS — span 1 -->
+      <!-- COMMON DAILY TASKS — 1 col -->
       <div class="qr-box">
         <div class="qr-label">Common Daily Tasks</div>
         <div class="table-wrap">
           <table>
             <thead><tr><th>Task</th><th>How</th></tr></thead>
             <tbody>
-              <tr><td>Find a record</td><td>Use the search bar or Filter Panel in your app</td></tr>
-              <tr><td>Filter the view</td><td>Select values in the Filter Panel on the left or top of the app</td></tr>
-              <tr><td>Export data</td><td>Look for an <strong>Export</strong> or <strong>Download</strong> button; choose CSV or Excel</td></tr>
-              <tr><td>Submit / update a record</td><td>Click the record &rarr; find the <strong>Action button</strong> or form &rarr; fill in &rarr; Submit</td></tr>
-              <tr><td>Share a view</td><td>Copy the URL from your browser &mdash; filters are included in the link</td></tr>
-              <tr><td>View a chart or metric</td><td>Charts update automatically when you change filters</td></tr>
+              <tr><td>Find a record</td><td>Search bar or Filter Panel</td></tr>
+              <tr><td>Filter the view</td><td>Select values in the Filter Panel</td></tr>
+              <tr><td>Export data</td><td><strong>Export</strong> / <strong>Download</strong> button &rarr; CSV or Excel</td></tr>
+              <tr><td>Submit or update a record</td><td>Click record &rarr; <strong>Action button</strong> &rarr; fill in &rarr; Submit</td></tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <!-- WHAT YOU'LL SEE — span 1 -->
-      <div class="qr-box">
-        <div class="qr-label">What You&rsquo;ll See in a Workshop App</div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Element</th><th>What It Does</th></tr></thead>
-            <tbody>
-              <tr><td><strong>Filter Panel</strong></td><td>Narrows down what you see &mdash; like a search sidebar</td></tr>
-              <tr><td><strong>Object Table</strong></td><td>A list of records (units, personnel, equipment, etc.)</td></tr>
-              <tr><td><strong>Metric Tile</strong></td><td>A single key number &mdash; count, percentage, total</td></tr>
-              <tr><td><strong>Chart</strong></td><td>Bar, line, or pie visualization of your filtered data</td></tr>
-              <tr><td><strong>Map</strong></td><td>Geographic view of records with location data</td></tr>
-              <tr><td><strong>Action Button / Form</strong></td><td>Submits or updates data &mdash; requires write permission</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- SUBMITTING DATA — span 1 -->
-      <div class="qr-box">
-        <div class="qr-label">Submitting or Updating Data</div>
-        <ol>
-          <li>Locate the record in the table or map</li>
-          <li>Click the record to open its detail view</li>
-          <li>Find the <strong>Action button</strong> (e.g. &ldquo;Update Status&rdquo;)</li>
-          <li>Fill in all required fields in the form</li>
-          <li>Review your entries &mdash; <strong>submissions may be audited</strong></li>
-          <li>Click <strong>Submit</strong> &mdash; a confirmation message will appear</li>
-          <li>If the button is greyed out, you need write permission &mdash; contact your data steward</li>
-        </ol>
-      </div>
-
-      <!-- SECURITY — DO NOT — span 1, red -->
-      <div class="qr-box red-top">
+      <!-- SECURITY — 2 cols -->
+      <div class="qr-box red-top qr-span2">
         <div class="qr-label">Security &mdash; Do Not</div>
         <ul>
           <li>Do <strong>not</strong> export data to a personal device or unapproved storage</li>
-          <li>Do <strong>not</strong> share your MSS URL or credentials with anyone</li>
-          <li>Do <strong>not</strong> enter classified information into MSS unless your instance is approved for it</li>
-          <li>Do <strong>not</strong> screenshot or photograph MSS screens without authorization</li>
+          <li>Do <strong>not</strong> share your MSS <strong>credentials</strong> with anyone &mdash; URLs and screenshots are fine unless data is sensitive</li>
+          <li>Do <strong>not</strong> enter classified information into MSS unless your instance is approved for that classification level</li>
+          <li>Do <strong>not</strong> screenshot or share MSS screens containing data above your network&rsquo;s approved classification</li>
           <li>Do <strong>not</strong> use MSS on public or unsecured Wi-Fi</li>
-          <li>If you see data you should not have access to &mdash; <strong>stop and report to your data steward</strong></li>
+          <li>If you see data you should not have access to &mdash; <strong>stop and report to your data steward immediately</strong></li>
         </ul>
       </div>
 
-      <!-- ACCESS CHECKLIST — span 1, slate -->
-      <div class="qr-box slate-top">
-        <div class="qr-label">New User Checklist</div>
-        <ul class="qr-checklist">
-          <li>Account provisioned by unit data steward</li>
-          <li>CAC reader installed and working</li>
-          <li>MSS URL bookmarked in browser</li>
-          <li>Can log in and see the home screen</li>
-          <li>Located your unit&rsquo;s application</li>
-          <li>Know who your data steward is</li>
-          <li>Completed <button class="qr-link" data-panel="tm10">TM-10</button> (required before operating MSS)</li>
-        </ul>
-      </div>
-
-      <!-- WHO TO CONTACT — span 1 -->
-      <div class="qr-box">
-        <div class="qr-label">Who to Contact</div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Problem</th><th>Contact</th></tr></thead>
-            <tbody>
-              <tr><td>Can&rsquo;t log in / no account</td><td>Unit Data Steward</td></tr>
-              <tr><td>Can&rsquo;t see data I should have access to</td><td>Unit Data Steward</td></tr>
-              <tr><td>Data looks wrong or outdated</td><td>Data Steward &rarr; escalate to ODT if needed</td></tr>
-              <tr><td>App is broken / not loading</td><td><button class="qr-link" data-panel="support">Help Desk &rarr;</button></td></tr>
-              <tr><td>Want to build a new app or pipeline</td><td>USAREUR-AF Operational Data Team (ODT)</td></tr>
-              <tr><td>Training question</td><td>Unit training NCO or <button class="qr-link" data-panel="support">ODT &rarr;</button></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- IF SOMETHING DOESN'T WORK — span 3, teal -->
+      <!-- TROUBLESHOOTING + CONTACTS — full width -->
       <div class="qr-box teal-top qr-span3">
-        <div class="qr-label">If Something Doesn&rsquo;t Work</div>
+        <div class="qr-label">When It Breaks</div>
         <div class="qr-broken-grid">
-          <div class="qr-broken-item"><strong>App won&rsquo;t load</strong><br/>Hard-refresh (Ctrl+Shift+R). Clear browser cache. Try a different browser. If still broken, <button class="qr-link" data-panel="support">contact Help Desk &rarr;</button></div>
-          <div class="qr-broken-item"><strong>Can&rsquo;t log in</strong><br/>Check CAC is fully inserted. Try a different port. Confirm your account is provisioned &mdash; contact your data steward if unsure.</div>
-          <div class="qr-broken-item"><strong>Data looks wrong or missing</strong><br/>Check your filters &mdash; an active filter may be hiding records. If data is genuinely wrong, report to your data steward.</div>
-          <div class="qr-broken-item"><strong>Action button is greyed out</strong><br/>You may not have write permission. Contact your data steward to request the correct role.</div>
-          <div class="qr-broken-item"><strong>Export isn&rsquo;t working</strong><br/>Check that pop-ups are allowed for the MSS site. Try a smaller filter set. <button class="qr-link" data-panel="support">Contact Help Desk &rarr;</button> if it persists.</div>
-          <div class="qr-broken-item"><strong>Don&rsquo;t see your unit&rsquo;s app</strong><br/>Ask your data steward for the direct link. You may need to be added to the application&rsquo;s access list.</div>
+          <div class="qr-broken-item"><strong>Can&rsquo;t log in</strong><br/>Check CAC is fully inserted; try a different port. No account? Contact your unit data steward to request provisioning.</div>
+          <div class="qr-broken-item"><strong>App won&rsquo;t load</strong><br/>Hard-refresh (Ctrl+Shift+R). Clear cache. Try a different browser. Still broken &rarr; <button class="qr-link" data-panel="support">Help Desk &rarr;</button></div>
+          <div class="qr-broken-item"><strong>Button greyed out / no access</strong><br/>You&rsquo;re missing a role or write permission. Contact your data steward to request the correct access level.</div>
+        </div>
+        <div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(3,1fr);gap:8px;font-size:11px;color:var(--text-body);">
+          <div><strong style="display:block;margin-bottom:2px;text-transform:uppercase;letter-spacing:.05em;font-size:10px;">Data Steward</strong>Account access &bull; data issues &bull; permission requests</div>
+          <div><strong style="display:block;margin-bottom:2px;text-transform:uppercase;letter-spacing:.05em;font-size:10px;">Help Desk</strong>App broken &bull; won&rsquo;t load &bull; technical errors &rarr; <button class="qr-link" data-panel="support">Support &rarr;</button></div>
+          <div><strong style="display:block;margin-bottom:2px;text-transform:uppercase;letter-spacing:.05em;font-size:10px;">ODT</strong>Training questions &bull; new app or pipeline requests</div>
         </div>
       </div>
 
@@ -3197,6 +3552,11 @@
     <div class="callout bluf">
       <div class="callout-label">BLUF</div>
       <div class="callout-body">Know who to call before you have a problem. Route issues correctly from the start. Collect information before calling for help &mdash; it speeds resolution significantly.</div>
+    </div>
+
+    <div class="callout warning">
+      <div class="callout-label">WARNING &mdash; SECURITY INCIDENTS</div>
+      <div class="callout-body">If you suspect a security violation, report immediately to your supervisor and unit security officer. Do not investigate or resolve it yourself. Preserve the screen state; do not close the window or clear the browser.</div>
     </div>
 
     <h2>CONTACT ROUTING</h2>
@@ -3225,11 +3585,6 @@
       <li>Steps that led to the error in order</li>
       <li>Browser and workstation you are using</li>
     </ul>
-
-    <div class="callout warning">
-      <div class="callout-label">WARNING &mdash; SECURITY INCIDENTS</div>
-      <div class="callout-body">If you suspect a security violation, report immediately to your supervisor and unit security officer. Do not investigate or resolve it yourself. Preserve the screen state; do not close the window or clear the browser.</div>
-    </div>
 
     <h2>PREREQUISITES BEFORE FIRST LOGIN</h2>
     <ol>
@@ -3307,54 +3662,86 @@
       </a>
     </div>
 
-    <h2>Syllabi</h2>
-    <div class="card-grid">
-      <a class="card doc-card" href="../pdf/SYLLABUS_TM10.pdf" target="_blank">
-        <div class="card-label">SYLLABUS</div>
-        <div class="card-title">TM-10 Syllabus</div>
-        <div class="card-body">Maven User — all staff.</div>
-      </a>
-      <a class="card doc-card" href="../pdf/SYLLABUS_TM20.pdf" target="_blank">
-        <div class="card-label">SYLLABUS</div>
-        <div class="card-title">TM-20 Syllabus</div>
-        <div class="card-body">No-Code Builder — all staff.</div>
-      </a>
-      <a class="card doc-card" href="../pdf/SYLLABUS_TM30.pdf" target="_blank">
-        <div class="card-label">SYLLABUS</div>
-        <div class="card-title">TM-30 Syllabus</div>
-        <div class="card-body">Advanced No-Code Builder — data-adjacent MOS.</div>
-      </a>
-      <a class="card doc-card" href="../pdf/SYLLABUS_TM40A.pdf" target="_blank">
-        <div class="card-label">SYLLABUS</div>
-        <div class="card-title">TM-40A Syllabus</div>
-        <div class="card-body">ORSA specialists.</div>
-      </a>
-      <a class="card doc-card" href="../pdf/SYLLABUS_TM40B.pdf" target="_blank">
-        <div class="card-label">SYLLABUS</div>
-        <div class="card-title">TM-40B Syllabus</div>
-        <div class="card-body">AI Engineers.</div>
-      </a>
-      <a class="card doc-card" href="../pdf/SYLLABUS_TM40C.pdf" target="_blank">
-        <div class="card-label">SYLLABUS</div>
-        <div class="card-title">TM-40C Syllabus</div>
-        <div class="card-body">ML Engineers.</div>
-      </a>
-      <a class="card doc-card" href="../pdf/SYLLABUS_TM40D.pdf" target="_blank">
-        <div class="card-label">SYLLABUS</div>
-        <div class="card-title">TM-40D Syllabus</div>
-        <div class="card-body">Program Managers.</div>
-      </a>
-      <a class="card doc-card" href="../pdf/SYLLABUS_TM40E.pdf" target="_blank">
-        <div class="card-label">SYLLABUS</div>
-        <div class="card-title">TM-40E Syllabus</div>
-        <div class="card-body">Knowledge Managers.</div>
-      </a>
-      <a class="card doc-card" href="../pdf/SYLLABUS_TM40F.pdf" target="_blank">
-        <div class="card-label">SYLLABUS</div>
-        <div class="card-title">TM-40F Syllabus</div>
-        <div class="card-body">Software Engineers.</div>
-      </a>
-    </div>
+    <details>
+      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--od-green);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Syllabi (15 documents &mdash; click to expand)</summary>
+      <div class="card-grid" style="margin-top:12px;">
+        <a class="card doc-card" href="../pdf/SYLLABUS_TM10.pdf" target="_blank">
+          <div class="card-label">SYLLABUS</div>
+          <div class="card-title">TM-10 Syllabus</div>
+          <div class="card-body">Maven User — all staff.</div>
+        </a>
+        <a class="card doc-card" href="../pdf/SYLLABUS_TM20.pdf" target="_blank">
+          <div class="card-label">SYLLABUS</div>
+          <div class="card-title">TM-20 Syllabus</div>
+          <div class="card-body">No-Code Builder — all staff.</div>
+        </a>
+        <a class="card doc-card" href="../pdf/SYLLABUS_TM30.pdf" target="_blank">
+          <div class="card-label">SYLLABUS</div>
+          <div class="card-title">TM-30 Syllabus</div>
+          <div class="card-body">Advanced No-Code Builder — data-adjacent MOS.</div>
+        </a>
+        <a class="card doc-card" href="../pdf/SYLLABUS_TM40G.pdf" target="_blank">
+          <div class="card-label">SYLLABUS</div>
+          <div class="card-title">TM-40G Syllabus</div>
+          <div class="card-body">ORSA specialists.</div>
+        </a>
+        <a class="card doc-card" href="../pdf/SYLLABUS_TM40H.pdf" target="_blank">
+          <div class="card-label">SYLLABUS</div>
+          <div class="card-title">TM-40H Syllabus</div>
+          <div class="card-body">AI Engineers.</div>
+        </a>
+        <a class="card doc-card" href="../pdf/SYLLABUS_TM40I.pdf" target="_blank">
+          <div class="card-label">SYLLABUS</div>
+          <div class="card-title">TM-40I Syllabus</div>
+          <div class="card-body">ML Engineers.</div>
+        </a>
+        <a class="card doc-card" href="../pdf/SYLLABUS_TM40J.pdf" target="_blank">
+          <div class="card-label">SYLLABUS</div>
+          <div class="card-title">TM-40J Syllabus</div>
+          <div class="card-body">Program Managers.</div>
+        </a>
+        <a class="card doc-card" href="../pdf/SYLLABUS_TM40K.pdf" target="_blank">
+          <div class="card-label">SYLLABUS</div>
+          <div class="card-title">TM-40K Syllabus</div>
+          <div class="card-body">Knowledge Managers.</div>
+        </a>
+        <a class="card doc-card" href="../pdf/SYLLABUS_TM40L.pdf" target="_blank">
+          <div class="card-label">SYLLABUS</div>
+          <div class="card-title">TM-40L Syllabus</div>
+          <div class="card-body">Software Engineers.</div>
+        </a>
+        <a class="card doc-card" href="../pdf/SYLLABUS_TM40A.pdf" target="_blank">
+          <div class="card-label">SYLLABUS</div>
+          <div class="card-title">TM-40A Syllabus</div>
+          <div class="card-body">Intelligence warfighting function track.</div>
+        </a>
+        <a class="card doc-card" href="../pdf/SYLLABUS_TM40B.pdf" target="_blank">
+          <div class="card-label">SYLLABUS</div>
+          <div class="card-title">TM-40B Syllabus</div>
+          <div class="card-body">Fires warfighting function track.</div>
+        </a>
+        <a class="card doc-card" href="../pdf/SYLLABUS_TM40C.pdf" target="_blank">
+          <div class="card-label">SYLLABUS</div>
+          <div class="card-title">TM-40C Syllabus</div>
+          <div class="card-body">Movement &amp; Maneuver warfighting function track.</div>
+        </a>
+        <a class="card doc-card" href="../pdf/SYLLABUS_TM40D.pdf" target="_blank">
+          <div class="card-label">SYLLABUS</div>
+          <div class="card-title">TM-40D Syllabus</div>
+          <div class="card-body">Sustainment warfighting function track.</div>
+        </a>
+        <a class="card doc-card" href="../pdf/SYLLABUS_TM40E.pdf" target="_blank">
+          <div class="card-label">SYLLABUS</div>
+          <div class="card-title">TM-40E Syllabus</div>
+          <div class="card-body">Protection warfighting function track.</div>
+        </a>
+        <a class="card doc-card" href="../pdf/SYLLABUS_TM40F.pdf" target="_blank">
+          <div class="card-label">SYLLABUS</div>
+          <div class="card-title">TM-40F Syllabus</div>
+          <div class="card-body">Mission Command warfighting function track.</div>
+        </a>
+      </div>
+    </details>
 
     <h2>Technical Manuals — Foundation (All Staff)</h2>
     <div class="card-grid">
@@ -3371,15 +3758,15 @@
       <a class="card gold-top doc-card" href="../pdf/TM_30_ADVANCED_BUILDER.pdf" target="_blank">
         <div class="card-label">TM-30</div>
         <div class="card-title">Advanced No-Code Builder</div>
-        <div class="card-body">Advanced Workshop, complex pipelines, AIP Logic. Data-adjacent MOS (17/25-series, G2/G9).</div>
+        <div class="card-body">Advanced Workshop, complex pipelines, AIP Logic. Data-adjacent MOS (17/25-series, G2).</div>
       </a>
     </div>
 
     <h2>Technical Manuals — Specialist Tracks (TM-40 Series)</h2>
     <div class="track-grid">
-      <a class="track-card doc-card" href="../pdf/TM_40A_ORSA.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_40G_ORSA.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-40A &mdash; ORSA</div>
+          <div class="track-tm">TM-40G &mdash; ORSA</div>
           <div class="track-chip">Specialist</div>
         </div>
         <div class="track-body">
@@ -3392,9 +3779,9 @@
           </ul>
         </div>
       </a>
-      <a class="track-card doc-card" href="../pdf/TM_40B_AI_ENGINEER.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_40H_AI_ENGINEER.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-40B &mdash; AI Engineer</div>
+          <div class="track-tm">TM-40H &mdash; AI Engineer</div>
           <div class="track-chip">Specialist</div>
         </div>
         <div class="track-body">
@@ -3407,9 +3794,9 @@
           </ul>
         </div>
       </a>
-      <a class="track-card doc-card" href="../pdf/TM_40C_ML_ENGINEER.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_40I_ML_ENGINEER.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-40C &mdash; ML Engineer</div>
+          <div class="track-tm">TM-40I &mdash; ML Engineer</div>
           <div class="track-chip">Specialist</div>
         </div>
         <div class="track-body">
@@ -3422,9 +3809,9 @@
           </ul>
         </div>
       </a>
-      <a class="track-card doc-card" href="../pdf/TM_40D_PROGRAM_MANAGER.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_40J_PROGRAM_MANAGER.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-40D &mdash; Program Manager</div>
+          <div class="track-tm">TM-40J &mdash; Program Manager</div>
           <div class="track-chip">Specialist</div>
         </div>
         <div class="track-body">
@@ -3437,9 +3824,9 @@
           </ul>
         </div>
       </a>
-      <a class="track-card doc-card" href="../pdf/TM_40E_KNOWLEDGE_MANAGER.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_40K_KNOWLEDGE_MANAGER.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-40E &mdash; Knowledge Manager</div>
+          <div class="track-tm">TM-40K &mdash; Knowledge Manager</div>
           <div class="track-chip">Specialist</div>
         </div>
         <div class="track-body">
@@ -3452,9 +3839,9 @@
           </ul>
         </div>
       </a>
-      <a class="track-card doc-card" href="../pdf/TM_40F_SOFTWARE_ENGINEER.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_40L_SOFTWARE_ENGINEER.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-40F &mdash; Software Engineer</div>
+          <div class="track-tm">TM-40L &mdash; Software Engineer</div>
           <div class="track-chip">Specialist</div>
         </div>
         <div class="track-body">
@@ -3471,9 +3858,9 @@
 
     <h2>Technical Manuals — Advanced Tracks (TM-50 Series)</h2>
     <div class="track-grid">
-      <a class="track-card doc-card" href="../pdf/TM_50A_ORSA_ADVANCED.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_50G_ORSA_ADVANCED.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-50A &mdash; ORSA Advanced</div>
+          <div class="track-tm">TM-50G &mdash; ORSA Advanced</div>
           <div class="track-chip">Advanced</div>
         </div>
         <div class="track-body">
@@ -3481,9 +3868,9 @@
           <div class="track-audience">Nonlinear programming, stochastic models, ABMS, campaign assessment</div>
         </div>
       </a>
-      <a class="track-card doc-card" href="../pdf/TM_50B_AI_ENGINEER_ADVANCED.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_50H_AI_ENGINEER_ADVANCED.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-50B &mdash; AI Engineer Advanced</div>
+          <div class="track-tm">TM-50H &mdash; AI Engineer Advanced</div>
           <div class="track-chip">Advanced</div>
         </div>
         <div class="track-body">
@@ -3491,9 +3878,9 @@
           <div class="track-audience">Multi-agent orchestration, RAG, red-team assessment, AI observability</div>
         </div>
       </a>
-      <a class="track-card doc-card" href="../pdf/TM_50C_ML_ENGINEER_ADVANCED.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_50I_ML_ENGINEER_ADVANCED.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-50C &mdash; ML Engineer Advanced</div>
+          <div class="track-tm">TM-50I &mdash; ML Engineer Advanced</div>
           <div class="track-chip">Advanced</div>
         </div>
         <div class="track-body">
@@ -3501,9 +3888,9 @@
           <div class="track-audience">AutoML, Transformer fine-tuning, GNNs, federated retraining, adversarial robustness</div>
         </div>
       </a>
-      <a class="track-card doc-card" href="../pdf/TM_50D_PROGRAM_MANAGER_ADVANCED.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_50J_PROGRAM_MANAGER_ADVANCED.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-50D &mdash; PM Advanced</div>
+          <div class="track-tm">TM-50J &mdash; PM Advanced</div>
           <div class="track-chip">Advanced</div>
         </div>
         <div class="track-body">
@@ -3511,9 +3898,9 @@
           <div class="track-audience">PI planning, cross-team governance, GO/SES briefing, Palantir partnership</div>
         </div>
       </a>
-      <a class="track-card doc-card" href="../pdf/TM_50E_KNOWLEDGE_MANAGER_ADVANCED.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_50K_KNOWLEDGE_MANAGER_ADVANCED.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-50E &mdash; KM Advanced</div>
+          <div class="track-tm">TM-50K &mdash; KM Advanced</div>
           <div class="track-chip">Advanced</div>
         </div>
         <div class="track-body">
@@ -3521,9 +3908,9 @@
           <div class="track-audience">Federated KM architecture, NATO integration, STANAG 4778, knowledge graphs</div>
         </div>
       </a>
-      <a class="track-card doc-card" href="../pdf/TM_50F_SOFTWARE_ENGINEER_ADVANCED.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_50L_SOFTWARE_ENGINEER_ADVANCED.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-50F &mdash; SWE Advanced</div>
+          <div class="track-tm">TM-50L &mdash; SWE Advanced</div>
           <div class="track-chip">Advanced</div>
         </div>
         <div class="track-body">
@@ -3531,6 +3918,137 @@
           <div class="track-audience">Scale, multi-tenancy, Kafka, OWASP, SAST, architecture review, platform governance</div>
         </div>
       </a>
+    </div>
+
+    <h2>Warfighting Function Tracks (TM-40A&ndash;F)</h2>
+    <div class="card-grid card-grid-2">
+      <a class="card doc-card" href="../pdf/TM_40A_INTELLIGENCE.pdf" target="_blank">
+        <div class="card-label">TM-40A &mdash; INTELLIGENCE</div>
+        <div class="card-title">Intelligence Warfighting Function</div>
+        <div class="card-body">MSS integration for intelligence operations and data products.</div>
+      </a>
+      <a class="card doc-card" href="../pdf/TM_40B_FIRES.pdf" target="_blank">
+        <div class="card-label">TM-40B &mdash; FIRES</div>
+        <div class="card-title">Fires Warfighting Function</div>
+        <div class="card-body">MSS integration for fires coordination and targeting data.</div>
+      </a>
+      <a class="card doc-card" href="../pdf/TM_40C_MOVEMENT_MANEUVER.pdf" target="_blank">
+        <div class="card-label">TM-40C &mdash; MOVEMENT &amp; MANEUVER</div>
+        <div class="card-title">Movement &amp; Maneuver WFF</div>
+        <div class="card-body">MSS integration for maneuver and mobility data products.</div>
+      </a>
+      <a class="card doc-card" href="../pdf/TM_40D_SUSTAINMENT.pdf" target="_blank">
+        <div class="card-label">TM-40D &mdash; SUSTAINMENT</div>
+        <div class="card-title">Sustainment Warfighting Function</div>
+        <div class="card-body">MSS integration for logistics and sustainment data.</div>
+      </a>
+      <a class="card doc-card" href="../pdf/TM_40E_PROTECTION.pdf" target="_blank">
+        <div class="card-label">TM-40E &mdash; PROTECTION</div>
+        <div class="card-title">Protection Warfighting Function</div>
+        <div class="card-body">MSS integration for force protection data and reporting.</div>
+      </a>
+      <a class="card doc-card" href="../pdf/TM_40F_MISSION_COMMAND.pdf" target="_blank">
+        <div class="card-label">TM-40F &mdash; MISSION COMMAND</div>
+        <div class="card-title">Mission Command WFF</div>
+        <div class="card-body">MSS integration for mission command, C2, and operational reporting.</div>
+      </a>
+    </div>
+
+    <h2>Concepts Guides</h2>
+    <div class="track-grid">
+      <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM40G_ORSA.pdf" target="_blank">
+        <div class="track-card-hdr"><div class="track-tm">TM-40G Concepts Guide</div><div class="track-chip">ORSA</div></div>
+        <div class="track-body"><div class="track-audience">Key concepts and terminology for the ORSA specialist track.</div></div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM40H_AI_ENGINEER.pdf" target="_blank">
+        <div class="track-card-hdr"><div class="track-tm">TM-40H Concepts Guide</div><div class="track-chip">AI Engineer</div></div>
+        <div class="track-body"><div class="track-audience">Key concepts and terminology for the AI Engineer track.</div></div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM40I_ML_ENGINEER.pdf" target="_blank">
+        <div class="track-card-hdr"><div class="track-tm">TM-40I Concepts Guide</div><div class="track-chip">ML Engineer</div></div>
+        <div class="track-body"><div class="track-audience">Key concepts and terminology for the ML Engineer track.</div></div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM40J_PROGRAM_MANAGER.pdf" target="_blank">
+        <div class="track-card-hdr"><div class="track-tm">TM-40J Concepts Guide</div><div class="track-chip">Program Mgr</div></div>
+        <div class="track-body"><div class="track-audience">Key concepts and terminology for the Program Manager track.</div></div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM40K_KNOWLEDGE_MANAGER.pdf" target="_blank">
+        <div class="track-card-hdr"><div class="track-tm">TM-40K Concepts Guide</div><div class="track-chip">Knowledge Mgr</div></div>
+        <div class="track-body"><div class="track-audience">Key concepts and terminology for the Knowledge Manager track.</div></div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM40L_SOFTWARE_ENGINEER.pdf" target="_blank">
+        <div class="track-card-hdr"><div class="track-tm">TM-40L Concepts Guide</div><div class="track-chip">Software Eng</div></div>
+        <div class="track-body"><div class="track-audience">Key concepts and terminology for the Software Engineer track.</div></div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM50G_ORSA_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr"><div class="track-tm">TM-50G Concepts Guide</div><div class="track-chip">ORSA Adv</div></div>
+        <div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50G.</div></div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM50H_AI_ENGINEER_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr"><div class="track-tm">TM-50H Concepts Guide</div><div class="track-chip">AI Eng Adv</div></div>
+        <div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50H.</div></div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM50I_ML_ENGINEER_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr"><div class="track-tm">TM-50I Concepts Guide</div><div class="track-chip">MLE Adv</div></div>
+        <div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50I.</div></div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM50J_PROGRAM_MANAGER_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr"><div class="track-tm">TM-50J Concepts Guide</div><div class="track-chip">PM Adv</div></div>
+        <div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50J.</div></div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM50K_KNOWLEDGE_MANAGER_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr"><div class="track-tm">TM-50K Concepts Guide</div><div class="track-chip">KM Adv</div></div>
+        <div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50K.</div></div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM50L_SOFTWARE_ENGINEER_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr"><div class="track-tm">TM-50L Concepts Guide</div><div class="track-chip">SWE Adv</div></div>
+        <div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50L.</div></div>
+      </a>
+    </div>
+
+    <h2>Practical Exercises &amp; Assessments</h2>
+    <div class="card-grid">
+      <a class="card doc-card" href="../pdf/EX_10_OPERATOR_BASICS.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-10 Practical Exercise</div><div class="card-body">Operator basics — hands-on exercise.</div></a>
+      <a class="card doc-card" href="../pdf/EX_20_NO_CODE_BUILDER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-20 Practical Exercise</div><div class="card-body">No-code builder — hands-on exercise.</div></a>
+      <a class="card doc-card" href="../pdf/EX_30_ADVANCED_BUILDER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-30 Practical Exercise</div><div class="card-body">Advanced builder — hands-on exercise.</div></a>
+      <a class="card doc-card" href="../pdf/EX_40G_ORSA.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-40G Exercise (ORSA)</div><div class="card-body">ORSA specialist practical exercise.</div></a>
+      <a class="card doc-card" href="../pdf/EX_40H_AI_ENGINEER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-40H Exercise (AI Eng)</div><div class="card-body">AI Engineer practical exercise.</div></a>
+      <a class="card doc-card" href="../pdf/EX_40I_ML_ENGINEER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-40I Exercise (ML Eng)</div><div class="card-body">ML Engineer practical exercise.</div></a>
+      <a class="card doc-card" href="../pdf/EX_40J_PROGRAM_MANAGER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-40J Exercise (PM)</div><div class="card-body">Program Manager practical exercise.</div></a>
+      <a class="card doc-card" href="../pdf/EX_40K_KNOWLEDGE_MANAGER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-40K Exercise (KM)</div><div class="card-body">Knowledge Manager practical exercise.</div></a>
+      <a class="card doc-card" href="../pdf/EX_40L_SOFTWARE_ENGINEER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-40L Exercise (SWE)</div><div class="card-body">Software Engineer practical exercise.</div></a>
+    </div>
+
+    <h2>Administrative &amp; Institutional Documents</h2>
+    <div class="card-grid card-grid-2">
+      <a class="card doc-card" href="../pdf/POI_MSS.pdf" target="_blank"><div class="card-label">POI</div><div class="card-title">Program of Instruction</div><div class="card-body">MSS curriculum Program of Instruction.</div></a>
+      <a class="card doc-card" href="../pdf/TEO_MSS.pdf" target="_blank"><div class="card-label">TEO</div><div class="card-title">Training &amp; Evaluation Outline</div><div class="card-body">MSS training and evaluation outline.</div></a>
+      <a class="card doc-card" href="../pdf/ENROLLMENT_SOP.pdf" target="_blank"><div class="card-label">SOP</div><div class="card-title">Enrollment SOP</div><div class="card-body">Standard operating procedure for course enrollment.</div></a>
+      <a class="card doc-card" href="../pdf/CURRICULUM_MAINTENANCE_SOP.pdf" target="_blank"><div class="card-label">SOP</div><div class="card-title">Curriculum Maintenance SOP</div><div class="card-body">Procedures for maintaining and updating curriculum.</div></a>
+      <a class="card doc-card" href="../pdf/ANNUAL_TRAINING_SCHEDULE.pdf" target="_blank"><div class="card-label">SCHEDULE</div><div class="card-title">Annual Training Schedule</div><div class="card-body">Full-year MSS training schedule.</div></a>
+      <a class="card doc-card" href="../pdf/POLICY_LETTER.pdf" target="_blank"><div class="card-label">POLICY</div><div class="card-title">Policy Letter</div><div class="card-body">Command policy letter governing MSS training.</div></a>
+      <a class="card doc-card" href="../pdf/COMPLETION_CERTIFICATE.pdf" target="_blank"><div class="card-label">TEMPLATE</div><div class="card-title">Completion Certificate</div><div class="card-body">Course completion certificate template.</div></a>
+      <a class="card doc-card" href="../pdf/AAR_TEMPLATE.pdf" target="_blank"><div class="card-label">TEMPLATE</div><div class="card-title">AAR Template</div><div class="card-body">After Action Review template for training events.</div></a>
+      <a class="card doc-card" href="../pdf/FACULTY_DEVELOPMENT_PLAN.pdf" target="_blank"><div class="card-label">PLAN</div><div class="card-title">Faculty Development Plan</div><div class="card-body">Instructor and facilitator development plan.</div></a>
+      <a class="card doc-card" href="../pdf/CAD_MSS.pdf" target="_blank"><div class="card-label">CAD</div><div class="card-title">Course Administrative Data</div><div class="card-body">Course administrative data sheet.</div></a>
+    </div>
+
+    <h2>Lesson Plans</h2>
+    <div class="card-grid card-grid-2">
+      <a class="card doc-card" href="../pdf/TM10_LESSON_PLANS.pdf" target="_blank"><div class="card-label">LESSON PLAN</div><div class="card-title">TM-10 Lesson Plans</div><div class="card-body">Instructor lesson plans for TM-10 Maven User.</div></a>
+      <a class="card doc-card" href="../pdf/TM20_LESSON_PLAN_OUTLINES.pdf" target="_blank"><div class="card-label">LESSON PLAN</div><div class="card-title">TM-20 Lesson Plan Outlines</div><div class="card-body">Instructor lesson plan outlines for TM-20 Builder.</div></a>
+      <a class="card doc-card" href="../pdf/TM30_LESSON_PLAN_OUTLINES.pdf" target="_blank"><div class="card-label">LESSON PLAN</div><div class="card-title">TM-30 Lesson Plan Outlines</div><div class="card-body">Instructor lesson plan outlines for TM-30 Advanced Builder.</div></a>
+      <a class="card doc-card" href="../pdf/TM40_SPECIALIST_LESSON_PLAN_OUTLINES.pdf" target="_blank"><div class="card-label">LESSON PLAN</div><div class="card-title">TM-40 Specialist Lesson Plans</div><div class="card-body">Instructor lesson plan outlines for all TM-40 specialist tracks.</div></a>
+      <a class="card doc-card" href="../pdf/LP_TEMPLATE.pdf" target="_blank"><div class="card-label">TEMPLATE</div><div class="card-title">Lesson Plan Template</div><div class="card-body">Blank lesson plan template for course development.</div></a>
+    </div>
+
+    <div class="callout note mt-24">
+      <div class="callout-label">NOT FINDING WHAT YOU NEED?</div>
+      <div class="callout-body">
+        Contact your unit data steward for additional publications, source files, or access to restricted materials.
+        For technical support, visit the <button class="qr-link" onclick="showPanel('support')">Support page &rarr;</button>
+        For task-level procedures, use the <button class="qr-link" onclick="showPanel('taskindex')">Task Index &rarr;</button>
+      </div>
     </div>
 
   </div><!-- /panel-documents -->
@@ -3556,6 +4074,28 @@
 
   </div><!-- /panel-taskindex -->
 
+
+  <!-- ======================================================
+       TRAINING SCHEDULE PANEL
+  ====================================================== -->
+  <div id="panel-schedule" class="panel">
+
+    <div class="section-header">
+      <div class="section-badge">SCHEDULE</div>
+      <div class="section-title">Upcoming Training &mdash; TM-10 / TM-20 / TM-30</div>
+      <div class="section-subtitle">Foundation courses &bull; Contact POC to enroll</div>
+    </div>
+
+    <iframe
+      id="schedule-frame"
+      src="training_schedule.html"
+      style="width:100%; height:860px; border:none; border-radius:3px;"
+      title="MSS Training Schedule"
+      loading="lazy">
+    </iframe>
+
+  </div><!-- /panel-schedule -->
+
 </main>
 
 </div><!-- /content-area -->
@@ -3568,7 +4108,7 @@
 <footer>
   <strong>HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA</strong><br/>
   USAREUR-AF OPERATIONAL DATA TEAM &nbsp;&bull;&nbsp;
-  TM-10 &bull; TM-20 &bull; TM-30 &bull; TM-40A&ndash;F &bull; TM-50A&ndash;F &bull; Data Lit (SL) &bull; Data Literacy<br/>
+  TM-10 &bull; TM-20 &bull; TM-30 &bull; TM-40A&ndash;L &bull; TM-50G&ndash;L &bull; Data Lit (SL) &bull; Data Literacy<br/>
   VERSION 3.1 &mdash; MARCH 2026 &mdash; DIST: APPROVED FOR PUBLIC RELEASE &mdash; DISTRIBUTION UNLIMITED
 </footer>
 
@@ -3741,8 +4281,19 @@
         var wasOpen = menu.classList.contains('open');
         closeAllDropdowns();
         if (!wasOpen) {
+          var rect = this.getBoundingClientRect();
+          menu.style.top = (rect.bottom + 4) + 'px';
+          menu.style.left = rect.left + 'px';
           menu.classList.add('open');
           this.setAttribute('aria-expanded', 'true');
+          /* Clamp to viewport after display */
+          requestAnimationFrame(function() {
+            var mRect = menu.getBoundingClientRect();
+            if (mRect.right > window.innerWidth - 8) {
+              menu.style.left = (window.innerWidth - mRect.width - 8) + 'px';
+            }
+            if (mRect.left < 8) { menu.style.left = '8px'; }
+          });
         }
       });
     });

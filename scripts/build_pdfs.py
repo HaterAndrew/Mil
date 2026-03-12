@@ -9,25 +9,45 @@ Output: maven_training/pdf/
 """
 
 import base64
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime
+import hashlib
 import json
 import os
 import re
-import socket
 import subprocess
 import sys
 import tempfile
 import time
-import urllib.request
 
 import markdown
-import websocket
 from pathlib import Path
+
+# Local modules extracted for maintainability
+from chrome_cdp import html_file_to_pdf
+from publication_css import PAGE_CSS
 
 # ── Config ────────────────────────────────────────────────────────────────────
 REPO_ROOT = Path(__file__).parent.parent
 OUT_DIR   = REPO_ROOT / "maven_training" / "pdf"
-CHROME    = "google-chrome"
-PUB_DATE  = "11 MARCH 2026"
+
+
+def _find_chrome() -> str:
+    """Return the path to a Chrome/Chromium binary, or raise RuntimeError."""
+    import shutil
+    candidates = ["google-chrome", "google-chrome-stable", "chromium-browser", "chromium"]
+    for name in candidates:
+        path = shutil.which(name)
+        if path:
+            return path
+    raise RuntimeError(
+        "No Chrome/Chromium binary found. Install google-chrome or chromium-browser "
+        "and ensure it is on PATH before running this script."
+    )
+
+
+CHROME = _find_chrome()
+PUB_DATE  = datetime.utcnow().strftime("%-d %B %Y").upper()
 HQ_LINES  = [
     "HEADQUARTERS",
     "UNITED STATES ARMY EUROPE AND AFRICA",
@@ -41,18 +61,27 @@ PUB_TYPES = {
     "TM_10":        ("TECHNICAL MANUAL",                    "TM-10"),
     "TM_20":        ("TECHNICAL MANUAL",                    "TM-20"),
     "TM_30":        ("TECHNICAL MANUAL",                    "TM-30"),
+    # WFF tracks (A–F, operational)
     "TM_40A":       ("TECHNICAL MANUAL",                    "TM-40A"),
     "TM_40B":       ("TECHNICAL MANUAL",                    "TM-40B"),
     "TM_40C":       ("TECHNICAL MANUAL",                    "TM-40C"),
     "TM_40D":       ("TECHNICAL MANUAL",                    "TM-40D"),
     "TM_40E":       ("TECHNICAL MANUAL",                    "TM-40E"),
     "TM_40F":       ("TECHNICAL MANUAL",                    "TM-40F"),
-    "TM_50A":       ("TECHNICAL MANUAL",                    "TM-50A"),
-    "TM_50B":       ("TECHNICAL MANUAL",                    "TM-50B"),
-    "TM_50C":       ("TECHNICAL MANUAL",                    "TM-50C"),
-    "TM_50D":       ("TECHNICAL MANUAL",                    "TM-50D"),
-    "TM_50E":       ("TECHNICAL MANUAL",                    "TM-50E"),
-    "TM_50F":       ("TECHNICAL MANUAL",                    "TM-50F"),
+    # Technical specialist tracks (G–L)
+    "TM_40G":       ("TECHNICAL MANUAL",                    "TM-40G"),
+    "TM_40H":       ("TECHNICAL MANUAL",                    "TM-40H"),
+    "TM_40I":       ("TECHNICAL MANUAL",                    "TM-40I"),
+    "TM_40J":       ("TECHNICAL MANUAL",                    "TM-40J"),
+    "TM_40K":       ("TECHNICAL MANUAL",                    "TM-40K"),
+    "TM_40L":       ("TECHNICAL MANUAL",                    "TM-40L"),
+    # Technical specialist advanced tracks (50G–L)
+    "TM_50G":       ("TECHNICAL MANUAL",                    "TM-50G"),
+    "TM_50H":       ("TECHNICAL MANUAL",                    "TM-50H"),
+    "TM_50I":       ("TECHNICAL MANUAL",                    "TM-50I"),
+    "TM_50J":       ("TECHNICAL MANUAL",                    "TM-50J"),
+    "TM_50K":       ("TECHNICAL MANUAL",                    "TM-50K"),
+    "TM_50L":       ("TECHNICAL MANUAL",                    "TM-50L"),
     "ADP":               ("ARMY DOCTRINE PUBLICATION",           "ADP 1"),
     "ADRP":              ("ARMY DOCTRINE REFERENCE PUBLICATION", "ADRP 1"),
     "DATA_LITERACY_S":   ("DATA LITERACY",                       "ADRP-SL"),   # senior leaders
@@ -79,21 +108,27 @@ PUB_TYPES = {
     "CONCEPTS_GUIDE_TM40D": ("CONCEPTS GUIDE",                   "TM-40D"),
     "CONCEPTS_GUIDE_TM40E": ("CONCEPTS GUIDE",                   "TM-40E"),
     "CONCEPTS_GUIDE_TM40F": ("CONCEPTS GUIDE",                   "TM-40F"),
-    "CONCEPTS_GUIDE_TM50A": ("CONCEPTS GUIDE",                   "TM-50A"),
-    "CONCEPTS_GUIDE_TM50B": ("CONCEPTS GUIDE",                   "TM-50B"),
-    "CONCEPTS_GUIDE_TM50C": ("CONCEPTS GUIDE",                   "TM-50C"),
-    "CONCEPTS_GUIDE_TM50D": ("CONCEPTS GUIDE",                   "TM-50D"),
-    "CONCEPTS_GUIDE_TM50E": ("CONCEPTS GUIDE",                   "TM-50E"),
-    "CONCEPTS_GUIDE_TM50F": ("CONCEPTS GUIDE",                   "TM-50F"),
+    "CONCEPTS_GUIDE_TM40G": ("CONCEPTS GUIDE",                   "TM-40G"),
+    "CONCEPTS_GUIDE_TM40H": ("CONCEPTS GUIDE",                   "TM-40H"),
+    "CONCEPTS_GUIDE_TM40I": ("CONCEPTS GUIDE",                   "TM-40I"),
+    "CONCEPTS_GUIDE_TM40J": ("CONCEPTS GUIDE",                   "TM-40J"),
+    "CONCEPTS_GUIDE_TM40K": ("CONCEPTS GUIDE",                   "TM-40K"),
+    "CONCEPTS_GUIDE_TM40L": ("CONCEPTS GUIDE",                   "TM-40L"),
+    "CONCEPTS_GUIDE_TM50G": ("CONCEPTS GUIDE",                   "TM-50G"),
+    "CONCEPTS_GUIDE_TM50H": ("CONCEPTS GUIDE",                   "TM-50H"),
+    "CONCEPTS_GUIDE_TM50I": ("CONCEPTS GUIDE",                   "TM-50I"),
+    "CONCEPTS_GUIDE_TM50J": ("CONCEPTS GUIDE",                   "TM-50J"),
+    "CONCEPTS_GUIDE_TM50K": ("CONCEPTS GUIDE",                   "TM-50K"),
+    "CONCEPTS_GUIDE_TM50L": ("CONCEPTS GUIDE",                   "TM-50L"),
     "SYLLABUS_TM10":     ("COURSE SYLLABUS",                     "TM-10"),
     "SYLLABUS_TM20":     ("COURSE SYLLABUS",                     "TM-20"),
     "SYLLABUS_TM30":     ("COURSE SYLLABUS",                     "TM-30"),
-    "SYLLABUS_TM40A":    ("COURSE SYLLABUS",                     "TM-40A"),
-    "SYLLABUS_TM40B":    ("COURSE SYLLABUS",                     "TM-40B"),
-    "SYLLABUS_TM40C":    ("COURSE SYLLABUS",                     "TM-40C"),
-    "SYLLABUS_TM40D":    ("COURSE SYLLABUS",                     "TM-40D"),
-    "SYLLABUS_TM40E":    ("COURSE SYLLABUS",                     "TM-40E"),
-    "SYLLABUS_TM40F":    ("COURSE SYLLABUS",                     "TM-40F"),
+    "SYLLABUS_TM40G":    ("COURSE SYLLABUS",                     "TM-40G"),
+    "SYLLABUS_TM40H":    ("COURSE SYLLABUS",                     "TM-40H"),
+    "SYLLABUS_TM40I":    ("COURSE SYLLABUS",                     "TM-40I"),
+    "SYLLABUS_TM40J":    ("COURSE SYLLABUS",                     "TM-40J"),
+    "SYLLABUS_TM40K":    ("COURSE SYLLABUS",                     "TM-40K"),
+    "SYLLABUS_TM40L":    ("COURSE SYLLABUS",                     "TM-40L"),
     "CHEAT":             ("QUICK REFERENCE CARD",                "MSS-QRC"),
     "README":            ("CURRICULUM INDEX",                    "MSS-IDX"),
     "QUICK_START":       ("QUICK START GUIDE",                   "MSS-QS"),
@@ -102,12 +137,12 @@ PUB_TYPES = {
     "EX_10":             ("PRACTICAL EXERCISE",                  "EX-10"),
     "EX_20":             ("PRACTICAL EXERCISE",                  "EX-20"),
     "EX_30":             ("PRACTICAL EXERCISE",                  "EX-30"),
-    "EX_40A":            ("PRACTICAL EXERCISE",                  "EX-40A"),
-    "EX_40B":            ("PRACTICAL EXERCISE",                  "EX-40B"),
-    "EX_40C":            ("PRACTICAL EXERCISE",                  "EX-40C"),
-    "EX_40D":            ("PRACTICAL EXERCISE",                  "EX-40D"),
-    "EX_40E":            ("PRACTICAL EXERCISE",                  "EX-40E"),
-    "EX_40F":            ("PRACTICAL EXERCISE",                  "EX-40F"),
+    "EX_40G":            ("PRACTICAL EXERCISE",                  "EX-40G"),
+    "EX_40H":            ("PRACTICAL EXERCISE",                  "EX-40H"),
+    "EX_40I":            ("PRACTICAL EXERCISE",                  "EX-40I"),
+    "EX_40J":            ("PRACTICAL EXERCISE",                  "EX-40J"),
+    "EX_40K":            ("PRACTICAL EXERCISE",                  "EX-40K"),
+    "EX_40L":            ("PRACTICAL EXERCISE",                  "EX-40L"),
 }
 
 def get_pub_meta(stem: str):
@@ -173,368 +208,8 @@ FOOTER_TEMPLATE = (
 )
 
 
-# ── Page CSS ──────────────────────────────────────────────────────────────────
-PAGE_CSS = """
-/* ================================================================
-   USAREUR-AF MAVEN PUBLICATION STYLESHEET
-   Army doctrine look + USAREUR-AF command colors (all Arial)
-   ================================================================ */
+# PAGE_CSS imported from publication_css.py (see top of file)
 
-:root {
-  --navy:      #0C2340;
-  --navy-dark: #071628;
-  --navy-mid:  #163A6C;
-  --gold:      #C8971A;
-  --gold-lt:   #E0B840;
-  --gold-pale: #FDF5DC;
-  --text:      #111827;
-  --gray-50:   #F8F9FC;
-  --gray-100:  #E5E8F0;
-  --gray-300:  #B0B8D0;
-  --gray-500:  #6B7898;
-  --warn-bg:   #FFF8E1;
-  --warn-brd:  #C8971A;
-  --caut-bg:   #FFF3E0;
-  --caut-brd:  #C84000;
-  --note-bg:   #E8EEF8;
-  --note-brd:  #163A6C;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-/* ── Diagonal DRAFT watermark on every page ───────────────────── */
-body::before {
-  content: "DRAFT";
-  position: fixed;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-40deg);
-  font-family: Arial, sans-serif;
-  font-size: 100pt;
-  font-weight: bold;
-  color: rgba(200, 151, 26, 0.09);
-  letter-spacing: 0.3em;
-  pointer-events: none;
-  z-index: 0;
-  white-space: nowrap;
-}
-
-/* ── Body ────────────────────────────────────────────────────── */
-body {
-  font-family: Arial, 'Helvetica Neue', sans-serif;
-  font-size: 10.5pt;
-  line-height: 1.65;
-  color: var(--text);
-  background: white;
-}
-
-/* ── Cover page ──────────────────────────────────────────────── */
-.cover {
-  page-break-after: always;
-  min-height: 8.5in;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 0.6in 0.3in;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-.cover-topbar {
-  width: calc(100% + 1.2in);
-  margin-left: -0.6in;
-  background: #7A3800;
-  padding: 0.1in 0.4in;
-  margin-bottom: 0.4in;
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
-}
-.cover-topbar p {
-  color: #FFD080;
-  font-family: Arial, sans-serif;
-  font-size: 9.5pt;
-  font-weight: bold;
-  letter-spacing: 0.18em;
-  text-align: center;
-}
-.cover-pub-type {
-  font-size: 10pt;
-  font-weight: bold;
-  letter-spacing: 0.2em;
-  color: var(--gray-500);
-  text-transform: uppercase;
-  margin-bottom: 0.06in;
-}
-.cover-pub-number {
-  font-size: 24pt;
-  font-weight: bold;
-  color: var(--navy);
-  letter-spacing: 0.05em;
-  margin-bottom: 0.25in;
-}
-/* Decorative seal ring */
-.cover-seal {
-  width: 1.5in;
-  height: 1.5in;
-  border: 3px solid var(--navy);
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0.1in auto 0.3in;
-  background: white;
-  box-shadow: 0 0 0 7px var(--gold), 0 0 0 11px var(--navy);
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
-}
-.cover-seal-star {
-  font-size: 38pt;
-  color: var(--navy);
-  line-height: 1;
-}
-.cover-seal-text {
-  font-size: 5.5pt;
-  font-weight: bold;
-  letter-spacing: 0.1em;
-  color: var(--navy-mid);
-  text-transform: uppercase;
-  margin-top: 2px;
-}
-.cover-title {
-  font-size: 17pt;
-  font-weight: bold;
-  color: var(--navy);
-  line-height: 1.25;
-  margin: 0.12in 0 0.08in;
-  border-top: 3px solid var(--gold);
-  border-bottom: 3px solid var(--gold);
-  padding: 0.12in 0;
-  width: 100%;
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
-}
-.cover-subtitle {
-  font-size: 11pt;
-  color: var(--navy-mid);
-  margin-bottom: 0.3in;
-  font-style: italic;
-}
-.cover-spacer { flex: 1; }
-.cover-hq {
-  font-size: 9.5pt;
-  line-height: 1.8;
-  color: var(--navy);
-}
-.cover-dist {
-  font-size: 7.5pt;
-  color: var(--gray-500);
-  margin: 0.1in 0 0.15in;
-  letter-spacing: 0.04em;
-}
-.cover-date {
-  font-size: 10pt;
-  font-weight: bold;
-  color: var(--navy-mid);
-  margin-bottom: 0.2in;
-}
-.cover-bottombar {
-  width: calc(100% + 1.2in);
-  margin-left: -0.6in;
-  background: #7A3800;
-  padding: 0.1in 0.4in;
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
-}
-.cover-bottombar p {
-  color: #FFD080;
-  font-size: 9.5pt;
-  font-weight: bold;
-  letter-spacing: 0.18em;
-  text-align: center;
-}
-
-/* ── Body content wrapper ────────────────────────────────────── */
-.body-content { padding-top: 0.25in; }
-
-/* ── Headings ────────────────────────────────────────────────── */
-h1 {
-  font-size: 17pt;
-  font-weight: bold;
-  color: var(--navy);
-  border-bottom: 3px solid var(--gold);
-  padding-top: 0.35in;
-  padding-bottom: 0.09in;
-  margin: 0 0 0.18in;
-  page-break-after: avoid;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
-}
-h2 {
-  font-size: 13pt;
-  font-weight: bold;
-  color: white;
-  background: var(--navy);
-  background-clip: padding-box;
-  border-left: 5px solid var(--gold);
-  border-top: 0.25in solid transparent;
-  padding: 0.07in 0.12in;
-  margin: 0.12in 0 0.12in;
-  page-break-after: avoid;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
-}
-h3 {
-  font-size: 11pt;
-  font-weight: bold;
-  color: var(--navy-mid);
-  border-bottom: 1.5px solid var(--gray-100);
-  padding-bottom: 0.04in;
-  margin: 0.28in 0 0.1in;
-  page-break-after: avoid;
-}
-h4 {
-  font-size: 10.5pt;
-  font-weight: bold;
-  color: var(--navy-mid);
-  margin: 0.2in 0 0.07in;
-  page-break-after: avoid;
-}
-h5, h6 {
-  font-size: 10pt;
-  font-weight: bold;
-  color: var(--gray-500);
-  margin: 0.15in 0 0.05in;
-  page-break-after: avoid;
-}
-
-/* ── Paragraphs ──────────────────────────────────────────────── */
-p { margin: 0.07in 0; orphans: 3; widows: 3; }
-
-/* ── Lists ───────────────────────────────────────────────────── */
-ul, ol { padding-left: 1.4em; margin: 0.05in 0; }
-li { margin: 0.04in 0; }
-
-/* ── Links ───────────────────────────────────────────────────── */
-a { color: var(--navy-mid); }
-
-/* ── Horizontal rule ─────────────────────────────────────────── */
-hr {
-  border: none;
-  border-top: 2px solid var(--gold);
-  margin: 0.22in 0;
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
-}
-
-/* ── Tables ──────────────────────────────────────────────────── */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  font-size: 9.5pt;
-  margin: 0.12in 0;
-  page-break-inside: avoid;
-}
-thead tr th {
-  background: var(--navy);
-  color: white;
-  font-size: 9pt;
-  font-weight: bold;
-  padding: 6px 10px;
-  text-align: left;
-  letter-spacing: 0.02em;
-  border: 1px solid var(--navy-dark);
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
-}
-tbody tr td {
-  padding: 5px 10px;
-  border: 1px solid var(--gray-100);
-  vertical-align: top;
-  word-break: break-word;
-  overflow-wrap: break-word;
-}
-tbody tr:nth-child(even) td {
-  background: var(--gray-50);
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
-}
-
-/* ── Code ────────────────────────────────────────────────────── */
-code {
-  font-family: 'Courier New', 'Lucida Console', monospace;
-  font-size: 9pt;
-  background: var(--gray-50);
-  border: 1px solid var(--gray-100);
-  padding: 1px 4px;
-  border-radius: 2px;
-  color: #1a237e;
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
-}
-pre {
-  background: #F3F5FA;
-  border-left: 4px solid var(--navy-mid);
-  padding: 0.1in 0.15in;
-  font-size: 8pt;
-  line-height: 1.4;
-  white-space: pre-wrap;
-  word-break: break-word;
-  overflow-wrap: anywhere;
-  page-break-inside: avoid;
-  margin: 0.1in 0;
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
-}
-pre code { background: none; border: none; padding: 0; }
-
-/* ── WARNING / CAUTION / NOTE callout boxes ──────────────────── */
-.callout-warning {
-  border: 2px solid var(--warn-brd);
-  background: var(--warn-bg);
-  margin: 0.1in 0;
-  padding: 0.08in 0.15in;
-  page-break-inside: avoid;
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
-}
-.callout-caution {
-  border: 2px solid var(--caut-brd);
-  background: var(--caut-bg);
-  margin: 0.1in 0;
-  padding: 0.08in 0.15in;
-  page-break-inside: avoid;
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
-}
-.callout-note {
-  border: 2px solid var(--note-brd);
-  background: var(--note-bg);
-  margin: 0.1in 0;
-  padding: 0.08in 0.15in;
-  page-break-inside: avoid;
-  -webkit-print-color-adjust: exact;
-  color-adjust: exact;
-}
-.callout-label {
-  font-size: 9pt;
-  font-weight: bold;
-  letter-spacing: 0.12em;
-  text-align: center;
-  display: block;
-  margin-bottom: 4px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid currentColor;
-}
-.callout-warning .callout-label { color: #7A4000; border-color: var(--warn-brd); }
-.callout-caution .callout-label { color: #8B2000; border-color: var(--caut-brd); }
-.callout-note    .callout-label { color: var(--navy-mid); border-color: var(--note-brd); }
-.callout-body { font-size: 10pt; }
-"""
 
 # ── Callout box post-processing (JS) ─────────────────────────────────────────
 CALLOUT_JS = """
@@ -665,123 +340,7 @@ def md_to_body_html(md_path: Path):
     return body, title, subtitle
 
 
-# ── Chrome CDP printer ────────────────────────────────────────────────────────
-def _free_port():
-    with socket.socket() as s:
-        s.bind(("", 0))
-        return s.getsockname()[1]
-
-
-def _wait_for_browser_ws(port: int, retries: int = 20) -> str:
-    """Return the browser-level WebSocket URL from /json/version."""
-    for _ in range(retries):
-        try:
-            data = json.loads(
-                urllib.request.urlopen(f"http://localhost:{port}/json/version", timeout=2).read()
-            )
-            return data["webSocketDebuggerUrl"]
-        except Exception:
-            time.sleep(0.4)
-    raise RuntimeError(f"Chrome CDP not ready on port {port}")
-
-
-def _send(ws, method: str, params: dict = None, cmd_id: int = 1,
-          session_id: str = None, timeout: int = 90) -> dict:
-    """Send a CDP command and wait for its response (skipping events)."""
-    msg = {"id": cmd_id, "method": method, "params": params or {}}
-    if session_id:
-        msg["sessionId"] = session_id
-    ws.send(json.dumps(msg))
-    deadline = time.time() + timeout
-    while time.time() < deadline:
-        raw = ws.recv()
-        resp = json.loads(raw)
-        if resp.get("id") == cmd_id and resp.get("sessionId", session_id) == session_id:
-            if "error" in resp:
-                raise RuntimeError(f"CDP error in {method}: {resp['error']}")
-            return resp.get("result", {})
-    raise TimeoutError(f"CDP timeout waiting for {method}")
-
-
-def html_file_to_pdf(html_path: Path, pdf_path: Path, header_html: str, footer_html: str) -> bool:
-    port = _free_port()
-    proc = subprocess.Popen(
-        [
-            CHROME,
-            f"--remote-debugging-port={port}",
-            "--headless=new",
-            "--disable-gpu",
-            "--no-sandbox",
-            "--disable-dev-shm-usage",
-            "--disable-extensions",
-            "--remote-allow-origins=*",
-            f"--user-data-dir=/tmp/chrome-pdf-{port}",
-        ],
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
-    )
-    try:
-        browser_ws = _wait_for_browser_ws(port)
-        ws = websocket.create_connection(browser_ws, timeout=30)
-        try:
-            # Create a new page target
-            r = _send(ws, "Target.createTarget", {"url": "about:blank"}, cmd_id=1)
-            target_id = r["targetId"]
-
-            # Attach to it with flat session protocol
-            r = _send(ws, "Target.attachToTarget",
-                      {"targetId": target_id, "flatten": True}, cmd_id=2)
-            sid = r["sessionId"]
-
-            # Enable Page domain on the session
-            _send(ws, "Page.enable", cmd_id=3, session_id=sid)
-
-            # Navigate to the HTML file
-            _send(ws, "Page.navigate",
-                  {"url": f"file://{html_path.resolve()}"},
-                  cmd_id=4, session_id=sid)
-
-            # Poll readyState until complete
-            for _ in range(40):
-                r = _send(ws, "Runtime.evaluate",
-                          {"expression": "document.readyState", "returnByValue": True},
-                          cmd_id=5, session_id=sid)
-                if r.get("result", {}).get("value") == "complete":
-                    break
-                time.sleep(0.4)
-            time.sleep(0.5)  # let JS post-processing run
-
-            result = _send(
-                ws,
-                "Page.printToPDF",
-                {
-                    "landscape":           False,
-                    "displayHeaderFooter": True,
-                    "headerTemplate":      header_html,
-                    "footerTemplate":      footer_html,
-                    "printBackground":     True,
-                    "scale":               1.0,
-                    "paperWidth":          8.5,
-                    "paperHeight":         11.0,
-                    "marginTop":           0.72,
-                    "marginBottom":        0.58,
-                    "marginLeft":          0.85,
-                    "marginRight":         0.85,
-                    "transferMode":        "ReturnAsBase64",
-                },
-                cmd_id=6, session_id=sid, timeout=120,
-            )
-        finally:
-            ws.close()
-
-        pdf_path.write_bytes(base64.b64decode(result["data"]))
-        return True
-    except Exception as exc:
-        print(f"      ERROR: {exc}")
-        return False
-    finally:
-        proc.terminate()
-        proc.wait(timeout=5)
+# CDP functions are in scripts/chrome_cdp.py — html_file_to_pdf imported at top
 
 
 # ── Conversion helpers ────────────────────────────────────────────────────────
@@ -799,7 +358,7 @@ def convert_md(src_rel: str, out_stem: str) -> bool:
         tmp.write(full_html)
         tmp_path = Path(tmp.name)
     pdf_path = OUT_DIR / f"{out_stem}.pdf"
-    ok = html_file_to_pdf(tmp_path, pdf_path, make_header(pub_number), FOOTER_TEMPLATE)
+    ok = html_file_to_pdf(tmp_path, pdf_path, make_header(pub_number), FOOTER_TEMPLATE, CHROME)
     tmp_path.unlink(missing_ok=True)
     print(f"  {'OK  ' if ok else 'FAIL'} {out_stem}.pdf")
     return ok
@@ -811,7 +370,7 @@ def convert_html_direct(src_rel: str, out_stem: str, pub_number: str = "MSS-HUB"
         print(f"  SKIP  {src_rel}")
         return False
     pdf_path = OUT_DIR / f"{out_stem}.pdf"
-    ok = html_file_to_pdf(src, pdf_path, make_header(pub_number), FOOTER_TEMPLATE)
+    ok = html_file_to_pdf(src, pdf_path, make_header(pub_number), FOOTER_TEMPLATE, CHROME)
     print(f"  {'OK  ' if ok else 'FAIL'} {out_stem}.pdf")
     return ok
 
@@ -849,22 +408,22 @@ MD_TARGETS = [
     ("maven_training/syllabi/SYLLABUS_TM10.md",                                        "SYLLABUS_TM10"),
     ("maven_training/syllabi/SYLLABUS_TM20.md",                                        "SYLLABUS_TM20"),
     ("maven_training/syllabi/SYLLABUS_TM30.md",                                        "SYLLABUS_TM30"),
-    ("maven_training/syllabi/SYLLABUS_TM40A.md",                                       "SYLLABUS_TM40A"),
-    ("maven_training/syllabi/SYLLABUS_TM40B.md",                                       "SYLLABUS_TM40B"),
-    ("maven_training/syllabi/SYLLABUS_TM40C.md",                                       "SYLLABUS_TM40C"),
-    ("maven_training/syllabi/SYLLABUS_TM40D.md",                                       "SYLLABUS_TM40D"),
-    ("maven_training/syllabi/SYLLABUS_TM40E.md",                                       "SYLLABUS_TM40E"),
-    ("maven_training/syllabi/SYLLABUS_TM40F.md",                                       "SYLLABUS_TM40F"),
+    ("maven_training/syllabi/SYLLABUS_TM40G.md",                                       "SYLLABUS_TM40G"),
+    ("maven_training/syllabi/SYLLABUS_TM40H.md",                                       "SYLLABUS_TM40H"),
+    ("maven_training/syllabi/SYLLABUS_TM40I.md",                                       "SYLLABUS_TM40I"),
+    ("maven_training/syllabi/SYLLABUS_TM40J.md",                                       "SYLLABUS_TM40J"),
+    ("maven_training/syllabi/SYLLABUS_TM40K.md",                                       "SYLLABUS_TM40K"),
+    ("maven_training/syllabi/SYLLABUS_TM40L.md",                                       "SYLLABUS_TM40L"),
     # ── Practical exercises ───────────────────────────────────────────────────
     ("maven_training/exercises/EX-10_operator_basics/EXERCISE.md",                     "EX_10_OPERATOR_BASICS"),
     ("maven_training/exercises/EX-20_no_code_builder/EXERCISE.md",                     "EX_20_NO_CODE_BUILDER"),
     ("maven_training/exercises/EX-30_advanced_builder/EXERCISE.md",                    "EX_30_ADVANCED_BUILDER"),
-    ("maven_training/exercises/EX-40A_orsa/EXERCISE.md",                               "EX_40A_ORSA"),
-    ("maven_training/exercises/EX-40B_ai_engineer/EXERCISE.md",                        "EX_40B_AI_ENGINEER"),
-    ("maven_training/exercises/EX-40C_ml_engineer/EXERCISE.md",                        "EX_40C_ML_ENGINEER"),
-    ("maven_training/exercises/EX-40D_program_manager/EXERCISE.md",                    "EX_40D_PROGRAM_MANAGER"),
-    ("maven_training/exercises/EX-40E_knowledge_manager/EXERCISE.md",                  "EX_40E_KNOWLEDGE_MANAGER"),
-    ("maven_training/exercises/EX-40F_software_engineer/EXERCISE.md",                  "EX_40F_SOFTWARE_ENGINEER"),
+    ("maven_training/exercises/EX-40G_orsa/EXERCISE.md",                               "EX_40G_ORSA"),
+    ("maven_training/exercises/EX-40H_ai_engineer/EXERCISE.md",                        "EX_40H_AI_ENGINEER"),
+    ("maven_training/exercises/EX-40I_ml_engineer/EXERCISE.md",                        "EX_40I_ML_ENGINEER"),
+    ("maven_training/exercises/EX-40J_program_manager/EXERCISE.md",                    "EX_40J_PROGRAM_MANAGER"),
+    ("maven_training/exercises/EX-40K_knowledge_manager/EXERCISE.md",                  "EX_40K_KNOWLEDGE_MANAGER"),
+    ("maven_training/exercises/EX-40L_software_engineer/EXERCISE.md",                  "EX_40L_SOFTWARE_ENGINEER"),
     # ── Assessments (pre/post exams) ──────────────────────────────────────────
     ("maven_training/exercises/exams/EXAM_TM10_PRE.md",                                "EXAM_TM10_PRE"),
     ("maven_training/exercises/exams/EXAM_TM10_POST.md",                               "EXAM_TM10_POST"),
@@ -872,83 +431,191 @@ MD_TARGETS = [
     ("maven_training/exercises/exams/EXAM_TM20_POST.md",                               "EXAM_TM20_POST"),
     ("maven_training/exercises/exams/EXAM_TM30_PRE.md",                                "EXAM_TM30_PRE"),
     ("maven_training/exercises/exams/EXAM_TM30_POST.md",                               "EXAM_TM30_POST"),
-    ("maven_training/exercises/exams/EXAM_TM40A_PRE.md",                               "EXAM_TM40A_PRE"),
-    ("maven_training/exercises/exams/EXAM_TM40A_POST.md",                              "EXAM_TM40A_POST"),
-    ("maven_training/exercises/exams/EXAM_TM40B_PRE.md",                               "EXAM_TM40B_PRE"),
-    ("maven_training/exercises/exams/EXAM_TM40B_POST.md",                              "EXAM_TM40B_POST"),
-    ("maven_training/exercises/exams/EXAM_TM40C_PRE.md",                               "EXAM_TM40C_PRE"),
-    ("maven_training/exercises/exams/EXAM_TM40C_POST.md",                              "EXAM_TM40C_POST"),
-    ("maven_training/exercises/exams/EXAM_TM40D_PRE.md",                               "EXAM_TM40D_PRE"),
-    ("maven_training/exercises/exams/EXAM_TM40D_POST.md",                              "EXAM_TM40D_POST"),
-    ("maven_training/exercises/exams/EXAM_TM40E_PRE.md",                               "EXAM_TM40E_PRE"),
-    ("maven_training/exercises/exams/EXAM_TM40E_POST.md",                              "EXAM_TM40E_POST"),
-    ("maven_training/exercises/exams/EXAM_TM40F_PRE.md",                               "EXAM_TM40F_PRE"),
-    ("maven_training/exercises/exams/EXAM_TM40F_POST.md",                              "EXAM_TM40F_POST"),
-    ("maven_training/exercises/exams/EXAM_TM50A_PRE.md",                               "EXAM_TM50A_PRE"),
-    ("maven_training/exercises/exams/EXAM_TM50A_POST.md",                              "EXAM_TM50A_POST"),
-    ("maven_training/exercises/exams/EXAM_TM50B_PRE.md",                               "EXAM_TM50B_PRE"),
-    ("maven_training/exercises/exams/EXAM_TM50B_POST.md",                              "EXAM_TM50B_POST"),
-    ("maven_training/exercises/exams/EXAM_TM50C_PRE.md",                               "EXAM_TM50C_PRE"),
-    ("maven_training/exercises/exams/EXAM_TM50C_POST.md",                              "EXAM_TM50C_POST"),
-    ("maven_training/exercises/exams/EXAM_TM50D_PRE.md",                               "EXAM_TM50D_PRE"),
-    ("maven_training/exercises/exams/EXAM_TM50D_POST.md",                              "EXAM_TM50D_POST"),
-    ("maven_training/exercises/exams/EXAM_TM50E_PRE.md",                               "EXAM_TM50E_PRE"),
-    ("maven_training/exercises/exams/EXAM_TM50E_POST.md",                              "EXAM_TM50E_POST"),
-    ("maven_training/exercises/exams/EXAM_TM50F_PRE.md",                               "EXAM_TM50F_PRE"),
-    ("maven_training/exercises/exams/EXAM_TM50F_POST.md",                              "EXAM_TM50F_POST"),
+    ("maven_training/exercises/exams/EXAM_TM40G_PRE.md",                               "EXAM_TM40G_PRE"),
+    ("maven_training/exercises/exams/EXAM_TM40G_POST.md",                              "EXAM_TM40G_POST"),
+    ("maven_training/exercises/exams/EXAM_TM40H_PRE.md",                               "EXAM_TM40H_PRE"),
+    ("maven_training/exercises/exams/EXAM_TM40H_POST.md",                              "EXAM_TM40H_POST"),
+    ("maven_training/exercises/exams/EXAM_TM40I_PRE.md",                               "EXAM_TM40I_PRE"),
+    ("maven_training/exercises/exams/EXAM_TM40I_POST.md",                              "EXAM_TM40I_POST"),
+    ("maven_training/exercises/exams/EXAM_TM40J_PRE.md",                               "EXAM_TM40J_PRE"),
+    ("maven_training/exercises/exams/EXAM_TM40J_POST.md",                              "EXAM_TM40J_POST"),
+    ("maven_training/exercises/exams/EXAM_TM40K_PRE.md",                               "EXAM_TM40K_PRE"),
+    ("maven_training/exercises/exams/EXAM_TM40K_POST.md",                              "EXAM_TM40K_POST"),
+    ("maven_training/exercises/exams/EXAM_TM40L_PRE.md",                               "EXAM_TM40L_PRE"),
+    ("maven_training/exercises/exams/EXAM_TM40L_POST.md",                              "EXAM_TM40L_POST"),
+    ("maven_training/exercises/exams/EXAM_TM50G_PRE.md",                               "EXAM_TM50G_PRE"),
+    ("maven_training/exercises/exams/EXAM_TM50G_POST.md",                              "EXAM_TM50G_POST"),
+    ("maven_training/exercises/exams/EXAM_TM50H_PRE.md",                               "EXAM_TM50H_PRE"),
+    ("maven_training/exercises/exams/EXAM_TM50H_POST.md",                              "EXAM_TM50H_POST"),
+    ("maven_training/exercises/exams/EXAM_TM50I_PRE.md",                               "EXAM_TM50I_PRE"),
+    ("maven_training/exercises/exams/EXAM_TM50I_POST.md",                              "EXAM_TM50I_POST"),
+    ("maven_training/exercises/exams/EXAM_TM50J_PRE.md",                               "EXAM_TM50J_PRE"),
+    ("maven_training/exercises/exams/EXAM_TM50J_POST.md",                              "EXAM_TM50J_POST"),
+    ("maven_training/exercises/exams/EXAM_TM50K_PRE.md",                               "EXAM_TM50K_PRE"),
+    ("maven_training/exercises/exams/EXAM_TM50K_POST.md",                              "EXAM_TM50K_POST"),
+    ("maven_training/exercises/exams/EXAM_TM50L_PRE.md",                               "EXAM_TM50L_PRE"),
+    ("maven_training/exercises/exams/EXAM_TM50L_POST.md",                              "EXAM_TM50L_POST"),
     # ── Technical manuals ─────────────────────────────────────────────────────
     ("maven_training/tm/TM_10_maven_user/TM_10_MAVEN_USER.md",                         "TM_10_MAVEN_USER"),
     ("maven_training/tm/TM_20_builder/TM_20_BUILDER.md",                               "TM_20_BUILDER"),
     ("maven_training/tm/TM_30_advanced_builder/TM_30_ADVANCED_BUILDER.md",             "TM_30_ADVANCED_BUILDER"),
-    ("maven_training/tm/TM_40A_orsa/TM_40A_ORSA.md",                                   "TM_40A_ORSA"),
-    ("maven_training/tm/TM_40A_orsa/CONCEPTS_GUIDE_TM40A_ORSA.md",                     "CONCEPTS_GUIDE_TM40A_ORSA"),
-    ("maven_training/tm/TM_40B_ai_engineer/TM_40B_AI_ENGINEER.md",                     "TM_40B_AI_ENGINEER"),
-    ("maven_training/tm/TM_40B_ai_engineer/CONCEPTS_GUIDE_TM40B_AI_ENGINEER.md",       "CONCEPTS_GUIDE_TM40B_AI_ENGINEER"),
-    ("maven_training/tm/TM_40C_ml_engineer/TM_40C_ML_ENGINEER.md",                     "TM_40C_ML_ENGINEER"),
-    ("maven_training/tm/TM_40C_ml_engineer/CONCEPTS_GUIDE_TM40C_ML_ENGINEER.md",       "CONCEPTS_GUIDE_TM40C_ML_ENGINEER"),
-    ("maven_training/tm/TM_40D_program_manager/TM_40D_PROGRAM_MANAGER.md",             "TM_40D_PROGRAM_MANAGER"),
-    ("maven_training/tm/TM_40D_program_manager/CONCEPTS_GUIDE_TM40D_PROGRAM_MANAGER.md","CONCEPTS_GUIDE_TM40D_PROGRAM_MANAGER"),
-    ("maven_training/tm/TM_40E_knowledge_manager/TM_40E_KNOWLEDGE_MANAGER.md",         "TM_40E_KNOWLEDGE_MANAGER"),
-    ("maven_training/tm/TM_40E_knowledge_manager/CONCEPTS_GUIDE_TM40E_KNOWLEDGE_MANAGER.md","CONCEPTS_GUIDE_TM40E_KNOWLEDGE_MANAGER"),
-    ("maven_training/tm/TM_40F_software_engineer/TM_40F_SOFTWARE_ENGINEER.md",         "TM_40F_SOFTWARE_ENGINEER"),
-    ("maven_training/tm/TM_40F_software_engineer/CONCEPTS_GUIDE_TM40F_SOFTWARE_ENGINEER.md","CONCEPTS_GUIDE_TM40F_SOFTWARE_ENGINEER"),
-    ("maven_training/tm/TM_50A_orsa_advanced/TM_50A_ORSA_ADVANCED.md",                 "TM_50A_ORSA_ADVANCED"),
-    ("maven_training/tm/TM_50A_orsa_advanced/CONCEPTS_GUIDE_TM50A_ORSA_ADVANCED.md",   "CONCEPTS_GUIDE_TM50A_ORSA_ADVANCED"),
-    ("maven_training/tm/TM_50B_ai_engineer_advanced/TM_50B_AI_ENGINEER_ADVANCED.md",   "TM_50B_AI_ENGINEER_ADVANCED"),
-    ("maven_training/tm/TM_50B_ai_engineer_advanced/CONCEPTS_GUIDE_TM50B_AI_ENGINEER_ADVANCED.md","CONCEPTS_GUIDE_TM50B_AI_ENGINEER_ADVANCED"),
-    ("maven_training/tm/TM_50C_ml_engineer_advanced/TM_50C_ML_ENGINEER_ADVANCED.md",   "TM_50C_ML_ENGINEER_ADVANCED"),
-    ("maven_training/tm/TM_50C_ml_engineer_advanced/CONCEPTS_GUIDE_TM50C_ML_ENGINEER_ADVANCED.md","CONCEPTS_GUIDE_TM50C_ML_ENGINEER_ADVANCED"),
-    ("maven_training/tm/TM_50D_program_manager_advanced/TM_50D_PROGRAM_MANAGER_ADVANCED.md","TM_50D_PROGRAM_MANAGER_ADVANCED"),
-    ("maven_training/tm/TM_50D_program_manager_advanced/CONCEPTS_GUIDE_TM50D_PROGRAM_MANAGER_ADVANCED.md","CONCEPTS_GUIDE_TM50D_PROGRAM_MANAGER_ADVANCED"),
-    ("maven_training/tm/TM_50E_knowledge_manager_advanced/TM_50E_KNOWLEDGE_MANAGER_ADVANCED.md","TM_50E_KNOWLEDGE_MANAGER_ADVANCED"),
-    ("maven_training/tm/TM_50E_knowledge_manager_advanced/CONCEPTS_GUIDE_TM50E_KNOWLEDGE_MANAGER_ADVANCED.md","CONCEPTS_GUIDE_TM50E_KNOWLEDGE_MANAGER_ADVANCED"),
-    ("maven_training/tm/TM_50F_software_engineer_advanced/TM_50F_SOFTWARE_ENGINEER_ADVANCED.md","TM_50F_SOFTWARE_ENGINEER_ADVANCED"),
-    ("maven_training/tm/TM_50F_software_engineer_advanced/CONCEPTS_GUIDE_TM50F_SOFTWARE_ENGINEER_ADVANCED.md","CONCEPTS_GUIDE_TM50F_SOFTWARE_ENGINEER_ADVANCED"),
+    # WFF tracks (A–F, operational)
+    ("maven_training/tm/TM_40A_intelligence/TM_40A_INTELLIGENCE.md",                   "TM_40A_INTELLIGENCE"),
+    ("maven_training/tm/TM_40A_intelligence/CONCEPTS_GUIDE_TM40A_INTELLIGENCE.md",     "CONCEPTS_GUIDE_TM40A_INTELLIGENCE"),
+    ("maven_training/tm/TM_40B_fires/TM_40B_FIRES.md",                                 "TM_40B_FIRES"),
+    ("maven_training/tm/TM_40B_fires/CONCEPTS_GUIDE_TM40B_FIRES.md",                   "CONCEPTS_GUIDE_TM40B_FIRES"),
+    ("maven_training/tm/TM_40C_movement_maneuver/TM_40C_MOVEMENT_MANEUVER.md",         "TM_40C_MOVEMENT_MANEUVER"),
+    ("maven_training/tm/TM_40C_movement_maneuver/CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER.md","CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER"),
+    ("maven_training/tm/TM_40D_sustainment/TM_40D_SUSTAINMENT.md",                     "TM_40D_SUSTAINMENT"),
+    ("maven_training/tm/TM_40D_sustainment/CONCEPTS_GUIDE_TM40D_SUSTAINMENT.md",       "CONCEPTS_GUIDE_TM40D_SUSTAINMENT"),
+    ("maven_training/tm/TM_40E_protection/TM_40E_PROTECTION.md",                       "TM_40E_PROTECTION"),
+    ("maven_training/tm/TM_40E_protection/CONCEPTS_GUIDE_TM40E_PROTECTION.md",         "CONCEPTS_GUIDE_TM40E_PROTECTION"),
+    ("maven_training/tm/TM_40F_mission_command/TM_40F_MISSION_COMMAND.md",             "TM_40F_MISSION_COMMAND"),
+    ("maven_training/tm/TM_40F_mission_command/CONCEPTS_GUIDE_TM40F_MISSION_COMMAND.md","CONCEPTS_GUIDE_TM40F_MISSION_COMMAND"),
+    # Technical specialist tracks (G–L)
+    ("maven_training/tm/TM_40G_orsa/TM_40G_ORSA.md",                                   "TM_40G_ORSA"),
+    ("maven_training/tm/TM_40G_orsa/CONCEPTS_GUIDE_TM40G_ORSA.md",                     "CONCEPTS_GUIDE_TM40G_ORSA"),
+    ("maven_training/tm/TM_40H_ai_engineer/TM_40H_AI_ENGINEER.md",                     "TM_40H_AI_ENGINEER"),
+    ("maven_training/tm/TM_40H_ai_engineer/CONCEPTS_GUIDE_TM40H_AI_ENGINEER.md",       "CONCEPTS_GUIDE_TM40H_AI_ENGINEER"),
+    ("maven_training/tm/TM_40I_ml_engineer/TM_40I_ML_ENGINEER.md",                     "TM_40I_ML_ENGINEER"),
+    ("maven_training/tm/TM_40I_ml_engineer/CONCEPTS_GUIDE_TM40I_ML_ENGINEER.md",       "CONCEPTS_GUIDE_TM40I_ML_ENGINEER"),
+    ("maven_training/tm/TM_40J_program_manager/TM_40J_PROGRAM_MANAGER.md",             "TM_40J_PROGRAM_MANAGER"),
+    ("maven_training/tm/TM_40J_program_manager/CONCEPTS_GUIDE_TM40J_PROGRAM_MANAGER.md","CONCEPTS_GUIDE_TM40J_PROGRAM_MANAGER"),
+    ("maven_training/tm/TM_40K_knowledge_manager/TM_40K_KNOWLEDGE_MANAGER.md",         "TM_40K_KNOWLEDGE_MANAGER"),
+    ("maven_training/tm/TM_40K_knowledge_manager/CONCEPTS_GUIDE_TM40K_KNOWLEDGE_MANAGER.md","CONCEPTS_GUIDE_TM40K_KNOWLEDGE_MANAGER"),
+    ("maven_training/tm/TM_40L_software_engineer/TM_40L_SOFTWARE_ENGINEER.md",         "TM_40L_SOFTWARE_ENGINEER"),
+    ("maven_training/tm/TM_40L_software_engineer/CONCEPTS_GUIDE_TM40L_SOFTWARE_ENGINEER.md","CONCEPTS_GUIDE_TM40L_SOFTWARE_ENGINEER"),
+    # Technical specialist advanced tracks (50G–L)
+    ("maven_training/tm/TM_50G_orsa_advanced/TM_50G_ORSA_ADVANCED.md",                 "TM_50G_ORSA_ADVANCED"),
+    ("maven_training/tm/TM_50G_orsa_advanced/CONCEPTS_GUIDE_TM50G_ORSA_ADVANCED.md",   "CONCEPTS_GUIDE_TM50G_ORSA_ADVANCED"),
+    ("maven_training/tm/TM_50H_ai_engineer_advanced/TM_50H_AI_ENGINEER_ADVANCED.md",   "TM_50H_AI_ENGINEER_ADVANCED"),
+    ("maven_training/tm/TM_50H_ai_engineer_advanced/CONCEPTS_GUIDE_TM50H_AI_ENGINEER_ADVANCED.md","CONCEPTS_GUIDE_TM50H_AI_ENGINEER_ADVANCED"),
+    ("maven_training/tm/TM_50I_ml_engineer_advanced/TM_50I_ML_ENGINEER_ADVANCED.md",   "TM_50I_ML_ENGINEER_ADVANCED"),
+    ("maven_training/tm/TM_50I_ml_engineer_advanced/CONCEPTS_GUIDE_TM50I_ML_ENGINEER_ADVANCED.md","CONCEPTS_GUIDE_TM50I_ML_ENGINEER_ADVANCED"),
+    ("maven_training/tm/TM_50J_program_manager_advanced/TM_50J_PROGRAM_MANAGER_ADVANCED.md","TM_50J_PROGRAM_MANAGER_ADVANCED"),
+    ("maven_training/tm/TM_50J_program_manager_advanced/CONCEPTS_GUIDE_TM50J_PROGRAM_MANAGER_ADVANCED.md","CONCEPTS_GUIDE_TM50J_PROGRAM_MANAGER_ADVANCED"),
+    ("maven_training/tm/TM_50K_knowledge_manager_advanced/TM_50K_KNOWLEDGE_MANAGER_ADVANCED.md","TM_50K_KNOWLEDGE_MANAGER_ADVANCED"),
+    ("maven_training/tm/TM_50K_knowledge_manager_advanced/CONCEPTS_GUIDE_TM50K_KNOWLEDGE_MANAGER_ADVANCED.md","CONCEPTS_GUIDE_TM50K_KNOWLEDGE_MANAGER_ADVANCED"),
+    ("maven_training/tm/TM_50L_software_engineer_advanced/TM_50L_SOFTWARE_ENGINEER_ADVANCED.md","TM_50L_SOFTWARE_ENGINEER_ADVANCED"),
+    ("maven_training/tm/TM_50L_software_engineer_advanced/CONCEPTS_GUIDE_TM50L_SOFTWARE_ENGINEER_ADVANCED.md","CONCEPTS_GUIDE_TM50L_SOFTWARE_ENGINEER_ADVANCED"),
 ]
 HTML_TARGETS = [
     ("maven_training/mss_info_app/index.html", "MSS_TRAINING_HUB"),
 ]
 
 
+# ── Incremental build helpers ──────────────────────────────────────────────────
+MANIFEST_PATH = OUT_DIR / ".manifest.json"
+
+
+def _file_hash(path: Path) -> str:
+    """Return the SHA-256 hex digest of a file's contents."""
+    h = hashlib.sha256()
+    h.update(path.read_bytes())
+    return h.hexdigest()
+
+
+def _load_manifest() -> dict:
+    """Load the source-file hash manifest; return empty dict if missing."""
+    if MANIFEST_PATH.exists():
+        try:
+            return json.loads(MANIFEST_PATH.read_text())
+        except Exception:
+            return {}
+    return {}
+
+
+def _save_manifest(manifest: dict):
+    """Persist the manifest and write a human-readable SHA-256 sidecar."""
+    MANIFEST_PATH.write_text(json.dumps(manifest, indent=2))
+    # Also write a plain-text manifest for external verification
+    sha_path = OUT_DIR / "pdf_manifest.sha256"
+    lines = []
+    for pdf_path in sorted(OUT_DIR.glob("*.pdf")):
+        lines.append(f"{_file_hash(pdf_path)}  {pdf_path.name}")
+    sha_path.write_text("\n".join(lines) + "\n")
+
+
+def _should_rebuild(src: Path, stem: str, manifest: dict) -> bool:
+    """Return True if the source has changed since the last successful build."""
+    if not src.exists():
+        return False                        # source missing — will SKIP
+    if not (OUT_DIR / f"{stem}.pdf").exists():
+        return True                         # PDF missing — always build
+    current_hash = _file_hash(src)
+    return manifest.get(str(src)) != current_hash
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="Build USAREUR-AF Maven PDFs")
+    parser.add_argument("--workers", type=int, default=4,
+                        help="Parallel Chrome workers (default: 4)")
+    parser.add_argument("--force", action="store_true",
+                        help="Rebuild all PDFs even if source is unchanged")
+    args = parser.parse_args()
+
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    print(f"Output: {OUT_DIR}\n")
-    ok = fail = 0
+    manifest = {} if args.force else _load_manifest()
+    print(f"Output: {OUT_DIR}  workers={args.workers}  force={args.force}\n")
 
-    print("=== Markdown → PDF ===")
+    # Collect all build tasks: (callable, src_path, stem)
+    tasks = []
     for rel, stem in MD_TARGETS:
-        if convert_md(rel, stem): ok += 1
-        else: fail += 1
-
-    print("\n=== HTML → PDF ===")
+        src = REPO_ROOT / rel
+        if not src.exists():
+            print(f"  SKIP  {rel}")
+            continue
+        if not args.force and not _should_rebuild(src, stem, manifest):
+            print(f"  --    {stem}.pdf  (unchanged)")
+            continue
+        tasks.append((convert_md, rel, stem))
     for rel, stem in HTML_TARGETS:
-        if convert_html_direct(rel, stem): ok += 1
-        else: fail += 1
+        src = REPO_ROOT / rel
+        if not src.exists():
+            print(f"  SKIP  {rel}")
+            continue
+        if not args.force and not _should_rebuild(src, stem, manifest):
+            print(f"  --    {stem}.pdf  (unchanged)")
+            continue
+        tasks.append((convert_html_direct, rel, stem))
 
-    print(f"\nDone: {ok} OK, {fail} failed.")
+    if not tasks:
+        print("Nothing to rebuild — all PDFs are up to date.")
+        _save_manifest(manifest)
+        return
+
+    print(f"Building {len(tasks)} PDFs with {args.workers} parallel worker(s)...\n")
+    ok = fail = 0
+    updated_manifest = dict(manifest)
+
+    # Run builds in parallel; Chrome spawns per-task so workers are independent
+    with ThreadPoolExecutor(max_workers=args.workers) as pool:
+        futures = {
+            pool.submit(fn, rel, stem): (rel, stem)
+            for fn, rel, stem in tasks
+        }
+        for future in as_completed(futures):
+            rel, stem = futures[future]
+            try:
+                success = future.result()
+            except Exception as exc:
+                print(f"  FAIL  {stem}.pdf  ({exc})")
+                success = False
+            if success:
+                ok += 1
+                src = REPO_ROOT / rel
+                if src.exists():
+                    updated_manifest[str(src)] = _file_hash(src)
+            else:
+                fail += 1
+
+    _save_manifest(updated_manifest)
+    print(f"\nDone: {ok} built, {fail} failed.")
     if fail:
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()

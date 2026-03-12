@@ -1,20 +1,20 @@
-# PRE-TEST — TM-40F: SOFTWARE ENGINEER
+# PRE-TEST — TM-40F: MISSION COMMAND
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | | |
 |---|---|
-| **Course** | TM-40F: Software Engineer |
+| **Course** | TM-40F: Mission Command WFF Track |
 | **Form** | Pre-Test |
-| **Level** | TM-40F (Specialist) |
-| **Audience** | Software engineers; prerequisite: TM-10+20+30 + TypeScript/Python + REST API familiarity |
-| **Time Allowed** | 30 minutes |
+| **Level** | TM-40F (WFF Track) |
+| **Audience** | G3/S3 staff, battle captains, XOs, CDRs; prerequisite: TM-10 + TM-20 complete |
+| **Time Allowed** | 20 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
 ---
 
 ## INSTRUCTIONS
 
-This diagnostic assessment establishes your baseline knowledge before training. Your score does not affect course eligibility. Answer honestly — results help the instructor tailor instruction to gaps.
+This diagnostic assessment establishes your baseline knowledge before training. Your score does not affect course eligibility. Answer honestly — results help the instructor tailor instruction to identified gaps.
 
 ---
 
@@ -22,215 +22,107 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 
 *Circle the letter of the best answer. (2 points each)*
 
-**1. In TypeScript, an `async` function returns:**
+**1. The primary purpose of the Common Operating Picture (COP) in Mission Command is to:**
 
-A. The resolved value of the computation directly
-B. A `Promise` that resolves to the return value
-C. A callback function that must be invoked manually
-D. An `Observable` stream of values
+A. Automatically generate course of action recommendations for the commander
+B. Provide all echelons a shared understanding of the operational environment based on reported status
+C. Replace the Intelligence Preparation of the Battlefield (IPB) process
+D. Record all orders and annexes for post-mission review
 
-**2. "Pagination" in a REST API context means:**
+**2. A Commander's Critical Information Requirement (CCIR) is best described as:**
 
-A. Breaking a web page into multiple sections for rendering performance
-B. Returning large result sets in smaller chunks (pages) with a cursor or offset to retrieve subsequent pages
-C. Caching API responses to reduce server load
-D. Versioning API endpoints to maintain backward compatibility
+A. A data feed that automatically updates the COP in real time
+B. Information the commander needs to make a critical decision or take a decisive action
+C. A standing report submitted daily by all subordinate units
+D. Any piece of intelligence information rated as Priority Intelligence Requirement (PIR)
 
-**3. When a REST API call returns a `202 Accepted` status code, it typically means:**
+**3. In the context of MSS, "data currency" refers to:**
 
-A. The request was completed synchronously and the result is in the response body
-B. The request was received and accepted for processing, but the result is not yet available
-C. The request was rejected due to a validation error
-D. The request requires authentication before it can be processed
+A. The cost of a data subscription in Foundry
+B. How recently the data displayed was last updated from its source
+C. Whether the data meets the unit's classification requirements
+D. The number of records in a dataset
 
-**4. The `try/catch/finally` pattern in TypeScript is used for:**
+**4. Which of the following best describes the relationship between MSS and the Military Decision-Making Process (MDMP)?**
 
-A. Iterating over arrays and handling empty results
-B. Structured error handling — catching exceptions, providing fallback logic, and ensuring cleanup code runs
-C. Validating function parameters before execution
-D. Typing asynchronous function return values
+A. MSS replaces MDMP by automating course of action development
+B. MSS is used instead of MDMP for time-constrained operations
+C. MSS provides data and visualization support within the operations process — it does not replace staff judgment or MDMP
+D. MDMP is only used when MSS is unavailable in degraded operations
 
-**5. "Rate limiting" in an API context means:**
+**5. A CCIR configured in MSS alerts the battle captain when equipment readiness drops below 70%. The alert fires, but the underlying readiness data is 12 hours old. The battle captain should:**
 
-A. The API enforces a maximum response time for each request
-B. The API restricts the number of requests a client can make in a given time period
-C. The client batches requests to reduce API call overhead
-D. The server limits the size of request payloads
+A. Immediately brief the commander that readiness has dropped below 70%
+B. Dismiss the alert since the data is stale and recheck tomorrow
+C. Verify data currency, contact the source unit to confirm current status, and characterize the uncertainty when briefing the commander
+D. Disable the CCIR and wait for fresh data before reconfiguring it
 
-**6. In TypeScript, `interface` declarations are used to:**
+**6. During a CP displacement, which action is most important to coordinate with the S6 before moving?**
 
-A. Define the implementation of a class
-B. Describe the shape (properties and types) of an object without providing implementation
-C. Import external libraries and modules
-D. Define enumerated constant values
+A. Archiving all MSS dashboard screenshots to a local drive
+B. Ensuring MSS network connectivity continuity so the COP does not experience data gaps during displacement
+C. Deleting all temporary user accounts from the training environment
+D. Exporting all current CCIR configurations to a PDF for manual tracking
 
-**7. A WebSocket connection differs from a standard HTTP request in that:**
+**7. The difference between "reported status" and "assessed status" in a commander product is:**
 
-A. WebSocket uses UDP instead of TCP for faster transmission
-B. WebSocket maintains a persistent, bidirectional connection enabling real-time push notifications without polling
-C. WebSocket is only available on secure (HTTPS) connections
-D. WebSocket responses are automatically cached by the browser
+A. Reported status is classified; assessed status is unclassified
+B. Reported status is what the data shows has been submitted; assessed status is the commander's judgment about actual conditions, which may differ
+C. Reported status is real-time; assessed status is from the previous reporting cycle
+D. They are synonyms and can be used interchangeably in a BUA product
 
-**8. In a REST API, "input sanitization" before processing user-supplied data is important to prevent:**
+**8. Which of the following is a correct OPSEC procedure for distributing an MSS BUA product?**
 
-A. Data type mismatches that cause TypeScript compilation errors
-B. Injection attacks (SQL injection, command injection) where malicious input manipulates system behavior
-C. Performance degradation from large payload sizes
-D. Unauthorized access to restricted API endpoints
-
-**9. A "webhook" is best described as:**
-
-A. A library for building REST APIs in TypeScript
-B. An HTTP callback — when an event occurs, the server sends an HTTP POST to a pre-registered URL
-C. A tool for testing API endpoints during development
-D. A type of persistent connection similar to WebSocket
-
-**10. "Hardcoded credentials" in source code are a security risk because:**
-
-A. They cause TypeScript compilation errors if the credential format is incorrect
-B. They are exposed to anyone with access to the code repository and cannot be rotated without a code change
-C. They slow down application startup by requiring credential validation on load
-D. They prevent the application from running in multiple environments
-
-**11. In a JavaScript/TypeScript application, `Promise.all([...])` is used to:**
-
-A. Execute an array of promises sequentially, waiting for each to complete before starting the next
-B. Execute multiple promises concurrently and wait for all of them to resolve (or one to reject)
-C. Retry a failed promise until it succeeds
-D. Convert an array of synchronous values into a resolved promise
-
-**12. An API that returns the first 100 records but the full dataset contains 10,000 records requires the client to:**
-
-A. Accept the first 100 records as a representative sample
-B. Implement pagination logic to repeatedly fetch subsequent pages until all records are retrieved
-C. Request the full dataset in a single call with a `limit=10000` parameter
-D. Export the data to a file and process it offline
-
-**13. "Input validation at system boundaries" in a software engineering context means:**
-
-A. Validating the database schema before any query is executed
-B. Checking and sanitizing all external inputs (user input, API responses, file data) before processing them in the application
-C. Running unit tests on all functions that accept input parameters
-D. Validating TypeScript type annotations at runtime
-
-**14. In a client-server architecture, "state management" in a frontend application refers to:**
-
-A. The persistence of data in the server-side database
-B. Managing and updating the application's in-memory representation of data as user interactions and API responses change it
-C. The storage of user session tokens on the client
-D. Synchronizing application state across multiple browser tabs
-
-**15. A "code review" before merging a pull request serves which primary purpose?**
-
-A. Verifying that the code compiles and all tests pass
-B. A human review of logic correctness, security, standards compliance, and maintainability before changes reach production
-C. Documenting the changes made in the commit history
-D. Ensuring the developer followed the correct branching workflow
+A. Distribute via personal email to all attendees before the briefing
+B. Screenshot the dashboard and post to the unit's open SharePoint site
+C. Share via MSS Workshop with read-only permissions set for authorized accounts; apply correct classification marking before distribution
+D. Print and distribute physical copies without classification markings since the data is training data
 
 ---
 
 ## SECTION 2 — SHORT ANSWER
 
-*Answer in 2–5 sentences. (6 points each)*
+*Answer in 2–4 sentences. (5 points each)*
 
-**SA-1. Explain the difference between synchronous and asynchronous programming in TypeScript. Give an example of when you would use `async/await` instead of a synchronous call, and why.**
+**9. You are a battle captain preparing for the morning BUA. You notice that the readiness data on the COP has not updated since 1800 yesterday. What actions do you take before the BUA, and what — if anything — do you brief to the commander?**
 
-&nbsp;
+*(Write your answer below)*
 
-&nbsp;
+_______________________________________________
+_______________________________________________
+_______________________________________________
+_______________________________________________
 
-&nbsp;
+**10. Describe what information you would expect to see in each section of a properly formatted BUA read-ahead product. What element, if missing, would automatically disqualify the product?**
 
-&nbsp;
+*(Write your answer below)*
 
-**SA-2. Describe what an "N+1 query problem" is in a data access context. Give an example in a TypeScript application and explain why it is a performance anti-pattern.**
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-**SA-3. Explain what a "REST API" is and describe the four standard HTTP methods (GET, POST, PUT/PATCH, DELETE) and what each is typically used for.**
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-**SA-4. Describe why environment variables are the correct way to manage application credentials and configuration in a production software system, instead of hardcoding values in source code.**
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-**SA-5. You are performing a security code review of a TypeScript application. Describe four specific security issues you would look for in the code and explain why each is a risk.**
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
+_______________________________________________
+_______________________________________________
+_______________________________________________
+_______________________________________________
 
 ---
 
-## SCORING SUMMARY
+## SECTION 3 — SCENARIO (10 points)
 
-| Section | Questions | Points Each | Total Points |
-|---|---|---|---|
-| Multiple Choice | 15 | 2 | 30 |
-| Short Answer | 5 | 6 | 30 |
-| **Total** | — | — | **60** |
+**Read the following scenario and answer the question.**
 
-Passing: N/A — Pre-test is diagnostic only.
+Your commander has verbally stated the following priorities at the last planning sync: "I need to know the moment any battalion falls below 75% equipment readiness, and I need an alert if we get any significant contact event inside the training AOR." You have MSS access and permission to configure CCIRs.
 
----
+**11. Describe how you would configure these two CCIRs in MSS. For each CCIR, specify: (a) the data source you would select, (b) the threshold or condition, and (c) who you would route the notification to and why.**
 
-## ANSWER KEY — INSTRUCTOR USE ONLY
+*(Write your answer below)*
 
-*Do not distribute to students.*
-
-**Multiple Choice:**
-1. B — `async` functions return a Promise that resolves to the return value.
-2. B — Pagination returns large result sets in smaller pages with a cursor/offset.
-3. B — 202 Accepted = request received for async processing, result not yet available.
-4. B — try/catch/finally is for structured error handling with cleanup.
-5. B — Rate limiting restricts the number of requests per time period.
-6. B — TypeScript `interface` describes object shape without providing implementation.
-7. B — WebSocket maintains persistent bidirectional connection for real-time communication.
-8. B — Input sanitization prevents injection attacks.
-9. B — Webhook = HTTP callback triggered by server-side event.
-10. B — Hardcoded credentials are exposed in repos and cannot be rotated without code changes.
-11. B — Promise.all executes concurrently and waits for all promises to resolve.
-12. B — Pagination logic must be implemented to retrieve all pages.
-13. B — Input validation at system boundaries checks all external inputs before processing.
-14. B — State management maintains the application's in-memory data representation.
-15. B — Code review verifies logic, security, standards compliance, and maintainability.
-
-**Short Answer Guidance:**
-
-SA-1. Full credit: synchronous = sequential execution, blocking — one operation completes before the next starts; asynchronous = non-blocking — operations can run concurrently, with results handled via callbacks, promises, or async/await; use async/await when calling an external API or database that has latency — blocking the thread waiting for a network response would freeze the application; example: `const data = await fetch(url)` instead of blocking the event loop. Partial credit (3 pts) for correct definition of one type without an example.
-
-SA-2. Full credit: N+1 problem = one query to get a list of N records, then N additional queries (one per record) to get related data — total queries = N+1; example: fetch 100 vehicles, then for each vehicle make a separate API call to get its maintenance records = 101 queries instead of 1 or 2; anti-pattern because it causes O(N) API calls, degrading performance significantly as N grows; fix: batch-fetch all maintenance records for the vehicle list in a single query. Partial credit (3 pts) for correct definition without an example.
-
-SA-3. Full credit: REST API = Representational State Transfer — a standard architecture for web APIs using HTTP; GET = retrieve data (read, no side effects); POST = create a new resource; PUT/PATCH = update an existing resource (PUT replaces entirely, PATCH updates partially); DELETE = remove a resource. All four methods correctly described for full credit.
-
-SA-4. Full credit: environment variables externalize configuration from code — credentials can be rotated without code changes; the source code can be shared publicly or reviewed without exposing secrets; different environments (dev/test/prod) use different values without code changes; hardcoded values in source code are exposed to anyone with repository access and appear in git history even after removal. Partial credit (3 pts) for two of four reasons.
-
-SA-5. Full credit: any four from — hardcoded credentials or API keys; unsanitized user input (injection risk); unvalidated API response data used directly without type/schema check; missing error handling (unhandled promise rejection); secrets in log output; insecure HTTP instead of HTTPS; no rate limiting on outbound API calls; missing access control check before privileged operations. Each issue must include a brief risk explanation for full credit.
+_______________________________________________
+_______________________________________________
+_______________________________________________
+_______________________________________________
+_______________________________________________
 
 ---
+
+*Total points: 30. Diagnostic only — score does not affect course admission.*
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*TM-40F Pre-Test | Version 1.0 | March 2026*
+*EX-TM40F-PRE | Version 1.0 | March 2026*
