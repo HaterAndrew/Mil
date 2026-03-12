@@ -3,44 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MSS Information Hub — USAREUR-AF</title>
+  <title>MSS Training Hub — USAREUR-AF</title>
   <style>
     /* ============================================================
-       USAREUR-AF DESIGN TOKENS
+       USAREUR-AF COMMAND COLORS
+       Primary: Navy Blue + Gold  (Army Europe command colors)
     ============================================================ */
     :root {
-      --od-green:       #3D4F1C;
-      --od-green-dark:  #28351A;
-      --od-green-light: #5A7028;
-      --gold:           #C8A951;
-      --gold-light:     #E2C876;
-      --gold-dark:      #9E7E30;
-      --cream:          #F4F1E8;
-      --white:          #FFFFFF;
-      --gray-100:       #F0EDE4;
-      --gray-200:       #DDD9CC;
-      --gray-400:       #9A9585;
-      --gray-700:       #4A4740;
-      --gray-900:       #1E1C18;
-      --warning-red:    #8B1A1A;
-      --caution-amber:  #C87C1A;
-      --note-blue:      #1A4A7A;
-      --radius:         4px;
-      --font-body:      'Courier New', Courier, monospace;
-      --font-heading:   Arial, Helvetica, sans-serif;
+      --navy:          #0C2340;
+      --navy-dark:     #071628;
+      --navy-light:    #163A6C;
+      --navy-mid:      #1E4A88;
+      --navy-pale:     #EEF2FA;
+      --gold:          #C8971A;
+      --gold-light:    #E0B840;
+      --gold-dark:     #9A7010;
+      --gold-pale:     #FDF5DC;
+      --white:         #FFFFFF;
+      --off-white:     #F3F5FA;
+      --gray-50:       #EFF1F8;
+      --gray-100:      #E0E4EF;
+      --gray-200:      #C4CAE0;
+      --gray-400:      #7A88A8;
+      --gray-600:      #485878;
+      --gray-700:      #303C58;
+      --gray-900:      #0A1628;
+      --warning-red:   #8A1A1A;
+      --caution-amber: #B86810;
+      --note-teal:     #0A5C70;
+      --planned-slate: #3A4A6A;
+      --green-ok:      #1A5C28;
+      --radius:        3px;
+      --radius-lg:     6px;
+      --font-body:     Inter, system-ui, -apple-system, Arial, Helvetica, sans-serif;
+      --font-mono:     'Courier New', Courier, monospace;
+      --font-ui:       Arial, Helvetica, sans-serif;
+      --shadow:        0 1px 5px rgba(0,0,0,0.12);
+      --shadow-hdr:    0 3px 16px rgba(0,0,0,0.35);
     }
 
-    /* ============================================================
-       RESET & BASE
-    ============================================================ */
+    /* ============================================================ RESET */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: var(--font-body);
-      background: var(--cream);
+      background: var(--off-white);
       color: var(--gray-900);
       font-size: 14px;
-      line-height: 1.6;
+      line-height: 1.65;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -49,120 +59,159 @@
     /* ============================================================
        CLASSIFICATION BANNERS
     ============================================================ */
-    .classification-banner {
-      background: #2E7D32;
+    .banner-unclass {
+      background: #1E6B2A;
       color: #FFFFFF;
       text-align: center;
-      font-family: var(--font-heading);
+      font-family: var(--font-ui);
       font-weight: 700;
-      font-size: 12px;
-      letter-spacing: 3px;
-      padding: 4px 0;
+      font-size: 11px;
+      letter-spacing: 4px;
+      padding: 5px 0;
+      text-transform: uppercase;
     }
 
     /* ============================================================
        HEADER
     ============================================================ */
     header {
-      background: linear-gradient(135deg, var(--od-green-dark) 0%, var(--od-green) 60%, var(--od-green-light) 100%);
+      background: linear-gradient(155deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
       color: var(--white);
-      padding: 0;
-      border-bottom: 4px solid var(--gold);
+      box-shadow: var(--shadow-hdr);
+      border-bottom: 3px solid var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        -50deg,
+        transparent,
+        transparent 20px,
+        rgba(255,255,255,0.015) 20px,
+        rgba(255,255,255,0.015) 21px
+      );
+      pointer-events: none;
     }
 
     .header-inner {
       display: flex;
       align-items: center;
-      gap: 20px;
-      padding: 18px 28px;
-      max-width: 1200px;
+      gap: 22px;
+      padding: 20px 32px;
+      max-width: 1280px;
       margin: 0 auto;
       width: 100%;
+      position: relative;
     }
 
-    /* USAREUR-AF crest — SVG placeholder (shield shape) */
+    /* ---- Crest ---- */
     .crest {
       flex-shrink: 0;
-      width: 72px;
-      height: 72px;
+      width: 84px;
+      height: 84px;
+      filter: drop-shadow(0 3px 8px rgba(0,0,0,0.55));
     }
 
-    .header-text {
-      flex: 1;
-    }
+    /* ---- Text ---- */
+    .header-text { flex: 1; }
 
-    .header-unit {
-      font-family: var(--font-heading);
-      font-size: 11px;
+    .header-command {
+      font-family: var(--font-ui);
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: 2.5px;
+      letter-spacing: 3px;
       color: var(--gold-light);
       text-transform: uppercase;
       margin-bottom: 2px;
     }
 
     .header-title {
-      font-family: var(--font-heading);
-      font-size: 24px;
+      font-family: var(--font-ui);
+      font-size: 27px;
       font-weight: 700;
       color: var(--white);
-      line-height: 1.2;
-      letter-spacing: 0.5px;
+      line-height: 1.15;
+      letter-spacing: 0.3px;
     }
 
     .header-subtitle {
       font-family: var(--font-body);
       font-size: 12px;
-      color: var(--gold-light);
-      margin-top: 4px;
-      letter-spacing: 1px;
+      color: rgba(255,255,255,0.72);
+      margin-top: 5px;
+      letter-spacing: 0.8px;
     }
 
-    .header-right {
+    /* ---- Meta block ---- */
+    .header-meta {
       text-align: right;
-      font-family: var(--font-body);
+      font-family: var(--font-mono);
       font-size: 11px;
       color: var(--gold-light);
-      line-height: 1.7;
+      line-height: 1.9;
     }
 
-    .header-right .badge {
+    .header-meta .badge {
       display: inline-block;
       background: var(--gold);
-      color: var(--od-green-dark);
-      font-family: var(--font-heading);
+      color: var(--navy-dark);
+      font-family: var(--font-ui);
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 1.5px;
-      padding: 2px 8px;
+      padding: 3px 10px;
       border-radius: var(--radius);
-      margin-bottom: 4px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    /* ---- Version strip ---- */
+    .header-strip {
+      background: var(--navy-dark);
+      border-bottom: 1px solid rgba(200,151,26,0.28);
+      padding: 4px 32px;
+    }
+
+    .header-strip-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-ui);
+      font-size: 10px;
+      letter-spacing: 1.3px;
+      color: rgba(200,151,26,0.70);
+      text-transform: uppercase;
     }
 
     /* ============================================================
-       NAVIGATION TABS
+       NAVIGATION
     ============================================================ */
     nav {
-      background: var(--od-green-dark);
+      background: var(--navy-dark);
       border-bottom: 2px solid var(--gold-dark);
     }
 
     .nav-inner {
       display: flex;
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
       width: 100%;
       overflow-x: auto;
     }
 
     .nav-tab {
-      font-family: var(--font-heading);
-      font-size: 12px;
+      font-family: var(--font-ui);
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      color: var(--gray-200);
-      padding: 12px 20px;
+      color: rgba(255,255,255,0.6);
+      padding: 13px 18px;
       cursor: pointer;
       border: none;
       background: transparent;
@@ -175,67 +224,83 @@
 
     .nav-tab:hover {
       color: var(--gold-light);
-      background: rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.06);
     }
 
     .nav-tab.active {
       color: var(--gold);
       border-bottom: 3px solid var(--gold);
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .tab-pip {
+      display: inline-block;
+      background: var(--planned-slate);
+      color: #A8BCDC;
+      font-size: 8px;
+      letter-spacing: 0.5px;
+      padding: 1px 4px;
+      border-radius: 2px;
+      vertical-align: super;
+      margin-left: 4px;
+      font-weight: 700;
     }
 
     /* ============================================================
-       MAIN LAYOUT
+       MAIN
     ============================================================ */
     main {
       flex: 1;
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
       width: 100%;
-      padding: 28px 28px 48px;
+      padding: 28px 32px 56px;
     }
 
-    /* ============================================================
-       CONTENT PANELS
-    ============================================================ */
     .panel { display: none; }
     .panel.active { display: block; }
 
     /* ============================================================
-       SECTION TITLE
+       SECTION HEADER
     ============================================================ */
     .section-header {
       display: flex;
       align-items: center;
       gap: 14px;
-      margin-bottom: 24px;
-      padding-bottom: 12px;
+      margin-bottom: 26px;
+      padding-bottom: 14px;
       border-bottom: 2px solid var(--gold-dark);
     }
 
     .section-badge {
-      background: var(--od-green);
+      background: var(--navy);
       color: var(--gold);
-      font-family: var(--font-heading);
+      font-family: var(--font-ui);
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 2px;
-      padding: 4px 12px;
+      padding: 5px 13px;
       border-radius: var(--radius);
       border: 1px solid var(--gold-dark);
       white-space: nowrap;
     }
 
+    .section-badge.slate {
+      background: var(--planned-slate);
+      color: #A8BCDC;
+      border-color: #5A6A90;
+    }
+
     .section-title {
-      font-family: var(--font-heading);
+      font-family: var(--font-ui);
       font-size: 20px;
       font-weight: 700;
-      color: var(--od-green);
+      color: var(--navy);
     }
 
     .section-subtitle {
       font-family: var(--font-body);
-      font-size: 12px;
+      font-size: 11px;
       color: var(--gray-400);
       margin-left: auto;
       text-align: right;
@@ -246,24 +311,30 @@
     ============================================================ */
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
       gap: 16px;
       margin-bottom: 28px;
     }
 
-    .card {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-top: 4px solid var(--od-green);
-      border-radius: var(--radius);
-      padding: 18px 20px;
+    .card-grid-2 {
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     }
 
-    .card.gold-top { border-top-color: var(--gold-dark); }
-    .card.red-top  { border-top-color: var(--warning-red); }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-top: 4px solid var(--navy);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .card.gold-top  { border-top-color: var(--gold-dark); }
+    .card.red-top   { border-top-color: var(--warning-red); }
+    .card.slate-top { border-top-color: var(--planned-slate); }
 
     .card-label {
-      font-family: var(--font-heading);
+      font-family: var(--font-ui);
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 2px;
@@ -273,7 +344,7 @@
     }
 
     .card-title {
-      font-family: var(--font-heading);
+      font-family: var(--font-ui);
       font-size: 15px;
       font-weight: 700;
       color: var(--gray-900);
@@ -286,12 +357,99 @@
       line-height: 1.55;
     }
 
+    /* ---- TM-40 Track cards ---- */
+    .track-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .track-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .track-card-hdr {
+      background: var(--navy);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-left: 4px solid var(--gold);
+    }
+
+    .track-tm {
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.3px;
+      flex: 1;
+    }
+
+    .track-chip {
+      display: inline-block;
+      background: rgba(200,151,26,0.18);
+      color: var(--gold-light);
+      font-family: var(--font-ui);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 2px 7px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+
+    .track-body { padding: 14px 16px; }
+
+    .track-name {
+      font-family: var(--font-ui);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+
+    .track-audience {
+      font-size: 12px;
+      color: var(--gray-400);
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    .track-topics {
+      font-size: 12px;
+      color: var(--gray-700);
+      padding-left: 16px;
+    }
+
+    .track-topics li { margin-bottom: 3px; }
+
+    .track-prereq {
+      margin-top: 10px;
+      font-family: var(--font-ui);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      border-top: 1px solid var(--gray-50);
+      padding-top: 8px;
+    }
+
     /* ============================================================
        TABLES
     ============================================================ */
     .table-wrap {
       overflow-x: auto;
       margin-bottom: 24px;
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-100);
+      box-shadow: var(--shadow);
     }
 
     table {
@@ -300,115 +458,304 @@
       font-size: 13px;
     }
 
-    thead tr {
-      background: var(--od-green);
-      color: var(--white);
-    }
+    thead tr { background: var(--navy); color: var(--white); }
 
     thead th {
-      font-family: var(--font-heading);
-      font-size: 11px;
+      font-family: var(--font-ui);
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      padding: 10px 14px;
+      padding: 11px 14px;
       text-align: left;
       white-space: nowrap;
     }
 
     tbody tr { background: var(--white); }
-    tbody tr:nth-child(even) { background: var(--gray-100); }
+    tbody tr:nth-child(even) { background: var(--off-white); }
+    tbody tr:hover { background: var(--navy-pale); }
 
     tbody td {
       padding: 9px 14px;
-      border-bottom: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-50);
       vertical-align: top;
     }
 
     /* ============================================================
-       CALLOUT BOXES
+       CALLOUTS
     ============================================================ */
     .callout {
-      border-left: 4px solid;
+      border-left: 5px solid;
       padding: 12px 16px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       border-radius: 0 var(--radius) var(--radius) 0;
     }
 
     .callout-label {
-      font-family: var(--font-heading);
-      font-size: 11px;
+      font-family: var(--font-ui);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .callout-body { font-size: 13px; line-height: 1.6; }
+
+    .callout.warning  { border-color: var(--warning-red);  background: #FDF0F0; }
+    .callout.warning  .callout-label { color: var(--warning-red); }
+    .callout.caution  { border-color: var(--caution-amber); background: #FDF5E4; }
+    .callout.caution  .callout-label { color: var(--caution-amber); }
+    .callout.note     { border-color: var(--note-teal);    background: #EAF4F8; }
+    .callout.note     .callout-label { color: var(--note-teal); }
+    .callout.bluf     { border-color: var(--gold-dark);    background: var(--gold-pale); }
+    .callout.bluf     .callout-label { color: var(--gold-dark); }
+    .callout.info     { border-color: var(--navy-mid);     background: var(--navy-pale); }
+    .callout.info     .callout-label { color: var(--navy-mid); }
+
+    /* ============================================================
+       QUICK REFERENCE CARD LAYOUT
+    ============================================================ */
+    .qr-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--gold-dark);
+      flex-wrap: wrap;
+    }
+
+    .qr-title {
+      font-family: var(--font-ui);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .qr-tagline {
+      font-family: var(--font-body);
+      font-size: 10px;
+      color: var(--gray-400);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .qr-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .qr-grid { grid-template-columns: repeat(2, 1fr); }
+      .qr-span3 { grid-column: span 2; }
+    }
+    @media (max-width: 580px) {
+      .qr-grid { grid-template-columns: 1fr; }
+      .qr-span2, .qr-span3 { grid-column: span 1; }
+    }
+
+    .qr-box {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-top: 3px solid var(--navy);
+      border-radius: var(--radius);
+      padding: 11px 13px;
+      box-shadow: var(--shadow);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .qr-box.gold-top  { border-top-color: var(--gold-dark); }
+    .qr-box.red-top   { border-top-color: var(--warning-red); }
+    .qr-box.teal-top  { border-top-color: var(--note-teal); }
+    .qr-box.slate-top { border-top-color: var(--planned-slate); }
+
+    .qr-span2 { grid-column: span 2; }
+    .qr-span3 { grid-column: span 3; }
+
+    .qr-label {
+      font-family: var(--font-ui);
+      font-size: 9px;
       font-weight: 700;
       letter-spacing: 2px;
-      margin-bottom: 4px;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 7px;
     }
 
-    .callout-body { font-size: 13px; line-height: 1.55; }
+    .qr-box table { font-size: 11.5px; }
+    .qr-box thead th { font-size: 9px; padding: 6px 10px; }
+    .qr-box tbody td { padding: 5px 10px; }
 
-    .callout.warning {
-      border-color: var(--warning-red);
-      background: #FDF0F0;
+    .qr-box ul, .qr-box ol {
+      padding-left: 16px;
+      margin-bottom: 0;
     }
-    .callout.warning .callout-label { color: var(--warning-red); }
+    .qr-box li { font-size: 12px; margin-bottom: 3px; }
 
-    .callout.caution {
-      border-color: var(--caution-amber);
-      background: #FDF5E8;
+    .qr-box pre {
+      background: var(--navy-dark);
+      color: #C8E0FF;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 10px 12px;
+      border-radius: var(--radius);
+      overflow-x: auto;
+      margin: 0;
+      line-height: 1.55;
     }
-    .callout.caution .callout-label { color: var(--caution-amber); }
 
-    .callout.note {
-      border-color: var(--note-blue);
-      background: #EEF3FA;
-    }
-    .callout.note .callout-label { color: var(--note-blue); }
+    .qr-checklist { list-style: none; padding-left: 0; margin-bottom: 0; }
+    .qr-checklist li { display: flex; align-items: baseline; gap: 7px; font-size: 12px; margin-bottom: 5px; }
+    .qr-checklist li::before { content: '☐'; color: var(--gray-400); font-size: 13px; flex-shrink: 0; }
 
-    .callout.bluf {
-      border-color: var(--gold-dark);
-      background: #FAF6E8;
+    .qr-broken-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px 20px;
     }
-    .callout.bluf .callout-label { color: var(--gold-dark); }
+    @media (max-width: 900px) {
+      .qr-broken-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .qr-broken-item { font-size: 12px; line-height: 1.45; }
+
+    /* In-page navigation links on the QR card */
+    .qr-link {
+      color: var(--navy-mid);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(30,74,136,0.3);
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+      background: none;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      padding: 0;
+      font-family: inherit;
+      font-size: inherit;
+    }
+    .qr-link:hover {
+      color: var(--gold-dark);
+      border-bottom-color: var(--gold-dark);
+    }
+
+    /* QR card inline dropdowns */
+    .qr-dropdown-wrap {
+      position: relative;
+      display: inline-block;
+    }
+    .qr-dropdown-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .qr-dropdown-arrow {
+      font-size: 9px;
+      transition: transform 0.18s ease;
+      display: inline-block;
+    }
+    .qr-dropdown-btn[aria-expanded="true"] .qr-dropdown-arrow {
+      transform: rotate(180deg);
+    }
+    .qr-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 4px);
+      right: 0;
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-top: 3px solid var(--navy);
+      border-radius: var(--radius);
+      box-shadow: 0 6px 20px rgba(12,35,64,0.18);
+      min-width: 200px;
+      z-index: 200;
+      display: none;
+      overflow: hidden;
+    }
+    .qr-dropdown-menu.open { display: block; }
+    .qr-dropdown-item {
+      display: block;
+      width: 100%;
+      padding: 8px 14px;
+      background: transparent;
+      border: none;
+      text-align: left;
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--gray-700);
+      cursor: pointer;
+      transition: background 0.12s, color 0.12s;
+      border-bottom: 1px solid var(--gray-50);
+    }
+    .qr-dropdown-item:last-child { border-bottom: none; }
+    .qr-dropdown-item:hover { background: var(--navy-pale); color: var(--navy); }
+    .qr-dropdown-section {
+      font-family: var(--font-ui);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      padding: 7px 14px 4px;
+      background: var(--off-white);
+      border-bottom: 1px solid var(--gray-50);
+    }
+
+    /* Card reveal when entering from splash */
+    #panel-quickref.active {
+      animation: qrCardReveal 0.5s cubic-bezier(0.34,1.15,0.64,1) 0.05s both;
+    }
+    @keyframes qrCardReveal {
+      from { opacity: 0; transform: scale(0.975) translateY(12px); }
+      to   { opacity: 1; transform: scale(1)     translateY(0); }
+    }
 
     /* ============================================================
        TASK BLOCKS
     ============================================================ */
     .task-block {
       background: var(--white);
-      border: 1px solid var(--gray-200);
+      border: 1px solid var(--gray-100);
       border-radius: var(--radius);
       margin-bottom: 20px;
       overflow: hidden;
+      box-shadow: var(--shadow);
     }
 
     .task-header {
-      background: var(--od-green);
+      background: var(--navy);
       color: var(--white);
-      font-family: var(--font-heading);
-      font-size: 13px;
+      font-family: var(--font-ui);
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 1px;
       padding: 10px 16px;
       text-transform: uppercase;
+      border-left: 4px solid var(--gold);
     }
 
     .task-meta {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 0;
-      border-bottom: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-100);
     }
 
     .task-meta-item {
       padding: 8px 14px;
-      border-right: 1px solid var(--gray-200);
+      border-right: 1px solid var(--gray-50);
       font-size: 12px;
     }
 
     .task-meta-item:last-child { border-right: none; }
 
     .task-meta-label {
-      font-family: var(--font-heading);
-      font-size: 10px;
+      font-family: var(--font-ui);
+      font-size: 9px;
       font-weight: 700;
       letter-spacing: 1.5px;
       color: var(--gray-400);
@@ -418,75 +765,31 @@
     .task-meta-value { color: var(--gray-900); margin-top: 2px; }
 
     .task-body { padding: 16px; }
-
-    .task-steps {
-      padding-left: 20px;
-      margin: 8px 0;
-    }
-
-    .task-steps li {
-      margin-bottom: 6px;
-      font-size: 13px;
-      line-height: 1.55;
-    }
+    .task-steps { padding-left: 20px; margin: 8px 0; }
+    .task-steps li { margin-bottom: 6px; font-size: 13px; line-height: 1.55; }
 
     /* ============================================================
-       CODE BLOCKS
+       LEARNING PATH
     ============================================================ */
-    pre {
-      background: #1E1E1E;
-      color: #D4D4D4;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 12px;
-      padding: 16px;
-      border-radius: var(--radius);
-      overflow-x: auto;
-      margin-bottom: 16px;
-      line-height: 1.5;
-    }
+    .path-flow { display: flex; flex-direction: column; margin-bottom: 24px; }
 
-    code {
-      background: #E8E4D9;
-      color: var(--od-green-dark);
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 12px;
-      padding: 1px 5px;
-      border-radius: 2px;
-    }
-
-    pre code { background: none; color: inherit; padding: 0; }
-
-    /* ============================================================
-       LEARNING PATH / TIMELINE
-    ============================================================ */
-    .path-flow {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      margin-bottom: 24px;
-    }
-
-    .path-step {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-    }
+    .path-step { display: flex; gap: 16px; align-items: flex-start; }
 
     .path-connector {
       display: flex;
       flex-direction: column;
       align-items: center;
       flex-shrink: 0;
-      width: 36px;
+      width: 38px;
     }
 
     .path-dot {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
-      background: var(--od-green);
+      background: var(--navy);
       color: var(--white);
-      font-family: var(--font-heading);
+      font-family: var(--font-ui);
       font-size: 13px;
       font-weight: 700;
       display: flex;
@@ -496,273 +799,1272 @@
       border: 3px solid var(--gold-dark);
     }
 
-    .path-dot.optional {
-      background: var(--gray-400);
-      border-color: var(--gray-200);
-    }
+    .path-dot.optional { background: var(--gray-400); border-color: var(--gray-200); }
+    .path-dot.planned  { background: var(--planned-slate); border-color: #5A6A90; }
 
     .path-line {
       width: 2px;
-      height: 24px;
+      height: 20px;
       background: var(--gold-dark);
     }
 
     .path-line.dashed {
       background: repeating-linear-gradient(
         to bottom,
-        var(--gray-200) 0px,
-        var(--gray-200) 4px,
-        transparent 4px,
-        transparent 8px
+        var(--gray-200) 0, var(--gray-200) 4px,
+        transparent 4px, transparent 8px
       );
     }
 
     .path-content {
       flex: 1;
       background: var(--white);
-      border: 1px solid var(--gray-200);
+      border: 1px solid var(--gray-100);
       border-radius: var(--radius);
       padding: 12px 16px;
       margin-bottom: 0;
+      box-shadow: var(--shadow);
     }
 
+    .path-content.planned { border-color: #5A6A90; background: #EEF1F8; }
+
     .path-tm {
-      font-family: var(--font-heading);
+      font-family: var(--font-ui);
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       color: var(--gold-dark);
     }
 
+    .path-tm.slate { color: var(--planned-slate); }
+
     .path-name {
-      font-family: var(--font-heading);
+      font-family: var(--font-ui);
       font-size: 14px;
       font-weight: 700;
       color: var(--gray-900);
     }
 
-    .path-audience {
-      font-size: 12px;
-      color: var(--gray-400);
-      margin-top: 2px;
-    }
-
-    .path-spacer { height: 12px; }
+    .path-audience { font-size: 12px; color: var(--gray-400); margin-top: 2px; }
+    .path-spacer { height: 10px; }
 
     /* ============================================================
-       QUICK REF — STACK DIAGRAM
+       STACK DIAGRAM
     ============================================================ */
     .stack-diagram {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0;
       margin: 16px auto;
-      max-width: 360px;
+      max-width: 380px;
     }
 
     .stack-layer {
       width: 100%;
       text-align: center;
-      padding: 10px 16px;
-      font-family: var(--font-heading);
+      padding: 11px 16px;
+      font-family: var(--font-ui);
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.5px;
-      border: 1px solid rgba(0,0,0,0.1);
+      letter-spacing: 0.3px;
+      border: 1px solid rgba(0,0,0,0.07);
     }
 
-    .stack-arrow {
-      font-size: 18px;
-      color: var(--gold-dark);
-      line-height: 1.2;
-    }
+    .stack-arrow { font-size: 16px; color: var(--gold-dark); line-height: 1.1; }
 
-    .layer-1 { background: var(--od-green);       color: var(--white);     }
-    .layer-2 { background: var(--od-green-light);  color: var(--white);     }
-    .layer-3 { background: var(--gold-dark);       color: var(--white);     }
-    .layer-4 { background: var(--gold-light);      color: var(--gray-900);  }
-    .layer-5 { background: var(--gray-200);        color: var(--gray-900);  }
+    .layer-1 { background: var(--navy);       color: var(--white); }
+    .layer-2 { background: var(--navy-light);  color: var(--white); }
+    .layer-3 { background: var(--gold-dark);   color: var(--white); }
+    .layer-4 { background: var(--gold-light);  color: var(--gray-900); }
+    .layer-5 { background: var(--gray-200);    color: var(--gray-900); }
 
     /* ============================================================
-       FOOTER
+       CODE BLOCKS
     ============================================================ */
-    footer {
-      background: var(--od-green-dark);
-      color: var(--gold-light);
-      font-family: var(--font-body);
-      font-size: 11px;
-      text-align: center;
-      padding: 12px 28px;
-      border-top: 2px solid var(--gold-dark);
-      line-height: 2;
+    pre {
+      background: #101820;
+      color: #C8D8EC;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      padding: 16px 18px;
+      border-radius: var(--radius);
+      overflow-x: auto;
+      margin-bottom: 18px;
+      line-height: 1.55;
+      border: 1px solid #1E2C40;
     }
 
-    footer strong { color: var(--white); }
+    code {
+      background: #E0E6F0;
+      color: var(--navy-dark);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      padding: 1px 5px;
+      border-radius: 2px;
+    }
+
+    pre code { background: none; color: inherit; padding: 0; }
 
     /* ============================================================
-       UTILITY
+       TYPOGRAPHY
     ============================================================ */
     h2 {
-      font-family: var(--font-heading);
-      font-size: 16px;
+      font-family: var(--font-ui);
+      font-size: 15px;
       font-weight: 700;
-      color: var(--od-green);
-      margin: 24px 0 10px;
-      padding-bottom: 4px;
-      border-bottom: 1px solid var(--gray-200);
+      color: var(--navy);
+      margin: 26px 0 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--gray-100);
+      letter-spacing: 0.2px;
     }
 
     h3 {
-      font-family: var(--font-heading);
-      font-size: 14px;
+      font-family: var(--font-ui);
+      font-size: 13px;
       font-weight: 700;
       color: var(--gray-900);
       margin: 16px 0 8px;
     }
 
     p { margin-bottom: 12px; font-size: 13px; line-height: 1.65; }
-
     ul, ol { padding-left: 20px; margin-bottom: 12px; }
     li { margin-bottom: 4px; font-size: 13px; }
-
     strong { color: var(--gray-900); }
 
-    .mt-24 { margin-top: 24px; }
-    .mb-8  { margin-bottom: 8px; }
-
-    /* Tag chip */
+    /* ============================================================
+       CHIPS
+    ============================================================ */
     .chip {
       display: inline-block;
-      font-family: var(--font-heading);
+      font-family: var(--font-ui);
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       padding: 2px 8px;
       border-radius: 12px;
       margin-right: 4px;
+      text-transform: uppercase;
     }
-    .chip-green  { background: var(--od-green);  color: var(--white);    }
-    .chip-gold   { background: var(--gold-dark); color: var(--white);    }
-    .chip-gray   { background: var(--gray-200);  color: var(--gray-700); }
+
+    .chip-navy   { background: var(--navy);         color: var(--white); }
+    .chip-gold   { background: var(--gold-dark);    color: var(--white); }
+    .chip-slate  { background: var(--planned-slate); color: #A8BCDC; }
+    .chip-gray   { background: var(--gray-200);     color: var(--gray-700); }
+
+    /* ============================================================
+       UTILITIES
+    ============================================================ */
+    .mt-24 { margin-top: 24px; }
+    .mb-8  { margin-bottom: 8px; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--navy-dark);
+      color: var(--gold-light);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-align: center;
+      padding: 14px 32px;
+      border-top: 2px solid var(--gold-dark);
+      line-height: 2.1;
+    }
+
+    footer strong { color: var(--white); }
+
+    /* ============================================================
+       DOCUMENT CARDS — anchor tag reset
+    ============================================================ */
+    a.doc-card {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      cursor: pointer;
+    }
+
+    a.doc-card:hover .card-title,
+    a.doc-card:hover .track-name {
+      color: var(--navy-mid);
+    }
+
+    a.doc-card .card-body,
+    a.doc-card .track-audience,
+    a.doc-card .track-topics {
+      color: var(--gray-700);
+    }
+
+    /* ============================================================
+       MAIN SITE — UX IMPROVEMENTS
+    ============================================================ */
+    /* Card hover lift */
+    .card {
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(12,35,64,0.16);
+    }
+    .track-card {
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .track-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(12,35,64,0.18);
+    }
+    /* Panel fade-in when tab switches */
+    .content-area .panel.active {
+      animation: panelReveal 0.28s ease forwards;
+    }
+    @keyframes panelReveal {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    /* Track card number badge */
+    .track-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      background: rgba(200,151,26,0.22);
+      border: 1px solid rgba(200,151,26,0.4);
+      border-radius: 50%;
+      font-family: var(--font-ui);
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--gold-light);
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+    /* Callout icon prefixes */
+    .callout.warning .callout-label::before  { content: '⚠  '; }
+    .callout.caution .callout-label::before  { content: '⚑  '; }
+    .callout.note    .callout-label::before  { content: '●  '; }
+    .callout.bluf    .callout-label::before  { content: '►  '; }
+    .callout.info    .callout-label::before  { content: 'ℹ  '; }
+
+    /* ============================================================
+       SPLASH PAGE — FULL REDESIGN
+    ============================================================ */
+    #splash {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #050C18;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    #splash.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Canvas lives behind everything */
+    #starCanvas {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    /* Centre radial glow */
+    .splash-glow {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle,
+        rgba(200,151,26,0.07) 0%,
+        rgba(12,35,64,0.15) 45%,
+        transparent 70%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Scanline sweep */
+    .splash-scanline {
+      position: absolute;
+      left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right,
+        transparent,
+        rgba(200,151,26,0.12) 30%,
+        rgba(200,151,26,0.22) 50%,
+        rgba(200,151,26,0.12) 70%,
+        transparent);
+      z-index: 2;
+      animation: scanDown 6s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes scanDown {
+      from { top: -2px; }
+      to   { top: 100%; }
+    }
+
+    /* Classification banners */
+    .splash-cls {
+      position: relative;
+      z-index: 10;
+      background: #1E6B2A;
+      color: #fff;
+      text-align: center;
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 4px;
+      padding: 5px 0;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    /* HUD corner brackets */
+    .hud-frame {
+      position: absolute;
+      inset: 28px;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .hud-frame::before, .hud-frame::after,
+    .hud-bl, .hud-br {
+      content: '';
+      position: absolute;
+      width: 28px; height: 28px;
+      border-color: rgba(200,151,26,0.45);
+      border-style: solid;
+    }
+
+    .hud-frame::before { top:0; left:0; border-width: 2px 0 0 2px; animation: hudDraw 0.6s ease 0.4s both; }
+    .hud-frame::after  { top:0; right:0; border-width: 2px 2px 0 0; animation: hudDraw 0.6s ease 0.5s both; }
+    .hud-bl { bottom:0; left:0; border-width: 0 0 2px 2px; animation: hudDraw 0.6s ease 0.6s both; }
+    .hud-br { bottom:0; right:0; border-width: 0 2px 2px 0; animation: hudDraw 0.6s ease 0.7s both; }
+
+    @keyframes hudDraw {
+      from { opacity: 0; width: 0; height: 0; }
+      to   { opacity: 1; width: 28px; height: 28px; }
+    }
+
+    /* Corner data readouts */
+    .splash-data {
+      position: absolute;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      line-height: 1.9;
+      z-index: 4;
+      pointer-events: none;
+      animation: dataReveal 0.5s ease 1s both;
+    }
+
+    @keyframes dataReveal {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .splash-data-tl { top: 38px; left: 48px; color: rgba(200,151,26,0.45); text-align: left; }
+    .splash-data-tr { top: 38px; right: 48px; color: rgba(200,151,26,0.45); text-align: right; }
+    .splash-data-bl { bottom: 38px; left: 48px; color: rgba(255,255,255,0.2); text-align: left; }
+    .splash-data-br { bottom: 38px; right: 48px; color: rgba(255,255,255,0.2); text-align: right; }
+
+    /* Status bar at very bottom of content area */
+    .splash-statusbar {
+      position: absolute;
+      bottom: 30px;
+      left: 0; right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      color: rgba(255,255,255,0.18);
+      text-transform: uppercase;
+      z-index: 4;
+      animation: dataReveal 0.5s ease 1.3s both;
+    }
+
+    .splash-statusbar span::before {
+      content: '■ ';
+      color: rgba(200,151,26,0.3);
+      font-size: 8px;
+    }
+
+    /* Main content area */
+    .splash-body {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 5;
+    }
+
+    .splash-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 640px;
+      padding: 0 40px;
+    }
+
+    /* Crest wrap with glow rings */
+    .splash-crest-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 32px;
+      animation: crestIn 0.8s cubic-bezier(0.34,1.56,0.64,1) 0.3s both;
+    }
+
+    @keyframes crestIn {
+      from { opacity: 0; transform: scale(0.6); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    /* Outer pulse ring */
+    .splash-crest-wrap::before {
+      content: '';
+      position: absolute;
+      width: 210px; height: 210px;
+      border-radius: 50%;
+      border: 1px solid rgba(200,151,26,0.2);
+      animation: ringPulse 3s ease-in-out infinite;
+    }
+
+    /* Inner glow ring */
+    .splash-crest-wrap::after {
+      content: '';
+      position: absolute;
+      width: 175px; height: 175px;
+      border-radius: 50%;
+      border: 1px solid rgba(200,151,26,0.12);
+      animation: ringPulse 3s ease-in-out 0.5s infinite;
+    }
+
+    @keyframes ringPulse {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50%       { transform: scale(1.06); opacity: 0.2; }
+    }
+
+    .splash-crest {
+      width: 160px;
+      height: 160px;
+      position: relative;
+      z-index: 1;
+      filter:
+        drop-shadow(0 0 32px rgba(200,151,26,0.4))
+        drop-shadow(0 0 12px rgba(200,151,26,0.25))
+        drop-shadow(0 4px 16px rgba(0,0,0,0.8));
+    }
+
+    /* Text elements — staggered reveals */
+    .splash-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: rgba(200,151,26,0.6);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      text-align: center;
+      animation: lineReveal 0.5s ease 0.9s both;
+    }
+
+    .splash-hq {
+      font-family: var(--font-ui);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.38);
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      text-align: center;
+      animation: lineReveal 0.5s ease 1.0s both;
+    }
+
+    .splash-rule {
+      width: 360px;
+      max-width: 90vw;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(200,151,26,0.7) 50%, transparent);
+      margin-bottom: 20px;
+      animation: ruleGrow 0.6s ease 1.1s both;
+    }
+
+    @keyframes ruleGrow {
+      from { transform: scaleX(0); opacity: 0; }
+      to   { transform: scaleX(1); opacity: 1; }
+    }
+
+    .splash-title {
+      font-family: var(--font-ui);
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.5px;
+      text-align: center;
+      line-height: 1.05;
+      margin-bottom: 10px;
+      animation: lineReveal 0.6s ease 1.15s both;
+    }
+
+    .splash-sub {
+      font-family: var(--font-ui);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--gold-light);
+      letter-spacing: 3px;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      animation: lineReveal 0.5s ease 1.25s both;
+    }
+
+    .splash-tms {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 36px;
+      animation: lineReveal 0.5s ease 1.35s both;
+    }
+
+    .splash-rule-sm {
+      width: 240px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(200,151,26,0.35) 50%, transparent);
+      margin-bottom: 32px;
+      animation: ruleGrow 0.5s ease 1.4s both;
+    }
+
+    @keyframes lineReveal {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Enter button */
+    .splash-enter {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      margin-bottom: 36px;
+      animation: lineReveal 0.5s ease 1.5s both;
+      outline: none;
+    }
+
+    .splash-enter-inner {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 44px;
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      overflow: hidden;
+      transition: color 0.3s;
+    }
+
+    /* Animated border using SVG-like approach */
+    .splash-enter-inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1.5px solid rgba(200,151,26,0.5);
+    }
+
+    /* Hover fill sweep */
+    .splash-enter-inner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+      z-index: 0;
+    }
+
+    .splash-enter:hover .splash-enter-inner::after {
+      transform: scaleX(1);
+    }
+
+    .splash-enter:hover .splash-enter-inner {
+      color: #071628;
+    }
+
+    .splash-enter-text, .splash-enter-arrow {
+      position: relative;
+      z-index: 1;
+    }
+
+    .splash-enter-arrow {
+      font-size: 16px;
+      transition: transform 0.25s ease;
+    }
+
+    .splash-enter:hover .splash-enter-arrow {
+      transform: translateX(4px);
+    }
+
+    /* Outer glow pulse on button */
+    .splash-enter-glow {
+      position: absolute;
+      inset: -8px;
+      border: 1px solid rgba(200,151,26,0.15);
+      animation: btnGlow 2.8s ease-in-out infinite;
+    }
+
+    @keyframes btnGlow {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50%       { opacity: 0; transform: scale(1.04); }
+    }
+
+    .splash-meta {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 1.5px;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 2;
+      animation: lineReveal 0.5s ease 1.6s both;
+    }
+
+    /* ============================================================
+       APP SHELL — sidebar + content layout
+    ============================================================ */
+    .app-shell {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+      position: relative;
+    }
+
+    /* ── Sidebar ─────────────────────────────────────────────── */
+    .sidebar {
+      width: 240px;
+      flex-shrink: 0;
+      background: var(--navy-dark);
+      border-right: 1px solid rgba(200,151,26,0.18);
+      display: flex;
+      flex-direction: column;
+      transition: width 0.22s ease;
+      overflow: hidden;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      z-index: 100;
+    }
+
+    .sidebar.collapsed { width: 52px; }
+
+    .sidebar-top {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 10px 10px 8px;
+      border-bottom: 1px solid rgba(200,151,26,0.12);
+      flex-shrink: 0;
+    }
+
+    .sidebar-toggle-btn {
+      background: transparent;
+      border: 1px solid rgba(200,151,26,0.25);
+      color: rgba(200,151,26,0.6);
+      border-radius: 3px;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+      flex-shrink: 0;
+    }
+
+    .sidebar-toggle-btn:hover {
+      color: var(--gold);
+      border-color: var(--gold-dark);
+      background: rgba(200,151,26,0.08);
+    }
+
+    .sidebar.collapsed .sidebar-toggle-btn {
+      transform: rotate(180deg);
+    }
+
+    /* Scrollable nav area */
+    .sidebar-nav {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 8px 0 16px;
+    }
+
+    .sidebar-nav::-webkit-scrollbar { width: 4px; }
+    .sidebar-nav::-webkit-scrollbar-track { background: transparent; }
+    .sidebar-nav::-webkit-scrollbar-thumb { background: rgba(200,151,26,0.2); border-radius: 2px; }
+
+    /* Pinned quick-ref item */
+    .snav-pinned {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      margin: 4px 8px 8px;
+      background: rgba(200,151,26,0.1);
+      border: 1px solid rgba(200,151,26,0.25);
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+      overflow: hidden;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .snav-pinned:hover,
+    .snav-pinned.active {
+      background: rgba(200,151,26,0.18);
+      border-color: var(--gold-dark);
+    }
+
+    .snav-pinned-icon {
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    /* Standard nav item */
+    .snav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 8px 14px 8px 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-ui);
+      font-size: 12px;
+      color: rgba(255,255,255,0.58);
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .snav-item:hover {
+      color: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .snav-item.active {
+      color: var(--gold-light);
+      background: rgba(200,151,26,0.1);
+      border-left: 3px solid var(--gold);
+      padding-left: 17px;
+    }
+
+    .snav-item-icon {
+      font-size: 11px;
+      flex-shrink: 0;
+      width: 16px;
+      text-align: center;
+      opacity: 0.5;
+    }
+
+    .snav-item.active .snav-item-icon { opacity: 1; }
+
+    /* Group headers */
+    .snav-group { margin-top: 4px; }
+
+    .snav-group-hdr {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 6px 14px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-ui);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(200,151,26,0.45);
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: color 0.15s;
+    }
+
+    .snav-group-hdr:hover { color: rgba(200,151,26,0.75); }
+
+    .snav-group-arrow {
+      margin-left: auto;
+      font-size: 10px;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .snav-group.collapsed .snav-group-arrow { transform: rotate(-90deg); }
+
+    .snav-group-items {
+      overflow: hidden;
+      transition: max-height 0.25s ease;
+      max-height: 500px;
+    }
+
+    .snav-group.collapsed .snav-group-items { max-height: 0; }
+
+    /* Collapsed sidebar — hide labels */
+    .sidebar.collapsed .snav-pinned-label,
+    .sidebar.collapsed .snav-item-label,
+    .sidebar.collapsed .snav-group-hdr,
+    .sidebar.collapsed .sidebar-nav .snav-pinned { padding: 10px; justify-content: center; }
+    .sidebar.collapsed .snav-item { padding: 10px 14px; justify-content: center; }
+    .sidebar.collapsed .snav-item-label { display: none; }
+    .sidebar.collapsed .snav-pinned-label { display: none; }
+
+    /* Sidebar divider */
+    .snav-divider {
+      height: 1px;
+      background: rgba(200,151,26,0.1);
+      margin: 6px 14px;
+    }
+
+    /* ── Content area ─────────────────────────────────────────── */
+    .content-area {
+      flex: 1;
+      min-width: 0;
+      overflow-y: auto;
+    }
+
+    /* main stays the same, just inside .content-area now */
+    .content-area main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 28px 56px;
+    }
+
+    /* Mobile overlay sidebar */
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 99;
+    }
+
+    /* Mobile hamburger in header */
+    .header-hamburger {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(200,151,26,0.3);
+      color: var(--gold-light);
+      border-radius: 3px;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      font-size: 16px;
+      align-items: center;
+      justify-content: center;
+      margin-right: 16px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        height: 100vh;
+        width: 240px !important;
+        z-index: 200;
+        transition: left 0.25s ease;
+      }
+      .sidebar.mobile-open { left: 0; }
+      .sidebar-overlay.visible { display: block; }
+      .header-hamburger { display: flex; }
+      .sidebar-top { display: none; }
+      .content-area main { padding: 20px 16px 40px; }
+    }
   </style>
 </head>
 <body>
 
-<!-- CLASSIFICATION BANNER TOP -->
-<div class="classification-banner">UNCLASSIFIED</div>
+<!-- ============================================================
+     SPLASH PAGE
+============================================================ -->
+<div id="splash">
+
+  <!-- Star field canvas -->
+  <canvas id="starCanvas"></canvas>
+
+  <!-- Centre radial glow -->
+  <div class="splash-glow"></div>
+
+  <!-- Scanline sweep -->
+  <div class="splash-scanline"></div>
+
+  <!-- HUD corner brackets -->
+  <div class="hud-frame">
+    <div class="hud-bl"></div>
+    <div class="hud-br"></div>
+  </div>
+
+  <!-- Corner data readouts -->
+  <div class="splash-data splash-data-tl">
+    USAREUR-AF ODT<br/>
+    WIESBADEN, DE
+  </div>
+  <div class="splash-data splash-data-tr">
+    VER 3.0 / MAR 2026<br/>
+    MSS TRAINING HUB
+  </div>
+  <div class="splash-data splash-data-bl">
+    DIST: UNLIMITED<br/>
+    UNCLASSIFIED
+  </div>
+  <div class="splash-data splash-data-br">
+    TM-10 THRU TM-50<br/>
+    Data Lit (SL) · Data Literacy
+  </div>
+
+  <!-- Classification banner TOP -->
+  <div class="splash-cls">UNCLASSIFIED</div>
+
+  <!-- Main content -->
+  <div class="splash-body">
+    <div class="splash-content">
+
+      <!-- Crest with glow rings -->
+      <div class="splash-crest-wrap">
+        <svg class="splash-crest" viewBox="0 0 84 88" xmlns="http://www.w3.org/2000/svg" aria-label="USAREUR-AF Crest">
+          <defs>
+            <filter id="crestGlow">
+              <feGaussianBlur stdDeviation="2.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <path d="M8 6 L76 6 L76 50 Q76 76 42 82 Q8 76 8 50 Z" fill="#000" opacity="0.4" transform="translate(2,2)"/>
+          <path d="M8 6 L76 6 L76 50 Q76 76 42 82 Q8 76 8 50 Z" fill="#0C2340"/>
+          <path d="M8 6 L76 6 L76 50 Q76 76 42 82 Q8 76 8 50 Z" fill="none" stroke="#C8971A" stroke-width="2.8" filter="url(#crestGlow)"/>
+          <path d="M13 10 L71 10 L71 49 Q71 72 42 78 Q13 72 13 49 Z" fill="#163A6C" opacity="0.9"/>
+          <text x="42" y="20" text-anchor="middle" font-size="9.5" fill="#C8971A" font-family="Arial" font-weight="bold" filter="url(#crestGlow)">★ ★ ★ ★</text>
+          <line x1="16" y1="30" x2="68" y2="30" stroke="#C8971A" stroke-width="1.2" opacity="0.6"/>
+          <rect x="13" y="34" width="58" height="12" fill="#C8971A"/>
+          <text x="42" y="44" text-anchor="middle" font-size="7" font-weight="bold" fill="#071628" font-family="Arial" letter-spacing="0.4">USAREUR-AF</text>
+          <text x="42" y="59" text-anchor="middle" font-size="5.8" fill="#C8971A" font-family="Arial" letter-spacing="0.5">WIESBADEN</text>
+          <line x1="20" y1="64" x2="64" y2="64" stroke="#C8971A" stroke-width="0.8" opacity="0.5"/>
+          <text x="42" y="72" text-anchor="middle" font-size="5" fill="#7A9DC8" font-family="Arial" letter-spacing="0.3">GERMANY</text>
+        </svg>
+      </div>
+
+      <div class="splash-eyebrow">Operational Data Team</div>
+      <div class="splash-hq">Headquarters &bull; United States Army Europe and Africa</div>
+
+      <div class="splash-rule"></div>
+
+      <div class="splash-title">Maven Smart System</div>
+      <div class="splash-sub">Training &amp; Information Hub</div>
+
+      <div class="splash-tms">
+        TM-10 &nbsp;&#183;&nbsp; TM-20 &nbsp;&#183;&nbsp; TM-30 &nbsp;&#183;&nbsp;
+        TM-40A&ndash;F &nbsp;&#183;&nbsp; TM-50 &nbsp;&#183;&nbsp; Data Lit (SL) &nbsp;&#183;&nbsp; Data Literacy
+      </div>
+
+      <div class="splash-rule-sm"></div>
+
+      <button class="splash-enter" id="splash-enter-btn">
+        <div class="splash-enter-glow"></div>
+        <div class="splash-enter-inner">
+          <span class="splash-enter-text">Access Training Hub</span>
+          <span class="splash-enter-arrow">&#8594;</span>
+        </div>
+      </button>
+
+      <div class="splash-meta">
+        Version 3.0 &mdash; March 2026 &mdash; Wiesbaden, Germany<br/>
+        Approved for Public Release &mdash; Distribution Unlimited
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Status bar -->
+  <div class="splash-statusbar">
+    <span>SYS: MSS TRAINING HUB</span>
+    <span>VER: 3.0.0</span>
+    <span>LOC: WIESBADEN</span>
+    <span>STATUS: READY</span>
+    <span>CLASS: UNCLASSIFIED</span>
+  </div>
+
+  <!-- Classification banner BOTTOM -->
+  <div class="splash-cls">UNCLASSIFIED</div>
+
+</div>
+
+<div class="banner-unclass">UNCLASSIFIED</div>
 
 <!-- ============================================================
      HEADER
 ============================================================ -->
 <header>
   <div class="header-inner">
+    <button class="header-hamburger" id="header-hamburger" aria-label="Open navigation">&#9776;</button>
 
-    <!-- USAREUR-AF Crest (SVG — no external fetch) -->
-    <svg class="crest" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" aria-label="USAREUR-AF Crest">
-      <!-- Shield base -->
-      <path d="M6 8 h60 v38 Q66 66 36 70 Q6 66 6 46 Z" fill="#28351A" stroke="#C8A951" stroke-width="2"/>
-      <!-- Gold horizontal stripe -->
-      <rect x="6" y="28" width="60" height="10" fill="#C8A951"/>
+    <!-- USAREUR-AF Crest — Blue shield, gold trim, 4 stars -->
+    <svg class="crest" viewBox="0 0 84 88" xmlns="http://www.w3.org/2000/svg" aria-label="USAREUR-AF Crest">
+      <!-- Drop shadow -->
+      <path d="M8 6 L76 6 L76 50 Q76 76 42 82 Q8 76 8 50 Z" fill="#000" opacity="0.3" transform="translate(2,2)"/>
+      <!-- Shield base — USAREUR-AF navy blue -->
+      <path d="M8 6 L76 6 L76 50 Q76 76 42 82 Q8 76 8 50 Z" fill="#0C2340"/>
+      <!-- Gold border -->
+      <path d="M8 6 L76 6 L76 50 Q76 76 42 82 Q8 76 8 50 Z" fill="none" stroke="#C8971A" stroke-width="2.8"/>
+      <!-- Inner shield — lighter navy -->
+      <path d="M13 10 L71 10 L71 49 Q71 72 42 78 Q13 72 13 49 Z" fill="#163A6C" opacity="0.9"/>
+      <!-- Top gold stripe -->
+      <rect x="13" y="22" width="58" height="2.5" fill="#C8971A" opacity="0.7"/>
       <!-- Stars row -->
-      <text x="36" y="22" text-anchor="middle" font-size="8" fill="#C8A951" font-family="Arial">★ ★ ★ ★ ★</text>
-      <!-- USAREUR-AF text -->
-      <text x="36" y="44" text-anchor="middle" font-size="6.5" font-weight="bold" fill="#28351A" font-family="Arial">USAREUR-AF</text>
+      <text x="42" y="20" text-anchor="middle" font-size="9.5" fill="#C8971A" font-family="Arial" font-weight="bold">★ ★ ★ ★</text>
+      <!-- Horizontal divider -->
+      <line x1="16" y1="30" x2="68" y2="30" stroke="#C8971A" stroke-width="1.2" opacity="0.6"/>
+      <!-- Gold bar -->
+      <rect x="13" y="34" width="58" height="12" fill="#C8971A"/>
+      <!-- "USAREUR-AF" on gold bar -->
+      <text x="42" y="44" text-anchor="middle" font-size="7" font-weight="bold" fill="#071628" font-family="Arial" letter-spacing="0.4">USAREUR-AF</text>
       <!-- Bottom text -->
-      <text x="36" y="60" text-anchor="middle" font-size="5.5" fill="#C8A951" font-family="Arial">WIESBADEN, GERMANY</text>
+      <text x="42" y="59" text-anchor="middle" font-size="5.8" fill="#C8971A" font-family="Arial" letter-spacing="0.5">WIESBADEN</text>
+      <line x1="20" y1="64" x2="64" y2="64" stroke="#C8971A" stroke-width="0.8" opacity="0.5"/>
+      <text x="42" y="72" text-anchor="middle" font-size="5" fill="#7A9DC8" font-family="Arial" letter-spacing="0.3">GERMANY</text>
     </svg>
 
     <div class="header-text">
-      <div class="header-unit">United States Army Europe and Africa</div>
+      <div class="header-command">Headquarters &bull; United States Army Europe and Africa</div>
       <div class="header-title">Maven Smart System</div>
-      <div class="header-subtitle">Operator Information Hub &nbsp;|&nbsp; USAREUR-AF Operational Data Team</div>
+      <div class="header-subtitle">Training &amp; Information Hub &nbsp;&mdash;&nbsp; USAREUR-AF Operational Data Team</div>
     </div>
 
-    <div class="header-right">
-      <div class="badge">MSS INFO HUB</div><br/>
+    <div class="header-meta">
+      <div class="badge">MSS TRAINING HUB</div><br/>
       WIESBADEN, GERMANY<br/>
-      VERSION 1.0 &mdash; 2026<br/>
+      VERSION 3.1 &mdash; MARCH 2026<br/>
       DIST: UNLIMITED
     </div>
-
   </div>
 </header>
 
-<!-- ============================================================
-     NAV TABS
-============================================================ -->
-<nav>
-  <div class="nav-inner">
-    <button class="nav-tab active" onclick="showPanel('home')">&#9632; HOME</button>
-    <button class="nav-tab" onclick="showPanel('tm10')">TM-10 &mdash; USER</button>
-    <button class="nav-tab" onclick="showPanel('tm20')">TM-20 &mdash; BUILDER</button>
-    <button class="nav-tab" onclick="showPanel('tm30')">TM-30 &mdash; ADVANCED</button>
-    <button class="nav-tab" onclick="showPanel('doctrine')">DOCTRINE</button>
-    <button class="nav-tab" onclick="showPanel('quickref')">QUICK REF</button>
-    <button class="nav-tab" onclick="showPanel('support')">SUPPORT</button>
+<div class="header-strip">
+  <div class="header-strip-inner">
+    <span>TM-10 &bull; TM-20 &bull; TM-30 &bull; TM-40A–F &bull; TM-50A–F &bull; Data Lit (SL) &bull; Data Literacy</span>
+    <span>APPROVED FOR PUBLIC RELEASE &mdash; DISTRIBUTION UNLIMITED</span>
   </div>
-</nav>
+</div>
+
+<!-- ============================================================
+     APP SHELL
+============================================================ -->
+<div class="app-shell">
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-top">
+    <button class="sidebar-toggle-btn" id="sidebar-toggle" title="Collapse sidebar">&#10094;</button>
+  </div>
+  <nav class="sidebar-nav">
+
+    <!-- QUICK REF — pinned -->
+    <button class="snav-pinned active" data-panel="quickref" id="snav-quickref">
+      <span class="snav-pinned-icon">&#9636;</span>
+      <span class="snav-pinned-label">Quick Reference</span>
+    </button>
+
+    <!-- HOME -->
+    <button class="snav-item" data-panel="home">
+      <span class="snav-item-icon">&#9632;</span>
+      <span class="snav-item-label">Home / Start Here</span>
+    </button>
+
+    <div class="snav-divider"></div>
+
+    <!-- FOUNDATION -->
+    <div class="snav-group" id="grp-foundation">
+      <button class="snav-group-hdr" data-group="foundation">
+        <span>Foundation</span>
+        <span class="snav-group-arrow">&#8964;</span>
+      </button>
+      <div class="snav-group-items">
+        <button class="snav-item" data-panel="tm10">
+          <span class="snav-item-icon">&#9642;</span>
+          <span class="snav-item-label">TM-10 &mdash; Maven User</span>
+        </button>
+        <button class="snav-item" data-panel="tm20">
+          <span class="snav-item-icon">&#9642;</span>
+          <span class="snav-item-label">TM-20 &mdash; Builder</span>
+        </button>
+        <button class="snav-item" data-panel="tm30">
+          <span class="snav-item-icon">&#9642;</span>
+          <span class="snav-item-label">TM-30 &mdash; Advanced Builder</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- SPECIALIST TRACKS -->
+    <div class="snav-group" id="grp-tm40">
+      <button class="snav-group-hdr" data-group="tm40">
+        <span>Specialist Tracks</span>
+        <span class="snav-group-arrow">&#8964;</span>
+      </button>
+      <div class="snav-group-items">
+        <button class="snav-item" data-panel="tm40">
+          <span class="snav-item-icon">&#9642;</span>
+          <span class="snav-item-label">TM-40 Series</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ADVANCED -->
+    <div class="snav-group" id="grp-tm50">
+      <button class="snav-group-hdr" data-group="tm50">
+        <span>Advanced</span>
+        <span class="snav-group-arrow">&#8964;</span>
+      </button>
+      <div class="snav-group-items">
+        <button class="snav-item" data-panel="tm50">
+          <span class="snav-item-icon">&#9642;</span>
+          <span class="snav-item-label">TM-50 Series</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- DOCTRINE & REFERENCE -->
+    <div class="snav-group" id="grp-doctrine">
+      <button class="snav-group-hdr" data-group="doctrine">
+        <span>Doctrine &amp; Reference</span>
+        <span class="snav-group-arrow">&#8964;</span>
+      </button>
+      <div class="snav-group-items">
+        <button class="snav-item" data-panel="doctrine">
+          <span class="snav-item-icon">&#9642;</span>
+          <span class="snav-item-label">Doctrine Pubs</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- TOOLS -->
+    <div class="snav-group" id="grp-tools">
+      <button class="snav-group-hdr" data-group="tools">
+        <span>Tools</span>
+        <span class="snav-group-arrow">&#8964;</span>
+      </button>
+      <div class="snav-group-items">
+        <button class="snav-item" data-panel="documents">
+          <span class="snav-item-icon">&#9642;</span>
+          <span class="snav-item-label">Documents</span>
+        </button>
+        <button class="snav-item" data-panel="taskindex">
+          <span class="snav-item-icon">&#9642;</span>
+          <span class="snav-item-label">Task Index</span>
+        </button>
+        <button class="snav-item" data-panel="support">
+          <span class="snav-item-icon">&#9642;</span>
+          <span class="snav-item-label">Support</span>
+        </button>
+      </div>
+    </div>
+
+  </nav>
+</aside>
+
+<div class="content-area">
 
 <!-- ============================================================
      MAIN
 ============================================================ -->
-<main>
+<main id="main-content">
 
   <!-- ======================================================
        HOME PANEL
   ====================================================== -->
-  <div id="panel-home" class="panel active">
+  <div id="panel-home" class="panel">
 
     <div class="section-header">
       <span class="section-badge">HOME</span>
       <span class="section-title">MSS Training Curriculum &mdash; USAREUR-AF</span>
-      <span class="section-subtitle">TM-10 &bull; TM-20 &bull; TM-30 &bull; ADP/ADRP 1</span>
+      <span class="section-subtitle">Version 3.0 &bull; March 2026</span>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-label">NEW TO MSS?</div>
+      <div class="callout-body"><strong>Start with the Quick Start guide</strong> before reading TM-10. It gets you operational in 30 minutes: log in, navigate, filter data, and export a view. &rarr; <a href="../QUICK_START.md" style="color:var(--navy);font-weight:700;">QUICK_START.md</a></div>
     </div>
 
     <div class="callout bluf">
       <div class="callout-label">BLUF</div>
-      <div class="callout-body">This hub tells you everything you need to know to start using the Maven Smart System (MSS). Find your level below, follow the training path, and use the tabs above to navigate to your specific guidance.</div>
+      <div class="callout-body">Find your level below and follow the training path. All personnel start at TM-10. Builders add TM-20. Data specialists continue to TM-30. Technical roles proceed to the appropriate TM-40 track. Use the sidebar to navigate to your specific guidance.</div>
     </div>
 
-    <h2>FIND YOUR LEVEL</h2>
+    <h2>STEP 1 &mdash; FIND YOUR LEVEL</h2>
     <div class="table-wrap">
       <table>
         <thead>
-          <tr>
-            <th>You Are&hellip;</th>
-            <th>Start Here</th>
-            <th>Then</th>
-            <th>Tab</th>
-          </tr>
+          <tr><th>You Are&hellip;</th><th>Start Here</th><th>Then</th><th>Tab</th></tr>
         </thead>
         <tbody>
           <tr>
-            <td>Any Soldier, officer, or civilian using MSS to access data</td>
+            <td>Any Soldier, officer, or civilian &mdash; using MSS to access and consume data</td>
             <td><strong>TM-10 (User)</strong></td>
             <td>&mdash;</td>
-            <td><span class="chip chip-green">TM-10</span></td>
+            <td><span class="chip chip-navy">TM-10</span></td>
           </tr>
           <tr>
-            <td>Staff building dashboards, forms, or basic pipelines</td>
+            <td>All staff &mdash; building dashboards, forms, or pipelines without coding</td>
             <td><strong>TM-10</strong></td>
             <td>TM-20 (Builder)</td>
-            <td><span class="chip chip-green">TM-20</span></td>
+            <td><span class="chip chip-navy">TM-20</span></td>
           </tr>
           <tr>
-            <td>Data-adjacent specialist (17/25-series, S6/G6, G2/G9)</td>
+            <td>Data-adjacent specialist &mdash; 17/25-series, S6/G6, G2/G9, data analyst</td>
             <td><strong>TM-10 &rarr; TM-20</strong></td>
             <td>TM-30 (Advanced)</td>
             <td><span class="chip chip-gold">TM-30</span></td>
           </tr>
           <tr>
+            <td>Technical specialist &mdash; ORSA, AI/ML, MLE, PM, KM, SWE roles</td>
+            <td><strong>TM-10 &rarr; TM-20 &rarr; TM-30</strong></td>
+            <td>TM-40 (track)</td>
+            <td><span class="chip chip-gold">TM-40</span></td>
+          </tr>
+          <tr>
             <td>Senior leader (O-5+, CSM+) directing a data-capable formation</td>
-            <td><strong>ADP 1</strong></td>
-            <td>Optional: ADRP 1</td>
+            <td><strong>Data Literacy (SL)</strong></td>
+            <td>Optional: Data Literacy</td>
             <td><span class="chip chip-gray">DOCTRINE</span></td>
           </tr>
           <tr>
             <td>Anyone wanting data literacy background before touching MSS</td>
-            <td><strong>ADRP 1</strong></td>
+            <td><strong>Data Literacy</strong></td>
             <td>TM-10</td>
             <td><span class="chip chip-gray">DOCTRINE</span></td>
           </tr>
@@ -770,31 +2072,30 @@
       </table>
     </div>
 
-    <h2>TRAINING PATH</h2>
-
+    <h2>STEP 2 &mdash; FOLLOW THE TRAINING PATH</h2>
     <div class="path-flow">
       <div class="path-step">
         <div class="path-connector">
-          <div class="path-dot optional" title="O-5+ / CSM+ only">A</div>
+          <div class="path-dot optional">A</div>
           <div class="path-line dashed"></div>
         </div>
         <div class="path-content">
-          <div class="path-tm">ADP 1 &mdash; OPTIONAL</div>
+          <div class="path-tm">DATA LIT (SL) &mdash; OPTIONAL (O-5+ / CSM+)</div>
           <div class="path-name">Data Literacy for Senior Leaders</div>
-          <div class="path-audience">Audience: O-5+, CSM+, Senior Civilians &mdash; Command responsibilities and decision frameworks</div>
+          <div class="path-audience">Principles, command responsibilities, decision frameworks</div>
         </div>
       </div>
       <div class="path-spacer"></div>
 
       <div class="path-step">
         <div class="path-connector">
-          <div class="path-dot optional" title="Recommended, not required">B</div>
+          <div class="path-dot optional">B</div>
           <div class="path-line dashed"></div>
         </div>
         <div class="path-content">
-          <div class="path-tm">ADRP 1 &mdash; RECOMMENDED</div>
+          <div class="path-tm">DATA LITERACY &mdash; RECOMMENDED (ALL PERSONNEL)</div>
           <div class="path-name">Data Literacy Reference</div>
-          <div class="path-audience">Audience: All personnel &mdash; Comprehensive platform-agnostic data literacy reference</div>
+          <div class="path-audience">Platform-agnostic data literacy; recommended before TM-10</div>
         </div>
       </div>
       <div class="path-spacer"></div>
@@ -805,9 +2106,9 @@
           <div class="path-line"></div>
         </div>
         <div class="path-content">
-          <div class="path-tm">TM-10 &mdash; REQUIRED FOR ALL</div>
+          <div class="path-tm">TM-10 &mdash; REQUIRED FOR ALL PERSONNEL</div>
           <div class="path-name">Maven User Manual</div>
-          <div class="path-audience">Audience: All personnel &mdash; Login, navigation, Workshop apps, data viewing, security</div>
+          <div class="path-audience">CAC login, navigation, Workshop apps, data viewing, AI tools, security</div>
         </div>
       </div>
       <div class="path-spacer"></div>
@@ -818,9 +2119,9 @@
           <div class="path-line"></div>
         </div>
         <div class="path-content">
-          <div class="path-tm">TM-20 &mdash; ALL STAFF</div>
+          <div class="path-tm">TM-20 &mdash; ALL STAFF (NO-CODE BUILDER)</div>
           <div class="path-name">Builder Manual</div>
-          <div class="path-audience">Prerequisite: TM-10 &mdash; Dashboard builds, Pipeline Builder, Ontology basics, Workshop applications</div>
+          <div class="path-audience">Pipeline Builder (visual), Ontology Manager UI, Workshop app builder</div>
         </div>
       </div>
       <div class="path-spacer"></div>
@@ -828,18 +2129,55 @@
       <div class="path-step">
         <div class="path-connector">
           <div class="path-dot">3</div>
+          <div class="path-line"></div>
         </div>
         <div class="path-content">
           <div class="path-tm">TM-30 &mdash; DATA-ADJACENT SPECIALISTS</div>
           <div class="path-name">Advanced Builder Manual</div>
-          <div class="path-audience">Prerequisite: TM-10 + TM-20 &mdash; PySpark, incremental pipelines, advanced Ontology, AIP, OSDK</div>
+          <div class="path-audience">Complex app design, Ontology architecture, governance, C2DAO standards</div>
+        </div>
+      </div>
+      <div class="path-spacer"></div>
+
+      <div class="path-step">
+        <div class="path-connector">
+          <div class="path-dot">4</div>
+        </div>
+        <div class="path-content">
+          <div class="path-tm">TM-40A–F &mdash; TECHNICAL SPECIALIST TRACKS</div>
+          <div class="path-name">Developer Manuals &mdash; 6 Tracks by Role</div>
+          <div class="path-audience">40A (ORSA) &bull; 40B (AI Eng) &bull; 40C (MLE) &bull; 40D (PM) &bull; 40E (KM) &bull; 40F (SWE) &nbsp;&mdash;&nbsp; Advanced versions at TM-50</div>
         </div>
       </div>
     </div>
 
+    <h2>TM-40 TRACK SELECTION BY MOS / ROLE</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Role / MOS</th><th>Recommended TM-40 Track</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>FA49 &mdash; Operations Research Analyst</td><td><strong>TM-40A (ORSA)</strong></td></tr>
+          <tr><td>G2/S2 analyst</td><td><strong>TM-40A (ORSA)</strong> or TM-40E (KM)</td></tr>
+          <tr><td>17A/17C &mdash; Cyber officer/NCO</td><td><strong>TM-40F (SWE)</strong> or TM-40B (AI Eng)</td></tr>
+          <tr><td>25D &mdash; IT specialist</td><td><strong>TM-40F (SWE)</strong></td></tr>
+          <tr><td>25U &mdash; Signal support</td><td><strong>TM-40F (SWE)</strong> or TM-40D (PM)</td></tr>
+          <tr><td>G6/S6 data officer</td><td><strong>TM-40F (SWE)</strong> or TM-40B (AI Eng)</td></tr>
+          <tr><td>AI/ML engineer (GS/contractor)</td><td><strong>TM-40B (AI Eng)</strong> or TM-40C (MLE)</td></tr>
+          <tr><td>Data scientist (GS/contractor)</td><td><strong>TM-40A (ORSA)</strong> or TM-40C (MLE)</td></tr>
+          <tr><td>G8/S8 &mdash; Resource manager</td><td><strong>TM-40D (PM)</strong></td></tr>
+          <tr><td>PM / Program Manager</td><td><strong>TM-40D (PM)</strong></td></tr>
+          <tr><td>37F &mdash; Psychological Operations</td><td><strong>TM-40E (KM)</strong></td></tr>
+          <tr><td>KMO / Knowledge Officer</td><td><strong>TM-40E (KM)</strong></td></tr>
+          <tr><td>G9 / Civil Affairs</td><td><strong>TM-40D (PM)</strong> or TM-40E (KM)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <div class="callout note mt-24">
-      <div class="callout-label">NOTE &mdash; ACCOUNT ACCESS</div>
-      <div class="callout-body">MSS access requires a provisioned account. Contact your unit S6 or data steward to initiate a request. Account provisioning takes 3&ndash;5 business days. Do not wait until the last minute before a deployment or exercise.</div>
+      <div class="callout-label">NOTE &mdash; MSS ACCOUNT ACCESS</div>
+      <div class="callout-body">MSS access requires a provisioned account. Contact your unit S6 or data steward to initiate a request. Allow 3&ndash;5 business days for provisioning. Do not wait until the start of a deployment or exercise.</div>
     </div>
 
   </div><!-- /panel-home -->
@@ -853,16 +2191,16 @@
     <div class="section-header">
       <span class="section-badge">TM-10</span>
       <span class="section-title">Maven User Manual &mdash; All Personnel</span>
-      <span class="section-subtitle">No technical background required</span>
+      <span class="section-subtitle">No technical background required &bull; Prerequisite: None</span>
     </div>
 
     <div class="callout bluf">
       <div class="callout-label">BLUF</div>
-      <div class="callout-body">TM-10 teaches you how to log in, navigate MSS, read dashboards, submit data through forms, and stay within authorized boundaries. Required for all personnel before operating MSS.</div>
+      <div class="callout-body">TM-10 teaches you how to log in, navigate MSS, read dashboards, submit data through forms, use AI tools, and stay within authorized boundaries. Required for all USAREUR-AF personnel before operating MSS.</div>
     </div>
 
     <h2>1. WHAT IS MSS?</h2>
-    <p>MSS is a secure, web-based platform where your unit&rsquo;s data lives and can be analyzed and acted upon. Think of it like a shared operations center for data: information from logistics, personnel, readiness, and other systems is collected, organized, and made accessible through applications your unit uses every day.</p>
+    <p>MSS is a secure, web-based platform where your unit&rsquo;s data lives and can be analyzed and acted upon. Think of it as a shared operations center for data: information from logistics, personnel, readiness, and other systems is collected, organized, and made accessible through applications your unit uses every day.</p>
     <p>MSS is built on the Palantir Foundry platform, authorized for Army use under the Maven Smart System program.</p>
 
     <div class="card-grid">
@@ -871,7 +2209,7 @@
         <div class="card-body">
           <ul>
             <li>Stores data from Army systems in a single, organized location</li>
-            <li>Makes data visible through applications</li>
+            <li>Makes data visible through applications and dashboards</li>
             <li>Enables units to update records, report status, and track readiness</li>
             <li>Provides analysis tools for authorized personnel</li>
             <li>Supports AI-assisted analysis through authorized tools</li>
@@ -882,8 +2220,8 @@
         <div class="card-label">MSS IS NOT</div>
         <div class="card-body">
           <ul>
-            <li>Not a replacement for official Army systems of record (DCPDS, GCSS-A, MEDPROS, etc.)</li>
-            <li>Not classified by default &mdash; classification depends on data and markings</li>
+            <li>Not a replacement for official systems of record (DCPDS, GCSS-A, MEDPROS, etc.)</li>
+            <li>Not classified by default &mdash; classification depends on data markings</li>
             <li>Not a public system &mdash; access is controlled and audited</li>
           </ul>
         </div>
@@ -910,12 +2248,12 @@
     </div>
 
     <ol>
-      <li>Use only your own credentials. Do not share your CAC, PIN, or any access tokens.</li>
+      <li>Use only your own credentials. Do not share your CAC, PIN, or access tokens.</li>
       <li>Access only data you are authorized to view.</li>
-      <li>Report misrouted data immediately. If you see data at a higher classification than your clearance &mdash; stop and report it. Do not read, copy, or act on that data.</li>
+      <li>Report misrouted data immediately. If you see data at a higher classification than your clearance &mdash; STOP and report it.</li>
       <li>Do not export data without authorization. Exports are logged.</li>
       <li>Log out when done. Do not leave an MSS session unattended on an unlocked workstation.</li>
-      <li>Report incidents immediately to your supervisor and unit security officer.</li>
+      <li>Report security incidents immediately to your supervisor and unit security officer.</li>
     </ol>
 
     <h2>3. TASKS</h2>
@@ -941,7 +2279,7 @@
           <li>Insert your CAC into the CAC reader.</li>
           <li>Open an approved web browser (Chrome or Firefox recommended).</li>
           <li>Navigate to the MSS portal URL provided by your unit S6.</li>
-          <li>When prompted, select your <strong>authentication certificate</strong> (not your email certificate).</li>
+          <li>When prompted, select your <strong>authentication certificate</strong> (not email certificate).</li>
           <li>Enter your CAC PIN when prompted.</li>
           <li>MSS home screen loads &mdash; you are now logged in.</li>
         </ol>
@@ -967,9 +2305,7 @@
       <div class="task-body">
         <div class="table-wrap">
           <table>
-            <thead>
-              <tr><th>Element</th><th>Location</th><th>Purpose</th></tr>
-            </thead>
+            <thead><tr><th>Element</th><th>Location</th><th>Purpose</th></tr></thead>
             <tbody>
               <tr><td>Search bar</td><td>Top center</td><td>Find datasets, applications, and projects</td></tr>
               <tr><td>Notification bell</td><td>Top right</td><td>System alerts, workflow updates</td></tr>
@@ -980,32 +2316,6 @@
               <tr><td>Recent activity</td><td>Home main area</td><td>Recently visited datasets and apps</td></tr>
             </tbody>
           </table>
-        </div>
-      </div>
-    </div>
-
-    <div class="task-block">
-      <div class="task-header">TASK: LOCATE A PROJECT</div>
-      <div class="task-meta">
-        <div class="task-meta-item">
-          <div class="task-meta-label">Conditions</div>
-          <div class="task-meta-value">Logged into MSS, assigned to a unit project</div>
-        </div>
-        <div class="task-meta-item">
-          <div class="task-meta-label">Standards</div>
-          <div class="task-meta-value">Navigate to unit project space and identify its contents</div>
-        </div>
-      </div>
-      <div class="task-body">
-        <ol class="task-steps">
-          <li>Click <strong>Compass</strong> in the left sidebar.</li>
-          <li>Navigate the folder tree to find your unit&rsquo;s project, OR use the search bar: type your unit name and press Enter.</li>
-          <li>Click the project folder to open it.</li>
-          <li>Note subfolders for datasets, applications, and other resources.</li>
-        </ol>
-        <div class="callout note">
-          <div class="callout-label">NOTE</div>
-          <div class="callout-body">If you cannot find your unit&rsquo;s project, your account may not have access yet. Contact your data steward. Do not attempt to access other units&rsquo; projects.</div>
         </div>
       </div>
     </div>
@@ -1026,9 +2336,7 @@
     <h2>5. REPORTING PROBLEMS</h2>
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr><th>Problem Type</th><th>Who to Contact</th></tr>
-        </thead>
+        <thead><tr><th>Problem Type</th><th>Who to Contact</th></tr></thead>
         <tbody>
           <tr><td>Cannot log in</td><td>Unit S6 or MSS Help Desk</td></tr>
           <tr><td>Cannot access a project</td><td>Unit data steward</td></tr>
@@ -1050,142 +2358,132 @@
 
     <div class="section-header">
       <span class="section-badge">TM-20</span>
-      <span class="section-title">Builder Manual &mdash; All Staff</span>
-      <span class="section-subtitle">Prerequisite: TM-10</span>
+      <span class="section-title">No-Code Builder Manual &mdash; All Staff</span>
+      <span class="section-subtitle">Prerequisite: TM-10 &bull; No coding required</span>
     </div>
 
     <div class="callout bluf">
       <div class="callout-label">BLUF</div>
-      <div class="callout-body">TM-20 teaches you how to ingest data, write basic transforms, build Workshop applications, create Object Types, and follow builder standards. Prerequisite: TM-10 complete.</div>
+      <div class="callout-body">TM-20 teaches you how to ingest data, build Workshop applications, create Object Types and basic Actions, and manage projects &mdash; all using the graphical user interface. No coding required. Prerequisite: TM-10 complete.</div>
     </div>
 
     <h2>COMPETENCIES UPON COMPLETION</h2>
     <div class="card-grid">
       <div class="card">
-        <div class="card-label">DATA INGEST</div>
+        <div class="card-label">PROJECT MANAGEMENT (UI)</div>
         <div class="card-body">
           <ul>
-            <li>Create and manage Foundry projects and code repositories</li>
-            <li>Ingest data using Pipeline Builder and basic connectors</li>
+            <li>Create and organize Foundry projects via the UI</li>
+            <li>Set up folder structure: raw / staging / curated layers</li>
+            <li>Manage project access and permissions via UI</li>
+            <li>Follow USAREUR-AF naming conventions and builder standards</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">DATA INGEST (NO CODE)</div>
+        <div class="card-body">
+          <ul>
+            <li>Ingest data using Pipeline Builder &mdash; visual, no code</li>
+            <li>Configure connectors and file sources via UI</li>
+            <li>Schedule pipeline runs via UI</li>
             <li>Understand raw / staging / curated dataset layers</li>
           </ul>
         </div>
       </div>
       <div class="card">
-        <div class="card-label">TRANSFORMS</div>
+        <div class="card-label">ONTOLOGY (UI)</div>
         <div class="card-body">
           <ul>
-            <li>Write basic Python transforms (<code>@transform_df</code>)</li>
-            <li>Enforce schema on outputs</li>
-            <li>Write basic <code>@check</code> data quality validators</li>
+            <li>Create Object Types and set primary keys via Ontology Manager UI</li>
+            <li>Create Link Types between objects via UI</li>
+            <li>Build basic Actions via Action Editor UI</li>
+            <li>Test Object Types in Object Explorer before building apps</li>
           </ul>
         </div>
       </div>
       <div class="card">
-        <div class="card-label">ONTOLOGY</div>
+        <div class="card-label">WORKSHOP APPLICATIONS</div>
         <div class="card-body">
           <ul>
-            <li>Create Object Types and set primary keys</li>
-            <li>Create Link Types between objects</li>
-            <li>Build basic Actions</li>
+            <li>Build and publish Workshop applications with dashboards, forms, and filters</li>
+            <li>Select and configure appropriate widgets for each use case</li>
+            <li>Apply access controls and publish to users</li>
           </ul>
         </div>
       </div>
       <div class="card">
-        <div class="card-label">WORKSHOP</div>
+        <div class="card-label">BRANCHING &amp; GOVERNANCE</div>
         <div class="card-body">
           <ul>
-            <li>Build and publish Workshop applications</li>
-            <li>Add dashboards, forms, and filters</li>
-            <li>Follow naming conventions and builder standards</li>
-            <li>Manage dev/prod discipline using Foundry branching</li>
+            <li>Use Foundry branching to build and promote via UI</li>
+            <li>Distinguish development from production environments</li>
+            <li>Apply USAREUR-AF builder standards</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <h2>THE FOUNDRY STACK</h2>
-    <p>Data in MSS flows through layers. As a builder, you work in the middle layers. Never modify raw data.</p>
+    <h2>THE FOUNDRY DATA STACK</h2>
+    <p>Data flows through layers. As a TM-20 builder, you work in the middle layers using visual tools. Never modify raw data.</p>
     <div class="stack-diagram">
-      <div class="stack-layer layer-1">Workshop App / AIP Agent</div>
+      <div class="stack-layer layer-1">Workshop App / AIP Agent (consume)</div>
       <div class="stack-arrow">&#x25B2;</div>
       <div class="stack-layer layer-2">Ontology (Objects, Links, Actions)</div>
       <div class="stack-arrow">&#x25B2;</div>
-      <div class="stack-layer layer-3">Curated Dataset</div>
+      <div class="stack-layer layer-3">Curated Dataset (Pipeline Builder output)</div>
       <div class="stack-arrow">&#x25B2;</div>
-      <div class="stack-layer layer-4">Staging Dataset</div>
+      <div class="stack-layer layer-4">Staging Dataset (Pipeline Builder transforms)</div>
       <div class="stack-arrow">&#x25B2;</div>
-      <div class="stack-layer layer-5">Raw Dataset (never touch)</div>
+      <div class="stack-layer layer-5">Raw Dataset &mdash; READ ONLY, never modify</div>
     </div>
-
-    <h2>BASIC TRANSFORM SKELETON</h2>
-    <pre><code>from transforms.api import transform_df, Input, Output
-import pyspark.sql.functions as F
-
-@transform_df(
-    Output("/Project/AOR/source/curated/my_dataset"),
-    source=Input("/Project/AOR/source/staging/my_dataset"),
-)
-def compute(source):
-    return (
-        source
-        .filter(F.col("required_field").isNotNull())
-        .dropDuplicates(["id"])
-        .withColumn("processed_dt", F.current_timestamp())
-    )</code></pre>
 
     <h2>WORKSHOP WIDGET SELECTION</h2>
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr><th>Need</th><th>Widget to Use</th></tr>
-        </thead>
+        <thead><tr><th>You Need To&hellip;</th><th>Use This Widget</th></tr></thead>
         <tbody>
-          <tr><td>Show many objects / records</td><td>Object Table</td></tr>
-          <tr><td>Show detail for one object</td><td>Object Detail</td></tr>
-          <tr><td>Let users filter data</td><td>Filter Panel / Dropdown</td></tr>
-          <tr><td>Show a chart</td><td>Bar / Line / Pie Chart Widget</td></tr>
-          <tr><td>Show a map</td><td>Map Widget</td></tr>
-          <tr><td>Write / update data</td><td>Button + Action or Action Form</td></tr>
-          <tr><td>Show a key metric</td><td>Metric Tile</td></tr>
+          <tr><td>Display many objects or records</td><td>Object Table</td></tr>
+          <tr><td>Show details for one selected object</td><td>Object Detail</td></tr>
+          <tr><td>Let users filter the data they see</td><td>Filter Panel / Dropdown</td></tr>
+          <tr><td>Show a chart (bar, line, pie)</td><td>Chart Widget</td></tr>
+          <tr><td>Show geographic data on a map</td><td>Map Widget</td></tr>
+          <tr><td>Let users write or update data</td><td>Button + Action or Action Form</td></tr>
+          <tr><td>Show a single key metric prominently</td><td>Metric Tile</td></tr>
+          <tr><td>Navigate between app sections</td><td>Navigation / Tab Widget</td></tr>
         </tbody>
       </table>
     </div>
+
+    <h2>ONTOLOGY SETUP ORDER (UI STEPS)</h2>
+    <ol>
+      <li>Confirm curated dataset exists and is populated (Pipeline Builder pipeline passing)</li>
+      <li>Open <strong>Ontology Manager</strong> in the left sidebar</li>
+      <li>Create Object Type &rarr; set primary key property &rarr; map properties from curated dataset</li>
+      <li>Create Link Types between related Object Types (if needed)</li>
+      <li>Publish ontology branch and test in <strong>Object Explorer</strong></li>
+      <li>Build Workshop app only after Object Explorer confirms objects are visible</li>
+    </ol>
 
     <h2>NAMING CONVENTIONS</h2>
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr><th>Object Type</th><th>Convention</th><th>Example</th></tr>
-        </thead>
+        <thead><tr><th>Object Type</th><th>Convention</th><th>Example</th></tr></thead>
         <tbody>
-          <tr><td>Datasets</td><td><code>/Project/AOR/source/raw|staging|curated</code></td><td><code>/USAREUR/EUR/personnel/curated/soldier_status</code></td></tr>
+          <tr><td>Datasets (path)</td><td><code>/Project/AOR/source/raw|staging|curated</code></td><td><code>/USAREUR/EUR/personnel/curated/soldier_status</code></td></tr>
           <tr><td>Object Types</td><td><code>PascalCase</code></td><td><code>UnitStatus</code></td></tr>
-          <tr><td>Code Repositories</td><td><code>kebab-case</code></td><td><code>unit-status-transforms</code></td></tr>
-          <tr><td>Functions / Transforms</td><td><code>snake_case</code></td><td><code>raw_to_staging</code></td></tr>
           <tr><td>Properties (API name)</td><td><code>camelCase</code></td><td><code>unitName</code></td></tr>
-          <tr><td>Properties (display)</td><td>Title Case</td><td><code>Unit Name</code></td></tr>
+          <tr><td>Properties (display name)</td><td>Title Case</td><td><code>Unit Name</code></td></tr>
+          <tr><td>Link Types</td><td><code>PascalCase</code> verb form</td><td><code>HasEquipment</code></td></tr>
+          <tr><td>Workshop app names</td><td>Unit + function + version</td><td><code>EUR-Personnel-Readiness-v2</code></td></tr>
         </tbody>
       </table>
     </div>
 
-    <h2>ONTOLOGY SETUP ORDER</h2>
-    <ol>
-      <li>Build curated dataset (transform chain must be complete)</li>
-      <li>Create Object Type &rarr; set primary key</li>
-      <li>Map properties from curated dataset</li>
-      <li>Create Link Types between related Object Types</li>
-      <li>Add Computed Properties if needed</li>
-      <li>Test in Object Explorer before building Workshop app</li>
-    </ol>
-
-    <h2>PERMISSIONS REQUIRED (request from team lead)</h2>
-    <ul>
-      <li>Editor on project folder</li>
-      <li>Editor on ontology branch</li>
-      <li>Developer on Code Repos</li>
-      <li>Viewer on source datasets</li>
-    </ul>
+    <div class="callout caution mt-24">
+      <div class="callout-label">CAUTION &mdash; SHARED RESOURCES</div>
+      <div class="callout-body">Changes to shared datasets and Object Types affect all downstream applications and users. Before modifying a shared resource, coordinate with your data steward.</div>
+    </div>
 
   </div><!-- /panel-tm20 -->
 
@@ -1197,133 +2495,388 @@ def compute(source):
 
     <div class="section-header">
       <span class="section-badge">TM-30</span>
-      <span class="section-title">Advanced Builder &mdash; Data-Adjacent Specialists</span>
+      <span class="section-title">Advanced Builder Manual &mdash; Data-Adjacent Specialists</span>
       <span class="section-subtitle">Prerequisite: TM-10 + TM-20 &bull; 17/25-series &bull; S6/G6 &bull; G2/G9</span>
     </div>
 
     <div class="callout bluf">
       <div class="callout-label">BLUF</div>
-      <div class="callout-body">TM-30 covers advanced transforms, incremental pipelines, complex ontology modeling, AIP Logic integration, OSDK external applications, and production CI/CD workflows. Requires TM-10 and TM-20 as prerequisites.</div>
+      <div class="callout-body">TM-30 is for personnel who design and own MSS solutions. This level covers complex application design, advanced Pipeline Builder, Ontology architecture, AIP Logic configuration, data governance, and C2DAO standards. All work is done via the UI; coding is escalated to TM-40 developers.</div>
+    </div>
+
+    <div class="callout warning">
+      <div class="callout-label">WARNING</div>
+      <div class="callout-body">Advanced builders operate at the operational-technical boundary of MSS. Errors at TM-30 level affect the data environment of the entire formation, including coalition partners. Coordinate with data stewards and the USAREUR-AF C2DAO before modifying any shared production resource.</div>
     </div>
 
     <h2>COMPETENCIES UPON COMPLETION</h2>
     <div class="card-grid">
       <div class="card">
-        <div class="card-label">TRANSFORMS</div>
+        <div class="card-label">ADVANCED WORKSHOP DESIGN</div>
         <div class="card-body">
           <ul>
-            <li>Write optimized PySpark transforms with partitioning and schema enforcement</li>
-            <li>Implement incremental pipelines with <code>@incremental</code> and watermark patterns</li>
-            <li>Conduct advanced analysis in Quiver and Contour</li>
+            <li>Design multi-page Workshop applications with conditional logic and variable passing</li>
+            <li>Build dynamic layouts: show/hide panels based on user selections</li>
+            <li>Design navigation flows and inter-page parameter handoff</li>
+            <li>Publish and manage application versions</li>
           </ul>
         </div>
       </div>
       <div class="card">
-        <div class="card-label">ONTOLOGY</div>
+        <div class="card-label">ADVANCED PIPELINE BUILDER</div>
         <div class="card-body">
           <ul>
-            <li>Model complex ontology patterns (interfaces, derived properties, link properties)</li>
-            <li>Write Functions on Objects (FOO) in TypeScript</li>
-            <li>Build and test complex Actions with validation logic</li>
+            <li>Build multi-source join pipelines with complex aggregations (visual)</li>
+            <li>Design scheduled and triggered pipeline runs</li>
+            <li>Review and interpret data lineage graphs</li>
+            <li>Escalate to TM-40 when code transforms are required</li>
           </ul>
         </div>
       </div>
       <div class="card">
-        <div class="card-label">AIP &amp; INTEGRATION</div>
+        <div class="card-label">ONTOLOGY ARCHITECTURE</div>
         <div class="card-body">
           <ul>
-            <li>Integrate AIP Logic workflows and Agent Studio into applications</li>
-            <li>Develop external applications using the OSDK</li>
-            <li>Manage data lineage and production CI/CD workflows</li>
+            <li>Design Object Type and Link Type models via Ontology Manager UI</li>
+            <li>Architecture thinking: model for downstream app requirements, not just source data</li>
+            <li>Design Action workflows with validation and approval logic via UI</li>
+            <li>Coordinate ontology changes with all downstream application owners</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">ADVANCED ANALYSIS</div>
+        <div class="card-body">
+          <ul>
+            <li>Conduct advanced Contour analysis: complex aggregations, pivots, calculated columns, saved views</li>
+            <li>Build advanced Quiver dashboards with multi-object analysis and linked views</li>
+            <li>Create reusable analysis templates for unit use</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">AIP LOGIC &amp; CONFIGURATION</div>
+        <div class="card-body">
+          <ul>
+            <li>Configure AIP Logic workflows via the UI (not author them &mdash; that is TM-40B)</li>
+            <li>Connect AIP agents to Workshop applications</li>
+            <li>Review and validate AI workflow outputs before production deployment</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">GOVERNANCE &amp; PRODUCTION</div>
+        <div class="card-body">
+          <ul>
+            <li>Manage branching and production promotion via UI</li>
+            <li>Apply USAREUR-AF C2DAO governance standards and naming conventions</li>
+            <li>Manage governance workflows with data stewards</li>
+            <li>Ensure coalition-facing products have C2DAO coordination and NAFv4 compliance review</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <h2>DECORATOR SELECTION GUIDE</h2>
+    <h2>TM-30 vs TM-40 &mdash; WHAT YOU OWN VS WHAT YOU ESCALATE</h2>
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr><th>Data Size</th><th>Needs History / Incremental</th><th>Use</th></tr>
-        </thead>
+        <thead><tr><th>You Own At TM-30 (UI)</th><th>Escalate to TM-40 When&hellip;</th></tr></thead>
         <tbody>
-          <tr><td>Large</td><td>No</td><td><code>@transform_df</code></td></tr>
-          <tr><td>Large</td><td>Yes (append only)</td><td><code>@incremental</code></td></tr>
-          <tr><td>Small</td><td>No</td><td><code>@lightweight_transform</code></td></tr>
+          <tr><td>Application design and UX</td><td>Custom Python/PySpark transforms needed</td></tr>
+          <tr><td>Ontology model design (via UI)</td><td>Functions on Objects (TypeScript) required</td></tr>
+          <tr><td>Advanced Pipeline Builder (visual)</td><td>Incremental watermark or code logic needed</td></tr>
+          <tr><td>AIP Logic configuration</td><td>Custom AIP Logic workflow authoring needed</td></tr>
+          <tr><td>Governance coordination</td><td>External application (OSDK) needed</td></tr>
+          <tr><td>Production promotion via UI</td><td>CI/CD pipeline automation needed</td></tr>
         </tbody>
       </table>
     </div>
 
-    <h2>INCREMENTAL PIPELINE PATTERN</h2>
-    <pre><code>from transforms.api import incremental, Input, Output
-import pyspark.sql.functions as F
-
-@incremental(
-    require_incremental=True,
-    semantic_version=1,
-)
-@transform_df(
-    Output("/Project/AOR/source/curated/events_incremental"),
-    source=Input("/Project/AOR/source/staging/events"),
-)
-def compute(source, ctx):
-    # Only process new data since last run
-    if ctx.is_incremental:
-        source = source.filter(
-            F.col("event_dt") > ctx.last_run_input_watermark
-        )
-    return source.dropDuplicates(["event_id"])</code></pre>
-
-    <h2>COMMON PYSPARK OPERATIONS</h2>
-    <pre><code># Filter rows
-df.filter(F.col("status") == "ACTIVE")
-
-# Add / transform column
-df.withColumn("unit_upper", F.upper(F.col("unit_name")))
-
-# Rename column
-df.withColumnRenamed("old_col", "new_col")
-
-# Remove duplicates
-df.dropDuplicates(["id"])
-
-# Join datasets
-df1.join(df2, "unit_id", "left")
-
-# Group and count
-df.groupBy("unit").agg(F.count("*").alias("record_count"))
-
-# Cast data type
-df.withColumn("count", F.col("count").cast("integer"))
-
-# Fill nulls
-df.fillna({"status": "UNKNOWN"})
-
-# Current timestamp
-F.current_timestamp()
-
-# Parse timestamp string
-F.to_timestamp(F.col("dtg_str"), "yyyy-MM-dd HH:mm:ss")</code></pre>
-
-    <h2>TROUBLESHOOTING ADVANCED PIPELINES</h2>
+    <h2>C2DAO GOVERNANCE GATES &mdash; HARD STOPS</h2>
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr><th>Symptom</th><th>First Action</th></tr>
-        </thead>
+        <thead><tr><th>Requirement</th><th>TM-30 Action</th><th>Hard Gate?</th></tr></thead>
         <tbody>
-          <tr><td>Build fails</td><td>Read the full error &mdash; find &ldquo;Caused by:&rdquo; for root cause</td></tr>
-          <tr><td>Empty output dataset</td><td>Check your filters; add <code>.count()</code> to a debug stage</td></tr>
-          <tr><td>Schema mismatch</td><td>Delete output dataset and rebuild from scratch</td></tr>
-          <tr><td>Workshop app not showing objects</td><td>Verify ontology branch is correct and published</td></tr>
-          <tr><td>Object not searchable</td><td>Confirm primary key is set and unique</td></tr>
-          <tr><td>Action fails</td><td>Check validation rules and user permissions on the action</td></tr>
-          <tr><td>Incremental not processing</td><td>Check watermark value; consider resetting for a full rebuild</td></tr>
+          <tr><td>New shared Object Type or dataset</td><td>Coordinate with C2DAO before publishing to production</td><td>Yes</td></tr>
+          <tr><td>Coalition / MPE-facing data product</td><td>C2DAO coordination + NAFv4 compliance review</td><td>Yes &mdash; do not skip</td></tr>
+          <tr><td>Schema change to existing shared resource</td><td>Notify all downstream owners; coordinate with steward</td><td>Yes</td></tr>
+          <tr><td>New AIP Logic workflow on operational data</td><td>Authorization review before deployment</td><td>Yes</td></tr>
+          <tr><td>Access permission changes</td><td>Submit through formal request to unit data steward</td><td>Yes</td></tr>
         </tbody>
       </table>
     </div>
 
   </div><!-- /panel-tm30 -->
+
+
+  <!-- ======================================================
+       TM-40 PANEL
+  ====================================================== -->
+  <div id="panel-tm40" class="panel">
+
+    <div class="section-header">
+      <span class="section-badge">TM-40</span>
+      <span class="section-title">Technical Specialist Tracks &mdash; Developer Manuals</span>
+      <span class="section-subtitle">Prerequisite: TM-30 &bull; Six tracks by role &bull; Advanced versions at TM-50</span>
+    </div>
+
+    <div class="callout bluf">
+      <div class="callout-label">BLUF</div>
+      <div class="callout-body">The TM-40 series covers developer-level capabilities that require coding, advanced tooling, or specialized technical expertise. Six tracks are available, each targeting a specific role. Prerequisite for all tracks is TM-30. Select your track using the MOS/Role table on the HOME tab.</div>
+    </div>
+
+    <div class="track-grid">
+
+      <div class="track-card">
+        <div class="track-card-hdr">
+          <span class="track-tm">TM-40A &mdash; ORSA Track</span>
+          <span class="track-chip">TM-30 Required</span>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Operations Research &amp; Systems Analysis</div>
+          <div class="track-audience">FA49 &bull; G2/S2 quantitative analysts &bull; Wargame analysts</div>
+          <ul class="track-topics">
+            <li>Configure Code Workspaces (Python/R) within Foundry</li>
+            <li>Statistical modeling: regression, classification, validation for readiness/logistics</li>
+            <li>Time series forecasting with ARIMA/SARIMA patterns</li>
+            <li>Monte Carlo simulation for COA comparison and risk quantification</li>
+            <li>Linear programming for resource allocation and scheduling optimization</li>
+            <li>Wargame/exercise data collection architecture and aggregation pipelines</li>
+            <li>Analytical decision support products (Quiver/Contour) to commander standard</li>
+            <li>Communicate uncertainty: confidence intervals, sensitivity analysis, briefing standards</li>
+          </ul>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50A</div>
+        </div>
+      </div>
+
+      <div class="track-card">
+        <div class="track-card-hdr">
+          <span class="track-tm">TM-40B &mdash; AI Engineer Track</span>
+          <span class="track-chip">TM-30 Required</span>
+        </div>
+        <div class="track-body">
+          <div class="track-name">AIP Logic, Agent Studio &amp; LLM Integration</div>
+          <div class="track-audience">AI/ML specialists &bull; G6/S6 data officers &bull; 17A/17C</div>
+          <ul class="track-topics">
+            <li>Author AIP Logic workflows: prompt engineering, chain design, output handling</li>
+            <li>Build and configure AIP Agent Studio agents with tools, memory, and orchestration</li>
+            <li>Implement LLM integration patterns: ontology data grounding, RAG, context construction</li>
+            <li>Apply AI safety requirements: human-in-the-loop gates, output validation, OPSEC</li>
+            <li>Write Python transforms that prepare data for AI consumption</li>
+            <li>Connect AIP Logic workflows to Object Types and Actions</li>
+            <li>Test and red-team AI outputs; evaluate quality against defined standards</li>
+            <li>Deploy and monitor AIP Logic workflows in production</li>
+          </ul>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50B</div>
+        </div>
+      </div>
+
+      <div class="track-card">
+        <div class="track-card-hdr">
+          <span class="track-tm">TM-40C &mdash; ML Engineer Track</span>
+          <span class="track-chip">TM-30 Required</span>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Code Workspaces, Model Training &amp; Deployment</div>
+          <div class="track-audience">ML engineers &bull; Data scientists building/deploying models on MSS</div>
+          <ul class="track-topics">
+            <li>Configure Code Workspaces for model development (GPU, packages, environment management)</li>
+            <li>Build and evaluate ML models within the Foundry environment</li>
+            <li>Manage model versioning, experiment tracking, and reproducibility</li>
+            <li>Deploy models to production and integrate with Ontology Objects and Actions</li>
+            <li>Implement MLOps patterns: monitoring, drift detection, retraining triggers</li>
+            <li>Apply responsible AI practices and model documentation standards for operational use</li>
+          </ul>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50C</div>
+        </div>
+      </div>
+
+      <div class="track-card">
+        <div class="track-card-hdr">
+          <span class="track-tm">TM-40D &mdash; Program Manager Track</span>
+          <span class="track-chip">TM-30 Required</span>
+        </div>
+        <div class="track-body">
+          <div class="track-name">PM Dashboards, Portfolio Analysis &amp; Reporting Pipelines</div>
+          <div class="track-audience">PMs &bull; Resource managers &bull; G8/S8 &bull; Acquisition professionals</div>
+          <ul class="track-topics">
+            <li>Design program data architecture: Program, Milestone, Resource, Risk Object Types</li>
+            <li>Ingest milestone and budget data from GFEBS/GCSS-A/IMS via Pipeline Builder</li>
+            <li>Build milestone tracking dashboards with RAG status and automated variance computation</li>
+            <li>Visualize budget execution (obligation rates) and flag at-risk funding lines</li>
+            <li>Conduct portfolio analysis across programs in Contour and Quiver</li>
+            <li>Build automated reporting pipelines with scheduled refresh and failure alerting</li>
+            <li>Produce commander-ready IPR/EAB products from MSS without manual PowerPoint updates</li>
+            <li>Apply access management, classification, and data stewardship for PM applications</li>
+          </ul>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50D</div>
+        </div>
+      </div>
+
+      <div class="track-card">
+        <div class="track-card-hdr">
+          <span class="track-tm">TM-40E &mdash; Knowledge Manager Track</span>
+          <span class="track-chip">TM-30 Required</span>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Knowledge Repositories, AIP Summarization &amp; Lessons Learned</div>
+          <div class="track-audience">KMOs &bull; 37F &bull; S2/S3/S6 KM roles &bull; AAR facilitators</div>
+          <ul class="track-topics">
+            <li>Design knowledge architecture for AAR, lessons learned, doctrine, and SOP repositories</li>
+            <li>Build AAR capture systems using Workshop forms and Object Type pipelines</li>
+            <li>Design and operate lessons-learned ingestion and tagging pipelines</li>
+            <li>Use AIP Logic for knowledge summarization, search augmentation, and theme extraction</li>
+            <li>Build full-text and semantic search systems over knowledge repositories</li>
+            <li>Manage doctrine and SOP version control within Foundry</li>
+            <li>Build personnel expertise mapping (skills/experience registries)</li>
+            <li>Design knowledge transfer and unit continuity processes using MSS</li>
+          </ul>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50E</div>
+        </div>
+      </div>
+
+      <div class="track-card">
+        <div class="track-card-hdr">
+          <span class="track-tm">TM-40F &mdash; Software Engineer Track</span>
+          <span class="track-chip">TM-30 Required</span>
+        </div>
+        <div class="track-body">
+          <div class="track-name">OSDK, Full-Stack Foundry Applications &amp; Platform SDK</div>
+          <div class="track-audience">SWEs &bull; 17A/17C &bull; 25D &bull; G6 developers</div>
+          <ul class="track-topics">
+            <li>Authenticate and query the Foundry Ontology via OSDK (TypeScript/Python)</li>
+            <li>Execute Actions, subscribe to Object changes, handle pagination and filtering via OSDK</li>
+            <li>Use Foundry Platform SDK for dataset operations, file management, and branch management</li>
+            <li>Build TypeScript Functions on Objects (computed properties, bulk query patterns)</li>
+            <li>Write and test complex Action validators with TypeScript</li>
+            <li>Build Slate applications integrated with the Foundry API</li>
+            <li>Apply USAREUR-AF code review and deployment standards for MSS applications</li>
+          </ul>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50F</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- /panel-tm40 -->
+
+
+  <!-- ======================================================
+       TM-50 PANEL
+  ====================================================== -->
+  <div id="panel-tm50" class="panel">
+
+    <div class="section-header">
+      <span class="section-badge">TM-50</span>
+      <span class="section-title">Advanced Developer Tracks</span>
+      <span class="section-subtitle">Prerequisite: TM-40 (by track) &bull; All 6 tracks complete &mdash; March 2026</span>
+    </div>
+
+    <div class="callout bluf">
+      <div class="callout-label">BLUF &mdash; ADVANCED TRACKS</div>
+      <div class="callout-body">The TM-50 series provides advanced-level instruction for each developer track, building directly on the corresponding TM-40 manual. Intended for senior technical leads, platform architects, and senior developers designing enterprise-scale MSS capabilities. All 6 tracks are complete and available.</div>
+    </div>
+
+    <h2>TM-50 SERIES &mdash; PUBLICATIONS</h2>
+    <div class="track-grid">
+      <a class="track-card doc-card" href="../pdf/TM_50A_ORSA_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-50A &mdash; ORSA Advanced</div>
+          <div class="track-chip">Advanced</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Advanced ORSA</div>
+          <div class="track-audience">Prerequisite: TM-40A</div>
+          <ul class="track-topics">
+            <li>Nonlinear programming, stochastic models</li>
+            <li>Agent-based modeling (ABMS)</li>
+            <li>Campaign wargame data architecture</li>
+          </ul>
+        </div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/TM_50B_AI_ENGINEER_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-50B &mdash; AI Engineer Advanced</div>
+          <div class="track-chip">Advanced</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Advanced AI Engineering</div>
+          <div class="track-audience">Prerequisite: TM-40B</div>
+          <ul class="track-topics">
+            <li>Multi-agent orchestration &amp; shared state</li>
+            <li>Advanced RAG, domain-adapted LLMs</li>
+            <li>AI red-team assessment &amp; observability</li>
+          </ul>
+        </div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/TM_50C_ML_ENGINEER_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-50C &mdash; ML Engineer Advanced</div>
+          <div class="track-chip">Advanced</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Advanced ML Engineering</div>
+          <div class="track-audience">Prerequisite: TM-40C</div>
+          <ul class="track-topics">
+            <li>Automated retraining pipelines</li>
+            <li>Transformer fine-tuning, GNNs</li>
+            <li>Federated retraining, adversarial robustness</li>
+          </ul>
+        </div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/TM_50D_PROGRAM_MANAGER_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-50D &mdash; PM Advanced</div>
+          <div class="track-chip">Advanced</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Advanced Program Management</div>
+          <div class="track-audience">Prerequisite: TM-40D</div>
+          <ul class="track-topics">
+            <li>PI planning, cross-team governance</li>
+            <li>GO/SES briefing, Palantir partnership</li>
+            <li>Technical debt at program scale</li>
+          </ul>
+        </div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/TM_50E_KNOWLEDGE_MANAGER_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-50E &mdash; KM Advanced</div>
+          <div class="track-chip">Advanced</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Advanced Knowledge Management</div>
+          <div class="track-audience">Prerequisite: TM-40E</div>
+          <ul class="track-topics">
+            <li>Federated KM architecture, NATO integration</li>
+            <li>STANAG 4778 conformance</li>
+            <li>Knowledge graphs at scale</li>
+          </ul>
+        </div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/TM_50F_SOFTWARE_ENGINEER_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-50F &mdash; SWE Advanced</div>
+          <div class="track-chip">Advanced</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Advanced Software Engineering</div>
+          <div class="track-audience">Prerequisite: TM-40F</div>
+          <ul class="track-topics">
+            <li>Scale, multi-tenancy, event streaming</li>
+            <li>OWASP, SAST, authorized pen testing</li>
+            <li>Architecture review, platform governance</li>
+          </ul>
+        </div>
+      </a>
+    </div>
+
+    <div class="callout note mt-24">
+      <div class="callout-label">NOTE &mdash; PREREQUISITES</div>
+      <div class="callout-body">Each TM-50 track requires completion of the corresponding TM-40 track. Personnel should confirm TM-40 proficiency with their data steward before beginning TM-50 content. Contact the USAREUR-AF Operational Data Team for access questions.</div>
+    </div>
+
+  </div><!-- /panel-tm50 -->
 
 
   <!-- ======================================================
@@ -1333,83 +2886,58 @@ F.to_timestamp(F.col("dtg_str"), "yyyy-MM-dd HH:mm:ss")</code></pre>
 
     <div class="section-header">
       <span class="section-badge">DOCTRINE</span>
-      <span class="section-title">Data Literacy Publications &mdash; ADP 1 &amp; ADRP 1</span>
+      <span class="section-title">Data Literacy Publications</span>
       <span class="section-subtitle">Foundational doctrine &bull; Platform-agnostic</span>
     </div>
 
     <div class="callout bluf">
       <div class="callout-label">BLUF</div>
-      <div class="callout-body">Before touching MSS, understand <em>why</em> data matters. ADP 1 is written for commanders and senior leaders. ADRP 1 is the comprehensive reference for all personnel.</div>
+      <div class="callout-body">Before touching MSS, understand <em>why</em> data matters. Data Literacy for Senior Leaders is written for commanders and senior leaders. Data Literacy Technical Reference is the comprehensive reference for all personnel. Neither publication is platform-specific.</div>
     </div>
 
-    <div class="card-grid">
+    <div class="card-grid card-grid-2">
       <div class="card gold-top">
-        <div class="card-label">ADP 1 &mdash; SENIOR LEADERS</div>
+        <div class="card-label">SENIOR LEADERS (O-5+ / CSM+)</div>
         <div class="card-title">Data Literacy for Senior Leaders</div>
         <div class="card-body">
-          <p>Written for O-5+, CSM+, and senior civilians. Covers command responsibilities, evaluating data products, directing a data-capable formation, and decision frameworks.</p>
-          <p><strong>Format:</strong> Short (~20&ndash;30pp). Principles, not procedures.</p>
-          <p><strong>Key topics:</strong> Commander&rsquo;s data responsibilities &bull; Evaluating analytical products &bull; Standing up MSS capability in your unit &bull; Data governance and stewardship</p>
+          <p>Written for commanders, senior NCOs, and senior civilians. Covers command responsibilities, evaluating data products, directing a data-capable formation, and decision frameworks.</p>
+          <p><strong>Format:</strong> Short (~20&ndash;30pp). Principles, not procedures. Chapter/paragraph numbered.</p>
+          <p><strong>Key topics:</strong> Commander&rsquo;s data responsibilities &bull; Evaluating analytical products &bull; Standing up MSS capability &bull; Data governance and stewardship</p>
         </div>
       </div>
       <div class="card">
-        <div class="card-label">ADRP 1 &mdash; ALL PERSONNEL</div>
+        <div class="card-label">ALL PERSONNEL</div>
         <div class="card-title">Data Literacy Reference</div>
         <div class="card-body">
-          <p>Comprehensive platform-agnostic data literacy reference for all personnel. Recommended prior reading before TM-10.</p>
-          <p><strong>Format:</strong> Long (~50&ndash;100pp). Examples, vignettes, detailed explanations.</p>
-          <p><strong>Key topics:</strong> Data types and structures &bull; Pipeline concepts &bull; Data quality &bull; Analysis fundamentals &bull; Security and classification &bull; Operational data integration</p>
+          <p>Comprehensive platform-agnostic data literacy reference. Recommended prior reading before TM-10.</p>
+          <p><strong>Format:</strong> Long (~50&ndash;100pp). Examples, vignettes, detailed explanations, annexes.</p>
+          <p><strong>Key topics:</strong> Data types and structures &bull; Pipeline concepts &bull; Data quality &bull; Analysis fundamentals &bull; Security and classification &bull; Operational data integration &bull; Governance</p>
         </div>
       </div>
     </div>
 
-    <h2>PUBLICATION COMPARISON</h2>
+    <h2>FULL PUBLICATIONS INDEX</h2>
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr><th>Publication</th><th>Audience</th><th>Length</th><th>Purpose</th><th>When to Read</th></tr>
-        </thead>
+        <thead><tr><th>Publication</th><th>Audience</th><th>Purpose</th><th>When to Read</th></tr></thead>
         <tbody>
-          <tr>
-            <td><strong>ADP 1</strong></td>
-            <td>O-5+, CSM+, Senior Civilians</td>
-            <td>~20&ndash;30 pp</td>
-            <td>Principles, command responsibilities</td>
-            <td>Before directing MSS use</td>
-          </tr>
-          <tr>
-            <td><strong>ADRP 1</strong></td>
-            <td>All personnel</td>
-            <td>~50&ndash;100 pp</td>
-            <td>Comprehensive data literacy reference</td>
-            <td>Before TM-10 (recommended)</td>
-          </tr>
-          <tr>
-            <td><strong>TM-10</strong></td>
-            <td>All personnel</td>
-            <td>Task-based</td>
-            <td>Operate MSS as an end user</td>
-            <td>Before first MSS access</td>
-          </tr>
-          <tr>
-            <td><strong>TM-20</strong></td>
-            <td>All staff</td>
-            <td>Task-based</td>
-            <td>Build Workshop apps and pipelines</td>
-            <td>After TM-10</td>
-          </tr>
-          <tr>
-            <td><strong>TM-30</strong></td>
-            <td>Data-adjacent specialists</td>
-            <td>Task-based</td>
-            <td>Advanced development</td>
-            <td>After TM-10 + TM-20</td>
-          </tr>
+          <tr><td><strong>Data Literacy (SL)</strong></td><td>O-5+, CSM+, Sr Civilians</td><td>Principles, command responsibilities</td><td>Before directing MSS use</td></tr>
+          <tr><td><strong>Data Literacy</strong></td><td>All personnel</td><td>Comprehensive data literacy reference</td><td>Before TM-10 (recommended)</td></tr>
+          <tr><td><strong>TM-10</strong></td><td>All personnel</td><td>Operate MSS as end user</td><td>Before first MSS access</td></tr>
+          <tr><td><strong>TM-20</strong></td><td>All staff</td><td>Build pipelines, Ontology, Workshop via UI &mdash; no code</td><td>After TM-10</td></tr>
+          <tr><td><strong>TM-30</strong></td><td>Data-adjacent specialists</td><td>Design complex apps; governance; C2DAO standards</td><td>After TM-10 + TM-20</td></tr>
+          <tr><td><strong>TM-40A</strong></td><td>ORSA</td><td>Statistical modeling, simulation, wargame analytics</td><td>After TM-30</td></tr>
+          <tr><td><strong>TM-40B</strong></td><td>AI Engineers</td><td>AIP Logic authoring, Agent Studio, LLM integration</td><td>After TM-30</td></tr>
+          <tr><td><strong>TM-40C</strong></td><td>ML Engineers</td><td>Code Workspaces, model training, MLOps</td><td>After TM-30</td></tr>
+          <tr><td><strong>TM-40D</strong></td><td>PMs / G8</td><td>PM dashboards, milestone tracking, portfolio analysis</td><td>After TM-30</td></tr>
+          <tr><td><strong>TM-40E</strong></td><td>KMs / KMOs</td><td>Knowledge repositories, AIP summarization, lessons learned</td><td>After TM-30</td></tr>
+          <tr><td><strong>TM-40F</strong></td><td>SWEs</td><td>OSDK, full-stack Foundry apps, TypeScript Functions</td><td>After TM-30</td></tr>
+          <tr><td><strong>TM-50A&ndash;F</strong></td><td>Senior developers (all tracks)</td><td>Advanced versions of each TM-40 track</td><td>After TM-40 (by track)</td></tr>
         </tbody>
       </table>
     </div>
 
-    <h2>CORE DATA LITERACY CONCEPTS (ADRP 1 SUMMARY)</h2>
+    <h2>CORE DATA LITERACY CONCEPTS</h2>
     <div class="card-grid">
       <div class="card">
         <div class="card-label">DATA TYPES</div>
@@ -1425,7 +2953,7 @@ F.to_timestamp(F.col("dtg_str"), "yyyy-MM-dd HH:mm:ss")</code></pre>
       </div>
       <div class="card">
         <div class="card-label">DATA GOVERNANCE</div>
-        <div class="card-body">Ownership, stewardship, access control, classification markings. Every dataset has an owner. Every user has a role. Access is audited. Misuse is tracked.</div>
+        <div class="card-body">Ownership, stewardship, access control, classification markings. Every dataset has an owner. Every user has a role. Access is audited. Misuse is tracked and prosecuted.</div>
       </div>
     </div>
 
@@ -1435,109 +2963,226 @@ F.to_timestamp(F.col("dtg_str"), "yyyy-MM-dd HH:mm:ss")</code></pre>
   <!-- ======================================================
        QUICK REFERENCE PANEL
   ====================================================== -->
-  <div id="panel-quickref" class="panel">
+  <div id="panel-quickref" class="panel active">
 
-    <div class="section-header">
+    <!-- Card header -->
+    <div class="qr-header">
       <span class="section-badge">QUICK REF</span>
-      <span class="section-title">Quick Reference Card &mdash; Keep Open While You Work</span>
+      <span class="qr-title">MAVEN SMART SYSTEM &mdash; QUICK REFERENCE CARD</span>
+
+    </div>
+
+    <div class="callout info">
+      <div class="callout-label">NEW TO MSS?</div>
+      <div class="callout-body"><strong>Start with the Quick Start guide</strong> before reading TM-10. It gets you operational in 30 minutes: log in, navigate, filter data, and export a view. &rarr; <a href="../QUICK_START.md" style="color:var(--navy-mid);font-weight:700;">QUICK_START.md</a></div>
     </div>
 
     <div class="callout bluf">
       <div class="callout-label">BLUF</div>
-      <div class="callout-body">Fast lookup for transforms, decorators, Workshop widgets, naming rules, ontology setup order, and troubleshooting steps.</div>
+      <div class="callout-body">Find your level in the table below and follow the training path. All personnel start at TM-10. Builders add TM-20. Data specialists continue to TM-30. Technical roles proceed to the appropriate TM-40 track. Use the sidebar to navigate to your specific guidance.</div>
     </div>
 
-    <div class="card-grid">
-      <div class="card gold-top">
-        <div class="card-label">WHERE TO GO FOR MORE</div>
-        <div class="card-body">
-          <ul>
-            <li><strong>New to MSS?</strong> &rarr; TM-10 tab</li>
-            <li><strong>Building dashboards?</strong> &rarr; TM-20 tab</li>
-            <li><strong>Advanced transforms / AIP / OSDK?</strong> &rarr; TM-30 tab</li>
-            <li><strong>Senior leader briefing?</strong> &rarr; Doctrine tab (ADP 1)</li>
-            <li><strong>Term definitions?</strong> &rarr; Doctrine tab (ADRP 1 + Glossary)</li>
-          </ul>
+    <div class="qr-grid">
+
+      <!-- FIND YOUR MANUAL — span 2 -->
+      <div class="qr-box gold-top qr-span2">
+        <div class="qr-label">Find Your Manual</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>You Are&hellip;</th><th>Start Here</th><th>Open It</th></tr></thead>
+            <tbody>
+              <tr><td>Any personnel &mdash; viewing data for the first time</td><td>TM-10 &mdash; Maven User</td><td><button class="qr-link" data-panel="tm10">TM-10 &rarr;</button></td></tr>
+              <tr><td>Staff building dashboards or simple pipelines (no coding)</td><td>TM-20 &mdash; Builder</td><td><button class="qr-link" data-panel="tm20">TM-20 &rarr;</button></td></tr>
+              <tr><td>Data-adjacent specialist (17/25-series, S6/G6, G2, G9, analyst)</td><td>TM-30 &mdash; Advanced Builder</td><td><button class="qr-link" data-panel="tm30">TM-30 &rarr;</button></td></tr>
+              <tr><td>Technical specialist &mdash; ORSA &bull; AI Eng &bull; ML Eng &bull; PM &bull; KM &bull; SWE</td><td>TM-40 Specialist Track</td><td>
+                <div class="qr-dropdown-wrap">
+                  <button class="qr-link qr-dropdown-btn" data-dropdown="dd-tm40-table" aria-expanded="false">TM-40 &#9662;<span class="qr-dropdown-arrow"></span></button>
+                  <div class="qr-dropdown-menu" id="dd-tm40-table">
+                    <div class="qr-dropdown-section">Select Your Track</div>
+                    <button class="qr-dropdown-item" data-panel="tm40">TM-40A &mdash; ORSA</button>
+                    <button class="qr-dropdown-item" data-panel="tm40">TM-40B &mdash; AI Engineer</button>
+                    <button class="qr-dropdown-item" data-panel="tm40">TM-40C &mdash; ML Engineer</button>
+                    <button class="qr-dropdown-item" data-panel="tm40">TM-40D &mdash; Program Mgr</button>
+                    <button class="qr-dropdown-item" data-panel="tm40">TM-40E &mdash; Knowledge Mgr</button>
+                    <button class="qr-dropdown-item" data-panel="tm40">TM-40F &mdash; Software Eng</button>
+                  </div>
+                </div>
+              </td></tr>
+              <tr><td>Advanced specialist &mdash; post TM-40 completion</td><td>TM-50 Advanced Track</td><td>
+                <div class="qr-dropdown-wrap">
+                  <button class="qr-link qr-dropdown-btn" data-dropdown="dd-tm50-table" aria-expanded="false">TM-50 &#9662;<span class="qr-dropdown-arrow"></span></button>
+                  <div class="qr-dropdown-menu" id="dd-tm50-table">
+                    <div class="qr-dropdown-section">Select Your Track</div>
+                    <button class="qr-dropdown-item" data-panel="tm50">TM-50A &mdash; ORSA Advanced</button>
+                    <button class="qr-dropdown-item" data-panel="tm50">TM-50B &mdash; AI Engineer Advanced</button>
+                    <button class="qr-dropdown-item" data-panel="tm50">TM-50C &mdash; ML Engineer Advanced</button>
+                    <button class="qr-dropdown-item" data-panel="tm50">TM-50D &mdash; Program Mgr Advanced</button>
+                    <button class="qr-dropdown-item" data-panel="tm50">TM-50E &mdash; Knowledge Mgr Advanced</button>
+                    <button class="qr-dropdown-item" data-panel="tm50">TM-50F &mdash; Software Eng Advanced</button>
+                  </div>
+                </div>
+              </td></tr>
+              <tr><td>O-5 / CSM+ &mdash; directing a data-capable formation</td><td>Data Literacy for Senior Leaders</td><td><button class="qr-link" data-panel="doctrine">Doctrine &rarr;</button></td></tr>
+              <tr><td>Anyone &mdash; unfamiliar term or concept</td><td>Glossary &mdash; Data &amp; Foundry</td><td><button class="qr-link" data-panel="doctrine">Doctrine &rarr;</button></td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-label">DECORATOR QUICK PICK</div>
-        <div class="card-body">
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Size</th><th>History?</th><th>Use</th></tr></thead>
-              <tbody>
-                <tr><td>Large</td><td>No</td><td><code>@transform_df</code></td></tr>
-                <tr><td>Large</td><td>Yes</td><td><code>@incremental</code></td></tr>
-                <tr><td>Small</td><td>No</td><td><code>@lightweight_transform</code></td></tr>
-              </tbody>
-            </table>
+      <!-- TRAINING PATH — span 1 -->
+      <div class="qr-box gold-top">
+        <div class="qr-label">Training Path</div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:4px;">
+          <button class="qr-link" data-panel="tm10" style="display:block;background:var(--navy);color:var(--white);padding:10px;border-radius:3px;text-align:left;width:100%;">
+            <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--gold);margin-bottom:3px;">ALL PERSONNEL</div>
+            <div style="font-weight:700;font-size:13px;margin-bottom:2px;color:var(--white);">TM-10</div>
+            <div style="font-size:10px;color:rgba(255,255,255,0.65);">Log in, navigate, view data</div>
+          </button>
+          <button class="qr-link" data-panel="tm20" style="display:block;background:var(--navy-light);color:var(--white);padding:10px;border-radius:3px;text-align:left;width:100%;">
+            <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--gold);margin-bottom:3px;">ALL STAFF</div>
+            <div style="font-weight:700;font-size:13px;margin-bottom:2px;color:var(--white);">TM-20</div>
+            <div style="font-size:10px;color:rgba(255,255,255,0.65);">Build dashboards, no code</div>
+          </button>
+          <button class="qr-link" data-panel="tm30" style="display:block;background:var(--navy-mid);color:var(--white);padding:10px;border-radius:3px;text-align:left;width:100%;">
+            <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--gold);margin-bottom:3px;">DATA-ADJACENT</div>
+            <div style="font-weight:700;font-size:13px;margin-bottom:2px;color:var(--white);">TM-30</div>
+            <div style="font-size:10px;color:rgba(255,255,255,0.65);">Advanced apps, governance</div>
+          </button>
+          <div class="qr-dropdown-wrap" style="width:100%;">
+            <button class="qr-link qr-dropdown-btn" data-dropdown="dd-tm40-tile" aria-expanded="false" style="display:block;background:var(--planned-slate);color:var(--white);padding:10px;border-radius:3px;text-align:left;width:100%;border-bottom:none;">
+              <div style="font-size:9px;font-weight:700;letter-spacing:2px;color:var(--gold);margin-bottom:3px;">SPECIALISTS</div>
+              <div style="font-weight:700;font-size:13px;margin-bottom:2px;color:var(--white);">TM-40 / 50 <span class="qr-dropdown-arrow" style="color:rgba(255,255,255,0.5);font-size:10px;">&#9662;</span></div>
+              <div style="font-size:10px;color:rgba(255,255,255,0.65);">ORSA, AI, ML, PM, KM, SWE</div>
+            </button>
+            <div class="qr-dropdown-menu" id="dd-tm40-tile" style="left:0;right:auto;min-width:190px;">
+              <div class="qr-dropdown-section">TM-40 Tracks</div>
+              <button class="qr-dropdown-item" data-panel="tm40">TM-40A &mdash; ORSA</button>
+              <button class="qr-dropdown-item" data-panel="tm40">TM-40B &mdash; AI Engineer</button>
+              <button class="qr-dropdown-item" data-panel="tm40">TM-40C &mdash; ML Engineer</button>
+              <button class="qr-dropdown-item" data-panel="tm40">TM-40D &mdash; Program Mgr</button>
+              <button class="qr-dropdown-item" data-panel="tm40">TM-40E &mdash; Knowledge Mgr</button>
+              <button class="qr-dropdown-item" data-panel="tm40">TM-40F &mdash; Software Eng</button>
+              <div class="qr-dropdown-section">TM-50 Advanced</div>
+              <button class="qr-dropdown-item" data-panel="tm50">TM-50A &mdash; ORSA Adv.</button>
+              <button class="qr-dropdown-item" data-panel="tm50">TM-50B &mdash; AI Eng. Adv.</button>
+              <button class="qr-dropdown-item" data-panel="tm50">TM-50C &mdash; ML Eng. Adv.</button>
+              <button class="qr-dropdown-item" data-panel="tm50">TM-50D &mdash; PM Adv.</button>
+              <button class="qr-dropdown-item" data-panel="tm50">TM-50E &mdash; KM Adv.</button>
+              <button class="qr-dropdown-item" data-panel="tm50">TM-50F &mdash; SWE Adv.</button>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-label">WORKSHOP WIDGET PICK</div>
-        <div class="card-body">
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Need</th><th>Widget</th></tr></thead>
-              <tbody>
-                <tr><td>Many objects</td><td>Object Table</td></tr>
-                <tr><td>One object</td><td>Object Detail</td></tr>
-                <tr><td>Filter</td><td>Filter Panel / Dropdown</td></tr>
-                <tr><td>Chart</td><td>Bar / Line / Pie</td></tr>
-                <tr><td>Map</td><td>Map Widget</td></tr>
-                <tr><td>Write data</td><td>Button + Action</td></tr>
-                <tr><td>Key metric</td><td>Metric Tile</td></tr>
-              </tbody>
-            </table>
-          </div>
+      <!-- COMMON DAILY TASKS — span 1 -->
+      <div class="qr-box">
+        <div class="qr-label">Common Daily Tasks</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Task</th><th>How</th></tr></thead>
+            <tbody>
+              <tr><td>Find a record</td><td>Use the search bar or Filter Panel in your app</td></tr>
+              <tr><td>Filter the view</td><td>Select values in the Filter Panel on the left or top of the app</td></tr>
+              <tr><td>Export data</td><td>Look for an <strong>Export</strong> or <strong>Download</strong> button; choose CSV or Excel</td></tr>
+              <tr><td>Submit / update a record</td><td>Click the record &rarr; find the <strong>Action button</strong> or form &rarr; fill in &rarr; Submit</td></tr>
+              <tr><td>Share a view</td><td>Copy the URL from your browser &mdash; filters are included in the link</td></tr>
+              <tr><td>View a chart or metric</td><td>Charts update automatically when you change filters</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
-    </div>
 
-    <h2>ONTOLOGY SETUP ORDER</h2>
-    <ol>
-      <li>Build curated dataset (transform chain complete)</li>
-      <li>Create Object Type &rarr; set primary key</li>
-      <li>Map properties from curated dataset</li>
-      <li>Create Link Types</li>
-      <li>Add Computed Properties (optional)</li>
-      <li>Test in Object Explorer</li>
-    </ol>
+      <!-- WHAT YOU'LL SEE — span 1 -->
+      <div class="qr-box">
+        <div class="qr-label">What You&rsquo;ll See in a Workshop App</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Element</th><th>What It Does</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Filter Panel</strong></td><td>Narrows down what you see &mdash; like a search sidebar</td></tr>
+              <tr><td><strong>Object Table</strong></td><td>A list of records (units, personnel, equipment, etc.)</td></tr>
+              <tr><td><strong>Metric Tile</strong></td><td>A single key number &mdash; count, percentage, total</td></tr>
+              <tr><td><strong>Chart</strong></td><td>Bar, line, or pie visualization of your filtered data</td></tr>
+              <tr><td><strong>Map</strong></td><td>Geographic view of records with location data</td></tr>
+              <tr><td><strong>Action Button / Form</strong></td><td>Submits or updates data &mdash; requires write permission</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-    <h2>NAMING QUICK RULES</h2>
-    <ul>
-      <li>Datasets: <code>/Project/AOR/source/raw|staging|curated</code></li>
-      <li>Object Types: <code>PascalCase</code> (e.g., <code>UnitStatus</code>)</li>
-      <li>Code Repos: <code>kebab-case</code> (e.g., <code>unit-status-transforms</code>)</li>
-      <li>Functions/Transforms: <code>snake_case</code> (e.g., <code>raw_to_staging</code>)</li>
-      <li>Properties (API): <code>camelCase</code> &mdash; Properties (display): Title Case</li>
-    </ul>
+      <!-- SUBMITTING DATA — span 1 -->
+      <div class="qr-box">
+        <div class="qr-label">Submitting or Updating Data</div>
+        <ol>
+          <li>Locate the record in the table or map</li>
+          <li>Click the record to open its detail view</li>
+          <li>Find the <strong>Action button</strong> (e.g. &ldquo;Update Status&rdquo;)</li>
+          <li>Fill in all required fields in the form</li>
+          <li>Review your entries &mdash; <strong>submissions may be audited</strong></li>
+          <li>Click <strong>Submit</strong> &mdash; a confirmation message will appear</li>
+          <li>If the button is greyed out, you need write permission &mdash; contact your data steward</li>
+        </ol>
+      </div>
 
-    <h2>IF SOMETHING IS BROKEN</h2>
-    <ol>
-      <li><strong>Build fails</strong> &rarr; read the full error, find &ldquo;Caused by:&rdquo;</li>
-      <li><strong>Empty output</strong> &rarr; check your filters, add <code>.count()</code> to debug</li>
-      <li><strong>Schema mismatch</strong> &rarr; delete output dataset, rebuild</li>
-      <li><strong>App not showing objects</strong> &rarr; check ontology branch is correct and published</li>
-      <li><strong>Object not searchable</strong> &rarr; check primary key is set and unique</li>
-      <li><strong>Action fails</strong> &rarr; check validation rules and user permissions</li>
-    </ol>
+      <!-- SECURITY — DO NOT — span 1, red -->
+      <div class="qr-box red-top">
+        <div class="qr-label">Security &mdash; Do Not</div>
+        <ul>
+          <li>Do <strong>not</strong> export data to a personal device or unapproved storage</li>
+          <li>Do <strong>not</strong> share your MSS URL or credentials with anyone</li>
+          <li>Do <strong>not</strong> enter classified information into MSS unless your instance is approved for it</li>
+          <li>Do <strong>not</strong> screenshot or photograph MSS screens without authorization</li>
+          <li>Do <strong>not</strong> use MSS on public or unsecured Wi-Fi</li>
+          <li>If you see data you should not have access to &mdash; <strong>stop and report to your data steward</strong></li>
+        </ul>
+      </div>
 
-    <h2>COMMON PYSPARK QUICK REFERENCE</h2>
-    <pre><code># Filter          df.filter(F.col("x") == "Y")
-# Add column      df.withColumn("new", F.upper(F.col("old")))
-# Rename          df.withColumnRenamed("old", "new")
-# Drop dupes      df.dropDuplicates(["id"])
-# Join            df1.join(df2, "id", "left")
-# Group/count     df.groupBy("unit").agg(F.count("*").alias("n"))
-# Cast            df.withColumn("x", F.col("x").cast("integer"))
-# Null fill       df.fillna({"col": "DEFAULT"})
-# Timestamp now   F.current_timestamp()
-# Date parse      F.to_timestamp(F.col("s"), "yyyy-MM-dd HH:mm:ss")</code></pre>
+      <!-- ACCESS CHECKLIST — span 1, slate -->
+      <div class="qr-box slate-top">
+        <div class="qr-label">New User Checklist</div>
+        <ul class="qr-checklist">
+          <li>Account provisioned by S6 / data steward</li>
+          <li>CAC reader installed and working</li>
+          <li>MSS URL bookmarked in browser</li>
+          <li>Can log in and see the home screen</li>
+          <li>Located your unit&rsquo;s application</li>
+          <li>Know who your data steward is</li>
+          <li>Completed <button class="qr-link" data-panel="tm10">TM-10</button> (required before operating MSS)</li>
+        </ul>
+      </div>
+
+      <!-- WHO TO CONTACT — span 1 -->
+      <div class="qr-box">
+        <div class="qr-label">Who to Contact</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Problem</th><th>Contact</th></tr></thead>
+            <tbody>
+              <tr><td>Can&rsquo;t log in / no account</td><td>Unit S6 or Data Steward</td></tr>
+              <tr><td>Can&rsquo;t see data I should have access to</td><td>Unit Data Steward</td></tr>
+              <tr><td>Data looks wrong or outdated</td><td>Data Steward &rarr; escalate to ODT if needed</td></tr>
+              <tr><td>App is broken / not loading</td><td><button class="qr-link" data-panel="support">Help Desk &rarr;</button></td></tr>
+              <tr><td>Want to build a new app or pipeline</td><td>USAREUR-AF Operational Data Team (ODT)</td></tr>
+              <tr><td>Training question</td><td>Unit training NCO or <button class="qr-link" data-panel="support">ODT &rarr;</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- IF SOMETHING DOESN'T WORK — span 3, teal -->
+      <div class="qr-box teal-top qr-span3">
+        <div class="qr-label">If Something Doesn&rsquo;t Work</div>
+        <div class="qr-broken-grid">
+          <div class="qr-broken-item"><strong>App won&rsquo;t load</strong><br/>Hard-refresh (Ctrl+Shift+R). Clear browser cache. Try a different browser. If still broken, <button class="qr-link" data-panel="support">contact Help Desk &rarr;</button></div>
+          <div class="qr-broken-item"><strong>Can&rsquo;t log in</strong><br/>Check CAC is fully inserted. Try a different port. Confirm your account is provisioned &mdash; contact S6 if unsure.</div>
+          <div class="qr-broken-item"><strong>Data looks wrong or missing</strong><br/>Check your filters &mdash; an active filter may be hiding records. If data is genuinely wrong, report to your data steward.</div>
+          <div class="qr-broken-item"><strong>Action button is greyed out</strong><br/>You may not have write permission. Contact your data steward to request the correct role.</div>
+          <div class="qr-broken-item"><strong>Export isn&rsquo;t working</strong><br/>Check that pop-ups are allowed for the MSS site. Try a smaller filter set. <button class="qr-link" data-panel="support">Contact Help Desk &rarr;</button> if it persists.</div>
+          <div class="qr-broken-item"><strong>Don&rsquo;t see your unit&rsquo;s app</strong><br/>Ask your data steward for the direct link. You may need to be added to the application&rsquo;s access list.</div>
+        </div>
+      </div>
+
+    </div><!-- /qr-grid -->
 
   </div><!-- /panel-quickref -->
 
@@ -1554,60 +3199,62 @@ F.to_timestamp(F.col("dtg_str"), "yyyy-MM-dd HH:mm:ss")</code></pre>
 
     <div class="callout bluf">
       <div class="callout-label">BLUF</div>
-      <div class="callout-body">Know who to call before you have a problem. Route issues correctly. Collect information before calling for help.</div>
+      <div class="callout-body">Know who to call before you have a problem. Route issues correctly from the start. Collect information before calling for help &mdash; it speeds resolution significantly.</div>
     </div>
 
     <h2>CONTACT ROUTING</h2>
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr><th>Issue</th><th>Route To</th><th>Priority</th></tr>
-        </thead>
+        <thead><tr><th>Issue</th><th>Route To</th><th>Priority</th></tr></thead>
         <tbody>
           <tr><td>Cannot log in / CAC issues</td><td>Unit S6 or MSS Help Desk</td><td>Normal</td></tr>
           <tr><td>No access to a project or dataset</td><td>Unit data steward</td><td>Normal</td></tr>
           <tr><td>Data appears incorrect</td><td>Unit data steward (do not self-correct)</td><td>Normal</td></tr>
           <tr><td>System error, crash, or outage</td><td>MSS Help Desk + screenshot + error code</td><td>Normal</td></tr>
           <tr><td>Application broken or not loading</td><td>MSS Help Desk</td><td>Normal</td></tr>
+          <tr><td>Building question / how-to</td><td>Unit data lead or USAREUR-AF data team</td><td>Normal</td></tr>
+          <tr><td>Governance / C2DAO question</td><td>USAREUR-AF C2DAO</td><td>Normal</td></tr>
           <tr><td><strong>Security incident</strong></td><td><strong>Supervisor + unit security officer</strong></td><td><strong>IMMEDIATE</strong></td></tr>
-          <tr><td>Building question / Foundry how-to</td><td>Unit data lead or USAREUR-AF data team</td><td>Normal</td></tr>
         </tbody>
       </table>
     </div>
 
-    <h2>BEFORE CALLING FOR HELP &mdash; COLLECT</h2>
+    <h2>BEFORE CALLING FOR HELP &mdash; COLLECT THIS INFORMATION</h2>
     <ul>
-      <li>Your username</li>
-      <li>Name of the application or dataset you were using</li>
+      <li>Your username and unit</li>
+      <li>Name of the application, dataset, or pipeline you were using</li>
       <li>Exact error message (screenshot preferred)</li>
-      <li>Time the error occurred</li>
-      <li>Steps that led to the error (what you did, in order)</li>
+      <li>Time the error occurred (local or Zulu &mdash; state which)</li>
+      <li>Steps that led to the error in order</li>
+      <li>Browser and workstation you are using</li>
     </ul>
 
     <div class="callout warning">
       <div class="callout-label">WARNING &mdash; SECURITY INCIDENTS</div>
-      <div class="callout-body">If you suspect a security violation (data at wrong classification level, unauthorized access, suspicious activity), report immediately to your supervisor and unit security officer. Do not attempt to investigate or resolve it yourself. Preserve the screen state if possible.</div>
+      <div class="callout-body">If you suspect a security violation, report immediately to your supervisor and unit security officer. Do not investigate or resolve it yourself. Preserve the screen state; do not close the window or clear the browser.</div>
     </div>
 
     <h2>PREREQUISITES BEFORE FIRST LOGIN</h2>
     <ol>
-      <li><strong>Annual Cyber Awareness training</strong> &mdash; required for all DoD personnel</li>
+      <li><strong>Annual Cyber Awareness Training</strong> &mdash; required for all DoD personnel; must be current</li>
       <li><strong>MSS User Onboarding Brief</strong> &mdash; provided by unit data steward or G6/S6</li>
-      <li><strong>Account request approved</strong> &mdash; submit through unit S6, allow 3&ndash;5 business days</li>
+      <li><strong>Account request approved</strong> &mdash; submit through unit S6; allow 3&ndash;5 business days</li>
     </ol>
 
     <h2>USAREUR-AF DATA TEAM</h2>
     <div class="card-grid">
       <div class="card gold-top">
-        <div class="card-label">LOCATION</div>
+        <div class="card-label">LOCATION &amp; HIGHER HQ</div>
         <div class="card-title">Wiesbaden, Germany</div>
-        <div class="card-body">Headquarters, United States Army Europe and Africa<br/>USAREUR-AF Operational Data Team</div>
+        <div class="card-body">Headquarters, United States Army Europe and Africa<br/>USAREUR-AF Operational Data Team<br/>Army AI/Data Accelerator (C2DAO)</div>
       </div>
       <div class="card">
         <div class="card-label">PUBLICATIONS</div>
-        <div class="card-body">
-          All training publications (TM-10, TM-20, TM-30, ADP 1, ADRP 1, Glossary) are maintained by the USAREUR-AF Operational Data Team. Contact your unit data steward for access.
-        </div>
+        <div class="card-body">All training publications are maintained by the USAREUR-AF Operational Data Team. Contact your unit data steward for access to source files and this application. Version 3.0 &mdash; March 2026.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">FEEDBACK &amp; CORRECTIONS</div>
+        <div class="card-body">Route corrections through your unit data steward to the USAREUR-AF Operational Data Team. Include: publication name, section, and description of the issue.</div>
       </div>
     </div>
 
@@ -1618,49 +3265,509 @@ F.to_timestamp(F.col("dtg_str"), "yyyy-MM-dd HH:mm:ss")</code></pre>
 
   </div><!-- /panel-support -->
 
+  <!-- ======================================================
+       DOCUMENTS PANEL
+  ====================================================== -->
+  <div id="panel-documents" class="panel">
+
+    <div class="section-header">
+      <div class="section-badge">DOCUMENTS</div>
+      <div class="section-title">All Training Publications</div>
+      <div class="section-subtitle">Click any publication to open the PDF</div>
+    </div>
+
+    <h2>Doctrine &amp; Reference</h2>
+    <div class="card-grid card-grid-2">
+      <a class="card gold-top doc-card" href="../pdf/DATA_LITERACY_senior_leaders.pdf" target="_blank">
+        <div class="card-label">DATA LIT — SENIOR LEADERS</div>
+        <div class="card-title">Data Literacy for Leaders</div>
+        <div class="card-body">Senior leader version — strategic principles, decision frameworks. Commanders and O6+.</div>
+      </a>
+      <a class="card doc-card" href="../pdf/DATA_LITERACY_technical_reference.pdf" target="_blank">
+        <div class="card-label">DATA LITERACY</div>
+        <div class="card-title">Data Literacy — Comprehensive Reference</div>
+        <div class="card-body">Full doctrine reference, examples, vignettes, and annexes. Platform-agnostic.</div>
+      </a>
+      <a class="card doc-card" href="../pdf/GLOSSARY_data_foundry.pdf" target="_blank">
+        <div class="card-label">GLOSSARY</div>
+        <div class="card-title">Data &amp; Foundry Term Glossary</div>
+        <div class="card-body">Combined data concepts and Foundry/MSS term equivalency. v1.3.</div>
+      </a>
+      <a class="card doc-card" href="../pdf/NAMING_AND_GOVERNANCE_STANDARDS.pdf" target="_blank">
+        <div class="card-label">STANDARDS</div>
+        <div class="card-title">Naming &amp; Governance Standards</div>
+        <div class="card-body">Codified naming conventions, governance checklists — 10 sections, 2 appendices.</div>
+      </a>
+      <a class="card doc-card" href="../pdf/CHEATSHEET.pdf" target="_blank">
+        <div class="card-label">QUICK REF</div>
+        <div class="card-title">MSS Quick Reference Cheatsheet</div>
+        <div class="card-body">At-a-glance reference card for common MSS tasks and patterns.</div>
+      </a>
+      <a class="card doc-card" href="../pdf/MTP_MSS.pdf" target="_blank">
+        <div class="card-label">MTP</div>
+        <div class="card-title">Mission Training Plan — MSS</div>
+        <div class="card-body">TLOs, ELOs, Go/No-Go criteria, schedule templates. 961 lines.</div>
+      </a>
+    </div>
+
+    <h2>Syllabi</h2>
+    <div class="card-grid">
+      <a class="card doc-card" href="../pdf/SYLLABUS_TM10.pdf" target="_blank">
+        <div class="card-label">SYLLABUS</div>
+        <div class="card-title">TM-10 Syllabus</div>
+        <div class="card-body">Maven User — all staff.</div>
+      </a>
+      <a class="card doc-card" href="../pdf/SYLLABUS_TM20.pdf" target="_blank">
+        <div class="card-label">SYLLABUS</div>
+        <div class="card-title">TM-20 Syllabus</div>
+        <div class="card-body">No-Code Builder — all staff.</div>
+      </a>
+      <a class="card doc-card" href="../pdf/SYLLABUS_TM30.pdf" target="_blank">
+        <div class="card-label">SYLLABUS</div>
+        <div class="card-title">TM-30 Syllabus</div>
+        <div class="card-body">Advanced No-Code Builder — data-adjacent MOS.</div>
+      </a>
+      <a class="card doc-card" href="../pdf/SYLLABUS_TM40A.pdf" target="_blank">
+        <div class="card-label">SYLLABUS</div>
+        <div class="card-title">TM-40A Syllabus</div>
+        <div class="card-body">ORSA specialists.</div>
+      </a>
+      <a class="card doc-card" href="../pdf/SYLLABUS_TM40B.pdf" target="_blank">
+        <div class="card-label">SYLLABUS</div>
+        <div class="card-title">TM-40B Syllabus</div>
+        <div class="card-body">AI Engineers.</div>
+      </a>
+      <a class="card doc-card" href="../pdf/SYLLABUS_TM40C.pdf" target="_blank">
+        <div class="card-label">SYLLABUS</div>
+        <div class="card-title">TM-40C Syllabus</div>
+        <div class="card-body">ML Engineers.</div>
+      </a>
+      <a class="card doc-card" href="../pdf/SYLLABUS_TM40D.pdf" target="_blank">
+        <div class="card-label">SYLLABUS</div>
+        <div class="card-title">TM-40D Syllabus</div>
+        <div class="card-body">Program Managers.</div>
+      </a>
+      <a class="card doc-card" href="../pdf/SYLLABUS_TM40E.pdf" target="_blank">
+        <div class="card-label">SYLLABUS</div>
+        <div class="card-title">TM-40E Syllabus</div>
+        <div class="card-body">Knowledge Managers.</div>
+      </a>
+      <a class="card doc-card" href="../pdf/SYLLABUS_TM40F.pdf" target="_blank">
+        <div class="card-label">SYLLABUS</div>
+        <div class="card-title">TM-40F Syllabus</div>
+        <div class="card-body">Software Engineers.</div>
+      </a>
+    </div>
+
+    <h2>Technical Manuals — Foundation (All Staff)</h2>
+    <div class="card-grid">
+      <a class="card gold-top doc-card" href="../pdf/TM_10_MAVEN_USER.pdf" target="_blank">
+        <div class="card-label">TM-10</div>
+        <div class="card-title">Maven User</div>
+        <div class="card-body">Operate MSS, consume data, use dashboards and AIP. Required for all staff.</div>
+      </a>
+      <a class="card gold-top doc-card" href="../pdf/TM_20_BUILDER.pdf" target="_blank">
+        <div class="card-label">TM-20</div>
+        <div class="card-title">No-Code Builder</div>
+        <div class="card-body">Pipeline Builder, Workshop, basic Ontology. All staff with build responsibilities.</div>
+      </a>
+      <a class="card gold-top doc-card" href="../pdf/TM_30_ADVANCED_BUILDER.pdf" target="_blank">
+        <div class="card-label">TM-30</div>
+        <div class="card-title">Advanced No-Code Builder</div>
+        <div class="card-body">Advanced Workshop, complex pipelines, AIP Logic. Data-adjacent MOS (17/25-series, S6/G6/G2/G9).</div>
+      </a>
+    </div>
+
+    <h2>Technical Manuals — Specialist Tracks (TM-40 Series)</h2>
+    <div class="track-grid">
+      <a class="track-card doc-card" href="../pdf/TM_40A_ORSA.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-40A &mdash; ORSA</div>
+          <div class="track-chip">Specialist</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Operational Research Systems Analysis</div>
+          <div class="track-audience">ORSA specialists — quantitative methods, commander products</div>
+          <ul class="track-topics">
+            <li>Regression, classification, forecasting</li>
+            <li>Monte Carlo COA analysis</li>
+            <li>Optimization and sensitivity analysis</li>
+          </ul>
+        </div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/TM_40B_AI_ENGINEER.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-40B &mdash; AI Engineer</div>
+          <div class="track-chip">Specialist</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">AI Engineering</div>
+          <div class="track-audience">AI engineers — AIP Logic, Agents, LLM integration</div>
+          <ul class="track-topics">
+            <li>AIP Logic workflow design</li>
+            <li>Agent configuration</li>
+            <li>LLM integration patterns</li>
+          </ul>
+        </div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/TM_40C_ML_ENGINEER.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-40C &mdash; ML Engineer</div>
+          <div class="track-chip">Specialist</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Machine Learning Engineering</div>
+          <div class="track-audience">ML engineers — model training, validation, deployment</div>
+          <ul class="track-topics">
+            <li>Feature engineering, experiment tracking</li>
+            <li>Batch inference, model versioning</li>
+            <li>Drift detection, retraining pipelines</li>
+          </ul>
+        </div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/TM_40D_PROGRAM_MANAGER.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-40D &mdash; Program Manager</div>
+          <div class="track-chip">Specialist</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Data Program Management</div>
+          <div class="track-audience">PMs — pipelines, milestones, portfolio health</div>
+          <ul class="track-topics">
+            <li>Scrum / Kanban for data projects</li>
+            <li>ML/AI project lifecycle</li>
+            <li>Risk register, release planning</li>
+          </ul>
+        </div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/TM_40E_KNOWLEDGE_MANAGER.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-40E &mdash; Knowledge Manager</div>
+          <div class="track-chip">Specialist</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Knowledge Management</div>
+          <div class="track-audience">KMs — forms, lessons learned, institutional memory</div>
+          <ul class="track-topics">
+            <li>Knowledge ontology design</li>
+            <li>Lessons-learned intake pipeline</li>
+            <li>SOP review workflows</li>
+          </ul>
+        </div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/TM_40F_SOFTWARE_ENGINEER.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-40F &mdash; Software Engineer</div>
+          <div class="track-chip">Specialist</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Software Engineering</div>
+          <div class="track-audience">SWEs — Python/TypeScript, OSDK, code transforms</div>
+          <ul class="track-topics">
+            <li>OSDK &amp; Platform SDK</li>
+            <li>Functions on Objects, Actions</li>
+            <li>CI/CD, security, Slate</li>
+          </ul>
+        </div>
+      </a>
+    </div>
+
+    <h2>Technical Manuals — Advanced Tracks (TM-50 Series)</h2>
+    <div class="track-grid">
+      <a class="track-card doc-card" href="../pdf/TM_50A_ORSA_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-50A &mdash; ORSA Advanced</div>
+          <div class="track-chip">Advanced</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Advanced ORSA</div>
+          <div class="track-audience">Nonlinear programming, stochastic models, ABMS, campaign assessment</div>
+        </div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/TM_50B_AI_ENGINEER_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-50B &mdash; AI Engineer Advanced</div>
+          <div class="track-chip">Advanced</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Advanced AI Engineering</div>
+          <div class="track-audience">Multi-agent orchestration, RAG, red-team assessment, AI observability</div>
+        </div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/TM_50C_ML_ENGINEER_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-50C &mdash; ML Engineer Advanced</div>
+          <div class="track-chip">Advanced</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Advanced ML Engineering</div>
+          <div class="track-audience">AutoML, Transformer fine-tuning, GNNs, federated retraining, adversarial robustness</div>
+        </div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/TM_50D_PROGRAM_MANAGER_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-50D &mdash; PM Advanced</div>
+          <div class="track-chip">Advanced</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Advanced Program Management</div>
+          <div class="track-audience">PI planning, cross-team governance, GO/SES briefing, Palantir partnership</div>
+        </div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/TM_50E_KNOWLEDGE_MANAGER_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-50E &mdash; KM Advanced</div>
+          <div class="track-chip">Advanced</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Advanced Knowledge Management</div>
+          <div class="track-audience">Federated KM architecture, NATO integration, STANAG 4778, knowledge graphs</div>
+        </div>
+      </a>
+      <a class="track-card doc-card" href="../pdf/TM_50F_SOFTWARE_ENGINEER_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-50F &mdash; SWE Advanced</div>
+          <div class="track-chip">Advanced</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Advanced Software Engineering</div>
+          <div class="track-audience">Scale, multi-tenancy, Kafka, OWASP, SAST, architecture review, platform governance</div>
+        </div>
+      </a>
+    </div>
+
+  </div><!-- /panel-documents -->
+
+  <!-- ======================================================
+       TASK INDEX PANEL
+  ====================================================== -->
+  <div id="panel-taskindex" class="panel">
+
+    <div class="section-header">
+      <div class="section-badge">TASK INDEX</div>
+      <div class="section-title">What Do You Want To Do?</div>
+      <div class="section-subtitle">Search &bull; Filter by category &bull; Click badge to open PDF</div>
+    </div>
+
+    <iframe
+      id="taskindex-frame"
+      src="../task_index.html"
+      style="width:100%; height:820px; border:none; border-radius:3px;"
+      title="MSS Task Reference Index"
+      loading="lazy">
+    </iframe>
+
+  </div><!-- /panel-taskindex -->
+
 </main>
+
+</div><!-- /content-area -->
+
+</div><!-- /app-shell -->
 
 <!-- ============================================================
      FOOTER
 ============================================================ -->
 <footer>
-  <strong>HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA</strong> &nbsp;&mdash;&nbsp;
-  USAREUR-AF OPERATIONAL DATA TEAM &nbsp;&mdash;&nbsp;
-  WIESBADEN, GERMANY<br/>
-  TM-10 &bull; TM-20 &bull; TM-30 &bull; ADP 1 &bull; ADRP 1 &nbsp;&mdash;&nbsp;
-  VERSION 1.0 &nbsp;&mdash;&nbsp; 2026 &nbsp;&mdash;&nbsp;
-  DIST: APPROVED FOR PUBLIC RELEASE &mdash; DISTRIBUTION UNLIMITED
+  <strong>HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA</strong> &mdash; WIESBADEN, GERMANY<br/>
+  USAREUR-AF OPERATIONAL DATA TEAM &nbsp;&bull;&nbsp;
+  TM-10 &bull; TM-20 &bull; TM-30 &bull; TM-40A&ndash;F &bull; TM-50A&ndash;F &bull; Data Lit (SL) &bull; Data Literacy<br/>
+  VERSION 3.1 &mdash; MARCH 2026 &mdash; DIST: APPROVED FOR PUBLIC RELEASE &mdash; DISTRIBUTION UNLIMITED
 </footer>
 
-<!-- CLASSIFICATION BANNER BOTTOM -->
-<div class="classification-banner">UNCLASSIFIED</div>
+<div class="banner-unclass">UNCLASSIFIED</div>
 
 <!-- ============================================================
-     TAB SWITCHING LOGIC
+     NAVIGATION LOGIC
 ============================================================ -->
 <script>
+  /* ── Star Field ─────────────────────────────────────────────────────────── */
+  (function initStarField() {
+    var canvas = document.getElementById('starCanvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var stars = [];
+    var W, H;
+
+    function resize() {
+      W = canvas.width  = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+    }
+
+    function mkStar() {
+      var tier = Math.random();
+      var r    = tier < 0.15 ? (1.6 + Math.random() * 1.0)
+               : tier < 0.50 ? (0.9 + Math.random() * 0.7)
+               :               (0.3 + Math.random() * 0.5);
+      var hue  = 200 + Math.floor(Math.random() * 20);
+      var sat  = 30  + Math.floor(Math.random() * 30);
+      return {
+        x: Math.random() * W, y: Math.random() * H,
+        r: r, base: 0.15 + Math.random() * 0.65, alpha: 0,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.0004 + Math.random() * 0.0014,
+        color: 'hsl(' + hue + ',' + sat + '%,90%)',
+        glow: r > 1.4
+      };
+    }
+
+    function buildStars(n) { stars = []; for (var i = 0; i < n; i++) stars.push(mkStar()); }
+
+    var raf;
+    function draw(ts) {
+      ctx.clearRect(0, 0, W, H);
+      for (var i = 0; i < stars.length; i++) {
+        var s = stars[i];
+        s.alpha = s.base + Math.sin(s.phase + ts * s.speed) * (s.base * 0.55);
+        ctx.globalAlpha = Math.max(0, Math.min(1, s.alpha));
+        if (s.glow) {
+          var grad = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 5);
+          grad.addColorStop(0, s.color); grad.addColorStop(1, 'transparent');
+          ctx.globalAlpha = s.alpha * 0.25;
+          ctx.beginPath(); ctx.arc(s.x, s.y, s.r * 5, 0, Math.PI * 2);
+          ctx.fillStyle = grad; ctx.fill();
+          ctx.globalAlpha = Math.max(0, Math.min(1, s.alpha));
+        }
+        ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = s.color; ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+      raf = requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', function() {
+      cancelAnimationFrame(raf); resize(); buildStars(260); raf = requestAnimationFrame(draw);
+    });
+    resize(); buildStars(260); requestAnimationFrame(draw);
+  })();
+
+  /* ── Panel navigation ───────────────────────────────────────────────────── */
   function showPanel(id) {
-    // Hide all panels
-    document.querySelectorAll('.panel').forEach(function(p) {
-      p.classList.remove('active');
-    });
-    // Deactivate all tabs
-    document.querySelectorAll('.nav-tab').forEach(function(t) {
-      t.classList.remove('active');
-    });
-    // Show target panel
+    document.querySelectorAll('.panel').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelectorAll('.snav-item, .snav-pinned').forEach(function(t) { t.classList.remove('active'); });
     var panel = document.getElementById('panel-' + id);
     if (panel) panel.classList.add('active');
-    // Activate clicked tab
-    var tabs = document.querySelectorAll('.nav-tab');
-    var tabMap = { home: 0, tm10: 1, tm20: 2, tm30: 3, doctrine: 4, quickref: 5, support: 6 };
-    if (tabMap[id] !== undefined) {
-      tabs[tabMap[id]].classList.add('active');
-    }
-    // Scroll to top of main
-    window.scrollTo(0, 0);
+    /* mark sidebar item active */
+    var items = document.querySelectorAll('.snav-item[data-panel="' + id + '"], .snav-pinned[data-panel="' + id + '"]');
+    items.forEach(function(el) { el.classList.add('active'); });
+    /* scroll content area to top */
+    var ca = document.querySelector('.content-area');
+    if (ca) ca.scrollTop = 0;
   }
+
+  /* ── Splash enter ───────────────────────────────────────────────────────── */
+  function enterHub() {
+    var splash = document.getElementById('splash');
+    splash.classList.add('fade-out');
+    showPanel('quickref');
+    setTimeout(function() { splash.style.display = 'none'; }, 720);
+  }
+
+  /* ── Sidebar collapse ───────────────────────────────────────────────────── */
+  function toggleSidebar() {
+    var sb = document.getElementById('sidebar');
+    sb.classList.toggle('collapsed');
+  }
+
+  /* ── Mobile sidebar ─────────────────────────────────────────────────────── */
+  function openMobileSidebar() {
+    document.getElementById('sidebar').classList.add('mobile-open');
+    document.getElementById('sidebar-overlay').classList.add('visible');
+  }
+
+  function closeMobileSidebar() {
+    document.getElementById('sidebar').classList.remove('mobile-open');
+    document.getElementById('sidebar-overlay').classList.remove('visible');
+  }
+
+  /* ── Group collapse ─────────────────────────────────────────────────────── */
+  function toggleGroup(groupEl) {
+    groupEl.classList.toggle('collapsed');
+  }
+
+  /* ── Wire up ────────────────────────────────────────────────────────────── */
+  document.addEventListener('DOMContentLoaded', function() {
+    /* Splash */
+    var enterBtn = document.getElementById('splash-enter-btn');
+    if (enterBtn) enterBtn.addEventListener('click', enterHub);
+
+    /* Sidebar toggle (desktop collapse) */
+    var sbToggle = document.getElementById('sidebar-toggle');
+    if (sbToggle) sbToggle.addEventListener('click', toggleSidebar);
+
+    /* Mobile hamburger */
+    var hamburger = document.getElementById('header-hamburger');
+    if (hamburger) hamburger.addEventListener('click', openMobileSidebar);
+
+    /* Mobile overlay close */
+    var overlay = document.getElementById('sidebar-overlay');
+    if (overlay) overlay.addEventListener('click', closeMobileSidebar);
+
+    /* Sidebar nav items */
+    document.querySelectorAll('.snav-item[data-panel], .snav-pinned[data-panel]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        showPanel(this.getAttribute('data-panel'));
+        /* close mobile sidebar on nav */
+        if (window.innerWidth <= 768) closeMobileSidebar();
+      });
+    });
+
+    /* Group headers */
+    document.querySelectorAll('.snav-group-hdr').forEach(function(hdr) {
+      hdr.addEventListener('click', function() {
+        toggleGroup(this.closest('.snav-group'));
+      });
+    });
+
+    /* QR card panel links */
+    document.querySelectorAll('.qr-link[data-panel]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        showPanel(this.getAttribute('data-panel'));
+      });
+    });
+
+    /* QR card dropdowns */
+    function closeAllDropdowns() {
+      document.querySelectorAll('.qr-dropdown-menu.open').forEach(function(m) {
+        m.classList.remove('open');
+      });
+      document.querySelectorAll('.qr-dropdown-btn').forEach(function(b) {
+        b.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    document.querySelectorAll('.qr-dropdown-btn[data-dropdown]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var menuId = this.getAttribute('data-dropdown');
+        var menu = document.getElementById(menuId);
+        var wasOpen = menu.classList.contains('open');
+        closeAllDropdowns();
+        if (!wasOpen) {
+          menu.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    document.querySelectorAll('.qr-dropdown-item[data-panel]').forEach(function(item) {
+      item.addEventListener('click', function(e) {
+        e.stopPropagation();
+        showPanel(this.getAttribute('data-panel'));
+        closeAllDropdowns();
+      });
+    });
+
+    document.addEventListener('click', closeAllDropdowns);
+
+    /* Keyboard: Escape closes mobile sidebar */
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeMobileSidebar();
+    });
+  });
 </script>
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
 
 </body>
 </html>

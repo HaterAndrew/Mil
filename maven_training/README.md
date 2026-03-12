@@ -17,6 +17,12 @@ This curriculum provides progressive, doctrine-aligned training for all USAREUR-
 
 ---
 
+## New Here? Start Fast
+
+**[MSS Quick Start](QUICK_START.md)** — Get operational in 30 minutes. Read this before anything else if you just got MSS access.
+
+---
+
 ## How to Use This Curriculum
 
 ### Step 1 — Know Your Level
@@ -27,16 +33,16 @@ This curriculum provides progressive, doctrine-aligned training for all USAREUR-
 | All staff, light builders | Building dashboards, forms, or basic pipelines on MSS | TM-20 (after TM-10) |
 | Data-adjacent specialists | Assigned to a data/analytical role (17/25-series, S6/G6, G2/G9) | TM-30 (after TM-20) |
 | Developers / technical specialists | Writing code, building external apps, ML models | TM-40 (track) after TM-30 |
-| Senior leaders (O-5+, CSM+) | Commanding or directing a data-capable formation | ADP 1 |
-| All — background reading | Anyone who wants to understand data concepts before touching MSS | ADRP 1 |
+| Senior leaders (O-5+, CSM+) | Commanding or directing a data-capable formation | Data Literacy for Senior Leaders |
+| All — background reading | Anyone who wants to understand data concepts before touching MSS | Data Literacy Technical Reference |
 
 ### Step 2 — Read the Right Publications
 
 ```
-Senior Leaders ──────────────────────────► ADP 1 (Data Literacy for Senior Leaders)
+Senior Leaders ──────────────────────────► Data Literacy for Senior Leaders
                                                 │
                                                 ▼
-All Personnel ───────────────────────────► ADRP 1 (Data Literacy Reference) [recommended]
+All Personnel ───────────────────────────► Data Literacy Technical Reference [recommended]
                                                 │
                                                 ▼
 All Personnel ───────────────────────────► TM-10 (Maven User)
@@ -72,8 +78,8 @@ At any point, consult the [Data & Foundry Glossary](doctrine/GLOSSARY_data_found
 
 | Publication | File | Audience | Purpose |
 |-------------|------|----------|---------|
-| **ADP 1** — Data Literacy for Senior Leaders | [doctrine/ADP_1_data_literacy_senior.md](doctrine/ADP_1_data_literacy_senior.md) | O-5+, CSM+, Senior Civilians | Principles, command responsibilities, evaluating data products |
-| **ADRP 1** — Data Literacy | [doctrine/ADRP_1_data_literacy.md](doctrine/ADRP_1_data_literacy.md) | All personnel | Comprehensive data literacy reference — platform-agnostic |
+| **Data Literacy for Senior Leaders** | [doctrine/DATA_LITERACY_senior_leaders.md](doctrine/DATA_LITERACY_senior_leaders.md) | O-5+, CSM+, Senior Civilians | Principles, command responsibilities, evaluating data products |
+| **Data Literacy Technical Reference** | [doctrine/DATA_LITERACY_technical_reference.md](doctrine/DATA_LITERACY_technical_reference.md) | All personnel | Comprehensive data literacy reference — platform-agnostic |
 | **Glossary** — Data & Foundry Terms | [doctrine/GLOSSARY_data_foundry.md](doctrine/GLOSSARY_data_foundry.md) | All personnel | Equates general data concepts to MSS/Foundry terminology |
 
 ### Technical Manuals (Platform-Specific)
@@ -86,25 +92,29 @@ At any point, consult the [Data & Foundry Glossary](doctrine/GLOSSARY_data_found
 
 ### TM-40 Series — Technical Specialist Tracks
 
-| Publication | File | Audience | Prerequisite |
-|-------------|------|----------|--------------|
-| **TM-40A** — ORSA | [tm/TM_40A_orsa/TM_40A_ORSA.md](tm/TM_40A_orsa/TM_40A_ORSA.md) | Operations Research analysts | TM-30 |
-| **TM-40B** — AI Engineer | [tm/TM_40B_ai_engineer/TM_40B_AI_ENGINEER.md](tm/TM_40B_ai_engineer/TM_40B_AI_ENGINEER.md) | AI/ML specialists | TM-30 |
-| **TM-40C** — Machine Learning Engineer | [tm/TM_40C_ml_engineer/TM_40C_ML_ENGINEER.md](tm/TM_40C_ml_engineer/TM_40C_ML_ENGINEER.md) | MLEs | TM-30 |
-| **TM-40D** — Program Manager | [tm/TM_40D_program_manager/TM_40D_PROGRAM_MANAGER.md](tm/TM_40D_program_manager/TM_40D_PROGRAM_MANAGER.md) | PMs, resource managers, G8/S8 | TM-30 |
-| **TM-40E** — Knowledge Manager | [tm/TM_40E_knowledge_manager/TM_40E_KNOWLEDGE_MANAGER.md](tm/TM_40E_knowledge_manager/TM_40E_KNOWLEDGE_MANAGER.md) | KMOs, 37F, S2/S3/S6 KM roles | TM-30 |
-| **TM-40F** — Software Engineer | [tm/TM_40F_software_engineer/TM_40F_SOFTWARE_ENGINEER.md](tm/TM_40F_software_engineer/TM_40F_SOFTWARE_ENGINEER.md) | SWEs | TM-30 |
+Each TM-40 track includes a companion **Concepts Guide** covering background theory and doctrine context for that specialty.
+
+| Publication | File | Concepts Guide | Audience | Prerequisite |
+|-------------|------|----------------|----------|--------------|
+| **TM-40A** — ORSA | [tm/TM_40A_orsa/TM_40A_ORSA.md](tm/TM_40A_orsa/TM_40A_ORSA.md) | [CONCEPTS_GUIDE_TM40A](tm/TM_40A_orsa/CONCEPTS_GUIDE_TM40A_ORSA.md) | Operations Research analysts | TM-30 |
+| **TM-40B** — AI Engineer | [tm/TM_40B_ai_engineer/TM_40B_AI_ENGINEER.md](tm/TM_40B_ai_engineer/TM_40B_AI_ENGINEER.md) | [CONCEPTS_GUIDE_TM40B](tm/TM_40B_ai_engineer/CONCEPTS_GUIDE_TM40B_AI_ENGINEER.md) | AI/ML specialists | TM-30 |
+| **TM-40C** — Machine Learning Engineer | [tm/TM_40C_ml_engineer/TM_40C_ML_ENGINEER.md](tm/TM_40C_ml_engineer/TM_40C_ML_ENGINEER.md) | [CONCEPTS_GUIDE_TM40C](tm/TM_40C_ml_engineer/CONCEPTS_GUIDE_TM40C_ML_ENGINEER.md) | MLEs | TM-30 |
+| **TM-40D** — Program Manager | [tm/TM_40D_program_manager/TM_40D_PROGRAM_MANAGER.md](tm/TM_40D_program_manager/TM_40D_PROGRAM_MANAGER.md) | [CONCEPTS_GUIDE_TM40D](tm/TM_40D_program_manager/CONCEPTS_GUIDE_TM40D_PROGRAM_MANAGER.md) | PMs, resource managers, G8/S8 | TM-30 |
+| **TM-40E** — Knowledge Manager | [tm/TM_40E_knowledge_manager/TM_40E_KNOWLEDGE_MANAGER.md](tm/TM_40E_knowledge_manager/TM_40E_KNOWLEDGE_MANAGER.md) | [CONCEPTS_GUIDE_TM40E](tm/TM_40E_knowledge_manager/CONCEPTS_GUIDE_TM40E_KNOWLEDGE_MANAGER.md) | KMOs, 37F, S2/S3/S6 KM roles | TM-30 |
+| **TM-40F** — Software Engineer | [tm/TM_40F_software_engineer/TM_40F_SOFTWARE_ENGINEER.md](tm/TM_40F_software_engineer/TM_40F_SOFTWARE_ENGINEER.md) | [CONCEPTS_GUIDE_TM40F](tm/TM_40F_software_engineer/CONCEPTS_GUIDE_TM40F_SOFTWARE_ENGINEER.md) | SWEs | TM-30 |
 
 ### TM-50 Series — Advanced Specialist Tracks
 
-| Publication | File | Audience | Prerequisite |
-|-------------|------|----------|--------------|
-| **TM-50A** — Advanced ORSA | [tm/TM_50A_orsa_advanced/TM_50A_ORSA_ADVANCED.md](tm/TM_50A_orsa_advanced/TM_50A_ORSA_ADVANCED.md) | Senior ORSA practitioners | TM-40A |
-| **TM-50B** — Advanced AI Engineer | [tm/TM_50B_ai_engineer_advanced/TM_50B_AI_ENGINEER_ADVANCED.md](tm/TM_50B_ai_engineer_advanced/TM_50B_AI_ENGINEER_ADVANCED.md) | Senior AI engineers | TM-40B |
-| **TM-50C** — Advanced MLE | [tm/TM_50C_ml_engineer_advanced/TM_50C_ML_ENGINEER_ADVANCED.md](tm/TM_50C_ml_engineer_advanced/TM_50C_ML_ENGINEER_ADVANCED.md) | Senior ML engineers | TM-40C |
-| **TM-50D** — Advanced Program Manager | [tm/TM_50D_program_manager_advanced/TM_50D_PROGRAM_MANAGER_ADVANCED.md](tm/TM_50D_program_manager_advanced/TM_50D_PROGRAM_MANAGER_ADVANCED.md) | Senior tech PMs | TM-40D |
-| **TM-50E** — Advanced Knowledge Manager | [tm/TM_50E_knowledge_manager_advanced/TM_50E_KNOWLEDGE_MANAGER_ADVANCED.md](tm/TM_50E_knowledge_manager_advanced/TM_50E_KNOWLEDGE_MANAGER_ADVANCED.md) | Senior KMOs | TM-40E |
-| **TM-50F** — Advanced Software Engineer | [tm/TM_50F_software_engineer_advanced/TM_50F_SOFTWARE_ENGINEER_ADVANCED.md](tm/TM_50F_software_engineer_advanced/TM_50F_SOFTWARE_ENGINEER_ADVANCED.md) | Senior SWEs | TM-40F |
+Each TM-50 track includes a companion **Concepts Guide** for advanced theory and doctrine.
+
+| Publication | File | Concepts Guide | Audience | Prerequisite |
+|-------------|------|----------------|----------|--------------|
+| **TM-50A** — Advanced ORSA | [tm/TM_50A_orsa_advanced/TM_50A_ORSA_ADVANCED.md](tm/TM_50A_orsa_advanced/TM_50A_ORSA_ADVANCED.md) | [CONCEPTS_GUIDE_TM50A](tm/TM_50A_orsa_advanced/CONCEPTS_GUIDE_TM50A_ORSA_ADVANCED.md) | Senior ORSA practitioners | TM-40A |
+| **TM-50B** — Advanced AI Engineer | [tm/TM_50B_ai_engineer_advanced/TM_50B_AI_ENGINEER_ADVANCED.md](tm/TM_50B_ai_engineer_advanced/TM_50B_AI_ENGINEER_ADVANCED.md) | [CONCEPTS_GUIDE_TM50B](tm/TM_50B_ai_engineer_advanced/CONCEPTS_GUIDE_TM50B_AI_ENGINEER_ADVANCED.md) | Senior AI engineers | TM-40B |
+| **TM-50C** — Advanced MLE | [tm/TM_50C_ml_engineer_advanced/TM_50C_ML_ENGINEER_ADVANCED.md](tm/TM_50C_ml_engineer_advanced/TM_50C_ML_ENGINEER_ADVANCED.md) | [CONCEPTS_GUIDE_TM50C](tm/TM_50C_ml_engineer_advanced/CONCEPTS_GUIDE_TM50C_ML_ENGINEER_ADVANCED.md) | Senior ML engineers | TM-40C |
+| **TM-50D** — Advanced Program Manager | [tm/TM_50D_program_manager_advanced/TM_50D_PROGRAM_MANAGER_ADVANCED.md](tm/TM_50D_program_manager_advanced/TM_50D_PROGRAM_MANAGER_ADVANCED.md) | [CONCEPTS_GUIDE_TM50D](tm/TM_50D_program_manager_advanced/CONCEPTS_GUIDE_TM50D_PROGRAM_MANAGER_ADVANCED.md) | Senior tech PMs | TM-40D |
+| **TM-50E** — Advanced Knowledge Manager | [tm/TM_50E_knowledge_manager_advanced/TM_50E_KNOWLEDGE_MANAGER_ADVANCED.md](tm/TM_50E_knowledge_manager_advanced/TM_50E_KNOWLEDGE_MANAGER_ADVANCED.md) | [CONCEPTS_GUIDE_TM50E](tm/TM_50E_knowledge_manager_advanced/CONCEPTS_GUIDE_TM50E_KNOWLEDGE_MANAGER_ADVANCED.md) | Senior KMOs | TM-40E |
+| **TM-50F** — Advanced Software Engineer | [tm/TM_50F_software_engineer_advanced/TM_50F_SOFTWARE_ENGINEER_ADVANCED.md](tm/TM_50F_software_engineer_advanced/TM_50F_SOFTWARE_ENGINEER_ADVANCED.md) | [CONCEPTS_GUIDE_TM50F](tm/TM_50F_software_engineer_advanced/CONCEPTS_GUIDE_TM50F_SOFTWARE_ENGINEER_ADVANCED.md) | Senior SWEs | TM-40F |
 
 ---
 
@@ -221,11 +231,32 @@ At any point, consult the [Data & Foundry Glossary](doctrine/GLOSSARY_data_found
 
 ## Training Management
 
+### Administrative Publications
+
 | Resource | Location | Audience |
 |----------|----------|---------|
 | **Mission Training Plan (MTP)** | [training_management/MTP_MSS.md](training_management/MTP_MSS.md) | Training managers, S3/G6, commanders |
+| **Program of Instruction (POI)** | [training_management/POI_MSS.md](training_management/POI_MSS.md) | Training managers, curriculum designers |
+| **Course Administrative Data (CAD)** | [training_management/CAD_MSS.md](training_management/CAD_MSS.md) | Training administrators |
+| **Training and Evaluation Outline (TEO)** | [training_management/TEO_MSS.md](training_management/TEO_MSS.md) | Instructors, evaluators |
+| **Annual Training Schedule** | [training_management/ANNUAL_TRAINING_SCHEDULE.md](training_management/ANNUAL_TRAINING_SCHEDULE.md) | Training managers, S3 |
+| **Enrollment SOP** | [training_management/ENROLLMENT_SOP.md](training_management/ENROLLMENT_SOP.md) | Training coordinators |
+| **Completion Certificate Template** | [training_management/COMPLETION_CERTIFICATE.md](training_management/COMPLETION_CERTIFICATE.md) | Training administrators |
+| **Faculty Development Plan** | [training_management/FACULTY_DEVELOPMENT_PLAN.md](training_management/FACULTY_DEVELOPMENT_PLAN.md) | Instructor cadre, S3 |
+| **Training Policy Letter** | [training_management/POLICY_LETTER.md](training_management/POLICY_LETTER.md) | Commanders, training managers |
+| **Curriculum Maintenance SOP** | [training_management/CURRICULUM_MAINTENANCE_SOP.md](training_management/CURRICULUM_MAINTENANCE_SOP.md) | Curriculum owner, SMEs, instructors |
+| **AAR / Feedback Template** | [training_management/AAR_TEMPLATE.md](training_management/AAR_TEMPLATE.md) | Instructors, evaluators |
 
 The MTP provides: TLOs/ELOs per level, individual task lists, Go/No-Go criteria, hour-by-hour blocks of instruction for all levels, training schedule templates, resource requirements, instructor certification standards, practical exercise scenarios (all levels including TM-40), and sustainment requirements.
+
+### Lesson Plans
+
+| Resource | Location | Notes |
+|----------|----------|-------|
+| **Lesson Plan Template** | [training_management/lesson_plans/LP_TEMPLATE.md](training_management/lesson_plans/LP_TEMPLATE.md) | Blank template for new courses |
+| **TM-20 Lesson Plan Outlines** | [training_management/lesson_plans/TM20_LESSON_PLAN_OUTLINES.md](training_management/lesson_plans/TM20_LESSON_PLAN_OUTLINES.md) | Builder track |
+| **TM-30 Lesson Plan Outlines** | [training_management/lesson_plans/TM30_LESSON_PLAN_OUTLINES.md](training_management/lesson_plans/TM30_LESSON_PLAN_OUTLINES.md) | Advanced Builder track |
+| **TM-40 Specialist Lesson Plan Outlines** | [training_management/lesson_plans/TM40_SPECIALIST_LESSON_PLAN_OUTLINES.md](training_management/lesson_plans/TM40_SPECIALIST_LESSON_PLAN_OUTLINES.md) | All six TM-40 tracks |
 
 ### Course Syllabi (Student/Instructor-Facing)
 
@@ -243,14 +274,18 @@ Hand the appropriate syllabus to each trainee at the start of their course.
 | TM-40E — Knowledge Manager | [syllabi/SYLLABUS_TM40E.md](syllabi/SYLLABUS_TM40E.md) | KMOs, 37F |
 | TM-40F — Software Engineer | [syllabi/SYLLABUS_TM40F.md](syllabi/SYLLABUS_TM40F.md) | SWEs |
 
+> **Note:** TM-50 series syllabi are not yet published. Advanced track instruction is managed through the MTP and TEO. Contact training management for TM-50 course scheduling.
+
 ---
 
 ## Supporting Reference Material
 
 | Resource | Location | Notes |
 |----------|----------|-------|
+| **MSS Quick Start** | [QUICK_START.md](QUICK_START.md) | 30-minute onboarding for new MSS users |
 | **Naming & Governance Standards** | [standards/NAMING_AND_GOVERNANCE_STANDARDS.md](standards/NAMING_AND_GOVERNANCE_STANDARDS.md) | USAREUR-AF MSS naming conventions, governance checklists |
 | **MSS Training Hub (web)** | [mss_info_app/index.html](mss_info_app/index.html) | Standalone HTML training hub — open in browser |
+| **Practical Exercises** | [exercises/](exercises/) | Hands-on exercise packages for TM-10 through TM-40F |
 | Foundry Python Patterns (runnable code) | [data_skills/13_foundry_patterns/](../data_skills/13_foundry_patterns/) | Local shim for offline development and testing |
 | Full data science reference library | [data_skills/](../data_skills/) | 15 modules: Python → ML → ETL → deployment |
 | SITREP Tracker (applied project) | [sitrep_tracker/](../sitrep_tracker/) | Click + Rich + SQLite — reference implementation |
@@ -260,8 +295,8 @@ Hand the appropriate syllabus to each trainee at the start of their course.
 ## Quick-Reference Training Paths
 
 ### For a New Soldier joining the data team:
-1. Read [ADP 1](doctrine/ADP_1_data_literacy_senior.md) if O-5+; skip if not
-2. Skim [ADRP 1](doctrine/ADRP_1_data_literacy.md) Ch 1-3 and Ch 8
+1. Read [Data Literacy for Senior Leaders](doctrine/DATA_LITERACY_senior_leaders.md) if O-5+; skip if not
+2. Skim [Data Literacy Technical Reference](doctrine/DATA_LITERACY_technical_reference.md) Ch 1-3 and Ch 8
 3. Complete [TM-10](tm/TM_10_maven_user/TM_10_MAVEN_USER.md) cover to cover
 4. Request MSS access; practice navigation tasks
 5. If building: complete [TM-20](tm/TM_20_builder/TM_20_BUILDER.md)
@@ -269,7 +304,7 @@ Hand the appropriate syllabus to each trainee at the start of their course.
 7. If in a specialized role: proceed to the appropriate TM-40 track (see table above)
 
 ### For an S6 shop standing up MSS capability:
-1. Commander reads ADP 1
+1. Commander reads Data Literacy for Senior Leaders
 2. All staff complete TM-10
 3. Designate builders: complete TM-20
 4. Designate data leads: complete TM-30
