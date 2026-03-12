@@ -6,7 +6,7 @@ Wiesbaden, Germany
 
 2026
 
-**Version 1.1 | March 2026**
+**Version 1.0 | March 2026**
 
 **APPLIES TO:** All USAREUR-AF military and civilian personnel who build applications, pipelines, and analyses on MSS without writing code.
 
@@ -15,10 +15,6 @@ Wiesbaden, Germany
 **RELATED MANUALS:** TM-30, Advanced Builder/Developer (Python, PySpark, TypeScript, OSDK).
 
 **DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
-
----
-
-**NOTE TO INSTRUCTORS:** Instructor qualification requirements, training ratios, practical exercise scenarios, and certification standards are in the Mission Training Plan (MTP). Instructor minimum qualification: TM-30 certified or C2DAO-endorsed data engineer. Co-instruction with a qualified mentor is required for the first training delivery. Annual recertification required. Contact C2DAO for the current MTP.
 
 ---
 
@@ -48,8 +44,7 @@ Builders have elevated privileges on MSS. Errors in pipelines, Ontology configur
 - Chapter 6 -- Analysis with Contour and Quiver
 - Chapter 7 -- Branching and Environment Management
 - Chapter 8 -- Builder Standards and Governance
-- Chapter 9 -- Troubleshooting and Common Errors
-- Appendix A -- Pre-Publish Checklists
+- Appendix A -- Pre-Publish Checklist
 - Appendix B -- Common Pipeline Builder Patterns
 - Glossary
 
@@ -93,65 +88,7 @@ Those topics are in TM-30, Advanced Builder/Developer. If a task requires writin
 
 ---
 
-## 1-2. Think Before You Build — The Builder's Design Framework
-
-**BLUF:** The most common builder failure is building the wrong thing correctly. Answer these three questions before you open Pipeline Builder or Workshop. Spend time here before spending time on the platform.
-
-Every build task starts with three questions. Answer them in order -- do not skip ahead.
-
-**Question 1: Who is my user and what decision are they making?**
-
-The application or pipeline you build exists to help someone make a decision or take an action. If you cannot name that person and that decision before you start, you are not ready to build.
-
-Examples of clear answers:
-- "The S4 NCO in Graf needs to see which vehicles are deadlined, updated daily, so they can prioritize maintenance scheduling."
-- "The battalion XO needs to see personnel readiness by company so they can report up to brigade before the Monday briefing."
-
-Examples of answers that are too vague:
-- "The S4 needs a readiness dashboard." (What kind of readiness? What does 'ready' mean? What action follows?)
-- "G2 wants to see data about units." (Which units? What about them? For what purpose?)
-
-If you have a vague answer, get a clearer requirement before you build. Building to a vague requirement produces something that looks complete but does not actually help anyone.
-
-**Question 2: What data do I need, and where does it come from?**
-
-Map the pipeline before you build it:
-
-```
-DECISION REQUIREMENT         DATA ELEMENTS NEEDED         SOURCE SYSTEM
-"Which vehicles are   →   Equipment ID, status,    →   GCSS-A (via existing
- deadlined by fleet?"       class, location, date         ingestion pipeline)
-```
-
-Verify the data exists and is already in MSS before you design anything that depends on it. If the data does not exist, you have an ingestion problem -- not a Workshop problem. Ingestion decisions require Data Steward coordination.
-
-**Question 3: Where does my work fit in the three-phase workflow?**
-
-Use the three-phase workflow from paragraph 1-4 as a design checklist:
-
-| Phase | Question to ask |
-|---|---|
-| Phase 1 -- Pipeline Builder | Is the data I need already ingested? If not, can Pipeline Builder connect to the source? |
-| Phase 2 -- Ontology | Is there an Object Type that represents the thing I'm building around? If not, does one need to be created (Data Steward coordination required)? |
-| Phase 3 -- Workshop | What widgets best present the decision my user needs to make? Does the user need to take an Action -- submit a form, trigger a workflow -- or just view information? |
-
-Build bottom-up. Do not start building a Workshop application until you have confirmed the data layer beneath it is solid. A beautifully designed Workshop app built on a broken pipeline is useless.
-
-> **CAUTION:** A common mistake is building at Phase 3 (Workshop) while assuming the Phase 1 and Phase 2 problems will work themselves out. They will not. Verify your data exists, is clean, and is modeled correctly in the Ontology before you build the application that depends on it.
-
-**The builder's minimum viable check before starting any task:**
-
-- [ ] I can name the user and the decision they need to make.
-- [ ] I know what data is needed and have confirmed it exists in MSS (or have a plan to get it there).
-- [ ] I know which Object Type(s) my application will be built on.
-- [ ] I have looked at the existing application (if any) before building something new.
-- [ ] I have talked to the intended user -- not just their supervisor -- about what they need.
-
-If any box is unchecked, do not build. Resolve it first.
-
----
-
-## 1-3. USAREUR-AF Mission Context and the Builder's Role
+## 1-2. USAREUR-AF Mission Context and the Builder's Role
 
 United States Army Europe and Africa (USAREUR-AF) is the Army Service Component Command (ASCC) to United States European Command (USEUCOM), responsible for theater land operations across the European Area of Responsibility (AOR) and integration with NATO Allied command structures. Major subordinate commands -- V Corps (forward deployed, Poland), 21st Theater Sustainment Command (TSC), and 7th Army Training Command (ATC) -- each generate and consume data that flows through MSS.
 
@@ -163,66 +100,54 @@ As a builder, the tools you create directly affect readiness visibility and oper
 
 ---
 
-## 1-4. The Builder's Three-Phase Workflow
+## 1-3. The USAREUR-AF 5-Layer Data Stack
 
-TM-20 builders work in three sequential phases. Complete each phase before beginning the next.
-
-**Phase 1 — Get and clean the data (Pipeline Builder).** Ingest data from a source, clean it, and produce a curated output dataset. This is the foundation. Without clean, reliable data, nothing downstream works.
-
-**Phase 2 — Organize it so the system understands it (Ontology).** Create Object Types backed by your curated data, configure Link Types between related objects, and define Actions users can perform. This is the semantic layer that turns a data table into meaningful, connected objects.
-
-**Phase 3 — Build the application users see (Workshop).** Assemble widgets -- tables, charts, filters, forms -- into an application that operators use daily. Workshop reads from the Ontology. It does not read directly from datasets.
+MSS is built around a five-layer data architecture. Understanding where your work fits in this stack is essential. TM-20 builders primarily operate at Layers 2, 3, and 4.
 
 ```
-Phase 1: Pipeline Builder  →  Phase 2: Ontology  →  Phase 3: Workshop
-(clean, curated data)          (meaningful objects)    (user-facing app)
++----------------------------------------------------------+
+|  LAYER 5: ACTIVATION                                     |
+|  Published apps, forms, action-enabled workflows         |
+|  (Users act on data, submit reports, trigger events)     |
++----------------------------------------------------------+
+|  LAYER 4: ANALYTICS                                      |
+|  Workshop applications, Contour analyses, Quiver         |
+|  << TM-20 builds here (Workshop, Contour, Quiver)        |
++----------------------------------------------------------+
+|  LAYER 3: SEMANTIC (ONTOLOGY)                            |
+|  Object Types, Link Types, Actions, Properties           |
+|  << TM-20 builds here (Ontology UI, no code)             |
++----------------------------------------------------------+
+|  LAYER 2: INTEGRATION                                    |
+|  Pipeline Builder, connectors, ingestion pipelines       |
+|  << TM-20 builds here (Pipeline Builder, no code)        |
++----------------------------------------------------------+
+|  LAYER 1: INFRASTRUCTURE                                 |
+|  Raw data storage, connectors, access controls           |
+|  (Administered by platform admin; builder requests)      |
++----------------------------------------------------------+
 ```
 
-**Do not skip.** Complete Phase 1 before Phase 2. Complete Phase 2 before Phase 3. Building Phase 3 before Phase 1 and Phase 2 are solid produces an application with no reliable data behind it.
+**TM-20 Activity to Layer Mapping:**
 
-For the full platform architecture (five-layer stack diagram and layer-to-activity mapping), see Appendix C of the USAREUR-AF Data Literacy Technical Reference.
+| TM-20 Activity | Stack Layer | Layer Name |
+|---|---|---|
+| Connect data sources via Pipeline Builder connectors | Layer 2 | Integration |
+| Build visual ETL pipelines (Pipeline Builder) | Layer 2 | Integration |
+| Schedule and monitor ingestion | Layer 2 | Integration |
+| Create Object Types via Ontology UI | Layer 3 | Semantic |
+| Create Link Types via Ontology UI | Layer 3 | Semantic |
+| Configure Actions via form-based UI | Layer 3 | Semantic |
+| Build Workshop applications | Layer 4 | Analytics |
+| Build Contour saved analyses | Layer 4 | Analytics |
+| Build Quiver dashboards | Layer 4 | Analytics |
+| Publish Workshop apps, share with users | Layer 5 | Activation |
+
+NOTE: Advanced transform development (Python/PySpark), OSDK, TypeScript Functions, and AIP Logic operate at Layers 2-3 but require code. Those are TM-30 topics. TM-20 covers only the no-code paths through Layers 2-4.
 
 ---
 
-## 1-5. Prerequisites and TM-20 Scope Boundary
-
-**Access requirements:**
-
-- [ ] TM-10 (Maven User) completed
-- [ ] Builder access request submitted through chain of command and approved
-- [ ] Editor role granted on your team's project folder in Compass
-- [ ] Editor role granted on the Ontology branch for your team
-- [ ] Workshop Builder permission granted
-
-**Orientation requirements (complete before creating any resource):**
-
-- [ ] Navigated to your team's project folder in Compass
-- [ ] Opened and reviewed at least one existing Pipeline Builder pipeline
-- [ ] Previewed the output dataset of that pipeline
-- [ ] Found the Object Type backed by that dataset in Ontology Manager
-- [ ] Opened and used (as an end user) the Workshop application built on that Object Type
-
-Do not begin building until you understand the existing system. Adding to something you do not understand creates problems that are difficult to untangle.
-
-**TM-20 Scope Boundary:**
-
-The table below identifies requirements that exceed TM-20 scope. If your requirement falls in the left column, escalate -- do not attempt it as a TM-20 build.
-
-| IF the requirement needs this... | THEN escalate to... |
-|---|---|
-| Multi-step Actions with conditional routing, sequential submission steps, approval chains, or multi-record writes | TM-30, Chapter 4, Section 4-4 |
-| Multi-source joins with complex grain logic or deduplication across sources | TM-30, Chapter 3 |
-| AIP Logic configuration or Agent Studio integration | TM-30 |
-| Multi-page Workshop applications with conditional navigation between pages | TM-30, Chapter 2 |
-| @incremental pipeline patterns | TM-30, Chapter 3 |
-| Many-to-many Link Types with junction dataset logic | TM-30, Chapter 4 |
-| Python, PySpark, or SQL code transforms | TM-40F (Software Engineer) |
-| TypeScript Functions or OSDK | TM-40F (Software Engineer) |
-| Machine learning model integration | TM-40C (ML Engineer) |
-
----
-
-## 1-6. Governance and Escalation Chain
+## 1-4. C2DAO Governance Chain
 
 All builder activity on MSS is governed by the USAREUR-AF Data Governance chain. Know this chain before you build anything.
 
@@ -258,7 +183,31 @@ BUILDER (YOU)
 
 ---
 
-## 1-7. References
+## 1-5. Builder Prerequisites
+
+Complete all of the following before beginning any build activity on MSS.
+
+**Access requirements:**
+
+- [ ] TM-10 (Maven User) completed
+- [ ] Builder access request submitted through chain of command and approved
+- [ ] Editor role granted on your team's project folder in Compass
+- [ ] Editor role granted on the Ontology branch for your team
+- [ ] Workshop Builder permission granted
+
+**Orientation requirements (complete before creating any resource):**
+
+- [ ] Navigated to your team's project folder in Compass
+- [ ] Opened and reviewed at least one existing Pipeline Builder pipeline
+- [ ] Previewed the output dataset of that pipeline
+- [ ] Found the Object Type backed by that dataset in Ontology Manager
+- [ ] Opened and used (as an end user) the Workshop application built on that Object Type
+
+Do not begin building until you understand the existing system. Adding to something you do not understand creates problems that are difficult to untangle.
+
+---
+
+## 1-6. Governing References
 
 - Army Data Plan (2022), Office of the Army Chief Information Officer
 - DoD Data Strategy (2020), Office of the Secretary of Defense
@@ -266,6 +215,65 @@ BUILDER (YOU)
 - USAREUR-AF C2DAO Data Governance SOP (current version)
 - Palantir Foundry Product Documentation (in-platform Help)
 - USAREUR-AF G6/Data: ontology design standards, doctrine-aligned Object Type patterns, data modeling guidance
+
+---
+
+## 1-7. Think Before You Build — The Builder's Design Framework
+
+**BLUF:** The most common builder failure is building the wrong thing correctly. This section gives you a thinking framework to use before you open Pipeline Builder or Workshop. Spend time here before spending time on the platform.
+
+Every build task starts with three questions. Answer them in order — do not skip ahead.
+
+**Question 1: Who is my user and what decision are they making?**
+
+The application or pipeline you build exists to help someone make a decision or take an action. If you cannot name that person and that decision before you start, you are not ready to build.
+
+Examples of clear answers:
+- "The S4 NCO in Graf needs to see which vehicles are deadlined, updated daily, so they can prioritize maintenance scheduling."
+- "The battalion XO needs to see personnel readiness by company so they can report up to brigade before the Monday briefing."
+
+Examples of answers that are too vague:
+- "The S4 needs a readiness dashboard." (What kind of readiness? What does 'ready' mean? What action follows?)
+- "G2 wants to see data about units." (Which units? What about them? For what purpose?)
+
+If you have a vague answer, get a clearer requirement before you build. Building to a vague requirement produces something that looks complete but does not actually help anyone.
+
+**Question 2: What data do I need, and where does it come from?**
+
+Map the pipeline before you build it:
+
+```
+DECISION REQUIREMENT         DATA ELEMENTS NEEDED         SOURCE SYSTEM
+"Which vehicles are   →   Equipment ID, status,    →   GCSS-A (via existing
+ deadlined by fleet?"       class, location, date         ingestion pipeline)
+```
+
+Verify the data exists and is already in MSS before you design anything that depends on it. If the data does not exist, you have an ingestion problem — not a Workshop problem. Ingestion decisions require Data Steward coordination.
+
+**Question 3: Where does my work fit in the 5-layer stack?**
+
+Use the stack from paragraph 1-3 as a design checklist:
+
+| Layer | Question to ask |
+|---|---|
+| Layer 2 (Integration) | Is the data I need already ingested? If not, can Pipeline Builder connect to the source? |
+| Layer 3 (Ontology) | Is there an Object Type that represents the thing I'm building around? If not, does one need to be created (Data Steward coordination required)? |
+| Layer 4 (Analytics) | What Workshop widgets best present the decision my user needs to make? |
+| Layer 5 (Activation) | Does the user need to take an action — submit a form, trigger a workflow — or just view information? |
+
+Build bottom-up. Do not start building a Workshop application until you have confirmed the data layer beneath it is solid. A beautifully designed Workshop app built on a broken pipeline is useless.
+
+> **CAUTION:** A common mistake is building at Layer 4 (Workshop) while assuming the Layer 2 and Layer 3 problems will work themselves out. They will not. Verify your data exists, is clean, and is modeled correctly in the Ontology before you build the application that depends on it.
+
+**The builder's minimum viable check before starting any task:**
+
+- [ ] I can name the user and the decision they need to make.
+- [ ] I know what data is needed and have confirmed it exists in MSS (or have a plan to get it there).
+- [ ] I know which Object Type(s) my application will be built on.
+- [ ] I have looked at the existing application (if any) before building something new.
+- [ ] I have talked to the intended user — not just their supervisor — about what they need.
+
+If any box is unchecked, do not build. Resolve it first.
 
 ---
 
@@ -345,15 +353,9 @@ All resources must follow USAREUR-AF naming conventions. Non-compliant resources
 
 **TASK 2-1. CREATE A PROJECT**
 
-**TASK:** Create a new project in Compass for an authorized functional area.
-
 **CONDITIONS:** Builder access granted; no existing project for your functional area; unit Data Steward and C2DAO have authorized project creation.
 
 **STANDARDS:** The builder will create a project in Compass with the correct name and folder structure, assign appropriate initial permissions, and confirm the project is visible to authorized team members before creating any resources inside it.
-
-**EQUIPMENT:** MSS account with Owner or Manager role; Compass access; C2DAO project authorization memo.
-
-**DURATION:** 30--45 minutes.
 
 **PROCEDURE:**
 
@@ -371,15 +373,9 @@ NOTE: Do not create datasets or pipelines before folder structure and permission
 
 **TASK 2-2. ADD TEAM MEMBERS TO A PROJECT**
 
-**TASK:** Add an authorized team member to an existing project with the correct role.
-
 **CONDITIONS:** Builder has Owner or Manager role on the project; team member has an active MSS account; team lead has authorized access.
 
 **STANDARDS:** The builder will add the team member with the correct role. The new member can access the project at the appropriate permission level within 5 minutes. No member is assigned a role higher than required for their duties.
-
-**EQUIPMENT:** MSS account with Owner or Manager role on the project; approved access list from Data Steward.
-
-**DURATION:** 15--20 minutes.
 
 **PROCEDURE:**
 
@@ -409,15 +405,9 @@ NOTE: Assign the minimum role required. If a team member only consumes data in W
 
 **TASK 2-3. SET PROJECT PERMISSIONS AND ACCESS CONTROLS**
 
-**TASK:** Configure project permissions to match the approved access list.
-
 **CONDITIONS:** Builder has Owner role on the project; unit Data Steward has provided an approved access list; classification and handling requirements are known.
 
 **STANDARDS:** The builder will configure project permissions so that only authorized personnel have access, roles correctly match duties, and the Data Steward has reviewed and approved the configuration before any data is added.
-
-**EQUIPMENT:** MSS account with Owner role; approved access list from Data Steward.
-
-**DURATION:** 20--30 minutes.
 
 **PROCEDURE:**
 
@@ -442,7 +432,7 @@ NOTE: Assign the minimum role required. If a team member only consumes data in W
 
 Pipeline Builder is MSS's visual, no-code ETL (Extract, Transform, Load) tool. Using a drag-and-drop interface, you build pipelines that pull data from a source, clean or reshape it, and write the result to a destination dataset -- no code required.
 
-**Where Pipeline Builder fits in the three-phase workflow:** Phase 1. The output of every Pipeline Builder pipeline is a dataset that feeds Phase 2 (Ontology) and Phase 3 (Analytics/Workshop).
+**Where Pipeline Builder fits in the 5-Layer Stack:** Layer 2, Integration. The output of every Pipeline Builder pipeline is a dataset that can be consumed at Layer 3 (Ontology) or Layer 4 (Analytics).
 
 **What Pipeline Builder can do without code:**
 
@@ -462,7 +452,7 @@ Pipeline Builder is MSS's visual, no-code ETL (Extract, Transform, Load) tool. U
 - Machine learning or statistical computation
 - Writeback to external systems
 
-> **NOTE:** The pipelines you build in Pipeline Builder become the data sources that operators access via TM-10, Task 5-1 (View and Read a Dataset) and in Workshop applications. Pipeline failures directly impact operators' ability to access operational data. Refer to TM-10, Chapter 8 (Troubleshooting and Support) to understand the operator experience when a pipeline fails -- build your monitoring accordingly.
+> **NOTE:** The pipelines you build in Pipeline Builder become the data sources that operators access via TM-10, Task 5-1 (View and Read a Dataset) and in Workshop applications. Pipeline failures directly impact operators' ability to access operational data. Refer to TM-10, Chapter 8 (Troubleshooting and Support) to understand the operator experience when a pipeline fails — build your monitoring accordingly.
 
 ---
 
@@ -482,17 +472,11 @@ Always work on a branch, not on the main/production pipeline. See Chapter 7 for 
 
 ---
 
-## TASK 3-1: CREATE A PIPELINE BUILDER PIPELINE
-
-**TASK:** Create a new Pipeline Builder pipeline in the correct project folder.
+**TASK 3-1. CREATE A PIPELINE BUILDER PIPELINE**
 
 **CONDITIONS:** Builder has Editor access on the project; source dataset or connector is available; destination folder exists; working on a development branch (not main).
 
 **STANDARDS:** The builder will create a Pipeline Builder pipeline in the correct project folder, connect a valid source, add at least one transform node, connect an output dataset, and confirm the pipeline builds successfully (green checkmark, no errors) before requesting a merge.
-
-**EQUIPMENT:** MSS account with Editor role; Pipeline Builder access; development branch active.
-
-**DURATION:** 30--60 minutes.
 
 **PROCEDURE:**
 
@@ -514,31 +498,11 @@ NOTE: A successful build means the pipeline ran without errors. It does not mean
 
 ---
 
-> **BUILDER VIGNETTE — S4 Equipment Readiness Pipeline**
->
-> SSG Kim is the data NCO for 3rd ABCT at Rose Barracks. Her S4 officer needs a Workshop application showing which vehicles are deadlined and which are FMC, updated daily from GCSS-A.
->
-> SSG Kim follows the three-question framework: *Who needs this?* — the S4 officer. *What decision does it support?* — maintenance prioritization and readiness reporting. *What data is required?* — vehicle status and deadline reason from GCSS-A.
->
-> She builds a Pipeline Builder pipeline that ingests the GCSS-A vehicle status feed, filters to her brigade's UICs, renames columns to plain English (e.g., `veh_status_cd` → `Vehicle Status`), and outputs a clean dataset. She previews the output and spot-checks five rows: vehicle IDs are present, status values are either "FMC" or "NMC", deadline reasons are populated for NMC vehicles. The pipeline builds successfully (green checkmark). She schedules it to run at 0300 daily.
->
-> In Chapter 4, she creates a `VehicleStatus` Object Type backed by her clean dataset, with `Vehicle_ID` as the primary key. In Chapter 5, she builds a Workshop application with a filter for unit and a table showing vehicle ID, status, and deadline reason. She tests on her development branch, peer reviews with her data steward, and promotes to production.
->
-> The S4 officer now has a live readiness view every morning before PT formation.
-
----
-
-## TASK 3-2: CONNECT AND PREVIEW A DATA SOURCE
-
-**TASK:** Connect a data source node in Pipeline Builder and verify the incoming data schema and row count.
+**TASK 3-2. CONNECT A DATA SOURCE IN PIPELINE BUILDER**
 
 **CONDITIONS:** Builder is in Pipeline Builder on a development branch; a pre-configured connector or source dataset exists; Data Steward has approved ingestion of this source.
 
 **STANDARDS:** The builder will connect the data source, preview the incoming data to confirm schema and row count, and document the source name, expected row count, and refresh frequency in the pipeline's description field before proceeding.
-
-**EQUIPMENT:** MSS account with Editor role; Pipeline Builder access; authorized connector or source dataset path; Data Steward approval documented.
-
-**DURATION:** 20--40 minutes.
 
 **PROCEDURE:**
 
@@ -565,17 +529,11 @@ NOTE: If the connector you need is not on the authorized list, submit a request 
 
 ---
 
-## TASK 3-3: ADD AND CONFIGURE TRANSFORM NODES
-
-**TASK:** Add transform nodes to a pipeline to filter, reshape, or join data.
+**TASK 3-3. ADD TRANSFORM NODES TO A PIPELINE**
 
 **CONDITIONS:** Builder is in Pipeline Builder on a development branch; a source node is connected; need to filter, reshape, or join data.
 
 **STANDARDS:** The builder will add the correct transform nodes for the required operation, configure each node's properties accurately, and verify the output in the preview pane before connecting to the output dataset.
-
-**EQUIPMENT:** MSS account with Editor role; Pipeline Builder access; source node connected.
-
-**DURATION:** 30--60 minutes.
 
 **PROCEDURE -- Filter rows:**
 
@@ -616,17 +574,11 @@ NOTE: A join that multiplies rows unexpectedly usually means the join key is not
 
 ---
 
-## TASK 3-4: CONFIGURE PIPELINE OUTPUT AND SCHEDULE
-
-**TASK:** Configure the pipeline output dataset and automatic refresh schedule.
+**TASK 3-4. SCHEDULE AUTOMATIC PIPELINE REFRESH**
 
 **CONDITIONS:** Pipeline builds and produces correct output; builder has authorization from Data Steward to schedule automatic runs; the source data updates on a known schedule.
 
 **STANDARDS:** The builder will configure a schedule that matches the source data refresh cadence, set appropriate alerting, and confirm the first scheduled run completes successfully.
-
-**EQUIPMENT:** MSS account with Editor role; successfully building pipeline; Data Steward schedule authorization.
-
-**DURATION:** 20--30 minutes.
 
 **PROCEDURE:**
 
@@ -648,17 +600,11 @@ NOTE: Schedule times are in UTC. USAREUR-AF is UTC+1 (CET) or UTC+2 (CEST in sum
 
 ---
 
-## TASK 3-5: MONITOR A PIPELINE AND RESPOND TO BUILD FAILURES
-
-**TASK:** Monitor a scheduled pipeline and diagnose and resolve build failures.
+**TASK 3-5. MONITOR A PIPELINE AND RESPOND TO BUILD FAILURES**
 
 **CONDITIONS:** Pipeline is scheduled and running; builder has received a failure alert or is performing routine monitoring.
 
 **STANDARDS:** The builder will identify the failing node and error cause within 15 minutes of notification, take corrective action or escalate appropriately within 1 hour, and document the failure and resolution in the pipeline's description field.
-
-**EQUIPMENT:** MSS account with Editor role; pipeline access; Build Log visible.
-
-**DURATION:** 30--90 minutes (depending on issue complexity).
 
 **PROCEDURE:**
 
@@ -680,7 +626,7 @@ NOTE: Schedule times are in UTC. USAREUR-AF is UTC+1 (CET) or UTC+2 (CEST in sum
 | Row count zero | Source has no data for this run | Investigate source; may be expected for some time windows |
 | Build timed out | Pipeline too large for scheduled window | Escalate to data engineer (TM-30) |
 | Output dataset missing / stale | Operator impact: TM-10, Task 5-1 | Check schedule; fix broken node; notify data steward |
-| Schema mismatch after source change | Breaking change -- operator impact | Escalate to TM-30 builder if multi-source; fix schema mapping |
+| Schema mismatch after source change | Breaking change — operator impact | Escalate to TM-30 builder if multi-source; fix schema mapping |
 
 > **NOTE:** When a pipeline fails, operators using TM-10, Task 5-1 see the failure in their data views and in Workshop applications. Fix pipeline issues promptly and document what failed and why. If the root cause is outside your TM-20 capability (e.g., requires @incremental logic, complex deduplication, Python transforms), escalate to a TM-30 builder or TM-40 developer.
 
@@ -690,17 +636,11 @@ NOTE: Schedule times are in UTC. USAREUR-AF is UTC+1 (CET) or UTC+2 (CEST in sum
 
 ---
 
-## TASK 3-6: DOCUMENT A PIPELINE
-
-**TASK:** Complete documentation for a pipeline before branch merge or handoff.
+**TASK 3-6. DOCUMENT A PIPELINE**
 
 **CONDITIONS:** Pipeline is building successfully; builder is preparing for branch merge or handoff.
 
 **STANDARDS:** The pipeline description will include source name, output dataset path, refresh schedule, data steward POC, creation date, and a plain-English description of what the pipeline does. Known data quality limitations are noted.
-
-**EQUIPMENT:** MSS account with Editor role; pipeline open in Pipeline Builder.
-
-**DURATION:** 15--20 minutes.
 
 **PROCEDURE:**
 
@@ -736,9 +676,9 @@ The Foundry Ontology is the semantic layer of MSS -- it translates raw data tabl
 
 **Build the Ontology last, after your data is clean.** The Ontology reads from your curated dataset. If your curated dataset has schema issues, the Ontology configuration will fail or produce unreliable objects.
 
-NOTE: Before creating any new Object Type, check the Ontology Manager to confirm no existing type already covers your use case. USAREUR-AF maintains established design patterns for common operational Object Types -- consult your team lead or data steward before designing from scratch.
+NOTE: Before creating any new Object Type, check the Ontology Manager to confirm no existing type already covers your use case. USAREUR-AF maintains established design patterns for common operational Object Types — consult your team lead or data steward before designing from scratch.
 
-> **NOTE:** The Object Types and properties you configure in the Ontology become what operators see in Workshop applications and in Quiver (TM-10, Task 5-3, Use Quiver to Explore Ontology Objects). A poorly designed Object Type -- unclear property names, missing properties, wrong cardinality -- creates friction for every operator who uses it. Refer to TM-10, Chapter 4 and Task 5-3 to understand the operator experience of your Ontology design before publishing.
+> **NOTE:** The Object Types and properties you configure in the Ontology become what operators see in Workshop applications and in Quiver (TM-10, Task 5-3, Use Quiver to Explore Ontology Objects). A poorly designed Object Type — unclear property names, missing properties, wrong cardinality — creates friction for every operator who uses it. Refer to TM-10, Chapter 4 and Task 5-3 to understand the operator experience of your Ontology design before publishing.
 
 ---
 
@@ -758,17 +698,11 @@ NOTE: Before creating any new Object Type, check the Ontology Manager to confirm
 
 ---
 
-## TASK 4-1: CREATE AN OBJECT TYPE
-
-**TASK:** Create a new Object Type in the Ontology Manager backed by a curated dataset.
+**TASK 4-1. CREATE AN OBJECT TYPE VIA THE ONTOLOGY UI**
 
 **CONDITIONS:** Builder has Editor access on the Ontology; a curated dataset backing the Object Type is published and has a stable schema; builder is working on a development branch.
 
 **STANDARDS:** The builder will create an Object Type backed by the correct curated dataset, with a primary key configured, at least five meaningful properties added and named to standard, a plain-English description entered, and the Object Type previewing correctly (objects visible, properties show expected values) before the branch is submitted for merge.
-
-**EQUIPMENT:** MSS account with Ontology Editor role; Ontology Manager access; curated dataset path; development branch active.
-
-**DURATION:** 30--60 minutes.
 
 **PROCEDURE:**
 
@@ -794,17 +728,11 @@ NOTE: The primary key must be unique per object. If your backing dataset has dup
 
 ---
 
-## TASK 4-2: ADD PROPERTIES TO AN OBJECT TYPE
-
-**TASK:** Add, rename, or remove properties on an existing Object Type.
+**TASK 4-2. ADD AND CONFIGURE PROPERTIES ON AN OBJECT TYPE**
 
 **CONDITIONS:** Object Type has been created; builder is on a development branch; additional properties need to be added or existing properties renamed.
 
 **STANDARDS:** All added properties have plain-English display names, correct data types, and are formatted appropriately. Properties no longer needed are removed (not just hidden).
-
-**EQUIPMENT:** MSS account with Ontology Editor role; Object Type open in Ontology Manager; development branch active.
-
-**DURATION:** 20--30 minutes.
 
 **PROCEDURE:**
 
@@ -837,17 +765,11 @@ NOTE: Renaming a property changes what Workshop apps display -- it does not chan
 
 ---
 
-## TASK 4-3: CREATE A LINK TYPE
-
-**TASK:** Create a Link Type between two Object Types using the Ontology Manager UI.
+**TASK 4-3. CREATE A LINK TYPE VIA THE ONTOLOGY UI**
 
 **CONDITIONS:** Both Object Types to be linked exist and have primary keys configured; a foreign key relationship exists in the underlying data; builder is on a development branch.
 
 **STANDARDS:** The builder will create a Link Type that correctly represents the relationship between the two Object Types, configured with the correct foreign key mapping, and verified by previewing linked objects before submitting for merge.
-
-**EQUIPMENT:** MSS account with Ontology Editor role; both Object Types existing with primary keys; development branch active.
-
-**DURATION:** 30--45 minutes.
 
 **PROCEDURE:**
 
@@ -875,17 +797,11 @@ NOTE: For complex relationship modeling, consult your team lead or data steward 
 
 ---
 
-## TASK 4-4: CREATE AN ACTION
-
-**TASK:** Create a single-step, form-based Action on an Object Type using the Ontology Manager UI.
+**TASK 4-4. CREATE A BASIC ACTION VIA THE ONTOLOGY UI**
 
 **CONDITIONS:** The target Object Type exists and is correctly configured; builder is on a development branch; the write-back dataset is prepared; Data Steward has approved write-back for this Object Type.
 
 **STANDARDS:** The builder will create a form-based Action that allows authorized users to write a value back to the backing dataset, with required fields marked, input validation configured, and the Action tested end-to-end before requesting a merge.
-
-**EQUIPMENT:** MSS account with Ontology Editor role; Object Type with backing dataset; write-back authorization from Data Steward; development branch active.
-
-**DURATION:** 30--60 minutes.
 
 **PROCEDURE:**
 
@@ -906,7 +822,7 @@ NOTE: For complex relationship modeling, consult your team lead or data steward 
 
 > CAUTION: Actions that write to datasets affect all downstream applications. Before enabling a write-back Action in production, test it on a development branch with test data -- not with live operational records.
 
-NOTE: Multi-step Actions with conditional routing, sequential submission steps, approval chains, or multi-record writes are TM-30 scope -- refer to TM-30, Chapter 4, Section 4-4. These do NOT require code (TypeScript is TM-40 scope). TM-20 Actions are single-step: operator fills a form, one field in the backing dataset is updated.
+NOTE: Complex Action logic (conditional logic, computed fields, multi-step workflows, AIP integration) requires TypeScript and is covered in TM-30. If your Action needs more than a simple form-to-field write, escalate to your data engineer.
 
 ---
 
@@ -924,7 +840,7 @@ Workshop applications read from the Ontology. They do not read directly from dat
 Data (Pipeline Builder) -> Ontology (Object Types, Links, Actions) -> Workshop App
 ```
 
-> **NOTE:** The Workshop applications you build are consumed by operators working from TM-10. Before building, read TM-10, Chapter 4 (Using Workshop Applications) -- specifically Task 4-1 (Open and Orient to a Workshop Application), Task 4-3 (Apply Filters to a Dashboard), Task 4-4 (Navigate Between Pages), and Task 4-5 (Submit Data Using an Action Form). Build your application so an operator following those TM-10 tasks can use it without confusion.
+> **NOTE:** The Workshop applications you build are consumed by operators working from TM-10. Before building, read TM-10, Chapter 4 (Using Workshop Applications) — specifically Task 4-1 (Open and Orient to a Workshop Application), Task 4-3 (Apply Filters to a Dashboard), Task 4-4 (Navigate Between Modules/Pages), and Task 4-5 (Submit Data Using an Action Form). Build your application so an operator following those TM-10 tasks can use it without confusion.
 
 ---
 
@@ -961,21 +877,15 @@ Data (Pipeline Builder) -> Ontology (Object Types, Links, Actions) -> Workshop A
 | **Publish button** | Top toolbar | Make the app available to users |
 | **Branch selector** | Top toolbar | Confirm you are on a development branch |
 
-> **NOTE:** When designing filter panels and navigation, test them from the operator's perspective. An operator following TM-10, Task 4-3 (Apply Filters to a Dashboard) expects predictable filter behavior and clear labeling. An operator following TM-10, Task 4-4 (Navigate Between Pages) expects consistent navigation. Test your application against TM-10 Chapter 4 tasks before publishing.
+> **NOTE:** When designing filter panels and navigation, test them from the operator's perspective. An operator following TM-10, Task 4-3 (Apply Filters to a Dashboard) expects predictable filter behavior and clear labeling. An operator following TM-10, Task 4-4 (Navigate Between Modules/Pages) expects consistent navigation. Test your application against TM-10 Chapter 4 tasks before publishing.
 
 ---
 
-## TASK 5-1: CREATE A WORKSHOP APPLICATION
-
-**TASK:** Create a new Workshop application in the correct project folder.
+**TASK 5-1. CREATE A NEW WORKSHOP APPLICATION**
 
 **CONDITIONS:** Builder has Workshop Builder permission; at least one Object Type exists and is correctly configured; builder is on a development branch; the application's purpose and intended users are defined.
 
 **STANDARDS:** The builder will create a new Workshop application in the correct project folder, named to standard, connected to the appropriate Object Type, with a basic layout (at minimum a title and one data widget) that renders correctly in Preview mode.
-
-**EQUIPMENT:** MSS account with Workshop Builder permission; Object Type configured and previewing with data; development branch active.
-
-**DURATION:** 45--90 minutes.
 
 **PROCEDURE:**
 
@@ -996,17 +906,11 @@ NOTE: Workshop apps built on development branches are only visible to team membe
 
 ---
 
-## TASK 5-2: ADD FILTER WIDGETS AND CONNECT TO DATA
-
-**TASK:** Add filter widgets to a Workshop application and connect them to data widgets.
+**TASK 5-2. ADD FILTERS TO A WORKSHOP APPLICATION**
 
 **CONDITIONS:** A Workshop application exists with at least one data widget; the Object Type has filterable properties; builder is in Workshop edit mode on a development branch.
 
 **STANDARDS:** The builder will add filters allowing end users to narrow data by at least two dimensions (e.g., unit and date range), and confirm that selecting a filter value updates all connected widgets in Preview mode.
-
-**EQUIPMENT:** MSS account with Workshop Builder permission; Workshop application open in edit mode; development branch active.
-
-**DURATION:** 30--45 minutes.
 
 **PROCEDURE:**
 
@@ -1032,43 +936,11 @@ NOTE: Filters work across all widgets connected to the same Object Type variable
 
 ---
 
-## TASK 5-3: ADD A TABLE WIDGET
-
-**TASK:** Add and configure a Table widget to display Object Type data in a Workshop application.
-
-**CONDITIONS:** A Workshop application exists; the Object Type is correctly configured with properties; builder is in edit mode on a development branch.
-
-**STANDARDS:** The builder will add a Table widget connected to the correct Object Type, displaying only the columns end users need, with correct column labels, and rendering with accurate data in Preview mode.
-
-**EQUIPMENT:** MSS account with Workshop Builder permission; Workshop application open in edit mode; Object Type with properties configured; development branch active.
-
-**DURATION:** 20--30 minutes.
-
-**PROCEDURE:**
-
-1. From the Widget Library, drag **Table** onto the canvas.
-2. In the right panel under **Data Source**: click **Select Object Type** and browse to the target Object Type.
-3. Under **Columns**: click **Add Column** and select properties to display.
-4. For each column, review the column label -- update to plain English if the property display name is not user-friendly.
-5. Under **Default Sort**: select a column and sort direction appropriate to the data (e.g., sort by report date descending for time-series data).
-6. Connect any applicable filters (see Task 5-2).
-7. Click **Preview** and verify the table renders with data and column labels are correct.
-
-NOTE: Display only columns the end user needs. A table with 20 columns showing raw field names is harder to read than a 6-column table with plain-English labels. Remove unnecessary columns.
-
----
-
-## TASK 5-4: ADD A CHART WIDGET
-
-**TASK:** Add and configure chart widgets to visualize Object Type data in a Workshop application.
+**TASK 5-3. ADD CHARTS TO A WORKSHOP APPLICATION**
 
 **CONDITIONS:** A Workshop application exists; Object Type has appropriate numeric and categorical or date properties; builder is in edit mode on a development branch.
 
 **STANDARDS:** The builder will add at least one chart that meaningfully visualizes a metric, correctly configured with labeled axes, and rendering with accurate data in Preview mode.
-
-**EQUIPMENT:** MSS account with Workshop Builder permission; Workshop application open in edit mode; Object Type with numeric and categorical properties; development branch active.
-
-**DURATION:** 30--45 minutes.
 
 **PROCEDURE:**
 
@@ -1103,17 +975,11 @@ NOTE: Display only columns the end user needs. A table with 20 columns showing r
 
 ---
 
-## TASK 5-5: CONFIGURE AN ACTION FORM WIDGET
-
-**TASK:** Add a Form widget connected to an Action in a Workshop application.
+**TASK 5-4. ADD A FORM (ACTION WIDGET) TO A WORKSHOP APPLICATION**
 
 **CONDITIONS:** An Action is configured on the relevant Object Type (Task 4-4); builder is in Workshop edit mode on a development branch; intended users and permissions are confirmed.
 
 **STANDARDS:** The builder will add a Form widget connected to the correct Action, with all required fields visible and labeled, and confirm that submitting a test entry through the form writes data to the backing dataset.
-
-**EQUIPMENT:** MSS account with Workshop Builder permission; Action configured on the Object Type; Workshop application open in edit mode; development branch active.
-
-**DURATION:** 30--45 minutes.
 
 **PROCEDURE:**
 
@@ -1130,17 +996,11 @@ NOTE: Display only columns the end user needs. A table with 20 columns showing r
 
 ---
 
-## TASK 5-5B: CONFIGURE LAYOUT AND ORGANIZE A WORKSHOP APPLICATION
-
-**TASK:** Organize the layout of a Workshop application for usability.
+**TASK 5-5. CONFIGURE LAYOUT AND ORGANIZE A WORKSHOP APPLICATION**
 
 **CONDITIONS:** Core widgets are added; builder is in edit mode; layout needs to be organized for usability.
 
 **STANDARDS:** The application will have a clear visual hierarchy (title, filters, data displays, forms), widgets sized appropriately and aligned, and the layout usable on standard government workstation screen sizes (1920x1080).
-
-**EQUIPMENT:** MSS account with Workshop Builder permission; Workshop application open in edit mode; core widgets placed.
-
-**DURATION:** 30--45 minutes.
 
 **PROCEDURE:**
 
@@ -1161,19 +1021,13 @@ NOTE: Test the application at 1920x1080 resolution -- the standard government wo
 
 ---
 
-## TASK 5-6: PUBLISH A WORKSHOP APPLICATION
+**TASK 5-6. PUBLISH AND SHARE A WORKSHOP APPLICATION**
 
-> **CAUTION:** Before publishing, assess whether your application design is within TM-20 scope. If your design includes: multiple pages with conditional navigation between them; widgets that pass parameters to other widgets; role-based conditional layouts -- your application is likely TM-30 scope. Refer to TM-30, Chapter 2 (Advanced Workshop Application Design), specifically Section 2-1 (The Multi-Page Application Model), to determine whether your design should be escalated to a TM-30 qualified builder before publication.
-
-**TASK:** Publish a completed Workshop application and configure access for intended users.
+> **CAUTION:** Before publishing, assess whether your application design is within TM-20 scope. If your design includes: multiple pages with conditional navigation between them; widgets that pass parameters to other widgets; role-based conditional layouts — your application is likely TM-30 scope. Refer to TM-30, Chapter 2 (Advanced Workshop Application Design), specifically Section 2-1 (The Multi-Page Application Model), to determine whether your design should be escalated to a TM-30 qualified builder before publication.
 
 **CONDITIONS:** Workshop application is complete; all widgets render correctly in Preview; branch has been merged (Chapter 7); Data Steward has reviewed and approved publication; access list is defined.
 
 **STANDARDS:** The builder will publish the application, configure access so only authorized users can open it, verify that a test user (View-only access) can access and use the application, and notify intended users.
-
-**EQUIPMENT:** MSS account with Workshop Builder permission; completed Workshop application on main branch; approved access list from Data Steward.
-
-**DURATION:** 30--45 minutes.
 
 **PROCEDURE:**
 
@@ -1219,17 +1073,11 @@ Use Workshop when you need a full interactive application with filters, forms, A
 
 ## 6-2. Building Saved Analyses in Contour
 
-## TASK 6-1: BUILD A SAVED ANALYSIS IN CONTOUR
-
-**TASK:** Create a saved Contour analysis answering a specific operational question.
+**TASK 6-1. BUILD A SAVED ANALYSIS IN CONTOUR**
 
 **CONDITIONS:** Builder has access to the target dataset or Object Type; the analysis purpose and intended audience are defined.
 
 **STANDARDS:** The builder will create a saved Contour analysis answering a specific operational question, containing at least one table view and one chart, saved with a descriptive name, and shared with the intended audience.
-
-**EQUIPMENT:** MSS account with Contour access; source dataset or Object Type available.
-
-**DURATION:** 30--60 minutes.
 
 **PROCEDURE:**
 
@@ -1252,7 +1100,7 @@ Use Workshop when you need a full interactive application with filters, forms, A
 11. Click the **+** tab (next to the current view tab) to add a new view.
 12. Select **Chart**.
 13. Under **Chart Type**: select Bar, Line, or Pie.
-14. Configure X-axis and Y-axis (same logic as Workshop charts -- see Task 5-4).
+14. Configure X-axis and Y-axis (same logic as Workshop charts -- see Task 5-3).
 15. Add a title to the chart tab (double-click the tab name).
 
 **Save and Share:**
@@ -1265,17 +1113,11 @@ NOTE: Contour analyses reflect current data when opened -- they are not live-upd
 
 ---
 
-## TASK 6-2: ADD A PIVOT TABLE IN CONTOUR
-
-**TASK:** Add a pivot table view to an existing Contour analysis.
+**TASK 6-2. ADD A PIVOT TABLE IN CONTOUR**
 
 **CONDITIONS:** A Contour analysis exists; builder needs to summarize data across two dimensions (e.g., unit by month, status by country).
 
 **STANDARDS:** The builder will configure a pivot table that correctly summarizes data across the intended dimensions and verify totals against the base table before saving.
-
-**EQUIPMENT:** MSS account with Contour access; existing Contour analysis open.
-
-**DURATION:** 20--30 minutes.
 
 **PROCEDURE:**
 
@@ -1291,17 +1133,11 @@ NOTE: Contour analyses reflect current data when opened -- they are not live-upd
 
 ## 6-3. Building Basic Quiver Dashboards
 
-## TASK 6-3: BUILD A QUIVER DASHBOARD
-
-**TASK:** Create a Quiver dashboard with charts and metric tiles.
+**TASK 6-3. BUILD A QUIVER DASHBOARD**
 
 **CONDITIONS:** Builder has access to the target datasets or Object Types; intended dashboard audience is defined.
 
 **STANDARDS:** The builder will create a Quiver dashboard with at least two charts and one metric tile, named correctly, and shared with the appropriate audience.
-
-**EQUIPMENT:** MSS account with Quiver access; source datasets or Object Types available.
-
-**DURATION:** 30--60 minutes.
 
 **PROCEDURE:**
 
@@ -1329,17 +1165,11 @@ NOTE: Quiver dashboards do not support Actions, complex filters, or form submiss
 
 ---
 
-## TASK 6-4: ADD AN OBJECT TYPE VIEW IN QUIVER
-
-**TASK:** Configure automatic refresh on a Quiver dashboard.
+**TASK 6-4. CONFIGURE AUTOMATIC REFRESH ON A QUIVER DASHBOARD**
 
 **CONDITIONS:** Quiver dashboard exists; underlying data updates on a schedule; users need to see current data without manually refreshing.
 
 **STANDARDS:** The builder will configure automatic refresh at an interval appropriate to the data's update cadence, and confirm the last-refreshed timestamp is visible to users.
-
-**EQUIPMENT:** MSS account with Quiver access; Quiver dashboard open in edit mode.
-
-**DURATION:** 15--20 minutes.
 
 **PROCEDURE:**
 
@@ -1380,17 +1210,11 @@ Working without a branch is the equivalent of making changes to a live operation
 
 ---
 
-## TASK 7-1: CREATE A DEVELOPMENT BRANCH
-
-**TASK:** Create a named development branch before making any Ontology changes.
+**TASK 7-1. CREATE A DEVELOPMENT BRANCH**
 
 **CONDITIONS:** Builder has Editor access on the Ontology; a build task requires changes to Object Types, Link Types, or Actions.
 
 **STANDARDS:** The builder will create a named development branch before making any Ontology changes, confirm the branch is active (shown in the branch selector), and not make any changes on the main branch.
-
-**EQUIPMENT:** MSS account with Ontology Editor role; Ontology Manager access.
-
-**DURATION:** 10--15 minutes.
 
 **PROCEDURE:**
 
@@ -1407,17 +1231,11 @@ Working without a branch is the equivalent of making changes to a live operation
 
 ---
 
-## TASK 7-2: TEST CHANGES IN A DEVELOPMENT BRANCH
+**TASK 7-2. CHECK IN (SAVE) CHANGES ON A BRANCH**
 
-**TASK:** Check in and verify changes on a development branch before submitting a merge request.
+**CONDITIONS:** Builder has made changes to Object Types, Link Types, or Actions on a development branch and needs to save progress.
 
-**CONDITIONS:** Builder has made changes to Object Types, Link Types, or Actions on a development branch and needs to save and verify progress.
-
-**STANDARDS:** The builder will check in changes with a descriptive message at logical intervals, verify Object Type previews show correct data, and confirm no downstream applications are broken by the changes before requesting a merge.
-
-**EQUIPMENT:** MSS account with Ontology Editor role; development branch with changes; Object Type preview access.
-
-**DURATION:** 20--45 minutes.
+**STANDARDS:** The builder will check in changes with a descriptive message at logical intervals during the build.
 
 **PROCEDURE:**
 
@@ -1427,28 +1245,16 @@ Working without a branch is the equivalent of making changes to a live operation
    - Poor: "changes" or "wip"
 3. Click **Confirm Check In**.
 4. Verify the changes are saved (the Check In button returns to inactive state).
-5. Click **Preview** on each modified or created Object Type to confirm:
-   - Objects are visible and count is correct.
-   - Property values display correctly.
-   - Link Types show linked objects as expected.
-6. If a Workshop application uses the modified Object Type, open it in Preview mode and verify it still renders correctly.
-7. Document any issues found and fix before requesting the merge.
 
 NOTE: Check in frequently -- at minimum after completing each Object Type, Link Type, or Action configuration. Small, frequent check-ins make it easier to identify and revert specific changes if something breaks.
 
 ---
 
-## TASK 7-3: SUBMIT A MERGE REQUEST FOR PRODUCTION PROMOTION
-
-**TASK:** Submit a formal merge request to integrate development branch changes into main.
+**TASK 7-3. REQUEST A MERGE INTO MAIN**
 
 **CONDITIONS:** Build work on the development branch is complete; all changes have been checked in; builder has tested the changes; team lead is ready to review.
 
 **STANDARDS:** The builder will submit a merge request with a complete description of all changes, dependencies or breaking changes noted, test results included, and the request directed to the correct reviewer. The builder will not approve their own merge request.
-
-**EQUIPMENT:** MSS account with Ontology Editor role; completed, tested development branch; team lead identified as reviewer.
-
-**DURATION:** 20--30 minutes.
 
 **PROCEDURE:**
 
@@ -1477,10 +1283,6 @@ BREAKING CHANGES: [yes/no; if yes, describe impact on existing applications]
 **CONDITIONS:** A merge request has been flagged with a conflict; another branch modified the same resource before this merge was approved.
 
 **STANDARDS:** The builder will identify the conflicting resource, understand what change the conflicting branch made, and resolve the conflict by selecting the correct version without discarding authorized changes made by another team member.
-
-**EQUIPMENT:** MSS account with Ontology Editor role; merge request with flagged conflict.
-
-**DURATION:** 20--45 minutes.
 
 **PROCEDURE:**
 
@@ -1592,89 +1394,9 @@ As a TM-20 builder, you are personally accountable for:
 3. Follow naming conventions -- every resource must be named to standard.
 4. Document your work -- every resource requires a description.
 
-> **NOTE:** All builder actions in MSS -- pipeline creation and modification, Ontology changes, Workshop application publishing, branch creation, and merge requests -- are logged with your credentials, timestamp, and the specific change made. These logs are retained for accountability reviews, security audits, and incident investigation. You are personally accountable for all changes made under your credentials.
-
 ---
 
-## 8-6. CUI Handling
-
-> **NOTE -- CUI (Controlled Unclassified Information):** If a data source you are ingesting contains CUI (e.g., personnel records, financial data, acquisition information), do NOT ingest it without first coordinating with your unit data steward and confirming:
-> (a) The data is authorized for MSS ingestion at the appropriate classification level.
-> (b) The output dataset will be marked and access-controlled appropriately.
-> (c) Any downstream Workshop applications exposing CUI are restricted to authorized personnel only.
->
-> When in doubt, treat the data as CUI. Contact your data steward before proceeding.
-
----
-
-# CHAPTER 9 -- TROUBLESHOOTING AND COMMON ERRORS
-
-## 9-1. Overview
-
-When a build fails or produces unexpected output, diagnose before escalating. Most issues fall into four categories: pipeline errors, Ontology configuration errors, Workshop display errors, and access/permissions errors.
-
----
-
-## 9-2. Pipeline Builder Errors
-
-| Error Message | Likely Cause | Fix |
-|---|---|---|
-| "Column not found" | Source dataset schema changed; a column was renamed or removed | Open the failing node. Check which column is missing. Update the node to use the current column name. |
-| "Join produced 0 rows" | Join key mismatch -- keys don't match between datasets, or key is NULL in one dataset | Preview both source datasets. Confirm the join key column name and values match. Check for NULL values in join key. |
-| "Row count is 10x higher than expected" | Grain mismatch -- joining a one-row-per-unit dataset to a many-rows-per-unit dataset without aggregating first | Review grain of each source (TM-20, Section 3-2). Add an aggregation node to reduce grain before the join. |
-| "Pipeline scheduled but not running" | Schedule may not be saved, or the pipeline is in a non-production branch | Confirm the pipeline is on the main/production branch. Confirm the schedule was saved (check the Schedule panel). |
-| "Output dataset has no rows" | Filter is too restrictive, or source data is empty | Preview data at each node. Find the step where rows drop to zero. |
-
----
-
-## 9-3. Ontology Errors
-
-| Symptom | Likely Cause | Fix |
-|---|---|---|
-| Objects not appearing in Workshop | Backing dataset has no rows, or pipeline hasn't run since Object Type was created | Check if the pipeline has run successfully and the output dataset has rows. Re-preview the Object Type. |
-| "Primary key is not unique" warning | Multiple rows in the backing dataset have the same value for the primary key column | Investigate duplicate rows in the dataset. Add deduplication to the pipeline. |
-| Action form submits but data doesn't change | Action is writing to the wrong backing dataset, or write target column is misconfigured | Open the Action in Ontology Manager. Verify the Write Target dataset and column are correct. |
-| Link Type not showing relationships | Foreign key column values don't match primary key values of the target Object Type | Preview both Object Types in Quiver. Compare the link key values. Verify they are the same data type and format. |
-
----
-
-## 9-4. Workshop Application Errors
-
-| Symptom | Likely Cause | Fix |
-|---|---|---|
-| Table shows no data | Object Type source not connected, or filter is set to a value with no matching records | Check the Object Type source in the table widget properties. Remove all filters and test. |
-| Filter dropdown is empty | The filter is bound to a column with no values, or the Object Type has no data | Check if the backing Object Type has data (open in Quiver). Verify the filter is bound to the correct property. |
-| Application won't load for users | Users may not have Viewer access to the application or the backing Object Type | Verify access settings in the application's Share panel. Confirm users have at least Viewer role. |
-
----
-
-## 9-5. Access and Permissions Errors
-
-| Symptom | Likely Cause | Fix |
-|---|---|---|
-| "You do not have permission to view this resource" | Your account does not have the required role for this project or dataset | Contact your unit data steward to request access. Do not attempt to work around access controls. |
-| Cannot find a project in Compass | Project may be in a different namespace, or you do not have access | Search by exact name. Ask your data steward which project your work should be in. |
-| Cannot merge/promote changes | You may not have the required role to merge, or peer review has not been completed | Confirm peer review is complete (TM-20, Chapter 7). If your role is insufficient, ask your data steward to promote on your behalf. |
-
----
-
-## 9-6. When to Escalate
-
-Escalate to your unit data steward when:
-- You cannot diagnose the cause of a pipeline failure after 30 minutes.
-- An Ontology change you made broke a downstream application.
-- You are unsure whether a change requires a governance review.
-- Any security or data handling concern arises.
-
-Escalate to C2DAO when:
-- The data steward cannot resolve the issue.
-- A production system is down and affecting multiple units.
-- An AIP Logic or advanced feature is required (TM-30 scope).
-
----
-
----
-# APPENDIX A — PRE-PUBLISH CHECKLISTS
+# APPENDIX A -- PRE-PUBLISH CHECKLIST
 
 Complete this checklist for every pipeline, Ontology change, and Workshop application before submitting a merge request or publishing.
 
@@ -1695,7 +1417,7 @@ Complete this checklist for every pipeline, Ontology change, and Workshop applic
 | 9 | Schedule is configured and tested (first run completed successfully) | [ ] |
 | 10 | On-failure notification configured (builder + team lead) | [ ] |
 
-- [ ] Pipeline complexity is within TM-20 scope (single data source, basic joins, standard transformations). If pipeline requires multi-source deduplication, @incremental patterns, custom Python transforms, or complex error-handling logic -- escalate to TM-30 builder before proceeding (TM-30, Chapter 3).
+- [ ] Pipeline complexity is within TM-20 scope (single data source, basic joins, standard transformations). If pipeline requires multi-source deduplication, @incremental patterns, custom Python transforms, or complex error-handling logic — escalate to TM-30 builder before proceeding (TM-30, Chapter 3).
 
 ---
 
@@ -1715,7 +1437,7 @@ Complete this checklist for every pipeline, Ontology change, and Workshop applic
 | 10 | Merge request includes change description, test results, breaking changes noted | [ ] |
 | 11 | Merge request assigned to correct reviewer (not yourself) | [ ] |
 
-- [ ] Ontology design is within TM-20 scope (simple Object Types, one-to-one/one-to-many links, single-step Actions). If design requires many-to-many links, multi-step Actions, derived properties with complex logic, or coalition-facing access -- escalate to TM-30 before proceeding (TM-30, Chapter 4).
+- [ ] Ontology design is within TM-20 scope (simple Object Types, one-to-one/one-to-many links, single-step Actions). If design requires many-to-many links, multi-step Actions, derived properties with complex logic, or coalition-facing access — escalate to TM-30 before proceeding (TM-30, Chapter 4).
 
 ---
 
@@ -1738,12 +1460,11 @@ Complete this checklist for every pipeline, Ontology change, and Workshop applic
 
 ---
 
----
-# APPENDIX B — COMMON PIPELINE BUILDER PATTERNS
+# APPENDIX B -- COMMON PIPELINE BUILDER PATTERNS
 
 The following patterns address the most common USAREUR-AF data ingestion scenarios.
 
-> **NOTE:** The design patterns in this appendix are TM-20 level -- they use Pipeline Builder, Ontology Manager, and Workshop without code. As your data products grow in complexity, some patterns will need to evolve into TM-30 designs. If a pattern requires multi-step Actions, complex Link Type logic, or advanced transform rules, refer to TM-30, Chapter 4 (Ontology Design Methodology) and TM-30, Chapter 3 (Advanced Pipeline Builder) to assess whether TM-30 or TM-40 resources are needed.
+> **NOTE:** The design patterns in this appendix are TM-20 level — they use Pipeline Builder, Ontology Manager, and Workshop without code. As your data products grow in complexity, some patterns will need to evolve into TM-30 designs. If a pattern requires multi-step Actions, complex Link Type logic, or advanced transform rules, refer to TM-30, Chapter 4 (Ontology Design Methodology) and TM-30, Chapter 3 (Advanced Pipeline Builder) to assess whether TM-30 or TM-40 resources are needed.
 
 ---
 
@@ -1837,7 +1558,7 @@ The following patterns address the most common USAREUR-AF data ingestion scenari
 
 # GLOSSARY
 
-**Action** -- A configured, form-based operation in the Foundry Ontology that allows authorized users to write data back to a backing dataset (e.g., submit a SITREP update, mark a maintenance record complete). Configured in Ontology Manager; invoked through Workshop form widgets. TM-20 Actions are single-step. Multi-step Actions with conditional routing are TM-30 scope.
+**Action** -- A configured, form-based operation in the Foundry Ontology that allows authorized users to write data back to a backing dataset (e.g., submit a SITREP update, mark a maintenance record complete). Configured in Ontology Manager; invoked through Workshop form widgets.
 
 **AOR** -- Area of Responsibility. The geographic and functional area within which a command has authority to act. USAREUR-AF's AOR covers the European theater.
 
@@ -1856,8 +1577,6 @@ The following patterns address the most common USAREUR-AF data ingestion scenari
 **Connector** -- A pre-configured integration point between Foundry and an external data source (SharePoint file, SFTP feed, Army system). Connectors are authorized and managed by the C2DAO; builders select from an approved list.
 
 **Contour** -- The Foundry interactive analysis tool. Allows analysts and builders to build table, chart, and pivot views of datasets and Object Types, saved as reusable analyses.
-
-**CUI** -- Controlled Unclassified Information. Data requiring safeguarding per law, regulation, or government-wide policy. Requires specific handling and access controls on MSS. Contact your data steward before ingesting any CUI source.
 
 **Curated Dataset** -- A publication-ready dataset: cleaned, validated, and stable in schema. Ontology Object Types are backed by curated datasets. Never back an Object Type with a raw or staging dataset.
 
@@ -1916,3 +1635,5 @@ The following patterns address the most common USAREUR-AF data ingestion scenari
 *2026*
 
 *By order of the Commander, United States Army Europe and Africa.*
+
+*DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.*

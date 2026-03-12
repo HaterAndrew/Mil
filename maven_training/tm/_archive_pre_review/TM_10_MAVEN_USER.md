@@ -470,7 +470,7 @@ Workshop applications are web pages inside MSS. They are built from widgets — 
 | Action Button | A button labeled with its function ("Submit SITREP," "Mark Ready") | Click to execute an action against a selected record |
 | Map Widget | A geographic display with colored icons or layers | Click icons on the map to see record details |
 | Status Badge | A colored dot or label (green, yellow, red) | Check the legend — colors mean different things in different apps |
-| Navigation Tabs | Tabs at the top or a sidebar with page names | Click to switch between pages of the application |
+| Navigation Tabs | Tabs at the top or a sidebar with module names | Click to switch between pages of the application |
 | Search Box | A text input field inside the application | Type to filter records displayed in the application |
 
 ---
@@ -488,8 +488,8 @@ Workshop applications are web pages inside MSS. They are built from widgets — 
 1. Locate the application using search (Chapter 3, Task 3-1) or Compass (Chapter 3, Task 3-2).
 2. Click the application name. The application opens in the browser.
 3. Wait for the application to fully load. Loading spinners or skeleton placeholders will disappear when loading is complete. Do not interact with the application while it is still loading.
-4. Orient yourself: look for a title or header identifying the application. Look for page tabs or a sidebar that shows different pages within the application.
-5. If the application has multiple pages, click through each tab to understand the full scope of the application before diving into any one section.
+4. Orient yourself: look for a title or header identifying the application. Look for module tabs or a sidebar that shows different pages within the application.
+5. If the application has multiple modules, click through each tab to understand the full scope of the application before diving into any one section.
 
 NOTE: Workshop applications are **read-only by default** unless they include a form or an action button. If you can see data but see no Submit buttons or Action buttons, you are in a view-only mode — this is normal and correct for many users.
 
@@ -549,23 +549,23 @@ EXAMPLE: SSG Torres is reviewing the training completion dashboard for his batta
 
 ---
 
-## TASK 4-4: NAVIGATE BETWEEN PAGES IN AN APPLICATION
+## TASK 4-4: NAVIGATE BETWEEN MODULES (PAGES) IN AN APPLICATION
 
-**CONDITIONS:** Operator has a Workshop application open that has multiple pages.
+**CONDITIONS:** Operator has a Workshop application open that has multiple pages or modules.
 
-**STANDARDS:** Operator identifies the navigation structure and successfully navigates between at least two pages without losing their place.
+**STANDARDS:** Operator identifies the navigation structure and successfully navigates between at least two modules without losing their place.
 
-**EQUIPMENT:** Active MSS session, Workshop application with multiple pages.
+**EQUIPMENT:** Active MSS session, Workshop application with multiple modules.
 
 **PROCEDURE:**
 
-1. Look for the page navigation. It appears as:
+1. Look for the module navigation. It appears as:
    - Tabs across the top of the application (like browser tabs inside the app).
-   - A sidebar with a list of page names on the left side.
-   - Buttons labeled with page names (e.g., "Overview," "Detail," "Map View").
-2. Read the page labels before clicking to understand the purpose of each section.
-3. Click the page tab or name to navigate to it.
-4. If the page requires you to select a record first (e.g., select a unit in the Overview page to see its detail in the Detail page), do that selection before navigating.
+   - A sidebar with a list of module names on the left side.
+   - Buttons labeled with module names (e.g., "Overview," "Detail," "Map View").
+2. Read the module labels before clicking to understand the purpose of each section.
+3. Click the module tab or name to navigate to it.
+4. If the module requires you to select a record first (e.g., select a unit in the Overview module to see its detail in the Detail module), do that selection before navigating.
 5. Use the breadcrumb trail (if visible at the top of the app) to track where you are.
 
 EXAMPLE: PFC Nguyen opens the V Corps personnel accountability application. She sees four tabs: "Theater Overview," "By Unit," "Daily Roster," and "Exceptions." She clicks "By Unit," selects her brigade from the table, and then clicks "Daily Roster" to see her brigade's daily accountability data.
@@ -600,7 +600,7 @@ WARNING: Do not submit data on behalf of another Soldier using your credentials 
 
 EXAMPLE: PFC Rodriguez is the readiness NCO for HHC, 2nd BCT in Vilseck. He submits the daily SITREP through the unit's Workshop SITREP application. He selects his unit from the dropdown, enters the readiness numbers for each status category, adds a remarks note, and clicks Submit. The green confirmation message "SITREP submitted successfully — 111845Z MAR 26" appears. He screenshots the confirmation for his records.
 
-> **NOTE:** The action form you are submitting was configured by a TM-20 builder using the Ontology Manager. If an action is missing, not functioning correctly, or needs a new field, this is a TM-20 or TM-30 builder task. Report the issue to your data steward. Refer to TM-20, Chapter 4-2 (Ontology Manager Interface Overview) for builder-level action configuration. Complex multi-step action workflows are TM-30 level — refer to TM-30, Chapter 4, Section 4-4 (Action Design).
+> **NOTE:** The action form you are submitting was configured by a TM-20 builder using the Ontology Manager. If an action is missing, not functioning correctly, or needs a new field, this is a TM-20 or TM-30 builder task. Report the issue to your data steward. Refer to TM-20, Chapter 4-2 (Ontology Manager Interface Overview) for builder-level action configuration. Complex multi-step action workflows are TM-30 level — refer to TM-30, Chapter 5 (Advanced Action Design via UI).
 
 ---
 
@@ -812,28 +812,6 @@ NOTE: Quiver is a read-only exploration tool for consumer users. You cannot edit
 
 ---
 
-## TASK 5-5: HANDLE STALE OR CONFLICTING DATA
-
-**CONDITIONS:** Operator observes data in MSS that appears outdated (timestamp is more than 4 hours old for a daily-refresh dataset, or more than the expected refresh interval) OR data in MSS conflicts with information reported through other channels (e.g., unit reports 75% readiness but MSS shows 40%).
-
-**STANDARDS:** Operator correctly identifies the data currency issue, takes appropriate action without altering data, and escalates within 30 minutes if the discrepancy is operationally significant.
-
-**EQUIPMENT:** Active MSS session. Access to the dashboard or dataset in question.
-
-**PROCEDURE:**
-
-1. Check the data timestamp. On most dashboards, look for "Data as of: [date/time]" in the footer or header. In a dataset view, check the "Last Updated" column.
-2. Compare the timestamp to the expected refresh schedule. If the data is older than the scheduled refresh interval, the pipeline may have failed.
-3. If data appears stale: do NOT assume the data is correct. Note it as potentially unreliable.
-4. If data conflicts with information from another source: do NOT use MSS data as authoritative until the discrepancy is resolved. Note both values and the source of each.
-5. Contact your unit data steward. Provide: (a) the name of the dashboard or dataset, (b) the current timestamp shown, (c) what the data shows vs. what you expected or heard from another source.
-6. The data steward will investigate the pipeline and confirm or correct the data.
-7. For time-critical operations where the discrepancy cannot wait for pipeline resolution: brief your commander on the data uncertainty. Do not present unverified MSS data as confirmed.
-
-> **NOTE:** A data discrepancy is not automatically an error — source system delays, network issues, or reporting lag are common. The standard response is to flag it and escalate, not to ignore it or work around it.
-
----
-
 ## 5-2. What to Do When Data Looks Wrong
 
 If you see data that appears incorrect — wrong unit, wrong number, a value that does not match what you know to be true:
@@ -855,7 +833,7 @@ CAUTION: Guessing at corrections, editing records outside of authorized interfac
 
 # CHAPTER 6 — AIP AND AI INTERFACES
 
-**BLUF:** MSS includes AI-assisted tools under the AI Platform (AIP). These tools can help you find information, summarize data, and draft text faster. They are useful — and they require human judgment before any AI output is used operationally. The AI does not have rank. You do.
+**BLUF:** MSS includes AI-assisted tools under the Artificial Intelligence Platform (AIP). These tools can help you find information, summarize data, and draft text faster. They are useful — and they require human judgment before any AI output is used operationally. The AI does not have rank. You do.
 
 ---
 
@@ -1117,8 +1095,6 @@ Before exporting, sharing, or publishing any analysis that combines multiple dat
 
 After reporting a security incident, preserve all records (browser history, screenshots if safe to take, written notes) until the security officer tells you to do otherwise.
 
-> **NOTE:** All actions you take in MSS — form submissions, data modifications, and application interactions — are logged with your credentials, timestamp, and action type. These logs are retained for accountability reviews, security audits, and incident investigation. You are personally accountable for all activity associated with your credentials.
-
 ---
 
 # CHAPTER 8 — TROUBLESHOOTING AND SUPPORT
@@ -1155,22 +1131,7 @@ After reporting a security incident, preserve all records (browser history, scre
 
 ---
 
-## 8-2. Security Incident Response Procedure
-
-If you suspect a security incident — unauthorized data access, mishandled classified information, data visible that should not be, or suspicious activity on your account — take the following steps immediately:
-
-1. **STOP.** Do not continue the current activity.
-2. Do not attempt to investigate or fix it yourself.
-3. Note the time, what you were doing, and what you observed.
-4. Contact your supervisor immediately.
-5. Contact the USAREUR-AF C2DAO via your unit's data steward.
-6. Do not discuss details over unsecured channels.
-
-> **WARNING:** A security incident is not a troubleshooting problem — it is a command responsibility. Do not delay reporting to investigate on your own. Refer to Chapter 7, Section 7-5 and Task 7-2 for additional incident response procedures.
-
----
-
-## 8-4. Self-Help vs. Escalate — Decision Guide
+## 8-2. Self-Help vs. Escalate — Decision Guide
 
 **Handle yourself before escalating:**
 - Re-insert CAC and restart browser for certificate issues
@@ -1198,7 +1159,7 @@ If you suspect a security incident — unauthorized data access, mishandled clas
 
 ---
 
-## 8-5. Information to Have Ready Before You Call for Help
+## 8-3. Information to Have Ready Before You Call for Help
 
 Do not call the Help Desk or data steward empty-handed. Having the right information ready will cut the time to resolution significantly.
 
@@ -1214,7 +1175,7 @@ Collect the following before making contact:
 
 ---
 
-## 8-6. MSS Support Escalation Path
+## 8-4. MSS Support Escalation Path
 
 **Table 8-2. MSS Support Contacts**
 
