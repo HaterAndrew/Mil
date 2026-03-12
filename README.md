@@ -139,7 +139,7 @@ maven_training/
 │   └── SYLLABUS_TM50L.md                     ← Advanced: Software Engineer
 │
 ├── exercises/
-│   ├── exercises/README.md
+│   ├── README.md
 │   ├── exams/                                ← Pre- and post-tests (diagnostic + summative)
 │   │   ├── EXAM_TM10_PRE.md / POST.md
 │   │   ├── EXAM_TM20_PRE.md / POST.md
