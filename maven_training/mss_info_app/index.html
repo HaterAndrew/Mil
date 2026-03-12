@@ -110,8 +110,8 @@
     /* ---- Crest ---- */
     .crest {
       flex-shrink: 0;
-      width: 84px;
-      height: 84px;
+      width: 68px;
+      height: auto;
       filter: drop-shadow(0 3px 8px rgba(0,0,0,0.55));
     }
 
@@ -139,10 +139,11 @@
 
     .header-subtitle {
       font-family: var(--font-body);
-      font-size: 12px;
-      color: rgba(255,255,255,0.72);
-      margin-top: 5px;
-      letter-spacing: 0.8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      margin-top: 7px;
+      letter-spacing: 0.5px;
     }
 
     /* ---- Meta block ---- */
@@ -194,6 +195,7 @@
     nav {
       background: var(--navy-dark);
       border-bottom: 2px solid var(--gold-dark);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     }
 
     .nav-inner {
@@ -268,8 +270,9 @@
       align-items: center;
       gap: 14px;
       margin-bottom: 26px;
-      padding-bottom: 14px;
+      padding: 0 0 14px 14px;
       border-bottom: 2px solid var(--gold-dark);
+      border-left: 5px solid var(--navy);
     }
 
     .section-badge {
@@ -580,7 +583,7 @@
 
     .qr-label {
       font-family: var(--font-ui);
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -696,7 +699,7 @@
     .qr-dropdown-item:hover { background: var(--navy-pale); color: var(--navy); }
     .qr-dropdown-section {
       font-family: var(--font-ui);
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -910,19 +913,19 @@
     ============================================================ */
     h2 {
       font-family: var(--font-ui);
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 700;
       color: var(--navy);
-      margin: 26px 0 10px;
+      margin: 32px 0 10px;
       padding-bottom: 5px;
       border-bottom: 1px solid var(--gray-100);
-      letter-spacing: 0.2px;
+      letter-spacing: -0.3px;
     }
 
     h3 {
       font-family: var(--font-ui);
-      font-size: 13px;
-      font-weight: 700;
+      font-size: 14px;
+      font-weight: 600;
       color: var(--gray-900);
       margin: 16px 0 8px;
     }
@@ -996,15 +999,52 @@
     }
 
     /* ============================================================
+       KEYBOARD FOCUS
+    ============================================================ */
+    button:focus-visible,
+    .qr-link:focus-visible,
+    .snav-item:focus-visible,
+    .snav-group-hdr:focus-visible,
+    .snav-pinned:focus-visible,
+    .nav-tab:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    /* ============================================================
+       REDUCED MOTION
+    ============================================================ */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .card, .track-card { transform: none !important; }
+    }
+
+    /* ============================================================
+       PRINT
+    ============================================================ */
+    @media print {
+      #splash, nav, .sidebar, .sidebar-overlay, header, .header-strip { display: none !important; }
+      .panel { display: block !important; page-break-inside: avoid; }
+      body { background: white; color: black; font-size: 12px; }
+      .callout { border: 1px solid #999 !important; }
+      .card { box-shadow: none !important; border: 1px solid #ccc !important; }
+      footer { color: black; background: white; }
+    }
+
+    /* ============================================================
        MAIN SITE — UX IMPROVEMENTS
     ============================================================ */
     /* Card hover lift */
     .card {
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-top-color 0.12s ease;
     }
     .card:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 20px rgba(12,35,64,0.16);
+      border-top-color: var(--gold);
     }
     .track-card {
       transition: transform 0.18s ease, box-shadow 0.18s ease;
@@ -1254,8 +1294,8 @@
     }
 
     .splash-crest {
-      width: 160px;
-      height: 160px;
+      width: 130px;
+      height: auto;
       position: relative;
       z-index: 1;
       filter:
@@ -1736,7 +1776,7 @@
   <!-- Corner data readouts -->
   <div class="splash-data splash-data-tl">
     USAREUR-AF ODT<br/>
-    WIESBADEN, DE
+    EUCOM AOR
   </div>
   <div class="splash-data splash-data-tr">
     VER 3.0 / MAR 2026<br/>
@@ -1758,27 +1798,9 @@
   <div class="splash-body">
     <div class="splash-content">
 
-      <!-- Crest with glow rings -->
+      <!-- USAREUR-AF Insignia -->
       <div class="splash-crest-wrap">
-        <svg class="splash-crest" viewBox="0 0 84 88" xmlns="http://www.w3.org/2000/svg" aria-label="USAREUR-AF Crest">
-          <defs>
-            <filter id="crestGlow">
-              <feGaussianBlur stdDeviation="2.5" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-          <path d="M8 6 L76 6 L76 50 Q76 76 42 82 Q8 76 8 50 Z" fill="#000" opacity="0.4" transform="translate(2,2)"/>
-          <path d="M8 6 L76 6 L76 50 Q76 76 42 82 Q8 76 8 50 Z" fill="#0C2340"/>
-          <path d="M8 6 L76 6 L76 50 Q76 76 42 82 Q8 76 8 50 Z" fill="none" stroke="#C8971A" stroke-width="2.8" filter="url(#crestGlow)"/>
-          <path d="M13 10 L71 10 L71 49 Q71 72 42 78 Q13 72 13 49 Z" fill="#163A6C" opacity="0.9"/>
-          <text x="42" y="20" text-anchor="middle" font-size="9.5" fill="#C8971A" font-family="Arial" font-weight="bold" filter="url(#crestGlow)">★ ★ ★ ★</text>
-          <line x1="16" y1="30" x2="68" y2="30" stroke="#C8971A" stroke-width="1.2" opacity="0.6"/>
-          <rect x="13" y="34" width="58" height="12" fill="#C8971A"/>
-          <text x="42" y="44" text-anchor="middle" font-size="7" font-weight="bold" fill="#071628" font-family="Arial" letter-spacing="0.4">USAREUR-AF</text>
-          <text x="42" y="59" text-anchor="middle" font-size="5.8" fill="#C8971A" font-family="Arial" letter-spacing="0.5">WIESBADEN</text>
-          <line x1="20" y1="64" x2="64" y2="64" stroke="#C8971A" stroke-width="0.8" opacity="0.5"/>
-          <text x="42" y="72" text-anchor="middle" font-size="5" fill="#7A9DC8" font-family="Arial" letter-spacing="0.3">GERMANY</text>
-        </svg>
+        <img class="splash-crest" src="USAREUR_Insignia.svg" alt="USAREUR-AF Insignia" />
       </div>
 
       <div class="splash-eyebrow">Operational Data Team</div>
@@ -1805,7 +1827,7 @@
       </button>
 
       <div class="splash-meta">
-        Version 3.0 &mdash; March 2026 &mdash; Wiesbaden, Germany<br/>
+        Version 3.0 &mdash; March 2026<br/>
         Approved for Public Release &mdash; Distribution Unlimited
       </div>
 
@@ -1816,7 +1838,7 @@
   <div class="splash-statusbar">
     <span>SYS: MSS TRAINING HUB</span>
     <span>VER: 3.0.0</span>
-    <span>LOC: WIESBADEN</span>
+    <span>LOC: EUCOM AOR</span>
     <span>STATUS: READY</span>
     <span>CLASS: UNCLASSIFIED</span>
   </div>
@@ -1835,31 +1857,8 @@
   <div class="header-inner">
     <button class="header-hamburger" id="header-hamburger" aria-label="Open navigation">&#9776;</button>
 
-    <!-- USAREUR-AF Crest — Blue shield, gold trim, 4 stars -->
-    <svg class="crest" viewBox="0 0 84 88" xmlns="http://www.w3.org/2000/svg" aria-label="USAREUR-AF Crest">
-      <!-- Drop shadow -->
-      <path d="M8 6 L76 6 L76 50 Q76 76 42 82 Q8 76 8 50 Z" fill="#000" opacity="0.3" transform="translate(2,2)"/>
-      <!-- Shield base — USAREUR-AF navy blue -->
-      <path d="M8 6 L76 6 L76 50 Q76 76 42 82 Q8 76 8 50 Z" fill="#0C2340"/>
-      <!-- Gold border -->
-      <path d="M8 6 L76 6 L76 50 Q76 76 42 82 Q8 76 8 50 Z" fill="none" stroke="#C8971A" stroke-width="2.8"/>
-      <!-- Inner shield — lighter navy -->
-      <path d="M13 10 L71 10 L71 49 Q71 72 42 78 Q13 72 13 49 Z" fill="#163A6C" opacity="0.9"/>
-      <!-- Top gold stripe -->
-      <rect x="13" y="22" width="58" height="2.5" fill="#C8971A" opacity="0.7"/>
-      <!-- Stars row -->
-      <text x="42" y="20" text-anchor="middle" font-size="9.5" fill="#C8971A" font-family="Arial" font-weight="bold">★ ★ ★ ★</text>
-      <!-- Horizontal divider -->
-      <line x1="16" y1="30" x2="68" y2="30" stroke="#C8971A" stroke-width="1.2" opacity="0.6"/>
-      <!-- Gold bar -->
-      <rect x="13" y="34" width="58" height="12" fill="#C8971A"/>
-      <!-- "USAREUR-AF" on gold bar -->
-      <text x="42" y="44" text-anchor="middle" font-size="7" font-weight="bold" fill="#071628" font-family="Arial" letter-spacing="0.4">USAREUR-AF</text>
-      <!-- Bottom text -->
-      <text x="42" y="59" text-anchor="middle" font-size="5.8" fill="#C8971A" font-family="Arial" letter-spacing="0.5">WIESBADEN</text>
-      <line x1="20" y1="64" x2="64" y2="64" stroke="#C8971A" stroke-width="0.8" opacity="0.5"/>
-      <text x="42" y="72" text-anchor="middle" font-size="5" fill="#7A9DC8" font-family="Arial" letter-spacing="0.3">GERMANY</text>
-    </svg>
+    <!-- USAREUR-AF Insignia -->
+    <img class="crest" src="USAREUR_Insignia.svg" alt="USAREUR-AF Insignia" />
 
     <div class="header-text">
       <div class="header-command">Headquarters &bull; United States Army Europe and Africa</div>
@@ -1869,7 +1868,6 @@
 
     <div class="header-meta">
       <div class="badge">MSS TRAINING HUB</div><br/>
-      WIESBADEN, GERMANY<br/>
       VERSION 3.1 &mdash; MARCH 2026<br/>
       DIST: UNLIMITED
     </div>
@@ -2045,7 +2043,7 @@
             <td><span class="chip chip-navy">TM-20</span></td>
           </tr>
           <tr>
-            <td>Data-adjacent specialist &mdash; 17/25-series, S6/G6, G2/G9, data analyst</td>
+            <td>Data-adjacent specialist &mdash; 17/25-series, G2/G9, data analyst</td>
             <td><strong>TM-10 &rarr; TM-20</strong></td>
             <td>TM-30 (Advanced)</td>
             <td><span class="chip chip-gold">TM-30</span></td>
@@ -2163,7 +2161,6 @@
           <tr><td>17A/17C &mdash; Cyber officer/NCO</td><td><strong>TM-40F (SWE)</strong> or TM-40B (AI Eng)</td></tr>
           <tr><td>25D &mdash; IT specialist</td><td><strong>TM-40F (SWE)</strong></td></tr>
           <tr><td>25U &mdash; Signal support</td><td><strong>TM-40F (SWE)</strong> or TM-40D (PM)</td></tr>
-          <tr><td>G6/S6 data officer</td><td><strong>TM-40F (SWE)</strong> or TM-40B (AI Eng)</td></tr>
           <tr><td>AI/ML engineer (GS/contractor)</td><td><strong>TM-40B (AI Eng)</strong> or TM-40C (MLE)</td></tr>
           <tr><td>Data scientist (GS/contractor)</td><td><strong>TM-40A (ORSA)</strong> or TM-40C (MLE)</td></tr>
           <tr><td>G8/S8 &mdash; Resource manager</td><td><strong>TM-40D (PM)</strong></td></tr>
@@ -2177,7 +2174,7 @@
 
     <div class="callout note mt-24">
       <div class="callout-label">NOTE &mdash; MSS ACCOUNT ACCESS</div>
-      <div class="callout-body">MSS access requires a provisioned account. Contact your unit S6 or data steward to initiate a request. Allow 3&ndash;5 business days for provisioning. Do not wait until the start of a deployment or exercise.</div>
+      <div class="callout-body">MSS access requires a provisioned account. Contact your unit data steward to initiate a request. Allow 3&ndash;5 business days for provisioning. Do not wait until the start of a deployment or exercise.</div>
     </div>
 
   </div><!-- /panel-home -->
@@ -2271,14 +2268,14 @@
         </div>
         <div class="task-meta-item">
           <div class="task-meta-label">Equipment</div>
-          <div class="task-meta-value">CAC, CAC reader, workstation, MSS portal URL (from unit S6)</div>
+          <div class="task-meta-value">CAC, CAC reader, workstation, MSS portal URL (from unit data steward)</div>
         </div>
       </div>
       <div class="task-body">
         <ol class="task-steps">
           <li>Insert your CAC into the CAC reader.</li>
           <li>Open an approved web browser (Chrome or Firefox recommended).</li>
-          <li>Navigate to the MSS portal URL provided by your unit S6.</li>
+          <li>Navigate to the MSS portal URL provided by your unit data steward.</li>
           <li>When prompted, select your <strong>authentication certificate</strong> (not email certificate).</li>
           <li>Enter your CAC PIN when prompted.</li>
           <li>MSS home screen loads &mdash; you are now logged in.</li>
@@ -2322,7 +2319,7 @@
 
     <h2>4. GETTING ACCESS</h2>
     <ol>
-      <li>Contact your unit S6 or data steward to initiate an account request.</li>
+      <li>Contact your unit data steward to initiate an account request.</li>
       <li>Supervisor submits request with your name, unit, role, and required access level.</li>
       <li>MSS admin team provisions your account and assigns markings.</li>
       <li>You receive notification when account is active.</li>
@@ -2338,7 +2335,7 @@
       <table>
         <thead><tr><th>Problem Type</th><th>Who to Contact</th></tr></thead>
         <tbody>
-          <tr><td>Cannot log in</td><td>Unit S6 or MSS Help Desk</td></tr>
+          <tr><td>Cannot log in</td><td>MSS Help Desk</td></tr>
           <tr><td>Cannot access a project</td><td>Unit data steward</td></tr>
           <tr><td>Data appears incorrect</td><td>Unit data steward (do not correct it yourself)</td></tr>
           <tr><td>System error or crash</td><td>MSS Help Desk (provide error code and screenshot)</td></tr>
@@ -2496,7 +2493,7 @@
     <div class="section-header">
       <span class="section-badge">TM-30</span>
       <span class="section-title">Advanced Builder Manual &mdash; Data-Adjacent Specialists</span>
-      <span class="section-subtitle">Prerequisite: TM-10 + TM-20 &bull; 17/25-series &bull; S6/G6 &bull; G2/G9</span>
+      <span class="section-subtitle">Prerequisite: TM-10 + TM-20 &bull; 17/25-series &bull; G2/G9</span>
     </div>
 
     <div class="callout bluf">
@@ -2656,7 +2653,7 @@
         </div>
         <div class="track-body">
           <div class="track-name">AIP Logic, Agent Studio &amp; LLM Integration</div>
-          <div class="track-audience">AI/ML specialists &bull; G6/S6 data officers &bull; 17A/17C</div>
+          <div class="track-audience">AI/ML specialists &bull; 17A/17C</div>
           <ul class="track-topics">
             <li>Author AIP Logic workflows: prompt engineering, chain design, output handling</li>
             <li>Build and configure AIP Agent Studio agents with tools, memory, and orchestration</li>
@@ -2720,7 +2717,7 @@
         </div>
         <div class="track-body">
           <div class="track-name">Knowledge Repositories, AIP Summarization &amp; Lessons Learned</div>
-          <div class="track-audience">KMOs &bull; 37F &bull; S2/S3/S6 KM roles &bull; AAR facilitators</div>
+          <div class="track-audience">KMOs &bull; 37F &bull; S2/S3 KM roles &bull; AAR facilitators</div>
           <ul class="track-topics">
             <li>Design knowledge architecture for AAR, lessons learned, doctrine, and SOP repositories</li>
             <li>Build AAR capture systems using Workshop forms and Object Type pipelines</li>
@@ -2742,7 +2739,7 @@
         </div>
         <div class="track-body">
           <div class="track-name">OSDK, Full-Stack Foundry Applications &amp; Platform SDK</div>
-          <div class="track-audience">SWEs &bull; 17A/17C &bull; 25D &bull; G6 developers</div>
+          <div class="track-audience">SWEs &bull; 17A/17C &bull; 25D</div>
           <ul class="track-topics">
             <li>Authenticate and query the Foundry Ontology via OSDK (TypeScript/Python)</li>
             <li>Execute Actions, subscribe to Object changes, handle pagination and filtering via OSDK</li>
@@ -2993,7 +2990,7 @@
             <tbody>
               <tr><td>Any personnel &mdash; viewing data for the first time</td><td>TM-10 &mdash; Maven User</td><td><button class="qr-link" data-panel="tm10">TM-10 &rarr;</button></td></tr>
               <tr><td>Staff building dashboards or simple pipelines (no coding)</td><td>TM-20 &mdash; Builder</td><td><button class="qr-link" data-panel="tm20">TM-20 &rarr;</button></td></tr>
-              <tr><td>Data-adjacent specialist (17/25-series, S6/G6, G2, G9, analyst)</td><td>TM-30 &mdash; Advanced Builder</td><td><button class="qr-link" data-panel="tm30">TM-30 &rarr;</button></td></tr>
+              <tr><td>Data-adjacent specialist (17/25-series, G2, G9, analyst)</td><td>TM-30 &mdash; Advanced Builder</td><td><button class="qr-link" data-panel="tm30">TM-30 &rarr;</button></td></tr>
               <tr><td>Technical specialist &mdash; ORSA &bull; AI Eng &bull; ML Eng &bull; PM &bull; KM &bull; SWE</td><td>TM-40 Specialist Track</td><td>
                 <div class="qr-dropdown-wrap">
                   <button class="qr-link qr-dropdown-btn" data-dropdown="dd-tm40-table" aria-expanded="false">TM-40 &#9662;<span class="qr-dropdown-arrow"></span></button>
@@ -3141,7 +3138,7 @@
       <div class="qr-box slate-top">
         <div class="qr-label">New User Checklist</div>
         <ul class="qr-checklist">
-          <li>Account provisioned by S6 / data steward</li>
+          <li>Account provisioned by unit data steward</li>
           <li>CAC reader installed and working</li>
           <li>MSS URL bookmarked in browser</li>
           <li>Can log in and see the home screen</li>
@@ -3158,7 +3155,7 @@
           <table>
             <thead><tr><th>Problem</th><th>Contact</th></tr></thead>
             <tbody>
-              <tr><td>Can&rsquo;t log in / no account</td><td>Unit S6 or Data Steward</td></tr>
+              <tr><td>Can&rsquo;t log in / no account</td><td>Unit Data Steward</td></tr>
               <tr><td>Can&rsquo;t see data I should have access to</td><td>Unit Data Steward</td></tr>
               <tr><td>Data looks wrong or outdated</td><td>Data Steward &rarr; escalate to ODT if needed</td></tr>
               <tr><td>App is broken / not loading</td><td><button class="qr-link" data-panel="support">Help Desk &rarr;</button></td></tr>
@@ -3174,7 +3171,7 @@
         <div class="qr-label">If Something Doesn&rsquo;t Work</div>
         <div class="qr-broken-grid">
           <div class="qr-broken-item"><strong>App won&rsquo;t load</strong><br/>Hard-refresh (Ctrl+Shift+R). Clear browser cache. Try a different browser. If still broken, <button class="qr-link" data-panel="support">contact Help Desk &rarr;</button></div>
-          <div class="qr-broken-item"><strong>Can&rsquo;t log in</strong><br/>Check CAC is fully inserted. Try a different port. Confirm your account is provisioned &mdash; contact S6 if unsure.</div>
+          <div class="qr-broken-item"><strong>Can&rsquo;t log in</strong><br/>Check CAC is fully inserted. Try a different port. Confirm your account is provisioned &mdash; contact your data steward if unsure.</div>
           <div class="qr-broken-item"><strong>Data looks wrong or missing</strong><br/>Check your filters &mdash; an active filter may be hiding records. If data is genuinely wrong, report to your data steward.</div>
           <div class="qr-broken-item"><strong>Action button is greyed out</strong><br/>You may not have write permission. Contact your data steward to request the correct role.</div>
           <div class="qr-broken-item"><strong>Export isn&rsquo;t working</strong><br/>Check that pop-ups are allowed for the MSS site. Try a smaller filter set. <button class="qr-link" data-panel="support">Contact Help Desk &rarr;</button> if it persists.</div>
@@ -3207,7 +3204,7 @@
       <table>
         <thead><tr><th>Issue</th><th>Route To</th><th>Priority</th></tr></thead>
         <tbody>
-          <tr><td>Cannot log in / CAC issues</td><td>Unit S6 or MSS Help Desk</td><td>Normal</td></tr>
+          <tr><td>Cannot log in / CAC issues</td><td>MSS Help Desk</td><td>Normal</td></tr>
           <tr><td>No access to a project or dataset</td><td>Unit data steward</td><td>Normal</td></tr>
           <tr><td>Data appears incorrect</td><td>Unit data steward (do not self-correct)</td><td>Normal</td></tr>
           <tr><td>System error, crash, or outage</td><td>MSS Help Desk + screenshot + error code</td><td>Normal</td></tr>
@@ -3237,15 +3234,15 @@
     <h2>PREREQUISITES BEFORE FIRST LOGIN</h2>
     <ol>
       <li><strong>Annual Cyber Awareness Training</strong> &mdash; required for all DoD personnel; must be current</li>
-      <li><strong>MSS User Onboarding Brief</strong> &mdash; provided by unit data steward or G6/S6</li>
-      <li><strong>Account request approved</strong> &mdash; submit through unit S6; allow 3&ndash;5 business days</li>
+      <li><strong>MSS User Onboarding Brief</strong> &mdash; provided by unit data steward</li>
+      <li><strong>Account request approved</strong> &mdash; submit through your unit data steward; allow 3&ndash;5 business days</li>
     </ol>
 
     <h2>USAREUR-AF DATA TEAM</h2>
     <div class="card-grid">
       <div class="card gold-top">
         <div class="card-label">LOCATION &amp; HIGHER HQ</div>
-        <div class="card-title">Wiesbaden, Germany</div>
+        <div class="card-title">EUCOM Theater &mdash; Europe &amp; Africa</div>
         <div class="card-body">Headquarters, United States Army Europe and Africa<br/>USAREUR-AF Operational Data Team<br/>Army AI/Data Accelerator (C2DAO)</div>
       </div>
       <div class="card">
@@ -3374,7 +3371,7 @@
       <a class="card gold-top doc-card" href="../pdf/TM_30_ADVANCED_BUILDER.pdf" target="_blank">
         <div class="card-label">TM-30</div>
         <div class="card-title">Advanced No-Code Builder</div>
-        <div class="card-body">Advanced Workshop, complex pipelines, AIP Logic. Data-adjacent MOS (17/25-series, S6/G6/G2/G9).</div>
+        <div class="card-body">Advanced Workshop, complex pipelines, AIP Logic. Data-adjacent MOS (17/25-series, G2/G9).</div>
       </a>
     </div>
 
@@ -3569,7 +3566,7 @@
      FOOTER
 ============================================================ -->
 <footer>
-  <strong>HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA</strong> &mdash; WIESBADEN, GERMANY<br/>
+  <strong>HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA</strong><br/>
   USAREUR-AF OPERATIONAL DATA TEAM &nbsp;&bull;&nbsp;
   TM-10 &bull; TM-20 &bull; TM-30 &bull; TM-40A&ndash;F &bull; TM-50A&ndash;F &bull; Data Lit (SL) &bull; Data Literacy<br/>
   VERSION 3.1 &mdash; MARCH 2026 &mdash; DIST: APPROVED FOR PUBLIC RELEASE &mdash; DISTRIBUTION UNLIMITED
