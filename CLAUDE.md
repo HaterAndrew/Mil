@@ -29,10 +29,8 @@ This environment is used exclusively for work on the USAREUR-AF operational data
 
 ## Failsafe
 
-- A `PreToolUse` hook enforces a 30-turn limit per session via `/home/dale/.claude/hooks/turn_limit.sh`.
-- At turn 31, the hook exits code 2, blocking the next tool call and halting execution to prevent runaway loops and token overrun.
-- Counter resets each new session. Adjust `LIMIT` in the script if a task genuinely requires more turns.
-- Do not bypass or disable this failsafe without explicit instruction.
+- No active session turn limit. The `PreToolUse` hook (`/home/dale/.claude/hooks/turn_limit.sh`) was removed on 2026-03-11 at user request.
+- If session control is needed, recreate the hook with a desired `LIMIT` value and register it in `~/.claude/settings.json`.
 
 ## Communication
 

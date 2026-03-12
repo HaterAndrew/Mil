@@ -1,4 +1,4 @@
-ADP 1 — DATA LITERACY FOR SENIOR LEADERS
+DATA LITERACY FOR SENIOR LEADERS
 
 HEADQUARTERS
 UNITED STATES ARMY EUROPE AND AFRICA
@@ -14,17 +14,17 @@ PROPONENT: Headquarters, United States Army Europe and Africa (USAREUR-AF), G6/D
 
 ---
 
-NOTE: This publication is the senior leader companion to ADRP 1, Data Literacy. It presents foundational principles and command responsibilities without procedural detail. Commanders and senior staff should read this publication; those requiring technical depth should consult ADRP 1.
+NOTE: This publication is the senior leader companion to Data Literacy Technical Reference, Data Literacy. It presents foundational principles and command responsibilities without procedural detail. Commanders and senior staff should read this publication; those requiring technical depth should consult Data Literacy Technical Reference.
 
 ---
+
+# DATA LITERACY FOR SENIOR LEADERS
 
 ## COMMANDING GENERAL'S NOTE
 
 *[INSERT: General Donahue's signed data guidance — to be provided by G6/Data and inserted here prior to publication.]*
 
 ---
-
-# ADP 1 — DATA LITERACY FOR SENIOR LEADERS
 
 ## PREFACE
 
@@ -36,7 +36,7 @@ This publication implements ADP 3-13, Information, by establishing the data lite
 
 Data literacy is a command competency. It is not a technical skill reserved for analysts. Commanders who understand how to direct, evaluate, and act on data products will make faster, better decisions than those who do not. Those who cannot are vulnerable to surprise, manipulation, and misinformed action.
 
-This ADP does not contain procedures. It contains principles and responsibilities. Technical guidance belongs in ADRP 1. This document tells senior leaders what they are responsible for and why it matters.
+This publication does not contain procedures. It contains principles and responsibilities. Technical guidance belongs in the Data Literacy Technical Reference. This document tells senior leaders what they are responsible for and why it matters.
 
 ---
 
@@ -155,7 +155,7 @@ Senior leaders who invest in their formation's data capability are building info
 
 1-24. The CG USAREUR-AF has described Europe as the **"premier battle laboratory"** for building the lethal, data-driven force required to meet any adversary. The real-time command and control system established in USAREUR-AF — integrating Allied sensors, data, and AI-powered analytical tools — must now be scaled globally. USAREUR-AF commanders and formations that master data-driven operations in this theater are building the template the Army will export worldwide.
 
-1-25. Data literacy requirements in this publication and in ADRP 1 apply equally to multinational operations and to unilateral Army operations. The analytical standards, quality requirements, and security disciplines described here are not reduced in coalition contexts — they are essential to coalition effectiveness.
+1-25. Data literacy requirements in this publication and in Data Literacy Technical Reference apply equally to multinational operations and to unilateral Army operations. The analytical standards, quality requirements, and security disciplines described here are not reduced in coalition contexts — they are essential to coalition effectiveness.
 
 ---
 
@@ -393,41 +393,55 @@ Senior leaders who invest in their formation's data capability are building info
 
 5-1. Data literacy exists on a continuum. Not every Soldier needs the same level of proficiency. What matters is that each role has a defined standard, that training is available to meet it, and that leaders enforce the standard.
 
-5-2. The three broad training levels are:
+5-2. The USAREUR-AF data literacy training framework consists of five tiers, organized as Technical Manuals (TMs). The first three tiers apply to all personnel; the -40 and -50 tiers are specialist tracks for designated data roles.
 
-| Level | Target Audience | Core Competency |
+| Tier | Target Audience | Core Competency |
 |---|---|---|
-| -10 (Awareness) | All personnel | Understand what data is, why it matters, and personal responsibilities for data accuracy and security |
-| -20 (Practitioner) | Data stewards, S-sections, analysts, key NCOs | Collect, manage, and report data accurately; identify quality issues; apply standards |
-| -30 (Expert) | Data analysts, S-2, S-6, senior staff | Design data pipelines, perform complex analysis, mentor the formation, evaluate data architecture |
+| **TM-10** (Operator) | All personnel — all MOS/staff | Navigate and consume data products on Maven Smart System; observe data security and accuracy standards |
+| **TM-20** (Builder) | All personnel — builds on TM-10 | Build basic Workshop applications; run light transforms; manipulate and share data products without specialist tools |
+| **TM-30** (Advanced Builder) | Data-adjacent personnel (17/25-series, S6/G6/G2/G9) | Design pipelines and Ontology objects; build complex dashboards; apply governed data patterns |
+| **TM-40 Series** (Specialist) | Designated specialist roles | Role-specific mastery: ORSA (40A), AI Engineer (40B), ML Engineer (40C), Program Manager (40D), Knowledge Manager (40E), Software Engineer (40F) |
+| **TM-50 Series** (Advanced Specialist) | TM-40 graduates in senior/lead roles | Advanced practitioner: independent research-grade capability in each specialist track; leads and mentors others |
 
-5-3. Senior leaders sit at the -10 level for technical skills and at a distinct "Commander" level for direction, evaluation, and command responsibilities. This ADP describes the Commander level. ADRP 1 describes all levels in detail.
+5-3. Senior leaders sit at the TM-10 level for technical skills and at a distinct "Commander" level for direction, evaluation, and command responsibilities. This publication describes the Commander level. Data Literacy Technical Reference describes all levels in detail. TM-40 and TM-50 track training is documented in the corresponding Technical Manuals.
 
 ### 5-2. Summary of Training Levels
 
-5-4. All training levels are cumulative. A Practitioner is trained to the Awareness standard plus additional competencies. Commanders must ensure their formation has personnel trained to the appropriate level for each data function in use.
+5-4. All training levels are cumulative. TM-20 competencies build on TM-10; TM-30 builds on TM-20; the TM-40/50 specialist tracks require TM-30 as a prerequisite. Commanders must ensure their formation has personnel trained to the appropriate tier for each data function in use.
 
-5-5. NOTE: Gaps in training coverage are a readiness issue, not an administrative issue. A formation with no personnel trained to the -20 level on a critical data system is as vulnerable as a formation with no personnel qualified on a critical weapons system. Treat it accordingly.
+5-5. NOTE: Gaps in training coverage are a readiness issue, not an administrative issue. A formation with no personnel trained to TM-20 on a critical data system is as vulnerable as a formation with no personnel qualified on a critical weapons system. Treat it accordingly.
 
-5-6. Key training outcomes by level:
+5-6. Key training outcomes by tier:
 
-**-10 Awareness (All Personnel)**
+**TM-10 — Operator (All Personnel)**
+- Navigate Maven Smart System and access relevant data products.
 - Understand the difference between data and information.
-- Know their responsibilities for accurate data entry.
+- Know responsibilities for accurate data entry.
 - Recognize and report data quality problems.
 - Observe classification and access control requirements.
 
-**-20 Practitioner (Data Stewards, Key Staff)**
+**TM-20 — Builder (All Personnel)**
+- Build basic Workshop applications and simple pipelines.
 - Apply data quality standards to collection and reporting.
 - Identify and escalate data integrity issues.
 - Produce basic analytical products from available tools.
-- Support the data requirements process.
 
-**-30 Expert (Analysts, Technical Staff)**
-- Design data collection frameworks.
-- Perform statistical and pattern analysis.
-- Build and maintain analytical pipelines.
-- Evaluate and improve data architecture.
+**TM-30 — Advanced Builder (Data-Adjacent Personnel)**
+- Design Foundry pipelines and Ontology objects.
+- Build governed data products for use across the formation.
+- Perform analytical validation and data profiling.
+- Support the data requirements process and mentor TM-10/20 users.
+
+**TM-40 Series — Specialist (Designated Roles)**
+- Achieve role-specific mastery within a defined track (ORSA, AI Eng, ML Eng, Program Manager, Knowledge Manager, Software Engineer).
+- Produce command-level data products independently.
+- Apply advanced analytical, engineering, or operational methods within the track.
+
+**TM-50 Series — Advanced Specialist (Senior/Lead Roles)**
+- Lead and mentor within the specialist track.
+- Conduct research-grade analysis and independently solve novel problems.
+- Design new frameworks, tools, and capability for the formation.
+- Develop and update training materials for the track.
 
 ### 5-3. Integrating Data Tasks Into Collective Training
 
@@ -475,7 +489,7 @@ Senior leaders who invest in their formation's data capability are building info
 
 ## KEY TERMS
 
-The following terms are used throughout this publication. Definitions are provided as they apply to this document. More complete definitions appear in ADRP 1 and applicable joint and Army doctrine.
+The following terms are used throughout this publication. Definitions are provided as they apply to this document. More complete definitions appear in Data Literacy Technical Reference and applicable joint and Army doctrine.
 
 **AAR (After-Action Review)** — Structured review of events to identify what happened and why.
 
@@ -541,7 +555,7 @@ The following terms are used throughout this publication. Definitions are provid
 
 **ADP 5-0, The Operations Process** — Defines the MDMP and the role of information in planning and execution.
 
-**ADRP 1, Data Literacy** — The technical companion to this publication. Contains procedural guidance, analytical methods, data lifecycle doctrine, and the USAREUR-AF 5-Layer Data Stack architecture. Senior leaders requiring technical depth should consult ADRP 1.
+**Data Literacy Technical Reference, Data Literacy** — The technical companion to this publication. Contains procedural guidance, analytical methods, data lifecycle doctrine, and the USAREUR-AF 5-Layer Data Stack architecture. Senior leaders requiring technical depth should consult Data Literacy Technical Reference.
 
 **DoD Data Strategy (2020)** — Establishes the VAUTI framework (Visible, Accessible, Understandable, Trustworthy, Interoperable) as the standard for enterprise data quality and use. Referenced in this publication for the VAUTI decision framework and the principle of decision dominance.
 
@@ -555,7 +569,7 @@ The following terms are used throughout this publication. Definitions are provid
 
 ---
 
-*ADP 1 — DATA LITERACY FOR SENIOR LEADERS*
+*DATA LITERACY FOR SENIOR LEADERS*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA (USAREUR-AF)*
 *Wiesbaden, Germany*
 *2026*

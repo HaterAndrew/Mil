@@ -1,4 +1,4 @@
-ADRP 1 — DATA LITERACY
+DATA LITERACY — TECHNICAL REFERENCE
 
 HEADQUARTERS
 UNITED STATES ARMY EUROPE AND AFRICA
@@ -15,7 +15,7 @@ PROPONENT: Headquarters, United States Army Europe and Africa (USAREUR-AF), G6/D
 ---
 
 SUMMARY OF CHANGE
-ADRP 1, Data Literacy
+Data Literacy Technical Reference
 
 This edition incorporates the following updates from the initial publication:
 
@@ -34,7 +34,7 @@ This edition incorporates the following updates from the initial publication:
   interoperability section and references.
 - **Architecture resources.** Expands reference to USAREUR-AF technical architecture and implementation resources available through G6/Data.
 
-This Army Doctrine Reference Publication (ADRP) establishes doctrine for data literacy across
+This publication establishes doctrine for data literacy across
 United States Army Europe and Africa (USAREUR-AF) and the broader Army. It provides the
 foundational reference for all personnel who produce, manage, analyze, or consume data in
 support of military operations. It is platform-agnostic. Concepts apply regardless of system
@@ -279,7 +279,7 @@ analyze, and communicate data cannot achieve the information advantage that ADP 
 describes. Every chapter of this publication supports the broader information operations
 framework of ADP 3-13 by building the competencies that make information advantage possible.
 
-NOTE: ADP 3-13 addresses information at the conceptual level. This ADRP addresses the
+NOTE: ADP 3-13 addresses information at the conceptual level. This publication addresses the
 foundational data skills — collection, quality, analysis, security, and integration into
 planning — that operationalize ADP 3-13 in USAREUR-AF formations.
 
@@ -1573,19 +1573,19 @@ assign and enforce data roles explicitly.
 
 ---
 
-**9-4. The Data Literacy Continuum — Levels 1 through 5**
+**9-4. The Data Literacy Continuum — The USAREUR-AF Training Framework**
 
-9-4a. Data literacy is not binary. It exists on a continuum. The following framework defines five levels, analogous to the -10/-20/-30 operator/maintainer/expert training framework.
+9-4a. Data literacy is not binary. It exists on a continuum. The USAREUR-AF training framework organizes this continuum into five tiers, designated TM-10 through TM-50. The first three tiers apply to all personnel; the TM-40 and TM-50 tiers are specialist tracks for designated data roles. All tiers are cumulative — each builds on the one below.
 
-| Level | Title | Description | Target Population |
+| Tier | Title | Description | Target Population |
 |---|---|---|---|
-| 1 | Data Aware | Understands what data is and why it matters; follows data handling procedures; accurately enters data | All Soldiers and civilians |
-| 2 | Data User | Reads and interprets data products (reports, dashboards, charts); identifies obvious quality problems; applies critical thinking to data | NCOs, junior staff officers |
-| 3 | Data Analyst | Conducts descriptive and diagnostic analysis; builds basic visualizations; profiles data quality; develops staff data products | Staff officers, senior NCOs in data-intensive roles |
-| 4 | Data Practitioner | Builds analytical pipelines; applies statistical methods; designs data products for decision support; trains others | Data analysts, intelligence officers, functional area officers |
-| 5 | Data Expert | Architects data systems; applies advanced modeling; leads data strategy for an organization; develops doctrine and standards | G6 data officers, senior data staff, data science specialists |
+| TM-10 | Operator | Navigates Maven Smart System; consumes data products; follows data handling procedures; accurately enters data; observes security requirements | All Soldiers and civilians — every MOS and staff function |
+| TM-20 | Builder | Builds basic Workshop applications; runs light transforms; creates and shares data products without specialist tools; identifies data quality problems | All personnel — builds on TM-10 |
+| TM-30 | Advanced Builder | Designs pipelines and Ontology objects; builds governed dashboards and complex transforms; profiles data quality; mentors TM-10/20 users | Data-adjacent personnel (17/25-series, S6/G6/G2/G9) |
+| TM-40 Series | Specialist | Role-specific mastery in one of six tracks: ORSA (40A), AI Engineer (40B), ML Engineer (40C), Program Manager (40D), Knowledge Manager (40E), Software Engineer (40F). Produces command-level data products independently. | Designated specialist billets; requires TM-30 prerequisite |
+| TM-50 Series | Advanced Specialist | Advanced practitioner capability within a specialist track; leads, mentors, and develops new capability; research-grade analytical and engineering proficiency | TM-40 graduates in senior or lead roles |
 
-9-4b. The goal is not for every Soldier to reach Level 5. The goal is for every Soldier to reach Level 1, for NCOs and company grade officers to reach at least Level 2, for staff officers in analytical roles to reach Level 3, and for the unit to have access to Level 4 and 5 capability through dedicated personnel or augmentation.
+9-4b. The goal is not for every Soldier to reach TM-50. The goal is for every Soldier to complete TM-10, for all personnel to achieve TM-20, for data-adjacent personnel to reach TM-30, and for the formation to have specialist coverage across the TM-40 tracks appropriate to its mission. TM-50 capability is required in senior data roles and for personnel responsible for developing and sustaining formation data capability.
 
 ---
 
@@ -1607,19 +1607,20 @@ assign and enforce data roles explicitly.
 
 **9-6. Training Requirements and Qualification Criteria**
 
-9-6a. Data literacy training must be systematic and progressive — not a one-time event.
+9-6a. Data literacy training must be systematic and progressive — not a one-time event. The USAREUR-AF training framework uses the TM series to define minimum standards by role and echelon.
 
-9-6b. Minimum training standards by echelon:
+9-6b. Minimum training standards by echelon and role:
 
-| Echelon | Minimum Standard | Recommended Training Path |
+| Population | Minimum Standard | Training Path |
 |---|---|---|
-| All Soldiers | Data Level 1 — Data handling procedures, accurate data entry, basic digital literacy | Unit-level training; online training modules |
-| NCO (SGT through SFC) | Data Level 2 — Reading reports, identifying quality issues, basic data critique | Unit training; NCO Professional Military Education integration |
-| Company Grade Officer | Data Level 2 minimum; Level 3 for data-intensive roles | BOLC integration; unit training; self-development |
-| Field Grade Officer | Data Level 3 — Staff analytical products, data-driven briefing | CGSC integration; self-development; unit immersion |
-| Data-Specific Roles (S2 analysts, G6 data staff) | Data Level 4 or 5 | Functional area training; Army Warrant Officer courses; civilian education |
+| All Soldiers and civilians | TM-10 (Operator) — Navigate Maven, consume data products, follow data handling and security procedures | Unit-level training; TM-10 self-paced course |
+| All personnel | TM-20 (Builder) — Build basic data products; identify and report quality issues | Unit training; TM-20 course (builds on TM-10) |
+| Data-adjacent billets (17/25-series, S6/G6/G2/G9) | TM-30 (Advanced Builder) — Design pipelines and Ontology objects; govern data products | TM-30 course (builds on TM-20); mentored practicum |
+| ORSA, AI Eng, ML Eng, PM, KM, SWE billets | TM-40 Series (Specialist) — Role-specific track at the assigned specialist level | TM-40A through TM-40F per billet type; prerequisite TM-30 |
+| Senior data leads, capability developers, training cadre | TM-50 Series (Advanced Specialist) — Research-grade proficiency; leads and develops capability in specialist track | TM-50A through TM-50F per track; prerequisite TM-40 in same track |
+| Commander/Senior Leader | Commander-level (direction, evaluation, resourcing) — Not a technical track; governed by this publication and the companion senior leader guide | Data Literacy for Senior Leaders; unit immersion; C2DAO advisory |
 
-9-6c. Data literacy qualification is a readiness consideration. A unit with systematically low data literacy across the staff cannot produce the quality of analytical products required for complex operations. Commanders must assess and develop data literacy as part of overall readiness.
+9-6c. Data literacy qualification is a readiness consideration. A unit with systematically low data literacy across the staff cannot produce the quality of analytical products required for complex operations. Commanders must assess and develop data literacy as part of overall readiness. TM-10 and TM-20 completion should be tracked as unit-level training metrics comparable to weapons qualification.
 
 ---
 
@@ -1959,7 +1960,7 @@ to the data type and operational context.
 ## Army Doctrine
 
 - **ADP 3-13, Information** — Establishes doctrine for information as combat power and the
-  foundation for information advantage. This ADRP implements ADP 3-13 at the data literacy
+  foundation for information advantage. This publication implements ADP 3-13 at the data literacy
   level.
 - **ADP 5-0, The Operations Process** — Defines the Military Decision-Making Process (MDMP)
   and the role of information in planning and execution.
@@ -2277,7 +2278,7 @@ military operations across Europe, portions of Asia, the Arctic, and the Atlanti
 
 ---
 
-*ADRP 1, Data Literacy*
+*Data Literacy Technical Reference*
 *Headquarters, United States Army Europe and Africa (USAREUR-AF)*
 *Wiesbaden, Germany*
 *2026*

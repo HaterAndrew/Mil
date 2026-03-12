@@ -1,24 +1,17 @@
-```
-GLOSSARY — DATA LITERACY AND FOUNDRY/MAVEN TERMS
-Combined Reference for USAREUR-AF Operational Data Team
+# GLOSSARY — DATA LITERACY AND FOUNDRY/MAVEN TERMS
+## Combined Reference for USAREUR-AF Operational Data Team
 
-HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA
+**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
 Wiesbaden, Germany
 
-2026
+**Version 1.3 — 11 March 2026**
+(v1.0: initial release; v1.1: Tier 1 gap closure; v1.2: Tier 2 terms + alpha order corrected; v1.3: Tier 3 terms + See also cross-links)
 
-PURPOSE: This glossary equates general data concepts to their Palantir Foundry/Maven Smart
-System equivalents. Use it as a translator between data science terminology and the Maven
-Smart System platform vocabulary. Every entry identifies the corresponding Foundry construct
-so a Soldier fluent in Army data concepts can navigate the platform immediately.
+**PURPOSE:** This glossary equates general data concepts to their Palantir Foundry/Maven Smart System equivalents. Use it as a translator between data science terminology and the Maven Smart System platform vocabulary. Every entry identifies the corresponding Foundry construct so a Soldier fluent in Army data concepts can navigate the platform immediately.
 
-This publication supports USAREUR-AF data operations aligned with the Army Data Plan 2022
-and the DoD Data Strategy. All roles, policies, and architectural terms reflect current Army
-CIO guidance, including the Army Data Stewardship Policy (April 2024) and the Unified
-Network Plan 2.0 (March 2025).
+This publication supports USAREUR-AF data operations aligned with the Army Data Plan 2022 and the DoD Data Strategy. All roles, policies, and architectural terms reflect current Army CIO guidance, including the Army Data Stewardship Policy (April 2024) and the Unified Network Plan 2.0 (March 2025).
 
-DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.
-```
+**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
 
 ---
 
@@ -87,6 +80,22 @@ Example: A Soldier object's attributes include: name, rank, DODID, unit assignme
 
 ---
 
+**Aggregation**
+*Foundry Equivalent: Pipeline Builder aggregation node; GROUP BY in Contour; Quiver metric tiles; @transform_df with groupby*
+Definition: A data transformation operation that groups records by one or more fields and computes a summary statistic for each group — such as count, sum, average, minimum, or maximum. Aggregation collapses many rows into fewer rows, each representing a summarized group. It is one of the most common data engineering operations, used to produce readiness summaries, supply totals, and unit-level statistics from row-level data.
+Example: Aggregating the raw SITREP submission table by `unit_id` and `report_date` to count the number of submissions per unit per day — producing one row per unit per day instead of one row per submission.
+
+---
+
+**Append Transaction**
+*Foundry Equivalent: APPEND transaction type in Pipeline Builder and code transforms; @incremental patterns*
+Definition: A dataset write operation that adds new rows to an existing dataset without deleting or replacing previous data. Contrasted with a Snapshot Transaction, which replaces all existing data on each write. Append transactions are used for event logs, historical records, and incremental pipelines where prior data must be preserved. The dataset grows larger with each append.
+NOTE: APPEND transactions are NOT inherently idempotent. If a pipeline reruns (due to failure, retry, or manual trigger), new rows are appended again — potentially creating duplicate records. To achieve idempotency with APPEND transactions, engineers must implement deduplication themselves, typically by computing a content hash or surrogate key on each record and filtering out rows whose keys already exist in the dataset before appending. For use cases requiring full-dataset replacement with atomic semantics and no deduplication burden, use SNAPSHOT transactions instead.
+Example: A daily pipeline that ingests new SITREP records appends only today's submissions to the running history — preserving all prior submissions while adding the current day's entries. Deduplication on `report_id` ensures that a pipeline retry does not create duplicate SITREP records.
+*See also: Snapshot Transaction, Transaction (Foundry), @incremental, Watermark, Deduplication*
+
+---
+
 **Batch Processing**
 *Foundry Equivalent: @transform, @transform_df, scheduled Pipeline Builder jobs*
 Definition: Processing a large volume of data in a single scheduled run, rather than processing records one at a time as they arrive. Batch jobs run at defined intervals — hourly, daily, or weekly — and produce output after all input data has been consumed. Contrasted with stream processing, which handles records continuously.
@@ -105,6 +114,14 @@ Example: A `is_deployable` field on a Soldier object — set to true if the Sold
 *Foundry Equivalent: Object Storage V2 index, dataset materialization*
 Definition: A stored copy of frequently-accessed data held in fast memory or storage, so future requests can be served quickly without recomputing from scratch. Caching trades storage space for speed. In Foundry, the Object Storage backend serves as the indexed cache of ontology object data, enabling fast queries against large datasets.
 Example: Foundry's Object Storage V2 indexes all Soldier objects so Workshop apps can query and filter them in milliseconds rather than scanning the full backing dataset each time.
+
+---
+
+**Calibration (Model)**
+*Foundry Equivalent: Validation step in Code Workspaces; reliability analysis on model prediction datasets*
+Definition: A model is calibrated when its predicted probability matches the actual observed frequency of the outcome. Example: when a model predicts 85% probability of equipment failure, the equipment actually fails approximately 85% of the time in validation data. An uncalibrated model may be overconfident (predicted probabilities consistently too high) or underconfident (predicted probabilities consistently too low), leading to poor operational decisions even when classification accuracy appears acceptable. Calibration is assessed using reliability diagrams (also called calibration curves) and corrected via techniques such as Platt scaling or isotonic regression applied to model outputs. Calibration assessment should be part of every model validation process before operational deployment.
+Example: A vehicle failure prediction model reports 90% confidence on most predictions. A reliability diagram reveals that when the model predicts 90% failure probability, actual failure occurs only 60% of the time — indicating overconfidence. Platt scaling is applied to correct the output probabilities before the model is deployed as a model-backed property on the Vehicle Object Type.
+*See also: Precision, Recall, F1 Score*
 
 ---
 
@@ -133,6 +150,13 @@ Example: Maintenance events and vehicle accidents may be correlated (they occur 
 *Foundry Equivalent: Supported ingestion file format in Foundry datasets and Data Connection*
 Definition: A plain-text file format for storing tabular data where values in each row are separated by commas and rows are separated by line breaks. CSV is the most common format for exchanging data between systems because it requires no special software to read. Foundry can ingest CSV files directly, though it stores data internally in more efficient formats like Parquet.
 Example: A unit submits a readiness report as a CSV spreadsheet. That file is ingested into Foundry's raw dataset layer, where it becomes the source for downstream transforms.
+
+---
+
+**Credential Store / Secrets Manager**
+*General Equivalent: Secrets manager; environment variable vault; secure config store*
+Definition: A secure system for storing authentication tokens, passwords, API keys, and other credentials outside of application code. Credentials must never be hardcoded in transforms, scripts, or configuration files — they must be retrieved at runtime from an approved credential store. In Foundry, credentials used by Data Connection connectors are stored securely in the platform's connector configuration and are never exposed to transform code.
+Example: A Data Connection sync that pulls logistics data from an external API stores the API key in Foundry's connector credential store — not in the Python transform code — so the key is never visible in version control or build logs.
 
 ---
 
@@ -206,6 +230,13 @@ Example: The SITREP pipeline: external system → Data Connection sync → raw d
 
 ---
 
+**Data Profiling**
+*General Equivalent: Dataset inspection; column statistics; schema exploration*
+Definition: The process of examining a dataset's structure, field distributions, value ranges, null rates, and row counts to understand its content before building pipelines or analyses. Profiling reveals data quality issues, unexpected value distributions, and schema inconsistencies that must be addressed before a dataset can be used reliably. It is standard practice to profile any new data source before writing transforms.
+Example: Before building the logistics pipeline, a data engineer profiles the raw supply feed — checking each column's null rate, verifying that `transaction_id` values are unique, and reviewing the distribution of `status` field values to identify unexpected codes not in the data dictionary.
+
+---
+
 **Data Quality**
 *Foundry Equivalent: @check decorator, Pipeline Builder health checks, validation transforms*
 Definition: The degree to which data is accurate, complete, consistent, timely, and fit for its intended use. Poor data quality produces wrong answers even from correct analytical methods. Data quality checks should be built into every pipeline to catch errors before they reach users.
@@ -241,10 +272,18 @@ Example: Foundry's Object Storage V2 functions as the database for all Ontology 
 
 ---
 
+
 **Dataset**
 *Foundry Equivalent: Foundry Dataset — a versioned, managed table with schema, transactions, and branch support*
 Definition: A structured collection of related data organized in rows and columns, typically representing a single subject or data source. In Foundry, a dataset is more than a table — it has version history (transactions), branch support for development isolation, schema management, and integrated access controls. Every dataset has a unique RID.
 Example: The `unit_status_curated` dataset contains one row per unit per day with all readiness fields validated and standardized, backed at the RID `ri.foundry.main.dataset.<uuid>`.
+
+---
+
+**Deduplication**
+*Foundry Equivalent: Pipeline Builder "Deduplicate" node; DISTINCT in SQL transforms; @transform_df with drop_duplicates()*
+Definition: The process of identifying and removing duplicate rows from a dataset, retaining only one record per unique entity or event. Deduplication is applied based on a key — one or more columns that uniquely identify a record. It is a critical data quality step when consolidating data from multiple sources or when source systems generate repeated entries for the same event.
+Example: A raw supply transaction feed contains duplicate entries when the source system resubmits failed transactions. A Pipeline Builder deduplicate node keyed on `transaction_id` removes the repeated rows before the data reaches the curated dataset.
 
 ---
 
@@ -269,10 +308,24 @@ Example: Plotting the distribution of equipment readiness percentages across all
 
 ---
 
+**Dry-Run**
+*General Equivalent: Test run; simulation mode; validation pass*
+Definition: Executing a pipeline, transform, or process in test mode to validate logic and data outputs without writing results to production datasets or triggering downstream effects. A dry-run surfaces errors, schema mismatches, and unexpected data conditions before they reach operational consumers. In Foundry, branch builds serve as the primary dry-run mechanism — the full pipeline is executed on an isolated branch and outputs are validated before the branch is merged to Main.
+Example: Before promoting a readiness pipeline schema change to production, the data engineer executes a full build on a feature branch — a dry-run — verifying that all 47 downstream transforms build successfully and the curated output matches the expected schema and row counts.
+
+---
+
 **ETL / ELT**
 *Foundry Equivalent: Data Connection (Extract) + Code Repository transforms or Pipeline Builder (Transform/Load)*
 Definition: ETL stands for Extract, Transform, Load — the process of pulling data from a source, transforming it into the required format, and loading it into a destination. ELT is the modern variant — Extract, Load, Transform — where raw data is loaded first and transformed in place using the destination system's compute. Foundry supports both patterns. The preferred Foundry pattern is ELT: ingest raw data (Extract + Load), then run transforms (Transform) using Spark compute.
 Example: EUCOM logistics data is extracted from a source system via Data Connection (E), landed as a raw Foundry dataset (L), then transformed into staging and curated datasets using Python transforms (T).
+
+---
+
+**Entity Resolution**
+*General Equivalent: Record matching; deduplication by identity; fuzzy join*
+Definition: The process of determining whether records from different datasets or systems refer to the same real-world entity — even when they lack a common identifier or have inconsistent formatting. Entity resolution uses matching logic (exact, fuzzy, probabilistic) on combinations of fields such as name, date of birth, location, and unit to link records that represent the same person, vehicle, or event. It is essential when integrating data from systems that do not share a primary key.
+Example: Matching personnel records from two legacy systems — one using DODID, one using SSN — by applying fuzzy name matching and duty station to identify records that represent the same Soldier, then assigning a unified identifier before ingesting both sources into Foundry.
 
 ---
 
@@ -308,6 +361,13 @@ Example: Raw data arrives in JSON format from an API feed. The ingestion pipelin
 *Foundry Equivalent: GeoPoint and Geoshape property types; Pipeline Builder geo join nodes; Gaia (within MSS)*
 Definition: Data that includes geographic coordinates or shapes representing locations on Earth — points (latitude/longitude), lines (routes, boundaries), or polygons (areas, zones). Geospatial data enables mapping, proximity analysis, and geographic filtering. In Foundry, GeoPoint properties on Object Types display objects on map widgets in Workshop.
 Example: A Vehicle Object Type with a `last_known_position` property of type GeoPoint displays each vehicle's last reported location on a map in the Workshop OPDATA dashboard.
+
+---
+
+**Hive Partitioning**
+*General Equivalent: Directory-based partitioning; date-partitioned storage; columnar partition scheme*
+Definition: A storage organization pattern that physically divides a dataset into subdirectories based on the values of one or more columns — typically date, unit, or region. Query engines read only the partitions relevant to a filter predicate, dramatically reducing the data scanned. In Foundry, Hive-style partitioning is configured on Pipeline Builder outputs and code transform outputs to optimize query performance on large, time-series datasets.
+Example: The SITREP history dataset is Hive-partitioned by `report_year` and `report_month`. A query for "all SITREPs from January 2026" reads only the `/report_year=2026/report_month=01/` partition directory — skipping three years of prior data and reducing query time from minutes to seconds.
 
 ---
 
@@ -389,9 +449,17 @@ Example: Metadata for the curated SITREP dataset includes: schema (columns and t
 ---
 
 **Model (ML — Machine Learning)**
-*Foundry Equivalent: Foundry Model Registry (trained in Code Workspaces / JupyterLab); model-backed properties; AIP*
-Definition: A mathematical function trained on historical data to recognize patterns and make predictions or classifications on new data. ML models learn from examples — they are not explicitly programmed with rules. In Foundry, models are trained in Code Workspaces, registered in the Model Registry, and deployed as properties on Object Types or as inference nodes in pipelines.
-Example: A trained classification model that predicts, based on historical patterns, whether a vehicle is likely to fail inspection in the next 14 days — deployed as a model-backed `predicted_failure_risk` property on the Vehicle Object Type.
+*Foundry Equivalent: Model trained in Code Workspaces / JupyterLab; deployed via batch inference transforms or AIP Logic workflows; predictions surfaced as computed properties on Object Types*
+Definition: A mathematical function trained on historical data to recognize patterns and make predictions or classifications on new data. ML models learn from examples — they are not explicitly programmed with rules. In Foundry, models are trained in Code Workspaces (JupyterLab or Python environments) and deployed through one of two patterns: (1) **Batch inference transforms** — the trained model runs as a scheduled transform, writes predictions to a Foundry dataset, and those predictions become the source for computed or model-backed properties on Object Types; (2) **AIP Logic integration** — the model is invoked within AIP Logic workflows to generate outputs as part of an automated analytical process. NOTE: Foundry does not have a product called "Model Registry." Model artifacts are stored as Foundry datasets or within Code Repositories and versioned through the standard branching workflow.
+Example: A trained classification model that predicts vehicle inspection failure is saved as a model artifact dataset in Foundry. A scheduled batch inference transform loads the model, scores all vehicles, and writes predictions to a `vehicle_predictions` dataset — which backs the `predicted_failure_risk` computed property on the Vehicle Object Type.
+*See also: Computed Property / Model-Backed Property, AIP Logic, Code Workspace, @transform*
+
+---
+
+**Multi-Valued Property**
+*General Equivalent: Array field; list attribute; multi-select field*
+Definition: A property on an Ontology Object Type (or a column in a dataset) that can hold multiple values simultaneously — stored as an array or list rather than a single value. Multi-valued properties are useful for attributes where an entity can have more than one value at the same time, such as a unit's assigned mission types or a Soldier's multiple skill identifiers. In Foundry, multi-valued properties are configured with an array data type on the Object Type definition.
+Example: A `qualified_systems` multi-valued property on the Soldier Object Type holds an array of all systems the Soldier is qualified on — `["M1A2", "M2A3", "M109A7"]` — allowing a Workshop filter to find all Soldiers qualified on any specified system without requiring separate records per qualification.
 
 ---
 
@@ -437,10 +505,43 @@ Example: Partitioning the SITREP dataset by `report_date` means that a query for
 
 ---
 
+**Parquet**
+*Foundry Equivalent: Foundry's internal dataset storage format; output format of all code transforms and Pipeline Builder jobs*
+Definition: An open-source columnar data storage format used by Foundry (and most modern data platforms) to store dataset contents. Unlike row-oriented formats (CSV, Excel), Parquet stores data column by column — dramatically improving performance for analytical queries that read only a few columns from large datasets. Parquet supports compression and schema enforcement. When you write data in a Foundry transform, the output is stored in Parquet automatically.
+Example: A SITREP history dataset with 10 million rows and 50 columns stored in Parquet format allows a query for `readiness_code` and `unit_id` to read only those two columns — skipping the other 48 — producing fast results even on very large tables.
+
+---
+
 **Pipeline**
 *Foundry Equivalent: Code Repository transform sequence, Pipeline Builder flow, Data Connection sync*
 Definition: An automated sequence of data processing steps — from ingestion through transformation to output — that moves data from source to destination. A pipeline is the end-to-end chain that keeps data current and correct. In Foundry, a pipeline may span multiple Code Repository transforms, scheduled as a dependency graph.
 Example: The readiness pipeline: Data Connection pulls from DRRS-A nightly → raw_readiness transform cleans → staging_readiness transform validates → curated_readiness transform aggregates → UnitReadiness Object Type is updated → Workshop dashboard refreshes.
+
+---
+
+**Precision**
+*Foundry Equivalent: Model validation metric computed in Code Workspaces or model evaluation transforms*
+Definition: A classification model performance metric measuring the proportion of positive predictions that were actually correct. Precision = True Positives / (True Positives + False Positives). High precision means the model generates few false alarms — when it flags something, it is usually right. Precision is most important in contexts where false positives carry high cost (e.g., unnecessarily taking a mission-capable vehicle offline for maintenance).
+In operational terms: of all units the model flagged as high-risk, what percentage actually were? High precision means few false alarms.
+Example: A model that flags 100 vehicles for likely failure, of which 90 actually fail, has precision of 90%. The remaining 10 were false alarms — vehicles unnecessarily flagged.
+*See also: Recall, F1 Score, Calibration (Model)*
+
+---
+
+**Recall**
+*Foundry Equivalent: Model validation metric computed in Code Workspaces or model evaluation transforms*
+Definition: A classification model performance metric measuring the proportion of actual positives that the model correctly identified. Recall = True Positives / (True Positives + False Negatives). High recall means the model misses few actual events — most genuine cases are flagged. Recall is most important in contexts where missing a real event carries high cost (e.g., failing to detect an equipment failure before a mission).
+In operational terms: of all units that were actually high-risk, what percentage did the model detect? High recall means few missed threats.
+Example: Of 100 vehicles that actually fail, a model with 80% recall correctly identified 80 as high-risk and missed 20 — those 20 were false negatives, vehicles that failed without warning.
+*See also: Precision, F1 Score, Calibration (Model)*
+
+---
+
+**F1 Score**
+*Foundry Equivalent: Model validation metric computed in Code Workspaces or model evaluation transforms*
+Definition: The harmonic mean of Precision and Recall, combining both metrics into a single score. F1 = 2 × (Precision × Recall) / (Precision + Recall). F1 Score ranges from 0 (worst) to 1 (best). It is used when both false positives and false negatives carry meaningful cost and a balanced measure is required. F1 Score is more informative than accuracy alone when classes are imbalanced (e.g., equipment failures are rare events in a large fleet).
+Example: A vehicle failure model with 90% precision and 80% recall produces an F1 Score of approximately 0.847 — a single metric summarizing both the low false alarm rate and the moderate missed detection rate for command review.
+*See also: Precision, Recall, Calibration (Model)*
 
 ---
 
@@ -472,6 +573,13 @@ Example: The command dashboard refreshes at 0600Z each morning when the nightly 
 
 ---
 
+**Retrieval-Augmented Generation (RAG)**
+*General Equivalent: Document-grounded AI; context-injected LLM query*
+Definition: An AI pattern that combines document or data retrieval with large language model generation — the LLM's response is grounded in authoritative source material retrieved at query time, rather than relying solely on the model's training data. RAG reduces hallucination and keeps AI outputs anchored to current, command-approved information. In Foundry AIP, RAG is implemented by connecting Agent Studio agents to document repositories (SOPs, regulations, intelligence products) as context sources.
+Example: An AIP agent configured with RAG retrieves relevant paragraphs from the USAREUR-AF OPORD and current logistics SOPs when answering a staff officer's question about sustainment authorities — grounding the response in current command documents rather than generic LLM knowledge.
+
+---
+
 **Schema**
 *Foundry Equivalent: Dataset schema (column names and types); Object Type property definitions*
 Definition: The formal definition of a data structure — the names, data types, order, and constraints on every field. The schema is the contract between a data producer and data consumer. Changing a schema without coordination downstream breaks pipelines and applications. In Foundry, schema changes on a dataset trigger a full refresh of all incremental downstream transforms.
@@ -483,6 +591,13 @@ Example: Adding a new column `air_readiness_code` to the unit readiness schema r
 *Foundry Equivalent: SQL transforms in Code Repositories; SQL expressions in Pipeline Builder; Spark SQL*
 Definition: The standard language for querying and manipulating relational databases. SQL uses commands like SELECT, FROM, WHERE, JOIN, GROUP BY, and ORDER BY to retrieve and transform data. In Foundry, SQL is supported within Code Repositories as an alternative to Python and is also used inside Pipeline Builder's expression language.
 Example: A SQL transform in Foundry: `SELECT unit_id, COUNT(*) AS sitrep_count FROM staging_sitreps WHERE report_date >= CURRENT_DATE - 7 GROUP BY unit_id` counts weekly SITREP submissions per unit.
+
+---
+
+**Service Account**
+*General Equivalent: Machine credential; system identity; non-human auth token*
+Definition: A non-human account used by automated systems, pipelines, and applications to authenticate and perform operations without a human user's credentials. Service accounts are how machine-to-machine integrations authenticate securely — each pipeline or external integration has its own dedicated service account with the minimum permissions required for its function. Service account credentials must be stored in an approved credential store, never hardcoded.
+Example: The nightly DRRS-A ingestion pipeline authenticates to the Foundry Datasets API using a dedicated service account with read access to the raw landing zone only — not using a human user's credentials, so pipeline access is unaffected by personnel changes.
 
 ---
 
@@ -549,6 +664,13 @@ Example: A readiness dataset achieves VAUTI compliance when: it appears in the M
 
 ---
 
+**Widget**
+*Foundry Equivalent: Workshop component; UI building block in a Workshop application*
+Definition: A reusable visual or interactive component within a Workshop application that displays data, accepts user input, or triggers actions. Widgets are the building blocks of every Workshop app. Common widget types include: tables (display object sets), charts (visualize metrics), filters (allow user-driven filtering), buttons (trigger Actions), text blocks (static content), and maps (geospatial display). Builders configure widgets by connecting them to Object Types, variables, and Actions through Workshop's drag-and-drop editor.
+Example: A readiness dashboard Workshop application contains: a filter widget (unit selector), a table widget (unit list with readiness codes), a chart widget (readiness trend over time), and a button widget (trigger the Submit SITREP action) — all connected through shared variables.
+
+---
+
 **5-Layer Data Stack**
 *Foundry Equivalent: Maps directly to Foundry's platform layers — connectors/storage (Layers 1-2), ontology (Layer 3), Quiver/Contour/Workshop (Layer 4), AIP/Actions/OSDK (Layer 5).*
 Definition: The USAREUR-AF implementation model for organizing data capabilities into five functional layers: (1) Infrastructure — compute, storage, and connectivity; (2) Integration — pipelines, ingestion, and ETL/ELT; (3) Semantic — ontology, data meaning, and governance; (4) Analytics — analysis, dashboards, and reporting; (5) Activation — applications, decisions, and automated actions. The Maven Smart System implements all five layers within the Army data enterprise.
@@ -566,6 +688,14 @@ This section defines Palantir Foundry and Maven Smart System platform-specific t
 *General Equivalent: Write-back operation; form submission; data entry*
 Definition: A user-triggered operation in the Foundry Ontology that writes data back to the platform — creating a new object, modifying an existing one, or deleting one. Actions are the mechanism by which operational users (analysts, commanders, S-staff) feed decisions and updates back into the data platform from Workshop apps. Every Action is backed by a defined Action Type with parameters, validation rules, and permissions.
 Example: An analyst clicks "Submit SITREP" in the Workshop SITREP app, fills in the unit status fields, and clicks Submit. The Action writes a new UnitStatus object to the Ontology, visible immediately to all users with appropriate access.
+*See also: Action Button / Action Form, Ontology (Foundry), Workshop*
+
+---
+
+**Action Button / Action Form**
+*General Equivalent: Submit button; data entry form; write-back widget*
+Definition: Workshop UI components that allow operators to invoke an Ontology Action from within an application. An **Action Button** is a clickable button that triggers an Action (with or without user input). An **Action Form** is a structured form widget that collects required parameters from the user before executing the Action. Both are distinct from the underlying **Action** (the platform construct defining what happens) — they are the presentation layer that exposes that Action to users. Every Action Button or Form must be linked to a defined Action Type with appropriate permissions.
+Example: In the SITREP submission app, an "Submit SITREP" Action Form widget collects fields for unit ID, readiness code, and narrative. When the operator clicks Submit, the underlying `SubmitSitrep` Action writes the new UnitStatus object to the Ontology.
 
 ---
 
@@ -590,6 +720,20 @@ Example: A USAREUR-AF intelligence analyst queries an AIP Agent: "Show me all S2
 
 ---
 
+**Agent Memory**
+*General Equivalent: Conversation history; session context; persistent agent state*
+Definition: The persistent context maintained by an Agent Studio agent across multiple conversation turns within a session — allowing the agent to reference earlier questions, prior results, and the current analytical thread without the user restating context. Agent memory is bounded by the user's access level and session scope. In AIP, memory enables multi-turn analytical workflows where each follow-on question builds on previous agent outputs.
+Example: An analyst asks an AIP agent "Which units in EUCOM are C3 or below?" and then follows up with "Of those, which have not submitted a SITREP in the last 48 hours?" — the agent uses memory to apply the second filter to the first result set without the analyst restating the AOR or readiness criteria.
+
+---
+
+**Agent Tool**
+*General Equivalent: Callable function in an agent; agent capability; agent-invocable action*
+Definition: A function or Ontology Action that an Agent Studio agent can invoke to query data, modify records, or interact with systems. Agent tools define the boundaries of what an agent can do — each tool must be explicitly granted to the agent, and all invocations are logged and bounded by the user's data access permissions. Tools may include ontology searches, dataset queries, Actions (write-backs), or external API calls.
+Example: A USAREUR-AF readiness agent is configured with three tools: a "query unit status" tool (reads UnitStatus objects), a "get SITREP history" tool (queries the staging SITREP dataset), and a "flag for review" tool (executes an Ontology Action) — limiting the agent to those specific capabilities.
+
+---
+
 **@check**
 *General Equivalent: Data quality validation rule; automated data test*
 Definition: A Foundry Python decorator applied to a function that defines an automated data quality rule. @check functions return either PASS or FAIL for a dataset, and can be configured with ERROR or WARNING severity. ERROR-level checks can block pipeline builds from completing if data quality requirements are not met. @check is the primary mechanism for enforcing data contracts in Foundry pipelines.
@@ -597,10 +741,25 @@ Example: `@check(severity=ERROR)` on a function that verifies no more than 1% of
 
 ---
 
+**Automated Promotion / CI/CD Workflow**
+*General Equivalent: CI/CD pipeline; code promotion workflow; dev→prod deployment process*
+Definition: The process of moving code, Ontology changes, and pipeline configurations from a development branch to production (Main) in a controlled, repeatable sequence. Foundry's branching model supports automated CI/CD through Proposals — analogous to pull requests — that require passing @check validations, peer review, and testing before promotion. CI/CD automation reduces human error in deployments and creates an auditable change trail for every production modification.
+Example: A developer completing a new `air_readiness` pipeline feature creates a Proposal on Foundry. Automated @check validators run against the branch output, the team lead reviews, and promotion to Main triggers the production rebuild automatically — no manual pipeline steps required.
+*See also: Branch (Foundry), @check, Code Repository*
+
+---
+
 **Branch (Foundry)**
 *General Equivalent: Development environment; staging environment; feature branch in Git*
 Definition: An isolated copy of the Foundry development environment — spanning Code Repositories, Pipeline Builder configurations, Ontology definitions, and Workshop modules simultaneously — that allows development and testing without affecting production. Foundry Branching is more powerful than Git branching because it covers the entire stack, not just code. Every significant change should be developed on a branch, tested fully, then merged to Main through a Proposal (the Foundry equivalent of a Pull Request).
 Example: A developer creates branch `feature/sitrep-v2-schema` to add a new `air_readiness_code` field to the SITREP pipeline. All transforms, object type changes, and Workshop updates are built and tested on this branch before any production impact.
+
+---
+
+**BYOM (Bring Your Own Model)**
+*General Equivalent: Customer-managed LLM; external model integration; self-hosted model*
+Definition: The capability to connect a customer-managed, third-party, or self-hosted large language model to AIP Logic and Agent Studio rather than using a Palantir-hosted model. BYOM allows commands to use DoD-approved or command-selected models within the Foundry security stack — ensuring AI outputs are generated by approved, auditable models while retaining full Foundry data governance. Within Maven, all models must be DoD-approved for the enclave classification level.
+Example: USAREUR-AF connects a DoD-approved LLM hosted in the Army's cloud environment to AIP Logic via BYOM, ensuring that all AI-generated readiness summaries use the command-approved model rather than a commercial provider — while maintaining full Foundry access controls and audit logging.
 
 ---
 
@@ -613,8 +772,8 @@ Example: The `sitrep-transforms` Code Repository contains all Python transforms 
 
 **Code Workspace**
 *General Equivalent: JupyterLab / RStudio; interactive development environment for data science*
-Definition: A browser-based interactive development environment (JupyterLab or RStudio) embedded within Foundry, with direct access to Foundry datasets and the ability to publish trained models to the Foundry Model Registry. Code Workspaces are where data scientists and ML engineers prototype models and run exploratory analysis using the full power of Python or R.
-Example: A data scientist opens a JupyterLab Code Workspace, reads the curated readiness dataset into a Pandas DataFrame, trains a logistic regression model to predict readiness failure, and publishes the trained model to the Foundry Model Registry for deployment as a property on the UnitReadiness Object Type.
+Definition: A browser-based interactive development environment (JupyterLab or RStudio) embedded within Foundry, with direct access to Foundry datasets. Code Workspaces are where data scientists and ML engineers prototype models and run exploratory analysis using the full power of Python or R. Trained model artifacts are saved to Foundry datasets or Code Repositories and versioned through the standard branching workflow — there is no separate "Model Registry" product. Models are deployed by writing batch inference transforms that load the model artifact and produce prediction datasets.
+Example: A data scientist opens a JupyterLab Code Workspace, reads the curated readiness dataset into a Pandas DataFrame, trains a logistic regression model to predict readiness failure, saves the model artifact to a Foundry dataset, and writes a batch inference transform that scores new records nightly and writes predictions to the `unit_readiness_predictions` dataset — backing a model-backed property on the UnitReadiness Object Type.
 
 ---
 
@@ -625,10 +784,31 @@ Example: A computed `days_since_last_report` property on the UnitStatus Object T
 
 ---
 
+**Computed Property / Model-Backed Property**
+*General Equivalent: Derived attribute; calculated field at the semantic layer; function-generated property*
+Definition: A property on an Ontology Object Type whose value is computed or generated rather than read directly from a backing dataset column. There are three types: (1) **Computed Property** — value is computed from other properties via a TypeScript formula; (2) **Function-Backed Property** — value is generated by a deployed TypeScript Function on Objects (FOO); (3) **Model-Backed Property** — value is generated by a deployed ML model. All three types enrich Ontology objects without requiring a new dataset column or pipeline step. Computed and model-backed properties update automatically when their inputs change.
+Example: A `readiness_trend` Model-Backed Property on `UnitStatus` is generated by a deployed ML model that predicts whether readiness will improve or decline in the next 7 days, based on the unit's historical patterns — automatically updating as new SITREPs arrive.
+
+---
+
 **Contour**
 *General Equivalent: Ad-hoc data analysis tool; SQL workbench; no-code data exploration*
 Definition: A Foundry application for point-and-click exploratory analysis of raw tabular datasets — before or outside the Ontology. Contour allows filtering, joining, aggregating, and visualizing dataset data without writing code. It is best suited for data engineers validating pipeline outputs, analysts exploring data not yet modeled in the Ontology, and ad-hoc one-off analyses.
 Example: A data engineer uses Contour to quickly explore the raw logistics feed after ingestion — filtering columns, checking value distributions, and verifying join keys — before writing the formal staging transform.
+
+---
+
+**Chain-of-Thought**
+*General Equivalent: Multi-step reasoning; sequential inference; step-by-step LLM logic*
+Definition: A multi-step reasoning pattern used in AIP Logic and Agent Studio where each inference step's output becomes the input to the next step — allowing the AI to decompose complex analytical tasks into a sequence of discrete, auditable reasoning steps rather than producing a single opaque output. Chain-of-thought improves accuracy on multi-condition analytical questions and makes AI reasoning traceable for review and audit.
+Example: An AIP Logic function answers "Is this unit ready for deployment?" by chaining steps: (1) retrieve current readiness codes, (2) check personnel fill rate, (3) verify equipment status, (4) confirm training certifications, (5) synthesize a Go/No-Go recommendation — each step documented and auditable by the reviewing commander.
+
+---
+
+**Context Filters**
+*General Equivalent: User-driven filter; marking-based access filter; role-sensitive display*
+Definition: Workshop filters that dynamically restrict what data a user sees based on their markings, assigned role, or selected context variables — rather than displaying all data and relying on the user to filter manually. Context filters enforce data minimization at the application layer: users see only the data relevant to their position, AOR, or access level without requiring separate Workshop applications per role.
+Example: A readiness dashboard configured with context filters automatically scopes the displayed UnitStatus objects to the units within the logged-in officer's AOR — a division G3 sees only their division's units, while the corps G3 sees all subordinate divisions — using the same Workshop application.
 
 ---
 
@@ -657,6 +837,14 @@ Example: A derived `full_designation` property on the Unit Object Type that conc
 *General Equivalent: Workflow trigger; automated notification; action-side-effect*
 Definition: In the Foundry context, a mechanism for triggering downstream actions or notifications when an event occurs in the Ontology — such as an object property changing or an action completing. Dispatch is part of the Action side-effects system and AIP Logic automation. It enables event-driven workflows where one data change automatically initiates a follow-on process.
 Example: When a unit's `readiness_code` is set to "C4" via an Action, a Dispatch fires a webhook to the unit's S6 system and creates a notification object for the G3 duty officer.
+
+---
+
+**Federated Ontology**
+*General Equivalent: Distributed data model; multi-domain semantic layer; cross-organizational data sharing*
+Definition: An enterprise-scale Foundry architecture pattern where multiple separate Ontologies (owned by different commands, units, or mission areas) share Object Types through a federated model — allowing objects from one domain to be referenced and linked in another without centralizing data ownership. Federated Ontologies enable cross-command data integration while preserving each domain's governance and access controls. Each domain's data steward retains ownership; federation provides the interoperability layer.
+Example: USAREUR-AF logistics and G3 operations maintain separate Foundry Ontologies. A Federated Ontology link allows the G3 readiness dashboard to reference logistics supply objects from the G4 domain without G4 data moving into the G3 Ontology — each command controls access to its own objects.
+*See also: Ontology (Foundry), Object Type, Link Type, Data Steward*
 
 ---
 
@@ -699,6 +887,7 @@ Example: A `@lightweight` `@transform_df` that reads a 500-row JCIDS milestone r
 *General Equivalent: Foreign key relationship; JOIN relationship; entity association*
 Definition: A defined relationship schema between two Foundry Object Types. A Link Type says: "Objects of Type A can be related to Objects of Type B, and this is what that relationship means." A Link is one instance of that relationship. Link Types have cardinality (one-to-one, one-to-many, many-to-many) and are backed by a foreign key column in one of the participating datasets. Traversing link types in Workshop or Quiver replaces the manual JOIN operations required in raw SQL.
 Example: The Link Type `assignedTo` between Soldier and Unit (Many-to-One) allows a Workshop app to display, for any selected Soldier object, the full Unit record that Soldier is assigned to — without writing any JOIN logic.
+*See also: Object Type, Ontology (Foundry), Workshop, Quiver*
 
 ---
 
@@ -723,10 +912,18 @@ Example: After the curated UnitStatus dataset is updated by the nightly transfor
 
 ---
 
+**Object Set (Workshop Widget)**
+*General Equivalent: Filtered entity list; search results panel; entity grid view*
+Definition: A Workshop UI widget that displays a filtered, sortable collection of Ontology objects. Users can search, filter, and select objects in an Object Set widget, and the selection can drive other widgets on the page (charts, detail panels, action forms). Distinct from the Object Set Service (OSS), which is the backend query layer — the Object Set widget is the visual component that operators interact with. Object Set widgets are the primary navigation element in object-centric Workshop applications.
+Example: A vehicle tracking application uses an Object Set widget to display all vehicles with `status = NOT_MISSION_CAPABLE`. An operator selects a vehicle row, which drives a detail panel on the right showing the maintenance history, and enables an "Open Work Order" Action Button.
+
+---
+
 **Object Type**
 *General Equivalent: Entity class; table schema; data model class*
 Definition: The blueprint for a category of real-world things in the Foundry Ontology. An Object Type defines what properties a thing has, what its primary key is, what datasets back it, and how it relates to other Object Types. An Object Type is to an Object what a class definition is to an instance in programming. Every Object Type is backed by a curated dataset and indexed in Object Storage V2.
 Example: The `UnitStatus` Object Type defines: primary key = `unit_id`, properties include `readiness_code`, `last_report_dtg`, `commander`, and `aor`, backed by the `unit_status_curated` dataset.
+*See also: Property (Foundry Ontology), Link Type, Ontology (Foundry), Ontology Manager*
 
 ---
 
@@ -734,6 +931,14 @@ Example: The `UnitStatus` Object Type defines: primary key = `unit_id`, properti
 *General Equivalent: Enterprise data model; semantic layer; operational digital twin*
 Definition: Foundry's semantic and operational layer that sits above raw datasets and transforms data into meaningful, connected representations of real-world entities. The Foundry Ontology is simultaneously a data model (defining Object Types, properties, and Link Types), an operational system (enabling Actions and Functions), and a security layer (enforcing access control at the object level). It is the platform's answer to the question: "What does this data represent operationally?"
 Example: The USAREUR-AF Ontology contains Object Types for Soldiers, Units, Vehicles, Missions, SITREPs, and Supply Requests — linked together so that querying "all vehicles belonging to units with C3 readiness in EUCOM" traverses the Unit-to-Vehicle link type automatically.
+*See also: Object Type, Link Type, Ontology Manager, OSDK (Ontology SDK), Workshop*
+
+---
+
+**Ontology Manager**
+*General Equivalent: Data model editor; schema designer; entity relationship tool*
+Definition: The Foundry graphical user interface for designing and configuring the Ontology — Object Types, Link Types, Actions, Properties, and their backing datasets. Ontology Manager is where builders (TM-20/30) and architects create the semantic layer of the platform. It provides a point-and-click interface for defining object schemas, connecting datasets to Object Types, configuring property types and primary keys, and publishing changes through the branching workflow. Changes in Ontology Manager take effect after branch promotion to Main.
+Example: A TM-30 builder opens Ontology Manager to create a new `MissionEvent` Object Type, defines its properties (title, start_dtg, end_dtg, unit_id, event_type), connects it to the curated_mission_events dataset, sets `event_id` as the primary key, and links it to the `Unit` Object Type via a new `Unit_executedMission_MissionEvent` Link Type.
 
 ---
 
@@ -751,6 +956,13 @@ Example: A data engineer builds the supply enrichment pipeline in Pipeline Build
 
 ---
 
+**Platform SDK**
+*General Equivalent: Python SDK for Foundry; programmatic dataset access; Foundry Python client*
+Definition: The Python library for programmatic access to Foundry datasets, resources, and platform services from outside the transform compute environment — distinct from the OSDK (which accesses Ontology objects). The Platform SDK allows Python scripts to read and write Foundry datasets, manage transactions, and interact with platform APIs using authenticated service accounts. It is the tool for external integrations that need dataset-level access rather than Ontology-level access.
+Example: A data validation script running in an external CI/CD pipeline uses the Platform SDK to read the latest transaction from the curated readiness dataset, run statistical checks, and write a validation report to a Foundry dataset — all without opening a browser or using the Foundry UI.
+
+---
+
 **Project (Foundry)**
 *General Equivalent: Project folder; security domain; organizational workspace*
 Definition: The primary organizational and security boundary in Foundry. A Project is a folder that contains all related resources — datasets, transforms, repositories, applications, and configurations — for a specific mission area or use case. Role grants and markings applied at the Project level cascade to all resources inside. Access is managed at the Project level rather than individual files.
@@ -758,10 +970,17 @@ Example: The `USAREUR-AF Readiness` Project contains the readiness pipeline Code
 
 ---
 
+**Property (Foundry Ontology)**
+*General Equivalent: Attribute; field; column (at the semantic layer)*
+Definition: A named characteristic of an Ontology Object Type — the equivalent of a column in a traditional table, applied at the semantic layer. Every Object Type has a set of Properties that define what information each object carries. Properties have a name, a data type (string, integer, double, boolean, date, datetime, GeoPoint, array, etc.), and a source: either a column in a backing dataset, a computed expression, a TypeScript function, or a model output. The primary key property uniquely identifies each object instance. Properties are configured in Ontology Manager and are accessible to Workshop, OSDK clients, Quiver, and AIP agents within authorized access bounds.
+Example: The `UnitStatus` Object Type has properties including: `unit_id` (string, primary key), `readiness_code` (string, values C1–C4), `last_report_dtg` (datetime), `personnel_fill_rate` (double), and `commander_name` (string) — all backed by columns in the `unit_status_curated` dataset.
+
+---
+
 **Quiver**
-*General Equivalent: Self-service BI tool; ontology-native analytics; interactive dashboard*
-Definition: A Foundry analysis tool designed for point-and-click exploration of Ontology data — Object Types, Link Types, and time series. Quiver leverages the Ontology's semantic layer, allowing analysts to traverse link types for relationship analysis without writing joins. It supports specialized time series analysis, custom formula metrics, and writeback to capture analytical conclusions back to the Ontology. Best used when data is already in the Ontology.
-Example: A readiness analyst uses Quiver to plot UnitStatus readiness codes over time for all units in the EUCOM AOR, traverses the Unit-to-Soldier link to see personnel fill rate alongside equipment readiness, and identifies a correlation between fill rates below 70% and C3/C4 designations.
+*General Equivalent: Self-service BI tool; ontology-native analytics; interactive dashboard; Ontology browser*
+Definition: Foundry's Ontology browser and analysis application for exploring, filtering, and traversing Object Types by property values. Quiver leverages the Ontology's semantic layer, allowing analysts to traverse Link Types for relationship analysis without writing joins. It supports point-and-click filtering on object properties, time series analysis, custom formula metrics, and writeback to capture analytical conclusions back to the Ontology. Best used when data is already in the Ontology. NOTE: Quiver uses metadata and string-matching search against indexed property values — it does not perform semantic or vector-similarity search. Searching for "Alpha Company" finds objects whose properties contain that string; it does not find conceptually similar results.
+Example: A readiness analyst uses Quiver to filter UnitStatus objects by `readiness_code` (C3 or C4) within the EUCOM AOR, traverses the Unit-to-Soldier Link to see personnel fill rate alongside equipment readiness, and identifies that units with fill rates below 70% consistently show C3/C4 designations.
 
 ---
 
@@ -773,9 +992,11 @@ Example: The curated SITREP dataset has RID `ri.foundry.main.dataset.4a2b9c1d-..
 ---
 
 **Slate**
-*General Equivalent: Custom web application builder; HTML/CSS/JS application framework*
-Definition: A Foundry application builder that provides full HTML, CSS, and JavaScript customization — more flexible than Workshop but requiring more development effort. Slate supports custom branding, complex layout, external API integration, and public-facing deployments accessible without Foundry authentication. Use Slate when Workshop's widget library cannot achieve the required design or when the application needs to be accessible to non-Foundry users.
-Example: A public-facing readiness summary portal for NATO partners is built in Slate — using custom CSS matching NATO branding, querying approved OSDK endpoints, and accessible at a public URL without requiring a Foundry account.
+*General Equivalent: (LEGACY) Custom web application builder; HTML/CSS/JS application framework — superseded*
+Definition: (LEGACY) Foundry's original custom application builder using HTML, CSS, and JavaScript. Slate allowed full layout customization and public-facing deployments accessible without Foundry authentication. **Slate is superseded and should not be used for new development.** Internal Foundry applications should be built in Workshop. Public-facing applications that require access outside Foundry authentication should be built using OSDK-backed external applications (React or other frameworks consuming Ontology data via the OSDK). Existing Slate applications should be migrated to Workshop or OSDK-backed apps at the next available opportunity.
+NOTE: Do not use Slate for new development. Select Workshop for internal Foundry apps; select OSDK-backed external applications for public-facing portals.
+Example: A legacy readiness portal built in Slate is being migrated to a Workshop application for internal staff and an OSDK-backed React app for coalition partner access — eliminating the maintenance burden and aligning with current platform architecture.
+*See also: Workshop, OSDK (Ontology SDK)*
 
 ---
 
@@ -783,6 +1004,7 @@ Example: A public-facing readiness summary portal for NATO partners is built in 
 *General Equivalent: Full refresh; complete data replacement; non-incremental write*
 Definition: A Foundry dataset transaction type that replaces the entire contents of a dataset with the new data. After a SNAPSHOT transaction, only the data from that transaction is visible — all prior data is superseded. SNAPSHOT is the simplest transaction type and is always consistent (no partial state), but it means historical data is not retained in the dataset view. Use SNAPSHOT for reference tables and full-refresh pipelines.
 Example: The master unit reference table is written as a SNAPSHOT every Sunday — the full, current list of units replaces the previous week's list, ensuring no stale unit entries persist in downstream joins.
+*See also: Append Transaction, Transaction (Foundry), @incremental, Pipeline Builder*
 
 ---
 
@@ -790,6 +1012,7 @@ Example: The master unit reference table is written as a SNAPSHOT every Sunday �
 *General Equivalent: Batch data processing function; pipeline step (standard/full-access)*
 Definition: The base Foundry Python decorator for writing a transform — the most flexible variant, giving full access to file systems, metadata APIs, and both Spark and Pandas compute. `@transform` receives Input and Output objects and the developer reads data and writes results using those objects. Use `@transform` when you need metadata access (branch name, schema, transaction details) or need to write raw files.
 Example: A `@transform` that reads the raw SITREP dataset, checks the transaction type to handle the first run differently from incremental runs, and writes both a cleaned Parquet file and a metadata JSON file to the output dataset.
+*See also: @transform_df, @incremental, @check, Code Repository*
 
 ---
 
@@ -797,6 +1020,7 @@ Example: A `@transform` that reads the raw SITREP dataset, checks the transactio
 *General Equivalent: Batch data processing function; simplified DataFrame transform*
 Definition: A simplified Foundry Python decorator for writing a transform where the function receives input data directly as Spark DataFrames and returns the output as a Spark DataFrame. Foundry handles the read and write automatically. `@transform_df` is the recommended syntax for most transforms — it is cleaner than `@transform` and sufficient for the majority of data engineering tasks.
 Example: A `@transform_df` that receives the raw personnel dataset as a DataFrame, filters out inactive personnel, standardizes rank abbreviations, and returns the cleaned DataFrame — which Foundry automatically writes to the staging personnel dataset.
+*See also: @transform, @incremental, Pipeline Builder, Code Repository*
 
 ---
 
@@ -804,6 +1028,13 @@ Example: A `@transform_df` that receives the raw personnel dataset as a DataFram
 *General Equivalent: Versioned write; dataset commit; immutable data snapshot*
 Definition: A versioned write operation against a Foundry dataset that creates an immutable audit record of the change. Every time data is written to a Foundry dataset, a transaction is created with a type (SNAPSHOT, APPEND, UPDATE, DELETE), a timestamp, and a unique transaction RID. The transaction history is the complete audit log of all changes to a dataset. Transactions enable rollback, time-travel queries, and incremental transform tracking.
 Example: After the nightly SITREP pipeline build, the curated SITREP dataset shows a new SNAPSHOT transaction timestamped 0617Z — providing an auditable record that the data was updated at that time, by that build, and enabling rollback to the prior version if the build contained bad data.
+
+---
+
+**Variable Chaining**
+*General Equivalent: Cascading filters; dependent dropdowns; hierarchical filter logic*
+Definition: A Workshop design pattern where selecting a value in one variable or filter widget dynamically constrains the available options or scope of a dependent variable — creating cascading filter logic driven by user selections. Variable chaining reduces cognitive load on analysts by automatically narrowing downstream options based on upstream selections, and ensures that filter combinations remain logically consistent.
+Example: A Workshop readiness dashboard uses variable chaining so that selecting a Corps in the first filter automatically limits the Division dropdown to only divisions under that Corps, and selecting a Division limits the Brigade dropdown to that Division's subordinate brigades — preventing nonsensical cross-echelon filter combinations.
 
 ---
 

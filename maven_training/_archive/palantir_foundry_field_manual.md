@@ -1,3 +1,10 @@
+> **DEPRECATED — March 2026**
+> This document has been superseded by the Maven Training Curriculum TM series.
+> Content distributed to: TM-10, TM-20, TM-30, TM-40A through TM-40F, and Data Literacy Technical Reference.
+> Do not use for new training. Reference `maven_training/README.md` for current publications.
+
+---
+
 # Palantir Foundry Developer Field Manual
 ## USAREUR-AF Operational Data Team — Maven Smart System Context
 ### Version 1.0 | Compiled March 2026
