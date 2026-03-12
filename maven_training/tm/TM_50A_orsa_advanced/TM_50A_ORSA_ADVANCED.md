@@ -17,11 +17,17 @@ Wiesbaden, Germany
 
 2026
 
+**Version 1.0 | March 2026**
+
 **PREREQUISITE PUBLICATIONS:** TM-40A, Operations Research/Systems Analysis (required). Completion of, or concurrent enrollment in, a graduate-level OR/MS program or equivalent operational ORSA experience (18+ months) strongly recommended. For AI/ML integration topics, see TM-40B (AI Engineer) and TM-40C (ML Engineer).
 
 **DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
 
 **AUTHORITY:** This publication is issued under authority of the USAREUR-AF C2 Data and Analytics Office (C2DAO). It implements Army CIO Memorandum, Data and Analytics Policy (April 2024) and aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025). Reference learn-data.armydev.com for current platform documentation.
+
+---
+
+> **PREREQUISITE WARNING:** TM-50A is **not required** for the majority of ORSA billets. It is intended for personnel with demonstrated proficiency at TM-40A level who are actively assigned to advanced quantitative modeling, decision analysis, or platform architecture roles on MSS. If you are uncertain whether TM-50A applies to your billet, consult your supervisor or the unit data steward before proceeding.
 
 ---
 

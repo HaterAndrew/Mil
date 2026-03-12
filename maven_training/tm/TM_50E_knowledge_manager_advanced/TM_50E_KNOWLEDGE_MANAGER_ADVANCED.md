@@ -1,23 +1,27 @@
----
-TM-50E
-TECHNICAL MANUAL
-ADVANCED KNOWLEDGE MANAGEMENT
-MAVEN SMART SYSTEM (MSS)
-USAREUR-AF OPERATIONAL DATA TEAM
+# TM-50E
+## TECHNICAL MANUAL
+## ADVANCED KNOWLEDGE MANAGEMENT
+## MAVEN SMART SYSTEM (MSS)
+## USAREUR-AF OPERATIONAL DATA TEAM
 
-HEADQUARTERS
-UNITED STATES ARMY EUROPE AND AFRICA
+**HEADQUARTERS**
+**UNITED STATES ARMY EUROPE AND AFRICA**
 Wiesbaden, Germany
 
 2026
 
-UNCLASSIFIED
-Distribution: Approved for public release; distribution is unlimited.
----
+**Version 1.0 | March 2026**
 
-**PREREQUISITE PUBLICATIONS:** TM-40E, Knowledge Manager (required); TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; ADRP 1, Data Literacy (all required)
+**UNCLASSIFIED**
+Distribution: Approved for public release; distribution is unlimited.
+
+**PREREQUISITE PUBLICATIONS:** TM-40E, Knowledge Manager (required); TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (all required)
 
 **DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
+
+---
+
+> **PREREQUISITE WARNING:** TM-50E is **not required** for the majority of knowledge manager billets. It is intended for personnel with demonstrated proficiency at TM-40E level who are actively designing enterprise-level knowledge architectures, federated repositories, or cross-echelon KM systems. If you are uncertain whether TM-50E applies to your billet, consult your supervisor or the unit data steward before proceeding.
 
 ---
 
@@ -431,7 +435,7 @@ Within a single network environment, federating knowledge across Corps, Division
 
 6. **Build the Theater consolidated repository.** Configure as a Foundry Object Set drawing from the validated, normalized dataset. Apply access controls: all authenticated USAREUR-AF users on NIPR can read UNCLASSIFIED content; unit-restricted content visible only to contributing unit plus Theater KM.
 
-7. **Configure cross-unit search interface.** Use Quiver (Foundry's semantic search) configured to index the Theater consolidated repository. Build a Workshop search interface that allows consumers to search by: free text, `operationalDomain` (filter), `exercise` (filter), `unit` (filter), `classification` (enforced by user access, not filter), date range. Surface the top-5 most-relevant `Lesson` objects with a link to the full record and to any associated `AAR` or `Exercise` objects.
+7. **Configure cross-unit search interface.** Use Quiver (Foundry's Ontology browser for exploring, filtering, and traversing Object Types by property values) configured to index the Theater consolidated repository. Build a Workshop search interface that allows consumers to search by: free text, `operationalDomain` (filter), `exercise` (filter), `unit` (filter), `classification` (enforced by user access, not filter), date range. Surface the top-5 most-relevant `Lesson` objects with a link to the full record and to any associated `AAR` or `Exercise` objects.
 
 8. **Test with representative data before production.** Seed the staging areas with 20-30 representative lessons from each contributing unit. Run the full pipeline. Verify: all valid objects reach the Theater repository, invalid objects appear in the rejection queue with correct error messages, the Workshop search interface returns expected results for known-good queries.
 
@@ -1143,6 +1147,8 @@ Beyond reacting to specific departures, the Theater KM Architect must design the
 **CONDITIONS:** You are the Theater KM Architect. Subordinate Corps, Division, and Brigade KMs operate in relative isolation. Knowledge management approaches vary across units, creating federation challenges and quality inconsistencies. You are directed to establish a Theater-level KM Community of Practice.
 
 **STANDARDS:** Upon completion, the CoP will have: a defined membership, a regular meeting cadence, a standards library accessible to all members, a peer consultation mechanism, and a new-KM onboarding pathway.
+
+**EQUIPMENT:** MSS Foundry access (Workshop, Ontology Manager), approved collaboration platform for virtual synchronization, Theater KM Schema Registry, TM-40E and TM-50E publications, G1 personnel roster.
 
 **PROCEDURE:**
 

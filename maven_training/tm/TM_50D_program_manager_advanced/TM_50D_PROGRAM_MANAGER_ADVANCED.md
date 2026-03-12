@@ -17,11 +17,17 @@ Wiesbaden, Germany
 
 2026
 
+**Version 1.0 | March 2026**
+
 **PREREQUISITE PUBLICATIONS:** TM-40D, Program Manager (Technical) (required). Graduates of TM-40D who have managed at least one full-lifecycle MSS data or AI project from initiation through production release, with demonstrated proficiency in Agile delivery, stakeholder management, and MSS platform governance. Familiarity with TM-40A (ORSA), TM-40B (AI Engineer), TM-40C (ML Engineer), TM-40E (Knowledge Manager), and TM-40F (Software Engineer) track content strongly recommended.
 
 **DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
 
 **AUTHORITY:** This publication is issued under authority of the USAREUR-AF C2 Data and Analytics Office (C2DAO). It implements Army CIO Memorandum, Data and Analytics Policy (April 2024) and aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025). Reference learn-data.armydev.com for current platform documentation.
+
+---
+
+> **PREREQUISITE WARNING:** TM-50D is **not required** for the majority of technical PM billets. It is intended for personnel with demonstrated proficiency at TM-40D level who have managed at least one full-lifecycle MSS project through production release and are actively leading multi-track data/AI programs. If you are uncertain whether TM-50D applies to your billet, consult your supervisor or the unit data steward before proceeding.
 
 ---
 
@@ -220,6 +226,8 @@ Inter-team dependencies are the primary source of program-level risk. A single u
 **CONDITIONS:** PI Planning is complete. A program tracking workspace exists on MSS Workshop.
 
 **STANDARDS:** The dependency register is current within 48 hours of any status change. Each dependency has a single owner who is accountable for its resolution. All blocked dependencies are escalated to the program manager within one sprint of blocking.
+
+**EQUIPMENT:** MSS Workshop (program tracking workspace), dependency register object type in program ontology, access for all team leads to update dependency status.
 
 **PROCEDURE:**
 
@@ -507,6 +515,8 @@ The goal is not to micromanage teams through metrics. The goal is to understand 
 
 **STANDARDS:** Baseline is established when: all eight metrics in Table 5-1 are calculated for the past two PIs; data is stored in the program tracker; a trend chart is available for velocity, cycle time, and predictability.
 
+**EQUIPMENT:** MSS program tracker (sprint review records, feature completion data), MSS Workshop (charting and visualization), program ontology (metrics storage).
+
 **PROCEDURE:**
 
 1. Collect sprint review data for all teams for the past two PIs. If sprint data was not recorded, reconstruct from feature completion dates in the tracker.
@@ -608,6 +618,8 @@ Not all technical debt is equal. Classify debt before prioritizing it.
 
 **STANDARDS:** Assessment is complete when: all active products have been assessed against the debt classification framework; each identified debt item is categorized, sized (story points or days), and assigned a risk rating; the aggregate debt backlog is documented in the program tracker; a prioritized debt reduction roadmap covers the next two PIs.
 
+**EQUIPMENT:** MSS program tracker (product inventory, backlog), debt classification framework (Table 6-1), access to product documentation for each active MSS product, technical leads (TM-40A through TM-40F) for each product.
+
 **PROCEDURE:**
 
 1. **Assemble the assessment team.** The debt assessment requires input from the technical practitioners who built and maintain each product. Schedule a half-day workshop with TM-40A through TM-40F leads for each active product. The PM does not lead the technical assessment — they facilitate it and document the outputs.
@@ -664,6 +676,8 @@ This decision recurs constantly at the program level. A new stakeholder requirem
 
 **STANDARDS:** Decision is documented when: all three options have been evaluated against the framework in Table 6-2; a recommendation is made with supporting rationale; the decision is recorded in the program backlog and communicated to the requesting stakeholder with an expected delivery timeline.
 
+**EQUIPMENT:** Build/Buy/Configure decision framework (Table 6-2), MSS program backlog in program tracker, access to relevant technical leads (TM-40B, TM-40C, TM-40E, TM-40F), C2DAO program inventory for existing procurement options.
+
 **PROCEDURE:**
 
 1. Brief the requirement to the relevant technical leads (TM-40B, TM-40C, TM-40E, TM-40F as appropriate). Ask each to assess: can this requirement be met by an existing platform feature? Rate: Yes (full fit), Partial (80% fit with acceptable gaps), No (platform feature inadequate).
@@ -708,6 +722,8 @@ A Palantir task order defines a set of deliverables, a schedule, and a price. Th
 
 **STANDARDS:** Acceptance criteria are established when: each deliverable in the PWS has written acceptance criteria that are specific, measurable, and testable; criteria have been reviewed by the relevant TM-40 technical lead; criteria are shared with the Palantir delivery lead before work begins.
 
+**EQUIPMENT:** Performance Work Statement (PWS) for the task order, MSS program tracker (task order deliverable object), relevant TM-40 technical leads, UDRA v1.1 data governance standards, MSS naming and governance standards.
+
 **PROCEDURE:**
 
 1. Read the PWS deliverable descriptions. For each deliverable, identify: (a) what the deliverable is (document, pipeline, dashboard, trained model, API), (b) what "done" means (specific functional requirements, performance thresholds, data format specifications), and (c) what quality standards apply (documentation coverage, test coverage, adherence to MSS naming conventions and data governance standards per UDRA v1.1).
@@ -727,6 +743,8 @@ A Palantir task order defines a set of deliverables, a schedule, and a price. Th
 **CONDITIONS:** Palantir or contractor has submitted a task order deliverable for government acceptance. Acceptance criteria from Task 7-2A are documented.
 
 **STANDARDS:** Acceptance review is complete when: all acceptance criteria have been tested; findings are documented; the deliverable is either formally accepted (with documented rationale) or rejected (with specific deficiencies listed and a remediation timeline agreed).
+
+**EQUIPMENT:** Documented acceptance criteria (from Task 7-2A), the submitted deliverable (access to Foundry workspace, document, or system as applicable), relevant TM-40 technical lead for evaluation, MSS program tracker (acceptance event documentation).
 
 **PROCEDURE:**
 
@@ -844,6 +862,8 @@ Military organizations rotate personnel. A program that is not designed to absor
 
 **STANDARDS:** Continuity is established when: all critical knowledge (pipelines, business logic, ontology decisions, stakeholder relationships) is documented; an onboarding package exists for each role; a knowledge transfer protocol is defined for departing personnel.
 
+**EQUIPMENT:** MSS program tracker (program decision record, documentation workspace), MSS Foundry (product documentation workspaces for all active products), role-specific onboarding template, current team roster.
+
 **PROCEDURE:**
 
 1. **Conduct a knowledge audit.** For each person on the program, ask: "If this person left tomorrow, what would we not be able to do?" Document the answer. Any capability that lives only in one person's head is a continuity risk.
@@ -867,6 +887,8 @@ Military organizations rotate personnel. A program that is not designed to absor
 **CONDITIONS:** A TM-40D PM is under program manager supervision for at least one PI.
 
 **STANDARDS:** Assessment is complete when: the PM's capability profile has been evaluated against TM-40D competencies; development priorities are identified; a 90-day development plan is documented and agreed.
+
+**EQUIPMENT:** TM-40D competency framework (Table 8-4), the PM's sprint delivery record for the past PI (from program tracker), development plan template, program tracker (to document and store the development plan).
 
 **PROCEDURE:**
 
@@ -923,216 +945,6 @@ TM-50D program managers set the standards that all TM-40D PMs on the program are
 | Dependency flagging | All dependencies on other teams or contractors logged in the dependency register at PI Planning; status updated at each Program Sync |
 | Metrics reporting | Velocity and predictability reported at each sprint review; no estimate revisions accepted after sprint start without program manager notification |
 | Escalation | Any risk that will prevent PI commitment from being met is escalated to the program manager within the sprint it is identified — not at PI Review |
-
----
-
-# APPENDIX A — PROGRAM HEALTH ASSESSMENT CHECKLIST
-
-## A-1. Purpose
-
-The Program Health Assessment (PHA) is a structured review of program status across seven dimensions. Conduct the PHA quarterly — or after any significant program event (major release, leadership change, team restructure, contract modification). The PHA is the program manager's equivalent of a unit readiness review: an honest, evidence-based assessment of what is working and what is not.
-
-## A-2. Assessment Dimensions and Criteria
-
-**Dimension 1: Delivery Performance**
-
-| Criterion | Green | Amber | Red |
-|-----------|-------|-------|-----|
-| PI predictability (last 2 PIs) | >85% | 70-85% | <70% |
-| Velocity trend (last 6 sprints) | Stable or improving | Minor decline (<15%) | Sustained decline (>15%) or high variance |
-| Escaped defect rate | <2 per PI per team | 2-5 per PI per team | >5 per PI per team |
-| Blocked time per sprint | <10% of capacity | 10-20% of capacity | >20% of capacity |
-
-**Dimension 2: Stakeholder Health**
-
-| Criterion | Green | Amber | Red |
-|-----------|-------|-------|-----|
-| GO/SES engagement | Regular access; program is on their radar | Infrequent access; interest declining | No recent GO/SES engagement; program invisible at senior level |
-| Requirements clarity | All active features have clear, validated requirements | Some features have ambiguous requirements | Major active features have no validated requirements |
-| User adoption | Active users growing; adoption metrics positive | Flat adoption; known resistance in one or more units | Declining users; active pushback from operational units |
-| Stakeholder satisfaction | Positive feedback from key stakeholders; complaints rare and addressed | Mixed feedback; unresolved complaints present | Significant negative stakeholder feedback; trust issues with key relationships |
-
-**Dimension 3: Technical Health**
-
-| Criterion | Green | Amber | Red |
-|-----------|-------|-------|-----|
-| Technical debt level | Debt is tracked; <20% of capacity allocated to debt is not being used | Debt is tracked but growing; allocation insufficient | Debt is untracked, unquantified, or consuming >30% of capacity |
-| Production stability | Fewer than 2 production incidents per month; all resolved within SLA | 2-5 incidents per month; SLA occasionally missed | Frequent production incidents; recurring root causes unaddressed |
-| Documentation coverage | All production pipelines and critical business logic documented | Most documentation current; some gaps | Significant undocumented production systems |
-| Test coverage | All production transforms have automated data quality checks | Some gaps in test coverage; no recent test failures from gaps | Known gaps in test coverage; uncaught errors in production |
-
-**Dimension 4: Team Health**
-
-| Criterion | Green | Amber | Red |
-|-----------|-------|-------|-----|
-| Team stability (rolling 6 months) | <25% team membership change | 25-40% team membership change | >40% team membership change; continuity impacted |
-| Morale indicators | Teams meeting, delivering, retrospecting with positive engagement | Some teams showing low engagement; PM has plan | Visible morale issues; attrition risk; retrospectives not being held |
-| Knowledge continuity | All critical knowledge documented; onboarding packages current | Most knowledge documented; some single points of failure | Multiple undocumented single points of failure; rotation risk is high |
-| PM development | All TM-40D PMs have development plans; assessments current | Most PMs assessed; some development plans stale | No PM assessments; no development activity |
-
-**Dimension 5: Vendor/Contractor Health**
-
-| Criterion | Green | Amber | Red |
-|-----------|-------|-------|-----|
-| Task order delivery | All deliverables on schedule; acceptance criteria met on first submission | 1-2 deliverables late or requiring rework | Multiple deliverables overdue or failing acceptance |
-| FDE engagement quality | FDE is proactive, technically competent, aligned to government priorities | FDE engagement is adequate but reactive | FDE is disengaged, technically misaligned, or churning |
-| Performance documentation | All acceptance events documented; performance record current | Some documentation gaps; no major events undocumented | Significant performance events undocumented; record incomplete |
-
-**Dimension 6: Portfolio Coherence**
-
-| Criterion | Green | Amber | Red |
-|-----------|-------|-------|-----|
-| Cross-product integration | Products share common ontology objects; data is consistent across products | Some inconsistency across products; integration gaps identified and planned | Products are siloed; no common data model; conflicting definitions between dashboards |
-| Dependency management | All inter-team dependencies tracked and current | Dependency register exists but some entries stale | No dependency register; dependencies discovered at impact |
-| Build/buy/configure discipline | All significant investment decisions documented; configure-first principle enforced | Most decisions documented; a few undocumented build decisions | Pattern of building what could be configured; undocumented decision making |
-
-**Dimension 7: Policy Compliance**
-
-| Criterion | Green | Amber | Red |
-|-----------|-------|-------|-----|
-| Data governance | All products comply with UDRA v1.1 data management requirements | Most products compliant; minor gaps being addressed | Known compliance gaps unaddressed; no remediation plan |
-| Access management | All Foundry project access reviewed in last 90 days; least-privilege enforced | Access reviewed but minor exceptions present | Access not reviewed; over-permissioned accounts present |
-| Army CIO policy | All AI-assisted products comply with Army CIO Memo (April 2024) | Compliance largely maintained; minor gaps | Known AI products out of compliance with Army CIO policy |
-
-## A-3. PHA Scoring and Action
-
-**Table A-1. PHA Overall Health Rating**
-
-| Overall Rating | Criteria | Action |
-|---------------|----------|--------|
-| GREEN | All 7 dimensions Green or Amber | Continue current approach; maintain monitoring |
-| AMBER | 1-3 dimensions Red, or majority Amber | Present mitigation plan to C2DAO within 2 weeks; track recovery at next PHA |
-| RED | 4+ dimensions Red, or any critical dimension (Delivery, Technical, Team) Red | Escalate to C2DAO leadership immediately; conduct root cause analysis; present recovery plan within 1 week |
-
----
-
-# APPENDIX B — DATA PRODUCT LIFECYCLE AND RETIREMENT GUIDE
-
-## B-1. The Data Product Lifecycle
-
-Every MSS data product has a lifecycle: it is conceived, built, released, maintained, evolved, and eventually retired. The TM-50D program manager is responsible for managing this lifecycle deliberately — not allowing products to drift into obsolescence while remaining nominally in production.
-
-**Table B-1. MSS Data Product Lifecycle Phases**
-
-| Phase | Description | PM Actions |
-|-------|-------------|-----------|
-| Concept | Requirement identified; feasibility assessed; build decision made | Document requirement; conduct build/buy/configure review; assign product owner |
-| Build | Active development; feature delivery through Agile sprints | Sprint oversight; stakeholder review; Definition of Done enforcement |
-| Production Release | Product deployed to operational users | Release approval; user communication; training delivery |
-| Active Maintenance | Product in production; bug fixes and minor enhancements | SLA monitoring; defect management; periodic enhancement PI allocation |
-| Enhancement | Major new capability added to existing product | New PI objectives; stakeholder requirements; version management |
-| Sunset Pending | Product identified for retirement; replacement being built or need eliminated | User communication; transition planning; data export/archive decisions |
-| Retired | Product removed from production; no longer supported | Archive decision; documentation preservation; user confirmation |
-
-## B-2. Version Management
-
-MSS data products — like software — should be versioned. Versioning enables rollback, enables communication about what changed, and creates a record for audit and compliance.
-
-**Table B-2. MSS Product Version Numbering Convention**
-
-| Version Change | Convention | Example | When to Use |
-|----------------|-----------|---------|-------------|
-| Major release | Increment first number | 1.0 → 2.0 | Significant schema change; breaking change to downstream consumers; new product architecture |
-| Minor release | Increment second number | 1.3 → 1.4 | New features; non-breaking changes; significant bug fixes |
-| Patch | Increment third number | 1.4.1 → 1.4.2 | Bug fixes; data quality corrections; minor configuration updates |
-
-Maintain a changelog in the product's MSS documentation workspace. Each version entry includes: version number, release date, changes summary, breaking changes (if any), and downstream products affected.
-
-> **NOTE: "Breaking change" for a data product means any change that requires downstream consumers (other pipelines, dashboards, models) to modify their configuration or code to continue functioning. All breaking changes require notification to downstream product owners at least two sprint intervals before release.**
-
-## B-3. Product Retirement Procedure
-
-### TASK B-3A: RETIRE AN MSS DATA PRODUCT
-
-**CONDITIONS:** A decision has been made to retire an MSS product from production. The decision has been reviewed by C2DAO and documented. A replacement capability exists or the operational need has been eliminated.
-
-**STANDARDS:** Retirement is complete when: all active users have been notified and confirmed transition; downstream dependencies have been eliminated or migrated; data has been archived per retention policy; product access has been revoked; retirement is documented in the program record.
-
-**TIMELINE:** Minimum 90-day retirement process from decision to decommission. Complex products with many downstream dependencies may require 180 days.
-
-**PROCEDURE:**
-
-1. **Map all dependencies (T-90 days minimum).** Identify every product, pipeline, dashboard, or analytical workflow that consumes data from the retiring product. For each dependency: document the consuming product, the specific data consumed, the operational impact of loss, and the migration path.
-
-2. **Communicate the retirement decision to users (T-90 days).** Issue a formal notification to all identified users. Include: the product being retired, the reason for retirement, the retirement date, the replacement capability (if any) and how to access it, and a point of contact for questions. Communicate through multiple channels: email, unit brief, helpdesk ticket, and the product's Workshop page (add a prominent retirement banner).
-
-3. **Support transition (T-90 to T-30 days).** Conduct transition training for users migrating to a replacement capability. Provide a parallel running period where both the retiring product and the replacement are available simultaneously, if feasible. This reduces the risk of a hard cutover.
-
-4. **Migrate downstream pipelines and products (T-90 to T-30 days).** For each identified downstream dependency, assign a technical lead to execute the migration. Track migration progress in the program tracker. No dependency may be left unresolved at the time of retirement.
-
-5. **Conduct user confirmation (T-30 days).** Contact the data point of contact for each identified user unit. Confirm: they have been briefed on the retirement; they have completed or planned the transition to the replacement; they have no unresolved questions. Document confirmation in writing.
-
-6. **Archive product data (T-14 days).** Determine the data retention requirement for the product's output data. Consult with C2DAO and the unit data leads. For operationally significant historical data, execute an archive to a designated retention workspace per UDRA v1.1 requirements.
-
-7. **Revoke access and decommission (T-0).** Revoke all user access to the retiring product workspace. Disable production pipelines. Archive the Foundry project. Do not delete — decommission by moving to an archive state with read-only access for the program manager.
-
-8. **Document the retirement (T+5 days).** Publish a retirement notice to the program tracker and the product documentation workspace. Include: retirement date, reason, replacement capability, downstream products migrated, data archive location (if applicable), and approving authority.
-
-> **WARNING: Do not decommission an MSS product before all downstream dependencies have been migrated and confirmed. A pipeline or dashboard that silently loses its input data and continues to serve stale data to operational users is worse than an error message — it creates false confidence in outdated information. Confirm every dependency is resolved before executing the T-0 decommission step.**
-
-> **CAUTION: Data archived at retirement must comply with the applicable records retention schedule and C2DAO data governance policy. Do not archive operationally sensitive data to a workspace with broader access than the original production product. Confirm archive access permissions with C2DAO before executing the archive.**
-
----
-
-# GLOSSARY
-
-**AIP (Artificial Intelligence Platform).** Palantir's framework for building AI-assisted workflows on Foundry, including language model integrations and AI-driven application development. TM-50D program managers oversee TM-40B resources who build and maintain AIP-integrated products.
-
-**Army CIO Memo (April 2024).** Army Chief Information Officer Memorandum on Data and Analytics Policy (April 2024). Establishes Army-wide requirements for data management, AI governance, and data platform standards. All MSS products must comply.
-
-**Blocked Time.** Sprint capacity consumed by tasks that cannot progress due to unresolved dependencies, missing information, or access issues. Measured as a fraction of total sprint capacity. High blocked time indicates dependency management failure.
-
-**Build/Buy/Configure Decision.** A structured analysis of how to meet a capability requirement: by writing custom code (Build), using existing platform features with configuration (Configure), or procuring an external capability (Buy). TM-50D program managers govern this decision for all significant investments.
-
-**C2DAO (C2 Data and Analytics Office).** USAREUR-AF office responsible for MSS governance, data policy, platform oversight, and theater-level data capability management. The C2DAO Chief is the primary internal senior stakeholder for the MSS program.
-
-**Cycle Time.** The elapsed time from when a feature is started (work begun) to when it is delivered (accepted and released). A key process efficiency metric. Long cycle time indicates work-in-progress accumulation, blockages, or large batch sizes.
-
-**Definition of Done (DoD).** The minimum quality standards a feature must meet to be considered complete and releasable. Defined in TM-40D Appendix B. TM-50D program managers enforce DoD compliance across all teams.
-
-**Dependency Register.** The program-level tracking artifact that documents all inter-team, inter-product, and external dependencies — including owner, status, due date, and risk rating. Maintained by the program manager and updated by team leads.
-
-**Escaped Defect.** A defect (bug, data quality error, incorrect business logic) that reaches production without being caught during development or pre-release testing. Tracked per team per PI. High escaped defect rates indicate insufficient test coverage or Definition of Done compliance.
-
-**FDE (Forward Deployed Engineer).** A Palantir employee embedded with an operational customer to provide technical expertise, platform architecture guidance, and hands-on development support. Not a government employee; subject to task order terms.
-
-**Feature Team.** A cross-functional Agile team that owns a product or product area end-to-end, from requirements through delivery and sustainment. The recommended team type for stream-aligned MSS product delivery.
-
-**MSS (Maven Smart System).** The Palantir Foundry instance deployed for USAREUR-AF and EUCOM operational data management, analytics, and AI capability. The operational platform for all MSS technical tracks.
-
-**Ontology.** The MSS data model: the structured representation of operational entities (units, personnel, equipment, tasks) as object types with properties and links. Owned by TM-40E Knowledge Managers. TM-50D program managers govern ontology change management at the program level.
-
-**PI (Program Increment).** A fixed time interval (typically 8-12 weeks) in which a scaled Agile program plans, executes, and reviews a set of committed objectives. The primary planning unit for multi-team MSS programs.
-
-**PI Objectives (PIOs).** The measurable outcomes a program commits to deliver within a Program Increment. Set at PI Planning; reviewed at PI Review. The primary accountability metric for program-level delivery.
-
-**PI Planning.** The scaled Agile ceremony where all teams in a program align on objectives, identify dependencies, and commit to sprint plans for the upcoming PI. The most important program management ceremony.
-
-**Platform Team.** A team that owns shared infrastructure, ontology governance, and data quality standards across multiple feature teams. Enables feature teams to build on a stable foundation without duplicating infrastructure work.
-
-**Predictability.** The ratio of features committed at PI Planning to features actually delivered by PI Review. A program-level metric for planning accuracy and commitment reliability. Target: >85%.
-
-**Program Health Assessment (PHA).** A quarterly structured review of program status across seven dimensions: delivery performance, stakeholder health, technical health, team health, vendor/contractor health, portfolio coherence, and policy compliance. Documented in Appendix A.
-
-**PWS (Performance Work Statement).** The contract document that specifies deliverables, standards, and schedule for contractor performance under a task order. The basis for acceptance criteria development.
-
-**SAFe (Scaled Agile Framework).** A widely-used framework for applying Agile methods to programs with multiple teams. TM-50D draws on SAFe concepts (PI Planning, team synchronization, ART) without requiring strict SAFe implementation.
-
-**Stream-Aligned Team.** A feature team aligned to a specific user workflow or operational domain (e.g., readiness, logistics, intelligence). Receives work from a single value stream. Recommended team type for USAREUR-AF MSS programs.
-
-**Task Order.** A contractual instrument that authorizes and funds a specific set of deliverables from a contractor (e.g., Palantir) against a base contract or vehicle. TM-50D program managers manage task order delivery and conduct formal acceptance reviews.
-
-**Technical Debt.** The accumulated cost of earlier shortcuts, suboptimal design decisions, or deferred work in a codebase or data product. Classified by type (architectural, data quality, documentation, test coverage, dependency, configuration). Managed as a program-level risk.
-
-**Throughput.** The number of features (not story points) delivered per PI per team. A counting metric for delivery volume. Useful for cross-team comparisons because it is not affected by estimation calibration differences between teams.
-
-**UDRA v1.1 (Unified Data Reference Architecture, version 1.1, February 2025).** The Army's technical reference architecture for data management, platform governance, and data product standards. All MSS products must align to UDRA v1.1 requirements for data classification, access management, and lifecycle management.
-
-**Velocity.** The number of story points a team delivers per sprint, averaged over recent sprints. A planning tool for estimating future capacity. Not a performance metric for individuals. See Table 5-1 and Section 5-3.
-
-**Vendor Lock-In.** The degree to which a product or capability is dependent on a specific vendor's proprietary features, making future migration costly. Managed through the build/buy/configure decision framework and through designing products against open standards where feasible.
-
-**WIP Limit (Work-In-Progress Limit).** A constraint on the number of tasks or features that can be actively in progress simultaneously within a sprint or on a team's board. WIP limits reduce context switching and improve cycle time. TM-50D program managers encourage WIP limit discipline across all teams.
 
 ---
 
@@ -1197,6 +1009,8 @@ The MSS program operates under a layered policy framework. TM-50D program manage
 
 **STANDARDS:** Review is complete when: all active products have been assessed against applicable policies; compliance gaps are documented with remediation plans; findings are reported to C2DAO leadership.
 
+**EQUIPMENT:** MSS program tracker (product inventory), Army CIO Memo (April 2024), UDRA v1.1 (February 2025), C2DAO data governance policy, Foundry workspace access list (for access review), compliance status template.
+
 **PROCEDURE:**
 
 1. **Inventory all active MSS products.** For each product, document: the type (dashboard, pipeline, ML model, AI-assisted workflow), the data classification level of inputs and outputs, whether the product uses AI-assisted features (AIP, ML models), and whether it ingests data from external feeds.
@@ -1230,6 +1044,8 @@ Changes to production MSS systems must follow a documented change control proces
 **CONDITIONS:** A major change to a production pipeline, ontology, or dashboard has been approved by C2DAO. Downstream consumers have been identified.
 
 **STANDARDS:** Change is complete when: all downstream consumers have been notified and have confirmed readiness; change has been tested in a non-production environment; rollback procedure is documented; change has been executed within the approved maintenance window; change is logged in the program change record.
+
+**EQUIPMENT:** MSS Foundry (development/staging environment, production environment), program tracker (change record), list of downstream consumer product owners, C2DAO approval documentation, rollback procedure template.
 
 **PROCEDURE:**
 
@@ -1426,6 +1242,8 @@ The program manager's job is to ensure this does not happen. The handoff from de
 
 **STANDARDS:** Handoff is complete when: the sustainment team lead can independently describe the model's inputs, outputs, and known limitations; a monitoring dashboard exists and the sustainment team can interpret its alerts; the retraining procedure has been documented and walked through once with the sustainment team; the handoff has been signed off by both the development lead and the sustainment team lead.
 
+**EQUIPMENT:** MSS Foundry (model workspace, monitoring dashboard), model documentation (training data, architecture, evaluation results, retraining procedure), program tracker (product ownership record, sustainment schedule), development team lead and sustainment team lead.
+
 **PROCEDURE:**
 
 1. **Schedule a model walkthrough session.** Development lead walks the sustainment team through: training data and preprocessing logic; model architecture and hyperparameter choices; evaluation results and known failure modes; the monitoring metrics being tracked in production; the retraining trigger conditions and procedure.
@@ -1468,6 +1286,8 @@ Resource stewardship at the program level means: ensuring each team's capacity i
 **CONDITIONS:** Approaching PI Planning. A list of stakeholder requests for the upcoming PI has been compiled.
 
 **STANDARDS:** Review is complete when: available capacity per team for the upcoming PI is calculated; requested work has been prioritized against capacity; allocation across the four categories in Table 12-1 is confirmed; the capacity allocation is presented to C2DAO before PI Planning begins.
+
+**EQUIPMENT:** Team roster and leave/TDY schedules for the upcoming PI, program tracker (backlog, debt backlog, active research items), capacity allocation framework (Table 12-1), stakeholder request list, C2DAO calendar for briefing.
 
 **PROCEDURE:**
 
@@ -1562,6 +1382,8 @@ Transitions at program scale come in several forms:
 
 **STANDARDS:** Transition is complete when: the incoming leader has received a program brief; key relationships have been established; the leader's priorities for the program have been documented; a follow-up brief schedule has been established.
 
+**EQUIPMENT:** Program transition brief (prepared per Appendix D format), program one-pager (Section 13-2A), MSS program tracker (current status, roadmap, risk register), stakeholder register (Table 4-1), communication channel to the incoming leader's executive officer or aide.
+
 **PROCEDURE:**
 
 1. **Prepare the transition brief.** Structure: (1) MSS program mission and theater-level value — what operational problems MSS solves. (2) Current program health — delivery performance, top risks, key stakeholders. (3) Key products and their operational consumers — who uses what, and what decisions they support. (4) Portfolio roadmap — what is planned for the next PI and the next year. (5) Request: what the program needs from this leader to succeed (sustained investment, stakeholder access, policy guidance).
@@ -1626,6 +1448,8 @@ Palantir releases platform updates that can affect production MSS products. Some
 
 **STANDARDS:** Migration is complete before the deprecation date. All affected products have been assessed, migrated, tested, and re-released. No production product is broken by the deprecation event.
 
+**EQUIPMENT:** Palantir deprecation notice (with deprecation date and replacement feature documentation), platform dependency inventory (from Platform Team Lead), MSS Foundry (development/staging environment for migration testing), program tracker (migration backlog items), Palantir FDE (migration guidance and documentation).
+
 **PROCEDURE:**
 
 1. **Inventory affected products.** Survey all team leads: which products use the deprecated feature? Document each affected product, the specific usage, and the estimated migration effort.
@@ -1639,6 +1463,156 @@ Palantir releases platform updates that can affect production MSS products. Some
 5. **Execute and test migrations.** Teams execute migrations per the backlog items. Each migration must be tested in a development environment before being promoted to production.
 
 6. **Monitor after deprecation date.** Even with all known products migrated, monitor production for unexpected failures in the two weeks after the deprecation takes effect. Undocumented usage of deprecated features may surface as production errors.
+
+---
+
+# APPENDIX A — PROGRAM HEALTH ASSESSMENT CHECKLIST
+
+## A-1. Purpose
+
+The Program Health Assessment (PHA) is a structured review of program status across seven dimensions. Conduct the PHA quarterly — or after any significant program event (major release, leadership change, team restructure, contract modification). The PHA is the program manager's equivalent of a unit readiness review: an honest, evidence-based assessment of what is working and what is not.
+
+## A-2. Assessment Dimensions and Criteria
+
+**Dimension 1: Delivery Performance**
+
+| Criterion | Green | Amber | Red |
+|-----------|-------|-------|-----|
+| PI predictability (last 2 PIs) | >85% | 70-85% | <70% |
+| Velocity trend (last 6 sprints) | Stable or improving | Minor decline (<15%) | Sustained decline (>15%) or high variance |
+| Escaped defect rate | <2 per PI per team | 2-5 per PI per team | >5 per PI per team |
+| Blocked time per sprint | <10% of capacity | 10-20% of capacity | >20% of capacity |
+
+**Dimension 2: Stakeholder Health**
+
+| Criterion | Green | Amber | Red |
+|-----------|-------|-------|-----|
+| GO/SES engagement | Regular access; program is on their radar | Infrequent access; interest declining | No recent GO/SES engagement; program invisible at senior level |
+| Requirements clarity | All active features have clear, validated requirements | Some features have ambiguous requirements | Major active features have no validated requirements |
+| User adoption | Active users growing; adoption metrics positive | Flat adoption; known resistance in one or more units | Declining users; active pushback from operational units |
+| Stakeholder satisfaction | Positive feedback from key stakeholders; complaints rare and addressed | Mixed feedback; unresolved complaints present | Significant negative stakeholder feedback; trust issues with key relationships |
+
+**Dimension 3: Technical Health**
+
+| Criterion | Green | Amber | Red |
+|-----------|-------|-------|-----|
+| Technical debt level | Debt is tracked; <20% of capacity allocated to debt is not being used | Debt is tracked but growing; allocation insufficient | Debt is untracked, unquantified, or consuming >30% of capacity |
+| Production stability | Fewer than 2 production incidents per month; all resolved within SLA | 2-5 incidents per month; SLA occasionally missed | Frequent production incidents; recurring root causes unaddressed |
+| Documentation coverage | All production pipelines and critical business logic documented | Most documentation current; some gaps | Significant undocumented production systems |
+| Test coverage | All production transforms have automated data quality checks | Some gaps in test coverage; no recent test failures from gaps | Known gaps in test coverage; uncaught errors in production |
+
+**Dimension 4: Team Health**
+
+| Criterion | Green | Amber | Red |
+|-----------|-------|-------|-----|
+| Team stability (rolling 6 months) | <25% team membership change | 25-40% team membership change | >40% team membership change; continuity impacted |
+| Morale indicators | Teams meeting, delivering, retrospecting with positive engagement | Some teams showing low engagement; PM has plan | Visible morale issues; attrition risk; retrospectives not being held |
+| Knowledge continuity | All critical knowledge documented; onboarding packages current | Most knowledge documented; some single points of failure | Multiple undocumented single points of failure; rotation risk is high |
+| PM development | All TM-40D PMs have development plans; assessments current | Most PMs assessed; some development plans stale | No PM assessments; no development activity |
+
+**Dimension 5: Vendor/Contractor Health**
+
+| Criterion | Green | Amber | Red |
+|-----------|-------|-------|-----|
+| Task order delivery | All deliverables on schedule; acceptance criteria met on first submission | 1-2 deliverables late or requiring rework | Multiple deliverables overdue or failing acceptance |
+| FDE engagement quality | FDE is proactive, technically competent, aligned to government priorities | FDE engagement is adequate but reactive | FDE is disengaged, technically misaligned, or churning |
+| Performance documentation | All acceptance events documented; performance record current | Some documentation gaps; no major events undocumented | Significant performance events undocumented; record incomplete |
+
+**Dimension 6: Portfolio Coherence**
+
+| Criterion | Green | Amber | Red |
+|-----------|-------|-------|-----|
+| Cross-product integration | Products share common ontology objects; data is consistent across products | Some inconsistency across products; integration gaps identified and planned | Products are siloed; no common data model; conflicting definitions between dashboards |
+| Dependency management | All inter-team dependencies tracked and current | Dependency register exists but some entries stale | No dependency register; dependencies discovered at impact |
+| Build/buy/configure discipline | All significant investment decisions documented; configure-first principle enforced | Most decisions documented; a few undocumented build decisions | Pattern of building what could be configured; undocumented decision making |
+
+**Dimension 7: Policy Compliance**
+
+| Criterion | Green | Amber | Red |
+|-----------|-------|-------|-----|
+| Data governance | All products comply with UDRA v1.1 data management requirements | Most products compliant; minor gaps being addressed | Known compliance gaps unaddressed; no remediation plan |
+| Access management | All Foundry project access reviewed in last 90 days; least-privilege enforced | Access reviewed but minor exceptions present | Access not reviewed; over-permissioned accounts present |
+| Army CIO policy | All AI-assisted products comply with Army CIO Memo (April 2024) | Compliance largely maintained; minor gaps | Known AI products out of compliance with Army CIO policy |
+
+## A-3. PHA Scoring and Action
+
+**Table A-1. PHA Overall Health Rating**
+
+| Overall Rating | Criteria | Action |
+|---------------|----------|--------|
+| GREEN | All 7 dimensions Green or Amber | Continue current approach; maintain monitoring |
+| AMBER | 1-3 dimensions Red, or majority Amber | Present mitigation plan to C2DAO within 2 weeks; track recovery at next PHA |
+| RED | 4+ dimensions Red, or any critical dimension (Delivery, Technical, Team) Red | Escalate to C2DAO leadership immediately; conduct root cause analysis; present recovery plan within 1 week |
+
+---
+
+# APPENDIX B — DATA PRODUCT LIFECYCLE AND RETIREMENT GUIDE
+
+## B-1. The Data Product Lifecycle
+
+Every MSS data product has a lifecycle: it is conceived, built, released, maintained, evolved, and eventually retired. The TM-50D program manager is responsible for managing this lifecycle deliberately — not allowing products to drift into obsolescence while remaining nominally in production.
+
+**Table B-1. MSS Data Product Lifecycle Phases**
+
+| Phase | Description | PM Actions |
+|-------|-------------|-----------|
+| Concept | Requirement identified; feasibility assessed; build decision made | Document requirement; conduct build/buy/configure review; assign product owner |
+| Build | Active development; feature delivery through Agile sprints | Sprint oversight; stakeholder review; Definition of Done enforcement |
+| Production Release | Product deployed to operational users | Release approval; user communication; training delivery |
+| Active Maintenance | Product in production; bug fixes and minor enhancements | SLA monitoring; defect management; periodic enhancement PI allocation |
+| Enhancement | Major new capability added to existing product | New PI objectives; stakeholder requirements; version management |
+| Sunset Pending | Product identified for retirement; replacement being built or need eliminated | User communication; transition planning; data export/archive decisions |
+| Retired | Product removed from production; no longer supported | Archive decision; documentation preservation; user confirmation |
+
+## B-2. Version Management
+
+MSS data products — like software — should be versioned. Versioning enables rollback, enables communication about what changed, and creates a record for audit and compliance.
+
+**Table B-2. MSS Product Version Numbering Convention**
+
+| Version Change | Convention | Example | When to Use |
+|----------------|-----------|---------|-------------|
+| Major release | Increment first number | 1.0 → 2.0 | Significant schema change; breaking change to downstream consumers; new product architecture |
+| Minor release | Increment second number | 1.3 → 1.4 | New features; non-breaking changes; significant bug fixes |
+| Patch | Increment third number | 1.4.1 → 1.4.2 | Bug fixes; data quality corrections; minor configuration updates |
+
+Maintain a changelog in the product's MSS documentation workspace. Each version entry includes: version number, release date, changes summary, breaking changes (if any), and downstream products affected.
+
+> **NOTE: "Breaking change" for a data product means any change that requires downstream consumers (other pipelines, dashboards, models) to modify their configuration or code to continue functioning. All breaking changes require notification to downstream product owners at least two sprint intervals before release.**
+
+## B-3. Product Retirement Procedure
+
+### TASK B-3A: RETIRE AN MSS DATA PRODUCT
+
+**CONDITIONS:** A decision has been made to retire an MSS product from production. The decision has been reviewed by C2DAO and documented. A replacement capability exists or the operational need has been eliminated.
+
+**STANDARDS:** Retirement is complete when: all active users have been notified and confirmed transition; downstream dependencies have been eliminated or migrated; data has been archived per retention policy; product access has been revoked; retirement is documented in the program record.
+
+**EQUIPMENT:** MSS Foundry (retiring product workspace, archive workspace), program tracker (dependency map, retirement record), user registry for the retiring product, C2DAO data governance policy (retention schedule), replacement capability access (if applicable).
+
+> **NOTE: Minimum 90-day retirement process from decision to decommission. Complex products with many downstream dependencies may require 180 days.**
+
+**PROCEDURE:**
+
+1. **Map all dependencies (T-90 days minimum).** Identify every product, pipeline, dashboard, or analytical workflow that consumes data from the retiring product. For each dependency: document the consuming product, the specific data consumed, the operational impact of loss, and the migration path.
+
+2. **Communicate the retirement decision to users (T-90 days).** Issue a formal notification to all identified users. Include: the product being retired, the reason for retirement, the retirement date, the replacement capability (if any) and how to access it, and a point of contact for questions. Communicate through multiple channels: email, unit brief, helpdesk ticket, and the product's Workshop page (add a prominent retirement banner).
+
+3. **Support transition (T-90 to T-30 days).** Conduct transition training for users migrating to a replacement capability. Provide a parallel running period where both the retiring product and the replacement are available simultaneously, if feasible. This reduces the risk of a hard cutover.
+
+4. **Migrate downstream pipelines and products (T-90 to T-30 days).** For each identified downstream dependency, assign a technical lead to execute the migration. Track migration progress in the program tracker. No dependency may be left unresolved at the time of retirement.
+
+5. **Conduct user confirmation (T-30 days).** Contact the data point of contact for each identified user unit. Confirm: they have been briefed on the retirement; they have completed or planned the transition to the replacement; they have no unresolved questions. Document confirmation in writing.
+
+6. **Archive product data (T-14 days).** Determine the data retention requirement for the product's output data. Consult with C2DAO and the unit data leads. For operationally significant historical data, execute an archive to a designated retention workspace per UDRA v1.1 requirements.
+
+7. **Revoke access and decommission (T-0).** Revoke all user access to the retiring product workspace. Disable production pipelines. Archive the Foundry project. Do not delete — decommission by moving to an archive state with read-only access for the program manager.
+
+8. **Document the retirement (T+5 days).** Publish a retirement notice to the program tracker and the product documentation workspace. Include: retirement date, reason, replacement capability, downstream products migrated, data archive location (if applicable), and approving authority.
+
+> **WARNING: Do not decommission an MSS product before all downstream dependencies have been migrated and confirmed. A pipeline or dashboard that silently loses its input data and continues to serve stale data to operational users is worse than an error message — it creates false confidence in outdated information. Confirm every dependency is resolved before executing the T-0 decommission step.**
+
+> **CAUTION: Data archived at retirement must comply with the applicable records retention schedule and C2DAO data governance policy. Do not archive operationally sensitive data to a workspace with broader access than the original production product. Confirm archive access permissions with C2DAO before executing the archive.**
 
 ---
 
@@ -1795,8 +1769,8 @@ By the end of 30 days, the incoming TM-40D PM should be able to:
 | TM-40E | Knowledge Manager | Technical track managed by TM-50D; reference for ontology governance |
 | TM-40F | Software Engineer | Technical track managed by TM-50D; reference for custom code standards |
 | TM-50A through TM-50F | Advanced technical tracks | Peer publications; reference for advanced capability expectations in each track |
-| ADRP 1 | Data Literacy | Doctrinal foundation; establishes organizational data literacy standards |
-| ADP 1 | Data Literacy (Senior Leaders) | Strategic framing for GO/SES briefings on data program value |
+| Data Literacy Technical Reference | Data Literacy | Doctrinal foundation; establishes organizational data literacy standards |
+| Data Literacy for Senior Leaders | Senior leader data doctrine | Strategic framing for GO/SES briefings on data program value |
 
 ---
 
@@ -1806,3 +1780,65 @@ By the end of 30 days, the incoming TM-40D PM should be able to:
 *2026*
 *UNCLASSIFIED — Distribution: Approved for public release; distribution is unlimited.*
 *This publication implements Army CIO Memorandum, Data and Analytics Policy (April 2024) and aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025).*
+# GLOSSARY
+
+**AIP (Artificial Intelligence Platform).** Palantir's framework for building AI-assisted workflows on Foundry, including language model integrations and AI-driven application development. TM-50D program managers oversee TM-40B resources who build and maintain AIP-integrated products.
+
+**Army CIO Memo (April 2024).** Army Chief Information Officer Memorandum on Data and Analytics Policy (April 2024). Establishes Army-wide requirements for data management, AI governance, and data platform standards. All MSS products must comply.
+
+**Blocked Time.** Sprint capacity consumed by tasks that cannot progress due to unresolved dependencies, missing information, or access issues. Measured as a fraction of total sprint capacity. High blocked time indicates dependency management failure.
+
+**Build/Buy/Configure Decision.** A structured analysis of how to meet a capability requirement: by writing custom code (Build), using existing platform features with configuration (Configure), or procuring an external capability (Buy). TM-50D program managers govern this decision for all significant investments.
+
+**C2DAO (C2 Data and Analytics Office).** USAREUR-AF office responsible for MSS governance, data policy, platform oversight, and theater-level data capability management. The C2DAO Chief is the primary internal senior stakeholder for the MSS program.
+
+**Cycle Time.** The elapsed time from when a feature is started (work begun) to when it is delivered (accepted and released). A key process efficiency metric. Long cycle time indicates work-in-progress accumulation, blockages, or large batch sizes.
+
+**Definition of Done (DoD).** The minimum quality standards a feature must meet to be considered complete and releasable. Defined in TM-40D Appendix B. TM-50D program managers enforce DoD compliance across all teams.
+
+**Dependency Register.** The program-level tracking artifact that documents all inter-team, inter-product, and external dependencies — including owner, status, due date, and risk rating. Maintained by the program manager and updated by team leads.
+
+**Escaped Defect.** A defect (bug, data quality error, incorrect business logic) that reaches production without being caught during development or pre-release testing. Tracked per team per PI. High escaped defect rates indicate insufficient test coverage or Definition of Done compliance.
+
+**FDE (Forward Deployed Engineer).** A Palantir employee embedded with an operational customer to provide technical expertise, platform architecture guidance, and hands-on development support. Not a government employee; subject to task order terms.
+
+**Feature Team.** A cross-functional Agile team that owns a product or product area end-to-end, from requirements through delivery and sustainment. The recommended team type for stream-aligned MSS product delivery.
+
+**MSS (Maven Smart System).** The Palantir Foundry instance deployed for USAREUR-AF and EUCOM operational data management, analytics, and AI capability. The operational platform for all MSS technical tracks.
+
+**Ontology.** The MSS data model: the structured representation of operational entities (units, personnel, equipment, tasks) as object types with properties and links. Owned by TM-40E Knowledge Managers. TM-50D program managers govern ontology change management at the program level.
+
+**PI (Program Increment).** A fixed time interval (typically 8-12 weeks) in which a scaled Agile program plans, executes, and reviews a set of committed objectives. The primary planning unit for multi-team MSS programs.
+
+**PI Objectives (PIOs).** The measurable outcomes a program commits to deliver within a Program Increment. Set at PI Planning; reviewed at PI Review. The primary accountability metric for program-level delivery.
+
+**PI Planning.** The scaled Agile ceremony where all teams in a program align on objectives, identify dependencies, and commit to sprint plans for the upcoming PI. The most important program management ceremony.
+
+**Platform Team.** A team that owns shared infrastructure, ontology governance, and data quality standards across multiple feature teams. Enables feature teams to build on a stable foundation without duplicating infrastructure work.
+
+**Predictability.** The ratio of features committed at PI Planning to features actually delivered by PI Review. A program-level metric for planning accuracy and commitment reliability. Target: >85%.
+
+**Program Health Assessment (PHA).** A quarterly structured review of program status across seven dimensions: delivery performance, stakeholder health, technical health, team health, vendor/contractor health, portfolio coherence, and policy compliance. Documented in Appendix A.
+
+**PWS (Performance Work Statement).** The contract document that specifies deliverables, standards, and schedule for contractor performance under a task order. The basis for acceptance criteria development.
+
+**SAFe (Scaled Agile Framework).** A widely-used framework for applying Agile methods to programs with multiple teams. TM-50D draws on SAFe concepts (PI Planning, team synchronization, ART) without requiring strict SAFe implementation.
+
+**Stream-Aligned Team.** A feature team aligned to a specific user workflow or operational domain (e.g., readiness, logistics, intelligence). Receives work from a single value stream. Recommended team type for USAREUR-AF MSS programs.
+
+**Task Order.** A contractual instrument that authorizes and funds a specific set of deliverables from a contractor (e.g., Palantir) against a base contract or vehicle. TM-50D program managers manage task order delivery and conduct formal acceptance reviews.
+
+**Technical Debt.** The accumulated cost of earlier shortcuts, suboptimal design decisions, or deferred work in a codebase or data product. Classified by type (architectural, data quality, documentation, test coverage, dependency, configuration). Managed as a program-level risk.
+
+**Throughput.** The number of features (not story points) delivered per PI per team. A counting metric for delivery volume. Useful for cross-team comparisons because it is not affected by estimation calibration differences between teams.
+
+**UDRA v1.1 (Unified Data Reference Architecture, version 1.1, February 2025).** The Army's technical reference architecture for data management, platform governance, and data product standards. All MSS products must align to UDRA v1.1 requirements for data classification, access management, and lifecycle management.
+
+**Velocity.** The number of story points a team delivers per sprint, averaged over recent sprints. A planning tool for estimating future capacity. Not a performance metric for individuals. See Table 5-1 and Section 5-3.
+
+**Vendor Lock-In.** The degree to which a product or capability is dependent on a specific vendor's proprietary features, making future migration costly. Managed through the build/buy/configure decision framework and through designing products against open standards where feasible.
+
+**WIP Limit (Work-In-Progress Limit).** A constraint on the number of tasks or features that can be actively in progress simultaneously within a sprint or on a team's board. WIP limits reduce context switching and improve cycle time. TM-50D program managers encourage WIP limit discipline across all teams.
+
+---
+

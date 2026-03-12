@@ -10,6 +10,8 @@ Wiesbaden, Germany
 
 2026
 
+**Version 1.0 | March 2026**
+
 **UNCLASSIFIED**
 Distribution: Approved for public release; distribution is unlimited.
 
@@ -18,6 +20,10 @@ Distribution: Approved for public release; distribution is unlimited.
 **PREREQUISITE PUBLICATIONS:** TM-40C, Machine Learning Engineer (required, completion verified). TM-40B, AI Engineer (cross-reference for AIP Logic and Agent Studio integration). TM-40A, ORSA (cross-reference for statistical validation methods). Proficiency in production ML systems, Foundry Transforms, model deployment to Ontology, and drift monitoring is assumed. Personnel who cannot independently design a feature pipeline, train and evaluate a model, implement drift detection, and complete the TM-40C governance checklist are not ready for TM-50C.
 
 **DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+
+---
+
+> **PREREQUISITE WARNING:** TM-50C is **not required** for the majority of ML engineer billets. It is intended for personnel with demonstrated proficiency at TM-40C level who are actively managing production ML pipelines, automated retraining systems, or federated learning infrastructure on MSS. If you are uncertain whether TM-50C applies to your billet, consult your supervisor or the unit data steward before proceeding.
 
 ---
 
@@ -225,7 +231,7 @@ Stage 5: DEPLOYMENT
 
 **STANDARDS:** A compliant automated retraining pipeline runs end-to-end without manual intervention, produces a complete audit trail for every run, enforces all five stages with independent failure modes, and either halts for human approval (Tier 1) or auto-promotes with rollback capability (Tier 2) as authorized.
 
-**EQUIPMENT:** Foundry Code Workspace, Foundry Transforms (pipeline orchestration), Foundry Checks (data quality gates), Foundry model registry, experiment tracker, alerting integration.
+**EQUIPMENT:** Foundry Code Workspace, Foundry Transforms (pipeline orchestration), Foundry Checks (data quality gates), MSS model registry (versioned Foundry dataset + governance tracking system — not a native Foundry platform product; this is MSS-built infrastructure), experiment tracker, alerting integration.
 
 **PROCEDURE:**
 
@@ -577,6 +583,8 @@ TM-40C introduced SHAP for model explanation. At TM-50C level, the challenge is 
 
 **STANDARDS:** Explanation is available for every model prediction with latency impact ≤ 10% on the total inference pipeline runtime. SHAP values are stored per-prediction in the model output dataset. Explanation is surfaced to end-users in a Workshop dashboard without requiring Workshop builders to implement SHAP themselves.
 
+**EQUIPMENT:** Foundry Code Workspace, SHAP library (authorized version, pinned in workspace requirements), model output datasets (Foundry datasets), Foundry Ontology (for registering explanation schema as a standard property set), Workshop (for surfacing explanations to end-users).
+
 **PROCEDURE:**
 
 1. **Define a standard explanation output schema.** Establish a platform-wide schema for model explanation outputs:
@@ -653,6 +661,8 @@ The following groups require disaggregated evaluation on all personnel models. T
 
 **STANDARDS:** The audit report documents demographic parity, equal opportunity, and calibration for all required protected attributes. Disparities exceeding defined thresholds are flagged and remediation options are documented. The audit report is reviewed and accepted by the mission owner and G1 before any deployment proceeds.
 
+**EQUIPMENT:** Foundry Code Workspace, trained model artifact (candidate for production), held-out test set with ground truth labels and model predictions (Foundry dataset), authorized IPPS-A demographic data product (Foundry dataset, accessible via approved join on masked individual identifier), bias audit report template, fairness metric computation library (scikit-learn or equivalent authorized version).
+
 **PROCEDURE:**
 
 1. **Join the evaluation dataset with demographic data.** Join the test set predictions to the authorized demographic data product using the masked individual identifier. This join must occur inside Foundry — do not export the joined dataset. Verify that the joined demographic columns are marked as audit-only and are not included in the model's training feature set.
@@ -684,6 +694,8 @@ The following groups require disaggregated evaluation on all personnel models. T
 **BLUF:** Real-time inference on MSS requires explicit latency SLAs, defined fallback behavior, and systematic optimization. This chapter covers the MSS inference architecture, latency measurement methodology, request batching, model compression (pruning and quantization), and the production readiness benchmarking process.
 
 Most MSS ML models run as batch inference — daily or weekly scoring jobs. Real-time inference is required when operational use cases need prediction latency < 10 seconds from input to output. Real-time inference is operationally appropriate for: anomaly detection on live sensor feeds, interactive readiness queries in Workshop applications, and real-time logistics exception scoring. It is not appropriate as a default — batch inference is simpler, cheaper, and easier to monitor.
+
+> **NOTE:** Batch inference is one deployment pattern. Foundry also supports near-real-time inference via streaming transforms, on-demand inference via OSDK function calls integrated into applications, and scheduled incremental inference via @incremental transforms. Select the pattern based on operational latency requirements.
 
 ### 6-2. MSS Inference Architecture Options
 
@@ -731,6 +743,8 @@ Request batching accumulates multiple inference requests and processes them toge
 **CONDITIONS:** An existing production inference endpoint is exceeding its P99 latency SLA of 5 seconds under peak operational load. The model is a gradient boosting classifier (XGBoost) predicting equipment maintenance requirements from GCSS-Army data. Baseline P99 latency is 9.2 seconds. Batch inference of 500 records per request.
 
 **STANDARDS:** After optimization, P99 latency ≤ 4 seconds under the production load profile. Model performance (F1, AUC) does not degrade below 2% of the pre-optimization baseline.
+
+**EQUIPMENT:** Foundry Code Workspace, existing production inference Transform and model artifact, latency profiling instrumentation (Python time/logging or equivalent), production-representative benchmark payload (sample of operational GCSS-Army records), XGBoost library (authorized version), MSS model registry entry for the model under optimization.
 
 **PROCEDURE:**
 
@@ -807,6 +821,8 @@ ML security is not a research concern on MSS — it is an operational requiremen
 **CONDITIONS:** You have a trained production candidate model with at least moderate adversarial threat level (see 7-3 threat surface table). The model consumes tabular features or text inputs from external or partner data sources. You have access to the model and the evaluation dataset.
 
 **STANDARDS:** The adversarial evaluation report documents model accuracy under defined adversarial attack conditions. Robustness is quantified as the relative accuracy degradation under attack vs. clean inputs. If degradation exceeds the defined threshold, adversarial hardening is implemented and the evaluation is repeated before deployment.
+
+**EQUIPMENT:** Foundry Code Workspace, trained model artifact, evaluation dataset (Foundry dataset), adversarial example generation library (TextFooler or BERT-Attack for text models, authorized versions; gradient computation library for tabular models), adversarial evaluation report template.
 
 **PROCEDURE:**
 
@@ -925,6 +941,8 @@ A feature store is a centralized system for storing, serving, and managing ML fe
 
 **STANDARDS:** The feature store design document specifies: feature catalog structure, feature definition standards, versioning protocol, training-serving consistency mechanism, freshness SLAs, and the migration plan for existing models.
 
+**EQUIPMENT:** Foundry Code Workspace, access to all existing model codebases and their feature pipeline code (MSS Git repository), Foundry dataset lineage graph (to identify upstream data sources for each feature), MSS Ontology (to map features to authoritative source datasets), feature store design document template.
+
 **PROCEDURE:**
 
 1. **Conduct a feature inventory.** Enumerate all features across all existing models. Identify duplicates (same operational concept, different implementations), near-duplicates (same concept, slightly different aggregation window or normalization), and unique features. Quantify: for duplicate features, do the implementations agree? Compute the correlation between duplicate feature implementations on the same data; correlations < 0.99 indicate implementation divergence requiring resolution.
@@ -947,6 +965,8 @@ A feature store is a centralized system for storing, serving, and managing ML fe
 > **NOTE:** Feature store migration is a breaking change for every model migrated. Each migrated model requires re-evaluation against the shared feature to confirm no performance regression. Even a "correct" feature reimplementation may have different edge case handling that alters model behavior on specific records. Do not migrate multiple models simultaneously — migrate one, validate, then proceed to the next.
 
 ### 8-4. Model Registry Architecture
+
+> **NOTE:** Foundry has no native "Model Registry" product. The MSS model registry described in this section is MSS-built infrastructure: a versioned Foundry dataset serving as the authoritative model catalog, combined with the governance tracking system and documentation artifacts defined by the C2DAO. The deployment pattern for a registered model is: batch inference Transform writing to a Foundry dataset → output dataset surfaced as a computed Object property via the Ontology (or consumed via AIP Logic integration). TM-50C MLEs design and maintain this MSS-internal construct — it is not a Foundry platform capability that is provisioned or configured through the Foundry UI.
 
 The MSS model registry is the authoritative record of all ML models in the platform. At TM-50C level, the registry is not just a storage system — it is the governance backbone of the ML platform.
 

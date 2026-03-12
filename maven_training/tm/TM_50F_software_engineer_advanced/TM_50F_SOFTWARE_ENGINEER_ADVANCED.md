@@ -11,6 +11,8 @@ Wiesbaden, Germany
 
 2026
 
+**Version 1.0 | March 2026**
+
 UNCLASSIFIED
 Distribution: Approved for public release; distribution is unlimited.
 ---
@@ -18,6 +20,10 @@ Distribution: Approved for public release; distribution is unlimited.
 **PREREQUISITE PUBLICATIONS:** TM-40F (Software Engineer) — required. TM-40B (AI Engineer) and TM-40C (ML Engineer) — recommended for integration track engineers. Senior-level Python and TypeScript proficiency required.
 
 **DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Reason: operational systems documentation. Other requests must be referred to USAREUR-AF G6.
+
+---
+
+> **PREREQUISITE WARNING:** TM-50F is **not required** for the majority of software engineer billets. It is intended for personnel with demonstrated proficiency at TM-40F level who are actively building production infrastructure, CBAC frameworks, or external application integrations on MSS. If you are uncertain whether TM-50F applies to your billet, consult your supervisor or the unit data steward before proceeding.
 
 ---
 
@@ -34,11 +40,11 @@ Before performing any task at TM-50F level:
 - Performance profiling against production Ontology must be coordinated — poorly structured queries at scale degrade the platform for all USAREUR-AF users.
 - All TM-50F-level work is subject to peer review by a second TM-50F-qualified engineer before deployment.
 
-> **WARNING: Infrastructure-level errors at TM-50F can corrupt shared platform state, disable access controls for multiple units, and produce data integrity failures that cascade through the entire USAREUR-AF data ecosystem. Engineering discipline at this level is not optional — it is a mission requirement.**
+> **WARNING:** Infrastructure-level errors at TM-50F can corrupt shared platform state, disable access controls for multiple units, and produce data integrity failures that cascade through the entire USAREUR-AF data ecosystem. Engineering discipline at this level is not optional — it is a mission requirement.
 
-> **CAUTION: Platform SDK credentials with dataset write access are high-privilege operational secrets. Exposure constitutes a security incident. Report immediately to unit S6/G6 and C2DAO. Rotate immediately.**
+> **CAUTION:** Platform SDK credentials with dataset write access are high-privilege operational secrets. Exposure constitutes a security incident. Report immediately to unit S6/G6 and C2DAO. Rotate immediately.
 
-> **NOTE: TM-50F tasks are not solo work. Always operate with a second qualified engineer as reviewer. For Ontology branch merges and CBAC policy changes, also require C2DAO sign-off.**
+> **NOTE:** TM-50F tasks are not solo work. Always operate with a second qualified engineer as reviewer. For Ontology branch merges and CBAC policy changes, also require C2DAO sign-off.
 
 ---
 
@@ -102,7 +108,7 @@ MISSION REQUIREMENT
         |
         v
   TM-40F SWE TEAM           <- Your developers
-  (OSDK apps, FOO, Slate,
+  (OSDK apps, FOO, Workshop/OSDK-external,
    integrations, CI/CD)
         |
         v
@@ -121,7 +127,9 @@ TM-50F engineers are force multipliers. One senior engineer enabling ten TM-40F 
 
 | Prerequisite | Verification Method |
 |---|---|
-| TM-40F (Software Engineer) | Demonstrated proficiency: OSDK Python + TypeScript, Platform SDK, FOO, Slate, CI/CD, CBAC in apps |
+| TM-40F (Software Engineer) | Demonstrated proficiency: OSDK Python + TypeScript, Platform SDK, FOO, Workshop/OSDK-external apps, CI/CD, CBAC in apps |
+
+> **NOTE:** Slate is Foundry's legacy application builder and is no longer the recommended path for new development. Use Workshop for internal Foundry applications, or OSDK-backed external applications for public-facing deployments.
 | TM-40B (AI Engineer) | Recommended — required for engineers in the integration/AI pipeline track |
 | TM-40C (ML Engineer) | Recommended — required for engineers supporting ML model serving integrations |
 | Senior Python | Async concurrency, profiling, memory management, packaging, type-checked codebases |
@@ -272,7 +280,7 @@ class FoundryClientPool:
         self._pool.put(client)
 ```
 
-> **CAUTION: Do not share a single Platform SDK client across threads performing concurrent writes. Foundry transaction state is not thread-safe within a single client instance. Use the pool pattern for parallel writers.**
+> **CAUTION:** Do not share a single Platform SDK client across threads performing concurrent writes. Foundry transaction state is not thread-safe within a single client instance. Use the pool pattern for parallel writers.
 
 ### 2-3. Dataset Operations at Scale
 
@@ -281,6 +289,14 @@ class FoundryClientPool:
 **STANDARDS:** All bulk operations are idempotent. Progress is checkpointed. Operations fail safely — partial failure does not corrupt dataset state. Bulk operations do not degrade platform performance for other users.
 
 **EQUIPMENT:** Platform SDK (Python); Apache Spark or Pandas depending on data volume; checkpoint storage (approved local or dataset-backed).
+
+**PROCEDURE:**
+1. Select the appropriate write pattern for the operation type (see 2-3a through 2-3c below).
+2. Implement checkpointing for all long-running bulk operations.
+3. Validate all data batches before write — never write unvalidated data to MSS.
+4. For schema migrations, follow the full migration procedure in 2-3b.
+5. Register dataset lineage metadata after any programmatic transform (see 2-3c).
+6. Coordinate all production bulk operations with C2DAO before execution.
 
 **2-3a. High-Throughput Write Pattern**
 
@@ -351,6 +367,8 @@ def bulk_write_with_checkpointing(
     }
 ```
 
+> **NOTE:** APPEND transactions are not inherently idempotent. Re-runs will write duplicate rows unless you implement deduplication (content hash + INSERT OR IGNORE, or surrogate key). Use SNAPSHOT for atomic full-dataset replacement.
+
 **2-3b. Schema Migration Pattern**
 
 Dataset schema changes in production require a coordinated migration pattern. Never alter schema in place on a dataset with active consumers.
@@ -407,6 +425,14 @@ def register_dataset_lineage(
 **STANDARDS:** Branch creation, promotion, and deletion are automated, audited, and gated. No manual branch promotions to production. All branch operations logged. Branch naming convention enforced programmatically.
 
 **EQUIPMENT:** Platform SDK (Python); CI/CD pipeline (see Chapter 6); audit log storage.
+
+**PROCEDURE:**
+1. Define branch naming conventions using `BRANCH_PATTERNS` and enforce programmatically.
+2. Create a `BranchPromotion` record for every promotion event, including ticket ID.
+3. For promotions to master, verify ticket ID carries C2DAO prefix before proceeding.
+4. Write audit log entry before executing the branch merge (fail-open: log first).
+5. Execute branch merge via Platform SDK `branches.merge()`.
+6. Verify downstream consumers are healthy after branch promotion.
 
 **Branch lifecycle in multi-environment MSS:**
 
@@ -503,6 +529,16 @@ def _write_audit_log(path: str, promotion: BranchPromotion) -> None:
 
 **STANDARDS:** File operations are streamed — never load large files fully into memory. File integrity is verified on ingest (hash check). File metadata is registered in dataset schema alongside binary RIDs.
 
+**EQUIPMENT:** Platform SDK (Python); SHA-256 hash utility (Python `hashlib`); approved local staging directory for pre-ingest validation.
+
+**PROCEDURE:**
+1. Obtain the expected SHA-256 hash from the sending system or manifest before ingestion.
+2. Compute the actual hash of the local file using streaming reads (do not load full file into memory).
+3. Compare actual hash to expected hash. If mismatch, do not ingest — flag for security review.
+4. Stream-upload the file to the Foundry dataset using the Platform SDK file upload API.
+5. Register file RID and integrity metadata (hash, file name, ingest timestamp) in the dataset schema.
+6. Log the ingest event with hash values for audit trail.
+
 ```python
 import hashlib
 import io
@@ -576,6 +612,16 @@ The USAREUR-AF MSS instance serves hundreds of concurrent users across multiple 
 **CONDITIONS:** An OSDK-based application or service is exhibiting slow query performance. You need to diagnose the root cause and implement optimized query patterns.
 
 **STANDARDS:** OSDK queries against production MSS return results within defined SLA thresholds. Query patterns do not perform full object type scans when filtered queries are possible. Pagination is implemented for all result sets that may exceed 1,000 objects.
+
+**EQUIPMENT:** OSDK (Python or TypeScript); profiling tools (cProfile, timing instrumentation); development or staging MSS environment.
+
+**PROCEDURE:**
+1. Identify the slow query or code path using profiling (see 3-6).
+2. Check for N+1 query patterns — restructure to bulk link loading if found (see 3-2a).
+3. Verify filters are pushed to the OSDK query layer, not applied in Python post-fetch (see 3-2b).
+4. Apply property projection to fetch only required properties (see 3-2c).
+5. Implement pagination for all result sets that may exceed 1,000 objects (see 3-2d).
+6. Re-profile after changes to confirm improvement before promoting to production.
 
 **3-2a. The N+1 Query Problem in OSDK**
 
@@ -685,7 +731,17 @@ def paginate_all(query, page_size: int = 500) -> Iterator[T]:
 
 **STANDARDS:** Cache reads are bounded by TTL appropriate to data freshness requirements. Cache is invalidated on write. Cached data is never served past its TTL to operational consumers. Classification markings are preserved — cached data is not served to consumers who lack authorization for the original data.
 
-> **WARNING: Never cache data across authorization boundaries. A cache that serves data from a higher-classification source to a lower-classification consumer violates the MSS security model. Cache entries must be scoped to the authorization context of the requesting user or service.**
+**EQUIPMENT:** Python (in-process TTL cache or Redis for distributed deployments); Redis with TLS if multi-instance (see 3-3c); C2DAO approval for Redis deployment in any MSS-connected environment.
+
+**PROCEDURE:**
+1. Identify reference data candidates for caching — data queried frequently but updated infrequently.
+2. Determine appropriate TTL based on data type using the guidelines in 3-3b.
+3. Select cache implementation: in-process TTL cache (3-3a) for single-instance services; distributed Redis cache (3-3c) for multi-instance services.
+4. Scope cache instances per authorization context — never share cache across tenant boundaries.
+5. Implement cache invalidation on all write paths that update cached data.
+6. Do not cache operational status data (SITREP, readiness) — always fetch live.
+
+> **WARNING:** Never cache data across authorization boundaries. A cache that serves data from a higher-classification source to a lower-classification consumer violates the MSS security model. Cache entries must be scoped to the authorization context of the requesting user or service.**
 
 **3-3a. In-Process TTL Cache for Reference Data**
 
@@ -809,6 +865,16 @@ class DistributedFoundryCache:
 
 **STANDARDS:** Search queries execute within defined SLA thresholds. Foundry Object Storage V2 (OSv2) indexes are correctly configured for high-frequency search properties. Full-text search is used only where appropriate — property equality and range filters use indexed paths.
 
+**EQUIPMENT:** OSDK (Python); profiling/timing tools; access to C2DAO for index change requests; development MSS environment for query analysis.
+
+**PROCEDURE:**
+1. Profile the slow search queries using the analysis tool in 3-4a.
+2. Map query patterns (equality, range, full-text, geospatial) to the appropriate index type using the table below.
+3. Identify missing indexes based on profiling results (queries flagged as exceeding 500ms).
+4. Document the business requirement and performance impact before requesting index changes.
+5. Submit index change request to C2DAO — do not modify shared Object Type indexes independently.
+6. Re-profile after index changes are applied to confirm improvement.
+
 **Foundry indexing principles:**
 
 | Index Type | Use Case | Notes |
@@ -865,6 +931,16 @@ def analyze_query_performance(
 
 **STANDARDS:** Transforms are scheduled at appropriate intervals — not more frequently than their source data update rate. FOO computed properties use incremental computation where possible. Large analytical queries are batched, not executed on-demand per user request.
 
+**EQUIPMENT:** Foundry transform environment; platform usage/cost monitoring (C2DAO-provided); MSS development environment for testing optimized patterns.
+
+**PROCEDURE:**
+1. Identify high-cost patterns using the principles table below.
+2. For full-scan transforms, convert to `@incremental` with watermarks — see TM-40B.
+3. For on-demand aggregations, pre-materialize results in a scheduled transform (see example below).
+4. Identify and consolidate redundant transforms computing the same output.
+5. Switch transform schedules from fixed-interval to event-triggered where source data changes are detectable.
+6. Verify compute cost reduction with C2DAO platform monitoring before closing the optimization ticket.
+
 **Compute cost principles:**
 
 | Pattern | Impact | Mitigation |
@@ -913,6 +989,8 @@ def compute_readiness_summary(raw: DataFrame) -> DataFrame:
 **CONDITIONS:** A production MSS application is underperforming. You need to systematically diagnose the bottleneck and document findings for C2DAO review.
 
 **STANDARDS:** Profiling is performed in development or staging — never in production without C2DAO authorization. Findings are documented in a performance incident report. Proposed fixes are reviewed by a second TM-50F engineer before production deployment.
+
+**EQUIPMENT:** Python `cProfile`, `pstats`, `io` modules; development or staging MSS environment with representative data volume; performance incident report template (see below); second TM-50F engineer for review.
 
 **PROCEDURE — Performance profiling workflow:**
 
@@ -1041,6 +1119,16 @@ Coalition tenant data is additionally gated by Multinational Participation Envir
 
 **STANDARDS:** Application never bypasses CBAC by fetching data on behalf of one tenant and serving it to another. Application enforces tenant context at every data access. Tenant context is authenticated — not user-supplied without validation.
 
+**EQUIPMENT:** OSDK / Platform SDK (Python or TypeScript); C2DAO-provisioned tenant-scoped service accounts; DoD PKI or USAREUR-AF SSO for user authentication.
+
+**PROCEDURE:**
+1. Request C2DAO provisioning of a dedicated service account for each tenant, scoped to that tenant's data.
+2. Initialize a `TenantRouter` with the per-tenant scoped clients (see 4-3c).
+3. Authenticate all tenant context server-side from DoD PKI or SSO — never from user-supplied request parameters.
+4. Route every data access request through `TenantRouter.get_client()`.
+5. For coalition tenant access, validate MPE requirements via `_validate_coalition_access()` before routing.
+6. Audit all tenant context routing events — log tenant ID, user ID, and data access type.
+
 **4-3a. Anti-Pattern: Server-Side Data Aggregation Across Tenants**
 
 ```python
@@ -1145,7 +1233,17 @@ class TenantRouter:
 
 **STANDARDS:** Markings are displayed on every data product. Application never strips or suppresses markings. Aggregated products carry the highest marking of any source data. Application logs include marking metadata for audit.
 
-> **WARNING: An application that displays classified data without the appropriate banner/footer/marking indicators violates DoD Instruction 5200.01 and may constitute a security violation. Marking display is not optional. Build it in from the start.**
+**EQUIPMENT:** OSDK / Platform SDK (Python or TypeScript); classification marking library (see 4-4a); AR 380-5 marking reference; application UI framework.
+
+**PROCEDURE:**
+1. Implement `ClassificationLevel` enum and `CLASSIFICATION_BANNERS` lookup (see 4-4a).
+2. Display the classification banner on every page, view, or report that presents data.
+3. For aggregated products, compute the aggregate marking using `get_aggregate_marking()` before display.
+4. Include classification marking in all audit log entries for data access events.
+5. Never strip or suppress markings in API responses, exports, or data transformations.
+6. Review marking display implementation during every code review using Appendix A checklist.
+
+> **WARNING:** An application that displays classified data without the appropriate banner/footer/marking indicators violates DoD Instruction 5200.01 and may constitute a security violation. Marking display is not optional. Build it in from the start.**
 
 **4-4a. Marking Display Pattern**
 
@@ -1206,6 +1304,17 @@ def get_aggregate_marking(markings: list[ClassificationLevel]) -> Classification
 
 **STANDARDS:** No US-only data is exposed via coalition interfaces. Releasability is enforced at the data layer, not the presentation layer. Coalition data flows are documented in data lineage. J6/G6 authorization is documented before any coalition integration goes live.
 
+**EQUIPMENT:** OSDK / Platform SDK (Python or TypeScript); C2DAO-provisioned coalition-scoped service account; current COALITION_NATION_RELEASABILITY mapping (maintained by C2DAO/J6); written J6/G6 authorization.
+
+**PROCEDURE:**
+1. Obtain written J6/G6 authorization for the coalition integration before any implementation work.
+2. Request C2DAO provisioning of a coalition-scoped service account with MPE controls.
+3. Obtain the current `COALITION_NATION_RELEASABILITY` mapping from C2DAO/J6 — do not construct independently.
+4. Implement `filter_for_coalition()` as a defense-in-depth control at the application data layer.
+5. Ensure the coalition service account CBAC is the primary isolation control — application filtering is secondary.
+6. Document all coalition data flows in dataset lineage before activation.
+7. Verify with J6/G6 that the integration is active and authorized before enabling in production.
+
 **Coalition data releasability filter:**
 
 ```python
@@ -1245,7 +1354,7 @@ def filter_for_coalition(
     ]
 ```
 
-> **NOTE:** Coalition interoperability patterns are governed by NATO STANAG agreements and current USAREUR-AF J6 policy. The code patterns in this section are illustrative. Consult G6/J6 and C2DAO for current releasability matrices before implementing any coalition integration.**
+> **NOTE:** Coalition interoperability patterns are governed by NATO STANAG agreements and current USAREUR-AF J6 policy. The code patterns in this section are illustrative. Consult G6/J6 and C2DAO for current releasability matrices before implementing any coalition integration.
 
 ---
 
@@ -1264,6 +1373,16 @@ Integration is a primary risk surface. External systems introduce data quality, 
 **CONDITIONS:** You are building or managing a high-throughput REST integration between an external Army system and MSS. The integration must handle thousands of records per minute with guaranteed delivery.
 
 **STANDARDS:** Integration is resilient to target system downtime. Failed deliveries are queued for retry. Duplicate deliveries are idempotent. Integration performance is monitored with alerting on failure thresholds.
+
+**EQUIPMENT:** Python `httpx` library; Platform SDK (Python) for Foundry writes; dead-letter storage (Foundry dataset or approved equivalent); C2DAO authorization documentation for the integration.
+
+**PROCEDURE:**
+1. Obtain C2DAO written authorization for the external integration before implementation.
+2. Implement `ResilientRestClient` with exponential backoff, circuit breaker, and dead-letter queue (see 5-2a).
+3. Implement idempotent ingestion using `ingest_with_deduplication()` with content hash keys (see 5-2b).
+4. Configure monitoring and alerting on dead-letter queue depth and circuit breaker state.
+5. Test failure scenarios in development: target system downtime, duplicate delivery, malformed payloads.
+6. Document the integration data flow in dataset lineage before production activation.
 
 **5-2a. Resilient REST Client Pattern**
 
@@ -1413,6 +1532,16 @@ def ingest_with_deduplication(
 
 **STANDARDS:** gRPC connections use mutual TLS (mTLS). Service definitions are versioned. Breaking changes to service contracts require coordination with consuming systems. Streaming gRPC connections implement reconnection logic.
 
+**EQUIPMENT:** Python `grpc` library; DoD PKI-issued client certificates (or equivalent per AR 25-2); Protocol Buffer definitions for the target service; C2DAO authorization for the integration.
+
+**PROCEDURE:**
+1. Obtain DoD PKI-issued or equivalent client certificates for mTLS authentication.
+2. Store certificate files on the filesystem referenced by environment configuration — never embed in code.
+3. Create the mTLS channel using `create_mtls_channel()` with certificate paths from config (see 5-3a).
+4. For streaming connections, wrap with `stream_with_reconnection()` to handle network disruptions (see 5-3b).
+5. Version all service definitions — coordinate breaking changes with all consuming systems before deployment.
+6. Test reconnection behavior in development by simulating connection drops.
+
 **5-3a. gRPC Client Setup with mTLS**
 
 ```python
@@ -1505,7 +1634,17 @@ def stream_with_reconnection(
 
 **STANDARDS:** Kafka consumers are idempotent. Consumer group offsets are committed only after successful processing. Dead-letter topic captures failed messages. Partition assignment is monitored. Consumer lag is alerted.
 
+**EQUIPMENT:** Python `kafka-python` library; Platform SDK (Python) for Foundry writes; C2DAO-provisioned Kafka broker connection details and topic configuration; dead-letter Foundry dataset (C2DAO-provisioned).
+
 > **NOTE:** Kafka deployments in the USAREUR-AF environment must be approved by C2DAO. Do not deploy Kafka independently. This section covers patterns for connecting to C2DAO-provisioned Kafka infrastructure. Contact C2DAO for broker connection details and topic provisioning.
+
+**PROCEDURE:**
+1. Obtain Kafka broker connection details and topic assignment from C2DAO.
+2. Initialize `FoundryKafkaIngester` with `enable_auto_commit=False` to ensure manual offset control.
+3. Configure dead-letter dataset RID — all failed messages must be captured for review.
+4. Implement `_validate_message()` with required field checks and schema sanitization.
+5. Run the ingestion loop: process batches, write to Foundry, commit offsets only after successful write.
+6. Monitor consumer lag and dead-letter queue depth. Alert if either exceeds defined thresholds.
 
 **5-4a. Foundry-Kafka Ingestion Pipeline**
 
@@ -1612,11 +1751,23 @@ class FoundryKafkaIngester:
             txn.write_pandas(df)
 ```
 
+> **NOTE:** APPEND transactions are not inherently idempotent. Re-runs will write duplicate rows unless you implement deduplication (content hash + INSERT OR IGNORE, or surrogate key). Use SNAPSHOT for atomic full-dataset replacement. For Kafka at-least-once delivery, implement a deduplication key (e.g., message offset + partition) in the target dataset to prevent duplicate rows on consumer replay.
+
 ### 5-5. Event Streaming: Kinesis Integration
 
 **CONDITIONS:** Your operational environment uses AWS Kinesis Data Streams for event streaming (common in cloud-connected Army deployments). You need to connect Kinesis streams to MSS.
 
 **STANDARDS:** Same as Kafka — idempotent processing, dead-letter handling, at-least-once delivery.
+
+**EQUIPMENT:** Python `boto3` library; AWS IAM role or least-privilege service account credentials (from approved secrets manager); Platform SDK (Python) for Foundry writes; C2DAO cloud guidance for Kinesis use in MSS-connected environments.
+
+**PROCEDURE:**
+1. Configure AWS credentials via IAM role (preferred) or least-privilege service account from approved secrets manager — never hardcode AWS keys.
+2. Initialize `FoundryKinesisIngester` with stream name, region, and Foundry client.
+3. Enumerate all shards using `get_all_shards()` — deploy one consumer per shard for parallel throughput.
+4. For each shard, call `consume_shard()` with a checkpoint function to persist sequence numbers across restarts.
+5. In `_write_to_foundry()`, validate and sanitize records before Foundry write.
+6. Monitor shard iterator expiration and implement reconnection if iterator expires.
 
 ```python
 import boto3
@@ -1701,6 +1852,8 @@ class FoundryKinesisIngester:
             txn.write_pandas(df)
 ```
 
+> **NOTE:** APPEND transactions are not inherently idempotent. Re-runs will write duplicate rows unless you implement deduplication (content hash + INSERT OR IGNORE, or surrogate key). Use SNAPSHOT for atomic full-dataset replacement. For Kinesis at-least-once delivery, implement a deduplication key (e.g., Kinesis sequence number) in the target dataset to prevent duplicate rows on shard replay.
+
 ---
 
 ## CHAPTER 6 — DEVSECOPS FOR FOUNDRY ENVIRONMENTS
@@ -1757,6 +1910,17 @@ PRODUCTION PROMOTION
 **CONDITIONS:** You are establishing development standards for an MSS SWE team. All developers must enforce baseline code quality and security checks before code reaches the repository.
 
 **STANDARDS:** Pre-commit hooks run on every commit. Hooks cannot be bypassed without explicit team lead approval. Secrets detection is mandatory on all repositories containing Foundry-related code.
+
+**EQUIPMENT:** `pre-commit` Python package; `ruff`, `mypy`, `detect-secrets` tools; `node`/`npm` for TypeScript hooks; internet access to approved package sources (or mirror approved by C2DAO).
+
+**PROCEDURE:**
+1. Install `pre-commit`: `pip install pre-commit`.
+2. Copy the MSS standard `.pre-commit-config.yaml` (below) into the repository root.
+3. Initialize the secrets detection baseline: `detect-secrets scan > .secrets.baseline`.
+4. Install hooks: `pre-commit install`.
+5. Run hooks against all existing files to establish baseline: `pre-commit run --all-files`.
+6. Resolve any findings before committing the hook configuration.
+7. Instruct all team members to run `pre-commit install` in their local clones.
 
 **`.pre-commit-config.yaml` for MSS projects:**
 
@@ -1818,13 +1982,23 @@ repos:
         pass_filenames: false
 ```
 
-> **NOTE: The `no-commit-to-branch` hook prevents direct commits to master/staging. This enforces the PR-based workflow. Do not remove this hook. Direct commits to production branches bypass code review.**
+> **NOTE:** The `no-commit-to-branch` hook prevents direct commits to master/staging. This enforces the PR-based workflow. Do not remove this hook. Direct commits to production branches bypass code review.
 
 ### 6-4. Automated Testing Standards
 
 **CONDITIONS:** You are establishing or reviewing the automated testing framework for an MSS application or pipeline.
 
 **STANDARDS:** Unit test coverage minimum 80% for all production code. Integration tests cover all OSDK query paths and external integration points. Tests are deterministic — no test that passes sometimes and fails others. Tests run in under 10 minutes total (parallelize if needed).
+
+**EQUIPMENT:** Python `pytest`, `pytest-cov`, `pytest-xdist` packages; `unittest.mock` for mocking Foundry clients; access to dev/staging MSS environment for integration tests.
+
+**PROCEDURE:**
+1. Implement `conftest.py` with `mock_foundry_client` fixture for unit tests (see 6-4a).
+2. Create `integration_foundry_client` fixture that skips unless `RUN_INTEGRATION_TESTS=1` is set.
+3. Organize tests: `tests/unit/` for unit tests; `tests/integration/` for integration tests.
+4. Run unit tests with coverage gate: `pytest tests/unit/ --cov=src --cov-fail-under=80`.
+5. Run integration tests against dev MSS as part of CI pipeline (not in pre-commit).
+6. Parallelize test execution in CI using `pytest -n auto` to meet the 10-minute runtime target.
 
 **6-4a. pytest configuration for MSS projects:**
 
@@ -1900,6 +2074,16 @@ pytest tests/ -n auto --dist=loadfile
 **CONDITIONS:** Your team modifies the Foundry Ontology (Object Types, Link Types, Actions, FOO functions). Ontology changes must be validated before deployment to production.
 
 **STANDARDS:** Ontology changes are tested in an isolated development branch before promotion. Automated checks validate schema compatibility. Breaking changes are flagged and require C2DAO approval.
+
+**EQUIPMENT:** Foundry Ontology branch (development); CI pipeline; `ontology_diff.py` schema comparison script (below); Python for schema diff tooling.
+
+**PROCEDURE:**
+1. Make all Ontology changes on a development branch — never directly on master.
+2. Export schema from both the development branch and the current production branch.
+3. Run `detect_breaking_changes()` against the two schema exports (see script below).
+4. If breaking changes detected, halt promotion — obtain C2DAO approval before proceeding.
+5. Run all FOO TypeScript unit tests and Action validator tests against the development branch.
+6. After all CI checks pass and (if applicable) C2DAO approval is obtained, promote through staging to production per DevSecOps pipeline.
 
 **Ontology CI checks:**
 
@@ -1991,6 +2175,16 @@ def detect_breaking_changes(
 
 **STANDARDS:** Container images are built from approved base images. No secrets in image layers. Images are scanned for vulnerabilities before deployment. Container runtime uses least-privilege configuration.
 
+**EQUIPMENT:** Docker; approved base image registry (verify with C2DAO for current approved registry); container vulnerability scanner (Trivy or equivalent C2DAO-approved tool); container orchestration platform for runtime secret injection.
+
+**PROCEDURE:**
+1. Use a multi-stage Dockerfile: builder stage for dependency installation; production stage for runtime (see pattern below).
+2. Create and configure a non-root `appuser` — do not run container as root.
+3. Never include secrets in `ENV` instructions — inject at runtime via orchestration environment injection.
+4. Implement a `HEALTHCHECK` instruction so the orchestrator can detect unhealthy containers.
+5. Scan the built image for vulnerabilities before promotion to staging: `trivy image <image_name>`.
+6. Resolve Critical and High CVEs before production deployment. Document Medium/Low with risk acceptance.
+
 **Dockerfile pattern for MSS services:**
 
 ```dockerfile
@@ -2053,18 +2247,30 @@ The OWASP Top 10 applies to all web-connected applications, including those buil
 | A02: Cryptographic Failures | Credentials in environment files committed to repos; unencrypted transit | Secrets scanning in CI; TLS on all connections; mTLS for gRPC |
 | A03: Injection | Ontology API name injection; Spark SQL injection in transforms | Whitelist API names; use parameterized queries; validate all inputs at boundary |
 | A04: Insecure Design | Multi-tenant isolation via client-side filtering only | Enforce isolation at service account layer; defense-in-depth |
-| A05: Security Misconfiguration | Open CORS on Slate apps; permissive CBAC rules | Restrict CORS to MSS domain; minimal CBAC grants |
+| A05: Security Misconfiguration | Open CORS on Workshop/OSDK-external apps (formerly Slate); permissive CBAC rules | Restrict CORS to MSS domain; minimal CBAC grants |
 | A06: Vulnerable Components | Outdated OSDK versions with known CVEs | Automated dependency scanning in CI (pip-audit, npm audit) |
 | A07: Authentication Failures | PATs in committed code; shared service accounts | detect-secrets in pre-commit; individual service accounts per service |
 | A08: Software Integrity Failures | Unverified external data ingested into Ontology | Hash verification on file ingest; schema validation on all external records |
 | A09: Logging Failures | Missing audit trails; insufficient error logging | Structured logging on all operations; audit log on all writes |
 | A10: SSRF | External integrations that follow attacker-controlled URLs | Whitelist allowed external endpoints; never accept URLs from user input |
 
+> **NOTE:** Slate is Foundry's legacy application builder and is no longer the recommended path for new development. Use Workshop for internal Foundry applications, or OSDK-backed external applications for public-facing deployments. Security controls (CORS, CBAC) must be reviewed and re-verified when migrating from Slate to Workshop or OSDK-external.
+
 ### 7-3. Injection Prevention
 
 **CONDITIONS:** Your application accepts external input (API requests, Kafka messages, file uploads) that is used to query or modify the Foundry Ontology or datasets.
 
 **STANDARDS:** All external input is validated against a strict whitelist before use. No user-supplied strings are used directly as Ontology API names, dataset RIDs, or query parameters without validation. SQL/SPARQL/Spark queries use parameterization.
+
+**EQUIPMENT:** Python type annotations and `frozenset` whitelists; `re` module for format validation; Spark DataFrame API (not spark.sql for parameterized queries).
+
+**PROCEDURE:**
+1. Define `ALLOWED_OBJECT_TYPES` as a `frozenset` maintained by C2DAO — not user-configurable (see 7-3a).
+2. Validate all user-supplied object type names, property names, and dataset RIDs against the whitelist before passing to OSDK.
+3. For Spark queries, use the DataFrame API with column references instead of `spark.sql()` with f-strings (see 7-3b).
+4. Apply regex format validation on all string inputs used in queries (e.g., `unit_id` format check).
+5. Validate and sanitize all Kafka, gRPC, and file upload message payloads at the boundary before Foundry write.
+6. Include injection prevention checks in the SAST ruleset (see 7-5) — flag violations as blocking in CI.
 
 **7-3a. Ontology API Name Injection**
 
@@ -2129,6 +2335,16 @@ def query_data_GOOD(spark: SparkSession, unit_id: str) -> DataFrame:
 **CONDITIONS:** You are establishing secrets management standards for an MSS SWE team. Multiple services require Foundry credentials, AWS credentials, and integration API keys.
 
 **STANDARDS:** No secrets in source code, committed files, Docker images, or logs. All secrets injected at runtime from approved secrets manager. Secret rotation is automated or procedurally enforced per AR 25-2. Secret access is audited.
+
+**EQUIPMENT:** Approved secrets manager (HashiCorp Vault preferred; see hierarchy below); `hvac` Python library for Vault integration; `detect-secrets` for scanning; AR 25-2 reference.
+
+**PROCEDURE:**
+1. Select the appropriate secrets management tier for the deployment context (see hierarchy below).
+2. For production services, configure Vault AppRole authentication using `VaultSecretsProvider` (see 7-4a).
+3. Retrieve all secrets at service startup from the approved secrets manager — never hardcode.
+4. Run `detect-secrets scan` as a pre-commit hook and in CI to prevent accidental secret commits.
+5. Establish a secret rotation schedule per AR 25-2. Document rotation procedures in runbook.
+6. Audit secret access logs quarterly. Report any anomalous access to C2DAO and unit S6/G6.
 
 **Secrets management hierarchy for MSS:**
 
@@ -2214,6 +2430,8 @@ class VaultSecretsProvider:
 
 **STANDARDS:** SAST runs on every pull request. Critical and high findings block merge. Medium findings generate warnings that must be reviewed before merge. All findings are tracked in the security issue log.
 
+**EQUIPMENT:** Semgrep (open source or Team tier); CI pipeline integration (Foundry Code Repositories or equivalent); security issue tracking system; access to MSS application repositories.
+
 **Semgrep configuration for MSS Python projects:**
 
 ```yaml
@@ -2267,6 +2485,8 @@ rules:
 **CONDITIONS:** You have written authorization from C2DAO and USAREUR-AF ISSM to conduct authorized security testing against MSS application components.
 
 **STANDARDS:** Testing is bounded by the authorization scope. No testing against production without explicit written authorization scope. All findings documented and reported to C2DAO within 24 hours. No exploited vulnerabilities remain unmitigated after testing.
+
+**EQUIPMENT:** Written C2DAO and ISSM authorization document; Python `pytest` with security markers; development MSS environment (never production without explicit scope); findings report template.
 
 > **WARNING: The following section describes authorized security testing patterns. Executing these patterns without written authorization is a computer fraud offense under 18 U.S.C. § 1030 and a violation of AR 25-2. Obtain written authorization before executing any security test.**
 
@@ -2335,6 +2555,8 @@ class TestCBACBoundaries:
 
 **STANDARDS:** All new MSS applications and major changes undergo architecture review before development begins. Architecture review is documented. Findings are resolved before development proceeds. Review covers security, performance, multi-tenancy, and maintainability.
 
+**EQUIPMENT:** Architecture Review Record template (see below); access to system design documentation from the proposing developer; C2DAO coordination for ATO impact assessment.
+
 **Architecture review checklist:**
 
 | Domain | Questions to Answer |
@@ -2385,6 +2607,8 @@ C2DAO Coordination: [TICKET ID or N/A]
 
 **STANDARDS:** All code merged to staging or production branches has been reviewed by a TM-50F engineer. Review is substantive — not a rubber stamp. Security findings are blocking. Performance findings are blocking if exceeding defined thresholds. Findings are documented, not just verbally communicated.
 
+**EQUIPMENT:** Repository pull request interface (Foundry Code Repositories or equivalent); Appendix A code review checklist; access to the application's architecture documentation and test results.
+
 **Code review approach:**
 
 1. Read the PR description and linked ticket. Understand what the change is trying to accomplish before reading code.
@@ -2413,6 +2637,8 @@ C2DAO Coordination: [TICKET ID or N/A]
 
 **STANDARDS:** New engineers can independently build and deploy an MSS application within 30 days of onboarding. Onboarding covers security, tooling, platform access, and team standards. Onboarding is documented — not ad hoc.
 
+**EQUIPMENT:** Onboarding checklist (see below); C2DAO credentialing request form; development MSS environment access; team repository access; pre-commit hook configuration.
+
 **MSS SWE onboarding sequence:**
 
 | Week | Activities | Validation |
@@ -2437,18 +2663,14 @@ MSS applications accrue technical debt. Left unmanaged, debt degrades platform r
 
 **Debt tracking format:**
 
-```
-TECHNICAL DEBT REGISTER
+**TECHNICAL DEBT REGISTER**
 
-System: [NAME]
-Last updated: [DATE]
-Owner: [TM-50F engineer]
+**System:** [NAME] &nbsp;|&nbsp; **Last updated:** [DATE] &nbsp;|&nbsp; **Owner:** [TM-50F engineer]
 
-| ID | Category | Description | Impact | Estimated Effort | Target Quarter | Status |
-|----|----------|-------------|--------|-----------------|----------------|--------|
+| ID | Category | Description | Impact | Est. Effort | Target Qtr | Status |
+|----|----------|-------------|--------|-------------|------------|--------|
 | TD-001 | Security | pip-audit reports CVE-2024-XXXX in requests==2.28 | Medium | 0.5 days | 26Q2 | Open |
 | TD-002 | Performance | Unit search endpoint does full scan on each call | High | 2 days | 26Q2 | In Progress |
-```
 
 ### 8-6. Platform Governance
 
@@ -2470,6 +2692,8 @@ TM-50F engineers participate in MSS platform governance — the process by which
 
 **STANDARDS:** Upgrade impact is assessed before any application code changes. All affected applications are inventoried. Upgrade is tested in development, then staging, before production. Applications are not left on deprecated API versions.
 
+**EQUIPMENT:** Palantir upgrade release notes (from C2DAO / Palantir support channel); application inventory (all MSS applications under SWE team ownership); development and staging MSS environments; C2DAO coordination for production promotion.
+
 **Upgrade management procedure:**
 
 1. Obtain upgrade release notes from C2DAO / Palantir support channel.
@@ -2481,7 +2705,7 @@ TM-50F engineers participate in MSS platform governance — the process by which
 7. Coordinate production promotion with C2DAO and operational stakeholders.
 8. Monitor for 48 hours post-upgrade before closing migration ticket.
 
-> **NOTE: Never run MSS production applications on deprecated OSDK API versions beyond the Palantir-communicated end-of-support date. Deprecated APIs may stop working without notice during platform upgrades. Track deprecation dates and plan migrations proactively.**
+> **NOTE:** Never run MSS production applications on deprecated OSDK API versions beyond the Palantir-communicated end-of-support date. Deprecated APIs may stop working without notice during platform upgrades. Track deprecation dates and plan migrations proactively.
 
 ---
 
@@ -2580,7 +2804,7 @@ Use this checklist for every pull request review on MSS application code.
 
 The Authority to Operate (ATO) process under RMF (NIST SP 800-37) requires technical documentation of security controls for MSS applications. TM-50F engineers are primary contributors to ATO packages for systems they build and own. This appendix describes the artifacts TM-50F engineers are responsible for producing.
 
-> **NOTE:** The ISSM and C2DAO lead the ATO process. TM-50F engineers do not own the ATO — they provide technical evidence and documentation. Coordinate with the ISSM before beginning ATO documentation work to ensure artifacts meet current RMF requirements.**
+> **NOTE:** The ISSM and C2DAO lead the ATO process. TM-50F engineers do not own the ATO — they provide technical evidence and documentation. Coordinate with the ISSM before beginning ATO documentation work to ensure artifacts meet current RMF requirements.
 
 ### B-2. TM-50F-Owned ATO Artifacts
 

@@ -1,25 +1,29 @@
-```
-TM-50B
-TECHNICAL MANUAL
-ADVANCED AI ENGINEERING
-MAVEN SMART SYSTEM
-USAREUR-AF OPERATIONAL DATA TEAM
+# TM-50B
+## TECHNICAL MANUAL
+## ADVANCED AI ENGINEERING
+## MAVEN SMART SYSTEM
+## USAREUR-AF OPERATIONAL DATA TEAM
 
-HEADQUARTERS
-UNITED STATES ARMY EUROPE AND AFRICA
+**HEADQUARTERS**
+**UNITED STATES ARMY EUROPE AND AFRICA**
 Wiesbaden, Germany
 
 2026
 
-PREREQUISITE PUBLICATIONS: TM-40B, AI Engineer (required); TM-40C, ML Engineer (recommended);
-                            TM-30, Advanced Builder (required); ADRP 1, Data Literacy (required)
+**Version 1.0 | March 2026**
 
-APPLIES TO: Senior AI Engineers, AI Architects, AI Capability Leads
-            MSS/Palantir Foundry AIP — advanced capability development
-
-UNCLASSIFIED
+**UNCLASSIFIED**
 Distribution: Approved for public release; distribution is unlimited.
-```
+
+---
+
+**PREREQUISITE PUBLICATIONS:** TM-40B, AI Engineer (required); TM-40C, ML Engineer (recommended); TM-30, Advanced Builder (required); Data Literacy Technical Reference (required).
+
+**APPLIES TO:** Senior AI Engineers, AI Architects, AI Capability Leads. MSS/Palantir Foundry AIP — advanced capability development.
+
+---
+
+> **PREREQUISITE WARNING:** TM-50B is **not required** for the majority of AI engineer billets. It is intended for personnel with demonstrated proficiency at TM-40B level who are actively designing AI system architectures, retrieval infrastructure, or agent orchestration frameworks on MSS. If you are uncertain whether TM-50B applies to your billet, consult your supervisor or the unit data steward before proceeding.
 
 ---
 
@@ -773,6 +777,8 @@ USAREUR-AF operational use cases.
 4-1. TM-40B covers basic RAG: chunk documents, embed with a vector model, store in a vector
 index, retrieve top-k by cosine similarity, inject into prompt context. This approach fails
 predictably in several operational scenarios:
+
+> **NOTE:** Foundry has no native semantic search capability. Vector similarity search must be custom-implemented: use an external embedding model, store embeddings in a Foundry dataset column, and implement similarity search in Python within a Code Repository. This is a custom engineering pattern, not a platform feature.
 
 | Failure Mode                              | Example                                                        |
 |-------------------------------------------|----------------------------------------------------------------|
