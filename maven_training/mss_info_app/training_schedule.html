@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MSS Training Schedule</title>
+  <style>
+    :root {
+      --navy:      #0C2340;
+      --navy-dark: #071628;
+      --gold:      #C8971A;
+      --gold-dark: #9A7010;
+      --gold-pale: #FDF5DC;
+      --white:     #FFFFFF;
+      --off-white: #F3F5FA;
+      --gray-50:   #EFF1F8;
+      --gray-100:  #E0E4EF;
+      --gray-400:  #7A88A8;
+      --gray-700:  #303C58;
+      --gray-900:  #0A1628;
+      --green-ok:  #1A5C28;
+      --amber:     #B86810;
+      --red:       #8A1A1A;
+      --note-teal: #0A5C70;
+      --font-ui:   Arial, Helvetica, sans-serif;
+      --font-body: Inter, system-ui, sans-serif;
+      --font-mono: 'Courier New', Courier, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--off-white);
+      color: var(--gray-900);
+      font-size: 13px;
+      line-height: 1.6;
+      padding: 0;
+    }
+
+    /* ---- Top bar ---- */
+    .top-bar {
+      background: var(--navy-dark);
+      color: var(--gold);
+      font-family: var(--font-ui);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-bar-right { color: rgba(200,151,26,0.6); font-size: 9px; }
+
+    /* ---- Content ---- */
+    .content { padding: 20px 24px 40px; }
+
+    /* ---- Course section ---- */
+    .course-block { margin-bottom: 36px; }
+
+    .course-hdr {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 16px;
+      background: var(--navy);
+      border-left: 5px solid var(--gold-dark);
+      border-radius: 3px 3px 0 0;
+      margin-bottom: 0;
+    }
+
+    .course-badge {
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    .course-title {
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .course-meta {
+      margin-left: auto;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: rgba(200,151,26,0.7);
+      white-space: nowrap;
+    }
+
+    /* ---- Table ---- */
+    .table-wrap {
+      border: 1px solid var(--gray-100);
+      border-top: none;
+      border-radius: 0 0 3px 3px;
+      overflow-x: auto;
+      background: var(--white);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+
+    thead tr { background: #1A2F50; }
+
+    thead th {
+      font-family: var(--font-ui);
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(200,151,26,0.9);
+      padding: 9px 13px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    tbody tr { background: var(--white); }
+    tbody tr:nth-child(even) { background: var(--off-white); }
+    tbody tr:hover { background: #EEF2FA; }
+
+    tbody td {
+      padding: 8px 13px;
+      border-bottom: 1px solid var(--gray-50);
+      vertical-align: middle;
+      color: var(--gray-700);
+    }
+
+    tbody td:first-child {
+      font-family: var(--font-ui);
+      font-weight: 700;
+      color: var(--gray-900);
+      white-space: nowrap;
+    }
+
+    /* ---- Status chips ---- */
+    .status {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      padding: 3px 9px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .status-open   { background: #D4EDDA; color: var(--green-ok); border: 1px solid #A8D5B5; }
+    .status-low    { background: #FFF3CD; color: var(--amber);    border: 1px solid #F5D78E; }
+    .status-full   { background: #FDDEDE; color: var(--red);      border: 1px solid #F5AAAA; }
+    .status-tbd    { background: var(--gray-100); color: var(--gray-400); border: 1px solid var(--gray-100); }
+
+    /* ---- Enrollment note ---- */
+    .enroll-note {
+      background: #EAF4F8;
+      border-left: 4px solid var(--note-teal);
+      border-radius: 0 3px 3px 0;
+      padding: 9px 14px;
+      font-size: 12px;
+      color: var(--gray-700);
+      margin-top: 8px;
+    }
+
+    .enroll-note strong { color: var(--note-teal); font-family: var(--font-ui); letter-spacing: 0.5px; }
+
+    /* ---- Footer ---- */
+    .footer-note {
+      margin-top: 28px;
+      padding: 12px 16px;
+      background: var(--gold-pale);
+      border: 1px solid #E8D890;
+      border-radius: 3px;
+      font-size: 11.5px;
+      color: #6A5800;
+    }
+
+    .footer-note strong { color: #5A4800; }
+
+    /* ---- Last updated ---- */
+    .last-updated {
+      margin-top: 14px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--gray-400);
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <span>MSS Foundation Training &mdash; Upcoming Schedule</span>
+    <span class="top-bar-right">TM-10 &bull; TM-20 &bull; TM-30 &bull; USAREUR-AF ODT</span>
+  </div>
+
+  <div class="content">
+
+    <!-- ============================================================
+         TM-10
+         EDIT: Update dates, location, POC, and seat counts below.
+    ============================================================ -->
+    <div class="course-block">
+      <div class="course-hdr">
+        <span class="course-badge">TM-10</span>
+        <span class="course-title">Maven User Manual &mdash; All Personnel</span>
+        <span class="course-meta">1 day (8 hrs) &bull; No prereq</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Dates</th>
+              <th>Location</th>
+              <th>Format</th>
+              <th>POC</th>
+              <th>Seats Avail.</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- ADD / EDIT TM-10 ROWS BELOW -->
+            <tr>
+              <td>14 APR 2026</td>
+              <td>Wiesbaden, Clay Kaserne, Bldg 3312, Rm 104</td>
+              <td>In-Person</td>
+              <td>SSG Johnson</td>
+              <td>20 / 20</td>
+              <td><span class="status status-open">Open</span></td>
+            </tr>
+            <tr>
+              <td>05 MAY 2026</td>
+              <td>Grafenw&ouml;hr, Bldg 244, Conf Rm B</td>
+              <td>In-Person</td>
+              <td>SFC Davis</td>
+              <td>8 / 20</td>
+              <td><span class="status status-low">8 Remaining</span></td>
+            </tr>
+            <tr>
+              <td>18 JUN 2026</td>
+              <td>Stuttgart, Kelley Bks, Bldg 3357</td>
+              <td>In-Person</td>
+              <td>SSG Martinez</td>
+              <td>20 / 20</td>
+              <td><span class="status status-open">Open</span></td>
+            </tr>
+            <tr>
+              <td>09 JUL 2026</td>
+              <td>Virtual (MS Teams)</td>
+              <td>Virtual</td>
+              <td>SSG Johnson</td>
+              <td>30 / 30</td>
+              <td><span class="status status-open">Open</span></td>
+            </tr>
+            <!-- END TM-10 ROWS -->
+          </tbody>
+        </table>
+      </div>
+      <div class="enroll-note">
+        <strong>Enrollment:</strong> Contact listed POC to reserve a seat. Ensure your MSS account request is submitted at least 5 business days before course start. Virtual sessions require MS Teams access and a headset.
+      </div>
+    </div>
+
+    <!-- ============================================================
+         TM-20
+         EDIT: Update dates, location, POC, and seat counts below.
+    ============================================================ -->
+    <div class="course-block">
+      <div class="course-hdr">
+        <span class="course-badge">TM-20</span>
+        <span class="course-title">No-Code Builder Manual &mdash; All Staff</span>
+        <span class="course-meta">5 days (40 hrs) &bull; Prereq: TM-10</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Dates</th>
+              <th>Location</th>
+              <th>Format</th>
+              <th>POC</th>
+              <th>Seats Avail.</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- ADD / EDIT TM-20 ROWS BELOW -->
+            <tr>
+              <td>21&ndash;25 APR 2026</td>
+              <td>Wiesbaden, Clay Kaserne, Bldg 3312, Rm 104</td>
+              <td>In-Person</td>
+              <td>SFC Chen</td>
+              <td>7 / 15</td>
+              <td><span class="status status-low">7 Remaining</span></td>
+            </tr>
+            <tr>
+              <td>11&ndash;15 MAY 2026</td>
+              <td>Grafenw&ouml;hr, Bldg 244, Conf Rm B</td>
+              <td>In-Person</td>
+              <td>SSG Williams</td>
+              <td>3 / 15</td>
+              <td><span class="status status-low">3 Remaining</span></td>
+            </tr>
+            <tr>
+              <td>22&ndash;26 JUN 2026</td>
+              <td>Stuttgart, Kelley Bks, Bldg 3357</td>
+              <td>In-Person</td>
+              <td>SFC Chen</td>
+              <td>15 / 15</td>
+              <td><span class="status status-open">Open</span></td>
+            </tr>
+            <tr>
+              <td>13&ndash;17 JUL 2026</td>
+              <td>Virtual (MS Teams)</td>
+              <td>Virtual</td>
+              <td>SSG Williams</td>
+              <td>20 / 20</td>
+              <td><span class="status status-open">Open</span></td>
+            </tr>
+            <!-- END TM-20 ROWS -->
+          </tbody>
+        </table>
+      </div>
+      <div class="enroll-note">
+        <strong>Enrollment:</strong> TM-10 must be complete before attending TM-20. Bring your TM-10 completion certificate on day one.
+      </div>
+    </div>
+
+    <!-- ============================================================
+         TM-30
+         EDIT: Update dates, location, POC, and seat counts below.
+    ============================================================ -->
+    <div class="course-block">
+      <div class="course-hdr">
+        <span class="course-badge">TM-30</span>
+        <span class="course-title">Advanced Builder Manual &mdash; Data-Adjacent Specialists</span>
+        <span class="course-meta">5 days (40 hrs) &bull; Prereq: TM-10 + TM-20</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Dates</th>
+              <th>Location</th>
+              <th>Format</th>
+              <th>POC</th>
+              <th>Seats Avail.</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- ADD / EDIT TM-30 ROWS BELOW -->
+            <tr>
+              <td>28 APR &ndash; 02 MAY 2026</td>
+              <td>Wiesbaden, Clay Kaserne, Bldg 3312, Rm 104</td>
+              <td>In-Person</td>
+              <td>CW3 Thompson</td>
+              <td>4 / 10</td>
+              <td><span class="status status-low">4 Remaining</span></td>
+            </tr>
+            <tr>
+              <td>15&ndash;19 JUN 2026</td>
+              <td>Virtual (MS Teams)</td>
+              <td>Virtual</td>
+              <td>CW2 Rodriguez</td>
+              <td>15 / 15</td>
+              <td><span class="status status-open">Open</span></td>
+            </tr>
+            <tr>
+              <td>17&ndash;21 AUG 2026</td>
+              <td>Wiesbaden, Clay Kaserne, Bldg 3312, Rm 104</td>
+              <td>In-Person</td>
+              <td>CW3 Thompson</td>
+              <td>10 / 10</td>
+              <td><span class="status status-open">Open</span></td>
+            </tr>
+            <!-- END TM-30 ROWS -->
+          </tbody>
+        </table>
+      </div>
+      <div class="enroll-note">
+        <strong>Enrollment:</strong> TM-10 and TM-20 must be complete before attending TM-30. Class size is limited — contact POC early. Bring all prior completion certificates on day one.
+      </div>
+    </div>
+
+    <!-- ============================================================
+         FOOTER NOTE
+    ============================================================ -->
+    <div class="footer-note">
+      <strong>Schedule Notes:</strong> All dates subject to change. Confirm attendance with POC at least 5 business days prior. Courses run 0800&ndash;1700 each day. For Specialist Track (TM-40/50) scheduling, contact the USAREUR-AF Operational Data Team directly.
+    </div>
+
+    <div class="last-updated">Last updated: MAR 2026 &mdash; USAREUR-AF Operational Data Team</div>
+
+  </div>
+
+</body>
+</html>
