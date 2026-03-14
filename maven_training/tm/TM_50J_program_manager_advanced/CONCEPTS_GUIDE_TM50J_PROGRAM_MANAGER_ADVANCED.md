@@ -1,25 +1,8 @@
-# CONCEPTS GUIDE — TM-50J: ADVANCED DATA PROGRAM MANAGER
-## MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — TM-50J: ADVANCED DATA PROGRAM MANAGER — MAVEN SMART SYSTEM (MSS)
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA** | Wiesbaden, Germany | 2026
-
-**PURPOSE:** Extends mental models from TM-40J Concepts Guide to advanced data program management on MSS. Prerequisite: TM-40J Concepts Guide and TM-40J qualification.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-## TABLE OF CONTENTS
-
-1. From Program Manager to Data Program Leader
-2. Enterprise Portfolio Strategy — Sequencing for Operational Impact
-3. Architectural Debt as a Strategic Risk
-4. Cross-Organizational Data Program Coordination
-5. Data Program Resourcing — Making the Case
-6. Change Management in Data Programs
-7. Coalition and Partner Nation Data Program Considerations
-8. Program Health Reporting to Senior Leadership
-9. Advanced Failure Modes — What TM-50J PMs Get Wrong
+> **BLUF:** TM-50J is not about managing more programs. It is about operating at a level where your decisions shape what the enterprise data architecture becomes — and advising senior leaders on portfolio strategy, not execution status.
+> **Purpose:** Extends mental models from TM-40J Concepts Guide to advanced data program management on MSS. Prerequisite: TM-40J Concepts Guide and TM-40J qualification.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
@@ -307,5 +290,21 @@ The theater data enterprise that supports DEFENDER 2027 and the operations that 
 
 ---
 
+## PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION
+
+**Peer TM-50 Publications.** TM-50J program managers oversee work across all advanced specialist tracks. Understanding the conceptual challenges in each companion publication is essential for effective program leadership.
+
+| Publication | Track | Coordination Point |
+|---|---|---|
+| TM-50G | Advanced ORSA | Portfolio-level analytical program governance; OR product review |
+| TM-50H | Advanced AI Engineer | AI program lifecycle; governance acquisition |
+| TM-50I | Advanced ML Engineer | ML program portfolio management; automated pipeline governance |
+| TM-50K | Advanced Knowledge Manager | KM system program oversight; knowledge program management |
+| TM-50L | Advanced Software Engineer | Platform engineering program coordination; SWE team structure |
+
+**WFF Operational Consumer Note.** All MSS data programs managed by TM-50J program managers ultimately serve the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). WFF staff sections define the demand signal for the portfolio. The program health questions addressed in this guide — adoption, architectural debt, resource cases, coalition coordination — must ultimately be evaluated against whether WFF practitioners are making better operational decisions as a result of the data program.
+
+---
+
 *UNCLASSIFIED*
-*DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.*
+*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*

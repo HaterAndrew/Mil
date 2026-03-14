@@ -1,56 +1,12 @@
 # TM-40H — MAVEN SMART SYSTEM (MSS)
-## AI ENGINEER TECHNICAL MANUAL
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-
-2026
-
-**Version 1.0 | March 2026**
-
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Data Literacy Technical Reference (required)
-
-**DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to USAREUR-AF G6, Wiesbaden, Germany.
-
----
-
-## SAFETY SUMMARY
-
-AI engineers on MSS operate at the highest technical privilege level in the data environment. You write code that executes against operational data, routes queries to large language models, and produces outputs that may inform command decisions. Errors at this level do not degrade a single dashboard — they can propagate incorrect AI-generated assessments into operational products consumed across the AOR.
-
-Before performing any task in this manual:
-
-- Obtain C2DAO authorization before deploying any AIP Logic workflow to production that processes operational data
-- Never use AI-generated outputs as authoritative without a defined human review gate — AI outputs are draft products, not finished intelligence
-- Never include FOUO, CUI, or classified data in prompts sent to external or unclassified AI inference endpoints
-- All AIP Agent Studio agents that take Actions against the Ontology must have human-in-the-loop checkpoints for any write, delete, or status-change operation
-- Test against synthetic or development-environment data; never prototype in production
-- Coordinate with the C2DAO and your unit data steward before connecting any new LLM workflow to a live operational dataset
-- Code Workspaces sessions are logged — do not store credentials, keys, or sensitive schema details in notebook cells
+> **BLUF:** The AI engineer builds and owns the technical AI pipeline — from raw ontology data through LLM inference to validated, human-reviewed output. This role requires platform fluency, software engineering discipline, and a thorough understanding of AI safety requirements specific to operational military environments.
+> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Data Literacy Technical Reference (required); CONCEPTS_GUIDE_TM40H_AI_ENGINEER (read before this manual).
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: AI-GENERATED OUTPUTS ARE NOT AUTHORITATIVE. NO AIP LOGIC WORKFLOW OUTPUT, AGENT RESPONSE, OR LLM-GENERATED PRODUCT SHALL BE USED TO SUPPORT TARGETING, INTELLIGENCE ASSESSMENT, OR COMMAND DECISIONS WITHOUT DOCUMENTED HUMAN REVIEW BY A QUALIFIED ANALYST. FAILURE TO ENFORCE THIS REQUIREMENT CONSTITUTES A FAILURE OF PROFESSIONAL RESPONSIBILITY AND VIOLATES ARMY CIO POLICY (APRIL 2024).**
-
 > **WARNING: OPSEC VIOLATION RISK. LARGE LANGUAGE MODELS PROCESS INPUT DATA AND MAY RETAIN OR LOG PROMPT CONTENT DEPENDING ON ENDPOINT CONFIGURATION. VERIFY THE INFERENCE ENDPOINT AUTHORIZATION LEVEL BEFORE INCLUDING ANY OPERATIONAL DATA IN A PROMPT. CLASSIFIED AND CUI DATA REQUIRE ENDPOINTS AUTHORIZED AT THE APPROPRIATE CLASSIFICATION LEVEL.**
-
 > **CAUTION: AIP Logic workflows that write to the Ontology via Actions can modify production data at scale. Always implement dry-run testing and record-count validation gates before enabling production execution.**
-
----
-
-## TABLE OF CONTENTS
-
-- Chapter 1 — Introduction: The AI Engineer Role
-- Chapter 2 — AIP Platform Architecture Overview
-- Chapter 3 — AIP Logic: Authoring Workflows
-- Chapter 4 — AIP Agent Studio
-- Chapter 5 — LLM Integration Patterns
-- Chapter 6 — AI Safety and Responsible Use
-- Chapter 7 — Python Transforms for AI Pipelines
-- Chapter 8 — Testing and Evaluation of AI Outputs
-- Chapter 9 — Production Deployment and Monitoring
-- Appendix A — AIP Authorization Checklist
-- Appendix B — Prohibited AI Use Cases (USAREUR-AF)
-- Appendix C — AI Output Validation Framework
-- Glossary
 
 ---
 
@@ -81,9 +37,19 @@ This manual provides technical instruction for AI engineers building AI-enabled 
 
 > **NOTE:** TM-30 is a hard prerequisite. If you cannot independently design a Workshop application, configure an Ontology model, and specify an AIP Logic workflow configuration, complete TM-30 before proceeding. TM-40H assumes TM-30 competency and builds above it — not alongside it.
 
+### 1-2. Curriculum Position, Advanced Track, and WFF Context
+
+**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED. No exception.
+
+**Advanced track:** Upon completing TM-40H, qualified AI Engineers should pursue **TM-50H (Advanced AI Engineer)** for advanced topics including multi-agent orchestration, fine-tuning integration, production AI system design, and AI governance leadership on MSS.
+
+**Peer specialist tracks:** The AI Engineer works at the boundary with the ML Engineer (TM-40I). The MLE builds and owns the trained model artifact; the AI Engineer wraps that model in AIP Logic orchestration, grounding, and human-review workflow design. Coordinate with TM-40I before any deployment where AI workflows consume ML model outputs. Coordinate with TM-40L (Software Engineer) for OSDK application layers that surface AI-generated products to operational users.
+
+**WFF awareness:** WFF-qualified personnel (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command) are the primary end-users of AI-augmented workflows built by TM-40H engineers. A WFF staff officer using an AIP-generated LOGSTAT assessment or fires assessment draft is the operational consumer. Design AI workflows with that user in mind: clear sourcing, structured human-review gates, and output formats that match the WFF staff section's product requirements.
+
 ---
 
-### 1-2. The AI Engineer Role in USAREUR-AF
+### 1-3. The AI Engineer Role in USAREUR-AF
 
 USAREUR-AF, as the ASCC to USEUCOM, operates across a complex multinational, multi-echelon environment. Major subordinate commands — V Corps, 21st TSC, 7th ATC, USAREUR-AF G2, and attached joint and multinational elements — generate and consume data at high tempo. The AI engineer's mission is to close the gap between raw data availability and decision-relevant insight, using AI inference responsibly.
 
@@ -119,7 +85,7 @@ The human review gate is not optional. It is a required architectural element of
 
 ---
 
-### 1-3. Capability Summary by Track
+### 1-4. Capability Summary by Track
 
 | Capability | -30 Builder | -40H AI Engineer |
 |---|---|---|
@@ -138,7 +104,7 @@ The human review gate is not optional. It is a required architectural element of
 
 ---
 
-### 1-4. Authorization Framework
+### 1-5. Authorization Framework
 
 All AIP capabilities deployed to production must be authorized. Authorization is not a one-time checkbox — it is a continuous governance requirement. The governing bodies and references are:
 
@@ -162,7 +128,7 @@ See Appendix A for the complete authorization checklist.
 
 ---
 
-### 1-5. Prerequisites and Environment Setup
+### 1-6. Prerequisites and Environment Setup
 
 **Required access before beginning TM-40H tasks:**
 
@@ -287,6 +253,8 @@ Agent Studio builds agents that combine LLM reasoning with tool execution. An ag
 ---
 
 ### 2-5. Code Workspaces Environment
+
+> **NOTE — Palantir Developers reference:** *Product Launch: AI FDE | DevCon 3* — Covers Palantir's AI-driven Feature Development Environment (AI FDE), a platform-level capability for code-assisted AI product development. Useful orientation to the direction of the AIP engineering toolchain before you begin building. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 Code Workspaces provides a managed JupyterLab and VS Code environment with direct Foundry SDK access. Key capabilities for AI engineers:
 
@@ -715,6 +683,8 @@ User Query → Coordinator Agent
 
 > **NOTE:** Multi-agent patterns on MSS require C2DAO review before production deployment. The added complexity increases failure surface area and makes audit tracing more difficult. Use single-agent patterns unless the mission clearly requires multi-agent architecture.
 
+> **NOTE — Palantir Developers reference:** *Product Launch: AIP Agents and Ontology-MCP | DevCon 4* — Covers the integration of Ontology-MCP (Model Context Protocol) with AIP Agents, enabling agents to interact with Ontology objects as tool context. Directly relevant to agent tool configuration and Ontology-grounded agent design in this chapter. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 **Human confirmation gate in orchestration:**
 
 ```python
@@ -801,6 +771,12 @@ Available for data:    26,650 tokens
 
 ### 5-2. Retrieval-Augmented Generation (RAG) Patterns
 
+> **NOTE — Palantir Developers reference:** *AIP with Jeg: Adding RAG to a Simple Notes Application* — Step-by-step walkthrough of building a RAG pipeline on AIP, covering document ingestion, retrieval configuration, and prompt grounding. Good procedural companion to the implementation guidance in this section. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Building with Palantir AIP: Logic Tools for RAG/OAG* — Covers AIP Logic tooling specifically designed for RAG and Ontology-Augmented Generation (OAG) workflows, including retrieval step configuration and grounding patterns. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Building with Palantir AIP: Data Tools for RAG/OAG* — Covers data preparation and transformation tools that feed RAG and OAG pipelines, directly relevant to the transform design and context assembly patterns described in this section. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 RAG is the standard pattern for grounding LLM outputs in Foundry ontology data or document repositories.
 
 **Basic RAG pipeline:**
@@ -878,6 +854,8 @@ def _format_object_for_context(obj: dict) -> str:
 ---
 
 ### 5-3. Semantic Search and Vector Retrieval
+
+> **NOTE — Palantir Developers reference:** *Building with Palantir AIP: Semantic Search* — Demonstrates semantic search implementation within the AIP platform, covering embedding configuration and retrieval setup. Read alongside the custom implementation pattern below, which is required on MSS where native semantic search is not available as a platform feature. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 For document-heavy use cases (doctrine, SOPs, FRAGORD libraries), semantic search retrieves the most relevant passages rather than filtering by metadata.
 
@@ -1179,6 +1157,8 @@ LLMs produce confident-sounding text that can be factually incorrect. In operati
 
 ### 6-4. OPSEC Requirements for AI-Generated Products
 
+> **NOTE — Palantir Developers reference:** *Chad & Arnav | Privacy & Security with Palantir AIP* — Covers privacy controls, data handling boundaries, and security configuration for AIP workflows — directly reinforces the OPSEC and endpoint authorization requirements in this section. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 AI inference is a data pathway. What enters the prompt is processed by the inference endpoint. This creates OPSEC obligations:
 
 **Prompt content authorization levels:**
@@ -1224,6 +1204,8 @@ No AIP Logic workflow or Agent Studio agent may be promoted to production withou
 ## CHAPTER 7 — PYTHON TRANSFORMS FOR AI PIPELINES
 
 **BLUF:** Python transforms are the data preparation layer for all AIP Logic workflows. Write them as production code — not as notebook experiments promoted to pipelines.
+
+> **NOTE — Palantir Developers reference:** *Deep Dive: Code-Based AI Development with Ontology* — Covers Python-based AI development patterns using the Ontology as the data layer, including how transforms and Code Workspaces integrate with AI pipelines. Directly relevant to the transform authoring patterns in this chapter and the Ontology integration covered in Chapter 5. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 ### 7-1. Transform Design for AI Consumption
 
@@ -1435,6 +1417,12 @@ def validate_context_dataset(records: list[dict]) -> list[dict]:
 ## CHAPTER 8 — TESTING AND EVALUATION OF AI OUTPUTS
 
 **BLUF:** AI systems require a different evaluation mindset than traditional software. Correctness is probabilistic, not deterministic. Build evaluation frameworks before deployment, not after.
+
+> **NOTE — Palantir Developers reference:** *Palantir AIP Evals | Feedback to Fix* — Covers AIP Evals, Palantir's framework for iterative AI output quality improvement using structured feedback loops. Directly relevant to the Output Validation Framework and the automated evaluation patterns in this chapter. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Chad & Colton | Operationalizing AI with Palantir AIP Evals* — Covers how to operationalize eval-driven automation — moving from manual output review to systematic, eval-gated pipeline promotion. Relevant to the regression testing and production readiness gating described in sections 8-5 and 9-1. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Product Launch: Eval-Driven Automation in AIP | DevCon 2* — Product-level introduction to eval-driven automation as a platform capability, covering how evaluation results gate automated pipeline behavior. Reference alongside the validation gate implementation in section 6-2. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 ### 8-1. Evaluation Principles
 
@@ -1688,6 +1676,8 @@ def run_regression_suite(
 ## CHAPTER 9 — PRODUCTION DEPLOYMENT AND MONITORING
 
 **BLUF:** Deploying an AIP Logic workflow to production is a gate, not a destination. Plan monitoring, incident response, and deprecation before you deploy.
+
+> **NOTE — Palantir Developers reference:** *Chad & Bennett | Observability with Palantir AIP* — Covers monitoring and observability tooling for AIP workflows in production, including instrumentation patterns and alerting configuration. Directly supports the monitoring plan requirements in sections 9-3 and the hallucination response procedures in section 6-5. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 ### 9-1. Pre-Deployment Checklist
 

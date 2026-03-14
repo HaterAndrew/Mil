@@ -1,62 +1,12 @@
 # TM-40A — MAVEN SMART SYSTEM (MSS)
-## INTELLIGENCE WARFIGHTING FUNCTION
-## INTERMEDIATE OPERATOR'S MANUAL
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-
-2026
-
-**Version 1.0 | March 2026**
-
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; CONCEPTS_GUIDE_TM40A_INTELLIGENCE (required before beginning this manual). Familiarity with MSS workspace navigation and basic data querying (TM-10 standard) is assumed. No pipeline development or code experience required.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
-**AUTHORITY:** This publication is issued under authority of the USAREUR-AF C2 Data and Analytics Office (C2DAO). It implements Army CIO Memorandum, Data and Analytics Policy (April 2024), aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025), and supports implementation of ADP 2-0, FM 2-0, ATP 2-01.3, ATP 2-01, FM 2-22.3, ATP 2-19.4, and FM 3-60. Reference learn-data.armydev.com for current platform documentation.
-
----
-
-## SAFETY SUMMARY
-
-Intelligence practitioners using MSS operate at the intersection of sensitive data, classification domains, and operational decision support. Errors in data handling, classification markings, or analytic product dissemination can compromise sources, methods, and personnel. Read this summary before using MSS for any intelligence function.
-
-Before using MSS to support intelligence functions:
-
-- Verify classification handling before distributing any MSS product. Data aggregated across sources may inherit classification markings higher than any individual dataset. Contact the unit information management officer (IMO) or security manager before distributing derived products outside the originating workspace.
-- Do not equate data presence with data validity. MSS aggregates reporting. Reported data reflects what subordinate units and collection assets submitted — not ground truth. Analytical judgment is always required before briefing MSS data as an intelligence assessment.
-- Pattern of life and network analysis products are sensitive. Products revealing collection methods, source relationships, or targeting chains require handling consistent with the underlying intelligence category. MSS does not automatically apply these protections.
-- MSS timestamps reflect data ingestion time, not event time. A HUMINT report submitted 72 hours after collection will display a recent ingest timestamp but contain dated intelligence. Analysts must evaluate report date, not ingest date, for perishability assessment.
-- RFIs submitted through MSS must be coordinated through the collection manager (35H). Uncoordinated RFIs fragment collection effort and create deconfliction gaps that the collection manager cannot identify or resolve.
-- MSS workspace sharing for intelligence products requires G2 section chief or S2 approval before access is granted to personnel outside the originating section. Do not share access informally.
-- Source identifying information — names, physical descriptors, contact methods — must never be entered in MSS unless the workspace has been specifically authorized for that data category by the security manager. This is a life-safety requirement for human sources.
+> **BLUF:** MSS integrates multi-INT data streams and intelligence cycle functions into a single enterprise environment. This chapter establishes how the Intelligence WFF operates within MSS, how MSS relates to legacy intel tools, and the access control framework governing intelligence workspaces.
+> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; CONCEPTS_GUIDE_TM40A_INTELLIGENCE (required before beginning this manual). Familiarity with MSS workspace navigation and basic data querying (TM-10 standard) is assumed. No pipeline development or code experience required.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Releasing MSS intelligence products — including dashboards, exported datasets, and workspace screenshots — outside the originating classification domain without IMO and security manager review is a potential unauthorized disclosure. Verify handling requirements before any distribution. Classification of a compiled MSS product may exceed the classification of any individual source.**
-
 > **CAUTION: MSS aggregates data from multiple sources with varying classification levels. Derived products combining SIGINT, HUMINT, and GEOINT data may be classified higher than any individual source. Do not determine product classification by the lowest-classified input. Apply derivative classification procedures (AR 380-5) before publishing or exporting any multi-source MSS product.**
-
 > **NOTE: MSS is an intelligence enabler. The Intelligence cycle — Direction, Collection, Processing and Exploitation, Production, Dissemination — remains the doctrinal framework (FM 2-0). MSS accelerates and integrates the data layer within that cycle. Analytical judgment, source evaluation, and product integrity remain irreducibly human functions.**
-
----
-
-## TABLE OF CONTENTS
-
-- Chapter 1 — Overview and Intelligence Function in MSS
-- Chapter 2 — Intelligence Preparation of the Battlefield (IPOE) in MSS
-- Chapter 3 — Collection Management and Requirements
-- Chapter 4 — All-Source Analysis in MSS
-- Chapter 5 — Geospatial Intelligence (GEOINT) in MSS
-- Chapter 6 — HUMINT and Counterintelligence in MSS
-- Chapter 7 — Intelligence Products and Dissemination
-- Chapter 8 — Intelligence Support to Targeting
-- Chapter 9 — Echelon-Specific Intelligence Operations
-- Chapter 10 — Degraded and Contested Operations
-- Appendix A — Intel-Specific MSS Naming Conventions
-- Appendix B — RFI Template and Tracking Standard
-- Appendix C — Classification and Handling Quick Reference
-- Appendix D — Intelligence-Fires Integration Checklist
-- Appendix E — MSS Workspace Setup for S2 Section
-- Glossary
 
 ---
 
@@ -212,7 +162,7 @@ Step 1 establishes geographic boundaries, actors, and conditions defining the op
 ---
 **TASK BOX 2-1: Define Operational Environment in MSS**
 
-**Conditions:** The analyst has access to the unit's MSS IPOE workspace. Boundary datasets and AOR geospatial files have been received from higher headquarters in approved format (KML, KMZ, GeoJSON, or MGRS polygon). TM-10 and TM-20 tasks are complete. MSS workspace has been established IAW Appendix E and the security manager has approved the classification level.
+**Conditions:** The analyst has access to the unit's MSS IPOE workspace. Boundary datasets and AOR geospatial files have been received from higher headquarters in approved format (KML, KMZ, GeoJSON, or MGRS polygon). TM-10, TM-20, and TM-30 tasks are complete. MSS workspace has been established IAW Appendix E and the security manager has approved the classification level.
 
 **Standards:** The analyst correctly loads and names the AOR boundary layer, identifies adjacent unit boundaries, and identifies all NAIs established in the current collection plan. All layers follow the naming convention in Appendix A. The Step 1 workspace structure is reviewable by the G2/S2 within 24 hours of workspace setup. Adjacent unit boundaries are confirmed against current operations order graphics.
 
@@ -1633,18 +1583,18 @@ This appendix establishes minimum MSS training standards for intelligence person
 
 **Table J-1. MSS Training Requirements by Intelligence MOS**
 
-| MOS | TM-10 (Required) | TM-20 (Required) | TM-40A (Required) | Workspace Qualification | Verified By |
-|---|---|---|---|---|---|
-| 35A (MI Officer) | Yes | Yes | Yes — full manual | All intelligence workspaces | 35X or S2 section chief |
-| 35D (All-Source Officer) | Yes | Yes | Yes — full manual | All intelligence workspaces | G2/S2 |
-| 35F (Intelligence Analyst) | Yes | Yes | Yes — Chapters 1, 2, 4, 7 minimum | Assigned workspaces | 35X |
-| 35G (GEOINT Analyst) | Yes | Yes | Yes — Chapters 1, 5, 8 minimum | GEOINT workspace | 35X or 35D |
-| 35H (Collection Manager) | Yes | Yes | Yes — Chapters 1, 3, 7 minimum | Collection management workspace | 35X or G2/S2 |
-| 35L (CI Agent) | Yes | Yes | Yes — Chapters 1, 6 minimum | CI workspace | G2/S2 (with security manager) |
-| 35M (HUMINT Collector) | Yes | No | Yes — Chapter 6 and safety summary minimum | HUMINT workspace | G2/S2 (with HUMINT Operations Cell) |
-| 35N (SIGINT Analyst) | Yes | Yes | Yes — Chapters 1, 4 minimum | SIGINT workspace (separate auth required) | G2/S2 and theater SIGINT authority |
-| 35T (MI Systems Maintainer) | Yes | Yes | Safety summary and Appendix E minimum | Admin access only | G6 and G2/S2 |
-| 35X (Intel Senior Sergeant) | Yes | Yes | Yes — full manual | All intelligence workspaces | G2/S2 |
+| MOS | TM-10 (Required) | TM-20 (Required) | TM-30 (Required) | TM-40A (Required) | Workspace Qualification | Verified By |
+|---|---|---|---|---|---|---|
+| 35A (MI Officer) | Yes | Yes | Yes | Yes — full manual | All intelligence workspaces | 35X or S2 section chief |
+| 35D (All-Source Officer) | Yes | Yes | Yes | Yes — full manual | All intelligence workspaces | G2/S2 |
+| 35F (Intelligence Analyst) | Yes | Yes | Yes | Yes — Chapters 1, 2, 4, 7 minimum | Assigned workspaces | 35X |
+| 35G (GEOINT Analyst) | Yes | Yes | Yes | Yes — Chapters 1, 5, 8 minimum | GEOINT workspace | 35X or 35D |
+| 35H (Collection Manager) | Yes | Yes | Yes | Yes — Chapters 1, 3, 7 minimum | Collection management workspace | 35X or G2/S2 |
+| 35L (CI Agent) | Yes | Yes | Yes | Yes — Chapters 1, 6 minimum | CI workspace | G2/S2 (with security manager) |
+| 35M (HUMINT Collector) | Yes | Yes | Yes | Yes — Chapter 6 and safety summary minimum | HUMINT workspace | G2/S2 (with HUMINT Operations Cell) |
+| 35N (SIGINT Analyst) | Yes | Yes | Yes | Yes — Chapters 1, 4 minimum | SIGINT workspace (separate auth required) | G2/S2 and theater SIGINT authority |
+| 35T (MI Systems Maintainer) | Yes | Yes | Yes | Safety summary and Appendix E minimum | Admin access only | G6 and G2/S2 |
+| 35X (Intel Senior Sergeant) | Yes | Yes | Yes | Yes — full manual | All intelligence workspaces | G2/S2 |
 
 ### J-2. Workspace Qualification Standard
 
@@ -1792,6 +1742,40 @@ Any battle rhythm change requires G2/S2 approval and coordination with the S3 to
 4. Brief the production plan to the section. Confirm each analyst understands their production tasks, suspense times, and MSS workspace procedures.
 5. Coordinate with the S3 to confirm which intelligence products will appear on the Mission Command workspace CCIR dashboard (TM-40F coordination).
 6. Review the production plan after the first battle rhythm cycle. Adjust suspense times based on actual production experience.
+---
+
+## APPENDIX F — RELATED MANUALS AND TRAINING TRACKS
+
+### WFF Peer Tracks
+
+TM-40A is one of six Warfighting Function tracks at the same tier. All six WFF tracks require TM-10, TM-20, and TM-30 as prerequisites. Intelligence practitioners should develop working familiarity with TM-40B (Fires) and TM-40F (Mission Command) — the two WFF tracks with the most intensive intelligence data coordination requirements.
+
+**Table F-1. WFF Peer Track Quick Reference**
+
+| Track | Title | Prerequisite | Primary Intel Coordination Point |
+|-------|-------|--------------|----------------------------------|
+| TM-40A | Intelligence WFF | TM-10 + TM-20 + TM-30 | This manual |
+| TM-40B | Fires WFF | TM-10 + TM-20 + TM-30 | Targeting workspace, AMD coordination |
+| TM-40C | Movement and Maneuver WFF | TM-10 + TM-20 + TM-30 | NAI/TAI overlays, reconnaissance reporting |
+| TM-40D | Sustainment WFF | TM-10 + TM-20 + TM-30 | LOC threat data, supply point security |
+| TM-40E | Protection WFF | TM-10 + TM-20 + TM-30 | AT intelligence integration |
+| TM-40F | Mission Command WFF | TM-10 + TM-20 + TM-30 | PIR-derived CCIR, INTSUM dissemination |
+
+### Specialist Tracks (Prerequisite: TM-30)
+
+For technical specialists pursuing advanced analytical or engineering capability, specialist tracks are available after completing TM-30 (Advanced Builder). These are not required for intelligence WFF employment.
+
+**Table F-2. Specialist and Advanced Track Quick Reference**
+
+| Track | Title | Advanced Track |
+|-------|-------|----------------|
+| TM-40G | ORSA | TM-50G |
+| TM-40H | AI Engineer | TM-50H |
+| TM-40I | ML Engineer | TM-50I |
+| TM-40J | Program Manager | TM-50J |
+| TM-40K | Knowledge Manager | TM-50K |
+| TM-40L | Software Engineer | TM-50L |
+
 ---
 
 ---

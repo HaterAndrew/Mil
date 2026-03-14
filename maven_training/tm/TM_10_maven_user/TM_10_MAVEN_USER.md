@@ -1,55 +1,12 @@
 # TM-10 — MAVEN SMART SYSTEM (MSS)
-## OPERATOR TECHNICAL MANUAL
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-
-2026
-
-**Version 1.0 | March 2026**
-
-**APPLIES TO:** All USAREUR-AF military and civilian personnel requiring MSS access.
-**PREREQUISITE PUBLICATIONS:** Data Literacy Technical Reference (recommended prior reading).
-**RELATED MANUALS:** TM-20 (Workshop Builder), TM-30 (Advanced Builder/Developer).
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-## SAFETY SUMMARY
-
-The Maven Smart System (MSS) handles operational and potentially classified data. Improper use may result in:
-
-- Unauthorized disclosure of sensitive or classified information
-- Corruption or loss of operational data
-- Unauthorized changes to live operational records
-- Security violations subject to criminal prosecution
-
-Read all WARNINGS and CAUTIONS in this manual before operating the system.
-
-**If you are uncertain whether an action is authorized — STOP. Ask your supervisor or data steward before proceeding.**
-
----
-
-## TABLE OF CONTENTS
-
-- [Chapter 1 — Introduction and Overview](#chapter-1--introduction-and-overview)
-- [Chapter 2 — Accessing MSS](#chapter-2--accessing-mss)
-- [Chapter 3 — Navigating the Platform](#chapter-3--navigating-the-platform)
-- [Chapter 4 — Using Workshop Applications](#chapter-4--using-workshop-applications)
-- [Chapter 5 — Working with Data](#chapter-5--working-with-data)
-- [Chapter 6 — AIP and AI Interfaces](#chapter-6--aip-and-ai-interfaces)
-- [Chapter 7 — Security, Classification, and Markings](#chapter-7--security-classification-and-markings)
-- [Chapter 8 — Troubleshooting and Support](#chapter-8--troubleshooting-and-support)
-- [Appendix A — Quick Reference Card](#appendix-a--quick-reference-card)
-- [Glossary](#glossary)
+> **BLUF:** This manual tells you how to use the Maven Smart System (MSS) as a data consumer. It covers logging in, finding your unit's information, reading dashboards, submitting forms, and staying within authorized boundaries. No technical background is required. You do not need to know how to write code or build anything. If you can use a smartphone or a web browser, you can use MSS.
+> **Prereqs:** None (formal). Data Literacy Technical Reference (recommended prior reading — not required).
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 ---
 
 # CHAPTER 1 — INTRODUCTION AND OVERVIEW
-
-**BLUF:** This manual tells you how to use the Maven Smart System (MSS) as a data consumer. It covers logging in, finding your unit's information, reading dashboards, submitting forms, and staying within authorized boundaries. No technical background is required. You do not need to know how to write code or build anything. If you can use a smartphone or a web browser, you can use MSS.
-
----
 
 ## 1-1. Purpose and Scope
 
@@ -237,6 +194,33 @@ SOURCE SYSTEMS                INTEGRATION             SEMANTIC LAYER          YO
 **The most important habit:** Before acting on a data product, know its currency (how old is it?) and its source (what system did it come from?). Both are visible in MSS — your data steward can show you where to find this information for each application you use.
 
 > **NOTE:** You are a data consumer, not a data validator. If something looks wrong, your job is to report it — not to correct it, work around it, or ignore it. The escalation path is in Table 1-2 (paragraph 1-7).
+
+---
+
+## 1-9. MSS Training Curriculum — Learning Path
+
+TM-10 is the entry point for the MSS training curriculum. After completing TM-10, personnel may advance along one of two tracks depending on their role and assigned duties.
+
+**Advancement path:**
+
+| Current Qualification | Next Step | Description |
+|---|---|---|
+| TM-10 (Operator) | TM-20 (Builder) | For personnel who have been granted builder access and will create pipelines, applications, or Ontology configurations. Prerequisite: TM-10. |
+| TM-20 (Builder) | TM-30 (Advanced Builder) | For personnel who will design complex multi-source pipelines, advanced Ontology models, and multi-page applications. Prerequisite: TM-20. |
+| TM-30 (Advanced Builder) | TM-40A — Intelligence WFF | For G2 / S2 staff applying MSS to intelligence workflows. Prerequisite: TM-30 (required). Duration: 3 days. |
+| TM-30 (Advanced Builder) | TM-40B — Fires WFF | For fire support personnel applying MSS to fires workflows. Prerequisite: TM-30 (required). Duration: 3 days. |
+| TM-30 (Advanced Builder) | TM-40C — Movement & Maneuver WFF | For G3 / S3 staff applying MSS to movement and maneuver workflows. Prerequisite: TM-30 (required). Duration: 3 days. |
+| TM-30 (Advanced Builder) | TM-40D — Sustainment WFF | For G4 / S4 staff applying MSS to logistics and sustainment workflows. Prerequisite: TM-30 (required). Duration: 3 days. |
+| TM-30 (Advanced Builder) | TM-40E — Protection WFF | For protection officers and NCOs applying MSS to force protection workflows. Prerequisite: TM-30 (required). Duration: 3 days. |
+| TM-30 (Advanced Builder) | TM-40F — Mission Command WFF | For G6 / S6 and command staff applying MSS to mission command workflows. Prerequisite: TM-30 (required). Duration: 3 days. |
+| TM-30 (Advanced Builder) | TM-40G — ORSA | For operational research and systems analysis specialists. Prerequisite: TM-30 (required). Duration: 5 days. |
+| TM-30 (Advanced Builder) | TM-40H — AI Engineer | For personnel building and maintaining AIP Logic workflows and AI-enabled products. Prerequisite: TM-30 (required). Duration: 5 days. |
+| TM-30 (Advanced Builder) | TM-40I — ML Engineer | For personnel developing machine learning pipelines and model integrations. Prerequisite: TM-30 (required). Duration: 5 days. |
+| TM-30 (Advanced Builder) | TM-40J — Program Manager | For data program managers coordinating MSS products and delivery. Prerequisite: TM-30 (required). Duration: 3 days. |
+| TM-30 (Advanced Builder) | TM-40K — Knowledge Manager | For knowledge managers structuring data products for organizational learning. Prerequisite: TM-30 (required). Duration: 3 days. |
+| TM-30 (Advanced Builder) | TM-40L — Software Engineer | For software engineers writing Python, PySpark, TypeScript, and OSDK integrations. Prerequisite: TM-30 (required). Duration: 5 days. |
+
+> **NOTE:** Not every TM-10 graduate proceeds to TM-20. Most USAREUR-AF personnel require only TM-10 operator qualification to perform their duties. Builder access (TM-20 and above) is granted through chain-of-command request and requires explicit approval. If you believe your duties require builder access, speak with your unit data steward.
 
 ---
 
@@ -1337,5 +1321,5 @@ Policy questions → USAREUR-AF C2DAO (via chain of command)
 *TM-10 — Maven Smart System (MSS) Operator Technical Manual*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA, Wiesbaden, Germany*
 *2026*
-*UNCLASSIFIED — DRAFT — Not yet approved for distribution.*
+*UNCLASSIFIED — Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
 *For corrections or updates, contact the USAREUR-AF Operational Data Team through your unit data steward or the C2DAO office.*

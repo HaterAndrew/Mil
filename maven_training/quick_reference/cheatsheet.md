@@ -153,7 +153,7 @@ Building dashboards, Workshop apps, or basic pipelines?
   → TM-20: BUILDER (all staff)
 
 WFF functional staff (INT/FIRES/M2/SUST/PROT/MC)?
-  → TM-40A through TM-40F (WFF tracks, after TM-20 — no coding required)
+  → TM-40A through TM-40F (WFF tracks, after TM-30 — no coding required)
      Intelligence     → TM-40A
      Fires            → TM-40B
      Movement/Manvr   → TM-40C
@@ -180,14 +180,14 @@ Completed TM-40G–L? → Take the corresponding TM-50G–L advanced track.
 ## PREREQUISITE CHAIN
 
 ```
-TM-10 (no prereq) → TM-20 ─┬─ WFF Staff → TM-40A through TM-40F
-                             │
-                             └─ Data-adjacent → TM-30 → TM-40G through TM-40L
+TM-10 (no prereq) → TM-20 → TM-30 ─┬─ WFF Staff  → TM-40A through TM-40F
+                                      │
+                                      └─ Technical → TM-40G through TM-40L
                                                               ↓
                                                          TM-50G through TM-50L
 
 All staff must complete TM-10 before any other TM.
-WFF tracks (TM-40A–F): require TM-10 + TM-20. No coding required.
+WFF tracks (TM-40A–F): require TM-10 + TM-20 + TM-30. No coding required.
 Technical tracks (TM-40G–L): require TM-30 (or demonstrated equivalent).
 Advanced tracks (TM-50G–L): require corresponding TM-40G–L.
 ```

@@ -1,61 +1,12 @@
 # TM-40D — MAVEN SMART SYSTEM (MSS)
-## SUSTAINMENT WARFIGHTING FUNCTION
-## INTERMEDIATE OPERATOR'S MANUAL
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-
-2026
-
-**Version 1.0 | March 2026**
-
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; CONCEPTS_GUIDE_TM40D_SUSTAINMENT (required before beginning this manual). No coding, pipeline development, or transform experience is required or assumed.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
-**AUTHORITY:** This publication is issued under authority of the USAREUR-AF C2 Data and Analytics Office (C2DAO). It implements Army CIO Memorandum, Data and Analytics Policy (April 2024), aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025), and supports implementation of ADP 4-0, FM 4-0, ATP 4-0.1, FM 4-01, ATP 4-42, ATP 4-41, ATP 4-15, and FM 4-30. Reference learn-data.armydev.com for current platform documentation.
-
----
-
-## SAFETY SUMMARY
-
-Sustainment practitioners using MSS operate at the intersection of logistics data, equipment readiness reporting, and personnel accountability. Errors in supply status, readiness reporting, or personnel accountability data can degrade the supported commander's ability to generate combat power — and produce failed missions at the moment of need.
-
-Before using MSS sustainment products to support any decision:
-
-- Verify data freshness before reporting. Every MSS product displays a data-as-of timestamp. Stale LOGSTAT or readiness data presented as current status is operationally dangerous. A maintenance report reflecting yesterday's deadline count does not reflect today's readiness.
-- Do not allow MSS to substitute for physical verification. MSS reports what has been reported into the system. It does not independently verify what is on-hand or operational. A supply status that shows 100% fill may reflect a requisition status, not a delivery confirmation. Verify through the supply chain.
-- GCSS-Army and MSS data must be reconciled. MSS pulls data from GCSS-Army feeds. Discrepancies between GCSS-Army records and MSS displays indicate a feed latency or entry error — not that one system is right and the other is wrong. Reconcile at the source.
-- Ammunition data is safety-critical. Errors in ammunition basic load reporting, DODIC management, or lot number tracking in MSS have potential for catastrophic consequences. Validate ammunition status against physical inventories, not solely against MSS displays.
-- PERSTAT accuracy has tactical consequences. Inaccurate personnel accountability data fed into MSS CCIR thresholds can mask casualty reporting failures or strength shortfalls. Verify PERSTAT inputs against unit first-sergeant accountability before reporting to higher.
-- OPSEC applies to sustainment data. Supply status, ammunition basic loads, petroleum inventory, and personnel strength data are operationally sensitive. Dashboard screenshots, exported LOGSTAT products, and MSS data extracts are subject to the same handling requirements as the underlying data. Coordinate with the unit IMO before distributing outside the originating classification domain.
+> **BLUF:** TM-40D teaches sustainment practitioners — supply sergeants, maintenance NCOs, transportation coordinators, ammunition specialists, and HR professionals — how to use MSS in daily sustainment work. No coding or pipeline development. This is operational use of a data-enabled enterprise platform in direct support of the Sustainment warfighting function.
+> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; CONCEPTS_GUIDE_TM40D_SUSTAINMENT (required before beginning this manual).
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Presenting MSS sustainment data to a commander without verifying data currency and source reconciliation can lead to supply, maintenance, or readiness decisions based on false situational awareness. Always confirm data-as-of timestamp and GCSS-Army source feed status before any LOGSTAT brief or commander sustainment update.**
-
 > **CAUTION: MSS readiness and supply thresholds are dependent on reported data entered into source systems (GCSS-Army, SAMS-E, PBUSE). An alert indicating a supply shortage or readiness decline is a prompt to investigate through the supply chain and with unit property accountability officers — not a confirmed status. Validate all MSS threshold triggers against primary source records.**
-
 > **NOTE: MSS does not replace GCSS-Army, SAMS-E, STAMIS, PBUSE, or LIW as authoritative supply and maintenance management systems. MSS integrates and visualizes data from those systems. Transactions that affect accountability, property records, or official supply status must be entered in the authoritative system — not only in MSS.**
-
----
-
-## TABLE OF CONTENTS
-
-- Chapter 1 — Overview: The Sustainment WFF and MSS
-- Chapter 2 — Supply Chain Management in MSS
-- Chapter 3 — Maintenance Management
-- Chapter 4 — Transportation and Distribution Operations
-- Chapter 5 — Ammunition Management
-- Chapter 6 — Petroleum and Water Operations
-- Chapter 7 — Human Resources and Personnel Accountability
-- Chapter 8 — Field Services and Health Service Support
-- Chapter 9 — Echelon-Specific Sustainment Operations
-- Chapter 10 — Degraded Operations
-- Appendix A — Sustainment-Specific Naming Conventions in MSS
-- Appendix B — LOGSTAT Report Fields and Standards
-- Appendix C — Supply Class Quick Reference (Class I–IX)
-- Appendix D — Maintenance Priority Matrix
-- Appendix E — Distribution Synchronization Checklist
-- Glossary
 
 ---
 
@@ -196,17 +147,17 @@ Workspace configuration varies by sustainment echelon.
 | TM | Title | Relationship to TM-40D |
 |---|---|---|
 | TM-10 | Maven User | Foundation prerequisite. Platform navigation, basic data access. Required before this manual. |
-| TM-20 | Builder | Not required. Builds sustainment dashboards and Workshop products that TM-40D users consume. |
-| TM-30 | Advanced Builder | Not required. Designs data pipelines that feed sustainment products. Coordinate through S6 or C2DAO. |
+| TM-20 | Builder | Required as prerequisite (Go evaluation on file). Builder skills are not exercised in this track — TM-40D practitioners consume pre-built products. The TM-20 cert is part of the progression chain to TM-30. |
+| TM-30 | Advanced Builder | Required prerequisite (Go evaluation on file). Advanced builder skills are not exercised in this track — TM-40D practitioners consume pre-built products. TM-30 completion certifies platform literacy at the level required before WFF track enrollment. |
 | TM-40A | Intelligence | Companion. Intel products feed threat data; sustainment data (LOC status, supply point security) feeds intel picture. |
 | TM-40B | Fires | Companion. Ammunition management (Ch. 5) requires coordination with fires WFF for CSR and expenditure data. |
 | TM-40C | Movement and Maneuver | Companion. Maneuver unit readiness and supply status feed the sustainment picture; sustainment constraints feed the maneuver plan. |
 | TM-40D | Sustainment | This manual. |
 | TM-40E | Protection | Complementary. Force protection data affects sustainment convoy routes and supply point security. |
 | TM-40F | Mission Command | Complementary. S4 sustainment products contribute to the COP (S3 product); LOGSTAT feeds commander FFIR monitoring. |
-| TM-50 Series | Advanced Specialist Tracks | Post-graduate level for technical specialists. Not applicable to operational sustainment practitioners. |
+| TM-50G–L | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq TM-30). Not applicable to operational sustainment practitioners. |
 
-> **NOTE: TM-20 (Builder) is NOT required for this manual. TM-40D assumes no ability to build pipelines or transforms. If you encounter a sustainment data product that does not exist and needs to be built, coordinate with your unit's designated MSS Builder (TM-20 qualified) or the C2DAO.**
+> **NOTE: TM-20 and TM-30 are required as prerequisites (Go evaluations on file) but builder skills are not exercised in this manual. TM-40D assumes no ability to build pipelines or transforms. If you encounter a sustainment data product that does not exist and needs to be built, coordinate with your unit's designated MSS Builder (TM-30 qualified) or the C2DAO.**
 
 ### 1-7. Audience and MOS Coverage
 

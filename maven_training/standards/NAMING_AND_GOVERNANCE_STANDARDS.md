@@ -5,29 +5,13 @@ Wiesbaden, Germany
 
 **Proponent:** USAREUR-AF C2DAO
 **Authority:** Army CIO Data and Analytics Policy (April 2024); UDRA v1.1 (February 2025)
-**Distribution:** DRAFT — Not yet approved for distribution.
+**Distribution:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
 **Version:** 1.0 | March 2026
 
 > **NOTE:** All TMs in the Maven training series reference "USAREUR-AF naming conventions." This document is the authoritative source. When in doubt, consult C2DAO or the responsible data steward.
 
 ---
 
-## TABLE OF CONTENTS
-
-- Section 1 — Project Naming
-- Section 2 — Dataset Naming
-- Section 3 — Object Type and Property Naming
-- Section 4 — Link Type Naming
-- Section 5 — Action Naming
-- Section 6 — Workshop Application Naming
-- Section 7 — Pipeline and Transform Naming
-- Section 8 — Branch Naming
-- Section 9 — Code and Repository Standards
-- Section 10 — Governance Checkpoints
-- Appendix A — Approved Abbreviations
-- Appendix B — Governance Checklist (Before Promoting to Production)
-
----
 
 ## SECTION 1 — PROJECT NAMING
 

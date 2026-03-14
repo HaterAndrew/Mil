@@ -30,7 +30,7 @@ SUBJECT: USAREUR-AF Maven Smart System (MSS) Training Program — Program Direct
 |----------|-------------|-------------|
 | TM-20 (Builder) | Required before building any project, pipeline, Ontology, or Workshop application | TM-10 |
 | TM-30 (Advanced Builder) | Required before serving as a unit data lead or deploying multi-source production data products | TM-20 |
-| TM-40 WFF tracks (A–F) | Required before performing warfighting function operator duties on MSS | TM-20 |
+| TM-40 WFF tracks (A–F) | Required before performing warfighting function operator duties on MSS | TM-30 |
 | TM-40 specialist tracks (G–L) | Required before performing specialist functions (ORSA, AI, ML, PM, KM, SWE) | TM-30 |
 
    **c.** Commanders will ensure newly assigned personnel complete TM-10 within **30 days** of assignment to a USAREUR-AF unit. Personnel assigned to data-adjacent roles will complete the appropriate higher training level within **90 days** of assignment.

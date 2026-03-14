@@ -5,7 +5,7 @@
 |---|---|
 | **Level** | TM-40A — Intelligence WFF Track |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-10, TM-20 (Go evaluations on file); CONCEPTS_GUIDE_TM40A_INTELLIGENCE (required reading before Day 1) |
+| **Prerequisites** | TM-10, TM-20, TM-30 (Go evaluations on file); CONCEPTS_GUIDE_TM40A_INTELLIGENCE (required reading before Day 1) |
 | **Audience** | G2/S2 staff, targeting officers, all-source analysts, personnel who configure or brief intelligence products in MSS at BCT echelon or above |
 | **Format** | Instructor-led seminar + demonstration + tabletop exercise + practical evaluation |
 | **Location** | MSS Training Environment (standard user access sufficient) |
@@ -57,7 +57,7 @@ Complete **5+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 5 | Exercise | PIR scenario: given commander requirements and a sample intelligence dataset, configure 3 PIR alerts and verify they trigger correctly |
 
-**Evening reading:** TM-40A, Chapter 5 (PIR and Collection Management in MSS) — focus on false-trigger diagnosis procedures.
+**Evening reading:** TM-40A, Chapter 3 (Collection Management and Requirements) — focus on false-trigger diagnosis procedures.
 
 ---
 
@@ -74,7 +74,7 @@ Complete **5+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 9 | Exercise | Targeting product drill: build a targeting product from a provided intelligence dataset; evaluator reviews for timestamp, confirmed/unconfirmed distinction, BDA status, and OPSEC compliance |
 
-**Evening reading:** TM-40A, Chapter 7 (Targeting Data Management) and Chapter 9 (All-Source Fusion Products in MSS).
+**Evening reading:** TM-40A, Chapter 8 (Intelligence Support to Targeting) and Chapter 4 (All-Source Analysis in MSS).
 
 ---
 
@@ -99,10 +99,10 @@ Complete **5+ duty days before Day 1:**
 | Before Day 1 | CONCEPTS_GUIDE_TM40A_INTELLIGENCE (complete) |
 | Before Day 1 | FM 2-0, Ch 2 (Intelligence Operations) — review |
 | Before Day 1 | ATP 2-01, Ch 3 (Intelligence Support to Targeting) — review |
-| Day 1 evening | TM-40A, Ch 5 (PIR and Collection Management in MSS) |
-| Day 2 evening | TM-40A, Ch 7 (Targeting Data Management) |
-| Day 2 evening | TM-40A, Ch 9 (All-Source Fusion Products in MSS) |
-| Day 3 (review) | TM-40A, Ch 11 (OPSEC for Intelligence Products) — skim before Day 3 brief |
+| Day 1 evening | TM-40A, Ch 3 (Collection Management and Requirements) |
+| Day 2 evening | TM-40A, Ch 8 (Intelligence Support to Targeting) |
+| Day 2 evening | TM-40A, Ch 4 (All-Source Analysis in MSS) |
+| Day 3 (review) | TM-40A, Ch 7 (Intelligence Products and Dissemination) — skim before Day 3 brief |
 
 ---
 
@@ -140,6 +140,33 @@ Complete **5+ duty days before Day 1:**
 | PIR alert configuration | A PIR must be tied to a specific data feed, geographic area or threshold, AND notification path — "report enemy movement in the AOR" is not a complete alert. Bring your unit's PIR list and think through configuration before Day 1 |
 | Collection gap inject | The failure mode is briefing NAI TIGER as "clear" when the feed is down. Correct answer: "NAI TIGER status unknown — collection gap." Caveat all commander products dependent on NAI TIGER coverage |
 | Targeting product | The evaluator will ask "How do you know this target is confirmed?" — if you cannot point to a confirmation source and BDA entry, that element fails |
+
+---
+
+## Associated Exercise and Exams
+
+| Item | Reference |
+|---|---|
+| **Practical Exercise** | EX-40A (EXERCISE.md + ENVIRONMENT_SETUP.md) — `exercises/EX-40A/` |
+| **Pre-course exam** | EXAM_TM40A_PRE — `exercises/exams/EXAM_TM40A_PRE.md` |
+| **Post-course exam** | EXAM_TM40A_POST — `exercises/exams/EXAM_TM40A_POST.md` |
+
+---
+
+## Related WFF Tracks
+
+TM-40A is one of six WFF tracks. All require TM-10, TM-20, and TM-30 as prerequisites.
+
+| Track | WFF | Audience |
+|---|---|---|
+| TM-40A | Intelligence | G2/S2 staff, targeting officers, all-source analysts |
+| TM-40B | Fires | FSOs, FSEs, targeting officers, fires NCOs |
+| TM-40C | Movement & Maneuver | G3/S3 staff, operations officers, maneuver planners |
+| TM-40D | Sustainment | G4/S4 staff, logistics officers, supply chain managers |
+| TM-40E | Protection | FP officers, CBRN officers, provost marshal staff |
+| TM-40F | Mission Command | Battle captains, XOs, CDRs, MC-function staff |
+
+Personnel completing multiple WFF tracks do not repeat TM-10, TM-20, or TM-30. Enrollment is independent for each track.
 
 ---
 

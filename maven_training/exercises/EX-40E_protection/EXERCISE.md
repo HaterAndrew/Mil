@@ -4,9 +4,12 @@
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40E, CONCEPTS_GUIDE_TM40E_PROTECTION (and TM-10, TM-20) |
+| **Prerequisite** | TM-10, TM-20, TM-30 (required); TM-40E and CONCEPTS_GUIDE_TM40E_PROTECTION (current track) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS training instance, standard user access — see ENVIRONMENT_SETUP.md |
+| **Companion TM** | TM_40E_PROTECTION.md |
+| **Syllabus** | SYLLABUS_TM40E |
+| **Exams** | EXAM_TM40E_PRE / EXAM_TM40E_POST |
 
 ## SCENARIO
 

@@ -4,9 +4,23 @@
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40I, Machine Learning Engineer Technical Manual (and TM-10 through TM-30) |
+| **Prerequisite** | TM-30 REQUIRED; TM-40I — Machine Learning Engineer Technical Manual (and TM-10 through TM-20) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS with Python Transforms, Model Integration enabled — see ENVIRONMENT_SETUP.md |
+
+## COMPANION RESOURCES
+
+| Resource | Reference |
+|----------|-----------|
+| Technical Manual | TM-40I — ML Engineer |
+| Syllabus | SYLLABUS_TM40I |
+| Pre-Exercise Exam | EXAM_TM40I_PRE |
+| Post-Exercise Exam | EXAM_TM40I_POST |
+| Continuation Track | TM-50I — Advanced ML Engineer |
+
+## WFF AWARENESS
+
+The NMC risk model produced in this exercise is an operational product consumed by WFF track personnel (TM-40D Sustainment in particular) as a readiness decision-support tool. Evaluators should verify that the model card (Task 5) is written for a non-MLE audience — sustainment officers and NCOs will be the primary consumers.
 
 ## SCENARIO
 
@@ -96,6 +110,10 @@ Write a model card covering all six required sections: purpose, training data, f
 - Task 2 (model training) averages 60–90 min depending on model complexity; gradient boosted trees will take longer
 - Task 3 (confusion matrix and threshold) is conceptually straightforward but participants often spend significant time on the operational consequence reasoning — this is intentional
 - Consider splitting EX-40I across two sessions if time is constrained
+
+## NEXT STEPS
+
+Participants who receive an overall Go on EX-40I are eligible to enroll in **TM-50I — Advanced ML Engineer**. TM-50I extends into model retraining pipelines, drift detection, and MLOps governance for production Foundry environments. No TM-50A–F tracks exist.
 
 ## ENVIRONMENT SETUP
 

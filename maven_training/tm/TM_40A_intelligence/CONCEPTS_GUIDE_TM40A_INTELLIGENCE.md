@@ -1,35 +1,9 @@
-# CONCEPTS GUIDE — TM-40A COMPANION
-## INTELLIGENCE WARFIGHTING FUNCTION
-## MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — TM-40A COMPANION — INTELLIGENCE WARFIGHTING FUNCTION · MAVEN SMART SYSTEM (MSS)
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-
-2026
-
-**Version 1.0 | March 2026**
-
-**PURPOSE:** This guide is a conceptual companion to TM-40A. It develops the mental models that intelligence practitioners need before operating MSS in an intelligence role. Read this guide before beginning TM-40A. It contains no step-by-step procedures — those are in the TM. This guide develops understanding. The TM develops skill.
-
-**PREREQUISITE:** TM-10 (Maven User). This guide assumes platform familiarity and focuses on conceptual integration — how intelligence doctrine, tradecraft, and the MSS data environment relate to each other.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-## TABLE OF CONTENTS
-
-1. Intelligence and Data — The Intel Practitioner's Mental Model
-2. The Intelligence Process and MSS — Where the Platform Fits
-3. IPB Mental Model — Thinking with Integrated Data
-4. Collection Management Mental Model — PIR, RFI, and the Limits of MSS
-5. The All-Source Fusion Challenge — Why MSS Does Not Analyze
-6. Security and Handling Mental Model — Classification in an Integrated Environment
-7. Common Failure Modes for Intelligence Practitioners on MSS
-8. The Intelligence-Fires Integration Mental Model
-9. Intelligence Operations in a Contested Data Environment
-10. The Analyst's Relationship with the Platform
-11. Intelligence Leadership and MSS Governance
+> **BLUF:** Intelligence has always been a data discipline. What MSS changes is the speed of integration and the visibility of gaps — not the analytical process itself. Intelligence practitioners who understand this distinction will use the platform effectively. Those who do not will either underuse it (treating it as just another database) or overuse it (letting the platform substitute for analytical judgment).
+> **Prereqs:** TM-10 (Maven User), TM-20 (Builder), and TM-30 (Advanced Builder). This guide assumes platform familiarity and focuses on conceptual integration — how intelligence doctrine, tradecraft, and the MSS data environment relate to each other. TM-30 is required before beginning TM-40A; read this Concepts Guide after TM-30 and before beginning the TM-40A task manual.
+> **Purpose:** This guide is a conceptual companion to TM-40A. It develops the mental models that intelligence practitioners need before operating MSS in an intelligence role. Read this guide before beginning TM-40A. It contains no step-by-step procedures — those are in the TM. This guide develops understanding. The TM develops skill.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
@@ -520,6 +494,36 @@ This guide has established the conceptual framework for Intelligence WFF practit
 - Classification and OPSEC discipline on MSS is a force protection function, not just a compliance function.
 
 When you encounter a difficult situation using MSS in an intelligence role — a product that does not exist, a data feed that is stale, a collection gap that cannot be filled — apply the doctrinal framework first. What phase of the intelligence process is affected? What product standard applies? What is the fallback procedure? The answers are in FM 2-0, ATP 2-01.3, ATP 2-01, and TM-40A. MSS is the tool. The doctrine and the tradecraft are the profession.
+
+---
+
+## RELATED TRACKS AND PUBLICATIONS
+
+### WFF Peer Tracks
+
+All six WFF tracks are at the same tier. All six WFF tracks require TM-10, TM-20, and TM-30 as prerequisites. Intelligence practitioners are encouraged to develop working awareness of peer WFF tracks, particularly fires and mission command, where data integration with intelligence is most intensive.
+
+| Track | Title | Prereq | Relationship to Intelligence WFF |
+|-------|-------|--------|----------------------------------|
+| TM-40A | Intelligence WFF | TM-10 + TM-20 + TM-30 | This track |
+| TM-40B | Fires WFF | TM-10 + TM-20 + TM-30 | Targeting data, AMD coordination, fires-intel integration — see Section 8 of this guide |
+| TM-40C | Movement and Maneuver WFF | TM-10 + TM-20 + TM-30 | NAI/TAI overlays, reconnaissance data feed into M&M operations process |
+| TM-40D | Sustainment WFF | TM-10 + TM-20 + TM-30 | LOC threat data, supply point security — intelligence supports sustainment planning |
+| TM-40E | Protection WFF | TM-10 + TM-20 + TM-30 | AT intelligence integration; threat data for AT assessments |
+| TM-40F | Mission Command WFF | TM-10 + TM-20 + TM-30 | PIR-derived CCIR components feed commander's CCIR dashboard — primary coordination partner |
+
+### Specialist Tracks (Prerequisite: TM-30)
+
+For personnel pursuing technical depth beyond WFF employment, the specialist tracks (TM-40G–L, prereq TM-30) are available. GEOINT and SIGINT data management practitioners may find TM-40H (AI Engineer) and TM-40I (ML Engineer) relevant for advanced analytical capability development.
+
+| Track | Title |
+|-------|-------|
+| TM-40G | ORSA (→ TM-50G) |
+| TM-40H | AI Engineer (→ TM-50H) |
+| TM-40I | ML Engineer (→ TM-50I) |
+| TM-40J | Program Manager (→ TM-50J) |
+| TM-40K | Knowledge Manager (→ TM-50K) |
+| TM-40L | Software Engineer (→ TM-50L) |
 
 ---
 

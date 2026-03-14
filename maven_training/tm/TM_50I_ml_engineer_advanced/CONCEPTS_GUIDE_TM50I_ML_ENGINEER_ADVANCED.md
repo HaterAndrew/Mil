@@ -1,36 +1,8 @@
-# CONCEPTS GUIDE — TM-50I COMPANION
-## ADVANCED MACHINE LEARNING ENGINEER — MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — TM-50I COMPANION — ADVANCED MACHINE LEARNING ENGINEER — MAVEN SMART SYSTEM (MSS)
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany — 2026
-
-**PURPOSE:** Extends the mental models of the TM-40I Concepts Guide to advanced ML engineering on MSS. Prerequisite: TM-40I Concepts Guide and TM-40I qualification.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-## HOW TO USE THIS GUIDE
-
-This guide contains no numbered procedures, no step-by-step instructions, and no checklists. Those belong in TM-50I. This guide provides the underlying conceptual architecture that makes TM-50I tasks executable correctly.
-
-At TM-40I, the mental model was: data in, features engineered, model trained, model deployed, drift monitored. That model is correct — keep using it. But at TM-50I, you are no longer building one model at a time. You are designing the infrastructure that allows your team — and other teams — to build many models reliably over years.
-
-Read this guide before beginning TM-50I tasks. Return to it when a task is producing unexpected results or when a governance decision requires you to articulate rationale, not just execute a checklist.
-
----
-
-## TABLE OF CONTENTS
-
-1. From Model Builder to ML Systems Engineer
-2. Feature Store Architecture
-3. Advanced Model Evaluation: Beyond Accuracy
-4. Drift Taxonomy and Response Protocols
-5. Multi-Model Systems: Ensembles and Stacking in Operational Context
-6. Experiment Tracking as Operational Discipline
-7. Model Governance at Portfolio Scale
-8. Responsible ML: Advanced Considerations
-9. Advanced Failure Modes — What TM-50I Engineers Get Wrong
+> **BLUF:** TM-50I marks a professional transition. You are no longer primarily a model builder. You are an ML systems engineer — responsible for the infrastructure, processes, and standards that make reliable ML possible at scale.
+> **Purpose:** Extends the mental models of the TM-40I Concepts Guide to advanced ML engineering on MSS. Prerequisite: TM-40I Concepts Guide and TM-40I qualification.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
@@ -368,6 +340,24 @@ The ML systems built at TM-50I level inform readiness decisions for V Corps form
 
 ---
 
+---
+
+## APPENDIX — PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION
+
+**Peer TM-50 Publications.** Senior MLEs should coordinate with practitioners in these companion advanced-track publications.
+
+| Publication | Track | Coordination Point |
+|---|---|---|
+| TM-50G | Advanced ORSA | Statistical validation; uncertainty quantification for ML outputs |
+| TM-50H | Advanced AI Engineer | AIP Logic integration; fine-tuning infrastructure; adversarial robustness |
+| TM-50J | Advanced Program Manager | ML program lifecycle; governance documentation |
+| TM-50K | Advanced Knowledge Manager | Feature data governance; training corpus design |
+| TM-50L | Advanced Software Engineer | Platform SDK infrastructure; OSDK model-serving integrations |
+
+**WFF Operational Consumer Note.** ML models built and maintained by TM-50I engineers serve the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). Readiness prediction models serve G3 (Movement and Maneuver). Logistics demand forecasting serves G4 (Sustainment). Personnel risk models may serve G1 and G6. The mental model shift described in this guide — from model builder to ML systems engineer — must account for the diversity of WFF consumers: different latency requirements, different interpretability needs, and different consequences of model failure.
+
+---
+
 *CONCEPTS GUIDE — TM-50I COMPANION // ADVANCED MACHINE LEARNING ENGINEER // UNCLASSIFIED*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA // WIESBADEN, GERMANY // 2026*
-*DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.*
+*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*

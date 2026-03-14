@@ -8,7 +8,7 @@ Wiesbaden, Germany
 
 2026
 
-DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.
+DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
 
 PROPONENT: Headquarters, United States Army Europe and Africa (USAREUR-AF), G6/Data
 
@@ -54,24 +54,6 @@ multi-nation, multi-domain theater.
 
 ---
 
-# TABLE OF CONTENTS
-
-- Chapter 1 — Foundations of Data Literacy ....................................... 1-1
-- Chapter 2 — Data Concepts and Structures ........................................ 2-1
-- Chapter 3 — The Data Lifecycle .................................................. 3-1
-- Chapter 4 — Data Quality ....................................................... 4-1
-- Chapter 5 — Data Analysis Fundamentals .......................................... 5-1
-- Chapter 6 — Geospatial Data and GEOINT Literacy ................................. 6-1
-- Chapter 7 — Data Security, Classification, and Handling .......................... 7-1
-- Chapter 8 — Data in the MDMP and Decision-Making Process ......................... 8-1
-- Chapter 9 — Data Roles and Responsibilities ...................................... 9-1
-- Chapter 10 — Principles of Data-Driven Operations ............................... 10-1
-- Appendix A — Data Literacy Self-Assessment ....................................... A-1
-- Appendix B — Data Quality Checklist .............................................. B-1
-- Appendix C — References and Related Publications ................................. C-1
-- Glossary ........................................................................ GL-1
-
----
 
 ## PREFACE
 
@@ -1582,10 +1564,11 @@ assign and enforce data roles explicitly.
 | TM-10 | Operator | Navigates Maven Smart System; consumes data products; follows data handling procedures; accurately enters data; observes security requirements | All Soldiers and civilians — every MOS and staff function |
 | TM-20 | Builder | Builds basic Workshop applications; runs light transforms; creates and shares data products without specialist tools; identifies data quality problems | All personnel — builds on TM-10 |
 | TM-30 | Advanced Builder | Designs pipelines and Ontology objects; builds governed dashboards and complex transforms; profiles data quality; mentors TM-10/20 users | Data-adjacent personnel (17/25-series, S6/G6/G2/G9) |
-| TM-40 Series | Specialist | Role-specific mastery in one of six tracks: ORSA (40A), AI Engineer (40B), ML Engineer (40C), Program Manager (40D), Knowledge Manager (40E), Software Engineer (40F). Produces command-level data products independently. | Designated specialist billets; requires TM-30 prerequisite |
-| TM-50 Series | Advanced Specialist | Advanced practitioner capability within a specialist track; leads, mentors, and develops new capability; research-grade analytical and engineering proficiency | TM-40 graduates in senior or lead roles |
+| TM-40 Series (WFF) | Warfighting Function Specialist | Role-specific MSS integration within an assigned warfighting function. Six tracks: Intelligence (40A), Fires (40B), Movement & Maneuver (40C), Sustainment (40D), Protection (40E), Mission Command (40F). Applies MSS tools to functional domain workflows. | WFF functional staff (INT, FIRES, M2, SUST, PROT, MC); requires TM-30 prerequisite |
+| TM-40 Series (Technical) | Technical Specialist | Role-specific mastery within a designated technical specialty. Six tracks: ORSA (40G), AI Engineer (40H), ML Engineer (40I), Program Manager (40J), Knowledge Manager (40K), Software Engineer (40L). Produces command-level data products independently. | Designated specialist billets (ORSA, AI Eng, ML Eng, PM, KM, SWE); requires TM-30 prerequisite |
+| TM-50 Series | Advanced Specialist | Advanced practitioner capability within a specialist track (TM-50G through TM-50L); leads, mentors, and develops new capability; research-grade analytical and engineering proficiency. No TM-50 WFF tracks. | TM-40G–L graduates in senior or lead roles; requires TM-40 in same track |
 
-9-4b. The goal is not for every Soldier to reach TM-50. The goal is for every Soldier to complete TM-10, for all personnel to achieve TM-20, for data-adjacent personnel to reach TM-30, and for the formation to have specialist coverage across the TM-40 tracks appropriate to its mission. TM-50 capability is required in senior data roles and for personnel responsible for developing and sustaining formation data capability.
+9-4b. The goal is not for every Soldier to reach TM-50. The goal is for every Soldier to complete TM-10, for all personnel to achieve TM-20, for data-adjacent personnel to reach TM-30, for WFF functional staff to complete the appropriate TM-40 WFF track (TM-40A–F, prereq TM-30), and for the formation to have technical specialist coverage across the TM-40 specialist tracks (TM-40G–L, prereq TM-30) appropriate to its mission. TM-50 capability (TM-50G–L) is required in senior data roles and for personnel responsible for developing and sustaining formation data capability. There are no TM-50 WFF tracks — the TM-50 series applies only to the six technical specialist tracks (G through L).
 
 ---
 
@@ -1616,7 +1599,7 @@ assign and enforce data roles explicitly.
 | All Soldiers and civilians | TM-10 (Operator) — Navigate Maven, consume data products, follow data handling and security procedures | Unit-level training; TM-10 self-paced course |
 | All personnel | TM-20 (Builder) — Build basic data products; identify and report quality issues | Unit training; TM-20 course (builds on TM-10) |
 | Data-adjacent billets (17/25-series, S6/G6/G2/G9) | TM-30 (Advanced Builder) — Design pipelines and Ontology objects; govern data products | TM-30 course (builds on TM-20); mentored practicum |
-| WFF functional staff (INT, FIRES, M2, SUST, PROT, MC) | TM-40 Series (WFF Track) — MSS integration within assigned warfighting function | TM-40A through TM-40F per WFF assignment; prerequisite TM-20 |
+| WFF functional staff (INT, FIRES, M2, SUST, PROT, MC) | TM-40 Series (WFF Track) — MSS integration within assigned warfighting function | TM-40A through TM-40F per WFF assignment; prerequisite TM-30 |
 | ORSA, AI Eng, ML Eng, PM, KM, SWE billets | TM-40 Series (Technical Specialist) — Role-specific track at the assigned specialist level | TM-40G through TM-40L per billet type; prerequisite TM-30 |
 | Senior data leads, capability developers, training cadre | TM-50 Series (Advanced Specialist) — Research-grade proficiency; leads and develops capability in specialist track | TM-50G through TM-50L per track; prerequisite TM-40G–L in same track |
 | Commander/Senior Leader | Commander-level (direction, evaluation, resourcing) — Not a technical track; governed by this publication and the companion senior leader guide | Data Literacy for Senior Leaders; unit immersion; C2DAO advisory |
@@ -2286,4 +2269,4 @@ military operations across Europe, portions of Asia, the Arctic, and the Atlanti
 
 *By order of the Commanding General, United States Army Europe and Africa.*
 
-*DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.*
+*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*

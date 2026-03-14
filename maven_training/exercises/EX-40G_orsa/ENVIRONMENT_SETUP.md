@@ -1,5 +1,8 @@
 # ENVIRONMENT SETUP — EX-40G ORSA
 
+**Track:** EX-40G — ORSA (TM-40G) | **Prerequisite:** TM-30 REQUIRED | **Continuation:** TM-50G — Advanced ORSA
+**Companion exams:** EXAM_TM40G_PRE (administer before exercise), EXAM_TM40G_POST (administer after exercise)
+
 ## Environment Type
 MSS with Python Transforms (or R Transforms) enabled, Quiver and Contour access, Workshop build permissions.
 

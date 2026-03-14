@@ -1,0 +1,30 @@
+{
+  "title": "USAREUR-AF Data Architecture",
+  "subtitle": "Enterprise Data Compass & Plan for Success",
+  "version": "1.0",
+  "date": "February 2026",
+  "classification": "CUI // FOUO",
+  "signatories": [
+    { "role": "Chief Technology Officer, USAREUR-AF", "name": "" },
+    { "role": "Chief Data Architect, ODT", "name": "" }
+  ],
+  "layers": [
+    { "id": "L1", "name": "Infrastructure", "description": "Compute, network, storage" },
+    { "id": "L2", "name": "Integration", "description": "Pipelines, ingestion, sync" },
+    { "id": "L3", "name": "Semantic", "description": "Ontology, meaning, truth", "critical": true },
+    { "id": "L4", "name": "Analytics", "description": "BI, models, dashboards" },
+    { "id": "L5", "name": "Activation", "description": "Apps, workflows, AI" }
+  ],
+  "quadrants": [
+    { "id": "standards", "name": "Standards & Governance" },
+    { "id": "platform", "name": "Platform & Tools" },
+    { "id": "ontology", "name": "Ontology & Modeling" },
+    { "id": "interop", "name": "Interoperability & Security" }
+  ],
+  "rings": [
+    { "id": "adopt", "name": "Adopt", "color": "#34d399", "description": "Approved standard. Use it." },
+    { "id": "trial", "name": "Trial", "color": "#38bdf8", "description": "Validated in pilot." },
+    { "id": "assess", "name": "Assess", "color": "#c9a227", "description": "Under evaluation." },
+    { "id": "hold", "name": "Hold", "color": "#f87171", "description": "Proceed with caution." }
+  ]
+}

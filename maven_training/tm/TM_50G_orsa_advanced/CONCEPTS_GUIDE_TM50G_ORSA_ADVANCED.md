@@ -1,40 +1,8 @@
-# CONCEPTS GUIDE — TM-50G COMPANION
-## ADVANCED OPERATIONS RESEARCH / SYSTEMS ANALYSIS (ORSA) — MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — TM-50G COMPANION — ADVANCED OPERATIONS RESEARCH / SYSTEMS ANALYSIS (ORSA) — MAVEN SMART SYSTEM (MSS)
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany — 2026
-
-**PURPOSE:** Extends the analytical mental models of the TM-40G Concepts Guide to advanced ORSA practice on MSS. Prerequisite: TM-40G Concepts Guide and TM-40G qualification.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-## PREFACE
-
-This guide is not a task manual. Procedures, code steps, and checklists are in TM-50G. This guide addresses the harder problem: how a senior ORSA practitioner thinks.
-
-At TM-40G, the central challenge is competence — executing a method correctly and producing a technically sound product. That challenge is largely solved by qualification.
-
-At TM-50G, the central challenge is judgment. Technical competence is assumed. The live questions are: Which method fits this problem? What assumption, if wrong, breaks the analysis? How do I present an honest, uncertain result to a commander who must decide in two hours? When do I advise leadership to ask a different question entirely?
-
-This guide addresses those questions. It covers nine conceptual areas corresponding to recurring judgment problems in the USAREUR-AF and EUCOM environment — V Corps readiness analysis, NATO coalition data integration, and multi-domain analytical design for DEFENDER-series exercises.
-
-Read once before beginning TM-50G. Return to specific sections when you encounter a matching problem in practice.
-
----
-
-## TABLE OF CONTENTS
-
-1. From Analysis to Advice — The Advanced ORSA's Shift
-2. Multi-Method Analysis — When and How to Combine Methods
-3. Wargaming and Sensitivity Analysis as ORSA Tools
-4. Decision Analysis Under Uncertainty — Theater-Level Application
-5. Analytical Products at the Theater Level
-6. Cross-Domain Data Integration
-7. Building and Sustaining an Analytical Pipeline
-8. Ethics and Responsibility in High-Stakes Analysis
-9. Advanced Failure Modes — What TM-50G ORSAs Get Wrong
+> **BLUF:** At TM-50G level, the ORSA is not just answering questions — they are shaping which questions get asked.
+> **Purpose:** Extends the analytical mental models of the TM-40G Concepts Guide to advanced ORSA practice on MSS. Prerequisite: TM-40G Concepts Guide and TM-40G qualification.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
@@ -384,6 +352,24 @@ Before proceeding to TM-50G task procedures, confirm you can answer the followin
 | Section 7 (Building Analytical Pipelines) | Chapter 8 |
 | Section 8 (Ethics and Responsibility) | Chapter 7, Appendix B |
 | Section 9 (Advanced Failure Modes) | All chapters — see Safety Summary |
+
+---
+
+---
+
+## APPENDIX C — PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION
+
+**Peer TM-50 Publications.** The following advanced-track publications share overlapping concerns with TM-50G ORSA practice. Coordinate with practitioners in these tracks rather than operating in isolation.
+
+| Publication | Track | Coordination Point |
+|---|---|---|
+| TM-50H | Advanced AI Engineer | Productionizing ORSA models; evaluation methodology |
+| TM-50I | Advanced ML Engineer | ML methods feeding ORSA analytical products |
+| TM-50J | Advanced Program Manager | Portfolio-level OR program governance |
+| TM-50K | Advanced Knowledge Manager | Capturing and surfacing ORSA-derived insights |
+| TM-50L | Advanced Software Engineer | Platform infrastructure supporting ORSA pipelines |
+
+**WFF Operational Consumer Note.** Advanced ORSA analytical work ultimately supports the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). These practitioners are the operational consumers of readiness analyses, logistics optimizations, campaign assessments, and decision support products. The judgment questions addressed in this Concepts Guide — which method fits the problem, how to present uncertainty, when to advise a different question — are ultimately answered in terms of what a WFF staff section needs to make a decision.
 
 ---
 

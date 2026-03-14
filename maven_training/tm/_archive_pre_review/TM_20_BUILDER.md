@@ -14,7 +14,7 @@ Wiesbaden, Germany
 
 **RELATED MANUALS:** TM-30, Advanced Builder/Developer (Python, PySpark, TypeScript, OSDK).
 
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 ---
 
@@ -1636,4 +1636,4 @@ The following patterns address the most common USAREUR-AF data ingestion scenari
 
 *By order of the Commander, United States Army Europe and Africa.*
 
-*DISTRIBUTION RESTRICTION: Approved for public release; distribution is unlimited.*
+*DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.*

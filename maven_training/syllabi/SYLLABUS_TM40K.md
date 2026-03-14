@@ -143,5 +143,27 @@ The PCS transfer package is a real product, not a template. It must name the spe
 
 ---
 
+## Continuation
+
+Graduates designing enterprise knowledge architectures or leading cross-organizational KM initiatives may pursue **TM-50K (Advanced Knowledge Management)**. TM-50K covers multi-domain taxonomy design, AI-augmented knowledge synthesis at scale, knowledge retrieval infrastructure, quality governance frameworks, and continuity systems that survive personnel turnover. Prerequisites: TM-40K Go evaluation on file; 12+ months active KM practice in a military or large organizational context.
+
+---
+
+## Associated Exercises and Assessments
+
+| Item | Reference |
+|---|---|
+| Pre-course exam | EXAM_TM40K_PRE |
+| Post-course exam | EXAM_TM40K_POST |
+| Practical exercise | EX-40K (EXERCISE.md + ENVIRONMENT_SETUP.md) |
+
+---
+
+## Relationship to WFF Tracks
+
+WFF track analysts (TM-40A through TM-40F) are the operational consumers of lessons-learned systems, AAR pipelines, and knowledge repositories built in this course. Knowledge managers should understand the capture and retrieval needs of each WFF community: mission command analysts (TM-40F) consume commander decision logs and SOP repositories; intelligence analysts (TM-40A) use lessons-learned databases for pattern recognition; protection analysts (TM-40E) maintain TTPs and incident histories in KM-managed repositories.
+
+---
+
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
 *Syllabus TM-40K | Version 2.0 | March 2026*

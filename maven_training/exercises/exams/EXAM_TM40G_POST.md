@@ -183,6 +183,16 @@ D. A list of ORSA analysts who reviewed the product
 
 &nbsp;
 
+**SA-6. Describe how an ORSA analyst's quantitative work directly supports two WFF functions. For each, identify the WFF track (TM-40A through TM-40F) and give a concrete example of an ORSA product that supports decision-making in that function.**
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
 ---
 
 ## SCORING SUMMARY
@@ -190,10 +200,10 @@ D. A list of ORSA analysts who reviewed the product
 | Section | Questions | Points Each | Total Points |
 |---|---|---|---|
 | Multiple Choice | 15 | 2 | 30 |
-| Short Answer | 5 | 6 | 30 |
-| **Total** | — | — | **60** |
+| Short Answer | 6 | 6 | 36 |
+| **Total** | — | — | **66** |
 
-Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
+Passing: 46/66 (70%) — Post-test only. Pre-test is diagnostic.
 
 ---
 
@@ -229,6 +239,8 @@ SA-3. Full credit: (1) complete all analysis and generate output DataFrame in th
 SA-4. Full credit: decision variables: x_i = man-hours allocated to unit i (i = 1..8); objective: maximize Σ f(x_i) where f is a readiness function of man-hours (or proxy); constraints: Σ x_i ≤ 800 (total cap), x_i ≥ 50 for all i (minimum per unit), x_i ≤ 150 for all i (maximum per unit), x_i ≥ 0. Full credit requires all three constraint types plus decision variables and objective. Partial credit (3 pts) for correct decision variables and objective without all constraints.
 
 SA-5. Full credit: the statement has two problems — (1) it presents only a point estimate without a confidence interval; (2) "the model predicts" implies certainty; corrected statement: "Analytical estimate: 94% readiness (90% CI: 88%–98%). This estimate is based on [model type], trained on [time period], and assumes [key assumption]. Limitations: [state one limitation]. The 90% CI means that under repeated sampling, the true readiness would fall within this range 90% of the time." Full credit requires identifying both problems AND providing a corrected statement with CI and limitation.
+
+SA-6. Full credit: any two WFF tracks correctly identified with an example — TM-40A (Intelligence): ORSA supports intel fusion by quantifying probability of enemy COAs or estimating adversary logistics capacity; TM-40B (Fires): ORSA supports fires by modeling target prioritization or computing probability of kill; TM-40C (Movement & Maneuver): ORSA supports M&M by optimizing route selection or modeling force employment timing; TM-40D (Sustainment): ORSA supports sustainment by forecasting fuel/ammunition demand or optimizing distribution; TM-40E (Protection): ORSA supports protection by modeling threat probability distributions or analyzing force protection trade-offs; TM-40F (Mission Command): ORSA supports MC by building dashboard analytics or quantifying COA risk for commander decision-making. Each response must identify the correct TM-40 letter (A–F) and provide a concrete product example for full credit.
 
 ---
 

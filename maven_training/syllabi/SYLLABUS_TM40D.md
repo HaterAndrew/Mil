@@ -5,7 +5,7 @@
 |---|---|
 | **Level** | TM-40D — Sustainment WFF Track |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-10, TM-20 (Go evaluations on file); CONCEPTS_GUIDE_TM40D_SUSTAINMENT (required reading before Day 1) |
+| **Prerequisites** | TM-10, TM-20, TM-30 (Go evaluations on file); CONCEPTS_GUIDE_TM40D_SUSTAINMENT (required reading before Day 1) |
 | **Audience** | G4/S4 staff, FSB/BSB logistics officers, supply chain managers, property book officers, and transportation officers at BCT echelon and below |
 | **Format** | Instructor-led seminar + demonstration + tabletop exercise + practical evaluation |
 | **Location** | MSS Training Environment (standard user access sufficient) |
@@ -57,7 +57,7 @@ Complete **5+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 5 | Exercise | CCIR drill: given sustainment CCIRs and a sample LOGSTAT dataset, configure 3 sustainment CCIRs and verify they trigger correctly |
 
-**Evening reading:** TM-40D, Chapter 4 (LOGSTAT Integration and Readiness Display) — data currency indicators and what constitutes a valid vs. stale LOGSTAT submission.
+**Evening reading:** TM-40D, Chapter 2 (Supply Chain Management in MSS) — data currency indicators and what constitutes a valid vs. stale LOGSTAT submission.
 
 ---
 
@@ -74,7 +74,7 @@ Complete **5+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 9 | Exercise | Sustainment sync product drill: build readiness summary and supply chain status product from a provided LOGSTAT dataset; evaluator reviews for timestamp placement, reported vs. estimated readiness distinction, and OPSEC marking |
 
-**Evening reading:** TM-40D, Chapter 6 (Supply Chain Analytics in MSS) and Chapter 8 (Sustainment Sync and BUA Products).
+**Evening reading:** TM-40D, Chapter 4 (Transportation and Distribution Operations) and Chapter 9 (Echelon-Specific Sustainment Operations).
 
 ---
 
@@ -97,10 +97,10 @@ Complete **5+ duty days before Day 1:**
 | When | Reading |
 |---|---|
 | Before Day 1 | CONCEPTS_GUIDE_TM40D_SUSTAINMENT (complete) |
-| Day 1 evening | TM-40D, Ch 4 (LOGSTAT Integration and Readiness Display) |
-| Day 2 evening | TM-40D, Ch 6 (Supply Chain Analytics in MSS) |
-| Day 2 evening | TM-40D, Ch 8 (Sustainment Sync and BUA Products) |
-| Day 3 (review) | TM-40D, Ch 10 (Degraded LOGSTAT Procedures) — skim before Day 3 brief |
+| Day 1 evening | TM-40D, Ch 2 (Supply Chain Management in MSS) |
+| Day 2 evening | TM-40D, Ch 4 (Transportation and Distribution Operations) |
+| Day 2 evening | TM-40D, Ch 9 (Echelon-Specific Sustainment Operations) |
+| Day 3 (review) | TM-40D, Ch 10 (Degraded Operations) — skim before Day 3 brief |
 
 ---
 
@@ -138,6 +138,33 @@ Complete **5+ duty days before Day 1:**
 | CCIR data source | Readiness thresholds connected to the wrong data field (personnel vs. equipment readiness) will not fire correctly — verify the specific CCIR data source carefully |
 | Supply chain product | Know your supply class designations and which LOGSTAT reporting fields correspond to each before Day 2 |
 | Timestamps on briefing products | Every readiness number in a briefing product must have a data-as-of timestamp. Build this habit before Day 1: every number → "As of when?" |
+
+---
+
+## Associated Exercise and Exams
+
+| Item | Reference |
+|---|---|
+| **Practical Exercise** | EX-40D (EXERCISE.md + ENVIRONMENT_SETUP.md) — `exercises/EX-40D/` |
+| **Pre-course exam** | EXAM_TM40D_PRE — `exercises/exams/EXAM_TM40D_PRE.md` |
+| **Post-course exam** | EXAM_TM40D_POST — `exercises/exams/EXAM_TM40D_POST.md` |
+
+---
+
+## Related WFF Tracks
+
+TM-40D is one of six WFF tracks. All require TM-10, TM-20, and TM-30 as prerequisites.
+
+| Track | WFF | Audience |
+|---|---|---|
+| TM-40A | Intelligence | G2/S2 staff, targeting officers, all-source analysts |
+| TM-40B | Fires | FSOs, FSEs, targeting officers, fires NCOs |
+| TM-40C | Movement & Maneuver | G3/S3 staff, operations officers, maneuver planners |
+| TM-40D | Sustainment | G4/S4 staff, logistics officers, supply chain managers |
+| TM-40E | Protection | FP officers, CBRN officers, provost marshal staff |
+| TM-40F | Mission Command | Battle captains, XOs, CDRs, MC-function staff |
+
+Personnel completing multiple WFF tracks do not repeat TM-10, TM-20, or TM-30. Enrollment is independent for each track.
 
 ---
 

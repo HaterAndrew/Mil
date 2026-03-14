@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Learning Pathways — CDA Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .pathway-container{padding:24px 0}
+    .pathway-svg{width:100%;height:auto;display:block}
+
+    /* Node styles */
+    .node rect,.node-pill{rx:4;ry:4;cursor:pointer;transition:filter .15s}
+    .node:hover rect,.node:hover .node-pill{filter:brightness(1.3)}
+    .node text{font-family:'IBM Plex Sans',sans-serif;fill:#e2e8f0;pointer-events:none}
+    .node .label{font-size:11px;font-weight:700}
+    .node .sublabel{font-size:9px;fill:#94a3b8}
+
+    /* Track colors */
+    .tier-intro rect,.tier-intro .node-pill{fill:rgba(56,189,248,.15);stroke:rgba(56,189,248,.4);stroke-width:1.5}
+    .tier-101 rect,.tier-101 .node-pill{fill:rgba(74,222,128,.12);stroke:rgba(74,222,128,.4);stroke-width:1.5}
+    .tier-201 rect,.tier-201 .node-pill{fill:rgba(251,191,36,.12);stroke:rgba(251,191,36,.4);stroke-width:1.5}
+    .tier-301 rect,.tier-301 .node-pill{fill:rgba(192,132,252,.12);stroke:rgba(192,132,252,.4);stroke-width:1.5}
+    .tier-wip rect,.tier-wip .node-pill{fill:rgba(255,255,255,.04);stroke:rgba(255,255,255,.15);stroke-width:1.5;stroke-dasharray:5,3}
+    .tier-wip .label{fill:#64748b}
+    .tier-wip .sublabel{fill:#475569}
+
+    /* Edges */
+    .edge{stroke:#38bdf855;stroke-width:1.5;fill:none;marker-end:url(#arrow)}
+    .edge-opt{stroke:#ffffff22;stroke-width:1;fill:none;stroke-dasharray:4,3;marker-end:url(#arrow-dim)}
+
+    /* Lane labels */
+    .lane-label{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.08em;fill:#38bdf8}
+    .lane-label-101{fill:#4ade80}
+    .lane-label-201{fill:#fbbf24}
+    .lane-label-301{fill:#c084fc}
+
+    /* Legend */
+    .legend text{font-family:'IBM Plex Sans',sans-serif;font-size:10px;fill:#94a3b8}
+    .legend rect{rx:3;ry:3}
+
+    /* Role badges */
+    .role-section{margin-top:28px}
+    .role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+    @media(max-width:800px){.role-grid{grid-template-columns:1fr}}
+    .role-card{
+      padding:16px;
+      border:1px solid var(--border);
+      border-radius:4px;
+      background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+    }
+    .role-card h3{margin:0 0 6px;font-size:15px;font-weight:700}
+    .role-card p{margin:0 0 10px;font-size:12px;color:var(--muted);line-height:1.5}
+    .role-path{display:flex;flex-wrap:wrap;gap:4px}
+    .role-path span{
+      font-family:'IBM Plex Mono',monospace;font-size:10px;
+      padding:3px 8px;border-radius:2px;
+    }
+    .rp-intro{background:rgba(56,189,248,.12);color:#38bdf8;border:1px solid rgba(56,189,248,.25)}
+    .rp-101{background:rgba(74,222,128,.1);color:#4ade80;border:1px solid rgba(74,222,128,.25)}
+    .rp-201{background:rgba(251,191,36,.1);color:#fbbf24;border:1px solid rgba(251,191,36,.25)}
+    .rp-301{background:rgba(192,132,252,.1);color:#c084fc;border:1px solid rgba(192,132,252,.25)}
+    .rp-wip{background:rgba(255,255,255,.04);color:#64748b;border:1px dashed rgba(255,255,255,.15)}
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div style="background:#166534;color:#fff;text-align:center;padding:3px 0;font-family:'IBM Plex Mono',monospace;font-size:0.65rem;letter-spacing:0.15em;font-weight:600">UNCLASSIFIED</div>
+    <div class="header-inner">
+      <div class="header-left">
+        <a href="../../index.html" class="back-link">&larr; CDA</a>
+        <span class="header-sep">|</span>
+        <span class="header-title">Slide Library</span>
+      </div>
+      <div class="nav">
+        <a href="index.html">Decks</a>
+        <a href="pathways.html">Pathways</a>
+        <a href="downloads/">Downloads</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero" style="grid-template-columns:1fr;">
+      <div class="card hero-card">
+        <h1>Learning Pathways</h1>
+        <p style="color:var(--muted);font-size:15px;margin:0;line-height:1.5">
+          Follow these pathways from orientation through advanced architecture.
+          <span style="color:#64748b">Dashed outlines</span> = in-progress courses not yet available.
+        </p>
+      </div>
+    </div>
+
+    <div class="pathway-container">
+      <svg class="pathway-svg" viewBox="0 0 980 720" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0,0 L10,3.5 L0,7z" fill="#38bdf855"/>
+          </marker>
+          <marker id="arrow-dim" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0,0 L10,3.5 L0,7z" fill="#ffffff22"/>
+          </marker>
+        </defs>
+
+        <!-- Lane backgrounds -->
+        <rect x="0" y="0" width="980" height="160" fill="rgba(56,189,248,.03)" rx="4"/>
+        <rect x="0" y="170" width="980" height="140" fill="rgba(74,222,128,.02)" rx="4"/>
+        <rect x="0" y="320" width="980" height="200" fill="rgba(251,191,36,.02)" rx="4"/>
+        <rect x="0" y="530" width="980" height="180" fill="rgba(192,132,252,.02)" rx="4"/>
+
+        <!-- Lane labels -->
+        <text class="lane-label" x="16" y="24">INTRO TO DATA</text>
+        <text class="lane-label lane-label-101" x="16" y="192">DATA 101</text>
+        <text class="lane-label lane-label-201" x="16" y="342">DATA 201</text>
+        <text class="lane-label lane-label-301" x="16" y="552">DATA 301 (PLANNED)</text>
+
+        <!-- ==================== INTRO TO DATA ==================== -->
+
+        <!-- Army Data Orientation -->
+        <a href="deck.html?id=army_data_orientation_v1">
+        <g class="node tier-intro" transform="translate(30,40)">
+          <rect width="170" height="48"/>
+          <text class="label" x="85" y="22" text-anchor="middle">Army Data Orientation</text>
+          <text class="sublabel" x="85" y="36" text-anchor="middle">14 slides</text>
+        </g>
+        </a>
+
+        <!-- Architecture Primer -->
+        <a href="deck.html?id=architecture_primer">
+        <g class="node tier-intro" transform="translate(230,40)">
+          <rect width="150" height="48"/>
+          <text class="label" x="75" y="22" text-anchor="middle">Architecture Primer</text>
+          <text class="sublabel" x="75" y="36" text-anchor="middle">12 slides</text>
+        </g>
+        </a>
+
+        <!-- 2026 Data Stack -->
+        <a href="deck.html?id=2026_Data_Stack_Deep_Dive">
+        <g class="node tier-intro" transform="translate(410,40)">
+          <rect width="170" height="48"/>
+          <text class="label" x="85" y="22" text-anchor="middle">2026 Data Stack</text>
+          <text class="sublabel" x="85" y="36" text-anchor="middle">Five Layers &middot; 10 slides</text>
+        </g>
+        </a>
+
+        <!-- Decision Advantage -->
+        <a href="deck.html?id=decision_advantage_deep_dive">
+        <g class="node tier-intro" transform="translate(610,40)">
+          <rect width="170" height="48"/>
+          <text class="label" x="85" y="22" text-anchor="middle">Decision Advantage</text>
+          <text class="sublabel" x="85" y="36" text-anchor="middle">Deep Dive &middot; 10 slides</text>
+        </g>
+        </a>
+
+        <!-- What Is an Ontology -->
+        <a href="deck.html?id=What_Is_An_Ontology">
+        <g class="node tier-intro" transform="translate(130,104)">
+          <rect width="160" height="48"/>
+          <text class="label" x="80" y="22" text-anchor="middle">What Is an Ontology?</text>
+          <text class="sublabel" x="80" y="36" text-anchor="middle">12 slides</text>
+        </g>
+        </a>
+
+        <!-- Semantic Layer Instructions -->
+        <a href="deck.html?id=The%20Semantic%20Layer%20Instructions">
+        <g class="node tier-intro" transform="translate(330,104)">
+          <rect width="190" height="48"/>
+          <text class="label" x="95" y="22" text-anchor="middle">The Semantic Layer</text>
+          <text class="sublabel" x="95" y="36" text-anchor="middle">Authoritative Instr. &middot; 11 slides</text>
+        </g>
+        </a>
+
+        <!-- Data Modeling Foundations -->
+        <a href="deck.html?id=Data_Modeling_Foundations">
+        <g class="node tier-intro" transform="translate(560,104)">
+          <rect width="210" height="48"/>
+          <text class="label" x="105" y="22" text-anchor="middle">Data Modeling Foundations</text>
+          <text class="sublabel" x="105" y="36" text-anchor="middle">Normalization to Strategy &middot; 11 slides</text>
+        </g>
+        </a>
+
+        <!-- WIP: Data Quality Basics -->
+        <g class="node tier-wip" transform="translate(810,104)">
+          <rect width="150" height="48"/>
+          <text class="label" x="75" y="22" text-anchor="middle">Data Quality Basics</text>
+          <text class="sublabel" x="75" y="36" text-anchor="middle">In-progress</text>
+        </g>
+
+        <!-- ==================== DATA 101 ==================== -->
+
+        <!-- The Four Layers -->
+        <a href="deck.html?id=The_Four_Layers">
+        <g class="node tier-101" transform="translate(80,200)">
+          <rect width="150" height="48"/>
+          <text class="label" x="75" y="22" text-anchor="middle">The Four Layers</text>
+          <text class="sublabel" x="75" y="36" text-anchor="middle">13 slides</text>
+        </g>
+        </a>
+
+        <!-- Data Modeling L1 -->
+        <a href="deck.html?id=Data_Modeling_Fundamentals_Level1">
+        <g class="node tier-101" transform="translate(280,200)">
+          <rect width="200" height="48"/>
+          <text class="label" x="100" y="22" text-anchor="middle">Data Modeling Fund. L1</text>
+          <text class="sublabel" x="100" y="36" text-anchor="middle">15 slides</text>
+        </g>
+        </a>
+
+        <!-- Object Types -->
+        <a href="deck.html?id=ObjectType_WhatToWatchFor">
+        <g class="node tier-101" transform="translate(530,200)">
+          <rect width="200" height="48"/>
+          <text class="label" x="100" y="22" text-anchor="middle">Object Types: Watch For</text>
+          <text class="sublabel" x="100" y="36" text-anchor="middle">13 slides</text>
+        </g>
+        </a>
+
+        <!-- WIP: Data Stewardship 101 -->
+        <g class="node tier-wip" transform="translate(780,200)">
+          <rect width="170" height="48"/>
+          <text class="label" x="85" y="22" text-anchor="middle">Data Stewardship 101</text>
+          <text class="sublabel" x="85" y="36" text-anchor="middle">In-progress</text>
+        </g>
+
+        <!-- WIP: Metadata Mgmt -->
+        <g class="node tier-wip" transform="translate(280,264)">
+          <rect width="180" height="48"/>
+          <text class="label" x="90" y="22" text-anchor="middle">Metadata Management</text>
+          <text class="sublabel" x="90" y="36" text-anchor="middle">In-progress</text>
+        </g>
+
+        <!-- WIP: Data Standards -->
+        <g class="node tier-wip" transform="translate(510,264)">
+          <rect width="160" height="48"/>
+          <text class="label" x="80" y="22" text-anchor="middle">Data Standards &amp; Policy</text>
+          <text class="sublabel" x="80" y="36" text-anchor="middle">In-progress</text>
+        </g>
+
+        <!-- ==================== DATA 201 ==================== -->
+
+        <!-- Semantic Modelling Intro -->
+        <a href="deck.html?id=Semantic_Modelling_Course_Intro">
+        <g class="node tier-201" transform="translate(30,350)">
+          <rect width="200" height="48"/>
+          <text class="label" x="100" y="22" text-anchor="middle">Semantic Modelling Intro</text>
+          <text class="sublabel" x="100" y="36" text-anchor="middle">Course Introduction &middot; 10 slides</text>
+        </g>
+        </a>
+
+        <!-- 01 Architecture First Principles -->
+        <a href="deck.html?id=Deck_01_Architecture_First_Principles">
+        <g class="node tier-201" transform="translate(270,350)">
+          <rect width="210" height="48"/>
+          <text class="label" x="105" y="22" text-anchor="middle">01: Architecture First Princ.</text>
+          <text class="sublabel" x="105" y="36" text-anchor="middle">10 slides</text>
+        </g>
+        </a>
+
+        <!-- 02 Scope Engineering -->
+        <a href="deck.html?id=Deck_02_Scope_Engineering">
+        <g class="node tier-201" transform="translate(520,350)">
+          <rect width="180" height="48"/>
+          <text class="label" x="90" y="22" text-anchor="middle">02: Scope Engineering</text>
+          <text class="sublabel" x="90" y="36" text-anchor="middle">10 slides</text>
+        </g>
+        </a>
+
+        <!-- 03 RDF/OWL -->
+        <a href="deck.html?id=Deck_03_RDF_OWL_Foundations">
+        <g class="node tier-201" transform="translate(740,350)">
+          <rect width="210" height="48"/>
+          <text class="label" x="105" y="22" text-anchor="middle">03: RDF &amp; OWL Foundations</text>
+          <text class="sublabel" x="105" y="36" text-anchor="middle">10 slides</text>
+        </g>
+        </a>
+
+        <!-- 04 Object Type Varieties -->
+        <a href="deck.html?id=Deck_04_Object_Type_Varieties">
+        <g class="node tier-201" transform="translate(130,420)">
+          <rect width="200" height="48"/>
+          <text class="label" x="100" y="22" text-anchor="middle">04: Object Type Varieties</text>
+          <text class="sublabel" x="100" y="36" text-anchor="middle">10 slides</text>
+        </g>
+        </a>
+
+        <!-- 05 Identity & Governance -->
+        <a href="deck.html?id=Deck_05_Identity_Governance">
+        <g class="node tier-201" transform="translate(380,420)">
+          <rect width="200" height="48"/>
+          <text class="label" x="100" y="22" text-anchor="middle">05: Identity &amp; Governance</text>
+          <text class="sublabel" x="100" y="36" text-anchor="middle">10 slides</text>
+        </g>
+        </a>
+
+        <!-- Data Modeling L2 -->
+        <a href="deck.html?id=Data_Modeling_Fundamentals_Level2">
+        <g class="node tier-201" transform="translate(630,420)">
+          <rect width="200" height="48"/>
+          <text class="label" x="100" y="22" text-anchor="middle">Data Modeling Fund. L2</text>
+          <text class="sublabel" x="100" y="36" text-anchor="middle">13 slides</text>
+        </g>
+        </a>
+
+        <!-- WIP: SHACL Validation -->
+        <g class="node tier-wip" transform="translate(130,486)">
+          <rect width="170" height="48"/>
+          <text class="label" x="85" y="22" text-anchor="middle">SHACL Validation</text>
+          <text class="sublabel" x="85" y="36" text-anchor="middle">In-progress</text>
+        </g>
+
+        <!-- WIP: Knowledge Graph Design -->
+        <g class="node tier-wip" transform="translate(350,486)">
+          <rect width="190" height="48"/>
+          <text class="label" x="95" y="22" text-anchor="middle">Knowledge Graph Design</text>
+          <text class="sublabel" x="95" y="36" text-anchor="middle">In-progress</text>
+        </g>
+
+        <!-- WIP: Alignment & Drift -->
+        <g class="node tier-wip" transform="translate(590,486)">
+          <rect width="190" height="48"/>
+          <text class="label" x="95" y="22" text-anchor="middle">Alignment &amp; Drift Detection</text>
+          <text class="sublabel" x="95" y="36" text-anchor="middle">In-progress</text>
+        </g>
+
+        <!-- ==================== DATA 301 (PLANNED) ==================== -->
+
+        <!-- WIP: Bi-Temporal Modeling -->
+        <g class="node tier-301" transform="translate(60,570)">
+          <rect width="180" height="48"/>
+          <text class="label" x="90" y="22" text-anchor="middle">Bi-Temporal Modeling</text>
+          <text class="sublabel" x="90" y="36" text-anchor="middle">In-progress</text>
+        </g>
+
+        <!-- WIP: Pipeline Architecture -->
+        <g class="node tier-301" transform="translate(290,570)">
+          <rect width="180" height="48"/>
+          <text class="label" x="90" y="22" text-anchor="middle">Pipeline Architecture</text>
+          <text class="sublabel" x="90" y="36" text-anchor="middle">In-progress</text>
+        </g>
+
+        <!-- WIP: Doctrine as Code -->
+        <g class="node tier-301" transform="translate(520,570)">
+          <rect width="180" height="48"/>
+          <text class="label" x="90" y="22" text-anchor="middle">Doctrine as Code</text>
+          <text class="sublabel" x="90" y="36" text-anchor="middle">In-progress</text>
+        </g>
+
+        <!-- WIP: AI/ML Integration -->
+        <g class="node tier-301" transform="translate(750,570)">
+          <rect width="180" height="48"/>
+          <text class="label" x="90" y="22" text-anchor="middle">AI/ML Data Readiness</text>
+          <text class="sublabel" x="90" y="36" text-anchor="middle">In-progress</text>
+        </g>
+
+        <!-- WIP: Capstone -->
+        <g class="node tier-301" transform="translate(350,640)">
+          <rect width="280" height="52"/>
+          <text class="label" x="140" y="22" text-anchor="middle">Capstone: End-to-End Architecture</text>
+          <text class="sublabel" x="140" y="38" text-anchor="middle">Apply all pathways to a real problem &middot; In-progress</text>
+        </g>
+
+        <!-- ==================== EDGES ==================== -->
+
+        <!-- Intro row 1 flow -->
+        <path class="edge" d="M200,64 L230,64"/>
+        <path class="edge" d="M380,64 L410,64"/>
+        <path class="edge" d="M580,64 L610,64"/>
+
+        <!-- Intro row 1 down to row 2 -->
+        <path class="edge" d="M305,88 L210,104"/>
+        <path class="edge" d="M380,88 L425,104"/>
+        <path class="edge" d="M495,88 L665,104"/>
+
+        <!-- Intro row 2 flow -->
+        <path class="edge" d="M290,128 L330,128"/>
+        <path class="edge" d="M520,128 L560,128"/>
+        <path class="edge-opt" d="M770,128 L810,128"/>
+
+        <!-- Intro to 101 -->
+        <path class="edge" d="M210,152 L155,200"/>
+        <path class="edge" d="M425,152 L380,200"/>
+        <path class="edge" d="M665,152 L630,200"/>
+
+        <!-- 101 flow -->
+        <path class="edge" d="M230,224 L280,224"/>
+        <path class="edge" d="M480,224 L530,224"/>
+        <path class="edge-opt" d="M730,224 L780,224"/>
+
+        <!-- 101 down to WIP -->
+        <path class="edge-opt" d="M380,248 L370,264"/>
+        <path class="edge-opt" d="M630,248 L590,264"/>
+
+        <!-- 101 to 201 -->
+        <path class="edge" d="M155,248 L130,350"/>
+        <path class="edge" d="M380,248 L375,350"/>
+        <path class="edge" d="M630,248 L700,350"/>
+
+        <!-- 201 row 1 flow -->
+        <path class="edge" d="M230,374 L270,374"/>
+        <path class="edge" d="M480,374 L520,374"/>
+        <path class="edge" d="M700,374 L740,374"/>
+
+        <!-- 201 row 1 to row 2 -->
+        <path class="edge" d="M375,398 L230,420"/>
+        <path class="edge" d="M600,398 L480,420"/>
+        <path class="edge" d="M845,398 L730,420"/>
+
+        <!-- 201 row 2 flow -->
+        <path class="edge" d="M330,444 L380,444"/>
+        <path class="edge" d="M580,444 L630,444"/>
+
+        <!-- 201 to WIP -->
+        <path class="edge-opt" d="M230,468 L215,486"/>
+        <path class="edge-opt" d="M480,468 L445,486"/>
+        <path class="edge-opt" d="M730,468 L685,486"/>
+
+        <!-- 201 WIP to 301 -->
+        <path class="edge-opt" d="M215,534 L150,570"/>
+        <path class="edge-opt" d="M445,534 L380,570"/>
+        <path class="edge-opt" d="M685,534 L610,570"/>
+        <path class="edge-opt" d="M685,534 L840,570"/>
+
+        <!-- 301 to capstone -->
+        <path class="edge-opt" d="M150,618 L420,640"/>
+        <path class="edge-opt" d="M380,618 L460,640"/>
+        <path class="edge-opt" d="M610,618 L520,640"/>
+        <path class="edge-opt" d="M840,618 L580,640"/>
+
+        <!-- ==================== LEGEND ==================== -->
+        <g class="legend" transform="translate(810,10)">
+          <rect x="0" y="0" width="160" height="100" fill="rgba(10,15,26,.8)" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+          <text x="12" y="18" font-weight="600" fill="#e2e8f0">Legend</text>
+          <rect x="12" y="28" width="24" height="10" fill="rgba(56,189,248,.15)" stroke="rgba(56,189,248,.4)" stroke-width="1"/>
+          <text x="42" y="37">Intro To Data</text>
+          <rect x="12" y="44" width="24" height="10" fill="rgba(74,222,128,.12)" stroke="rgba(74,222,128,.4)" stroke-width="1"/>
+          <text x="42" y="53">Data 101</text>
+          <rect x="12" y="60" width="24" height="10" fill="rgba(251,191,36,.12)" stroke="rgba(251,191,36,.4)" stroke-width="1"/>
+          <text x="42" y="69">Data 201</text>
+          <rect x="12" y="76" width="24" height="10" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.15)" stroke-width="1" stroke-dasharray="3,2"/>
+          <text x="42" y="85">In-progress</text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Maven TM Level Correlation -->
+    <div class="role-section" id="tm-mapping">
+      <h2 style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.1em;color:#38bdf8;text-transform:uppercase;margin-bottom:14px">Maven Training (TM) Correlation</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6">
+        CDA slide tracks map to Maven Training prerequisite levels. Complete the CDA track before or during the indicated TM course.
+      </p>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.1)">
+            <th style="text-align:left;padding:8px 12px;font-family:'IBM Plex Mono',monospace;color:#94a3b8;font-size:11px;font-weight:600;letter-spacing:.08em">CDA TRACK</th>
+            <th style="text-align:left;padding:8px 12px;font-family:'IBM Plex Mono',monospace;color:#94a3b8;font-size:11px;font-weight:600;letter-spacing:.08em">PRIMARY TM LEVEL</th>
+            <th style="text-align:left;padding:8px 12px;font-family:'IBM Plex Mono',monospace;color:#94a3b8;font-size:11px;font-weight:600;letter-spacing:.08em">ALSO SUPPORTS</th>
+            <th style="text-align:left;padding:8px 12px;font-family:'IBM Plex Mono',monospace;color:#94a3b8;font-size:11px;font-weight:600;letter-spacing:.08em">AUDIENCE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06)">
+            <td style="padding:10px 12px;color:#38bdf8;font-family:'IBM Plex Mono',monospace;font-size:12px">Intro To Data</td>
+            <td style="padding:10px 12px"><span style="background:rgba(56,189,248,.12);color:#38bdf8;border:1px solid rgba(56,189,248,.3);border-radius:2px;padding:2px 8px;font-family:'IBM Plex Mono',monospace;font-size:11px">TM-10 / TM-20</span></td>
+            <td style="padding:10px 12px;color:#64748b;font-size:12px">TM-40A–F (decision advantage, AI/ML decks)</td>
+            <td style="padding:10px 12px;color:#94a3b8;font-size:12px">All personnel — orientation through builder context</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06)">
+            <td style="padding:10px 12px;color:#4ade80;font-family:'IBM Plex Mono',monospace;font-size:12px">Data 101</td>
+            <td style="padding:10px 12px"><span style="background:rgba(74,222,128,.1);color:#4ade80;border:1px solid rgba(74,222,128,.3);border-radius:2px;padding:2px 8px;font-family:'IBM Plex Mono',monospace;font-size:11px">TM-20 / TM-30</span></td>
+            <td style="padding:10px 12px;color:#64748b;font-size:12px">TM-40K, TM-40L (governance decks)</td>
+            <td style="padding:10px 12px;color:#94a3b8;font-size:12px">Builders and advanced builders — object type and ontology fundamentals</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06)">
+            <td style="padding:10px 12px;color:#fbbf24;font-family:'IBM Plex Mono',monospace;font-size:12px">Data 201</td>
+            <td style="padding:10px 12px"><span style="background:rgba(251,191,36,.1);color:#fbbf24;border:1px solid rgba(251,191,36,.3);border-radius:2px;padding:2px 8px;font-family:'IBM Plex Mono',monospace;font-size:11px">TM-30 / TM-40G–L</span></td>
+            <td style="padding:10px 12px;color:#64748b;font-size:12px">TM-50G–L (advanced specialist prereq)</td>
+            <td style="padding:10px 12px;color:#94a3b8;font-size:12px">Specialist tracks — semantic modeling, temporal modeling, identity governance</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;color:#c084fc;font-family:'IBM Plex Mono',monospace;font-size:12px">Data 301 <span style="font-size:10px;color:#475569">(planned)</span></td>
+            <td style="padding:10px 12px"><span style="background:rgba(192,132,252,.08);color:#c084fc;border:1px dashed rgba(192,132,252,.25);border-radius:2px;padding:2px 8px;font-family:'IBM Plex Mono',monospace;font-size:11px">TM-50G–L</span></td>
+            <td style="padding:10px 12px;color:#475569;font-size:12px">—</td>
+            <td style="padding:10px 12px;color:#64748b;font-size:12px">Advanced specialists — research-grade topics</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Role-based pathways -->
+    <div class="role-section">
+      <div class="track-header">
+        <span class="track-label">Recommended by Role</span>
+      </div>
+      <div class="role-grid">
+        <div class="role-card">
+          <h3>Commander / Leader</h3>
+          <p>Understand what data architecture enables and why it matters for decision advantage.</p>
+          <div class="role-path">
+            <span class="rp-intro">Army Data Orientation</span>
+            <span class="rp-intro">Decision Advantage</span>
+            <span class="rp-intro">2026 Data Stack</span>
+            <span class="rp-intro">Architecture Primer</span>
+          </div>
+        </div>
+        <div class="role-card">
+          <h3>Data Steward / Analyst</h3>
+          <p>Build fluency in data models, object types, and the four-layer architecture.</p>
+          <div class="role-path">
+            <span class="rp-intro">All Intro decks</span>
+            <span class="rp-101">The Four Layers</span>
+            <span class="rp-101">Data Modeling L1</span>
+            <span class="rp-101">Object Types</span>
+            <span class="rp-wip">Data Stewardship 101</span>
+            <span class="rp-wip">Metadata Mgmt</span>
+          </div>
+        </div>
+        <div class="role-card">
+          <h3>Data Architect / Engineer</h3>
+          <p>Full pathway through semantic modelling, RDF/OWL, identity governance, and advanced modeling.</p>
+          <div class="role-path">
+            <span class="rp-intro">All Intro decks</span>
+            <span class="rp-101">All 101 decks</span>
+            <span class="rp-201">Semantic Modelling</span>
+            <span class="rp-201">RDF &amp; OWL</span>
+            <span class="rp-201">Identity &amp; Gov.</span>
+            <span class="rp-201">Modeling L2</span>
+            <span class="rp-wip">SHACL</span>
+            <span class="rp-wip">KG Design</span>
+            <span class="rp-301">301 Pathway</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

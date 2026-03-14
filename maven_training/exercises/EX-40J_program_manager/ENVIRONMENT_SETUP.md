@@ -1,5 +1,9 @@
 # ENVIRONMENT SETUP — EX-40J Program Manager (Technical)
 
+**Track:** EX-40J — Program Manager (Technical) (TM-40J) | **Prerequisite:** TM-30 REQUIRED | **Continuation:** TM-50J — Advanced Program Manager
+**Companion exams:** EXAM_TM40J_PRE (administer before exercise), EXAM_TM40J_POST (administer after exercise)
+**Training data:** `training_data/EX-40J_Project_Record_Package/` — milestone_tracker.md, open_tickets.md, pipeline_definition.md, project_charter.md
+
 ## Environment Type
 
 MSS training instance with project tracking access. No special platform capabilities required beyond standard access.

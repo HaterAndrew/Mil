@@ -1,40 +1,8 @@
-# CONCEPTS GUIDE — TM-50H COMPANION
-## ADVANCED AI ENGINEER — MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — TM-50H COMPANION — ADVANCED AI ENGINEER — MAVEN SMART SYSTEM (MSS)
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany — 2026
-
-**PURPOSE:** Extends the mental models of the TM-40H Concepts Guide to advanced AI engineering on MSS. Prerequisite: TM-40H Concepts Guide and TM-40H qualification.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-## PREFACE
-
-The TM-40H Concepts Guide gave you the mental models for AI engineering at the workflow level: how LLMs reason, how grounding connects language models to the Ontology, and how human-in-the-loop design prevents AI-generated errors from becoming operational problems.
-
-This guide does not repeat those foundations. It extends them.
-
-At TM-50H level, the conceptual shift is categorical. You are no longer designing individual workflows. You are designing AI systems: interconnected, persistent, operationally embedded architectures producing outputs that influence command decisions across V Corps and USAREUR-AF. The failure modes are not bigger versions of TM-40H failure modes — they are qualitatively different: compounding errors, emergent system behavior, governance problems that cannot be solved one workflow at a time.
-
-**BLUF:** If TM-40H taught you to build a reliable AI capability, TM-50H teaches you to architect an AI system that remains reliable, maintainable, and governable as it grows — and to retire it responsibly when it should not continue.
-
-Read this guide before beginning TM-50H tasks. Return to it when a design decision is unclear.
-
----
-
-## TABLE OF CONTENTS
-
-1. From Workflow Builder to AI Systems Designer
-2. Multi-Agent Architecture — Design Principles
-3. Agent Memory Architecture
-4. Prompt Architecture at Scale
-5. Grounding Strategies for Complex Ontologies
-6. Operational AI Governance at Scale
-7. Responsible AI in Operational Contexts — Advanced Considerations
-8. AI Product Lifecycle — From Prototype to Retirement
-9. Advanced Failure Modes — What TM-50H Engineers Get Wrong
+> **BLUF:** Default to the simplest architecture that solves the problem. Multi-agent systems are harder to build, debug, and govern. Use them only when a single agent genuinely cannot solve the problem.
+> **Purpose:** Extends the mental models of the TM-40H Concepts Guide to advanced AI engineering on MSS. Prerequisite: TM-40H Concepts Guide and TM-40H qualification.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
@@ -436,6 +404,24 @@ Engineers who clear a deployment review sometimes treat that review as the end o
 | Automation bias | Design review interfaces requiring active engagement |
 | Retirement plan | Written at deployment, not when retirement is imminent |
 | Succession documentation | Documents why design decisions were made, not only what they were |
+
+---
+
+---
+
+## APPENDIX — PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION
+
+**Peer TM-50 Publications.** Senior AI engineers should coordinate with practitioners in these companion advanced-track publications.
+
+| Publication | Track | Coordination Point |
+|---|---|---|
+| TM-50G | Advanced ORSA | Evaluation methodology; productionizing complex analytical models |
+| TM-50I | Advanced ML Engineer | Fine-tuning infrastructure; adversarial robustness |
+| TM-50J | Advanced Program Manager | AI governance acquisition; lifecycle documentation |
+| TM-50K | Advanced Knowledge Manager | Corpus design; ontology-RAG integration |
+| TM-50L | Advanced Software Engineer | OSDK integration with AI systems |
+
+**WFF Operational Consumer Note.** AI systems built by TM-50H engineers are embedded in the operational workflows of the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). The system-design questions addressed in this guide — embeddedness, meaningful oversight, lifecycle governance — must be answered in terms of the specific WFF workflows the AI system will serve. A G2 intelligence synthesis system has different failure mode consequences than a G4 logistics optimization system; both require meaningful oversight, but the oversight design reflects the operational context.
 
 ---
 

@@ -11,19 +11,10 @@ Wiesbaden, Germany
 
 This publication supports USAREUR-AF data operations aligned with the Army Data Plan 2022 and the DoD Data Strategy. All roles, policies, and architectural terms reflect current Army CIO guidance, including the Army Data Stewardship Policy (April 2024) and the Unified Network Plan 2.0 (March 2025).
 
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
+**DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
 
 ---
 
-## TABLE OF CONTENTS
-
-- [Section 1 — General Data Concepts](#section-1--general-data-concepts)
-- [Section 2 — Foundry/Maven Platform Terms](#section-2--foundrymaven-platform-terms)
-- [Section 3 — Army Data Roles and Responsibilities](#section-3--army-data-roles-and-responsibilities)
-- [Section 4 — Classification and Security Terms](#section-4--classification-and-security-terms)
-- [Section 5 — Abbreviations and Acronyms](#section-5--abbreviations-and-acronyms)
-
----
 
 ## SECTION 1 — GENERAL DATA CONCEPTS
 
@@ -703,6 +694,7 @@ Example: In the SITREP submission app, an "Submit SITREP" Action Form widget col
 *General Equivalent: AI/ML application layer; AI-assisted decision support*
 Definition: Palantir's AI Platform layer within Foundry — connecting approved large language models (LLMs) and machine learning models to the Foundry Ontology, enabling AI-powered analysis, automation, and conversational interaction with operational data. AIP is not a separate product — it is AI with the full Foundry security stack applied. All AIP operations are logged, access-controlled, and bounded by the user's data markings. Within Maven, only DoD-approved models operate within the enclave.
 Example: An AIP agent configured for USAREUR-AF analysts answers questions like "Which units in EUCOM have not submitted a SITREP in the last 72 hours?" by querying UnitStatus objects and returning a formatted summary — without the analyst writing any queries.
+*Training: AIP authoring and deployment is covered in TM-40H (AI Engineer) and TM-50H (Advanced AI Engineer). AIP Logic and agent configuration are introduced at TM-30 (Advanced Builder).*
 
 ---
 
@@ -939,6 +931,7 @@ Example: The USAREUR-AF Ontology contains Object Types for Soldiers, Units, Vehi
 *General Equivalent: Data model editor; schema designer; entity relationship tool*
 Definition: The Foundry graphical user interface for designing and configuring the Ontology — Object Types, Link Types, Actions, Properties, and their backing datasets. Ontology Manager is where builders (TM-20/30) and architects create the semantic layer of the platform. It provides a point-and-click interface for defining object schemas, connecting datasets to Object Types, configuring property types and primary keys, and publishing changes through the branching workflow. Changes in Ontology Manager take effect after branch promotion to Main.
 Example: A TM-30 builder opens Ontology Manager to create a new `MissionEvent` Object Type, defines its properties (title, start_dtg, end_dtg, unit_id, event_type), connects it to the curated_mission_events dataset, sets `event_id` as the primary key, and links it to the `Unit` Object Type via a new `Unit_executedMission_MissionEvent` Link Type.
+*Training: Ontology design and governance are introduced at TM-30 (Advanced Builder) and mastered in TM-40K (Knowledge Manager) and TM-50K (Advanced Knowledge Manager). KM is the designated track for enterprise Ontology stewardship and governance responsibilities.*
 
 ---
 
@@ -946,6 +939,7 @@ Example: A TM-30 builder opens Ontology Manager to create a new `MissionEvent` O
 *General Equivalent: External API library; typed data access client; frontend data SDK*
 Definition: The Ontology SDK — a set of generated, type-safe libraries (TypeScript, Python, Java) that allow developers to build applications outside of Foundry that use the Foundry Ontology as a backend. OSDK provides ergonomic methods for querying objects, traversing links, calling functions, and executing actions from external React apps, Python scripts, or Java services. The user's data access permissions are fully enforced through the OSDK.
 Example: A custom React dashboard built outside of Workshop uses the TypeScript OSDK to query UnitStatus objects filtered by AOR, display them in a custom table component, and execute UpdateReadiness actions when an analyst submits a correction — all without the user accessing Foundry directly.
+*Training: OSDK-backed application development is covered in TM-40L (Software Engineer) and TM-50L (Advanced Software Engineer).*
 
 ---
 
@@ -1152,6 +1146,22 @@ Example: Under UDRA principles, the USAREUR-AF G4 logistics domain owns and main
 *MSS Equivalent: In Foundry, data mesh maps to domain-specific projects with dataset ownership by the teams that generate the data, publishing shared Object Types to the common Ontology for cross-domain consumption.*
 Definition: An architectural approach where data ownership is distributed to domain teams rather than centralized in a single data engineering group. Each domain produces and maintains its own data products, treats data as a product with defined quality and access standards, and shares through a federated governance model. The Army's UDRA v1.1 (February 2025) is grounded in data mesh principles. Data mesh does not mean no governance — it means governance is distributed to the teams closest to the data, with enterprise standards ensuring interoperability. *Source: UDRA v1.1, February 2025.*
 Example: Under a data mesh model at USAREUR-AF, each warfighting function (fires, sustainment, personnel) owns its own data domain within MSS — maintaining pipelines, quality standards, and access controls — while publishing objects to the shared Ontology for cross-domain analysis by the commander's staff.
+
+---
+
+**Warfighting Function (WFF) Track**
+*MSS Equivalent: TM-40A through TM-40F*
+Definition: A category of MSS training tracks (TM-40A–F) designed for functional staff officers and NCOs embedded in a specific warfighting function. WFF tracks focus on applying MSS tools within the analyst's assigned domain — how an intelligence officer uses Maven differs from how a sustainment officer uses it. WFF tracks require TM-20 (Builder) as a prerequisite; they do not require TM-30. The six WFF tracks are: Intelligence (TM-40A), Fires (TM-40B), Movement & Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). There are no TM-50 WFF tracks.
+Example: A brigade S2 completes TM-40A (Intelligence WFF) to learn how to use MSS for all-source analytical products, ISR management, and IPB support specific to intelligence staff workflows.
+*See also: Specialist Track, TM-20, TM-30*
+
+---
+
+**Specialist Track**
+*MSS Equivalent: TM-40G through TM-40L (and TM-50G through TM-50L)*
+Definition: A category of MSS training tracks (TM-40G–L) designed for personnel in designated technical billets requiring deep platform engineering or analytical capability. Specialist tracks require TM-30 (Advanced Builder) as a hard prerequisite. The six specialist tracks are: ORSA (TM-40G), AI Engineer (TM-40H), ML Engineer (TM-40I), Program Manager (TM-40J), Knowledge Manager (TM-40K), and Software Engineer (TM-40L). Each specialist track has an advanced counterpart in the TM-50 series (TM-50G–L). Specialist tracks are distinct from WFF tracks — they address technical roles, not functional staff roles.
+Example: A designated ORSA billet holder completes TM-40G (ORSA) after finishing TM-30, learning to apply statistical and operations research methods to command-level analytical problems within MSS.
+*See also: Warfighting Function (WFF) Track, TM-30, TM-40 Series*
 
 ---
 

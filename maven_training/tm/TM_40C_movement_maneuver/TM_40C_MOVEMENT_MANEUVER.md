@@ -1,73 +1,12 @@
 # TM-40C — MAVEN SMART SYSTEM (MSS)
-## MOVEMENT AND MANEUVER WARFIGHTING FUNCTION
-## INTERMEDIATE OPERATOR'S MANUAL
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-
-2026
-
-**Version 1.0 | March 2026**
-
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER (required before beginning this manual). No coding, pipeline development, or transform experience is required or assumed.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
-**AUTHORITY:** This publication is issued under authority of the USAREUR-AF C2 Data and Analytics Office (C2DAO). It implements Army CIO Memorandum, Data and Analytics Policy (April 2024), aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025), and supports implementation of ADP 3-0, FM 3-0, ADP 3-90, FM 3-90-1, FM 3-90-2, FM 3-98, ATP 3-90.8, ADP 3-07, and FM 3-96. Reference learn-data.armydev.com for current platform documentation.
-
----
-
-## SAFETY SUMMARY
-
-Movement and maneuver practitioners using MSS operate at the intersection of data-driven situational awareness and life-fire tactical decision-making. Errors in route data, stale obstacle overlays, incorrect force tracking, or missed phase line reports can produce false confidence at the moment a commander most needs accurate information.
-
-Before using MSS products to support any maneuver decision:
-
-- Verify data freshness before execution. Every MSS product displays a data-as-of timestamp. Stale route data or obstacle overlays presented as current are operationally dangerous. Check the timestamp before briefing, before crossing, before committing a force.
-- Do not allow MSS to substitute for tactical judgment. The platform displays reported information. Commanders and small unit leaders make tactical decisions. MSS is a situational awareness enabler, not a substitute for METT-TC analysis.
-- Route clearance and obstacle data on MSS reflects what has been reported — not what exists on the ground. Confirm critical data through primary reconnaissance channels before committing a force to a route.
-- Blue Force Tracking data on MSS reflects last reported position, not real-time location. Account for update intervals and comms status when reading friendly force graphics.
-- OPSEC applies to MSS. Operational graphics, unit locations, and route overlays are operationally sensitive. Handle MSS exports and screenshots IAW the unit information management officer (IMO) guidance and applicable OPSEC plan.
-- Coordinate CP displacement with the S6 before moving to ensure MSS network continuity. Gaps in the COP during tactical movement can mask developing threats or missed reports.
+> **BLUF:** The Movement and Maneuver (M&M) warfighting function encompasses all tasks associated with moving and employing forces to achieve a position of advantage over the enemy (ADP 3-0, para 3-3). MSS supports M&M by integrating force tracking, route data, obstacle overlays, reconnaissance products, and operational graphics into a single enterprise platform accessible across the formation.
+> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER (required before beginning this manual). No coding, pipeline development, or transform experience is required or assumed.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Using stale MSS obstacle or route data without verification during a breach or route clearance operation can result in personnel casualties and mission failure. Always confirm obstacle and route data currency against S2 and engineer reporting channels before committing forces.**
-
 > **CAUTION: MSS Blue Force Tracking displays the last reported position of a unit — not its current position. BFT update intervals, comms outages, and GPS errors can produce positional errors on the display. Do not use MSS BFT as the sole reference for fire support deconfliction, no-fire area management, or fratricide prevention.**
-
 > **NOTE: MSS does not replace the military decision-making process, reconnaissance, or the commander's estimate. It integrates and visualizes the information that feeds those processes. ADP 3-0 combined arms integration requires human analysis and synthesis. MSS provides the data layer to support it.**
-
----
-
-## TABLE OF CONTENTS
-
-- Chapter 1 — Overview: Movement and Maneuver Function in MSS
-- Chapter 2 — Operational Planning and Orders in MSS
-- Chapter 3 — Route Planning and Mobility Operations
-- Chapter 4 — Reconnaissance and Security Operations
-- Chapter 5 — Ground Combat Operations
-- Chapter 6 — Aviation Integration
-- Chapter 7 — Urban Operations and Special Environments
-- Chapter 8 — Force Tracking and Blue Force Situational Awareness
-- Chapter 9 — Echelon-Specific M&M Operations
-- Chapter 10 — Degraded Operations
-- Chapter 11 — Reporting and Products for Maneuver Operations
-- Chapter 12 — Fire Support and Maneuver Synchronization in MSS
-- Chapter 13 — Defensive Operations in MSS
-- Chapter 14 — Multinational and Joint Force Operations
-- Chapter 15 — Training and Certification Standards
-- Appendix A — M&M-Specific Naming Conventions in MSS
-- Appendix B — Tactical Graphic Standards (Military Symbols in MSS)
-- Appendix C — Route Reconnaissance Report Data Fields
-- Appendix D — Engineer Obstacle and Mobility Data Standards
-- Appendix E — Combined Arms Synchronization Checklist
-- Appendix F — Stability Operations Data Management (ADP 3-07)
-- Appendix G — Glossary of M&M Terms in MSS Context
-- Appendix H — MOS Quick Reference by Duty Position
-- Appendix I — Battle Rhythm Integration for M&M MSS Tasks
-- Appendix J — Individual Task Standards Summary
-- Appendix K — References
-- Appendix L — Quick Reference: Key Standards Summary
-- Glossary
 
 ---
 
@@ -1313,15 +1252,16 @@ Liaison officers (LNOs) are the primary human interface for data exchange with p
 
 ## CHAPTER 15 — TRAINING AND CERTIFICATION STANDARDS
 
-**BLUF:** MSS certification for M&M practitioners requires completion of TM-10 and TM-20 prerequisites and demonstrated proficiency on the tasks in this manual. This chapter describes the training path, assessment criteria, and recertification requirements for M&M practitioners.
+**BLUF:** MSS certification for M&M practitioners requires completion of TM-10, TM-20, and TM-30 prerequisites and demonstrated proficiency on the tasks in this manual. This chapter describes the training path, assessment criteria, and recertification requirements for M&M practitioners.
 
 ### 15-1. Training Prerequisites and Path
 
 **Prerequisites for TM-40C:**
 1. TM-10, Maven User (Basic) — Completed and documented
 2. TM-20, Builder — Completed and documented
-3. CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER — Read prior to beginning TM-40C
-4. Unit MOS qualification (11A, 19A, 12A, 15A, or equivalent) — Active
+3. TM-30, Advanced Builder — Completed and documented
+4. CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER — Read prior to beginning TM-40C
+5. Unit MOS qualification (11A, 19A, 12A, 15A, or equivalent) — Active
 
 **TM-40C Training Sequence:**
 1. Read the CONCEPTS_GUIDE (prerequisite)
@@ -1397,7 +1337,7 @@ TM-40C proficiency is not sustained by initial certification alone. S3 sections 
 | Command Post Exercise (CPX) | Full MSS employment by all staff sections; assess cross-section data standards | Semi-annually |
 | Mission Rehearsal Exercise (MRE) | Live DEFENDER-standard MSS employment; degraded ops exercise included | Annually (DEFENDER preparation) |
 | Battle Captain Shift Training | Route update, FRAGO graphic processing, SITREP data pull | Monthly |
-| New Personnel Orientation | TM-10, TM-20, and TM-40C read-through; supervised workspace access | Within 30 days of assignment |
+| New Personnel Orientation | TM-10, TM-20, TM-30, and TM-40C read-through; supervised workspace access | Within 30 days of assignment |
 
 ### 15-4a. Sustainment of Proficiency During High-Operational-Tempo Periods
 
@@ -1460,6 +1400,7 @@ The following publications are referenced in TM-40C. Practitioners should have a
 **Prerequisite Manuals:**
 - TM-10, Maven User (Basic Operator's Manual)
 - TM-20, Builder (Light Builder's Manual)
+- TM-30, Advanced Builder
 - CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER (companion to this manual)
 
 ---
@@ -1888,6 +1829,40 @@ The following tasks appear in this manual with full Conditions/Standards/Procedu
 
 ---
 
+## RELATED MANUALS AND TRAINING TRACKS
+
+### WFF Peer Tracks
+
+TM-40C is one of six Warfighting Function tracks at the same tier. All six WFF tracks require TM-10, TM-20, and TM-30 as prerequisites. M&M practitioners should develop working familiarity with TM-40A (Intelligence) and TM-40F (Mission Command) — the peer tracks with the most intensive M&M coordination requirements.
+
+**Table. WFF Peer Track Quick Reference**
+
+| Track | Title | Prereq | Primary M&M Coordination Point |
+|-------|-------|--------|--------------------------------|
+| TM-40A | Intelligence WFF | TM-10 + TM-20 + TM-30 | NAI/TAI overlays, PIR/IR supporting reconnaissance |
+| TM-40B | Fires WFF | TM-10 + TM-20 + TM-30 | FSCM coordination, airspace deconfliction |
+| TM-40C | Movement and Maneuver WFF | TM-10 + TM-20 + TM-30 | This manual |
+| TM-40D | Sustainment WFF | TM-10 + TM-20 + TM-30 | Maneuver unit readiness, route capacity, supply constraints |
+| TM-40E | Protection WFF | TM-10 + TM-20 + TM-30 | Physical security, NBC threat overlays (see NBC report cross-ref) |
+| TM-40F | Mission Command WFF | TM-10 + TM-20 + TM-30 | Combined arms COP, CCIR thresholds for maneuver triggers |
+
+### Specialist Tracks (Prerequisite: TM-30)
+
+For technical specialists pursuing advanced capability development, specialist tracks are available after completing TM-30. Not required for M&M WFF employment.
+
+**Table. Specialist and Advanced Track Quick Reference**
+
+| Track | Title | Advanced Track |
+|-------|-------|----------------|
+| TM-40G | ORSA | TM-50G |
+| TM-40H | AI Engineer | TM-50H |
+| TM-40I | ML Engineer | TM-50I |
+| TM-40J | Program Manager | TM-50J |
+| TM-40K | Knowledge Manager | TM-50K |
+| TM-40L | Software Engineer | TM-50L |
+
+---
+
 *TM-40C — MOVEMENT AND MANEUVER WARFIGHTING FUNCTION — Version 1.0 — March 2026*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA — Wiesbaden, Germany*
-*DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.*
+*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*

@@ -1,0 +1,328 @@
+[
+  {
+    "id": "army_data_orientation_v1",
+    "title": "Army Data Orientation",
+    "track": "Primer",
+    "maven_tm_level": "TM-10",
+    "maven_tm_also_supports": [],
+    "sequence_order": 1
+  },
+  {
+    "id": "architecture_primer",
+    "title": "Architecture Primer",
+    "track": "Primer",
+    "maven_tm_level": "TM-10",
+    "maven_tm_also_supports": [],
+    "sequence_order": 2
+  },
+  {
+    "id": "Data_Architecture_Deep_Dive",
+    "title": "Data Architecture Deep Dive",
+    "track": "Primer",
+    "maven_tm_level": "TM-10",
+    "maven_tm_also_supports": [],
+    "sequence_order": 3
+  },
+  {
+    "id": "2026_Data_Stack_Deep_Dive",
+    "title": "2026 Data Stack — Five Layers Deep Dive",
+    "track": "Primer",
+    "maven_tm_level": "TM-20",
+    "maven_tm_also_supports": [],
+    "sequence_order": 4
+  },
+  {
+    "id": "L2_Ingestion_Integration_Deep_Dive",
+    "title": "L2 — Ingestion & Integration Deep Dive",
+    "track": "Primer",
+    "maven_tm_level": "TM-20",
+    "maven_tm_also_supports": [],
+    "sequence_order": 5
+  },
+  {
+    "id": "The_Semantic_Layer_Instructions",
+    "title": "The Semantic Layer — Authoritative Instructions",
+    "track": "Primer",
+    "maven_tm_level": "TM-20",
+    "maven_tm_also_supports": [],
+    "sequence_order": 6
+  },
+  {
+    "id": "What_Is_An_Ontology",
+    "title": "What Is an Ontology?",
+    "track": "Primer",
+    "maven_tm_level": "TM-20",
+    "maven_tm_also_supports": [],
+    "sequence_order": 7
+  },
+  {
+    "id": "Data_Modeling_Foundations",
+    "title": "Data Modeling Foundations — Normalization to Strategy",
+    "track": "Primer",
+    "maven_tm_level": "TM-20",
+    "maven_tm_also_supports": [],
+    "sequence_order": 8
+  },
+  {
+    "id": "Data_Platforms_Cloud_Deep_Dive",
+    "title": "Data Platforms & Cloud Deep Dive",
+    "track": "Primer",
+    "maven_tm_level": "TM-20",
+    "maven_tm_also_supports": [],
+    "sequence_order": 9
+  },
+  {
+    "id": "L5_Activation_Interface_Deep_Dive",
+    "title": "L5 — Activation & Interface Deep Dive",
+    "track": "Primer",
+    "maven_tm_level": "TM-20",
+    "maven_tm_also_supports": [],
+    "sequence_order": 10
+  },
+  {
+    "id": "AI_ML_Beyond_The_Hype",
+    "title": "AI/ML — Beyond the Hype",
+    "track": "Specialist",
+    "maven_tm_level": "TM-40H",
+    "maven_tm_also_supports": ["TM-40I"],
+    "sequence_order": 1,
+    "_audit_note": "Moved from Primer — TM-40H is specialist level, not introductory"
+  },
+  {
+    "id": "decision_advantage_deep_dive",
+    "title": "Decision Advantage Deep Dive",
+    "track": "WFF",
+    "maven_tm_level": "TM-40A",
+    "maven_tm_also_supports": ["TM-40B", "TM-40C", "TM-40D", "TM-40E", "TM-40F"],
+    "sequence_order": 1
+  },
+  {
+    "id": "The_Four_Layers",
+    "title": "The Four Layers",
+    "track": "Data 101",
+    "maven_tm_level": "TM-20",
+    "maven_tm_also_supports": [],
+    "sequence_order": 1
+  },
+  {
+    "id": "Data_Modeling_Fundamentals_Level1",
+    "title": "Data Modeling Fundamentals — Level 1",
+    "track": "Data 101",
+    "maven_tm_level": "TM-20",
+    "maven_tm_also_supports": [],
+    "sequence_order": 2
+  },
+  {
+    "id": "ObjectType_WhatToWatchFor",
+    "title": "Object Types — What to Watch For",
+    "track": "Data 101",
+    "maven_tm_level": "TM-20",
+    "maven_tm_also_supports": [],
+    "sequence_order": 3
+  },
+  {
+    "id": "Controlled_Vocabularies",
+    "title": "Controlled Vocabularies",
+    "track": "Data 101",
+    "maven_tm_level": "TM-30",
+    "maven_tm_also_supports": ["TM-40K"],
+    "sequence_order": 4
+  },
+  {
+    "id": "Identity_Who_Owns_The_Key",
+    "title": "Identity — Who Owns the Key?",
+    "track": "Data 101",
+    "maven_tm_level": "TM-30",
+    "maven_tm_also_supports": ["TM-40K", "TM-40L"],
+    "sequence_order": 5
+  },
+  {
+    "id": "Links_and_Relationships",
+    "title": "Links & Relationships",
+    "track": "Data 101",
+    "maven_tm_level": "TM-20",
+    "maven_tm_also_supports": [],
+    "sequence_order": 6
+  },
+  {
+    "id": "Dont_Filter_This_Isnt_Excel",
+    "title": "Don't Filter — This Isn't Excel",
+    "track": "Data 101",
+    "maven_tm_level": "TM-20",
+    "maven_tm_also_supports": [],
+    "sequence_order": 7
+  },
+  {
+    "id": "Semantic_Modelling_Course_Intro",
+    "title": "Semantic Modelling — Course Introduction",
+    "track": "Data 201",
+    "maven_tm_level": "TM-30",
+    "maven_tm_also_supports": [],
+    "sequence_order": 1
+  },
+  {
+    "id": "Deck_01_Architecture_First_Principles",
+    "title": "01 — Architecture First Principles",
+    "track": "Data 201",
+    "maven_tm_level": "TM-30",
+    "maven_tm_also_supports": [],
+    "sequence_order": 2
+  },
+  {
+    "id": "Deck_02_Scope_Engineering",
+    "title": "02 — Scope Engineering",
+    "track": "Data 201",
+    "maven_tm_level": "TM-30",
+    "maven_tm_also_supports": [],
+    "sequence_order": 3
+  },
+  {
+    "id": "Deck_04_Object_Type_Varieties",
+    "title": "04 — Object Type Varieties",
+    "track": "Data 201",
+    "maven_tm_level": "TM-30",
+    "maven_tm_also_supports": [],
+    "sequence_order": 4
+  },
+  {
+    "id": "Deck_05_Identity_Governance",
+    "title": "05 — Identity & Governance",
+    "track": "Data 201",
+    "maven_tm_level": "TM-30",
+    "maven_tm_also_supports": [],
+    "sequence_order": 5
+  },
+  {
+    "id": "Deck_06_Relationship_Modeling",
+    "title": "06 — Relationship Modeling",
+    "track": "Data 201",
+    "maven_tm_level": "TM-30",
+    "maven_tm_also_supports": [],
+    "sequence_order": 6
+  },
+  {
+    "id": "Deck_03_RDF_OWL_Foundations",
+    "title": "03 — RDF & OWL Foundations",
+    "track": "Specialist",
+    "maven_tm_level": "TM-40K",
+    "maven_tm_also_supports": ["TM-40L"],
+    "sequence_order": 3,
+    "_audit_note": "Moved from Data 201 — TM-40K is specialist level; added TM-40L also_supports"
+  },
+  {
+    "id": "Deck_07_Temporal_Bitemporal",
+    "title": "07 — Temporal & Bitemporal",
+    "track": "Specialist",
+    "maven_tm_level": "TM-40L",
+    "maven_tm_also_supports": ["TM-40G", "TM-40I", "TM-40K"],
+    "sequence_order": 4,
+    "_audit_note": "Moved from Data 201; primary changed TM-40G → TM-40L (data architecture owns temporal modeling, not ORSA consumers)"
+  },
+  {
+    "id": "Data_Modeling_Fundamentals_Level2",
+    "title": "Data Modeling Fundamentals — Level 2",
+    "track": "Specialist",
+    "maven_tm_level": "TM-40L",
+    "maven_tm_also_supports": ["TM-40G", "TM-40I", "TM-40K"],
+    "sequence_order": 5,
+    "_audit_note": "Moved from Data 201; primary changed TM-40G → TM-40L (schema design is SWE responsibility)"
+  },
+  {
+    "id": "Deck_12_Capstone_Foundry",
+    "title": "12 — Capstone: Foundry",
+    "track": "Specialist",
+    "maven_tm_level": "TM-40G",
+    "maven_tm_also_supports": ["TM-40H", "TM-40I", "TM-40J", "TM-40K", "TM-40L"],
+    "sequence_order": 6,
+    "_audit_note": "Moved from Data 201; expanded also_supports to all TM-40 specialist tracks (true capstone); primary TM-40G flagged for review"
+  },
+  {
+    "id": "WFF_Overview",
+    "title": "WFF Tracks Overview — TM-40A through TM-40F",
+    "track": "WFF",
+    "maven_tm_level": "TM-40A",
+    "maven_tm_also_supports": ["TM-40B", "TM-40C", "TM-40D", "TM-40E", "TM-40F"],
+    "sequence_order": 2
+  },
+  {
+    "id": "TM_40I_ML_Engineering",
+    "title": "ML Engineering — TM-40I",
+    "track": "Specialist",
+    "maven_tm_level": "TM-40I",
+    "maven_tm_also_supports": ["TM-40H", "TM-40G"],
+    "sequence_order": 8,
+    "_audit_note": "New deck — fills gap: TM-40I had no primary deck"
+  },
+  {
+    "id": "TM_40J_Program_Manager",
+    "title": "Program Management — TM-40J",
+    "track": "Specialist",
+    "maven_tm_level": "TM-40J",
+    "maven_tm_also_supports": [],
+    "sequence_order": 9,
+    "_audit_note": "New deck — fills gap: TM-40J had zero decks"
+  },
+  {
+    "id": "TM_50_Advanced_Overview",
+    "title": "TM-50 Advanced Tracks Overview",
+    "track": "Advanced",
+    "maven_tm_level": "TM-50G",
+    "maven_tm_also_supports": ["TM-50H", "TM-50I", "TM-50J", "TM-50K", "TM-50L"],
+    "sequence_order": 1,
+    "_audit_note": "New deck — fills gap: TM-50 series had zero decks; overview covers all six advanced tracks"
+  },
+  {
+    "id": "TM_50G_Advanced_ORSA",
+    "title": "Advanced ORSA — TM-50G",
+    "track": "Advanced",
+    "maven_tm_level": "TM-50G",
+    "maven_tm_also_supports": [],
+    "sequence_order": 2,
+    "_audit_note": "New deck — fills gap: TM-50G had no deck"
+  },
+  {
+    "id": "TM_50H_Advanced_AI_Engineer",
+    "title": "Advanced AI Engineering — TM-50H",
+    "track": "Advanced",
+    "maven_tm_level": "TM-50H",
+    "maven_tm_also_supports": ["TM-50I"],
+    "sequence_order": 3,
+    "_audit_note": "New deck — fills gap: TM-50H had no deck"
+  },
+  {
+    "id": "TM_50I_Advanced_ML_Engineer",
+    "title": "Advanced ML Engineering — TM-50I",
+    "track": "Advanced",
+    "maven_tm_level": "TM-50I",
+    "maven_tm_also_supports": ["TM-50H"],
+    "sequence_order": 4,
+    "_audit_note": "New deck — fills gap: TM-50I had no deck"
+  },
+  {
+    "id": "TM_50J_Advanced_Program_Manager",
+    "title": "Advanced Program Management — TM-50J",
+    "track": "Advanced",
+    "maven_tm_level": "TM-50J",
+    "maven_tm_also_supports": [],
+    "sequence_order": 5,
+    "_audit_note": "New deck — fills gap: TM-50J had no deck"
+  },
+  {
+    "id": "TM_50K_Advanced_Knowledge_Manager",
+    "title": "Advanced Knowledge Management — TM-50K",
+    "track": "Advanced",
+    "maven_tm_level": "TM-50K",
+    "maven_tm_also_supports": [],
+    "sequence_order": 6,
+    "_audit_note": "New deck — fills gap: TM-50K had no deck"
+  },
+  {
+    "id": "TM_50L_Advanced_Software_Engineer",
+    "title": "Advanced Software Engineering — TM-50L",
+    "track": "Advanced",
+    "maven_tm_level": "TM-50L",
+    "maven_tm_also_supports": [],
+    "sequence_order": 7,
+    "_audit_note": "New deck — fills gap: TM-50L had no deck"
+  }
+]

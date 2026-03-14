@@ -1,61 +1,12 @@
 # TM-50J — ADVANCED PROGRAM MANAGER (TECHNICAL)
-## MAVEN SMART SYSTEM (MSS) | USAREUR-AF OPERATIONAL DATA TEAM
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA** | Wiesbaden, Germany | 2026 | Version 1.0
-
-**PREREQUISITE PUBLICATIONS:** TM-40J, Program Manager (Technical) (required). Graduates of TM-40J who have managed at least one full-lifecycle MSS data or AI project from initiation through production release, with demonstrated proficiency in Agile delivery, stakeholder management, and MSS platform governance. Familiarity with TM-40G (ORSA), TM-40H (AI Engineer), TM-40I (ML Engineer), TM-40K (Knowledge Manager), and TM-40L (Software Engineer) track content strongly recommended.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
-**AUTHORITY:** This publication is issued under authority of the USAREUR-AF C2 Data and Analytics Office (C2DAO). It implements Army CIO Memorandum, Data and Analytics Policy (April 2024) and aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025). Reference learn-data.armydev.com for current platform documentation.
-
----
-
-> **PREREQUISITE WARNING:** TM-50J is **not required** for the majority of technical PM billets. It is intended for personnel with demonstrated proficiency at TM-40J level who have managed at least one full-lifecycle MSS project through production release and are actively leading multi-track data/AI programs. If you are uncertain whether TM-50J applies to your billet, consult your supervisor or the unit data steward before proceeding.
-
----
-
-## SAFETY SUMMARY
-
-TM-50J Program Managers operate at the program level — overseeing multiple concurrent data product teams, managing the MSS portfolio for USAREUR-AF and EUCOM, and advising GO/SES leadership on data capability investment. Decisions at this level affect not one project but the entire theater data enterprise.
-
-Before performing any task at TM-50J level:
-
-- **Program-level decisions compound.** A resource allocation error across five teams simultaneously is not five times worse than one — it is exponentially worse because it erodes team trust, distorts incentives, and degrades delivery predictability across the portfolio. Slow down and analyze before reallocating resources or restructuring teams.
-- **Do not approve vendor deliverables without technical review.** Accepting a Palantir task order deliverable without documented acceptance criteria and independent technical evaluation creates contractual and operational risk. Unchecked deliverables may enter production with defects that affect the operational picture.
-- **Data product retirement is an operational risk event.** Sunsetting an MSS product that operational users depend on — without a defined transition plan, user communication, and replacement pathway — can degrade operational reporting at the theater level. Never initiate a retirement without coordinating with C2DAO and affected units.
-- **Quantitative metrics are a tool, not a verdict.** Velocity, cycle time, and throughput data describe team behavior — they do not explain it. Do not use delivery metrics to evaluate individual contributors or make personnel decisions without qualitative context. Misapplied measurement destroys team culture and creates perverse incentives.
-- **Managing up to GO/SES level carries responsibility for honest assessment.** Do not brief optimistic program status to senior leaders under command climate pressure. An inaccurate green status that delays corrective action is more damaging than a timely amber or red with a mitigation plan.
-- **Technical debt is operational risk.** Unmanaged debt across multiple products in a production portfolio is not a developer concern — it is a PM accountability issue. Quantify, communicate, and plan for debt reduction the same way you plan for new capability delivery.
+> **BLUF:** TM-50J qualifies Technical Program Managers to lead the USAREUR-AF MSS data capability at scale — managing multiple concurrent product teams, directing portfolio investment, and advising senior leaders on data as an operational asset.
+> **Prereqs:** TM-40J, Program Manager (Technical) (required). Graduates of TM-40J who have managed at least one full-lifecycle MSS data or AI project from initiation through production release, with demonstrated proficiency in Agile delivery, stakeholder management, and MSS platform governance. Familiarity with TM-40G (ORSA), TM-40H (AI Engineer), TM-40I (ML Engineer), TM-40K (Knowledge Manager), and TM-40L (Software Engineer) track content strongly recommended; CONCEPTS_GUIDE_TM50J_PROGRAM_MANAGER_ADVANCED (read before this manual).
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: TM-50J program managers are accountable for the health of the USAREUR-AF data capability portfolio. Decisions made at this level — team structures, vendor deliverable acceptance, product retirement, and GO/SES briefings — have direct operational consequences for USAREUR-AF and EUCOM mission readiness. Apply the same standard of care as an operational mission brief: confirm facts, coordinate with stakeholders, and communicate clearly before execution.**
-
 > **CAUTION: Multi-team Agile coordination (SAFe or equivalent) requires explicit dependency management across teams. An undocumented inter-team dependency is a hidden risk. Failure to surface and manage cross-team dependencies during planning creates blocked sprints, delayed releases, and degraded data product quality.**
-
 > **NOTE: This manual assumes full mastery of TM-40J content. Chapter references to TM-40G through TM-40L indicate the technical tracks managed by TM-50J program managers — not prerequisites for the PM role itself. Cross-references are provided to help TM-50J graduates understand the work they are overseeing.**
-
----
-
-## TABLE OF CONTENTS
-
-- Chapter 1 — Introduction and Scope
-- Chapter 2 — Scaled Agile: Managing Multiple Concurrent Teams
-- Chapter 3 — Portfolio-Level Tracking and Theater Visibility
-- Chapter 4 — Advanced Stakeholder Management and Data Culture
-- Chapter 5 — Quantitative Delivery Management
-- Chapter 6 — Technical Debt Strategy and Build/Buy/Configure Decisions
-- Chapter 7 — Vendor and Contractor Management
-- Chapter 8 — Team Design and PM Leadership
-- Chapter 9 — Program Governance and Policy Compliance
-- Chapter 10 — Program Communication and Reporting
-- Chapter 11 — ML/AI Portfolio Management
-- Chapter 12 — Program Financial Stewardship
-- Chapter 13 — Leading Through Program Transitions
-- Appendix A — Program Health Assessment Checklist
-- Appendix B — Data Product Lifecycle and Retirement Guide
-- Appendix C — Sample Program Increment Objectives and Assessment
-- Appendix D — PM Onboarding Guide for TM-50J Programs
-- Glossary
 
 ---
 
@@ -104,6 +55,19 @@ TM-50J program managers oversee the work of TM-40J project managers and the tech
 | TM-40L | Software Engineer | Custom transforms, integrations, API layers | High-quality code solving problems that could be configured |
 
 TM-50J graduates must recognize failure modes across all tracks and understand how to intervene at the program level — not by doing the technical work, but by restructuring teams, realigning priorities, removing blockers, or escalating to C2DAO leadership.
+
+### 1-3A. Relationship to Other TM-50 Publications
+
+| Publication | Track | Key Overlap with TM-50J |
+|---|---|---|
+| TM-50G | ORSA Advanced | Portfolio-level analytical program governance; OR product review |
+| TM-50H | AI Engineer Advanced | AI program lifecycle management; governance acquisition (Chapter 8) |
+| TM-50I | ML Engineer Advanced | ML program portfolio management; automated pipeline governance |
+| TM-50J | Program Manager Advanced | THIS DOCUMENT |
+| TM-50K | Knowledge Manager Advanced | KM system program oversight; lessons learned program management |
+| TM-50L | Software Engineer Advanced | Platform engineering program coordination; SWE team structure |
+
+**WFF Operational Consumer Note.** The six Warfighting Function (WFF) tracks — Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F) — represent the primary operational stakeholder base for MSS programs. TM-50J program managers must understand WFF requirements when scoping data products, managing stakeholder relationships, and communicating program value to GO/SES audiences. WFF staff sections define the demand signal; the data program exists to serve their mission decisions.
 
 ### 1-4. Operating Environment
 
@@ -386,6 +350,8 @@ The rules change at this level:
 - **Own the bad news.** Senior leaders who are surprised by program failures — especially failures the PM knew about and did not communicate — lose trust permanently. Deliver bad news early, with context and a mitigation plan.
 
 ### 4-2. Building Organizational Buy-In for Data Culture Change
+
+> **NOTE — Palantir Developers reference:** *Building Enterprise Autonomy with Shyam Sankar, CTO* — A strategic framing of enterprise-scale AI deployment from Palantir's CTO perspective, covering the organizational and leadership conditions required for autonomous data capabilities to take root. Relevant context for PMs building organizational buy-in for data culture change in this section. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 **BLUF:** Technology adoption in a military organization is a command climate problem, not a technology problem. Your job is to change behavior, not just deploy software.
 
@@ -681,6 +647,8 @@ This decision recurs constantly at the program level. A new stakeholder requirem
 ## CHAPTER 7 — VENDOR AND CONTRACTOR MANAGEMENT
 
 ### 7-1. The Palantir Partnership Model
+
+> **NOTE — Palantir Developers reference:** *Code in Production: Process Orchestration x Eaton | DevCon 4* — Documents a large-scale process automation deployment through Palantir's platform, covering the enterprise delivery model and partnership structure that underpins production-scale rollouts. Reinforces the Palantir partnership and task order management content in this chapter. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 **BLUF:** Palantir operates as a strategic platform partner on MSS, not simply a software vendor. Managing this relationship well requires understanding what Palantir is accountable for, what the government is accountable for, and where those boundaries create gaps.
 
@@ -1158,6 +1126,8 @@ Senior leaders do not always attend every program review. Their understanding of
 ## CHAPTER 11 — ML/AI PORTFOLIO MANAGEMENT
 
 ### 11-1. Managing Research, Build, and Sustainment Simultaneously
+
+> **NOTE — Palantir Developers reference:** *Product Launch: Enterprise Automation | DevCon 5* — Covers Palantir's enterprise automation capabilities and the program management model for deploying automation at scale across multiple teams and production systems. Directly reinforces the portfolio-level ML/AI management content in this chapter. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 **BLUF:** An ML/AI portfolio at program scale contains products at every stage of the lifecycle simultaneously. Some are in active research (early exploration, feasibility unknown), some are in active development (models being trained and evaluated), and some are in production sustainment (models serving operational users and requiring ongoing monitoring). Each stage requires different management attention and different risk posture.
 
@@ -1762,7 +1732,7 @@ By the end of 30 days, the incoming TM-40J PM should be able to:
 *Maven Smart System — USAREUR-AF Operational Data Team*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 *2026*
-*UNCLASSIFIED — Distribution: DRAFT — Not yet approved for distribution.*
+*UNCLASSIFIED — Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
 *This publication implements Army CIO Memorandum, Data and Analytics Policy (April 2024) and aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025).*
 ## GLOSSARY
 

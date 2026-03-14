@@ -1,27 +1,8 @@
-# CONCEPTS GUIDE — TM-40K COMPANION
-## KNOWLEDGE MANAGER
-## MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — TM-40K COMPANION — KNOWLEDGE MANAGER · MAVEN SMART SYSTEM (MSS)
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany | 2026
-
-**PURPOSE:** Develops the mental models required to design, implement, and maintain knowledge management solutions on MSS effectively. Read before beginning TM-40K task instruction.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-## TABLE OF CONTENTS
-
-1. The Knowledge Manager's Role on MSS
-2. Information Architecture — The KM's Foundational Mental Model
-3. Structured vs. Unstructured Knowledge
-4. Forms and Actions as Knowledge Capture Instruments
-5. Lessons Learned as an Ontology Design Problem
-6. Institutional Memory in a Rotating Force
-7. Version Control and Records Management for KM Products
-8. Workflow Design — Moving Knowledge Through the Organization
-9. Common KM Failure Modes on MSS
+> **BLUF:** The KM on MSS builds the institutional memory of the formation. The primary output is structured, findable, usable knowledge — lessons learned, SOPs, decision records, after-action content — stored in MSS in a way that supports future operations. If that knowledge cannot be found, it was never really captured.
+> **Purpose:** Develops the mental models required to design, implement, and maintain knowledge management solutions on MSS effectively. Read before beginning TM-40K task instruction.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
@@ -403,6 +384,21 @@ Before beginning any MSS knowledge management build, verify:
 - [ ] Departure knowledge capture process integrated into unit outprocessing workflow
 
 ---
+
+---
+
+## CURRICULUM NOTES
+
+**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED — not recommended. The KM who has not designed Ontology models and Workshop applications cannot effectively architect knowledge systems on MSS.
+
+**Advanced track:** TM-40K graduates should pursue **TM-50K (Advanced Knowledge Manager)** for advanced topics including enterprise-scale knowledge taxonomy design, cross-command knowledge federation, NATO Lessons Learned Database (LLDB) integration, and AI-assisted knowledge synthesis at theater level.
+
+**Peer specialist cross-references:**
+- **TM-40L (Software Engineer):** High-frequency coordination point. The KM designs the knowledge ontology and pipeline architecture; the SWE implements pipelines requiring custom code. Review KM ontology design with TM-40L before build begins — ontology changes have direct impact on downstream pipeline code.
+- **TM-40H (AI Engineer):** Coordinate on AIP-assisted knowledge extraction and summarization workflows. The KM defines the knowledge architecture, human-review requirements, and taxonomy validation standards; the AI Engineer implements the AIP Logic pipeline. Every AIP-extracted knowledge output requires KM-defined SME review before Ontology write.
+- **TM-40G (ORSA):** Coordinate when knowledge metrics (capture rates, lesson implementation rates, gap analysis) require quantitative decision products rather than descriptive monitoring dashboards.
+
+**WFF awareness:** KMs on MSS build institutional memory systems for WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). Each WFF function generates domain-specific lessons, TTPs, and SOPs. Design knowledge ontology taxonomies with WFF functional areas as primary filter dimensions — a G3 (Operations/Mission Command, TM-40F) staff officer and a fires coordinator (TM-40B) have different knowledge retrieval needs that a single undifferentiated repository cannot serve.
 
 *This guide is a prerequisite companion to TM-40K. Read in full before beginning TM-40K task instruction. The mental models developed here underpin every task in TM-40K and are not repeated in the task manual.*
 

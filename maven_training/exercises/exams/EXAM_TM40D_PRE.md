@@ -6,7 +6,7 @@
 | **Course** | TM-40D: Sustainment WFF Track |
 | **Form** | Pre-Test |
 | **Level** | TM-40D (WFF Track) |
-| **Audience** | G4/S4 staff, FSB/BSB logistics officers, supply chain managers, property book officers; prerequisite: TM-10 + TM-20 complete |
+| **Audience** | G4/S4 staff, FSB/BSB logistics officers, supply chain managers, property book officers; prerequisite: TM-10 + TM-20 + TM-30 complete |
 | **Time Allowed** | 20 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
@@ -126,3 +126,47 @@ _______________________________________________
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
 *EX-TM40D-PRE | Version 1.0 | March 2026*
+
+---
+
+## ANSWER KEY — INSTRUCTOR USE ONLY
+
+*Do not distribute to students. Use to identify baseline gaps and tailor Day 1 instruction accordingly.*
+
+**Multiple Choice:**
+
+1. B — Verify the data-as-of timestamp; logistics data changes significantly between reporting cycles and stale data may reflect a critical shortfall or false surplus. Symbology and chart format are secondary.
+2. B — LOGSTAT pipeline data reflects what was reported at the last submission cycle; latency between unit submission and MSS display must be understood and communicated to commanders and the G4.
+3. B — The dashboard is pulling from a dataset not yet updated with the morning LOGSTAT submission; pipeline latency between unit reporting and MSS display is the most likely explanation.
+4. B — Supply chain analytics support G4 analysis of consumption trends, forecast requirements, and shortfall identification; decision authority remains with the S4/G4 — MSS does not auto-reorder.
+5. B — An alert that fires when Class V on-hand falls below the commander's threshold sourced from the Class V supply reporting feed is the correct CCIR configuration; other options are manual or unfocused.
+6. B — Property accountability data reflects reported on-hand quantities from property book submissions — not real-time GPS tracking of individual items.
+7. B — Transportation and distribution data provides visibility of pipeline status, in-transit items, delivery windows, and routing chokepoints to support sustainment synchronization.
+8. B — Aggregated supply quantities, consumption rates, and resupply timelines reveal unit readiness posture and operational timelines; distribution must be controlled accordingly.
+
+**Short Answer Guidance:**
+
+SA-9. Full credit (5 pts): The MSS dashboard reflects LOGSTAT submissions from a previous cycle and does not capture the verbal updates from this week; before the sync, contact both units to obtain current LOGSTAT submissions or verbal updates with a DTG; brief the dashboard as showing status as of [last submission DTG] and note explicitly that two units have verbally reported drops below 70% — do not present the dashboard figure as current readiness. Partial credit (3 pts): identifies the data currency mismatch but does not describe the steps to obtain updated data or the correct brief characterization.
+
+SA-10. Full credit (5 pts): MSS supply on-hand reflects what was reported in the last LOGSTAT submission; a real-time inventory count requires a physical count of on-hand assets; the gap matters because LOGSTAT submissions may be hours or days old, consumption may have occurred since submission, and in-transit items are not counted in on-hand; an S4 making a resupply decision solely from MSS data without accounting for consumption since last submission or items in transit may under- or over-order. Partial credit (3 pts): identifies the distinction without explaining the decision risk.
+
+**Scenario Guidance:**
+
+Q-11. Full credit (10 pts): Must address all four supply class displays and the CCIR.
+
+*Class I:* link to ration supply dataset; verify submission timestamps per battalion; confirm figures reflect the current reporting cycle.
+
+*Class III(B):* link to fuel supply reporting dataset; same timestamp verification per battalion; identify any unit with no current submission.
+
+*Class V:* link to ammunition supply dataset; verify submission timestamps; flag any unit with Class V at or below 1 day of supply for immediate attention.
+
+*Readiness panel:* link to LOGSTAT equipment status dataset; verify all three battalions have submitted within the current cycle; note any unit with a gap.
+
+*CCIR:* configure alert on Class III(B) dataset; threshold = on-hand quantity / daily consumption rate < 2 days; route to G4 (supply decision authority) and S4/XO (command awareness); verify the daily consumption rate figure is current before setting the threshold.
+
+Partial credit (6 pts): three of five elements (four supply panels + CCIR) addressed correctly with data source and verification step. Minimum acceptable: two supply panels with CCIR correctly configured.
+
+---
+
+*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*EX-TM40D-PRE | Answer Key | Version 1.0 | March 2026*

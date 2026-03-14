@@ -1,28 +1,8 @@
-# CONCEPTS GUIDE — TM-40L COMPANION
-## SOFTWARE ENGINEER
-## MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — TM-40L COMPANION — SOFTWARE ENGINEER · MAVEN SMART SYSTEM (MSS)
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-2026
-
-**PURPOSE:** Develops mental models required to write, deploy, and maintain code on MSS. Read before beginning TM-40L task instruction.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-## TABLE OF CONTENTS
-
-1. The Software Engineer's Role on MSS
-2. The Foundry Execution Model
-3. Idempotency as a Core Design Constraint
-4. The Ontology as Your API Contract
-5. TypeScript Functions — Extending the Ontology with Logic
-6. OSDK — Building Applications Against the Ontology
-7. Testing in a Platform Environment
-8. Code as Operational Infrastructure
-9. Common SWE Failure Modes on MSS
+> **BLUF:** The SWE is the engineer of record for production code on MSS. Everyone else depends on it running correctly, every time.
+> **Purpose:** Develops mental models required to write, deploy, and maintain code on MSS. Read before beginning TM-40L task instruction.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
@@ -345,6 +325,22 @@ A senior contractor SWE builds a complex equipment readiness pipeline over six m
 9. **Common failures are predictable.** Recognize the failure modes in Section 9 before replicating them.
 
 ---
+
+---
+
+## CURRICULUM NOTES
+
+**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED — not recommended. Python proficiency (intermediate or higher) and TypeScript proficiency (intermediate or higher) are required independently of the TM series.
+
+**Advanced track:** TM-40L graduates should pursue **TM-50L (Advanced Software Engineer)** for advanced topics including large-scale OSDK application architecture, Foundry platform extension patterns, CI/CD pipeline hardening, coalition data integration (NAFv4 compliance), and security compliance for operational software systems supporting classified environments.
+
+**Peer specialist cross-references:**
+- **TM-40K (Knowledge Manager):** High-frequency coordination point. The KM designs knowledge ontology and pipeline architecture; the SWE implements pipelines requiring custom code. Breaking ontology changes affect knowledge pipeline code — coordinate before any schema change.
+- **TM-40H (AI Engineer):** AI workflows delivered through OSDK applications require SWE implementation of the application layer. Coordinate on CBAC compliance, credential management, and application architecture before build begins.
+- **TM-40I (ML Engineer):** Coordinate on production pipeline implementation when model deployment requires custom inference infrastructure beyond standard Foundry Transforms, and on OSDK application surfaces for model-backed properties.
+- **TM-40G (ORSA):** ORSA analytical products sometimes require OSDK delivery interfaces for commander-facing applications. Coordinate with ORSA on output format and human-review-gate design before committing to application architecture.
+
+**WFF awareness:** Software engineers on MSS build the production code layer that WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command) interact with daily. A production code failure is not an engineering metric — it is a WFF operational impact. Every application in production has a WFF customer. Know who they are, what their decision cycle is, and what degraded service means for their mission.
 
 *Continue to TM-40L for task-based instruction in OSDK development, TypeScript Functions, Python transforms, CI/CD workflows, and security compliance.*
 

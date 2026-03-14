@@ -1,37 +1,7 @@
-# CONCEPTS GUIDE — TM-40B COMPANION
-## Fires Warfighting Function — Maven Smart System (MSS)
+# CONCEPTS GUIDE — TM-40B COMPANION — Fires Warfighting Function — Maven Smart System (MSS)
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany | 2026
-
-| Field | Value |
-|-------|-------|
-| **Version** | 1.0 — March 2026 |
-| **Companion Publication** | TM-40B, Fires Warfighting Function, Intermediate Operator's Manual |
-| **Prerequisite** | TM-20 (and TM-10) |
-| **Primary Audience** | FSCOORD, DIVARTY CDR, AMD TF CDR, fires brigade commanders, division and corps fires cell chiefs, senior FA and ADA warrants; BCT S3s and XOs who receive and brief fires products |
-| **Distribution** | UNCLASSIFIED // FOR OFFICIAL USE ONLY |
-| **Doctrinal Basis** | ADP 3-19, FM 3-09, FM 3-60, ATP 3-01.8, ATP 3-52.2, ATP 3-09.42, ATP 3-09.50 |
-
-**PURPOSE:** This guide is the conceptual companion to TM-40B. It explains the WHY behind fires operations in MSS — the doctrinal logic that makes certain data requirements non-negotiable, the mental models that separate effective fires practitioners from those who treat MSS as an expensive slide deck, and the failure patterns fires units must actively avoid.
-
-**HOW TO USE:** Read linearly. Each section builds on the previous. Sections 1–2 establish the foundational data obligation for fires. Sections 3–4 apply that foundation to the two most safety-sensitive fires data domains: FSCM coordination and AMD engagement authority. Section 5 addresses fires-intel integration. Section 6 addresses assessment as a fires learning loop. Section 7 identifies failure modes and their corrections. Senior leaders may read Section 7 first.
-
-> **NOTE:** Where this guide interprets doctrinal principles in the context of MSS, the interpretation is operationally derived. Doctrinal authority resides in the cited source documents. Changes to referenced doctrine after the publication date of this guide take precedence.
-
----
-
-## TABLE OF CONTENTS
-
-| Section | Title |
-|---------|-------|
-| 1 | The Fires WFF and Data: How ADP 3-19 Translates to MSS Data Requirements |
-| 2 | Targeting as a Data Process: D3A as Information Flow |
-| 3 | Fire Support Coordination as a Data Problem: Why FSCM, ROE, and ACA Data Must Be Authoritative |
-| 4 | AMD Operations Mental Model: The Layered Defense as a Data Picture |
-| 5 | Fires-Intel Integration: The Intelligence-Fires Nexus and Shared Data in MSS |
-| 6 | The Role of Assessment in Fires: BDA and Re-Attack as a Feedback Loop |
-| 7 | Fires Failure Modes in MSS: Eight Ways Fires Units Misuse the Platform |
+> **Purpose:** This guide is the conceptual companion to TM-40B. It explains the WHY behind fires operations in MSS — the doctrinal logic that makes certain data requirements non-negotiable, the mental models that separate effective fires practitioners from those who treat MSS as an expensive slide deck, and the failure patterns fires units must actively avoid.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
@@ -456,6 +426,36 @@ Two points warrant emphasis.
 The engagement authority section is not academic. AMD engagement decisions occur under the most time-compressed conditions in military operations. Ambiguity in AMD engagement authority — whether it exists in the commander's mind, in the written ROE, or in the MSS record — is a risk that resolves badly in either direction.
 
 CAL/DAL management as a continuous process — not a planning product — is the AMD TF commander's most underappreciated MSS responsibility. Review the CAL/DAL in MSS at every battle update briefing. Not once per operation. Every battle update. The defense of critical assets is only as good as the accuracy of the data that describes where those assets are and which AMD systems are covering them.
+
+---
+
+## RELATED TRACKS AND PUBLICATIONS
+
+### WFF Peer Tracks
+
+All six WFF tracks are at the same tier. All six WFF tracks require TM-10, TM-20, and TM-30 as prerequisites. Fires practitioners are encouraged to develop working awareness of TM-40A (Intelligence) and TM-40E (Protection) — the two WFF tracks with the most intensive fires data coordination requirements.
+
+| Track | Title | Prereq | Relationship to Fires WFF |
+|-------|-------|--------|--------------------------|
+| TM-40A | Intelligence WFF | TM-10 + TM-20 + TM-30 | Targeting data, BDA, ISR collection — the fires-intel integration that makes targeting lethal and discriminate |
+| TM-40B | Fires WFF | TM-10 + TM-20 + TM-30 | This track |
+| TM-40C | Movement and Maneuver WFF | TM-10 + TM-20 + TM-30 | FSCM coordination, airspace deconfliction, maneuver-fires synchronization |
+| TM-40D | Sustainment WFF | TM-10 + TM-20 + TM-30 | CSR, ammunition readiness |
+| TM-40E | Protection WFF | TM-10 + TM-20 + TM-30 | AMD coordination — fires and protection share AMD data domain |
+| TM-40F | Mission Command WFF | TM-10 + TM-20 + TM-30 | Fires products integrate into the commander's CCIR dashboard |
+
+### Specialist Tracks (Prerequisite: TM-30)
+
+For personnel pursuing technical depth, specialist tracks (TM-40G–L, prereq TM-30) are available. Not required for fires WFF employment.
+
+| Track | Title |
+|-------|-------|
+| TM-40G | ORSA (→ TM-50G) |
+| TM-40H | AI Engineer (→ TM-50H) |
+| TM-40I | ML Engineer (→ TM-50I) |
+| TM-40J | Program Manager (→ TM-50J) |
+| TM-40K | Knowledge Manager (→ TM-50K) |
+| TM-40L | Software Engineer (→ TM-50L) |
 
 ---
 

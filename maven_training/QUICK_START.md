@@ -5,7 +5,7 @@
 Wiesbaden, Germany | Version 1.0 | March 2026
 
 **APPLIES TO:** All USAREUR-AF military and civilian personnel with MSS access.
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
+**DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
 
 > **BLUF:** Get operational in MSS in under 30 minutes. This guide does not replace TM-10 — read TM-10 when time permits.
 
@@ -101,7 +101,7 @@ Wiesbaden, Germany | Version 1.0 | March 2026
 | Consume data only | Read **TM-10** (full operator reference) |
 | Build dashboards or forms | Read **TM-20** after TM-10 |
 | 17/25-series, S6/G6, G2/G9 | Read **TM-30** after TM-20 |
-| WFF functional staff (INT/FIRES/M2/SUST/PROT/MC) | See **TM-40A–F** after TM-20 |
+| WFF functional staff (INT/FIRES/M2/SUST/PROT/MC) | See **TM-40A–F** after TM-30 |
 | ORSA, AI/ML engineer, PM, KM, or SWE | See **TM-40G–L** after TM-30 |
 | O-5+ or CSM+ | Read **Data Literacy for Senior Leaders** |
 

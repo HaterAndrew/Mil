@@ -6,7 +6,7 @@ HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA
 Wiesbaden, Germany
 ```
 
-**Distribution:** DRAFT — Not yet approved for distribution.
+**Distribution:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
 
 ---
 
@@ -23,13 +23,13 @@ Wiesbaden, Germany
 | All personnel | Soldier, officer, or civilian accessing MSS for data consumption | TM-10 |
 | All staff (light builders) | Building dashboards, forms, or basic pipelines | TM-20 (prereq: TM-10) |
 | Data-adjacent specialists | 17/25-series, S6/G6, G2/G9, operational data analysts | TM-30 (prereq: TM-20) |
-| WFF functional staff | Assigned to INT, FIRES, M2, SUST, PROTECTION, or MC | TM-40A–F (prereq: TM-20) |
+| WFF functional staff | Assigned to INT, FIRES, M2, SUST, PROTECTION, or MC | TM-40A–F (prereq: TM-30) |
 | Technical specialists | Writing code, building external apps, ML models | TM-40G–L (prereq: TM-30) |
 | Senior leaders (O-5+, CSM+) | Commanding or directing a data-capable formation | Data Literacy for Senior Leaders |
 | All — background reading | Pre-MSS data concepts foundation | Data Literacy Technical Reference |
 
 > **TM-40 Disambiguation:** Two distinct sub-series share the TM-40 designation.
-> - **TM-40A–F** — Warfighting Function tracks. Prereq: TM-20. No coding required. Audience: functional WFF staff.
+> - **TM-40A–F** — Warfighting Function tracks. Prereq: TM-30. No coding required. Audience: functional WFF staff.
 > - **TM-40G–L** — Technical Specialist tracks. Prereq: TM-30. Audience: engineers, analysts, and data professionals.
 >
 > Confirm your sub-series against your role before enrolling.
@@ -43,16 +43,22 @@ All Personnel ──────────────────────
                                                 │
                                                 ▼
 All Staff ───────────────────────────────► TM-20 (Builder)
+                                                │
+                                                ▼
+All proceeding to TM-40 ────────────────► TM-30 (Advanced Builder)
                                            │            │
                               ┌────────────┘            └────────────┐
                               ▼                                      ▼
-                   WFF Staff (TM-40A–F)                  Data-Adjacent Specialists
-                   TM-40A  Intelligence                  TM-30 (Advanced Builder)
-                   TM-40B  Fires                               │
-                   TM-40C  Movement/Maneuver         ┌─────────┴─────────┐
-                   TM-40D  Sustainment               ▼                   ▼
-                   TM-40E  Protection         TM-40G–40L           TM-50G–50L
-                   TM-40F  Mission Command  (Tech Specialists)      (Advanced)
+                   WFF Staff (TM-40A–F)              Technical Specialists (TM-40G–L)
+                   TM-40A  Intelligence               TM-40G  ORSA
+                   TM-40B  Fires                      TM-40H  AI Engineer
+                   TM-40C  Movement/Maneuver          TM-40I  ML Engineer
+                   TM-40D  Sustainment                TM-40J  Program Manager
+                   TM-40E  Protection                 TM-40K  Knowledge Manager
+                   TM-40F  Mission Command            TM-40L  Software Engineer
+                                                            │
+                                                            ▼
+                                                     TM-50G–50L (Advanced)
 ```
 
 ### Step 3 — Reference the Glossary
@@ -70,6 +76,31 @@ Consult the [Data & Foundry Glossary](doctrine/GLOSSARY_data_foundry.md) to tran
 | Data Literacy for Senior Leaders | [doctrine/DATA_LITERACY_senior_leaders.md](doctrine/DATA_LITERACY_senior_leaders.md) | O-5+, CSM+, Senior Civilians |
 | Data Literacy Technical Reference | [doctrine/DATA_LITERACY_technical_reference.md](doctrine/DATA_LITERACY_technical_reference.md) | All personnel |
 | Glossary — Data & Foundry Terms | [doctrine/GLOSSARY_data_foundry.md](doctrine/GLOSSARY_data_foundry.md) | All personnel |
+| CDA Constraints and Directives | [doctrine/CDA_CONSTRAINTS_AND_DIRECTIVES.md](doctrine/CDA_CONSTRAINTS_AND_DIRECTIVES.md) | TM-30+, all specialists |
+
+### CDA Doctrine and Enterprise Architecture (TM-30, TM-40G–L)
+
+Reference material supporting TM-30 and specialist tracks. Primarily targeted at TM-40G–L; WFF tracks (TM-40A–F) may use as supplemental reading.
+
+**Enterprise Architecture Series:**
+
+| Publication | File | Supports |
+|-------------|------|----------|
+| EA Reference Card | [doctrine/enterprise_architecture/EA_00_REFERENCE_CARD.md](doctrine/enterprise_architecture/EA_00_REFERENCE_CARD.md) | TM-30, TM-40K, TM-40L |
+| EA Foundation | [doctrine/enterprise_architecture/EA_01_FOUNDATION.md](doctrine/enterprise_architecture/EA_01_FOUNDATION.md) | TM-30 |
+| EA Schools of Thought | [doctrine/enterprise_architecture/EA_02_SCHOOLS_OF_THOUGHT.md](doctrine/enterprise_architecture/EA_02_SCHOOLS_OF_THOUGHT.md) | TM-30, TM-40K |
+| EA Artifacts and Views | [doctrine/enterprise_architecture/EA_03_ARTIFACTS_AND_VIEWS.md](doctrine/enterprise_architecture/EA_03_ARTIFACTS_AND_VIEWS.md) | TM-40K, TM-40L |
+| EA Governance | [doctrine/enterprise_architecture/EA_04_GOVERNANCE.md](doctrine/enterprise_architecture/EA_04_GOVERNANCE.md) | TM-40K |
+| EA Military Application | [doctrine/enterprise_architecture/EA_05_MILITARY_APPLICATION.md](doctrine/enterprise_architecture/EA_05_MILITARY_APPLICATION.md) | TM-30, TM-40G–L |
+
+**CDA Doctrine Series:**
+
+| Publication | File | Supports |
+|-------------|------|----------|
+| Doctrine-Driven Development Overview | [doctrine/cda_doctrine/CDA_DOCTRINE_OVERVIEW.md](doctrine/cda_doctrine/CDA_DOCTRINE_OVERVIEW.md) | TM-40G–L |
+| CDA Doctrine Agent | [doctrine/cda_doctrine/CDA_DOCTRINE_AGENT.md](doctrine/cda_doctrine/CDA_DOCTRINE_AGENT.md) | TM-40H, TM-40L |
+| AVT25 Assessment Case Study | [doctrine/cda_doctrine/CDA_AVT25_ASSESSMENT.md](doctrine/cda_doctrine/CDA_AVT25_ASSESSMENT.md) | TM-40G, TM-40H |
+| Identity vs. Classification | [doctrine/cda_doctrine/CDA_IDENTITY_VS_CLASSIFICATION.md](doctrine/cda_doctrine/CDA_IDENTITY_VS_CLASSIFICATION.md) | TM-30, TM-40K, TM-40L |
 
 ### Technical Manuals — Foundational
 
@@ -79,7 +110,7 @@ Consult the [Data & Foundry Glossary](doctrine/GLOSSARY_data_foundry.md) to tran
 | TM-20 — Builder | [tm/TM_20_builder/TM_20_BUILDER.md](tm/TM_20_builder/TM_20_BUILDER.md) | All staff | TM-10 |
 | TM-30 — Advanced Builder | [tm/TM_30_advanced_builder/TM_30_ADVANCED_BUILDER.md](tm/TM_30_advanced_builder/TM_30_ADVANCED_BUILDER.md) | Data-adjacent specialists | TM-10, TM-20 |
 
-### TM-40A–F — Warfighting Function Tracks (Prereq: TM-20)
+### TM-40A–F — Warfighting Function Tracks (Prereq: TM-30)
 
 | Publication | File | Concepts Guide | WFF |
 |-------------|------|----------------|-----|
@@ -134,7 +165,7 @@ Competencies: Foundry project creation via Compass UI; Pipeline Builder visual E
 Competencies: Multi-page Workshop with conditional logic and variable passing; advanced Pipeline Builder multi-source joins and aggregations; Ontology design (Object Types, Link Types, Actions) via UI; advanced Contour/Quiver; AIP Logic workflow configuration (not authoring); data lineage review; governance workflows; branching and production promotion; C2DAO governance standards.
 
 ### TM-40A–F — Warfighting Function Tracks
-**Prereq:** TM-20. No coding required.
+**Prereq:** TM-30. No coding required.
 
 | Track | WFF | Audience | Focus |
 |-------|-----|----------|-------|
@@ -157,7 +188,7 @@ Competencies: Multi-page Workshop with conditional logic and variable passing; a
 | TM-40K Knowledge Manager | KMOs, 37F | AAR capture systems; lessons-learned ingestion pipelines; AIP Logic for knowledge summarization; semantic search systems; doctrine/SOP version control; expertise registries |
 | TM-40L Software Engineer | SWEs | OSDK (TypeScript/Python); Foundry Platform SDK; TypeScript Functions on Objects; Action validators; Slate applications; USAREUR-AF code review and deployment standards |
 
-> **NOTE — TM-40J/TM-40K Prereq Variance:** The MTP lists TM-20 as the minimum prereq for TM-40J and TM-40K. The respective syllabi list TM-30. Route technical PMs and KMOs who will oversee code-writing teams through TM-30 first. PMs/KMOs overseeing no-code or builder-level teams may proceed from TM-20.
+> **NOTE — TM-40J/TM-40K Prereq:** TM-30 is required (not recommended) for both TM-40J and TM-40K. Route all PMs and KMOs through TM-30 before enrolling in TM-40J or TM-40K regardless of whether their teams write code. Consult the ENROLLMENT_SOP for waiver procedures.
 
 ---
 
@@ -222,8 +253,15 @@ Distribute to each trainee at course start.
 | Naming & Governance Standards | [standards/NAMING_AND_GOVERNANCE_STANDARDS.md](standards/NAMING_AND_GOVERNANCE_STANDARDS.md) | USAREUR-AF MSS naming conventions and governance checklists |
 | MSS Training Hub (web) | [mss_info_app/index.html](mss_info_app/index.html) | Standalone HTML training hub — open in browser |
 | Practical Exercises | [exercises/](exercises/) | Hands-on packages for TM-10 through TM-40L |
-| Foundry Python Patterns | [data_skills/13_foundry_patterns/](../data_skills/13_foundry_patterns/) | Local shim for offline development and testing |
-| Full data science reference library | [data_skills/](../data_skills/) | 15 modules: Python → ML → ETL → deployment |
+| Enterprise Data Compass | [quick_reference/cda_reference/ENTERPRISE_DATA_COMPASS.md](quick_reference/cda_reference/ENTERPRISE_DATA_COMPASS.md) | Authoritative reference — data architecture, ontology, semantic governance |
+| EA vs DA Reference | [quick_reference/cda_reference/EA_VS_DA.md](quick_reference/cda_reference/EA_VS_DA.md) | Enterprise Architecture vs Data Architecture — definitions and distinctions |
+| Plan for Success | [quick_reference/cda_reference/PLAN_FOR_SUCCESS.md](quick_reference/cda_reference/PLAN_FOR_SUCCESS.md) | Technology radar + 5-phase program roadmap with approval chains |
+| Lessons Learned Reference | [quick_reference/cda_reference/LESSONS_LEARNED.md](quick_reference/cda_reference/LESSONS_LEARNED.md) | AAR format + LL-001 AVT25 assessment tools case study |
+| CDA Slide Library (course portal) | [source_material/course_portal/](source_material/course_portal/) | 29 PDF decks — Intro To Data, Data 101, Data 201 — prereq reading for TM tracks |
+| CDA Interactive Apps | [source_material/cda_apps/](source_material/cda_apps/) | Browser-based training tools (EA vs DA, Enterprise Data Compass, LL, Plan for Success) |
+| CDA Final Exam | [exercises/exams/EXAM_CDA_FINAL.md](exercises/exams/EXAM_CDA_FINAL.md) | Comprehensive 300-pt exam covering all three CDA slide tracks |
+| Foundry Python Patterns | [data_skills/13_foundry_patterns/](../skills/data_skills/13_foundry_patterns/) | Local shim for offline development and testing |
+| Full data science reference library | [data_skills/](../skills/data_skills/) | 15 modules: Python → ML → ETL → deployment |
 | SITREP Tracker (applied project) | [sitrep_tracker/](../sitrep_tracker/) | Click + Rich + SQLite reference implementation |
 
 ---
@@ -237,8 +275,8 @@ Distribute to each trainee at course start.
 3. Complete [TM-10](tm/TM_10_maven_user/TM_10_MAVEN_USER.md)
 4. Request MSS access; practice navigation tasks
 5. If building: complete [TM-20](tm/TM_20_builder/TM_20_BUILDER.md)
-6. WFF functional staff: proceed to TM-40A–F per function (after TM-20)
-7. Data specialists: complete [TM-30](tm/TM_30_advanced_builder/TM_30_ADVANCED_BUILDER.md) after TM-20
+6. Complete [TM-30](tm/TM_30_advanced_builder/TM_30_ADVANCED_BUILDER.md)
+7. WFF functional staff: proceed to TM-40A–F per function (after TM-30)
 8. Technical specialists: proceed to TM-40G–L per role (after TM-30)
 
 ### S6 shop standing up MSS capability
@@ -273,4 +311,4 @@ Distribute to each trainee at course start.
 ---
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*Version 5.0 | March 2026 | TM-40 WFF and Technical Specialist tracks complete; TM-50 series complete | Supersedes v4.0*
+*Version 5.1 | March 2026 | CDA doctrine, EA series, and source material indexed; TM-20 appendices and CONCEPTS_GUIDE files added | Supersedes v5.0*

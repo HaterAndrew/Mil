@@ -6,7 +6,7 @@
 | **Course** | TM-40K: Knowledge Manager |
 | **Form** | Pre-Test |
 | **Level** | TM-40K (Specialist) |
-| **Audience** | KMOs / 37F / knowledge officers; prerequisite: TM-10 + TM-20 |
+| **Audience** | KMOs / 37F / knowledge officers; prerequisite: TM-10 + TM-20 + TM-30 (REQUIRED) |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

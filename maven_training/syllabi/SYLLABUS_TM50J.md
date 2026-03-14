@@ -35,7 +35,7 @@
 
 Complete **5+ duty days before Day 1:**
 
-- [ ] Read TM-50J, Chapter 1 (Portfolio Management) and Chapter 4 (GO/SES Communication) before Day 1
+- [ ] Read TM-50J, Chapter 1 (Introduction and Scope) and Chapter 4 (Advanced Stakeholder Management and Data Culture) before Day 1
 - [ ] Prepare a 1-page portfolio overview: list the programs/projects you currently manage (or have recently managed), key interdependencies, and your most significant delivery challenge
 - [ ] Identify one technical decision from your current portfolio that involved a GO/SES stakeholder — you will use this as a case study on Day 2
 
@@ -56,7 +56,7 @@ Complete **5+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 5 | Seminar | Enterprise delivery metrics: what to measure, what to report up, and how to avoid metrics theater |
 
-**Evening reading:** TM-50J, Chapter 4 (GO/SES Communication and Technical Investment Briefing).
+**Evening reading:** TM-50J, Chapter 4 (Advanced Stakeholder Management and Data Culture).
 
 ---
 
@@ -73,7 +73,7 @@ Complete **5+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 9 | Workshop | Change management planning exercise: develop a 90-day adoption plan for a notional new MSS capability rollout to a BCT |
 
-**Evening reading:** TM-50J, Chapter 5 (Portfolio Risk) — strategic risk escalation section.
+**Evening reading:** TM-50J, Chapter 5 (Quantitative Delivery Management) — strategic risk escalation section.
 
 ---
 
@@ -90,6 +90,16 @@ Complete **5+ duty days before Day 1:**
 | 1300–1700 | 13 | **Eval** | **Evaluated exercise:** Portfolio assessment scenario — assess a provided multi-program portfolio for health, produce a GO/SES-ready brief, and lead a 15-minute stakeholder brief with the evaluator in role |
 
 **Go standard:** Portfolio assessment accurate; GO/SES brief meets BLUF + tradeoffs + recommendation standard; stakeholder communication handles at least one challenge question from the evaluator.
+
+---
+
+## Peer Advanced Tracks
+
+| Track | Relevance to TM-50J |
+|---|---|
+| TM-50G (Advanced ORSA) | ORSA-driven cost/risk tradeoffs informing GO/SES investment decisions; campaign analysis supporting portfolio briefs |
+| TM-50K (Advanced KM) | Institutional knowledge governance for multi-program portfolios; lessons-learned integration into program management |
+| TM-50H (Advanced AI Eng) | AI capability program governance; managing AI system delivery programs with responsible deployment requirements |
 
 ---
 

@@ -1,63 +1,10 @@
 # TM-40J — MAVEN SMART SYSTEM (MSS)
-## PROGRAM MANAGER (TECHNICAL) TECHNICAL MANUAL
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-
-2026
-
-**Version 1.0 | March 2026**
-
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Data Literacy Technical Reference (required).
-**APPLIES TO:** Technical Project Managers, Product Owners, Team Leads managing data/AI/software capability builds on MSS. Civilian tech PMs, officer/NCO project leads, ORSA/MLE/SWE/KM team leads.
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-## SAFETY SUMMARY
-
-Technical PMs managing MSS projects make decisions that affect production data environments, live
-dashboards, and AI-driven tools that operational users depend on. An incorrect release, a broken
-model, or a misconfigured access control is not an IT inconvenience — it degrades the operational
-picture for USAREUR-AF formations in the AOR.
-
-Before performing any task at TM-40J level:
-
-- Do not promote a data product to production without completing the Definition of Done checklist
-  (Appendix B). Partial releases create false confidence in downstream consumers.
-- Do not grant Foundry project access outside the least-privilege model. Data products built on MSS
-  may contain operationally sensitive ontology objects. Coordinate access decisions with the
-  USAREUR-AF C2DAO.
-- Do not scope-creep a data/AI project into production ML without involving TM-40I (ML Engineer)
-  and TM-40H (AI Engineer) resources. Deploying an untested model as a "quick prototype" is a
-  data quality risk that can corrupt downstream operational products.
-- Never schedule an automated pipeline to overwrite production data without a rollback path. Define
-  the rollback procedure before the deployment window opens.
-- When deploying a new capability to operational users, communicate the change 48 hours in advance
-  to unit data points of contact. Silent deployments that change workflows cause user resistance
-  and loss of trust in the platform.
+> **BLUF:** TM-40J qualifies Technical Project Managers, Product Owners, and Team Leads to plan, execute, and govern data, AI, and software capability builds on the Maven Smart System (MSS). This track bridges technical execution (TM-40G through TM-40L developers) and operational requirements (commanders, staff, end users).
+> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Data Literacy Technical Reference (required); CONCEPTS_GUIDE_TM40J_PROGRAM_MANAGER (read before this manual).
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING:** MSS data products built under TM-40J oversight directly support commander decision
-> making at the theater level. A PM who approves a defective release, ships a dashboard with
-> incorrect business logic, or fails to validate model outputs before production is accountable
-> for the downstream operational impact. Apply a mission brief standard to every release decision:
-> confirm, coordinate, communicate before execution.
-
----
-
-## TABLE OF CONTENTS
-
-- Chapter 1 — Introduction: The Technical PM Role
-- Chapter 2 — Agile Project Management for Data and AI Projects
-- Chapter 3 — Managing ML and AI Project Lifecycles
-- Chapter 4 — Stakeholder Management and Requirements Translation
-- Chapter 5 — Building Project Tracking Systems on MSS
-- Chapter 6 — Risk and Dependency Management
-- Chapter 7 — Delivery Planning and Production Readiness
-- Chapter 8 — Change Management and User Adoption
-- Appendix A — Project Kickoff Checklist
-- Appendix B — Definition of Done — Data Product Standards
-- Glossary
 
 ---
 
@@ -179,6 +126,12 @@ TM-10 (User) → TM-20 (Builder) → TM-30 (Advanced Builder) → TM-40J (Techni
 The PM must have completed TM-30 to understand what each specialist track builds and why decisions
 have technical consequences. A PM who has never built on MSS cannot accurately estimate effort,
 identify blockers, or write meaningful acceptance criteria for MSS-based deliverables.
+
+**Prerequisite (explicit):** TM-30 (Advanced Builder) is REQUIRED — not recommended.
+
+**Advanced track:** Upon completing TM-40J, qualified Technical PMs should pursue **TM-50J (Advanced Program Manager)** for advanced topics including multi-program portfolio management, enterprise data governance leadership, cross-command integration coordination, and MSS capability roadmap ownership.
+
+**WFF awareness:** The Technical PM coordinates delivery of data products consumed by WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). Understanding which WFF function a product serves is not optional context — it determines the operational consequence of delivery delays, quality failures, and scope changes. A readiness dashboard degrading for a Sustainment (TM-40D) staff section has a different operational risk profile than a training schedule tool.
 
 ---
 
@@ -627,6 +580,8 @@ documented pass/fail/iterate decision.
 
 ### 3-6. Phase 5 — Production
 
+> **NOTE — Palantir Developers reference:** *Lennar: Scaling from Pilot to Production with Foundry* — A real case study of scaling a Foundry deployment from early prototype through production, covering the organizational and technical gates required at each transition. Directly reinforces the pilot-to-production lifecycle gate content in this section. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 ### Conditions
 
 The model passes evaluation. The PM must now manage the production deployment process.
@@ -662,6 +617,8 @@ before deployment.
 ---
 
 ### 3-7. Phase 6 — Sustainment
+
+> **NOTE — Palantir Developers reference:** *Code in Production: HCA Deploying AI in Healthcare at Scale | DevCon 3* — Documents a large-scale AI deployment in a production environment, covering the monitoring, governance, and sustainment considerations that apply at production scale. Reinforces the PM's sustainment responsibilities for AI models in this phase. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 **BLUF:** A model in production is not done — it is a system that requires active management.
 Model performance degrades as input data drifts, operational contexts change, and upstream
@@ -837,6 +794,10 @@ hand-off points:
 ---
 
 ## CHAPTER 5 — BUILDING PROJECT TRACKING SYSTEMS ON MSS
+
+> **NOTE — Palantir Developers reference:** *Product Launch: Managing Production Applications with Workflow Builder* — Covers Palantir's Workflow Builder tool for managing production data products, including status tracking, handoffs, and operational visibility. Directly relevant to the Workshop-based tracking systems built in this chapter. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Product Launch: Workflow Builder | DevCon 4* — A second launch reference for Workflow Builder with additional implementation depth. Useful companion to the section above for PMs standing up new project tracking infrastructure. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 ### 5-1. Why Track on MSS, Not Spreadsheets
 
@@ -1202,6 +1163,10 @@ The PM is responsible for managing the technical debt backlog — not just the f
 ---
 
 ## CHAPTER 7 — DELIVERY PLANNING AND PRODUCTION READINESS
+
+> **NOTE — Palantir Developers reference:** *DTN: Beyond Building: Accelerating Value Delivery with Foundry* — A real-world case study on accelerating data product value delivery from build through operational adoption, covering the delivery planning decisions that determine whether a product reaches its intended users. Reinforces the scope, milestone, and release planning content in this chapter. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *TWG + Palantir: Minutes Not Months | DevCon 2* — Covers rapid deployment strategies and techniques for compressing the time from requirement to operational capability. Useful context for PMs under timeline pressure planning a production release. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 ### 7-1. Scope, Timeline, and Quality Tradeoffs
 
@@ -1795,4 +1760,4 @@ PM-facing tool for project tracking on MSS.
 *TM-40J — Technical Manual: Program Manager (Technical), Maven Smart System*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 *Army CIO Memo (April 2024) — Unified Data Reference Architecture v1.1 (February 2025)*
-*UNCLASSIFIED — Distribution: DRAFT — Not yet approved for distribution.*
+*UNCLASSIFIED — Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*

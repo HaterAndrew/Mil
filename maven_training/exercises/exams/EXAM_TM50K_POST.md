@@ -5,7 +5,7 @@
 |---|---|
 | **Course** | TM-50K: Advanced Knowledge Manager |
 | **Form** | Post-Test |
-| **Level** | TM-50K (Advanced Knowledge Management) |
+| **Level** | TM-50K (Advanced Specialist) |
 | **Audience** | Corps/Theater-level KMOs, enterprise KM architects; prerequisite: TM-40K + enterprise KM experience |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (42/60) |

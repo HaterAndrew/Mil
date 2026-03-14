@@ -1,20 +1,20 @@
-# POST-TEST — TM-40J: PROGRAM MANAGER
+# POST-TEST — TM-40J: PROGRAM MANAGER (TECHNICAL)
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40J: Program Manager |
+| **Course** | TM-40J: Program Manager (Technical) |
 | **Form** | Post-Test |
 | **Level** | TM-40J (Specialist) |
-| **Audience** | Program managers / G8-S8 / resource managers; prerequisite: TM-10 + TM-20 |
+| **Audience** | Technical PMs, product owners, team leads; prerequisite: TM-10 + TM-20 + TM-30 (REQUIRED) |
 | **Time Allowed** | 45 minutes |
-| **Passing Score** | 70% (42/60) |
+| **Passing Score** | 70% (46/66) |
 
 ---
 
 ## INSTRUCTIONS
 
-This assessment evaluates mastery of course learning objectives. A passing score of 70% is required to receive credit. Complete independently without reference to training materials.
+This assessment evaluates mastery of TM-40J course learning objectives. A passing score of 70% is required to receive credit. Complete independently without reference to training materials.
 
 ---
 
@@ -22,110 +22,110 @@ This assessment evaluates mastery of course learning objectives. A passing score
 
 *Circle the letter of the best answer. (2 points each)*
 
-**1. Per TM-40J, a PM dashboard that does NOT display a data-as-of timestamp:**
+**1. Per TM-40J, the Technical PM's primary role is to:**
 
-A. Should be rebuilt with the timestamp added before the next scheduled brief
-B. Automatically fails the PM Dashboard Standards Checklist — this is an automatic disqualifier
-C. Is acceptable if the data is refreshed on a known fixed schedule that users understand
-D. Requires a waiver from the data steward before it can be used for briefings
+A. Write code and build the technical components of MSS capabilities
+B. Manage scope, timeline, risk, and stakeholder communication — ensuring the technical team delivers the right thing to the right standard at the right time
+C. Conduct personnel evaluations and manage workload for all TM-40 specialist tracks
+D. Serve as the technical lead for AI and ML model development on the team
 
-**2. Your IMS spreadsheet has a `planned_completion_date` column with values stored as text (e.g., "14 FEB 2025"). To compute milestone variance in Pipeline Builder, the FIRST step is:**
+**2. Per TM-40J, a user story that is ready to be assigned to a developer must meet which standard?**
 
-A. Create a calculated column that parses the text string manually
-B. Apply a CAST step to convert the text column to a Date data type before performing the DATEDIFF calculation
-C. Export the IMS to Excel, convert the dates, and re-import
-D. Use the DATEDIFF function directly — Pipeline Builder automatically handles text-to-date conversion
+A. It has been approved by the G6 data steward and added to the Ontology backlog
+B. It is written in the standard "As a [role], I want [capability] so that [benefit]" format with acceptance criteria a developer can confirm complete without follow-up questions
+C. It has been sized in story points and assigned to a sprint before the product owner reviews it
+D. It has been reviewed by the relevant WFF-track analyst to confirm operational need
 
-**3. Your GFEBS obligation pipeline is designed to build a historical obligation tracking dataset. The correct write mode is:**
+**3. The six phases of the TM-40J ML/AI project lifecycle, in correct order, are:**
 
-A. Overwrite — replace the dataset on each run with the most current snapshot
-B. Append — add each new snapshot to the existing dataset to preserve history
-C. Merge — combine the new snapshot with the existing data based on a matching key
-D. Branch — write to a separate branch and merge quarterly
+A. Requirements → Design → Build → Test → Deploy → Monitor
+B. Problem Definition → Data Audit → Prototype → Evaluation → Production → Sustainment
+C. Discovery → Scoping → Prototyping → Validation → Staging → Release
+D. Concept → Architecture → Development → Integration → Acceptance → Operations
 
-**4. After two GFEBS Append pipeline runs, you verify the dataset has only ONE snapshot record instead of TWO. The most likely cause is:**
+**4. Per TM-40J, the gate between the Prototype phase and the Evaluation phase requires:**
 
-A. The Append mode is not supported for GFEBS data sources
-B. The pipeline is configured in Overwrite mode, not Append — each run replaces the previous record
-C. The pipeline failed on the second run and the second snapshot was not written
-D. GFEBS data exports are deduplicated automatically on ingest
+A. Commander approval and a signed EXORD authorizing model use in operational reporting
+B. The model has been evaluated against a held-out dataset not used in training, and performance meets the defined threshold
+C. The product owner has demonstrated the prototype to the operational stakeholder
+D. The data steward has certified the training data as authoritative
 
-**5. A PM Dashboard Standards Checklist item requires that the dashboard display a reference line in the Quiver obligation chart showing the quarterly target obligation rate. For Q2 (midpoint of the fiscal year), this reference line should be placed at:**
+**5. In TM-40J's Scrum framework for data projects, "sprint planning" requires the PM to:**
 
-A. 25% — Q1 target
-B. 50% — midpoint target for two completed quarters
-C. 75% — aggressive spend target
-D. 100% — full-year target for comparison
+A. Assign developers to individual tasks based on their TM-40 qualification level
+B. Set the sprint goal, select backlog items the team commits to completing, and confirm dependencies are cleared before the sprint starts
+C. Update the risk register with any new risks identified since the previous sprint
+D. Brief the WFF-track stakeholders on what will be delivered in the upcoming sprint
 
-**6. In a Contour portfolio health matrix showing 12 programs, the matrix should be sorted by `overall_status` in which order to surface the highest-priority programs first?**
+**6. Per TM-40J Chapter 4, the "translation problem" in requirements management refers to:**
 
-A. Descending — GREEN programs listed first
-B. Ascending — RED programs listed first (RED sorts lower alphabetically than GREEN)
-C. By program name alphabetically — commanders know the programs by name
-D. By milestone variance in descending order
+A. The challenge of converting operational data from legacy formats into MSS-compatible schemas
+B. The gap between what a commander or staff officer asks for and what they actually need — the PM must elicit the real requirement, not just record the stated one
+C. The difficulty of explaining technical constraints to non-technical stakeholders
+D. The challenge of aligning USAREUR-AF MSS with coalition partner data standards
 
-**7. You are building a Pipeline Builder pipeline that ingests an IMS spreadsheet and computes RAG status for each milestone. A milestone is RED if it is more than 14 days late, AMBER if 1–14 days late, and GREEN if on time or early. The correct Pipeline Builder step to implement this logic is:**
+**7. A PM builds a Sprint Board on MSS Workshop with the following Object Types: Project, Sprint, and Story. The Sprint Board correctly surfaces all stories assigned to the current sprint. Which TM-40J Chapter covers the build procedure for this tracking system?**
 
-A. Filter rows step with three separate pipelines, one for each status
-B. A calculated column step using a conditional expression (CASE/IF-THEN-ELSE) on the variance field
-C. A join step that maps the variance range to a status lookup table
-D. A Group By step that aggregates milestones by their variance buckets
+A. Chapter 2 — Agile Project Management
+B. Chapter 4 — Stakeholder Management and Requirements Translation
+C. Chapter 5 — Building Project Tracking Systems on MSS
+D. Chapter 7 — Delivery Planning and Production Readiness
 
-**8. The scheduled pipeline refresh for a PM dashboard is configured to run daily at 0500. The email alert recipient should be:**
+**8. Per TM-40J, "protecting the team from scope sprawl" means:**
 
-A. The data steward, who will notify the PM if there is a failure
-B. The PM or a designated data point of contact who can investigate and resolve failures before the daily battle rhythm
-C. All dashboard viewers, so they know when data is current
-D. The MSS program office, who manages all scheduled pipeline failures
+A. Encrypting project data so that unauthorized stakeholders cannot access sprint plans
+B. Managing the backlog so that new requirements from stakeholders are properly evaluated, sized, and triaged before they are added to an active sprint
+C. Conducting a security review before any new data source is connected to the project pipeline
+D. Ensuring that TM-40 developer qualifications are current before assigning complex build tasks
 
-**9. Per the PM Dashboard Standards Checklist, which of the following is required to appear on the IPR product exported from MSS?**
+**9. The TM-40J risk register entry for a data availability risk MUST include:**
 
-A. A digital signature from the PM and data steward
-B. The data-as-of timestamp, program name, classification marking, and all required status indicators (schedule, cost, performance)
-C. A comparison chart showing current status vs. prior quarter
-D. A footnote listing all data sources feeding the dashboard
+A. The name of the system owner who last certified the data source
+B. Risk description, likelihood (H/M/L), impact (H/M/L), mitigation action, owner, and due date
+C. The sprint number in which the risk was first identified and a link to the relevant story
+D. A reference to the ADP or FM that governs the affected data domain
 
-**10. Your portfolio health matrix in Contour shows a program with GREEN schedule status but RED cost status. The `overall_status` computed column should reflect:**
+**10. Per TM-40J, the Definition of Done for a data product requires which of the following before production release?**
 
-A. GREEN — schedule is the primary indicator for IPR purposes
-B. An average of the two scores
-C. RED — the worst individual indicator determines the composite health
-D. AMBER — mixed status defaults to the middle value
+A. All story points in the sprint are marked complete, the pipeline has run at least once, and the product owner has signed off
+B. Quality checks pass, documentation is complete, governance requirements are met, the operational user has accepted the product, and the production readiness review is complete against Appendix B criteria
+C. The WFF-track stakeholder has verified that the product matches their original requirement statement
+D. The Commander has reviewed the product in a formal IPR and authorized production deployment
 
-**11. A resource manager asks why two consecutive GFEBS obligation snapshots show identical obligation totals, even though obligations were made in the intervening period. The FIRST check is:**
+**11. A TM-40J PM is managing a team that includes a TM-40H (AI Engineer) and a TM-40L (Software Engineer). The AI Engineer's work depends on an API integration the Software Engineer is building. The CORRECT action for the PM at sprint planning is:**
 
-A. Whether the GFEBS export file contains the new obligations
-B. Whether the pipeline is running in Append mode or Overwrite mode
-C. Whether the obligation pipeline has a filter excluding recently created obligations
-D. Whether the GFEBS system had a data entry delay for the new obligations
+A. Assign both stories to the same sprint and accept the dependency as a known risk
+B. Move the AI Engineer's story to the following sprint until the API integration story is confirmed done
+C. Document the dependency in the risk register with the SWE story as a gate; assign the AI Engineer story with a clear blocker tag referencing the SWE story; flag for daily standup monitoring
+D. Escalate the dependency to the G6 data steward for resolution before sprint planning proceeds
 
-**12. The `data_as_of` field in a PM dashboard dataset should be populated with:**
+**12. Per TM-40J Chapter 8, the MOST common reason operational users resist a new MSS capability is:**
 
-A. The current date when the user opens the dashboard
-B. The timestamp of the pipeline run that produced the data — not the current date
-C. The date the original source data was exported from GFEBS
-D. The date the data steward last approved the dataset for use
+A. Technical defects in the data product that surfaced during the rollout
+B. Senior leadership did not formally direct adoption through an EXORD or policy letter
+C. Lack of trust, unfamiliarity with the new tool, or concern that the product will create accountability they didn't have before
+D. The product was not demonstrated during a formal IPR before deployment
 
-**13. A Quiver visualization for budget execution should display obligation amounts by quarter with a reference line showing the expected quarterly obligation rate. This reference line is best described as:**
+**13. A commander-facing Project Status Dashboard on MSS Workshop, per TM-40J Chapter 5, must display:**
 
-A. A filter control that allows the user to select different target rates
-B. A static reference annotation showing the expected obligation rate at each quarter, enabling visual comparison to actual
-C. A calculated column in the underlying dataset
-D. A Workshop variable passed to the Quiver configuration
+A. The complete sprint backlog, velocity trend chart, and developer utilization by TM-40 track
+B. Overall project health, current sprint status, top blocking risks, milestone timeline, and a data-as-of timestamp
+C. The full risk register, all closed stories, and the project charter with acceptance criteria
+D. A comparison of planned vs. actual story points for all sprints completed to date
 
-**14. Per TM-40J, which of the following is NOT a required element of the program data architecture you design in Foundry?**
+**14. Per TM-40J, automated status alerts on the MSS Sprint Board should be configured to fire when:**
 
-A. Program Object Type
-B. Milestone Object Type
-C. Resource/Obligation Object Type
-D. Personnel Assignment Object Type
+A. Any team member updates a story's status to "In Progress"
+B. A story has been in "In Progress" status for more than one sprint cycle, or a sprint-level milestone is overdue
+C. A new requirement is added to the project backlog by a stakeholder
+D. The pipeline powering the Commander Dashboard has run successfully
 
-**15. A PM presents a commander's brief based on a dashboard. After the brief, the commander's aide notes that the dashboard data was last refreshed 11 days ago. Per TM-40J PM Dashboard Standards, what should the PM have done?**
+**15. Per TM-40J, a Technical PM should pursue TM-50J (Advanced Program Manager) if they meet which criteria?**
 
-A. Refreshed the pipeline manually immediately before the brief
-B. Prominently displayed the data-as-of timestamp during the brief and explicitly stated the data currency to the commander before presenting status conclusions
-C. Cancelled the brief and rescheduled it when current data was available
-D. Added a verbal disclaimer at the end of the brief noting potential data staleness
+A. They have completed TM-40J and passed the post-test with a score of 85% or higher
+B. They have a TM-40J Go evaluation on file and 18+ months leading technical data, AI, or software delivery programs
+C. They have been assigned to a TM-50 development program by their unit G6 or data office
+D. They have completed at least one full ML project lifecycle from Problem Definition through Sustainment
 
 ---
 
@@ -133,7 +133,7 @@ D. Added a verbal disclaimer at the end of the brief noting potential data stale
 
 *Answer in 2–5 sentences. (6 points each)*
 
-**SA-1. Describe the complete Pipeline Builder pipeline you would build to ingest a weekly IMS spreadsheet and compute RAG milestone status. List the specific pipeline steps in order, including the CAST step for date fields, the DATEDIFF calculation, and the conditional RAG column logic.**
+**SA-1. Per TM-40J Chapter 2, describe three specific differences between how Scrum and Kanban are used on an MSS technical team. For which type of work is each framework best suited?**
 
 &nbsp;
 
@@ -143,7 +143,7 @@ D. Added a verbal disclaimer at the end of the brief noting potential data stale
 
 &nbsp;
 
-**SA-2. Your GFEBS obligation pipeline has been running in Append mode for six months. The data steward asks how you would verify that the historical tracking is working correctly. Describe your verification steps.**
+**SA-2. Per TM-40J Chapter 3, describe the gate criteria between the Data Audit phase and the Prototype phase. What must be true before the PM authorizes the team to begin prototyping?**
 
 &nbsp;
 
@@ -153,7 +153,7 @@ D. Added a verbal disclaimer at the end of the brief noting potential data stale
 
 &nbsp;
 
-**SA-3. Design the Workshop PM dashboard for an IPR brief. List the required widgets (table, metrics, charts, timestamp) and describe what data each displays. Explain how conditional formatting is applied to the milestone status table.**
+**SA-3. Per TM-40J Chapter 4, describe the structured requirements elicitation process. A G2 says "I want AI to help with targeting." Walk through the steps to produce a structured requirements document from that statement.**
 
 &nbsp;
 
@@ -163,7 +163,7 @@ D. Added a verbal disclaimer at the end of the brief noting potential data stale
 
 &nbsp;
 
-**SA-4. The G8 resource manager asks you to build a portfolio health matrix in Contour showing all 14 active programs sorted to surface the highest-priority programs first. Describe the data structure required, the `overall_status` computation logic, and the Contour sort configuration.**
+**SA-4. Per TM-40J Chapter 5, describe the three MSS Workshop products a PM builds for project tracking. For each, list what it displays and who it is primarily for.**
 
 &nbsp;
 
@@ -173,7 +173,17 @@ D. Added a verbal disclaimer at the end of the brief noting potential data stale
 
 &nbsp;
 
-**SA-5. You are presenting an IPR product exported from MSS to a GO. Walk through the PM Dashboard Standards Checklist: list at least six items that must be verified before the product is presented, and identify which single item is an automatic failure if absent.**
+**SA-5. Per TM-40J Chapter 6, describe the PM's process for managing a dependency that could delay delivery. Use a concrete example involving two TM-40 specialist tracks.**
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+**SA-6. Per TM-40J Chapter 8, describe the key elements of a change management plan for deploying a new MSS capability to a WFF-track user community. Identify the two highest-risk failure points in a rollout and how the PM mitigates them.**
 
 &nbsp;
 
@@ -190,10 +200,10 @@ D. Added a verbal disclaimer at the end of the brief noting potential data stale
 | Section | Questions | Points Each | Total Points |
 |---|---|---|---|
 | Multiple Choice | 15 | 2 | 30 |
-| Short Answer | 5 | 6 | 30 |
-| **Total** | — | — | **60** |
+| Short Answer | 6 | 6 | 36 |
+| **Total** | — | — | **66** |
 
-Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
+Passing: 46/66 (70%) — Post-test only. Pre-test is diagnostic.
 
 ---
 
@@ -202,35 +212,37 @@ Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — Missing data-as-of timestamp = automatic checklist failure per TM-40J standards.
-2. B — CAST step to Date type is required before DATEDIFF calculation.
-3. B — GFEBS historical tracking requires Append mode, not Overwrite.
-4. B — Overwrite mode on a pipeline that should be Append is the most common cause of single-snapshot datasets.
-5. B — Q2 reference line = 50% (midpoint of fiscal year, two quarters complete).
-6. B — Ascending sort surfaces RED programs first (RED < AMBER < GREEN alphabetically).
-7. B — Calculated column with CASE/IF-THEN-ELSE conditional expression on the variance field.
-8. B — PM or designated data POC receives the failure alert for timely resolution.
-9. B — Data-as-of timestamp, program name, classification marking, and required status indicators.
-10. C — Worst individual indicator (RED cost) determines composite health = RED.
-11. A — First check: does the GFEBS export file contain the new obligations (source before pipeline).
-12. B — Data-as-of = pipeline run timestamp, not current date or steward approval date.
-13. B — Reference line = static annotation for visual comparison to actual obligation amounts.
-14. D — Personnel Assignment Object Type is not a required element of the TM-40J PM data architecture.
-15. B — PM must display data-as-of timestamp and explicitly state data currency before presenting conclusions.
+1. B — PM manages scope, timeline, risk, and stakeholder communication; does not write code.
+2. B — Ready story has user-perspective format with acceptance criteria testable without follow-up.
+3. B — Problem Definition → Data Audit → Prototype → Evaluation → Production → Sustainment.
+4. B — Gate requires evaluation against held-out dataset and performance meeting defined threshold.
+5. B — Sprint planning: set goal, select committed items, confirm dependencies are cleared.
+6. B — Translation problem: gap between what stakeholders ask for and what they actually need.
+7. C — Sprint Board build procedure is Chapter 5 (Building Project Tracking Systems on MSS).
+8. B — Scope protection = evaluating new requirements before they enter an active sprint.
+9. B — Risk register entry requires description, likelihood, impact, mitigation, owner, and due date.
+10. B — DoD requires quality, documentation, governance, user acceptance, and production readiness review.
+11. C — Document dependency, block the downstream story, flag for standup monitoring.
+12. C — Resistance most often stems from distrust, unfamiliarity, or accountability concerns.
+13. B — Commander Dashboard: overall health, sprint status, blocking risks, milestone timeline, data-as-of.
+14. B — Alerts fire when a story exceeds one sprint in progress, or a sprint milestone is overdue.
+15. B — TM-50J requires TM-40J Go evaluation + 18+ months leading technical data/AI/software programs.
 
 **Short Answer Guidance:**
 
-SA-1. Full credit: (1) Ingest IMS CSV; (2) rename columns for C2DAO compliance; (3) CAST `planned_date` and `actual_date` from text to Date type; (4) calculated column: `variance_days = DATEDIFF(actual_date, planned_date)` (or forecast date if actual is null); (5) calculated column: `rag_status = CASE WHEN variance_days > 14 THEN 'RED' WHEN variance_days >= 1 THEN 'AMBER' ELSE 'GREEN' END`; (6) filter step to remove header rows or invalid records; (7) Ontology write step. Must include CAST step and conditional CASE logic for full credit.
+SA-1. Full credit: Scrum uses fixed-length sprints (time-boxed), a sprint backlog, sprint ceremonies (planning, review, retro), and velocity tracking; best for development work with discrete deliverables and a defined product owner. Kanban uses continuous flow, a visual board with work-in-progress limits, no fixed sprint boundaries, and cycle time as the primary metric; best for ongoing operational support work where tasks arrive continuously and cannot be batched into sprints. Three distinctions required for full credit: sprint vs. continuous flow; velocity vs. cycle time; ceremony structure vs. none. Partial credit (3 pts) for two correct distinctions.
 
-SA-2. Full credit: query the output dataset and count distinct snapshot_date values — should equal number of pipeline runs; verify earliest snapshot date matches first pipeline run date; verify latest snapshot reflects most recent GFEBS export; sum obligations by snapshot_date and confirm each period shows incremental growth consistent with known obligation activity; if only one snapshot exists, check pipeline write mode — likely configured as Overwrite.
+SA-2. Full credit: Data Audit gate criteria (must all be true before Prototype): (1) the data needed for the model has been identified and its location confirmed; (2) access to the data has been provisioned to the team; (3) a data quality assessment has been completed — data is sufficiently complete, consistent, and timely for model training; (4) data volume is sufficient for the proposed modeling approach; (5) any data governance or classification issues have been resolved with the data steward. PM must verify all five before authorizing Prototype. Partial credit (3 pts) for three correct gate criteria.
 
-SA-3. Full credit: required widgets — (1) data-as-of timestamp widget (displayed prominently, not in footer); (2) milestone status table with planned_date, actual_date, variance_days, rag_status columns; (3) obligation rate metric widget (% of budget obligated); (4) bar chart of milestones by status (RED/AMBER/GREEN count); (5) Quiver or line chart of obligation trend over time; conditional formatting: rag_status = RED → row background red, AMBER → amber/yellow, GREEN → green. All five widgets plus conditional formatting required for full credit.
+SA-3. Full credit: PM does not accept "I want AI to help with targeting" as a requirement. Steps: (1) interview the G2 — what specific decision does the AI need to support, at what echelon, in what time window, with what data sources; (2) identify the success criteria — what does a correct AI output look like and how will the G2 know if it is wrong; (3) identify constraints — classification level, latency, data access, approval authority for AI outputs in targeting process; (4) document a structured requirements statement: problem, success criteria, constraints, data sources, stakeholders, DoD criteria; (5) have the G2 sign off before the team touches a keyboard. Partial credit (3 pts) for the interview/clarification steps without the formal documentation and sign-off.
 
-SA-4. Full credit: data structure — programs table with columns for schedule_status, cost_status, performance_status, and overall_status; computed column: `overall_status = CASE WHEN MIN(schedule_status, cost_status, performance_status) = 'RED' THEN 'RED' WHEN MIN(...) = 'AMBER' THEN 'AMBER' ELSE 'GREEN' END` (or equivalent worst-of logic); Contour sort: configure the matrix to sort by `overall_status` ascending — this places RED programs first; secondary sort by cost_status or variance_days to rank within each status tier.
+SA-4. Full credit: (1) Sprint Board — displays all stories for the current sprint organized by status lane (To Do, In Progress, Blocked, Done); for developers and PM to manage daily work; (2) Commander-Facing Project Status Dashboard — displays overall project health (RAG), current sprint completion, top blocking risks, milestone timeline with planned/actual dates; for product owner, stakeholders, and leadership visibility; (3) Automated Status Alerts — fires when stories are overdue or sprint milestones are missed; for PM to receive timely notification without manual monitoring. All three products with correct audience and content for full credit.
 
-SA-5. Full credit: six required checklist items — (1) data-as-of timestamp visible on product [AUTOMATIC FAILURE if absent]; (2) program name and classification marking present; (3) all required status indicators present (schedule, cost, performance RAG); (4) milestone table shows planned date, actual/forecast date, and variance in days; (5) obligation chart includes Q2 reference line at 50%; (6) portfolio sort surfaces RED programs first; (7) pipeline last-run confirmed within acceptable currency window; (8) all data sources feeding the dashboard refreshed. Automatic failure item: data-as-of timestamp absent. Partial credit (3 pts) for five or more items without identifying the automatic failure.
+SA-5. Full credit: Process — (1) identify the dependency at sprint planning: story B cannot start until story A is done; (2) add story A as a blocking condition on story B in the Sprint Board; (3) assign an owner and due date to story A; (4) add the dependency to the risk register if story A is at risk of slipping; (5) monitor at daily standup — if story A slips, PM decides: hold story B or descope to remove the dependency. Concrete example: TM-40K (KM) must finalize the Ontology Object Type before TM-40H (AI Engineer) can wire the AI agent to the correct object properties. If TM-40K is blocked waiting for data steward approval, PM escalates to the data steward and flags the downstream AI story as at risk. Partial credit (3 pts) for the process without a concrete cross-track example.
+
+SA-6. Full credit: change management plan elements — (1) stakeholder map: identify all user groups receiving the capability, their current workflow, and their likely concerns; (2) user guide production: written guide aligned to the user's workflow (not a technical manual); (3) rollout sequence: pilot with an early adopter before full rollout; use the pilot's feedback to fix gaps before broader release; (4) training event: schedule a 30-min walkthrough with each user group before go-live; (5) feedback loop: designate a POC for user issues post-launch; respond to issues within 48 hours in the first two weeks. Two highest-risk failure points: (A) deploying without involving the user in requirements — mitigate by requiring at least one user interview during requirements elicitation; (B) deploying without a user guide — mitigate by making user guide production a Definition of Done checklist item. Partial credit (3 pts) for plan elements without the two risk mitigation answers.
 
 ---
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*TM-40J Post-Test | Version 1.0 | March 2026*
+*TM-40J Post-Test | Version 2.0 | March 2026*

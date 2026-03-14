@@ -8,7 +8,7 @@ Wiesbaden, Germany
 
 2026
 
-DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.
+DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
 
 PROPONENT: Headquarters, United States Army Europe and Africa (USAREUR-AF), G6/Data
 
@@ -22,7 +22,7 @@ NOTE: This publication is the senior leader companion to Data Literacy Technical
 
 ## COMMANDING GENERAL'S NOTE
 
-*[INSERT: General Donahue's signed data guidance — to be provided by G6/Data prior to publication.]*
+*[To be inserted upon receipt of signed CG guidance — to be provided by G6/Data prior to publication.]*
 
 ---
 
@@ -48,7 +48,7 @@ Data literacy for senior leaders is a combat multiplier.
 
 ### 1-2. The Operational Reality
 
-The CG USAREUR-AF has stated directly: **"The race to harness live data will determine who wins the next war."** This is not a warning about future conflict — it is a description of the competition underway now. USAREUR-AF and NATO ground forces are already integrating allied sensors, data, and AI-powered analytical tools into real-time decision-making. As the CG has noted: **"This is not a projected capability or an operational needs statement to inform future investment. This is what we are doing today."** Formations whose leaders cannot direct, evaluate, and integrate data products are already behind.
+The race to harness live data will determine who wins the next war — a conclusion drawn directly from USAREUR-AF's operational experience in the theater. This is not a warning about future conflict — it is a description of the competition underway now. USAREUR-AF and NATO ground forces are already integrating allied sensors, data, and AI-powered analytical tools into real-time decision-making. This is not a projected capability — it is operational today. Formations whose leaders cannot direct, evaluate, and integrate data products are already behind.
 
 Commanders already depend on data whether they recognize it or not. Every COP update, readiness report, and intelligence summary is a data product. The question is not whether commanders use data — they do. The question is whether they use it deliberately, critically, and effectively.
 
@@ -83,7 +83,7 @@ Before acting on a data product, commanders must assess it against five criteria
 
 A data product that fails any VAUTI criterion introduces risk into the decision it supports. Commanders must require explicit VAUTI evaluation for significant decisions.
 
-In the USEUCOM AOR, interoperability carries additional weight. Data products shared with NATO Allies must meet both U.S. standards and applicable NATO data exchange standards. The CG USAREUR-AF has identified interoperability as Allied nations' **"number one concern"** and is direct about the root cause: **"It's trust. That's all that is. We can solve it."** Data standards, disciplined handling, and rigorous security protocols build that trust at the working level.
+In the USEUCOM AOR, interoperability carries additional weight. Data products shared with NATO Allies must meet both U.S. standards and applicable NATO data exchange standards. Interoperability is Allied nations' foremost concern, and the root cause is trust — trust that is solvable through disciplined data standards and rigorous security protocols. Data standards, disciplined handling, and rigorous security protocols build that trust at the working level.
 
 ### 1-5. Decision Dominance
 
@@ -127,7 +127,7 @@ This publication implements ADP 3-13 by establishing the data literacy foundatio
 
 USAREUR-AF data operations must comply with NATO Architecture Framework version 4 (NAFv4) and support interoperability with Allied Joint Publications (AJP-01, AJP-3, AJP-5). Data systems, data products, and sharing practices must be designed for coalition use. Commanders must ensure data products shared with Allied or partner nation forces are marked under both U.S. and NATO classification standards and that systems can exchange information with Allied equivalents.
 
-The CG USAREUR-AF has described Europe as the **"premier battle laboratory"** for building the lethal, data-driven force required to meet any adversary. The real-time C2 system established in USAREUR-AF must now be scaled globally. Commanders and formations that master data-driven operations here are building the template the Army will export worldwide.
+Europe serves as the premier battle laboratory for building the lethal, data-driven force required to meet any adversary. The real-time C2 system established in USAREUR-AF must now be scaled globally. Commanders and formations that master data-driven operations here are building the template the Army will export worldwide.
 
 ---
 
@@ -482,4 +482,4 @@ Senior NCO leadership is critical. CSMs and SGMs who enforce data discipline in 
 
 ---
 
-DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.
+DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.

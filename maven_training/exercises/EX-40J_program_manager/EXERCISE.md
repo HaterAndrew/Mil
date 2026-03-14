@@ -4,15 +4,33 @@
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40J, Program Manager (Technical) Technical Manual (and TM-10 through TM-30) |
+| **Prerequisite** | TM-30 REQUIRED; TM-40J — Program Manager (Technical) Technical Manual (and TM-10 through TM-20) |
 | **Duration** | 2–3 hours |
 | **Environment** | MSS with project tracking access; access to a sample project record — see ENVIRONMENT_SETUP.md |
+
+## COMPANION RESOURCES
+
+| Resource | Reference |
+|----------|-----------|
+| Technical Manual | TM-40J — Program Manager (Technical) |
+| Syllabus | SYLLABUS_TM40J |
+| Pre-Exercise Exam | EXAM_TM40J_PRE |
+| Post-Exercise Exam | EXAM_TM40J_POST |
+| Continuation Track | TM-50J — Advanced Program Manager |
+
+## WFF AWARENESS
+
+The PM exercise centers on a data pipeline that directly serves WFF track personnel (TM-40A–F) as end-users — the LOGSTAT aggregation feed described in the scenario is a sustainment and maneuver reporting tool. Participants should recognize that delivery failures have operational impact across multiple WFF tracks, not just within the data team.
 
 ## SCENARIO
 
 You are the technical PM for a data pipeline project: an automated LOGSTAT aggregation feed currently 6 weeks into development. The pipeline engineer has hit a blocker — a source system API is rate-limited and the pipeline is missing its delivery milestone. Assess the project status, update the plan, communicate the risk, and run a sprint retrospective.
 
-**Training materials:** Pre-loaded sample project record in MSS (pipeline definition, milestone tracker, sample tickets).
+**Training materials:** Pre-loaded synthetic project record (located in `training_data/EX-40J_Project_Record_Package/`):
+- `pipeline_definition.md` — pipeline architecture, tech stack, source systems
+- `milestone_tracker.md` — 8-week project plan; week 4 milestone marked missed
+- `open_tickets.md` — 4 open tickets including the rate-limit blocker (Ticket #EX40J-007)
+- `project_charter.md` — original scope, stakeholders, success criteria
 
 ## TASK LIST
 
@@ -109,6 +127,10 @@ Draft a 5-sentence stakeholder update email. Required elements:
 - Task 4 (retro facilitation) varies widely by background — 15 min for experienced facilitators, 40+ min for first-timers
 - Task 3 (revised milestone plan) is often underestimated; budget 40 min
 - Consider asking participant to narrate their SITREP before reviewing the written version (Task 1)
+
+## NEXT STEPS
+
+Participants who receive an overall Go on EX-40J are eligible to enroll in **TM-50J — Advanced Program Manager**. TM-50J extends into portfolio-level program management, enterprise governance, and cross-functional delivery at scale. No TM-50A–F tracks exist.
 
 ### Evaluator Role-Play Card (Task 4)
 

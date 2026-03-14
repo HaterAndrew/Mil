@@ -183,6 +183,16 @@ D. Verify the unit designation exists in the Ontology before accepting the input
 
 &nbsp;
 
+**SA-6. Describe how software engineering capability supports two WFF functions. For each, identify the WFF track (TM-40A through TM-40F) and give a concrete example of a custom TypeScript OSDK application or integration that supports decision-making in that function.**
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
 ---
 
 ## SCORING SUMMARY
@@ -190,10 +200,10 @@ D. Verify the unit designation exists in the Ontology before accepting the input
 | Section | Questions | Points Each | Total Points |
 |---|---|---|---|
 | Multiple Choice | 15 | 2 | 30 |
-| Short Answer | 5 | 6 | 30 |
-| **Total** | — | — | **60** |
+| Short Answer | 6 | 6 | 36 |
+| **Total** | — | — | **66** |
 
-Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
+Passing: 46/66 (70%) — Post-test only. Pre-test is diagnostic.
 
 ---
 
@@ -229,6 +239,8 @@ SA-3. Full credit: anti-pattern — for each Vehicle in the list (N vehicles), m
 SA-4. Full credit: fix — when the "Close Work Order" Action completes, set a state variable (e.g., `lastClosedWorkOrderId` or `refreshTrigger`) to the result of the Action; the work order list component is bound to this state variable — when it changes, the component re-fetches the open work orders list; the list reactively updates without a timer; why timer is wrong — race condition: if the Action takes longer than the timer delay, the data refresh occurs before the Action is committed and the list will not show the change; also timers are arbitrary and brittle. Must include state variable update pattern AND explanation of why timer is incorrect.
 
 SA-5. Full credit: any six from — (1) no hardcoded credentials in source code; (2) all credentials injected via environment variables; (3) input sanitization applied to all user-supplied values; (4) no sensitive data logged to console or monitoring systems; (5) all OSDK queries use correct pagination (ResourceIterator fully consumed); (6) Action validators have minimum 8 test cases; (7) TypeScript strict mode enabled; (8) all async calls have error handling; (9) no N+1 query patterns; (10) C2DAO branch description written and submitted for data steward review. Two most common credential failures: (1) credentials hardcoded in source files; (2) credentials present in `.env` files committed to the repository.
+
+SA-6. Full credit: any two WFF tracks correctly identified with a SWE example — TM-40A (Intelligence): TypeScript Slate application built to display incoming OSINT entity extractions from the Intelligence Object Type; TM-40B (Fires): OSDK integration that queries Fires Object Types and pushes targeting data to a fires coordination Workshop application; TM-40C (Movement & Maneuver): custom TypeScript integration that reads vehicle position Object Types and renders a real-time maneuver tracking view; TM-40D (Sustainment): OSDK-based pipeline that ingests GCSS-Army supply data and writes to Sustainment Object Types for G4 Workshop dashboards; TM-40E (Protection): custom webhook integration that receives force protection sensor events and writes alerts to the Protection Ontology for analyst review; TM-40F (Mission Command): TypeScript Workshop widget that aggregates cross-WFF status indicators into a commander's common operating picture. Each response must identify the correct TM-40 letter (A–F) and provide a concrete software engineering deliverable for full credit.
 
 ---
 

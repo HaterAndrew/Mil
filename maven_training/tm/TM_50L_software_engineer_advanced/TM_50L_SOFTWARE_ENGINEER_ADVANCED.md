@@ -1,54 +1,12 @@
 # TM-50L — ADVANCED SOFTWARE ENGINEERING
-## MAVEN SMART SYSTEM (MSS) | USAREUR-AF OPERATIONAL DATA TEAM
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA** | Wiesbaden, Germany | 2026 | Version 1.0
-
-**UNCLASSIFIED** | Distribution: DRAFT — Not yet approved for distribution.
-
-**PREREQUISITE PUBLICATIONS:** TM-40L (Software Engineer) — required. TM-40H (AI Engineer) and TM-40I (ML Engineer) — recommended for integration track engineers. Senior-level Python and TypeScript proficiency required.
-
-**DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Reason: operational systems documentation. Other requests must be referred to USAREUR-AF G6.
-
----
-
-> **PREREQUISITE WARNING:** TM-50L is **not required** for the majority of software engineer billets. It is intended for personnel with demonstrated proficiency at TM-40L level who are actively building production infrastructure, CBAC frameworks, or external application integrations on MSS. If you are uncertain whether TM-50L applies to your billet, consult your supervisor or the unit data steward before proceeding.
-
----
-
-## SAFETY SUMMARY
-
-TM-50L engineers operate at the infrastructure layer of MSS. Code, configurations, and architectural decisions made at this level have theater-wide impact. A misrouted dataset write, a broken CBAC rule, or a leaked credential is not a developer error — it is an operational security incident.
-
-Before performing any task at TM-50L level:
-
-- All production changes require C2DAO coordination and documented approval. No exceptions.
-- Never bypass CBAC or marking enforcement — not for testing, not for convenience, not under operational pressure.
-- Multi-tenant isolation is non-negotiable. A configuration that allows cross-tenant data bleed violates AR 25-2 and operational security requirements.
-- Event streaming integrations that ingest external data into MSS must pass security review before activation. Unvalidated external data in the Ontology is a data integrity and potentially a security risk.
-- Performance profiling against production Ontology must be coordinated — poorly structured queries at scale degrade the platform for all USAREUR-AF users.
-- All TM-50L-level work is subject to peer review by a second TM-50L-qualified engineer before deployment.
+> **BLUF:** TM-50L qualifies senior software engineers to lead MSS application development capability — designing platform architecture, enforcing security at scale, optimizing performance, and governing the technical practices of the USAREUR-AF SWE community.
+> **Prereqs:** TM-40L (Software Engineer) — required. TM-40H (AI Engineer) and TM-40I (ML Engineer) — recommended for integration track engineers. Senior-level Python and TypeScript proficiency required; CONCEPTS_GUIDE_TM50L_SOFTWARE_ENGINEER_ADVANCED (read before this manual).
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING:** Infrastructure-level errors at TM-50L can corrupt shared platform state, disable access controls for multiple units, and produce data integrity failures that cascade through the entire USAREUR-AF data ecosystem. Engineering discipline at this level is not optional — it is a mission requirement.
-
 > **CAUTION:** Platform SDK credentials with dataset write access are high-privilege operational secrets. Exposure constitutes a security incident. Report immediately to unit S6/G6 and C2DAO. Rotate immediately.
-
 > **NOTE:** TM-50L tasks are not solo work. Always operate with a second qualified engineer as reviewer. For Ontology branch merges and CBAC policy changes, also require C2DAO sign-off.
-
----
-
-## TABLE OF CONTENTS
-
-- Chapter 1 — Introduction and Scope
-- Chapter 2 — Platform SDK: Infrastructure-Level Integration
-- Chapter 3 — High-Performance Foundry Development
-- Chapter 4 — Multi-Tenant Architecture and Data Isolation
-- Chapter 5 — High-Scale External Integration Patterns
-- Chapter 6 — DevSecOps for Foundry Environments
-- Chapter 7 — Security Assessment and Secure Code Review
-- Chapter 8 — Platform Leadership and Engineering Standards
-- Appendix A — Code Review Checklist (USAREUR-AF Standards)
-- Appendix B — ATO Support Documentation Guide
-- Glossary
 
 ---
 
@@ -111,6 +69,19 @@ MISSION REQUIREMENT
 
 TM-50L engineers are force multipliers. One senior engineer enabling ten TM-40L developers to build correctly produces ten times the correct output. One senior engineer who builds solo produces one application. Lead.
 
+### 1-2A. Relationship to Other TM-50 Publications
+
+| Publication | Track | Key Overlap with TM-50L |
+|---|---|---|
+| TM-50G | ORSA Advanced | Platform infrastructure supporting analytical pipelines |
+| TM-50H | AI Engineer Advanced | OSDK integration with AI systems (Chapters 2, 7) |
+| TM-50I | ML Engineer Advanced | ML model-serving integrations; feature pipeline infrastructure |
+| TM-50J | Program Manager Advanced | Platform engineering program coordination; SWE team structure |
+| TM-50K | Knowledge Manager Advanced | Platform SDK patterns for KM system backends |
+| TM-50L | Software Engineer Advanced | THIS DOCUMENT |
+
+**WFF Operational Consumer Note.** The software infrastructure built by TM-50L engineers is the delivery layer for capabilities consumed by all six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). WFF practitioners access MSS data through Workshop applications, OSDK dashboards, and API integrations that TM-50L engineers architect and govern. Platform reliability, security, and performance are not abstract engineering concerns — they directly determine whether WFF staff sections can access the operational picture they need at the moment they need it.
+
 ### 1-3. Prerequisites
 
 | Prerequisite | Verification Method |
@@ -157,6 +128,8 @@ Appendices A and B are operational references used during code review and ATO su
 ### 2-1. Scope of This Chapter
 
 **BLUF:** The Platform SDK at TM-50L level goes beyond dataset read/write. This chapter covers infrastructure-level operations: bulk dataset management at scale, branch automation, transaction patterns for high-throughput ingestion, dataset lineage management, and the operational patterns required to manage a production MSS data environment programmatically.
+
+> **NOTE — Palantir Developers reference:** *Deep Dive: Code-Based AI Development with Ontology* — Covers code-based development patterns that extend traditional OSDK and Platform SDK usage into AI-integrated workflows, relevant to senior SWEs designing infrastructure that supports AI engineer and ML engineer deliverables. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 TM-40L covered Platform SDK fundamentals: authenticating, reading datasets, writing transactions, accessing file resources. This chapter extends to infrastructure-level use cases that arise when managing the platform at scale.
 
@@ -591,6 +564,8 @@ def ingest_file_with_integrity_check(
 
 **BLUF:** Performance is a mission-critical requirement in MSS. Commanders cannot make decisions on stale or slow data. This chapter covers query optimization, caching strategies, indexing patterns, and compute cost management for Foundry applications at scale.
 
+> **NOTE — Palantir Developers reference:** *Deep Dive: Interoperability at Scale with the Multimodal Data Plane | DevCon 5* — Covers cross-platform data interoperability at enterprise scale, including patterns for moving data between heterogeneous systems — directly relevant to senior SWEs architecting multi-system MSS integrations and performance-optimized data flows. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 The USAREUR-AF MSS instance serves hundreds of concurrent users across multiple commands and coalition elements. A poorly optimized query or a memory-inefficient transform does not just slow one user — it degrades the platform for the entire theater.
 
 > **NOTE:** Performance optimization work against production MSS must be coordinated with C2DAO. Profile in development/staging first. Document findings. Propose changes. Do not apply optimization changes directly to production without review.
@@ -974,6 +949,8 @@ def compute_readiness_summary(raw: DataFrame) -> DataFrame:
 
 ### 3-6. Performance Profiling Tools and Procedures
 
+> **NOTE — Palantir Developers reference:** *Code in Production: Gallatin x Observability | DevCon 3* — A production case study on observability and monitoring for Foundry applications, covering how a real engineering team instruments and monitors their Foundry deployment — directly relevant to the profiling and performance incident procedures in this section. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 **CONDITIONS:** A production MSS application is underperforming. You need to systematically diagnose the bottleneck and document findings for C2DAO review.
 
 **STANDARDS:** Profiling is performed in development or staging — never in production without C2DAO authorization. Findings are documented in a performance incident report. Proposed fixes are reviewed by a second TM-50L engineer before production deployment.
@@ -1060,6 +1037,8 @@ C2DAO COORDINATION: [Ticket ID if production change required]
 ### 4-1. Scope of This Chapter
 
 **BLUF:** MSS serves multiple commands, units, and coalition partners across USAREUR-AF and EUCOM. Multi-tenant architecture ensures each tenant sees only the data they are authorized to see. This chapter covers tenant isolation patterns, CBAC at scale, and coalition data sharing.
+
+> **NOTE — Palantir Developers reference:** *Product Launch: Edge Embedded Ontology | DevCon 2* — Covers edge-embedded Ontology as an advanced deployment pattern where Ontology queries run without central infrastructure connectivity — a specialized architecture relevant to disconnected operations and forward-deployed MSS components in the European AOR. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 Multi-tenancy in MSS is not a convenience feature — it is a security and legal requirement. USAREUR-AF data shared with coalition partners is subject to NATO information sharing agreements. Unit operational data is need-to-know. Classification markings are enforced. A data bleed between tenants is a security incident with operational consequences.
 
@@ -1849,6 +1828,8 @@ class FoundryKinesisIngester:
 ### 6-1. Scope of This Chapter
 
 **BLUF:** DevSecOps integrates security into every phase of the software development lifecycle — not as a gate at the end, but as a continuous practice. For MSS, DevSecOps supports ATO maintenance, reduces time-to-detection for security issues, and ensures code quality across the USAREUR-AF SWE community.
+
+> **NOTE — Palantir Developers reference:** *Product Launch: Developer Experience | DevCon 5* — Covers developer experience improvements announced at DevCon 5, including toolchain enhancements relevant to CI/CD pipeline setup and the DevSecOps workflow described in this chapter. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 TM-40L covered CI/CD fundamentals. This chapter covers the full DevSecOps pipeline: security scanning, Ontology CI, automated testing at scale, ATO-supporting artifact generation, and the governance processes that connect technical practices to the RMF/ATO lifecycle.
 
@@ -2941,4 +2922,4 @@ v1.0 - [DATE] - Initial version
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA*
 *Wiesbaden, Germany — 2026*
 *UNCLASSIFIED*
-*Distribution: DRAFT — Not yet approved for distribution.*
+*Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*

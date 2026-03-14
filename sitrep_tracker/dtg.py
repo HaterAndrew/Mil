@@ -19,15 +19,17 @@ def parse_dtg(dtg: str) -> datetime | None:
     """Parse a DTG string back to a datetime (UTC). Returns None on failure."""
     try:
         parts = dtg.strip().split()
-        # parts: ['091435Z', 'MAR', '26']
-        raw = parts[0].rstrip("Z")
+        # parts: ['091435Z', 'MAR', '26'] — Z suffix is required (UTC designator)
+        if len(parts) != 3 or not parts[0].endswith("Z"):
+            return None
+        raw = parts[0][:-1]  # strip trailing Z
         day = int(raw[0:2])
         hour = int(raw[2:4])
         minute = int(raw[4:6])
         month = MONTHS.index(parts[1].upper()) + 1
         year = 2000 + int(parts[2])
         return datetime(year, month, day, hour, minute, tzinfo=timezone.utc)
-    except Exception:
+    except (ValueError, IndexError):
         return None
 
 

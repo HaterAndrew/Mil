@@ -11,7 +11,7 @@ Wiesbaden, Germany
 **APPLIES TO:** All USAREUR-AF military and civilian personnel requiring MSS access.
 **PREREQUISITE PUBLICATIONS:** Data Literacy Technical Reference (recommended prior reading).
 **RELATED MANUALS:** TM-20 (Workshop Builder), TM-30 (Advanced Builder/Developer).
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 ---
 
@@ -1298,5 +1298,5 @@ Policy questions → USAREUR-AF C2DAO (via chain of command)
 *TM-10 — Maven Smart System (MSS) Operator Technical Manual*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA, Wiesbaden, Germany*
 *2026*
-*UNCLASSIFIED — Approved for public release; distribution is unlimited.*
+*UNCLASSIFIED — DRAFT — Not yet approved for distribution.*
 *For corrections or updates, contact the USAREUR-AF Operational Data Team through your unit data steward or the C2DAO office.*

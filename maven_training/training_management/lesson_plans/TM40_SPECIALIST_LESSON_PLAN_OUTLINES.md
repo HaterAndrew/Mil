@@ -1,7 +1,7 @@
 # LESSON PLAN OUTLINES — TM-40 SPECIALIST TRACKS
 ## USAREUR-AF Operational Data Team — C2DAO
 **Covers:** TM-40G (ORSA) | TM-40H (AI Engineer) | TM-40I (MLE) | TM-40J (PM) | TM-40K (KM) | TM-40L (SWE)
-**Version:** 1.1 — March 2026 (updated: specialist tracks renumbered G–L; WFF tracks are TM-40A–F, prereq TM-20)
+**Version:** 1.2 — March 2026 (updated: specialist tracks renumbered G–L; WFF tracks are TM-40A–F, prereq TM-30)
 
 > Abbreviated LP outlines for TM-40 specialist courses.
 > Instructors at TM-40 level must have deep domain SME background — these outlines supplement SME knowledge, not replace it.

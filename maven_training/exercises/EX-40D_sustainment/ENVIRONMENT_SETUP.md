@@ -1,4 +1,6 @@
-# ENVIRONMENT SETUP — EX-40D Sustainment
+# ENVIRONMENT SETUP — EX-40D Sustainment (TM-40D)
+
+**Companion resources:** TM_40D_SUSTAINMENT.md | SYLLABUS_TM40D | EXAM_TM40D_PRE / EXAM_TM40D_POST
 
 ## Environment Type
 

@@ -6,29 +6,10 @@ Wiesbaden, Germany | 2026
 
 **AUTHORITY:** Issued under authority of USAREUR-AF C2DAO; implements USAREUR-AF Command Training Guidance. Provides planning and evaluation guidance for commanders and training managers responsible for MSS training across the formation.
 
-**DISTRIBUTION:** DRAFT — Not yet approved for distribution.
+**DISTRIBUTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
 
 ---
 
-## TABLE OF CONTENTS
-
-1. [Purpose and Scope](#1-purpose-and-scope)
-2. [Training Objectives by Level](#2-training-objectives-by-level)
-3. [Individual Task List](#3-individual-task-list)
-4. [Training Standards and Go/No-Go Criteria](#4-training-standards-and-gono-go-criteria)
-5. [Blocks of Instruction — Time Requirements](#5-blocks-of-instruction--time-requirements)
-6. [Training Schedule Templates](#6-training-schedule-templates)
-7. [Resource Requirements](#7-resource-requirements)
-8. [Instructor Requirements and Certification](#8-instructor-requirements-and-certification)
-9. [Practical Exercise Designs](#9-practical-exercise-designs)
-10. [Training Status Tracking](#10-training-status-tracking)
-11. [Sustainment Training Requirements](#11-sustainment-training-requirements)
-
-- Appendix A — Unit Training Status Matrix (Template)
-- Appendix B — Individual Training Record (Template)
-- Appendix C — Practical Exercise Scenarios by Level
-
----
 
 ## 1. PURPOSE AND SCOPE
 
@@ -54,13 +35,26 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | TM-10 | Maven User | All personnel | 1 | None |
 | TM-20 | Builder | All staff | 5 | TM-10 |
 | TM-30 | Advanced Builder | Data-adjacent specialists | 5 | TM-20 |
-| TM-40A–F | WFF Functional Tracks | INT/FIRES/M2/SUST/PROT/MC staff | 3 each | TM-20 |
-| TM-40G | ORSA | ORSA analysts | 5 | TM-30 + quant background |
-| TM-40H | AI Engineer | AI/ML specialists | 5 | TM-30 + coding background |
-| TM-40I | ML Engineer | MLEs | 5 | TM-30 + coding background |
-| TM-40J | Program Manager | PMs, G8/S8 | 3 | TM-30 |
-| TM-40K | Knowledge Manager | KMOs, 37F | 3 | TM-30 |
-| TM-40L | Software Engineer | SWEs | 5 | TM-30 + coding background |
+| TM-40A | Intelligence WFF | G2/S2 Intel staff | 3 | TM-30 (Required) |
+| TM-40B | Fires WFF | Fires/FSCOORD staff | 3 | TM-30 (Required) |
+| TM-40C | Movement & Maneuver WFF | G3/S3 M2 staff | 3 | TM-30 (Required) |
+| TM-40D | Sustainment WFF | G4/S4 SUST staff | 3 | TM-30 (Required) |
+| TM-40E | Protection WFF | Protection staff | 3 | TM-30 (Required) |
+| TM-40F | Mission Command WFF | MC/G6/S6 staff | 3 | TM-30 (Required) |
+| TM-40G | ORSA | ORSA analysts | 5 | TM-30 (Required) + quant background |
+| TM-40H | AI Engineer | AI/ML specialists | 5 | TM-30 (Required) + coding background |
+| TM-40I | ML Engineer | MLEs | 5 | TM-30 (Required) + coding background |
+| TM-40J | Program Manager | PMs, G8/S8 | 3 | TM-30 (Required) |
+| TM-40K | Knowledge Manager | KMOs, 37F | 3 | TM-30 (Required) |
+| TM-40L | Software Engineer | SWEs | 5 | TM-30 (Required) + coding background |
+| TM-50G | Advanced ORSA | Senior ORSA analysts | 5 | TM-40G (Required) |
+| TM-50H | Advanced AI Engineer | Senior AI engineers | 5 | TM-40H (Required) |
+| TM-50I | Advanced ML Engineer | Senior MLEs | 5 | TM-40I (Required) |
+| TM-50J | Advanced Program Manager | Senior PMs | 3 | TM-40J (Required) |
+| TM-50K | Advanced Knowledge Manager | Senior KMOs | 3 | TM-40K (Required) |
+| TM-50L | Advanced Software Engineer | Senior SWEs | 5 | TM-40L (Required) |
+
+> **NOTE:** TM-40A–F (WFF functional tracks) require TM-10, TM-20, and TM-30 as hard prerequisites. TM-40G–L (specialist tracks) also require TM-30 as a hard prerequisite. TM-50G–L (advanced specialist tracks) require the corresponding TM-40G–L. There are NO TM-50A–F tracks.
 
 > **NOTE:** "Training days" reflects initial qualification training with instructor support. Self-paced completion may require more time. Refresher/sustainment training is shorter — see Section 11.
 
@@ -113,7 +107,33 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 30-07 | Interpret a data lineage graph for a provided dataset | Verbal/written: correctly identify upstream sources, transforms, and consumers |
 | 30-08 | Complete the full C2DAO promotion workflow: branch, test, submit, receive approval | Practical: evaluator plays data steward; trainee executes end-to-end |
 
-### 2-4. TM-40J — Program Manager
+### 2-4. TM-40A through TM-40F — WFF Functional Tracks
+
+**TLO (common):** Apply MSS data products to support warfighting function mission requirements; build and operate WFF-specific dashboards, pipelines, and ontology-backed tracking systems.
+
+> Each WFF track shares a common task structure adapted to WFF-specific data and mission context. Prerequisite: TM-10, TM-20, and TM-30 (all required).
+
+| Track | WFF | Audience | Key Focus Areas |
+|---|---|---|---|
+| TM-40A | Intelligence | G2/S2 Intel staff | PMESII analysis, ISR tracking, threat object ontology |
+| TM-40B | Fires | Fires/FSCOORD staff | Target tracking, fire mission pipelines, effects dashboards |
+| TM-40C | Movement & Maneuver | G3/S3 M2 staff | FRAGORD tracking, battle rhythm apps, unit disposition |
+| TM-40D | Sustainment | G4/S4 SUST staff | Class IX tracking, maintenance dashboards, logistics pipelines |
+| TM-40E | Protection | Protection staff | Risk assessment tracking, force protection dashboards |
+| TM-40F | Mission Command | MC/G6/S6 staff | Battle rhythm management, comms status, commander's dashboard |
+
+**Common ELOs for all WFF tracks:**
+
+| ELO | Description | Evaluation Method |
+|---|---|---|
+| 40WFF-01 | Build a WFF-specific Pipeline Builder pipeline from provided exercise data | Practical: pipeline runs; output schema correct for WFF use case |
+| 40WFF-02 | Create WFF Object Types and populate via pipeline | Practical: Object Types visible in Ontology Manager; properties correctly typed |
+| 40WFF-03 | Configure a Workshop application with WFF-specific filters and status indicators | Practical: application displays correct data; filters functional |
+| 40WFF-04 | Configure an Action to support a WFF workflow (e.g., status update, submission) | Practical: Action executes; correct property updated |
+| 40WFF-05 | Build a multi-page WFF dashboard (summary → unit detail) | Practical: variable passing works; Page 2 filters by Page 1 selection |
+| 40WFF-06 | Apply data governance: classification, naming, branching, and promotion workflow | Practical: product meets C2DAO naming and marking standards; promotion submitted |
+
+### 2-5. TM-40J — Program Manager
 
 **TLO:** Design and operate program management data products on MSS that support commander decision-making for schedule, resource, and portfolio health.
 
@@ -126,7 +146,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 40J-05 | Configure a snapshot pipeline in Append mode for historical trend analysis | Practical: run pipeline 2× and verify cumulative records |
 | 40J-06 | Produce an IPR product from MSS meeting the PM Dashboard Standards Checklist | Product review: evaluated against TM-40J Appendix A |
 
-### 2-5. TM-40K — Knowledge Manager
+### 2-6. TM-40K — Knowledge Manager
 
 **TLO:** Design and operate knowledge management systems on MSS that capture, organize, and deliver institutional knowledge in support of unit continuity and mission effectiveness.
 
@@ -139,7 +159,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 40K-05 | Build a knowledge browser application with search, filter, and drill-down | Practical: evaluator submits 5 test queries; application returns correct results |
 | 40K-06 | Build and demonstrate a PCS knowledge transfer package for a specific role | Product review: package contains complete documentation per TM-40K Ch 9 |
 
-### 2-6. TM-40G — ORSA
+### 2-7. TM-40G — ORSA
 
 **TLO:** Conduct operations research and systems analysis on MSS, producing quantitatively rigorous decision support products meeting commander and ORSA product standards.
 
@@ -152,7 +172,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 40G-05 | Formulate and solve a linear programming resource allocation problem | Practical: LP solution reviewed; constraint formulation documented |
 | 40G-06 | Produce a commander brief including point estimates with uncertainty bounds | Product review: brief reviewed against ORSA product standards checklist |
 
-### 2-7. TM-40H — AI Engineer
+### 2-8. TM-40H — AI Engineer
 
 **TLO:** Author, test, and deploy AI-enabled capabilities on MSS using AIP Logic, Agent Studio, and LLM integration patterns in compliance with USAREUR-AF AI safety requirements.
 
@@ -165,7 +185,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 40H-05 | Write Python transforms that extract and format Ontology data for AIP Logic context | Practical: transform output matches expected schema; runs without error |
 | 40H-06 | Complete the AIP Authorization Checklist (TM-40H Appendix A) for a proposed workflow; identify prohibited use cases | Written review: evaluator scores checklist completion and prohibited-use identification |
 
-### 2-8. TM-40I — Machine Learning Engineer
+### 2-9. TM-40I — Machine Learning Engineer
 
 **TLO:** Build, evaluate, deploy, and govern machine learning models on MSS using Foundry Code Workspaces and MLOps tooling in compliance with USAREUR-AF model governance standards.
 
@@ -178,7 +198,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 40I-05 | Implement a model monitoring pipeline with drift detection and alert configuration | Practical: pipeline detects seeded drift event; alert routes correctly |
 | 40I-06 | Complete a model governance document meeting USAREUR-AF model documentation standards | Product review: document reviewed against TM-40I governance checklist |
 
-### 2-9. TM-40L — Software Engineer
+### 2-10. TM-40L — Software Engineer
 
 **TLO:** Build, test, and deploy production-quality software applications and integrations on MSS using OSDK, Platform SDK, TypeScript Functions on Objects, and Slate, following USAREUR-AF code review and deployment standards.
 
@@ -191,7 +211,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 40L-05 | Build a Slate application integrated with the Foundry API displaying live ontology data | Practical: application renders correctly; data refreshes on state change |
 | 40L-06 | Complete a C2DAO code review and deployment workflow for a provided OSDK application | Practical: PR created, review comments addressed, deployment checklist completed end-to-end |
 
-> **NOTE:** Developer track evaluations (TM-40H, 40I, 40L) require a qualified technical reviewer: TM-40 certified instructor, C2DAO data engineer, or equivalent. Do not evaluate developer track ELOs using a non-technical observer.
+> **NOTE:** Developer track evaluations (TM-40H, 40I, 40L, 50H, 50I, 50L) require a qualified technical reviewer: TM-40 certified instructor, C2DAO data engineer, or equivalent. Do not evaluate developer track ELOs using a non-technical observer.
 
 ---
 
@@ -232,6 +252,17 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | MSS-30-T05 | Build a multi-object Quiver dashboard | Linked views filter correctly; evaluated by observer |
 | MSS-30-T06 | Manage the C2DAO promotion workflow | Workflow completed end-to-end with evaluator as data steward |
 
+### 3-4. TM-40A–F Tasks (WFF Functional Tracks — common task set, WFF-adapted scenarios)
+
+| Task ID | Task | Go Standard |
+|---|---|---|
+| MSS-40WFF-T01 | Build a WFF-specific pipeline from provided exercise data | Pipeline runs without error; output schema correct |
+| MSS-40WFF-T02 | Create WFF Object Types and populate via pipeline write step | Object Types populated; properties correctly typed; row count matches |
+| MSS-40WFF-T03 | Configure a Workshop application with WFF filters and status indicators | Application displays live data; filters functional; classification marking present |
+| MSS-40WFF-T04 | Configure an Action to support a WFF workflow | Action executes; correct Object property updated; access restriction enforced |
+| MSS-40WFF-T05 | Build a multi-page WFF dashboard | Page 1 → Page 2 variable passing works; Page 2 data filtered by Page 1 selection |
+| MSS-40WFF-T06 | Apply C2DAO governance: naming, marking, branching, and promotion | Product meets naming standards; promotion request submitted with complete description |
+
 ---
 
 ## 4. TRAINING STANDARDS AND GO/NO-GO CRITERIA
@@ -243,6 +274,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | TM-10 | Pass 6 of 7 tasks (T01–T07); pass classification questions (3 of 4) |
 | TM-20 | Pass 6 of 7 tasks (T01–T07); Pipeline Builder pipeline runs without error |
 | TM-30 | Pass 5 of 6 tasks (T01–T06); Ontology design document reviewed and approved |
+| TM-40A–F (WFF) | Pass all 6 WFF tasks (T01–T06); WFF dashboard meets standard; data governance requirements met |
 | TM-40G | Pass 5 of 6 ELOs; ORSA product brief reviewed by qualified ORSA evaluator |
 | TM-40H/I/L | Pass developer track practical exercise; evaluated by TM-40 certified technical reviewer |
 | TM-40J | Pass 5 of 6 ELOs; IPR product meets all PM Dashboard Standards Checklist items |
@@ -346,7 +378,42 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | 9 | 1400–1500 | C2DAO governance: promotion workflow, data stewardship review | Lecture/discussion |
 | 10 | 1500–1700 | Practical exercise (all TM-30 tasks) | Evaluation |
 
-### 5-4. TM-40J — Program Manager (2 Days)
+### 5-4. TM-40A–F — WFF Functional Tracks (3 Days each; prereq: TM-30)
+
+> Each WFF track runs 3 days (24 hours). The schedule below applies to all 6 tracks (A–F). Scenario content and Object Type design vary by WFF; the instructional sequence and evaluation structure are identical.
+
+**Day 1 — Data Architecture and Pipeline Fundamentals**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 1 | 0800–0900 | WFF role on MSS; WFF-specific data products and use cases; course overview | Lecture/discussion |
+| 2 | 0900–1100 | WFF Object Type design: key entities, properties, primary keys; document before building | Instructor-led lab |
+| 3 | 1100–1200 | Pipeline Builder: ingest provided WFF dataset; clean and transform | Instructor-led lab |
+| — | 1200–1300 | Lunch | — |
+| 4 | 1300–1500 | Pipeline: join step, computed status columns, RAG logic, Ontology write step | Instructor-led lab |
+| 5 | 1500–1700 | Individual practice: second pipeline build using alternate provided dataset | Guided practice |
+
+**Day 2 — Workshop Applications and Actions**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 6 | 0800–1000 | Workshop: WFF summary dashboard — table, filter widgets, status indicators | Instructor-led lab |
+| 7 | 1000–1200 | Workshop: multi-page application — Page 1 summary → Page 2 unit detail (variable passing) | Instructor-led lab |
+| — | 1200–1300 | Lunch | — |
+| 8 | 1300–1500 | Actions: configure status update and submission Actions for WFF workflow | Instructor-led lab |
+| 9 | 1500–1700 | Access control, classification markings, WFF-specific export procedures | Lecture/discussion |
+
+**Day 3 — Governance and Practical Exercise**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 10 | 0800–1000 | C2DAO naming conventions, branching, promotion workflow — WFF application context | Instructor-led lab |
+| 11 | 1000–1200 | Supervised practice run: rebuild the prior day's dashboard with a new dataset | Guided practice |
+| — | 1200–1300 | Lunch | — |
+| 12 | 1300–1400 | Practical exercise scenario brief | BRF |
+| 13 | 1400–1700 | Practical exercise (all 6 tasks) | Evaluation |
+
+### 5-5. TM-40J — Program Manager (2 Days)
 
 **Day 1 — Data Architecture and Ingestion**
 
@@ -370,7 +437,7 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | 9 | 1400–1500 | Access management, classification, C2DAO governance for PM applications | Lecture/discussion |
 | 10 | 1500–1700 | Practical exercise | Evaluation |
 
-### 5-5. TM-40K — Knowledge Manager (2 Days)
+### 5-6. TM-40K — Knowledge Manager (2 Days)
 
 **Day 1 — Knowledge Architecture, AAR Systems, Lessons Learned**
 
@@ -395,7 +462,7 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | 10 | 1400–1500 | Access control, Privacy Act considerations, C2DAO governance for KM systems | Lecture/discussion |
 | 11 | 1500–1700 | Practical exercise | Evaluation |
 
-### 5-6. TM-40G — ORSA (4 Days)
+### 5-7. TM-40G — ORSA (4 Days)
 
 **Day 1 — Environment Setup and Statistical Modeling**
 
@@ -437,7 +504,7 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | — | 1200–1300 | Lunch | — |
 | 16 | 1300–1700 | Practical exercise: regression + forecast + commander brief | Evaluation |
 
-### 5-7. TM-40H — AI Engineer (4 Days)
+### 5-8. TM-40H — AI Engineer (4 Days)
 
 **Day 1 — Safety, Architecture, and AIP Logic Fundamentals** *(Block 1 mandatory — no exceptions)*
 
@@ -478,7 +545,7 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | — | 1200–1300 | Lunch | — |
 | 15 | 1300–1700 | Practical exercise: author, test, and document AIP Logic workflow end-to-end | Evaluation |
 
-### 5-8. TM-40I — Machine Learning Engineer (4 Days)
+### 5-9. TM-40I — Machine Learning Engineer (4 Days)
 
 **Day 1 — Workspace and Feature Engineering**
 
@@ -518,7 +585,7 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | — | 1200–1300 | Lunch | — |
 | 14 | 1300–1700 | Practical exercise: feature pipeline → train → evaluate → deploy → governance doc | Evaluation |
 
-### 5-9. TM-40L — Software Engineer (4 Days)
+### 5-10. TM-40L — Software Engineer (4 Days)
 
 **Day 1 — OSDK Fundamentals**
 
@@ -598,8 +665,18 @@ Continue with TM-30 or TM-40 track based on role. No more than one TM level per 
 | Mon | TM-30 Day 1 | Data-adjacent specialists |
 | Tue | TM-30 Day 2 | Data-adjacent specialists |
 | Wed | TM-30 Day 3 + Evaluation | Data-adjacent specialists |
-| Thu | TM-40J (PM) Day 1 | G8/S8, PMs |
+| Thu | TM-40J (PM) Day 1; schedule WFF tracks (40A–F) for functional staff who completed TM-30 | G8/S8, PMs; WFF functional staff |
 | Fri | TM-40J Day 2 + Evaluation; schedule TM-40G/H/I/K/L for specialists | PMs + specialists |
+
+**Week 3 (if WFF staff require dedicated event)**
+
+| Day | Training | Audience |
+|---|---|---|
+| Mon–Wed | TM-40A (Intel WFF) — 3 days | G2/S2 Intel staff |
+| Mon–Wed | TM-40D (Sustainment WFF) — 3 days (parallel session if capacity allows) | G4/S4 staff |
+| Thu–Sat or following week | Remaining WFF tracks (B, C, E, F) as scheduled | Applicable WFF functional staff |
+
+> **NOTE:** WFF tracks (TM-40A–F) require TM-10, TM-20, and TM-30 completion. Ensure WFF-track personnel complete TM-30 before enrolling. WFF and specialist (G–L) training can run concurrently in separate sessions once TM-30 is complete.
 
 ---
 
@@ -653,6 +730,12 @@ If the training environment is unavailable, coordinate with C2DAO for an approve
 | TM-10 | TM-20 certified or higher; completed TM-10 evaluation as a trainee |
 | TM-20 | TM-30 certified or higher |
 | TM-30 | TM-40 certified in any track; or C2DAO-certified data engineer |
+| TM-40A (Intel WFF) | TM-40A certified; G2/S2 background or Intel functional familiarity; TM-30 proficiency |
+| TM-40B (Fires WFF) | TM-40B certified; Fires/FSCOORD background; TM-30 proficiency |
+| TM-40C (M2 WFF) | TM-40C certified; G3/S3 movement and maneuver background; TM-30 proficiency |
+| TM-40D (SUST WFF) | TM-40D certified; G4/S4 sustainment background; TM-30 proficiency |
+| TM-40E (PROT WFF) | TM-40E certified; Protection background; TM-30 proficiency |
+| TM-40F (MC WFF) | TM-40F certified; Mission Command/G6 background; TM-30 proficiency |
 | TM-40G (ORSA) | Active-duty ORSA (FA49) with Code Workspace proficiency OR C2DAO-approved contractor |
 | TM-40H (AI Eng) | C2DAO AI engineer or TM-40H certified individual |
 | TM-40I (MLE) | C2DAO ML engineer or TM-40I certified individual |
@@ -675,6 +758,7 @@ If the training environment is unavailable, coordinate with C2DAO for an approve
 | TM-10 | 20:1 (lecture); 10:1 (lab) |
 | TM-20 | 10:1 (all portions) |
 | TM-30 | 8:1 (all portions) |
+| TM-40A–F (WFF) | 10:1 (all portions — high-volume functional staff courses) |
 | TM-40G/H/I/L | 5:1 (intensive coding/modeling content) |
 | TM-40J/K | 10:1 (all portions) |
 
@@ -713,7 +797,67 @@ If the training environment is unavailable, coordinate with C2DAO for an approve
 
 **Go standard:** All 8 tasks completed without instructor assistance; pipeline runs without error.
 
-### 9-3. TM-30 — "Multi-Source Operations Dashboard"
+### 9-3. TM-40A–F — WFF Functional Track Practical Exercises
+
+> Instructor selects from the applicable WFF track scenario bank. Scenarios below are representative for each track. All require TM-10, TM-20, and TM-30 completion.
+
+**TM-40A (Intel WFF) — "ISR Status Tracker"**
+
+**Scenario:** G2 analyst requires a dashboard showing ISR asset status across the AOR. Provided: synthetic ISR asset tracking spreadsheet.
+
+**Tasks:**
+1. Build a pipeline ingesting the ISR asset dataset; compute availability status per asset.
+2. Create ISR Asset Object Type with required properties.
+3. Build a Workshop application: table filtered by asset type and status.
+4. Configure an "Update Asset Status" Action with appropriate access restriction.
+5. Build a multi-page dashboard: Page 1 = AOR summary, Page 2 = unit-level detail.
+6. Branch, submit product for promotion with complete description.
+
+**Go standard:** All 6 tasks completed; pipeline runs without error; governance requirements met.
+
+---
+
+**TM-40B (Fires WFF) — "Target Tracking Dashboard"**
+
+**Scenario:** FSCOORD requires a target status and engagement tracking application. Provided: synthetic target tracking dataset.
+
+**Tasks (same structure as 40A — Fires-specific data and Object Types).** Go standard: all 6 tasks.
+
+---
+
+**TM-40C (Movement & Maneuver WFF) — "Unit Disposition Tracker"**
+
+**Scenario:** S3 requires a unit disposition and FRAGORD compliance tracker. Provided: synthetic unit status dataset.
+
+**Tasks (same structure — M2-specific Object Types).** Go standard: all 6 tasks.
+
+---
+
+**TM-40D (Sustainment WFF) — "Class IX Readiness Dashboard"**
+
+**Scenario:** S4 requires a Class IX on-hand vs. requirement dashboard with shortfall flagging.
+
+**Tasks (same structure — SUST-specific data model).** Go standard: all 6 tasks.
+
+---
+
+**TM-40E (Protection WFF) — "Force Protection Status Tracker"**
+
+**Scenario:** Protection officer requires a threat indicator and force protection measure tracking dashboard.
+
+**Tasks (same structure — PROT-specific Object Types).** Go standard: all 6 tasks.
+
+---
+
+**TM-40F (Mission Command WFF) — "Battle Rhythm and Comms Status Dashboard"**
+
+**Scenario:** G6 requires a battle rhythm event tracker and comms system status dashboard for the commander.
+
+**Tasks (same structure — MC/G6-specific data model).** Go standard: all 6 tasks.
+
+---
+
+### 9-4. TM-30 — "Multi-Source Operations Dashboard"
 
 **Scenario:** S3 requires a dashboard combining personnel readiness (one dataset) and equipment readiness (second dataset) at the unit level, with battalion filter and drill-down to individual unit status.
 
@@ -762,12 +906,16 @@ PERSONNEL SUMMARY:
   Total personnel requiring TM-10: [#]     TM-10 Complete: [#] ([%])
   Total personnel requiring TM-20: [#]     TM-20 Complete: [#] ([%])
   Total personnel requiring TM-30: [#]     TM-30 Complete: [#] ([%])
-  Total TM-40 track assignments:  [#]     TM-40 Complete: [#] ([%])
+  Total WFF track assignments (TM-40A–F):  [#]  WFF Complete: [#] ([%])
+    Breakdown: 40A[#] 40B[#] 40C[#] 40D[#] 40E[#] 40F[#]
+  Total specialist track assignments (TM-40G–L): [#]  Specialist Complete: [#] ([%])
+    Breakdown: 40G[#] 40H[#] 40I[#] 40J[#] 40K[#] 40L[#]
 
 ISSUES / SHORTFALLS:
   Access provisioning delays: [Y/N — if yes, describe]
   Personnel awaiting remediation: [#]
   Instructor availability: [adequate / insufficient]
+  WFF track scheduling conflicts (functional staff unavailability): [describe if any]
 
 NEXT TRAINING EVENT: [Date, Level, # of trainees]
 ```

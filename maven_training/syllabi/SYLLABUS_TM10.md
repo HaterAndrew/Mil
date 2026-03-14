@@ -27,7 +27,8 @@
 | 5 | Explore an Object Type in Quiver; export a view |
 | 6 | Access and interact with an AIP Logic or Agent interface |
 | 7 | Identify classification markings; state the authorized export procedure for a given dataset |
-| 8 | Troubleshoot two common access issues using TM-10 procedures |
+| 8 | Bookmark a dashboard to the MSS home screen |
+| 9 | Troubleshoot two common access issues using TM-10 procedures |
 
 ---
 
@@ -42,9 +43,9 @@
 | 1200–1300 | — | Lunch |
 | 1300–1400 | 5 | Contour: building a basic chart and applying a filter |
 | 1400–1500 | 6 | Quiver: exploring Object Types, applying filters, exporting views |
-| 1500–1530 | 7 | AIP interface: submitting a query; understanding AI output limitations |
-| 1530–1600 | 8 | Classification markings and authorized export procedures |
-| 1600–1700 | 9 | **Practical exercise (evaluated)** |
+| 1500–1545 | 7 | AIP interface: submitting a query; understanding AI output limitations and authorized use *(extended from prior — pre-configured demo query required; instructor must set up before class)* |
+| 1545–1630 | 8 | Classification markings and authorized export procedures |
+| 1630–1700 | 9 | **Practical exercise (evaluated)** |
 
 ---
 
@@ -60,24 +61,51 @@
 
 ## Practical Exercise
 
-**Scenario:** You are an S3 NCO. Your unit's SITREP tracker and readiness dashboard are in MSS. Check for missing SITREP submissions, submit a correction, build a Contour chart, and export a filtered readiness table.
+See **EX-10 — MSS Operator Basics** for the full task list, evaluator notes, and scoring rubric. Summary below.
 
-| # | Task |
+**Scenario:** You are a staff officer at a BCT HQ. Your S2 needs current equipment readiness for three subordinate battalions for the daily SITREP. Navigate, filter, and export data from an existing readiness dashboard.
+
+| # | Task | Go Standard |
+|---|---|---|
+| 1 | Log in via CAC; locate the designated training dashboard; identify data owner and last-updated timestamp | Locates dashboard and reads metadata without assistance |
+| 2 | Apply filters (unit, date range); reset to all-units view | Filters apply correctly; reset without help |
+| 3 | Identify the lowest-readiness unit and the equipment category driving it; record the data steward contact | Correct unit identified; steward contact recorded |
+| 4 | Export current filtered view as PDF; verify last-updated timestamp in output; handle per classification SOP | Export completes; timestamp visible |
+| 5 | Navigate to a second dashboard relevant to your role; bookmark it to your MSS home screen | Bookmark appears on home screen |
+
+**Go standard:** Go on 4 of 5 tasks. No-Go on Task 2 (filters) or Task 4 (export) is an automatic overall No-Go regardless of other task results.
+
+---
+
+## Assessment
+
+**Method:** Practical exercise (Go/No-Go) — there is no written exam for TM-10.
+
+| Form | Description |
 |---|---|
-| 1 | Login and navigate to the designated application |
-| 2 | Filter table to last 7 days; identify missing submission |
-| 3 | Execute the Status Update Action |
-| 4 | Export filtered table to CSV |
-| 5 | Build a bar chart in Contour from the provided dataset |
-| 6 | State the classification marking and authorized distribution for the export |
+| **Pre-course** | No formal pre-test. Instructor confirms MSS account access before training begins. |
+| **End-of-course evaluation** | Practical exercise (5 tasks per EX-10). Evaluated using T&EO TM10-01 through TM10-05. |
+| **Passing standard** | Go on 4 of 5 tasks completed independently. Tasks 2 (filters) and 4 (export/classification) are critical items — No-Go on either is an automatic overall No-Go. |
 
-**Go standard:** Complete all 6 tasks; correctly identify the classification marking and export procedure.
+*TM-10 does not use a written POST exam. The evaluation instrument is the practical exercise scored via T&EO.*
+
+---
+
+## No-Go Remediation
+
+| Outcome | Action |
+|---|---|
+| **No-Go — Task 2 or Task 4 (critical items)** | Full re-evaluation required. Schedule with unit training coordinator. Recommend self-study of TM-10, Chapters 3 and 7 before retake. |
+| **No-Go — Tasks 1, 3, or 5 only** | Targeted task retry. Instructor may authorize same-day retry on the specific failed task at their discretion. |
+| **No-Go — two or more non-critical tasks** | Full re-evaluation required. |
+
+Re-evaluation must be scheduled through the unit training coordinator. There is no self-certification option for TM-10.
 
 ---
 
 ## Go Criteria
 
-Pass requires completing all tasks independently — no instructor hints, no external references beyond TM-10. Correct recovery from a wrong click counts. Watching the instructor or being talked through each step does not.
+Pass requires completing 4 of 5 tasks independently — no instructor hints, no external references beyond TM-10. Correct recovery from a wrong click counts. Watching the instructor or being talked through a step does not. Critical items (Tasks 2 and 4) must both be Go for an overall Go.
 
 ---
 
@@ -97,6 +125,25 @@ Request MSS account provisioning at least **5 duty days** before training. Arriv
 | Classification on the PE | Read dataset property fields, not just the application header |
 | AIP outputs | The exercise tests interface use, not trusting the AI output |
 | 403 Forbidden error | This is a permissions issue, not a login issue — resolution is an access request to the MSS Administrator |
+
+---
+
+## Continuation
+
+TM-10 is the entry point for the full MSS curriculum. After completing TM-10:
+
+| Path | Next Step | Who |
+|---|---|---|
+| **All personnel** | TM-20 (Builder) | Required before any specialist or WFF track |
+| **WFF functional staff** (G2/S2, G3/S3, G4/S4, FSE, FP, MC) | TM-20 → TM-30 → TM-40A–F (WFF tracks) | TM-30 required before any WFF track |
+| **Data specialists** (analysts, 17/25-series, ORSA, AI/ML, PM, KM, SWE) | TM-20 → TM-30 → TM-40G–L | TM-30 required before any specialist track |
+
+**Full curriculum summary:**
+- TM-20 (Builder) — prerequisite for TM-30
+- TM-30 (Advanced Builder) — prerequisite for ALL TM-40 tracks (WFF and specialist)
+- WFF Tracks (TM-30 → TM-40A–F): Intelligence, Fires, Movement & Maneuver, Sustainment, Protection, Mission Command
+- Specialist Tracks (TM-30 → TM-40G–L): ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, Software Engineer
+- Advanced Specialist Tracks (TM-40G–L → TM-50G–L): advanced level for each specialist role
 
 ---
 

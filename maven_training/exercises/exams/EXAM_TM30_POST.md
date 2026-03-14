@@ -57,12 +57,12 @@ B. The pipeline's schedule and alerting configuration
 C. The Ontology Manager notification settings
 D. The data steward's project settings
 
-**6. The TM-30 Ontology Design Rubric evaluates a schema against how many items, and what is the minimum score to pass?**
+**6. A Soldier who has completed TM-30 and wants to pursue specialized data work in operations research wants to know which track to take next. The correct answer is:**
 
-A. 5 items; 80% to pass
-B. 6 items; 75% to pass
-C. 8 items; 70% to pass
-D. 6 items; 70% to pass
+A. TM-40A — Intelligence WFF Track (for G2/S2 staff applying MSS to intelligence operations)
+B. TM-40G — ORSA Specialist Track (for FA49 and quantitative analysts; operations research focus)
+C. TM-50G — Advanced ORSA Track (prereq: TM-40G — not yet accessible to a TM-30 graduate)
+D. TM-40F — Mission Command WFF Track (for MC-function staff applying MSS to command products)
 
 **7. In the C2DAO promotion workflow, the data steward's role during promotion review includes:**
 
@@ -173,7 +173,7 @@ D. Add a pipeline validation step that blocks empty results from being written t
 
 &nbsp;
 
-**SA-5. A Quiver dashboard showing unit readiness objects has a linked view of equipment assigned to each unit. When a user selects a unit in the left panel, the equipment list on the right does not filter to that unit. Describe how you would troubleshoot and resolve this cross-object filter propagation issue.**
+**SA-5. A colleague who has just completed TM-30 asks you to explain what training options are available to them next. Describe the two downstream track categories — WFF tracks and specialist tracks — available after TM-30, including: the correct track ID range for each category, the prerequisite requirement for each category, and one example track from each category with its track title.**
 
 &nbsp;
 
@@ -207,7 +207,7 @@ Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
 3. B — Union requires identical column names and compatible types; no join key is needed.
 4. C — Append adds records without deleting prior data, enabling historical accumulation.
 5. B — Schedule and alerting configuration is where email alerts are set in Pipeline Builder.
-6. B — TM-30 Ontology Design Rubric: 6 items, 75% to pass (per TM-30 Chapter 5).
+6. B — TM-40G is the ORSA Specialist Track for FA49 and quantitative analysts. Options A and D are WFF tracks targeting warfighting function staff roles, not operations research. Option C (TM-50G) is the Advanced ORSA track, which requires TM-40G as its prerequisite — a Soldier who has completed only TM-30 is not yet eligible. All TM-40 tracks (WFF and Specialist) require TM-30 as a hard prerequisite.
 7. B — Data steward reviews, validates, and approves or returns with feedback.
 8. B — "Configure" = select templates, set parameters, connect sources; not writing chain logic.
 9. B — Calculated column using fleet average reference value is the correct Contour approach.
@@ -228,7 +228,7 @@ SA-3. Full credit: Object Types — NetworkNode (node_id, type, location, status
 
 SA-4. Full credit: Builder completes work on branch → writes promotion description (what/why/QC passed) → submits for data steward review → data steward reviews naming, schema, pipeline logic, data quality → approves or returns with feedback → builder addresses feedback → re-submits → data steward approves → branch merged to production. Most common rejection point: promotion description review — most frequent reason: naming convention violations (non-C2DAO names) or missing data quality check confirmation. Partial credit (3 pts) for correct sequence without identifying rejection point.
 
-SA-5. Full credit: verify the Unit Object Type and Equipment Object Type have a defined Link Type connecting them; in Quiver dashboard configuration, check that the equipment panel's filter input is wired to the unit selection variable from the unit panel; verify the Link Type cardinality is correct and the pipeline has populated the links; if links are defined but panel is not wired, add the unit selection as a filter on the equipment panel's display configuration. Partial credit (3 pts) for identifying Link Type check without panel wiring diagnosis.
+SA-5. Full credit: WFF tracks — TM-40A through TM-40F (Intelligence, Fires, Movement & Maneuver, Sustainment, Protection, Mission Command); prerequisite is TM-30 (required — same prereq chain as Specialist tracks: TM-10 + TM-20 + TM-30); example: TM-40A (Intelligence WFF) or any of A–F. Specialist tracks — TM-40G through TM-40L (ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, Software Engineer); prerequisite is TM-30 (REQUIRED hard prereq); example: TM-40G (ORSA) or any of G–L. NOTE: TM-50A–F do NOT exist; advanced specialist tracks are TM-50G–L (prereq: corresponding TM-40G–L track). Partial credit (3 pts) for correctly describing one category with correct IDs, prereq, and example.
 
 ---
 

@@ -4,9 +4,23 @@
 | | |
 |---|---|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40H (and TM-10 through TM-30) |
+| **Prerequisite** | TM-30 REQUIRED; TM-40H (and TM-10 through TM-20) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS with AIP Logic, Agent Studio, Python Transforms — see ENVIRONMENT_SETUP.md |
+
+## COMPANION RESOURCES
+
+| Resource | Reference |
+|----------|-----------|
+| Technical Manual | TM-40H — AI Engineer |
+| Syllabus | SYLLABUS_TM40H |
+| Pre-Exercise Exam | EXAM_TM40H_PRE |
+| Post-Exercise Exam | EXAM_TM40H_POST |
+| Continuation Track | TM-50H — Advanced AI Engineer |
+
+## WFF AWARENESS
+
+AI Engineer products built in this exercise (retrieval pipelines, classification workflows, agents) are consumed by WFF track personnel (TM-40A–F) as operational tools. Evaluators should assess whether the agent's natural-language interface and classification outputs are usable by non-technical WFF operators — a key AI Engineer delivery competency.
 
 ## SCENARIO
 
@@ -75,3 +89,7 @@ Training dataset: ~200 synthetic INTSUM documents (plain text, unclassified).
 - Task 2 (embeddings + index) depends on model availability and index build time — budget 60 min
 - Task 4 (Agent Studio) is often the most time-consuming for first-time users — budget 75 min
 - Participants with prior RAG or vector DB experience will complete Tasks 1–2 in half the expected time
+
+## NEXT STEPS
+
+Participants who receive an overall Go on EX-40H are eligible to enroll in **TM-50H — Advanced AI Engineer**. TM-50H extends into multi-agent architectures, adversarial robustness, and production deployment governance. No TM-50A–F tracks exist.

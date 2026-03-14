@@ -1,5 +1,8 @@
 # ENVIRONMENT SETUP — EX-40K Knowledge Manager
 
+**Track:** EX-40K — Knowledge Manager (TM-40K) | **Prerequisite:** TM-30 REQUIRED | **Continuation:** TM-50K — Advanced Knowledge Manager
+**Companion exams:** EXAM_TM40K_PRE (administer before exercise), EXAM_TM40K_POST (administer after exercise)
+
 ## Environment Type
 
 MSS training instance with Workshop form builder, Pipeline Builder, and AIP Logic access.

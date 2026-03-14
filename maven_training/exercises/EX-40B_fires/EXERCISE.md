@@ -4,9 +4,12 @@
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40B, CONCEPTS_GUIDE_TM40B_FIRES (and TM-10, TM-20) |
+| **Prerequisite** | TM-10, TM-20, TM-30 (required); TM-40B and CONCEPTS_GUIDE_TM40B_FIRES (current track) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS training instance, standard user access — see ENVIRONMENT_SETUP.md |
+| **Companion TM** | TM_40B_FIRES.md |
+| **Syllabus** | SYLLABUS_TM40B |
+| **Exams** | EXAM_TM40B_PRE / EXAM_TM40B_POST |
 
 ## SCENARIO
 

@@ -1,26 +1,9 @@
-# CONCEPTS GUIDE — TM-40F COMPANION
-## MISSION COMMAND WARFIGHTING FUNCTION
-## MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — TM-40F COMPANION — MISSION COMMAND WARFIGHTING FUNCTION · MAVEN SMART SYSTEM (MSS)
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-2026
-
-**PURPOSE:** This guide develops the operational mental models required to effectively integrate MSS into Mission Command functions. It is a prerequisite companion to TM-40F and must be read before beginning TM-40F task instruction. This guide is conceptual — it develops understanding, not procedures. No step-by-step tasks appear here.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-## TABLE OF CONTENTS
-
-1. Mission Command Doctrine and Data (ADP 6-0)
-2. The Operations Process Mental Model (ADP 5-0, FM 5-0)
-3. Staff Mental Models: Data Ownership and Responsibility (FM 6-0)
-4. CCIR Mental Model (FM 6-0)
-5. Assessment Mental Model (FM 5-0, ADP 5-0)
-6. The Command Post as a Data Environment (ATP 6-0.5)
-7. Common Failure Modes for Mission Command Practitioners on MSS
+> **BLUF:** MSS does not change the nature of Mission Command. It changes the speed, fidelity, and integration of the information that supports it. The seven principles of Mission Command remain doctrinal constants. The information environment in which those principles are exercised has changed fundamentally.
+> **Prereqs:** TM-10, TM-20, and TM-30 (all required for track entry). Read this Concepts Guide before beginning TM-40F task instruction.
+> **Purpose:** This guide develops the operational mental models required to effectively integrate MSS into Mission Command functions. It is a prerequisite companion to TM-40F and must be read before beginning TM-40F task instruction. This guide is conceptual — it develops understanding, not procedures. No step-by-step tasks appear here.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
@@ -539,8 +522,38 @@ Before using MSS data to support a commander brief or assessment, confirm each i
 
 ---
 
+## RELATED TRACKS AND PUBLICATIONS
+
+### WFF Peer Tracks
+
+All six WFF tracks are at the same tier. Mission Command is the integrating WFF — TM-40F practitioners receive and present data products from all five peer WFF tracks on the COP and CCIR dashboard.
+
+| Track | Title | Prereq | Relationship to Mission Command WFF |
+|-------|-------|--------|-------------------------------------|
+| TM-40A | Intelligence WFF | TM-10 + TM-20 + TM-30 | PIR-derived CCIR components; INTSUM feeds the intelligence picture on the COP |
+| TM-40B | Fires WFF | TM-10 + TM-20 + TM-30 | Fires products integrate into the CCIR dashboard; FSCM overlays on the COP |
+| TM-40C | Movement and Maneuver WFF | TM-10 + TM-20 + TM-30 | Force tracking, phase lines, objectives — the ground maneuver layer of the COP |
+| TM-40D | Sustainment WFF | TM-10 + TM-20 + TM-30 | LOGSTAT feeds commander FFIR thresholds; sustainment picture on the COP |
+| TM-40E | Protection WFF | TM-10 + TM-20 + TM-30 | Protection status integrates into the COP; CCIR thresholds consume protection data |
+| TM-40F | Mission Command WFF | TM-10 + TM-20 + TM-30 | This track |
+
+### Specialist Tracks (Prerequisite: TM-30)
+
+For technical specialists producing products that Mission Command practitioners consume, specialist tracks are available after completing TM-30.
+
+| Track | Title |
+|-------|-------|
+| TM-40G | ORSA (→ TM-50G) |
+| TM-40H | AI Engineer (→ TM-50H) |
+| TM-40I | ML Engineer (→ TM-50I) |
+| TM-40J | Program Manager (→ TM-50J) |
+| TM-40K | Knowledge Manager (→ TM-50K) |
+| TM-40L | Software Engineer (→ TM-50L) |
+
+---
+
 **HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
 Wiesbaden, Germany
 2026
 
-DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.
+DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.

@@ -5,7 +5,7 @@
 |---|---|
 | **Level** | TM-40H (AI Engineer Specialist Track) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-10, TM-20, TM-30 (all Go evaluations on file); Data Literacy Technical Reference (required); working Python proficiency; familiarity with prompt engineering concepts recommended |
+| **Prerequisites** | TM-10, TM-20, TM-30 (all Go evaluations on file — **REQUIRED**, not recommended); Data Literacy Technical Reference (required); working Python proficiency; familiarity with prompt engineering concepts recommended |
 | **Audience** | AI/ML specialists, data engineers building AI-enabled pipelines on MSS |
 | **Format** | Instructor-led lab + safety seminar + practical exercise |
 | **Location** | MSS Training Environment (AIP Logic and Agent Studio access required) |
@@ -179,6 +179,28 @@ Complete **7–10+ duty days before Day 1:**
 | Review queue | When in doubt, route to human review. A KPI of "zero items in the review queue" may mean uncertain extractions flow directly to production data |
 | RAG context construction | You are not dumping an entire dataset into the context window — retrieve the most relevant objects and present them in a structured format. Read Chapter 5 grounding patterns before Day 3 |
 | Authorization Checklist | Final question: "What happens if this workflow produces incorrect output?" If the answer is "nothing bad," you have not thought hard enough about downstream use |
+
+---
+
+## Continuation
+
+Graduates who move into enterprise AI architecture or multi-agent system design roles may pursue **TM-50H (Advanced AI Engineering)**. TM-50H covers enterprise-scale RAG infrastructure, multi-agent orchestration, AI governance frameworks, and evaluated system architecture. Prerequisites: TM-40H Go evaluation on file; 12+ months active AI engineering experience on MSS or equivalent.
+
+---
+
+## Associated Exercises and Assessments
+
+| Item | Reference |
+|---|---|
+| Pre-course exam | EXAM_TM40H_PRE |
+| Post-course exam | EXAM_TM40H_POST |
+| Practical exercise | EX-40H (EXERCISE.md + ENVIRONMENT_SETUP.md) |
+
+---
+
+## Relationship to WFF Tracks
+
+WFF track analysts (TM-40A through TM-40F) are the operational consumers of AI-enabled tools built in this course. AI engineers should understand the operational workflows each WFF community uses on MSS: intelligence analysts (TM-40A) consume structured extraction products and automated reporting; mission command analysts (TM-40F) use AIP Logic workflows for information synthesis and course of action support; all WFF communities benefit from human-review-gated AI products that meet USAREUR-AF safety standards.
 
 ---
 

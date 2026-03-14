@@ -1,17 +1,7 @@
-# CONCEPTS GUIDE — TM-40E
-## MAVEN SMART SYSTEM (MSS): PROTECTION WARFIGHTING FUNCTION
-## CONCEPTUAL COMPANION FOR SENIOR LEADERS AND STAFF
+# CONCEPTS GUIDE — TM-40E — MAVEN SMART SYSTEM (MSS): PROTECTION WARFIGHTING FUNCTION · CONCEPTUAL COMPANION FOR SENIOR LEADERS AND STAFF
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-
-2026
-
-**Version 1.0 | March 2026**
-
-**AUDIENCE:** Protection officer, G3/S3 with protection responsibility, AT officer, CBRN officer, PMO, ADA officer. This guide supports conceptual understanding before beginning TM-40E procedures.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
+> **Prereqs:** TM-10 (Maven User), TM-20 (Builder), and TM-30 (Advanced Builder) — all required as prerequisites (Go evaluations on file) before beginning TM-40E. Read this Concepts Guide after completing TM-30 and before beginning TM-40E task instruction. Builder skills are not exercised in this track — protection WFF practitioners operate pre-built products.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
@@ -473,6 +463,36 @@ The protection WFF requires integrated information to function. ADP 3-37 assumes
 The eight failure modes in Section 7 are not hypothetical. They represent observed patterns from formation-level MSS use in USAREUR-AF. Commanders and protection officers who recognize these patterns early and correct them produce formations where MSS is a genuine force multiplier for protection. Those who tolerate them produce formations where MSS adds administrative burden without adding protection capability.
 
 The protection officer's most important MSS role is not data entry. It is data quality enforcement — ensuring that the protection picture in MSS is accurate enough that a commander can look at it and make decisions. That standard, applied consistently, is what makes MSS a protection asset rather than a protection liability.
+
+---
+
+## RELATED TRACKS AND PUBLICATIONS
+
+### WFF Peer Tracks
+
+All six WFF tracks are at the same tier. All six WFF tracks require TM-10, TM-20, and TM-30 as prerequisites.
+
+| Track | Title | Prereq | Relationship to Protection WFF |
+|-------|-------|--------|-------------------------------|
+| TM-40A | Intelligence WFF | TM-10 + TM-20 + TM-30 | AT intelligence integration; threat data for AT assessments |
+| TM-40B | Fires WFF | TM-10 + TM-20 + TM-30 | AMD coordination — fires and protection share AMD data domain |
+| TM-40C | Movement and Maneuver WFF | TM-10 + TM-20 + TM-30 | Physical security integration with maneuver operations |
+| TM-40D | Sustainment WFF | TM-10 + TM-20 + TM-30 | CBRN resupply coordination; medical tracking for CBRN casualties |
+| TM-40E | Protection WFF | TM-10 + TM-20 + TM-30 | This track |
+| TM-40F | Mission Command WFF | TM-10 + TM-20 + TM-30 | COP integration; CCIR products consuming protection data |
+
+### Specialist Tracks (Prerequisite: TM-30)
+
+For personnel pursuing technical depth, specialist tracks (TM-40G–L, prereq TM-30) are available. Not required for protection WFF employment.
+
+| Track | Title |
+|-------|-------|
+| TM-40G | ORSA (→ TM-50G) |
+| TM-40H | AI Engineer (→ TM-50H) |
+| TM-40I | ML Engineer (→ TM-50I) |
+| TM-40J | Program Manager (→ TM-50J) |
+| TM-40K | Knowledge Manager (→ TM-50K) |
+| TM-40L | Software Engineer (→ TM-50L) |
 
 ---
 

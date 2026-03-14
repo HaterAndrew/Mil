@@ -4,9 +4,12 @@
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40D, CONCEPTS_GUIDE_TM40D_SUSTAINMENT (and TM-10, TM-20) |
+| **Prerequisite** | TM-10, TM-20, TM-30 (required); TM-40D and CONCEPTS_GUIDE_TM40D_SUSTAINMENT (current track) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS training instance, standard user access — see ENVIRONMENT_SETUP.md |
+| **Companion TM** | TM_40D_SUSTAINMENT.md |
+| **Syllabus** | SYLLABUS_TM40D |
+| **Exams** | EXAM_TM40D_PRE / EXAM_TM40D_POST |
 
 ## SCENARIO
 

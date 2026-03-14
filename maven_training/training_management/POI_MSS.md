@@ -25,14 +25,14 @@ Defines course content, instructional methods, evaluation criteria, and resource
 
 ### 1-3. Scope
 
-This POI covers sixteen courses in five tiers:
+This POI covers eighteen courses in five tiers:
 
 | Tier | Courses | Notes |
 |---|---|---|
 | 1 — Foundation | TM-10 | Required for all USAREUR-AF personnel |
 | 2 — Builder | TM-20 | All staff building or maintaining data products |
 | 3 — Advanced Builder | TM-30 | Data-adjacent specialists and unit data leads |
-| 4a — WFF Functional | TM-40A through TM-40F | Warfighting function staff; prereq TM-20 |
+| 4a — WFF Functional | TM-40A through TM-40F | Warfighting function staff; prereq TM-30 |
 | 4b — Specialist | TM-40G through TM-40L | Role-specific specialist training; prereq TM-30 |
 
 ### 1-4. Prerequisite Chain
@@ -40,8 +40,8 @@ This POI covers sixteen courses in five tiers:
 ```
 TM-10 (all personnel)
   └── TM-20 (builders)
-        ├── TM-40A through TM-40F (WFF functional tracks — INT/FIRES/M2/SUST/PROT/MC staff)
-        └── TM-30 (advanced builders / data-adjacent)
+        └── TM-30 (advanced builders / data-adjacent / WFF functional staff)
+              ├── TM-40A through TM-40F (WFF functional tracks — INT/FIRES/M2/SUST/PROT/MC staff)
               ├── TM-40G (ORSA)
               ├── TM-40H (AI Engineer)
               ├── TM-40I (ML Engineer)
@@ -65,15 +65,29 @@ All MSS training is conducted in the **MSS Training Environment** — a dedicate
 | TM-10 | Maven User | Foundation | 1 day | 8 | None |
 | TM-20 | Builder | Builder | 5 days | 40 | TM-10 |
 | TM-30 | Advanced Builder | Advanced | 5 days | 40 | TM-10, TM-20 |
-| TM-40A–F | WFF Functional (6 tracks) | WFF Functional | 3 days | 24 | TM-10, TM-20 |
-| TM-40G | ORSA Specialist | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 |
-| TM-40H | AI Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 |
-| TM-40I | ML Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 |
-| TM-40J | Program Manager | Specialist | 3 days | 24 | TM-10, TM-20, TM-30 |
-| TM-40K | Knowledge Manager | Specialist | 3 days | 24 | TM-10, TM-20, TM-30 |
-| TM-40L | Software Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 |
+| TM-40A | Intelligence WFF | WFF Functional | 3 days | 24 | TM-10, TM-20, TM-30 (Required) |
+| TM-40B | Fires WFF | WFF Functional | 3 days | 24 | TM-10, TM-20, TM-30 (Required) |
+| TM-40C | Movement & Maneuver WFF | WFF Functional | 3 days | 24 | TM-10, TM-20, TM-30 (Required) |
+| TM-40D | Sustainment WFF | WFF Functional | 3 days | 24 | TM-10, TM-20, TM-30 (Required) |
+| TM-40E | Protection WFF | WFF Functional | 3 days | 24 | TM-10, TM-20, TM-30 (Required) |
+| TM-40F | Mission Command WFF | WFF Functional | 3 days | 24 | TM-10, TM-20, TM-30 (Required) |
+| TM-40G | ORSA Specialist | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
+| TM-40H | AI Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
+| TM-40I | ML Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
+| TM-40J | Program Manager | Specialist | 3 days | 24 | TM-10, TM-20, TM-30 (Required) |
+| TM-40K | Knowledge Manager | Specialist | 3 days | 24 | TM-10, TM-20, TM-30 (Required) |
+| TM-40L | Software Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
+| TM-50G | Advanced ORSA | Advanced Specialist | 5 days | 40 | TM-40G (Required) |
+| TM-50H | Advanced AI Engineer | Advanced Specialist | 5 days | 40 | TM-40H (Required) |
+| TM-50I | Advanced ML Engineer | Advanced Specialist | 5 days | 40 | TM-40I (Required) |
+| TM-50J | Advanced Program Manager | Advanced Specialist | 3 days | 24 | TM-40J (Required) |
+| TM-50K | Advanced Knowledge Manager | Advanced Specialist | 3 days | 24 | TM-40K (Required) |
+| TM-50L | Advanced Software Engineer | Advanced Specialist | 5 days | 40 | TM-40L (Required) |
 
-**Total program hours (full progression to any single specialist track):** 133 hours (TM-10 through TM-40G/H/I/L)
+> **NOTE:** TM-40A–F (WFF functional tracks) require TM-10, TM-20, and TM-30 as hard prerequisites. TM-40G–L (specialist tracks) and TM-50G–L (advanced specialist tracks) also require TM-30 as a hard prerequisite. There are NO TM-50A–F tracks.
+
+**Total program hours (full progression to any single WFF or specialist track):** 133 hours (TM-10 through TM-40G/H/I/L); 97 hours (TM-10 through TM-40A–F)
+**Total program hours (full progression to any single advanced specialist track):** 173 hours (TM-10 through TM-50G/H/I/L)
 
 ### 2-2. Training Philosophy
 
@@ -413,6 +427,12 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 | TM-10 | TM-20 certified; 90 days active MSS use | 10:1 |
 | TM-20 | TM-30 certified; 6+ months Foundry build experience; able to troubleshoot all TM-20 labs | 8:1 |
 | TM-30 | TM-40 (any track) or C2DAO SME designation; able to conduct design critiques | 6:1 |
+| TM-40A (Intel WFF) | TM-40A certified; G2/S2 Intel functional background; TM-30 proficiency | 8:1 |
+| TM-40B (Fires WFF) | TM-40B certified; Fires/FSCOORD functional background; TM-30 proficiency | 8:1 |
+| TM-40C (M2 WFF) | TM-40C certified; G3/S3 movement and maneuver background; TM-30 proficiency | 8:1 |
+| TM-40D (SUST WFF) | TM-40D certified; G4/S4 sustainment background; TM-30 proficiency | 8:1 |
+| TM-40E (PROT WFF) | TM-40E certified; Protection functional background; TM-30 proficiency | 8:1 |
+| TM-40F (MC WFF) | TM-40F certified; Mission Command/G6 background; TM-30 proficiency | 8:1 |
 | TM-40G | FA49 or equivalent ORSA background; TM-40G certified or C2DAO SME designation | 4:1 |
 | TM-40H | AIP Logic authoring experience; C2DAO AI SME designation; TM-40H certified | 4:1 |
 | TM-40I | ML production experience; TM-40I certified; C2DAO MLE SME designation | 4:1 |
@@ -493,6 +513,7 @@ Upon successful completion (Go):
 | TM-10 | 1.5 | 5.5 | — | — | 1.0 | 8.0 |
 | TM-20 | — | 31.25 | 2.75 | — | 4.0 | 38.0* |
 | TM-30 | 1.0 | 26.0 | 1.0 | 4.75 | 4.0 | 36.75* |
+| TM-40A–F (each) | 1.0 | 15.0 | 1.0 | — | 3.0 | 20.0* |
 | TM-40G | 2.0 | 30.0 | 1.0 | — | 4.0 | 37.0* |
 | TM-40H | 3.75 | 28.25 | — | 2.0 | 4.0 | 38.0* |
 | TM-40I | 1.0 | 31.0 | — | — | 4.0 | 36.0* |
@@ -501,6 +522,8 @@ Upon successful completion (Go):
 | TM-40L | 2.0 | 30.0 | — | — | 4.0 | 36.0* |
 
 *Remainder of scheduled hours are review periods and scenario briefs not separately categorized above.
+
+> **NOTE:** TM-40A–F are 3-day/24-hour courses requiring TM-30 as a prerequisite. The hours summary above reflects approximate method distribution; exact distribution varies by WFF track and is specified in the applicable WFF Syllabus. TM-50G–L course hour breakdowns are specified in the applicable advanced specialist Syllabi and are not reproduced here.
 
 ---
 

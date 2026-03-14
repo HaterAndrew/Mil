@@ -1,27 +1,8 @@
-# CONCEPTS GUIDE — TM-40H COMPANION
-## AI ENGINEER
-## MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — TM-40H COMPANION — AI ENGINEER · MAVEN SMART SYSTEM (MSS)
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany | 2026
-
-**PURPOSE:** Develops the mental models required to design, build, and govern AI workflows on MSS effectively. Read before beginning TM-40H task instruction.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-## TABLE OF CONTENTS
-
-1. The AI Engineer's Role on MSS
-2. How LLMs Actually Work — What You Must Understand
-3. RAG and Grounding — The Operational AI Pattern
-4. Decomposing an Operational AI Use Case
-5. Agent Design Mental Model
-6. Human-in-the-Loop as a Design Constraint, Not an Add-On
-7. Prompt Engineering as Systems Engineering
-8. MSS-Specific AI Engineering Mental Models
-9. Common AI Engineering Failure Modes
+> **BLUF:** The AI engineer's job is to turn MSS data into AI-augmented workflows that increase decision velocity for operational users. This is not the same job as the ML engineer, the software engineer, or the ORSA.
+> **Purpose:** Develops the mental models required to design, build, and govern AI workflows on MSS effectively. Read before beginning TM-40H task instruction.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
@@ -422,6 +403,21 @@ If any answer requires looking it up, re-read the relevant section before procee
 
 ---
 
+---
+
+## CURRICULUM NOTES
+
+**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED before beginning TM-40H or this guide.
+
+**Advanced track:** TM-40H graduates should pursue **TM-50H (Advanced AI Engineer)** as the next step in the specialist progression. TM-50H addresses multi-agent orchestration at scale, fine-tuning integration, production AI system governance, and AI safety leadership for USAREUR-AF.
+
+**Peer specialist cross-references:**
+- **TM-40I (ML Engineer):** The boundary is explicit — ML engineers build and own the model; AI engineers consume its outputs in AIP Logic orchestration. Coordinate at the model/workflow interface before any production deployment.
+- **TM-40L (Software Engineer):** AI workflow outputs delivered through OSDK applications require SWE implementation. Coordinate on application architecture and CBAC compliance.
+- **TM-40G (ORSA):** AI workflows that automate ORSA-style synthesis still require ORSA methodology review. An AI-generated analysis is not a decision product until a qualified ORSA validates the analytical approach.
+
+**WFF awareness:** WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command) are the primary consumers of AI-augmented workflows. Every AI workflow must be designed for the specific WFF operational context: an Intelligence (TM-40A) assessment workflow has different human-review requirements than a Sustainment (TM-40D) LOGSTAT synthesis. Match the human-in-the-loop design to the WFF staff section's product authority and decision timeline.
+
 *CONCEPTS GUIDE — TM-40H COMPANION, AI ENGINEER, MAVEN SMART SYSTEM (MSS)*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026*
-*Distribution restriction: DRAFT — Not yet approved for distribution.*
+*Distribution restriction: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*

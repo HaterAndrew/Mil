@@ -6,7 +6,7 @@
 | **Level** | TM-30 (Advanced Builder — data-adjacent specialists) |
 | **Duration** | 5 days (40 hours) |
 | **Prerequisite** | TM-10 and TM-20 complete (both Go evaluations on file) |
-| **Audience** | 17/25-series, S6/G6, G2/G9, operational data analysts, staff assigned to advanced data product design |
+| **Audience** | 17/25-series signal soldiers, S6/G6 staff, G2 intelligence analysts, G9 civil affairs specialists, operational data analysts |
 | **Format** | Instructor-led lab + design workshop + practical exercise |
 | **Location** | MSS Training Environment |
 
@@ -26,7 +26,7 @@
 | 4 | Configure a scheduled pipeline with email alerting on build failure |
 | 5 | Conduct advanced Contour analysis: pivot tables, calculated columns, parameter controls, saved analysis views |
 | 6 | Build a multi-object Quiver dashboard with linked views and cross-object filter propagation |
-| 7 | Configure (not author) an AIP Logic workflow — connect inputs, outputs, trigger conditions, and interpret lineage graphs |
+| 7 | Configure (not author) an AIP Logic workflow — connect inputs, outputs, trigger conditions, and interpret lineage graphs. **Scope note:** TM-30 covers UI-based configuration of existing AIP Logic workflows only. Authoring AI models, writing prompts, or creating new Agent Studio workflows requires TM-40H (AI Engineer). |
 | 8 | Execute the full C2DAO promotion workflow from branch creation through data steward approval, including responding to steward feedback |
 
 ---
@@ -59,6 +59,8 @@ Complete **7+ duty days before Day 1:**
 | 1515–1700 | 4 | Lab | Design exercise: build a 3-page operations dashboard (portfolio → unit detail → historical trend); instructor critique |
 
 **Evening reading:** TM-30, Chapter 3 (Advanced Pipeline Builder — join and aggregation sections).
+
+> **Supplemental self-study (optional, after evening reading):** Palantir Developers — *Workshop | Creating What If Analyses with Scenarios*, *Workshop | Saving your What If Analyses*, *Workshop | Loading and Applying Scenarios*, *Workshop | How to Preload States in Foundry Workshop Applications*. These four videos cover the Workshop Scenarios feature (what-if analysis and preloaded state) not covered in the Day 1 lab blocks. Instructors with slack time may incorporate one during the Day 1 afternoon design exercise.
 
 ---
 
@@ -122,10 +124,11 @@ Complete **7+ duty days before Day 1:**
 | 0800–0900 | 19 | Lab | Full C2DAO promotion workflow: branch → change → description → submit → respond to feedback → approval |
 | 0900–1000 | 20 | Review | Full-stack review: trace raw source → pipeline → Ontology → Workshop → governance; identify production-readiness gaps |
 | 1000–1015 | — | Break | |
-| 1015–1100 | 21 | Brief | Practical exercise scenario brief; planning and design time (document design before building) |
-| 1100–1200 | — | Buffer | Questions / open lab — resolve tool access or environment issues before evaluation |
+| 1015–1100 | 21 | Brief | Practical exercise scenario brief; **design planning time** — document Ontology schema on paper before touching the platform. Design document submitted to evaluator before build phase begins. |
+| 1100–1130 | — | **Design review** | Evaluator reviews Ontology design against 6-item rubric (see Design Rubric section below). Trainees with fatal design flaws correct before proceeding. Clock does not start until design is approved. |
+| 1130–1200 | — | Buffer | Open lab — resolve any tool access or environment issues; evaluator available for clarifying questions (no design guidance) |
 | 1200–1300 | — | Lunch | |
-| 1300–1700 | 22 | **Eval** | **Practical exercise (evaluated)** |
+| 1300–1700 | 22 | **Eval** | **Practical exercise (evaluated)** — build phase begins after lunch; design document already approved |
 
 ---
 
@@ -161,9 +164,38 @@ Complete **7+ duty days before Day 1:**
 
 ---
 
+## Ontology Design Rubric — 6-Item Evaluation Criteria
+
+The design document submitted on Day 5 is evaluated against the following six items before build begins. Each item is scored 0 (fail), 1 (partial), or 2 (full). Go requires ≥9/12 with no zero-score item.
+
+| # | Criterion | Score 0 | Score 1 | Score 2 |
+|---|---|---|---|---|
+| 1 | **Entity identification** — Object Types match the domain entities in the mission requirement | Object Types are wrong or missing entirely | Object Types identified but conflated or over-scoped | Object Types correctly and minimally represent domain entities |
+| 2 | **Relationship mapping** — Link Types reflect real relationships; cardinality is correct | No Link Types defined, or Link Types between wrong Object Types | Link Types identified but cardinality wrong (e.g., many-to-many where one-to-many is correct) | Link Types correct; cardinality correct; direction documented |
+| 3 | **Property type correctness** — Each property has the correct Foundry type | Multiple type errors (strings for dates, etc.) | One type error that would not block downstream analytics | All property types correct; no type-as-string workarounds |
+| 4 | **Primary Key selection** — PK uniquely identifies each object; natural or synthetic key is appropriate | No PK defined, or PK is non-unique | PK defined but is fragile (composite, user-entered, or non-stable) | PK is stable, unique, and sourced from a reliable field |
+| 5 | **Action scope** — Actions are narrowly scoped; write rules touch only required properties | Actions write to properties outside stated requirements | Action scope is too broad but not harmful | Actions narrowly scoped; parameter types appropriate; access restriction defined |
+| 6 | **Naming convention compliance** — Object Types, properties, and pipelines follow C2DAO naming standards | Multiple naming violations | One naming violation | Full compliance with USAREUR-AF C2DAO naming standards |
+
+---
+
 ## Go Criteria
 
 Your design document is reviewed before you build — a fatally-flawed schema must be corrected before the build phase starts. The promotion workflow requires defending design choices. "The instructor said to" is not an acceptable answer. Be prepared to explain cardinality choices, property types, and Action scope.
+
+---
+
+## No-Go Remediation
+
+| Outcome | Action |
+|---|---|
+| **No-Go — design rubric score below threshold or zero-score item** | Redesign required. Review TM-30, Chapter 4 (Ontology design methodology). Re-evaluation scheduled through unit training coordinator; full Day 5 re-run required. |
+| **No-Go — pipeline produces incorrect output** | Review TM-30, Chapter 3 (multi-source joins and append mode). Re-evaluation required. |
+| **No-Go — Workshop navigation or conditional logic fails** | Review TM-30, Chapter 2 (advanced Workshop). Re-evaluation required. |
+| **No-Go — Quiver linked views not configured** | Review TM-30, Chapter 6 (Quiver linked views). This is the most common single-task failure — complete the Quiver self-study exercise in TM-30 before rescheduling. |
+| **No-Go — promotion description incomplete** | Review TM-30, Chapter 7. Same-day retry authorized at evaluator discretion for this item only. |
+
+Re-evaluation requires full repetition of the practical exercise (all tasks), not just the failed tasks. Schedule through unit training coordinator. TM-30 qualification cannot be self-certified.
 
 ---
 
@@ -175,8 +207,39 @@ Your design document is reviewed before you build — a fatally-flawed schema mu
 | Multi-source joins | Both datasets must be in the same Foundry project or cross-project referenced. A join on inaccessible data silently returns 0 rows. Check row counts after every join |
 | Append mode | Configure Append mode **before** the first run. Running once in Overwrite then switching gives you 3 records after two Append runs, not 2 |
 | Contour pivot tables | Different from Excel — read TM-30, Section 5-2 before the Contour lab |
-| Quiver linked views | Filter links must be explicitly configured — selecting an object does not automatically filter another view. Most common practical exercise failure point |
+| Quiver linked views | **Most common practical exercise No-Go.** Filter links must be explicitly configured — selecting an object does NOT automatically filter another view. Complete the Quiver self-study in TM-30, Chapter 6 the evening before Day 5. Do not skip this. |
+| AIP Logic scope | TM-30 covers configuration only — connecting triggers, inputs, outputs on existing workflows. If the scenario asks you to author a new AI model or write prompts, that is out of scope. Raise it immediately rather than attempting it. |
 | Promotion description | "Updated Workshop application" fails. "Changed unit filter to include inactive units per S3 requirement dated 10MAR26" passes |
+
+---
+
+## Continuation
+
+TM-30 is the gateway to **all** TM-40 tracks — both WFF (TM-40A–F) and Specialist (TM-40G–L). TM-30 completion is a **hard prerequisite — no waivers** — for every track in the TM-40 series.
+
+**WFF Tracks (TM-40A–F) — prereq: TM-30 (required):**
+
+| Track | WFF | Audience |
+|---|---|---|
+| TM-40A | Intelligence | G2/S2 staff, targeting officers, all-source analysts |
+| TM-40B | Fires | FSOs, FSEs, targeting officers, fires NCOs |
+| TM-40C | Movement & Maneuver | G3/S3 staff, operations officers, maneuver planners |
+| TM-40D | Sustainment | G4/S4 staff, logistics officers, supply chain managers |
+| TM-40E | Protection | FP officers, CBRN officers, provost marshal staff |
+| TM-40F | Mission Command | Battle captains, XOs, CDRs, MC-function staff |
+
+**Specialist Tracks (TM-40G–L) — prereq: TM-30 (required):**
+
+| Track | Specialist Role | Advanced Level |
+|---|---|---|
+| TM-40G | ORSA | TM-50G (Advanced ORSA) |
+| TM-40H | AI Engineer | TM-50H (Advanced AI Engineer) |
+| TM-40I | ML Engineer | TM-50I (Advanced ML Engineer) |
+| TM-40J | Program Manager | TM-50J (Advanced Program Manager) |
+| TM-40K | Knowledge Manager | TM-50K (Advanced Knowledge Manager) |
+| TM-40L | Software Engineer | TM-50L (Advanced Software Engineer) |
+
+**TM-50A–F do not exist.** The advanced series is TM-50G–L only. Any reference to TM-50A through TM-50F is stale and incorrect.
 
 ---
 

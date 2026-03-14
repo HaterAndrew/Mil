@@ -1,26 +1,8 @@
-# CONCEPTS GUIDE — TM-40G COMPANION
-## OPERATIONS RESEARCH / SYSTEMS ANALYSIS (ORSA)
-## MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — TM-40G COMPANION — OPERATIONS RESEARCH / SYSTEMS ANALYSIS (ORSA) · MAVEN SMART SYSTEM (MSS)
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany | 2026
-
-**PURPOSE:** Develops the analytical mental models required to operate effectively as an ORSA on MSS. Read before beginning TM-40G task instruction.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-## TABLE OF CONTENTS
-
-1. The ORSA's Job on MSS
-2. How to Decompose a Commander's Question
-3. Choosing the Right Method
-4. Statistical Thinking in an Operational Context
-5. Working with Operational Data Quality
-6. The Analytical Product Mental Model
-7. MSS/Foundry-Specific ORSA Mental Models
-8. Common ORSA Failure Modes on MSS
+> **BLUF:** The ORSA's primary output is a commander's decision product. Every other capability — modeling, visualization, data access — exists in service of that product.
+> **Purpose:** Develops the analytical mental models required to operate effectively as an ORSA on MSS. Read before beginning TM-40G task instruction.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
@@ -337,6 +319,21 @@ Before delivering any analytical product, confirm each item.
 
 ---
 
+---
+
+## CURRICULUM NOTES
+
+**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED before beginning TM-40G or this guide. Graduate-level quantitative background (statistics, R or Python) is separately required.
+
+**Advanced track:** TM-40G graduates should pursue **TM-50G (Advanced ORSA)** as the next step in the specialist progression. TM-50G addresses Bayesian methods, complex simulation, multi-objective optimization, and campaign analysis support at theater level.
+
+**Peer specialist cross-references:**
+- **TM-40I (ML Engineer):** Coordinate when a recurring prediction requirement exceeds one-time ORSA analysis — the MLE operationalizes the analytical approach as a production pipeline.
+- **TM-40H (AI Engineer):** Coordinate when ORSA decision products need to be wrapped in AI-assisted synthesis or automated SITREP generation workflows.
+- **TM-40L (Software Engineer):** Coordinate when ORSA products require production-grade pipeline implementation, OSDK delivery surfaces, or custom visualization logic.
+
+**WFF awareness:** ORSA products serve all six Warfighting Functions. TM-40A (Intelligence), TM-40B (Fires), TM-40C (Movement and Maneuver), TM-40D (Sustainment), TM-40E (Protection), and TM-40F (Mission Command) personnel are the primary consumers of ORSA decision products. Apply the decomposition framework in Section 2 to every WFF tasker — the WFF function determines the decision, the information requirement, and the appropriate method.
+
 *This guide is a prerequisite companion to TM-40G. Proceed to TM-40G for task-based instruction in statistical modeling, time series analysis, simulation, optimization, and decision product delivery on MSS/Foundry.*
 
 ---
@@ -344,4 +341,4 @@ Before delivering any analytical product, confirm each item.
 **HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
 Wiesbaden, Germany | 2026
 
-DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.
+DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.

@@ -4,9 +4,23 @@
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40K, Knowledge Manager Technical Manual (and TM-10 through TM-30) |
+| **Prerequisite** | TM-30 REQUIRED; TM-40K — Knowledge Manager Technical Manual (and TM-10 through TM-20) |
 | **Duration** | 2–3 hours |
 | **Environment** | MSS with Workshop, form builder, and lessons learned dataset access — see ENVIRONMENT_SETUP.md |
+
+## COMPANION RESOURCES
+
+| Resource | Reference |
+|----------|-----------|
+| Technical Manual | TM-40K — Knowledge Manager |
+| Syllabus | SYLLABUS_TM40K |
+| Pre-Exercise Exam | EXAM_TM40K_PRE |
+| Post-Exercise Exam | EXAM_TM40K_POST |
+| Continuation Track | TM-50K — Advanced Knowledge Manager |
+
+## WFF AWARENESS
+
+The lessons learned repository and submission form built in this exercise are consumed by all WFF track personnel (TM-40A–F) — intelligence, fires, movement & maneuver, sustainment, protection, and mission command operators all contribute to and draw from institutional knowledge repositories. Evaluators should assess whether the dashboard and taxonomy are usable by non-KM-specialist audiences.
 
 ## SCENARIO
 
@@ -101,6 +115,10 @@ Create a Workshop dashboard with:
 - Task 1 is the most variable in timing (30–60 min) — prior Workshop experience is the primary factor
 - Task 4 (reconciliation note) typically takes 10–15 min for participants who locate the conflict quickly
 - If participant completes early, ask them to explain the 6-category taxonomy and why they chose it for a specific ambiguous document (verbal check)
+
+## NEXT STEPS
+
+Participants who receive an overall Go on EX-40K are eligible to enroll in **TM-50K — Advanced Knowledge Manager**. TM-50K extends into enterprise knowledge architecture, cross-command taxonomy alignment, and AI-assisted knowledge capture at scale. No TM-50A–F tracks exist.
 
 ## ENVIRONMENT SETUP
 

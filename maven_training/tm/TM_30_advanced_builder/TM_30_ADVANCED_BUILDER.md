@@ -1,96 +1,12 @@
 # TM-30 — MAVEN SMART SYSTEM (MSS)
-## ADVANCED NO-CODE BUILDER TECHNICAL MANUAL
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-
-2026
-
-**Version 1.1 | March 2026**
-
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; Data Literacy Technical Reference (all required).
-**APPLIES TO:** Data-adjacent specialists (17/25-series, S6/G6/G2/G9, operational data analysts). Covers Foundry Workshop, Pipeline Builder, Contour, Quiver, AIP Logic (UI only).
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-**NOTE TO INSTRUCTORS:** Instructor qualification for TM-30 delivery requires TM-40 certification or C2DAO-endorsed data engineer status. Co-instruction with a qualified C2DAO mentor is required for the first delivery. Annual recertification required. A design evaluation rubric for TM-30 Ontology design tasks is available from C2DAO (referenced in MTP Appendix C). Estimated training delivery: 3–5 days depending on cohort size and prior experience. Recommended student-instructor ratio: 8:1 maximum. See Mission Training Plan (MTP) Section 8 for full instructor qualification and training execution standards.
-
----
-
-## SAFETY SUMMARY
-
-Advanced builders operate at the level where decisions directly affect production data environments
-shared across the USAREUR-AF formation. Errors at this level do not affect one application — they
-affect readiness reporting, operational picture, and coalition data sharing for the entire AOR.
-
-Before operating at TM-30 level:
-
-- Coordinate with the designated Data Steward before modifying any shared production resource
-- Never develop or test in the production environment — use a dedicated branch
-- Understand the downstream impact of ontology and schema changes before publishing
-- All production promotions require peer review and Data Steward sign-off per C2DAO governance
-- AIP Logic configurations require authorization review before activation in production
-
-**WARNING:** Deleting or restructuring an Object Type that is referenced by active Workshop
-applications, Actions, or Quiver analyses will break those downstream products without warning.
-Always audit downstream dependencies before modifying shared ontology resources.
-
-**CAUTION:** Pipeline Builder joins on large, unfiltered datasets can generate outputs that exceed
-storage quotas or degrade platform performance for other users. Profile source datasets before
-building multi-source joins in production.
-
----
-
-## TABLE OF CONTENTS
-
-- [Chapter 1 — Introduction and Scope](#chapter-1--introduction-and-scope)
-  - [1-1. Scope and Purpose](#1-1-scope-and-purpose)
-  - [1-2. What TM-30 Advances Beyond TM-20](#1-2-what-tm-30-advances-beyond-tm-20)
-  - [1-3. USAREUR-AF Operational Context](#1-3-usareur-af-operational-context)
-  - [1-4. Governing Policy References](#1-4-governing-policy-references)
-  - [1-5. Design Principles for Advanced Builders](#1-5-design-principles-for-advanced-builders)
-  - [1-6. TM-30 Scope Boundaries](#1-6-tm-30-scope-boundaries)
-- [Chapter 2 — Advanced Workshop Applications](#chapter-2--advanced-workshop-applications)
-  - [TASK 2-1: CONFIGURE APPLICATION VARIABLES AND STATE MANAGEMENT](#task-2-1-configure-application-variables-and-state-management)
-  - [TASK 2-2: IMPLEMENT CONDITIONAL LOGIC AND VISIBILITY RULES](#task-2-2-implement-conditional-logic-and-visibility-rules)
-  - [TASK 2-3: DESIGN A MULTI-PAGE WORKSHOP APPLICATION](#task-2-3-design-a-multi-page-workshop-application)
-  - [TASK 2-4: CONFIGURE COMPLEX WIDGETS (MAPS, GANTT, NETWORK GRAPH)](#task-2-4-configure-complex-widgets-maps-gantt-network-graph)
-- [Chapter 3 — Advanced Pipeline Builder](#chapter-3--advanced-pipeline-builder)
-  - [TASK 3-1: PERFORM A MULTI-SOURCE JOIN](#task-3-1-perform-a-multi-source-join)
-  - [TASK 3-2: CONFIGURE DATASET AGGREGATIONS](#task-3-2-configure-dataset-aggregations)
-  - [TASK 3-3: IMPLEMENT AN ADVANCED TRANSFORMATION PATTERN](#task-3-3-implement-an-advanced-transformation-pattern)
-- [Chapter 4 — Ontology Design Through the UI](#chapter-4--ontology-design-through-the-ui)
-  - [TASK 4-1: DESIGN AND CREATE AN OBJECT TYPE FROM A COMMAND REQUIREMENT](#task-4-1-design-and-create-an-object-type-from-a-command-requirement)
-  - [TASK 4-2: CREATE A LINK TYPE AND CONFIGURE CARDINALITY](#task-4-2-create-a-link-type-and-configure-cardinality)
-  - [TASK 4-3: DESIGN A MULTI-STEP ACTION WITH APPROVAL ROUTING](#task-4-3-design-a-multi-step-action-with-approval-routing)
-- [Chapter 5 — Advanced Analytics: Contour and Quiver](#chapter-5--advanced-analytics-contour-and-quiver)
-  - [TASK 5-1: BUILD AN ADVANCED CONTOUR ANALYSIS WITH PIVOT AND FORMULA LOGIC](#task-5-1-build-an-advanced-contour-analysis-with-pivot-and-formula-logic)
-  - [TASK 5-2: BUILD A MULTI-OBJECT QUIVER DASHBOARD](#task-5-2-build-a-multi-object-quiver-dashboard)
-- [Chapter 6 — AIP Logic Configuration](#chapter-6--aip-logic-configuration)
-  - [6-1. TM-30 vs. TM-40 Scope in AIP Logic](#6-1-tm-30-vs-tm-40-scope-in-aip-logic)
-  - [TASK 6-1: CONFIGURE AIP LOGIC WORKFLOW PARAMETERS](#task-6-1-configure-aip-logic-workflow-parameters)
-  - [TASK 6-2: CONFIGURE NATURAL LANGUAGE QUERY ON AN OBJECT TYPE](#task-6-2-configure-natural-language-query-on-an-object-type)
-- [Chapter 7 — Data Governance and Lineage](#chapter-7--data-governance-and-lineage)
-  - [TASK 7-1: PERFORM A DOWNSTREAM IMPACT ASSESSMENT USING LINEAGE](#task-7-1-perform-a-downstream-impact-assessment-using-lineage)
-  - [TASK 7-2: EXECUTE A DATA QUALITY INVESTIGATION](#task-7-2-execute-a-data-quality-investigation)
-  - [TASK 7-3: CONFIGURE ACCESS CONTROLS ON A WORKSHOP APPLICATION](#task-7-3-configure-access-controls-on-a-workshop-application)
-- [Chapter 8 — Environment Management](#chapter-8--environment-management)
-  - [TASK 8-1: CREATE AND CONFIGURE A DEVELOPMENT BRANCH](#task-8-1-create-and-configure-a-development-branch)
-  - [TASK 8-2: CONDUCT A PEER REVIEW](#task-8-2-conduct-a-peer-review)
-  - [TASK 8-3: PROMOTE CHANGES TO PRODUCTION](#task-8-3-promote-changes-to-production)
-- [Chapter 9 — Standards, Conventions, and Best Practices](#chapter-9--standards-conventions-and-best-practices)
-- [Appendix A — Advanced Builder Checklists](#appendix-a--advanced-builder-checklists)
-- [Appendix B — Design Patterns Reference](#appendix-b--design-patterns-reference)
-- [Glossary](#glossary)
+> **BLUF:** TM-30 qualifies data-adjacent specialists to build advanced no-code solutions on the Maven Smart System — complex Workshop applications, multi-source pipelines, well-designed ontology models, and advanced analytics — while operating within USAREUR-AF C2DAO governance requirements.
+> **Prereqs:** TM-10, Maven User; TM-20, Builder; Data Literacy Technical Reference (all required).
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 ---
 
 # CHAPTER 1 — INTRODUCTION AND SCOPE
-
-**BLUF:** TM-30 qualifies data-adjacent specialists to build advanced no-code solutions on the
-Maven Smart System — complex Workshop applications, multi-source pipelines, well-designed ontology
-models, and advanced analytics — while operating within USAREUR-AF C2DAO governance requirements.
 
 ## 1-1. Scope and Purpose
 
@@ -268,6 +184,36 @@ TM-30 covers the full range of no-code, UI-based advanced building on MSS. Certa
 | Writing custom data quality checks in code | NO — TM-40 | Refer to TM-40L |
 
 If a requirement is not in this table, apply the following rule: if it requires writing, editing, or debugging code in any language — it is TM-40 scope.
+
+---
+
+## 1-7. Advancement from TM-30 — Next Steps
+
+TM-30 qualification enables advancement to the specialist tracks (TM-40G–L). All six specialist tracks require TM-30 as a hard prerequisite — TM-20 alone is not sufficient.
+
+| Track | Title | Specialty |
+|---|---|---|
+| TM-40G | ORSA | Operational research and systems analysis; quantitative modeling, statistical analysis, decision support |
+| TM-40H | AI Engineer | AIP Logic workflow authoring, TypeScript Functions on Objects (FOO), Agent Studio |
+| TM-40I | ML Engineer | Machine learning pipeline development, model integration, PySpark transforms |
+| TM-40J | Program Manager | Data product program management, delivery coordination, stakeholder engagement |
+| TM-40K | Knowledge Manager | Organizational knowledge architecture, data product documentation, taxonomy management |
+| TM-40L | Software Engineer | Python/PySpark transforms, TypeScript, OSDK integration, source connector configuration |
+
+Each TM-40G–L track has a corresponding advanced track:
+
+| Advanced Track | Title | Prerequisite |
+|---|---|---|
+| TM-50G | Advanced ORSA | TM-40G (required) |
+| TM-50H | Advanced AI Engineer | TM-40H (required) |
+| TM-50I | Advanced ML Engineer | TM-40I (required) |
+| TM-50J | Advanced Program Manager | TM-40J (required) |
+| TM-50K | Advanced Knowledge Manager | TM-40K (required) |
+| TM-50L | Advanced Software Engineer | TM-40L (required) |
+
+> **NOTE:** There are no TM-50A through TM-50F tracks. Advanced-level training exists only for specialist tracks (G–L). WFF tracks (TM-40A–F) do not have a TM-50 continuation.
+
+> **NOTE:** Select the specialist track that aligns to your assigned duties and billet. If uncertain, consult the USAREUR-AF C2DAO training coordinator. Personnel are expected to complete one specialist track; concurrent enrollment in multiple TM-40 specialist tracks requires C2DAO approval.
 
 ---
 
@@ -585,6 +531,8 @@ If a data source is known to have reliability issues (e.g., a feed that occasion
 
 Do not present uncertain data as authoritative. It is better to acknowledge uncertainty than to have a commander brief wrong numbers.
 
+> **NOTE — Additional Workshop capability (self-study):** TM-30 class time covers multi-page navigation, variable passing, and conditional logic. The Workshop Scenarios feature (what-if analysis, saved scenario states, preloaded application states) is covered in four Palantir Developers reference videos: *Workshop | Creating What If Analyses with Scenarios*, *Workshop | Saving your What If Analyses*, *Workshop | Loading and Applying Scenarios*, and *Workshop | How to Preload States in Foundry Workshop Applications*. These are UI-based capabilities within TM-30 scope that builders can apply to decision-support applications requiring scenario comparison.
+
 ---
 
 # CHAPTER 3 — ADVANCED PIPELINE BUILDER
@@ -803,6 +751,8 @@ Example: `log_vehicle-fleet-maintenance-join_readiness-rollup_v1`
 - **Data Steward:** Who is responsible for this pipeline?
 
 3-6. **Dataset partitioning awareness.** Advanced builders do not configure partitioning in the UI — that is a TM-40 code-level task — but must design with it in mind. A partitioned dataset stores data in segments organized by a partition key (typically a date column). Apply date filters on partition keys as early as possible in the pipeline (immediately after the source node, before any joins). Ask the Data Steward whether a source dataset is partitioned and on what key. A missing or late-applied partition filter is the most common cause of slow pipelines.
+
+> **NOTE — Pipeline health monitoring (self-study):** Once pipelines are in production, monitoring their health is a TM-30 responsibility. The Pipeline Monitoring capability is covered in two Palantir Developers reference videos: *Pipeline Monitoring | How to Start Monitoring Data Health in Palantir Foundry* and *Pipeline Monitoring | How to Monitor Health Across a Pipeline in Palantir Foundry*. Similarly, the Schedules feature (configuration, metrics, and trigger management) is covered in three videos: *Schedules | Creation, Configuration, and Execution*, *Schedules | Management, Metrics, and Triggers*, and *Schedules | Separating Data Ownership within a Pipeline*. These tools are UI-based and within TM-30 scope.
 
 ---
 
@@ -1140,6 +1090,8 @@ products.
 5. Preview the metric on sample objects.
 6. Save. The metric is now available in all Quiver analyses on this Object Type.
 
+> **NOTE — Extended Quiver capability (self-study):** The Quiver tasks above cover multi-object dashboards and linked views. Four Palantir Developers reference videos go deeper on specific capabilities: *Quiver | How to Navigate the Dependency Graph and Expand your Analysis* (tracing upstream dependencies within a Quiver analysis), *Quiver | How to Use Parameters in Your Analysis* (parameter-driven filtering), *Quiver | How to Perform Ad-Hoc Aggregations*, and *Quiver | Calculating KPIs for Time Series Data in Palantir Foundry*. The time-series KPI video is particularly relevant for readiness trend analysis use cases.
+
 ---
 
 # CHAPTER 6 — AIP LOGIC CONFIGURATION
@@ -1433,6 +1385,8 @@ Access control levels on the platform:
 6. Document the access configuration in the application description: "Authorized for
    USAREUR-AF G4 staff (viewer), G4 data team (editor)."
 7. Test access by verifying a member of each access group can interact as expected.
+
+> **NOTE — Additional access management reference (self-study):** Two Palantir Developers reference videos extend the access control content in this chapter: *Security | How to use Projects to Help Enable your Business to Scale* (using Foundry Projects as the primary access boundary for scaling data products to many users) and *Security | How to Debug a User's Access to a File* (diagnosing why a specific user cannot access a resource — useful when access complaints arrive from operators). Both are UI-based procedures within TM-30 scope.
 
 ---
 
@@ -2047,4 +2001,4 @@ data-driven operational interfaces using configurable widgets without writing co
 
 *TM-30 — Maven Smart System Advanced No-Code Builder Technical Manual*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026*
-*Distribution Restriction: DRAFT — Not yet approved for distribution.*
+*Distribution Restriction: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*

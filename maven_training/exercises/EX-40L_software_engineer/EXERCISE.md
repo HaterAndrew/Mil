@@ -4,9 +4,23 @@
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40L, Software Engineer Technical Manual (and TM-10 through TM-30) |
+| **Prerequisite** | TM-30 REQUIRED; TM-40L — Software Engineer Technical Manual (and TM-10 through TM-20) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS with Python Transforms, TypeScript/OSDK access, Code Workbook — see ENVIRONMENT_SETUP.md |
+
+## COMPANION RESOURCES
+
+| Resource | Reference |
+|----------|-----------|
+| Technical Manual | TM-40L — Software Engineer |
+| Syllabus | SYLLABUS_TM40L |
+| Pre-Exercise Exam | EXAM_TM40L_PRE |
+| Post-Exercise Exam | EXAM_TM40L_POST |
+| Continuation Track | TM-50L — Advanced Software Engineer |
+
+## WFF AWARENESS
+
+The personnel readiness pipeline and OSDK action built in this exercise are operational tools consumed by WFF track personnel (TM-40A–F) — the readiness feed informs mission command, maneuver, and sustainment planning across echelons. Evaluators should verify that the TypeScript action interface and authorization model are appropriate for multi-track, multi-role consumer access.
 
 ## SCENARIO
 
@@ -110,6 +124,10 @@ Self-review your Python Transform against the TM-40L code quality checklist:
 - Total exercise routinely runs 4+ hours — strongly recommend splitting over two sessions
 - Task 4 (TypeScript Action) is the most common time sink; TypeScript setup in Foundry can take 30–45 min for first-time users
 - If participant is significantly behind at Task 3, offer to split the exercise; mark Tasks 1–2 and assess Tasks 3–5 separately
+
+## NEXT STEPS
+
+Participants who receive an overall Go on EX-40L are eligible to enroll in **TM-50L — Advanced Software Engineer**. TM-50L extends into CI/CD pipeline engineering, automated testing frameworks, and production Foundry application deployment. No TM-50A–F tracks exist.
 
 ## ENVIRONMENT SETUP
 

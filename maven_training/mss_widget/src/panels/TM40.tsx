@@ -18,7 +18,7 @@ export default function TM40({ showPanel }: Props) {
 
       <div className="callout bluf">
         <div className="callout-label">BLUF</div>
-        <div className="callout-body">The TM-40 Technical Specialist tracks (TM-40G&ndash;L) cover developer-level capabilities requiring coding, advanced tooling, or specialized technical expertise &mdash; prerequisite TM-30. Warfighting Function tracks (TM-40A&ndash;F) are available by functional area and require only TM-20. Select your track using the MOS/Role table on the HOME tab.</div>
+        <div className="callout-body">The TM-40 Technical Specialist tracks (TM-40G&ndash;L) cover developer-level capabilities requiring coding, advanced tooling, or specialized technical expertise &mdash; prerequisite: TM-30 complete. For Warfighting Function tracks (TM-40A&ndash;F), use the HOME tab track selector or navigate to the Specialist Tracks tab.</div>
       </div>
 
       <div className="track-grid">
@@ -93,17 +93,17 @@ export default function TM40({ showPanel }: Props) {
             <span className="track-chip">TM-30 Required</span>
           </div>
           <div className="track-body">
-            <div className="track-name">PM Dashboards, Portfolio Analysis &amp; Reporting Pipelines</div>
-            <div className="track-audience">PMs &bull; Resource managers &bull; G8/S8 &bull; Acquisition professionals</div>
+            <div className="track-name">Agile Project Management for Data &amp; AI Capabilities</div>
+            <div className="track-audience">PMs &bull; Product owners &bull; G8/S8 &bull; Technical team leads</div>
             <ul className="track-topics">
-              <li>Design program data architecture: Program, Milestone, Resource, Risk Object Types</li>
-              <li>Ingest milestone and budget data from GFEBS/GCSS-A/IMS via Pipeline Builder</li>
-              <li>Build milestone tracking dashboards with RAG status and automated variance computation</li>
-              <li>Visualize budget execution (obligation rates) and flag at-risk funding lines</li>
-              <li>Conduct portfolio analysis across programs in Contour and Quiver</li>
-              <li>Build automated reporting pipelines with scheduled refresh and failure alerting</li>
-              <li>Produce commander-ready IPR/EAB products from MSS without manual PowerPoint updates</li>
-              <li>Apply access management, classification, and data stewardship for PM applications</li>
+              <li>Stand up Agile project structures (backlog, sprint cadence, ceremonies) for data and AI builds</li>
+              <li>Write user stories and acceptance criteria that TM-40G&ndash;L developers can execute without ambiguity</li>
+              <li>Manage the ML/AI project lifecycle: six phases from Problem Definition through Sustainment</li>
+              <li>Translate commander requirements into prioritized, sprint-ready backlogs</li>
+              <li>Specify project tracking systems (sprint boards, status dashboards) for TM-40L implementation</li>
+              <li>Build and maintain risk registers; manage dependency blockers across specialist tracks</li>
+              <li>Conduct production readiness reviews against the Definition of Done before release</li>
+              <li>Execute change management plans for new MSS capability rollout to operational units</li>
             </ul>
             <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50J</div>
           </div>

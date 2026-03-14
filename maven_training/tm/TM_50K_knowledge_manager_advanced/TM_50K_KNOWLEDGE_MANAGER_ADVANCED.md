@@ -1,51 +1,10 @@
 # TM-50K — ADVANCED KNOWLEDGE MANAGEMENT
-## MAVEN SMART SYSTEM (MSS) | USAREUR-AF OPERATIONAL DATA TEAM
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA** | Wiesbaden, Germany | 2026 | Version 1.0
-
-**UNCLASSIFIED**
-Distribution: DRAFT — Not yet approved for distribution.
-
-**PREREQUISITE PUBLICATIONS:** TM-40K, Knowledge Manager (required); TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (all required)
-
-**DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
-
----
-
-> **PREREQUISITE WARNING:** TM-50K is **not required** for the majority of knowledge manager billets. It is intended for personnel with demonstrated proficiency at TM-40K level who are actively designing enterprise-level knowledge architectures, federated repositories, or cross-echelon KM systems. If you are uncertain whether TM-50K applies to your billet, consult your supervisor or the unit data steward before proceeding.
-
----
-
-## SAFETY SUMMARY
-
-TM-50K operates at the enterprise level. The decisions made by Advanced KMs propagate across Division, Corps, and Theater formations — and across coalition partner networks. Errors at this level are not local failures. They are systemic failures.
-
-Before performing any task at TM-50K level:
-
-- Every knowledge architecture decision at Corps/Theater level requires coordination with USAREUR-AF C2DAO. Do not design federated repositories, cross-unit ontologies, or shared classification-level structures without documented architecture review.
-- Cross-domain knowledge federation means managing PARALLEL network environments — not bridging between classification levels. Any workflow that moves data across classification boundaries must go through your SSO and ISSO before design, not after build.
-- AI-assisted doctrine development using AIP produces draft content only. No AI-generated doctrine, SOP, or TTP shall be published or distributed to units without review by a qualified SME and appropriate publication authority. Label all AI-assisted drafts prominently.
-- Coalition knowledge sharing with NATO partners operates under STANAG 4778 and applicable NATO Information Management Policy (IMP). NEVER share controlled information with partner nations without a signed information sharing agreement on file and OPSEC review.
-- Knowledge graphs at enterprise scale contain implicit relationship data that can reveal operational patterns, personnel vulnerabilities, and unit capabilities. Treat the knowledge graph schema itself as operationally sensitive. Do not publish graph structure documentation to unrestricted repositories.
-- Personnel expertise data at scale — skills profiles, qualifications, assignment histories across a Corps — constitutes a Privacy Act-sensitive aggregated dataset. Implement data minimization and access tiering before production deployment. Consult unit legal and S2 before enabling cross-unit expertise queries.
+> **BLUF:** TM-50K trains Army Knowledge Managers at the Corps and Theater echelon to design, federate, and sustain enterprise-scale knowledge management systems on MSS. This manual assumes mastery of all TM-40K competencies. TM-50K is not a continuation of TM-40K tasks — it is an architectural shift in responsibility, scope, and risk.
+> **Prereqs:** TM-40K, Knowledge Manager (required); TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (all required); CONCEPTS_GUIDE_TM50K_KNOWLEDGE_MANAGER_ADVANCED (read before this manual).
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: An Advanced KM who builds enterprise systems without governance structures is not building capability — they are building uncontrolled risk. Every system at this level requires defined ownership, documented architecture, security review, and a decommission plan. A system without a decommission plan will outlive its usefulness and become a liability.**
-
----
-
-## TABLE OF CONTENTS
-
-- Chapter 1 — Introduction and Scope
-- Chapter 2 — Enterprise KM Architecture (Corps/Theater Level)
-- Chapter 3 — Cross-Domain Knowledge Federation
-- Chapter 4 — AI-Assisted Doctrine and Lessons Learned at Scale
-- Chapter 5 — Coalition Knowledge Sharing (NATO/Partners)
-- Chapter 6 — Knowledge Graph Design and Maintenance
-- Chapter 7 — KM Metrics and Effectiveness Measurement
-- Chapter 8 — Institutional Memory and Knowledge Risk Management
-- Appendix A — KM Architecture Assessment Checklist
-- Appendix B — NATO/Coalition KM Standards Reference
-- Glossary
 
 ---
 
@@ -113,6 +72,19 @@ THEATER KM ARCHITECT (TM-50K)
 
 ---
 
+### 1-2A. Relationship to Other TM-50 Publications
+
+| Publication | Track | Key Overlap with TM-50K |
+|---|---|---|
+| TM-50G | ORSA Advanced | ORSA-derived lessons and analytical knowledge products |
+| TM-50H | AI Engineer Advanced | Corpus design and ontology-RAG integration (AI-assisted KM) |
+| TM-50I | ML Engineer Advanced | Feature data governance; training corpus quality architecture |
+| TM-50J | Program Manager Advanced | KM program oversight and portfolio-level knowledge governance |
+| TM-50K | Knowledge Manager Advanced | THIS DOCUMENT |
+| TM-50L | Software Engineer Advanced | Platform SDK infrastructure supporting enterprise KM systems |
+
+**WFF Operational Consumer Note.** Knowledge management at the advanced level exists to ensure that the operational insights generated across exercises, operations, and analytical work are discoverable and usable by the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). WFF practitioners are the primary end-users of validated lessons, TTPs, and doctrine products. Enterprise KM architecture must be designed with WFF operational workflows as the primary retrieval use case — if G3 (Movement and Maneuver) planners cannot find sustainment lessons relevant to their operation, the knowledge system has failed regardless of technical quality.
+
 ### 1-3. USAREUR-AF Knowledge Environment
 
 USAREUR-AF operates a complex knowledge environment driven by the European AOR mission set:
@@ -164,6 +136,10 @@ USAREUR-AF operates a complex knowledge environment driven by the European AOR m
 ---
 
 ## CHAPTER 2 — ENTERPRISE KM ARCHITECTURE (CORPS/THEATER LEVEL)
+
+> **NOTE — Palantir Developers reference:** *Product Launch: Ontology Foundations | DevCon 5* — Covers the foundational principles of Palantir Ontology design at enterprise scale, directly applicable to the Theater ontology design task in Section 2-3. Review before designing or reviewing a corps/theater-level schema. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Deep Dive: Advanced Ontology | DevCon 5* — A technical deep dive into advanced Palantir Ontology design patterns, covering the design decisions that distinguish a scalable enterprise ontology from a unit-level one. Directly reinforces the Theater ontology and federated architecture content in Sections 2-3 through 2-5. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 ### 2-1. Purpose
 
@@ -742,6 +718,8 @@ Different partner nations have different technical environments, doctrine alignm
 ---
 
 ## CHAPTER 6 — KNOWLEDGE GRAPH DESIGN AND MAINTENANCE
+
+> **NOTE — Palantir Developers reference:** *Deep Dive: Interoperability at Scale with the Multimodal Data Plane | DevCon 5* — Covers Palantir's Multimodal Data Plane, which enables knowledge federation and interoperability across heterogeneous data sources at theater scale. Directly relevant to the advanced knowledge graph architecture in Sections 6-3 and 6-4, particularly where federated repositories must interoperate. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 ### 6-1. Purpose
 
@@ -1459,7 +1437,7 @@ Coordinate with USAREUR-AF C2DAO for current FMN spiral applicability and coalit
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA*
 *Wiesbaden, Germany — 2026*
 *UNCLASSIFIED*
-*Distribution: DRAFT — Not yet approved for distribution.*
+*Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
 
 ---
 

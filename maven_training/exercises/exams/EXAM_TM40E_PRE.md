@@ -6,7 +6,7 @@
 | **Course** | TM-40E: Protection WFF Track |
 | **Form** | Pre-Test |
 | **Level** | TM-40E (WFF Track) |
-| **Audience** | Force protection officers, CBRN officers, provost marshal staff, G2/S2 force protection analysts; prerequisite: TM-10 + TM-20 complete |
+| **Audience** | Force protection officers, CBRN officers, provost marshal staff, G2/S2 force protection analysts; prerequisite: TM-10 + TM-20 + TM-30 complete |
 | **Time Allowed** | 20 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
@@ -126,3 +126,43 @@ _______________________________________________
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
 *EX-TM40E-PRE | Version 1.0 | March 2026*
+
+---
+
+## ANSWER KEY — INSTRUCTOR USE ONLY
+
+*Do not distribute to students. Use to identify baseline gaps and tailor Day 1 instruction accordingly.*
+
+**Multiple Choice:**
+
+1. B — Verify the data-as-of timestamp for the threat reporting feed; IED data 24–48 hours old may not reflect current threat conditions. Symbology and theater validation are secondary checks.
+2. B — Threat trending analysis identifies patterns in threat data over time to support protection planning; it does not predict specific events or replace IPB.
+3. B — MSS displays reported threat data and unit locations; vulnerability assessment requires human judgment against protection capabilities and gaps — MSS does not generate vulnerability scores.
+4. B — CBRN sensor data has latency, coverage gaps, and sensor reliability variability; displayed hazard boundaries should be treated as estimated, not definitive.
+5. B — Verify the alert by checking the data source, reviewing raw reports, and assessing whether the reports reflect a genuine pattern or are duplicates/artifacts before escalating; do not immediately execute, dismiss, or transfer.
+6. B — PERSTAT provides reported personnel strength from the last submission — not real-time individual GPS tracking or accountability at the individual level.
+7. B — Area security data is most useful when it displays threat reporting, patrol sectors, checkpoint locations, and friendly positions together to enable gap assessment.
+8. B — Threat locations, patrol patterns, checkpoints, and PERSTAT data in combination reveal security posture and gaps; the aggregate must be protected and distributed only to those with operational need to know.
+
+**Short Answer Guidance:**
+
+SA-9. Full credit (5 pts): Check the data-as-of timestamp for the IED reporting feed to confirm the three incidents fall within a current reporting window; determine whether the three incidents are in the same exact grid (possible duplicate reporting vs. three distinct events); during the working group, characterize the cluster as "three reported incidents on Route BROWN as of [data currency timestamp]" and caution the group that absence of additional reporting does not confirm the route is clear — it may indicate a reporting gap. Partial credit (3 pts): addresses data currency or the duplicate-reporting question but not both; or fails to address the caution about interpreting absence of reporting.
+
+SA-10. Full credit (5 pts): PERSTAT shows reported personnel strength at the time of the last submission — it does not show individual Soldier locations, individual accountability, or changes since submission; a provost marshal should not make individual accountability decisions (e.g., declaring a Soldier AWOL or missing) based solely on a PERSTAT aggregate in MSS — individual accountability requires direct verification with the Soldier's chain of command. Any reasonable example of an individual-level decision is acceptable. Partial credit (3 pts): correctly describes the limitation without a concrete example of a decision that should not be made.
+
+**Scenario Guidance:**
+
+Q-11. Full credit (10 pts): Must address all three elements with data source, verification, and limitation for each.
+
+*Threat reporting (30 days):* data source = threat reporting dataset with a 30-day time filter; verify the data-as-of timestamp and confirm the reporting feed is current; limitation = shows reported incidents only, not incidents that were not reported or not confirmed — coverage gaps in the reporting chain will appear as absence of incidents.
+
+*CCIR — Sector NORTH events > 3/week:* data source = threat reporting dataset; configure geographic trigger with Sector NORTH boundary polygon; threshold = count of threat events within polygon exceeds 3 in a 7-day rolling window; route to FP officer and CDR; limitation = count accuracy depends entirely on all incidents being reported into the MSS feed — underreporting will produce false negatives.
+
+*PERSTAT display:* data source = personnel reporting dataset linked to PERSTAT submissions from organic battalions; verify all three battalions have submitted within the current PERSTAT cycle before the working group; limitation = reflects last submission only; does not capture changes (casualties, gains) since the last submission.
+
+Partial credit (6 pts): two of three elements addressed correctly with all three required sub-elements (source, verification, limitation). Minimum acceptable: two elements with at least data source and limitation described.
+
+---
+
+*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*EX-TM40E-PRE | Answer Key | Version 1.0 | March 2026*

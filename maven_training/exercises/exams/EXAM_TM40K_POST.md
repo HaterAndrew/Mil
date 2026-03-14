@@ -6,7 +6,7 @@
 | **Course** | TM-40K: Knowledge Manager |
 | **Form** | Post-Test |
 | **Level** | TM-40K (Specialist) |
-| **Audience** | KMOs / 37F / knowledge officers; prerequisite: TM-10 + TM-20 |
+| **Audience** | KMOs / 37F / knowledge officers; prerequisite: TM-10 + TM-20 + TM-30 (REQUIRED) |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (42/60) |
 
@@ -183,6 +183,16 @@ D. The submitter's echelon only — lessons are shared within the same echelon b
 
 &nbsp;
 
+**SA-6. Describe how knowledge management capability supports two WFF functions. For each, identify the WFF track (TM-40A through TM-40F) and give a concrete example of a KM product or workflow that supports decision-making in that function.**
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
 ---
 
 ## SCORING SUMMARY
@@ -190,10 +200,10 @@ D. The submitter's echelon only — lessons are shared within the same echelon b
 | Section | Questions | Points Each | Total Points |
 |---|---|---|---|
 | Multiple Choice | 15 | 2 | 30 |
-| Short Answer | 5 | 6 | 30 |
-| **Total** | — | — | **60** |
+| Short Answer | 6 | 6 | 36 |
+| **Total** | — | — | **66** |
 
-Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
+Passing: 46/66 (70%) — Post-test only. Pre-test is diagnostic.
 
 ---
 
@@ -229,6 +239,8 @@ SA-3. Full credit: per TM-40K Chapter 9 — package must include: (1) named MSS 
 SA-4. Full credit: revision process — (1) add explicit output format instructions: "Return ONLY a JSON array of action items with fields: action, owner, due_date. Do not include summary paragraphs."; (2) add 2-3 few-shot examples showing correct action-item-only output; (3) test against a sample set of 10–15 AARs; (4) score outputs: count items correctly formatted as action-item arrays vs. full paragraphs; target 90%+ correct format; (5) iterate prompt wording if below target; (6) re-test and confirm stable before marking production-ready. Must include explicit format instruction, few-shot examples, and quantitative scoring criteria.
 
 SA-5. Full credit: Privacy Act concerns — name, rank, MOS, unit, contact info, skill specialties are PII; Soldiers may not expect their skills to be searchable by all brigade staff; access controls required: role-based access limiting who can view specific profile fields; need-to-know principle for skill-based searches; before activation: conduct Privacy Act review (consult Staff Judge Advocate or Privacy Officer); confirm the MSS project qualifies as an authorized system of records for this data; notify Soldiers that their data will be collected (Privacy Act Statement); limit data fields to mission-essential information only. Full credit requires identifying specific PII fields, access controls, and pre-activation Privacy Act review requirement.
+
+SA-6. Full credit: any two WFF tracks correctly identified with a KM example — TM-40A (Intelligence): KM system captures lessons learned from collection operations and maintains an ExpertiseProfile of Soldiers with specific intelligence analysis skills; TM-40B (Fires): KM system maintains SOPs for fires coordination procedures and lessons learned from fire support exercises; TM-40C (Movement & Maneuver): KM system captures route reconnaissance reports and vehicle movement best practices in a searchable lessons library; TM-40D (Sustainment): KM system documents supply chain workarounds and logistics contact networks for S4 continuity across PCS cycles; TM-40E (Protection): KM system maintains force protection lessons learned and tracks corrective action implementation; TM-40F (Mission Command): KM system stores battle rhythm SOPs, reporting templates, and command post setup procedures to ensure institutional continuity. Each response must identify the correct TM-40 letter (A–F) and provide a concrete KM product or workflow example for full credit.
 
 ---
 

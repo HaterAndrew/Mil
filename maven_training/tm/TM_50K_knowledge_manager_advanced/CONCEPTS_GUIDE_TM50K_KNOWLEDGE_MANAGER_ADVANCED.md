@@ -1,25 +1,8 @@
-# CONCEPTS GUIDE — TM-50K: ADVANCED KNOWLEDGE MANAGER
-## MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — TM-50K: ADVANCED KNOWLEDGE MANAGER — MAVEN SMART SYSTEM (MSS)
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA** | Wiesbaden, Germany | 2026
-
-**PURPOSE:** Extends mental models from TM-40K Concepts Guide to advanced knowledge management on MSS. Prerequisite: TM-40K Concepts Guide and TM-40K qualification.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-## TABLE OF CONTENTS
-
-1. From Knowledge Manager to Organizational Learning Architect
-2. Enterprise Knowledge Architecture
-3. AI-Assisted Knowledge Management — The MSS Opportunity
-4. Knowledge Quality Architecture
-5. Cross-Domain Knowledge Integration
-6. Coalition Knowledge Management
-7. Measuring Knowledge System Effectiveness
-8. Knowledge Lifecycle Management at Scale
-9. Advanced Failure Modes — What TM-50K KMs Get Wrong
+> **BLUF:** At TM-50K level, you are no longer maintaining a knowledge system. You are designing how the organization learns — a fundamentally different mandate with fundamentally different consequences if executed poorly.
+> **Purpose:** Extends mental models from TM-40K Concepts Guide to advanced knowledge management on MSS. Prerequisite: TM-40K Concepts Guide and TM-40K qualification.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
@@ -405,5 +388,21 @@ The test: if the current Advanced KM were reassigned tomorrow, could their repla
 
 ---
 
+## PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION
+
+**Peer TM-50 Publications.** Advanced KMs design the knowledge infrastructure that supports all specialist tracks. Coordinate with practitioners in these companion publications.
+
+| Publication | Track | Coordination Point |
+|---|---|---|
+| TM-50G | Advanced ORSA | ORSA-derived knowledge products; analytical lessons capture |
+| TM-50H | Advanced AI Engineer | AI-assisted KM workflows; corpus design and ontology-RAG integration |
+| TM-50I | Advanced ML Engineer | Feature data governance; training corpus quality |
+| TM-50J | Advanced Program Manager | KM program oversight; portfolio-level knowledge governance |
+| TM-50L | Advanced Software Engineer | Platform SDK infrastructure supporting enterprise KM systems |
+
+**WFF Operational Consumer Note.** Enterprise knowledge management exists to serve operational decision-making. The six Warfighting Function (WFF) tracks — Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F) — are the primary users of validated lessons, TTPs, and doctrine products. The design principles in this guide — federated architecture, quality tiers, cross-domain linkage, application over capture — must all be evaluated against whether WFF practitioners can find and use the knowledge they need at the moment they need it. A KM system that serves only KMs has failed.
+
+---
+
 *UNCLASSIFIED*
-*DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.*
+*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*

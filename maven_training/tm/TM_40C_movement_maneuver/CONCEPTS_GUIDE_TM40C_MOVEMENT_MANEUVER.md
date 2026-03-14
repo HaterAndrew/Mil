@@ -1,26 +1,9 @@
-# CONCEPTS GUIDE — TM-40C COMPANION
-## MOVEMENT AND MANEUVER WARFIGHTING FUNCTION
-## MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — TM-40C COMPANION — MOVEMENT AND MANEUVER WARFIGHTING FUNCTION · MAVEN SMART SYSTEM (MSS)
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-2026
-
-**PURPOSE:** This guide develops the operational mental models required to effectively integrate MSS into Movement and Maneuver warfighting function operations. It is a prerequisite companion to TM-40C and must be read before beginning TM-40C task instruction. This guide is conceptual — it develops understanding, not procedures. No step-by-step tasks appear here. The audience is S3/G3 officers, brigade and battalion commanders, and staff officers responsible for combined arms synchronization.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-## TABLE OF CONTENTS
-
-1. The M&M WFF and Data — ADP 3-0 Principles as Data Requirements
-2. Combined Arms as an Information Problem — Why Integration Is Fundamentally a Data Challenge
-3. The Operations Process and MSS — Plan/Prepare/Execute/Assess as an Iterative Data Cycle
-4. Terrain and Mobility as Data — How Engineer and Reconnaissance Data Enable Maneuver Decisions
-5. Reconnaissance and the Information Requirement — FM 3-98 PIR/IR and How MSS Surfaces Them
-6. Blue Force Tracking and the Common Operational Picture — Location Accuracy vs. Operational Security
-7. M&M Failure Modes in MSS — Eight Common Ways Maneuver Units Misuse the Platform
+> **BLUF:** ADP 3-0's principles of combined arms operations, initiative, and tempo are not data concepts — but they all depend on data quality, currency, and shared access to execute. Understanding this relationship is the foundation for effective MSS use in M&M operations.
+> **Prereqs:** TM-10 (Maven User), TM-20 (Builder), and TM-30 (Advanced Builder). Read this Concepts Guide after completing TM-30 and before beginning TM-40C task instruction.
+> **Purpose:** This guide develops the operational mental models required to effectively integrate MSS into Movement and Maneuver warfighting function operations. It is a prerequisite companion to TM-40C and must be read before beginning TM-40C task instruction. This guide is conceptual — it develops understanding, not procedures. No step-by-step tasks appear here. The audience is S3/G3 officers, brigade and battalion commanders, and staff officers responsible for combined arms synchronization.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
@@ -495,7 +478,37 @@ Practitioners are encouraged to read the doctrinal publications relevant to thei
 
 ---
 
+## RELATED TRACKS AND PUBLICATIONS
+
+### WFF Peer Tracks
+
+All six WFF tracks are at the same tier. All six WFF tracks require TM-10, TM-20, and TM-30 as prerequisites. M&M practitioners are encouraged to develop working awareness of TM-40A (Intelligence) and TM-40F (Mission Command) — the two WFF tracks with the most intensive M&M data integration.
+
+| Track | Title | Prereq | Relationship to M&M WFF |
+|-------|-------|--------|------------------------|
+| TM-40A | Intelligence WFF | TM-10 + TM-20 + TM-30 | NAI/TAI overlays, PIR/IR supporting reconnaissance planning |
+| TM-40B | Fires WFF | TM-10 + TM-20 + TM-30 | FSCM management, airspace deconfliction, maneuver-fires synchronization |
+| TM-40C | Movement and Maneuver WFF | TM-10 + TM-20 + TM-30 | This track |
+| TM-40D | Sustainment WFF | TM-10 + TM-20 + TM-30 | Route capacity, maneuver unit readiness, supply constraints on COA |
+| TM-40E | Protection WFF | TM-10 + TM-20 + TM-30 | Physical security integration, NBC threat overlays |
+| TM-40F | Mission Command WFF | TM-10 + TM-20 + TM-30 | Combined arms COP, CCIR thresholds for maneuver decision points |
+
+### Specialist Tracks (Prerequisite: TM-30)
+
+For personnel pursuing technical depth, specialist tracks (TM-40G–L, prereq TM-30) are available. Not required for M&M WFF employment.
+
+| Track | Title |
+|-------|-------|
+| TM-40G | ORSA (→ TM-50G) |
+| TM-40H | AI Engineer (→ TM-50H) |
+| TM-40I | ML Engineer (→ TM-50I) |
+| TM-40J | Program Manager (→ TM-50J) |
+| TM-40K | Knowledge Manager (→ TM-50K) |
+| TM-40L | Software Engineer (→ TM-50L) |
+
+---
+
 *CONCEPTS GUIDE — TM-40C COMPANION: MOVEMENT AND MANEUVER WARFIGHTING FUNCTION*
 *Version 1.0 — March 2026*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA — Wiesbaden, Germany*
-*DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.*
+*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*

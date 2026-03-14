@@ -5,7 +5,7 @@
 |---|---|
 | **Level** | TM-40F — Mission Command WFF Track |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-10, TM-20 (Go evaluations on file); CONCEPTS_GUIDE_TM40F_MISSION_COMMAND (required reading before Day 1) |
+| **Prerequisites** | TM-10, TM-20, TM-30 (Go evaluations on file); CONCEPTS_GUIDE_TM40F_MISSION_COMMAND (required reading before Day 1) |
 | **Audience** | G3/S3 staff, battle captains, FSOs, XOs, CDRs, and all personnel who configure, maintain, or brief from MSS Commander Products in a Mission Command role |
 | **Format** | Instructor-led seminar + demonstration + tabletop exercise + practical evaluation |
 | **Location** | MSS Training Environment (standard user access sufficient) |
@@ -137,6 +137,33 @@ Complete **5+ duty days before Day 1:**
 | CCIR configuration | "High-casualty threshold" is not a complete CCIR — must be tied to a specific data feed, specific value, and specific notification path. Bring your unit's CCIR list and work through configuration before Day 1 |
 | Data staleness inject | Do not click faster — immediately characterize the gap and communicate it up. Every commander product relying on the stale feed must be caveated |
 | Battle rhythm dashboards | The evaluator will change underlying data and verify the dashboard updates — disconnected from live data fails the evaluation |
+
+---
+
+## Associated Exercise and Exams
+
+| Item | Reference |
+|---|---|
+| **Practical Exercise** | EX-40F (EXERCISE.md + ENVIRONMENT_SETUP.md) — `exercises/EX-40F/` |
+| **Pre-course exam** | EXAM_TM40F_PRE — `exercises/exams/EXAM_TM40F_PRE.md` |
+| **Post-course exam** | EXAM_TM40F_POST — `exercises/exams/EXAM_TM40F_POST.md` |
+
+---
+
+## Related WFF Tracks
+
+TM-40F is one of six WFF tracks. All require TM-10, TM-20, and TM-30 as prerequisites.
+
+| Track | WFF | Audience |
+|---|---|---|
+| TM-40A | Intelligence | G2/S2 staff, targeting officers, all-source analysts |
+| TM-40B | Fires | FSOs, FSEs, targeting officers, fires NCOs |
+| TM-40C | Movement & Maneuver | G3/S3 staff, operations officers, maneuver planners |
+| TM-40D | Sustainment | G4/S4 staff, logistics officers, supply chain managers |
+| TM-40E | Protection | FP officers, CBRN officers, provost marshal staff |
+| TM-40F | Mission Command | Battle captains, XOs, CDRs, MC-function staff |
+
+Personnel completing multiple WFF tracks do not repeat TM-10, TM-20, or TM-30. Enrollment is independent for each track.
 
 ---
 

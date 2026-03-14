@@ -10,12 +10,12 @@ export default function Specialists({ showPanel }: Props) {
       <div className="section-header">
         <span className="section-badge">SPECIALIST TRACKS</span>
         <span className="section-title">TM-40 &amp; TM-50 Series &mdash; WFF &amp; Technical Tracks</span>
-        <span className="section-subtitle">WFF tracks (A&ndash;F): TM-20 req. &bull; Technical tracks (G&ndash;L): TM-30 req.</span>
+        <span className="section-subtitle">WFF tracks (A&ndash;F): TM-30 req. &bull; Technical tracks (G&ndash;L): TM-30 req.</span>
       </div>
 
       <div className="callout bluf">
         <div className="callout-label">BLUF</div>
-        <div className="callout-body">TM-40 has two track types: <strong>Warfighting Function tracks (TM-40A&ndash;F)</strong> for WFF-assigned roles (Intelligence, Fires, M&amp;M, Sustainment, Protection, Mission Command) &mdash; prerequisite TM-20, no coding required &mdash; and <strong>Technical Specialist tracks (TM-40G&ndash;L)</strong> for personnel who build and engineer MSS solutions (ORSA, AI Eng, MLE, PM, KM, SWE) &mdash; prerequisite TM-30. Advanced versions (TM-50G&ndash;L) are available after completing the corresponding TM-40 technical track.</div>
+        <div className="callout-body">TM-40 has two track types: <strong>Warfighting Function tracks (TM-40A&ndash;F)</strong> for WFF-assigned roles (Intelligence, Fires, M&amp;M, Sustainment, Protection, Mission Command) &mdash; prerequisite TM-30, no coding required &mdash; and <strong>Technical Specialist tracks (TM-40G&ndash;L)</strong> for personnel who build and engineer MSS solutions (ORSA, AI Eng, MLE, PM, KM, SWE) &mdash; prerequisite TM-30. Advanced versions (TM-50G&ndash;L) are available after completing the corresponding TM-40 technical track.</div>
       </div>
 
       <h2>TRACK SELECTION BY MOS / ROLE</h2>
@@ -50,51 +50,51 @@ export default function Specialists({ showPanel }: Props) {
       <div className="specialists-section-hdr">TM-40 SERIES &mdash; WARFIGHTING FUNCTION TRACKS</div>
       <div className="track-grid">
         <div className="track-card">
-          <div className="track-card-hdr"><span className="track-tm">TM-40A &mdash; Intelligence</span><span className="track-chip">TM-20 Req.</span></div>
+          <div className="track-card-hdr"><span className="track-tm">TM-40A &mdash; Intelligence</span><span className="track-chip">TM-30 Req.</span></div>
           <div className="track-body">
             <div className="track-name">Intelligence Warfighting Function</div>
             <div className="track-audience">G2/S2 &bull; MI units &bull; ISR analysts</div>
-            <div className="track-prereq">Prereq: TM-20 &bull; <a href={URLS.TM40A} target="_blank" rel="noreferrer" style={{color:'var(--navy)',fontSize:11}}>Open PDF &rarr;</a></div>
+            <div className="track-prereq">Prereq: TM-30 &bull; <a href={URLS.TM40A} target="_blank" rel="noreferrer" style={{color:'var(--navy)',fontSize:11}}>Open PDF &rarr;</a></div>
           </div>
         </div>
         <div className="track-card">
-          <div className="track-card-hdr"><span className="track-tm">TM-40B &mdash; Fires</span><span className="track-chip">TM-20 Req.</span></div>
+          <div className="track-card-hdr"><span className="track-tm">TM-40B &mdash; Fires</span><span className="track-chip">TM-30 Req.</span></div>
           <div className="track-body">
             <div className="track-name">Fires Warfighting Function</div>
             <div className="track-audience">FA officers/NCOs &bull; Fire support coordinators</div>
-            <div className="track-prereq">Prereq: TM-20 &bull; <a href={URLS.TM40B} target="_blank" rel="noreferrer" style={{color:'var(--navy)',fontSize:11}}>Open PDF &rarr;</a></div>
+            <div className="track-prereq">Prereq: TM-30 &bull; <a href={URLS.TM40B} target="_blank" rel="noreferrer" style={{color:'var(--navy)',fontSize:11}}>Open PDF &rarr;</a></div>
           </div>
         </div>
         <div className="track-card">
-          <div className="track-card-hdr"><span className="track-tm">TM-40C &mdash; Movement &amp; Maneuver</span><span className="track-chip">TM-20 Req.</span></div>
+          <div className="track-card-hdr"><span className="track-tm">TM-40C &mdash; Movement &amp; Maneuver</span><span className="track-chip">TM-30 Req.</span></div>
           <div className="track-body">
             <div className="track-name">Movement &amp; Maneuver WFF</div>
             <div className="track-audience">Maneuver units &bull; G3/S3 data roles</div>
-            <div className="track-prereq">Prereq: TM-20 &bull; <a href={URLS.TM40C} target="_blank" rel="noreferrer" style={{color:'var(--navy)',fontSize:11}}>Open PDF &rarr;</a></div>
+            <div className="track-prereq">Prereq: TM-30 &bull; <a href={URLS.TM40C} target="_blank" rel="noreferrer" style={{color:'var(--navy)',fontSize:11}}>Open PDF &rarr;</a></div>
           </div>
         </div>
         <div className="track-card">
-          <div className="track-card-hdr"><span className="track-tm">TM-40D &mdash; Sustainment</span><span className="track-chip">TM-20 Req.</span></div>
+          <div className="track-card-hdr"><span className="track-tm">TM-40D &mdash; Sustainment</span><span className="track-chip">TM-30 Req.</span></div>
           <div className="track-body">
             <div className="track-name">Sustainment Warfighting Function</div>
             <div className="track-audience">Logistics &bull; G4/S4 &bull; GCSS-A users</div>
-            <div className="track-prereq">Prereq: TM-20 &bull; <a href={URLS.TM40D} target="_blank" rel="noreferrer" style={{color:'var(--navy)',fontSize:11}}>Open PDF &rarr;</a></div>
+            <div className="track-prereq">Prereq: TM-30 &bull; <a href={URLS.TM40D} target="_blank" rel="noreferrer" style={{color:'var(--navy)',fontSize:11}}>Open PDF &rarr;</a></div>
           </div>
         </div>
         <div className="track-card">
-          <div className="track-card-hdr"><span className="track-tm">TM-40E &mdash; Protection</span><span className="track-chip">TM-20 Req.</span></div>
+          <div className="track-card-hdr"><span className="track-tm">TM-40E &mdash; Protection</span><span className="track-chip">TM-30 Req.</span></div>
           <div className="track-body">
             <div className="track-name">Protection Warfighting Function</div>
             <div className="track-audience">Air defense &bull; CBRN &bull; Engineer &bull; Force protection</div>
-            <div className="track-prereq">Prereq: TM-20 &bull; <a href={URLS.TM40E} target="_blank" rel="noreferrer" style={{color:'var(--navy)',fontSize:11}}>Open PDF &rarr;</a></div>
+            <div className="track-prereq">Prereq: TM-30 &bull; <a href={URLS.TM40E} target="_blank" rel="noreferrer" style={{color:'var(--navy)',fontSize:11}}>Open PDF &rarr;</a></div>
           </div>
         </div>
         <div className="track-card">
-          <div className="track-card-hdr"><span className="track-tm">TM-40F &mdash; Mission Command</span><span className="track-chip">TM-20 Req.</span></div>
+          <div className="track-card-hdr"><span className="track-tm">TM-40F &mdash; Mission Command</span><span className="track-chip">TM-30 Req.</span></div>
           <div className="track-body">
             <div className="track-name">Mission Command Warfighting Function</div>
             <div className="track-audience">G6/S6 &bull; C2 systems &bull; Network managers</div>
-            <div className="track-prereq">Prereq: TM-20 &bull; <a href={URLS.TM40F} target="_blank" rel="noreferrer" style={{color:'var(--navy)',fontSize:11}}>Open PDF &rarr;</a></div>
+            <div className="track-prereq">Prereq: TM-30 &bull; <a href={URLS.TM40F} target="_blank" rel="noreferrer" style={{color:'var(--navy)',fontSize:11}}>Open PDF &rarr;</a></div>
           </div>
         </div>
       </div>

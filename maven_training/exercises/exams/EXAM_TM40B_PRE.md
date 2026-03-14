@@ -6,7 +6,7 @@
 | **Course** | TM-40B: Fires WFF Track |
 | **Form** | Pre-Test |
 | **Level** | TM-40B (WFF Track) |
-| **Audience** | FSE staff, fire support officers, targeting teams, artillery/mortar officers; prerequisite: TM-10 + TM-20 complete |
+| **Audience** | FSE staff, fire support officers, targeting teams, artillery/mortar officers; prerequisite: TM-10 + TM-20 + TM-30 complete |
 | **Time Allowed** | 20 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
@@ -126,3 +126,41 @@ _______________________________________________
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
 *EX-TM40B-PRE | Version 1.0 | March 2026*
+
+---
+
+## ANSWER KEY — INSTRUCTOR USE ONLY
+
+*Do not distribute to students. Use to identify baseline gaps and tailor Day 1 instruction accordingly.*
+
+**Multiple Choice:**
+
+1. B — Fires COP provides a shared current picture of target status, FSCMs, and effects data for targeting decisions; MSS does not generate or route fire missions.
+2. B — FSCMs define areas, boundaries, and conditions governing fires employment; displaying them ensures shared understanding of coordination constraints across all staff.
+3. B — BDA is reported post-strike assessment data — may be initial, follow-on, or confirmed — each requiring explicit sourcing and currency marking when displayed; MSS does not auto-verify it.
+4. B — Target acquisition data displays sensor-derived locations, types, and timestamps so the FSO can assess target quality and currency before engaging the targeting process.
+5. B — An FFIR is information the commander needs about friendly forces (e.g., ammo status, firing unit readiness) critical to a fires decision; a PIR concerns enemy or environment.
+6. B — Each target record must show a data-as-of timestamp, source attribution, and confirmed vs. unconfirmed status before it is briefed; MSS does not auto-de-conflict against FSCMs.
+7. B — Exercise fire mission data reveals TTPs, fires capabilities, and targeting preferences even in a notional scenario; MSS does not sanitize exercise data automatically.
+8. C — Caveat affected data with actual data-as-of time; contact the fires reporting chain for updates; characterize the currency gap explicitly at the targeting board. Deleting or postponing are not correct responses.
+
+**Short Answer Guidance:**
+
+SA-9. Full credit (5 pts): Contact the fires element BDA reporting chain to obtain current BDA status; if BDA cannot be confirmed before the TWG, brief affected targets as "BDA Pending — last confirmed status [DTG]"; do not characterize effects as confirmed; explicitly note for the board that strike execution is confirmed but effects assessment is incomplete, and state the expected timeline for follow-up BDA. Partial credit (3 pts): notes the need to caveat BDA but does not describe the steps to obtain updated data or the correct briefing characterization.
+
+SA-10. Full credit (5 pts): FSCMs must be displayed with the establishing authority, effective times (DTG established/expires), and correct symbology per FM 1-02.1; without current FSCMs, fires officers and maneuver staff may attempt to employ fires or maneuver through restricted or coordinated fire areas unknowingly; out-of-date FSCMs on the COP are an operational and safety hazard because coordination constraints change as the situation evolves. Partial credit (3 pts): describes display requirements without addressing the consequence of non-currency.
+
+**Scenario Guidance:**
+
+Q-11. Full credit (10 pts): Must address both requirements with all three elements (a/b/c) for each.
+
+*Requirement 1 — HVT into TAI ANVIL:* (a) target tracking layer linked to HVT tracking dataset; (b) geographic trigger — any entity with HVT designation appears within TAI ANVIL boundary polygon; (c) route to fires officer and S3 — fires officer manages targeting engagement; S3 owns the targeting decision.
+
+*Requirement 2 — Fires readiness below 70%:* (a) fires readiness layer linked to ammunition status and firing unit availability datasets; (b) threshold alert when combined readiness (ammo available + firing unit availability) drops below 70%; (c) route to BSB S4 for resupply action and fires officer for adjusted fires planning.
+
+Partial credit (6 pts): one requirement described correctly with all three elements; second requirement partial or missing routing/threshold. Minimum acceptable: data source, trigger condition, and routing for at least one requirement.
+
+---
+
+*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*EX-TM40B-PRE | Answer Key | Version 1.0 | March 2026*

@@ -94,28 +94,30 @@ Complete **5+ duty days before Day 1:**
 | 1030–1045 | — | Break | |
 | 1045–1200 | 12 | Lab | Pipeline: group-by aggregation; union step basics; output dataset configuration (overwrite vs. append mode) |
 | 1200–1300 | — | Lunch | |
+| — | — | **STOP** | **Before opening Ontology Manager:** Review TM-20, Chapter 4 property type table. Property types are immutable after Object Type creation — a wrong type requires deleting and rebuilding the Object Type. Verify your intended property types before creating anything. |
 | 1300–1500 | 13 | Lab | Ontology Manager: create an Object Type — properties, types, Primary Key, display name expression |
 | 1500–1515 | — | Break | |
-| 1515–1600 | 14 | Lab | Ontology Manager: create a Link Type — connecting two Object Types, cardinality, directionality |
-| 1600–1700 | 15 | Lab | Pipeline: Ontology write step — connect pipeline output to Object Type; configure property mapping; run and verify |
+| 1515–1630 | 14 | Lab | Ontology Manager: create a Link Type — connecting two Object Types, cardinality, directionality |
+| 1630–1700 | 15 | Lab | Ontology practice: design a second Object Type from a provided scenario; verify naming compliance |
 
-**Evening reading:** TM-20, Chapter 4 (Actions section); TM-20, Chapter 5 (Workshop — skim widget overview).
+**Evening reading:** TM-20, Chapter 3 (Ontology write step section); TM-20, Chapter 4 (Actions section); TM-20, Chapter 5 (Workshop — skim widget overview).
 
 ---
 
-### Day 4 — Actions and Workshop Applications
+### Day 4 — Ontology Write Step, Actions, and Workshop Applications
 
 | Time | Block | Method | Content |
 |---|---|---|---|
-| 0800–0830 | — | Review | Day 3 questions; common Ontology write failures: type mismatch, missing Primary Key |
-| 0830–1000 | 16 | Lab | Actions: create a basic Action — parameter, write rule, access restriction; test from Ontology Manager |
-| 1000–1015 | — | Break | |
-| 1015–1200 | 17 | Lab | Workshop orientation: canvas, widget library, Object Type binding — table widget with live data |
-| 1200–1300 | — | Lunch | |
-| 1300–1500 | 18 | Lab | Workshop: filter widget, metric widget, bar chart widget — layout and data source configuration |
-| 1500–1515 | — | Break | |
-| 1515–1630 | 19 | Lab | Workshop: connecting an Action button — trigger, confirmation prompt, post-action refresh |
-| 1630–1700 | 20 | Discuss | Access control model: Viewer vs. Editor roles — what each can and cannot do |
+| 0800–0845 | — | Review + Discuss | Day 3 questions; **access control model: Viewer vs. Editor roles** — what each can and cannot do; why a Viewer triggering an Action is a hard No-Go on the practical exercise |
+| 0845–0945 | 16 | Lab | Pipeline: Ontology write step — connect Day 3 pipeline output to Object Type; configure property mapping; run and verify |
+| 0945–1000 | — | Break | |
+| 1000–1130 | 17 | Lab | Actions: create a basic Action — parameter, write rule, access restriction; test from Ontology Manager |
+| 1130–1145 | — | Break | |
+| 1145–1300 | 18 | Lab | Workshop orientation: canvas, widget library, Object Type binding — table widget with live data |
+| 1300–1400 | — | Lunch | |
+| 1400–1530 | 19 | Lab | Workshop: filter widget, metric widget, bar chart widget — layout and data source configuration |
+| 1530–1545 | — | Break | |
+| 1545–1700 | 20 | Lab | Workshop: connecting an Action button — trigger, confirmation prompt, post-action refresh |
 
 **Evening reading:** TM-20, Chapter 6 (Publishing/Access); TM-20, Chapter 7 (Governance — branching and promotion).
 
@@ -179,6 +181,19 @@ Pipeline must run to completion. Workshop must load for a Viewer-role user with 
 
 ---
 
+## No-Go Remediation
+
+| Outcome | Action |
+|---|---|
+| **No-Go — pipeline errors** | Review TM-20, Chapter 3 (pipeline troubleshooting). Re-evaluation scheduled through unit training coordinator. |
+| **No-Go — Action errors on execution** | Review TM-20, Chapter 4 (Actions). Verify write rule and parameter configuration. Re-evaluation required. |
+| **No-Go — Viewer account can modify data** | Critical security finding. Review TM-20, Chapter 6 (access control). Must correct before any re-evaluation attempt. Report to unit data steward. |
+| **No-Go — missing promotion description** | Review TM-20, Chapter 7. Same-day retry authorized at instructor discretion for this item only. |
+
+Full re-evaluation requires scheduling through the unit training coordinator. Same-day retry on isolated items is at instructor discretion only — not automatic. TM-20 qualification cannot be self-certified.
+
+---
+
 ## Key Tips
 
 | Risk | Guidance |
@@ -190,6 +205,25 @@ Pipeline must run to completion. Workshop must load for a Viewer-role user with 
 | Viewer/Editor access | Viewer triggering the Action is a hard No-Go — fix it before the evaluator checks |
 | Promotion description | The data steward will reject a submission without a description. Write: what changed, why, and downstream impact |
 | Day 5 time | 4 hours for 11 tasks. Build the full stack once on Day 4 evening. Trainees who build it twice pass clean |
+
+---
+
+## Continuation
+
+TM-20 completion qualifies personnel to advance to TM-30 (Advanced Builder). **All TM-40 tracks — both WFF (A–F) and Specialist (G–L) — require TM-30 completion before enrollment.** TM-30 is a hard prerequisite — no waivers — for every TM-40 track. Confirm completion with your unit training coordinator before registering.
+
+| Path | Track | Prerequisite | Who |
+|---|---|---|---|
+| **Advanced Builder** | TM-30 | TM-20 (this course) — hard prerequisite, no waivers | All personnel proceeding to any TM-40 track |
+| **WFF — Intelligence** | TM-40A | TM-30 (required) | G2/S2 staff, targeting officers, all-source analysts |
+| **WFF — Fires** | TM-40B | TM-30 (required) | FSOs, FSEs, targeting officers, fires NCOs |
+| **WFF — Movement & Maneuver** | TM-40C | TM-30 (required) | G3/S3 staff, operations officers, maneuver planners |
+| **WFF — Sustainment** | TM-40D | TM-30 (required) | G4/S4 staff, logistics officers, supply chain managers |
+| **WFF — Protection** | TM-40E | TM-30 (required) | FP officers, CBRN officers, provost marshal staff |
+| **WFF — Mission Command** | TM-40F | TM-30 (required) | Battle captains, XOs, CDRs, MC-function staff |
+| **Specialist path** | TM-40G–L (via TM-30) | TM-30 (required) | Data analysts, 17/25-series, ORSA, AI/ML, PM, KM, SWE |
+
+All TM-40 tracks — WFF (TM-40A–F) and Specialist (TM-40G–L) — require **TM-30** as a hard prerequisite. Specialist tracks (TM-40G–L) additionally require code-level preparation per their individual syllabi.
 
 ---
 

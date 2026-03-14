@@ -1,0 +1,7129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maven Training Corpus — File Dependency Map</title>
+<style>
+  :root {
+    --bg: #0d1b2a;
+    --header-bg: #0a1520;
+    --text: #c8d8e8;
+    --accent: #4a90d9;
+    --border: #1e3a50;
+    --banner-bg: #3a1a00;
+    --banner-text: #ffcc44;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  #banner {
+    background: var(--banner-bg);
+    color: var(--banner-text);
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding: 4px 0;
+    border-bottom: 1px solid #7a3a00;
+    flex-shrink: 0;
+  }
+  #header {
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 16px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  #header h1 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #e8f4ff;
+    letter-spacing: 1px;
+  }
+  #header .subtitle {
+    font-size: 10px;
+    color: #7a9ab8;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+  #controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-left: auto;
+  }
+  .ctrl-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+  }
+  .ctrl-group label {
+    cursor: pointer;
+    user-select: none;
+  }
+  input[type=checkbox] { accent-color: var(--accent); cursor: pointer; }
+  .aud-btn {
+    background: #1a2a3a; border: 1px solid #2a4a6a; color: #607080;
+    font-family: inherit; font-size: 11px; padding: 2px 9px;
+    border-radius: 3px; cursor: pointer; transition: all 0.15s;
+  }
+  .aud-btn:hover  { border-color: #4a7aaa; color: #9ab8d8; }
+  .aud-btn.active { background: #1e3a5a; border-color: #4a8aaa; color: #7ab8d8; }
+  #search-box {
+    background: #0d2035;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 3px 8px;
+    font-family: inherit;
+    font-size: 11px;
+    border-radius: 3px;
+    width: 160px;
+  }
+  #search-box:focus { outline: 1px solid var(--accent); }
+  #svg-container {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    cursor: grab;
+  }
+  #svg-container.panning { cursor: grabbing; }
+  svg#depmap {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  #tooltip {
+    position: absolute;
+    background: #0a1a2e;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 11px;
+    color: #d0e8ff;
+    pointer-events: none;
+    display: none;
+    max-width: 340px;
+    z-index: 100;
+    line-height: 1.5;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.7);
+  }
+  #tooltip .tt-desc {
+    font-size: 11px;
+    color: #9ab8c8;
+    margin: 3px 0 5px;
+    font-style: italic;
+    line-height: 1.4;
+  }
+  #tooltip .tt-title {
+    font-weight: bold;
+    color: #80c8ff;
+    margin-bottom: 4px;
+    font-size: 12px;
+  }
+  #tooltip .tt-path {
+    color: #607090;
+    font-size: 10px;
+    margin-bottom: 6px;
+    word-break: break-all;
+  }
+  #tooltip .tt-section {
+    color: #7aaac8;
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 4px;
+    letter-spacing: 1px;
+  }
+  #tooltip .tt-item {
+    color: #a0c0d8;
+    font-size: 10px;
+    padding-left: 8px;
+  }
+  #legend {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(10,21,32,0.92);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 13px;
+    pointer-events: all;
+    z-index: 10;
+    min-width: 190px;
+    cursor: grab;
+    user-select: none;
+  }
+  #legend.dragging { cursor: grabbing; }
+  #legend .legend-heading {
+    color: #607080;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .legend-swatch {
+    width: 22px;
+    height: 14px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .legend-line {
+    width: 30px;
+    height: 2px;
+    flex-shrink: 0;
+  }
+  .legend-divider {
+    border: none;
+    border-top: 1px solid #1e3a50;
+    margin: 2px 0;
+  }
+  #stats-bar {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    font-size: 10px;
+    color: #405060;
+    pointer-events: none;
+  }
+  #corpus-panel {
+    position: absolute;
+    bottom: 32px;
+    left: 16px;
+    background: rgba(10,21,32,0.92);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 14px;
+    pointer-events: all;
+    z-index: 10;
+    min-width: 178px;
+    cursor: grab;
+    user-select: none;
+  }
+  #corpus-panel.dragging { cursor: grabbing; }
+  #cp-table { border-collapse: collapse; width: 100%; }
+  #cp-table td { padding: 1px 0; color: #a0c0d8; font-size: 10px; vertical-align: middle; }
+  #cp-table td:last-child { text-align: right; color: #c8d8e8; padding-left: 14px; white-space: nowrap; }
+  .cp-unit { color: #506070; font-size: 9px; margin-left: 2px; }
+  #cp-total-row { display: flex; justify-content: space-between; font-size: 10px; margin-top: 4px; }
+  .panel-toggle-heading { cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+  .panel-toggle-heading:hover { color: #9ab8d8; }
+  .panel-arrow { font-size: 9px; color: #506070; margin-left: 6px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<div id="banner">DRAFT — NOT FOR OFFICIAL USE</div>
+
+<div id="header">
+  <div>
+    <div id="header-title">
+      <h1>Maven Training Corpus — File Dependency Map</h1>
+      <div class="subtitle">USAREUR-AF &nbsp;|&nbsp; C2DAO &nbsp;|&nbsp; 14 MAR 2026 (v2.0-ready) &nbsp;|&nbsp;
+        <span id="node-count">188</span> files &nbsp;|&nbsp;
+        <span id="edge-count">428</span> edges &nbsp;|&nbsp;
+        Pre-v2.0 audit complete &mdash; TM-30 hard prereq enforced all TM-40 tracks
+      </div>
+    </div>
+  </div>
+  <div id="controls">
+    <div class="ctrl-group">
+      <input type="text" id="search-box" placeholder="Search nodes…" oninput="handleSearch(this.value)">
+    </div>
+    <div class="ctrl-group" style="border-left:1px solid #1e3a50;padding-left:12px">
+      <span style="color:#607080;font-size:10px;font-weight:bold;letter-spacing:1px;margin-right:6px">VIEW AS:</span>
+      <div id="aud-btn-grp" style="display:inline-flex;gap:3px;">
+        <button class="aud-btn active" data-val="operator"   onclick="setAudience(this)">Operator</button>
+        <button class="aud-btn"        data-val="trainer"    onclick="setAudience(this)">Trainer</button>
+        <button class="aud-btn"        data-val="dev"        onclick="setAudience(this)">Dev</button>
+      </div>
+    </div>
+    <div class="ctrl-group" style="border-left:1px solid #1e3a50;padding-left:12px">
+      <input type="checkbox" id="chk-aud-spec" onchange="applyAudienceFilter()">
+      <label for="chk-aud-spec" style="color:#b888d8">Specialist</label>
+    </div>
+    <div class="ctrl-group" style="border-left:1px solid #1e3a50;padding-left:12px">
+      <input type="checkbox" id="chk-prereq" checked onchange="toggleEdges()">
+      <label for="chk-prereq">Prereq edges</label>
+    </div>
+    <div class="ctrl-group">
+      <input type="checkbox" id="chk-companion" checked onchange="toggleEdges()">
+      <label for="chk-companion">Companion edges</label>
+    </div>
+    <div class="ctrl-group" style="border-left:1px solid #1e3a50;padding-left:12px">
+      <input type="checkbox" id="chk-cda" onchange="toggleCDA()">
+      <label for="chk-cda" style="color:#c8a040">Slide Decks</label>
+    </div>
+    <div class="ctrl-group" style="margin-left:8px">
+      <button onclick="resetView()" style="background:#1a2a3a;border:1px solid #2a4a6a;color:#7aaad8;
+        padding:3px 10px;font-family:inherit;font-size:11px;border-radius:3px;cursor:pointer;">
+        Reset View
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="svg-container">
+  <svg id="depmap" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arrow-prereq" markerWidth="6" markerHeight="6"
+              refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L6,3 z" fill="#4a90d9"/>
+      </marker>
+      <marker id="arrow-companion" markerWidth="6" markerHeight="6"
+              refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L6,3 z" fill="#888888"/>
+      </marker>
+      <marker id="arrow-branch" markerWidth="5" markerHeight="5"
+              refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,5 L5,2.5 z" fill="#6a3e10"/>
+      </marker>
+      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="3" result="blur"/>
+        <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+      </filter>
+      <filter id="highlight-glow" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation="4" result="blur"/>
+        <feFlood flood-color="#ffcc44" flood-opacity="0.4" result="color"/>
+        <feComposite in="color" in2="blur" operator="in" result="glow"/>
+        <feComposite in="SourceGraphic" in2="glow" operator="over"/>
+      </filter>
+    </defs>
+
+    <!-- Main transform group for pan/zoom -->
+    <g id="viewport">
+      <g id="edges-companion-group"></g>
+      <g id="edges-prereq-group"></g>
+      <g id="nodes-group"></g>
+      <g id="labels-group"></g>
+      <!-- CDA overlay — hidden by default, toggled via checkbox -->
+      <g id="cda-group" style="display:none">
+        <g id="cda-edges-grp"></g>
+        <g id="cda-nodes-grp"></g>
+      </g>
+    </g>
+  </svg>
+
+  <div id="tooltip"></div>
+  <div id="stats-bar">Scroll to zoom · Drag to pan · Hover for details</div>
+
+  <div id="corpus-panel">
+    <div id="cp-heading" class="legend-heading panel-toggle-heading" onclick="togglePanelCollapse('corpus')">
+      CORPUS — <span id="cp-view-label">OPERATOR</span> <span class="panel-arrow" id="corpus-arrow">▼</span>
+    </div>
+    <div id="corpus-content">
+      <table id="cp-table" style="margin-top:6px"></table>
+      <hr class="legend-divider" style="margin:5px 0">
+      <div id="cp-total-row">
+        <span style="color:#607080;font-weight:bold;letter-spacing:1px">TOTAL</span>
+        <span id="cp-total" style="color:#e8f4ff;font-weight:bold"></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="legend">
+    <div class="legend-heading panel-toggle-heading" onclick="togglePanelCollapse('legend')">
+      NODE TYPE <span class="panel-arrow" id="legend-arrow">▼</span>
+    </div>
+    <div id="legend-content">
+      <div class="legend-item" style="margin-top:6px"><div class="legend-swatch" style="background:#1a5cb8"></div>Course &amp; Assessment</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#187040"></div>Reference</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#8a4a00"></div>Architecture / Supplemental</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#3a3a58"></div>Admin / Training Mgmt</div>
+      <hr class="legend-divider">
+      <div class="legend-heading">EDGES</div>
+      <div class="legend-item"><div class="legend-line" style="background:#4a90d9"></div>Prereq</div>
+      <div class="legend-item"><div class="legend-line" style="background:#888;border-top:1px dashed #888;height:0"></div>Companion</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// DATA
+// ============================================================
+const NODES = [
+  {
+    "id": "DOC_TECHREF",
+    "label": "Data Literacy:\nTechnical Ref",
+    "path": "doctrine/DATA_LITERACY_technical_reference.md",
+    "type": "REF",
+    "col": 0,
+    "track": "Doctrine",
+    "ni": 0,
+    "row_len": 4,
+    "max_row_len": 4,
+    "x": 30,
+    "y": 190,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "trainer",
+      "dev"
+    ],
+    "desc": "Technical deep-dive on Foundry for data practitioners \u2014 pipelines, ontologies, APIs"
+  },
+  {
+    "id": "DOC_SENIOR",
+    "label": "Data Literacy:\nSenior Leaders",
+    "path": "doctrine/DATA_LITERACY_senior_leaders.md",
+    "type": "REF",
+    "col": 0,
+    "track": "Doctrine",
+    "ni": 1,
+    "row_len": 4,
+    "max_row_len": 4,
+    "x": 214,
+    "y": 190,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "trainer",
+      "dev"
+    ],
+    "desc": "Non-technical briefing for commanders: what data can do, what it can't, and why it matters"
+  },
+  {
+    "id": "DOC_GLOSSARY",
+    "label": "GLOSSARY\nData Foundry",
+    "path": "doctrine/GLOSSARY_data_foundry.md",
+    "type": "REF",
+    "col": 0,
+    "track": "Doctrine",
+    "ni": 2,
+    "row_len": 4,
+    "max_row_len": 4,
+    "x": 398,
+    "y": 190,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "trainer",
+      "dev"
+    ],
+    "desc": "Plain-English definitions of Maven, Foundry, and data terms used across the program"
+  },
+  {
+    "id": "DOC_NAMING",
+    "label": "NAMING &\nGOVERNANCE STD",
+    "path": "standards/NAMING_AND_GOVERNANCE_STANDARDS.md",
+    "type": "REF",
+    "col": 0,
+    "track": "Standards",
+    "ni": 0,
+    "row_len": 2,
+    "max_row_len": 3,
+    "x": 30,
+    "y": 250,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "trainer",
+      "dev"
+    ],
+    "desc": "Rules for naming datasets, pipelines, and objects so everyone can find and trust the data"
+  },
+  {
+    "id": "DOC_CHEAT",
+    "label": "Quick Reference\nCheatsheet",
+    "path": "quick_reference/cheatsheet.md",
+    "type": "REF",
+    "col": 0,
+    "track": "Standards",
+    "ni": 1,
+    "row_len": 2,
+    "max_row_len": 3,
+    "x": 214,
+    "y": 250,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "trainer",
+      "dev"
+    ],
+    "desc": "One-page field guide: the 20 most common Foundry tasks with step-by-step shortcuts"
+  },
+  {
+    "id": "TM10",
+    "label": "TM -10\nMAVEN USER",
+    "path": "tm/TM_10_maven_user/TM_10_MAVEN_USER.md",
+    "type": "TM",
+    "col": 1,
+    "track": "TM-10",
+    "ni": 0,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 30,
+    "y": 368,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "trainer"
+    ],
+    "desc": "TM-10 course manual: how to use Maven as a data consumer and operator"
+  },
+  {
+    "id": "SYL10",
+    "label": "SYLLABUS\nTM10",
+    "path": "syllabi/SYLLABUS_TM10.md",
+    "type": "SYL",
+    "col": 1,
+    "track": "TM-10",
+    "ni": 1,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 214,
+    "y": 368,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "trainer"
+    ],
+    "desc": "TM-10 syllabus: learning objectives, schedule, and grading criteria"
+  },
+  {
+    "id": "EX10",
+    "label": "EX-10\nOperator",
+    "path": "exercises/EX-10_operator_basics/EXERCISE.md",
+    "type": "EX",
+    "col": 1,
+    "track": "TM-10",
+    "ni": 2,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 398,
+    "y": 368,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "trainer"
+    ],
+    "desc": "TM-10 lab: navigate Maven, find datasets, and build a basic operational view"
+  },
+  {
+    "id": "EXAM10PRE",
+    "label": "EXAM TM10\nPRE",
+    "path": "exercises/exams/EXAM_TM10_PRE.md",
+    "type": "EXAM",
+    "col": 1,
+    "track": "TM-10",
+    "ni": 3,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 582,
+    "y": 368,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "trainer"
+    ],
+    "desc": "TM-10 pre-test: baseline knowledge check before the course begins"
+  },
+  {
+    "id": "EXAM10POST",
+    "label": "EXAM TM10\nPOST",
+    "path": "exercises/exams/EXAM_TM10_POST.md",
+    "type": "EXAM",
+    "col": 1,
+    "track": "TM-10",
+    "ni": 4,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 766,
+    "y": 368,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "trainer"
+    ],
+    "desc": "TM-10 post-test: competency assessment taken at course completion"
+  },
+  {
+    "id": "TM20",
+    "label": "TM -20\nBUILDER",
+    "path": "tm/TM_20_builder/TM_20_BUILDER.md",
+    "type": "TM",
+    "col": 2,
+    "track": "TM-20",
+    "ni": 0,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 30,
+    "y": 546,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "TM-20 course manual: build dashboards, pipelines, and data products without writing code"
+  },
+  {
+    "id": "SYL20",
+    "label": "SYLLABUS\nTM20",
+    "path": "syllabi/SYLLABUS_TM20.md",
+    "type": "SYL",
+    "col": 2,
+    "track": "TM-20",
+    "ni": 1,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 214,
+    "y": 546,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "TM-20 syllabus: learning objectives, schedule, and grading criteria"
+  },
+  {
+    "id": "EX20",
+    "label": "EX-20\nNo-Code Builder",
+    "path": "exercises/EX-20_no_code_builder/EXERCISE.md",
+    "type": "EX",
+    "col": 2,
+    "track": "TM-20",
+    "ni": 2,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 398,
+    "y": 546,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "TM-20 lab: build a no-code data pipeline and operational dashboard in Foundry"
+  },
+  {
+    "id": "EXAM20PRE",
+    "label": "EXAM TM20\nPRE",
+    "path": "exercises/exams/EXAM_TM20_PRE.md",
+    "type": "EXAM",
+    "col": 2,
+    "track": "TM-20",
+    "ni": 3,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 582,
+    "y": 546,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "TM-20 pre-test: confirm TM-10 proficiency before builder content begins"
+  },
+  {
+    "id": "EXAM20POST",
+    "label": "EXAM TM20\nPOST",
+    "path": "exercises/exams/EXAM_TM20_POST.md",
+    "type": "EXAM",
+    "col": 2,
+    "track": "TM-20",
+    "ni": 4,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 766,
+    "y": 546,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "TM-20 post-test: demonstrate ability to build functional Foundry products"
+  },
+  {
+    "id": "TM30",
+    "label": "TM -30\nADV BUILDER",
+    "path": "tm/TM_30_advanced_builder/TM_30_ADVANCED_BUILDER.md",
+    "type": "TM",
+    "col": 3,
+    "track": "TM-30",
+    "ni": 0,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 30,
+    "y": 784,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "TM-30 course manual: write code transforms, design ontologies, deploy production data products"
+  },
+  {
+    "id": "SYL30",
+    "label": "SYLLABUS\nTM30",
+    "path": "syllabi/SYLLABUS_TM30.md",
+    "type": "SYL",
+    "col": 3,
+    "track": "TM-30",
+    "ni": 1,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 214,
+    "y": 784,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "TM-30 syllabus: learning objectives, schedule, and grading criteria"
+  },
+  {
+    "id": "EX30",
+    "label": "EX-30\nAdv Builder",
+    "path": "exercises/EX-30_advanced_builder/EXERCISE.md",
+    "type": "EX",
+    "col": 3,
+    "track": "TM-30",
+    "ni": 2,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 398,
+    "y": 784,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "TM-30 lab: author Python transforms, model relationships, and publish an ontology"
+  },
+  {
+    "id": "EXAM30PRE",
+    "label": "EXAM TM30\nPRE",
+    "path": "exercises/exams/EXAM_TM30_PRE.md",
+    "type": "EXAM",
+    "col": 3,
+    "track": "TM-30",
+    "ni": 3,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 582,
+    "y": 784,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "TM-30 pre-test: confirm TM-20 proficiency before advanced content begins"
+  },
+  {
+    "id": "EXAM30POST",
+    "label": "EXAM TM30\nPOST",
+    "path": "exercises/exams/EXAM_TM30_POST.md",
+    "type": "EXAM",
+    "col": 3,
+    "track": "TM-30",
+    "ni": 4,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 766,
+    "y": 784,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "TM-30 post-test: demonstrate ability to architect and deploy Foundry solutions"
+  },
+  {
+    "id": "TM40_OVERVIEW",
+    "label": "TM -40\nOVERVIEW",
+    "path": "tm/TM_40_overview/TM_40_OVERVIEW.md",
+    "type": "TM",
+    "col": 4,
+    "track": "TM-40-OVERVIEW",
+    "ni": -1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1022,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev",
+      "trainer",
+      "specialist"
+    ],
+    "desc": "TM-40 level overview: twelve parallel tracks covering WFF (A-F) and specialist (G-L) roles — all require TM-30"
+  },
+  {
+    "id": "TM40A",
+    "label": "TM -40A\nIntelligence",
+    "path": "tm/TM_40A_intelligence/TM_40A_INTELLIGENCE.md",
+    "type": "TM",
+    "col": 4,
+    "track": "TM-40A",
+    "ni": 0,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1022,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40A course manual: applying Maven and Foundry to Intelligence Warfighting Function tasks"
+  },
+  {
+    "id": "CG40A",
+    "label": "CONCEPTS GUIDE\nTM40A",
+    "path": "tm/TM_40A_intelligence/CONCEPTS_GUIDE_TM40A_INTELLIGENCE.md",
+    "type": "CG",
+    "col": 4,
+    "track": "TM-40A",
+    "ni": 1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 214,
+    "y": 1022,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "Concepts guide: key Intelligence tradecraft and data concepts for TM-40A students"
+  },
+  {
+    "id": "SYL40A",
+    "label": "SYLLABUS\nTM40A",
+    "path": "syllabi/SYLLABUS_TM40A.md",
+    "type": "SYL",
+    "col": 4,
+    "track": "TM-40A",
+    "ni": 2,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 398,
+    "y": 1022,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40A syllabus: learning objectives, schedule, and grading for the Intelligence track"
+  },
+  {
+    "id": "EX40A",
+    "label": "EX-40A\nIntelligence",
+    "path": "exercises/EX-40A_intelligence/EXERCISE.md",
+    "type": "EX",
+    "col": 4,
+    "track": "TM-40A",
+    "ni": 3,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 582,
+    "y": 1022,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40A lab: build ISR data products and intelligence dashboards in Foundry"
+  },
+  {
+    "id": "EXAM40APRE",
+    "label": "EXAM TM40A\nPRE",
+    "path": "exercises/exams/EXAM_TM40A_PRE.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40A",
+    "ni": 4,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 766,
+    "y": 1022,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40A pre-test: confirm TM-30 proficiency before Intelligence track begins"
+  },
+  {
+    "id": "EXAM40APOST",
+    "label": "EXAM TM40A\nPOST",
+    "path": "exercises/exams/EXAM_TM40A_POST.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40A",
+    "ni": 5,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 950,
+    "y": 1022,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40A post-test: demonstrate Intelligence WFF data competency"
+  },
+  {
+    "id": "TM40B",
+    "label": "TM -40B\nFires",
+    "path": "tm/TM_40B_fires/TM_40B_FIRES.md",
+    "type": "TM",
+    "col": 4,
+    "track": "TM-40B",
+    "ni": 0,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1082,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40B course manual: applying Maven and Foundry to Fires Warfighting Function tasks"
+  },
+  {
+    "id": "CG40B",
+    "label": "CONCEPTS GUIDE\nTM40B",
+    "path": "tm/TM_40B_fires/CONCEPTS_GUIDE_TM40B_FIRES.md",
+    "type": "CG",
+    "col": 4,
+    "track": "TM-40B",
+    "ni": 1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 214,
+    "y": 1082,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "Concepts guide: key Fires tradecraft and data concepts for TM-40B students"
+  },
+  {
+    "id": "SYL40B",
+    "label": "SYLLABUS\nTM40B",
+    "path": "syllabi/SYLLABUS_TM40B.md",
+    "type": "SYL",
+    "col": 4,
+    "track": "TM-40B",
+    "ni": 2,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 398,
+    "y": 1082,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40B syllabus: learning objectives, schedule, and grading for the Fires track"
+  },
+  {
+    "id": "EX40B",
+    "label": "EX-40B\nFires",
+    "path": "exercises/EX-40B_fires/EXERCISE.md",
+    "type": "EX",
+    "col": 4,
+    "track": "TM-40B",
+    "ni": 3,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 582,
+    "y": 1082,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40B lab: build targeting data products and fire support dashboards in Foundry"
+  },
+  {
+    "id": "EXAM40BPRE",
+    "label": "EXAM TM40B\nPRE",
+    "path": "exercises/exams/EXAM_TM40B_PRE.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40B",
+    "ni": 4,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 766,
+    "y": 1082,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40B pre-test: confirm TM-30 proficiency before Fires track begins"
+  },
+  {
+    "id": "EXAM40BPOST",
+    "label": "EXAM TM40B\nPOST",
+    "path": "exercises/exams/EXAM_TM40B_POST.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40B",
+    "ni": 5,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 950,
+    "y": 1082,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40B post-test: demonstrate Fires WFF data competency"
+  },
+  {
+    "id": "TM40C",
+    "label": "TM -40C\nMvt & Maneuver",
+    "path": "tm/TM_40C_movement_maneuver/TM_40C_MOVEMENT_MANEUVER.md",
+    "type": "TM",
+    "col": 4,
+    "track": "TM-40C",
+    "ni": 0,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1142,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40C course manual: applying Maven and Foundry to Movement & Maneuver WFF tasks"
+  },
+  {
+    "id": "CG40C",
+    "label": "CONCEPTS GUIDE\nTM40C",
+    "path": "tm/TM_40C_movement_maneuver/CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER.md",
+    "type": "CG",
+    "col": 4,
+    "track": "TM-40C",
+    "ni": 1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 214,
+    "y": 1142,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "Concepts guide: key M&M tradecraft and data concepts for TM-40C students"
+  },
+  {
+    "id": "SYL40C",
+    "label": "SYLLABUS\nTM40C",
+    "path": "syllabi/SYLLABUS_TM40C.md",
+    "type": "SYL",
+    "col": 4,
+    "track": "TM-40C",
+    "ni": 2,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 398,
+    "y": 1142,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40C syllabus: learning objectives, schedule, and grading for the M&M track"
+  },
+  {
+    "id": "EX40C",
+    "label": "EX-40C\nMvt & Maneuver",
+    "path": "exercises/EX-40C_movement_maneuver/EXERCISE.md",
+    "type": "EX",
+    "col": 4,
+    "track": "TM-40C",
+    "ni": 3,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 582,
+    "y": 1142,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40C lab: build maneuver tracking and logistics data products in Foundry"
+  },
+  {
+    "id": "EXAM40CPRE",
+    "label": "EXAM TM40C\nPRE",
+    "path": "exercises/exams/EXAM_TM40C_PRE.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40C",
+    "ni": 4,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 766,
+    "y": 1142,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40C pre-test: confirm TM-30 proficiency before M&M track begins"
+  },
+  {
+    "id": "EXAM40CPOST",
+    "label": "EXAM TM40C\nPOST",
+    "path": "exercises/exams/EXAM_TM40C_POST.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40C",
+    "ni": 5,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 950,
+    "y": 1142,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40C post-test: demonstrate Movement & Maneuver WFF data competency"
+  },
+  {
+    "id": "TM40D",
+    "label": "TM -40D\nSustainment",
+    "path": "tm/TM_40D_sustainment/TM_40D_SUSTAINMENT.md",
+    "type": "TM",
+    "col": 4,
+    "track": "TM-40D",
+    "ni": 0,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1202,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40D course manual: applying Maven and Foundry to Sustainment WFF tasks"
+  },
+  {
+    "id": "CG40D",
+    "label": "CONCEPTS GUIDE\nTM40D",
+    "path": "tm/TM_40D_sustainment/CONCEPTS_GUIDE_TM40D_SUSTAINMENT.md",
+    "type": "CG",
+    "col": 4,
+    "track": "TM-40D",
+    "ni": 1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 214,
+    "y": 1202,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "Concepts guide: sustainment data concepts and supply chain analytics for TM-40D students"
+  },
+  {
+    "id": "SYL40D",
+    "label": "SYLLABUS\nTM40D",
+    "path": "syllabi/SYLLABUS_TM40D.md",
+    "type": "SYL",
+    "col": 4,
+    "track": "TM-40D",
+    "ni": 2,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 398,
+    "y": 1202,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40D syllabus: learning objectives, schedule, and grading for the Sustainment track"
+  },
+  {
+    "id": "EX40D",
+    "label": "EX-40D\nSustainment",
+    "path": "exercises/EX-40D_sustainment/EXERCISE.md",
+    "type": "EX",
+    "col": 4,
+    "track": "TM-40D",
+    "ni": 3,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 582,
+    "y": 1202,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40D lab: build supply chain and readiness tracking data products in Foundry"
+  },
+  {
+    "id": "EXAM40DPRE",
+    "label": "EXAM TM40D\nPRE",
+    "path": "exercises/exams/EXAM_TM40D_PRE.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40D",
+    "ni": 4,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 766,
+    "y": 1202,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40D pre-test: confirm TM-30 proficiency before Sustainment track begins"
+  },
+  {
+    "id": "EXAM40DPOST",
+    "label": "EXAM TM40D\nPOST",
+    "path": "exercises/exams/EXAM_TM40D_POST.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40D",
+    "ni": 5,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 950,
+    "y": 1202,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40D post-test: demonstrate Sustainment WFF data competency"
+  },
+  {
+    "id": "TM40E",
+    "label": "TM -40E\nProtection",
+    "path": "tm/TM_40E_protection/TM_40E_PROTECTION.md",
+    "type": "TM",
+    "col": 4,
+    "track": "TM-40E",
+    "ni": 0,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1262,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40E course manual: applying Maven and Foundry to Protection WFF tasks"
+  },
+  {
+    "id": "CG40E",
+    "label": "CONCEPTS GUIDE\nTM40E",
+    "path": "tm/TM_40E_protection/CONCEPTS_GUIDE_TM40E_PROTECTION.md",
+    "type": "CG",
+    "col": 4,
+    "track": "TM-40E",
+    "ni": 1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 214,
+    "y": 1262,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "Concepts guide: force protection data concepts and threat assessment for TM-40E students"
+  },
+  {
+    "id": "SYL40E",
+    "label": "SYLLABUS\nTM40E",
+    "path": "syllabi/SYLLABUS_TM40E.md",
+    "type": "SYL",
+    "col": 4,
+    "track": "TM-40E",
+    "ni": 2,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 398,
+    "y": 1262,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40E syllabus: learning objectives, schedule, and grading for the Protection track"
+  },
+  {
+    "id": "EX40E",
+    "label": "EX-40E\nProtection",
+    "path": "exercises/EX-40E_protection/EXERCISE.md",
+    "type": "EX",
+    "col": 4,
+    "track": "TM-40E",
+    "ni": 3,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 582,
+    "y": 1262,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40E lab: build threat tracking and protection status dashboards in Foundry"
+  },
+  {
+    "id": "EXAM40EPRE",
+    "label": "EXAM TM40E\nPRE",
+    "path": "exercises/exams/EXAM_TM40E_PRE.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40E",
+    "ni": 4,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 766,
+    "y": 1262,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40E pre-test: confirm TM-30 proficiency before Protection track begins"
+  },
+  {
+    "id": "EXAM40EPOST",
+    "label": "EXAM TM40E\nPOST",
+    "path": "exercises/exams/EXAM_TM40E_POST.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40E",
+    "ni": 5,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 950,
+    "y": 1262,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40E post-test: demonstrate Protection WFF data competency"
+  },
+  {
+    "id": "TM40F",
+    "label": "TM -40F\nMission Cmd",
+    "path": "tm/TM_40F_mission_command/TM_40F_MISSION_COMMAND.md",
+    "type": "TM",
+    "col": 4,
+    "track": "TM-40F",
+    "ni": 0,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1322,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40F course manual: applying Maven and Foundry to Mission Command WFF tasks"
+  },
+  {
+    "id": "CG40F",
+    "label": "CONCEPTS GUIDE\nTM40F",
+    "path": "tm/TM_40F_mission_command/CONCEPTS_GUIDE_TM40F_MISSION_COMMAND.md",
+    "type": "CG",
+    "col": 4,
+    "track": "TM-40F",
+    "ni": 1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 214,
+    "y": 1322,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "Concepts guide: C2 data concepts and decision-support analytics for TM-40F students"
+  },
+  {
+    "id": "SYL40F",
+    "label": "SYLLABUS\nTM40F",
+    "path": "syllabi/SYLLABUS_TM40F.md",
+    "type": "SYL",
+    "col": 4,
+    "track": "TM-40F",
+    "ni": 2,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 398,
+    "y": 1322,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40F syllabus: learning objectives, schedule, and grading for the Mission Command track"
+  },
+  {
+    "id": "EX40F",
+    "label": "EX-40F\nMission Cmd",
+    "path": "exercises/EX-40F_mission_command/EXERCISE.md",
+    "type": "EX",
+    "col": 4,
+    "track": "TM-40F",
+    "ni": 3,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 582,
+    "y": 1322,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40F lab: build command dashboards and decision-support products in Foundry"
+  },
+  {
+    "id": "EXAM40FPRE",
+    "label": "EXAM TM40F\nPRE",
+    "path": "exercises/exams/EXAM_TM40F_PRE.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40F",
+    "ni": 4,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 766,
+    "y": 1322,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40F pre-test: confirm TM-30 proficiency before Mission Command track begins"
+  },
+  {
+    "id": "EXAM40FPOST",
+    "label": "EXAM TM40F\nPOST",
+    "path": "exercises/exams/EXAM_TM40F_POST.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40F",
+    "ni": 5,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 950,
+    "y": 1322,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "TM-40F post-test: demonstrate Mission Command WFF data competency"
+  },
+  {
+    "id": "TM40G",
+    "label": "TM -40G\nORSA",
+    "path": "tm/TM_40G_orsa/TM_40G_ORSA.md",
+    "type": "TM",
+    "col": 4,
+    "track": "TM-40G",
+    "ni": 0,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1382,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40G course manual: Foundry for Operations Research & Systems Analysis (ORSA) professionals"
+  },
+  {
+    "id": "CG40G",
+    "label": "CONCEPTS GUIDE\nTM40G",
+    "path": "tm/TM_40G_orsa/CONCEPTS_GUIDE_TM40G_ORSA.md",
+    "type": "CG",
+    "col": 4,
+    "track": "TM-40G",
+    "ni": 1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 214,
+    "y": 1382,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Concepts guide: statistical methods and analytical frameworks for ORSA practitioners"
+  },
+  {
+    "id": "SYL40G",
+    "label": "SYLLABUS\nTM40G",
+    "path": "syllabi/SYLLABUS_TM40G.md",
+    "type": "SYL",
+    "col": 4,
+    "track": "TM-40G",
+    "ni": 2,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 398,
+    "y": 1382,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40G syllabus: learning objectives, schedule, and grading for the ORSA specialist track"
+  },
+  {
+    "id": "EX40G",
+    "label": "EX-40G\nORSA",
+    "path": "exercises/EX-40G_orsa/EXERCISE.md",
+    "type": "EX",
+    "col": 4,
+    "track": "TM-40G",
+    "ni": 3,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 582,
+    "y": 1382,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40G lab: build ORSA models, simulations, and analytical dashboards in Foundry"
+  },
+  {
+    "id": "EXAM40GPRE",
+    "label": "EXAM TM40G\nPRE",
+    "path": "exercises/exams/EXAM_TM40G_PRE.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40G",
+    "ni": 4,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 766,
+    "y": 1382,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40G pre-test: confirm TM-30 proficiency before ORSA specialist content begins"
+  },
+  {
+    "id": "EXAM40GPOST",
+    "label": "EXAM TM40G\nPOST",
+    "path": "exercises/exams/EXAM_TM40G_POST.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40G",
+    "ni": 5,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 950,
+    "y": 1382,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40G post-test: demonstrate ORSA data and analytical competency"
+  },
+  {
+    "id": "TM40H",
+    "label": "TM -40H\nAI Engineer",
+    "path": "tm/TM_40H_ai_engineer/TM_40H_AI_ENGINEER.md",
+    "type": "TM",
+    "col": 4,
+    "track": "TM-40H",
+    "ni": 0,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1442,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40H course manual: Foundry for AI Engineers \u2014 building and deploying AI/ML models"
+  },
+  {
+    "id": "CG40H",
+    "label": "CONCEPTS GUIDE\nTM40H",
+    "path": "tm/TM_40H_ai_engineer/CONCEPTS_GUIDE_TM40H_AI_ENGINEER.md",
+    "type": "CG",
+    "col": 4,
+    "track": "TM-40H",
+    "ni": 1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 214,
+    "y": 1442,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Concepts guide: AI/ML architecture, model lifecycle, and responsible AI for TM-40H students"
+  },
+  {
+    "id": "SYL40H",
+    "label": "SYLLABUS\nTM40H",
+    "path": "syllabi/SYLLABUS_TM40H.md",
+    "type": "SYL",
+    "col": 4,
+    "track": "TM-40H",
+    "ni": 2,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 398,
+    "y": 1442,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40H syllabus: learning objectives, schedule, and grading for the AI Engineer track"
+  },
+  {
+    "id": "EX40H",
+    "label": "EX-40H\nAI Engineer",
+    "path": "exercises/EX-40H_ai_engineer/EXERCISE.md",
+    "type": "EX",
+    "col": 4,
+    "track": "TM-40H",
+    "ni": 3,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 582,
+    "y": 1442,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40H lab: train, evaluate, and deploy an AI model on Foundry data"
+  },
+  {
+    "id": "EXAM40HPRE",
+    "label": "EXAM TM40H\nPRE",
+    "path": "exercises/exams/EXAM_TM40H_PRE.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40H",
+    "ni": 4,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 766,
+    "y": 1442,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40H pre-test: confirm TM-30 proficiency before AI Engineer content begins"
+  },
+  {
+    "id": "EXAM40HPOST",
+    "label": "EXAM TM40H\nPOST",
+    "path": "exercises/exams/EXAM_TM40H_POST.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40H",
+    "ni": 5,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 950,
+    "y": 1442,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40H post-test: demonstrate AI engineering competency on Foundry"
+  },
+  {
+    "id": "TM40I",
+    "label": "TM -40I\nML Engineer",
+    "path": "tm/TM_40I_ml_engineer/TM_40I_ML_ENGINEER.md",
+    "type": "TM",
+    "col": 4,
+    "track": "TM-40I",
+    "ni": 0,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1502,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40I course manual: Foundry for ML Engineers \u2014 pipelines, feature stores, model ops"
+  },
+  {
+    "id": "CG40I",
+    "label": "CONCEPTS GUIDE\nTM40I",
+    "path": "tm/TM_40I_ml_engineer/CONCEPTS_GUIDE_TM40I_ML_ENGINEER.md",
+    "type": "CG",
+    "col": 4,
+    "track": "TM-40I",
+    "ni": 1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 214,
+    "y": 1502,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Concepts guide: ML engineering, feature engineering, and production model ops"
+  },
+  {
+    "id": "SYL40I",
+    "label": "SYLLABUS\nTM40I",
+    "path": "syllabi/SYLLABUS_TM40I.md",
+    "type": "SYL",
+    "col": 4,
+    "track": "TM-40I",
+    "ni": 2,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 398,
+    "y": 1502,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40I syllabus: learning objectives, schedule, and grading for the ML Engineer track"
+  },
+  {
+    "id": "EX40I",
+    "label": "EX-40I\nML Engineer",
+    "path": "exercises/EX-40I_ml_engineer/EXERCISE.md",
+    "type": "EX",
+    "col": 4,
+    "track": "TM-40I",
+    "ni": 3,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 582,
+    "y": 1502,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40I lab: build end-to-end ML pipelines and feature stores in Foundry"
+  },
+  {
+    "id": "EXAM40IPRE",
+    "label": "EXAM TM40I\nPRE",
+    "path": "exercises/exams/EXAM_TM40I_PRE.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40I",
+    "ni": 4,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 766,
+    "y": 1502,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40I pre-test: confirm TM-30 proficiency before ML Engineer content begins"
+  },
+  {
+    "id": "EXAM40IPOST",
+    "label": "EXAM TM40I\nPOST",
+    "path": "exercises/exams/EXAM_TM40I_POST.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40I",
+    "ni": 5,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 950,
+    "y": 1502,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40I post-test: demonstrate ML engineering competency on Foundry"
+  },
+  {
+    "id": "TM40J",
+    "label": "TM -40J\nProg Manager",
+    "path": "tm/TM_40J_program_manager/TM_40J_PROGRAM_MANAGER.md",
+    "type": "TM",
+    "col": 4,
+    "track": "TM-40J",
+    "ni": 0,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1562,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40J course manual: Foundry for Program Managers \u2014 portfolio tracking, reporting, governance"
+  },
+  {
+    "id": "CG40J",
+    "label": "CONCEPTS GUIDE\nTM40J",
+    "path": "tm/TM_40J_program_manager/CONCEPTS_GUIDE_TM40J_PROGRAM_MANAGER.md",
+    "type": "CG",
+    "col": 4,
+    "track": "TM-40J",
+    "ni": 1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 214,
+    "y": 1562,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Concepts guide: program management data concepts, KPIs, and reporting frameworks"
+  },
+  {
+    "id": "SYL40J",
+    "label": "SYLLABUS\nTM40J",
+    "path": "syllabi/SYLLABUS_TM40J.md",
+    "type": "SYL",
+    "col": 4,
+    "track": "TM-40J",
+    "ni": 2,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 398,
+    "y": 1562,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40J syllabus: learning objectives, schedule, and grading for the Program Manager track"
+  },
+  {
+    "id": "EX40J",
+    "label": "EX-40J\nProg Manager",
+    "path": "exercises/EX-40J_program_manager/EXERCISE.md",
+    "type": "EX",
+    "col": 4,
+    "track": "TM-40J",
+    "ni": 3,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 582,
+    "y": 1562,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40J lab: build program tracking dashboards and governance data products"
+  },
+  {
+    "id": "EXAM40JPRE",
+    "label": "EXAM TM40J\nPRE",
+    "path": "exercises/exams/EXAM_TM40J_PRE.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40J",
+    "ni": 4,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 766,
+    "y": 1562,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40J pre-test: confirm TM-30 proficiency before PM content begins"
+  },
+  {
+    "id": "EXAM40JPOST",
+    "label": "EXAM TM40J\nPOST",
+    "path": "exercises/exams/EXAM_TM40J_POST.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40J",
+    "ni": 5,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 950,
+    "y": 1562,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40J post-test: demonstrate program management data competency"
+  },
+  {
+    "id": "TM40K",
+    "label": "TM -40K\nKnwl Manager",
+    "path": "tm/TM_40K_knowledge_manager/TM_40K_KNOWLEDGE_MANAGER.md",
+    "type": "TM",
+    "col": 4,
+    "track": "TM-40K",
+    "ni": 0,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1622,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40K course manual: Foundry for Knowledge Managers \u2014 content governance, taxonomy, search"
+  },
+  {
+    "id": "CG40K",
+    "label": "CONCEPTS GUIDE\nTM40K",
+    "path": "tm/TM_40K_knowledge_manager/CONCEPTS_GUIDE_TM40K_KNOWLEDGE_MANAGER.md",
+    "type": "CG",
+    "col": 4,
+    "track": "TM-40K",
+    "ni": 1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 214,
+    "y": 1622,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Concepts guide: knowledge management theory, taxonomy design, and information architecture"
+  },
+  {
+    "id": "SYL40K",
+    "label": "SYLLABUS\nTM40K",
+    "path": "syllabi/SYLLABUS_TM40K.md",
+    "type": "SYL",
+    "col": 4,
+    "track": "TM-40K",
+    "ni": 2,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 398,
+    "y": 1622,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40K syllabus: learning objectives, schedule, and grading for the Knowledge Manager track"
+  },
+  {
+    "id": "EX40K",
+    "label": "EX-40K\nKnwl Manager",
+    "path": "exercises/EX-40K_knowledge_manager/EXERCISE.md",
+    "type": "EX",
+    "col": 4,
+    "track": "TM-40K",
+    "ni": 3,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 582,
+    "y": 1622,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40K lab: build a knowledge taxonomy and governed content catalog in Foundry"
+  },
+  {
+    "id": "EXAM40KPRE",
+    "label": "EXAM TM40K\nPRE",
+    "path": "exercises/exams/EXAM_TM40K_PRE.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40K",
+    "ni": 4,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 766,
+    "y": 1622,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40K pre-test: confirm TM-30 proficiency before Knowledge Manager content begins"
+  },
+  {
+    "id": "EXAM40KPOST",
+    "label": "EXAM TM40K\nPOST",
+    "path": "exercises/exams/EXAM_TM40K_POST.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40K",
+    "ni": 5,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 950,
+    "y": 1622,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40K post-test: demonstrate knowledge management competency on Foundry"
+  },
+  {
+    "id": "TM40L",
+    "label": "TM -40L\nSoftware Engr",
+    "path": "tm/TM_40L_software_engineer/TM_40L_SOFTWARE_ENGINEER.md",
+    "type": "TM",
+    "col": 4,
+    "track": "TM-40L",
+    "ni": 0,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1682,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40L course manual: Foundry for Software Engineers \u2014 APIs, OSDK, custom integrations"
+  },
+  {
+    "id": "CG40L",
+    "label": "CONCEPTS GUIDE\nTM40L",
+    "path": "tm/TM_40L_software_engineer/CONCEPTS_GUIDE_TM40L_SOFTWARE_ENGINEER.md",
+    "type": "CG",
+    "col": 4,
+    "track": "TM-40L",
+    "ni": 1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 214,
+    "y": 1682,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Concepts guide: software engineering patterns, API design, and Foundry SDK usage"
+  },
+  {
+    "id": "SYL40L",
+    "label": "SYLLABUS\nTM40L",
+    "path": "syllabi/SYLLABUS_TM40L.md",
+    "type": "SYL",
+    "col": 4,
+    "track": "TM-40L",
+    "ni": 2,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 398,
+    "y": 1682,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40L syllabus: learning objectives, schedule, and grading for the Software Engineer track"
+  },
+  {
+    "id": "EX40L",
+    "label": "EX-40L\nSoftware Engr",
+    "path": "exercises/EX-40L_software_engineer/EXERCISE.md",
+    "type": "EX",
+    "col": 4,
+    "track": "TM-40L",
+    "ni": 3,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 582,
+    "y": 1682,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40L lab: build custom Foundry applications using OSDK and external integrations"
+  },
+  {
+    "id": "EXAM40LPRE",
+    "label": "EXAM TM40L\nPRE",
+    "path": "exercises/exams/EXAM_TM40L_PRE.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40L",
+    "ni": 4,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 766,
+    "y": 1682,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40L pre-test: confirm TM-30 proficiency before Software Engineer content begins"
+  },
+  {
+    "id": "EXAM40LPOST",
+    "label": "EXAM TM40L\nPOST",
+    "path": "exercises/exams/EXAM_TM40L_POST.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40L",
+    "ni": 5,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 950,
+    "y": 1682,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40L post-test: demonstrate software engineering competency on Foundry"
+  },
+  {
+    "id": "TM50_OVERVIEW",
+    "label": "TM -50\nOVERVIEW",
+    "path": "tm/TM_50_overview/TM_50_OVERVIEW.md",
+    "type": "TM",
+    "col": 5,
+    "track": "TM-50-OVERVIEW",
+    "ni": -2,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 30,
+    "y": 1860,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer",
+      "specialist"
+    ],
+    "desc": "TM-50 level overview: six advanced specialist tracks (G-L) requiring corresponding TM-40 completion"
+  },
+  {
+    "id": "TM50G",
+    "label": "TM -50G\nAdv ORSA",
+    "path": "tm/TM_50G_orsa_advanced/TM_50G_ORSA_ADVANCED.md",
+    "type": "TM",
+    "col": 5,
+    "track": "TM-50G",
+    "ni": 0,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 30,
+    "y": 1860,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50G advanced course: expert-level ORSA \u2014 agent-based models, advanced simulation"
+  },
+  {
+    "id": "CG50G",
+    "label": "CONCEPTS GUIDE\nTM50G",
+    "path": "tm/TM_50G_orsa_advanced/CONCEPTS_GUIDE_TM50G_ORSA_ADVANCED.md",
+    "type": "CG",
+    "col": 5,
+    "track": "TM-50G",
+    "ni": 1,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 214,
+    "y": 1860,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Advanced concepts guide: stochastic modeling, optimization, and Bayesian analysis for ORSA"
+  },
+  {
+    "id": "SYL50G",
+    "label": "SYLLABUS\nTM50G",
+    "path": "syllabi/SYLLABUS_TM50G.md",
+    "type": "SYL",
+    "col": 5,
+    "track": "TM-50G",
+    "ni": 2,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 398,
+    "y": 1860,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50G syllabus: advanced ORSA learning objectives and grading"
+  },
+  {
+    "id": "EXAM50GPRE",
+    "label": "EXAM TM50G\nPRE",
+    "path": "exercises/exams/EXAM_TM50G_PRE.md",
+    "type": "EXAM",
+    "col": 5,
+    "track": "TM-50G",
+    "ni": 3,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 582,
+    "y": 1860,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50G pre-test: confirm TM-40G proficiency before advanced ORSA content"
+  },
+  {
+    "id": "EXAM50GPOST",
+    "label": "EXAM TM50G\nPOST",
+    "path": "exercises/exams/EXAM_TM50G_POST.md",
+    "type": "EXAM",
+    "col": 5,
+    "track": "TM-50G",
+    "ni": 4,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 766,
+    "y": 1860,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50G post-test: demonstrate advanced ORSA competency"
+  },
+  {
+    "id": "TM50H",
+    "label": "TM -50H\nAdv AI Engr",
+    "path": "tm/TM_50H_ai_engineer_advanced/TM_50H_AI_ENGINEER_ADVANCED.md",
+    "type": "TM",
+    "col": 5,
+    "track": "TM-50H",
+    "ni": 0,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 30,
+    "y": 1920,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50H advanced course: expert AI engineering \u2014 large model deployment, MLOps at scale"
+  },
+  {
+    "id": "CG50H",
+    "label": "CONCEPTS GUIDE\nTM50H",
+    "path": "tm/TM_50H_ai_engineer_advanced/CONCEPTS_GUIDE_TM50H_AI_ENGINEER_ADVANCED.md",
+    "type": "CG",
+    "col": 5,
+    "track": "TM-50H",
+    "ni": 1,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 214,
+    "y": 1920,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Advanced concepts guide: transformer architectures, fine-tuning, and responsible AI at scale"
+  },
+  {
+    "id": "SYL50H",
+    "label": "SYLLABUS\nTM50H",
+    "path": "syllabi/SYLLABUS_TM50H.md",
+    "type": "SYL",
+    "col": 5,
+    "track": "TM-50H",
+    "ni": 2,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 398,
+    "y": 1920,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50H syllabus: advanced AI Engineer learning objectives and grading"
+  },
+  {
+    "id": "EXAM50HPRE",
+    "label": "EXAM TM50H\nPRE",
+    "path": "exercises/exams/EXAM_TM50H_PRE.md",
+    "type": "EXAM",
+    "col": 5,
+    "track": "TM-50H",
+    "ni": 3,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 582,
+    "y": 1920,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50H pre-test: confirm TM-40H proficiency before advanced AI content"
+  },
+  {
+    "id": "EXAM50HPOST",
+    "label": "EXAM TM50H\nPOST",
+    "path": "exercises/exams/EXAM_TM50H_POST.md",
+    "type": "EXAM",
+    "col": 5,
+    "track": "TM-50H",
+    "ni": 4,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 766,
+    "y": 1920,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50H post-test: demonstrate advanced AI engineering competency"
+  },
+  {
+    "id": "TM50I",
+    "label": "TM -50I\nAdv ML Engr",
+    "path": "tm/TM_50I_ml_engineer_advanced/TM_50I_ML_ENGINEER_ADVANCED.md",
+    "type": "TM",
+    "col": 5,
+    "track": "TM-50I",
+    "ni": 0,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 30,
+    "y": 1980,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50I advanced course: expert ML engineering \u2014 distributed training, real-time inference"
+  },
+  {
+    "id": "CG50I",
+    "label": "CONCEPTS GUIDE\nTM50I",
+    "path": "tm/TM_50I_ml_engineer_advanced/CONCEPTS_GUIDE_TM50I_ML_ENGINEER_ADVANCED.md",
+    "type": "CG",
+    "col": 5,
+    "track": "TM-50I",
+    "ni": 1,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 214,
+    "y": 1980,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Advanced concepts guide: distributed ML, real-time feature stores, and model monitoring"
+  },
+  {
+    "id": "SYL50I",
+    "label": "SYLLABUS\nTM50I",
+    "path": "syllabi/SYLLABUS_TM50I.md",
+    "type": "SYL",
+    "col": 5,
+    "track": "TM-50I",
+    "ni": 2,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 398,
+    "y": 1980,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50I syllabus: advanced ML Engineer learning objectives and grading"
+  },
+  {
+    "id": "EXAM50IPRE",
+    "label": "EXAM TM50I\nPRE",
+    "path": "exercises/exams/EXAM_TM50I_PRE.md",
+    "type": "EXAM",
+    "col": 5,
+    "track": "TM-50I",
+    "ni": 3,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 582,
+    "y": 1980,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50I pre-test: confirm TM-40I proficiency before advanced ML content"
+  },
+  {
+    "id": "EXAM50IPOST",
+    "label": "EXAM TM50I\nPOST",
+    "path": "exercises/exams/EXAM_TM50I_POST.md",
+    "type": "EXAM",
+    "col": 5,
+    "track": "TM-50I",
+    "ni": 4,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 766,
+    "y": 1980,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50I post-test: demonstrate advanced ML engineering competency"
+  },
+  {
+    "id": "TM50J",
+    "label": "TM -50J\nAdv Prog Mgr",
+    "path": "tm/TM_50J_program_manager_advanced/TM_50J_PROGRAM_MANAGER_ADVANCED.md",
+    "type": "TM",
+    "col": 5,
+    "track": "TM-50J",
+    "ni": 0,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 30,
+    "y": 2040,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50J advanced course: expert program management \u2014 enterprise portfolio, strategic reporting"
+  },
+  {
+    "id": "CG50J",
+    "label": "CONCEPTS GUIDE\nTM50J",
+    "path": "tm/TM_50J_program_manager_advanced/CONCEPTS_GUIDE_TM50J_PROGRAM_MANAGER_ADVANCED.md",
+    "type": "CG",
+    "col": 5,
+    "track": "TM-50J",
+    "ni": 1,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 214,
+    "y": 2040,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Advanced concepts guide: enterprise portfolio management and strategic data governance"
+  },
+  {
+    "id": "SYL50J",
+    "label": "SYLLABUS\nTM50J",
+    "path": "syllabi/SYLLABUS_TM50J.md",
+    "type": "SYL",
+    "col": 5,
+    "track": "TM-50J",
+    "ni": 2,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 398,
+    "y": 2040,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50J syllabus: advanced Program Manager learning objectives and grading"
+  },
+  {
+    "id": "EXAM50JPRE",
+    "label": "EXAM TM50J\nPRE",
+    "path": "exercises/exams/EXAM_TM50J_PRE.md",
+    "type": "EXAM",
+    "col": 5,
+    "track": "TM-50J",
+    "ni": 3,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 582,
+    "y": 2040,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50J pre-test: confirm TM-40J proficiency before advanced PM content"
+  },
+  {
+    "id": "EXAM50JPOST",
+    "label": "EXAM TM50J\nPOST",
+    "path": "exercises/exams/EXAM_TM50J_POST.md",
+    "type": "EXAM",
+    "col": 5,
+    "track": "TM-50J",
+    "ni": 4,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 766,
+    "y": 2040,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50J post-test: demonstrate advanced program management competency"
+  },
+  {
+    "id": "TM50K",
+    "label": "TM -50K\nAdv Knwl Mgr",
+    "path": "tm/TM_50K_knowledge_manager_advanced/TM_50K_KNOWLEDGE_MANAGER_ADVANCED.md",
+    "type": "TM",
+    "col": 5,
+    "track": "TM-50K",
+    "ni": 0,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 30,
+    "y": 2100,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50K advanced course: expert knowledge management \u2014 enterprise taxonomy, AI-assisted search"
+  },
+  {
+    "id": "CG50K",
+    "label": "CONCEPTS GUIDE\nTM50K",
+    "path": "tm/TM_50K_knowledge_manager_advanced/CONCEPTS_GUIDE_TM50K_KNOWLEDGE_MANAGER_ADVANCED.md",
+    "type": "CG",
+    "col": 5,
+    "track": "TM-50K",
+    "ni": 1,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 214,
+    "y": 2100,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Advanced concepts guide: enterprise information architecture and AI-assisted knowledge systems"
+  },
+  {
+    "id": "SYL50K",
+    "label": "SYLLABUS\nTM50K",
+    "path": "syllabi/SYLLABUS_TM50K.md",
+    "type": "SYL",
+    "col": 5,
+    "track": "TM-50K",
+    "ni": 2,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 398,
+    "y": 2100,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50K syllabus: advanced Knowledge Manager learning objectives and grading"
+  },
+  {
+    "id": "EXAM50KPRE",
+    "label": "EXAM TM50K\nPRE",
+    "path": "exercises/exams/EXAM_TM50K_PRE.md",
+    "type": "EXAM",
+    "col": 5,
+    "track": "TM-50K",
+    "ni": 3,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 582,
+    "y": 2100,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50K pre-test: confirm TM-40K proficiency before advanced KM content"
+  },
+  {
+    "id": "EXAM50KPOST",
+    "label": "EXAM TM50K\nPOST",
+    "path": "exercises/exams/EXAM_TM50K_POST.md",
+    "type": "EXAM",
+    "col": 5,
+    "track": "TM-50K",
+    "ni": 4,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 766,
+    "y": 2100,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50K post-test: demonstrate advanced knowledge management competency"
+  },
+  {
+    "id": "TM50L",
+    "label": "TM -50L\nAdv SWE",
+    "path": "tm/TM_50L_software_engineer_advanced/TM_50L_SOFTWARE_ENGINEER_ADVANCED.md",
+    "type": "TM",
+    "col": 5,
+    "track": "TM-50L",
+    "ni": 0,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 30,
+    "y": 2160,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50L advanced course: expert software engineering \u2014 platform architecture, Foundry extensions"
+  },
+  {
+    "id": "CG50L",
+    "label": "CONCEPTS GUIDE\nTM50L",
+    "path": "tm/TM_50L_software_engineer_advanced/CONCEPTS_GUIDE_TM50L_SOFTWARE_ENGINEER_ADVANCED.md",
+    "type": "CG",
+    "col": 5,
+    "track": "TM-50L",
+    "ni": 1,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 214,
+    "y": 2160,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Advanced concepts guide: platform engineering, security, and large-scale Foundry architecture"
+  },
+  {
+    "id": "SYL50L",
+    "label": "SYLLABUS\nTM50L",
+    "path": "syllabi/SYLLABUS_TM50L.md",
+    "type": "SYL",
+    "col": 5,
+    "track": "TM-50L",
+    "ni": 2,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 398,
+    "y": 2160,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50L syllabus: advanced Software Engineer learning objectives and grading"
+  },
+  {
+    "id": "EXAM50LPRE",
+    "label": "EXAM TM50L\nPRE",
+    "path": "exercises/exams/EXAM_TM50L_PRE.md",
+    "type": "EXAM",
+    "col": 5,
+    "track": "TM-50L",
+    "ni": 3,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 582,
+    "y": 2160,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50L pre-test: confirm TM-40L proficiency before advanced SWE content"
+  },
+  {
+    "id": "EXAM50LPOST",
+    "label": "EXAM TM50L\nPOST",
+    "path": "exercises/exams/EXAM_TM50L_POST.md",
+    "type": "EXAM",
+    "col": 5,
+    "track": "TM-50L",
+    "ni": 4,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 766,
+    "y": 2160,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50L post-test: demonstrate advanced software engineering competency"
+  },
+  {
+    "id": "MGMT_MTP",
+    "label": "Master Training\nPlan",
+    "path": "training_management/MTP_MSS.md",
+    "type": "TMGMT",
+    "col": 6,
+    "track": "Training Mgmt",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 190,
+    "is_sidebar": true,
+    "aud": [
+      "trainer"
+    ],
+    "desc": "Master Training Plan: the annual schedule of every MSS course, cohort, and seat allocation"
+  },
+  {
+    "id": "MGMT_POI",
+    "label": "Program of\nInstruction",
+    "path": "training_management/POI_MSS.md",
+    "type": "TMGMT",
+    "col": 6,
+    "track": "Training Mgmt",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 250,
+    "is_sidebar": true,
+    "aud": [
+      "trainer"
+    ],
+    "desc": "Program of Instruction: the official Army document defining the full curriculum structure"
+  },
+  {
+    "id": "MGMT_CAD",
+    "label": "Course Admin\nDocument",
+    "path": "training_management/CAD_MSS.md",
+    "type": "TMGMT",
+    "col": 6,
+    "track": "Training Mgmt",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 310,
+    "is_sidebar": true,
+    "aud": [
+      "trainer"
+    ],
+    "desc": "Course Admin Document: logistics guide covering enrollment requirements, facilities, and resources"
+  },
+  {
+    "id": "MGMT_TEO",
+    "label": "Training Evaluation\nOutline",
+    "path": "training_management/TEO_MSS.md",
+    "type": "TMGMT",
+    "col": 6,
+    "track": "Training Mgmt",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 370,
+    "is_sidebar": true,
+    "aud": [
+      "trainer"
+    ],
+    "desc": "Training Evaluation Outline: how instructors assess and grade student performance"
+  },
+  {
+    "id": "MGMT_ENROLL",
+    "label": "Enrollment\nProcedures",
+    "path": "training_management/ENROLLMENT_SOP.md",
+    "type": "TMGMT",
+    "col": 6,
+    "track": "Training Mgmt",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 430,
+    "is_sidebar": true,
+    "aud": [
+      "trainer"
+    ],
+    "desc": "Enrollment SOP: step-by-step process for unit commanders to nominate and register personnel"
+  },
+  {
+    "id": "MGMT_SCHED",
+    "label": "Annual Training\nSchedule",
+    "path": "training_management/ANNUAL_TRAINING_SCHEDULE.md",
+    "type": "TMGMT",
+    "col": 6,
+    "track": "Training Mgmt",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 490,
+    "is_sidebar": true,
+    "aud": [
+      "trainer"
+    ],
+    "desc": "Annual Training Schedule: calendar of all upcoming MSS classes with dates and locations"
+  },
+  {
+    "id": "MGMT_FACULTY",
+    "label": "Faculty\nDevelopment Plan",
+    "path": "training_management/FACULTY_DEVELOPMENT_PLAN.md",
+    "type": "TMGMT",
+    "col": 6,
+    "track": "Training Mgmt",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 550,
+    "is_sidebar": true,
+    "aud": [
+      "trainer"
+    ],
+    "desc": "Faculty Development Plan: instructor qualification standards and professional growth roadmap"
+  },
+  {
+    "id": "MGMT_CERT",
+    "label": "Completion\nCertificate",
+    "path": "training_management/COMPLETION_CERTIFICATE.md",
+    "type": "TMGMT",
+    "col": 6,
+    "track": "Training Mgmt",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 610,
+    "is_sidebar": true,
+    "aud": [
+      "trainer"
+    ],
+    "desc": "Completion Certificate: awarded to students who pass a course \u2014 template and issuance SOP"
+  },
+  {
+    "id": "MGMT_CMS",
+    "label": "Curriculum\nMaintenance SOP",
+    "path": "training_management/CURRICULUM_MAINTENANCE_SOP.md",
+    "type": "TMGMT",
+    "col": 6,
+    "track": "Training Mgmt",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 670,
+    "is_sidebar": true,
+    "aud": [
+      "trainer"
+    ],
+    "desc": "Curriculum Maintenance SOP: process for keeping course content current as the system evolves"
+  },
+  {
+    "id": "LP_TM10",
+    "label": "TM -10 Instructor\nLesson Plans",
+    "path": "training_management/lesson_plans/TM10/TM10_LESSON_PLANS.md",
+    "type": "TMGMT",
+    "col": 6,
+    "track": "Training Mgmt",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 730,
+    "is_sidebar": true,
+    "aud": [
+      "trainer"
+    ],
+    "desc": "TM-10 instructor guide: lesson timing, discussion prompts, and facilitation notes"
+  },
+  {
+    "id": "LP_TM20",
+    "label": "TM -20 Instructor\nLesson Plans",
+    "path": "training_management/lesson_plans/TM20_LESSON_PLAN_OUTLINES.md",
+    "type": "TMGMT",
+    "col": 6,
+    "track": "Training Mgmt",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 790,
+    "is_sidebar": true,
+    "aud": [
+      "trainer"
+    ],
+    "desc": "TM-20 instructor guide: lesson timing, discussion prompts, and facilitation notes"
+  },
+  {
+    "id": "LP_TM30",
+    "label": "TM -30 Instructor\nLesson Plans",
+    "path": "training_management/lesson_plans/TM30_LESSON_PLAN_OUTLINES.md",
+    "type": "TMGMT",
+    "col": 6,
+    "track": "Training Mgmt",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 850,
+    "is_sidebar": true,
+    "aud": [
+      "trainer"
+    ],
+    "desc": "TM-30 instructor guide: lesson timing, discussion prompts, and facilitation notes"
+  },
+  {
+    "id": "LP_TM40SPEC",
+    "label": "TM -40 Specialist\nLesson Plans",
+    "path": "training_management/lesson_plans/TM40_SPECIALIST_LESSON_PLAN_OUTLINES.md",
+    "type": "TMGMT",
+    "col": 6,
+    "track": "Training Mgmt",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 910,
+    "is_sidebar": true,
+    "aud": [
+      "trainer",
+      "specialist"
+    ],
+    "desc": "TM-40G\u2013L specialist instructor guide: lesson timing and facilitation notes"
+  },
+  {
+    "id": "HTML_MSS",
+    "label": "MSS Training Hub\n(Web App)",
+    "path": "mss_info_app/index.html",
+    "type": "HTML",
+    "col": 6,
+    "track": "HTML Apps",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 970,
+    "is_sidebar": true,
+    "aud": [
+      "dev"
+    ],
+    "desc": "MSS Training Hub: interactive web app with course catalog, enrollment links, and schedules"
+  },
+  {
+    "id": "HTML_TASKIDX",
+    "label": "Task Index\n(Web App)",
+    "path": "task_index.html",
+    "type": "HTML",
+    "col": 6,
+    "track": "HTML Apps",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 1030,
+    "is_sidebar": true,
+    "aud": [
+      "dev"
+    ],
+    "desc": "Task Index: searchable web tool listing every Foundry task by skill level and track"
+  },
+  {
+    "id": "HTML_SCHED",
+    "label": "Training Schedule\n(Web App)",
+    "path": "mss_info_app/training_schedule.html",
+    "type": "HTML",
+    "col": 6,
+    "track": "HTML Apps",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 1090,
+    "is_sidebar": true,
+    "aud": [
+      "dev"
+    ],
+    "desc": "Training Schedule App: live view of upcoming class dates and seat availability"
+  },
+  {
+    "id": "README_MT",
+    "label": "Maven Training\nCorpus README",
+    "path": "README.md",
+    "type": "README",
+    "col": 6,
+    "track": "READMEs",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 1150,
+    "is_sidebar": true,
+    "aud": [
+      "dev"
+    ],
+    "desc": "Maven Training corpus README: how this document library is organized and how to navigate it"
+  },
+  {
+    "id": "README_QS",
+    "label": "Quick Start\nGuide",
+    "path": "QUICK_START.md",
+    "type": "README",
+    "col": 6,
+    "track": "READMEs",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 1210,
+    "is_sidebar": true,
+    "aud": [
+      "dev"
+    ],
+    "desc": "Quick Start Guide: get a new Maven user set up and productive in under 10 minutes"
+  },
+  {
+    "id": "README_ROOT",
+    "label": "Repo Root README",
+    "path": "../README.md",
+    "type": "README",
+    "col": 6,
+    "track": "READMEs",
+    "ni": 0,
+    "row_len": 1,
+    "max_row_len": 1,
+    "x": 1194,
+    "y": 1270,
+    "is_sidebar": true,
+    "aud": [
+      "dev"
+    ],
+    "desc": "Repository overview: what's in this repo, how it's structured, and where to start"
+  },
+  {
+    "id": "CDA_Doctrine",
+    "label": "CDA Doctrine\n& Canon",
+    "path": "doctrine/cda_doctrine/",
+    "type": "CANON",
+    "col": 0,
+    "track": "Doctrine",
+    "ni": 3,
+    "row_len": 4,
+    "max_row_len": 4,
+    "x": 582,
+    "y": 190,
+    "is_sidebar": false,
+    "aud": [
+      "dev"
+    ],
+    "desc": "CDA governing doctrine, architectural canon, and constraints binding all data systems"
+  },
+  {
+    "id": "PPT_army_orient",
+    "label": "Army Data\nOrientation",
+    "path": "source_material/course_portal/PPT_army_orient",
+    "type": "PPT",
+    "col": 1,
+    "track": "Slide Decks",
+    "ni": 0,
+    "row_len": 3,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 428,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "trainer"
+    ],
+    "desc": "Slide deck: why the Army is investing in data \u2014 strategic context for new Maven users"
+  },
+  {
+    "id": "PPT_arch_primer",
+    "label": "Architecture\nPrimer",
+    "path": "source_material/course_portal/PPT_arch_primer",
+    "type": "PPT",
+    "col": 1,
+    "track": "Slide Decks",
+    "ni": 1,
+    "row_len": 3,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 428,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "trainer"
+    ],
+    "desc": "Slide deck: the Foundry platform in plain English \u2014 layers, components, and how data flows"
+  },
+  {
+    "id": "PPT_data_arch_deep",
+    "label": "Data Architecture\nDeep Dive",
+    "path": "source_material/course_portal/PPT_data_arch_deep",
+    "type": "PPT",
+    "col": 1,
+    "track": "Slide Decks",
+    "ni": 2,
+    "row_len": 3,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 428,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "trainer"
+    ],
+    "desc": "Slide deck: deep dive into Foundry's data architecture for technically curious TM-10 students"
+  },
+  {
+    "id": "PPT_data_stack",
+    "label": "2026 Data Stack\nDeep Dive",
+    "path": "source_material/course_portal/PPT_data_stack",
+    "type": "PPT",
+    "col": 2,
+    "track": "Slide Decks",
+    "ni": 0,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 606,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: the 2026 Army data stack \u2014 what tools exist and how they fit together"
+  },
+  {
+    "id": "PPT_l2_ingest",
+    "label": "L2 Ingestion &\nIntegration",
+    "path": "source_material/course_portal/PPT_l2_ingest",
+    "type": "PPT",
+    "col": 2,
+    "track": "Slide Decks",
+    "ni": 1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 606,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: how raw data gets ingested and integrated into Foundry (Layer 2)"
+  },
+  {
+    "id": "PPT_sem_layer",
+    "label": "Semantic Layer\nInstructions",
+    "path": "source_material/course_portal/PPT_sem_layer",
+    "type": "PPT",
+    "col": 2,
+    "track": "Slide Decks",
+    "ni": 2,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 606,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: what the semantic layer is and why it matters for data reuse"
+  },
+  {
+    "id": "PPT_ontology",
+    "label": "What Is an\nOntology?",
+    "path": "source_material/course_portal/PPT_ontology",
+    "type": "PPT",
+    "col": 2,
+    "track": "Slide Decks",
+    "ni": 3,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 606,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: what an ontology is and why it's the backbone of Foundry's data model"
+  },
+  {
+    "id": "PPT_data_model_f",
+    "label": "Data Modeling\nFoundations",
+    "path": "source_material/course_portal/PPT_data_model_f",
+    "type": "PPT",
+    "col": 2,
+    "track": "Slide Decks",
+    "ni": 4,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 606,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: data modeling foundations \u2014 entities, attributes, and relationships"
+  },
+  {
+    "id": "PPT_data_platforms",
+    "label": "Data Platforms\n& Cloud",
+    "path": "source_material/course_portal/PPT_data_platforms",
+    "type": "PPT",
+    "col": 2,
+    "track": "Slide Decks",
+    "ni": 5,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 606,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: data platforms and cloud \u2014 how Foundry fits into the broader enterprise stack"
+  },
+  {
+    "id": "PPT_l5_activate",
+    "label": "L5 Activation &\nInterface",
+    "path": "source_material/course_portal/PPT_l5_activate",
+    "type": "PPT",
+    "col": 2,
+    "track": "Slide Decks B",
+    "ni": 0,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 666,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: Layer 5 \u2014 how data gets surfaced in apps, dashboards, and APIs (activation)"
+  },
+  {
+    "id": "PPT_four_layers",
+    "label": "The Four\nLayers",
+    "path": "source_material/course_portal/PPT_four_layers",
+    "type": "PPT",
+    "col": 2,
+    "track": "Slide Decks B",
+    "ni": 1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 666,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: the four-layer Foundry model explained \u2014 from raw data to decision support"
+  },
+  {
+    "id": "PPT_dm_fund_l1",
+    "label": "Data Modeling\nFund. Level 1",
+    "path": "source_material/course_portal/PPT_dm_fund_l1",
+    "type": "PPT",
+    "col": 2,
+    "track": "Slide Decks B",
+    "ni": 2,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 666,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: data modeling fundamentals Level 1 \u2014 beginner concepts for no-code builders"
+  },
+  {
+    "id": "PPT_obj_type_watch",
+    "label": "Object Types:\nWhat to Watch",
+    "path": "source_material/course_portal/PPT_obj_type_watch",
+    "type": "PPT",
+    "col": 2,
+    "track": "Slide Decks B",
+    "ni": 3,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 666,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: object types in practice \u2014 what to watch for when designing Foundry objects"
+  },
+  {
+    "id": "PPT_links_rel",
+    "label": "Links &\nRelationships",
+    "path": "source_material/course_portal/PPT_links_rel",
+    "type": "PPT",
+    "col": 2,
+    "track": "Slide Decks B",
+    "ni": 4,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 666,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: links and relationships in Foundry \u2014 how objects connect and why it matters"
+  },
+  {
+    "id": "PPT_dont_filter",
+    "label": "Don't Filter \u2014\nIsn't Excel",
+    "path": "source_material/course_portal/PPT_dont_filter",
+    "type": "PPT",
+    "col": 2,
+    "track": "Slide Decks B",
+    "ni": 5,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 666,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: why Foundry isn't Excel \u2014 don't filter rows, model your data instead"
+  },
+  {
+    "id": "PPT_ctrl_vocab",
+    "label": "Controlled\nVocabularies",
+    "path": "source_material/course_portal/PPT_ctrl_vocab",
+    "type": "PPT",
+    "col": 3,
+    "track": "Slide Decks",
+    "ni": 0,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 844,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: controlled vocabularies \u2014 standardizing terms so data is consistent across units"
+  },
+  {
+    "id": "PPT_identity_key",
+    "label": "Identity:\nWho Owns the Key?",
+    "path": "source_material/course_portal/PPT_identity_key",
+    "type": "PPT",
+    "col": 3,
+    "track": "Slide Decks",
+    "ni": 1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 844,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: identity and governance \u2014 who owns the authoritative record for each entity"
+  },
+  {
+    "id": "PPT_sem_model_intro",
+    "label": "Semantic Modelling\nIntro",
+    "path": "source_material/course_portal/PPT_sem_model_intro",
+    "type": "PPT",
+    "col": 3,
+    "track": "Slide Decks",
+    "ni": 2,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 844,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: introduction to semantic modeling \u2014 expressing meaning, not just structure"
+  },
+  {
+    "id": "PPT_d01_arch",
+    "label": "01: Architecture\nFirst Principles",
+    "path": "source_material/course_portal/PPT_d01_arch",
+    "type": "PPT",
+    "col": 3,
+    "track": "Slide Decks",
+    "ni": 3,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 844,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: architecture first principles \u2014 design decisions that scale vs. ones that break"
+  },
+  {
+    "id": "PPT_d02_scope",
+    "label": "02: Scope\nEngineering",
+    "path": "source_material/course_portal/PPT_d02_scope",
+    "type": "PPT",
+    "col": 3,
+    "track": "Slide Decks",
+    "ni": 4,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 844,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: scope engineering \u2014 how to bound a data problem before writing a single transform"
+  },
+  {
+    "id": "PPT_d04_obj_var",
+    "label": "04: Object Type\nVarieties",
+    "path": "source_material/course_portal/PPT_d04_obj_var",
+    "type": "PPT",
+    "col": 3,
+    "track": "Slide Decks",
+    "ni": 5,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 844,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: object type varieties \u2014 when to use different object patterns in your ontology"
+  },
+  {
+    "id": "PPT_d05_identity",
+    "label": "05: Identity\n& Governance",
+    "path": "source_material/course_portal/PPT_d05_identity",
+    "type": "PPT",
+    "col": 3,
+    "track": "Slide Decks B",
+    "ni": 0,
+    "row_len": 2,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 904,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: identity and governance deep dive \u2014 unique keys, deduplication, master records"
+  },
+  {
+    "id": "PPT_d06_rel_model",
+    "label": "06: Relationship\nModeling",
+    "path": "source_material/course_portal/PPT_d06_rel_model",
+    "type": "PPT",
+    "col": 3,
+    "track": "Slide Decks B",
+    "ni": 1,
+    "row_len": 2,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 904,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "trainer"
+    ],
+    "desc": "Slide deck: relationship modeling \u2014 one-to-many, many-to-many, and temporal links"
+  },
+  {
+    "id": "PPT_ai_ml_hype",
+    "label": "AI/ML Beyond\nthe Hype",
+    "path": "source_material/course_portal/PPT_ai_ml_hype",
+    "type": "PPT",
+    "col": 4,
+    "track": "Slide Decks",
+    "ni": 0,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1742,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Slide deck: AI/ML beyond the hype \u2014 what models can and can't do in operational contexts"
+  },
+  {
+    "id": "PPT_decision_adv",
+    "label": "Decision\nAdvantage",
+    "path": "source_material/course_portal/PPT_decision_adv",
+    "type": "PPT",
+    "col": 4,
+    "track": "Slide Decks",
+    "ni": 1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1742,
+    "is_sidebar": false,
+    "aud": [
+      "user",
+      "dev"
+    ],
+    "desc": "Slide deck: decision advantage \u2014 how data-driven decisions outpace intuition at speed"
+  },
+  {
+    "id": "PPT_d03_rdf_owl",
+    "label": "03: RDF & OWL\nFoundations",
+    "path": "source_material/course_portal/PPT_d03_rdf_owl",
+    "type": "PPT",
+    "col": 4,
+    "track": "Slide Decks",
+    "ni": 2,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1742,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Slide deck: RDF and OWL foundations \u2014 linked data standards underlying Foundry's ontology"
+  },
+  {
+    "id": "PPT_d07_temporal",
+    "label": "07: Temporal\n& Bitemporal",
+    "path": "source_material/course_portal/PPT_d07_temporal",
+    "type": "PPT",
+    "col": 4,
+    "track": "Slide Decks",
+    "ni": 3,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1742,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Slide deck: temporal and bi-temporal data \u2014 modeling time-sensitive operational records"
+  },
+  {
+    "id": "PPT_dm_fund_l2",
+    "label": "Data Modeling\nFund. Level 2",
+    "path": "source_material/course_portal/PPT_dm_fund_l2",
+    "type": "PPT",
+    "col": 4,
+    "track": "Slide Decks",
+    "ni": 4,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1742,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Slide deck: data modeling fundamentals Level 2 \u2014 advanced patterns for TM-40 practitioners"
+  },
+  {
+    "id": "PPT_d12_capstone",
+    "label": "12: Foundry\nCapstone",
+    "path": "source_material/course_portal/PPT_d12_capstone",
+    "type": "PPT",
+    "col": 4,
+    "track": "Slide Decks",
+    "ni": 5,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1742,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Slide deck: Foundry capstone \u2014 end-to-end architecture of a production data product"
+  }
+,
+{
+  "id": "SS_TM30",
+  "label": "SELF-STUDY\nTM-30",
+  "path": "tm/TM_30_advanced_builder/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 3,
+  "track": "TM-30",
+  "ni": 5,
+  "row_len": 6,
+  "max_row_len": 6,
+  "x": 950,
+  "y": 784,
+  "is_sidebar": false,
+  "aud": [
+    "dev",
+    "specialist"
+  ],
+  "desc": "Optional self-study: Palantir Developers videos mapped to TM-30 UI tools (Workshop Scenarios, Pipeline Monitoring, Quiver, Contour, Security)"
+},
+{
+  "id": "SS_TM40G",
+  "label": "SELF-STUDY\nTM-40G",
+  "path": "tm/TM_40G_orsa/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 4,
+  "track": "TM-40G",
+  "ni": 6,
+  "row_len": 7,
+  "max_row_len": 7,
+  "x": 1134,
+  "y": 1382,
+  "is_sidebar": false,
+  "aud": [
+    "dev",
+    "specialist"
+  ],
+  "desc": "Optional self-study: Palantir Developers ORSA deep-dives (Quiver analytics, Contour analytics, Platform Architecture, AI/Advanced)"
+},
+{
+  "id": "SS_TM40H",
+  "label": "SELF-STUDY\nTM-40H",
+  "path": "tm/TM_40H_ai_engineer/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 4,
+  "track": "TM-40H",
+  "ni": 6,
+  "row_len": 7,
+  "max_row_len": 7,
+  "x": 1134,
+  "y": 1442,
+  "is_sidebar": false,
+  "aud": [
+    "dev",
+    "specialist"
+  ],
+  "desc": "Optional self-study: Palantir Developers AI Engineer deep-dives (RAG, Evals, MCP, Observability, Safety, Agent Studio, AIP Logic)"
+},
+{
+  "id": "SS_TM40I",
+  "label": "SELF-STUDY\nTM-40I",
+  "path": "tm/TM_40I_ml_engineer/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 4,
+  "track": "TM-40I",
+  "ni": 6,
+  "row_len": 7,
+  "max_row_len": 7,
+  "x": 1134,
+  "y": 1502,
+  "is_sidebar": false,
+  "aud": [
+    "dev",
+    "specialist"
+  ],
+  "desc": "Optional self-study: Palantir Developers ML Engineer deep-dives (Spark, PySpark testing, Iceberg, Compute Modules, Pipeline Monitoring)"
+},
+{
+  "id": "SS_TM40J",
+  "label": "SELF-STUDY\nTM-40J",
+  "path": "tm/TM_40J_program_manager/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 4,
+  "track": "TM-40J",
+  "ni": 6,
+  "row_len": 7,
+  "max_row_len": 7,
+  "x": 1134,
+  "y": 1562,
+  "is_sidebar": false,
+  "aud": [
+    "dev",
+    "specialist"
+  ],
+  "desc": "Optional self-study: Palantir Developers PM deep-dives (Delivery & Scaling, Project Tracking, Case Studies, Leadership)"
+},
+{
+  "id": "SS_TM40K",
+  "label": "SELF-STUDY\nTM-40K",
+  "path": "tm/TM_40K_knowledge_manager/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 4,
+  "track": "TM-40K",
+  "ni": 6,
+  "row_len": 7,
+  "max_row_len": 7,
+  "x": 1134,
+  "y": 1622,
+  "is_sidebar": false,
+  "aud": [
+    "dev",
+    "specialist"
+  ],
+  "desc": "Optional self-study: Palantir Developers KM deep-dives (RAG & Retrieval, Knowledge Architecture, Semantic Search, AIP-Assisted KM)"
+},
+{
+  "id": "SS_TM40L",
+  "label": "SELF-STUDY\nTM-40L",
+  "path": "tm/TM_40L_software_engineer/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 4,
+  "track": "TM-40L",
+  "ni": 6,
+  "row_len": 7,
+  "max_row_len": 7,
+  "x": 1134,
+  "y": 1682,
+  "is_sidebar": false,
+  "aud": [
+    "dev",
+    "specialist"
+  ],
+  "desc": "Optional self-study: Palantir Developers SWE deep-dives (~45 videos: OSDK 2.0, Functions, Code Repos, Cipher, MCP, Edge Ontology, Spark)"
+},
+{
+  "id": "SS_TM50G",
+  "label": "SELF-STUDY\nTM-50G",
+  "path": "tm/TM_50G_orsa_advanced/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 5,
+  "track": "TM-50G",
+  "ni": 5,
+  "row_len": 6,
+  "max_row_len": 6,
+  "x": 950,
+  "y": 1860,
+  "is_sidebar": false,
+  "aud": [
+    "dev",
+    "specialist"
+  ],
+  "desc": "Optional self-study: TM-40G content plus 7 advanced ORSA additions (Bayesian, persistent ORSA, data layer)"
+},
+{
+  "id": "SS_TM50H",
+  "label": "SELF-STUDY\nTM-50H",
+  "path": "tm/TM_50H_ai_engineer_advanced/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 5,
+  "track": "TM-50H",
+  "ni": 5,
+  "row_len": 6,
+  "max_row_len": 6,
+  "x": 950,
+  "y": 1920,
+  "is_sidebar": false,
+  "aud": [
+    "dev",
+    "specialist"
+  ],
+  "desc": "Optional self-study: TM-40H content plus 8 advanced AI Engineer additions (multi-agent, observability, enterprise scale)"
+},
+{
+  "id": "SS_TM50I",
+  "label": "SELF-STUDY\nTM-50I",
+  "path": "tm/TM_50I_ml_engineer_advanced/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 5,
+  "track": "TM-50I",
+  "ni": 5,
+  "row_len": 6,
+  "max_row_len": 6,
+  "x": 950,
+  "y": 1980,
+  "is_sidebar": false,
+  "aud": [
+    "dev",
+    "specialist"
+  ],
+  "desc": "Optional self-study: 8 groups, 29 videos (Iceberg advanced, xAI model tuning, Lightweight Transforms, Scaling AI)"
+},
+{
+  "id": "SS_TM50J",
+  "label": "SELF-STUDY\nTM-50J",
+  "path": "tm/TM_50J_program_manager_advanced/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 5,
+  "track": "TM-50J",
+  "ni": 5,
+  "row_len": 6,
+  "max_row_len": 6,
+  "x": 950,
+  "y": 2040,
+  "is_sidebar": false,
+  "aud": [
+    "dev",
+    "specialist"
+  ],
+  "desc": "Optional self-study: TM-40J content plus enterprise autonomy, process orchestration, enterprise automation"
+},
+{
+  "id": "SS_TM50K",
+  "label": "SELF-STUDY\nTM-50K",
+  "path": "tm/TM_50K_knowledge_manager_advanced/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 5,
+  "track": "TM-50K",
+  "ni": 5,
+  "row_len": 6,
+  "max_row_len": 6,
+  "x": 950,
+  "y": 2100,
+  "is_sidebar": false,
+  "aud": [
+    "dev",
+    "specialist"
+  ],
+  "desc": "Optional self-study: TM-40K content plus Advanced Ontology, Enterprise KM, multimodal data plane"
+},
+{
+  "id": "SS_TM50L",
+  "label": "SELF-STUDY\nTM-50L",
+  "path": "tm/TM_50L_software_engineer_advanced/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 5,
+  "track": "TM-50L",
+  "ni": 5,
+  "row_len": 6,
+  "max_row_len": 6,
+  "x": 950,
+  "y": 2160,
+  "is_sidebar": false,
+  "aud": [
+    "dev",
+    "specialist"
+  ],
+  "desc": "Optional self-study: TM-50L additions plus reference to TM-40L addendum (Code-based AI, interoperability, Gallatin observability)"
+},
+{
+  "id": "GDAP_Docs",
+  "label": "GDAP\nPlatform Docs",
+  "path": "doctrine/gdap/",
+  "type": "ARCH",
+  "col": 0,
+  "track": "Doctrine",
+  "ni": 4,
+  "row_len": 6,
+  "max_row_len": 6,
+  "x": 766,
+  "y": 190,
+  "is_sidebar": false,
+  "aud": ["dev"],
+  "desc": "Global Doctrine Alignment Platform: overview, vision, persistence strategy, acceptance tests, ADR-0001 (DuckDB=truth, LlamaIndex=serving). 5 docs."
+},
+{
+  "id": "MIM_Docs",
+  "label": "MIM\nReference Docs",
+  "path": "doctrine/mim/",
+  "type": "ARCH",
+  "col": 0,
+  "track": "Doctrine",
+  "ni": 5,
+  "row_len": 6,
+  "max_row_len": 6,
+  "x": 950,
+  "y": 190,
+  "is_sidebar": false,
+  "aud": ["dev"],
+  "desc": "MIP Information Model: overview, standard, state (2026-02-28 snapshot), academics (Dr. Gerz / NATO), decision records, future classes, OSDK Maker API. 7 docs."
+},
+{
+  "id": "EA_Docs",
+  "label": "Enterprise\nArchitecture",
+  "path": "doctrine/enterprise_architecture/",
+  "type": "EA",
+  "col": 0,
+  "track": "Standards",
+  "ni": 3,
+  "row_len": 4,
+  "max_row_len": 4,
+  "x": 950,
+  "y": 250,
+  "is_sidebar": false,
+  "aud": ["dev", "trainer"],
+  "desc": "Enterprise Architecture series: reference card, foundation, schools of thought (TOGAF/NAF/DODAF/Zachman), artifacts & views, governance, military application. 6 docs."
+},
+{
+  "id": "ARCH_REF",
+  "label": "ARCH\nQuick Reference",
+  "path": "quick_reference/cda_reference/",
+  "type": "REF",
+  "col": 0,
+  "track": "Standards",
+  "ni": 2,
+  "row_len": 4,
+  "max_row_len": 4,
+  "x": 766,
+  "y": 250,
+  "is_sidebar": false,
+  "aud": ["dev"],
+  "desc": "Architecture quick reference cards: DoctrineElement→Foundry mapping, EA vs DA, Enterprise Data Compass, Lessons Learned, Plan for Success. PDFs: REF_*.pdf"
+}
+];
+const EDGES = [
+  {
+    "source": "TM20",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "TM30",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "TM30",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL10",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "EX10",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM10PRE",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM10POST",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL20",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "EX20",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM20PRE",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM20POST",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL30",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "EX30",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM30PRE",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM30POST",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL20",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL30",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL30",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40_OVERVIEW",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "TM50_OVERVIEW",
+    "target": "TM40_OVERVIEW",
+    "type": "prereq"
+  },
+  { "source": "TM40A",  "target": "TM40_OVERVIEW", "type": "prereq" },
+  { "source": "TM40B",  "target": "TM40_OVERVIEW", "type": "prereq" },
+  { "source": "TM40C",  "target": "TM40_OVERVIEW", "type": "prereq" },
+  { "source": "TM40D",  "target": "TM40_OVERVIEW", "type": "prereq" },
+  { "source": "TM40E",  "target": "TM40_OVERVIEW", "type": "prereq" },
+  { "source": "TM40F",  "target": "TM40_OVERVIEW", "type": "prereq" },
+  { "source": "TM40G",  "target": "TM40_OVERVIEW", "type": "prereq" },
+  { "source": "TM40H",  "target": "TM40_OVERVIEW", "type": "prereq" },
+  { "source": "TM40I",  "target": "TM40_OVERVIEW", "type": "prereq" },
+  { "source": "TM40J",  "target": "TM40_OVERVIEW", "type": "prereq" },
+  { "source": "TM40K",  "target": "TM40_OVERVIEW", "type": "prereq" },
+  { "source": "TM40L",  "target": "TM40_OVERVIEW", "type": "prereq" },
+  { "source": "TM50G",  "target": "TM50_OVERVIEW", "type": "prereq" },
+  { "source": "TM50H",  "target": "TM50_OVERVIEW", "type": "prereq" },
+  { "source": "TM50I",  "target": "TM50_OVERVIEW", "type": "prereq" },
+  { "source": "TM50J",  "target": "TM50_OVERVIEW", "type": "prereq" },
+  { "source": "TM50K",  "target": "TM50_OVERVIEW", "type": "prereq" },
+  { "source": "TM50L",  "target": "TM50_OVERVIEW", "type": "prereq" },
+  {
+    "source": "TM40A",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40A",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40A",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40A",
+    "target": "CG40A",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40A",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40A",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40A",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "EX40A",
+    "target": "TM40A",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40APRE",
+    "target": "TM40A",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40APOST",
+    "target": "TM40A",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40B",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40B",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40B",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40B",
+    "target": "CG40B",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40B",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40B",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40B",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "EX40B",
+    "target": "TM40B",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40BPRE",
+    "target": "TM40B",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40BPOST",
+    "target": "TM40B",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40C",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40C",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40C",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40C",
+    "target": "CG40C",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40C",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40C",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40C",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "EX40C",
+    "target": "TM40C",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40CPRE",
+    "target": "TM40C",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40CPOST",
+    "target": "TM40C",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40D",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40D",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40D",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40D",
+    "target": "CG40D",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40D",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40D",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40D",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "EX40D",
+    "target": "TM40D",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40DPRE",
+    "target": "TM40D",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40DPOST",
+    "target": "TM40D",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40E",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40E",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40E",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40E",
+    "target": "CG40E",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40E",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40E",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40E",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "EX40E",
+    "target": "TM40E",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40EPRE",
+    "target": "TM40E",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40EPOST",
+    "target": "TM40E",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40F",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40F",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40F",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40F",
+    "target": "CG40F",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40F",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40F",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40F",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "EX40F",
+    "target": "TM40F",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40FPRE",
+    "target": "TM40F",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40FPOST",
+    "target": "TM40F",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40G",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40G",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40G",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40G",
+    "target": "CG40G",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40G",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40G",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40G",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "EX40G",
+    "target": "TM40G",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40GPRE",
+    "target": "TM40G",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40GPOST",
+    "target": "TM40G",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40H",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40H",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40H",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40H",
+    "target": "CG40H",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40H",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40H",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40H",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "EX40H",
+    "target": "TM40H",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40HPRE",
+    "target": "TM40H",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40HPOST",
+    "target": "TM40H",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40I",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40I",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40I",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40I",
+    "target": "CG40I",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40I",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40I",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40I",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "EX40I",
+    "target": "TM40I",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40IPRE",
+    "target": "TM40I",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40IPOST",
+    "target": "TM40I",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40J",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40J",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40J",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40J",
+    "target": "CG40J",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40J",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40J",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40J",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "EX40J",
+    "target": "TM40J",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40JPRE",
+    "target": "TM40J",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40JPOST",
+    "target": "TM40J",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40K",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40K",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40K",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40K",
+    "target": "CG40K",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40K",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40K",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40K",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "EX40K",
+    "target": "TM40K",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40KPRE",
+    "target": "TM40K",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40KPOST",
+    "target": "TM40K",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40L",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40L",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40L",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40L",
+    "target": "CG40L",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40L",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40L",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40L",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "EX40L",
+    "target": "TM40L",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40LPRE",
+    "target": "TM40L",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40LPOST",
+    "target": "TM40L",
+    "type": "prereq"
+  },
+  {
+    "source": "TM50G",
+    "target": "TM40G",
+    "type": "prereq"
+  },
+  {
+    "source": "TM50G",
+    "target": "CG50G",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL50G",
+    "target": "TM40G",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM50GPRE",
+    "target": "TM50G",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM50GPOST",
+    "target": "TM50G",
+    "type": "prereq"
+  },
+  {
+    "source": "TM50H",
+    "target": "TM40H",
+    "type": "prereq"
+  },
+  {
+    "source": "TM50H",
+    "target": "CG50H",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL50H",
+    "target": "TM40H",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM50HPRE",
+    "target": "TM50H",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM50HPOST",
+    "target": "TM50H",
+    "type": "prereq"
+  },
+  {
+    "source": "TM50I",
+    "target": "TM40I",
+    "type": "prereq"
+  },
+  {
+    "source": "TM50I",
+    "target": "CG50I",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL50I",
+    "target": "TM40I",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM50IPRE",
+    "target": "TM50I",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM50IPOST",
+    "target": "TM50I",
+    "type": "prereq"
+  },
+  {
+    "source": "TM50J",
+    "target": "TM40J",
+    "type": "prereq"
+  },
+  {
+    "source": "TM50J",
+    "target": "CG50J",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL50J",
+    "target": "TM40J",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM50JPRE",
+    "target": "TM50J",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM50JPOST",
+    "target": "TM50J",
+    "type": "prereq"
+  },
+  {
+    "source": "TM50K",
+    "target": "TM40K",
+    "type": "prereq"
+  },
+  {
+    "source": "TM50K",
+    "target": "CG50K",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL50K",
+    "target": "TM40K",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM50KPRE",
+    "target": "TM50K",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM50KPOST",
+    "target": "TM50K",
+    "type": "prereq"
+  },
+  {
+    "source": "TM50L",
+    "target": "TM40L",
+    "type": "prereq"
+  },
+  {
+    "source": "TM50L",
+    "target": "CG50L",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL50L",
+    "target": "TM40L",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM50LPRE",
+    "target": "TM50L",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM50LPOST",
+    "target": "TM50L",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_MTP",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_MTP",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_MTP",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_POI",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_POI",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_POI",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_CAD",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_CAD",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_CAD",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_TEO",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_TEO",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_TEO",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_ENROLL",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_ENROLL",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_ENROLL",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_SCHED",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_SCHED",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_SCHED",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "TM40A",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "SYL40A",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "TM40B",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "SYL40B",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "TM40C",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "SYL40C",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "TM40D",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "SYL40D",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "TM40E",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "SYL40E",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "TM40F",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "SYL40F",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "TM40G",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "SYL40G",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "TM40H",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "SYL40H",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "TM40I",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "SYL40I",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "TM40J",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "SYL40J",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "TM40K",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "SYL40K",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "TM40L",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "SYL40L",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "TM50G",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "SYL50G",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "TM50H",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "SYL50H",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "TM50I",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "SYL50I",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "TM50J",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "SYL50J",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "TM50K",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "SYL50K",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "TM50L",
+    "type": "prereq"
+  },
+  {
+    "source": "MGMT_FACULTY",
+    "target": "SYL50L",
+    "type": "prereq"
+  },
+  {
+    "source": "LP_TM10",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "LP_TM10",
+    "target": "DOC_TECHREF",
+    "type": "prereq"
+  },
+  {
+    "source": "LP_TM20",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "LP_TM20",
+    "target": "DOC_NAMING",
+    "type": "prereq"
+  },
+  {
+    "source": "LP_TM30",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "LP_TM40SPEC",
+    "target": "TM40G",
+    "type": "prereq"
+  },
+  {
+    "source": "LP_TM40SPEC",
+    "target": "TM40H",
+    "type": "prereq"
+  },
+  {
+    "source": "LP_TM40SPEC",
+    "target": "TM40I",
+    "type": "prereq"
+  },
+  {
+    "source": "LP_TM40SPEC",
+    "target": "TM40J",
+    "type": "prereq"
+  },
+  {
+    "source": "LP_TM40SPEC",
+    "target": "TM40K",
+    "type": "prereq"
+  },
+  {
+    "source": "LP_TM40SPEC",
+    "target": "TM40L",
+    "type": "prereq"
+  },
+  {
+    "source": "TM10",
+    "target": "DOC_TECHREF",
+    "type": "companion"
+  },
+  {
+    "source": "TM20",
+    "target": "DOC_TECHREF",
+    "type": "companion"
+  },
+  {
+    "source": "TM30",
+    "target": "DOC_TECHREF",
+    "type": "companion"
+  },
+  {
+    "source": "EX20",
+    "target": "DOC_NAMING",
+    "type": "companion"
+  },
+  {
+    "source": "EX30",
+    "target": "DOC_NAMING",
+    "type": "companion"
+  },
+  {
+    "source": "TM40A",
+    "target": "TM40F",
+    "type": "companion"
+  },
+  {
+    "source": "TM40F",
+    "target": "TM40A",
+    "type": "companion"
+  },
+  {
+    "source": "TM40D",
+    "target": "TM40A",
+    "type": "companion"
+  },
+  {
+    "source": "TM40D",
+    "target": "TM40B",
+    "type": "companion"
+  },
+  {
+    "source": "TM40D",
+    "target": "TM40C",
+    "type": "companion"
+  },
+  {
+    "source": "TM40D",
+    "target": "TM40E",
+    "type": "companion"
+  },
+  {
+    "source": "TM40D",
+    "target": "TM40F",
+    "type": "companion"
+  },
+  {
+    "source": "TM40E",
+    "target": "TM40A",
+    "type": "companion"
+  },
+  {
+    "source": "TM40E",
+    "target": "TM40B",
+    "type": "companion"
+  },
+  {
+    "source": "TM40E",
+    "target": "TM40C",
+    "type": "companion"
+  },
+  {
+    "source": "TM40E",
+    "target": "TM40F",
+    "type": "companion"
+  },
+  {
+    "source": "TM40F",
+    "target": "TM40G",
+    "type": "companion"
+  },
+  {
+    "source": "TM40F",
+    "target": "TM40H",
+    "type": "companion"
+  },
+  {
+    "source": "TM40F",
+    "target": "TM40I",
+    "type": "companion"
+  },
+  {
+    "source": "TM40F",
+    "target": "TM40J",
+    "type": "companion"
+  },
+  {
+    "source": "TM40F",
+    "target": "TM40K",
+    "type": "companion"
+  },
+  {
+    "source": "TM40G",
+    "target": "TM40H",
+    "type": "companion"
+  },
+  {
+    "source": "TM40H",
+    "target": "TM40G",
+    "type": "companion"
+  },
+  {
+    "source": "TM40G",
+    "target": "TM40I",
+    "type": "companion"
+  },
+  {
+    "source": "TM40I",
+    "target": "TM40G",
+    "type": "companion"
+  },
+  {
+    "source": "TM40K",
+    "target": "TM40H",
+    "type": "companion"
+  },
+  {
+    "source": "TM40K",
+    "target": "TM40L",
+    "type": "companion"
+  },
+  {
+    "source": "TM50G",
+    "target": "TM50H",
+    "type": "companion"
+  },
+  {
+    "source": "TM50H",
+    "target": "TM50G",
+    "type": "companion"
+  },
+  {
+    "source": "TM50G",
+    "target": "TM50I",
+    "type": "companion"
+  },
+  {
+    "source": "TM50I",
+    "target": "TM50G",
+    "type": "companion"
+  },
+  {
+    "source": "TM50H",
+    "target": "TM50I",
+    "type": "companion"
+  },
+  {
+    "source": "TM50I",
+    "target": "TM50H",
+    "type": "companion"
+  },
+  {
+    "source": "TM50H",
+    "target": "TM50J",
+    "type": "companion"
+  },
+  {
+    "source": "TM50J",
+    "target": "TM50H",
+    "type": "companion"
+  },
+  {
+    "source": "TM50H",
+    "target": "TM50K",
+    "type": "companion"
+  },
+  {
+    "source": "TM50K",
+    "target": "TM50H",
+    "type": "companion"
+  },
+  {
+    "source": "TM50H",
+    "target": "TM50L",
+    "type": "companion"
+  },
+  {
+    "source": "TM50L",
+    "target": "TM50H",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "TM40A",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "CG40A",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "SYL40A",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40APRE",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40APOST",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "TM40B",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "CG40B",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "SYL40B",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40BPRE",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40BPOST",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "TM40C",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "CG40C",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "SYL40C",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40CPRE",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40CPOST",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "TM40D",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "CG40D",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "SYL40D",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40DPRE",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40DPOST",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "TM40E",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "CG40E",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "SYL40E",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40EPRE",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40EPOST",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "TM40F",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "CG40F",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "SYL40F",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40FPRE",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40FPOST",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "TM40G",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "CG40G",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "SYL40G",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40GPRE",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40GPOST",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "TM40H",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "CG40H",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "SYL40H",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40HPRE",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40HPOST",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "TM40I",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "CG40I",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "SYL40I",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40IPRE",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40IPOST",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "TM40J",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "CG40J",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "SYL40J",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40JPRE",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40JPOST",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "TM40K",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "CG40K",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "SYL40K",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40KPRE",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40KPOST",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "TM40L",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "CG40L",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "SYL40L",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40LPRE",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_MSS",
+    "target": "EXAM40LPOST",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_TASKIDX",
+    "target": "TM40G",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_TASKIDX",
+    "target": "TM40H",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_TASKIDX",
+    "target": "TM40I",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_TASKIDX",
+    "target": "TM40J",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_TASKIDX",
+    "target": "TM40K",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_TASKIDX",
+    "target": "TM40L",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_TASKIDX",
+    "target": "TM50G",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_TASKIDX",
+    "target": "TM50H",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_TASKIDX",
+    "target": "TM50I",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_TASKIDX",
+    "target": "TM50J",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_TASKIDX",
+    "target": "TM50K",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_TASKIDX",
+    "target": "TM50L",
+    "type": "companion"
+  },
+  {
+    "source": "CDA_Doctrine",
+    "target": "TM40G",
+    "type": "companion"
+  },
+  {
+    "source": "CDA_Doctrine",
+    "target": "TM40H",
+    "type": "companion"
+  },
+  {
+    "source": "CDA_Doctrine",
+    "target": "TM40I",
+    "type": "companion"
+  },
+  {
+    "source": "CDA_Doctrine",
+    "target": "TM40K",
+    "type": "companion"
+  },
+  {
+    "source": "CDA_Doctrine",
+    "target": "TM40L",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_army_orient",
+    "target": "TM10",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_arch_primer",
+    "target": "TM10",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_data_arch_deep",
+    "target": "TM10",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_data_stack",
+    "target": "TM20",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_l2_ingest",
+    "target": "TM20",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_sem_layer",
+    "target": "TM20",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_ontology",
+    "target": "TM20",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_data_model_f",
+    "target": "TM20",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_data_platforms",
+    "target": "TM20",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_l5_activate",
+    "target": "TM20",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_four_layers",
+    "target": "TM20",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_dm_fund_l1",
+    "target": "TM20",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_obj_type_watch",
+    "target": "TM20",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_links_rel",
+    "target": "TM20",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_dont_filter",
+    "target": "TM20",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_ctrl_vocab",
+    "target": "TM30",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_identity_key",
+    "target": "TM30",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_sem_model_intro",
+    "target": "TM30",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_d01_arch",
+    "target": "TM30",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_d02_scope",
+    "target": "TM30",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_d04_obj_var",
+    "target": "TM30",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_d05_identity",
+    "target": "TM30",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_d06_rel_model",
+    "target": "TM30",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_ai_ml_hype",
+    "target": "TM40H",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_ai_ml_hype",
+    "target": "TM40I",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_decision_adv",
+    "target": "TM40A",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_decision_adv",
+    "target": "TM40B",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_decision_adv",
+    "target": "TM40C",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_decision_adv",
+    "target": "TM40D",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_decision_adv",
+    "target": "TM40E",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_decision_adv",
+    "target": "TM40F",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_d03_rdf_owl",
+    "target": "TM40K",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_d07_temporal",
+    "target": "TM40G",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_d07_temporal",
+    "target": "TM40I",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_d07_temporal",
+    "target": "TM40L",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_dm_fund_l2",
+    "target": "TM40G",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_dm_fund_l2",
+    "target": "TM40I",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_d12_capstone",
+    "target": "TM40G",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_d12_capstone",
+    "target": "TM40H",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_d12_capstone",
+    "target": "TM40L",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_ctrl_vocab",
+    "target": "TM40K",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_identity_key",
+    "target": "TM40K",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_identity_key",
+    "target": "TM40L",
+    "type": "companion"
+  },
+  {
+    "source": "DOC_SENIOR",
+    "target": "TM10",
+    "type": "companion"
+  },
+  {
+    "source": "DOC_GLOSSARY",
+    "target": "TM10",
+    "type": "companion"
+  },
+  {
+    "source": "DOC_CHEAT",
+    "target": "TM10",
+    "type": "companion"
+  },
+  {
+    "source": "DOC_CHEAT",
+    "target": "TM20",
+    "type": "companion"
+  },
+  {
+    "source": "DOC_CHEAT",
+    "target": "TM30",
+    "type": "companion"
+  },
+  {
+    "source": "MGMT_CERT",
+    "target": "MGMT_ENROLL",
+    "type": "companion"
+  },
+  {
+    "source": "MGMT_CMS",
+    "target": "MGMT_POI",
+    "type": "companion"
+  },
+  {
+    "source": "HTML_SCHED",
+    "target": "MGMT_SCHED",
+    "type": "companion"
+  },
+  {
+    "source": "README_MT",
+    "target": "MGMT_MTP",
+    "type": "companion"
+  },
+  {
+    "source": "README_QS",
+    "target": "TM10",
+    "type": "companion"
+  },
+  {
+    "source": "README_ROOT",
+    "target": "README_MT",
+    "type": "companion"
+  }
+,
+{
+  "source": "SS_TM30",
+  "target": "TM30",
+  "type": "companion"
+},
+{
+  "source": "SS_TM40G",
+  "target": "TM40G",
+  "type": "companion"
+},
+{
+  "source": "SS_TM40H",
+  "target": "TM40H",
+  "type": "companion"
+},
+{
+  "source": "SS_TM40I",
+  "target": "TM40I",
+  "type": "companion"
+},
+{
+  "source": "SS_TM40J",
+  "target": "TM40J",
+  "type": "companion"
+},
+{
+  "source": "SS_TM40K",
+  "target": "TM40K",
+  "type": "companion"
+},
+{
+  "source": "SS_TM40L",
+  "target": "TM40L",
+  "type": "companion"
+},
+{
+  "source": "SS_TM50G",
+  "target": "TM50G",
+  "type": "companion"
+},
+{
+  "source": "SS_TM50H",
+  "target": "TM50H",
+  "type": "companion"
+},
+{
+  "source": "SS_TM50I",
+  "target": "TM50I",
+  "type": "companion"
+},
+{
+  "source": "SS_TM50J",
+  "target": "TM50J",
+  "type": "companion"
+},
+{
+  "source": "SS_TM50K",
+  "target": "TM50K",
+  "type": "companion"
+},
+{
+  "source": "SS_TM50L",
+  "target": "TM50L",
+  "type": "companion"
+},
+{ "source": "GDAP_Docs", "target": "TM40G", "type": "companion" },
+{ "source": "GDAP_Docs", "target": "TM40H", "type": "companion" },
+{ "source": "GDAP_Docs", "target": "TM40I", "type": "companion" },
+{ "source": "GDAP_Docs", "target": "TM40K", "type": "companion" },
+{ "source": "GDAP_Docs", "target": "TM40L", "type": "companion" },
+{ "source": "MIM_Docs",  "target": "TM40H", "type": "companion" },
+{ "source": "MIM_Docs",  "target": "TM40I", "type": "companion" },
+{ "source": "MIM_Docs",  "target": "TM40J", "type": "companion" },
+{ "source": "MIM_Docs",  "target": "TM40K", "type": "companion" },
+{ "source": "MIM_Docs",  "target": "TM40L", "type": "companion" },
+{ "source": "EA_Docs",   "target": "TM30",  "type": "companion" },
+{ "source": "EA_Docs",   "target": "TM40H", "type": "companion" },
+{ "source": "EA_Docs",   "target": "TM40K", "type": "companion" },
+{ "source": "EA_Docs",   "target": "TM40L", "type": "companion" },
+{ "source": "ARCH_REF",  "target": "TM40H", "type": "companion" },
+{ "source": "ARCH_REF",  "target": "TM40I", "type": "companion" },
+{ "source": "ARCH_REF",  "target": "TM40K", "type": "companion" },
+{ "source": "ARCH_REF",  "target": "TM40L", "type": "companion" }
+];
+
+// Node type color map
+const TYPE_COLOR = {
+  // COURSE & ASSESSMENT — blue (TMs, Concepts Guides, Syllabi, Exams, Exercises)
+  TM:      "#1a5cb8",
+  CG:      "#1a5cb8",
+  SYL:     "#1a5cb8",
+  EXAM:    "#1a5cb8",
+  EX:      "#1a5cb8",
+  // REFERENCE — green (quick-reference tools, job aids, cheatsheets)
+  REF:     "#187040",
+  // ARCHITECTURE / SUPPLEMENTAL — amber (arch docs, CDA, guidance; not part of course sequence)
+  DOCTRINE:"#8a4a00",  // legacy fallback — no longer assigned to any node
+  SS:      "#8a4a00",
+  ARCH:    "#8a4a00",
+  CDA:     "#8a4a00",
+  EA:      "#8a4a00",
+  CANON:   "#8a4a00",
+  PPT:     "#8a4a00",
+  // ADMIN / MANAGEMENT — slate
+  TMGMT:   "#3a3a58",
+  HTML:    "#3a3a58",
+  README:  "#3a3a58",
+};
+
+const NODE_W = 170;
+const NODE_H = 50;
+const SVG_W  = 2000;
+const SVG_H  = 2310;
+const TIER_HEADERS = {"-1": "ARCH / CDA / GDAP / MIM / EA — Architecture & Reference Material  |  ARCH_*.pdf · MGMT_*.pdf · REF_*.pdf", "0": "DOCTRINE & STANDARDS — Program-Wide Reference", "1": "TM-10 — Foundry Basics  |  All Personnel", "2": "TM-20 — No-Code Builder  |  Operator / Analyst", "3": "TM-30 — Advanced Builder  |  Data Engineer", "4": "TM-40 — WFF Analyst Tracks (A–F)   ·   Specialist Roles (G–L)", "5": "TM-50 — Advanced Specialization  |  Expert Level"};
+
+// ============================================================
+// BUILD NODE INDEX & ADJACENCY
+// ============================================================
+const nodeById = {};
+NODES.forEach(n => nodeById[n.id] = n);
+
+const prereqsOf  = {};  // id -> [ids that this node depends on]
+const dependents = {};  // id -> [ids that depend on this node]
+NODES.forEach(n => { prereqsOf[n.id] = []; dependents[n.id] = []; });
+EDGES.forEach(e => {
+  if (e.type === "prereq") {
+    prereqsOf[e.source].push(e.target);
+    dependents[e.target].push(e.source);
+  }
+});
+
+// Module-level audience filter state (persists across hover/highlight cycles)
+let audienceHiddenIds = new Set();
+
+// ============================================================
+// SVG SETUP & VIEWPORT
+// ============================================================
+const svg    = document.getElementById("depmap");
+const vpGrp  = document.getElementById("viewport");
+const container = document.getElementById("svg-container");
+
+let viewX = 0, viewY = 0, viewScale = 0.7;
+let isPanning = false, panStartX, panStartY, vpStartX, vpStartY;
+
+function applyTransform() {
+  vpGrp.setAttribute("transform",
+    `translate(${viewX},${viewY}) scale(${viewScale})`);
+}
+
+// ============================================================
+// DYNAMIC LAYOUT — fills container width on load + resize
+// ============================================================
+function relayout() {
+  const W = container.clientWidth || window.innerWidth;
+  const PAD = 24;
+  const SIDEBAR_W = NODE_W + 32;   // sidebar column width
+  const SIDEBAR_GAP = 48;          // gap between flow area and sidebar
+
+  // TM-40/50 are branching tracks — offset right to show divergence from TM-30
+  const COL_OFFSET = { 4: 1, 5: 2 };  // extra slots right per col
+
+  // Effective width = max(colOffset + row_len) across all non-sidebar nodes
+  let maxEffLen = 0;
+  NODES.forEach(n => {
+    if (!n.is_sidebar) {
+      const eff = (COL_OFFSET[n.col] || 0) + n.row_len;
+      if (eff > maxEffLen) maxEffLen = eff;
+    }
+  });
+  if (maxEffLen < 1) maxEffLen = 1;
+
+  // Flow area width (excludes sidebar)
+  const flowW  = W - SIDEBAR_W - SIDEBAR_GAP - PAD * 2;
+  // Pitch = space per node (center-to-center), capped at a readable max
+  const pitchX  = Math.min(Math.max(flowW / maxEffLen, NODE_W + 8), 400);
+  const sidebarX = PAD + maxEffLen * pitchX + SIDEBAR_GAP;
+
+  NODES.forEach(n => {
+    if (n.is_sidebar) {
+      n.x = sidebarX;
+    } else {
+      const offset = COL_OFFSET[n.col] || 0;
+      n.x = PAD + (n.ni + offset) * pitchX;
+    }
+  });
+
+  // Update DOM: move rects and text labels for each node
+  document.querySelectorAll(".node-grp").forEach(g => {
+    const n = nodeById[g.getAttribute("data-id")];
+    if (!n) return;
+    const r = g.querySelector("rect");
+    if (r) r.setAttribute("x", n.x);
+    g.querySelectorAll("text").forEach(t => {
+      t.setAttribute("x", n.x + NODE_W / 2);
+    });
+  });
+
+  // Update track label x positions to match first node in each (col, track)
+  document.querySelectorAll("#labels-group text[data-track]").forEach(lbl => {
+    const track = lbl.getAttribute("data-track");
+    const sample = NODES.find(n => n.track === track && !n.is_sidebar);
+    if (sample) lbl.setAttribute("x", sample.x);
+  });
+
+  // Update branch lines x2 to point at node start for TM-40 / TM-50
+  document.querySelectorAll("#labels-group line[data-branch-tier]").forEach(line => {
+    const col    = parseInt(line.getAttribute("data-branch-tier"));
+    const offset = COL_OFFSET[col] || 0;
+    const nodeStartX = PAD + offset * pitchX;
+    line.setAttribute("x2", nodeStartX - 4);  // stop just before node start
+  });
+
+  // Re-draw edges since node positions changed
+  renderEdges();
+}
+
+window.addEventListener("resize", () => { relayout(); fitView(40); });
+
+function fitView(pad) {
+  pad = pad || 50;
+  const W = container.clientWidth  || window.innerWidth;
+  const H = container.clientHeight || window.innerHeight;
+
+  // Compute bounding box of visible nodes
+  let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+  let count = 0;
+  document.querySelectorAll(".node-grp").forEach(g => {
+    if (parseFloat(g.getAttribute("opacity") || "1") < 0.1) return;
+    const n = nodeById[g.getAttribute("data-id")];
+    if (!n) return;
+    if (n.x < minX) minX = n.x;
+    if (n.y < minY) minY = n.y;
+    if (n.x + NODE_W > maxX) maxX = n.x + NODE_W;
+    if (n.y + NODE_H > maxY) maxY = n.y + NODE_H;
+    count++;
+  });
+  if (!count) { minX = 0; minY = 0; maxX = SVG_W; maxY = SVG_H; }
+
+  const contentW = maxX - minX + pad * 2;
+  const contentH = maxY - minY + pad * 2;
+  viewScale = Math.min(W / contentW, H / contentH, 2.0);
+  viewX = (W  - (minX + maxX) * viewScale) / 2;
+  viewY = (H  - (minY + maxY) * viewScale) / 2;
+  applyTransform();
+}
+
+function resetView() {
+  fitView(50);
+}
+
+// Zoom
+container.addEventListener("wheel", e => {
+  e.preventDefault();
+  const rect = container.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+  const delta = e.deltaY < 0 ? 1.12 : 0.89;
+  const newScale = Math.min(3.0, Math.max(0.18, viewScale * delta));
+  // Zoom toward mouse position
+  viewX = mx - (mx - viewX) * (newScale / viewScale);
+  viewY = my - (my - viewY) * (newScale / viewScale);
+  viewScale = newScale;
+  applyTransform();
+}, { passive: false });
+
+// Pan
+container.addEventListener("mousedown", e => {
+  if (e.target === svg || e.target === vpGrp ||
+      e.target.tagName === "line" || e.target.tagName === "path") {
+    isPanning = true;
+    panStartX = e.clientX; panStartY = e.clientY;
+    vpStartX = viewX; vpStartY = viewY;
+    container.classList.add("panning");
+  }
+});
+window.addEventListener("mousemove", e => {
+  if (!isPanning) return;
+  viewX = vpStartX + (e.clientX - panStartX);
+  viewY = vpStartY + (e.clientY - panStartY);
+  applyTransform();
+});
+window.addEventListener("mouseup", () => {
+  isPanning = false;
+  container.classList.remove("panning");
+});
+
+// ============================================================
+// RENDER EDGES
+// ============================================================
+function makePath(src, tgt) {
+  // Adaptive bezier: vertical for tier-to-tier, horizontal for lateral/same-tier edges.
+  const sxc = src.x + NODE_W / 2, syc = src.y + NODE_H / 2;
+  const txc = tgt.x + NODE_W / 2, tyc = tgt.y + NODE_H / 2;
+  const dx = Math.abs(txc - sxc), dy = Math.abs(tyc - syc);
+
+  if (dx > dy * 1.5) {
+    // Primarily horizontal (lateral / sidebar edges)
+    const sx = sxc > txc ? src.x : src.x + NODE_W;
+    const tx = sxc > txc ? tgt.x + NODE_W : tgt.x;
+    const cx1 = sx + (tx - sx) * 0.45, cx2 = tx - (tx - sx) * 0.45;
+    return `M${sx},${syc} C${cx1},${syc} ${cx2},${tyc} ${tx},${tyc}`;
+  } else {
+    // Primarily vertical (tier-to-tier prereq edges)
+    // Source is the dependent (below), target is the prereq (above)
+    const sy = syc > tyc ? src.y : src.y + NODE_H;  // edge from top or bottom of src
+    const ty = syc > tyc ? tgt.y + NODE_H : tgt.y;  // edge to bottom or top of tgt
+    const cdy = Math.abs(ty - sy);
+    const cy1 = sy + (ty - sy) * 0.45;
+    const cy2 = ty - (ty - sy) * 0.45;
+    return `M${sxc},${sy} C${sxc},${cy1} ${txc},${cy2} ${txc},${ty}`;
+  }
+}
+
+function renderEdges() {
+  const prereqGrp    = document.getElementById("edges-prereq-group");
+  const companionGrp = document.getElementById("edges-companion-group");
+  const cdaEdgeGrp   = document.getElementById("cda-edges-grp");
+  prereqGrp.innerHTML    = "";
+  companionGrp.innerHTML = "";
+  cdaEdgeGrp.innerHTML   = "";
+
+  EDGES.forEach(e => {
+    const src = nodeById[e.source];
+    const tgt = nodeById[e.target];
+    if (!src || !tgt) return;
+
+    const isCDA = (src.type === "CDA" || tgt.type === "CDA");
+
+    const path = document.createElementNS("http://www.w3.org/2000/svg","path");
+    const d = makePath(src, tgt);
+    path.setAttribute("d", d);
+    path.setAttribute("fill", "none");
+    path.setAttribute("data-src", e.source);
+    path.setAttribute("data-tgt", e.target);
+    path.setAttribute("data-etype", e.type);
+
+    if (isCDA) {
+      path.setAttribute("stroke", "#c8a040");
+      path.setAttribute("stroke-width", "1.2");
+      path.setAttribute("stroke-dasharray", "6,4");
+      path.setAttribute("opacity", "0.7");
+      path.setAttribute("marker-end", "url(#arrow-companion)");
+      cdaEdgeGrp.appendChild(path);
+    } else if (e.type === "prereq") {
+      path.setAttribute("stroke", "#4a90d9");
+      path.setAttribute("stroke-width", "1.4");
+      path.setAttribute("opacity", "0.55");
+      path.setAttribute("marker-end", "url(#arrow-prereq)");
+      prereqGrp.appendChild(path);
+    } else {
+      path.setAttribute("stroke", "#8888aa");
+      path.setAttribute("stroke-width", "0.8");
+      path.setAttribute("stroke-dasharray", "5,4");
+      path.setAttribute("opacity", "0.35");
+      path.setAttribute("marker-end", "url(#arrow-companion)");
+      companionGrp.appendChild(path);
+    }
+  });
+}
+
+// ============================================================
+// RENDER NODES
+// ============================================================
+function renderNodes() {
+  const grp = document.getElementById("nodes-group");
+  grp.innerHTML = "";
+
+  // Collect tracks per column for group labels
+  const colTracks = {};
+  NODES.forEach(n => {
+    if (!colTracks[n.col]) colTracks[n.col] = {};
+    if (!colTracks[n.col][n.track]) {
+      colTracks[n.col][n.track] = n.y;  // y of first node in group
+    }
+  });
+
+  // Draw track group labels
+  const labGrp = document.getElementById("labels-group");
+  labGrp.innerHTML = "";
+  for (const [col, tracks] of Object.entries(colTracks)) {
+    for (const [track, topY] of Object.entries(tracks)) {
+      // Find x from the first node in this (col, track) group
+      const sample = NODES.find(n => String(n.col) === col && n.track === track);
+      if (!sample) continue;
+      const lbl = document.createElementNS("http://www.w3.org/2000/svg","text");
+      lbl.setAttribute("x", sample.x);
+      lbl.setAttribute("y", topY - 5);
+      lbl.setAttribute("fill", "#2a4a60");
+      lbl.setAttribute("font-size", "8");
+      lbl.setAttribute("font-family", "Courier New, monospace");
+      lbl.setAttribute("letter-spacing", "0.5");
+      lbl.setAttribute("data-track", track);
+      lbl.textContent = track;
+      labGrp.appendChild(lbl);
+    }
+  }
+
+  // Draw nodes
+  NODES.forEach(n => {
+    const g = document.createElementNS("http://www.w3.org/2000/svg","g");
+    g.setAttribute("data-id", n.id);
+    g.setAttribute("class", n.type === "CDA" ? "node-grp cda-node" : "node-grp");
+    g.style.cursor = "pointer";
+
+    const rect = document.createElementNS("http://www.w3.org/2000/svg","rect");
+    rect.setAttribute("x", n.x);
+    rect.setAttribute("y", n.y);
+    rect.setAttribute("width",  NODE_W);
+    rect.setAttribute("height", NODE_H);
+    rect.setAttribute("rx", "4");
+    rect.setAttribute("ry", "4");
+    rect.setAttribute("fill", TYPE_COLOR[n.type] || "#333");
+    rect.setAttribute("stroke", "#ffffff22");
+    rect.setAttribute("stroke-width", "0.5");
+    g.appendChild(rect);
+
+    // Node label (split on newline)
+    const lines = n.label.split("\n");
+    const isBold = (n.type === "TM" || n.type === "CG");
+    const fontSize = lines.length > 1 ? 9.5 : 10.5;
+    const lineH = 11;
+    const totalH = lines.length * lineH;
+    const startY = n.y + NODE_H / 2 - totalH / 2 + lineH * 0.75;
+
+    lines.forEach((line, i) => {
+      const txt = document.createElementNS("http://www.w3.org/2000/svg","text");
+      txt.setAttribute("x", n.x + NODE_W / 2);
+      txt.setAttribute("y", startY + i * lineH);
+      txt.setAttribute("text-anchor", "middle");
+      txt.setAttribute("fill", "#ffffff");
+      txt.setAttribute("font-size", fontSize);
+      txt.setAttribute("font-family", "Courier New, monospace");
+      if (isBold) txt.setAttribute("font-weight", "bold");
+      txt.style.pointerEvents = "none";
+      txt.textContent = line;
+      g.appendChild(txt);
+    });
+
+    // Hover events
+    g.addEventListener("mouseenter", (e) => showTooltip(n, e));
+    g.addEventListener("mousemove",  (e) => moveTooltip(e));
+    g.addEventListener("mouseleave", hideTooltip);
+
+    if (n.type === "CDA") {
+      document.getElementById("cda-nodes-grp").appendChild(g);
+    } else {
+      grp.appendChild(g);
+    }
+  });
+}
+
+// ============================================================
+// TOOLTIP
+// ============================================================
+const tooltip = document.getElementById("tooltip");
+
+function showTooltip(node, e) {
+  const prereqs    = prereqsOf[node.id]  || [];
+  const deps       = dependents[node.id] || [];
+  const companions = EDGES
+    .filter(ed => ed.type === "companion" &&
+                  (ed.source === node.id || ed.target === node.id))
+    .map(ed => ed.source === node.id ? ed.target : ed.source)
+    .filter((v,i,a) => a.indexOf(v) === i);
+
+  let html = `<div class="tt-title">${node.label.replace("\n"," ")}</div>`;
+  if (node.desc) html += `<div class="tt-desc">${node.desc}</div>`;
+  html += `<div class="tt-path">maven_training/${node.path}</div>`;
+  html += `<div>Type: <span style="color:#80c8ff">${node.type}</span> &nbsp;|&nbsp; Track: <span style="color:#80c8ff">${node.track}</span></div>`;
+
+  if (prereqs.length) {
+    html += `<div class="tt-section">PREREQS (${prereqs.length}):</div>`;
+    prereqs.slice(0,8).forEach(id => {
+      const n2 = nodeById[id];
+      html += `<div class="tt-item">→ ${n2 ? n2.label.replace("\n"," ") : id}</div>`;
+    });
+    if (prereqs.length > 8) html += `<div class="tt-item">… +${prereqs.length-8} more</div>`;
+  }
+  if (deps.length) {
+    html += `<div class="tt-section">REQUIRED BY (${deps.length}):</div>`;
+    deps.slice(0,6).forEach(id => {
+      const n2 = nodeById[id];
+      html += `<div class="tt-item">← ${n2 ? n2.label.replace("\n"," ") : id}</div>`;
+    });
+    if (deps.length > 6) html += `<div class="tt-item">… +${deps.length-6} more</div>`;
+  }
+  if (companions.length) {
+    html += `<div class="tt-section">COMPANION REFS (${companions.length}):</div>`;
+    companions.slice(0,6).forEach(id => {
+      const n2 = nodeById[id];
+      html += `<div class="tt-item">↔ ${n2 ? n2.label.replace("\n"," ") : id}</div>`;
+    });
+  }
+
+  tooltip.innerHTML = html;
+  tooltip.style.display = "block";
+  moveTooltip(e);
+
+  // Highlight connected edges
+  highlightNode(node.id);
+}
+
+function moveTooltip(e) {
+  const rect = container.getBoundingClientRect();
+  let tx = e.clientX - rect.left + 14;
+  let ty = e.clientY - rect.top  - 10;
+  // Clamp to container
+  if (tx + 340 > rect.width)  tx = e.clientX - rect.left - 350;
+  if (ty + 200 > rect.height) ty = e.clientY - rect.top  - 210;
+  tooltip.style.left = tx + "px";
+  tooltip.style.top  = ty + "px";
+}
+
+function hideTooltip() {
+  tooltip.style.display = "none";
+  clearHighlight();
+}
+
+// ============================================================
+// HIGHLIGHT
+// ============================================================
+function highlightNode(nodeId) {
+  // Dim all edges, highlight connected ones
+  const allPaths = document.querySelectorAll("#edges-prereq-group path, #edges-companion-group path");
+  allPaths.forEach(p => {
+    const src = p.getAttribute("data-src");
+    const tgt = p.getAttribute("data-tgt");
+    if (src === nodeId || tgt === nodeId) {
+      p.setAttribute("opacity", "0.95");
+      p.setAttribute("stroke-width", p.getAttribute("data-etype") === "companion" ? "1.4" : "2.2");
+    } else {
+      p.setAttribute("opacity", "0.08");
+    }
+  });
+
+  // Dim non-connected nodes (leave audience-hidden nodes untouched)
+  const allNodes = document.querySelectorAll(".node-grp");
+  const connected = new Set([nodeId]);
+  EDGES.forEach(e => {
+    if (e.source === nodeId) connected.add(e.target);
+    if (e.target === nodeId) connected.add(e.source);
+  });
+  allNodes.forEach(g => {
+    const id = g.getAttribute("data-id");
+    if (audienceHiddenIds.has(id)) return;  // don't touch filtered nodes
+    g.setAttribute("opacity", connected.has(id) ? "1" : "0.2");
+  });
+}
+
+function clearHighlight() {
+  document.querySelectorAll("#edges-prereq-group path, #edges-companion-group path")
+    .forEach(p => {
+      if (p.style.display === "none") return;  // respect audience filter
+      p.setAttribute("opacity", p.getAttribute("data-etype") === "prereq" ? "0.55" : "0.35");
+      p.setAttribute("stroke-width", p.getAttribute("data-etype") === "prereq" ? "1.4" : "0.8");
+    });
+  document.querySelectorAll(".node-grp").forEach(g => {
+    const id = g.getAttribute("data-id");
+    // Restore to audience-filtered state, not blindly to 1
+    g.setAttribute("opacity", audienceHiddenIds.has(id) ? "0" : "1");
+  });
+}
+
+// ============================================================
+// TOGGLE EDGES
+// ============================================================
+function toggleEdges() {
+  const showPrereq    = document.getElementById("chk-prereq").checked;
+  const showCompanion = document.getElementById("chk-companion").checked;
+  document.getElementById("edges-prereq-group").style.display    = showPrereq    ? "" : "none";
+  document.getElementById("edges-companion-group").style.display = showCompanion ? "" : "none";
+  // After re-enabling a group, re-apply individual edge hiding for audience filter
+  if (showPrereq || showCompanion) {
+    document.querySelectorAll(
+      "#edges-prereq-group path, #edges-companion-group path"
+    ).forEach(p => {
+      const src = p.getAttribute("data-src");
+      const tgt = p.getAttribute("data-tgt");
+      if (audienceHiddenIds.has(src) || audienceHiddenIds.has(tgt)) {
+        p.style.display = "none";
+      }
+    });
+  }
+}
+
+// ============================================================
+// SLIDE DECKS TOGGLE
+// ============================================================
+function toggleCDA() {
+  const show = document.getElementById("chk-cda").checked;
+  // Use display:none — separate from audience opacity so they don't conflict
+  document.querySelectorAll(".node-grp").forEach(g => {
+    const node = nodeById[g.getAttribute("data-id")];
+    if (!node || node.type !== "PPT") return;
+    g.style.display = show ? "" : "none";
+  });
+  // Hide/show edges that touch PPT nodes
+  document.querySelectorAll(
+    "#edges-prereq-group path, #edges-companion-group path"
+  ).forEach(p => {
+    const src = p.getAttribute("data-src");
+    const tgt = p.getAttribute("data-tgt");
+    const srcNode = nodeById[src];
+    const tgtNode = nodeById[tgt];
+    if ((srcNode && srcNode.type === "PPT") || (tgtNode && tgtNode.type === "PPT")) {
+      p.style.display = show ? "" : "none";
+    }
+  });
+  // Hide/show the track label text elements for Slide Deck tracks
+  document.querySelectorAll(
+    "#labels-group text[data-track='Slide Decks'], #labels-group text[data-track='Slide Decks B']"
+  ).forEach(el => {
+    el.style.display = show ? "" : "none";
+  });
+  updateCorpusPanel();
+}
+
+// ============================================================
+// AUDIENCE FILTER
+// ============================================================
+function setAudience(btn) {
+  document.querySelectorAll(".aud-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  applyAudienceFilter();
+}
+
+function applyAudienceFilter() {
+  const active   = document.querySelector(".aud-btn.active");
+  const view     = active ? active.dataset.val : "operator";
+  const showSpec = document.getElementById("chk-aud-spec").checked;
+
+  // Column-based rules (aud tags used only to exclude dev-only nodes from non-dev views):
+  //   operator → col 0–3 (doctrine + TM-10/20/30), no dev-only nodes
+  //   trainer  → col 0–3 + col 6 (adds training management), no dev-only nodes
+  //   dev      → everything (all columns)
+  // Specialist checkbox independently hides/shows col 4–5 (TM-40/50)
+
+  const hiddenIds = new Set();
+  audienceHiddenIds.clear();
+  const visibleTracks = new Set();
+
+  document.querySelectorAll(".node-grp").forEach(g => {
+    const node = nodeById[g.getAttribute("data-id")];
+    if (!node) return;
+    const col     = node.col;
+    const aud     = node.aud || [];
+    const devOnly = aud.length === 1 && aud[0] === "dev";
+
+    let visible = false;
+
+    if (view === "dev") {
+      visible = true;                                         // dev sees everything
+    } else if (view === "trainer") {
+      visible = ((col >= 0 && col <= 3) || col === 6) && !devOnly;
+    } else {                                                  // operator
+      visible = col >= 0 && col <= 3 && !devOnly;
+    }
+
+    // Specialist toggle: when on, always show TM-40/50 (additive across all views)
+    //                   when off, always hide TM-40/50
+    if (col === 4 || col === 5)                          visible = showSpec;
+    if (col === -1)                                      visible = showSpec;
+    if (col === 6 && aud.includes('specialist'))         visible = showSpec && view !== 'operator';
+
+    g.setAttribute("opacity", visible ? "1" : "0");
+    if (!visible) hiddenIds.add(node.id);
+    if (!visible) audienceHiddenIds.add(node.id);
+    else { audienceHiddenIds.delete(node.id); visibleTracks.add(node.track); }
+  });
+
+  // Hide track labels for tracks with no visible nodes
+  document.querySelectorAll("#labels-group text").forEach(lbl => {
+    lbl.style.display = visibleTracks.has(lbl.getAttribute("data-track")) ? "" : "none";
+  });
+
+  // Hide edges where either endpoint is hidden.
+  // Also respect CDA toggle: if Slide Decks are off, hide edges touching PPT nodes
+  // (applyAudienceFilter must not override display:none set by toggleCDA).
+  const cdaOn = document.getElementById("chk-cda").checked;
+  document.querySelectorAll(
+    "#edges-prereq-group path, #edges-companion-group path, #cda-edges-grp path"
+  ).forEach(p => {
+    const src  = p.getAttribute("data-src");
+    const tgt  = p.getAttribute("data-tgt");
+    const sn   = nodeById[src];
+    const tn   = nodeById[tgt];
+    const pptHidden = !cdaOn && ((sn && sn.type === "PPT") || (tn && tn.type === "PPT"));
+    p.style.display = (hiddenIds.has(src) || hiddenIds.has(tgt) || pptHidden) ? "none" : "";
+  });
+
+  // Re-apply edge checkbox state so audience switch doesn't override the toggles
+  toggleEdges();
+
+  fitView(50);
+  updateCorpusPanel();
+}
+
+// ============================================================
+// SEARCH
+// ============================================================
+let searchTimeout = null;
+function handleSearch(val) {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => applySearch(val.trim().toLowerCase()), 150);
+}
+
+function applySearch(term) {
+  const allNodes = document.querySelectorAll(".node-grp");
+  if (!term) {
+    allNodes.forEach(g => {
+      g.setAttribute("opacity","1");
+      const r = g.querySelector("rect");
+      if (r) r.setAttribute("filter","");
+    });
+    return;
+  }
+  allNodes.forEach(g => {
+    const id    = g.getAttribute("data-id").toLowerCase();
+    const node  = nodeById[g.getAttribute("data-id")];
+    const label = node ? node.label.toLowerCase() : "";
+    const path  = node ? node.path.toLowerCase()  : "";
+    const match = id.includes(term) || label.includes(term) || path.includes(term);
+    g.setAttribute("opacity", match ? "1" : "0.1");
+    const r = g.querySelector("rect");
+    if (r) r.setAttribute("filter", match ? "url(#highlight-glow)" : "");
+  });
+}
+
+// ============================================================
+// TIER HEADER BANDS (horizontal bands with layman names)
+// ============================================================
+function renderTierHeaders() {
+  const labGrp = document.getElementById("labels-group");
+
+  // Canvas background
+  const bg = document.createElementNS("http://www.w3.org/2000/svg","rect");
+  bg.setAttribute("x","0"); bg.setAttribute("y","0");
+  bg.setAttribute("width",2000); bg.setAttribute("height",1930);
+  bg.setAttribute("fill","#0d1b2a");
+  labGrp.insertBefore(bg, labGrp.firstChild);
+
+  // Compute tier y-extents from NODES
+  const tierMinY = {}, tierMaxY = {};
+  NODES.forEach(n => {
+    const t = String(n.col);
+    if (tierMinY[t] === undefined || n.y < tierMinY[t]) tierMinY[t] = n.y;
+    const bot = n.y + NODE_H;
+    if (tierMaxY[t] === undefined || bot > tierMaxY[t]) tierMaxY[t] = bot;
+  });
+
+  // Sequential tiers (1–3) = blue family; branching tiers (4–5) = amber-tinted
+  const tierColors = {
+    "-1": "#0a180a",
+    "0":  "#0c1c2a",
+    "1":  "#0d1f2e", "2": "#0b1d2c", "3": "#0d1f2e",
+    "4":  "#171310", "5": "#141110",
+  };
+  const accentColors = {
+    "-1": "#1a4a10",
+    "0":  "#1a3a50",
+    "1":  "#1e4a76", "2": "#1e4a76", "3": "#1e4a76",
+    "4":  "#6a3e10", "5": "#6a3e10",
+  };
+  const labelColors = {
+    "-1": "#4a8a40",
+    "0":  "#3a6a90",
+    "1":  "#3a6a90", "2": "#3a6a90", "3": "#3a6a90",
+    "4":  "#7a5820", "5": "#7a5820",
+  };
+
+  for (const [tier, label] of Object.entries(TIER_HEADERS)) {
+    if (tierMinY[tier] === undefined) continue;
+    const yTop = tierMinY[tier] - 30;
+    const yBot = tierMaxY[tier] + 14;
+    const isCDA = tier === "-1";
+
+    // Band background
+    const band = document.createElementNS("http://www.w3.org/2000/svg","rect");
+    band.setAttribute("x","0");
+    band.setAttribute("y", yTop);
+    band.setAttribute("width", 2000);
+    band.setAttribute("height", yBot - yTop);
+    band.setAttribute("fill", tierColors[tier] || "#0d1b2a");
+    labGrp.appendChild(band);
+
+    // Left accent strip (4px) — blue = sequential, amber = branching
+    const accent = document.createElementNS("http://www.w3.org/2000/svg","rect");
+    accent.setAttribute("x","0");
+    accent.setAttribute("y", yTop);
+    accent.setAttribute("width","4");
+    accent.setAttribute("height", yBot - yTop);
+    accent.setAttribute("fill", accentColors[tier] || "#1a3a50");
+    labGrp.appendChild(accent);
+
+    // Top separator line
+    const sep = document.createElementNS("http://www.w3.org/2000/svg","line");
+    sep.setAttribute("x1","0"); sep.setAttribute("y1", yTop);
+    sep.setAttribute("x2",2000); sep.setAttribute("y2", yTop);
+    sep.setAttribute("stroke", isCDA ? "#1a3a10" : (tier === "4" ? "#4a3010" : "#1e3a50"));
+    sep.setAttribute("stroke-width", tier === "4" ? "2" : "1");
+    labGrp.appendChild(sep);
+
+    // Tier label — short "TM-XX" header large, description smaller below
+    const tierCode = {"1":"TM-10","2":"TM-20","3":"TM-30","4":"TM-40","5":"TM-50"};
+    if (tierCode[tier]) {
+      const hdr = document.createElementNS("http://www.w3.org/2000/svg","text");
+      hdr.setAttribute("x","12");
+      hdr.setAttribute("y", yTop + 20);
+      hdr.setAttribute("fill", labelColors[tier] || "#3a6a90");
+      hdr.setAttribute("font-size","16");
+      hdr.setAttribute("font-family","Courier New,monospace");
+      hdr.setAttribute("font-weight","bold");
+      hdr.setAttribute("letter-spacing","2");
+      hdr.textContent = tierCode[tier];
+      labGrp.appendChild(hdr);
+
+      // Description on same line, smaller
+      const desc = label.replace(/^TM-\d+\s*[—–-]+\s*/, "");
+      if (desc) {
+        const sub = document.createElementNS("http://www.w3.org/2000/svg","text");
+        sub.setAttribute("x","80");
+        sub.setAttribute("y", yTop + 20);
+        sub.setAttribute("fill", (labelColors[tier] || "#3a6a90") + "99");
+        sub.setAttribute("font-size","9");
+        sub.setAttribute("font-family","Courier New,monospace");
+        sub.setAttribute("letter-spacing","0.5");
+        sub.textContent = desc;
+        labGrp.appendChild(sub);
+      }
+
+      // TM-40 / TM-50: dashed branch line from x=12 to where nodes start
+      if (tier === "4" || tier === "5") {
+        const branch = document.createElementNS("http://www.w3.org/2000/svg","line");
+        branch.setAttribute("x1","60");
+        branch.setAttribute("y1", yTop + 14);
+        branch.setAttribute("x2","60");   // updated by relayout
+        branch.setAttribute("y2", yTop + 14);
+        branch.setAttribute("stroke", tier === "4" ? "#6a3e10" : "#5a3208");
+        branch.setAttribute("stroke-width","1.5");
+        branch.setAttribute("stroke-dasharray","6,3");
+        branch.setAttribute("marker-end","url(#arrow-branch)");
+        branch.setAttribute("data-branch-tier", tier);
+        labGrp.appendChild(branch);
+      }
+    } else {
+      // Non-TM tiers (doc, arch) — original label
+      const txt = document.createElementNS("http://www.w3.org/2000/svg","text");
+      txt.setAttribute("x","12");
+      txt.setAttribute("y", yTop + 18);
+      txt.setAttribute("fill", labelColors[tier] || "#3a6a90");
+      txt.setAttribute("font-size","11");
+      txt.setAttribute("font-family","Courier New,monospace");
+      txt.setAttribute("font-weight","bold");
+      txt.setAttribute("letter-spacing","1.5");
+      txt.textContent = label;
+      labGrp.appendChild(txt);
+    }
+  }
+
+  // Vertical tree stem: x=12, connecting TM-10 through TM-30 sequentially
+  if (tierMinY["1"] !== undefined && tierMaxY["3"] !== undefined) {
+    const stem = document.createElementNS("http://www.w3.org/2000/svg","line");
+    stem.setAttribute("x1","18"); stem.setAttribute("x2","18");
+    stem.setAttribute("y1", tierMinY["1"] - 10);
+    stem.setAttribute("y2", tierMaxY["3"] + 14);
+    stem.setAttribute("stroke","#2a5a80");
+    stem.setAttribute("stroke-width","2");
+    stem.setAttribute("stroke-dasharray","none");
+    labGrp.appendChild(stem);
+  }
+
+  // Branch-point divider between TM-30 (col 3) and TM-40 (col 4)
+  if (tierMaxY["3"] !== undefined && tierMinY["4"] !== undefined) {
+    const y1  = tierMaxY["3"] + 14;
+    const y2  = tierMinY["4"] - 30;
+
+    const divBand = document.createElementNS("http://www.w3.org/2000/svg","rect");
+    divBand.setAttribute("x","0");
+    divBand.setAttribute("y", y1);
+    divBand.setAttribute("width", 2000);
+    divBand.setAttribute("height", y2 - y1);
+    divBand.setAttribute("fill","#1c1408");
+    labGrp.appendChild(divBand);
+  }
+}
+
+// ============================================================
+// LEGEND — auto-position in safe empty space after fitView
+// ============================================================
+function positionLegend() {
+  const leg  = document.getElementById("legend");
+  leg.style.right  = "16px";
+  leg.style.top    = "16px";
+  leg.style.left   = "auto";
+  leg.style.bottom = "auto";
+}
+
+// ============================================================
+// LEGEND DRAG (re-enable after auto-position)
+// ============================================================
+(function() {
+  const leg = document.getElementById("legend");
+  let dragging = false, ox = 0, oy = 0;
+  leg.addEventListener("mousedown", e => {
+    dragging = true;
+    leg.classList.add("dragging");
+    const rect = leg.getBoundingClientRect();
+    const par  = leg.parentElement.getBoundingClientRect();
+    leg.style.right  = "auto";
+    leg.style.bottom = "auto";
+    leg.style.left   = (rect.left - par.left) + "px";
+    leg.style.top    = (rect.top  - par.top)  + "px";
+    ox = e.clientX - rect.left;
+    oy = e.clientY - rect.top;
+    e.stopPropagation();
+  });
+  window.addEventListener("mousemove", e => {
+    if (!dragging) return;
+    const par = leg.parentElement.getBoundingClientRect();
+    leg.style.left = (e.clientX - par.left - ox) + "px";
+    leg.style.top  = (e.clientY - par.top  - oy)  + "px";
+  });
+  window.addEventListener("mouseup", () => {
+    if (!dragging) return;
+    dragging = false;
+    leg.classList.remove("dragging");
+  });
+})();
+
+// ============================================================
+// CORPUS FILE COUNT PANEL
+// ============================================================
+const CORPUS_COUNTS = {
+  operator: {
+    base: [
+      { label: "Training Manuals", pdf: 3  },
+      { label: "Syllabi",          pdf: 3  },
+      { label: "Exercises",        pdf: 3  },
+      { label: "Exams",            pdf: 6  },
+      { label: "Self-Study",       pdf: 1  },
+      { label: "Reference",        pdf: 6  },
+    ],
+    spec: [
+      { label: "Training Manuals", pdf: 21 },
+      { label: "Syllabi",          pdf: 21 },
+      { label: "Exercises",        pdf: 21 },
+      { label: "Exams",            pdf: 42 },
+      { label: "Concepts Guides",  pdf: 18 },
+      { label: "Self-Study",       pdf: 13 },
+      { label: "Reference",        pdf: 6  },
+    ],
+  },
+  trainer: {
+    base: [
+      { label: "Training Manuals", pdf: 3  },
+      { label: "Syllabi",          pdf: 3  },
+      { label: "Exercises",        pdf: 3  },
+      { label: "Exams",            pdf: 6  },
+      { label: "Self-Study",       pdf: 1  },
+      { label: "Lesson Plans",     pdf: 4  },
+      { label: "Training Mgmt",    pdf: 12 },
+      { label: "Architecture",     pdf: 34 },
+      { label: "Reference",        pdf: 16 },
+    ],
+    spec: [
+      { label: "Training Manuals", pdf: 21 },
+      { label: "Syllabi",          pdf: 21 },
+      { label: "Exercises",        pdf: 21 },
+      { label: "Exams",            pdf: 42 },
+      { label: "Concepts Guides",  pdf: 18 },
+      { label: "Self-Study",       pdf: 13 },
+      { label: "Lesson Plans",     pdf: 4  },
+      { label: "Training Mgmt",    pdf: 12 },
+      { label: "Architecture",     pdf: 34 },
+      { label: "Reference",        pdf: 16 },
+    ],
+  },
+  dev: {
+    base: [
+      { label: "Training Manuals", pdf: 3  },
+      { label: "Syllabi",          pdf: 3  },
+      { label: "Exercises",        pdf: 3  },
+      { label: "Exams",            pdf: 6  },
+      { label: "Self-Study",       pdf: 1  },
+      { label: "Lesson Plans",     pdf: 4  },
+      { label: "Training Mgmt",    pdf: 12 },
+      { label: "Architecture",     pdf: 34 },
+      { label: "Reference",        pdf: 16 },
+    ],
+    spec: [
+      { label: "Training Manuals", pdf: 21 },
+      { label: "Syllabi",          pdf: 21 },
+      { label: "Exercises",        pdf: 21 },
+      { label: "Exams",            pdf: 42 },
+      { label: "Concepts Guides",  pdf: 18 },
+      { label: "Self-Study",       pdf: 13 },
+      { label: "Lesson Plans",     pdf: 4  },
+      { label: "Training Mgmt",    pdf: 12 },
+      { label: "Architecture",     pdf: 34 },
+      { label: "Reference",        pdf: 16 },
+    ],
+  },
+};
+
+// Count PPT nodes visible under the current audience/specialist state
+// (mirrors the same rules as applyAudienceFilter)
+function countVisiblePPT(view, showSpec) {
+  let n = 0;
+  NODES.forEach(node => {
+    if (node.type !== "PPT") return;
+    const col     = node.col;
+    const aud     = node.aud || [];
+    const devOnly = aud.length === 1 && aud[0] === "dev";
+    let visible   = false;
+    if (view === "dev") {
+      visible = true;
+    } else if (view === "trainer") {
+      visible = ((col >= 0 && col <= 3) || col === 6) && !devOnly;
+    } else {
+      visible = col >= 0 && col <= 3 && !devOnly;
+    }
+    if (col === 4 || col === 5)                        visible = showSpec;
+    if (col === -1)                                    visible = showSpec;
+    if (col === 6 && aud.includes("specialist"))       visible = showSpec && view !== "operator";
+    if (visible) n++;
+  });
+  return n;
+}
+
+function updateCorpusPanel() {
+  const active   = document.querySelector(".aud-btn.active");
+  const view     = active ? active.dataset.val : "operator";
+  const showSpec = document.getElementById("chk-aud-spec").checked;
+  const cdaOn    = document.getElementById("chk-cda").checked;
+
+  // Build row list — static rows per view, plus dynamic Presentations if Slide Decks on
+  const rows = [...CORPUS_COUNTS[view][showSpec ? "spec" : "base"]];
+  if (cdaOn) {
+    const pptCount = countVisiblePPT(view, showSpec);
+    if (pptCount > 0) rows.push({ label: "Presentations", pptx: pptCount });
+  }
+
+  document.getElementById("cp-view-label").textContent =
+    view.toUpperCase() + (showSpec ? " + SPEC" : "");
+
+  const table = document.getElementById("cp-table");
+  table.innerHTML = "";
+  let totalPdf = 0, totalPptx = 0;
+
+  rows.forEach(r => {
+    const tr    = document.createElement("tr");
+    const tdLbl = document.createElement("td");
+    const tdCnt = document.createElement("td");
+    tdLbl.textContent = r.label;
+    if (r.pptx && !r.pdf) {
+      tdCnt.innerHTML = r.pptx + '<span class="cp-unit">PPTX</span>';
+      totalPptx      += r.pptx;
+    } else {
+      tdCnt.innerHTML = r.pdf + '<span class="cp-unit">PDF</span>';
+      totalPdf       += (r.pdf || 0);
+    }
+    tr.appendChild(tdLbl);
+    tr.appendChild(tdCnt);
+    table.appendChild(tr);
+  });
+
+  let tot = totalPdf + " PDF";
+  if (totalPptx > 0) tot += " · " + totalPptx + " PPTX";
+  document.getElementById("cp-total").textContent = tot;
+}
+
+// ============================================================
+// PANEL COLLAPSE TOGGLE (legend + corpus panel)
+// ============================================================
+function togglePanelCollapse(which) {
+  const contentId = which === "legend" ? "legend-content" : "corpus-content";
+  const arrowId   = which === "legend" ? "legend-arrow"   : "corpus-arrow";
+  const content   = document.getElementById(contentId);
+  const arrow     = document.getElementById(arrowId);
+  const collapsed = content.style.display === "none";
+  content.style.display = collapsed ? "" : "none";
+  if (arrow) arrow.textContent = collapsed ? "▼" : "▶";
+}
+
+// Corpus panel drag (mirrors legend drag)
+(function() {
+  const pnl = document.getElementById("corpus-panel");
+  let dragging = false, ox = 0, oy = 0;
+  pnl.addEventListener("mousedown", e => {
+    dragging = true;
+    pnl.classList.add("dragging");
+    const rect = pnl.getBoundingClientRect();
+    const par  = pnl.parentElement.getBoundingClientRect();
+    pnl.style.bottom = "auto";
+    pnl.style.left   = (rect.left - par.left) + "px";
+    pnl.style.top    = (rect.top  - par.top)  + "px";
+    ox = e.clientX - rect.left;
+    oy = e.clientY - rect.top;
+    e.stopPropagation();
+  });
+  window.addEventListener("mousemove", e => {
+    if (!dragging) return;
+    const par = pnl.parentElement.getBoundingClientRect();
+    pnl.style.left = (e.clientX - par.left - ox) + "px";
+    pnl.style.top  = (e.clientY - par.top  - oy) + "px";
+  });
+  window.addEventListener("mouseup", () => {
+    if (!dragging) return;
+    dragging = false;
+    pnl.classList.remove("dragging");
+  });
+})();
+
+// ============================================================
+// INIT
+// ============================================================
+renderTierHeaders();
+renderEdges();
+renderNodes();
+relayout();
+resetView();
+// Apply default initial state: Operator view, Specialist off, Slide Decks off
+applyAudienceFilter();
+toggleCDA();
+// Place legend in safe empty space (defer one frame so offsetWidth is real)
+requestAnimationFrame(positionLegend);
+
+</script>
+</body>
+</html>

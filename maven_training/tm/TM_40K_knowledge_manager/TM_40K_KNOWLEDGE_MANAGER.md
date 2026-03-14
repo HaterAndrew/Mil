@@ -1,51 +1,10 @@
 # TM-40K — MAVEN SMART SYSTEM (MSS)
-## KNOWLEDGE MANAGER TECHNICAL MANUAL
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-
-2026
-
-**Version 1.0 | March 2026**
-
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (all required)
-
-**DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
-
----
-
-## SAFETY SUMMARY
-
-Knowledge Managers on MSS operate at a unique intersection: they are not primarily building operational dashboards or analytics pipelines — they are building the institutional memory of the formation. Errors in knowledge architecture propagate silently and compound over time. A poorly designed AAR capture form produces structured garbage. A mislabeled lessons-learned object routes the wrong information to the wrong unit. A doctrine version management failure puts outdated procedures in front of Soldiers.
-
-Before performing any task at TM-40K level:
-
-- Design knowledge architectures for longevity — assume the system will outlast your assignment by multiple PCS cycles
-- Never design a knowledge capture system without a defined owner who will maintain it after you leave
-- AIP-assisted summarization and extraction workflows must be validated by subject matter experts before production deployment — AI outputs require human review for knowledge management applications
-- Personnel expertise data requires Privacy Act awareness — consult your unit S2/legal before capturing and storing individual skills profiles
-- Lessons learned containing operational details, named sources, or sensitive TTPs require classification review before ingestion into any system accessible beyond the originating unit
-- Coordinate with USAREUR-AF C2DAO before publishing any knowledge repository to shared enterprise infrastructure
+> **BLUF:** This manual trains Army Knowledge Managers (37F MOS) and staff officers in KM roles to design, build, and sustain knowledge management systems on the Maven Smart System (MSS). KMs are responsible for ensuring the formation's institutional knowledge is captured, organized, findable, and usable — not simply stored.
+> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (all required); CONCEPTS_GUIDE_TM40K_KNOWLEDGE_MANAGER (read before this manual).
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING:** Knowledge management systems that fail silently are more dangerous than systems that fail loudly. A broken dashboard is obvious. A knowledge repository that captures incomplete lessons, routes to wrong audiences, or returns stale doctrine will not announce its failure — it will quietly degrade the formation's institutional memory over months and years. Build with validation checkpoints at every stage.
-
----
-
-## TABLE OF CONTENTS
-
-- Chapter 1 — Introduction: The Knowledge Manager Role on MSS
-- Chapter 2 — Knowledge Architecture Design
-- Chapter 3 — AAR Capture Systems
-- Chapter 4 — Lessons Learned Pipelines
-- Chapter 5 — AIP-Assisted Knowledge Work
-- Chapter 6 — Search and Discovery Systems
-- Chapter 7 — Doctrine and SOP Management
-- Chapter 8 — Personnel Expertise Mapping
-- Chapter 9 — Knowledge Transfer and Continuity
-- Appendix A — Knowledge Architecture Design Checklist
-- Appendix B — AAR Data Model Reference
-- Appendix C — AIP Knowledge Workflow Patterns
-- Glossary
 
 ---
 
@@ -78,9 +37,19 @@ This manual covers knowledge architecture design, AAR and lessons learned system
 
 > **NOTE:** TM-40K graduates design knowledge systems that outlast their assignments. Every architecture decision should be evaluated against the question: "Will the Soldier replacing me be able to understand, maintain, and extend this system after a two-week handoff?"
 
+### 1-2. Curriculum Position, Advanced Track, and WFF Context
+
+**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED — not recommended. TM-10 and TM-20 are assumed complete.
+
+**Advanced track:** Upon completing TM-40K, qualified KMs should pursue **TM-50K (Advanced Knowledge Manager)** for advanced topics including enterprise-scale knowledge taxonomy design, cross-command knowledge federation, NATO LLDB integration, and AI-assisted knowledge synthesis at theater level.
+
+**Peer specialist tracks:** The KM has significant overlap with the Software Engineer (TM-40L) on knowledge ontology design and pipeline implementation. Coordinate with TM-40L when knowledge capture or routing workflows require custom code beyond Pipeline Builder's no-code capability. Coordinate with TM-40H (AI Engineer) when designing AIP-assisted knowledge extraction and summarization workflows — the KM defines the knowledge architecture and human review requirements; the AI Engineer implements the AIP Logic pipeline. Coordinate with TM-40G (ORSA) when knowledge metrics (capture rates, gap analysis, lesson implementation rates) require quantitative analysis products.
+
+**WFF awareness:** KMs on MSS serve as institutional memory architects for WFF-qualified personnel (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). Each WFF function generates domain-specific lessons, TTPs, and SOPs requiring tailored ontology design and retrieval interfaces. Design knowledge taxonomies with WFF functional areas as primary filter dimensions. The WFF-aligned staff section is both a primary contributor to and a primary consumer of MSS knowledge products.
+
 ---
 
-### 1-2. The KM Role in USAREUR-AF
+### 1-3. The KM Role in USAREUR-AF
 
 USAREUR-AF is the Army Service Component Command (ASCC) to United States European Command (USEUCOM), executing theater land operations across the European AOR, integrating with NATO Allied Command Operations (ACO), and supporting Joint All-Domain Command and Control (JADC2). The formation conducts major exercises — Combined Resolve, Defender Europe, Swift Response — in rotation, generating large volumes of after-action data, lessons learned, and TTPs each cycle.
 
@@ -124,7 +93,7 @@ OPERATIONAL EXPERIENCE (Exercise, Operation, Garrison)
 
 ---
 
-### 1-3. Knowledge Architecture Responsibilities
+### 1-4. Knowledge Architecture Responsibilities
 
 The KM's core architecture responsibility is defining and maintaining the knowledge ontology — the set of Object Types, Link Types, and properties that give the formation's institutional knowledge a consistent, queryable structure.
 
@@ -143,7 +112,7 @@ Each domain requires its own Object Types, property schemas, Link Types, and acc
 
 ---
 
-### 1-4. Governing References
+### 1-5. Governing References
 
 | Document | Relevance |
 |---|---|
@@ -160,7 +129,7 @@ Each domain requires its own Object Types, property schemas, Link Types, and acc
 
 ---
 
-### 1-5. TM-40K Chapter Guide
+### 1-6. TM-40K Chapter Guide
 
 | Chapter | Task Area | When You Need It |
 |---|---|---|
@@ -176,6 +145,10 @@ Each domain requires its own Object Types, property schemas, Link Types, and acc
 ---
 
 ## CHAPTER 2 — KNOWLEDGE ARCHITECTURE DESIGN
+
+> **NOTE — Palantir Developers reference:** *Palantir Ontology Overview* — A foundational overview of the Palantir Ontology model — Object Types, Link Types, and property design — that underpins all knowledge architecture work in this chapter. KMs designing a knowledge ontology should review this before the design task in Section 2-7. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Product Launch: Ontology Foundations | DevCon 5* — Covers the latest Palantir approach to ontology design and the foundational principles that govern Object Type schema decisions. Directly reinforces the knowledge ontology design methodology in Sections 2-2 through 2-7. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 ### 2-1. Purpose
 
@@ -583,6 +556,14 @@ A lesson approved and published must reach the units and personnel for whom it i
 
 ### 5-1. Purpose
 
+> **NOTE — Palantir Developers reference:** *AIP with Jeg: Adding RAG to a Simple Notes Application* — A step-by-step walkthrough of building a retrieval-augmented generation (RAG) pipeline, directly applicable to the AIP Logic document summarization and Q&A configurations in this chapter. Good procedural companion for KMs configuring their first AIP knowledge workflow. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Building with Palantir AIP: Logic Tools for RAG/OAG* — Covers the Logic tools available within AIP for retrieval-augmented and ontology-augmented generation pipelines, reinforcing the AIP Logic workflow configurations in Sections 5-3 and 5-4. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Building with Palantir AIP: Data Tools for RAG/OAG* — Covers data preparation tools for RAG pipelines — the data-side complement to the Logic tools reference above. Review alongside Section 5-3 when configuring the document summarization input pipeline. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Deep Dive: Advanced Agent Reasoning with Knowledge Nodes x First Solar | DevCon 4* — Demonstrates how AIP Knowledge Nodes enable agents to reason over structured organizational knowledge, directly relevant to AIP-assisted knowledge Q&A design in Section 5-4. Shows a real deployment of knowledge-node-based agent reasoning at production scale. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 **BLUF:** AIP Logic significantly accelerates knowledge management tasks — document summarization, lesson extraction from unstructured text, content tagging, and knowledge-base Q&A. AIP is a force multiplier for a KM managing high-volume lesson pipelines. AIP is not a replacement for KM judgment, domain expertise, or SME validation.
 
 ---
@@ -696,6 +677,12 @@ Prompt quality directly determines AIP output quality. KMs are responsible for p
 ---
 
 ## CHAPTER 6 — SEARCH AND DISCOVERY SYSTEMS
+
+> **NOTE — Palantir Developers reference:** *Building with Palantir AIP: Semantic Search* — Covers the semantic search capabilities within Palantir AIP that form the foundation of knowledge retrieval applications. Review before building the AIP Q&A widget in Section 6-6, as semantic search is the underlying retrieval mechanism. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Build with AIP: Semantic Search* — A more recent implementation reference for semantic search, covering updated API patterns. Use alongside the reference above when configuring the knowledge browser retrieval layer. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Building with Palantir AIP: Advanced Search* — Covers advanced search patterns for document retrieval, including ranking, filtering, and hybrid search approaches. Relevant to the Workshop browse interface design in Section 6-3 and the AIP Q&A system in Section 6-6. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 ### 6-1. Purpose
 

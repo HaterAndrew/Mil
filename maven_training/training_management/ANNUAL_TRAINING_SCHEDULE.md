@@ -67,11 +67,11 @@
 ---
 
 ### TM-40A through TM-40F: WFF FUNCTIONAL TRACKS
-*3 days each | On demand / as scheduled | Max 8 students | Prereq: TM-20*
+*3 days each | On demand / as scheduled | Max 8 students | Prereq: TM-30*
 
-> TM-40A through TM-40F are the WFF functional staff tracks for INT, FIRES, M2, SUST, PROT, and MC. Prerequisite is TM-20 (not TM-30). Contact C2DAO Training POC for scheduling — these tracks are coordinated with WFF functional proponents.
+> TM-40A through TM-40F are the WFF functional staff tracks for INT, FIRES, M2, SUST, PROT, and MC. Prerequisite is TM-30 (required). Contact C2DAO Training POC for scheduling — these tracks are coordinated with WFF functional proponents.
 
-**Enrollment deadline:** T-10 days. Builder access: 5 duty days — request at T-15.
+**Enrollment deadline:** T-14 days. Editor access: 7 duty days — request at T-21.
 
 ---
 
@@ -181,7 +181,7 @@ TM-40L                               13-17Jul           [TBD]
 | TM-10 only | 2 weeks before desired course date |
 | TM-10 → TM-20 | 6 weeks before TM-20 start (must complete TM-10 first) |
 | TM-10 → TM-20 → TM-30 | 4 months before TM-30 start |
-| TM-10 → TM-20 → TM-40A–F (WFF tracks) | 3 months before desired TM-40 completion |
+| TM-10 → TM-20 → TM-30 → TM-40A–F (WFF tracks) | 6 months before desired TM-40 completion |
 | TM-10 → TM-20 → TM-30 → TM-40G/H/I/L | 6 months before desired TM-40 completion |
 | TM-10 → TM-20 → TM-30 → TM-40J/K | 4 months before TM-40J/K start |
 

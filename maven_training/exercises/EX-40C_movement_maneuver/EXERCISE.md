@@ -4,9 +4,12 @@
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40C, CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER (and TM-10, TM-20) |
+| **Prerequisite** | TM-10, TM-20, TM-30 (required); TM-40C and CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER (current track) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS training instance, standard user access — see ENVIRONMENT_SETUP.md |
+| **Companion TM** | TM_40C_MOVEMENT_MANEUVER.md |
+| **Syllabus** | SYLLABUS_TM40C |
+| **Exams** | EXAM_TM40C_PRE / EXAM_TM40C_POST |
 
 ## SCENARIO
 

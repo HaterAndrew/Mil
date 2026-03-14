@@ -64,33 +64,33 @@ Written exams are in [exams/](exams/). Each course has two forms.
 
 ### Foundational Exercises
 
-| Package | Corresponds To | Audience |
-|---------|---------------|---------|
-| [EX-10_operator_basics/](EX-10_operator_basics/) | TM-10 | All personnel |
-| [EX-20_no_code_builder/](EX-20_no_code_builder/) | TM-20 | All staff |
-| [EX-30_advanced_builder/](EX-30_advanced_builder/) | TM-30 | Data-adjacent specialists |
+| Package | Corresponds To | Prereq | Audience |
+|---------|---------------|--------|---------|
+| [EX-10_operator_basics/](EX-10_operator_basics/) | TM-10 | None | All personnel |
+| [EX-20_no_code_builder/](EX-20_no_code_builder/) | TM-20 | TM-10 | All staff |
+| [EX-30_advanced_builder/](EX-30_advanced_builder/) | TM-30 | TM-20 | Data-adjacent specialists |
 
-### WFF Track Exercises (TM-40A–F)
+### WFF Track Exercises (TM-40A–F) — Prereq: TM-20
 
-| Package | Corresponds To | Audience |
-|---------|---------------|---------|
-| [EX-40A_intelligence/](EX-40A_intelligence/) | TM-40A | G2/S2 staff, targeting officers |
-| [EX-40B_fires/](EX-40B_fires/) | TM-40B | FSE, fire support officers |
-| [EX-40C_movement_maneuver/](EX-40C_movement_maneuver/) | TM-40C | G3/S3 maneuver staff |
-| [EX-40D_sustainment/](EX-40D_sustainment/) | TM-40D | G4/S4, logistics staff |
-| [EX-40E_protection/](EX-40E_protection/) | TM-40E | Force protection, CBRN, PM staff |
-| [EX-40F_mission_command/](EX-40F_mission_command/) | TM-40F | G3/S3 staff, battle captains, CDRs |
+| Package | Corresponds To | Prereq | Audience |
+|---------|---------------|--------|---------|
+| [EX-40A_intelligence/](EX-40A_intelligence/) | TM-40A Intelligence | TM-20 | G2/S2 staff, targeting officers |
+| [EX-40B_fires/](EX-40B_fires/) | TM-40B Fires | TM-20 | FSE, fire support officers |
+| [EX-40C_movement_maneuver/](EX-40C_movement_maneuver/) | TM-40C Movement & Maneuver | TM-20 | G3/S3 maneuver staff |
+| [EX-40D_sustainment/](EX-40D_sustainment/) | TM-40D Sustainment | TM-20 | G4/S4, logistics staff |
+| [EX-40E_protection/](EX-40E_protection/) | TM-40E Protection | TM-20 | Force protection, CBRN, PM staff |
+| [EX-40F_mission_command/](EX-40F_mission_command/) | TM-40F Mission Command | TM-20 | G3/S3 staff, battle captains, CDRs |
 
-### Technical Specialist Exercises (TM-40G–L)
+### Technical Specialist Exercises (TM-40G–L) — Prereq: TM-30 (Required)
 
-| Package | Corresponds To | Audience |
-|---------|---------------|---------|
-| [EX-40G_orsa/](EX-40G_orsa/) | TM-40G | ORSA analysts |
-| [EX-40H_ai_engineer/](EX-40H_ai_engineer/) | TM-40H | AI engineers |
-| [EX-40I_ml_engineer/](EX-40I_ml_engineer/) | TM-40I | ML engineers |
-| [EX-40J_program_manager/](EX-40J_program_manager/) | TM-40J | Technical PMs |
-| [EX-40K_knowledge_manager/](EX-40K_knowledge_manager/) | TM-40K | Knowledge managers |
-| [EX-40L_software_engineer/](EX-40L_software_engineer/) | TM-40L | Software engineers |
+| Package | Corresponds To | Prereq | Audience |
+|---------|---------------|--------|---------|
+| [EX-40G_orsa/](EX-40G_orsa/) | TM-40G ORSA | TM-30 | ORSA analysts |
+| [EX-40H_ai_engineer/](EX-40H_ai_engineer/) | TM-40H AI Engineer | TM-30 | AI engineers |
+| [EX-40I_ml_engineer/](EX-40I_ml_engineer/) | TM-40I ML Engineer | TM-30 | ML engineers |
+| [EX-40J_program_manager/](EX-40J_program_manager/) | TM-40J Program Manager | TM-30 | Technical PMs |
+| [EX-40K_knowledge_manager/](EX-40K_knowledge_manager/) | TM-40K Knowledge Manager | TM-30 | Knowledge managers |
+| [EX-40L_software_engineer/](EX-40L_software_engineer/) | TM-40L Software Engineer | TM-30 | Software engineers |
 
 ---
 

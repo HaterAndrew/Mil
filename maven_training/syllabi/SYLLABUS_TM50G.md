@@ -92,7 +92,7 @@ Complete **10+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 13 | Lab | Bias-variance tradeoff documentation; model complexity justification; limitation documentation standards |
 
-**Evening reading:** TM-50G, Chapter 5 (GO/SES Product Standards) — complete read before Day 4 product work.
+**Evening reading:** TM-50G, Chapter 7 (Senior-Level OR Products and Briefings) — complete read before Day 4 product work.
 
 ---
 
@@ -132,6 +132,16 @@ Complete **10+ duty days before Day 1:**
 **Scenario:** Theater-level logistics analysis for campaign planning. The G4 requires: a Bayesian readiness probability estimate for two maneuver brigades, a supply chain resilience analysis (network), and a multi-objective optimization of two sustainment COAs trading cost against risk.
 
 **Go standard:** Pass 4 of 5 product elements. Product must include: uncertainty quantification on all estimates, assumption register, peer review complete, all models reproducible with set seed or documented parameters.
+
+---
+
+## Peer Advanced Tracks
+
+| Track | Relevance to TM-50G |
+|---|---|
+| TM-50H (Advanced AI Eng) | AI-augmented analytical pipelines; LLM-assisted pattern recognition in ORSA products |
+| TM-50I (Advanced ML Eng) | Advanced model architectures (ensemble, Bayesian) used in ORSA modeling; drift detection for deployed ORSA models |
+| TM-50J (Advanced PM) | Communicating ORSA findings at portfolio level to GO/SES audiences; resource allocation analysis feeding PM dashboards |
 
 ---
 

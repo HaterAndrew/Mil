@@ -5,7 +5,7 @@
 |---|---|
 | **Level** | TM-40B — Fires WFF Track |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-10, TM-20 (Go evaluations on file); CONCEPTS_GUIDE_TM40B_FIRES (required reading before Day 1) |
+| **Prerequisites** | TM-10, TM-20, TM-30 (Go evaluations on file); CONCEPTS_GUIDE_TM40B_FIRES (required reading before Day 1) |
 | **Audience** | Fire support officers, FSEs, targeting officers, artillery and mortar officers and NCOs, fire support NCOs at BCT echelon and below |
 | **Format** | Instructor-led seminar + demonstration + tabletop exercise + practical evaluation |
 | **Location** | MSS Training Environment (standard user access sufficient) |
@@ -57,7 +57,7 @@ Complete **5+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 5 | Exercise | CCIR drill: given commander priorities and a sample dataset, configure 3 fires CCIRs and verify they trigger correctly |
 
-**Evening reading:** TM-40B, Chapter 5 (Targeting Data Management in MSS) — confirmed vs. suspected target distinction and attribution requirements.
+**Evening reading:** TM-40B, Chapter 2 (Targeting and the D3A Process in MSS) — confirmed vs. suspected target distinction and attribution requirements.
 
 ---
 
@@ -74,7 +74,7 @@ Complete **5+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 9 | Exercise | Targeting product drill: build a targeting data product and effects summary from a provided dataset; evaluator reviews for confirmed/suspected distinction, timestamps, and source attribution |
 
-**Evening reading:** TM-40B, Chapter 7 (Effects Assessment and BDA Workflows) and Chapter 9 (OPSEC for Fires Products).
+**Evening reading:** TM-40B, Chapter 8 (Fires Assessment and Reporting) and Chapter 3 (Fire Support Planning).
 
 ---
 
@@ -97,10 +97,10 @@ Complete **5+ duty days before Day 1:**
 | When | Reading |
 |---|---|
 | Before Day 1 | CONCEPTS_GUIDE_TM40B_FIRES (complete) |
-| Day 1 evening | TM-40B, Ch 5 (Targeting Data Management in MSS) |
-| Day 2 evening | TM-40B, Ch 7 (Effects Assessment and BDA Workflows) |
-| Day 2 evening | TM-40B, Ch 9 (OPSEC for Fires Products) |
-| Day 3 (review) | TM-40B, Ch 11 (Degraded Fires Reporting) — skim before Day 3 brief |
+| Day 1 evening | TM-40B, Ch 2 (Targeting and the D3A Process in MSS) |
+| Day 2 evening | TM-40B, Ch 8 (Fires Assessment and Reporting) |
+| Day 2 evening | TM-40B, Ch 3 (Fire Support Planning) |
+| Day 3 (review) | TM-40B, Ch 10 (Degraded Operations) — skim before Day 3 brief |
 
 ---
 
@@ -138,6 +138,33 @@ Complete **5+ duty days before Day 1:**
 | FSCM layers | FSCMs displayed but not linked to an authoritative data source fail the data currency check — know how to connect a layer to a source before Day 1 |
 | Confirmed/suspected distinction | Every target must have a coded status AND source attribution entry. Bring your unit's target list format as a reference |
 | BDA data staleness inject | The targeting board cannot wait for feed recovery — the FSE must tell the board exactly which targets have current BDA and which do not. Practice characterizing the gap out loud before you arrive |
+
+---
+
+## Associated Exercise and Exams
+
+| Item | Reference |
+|---|---|
+| **Practical Exercise** | EX-40B (EXERCISE.md + ENVIRONMENT_SETUP.md) — `exercises/EX-40B/` |
+| **Pre-course exam** | EXAM_TM40B_PRE — `exercises/exams/EXAM_TM40B_PRE.md` |
+| **Post-course exam** | EXAM_TM40B_POST — `exercises/exams/EXAM_TM40B_POST.md` |
+
+---
+
+## Related WFF Tracks
+
+TM-40B is one of six WFF tracks. All require TM-10, TM-20, and TM-30 as prerequisites.
+
+| Track | WFF | Audience |
+|---|---|---|
+| TM-40A | Intelligence | G2/S2 staff, targeting officers, all-source analysts |
+| TM-40B | Fires | FSOs, FSEs, targeting officers, fires NCOs |
+| TM-40C | Movement & Maneuver | G3/S3 staff, operations officers, maneuver planners |
+| TM-40D | Sustainment | G4/S4 staff, logistics officers, supply chain managers |
+| TM-40E | Protection | FP officers, CBRN officers, provost marshal staff |
+| TM-40F | Mission Command | Battle captains, XOs, CDRs, MC-function staff |
+
+Personnel completing multiple WFF tracks do not repeat TM-10, TM-20, or TM-30. Enrollment is independent for each track.
 
 ---
 

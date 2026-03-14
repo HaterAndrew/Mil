@@ -4,9 +4,23 @@
 | | |
 |---|---|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40G (and TM-10 through TM-30) |
+| **Prerequisite** | TM-30 REQUIRED; TM-40G (and TM-10 through TM-20) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS with Python Transforms enabled; Quiver and Contour access — see ENVIRONMENT_SETUP.md |
+
+## COMPANION RESOURCES
+
+| Resource | Reference |
+|----------|-----------|
+| Technical Manual | TM-40G — ORSA |
+| Syllabus | SYLLABUS_TM40G |
+| Pre-Exercise Exam | EXAM_TM40G_PRE |
+| Post-Exercise Exam | EXAM_TM40G_POST |
+| Continuation Track | TM-50G — Advanced ORSA |
+
+## WFF AWARENESS
+
+This exercise produces analytical products (forecasts, dashboards) that directly support WFF track personnel (TM-40A–F Intelligence, Fires, Movement & Maneuver, Sustainment, Protection, Mission Command) as end-users and consumers. Evaluators should assess whether outputs are formatted for non-ORSA audiences — a key specialist competency.
 
 ## SCENARIO
 
@@ -68,3 +82,7 @@ Training dataset: synthetic PMCS/maintenance cycle data, 180 days, 3 battalions,
 - Task 3 is the time sink — budget 75 min total if participant needs to set up the Python Transform environment for the first time
 - Task 4 is often underestimated; participants who produce clean visualizations in Tasks 2–3 may still spend 45 min on dashboard layout
 - If participant uses R instead of Python for Task 3, that is acceptable — verify R is enabled in the Transform environment
+
+## NEXT STEPS
+
+Participants who receive an overall Go on EX-40G are eligible to enroll in **TM-50G — Advanced ORSA**. TM-50G extends this exercise's competencies into time-series modeling, multi-source fusion, and senior-leader analytical support. No TM-50A–F tracks exist.

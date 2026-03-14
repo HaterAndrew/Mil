@@ -1,53 +1,11 @@
 # TM-40L — MAVEN SMART SYSTEM (MSS)
-## SOFTWARE ENGINEER TECHNICAL MANUAL
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-
-2026
-
-**Version 1.0 | March 2026**
-
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Python proficiency (intermediate or higher); TypeScript proficiency (intermediate or higher)
-
-**DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Reason: operational systems documentation. Other requests must be referred to USAREUR-AF G6.
-
----
-
-## SAFETY SUMMARY
-
-Software engineers on MSS operate at the deepest technical layer of the USAREUR-AF data environment. Code written at TM-40L level executes directly against the Foundry Ontology, reads and writes operational datasets, and may integrate external Army systems with production MSS pipelines. A defect in your code is not an inconvenience — it is an operational data integrity failure.
-
-Before performing any task at TM-40L level:
-
-- Authenticate only with authorized service accounts or personal access tokens provisioned through the C2DAO-approved credential store — never hardcode credentials in any file committed to version control
-- Treat all OSDK queries and dataset reads against production as operational data access — apply the same handling discipline you would apply to a classified terminal
-- Never write directly to production datasets, Ontology branches, or shared resources without authorization from the responsible data steward and C2DAO coordination
-- All code that will be deployed to production must pass automated testing gates before branch promotion — no exceptions, no manual bypasses
-- External application integrations that consume MSS operational data must be reviewed for CBAC compliance before go-live — access controls on the source must be preserved end-to-end in the consuming application
-- TypeScript Functions on Objects (FOO) that compute derived properties across large object populations can degrade Ontology query performance for all users — profile before deploying to production
+> **BLUF:** TM-40L qualifies software engineers to build external applications, write integration code, develop TypeScript FOO logic, and deploy production-grade solutions on the MSS platform. This is a developer manual — it contains code, not just concepts.
+> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Python proficiency (intermediate or higher); TypeScript proficiency (intermediate or higher)
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Code errors at TM-40L level can corrupt shared Ontology state, break downstream pipelines, and produce incorrect data products consumed by commanders making operational decisions. Apply engineering discipline. Test thoroughly. Coordinate governance before deploying to production.**
-
 > **CAUTION: OSDK service account tokens and Foundry Platform SDK credentials are operational secrets. Loss or exposure of these credentials constitutes a security incident. Report immediately to unit S6/G6 and C2DAO.**
-
----
-
-## TABLE OF CONTENTS
-
-- Chapter 1 — Introduction: The Software Engineer Role in MSS
-- Chapter 2 — OSDK Fundamentals
-- Chapter 3 — OSDK Advanced Patterns
-- Chapter 4 — Foundry Platform SDK
-- Chapter 5 — TypeScript Functions on Objects (FOO)
-- Chapter 6 — Actions with Complex Validation
-- Chapter 7 — Slate Applications (LEGACY)
-- Chapter 8 — CI/CD and Code Repository Discipline
-- Chapter 9 — Security and Compliance
-- Appendix A — OSDK Quick Reference
-- Appendix B — SWE Security Checklist
-- Appendix C — Integration Patterns Reference
-- Glossary
 
 ---
 
@@ -79,9 +37,19 @@ This manual provides task-based instruction for software engineers operating on 
 
 > **NOTE:** TM-40L is peer to TM-40H (AI Engineer), TM-40I (ML Engineer), and TM-40G (ORSA). All four tracks require TM-30 as prerequisite. Each track owns a distinct technical domain. Coordinate across tracks — operational systems frequently require all four disciplines.
 
+### 1-2. Curriculum Position, Advanced Track, and WFF Context
+
+**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED. Python proficiency (intermediate or higher) and TypeScript proficiency (intermediate or higher) are required independently of the TM series.
+
+**Advanced track:** Upon completing TM-40L, qualified Software Engineers should pursue **TM-50L (Advanced Software Engineer)** for advanced topics including large-scale OSDK application architecture, Foundry platform extension patterns, CI/CD pipeline hardening, coalition data integration (NAFv4), and security compliance for operational software systems.
+
+**Peer specialist tracks:** The Software Engineer implements the production code layer that all other specialist tracks depend on. Coordinate with TM-40H (AI Engineer) when AI workflow outputs require OSDK application surfaces for staff-section delivery. Coordinate with TM-40I (ML Engineer) when model deployment requires custom inference infrastructure beyond standard Foundry Transforms. Coordinate with TM-40K (Knowledge Manager) on knowledge pipeline implementation — the KM defines the architecture; the SWE implements pipelines requiring custom logic. The KM-SWE interface is a high-frequency coordination point: knowledge ontology design changes have direct impact on downstream application code.
+
+**WFF awareness:** Software engineers on MSS build the application layer that WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command) interact with daily. An OSDK application degrading for a Fires (TM-40B) targeting workflow or a Movement and Maneuver (TM-40C) tracking tool has direct operational impact. Code quality, test coverage, and rollback procedures are not abstract engineering standards — they are WFF readiness factors.
+
 ---
 
-### 1-2. The Software Engineer's Role in USAREUR-AF
+### 1-3. The Software Engineer's Role in USAREUR-AF
 
 USAREUR-AF is the Army Service Component Command (ASCC) to USEUCOM. MSS supports theater land operations across the European AOR including V Corps, 21st TSC, 7th ATC, G2 all-source, and multinational elements. Software engineers at TM-40L level are the technical implementers of the USAREUR-AF data ecosystem.
 
@@ -126,7 +94,7 @@ MISSION REQUIREMENT
 
 ---
 
-### 1-3. Prerequisites and Baseline Skills
+### 1-4. Prerequisites and Baseline Skills
 
 Complete all of the following before beginning this manual:
 
@@ -144,7 +112,7 @@ Complete all of the following before beginning this manual:
 
 ---
 
-### 1-4. Governing References
+### 1-5. Governing References
 
 | Document | Relevance |
 |---|---|
@@ -159,7 +127,7 @@ Complete all of the following before beginning this manual:
 
 ---
 
-### 1-5. The USAREUR-AF 5-Layer Data Stack — SWE Responsibilities
+### 1-6. The USAREUR-AF 5-Layer Data Stack — SWE Responsibilities
 
 ```
 +---------------------------------------------------------------+
@@ -191,11 +159,17 @@ TM-40L engineers are the primary implementers of Layers 4 and 5 technical compon
 
 ## CHAPTER 2 — OSDK FUNDAMENTALS
 
-> **CODE EXAMPLES:** Runnable OSDK and Ontology access patterns referenced in this chapter are available in the local development shim at [`data_skills/13_foundry_patterns/ontology_modeling.py`](../../../data_skills/13_foundry_patterns/ontology_modeling.py). Transform and check patterns are in [`python_transforms.py`](../../../data_skills/13_foundry_patterns/python_transforms.py) and [`foundry_checks.py`](../../../data_skills/13_foundry_patterns/foundry_checks.py). Activate the venv: `source data_skills/.venv/bin/activate`.
+> **CODE EXAMPLES:** Runnable OSDK and Ontology access patterns referenced in this chapter are available in the local development shim at [`data_skills/13_foundry_patterns/ontology_modeling.py`](../../../skills/data_skills/13_foundry_patterns/ontology_modeling.py). Transform and check patterns are in [`python_transforms.py`](../../../skills/data_skills/13_foundry_patterns/python_transforms.py) and [`foundry_checks.py`](../../../skills/data_skills/13_foundry_patterns/foundry_checks.py). Activate the venv: `source skills/data_skills/.venv/bin/activate`.
 
 ### 2-1. What Is the OSDK
 
 **BLUF:** The Ontology SDK (OSDK) is the primary programmatic interface for external applications to query Ontology objects and execute Actions on MSS. It is the correct integration method for any external application consuming MSS data.
+
+> **NOTE — Palantir Developers reference:** *Product Launch: Rapid Software Development with OSDK 2.0* — Covers the OSDK 2.0 release and its developer experience improvements, including simplified client setup and improved TypeScript type generation. Relevant when configuring a new OSDK project or upgrading from an earlier version. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Building with Palantir AIP: the Ontology Software Development Kit* — Demonstrates OSDK in action for AIP-integrated applications, showing how external apps authenticate and query Ontology objects. Provides a practical walkthrough of the patterns covered in this chapter. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Foundry Reference Project | Structure* — Walks through the canonical Foundry Reference Project structure, covering how OSDK applications, Ontology layers, and pipelines are organized in a production-grade project. Recommended as a reference before setting up a new MSS application. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 The OSDK allows external Python or TypeScript applications to:
 - Query Ontology Object Types (with filtering, pagination, sorting)
@@ -579,6 +553,10 @@ def get_unit_with_equipment(
 
 ## CHAPTER 3 — OSDK ADVANCED PATTERNS
 
+> **NOTE — Palantir Developers reference:** *Ontology SDK x Lennar for Quality Inspection* — A production case study of OSDK deployed for quality inspection workflows at scale. Illustrates real-world OSDK architecture decisions and the patterns covered in Chapters 2–3. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Functions | How to Locate and Edit Objects from your Ontology in Foundry* — Demonstrates how to programmatically locate and interact with Ontology Objects in a code context, reinforcing the object access patterns used in OSDK queries. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 ### 3-1. Action Execution via OSDK
 
 **BLUF:** Actions are the approved mechanism for external applications to write state changes back into the MSS Ontology. Do not write to Ontology datasets directly. Use Actions.
@@ -727,6 +705,8 @@ async function submitSitrepEntry(
 
 **BLUF:** OSDK subscriptions allow external applications to receive push notifications when Ontology objects change, eliminating polling loops against operational data.
 
+> **NOTE — Palantir Developers reference:** *Product Launch: Media, Real-Time Updates, and Expressive Compute in OSDK | DevCon 2* — Covers WebSocket-based real-time object updates and expressive compute patterns introduced in OSDK at DevCon 2, directly extending the subscription model described in this section. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 **CONDITIONS:** Target Object Type supports subscriptions (confirm with C2DAO). Application server can maintain a persistent WebSocket connection to MSS. Network path from application server to MSS is stable.
 
 **STANDARDS:** Subscription handlers are idempotent — duplicate events do not cause duplicate state changes. Subscription errors are caught and logged. Application recovers from dropped connections with backoff retry.
@@ -789,7 +769,11 @@ async function subscribeToUnitStatusChanges(
 
 ---
 
+> **NOTE — Palantir Developers reference:** *Product Launch: Edge Embedded Ontology | DevCon 2* — Covers a specialized deployment pattern where Ontology queries run at the edge without a round-trip to central infrastructure — relevant when designing OSDK applications that must operate in disconnected or low-latency environments. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 ### 3-3. Bulk Object Operations
+
+> **NOTE — Palantir Developers reference:** *Code in Production: Lennar x MCP | DevCon 3* — Covers Model Context Protocol (MCP) integration with Foundry in a production deployment, an emerging pattern for enabling LLM tool use against the Ontology from external application contexts. Relevant to engineers building AI-integrated OSDK applications. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 **BLUF:** When processing multiple objects, use batch query patterns instead of per-object loops. Per-object queries (N+1 pattern) at operational scale will breach rate limits and degrade performance for all MSS users.
 
@@ -937,7 +921,15 @@ def with_retry(
 
 ### 4-1. What Is the Platform SDK
 
-**BLUF:** The Foundry Platform SDK (Python) provides programmatic access to Foundry datasets, branches, transactions, and file resources. Use it when you need to read or write tabular data, manage dataset transactions, or access files stored in Foundry. Use the OSDK (Chapters 2–3) for Ontology object access.
+**BLUF:** The Foundry Platform SDK (Python) provides programmatic access to Foundry datasets, branches, transactions, and file resources.
+
+> **NOTE — Palantir Developers reference:** *Code Repositories | How to Write Data Transformations in Palantir Foundry* — Covers the core procedure for writing data transforms in Foundry Code Repositories, which underlies Platform SDK dataset write patterns. Relevant to anyone building pipeline logic that feeds MSS datasets. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Code Repositories | How to Create a Python Library in Palantir Foundry* — Demonstrates how to package shared transform logic as a reusable Python library within Foundry, applicable when building shared utilities for MSS data pipelines. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Foundry Reference Project | Data Pipeline* — Walks through the data pipeline layer of the Foundry Reference Project, showing how Platform SDK dataset operations fit into a production pipeline architecture. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Developer Deskside | Building Apps on Kafka Streaming Data in Palantir Foundry* — Covers patterns for building Foundry applications that consume Kafka streaming data, an advanced use case for Platform SDK integration in real-time operational pipelines. Available on the Palantir Developers YouTube channel (@PalantirDevelopers). Use it when you need to read or write tabular data, manage dataset transactions, or access files stored in Foundry. Use the OSDK (Chapters 2–3) for Ontology object access.
 
 The Platform SDK is not a general-purpose data lake client. All access must be authorized by the C2DAO data steward for the target dataset. Do not use the Platform SDK to bypass CBAC — the SDK enforces the same access controls as the Foundry UI.
 
@@ -1058,7 +1050,13 @@ def read_dataset_with_limit(
 
 ### 4-4. Dataset Operations — Writing with Transactions
 
-**BLUF:** All writes to Foundry datasets use transactions. A transaction is an atomic unit of work — either all writes in a transaction commit or none do. Always open a transaction before writing and close it explicitly.
+**BLUF:** All writes to Foundry datasets use transactions.
+
+> **NOTE — Palantir Developers reference:** *Code Repositories | How to Write Incremental Data Transforms in Palantir Foundry* — Explains the incremental transform pattern for efficient data pipelines that only process new or changed data, reducing compute cost compared to full-dataset rewrites. Directly relevant to the APPEND vs. SNAPSHOT transaction choice described in this section. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Spark Basics | Partitions* — Covers Spark partition fundamentals, which govern how data is physically organized and processed in Foundry's Spark-based dataset layer. Relevant when optimizing write performance for large datasets. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Spark Basics | Shuffling* — Explains shuffle operations in Spark, the primary source of performance bottlenecks in distributed data transforms. Understanding shuffle is essential when diagnosing slow dataset write or transformation jobs. Available on the Palantir Developers YouTube channel (@PalantirDevelopers). A transaction is an atomic unit of work — either all writes in a transaction commit or none do. Always open a transaction before writing and close it explicitly.
 
 **Transaction types:**
 
@@ -1182,6 +1180,8 @@ def snapshot_dataset(
 
 ### 4-5. File Resources
 
+> **NOTE — Palantir Developers reference:** *Code Repositories | How to Consume a Library in Palantir Foundry* — Shows how to import and use a Foundry Python library in a transform or pipeline, the complement to the library creation pattern. Relevant when integrating shared utility code into Platform SDK-based pipelines. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 **CONDITIONS:** Platform SDK client initialized and authenticated. Target dataset RID is known. Authenticated principal has read or write access to the target dataset file store. File content is validated before upload.
 
 **STANDARDS:** File uploads use APPEND transactions and are committed or aborted explicitly. File paths are well-defined logical paths — not arbitrary file system paths. Sensitive file content is not logged.
@@ -1299,7 +1299,11 @@ def get_or_create_dev_branch(
 
 ### 5-1. What Are Functions on Objects
 
-**BLUF:** Functions on Objects (FOO) are TypeScript functions deployed within Foundry that compute derived properties, aggregate data, or perform transformations directly on Ontology objects at query time. FOO runs server-side in the Foundry compute layer — not in external apps.
+**BLUF:** Functions on Objects (FOO) are TypeScript functions deployed within Foundry that compute derived properties, aggregate data, or perform transformations directly on Ontology objects at query time.
+
+> **NOTE — Palantir Developers reference:** *Functions | Getting Started* — Introductory walkthrough of the Foundry Functions feature, covering repository structure, basic function authoring, and how Functions integrate with the Ontology. Recommended as the first reference before implementing FOO in this chapter. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Foundry Reference Project | Ontology* — Covers the Ontology layer of the Foundry Reference Project, showing how Functions, Object Types, and computed properties are organized in a production Ontology. Complements the repository structure described in Section 5-2. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 FOO is the correct mechanism for:
 - Computed properties on objects (e.g., readiness score derived from component statuses)
@@ -1522,6 +1526,10 @@ export class UnitEquipmentFunctions {
 ---
 
 ### 5-6. Testing FOO Functions
+
+> **NOTE — Palantir Developers reference:** *Functions | Unit Testing Functions on Objects in Palantir Foundry* — Covers unit testing patterns for Functions on Objects, including mock object construction and Jest test setup — directly reinforces the test suite requirements in this section. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Code Repositories | How to Unit Test PySpark in Palantir Foundry* — Covers PySpark unit testing patterns, applicable when FOO functions interact with Spark-backed data or when testing Python transform logic alongside TypeScript FOO. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 **CONDITIONS:** FOO function is implemented per Section 5-3 or 5-4. Jest test framework is configured in the repository. Mock object stubs can be constructed from known property values without Foundry connectivity.
 
@@ -1862,6 +1870,12 @@ export class ExordActionFunctions {
 
 ## CHAPTER 7 — SLATE APPLICATIONS (LEGACY)
 
+> **NOTE — Palantir Developers reference:** *Foundry Reference Project | Apps* — Covers the application layer of the Foundry Reference Project, demonstrating current recommended patterns for Workshop-based and OSDK-backed apps — useful context when planning migration away from Slate to current-generation application frameworks. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Developer Deskside | Creating Map Based Workflows with Workshop in Palantir Foundry* — Shows how to build map-based operational workflows in Workshop, the current-generation replacement for map-heavy Slate applications. Relevant to anyone maintaining or migrating a map-based Slate app. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Developer Deskside | Building a Ticket Framework in Foundry* — Demonstrates building a ticket/workflow application in Foundry — useful reference for migrating existing Slate operational workflow applications to Workshop. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 > **CAUTION:** Slate is a legacy application builder. Do not use Slate for new development. Use Workshop for internal Foundry applications. For public-facing portals, build an external application using the OSDK or Platform SDK.
 
 ### 7-1. What Is Slate
@@ -2076,6 +2090,8 @@ function sanitizeFilterInput(input, maxLength = 50) {
 
 ## CHAPTER 8 — CI/CD AND CODE REPOSITORY DISCIPLINE
 
+> **NOTE — Palantir Developers reference:** *Code Repositories | Development Process and Pipeline Craftsmanship in Palantir Foundry* — Covers the full development lifecycle for Foundry code resources — branching strategy, code review, pipeline hygiene, and promotion discipline. A comprehensive reference for the practices described in this chapter. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 ### 8-1. Repository Structure for Foundry Code Resources
 
 **BLUF:** Foundry code resources — TypeScript FOO functions, Action validators, Slate apps — are developed in Git repositories with the same engineering discipline as any production software system. No code deploys to production outside of the approved CI/CD workflow.
@@ -2108,6 +2124,10 @@ my-foundry-project/
 ---
 
 ### 8-2. Foundry Branch Workflow
+
+> **NOTE — Palantir Developers reference:** *Code Repositories | Best Practices for Creating Pull Requests in Palantir Foundry* — PR best practices in Foundry code repositories, directly reinforcing the C2DAO code review workflow and the PR standards described in this chapter. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Code Repositories | Reviewing Code and Best Practices* — Covers code review standards and best practices within Foundry repositories, complementing the peer review requirements in Section 8-5. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 **Standard branch strategy for Foundry code resources:**
 
@@ -2207,6 +2227,8 @@ jobs:
 ---
 
 ### 8-4. Automated Testing Requirements
+
+> **NOTE — Palantir Developers reference:** *Code Repositories | How to Use Data Expectations in Palantir Foundry* — Covers Foundry's built-in Data Expectations feature for defining data quality assertions within a pipeline — directly relevant to the deployment checklist and automated testing requirements for datasets and transforms. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 **Testing requirements by code resource type:**
 
@@ -2328,6 +2350,8 @@ STEP 7: Post-promotion verification
 
 ### 9-2. Credential Management
 
+> **NOTE — Palantir Developers reference:** *Platform Administration | Setting up SSO in Palantir Foundry* — Covers SSO configuration for the Foundry platform, relevant to senior SWEs and administrators managing authentication architecture for MSS external applications. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 **CONDITIONS:** External application requires authenticated access to MSS OSDK or Platform SDK. C2DAO has provisioned the appropriate credential type. AR 25-2 requirements are understood and being applied.
 
 **STANDARDS:** All credentials are stored in approved storage patterns (preference order listed below). No credentials appear in source code, Dockerfile, docker-compose, log files, or version control history. Token rotation schedule is documented and executed.
@@ -2382,6 +2406,10 @@ Rotation procedure:
 ```
 
 ---
+
+> **NOTE — Palantir Developers reference:** *Cipher | How to Encrypt Data in Foundry with Cipher* — Covers Foundry's Cipher tool for field-level encryption of sensitive data, directly relevant to data classification and security requirements for objects carrying CUI or higher markings. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Security | How to Debug a User's Access to a File* — Diagnostic procedure for investigating access control issues in Foundry — essential for developers troubleshooting CBAC problems in external OSDK applications. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 ### 9-3. Marking Compliance in OSDK Queries
 

@@ -1,57 +1,12 @@
 # TM-40G — MAVEN SMART SYSTEM (MSS)
-## OPERATIONS RESEARCH/SYSTEMS ANALYSIS (ORSA) TECHNICAL MANUAL
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-
-2026
-
-**Version 1.0 | March 2026**
-
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (all required). Quantitative background equivalent to graduate-level statistics, and working proficiency in R or Python, required before beginning this manual.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
-**AUTHORITY:** This publication is issued under authority of the USAREUR-AF C2 Data and Analytics Office (C2DAO). It implements Army CIO Memorandum, Data and Analytics Policy (April 2024) and aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025). Reference learn-data.armydev.com for current platform documentation.
-
----
-
-## SAFETY SUMMARY
-
-ORSA analysts on MSS operate at the intersection of quantitative methods, operational data, and commander decision-making. Errors in analytical products at this level affect resource allocation decisions, mission planning, and force readiness assessments across the USAREUR-AF AOR.
-
-Before delivering any analytical product:
-
-- Never present a point estimate to a commander without accompanying confidence bounds, uncertainty characterization, or sensitivity analysis. A number without uncertainty is not an analytical product — it is a guess with formatting.
-- Validate all input data before modeling. Garbage-in/garbage-out applies equally to readiness C-ratings, logistics demand signals, and exercise outcomes. Validate at ingestion, not after results are computed.
-- Model assumptions must be explicitly documented and defensible. If a commander asks why your forecast differs from last quarter, you must be able to answer in terms of changed inputs and assumptions, not just different numbers.
-- Coordinate with the USAREUR-AF C2DAO before connecting MSS/Foundry data to any external tool or exporting data from the Foundry environment. Data classification and handling rules apply regardless of analytical purpose.
-- ORSA products that feed automated decision systems (scheduling tools, resource allocation algorithms) require human-in-the-loop review gates before operational implementation. Flag this requirement explicitly.
-- Statistical significance is not operational significance. Brief commanders on effect sizes and practical implications, not p-values.
+> **BLUF:** ORSA analysts translate operational questions into mathematical models and translate results into commander-actionable recommendations. This manual provides the technical procedures for conducting that work on MSS/Foundry using Code Workspaces.
+> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (all required). Quantitative background equivalent to graduate-level statistics, and working proficiency in R or Python, required before beginning this manual; CONCEPTS_GUIDE_TM40G_ORSA (read before this manual).
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Analytical products without uncertainty quantification may cause commanders to make decisions with false precision. Confidence intervals, sensitivity ranges, and explicit model limitations are MANDATORY components of every ORSA deliverable presented to a commander.**
-
 > **CAUTION: Connecting Foundry datasets to external tools (JDLM, spreadsheet exports, R/Python libraries outside the Foundry environment) must be coordinated with C2DAO. Unauthorized data movement violates UDRA v1.1 data governance requirements.**
-
 > **NOTE: ORSA analysts are advisors, not decision-makers. The output of every model is an input to a commander's judgment, not a substitute for it. Design your products accordingly.**
-
----
-
-## TABLE OF CONTENTS
-
-- Chapter 1 — Introduction: ORSA Role, Scope, and Analytical Product Standards
-- Chapter 2 — Code Workspaces for ORSA (R and Python Setup)
-- Chapter 3 — Statistical Modeling (Regression, Classification, Validation)
-- Chapter 4 — Time Series Analysis (Readiness Trends, Logistics Forecasting)
-- Chapter 5 — Monte Carlo Simulation and Risk Analysis
-- Chapter 6 — Optimization (Resource Allocation and Scheduling)
-- Chapter 7 — Wargame and Exercise Analysis
-- Chapter 8 — Decision Support Products (Quiver/Contour for Commanders)
-- Chapter 9 — Communicating Uncertainty (Briefing Standards)
-- Appendix A — ORSA Product Standards Checklist
-- Appendix B — Statistical Quick Reference (Army-Relevant Use Cases)
-- Appendix C — Wargame Data Collection Templates
-- Glossary
 
 ---
 
@@ -84,7 +39,17 @@ This manual provides task-level instruction for ORSA officers, NCOs, and quantit
 - Machine learning model deployment to production — see TM-40I
 - Data architecture and schema design — see TM-30 and TM-40H
 
-### 1-2. The ORSA Role in USAREUR-AF
+### 1-2. Curriculum Position, Advanced Track, and WFF Context
+
+**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED. Completion of TM-20 and TM-10 is assumed. A graduate-level quantitative background (statistics, R or Python) is required independently of the TM series.
+
+**Advanced track:** Upon completing TM-40G, qualified ORSAs should pursue **TM-50G (Advanced ORSA)** for advanced topics including Bayesian methods, complex simulation design, multi-objective optimization, and campaign analysis support to USAREUR-AF operational planning.
+
+**Peer specialist tracks:** The ORSA collaborates closely with the ML Engineer (TM-40I) — the ORSA owns the analytical question and decision product; the MLE owns continuously-operating prediction pipelines at scale. Coordinate with TM-40H (AI Engineer) when wrapping ORSA analysis in automated LLM synthesis workflows. Coordinate with TM-40L (Software Engineer) for production-grade pipeline implementation and OSDK-backed delivery interfaces.
+
+**WFF awareness:** ORSA analysts on MSS serve as quantitative decision support across all Warfighting Functions. WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command) are primary consumers of ORSA products. Design analytical products with WFF staff officers as the intended audience: commanders want decision-grade products, not statistical reports. The ORSA's decomposition framework (Decision → Information → Data → Method) applies regardless of which WFF the tasker originates from.
+
+### 1-3. The ORSA Role in USAREUR-AF
 
 ORSA analysts provide the USAREUR-AF commander and staff with quantitative decision support at every phase of the operations process. Table 1-1 maps ORSA activities to staff functions.
 
@@ -99,7 +64,7 @@ ORSA analysts provide the USAREUR-AF commander and staff with quantitative decis
 | G8 (Finance) | Resource allocation optimization, budget modeling | Resource efficiency analyses, programming recommendations |
 | C2DAO | Analytical methodology governance, product standards | ORSA methodology reviews, model documentation |
 
-### 1-3. Prerequisites
+### 1-4. Prerequisites
 
 Before beginning this manual, verify you meet all prerequisites:
 
@@ -119,7 +84,7 @@ Before beginning this manual, verify you meet all prerequisites:
 
 > **NOTE:** This manual assumes graduate-level quantitative proficiency. Statistical procedures are described at an implementation level, not an introductory level. Analysts without the prerequisite background should complete formal coursework before applying these procedures to operational products.
 
-### 1-4. Analytical Product Standards
+### 1-5. Analytical Product Standards
 
 Every ORSA product delivered to a commander or staff officer must meet the following standards. These are not stylistic preferences — they are analytical integrity requirements.
 
@@ -141,7 +106,7 @@ Every ORSA product delivered to a commander or staff officer must meet the follo
 
 ## CHAPTER 2 — CODE WORKSPACES FOR ORSA
 
-> **CODE EXAMPLES:** Python data pipeline and transform patterns referenced in this chapter are available in the local development shim at [`data_skills/13_foundry_patterns/python_transforms.py`](../../../data_skills/13_foundry_patterns/python_transforms.py) and [`data_skills/13_foundry_patterns/incremental_transforms.py`](../../../data_skills/13_foundry_patterns/incremental_transforms.py). Statistics and ML reference modules are in `data_skills/05_statistics/` and `data_skills/06_machine_learning/`. Activate the venv: `source data_skills/.venv/bin/activate`.
+> **CODE EXAMPLES:** Python data pipeline and transform patterns referenced in this chapter are available in the local development shim at [`data_skills/13_foundry_patterns/python_transforms.py`](../../../skills/data_skills/13_foundry_patterns/python_transforms.py) and [`data_skills/13_foundry_patterns/incremental_transforms.py`](../../../skills/data_skills/13_foundry_patterns/incremental_transforms.py). Statistics and ML reference modules are in `skills/data_skills/05_statistics/` and `skills/data_skills/06_machine_learning/`. Activate the venv: `source skills/data_skills/.venv/bin/activate`.
 
 **BLUF:** Code Workspaces provide R and Python environments with direct access to Foundry datasets. Proper workspace configuration is the foundation for all ORSA work on MSS.
 
@@ -1585,6 +1550,8 @@ Before building any analytical dashboard or visualization, internalize the follo
 
 ### 8-2. Task: Build a Readiness Forecast Dashboard in Quiver
 
+> **NOTE — Palantir Developers reference:** *Quiver | How to Build an Analysis in Palantir Foundry* — Covers the end-to-end workflow for creating a Quiver analysis from scratch: connecting data sources, building charts, and publishing a workbook. Watch before your first Quiver build if you have not used the tool before. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 **CONDITIONS:** Readiness forecast model output dataset exists in Foundry (from Chapter 4 procedure). Commander requires an always-current forecast view integrated into the existing readiness dashboard.
 
 **STANDARDS:** Dashboard displays current C-ratings, 90-day forecast, prediction intervals, and highlights units at risk of C3 or below within the forecast horizon. Refreshes automatically on data update.
@@ -1602,6 +1569,8 @@ Before building any analytical dashboard or visualization, internalize the follo
    - Apply **conditional formatting:** green = C1/C2, amber = C3, red = C4/C5 (configure threshold values in the format rules, not hardcoded)
    - Add a **KPI tile** at top: count of units projected to be below C3 within 90 days
 
+> **NOTE — Palantir Developers reference:** *Quiver | Calculating KPIs for Time Series Data in Palantir Foundry* — Demonstrates how to compute and display KPI metrics derived from time-series data in a Quiver workbook, including rolling aggregations and threshold-based indicators. Directly applicable to readiness forecast KPI tiles and trend charts in this dashboard. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 4. **Sheet 2 — Unit Forecast Detail (Staff View):**
    - Add a **Line chart** with: x-axis = month, y-axis = C-rating
    - Series 1: Historical actuals (solid navy line)
@@ -1611,6 +1580,8 @@ Before building any analytical dashboard or visualization, internalize the follo
    - Connect a **Unit selector** parameter widget to filter by UIC
    - Add a **Last Updated** text tile that shows the `generated_date` from the dataset
 
+> **NOTE — Palantir Developers reference:** *Quiver | How to Use Parameters in Your Analysis* — Covers creating and wiring parameter widgets (dropdowns, date pickers, text inputs) to drive dynamic filtering across charts in a Quiver workbook. Directly applicable to the Unit selector parameter in Sheet 2. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 5. **Sheet 3 — ORSA Notes (Analytical Metadata):**
    - Free text tile documenting: model type (ARIMA order), training data range, backtest MAPE, known data quality issues, date of last model refresh
    - This sheet is for staff analysts to validate the product — do not show on commander briefing
@@ -1619,7 +1590,11 @@ Before building any analytical dashboard or visualization, internalize the follo
 
 > **NOTE:** Quiver workbooks connected to live Foundry datasets automatically reflect new data when the underlying dataset updates — provided the dataset schema (column names and types) remains stable. If the ORSA pipeline changes column names, Quiver visualizations will break. Version control your output dataset schema and communicate schema changes to all consumers before implementing them.
 
+> **NOTE — Palantir Developers reference:** *Quiver | How to Navigate the Dependency Graph and Expand your Analysis* — Shows how to use Quiver's dependency graph view to trace upstream data lineage, identify which datasets feed a given chart, and extend an analysis by branching from existing nodes. Use this when diagnosing why a workbook stopped updating or when expanding a readiness dashboard to incorporate additional data sources. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 ### 8-3. Task: Build an Analytical Contour Workbook for COA Support
+
+> **NOTE — Palantir Developers reference:** *Contour | Building a Year Over Year Sales Dashboard* — Demonstrates how to structure a Contour workbook for period-over-period comparison, including calculated fields for delta/variance, reference lines, and layout for executive audiences. The YoY comparison pattern translates directly to readiness trend analysis (current quarter vs. prior quarter) and COA outcome comparisons. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 **CONDITIONS:** G3 requires a product supporting COA comparison briefing. Monte Carlo results from Chapter 5 are stored in a Foundry dataset.
 
@@ -1639,6 +1614,8 @@ Before building any analytical dashboard or visualization, internalize the follo
    - Histogram (overlapping, 50% opacity) of outcome values for each COA
    - Vertical reference line at planning threshold
    - Table below chart: Mean, P10, P50, P90 for each COA, and P(meets threshold) for each COA
+
+> **NOTE — Palantir Developers reference:** *Quiver | How to Perform Ad-Hoc Aggregations* — Covers how to perform on-the-fly group-by aggregations (sum, count, percentile) in Quiver without modifying the underlying dataset or pipeline. Applicable when you need to quickly roll up simulation run outputs by COA for summary statistics during exploratory analysis before publishing a formal Contour product. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 5. **Section 3 — Probability of Exceedance:**
    - Line chart: x = outcome value, y = P(outcome > x), separate lines for each COA

@@ -38,7 +38,7 @@ Complete **7+ duty days before Day 1:**
 
 - [ ] Confirm OSDK TypeScript SDK access (advanced — branch manipulation, Function authoring)
 - [ ] Confirm CI/CD pipeline access in the training environment (C2DAO request)
-- [ ] Read TM-50L, Chapter 1 (OSDK-First Architecture) and Chapter 6 (Enterprise CI/CD) before Day 1
+- [ ] Read TM-50L, Chapter 1 (Introduction and Scope) and Chapter 6 (DevSecOps for Foundry Environments) before Day 1
 - [ ] Prepare a brief (1-page) architecture overview of an MSS application you built or maintain — you will present it for peer review on Day 4
 
 ---
@@ -58,7 +58,7 @@ Complete **7+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 5 | Lab | OSDK interface contract documentation: OpenAPI-style docs for Foundry Actions and query patterns |
 
-**Evening reading:** TM-50L, Chapter 3 (TypeScript Advanced Patterns) — memoization and bulk query sections.
+**Evening reading:** TM-50L, Chapter 3 (High-Performance Foundry Development) — memoization and bulk query sections.
 
 ---
 
@@ -75,7 +75,7 @@ Complete **7+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 9 | Lab | Function testing: unit testing TypeScript Functions with mock OSDK, contract testing between Functions and downstream consumers |
 
-**Evening reading:** TM-50L, Chapter 6 (Enterprise CI/CD for MSS Applications).
+**Evening reading:** TM-50L, Chapter 6 (DevSecOps for Foundry Environments).
 
 ---
 
@@ -92,7 +92,7 @@ Complete **7+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 13 | Lab | Security testing: injection attack surface review for Action inputs, OPSEC review for data exposed through OSDK queries |
 
-**Evening reading:** TM-50L, Chapter 7 (Technical Architecture Review) — the peer review checklist.
+**Evening reading:** TM-50L, Chapter 7 (Security Assessment and Secure Code Review) — the peer review checklist.
 
 ---
 
@@ -118,6 +118,16 @@ Complete **7+ duty days before Day 1:**
 | 0800–1700 | 19 | **Eval** | **Evaluated exercise:** Design and build an OSDK-backed application skeleton with CI/CD pipeline, security review checklist applied, TypeScript Function library, and architecture documentation; defend to evaluator |
 
 **Go standard:** OSDK application skeleton functional with at least 2 Object Types and 1 Action; CI/CD pipeline configured; security checklist applied and documented; architecture document includes OSDK interface contracts and deprecation policy.
+
+---
+
+## Peer Advanced Tracks
+
+| Track | Relevance to TM-50L |
+|---|---|
+| TM-50H (Advanced AI Eng) | OSDK-backed AI system integrations; security patterns for AI applications on Foundry |
+| TM-50I (Advanced ML Eng) | ML model serving infrastructure built on OSDK; platform toolchain for data science workflows |
+| TM-50J (Advanced PM) | Delivery governance for SWE-led programs; technical debt and architecture debt in portfolio risk reporting |
 
 ---
 

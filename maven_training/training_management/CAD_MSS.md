@@ -36,8 +36,11 @@ All training is in the **MSS Training Environment** — a Foundry instance separ
 | TM-10 | Monthly or as-needed | 20 students | 4 students |
 | TM-20 | Quarterly | 12 students | 4 students |
 | TM-30 | Quarterly | 8 students | 3 students |
+| TM-40A–F (WFF, each track) | Quarterly or as-needed (high demand) | 12 students | 4 students |
 | TM-40G/H/I/L | Semi-annual or on demand | 6 students | 2 students |
 | TM-40J/K | Quarterly | 8 students | 3 students |
+
+> **NOTE:** WFF tracks (TM-40A–F) are expected to be the highest-volume courses after TM-10/20. Plan for more frequent scheduling. Each track runs independently; functional staff attend only the track relevant to their WFF assignment.
 
 Classes below the minimum size threshold are typically consolidated with a subsequent iteration. Contact C2DAO Training POC for current schedule.
 
@@ -63,14 +66,20 @@ Prerequisites are verified by C2DAO before a seat is confirmed. Do not assume en
 | TM-10 | None. All personnel eligible. |
 | TM-20 | TM-10 Go on file |
 | TM-30 | TM-10 and TM-20 Go on file |
-| TM-40G | TM-10, TM-20, TM-30 Go on file; quantitative background (statistics, linear algebra); Python or R proficiency |
-| TM-40H | TM-10, TM-20, TM-30 Go on file; Python proficiency; Data Literacy Technical Reference read |
-| TM-40I | TM-10, TM-20, TM-30 Go on file; Python proficiency (pandas, scikit-learn, PyTorch or equivalent) |
+| TM-40A (Intel WFF) | TM-10, TM-20, and TM-30 Go on file (all required). |
+| TM-40B (Fires WFF) | TM-10, TM-20, and TM-30 Go on file (all required). |
+| TM-40C (M2 WFF) | TM-10, TM-20, and TM-30 Go on file (all required). |
+| TM-40D (SUST WFF) | TM-10, TM-20, and TM-30 Go on file (all required). |
+| TM-40E (PROT WFF) | TM-10, TM-20, and TM-30 Go on file (all required). |
+| TM-40F (MC WFF) | TM-10, TM-20, and TM-30 Go on file (all required). |
+| TM-40G | TM-10, TM-20, TM-30 Go on file (all required); quantitative background (statistics, linear algebra); Python or R proficiency |
+| TM-40H | TM-10, TM-20, TM-30 Go on file (all required); Python proficiency; Data Literacy Technical Reference read |
+| TM-40I | TM-10, TM-20, TM-30 Go on file (all required); Python proficiency (pandas, scikit-learn, PyTorch or equivalent) |
 | TM-40J | TM-10, TM-20, TM-30 Go on file (all required) |
 | TM-40K | TM-10, TM-20, TM-30 Go on file (all required) |
-| TM-40L | TM-10, TM-20, TM-30 Go on file; TypeScript or Python proficiency; REST API familiarity |
+| TM-40L | TM-10, TM-20, TM-30 Go on file (all required); TypeScript or Python proficiency; REST API familiarity |
 
-TM-30 is a hard prerequisite for all TM-40G–L specialist tracks, including TM-40J and TM-40K.
+TM-30 is a hard prerequisite for ALL TM-40 tracks — both WFF functional (TM-40A–F) and specialist (TM-40G–L), including TM-40J and TM-40K. Do not enroll any personnel in a TM-40 track without a verified TM-30 Go on file.
 
 ### 2-3. Technical Prerequisite Verification (Specialist Tracks)
 
@@ -128,6 +137,7 @@ Attendance at all scheduled blocks is required. A trainee who misses more than *
 | TM-10 (8 hrs) | 0 hours — no absences permitted for a 1-day course |
 | TM-20 (40 hrs) | 4 hours |
 | TM-30 (40 hrs) | 4 hours |
+| TM-40A–F / WFF tracks (24 hrs) | 2.4 hours (effectively 0 — contact C2DAO if you must miss any time) |
 | TM-40G/H/I/L (40 hrs) | 4 hours |
 | TM-40J/K (24 hrs) | 2.4 hours (effectively 0 — contact C2DAO if you must miss any time) |
 
@@ -228,7 +238,7 @@ Within 1 duty day of a No-Go result:
 | Course | Minimum Remediation Hours | Method |
 |---|---|---|
 | TM-10 | 2 hours | Self-study with TM + supervised lab with instructor |
-| TM-20, TM-40J, TM-40K | 4 hours | Supervised lab on failed tasks; build from scratch on a different dataset |
+| TM-20, TM-40A–F (WFF), TM-40J, TM-40K | 4 hours | Supervised lab on failed tasks; build from scratch on a different dataset |
 | TM-30, TM-40G, TM-40H, TM-40I, TM-40L | 8 hours | Full-day supervised lab; rebuilding failed components |
 
 Remediation focuses on failed tasks. The re-evaluation covers all course tasks — not just previously failed ones.
@@ -356,8 +366,11 @@ Alternate Date:          _________________________________
 
 PREREQUISITES (attach Go evaluation records)
 TM-10 Go Date:           _________ (required for TM-20+)
-TM-20 Go Date:           _________ (required for TM-30+)
-TM-30 Go Date:           _________ (required for TM-40G/H/I/L)
+TM-20 Go Date:           _________ (required for TM-30)
+TM-30 Go Date:           _________ (required for ALL TM-40 tracks — WFF and specialist)
+
+NOTE: TM-30 is a hard prerequisite for ALL TM-40 tracks (A–F WFF and G–L specialist).
+      No TM-40 enrollment will be confirmed without a verified TM-30 Go on file.
 
 TECHNICAL PREREQUISITES (TM-40 specialist tracks only)
 [ ] Code Workspace provisioned and test script passing (TM-40G/I)

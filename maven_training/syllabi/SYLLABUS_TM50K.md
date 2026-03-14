@@ -35,7 +35,7 @@
 
 Complete **5+ duty days before Day 1:**
 
-- [ ] Read TM-50K, Chapter 1 (Enterprise KM Architecture) before Day 1
+- [ ] Read TM-50K, Chapter 1 (Introduction and Scope) before Day 1
 - [ ] Prepare a 1-page description of the knowledge system your unit currently operates (or the most significant one you've managed) — gaps, strengths, and your top two challenges
 - [ ] Identify one personnel turnover event from your unit where institutional knowledge was clearly lost — you will use this as a case study on Day 2
 
@@ -56,7 +56,7 @@ Complete **5+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 5 | Lab | Knowledge system health metrics: usage analytics, query-with-no-results rate, content age distribution, coverage gap identification |
 
-**Evening reading:** TM-50K, Chapter 3 (AI-Augmented Knowledge Synthesis) — human review gate placement section.
+**Evening reading:** TM-50K, Chapter 4 (AI-Assisted Doctrine and Lessons Learned at Scale) — human review gate placement section.
 
 ---
 
@@ -90,6 +90,16 @@ Complete **5+ duty days before Day 1:**
 | 1300–1700 | 13 | **Eval** | **Evaluated exercise:** Design an enterprise knowledge architecture for a notional theater G7 section; produce a taxonomy, governance plan, and AI-augmented synthesis pipeline design; brief to evaluator |
 
 **Go standard:** Architecture covers all required domains; AI pipeline includes human review gate; governance plan addresses freshness and contradiction management; continuity section present.
+
+---
+
+## Peer Advanced Tracks
+
+| Track | Relevance to TM-50K |
+|---|---|
+| TM-50H (Advanced AI Eng) | AI-augmented knowledge synthesis; enterprise RAG architecture for organizational knowledge retrieval |
+| TM-50J (Advanced PM) | Portfolio-level institutional memory; KM systems supporting multi-program delivery governance |
+| TM-50G (Advanced ORSA) | ORSA products as knowledge artifacts; versioning and retention requirements for analytical products and assumption registers |
 
 ---
 

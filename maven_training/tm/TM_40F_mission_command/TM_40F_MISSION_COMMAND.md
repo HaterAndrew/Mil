@@ -1,61 +1,12 @@
 # TM-40F — MAVEN SMART SYSTEM (MSS)
-## MISSION COMMAND WARFIGHTING FUNCTION
-## INTERMEDIATE OPERATOR'S MANUAL
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-
-2026
-
-**Version 1.0 | March 2026**
-
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; CONCEPTS_GUIDE_TM40F_MISSION_COMMAND (required before beginning this manual). No coding, pipeline development, or transform experience is required or assumed.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
-**AUTHORITY:** This publication is issued under authority of the USAREUR-AF C2 Data and Analytics Office (C2DAO). It implements Army CIO Memorandum, Data and Analytics Policy (April 2024), aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025), and supports implementation of ADP 6-0, FM 6-0, FM 5-0, ADP 5-0, ATP 6-0.5, and FM 6-02. Reference learn-data.armydev.com for current platform documentation.
-
----
-
-## SAFETY SUMMARY
-
-Mission Command practitioners using MSS operate at the intersection of data-driven situational awareness and commander decision authority. Errors in data currency, misread dashboards, or improperly loaded CCIRs can produce false confidence — or generate missed decision points — at the moment a commander needs accurate information most.
-
-Before using MSS products to support any decision:
-
-- Verify data freshness before briefing. Every MSS product displays a data-as-of timestamp. Stale data presented as current status is operationally dangerous. Check the timestamp, not just the display.
-- Do not allow MSS to substitute for command judgment. The platform aggregates and displays information. Commanders decide. Staff synthesize and recommend. MSS is an enabler, not a decision-maker.
-- CCIRs loaded in MSS are only as accurate as the thresholds entered. Verify CCIR thresholds match the commander's published guidance before relying on automated alerts.
-- Data on MSS reflects what has been reported. It does not reflect what has happened. Distinguish between reported status and assessed status in all commander products.
-- Coordinate with the S6 before CP displacement to ensure MSS network continuity. Uncoordinated moves can produce data gaps in the COP at tactically critical moments.
-- OPSEC applies to MSS. Dashboard screenshots, exported products, and data extracts from MSS are subject to the same handling requirements as the underlying data. Coordinate with the unit information management officer (IMO) before distributing MSS products outside the originating classification domain.
+> **BLUF:** TM-40F teaches Mission Command practitioners — S3s, XOs, battle captains, and G3 staff — how to use MSS in daily operational work. No coding or pipeline development. Pure operational use of a data-enabled enterprise platform in support of the Mission Command warfighting function.
+> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; CONCEPTS_GUIDE_TM40F_MISSION_COMMAND (required before beginning this manual). Builder skills are not exercised in this track — Mission Command practitioners operate pre-built MSS products (see paragraph 1-4, NOTE). No coding, pipeline development, or transform experience is required or assumed.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Presenting MSS data to a commander without verifying data currency and source validation can lead to decisions based on false situational awareness. Always confirm data-as-of timestamp and source pipeline status before the BUA or any commander brief.**
-
 > **CAUTION: MSS CCIR alerts are threshold-based and dependent on reported data. An alert is a prompt to investigate — not a confirmed event. Validate CCIR triggers against primary reporting channels before taking action or briefing up.**
-
 > **NOTE: MSS does not replace the battle rhythm, the MDMP, or commander/staff judgment. It accelerates and integrates the information that feeds those processes. The operations process (ADP 5-0) remains the framework. MSS is the data layer within it.**
-
----
-
-## TABLE OF CONTENTS
-
-- Chapter 1 — Introduction: Doctrinal Basis and Purpose
-- Chapter 2 — Staff Organization and MSS Role Integration
-- Chapter 3 — The Operations Process on MSS
-- Chapter 4 — Battle Rhythm Management
-- Chapter 5 — Command Post Operations and MSS Configuration
-- Chapter 6 — CCIR and Decision Support Management
-- Chapter 7 — Common Operating Picture and Situational Awareness
-- Chapter 8 — Assessment and Reporting
-- Chapter 9 — Echelon-Specific Guidance
-- Chapter 10 — Degraded Operations
-- Appendix A — Mission Command Product Standards Checklist
-- Appendix B — Battle Rhythm Integration Template
-- Appendix C — MSS Dashboard Reference for Mission Command
-- Appendix D — Doctrinal References Quick Card
-- Appendix E — MOS Quick Reference by Section
-- Glossary
 
 ---
 
@@ -131,7 +82,7 @@ Before beginning this manual, verify the following:
 - [ ] Familiar with basic CP organization and staff section responsibilities at your echelon
 - [ ] Completed unit-level OPSEC training for MSS data handling
 
-> **NOTE: TM-20 (Builder) is NOT required for this manual. TM-40F assumes no ability to build pipelines or transforms. If you encounter a data product that does not exist and needs to be built, coordinate with your unit's designated MSS Builder (TM-20 qualified) or the C2DAO.**
+> **NOTE: TM-20 and TM-30 are required as prerequisites (Go evaluations on file) but builder skills are not exercised in this manual. TM-40F assumes no ability to build pipelines or transforms. If you encounter a data product that does not exist and needs to be built, coordinate with your unit's designated MSS Builder (TM-30 qualified) or the C2DAO.**
 
 ### 1-5. Relationship to Other TMs in the MSS Curriculum
 
@@ -140,15 +91,21 @@ Before beginning this manual, verify the following:
 | TM | Title | Relationship to TM-40F |
 |---|---|---|
 | TM-10 | Maven User | Foundation prerequisite. Platform navigation, basic data access. |
-| TM-20 | Builder | Not required. Builds products that TM-40F users consume. |
-| TM-30 | Advanced Builder | Not required. Designs data architecture behind TM-40F products. |
-| TM-40G | ORSA | Companion. ORSA analysts build quantitative products that TM-40F users receive and brief. |
-| TM-40H | AI Engineer | Not required for operational use. Awareness-level: produces AI-enabled alerts in CCIR monitoring. |
-| TM-40I | ML Engineer | Not required for operational use. Awareness-level: produces predictive products on MSS. |
-| TM-40J | Program Manager | Complementary. PM data feeds readiness and portfolio products consumed by S3. |
-| TM-40K | Knowledge Manager | Complementary. KM maintains information products and lessons learned accessible in MSS. |
-| TM-40F | Mission Command | This manual. |
-| TM-50 Series | Advanced Specialist Tracks | Post-graduate level for technical specialists. Not applicable to operational staff. |
+| TM-20 | Builder | Required as prerequisite (Go evaluation on file). Builder skills are not exercised in this track — TM-40F practitioners consume pre-built products. The TM-20 cert is part of the progression chain to TM-30. |
+| TM-30 | Advanced Builder | Required prerequisite (Go evaluation on file). Advanced builder skills are not exercised in this track. TM-30 completion certifies platform literacy at the level required before WFF track enrollment. |
+| TM-40A | Intelligence WFF | WFF peer track (prereq TM-10 + TM-20 + TM-30). PIR-derived CCIR components feed the Mission Command CCIR dashboard. |
+| TM-40B | Fires WFF | WFF peer track (prereq TM-10 + TM-20 + TM-30). Fires products integrate into the commander's COP and CCIR monitoring. |
+| TM-40C | Movement and Maneuver WFF | WFF peer track (prereq TM-10 + TM-20 + TM-30). Force tracking, route status, and phase line reporting feed the COP. |
+| TM-40D | Sustainment WFF | WFF peer track (prereq TM-10 + TM-20 + TM-30). LOGSTAT feeds commander FFIR thresholds and sustainment picture on the COP. |
+| TM-40E | Protection WFF | WFF peer track (prereq TM-10 + TM-20 + TM-30). Protection data integrates into the COP; CCIR thresholds consume protection status. |
+| TM-40F | Mission Command WFF | This manual. |
+| TM-40G | ORSA | Specialist track (prereq TM-30). Companion. ORSA analysts build quantitative products that TM-40F users receive and brief. |
+| TM-40H | AI Engineer | Specialist track (prereq TM-30). Awareness-level: produces AI-enabled alerts in CCIR monitoring. |
+| TM-40I | ML Engineer | Specialist track (prereq TM-30). Awareness-level: produces predictive products on MSS. |
+| TM-40J | Program Manager | Specialist track (prereq TM-30). PM data feeds readiness and portfolio products consumed by S3. |
+| TM-40K | Knowledge Manager | Specialist track (prereq TM-30). KM maintains information products and lessons learned accessible in MSS. |
+| TM-40L | Software Engineer | Specialist track (prereq TM-30). Builds platform integrations and data pipelines behind TM-40F products. |
+| TM-50G–L | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq TM-40G–L). Not applicable to operational staff. |
 
 ---
 
@@ -1794,5 +1751,5 @@ Instructions:
 *TM-40F — Maven Smart System (MSS): Mission Command Warfighting Function — Intermediate Operator's Manual*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 *Version 1.0 | March 2026*
-*Distribution: DRAFT — Not yet approved for distribution.*
+*Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
 *Authority: USAREUR-AF C2DAO*

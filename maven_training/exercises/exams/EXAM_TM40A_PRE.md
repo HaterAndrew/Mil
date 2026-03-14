@@ -6,7 +6,7 @@
 | **Course** | TM-40A: Intelligence WFF Track |
 | **Form** | Pre-Test |
 | **Level** | TM-40A (WFF Track) |
-| **Audience** | G2/S2 staff, targeting officers, all-source analysts; prerequisite: TM-10 + TM-20 complete |
+| **Audience** | G2/S2 staff, targeting officers, all-source analysts; prerequisite: TM-10 + TM-20 + TM-30 complete |
 | **Time Allowed** | 20 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
@@ -126,3 +126,41 @@ _______________________________________________
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
 *EX-TM40A-PRE | Version 1.0 | March 2026*
+
+---
+
+## ANSWER KEY — INSTRUCTOR USE ONLY
+
+*Do not distribute to students. Use to identify baseline gaps and tailor Day 1 instruction accordingly.*
+
+**Multiple Choice:**
+
+1. B — IPB is a structured analytical method for analyzing threat, terrain, and weather to support commander decisions; MSS displays and disseminates IPB products, not generates them.
+2. B — A PIR is a specific type of CCIR focused on intelligence about the enemy or environment; CCIRs also encompass FFIRs (friendly force information requirements).
+3. B — An intelligence data layer is a configured display element on the COP showing a specific dataset with a data source and currency timestamp; not a static import or automated pipeline.
+4. B — MSS collection management lets the collection manager visualize coverage, task status, and gaps against PIRs; it does not auto-retask assets or replace the collection matrix.
+5. B — Threat and enemy disposition data changes rapidly; displaying stale intelligence without a caveat may drive decisions based on conditions that no longer exist; MSS does not auto-remove stale data.
+6. B — Targeting products must include designation, PIR/CCIR linkage, source attribution, and timestamps; unconfirmed targets must be clearly distinguished from confirmed — not hidden from view.
+7. B — MSS supports all-source analysis by displaying multiple layers simultaneously for analyst correlation; automated fusion without analyst review is not the TM-40A standard.
+8. C — Correct OPSEC: read-only sharing for authorized accounts; correct classification marking; no raw data layer export. Options A, B, and D are distribution control violations.
+
+**Short Answer Guidance:**
+
+SA-9. Full credit (5 pts): Escalate to the data steward and pipeline owner to diagnose the feed failure and restore it; determine whether an alternative source covers the same period; caveat all threat COP products with the actual data-as-of timestamp; at the TWG, explicitly state the gap — "Threat activity layer is current as of [DTG]. There is a 14-hour reporting gap; newer threat activity may not be represented." Partial credit (3 pts): identifies need to caveat the product but does not describe escalation or alternative sourcing steps.
+
+SA-10. Full credit (5 pts): NAIs are geographic areas tied to specific PIRs; MSS collection management displays which assets are tasked to each NAI and when they last reported; the collection manager uses this to identify NAIs with no active collection or where the tasked asset has not reported within cadence (a collection gap); this supports decisions to re-task assets, request additional coverage, or caveat PIR assessments dependent on that NAI. Partial credit (3 pts): describes the NAI-PIR relationship but does not address gap identification or collection manager decision support.
+
+**Scenario Guidance:**
+
+Q-11. Full credit (10 pts): Must address both requirements with all three elements (a/b/c) for each.
+
+*Requirement 1 — HVT into NAI TIGER/WOLF:* (a) threat activity layer linked to intelligence reporting dataset; (b) geographic trigger — HVT-designated entity appears within NAI TIGER or WOLF boundary polygon; (c) route to S2 and Commander — S2 owns collection and targeting decisions; Commander is the engagement decision authority.
+
+*Requirement 2 — Collection coverage below 60%:* (a) collection status dashboard linked to collection management dataset; (b) threshold alert when coverage percentage for either NAI drops below 60%; (c) route to collection manager and S2 — collection manager owns re-tasking; S2 must caveat any PIR assessments dependent on those NAIs.
+
+Partial credit (6 pts): correctly describes one requirement in full with incomplete description of the second. Minimum acceptable: data source, trigger condition, and routing for at least one requirement.
+
+---
+
+*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*EX-TM40A-PRE | Answer Key | Version 1.0 | March 2026*

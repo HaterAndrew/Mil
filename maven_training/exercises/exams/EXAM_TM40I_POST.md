@@ -183,6 +183,16 @@ D. The deployment must wait for a full retraining on the quantized architecture
 
 &nbsp;
 
+**SA-6. Describe how ML engineering capability supports two WFF functions. For each, identify the WFF track (TM-40A through TM-40F) and give a concrete example of an ML model or pipeline that supports decision-making in that function.**
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
 ---
 
 ## SCORING SUMMARY
@@ -190,10 +200,10 @@ D. The deployment must wait for a full retraining on the quantized architecture
 | Section | Questions | Points Each | Total Points |
 |---|---|---|---|
 | Multiple Choice | 15 | 2 | 30 |
-| Short Answer | 5 | 6 | 30 |
-| **Total** | — | — | **60** |
+| Short Answer | 6 | 6 | 36 |
+| **Total** | — | — | **66** |
 
-Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
+Passing: 46/66 (70%) — Post-test only. Pre-test is diagnostic.
 
 ---
 
@@ -229,6 +239,8 @@ SA-3. Full credit: drift metrics — PSI for continuous features (threshold: fla
 SA-4. Full credit sections and required content: (1) Model Overview — name, version, date, purpose; (2) Intended Use — specific use case, authorized users; (3) Out-of-Scope Use — use cases the model must not be applied to; (4) Training Data — source, date range, known biases or gaps; (5) Performance Metrics — recall, precision, AUC on held-out test set; (6) Known Limitations — what the model cannot predict, failure modes; (7) Assumptions — stationarity of operational data, applicability conditions; (8) Responsible AI Declaration — bias evaluation, fairness considerations; (9) Maintenance — retraining schedule, drift monitoring setup. Partial credit (3 pts) for five or more sections correctly described.
 
 SA-5. Full credit: architecture — scheduled pipeline runs model (via API call to serving endpoint or batch inference); pipeline writes predicted failure risk scores to Foundry output dataset via write transaction; Ontology write step maps `vehicle_id` to the `predicted_failure_risk` property on the Vehicle Object Type (upsert on primary key); update frequency = pipeline schedule (daily, weekly); analyst access in Workshop — add a column for `predicted_failure_risk` to the vehicle table widget; configure conditional formatting to highlight high-risk vehicles; or build a sorted list filtered to vehicles above risk threshold. Full credit requires write transaction, Ontology property connection, and Workshop access method.
+
+SA-6. Full credit: any two WFF tracks correctly identified with an ML example — TM-40A (Intelligence): ML classifier categorizes incoming reports by topic and threat level to assist intel analysts; TM-40B (Fires): ML model predicts target re-acquisition probability to support fires prioritization; TM-40C (Movement & Maneuver): ML model predicts route traversability from sensor data to support maneuver planning; TM-40D (Sustainment): ML failure prediction model forecasts which vehicles require maintenance before the next mission to support G4 readiness management; TM-40E (Protection): ML anomaly detection model flags unusual patterns in force protection sensor data; TM-40F (Mission Command): ML model forecasts operational tempo changes to support commander decision cycle. Each response must identify the correct TM-40 letter (A–F) and provide a concrete ML model or pipeline example for full credit.
 
 ---
 

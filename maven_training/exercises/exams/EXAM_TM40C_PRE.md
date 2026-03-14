@@ -6,7 +6,7 @@
 | **Course** | TM-40C: Movement & Maneuver WFF Track |
 | **Form** | Pre-Test |
 | **Level** | TM-40C (WFF Track) |
-| **Audience** | G3/S3 maneuver staff, operations officers, S3 NCOs, maneuver planners; prerequisite: TM-10 + TM-20 complete |
+| **Audience** | G3/S3 maneuver staff, operations officers, S3 NCOs, maneuver planners; prerequisite: TM-10 + TM-20 + TM-30 complete |
 | **Time Allowed** | 20 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
@@ -126,3 +126,45 @@ _______________________________________________
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
 *EX-TM40C-PRE | Version 1.0 | March 2026*
+
+---
+
+## ANSWER KEY — INSTRUCTOR USE ONLY
+
+*Do not distribute to students. Use to identify baseline gaps and tailor Day 1 instruction accordingly.*
+
+**Multiple Choice:**
+
+1. B — The COP provides a shared reported-position picture supporting maneuver synchronization and command decisions; it does not automate movement orders or replace reporting requirements.
+2. B — MSS route data is one source to inform planning; route conditions require validation through reconnaissance and engineer assessment before relying on them for movement.
+3. B — Characterize the gap to the commander and verify current position through primary reporting channels before briefing; do not assume, brief as current, or remove the layer without explanation.
+4. B — MSS provides data visualization and overlay tools supporting staff analysis and COA sketching; it does not replace staff judgment or generate COAs automatically.
+5. A — Standard military symbology with clear data-as-of attribution is the most important characteristic; PowerPoint formatting, auto-generation, and satellite imagery are not the standard.
+6. B — TCP data identifies choke points and supports ground mobility analysis during route planning and movement synchronization; it does not generate accountability reports or replace the MCO.
+7. A — Unit positions and axes of advance reflect current and projected friendly locations; distribution must be limited to those with operational need to know.
+8. B — Task org visibility in MSS shows which units are under operational control of which HQ, enabling staff to identify synchronization gaps; it does not automate re-routing or replace FRAGOs.
+
+**Short Answer Guidance:**
+
+SA-9. Full credit (5 pts): Remove or clearly archive the previous operation's phase line overlay and configure the current operation's phase lines from the new OPORD; stale phase lines from a different operation during a ROC drill will cause rehearsing units to reference incorrect objectives, boundaries, and trigger points — COP data hygiene is an operational requirement because subordinate units will synchronize their actions to what the COP shows. Partial credit (3 pts): describes removing the old overlay but does not address why it matters operationally.
+
+SA-10. Full credit (5 pts): MSS can show route condition status from the route database (open/closed/degraded), last-verified timestamp, and TCP locations; MSS cannot tell you about current ground conditions that have not been reported — closures, obstacles, and trafficability changes since the last update will not appear until reported; a maneuver planner must treat MSS route data as "last reported status as of [DTG]" and plan reconnaissance to verify critical routes before relying on them for movement. Partial credit (3 pts): identifies the limitation without explaining the operational implication for planning.
+
+**Scenario Guidance:**
+
+Q-11. Full credit (10 pts): Must address all four elements.
+
+*Unit positions:* link to BFT/ATAK feed for three maneuver battalions; verify all three battalion position timestamps are within the expected reporting cadence before the brief.
+
+*Graphics (axis, phase lines):* import from the OPORD-generated digital overlay — do not manually redraw; verify labels match the OPORD designators (LD, PL AMBER, PL BLACK, OBJ IRON) exactly.
+
+*Task org:* configure from the unit registry dataset; verify the task org reflects current OPORD attachments and detachments; confirm any TACON/OPCON assignments are reflected.
+
+*CCIR:* configure geographic trigger using PL AMBER polygon as the geofence boundary; trigger fires when any BN position icon crosses the boundary; route to G3/S3 and CDR — S3 manages synchronization at phase lines; CDR is the decision authority for exploitation.
+
+Partial credit (6 pts): three of four elements addressed correctly. Minimum acceptable: two elements with data source and verification step described.
+
+---
+
+*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*EX-TM40C-PRE | Answer Key | Version 1.0 | March 2026*

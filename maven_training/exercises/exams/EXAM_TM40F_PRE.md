@@ -6,7 +6,7 @@
 | **Course** | TM-40F: Mission Command WFF Track |
 | **Form** | Pre-Test |
 | **Level** | TM-40F (WFF Track) |
-| **Audience** | G3/S3 staff, battle captains, XOs, CDRs; prerequisite: TM-10 + TM-20 complete |
+| **Audience** | G3/S3 staff, battle captains, XOs, CDRs; prerequisite: TM-10 + TM-20 + TM-30 complete |
 | **Time Allowed** | 20 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
@@ -126,3 +126,41 @@ _______________________________________________
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
 *EX-TM40F-PRE | Version 1.0 | March 2026*
+
+---
+
+## ANSWER KEY — INSTRUCTOR USE ONLY
+
+*Do not distribute to students. Use to identify baseline gaps and tailor Day 1 instruction accordingly.*
+
+**Multiple Choice:**
+
+1. B — The COP provides all echelons a shared understanding of the operational environment based on reported status; it does not generate recommendations or replace IPB.
+2. B — A CCIR is information the commander needs to make a critical decision or take a decisive action; it is not a data feed, a standing report, or limited to intelligence information.
+3. B — Data currency refers to how recently the displayed data was last updated from its source; not cost, classification, or record count.
+4. C — MSS provides data and visualization support within the operations process; it does not replace staff judgment, generate COAs, or substitute for MDMP.
+5. C — Verify data currency, contact the source unit to confirm current status, and characterize the uncertainty when briefing the commander; do not brief stale data as fact, dismiss the alert, or disable the CCIR.
+6. B — Ensuring MSS network connectivity continuity is the most important action before CP displacement; loss of COP continuity during displacement creates a command and control gap.
+7. B — Reported status is what the data shows has been submitted; assessed status is the commander's judgment about actual conditions, which may differ; they are not synonyms and must not be combined without explicit labeling.
+8. C — Correct OPSEC: share via MSS Workshop with read-only permissions for authorized accounts; apply correct classification marking before distribution. Options A, B, and D are distribution control violations.
+
+**Short Answer Guidance:**
+
+SA-9. Full credit (5 pts): Escalate to the data steward and S6 to diagnose the pipeline failure; attempt to reach subordinate unit S4s by primary comms to obtain a current verbal readiness update with a DTG; during the BUA, brief with an explicit caveat: "Readiness display is current as of 1800 yesterday — data feed has not updated since that time. Current assessed readiness is [X] based on [verbal reports / extrapolation from last reporting cycle]." Do not brief stale data as current to the commander. Partial credit (3 pts): identifies the need to caveat but does not describe escalation or how to characterize uncertainty to the commander.
+
+SA-10. Full credit (5 pts): A properly formatted BUA read-ahead has four sections: (1) readiness status by element with C-ratings and data-as-of; (2) operational situation summary covering key events since last BUA and CCIR status; (3) intelligence summary with threat activity and PIR status; (4) next 24-hour outlook with planned activities and CCIRs to watch; the element that would automatically disqualify the product is absence of data-as-of timestamps — without timestamps, the commander cannot assess the currency of any displayed information and may make decisions on stale data. Partial credit (3 pts): correctly describes three of four sections; or identifies disqualifying element without describing sections.
+
+**Scenario Guidance:**
+
+Q-11. Full credit (10 pts): Must address both CCIRs with all three elements (a/b/c) for each.
+
+*Readiness CCIR — battalion below 75%:* (a) LOGSTAT equipment readiness reporting dataset; (b) threshold: reported readiness for any battalion drops below 75% in the most recent LOGSTAT submission; (c) route to CDR (primary decision authority for readiness actions) and XO (action officer for recovery and follow-up).
+
+*Contact event CCIR — significant contact in AOR:* (a) operational reporting dataset — significant activity (SIGACT) or contact report feed; (b) condition: any event categorized as "significant contact" or above appears within the training AOR boundary polygon; (c) route to CDR and S3 — CDR is the reaction decision authority; S3 manages operations and synchronization of the response.
+
+Partial credit (6 pts): one CCIR described correctly with all three elements; second CCIR partial or missing routing justification. Minimum acceptable: data source, threshold/condition, and routing for at least one CCIR.
+
+---
+
+*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*EX-TM40F-PRE | Answer Key | Version 1.0 | March 2026*

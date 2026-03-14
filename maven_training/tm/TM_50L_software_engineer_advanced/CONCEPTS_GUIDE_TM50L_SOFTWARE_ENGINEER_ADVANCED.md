@@ -1,25 +1,8 @@
-# CONCEPTS GUIDE — TM-50L: ADVANCED SOFTWARE ENGINEER
-## MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — TM-50L: ADVANCED SOFTWARE ENGINEER — MAVEN SMART SYSTEM (MSS)
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA** | Wiesbaden, Germany | 2026
-
-**PURPOSE:** Extends mental models from TM-40L Concepts Guide to advanced software engineering on MSS. Prerequisite: TM-40L Concepts Guide and TM-40L qualification.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-## TABLE OF CONTENTS
-
-1. From Engineer to Platform Engineer
-2. Platform Architecture Mental Model — Advanced
-3. Ontology Design Patterns at Scale
-4. OSDK Application Architecture
-5. Security Engineering on MSS
-6. CI/CD and Automated Promotion — Engineering the Governance Workflow
-7. Code Review as a Team Quality Mechanism
-8. Engineering Documentation as Operational Infrastructure
-9. Advanced Failure Modes — What TM-50L Engineers Get Wrong
+> **BLUF:** TM-50L is not about writing more complex code than TM-40L. It is about taking ownership of the platform's code health, architectural patterns, and engineering standards — and shaping how the entire team writes, reviews, tests, and deploys software.
+> **Purpose:** Extends mental models from TM-40L Concepts Guide to advanced software engineering on MSS. Prerequisite: TM-40L Concepts Guide and TM-40L qualification.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
@@ -476,9 +459,25 @@ The TM-50L lead does not reject the PR. They document each finding with its oper
 
 ---
 
+## PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION
+
+**Peer TM-50 Publications.** Platform engineers build infrastructure consumed by all advanced specialist tracks. Coordinate with practitioners in these companion publications.
+
+| Publication | Track | Coordination Point |
+|---|---|---|
+| TM-50G | Advanced ORSA | Platform infrastructure supporting analytical pipelines |
+| TM-50H | Advanced AI Engineer | OSDK integration with AI systems |
+| TM-50I | Advanced ML Engineer | ML model-serving integrations; feature pipeline infrastructure |
+| TM-50J | Advanced Program Manager | Platform engineering program coordination; SWE team structure |
+| TM-50K | Advanced Knowledge Manager | Platform SDK patterns for enterprise KM system backends |
+
+**WFF Operational Consumer Note.** The software platform built and governed by TM-50L engineers is the delivery mechanism for all capabilities consumed by the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). Platform reliability, security, and performance are not engineering abstractions — they determine whether a G2 analyst can pull an intelligence synthesis at 0300, whether a G4 planner can access logistics forecasts before a decision brief, and whether the G3's force disposition display is current when the commander needs it. The failure modes addressed in this guide — over-engineering, observability debt, security as compliance — have direct operational consequences for WFF practitioners.
+
+---
+
 *This guide is a conceptual companion to TM-50L. It does not replace task-based training. Qualification requires demonstrated performance of TM-50L tasks under the conditions and to the standards specified in TM-50L.*
 
 *USAREUR-AF Operational Data Team — MSS Platform Engineering | Version 1.0 — 2026*
 
 *UNCLASSIFIED*
-*DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.*
+*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*

@@ -1,4 +1,6 @@
-# ENVIRONMENT SETUP — EX-40B Fires
+# ENVIRONMENT SETUP — EX-40B Fires (TM-40B)
+
+**Companion resources:** TM_40B_FIRES.md | SYLLABUS_TM40B | EXAM_TM40B_PRE / EXAM_TM40B_POST
 
 ## Environment Type
 

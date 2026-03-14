@@ -76,3 +76,19 @@ Training dataset: synthetic SIGACT-analog events with date, grid, event type, an
 - Task 3 (Contour) is the most environment-sensitive — budget 45 min total including setup issues
 - Task 5 (AIP Logic) often faster than expected (~10 min for participants familiar with rule editors)
 - Cohorts with G2/S2 backgrounds typically complete Tasks 3–4 faster than average
+
+---
+
+## NEXT STEPS
+
+Upon successful completion of EX-30, participants are cleared to proceed to specialist tracks. TM-30 is a **required** prereq for all TM-40G–L tracks.
+
+**TM-40 Specialist Tracks (select by role):**
+- TM-40G — ORSA (FA49, quantitative analysts)
+- TM-40H — AI Engineer (AI/ML specialists, AIP Logic developers)
+- TM-40I — ML Engineer (ML engineers, data scientists)
+- TM-40J — Program Manager (technical PMs, G8/S8, resource managers)
+- TM-40K — Knowledge Manager (KMOs, 37F, knowledge officers)
+- TM-40L — Software Engineer (SWEs, OSDK developers)
+
+After completing a TM-40 specialist track, participants may continue to the corresponding **TM-50 advanced track** (TM-50G–L). No dedicated exercises exist for TM-50 tracks at this time.

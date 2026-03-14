@@ -1,62 +1,13 @@
 # TM-40E — MAVEN SMART SYSTEM (MSS)
-## PROTECTION WARFIGHTING FUNCTION
-## INTERMEDIATE OPERATOR'S MANUAL
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-
-2026
-
-**Version 1.0 | March 2026**
-
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; CONCEPTS_GUIDE_TM40E_PROTECTION (required before beginning this manual). No coding, pipeline development, or transform experience is required or assumed.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
-**AUTHORITY:** This publication is issued under authority of the USAREUR-AF C2 Data and Analytics Office (C2DAO). It implements Army CIO Memorandum, Data and Analytics Policy (April 2024), aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025), and supports implementation of ADP 3-37, FM 3-37, ATP 3-37.2, ATP 3-37.34, FM 5-19, ATP 3-37.10, FM 3-36, and ADP 3-90. Reference learn-data.armydev.com for current platform documentation.
-
----
-
-## SAFETY SUMMARY
-
-Protection practitioners using MSS operate at the intersection of threat data, force protection measures, and critical safety information. Errors in CBRN data, stale FPCON entries, or incomplete antiterrorism assessments can directly contribute to casualties. The stakes of data quality errors in the protection WFF are measured in lives.
-
-Before using MSS products to support any protection decision:
-
-- Verify CBRN data currency before disseminating contamination overlays or hazard predictions. Stale CBRN data can send Soldiers into contaminated areas without warning. Every CBRN overlay must display a validated data-as-of timestamp.
-- Do not allow MSS dashboards to substitute for physical security patrols, guard posts, or AT officer judgment. MSS aggregates and displays information. Protection requires human presence and verification.
-- FPCON levels on MSS are only valid when the unit AT officer has updated them following command direction. A stale FPCON in MSS is operationally dangerous — subordinate units may apply incorrect protective measures.
-- Random antiterrorism measures (RAM) listed in MSS reflect planned measures. Verify execution through physical chain of command — not by MSS display status alone.
-- C-UAS detection data from MSS represents sensor reports. Correlation and threat determination require additional analysis before any engagement decision.
-- OPSEC applies at all levels. Protection data — CBRN agent data, ECP layouts, guard schedules, survivability positions, and AT vulnerability assessments — is operationally sensitive. Handle MSS exports per unit OPSEC SOP.
+> **BLUF:** TM-40E teaches Protection WFF practitioners — CBRN officers, AT officers, Military Police, ADA officers, and support engineers — how to use MSS in daily protection work. The focus is operational use of MSS to accomplish protection tasks aligned to ADP 3-37, FM 3-37, and subordinate doctrine. No coding, no pipeline development, no transform experience required.
+> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; CONCEPTS_GUIDE_TM40E_PROTECTION (required before beginning this manual).
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Presenting CBRN hazard data without verifying currency and source validation can direct Soldiers into contaminated areas. Always confirm CBRN overlay data-as-of timestamp and originating sensor or report before disseminating. A contamination overlay that is hours old may no longer reflect actual hazard boundaries.**
-
 > **WARNING: Do NOT use MSS engagement data to make C-UAS engagement decisions without confirmation through the established engagement authority chain. MSS data is a tracking tool — it does not replace engagement authority procedures under ATP 3-01.81 and theater ROE.**
-
 > **CAUTION: MSS FPCON alert notifications are threshold-based and depend on AT officer data entry. An automated FPCON alert is a prompt to verify the current command-directed FPCON — not a substitute for the commander's authority to establish and communicate FPCON levels.**
-
 > **NOTE: MSS does not replace physical protection measures. No data platform can substitute for guard posts, physical barriers, patrols, CBRN detection equipment, or the judgment of experienced protection professionals. MSS integrates and displays information about those measures. The measures themselves must exist in the physical domain.**
-
----
-
-## TABLE OF CONTENTS
-
-- Chapter 1 — Overview and the Protection WFF in MSS
-- Chapter 2 — Composite Risk Management in MSS
-- Chapter 3 — CBRN Defense Operations
-- Chapter 4 — Antiterrorism and Force Protection
-- Chapter 5 — Physical Security and Access Control
-- Chapter 6 — Air and Missile Defense (Protection Aspect)
-- Chapter 7 — Electronic Warfare and Spectrum Management
-- Chapter 8 — Survivability Operations
-- Chapter 9 — Echelon-Specific Protection Operations
-- Chapter 10 — Degraded Operations
-- Appendix A — Protection Naming Conventions in MSS
-- Appendix B — CBRN Report Formats: NBC 1–6 Quick Reference
-- Appendix C — FPCON Measures Reference
-- Appendix D — Protection Working Group Checklist
-- Appendix E — AT Risk Assessment Data Fields
 
 ---
 
@@ -1647,12 +1598,16 @@ Post-laboratory or technical analysis. Format:
 
 | Related TM | Relevance to Protection WFF |
 |---|---|
-| TM-10 (Maven User) | Platform navigation prerequisite for all protection practitioners |
+| TM-10 (Maven User) | Foundation prerequisite. Platform navigation, basic data access. Required before this manual. |
+| TM-20 (Builder) | Required as prerequisite (Go evaluation on file). Builder skills are not exercised in this track — TM-40E practitioners consume pre-built products. The TM-20 cert is part of the progression chain to TM-30. |
+| TM-30 (Advanced Builder) | Required prerequisite (Go evaluation on file). Advanced builder skills are not exercised in this track. TM-30 completion certifies platform literacy at the level required before WFF track enrollment. |
 | TM-40A (Intelligence) | AT intelligence integration; threat data for AT assessments |
 | TM-40B (Fires) | AMD coordination — fires and protection share AMD data domain |
-| TM-40C (Maneuver/Movement) | Physical security integration with maneuver operations; base camp siting |
+| TM-40C (Movement and Maneuver) | Physical security integration with maneuver operations; base camp siting |
 | TM-40D (Sustainment) | CBRN resupply coordination; medical tracking for CBRN casualties |
 | TM-40F (Mission Command) | COP integration; CCIR and decision support products that consume protection data |
+| TM-40G–L (Specialist Tracks) | Post-graduate technical tracks (prereq TM-30). Not required for protection WFF employment. |
+| TM-50G–L (Advanced Specialist Tracks) | Advanced technical tracks (prereq TM-40G–L). Not applicable to operational protection practitioners. |
 
 **F-2. New User Checklist.** Before using the MSS protection workspace for the first time, verify:
 

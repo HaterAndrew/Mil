@@ -183,6 +183,16 @@ D. Disabling the workflow and rebuilding it from scratch
 
 &nbsp;
 
+**SA-6. Describe how AIP Logic AI engineering capability supports two WFF functions. For each, identify the WFF track (TM-40A through TM-40F) and give a concrete example of an AIP workflow that supports decision-making in that function.**
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
 ---
 
 ## SCORING SUMMARY
@@ -190,10 +200,10 @@ D. Disabling the workflow and rebuilding it from scratch
 | Section | Questions | Points Each | Total Points |
 |---|---|---|---|
 | Multiple Choice | 15 | 2 | 30 |
-| Short Answer | 5 | 6 | 30 |
-| **Total** | — | — | **60** |
+| Short Answer | 6 | 6 | 36 |
+| **Total** | — | — | **66** |
 
-Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
+Passing: 46/66 (70%) — Post-test only. Pre-test is diagnostic.
 
 ---
 
@@ -229,6 +239,8 @@ SA-3. Full credit: red-teaming tests: prompt injection (inject instructions in s
 SA-4. Full credit: root cause — agent's tool-use authorization for the Workshop form submission tool does not require explicit user request or confirmation; agent is autonomously deciding to submit forms as part of its planning process; correct fix — configure the form submission tool with an authorization rule requiring explicit user confirmation before execution; all irreversible Actions (form submission, Ontology writes, external sends) must require human-in-the-loop approval in Agent Studio configuration. Partial credit (3 pts) for identifying root cause without specific fix.
 
 SA-5. Full credit: AIP Authorization Checklist steps — (1) check prohibited categories: autonomous lethal action (N/A), unchecked personnel evaluation (N/A — this is OSINT, not personnel), automated official release without review (applies — check: is there a human review gate? Yes — passes); (2) verify HITL gate exists (draft summaries to analyst queue = HITL present — passes); (3) verify classification handling (OSINT at what level? — confirm appropriate network and handling); (4) confirm use case complies with Army CIO Memo (April 2024); if use case fails any checklist item, it must be redesigned or formally waived through the command AI governance process — not deployed as-is. Full credit requires checking prohibited categories AND describing failure consequence.
+
+SA-6. Full credit: any two WFF tracks correctly identified with an AIP example — TM-40A (Intelligence): AIP Logic workflow extracts entities from OSINT reports to populate an intelligence Object Type for analyst review; TM-40B (Fires): AIP workflow processes battle damage assessment reports and classifies target status for fires coordination; TM-40C (Movement & Maneuver): AIP workflow summarizes route reconnaissance reports for maneuver planners; TM-40D (Sustainment): AIP workflow processes incoming supply requests and flags priority shortfalls for G4 review; TM-40E (Protection): AIP workflow analyzes threat reports and categorizes force protection advisories; TM-40F (Mission Command): AIP workflow drafts SITREP summaries from unit reports for commander review before distribution. Each response must identify the correct TM-40 letter (A–F) and provide a concrete AIP workflow example with HITL noted for full credit.
 
 ---
 

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Deck Viewer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- Portal Navigation -->
+  <div style="background:#080d18;border-bottom:1px solid #38bdf822;padding:6px 24px;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;display:flex;align-items:center;gap:8px">
+    <a href="../../index.html" style="color:#38bdf8;text-decoration:none;display:flex;align-items:center;gap:6px">← CDA Portal</a>
+    <span style="color:#ffffff22">│</span>
+    <span style="color:#ffffff55">Course Portal</span>
+  </div>
+  <!-- Classification Banner -->
+  <div style="background:#166534;color:#fff;text-align:center;padding:4px 0;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.15em;font-weight:600">UNCLASSIFIED</div>
+  <div class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="kicker"><a href="index.html" style="text-decoration:none;color:inherit;">Course Portal</a></div>
+        <div class="title" id="deckTitle">Deck</div>
+      </div>
+      <div class="nav">
+        <a href="index.html">All decks</a>
+        <a href="downloads/">Downloads</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container viewer-wrap">
+    <div class="card viewer-card">
+      <div class="viewer-toolbar">
+        <div class="toolbar-left">
+          <span class="pill" id="counter">—</span>
+          <span class="pill" id="deckMeta">—</span>
+        </div>
+        <div class="toolbar-right">
+          <button class="btn" id="firstBtn" type="button">⏮ First</button>
+          <button class="btn" id="prevBtn" type="button">← Prev</button>
+          <button class="btn" id="nextBtn" type="button">Next →</button>
+          <button class="btn" id="lastBtn" type="button">Last ⏭</button>
+          <button class="btn" id="fsBtn" type="button">⛶ Fullscreen</button>
+        </div>
+      </div>
+
+      <div class="viewer-stage" id="stage">
+        <img id="slideImg" alt="Slide"/>
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:12px;">
+        <a class="btn primary" id="dlPpt" href="#" download>Download PPTX</a>
+        <a class="btn" id="dlPdf" href="#" download>Download PDF</a>
+        <a class="btn" id="openPpt" href="#" target="_blank" rel="noopener">Open PPTX</a>
+      </div>
+
+      <div class="hr"></div>
+      <div class="small">
+        Controls: <span class="kbd">←</span>/<span class="kbd">→</span>, <span class="kbd">Space</span>,
+        <span class="kbd">PgUp</span>/<span class="kbd">PgDn</span>, <span class="kbd">Home</span>/<span class="kbd">End</span>.
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initDeck } from './app.js';
+    initDeck();
+  </script>
+</body>
+</html>

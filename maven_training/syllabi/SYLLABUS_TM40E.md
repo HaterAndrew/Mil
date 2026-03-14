@@ -5,7 +5,7 @@
 |---|---|
 | **Level** | TM-40E — Protection WFF Track |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-10, TM-20 (Go evaluations on file); CONCEPTS_GUIDE_TM40E_PROTECTION (required reading before Day 1) |
+| **Prerequisites** | TM-10, TM-20, TM-30 (Go evaluations on file); CONCEPTS_GUIDE_TM40E_PROTECTION (required reading before Day 1) |
 | **Audience** | Force protection officers, CBRN officers, provost marshal staff, and G2/S2 force protection analysts at BCT echelon and below |
 | **Format** | Instructor-led seminar + demonstration + tabletop exercise + practical evaluation |
 | **Location** | MSS Training Environment (standard user access sufficient) |
@@ -57,7 +57,7 @@ Complete **5+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 5 | Exercise | CCIR drill: given force protection CCIRs and a sample threat dataset, configure 3 force protection CCIRs and verify they trigger correctly |
 
-**Evening reading:** TM-40E, Chapter 4 (Force Protection COP and Threat Data in MSS) — source attribution requirements and difference between reported threat incidents and assessed threat patterns.
+**Evening reading:** TM-40E, Chapter 4 (Antiterrorism and Force Protection) — source attribution requirements and difference between reported threat incidents and assessed threat patterns.
 
 ---
 
@@ -74,7 +74,7 @@ Complete **5+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 9 | Exercise | Protection product drill: build a CBRN overlay and PERSTAT display from a provided dataset; evaluator reviews for data currency, timestamp placement, and OPSEC marking |
 
-**Evening reading:** TM-40E, Chapter 6 (CBRN Data in MSS) and Chapter 8 (PERSTAT and Accountability Products).
+**Evening reading:** TM-40E, Chapter 3 (CBRN Defense Operations) and Chapter 2 (Composite Risk Management in MSS).
 
 ---
 
@@ -97,10 +97,10 @@ Complete **5+ duty days before Day 1:**
 | When | Reading |
 |---|---|
 | Before Day 1 | CONCEPTS_GUIDE_TM40E_PROTECTION (complete) |
-| Day 1 evening | TM-40E, Ch 4 (Force Protection COP and Threat Data in MSS) |
-| Day 2 evening | TM-40E, Ch 6 (CBRN Data in MSS) |
-| Day 2 evening | TM-40E, Ch 8 (PERSTAT and Accountability Products) |
-| Day 3 (review) | TM-40E, Ch 10 (Degraded Protection Procedures) — skim before Day 3 brief |
+| Day 1 evening | TM-40E, Ch 4 (Antiterrorism and Force Protection) |
+| Day 2 evening | TM-40E, Ch 3 (CBRN Defense Operations) |
+| Day 2 evening | TM-40E, Ch 2 (Composite Risk Management in MSS) |
+| Day 3 (review) | TM-40E, Ch 10 (Degraded Operations) — skim before Day 3 brief |
 
 ---
 
@@ -138,6 +138,33 @@ Complete **5+ duty days before Day 1:**
 | CBRN overlay exercise | Most technically specific block in the course — read TM-40E Chapter 6 the night before and know what fields the CBRN sensor feed exposes |
 | Geographic CCIRs | Require correctly defined AOR boundaries in MSS — if your training environment does not have the AOR pre-loaded, ask the instructor before Day 1 how geographic CCIR boundaries are configured |
 | Threat reporting inject | When the inject hits, the correct response is: assume the gap is significant until proven otherwise, caveat everything affected, escalate immediately. Do not attempt to determine if the sector is "actually clear" |
+
+---
+
+## Associated Exercise and Exams
+
+| Item | Reference |
+|---|---|
+| **Practical Exercise** | EX-40E (EXERCISE.md + ENVIRONMENT_SETUP.md) — `exercises/EX-40E/` |
+| **Pre-course exam** | EXAM_TM40E_PRE — `exercises/exams/EXAM_TM40E_PRE.md` |
+| **Post-course exam** | EXAM_TM40E_POST — `exercises/exams/EXAM_TM40E_POST.md` |
+
+---
+
+## Related WFF Tracks
+
+TM-40E is one of six WFF tracks. All require TM-10, TM-20, and TM-30 as prerequisites.
+
+| Track | WFF | Audience |
+|---|---|---|
+| TM-40A | Intelligence | G2/S2 staff, targeting officers, all-source analysts |
+| TM-40B | Fires | FSOs, FSEs, targeting officers, fires NCOs |
+| TM-40C | Movement & Maneuver | G3/S3 staff, operations officers, maneuver planners |
+| TM-40D | Sustainment | G4/S4 staff, logistics officers, supply chain managers |
+| TM-40E | Protection | FP officers, CBRN officers, provost marshal staff |
+| TM-40F | Mission Command | Battle captains, XOs, CDRs, MC-function staff |
+
+Personnel completing multiple WFF tracks do not repeat TM-10, TM-20, or TM-30. Enrollment is independent for each track.
 
 ---
 

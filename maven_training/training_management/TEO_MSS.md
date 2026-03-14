@@ -390,6 +390,136 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
+# PART IIIA — TM-40 WFF FUNCTIONAL TRACK T&EOs (TM-40A through TM-40F)
+
+> WFF tracks share a common T&EO task structure. Scenario content (Object Type names, dataset fields, mission context) is adapted per WFF. Evaluators select the scenario package for the applicable WFF track.
+>
+> **Prerequisite reminder:** TM-40A–F require TM-10, TM-20, and TM-30 (all required).
+> Evaluation: 6 tasks, all must pass (Go/No-Go); 3-hour evaluation window.
+
+### WFF Track Scenario Packages
+
+| Track | Course | Primary Domain Scenario | Key Object Types |
+|---|---|---|---|
+| TM-40A | Intelligence WFF | PMESII pattern analysis; ISR track management; threat object tagging | ThreatReport, ISRCollection, PMESIIObservation |
+| TM-40B | Fires WFF | Target tracking pipeline; fire mission status; effects dashboard; CSR coordination | Target, FireMission, EffectsAssessment |
+| TM-40C | Movement & Maneuver WFF | Maneuver unit readiness; route status; obstacle tracking; S3 planning dashboard | ManeuverUnit, Route, Obstacle, MovementOrder |
+| TM-40D | Sustainment WFF | Class I–IX supply status; LOGSTAT pipeline; requisition tracking; S4 COP products | SupplyRequest, EquipmentReadiness, LOGSTATSubmission |
+| TM-40E | Protection WFF | Force protection object types; AT data products; CBRN incident tracking; AMD status | ProtectionEvent, CBRNReport, FPStatusUpdate |
+| TM-40F | Mission Command WFF | COP object types; CCIR threshold monitoring; SITREP submission; commander dashboard | SITREPSubmission, CCIRThreshold, COPObject |
+
+> **NOTE:** All six WFF track evaluations use T&EO tasks 40WFF-01 through 40WFF-06. Evaluator selects the scenario package column matching the trainee's track. Critical performance measures for WFF tracks apply uniformly across all six scenario packages.
+
+---
+
+## T&EO 40WFF-01: Build a WFF Pipeline from Provided Exercise Data
+
+**Task:** Ingest a provided WFF-specific dataset; build a Pipeline Builder pipeline that cleans, transforms, and outputs a typed, validated dataset ready for Ontology write.
+
+**Conditions:** Given a provided synthetic WFF dataset (scenario-specific to the track); trainee's Foundry project in the MSS Training Environment.
+
+**Standards:** Pipeline runs to completion without error; output schema is correctly typed; row count matches expected; output is written to the correct project folder.
+
+| # | Performance Measure | GO | NO-GO |
+|---|---|---|---|
+| 1 | Pipeline ingests the provided dataset without error | Ingestion completes; row count verified | Ingestion fails or row count not verified |
+| 2 | Filter step removes null or invalid rows | Filter step present; nulls absent in output | No filter; nulls present in output |
+| 3 | Column types correct (STRING, DATE, INTEGER as applicable) | All types correct | Any type mismatch in output |
+| 4 | Computed column present (e.g., status flag, RAG value, DATEDIFF) | Computed column correct | Column absent or formula incorrect |
+| [CRITICAL] 5 | Pipeline runs to completion without error | No errors in pipeline log | Pipeline errors present |
+| 6 | Output dataset in correct folder with C2DAO-compliant name | Output in Datasets folder; compliant name | Output misplaced or non-compliant name |
+
+---
+
+## T&EO 40WFF-02: Create WFF Object Types and Populate via Pipeline
+
+**Task:** Create the WFF-specific Object Types documented in the scenario and populate them via the pipeline Ontology write step.
+
+**Conditions:** Pipeline output dataset from 40WFF-01; scenario specifying required Object Types and properties.
+
+**Standards:** All required Object Types created with correctly typed properties; Primary Key designated; Object count in Quiver matches source row count.
+
+| # | Performance Measure | GO | NO-GO |
+|---|---|---|---|
+| 1 | All required Object Types created | All Object Types present | Any required Object Type missing |
+| [CRITICAL] 2 | All property types correct | All types correct | Any type incorrect |
+| [CRITICAL] 3 | Primary Key designated for each Object Type | PK set | No PK (all objects overwrite) |
+| 4 | Ontology write step configured; pipeline runs | Write step present; pipeline runs | Write step absent or pipeline fails |
+| [CRITICAL] 5 | Object count in Quiver matches source row count | Count matches | Count does not match (silent data loss) |
+| 6 | Object Type naming follows C2DAO convention | Compliant names | Non-compliant names |
+
+---
+
+## T&EO 40WFF-03: Configure a WFF Workshop Application
+
+**Task:** Build a Workshop application displaying WFF data with appropriate filters and status indicators.
+
+**Conditions:** Populated Object Types from 40WFF-02; scenario specifying required widgets and filter fields.
+
+**Standards:** Application displays live Ontology data; all required filter widgets functional; status indicators present; classification marking displayed.
+
+| # | Performance Measure | GO | NO-GO |
+|---|---|---|---|
+| 1 | Application named per C2DAO convention | Compliant name | Non-compliant name |
+| 2 | Table widget bound to correct Object Type; displays required columns | Table shows live Ontology data | Table not bound; static or empty |
+| 3 | Filter widget(s) present and functional (narrows table correctly) | Filter narrows correctly | Filter absent or not connected |
+| 4 | Status indicator present (conditional formatting or metric widget) | Status indicator functional | Status indicator absent |
+| [CRITICAL] 5 | Classification marking present on the application | Marking displayed | Marking absent |
+
+---
+
+## T&EO 40WFF-04: Configure a WFF Action
+
+**Task:** Create an Action to support a WFF workflow (e.g., status update, submission trigger).
+
+**Conditions:** Existing WFF Object Type; scenario specifying the Action type and access restriction.
+
+**Standards:** Action created with correct parameter, write rule, and access restriction; test execution confirms property updates.
+
+| # | Performance Measure | GO | NO-GO |
+|---|---|---|---|
+| 1 | Action created with named parameter | Parameter exists with name and type | No parameter |
+| 2 | Write rule maps parameter to correct Object property | Write rule correct | Write rule missing or incorrect |
+| [CRITICAL] 3 | Access restricted per scenario spec (Editor-only or specified role) | Access restriction set | No restriction; unauthorized role can execute |
+| 4 | Action tested; property confirms updated | Property updated after test | Property did not update |
+
+---
+
+## T&EO 40WFF-05: Build a Multi-Page WFF Dashboard
+
+**Task:** Build a multi-page Workshop application where a Page 1 selection drives a filtered detail view on Page 2.
+
+**Conditions:** Object Types populated from 40WFF-02; scenario specifying Page 1 (summary) and Page 2 (unit/element detail) requirements.
+
+**Standards:** Page 1 shows all records with correct status; selecting a record on Page 1 navigates to Page 2 and filters Page 2 data to the selected record's context.
+
+| # | Performance Measure | GO | NO-GO |
+|---|---|---|---|
+| 1 | Page 1 (summary/portfolio view) displays all records with correct status | Summary page correct | Summary page empty or incorrect |
+| 2 | Selecting a record on Page 1 navigates to Page 2 | Navigation works | Navigation absent or goes to wrong page |
+| [CRITICAL] 3 | Page 2 content is filtered by Page 1 selection | Page 2 shows correct record's data | Page 2 shows all records regardless of selection |
+| 4 | Conditional formatting present on at least one table (status-based) | Formatting applied | No conditional formatting |
+
+---
+
+## T&EO 40WFF-06: Apply C2DAO Governance (Naming, Marking, Branch, Promotion)
+
+**Task:** Demonstrate compliance with C2DAO data governance requirements for a WFF data product.
+
+**Conditions:** Workshop application from 40WFF-03/05; evaluator will review naming, markings, and require a branch/promote workflow.
+
+**Standards:** Product meets C2DAO naming convention; classification marking present; branch created before change; promotion request submitted with complete description.
+
+| # | Performance Measure | GO | NO-GO |
+|---|---|---|---|
+| 1 | Dataset, pipeline, and application names follow C2DAO convention | All names compliant | Any non-compliant name |
+| 2 | Classification marking present on dataset and application | Markings present | Any marking absent |
+| [CRITICAL] 3 | Branch created BEFORE making the specified change | Branch exists before change | Change made on main; branch created after |
+| 4 | Change is on branch only; main is unchanged | Change is branch-only | Change appears on main |
+| [CRITICAL] 5 | Promotion request submitted with complete description (what/why/downstream impact) | Description complete | Description empty or generic |
+
+---
+
 # PART IV — TM-40 SPECIALIST TRACK T&EOs
 
 > T&EOs for TM-40 specialist tracks are structured around the practical exercise tasks in each course syllabus.

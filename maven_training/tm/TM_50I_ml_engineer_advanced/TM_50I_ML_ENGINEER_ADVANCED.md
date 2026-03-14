@@ -1,59 +1,12 @@
 # TM-50I — ADVANCED MACHINE LEARNING ENGINEERING
-## MAVEN SMART SYSTEM (MSS) | USAREUR-AF OPERATIONAL DATA TEAM
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA** | Wiesbaden, Germany | 2026 | Version 1.0
-
-**UNCLASSIFIED**
-Distribution: DRAFT — Not yet approved for distribution.
-
----
-
-**PREREQUISITE PUBLICATIONS:** TM-40I, Machine Learning Engineer (required, completion verified). TM-40H, AI Engineer (cross-reference for AIP Logic and Agent Studio integration). TM-40G, ORSA (cross-reference for statistical validation methods). Proficiency in production ML systems, Foundry Transforms, model deployment to Ontology, and drift monitoring is assumed. Personnel who cannot independently design a feature pipeline, train and evaluate a model, implement drift detection, and complete the TM-40I governance checklist are not ready for TM-50I.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-> **PREREQUISITE WARNING:** TM-50I is **not required** for the majority of ML engineer billets. It is intended for personnel with demonstrated proficiency at TM-40I level who are actively managing production ML pipelines, automated retraining systems, or federated learning infrastructure on MSS. If you are uncertain whether TM-50I applies to your billet, consult your supervisor or the unit data steward before proceeding.
-
----
-
-## SAFETY SUMMARY
-
-TM-50I practitioners operate at the production edge of the MSS ML platform. The systems built at this level — automated retraining pipelines, real-time inference endpoints, federated learning orchestration — are infrastructure, not experiments. A failure here is a platform failure, not a single-model failure.
-
-Before performing any task at TM-50I level:
-
-- **Automated pipelines must have explicit human-in-the-loop gates.** An automated retraining pipeline that deploys a new model version without human review is not authorized on MSS without documented C2DAO approval of the automation design. Automation accelerates the loop; it does not remove accountability.
-- **Real-time inference endpoints that feed operational dashboards require latency SLAs, health monitoring, and defined fallback behavior.** If an endpoint is down, the operational consumer must know — and must have a fallback. Document both.
-- **Federated learning across classification boundaries requires explicit data steward authorization for each participating domain.** The absence of data movement does not eliminate access control requirements. Coordinate with the C2DAO and data steward before initiating any cross-domain federated training.
-- **Model compression and quantization alter model behavior.** A compressed model is not the same model. Re-evaluate on operationally representative data after any compression step. Do not assume performance is preserved.
-- **Adversarial robustness testing is a production requirement, not a research exercise.** Any MSS model exposed to external data sources or untrusted inputs must complete adversarial testing before deployment. This includes logistics models ingesting partner-nation data feeds.
-- **All AI/ML governance requirements from TM-40I remain in effect at TM-50I level.** Additional requirements from DoD RAIMTF, Army CIO Memo (April 2024), and UDRA v1.1 (February 2025) layer on top. TM-50I does not reduce governance burden — it increases it, because the systems are more complex and the failure modes are harder to detect.
+> **BLUF:** TM-50I qualifies senior machine learning engineers to design, build, and lead production ML platform capability on MSS. This manual extends TM-40I into automated MLOps, advanced neural architectures, federated learning, real-time inference, ML security, and platform architecture leadership.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: AUTOMATED MODEL DEPLOYMENT IS A PRIVILEGED CAPABILITY. Automated pipelines that promote model versions to production without human review are classified as high-risk automation under UDRA v1.1. Implementing this pattern without a documented, C2DAO-approved automation design and explicit mission owner sign-off constitutes an unauthorized production change. The senior MLE who designs the pipeline is accountable for every automated promotion it executes.**
-
 > **WARNING: CROSS-DOMAIN FEDERATED LEARNING. Federated learning patterns that coordinate gradient updates across classification-separated environments may be subject to EUCOM data sharing agreements, coalition partner protocols, and USAREUR-AF C2DAO architecture review. Do not initiate cross-domain federated training without written authorization from the data steward and C2DAO. "No data moves" is not a sufficient authorization argument — the aggregated model weights can encode information from the source domains.**
-
 > **CAUTION: MODEL COMPRESSION AND PRODUCTION EQUIVALENCE. A quantized or pruned model is a different model from the full-precision original. Performance metrics from the full-precision model do not transfer. Every compressed model variant must be independently evaluated on an operationally representative holdout set before deployment. Failure to re-evaluate may result in silent performance degradation in production.**
-
 > **NOTE: TM-50I targets senior MLEs with production responsibility — personnel designing platform-level infrastructure, leading ML capability for a major MSS program, or serving as the ML technical authority for a command. This is not a follow-on to TM-40I for general practitioners. It is a specialization track for personnel who will own the platform, not just operate it.**
-
----
-
-## TABLE OF CONTENTS
-
-- Chapter 1 — Introduction and Scope
-- Chapter 2 — Advanced MLOps and Automated Retraining
-- Chapter 3 — Advanced Neural Architectures for Operational Data
-- Chapter 4 — Federated and Privacy-Preserving Machine Learning
-- Chapter 5 — Advanced Interpretability and Bias Auditing
-- Chapter 6 — Real-Time Inference and Model Optimization
-- Chapter 7 — ML Security and Adversarial Robustness
-- Chapter 8 — ML Platform Architecture and Leadership
-- Appendix A — ML Production Readiness Checklist (Advanced)
-- Appendix B — Model Documentation Standards (DoD RAIMTF)
-- Glossary
 
 ---
 
@@ -123,6 +76,19 @@ USAREUR-AF COMMANDER / C2DAO
 
 The TM-50I MLE is a force multiplier — not because they write the most code, but because the infrastructure they design determines what the TM-40I practitioners beneath them can build and how safely they can build it. A poorly designed feature store creates incorrect features for every model that uses it. A misconfigured model registry loses experiment reproducibility across the platform. A missing adversarial robustness gate exposes every deployed model to the same attack class.
 
+### 1-3A. Relationship to Other TM-50 Publications
+
+| Publication | Track | Key Overlap with TM-50I |
+|---|---|---|
+| TM-50G | ORSA Advanced | Statistical validation methods; uncertainty quantification for ML outputs |
+| TM-50H | AI Engineer Advanced | AIP Logic integration; fine-tuning infrastructure (Chapter 3); adversarial robustness |
+| TM-50I | ML Engineer Advanced | THIS DOCUMENT |
+| TM-50J | Program Manager Advanced | ML program lifecycle; governance documentation requirements |
+| TM-50K | Knowledge Manager Advanced | Feature data governance; training corpus design |
+| TM-50L | Software Engineer Advanced | Platform SDK infrastructure; OSDK model-serving integrations |
+
+**WFF Operational Consumer Note.** The six Warfighting Function (WFF) tracks — Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F) — are the primary operational consumers of ML models built and maintained by TM-50I engineers. Readiness prediction, logistics demand forecasting, personnel risk models, and anomaly detection all feed WFF staff sections. When designing ML systems, account for the WFF end-user: calibration, interpretability, and latency requirements vary significantly by WFF function and decision context.
+
 ### 1-4. Prerequisites and Entry Standards
 
 TM-50I entry requires demonstrated proficiency at TM-40I level. The following are entry conditions, not goals.
@@ -177,6 +143,8 @@ TM-40I covered the baseline six-gate governance process. TM-50I introduces autom
 TM-40I introduced drift detection and manual retraining. TM-50I builds the infrastructure that makes retraining automated, auditable, and safe. The distinction is architectural: where TM-40I MLEs respond to drift, TM-50I MLEs design systems that detect drift, validate a new model, and promote it with defined human oversight requirements — consistently, every time, across every model on the platform.
 
 ### 2-2. Automated Retraining Pipeline Architecture
+
+> **NOTE — Palantir Developers reference:** *Deep Dive: Optimizing Data Pipelines with Iceberg Tables and Lightweight Compute | DevCon 4* — The primary DevCon deep dive on Iceberg table optimization for production ML pipelines, covering time-travel, snapshot isolation, efficient incremental reads, and lightweight compute patterns. These capabilities underpin the data validation and feature pipeline stages of the five-stage retraining architecture described below. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 An automated retraining pipeline on MSS consists of five stages. Each stage must be implemented as a discrete, independently monitorable unit. Do not collapse stages — a monolithic retraining job is not debuggable when it fails in production.
 
@@ -348,6 +316,8 @@ Do not use a transformer when:
 - A TF-IDF + logistic regression achieves the required performance on a validated benchmark
 - The operational text vocabulary is highly domain-specific and a pre-trained model's vocabulary alignment is poor without fine-tuning
 - The inference latency requirement cannot accommodate transformer inference times at your scale
+
+> **NOTE — Palantir Developers reference:** *xAI x TWG for Model Tuning Infrastructure | DevCon 2* — A DevCon deep dive on the infrastructure decisions required to support model fine-tuning at scale, including compute allocation, checkpoint management, and training-serving integration. Directly relevant to the fine-tuning infrastructure design decisions in this task and the model registry requirements in Chapter 8. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 ### 3-3. Task: Fine-Tune a Transformer for SITREP Classification
 
@@ -911,6 +881,8 @@ If any anomaly is detected, quarantine the checkpoint, notify the C2DAO, and do 
 
 ### 8-2. Shared Feature Store Design
 
+> **NOTE — Palantir Developers reference:** *Chad & Xander | Lightweight Transforms in Pipeline Builder* — Covers lightweight transform patterns that reduce compute cost and complexity in Foundry Pipeline Builder. Lightweight transforms are a practical design option for the canonical feature pipeline Transforms in a shared feature store, particularly for features that can be computed efficiently without full Spark overhead. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 A feature store is a centralized system for storing, serving, and managing ML features. On MSS, a shared feature store prevents the feature engineering redundancy problem: 10 different models computing the same "unit equipment fill percentage 30-day rolling average" feature 10 different ways, with 10 different bugs and 10 different staleness profiles.
 
 **Feature store requirements for MSS:**
@@ -1010,6 +982,8 @@ Reproducibility requirement: given an experiment run ID, any MLE on the team mus
 TM-50I MLEs design integration interfaces between the ML platform and adjacent capability tracks. The two most common integration points are:
 
 **Integration with TM-40H (AI Engineer): AIP Logic and Agent Studio**
+
+> **NOTE — Palantir Developers reference:** *Applied AI: Scaling AI Workflows and Task Execution with AIP* — Covers how AIP workflows scale across complex, multi-step task execution — directly relevant to the design of AIP Logic integrations that consume ML model outputs from the MSS platform. Provides the TM-50I MLE with the AI Engineer's perspective on workflow orchestration, clarifying the interface design requirements for model endpoints. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 AIP Logic enables AI-powered workflows that can call ML model endpoints as part of a broader automated pipeline. Agent Studio enables autonomous agents that can query model outputs, trigger Actions, and orchestrate multi-step workflows.
 
@@ -1439,4 +1413,4 @@ Any unchecked item without documented N/A justification is a STOP condition.
 *TM-50I — Advanced Machine Learning Engineering — Maven Smart System*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA*
 *Wiesbaden, Germany*
-*UNCLASSIFIED — Distribution: DRAFT — Not yet approved for distribution.*
+*UNCLASSIFIED — Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*

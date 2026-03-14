@@ -1,32 +1,9 @@
-# CONCEPTS GUIDE — TM-40D COMPANION
-## SUSTAINMENT WARFIGHTING FUNCTION
-## MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — TM-40D COMPANION — SUSTAINMENT WARFIGHTING FUNCTION · MAVEN SMART SYSTEM (MSS)
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-2026
-
-**PURPOSE:** This guide develops the operational mental models required to effectively integrate MSS into Sustainment warfighting function operations. It is a prerequisite companion to TM-40D and must be read before beginning TM-40D task instruction. This guide is conceptual — it develops understanding, not procedures. No step-by-step tasks appear here.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
-**PREREQUISITE:** This guide must be read before beginning TM-40D. Completion of TM-10 (Maven User) is required before reading this guide. CONCEPTS_GUIDE completion does not require TM-20 or any builder qualification.
-
-**INTENDED AUDIENCE:** S4 officers, BSB/FSB/ESB commanders, G4 staff, sustainment brigade staff, and senior sustainment NCOs. Also appropriate for supported commanders (company through brigade level) who want to understand what MSS sustainment data means operationally.
-
-**RELATIONSHIP TO TM-40D:** This guide develops the mental models required to use TM-40D effectively. The procedural tasks in TM-40D will be better understood — and better executed — by a practitioner who has internalized the conceptual framework in this guide. Read the guide; then execute the manual.
-
----
-
-## TABLE OF CONTENTS
-
-1. The Sustainment WFF and Data — ADP 4-0 Principles and MSS Requirements
-2. The Supply Chain as a Data Pipeline — Velocity, Throughput, and Accountability
-3. Maintenance Readiness as a Data Problem — The Readiness Reporting Chain
-4. Distribution Management Mental Model — Transportation as Throughput Optimization
-5. Sustainment-Maneuver Integration — How Logistics Data Feeds the COP
-6. Personnel Accountability as Mission-Critical Data — Why PERSTAT Accuracy Matters
-7. Sustainment Failure Modes in MSS — Eight Common Misuse Patterns
+> **BLUF:** ADP 4-0 defines sustainment through six functional elements. Each element generates data. That data, historically fragmented across incompatible systems, is what MSS integrates. Understanding why MSS was built requires understanding the information problem that existed before it.
+> **Prereqs:** This guide must be read before beginning TM-40D. TM-10 (Maven User), TM-20 (Builder), and TM-30 (Advanced Builder) are required before beginning TM-40D. Reading this Concepts Guide does not require builder skills, but TM-30 certification must be complete before enrolling in TM-40D.
+> **Purpose:** This guide develops the operational mental models required to effectively integrate MSS into Sustainment warfighting function operations. It is a prerequisite companion to TM-40D and must be read before beginning TM-40D task instruction. This guide is conceptual — it develops understanding, not procedures. No step-by-step tasks appear here.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
@@ -490,6 +467,36 @@ Mastery of MSS in the sustainment context is not technical mastery — it is ana
 MSS provides the picture. The sustainment practitioner provides the judgment. Both are required.
 
 > **NOTE: The CONCEPTS_GUIDE is not a one-time read. Sustainment leaders who revisit it before major exercises, CPXs, or deployments often find that concepts that seemed abstract during initial reading are immediately applicable in context. The failure modes in Section 7, in particular, are easier to recognize — and prevent — when the conceptual framework is fresh.**
+
+---
+
+## RELATED TRACKS AND PUBLICATIONS
+
+### WFF Peer Tracks
+
+All six WFF tracks are at the same tier. All six WFF tracks require TM-10, TM-20, and TM-30 as prerequisites.
+
+| Track | Title | Prereq | Relationship to Sustainment WFF |
+|-------|-------|--------|--------------------------------|
+| TM-40A | Intelligence WFF | TM-10 + TM-20 + TM-30 | LOC threat data, supply point security |
+| TM-40B | Fires WFF | TM-10 + TM-20 + TM-30 | CSR, ammunition management coordination |
+| TM-40C | Movement and Maneuver WFF | TM-10 + TM-20 + TM-30 | Route capacity, maneuver readiness, supply constraints |
+| TM-40D | Sustainment WFF | TM-10 + TM-20 + TM-30 | This track |
+| TM-40E | Protection WFF | TM-10 + TM-20 + TM-30 | CBRN resupply, convoy route protection |
+| TM-40F | Mission Command WFF | TM-10 + TM-20 + TM-30 | LOGSTAT feeds commander FFIR monitoring; S4 products to COP |
+
+### Specialist Tracks (Prerequisite: TM-30)
+
+For personnel pursuing technical depth, specialist tracks (TM-40G–L, prereq TM-30) are available. Not required for sustainment WFF employment.
+
+| Track | Title |
+|-------|-------|
+| TM-40G | ORSA (→ TM-50G) |
+| TM-40H | AI Engineer (→ TM-50H) |
+| TM-40I | ML Engineer (→ TM-50I) |
+| TM-40J | Program Manager (→ TM-50J) |
+| TM-40K | Knowledge Manager (→ TM-50K) |
+| TM-40L | Software Engineer (→ TM-50L) |
 
 ---
 

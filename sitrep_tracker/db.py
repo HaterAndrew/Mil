@@ -13,6 +13,7 @@ DB_PATH = Path(os.environ.get("SITREP_DB", Path.home() / ".sitrep_tracker.db"))
 def get_conn() -> sqlite3.Connection:
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA foreign_keys = ON")
     return conn
 
 
@@ -24,7 +25,7 @@ def init_db():
                 dtg         TEXT NOT NULL,          -- Date-Time Group (DDHHMM Z MON YY)
                 unit        TEXT NOT NULL,          -- Reporting unit
                 location    TEXT NOT NULL,          -- Current location / grid
-                status      TEXT NOT NULL DEFAULT 'OPEN',  -- OPEN | CLOSED | PENDING
+                status      TEXT NOT NULL DEFAULT 'OPEN' CHECK(status IN ('OPEN','PENDING','CLOSED')),
                 situation   TEXT NOT NULL,          -- Situation summary
                 personnel   TEXT,                   -- PERSTATUS (e.g. 4x WIA, 0x KIA)
                 equipment   TEXT,                   -- Equipment status

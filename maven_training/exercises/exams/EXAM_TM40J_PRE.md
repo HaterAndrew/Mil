@@ -1,12 +1,12 @@
-# PRE-TEST — TM-40J: PROGRAM MANAGER
+# PRE-TEST — TM-40J: PROGRAM MANAGER (TECHNICAL)
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40J: Program Manager |
+| **Course** | TM-40J: Program Manager (Technical) |
 | **Form** | Pre-Test |
 | **Level** | TM-40J (Specialist) |
-| **Audience** | Program managers / G8-S8 / resource managers; prerequisite: TM-10 + TM-20 |
+| **Audience** | Technical PMs, product owners, team leads; prerequisite: TM-10 + TM-20 + TM-30 (REQUIRED) |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
@@ -22,110 +22,110 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 
 *Circle the letter of the best answer. (2 points each)*
 
-**1. An Integrated Master Schedule (IMS) is primarily used to:**
+**1. In Scrum, a "sprint" is:**
 
-A. Track and manage program financial obligations
-B. Plan, sequence, and track the milestones and tasks of a program across time
-C. Document the program's risk register and mitigation actions
-D. Manage personnel assignments across a program office
+A. A meeting where the team reviews the work completed in the last iteration
+B. A time-boxed period of work (typically 1–4 weeks) in which the team commits to completing a defined set of backlog items
+C. A prioritized list of features and work items for the project
+D. A daily check-in meeting where each team member reports blockers
 
-**2. In program management, "RAG status" refers to:**
+**2. A "user story" in Agile development is best described as:**
 
-A. A financial reporting format used for GFEBS submissions
-B. A color-coded health indicator: Red (critical issue), Amber (at risk), Green (on track)
-C. A risk assessment method using probability and impact matrices
-D. A schedule variance metric expressed as a percentage
+A. A technical specification document listing all system requirements
+B. A short description of a desired outcome written from the perspective of the end user, often in the format: "As a [role], I want [capability] so that [benefit]"
+C. A risk register entry describing a potential failure scenario
+D. A test case documenting expected system behavior
 
-**3. "Milestone variance" is calculated as:**
+**3. "Acceptance criteria" for a user story serve which purpose?**
 
-A. Planned cost minus actual cost at a given milestone
-B. The difference between the planned milestone completion date and the actual (or forecast) completion date
-C. The percentage of tasks completed at a given milestone
-D. The number of milestones at risk divided by total milestones
+A. They define how long the story will take to complete
+B. They define specific, testable conditions that must be met for the story to be considered done
+C. They assign the story to a developer track
+D. They document the business justification for the story
 
-**4. In GFEBS, an "obligation" is:**
+**4. In a project context, a "blocker" is:**
 
-A. A payment made to a contractor or vendor
-B. A legally binding commitment of funds (e.g., a contract or purchase order) against an appropriation
-C. An estimate of future expenditures for budget planning
-D. A budget line item in the program's financial plan
+A. A stakeholder who is resistant to adopting a new capability
+B. A dependency on another team that is expected to resolve in the next sprint
+C. An impediment that prevents a team member from making progress on their work until it is resolved
+D. A low-priority backlog item that is deferred to a later sprint
 
-**5. A program dashboard's "data-as-of" timestamp serves which purpose?**
+**5. A "sprint retrospective" is primarily focused on:**
 
-A. It shows when the dashboard application was last deployed
-B. It tells users when the underlying data was last refreshed, enabling them to assess data currency before making decisions
-C. It records when each user last viewed the dashboard
-D. It is a required field for GFEBS financial reports
+A. Reviewing and accepting completed work with the product owner and stakeholders
+B. Planning the next sprint's backlog
+C. Improving the team's process — what went well, what didn't, and what the team will do differently
+D. Updating the project risk register with new risks discovered during the sprint
 
-**6. In a program management context, "Append mode" for a GFEBS data pipeline is used to:**
+**6. The "Definition of Done" (DoD) for a data product specifies:**
 
-A. Overwrite the existing obligations dataset with the current snapshot each run
-B. Add each new data snapshot to the historical record, preserving all prior period data for trend analysis
-C. Append new obligation records only if they differ from the previous period
-D. Merge the GFEBS data with IMS data in a single combined dataset
+A. The date by which the product must be delivered to the operational user
+B. The set of conditions that must be met before the product is considered ready for production release — including quality, documentation, and governance checks
+C. The list of stakeholders who must sign off on the product before release
+D. The minimum performance threshold for the product's underlying data pipeline
 
-**7. The primary purpose of an IPR (In-Process Review) for a program manager is:**
+**7. In a six-phase ML project lifecycle (Problem Definition → Data Audit → Prototype → Evaluation → Production → Sustainment), the PRIMARY purpose of the Data Audit phase is to:**
 
-A. To brief the unit's readiness status to the commander
-B. To update the commander or senior decision-maker on program status, issues, and decisions required
-C. To conduct a formal audit of program financial records
-D. To review contractor deliverable quality against the statement of work
+A. Build the first version of the model and test it against a small dataset
+B. Assess whether the data needed for the model actually exists, is accessible, and is of sufficient quality
+C. Deploy the model to the production environment and notify operational users
+D. Define the business problem the model will solve and identify stakeholders
 
-**8. "Schedule variance" in earned value management (EVM) is defined as:**
+**8. A product owner's PRIMARY responsibility in an Agile team is:**
 
-A. Actual Cost minus Planned Value
-B. Earned Value minus Planned Value
-C. Planned Value minus Earned Value
-D. Budget at Completion minus Estimate at Completion
+A. Writing code and building the technical components of the product
+B. Facilitating sprint ceremonies (planning, standup, review, retrospective)
+C. Representing stakeholder needs, maintaining and prioritizing the product backlog, and ensuring the team builds the right thing
+D. Managing the team's personnel evaluations and workload assignments
 
-**9. A "Work Breakdown Structure" (WBS) in program management is:**
+**9. "Scope creep" in project management refers to:**
 
-A. A Gantt chart showing task dependencies and durations
-B. A hierarchical decomposition of the total program scope into deliverables and work packages
-C. A financial plan organized by appropriation category
-D. A risk register organized by program phase
+A. The natural expansion of a project timeline due to technical complexity
+B. The gradual addition of unplanned requirements or features without corresponding adjustments to schedule or resources
+C. The process of formally expanding project scope after stakeholder approval
+D. A risk that the project's quality standards will exceed what is operationally necessary
 
-**10. When a program manager says a milestone is "at risk," it typically means:**
+**10. A "risk register" in project management is:**
 
-A. The milestone has already been missed
-B. The milestone is on schedule but has been flagged for monitoring
-C. There is a credible possibility the milestone will not be met on time or within budget without corrective action
-D. The milestone was deferred to the next program year
+A. A log of all past issues that were resolved during the project
+B. A list of stakeholder concerns that were raised at project kickoff
+C. A documented record of identified risks, including likelihood, impact, mitigation actions, owners, and due dates
+D. A financial tracking tool for project budget risks
 
-**11. "Obligation rate" in program financial management refers to:**
+**11. "Velocity" in Agile refers to:**
 
-A. The rate at which contractors are invoicing the government
-B. The percentage of available funds that have been obligated (committed) in a given period, compared to the planned rate
-C. The total dollar value of obligations remaining in the program
-D. The rate at which obligated funds are converted to expenditures
+A. How quickly a team can respond to emergency requirement changes
+B. The amount of work a team completes in a sprint, measured in story points or tasks
+C. The speed at which a data pipeline processes new records
+D. A metric comparing planned vs. actual delivery dates
 
-**12. A program manager needs to track whether each of 15 program milestones is on schedule, at risk, or late. The MOST appropriate visual representation for a commander is:**
+**12. When translating a commander's requirement into a backlog, the PM's first step should be:**
 
-A. A detailed Gantt chart with all task dependencies
-B. A RAG status table or dashboard showing each milestone with its current status, planned date, and actual/forecast date
-C. A line chart of obligation rate over time
-D. A bar chart of total tasks completed by week
+A. Break the requirement immediately into user stories and size them in story points
+B. Identify the technical developer track (TM-40G through TM-40L) that will build the capability
+C. Clarify the requirement until the success criteria are specific and testable — distinguish what the user needs from what they asked for
+D. Estimate the delivery timeline and brief the commander on expected completion
 
-**13. "Conditional formatting" in a program dashboard is most useful for:**
+**13. A "dependency" in project management is:**
 
-A. Restricting which users can view the dashboard
-B. Automatically highlighting cells or rows based on status (e.g., RED background for milestones more than 30 days late)
-C. Formatting financial data in currency notation
-D. Sorting milestones by planned completion date
+A. A risk that has already materialized and is causing active impact
+B. A piece of work that cannot start or complete until another piece of work is done, often by a different team
+C. A stakeholder who must approve deliverables before the team can proceed
+D. A technical prerequisite for a pipeline to run correctly
 
-**14. Which data source is MOST typically used by Army program managers to track contract obligations?**
+**14. In change management, resistance to adopting a new data capability from operational users is MOST often caused by:**
 
-A. SharePoint document library
-B. GCSS-Army (logistics system)
-C. GFEBS (General Fund Enterprise Business System)
-D. MSS Workshop (primary source)
+A. Technical quality problems with the data product
+B. Lack of trust, unfamiliarity with the new tool, or concern that the new product will reveal performance problems
+C. Insufficient briefing from senior leadership on the operational requirement
+D. Integration failures between the new capability and existing reporting systems
 
-**15. A program manager is building a portfolio health matrix showing the overall health of 12 programs. Each program has individual health scores for schedule, cost, and performance. The overall health is determined by the WORST individual score. This aggregation logic should be implemented as:**
+**15. A "kanban board" is most useful for managing:**
 
-A. An average of the three individual scores
-B. A minimum (or "worst of") function applied across the three health scores
-C. A weighted sum with schedule receiving the highest weight
-D. A separate metric for each dimension without a composite score
+A. A long-term program roadmap across multiple fiscal years
+B. A sprint backlog for a two-week development sprint with a fixed team
+C. Ongoing operational support work with continuous flow — where work items arrive and are completed without fixed sprint boundaries
+D. The risk register for a data product that is in production sustainment
 
 ---
 
@@ -133,7 +133,7 @@ D. A separate metric for each dimension without a composite score
 
 *Answer in 2–5 sentences. (6 points each)*
 
-**SA-1. Explain the difference between a program's "obligation rate" and its "expenditure rate," and describe why both matter for a G8 resource manager tracking budget execution.**
+**SA-1. Describe the difference between a "sprint review" and a "sprint retrospective." What is the purpose of each, and who attends?**
 
 &nbsp;
 
@@ -143,7 +143,7 @@ D. A separate metric for each dimension without a composite score
 
 &nbsp;
 
-**SA-2. An IMS spreadsheet has milestone dates stored as text (e.g., "15 MAR 2025"). Describe why this is a data quality problem and how you would address it in a pipeline that computes milestone variance.**
+**SA-2. A commander says: "I want to see readiness." As a technical PM, describe the steps you take to turn this statement into a user story with acceptance criteria that a developer can build against.**
 
 &nbsp;
 
@@ -153,7 +153,7 @@ D. A separate metric for each dimension without a composite score
 
 &nbsp;
 
-**SA-3. Describe what a "data-as-of timestamp" is in a program dashboard, explain why it is a non-negotiable hard requirement for any MSS PM dashboard, and give a concrete example of the operational risk created by a dashboard without one.**
+**SA-3. An ML project has passed the Prototype phase. The team wants to move directly to Production. As the PM, what questions do you ask before authorizing that jump, and what phase are they trying to skip?**
 
 &nbsp;
 
@@ -163,7 +163,7 @@ D. A separate metric for each dimension without a composite score
 
 &nbsp;
 
-**SA-4. You are a PM for a 5-year equipment modernization program. Describe the key data objects you would want to track in an MSS program tracking system (at least three distinct entities) and what information each entity would hold.**
+**SA-4. You are managing a project with four developers: a TM-40H (AI Engineer), a TM-40I (ML Engineer), a TM-40K (Knowledge Manager), and a TM-40L (Software Engineer). Describe one dependency between two of these tracks that could create a blocker, and how you would manage it.**
 
 &nbsp;
 
@@ -173,7 +173,7 @@ D. A separate metric for each dimension without a composite score
 
 &nbsp;
 
-**SA-5. A program manager briefs a GO on the quarterly financial status. The data in the dashboard has not been refreshed in two weeks. Describe the risk this creates and what the PM should do before presenting the data.**
+**SA-5. An operational user refuses to use a new MSS capability your team delivered, saying "the old way worked fine." What is your change management response?**
 
 &nbsp;
 
@@ -202,35 +202,35 @@ Passing: N/A — Pre-test is diagnostic only.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — IMS plans, sequences, and tracks milestones and tasks across time.
-2. B — RAG = Red (critical), Amber (at risk), Green (on track) health indicator.
-3. B — Milestone variance = planned date minus actual/forecast completion date.
-4. B — Obligation = legally binding commitment of funds against an appropriation.
-5. B — Data-as-of timestamp tells users when data was last refreshed.
-6. B — Append mode preserves historical snapshots for trend analysis.
-7. B — IPR updates commander/senior decision-maker on status and decision requirements.
-8. B — Schedule Variance = Earned Value minus Planned Value (EVM formula).
-9. B — WBS is a hierarchical decomposition of program scope into deliverables and work packages.
-10. C — "At risk" = credible possibility of missing milestone without corrective action.
-11. B — Obligation rate = percentage of available funds obligated vs. planned rate.
-12. B — RAG status table/dashboard with milestone, status, planned date, and actual/forecast date.
-13. B — Conditional formatting highlights cells based on status value conditions.
-14. C — GFEBS is the primary Army financial system for obligation tracking.
-15. B — Minimum (worst-of) function determines composite health from worst individual score.
+1. B — Sprint = time-boxed iteration in which the team commits to completing a defined backlog set.
+2. B — User story = short user-perspective description of desired outcome.
+3. B — Acceptance criteria define specific, testable conditions for a story to be done.
+4. C — Blocker = impediment preventing progress until resolved.
+5. C — Retrospective = process improvement (went well, didn't, will change).
+6. B — Definition of Done = conditions a product must meet before production release.
+7. B — Data Audit = assess data existence, accessibility, and quality.
+8. C — Product owner owns the backlog and represents stakeholder needs.
+9. B — Scope creep = unplanned requirement additions without schedule/resource adjustment.
+10. C — Risk register = documented risks with likelihood, impact, mitigation, owners, and dates.
+11. B — Velocity = work completed in a sprint (story points or tasks).
+12. C — First step: clarify until success criteria are specific and testable.
+13. B — Dependency = work blocked on another piece of work, often by another team.
+14. B — Resistance most often stems from distrust, unfamiliarity, or concern about visibility.
+15. C — Kanban = continuous flow work without fixed sprints (operational support).
 
 **Short Answer Guidance:**
 
-SA-1. Full credit: obligation rate = rate at which funds are legally committed (contracts, POs) — tracked against quarterly obligation targets; expenditure rate = rate at which obligated funds convert to actual payments to contractors — tracks cash flow and year-end closeout risk; both matter because a program can be fully obligated but underspent (execution risk) or spending faster than planned (burn rate concern). Partial credit (3 pts) for correct definition of one metric without the other or without explaining why both matter.
+SA-1. Full credit: sprint review = team presents completed work to stakeholders/product owner; goal is to accept or reject completed stories and gather feedback; attendees include team + stakeholders + product owner. Sprint retrospective = team-internal process improvement meeting; goal is to identify what went well, what didn't, and what to change in the next sprint; attendees are team only (no stakeholders). Must distinguish purpose and audience for full credit.
 
-SA-2. Full credit: text dates cannot be used in arithmetic calculations (DATEDIFF requires Date type); must use a CAST step in Pipeline Builder to convert text to Date type before computing milestone variance as DATEDIFF(actual_date, planned_date); failure to cast will cause a pipeline error or produce null variance values. Partial credit (3 pts) for identifying the problem without the CAST solution.
+SA-2. Full credit: PM pushes back on the vague requirement with structured questions — which unit, which readiness metric, at what echelon, refreshed how often, compared to what threshold, used in which briefing or decision. Translates answer into: "As an S3, I want to see battalion-level FMC rate updated daily with a red alert when any battalion drops below 85%, so I can identify readiness shortfalls before the morning battle update." Acceptance criteria: FMC rate displayed by battalion, refreshes daily, threshold alert fires at 85%, visible in the S3 workspace. Partial credit (3 pts) for producing a story without testable acceptance criteria.
 
-SA-3. Full credit: data-as-of timestamp = the datetime the underlying data was last refreshed, displayed prominently in the dashboard; required because commanders and G8 staff make financial and schedule decisions based on dashboard data — if data is stale and users don't know, they may act on outdated information; example: dashboard shows 72% obligation rate but hasn't refreshed in 10 days — actual rate may be 85%, triggering different fiscal management actions. Must include definition, why required, AND a concrete risk scenario for full credit.
+SA-3. Full credit: the team is trying to skip the Evaluation phase. PM questions: Has the model been evaluated against a held-out dataset not used in training? What is the performance metric and did it meet the threshold? Has the data steward reviewed the output for quality? Has the operational user seen the output and confirmed it is interpretable and actionable? Has a production readiness review been conducted against the Definition of Done? All must be answered before Production. Partial credit (3 pts) for identifying the skipped phase without the gate questions.
 
-SA-4. Full credit: any three from — Program (program_id, name, phase, status, budget, PM); Milestone (milestone_id, name, planned_date, actual_date, status, program_id); Resource/Obligation (obligation_id, amount, period, status, program_id); Risk (risk_id, description, probability, impact, mitigation, program_id); Deliverable (deliverable_id, name, due_date, contractor, acceptance_status, milestone_id). Each entity must have 3+ meaningful properties for full credit.
+SA-4. Full credit: any plausible cross-track dependency — e.g., TM-40L (SWE) must complete the API integration before TM-40I (ML Engineer) can run the model pipeline against live data; or TM-40K (KM) must finalize the Ontology Object Type definition before TM-40H (AI Engineer) can wire the AI agent to the correct object properties. Management: identify the dependency in the sprint planning session; assign an owner; put a due-date gate on the downstream story; raise it as a risk if the upstream work is delayed. Partial credit (3 pts) for identifying a plausible dependency without a management approach.
 
-SA-5. Full credit: risk — the GO receives stale financial data and may make incorrect resource allocation or acquisition decisions; the PM must verbally caveat the data currency before briefing ("data as of [date]"); if the staleness is material to the decisions being made, the PM should delay the brief until data is refreshed or present the most recent known data with an explicit staleness warning. Partial credit (3 pts) for identifying the risk without the mitigation steps.
+SA-5. Full credit: do not argue with the user — investigate. Ask what "the old way" was and what specific concerns they have about the new capability. Common root causes: product doesn't match their workflow, they weren't involved in requirements, they don't trust the data, or they fear the product will create accountability they didn't have before. Response: schedule a 30-minute walkthrough with the user and their supervisor; identify one concrete workflow where the new capability saves them time; document their feedback and bring it back to the team as a user story for the next sprint. Resistance that is dismissed or ignored escalates — it does not resolve.
 
 ---
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*TM-40J Pre-Test | Version 1.0 | March 2026*
+*TM-40J Pre-Test | Version 2.0 | March 2026*

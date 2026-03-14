@@ -10,9 +10,16 @@ from rich.panel import Panel
 from rich.text import Text
 from rich import box
 
-from db import init_db, insert_sitrep, get_sitrep, list_sitreps, update_sitrep_status, insert_event, get_events
-from dtg import now_dtg, validate_dtg
-from report import format_sitrep
+try:
+    # Installed as a package (pip install -e .)
+    from sitrep_tracker.db import init_db, insert_sitrep, get_sitrep, list_sitreps, update_sitrep_status, insert_event, get_events
+    from sitrep_tracker.dtg import now_dtg, validate_dtg
+    from sitrep_tracker.report import format_sitrep
+except ImportError:
+    # Run directly from the sitrep_tracker/ directory
+    from db import init_db, insert_sitrep, get_sitrep, list_sitreps, update_sitrep_status, insert_event, get_events
+    from dtg import now_dtg, validate_dtg
+    from report import format_sitrep
 
 console = Console()
 
@@ -181,7 +188,7 @@ def event_cmd(sitrep_id, event_type, desc, dtg):
 
 @cli.command("export")
 @click.argument("sitrep_id", type=int)
-@click.argument("outfile", type=click.Path())
+@click.argument("outfile", type=click.Path(writable=True, resolve_path=True))
 @click.option("--events", is_flag=True, default=False, help="Include event log")
 def export_cmd(sitrep_id, outfile, events):
     """Export a SITREP report to a plain-text file."""

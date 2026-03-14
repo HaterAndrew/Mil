@@ -113,7 +113,7 @@ An instructor certified for one course level may be cross-certified for an adjac
 - Phase 2 (Assistant): 1 course iteration
 - Phase 3 (Lead, Observed): 1 course iteration
 
-An instructor certified for TM-30 who wishes to teach TM-40J or TM-40K may use the cross-certification path if they have the domain background requirement. Instructors teaching WFF tracks (TM-40A–F) require functional domain expertise (INT, FIRES, M2, SUST, PROT, or MC) rather than TM-30 certification — the cross-certification path applies to specialist track instructors only.
+An instructor certified for TM-30 who wishes to teach TM-40J or TM-40K may use the cross-certification path if they have the domain background requirement. Instructors teaching WFF tracks (TM-40A–F) require functional domain expertise (INT, FIRES, M2, SUST, PROT, or MC) in addition to TM-30 certification — the cross-certification path applies to all TM-40 instructors.
 
 ---
 

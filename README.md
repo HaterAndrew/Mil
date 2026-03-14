@@ -29,7 +29,7 @@ Full curriculum index: [maven_training/README.md](maven_training/README.md)
 | Your Role | Track |
 |---|---|
 | All personnel | TM-10 → TM-20 |
-| WFF functional staff (INT/FIRES/M2/SUST/PROT/MC) | TM-40A–F (after TM-20) |
+| WFF functional staff (INT/FIRES/M2/SUST/PROT/MC) | TM-40A–F (after TM-30) |
 | Data-adjacent specialists (17/25-series, S6/G6, G2/G9) | TM-30 → TM-40G–L |
 | Technical specialists (engineers, analysts, data pros) | TM-30 → TM-40G–L → TM-50G–L |
 | Senior leaders (O-5+, CSM+, senior civilians) | Data Literacy for Senior Leaders |
@@ -55,7 +55,7 @@ maven_training/
 │   ├── TM_30_advanced_builder/               ← TM-30: Data-adjacent specialists
 │   │   └── TM_30_ADVANCED_BUILDER.md
 │   │
-│   │   ── TM-40A through TM-40F: Warfighting Function Tracks (prereq: TM-20) ──
+│   │   ── TM-40A through TM-40F: Warfighting Function Tracks (prereq: TM-30) ──
 │   ├── TM_40A_intelligence/                  ← TM-40A: Intelligence (INT) WFF
 │   │   ├── TM_40A_INTELLIGENCE.md
 │   │   └── CONCEPTS_GUIDE_TM40A_INTELLIGENCE.md
@@ -219,12 +219,12 @@ maven_training/
 ```
 
 > **TM-40 Series Note:** The TM-40 series has two distinct sub-series. Do not assume a track based on letter alone.
-> - **TM-40A through TM-40F** — Warfighting Function (WFF) tracks. Audience: functional staff in the six WFFs. Prerequisite: TM-20.
+> - **TM-40A through TM-40F** — Warfighting Function (WFF) tracks. Audience: functional staff in the six WFFs. Prerequisite: TM-30.
 > - **TM-40G through TM-40L** — Technical Specialist tracks. Prerequisite: TM-30.
 
 #### TM-40 WFF Tracks — What Each Track Covers
 
-These tracks are for functional staff who work *within* a WFF and need MSS skills tailored to their operational domain. All six require TM-20 as the only prerequisite — TM-30 is not required.
+These tracks are for functional staff who work *within* a WFF and need MSS skills tailored to their operational domain. All six require TM-30 as a hard prerequisite (TM-10 → TM-20 → TM-30 complete, all Go evaluations on file).
 
 | Track | WFF | Primary Audience | MSS Focus |
 |---|---|---|---|
@@ -239,7 +239,7 @@ Each WFF track pairs a Technical Manual (TM) with a Concepts Guide that explains
 
 ---
 
-### [Data Skills Reference Library](data_skills/)
+### [Data Skills Reference Library](skills/data_skills/)
 
 15-module Python curriculum covering the full data engineering and analytics stack. Used as a reference for TM-30/40-level technical work.
 

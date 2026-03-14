@@ -5,7 +5,7 @@
 |---|---|
 | **Course** | TM-50L: Advanced Software Engineer |
 | **Form** | Pre-Test |
-| **Level** | TM-50L (Advanced Software Engineering) |
+| **Level** | TM-50L (Advanced Specialist) |
 | **Audience** | Senior SWEs / platform architects / tech leads; prerequisite: TM-40L + production MSS SWE experience |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |

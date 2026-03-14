@@ -1,4 +1,6 @@
-# ENVIRONMENT SETUP — EX-40F Mission Command
+# ENVIRONMENT SETUP — EX-40F Mission Command (TM-40F)
+
+**Companion resources:** TM_40F_MISSION_COMMAND.md | SYLLABUS_TM40F | EXAM_TM40F_PRE / EXAM_TM40F_POST
 
 ## Environment Type
 MSS training instance. Standard user access only — no Pipeline Builder, Python Transforms, or build permissions required for participants.

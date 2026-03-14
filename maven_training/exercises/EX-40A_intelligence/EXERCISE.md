@@ -4,9 +4,12 @@
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40A, CONCEPTS_GUIDE_TM40A_INTELLIGENCE (and TM-10, TM-20) |
+| **Prerequisite** | TM-10, TM-20, TM-30 (required); TM-40A and CONCEPTS_GUIDE_TM40A_INTELLIGENCE (current track) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS training instance, standard user access — see ENVIRONMENT_SETUP.md |
+| **Companion TM** | TM_40A_INTELLIGENCE.md |
+| **Syllabus** | SYLLABUS_TM40A |
+| **Exams** | EXAM_TM40A_PRE / EXAM_TM40A_POST |
 
 ## SCENARIO
 

@@ -1,5 +1,8 @@
 # ENVIRONMENT SETUP — EX-40H AI Engineer
 
+**Track:** EX-40H — AI Engineer (TM-40H) | **Prerequisite:** TM-30 REQUIRED | **Continuation:** TM-50H — Advanced AI Engineer
+**Companion exams:** EXAM_TM40H_PRE (administer before exercise), EXAM_TM40H_POST (administer after exercise)
+
 ## Environment Type
 MSS with AIP Logic, Agent Studio, and Python Transforms enabled. Embedding model must be available.
 

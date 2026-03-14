@@ -33,7 +33,7 @@ Total lead time: **10–35 duty days before Day 1**, depending on access require
 | All newly assigned USAREUR-AF personnel | TM-10 (complete within 30 days of assignment) |
 | Personnel assigned to build/maintain data products | TM-20 (complete within 90 days of data assignment) |
 | Unit data leads, data-adjacent specialists (17/25-series, S6/G6, G2/G9) | TM-30 (complete within 90 days of data-lead assignment) |
-| INT/FIRES/M2/SUST/PROT/MC functional staff | TM-40A through TM-40F (prereq: TM-20; 3 days each) |
+| INT/FIRES/M2/SUST/PROT/MC functional staff | TM-40A through TM-40F (prereq: TM-30; 3 days each) |
 | ORSA analysts working on MSS | TM-40G |
 | AI engineers building AIP workflows | TM-40H |
 | ML engineers building/deploying models | TM-40I |
@@ -50,7 +50,7 @@ Total lead time: **10–35 duty days before Day 1**, depending on access require
 | TM-10 | None |
 | TM-20 | TM-10 Go on file |
 | TM-30 | TM-10 and TM-20 Go on file |
-| TM-40A through TM-40F (WFF tracks) | TM-10 and TM-20 Go on file; WFF functional staff designation |
+| TM-40A through TM-40F (WFF tracks) | TM-10, TM-20, and TM-30 Go on file; WFF functional staff designation |
 | TM-40G | TM-10, TM-20, TM-30 Go on file; graduate-level quantitative background; Python or R proficiency |
 | TM-40H | TM-10, TM-20, TM-30 Go on file; Python proficiency; Data Literacy Technical Reference read |
 | TM-40I | TM-10, TM-20, TM-30 Go on file; Python ML proficiency (pandas, scikit-learn, PyTorch) |

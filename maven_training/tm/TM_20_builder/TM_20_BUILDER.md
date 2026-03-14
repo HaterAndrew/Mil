@@ -1,67 +1,16 @@
 # TM-20 — MAVEN SMART SYSTEM (MSS)
-## NO-CODE BUILDER TECHNICAL MANUAL
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-
-2026
-
-**Version 1.1 | March 2026**
-
-**APPLIES TO:** All USAREUR-AF military and civilian personnel who build applications, pipelines, and analyses on MSS without writing code.
-
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven Smart System Operator Manual (required). Data Literacy Technical Reference (recommended).
-
-**RELATED MANUALS:** TM-30, Advanced Builder/Developer (Python, PySpark, TypeScript, OSDK).
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
+> **BLUF:** This manual teaches you to build applications, data pipelines, and analyses on MSS using only the graphical user interface — no coding required.
+> **Prereqs:** TM-10, Maven Smart System Operator Manual (required). Data Literacy Technical Reference (recommended).
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 ---
 
-**NOTE TO INSTRUCTORS:** Instructor qualification requirements, training ratios, practical exercise scenarios, and certification standards are in the Mission Training Plan (MTP). Instructor minimum qualification: TM-30 certified or C2DAO-endorsed data engineer. Co-instruction with a qualified mentor is required for the first training delivery. Annual recertification required. Contact C2DAO for the current MTP.
-
----
-
-## SAFETY SUMMARY
-
-Builders have elevated privileges on MSS. Errors in pipelines, Ontology configurations, or published applications may affect downstream users and operational data. Before building, understand:
-
-- Changes to shared datasets and Object Types affect all downstream applications and all users consuming them.
-- Publishing a broken pipeline can corrupt operational data that units depend on for readiness reporting and command decisions.
-- Incorrect Ontology configurations can disable live Workshop applications for an entire unit.
-- Data ingested without coordination may introduce unauthorized or improperly marked data into the enterprise environment.
-- Permissions assigned incorrectly can expose data to personnel without appropriate access.
-
-**Read all WARNINGS and CAUTIONS before beginning any build activity.**
-
-**If you are uncertain whether an action is authorized -- STOP. Contact your unit Data Steward or the USAREUR-AF C2DAO before proceeding.**
-
----
-
-## TABLE OF CONTENTS
-
-- Chapter 1 -- Introduction
-- Chapter 2 -- Project Setup and Management
-- Chapter 3 -- Data Ingestion with Pipeline Builder
-- Chapter 4 -- Ontology UI Basics
-- Chapter 5 -- Building Workshop Applications
-- Chapter 6 -- Analysis with Contour and Quiver
-- Chapter 7 -- Branching and Environment Management
-- Chapter 8 -- Builder Standards and Governance
-- Chapter 9 -- Troubleshooting and Common Errors
-- Appendix A -- Pre-Publish Checklists
-- Appendix B -- Common Pipeline Builder Patterns
-- Glossary
-
----
-
-# CHAPTER 1 -- INTRODUCTION
+# CHAPTER 1 — INTRODUCTION
 
 ## 1-1. Purpose and Scope
 
-**BLUF:** This manual teaches you to build applications, data pipelines, and analyses on MSS using only the graphical user interface -- no coding required.
-
-This Technical Manual (TM) provides task-level instruction for USAREUR-AF personnel who build on the Maven Smart System (MSS) using no-code tools. It is written for all staff -- officer, warrant, NCO, civilian -- who completed TM-10 and have been granted builder access. No programming background is required. If you can use a web browser and fill out forms, you can do everything in this manual.
+This Technical Manual (TM) provides task-level instruction for USAREUR-AF personnel who build on the Maven Smart System (MSS) using no-code tools. It is written for all staff — officer, warrant, NCO, civilian — who completed TM-10 and have been granted builder access. No programming background is required. If you can use a web browser and fill out forms, you can do everything in this manual.
 
 > **NOTE:** Before beginning TM-20 work, verify you can independently perform the following TM-10 tasks without referencing the manual: Task 2-1 through 2-4 (account setup, MFA, access); Task 3-1 through 3-3 (navigation and resource discovery); Task 5-1 (dataset viewing); Chapter 7 (security markings and access controls). Builders must understand operator-level data security requirements before building. If you are uncertain about any TM-10 task, review TM-10 before proceeding.
 
@@ -97,7 +46,7 @@ Those topics are in TM-30, Advanced Builder/Developer. If a task requires writin
 
 **BLUF:** The most common builder failure is building the wrong thing correctly. Answer these three questions before you open Pipeline Builder or Workshop. Spend time here before spending time on the platform.
 
-Every build task starts with three questions. Answer them in order -- do not skip ahead.
+Every build task starts with three questions. Answer them in order — do not skip ahead.
 
 **Question 1: Who is my user and what decision are they making?**
 
@@ -123,7 +72,7 @@ DECISION REQUIREMENT         DATA ELEMENTS NEEDED         SOURCE SYSTEM
  deadlined by fleet?"       class, location, date         ingestion pipeline)
 ```
 
-Verify the data exists and is already in MSS before you design anything that depends on it. If the data does not exist, you have an ingestion problem -- not a Workshop problem. Ingestion decisions require Data Steward coordination.
+Verify the data exists and is already in MSS before you design anything that depends on it. If the data does not exist, you have an ingestion problem — not a Workshop problem. Ingestion decisions require Data Steward coordination.
 
 **Question 3: Where does my work fit in the three-phase workflow?**
 
@@ -131,9 +80,9 @@ Use the three-phase workflow from paragraph 1-4 as a design checklist:
 
 | Phase | Question to ask |
 |---|---|
-| Phase 1 -- Pipeline Builder | Is the data I need already ingested? If not, can Pipeline Builder connect to the source? |
-| Phase 2 -- Ontology | Is there an Object Type that represents the thing I'm building around? If not, does one need to be created (Data Steward coordination required)? |
-| Phase 3 -- Workshop | What widgets best present the decision my user needs to make? Does the user need to take an Action -- submit a form, trigger a workflow -- or just view information? |
+| Phase 1 — Pipeline Builder | Is the data I need already ingested? If not, can Pipeline Builder connect to the source? |
+| Phase 2 — Ontology | Is there an Object Type that represents the thing I'm building around? If not, does one need to be created (Data Steward coordination required)? |
+| Phase 3 — Workshop | What widgets best present the decision my user needs to make? Does the user need to take an Action — submit a form, trigger a workflow — or just view information? |
 
 Build bottom-up. Do not start building a Workshop application until you have confirmed the data layer beneath it is solid. A beautifully designed Workshop app built on a broken pipeline is useless.
 
@@ -145,7 +94,7 @@ Build bottom-up. Do not start building a Workshop application until you have con
 - [ ] I know what data is needed and have confirmed it exists in MSS (or have a plan to get it there).
 - [ ] I know which Object Type(s) my application will be built on.
 - [ ] I have looked at the existing application (if any) before building something new.
-- [ ] I have talked to the intended user -- not just their supervisor -- about what they need.
+- [ ] I have talked to the intended user — not just their supervisor — about what they need.
 
 If any box is unchecked, do not build. Resolve it first.
 
@@ -153,7 +102,7 @@ If any box is unchecked, do not build. Resolve it first.
 
 ## 1-3. USAREUR-AF Mission Context and the Builder's Role
 
-United States Army Europe and Africa (USAREUR-AF) is the Army Service Component Command (ASCC) to United States European Command (USEUCOM), responsible for theater land operations across the European Area of Responsibility (AOR) and integration with NATO Allied command structures. Major subordinate commands -- V Corps (forward deployed, Poland), 21st Theater Sustainment Command (TSC), and 7th Army Training Command (ATC) -- each generate and consume data that flows through MSS.
+United States Army Europe and Africa (USAREUR-AF) is the Army Service Component Command (ASCC) to United States European Command (USEUCOM), responsible for theater land operations across the European Area of Responsibility (AOR) and integration with NATO Allied command structures. Major subordinate commands — V Corps (forward deployed, Poland), 21st Theater Sustainment Command (TSC), and 7th Army Training Command (ATC) — each generate and consume data that flows through MSS.
 
 As a builder, the tools you create directly affect readiness visibility and operational decision-making across this formation. A Workshop application you build may display unit status to a V Corps G3 in Poznan or track logistics readiness for a 21st TSC officer in Kaiserslautern. A pipeline you configure may feed the data behind a theater-level briefing. Understand the operational weight of what you are building before you begin.
 
@@ -171,7 +120,7 @@ TM-20 builders work in three sequential phases. Complete each phase before begin
 
 **Phase 2 — Organize it so the system understands it (Ontology).** Create Object Types backed by your curated data, configure Link Types between related objects, and define Actions users can perform. This is the semantic layer that turns a data table into meaningful, connected objects.
 
-**Phase 3 — Build the application users see (Workshop).** Assemble widgets -- tables, charts, filters, forms -- into an application that operators use daily. Workshop reads from the Ontology. It does not read directly from datasets.
+**Phase 3 — Build the application users see (Workshop).** Assemble widgets — tables, charts, filters, forms — into an application that operators use daily. Workshop reads from the Ontology. It does not read directly from datasets.
 
 ```
 Phase 1: Pipeline Builder  →  Phase 2: Ontology  →  Phase 3: Workshop
@@ -206,7 +155,7 @@ Do not begin building until you understand the existing system. Adding to someth
 
 **TM-20 Scope Boundary:**
 
-The table below identifies requirements that exceed TM-20 scope. If your requirement falls in the left column, escalate -- do not attempt it as a TM-20 build.
+The table below identifies requirements that exceed TM-20 scope. If your requirement falls in the left column, escalate — do not attempt it as a TM-20 build.
 
 | IF the requirement needs this... | THEN escalate to... |
 |---|---|
@@ -254,7 +203,7 @@ BUILDER (YOU)
 | Army CIO Data Stewardship Policy (April 2, 2024) | Army CIO | Data stewardship hierarchy; data chain of responsibility |
 | USAREUR-AF Data Governance SOP | C2DAO | USAREUR-AF-specific naming, access, and approval processes |
 
-> CAUTION: Before ingesting any new data source, coordinate with your unit Data Steward and the USAREUR-AF C2DAO. Unauthorized ingestion of operational data -- even from Army systems -- may violate Army CIO policy and create compliance findings.
+> CAUTION: Before ingesting any new data source, coordinate with your unit Data Steward and the USAREUR-AF C2DAO. Unauthorized ingestion of operational data — even from Army systems — may violate Army CIO policy and create compliance findings.
 
 ---
 
@@ -269,7 +218,45 @@ BUILDER (YOU)
 
 ---
 
-# CHAPTER 2 -- PROJECT SETUP AND MANAGEMENT
+## 1-8. Advancement from TM-20 — Next Steps
+
+After completing TM-20, builders may advance to more specialized tracks based on their role and duties. Two advancement paths are available.
+
+**Next Step — Advanced Builder (required for all TM-40 tracks):**
+
+All personnel who complete TM-20 proceed to TM-30 (Advanced Builder) before enrolling in any TM-40 track. TM-30 is a hard prerequisite — no waivers — for both WFF tracks (TM-40A–F) and Specialist tracks (TM-40G–L).
+
+**WFF Tracks (TM-40A–F) — available after TM-30:**
+
+Complete the WFF track aligned to your functional area. These tracks focus on MSS product operation within your warfighting function — no code-level skills required. Prerequisite: TM-30 (required). Duration: 3 days each.
+
+| Track | Title | For Personnel |
+|---|---|---|
+| TM-40A | Intelligence WFF | G2 / S2 staff |
+| TM-40B | Fires WFF | Fire support personnel |
+| TM-40C | Movement & Maneuver WFF | G3 / S3 staff |
+| TM-40D | Sustainment WFF | G4 / S4 / logistics staff |
+| TM-40E | Protection WFF | Protection officers and NCOs |
+| TM-40F | Mission Command WFF | G6 / S6 and command staff |
+
+**Specialist Tracks (TM-40G–L) — available after TM-30:**
+
+Specialist tracks require code-level skills in addition to TM-30. These tracks are NOT reachable from TM-20 directly. Prerequisite: TM-30 (required).
+
+| Track | Title | For Personnel | Duration |
+|---|---|---|---|
+| TM-40G | ORSA | Operational research analysts | 5 days |
+| TM-40H | AI Engineer | AIP Logic / AI workflow developers | 5 days |
+| TM-40I | ML Engineer | Machine learning pipeline developers | 5 days |
+| TM-40J | Program Manager | Data program managers | 3 days |
+| TM-40K | Knowledge Manager | Knowledge management specialists | 3 days |
+| TM-40L | Software Engineer | Python / TypeScript / OSDK developers | 5 days |
+
+> **NOTE:** If you are unsure which path applies to your billet, consult your unit data steward or the USAREUR-AF C2DAO training coordinator.
+
+---
+
+# CHAPTER 2 — PROJECT SETUP AND MANAGEMENT
 
 ## 2-1. MSS Resource Hierarchy
 
@@ -281,7 +268,7 @@ Before creating anything, understand how MSS organizes resources in Compass.
 | **Folder** | Subdirectory within a project | Builder |
 | **Dataset** | A managed table produced by a pipeline | Builder (via Pipeline Builder) |
 | **Pipeline** | A visual ETL flow (Pipeline Builder) | Builder |
-| **Ontology** | Shared semantic layer -- Object Types, Links, Actions | Builder (via Ontology Manager) |
+| **Ontology** | Shared semantic layer — Object Types, Links, Actions | Builder (via Ontology Manager) |
 | **Workshop App** | A published application for end users | Builder |
 
 **Your team's project already exists. Do not create a new top-level project without authorization from your unit Data Steward and C2DAO approval.**
@@ -301,7 +288,7 @@ Within an authorized project, create folders following this standard structure.
 +-- applications/      Workshop app definitions
 ```
 
-**Example -- EUCOM SITREP project:**
+**Example — EUCOM SITREP project:**
 
 ```
 /USAREUR-AF-SITREP/
@@ -329,9 +316,9 @@ All resources must follow USAREUR-AF naming conventions. Non-compliant resources
 
 | Resource Type | Convention | Example |
 |---|---|---|
-| Dataset -- raw tier | `[source]_raw` | `sitrep_feed_raw`, `gcss_a_maint_raw` |
-| Dataset -- staging tier | `[source]_staging` | `sitrep_feed_staging` |
-| Dataset -- curated tier | `[source]_curated` | `sitrep_feed_curated` |
+| Dataset — raw tier | `[source]_raw` | `sitrep_feed_raw`, `gcss_a_maint_raw` |
+| Dataset — staging tier | `[source]_staging` | `sitrep_feed_staging` |
+| Dataset — curated tier | `[source]_curated` | `sitrep_feed_curated` |
 | Pipeline Builder pipeline | `[function]-pipeline` | `sitrep-ingestion-pipeline` |
 | Object Type | PascalCase, singular noun | `UnitStatus`, `SoldierReadiness`, `MaintenanceRecord` |
 | Link Type | camelCase verb phrase | `assignedTo`, `reportedBy`, `locatedAt` |
@@ -401,7 +388,7 @@ NOTE: Do not create datasets or pipelines before folder structure and permission
 | **Editor** | Modify pipelines, datasets, Workshop apps | TM-20 builders |
 | **Owner** | All Editor rights plus manage members, delete resources | Team leads |
 
-NOTE: Assign the minimum role required. If a team member only consumes data in Workshop apps, assign Viewer -- not Editor. Follow least-privilege principles per Army CIO policy.
+NOTE: Assign the minimum role required. If a team member only consumes data in Workshop apps, assign Viewer — not Editor. Follow least-privilege principles per Army CIO policy.
 
 > CAUTION: Do not assign Owner role without authorization from your Data Steward. Owner access allows deletion of shared datasets and modification of permissions for all project members.
 
@@ -427,8 +414,8 @@ NOTE: Assign the minimum role required. If a team member only consumes data in W
 4. Add authorized members not yet listed (see Task 2-2).
 5. Verify each member's role against their duty position and adjust as needed.
 6. Set the **Project Visibility**:
-   - **Private** -- access by invitation only (default; use for all operational data projects)
-   - **Organization** -- visible to all MSS users (use only for unclassified reference/training projects)
+   - **Private** — access by invitation only (default; use for all operational data projects)
+   - **Organization** — visible to all MSS users (use only for unclassified reference/training projects)
 7. Click **Save**.
 8. Send the finalized access list to your Data Steward for confirmation.
 
@@ -436,11 +423,11 @@ NOTE: Assign the minimum role required. If a team member only consumes data in W
 
 ---
 
-# CHAPTER 3 -- DATA INGESTION WITH PIPELINE BUILDER
+# CHAPTER 3 — DATA INGESTION WITH PIPELINE BUILDER
 
 ## 3-1. What Pipeline Builder Does
 
-Pipeline Builder is MSS's visual, no-code ETL (Extract, Transform, Load) tool. Using a drag-and-drop interface, you build pipelines that pull data from a source, clean or reshape it, and write the result to a destination dataset -- no code required.
+Pipeline Builder is MSS's visual, no-code ETL (Extract, Transform, Load) tool. Using a drag-and-drop interface, you build pipelines that pull data from a source, clean or reshape it, and write the result to a destination dataset — no code required.
 
 **Where Pipeline Builder fits in the three-phase workflow:** Phase 1. The output of every Pipeline Builder pipeline is a dataset that feeds Phase 2 (Ontology) and Phase 3 (Analytics/Workshop).
 
@@ -462,7 +449,7 @@ Pipeline Builder is MSS's visual, no-code ETL (Extract, Transform, Load) tool. U
 - Machine learning or statistical computation
 - Writeback to external systems
 
-> **NOTE:** The pipelines you build in Pipeline Builder become the data sources that operators access via TM-10, Task 5-1 (View and Read a Dataset) and in Workshop applications. Pipeline failures directly impact operators' ability to access operational data. Refer to TM-10, Chapter 8 (Troubleshooting and Support) to understand the operator experience when a pipeline fails -- build your monitoring accordingly.
+> **NOTE:** The pipelines you build in Pipeline Builder become the data sources that operators access via TM-10, Task 5-1 (View and Read a Dataset) and in Workshop applications. Pipeline failures directly impact operators' ability to access operational data. Refer to TM-10, Chapter 8 (Troubleshooting and Support) to understand the operator experience when a pipeline fails — build your monitoring accordingly.
 
 ---
 
@@ -470,10 +457,10 @@ Pipeline Builder is MSS's visual, no-code ETL (Extract, Transform, Load) tool. U
 
 | UI Area | Location | Purpose |
 |---|---|---|
-| **Canvas** | Center | Where you build -- drag nodes here and connect them |
+| **Canvas** | Center | Where you build — drag nodes here and connect them |
 | **Node Library** | Left panel | Available data sources, transforms, and outputs |
 | **Node Properties** | Right panel | Configuration for the selected node |
-| **Preview Pane** | Bottom panel | Live data preview -- shows first 100 rows of selected node output |
+| **Preview Pane** | Bottom panel | Live data preview — shows first 100 rows of selected node output |
 | **Build Log** | Bottom panel (tab) | Build status, errors, warnings |
 | **Schedule** | Top toolbar | Configure automatic refresh |
 | **Branch** | Top toolbar | Shows current branch; switch branch before editing |
@@ -499,7 +486,7 @@ Always work on a branch, not on the main/production pipeline. See Chapter 7 for 
 1. In Compass, navigate to your project's `pipelines/` folder.
 2. Click **New**, then **Pipeline**, then **Pipeline Builder**.
 3. Name the pipeline following the convention `[source]-pipeline` (e.g., `sitrep-ingestion-pipeline`).
-4. The Pipeline Builder canvas opens. Confirm the branch shown in the top toolbar is your development branch -- not `main`.
+4. The Pipeline Builder canvas opens. Confirm the branch shown in the top toolbar is your development branch — not `main`.
 5. In the **Node Library** (left panel), expand **Sources**.
 6. Drag the appropriate source node onto the canvas (see Task 3-2 for connecting sources).
 7. Add transform nodes as needed (see Task 3-3).
@@ -542,7 +529,7 @@ NOTE: A successful build means the pipeline ran without errors. It does not mean
 
 **PROCEDURE:**
 
-**Option A -- Connect to an existing MSS dataset:**
+**Option A — Connect to an existing MSS dataset:**
 
 1. From the Node Library, drag **Dataset** (under Sources) onto the canvas.
 2. In the right panel, click **Select Dataset**.
@@ -550,12 +537,12 @@ NOTE: A successful build means the pipeline ran without errors. It does not mean
 4. Click the dataset then **Confirm**.
 5. Click the source node then **Preview** (bottom panel). Verify schema and row count.
 
-**Option B -- Connect via a pre-built connector:**
+**Option B — Connect via a pre-built connector:**
 
 1. From the Node Library, drag **Connector** onto the canvas.
 2. In the right panel, click **Select Connector**.
 3. From the list of authorized connectors, select the appropriate connector (e.g., GCSS-A feed, SharePoint file, SFTP source).
-4. Configure the connection parameters (folder path, file pattern, authentication -- use values provided by your Data Steward; do not enter credentials from memory).
+4. Configure the connection parameters (folder path, file pattern, authentication — use values provided by your Data Steward; do not enter credentials from memory).
 5. Click **Test Connection**. Verify the connection succeeds.
 6. Click the connector node then **Preview**. Verify the incoming data schema.
 
@@ -577,7 +564,7 @@ NOTE: If the connector you need is not on the authorized list, submit a request 
 
 **DURATION:** 30--60 minutes.
 
-**PROCEDURE -- Filter rows:**
+**PROCEDURE — Filter rows:**
 
 1. From Node Library, drag **Filter** onto the canvas between your source and output.
 2. Connect: source to Filter, Filter to output.
@@ -588,14 +575,14 @@ NOTE: If the connector you need is not on the authorized list, submit a request 
 7. For multiple conditions, click **Add Condition** again and select AND/OR logic.
 8. Click the Filter node then **Preview** to confirm filtered row count.
 
-**PROCEDURE -- Select and rename columns:**
+**PROCEDURE — Select and rename columns:**
 
 1. Drag **Select Columns** onto the canvas.
 2. In the right panel, check/uncheck columns to include or exclude.
 3. To rename a column: click the column name in the right panel and edit the name.
 4. Preview to confirm column list is correct.
 
-**PROCEDURE -- Join two datasets:**
+**PROCEDURE — Join two datasets:**
 
 1. Drag **Join** onto the canvas.
 2. Connect the first (left) dataset to the left input port; the second (right) dataset to the right input port.
@@ -606,7 +593,7 @@ NOTE: If the connector you need is not on the authorized list, submit a request 
 
 NOTE: A join that multiplies rows unexpectedly usually means the join key is not unique on one side. Check for duplicate keys in your source data before troubleshooting the join configuration.
 
-**PROCEDURE -- Aggregate (group by/summarize):**
+**PROCEDURE — Aggregate (group by/summarize):**
 
 1. Drag **Aggregate** onto the canvas.
 2. Under **Group By**, select the columns to group on (e.g., `unit_id`, `report_date`).
@@ -633,9 +620,9 @@ NOTE: A join that multiplies rows unexpectedly usually means the join key is not
 1. In the pipeline (after successful build), click **Schedule** in the top toolbar.
 2. Click **Add Schedule**.
 3. Select the frequency:
-   - **Hourly** -- for near-real-time feeds (use sparingly; confirm with Data Steward)
-   - **Daily** -- most common for SITREP, readiness, and logistics feeds
-   - **Weekly** -- for slower-changing data
+   - **Hourly** — for near-real-time feeds (use sparingly; confirm with Data Steward)
+   - **Daily** — most common for SITREP, readiness, and logistics feeds
+   - **Weekly** — for slower-changing data
 4. Set the start time. For daily feeds supporting morning briefings, schedule for 0300-0400 local to allow build time.
 5. Under **On Failure**, configure email notification: enter your email and your team lead's email.
 6. Click **Save Schedule**.
@@ -664,7 +651,7 @@ NOTE: Schedule times are in UTC. USAREUR-AF is UTC+1 (CET) or UTC+2 (CEST in sum
 
 1. In Compass, open the pipeline.
 2. Click the **Build Log** tab (bottom panel).
-3. Find the failed build (red icon) -- note the timestamp.
+3. Find the failed build (red icon) — note the timestamp.
 4. Click the failed build entry to expand the error details.
 5. Identify the failing node: Pipeline Builder highlights failing nodes in red on the canvas.
 6. Click the failing node and read the error message in the right panel.
@@ -676,11 +663,11 @@ NOTE: Schedule times are in UTC. USAREUR-AF is UTC+1 (CET) or UTC+2 (CEST in sum
 | Source dataset not found | Dataset was renamed or moved | Update the source node path |
 | Column not found | Source schema changed | Update column names in affected transform nodes |
 | Connection timeout | Source system unavailable | Check source system status; retry manually; alert Data Steward if persistent |
-| Authentication failure | Connector credentials expired | Contact Data Steward -- do not attempt to update credentials yourself |
+| Authentication failure | Connector credentials expired | Contact Data Steward — do not attempt to update credentials yourself |
 | Row count zero | Source has no data for this run | Investigate source; may be expected for some time windows |
 | Build timed out | Pipeline too large for scheduled window | Escalate to data engineer (TM-30) |
 | Output dataset missing / stale | Operator impact: TM-10, Task 5-1 | Check schedule; fix broken node; notify data steward |
-| Schema mismatch after source change | Breaking change -- operator impact | Escalate to TM-30 builder if multi-source; fix schema mapping |
+| Schema mismatch after source change | Breaking change — operator impact | Escalate to TM-30 builder if multi-source; fix schema mapping |
 
 > **NOTE:** When a pipeline fails, operators using TM-10, Task 5-1 see the failure in their data views and in Workshop applications. Fix pipeline issues promptly and document what failed and why. If the root cause is outside your TM-20 capability (e.g., requires @incremental logic, complex deduplication, Python transforms), escalate to a TM-30 builder or TM-40 developer.
 
@@ -728,17 +715,17 @@ NOTE: Documentation is not optional. Pipelines without descriptions will be flag
 
 ---
 
-# CHAPTER 4 -- ONTOLOGY UI BASICS
+# CHAPTER 4 — ONTOLOGY UI BASICS
 
 ## 4-1. What the Ontology Is
 
-The Foundry Ontology is the semantic layer of MSS -- it translates raw data tables into meaningful, interconnected objects. Instead of working with a table of rows and columns, users and applications work with Objects: a `UnitStatus` object, a `SoldierReadiness` object, a `MaintenanceRecord` object. Each Object Type has Properties (like fields), Link Types that connect it to other Object Types, and Actions that allow users to interact with it.
+The Foundry Ontology is the semantic layer of MSS — it translates raw data tables into meaningful, interconnected objects. Instead of working with a table of rows and columns, users and applications work with Objects: a `UnitStatus` object, a `SoldierReadiness` object, a `MaintenanceRecord` object. Each Object Type has Properties (like fields), Link Types that connect it to other Object Types, and Actions that allow users to interact with it.
 
 **Build the Ontology last, after your data is clean.** The Ontology reads from your curated dataset. If your curated dataset has schema issues, the Ontology configuration will fail or produce unreliable objects.
 
-NOTE: Before creating any new Object Type, check the Ontology Manager to confirm no existing type already covers your use case. USAREUR-AF maintains established design patterns for common operational Object Types -- consult your team lead or data steward before designing from scratch.
+NOTE: Before creating any new Object Type, check the Ontology Manager to confirm no existing type already covers your use case. USAREUR-AF maintains established design patterns for common operational Object Types — consult your team lead or data steward before designing from scratch.
 
-> **NOTE:** The Object Types and properties you configure in the Ontology become what operators see in Workshop applications and in Quiver (TM-10, Task 5-3, Use Quiver to Explore Ontology Objects). A poorly designed Object Type -- unclear property names, missing properties, wrong cardinality -- creates friction for every operator who uses it. Refer to TM-10, Chapter 4 and Task 5-3 to understand the operator experience of your Ontology design before publishing.
+> **NOTE:** The Object Types and properties you configure in the Ontology become what operators see in Workshop applications and in Quiver (TM-10, Task 5-3, Use Quiver to Explore Ontology Objects). A poorly designed Object Type — unclear property names, missing properties, wrong cardinality — creates friction for every operator who uses it. Refer to TM-10, Chapter 4 and Task 5-3 to understand the operator experience of your Ontology design before publishing.
 
 ---
 
@@ -751,7 +738,7 @@ NOTE: Before creating any new Object Type, check the Ontology Manager to confirm
 | **Properties tab** | Center tab | Add/edit/remove properties (columns) |
 | **Links tab** | Center tab | Configure Link Types to other Object Types |
 | **Actions tab** | Center tab | Configure Actions (write-back operations) |
-| **Branch selector** | Top toolbar | Current branch -- always verify before editing |
+| **Branch selector** | Top toolbar | Current branch — always verify before editing |
 | **Publish button** | Top toolbar | Merges your branch changes to the main Ontology |
 
 > CAUTION: The Ontology is shared across all Workshop applications in your environment. A change to a shared Object Type affects every Workshop app and every user who reads that Object Type. Always work on a development branch. Never edit the main Ontology branch directly. See Chapter 7 for branching.
@@ -773,7 +760,7 @@ NOTE: Before creating any new Object Type, check the Ontology Manager to confirm
 **PROCEDURE:**
 
 1. In the left navigation, open **Ontology Manager**.
-2. Confirm the branch selector (top toolbar) shows your development branch -- not `main`.
+2. Confirm the branch selector (top toolbar) shows your development branch — not `main`.
 3. Click **New Object Type** (top right of the Object Types panel).
 4. Enter the Object Type name in PascalCase singular noun format (e.g., `UnitStatus`, `MaintenanceRecord`).
 5. Enter a description: include what this object represents, which data source backs it, the owning unit, and the data steward POC.
@@ -825,7 +812,7 @@ NOTE: The primary key must be unique per object. If your backing dataset has dup
 2. Edit the **Display Name** field.
 3. Click **Save**.
 
-NOTE: Renaming a property changes what Workshop apps display -- it does not change the backing column name. Applications referencing the old display name may need updating.
+NOTE: Renaming a property changes what Workshop apps display — it does not change the backing column name. Applications referencing the old display name may need updating.
 
 **Remove a property:**
 
@@ -861,9 +848,9 @@ NOTE: Renaming a property changes what Workshop apps display -- it does not chan
    - Select the column in this Object Type's dataset that contains the key linking to the target.
    - Select the primary key property of the target Object Type.
 8. Set the **Cardinality**:
-   - **Many-to-One** -- many source objects link to one target (most common; e.g., many soldiers in one unit)
-   - **One-to-One** -- each source links to exactly one target
-   - **Many-to-Many** -- requires a junction dataset; consult TM-30
+   - **Many-to-One** — many source objects link to one target (most common; e.g., many soldiers in one unit)
+   - **One-to-One** — each source links to exactly one target
+   - **Many-to-Many** — requires a junction dataset; consult TM-30
 9. Click **Save Link Type**.
 10. Preview the source Object Type: click an individual object and verify linked objects appear in the Links section.
 
@@ -904,17 +891,17 @@ NOTE: For complex relationship modeling, consult your team lead or data steward 
 10. Click **Save Action**.
 11. Test the Action: in the preview, find an object, click the Action name, complete the form, submit, then check the backing dataset to confirm the update was written.
 
-> CAUTION: Actions that write to datasets affect all downstream applications. Before enabling a write-back Action in production, test it on a development branch with test data -- not with live operational records.
+> CAUTION: Actions that write to datasets affect all downstream applications. Before enabling a write-back Action in production, test it on a development branch with test data — not with live operational records.
 
-NOTE: Multi-step Actions with conditional routing, sequential submission steps, approval chains, or multi-record writes are TM-30 scope -- refer to TM-30, Chapter 4, Section 4-4. These do NOT require code (TypeScript is TM-40 scope). TM-20 Actions are single-step: operator fills a form, one field in the backing dataset is updated.
+NOTE: Multi-step Actions with conditional routing, sequential submission steps, approval chains, or multi-record writes are TM-30 scope — refer to TM-30, Chapter 4, Section 4-4. These do NOT require code (TypeScript is TM-40 scope). TM-20 Actions are single-step: operator fills a form, one field in the backing dataset is updated.
 
 ---
 
-# CHAPTER 5 -- BUILDING WORKSHOP APPLICATIONS
+# CHAPTER 5 — BUILDING WORKSHOP APPLICATIONS
 
 ## 5-1. What Workshop Is
 
-Workshop is MSS's drag-and-drop application builder. Using Workshop, you assemble widgets -- tables, charts, filters, forms, maps -- into applications that end users interact with daily. No code is required.
+Workshop is MSS's drag-and-drop application builder. Using Workshop, you assemble widgets — tables, charts, filters, forms, maps — into applications that end users interact with daily. No code is required.
 
 Workshop applications read from the Ontology. They do not read directly from datasets. This means your Ontology must be correctly configured (Chapter 4) before you begin building in Workshop.
 
@@ -924,7 +911,7 @@ Workshop applications read from the Ontology. They do not read directly from dat
 Data (Pipeline Builder) -> Ontology (Object Types, Links, Actions) -> Workshop App
 ```
 
-> **NOTE:** The Workshop applications you build are consumed by operators working from TM-10. Before building, read TM-10, Chapter 4 (Using Workshop Applications) -- specifically Task 4-1 (Open and Orient to a Workshop Application), Task 4-3 (Apply Filters to a Dashboard), Task 4-4 (Navigate Between Pages), and Task 4-5 (Submit Data Using an Action Form). Build your application so an operator following those TM-10 tasks can use it without confusion.
+> **NOTE:** The Workshop applications you build are consumed by operators working from TM-10. Before building, read TM-10, Chapter 4 (Using Workshop Applications) — specifically Task 4-1 (Open and Orient to a Workshop Application), Task 4-3 (Apply Filters to a Dashboard), Task 4-4 (Navigate Between Pages), and Task 4-5 (Submit Data Using an Action Form). Build your application so an operator following those TM-10 tasks can use it without confusion.
 
 ---
 
@@ -933,13 +920,13 @@ Data (Pipeline Builder) -> Ontology (Object Types, Links, Actions) -> Workshop A
 | Widget | Use For | Key Configuration |
 |---|---|---|
 | **Table** | Display rows of Object data; sort, filter, select | Object Type source; columns to display; sort order |
-| **Chart -- Bar** | Compare values across categories | X-axis (category property), Y-axis (numeric property) |
-| **Chart -- Line** | Show trends over time | X-axis (date property), Y-axis (numeric property) |
-| **Chart -- Pie/Donut** | Show proportion/composition | Segment property, value property |
+| **Chart — Bar** | Compare values across categories | X-axis (category property), Y-axis (numeric property) |
+| **Chart — Line** | Show trends over time | X-axis (date property), Y-axis (numeric property) |
+| **Chart — Pie/Donut** | Show proportion/composition | Segment property, value property |
 | **Metric Tile** | Display a single KPI number | Aggregation (count, sum, avg) on a property |
-| **Filter -- Dropdown** | Let users filter displayed data | Property to filter on; allowed values or dynamic |
-| **Filter -- Date Range** | Filter by date window | Date property; default range |
-| **Filter -- Search** | Free-text search across an Object Type | Property to search; Object Type |
+| **Filter — Dropdown** | Let users filter displayed data | Property to filter on; allowed values or dynamic |
+| **Filter — Date Range** | Filter by date window | Date property; default range |
+| **Filter — Search** | Free-text search across an Object Type | Property to search; Object Type |
 | **Form** | Allow users to submit Actions | Action to invoke; fields from Action configuration |
 | **Map** | Display objects at geographic coordinates | Latitude/longitude or address property |
 | **Object Explorer** | Show properties of one selected object | Object Type; properties to display |
@@ -954,7 +941,7 @@ Data (Pipeline Builder) -> Ontology (Object Types, Links, Actions) -> Workshop A
 | UI Area | Location | Purpose |
 |---|---|---|
 | **Canvas** | Center | Where you place and arrange widgets |
-| **Widget Library** | Left panel | Available widgets -- drag to canvas |
+| **Widget Library** | Left panel | Available widgets — drag to canvas |
 | **Widget Properties** | Right panel | Configure the selected widget |
 | **Variables panel** | Left panel (tab) | Define app-level variables and filters |
 | **Preview mode** | Top toolbar toggle | Switch between edit and user view |
@@ -1012,7 +999,7 @@ NOTE: Workshop apps built on development branches are only visible to team membe
 
 **Add a Dropdown Filter:**
 
-1. From the Widget Library, drag **Filter -- Dropdown** onto the canvas.
+1. From the Widget Library, drag **Filter — Dropdown** onto the canvas.
 2. In the right panel under **Object Type**: select the same Object Type as your data widget.
 3. Under **Filter Property**: select the property to filter on (e.g., `unit_name`, `status`, `country_code`).
 4. Under **Display Label**: enter a plain-English label (e.g., "Filter by Unit").
@@ -1022,7 +1009,7 @@ NOTE: Workshop apps built on development branches are only visible to team membe
 
 **Add a Date Range Filter:**
 
-1. Drag **Filter -- Date Range** onto the canvas.
+1. Drag **Filter — Date Range** onto the canvas.
 2. Select the Object Type and the date property to filter on (e.g., `report_date`).
 3. Set a default range appropriate for the data's refresh cadence.
 4. Connect to the data widget (same as above).
@@ -1049,7 +1036,7 @@ NOTE: Filters work across all widgets connected to the same Object Type variable
 1. From the Widget Library, drag **Table** onto the canvas.
 2. In the right panel under **Data Source**: click **Select Object Type** and browse to the target Object Type.
 3. Under **Columns**: click **Add Column** and select properties to display.
-4. For each column, review the column label -- update to plain English if the property display name is not user-friendly.
+4. For each column, review the column label — update to plain English if the property display name is not user-friendly.
 5. Under **Default Sort**: select a column and sort direction appropriate to the data (e.g., sort by report date descending for time-series data).
 6. Connect any applicable filters (see Task 5-2).
 7. Click **Preview** and verify the table renders with data and column labels are correct.
@@ -1074,7 +1061,7 @@ NOTE: Display only columns the end user needs. A table with 20 columns showing r
 
 **Add a Bar Chart:**
 
-1. From the Widget Library, drag **Chart -- Bar** onto the canvas.
+1. From the Widget Library, drag **Chart — Bar** onto the canvas.
 2. In the right panel under **Data Source**: select the Object Type.
 3. Under **X-Axis**: select a categorical property (e.g., `unit_name`, `country`, `status_category`).
 4. Under **Y-Axis**: select a numeric property or aggregation (e.g., Count of objects, Sum of `personnel_strength`).
@@ -1085,18 +1072,18 @@ NOTE: Display only columns the end user needs. A table with 20 columns showing r
 
 **Add a Line Chart (trend over time):**
 
-1. Drag **Chart -- Line** onto the canvas.
+1. Drag **Chart — Line** onto the canvas.
 2. Data Source: your Object Type.
 3. X-Axis: your date property. Enable **Date Grouping** if available.
 4. Y-Axis: your numeric property or count.
-5. Title: plain English (e.g., "Daily SITREP Submissions -- Last 30 Days").
+5. Title: plain English (e.g., "Daily SITREP Submissions — Last 30 Days").
 6. Connect filters. Preview.
 
 **Add a Metric Tile (single KPI number):**
 
 1. Drag **Metric Tile** onto the canvas.
 2. Data Source: Object Type.
-3. Metric: select aggregation -- Count, Sum, or Average of a numeric property.
+3. Metric: select aggregation — Count, Sum, or Average of a numeric property.
 4. Label: plain English (e.g., "Total Units Reporting", "Average Readiness %").
 5. (Optional) Configure conditional color: green/yellow/red thresholds.
 6. Preview to confirm the value is correct.
@@ -1120,7 +1107,7 @@ NOTE: Display only columns the end user needs. A table with 20 columns showing r
 1. From the Widget Library, drag **Form** onto the canvas.
 2. In the right panel under **Action**: click **Select Action**, browse to the Object Type, and select the Action (e.g., "Submit SITREP Update").
 3. The form fields defined in the Action configuration will appear automatically.
-4. Review the field labels. If any are not user-friendly, update them in the Action configuration in Ontology Manager -- changes propagate automatically.
+4. Review the field labels. If any are not user-friendly, update them in the Action configuration in Ontology Manager — changes propagate automatically.
 5. (Optional) Add a **Rich Text** widget above the form with instructions for the user.
 6. Preview the application. Complete the form with test data and submit.
 7. Open the backing dataset in Compass, click **Preview**, and confirm the test row was written correctly.
@@ -1157,13 +1144,13 @@ NOTE: Display only columns the end user needs. A table with 20 columns showing r
 6. Toggle Preview mode and review at 100% zoom. Check for overlapping widgets, cut-off text, or widgets too small to read.
 7. Fix any layout issues before publishing.
 
-NOTE: Test the application at 1920x1080 resolution -- the standard government workstation. Also check whether the layout is functional on tablet-size screens used in some TOC environments.
+NOTE: Test the application at 1920x1080 resolution — the standard government workstation. Also check whether the layout is functional on tablet-size screens used in some TOC environments.
 
 ---
 
 ## TASK 5-6: PUBLISH A WORKSHOP APPLICATION
 
-> **CAUTION:** Before publishing, assess whether your application design is within TM-20 scope. If your design includes: multiple pages with conditional navigation between them; widgets that pass parameters to other widgets; role-based conditional layouts -- your application is likely TM-30 scope. Refer to TM-30, Chapter 2 (Advanced Workshop Application Design), specifically Section 2-1 (The Multi-Page Application Model), to determine whether your design should be escalated to a TM-30 qualified builder before publication.
+> **CAUTION:** Before publishing, assess whether your application design is within TM-20 scope. If your design includes: multiple pages with conditional navigation between them; widgets that pass parameters to other widgets; role-based conditional layouts — your application is likely TM-30 scope. Refer to TM-30, Chapter 2 (Advanced Workshop Application Design), specifically Section 2-1 (The Multi-Page Application Model), to determine whether your design should be escalated to a TM-30 qualified builder before publication.
 
 **TASK:** Publish a completed Workshop application and configure access for intended users.
 
@@ -1198,14 +1185,14 @@ NOTE: Compass links to Workshop applications are permanent once published. Do no
 
 ---
 
-# CHAPTER 6 -- ANALYSIS WITH CONTOUR AND QUIVER
+# CHAPTER 6 — ANALYSIS WITH CONTOUR AND QUIVER
 
-## 6-1. Contour vs. Quiver -- When to Use Each
+## 6-1. Contour vs. Quiver — When to Use Each
 
 | Tool | Purpose | Best For | TM-20 Scope |
 |---|---|---|---|
-| **Contour** | Interactive analysis -- build and save views of data | Analysts exploring a dataset; saved analyses shared with a small audience | Build saved analyses using point-and-click interface |
-| **Quiver** | Dashboard builder -- assemble charts and metrics into a shareable page | Quick executive dashboards; simple multi-chart views | Build basic dashboards with charts and metric tiles |
+| **Contour** | Interactive analysis — build and save views of data | Analysts exploring a dataset; saved analyses shared with a small audience | Build saved analyses using point-and-click interface |
+| **Quiver** | Dashboard builder — assemble charts and metrics into a shareable page | Quick executive dashboards; simple multi-chart views | Build basic dashboards with charts and metric tiles |
 
 Use Contour when you need to explore a dataset, build a table/chart for analysis, and save that view for reuse.
 
@@ -1235,7 +1222,7 @@ Use Workshop when you need a full interactive application with filters, forms, A
 
 1. In the MSS left navigation, open **Contour**.
 2. Click **New Analysis**.
-3. Name the analysis (plain English, descriptive: e.g., `VCORPS SITREP Submission Rate -- Weekly`).
+3. Name the analysis (plain English, descriptive: e.g., `VCORPS SITREP Submission Rate — Weekly`).
 4. Under **Data Source**, click **Add Dataset or Object Type**. Search for and select your target.
 5. Contour opens the data view with all columns visible.
 
@@ -1252,7 +1239,7 @@ Use Workshop when you need a full interactive application with filters, forms, A
 11. Click the **+** tab (next to the current view tab) to add a new view.
 12. Select **Chart**.
 13. Under **Chart Type**: select Bar, Line, or Pie.
-14. Configure X-axis and Y-axis (same logic as Workshop charts -- see Task 5-4).
+14. Configure X-axis and Y-axis (same logic as Workshop charts — see Task 5-4).
 15. Add a title to the chart tab (double-click the tab name).
 
 **Save and Share:**
@@ -1261,7 +1248,7 @@ Use Workshop when you need a full interactive application with filters, forms, A
 17. Click **Share**, add authorized users or groups, and assign View access.
 18. Copy the Contour analysis link and share with the intended audience via official channels.
 
-NOTE: Contour analyses reflect current data when opened -- they are not live-updating dashboards. For a continuously updated operational view, use Workshop.
+NOTE: Contour analyses reflect current data when opened — they are not live-updating dashboards. For a continuously updated operational view, use Workshop.
 
 ---
 
@@ -1307,7 +1294,7 @@ NOTE: Contour analyses reflect current data when opened -- they are not live-upd
 
 1. In the MSS left navigation, open **Quiver**.
 2. Click **New Dashboard**.
-3. Name the dashboard (e.g., `USAREUR-AF Readiness Summary -- Weekly`).
+3. Name the dashboard (e.g., `USAREUR-AF Readiness Summary — Weekly`).
 4. Click **Add Widget**, then select **Chart**.
 5. Configure the chart:
    - Under **Data Source**: select the dataset or Object Type.
@@ -1352,11 +1339,11 @@ NOTE: Quiver dashboards do not support Actions, complex filters, or form submiss
 
 ---
 
-# CHAPTER 7 -- BRANCHING AND ENVIRONMENT MANAGEMENT VIA UI
+# CHAPTER 7 — BRANCHING AND ENVIRONMENT MANAGEMENT VIA UI
 
 ## 7-1. Why Branching Matters
 
-Branching is how MSS protects production data and applications from work-in-progress changes. Every resource in Foundry -- datasets, Ontology configurations, Workshop apps -- lives on a branch. The `main` branch is what users see and depend on. Your development branch is where you build and test.
+Branching is how MSS protects production data and applications from work-in-progress changes. Every resource in Foundry — datasets, Ontology configurations, Workshop apps — lives on a branch. The `main` branch is what users see and depend on. Your development branch is where you build and test.
 
 **The rule: never edit main directly.** All TM-20 build work happens on a named development branch. When the work is tested and approved, you request a merge into main. A reviewer approves the merge and the changes go live.
 
@@ -1371,12 +1358,12 @@ Working without a branch is the equivalent of making changes to a live operation
 | Term | Meaning |
 |---|---|
 | **Branch** | An isolated copy of the Ontology where you can make changes without affecting main |
-| **Main branch** | The production branch -- what all users see; never edit directly |
-| **Development branch** | Your working branch -- named `dev-[feature]` or `dev-[lastname]` |
+| **Main branch** | The production branch — what all users see; never edit directly |
+| **Development branch** | Your working branch — named `dev-[feature]` or `dev-[lastname]` |
 | **Check in** | Save your changes to the branch (versioned save with a message) |
 | **Merge request** | A formal request to integrate your branch changes into main |
 | **Review** | A team lead or designated reviewer approves the merge request |
-| **Conflict** | Two branches have made changes to the same resource -- must be resolved before merging |
+| **Conflict** | Two branches have made changes to the same resource — must be resolved before merging |
 
 ---
 
@@ -1434,7 +1421,7 @@ Working without a branch is the equivalent of making changes to a live operation
 6. If a Workshop application uses the modified Object Type, open it in Preview mode and verify it still renders correctly.
 7. Document any issues found and fix before requesting the merge.
 
-NOTE: Check in frequently -- at minimum after completing each Object Type, Link Type, or Action configuration. Small, frequent check-ins make it easier to identify and revert specific changes if something breaks.
+NOTE: Check in frequently — at minimum after completing each Object Type, Link Type, or Action configuration. Small, frequent check-ins make it easier to identify and revert specific changes if something breaks.
 
 ---
 
@@ -1491,7 +1478,7 @@ BREAKING CHANGES: [yes/no; if yes, describe impact on existing applications]
 5. Resolve the conflict:
    - If your change is correct: select **Keep My Version**.
    - If the incoming change is correct: select **Keep Incoming Version** and plan to redo your work.
-   - If both changes are needed: contact your team lead -- multi-field conflicts may require a data engineer (TM-30).
+   - If both changes are needed: contact your team lead — multi-field conflicts may require a data engineer (TM-30).
 6. After all conflicts are resolved, click **Mark as Resolved**.
 7. Resubmit the merge request.
 
@@ -1499,7 +1486,7 @@ NOTE: When in doubt on a conflict, do not guess. Contact the team member whose b
 
 ---
 
-# CHAPTER 8 -- BUILDER STANDARDS AND GOVERNANCE
+# CHAPTER 8 — BUILDER STANDARDS AND GOVERNANCE
 
 ## 8-1. Overview
 
@@ -1513,11 +1500,11 @@ Builder standards are not optional. They exist to maintain data quality, operati
 
 See Chapter 2-3 for the full naming conventions table. Critical rules:
 
-1. Dataset paths are permanent -- choose carefully before creating.
-2. Object Type names are PascalCase singular nouns -- always.
-3. Link Type names are camelCase verb phrases -- always.
-4. Pipeline names use kebab-case -- always.
-5. Workshop app names are plain English, unit-appropriate -- always.
+1. Dataset paths are permanent — choose carefully before creating.
+2. Object Type names are PascalCase singular nouns — always.
+3. Link Type names are camelCase verb phrases — always.
+4. Pipeline names use kebab-case — always.
+5. Workshop app names are plain English, unit-appropriate — always.
 6. Do not use PII, classified terms, or operational codenames in any resource name or description.
 
 ---
@@ -1587,18 +1574,18 @@ As a TM-20 builder, you are personally accountable for:
 
 **The four rules:**
 
-1. Always work on a branch -- never on main/production directly.
-2. Test before you publish -- verify data, spot-check values, test with end-user credentials.
-3. Follow naming conventions -- every resource must be named to standard.
-4. Document your work -- every resource requires a description.
+1. Always work on a branch — never on main/production directly.
+2. Test before you publish — verify data, spot-check values, test with end-user credentials.
+3. Follow naming conventions — every resource must be named to standard.
+4. Document your work — every resource requires a description.
 
-> **NOTE:** All builder actions in MSS -- pipeline creation and modification, Ontology changes, Workshop application publishing, branch creation, and merge requests -- are logged with your credentials, timestamp, and the specific change made. These logs are retained for accountability reviews, security audits, and incident investigation. You are personally accountable for all changes made under your credentials.
+> **NOTE:** All builder actions in MSS — pipeline creation and modification, Ontology changes, Workshop application publishing, branch creation, and merge requests — are logged with your credentials, timestamp, and the specific change made. These logs are retained for accountability reviews, security audits, and incident investigation. You are personally accountable for all changes made under your credentials.
 
 ---
 
 ## 8-6. CUI Handling
 
-> **NOTE -- CUI (Controlled Unclassified Information):** If a data source you are ingesting contains CUI (e.g., personnel records, financial data, acquisition information), do NOT ingest it without first coordinating with your unit data steward and confirming:
+> **NOTE — CUI (Controlled Unclassified Information):** If a data source you are ingesting contains CUI (e.g., personnel records, financial data, acquisition information), do NOT ingest it without first coordinating with your unit data steward and confirming:
 > (a) The data is authorized for MSS ingestion at the appropriate classification level.
 > (b) The output dataset will be marked and access-controlled appropriately.
 > (c) Any downstream Workshop applications exposing CUI are restricted to authorized personnel only.
@@ -1607,216 +1594,402 @@ As a TM-20 builder, you are personally accountable for:
 
 ---
 
-# CHAPTER 9 -- TROUBLESHOOTING AND COMMON ERRORS
+# CHAPTER 9 — TROUBLESHOOTING AND COMMON ERRORS
 
 ## 9-1. Overview
 
-When a build fails or produces unexpected output, diagnose before escalating. Most issues fall into four categories: pipeline errors, Ontology configuration errors, Workshop display errors, and access/permissions errors.
+**BLUF:** When a build fails or produces unexpected output, diagnose methodically before escalating. Most issues fall into four categories: pipeline errors, Ontology configuration errors, Workshop display errors, and access/permissions errors.
+
+Do not guess at the cause. Follow the diagnostic procedure in Section 9-4. Use the error reference tables in Sections 9-2 and 9-3 to identify the most likely cause before changing anything.
+
+> **CAUTION:** Do not make changes to a production pipeline or Ontology while diagnosing an error. Work on a development branch. Changing production while under fault conditions can cascade failures to downstream users and applications.
 
 ---
 
 ## 9-2. Pipeline Builder Errors
 
-| Error Message | Likely Cause | Fix |
+| Error / Symptom | Likely Cause | Resolution Steps |
 |---|---|---|
-| "Column not found" | Source dataset schema changed; a column was renamed or removed | Open the failing node. Check which column is missing. Update the node to use the current column name. |
-| "Join produced 0 rows" | Join key mismatch -- keys don't match between datasets, or key is NULL in one dataset | Preview both source datasets. Confirm the join key column name and values match. Check for NULL values in join key. |
-| "Row count is 10x higher than expected" | Grain mismatch -- joining a one-row-per-unit dataset to a many-rows-per-unit dataset without aggregating first | Review grain of each source (TM-20, Section 3-2). Add an aggregation node to reduce grain before the join. |
-| "Pipeline scheduled but not running" | Schedule may not be saved, or the pipeline is in a non-production branch | Confirm the pipeline is on the main/production branch. Confirm the schedule was saved (check the Schedule panel). |
-| "Output dataset has no rows" | Filter is too restrictive, or source data is empty | Preview data at each node. Find the step where rows drop to zero. |
+| "Column not found" | Source dataset schema changed; a column was renamed or removed upstream | Open the failing node. Identify the missing column. Check the source dataset schema in Pipeline Builder preview. Update the node to use the current column name or rename/add the column in the source. |
+| Join output returns 0 rows | Type mismatch on join key, OR no common values exist between the two key columns | Type-cast both join key columns to the same type (e.g., both to string). Sample both datasets and visually verify that key values overlap. Confirm neither key column is all-null. |
+| Join output row count exceeds either input dataset | Fan-out due to a one-to-many relationship on the right-side dataset | Add a deduplication step upstream of the join on the right-side dataset, OR aggregate post-join. COUNT(*) before and after each join step to trace where inflation occurs (see Pattern B-2). |
+| Pipeline fails with "type cast error" | Source column contains non-numeric text (e.g., "N/A", "--") in a field being cast to integer or date | Inspect 50 rows using the Pipeline Builder sample function. Add a filter node to remove or replace invalid values before the type cast step. |
+| Pipeline fails with "null reference" | Required column is missing from the source dataset entirely, or a referenced column was deleted | Check the source dataset schema. Add a null-handling step (COALESCE or filter) for all required fields before they are consumed downstream. |
+| Pipeline output is empty but no error is shown | A filter step is excluding all rows | Review all filter conditions in the pipeline. Use the pipeline sample function at the step immediately before each filter to verify data exists at that point. |
+| Pipeline runs successfully but output looks wrong | Wrong join grain — fan-out inflating records or a left join silently dropping records | COUNT(*) at each stage (source, post-join, post-filter, output). Trace where the row count diverges from expectation. |
+| Ontology write fails: "duplicate primary key" | Pipeline output contains multiple rows with the same primary key value | Add a deduplication step before the output node. Verify the primary key definition is correct and matches the Ontology Object Type PK. |
+| Ontology write fails: "type mismatch" | A pipeline output column type does not match the Ontology property type it maps to | Open the Object Type in Ontology Manager. Check the property data type. Add a type cast in the pipeline to align the column type to the Ontology property definition before writing. |
+| Dataset shows stale data despite pipeline appearing active | Scheduled pipeline run failed silently or schedule was not saved | Open the pipeline run history. Check the most recent run status and error log. Re-run manually. Confirm the schedule is saved and active on the production branch (not the dev branch). |
+| "Pipeline scheduled but not running" | Schedule not saved, or pipeline is on a development branch, not the production branch | Confirm the pipeline is on the main/production branch. Open the Schedule panel and verify the schedule is active. |
+| Source data volume drops unexpectedly | Source system stopped sending data, or an upstream pipeline failed | Check the source dataset row count against historical baseline. Verify the upstream connector or ingestion pipeline is running. Alert your Data Steward if a source feed appears to have stopped. |
+
+> **NOTE:** The most common pipeline error is a silent one — the pipeline succeeds but produces incorrect output because of a grain mismatch or a fan-out join. Always COUNT(*) before and after joins. A pipeline that builds green is not the same as a pipeline that is correct.
 
 ---
 
-## 9-3. Ontology Errors
+## 9-3. Workshop Application Errors
 
-| Symptom | Likely Cause | Fix |
+| Error / Symptom | Likely Cause | Resolution Steps |
 |---|---|---|
-| Objects not appearing in Workshop | Backing dataset has no rows, or pipeline hasn't run since Object Type was created | Check if the pipeline has run successfully and the output dataset has rows. Re-preview the Object Type. |
-| "Primary key is not unique" warning | Multiple rows in the backing dataset have the same value for the primary key column | Investigate duplicate rows in the dataset. Add deduplication to the pipeline. |
-| Action form submits but data doesn't change | Action is writing to the wrong backing dataset, or write target column is misconfigured | Open the Action in Ontology Manager. Verify the Write Target dataset and column are correct. |
-| Link Type not showing relationships | Foreign key column values don't match primary key values of the target Object Type | Preview both Object Types in Quiver. Compare the link key values. Verify they are the same data type and format. |
+| Workshop table shows "No data" | Object Type has no records, OR an active filter is set to a non-existent value | Verify the Ontology Object Type has data (open in Quiver and confirm row count > 0). Reset all Workshop filters to their default state and retest. |
+| Action button not visible to end users | User lacks Editor role, OR Action is not connected to a button widget | Open Workshop editor. Check the button widget's Action binding. Verify the user has been added to the correct project role (Viewer is sufficient to execute most Actions — confirm in Ontology Manager Action settings). |
+| Filter widget not filtering the table or chart | Filter is not connected to the table or chart widget | Open Workshop editor. Select the table or chart widget. In the Widget Properties panel, find the filter binding section and connect the filter widget to the table/chart. |
+| Dashboard loads slowly or times out | Object Type has a very large record count (1M+) with no pre-applied filters on the source | Add a default filter to the Workshop application (e.g., restrict to current fiscal year or current AOR). If the Object Type itself is too large, escalate to a TM-30 builder for optimization of the backing pipeline or Ontology query configuration. |
+| Workshop application not visible in the Workshop catalog | App is not published, OR user is not in the Viewer group | Open the app in Workshop editor and click Publish. Then open the Share panel and add the user to the Viewer role. Confirm the user logs in fresh after the permission change. |
+| Form field shows wrong options in a dropdown | Action dropdown is bound to the wrong property or the backing dataset for the options is stale | Open the Action in Ontology Manager. Check the source of the dropdown values. Re-run the backing pipeline if the options list is outdated. |
+| Chart displays incorrect aggregation | Chart aggregation setting does not match the grain of the Object Type | Open the chart widget properties. Verify the aggregation type (SUM, COUNT, AVG) matches what the user needs. If the Object Type is already a summary, use COUNT or first-value rather than SUM. |
 
 ---
 
-## 9-4. Workshop Application Errors
+## 9-4. Access and Permissions Errors
 
-| Symptom | Likely Cause | Fix |
+| Symptom | Likely Cause | Resolution Steps |
 |---|---|---|
-| Table shows no data | Object Type source not connected, or filter is set to a value with no matching records | Check the Object Type source in the table widget properties. Remove all filters and test. |
-| Filter dropdown is empty | The filter is bound to a column with no values, or the Object Type has no data | Check if the backing Object Type has data (open in Quiver). Verify the filter is bound to the correct property. |
-| Application won't load for users | Users may not have Viewer access to the application or the backing Object Type | Verify access settings in the application's Share panel. Confirm users have at least Viewer role. |
+| "You do not have permission to view this resource" | Your account does not have the required role for this project or dataset | Contact your unit Data Steward to request the appropriate role. Do not attempt to work around access controls. Document the request per your unit's access management SOP. |
+| Cannot find a project in Compass | Project may be in a different namespace, or you do not have access | Search by exact project name. Ask your Data Steward which project your work should be in. Do not create a new project — new projects require C2DAO authorization. |
+| Cannot merge or promote branch changes | You may not have the required role to merge, or peer review has not been completed | Confirm peer review is complete (Chapter 7). If your role is insufficient, ask your Data Steward or a senior builder to promote on your behalf. |
+| Users cannot see published Workshop application | Users not added to Viewer role on the application or the backing Object Type | Open the Share panel of the Workshop application. Add the users or group to the Viewer role. Confirm Ontology Object Type access includes the same users. |
+| Action executes but write fails silently | User has Viewer role but the Action requires Editor-level write permission on the backing dataset | Review Action configuration in Ontology Manager. Confirm the write target dataset access grants are correct for the intended user population. Escalate to Data Steward to adjust permissions. |
 
 ---
 
-## 9-5. Access and Permissions Errors
+## 9-5. General Diagnostic Procedure
 
-| Symptom | Likely Cause | Fix |
-|---|---|---|
-| "You do not have permission to view this resource" | Your account does not have the required role for this project or dataset | Contact your unit data steward to request access. Do not attempt to work around access controls. |
-| Cannot find a project in Compass | Project may be in a different namespace, or you do not have access | Search by exact name. Ask your data steward which project your work should be in. |
-| Cannot merge/promote changes | You may not have the required role to merge, or peer review has not been completed | Confirm peer review is complete (TM-20, Chapter 7). If your role is insufficient, ask your data steward to promote on your behalf. |
+**BLUF:** When you encounter an error not identifiable from the tables above, follow this five-step procedure before escalating.
+
+1. **Identify the layer.** Is the problem in the Pipeline (data not producing correctly)? The Ontology (objects not appearing or linked incorrectly)? Workshop (display or interaction failure)? Access (permissions error)? The layer determines where to look.
+
+2. **Check the run log or browser console for the exact error message.** Do not rely on the symptom description alone. The error message often names the specific node, column, or operation that failed. Copy the exact error text before doing anything else.
+
+3. **Sample the input data at the step where the error occurs.** Use the Pipeline Builder sample function on the node immediately upstream of the failure point. Verify the data shape (column names, types, sample values) matches what the downstream node expects.
+
+4. **Compare input to output — count rows, spot-check values.** Run COUNT(*) at the input and output of each transform step. If row counts diverge unexpectedly, the problem is at that step. Spot-check 10–20 rows at the problem step before and after the transform.
+
+5. **If unresolved in 15 minutes, escalate.** Contact your unit Data Steward or a TM-30 Advanced Builder. Provide: (a) the exact error message, (b) the pipeline or app name and environment (dev/main), (c) the layer where the error occurs, and (d) what you have already tried. Do not continue making changes while the issue is unresolved — each change makes the error harder to diagnose.
 
 ---
 
 ## 9-6. When to Escalate
 
-Escalate to your unit data steward when:
+Escalate to your unit Data Steward when:
 - You cannot diagnose the cause of a pipeline failure after 30 minutes.
 - An Ontology change you made broke a downstream application.
 - You are unsure whether a change requires a governance review.
 - Any security or data handling concern arises.
+- A source feed appears to have stopped (missing expected data).
 
 Escalate to C2DAO when:
-- The data steward cannot resolve the issue.
+- The Data Steward cannot resolve the issue.
 - A production system is down and affecting multiple units.
 - An AIP Logic or advanced feature is required (TM-30 scope).
+- A new data source connection is required (all new connectors require C2DAO authorization).
+
+> **NOTE:** Escalating early is not a sign of failure. Spending two hours on a problem that requires a TM-30 developer or a Data Steward access change is wasted time. The 15-minute threshold exists to protect operational tempo.
 
 ---
 
 ---
 # APPENDIX A — PRE-PUBLISH CHECKLISTS
 
-Complete this checklist for every pipeline, Ontology change, and Workshop application before submitting a merge request or publishing.
+**BLUF:** Complete the applicable checklist before every merge request, Ontology branch promotion, or Workshop application publication. These checklists are the TM-20 builder's quality gate. Do not skip steps.
+
+Four checklists correspond to the four major build outputs: dataset ingestion, pipeline, Ontology Object Type, and Workshop application. A given build task may require you to complete more than one.
 
 ---
 
-## A-1. Pipeline / Dataset Pre-Publish Checklist
+## A-1. Dataset Ingestion Checklist
 
-| # | Check | Verified |
-|---|---|---|
-| 1 | Pipeline name follows kebab-case convention | [ ] |
-| 2 | Output dataset is in the correct folder (raw/staging/curated) | [ ] |
-| 3 | Pipeline description includes: source, output path, schedule, steward POC, creator, date | [ ] |
-| 4 | Pipeline builds successfully (green, no errors) | [ ] |
-| 5 | Output row count matches expected range (verified against source) | [ ] |
-| 6 | Primary key column has no null or duplicate values | [ ] |
-| 7 | Date columns contain valid date values | [ ] |
-| 8 | No PII in columns not authorized for PII | [ ] |
-| 9 | Schedule is configured and tested (first run completed successfully) | [ ] |
-| 10 | On-failure notification configured (builder + team lead) | [ ] |
+Complete before publishing a newly ingested dataset for others to use.
 
-- [ ] Pipeline complexity is within TM-20 scope (single data source, basic joins, standard transformations). If pipeline requires multi-source deduplication, @incremental patterns, custom Python transforms, or complex error-handling logic -- escalate to TM-30 builder before proceeding (TM-30, Chapter 3).
+- [ ] Row count matches source system (within 1% tolerance, or deviation documented with explanation)
+- [ ] No unexpected null rates greater than 5% in required fields (document and accept with Data Steward approval if unavoidable)
+- [ ] Column data types confirmed: no text in numeric fields, dates parsed correctly, no mixed-type columns
+- [ ] Sample of at least 50 rows reviewed for data quality (spot-check values against known source records)
+- [ ] Dataset name follows naming convention: `[DOMAIN]_[ENTITY]_[GRAIN]` (e.g., `MAINT_EQUIP_RECORD`, `PERS_SOLDIER_DAILY`)
+- [ ] Dataset description field populated with: source system name, ingestion date, data owner name and unit, refresh frequency
+- [ ] Classification marking applied correctly (UNCLASSIFIED / CUI as appropriate — when in doubt, treat as CUI and confirm with Data Steward)
+- [ ] Access control configured on the principle of minimum necessary — not open to all Project members if the data is restricted
+- [ ] Data Steward notified of new dataset availability; Data Steward has acknowledged and approved the data source
+- [ ] Dataset placed in the correct folder tier: `raw/` for unprocessed source data; `staging/` for intermediate cleaned data; `curated/` for publication-ready data
 
----
-
-## A-2. Ontology Pre-Publish Checklist
-
-| # | Check | Verified |
-|---|---|---|
-| 1 | Object Type name is PascalCase singular noun | [ ] |
-| 2 | Object Type description is complete (what, source, owner, steward, date) | [ ] |
-| 3 | Primary key configured (unique, non-null, verified in preview) | [ ] |
-| 4 | All property display names are plain English (not raw column names) | [ ] |
-| 5 | Data types are correct for each property | [ ] |
-| 6 | Sensitive columns excluded or restricted per Data Steward guidance | [ ] |
-| 7 | Link Types tested (linked objects visible in preview) | [ ] |
-| 8 | All Actions tested with test data (write-back confirmed working) | [ ] |
-| 9 | Changes checked in with descriptive commit messages | [ ] |
-| 10 | Merge request includes change description, test results, breaking changes noted | [ ] |
-| 11 | Merge request assigned to correct reviewer (not yourself) | [ ] |
-
-- [ ] Ontology design is within TM-20 scope (simple Object Types, one-to-one/one-to-many links, single-step Actions). If design requires many-to-many links, multi-step Actions, derived properties with complex logic, or coalition-facing access -- escalate to TM-30 before proceeding (TM-30, Chapter 4).
+> **WARNING:** Never mark a dataset as curated until data quality checks are complete and Data Steward approval is on record. Downstream Object Types and Workshop applications depend on curated datasets being stable and trustworthy.
 
 ---
 
-## A-3. Workshop Application Pre-Publish Checklist
+## A-2. Pipeline Checklist
 
-| # | Check | Verified |
-|---|---|---|
-| 1 | Application name is plain English, unit-appropriate | [ ] |
-| 2 | Application header includes: title, classification/handling marking, owning unit, steward POC | [ ] |
-| 3 | All charts have titles | [ ] |
-| 4 | All filters have labels; default filter state shows useful data | [ ] |
-| 5 | All Metric Tiles have labels and correct aggregations | [ ] |
-| 6 | Form submission tested with test data; write-back confirmed | [ ] |
-| 7 | Application renders correctly in Preview mode at 1920x1080 | [ ] |
-| 8 | Application tested by a user with View-only access (not builder credentials) | [ ] |
-| 9 | Access permissions configured per approved access list | [ ] |
-| 10 | Link Sharing is OFF (unless C2DAO specifically authorized) | [ ] |
-| 11 | Branch merged to main before publishing (not published from dev branch) | [ ] |
-| 12 | Users notified of application publication via official channels | [ ] |
+Complete before promoting a pipeline to production.
+
+- [ ] Input row count documented (run the pipeline in Dev with SAMPLE to confirm the source is live and producing the expected volume)
+- [ ] Output row count matches expected (no unexpected fan-out from joins, no unexpected data loss from filters)
+- [ ] Join grain verified: COUNT(*) before and after each join step — output should not exceed the larger input unless fan-out is intentional and documented
+- [ ] Null handling documented: COALESCE or explicit filter applied for all required fields before they flow into downstream steps
+- [ ] Type casts explicit and tested: verify edge cases (e.g., cells containing "N/A", empty string, or leading zeros) against a sample
+- [ ] Deduplication step included if source can contain duplicate records (document which record is kept and why — this is a business rule)
+- [ ] Pipeline description field populated: inputs, transformations applied, output grain, data owner, refresh schedule
+- [ ] Schedule configured and tested (if recurring): confirm first scheduled run completed successfully; confirm schedule is active on the production branch, not the dev branch
+- [ ] Peer review completed: a second Builder or the Data Steward has reviewed the pipeline logic and signed off
+- [ ] Changes promoted from a Dev branch — never edited directly in production
+- [ ] On-failure notification configured (builder and team lead at minimum)
+- [ ] Pipeline complexity is within TM-20 scope. If the pipeline requires multi-source deduplication, @incremental patterns, custom Python transforms, or complex error-handling logic, escalate to a TM-30 builder before proceeding.
+
+> **CAUTION:** A pipeline that builds without errors is not necessarily a correct pipeline. "Green" means the transform ran — it does not mean the output is accurate. Verify row counts and spot-check values at every stage.
+
+---
+
+## A-3. Ontology Checklist
+
+Complete before an Object Type goes live on the production branch.
+
+- [ ] Primary Key defined and verified unique in the backing dataset (zero duplicate PK values in pipeline output)
+- [ ] Property names follow naming convention: PascalCase, no spaces, no generic names (e.g., `EquipmentId` not `id` or `column_1`)
+- [ ] Property data types set correctly — **verify before publishing**; property types are immutable after downstream objects connect and changing them is a breaking change requiring a governance review
+- [ ] All required Properties populated: no critical fields are always null in the preview
+- [ ] Link Types defined for all relationships between Object Types — do not substitute ad-hoc foreign key properties for properly configured Link Types
+- [ ] At least one Action defined for any Object Type that operators will edit or update; Action tested with test data (write-back confirmed working)
+- [ ] Object Type description populated: what it represents, which data source backs it, who owns it, and the refresh frequency
+- [ ] Downstream consumers identified: any existing Workshop applications or analyses that will be affected by this change have been identified and tested post-change
+- [ ] Changes checked in with descriptive commit messages (not "update" or "fix")
+- [ ] Merge request includes: description of changes made, test results, and explicit notation of any breaking changes
+- [ ] Merge request assigned to a reviewer other than yourself
+- [ ] Tested with a Viewer-role user account (not the builder's Editor account) to confirm Actions execute correctly at the intended permission level
+- [ ] Ontology design is within TM-20 scope. If design requires many-to-many links, multi-step Actions, derived properties with complex logic, or coalition-facing access, escalate to TM-30 before proceeding.
+
+---
+
+## A-4. Workshop Application Checklist
+
+Complete before publishing a Workshop application for operator use.
+
+- [ ] All filter widgets connected to all relevant tables and charts (test each filter individually — a disconnected filter silently does nothing)
+- [ ] Default filter values set to reasonable defaults; blank default often returns all records or no records — both are usually wrong
+- [ ] All Actions tested with a Viewer-role user account (Editors see different permissions; testing as an Editor does not validate the operator experience)
+- [ ] Application tested with realistic data volume (not just a 10-row test dataset — verify performance at production scale)
+- [ ] Performance baseline noted: page load under 5 seconds for the target user base at expected data volume; escalate to TM-30 if threshold is exceeded
+- [ ] Application name follows naming convention and is plain English, unit-appropriate
+- [ ] Application header includes: title, classification/handling marking, owning unit, Data Steward POC
+- [ ] Application description populated: purpose, intended users, data freshness (how current is the underlying data?)
+- [ ] All charts have descriptive titles
+- [ ] All filters have labels; Metric Tiles have labels and correct aggregation types
+- [ ] Form submission tested with test data; write-back confirmed working
+- [ ] Application renders correctly in Preview mode at 1920x1080
+- [ ] Access control configured: only authorized users in the Viewer group; Link Sharing is OFF unless C2DAO specifically authorized
+- [ ] Branch merged to main before publishing; application not published from a dev branch
+- [ ] Published shared link tested from a user account outside the builder's session
+- [ ] Users notified of application publication through official channels (unit email, SharePoint announcement, or similar)
 
 ---
 
 ---
 # APPENDIX B — COMMON PIPELINE BUILDER PATTERNS
 
-The following patterns address the most common USAREUR-AF data ingestion scenarios.
+**BLUF:** The following patterns address the most common USAREUR-AF data pipeline scenarios. Each pattern is reusable — adapt it to your specific data and grain requirements.
 
-> **NOTE:** The design patterns in this appendix are TM-20 level -- they use Pipeline Builder, Ontology Manager, and Workshop without code. As your data products grow in complexity, some patterns will need to evolve into TM-30 designs. If a pattern requires multi-step Actions, complex Link Type logic, or advanced transform rules, refer to TM-30, Chapter 4 (Ontology Design Methodology) and TM-30, Chapter 3 (Advanced Pipeline Builder) to assess whether TM-30 or TM-40 resources are needed.
+> **NOTE:** The design patterns in this appendix are TM-20 level — they use Pipeline Builder without code. As your data products grow in complexity, some patterns will need to evolve into TM-30 designs. If a pattern requires multi-step Actions, complex Link Type logic, @incremental transforms, or custom Python/SQL code, refer to TM-30, Chapter 3 (Advanced Pipeline Builder) before proceeding.
 
 ---
 
-## B-1. Standard SITREP Ingestion Pattern
+## B-1. Deduplication (Keep First Occurrence)
 
-**Use case:** Daily SITREP feed arrives as a structured file or shared dataset. Clean, deduplicate, and load to curated.
+**Use case:** Source data contains duplicate records for the same entity (e.g., multiple status entries for the same equipment ID in a GCSS-A extract, or multiple SITREP rows for the same unit on the same report date).
+
+**When to apply:** After ingestion, before any join step or Ontology write.
+
+**Procedure:**
+
+1. Add a Sort node. Sort by entity ID (ascending) and by timestamp or sequence column (descending if you want the most recent, ascending if you want the earliest).
+2. Add a Deduplicate node immediately after the Sort node. Configure it to deduplicate on the entity ID column. The Deduplicate node retains the first row it encounters per group — the Sort order determines which row is "first."
+3. Run the pipeline and verify: output row count should equal the count of distinct entity IDs.
+4. Document the deduplication logic in the pipeline description (e.g., "Keeps the most recent record per bumper_number as determined by maint_date descending").
+
+```
+[Source: gcss_a_maint_raw]
+       |
+[Sort: bumper_number ASC, maint_date DESC]
+       |
+[Deduplicate: on bumper_number — retains most recent record]
+       |
+[Output: gcss_a_maint_deduped_staging]
+```
+
+> **NOTE:** Which occurrence you keep is a business rule, not a technical default. "Most recent" is common but not always correct — confirm with the data owner before choosing a deduplication strategy.
+
+---
+
+## B-2. Join with Fan-Out Detection
+
+**Use case:** Joining two datasets on a foreign key where the right-side dataset may have multiple matching rows per key value (e.g., joining a unit roster to a maintenance table where one unit can have many equipment items).
+
+**When to apply:** Any time you perform a join where you are not certain the right-side dataset has exactly one row per join key value.
+
+**Procedure:**
+
+1. COUNT(*) the left-side input dataset before the join. Record that number.
+2. COUNT(*) the right-side input dataset before the join. Record that number.
+3. Perform the join.
+4. COUNT(*) the join output. Compare to step 1.
+   - If output count equals left-side input count: no fan-out. Proceed.
+   - If output count is greater than left-side input count: fan-out has occurred.
+5. If fan-out occurred: add a deduplication or aggregation step on the right-side dataset before the join. Re-run and recheck counts.
+
+```
+[Source: unit_roster_curated]        [Source: maint_records_curated]
+         |                                        |
+[COUNT: 847 rows — expected]         [Dedup: on bumper_number,
+         |                            keep latest maint_date]
+         |                                        |
+         +------------------+---------------------+
+                            |
+               [Join: Inner Join on unit_id]
+                            |
+               [COUNT: verify = 847 rows]
+                            |
+               [Output: unit_maint_status_curated]
+```
+
+> **CAUTION:** Fan-out silently inflates row counts and produces incorrect aggregations downstream. A SUM that runs against fan-out data will overcount. This is one of the most common and consequential pipeline errors.
+
+---
+
+## B-3. Type Cast and Null Handling
+
+**Use case:** Source data has mixed types or null values in required fields (e.g., an equipment ID column that contains "N/A" strings alongside numeric IDs, or a date column with blank cells).
+
+**When to apply:** Immediately after ingestion, before any join or aggregation that depends on the affected columns.
+
+**Procedure:**
+
+1. Add a Sample step and inspect 50–100 rows of the source data. Identify columns with mixed types or unexpected values.
+2. Add a Filter node to remove or isolate rows with invalid values in required fields (e.g., filter out rows where `equipment_id = 'N/A'` or where `report_date IS NULL`).
+3. Add a Type Cast node. Cast the column to the target type (text → integer, text → date, etc.).
+4. Add a COALESCE step (calculated column or null-replace node) to replace any remaining nulls with a documented default value.
+5. Add a post-transform Sample to verify the output contains only valid typed values.
+
+```
+[Source: equip_status_raw]
+       |
+[Filter: Remove rows where equipment_id = 'N/A' OR equipment_id IS NULL]
+       |
+[Type Cast: report_date (text) → date; equipment_id (text) → integer]
+       |
+[Calculated Column: COALESCE(status_code, 'UNKNOWN') AS status_code]
+       |
+[Sample: verify types and values before output]
+       |
+[Output: equip_status_staging]
+```
+
+> **NOTE:** Always handle nulls BEFORE type casting. Casting a null can fail or produce unexpected results depending on the source data format. The order is: filter invalid values → cast types → coalesce remaining nulls.
+
+---
+
+## B-4. Rollup and Aggregation (Changing Grain)
+
+**Use case:** You need a summary dataset from row-level data — for example, counting open work orders by unit from a row-per-work-order source, or summing personnel strength by company from a row-per-soldier source.
+
+**When to apply:** When the Object Type or Workshop widget requires summary-level data, not individual records.
+
+**Procedure:**
+
+1. Identify the target grain (e.g., one row per unit per day).
+2. Add a Group By node. Select the columns that define the target grain (e.g., `unit_id`, `report_date`).
+3. Configure the aggregation metrics: SUM for quantities, COUNT for totals, MAX or MIN for extremes, AVG for rates.
+4. Run the pipeline and spot-check: pick 2–3 groups from the output and manually verify the aggregated value against the source sample.
+5. Document the grain in the output dataset description.
+
+```
+[Source: maint_records_curated]  (one row per work order)
+       |
+[Group By: unit_id, report_date
+ Aggregations: COUNT(*) as open_work_orders,
+               SUM(estimated_repair_hours) as total_repair_hours]
+       |
+[Output: maint_summary_by_unit_daily_curated]  (one row per unit per day)
+```
+
+> **NOTE:** Document the grain change in the output dataset description. Downstream users must know this is a summary, not row-level data. If a user needs row-level detail later, they must return to the pre-aggregation dataset.
+
+---
+
+## B-5. Standard SITREP Ingestion Pattern
+
+**Use case:** Daily SITREP feed arrives as a structured file or shared dataset. Clean, deduplicate, and load to curated layer for Ontology backing.
+
+**Procedure:**
+
+1. Connect to the authorized source connector for the SITREP feed (SharePoint file, SFTP, or shared dataset — coordinate with Data Steward for the correct connector).
+2. Add a Filter node to remove rows where `unit_id IS NULL`.
+3. Add a Select Columns node to retain only the required fields.
+4. Add a Rename Columns node to align column names to the curated naming convention.
+5. Add a Deduplicate node on `unit_id + report_date` to keep only one record per unit per reporting period (keep most recent).
+6. Run the pipeline and verify: output row count should equal the number of reporting units.
 
 ```
 [Source: SITREP Feed]
        |
 [Filter: Remove rows where unit_id IS NULL]
        |
-[Select Columns: Keep unit_id, unit_name, report_date, status_code, remarks]
+[Select Columns: unit_id, unit_name, report_date, status_code, remarks]
        |
-[Rename Columns: status_code -> status, remarks -> sitrep_text]
+[Rename Columns: status_code → status, remarks → sitrep_text]
        |
-[Deduplicate: on unit_id + report_date (keep most recent)]
+[Deduplicate: on unit_id + report_date — keep most recent]
        |
 [Output: sitrep_feed_curated]
 ```
 
-**Schedule:** Daily at 0200 UTC.
+**Schedule:** Daily at 0200 UTC (before morning staff meetings).
 
-**Notes:** Verify row count equals number of reporting units. Alert if row count drops below historical average -- this indicates missing unit reports.
+> **NOTE:** Alert your Data Steward if the output row count drops below the historical average — this indicates one or more units failed to report. Do not assume a low row count is normal.
 
 ---
 
-## B-2. Multi-Source Readiness Consolidation Pattern
+## B-6. Union of Multiple Sources
 
-**Use case:** Readiness data arrives from multiple unit sources (VCORPS, 21st TSC, 7ATC). Standardize and combine.
+**Use case:** The same entity type is reported by multiple source systems with different schemas (e.g., readiness data from V Corps, 21st TSC, and 7th ATC each arriving via separate feeds; or MTOE units from one system and augmentation force units from another).
+
+**When to apply:** When you need a single consolidated dataset representing all instances of an entity regardless of source.
+
+**Procedure:**
+
+1. Ingest each source dataset separately.
+2. For each source, add a Rename/Select node to normalize the schema: ensure column names and data types match exactly across all sources. This step is mandatory — do not skip it.
+3. Add a `source_system` Calculated Column to each branch with the source name as a literal value (e.g., `'VCORPS'`, `'21TSC'`, `'7ATC'`). This preserves data provenance in the output.
+4. Connect all branches to an Append (Union) node.
+5. Add a Deduplicate node after the Append if sources can overlap (i.e., the same entity appears in more than one source).
+6. Verify: output row count should equal the sum of all branch row counts, minus any cross-source duplicates removed in step 5.
 
 ```
 [Source: VCORPS Feed]   [Source: 21TSC Feed]   [Source: 7ATC Feed]
          |                       |                       |
-[Rename: standardize    [Rename: standardize   [Rename: standardize
- to common schema]       to common schema]      to common schema]
+[Normalize schema +     [Normalize schema +    [Normalize schema +
+ source_system='VCORPS'] source_system='21TSC']  source_system='7ATC']
          |                       |                       |
-         +---------------+-------+-----------------------+
-                         |
-               [Append (Union): combine all rows]
-                         |
-               [Deduplicate: on unit_id + report_date]
-                         |
-               [Output: readiness_consolidated_curated]
+         +-----------+-----------+-----------------------+
+                     |
+           [Append (Union): combine all rows]
+                     |
+           [Deduplicate: on unit_id + report_date — if sources can overlap]
+                     |
+           [Output: readiness_consolidated_curated]
 ```
 
-**Notes:** Each source feed may have slightly different column names. Rename/Select nodes before the Append must produce identical schemas. Verify column names and data types match across all three branches before connecting to the Append node.
+> **CAUTION:** Never union two datasets without first confirming column type alignment. A column that is `text` in one source and `integer` in another will fail silently or cause type errors downstream. Normalize types in each branch before the Append node.
 
 ---
 
-## B-3. Snapshot-to-Current Join Pattern
-
-**Use case:** A daily snapshot feed contains one row per unit per day. Show only the most recent status for each unit.
-
-```
-[Source: readiness_snapshot_raw]
-       |
-[Aggregate: Group By unit_id; Max(report_date) as latest_date]
-       |
-[Join: Join back to source on unit_id AND report_date = latest_date]
-       |
-[Select Columns: remove duplicate date columns from join output]
-       |
-[Output: readiness_current_curated]
-```
-
-**Notes:** If the pipeline runs before all units have reported, the latest date may not represent a complete dataset. Document this limitation in the pipeline description.
-
----
-
-## B-4. Logistics Maintenance Tracking Pattern
+## B-7. Logistics Maintenance Tracking Pattern
 
 **Use case:** GCSS-A maintenance data needs to be joined with unit assignment data to show which unit owns each item with open work orders.
+
+**Procedure:**
+
+1. Ingest the GCSS-A maintenance source dataset.
+2. Add a Filter node to retain only records with active work orders (`status_code IN ('OPEN', 'IN_PROG')`).
+3. Ingest the unit assignment curated dataset.
+4. Standardize the join key (bumper number) on both sides: verify case, leading zeros, and spacing match exactly. Add a Rename or Calculated Column node to normalize formatting if they differ.
+5. Perform an Inner Join on the bumper number column.
+6. Output to curated layer.
 
 ```
 [Source: gcss_a_maint_raw]         [Source: unit_assignment_curated]
@@ -1831,81 +2004,83 @@ The following patterns address the most common USAREUR-AF data ingestion scenari
                    [Output: maint_open_work_orders_curated]
 ```
 
-**Notes:** Bumper numbers must be formatted consistently in both datasets (case, leading zeros, spacing). Add a Rename node to standardize formatting before the join if source formats differ.
+> **CAUTION:** Bumper number formatting inconsistencies (case, leading zeros, hyphens) are the most common cause of zero-row output on this join. Always sample both datasets and visually compare key values before running a full join.
 
 ---
 
 # GLOSSARY
 
-**Action** -- A configured, form-based operation in the Foundry Ontology that allows authorized users to write data back to a backing dataset (e.g., submit a SITREP update, mark a maintenance record complete). Configured in Ontology Manager; invoked through Workshop form widgets. TM-20 Actions are single-step. Multi-step Actions with conditional routing are TM-30 scope.
+Terms are defined in plain English with USAREUR-AF operational context where applicable. Foundry-specific terms reflect TM-20 no-code usage; TM-30 and advanced usage is noted where the term has a broader meaning.
 
-**AOR** -- Area of Responsibility. The geographic and functional area within which a command has authority to act. USAREUR-AF's AOR covers the European theater.
+---
 
-**Backing Dataset** -- The curated dataset whose columns supply the property values for an Object Type in the Ontology. The Ontology reads from backing datasets; it does not store data independently.
+**Action** — A configured, form-based operation in the Foundry Ontology that allows authorized users to write data back to a backing dataset. Examples: submitting a SITREP update, marking a maintenance record complete, or updating a unit status field. Actions are configured in Ontology Manager and invoked through Workshop form widgets or buttons. TM-20 Actions are single-step. Multi-step Actions with conditional routing, approval chains, or sequential writes are TM-30 scope.
 
-**Branch** -- An isolated copy of the Foundry Ontology and associated resources in which a builder can make and test changes without affecting the production (main) environment.
+**Aggregation** — A mathematical operation that reduces multiple rows to a single summary value. Common aggregation functions: SUM (total a numeric column), COUNT (count rows), AVG (average), MAX (highest value), MIN (lowest value). Aggregation always changes the grain of a dataset. Document the grain change whenever you aggregate. See Pattern B-4.
 
-**C2DAO** -- Command and Control Data Analytics Office. The USAREUR-AF organizational authority for data governance, data standards, and MSS build approval. Certain build actions require C2DAO approval before proceeding.
+**AOR** — Area of Responsibility. The geographic and functional area within which a command has authority to act. USAREUR-AF's AOR covers the European theater. An AOR filter is a common default filter applied in Workshop applications to restrict data to records relevant to a specific unit's geographic responsibility.
 
-**Cardinality** -- The description of how many of one Object Type relate to another in a Link Type. Many-to-One: many soldiers assigned to one unit. One-to-One: one readiness record per soldier per day.
+**Branch (Dev/Production)** — An isolated environment copy in Foundry where a builder makes and tests changes without affecting the live system. Development (dev) branches are the builder's workspace. The production branch (typically called `main`) is what all users see. Changes move from dev to production via a merge request and peer review. TM-20 builders never edit the production branch directly.
 
-**Check In** -- The act of saving versioned changes to a Foundry branch. Always include a descriptive message explaining what was changed and why.
+**Builder** — A Foundry user with Editor-level access who creates and modifies pipelines, Ontology configurations, and Workshop applications. Builders have elevated privileges compared to Operators (TM-10 users). Builder access requires chain-of-command approval and completion of this manual.
 
-**Compass** -- The Foundry file and resource explorer. All MSS resources (datasets, pipelines, Workshop apps, Ontology) are navigated and managed through Compass.
+**Calculated Column** — A transform step in Pipeline Builder that creates a new column by applying a formula or expression to existing columns. Examples: concatenating two fields, computing a derived value, or applying COALESCE to replace nulls. No code required at TM-20 level — Pipeline Builder provides a formula editor UI.
 
-**Connector** -- A pre-configured integration point between Foundry and an external data source (SharePoint file, SFTP feed, Army system). Connectors are authorized and managed by the C2DAO; builders select from an approved list.
+**Cardinality** — The description of how many records in one dataset or Object Type relate to records in another. Key cardinality types: One-to-One (one readiness record per unit per day), One-to-Many (one unit has many equipment items), Many-to-Many (many soldiers can be assigned to many tasks). Cardinality determines how to configure Link Types and how to handle joins to avoid fan-out. See Section 9-2 and Pattern B-2.
 
-**Contour** -- The Foundry interactive analysis tool. Allows analysts and builders to build table, chart, and pivot views of datasets and Object Types, saved as reusable analyses.
+**Classification Marking** — The required security designation applied to every dataset and application on MSS. Standard markings: UNCLASSIFIED, CUI (Controlled Unclassified Information), SECRET. Marking must be applied before any dataset is published or shared. When in doubt, treat data as CUI and confirm with your Data Steward before publishing. Incorrect marking is a reportable security incident.
 
-**CUI** -- Controlled Unclassified Information. Data requiring safeguarding per law, regulation, or government-wide policy. Requires specific handling and access controls on MSS. Contact your data steward before ingesting any CUI source.
+**Coalesce** — A function that returns the first non-null value from a list of inputs. In Pipeline Builder, COALESCE is used to replace null values with a documented default (e.g., `COALESCE(status_code, 'UNKNOWN')`). Always apply COALESCE after filtering invalid values and before type casting. See Pattern B-3.
 
-**Curated Dataset** -- A publication-ready dataset: cleaned, validated, and stable in schema. Ontology Object Types are backed by curated datasets. Never back an Object Type with a raw or staging dataset.
+**Contour** — The Foundry interactive analysis tool. Allows builders and analysts to build table, chart, and pivot views of datasets and Object Types. Analyses are saved as reusable, shareable resources. Use Contour for ad-hoc data exploration and quality-checking pipeline outputs. Contour reads from both datasets and Ontology Object Types.
 
-**Data Steward** -- The unit-level accountable official for a specific data domain. First point of contact for any data governance question. Must approve new data source connections and access changes.
+**Data Steward** — The unit-level accountable official for a specific data domain. First escalation point for all data governance questions. Must approve new data source connections, access changes, and classification decisions. The Data Steward is not optional — they are the gateway between your build activity and the broader data governance chain.
 
-**ETL** -- Extract, Transform, Load. The process of pulling data from a source, cleaning or reshaping it, and writing the result to a destination. Pipeline Builder is MSS's no-code ETL tool.
+**Dataset** — A tabular data resource in Foundry, organized as rows and columns. Datasets exist in three tiers: raw (unprocessed, direct from source), staging (cleaned but not yet validated), and curated (publication-ready, schema-stable). Ontology Object Types are backed by curated datasets only. See also: Backing Dataset, Raw Dataset, Staging Dataset, Curated Dataset.
 
-**Foreign Key** -- A column in one dataset that contains values matching the primary key of another dataset. Used to configure Link Types between Object Types.
+**Deduplication** — The process of removing duplicate rows from a dataset, retaining only one record per unique entity (or entity + time period). Deduplication is a business rule decision — which record you keep must be documented and justified. See Pattern B-1. Common causes of duplicate data: source systems that send repeated records on each extract, multiple feeds reporting the same event, or fan-out from a poorly constructed join.
 
-**Foundry** -- The Palantir data platform on which MSS is built. All tools described in this manual (Pipeline Builder, Ontology Manager, Workshop, Contour, Quiver) are components of Palantir Foundry.
+**ETL (Extract, Transform, Load)** — The three-step process of pulling data from a source (Extract), cleaning or reshaping it (Transform), and writing the result to a destination (Load). Pipeline Builder is MSS's no-code ETL tool. Understanding ETL is the conceptual foundation for all pipeline work in this manual.
 
-**Link Type** -- A configured relationship between two Object Types in the Foundry Ontology (e.g., a SoldierReadiness object linked `assignedTo` a UnitStatus object). Configured in Ontology Manager.
+**Fan-Out** — A pipeline defect that occurs when a join inflates the row count beyond what is expected, because one side of the join has multiple matching rows per key value. Fan-out silently corrupts downstream aggregations. Always COUNT(*) before and after joins to detect fan-out. See Section 9-2 and Pattern B-2.
 
-**Main Branch** -- The production branch of the Foundry Ontology. What all users see and depend on. TM-20 builders never edit main directly. All changes go through a development branch and merge request.
+**Filter** — A transform step (in Pipeline Builder) or a UI element (in Workshop) that restricts data to rows matching specific conditions. In Pipeline Builder, filters reduce the dataset at a given pipeline step. In Workshop, filter widgets allow operators to interactively narrow the displayed data. All Workshop filter widgets must be explicitly connected to the tables and charts they are intended to control.
 
-**Merge Request** -- A formal request to integrate changes from a development branch into the main branch. Requires a description of changes, test results, and approval from a designated reviewer.
+**Foreign Key** — A column in one dataset that contains values matching the primary key of another dataset. Foreign keys are used to configure Link Types between Object Types in the Ontology and to perform join operations in Pipeline Builder. Foreign key values must match the format and type of the primary key they reference — type or format mismatches are a common cause of zero-row join output.
 
-**MSS** -- Maven Smart System. The USAREUR-AF enterprise AI/data platform, built on Palantir Foundry.
+**Foundry (Palantir Foundry)** — The enterprise data platform on which MSS is built. Foundry provides the full stack: data ingestion (connectors), data processing (Pipeline Builder), semantic modeling (Ontology), analysis (Contour, Quiver), and application development (Workshop). All tools described in this manual are components of Palantir Foundry deployed as MSS by USAREUR-AF.
 
-**Object Type** -- A defined class of entities in the Foundry Ontology. Examples: UnitStatus, SoldierReadiness, MaintenanceRecord. Named in PascalCase singular noun format.
+**Grain** — The level of detail represented by a single row in a dataset. Defining and documenting grain is required for every curated dataset and Ontology Object Type. Example grains: one row per unit per report date; one row per work order; one row per soldier per fiscal year. Grain determines how joins are structured and whether aggregation is needed before an output step. Grain must be documented in the dataset description.
 
-**Ontology** -- The semantic layer of Foundry. Defines what the data means: Object Types (what things exist), Link Types (how they relate), and Actions (what users can do). Workshop applications read from the Ontology, not directly from datasets.
+**Join** — A transform step in Pipeline Builder that combines two datasets by matching rows where a specified key column has the same value in both datasets. Join types: Inner Join (only rows with matching keys in both datasets), Left Join (all rows from the left dataset, matched where possible), Right Join (all rows from the right dataset). TM-20 scope: Inner and Left joins on a single key column. Multi-key or complex joins are TM-30 scope.
 
-**Ontology Manager** -- The Foundry UI tool for creating and managing Object Types, Link Types, and Actions. No code required for TM-20-level configurations.
+**Link Type** — A configured relationship between two Object Types in the Foundry Ontology. Examples: a `MaintenanceRecord` linked `ownedBy` a `UnitStatus`; a `SoldierReadiness` linked `assignedTo` a `UnitRoster`. Link Types are configured in Ontology Manager using the foreign key column on one Object Type matched to the primary key of another. TM-20 scope: one-to-one and one-to-many Link Types. Many-to-many Link Types with junction datasets are TM-30 scope.
 
-**Pipeline Builder** -- The Foundry visual, no-code ETL tool. Builders drag and drop source, transform, and output nodes onto a canvas to build data pipelines without writing code.
+**Null** — The absence of a value in a column. Null is not the same as zero (for numbers) or empty string (for text). Null values in required fields cause pipeline failures, incorrect aggregations, and broken join keys. Handle nulls explicitly: filter them out if they represent invalid records, or replace them with a documented default using COALESCE if a default is acceptable. Always handle nulls before type casting.
 
-**Primary Key** -- The column (or combination of columns) that uniquely identifies each row in a dataset and each object in an Object Type. Must be unique and non-null.
+**Object Type** — A defined class of entities in the Foundry Ontology. Each Object Type represents a real-world thing the system tracks: a unit, an equipment item, a maintenance record, a personnel readiness entry. Object Types are named in PascalCase singular noun format (e.g., `UnitStatus`, `MaintenanceRecord`). Object Types are backed by curated datasets and exposed to users through Workshop applications and Contour analyses.
 
-**Project** -- The top-level organizational container in Foundry Compass. New projects require C2DAO authorization.
+**Ontology** — The semantic layer of Foundry. The Ontology defines what the data means: Object Types (what things exist), Link Types (how they relate), and Actions (what users can do). Workshop applications read from the Ontology, not directly from datasets. The Ontology is the bridge between raw data and user-facing applications. Changes to the Ontology affect all downstream applications — treat them as breaking changes until proven otherwise.
 
-**Property** -- An attribute of an Object Type -- analogous to a column in a table. Configured in Ontology Manager and displayed to users in Workshop applications and Contour analyses. Display names must be plain English.
+**Pipeline** — A configured sequence of data transform steps in Pipeline Builder, connecting a source dataset to an output dataset via a series of nodes (filters, joins, renames, aggregations, etc.). Pipelines are the primary ETL mechanism in MSS. Each pipeline should have one clear input, a documented set of transforms, and one curated output dataset. Pipeline logic must be peer-reviewed before production promotion.
 
-**Quiver** -- The Foundry quick dashboard builder. Assemble charts and metric tiles into a shareable page. Simpler than Workshop; no Actions or complex filters supported.
+**Primary Key** — The column (or combination of columns) that uniquely identifies each row in a dataset and each object in an Object Type. Primary keys must be unique (no duplicates) and non-null. Verify primary key uniqueness before every Ontology write. Duplicate primary keys will cause the Ontology write to fail or produce unpredictable object behavior.
 
-**Raw Dataset** -- Data as it arrives from a source system, before any cleaning or transformation. Not suitable for Ontology backing or direct application use.
+**Project** — The top-level organizational container in Foundry Compass. Projects hold all related datasets, pipelines, Ontology resources, and Workshop applications for a specific mission or unit. New projects require C2DAO authorization. Do not create a new Project when you cannot find yours — search for it and contact your Data Steward.
 
-**Readiness** -- Unit readiness: the assessed ability of a unit to execute its assigned mission. A primary operational data domain in USAREUR-AF MSS.
+**Property** — An attribute of an Object Type, analogous to a column in a table. Each property maps to a column in the backing dataset. Properties are configured in Ontology Manager. Display names must be plain English (not raw column names). Data types are set at configuration time and are effectively immutable once downstream objects connect to the Object Type — verify types before publishing.
 
-**Staging Dataset** -- Intermediate data between raw and curated. Cleaned but not yet fully validated or schema-stabilized. Not suitable for Ontology backing.
+**Quiver** — The Foundry quick dashboard builder. Assemble charts and metric tiles into a simple, shareable page without Workshop's full widget framework. Quiver is well-suited for quick data quality checks, briefing-support views, and ad-hoc analysis. Quiver does not support Actions or interactive filter bindings between widgets — use Workshop for operator-facing applications.
 
-**USAREUR-AF** -- United States Army Europe and Africa. The Army Service Component Command to USEUCOM responsible for theater land operations across the European AOR.
+**Row Count** — The number of records in a dataset or pipeline output at a given step. Row count is the primary sanity check for all pipeline work. Document the expected row count for every curated dataset output. Verify row count before and after every join, filter, and aggregation step. Unexpected row count changes are the most reliable early indicator of a pipeline defect.
 
-**VAUTI** -- The DoD data quality framework: Visible, Accessible, Understandable, Trustable, Interoperable. The standard against which MSS data products are measured.
+**Schema** — The structure of a dataset: the set of column names, their data types, and their order. Schema stability is required for curated datasets — downstream Object Types and pipelines break if a curated dataset's schema changes without coordination. Never rename, remove, or change the type of a column in a curated dataset without notifying all downstream consumers first.
 
-**Widget** -- A UI component in Workshop. Examples: Table, Chart, Filter, Form, Metric Tile, Map. Drag widgets from the Widget Library onto the Workshop canvas and configure them in the Widget Properties panel.
+**Type Cast** — A transform step that converts a column from one data type to another (e.g., text → integer, text → date). Type casting is required when source data delivers values in the wrong type for downstream use. Always filter invalid values before type casting, and always apply COALESCE after casting to handle any remaining nulls. See Pattern B-3.
 
-**Workshop** -- The Foundry drag-and-drop application builder. Builders assemble widgets into interactive applications for end users. Reads from the Ontology (Object Types). No code required for TM-20-level applications.
+**Union** — A transform step (called Append in Pipeline Builder) that combines rows from two or more datasets into a single dataset. All input datasets must have identical column names and data types before the Union node. Add a source provenance column before unioning to track which source each row came from. See Pattern B-6.
+
+**Workshop** — The Foundry drag-and-drop application builder. Builders assemble widgets (tables, charts, filters, forms, metric tiles, maps) into interactive applications for end users. Workshop reads from the Ontology — it does not read directly from datasets. No code is required for TM-20-level applications. Workshop applications are published and access-controlled through the Share panel. All filter widgets must be explicitly connected to the widgets they control.
 
 ---
 

@@ -1,83 +1,12 @@
 # TM-50H — ADVANCED AI ENGINEERING
-## MAVEN SMART SYSTEM (MSS) | USAREUR-AF OPERATIONAL DATA TEAM
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA** | Wiesbaden, Germany | 2026 | Version 1.0
-
-**UNCLASSIFIED**
-Distribution: DRAFT — Not yet approved for distribution.
-
----
-
-**PREREQUISITE PUBLICATIONS:** TM-40H, AI Engineer (required); TM-40I, ML Engineer (recommended); TM-30, Advanced Builder (required); Data Literacy Technical Reference (required).
-
-**APPLIES TO:** Senior AI Engineers, AI Architects, AI Capability Leads. MSS/Palantir Foundry AIP — advanced capability development.
-
----
-
-> **PREREQUISITE WARNING:** TM-50H is **not required** for the majority of AI engineer billets. It is intended for personnel with demonstrated proficiency at TM-40H level who are actively designing AI system architectures, retrieval infrastructure, or agent orchestration frameworks on MSS. If you are uncertain whether TM-50H applies to your billet, consult your supervisor or the unit data steward before proceeding.
-
----
-
-## SAFETY SUMMARY
-
-Senior AI engineers at the TM-50H level design systems, not just features. Decisions made at this
-level — infrastructure choices, retrieval architectures, agent orchestration patterns, governance
-frameworks — propagate downstream to every capability built on the platform. A poor architecture
-decision at this level does not break one workflow. It breaks the team's ability to build reliably.
-
-Before operating at TM-50H level:
-
-- Ensure every AI system you architect includes a documented human review gate for outputs that
-  inform command decisions. This is non-negotiable under Army CIO Memo (April 2024).
-- No AI system you build shall transmit CUI, FOUO, or classified content to an inference endpoint
-  not authorized at the appropriate classification level. Verify endpoint authorization before
-  integration, not after.
-- All fine-tuning, domain adaptation, or model modification work involving operational corpora
-  must be reviewed by the USAREUR-AF Staff Judge Advocate (SJA) for legal and policy clearance
-  before execution.
-- AI red-teaming activity — including adversarial prompt injection testing — must be coordinated
-  with the C2DAO and conducted only in isolated development environments. Never red-team a
-  production system.
-- Multi-agent systems that can chain Actions against the Ontology require explicit circuit-breaker
-  logic and rate-limiting. Uncontrolled agent loops have caused irreversible ontology state changes
-  in other Foundry environments.
+> **BLUF:** TM-50H qualifies senior AI engineers to architect, govern, and lead enterprise AI capability development on the Maven Smart System. The focus is on systems — multi-agent pipelines, advanced retrieval architectures, domain-adapted models, adversarial resilience, and the governance structures that make AI trustworthy at operational scale.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: THIS MANUAL CONTAINS ADVANCED TECHNIQUES INCLUDING ADVERSARIAL AI TESTING,
-> LLM FINE-TUNING ON OPERATIONAL DATA, AND MULTI-AGENT ORCHESTRATION. MISAPPLICATION OF
-> THESE TECHNIQUES IN PRODUCTION ENVIRONMENTS CAN RESULT IN DATA INTEGRITY FAILURES, OPSEC
-> VIOLATIONS, OR AI-GENERATED DISINFORMATION PROPAGATING INTO OPERATIONAL PRODUCTS. ALL
-> TASKS IN THIS MANUAL REQUIRE C2DAO AUTHORIZATION AND DOCUMENTED RISK ACCEPTANCE FROM
-> THE RESPONSIBLE PRODUCT OWNER BEFORE EXECUTION IN ANY ENVIRONMENT CONNECTED TO LIVE
-> OPERATIONAL DATA.**
-
 > **WARNING: AI-GENERATED OUTPUTS ARE NOT AUTHORITATIVE. NO OUTPUT FROM ANY SYSTEM BUILT
-> UNDER THIS MANUAL SHALL SUPPORT TARGETING, INTELLIGENCE ASSESSMENT, OR COMMAND DECISIONS
-> WITHOUT DOCUMENTED HUMAN REVIEW BY A QUALIFIED ANALYST. ARMY CIO MEMO (APRIL 2024)
-> AND DOD RAIMTF (2024) REQUIRE HUMAN ACCOUNTABILITY FOR ALL AI-INFORMED DECISIONS.**
-
 > **CAUTION: Fine-tuned models trained on operational corpora retain information from training
-> data. Do not train models on data classified above the inference endpoint's authorization level.
-> Coordinate with the USAREUR-AF Information Security Officer before any fine-tuning activity.**
-
 > **NOTE:** TM-40H is a hard prerequisite. TM-50H does not re-teach AIP Logic, Agent Studio,
-> RAG fundamentals, or basic evaluation. It extends them to enterprise scale and advanced
-> architecture. If any TM-40H topic is unfamiliar, complete TM-40H first.
-
----
-
-## TABLE OF CONTENTS
-
-- Chapter 1 — Introduction and Scope
-- Chapter 2 — Multi-Agent Orchestration Systems
-- Chapter 3 — LLM Fine-Tuning and Domain Adaptation
-- Chapter 4 — Advanced RAG Architecture
-- Chapter 5 — AI Red-Teaming and Adversarial Testing
-- Chapter 6 — Production AI Observability
-- Chapter 7 — Multi-Modal AI Systems
-- Chapter 8 — Enterprise AI Architecture and Governance
-- Appendix A — AI Production Readiness Checklist
-- Appendix B — AI Evaluation Framework
-- Glossary
 
 ---
 
@@ -167,6 +96,8 @@ of these three elements is missing, the capability does not go to production.
 `[→ TM-40I]` or `[→ TM-50I]`. These are not optional references — senior AI engineers are
 expected to coordinate with counterparts in those tracks, not work in isolation.
 
+1-10. **WFF Operational Consumer Note.** The six Warfighting Function (WFF) tracks — Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F) — are the primary operational consumers of AI-enabled capabilities built by TM-50H engineers. WFF practitioners use AI-generated products to support intelligence synthesis, targeting, logistics optimization, force protection analysis, and command decision support. When designing AI systems, TM-50H engineers must understand the WFF workflows the system will be embedded in: who uses the output, under what time pressure, and what decision it supports.
+
 ---
 
 ### 1-4. Policy Framework
@@ -196,6 +127,10 @@ the USAREUR-AF G6 in writing.
 exceed the scope of a single AIP Logic workflow. This chapter covers the architectural patterns,
 implementation approaches, failure modes, and safety requirements for orchestrating two or more
 AI agents in coordinated operation.
+
+> **NOTE — Palantir Developers reference:** *Product Launch: Hivemind | DevCon 5* — Covers Hivemind, Palantir's multi-agent coordination framework for enterprise AI workflows. Provides platform-level context for the orchestration patterns, shared state design, and circuit breaker requirements described in this chapter. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Deep Dive: Advanced Agent Reasoning with Knowledge Nodes x First Solar | DevCon 4* — Demonstrates advanced multi-agent reasoning using Knowledge Nodes for grounded, knowledge-backed agent decisions. Directly relevant to knowledge-grounded agent design and the reflexive orchestration patterns in section 2-2. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 ---
 
@@ -1395,6 +1330,8 @@ Production AI systems drift, degrade, and fail in ways that cannot be predicted 
 This chapter covers the monitoring architecture, metrics, alerting thresholds, and response
 procedures required to maintain operational AI systems on MSS.
 
+> **NOTE — Palantir Developers reference:** *Product Launch: DevOps for AI Products | DevCon 2* — Covers DevOps practices adapted for AI product delivery, including CI/CD patterns, monitoring integration, and governance gates for AI systems. Directly relevant to the production readiness gate, observability dashboard design, and deployment procedures in this chapter. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 ---
 
 ### 6-1. Why AI Observability Is Different
@@ -2011,6 +1948,10 @@ systematic evaluation of third-party models, and documented accountability. This
 covers the architectural and governance responsibilities of the senior AI engineer as
 platform leader, not just system builder.
 
+> **NOTE — Palantir Developers reference:** *Building Enterprise Autonomy with Shyam Sankar, CTO* — Strategic framing from Palantir's CTO on the architecture and principles behind enterprise AI autonomy. Useful orientation before working through the enterprise architecture principles and governance structures in this chapter. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+> **NOTE — Palantir Developers reference:** *Product Launch: Enterprise Automation | DevCon 5* — Covers Palantir's enterprise automation platform capabilities, including how AI systems scale across organizational boundaries. Relevant to the composable infrastructure principles and shared component governance in sections 8-1 and 8-2. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
 ---
 
 ### 8-1. Enterprise AI Architecture Principles
@@ -2587,6 +2528,6 @@ shared state across agents in a workflow, providing persistence and audit trail.
 
 *TM-50H, Advanced AI Engineering, Maven Smart System, USAREUR-AF Operational Data Team.*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026.*
-*UNCLASSIFIED. Distribution: DRAFT — Not yet approved for distribution.*
+*UNCLASSIFIED. Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
 
 *PREREQUISITE: TM-40H, AI Engineer. Cross-references: TM-40I, ML Engineer; TM-50I, ML Engineer Advanced; TM-50K, Knowledge Manager Advanced; TM-50L, Software Engineer Advanced.*

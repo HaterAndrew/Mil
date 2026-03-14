@@ -5,7 +5,7 @@
 |---|---|
 | **Level** | TM-40I (ML Engineer Specialist Track) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-10, TM-20, TM-30 (all Go evaluations on file); Data Literacy Technical Reference (recommended); working Python proficiency (pandas, scikit-learn, PyTorch or equivalent); statistics fundamentals |
+| **Prerequisites** | TM-10, TM-20, TM-30 (all Go evaluations on file — **REQUIRED**, not recommended); Data Literacy Technical Reference (recommended); working Python proficiency (pandas, scikit-learn, PyTorch or equivalent); statistics fundamentals |
 | **Audience** | ML engineers, data scientists building and deploying models on MSS |
 | **Format** | Instructor-led lab + guided practice + practical exercise |
 | **Location** | MSS Training Environment (GPU-enabled Code Workspace required) |
@@ -176,6 +176,28 @@ Complete **10+ duty days before Day 1:**
 | Model calibration | Ignored in most academic ML work — Army operational products require calibrated probabilities. Use Platt scaling or isotonic regression. Chapter 5 has the procedure |
 | Drift detection threshold | Must be a real threshold — not "any change." Define it based on validation set baseline and document why. "Alert when PSI > 0.2" is defensible |
 | Foundry write transaction | Test this on Day 1 (Block 3), not Day 4. Trainees who skip Block 3 consistently lose time during the evaluation when the write fails |
+
+---
+
+## Continuation
+
+Graduates managing production ML systems or building platform infrastructure used by other data scientists may pursue **TM-50I (Advanced ML Engineering)**. TM-50I covers enterprise drift detection, automated retraining pipelines, feature stores, ensemble architecture at scale, model governance documentation, and production model audits. Prerequisites: TM-40I Go evaluation on file; 12+ months active ML engineering experience in a production context.
+
+---
+
+## Associated Exercises and Assessments
+
+| Item | Reference |
+|---|---|
+| Pre-course exam | EXAM_TM40I_PRE |
+| Post-course exam | EXAM_TM40I_POST |
+| Practical exercise | EX-40I (EXERCISE.md + ENVIRONMENT_SETUP.md) |
+
+---
+
+## Relationship to WFF Tracks
+
+WFF track analysts (TM-40A through TM-40F) are the operational consumers of predictive models built in this course. ML engineers should understand the prediction products each WFF community uses: sustainment analysts (TM-40D) consume equipment failure prediction and demand forecasting models; intelligence analysts (TM-40A) use anomaly detection outputs; protection analysts (TM-40E) rely on readiness prediction models for force protection resourcing.
 
 ---
 

@@ -1,27 +1,8 @@
-# CONCEPTS GUIDE — TM-40I COMPANION
-## MACHINE LEARNING ENGINEER
-## MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — TM-40I COMPANION — MACHINE LEARNING ENGINEER · MAVEN SMART SYSTEM (MSS)
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany | 2026
-
-**PURPOSE:** Develops the mental models required to build, deploy, and maintain ML models on MSS effectively. Read before beginning TM-40I task instruction.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-## TABLE OF CONTENTS
-
-1. The MLE's Role on MSS
-2. Decomposing an Operational ML Problem
-3. Feature Engineering as Domain Modeling
-4. Training Data in an Operational Context
-5. Model Evaluation — Operational Metrics vs. Statistical Metrics
-6. Deployment as a System, Not an Event
-7. Model-Backed Ontology Properties — The Foundry-Specific Mental Model
-8. Bias and Fairness in Operational Models
-9. Common MLE Failure Modes on MSS
+> **BLUF:** The ML Engineer builds, validates, and maintains production ML models that generate operationally useful predictions. The MLE owns the full model lifecycle — from raw feature engineering through deployed drift detection. That ownership does not end at deployment.
+> **Purpose:** Develops the mental models required to build, deploy, and maintain ML models on MSS effectively. Read before beginning TM-40I task instruction.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
@@ -433,10 +414,25 @@ Bias mitigation is most effective during feature engineering and training, not a
 
 ---
 
+---
+
+## CURRICULUM NOTES
+
+**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED before beginning TM-40I or this guide. Python proficiency (scikit-learn, PyTorch or statsmodels, SQL) is separately required.
+
+**Advanced track:** TM-40I graduates should pursue **TM-50I (Advanced ML Engineer)** as the next step in the specialist progression. TM-50I addresses neural architecture selection for operational data, large-scale feature stores, advanced MLOps patterns, and federated learning considerations for coalition environments.
+
+**Peer specialist cross-references:**
+- **TM-40H (AI Engineer):** The MLE owns the model artifact; the AI Engineer owns the orchestration layer around it. These roles meet at the model/workflow interface — coordinate before any production deployment where model outputs feed AIP Logic chains.
+- **TM-40G (ORSA):** The ORSA applies methods to one-time analytical questions; the MLE builds continuously-operating prediction systems. Coordinate when a recurring prediction requirement emerges from an ORSA analysis — the ORSA defines the analytical question and validates the model approach.
+- **TM-40L (Software Engineer):** Coordinate on production pipeline implementation when model complexity exceeds standard Foundry Transforms, and on OSDK application layers that surface model-backed properties.
+
+**WFF awareness:** ML models deployed on MSS attach prediction properties to Ontology objects visible to WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). A readiness prediction score is seen by Sustainment (TM-40D) staff; a threat pattern model output is seen by Intelligence (TM-40A) staff. Design model outputs and explainability with the consuming WFF function's operational context and decision authority in mind.
+
 *This document is a prerequisite companion to TM-40I (ML Engineer). Proceed to TM-40I task instruction upon completion.*
 
 ---
 
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
+**DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
 
 **Document Control:** Version 1.0 | 2026 | USAREUR-AF Operational Data Team | Associated Manual: TM-40I

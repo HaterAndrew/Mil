@@ -37,7 +37,7 @@
 Complete **7+ duty days before Day 1:**
 
 - [ ] Confirm AIP Logic advanced access (multi-agent features) with C2DAO — standard AIP Logic access is insufficient for Day 3 content
-- [ ] Read TM-50H, Chapter 1 (AI System Architecture Overview) and Chapter 7 (AI Governance and Safety) before Day 1
+- [ ] Read TM-50H, Chapter 1 (Introduction and Scope) and Chapter 8 (Enterprise AI Architecture and Governance) before Day 1
 - [ ] Prepare a 1-page description of an AI system or workflow you currently maintain — you will use this for the architecture review on Day 4
 
 ---
@@ -57,7 +57,7 @@ Complete **7+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 5 | Lab | Retrieval evaluation: building a ground truth query set; automated retrieval quality harness |
 
-**Evening reading:** TM-50H, Chapter 2 (Multi-Agent Architecture).
+**Evening reading:** TM-50H, Chapter 4 (Advanced RAG Architecture).
 
 ---
 
@@ -74,7 +74,7 @@ Complete **7+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 9 | Lab | Prompt version control and regression testing: tracking prompt changes, automated comparison of output distributions |
 
-**Evening reading:** TM-50H, Chapter 3 (Multi-Agent Orchestration) — agent routing and failure recovery sections.
+**Evening reading:** TM-50H, Chapter 2 (Multi-Agent Orchestration Systems) — agent routing and failure recovery sections.
 
 ---
 
@@ -91,7 +91,7 @@ Complete **7+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 13 | Lab | Tool hand-off patterns: structured tool output schemas, downstream tool input validation, circular dependency detection |
 
-**Evening reading:** TM-50H, Chapter 5 (AI Governance and Audit) — human-in-the-loop gate design.
+**Evening reading:** TM-50H, Chapter 8 (Enterprise AI Architecture and Governance) — human-in-the-loop gate design.
 
 ---
 
@@ -120,6 +120,16 @@ Complete **7+ duty days before Day 1:**
 | 0900–1700 | 20 | **Eval** | **Evaluated exercise:** Design and build a multi-agent retrieval system with governance gates; produce a system architecture document and evaluation harness |
 
 **Go standard:** System functional with at least 2 agents + retrieval tool; governance gate present; architecture document complete with failure modes register.
+
+---
+
+## Peer Advanced Tracks
+
+| Track | Relevance to TM-50H |
+|---|---|
+| TM-50I (Advanced ML Eng) | ML model serving integration with AI pipelines; retraining triggers from AI output quality monitoring |
+| TM-50G (Advanced ORSA) | AI-assisted analytical products; grounding AI reasoning in quantitative ORSA outputs |
+| TM-50L (Advanced SWE) | OSDK-backed AI system integrations; platform security requirements for AI applications consuming sensitive Ontology data |
 
 ---
 

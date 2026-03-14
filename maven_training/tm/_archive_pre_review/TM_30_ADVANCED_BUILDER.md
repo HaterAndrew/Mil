@@ -10,7 +10,7 @@ Wiesbaden, Germany
 
 **PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; Data Literacy Technical Reference (all required).
 **APPLIES TO:** Data-adjacent specialists (17/25-series, S6/G6/G2/G9, operational data analysts). Covers Foundry Workshop, Pipeline Builder, Contour, Quiver, AIP Logic (UI only).
-**DISTRIBUTION RESTRICTION:** Approved for public release; distribution is unlimited.
+**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
 ---
 
@@ -2042,4 +2042,4 @@ data-driven operational interfaces using configurable widgets without writing co
 
 *TM-30 — Maven Smart System Advanced No-Code Builder Technical Manual*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026*
-*Distribution Restriction: Approved for public release; distribution is unlimited.*
+*Distribution Restriction: DRAFT — Not yet approved for distribution.*

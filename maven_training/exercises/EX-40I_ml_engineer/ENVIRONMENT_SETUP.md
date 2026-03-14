@@ -1,5 +1,8 @@
 # ENVIRONMENT SETUP — EX-40I ML Engineer
 
+**Track:** EX-40I — ML Engineer (TM-40I) | **Prerequisite:** TM-30 REQUIRED | **Continuation:** TM-50I — Advanced ML Engineer
+**Companion exams:** EXAM_TM40I_PRE (administer before exercise), EXAM_TM40I_POST (administer after exercise)
+
 ## Environment Type
 
 MSS with Python Transforms, Model Integration (Foundry model registry), and Ontology edit access.

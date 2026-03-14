@@ -1,4 +1,6 @@
-# ENVIRONMENT SETUP — EX-40E Protection
+# ENVIRONMENT SETUP — EX-40E Protection (TM-40E)
+
+**Companion resources:** TM_40E_PROTECTION.md | SYLLABUS_TM40E | EXAM_TM40E_PRE / EXAM_TM40E_POST
 
 ## Environment Type
 

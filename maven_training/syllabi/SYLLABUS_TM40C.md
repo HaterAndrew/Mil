@@ -5,7 +5,7 @@
 |---|---|
 | **Level** | TM-40C — Movement and Maneuver WFF Track |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-10, TM-20 (Go evaluations on file); CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER (required reading before Day 1) |
+| **Prerequisites** | TM-10, TM-20, TM-30 (Go evaluations on file); CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER (required reading before Day 1) |
 | **Audience** | G3/S3 maneuver staff, operations officers, assistant S3s, S3 NCOs, and maneuver planners at BCT echelon and below |
 | **Format** | Instructor-led seminar + demonstration + tabletop exercise + practical evaluation |
 | **Location** | MSS Training Environment (standard user access sufficient) |
@@ -57,7 +57,7 @@ Complete **5+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 5 | Exercise | CCIR configuration drill: given maneuver CCIRs from commander's guidance, configure phase line crossing and objective status triggers; verify they fire on test data |
 
-**Evening reading:** TM-40C, Chapter 4 (Maneuver COP Management in MSS) — data currency procedures for unit position feeds.
+**Evening reading:** TM-40C, Chapter 8 (Force Tracking and Blue Force Situational Awareness) — data currency procedures for unit position feeds.
 
 ---
 
@@ -74,7 +74,7 @@ Complete **5+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 9 | Exercise | Operational visualization drill: build a COA overlay and task organization product from a provided OPORD fragment; evaluator reviews for data currency, task org accuracy, and OPSEC marking |
 
-**Evening reading:** TM-40C, Chapter 6 (MDMP Support and Operational Visualization) and Chapter 8 (OPSEC for Maneuver Products).
+**Evening reading:** TM-40C, Chapter 2 (Operational Planning and Orders in MSS) and Chapter 11 (Reporting and Products for Maneuver Operations).
 
 ---
 
@@ -97,10 +97,10 @@ Complete **5+ duty days before Day 1:**
 | When | Reading |
 |---|---|
 | Before Day 1 | CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER (complete) |
-| Day 1 evening | TM-40C, Ch 4 (Maneuver COP Management in MSS) |
-| Day 2 evening | TM-40C, Ch 6 (MDMP Support and Operational Visualization) |
-| Day 2 evening | TM-40C, Ch 8 (OPSEC for Maneuver Products) |
-| Day 3 (review) | TM-40C, Ch 10 (Degraded COP Procedures) — skim before Day 3 brief |
+| Day 1 evening | TM-40C, Ch 8 (Force Tracking and Blue Force Situational Awareness) |
+| Day 2 evening | TM-40C, Ch 2 (Operational Planning and Orders in MSS) |
+| Day 2 evening | TM-40C, Ch 11 (Reporting and Products for Maneuver Operations) |
+| Day 3 (review) | TM-40C, Ch 10 (Degraded Operations) — skim before Day 3 brief |
 
 ---
 
@@ -138,6 +138,33 @@ Complete **5+ duty days before Day 1:**
 | Phase lines and route overlays | Drawn manually without a data source connection fail the data currency check — link every layer to a source before Day 1 |
 | Reported vs. confirmed position | Adopt a consistent caveat format before the exercise: "position as of [DTG] per reporting, not confirmed" — apply it every time |
 | Day 2 COA overlay | Moves fast — arrive knowing the OPORD fragment format and how task organization elements map to MSS layer types |
+
+---
+
+## Associated Exercise and Exams
+
+| Item | Reference |
+|---|---|
+| **Practical Exercise** | EX-40C (EXERCISE.md + ENVIRONMENT_SETUP.md) — `exercises/EX-40C/` |
+| **Pre-course exam** | EXAM_TM40C_PRE — `exercises/exams/EXAM_TM40C_PRE.md` |
+| **Post-course exam** | EXAM_TM40C_POST — `exercises/exams/EXAM_TM40C_POST.md` |
+
+---
+
+## Related WFF Tracks
+
+TM-40C is one of six WFF tracks. All require TM-10, TM-20, and TM-30 as prerequisites.
+
+| Track | WFF | Audience |
+|---|---|---|
+| TM-40A | Intelligence | G2/S2 staff, targeting officers, all-source analysts |
+| TM-40B | Fires | FSOs, FSEs, targeting officers, fires NCOs |
+| TM-40C | Movement & Maneuver | G3/S3 staff, operations officers, maneuver planners |
+| TM-40D | Sustainment | G4/S4 staff, logistics officers, supply chain managers |
+| TM-40E | Protection | FP officers, CBRN officers, provost marshal staff |
+| TM-40F | Mission Command | Battle captains, XOs, CDRs, MC-function staff |
+
+Personnel completing multiple WFF tracks do not repeat TM-10, TM-20, or TM-30. Enrollment is independent for each track.
 
 ---
 

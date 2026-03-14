@@ -38,7 +38,7 @@ Complete **7+ duty days before Day 1:**
 
 - [ ] Confirm Code Workspace GPU allocation (C2DAO request — 7–10 duty days)
 - [ ] Confirm Model Integration (model registry) access for training account
-- [ ] Read TM-50I, Chapter 1 (MLOps Architecture) and Chapter 6 (Model Governance) before Day 1
+- [ ] Read TM-50I, Chapter 1 (Introduction and Scope) and Chapter 8 (ML Platform Architecture and Leadership) before Day 1
 - [ ] Prepare a model card for a model you currently maintain (or maintained previously) — you will audit it on Day 4
 
 ---
@@ -75,7 +75,7 @@ Complete **7+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 9 | Lab | Feature store integration with Foundry Ontology: connecting feature pipelines to Object properties |
 
-**Evening reading:** TM-50I, Chapter 3 (Ensemble Methods at Scale) — stacking and blending sections.
+**Evening reading:** TM-50I, Chapter 3 (Advanced Neural Architectures for Operational Data) — ensemble stacking and blending sections.
 
 ---
 
@@ -92,7 +92,7 @@ Complete **7+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 13 | Lab | Human review gate design: where to place human checkpoints in an automated ML pipeline; gate bypass audit trails |
 
-**Evening reading:** TM-50I, Chapter 6 (Model Governance Standards) — model card and limitations register templates.
+**Evening reading:** TM-50I, Chapter 8 (ML Platform Architecture and Leadership) — model card and limitations register templates.
 
 ---
 
@@ -117,6 +117,16 @@ Complete **7+ duty days before Day 1:**
 | 0800–1700 | 19 | **Eval** | **Evaluated exercise:** Build a drift monitoring + retraining pipeline for a provided production model; produce a governance package (model card, failure mode register, deprecation criteria); defend to evaluator |
 
 **Go standard:** Drift monitoring pipeline functional; retraining trigger defined; governance package complete; responsible AI section present with at least one identified failure mode and its operational consequence.
+
+---
+
+## Peer Advanced Tracks
+
+| Track | Relevance to TM-50I |
+|---|---|
+| TM-50H (Advanced AI Eng) | AI inference integration with deployed ML models; shared governance requirements for AI/ML production systems |
+| TM-50G (Advanced ORSA) | Ensemble and Bayesian methods overlap; ORSA analysts consuming ML predictions for COA analysis |
+| TM-50L (Advanced SWE) | OSDK integration for model inference endpoints; CI/CD pipeline patterns applicable to ML pipeline deployment |
 
 ---
 

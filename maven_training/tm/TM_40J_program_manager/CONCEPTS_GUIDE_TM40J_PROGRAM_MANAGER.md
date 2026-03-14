@@ -1,27 +1,8 @@
-# CONCEPTS GUIDE — TM-40J COMPANION
-## DATA PROGRAM MANAGER
-## MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — TM-40J COMPANION — DATA PROGRAM MANAGER · MAVEN SMART SYSTEM (MSS)
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany | 2026
-
-**PURPOSE:** Develops the mental models required to manage data pipelines, programs, and portfolio health on MSS effectively. Read before beginning TM-40J task instruction.
-
-**DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
-
----
-
-## TABLE OF CONTENTS
-
-1. The Data PM's Role on MSS
-2. Thinking in Pipelines and Dependencies
-3. Health vs. Status — The PM's Monitoring Framework
-4. Milestone and Milestone Risk Thinking
-5. Managing Technical Debt in a Data Portfolio
-6. Stakeholder Management for Data PMs
-7. Governance as a PM Tool, Not a PM Obstacle
-8. Portfolio Visibility on MSS
-9. Common Data PM Failure Modes
+> **BLUF:** This guide is for data program managers accountable for a portfolio of data products on MSS. It does not teach Foundry mechanics. It develops the judgment to manage them.
+> **Purpose:** Develops the mental models required to manage data pipelines, programs, and portfolio health on MSS effectively. Read before beginning TM-40J task instruction.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
@@ -410,6 +391,21 @@ Proceed to TM-40J for task-based instruction on executing these responsibilities
 
 ---
 
+## CURRICULUM NOTES
+
+**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED — not recommended. The PM who has not built on MSS cannot accurately estimate effort, identify technical blockers, or write meaningful acceptance criteria for MSS deliverables.
+
+**Advanced track:** TM-40J graduates should pursue **TM-50J (Advanced Program Manager)** for advanced topics including multi-program portfolio management, enterprise data governance leadership, cross-command integration coordination, and MSS capability roadmap ownership.
+
+**Peer specialist cross-references:** The PM coordinates delivery across all specialist tracks:
+- **TM-40G (ORSA):** ORSA analytical products have specific data quality, methodology review, and product delivery requirements that affect acceptance criteria and sprint scope.
+- **TM-40H (AI Engineer):** AI workflow projects require C2DAO governance milestones and human-review-gate design as non-negotiable project requirements.
+- **TM-40I (ML Engineer):** ML projects have model governance checkpoints (Training Data Card, Model Card, C2DAO review) that must be built into every project schedule.
+- **TM-40K (Knowledge Manager):** KM systems have retention policy, taxonomy governance, and workflow authority requirements that affect project scope and change management.
+- **TM-40L (Software Engineer):** Production code has CI gate, peer review, and branch-promotion requirements that affect delivery timelines and cannot be compressed without creating operational risk.
+
+**WFF awareness:** Data products managed by TM-40J PMs are consumed by WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). Every project schedule decision has a WFF operational consequence. Know which WFF function depends on each product and what the operational impact of degradation or delay is.
+
 *CONCEPTS GUIDE — TM-40J COMPANION | DATA PROGRAM MANAGER | MAVEN SMART SYSTEM*
 *HQ USAREUR-AF, Wiesbaden, Germany | 2026*
-*DISTRIBUTION RESTRICTION: DRAFT — Not yet approved for distribution.*
+*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*

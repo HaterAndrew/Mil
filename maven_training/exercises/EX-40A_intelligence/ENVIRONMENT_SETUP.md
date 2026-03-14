@@ -1,4 +1,6 @@
-# ENVIRONMENT SETUP — EX-40A Intelligence
+# ENVIRONMENT SETUP — EX-40A Intelligence (TM-40A)
+
+**Companion resources:** TM_40A_INTELLIGENCE.md | SYLLABUS_TM40A | EXAM_TM40A_PRE / EXAM_TM40A_POST
 
 ## Environment Type
 

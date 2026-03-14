@@ -69,3 +69,24 @@ Training dataset: synthetic vehicle readiness data, LOGSTAT-format, 90 days, 4 c
 - Task 2 is critical path — budget up to 45 min for participants with no prior Pipeline Builder experience
 - Task 3 averages 25 min; participants familiar with Workshop finish faster
 - If participant finishes early, ask them to explain their naming choice for the output dataset (verbal check)
+
+---
+
+## NEXT STEPS
+
+Upon successful completion of EX-20, participants may branch based on role:
+
+**All paths require TM-30 before any TM-40 track.** Proceed to TM-30 — Advanced Builder next.
+
+After TM-30, branch based on role:
+
+**WFF tracks — Warfighting Function application (prereq: TM-30 required):**
+- TM-40A — Intelligence (G2/S2 staff, targeting officers, all-source analysts)
+- TM-40B — Fires (FSE, fire support officers, targeting teams)
+- TM-40C — Movement & Maneuver (G3/S3 maneuver staff, operations officers)
+- TM-40D — Sustainment (G4/S4, FSB/BSB logistics staff)
+- TM-40E — Protection (force protection, CBRN, provost marshal)
+- TM-40F — Mission Command (G3/S3 staff, battle captains, XOs, CDRs)
+
+**Specialist tracks — technical/analytical tracks (prereq: TM-30 required):**
+- TM-40G through TM-40L per specialist billet assignment

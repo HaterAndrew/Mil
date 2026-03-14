@@ -5,7 +5,7 @@
 |---|---|
 | **Level** | TM-40G (ORSA Specialist Track) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-10, TM-20, TM-30 (all Go evaluations on file); Data Literacy Technical Reference (recommended); graduate-level quantitative background (statistics, linear algebra, optimization); working proficiency in Python or R |
+| **Prerequisites** | TM-10, TM-20, TM-30 (all Go evaluations on file — **REQUIRED**, not recommended); Data Literacy Technical Reference (recommended); graduate-level quantitative background (statistics, linear algebra, optimization); working proficiency in Python or R |
 | **Audience** | FA49 Operations Research officers, quantitative analysts, ORSA-assigned civilians |
 | **Format** | Instructor-led lab + guided practice + commander brief practical |
 | **Location** | MSS Training Environment (Code Workspace provisioned) |
@@ -91,7 +91,7 @@ Complete **7–10+ duty days before Day 1:**
 | 1500–1515 | — | Break | |
 | 1515–1700 | 13 | Lab | Sensitivity analysis; logistics stockage level risk modeling; quantifying probability at operationally meaningful thresholds |
 
-**Evening reading:** TM-40G, Chapter 6 (Linear Programming — formulation and constraint documentation); Chapter 9 (Communicating Uncertainty).
+**Evening reading:** TM-40G, Chapter 6 (Optimization — Resource Allocation and Scheduling: formulation and constraint documentation); Chapter 9 (Communicating Uncertainty).
 
 ---
 
@@ -135,7 +135,7 @@ Complete **7–10+ duty days before Day 1:**
 | Day 1 evening | TM-40G, Ch 3 (Statistical Modeling — regression/validation) |
 | Day 2 evening | TM-40G, Ch 4 (Time Series — ARIMA/confidence bounds) |
 | Day 2 evening | TM-40G, Ch 5 (Monte Carlo — simulation framework) |
-| Day 3 evening | TM-40G, Ch 6 (Linear Programming — formulation) |
+| Day 3 evening | TM-40G, Ch 6 (Optimization — Resource Allocation and Scheduling) |
 | Day 3 evening | TM-40G, Ch 9 (Communicating Uncertainty) |
 | Day 4 evening | TM-40G, Ch 9 (re-read briefing posture sections) |
 
@@ -177,6 +177,28 @@ Complete **7–10+ duty days before Day 1:**
 | Monte Carlo trial count | 100-trial simulations produce unstable distributions that will not pass. Set seed for reproducibility before evaluation |
 | Commander brief language | The audience is a G4 or CG — they want "probability we run out of Class IX by D+30 under each COA," not ARIMA model specification. Translate methods into operational language |
 | Sensitivity analysis | Consistently skipped due to time pressure — read TM-40G, Chapter 5 before Day 3; evaluator questions on brief assumptions draw directly from it |
+
+---
+
+## Continuation
+
+Graduates who remain in active ORSA roles and require theater-level analytical capability may pursue **TM-50G (Advanced ORSA)**. TM-50G covers Bayesian inference, agent-based simulation, multi-objective optimization, network analysis, and GO/SES-standard analytical products. Prerequisites: TM-40G Go evaluation on file; 18+ months active ORSA experience or concurrent graduate enrollment.
+
+---
+
+## Associated Exercises and Assessments
+
+| Item | Reference |
+|---|---|
+| Pre-course exam | EXAM_TM40G_PRE |
+| Post-course exam | EXAM_TM40G_POST |
+| Practical exercise | EX-40G (EXERCISE.md + ENVIRONMENT_SETUP.md) |
+
+---
+
+## Relationship to WFF Tracks
+
+WFF track analysts (TM-40A through TM-40F) are the operational consumers of ORSA products built in this course. ORSA practitioners should understand the analytical questions each WFF community brings to MSS: sustainment analysts (TM-40D) drive demand for logistics forecasts and resource allocation; intelligence analysts (TM-40A) consume risk and COA comparison products; movement and maneuver analysts (TM-40C) use optimization outputs for route and task organization analysis.
 
 ---
 

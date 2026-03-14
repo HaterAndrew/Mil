@@ -1,63 +1,12 @@
 # TM-40B — MAVEN SMART SYSTEM (MSS)
-## FIRES WARFIGHTING FUNCTION
-## INTERMEDIATE OPERATOR'S MANUAL
 
-**HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
-Wiesbaden, Germany
-
-2026
-
-**Version 1.0 | March 2026**
-
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; CONCEPTS_GUIDE_TM40B_FIRES (required before beginning this manual). No coding, pipeline development, or transform experience is required or assumed.
-
-**DISTRIBUTION RESTRICTION:** UNCLASSIFIED // FOR OFFICIAL USE ONLY. Approved for distribution within USAREUR-AF formations. Do not post to uncontrolled networks or distribute outside the command without authorization from the USAREUR-AF C2DAO.
-
-**AUTHORITY:** This publication is issued under authority of the USAREUR-AF C2 Data and Analytics Office (C2DAO). It supports implementation of ADP 3-19, FM 3-09, ATP 3-09.42, FM 3-09.32 (JFIRE), ATP 3-09.50, ATP 3-52.2, FM 3-01, ATP 3-01.8, and ATP 3-09.13. Reference learn-data.armydev.com for current platform documentation.
-
----
-
-## SAFETY SUMMARY
-
-Fires practitioners using MSS operate at the intersection of lethal effects delivery and data-driven situational awareness. Errors in target data, stale fire support coordination measure (FSCM) boundaries, or misidentified tracks in the air defense picture can produce fratricide, civilian casualties, or missed engagement opportunities.
-
-Before using MSS products to support any fires or AMD decision:
-
-- Verify data currency before every engagement, clearance of fires, or AMD track identification. Every MSS product displays a data-as-of timestamp. Stale data in a fires context is not a data quality problem — it is a fratricide risk.
-- Do not allow MSS to substitute for positive target identification (PID). MSS aggregates and displays reported information. PID and weapon release authority remain with the commander and the firing unit. MSS enables the decision; it does not make it.
-- FSCMs displayed in MSS reflect what has been published to the platform. Confirm FSCM currency with the establishing headquarters before initiating fires near coordination boundaries.
-- Air defense tracks displayed in MSS reflect reported data. Do not base engagement authority decisions solely on an MSS track. Validate against primary AMD systems (IBCS, AMDWS, FAAD C2) before weapon release.
-- Target data on MSS reflects what has been reported and processed. Distinguish between confirmed, suspected, and templated targets in all fires products. Labeled differently; treated differently.
-- OPSEC applies to all MSS fires products. Target lists, sensor feed data, fire mission records, and AMD engagement logs are operationally sensitive. Handle all exports and screenshots IAW the unit OPSEC plan and classification guide.
+> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; CONCEPTS_GUIDE_TM40B_FIRES (required before beginning this manual). No coding, pipeline development, or transform experience is required or assumed.
+> *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Using stale MSS target data or FSCM overlays to clear fires without cross-checking against the establishing authority can result in fratricide or violation of ROE. Always confirm FSCM publication date and data-as-of timestamp before clearing any fire mission near a coordination boundary.**
-
 > **WARNING: MSS air picture data is a supplemental display. AMD engagement authority requires validation against primary AMD systems. Do not base weapon release decisions solely on MSS track data.**
-
 > **CAUTION: MSS target tracking data reflects reported status only. Gaps in reporting do not indicate absence of targets. Validate target data against all available collection sources before committing to BDA assessments or re-attack recommendations.**
-
 > **NOTE: MSS does not replace AFATDS, IBCS, AMDWS, or FAAD C2. It integrates and displays data from those systems to enable fires staff planning, targeting, and assessment. The primary fires systems remain authoritative for mission processing and engagement execution. MSS is the data integration and visualization layer above those systems.**
-
----
-
-## TABLE OF CONTENTS
-
-- Chapter 1 — Overview and Fires Function in MSS
-- Chapter 2 — Targeting and the D3A Process in MSS
-- Chapter 3 — Fire Support Planning in MSS
-- Chapter 4 — Fire Direction and Mission Processing
-- Chapter 5 — Air Defense Operations in MSS
-- Chapter 6 — Counter-Rocket, Artillery, Mortar (C-RAM) and Sensor Operations
-- Chapter 7 — Joint Fires Integration
-- Chapter 8 — Fires Assessment and Reporting
-- Chapter 9 — Echelon-Specific Fires Operations
-- Chapter 10 — Degraded Operations
-- Appendix A — Fires-Specific MSS Naming Conventions
-- Appendix B — Fire Support Coordination Measure Reference
-- Appendix C — Target Tracking Standard Fields
-- Appendix D — Fires-Intel Integration Checklist
-- Appendix E — AMD Operations Quick Reference
-- Glossary
 
 ---
 
@@ -1520,12 +1469,13 @@ Before using MSS products to support any fires or AMD decision:
 
 1. Complete TM-10 (Maven User) self-paced training — navigate the MSS interface, understand workspace structure, complete basic user tasks.
 2. Complete TM-20 (Builder) self-paced training — understand MSS data objects, object sets, and basic workspace navigation.
-3. Read CONCEPTS_GUIDE_TM40B_FIRES — understand the conceptual foundation before executing procedures.
-4. Read this manual (TM-40B) — focus on chapters relevant to their duty position.
-5. Observe a proficient fires team member execute each task in their MOS requirement list.
-6. Execute each task under supervision, with the supervising officer or NCO correcting errors in real time.
-7. Execute each task independently and demonstrate proficiency to standard.
-8. FSCOORD or supervisor certifies proficiency and grants appropriate write access.
+3. Complete TM-30 (Advanced Builder) self-paced training — advanced platform capabilities and data governance required for WFF track enrollment.
+4. Read CONCEPTS_GUIDE_TM40B_FIRES — understand the conceptual foundation before executing procedures.
+5. Read this manual (TM-40B) — focus on chapters relevant to their duty position.
+6. Observe a proficient fires team member execute each task in their MOS requirement list.
+7. Execute each task under supervision, with the supervising officer or NCO correcting errors in real time.
+8. Execute each task independently and demonstrate proficiency to standard.
+9. FSCOORD or supervisor certifies proficiency and grants appropriate write access.
 
 11-14. The total onboarding time for a proficient fires officer or NCO is typically three to five days of deliberate training. Units that rush this onboarding sequence will have uncertified fires personnel making data entries in a shared fires workspace that supports operational decisions. This is not an administrative risk — it is an operational data integrity risk.
 
@@ -1781,6 +1731,40 @@ Before using MSS products to support any fires or AMD decision:
 **CAS (Close Air Support).** Air action by fixed- or rotary-wing aircraft against hostile targets that are in close proximity to friendly forces. CAS requires detailed integration with the fire and movement of ground forces. In MSS, CAS requests are tracked in the joint fires module linked to the target list. FSCM overlay currency is critical for all CAS missions near coordination boundaries.
 
 **ISRM (Intelligence, Surveillance, and Reconnaissance Synchronization Matrix).** A planning product that links collection assets to collection requirements against specific target categories. In MSS, the ISRM links collection assets to HPTL target categories, enabling the fires cell and targeting officer to track which HPTs have active collection coverage and identify collection gaps that require tasking action.
+
+---
+
+## APPENDIX — RELATED MANUALS AND TRAINING TRACKS
+
+### WFF Peer Tracks
+
+TM-40B is one of six Warfighting Function tracks at the same tier. All six WFF tracks require TM-10, TM-20, and TM-30 as prerequisites. Fires practitioners should develop working familiarity with TM-40A (Intelligence) and TM-40C (Movement and Maneuver) — the peer tracks with the most intensive fires coordination requirements.
+
+**Table. WFF Peer Track Quick Reference**
+
+| Track | Title | Prereq | Primary Fires Coordination Point |
+|-------|-------|--------|----------------------------------|
+| TM-40A | Intelligence WFF | TM-10 + TM-20 + TM-30 | Targeting workspace, ISR task/collect, BDA data |
+| TM-40B | Fires WFF | TM-10 + TM-20 + TM-30 | This manual |
+| TM-40C | Movement and Maneuver WFF | TM-10 + TM-20 + TM-30 | FSCM coordination, airspace deconfliction |
+| TM-40D | Sustainment WFF | TM-10 + TM-20 + TM-30 | CSR, ammunition status, LOGSTAT |
+| TM-40E | Protection WFF | TM-10 + TM-20 + TM-30 | AMD coordination — fires and protection share AMD data domain |
+| TM-40F | Mission Command WFF | TM-10 + TM-20 + TM-30 | CCIR monitoring, fires products to commander's COP |
+
+### Specialist Tracks (Prerequisite: TM-30)
+
+For technical specialists pursuing advanced data engineering or analytical capability, specialist tracks are available after completing TM-30. Not required for fires WFF employment.
+
+**Table. Specialist and Advanced Track Quick Reference**
+
+| Track | Title | Advanced Track |
+|-------|-------|----------------|
+| TM-40G | ORSA | TM-50G |
+| TM-40H | AI Engineer | TM-50H |
+| TM-40I | ML Engineer | TM-50I |
+| TM-40J | Program Manager | TM-50J |
+| TM-40K | Knowledge Manager | TM-50K |
+| TM-40L | Software Engineer | TM-50L |
 
 ---
 
