@@ -239,9 +239,9 @@
   <div>
     <div id="header-title">
       <h1>Maven Training Corpus — File Dependency Map</h1>
-      <div class="subtitle">USAREUR-AF &nbsp;|&nbsp; C2DAO &nbsp;|&nbsp; 14 MAR 2026 (v2.0-ready) &nbsp;|&nbsp;
-        <span id="node-count">188</span> files &nbsp;|&nbsp;
-        <span id="edge-count">428</span> edges &nbsp;|&nbsp;
+      <div class="subtitle">USAREUR-AF &nbsp;|&nbsp; C2DAO &nbsp;|&nbsp; 15 MAR 2026 (v2.0 + BSP) &nbsp;|&nbsp;
+        <span id="node-count">209</span> files &nbsp;|&nbsp;
+        <span id="edge-count">474</span> edges &nbsp;|&nbsp;
         Pre-v2.0 audit complete &mdash; TM-30 hard prereq enforced all TM-40 tracks
       </div>
     </div>
@@ -346,10 +346,12 @@
       NODE TYPE <span class="panel-arrow" id="legend-arrow">▼</span>
     </div>
     <div id="legend-content">
-      <div class="legend-item" style="margin-top:6px"><div class="legend-swatch" style="background:#1a5cb8"></div>Course &amp; Assessment</div>
-      <div class="legend-item"><div class="legend-swatch" style="background:#187040"></div>Reference</div>
-      <div class="legend-item"><div class="legend-swatch" style="background:#8a4a00"></div>Architecture / Supplemental</div>
-      <div class="legend-item"><div class="legend-swatch" style="background:#3a3a58"></div>Admin / Training Mgmt</div>
+      <div class="legend-item" data-legend-types="TM,CG,SYL,EX,EXAM" style="margin-top:6px"><div class="legend-swatch" style="background:#1a5cb8"></div>Course &amp; Assessment</div>
+      <div class="legend-item" data-legend-types="REF,HTML"><div class="legend-swatch" style="background:#1a7a2e"></div>Reference</div>
+      <div class="legend-item" data-legend-types="CNCPT,EA,CANON,PPT,SS,ARCH,CDA"><div class="legend-swatch" style="background:#8a6a10"></div>Architecture / Supplemental</div>
+      <div class="legend-item" data-legend-types="TMGMT"><div class="legend-swatch" style="background:#4a5568"></div>Admin / Training Mgmt</div>
+      <div class="legend-item" data-legend-types="BSP,SOP"><div class="legend-swatch" style="background:#8b2e14"></div>Builder Sprint</div>
+      <div class="legend-item" data-legend-types="BRIEF"><div class="legend-swatch" style="background:#7a3e8a"></div>Brief / Strategy</div>
       <hr class="legend-divider">
       <div class="legend-heading">EDGES</div>
       <div class="legend-item"><div class="legend-line" style="background:#4a90d9"></div>Prereq</div>
@@ -3950,6 +3952,314 @@ const NODES = [
   "is_sidebar": false,
   "aud": ["dev"],
   "desc": "Architecture quick reference cards: DoctrineElement→Foundry mapping, EA vs DA, Enterprise Data Compass, Lessons Learned, Plan for Success. PDFs: REF_*.pdf"
+},
+{
+  "id": "BSP_GUIDE",
+  "label": "BSP\nParticipant Guide",
+  "path": "builder_sprint/BSP_GUIDE.md",
+  "type": "BSP",
+  "col": 2,
+  "track": "Builder Sprint",
+  "ni": 0,
+  "row_len": 2,
+  "max_row_len": 2,
+  "x": -380,
+  "y": 635,
+  "is_detached": true,
+  "is_sidebar": false,
+  "aud": ["dev", "trainer"],
+  "desc": "Builder Sprint participant guide: 5-day supervised build event for TM-20+ personnel with approved projects"
+},
+{
+  "id": "BSP_ENV",
+  "label": "BSP\nEnvironment Setup",
+  "path": "builder_sprint/ENVIRONMENT_SETUP.md",
+  "type": "BSP",
+  "col": 2,
+  "track": "Builder Sprint",
+  "ni": 1,
+  "row_len": 2,
+  "max_row_len": 2,
+  "x": -196,
+  "y": 635,
+  "is_detached": true,
+  "is_sidebar": false,
+  "aud": ["trainer"],
+  "desc": "Coordinator checklist for sprint workspace creation, access provisioning, and pre-sprint setup"
+},
+{
+  "id": "BSP_PACKAGE",
+  "label": "BSP\nEval/Coord Package",
+  "path": "builder_sprint/SPRINT_PACKAGE.md",
+  "type": "BSP",
+  "col": 2,
+  "track": "Builder Sprint",
+  "ni": 0,
+  "row_len": 2,
+  "max_row_len": 2,
+  "x": -380,
+  "y": 695,
+  "is_detached": true,
+  "is_sidebar": false,
+  "aud": ["trainer"],
+  "desc": "Evaluator and coordinator package: Go/No-Go standards, SME ratios, evaluation records"
+},
+{
+  "id": "BSP_SOP",
+  "label": "BSP\nSOP",
+  "path": "training_management/BUILDER_SPRINT_SOP.md",
+  "type": "SOP",
+  "col": 2,
+  "track": "Builder Sprint",
+  "ni": 1,
+  "row_len": 2,
+  "max_row_len": 2,
+  "x": -196,
+  "y": 695,
+  "is_detached": true,
+  "is_sidebar": false,
+  "aud": ["trainer"],
+  "desc": "Builder Sprint SOP: quarterly event enrollment, execution, evaluation procedures"
+},
+{
+  "id": "MGMT_INSTRUCT",
+  "label": "Instructor\nOverview",
+  "path": "training_management/INSTRUCTOR_OVERVIEW.md",
+  "type": "TMGMT",
+  "col": 6,
+  "track": "Training Mgmt",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 970,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "Instructor onboarding guide: program structure, materials list, and execution checklist"
+},
+{
+  "id": "MGMT_POLICY",
+  "label": "Training\nPolicy Letter",
+  "path": "training_management/POLICY_LETTER.md",
+  "type": "TMGMT",
+  "col": 6,
+  "track": "Training Mgmt",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1030,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "Command training policy letter: training requirements by echelon and direction"
+},
+{
+  "id": "MGMT_AAR",
+  "label": "AAR\nTemplate",
+  "path": "training_management/AAR_TEMPLATE.md",
+  "type": "TMGMT",
+  "col": 6,
+  "track": "Training Mgmt",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1090,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "After Action Review template: standard format for post-course review"
+},
+{
+  "id": "LP_TEMPLATE",
+  "label": "Lesson Plan\nTemplate",
+  "path": "training_management/lesson_plans/LP_TEMPLATE.md",
+  "type": "TMGMT",
+  "col": 6,
+  "track": "Training Mgmt",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1150,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "Blank lesson plan template: TLO, Key Delivery Notes, Student Activity, Assessment blocks"
+},
+{
+  "id": "LP_TM40WFF",
+  "label": "TM-40 WFF\nLesson Plans",
+  "path": "training_management/lesson_plans/TM40_WFF_LESSON_PLAN_OUTLINES.md",
+  "type": "TMGMT",
+  "col": 6,
+  "track": "Training Mgmt",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1210,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "TM-40A\u2013F WFF instructor guide: lesson timing and facilitation notes for functional tracks"
+},
+{
+  "id": "LP_TM50ADV",
+  "label": "TM-50 Advanced\nLesson Plans",
+  "path": "training_management/lesson_plans/TM50_ADVANCED_LESSON_PLAN_OUTLINES.md",
+  "type": "TMGMT",
+  "col": 6,
+  "track": "Training Mgmt",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1270,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "TM-50G\u2013L advanced instructor guide: lesson timing and facilitation notes"
+},
+{
+  "id": "MGMT_ENTV10",
+  "label": "Enterprise\nv10 Plan",
+  "path": "training_management/ENTERPRISE_V10_PLAN.md",
+  "type": "TMGMT",
+  "col": 6,
+  "track": "Training Mgmt",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1330,
+  "is_sidebar": true,
+  "aud": ["dev"],
+  "desc": "ODT Enterprise v10 release plan: 5 bounded contexts, M1\u2013M5 milestones, agent assignments"
+},
+{
+  "id": "MGMT_ENTIMP",
+  "label": "Enterprise\nImplementation",
+  "path": "training_management/ENTERPRISE_IMPLEMENTATION_PLAN.md",
+  "type": "TMGMT",
+  "col": 6,
+  "track": "Training Mgmt",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1390,
+  "is_sidebar": true,
+  "aud": ["dev"],
+  "desc": "CUI//FOUO: 6-phase/20-week hardening plan, 46 acceptance functions, 12 CG constraints"
+},
+{
+  "id": "BRIEF_DEMO",
+  "label": "CG Decision\nBrief",
+  "path": "training_management/DEMO_BRIEF_CG.md",
+  "type": "BRIEF",
+  "col": 6,
+  "track": "CG Strategy",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1510,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "CG decision brief: request TASKORD to activate MSS Mobile Training Team (MTT)"
+},
+{
+  "id": "BRIEF_TASKORD",
+  "label": "TASKORD\nMSS MTT",
+  "path": "training_management/TASKORD_MSS_TRAINING_CELL.md",
+  "type": "BRIEF",
+  "col": 6,
+  "track": "CG Strategy",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1570,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "Draft TASKORD: activate MSS Mobile Training Team for theater-wide TM-10/20/30 delivery"
+},
+{
+  "id": "BRIEF_WP",
+  "label": "White Paper\nMSS Training",
+  "path": "training_management/WHITE_PAPER_MSS_TRAINING.md",
+  "type": "BRIEF",
+  "col": 6,
+  "track": "CG Strategy",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1630,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "Strategic white paper: the case for standardized MSS training across USAREUR-AF"
+},
+{
+  "id": "BRIEF_PPTX",
+  "label": "MSS Training\nBrief (PPTX)",
+  "path": "training_management/MSS_TRAINING_BRIEF.pptx",
+  "type": "BRIEF",
+  "col": 6,
+  "track": "CG Strategy",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1690,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "CG briefing slide deck (PowerPoint): visual companion to DEMO_BRIEF_CG"
+},
+{
+  "id": "HTML_SP",
+  "label": "MSS Hub\n(SharePoint)",
+  "path": "mss_info_app/index_sharepoint.html",
+  "type": "HTML",
+  "col": 6,
+  "track": "CG Strategy",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1750,
+  "is_sidebar": true,
+  "aud": ["dev"],
+  "desc": "SharePoint-hosted variant of MSS Training Hub \u2014 adapted for SharePoint embedding constraints"
+},
+{
+  "id": "HTML_PILOT",
+  "label": "Pilot Agent\nPrompt",
+  "path": "mss_info_app/PILOT_AGENT_PROMPT.md",
+  "type": "REF",
+  "col": 6,
+  "track": "CG Strategy",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1810,
+  "is_sidebar": true,
+  "aud": ["dev"],
+  "desc": "System prompt for MSS pilot AI agent \u2014 context and instructions for training hub assistant"
+},
+{
+  "id": "HTML_DEPLOY",
+  "label": "Deployment\nGuide",
+  "path": "mss_info_app/DEPLOYMENT.md",
+  "type": "REF",
+  "col": 6,
+  "track": "CG Strategy",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1870,
+  "is_sidebar": true,
+  "aud": ["dev"],
+  "desc": "Deployment guide: Cloudflare Pages, SharePoint, and Foundry hosting instructions"
 }
 ];
 const EDGES = [
@@ -6079,37 +6389,62 @@ const EDGES = [
 { "source": "ARCH_REF",  "target": "TM40H", "type": "companion" },
 { "source": "ARCH_REF",  "target": "TM40I", "type": "companion" },
 { "source": "ARCH_REF",  "target": "TM40K", "type": "companion" },
-{ "source": "ARCH_REF",  "target": "TM40L", "type": "companion" }
+{ "source": "ARCH_REF",  "target": "TM40L", "type": "companion" },
+{ "source": "BSP_GUIDE",    "target": "TM20",       "type": "prereq" },
+{ "source": "BSP_ENV",      "target": "BSP_GUIDE",  "type": "companion" },
+{ "source": "BSP_PACKAGE",  "target": "BSP_GUIDE",  "type": "companion" },
+{ "source": "BSP_SOP",      "target": "BSP_GUIDE",  "type": "prereq" },
+{ "source": "BSP_SOP",      "target": "MGMT_ENROLL","type": "companion" },
+{ "source": "BSP_SOP",      "target": "MGMT_SCHED", "type": "companion" },
+{ "source": "BRIEF_DEMO",   "target": "BRIEF_TASKORD","type": "companion" },
+{ "source": "BRIEF_DEMO",   "target": "BRIEF_WP",   "type": "companion" },
+{ "source": "BRIEF_PPTX",   "target": "BRIEF_DEMO", "type": "companion" },
+{ "source": "BRIEF_TASKORD", "target": "MGMT_MTP",  "type": "companion" },
+{ "source": "BRIEF_TASKORD", "target": "MGMT_POI",  "type": "companion" },
+{ "source": "BRIEF_WP",     "target": "MGMT_MTP",   "type": "companion" },
+{ "source": "MGMT_INSTRUCT","target": "MGMT_MTP",   "type": "companion" },
+{ "source": "MGMT_INSTRUCT","target": "MGMT_POI",   "type": "companion" },
+{ "source": "MGMT_INSTRUCT","target": "MGMT_TEO",   "type": "companion" },
+{ "source": "LP_TM40WFF",   "target": "TM40A",      "type": "companion" },
+{ "source": "LP_TM50ADV",   "target": "TM50G",      "type": "companion" },
+{ "source": "HTML_SP",      "target": "HTML_MSS",   "type": "companion" },
+{ "source": "HTML_PILOT",   "target": "HTML_MSS",   "type": "companion" },
+{ "source": "HTML_DEPLOY",  "target": "HTML_MSS",   "type": "companion" }
 ];
 
 // Node type color map
 const TYPE_COLOR = {
-  // COURSE & ASSESSMENT — blue (TMs, Concepts Guides, Syllabi, Exams, Exercises)
+  // COURSE & ASSESSMENT — blue
   TM:      "#1a5cb8",
   CG:      "#1a5cb8",
   SYL:     "#1a5cb8",
   EXAM:    "#1a5cb8",
   EX:      "#1a5cb8",
-  // REFERENCE — green (quick-reference tools, job aids, cheatsheets)
-  REF:     "#187040",
-  // ARCHITECTURE / SUPPLEMENTAL — amber (arch docs, CDA, guidance; not part of course sequence)
-  DOCTRINE:"#8a4a00",  // legacy fallback — no longer assigned to any node
-  SS:      "#8a4a00",
-  ARCH:    "#8a4a00",
-  CDA:     "#8a4a00",
-  EA:      "#8a4a00",
-  CANON:   "#8a4a00",
-  PPT:     "#8a4a00",
-  // ADMIN / MANAGEMENT — slate
-  TMGMT:   "#3a3a58",
-  HTML:    "#3a3a58",
-  README:  "#3a3a58",
+  // REFERENCE — green
+  REF:     "#1a7a2e",
+  // ARCHITECTURE / SUPPLEMENTAL — amber
+  DOCTRINE:"#8a6a10",
+  SS:      "#8a6a10",
+  ARCH:    "#8a6a10",
+  CDA:     "#8a6a10",
+  EA:      "#8a6a10",
+  CANON:   "#8a6a10",
+  PPT:     "#8a6a10",
+  // ADMIN / MANAGEMENT — slate grey
+  TMGMT:   "#4a5568",
+  HTML:    "#4a5568",
+  README:  "#4a5568",
+  // BUILDER SPRINT — red-orange
+  BSP:     "#8b2e14",
+  SOP:     "#8b2e14",
+  // BRIEFS / STRATEGY — purple
+  BRIEF:   "#7a3e8a",
 };
 
 const NODE_W = 170;
 const NODE_H = 50;
-const SVG_W  = 2000;
-const SVG_H  = 2310;
+const SVG_W  = 2200;
+const SVG_H  = 3250;
 const TIER_HEADERS = {"-1": "ARCH / CDA / GDAP / MIM / EA — Architecture & Reference Material  |  ARCH_*.pdf · MGMT_*.pdf · REF_*.pdf", "0": "DOCTRINE & STANDARDS — Program-Wide Reference", "1": "TM-10 — Foundry Basics  |  All Personnel", "2": "TM-20 — No-Code Builder  |  Operator / Analyst", "3": "TM-30 — Advanced Builder  |  Data Engineer", "4": "TM-40 — WFF Analyst Tracks (A–F)   ·   Specialist Roles (G–L)", "5": "TM-50 — Advanced Specialization  |  Expert Level"};
 
 // ============================================================
@@ -6161,7 +6496,7 @@ function relayout() {
   // Effective width = max(colOffset + row_len) across all non-sidebar nodes
   let maxEffLen = 0;
   NODES.forEach(n => {
-    if (!n.is_sidebar) {
+    if (!n.is_sidebar && !n.is_detached) {
       const eff = (COL_OFFSET[n.col] || 0) + n.row_len;
       if (eff > maxEffLen) maxEffLen = eff;
     }
@@ -6177,6 +6512,8 @@ function relayout() {
   NODES.forEach(n => {
     if (n.is_sidebar) {
       n.x = sidebarX;
+    } else if (n.is_detached) {
+      // Detached nodes (e.g. BSP) keep their explicit x — not part of the flow grid
     } else {
       const offset = COL_OFFSET[n.col] || 0;
       n.x = PAD + (n.ni + offset) * pitchX;
@@ -6692,6 +7029,14 @@ function applyAudienceFilter() {
 
   fitView(50);
   updateCorpusPanel();
+
+  // Update legend: hide type swatches that have no visible nodes
+  const visibleTypes = new Set();
+  NODES.forEach(n => { if (!hiddenIds.has(n.id)) visibleTypes.add(n.type); });
+  document.querySelectorAll(".legend-item[data-legend-types]").forEach(el => {
+    const types = el.getAttribute("data-legend-types").split(",");
+    el.style.display = types.some(t => visibleTypes.has(t)) ? "" : "none";
+  });
 }
 
 // ============================================================

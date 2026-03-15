@@ -92,7 +92,7 @@ PUB_TYPES = {
     "POI":               ("PROGRAM OF INSTRUCTION",              "POI-MSS"),
     "TEO":               ("TRAINING AND EVALUATION OUTLINE",     "T&EO-MSS"),
     "CAD":               ("COURSE ADMINISTRATIVE DATA",          "CAD-MSS"),
-    "POLICY":            ("POLICY LETTER",                       "USAREUR-AF G6"),
+    "POLICY":            ("POLICY LETTER",                       "C2DAO"),
     "ENROLLMENT":        ("STANDARD OPERATING PROCEDURE",        "SOP-ENROLL"),
     "ANNUAL_TRAINING":   ("ANNUAL TRAINING SCHEDULE",            "ATS-FY26"),
     "FACULTY":           ("FACULTY DEVELOPMENT PLAN",            "FDP-MSS"),
@@ -159,6 +159,8 @@ PUB_TYPES = {
     "QUICK_START":       ("QUICK START GUIDE",                   "MSS-QS"),
     "AAR_TEMPLATE":      ("AFTER-ACTION REVIEW TEMPLATE",        "AAR-MSS"),
     "CURRICULUM_MAINT":  ("STANDARD OPERATING PROCEDURE",        "SOP-MAINT"),
+    "COMMANDERS_GUIDE":  ("COMMANDER'S REFERENCE GUIDE",         "CDR-GUIDE"),
+    "INSTRUCTOR_OVERVIEW": ("INSTRUCTOR REFERENCE",              "INST-OVR"),
     # ── Architecture reference docs (ARCH_ prefix) ────────────────────────────
     "ARCH_CDA":          ("ARCHITECTURE REFERENCE",              "ODT-CDA"),
     "ARCH_GDAP":         ("ARCHITECTURE REFERENCE",              "ODT-GDAP"),
@@ -412,6 +414,52 @@ def convert_md(src_rel: str, out_stem: str) -> bool:
     return ok
 
 
+def convert_md_brief(src_rel: str, out_stem: str) -> bool:
+    """Standard Army doc format, no cover page, condensed to one page."""
+    src = REPO_ROOT / src_rel
+    if not src.exists():
+        print(f"  SKIP  {src_rel}")
+        return False
+    pub_type, pub_number = get_pub_meta(out_stem)
+    body_html, title, subtitle = md_to_body_html(src)
+    # Identical to build_html() but without the cover div; condensed CSS to fit one page
+    compact_override = """
+body, .body-content { font-size: 9.5pt; }
+.body-content { padding-top: 6pt; }
+h1, h2, h3 { font-size: 10pt; margin: 6pt 0 3pt; }
+p, li { margin: 2pt 0; line-height: 1.35; }
+table { margin: 4pt 0; }
+th, td { padding: 2pt 5pt; font-size: 9pt; }
+ul, ol { margin: 2pt 0 2pt 14pt; }
+pre, code { font-size: 8.5pt; line-height: 1.3; }
+hr { margin: 4pt 0; }
+"""
+    full_html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{pub_number} — {title}</title>
+  <style>{PAGE_CSS}{compact_override}</style>
+</head>
+<body>
+  <div class="body-content">
+{body_html}
+  </div>
+{CALLOUT_JS}
+</body>
+</html>"""
+    with tempfile.NamedTemporaryFile(
+        suffix=".html", mode="w", encoding="utf-8", delete=False
+    ) as tmp:
+        tmp.write(full_html)
+        tmp_path = Path(tmp.name)
+    pdf_path = OUT_DIR / f"{out_stem}.pdf"
+    ok = html_file_to_pdf(tmp_path, pdf_path, make_header(pub_number), FOOTER_TEMPLATE, CHROME)
+    tmp_path.unlink(missing_ok=True)
+    print(f"  {'OK  ' if ok else 'FAIL'} {out_stem}.pdf")
+    return ok
+
+
 def convert_html_direct(src_rel: str, out_stem: str, pub_number: str = "MSS-HUB") -> bool:
     src = REPO_ROOT / src_rel
     if not src.exists():
@@ -428,6 +476,7 @@ MD_TARGETS = [
     # ── Index & quick start ───────────────────────────────────────────────────
     ("maven_training/README.md",                                                        "00_README"),
     ("maven_training/QUICK_START.md",                                                   "QUICK_START"),
+    ("maven_training/DEPENDENCY_MAP.md",                                                "DEPENDENCY_MAP"),
     # ── Index & doctrine ─────────────────────────────────────────────────────
     ("maven_training/doctrine/DATA_LITERACY_senior_leaders.md",                        "DATA_LITERACY_senior_leaders"),
     ("maven_training/doctrine/DATA_LITERACY_technical_reference.md",                   "DATA_LITERACY_technical_reference"),
@@ -446,6 +495,13 @@ MD_TARGETS = [
     ("maven_training/training_management/COMPLETION_CERTIFICATE.md",                   "COMPLETION_CERTIFICATE"),
     ("maven_training/training_management/AAR_TEMPLATE.md",                             "AAR_TEMPLATE"),
     ("maven_training/training_management/CURRICULUM_MAINTENANCE_SOP.md",               "CURRICULUM_MAINTENANCE_SOP"),
+    ("maven_training/training_management/COMMANDERS_GUIDE_MSS_TRAINING.md",            "COMMANDERS_GUIDE_MSS_TRAINING"),
+    ("maven_training/training_management/INSTRUCTOR_OVERVIEW.md",                      "INSTRUCTOR_OVERVIEW"),
+    ("maven_training/training_management/BUILDER_SPRINT_SOP.md",                       "BUILDER_SPRINT_SOP"),
+    # ── Builder Sprint (BSP) ──────────────────────────────────────────────────
+    ("maven_training/builder_sprint/BSP_GUIDE.md",                                     "BSP_GUIDE"),
+    ("maven_training/builder_sprint/SPRINT_PACKAGE.md",                                "BSP_SPRINT_PACKAGE"),
+    ("maven_training/builder_sprint/ENVIRONMENT_SETUP.md",                             "BSP_ENVIRONMENT_SETUP"),
     # ── Lesson plans ──────────────────────────────────────────────────────────
     ("maven_training/training_management/lesson_plans/LP_TEMPLATE.md",                 "LP_TEMPLATE"),
     ("maven_training/training_management/lesson_plans/TM10/TM10_LESSON_PLANS.md",      "TM10_LESSON_PLANS"),
@@ -655,6 +711,13 @@ HTML_TARGETS = [
     ("maven_training/mss_info_app/index.html", "MSS_TRAINING_HUB"),
 ]
 
+# ── Brief / single-page targets (no cover page, no header/footer) ─────────────
+BRIEF_TARGETS = [
+    ("maven_training/training_management/TASKORD_MSS_TRAINING_CELL.md", "TASKORD_MSS_TRAINING_CELL"),
+    ("maven_training/training_management/DEMO_BRIEF_CG.md",             "DEMO_BRIEF_CG"),
+    ("maven_training/training_management/WHITE_PAPER_MSS_TRAINING.md",  "WHITE_PAPER_MSS_TRAINING"),
+]
+
 
 # ── Incremental build helpers ──────────────────────────────────────────────────
 MANIFEST_PATH = OUT_DIR / ".manifest.json"
@@ -732,6 +795,15 @@ def main():
             print(f"  --    {stem}.pdf  (unchanged)")
             continue
         tasks.append((convert_html_direct, rel, stem))
+    for rel, stem in BRIEF_TARGETS:
+        src = REPO_ROOT / rel
+        if not src.exists():
+            print(f"  SKIP  {rel}")
+            continue
+        if not args.force and not _should_rebuild(src, stem, manifest):
+            print(f"  --    {stem}.pdf  (unchanged)")
+            continue
+        tasks.append((convert_md_brief, rel, stem))
 
     if not tasks:
         print("Nothing to rebuild — all PDFs are up to date.")

@@ -2,7 +2,7 @@
 ## USAREUR-AF Operational Data Team | C2DAO Training Branch
 
 **Generated:** 13 March 2026
-**Last updated:** 14 March 2026 (pre-v2.0 full-corpus audit; PPTX rebuild; prereq chain finalized)
+**Last updated:** 15 March 2026 (pre-v2.0 full-corpus audit; PPTX rebuild; prereq chain finalized; builder sprint (BSP) section added; 27 missing files integrated; formal curriculum audit completed — fixes applied: TM-10 Task 4-1B standards, TM-20 join scope boundary, TEO TM20-03 date [CRITICAL], TM-30 Quiver eval swap + Block 11 peer review + Block 17 diagnostic inject, TM-40F LO-5 gap, all WFF syllabi function-specific Go criteria + CCIR troubleshooting, TM-40J/K expanded to 4 days, ENROLLMENT_SOP training records section, CURRICULUM_MAINTENANCE_SOP platform monitoring + semi-annual review, MTP throughput risk item, COMMANDERS_GUIDE_MSS_TRAINING.md created)
 **Audit method:** Full manual read of all source files across 6 parallel agent passes (13 March); ralf branch content migration (14 March); Palantir Developers video mapping (14 March); full ralf file inventory and PDF build (14 March); full content read of all 30 CDA slide decks (14 March) — level assignments corrected corpus-wide; pre-v2.0 content accuracy and consistency audit across all curriculum, app, widget, and PPTX files (14 March)
 **Status at generation:** Corpus at v2.0-ready state. All naming and content issues resolved. TM-40D/E/F prereq discrepancy resolved 2026-03-14 — all WFF tracks (TM-40A–F) now require TM-30 as terminal prerequisite. Pre-v2.0 audit complete: 8 content fixes applied (README.md, POLICY_LETTER.md, cheatsheet.md, Home.tsx, TM40.tsx, mss_info_app/index.html, .gitignore, MSS_Project_Overview.pptx); MSS_Training_Progression.pptx specialist column fully rebuilt with clean WFF (A–F) / Specialist (G–L) grouping. PDFs regenerated (3 source-changed files rebuilt). See changelog entry #95–103.
 
@@ -33,6 +33,10 @@
 ```
 TM-10 (all personnel)
   └── TM-20 (builders)
+        │
+        ├── [BSP] Builder Sprint ← parallel track; outside TM chain; no TM credit granted
+        │         Prereq: TM-20 Go + command-validated project. See builder_sprint/BSP_GUIDE.md
+        │
         └── TM-30 (advanced builders / data-adjacent)
               ├── TM-40A (Intelligence WFF)
               ├── TM-40B (Fires WFF)
@@ -51,6 +55,7 @@ TM-10 (all personnel)
 > **NOTE:** TM-50A through TM-50F do NOT exist. Only TM-50G–L (advanced specialist) are valid.
 > WFF tracks (TM-40A–F) require TM-30 (same prereq chain as Specialist tracks) — design decision 2026-03-13.
 > Specialist tracks (TM-40G–L) all require TM-30 (required, not recommended).
+> **Builder Sprint (BSP)** is a separate quarterly event outside the TM chain. Prereq: TM-20. Does NOT grant TM-30 credit. Does NOT unlock TM-40 enrollment. See training_management/BUILDER_SPRINT_SOP.md.
 
 ---
 
@@ -265,6 +270,23 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 
 ---
 
+## SECTION 1B — BUILDER SPRINT (BSP)
+### Prereq: TM-20 Go on file + command-approved project
+### NOT part of the TM-10 → TM-50 sequence; does NOT grant TM credit
+
+| File | Type | Outbound Dependencies |
+|---|---|---|
+| builder_sprint/BSP_GUIDE.md | [BSP] | → TM-20 (prereq); does NOT → TM-30 (explicitly not a substitute) |
+| builder_sprint/ENVIRONMENT_SETUP.md | [BSP] | → BSP_GUIDE (coordinator checklist for sprint setup) |
+| builder_sprint/SPRINT_PACKAGE.md | [BSP] | → BSP_GUIDE Ch 5 (evaluator/coordinator standards); → ENROLLMENT_SOP (enrollment workflow) |
+| training_management/BUILDER_SPRINT_SOP.md | [SOP] | → TM-20 (prereq); → BSP_GUIDE, → SPRINT_PACKAGE, → ENVIRONMENT_SETUP (references all BSP docs); → ANNUAL_TRAINING_SCHEDULE (quarterly calendar) |
+
+**Inbound references from:** DEPENDENCY_MAP prereq chain, DEMO_BRIEF_CG, WHITE_PAPER_MSS_TRAINING, mss_info_app/index.html (if applicable)
+
+**Key governance note:** BSP is a quarterly 5-day supervised build event. Prereq: TM-20 Go + command-validated project. Does NOT grant TM-30 credit. Does NOT unlock TM-40 enrollment.
+
+---
+
 ## SECTION 2 — WFF FUNCTIONAL TRACKS (TM-40A–F)
 ### Prereq for all: TM-10 + TM-20 + TM-30 + track Concepts Guide
 
@@ -378,7 +400,7 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 | EXAM_TM40G_POST.md | [EXAM] | assesses TM-40G completion |
 
 **Advanced track:** → TM-50G
-**Inbound references from:** TM-40F (ORSA products for G35), TM-40J (portfolio analytics), TM-50G (prereq), DATA_LITERACY_technical_reference, CHEATSHEET, task_index.html (17 tasks), mss_info_app/index.html, README
+**Inbound references from:** TM-40J (portfolio analytics), TM-50G (prereq), DATA_LITERACY_technical_reference, CHEATSHEET, task_index.html (17 tasks), mss_info_app/index.html, README
 
 **Recommended CDA decks [PPT]:** ⇢ Data_Modeling_Fundamentals_Level2 · Deck_07_Temporal_Bitemporal · Deck_12_Capstone_Foundry
 
@@ -481,9 +503,9 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 | TM-50K (Adv KM) | TM-40K | ↔ TM-50H (corpus design) | TM_50K_KNOWLEDGE_MANAGER_ADVANCED.md + CG |
 | TM-50L (Adv SWE) | TM-40L | ⇢ TM-40H, TM-40I; ↔ TM-50H (OSDK integration) | TM_50L_SOFTWARE_ENGINEER_ADVANCED.md + CG |
 
-**Syllabi:** SYLLABUS_TM50G–L present (not yet published as PDFs — per curriculum plan)
+**Syllabi:** SYLLABUS_TM50G–L present and published
 **Exams:** EXAM_TM50G–L PRE + POST present
-**Exercises:** No EX-50x directories (advanced tracks: no dedicated exercise lab; TM-50 is self-directed with live project requirement)
+**Exercises:** EX-50G–L directories present (EX-50G_orsa/, EX-50H_ai_engineer/, EX-50I_ml_engineer/, EX-50J_program_manager/, EX-50K_knowledge_manager/, EX-50L_software_engineer/ — each with EXERCISE.md + ENVIRONMENT_SETUP.md)
 
 ---
 
@@ -503,15 +525,16 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 
 | File | Covers | Key Cross-Refs |
 |---|---|---|
-| MTP_MSS.md | Master training plan; course overview table | All TMs; corrected durations: TM-20=5d, TM-30=5d, TM-40A–F=3d, TM-40G/H/I/L=5d, TM-40J/K=3d |
+| MTP_MSS.md | Master training plan; course overview table + TM-10 throughput risk item (Sec 7-4, G-3 action required) | All TMs; corrected durations: TM-20=5d, TM-30=5d, TM-40A–F=3d, TM-40G/H/I/L=5d, TM-40J/K=4d |
 | POI_MSS.md | Program of instruction; tier/prereq structure | All TMs; prereq tree A–L; TM-40J/K now correctly in TM-30 branch |
 | CAD_MSS.md | Course admin; access reqs by track | All TMs; TM-40J/K prereq = TM-30 required |
-| TEO_MSS.md | T&EO evaluation standards | TM-10 through TM-40L critical performance measures |
-| ENROLLMENT_SOP.md | Enrollment process + prereq verification | All TMs; TM-40J/K prereq = TM-30 required |
+| TEO_MSS.md | T&EO evaluation standards; TM20-03 Row 5 now [CRITICAL] (date arithmetic) | TM-10 through TM-40L critical performance measures |
 | ANNUAL_TRAINING_SCHEDULE.md | Schedule by track (2026) | All TMs; TM-40J/K prereq = TM-30 |
 | FACULTY_DEVELOPMENT_PLAN.md | Instructor quals by track | All TMs; WFF (A–F) vs. Specialist (G–L) instructor profiles |
 | COMPLETION_CERTIFICATE.md | Certificate templates | Generic; course title filled at completion |
-| CURRICULUM_MAINTENANCE_SOP.md | Maintenance SOP | Scope: TM-10 through TM-40L (TM-50 exercise stubs pending) |
+| CURRICULUM_MAINTENANCE_SOP.md | Maintenance SOP + Platform Monitoring procedure (Sec 2A) + Semi-Annual Deep Review (Sec 5A) | Scope: TM-10 through TM-40L |
+| ENROLLMENT_SOP.md | Enrollment process + prereq verification + Training Records Requirements section (minimum data standard, retention, query process) | All TMs; TM-40J/K prereq = TM-30 required |
+| COMMANDERS_GUIDE_MSS_TRAINING.md | Commander/XO reference: who trains on what, timelines, CDR responsibilities, throughput risk | → ENROLLMENT_SOP; → MTP; all TM levels |
 | TM10_LESSON_PLANS.md | Lesson plan: TM-10 | TM-10 Ch 1–8, DATA_LITERACY_technical_reference Ch 1 |
 | TM20_LESSON_PLAN_OUTLINES.md | Lesson plan: TM-20 | TM-20 Ch 2–5, NAMING_AND_GOVERNANCE_STANDARDS |
 | TM30_LESSON_PLAN_OUTLINES.md | Lesson plan: TM-30 | TM-30 Ch 2–9, Standards Ch 3–4 |
@@ -521,6 +544,14 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 | lesson_plans/LP_TEMPLATE.md | Standard lesson plan template | Blank template; TLO, Key Delivery Notes, Student Activity, Assessment blocks |
 | ENTERPRISE_V10_PLAN.md | ODT Enterprise v10 release plan (2026-03-12) | 5 bounded contexts (Architecture/Pipelines/Products/Foundry/QA); M1–M5 milestone gates; agent assignments; feature checklist |
 | ENTERPRISE_IMPLEMENTATION_PLAN.md | Enterprise implementation plan — CUI // FOUO | 6-phase/20-week hardening plan; 46 acceptance functions; 12 CG architectural constraints; current-state assessment |
+| BUILDER_SPRINT_SOP.md | Builder Sprint SOP: quarterly event enrollment, execution, evaluation | → BSP_GUIDE, → ENROLLMENT_SOP, → ANNUAL_TRAINING_SCHEDULE |
+| INSTRUCTOR_OVERVIEW.md | Instructor onboarding guide: program structure, materials, execution | All TMs; → MTP, → POI, → CAD, → TEO, → ENROLLMENT_SOP, → lesson plans |
+| DEMO_BRIEF_CG.md | CG decision brief: request TASKORD authorization for MSS MTT | → TASKORD, → WHITE_PAPER; ↔ all training management docs |
+| TASKORD_MSS_TRAINING_CELL.md | Draft TASKORD: MSS MTT activation (theater-wide) | → MTP, → POI, → ENROLLMENT_SOP, → ANNUAL_TRAINING_SCHEDULE |
+| WHITE_PAPER_MSS_TRAINING.md | Strategic white paper: case for MSS training across USAREUR-AF | → all TMs (program overview); ↔ DEMO_BRIEF_CG |
+| MSS_TRAINING_BRIEF.pptx | CG briefing slide deck (PowerPoint) | ↔ DEMO_BRIEF_CG (companion visual) |
+| lesson_plans/TM40_WFF_LESSON_PLAN_OUTLINES.md | Lesson plans: TM-40A–F WFF tracks | All WFF tracks A–F |
+| lesson_plans/TM50_ADVANCED_LESSON_PLAN_OUTLINES.md | Lesson plans: TM-50G–L advanced tracks | All advanced tracks G–L |
 
 ---
 
@@ -531,6 +562,10 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 | mss_info_app/index.html | Training hub — 6 WFF cards (A–F, TM-30 chip) + 6 specialist cards (G–L, TM-30 chip) + 6 TM-50 cards | All TM-40A–L PDFs, all CGs, all exams, all syllabi |
 | mss_info_app/training_schedule.html | Schedule view | Training schedule data |
 | task_index.html | Task index by specialist track | TM-40G(17 tasks), TM-40H(1), TM-40I(21), TM-40J(18), TM-40K(6), TM-40L(30) = 93 total |
+| mss_info_app/index_sharepoint.html | SharePoint-hosted variant of MSS Training Hub | Same as index.html; adapted for SharePoint embedding |
+| mss_info_app/PILOT_AGENT_PROMPT.md | System prompt for MSS pilot AI agent | ↔ mss_info_app/index.html (serves the training hub) |
+| mss_info_app/DEPLOYMENT.md | Deployment guide: Cloudflare Pages + SharePoint + Foundry | → index.html, → index_sharepoint.html |
+| mss_info_app/Maven_Rollout_Plan.pptx | Rollout plan slide deck (PPTX) | ↔ DEMO_BRIEF_CG (CG rollout strategy) |
 | source_material/course_portal/ | CDA slide library — 29 decks, 3 tracks, 397 PNG slides | ⇢ all TM levels (see Section 8); source of all [PPT] refs |
 
 ---
