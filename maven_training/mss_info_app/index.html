@@ -2084,6 +2084,20 @@
       </div>
     </div>
 
+    <!-- BUILDER SPRINT — outside TM chain, visually distinct -->
+    <div class="snav-group" id="grp-bsp">
+      <button class="snav-group-hdr" data-group="bsp" style="color:rgba(200,151,26,0.75);">
+        <span>Builder Sprint (BSP)</span>
+        <span class="snav-group-arrow">&#8964;</span>
+      </button>
+      <div class="snav-group-items">
+        <button class="snav-item" data-panel="bsp">
+          <span class="snav-item-icon">&#9642;</span>
+          <span class="snav-item-label">Builder Sprint &mdash; Overview</span>
+        </button>
+      </div>
+    </div>
+
     <!-- SPECIALIST TRACKS GROUP — collapsed by default, less visual weight -->
     <div class="snav-group collapsed" id="grp-specialists">
       <button class="snav-group-hdr" data-group="specialists" style="color:rgba(200,151,26,0.5);">
@@ -2373,7 +2387,7 @@
 
     <div class="callout bluf">
       <div class="callout-label">BLUF</div>
-      <div class="callout-body">TM-10 teaches you how to log in, navigate MSS, read dashboards, submit data through forms, use AI tools, and stay within authorized boundaries. Required for all USAREUR-AF personnel before operating MSS. <strong>Request your account before your first class &mdash; submit at <a href="https://mss.data.mil" target="_blank" style="color:var(--navy-dark);">mss.data.mil</a> or through your data steward. Provisioning generally completes within 24 hours.</strong></div>
+      <div class="callout-body">TM-10 teaches you how to log in, navigate MSS, read dashboards, use Gaia and command-level applications, submit data through forms, interact with AI tools embedded in Workshop, and stay within authorized boundaries. Required for all USAREUR-AF personnel before operating MSS. <strong>Request your account before your first class &mdash; submit at <a href="https://mss.data.mil" target="_blank" style="color:var(--navy-dark);">mss.data.mil</a> or through your data steward. Provisioning generally completes within 24 hours.</strong></div>
     </div>
 
     <div class="callout info">
@@ -2416,7 +2430,9 @@
             <li>Makes data visible through applications and dashboards</li>
             <li>Enables units to update records, report status, and track readiness</li>
             <li>Provides analysis tools for authorized personnel</li>
-            <li>Supports AI-assisted analysis through authorized tools</li>
+            <li>Supports AI-assisted analysis through AIP tools embedded in applications</li>
+            <li><strong>Gaia</strong> &mdash; map-based geospatial application for situational awareness and operational overlays</li>
+            <li>Command-level applications (e.g., CUB/CUA in USAREUR-AF) for operational briefing and C2</li>
           </ul>
         </div>
       </div>
@@ -2648,6 +2664,8 @@
         <div class="card-label">PROJECT MANAGEMENT (UI)</div>
         <div class="card-body">
           <ul>
+            <li>Use <strong>Solution Designer</strong> to visually map data flows and application architecture before building</li>
+            <li>Build project roadmaps using forward and backward planning from the commander&rsquo;s requirement</li>
             <li>Create and organize Foundry projects via the UI</li>
             <li>Set up folder structure: raw / staging / curated layers</li>
             <li>Manage project access and permissions via UI</li>
@@ -2671,9 +2689,11 @@
         <div class="card-body">
           <ul>
             <li>Create Object Types and set primary keys via Ontology Manager UI</li>
+            <li>Define <strong>Interfaces</strong> and apply them to Object Types for consistent property contracts</li>
+            <li>Configure <strong>Object Views</strong> to control how properties display to operators</li>
             <li>Create Link Types between objects via UI</li>
-            <li>Build basic Actions via Action Editor UI</li>
-            <li>Test Object Types in Object Explorer before building apps</li>
+            <li>Understand Action types (write-back, form, webhook, conditional) and configure basic Actions</li>
+            <li>Validate Object data in <strong>Object Explorer</strong> before building apps</li>
           </ul>
         </div>
       </div>
@@ -2844,6 +2864,114 @@
 
 
   <!-- ======================================================
+       BUILDER SPRINT (BSP) PANEL
+  ====================================================== -->
+  <div id="panel-bsp" class="panel">
+
+    <div class="section-header">
+      <span class="section-badge" style="background:rgba(200,151,26,0.18);color:var(--gold);">BSP</span>
+      <span class="section-title">Builder Sprint &mdash; Applied Build Event</span>
+      <span class="section-subtitle">Prerequisite: TM-20 + command-validated project &bull; Quarterly &bull; Outside TM chain &bull; No TM credit granted</span>
+    </div>
+
+    <div class="callout bluf">
+      <div class="callout-label">BLUF</div>
+      <div class="callout-body">The Builder Sprint is a quarterly 5-day supervised build event. You bring a validated operational problem; you build a solution; SMEs are available for consultation. Minimal instruction &mdash; this is not a course. You leave with a functional product and a handoff package. BSP does not replace TM-30 and does not grant credit toward TM-40 enrollment.</div>
+    </div>
+
+    <div class="callout warning">
+      <div class="callout-label">NOTE</div>
+      <div class="callout-body">BSP is <strong>outside the TM-10 through TM-50 training chain.</strong> Completion does not count as TM-30 or any other TM credit. If you need structured platform instruction, enroll in TM-30. BSP is for builders with TM-20 skills and a real problem to solve.</div>
+    </div>
+
+    <h2>WHO ATTENDS</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">REQUIRED</div>
+        <div class="card-body">
+          <ul>
+            <li><strong>TM-20 Go on file</strong> &mdash; hard requirement, no exceptions</li>
+            <li><strong>Command-approved Project Brief</strong> &mdash; submitted to C2DAO ≥14 days before Day 1</li>
+            <li>Supervisor signature on enrollment request</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">PROJECT REQUIREMENTS</div>
+        <div class="card-body">
+          <ul>
+            <li>Specific output: named dashboard, pipeline, Ontology type, or Quiver/Contour product</li>
+            <li>Named consumer &mdash; a real person or role who will use the product</li>
+            <li>All data sources accessible <em>before</em> Day 1</li>
+            <li>No code required &mdash; Python / TypeScript / OSDK = TM-40 track, not BSP</li>
+            <li>5-day feasibility: functional prototype reachable within sprint</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2>SPRINT WEEK STRUCTURE</h2>
+    <table>
+      <thead><tr><th>Day</th><th>Activity</th></tr></thead>
+      <tbody>
+        <tr><td>Day 1</td><td>In-brief: scope review, environment check, kickoff (0800&ndash;0900). Build (0900&ndash;1700).</td></tr>
+        <tr><td>Days 2&ndash;4</td><td>Daily standup (0800, 15 min). Build (0815&ndash;1700). SME available throughout.</td></tr>
+        <tr><td>Day 5</td><td>Product demo / peer review (0800&ndash;1000). Go/No-Go determination (1000&ndash;1200). Out-brief and handoff (1300&ndash;1500).</td></tr>
+      </tbody>
+    </table>
+
+    <h2>GO STANDARD</h2>
+    <table>
+      <thead><tr><th>Standard</th><th>Criterion</th></tr></thead>
+      <tbody>
+        <tr><td>Functional product</td><td>The product does what your Project Brief says it will do &mdash; your named consumer can use it</td></tr>
+        <tr><td>Documentation</td><td>Naming conventions followed; product description explains purpose and data sources</td></tr>
+        <tr><td>Handoff package</td><td>Complete by end of Day 5 &mdash; product description, data sources, limitations, maintenance guidance, promotion status, POC</td></tr>
+        <tr><td>Governance</td><td>Product in a branch; promotion plan documented or production promotion initiated</td></tr>
+      </tbody>
+    </table>
+
+    <h2>ENROLLMENT</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">TIMELINE</div>
+        <div class="card-body">
+          <ul>
+            <li><strong>T-21 days:</strong> Enrollment request submitted</li>
+            <li><strong>T-14 days:</strong> Project Brief approved by C2DAO</li>
+            <li><strong>T-10 days:</strong> Sprint workspace provisioned</li>
+            <li><strong>T-5 days:</strong> Candidate confirms access</li>
+            <li><strong>Day 1:</strong> Sprint begins</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">CADENCE</div>
+        <div class="card-body">
+          <ul>
+            <li>4 sprint events per fiscal year (quarterly)</li>
+            <li>4&ndash;16 participants per sprint</li>
+            <li>1 SME per &le;8 participants</li>
+            <li>Annual schedule published each October</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-label">DOCUMENTS</div>
+      <div class="callout-body">
+        Participant Guide: <strong>builder_sprint/BSP_GUIDE.md</strong> &nbsp;&bull;&nbsp;
+        Coordinator Package: <strong>builder_sprint/SPRINT_PACKAGE.md</strong> &nbsp;&bull;&nbsp;
+        SOP: <strong>training_management/BUILDER_SPRINT_SOP.md</strong> &nbsp;&bull;&nbsp;
+        Project Brief form: <strong>CAD Appendix D</strong>
+      </div>
+    </div>
+
+  </div><!-- /panel-bsp -->
+
+
+  <!-- ======================================================
        TM-30 PANEL
   ====================================================== -->
   <div id="panel-tm30" class="panel">
@@ -2856,7 +2984,7 @@
 
     <div class="callout bluf">
       <div class="callout-label">BLUF</div>
-      <div class="callout-body">TM-30 is for personnel who design and own MSS solutions. This level covers complex application design, advanced Pipeline Builder, Ontology architecture, AIP Logic configuration, data governance, and C2DAO standards. All work is done via the UI; coding is escalated to TM-40 developers.</div>
+      <div class="callout-body">TM-30 is for personnel who design and own MSS solutions. This level covers complex application design (including Kairos timelines and Target Workbench), advanced Pipeline Builder, Ontology architecture, AIP Logic configuration, basic agent building in Agent Studio, Automations, Machinery, data governance, and C2DAO standards. All work is done via the UI; advanced coding and agent development are escalated to TM-40 developers.</div>
     </div>
 
     <div class="callout info">
@@ -2920,12 +3048,33 @@
         </div>
       </div>
       <div class="card">
-        <div class="card-label">AIP LOGIC &amp; CONFIGURATION</div>
+        <div class="card-label">AIP &amp; AGENT STUDIO</div>
         <div class="card-body">
           <ul>
-            <li>Configure AIP Logic workflows via the UI (not author them &mdash; that is TM-40H)</li>
-            <li>Connect AIP agents to Workshop applications</li>
-            <li>Review and validate AI workflow outputs before production deployment</li>
+            <li>Configure AIP Logic workflow parameters and natural language query on Object Types</li>
+            <li>Build <strong>basic AIP agents</strong> in Agent Studio &mdash; connect Object Types, write output instructions, test and validate responses</li>
+            <li>Orient to AIP Analyst and AI FDE &mdash; awareness of the full AIP toolset</li>
+            <li>Advanced agent development (custom tools, action logic, production deployment) is TM-40H scope</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">KAIROS &amp; TARGET WORKBENCH</div>
+        <div class="card-body">
+          <ul>
+            <li>Configure <strong>Kairos</strong> timeline widgets &mdash; Ontology-driven, real-time planning visualization (distinct from static Gantt charts)</li>
+            <li>Orient to <strong>Target Workbench</strong> &mdash; targeting workflow integration; operational use is TM-40A/TM-40B scope</li>
+            <li>Ensure Object Types are structured to support both tools</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-label">AUTOMATIONS &amp; MACHINERY</div>
+        <div class="card-body">
+          <ul>
+            <li>Configure <strong>Automations</strong> on Object Types &mdash; schedule or condition-triggered property updates, pipeline runs, and notifications</li>
+            <li>Model basic business processes in <strong>Machinery</strong> &mdash; multi-step workflows with roles, transitions, and object linkage</li>
+            <li>Monitor automation execution history and active process instances</li>
           </ul>
         </div>
       </div>
@@ -2950,7 +3099,7 @@
           <tr><td>Application design and UX</td><td>Custom Python/PySpark transforms needed</td></tr>
           <tr><td>Ontology model design (via UI)</td><td>Functions on Objects (TypeScript) required</td></tr>
           <tr><td>Advanced Pipeline Builder (visual)</td><td>Incremental watermark or code logic needed</td></tr>
-          <tr><td>AIP Logic configuration</td><td>Custom AIP Logic workflow authoring needed</td></tr>
+          <tr><td>AIP Logic configuration + basic agent building</td><td>Custom tool development, agentic action logic, or production agent deployment needed</td></tr>
           <tr><td>Governance coordination</td><td>External application (OSDK) needed</td></tr>
           <tr><td>Production promotion via UI</td><td>CI/CD pipeline automation needed</td></tr>
         </tbody>
@@ -3026,7 +3175,7 @@
       <div class="specialist-cta-text">
         <div class="specialist-cta-label">Next Level &mdash; After TM-30</div>
         <div class="specialist-cta-title">Specialist Tracks &mdash; TM-40 &amp; TM-50 Series</div>
-        <div class="specialist-cta-sub">Six role-specific tracks for ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, and Software Engineer. Select your track based on MOS/role.</div>
+        <div class="specialist-cta-sub">Twelve tracks: six Warfighting Function (WFF) tracks covering Intelligence, Fires, Movement &amp; Maneuver, Sustainment, Protection, and Mission Command &mdash; plus six specialist tracks for ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, and Software Engineer. Select your track based on MOS/role.</div>
       </div>
       <button class="specialist-cta-btn" onclick="showPanel('specialists')">
         Access Specialist Tracks <span class="btn-arrow">&#8594;</span>
@@ -3919,17 +4068,17 @@
       <a class="card gold-top doc-card" href="../pdf/TM_10_MAVEN_USER.pdf" target="_blank">
         <div class="card-label">TM-10</div>
         <div class="card-title">Maven User</div>
-        <div class="card-body">Operate MSS, consume data, use dashboards and AIP. Required for all staff.</div>
+        <div class="card-body">Operate MSS, consume data, use dashboards, Gaia, command-level applications, and AIP tools embedded in Workshop. Required for all staff.</div>
       </a>
       <a class="card gold-top doc-card" href="../pdf/TM_20_BUILDER.pdf" target="_blank">
         <div class="card-label">TM-20</div>
         <div class="card-title">No-Code Builder</div>
-        <div class="card-body">Pipeline Builder, Workshop, basic Ontology. All staff with build responsibilities.</div>
+        <div class="card-body">Solution Designer, Pipeline Builder, Workshop, Ontology (Interfaces, Object Views, Actions). All staff with build responsibilities.</div>
       </a>
       <a class="card gold-top doc-card" href="../pdf/TM_30_ADVANCED_BUILDER.pdf" target="_blank">
         <div class="card-label">TM-30</div>
         <div class="card-title">Advanced No-Code Builder</div>
-        <div class="card-body">Advanced Workshop, complex pipelines, AIP Logic. Data-adjacent MOS (17/25-series, G2).</div>
+        <div class="card-body">Advanced Workshop (Kairos, Target Workbench), complex pipelines, AIP Logic, basic Agent Studio, Automations, Machinery. Data-adjacent MOS (17/25-series, G2).</div>
       </a>
     </div>
 

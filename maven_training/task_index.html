@@ -414,7 +414,8 @@ const TASKS = [
   { task: "Set up account before first login", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 2", cat: ["setup"] },
   { task: "Log in to MSS with CAC", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 2", cat: ["setup"] },
   { task: "Log out of MSS", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 2", cat: ["setup"] },
-  { task: "Verify your own markings and access level", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 7", cat: ["setup","governance"] },
+  { task: "Locate self-paced training resources", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 1", cat: ["setup"] },
+  { task: "Verify your own markings and access level", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 6", cat: ["setup","governance"] },
   { task: "Configure new ORSA Code Workspace", tms: [{id:"tm-40g",label:"TM-40G"}], chapter: "Ch 2", cat: ["setup","code"] },
   { task: "Create and configure Code Workspace", tms: [{id:"tm-40i",label:"TM-40I"}], chapter: "Ch 2", cat: ["setup","code"] },
   { task: "Manage packages in Code Workspace", tms: [{id:"tm-40g",label:"TM-40G"},{id:"tm-40i",label:"TM-40I"}], chapter: "Ch 2", cat: ["setup","code"] },
@@ -423,12 +424,15 @@ const TASKS = [
 
   // ── NAVIGATION ──────────────────────────────────────────────
   { task: "Navigate the MSS home screen", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 2", cat: ["navigation"] },
-  { task: "Find a resource using search", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 2", cat: ["navigation"] },
-  { task: "Navigate using Compass file browser", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 2", cat: ["navigation"] },
-  { task: "Bookmark a frequently used resource", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 2", cat: ["navigation"] },
+  { task: "Find a resource using search", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 3", cat: ["navigation"] },
+  { task: "Navigate using Compass file browser", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 3", cat: ["navigation"] },
+  { task: "Bookmark a frequently used resource", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 3", cat: ["navigation"] },
   { task: "Open a Workshop application", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 4", cat: ["navigation"] },
+  { task: "Orient to a command-level application (e.g., CUB/CUA, Gaia)", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 4", cat: ["navigation"] },
   { task: "Navigate between modules and pages", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 4", cat: ["navigation"] },
   { task: "Create a project and manage folder structure", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 2", cat: ["navigation","setup"] },
+  { task: "Use Solution Designer to plan a build project", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 2", cat: ["navigation","build"] },
+  { task: "Build a project roadmap using forward and backward planning", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 2", cat: ["build"] },
 
   // ── DATA VIEWING & EXPORT ────────────────────────────────────
   { task: "Read and interpret a dashboard", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 4", cat: ["data"] },
@@ -493,6 +497,9 @@ const TASKS = [
   { task: "Create an Object Type via Ontology UI", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 4", cat: ["ontology"] },
   { task: "Add and configure properties on Object Type", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 4", cat: ["ontology"] },
   { task: "Configure primary key on Object Type", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 4", cat: ["ontology"] },
+  { task: "Define an Interface on an Object Type", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 4", cat: ["ontology"] },
+  { task: "Configure an Object View", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 4", cat: ["ontology"] },
+  { task: "Use Object Explorer to validate object data", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 4", cat: ["ontology","build"] },
   { task: "Create a Link Type between Object Types", tms: [{id:"tm-20",label:"TM-20"},{id:"tm-30",label:"TM-30"}], chapter: "Ch 4", cat: ["ontology"] },
   { task: "Create and configure Actions", tms: [{id:"tm-20",label:"TM-20"},{id:"tm-30",label:"TM-30"}], chapter: "Ch 4", cat: ["ontology"] },
   { task: "Design Object Type from operational requirements", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 4", cat: ["ontology"] },
@@ -510,11 +517,12 @@ const TASKS = [
   { task: "Publish predictions as ontology object property", tms: [{id:"tm-40i",label:"TM-40I"}], chapter: "Ch 4", cat: ["ontology","ml"] },
 
   // ── AIP & AI WORKFLOWS ───────────────────────────────────────
-  { task: "Use AIP Logic workflow", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 6", cat: ["aip"] },
-  { task: "Interact with AIP Agent chat interface", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 6", cat: ["aip"] },
-  { task: "Configure AIP Logic workflows", tms: [{id:"tm-30",label:"TM-30"},{id:"tm-40h",label:"TM-40H"}], chapter: "Ch 6", cat: ["aip"] },
-  { task: "Set up natural language query interface", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 6", cat: ["aip"] },
-  { task: "Design AI-assisted data workflows", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 6", cat: ["aip"] },
+  { task: "Read and respond to an AIP Logic alert", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 4", cat: ["aip"] },
+  { task: "Interact with AIP Agent chat interface", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 4", cat: ["aip"] },
+  { task: "Configure AIP Logic workflow parameters", tms: [{id:"tm-30",label:"TM-30"},{id:"tm-40h",label:"TM-40H"}], chapter: "Ch 6", cat: ["aip"] },
+  { task: "Configure natural language query on an Object Type", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 6", cat: ["aip"] },
+  { task: "Build a basic AIP agent in Agent Studio", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 6", cat: ["aip"] },
+  { task: "Review and adjust parameters on an existing agent", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 6", cat: ["aip"] },
   { task: "Configure AIP for advanced knowledge management", tms: [{id:"tm-40k",label:"TM-40K"},{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 5", cat: ["aip","km"] },
   { task: "Conduct large-scale lessons synthesis with AI", tms: [{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 4", cat: ["aip","km","advanced"] },
   { task: "Implement AI-assisted doctrine development", tms: [{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 4", cat: ["aip","km","advanced"] },
@@ -694,8 +702,14 @@ const TASKS = [
   { task: "Design campaign wargame data architecture on MSS", tms: [{id:"tm-50g",label:"TM-50G"}], chapter: "Ch 5", cat: ["data","advanced"] },
   { task: "Build campaign assessment dashboard on MSS", tms: [{id:"tm-50g",label:"TM-50G"}], chapter: "Ch 5", cat: ["data","advanced"] },
 
+  // ── ADVANCED WORKSHOP TOOLS (TM-30) ──────────────────────────
+  { task: "Configure a Kairos timeline widget in Workshop", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 2", cat: ["build"] },
+  { task: "Navigate and orient to Target Workbench", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 2", cat: ["build"] },
+  { task: "Configure an Automation on an Object Type", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 8A", cat: ["build","governance"] },
+  { task: "Model a basic process in Machinery", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 8B", cat: ["build","governance"] },
+
   // ── GOVERNANCE & SECURITY ─────────────────────────────────────
-  { task: "Respond to misrouted or higher classification data", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 7", cat: ["governance"] },
+  { task: "Respond to misrouted or higher classification data", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 6", cat: ["governance"] },
   { task: "Audit data lineage and dependencies", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 9", cat: ["governance"] },
   { task: "Implement data quality workflows", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 9", cat: ["governance"] },
   { task: "Configure access control granularly", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 9", cat: ["governance"] },

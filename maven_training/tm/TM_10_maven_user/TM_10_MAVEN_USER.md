@@ -31,7 +31,7 @@ This Technical Manual (TM) provides operator-level instruction for the Maven Sma
 
 Those tasks are covered in TM-20 (Workshop Builder) and TM-30 (Advanced Builder). If a task you need to perform is not in this manual, contact your unit data steward before attempting it.
 
-> **NOTE:** If a task in this manual indicates it requires a builder or engineer, do not attempt it yourself. The escalation path is: (1) TM-10 operator attempt fails or is out of scope → (2) Contact your unit data steward → (3) Data steward routes to TM-20 builder (Workshop apps, basic pipelines, Ontology configuration) or TM-30 advanced builder (complex design, AIP Logic, enterprise Ontology) or TM-40 developer (code required). Chapter 8 of this manual contains the full escalation decision guide.
+> **NOTE:** If a task in this manual indicates it requires a builder or engineer, do not attempt it yourself. The escalation path is: (1) TM-10 operator attempt fails or is out of scope → (2) Contact your unit data steward → (3) Data steward routes to TM-20 builder (Workshop apps, basic pipelines, Ontology configuration) or TM-30 advanced builder (complex design, AIP Logic, enterprise Ontology) or TM-40 developer (code required). Chapter 7 of this manual contains the full escalation decision guide.
 
 ---
 
@@ -157,6 +157,18 @@ WARNING: Unauthorized access to, disclosure of, or modification of data in MSS m
 | Data governance or policy question | USAREUR-AF C2DAO office (via chain of command) |
 
 NOTE: Specific phone numbers and email addresses for MSS support contacts are maintained by your unit S6/G6. This manual does not list them because they change. Get current contact information from your S6/G6 or unit SOPs before you need them.
+
+---
+
+## 1-7A. Locating Self-Paced Training Materials
+
+Self-paced training materials are available within MSS for operators who need to build or refresh skills outside of structured classroom instruction. These materials include walkthroughs, reference guides, and practice exercises that can be completed independently.
+
+To find self-paced training resources, use the MSS Search bar (Chapter 3, Task 3-1) and search for terms such as "training," "self-study," or "MSS training." Training resources are typically organized within a designated training project folder managed by your unit data steward or the organizational data team.
+
+> **NOTE — USAREUR-AF Example:** Within USAREUR-AF, the Operational Data Team (ODT) maintains a self-paced training folder accessible via Compass. Search for "ODT Training" or ask your unit data steward for the current folder path. Other commands and organizations will have equivalent self-paced training resources with different names and locations. If you cannot locate training materials, contact your unit S6/G6 or data steward — do not assume they do not exist.
+
+An MSS Training Hub application may also be available in your environment. The Training Hub provides a centralized view of training resources, self-study materials, and links to reference documentation. Ask your data steward whether this application has been published in your command's MSS environment.
 
 ---
 
@@ -481,6 +493,62 @@ NOTE: If a Workshop application shows an "Edit" or "Builder" mode option, do not
 
 ---
 
+## TASK 4-1B: ORIENT TO A COMMAND-LEVEL APPLICATION
+
+**CONDITIONS:** Operator is logged into MSS and has been granted access to a command-level Workshop application — typically a commander's update brief (CUB), situation assessment (CUA), or geospatial situational awareness application — and needs to navigate and extract information from it.
+
+**STANDARDS:** Operator independently opens a command-level application, navigates its pages, reads annotated map layers, clicks on map objects to reveal supporting data panels, and correctly identifies the operationally relevant information displayed — without assistance.
+
+**EQUIPMENT:** Active MSS session, access to a command-level Workshop application, familiarity with Task 4-1 (Open a Workshop Application) and Task 4-2 (Read a Dashboard).
+
+**PROCEDURE:**
+
+**Step 1 — Navigate to the command-level application:**
+
+1. Use Search (Chapter 3, Task 3-1) or Compass (Chapter 3, Task 3-2) to locate the application by name.
+2. If you do not know the application name, ask your unit data steward or section chief — they can provide the correct name and confirm your access.
+3. Click the application name to open it.
+4. Wait for all widgets and map layers to fully load before interacting.
+
+> **NOTE — USAREUR-AF Example:** Within USAREUR-AF, command-level applications include the Commander's Update Brief (CUB) and Commander's Update Assessment (CUA), which serve as the primary operational picture applications for command staff. Other commands and organizations will have equivalent applications that serve the same function under different names. The navigation skills in this task apply universally to any Workshop-based command application.
+
+**Step 2 — Orient to the application layout:**
+
+1. Read the application title and any introductory text visible on the landing page.
+2. Identify the navigation structure: tabs across the top, a sidebar, or button-driven navigation.
+3. Click through each page tab or navigation element to understand the full scope of the application before acting on any data.
+4. Note which page covers which operational domain (e.g., personnel, equipment, operations, logistics).
+
+**Step 3 — Read annotated map layers:**
+
+Many command-level applications include a map widget displaying geospatial data.
+
+1. Identify the basemap and the data layer overlaid on it. Map markers, icons, and colored polygons represent different object types (units, equipment, events, facilities).
+2. Look for a map legend. It is typically accessible via a legend button or icon on the map widget. The legend defines what each color, icon, or shape represents.
+3. Read the legend before interpreting any map content. Color coding varies by application — do not assume green means ready without confirming the legend.
+4. If the map has multiple layers, a layer control panel (typically in the upper right or left corner of the map widget) lets you toggle layers on and off. Use it to reduce visual clutter when multiple overlapping layers are displayed.
+
+> **NOTE:** Gaia is the MSS map-based geospatial application used across the enterprise for situational awareness and operational overlay display. The skills in this task — reading layers, clicking on map objects, extracting data from pop-up panels — apply to Gaia and any other map-based Workshop application in your environment.
+
+**Step 4 — Click on map objects to reveal supporting data:**
+
+1. Click any map marker, icon, or polygon. A pop-up panel or side panel will appear displaying the properties of that object.
+2. Read the pop-up to identify the object's status, unit, last update time, and any other operationally relevant fields.
+3. Some applications allow you to drill down from the map selection into a detail page. If a "View Details" button or similar link appears in the pop-up, click it to see the full record.
+4. If clicking a map object does not produce a pop-up, the map may be in a non-interactive display mode, or you may need to select an object type layer first. Check the layer control panel.
+
+**Step 5 — Extract and use the information:**
+
+1. Identify the data you need for your task (e.g., the readiness status of a specific unit, the location of a facility, the number of events in an area).
+2. Note the data currency — look for a "Data as of:" timestamp in the application header or on the map widget. Command applications display real-time or near-real-time data, but the update frequency varies by application.
+3. If the information you need is not visible, check whether a filter or page selection is needed first. Some map applications require you to select a filter (unit, date range, category) before all layers are displayed.
+
+CAUTION: Command-level applications may display sensitive operational information about unit positions, readiness, and activities. Handle and protect this information according to its classification level. Do not screenshot, export, or share this data outside of approved channels.
+
+NOTE: If a command-level application is missing information you expect to see, or if the data appears incorrect, do not attempt to interpret or correct it yourself. Report the issue to your unit data steward per Table 1-2 (paragraph 1-7).
+
+---
+
 ## TASK 4-2: READ A DASHBOARD
 
 **CONDITIONS:** Operator has a Workshop application open that includes a dashboard view with charts, tables, or metric tiles.
@@ -639,6 +707,102 @@ NOTE: Not all Workshop applications have an export button. If there is no export
 
 ---
 
+## 4-8. AIP and AI-Assisted Features in Workshop Applications
+
+**BLUF:** MSS includes AI-assisted tools under the AI Platform (AIP). These tools are embedded in Workshop applications — operators encounter them as alerts, recommendations, and chat interfaces within applications their unit uses. They can help you find information, summarize data, and draft text faster. They are useful — and they require human judgment before any AI output is used operationally. The AI does not have rank. You do.
+
+AIP (AI Platform) is the AI layer of MSS. It connects large language models (LLMs) — AI systems trained to understand and generate natural language — to your unit's data in MSS. This allows you to ask questions in plain English and receive summaries, analyses, and recommendations.
+
+Think of an AIP agent as a very capable staff assistant that can quickly search through thousands of records and give you a summary. That assistant can be wrong. Your job is to check their work before briefing the commander.
+
+**In USAREUR-AF, AIP tools are authorized for:**
+- Summarizing readiness data across units
+- Drafting SITREP text based on structured data inputs
+- Answering questions about data in MSS using natural language
+- Surfacing patterns or anomalies in operational data
+
+**AIP tools are NOT authorized for:**
+- Making final operational decisions — a human officer, NCO, or official must make every decision
+- Generating official orders, directives, or legal documents without human review and signature
+- Accessing data above your clearance level — access controls apply to AI just as they apply to you
+- Connecting to external systems, websites, or the public internet — AIP operates within the MSS boundary only
+
+WARNING: AI-generated content in MSS is NOT authoritative and is NOT always correct. AI tools can produce outputs that sound plausible but are factually wrong. This is called "hallucination" — the AI generates confident-sounding text that is not supported by the actual data. All AI outputs must be reviewed by a qualified human before being used to make operational decisions, submit reports, or brief commanders. The human operator is responsible for the accuracy of any AI-assisted product. If you brief a commander on AI output that you did not verify, and it is wrong, that is on you — not the AI.
+
+**Table 4-2. AIP Capabilities and Limits**
+
+| AI tools CAN do this | AI tools CANNOT do this |
+|---|---|
+| Summarize data from MSS datasets you are authorized to see | Access data above your clearance level |
+| Answer questions in natural language | Make binding operational decisions |
+| Draft text summaries and SITREP language | Guarantee accuracy — always verify |
+| Flag anomalies and trigger alerts | Modify data (agents are read-only; only Actions write data) |
+| Navigate between related records | Access external websites or systems |
+| Maintain context within a conversation | Override classification markings |
+
+---
+
+## TASK 4-8A: READ AND RESPOND TO AN AIP LOGIC ALERT
+
+**CONDITIONS:** Operator has access to a Workshop application that includes an AIP Logic workflow — an automated process that surfaces alerts, recommendations, or status changes.
+
+**STANDARDS:** Operator reads the workflow output, identifies the underlying data it acted on, verifies that data, and applies judgment before taking action based on the workflow output.
+
+**EQUIPMENT:** Active MSS session, Workshop application with AIP Logic workflow.
+
+> **NOTE:** AIP Logic workflows are designed and configured by TM-30 advanced builders. You are using a workflow that has been built for you. If the workflow produces unexpected outputs, follow the human review steps in this task. If the workflow itself is broken or needs modification, report to your data steward — do not attempt to reconfigure it. For TM-30 builder reference, see TM-30, Chapter 6 (AIP Logic Configuration).
+
+**PROCEDURE:**
+
+1. AIP Logic workflows appear in Workshop applications as **automated alerts or recommendations.** They may display as:
+   - A highlighted alert box: "Unit 2-8 CAV readiness has dropped below 70% — review recommended."
+   - A status change flag: "Maintenance deadline status updated — 3 vehicles flagged."
+   - A triggered notification in the notification bell.
+2. Read the workflow output carefully. Note what it is telling you and what action (if any) it is recommending.
+3. Identify the **underlying data** the workflow acted on. Look for a link or reference to the source record — click through to see the actual data.
+4. **Verify the source data** by reviewing it directly. Does the data support the alert? Is the timestamp current?
+5. Apply your own judgment: does this alert make sense given what you know about the situation?
+6. If the alert is valid and action is required, take the appropriate action (consult your supervisor, execute a Workshop action, escalate to data steward).
+7. If the alert appears incorrect or unexpected, do NOT act on it. Report it to your data steward.
+
+NOTE: AIP Logic workflows are automated rules built by your unit's data engineers based on thresholds and business rules. They are not infallible. A workflow that alerts on the wrong condition, fails to alert on a real condition, or produces unexpected outputs should be reported so it can be corrected.
+
+EXAMPLE: SGT Okonkwo is monitoring the readiness dashboard for 1-9 FA in Grafenwoehr. An AIP Logic alert appears: "Personnel readiness below 80% threshold — 14 Soldiers flagged non-deployable." He clicks the alert to see the source records. He reviews the 14 records and confirms 12 are legitimately non-deployable due to medical status. Two appear to be data entry errors — Soldiers who completed medical clearances yesterday but have not been updated. He reports the two errors to the data steward and uses the 12 correct records in his morning report.
+
+---
+
+## TASK 4-8B: INTERACT WITH AN AIP AGENT (CHAT INTERFACE)
+
+**CONDITIONS:** Operator has access to an AIP Agent embedded in a Workshop application or accessible through Agent Studio, and needs to query operational data using natural language.
+
+**STANDARDS:** Operator enters a clear, specific query, receives a response, verifies the key facts against source records, and uses the response appropriately after verification.
+
+**EQUIPMENT:** Active MSS session, AIP Agent interface.
+
+> **NOTE:** AIP Agents are AI interfaces designed for operator use, configured by TM-30 builders. Your role is to interact with the agent and validate its outputs before acting on them. If the agent produces consistently incorrect, outdated, or operationally unsound information, report to your data steward with screenshots or a summary of the issue. Do not alter the agent configuration. See TM-30, Chapter 6 for builder-level AIP configuration.
+
+**PROCEDURE:**
+
+1. Locate the **Agent chat interface.** It appears as a chat panel within a Workshop application, or as a standalone Agent Studio window. It looks like a messaging app — there is a text input box at the bottom.
+2. Think about what you want to know **before** typing. The more specific your question, the better the answer.
+   - Instead of: "How are we doing?"
+   - Type: "What is the current mission capable rate for wheeled vehicles across 21st TSC as of today?"
+3. Type your question in the chat input box and press Enter or click the Send button.
+4. The agent queries MSS data and responds in the chat panel. The response may include text summaries, data tables, percentages, or links to source records.
+5. **Read the response carefully.** Do not just use the first number you see.
+6. **Verify key facts:** click through to any source records the agent references. Confirm the numbers match what you see in the underlying data.
+7. If you want to drill deeper, type a follow-up question: "Break that down by brigade." The agent maintains context within a conversation.
+8. If the response seems wrong, navigate directly to the data to cross-check. If the discrepancy is significant, report it to your data steward.
+9. **Do not copy AI text verbatim into an official document** without verifying the facts. Revise for accuracy and official language before use.
+
+NOTE: AIP Agents only access MSS data you are authorized to see. An agent cannot reach data outside your access level — this is enforced at the data layer, not by the AI. If an agent says it cannot find information, the data may not exist in MSS, the pipeline may not have run, or you may not have access to that data.
+
+NOTE: Do not enter sensitive personal identifying information (SSN, full medical details) into the agent chat interface unless the interface is specifically designated for that data. Chat inputs may be logged for system improvement purposes.
+
+EXAMPLE: WO2 Patterson at 21st TSC G4 in Sembach Kaserne needs a quick readiness summary for the weekly sustainment brief. She opens the AIP Agent in the sustainment dashboard and types: "What percentage of Class IX parts requests from the past 7 days have been filled within the 48-hour standard, broken down by commodity class?" The agent returns a table with fill rates by class. She clicks through to verify two of the numbers against the dataset. Both match. She uses the table in her brief, noting "Source: MSS AIP Agent output, verified against raw data, as of 111900Z MAR 26."
+
+---
+
 # CHAPTER 5 — WORKING WITH DATA
 
 **BLUF:** Most users will interact with data through Workshop applications. This chapter covers what to do when you need to go deeper — opening datasets directly, using Contour for basic analysis without writing code, and using Quiver to explore linked records. It also covers how to verify that data is current and what to do when something looks wrong.
@@ -728,7 +892,7 @@ CAUTION: You are viewing a live preview of the dataset. Do not attempt to edit d
 
 NOTE: Contour analyses are read-only analyses of live data. They do not modify the underlying dataset in any way. Another analyst opening the same analysis later will see updated data reflecting whatever the dataset looked like when they ran it.
 
-CAUTION: Before sharing any Contour analysis output with others, verify that the combined output does not reveal information at a higher classification than what you are authorized to share. Combining multiple data fields can raise the effective classification of the output (see Aggregation Risk, Section 7-4).
+CAUTION: Before sharing any Contour analysis output with others, verify that the combined output does not reveal information at a higher classification than what you are authorized to share. Combining multiple data fields can raise the effective classification of the output (see Aggregation Risk, Section 6-4).
 
 EXAMPLE: MAJ Williams at V Corps G1 needs to know how many Soldiers across V Corps subordinate units have expired weapon qualifications. She opens the personnel readiness dataset in Contour, groups by "unit_name," and aggregates a count of records where "weapon_qual_expired" equals true. The result table shows counts by unit. She creates a bar chart and saves it to the V Corps G1 project folder for the morning brief.
 
@@ -837,137 +1001,17 @@ CAUTION: Guessing at corrections, editing records outside of authorized interfac
 
 ---
 
-# CHAPTER 6 — AIP AND AI INTERFACES
-
-**BLUF:** MSS includes AI-assisted tools under the AI Platform (AIP). These tools can help you find information, summarize data, and draft text faster. They are useful — and they require human judgment before any AI output is used operationally. The AI does not have rank. You do.
-
----
-
-## 6-1. What AIP Is
-
-AIP (AI Platform) is the AI layer of MSS. It connects large language models (LLMs) — AI systems trained to understand and generate natural language — to your unit's data in MSS. This allows you to ask questions in plain English and receive summaries, analyses, and recommendations.
-
-Think of an AIP agent as a very capable staff assistant that can quickly search through thousands of records and give you a summary. That assistant can be wrong. Your job is to check their work before briefing the commander.
-
-**In USAREUR-AF, AIP tools are authorized for:**
-- Summarizing readiness data across units
-- Drafting SITREP text based on structured data inputs
-- Answering questions about data in MSS using natural language
-- Surfacing patterns or anomalies in operational data
-
-**AIP tools are NOT authorized for:**
-- Making final operational decisions — a human officer, NCO, or official must make every decision
-- Generating official orders, directives, or legal documents without human review and signature
-- Accessing data above your clearance level — access controls apply to AI just as they apply to you
-- Connecting to external systems, websites, or the public internet — AIP operates within the MSS boundary only
-
----
-
-## 6-2. CRITICAL NOTICE — AI Output Requires Human Review
-
-WARNING: AI-generated content in MSS is NOT authoritative and is NOT always correct. AI tools can produce outputs that sound plausible but are factually wrong. This is called "hallucination" — the AI generates confident-sounding text that is not supported by the actual data. All AI outputs must be reviewed by a qualified human before being used to make operational decisions, submit reports, or brief commanders. The human operator is responsible for the accuracy of any AI-assisted product. If you brief a commander on AI output that you did not verify, and it is wrong, that is on you — not the AI.
-
----
-
-## TASK 6-1: USE AN AIP LOGIC WORKFLOW
-
-**CONDITIONS:** Operator has access to a Workshop application that includes an AIP Logic workflow — an automated process that surfaces alerts, recommendations, or status changes.
-
-**STANDARDS:** Operator reads the workflow output, identifies the underlying data it acted on, verifies that data, and applies judgment before taking action based on the workflow output.
-
-**EQUIPMENT:** Active MSS session, Workshop application with AIP Logic workflow.
-
-> **NOTE:** AIP Logic workflows are designed and configured by TM-30 advanced builders. You are using a workflow that has been built for you. If the workflow produces unexpected outputs, follow the human review steps in this task. If the workflow itself is broken or needs modification, report to your data steward — do not attempt to reconfigure it. For TM-30 builder reference, see TM-30, Chapter 6 (AIP Logic Configuration).
-
-**PROCEDURE:**
-
-1. AIP Logic workflows appear in Workshop applications as **automated alerts or recommendations.** They may display as:
-   - A highlighted alert box: "Unit 2-8 CAV readiness has dropped below 70% — review recommended."
-   - A status change flag: "Maintenance deadline status updated — 3 vehicles flagged."
-   - A triggered notification in the notification bell.
-2. Read the workflow output carefully. Note what it is telling you and what action (if any) it is recommending.
-3. Identify the **underlying data** the workflow acted on. Look for a link or reference to the source record — click through to see the actual data.
-4. **Verify the source data** by reviewing it directly. Does the data support the alert? Is the timestamp current?
-5. Apply your own judgment: does this alert make sense given what you know about the situation?
-6. If the alert is valid and action is required, take the appropriate action (consult your supervisor, execute a Workshop action, escalate to data steward).
-7. If the alert appears incorrect or unexpected, do NOT act on it. Report it to your data steward.
-
-NOTE: AIP Logic workflows are automated rules built by your unit's data engineers based on thresholds and business rules. They are not infallible. A workflow that alerts on the wrong condition, fails to alert on a real condition, or produces unexpected outputs should be reported so it can be corrected.
-
-EXAMPLE: SGT Okonkwo is monitoring the readiness dashboard for 1-9 FA in Grafenwoehr. An AIP Logic alert appears: "Personnel readiness below 80% threshold — 14 Soldiers flagged non-deployable." He clicks the alert to see the source records. He reviews the 14 records and confirms 12 are legitimately non-deployable due to medical status. Two appear to be data entry errors — Soldiers who completed medical clearances yesterday but have not been updated. He reports the two errors to the data steward and uses the 12 correct records in his morning report.
-
----
-
-## TASK 6-2: INTERACT WITH AN AIP AGENT (CHAT INTERFACE)
-
-**CONDITIONS:** Operator has access to an AIP Agent embedded in a Workshop application or accessible through Agent Studio, and needs to query operational data using natural language.
-
-**STANDARDS:** Operator enters a clear, specific query, receives a response, verifies the key facts against source records, and uses the response appropriately after verification.
-
-**EQUIPMENT:** Active MSS session, AIP Agent interface.
-
-> **NOTE:** AIP Agents are AI interfaces designed for operator use, configured by TM-30 builders. Your role is to interact with the agent and validate its outputs before acting on them. If the agent produces consistently incorrect, outdated, or operationally unsound information, report to your data steward with screenshots or a summary of the issue. Do not alter the agent configuration. See TM-30, Chapter 6 for builder-level AIP configuration.
-
-**PROCEDURE:**
-
-1. Locate the **Agent chat interface.** It appears as a chat panel within a Workshop application, or as a standalone Agent Studio window. It looks like a messaging app — there is a text input box at the bottom.
-2. Think about what you want to know **before** typing. The more specific your question, the better the answer.
-   - Instead of: "How are we doing?"
-   - Type: "What is the current mission capable rate for wheeled vehicles across 21st TSC as of today?"
-3. Type your question in the chat input box and press Enter or click the Send button.
-4. The agent queries MSS data and responds in the chat panel. The response may include text summaries, data tables, percentages, or links to source records.
-5. **Read the response carefully.** Do not just use the first number you see.
-6. **Verify key facts:** click through to any source records the agent references. Confirm the numbers match what you see in the underlying data.
-7. If you want to drill deeper, type a follow-up question: "Break that down by brigade." The agent maintains context within a conversation.
-8. If the response seems wrong, navigate directly to the data to cross-check. If the discrepancy is significant, report it to your data steward.
-9. **Do not copy AI text verbatim into an official document** without verifying the facts. Revise for accuracy and official language before use.
-
-NOTE: AIP Agents only access MSS data you are authorized to see. An agent cannot reach data outside your access level — this is enforced at the data layer, not by the AI. If an agent says it cannot find information, the data may not exist in MSS, the pipeline may not have run, or you may not have access to that data.
-
-NOTE: Do not enter sensitive personal identifying information (SSN, full medical details) into the agent chat interface unless the interface is specifically designated for that data. Chat inputs may be logged for system improvement purposes.
-
-EXAMPLE: WO2 Patterson at 21st TSC G4 in Sembach Kaserne needs a quick readiness summary for the weekly sustainment brief. She opens the AIP Agent in the sustainment dashboard and types: "What percentage of Class IX parts requests from the past 7 days have been filled within the 48-hour standard, broken down by commodity class?" The agent returns a table with fill rates by class. She clicks through to verify two of the numbers against the dataset. Both match. She uses the table in her brief, noting "Source: MSS AIP Agent output, verified against raw data, as of 111900Z MAR 26."
-
----
-
-## 6-3. What AI Tools Cannot Do — At a Glance
-
-**Table 6-1. AIP Capabilities and Limits**
-
-| AI tools CAN do this | AI tools CANNOT do this |
-|---|---|
-| Summarize data from MSS datasets you are authorized to see | Access data above your clearance level |
-| Answer questions in natural language | Make binding operational decisions |
-| Draft text summaries and SITREP language | Guarantee accuracy — always verify |
-| Flag anomalies and trigger alerts | Modify data (agents are read-only; only Actions write data) |
-| Navigate between related records | Access external websites or systems |
-| Maintain context within a conversation | Override classification markings |
-
----
-
-## 6-4. Reporting AI Errors and Unexpected Outputs
-
-If an AIP agent or Logic workflow produces output that is incorrect, unexpected, or potentially harmful:
-
-1. **Do not act on the output.**
-2. Take a screenshot of the query you entered and the output you received.
-3. Note the application name, the query, and what you expected versus what you got.
-4. Report to your unit data steward with the screenshot and description.
-5. The data steward will escalate to the MSS team for investigation and correction.
-
----
-
-# CHAPTER 7 — SECURITY, CLASSIFICATION, AND MARKINGS
+# CHAPTER 6 — SECURITY, CLASSIFICATION, AND MARKINGS
 
 **BLUF:** MSS enforces data security through markings — labels on data that restrict who can see it and what they can do with it. This chapter explains how to read those markings, what you are and are not authorized to do with marked data, and what to do when something goes wrong.
 
 ---
 
-## 7-1. What Markings Are and How They Appear
+## 6-1. What Markings Are and How They Appear
 
 Markings in MSS are labels applied to datasets, applications, and individual objects. They control who can see the data. Markings appear as colored badges or text labels near the resource name — in the file browser (Compass), in application headers, and in dataset metadata.
 
-**Table 7-1. Common Markings in MSS**
+**Table 6-1. Common Markings in MSS**
 
 | Marking | Meaning | What It Means for You |
 |---|---|---|
@@ -978,11 +1022,11 @@ Markings in MSS are labels applied to datasets, applications, and individual obj
 | [AOR Label] | Data limited to a specific Area of Responsibility | You must have the AOR marking assigned to your account |
 | [Role Label] | Data limited to a specific function (e.g., S2-only, Medical) | Your role must match the marking to access the data |
 
-NOTE: In MSS, markings are applied to **data**, not just documents. A dataset marked SECRET means every row in that dataset is SECRET level. If you can see the data in MSS, your assigned markings authorize you to see it. If you accidentally see data at a level you are not cleared for, follow the procedure in Task 7-2 immediately.
+NOTE: In MSS, markings are applied to **data**, not just documents. A dataset marked SECRET means every row in that dataset is SECRET level. If you can see the data in MSS, your assigned markings authorize you to see it. If you accidentally see data at a level you are not cleared for, follow the procedure in Task 6-2 immediately.
 
 ---
 
-## TASK 7-1: VERIFY YOUR OWN MARKINGS AND ACCESS LEVEL
+## TASK 6-1: VERIFY YOUR OWN MARKINGS AND ACCESS LEVEL
 
 **CONDITIONS:** Operator is logged into MSS and wants to confirm what data access and markings are assigned to their account.
 
@@ -1003,7 +1047,7 @@ NOTE: You cannot grant yourself markings or expand your own access. All marking 
 
 ---
 
-## TASK 7-2: RESPOND TO MISROUTED OR HIGHER-THAN-AUTHORIZED DATA
+## TASK 6-2: RESPOND TO MISROUTED OR HIGHER-THAN-AUTHORIZED DATA
 
 **CONDITIONS:** Operator navigates to data in MSS that appears to be at a classification level above their clearance, or that carries markings they are not authorized for.
 
@@ -1025,9 +1069,9 @@ WARNING: This is a potential security incident. Report it immediately, regardles
 
 ---
 
-## 7-2. Authorized vs. Not Authorized — Quick Reference
+## 6-2. Authorized vs. Not Authorized — Quick Reference
 
-**Table 7-2. Authorization Boundaries for MSS Users**
+**Table 6-2. Authorization Boundaries for MSS Users**
 
 | Action | AUTHORIZED | NOT AUTHORIZED |
 |---|---|---|
@@ -1044,7 +1088,7 @@ WARNING: This is a potential security incident. Report it immediately, regardles
 
 ---
 
-## 7-3. Handling Exports, Screenshots, and Shared Content
+## 6-3. Handling Exports, Screenshots, and Shared Content
 
 Data does not become less sensitive just because you moved it out of MSS. When you export, screenshot, print, or share MSS content, that content inherits the classification of the data it contains.
 
@@ -1073,7 +1117,7 @@ Data does not become less sensitive just because you moved it out of MSS. When y
 
 ---
 
-## 7-4. Aggregation Risk
+## 6-4. Aggregation Risk
 
 CAUTION: Combining multiple pieces of unclassified or lower-classification data can produce a product that is classified at a higher level. This is called **aggregation risk.**
 
@@ -1086,9 +1130,9 @@ Before exporting, sharing, or publishing any analysis that combines multiple dat
 
 ---
 
-## 7-5. Incident Reporting Procedures
+## 6-5. Incident Reporting Procedures
 
-**Table 7-3. Security Incident Reporting**
+**Table 6-3. Security Incident Reporting**
 
 | Incident | Report To | When |
 |---|---|---|
@@ -1105,15 +1149,15 @@ After reporting a security incident, preserve all records (browser history, scre
 
 ---
 
-# CHAPTER 8 — TROUBLESHOOTING AND SUPPORT
+# CHAPTER 7 — TROUBLESHOOTING AND SUPPORT
 
 **BLUF:** Most MSS problems are one of a small number of common issues with straightforward fixes. If you cannot solve the problem yourself using this chapter, escalate with the right information. Do not attempt fixes that might affect operational data.
 
 ---
 
-## 8-1. Common Problems and Solutions
+## 7-1. Common Problems and Solutions
 
-**Table 8-1. MSS Troubleshooting Guide**
+**Table 7-1. MSS Troubleshooting Guide**
 
 | Problem | Likely Cause | Operator Action |
 |---|---|---|
@@ -1139,7 +1183,7 @@ After reporting a security incident, preserve all records (browser history, scre
 
 ---
 
-## 8-2. Security Incident Response Procedure
+## 7-2. Security Incident Response Procedure
 
 If you suspect a security incident — unauthorized data access, mishandled classified information, data visible that should not be, or suspicious activity on your account — take the following steps immediately:
 
@@ -1150,11 +1194,23 @@ If you suspect a security incident — unauthorized data access, mishandled clas
 5. Contact the USAREUR-AF C2DAO via your unit's data steward.
 6. Do not discuss details over unsecured channels.
 
-> **WARNING:** A security incident is not a troubleshooting problem — it is a command responsibility. Do not delay reporting to investigate on your own. Refer to Chapter 7, Section 7-5 and Task 7-2 for additional incident response procedures.
+> **WARNING:** A security incident is not a troubleshooting problem — it is a command responsibility. Do not delay reporting to investigate on your own. Refer to Chapter 6, Section 6-5 and Task 6-2 for additional incident response procedures.
 
 ---
 
-## 8-4. Self-Help vs. Escalate — Decision Guide
+## 7-3. Reporting AI Errors and Unexpected Outputs
+
+If an AIP agent or Logic workflow produces output that is incorrect, unexpected, or potentially harmful:
+
+1. **Do not act on the output.**
+2. Take a screenshot of the query you entered and the output you received.
+3. Note the application name, the query, and what you expected versus what you got.
+4. Report to your unit data steward with the screenshot and description.
+5. The data steward will escalate to the MSS team for investigation and correction.
+
+---
+
+## 7-4. Self-Help vs. Escalate — Decision Guide
 
 **Handle yourself before escalating:**
 - Re-insert CAC and restart browser for certificate issues
@@ -1182,7 +1238,7 @@ If you suspect a security incident — unauthorized data access, mishandled clas
 
 ---
 
-## 8-5. Information to Have Ready Before You Call for Help
+## 7-5. Information to Have Ready Before You Call for Help
 
 Do not call the Help Desk or data steward empty-handed. Having the right information ready will cut the time to resolution significantly.
 
@@ -1198,9 +1254,9 @@ Collect the following before making contact:
 
 ---
 
-## 8-6. MSS Support Escalation Path
+## 7-6. MSS Support Escalation Path
 
-**Table 8-2. MSS Support Contacts**
+**Table 7-2. MSS Support Contacts**
 
 | Issue Type | First Point of Contact | Escalation |
 |---|---|---|
@@ -1214,7 +1270,7 @@ Collect the following before making contact:
 NOTE: Current phone numbers and email addresses for the USAREUR-AF MSS Help Desk and the C2DAO office are maintained by your unit S6/G6 and in your unit SOP. This manual does not list them because they change. Obtain current contact information before you need it.
 
 > **NOTE:** The escalation path for MSS issues follows TM capability levels:
-> 1. **TM-10 (Operator):** Self-diagnose using Chapter 8 of this manual. Use the self-help checklist before escalating.
+> 1. **TM-10 (Operator):** Self-diagnose using Chapter 7 of this manual. Use the self-help checklist before escalating.
 > 2. **Data Steward:** First point of escalation. The steward triages and routes.
 > 3. **TM-20 Builder:** Workshop application issues, basic pipeline failures, Ontology configuration errors.
 > 4. **TM-30 Advanced Builder:** Complex pipeline design, Ontology architecture, AIP Logic configuration, multi-page application design.

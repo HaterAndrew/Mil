@@ -12,7 +12,7 @@
 
 This Technical Manual (TM) provides task-level instruction for USAREUR-AF personnel who build on the Maven Smart System (MSS) using no-code tools. It is written for all staff — officer, warrant, NCO, civilian — who completed TM-10 and have been granted builder access. No programming background is required. If you can use a web browser and fill out forms, you can do everything in this manual.
 
-> **NOTE:** Before beginning TM-20 work, verify you can independently perform the following TM-10 tasks without referencing the manual: Task 2-1 through 2-4 (account setup, MFA, access); Task 3-1 through 3-3 (navigation and resource discovery); Task 5-1 (dataset viewing); Chapter 7 (security markings and access controls). Builders must understand operator-level data security requirements before building. If you are uncertain about any TM-10 task, review TM-10 before proceeding.
+> **NOTE:** Before beginning TM-20 work, verify you can independently perform the following TM-10 tasks without referencing the manual: Task 2-1 through 2-4 (account setup, MFA, access); Task 3-1 through 3-3 (navigation and resource discovery); Task 5-1 (dataset viewing); Chapter 6 (security markings and access controls). Builders must understand operator-level data security requirements before building. If you are uncertain about any TM-10 task, review TM-10 before proceeding.
 
 **This manual covers:**
 
@@ -330,6 +330,107 @@ All resources must follow USAREUR-AF naming conventions. Non-compliant resources
 
 ---
 
+## TASK 2-4: USE SOLUTION DESIGNER TO PLAN A BUILD PROJECT
+
+**TASK:** Use Solution Designer to create a visual diagram of a planned build project before writing any pipelines, creating any Object Types, or building any Workshop applications.
+
+**CONDITIONS:** Builder has received a requirement and is preparing to build. The requirement has been confirmed with the user and the data steward. Builder has completed the three-question design framework (paragraph 1-2) before opening Solution Designer.
+
+**STANDARDS:** Builder produces a Solution Designer diagram that accurately represents the planned data flow — from source through pipeline to dataset, through Object Type, to Workshop application — annotated with design decisions and data flow direction, and shared with the data steward for review before any build work begins.
+
+**EQUIPMENT:** MSS account with Editor role; Solution Designer access within the project.
+
+**DURATION:** 1–2 hours.
+
+**PROCEDURE:**
+
+1. In Compass, navigate to your team's project folder.
+2. Click **New** and look for **Solution Designer** or **Diagram** in the resource creation menu. If Solution Designer is not available in the creation menu, search for "Solution Designer" in the platform search bar and open it from there.
+3. Click **New Diagram**. Name the diagram using the naming convention `[project-name]_solution-design_v[version]` (e.g., `vcorps-readiness_solution-design_v1`).
+
+**Step 1 — Add nodes for your planned build components:**
+
+4. From the node palette (left panel or drag-to-canvas menu), add nodes for each component you plan to build:
+   - **Source Dataset** — the raw or existing dataset you will ingest or connect to
+   - **Pipeline** — the Pipeline Builder pipeline that will clean or transform the data
+   - **Output Dataset** — the curated dataset the pipeline produces
+   - **Object Type** — the Ontology Object Type backed by your curated dataset
+   - **Workshop Application** — the application operators will use
+5. If your build includes multiple sources, add a node for each source. If it includes Link Types between Object Types, add nodes for each Object Type.
+
+**Step 2 — Connect nodes to show data flow:**
+
+6. Draw edges (arrows) between nodes to show the direction of data flow. The diagram should read left to right: source → pipeline → dataset → Object Type → Workshop App.
+7. Label each edge to describe what data flows across it. For example: "Vehicle status rows" or "Joined and deduplicated records."
+
+**Step 3 — Annotate design decisions:**
+
+8. Add annotation nodes or comment boxes to capture key design decisions:
+   - What is the join key between two sources?
+   - What is the primary key of the Object Type?
+   - Which Actions will be configured on the Object Type?
+   - Who is the intended user of the Workshop application?
+9. Note any assumptions: "Assumes GCSS-A feed is already ingested by the logistics pipeline team."
+10. Note any open questions: "Need to confirm with data steward whether G4 has write-back authorization."
+
+**Step 4 — Share for review:**
+
+11. Save the diagram.
+12. In the diagram settings or sharing panel, share the diagram with your data steward and team lead.
+13. Do not begin building pipelines or Object Types until the diagram has been reviewed and approved. A 30-minute diagram review prevents hours of rework.
+
+NOTE: Solution Designer is a planning tool — it does not generate any pipelines, Object Types, or applications automatically. It is a shared visual reference. Keep the diagram updated as the build evolves; a diagram that accurately reflects the final build is useful for future maintainers.
+
+---
+
+## TASK 2-5: BUILD A PROJECT ROADMAP USING FORWARD AND BACKWARD PLANNING
+
+**TASK:** Before beginning any build, produce a documented project roadmap using forward and/or backward planning to sequence the build correctly and ensure the final product addresses the commander's requirement.
+
+**CONDITIONS:** Builder has received a confirmed requirement and has completed Task 2-4 (Solution Designer diagram). Builder has confirmed data availability with the data steward.
+
+**STANDARDS:** Builder produces a documented roadmap — either as annotations in the Solution Designer diagram, a written outline, or both — that sequences the build phases in the correct order, identifies dependencies, and scopes the build to what the data actually supports. Roadmap is reviewed and agreed upon with the data steward before build begins.
+
+**EQUIPMENT:** MSS account; Solution Designer diagram from Task 2-4; confirmed data availability.
+
+**DURATION:** 30–60 minutes.
+
+**PROCEDURE:**
+
+**When to use forward planning:**
+
+Forward planning starts from the data you have and designs toward a product the data can support. Use forward planning when the data source is well-understood and you are determining what products are feasible.
+
+1. Start at the source dataset. What columns does it have? What is the grain (one row per what)?
+2. Ask: given this data, what can I build that is operationally useful?
+3. Design the pipeline, Object Type, and application around the data's actual content.
+4. Document: "The GCSS-A vehicle feed supports a readiness dashboard by fleet and unit. It does not support maintenance history trend analysis — that requires the maintenance event feed."
+
+**When to use backward planning:**
+
+Backward planning starts from the commander's requirement and works backward to determine what data, pipelines, and objects are needed. Use backward planning when the requirement is clear and you need to determine whether it is buildable.
+
+1. Start at the requirement: "The S4 needs a daily view of deadlined vehicles by company within the brigade."
+2. Ask: what data is needed to produce this? (Vehicle ID, status, deadline reason, unit assignment.)
+3. Ask: does that data exist in MSS? (Check with the data steward.)
+4. Ask: is it in a format that supports this view? (One row per vehicle, with unit UIC.)
+5. Work backward through the pipeline and source to confirm the build is feasible.
+6. If the data does not exist or does not support the requirement: stop and report to the data steward before continuing. Do not build a workaround without authorization.
+
+**Documenting the roadmap:**
+
+7. Sequence the build into phases using the three-phase workflow (paragraph 1-4):
+   - Phase 1 — Pipeline: which pipeline(s) must be built first?
+   - Phase 2 — Ontology: which Object Type(s), Link Types, and Actions?
+   - Phase 3 — Workshop: which application pages, widgets, and filters?
+8. Identify dependencies: "Phase 2 cannot begin until Phase 1 pipeline produces a clean dataset."
+9. Identify scope limits: "This build covers vehicle status only. Personnel readiness is out of scope for this iteration."
+10. Share the roadmap with the data steward and the intended user's representative for confirmation.
+
+> CAUTION: Build to the requirement, not to the maximum of what the data could theoretically support. A scoped build that solves the user's actual problem is more valuable than a comprehensive build that takes three times as long and is never fully used. Agree on scope before building — changes to scope mid-build are the leading cause of builder rework.
+
+---
+
 **TASK 2-1. CREATE A PROJECT**
 
 **TASK:** Create a new project in Compass for an authorized functional area.
@@ -449,7 +550,7 @@ Pipeline Builder is MSS's visual, no-code ETL (Extract, Transform, Load) tool. U
 - Machine learning or statistical computation
 - Writeback to external systems
 
-> **NOTE:** The pipelines you build in Pipeline Builder become the data sources that operators access via TM-10, Task 5-1 (View and Read a Dataset) and in Workshop applications. Pipeline failures directly impact operators' ability to access operational data. Refer to TM-10, Chapter 8 (Troubleshooting and Support) to understand the operator experience when a pipeline fails — build your monitoring accordingly.
+> **NOTE:** The pipelines you build in Pipeline Builder become the data sources that operators access via TM-10, Task 5-1 (View and Read a Dataset) and in Workshop applications. Pipeline failures directly impact operators' ability to access operational data. Refer to TM-10, Chapter 7 (Troubleshooting and Support) to understand the operator experience when a pipeline fails — build your monitoring accordingly.
 
 ---
 
@@ -824,6 +925,172 @@ NOTE: Renaming a property changes what Workshop apps display — it does not cha
 
 ---
 
+## TASK 4-2B: DEFINE AN INTERFACE ON AN OBJECT TYPE
+
+**TASK:** Create an Interface in Ontology Manager and apply it to an Object Type to enforce consistent property definitions across multiple Object Types that share common attributes.
+
+**CONDITIONS:** Builder has Editor access on the Ontology; at least two Object Types exist that share common properties (e.g., all unit-type objects have a name, echelon, and location property); builder is working on a development branch.
+
+**STANDARDS:** Builder creates an Interface with correctly defined shared properties and applies it to at least one Object Type. The Object Type correctly inherits the Interface properties and the configuration is verified in preview before the branch is submitted for merge.
+
+**EQUIPMENT:** MSS account with Ontology Editor role; Ontology Manager access; development branch active.
+
+**DURATION:** 30–45 minutes.
+
+**PROCEDURE:**
+
+**What an Interface is:**
+
+An Interface is a shared contract in the Ontology that defines a set of properties common across multiple Object Types. Instead of defining the same property (e.g., "Unit Name," "Echelon," "Location") independently on each Object Type that represents a unit-type entity, you define those properties once in an Interface and apply the Interface to all relevant Object Types. This enforces consistency: every Object Type that implements the Interface will expose the same properties with the same names and data types.
+
+Use Interfaces when:
+- Multiple Object Types represent variants of the same concept (e.g., `LogVehicle`, `AviationAsset`, `EngineerEquipment` — all are equipment types)
+- Downstream Workshop applications or AIP Logic workflows need to query across multiple Object Types using the same property names
+- You want to enforce a design standard so that future Object Types of the same category inherit the correct structure automatically
+
+**Step 1 — Create an Interface:**
+
+1. In Ontology Manager, confirm the branch selector shows your development branch.
+2. Navigate to the **Interfaces** section (left panel or top navigation, depending on platform version).
+3. Click **New Interface** or **Create Interface**.
+4. Enter the Interface name in PascalCase using a descriptive noun pattern: `EquipmentAsset`, `OperationalUnit`, `PersonnelRecord`.
+5. Enter a description: what category of Object Types should implement this Interface, and what common properties does it enforce?
+6. Under **Properties**, add each shared property:
+   - Property name (camelCase)
+   - Data type (String, Integer, Date, etc.)
+   - Description (especially for non-obvious fields)
+   - Whether the property is required
+7. Save the Interface.
+
+**Step 2 — Apply the Interface to an Object Type:**
+
+1. Open the target Object Type in Ontology Manager.
+2. Navigate to the **Interfaces** tab or the **Overview** section (location varies by platform version).
+3. Click **Add Interface** or **Apply Interface**.
+4. Search for and select the Interface you created.
+5. The Interface's properties appear on the Object Type. Map each Interface property to the corresponding column in the Object Type's backing dataset.
+6. Save.
+7. Verify in preview that the Interface properties display correctly on the Object Type.
+
+NOTE: Applying an Interface to an Object Type does not automatically populate the Interface properties — you must map each Interface property to the correct dataset column. If the dataset does not contain a column matching an Interface property, the property will be empty on all objects.
+
+> CAUTION: If you modify an Interface (rename a property, change a data type) after it has been applied to multiple Object Types, the change propagates to all Object Types implementing the Interface. Perform a downstream impact assessment (similar to Task 4-2, Rename a Property) before modifying any shared Interface.
+
+---
+
+## TASK 4-2C: CONFIGURE AN OBJECT VIEW
+
+**TASK:** Configure an Object View for an Object Type to define how its properties are displayed to operators in Object Explorer and Workshop applications.
+
+**CONDITIONS:** Object Type exists with at least five properties configured; builder is on a development branch; builder understands which properties are most operationally relevant to operators.
+
+**STANDARDS:** Builder configures an Object View with a designated title property, a description property, and a prioritized list of displayed properties in a logical operational order. Object View is verified in Object Explorer before branch submission.
+
+**EQUIPMENT:** MSS account with Ontology Editor role; Object Type open in Ontology Manager; development branch active.
+
+**DURATION:** 20–30 minutes.
+
+**PROCEDURE:**
+
+**What an Object View is:**
+
+An Object View defines the display configuration for an Object Type — which properties appear when operators view an object in Object Explorer, Workshop detail panels, or Quiver. By default, all properties are displayed in the order they were added. An Object View lets you control which properties are shown, in what order, and which property serves as the object's title (the primary human-readable identifier).
+
+A well-configured Object View makes objects immediately recognizable to operators. A poorly configured Object View exposes internal field names, system codes, and low-priority properties that clutter the display and confuse users.
+
+**Step 1 — Open the Object View editor:**
+
+1. Open the Object Type in Ontology Manager (on your development branch).
+2. Navigate to the **Object View** tab or **Views** section.
+3. Click the default Object View to edit it, or click **New Object View** to create a named view for a specific audience.
+
+**Step 2 — Configure the title property:**
+
+4. Under **Title Property**, select the property that best identifies each object to an operator. This is the name that appears as the object's label in lists, tables, and pop-ups.
+   - Good title properties: unit name, equipment bumper number, Soldier last name + last 4
+   - Poor title properties: internal system IDs, numeric codes without context, UUIDs
+5. Under **Description Property** (or **Subtitle**), select a secondary property that provides supporting context at a glance (e.g., unit name + status, or equipment type + location).
+
+**Step 3 — Configure displayed properties and order:**
+
+6. In the property list, check or uncheck properties to include or exclude them from the Object View.
+7. Drag properties into the priority order that makes operational sense:
+   - Most important / most frequently needed properties at the top
+   - Administrative or system fields at the bottom or excluded entirely
+8. Exclude properties that contain internal system codes, timestamps used only for pipeline logic, or fields with no operational meaning to the end user.
+
+**Step 4 — Verify the Object View:**
+
+9. Save the Object View.
+10. Click **Preview** on the Object Type and select a sample object.
+11. Verify the object displays with the correct title, description, and property order.
+12. Mentally test: if an operator opened this object, would they immediately understand what they are looking at and find the information they need? If not, adjust the order and selection.
+
+NOTE: Object Views affect what operators see in Object Explorer and in Workshop Object Explorer widgets. Workshop table widgets have their own column configuration — the Object View does not override Workshop widget display settings. However, the Object View does control the default property display for pop-ups and linked-object panels.
+
+---
+
+## TASK 4-2D: USE OBJECT EXPLORER TO VALIDATE OBJECT DATA
+
+**TASK:** Use Object Explorer to inspect individual objects and their property values to verify that pipeline and Ontology configuration is producing correct, expected results before publishing a Workshop application.
+
+**CONDITIONS:** Object Type has been created and is backed by a curated dataset; builder is on a development branch; pipeline has run and objects are being generated; builder needs to confirm object data is correct before proceeding to Workshop build.
+
+**STANDARDS:** Builder opens Object Explorer for the target Object Type, searches for at least three specific objects, inspects their property values against known source data, confirms Link Type relationships are resolving correctly, and documents any discrepancies found before proceeding.
+
+**EQUIPMENT:** MSS account with Ontology Editor role; Object Type published (on development branch); Object Explorer access.
+
+**DURATION:** 30–45 minutes.
+
+**PROCEDURE:**
+
+**What Object Explorer is:**
+
+Object Explorer is the Foundry interface for browsing and inspecting individual objects and their property values. It is a validation and debugging tool — not an end-user-facing product. Operators (TM-10) use Workshop applications to view data; builders use Object Explorer to confirm that data is correctly structured in the Ontology before publishing the application that exposes it.
+
+Use Object Explorer when:
+- You want to verify a specific object's property values after a pipeline run
+- You want to confirm Link Types are resolving correctly (an object links to the expected related objects)
+- You are debugging why a Workshop widget is showing unexpected data
+- You are doing a spot-check after an Ontology change before promoting to production
+
+Do NOT use Object Explorer as a substitute for Workshop. It is a builder validation tool. Do not direct operators to use Object Explorer to access data — that is what Workshop applications are for.
+
+**Step 1 — Open Object Explorer:**
+
+1. In the left navigation or platform search, find and open **Object Explorer**.
+2. In the Object Type list (left panel), locate and select your Object Type.
+3. Object Explorer loads a list of all objects of that type visible to you.
+
+**Step 2 — Search for specific objects:**
+
+4. Use the search bar at the top of Object Explorer to search for a specific object by the title property value (e.g., a bumper number, a unit name, a Soldier identifier).
+5. Alternatively, use the filter panel to narrow the object list by a property value.
+6. Select the object from the list to open its detail view.
+
+**Step 3 — Inspect property values:**
+
+7. In the object detail view, review each property value:
+   - Is the value present (not null)?
+   - Is the value correct? Compare against the source system or source dataset.
+   - Is the data type correct (a date shows as a date, not a numeric timestamp)?
+   - Are status values within the expected set (FMC, PMC, NMC — not "fmc," "n/a," or blank)?
+8. Inspect the **Links** section of the object detail: verify that linked objects appear and are the correct related objects.
+9. Repeat for at least two additional objects across different status values or unit affiliations.
+
+**Step 4 — Document findings and resolve issues:**
+
+10. If property values are incorrect, trace the issue:
+    - Wrong value → likely a pipeline data transformation issue (fix in Pipeline Builder)
+    - NULL values → likely a mapping issue in the Ontology property configuration, or a missing value in the source data
+    - Missing links → likely a foreign key mismatch (verify the link key values match between Object Types)
+11. Fix identified issues on the development branch, rebuild the pipeline, and re-verify in Object Explorer before proceeding.
+12. Do not publish a Workshop application until Object Explorer validation confirms objects are correctly populated.
+
+NOTE: Object Explorer shows data as of the most recent pipeline run. If you rebuilt the pipeline to fix an issue, wait for the build to complete before re-checking Object Explorer — the display reflects the last successful build output, not the in-progress build.
+
+---
+
 ## TASK 4-3: CREATE A LINK TYPE
 
 **TASK:** Create a Link Type between two Object Types using the Ontology Manager UI.
@@ -859,6 +1126,34 @@ NOTE: If linked objects do not appear in preview, verify that foreign key values
 NOTE: For complex relationship modeling, consult your team lead or data steward before building. Incorrect link configurations are difficult to fix after they are in production use.
 
 > **NOTE:** If an Ontology design requires any of the following, it exceeds TM-20 scope and must be escalated to a TM-30 advanced builder: (1) Many-to-many Link Types with complex junction logic; (2) Multi-step Actions with conditional routing or approval chains; (3) Derived properties requiring formula logic beyond the basic UI; (4) Ontology models that feed coalition-facing or MPE data products. Refer to TM-30, Chapter 4 (Ontology Design Methodology) for the TM-30 design process, and to TM-30, Chapter 5 (Advanced Action Design via UI) for complex Action patterns.
+
+---
+
+## 4-5. Action Types Overview
+
+Before creating an Action, understand which Action type matches your requirement. The platform supports multiple Action types. At TM-20 level, only write-back and form-based Actions are in scope. More complex types require TM-30 or TM-40 qualifications.
+
+**Write-back Actions** update an existing Object's properties when executed. A user selects an object, triggers the Action, and a property value is updated in the backing dataset. This is the most common TM-20 Action type.
+
+**Form Actions** present a user-facing form that accepts input and writes one or more values to an Object. The form may write to an existing object (Modify Object) or create a new one (Create Object). All TM-20 Actions are form-based at their core.
+
+**Webhook Actions** trigger an external integration when executed — sending a notification, calling an external API, or initiating a downstream workflow. These require external endpoint configuration and are TM-40 scope (TM-40L, Software Engineer, or TM-40H, AI Engineer).
+
+**Conditional Actions** execute different logic based on the current state of an object — for example, routing to different outcomes depending on an approval status field. Conditional routing is TM-30 scope (TM-30, Chapter 4, Task 4-3). Do not attempt to configure conditional routing at TM-20 level.
+
+**Batch Actions** apply the same operation to multiple objects simultaneously. Batch Actions require careful validation and governance review because a single incorrect configuration can corrupt many records. Batch Actions are TM-30 scope.
+
+| Action Type | Description | In Scope |
+|---|---|---|
+| Write-back / Form (single-step) | Update a property or create an object via a form | TM-20 |
+| Form with validation rules | Required fields, allowed values, format checks | TM-20 |
+| Conditional routing | Different outcomes based on object state | TM-30 |
+| Multi-step (sequential submission) | Multiple form steps, approval chain | TM-30 |
+| Webhook / external integration | Triggers an external API or system | TM-40 |
+| Batch (multi-record write) | Applies operation to many objects at once | TM-30 |
+| TypeScript-driven (custom code) | Complex business logic in TypeScript | TM-40 |
+
+If your requirement cannot be met with a single-step form-based write-back Action, stop and escalate to a TM-30 builder. Do not attempt to approximate complex Action logic with multiple simple Actions — this creates data integrity risks and governance problems.
 
 ---
 
@@ -1349,7 +1644,7 @@ Branching is how MSS protects production data and applications from work-in-prog
 
 Working without a branch is the equivalent of making changes to a live operational system without testing.
 
-> **NOTE:** Operators (TM-10) work only with the main/production branch of MSS resources. They do not see development branches. When you merge your development branch to main, operators immediately see the changes in their next refresh. A faulty merge directly affects operational users. Refer to TM-10, Chapter 8 (Troubleshooting and Support) to understand what operators experience when a bad merge breaks an application. Treat every merge to main as a production release.
+> **NOTE:** Operators (TM-10) work only with the main/production branch of MSS resources. They do not see development branches. When you merge your development branch to main, operators immediately see the changes in their next refresh. A faulty merge directly affects operational users. Refer to TM-10, Chapter 7 (Troubleshooting and Support) to understand what operators experience when a bad merge breaks an application. Treat every merge to main as a production release.
 
 ---
 
@@ -1490,7 +1785,7 @@ NOTE: When in doubt on a conflict, do not guess. Contact the team member whose b
 
 ## 8-1. Overview
 
-> **NOTE:** Builder standards exist because builders have elevated privileges that operators (TM-10) do not have. Before building, understand the security markings and access controls that govern operator data access (TM-10, Chapter 7, Security, Classification, and Markings). Your applications, pipelines, and Ontology configurations must respect those controls. For TM-30-level governance responsibilities on shared infrastructure, refer to TM-30, Chapter 8 (Data Governance and Stewardship).
+> **NOTE:** Builder standards exist because builders have elevated privileges that operators (TM-10) do not have. Before building, understand the security markings and access controls that govern operator data access (TM-10, Chapter 6, Security, Classification, and Markings). Your applications, pipelines, and Ontology configurations must respect those controls. For TM-30-level governance responsibilities on shared infrastructure, refer to TM-30, Chapter 8 (Data Governance and Stewardship).
 
 Builder standards are not optional. They exist to maintain data quality, operational reliability, and security across the USAREUR-AF MSS environment. All TM-20 builders are accountable for the quality and compliance of everything they publish.
 

@@ -31,7 +31,7 @@ OSDK). If your task requires writing code, reference TM-40. TM-30 stops at the U
   basic Contour and Quiver
 - Data Literacy Technical Reference: data governance principles, Army data policy, command data authority
 
-Before beginning TM-30 design work, confirm you can independently perform — without manual reference — all TM-10 operator tasks (Chapters 2-7) and all TM-20 builder tasks including Workshop application building (TM-20, Chapter 5), Ontology configuration (TM-20, Chapter 4), pipeline management (TM-20, Chapter 3), and branching/governance (TM-20, Chapter 7). If you cannot confidently perform any of these tasks without reference, complete the relevant TM before advancing.
+Before beginning TM-30 design work, confirm you can independently perform — without manual reference — all TM-10 operator tasks (Chapters 2-6) and all TM-20 builder tasks including Workshop application building (TM-20, Chapter 5), Ontology configuration (TM-20, Chapter 4), pipeline management (TM-20, Chapter 3), and branching/governance (TM-20, Chapter 7). If you cannot confidently perform any of these tasks without reference, complete the relevant TM before advancing.
 
 ## 1-2. What TM-30 Advances Beyond TM-20
 
@@ -535,6 +535,121 @@ Do not present uncertain data as authoritative. It is better to acknowledge unce
 
 ---
 
+## 2-5. Kairos Timeline Integration
+
+### What Kairos Is
+
+Kairos is Palantir Foundry's timeline and planning visualization tool. It displays time-sequenced events, tasks, and activities plotted against Ontology objects — enabling builders to surface operational timelines, planning horizons, and activity schedules directly within Workshop applications.
+
+**Kairos vs. Gantt charts:** A Gantt chart is a static document — it represents a plan at a point in time and must be manually updated. Kairos is Ontology-driven: data flows live from Object Types through defined date properties into the timeline display, and updates in real time as the underlying data changes. A maintenance schedule managed as Object data in MSS appears in Kairos as an automatically current timeline — no manual updates required.
+
+Use Kairos when:
+- The operational question involves sequences, durations, or scheduling (e.g., "What maintenance events are occurring this week across the brigade?")
+- A commander or staff officer needs to visualize activities against a time axis
+- Multiple parallel activity streams need to be displayed side by side (e.g., units, equipment categories, or staff functions as swim lanes)
+
+---
+
+### TASK 2-5A: CONFIGURE A KAIROS TIMELINE WIDGET IN WORKSHOP
+
+**TASK:** Add and configure a Kairos timeline widget in a Workshop application, connecting it to an existing Object Type with date properties, and configure swim lanes and groupings to produce an operationally meaningful timeline view.
+
+**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. A Workshop application exists in edit mode. At least one Object Type is published with at minimum two date or datetime properties (a start date and an end date or duration). Builder is working on a development branch.
+
+**STANDARDS:** Builder adds a Kairos widget to the application, connects it to the correct Object Type, configures start and end date properties, defines at least one swim lane grouping, and verifies the timeline displays correctly with production-representative data before publishing.
+
+**EQUIPMENT:** MSS platform access; Workshop edit permissions on the target application; Object Type with date properties; development branch active.
+
+**DURATION:** 2–4 hours.
+
+**PROCEDURE:**
+
+**Step 1 — Add the Kairos widget to the application:**
+
+1. Open the Workshop application in edit mode (on your development branch).
+2. In the Widget Library (left panel), locate the **Kairos** or **Timeline** widget. Drag it onto the application canvas.
+3. Resize and position the widget. Timeline widgets typically benefit from a wide, horizontal layout.
+
+**Step 2 — Configure the data source:**
+
+4. In the widget properties panel (right), under **Data Source**, select the Object Type that contains the events or activities to display.
+5. Under **Start Date**, select the property that defines when each event or activity begins.
+6. Under **End Date** or **Duration**, select the property that defines when each event ends (or the duration). If objects have only a start date and no end date, configure the Kairos widget to display point events (no duration bar, just a marker on the timeline).
+7. Under **Label**, select the property that will identify each event on the timeline (e.g., event name, equipment identifier, unit name).
+
+**Step 3 — Configure swim lanes and groupings:**
+
+8. Under **Grouping** or **Swim Lanes**, select the property to use as the swim lane key. Each unique value of this property becomes a separate horizontal lane on the timeline. Examples:
+   - Group by `battalion_name` — one lane per battalion
+   - Group by `equipment_category` — one lane per equipment type
+   - Group by `staff_function` — one lane per warfighting function
+9. Set the swim lane label to display clearly (the property value that names each lane).
+10. If the timeline has many swim lanes, configure the **Collapse** option to allow users to expand and collapse individual lanes.
+
+**Step 4 — Configure visual options:**
+
+11. Under **Color Coding**, configure event bar colors based on a property value (e.g., readiness status — green for FMC, amber for PMC, red for NMC). This requires the Object Type to have a status property with defined values.
+12. Configure **Filtering** to connect the Kairos widget to an application variable (date range selector, unit filter), so users can narrow the timeline to a relevant window or formation.
+13. Configure the **Default Time Window** — the initial date range displayed when the application loads. Set this to the most operationally relevant window (e.g., current week, current month).
+
+**Step 5 — Test and verify:**
+
+14. In preview mode, verify that events appear correctly on the timeline.
+15. Test the time range navigation (scrolling or date range selection).
+16. Test swim lane expansion and collapse.
+17. Test color coding against known records to verify colors match status values.
+18. Test any connected variables (date range filter, unit filter) to verify the timeline updates when filter selections change.
+
+NOTE: Kairos timeline performance degrades with very large object sets (thousands of events visible simultaneously). Configure a date range filter as a required input so users select a time window before the timeline loads. Do not configure Kairos to display all events with no date filter on large Object Types.
+
+TTPs for refining Kairos visualizations:
+- Keep swim lane count manageable — more than 20 swim lanes simultaneously visible creates visual clutter. Use a unit/group filter to reduce the number of visible lanes.
+- Use color coding purposefully — limit to 3–5 distinct colors. More colors than that are difficult to distinguish in a command brief environment.
+- Ensure event labels are concise — long event names truncate in the timeline bar. Use abbreviations where operationally standard.
+- Align time window defaults to your audience's planning horizon: operational staff think in days, logistics staff may need weeks, training managers may need months.
+
+---
+
+## 2-6. Target Workbench
+
+### What Target Workbench Is
+
+Target Workbench is a Foundry-native application supporting structured targeting workflows. It integrates Ontology objects into a kill-chain and targeting cycle workflow, providing intelligence and fires staff with a structured interface for managing targeting packages, tracking target status through the targeting cycle, and coordinating engagement decisions.
+
+> **NOTE:** Target Workbench is primarily relevant to intelligence (G2/S2) and fires (fires support officer, FA) staff functions. Builders in sustainment, personnel, signal, or other functional areas should understand what Target Workbench is and that it exists — but it is not a tool you will build against unless you are supporting an intelligence or fires function. Operational use is covered in TM-40A (Intelligence WFF) and TM-40B (Fires WFF).
+
+**Builder responsibility:** Advanced builders supporting intelligence or fires functions are responsible for ensuring that the Object Types and properties in the Ontology are correctly structured to support Target Workbench display. Target Workbench reads from Object Types — if those Object Types are incorrectly configured (wrong property names, missing required fields, broken Link Types), Target Workbench will display incomplete or incorrect targeting data.
+
+---
+
+### TASK 2-6A: NAVIGATE AND ORIENT TO TARGET WORKBENCH
+
+**TASK:** Navigate to Target Workbench, orient to its interface and data model, and identify the Ontology Object Types that feed into it.
+
+**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Builder is supporting an intelligence or fires function. Target Workbench has been deployed in the command's MSS environment and access has been granted by the Data Steward.
+
+**STANDARDS:** Builder navigates to Target Workbench, identifies the targeting workflow stages displayed, traces the connection between displayed data and the underlying Ontology Object Types, and can explain to a TM-40 developer or Data Steward which Object Types need to be correctly structured for Target Workbench to display complete data.
+
+**EQUIPMENT:** MSS platform access; Target Workbench access; Ontology Manager access.
+
+**DURATION:** 1–2 hours orientation.
+
+**PROCEDURE:**
+
+1. Use the platform Search bar to locate Target Workbench, or navigate to it via Compass if it has been organized into your command's application folder.
+2. Open Target Workbench and orient to the interface:
+   - Review the targeting stages or phases displayed (the targeting cycle steps: detect, identify, decide, execute, assess, or equivalent command-specific framework)
+   - Identify how targets are organized and displayed (by priority, by status, by geographic area)
+   - Review any target records visible and note which properties are displayed for each target
+3. Navigate to Ontology Manager. Identify the Object Types that feed Target Workbench by searching for Object Types with names related to targeting, intelligence objects, or named areas of interest. Your TM-40 developer or unit data steward can provide the specific Object Type names if they are not immediately identifiable.
+4. Open one of the identified Object Types and compare its configured properties to the fields displayed in Target Workbench. Confirm that the Object Type's properties include all fields Target Workbench requires.
+5. Identify any properties that appear missing, incorrectly named, or incorrectly typed — these are the builder's responsibility to fix before Target Workbench displays complete data.
+6. Document findings and coordinate with the Data Steward and TM-40 developer on any required Ontology fixes.
+
+NOTE: Do not modify Target Workbench application configuration directly. Target Workbench is a managed Palantir application — your role as a TM-30 builder is to ensure the underlying Ontology data is correctly structured. Application-level Target Workbench configuration is TM-40H/TM-40A/TM-40B scope.
+
+---
+
 # CHAPTER 3 — ADVANCED PIPELINE BUILDER
 
 **BLUF:** Advanced Pipeline Builder work at TM-30 level involves joining multiple source datasets,
@@ -732,7 +847,7 @@ categorical fields (fewer than 20 unique values).
 
 ## 3-2. Pipeline Naming and Documentation Standards
 
-> **NOTE:** When a TM-30 pipeline fails, the downstream impact is broad. Operators (TM-10, Task 5-1, View and Read a Dataset) see stale or missing data. Workshop applications fed by the pipeline display errors. Complex data products may serve dozens of operators or downstream pipelines. Refer to TM-10, Chapter 8-1 (Common Problems and Solutions) to understand the operator experience of a pipeline failure, then design your monitoring and alerting to detect failures before operators report them.
+> **NOTE:** When a TM-30 pipeline fails, the downstream impact is broad. Operators (TM-10, Task 5-1, View and Read a Dataset) see stale or missing data. Workshop applications fed by the pipeline display errors. Complex data products may serve dozens of operators or downstream pipelines. Refer to TM-10, Chapter 7-1 (Common Problems and Solutions) to understand the operator experience of a pipeline failure, then design your monitoring and alerting to detect failures before operators report them.
 
 3-3. Every pipeline produced at TM-30 level must conform to C2DAO naming and documentation
 standards. A pipeline that cannot be identified, understood, or maintained by another builder
@@ -1100,6 +1215,22 @@ products.
 parameters through the UI — activating, tuning, and monitoring AI-assisted processes without
 authoring underlying model logic.
 
+## 6-0. AIP Landscape at TM-30 Level
+
+Before working with any AIP tool, understand the full AIP toolset and the scope each tool represents at TM-30 level. Palantir's AI Platform (AIP) includes several distinct capabilities that serve different purposes and require different qualification levels to configure.
+
+**AIP Logic** is the platform's rule-based and AI-assisted workflow automation layer. It enables builders to connect AI reasoning to Ontology data and configure automated processes that surface insights, flag conditions, or trigger actions based on data state. TM-30 builders configure existing AIP Logic workflows — adjusting parameters, connecting data sources, enabling natural language query. Full workflow authoring is TM-40 scope. Tasks 6-1 and 6-2 (below) cover the TM-30 AIP Logic configuration scope in full.
+
+**AIP Analyst** is a natural language interface that allows users to query Ontology objects and datasets using plain English. A user can type "Which vehicles in 3rd ABCT have been deadlined for more than 30 days?" and AIP Analyst returns structured results from the Ontology — without requiring the user to write a filter or run a Contour analysis. AIP Analyst is distinct from AIP Logic: Logic is automated (runs on schedule or trigger without user prompting); Analyst is interactive (the user queries on demand). Builder role at TM-30: ensure the Object Types and properties backing the data are correctly configured with clear names, accurate data types, and meaningful descriptions — these directly affect the quality of AIP Analyst query results. No dedicated task is required for AIP Analyst at TM-30 level; orientation is sufficient.
+
+**AIP Agent Studio** is Foundry's environment for building AI agents that can reason over Ontology data and take actions on behalf of users. Agent Studio is addressed in Task 6-3. TM-30 covers basic agent creation — connecting Object Types, writing output instructions, and testing responses. Advanced agent development — custom tool configuration, agentic action logic (agents that write back to objects or trigger workflows), production deployment, and multi-agent orchestration — is TM-40H (AI Engineer) and TM-40G (ORSA) scope.
+
+**AI FDE (AI-Driven Feature Development Environment)** is Palantir's platform capability for code-assisted AI product development. It is addressed in section 6-4 as an awareness item. Hands-on AI FDE development is TM-40H scope.
+
+> **NOTE:** At TM-30 level, you are a consumer and configurator of AIP capabilities — not an author. Your primary contribution to AIP quality is well-designed Ontology structure: clear property names, accurate data types, complete descriptions, and correct Link Types. A poorly structured Ontology produces poor AIP outputs regardless of how well the AI model is configured. Build the data layer correctly first; AI quality follows from data quality.
+
+---
+
 ## 6-1. TM-30 vs. TM-40 Scope in AIP Logic
 
 TM-30 builders CONFIGURE existing AIP Logic workflows — they do not author them from scratch.
@@ -1120,7 +1251,7 @@ TM-30 builders CONFIGURE existing AIP Logic workflows — they do not author the
 
 ## 6-2. AIP Logic Overview
 
-> **NOTE:** AIP Logic is TM-30 only. TM-20 builders do not configure AI workflows. TM-10 operators use AIP Logic workflows that TM-30 builders design — see TM-10, Task 6-1 (Use an AIP Logic Workflow) and Task 6-2 (Interact with an AIP Agent) for the operator's perspective. Operators must review and validate AI outputs before acting on them (emphasized in TM-10, Chapter 6). Design your AIP Logic workflows so outputs are easy for operators to validate quickly. Workflows that produce outputs requiring extensive operator review are operationally inefficient.
+> **NOTE:** AIP Logic is TM-30 only. TM-20 builders do not configure AI workflows. TM-10 operators use AIP Logic workflows that TM-30 builders design — see TM-10, Task 4-8A (Read and Respond to an AIP Logic Alert) and Task 4-8B (Interact with an AIP Agent) for the operator's perspective. Operators must review and validate AI outputs before acting on them (emphasized in TM-10, section 4-8). Design your AIP Logic workflows so outputs are easy for operators to validate quickly. Workflows that produce outputs requiring extensive operator review are operationally inefficient.
 
 6-1. AIP Logic is the AI workflow layer of the platform. It enables AI-assisted analysis,
 automated reasoning, and natural language interfaces to operational data. At TM-30 level,
@@ -1207,7 +1338,7 @@ to users.
 
 **DURATION:** 2–3 hours including testing.
 
-> **NOTE:** Operators (TM-10, Task 6-2, Interact with an AIP Agent) validate AI outputs against source data before acting. When configuring prompts, design with that human-review requirement in mind. Prompts should produce outputs that operators can quickly verify. Refer to TM-10, Task 6-2 for the validation workflow operators follow — then design your prompts to produce outputs compatible with that workflow.
+> **NOTE:** Operators (TM-10, Task 4-8B, Interact with an AIP Agent) validate AI outputs against source data before acting. When configuring prompts, design with that human-review requirement in mind. Prompts should produce outputs that operators can quickly verify. Refer to TM-10, Task 4-8B for the validation workflow operators follow — then design your prompts to produce outputs compatible with that workflow.
 
 **PROCEDURE:**
 
@@ -1227,13 +1358,118 @@ to users.
 
 ---
 
+## TASK 6-3: BUILD AND CONFIGURE A BASIC AIP AGENT
+
+**TASK:** Navigate to AIP Agent Studio, build a basic agent from scratch against an existing Ontology, configure its data sources and output instructions, test it against operational queries, and document the configuration. Additionally, review and adjust parameters on an existing agent.
+
+**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. At least one well-structured Object Type with populated data is available in a development environment. Builder has Agent Studio author access in the development project. Data Steward has approved the data sources the agent will query.
+
+**STANDARDS:** Builder creates a functioning agent connected to at least one Object Type, writes a clear output instruction block, tests the agent with at least three operational queries, evaluates output quality against source data, and produces a configuration document. Builder can also locate an existing agent, review its configuration, and make authorized parameter adjustments.
+
+**EQUIPMENT:** MSS platform access; AIP Agent Studio author access (development environment); Object Types with populated data; Data Steward approval for data sources.
+
+**DURATION:** 4–6 hours.
+
+> **NOTE — TM-30 vs. TM-40H Scope:**
+> TM-30 covers: creating basic agents using Ontology Object Types as data sources, writing output instructions, and validating agent responses.
+> TM-40H covers: advanced prompt engineering, custom tool development (TypeScript/Functions on Objects), agentic action logic (agents that write back to objects or trigger workflows), multi-agent orchestration, production deployment, and agent monitoring at scale.
+> If your use case requires agents that take actions — not just answer questions — escalate to a TM-40H developer.
+
+**PROCEDURE:**
+
+**Step 1 — Navigate to Agent Studio:**
+
+1. From the platform navigation, search for "Agent Studio" or locate it in the AIP section of the platform.
+2. Open Agent Studio. A list of existing agents in your environment appears.
+3. Before creating a new agent, review at least one existing agent to understand how they are structured (name, data sources, output instructions).
+
+**Step 2 — Create a new agent:**
+
+4. Select **New Agent**. Assign a descriptive name following the command naming convention (e.g., `[UNIT]_[PURPOSE]_Agent_DEV`).
+5. Write a clear agent description: what question does this agent answer, for which user population, and using what data.
+6. Set the environment to **Development**. Do not publish directly to production.
+
+**Step 3 — Connect data sources:**
+
+7. Navigate to the **Context Sources** section.
+8. Add the approved Object Types the agent will reason over. Select only Object Types that have been authorized by the Data Steward.
+9. For each Object Type added, verify:
+   - Properties are clearly named (the agent uses property names in its reasoning)
+   - Properties have descriptions where the name alone is ambiguous
+   - Data in the Object Type is current and correctly populated
+10. Add any approved documents or datasets as supplementary context if required by the use case.
+
+> **NOTE — Ontology quality directly determines agent quality.** An agent connected to an Object Type with poorly named properties or missing data will produce poor responses. Fix Ontology issues before deploying the agent.
+
+**Step 4 — Write output instructions:**
+
+11. Navigate to the **Output Instructions** (sometimes labeled System Prompt or Agent Instructions depending on platform version).
+12. Write output instructions covering:
+   - **Role:** What is this agent? (Example: "You are a data assistant for USAREUR-AF staff sections. Answer questions about [Object Type] data accurately and concisely.")
+   - **Scope:** What should the agent answer, and what should it decline? (Example: "Answer only questions that can be addressed using the connected data sources. If a question cannot be answered from available data, say so clearly.")
+   - **Format:** How should responses be structured? (Example: "Respond in plain English. Use bullet points for lists. Always cite the Object name or dataset when referencing specific data.")
+   - **Limitations:** What must the agent always state? (Example: "Always note that outputs are AI-generated and require human review before operational use.")
+13. Keep output instructions concise. Long, complex instruction blocks at TM-30 level are a signal the agent's scope is too broad — narrow the use case.
+
+> **CAUTION:** Do not instruct the agent to present AI-generated outputs as confirmed facts. All agents must communicate that responses require human verification. This is a non-negotiable output instruction requirement.
+
+**Step 5 — Test the agent:**
+
+14. Open the **Test** interface within Agent Studio.
+15. Enter at least three representative operational queries — the type of question a user would realistically ask in production.
+16. For each response, evaluate:
+   - **Accuracy:** Does the response match the actual data in the connected Object Types? Verify by checking the source objects directly.
+   - **Source citation:** Does the agent correctly identify where the information came from?
+   - **Scope adherence:** Does the agent stay within the data it is authorized to use, or does it speculate beyond available data?
+   - **Format compliance:** Is the response formatted as instructed?
+17. If the agent produces incorrect, out-of-scope, or unsupported responses, adjust the output instructions or data sources and retest. Do not proceed to sharing or publication if the agent fails any accuracy check.
+
+**Step 6 — Adjust parameters on an existing agent (separate task):**
+
+TM-30 builders are authorized to adjust the following parameters on agents created by others:
+
+| Parameter | TM-30 Authority | Notes |
+|---|---|---|
+| Context sources | Yes | Add or remove approved Object Types or datasets |
+| Output instructions | Partial | Adjust operational terminology, formatting, unit-specific language |
+| Linked Object Types | Yes | Within authorized data scope and with Data Steward approval |
+| Agent tools / action logic | No — TM-40H | Do not modify — escalate |
+| System prompt reasoning logic | No — TM-40H | Do not modify — escalate |
+
+18. When adjusting an existing agent, document the pre-change configuration before editing.
+19. Make one change at a time and retest after each change to isolate the effect.
+
+**Step 7 — Document and report:**
+
+20. Produce a configuration document for the agent covering: purpose, data sources, output instruction summary, test queries and results, and any known limitations.
+21. Submit the configuration document to the Data Steward for review before sharing the agent with end users.
+22. Do not publish the agent to production. Production deployment is TM-40H scope — coordinate with a TM-40H developer to transition a validated agent to production.
+
+**How builder-side Ontology quality affects agent performance:**
+
+AIP agents reason over the properties and values on the Object Types they are connected to. If Object Type properties have ambiguous names, missing descriptions, or incorrect data types, the agent will produce lower-quality responses. The single most impactful action a TM-30 builder can take to improve agent quality is ensuring well-named, well-described, correctly typed properties on all linked Object Types. Fix the Ontology first; tune the agent second.
+
+---
+
+## 6-4. AI FDE (AI-Driven Feature Development Environment)
+
+AI FDE is Palantir's platform capability for code-assisted AI product development, integrating AI tooling directly into the Foundry development workflow. AI FDE supports developers in building AI-enabled Foundry applications by providing AI-assisted code generation, testing, and iteration within the platform's development environment.
+
+TM-30 scope: awareness only. AI FDE represents the direction of the AIP engineering toolchain and is relevant context for advanced builders who work alongside TM-40 developers. Understanding what AI FDE is — and what it is for — helps TM-30 builders communicate effectively with TM-40 engineers and understand the development environment those engineers are working in.
+
+**Reference:** *Product Launch: AI FDE | DevCon 3* — available on the Palantir Developers YouTube channel (@PalantirDevelopers) — provides an orientation to the AI FDE platform direction and the AIP engineering toolchain. TM-30 builders are encouraged to watch this reference for situational awareness.
+
+Hands-on development with AI FDE is TM-40H (AI Engineer) territory. TM-30 builders do not configure, use, or manage AI FDE directly.
+
+---
+
 # CHAPTER 7 — DATA GOVERNANCE AND LINEAGE
 
 **BLUF:** Advanced builders are frontline data governance actors — they read and understand
 lineage graphs, identify and report data quality issues, work with Data Stewards on resolution,
 and enforce governance standards in everything they build.
 
-> **NOTE:** TM-20 builders follow governance standards defined in TM-20, Chapter 8 (Builder Standards and Governance). TM-30 builders have additional stewardship responsibilities because your designs affect shared infrastructure and downstream systems. At TM-30 level you are responsible for: (1) understanding operator access expectations (TM-10, Chapter 7, Security, Classification, and Markings); (2) ensuring TM-20 builders can implement your designs without overstepping their scope; (3) coordinating with data stewards before modifying any shared production resource; (4) designing for the full downstream impact across all consumers, not only the immediate use case.
+> **NOTE:** TM-20 builders follow governance standards defined in TM-20, Chapter 8 (Builder Standards and Governance). TM-30 builders have additional stewardship responsibilities because your designs affect shared infrastructure and downstream systems. At TM-30 level you are responsible for: (1) understanding operator access expectations (TM-10, Chapter 6, Security, Classification, and Markings); (2) ensuring TM-20 builders can implement your designs without overstepping their scope; (3) coordinating with data stewards before modifying any shared production resource; (4) designing for the full downstream impact across all consumers, not only the immediate use case.
 
 **NOTE — Audit Trail:** All advanced builder actions in MSS — Ontology modifications, pipeline builds, branch creation, peer reviews, and production promotions — are logged with your credentials, timestamp, and the specific resource changed. These logs are used for accountability reviews, change tracking, and incident investigation. You are personally accountable for all changes made under your credentials, including changes made on behalf of another team member.
 
@@ -1355,7 +1591,7 @@ If you cannot identify the Data Steward for a dataset or Object Type, escalate t
 
 **DURATION:** 30–60 minutes.
 
-> **NOTE:** Before designing coalition-facing data products at TM-30 level, understand TM-10, Chapter 7 (Security, Classification, and Markings), especially Task 7-1 (Verify Markings and Access Level). Coalition data must be correctly marked and access-controlled from ingestion through final product. Errors in releasability markings can result in data shared with unauthorized coalition partners — this is a hard governance gate, not a best practice. Coordinate with the USAREUR-AF C2DAO before any coalition-facing design decision.
+> **NOTE:** Before designing coalition-facing data products at TM-30 level, understand TM-10, Chapter 6 (Security, Classification, and Markings), especially Task 6-1 (Verify Markings and Access Level). Coalition data must be correctly marked and access-controlled from ingestion through final product. Errors in releasability markings can result in data shared with unauthorized coalition partners — this is a hard governance gate, not a best practice. Coordinate with the USAREUR-AF C2DAO before any coalition-facing design decision.
 
 **PROCEDURE:**
 
@@ -1535,6 +1771,211 @@ they promote.
 | Notify downstream owners | Any promotion that affects shared resources requires advance notification |
 | Rollback plan | Every significant promotion must have a documented rollback procedure |
 | Incident reporting | Any production issue caused by a promotion must be reported within 24 hours |
+
+---
+
+# CHAPTER 8A — AUTOMATIONS
+
+**BLUF:** Automations are Foundry's capability to trigger actions, pipeline runs, or object updates on a schedule or based on object state changes — configured through Ontology Manager. They eliminate manual, recurring operational data tasks and enable the platform to maintain data currency and state without human intervention for routine processes.
+
+## 8A-1. What Automations Are
+
+An Automation is a configured rule in Ontology Manager that monitors an Object Type's state or a schedule, and executes a defined action when the trigger condition is met. Automations operate in the background — builders configure them, and the platform executes them without operator involvement.
+
+**When to use Automations:**
+
+| Use Case | Example |
+|---|---|
+| Recurring state updates | Automatically flag equipment as overdue for inspection when the last inspection date exceeds 30 days |
+| Scheduled property resets | Reset a "submitted today" flag on all SITREP objects at 2359 daily |
+| Alert conditions | Write a flag property to "ALERT" when a readiness threshold drops below a configured value |
+| Pipeline trigger | Trigger a curated dataset rebuild when an upstream source object changes |
+| Notification | Set a notification flag property when an approval action has been pending for more than 24 hours |
+
+**When NOT to use Automations:**
+
+Automations execute at the Object Type level — they apply a rule to objects meeting a condition. They are not designed for complex multi-step process flows, handoff routing, or end-to-end workflow management. For processes involving multiple roles, conditional routing, and process state visibility, see Chapter 8B (Machinery).
+
+---
+
+## TASK 8A-1: CONFIGURE AN AUTOMATION ON AN OBJECT TYPE
+
+**TASK:** Configure an Automation on an existing Object Type to trigger a defined action based on a schedule or object condition, test the automation in a development environment, and monitor its execution history.
+
+**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Target Object Type exists and is correctly configured. Data Steward has authorized the automated write-back or property modification. Builder is working on a development branch.
+
+**STANDARDS:** Builder correctly configures the automation trigger (schedule or condition), defines the action to execute, tests the automation in a development environment with representative data, verifies correct execution, and documents the automation in the Object Type's description field. Automation is approved by the Data Steward before promotion to production.
+
+**EQUIPMENT:** MSS platform access; Ontology Manager edit permissions; Data Steward authorization for write-back; development branch active.
+
+**DURATION:** 2–4 hours including testing.
+
+> **WARNING:** Automations execute automatically against live objects. An incorrectly configured Automation can modify property values on large numbers of objects simultaneously before a builder can intervene. Always test on a development branch with representative sample data. Never configure and immediately activate an Automation in production without testing.
+
+**PROCEDURE:**
+
+**Step 1 — Open the Automations panel:**
+
+1. In Ontology Manager, navigate to the target Object Type (on your development branch).
+2. Click the **Automations** tab (the location varies by platform version — it may also appear under **Rules**, **Triggers**, or an equivalent section).
+3. Click **New Automation** or **Add Rule**.
+
+**Step 2 — Define the trigger:**
+
+4. Select the trigger type:
+
+   **Schedule trigger:** The automation runs at a defined interval regardless of object state.
+   - Set the frequency: hourly, daily, weekly, or custom cron expression.
+   - Set the time (UTC). Account for USAREUR-AF local time offset (UTC+1 in winter, UTC+2 in summer).
+   - Specify whether the automation applies to all objects of this type or only objects matching a filter condition.
+
+   **Object condition trigger:** The automation runs when an object's property value meets a defined condition.
+   - Select the property to monitor (e.g., `last_inspection_date`, `status`, `submission_flag`).
+   - Define the condition operator (equals, greater than, less than, is null, changes to value).
+   - Enter the threshold value (e.g., `last_inspection_date` is more than 30 days ago; `status` changes to "OVERDUE").
+
+5. If using a condition trigger, define the evaluation frequency — how often the platform checks whether objects meet the trigger condition (minimum depends on platform configuration; confirm with Data Steward).
+
+**Step 3 — Configure the action to execute:**
+
+6. Under **Action**, select what happens when the trigger fires:
+   - **Update Property:** Write a defined value to a specific property on the object. Example: set `inspection_status` to "OVERDUE".
+   - **Create Object:** Create a new object of a specified type. Use for generating event or log records.
+   - **Execute an existing Action:** Invoke an Action already configured on the Object Type (see TM-20, Task 4-4 and TM-30, Task 4-3).
+   - **Trigger Pipeline Build:** Initiate a pipeline refresh. This option may require TM-40 coordination to configure correctly.
+7. Configure the action parameters:
+   - For **Update Property**: select the target property and specify the value to write (static value, or derived from another property on the same object).
+   - For **Create Object**: specify the Object Type to create and map required properties from the triggering object.
+8. Set the **Action Authorization**: the automation must execute under an authorized service account or role. Coordinate with the Data Steward to confirm the service account has write authorization for the affected Object Type.
+
+**Step 4 — Test the automation in a development environment:**
+
+9. Save the automation configuration on your development branch.
+10. Identify a small set of test objects that should trigger the automation (objects that meet the trigger condition or that will be reached by the schedule).
+11. Use the **Test** or **Dry Run** option (if available in your platform version) to simulate execution without writing changes. Verify the correct objects are selected and the correct values would be written.
+12. If Dry Run is not available, manually trigger the automation on the development branch and verify results in Object Explorer.
+13. Confirm that objects not meeting the trigger condition are not modified.
+14. Confirm that the action writes the correct value to the correct property.
+
+**Step 5 — Monitor automation execution history:**
+
+15. After promotion to production (via the standard review and promotion workflow — Chapter 8, Task 8-3), navigate to the Automations panel on the Object Type.
+16. Under **Execution History** or **Run History**, review past executions:
+    - Status (success, failure, partial)
+    - Number of objects affected per run
+    - Timestamp and duration
+17. Review the execution history at least weekly for the first two weeks after activating a new automation.
+18. Set up failure alerting: configure your MSS notification settings or coordinate with the Data Steward to ensure pipeline or automation failures generate a notification.
+
+**Step 6 — Document the automation:**
+
+19. In the Object Type description field, add an entry documenting the automation:
+    - What does it do?
+    - What is the trigger?
+    - What property does it modify?
+    - When was it activated and by whom?
+    - Who is the Data Steward for this automation?
+
+NOTE: Automations that modify properties used by Workshop applications will affect what operators see in those applications. Before activating an automation on a production Object Type, notify the owners of all downstream Workshop applications that the property values will be changing automatically.
+
+---
+
+# CHAPTER 8B — MACHINERY
+
+**BLUF:** Machinery is Palantir Foundry's business process management layer. It enables builders to model, monitor, and automate multi-step staff processes — approval workflows, recurring reporting cycles, data quality reviews — as structured, visible process flows connected to Ontology Object Types.
+
+## 8B-1. What Machinery Is
+
+Machinery manages end-to-end process flows across multiple steps and roles. Where Automations handle individual object-level triggers (one object meets a condition, one action executes), Machinery manages processes that span multiple objects, multiple people, multiple sequential steps, and require visibility into where in the process a given work item currently is.
+
+**The core difference:**
+
+| Capability | Automations | Machinery |
+|---|---|---|
+| Scope | Single object, single trigger, single action | Multi-step process across objects and roles |
+| Visibility | Execution history log | Live process state — "where is this item now?" |
+| Routing | Not conditional | Conditional routing based on decisions, approvals, timeouts |
+| Use case | Recurring property updates, state flags | Approval chains, sequential workflows, staffing processes |
+
+**When to use Machinery:**
+
+- A process involves more than one step (e.g., data submission → review → approval → publication)
+- A process involves handoffs between different roles or staff sections
+- Command or operational leadership needs to see where items are in the process at any given time (process state visibility)
+- A process has conditional outcomes (approved vs. rejected, or different routing based on data values)
+- Recurring process cycles need to be triggered on schedule and tracked to completion
+
+**Examples of USAREUR-AF staff processes suited to Machinery:**
+
+- Weekly SITREP submission → G3 review → C2DAO validation → publication
+- New equipment record creation → S4 review → G4 approval → Ontology publication
+- Data quality issue report → assigned to data steward → investigated → resolved → closed
+- Request for MSS access → unit data steward review → C2DAO approval → account provisioned
+
+---
+
+## TASK 8B-1: ORIENT TO MACHINERY AND MODEL A BASIC PROCESS
+
+**TASK:** Navigate to Machinery, create a basic process definition with defined steps, roles, and transitions, link the process to existing Object Types, and monitor active process instances.
+
+**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. An operational process has been identified and documented by the Data Steward and process owner. Ontology Object Types representing the work items in the process exist and are correctly configured. Data Steward has authorized Machinery configuration for this process.
+
+**STANDARDS:** Builder creates a process definition with at least two steps, at least two role assignments, and at least one conditional transition. Process is connected to the correct Object Type. A test process instance is initiated and successfully transitions through at least one step before branch submission for review.
+
+**EQUIPMENT:** MSS platform access; Machinery access (confirm with Data Steward that Machinery is available in your command's MSS environment); Ontology Manager access; development branch active.
+
+**DURATION:** 3–5 hours including testing.
+
+**PROCEDURE:**
+
+**Step 1 — Navigate to Machinery:**
+
+1. Use the platform Search bar to find "Machinery." Alternatively, navigate to Machinery from the platform's application or product navigation.
+2. Open Machinery. If you see a list of existing processes, review them to understand patterns before creating a new one.
+3. Confirm you are on your development branch before creating any process definitions.
+
+**Step 2 — Create a basic process definition:**
+
+4. Click **New Process** or **Create Process**.
+5. Name the process using a plain-English description of the staff process it models. Use a naming convention that identifies the domain and process:
+   `[Domain] — [Process Name]` (e.g., `LOG — Equipment Record Approval`, `OPS — SITREP Submission and Review`).
+6. Add a description explaining what operational process this models, who initiates it, who approves, and what the final outcome is.
+
+**Step 3 — Define process steps:**
+
+7. Add **Steps** (also called stages or phases depending on platform version) for each phase of the process:
+   - Click **Add Step**.
+   - Name the step using an imperative verb phrase: "Submit," "Review," "Approve," "Publish," "Reject."
+   - For each step, define the **Assignee Role**: who is responsible for completing this step? Roles should correspond to MSS Groups (e.g., "Unit Data Stewards," "G4 Staff," "C2DAO Reviewers").
+   - Define what the assignee must do to complete the step (check a box, fill in a review field, click Approve or Reject).
+8. Repeat for each step in the process.
+
+**Step 4 — Configure transitions between steps:**
+
+9. Transitions define how a process moves from one step to the next.
+   - Add a **Transition** from Step 1 to Step 2. Set the transition condition: what must be true for the process to move forward?
+   - For approval workflows, configure **Branch Transitions**: if the reviewer clicks Approve, the process moves to "Approved" state; if they click Reject, the process moves back to "Resubmit" state.
+   - Configure **Timeout Transitions**: if a step is not completed within a defined time window, the process can auto-escalate or notify a supervisor.
+
+10. Test your transition logic on paper first: trace the process from initiation through every possible outcome (approved, rejected, timed out, escalated). Confirm the step and transition configuration produces all expected outcomes.
+
+**Step 5 — Link the process to Object Types:**
+
+11. Under **Object Type Binding** or **Data Connection**, select the Object Type whose objects will flow through this process. Each instance of a work item (e.g., each equipment record submitted for approval) corresponds to one object of this type running through the process.
+12. Configure **Step-to-Property Mapping**: which property on the Object Type reflects the current process step? This allows Workshop applications and Quiver dashboards to show operators where each object currently is in the process (e.g., `approval_status` property shows "Pending Review," "Approved," "Rejected").
+13. Save the process definition.
+
+**Step 6 — Monitor active process instances:**
+
+14. After promotion to production, return to Machinery to monitor active process instances.
+15. The Machinery dashboard shows:
+    - How many instances are currently at each step
+    - Which instances are overdue (approaching or past their step timeout)
+    - Completed instances and their outcomes (approved, rejected)
+16. Review the Machinery dashboard at minimum weekly for critical operational processes, or daily for processes with short turnaround requirements.
+17. For overdue instances, identify the assignee and notify them (via your unit's standard communication channels — Machinery may also support in-platform notification depending on configuration).
+
+NOTE: Machinery requires that the Object Types and properties used in the process are correctly configured and stable before process design. Changing a property name or type on an Object Type that Machinery is bound to will likely break the process integration. Apply the downstream impact assessment process (Chapter 7, Task 7-1) before any schema change on an Object Type with a Machinery binding.
 
 ---
 
