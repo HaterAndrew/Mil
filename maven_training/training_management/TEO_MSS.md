@@ -28,6 +28,19 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
+## Authoritative References
+
+| Publication | Title | Relevance |
+|---|---|---|
+| AR 350-1 | Army Training and Leader Development | Master regulation for Army training policy; governs evaluation standards and training records |
+| TR 350-70 | Army Learning Policy and Systems | TRADOC master regulation governing training evaluation methodology and assessment design |
+| ADP 7-0 | Training | Army training doctrine; establishes principles for task-condition-standard evaluation |
+| FM 7-0 | Training | Unit training management procedures; provides guidance on GO/NO-GO evaluation and remediation |
+
+> **NOTE:** TR 350-70 is published by TRADOC at adminpubs.tradoc.army.mil, not DA APD.
+
+---
+
 # PART I — TM-10: MAVEN USER T&EOs
 
 ---
@@ -185,7 +198,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 | 2 | Pipeline has Rename step with C2DAO-compliant column names | All output columns follow convention | Any column with non-compliant name |
 | 3 | Pipeline has CAST steps correcting type errors identified in profiling | Types correct in output | Type mismatch in output |
 | 4 | Pipeline has a Join step on `unit_id` producing a joined output | Join step present; correct key | No join; or wrong key; or 0-row output |
-| 5 | Date column(s) have a computed DATEDIFF column where applicable | Date computation present and correct | Date computation absent or incorrect |
+| [CRITICAL] 5 | Date column(s) have a computed DATEDIFF column where applicable | Date computation present and correct | Date computation absent or incorrect |
 | [CRITICAL] 6 | Pipeline runs to completion without error | No errors in pipeline log | Pipeline errors present (even if output appears) |
 | 7 | Output row count matches expected (no unexplained fan-out) | Row count matches | Row count unexplainably inflated (fan-out) |
 

@@ -391,6 +391,22 @@ Proceed to TM-40J for task-based instruction on executing these responsibilities
 
 ---
 
+## GOVERNING REFERENCES
+
+The following publications establish the policy, architectural, and governance framework within which TM-40J program managers operate.
+
+| Publication | Title | Relevance |
+|---|---|---|
+| Army CIO Memorandum | Data and Analytics Policy (April 2024) | Data governance authority |
+| UDRA v1.1 | Unified Data Reference Architecture (February 2025) | Technical reference architecture |
+| DoD Data Strategy | DoD Data Strategy (2020) | Enterprise data management framework |
+| USAREUR-AF C2DAO Guidance | Command governance for data operations | Operational governance |
+| Army DIR 2024-03 | Digital Engineering Policy | Army digital transformation directive |
+| AR 25-1 | Army Information Technology | IT governance and data management policy |
+| learn-data.armydev.com | CDA Portal | Training platform reference |
+
+---
+
 ## CURRICULUM NOTES
 
 **Prerequisite:** TM-30 (Advanced Builder) is REQUIRED — not recommended. The PM who has not built on MSS cannot accurately estimate effort, identify technical blockers, or write meaningful acceptance criteria for MSS deliverables.
@@ -408,4 +424,4 @@ Proceed to TM-40J for task-based instruction on executing these responsibilities
 
 *CONCEPTS GUIDE — TM-40J COMPANION | DATA PROGRAM MANAGER | MAVEN SMART SYSTEM*
 *HQ USAREUR-AF, Wiesbaden, Germany | 2026*
-*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*

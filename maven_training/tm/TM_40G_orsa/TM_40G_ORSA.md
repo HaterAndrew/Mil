@@ -41,6 +41,8 @@ This manual provides task-level instruction for ORSA officers, NCOs, and quantit
 
 ### 1-2. Curriculum Position, Advanced Track, and WFF Context
 
+> **NOTE:** The **EUCOM Thunderforge AI Planning Ecosystem** (DIU/Scale AI contract, 2024–25) employs AI agents to simulate wargaming and planning scenarios at theater level, enabling AI-augmented MDMP and compressing planning timelines. ORSA analysts trained on MSS are essential participants in Thunderforge-class initiatives — the quantitative decision-support skills in TM-40G (and advanced methods in TM-50G) directly enable the human-machine teaming required for AI-assisted wargaming and COA analysis.
+
 **Prerequisite:** TM-30 (Advanced Builder) is REQUIRED. Completion of TM-20 and TM-10 is assumed. A graduate-level quantitative background (statistics, R or Python) is required independently of the TM series.
 
 **Advanced track:** Upon completing TM-40G, qualified ORSAs should pursue **TM-50G (Advanced ORSA)** for advanced topics including Bayesian methods, complex simulation design, multi-objective optimization, and campaign analysis support to USAREUR-AF operational planning.
@@ -84,7 +86,29 @@ Before beginning this manual, verify you meet all prerequisites:
 
 > **NOTE:** This manual assumes graduate-level quantitative proficiency. Statistical procedures are described at an implementation level, not an introductory level. Analysts without the prerequisite background should complete formal coursework before applying these procedures to operational products.
 
-### 1-5. Analytical Product Standards
+### 1-5. Governing References
+
+| Publication | Title | Relevance |
+|---|---|---|
+| DA PAM 600-3 | Officer Professional Development | Defines FA 49 (ORSA) career progression and qualifications |
+| AR 5-11 | Management of Army M&S | M&S governance policy |
+| DA PAM 5-11 | VV&A of Army Models and Simulations | Model credibility and accreditation standards |
+| ATP 5-0.3 | Multi-Service TTP for Operation Assessment | Assessment methodology, MOE/MOP analytical frameworks |
+| AR 71-9 | Warfighting Capabilities Determination | Capabilities-based assessments — core ORSA analytical work |
+| ADP 5-0 | The Operations Process | Analytical framework for plan/prepare/execute/assess |
+| Army CIO Memorandum | Data and Analytics Policy (April 2024) | Data governance authority |
+
+### 1-5a. Strategic Guidance
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| UDRA v1.1 | Unified Data Reference Architecture (February 2025) | Technical reference architecture |
+
+---
+
+### 1-6. Analytical Product Standards
 
 Every ORSA product delivered to a commander or staff officer must meet the following standards. These are not stylistic preferences — they are analytical integrity requirements.
 
@@ -1927,6 +1951,20 @@ Before exercise execution begins, verify:
 
 ---
 
+## APPENDIX D — PROFESSIONAL READING LIST
+
+> Curated articles from Army professional journals and military publications. These supplement doctrinal references with contemporary operational perspectives.
+
+| Source | Title | Date | Relevance |
+|---|---|---|---|
+| Small Wars Journal | "Accelerating Decision-Making: Integrating AI into the Modern Wargame" | Feb 2026 | AI-enabled wargaming |
+| Small Wars Journal | "AI-Enabled Wargaming at CGSC" | Jan 2026 | Wargaming implications for PME |
+| Military Review | "AI as a Combat Multiplier: Using AI to Unburden Army Staffs" | Sep 2024 | AI decision support for staffs |
+| Military Review | "Taking a Data-Centric Approach to Unit Readiness" | 2024 | Analytics in BCT readiness |
+| Green Notebook | "Understanding Weapons of Math Destruction" | Jul 2024 | Algorithmic bias and risk |
+
+---
+
 ## GLOSSARY
 
 **AAR (After-Action Review)** — Structured review of exercise or operational events against standards, conducted to identify sustains and improves.
@@ -2043,3 +2081,7 @@ Before exercise execution begins, verify:
 
 *Army CIO Memorandum, Data and Analytics Policy, April 2024.*
 *Unified Data Reference Architecture (UDRA) v1.1, February 2025.*
+
+**DoD and Army Strategic References:**
+
+- **JADC2 Strategy Summary (March 2022)** — Cross-domain data integration strategy for Joint All-Domain Command and Control

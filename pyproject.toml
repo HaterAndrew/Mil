@@ -21,3 +21,4 @@ include = ["sitrep_tracker*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]

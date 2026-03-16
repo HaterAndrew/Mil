@@ -37,6 +37,19 @@ USAREUR-AF is geographically distributed. An MTT traveling to each MSC ensures e
 - **Ongoing:** TM-40/50 specialist enrollment builds the technical bench
 - **Measurable:** Monthly completion metrics by MSC, reported to G3
 
+## Theater and Strategic Context
+
+MSS training does not exist in a vacuum. EUCOM and the Army are investing heavily in data and AI capabilities — and MSS-trained personnel are the workforce that makes those investments operational.
+
+| Reference | Date | Relevance to MSS Training |
+|---|---|---|
+| **EUCOM BRAVO Hackathon Series** (BRAVO 100, BRAVO 101) | Mar–Summer 2024 | EUCOM CDAO innovation events producing 26 AI prototypes for theater warfighting challenges in 72–96 hour sprints. MSS capstone exercises directly mirror this rapid-build model — TM-40/50 graduates are the personnel who execute at these events. |
+| **EUCOM Thunderforge AI Planning Ecosystem** (DIU/Scale AI) | 2024–25 | AI agents augmenting MDMP and wargaming at theater level, compressing planning timelines. USAREUR-AF personnel trained in TM-40F (Mission Command), TM-40G (ORSA), TM-40H (AI Engineer), and TM-40I (ML Engineer) are the operators and builders of these capabilities. Without MSS training, the command cannot staff Thunderforge-class initiatives with qualified personnel. |
+| **EUCOM 2025 Posture Statement to Congress** | 2025 | Theater strategy explicitly references digital modernization and allied data sharing. MSS training is the mechanism that builds the workforce to deliver on those commitments. |
+| **Army 49B AI/ML Officer Career Path** | 2025–26 | The Army's first dedicated uniformed AI/ML career track. TM-40H and TM-40I directly prepare personnel for 49B qualification. MSS training is not supplemental — it is foundational to the Army's emerging AI workforce strategy. |
+
+An untrained formation cannot participate in these initiatives. The MSS Training Program is the bridge between EUCOM's AI/data strategy and the personnel who execute it.
+
 ## The Ask
 
 CG signature on TASKORD activating the MSS MTT: 4–6 billets, TDY-funded rotation to all MSCs, ODT as proponent, first cohort Q3 FY26.

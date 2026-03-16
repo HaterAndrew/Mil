@@ -108,12 +108,22 @@ must be familiar with the substance — not just aware of the titles.
 | Document                                      | Issued            | Relevance                                                  |
 |-----------------------------------------------|-------------------|------------------------------------------------------------|
 | DoD AI Ethics Principles                      | 2019              | Foundational: responsible, equitable, traceable, reliable  |
-| DoD Responsible AI Implementation Roadmap     | 2021              | RAI integration into acquisition and fielding              |
 | DoD RAIMTF (RAI Maturity Tracking Framework)  | 2024 (latest)     | Maturity assessment for AI systems in production           |
 | Army CIO Memorandum on AI Use                 | April 2024        | Human-in-the-loop requirements, prohibited use cases       |
-| UDRA v1.1 (Unified Data Reference Architecture)| February 2025    | Data standards for AI-consumed datasets                    |
 | USAREUR-AF C2DAO Governance Framework         | Current version   | Platform-specific governance, authorization gates          |
 | NATO AI Principles and Strategies             | Current version   | Coalition data sharing constraints on AI output            |
+| Army DIR 2024-03                              | 2024              | Digital Engineering Policy — Army-wide digital engineering adoption directive |
+| FM 3-12                                       | Current version   | Cyberspace Operations and Electromagnetic Warfare — operational context for AI systems in Army networks |
+| DA PAM 25-2-5                                 | Current version   | Software Assurance — software security and assurance standards |
+
+**Strategic Guidance:**
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document                                       | Authority         | Relevance                                                  |
+|------------------------------------------------|-------------------|------------------------------------------------------------|
+| DoD Responsible AI Implementation Roadmap      | 2021              | RAI integration into acquisition and fielding              |
+| UDRA v1.1 (Unified Data Reference Architecture)| February 2025    | Data standards for AI-consumed datasets                    |
 
 1-11. When policy conflicts exist — for example, where Army CIO Memo appears more restrictive
 than DoD RAIMTF guidance — apply the more restrictive standard unless directed otherwise by
@@ -452,7 +462,7 @@ clearances before any training activity:
 | Data classification review               | USAREUR-AF Information Security Officer| Confirm training data authorized for use at target   |
 |                                          |                                        | classification level                                 |
 | Legal review (copyright, Privacy Act)    | USAREUR-AF SJA                         | Confirm training data does not violate Copyright Act,|
-|                                          |                                        | Privacy Act (5 U.S.C. 552a), or AR 25-55             |
+|                                          |                                        | Privacy Act (5 U.S.C. 552a), or AR 25-30 (FOIA)      |
 | Data governance clearance                | Responsible Data Steward               | Confirm data authorized for AI training use          |
 | C2DAO architecture review                | C2DAO                                  | Confirm fine-tuning plan is technically sound        |
 | AI Ethics review                         | Unit AI Ethics POC                     | Confirm fine-tuned model use case meets DoD AI       |
@@ -2528,6 +2538,12 @@ shared state across agents in a workflow, providing persistence and audit trail.
 
 *TM-50H, Advanced AI Engineering, Maven Smart System, USAREUR-AF Operational Data Team.*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026.*
-*UNCLASSIFIED. Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*UNCLASSIFIED. Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*
 
 *PREREQUISITE: TM-40H, AI Engineer. Cross-references: TM-40I, ML Engineer; TM-50I, ML Engineer Advanced; TM-50K, Knowledge Manager Advanced; TM-50L, Software Engineer Advanced.*
+
+**DoD and Army Strategic References:**
+
+- **DoD Responsible AI Strategy & Implementation Pathway (June 2024 update)** — DoD framework for responsible AI development, testing, and fielding
+- **DoD AI Cybersecurity Risk Management Guide (CDAO)** — Risk management guidance for AI systems in DoD environments
+- **DoD Directive 3000.09, Autonomy in Weapon Systems (January 2023 update)** — Policy on autonomous and semi-autonomous functions in weapon systems

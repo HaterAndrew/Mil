@@ -416,6 +416,16 @@ Bias mitigation is most effective during feature engineering and training, not a
 
 ---
 
+## GOVERNING REFERENCES (ADDITIONAL)
+
+| Document | Relevance |
+|---|---|
+| Army DIR 2024-03 | Digital Engineering Policy — Army-wide digital engineering adoption directive |
+| FM 3-12 | Cyberspace Operations and Electromagnetic Warfare — operational context for ML systems |
+| DA PAM 25-2-5 | Software Assurance — software security standards |
+
+---
+
 ## CURRICULUM NOTES
 
 **Prerequisite:** TM-30 (Advanced Builder) is REQUIRED before beginning TM-40I or this guide. Python proficiency (scikit-learn, PyTorch or statsmodels, SQL) is separately required.
@@ -433,6 +443,6 @@ Bias mitigation is most effective during feature engineering and training, not a
 
 ---
 
-**DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
+**DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.
 
 **Document Control:** Version 1.0 | 2026 | USAREUR-AF Operational Data Team | Associated Manual: TM-40I

@@ -129,6 +129,14 @@ Complete **5+ duty days before Day 1:**
 | COA overlay | Must be linked to task organization data, not built as a static graphic — evaluator will modify an element and verify the overlay reflects the change |
 | Data staleness inject | Immediate characterization is required, not a fix attempt. Characterize affected COP elements, apply caveats, escalate to S6. Spending time attempting to restore the feed will not complete the characterization in time |
 
+### Function-Specific Go Criteria — Movement and Maneuver
+
+| Criterion | Standard |
+|---|---|
+| Phase line CCIRs | At least one of the three required CCIRs must be a phase line crossing alert — a phase line CCIR that triggers on unit proximity rather than confirmed reporting fails this element |
+| Task organization display | Task organization view must reflect the current task org from the provided scenario data — a display that shows a default/template task org without reading scenario data fails |
+| COA overlay accuracy | COA overlay product must include phase lines, unit boundaries, and routes from the provided scenario — any missing graphic control measure is a No-Go for that element |
+
 ---
 
 ## Key Tips
@@ -138,6 +146,7 @@ Complete **5+ duty days before Day 1:**
 | Phase lines and route overlays | Drawn manually without a data source connection fail the data currency check — link every layer to a source before Day 1 |
 | Reported vs. confirmed position | Adopt a consistent caveat format before the exercise: "position as of [DTG] per reporting, not confirmed" — apply it every time |
 | Day 2 COA overlay | Moves fast — arrive knowing the OPORD fragment format and how task organization elements map to MSS layer types |
+| CCIR troubleshooting | Maneuver CCIRs tied to unit position feeds fail silently when the position feed is stale — the CCIR never triggers because the data never updates. Always verify position feed data currency before declaring CCIR configuration complete. A CCIR built on a stale feed is not a functional CCIR |
 
 ---
 

@@ -135,6 +135,29 @@ identify blockers, or write meaningful acceptance criteria for MSS-based deliver
 
 ---
 
+### 1-5. Governing References
+
+The following publications establish the policy, architectural, and governance framework within which TM-40J program managers operate. Familiarity with these references is required — not recommended.
+
+| Publication | Title | Relevance |
+|---|---|---|
+| Army CIO Memorandum | Data and Analytics Policy (April 2024) | Data governance authority |
+| USAREUR-AF C2DAO Guidance | Command governance for data operations | Operational governance |
+| Army DIR 2024-03 | Digital Engineering Policy | Army digital transformation directive |
+| AR 25-1 | Army Information Technology | IT governance and data management policy |
+| learn-data.armydev.com | CDA Portal | Training platform reference |
+
+### 1-5a. Strategic Guidance
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| UDRA v1.1 | Unified Data Reference Architecture (February 2025) | Technical reference architecture |
+| DoD Data Strategy | DoD Data Strategy (2020) | Enterprise data management framework |
+
+---
+
 ## CHAPTER 2 — AGILE PROJECT MANAGEMENT FOR DATA AND AI PROJECTS
 
 ### 2-1. Why Agile for Data Projects
@@ -1605,6 +1628,20 @@ a trained ML model, AI agent, or LLM integration.
 
 ---
 
+## APPENDIX C — PROFESSIONAL READING LIST
+
+> Curated articles from Army professional journals and military publications. These supplement doctrinal references with contemporary operational perspectives.
+
+| Source | Title | Date | Relevance |
+|---|---|---|---|
+| Army AL&T | "Accelerating the Army's AI Strategy" | 2024-25 | AI program management |
+| Army AL&T | "The Army's Data (Ad)Vantage" | 2024 | Data program strategy |
+| Army AL&T | "The Software Advantage" | 2024-25 | Software acquisition modernization |
+| Army AL&T | "Reality Check" (AI/ML implementation) | 2024-25 | AI/ML program realities |
+| Military Review | "Attaining Readiness by Developing a Data-Centric Culture" | 2024 | Organizational data culture |
+
+---
+
 ## GLOSSARY
 
 **Acceptance Criteria (AC)** — Testable conditions that define when a user story is
@@ -1760,4 +1797,9 @@ PM-facing tool for project tracking on MSS.
 *TM-40J — Technical Manual: Program Manager (Technical), Maven Smart System*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 *Army CIO Memo (April 2024) — Unified Data Reference Architecture v1.1 (February 2025)*
-*UNCLASSIFIED — Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*UNCLASSIFIED — Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*
+
+**DoD and Army Strategic References:**
+
+- **DoDI 5000.87, Software Acquisition Pathway (October 2020)** — Establishes the software acquisition pathway for rapid, iterative software delivery
+- **Army Directive 2024-02, Agile Software Development (December 2024)** — Army policy for agile software development practices and delivery

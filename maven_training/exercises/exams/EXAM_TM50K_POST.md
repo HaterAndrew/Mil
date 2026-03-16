@@ -29,7 +29,7 @@ B. Parallel networks — each classification domain maintains its own separate r
 C. A shared API layer that queries both repositories simultaneously for users with appropriate clearances
 D. A single SIPR-hosted repository with NIPR users accessing a read-only downgraded view
 
-**2. The V Corps G9 CIMIC section proposes automating doctrine updates: when 10 or more NIPR lessons share a common theme, an AI workflow automatically drafts a doctrine amendment and publishes it to the theater SOP library. Per TM-50K, which element of this proposal is NON-COMPLIANT?**
+**2. The V Corps Civil Affairs CIMIC section proposes automating doctrine updates: when 10 or more NIPR lessons share a common theme, an AI workflow automatically drafts a doctrine amendment and publishes it to the theater SOP library. Per TM-50K, which element of this proposal is NON-COMPLIANT?**
 
 A. Using AI to identify thematic clusters across lessons
 B. Automatically publishing the AI-drafted amendment without mandatory SME review

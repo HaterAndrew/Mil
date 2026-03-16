@@ -11,7 +11,7 @@ Wiesbaden, Germany
 
 This publication supports USAREUR-AF data operations aligned with the Army Data Plan 2022 and the DoD Data Strategy. All roles, policies, and architectural terms reflect current Army CIO guidance, including the Army Data Stewardship Policy (April 2024) and the Unified Network Plan 2.0 (March 2025).
 
-**DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
+**DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.
 
 ---
 
@@ -1364,7 +1364,9 @@ Master list of abbreviations used across USAREUR-AF Maven/Foundry publications a
 
 **MDO** — Multi-Domain Operations
 
-**MIM** — Multilateral Interoperability Programme information model
+**MIM (NATO)** — NATO MIP Information Model (STANAG 5643 proposed). Semantic reference model with ~2,300 object types for military C2 data exchange. Governed by the Multilateral Interoperability Programme (27 nations). Current version: 5.3 (Jul 2025).
+
+**MIM toolchain (USAREUR-AF)** — Internal Python monorepo that parses the NATO MIM standard and generates Palantir Foundry ontology code. See doctrine/mim/ for documentation.
 
 **ML** — Machine Learning
 

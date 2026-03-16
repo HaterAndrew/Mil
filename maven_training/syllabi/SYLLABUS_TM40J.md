@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | **Level** | TM-40J (Program Manager Specialist Track) |
-| **Duration** | 3 days (24 hours) |
+| **Duration** | 4 days (32 hours) |
 | **Prerequisites** | TM-10, TM-20, and TM-30 (all Go evaluations on file, required). Data Literacy Technical Reference (read before Day 1). |
 | **Audience** | Technical project managers, product owners, team leads for data and AI capability builds |
 | **Format** | Instructor-led instruction + applied exercises + practical exercise |
@@ -19,7 +19,7 @@ After this course you can manage the full lifecycle of a data or AI project on M
 
 TM-40J graduates are the connective tissue between the operational unit stating the requirement and the technical team building the capability. The PM does not write code. The PM makes the team able to.
 
-Three days provides time to work through all eight TM chapters — the first two days are instruction-heavy with applied exercises; Day 3 consolidates risk management and change management content, then evaluates via a full PM scenario practical exercise.
+Four days provides time to work through all eight TM chapters with applied exercises at each stage before the evaluation: Day 1 establishes the Agile foundation and user story craft; Day 2 builds the ML/AI lifecycle model and requirements elicitation skills; Day 3 covers stakeholder management, project tracking systems, and risk management; Day 4 closes with delivery planning, change management, and a full practical exercise with adequate time for the seven written PM deliverables.
 
 ---
 
@@ -50,7 +50,7 @@ Complete **5+ duty days before Day 1:**
 
 ## Daily Schedule
 
-**Day 1 — Agile Fundamentals and the ML/AI Lifecycle**
+**Day 1 — Agile Fundamentals and User Story Craft**
 
 | Time | Block | Method | Content |
 |---|---|---|---|
@@ -61,40 +61,57 @@ Complete **5+ duty days before Day 1:**
 | 1200–1300 | — | Lunch | |
 | 1300–1500 | 3 | Instruction + Exercise | Kanban for operational support work; sprint ceremonies (Planning, Standup, Review, Retrospective) — execution standards for a military data team. Applied exercise: run a sprint planning session from a provided backlog |
 | 1500–1515 | — | Break | |
-| 1515–1700 | 4 | Instruction | ML/AI project lifecycle: six phases from Problem Definition through Sustainment. Gate criteria between phases. How the PM manages handoffs across TM-40H, TM-40I, TM-40G, and TM-40L tracks |
+| 1515–1700 | 4 | Exercise + Review | User story quality workshop: each trainee brings a requirement from their own unit (or uses the provided set); rewrites it as a properly-formed user story; peer review against the Definition of Ready; instructor closes with common failure patterns |
 
-**Evening reading:** TM-40J, Chapter 2 (Agile PM for Data and AI Projects) — full chapter review; TM-40J, Chapter 3 (Managing ML and AI Project Lifecycles) — review all six lifecycle phases and gate criteria.
+**Evening reading:** TM-40J, Chapter 2 (Agile PM for Data and AI Projects) — full chapter review; TM-40J, Chapter 3 (Managing ML and AI Project Lifecycles) — read all six lifecycle phases and gate criteria before Day 2.
 
 ---
 
-**Day 2 — Stakeholder Management, Requirements Translation, and Project Tracking**
+**Day 2 — ML/AI Lifecycle and Requirements Elicitation**
 
 | Time | Block | Method | Content |
 |---|---|---|---|
-| 0800–0830 | — | Review | Day 1 questions; gate criteria quiz — six ML lifecycle phases and their go/no-go criteria |
-| 0830–1030 | 5 | Instruction + Exercise | Requirements elicitation from commanders and staff: the translation problem, structured intake, distinguishing a stated requirement from the real requirement. Applied exercise: interview simulation — extract a structured requirements document from a vague commander ask |
+| 0800–0900 | — | Review | Day 1 questions; gate criteria quiz — six ML lifecycle phases and their go/no-go criteria |
+| 0900–1030 | 5 | Instruction | ML/AI project lifecycle: six phases from Problem Definition through Sustainment. Gate criteria between phases. How the PM manages handoffs across TM-40H, TM-40I, TM-40G, and TM-40L tracks. Common gate-skip failure modes |
 | 1030–1045 | — | Break | |
-| 1045–1200 | 6 | Instruction | Managing stakeholder expectations: delivery timelines, scope tradeoffs, cross-track coordination. Managing the technical team: PM authority vs. technical authority, protecting the team from scope sprawl |
+| 1045–1200 | 6 | Instruction + Exercise | Requirements elicitation from commanders and staff: the translation problem, structured intake, distinguishing a stated requirement from the real requirement. Applied exercise: interview simulation — extract a structured requirements document from a vague commander ask |
 | 1200–1300 | — | Lunch | |
-| 1300–1500 | 7 | Instruction | Project tracking system architecture for PMs: the Project Tracker Ontology design (Project, Sprint, Story, Risk Object Types), how a Sprint Board is structured in Workshop, what the PM specifies vs. what TM-40L builds |
-| 1500–1515 | — | Break | |
-| 1515–1700 | 8 | Instruction + Discussion | Commander-facing Project Status Dashboard: overall health roll-up, milestone status, blocking issues panel. Automated status alerts: what alert rules to specify and how to validate them once built. PM requirements documentation exercise: draft the build spec a TM-40L developer would need to implement this system |
+| 1300–1430 | 7 | Exercise | Requirements document drill: given a second provided commander ask, each trainee independently produces a complete structured requirements document (problem statement, success criteria, constraints, definition of done). Peer review; instructor critique |
+| 1430–1445 | — | Break | |
+| 1445–1700 | 8 | Instruction | Managing stakeholder expectations: delivery timelines, scope tradeoffs, cross-track coordination. Managing the technical team: PM authority vs. technical authority, protecting the team from scope sprawl. Coalition building across TM-40A–F WFF consumers |
 
-**Evening reading:** TM-40J, Chapter 4 (Stakeholder Management and Requirements Translation); TM-40J, Chapter 5 (Building Project Tracking Systems on MSS) — review system architecture and PM specification requirements.
+**Evening reading:** TM-40J, Chapter 4 (Stakeholder Management and Requirements Translation); TM-40J, Chapter 5 (Building Project Tracking Systems on MSS).
 
 ---
 
-**Day 3 — Risk, Delivery, Change Management, and Practical Exercise**
+**Day 3 — Project Tracking Systems and Risk Management**
 
 | Time | Block | Method | Content |
 |---|---|---|---|
-| 0800–0830 | — | Review | Day 2 questions; review PM build specification exercise from Day 2 |
-| 0830–1000 | 9 | Instruction + Exercise | Risk management for data projects: data availability risk, model performance risk, technical debt. Building and maintaining the MSS risk register. Dependency management — identifying blockers across TM-40 specialist tracks |
-| 1000–1015 | — | Break | |
-| 1015–1130 | 10 | Instruction | Delivery planning: scope/timeline/quality tradeoffs; release planning; Definition of Done for a data product; production readiness review procedure. Post-release review standards |
-| 1130–1200 | 11 | Instruction | Change management: why operational users resist new data products; change management plan structure; user guide standards; managing resistance during rollout; platform governance from a PM perspective |
+| 0800–0830 | — | Review | Day 2 questions; requirements document quality debrief |
+| 0830–1030 | 9 | Instruction + Exercise | Project tracking system architecture for PMs: the Project Tracker Ontology design (Project, Sprint, Story, Risk Object Types), how a Sprint Board is structured in Workshop, what the PM specifies vs. what TM-40L builds. Applied exercise: draft a PM requirements specification for a Sprint Board; identify every decision TM-40L needs answered before building |
+| 1030–1045 | — | Break | |
+| 1045–1200 | 10 | Instruction + Exercise | Commander-facing Project Status Dashboard: overall health roll-up, milestone status, blocking issues panel. Automated status alerts: alert rules specification and validation. Exercise: draft complete build spec for the dashboard — sufficient for a TM-40L developer to implement without follow-up |
 | 1200–1300 | — | Lunch | |
-| 1300–1700 | 12 | **Eval** | **Practical exercise (evaluated)** |
+| 1300–1500 | 11 | Instruction + Exercise | Risk management for data projects: data availability risk, model performance risk, technical debt. Building and maintaining the MSS risk register. Dependency management — identifying blockers across TM-40 specialist tracks. Applied exercise: populate a risk register from a provided project scenario |
+| 1500–1515 | — | Break | |
+| 1515–1700 | 12 | Exercise + Review | Dependency mapping: given the AI readiness tool scenario (same scenario as Day 4 practical exercise), identify and document all cross-track dependencies (data, model, platform); assign owners; flag blockers. Instructor reviews output against practical exercise criteria so trainees understand what "complete" looks like |
+
+**Evening reading:** TM-40J, Chapters 6–8 (Risk Management; Delivery Planning; Change Management) — all three chapters before Day 4.
+
+---
+
+**Day 4 — Delivery, Change Management, and Practical Exercise**
+
+| Time | Block | Method | Content |
+|---|---|---|---|
+| 0800–0900 | 13 | Instruction | Delivery planning: scope/timeline/quality tradeoffs; release planning; Definition of Done for a data product; production readiness review procedure against Appendix B criteria. Post-release review standards |
+| 0900–0945 | 14 | Instruction | Change management: why operational users resist new data products; change management plan structure; user guide standards; managing resistance during rollout; platform governance from a PM perspective |
+| 0945–1000 | — | Brief | Practical exercise scenario brief; evaluator distributes scenario materials; 15-min review and questions |
+| 1000–1015 | — | Buffer | Final prep; environment check |
+| 1015–1200 | 15 | **Eval** | **Practical exercise — Phase 1** (Tasks 1–4): requirements document, user stories, sprint board spec, dashboard spec |
+| 1200–1300 | — | Lunch | |
+| 1300–1700 | 16 | **Eval** | **Practical exercise — Phase 2** (Tasks 5–7): dependency/risk register, production readiness brief, change management summary |
 
 ---
 
@@ -106,10 +123,10 @@ Complete **5+ duty days before Day 1:**
 | Before Day 1 | Data Literacy Technical Reference, Sections 1–3 |
 | Before Day 1 | CONCEPTS_GUIDE_TM40J_PROGRAM_MANAGER |
 | Day 1 evening | TM-40J, Ch 2 (Agile PM for Data and AI Projects) |
-| Day 1 evening | TM-40J, Ch 3 (Managing ML and AI Project Lifecycles) |
+| Day 1 evening | TM-40J, Ch 3 (Managing ML and AI Project Lifecycles) — all six phases and gate criteria |
 | Day 2 evening | TM-40J, Ch 4 (Stakeholder Management and Requirements Translation) |
 | Day 2 evening | TM-40J, Ch 5 (Building Project Tracking Systems on MSS) |
-| Day 3 (reference) | TM-40J, Chs 6–8 (Risk; Delivery Planning; Change Management) |
+| Day 3 evening | TM-40J, Chs 6–8 (Risk; Delivery Planning; Change Management) — required before Day 4 |
 
 ---
 

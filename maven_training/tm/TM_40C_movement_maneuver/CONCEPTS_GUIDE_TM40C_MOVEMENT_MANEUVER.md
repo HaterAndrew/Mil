@@ -464,8 +464,7 @@ Every S3 section in USAREUR-AF is capable of the discipline. The question is whe
 | ADP 5-0, The Operations Process | Plan/prepare/execute/assess cycle; assessment framework |
 | ADP 6-0, Mission Command | Shared understanding; commander's intent; disciplined initiative |
 | FM 3-0, Operations | Combined arms integration, M&M WFF tasks |
-| FM 3-90-1, Offense and Defense Part 1 | Offensive and defensive control measures, passages of lines |
-| FM 3-90-2, Reconnaissance, Security, and Tactical Enabling Tasks | Screen/guard/cover, river crossing, tactical enabling tasks |
+| FM 3-90, Offense and Defense (May 2023) | Offensive and defensive control measures, passages of lines, reconnaissance, security, tactical enabling tasks |
 | FM 3-98, Reconnaissance and Security Operations | PIR/IR framework, reconnaissance fundamentals |
 | FM 5-0, Planning and Orders Production | MDMP, orders, assessment products |
 | FM 6-0, Commander and Staff Organization | Staff roles, battle rhythm, CCIRs |
@@ -511,4 +510,4 @@ For personnel pursuing technical depth, specialist tracks (TM-40G–L, prereq TM
 *CONCEPTS GUIDE — TM-40C COMPANION: MOVEMENT AND MANEUVER WARFIGHTING FUNCTION*
 *Version 1.0 — March 2026*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA — Wiesbaden, Germany*
-*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*

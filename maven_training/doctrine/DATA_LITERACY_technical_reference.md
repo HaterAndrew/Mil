@@ -8,9 +8,9 @@ Wiesbaden, Germany
 
 2026
 
-DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
+DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.
 
-PROPONENT: Headquarters, United States Army Europe and Africa (USAREUR-AF), G6/Data
+PROPONENT: Headquarters, United States Army Europe and Africa (USAREUR-AF), C2DAO
 
 ---
 
@@ -32,7 +32,7 @@ This edition incorporates the following updates from the initial publication:
   Army operational objective.
 - **NATO references.** Adds AJP-3.2 (Allied Joint Doctrine for Land Operations) to
   interoperability section and references.
-- **Architecture resources.** Expands reference to USAREUR-AF technical architecture and implementation resources available through G6/Data.
+- **Architecture resources.** Expands reference to USAREUR-AF technical architecture and implementation resources available through C2DAO.
 
 This publication establishes doctrine for data literacy across
 United States Army Europe and Africa (USAREUR-AF) and the broader Army. It provides the
@@ -67,7 +67,7 @@ who cannot critically evaluate data will make worse decisions. Units that produc
 data will degrade the situational awareness of every echelon above them. Data literacy is
 therefore a readiness issue.
 
-The proponent of this publication is Headquarters, USAREUR-AF, G6/Data. Send comments and
+The proponent of this publication is Headquarters, USAREUR-AF, C2DAO. Send comments and
 recommended changes to the proponent.
 
 ---
@@ -733,7 +733,7 @@ centralizing all data management in a single IT element. For detailed technical
 implementation guidance, see the USAREUR-AF Cross-Domain Architecture (CDA) Portal
 (listed in the References section of this publication).
 
-**NOTE:** The UDRA v1.1 and supporting enterprise architecture documentation are available through USAREUR-AF G6/Data. Contact your unit data steward or G6/Data for implementation guidance, ontology design references, and NATO doctrine crosswalks.
+**NOTE:** The UDRA v1.1 and supporting enterprise architecture documentation are available through C2DAO. Contact your unit data steward or C2DAO for implementation guidance, ontology design references, and NATO doctrine crosswalks.
 
 **3-8. Data Provenance and Lineage**
 
@@ -1323,7 +1323,7 @@ requirements. The more restrictive handling requirement governs the combined pro
 7-6d. USAREUR-AF data systems must comply with NATO Architecture Framework version 4
 (NAFv4) to ensure interoperability with Allied data environments. NATO NAFv4 alignment
 is particularly relevant for data products, system interfaces, and ontology definitions
-shared across the coalition. For NAFv4 implementation guidance, contact USAREUR-AF G6/Data.
+shared across the coalition. For NAFv4 implementation guidance, contact C2DAO.
 
 7-6e. Coalition data sharing requirements in the EUCOM AOR are further governed by
 NATO Allied Joint Publications. AJP-3 (Allied Joint Doctrine for the Conduct of Operations)
@@ -1331,7 +1331,7 @@ and AJP-3.2 (Allied Joint Doctrine for Land Operations) establish data sharing o
 for combined land operations; AJP-5 (Allied Joint Doctrine for the Planning of Operations)
 governs information requirements in multinational planning. USAREUR-AF data products
 generated in support of combined operations must satisfy the data interoperability
-requirements established in these publications. NATO doctrine crosswalks are available through USAREUR-AF G6/Data.
+requirements established in these publications. NATO doctrine crosswalks are available through C2DAO.
 
 **7-7. Responsibilities of Data Owners, Stewards, and Consumers**
 
@@ -1563,7 +1563,7 @@ assign and enforce data roles explicitly.
 |---|---|---|---|
 | TM-10 | Operator | Navigates Maven Smart System; consumes data products; follows data handling procedures; accurately enters data; observes security requirements | All Soldiers and civilians — every MOS and staff function |
 | TM-20 | Builder | Builds basic Workshop applications; runs light transforms; creates and shares data products without specialist tools; identifies data quality problems | All personnel — builds on TM-10 |
-| TM-30 | Advanced Builder | Designs pipelines and Ontology objects; builds governed dashboards and complex transforms; profiles data quality; mentors TM-10/20 users | Data-adjacent personnel (17/25-series, S6/G6/G2/G9) |
+| TM-30 | Advanced Builder | Designs pipelines and Ontology objects; builds governed dashboards and complex transforms; profiles data quality; mentors TM-10/20 users | Data-adjacent personnel (17/25-series, S6/G6/G2) |
 | TM-40 Series (WFF) | Warfighting Function Specialist | Role-specific MSS integration within an assigned warfighting function. Six tracks: Intelligence (40A), Fires (40B), Movement & Maneuver (40C), Sustainment (40D), Protection (40E), Mission Command (40F). Applies MSS tools to functional domain workflows. | WFF functional staff (INT, FIRES, M2, SUST, PROT, MC); requires TM-30 prerequisite |
 | TM-40 Series (Technical) | Technical Specialist | Role-specific mastery within a designated technical specialty. Six tracks: ORSA (40G), AI Engineer (40H), ML Engineer (40I), Program Manager (40J), Knowledge Manager (40K), Software Engineer (40L). Produces command-level data products independently. | Designated specialist billets (ORSA, AI Eng, ML Eng, PM, KM, SWE); requires TM-30 prerequisite |
 | TM-50 Series | Advanced Specialist | Advanced practitioner capability within a specialist track (TM-50G through TM-50L); leads, mentors, and develops new capability; research-grade analytical and engineering proficiency. No TM-50 WFF tracks. | TM-40G–L graduates in senior or lead roles; requires TM-40 in same track |
@@ -1598,7 +1598,7 @@ assign and enforce data roles explicitly.
 |---|---|---|
 | All Soldiers and civilians | TM-10 (Operator) — Navigate Maven, consume data products, follow data handling and security procedures | Unit-level training; TM-10 self-paced course |
 | All personnel | TM-20 (Builder) — Build basic data products; identify and report quality issues | Unit training; TM-20 course (builds on TM-10) |
-| Data-adjacent billets (17/25-series, S6/G6/G2/G9) | TM-30 (Advanced Builder) — Design pipelines and Ontology objects; govern data products | TM-30 course (builds on TM-20); mentored practicum |
+| Data-adjacent billets (17/25-series, S6/G6/G2) | TM-30 (Advanced Builder) — Design pipelines and Ontology objects; govern data products | TM-30 course (builds on TM-20); mentored practicum |
 | WFF functional staff (INT, FIRES, M2, SUST, PROT, MC) | TM-40 Series (WFF Track) — MSS integration within assigned warfighting function | TM-40A through TM-40F per WFF assignment; prerequisite TM-30 |
 | ORSA, AI Eng, ML Eng, PM, KM, SWE billets | TM-40 Series (Technical Specialist) — Role-specific track at the assigned specialist level | TM-40G through TM-40L per billet type; prerequisite TM-30 |
 | Senior data leads, capability developers, training cadre | TM-50 Series (Advanced Specialist) — Research-grade proficiency; leads and develops capability in specialist track | TM-50G through TM-50L per track; prerequisite TM-40G–L in same track |
@@ -1636,7 +1636,7 @@ through workaround procedures.
 
 9-7d. **Governance must be upstream.** The most common failure mode in enterprise data programs is treating governance as a documentation exercise — something that happens after systems are built and data is flowing. Effective data governance requires participation in requirements definition, funding decisions, and acquisition processes *before* systems are fielded. A data architecture built without governance participation will be technically coherent but operationally inconsistent: different systems will define the same entity differently, access will be granted inconsistently, and quality will degrade at every handoff. Architecture without governance is documentation. Governance without architecture is policy without mechanism. Both are required. This principle applies at every tier of the Army data stewardship hierarchy and at the command level within the USAREUR-AF AOR. Data personnel must have a seat at the table during system acquisition and requirements development, not just during post-fielding integration.
 
-**NOTE:** For current USAREUR-AF data governance contacts and policy memoranda, contact USAREUR-AF G6/Data or your unit data steward.
+**NOTE:** For current USAREUR-AF data governance contacts and policy memoranda, contact C2DAO or your unit data steward.
 
 ---
 
@@ -1924,25 +1924,11 @@ to the data type and operational context.
 
 # REFERENCES AND RELATED PUBLICATIONS
 
-## Governing References
+## Army Doctrine and Regulations
 
-- **Army Data Plan (2022), Office of the Army Chief Information Officer** — Established the
-  foundational Army-wide framework for data management, governance, and analytics in support
-  of Multi-Domain Operations. Superseded in part by subsequent Army CIO guidance (2024) and
-  UDRA v1.1 (2025); remains a foundational reference.
-- **Army CIO Data Stewardship Policy (April 2, 2024)** — Establishes the data stewardship
-  hierarchy (MADO, Data Steward, Functional Data Manager, C2DAO) and data chain of
-  responsibility. Current authoritative governance reference.
-- **Unified Data Reference Architecture (UDRA) v1.1 (February 2025), Army Chief Information
-  Officer** — Provides the Army's current reference architecture for data systems based on
-  data mesh principles: distributed data ownership, domain-aligned data products, and
-  federated governance. Supersedes prior architecture guidance.
-- **DoD Data Strategy (2020)** — Establishes the VAUTI framework (Visible, Accessible,
-  Understandable, Trustable, Interoperable) as the DoD standard for data quality and
-  interoperability. VAUTI remains the authoritative DoD-level data quality standard.
-
-## Army Doctrine
-
+- **AR 25-1, Army Information Technology (Jul 2019)** — Statutory framework for Army data
+  management, data governance, and IT policy. Establishes the VAUTI data quality principles
+  at the Army level and defines the Army Data Board (ADB) as the senior data governance body.
 - **ADP 3-13, Information** — Establishes doctrine for information as combat power and the
   foundation for information advantage. This publication implements ADP 3-13 at the data literacy
   level.
@@ -1971,10 +1957,21 @@ to the data type and operational context.
 
 ## USAREUR-AF Resources
 
-- **USAREUR-AF G6/Data** — The authoritative point of contact for USAREUR-AF operational data architecture, ontology design references, technical implementation guidance, NATO NAFv4 alignment resources, and the USAREUR-AF 5-Layer Data Stack implementation documentation. Contact your unit data steward or G6/Data directly for current resources.
+- **C2DAO** — The authoritative point of contact for USAREUR-AF operational data architecture, ontology design references, technical implementation guidance, NATO NAFv4 alignment resources, and the USAREUR-AF 5-Layer Data Stack implementation documentation. Contact your unit data steward or C2DAO directly for current resources.
+
+## DoD and Army Strategic References
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+- **Army CIO Data Stewardship Policy (April 2, 2024)** — Establishes the data stewardship hierarchy (MADO, Data Steward, Functional Data Manager, C2DAO) and data chain of responsibility. Current authoritative governance reference.
+- **Army Data Plan (2022)** — Established the foundational Army-wide framework for data management, governance, and analytics in support of Multi-Domain Operations. Superseded in part by subsequent Army CIO guidance (2024) and UDRA v1.1 (2025); remains a foundational reference.
+- **Unified Data Reference Architecture (UDRA) v1.1 (February 2025)** — Provides the Army's current reference architecture for data systems based on data mesh principles: distributed data ownership, domain-aligned data products, and federated governance.
+- **DoD Data Strategy (2020)** — Establishes the VAUTI framework (Visible, Accessible, Understandable, Trustable, Interoperable) as the DoD standard for data quality and interoperability.
+- **DoD Data, Analytics & AI Adoption Strategy (November 2023)** — Establishes the AI Hierarchy of Needs and the DoD framework for scaling data, analytics, and AI adoption across the enterprise.
+- **NATO Data Strategy for the Alliance (Feb 2025)** — Alliance-wide data governance mandate establishing common data governance principles across NATO nations. Directly applicable to USAREUR-AF data literacy requirements in the EUCOM AOR.
 
 Access requires a valid CAC and USAREUR-AF network account. Contact your unit S6 or
-G6/Data for access provisioning.
+C2DAO for access provisioning.
 
 ---
 
@@ -2215,7 +2212,7 @@ Policy, April 2024.)
 architecture for data systems (February 2025), issued by the Army Chief Information Officer.
 Based on data mesh principles: distributed data ownership, domain-aligned data products, and
 federated governance. The authoritative Army architecture reference; supersedes prior
-centralized data architecture guidance. Implemented at USAREUR-AF level through G6/Data.
+centralized data architecture guidance. Implemented at USAREUR-AF level through C2DAO.
 
 **Unstructured Data** — Data with no predefined format or schema.
 
@@ -2240,7 +2237,7 @@ products must satisfy VAUTI standards before operational use. (See paragraph 4-8
 organizing data capabilities across Infrastructure, Integration, Semantic, Analytics, and
 Activation layers.
 
-**Cross-Domain Architecture (CDA)** — The USAREUR-AF enterprise architecture framework governing data systems design, ontology standards, and NAFv4 alignment. Implementation guidance available through USAREUR-AF G6/Data.
+**Cross-Domain Architecture (CDA)** — The USAREUR-AF enterprise architecture framework governing data systems design, ontology standards, and NAFv4 alignment. Implementation guidance available through C2DAO.
 
 **Information Advantage** — As defined in ADP 3-13, the operational condition achieved when
 a force can generate, protect, and exploit information more effectively than the adversary.
@@ -2269,4 +2266,4 @@ military operations across Europe, portions of Asia, the Arctic, and the Atlanti
 
 *By order of the Commanding General, United States Army Europe and Africa.*
 
-*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.*

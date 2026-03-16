@@ -8,6 +8,16 @@
 
 ---
 
+## Authoritative References
+
+| Publication | Title | Relevance |
+|---|---|---|
+| AR 350-1 | Army Training and Leader Development | Master regulation for Army training policy; governs lesson plan standards and instructional requirements |
+| FM 7-0 | Training | Unit training management procedures; context for how TM-10 integrates with unit training plans |
+| AR 25-1 | Army Information Technology | Establishes data governance authority; foundational context for MSS data handling procedures taught in TM-10 |
+
+---
+
 # BLOCK 1 — MSS OVERVIEW AND DATA LITERACY FUNDAMENTALS
 
 | Field | Value |
@@ -131,8 +141,8 @@ Explain the progression clearly. Reference POI Course Summary table.
 
 - **TM-10 (this course):** All personnel. Consume data products, execute authorized actions, handle exports. No building.
 - **TM-20:** All staff who need to build data products. Visual, no code.
-- **TM-30:** Data-adjacent specialists (17/25-series, S6, G2/G9). Advanced building, Ontology design, analytics.
-- **TM-40A–F (WFF tracks):** Role-specific tracks for INT, FIRES, M&M, Sustainment, Protection, and Mission Command functional staff. Prerequisite: TM-20. No coding required.
+- **TM-30:** Data-adjacent specialists (17/25-series, S6, G2). Advanced building, Ontology design, analytics.
+- **TM-40A–F (WFF tracks):** Role-specific tracks for INT, FIRES, M&M, Sustainment, Protection, and Mission Command functional staff. Prerequisite: TM-30. No coding required.
 - **TM-40G–L (Specialist tracks):** Role-specific specialist tracks for ORSA, AI engineers, ML engineers, PMs, KMs, and software engineers. Prerequisite: TM-30.
 
 Emphasize: TM-10 is the foundation for all higher training. There are no waivers. Senior personnel sometimes push back on this — have a clear, brief response: "The evaluation confirms you can navigate MSS and handle classification procedures correctly. Passing TM-10 is required for TM-20 enrollment. There are no exceptions."
@@ -742,7 +752,7 @@ AIP Logic and Agent Studio are AI-enabled tools in MSS. TM-10 users do not build
 ## Resources
 
 **Instructor:** TM-10 Block 7 slides; AIP Logic interface configured for training (document Q&A on synthetic SITREP data)
-**Student:** TM-10 Chapter 7
+**Student:** TM-10 Chapter 4
 
 ## Introduction
 
@@ -807,7 +817,7 @@ Data mishandling from MSS starts with not checking classification before exporti
 ## Resources
 
 **Instructor:** TM-10 Block 8 slides; examples of classification markings in the Training Environment
-**Student:** TM-10 Chapter 8
+**Student:** TM-10 Chapter 6
 
 ## Introduction
 

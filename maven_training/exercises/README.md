@@ -21,7 +21,7 @@ Written exams are in [exams/](exams/). Each course has two forms.
 
 | Course | Pre-Exam | Post-Exam | Audience |
 |--------|---------|----------|---------|
-| TM-10 Maven User | [EXAM_TM10_PRE](exams/EXAM_TM10_PRE.md) | [EXAM_TM10_POST](exams/EXAM_TM10_POST.md) | All personnel |
+| TM-10 Maven User | [EXAM_TM10_PRE](exams/EXAM_TM10_PRE.md) | [EXAM_TM10_SUPPLEMENTAL](exams/EXAM_TM10_SUPPLEMENTAL.md) *(optional)* | All personnel |
 | TM-20 Builder | [EXAM_TM20_PRE](exams/EXAM_TM20_PRE.md) | [EXAM_TM20_POST](exams/EXAM_TM20_POST.md) | All staff |
 | TM-30 Advanced Builder | [EXAM_TM30_PRE](exams/EXAM_TM30_PRE.md) | [EXAM_TM30_POST](exams/EXAM_TM30_POST.md) | Data-adjacent specialists |
 
@@ -70,16 +70,16 @@ Written exams are in [exams/](exams/). Each course has two forms.
 | [EX-20_no_code_builder/](EX-20_no_code_builder/) | TM-20 | TM-10 | All staff |
 | [EX-30_advanced_builder/](EX-30_advanced_builder/) | TM-30 | TM-20 | Data-adjacent specialists |
 
-### WFF Track Exercises (TM-40A–F) — Prereq: TM-20
+### WFF Track Exercises (TM-40A–F) — Prereq: TM-30 (Required)
 
 | Package | Corresponds To | Prereq | Audience |
 |---------|---------------|--------|---------|
-| [EX-40A_intelligence/](EX-40A_intelligence/) | TM-40A Intelligence | TM-20 | G2/S2 staff, targeting officers |
-| [EX-40B_fires/](EX-40B_fires/) | TM-40B Fires | TM-20 | FSE, fire support officers |
-| [EX-40C_movement_maneuver/](EX-40C_movement_maneuver/) | TM-40C Movement & Maneuver | TM-20 | G3/S3 maneuver staff |
-| [EX-40D_sustainment/](EX-40D_sustainment/) | TM-40D Sustainment | TM-20 | G4/S4, logistics staff |
-| [EX-40E_protection/](EX-40E_protection/) | TM-40E Protection | TM-20 | Force protection, CBRN, PM staff |
-| [EX-40F_mission_command/](EX-40F_mission_command/) | TM-40F Mission Command | TM-20 | G3/S3 staff, battle captains, CDRs |
+| [EX-40A_intelligence/](EX-40A_intelligence/) | TM-40A Intelligence | TM-30 | G2/S2 staff, targeting officers |
+| [EX-40B_fires/](EX-40B_fires/) | TM-40B Fires | TM-30 | FSE, fire support officers |
+| [EX-40C_movement_maneuver/](EX-40C_movement_maneuver/) | TM-40C Movement & Maneuver | TM-30 | G3/S3 maneuver staff |
+| [EX-40D_sustainment/](EX-40D_sustainment/) | TM-40D Sustainment | TM-30 | G4/S4, logistics staff |
+| [EX-40E_protection/](EX-40E_protection/) | TM-40E Protection | TM-30 | Force protection, CBRN, PM staff |
+| [EX-40F_mission_command/](EX-40F_mission_command/) | TM-40F Mission Command | TM-30 | G3/S3 staff, battle captains, CDRs |
 
 ### Technical Specialist Exercises (TM-40G–L) — Prereq: TM-30 (Required)
 

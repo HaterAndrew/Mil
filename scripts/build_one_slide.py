@@ -189,7 +189,7 @@ tier_box(slide,
 # ── TM-30 tier box ────────────────────────────────────────────────────────────
 tier_box(slide,
     level="TM-30",
-    audience="Data-adjacent specialists (17/25-series, S6, G2, G9)",
+    audience="Data-adjacent specialists (17/25-series, S6, G2)",
     headline="WHY IT'S CRITICAL:  Maven's power is in complex, connected products.",
     bullets=[
         "Covers: Multi-source pipelines, complex Workshop apps,",
@@ -209,12 +209,12 @@ tier_box(slide,
 
 # ── Specialist panel (right side) ─────────────────────────────────────────────
 add_rect(slide, 7.74, 1.46, 5.39, 1.72, BLUE_ACCENT, GOLD_DARK, 0.75)
-tb(slide, "TM-40 SERIES  —  6 Specialist Tracks",
+tb(slide, "TM-40 SERIES  —  12 Tracks (WFF A–F + Specialist G–L)",
    7.86, 1.50, 5.1, 0.22,
    size=8.5, bold=True, color=GOLD)
 tb(slide,
-   "40A ORSA  ·  40B AI Engineer  ·  40C ML Engineer\n"
-   "40D Program Manager  ·  40E Knowledge Manager  ·  40F Software Engineer\n\n"
+   "WFF: 40A Intel  ·  40B Fires  ·  40C M&M  ·  40D Sust  ·  40E Prot  ·  40F MC\n"
+   "Specialist: 40G ORSA  ·  40H AI Eng  ·  40I MLE  ·  40J PM  ·  40K KM  ·  40L SWE\n\n"
    "Prereq: TM-30. Role-assigned. Each track: Technical Manual + Concepts Guide + Syllabus.\n"
    "Produces the analysts, engineers, and PMs who build the platform's most capable products.",
    7.86, 1.74, 5.1, 1.38,

@@ -61,5 +61,8 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add maven_training/pdf/
           # Only commit if there are changes to PDFs
-          git diff --cached --quiet || git commit -m "Auto-rebuild PDFs [skip ci]"
-          git push
+          git diff --cached --quiet || {
+            git commit -m "Auto-rebuild PDFs [skip ci]"
+            git pull --rebase origin "${GITHUB_REF_NAME}" || true
+            git push
+          }

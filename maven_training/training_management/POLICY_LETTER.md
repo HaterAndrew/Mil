@@ -4,7 +4,7 @@
 ---
 
 DEPARTMENT OF THE ARMY
-USAREUR-AF G6 / C2DAO
+C2DAO
 UNIT 29331
 APO AE 09014
 
@@ -13,6 +13,25 @@ AETT-C2DAO                                                    12 March 2026
 MEMORANDUM FOR All USAREUR-AF Personnel, Unit Commanders, G6/S6 Sections, Data Team Personnel
 
 SUBJECT: USAREUR-AF Maven Smart System (MSS) Training Program — Program Director's Policy Letter No. 1
+
+---
+
+## Authoritative References
+
+| Publication | Title | Relevance |
+|---|---|---|
+| AR 350-1 | Army Training and Leader Development | Master regulation for Army training policy; authority for mandatory training requirements |
+| AR 25-1 | Army Information Technology | Establishes data governance authority and IT training requirements across the Army |
+| ADP 7-0 | Training | Army training doctrine; establishes commander responsibilities for training programs |
+
+## Strategic Guidance
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| DoD Data, Analytics & AI Adoption Strategy | Nov 2023 (CDAO) | AI Hierarchy of Needs; DoD framework for scaling data, analytics, and AI adoption |
+| Army Data Plan | 2022 (Army CIO) | 11 strategic objectives for Army data transformation |
 
 ---
 

@@ -6,7 +6,7 @@
 | **Course** | TM-30: Advanced Builder |
 | **Form** | Pre-Test |
 | **Level** | TM-30 (Advanced) |
-| **Audience** | Data-adjacent specialists — 17/25-series, S6/G6/G2/G9; prerequisite: TM-10 + TM-20 |
+| **Audience** | Data-adjacent specialists — 17/25-series, S6/G6/G2; prerequisite: TM-10 + TM-20 |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
@@ -173,7 +173,7 @@ D. Limit each page's access to a specific dataset
 
 &nbsp;
 
-**SA-5. You are designing a Workshop application for a G9 CIMIC section that needs to view the same data but filtered differently depending on whether the user is a battalion S9 or a brigade G9. Describe at least two design approaches to handle this access differentiation.**
+**SA-5. You are designing a Workshop application for a Civil Affairs CIMIC section that needs to view the same data but filtered differently depending on whether the user is a battalion S9 or a brigade Civil Affairs section. Describe at least two design approaches to handle this access differentiation.**
 
 &nbsp;
 

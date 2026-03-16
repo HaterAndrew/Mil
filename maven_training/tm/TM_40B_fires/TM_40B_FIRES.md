@@ -82,7 +82,33 @@
 
 ---
 
-### 1-5. MSS vs. Legacy Fires Tools
+### 1-5. Doctrinal References
+
+TM-40B is written in alignment with the following doctrinal publications. These publications are not required reading before using this manual — but fires practitioners who are responsible for targeting, fire support coordination, or AMD functions should be familiar with them.
+
+**Table 1-1. Primary Doctrinal References**
+
+| Publication | Title | Relevance to TM-40B |
+|---|---|---|
+| ADP 3-19 | Fires | Foundational fires warfighting function doctrine |
+| FM 3-09 | Fire Support and Field Artillery Operations | Capstone fires FM |
+| FM 3-27 | Army Global Integrated Fires (~2023) | Long-range precision fires, convergence, multi-domain fires |
+| FM 3-60 | Army Targeting (Aug 2023) | D3A/F3EAD targeting methodology (replaces ATP 3-60) |
+| ATP 3-09.42 | Fire Support for the BCT | FSE operations at BCT level |
+| ATP 3-01.81 | Counter-UAS Techniques | C-UAS detection, tracking, defeat |
+| FM 3-01 | Air and Missile Defense Operations | AMD doctrine |
+
+**Strategic Guidance:**
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| NATO Digital Transformation Implementation Strategy (Oct 2024) | NATO | MDO interoperability context — frames fires data sharing in coalition operations |
+
+---
+
+### 1-5a. MSS vs. Legacy Fires Tools
 
 1-11. Fires practitioners in USAREUR-AF formations have used AFATDS, Q-53 radar feeds, AMDWS, IBCS, and FAAD C2 for years. MSS does not replace those tools. It integrates data from them into a unified operational picture.
 
@@ -103,7 +129,7 @@
 
 ---
 
-### 1-5a. Transitioning from Legacy Tool Habits to MSS
+### 1-5b. Transitioning from Legacy Tool Habits to MSS
 
 1-13a. Fires personnel with experience on AFATDS, AMDWS, or legacy fire support coordination tools will find MSS approaches coordination and data management differently. Several transition points require deliberate attention:
 
@@ -1734,6 +1760,20 @@
 
 ---
 
+## APPENDIX F — PROFESSIONAL READING LIST
+
+> Curated articles from Army professional journals and military publications. These supplement doctrinal references with contemporary operational perspectives.
+
+| Source | Title | Date | Relevance |
+|---|---|---|---|
+| Field Artillery Bulletin | "The New Digital Kill Chain" | 2025 | Digital fire support modernization |
+| Field Artillery Bulletin | "AI's New Frontier in War Planning" | 2025 | AI in fire support planning |
+| Field Artillery Bulletin | "Project Convergence: Revolutionizing Targeting in LSCO" | 2025 | Joint fires convergence |
+| Field Artillery Bulletin | "Enhancing Tactical Level Targeting With AI" | 2024 | AI-assisted targeting |
+| Field Artillery Bulletin | "The Future of Strategic Fires Target Acquisition" | 2024 | Strategic fires modernization |
+
+---
+
 ## APPENDIX — RELATED MANUALS AND TRAINING TRACKS
 
 ### WFF Peer Tracks
@@ -1785,3 +1825,8 @@ For technical specialists pursuing advanced data engineering or analytical capab
 | 1.0 | March 2026 | Initial publication | USAREUR-AF C2DAO |
 
 *Future changes to this manual will be published as versioned updates through the USAREUR-AF C2DAO learning management system. Units are responsible for maintaining the current version and distributing changes to all fires personnel.*
+
+**DoD and Army Strategic References:**
+
+- **JADC2 Strategy Summary (March 2022)** — Cross-domain data integration strategy for Joint All-Domain Command and Control
+- **DoD Directive 3000.09, Autonomy in Weapon Systems (January 2023 update)** — Policy on autonomous and semi-autonomous functions in weapon systems; context for fire control and targeting systems

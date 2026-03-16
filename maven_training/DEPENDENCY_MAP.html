@@ -206,6 +206,36 @@
     color: #405060;
     pointer-events: none;
   }
+  #doctrine-panel {
+    position: absolute;
+    bottom: 32px;
+    right: 16px;
+    background: rgba(10,21,32,0.92);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 14px;
+    pointer-events: all;
+    z-index: 10;
+    max-width: 360px;
+    min-width: 200px;
+    cursor: grab;
+    user-select: none;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+  #doctrine-panel.dragging { cursor: grabbing; }
+  #doctrine-panel .doc-table { border-collapse: collapse; width: 100%; }
+  #doctrine-panel .doc-table td {
+    padding: 2px 0; color: #a0c0d8; font-size: 10px; vertical-align: top;
+  }
+  #doctrine-panel .doc-table td:first-child {
+    color: #7ab8d8; font-weight: bold; white-space: nowrap; padding-right: 10px;
+  }
+  #doctrine-panel .doc-table td:last-child { color: #8898a8; }
+  #doctrine-panel .doc-cat {
+    color: #607080; font-weight: bold; font-size: 9px; letter-spacing: 1px;
+    padding-top: 5px; padding-bottom: 2px;
+  }
   #corpus-panel {
     position: absolute;
     bottom: 32px;
@@ -239,7 +269,7 @@
   <div>
     <div id="header-title">
       <h1>Maven Training Corpus — File Dependency Map</h1>
-      <div class="subtitle">USAREUR-AF &nbsp;|&nbsp; C2DAO &nbsp;|&nbsp; 15 MAR 2026 (v2.0 + BSP) &nbsp;|&nbsp;
+      <div class="subtitle">USAREUR-AF &nbsp;|&nbsp; C2DAO &nbsp;|&nbsp; 16 MAR 2026 (v2.0 + BSP + doctrine refs) &nbsp;|&nbsp;
         <span id="node-count">209</span> files &nbsp;|&nbsp;
         <span id="edge-count">474</span> edges &nbsp;|&nbsp;
         Pre-v2.0 audit complete &mdash; TM-30 hard prereq enforced all TM-40 tracks
@@ -356,6 +386,58 @@
       <div class="legend-heading">EDGES</div>
       <div class="legend-item"><div class="legend-line" style="background:#4a90d9"></div>Prereq</div>
       <div class="legend-item"><div class="legend-line" style="background:#888;border-top:1px dashed #888;height:0"></div>Companion</div>
+    </div>
+  </div>
+
+  <div id="doctrine-panel">
+    <div class="legend-heading panel-toggle-heading" onclick="togglePanelCollapse('doctrine')">
+      EXTERNAL DOCTRINAL REFERENCES <span class="panel-arrow" id="doctrine-arrow">&#9660;</span>
+    </div>
+    <div id="doctrine-content" style="display:none">
+      <div style="color:#8898a8;font-size:9px;margin:4px 0 6px;line-height:1.4">
+        Army publications governing the MSS training program.<br>
+        TR/TP pubs: TRADOC (adminpubs.tradoc.army.mil), not DA APD.
+      </div>
+      <table class="doc-table">
+        <tr><td colspan="2" class="doc-cat">REGULATORY FOUNDATION</td></tr>
+        <tr><td>AR 350-1</td><td>Army Training and Leader Development</td></tr>
+        <tr><td>TR 350-70</td><td>Army Learning Policy and Systems (TRADOC)</td></tr>
+        <tr><td>TP 350-70-14</td><td>Training Dev in Institutional Domain</td></tr>
+        <tr><td>TP 350-70-7</td><td>Army Educational Processes</td></tr>
+        <tr><td>TP 350-70-3</td><td>Faculty &amp; Staff Development Program</td></tr>
+        <tr><td colspan="2" class="doc-cat">PUBLISHING &amp; CORRESPONDENCE</td></tr>
+        <tr><td>DA PAM 25-40</td><td>Army Publishing: Action Officers' Guide</td></tr>
+        <tr><td>AR 25-50</td><td>Preparing and Managing Correspondence</td></tr>
+        <tr><td colspan="2" class="doc-cat">IT, DATA &amp; RECORDS MGMT</td></tr>
+        <tr><td>AR 25-1</td><td>Army Information Technology</td></tr>
+        <tr><td>DA PAM 25-1-1</td><td>Army IT Implementation Instructions</td></tr>
+        <tr><td>AR 25-400-2</td><td>Army Records Management Program</td></tr>
+        <tr><td>DA PAM 25-403</td><td>Army Guide to Recordkeeping</td></tr>
+        <tr><td>ATP 6-01.1</td><td>Techniques for Effective Knowledge Mgmt</td></tr>
+        <tr><td colspan="2" class="doc-cat">ORSA / M&amp;S</td></tr>
+        <tr><td>DA PAM 600-3</td><td>Officer Professional Development (FA 49)</td></tr>
+        <tr><td>AR 5-11</td><td>Management of Army M&amp;S</td></tr>
+        <tr><td>DA PAM 5-11</td><td>VV&amp;A of Army Models and Simulations</td></tr>
+        <tr><td>ATP 5-0.3</td><td>Multi-Service TTP for Op Assessment</td></tr>
+        <tr><td>AR 71-9</td><td>Warfighting Capabilities Determination</td></tr>
+        <tr><td colspan="2" class="doc-cat">DIGITAL ENGINEERING &amp; SOFTWARE</td></tr>
+        <tr><td>Army DIR 2024-03</td><td>Digital Engineering Policy</td></tr>
+        <tr><td>DA PAM 25-2-5</td><td>Software Assurance</td></tr>
+        <tr><td colspan="2" class="doc-cat">WFF DOCTRINE (TM-40A&ndash;F)</td></tr>
+        <tr><td>ATP 2-33.4</td><td>Intelligence Analysis</td></tr>
+        <tr><td>ATP 2-22.9-1</td><td>PAI Research and OSINT</td></tr>
+        <tr><td>FM 3-60</td><td>Army Targeting</td></tr>
+        <tr><td>FM 3-27</td><td>Army Global Integrated Fires</td></tr>
+        <tr><td>ATP 3-01.81</td><td>Counter-UAS Techniques</td></tr>
+        <tr><td>FM 3-81</td><td>Maneuver Enhancement Brigade</td></tr>
+        <tr><td>ATP 4-33</td><td>Maintenance Operations</td></tr>
+        <tr><td>FM 1-0</td><td>Human Resources Support</td></tr>
+        <tr><td>AR 525-2</td><td>The Army Protection Program</td></tr>
+        <tr><td>AR 530-1</td><td>Operations Security</td></tr>
+        <tr><td>FM 3-12</td><td>Cyberspace Operations and EW</td></tr>
+        <tr><td>ATP 5-0.1</td><td>Army Design Methodology</td></tr>
+        <tr><td>TC 6-0.2</td><td>Training the C2 WFF for BN/BDE/BCT</td></tr>
+      </table>
     </div>
   </div>
 </div>
@@ -542,9 +624,9 @@ const NODES = [
     "desc": "TM-10 pre-test: baseline knowledge check before the course begins"
   },
   {
-    "id": "EXAM10POST",
-    "label": "EXAM TM10\nPOST",
-    "path": "exercises/exams/EXAM_TM10_POST.md",
+    "id": "EXAM10SUPP",
+    "label": "EXAM TM10\nSUPP",
+    "path": "exercises/exams/EXAM_TM10_SUPPLEMENTAL.md",
     "type": "EXAM",
     "col": 1,
     "track": "TM-10",
@@ -4294,7 +4376,7 @@ const EDGES = [
     "type": "prereq"
   },
   {
-    "source": "EXAM10POST",
+    "source": "EXAM10SUPP",
     "target": "TM10",
     "type": "prereq"
   },
@@ -7417,13 +7499,13 @@ function updateCorpusPanel() {
 // PANEL COLLAPSE TOGGLE (legend + corpus panel)
 // ============================================================
 function togglePanelCollapse(which) {
-  const contentId = which === "legend" ? "legend-content" : "corpus-content";
-  const arrowId   = which === "legend" ? "legend-arrow"   : "corpus-arrow";
+  const contentId = which + "-content";
+  const arrowId   = which + "-arrow";
   const content   = document.getElementById(contentId);
   const arrow     = document.getElementById(arrowId);
   const collapsed = content.style.display === "none";
   content.style.display = collapsed ? "" : "none";
-  if (arrow) arrow.textContent = collapsed ? "▼" : "▶";
+  if (arrow) arrow.textContent = collapsed ? "\u25BC" : "\u25B6";
 }
 
 // Corpus panel drag (mirrors legend drag)
@@ -7436,6 +7518,36 @@ function togglePanelCollapse(which) {
     const rect = pnl.getBoundingClientRect();
     const par  = pnl.parentElement.getBoundingClientRect();
     pnl.style.bottom = "auto";
+    pnl.style.left   = (rect.left - par.left) + "px";
+    pnl.style.top    = (rect.top  - par.top)  + "px";
+    ox = e.clientX - rect.left;
+    oy = e.clientY - rect.top;
+    e.stopPropagation();
+  });
+  window.addEventListener("mousemove", e => {
+    if (!dragging) return;
+    const par = pnl.parentElement.getBoundingClientRect();
+    pnl.style.left = (e.clientX - par.left - ox) + "px";
+    pnl.style.top  = (e.clientY - par.top  - oy) + "px";
+  });
+  window.addEventListener("mouseup", () => {
+    if (!dragging) return;
+    dragging = false;
+    pnl.classList.remove("dragging");
+  });
+})();
+
+// Doctrine panel drag (mirrors corpus panel drag)
+(function() {
+  const pnl = document.getElementById("doctrine-panel");
+  let dragging = false, ox = 0, oy = 0;
+  pnl.addEventListener("mousedown", e => {
+    dragging = true;
+    pnl.classList.add("dragging");
+    const rect = pnl.getBoundingClientRect();
+    const par  = pnl.parentElement.getBoundingClientRect();
+    pnl.style.bottom = "auto";
+    pnl.style.right  = "auto";
     pnl.style.left   = (rect.left - par.left) + "px";
     pnl.style.top    = (rect.top  - par.top)  + "px";
     ox = e.clientX - rect.left;

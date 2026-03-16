@@ -430,7 +430,7 @@ Infantry officers (11A), infantrymen (11B), and armor officers/crews (19A/19K) o
 
 ### 5-2. Objective Graphic Control Measures in MSS
 
-Objectives are the geographic areas a unit must seize, secure, or neutralize (FM 3-90-1, para 1-22). In MSS, objectives are graphic objects with associated metadata.
+Objectives are the geographic areas a unit must seize, secure, or neutralize (FM 3-90, para 1-22). In MSS, objectives are graphic objects with associated metadata.
 
 **Objective Data Requirements in MSS:**
 
@@ -465,7 +465,7 @@ Combined arms teams — infantry platoons with tank attachments, or armor platoo
 
 ### 5-4. Phase Line Management and Reporting Triggers
 
-Phase lines (PLs) control the timing of maneuver, synchronize combined arms actions, and provide reporting triggers for the commander (FM 3-90-1, para 2-10). MSS uses phase lines as both graphic control measures and automated reporting triggers.
+Phase lines (PLs) control the timing of maneuver, synchronize combined arms actions, and provide reporting triggers for the commander (FM 3-90, para 2-10). MSS uses phase lines as both graphic control measures and automated reporting triggers.
 
 **Phase Line Functions in MSS:**
 - Visual reference on the operational graphics layer
@@ -481,7 +481,7 @@ Phase lines (PLs) control the timing of maneuver, synchronize combined arms acti
 
 ### 5-5. Checkpoint and Passage of Lines Coordination Data
 
-Passages of lines (POL) are among the most complex combined arms coordination tasks in maneuver operations (FM 3-90-1, para 4-5). MSS supports POL coordination by maintaining:
+Passages of lines (POL) are among the most complex combined arms coordination tasks in maneuver operations (FM 3-90, para 4-5). MSS supports POL coordination by maintaining:
 
 **Forward / Rearward Passage Data:**
 - Passage point location and designation
@@ -495,7 +495,7 @@ Passages of lines (POL) are among the most complex combined arms coordination ta
 
 ### 5-6. Consolidation and Reorganization Tracking
 
-After seizing an objective, consolidation and reorganization (C2) is the phase where the unit establishes the defense, accounts for personnel and equipment, and reconstitutes combat power (FM 3-90-1, para 4-13). MSS supports C2 tracking by:
+After seizing an objective, consolidation and reorganization (C2) is the phase where the unit establishes the defense, accounts for personnel and equipment, and reconstitutes combat power (FM 3-90, para 4-13). MSS supports C2 tracking by:
 
 - Updating objective status from "Seized" to "Consolidating" to "Consolidated/Reorganized"
 - Displaying unit positions on the objective during consolidation
@@ -669,7 +669,7 @@ Mountain and cold weather operations present unique data management challenges t
 
 ### 7-4. River Crossing Operations Data Management
 
-River crossing operations require engineer and maneuver data integration across the crossing site, near-side assembly area, far-side exploitation area, and the entire crossing complex (FM 3-90-2, para 5-1).
+River crossing operations require engineer and maneuver data integration across the crossing site, near-side assembly area, far-side exploitation area, and the entire crossing complex (FM 3-90, para 5-1).
 
 **River Crossing Data Elements in MSS:**
 
@@ -1146,7 +1146,7 @@ The defensive workspace differs from the offensive workspace in the balance of d
 
 ### 13-1. Defensive Graphic Control Measures
 
-The defensive plan uses a different set of graphic control measures than the offensive plan (FM 3-90-1, para 3-1). The S3 section must load the appropriate defensive graphics before the unit occupies defensive positions.
+The defensive plan uses a different set of graphic control measures than the offensive plan (FM 3-90, para 3-1). The S3 section must load the appropriate defensive graphics before the unit occupies defensive positions.
 
 **Defensive Graphic Requirements in MSS:**
 
@@ -1163,7 +1163,7 @@ The defensive plan uses a different set of graphic control measures than the off
 
 ### 13-2. Engagement Area Development Data
 
-Engagement areas (EAs) are where the defending commander plans to destroy the enemy (FM 3-90-1, para 3-25). EA development involves terrain analysis, obstacle integration, and fires synchronization — all of which are supported by MSS data layers.
+Engagement areas (EAs) are where the defending commander plans to destroy the enemy (FM 3-90, para 3-25). EA development involves terrain analysis, obstacle integration, and fires synchronization — all of which are supported by MSS data layers.
 
 **EA Development Data in MSS:**
 
@@ -1175,7 +1175,7 @@ Engagement areas (EAs) are where the defending commander plans to destroy the en
 
 ### 13-3. Retrograde and Delay Operations
 
-Retrograde operations — delay, withdrawal, and retirement — present unique data management challenges because the operational picture changes rapidly and the risk of fratricide during rearward movement is high (FM 3-90-2, para 3-1).
+Retrograde operations — delay, withdrawal, and retirement — present unique data management challenges because the operational picture changes rapidly and the risk of fratricide during rearward movement is high (FM 3-90, para 3-1).
 
 **Critical Data Tasks During Retrograde:**
 
@@ -1381,21 +1381,26 @@ The following publications are referenced in TM-40C. Practitioners should have a
 - ADP 3-90, Offense and Defense (2019)
 - ADP 5-0, The Operations Process (2019)
 - ADP 6-0, Mission Command: Command and Control of Army Forces (2019)
-- FM 3-0, Operations (2022)
-- FM 3-09, Fire Support and Field Artillery Operations (2020)
-- FM 3-90-1, Offense and Defense, Part 1 (2013)
-- FM 3-90-2, Reconnaissance, Security, and Tactical Enabling Tasks, Part 2 (2013)
+- FM 3-0, Operations (Mar 2025)
+- FM 3-09, Fire Support and Field Artillery Operations (Aug 2024)
+- FM 3-90, Offense and Defense (May 2023)
 - FM 3-96, Brigade Combat Team (2015)
 - FM 3-98, Reconnaissance and Security Operations (2015)
-- FM 5-0, Planning and Orders Production (2022)
-- FM 6-0, Commander and Staff Organization and Operations (2014)
+- FM 5-0, Planning and Orders Production (Nov 2024)
+- FM 6-0, Commander's Activities (May 2022)
 - ATP 3-04.94, Brigade Aviation Element Headquarters and Companies (2015)
 - ATP 3-90.8, Combined Arms Breaching Operations (2020)
+- FM 3-81, Maneuver Enhancement Brigade (Nov 2021) — MEB doctrine for support area operations
+- ATP 3-90.4, Combined Arms Mobility (CUI) — breaching and mobility operations
 
 **Standards and Policy:**
 - MIL-STD-2525D, Joint Military Symbology (2014)
 - Army CIO Memorandum, Data and Analytics Policy (April 2024)
+- ADatP-36 — Friendly Force Information (FFI): NATO standard for real-time friendly force tracking data exchange — position reports, unit status
+
+**Strategic Guidance:**
 - Unified Data Reference Architecture (UDRA) v1.1 (February 2025)
+- NATO Digital Transformation Implementation Strategy (Oct 2024) — MDO interoperability context for coalition maneuver operations
 
 **Prerequisite Manuals:**
 - TM-10, Maven User (Basic Operator's Manual)
@@ -1644,7 +1649,7 @@ MSS supports LOE tracking by associating tasks, activities, and assessment indic
 
 The following terms are used in this manual. Definitions reflect Army doctrinal usage adapted to MSS employment context.
 
-**Axis of Advance.** A route or series of routes that a force uses to advance from one area to another (FM 3-90-1, para 1-24). In MSS, displayed as a directional arrow graphic in the operations layer.
+**Axis of Advance.** A route or series of routes that a force uses to advance from one area to another (FM 3-90, para 1-24). In MSS, displayed as a directional arrow graphic in the operations layer.
 
 **Blue Force Tracking (BFT).** A system that provides situational awareness of friendly force positions through GPS-derived location data transmitted to a networked display. In MSS, integrated from JBC-P and similar systems.
 
@@ -1654,7 +1659,7 @@ The following terms are used in this manual. Definitions reflect Army doctrinal 
 
 **Fire Support Coordination Measure (FSCM).** A measure employed by land forces to facilitate the rapid engagement of targets and simultaneously provide safeguards for friendly forces (FM 3-09, para 1-1). In MSS, maintained in the fires layer by the FSO.
 
-**Line of Departure (LD).** A phase line used to coordinate the departure of attack elements (FM 3-90-1, para 1-25). In MSS, a linear graphic in the operations layer that serves as a reporting trigger.
+**Line of Departure (LD).** A phase line used to coordinate the departure of attack elements (FM 3-90, para 1-25). In MSS, a linear graphic in the operations layer that serves as a reporting trigger.
 
 **Military Load Classification (MLC).** A numerical designation that represents the load carrying capacity of a bridge or the equivalent weight of a vehicle crossing the bridge (FM 3-34.400). In MSS, a required data attribute for all bridge objects in the route layer.
 
@@ -1662,9 +1667,9 @@ The following terms are used in this manual. Definitions reflect Army doctrinal 
 
 **Named Area of Interest (NAI).** A point or area where activity or lack of activity is expected to confirm or deny a course of action or answer a priority intelligence requirement (FM 3-98, para 1-11). In MSS, maintained in the intelligence layer by the S2 section.
 
-**Objective.** A location on the ground used to orient operations, phase operations, facilitate changes of direction, and provide for unity of effort (FM 3-90-1, para 1-22). In MSS, a polygon or point graphic in the operations layer.
+**Objective.** A location on the ground used to orient operations, phase operations, facilitate changes of direction, and provide for unity of effort (FM 3-90, para 1-22). In MSS, a polygon or point graphic in the operations layer.
 
-**Phase Line (PL).** A line used for control and coordination of military operations — usually a recognizable terrain feature (FM 3-90-1, para 1-25). In MSS, a linear graphic that also functions as a reporting trigger when configured.
+**Phase Line (PL).** A line used for control and coordination of military operations — usually a recognizable terrain feature (FM 3-90, para 1-25). In MSS, a linear graphic that also functions as a reporting trigger when configured.
 
 **Reconnaissance Objective.** An area, named feature, or activity designated for reconnaissance collection by a specific unit within a defined timeline (FM 3-98, para 2-4). In MSS, a named graphic with associated PIR, assigned unit, timeline, and status.
 
@@ -1863,6 +1868,22 @@ For technical specialists pursuing advanced capability development, specialist t
 
 ---
 
+## APPENDIX M — PROFESSIONAL READING LIST
+
+> Curated articles from Army professional journals and military publications. These supplement doctrinal references with contemporary operational perspectives.
+
+| Source | Title | Date | Relevance |
+|---|---|---|---|
+| Infantry Magazine | "Moneyball for Gunnery" (1/4 ID BCT data analytics) | 2024 | Data analytics for maneuver readiness |
+| Field Artillery Bulletin | "The Combat Aviation Brigade and Digital Call for Fire" | 2024 | Digital fires-maneuver integration |
+
+---
+
 *TM-40C — MOVEMENT AND MANEUVER WARFIGHTING FUNCTION — Version 1.0 — March 2026*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA — Wiesbaden, Germany*
-*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*
+
+**DoD and Army Strategic References:**
+
+- **JADC2 Strategy Summary (March 2022)** — Cross-domain data integration strategy for Joint All-Domain Command and Control
+- **DoD Directive 3000.09, Autonomy in Weapon Systems (January 2023 update)** — Policy on autonomous and semi-autonomous functions in weapon systems; context for autonomous maneuver systems

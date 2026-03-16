@@ -8,6 +8,8 @@
 | **Duration** | 90–120 min |
 | **Environment** | MSS training instance with Workshop build permissions — see ENVIRONMENT_SETUP.md |
 
+NOTE: EX-20 is a training exercise designed for practice and early skill validation. It covers a subset of TM-20 tasks (pipeline building and Workshop publication). The full capstone practical exercise — which includes Ontology creation, Action configuration, and the complete build-test-promote workflow — is administered on Day 5 of the TM-20 course per the syllabus. EX-20 does not replace the Day 5 evaluation.
+
 ## SCENARIO
 
 Your battalion S6 needs a Workshop dashboard showing daily vehicle availability by company for the past 30 days. A raw dataset is pre-loaded. Ingest it, build a basic pipeline, and produce a usable dashboard — no code required.

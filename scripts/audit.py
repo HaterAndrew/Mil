@@ -157,11 +157,18 @@ def check_completeness():
         syl = MT / "syllabi" / f"SYLLABUS_TM{code}.md"
         check_file_exists(syl, f"Syllabus: TM-{code}")
 
-    # Exams — all tracks get PRE + POST
+    # Exams — all tracks get PRE + POST, except TM-10 which has PRE + SUPPLEMENTAL
     for code in list(BASE_TRACKS) + list(WFF_TRACKS) + list(SPEC_TRACKS) + list(ADV_TRACKS):
-        for kind in ("PRE", "POST"):
-            exam = MT / "exercises" / "exams" / f"EXAM_TM{code}_{kind}.md"
-            check_file_exists(exam, f"Exam {kind}: TM-{code}")
+        # PRE exam for all tracks
+        exam_pre = MT / "exercises" / "exams" / f"EXAM_TM{code}_PRE.md"
+        check_file_exists(exam_pre, f"Exam PRE: TM-{code}")
+        # POST exam for all tracks except TM-10 (which uses SUPPLEMENTAL)
+        if code == "10":
+            exam_supp = MT / "exercises" / "exams" / "EXAM_TM10_SUPPLEMENTAL.md"
+            check_file_exists(exam_supp, "Exam SUPPLEMENTAL: TM-10")
+        else:
+            exam_post = MT / "exercises" / "exams" / f"EXAM_TM{code}_POST.md"
+            check_file_exists(exam_post, f"Exam POST: TM-{code}")
 
     # Exercise dirs — TM10/20/30 + all TM-40 (not TM-50; no exercise dirs for advanced)
     ex_tracks = {"10": "operator_basics", "20": "no_code_builder", "30": "advanced_builder",
@@ -268,8 +275,11 @@ def check_missing_pdfs():
 
     # Exams — TM10/20/30 + TM-40 (50-series may be absent; flag as warning not error)
     for code in list(BASE_TRACKS) + list(WFF_TRACKS) + list(SPEC_TRACKS):
-        for kind in ("PRE", "POST"):
-            want(f"EXAM_TM{code}_{kind}.pdf")
+        want(f"EXAM_TM{code}_PRE.pdf")
+        if code == "10":
+            want("EXAM_TM10_SUPPLEMENTAL.pdf")
+        else:
+            want(f"EXAM_TM{code}_POST.pdf")
 
     # Exercises — TM10/20/30 + TM-40 (correct WFF names)
     wff_ex_names = {

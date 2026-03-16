@@ -163,7 +163,7 @@ D. A personal assessment of each team member's strengths and weaknesses
 
 &nbsp;
 
-**SA-4. A G9 CIMIC officer proposes using AI to automatically publish lessons learned from AAR documents to the brigade knowledge system without any human review. Describe the risks of this approach and what procedure should be followed instead.**
+**SA-4. A Civil Affairs CIMIC officer proposes using AI to automatically publish lessons learned from AAR documents to the brigade knowledge system without any human review. Describe the risks of this approach and what procedure should be followed instead.**
 
 &nbsp;
 

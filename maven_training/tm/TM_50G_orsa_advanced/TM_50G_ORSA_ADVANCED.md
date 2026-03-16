@@ -2169,11 +2169,32 @@ For USAREUR-AF operational contexts, Table B-3 translates statistical effect siz
 *Wiesbaden, Germany*
 
 *UNCLASSIFIED*
-*Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*
 
 *Implements: Army CIO Memorandum, Data and Analytics Policy (April 2024); Unified Data Reference Architecture (UDRA) v1.1 (February 2025)*
 *See: learn-data.armydev.com for current platform documentation*
 *Prerequisite: TM-40G, Operations Research/Systems Analysis*
+
+**ORSA-specific governing references:**
+
+| Publication | Title | Relevance |
+|---|---|---|
+| DA PAM 600-3 | Officer Professional Development | Defines FA 49 (ORSA) career progression and qualifications |
+| AR 5-11 | Management of Army M&S | M&S governance policy |
+| DA PAM 5-11 | VV&A of Army Models and Simulations | Model credibility and accreditation standards |
+| ATP 5-0.3 | Multi-Service TTP for Operation Assessment | Assessment methodology, MOE/MOP analytical frameworks |
+| AR 71-9 | Warfighting Capabilities Determination | Capabilities-based assessments — core ORSA analytical work |
+| ADP 5-0 | The Operations Process | Analytical framework for plan/prepare/execute/assess |
+| Army CIO Memorandum | Data and Analytics Policy (April 2024) | Data governance authority |
+
+**Strategic Guidance:**
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| UDRA v1.1 | Unified Data Reference Architecture (February 2025) | Technical reference architecture |
+| JADC2 Strategy Summary | Joint All-Domain Command and Control (March 2022) | Cross-domain data integration strategy |
 
 ---
 

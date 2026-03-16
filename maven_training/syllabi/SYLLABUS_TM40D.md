@@ -129,6 +129,14 @@ Complete **5+ duty days before Day 1:**
 | Reported vs. estimated readiness | Product must explicitly identify which unit's readiness is estimated vs. reported when LOGSTAT is delayed — presenting estimated data as current reported data fails |
 | Data staleness inject | Characterize and escalate; do not attempt to restore the LOGSTAT feed. Trainees who attempt feed restoration miss the sustainment sync window |
 
+### Function-Specific Go Criteria — Sustainment
+
+| Criterion | Standard |
+|---|---|
+| LOGSTAT data currency | Readiness dashboard must display a "LOGSTAT as of:" timestamp sourced from the pipeline ingestion timestamp — a dashboard without this timestamp fails the LOGSTAT currency element |
+| Reported vs. estimated readiness | Supply chain product must explicitly label estimated figures (those derived from calculations, not direct reports) — unlabeled estimates treated as reported data is a No-Go for data integrity |
+| Sustainment CCIR thresholds | At least one CCIR must be tied to a supply level threshold (days of supply, C-rating, or class of supply percentage) — generic "pipeline failure" alerts do not satisfy the sustainment CCIR requirement |
+
 ---
 
 ## Key Tips
@@ -138,6 +146,7 @@ Complete **5+ duty days before Day 1:**
 | CCIR data source | Readiness thresholds connected to the wrong data field (personnel vs. equipment readiness) will not fire correctly — verify the specific CCIR data source carefully |
 | Supply chain product | Know your supply class designations and which LOGSTAT reporting fields correspond to each before Day 2 |
 | Timestamps on briefing products | Every readiness number in a briefing product must have a data-as-of timestamp. Build this habit before Day 1: every number → "As of when?" |
+| CCIR troubleshooting | Sustainment CCIRs set to alert on C-rating changes frequently false-trigger when the LOGSTAT feed refreshes and rounds numbers. Use a rolling average or a two-refresh confirmation window rather than a single-value threshold. If the CCIR is triggering every refresh cycle, the threshold is too sensitive to feed noise |
 
 ---
 

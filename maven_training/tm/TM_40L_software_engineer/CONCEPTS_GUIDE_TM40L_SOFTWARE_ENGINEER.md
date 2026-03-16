@@ -328,6 +328,17 @@ A senior contractor SWE builds a complex equipment readiness pipeline over six m
 
 ---
 
+## GOVERNING REFERENCES (ADDITIONAL)
+
+| Document | Relevance |
+|---|---|
+| Army DIR 2024-03 | Digital Engineering Policy — Army-wide digital engineering adoption directive |
+| FM 3-12 | Cyberspace Operations and Electromagnetic Warfare — cyberspace operations doctrine |
+| DA PAM 25-2-5 | Software Assurance — software security and assurance requirements |
+| DA PAM 25-1-1 | Army IT Implementation Instructions — data management and IT governance procedures |
+
+---
+
 ## CURRICULUM NOTES
 
 **Prerequisite:** TM-30 (Advanced Builder) is REQUIRED — not recommended. Python proficiency (intermediate or higher) and TypeScript proficiency (intermediate or higher) are required independently of the TM series.

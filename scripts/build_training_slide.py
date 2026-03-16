@@ -124,7 +124,7 @@ blocks = [
         "label": "TM-30",
         "title": "ADVANCED BUILDER",
         "audience": "DATA-ADJACENT SPECIALISTS",
-        "audience_detail": "17/25-series, S6/G6, G2/G9",
+        "audience_detail": "17/25-series, S6/G6, G2",
         "bullets": [
             "Author Python/SQL transforms",
             "Model ontology object types",
@@ -209,29 +209,31 @@ add_textbox(slide, NOTE_L + 0.1, NOTE_TOP + 0.65, NOTE_W - 0.15, 0.28,
             color=DARK_GREEN, align=PP_ALIGN.LEFT)
 
 tracks_40 = [
-    "TM-40A  ORSA",
-    "TM-40B  AI Engineer",
-    "TM-40C  ML Engineer",
-    "TM-40D  Program Manager",
-    "TM-40E  Knowledge Manager",
-    "TM-40F  Software Engineer",
+    "WFF Tracks (A–F):",
+    "  A Intel · B Fires · C M&M",
+    "  D Sust · E Prot · F MC",
+    "Specialist Tracks (G–L):",
+    "  G ORSA · H AI Eng · I MLE",
+    "  J PM · K KM · L SWE",
 ]
 for k, t in enumerate(tracks_40):
-    add_textbox(slide, NOTE_L + 0.15, NOTE_TOP + 1.00 + k * 0.42,
-                NOTE_W - 0.2, 0.38,
-                f"· {t}", 8, bold=False,
-                color=DARK_GRAY, align=PP_ALIGN.LEFT)
+    is_header = t.endswith(":")
+    add_textbox(slide, NOTE_L + 0.10, NOTE_TOP + 0.95 + k * 0.36,
+                NOTE_W - 0.15, 0.32,
+                t, 7.5, bold=is_header,
+                color=DARK_GREEN if is_header else DARK_GRAY,
+                align=PP_ALIGN.LEFT)
 
 # Divider
-add_rect(slide, NOTE_L + 0.1, NOTE_TOP + 3.65, NOTE_W - 0.2, 0.04,
+add_rect(slide, NOTE_L + 0.1, NOTE_TOP + 3.20, NOTE_W - 0.2, 0.04,
          fill_rgb=MED_GRAY)
 
 # TM-50 block
-add_textbox(slide, NOTE_L + 0.1, NOTE_TOP + 3.78, NOTE_W - 0.15, 0.28,
+add_textbox(slide, NOTE_L + 0.1, NOTE_TOP + 3.32, NOTE_W - 0.15, 0.28,
             "TM-50 SERIES  (Prereq: TM-40)", 8, bold=True,
             color=DARK_GREEN, align=PP_ALIGN.LEFT)
-add_textbox(slide, NOTE_L + 0.1, NOTE_TOP + 4.12, NOTE_W - 0.15, 1.2,
-            "Advanced / expert-level continuation\nfor each TM-40 track.\n\nFocus: production pipelines,\nMLOps, AIP Agents, advanced\nOntology patterns.",
+add_textbox(slide, NOTE_L + 0.1, NOTE_TOP + 3.62, NOTE_W - 0.15, 1.6,
+            "Advanced / expert-level continuation\nfor each TM-40G–L track.\n\nFocus: production pipelines,\nMLOps, AIP Agents, advanced\nOntology patterns.",
             7.5, bold=False, color=DARK_GRAY, align=PP_ALIGN.LEFT)
 
 # ── Footer ────────────────────────────────────────────────────────────────────

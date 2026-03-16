@@ -3,8 +3,10 @@
 
 | Field | Value |
 |-------|-------|
-| **Version** | 1.0 — March 2026 |
+| **Version** | 1.1 — March 2026 |
 | **Use** | Complete within 48 hours of each training event. Submit to unit data steward or curriculum owner. |
+
+This AAR template follows the structure prescribed by FM 7-0, *Training* (June 2021), Chapter 3 — Training Assessment.
 
 ---
 
@@ -38,7 +40,20 @@ Describe actual execution vs. plan. Note: timing deviations, environmental issue
 
 ---
 
-## SECTION 4 — SUSTAIN
+## SECTION 4 — ROOT CAUSE ANALYSIS
+
+*For each significant deviation from plan, identify the suspected root cause.*
+
+| Finding | Suspected Root Cause | Confirmed (Y/N) | Evidence / Notes |
+|---------|---------------------|-----------------|-----------------|
+| | | | |
+| | | | |
+
+> **NOTE:** Root cause analysis should focus on systemic issues (training design, resource gaps, prerequisite gaps) rather than individual student performance.
+
+---
+
+## SECTION 5 — SUSTAIN
 
 List 2–5 specific practices, scenarios, or instructional approaches that worked well and should be retained.
 
@@ -50,7 +65,7 @@ List 2–5 specific practices, scenarios, or instructional approaches that worke
 
 ---
 
-## SECTION 5 — IMPROVE
+## SECTION 6 — IMPROVE
 
 | Problem | Proposed Fix | Owner | Priority (H/M/L) |
 |---------|-------------|-------|-----------------|
@@ -60,7 +75,7 @@ List 2–5 specific practices, scenarios, or instructional approaches that worke
 
 ---
 
-## SECTION 6 — GO/NO-GO SUMMARY
+## SECTION 7 — GO/NO-GO SUMMARY
 
 | Student | TM Level | Overall | Notes |
 |---------|----------|---------|-------|
@@ -72,22 +87,24 @@ List 2–5 specific practices, scenarios, or instructional approaches that worke
 
 ---
 
-## SECTION 7 — CURRICULUM DISCREPANCIES
+## SECTION 8 — CURRICULUM DISCREPANCIES
 
 Flag any content that was out of date, incorrect, or missing relative to the current MSS platform.
 
-| Document | Section / Page | Issue Description | Severity (H/M/L) |
-|----------|---------------|-------------------|-----------------|
-| | | | |
-| | | | |
+| Document | Section / Page | Issue Description | Severity (H/M/L) | Owner | Due Date | Status |
+|----------|---------------|-------------------|-----------------|-------|----------|--------|
+| | | | | | | |
+| | | | | | | |
 
 > **NOTE:** Severity H = content causes student error or safety issue; M = content is misleading or outdated; L = minor wording issue.
 >
 > Submit H-severity discrepancies to the curriculum owner within 24 hours. M/L can be batched in the next quarterly review.
+>
+> All curriculum discrepancies identified in this section will be tracked in the next curriculum review cycle per CURRICULUM_MAINTENANCE_SOP.md. Assign an owner and target resolution date for each item.
 
 ---
 
-## SECTION 8 — ENVIRONMENT ISSUES
+## SECTION 9 — ENVIRONMENT ISSUES
 
 | Issue | Impact on Training | Resolution (if known) |
 |-------|-------------------|----------------------|
@@ -96,7 +113,7 @@ Flag any content that was out of date, incorrect, or missing relative to the cur
 
 ---
 
-## SECTION 9 — INSTRUCTOR RECOMMENDATIONS
+## SECTION 10 — INSTRUCTOR RECOMMENDATIONS
 
 Free text. What would you change about this training event if you ran it again next week?
 
@@ -104,7 +121,7 @@ Free text. What would you change about this training event if you ran it again n
 
 ---
 
-## SECTION 10 — SIGN-OFF
+## SECTION 11 — SIGN-OFF
 
 | Role | Name / Rank | Signature | Date |
 |------|------------|-----------|------|

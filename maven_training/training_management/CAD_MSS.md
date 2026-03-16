@@ -11,6 +11,8 @@
 | **Applies To** | All trainees enrolled in TM-10 through TM-40L |
 | **Classification** | UNCLASSIFIED |
 
+> **SUPERSESSION:** This CAD supersedes no prior publication. Initial publication: March 2026.
+
 ---
 
 ## SECTION 1 — PROGRAM OVERVIEW AND ADMINISTRATION
@@ -23,7 +25,10 @@ This CAD governs all administrative requirements for MSS training. Read it befor
 
 **USAREUR-AF C2DAO** is the proponent for all MSS training. Course content, access provisioning, schedule, and evaluation disputes go to C2DAO. Your unit MSS Administrator handles account provisioning for standard access (TM-10/20). C2DAO handles elevated access (TM-30 AIP, TM-40 Code Workspace, TM-40L OSDK).
 
-**C2DAO Training POC:** Contact via your unit MSS Administrator or G6/G9 data team.
+**Proponent Point of Contact:**
+- Organization: USAREUR-AF C2DAO Training Branch
+- DSN: [To be assigned]
+- Email: usarmy.wiesbaden.usareur-af.list.c2dao-training@army.mil
 
 ### 1-3. Training Environment
 
@@ -39,10 +44,25 @@ All training is in the **MSS Training Environment** — a Foundry instance separ
 | TM-40A–F (WFF, each track) | Quarterly or as-needed (high demand) | 12 students | 4 students |
 | TM-40G/H/I/L | Semi-annual or on demand | 6 students | 2 students |
 | TM-40J/K | Quarterly | 8 students | 3 students |
+| **Builder Sprint (BSP)** | **Quarterly (4x per FY)** | **16 participants** | **4 participants** |
 
 > **NOTE:** WFF tracks (TM-40A–F) are expected to be the highest-volume courses after TM-10/20. Plan for more frequent scheduling. Each track runs independently; functional staff attend only the track relevant to their WFF assignment.
 
+> **NOTE (BSP):** The Builder Sprint is a separate event outside the TM course series. It is listed here for scheduling coordination purposes only. BSP governance is in BSP-SOP-001 (BUILDER_SPRINT_SOP.md). BSP enrollment uses the standard Enrollment Request Form (Appendix A) plus a Project Brief (Appendix D). Lead time: T-21 days minimum; Project Brief due T-14 days.
+
 Classes below the minimum size threshold are typically consolidated with a subsequent iteration. Contact C2DAO Training POC for current schedule.
+
+---
+
+## Authoritative References
+
+| Publication | Title | Relevance |
+|---|---|---|
+| AR 350-1 | Army Training and Leader Development | Master regulation for Army training policy; governs all institutional training programs |
+| TR 350-70 | Army Learning Policy and Systems | TRADOC master regulation governing course administration, enrollment procedures, and training records |
+| TP 350-70-14 | Training Development in Institutional Domain | TRADOC pamphlet governing course design, administrative data requirements, and instructional standards |
+
+> **NOTE:** TR 350-70 and TP 350-70-14 are published by TRADOC at adminpubs.tradoc.army.mil, not DA APD.
 
 ---
 
@@ -294,6 +314,19 @@ No-Go results, remediation completion, and re-evaluation results are all documen
 
 If you believe your MSS account credentials have been compromised, or if you observe another user accessing accounts or data without authorization, immediately notify your unit MSS Administrator and C2DAO. Do not investigate independently.
 
+### 7-4. Equipment and Facility Requirements
+
+| Course | Workstation | Network Access | Facilities | Special Equipment |
+|---|---|---|---|---|
+| TM-10 | Government workstation with CAC reader | MSS production environment | Classroom, projector | None |
+| TM-20 | Government workstation with CAC reader | MSS production + training sandbox | Classroom, projector | None |
+| TM-30 | Government workstation with CAC reader | MSS production + training sandbox | Classroom, projector, whiteboard | None |
+| TM-40 A–F (WFF) | Government workstation with CAC reader | MSS production + WFF-specific datasets | Classroom, projector | None |
+| TM-40 G–L (Specialist) | Government workstation with CAC reader | MSS training sandbox + development environment | Lab with individual workstations | IDE access (TM-40H/I/L) |
+| TM-50 G–L (Advanced) | Government workstation with CAC reader | MSS training sandbox + development environment | Lab with individual workstations | IDE access, GPU compute (TM-50I) |
+
+> **NOTE:** All courses require reliable network connectivity (minimum 5 Mbps per student) to the MSS training environment. Units hosting training must coordinate network access with their local NEC/signal section NLT 10 business days prior to course start.
+
 ---
 
 ## SECTION 8 — DATA HANDLING AND CLASSIFICATION
@@ -521,6 +554,82 @@ Commander's request received: ____________
 C2DAO approval:  [ ] Approved  [ ] Denied
 Action directed: ________________________________________
 C2DAO POC:       _______________________________________
+=========================================================
+```
+
+---
+
+## APPENDIX D — BUILDER SPRINT PROJECT BRIEF FORM
+
+```
+=========================================================
+BUILDER SPRINT — PROJECT BRIEF
+=========================================================
+Submitted by:   _________________________________________
+Rank / Unit:    _________________________________________
+MOS:            _________________________________________
+DSN / Email:    _________________________________________
+Sprint cycle:   [ ] BSP-1  [ ] BSP-2  [ ] BSP-3  [ ] BSP-4
+FY:             _________________________________________
+
+TM-20 Go on file (date): _______________________________
+
+PROBLEM STATEMENT (2–5 sentences — what is the problem,
+who has it, what would solving it look like):
+_________________________________________________________
+_________________________________________________________
+_________________________________________________________
+
+OUTPUT TYPE (select one and describe):
+[ ] Workshop application:
+[ ] Pipeline / dataset transformation:
+[ ] Ontology type(s):
+[ ] Contour view:
+[ ] Quiver product:
+
+Description:
+_________________________________________________________
+
+NAMED CONSUMER (name or role of the person who will use
+this product):
+_________________________________________________________
+
+DATA SOURCES (list each; confirm access status):
+Source 1: _______________________  [ ] CONFIRMED  [ ] PENDING
+Source 2: _______________________  [ ] CONFIRMED  [ ] PENDING
+Source 3: _______________________  [ ] CONFIRMED  [ ] PENDING
+
+NOTE: All data sources must be CONFIRMED before enrollment
+is finalized. PENDING sources must be resolved before T-5 days.
+
+SCOPE (5-day sprint):
+In scope:
+_________________________________________________________
+_________________________________________________________
+
+Out of scope:
+_________________________________________________________
+_________________________________________________________
+
+Does this project require any of the following?
+(If YES, route to TM-40 specialist enrollment instead of BSP)
+[ ] Python code                    YES / NO
+[ ] TypeScript / JavaScript code   YES / NO
+[ ] OSDK integration               YES / NO
+[ ] Code Workspace                 YES / NO
+
+SUPERVISOR SIGNATURE:  _________________________________
+SUPERVISOR NAME/RANK:  _________________________________
+DATE:                  _________
+
+=========================================================
+FOR C2DAO USE
+Project Brief received:    ____________
+Review complete:           ____________
+[ ] APPROVED    [ ] RETURNED FOR REVISION    [ ] DENIED
+Feedback / conditions:
+_________________________________________________________
+C2DAO reviewer:    _______________________________________
 =========================================================
 ```
 

@@ -31,7 +31,7 @@ TM-50L scope:
 
 ### 1-2. The TM-50L Role in USAREUR-AF
 
-USAREUR-AF spans V Corps, 21st TSC, 7th ATC, G2/G3/G6/G9 staff, and coalition partners across the European AOR. MSS supports this entire enterprise. The TM-50L engineer is responsible not for a single application but for the health and capability of the entire SWE layer.
+USAREUR-AF spans V Corps, 21st TSC, 7th ATC, G2/G3/G6 staff, and coalition partners across the European AOR. MSS supports this entire enterprise. The TM-50L engineer is responsible not for a single application but for the health and capability of the entire SWE layer.
 
 **TM-50L responsibilities in the data chain:**
 
@@ -100,14 +100,28 @@ TM-50L engineers are force multipliers. One senior engineer enabling ten TM-40L 
 
 | Document | Relevance |
 |---|---|
-| Army CIO Data Stewardship Policy (April 2, 2024) | Data stewardship chain, API governance, accountability for data products |
-| UDRA v1.1 (February 2025) | Unified Data Reference Architecture — domain ownership, integration standards, canonical data flows |
 | USAREUR-AF C2DAO Guidance | Theater architecture authority; multi-tenant policy; CBAC schema ownership |
 | AR 25-2 | Army Cybersecurity — ATO requirements, credential handling, incident reporting |
 | DoD RMF (NIST SP 800-37) | Risk Management Framework — ATO process, security controls, continuous monitoring |
 | NATO Architecture Framework v4 (NAFv4) | Coalition integration architecture — applies to any MPE-exposed objects |
 | OWASP Application Security Verification Standard (ASVS) | Application security requirements — adapted for Foundry context in Chapter 7 |
 | DoD STIG for Application Security | Security Technical Implementation Guide — baseline for MSS application hardening |
+| Army DIR 2024-03 | Digital Engineering Policy — Army-wide digital engineering adoption directive |
+| FM 3-12 | Cyberspace Operations and Electromagnetic Warfare — cyberspace operations doctrine |
+| DA PAM 25-2-5 | Software Assurance — software security and assurance requirements |
+| NATO ADatP-34 / NISP | C3 interoperability compliance — applies to coalition-facing platform integrations |
+| STANAG 5643 (proposed) — MIM Governance Standard | NATO MIP Information Model governance — data model versioning, change proposals, national extensions |
+| ADatP-5644 — Web Service Messaging Profile (WSMP) | NATO standard for MIM-formatted data exchange over networks — message structure, transport protocol |
+
+### 1-4a. Strategic Guidance
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| Army CIO Data Stewardship Policy (April 2, 2024) | Army CIO | Data stewardship chain, API governance, accountability for data products |
+| UDRA v1.1 (February 2025) | Army Enterprise | Unified Data Reference Architecture — domain ownership, integration standards, canonical data flows |
+| NATO Digital Transformation Implementation Strategy (Oct 2024) | NATO | NATO digital transformation roadmap — alignment target for enterprise SWE architecture |
 
 ### 1-5. How to Use This Manual
 
@@ -1322,6 +1336,8 @@ def filter_for_coalition(
 ```
 
 > **NOTE:** Coalition interoperability patterns are governed by NATO STANAG agreements and current USAREUR-AF J6 policy. The code patterns in this section are illustrative. Consult G6/J6 and C2DAO for current releasability matrices before implementing any coalition integration.
+
+> **NOTE:** CWIX is NATO's annual interoperability validation event (~3,000 participants, 40 nations, ~25,000 tests). Foundry pipelines supporting coalition operations should target CWIX validation profiles for their domain.
 
 ---
 
@@ -2922,4 +2938,10 @@ v1.0 - [DATE] - Initial version
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA*
 *Wiesbaden, Germany — 2026*
 *UNCLASSIFIED*
-*Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.*
+
+**DoD and Army Strategic References:**
+
+- **DoDI 5000.87, Software Acquisition Pathway (October 2020)** — Establishes the software acquisition pathway for rapid, iterative software delivery
+- **DoD Software Modernization Strategy (February 2022)** — DoD-wide strategy for software modernization, DevSecOps, and platform engineering
+- **Army Directive 2024-02, Agile Software Development (December 2024)** — Army policy for agile software development practices and delivery

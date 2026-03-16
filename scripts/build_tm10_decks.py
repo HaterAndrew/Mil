@@ -107,10 +107,10 @@ def add_classif_banners(slide):
     add_textbox(slide, 0, 0,
                 int(SLIDE_W * 0.914), int(Inches(0.31)),
                 CLASSIF, 8, False, FOOTER_COLOR, PP_ALIGN.LEFT)
-    # bottom banner
-    add_textbox(slide, 0, int(SLIDE_H - Inches(0.31)),
-                int(SLIDE_W * 0.914), int(Inches(0.31)),
-                CLASSIF, 8, False, FOOTER_COLOR, PP_ALIGN.LEFT)
+    # bottom banner — below footer text to avoid overlap
+    add_textbox(slide, 0, int(SLIDE_H - Inches(0.15)),
+                int(SLIDE_W * 0.914), int(Inches(0.15)),
+                CLASSIF, 7, False, FOOTER_COLOR, PP_ALIGN.LEFT)
 
 def add_footer(slide):
     add_textbox(slide,

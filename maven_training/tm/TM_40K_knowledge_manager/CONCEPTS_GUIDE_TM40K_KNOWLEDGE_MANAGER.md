@@ -400,6 +400,16 @@ Before beginning any MSS knowledge management build, verify:
 
 **WFF awareness:** KMs on MSS build institutional memory systems for WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). Each WFF function generates domain-specific lessons, TTPs, and SOPs. Design knowledge ontology taxonomies with WFF functional areas as primary filter dimensions — a G3 (Operations/Mission Command, TM-40F) staff officer and a fires coordinator (TM-40B) have different knowledge retrieval needs that a single undifferentiated repository cannot serve.
 
+**KM-specific governing references:**
+
+| Publication | Title | Relevance |
+|---|---|---|
+| ATP 6-01.1 | Techniques for Effective Knowledge Management | The Army's dedicated KM publication; covers KM solution design, content management, and KM SOPs |
+| AR 25-400-2 | Army Records Management Program (Oct 2022) | Records lifecycle management, ARIMS compliance, electronic records |
+| DA PAM 25-403 | Army Guide to Recordkeeping (Nov 2022) | Implementing guidance for AR 25-400-2; electronic records, scheduling, transfer |
+| NATO Core Metadata Specification / STANAG 5636 | Structured Metadata Standards | NATO-standard metadata schema — required for coalition-compatible knowledge products |
+| NATO ADatP-34 / NISP | C3 Interoperability Standards | Data cataloging and knowledge exchange standards for NATO interoperability |
+
 *This guide is a prerequisite companion to TM-40K. Read in full before beginning TM-40K task instruction. The mental models developed here underpin every task in TM-40K and are not repeated in the task manual.*
 
-*For questions about this guide, contact USAREUR-AF G6/Data, Wiesbaden, Germany.*
+*For questions about this guide, contact C2DAO, Wiesbaden, Germany.*

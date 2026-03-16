@@ -1349,6 +1349,19 @@ This appendix cross-references the primary doctrinal publications governing inte
 | FM 3-60 | The Targeting Process | D3A methodology, target development, BDA; MSS Chapter 8 is derived from this | Chapters 2–5 (targeting process, nomination, execution, BDA) |
 | AR 380-5 | Army Information Security Program | Classification policy governing all MSS intelligence products | All |
 | AR 381-10 | U.S. Army Intelligence Activities | Legal framework for HUMINT and CI; MSS Chapter 6 compliance requirements | All |
+| ATP 2-33.4 | Intelligence Analysis | All-source analysis techniques, structured analytic techniques | All |
+| ATP 2-22.9-1 | PAI Research and Open-Source Intelligence (Oct 2023) | Current OSINT/PAI research techniques; replaces inactive ATP 2-22.9 | Chapters 3–4 |
+| FM 3-55 | Information Collection | Information collection planning, R&S integration | Chapters 2–3 |
+| ADatP-36 | Friendly Force Information (FFI) | NATO standard for real-time friendly force tracking data exchange — position reports, unit status | All |
+| STANAG 5527 | Friendly Force Tracking Systems Interoperability | NATO standard for BFT/FFT system interoperability across allied nations | All |
+
+**Strategic Guidance:**
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| NATO Digital Transformation Implementation Strategy (Oct 2024) | NATO | MDO interoperability context — frames intelligence data sharing in coalition operations |
 
 ### F-2. Doctrinal Alignment Checklist
 
@@ -1778,10 +1791,29 @@ For technical specialists pursuing advanced analytical or engineering capability
 
 ---
 
+## APPENDIX M — PROFESSIONAL READING LIST
+
+> Curated articles from Army professional journals and military publications. These supplement doctrinal references with contemporary operational perspectives.
+
+| Source | Title | Date | Relevance |
+|---|---|---|---|
+| MIPB | "FRIDAY: Unlocking OSINT for a Data-Driven Army" | 2025 | OSINT and data-driven intelligence |
+| MIPB | "Intelligence Support to Information Advantage" | Jan-Jun 2026 | Intel support to info advantage |
+| MIPB | "Army Transitioning to Support Deep Sensing in MDO" | Jul-Dec 2025 | Deep sensing and multi-domain intel |
+| MIPB | "Open-Source Intelligence Support to Targeting" | 2024 | OSINT-to-targeting pipeline |
+| Military Review | "Exploring AI-Enhanced Cyber and Information Ops" | Mar-Apr 2025 | AI in cyber/info ops |
+
+---
+
 ---
 
 *This publication supersedes all previous TM-40A drafts.*
 
 *Review date: 18 months from version date. Next review: September 2027.*
+
+**DoD and Army Strategic References:**
+
+- **JADC2 Strategy Summary (March 2022)** — Cross-domain data integration strategy for Joint All-Domain Command and Control
+- **DoD Directive 3000.09, Autonomy in Weapon Systems (January 2023 update)** — Policy on autonomous and semi-autonomous functions in weapon systems; context for AI-enabled intelligence systems
 
 *UNCLASSIFIED // FOR OFFICIAL USE ONLY*

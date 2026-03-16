@@ -43,7 +43,7 @@ add("TM10",         "TM_10\nMAVEN USER",    "tm/TM_10_maven_user/TM_10_MAVEN_USE
 add("SYL10",        "SYLLABUS\nTM10",       "syllabi/SYLLABUS_TM10.md",                            "SYL",  1, "TM-10")
 add("EX10",         "EX-10\nOperator",      "exercises/EX-10_operator_basics/EXERCISE.md",         "EX",   1, "TM-10")
 add("EXAM10PRE",    "EXAM TM10\nPRE",       "exercises/exams/EXAM_TM10_PRE.md",                    "EXAM", 1, "TM-10")
-add("EXAM10POST",   "EXAM TM10\nPOST",      "exercises/exams/EXAM_TM10_POST.md",                   "EXAM", 1, "TM-10")
+add("EXAM10SUPP",   "EXAM TM10\nSUPP",      "exercises/exams/EXAM_TM10_SUPPLEMENTAL.md",           "EXAM", 1, "TM-10")
 
 # ---- TM-20 CLUSTER (column 2) ----
 add("TM20",         "TM_20\nBUILDER",       "tm/TM_20_builder/TM_20_BUILDER.md",                  "TM",   2, "TM-20")

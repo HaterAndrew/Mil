@@ -42,7 +42,7 @@ export default function Specialists({ showPanel }: Props) {
             <tr><td>G8/S8 &mdash; Resource manager</td><td><strong>TM-40J (PM)</strong></td><td>TM-50J</td></tr>
             <tr><td>Program Manager (PM / GS)</td><td><strong>TM-40J (PM)</strong></td><td>TM-50J</td></tr>
             <tr><td>KMO / Knowledge Officer / 37F</td><td><strong>TM-40K (KM)</strong></td><td>TM-50K</td></tr>
-            <tr><td>G9 / Civil Affairs</td><td><strong>TM-40J (PM)</strong> or TM-40K (KM)</td><td>TM-50J / TM-50K</td></tr>
+            <tr><td>Civil Affairs</td><td><strong>TM-40J (PM)</strong> or TM-40K (KM)</td><td>TM-50J / TM-50K</td></tr>
           </tbody>
         </table>
       </div>
@@ -130,7 +130,7 @@ export default function Specialists({ showPanel }: Props) {
           <div className="track-card-hdr"><span className="track-tm">TM-40J &mdash; Program Manager</span><span className="track-chip">TM-30 Req.</span></div>
           <div className="track-body">
             <div className="track-name">Pipeline Mgmt, Milestones &amp; Portfolio Health</div>
-            <div className="track-audience">G8/S8 &bull; PMs &bull; G9/Civil Affairs</div>
+            <div className="track-audience">G8/S8 &bull; PMs &bull; Civil Affairs</div>
             <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50J &bull; <button className="panel-nav-btn" style={{padding:'4px 10px',fontSize:10}} onClick={() => showPanel('tm40' as any)}>View TM-40 Series &rarr;</button></div>
           </div>
         </div>
@@ -138,7 +138,7 @@ export default function Specialists({ showPanel }: Props) {
           <div className="track-card-hdr"><span className="track-tm">TM-40K &mdash; Knowledge Manager</span><span className="track-chip">TM-30 Req.</span></div>
           <div className="track-body">
             <div className="track-name">Forms, Lessons Learned &amp; Institutional Memory</div>
-            <div className="track-audience">KMOs &bull; 37F &bull; G9 / Civil Affairs</div>
+            <div className="track-audience">KMOs &bull; 37F &bull; Civil Affairs</div>
             <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50K &bull; <button className="panel-nav-btn" style={{padding:'4px 10px',fontSize:10}} onClick={() => showPanel('tm40' as any)}>View TM-40 Series &rarr;</button></div>
           </div>
         </div>

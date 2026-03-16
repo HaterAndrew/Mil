@@ -89,7 +89,7 @@ TM-40D is written in alignment with the following doctrinal publications. These 
 | Publication | Title | Relevance to TM-40D |
 |---|---|---|
 | ADP 4-0 | Sustainment | Sustainment WFF definition, principles, and echelon roles |
-| FM 4-0 | Sustainment Operations | Detailed sustainment procedures; LOGSTAT format |
+| FM 4-0 | Sustainment Operations (Aug 2024) | Detailed sustainment procedures; LOGSTAT format |
 | ATP 4-0.1 | Army Theater Sustainment Operations | Theater-level sustainment; TSC/ESC operations |
 | FM 4-01 | Army Transportation Operations | 88-series MOS procedures; movement management |
 | ATP 4-42 | Field Ordering Officer / Purchasing Agent | Field ordering procedures; contracting in the AOR |
@@ -101,6 +101,16 @@ TM-40D is written in alignment with the following doctrinal publications. These 
 | AR 750-1 | Army Materiel Maintenance Policy | Maintenance management; controlled exchange |
 | AR 638-8 | Army Casualty Program | Casualty reporting and notification |
 | DA Pam 55-353 | Defense Transportation Regulation, Part II | Vehicle load limits; HAZMAT transport |
+| ATP 4-33 | Maintenance Operations | Primary maintenance doctrine |
+| FM 1-0 | Human Resources Support (Apr 2021) | HR operations doctrine |
+
+**Strategic Guidance:**
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| NATO Digital Transformation Implementation Strategy (Oct 2024) | NATO | MDO interoperability context — frames sustainment data sharing in coalition operations |
 
 ### 1-6. BSB / FSB / ESB / TSB Workspace Configuration
 
@@ -1660,6 +1670,19 @@ Use this checklist before every distribution synchronization meeting or LOGSTAT 
 
 ---
 
+## APPENDIX F — PROFESSIONAL READING LIST
+
+> Curated articles from Army professional journals and military publications. These supplement doctrinal references with contemporary operational perspectives.
+
+| Source | Title | Date | Relevance |
+|---|---|---|---|
+| Army Sustainment | "Army Sustainment Enterprise's Delayed Approach to Data Modernization" | Winter 2025 | Sustainment data modernization gaps |
+| Army Sustainment | "Predictive Logistics: Reimagining Sustainment on the 2040 Battlefield" | Winter 2025 | AI/ML predictive logistics |
+| Army Sustainment | "Enabling Logistics in Contested Environments" | Spring 2025 | Distributed predictive sustainment |
+| Army Sustainment | "Advancing to Data-Driven Logistics Operations" | 2024 | Data-driven sustainment ops |
+
+---
+
 ## GLOSSARY
 
 **ABL (Authorized Basic Load).** The quantity of Class V ammunition a unit is authorized to carry on its organic vehicles and equipment. ABL fill rate is the percentage of the ABL actually on-hand.
@@ -1759,3 +1782,8 @@ Use this checklist before every distribution synchronization meeting or LOGSTAT 
 *TM-40D, Version 1.0, March 2026*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 *UNCLASSIFIED // FOR OFFICIAL USE ONLY*
+
+**DoD and Army Strategic References:**
+
+- **JADC2 Strategy Summary (March 2022)** — Cross-domain data integration strategy for Joint All-Domain Command and Control
+- **DoD Directive 3000.09, Autonomy in Weapon Systems (January 2023 update)** — Policy on autonomous and semi-autonomous functions in weapon systems; context for autonomous logistics systems

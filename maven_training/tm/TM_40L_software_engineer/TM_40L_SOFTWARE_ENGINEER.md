@@ -116,12 +116,27 @@ Complete all of the following before beginning this manual:
 
 | Document | Relevance |
 |---|---|
-| Army CIO Data Stewardship Policy (April 2, 2024) | Data stewardship hierarchy, governance chain, API access policy |
-| UDRA v1.1 (February 2025) | Unified Data Reference Architecture — domain ownership, integration standards |
 | USAREUR-AF C2DAO Guidance | Theater-level architecture standards; OSDK API enrollment requirements |
-| DoD Data Strategy (2020) | VAUTI framework (Visible, Accessible, Understandable, Trustable, Interoperable) |
 | NATO Architecture Framework v4 (NAFv4) | Coalition data architecture — applies to any integration with MPE-accessible objects |
 | AR 25-2 | Army Cybersecurity — credential handling, system authorization |
+| Army DIR 2024-03 | Digital Engineering Policy — Army-wide digital engineering adoption directive |
+| FM 3-12 | Cyberspace Operations and Electromagnetic Warfare — cyberspace operations doctrine |
+| DA PAM 25-2-5 | Software Assurance — software security and assurance requirements |
+| DA PAM 25-1-1 | Army IT Implementation Instructions — data management and IT governance procedures |
+| NATO ADatP-34 / NISP | C3 interoperability compliance — applies to any MSS integration with coalition systems |
+| STANAG 5643 (proposed) — MIM Governance Standard | NATO MIP Information Model governance — data model versioning, change proposals, national extensions |
+| ADatP-5644 — Web Service Messaging Profile (WSMP) | NATO standard for MIM-formatted data exchange over networks — message structure, transport protocol |
+
+### 1-5a. Strategic Guidance
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| Army CIO Data Stewardship Policy (April 2, 2024) | Army CIO | Data stewardship hierarchy, governance chain, API access policy |
+| UDRA v1.1 (February 2025) | Army Enterprise | Unified Data Reference Architecture — domain ownership, integration standards |
+| DoD Data Strategy (2020) | OSD | VAUTI framework (Visible, Accessible, Understandable, Trustable, Interoperable) |
+| NATO Digital Transformation Implementation Strategy (Oct 2024) | NATO | NATO digital transformation roadmap — MDO interoperability context for SWE deliverables |
 
 **Reference:** `learn-data.armydev.com` — authoritative reference for OSDK API versions, enrollment procedures, and approved integration patterns. Consult before beginning any new external application development.
 
@@ -2328,6 +2343,8 @@ STEP 7: Post-promotion verification
 
 > **WARNING: Never bypass the C2DAO review step (Step 5) for promotions that modify Ontology schemas, CBAC assignments, or data markings. These changes affect every user and downstream system. Unauthorized schema changes in production are a reportable incident.**
 
+> **NOTE:** CWIX is NATO's annual interoperability validation event (~3,000 participants, 40 nations, ~25,000 tests). Foundry pipelines supporting coalition operations should target CWIX validation profiles for their domain.
+
 ---
 
 ## CHAPTER 9 — SECURITY AND COMPLIANCE
@@ -2817,6 +2834,19 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 
 ---
 
+## APPENDIX D — PROFESSIONAL READING LIST
+
+> Curated articles from Army professional journals and military publications. These supplement doctrinal references with contemporary operational perspectives.
+
+| Source | Title | Date | Relevance |
+|---|---|---|---|
+| Army AL&T | "The Software Advantage" | 2024-25 | Software modernization |
+| Army AL&T | "Commoditizing AI/ML Models" | 2024-25 | Platform engineering for AI/ML |
+| Field Artillery Bulletin | "The New Digital Kill Chain" | 2025 | Software-defined fires |
+| Army Communicator | "Leading in Data Centricity" | Spring 2025 | Platform data centricity |
+
+---
+
 ## GLOSSARY
 
 **Action (Foundry)** — A defined operation that modifies Ontology object state. Actions enforce validation, authorization, and audit logging. External applications execute Actions via OSDK. Not to be confused with a direct dataset write.
@@ -2922,3 +2952,9 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 *TM-40L, Maven Smart System (MSS), Software Engineer Technical Manual*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026*
 *Distribution authorized to U.S. Government agencies and their contractors only.*
+
+**DoD and Army Strategic References:**
+
+- **DoDI 5000.87, Software Acquisition Pathway (October 2020)** — Establishes the software acquisition pathway for rapid, iterative software delivery
+- **DoD Software Modernization Strategy (February 2022)** — DoD-wide strategy for software modernization, DevSecOps, and platform engineering
+- **Army Directive 2024-02, Agile Software Development (December 2024)** — Army policy for agile software development practices and delivery

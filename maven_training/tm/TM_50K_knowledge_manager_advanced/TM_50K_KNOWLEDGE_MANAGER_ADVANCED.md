@@ -18,7 +18,7 @@ A TM-40K KM designs and maintains knowledge systems for a unit. A TM-50K Advance
 
 At USAREUR-AF, the Advanced KM role supports:
 
-- **USAREUR-AF G6/Data** enterprise knowledge governance
+- **C2DAO** enterprise knowledge governance
 - **V Corps** and subordinate Division KM architecture
 - **EUCOM J3/J7** joint and coalition knowledge sharing
 - **NATO ACO** lessons learned interoperability
@@ -105,11 +105,9 @@ USAREUR-AF operates a complex knowledge environment driven by the European AOR m
 
 | Document | Relevance |
 |---|---|
-| Army CIO Data Stewardship Policy (April 2, 2024) | Data product standards, domain ownership, stewardship hierarchy — applies to knowledge products |
-| UDRA v1.1 (February 2025) | Unified Data Reference Architecture — federated governance and domain structure apply to enterprise KM |
-| FM 7-0 (Train to Win in a Complex World) | AAR process, unit training management, lessons integration — foundational doctrine for knowledge capture |
+| FM 7-0 (Training) | AAR process, unit training management, lessons integration — foundational doctrine for knowledge capture |
 | ADP 6-22 (Army Leadership and the Profession) | Organizational learning, leader development, institutional knowledge within the profession |
-| FM 6-01.1 (Knowledge Management Operations) | Primary KM doctrine — operations, roles, processes, systems |
+| ATP 6-01.1 (Techniques for Effective Knowledge Management) | Primary KM doctrine — operations, roles, processes, systems |
 | AJP-5 (Allied Joint Doctrine for Operational-Level Planning) | Coalition knowledge integration requirements in joint and combined operations |
 | NATO STANAG 4778 (Lessons Learned) | Standardized lessons learned format for NATO-compatible exchange |
 | NATO Information Management Policy (IMP) | Governs information sharing with NATO partners on NATO networks |
@@ -118,6 +116,19 @@ USAREUR-AF operates a complex knowledge environment driven by the European AOR m
 | USAREUR-AF C2DAO Guidance | Theater architecture standards — enterprise KM must conform |
 | Joint Lessons Learned Information System (JLLIS) | DoD-level lessons platform — USAREUR-AF lessons feed into JLLIS |
 | Center for Army Lessons Learned (CALL) | Army lessons learned repository — TM-50K systems must integrate or feed CALL appropriately |
+| NATO Core Metadata Specification / STANAG 5636 | Structured metadata standards — required for NATO-compatible knowledge products at theater level |
+| NATO ADatP-34 / NISP | C3 interoperability standards for data cataloging and cross-domain knowledge exchange |
+| STANAG 5643 (proposed) — MIM Governance Standard | NATO MIP Information Model governance — data model versioning, change proposals, national extensions |
+
+### 1-4a. Strategic Guidance
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| Army CIO Data Stewardship Policy (April 2, 2024) | Army CIO | Data product standards, domain ownership, stewardship hierarchy — applies to knowledge products |
+| UDRA v1.1 (February 2025) | Army Enterprise | Unified Data Reference Architecture — federated governance and domain structure apply to enterprise KM |
+| NATO Data Strategy for the Alliance (Feb 2025) | NATO | Alliance-wide data governance mandate — enterprise KM must align for coalition interoperability |
 
 ---
 
@@ -209,7 +220,7 @@ The Theater ontology defines the Object Types, Link Types, and property schemas 
 
 **PROCEDURE:**
 
-1. **Conduct stakeholder analysis.** Identify all units and functional areas that will contribute to or consume from the Theater knowledge system. Minimum: G2, G3, G6/Data, G7 (Training), G9 (Civil Affairs), Corps KM, subordinate Division KMs, EUCOM J3/J7 liaison. Document their knowledge production and consumption requirements before opening Foundry.
+1. **Conduct stakeholder analysis.** Identify all units and functional areas that will contribute to or consume from the Theater knowledge system. Minimum: G2, G3, C2DAO, G7 (Training), Civil Affairs, Corps KM, subordinate Division KMs, EUCOM J3/J7 liaison. Document their knowledge production and consumption requirements before opening Foundry.
 
 2. **Define core Object Type inventory.** At Theater level, the minimum required Object Types are:
 
@@ -414,7 +425,7 @@ Within a single network environment, federating knowledge across Corps, Division
 
 ### 3-4. Functional Directorate Knowledge Integration
 
-Within USAREUR-AF, functional directorates (G2, G3, G6, G7, G9) each produce knowledge products relevant to other directorates. A G3 lessons learned from a Baltic flank exercise may be directly relevant to G7 training planning. A G9 civil-military engagement TTP may inform G2 information collection planning.
+Within USAREUR-AF, functional directorates (G2, G3, G6, G7, Civil Affairs) each produce knowledge products relevant to other directorates. A G3 lessons learned from a Baltic flank exercise may be directly relevant to G7 training planning. A Civil Affairs civil-military engagement TTP may inform G2 information collection planning.
 
 **Cross-functional linking is not automatic — it requires deliberate tagging architecture.**
 
@@ -942,9 +953,9 @@ This is qualitative data. It does not prove causation. But systematic survey res
 
 ### 7-6. KM Effectiveness Reporting
 
-Theater KM Architects report metrics to: USAREUR-AF G6/Data (quarterly), Theater KM governance board (quarterly), and subordinate Corps/Division KMs (monthly). Each audience receives a different product.
+Theater KM Architects report metrics to: C2DAO (quarterly), Theater KM governance board (quarterly), and subordinate Corps/Division KMs (monthly). Each audience receives a different product.
 
-**Quarterly G6/Data report — required elements:**
+**Quarterly C2DAO report — required elements:**
 
 | Section | Content |
 |---|---|
@@ -954,7 +965,7 @@ Theater KM Architects report metrics to: USAREUR-AF G6/Data (quarterly), Theater
 | Effectiveness indicators | Survey results summary, attribute tracking results, notable decisions supported |
 | Gap analysis | Knowledge domains with low capture, high null results, or low utilization — and proposed action |
 | Coalition metrics | Partner nation access, NATO LL submissions |
-| Action items | Outstanding issues requiring G6/Data decision or resource |
+| Action items | Outstanding issues requiring C2DAO decision or resource |
 
 **Monthly subordinate KM report — required elements:**
 
@@ -1437,9 +1448,19 @@ Coordinate with USAREUR-AF C2DAO for current FMN spiral applicability and coalit
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA*
 *Wiesbaden, Germany — 2026*
 *UNCLASSIFIED*
-*Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.*
 
 ---
 
 *PIN: 1050E-000*
 *This manual supersedes no prior publication. Prerequisite: TM-40K, Knowledge Manager.*
+
+**KM-specific governing references:**
+
+| Publication | Title | Relevance |
+|---|---|---|
+| ATP 6-01.1 | Techniques for Effective Knowledge Management | The Army's dedicated KM publication; covers KM solution design, content management, and KM SOPs |
+| AR 25-400-2 | Army Records Management Program (Oct 2022) | Records lifecycle management, ARIMS compliance, electronic records |
+| DA PAM 25-403 | Army Guide to Recordkeeping (Nov 2022) | Implementing guidance for AR 25-400-2; electronic records, scheduling, transfer |
+| UDRA v1.1 | Unified Data Reference Architecture (February 2025) | Domain ownership and federated governance for knowledge products |
+| Army CIO Data Stewardship Memo | Data Stewardship Policy (April 2024) | Chain of responsibility for data governance and stewardship |

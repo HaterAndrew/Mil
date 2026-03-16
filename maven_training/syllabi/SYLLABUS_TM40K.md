@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | **Level** | TM-40K (Knowledge Manager Specialist Track) |
-| **Duration** | 3 days (24 hours) |
+| **Duration** | 4 days (32 hours) |
 | **Prerequisites** | TM-10, TM-20, and TM-30 (all Go evaluations on file, required). |
 | **Audience** | KMOs, 37F Psychological Operations, S2/S3/S6 knowledge officers, unit knowledge managers |
 | **Format** | Instructor-led lab + design workshop + practical exercise |
@@ -17,7 +17,7 @@
 
 Institutional knowledge walks out the door at every PCS cycle. After this course you can build the systems that stop that — structured AAR capture, lessons-learned pipelines, SOP version control, personnel expertise mapping, and PCS knowledge transfer packages, all running on MSS. AIP Logic adds a force multiplier: automatic summarization, theme extraction, and knowledge Q&A against your unit's repository.
 
-Three days provides time to build each component, iterate on AIP prompt quality, have your draft PCS transfer package reviewed by the instructor before the evaluation, and then execute the practical exercise to standard.
+Four days provides time to build each KM system component in depth: Day 1 establishes the knowledge architecture and AIP Logic foundation; Day 2 builds the search and retrieval applications; Day 3 covers expertise mapping, continuity systems, and gives trainees a full afternoon to draft their PCS transfer package before instructor review; Day 4 opens with the instructor PCS review, then moves to the practical exercise with adequate time to demonstrate all six evaluated tasks.
 
 ---
 
@@ -64,7 +64,7 @@ Complete **5+ duty days before Day 1:**
 
 ---
 
-**Day 2 — Search, Doctrine Management, Expertise, and Continuity**
+**Day 2 — Search, Retrieval Applications, and AIP Prompt Engineering**
 
 | Time | Block | Method | Content |
 |---|---|---|---|
@@ -73,26 +73,42 @@ Complete **5+ duty days before Day 1:**
 | 1030–1045 | —  | Break    | |
 | 1045–1200 | 7  | Lab      | SOP/doctrine version control: lifecycle management, version tagging, SOP review notification workflow (TM-40K Section 7-6 procedures) |
 | 1200–1300 | —  | Lunch    | |
-| 1300–1400 | 8  | Lab      | Personnel expertise mapping: ExpertiseProfile Object Type, skills taxonomy design, SME directory application; Privacy Act authorities (TM-40K Section 8-1) |
-| 1400–1415 | —  | Break    | |
-| 1415–1530 | 9  | Lab      | PCS knowledge transfer: key person dependency analysis; transfer package design methodology; Foundry project handoff checklist |
-| 1530–1700 | 10 | Lab      | **AIP prompt iteration lab:** each trainee iterates on their summarization prompt — test against 5 provided documents, score extraction quality, revise, retest; instructor coaching |
+| 1300–1315 | —  | Brief    | AIP prompt engineering methodology: why prompt quality determines system quality; the scoring rubric used in Block 8 |
+| 1315–1530 | 8  | Lab      | **AIP prompt iteration lab (extended):** each trainee iterates on their summarization prompt — test against 5 provided documents, score extraction quality using the rubric, revise, retest minimum 3 cycles; instructor coaches; final prompt version documented with rationale for each change |
+| 1530–1545 | —  | Break    | |
+| 1545–1700 | 9  | Exercise | Prompt comparison debrief: trainees share one prompt revision (before/after) with the group; class identifies the structural change that improved extraction quality; instructor closes with the common prompt failure patterns from this cohort |
 
-**Evening reading:** TM-40K, Chapter 9 (Knowledge Transfer and Continuity) — read in full; TM-40K, Section 5-3 (AIP prompt template) — start from the template and document your modifications.
+**Evening reading:** TM-40K, Chapter 9 (Knowledge Transfer and Continuity) — read in full; TM-40K, Section 8-1 (Privacy Act authorities for ExpertiseProfile data); TM-40K, Section 5-3 (AIP prompt template) — document modifications from Day 2 lab.
 
 ---
 
-**Day 3 — Governance, Instructor Review, and Practical Exercise**
+**Day 3 — Expertise Mapping, PCS Continuity, and Package Draft**
 
 | Time | Block | Method | Content |
 |---|---|---|---|
-| 0800–0830 | —  | Review   | Day 2 questions; access management, classification of knowledge objects, C2DAO governance |
-| 0830–1045 | 11 | Lab      | **PCS package draft review:** each trainee presents draft PCS transfer package to instructor; instructor reviews against TM-40K Chapter 9 completeness criteria; trainees revise based on feedback |
+| 0800–0830 | —  | Review   | Day 2 questions; privacy act and classification of knowledge objects |
+| 0830–1030 | 10 | Lab      | Personnel expertise mapping: ExpertiseProfile Object Type, skills taxonomy design, SME directory application; Privacy Act authorities (TM-40K Section 8-1) — emphasis on what data can and cannot be captured |
+| 1030–1045 | —  | Break    | |
+| 1045–1145 | 11 | Lab      | PCS knowledge transfer methodology: key person dependency analysis; transfer package design; Foundry project handoff checklist structure per TM-40K Chapter 9 |
+| 1145–1200 | —  | Brief    | PCS package requirements brief: evaluator explains Chapter 9 completeness criteria; trainees understand what a passing package contains before drafting |
+| 1200–1300 | —  | Lunch    | |
+| 1300–1700 | 12 | Lab      | **PCS package draft lab (full afternoon):** each trainee produces a complete draft PCS transfer package — specific Foundry project, Object Types and current data quality, pipelines and schedules, required contacts, access requirements. Instructor available for questions on completeness criteria; no content guidance. Package must be submitted to instructor by 1700 for morning review |
+
+**Evening task:** Finalize PCS package draft. Instructor reviews all packages overnight and prepares targeted feedback for each trainee.
+
+---
+
+**Day 4 — Governance, Instructor Review, and Practical Exercise**
+
+| Time | Block | Method | Content |
+|---|---|---|---|
+| 0800–0830 | —  | Review   | Day 3 questions; access management, C2DAO governance for knowledge objects |
+| 0830–1045 | 13 | Lab      | **PCS package instructor review:** each trainee receives written feedback from overnight review; individually confers with instructor; revises package against Chapter 9 completeness criteria. Trainees with complete packages use remaining time to refine AIP workflow documentation |
 | 1045–1100 | —  | Break    | |
-| 1100–1145 | 12 | Brief    | Practical exercise scenario brief; review Go criteria for AIP review gate and PCS package |
+| 1100–1145 | 14 | Brief    | Practical exercise scenario brief; review Go criteria for AIP review gate and PCS package completeness |
 | 1145–1200 | —  | Buffer   | Questions / final environment check |
 | 1200–1300 | —  | Lunch    | |
-| 1300–1700 | 13 | **Eval** | **Practical exercise (evaluated)** |
+| 1300–1700 | 15 | **Eval** | **Practical exercise (evaluated)** |
 
 ---
 
@@ -104,8 +120,10 @@ Complete **5+ duty days before Day 1:**
 | Before Day 1 | TM-40K, Ch 2 (Knowledge Architecture Design) |
 | Day 1 evening | TM-40K, Ch 3 (AAR Capture — validation logic) |
 | Day 1 evening | TM-40K, Ch 5 (AIP — WARNING on review requirements) |
-| Day 2 evening | TM-40K, Ch 9 (Knowledge Transfer/Continuity) |
-| Day 2 evening | TM-40K, Section 5-3 (AIP prompt template) |
+| Day 2 evening | TM-40K, Section 8-1 (Privacy Act authorities for ExpertiseProfile) |
+| Day 2 evening | TM-40K, Section 5-3 (AIP prompt template) — document modifications from Day 2 lab |
+| Day 2 evening | TM-40K, Ch 9 (Knowledge Transfer/Continuity) — required before PCS draft lab Day 3 |
+| Day 3 evening | Finalize PCS package draft — submit to instructor by 1700 (evaluated overnight) |
 
 ---
 

@@ -161,7 +161,7 @@ WFF functional staff (INT/FIRES/M2/SUST/PROT/MC)?
      Protection       → TM-40E
      Mission Command  → TM-40F
 
-17/25-series, S6, G6, G2, G9, or operational data analyst?
+17/25-series, S6, G6, G2, or operational data analyst?
   → TM-30: ADVANCED BUILDER (data-adjacent), then TM-40G–L
 
 Technical specialist role? (after TM-30)

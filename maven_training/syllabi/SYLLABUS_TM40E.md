@@ -12,7 +12,7 @@
 
 ---
 
-**BLUF:** TM-40E teaches protection staff to integrate MSS into force protection workflows — tracking threat activity, visualizing installation and route vulnerability, managing force protection CCIR alerts, displaying CBRN sensor data, and maintaining PERSTAT accountability. Course applies MSS capabilities to processes in ADP 3-37, FM 3-37, and ATP 3-37.2. No coding or pipeline experience required.
+**BLUF:** TM-40E teaches protection staff to integrate MSS into force protection workflows — tracking threat activity, visualizing installation and route vulnerability, managing force protection CCIR alerts, displaying CBRN sensor data, and maintaining PERSTAT accountability. Course applies MSS capabilities to processes in ADP 3-37 and ATP 3-37.2. No coding or pipeline experience required.
 
 ---
 
@@ -48,7 +48,7 @@ Complete **5+ duty days before Day 1:**
 
 | Time | Block | Method | Content |
 |---|---|---|---|
-| 0800–0900 | 1 | Brief | Doctrinal context: ADP 3-37, FM 3-37; how MSS supports force protection visibility; role of the protection COP in the operations process |
+| 0800–0900 | 1 | Brief | Doctrinal context: ADP 3-37; how MSS supports force protection visibility; role of the protection COP in the operations process |
 | 0900–1100 | 2 | Demo/Lab | Threat data layer configuration: threat incident layers, IED reporting feeds, and threat trend overlays; data sources, display standards, and source attribution |
 | 1100–1115 | — | Break | |
 | 1115–1200 | 3 | Lab | Vulnerability assessment visualization: installation perimeter overlays, route vulnerability displays, cross-referencing threat layers with friendly position data |
@@ -129,6 +129,14 @@ Complete **5+ duty days before Day 1:**
 | PERSTAT dashboard | Data-as-of timestamps required at the **element level** — a single page-level timestamp without element-level currency indicators fails Task 4 |
 | Data staleness inject | Both overstating risk (treating sector as unmonitored when other indicators remain current) and understating risk (treating stale-reporting sector as fully covered) are No-Go. Evaluator probe: "What do you know, what are you estimating, and what are you telling the commander?" |
 
+### Function-Specific Go Criteria — Protection
+
+| Criterion | Standard |
+|---|---|
+| CBRN contamination overlay | Contamination overlay must include a downwind hazard estimate layer — a contamination display without downwind projection fails the CBRN visualization element |
+| PERSTAT accountability | PERSTAT dashboard must show unit accountability by company-level subordinate unit — battalion-level rollup only is insufficient for force protection purposes |
+| Threat characterization | When responding to the threat reporting staleness inject, trainee must not overstate risk ("area is clear") or understate it ("sector is fully covered") — correct answer explicitly characterizes the gap and communicates uncertainty to the commander |
+
 ---
 
 ## Key Tips
@@ -138,6 +146,7 @@ Complete **5+ duty days before Day 1:**
 | CBRN overlay exercise | Most technically specific block in the course — read TM-40E Chapter 6 the night before and know what fields the CBRN sensor feed exposes |
 | Geographic CCIRs | Require correctly defined AOR boundaries in MSS — if your training environment does not have the AOR pre-loaded, ask the instructor before Day 1 how geographic CCIR boundaries are configured |
 | Threat reporting inject | When the inject hits, the correct response is: assume the gap is significant until proven otherwise, caveat everything affected, escalate immediately. Do not attempt to determine if the sector is "actually clear" |
+| CCIR troubleshooting | Force protection CCIRs that monitor CBRN sensor status must be verified against the actual sensor feed update frequency — if sensors report every 30 minutes and the CCIR evaluates every 5 minutes, the CCIR will false-trigger 5 out of 6 cycles. Set CCIR evaluation frequency to match the source data refresh rate |
 
 ---
 

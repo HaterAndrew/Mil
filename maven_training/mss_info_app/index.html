@@ -2160,7 +2160,11 @@
     <div style="margin-top:auto; padding:18px 14px 6px; border-top:1px solid rgba(255,255,255,0.06);">
       <a href="../DEPENDENCY_MAP.html" target="_blank" rel="noopener"
          style="font-size:10px; color:rgba(255,255,255,0.18); text-decoration:none; letter-spacing:0.5px;"
-         title="Corpus dependency map (admin tool)">&#9881; DEP MAP</a>
+         title="Corpus dependency map (admin tool)">&#9881; DEPENDENCY MAP</a>
+      &nbsp;&middot;&nbsp;
+      <a href="../../hermes_overview.html" target="_blank" rel="noopener"
+         style="font-size:10px; color:rgba(255,255,255,0.18); text-decoration:none; letter-spacing:0.5px;"
+         title="HERMES system overview (admin tool)">&#9881; HERMES</a>
     </div>
 
   </nav>
@@ -2192,6 +2196,11 @@
     <div class="callout bluf">
       <div class="callout-label">BLUF</div>
       <div class="callout-body">Find your level below and follow the training path. All personnel start at TM-10. Builders add TM-20. All TM-40 tracks (WFF and specialist) require TM-30. Use the sidebar to navigate to your specific guidance.</div>
+    </div>
+
+    <div class="callout note">
+      <div class="callout-label">DOCTRINE ALIGNMENT</div>
+      <div class="callout-body">This training program is designed and governed IAW <strong>AR 350-1</strong> (Army Training and Leader Development), <strong>TR 350-70</strong> (Army Learning Policy and Systems), and <strong>FM 7-0</strong> (Training). All WFF tracks (TM-40A&ndash;F) integrate doctrinal references from the corresponding warfighting function field manuals. See the <button class="qr-link" onclick="showPanel('doctrine')">Doctrine &amp; Reference</button> panel or the DEPENDENCY_MAP for the full external doctrinal references index.</div>
     </div>
 
     <h2>STEP 1 &mdash; FIND YOUR LEVEL</h2>
@@ -3848,23 +3857,11 @@
 
     <div class="qr-grid">
 
-      <!-- FIND YOUR MANUAL — full width -->
-      <div class="qr-box gold-top qr-span3">
-        <div class="qr-label">Find Your Manual</div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>You Are&hellip;</th><th>Start Here</th><th>Open It</th></tr></thead>
-            <tbody>
-              <tr><td>Any personnel &mdash; viewing data for the first time</td><td>TM-10 &mdash; Maven User</td><td><button class="qr-link" data-panel="tm10">TM-10 &rarr;</button></td></tr>
-              <tr><td>Staff building dashboards or simple pipelines (no coding)</td><td>TM-20 &mdash; Builder</td><td><button class="qr-link" data-panel="tm20">TM-20 &rarr;</button></td></tr>
-              <tr><td>Data steward, frequent builder, or data-adjacent role (17/25-series, G2, analyst)</td><td>TM-30 &mdash; Advanced Builder</td><td><button class="qr-link" data-panel="tm30">TM-30 &rarr;</button></td></tr>
-              <tr><td>Technical specialist or warfighting function developer &mdash; ORSA &bull; AI/ML Eng &bull; PM &bull; KM &bull; SWE</td><td>TM-40 Specialist Track</td><td><button class="qr-link" data-panel="tm40">TM-40 &rarr;</button></td></tr>
-              <tr><td>Advanced specialist &mdash; post TM-40 completion</td><td>TM-50 Advanced Track</td><td><button class="qr-link" data-panel="tm50">TM-50 &rarr;</button></td></tr>
-              <tr><td>O-5 / SGM+ &mdash; directing a data-capable formation</td><td>Data Literacy for Senior Leaders</td><td><button class="qr-link" data-panel="doctrine">Draft Pubs &rarr;</button></td></tr>
-              <tr><td>All personnel &mdash; foundational data concepts before TM-10</td><td>Data Literacy Technical Reference</td><td><a class="qr-link" href="../pdf/DATA_LITERACY_technical_reference.pdf" target="_blank">PDF &rarr;</a></td></tr>
-              <tr><td>Anyone &mdash; unfamiliar term or concept</td><td>Glossary &mdash; Data &amp; Foundry</td><td><button class="qr-link" data-panel="doctrine">Draft Pubs &rarr;</button></td></tr>
-            </tbody>
-          </table>
+      <!-- FIND YOUR TRACK — compact pointer to Home -->
+      <div class="qr-box gold-top qr-span3" style="padding:12px 16px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+          <span style="font-size:12px;color:var(--gray-700);">Need to find your training track or publication? Use the full training path on the Home page.</span>
+          <button class="qr-link" onclick="showPanel('home')" style="white-space:nowrap;">Home / Start Here &rarr;</button>
         </div>
       </div>
 
@@ -4286,6 +4283,383 @@
       </div>
     </details>
 
+    <details>
+      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Enterprise Architecture Series (6 &mdash; click to expand)</summary>
+      <div class="card-grid card-grid-2" style="margin-top:12px;">
+        <a class="card doc-card" href="../pdf/ARCH_EA_00_REFERENCE_CARD.pdf" target="_blank"><div class="card-label">EA-00</div><div class="card-title">EA Reference Card</div><div class="card-body">At-a-glance reference card for enterprise architecture concepts and frameworks.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_EA_01_FOUNDATION.pdf" target="_blank"><div class="card-label">EA-01</div><div class="card-title">EA Foundation</div><div class="card-body">Core EA concepts &mdash; what enterprise architecture is, why it matters, foundational principles.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_EA_02_SCHOOLS_OF_THOUGHT.pdf" target="_blank"><div class="card-label">EA-02</div><div class="card-title">Schools of Thought</div><div class="card-body">Major EA frameworks: TOGAF, DoDAF, Zachman, FEAF. Comparison and military applicability.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_EA_03_ARTIFACTS_AND_VIEWS.pdf" target="_blank"><div class="card-label">EA-03</div><div class="card-title">Artifacts &amp; Views</div><div class="card-body">EA artifacts, viewpoints, and views. How to read and produce architecture products.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_EA_04_GOVERNANCE.pdf" target="_blank"><div class="card-label">EA-04</div><div class="card-title">EA Governance</div><div class="card-body">Architecture governance processes, review boards, compliance, and change management.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_EA_05_MILITARY_APPLICATION.pdf" target="_blank"><div class="card-label">EA-05</div><div class="card-title">Military Application</div><div class="card-body">Applying EA to military operations, C2 systems, and Army data platforms.</div></a>
+      </div>
+    </details>
+
+    <details>
+      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Architecture &amp; Design References (28 &mdash; click to expand)</summary>
+
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:13px;letter-spacing:.05em;">CDA &mdash; Common Data Architecture (15)</h3>
+      <div class="card-grid card-grid-2" style="margin-top:12px;">
+        <a class="card doc-card" href="../pdf/ARCH_CDA_OVERVIEW.pdf" target="_blank"><div class="card-label">CDA OVERVIEW</div><div class="card-title">Cross-Domain Architecture Overview</div><div class="card-body">Architecture workspace for data strategy and training. Defines activities, data, and systems across the enterprise.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_CDA_CONSTRAINTS_AND_DIRECTIVES.pdf" target="_blank"><div class="card-label">CDA CONSTRAINTS</div><div class="card-title">Constraints &amp; Directives</div><div class="card-body">12 non-negotiable architectural constraints derived from theater-level operational experience.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_CDA_DOCTRINE_OVERVIEW.pdf" target="_blank"><div class="card-label">CDA DOCTRINE</div><div class="card-title">Doctrine-Driven Development Guide</div><div class="card-body">Turns JRTC lessons into ontology and pipeline patterns that close the three-generation planning gap.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_CDA_DOCTRINE_AGENT.pdf" target="_blank"><div class="card-label">CDA AGENT</div><div class="card-title">Military Ontology Architect Agent</div><div class="card-body">Expert ontology architect role definition for military operations, PPBE, and Foundry data models.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_CDA_IDENTITY_VS_CLASSIFICATION.pdf" target="_blank"><div class="card-label">CDA IDENTITY</div><div class="card-title">Identity vs Classification</div><div class="card-body">Fundamental separation between what something is (identity) and what bucket it belongs to (classification).</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_CDA_AVT25_ASSESSMENT.pdf" target="_blank"><div class="card-label">CDA AVT25</div><div class="card-title">AVT25 Assessment &mdash; Exponential Work Multiplication</div><div class="card-body">Analysis of duplicated assessment tooling in the same enclave and the exponential cost of fragmentation.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_CDA_AGENTS_OVERVIEW.pdf" target="_blank"><div class="card-label">CDA AGENTS</div><div class="card-title">Agent Doctrine Overview</div><div class="card-body">Doctrinal reference layer for architecture, ontology, pipeline, and identity agent work.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_CDA_AGENTS_CORE_PRINCIPLES.pdf" target="_blank"><div class="card-label">CDA CORE</div><div class="card-title">Core Principles</div><div class="card-body">Non-negotiable bedrock principles for all platform agents &mdash; the stability stack, governance, and data doctrine.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_CDA_AGENTS_ONTOLOGY_ENGINEER.pdf" target="_blank"><div class="card-label">CDA ONTOLOGY</div><div class="card-title">Ontology Engineer Doctrine</div><div class="card-body">Ontology engineering reference &mdash; semantic stability layer design, validation, and governance in Foundry.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_CDA_AGENTS_ENTITY_RESOLUTION.pdf" target="_blank"><div class="card-label">CDA ENTITY RES</div><div class="card-title">Entity Resolution Doctrine</div><div class="card-body">Governed, versioned, reversible entity resolution pipelines with full provenance and auditability.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_CDA_AGENTS_INGESTION_INTEGRATION.pdf" target="_blank"><div class="card-label">CDA INGESTION</div><div class="card-title">Ingestion &amp; Integration Doctrine</div><div class="card-body">ETL/ELT pipeline doctrine &mdash; four-layer architecture from source systems to applications.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_CDA_CANON_ADP_CROSSWALK.pdf" target="_blank"><div class="card-label">CANON ADP</div><div class="card-title">ADP Crosswalk</div><div class="card-body">Crosswalk mapping Army Doctrine Publications to CDA ontology and data model elements.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_CDA_CANON_CONDITIONS.pdf" target="_blank"><div class="card-label">CANON CONDITIONS</div><div class="card-title">Conditions, Indicators &amp; Thresholds</div><div class="card-body">Doctrine canon for operational conditions, indicators, and threshold modeling.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_CDA_CANON_ENGAGEMENT.pdf" target="_blank"><div class="card-label">CANON ENGAGE</div><div class="card-title">Engagement Operations</div><div class="card-body">Doctrine canon for engagement operations data modeling and ontology patterns.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_CDA_CANON_INFORMATION.pdf" target="_blank"><div class="card-label">CANON INFO</div><div class="card-title">Information Activities</div><div class="card-body">Doctrine canon for information activities data modeling and ontology patterns.</div></a>
+      </div>
+
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:13px;letter-spacing:.05em;">GDAP &mdash; Governance Data Access Platform (5)</h3>
+      <div class="card-grid card-grid-2" style="margin-top:12px;">
+        <a class="card doc-card" href="../pdf/ARCH_GDAP_OVERVIEW.pdf" target="_blank"><div class="card-label">GDAP OVERVIEW</div><div class="card-title">Global Doctrine Alignment Platform</div><div class="card-body">Bi-temporal coalition knowledge graph for doctrine analysis with LlamaIndex retrieval stack.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_GDAP_VISION.pdf" target="_blank"><div class="card-label">GDAP VISION</div><div class="card-title">GDAP Vision &mdash; Doctrine as Executable Architecture</div><div class="card-body">Strategic vision for GDAP &mdash; solving coalition interoperability friction through executable doctrine.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_GDAP_PERSISTENCE_STRATEGY.pdf" target="_blank"><div class="card-label">GDAP PERSIST</div><div class="card-title">Persistence Strategy</div><div class="card-body">LlamaIndex persistence strategy &mdash; DuckDB as canonical truth, fast startup, reproducible rebuilds.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_GDAP_ACCEPTANCE_TESTS.pdf" target="_blank"><div class="card-label">GDAP TESTS</div><div class="card-title">Acceptance Test Suite</div><div class="card-body">Plain-English acceptance tests for the LlamaIndex retrieval roadmap.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_GDAP_ADR_0001_LLAMAINDEX.pdf" target="_blank"><div class="card-label">GDAP ADR-0001</div><div class="card-title">ADR-0001: LlamaIndex vs DuckDB Boundaries</div><div class="card-body">Architecture decision record defining responsibility boundaries between LlamaIndex and DuckDB.</div></a>
+      </div>
+
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:13px;letter-spacing:.05em;">MIM &mdash; NATO MIP Information Model (7)</h3>
+      <div class="card-grid card-grid-2" style="margin-top:12px;">
+        <a class="card doc-card" href="../pdf/ARCH_MIM_OVERVIEW.pdf" target="_blank"><div class="card-label">MIM OVERVIEW</div><div class="card-title">MIM Toolchain Overview</div><div class="card-body">Python monorepo that parses, models, and generates code from NATO MIM 5.3 specification.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_MIM_STANDARD.pdf" target="_blank"><div class="card-label">MIM STANDARD</div><div class="card-title">MIM Standard Reference</div><div class="card-body">Information exchange requirements underpinning MIM and its predecessors (JC3IEDM, ATCCIS).</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_MIM_STATE.pdf" target="_blank"><div class="card-label">MIM STATE</div><div class="card-title">State of the MIM Project</div><div class="card-body">Current project state snapshot &mdash; implementation status and open work items.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_MIM_ACADEMICS.pdf" target="_blank"><div class="card-label">MIM ACADEMICS</div><div class="card-title">MIM Academic Context</div><div class="card-body">Dr. Michael Gerz and NATO MIM &mdash; 2,300-type ontological framework aligned with Foundry object types.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_MIM_DECISION_RECORDS.pdf" target="_blank"><div class="card-label">MIM ADR</div><div class="card-title">MIM Decision Records</div><div class="card-body">Architecture decision records for MIM repository structure and package design.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_MIM_FUTURE_CLASSES.pdf" target="_blank"><div class="card-label">MIM FUTURE</div><div class="card-title">MIM Future Components</div><div class="card-body">Planned MIM components not yet implemented &mdash; purpose documentation grouped by layer.</div></a>
+        <a class="card doc-card" href="../pdf/ARCH_MIM_ONTOLOGY_DOCS.pdf" target="_blank"><div class="card-label">MIM OSDK</div><div class="card-title">OSDK Maker Package Reference</div><div class="card-body">Type-safe programmatic ontology definition using the OSDK Maker API in Foundry.</div></a>
+      </div>
+
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:13px;letter-spacing:.05em;">Ontology Design (1)</h3>
+      <div class="card-grid card-grid-2" style="margin-top:12px;">
+        <a class="card doc-card" href="../pdf/ARCH_ONTOLOGY_DESIGN_PRINCIPLES.pdf" target="_blank"><div class="card-label">ONTOLOGY</div><div class="card-title">Ontology Design Principles</div><div class="card-body">Governing principles for Foundry ontology design &mdash; DDD, clean architecture, derived from DevCon5 guidance.</div></a>
+      </div>
+    </details>
+
+    <details open>
+      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">External Doctrinal &amp; Strategic References</summary>
+
+      <div class="callout note" style="margin-top:12px;margin-bottom:12px;">
+        <div class="callout-label">CLASSIFICATION</div>
+        <div class="callout-body">References are categorized as <strong>Doctrine</strong> (regulatory authority &mdash; ARs, FMs, DoD Directives, NATO STANAGs) or <strong>Strategic Guidance</strong> (authoritative but not regulatory &mdash; strategies, plans, frameworks). This distinction matters for compliance and citation.</div>
+      </div>
+
+      <!-- Army Doctrine & Regulation -->
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:14px;letter-spacing:.05em;">ARMY DOCTRINE &amp; REGULATION</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:var(--navy);color:#fff;text-align:left;"><th style="padding:6px 8px;">Publication</th><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Type</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">ADP 3-0</td><td style="padding:5px 8px;">Operations</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">WFF (A&ndash;F)</td></tr>
+          <tr><td style="padding:5px 8px;">ADP 3-19</td><td style="padding:5px 8px;">Fires</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40B</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">ADP 3-37</td><td style="padding:5px 8px;">Protection of the Force (Jul 2019)</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40E</td></tr>
+          <tr><td style="padding:5px 8px;">ADP 3-90</td><td style="padding:5px 8px;">Offense and Defense</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40C</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">ADP 5-0</td><td style="padding:5px 8px;">The Operations Process</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40F, TM-40G</td></tr>
+          <tr><td style="padding:5px 8px;">ADP 6-0</td><td style="padding:5px 8px;">Mission Command (Jul 2019)</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40F</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">ADP 7-0</td><td style="padding:5px 8px;">Training</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">Training Mgmt</td></tr>
+          <tr><td style="padding:5px 8px;">AR 25-1</td><td style="padding:5px 8px;">Army Information Technology (Jul 2019)</td><td style="padding:5px 8px;">Regulation</td><td style="padding:5px 8px;">All</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">AR 25-2</td><td style="padding:5px 8px;">Army Cybersecurity (Apr 2019)</td><td style="padding:5px 8px;">Regulation</td><td style="padding:5px 8px;">TM-40H, TM-40I, TM-40L</td></tr>
+          <tr><td style="padding:5px 8px;">AR 25-30</td><td style="padding:5px 8px;">Army Publishing Program</td><td style="padding:5px 8px;">Regulation</td><td style="padding:5px 8px;">TM-50H</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">AR 25-400-2</td><td style="padding:5px 8px;">Army Records Management</td><td style="padding:5px 8px;">Regulation</td><td style="padding:5px 8px;">TM-40K</td></tr>
+          <tr><td style="padding:5px 8px;">AR 5-11</td><td style="padding:5px 8px;">Management of Army Models and Simulations</td><td style="padding:5px 8px;">Regulation</td><td style="padding:5px 8px;">TM-40G</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">AR 71-9</td><td style="padding:5px 8px;">Warfighting Analysis</td><td style="padding:5px 8px;">Regulation</td><td style="padding:5px 8px;">TM-40G</td></tr>
+          <tr><td style="padding:5px 8px;">AR 350-1</td><td style="padding:5px 8px;">Army Training and Leader Development</td><td style="padding:5px 8px;">Regulation</td><td style="padding:5px 8px;">Training Mgmt</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">AR 525-2</td><td style="padding:5px 8px;">Force Protection</td><td style="padding:5px 8px;">Regulation</td><td style="padding:5px 8px;">TM-40E</td></tr>
+          <tr><td style="padding:5px 8px;">AR 530-1</td><td style="padding:5px 8px;">Operations Security</td><td style="padding:5px 8px;">Regulation</td><td style="padding:5px 8px;">TM-40E</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">FM 2-0</td><td style="padding:5px 8px;">Intelligence (Oct 2023)</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40A</td></tr>
+          <tr><td style="padding:5px 8px;">FM 3-0</td><td style="padding:5px 8px;">Operations (Mar 2025)</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">WFF (A&ndash;F)</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">FM 3-01</td><td style="padding:5px 8px;">U.S. Army Air and Missile Defense</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40B</td></tr>
+          <tr><td style="padding:5px 8px;">FM 3-09</td><td style="padding:5px 8px;">Fire Support and Field Artillery Operations (Aug 2024)</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40B, TM-40C</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">FM 3-12</td><td style="padding:5px 8px;">Cyberspace and EW Operations</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40E, TM-40H, TM-40I, TM-40L</td></tr>
+          <tr><td style="padding:5px 8px;">FM 3-27</td><td style="padding:5px 8px;">Army Global Ballistic Missile Defense</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40B</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">FM 3-55</td><td style="padding:5px 8px;">Information Collection</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40A</td></tr>
+          <tr><td style="padding:5px 8px;">FM 3-60</td><td style="padding:5px 8px;">Targeting (Aug 2023)</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40B</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">FM 3-81</td><td style="padding:5px 8px;">Maneuver Enhancement Brigade</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40C</td></tr>
+          <tr><td style="padding:5px 8px;">FM 3-90</td><td style="padding:5px 8px;">Offense and Defense (May 2023)</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40C</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">FM 4-0</td><td style="padding:5px 8px;">Sustainment (Aug 2024)</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40D</td></tr>
+          <tr><td style="padding:5px 8px;">FM 1-0</td><td style="padding:5px 8px;">Human Resources Support</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40D</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">FM 5-0</td><td style="padding:5px 8px;">Planning and Orders Production (Nov 2024)</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40F, TM-40C</td></tr>
+          <tr><td style="padding:5px 8px;">FM 6-0</td><td style="padding:5px 8px;">Commander&rsquo;s Activities (May 2022)</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40F, TM-40C</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">FM 7-0</td><td style="padding:5px 8px;">Training (Jun 2021)</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">Training Mgmt</td></tr>
+          <tr><td style="padding:5px 8px;">ATP 2-01</td><td style="padding:5px 8px;">Collection Management (May 2023)</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40A</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">ATP 2-33.4</td><td style="padding:5px 8px;">Intelligence Analysis</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40A</td></tr>
+          <tr><td style="padding:5px 8px;">ATP 2-22.9-1</td><td style="padding:5px 8px;">PAI/OSINT (Oct 2023)</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40A</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">ATP 3-01.81</td><td style="padding:5px 8px;">Counter-UAS</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40B</td></tr>
+          <tr><td style="padding:5px 8px;">ATP 3-09.42</td><td style="padding:5px 8px;">Fire Support for M&amp;M</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40B</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">ATP 3-13.3</td><td style="padding:5px 8px;">Army Operations Security</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40E</td></tr>
+          <tr><td style="padding:5px 8px;">ATP 3-90.4</td><td style="padding:5px 8px;">Combined Arms Mobility</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40C</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">ATP 5-0.1</td><td style="padding:5px 8px;">Army Design Methodology</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40F</td></tr>
+          <tr><td style="padding:5px 8px;">ATP 5-0.3</td><td style="padding:5px 8px;">Multi-Service Tactics for Ops Assessment</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40G</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">ATP 6-01.1</td><td style="padding:5px 8px;">Techniques for Effective Knowledge Management</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40K, TM-50K</td></tr>
+          <tr><td style="padding:5px 8px;">TC 6-0.2</td><td style="padding:5px 8px;">Battle Staff Operations</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40F</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">DA PAM 5-11</td><td style="padding:5px 8px;">Verification, Validation &amp; Accreditation</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40G</td></tr>
+          <tr><td style="padding:5px 8px;">DA PAM 25-1-1</td><td style="padding:5px 8px;">IT Implementation Instructions</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40K, TM-40L</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">DA PAM 25-2-5</td><td style="padding:5px 8px;">Cybersecurity Technical Reference</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40H, TM-40I, TM-40L</td></tr>
+          <tr><td style="padding:5px 8px;">DA PAM 25-40</td><td style="padding:5px 8px;">Army Publishing Program Procedures</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">Standards</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">DA PAM 25-403</td><td style="padding:5px 8px;">Army Records Information Management</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40K</td></tr>
+          <tr><td style="padding:5px 8px;">DA PAM 600-3</td><td style="padding:5px 8px;">Officer Professional Development</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40G</td></tr>
+        </tbody>
+      </table>
+
+      <!-- DoD Directives & Instructions -->
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:14px;letter-spacing:.05em;">DoD DIRECTIVES &amp; INSTRUCTIONS</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:var(--navy);color:#fff;text-align:left;"><th style="padding:6px 8px;">Publication</th><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Type</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">DoDD 3000.09</td><td style="padding:5px 8px;">Autonomy in Weapon Systems (Jan 2023)</td><td style="padding:5px 8px;">Directive</td><td style="padding:5px 8px;">WFF (A&ndash;F)</td></tr>
+          <tr><td style="padding:5px 8px;">DoDI 5000.87</td><td style="padding:5px 8px;">Software Acquisition Pathway (Oct 2020)</td><td style="padding:5px 8px;">Instruction</td><td style="padding:5px 8px;">TM-40L, TM-50L, TM-40J, TM-50J</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Army Directive 2024-02</td><td style="padding:5px 8px;">Agile Software Dev &amp; Acquisition (Dec 2024)</td><td style="padding:5px 8px;">Directive</td><td style="padding:5px 8px;">TM-40L, TM-50L, TM-40J, TM-50J</td></tr>
+          <tr><td style="padding:5px 8px;">Army Directive 2024-03</td><td style="padding:5px 8px;">Army Digital Engineering</td><td style="padding:5px 8px;">Directive</td><td style="padding:5px 8px;">TM-40H, TM-40I, TM-40L</td></tr>
+        </tbody>
+      </table>
+
+      <!-- TRADOC -->
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:14px;letter-spacing:.05em;">TRADOC PUBLICATIONS</h3>
+      <p style="font-size:12px;color:#666;margin:0 0 8px;">Published at adminpubs.tradoc.army.mil, not armypubs.army.mil</p>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:var(--navy);color:#fff;text-align:left;"><th style="padding:6px 8px;">Publication</th><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Type</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">TR 350-70</td><td style="padding:5px 8px;">Army Learning Policy and Systems</td><td style="padding:5px 8px;">Regulation</td><td style="padding:5px 8px;">Training Mgmt</td></tr>
+          <tr><td style="padding:5px 8px;">TP 350-70-3</td><td style="padding:5px 8px;">Faculty and Staff Development Program</td><td style="padding:5px 8px;">Pamphlet</td><td style="padding:5px 8px;">Training Mgmt</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">TP 350-70-7</td><td style="padding:5px 8px;">Army Educational Processes</td><td style="padding:5px 8px;">Pamphlet</td><td style="padding:5px 8px;">Training Mgmt</td></tr>
+          <tr><td style="padding:5px 8px;">TP 350-70-14</td><td style="padding:5px 8px;">Training Development in Institutional Domain</td><td style="padding:5px 8px;">Pamphlet</td><td style="padding:5px 8px;">Training Mgmt</td></tr>
+        </tbody>
+      </table>
+
+      <!-- NATO Standards -->
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:14px;letter-spacing:.05em;">NATO STANDARDS &amp; AGREEMENTS</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:var(--navy);color:#fff;text-align:left;"><th style="padding:6px 8px;">Publication</th><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Type</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">ADatP-34 / NISP</td><td style="padding:5px 8px;">C3 Interoperability Standards and Profiles</td><td style="padding:5px 8px;">Standard</td><td style="padding:5px 8px;">TM-40K, TM-40L</td></tr>
+          <tr><td style="padding:5px 8px;">STANAG 5636 / NCMS</td><td style="padding:5px 8px;">Core Metadata Specification</td><td style="padding:5px 8px;">STANAG</td><td style="padding:5px 8px;">TM-40K, TM-50K</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">STANAG 5643 (proposed)</td><td style="padding:5px 8px;">MIM Governance Standard</td><td style="padding:5px 8px;">STANAG</td><td style="padding:5px 8px;">TM-40K, TM-40L, TM-50K, TM-50L</td></tr>
+          <tr><td style="padding:5px 8px;">ADatP-5644</td><td style="padding:5px 8px;">Web Service Messaging Profile (WSMP)</td><td style="padding:5px 8px;">Standard</td><td style="padding:5px 8px;">TM-40L, TM-50L</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">ADatP-36</td><td style="padding:5px 8px;">Friendly Force Information (FFI)</td><td style="padding:5px 8px;">Standard</td><td style="padding:5px 8px;">TM-40A, TM-40C</td></tr>
+          <tr><td style="padding:5px 8px;">STANAG 5527</td><td style="padding:5px 8px;">FFT Systems Interoperability</td><td style="padding:5px 8px;">STANAG</td><td style="padding:5px 8px;">TM-40A</td></tr>
+        </tbody>
+      </table>
+
+      <!-- DoD Strategic Guidance -->
+      <h3 style="color:#555;margin:16px 0 8px;font-size:14px;letter-spacing:.05em;">DoD &amp; ARMY STRATEGIC GUIDANCE <span style="font-weight:400;font-size:11px;color:#888;">(not doctrine)</span></h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Document</th><th style="padding:6px 8px;">Authority</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">DoD Data Strategy</td><td style="padding:5px 8px;">OSD</td><td style="padding:5px 8px;">Oct 2020</td><td style="padding:5px 8px;">All</td></tr>
+          <tr><td style="padding:5px 8px;">DoD Data, Analytics &amp; AI Adoption Strategy</td><td style="padding:5px 8px;">CDAO</td><td style="padding:5px 8px;">Nov 2023</td><td style="padding:5px 8px;">All</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">DoD Responsible AI Strategy</td><td style="padding:5px 8px;">CDAO</td><td style="padding:5px 8px;">Jun 2024</td><td style="padding:5px 8px;">TM-40H/I, TM-50H/I</td></tr>
+          <tr><td style="padding:5px 8px;">DoD Zero Trust Reference Architecture v2.0</td><td style="padding:5px 8px;">DISA/NSA</td><td style="padding:5px 8px;">Jul 2022</td><td style="padding:5px 8px;">TM-30</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">DoD AI Cybersecurity Risk Mgmt Guide</td><td style="padding:5px 8px;">DoD CIO</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">TM-40H/I, TM-50H/I</td></tr>
+          <tr><td style="padding:5px 8px;">DoD Software Modernization Strategy</td><td style="padding:5px 8px;">OSD CIO</td><td style="padding:5px 8px;">Feb 2022</td><td style="padding:5px 8px;">TM-40L, TM-50L</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">JADC2 Strategy Summary</td><td style="padding:5px 8px;">Joint Staff</td><td style="padding:5px 8px;">Mar 2022</td><td style="padding:5px 8px;">WFF (A&ndash;F), TM-40G</td></tr>
+          <tr><td style="padding:5px 8px;">JCOIE</td><td style="padding:5px 8px;">Joint Staff J-7</td><td style="padding:5px 8px;">Current</td><td style="padding:5px 8px;">TM-40F</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Army Data Plan</td><td style="padding:5px 8px;">Army CIO</td><td style="padding:5px 8px;">Oct 2022</td><td style="padding:5px 8px;">All</td></tr>
+          <tr><td style="padding:5px 8px;">Army Cloud Plan</td><td style="padding:5px 8px;">Army CIO</td><td style="padding:5px 8px;">Oct 2022</td><td style="padding:5px 8px;">TM-10, TM-20, TM-30</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">UDRA v1.1</td><td style="padding:5px 8px;">DASA(DES)</td><td style="padding:5px 8px;">Feb 2025</td><td style="padding:5px 8px;">TM-30, Specialist (G&ndash;L)</td></tr>
+          <tr><td style="padding:5px 8px;">Army CIO Data Stewardship Memo</td><td style="padding:5px 8px;">Army CIO</td><td style="padding:5px 8px;">Apr 2024</td><td style="padding:5px 8px;">TM-10, TM-20, TM-30, TM-40K</td></tr>
+        </tbody>
+      </table>
+
+      <!-- NATO Strategic Guidance -->
+      <h3 style="color:#555;margin:16px 0 8px;font-size:14px;letter-spacing:.05em;">NATO STRATEGIC GUIDANCE <span style="font-weight:400;font-size:11px;color:#888;">(not doctrine)</span></h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Document</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">NATO Data Strategy for the Alliance</td><td style="padding:5px 8px;">Feb 2025</td><td style="padding:5px 8px;">TM-30, TM-40K, TM-50K</td></tr>
+          <tr><td style="padding:5px 8px;">NATO Data Centric Reference Architecture v2</td><td style="padding:5px 8px;">2025</td><td style="padding:5px 8px;">TM-30</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">NATO Data Quality Framework for the Alliance</td><td style="padding:5px 8px;">Aug 2025</td><td style="padding:5px 8px;">TM-30</td></tr>
+          <tr><td style="padding:5px 8px;">NATO Digital Transformation Implementation Strategy</td><td style="padding:5px 8px;">Oct 2024</td><td style="padding:5px 8px;">WFF (A&ndash;F)</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">NATO Warfighting Capstone Concept</td><td style="padding:5px 8px;">2021</td><td style="padding:5px 8px;">TM-40F</td></tr>
+        </tbody>
+      </table>
+
+    </details>
+
+    <details open>
+      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Professional Reading &amp; Lessons Learned (65+ articles)</summary>
+
+      <div class="callout note" style="margin-top:12px;margin-bottom:16px;">
+        <div class="callout-label">NOTE</div>
+        <div class="callout-body">These are <strong>not doctrine</strong>. They are curated articles from Army professional journals, military publications, and think tanks that provide contemporary operational perspectives on data, AI, and digital transformation. Full reading lists are included as appendices in each TM publication.</div>
+      </div>
+
+      <!-- Military Review -->
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:13px;letter-spacing:.05em;">MILITARY REVIEW &mdash; Army University Press (14)</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Data-Centric at the Division: 3ID&rsquo;s One-Year Journey to Transform and Modernize</td><td style="padding:5px 8px;">Jan 2025</td><td style="padding:5px 8px;">All</td></tr>
+          <tr><td style="padding:5px 8px;">Modernizing Military Decision-Making: Integrating AI into Army Planning</td><td style="padding:5px 8px;">Aug 2025</td><td style="padding:5px 8px;">TM-40F, TM-40H, TM-40G</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">The Military Needs Frontier Models</td><td style="padding:5px 8px;">Aug 2025</td><td style="padding:5px 8px;">TM-40H, TM-40I, TM-40L</td></tr>
+          <tr><td style="padding:5px 8px;">Exploring AI-Enhanced Cyber and Information Operations Integration</td><td style="padding:5px 8px;">Mar-Apr 2025</td><td style="padding:5px 8px;">TM-40E, TM-40A, TM-40H</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Authorities and the Multidomain Task Force</td><td style="padding:5px 8px;">Mar-Apr 2025</td><td style="padding:5px 8px;">TM-40A, TM-40B, TM-40F</td></tr>
+          <tr><td style="padding:5px 8px;">Taking a Data-Centric Approach to Unit Readiness</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">All, esp. TM-40G</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Attaining Readiness by Developing a Data-Centric Culture</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">All, esp. TM-40J</td></tr>
+          <tr><td style="padding:5px 8px;">Sustaining Our People Advantage in Data-Centric Warfare</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">All</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">AI as a Combat Multiplier: Using AI to Unburden Army Staffs</td><td style="padding:5px 8px;">Sep 2024</td><td style="padding:5px 8px;">TM-40H, TM-40F, TM-40G</td></tr>
+          <tr><td style="padding:5px 8px;">Transforming the Multidomain Battlefield with AI</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">TM-40H, TM-40I, TM-40A</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">The Coming Military AI Revolution</td><td style="padding:5px 8px;">May-Jun 2024</td><td style="padding:5px 8px;">TM-40H, TM-40I</td></tr>
+          <tr><td style="padding:5px 8px;">AI in Modern Warfare: Strategic Innovation and Emerging Risks</td><td style="padding:5px 8px;">Sep-Oct 2024</td><td style="padding:5px 8px;">All</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Advancing Counter-UAS Mission Command Systems</td><td style="padding:5px 8px;">May-Jun 2024</td><td style="padding:5px 8px;">TM-40E, TM-40F</td></tr>
+          <tr><td style="padding:5px 8px;">The True Test of Mission Command</td><td style="padding:5px 8px;">Sep-Oct 2024</td><td style="padding:5px 8px;">TM-40F</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Parameters -->
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:13px;letter-spacing:.05em;">PARAMETERS &mdash; Army War College Quarterly (3)</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Responsibly Pursuing Generative AI for the War Fighter</td><td style="padding:5px 8px;">Winter 2025-26</td><td style="padding:5px 8px;">TM-40H, TM-40I, All</td></tr>
+          <tr><td style="padding:5px 8px;">Integrating AI and ML into COP and COA Development</td><td style="padding:5px 8px;">2024-25</td><td style="padding:5px 8px;">TM-40G, TM-40H, TM-40F</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Trusting AI: Integrating AI into the Army&rsquo;s Professional Ethic</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">All</td></tr>
+        </tbody>
+      </table>
+
+      <!-- MIPB -->
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:13px;letter-spacing:.05em;">MIPB &mdash; Military Intelligence Professional Bulletin (6)</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">FRIDAY: Unlocking OSINT for a Data-Driven Army</td><td style="padding:5px 8px;">2025</td><td style="padding:5px 8px;">TM-40A, TM-40H, TM-40L</td></tr>
+          <tr><td style="padding:5px 8px;">Intelligence Support to Information Advantage</td><td style="padding:5px 8px;">Jan-Jun 2026</td><td style="padding:5px 8px;">TM-40A, TM-40K</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Using AI to Create Digital Enemy Commanders</td><td style="padding:5px 8px;">Jul-Dec 2025</td><td style="padding:5px 8px;">TM-40H, TM-40I, TM-40A</td></tr>
+          <tr><td style="padding:5px 8px;">The Market Knows Best: Prediction Markets for National Security</td><td style="padding:5px 8px;">Jul-Dec 2025</td><td style="padding:5px 8px;">TM-40A, TM-40G</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Army Transitioning to Support Deep Sensing in MDO</td><td style="padding:5px 8px;">Jul-Dec 2025</td><td style="padding:5px 8px;">TM-40A, TM-40B, TM-40C</td></tr>
+          <tr><td style="padding:5px 8px;">Open-Source Intelligence Support to Targeting</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">TM-40A, TM-40B</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Field Artillery Bulletin -->
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:13px;letter-spacing:.05em;">FIELD ARTILLERY BULLETIN &mdash; Line of Departure (6)</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">The New Digital Kill Chain</td><td style="padding:5px 8px;">2025</td><td style="padding:5px 8px;">TM-40B, TM-40L</td></tr>
+          <tr><td style="padding:5px 8px;">AI&rsquo;s New Frontier in War Planning</td><td style="padding:5px 8px;">2025</td><td style="padding:5px 8px;">TM-40B, TM-40H</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Project Convergence: Revolutionizing Targeting in LSCO</td><td style="padding:5px 8px;">2025</td><td style="padding:5px 8px;">TM-40B, TM-40A, TM-40G</td></tr>
+          <tr><td style="padding:5px 8px;">Enhancing Tactical Level Targeting With AI</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">TM-40B, TM-40H, TM-40I</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">The Future of Strategic Fires Target Acquisition</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">TM-40B, TM-40A</td></tr>
+          <tr><td style="padding:5px 8px;">The Combat Aviation Brigade and Digital Call for Fire</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">TM-40B, TM-40C</td></tr>
+        </tbody>
+      </table>
+
+      <!-- NCO Journal -->
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:13px;letter-spacing:.05em;">NCO JOURNAL &mdash; Army University Press (3)</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Knowledge Management and The Old Guard</td><td style="padding:5px 8px;">Aug 2025</td><td style="padding:5px 8px;">TM-40K, TM-40F</td></tr>
+          <tr><td style="padding:5px 8px;">From Data to Wisdom</td><td style="padding:5px 8px;">Feb 2025</td><td style="padding:5px 8px;">All</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Artificial Intelligence and Future Warfare</td><td style="padding:5px 8px;">Sep 2025</td><td style="padding:5px 8px;">TM-40H, TM-40I, All</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Army Sustainment -->
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:13px;letter-spacing:.05em;">ARMY SUSTAINMENT &mdash; Army Logistics University (4)</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Army Sustainment Enterprise&rsquo;s Delayed Approach to Data Modernization</td><td style="padding:5px 8px;">Winter 2025</td><td style="padding:5px 8px;">TM-40D, TM-40K</td></tr>
+          <tr><td style="padding:5px 8px;">Predictive Logistics: Reimagining Sustainment on the 2040 Battlefield</td><td style="padding:5px 8px;">Winter 2025</td><td style="padding:5px 8px;">TM-40D, TM-40H, TM-40I, TM-40G</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Enabling Logistics in Contested Environments</td><td style="padding:5px 8px;">Spring 2025</td><td style="padding:5px 8px;">TM-40D, TM-40G</td></tr>
+          <tr><td style="padding:5px 8px;">Advancing to Data-Driven Logistics Operations</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">TM-40D, TM-40K</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Army AL&T Magazine -->
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:13px;letter-spacing:.05em;">ARMY AL&amp;T MAGAZINE (7)</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Accelerating the Army&rsquo;s AI Strategy</td><td style="padding:5px 8px;">2024-25</td><td style="padding:5px 8px;">TM-40H, TM-40J, All</td></tr>
+          <tr><td style="padding:5px 8px;">Commoditizing AI/ML Models</td><td style="padding:5px 8px;">2024-25</td><td style="padding:5px 8px;">TM-40H, TM-40I, TM-40L</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">The Army&rsquo;s Data (Ad)Vantage</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">All</td></tr>
+          <tr><td style="padding:5px 8px;">The Software Advantage</td><td style="padding:5px 8px;">2024-25</td><td style="padding:5px 8px;">TM-40L, TM-40J</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Army Intelligence</td><td style="padding:5px 8px;">2025</td><td style="padding:5px 8px;">TM-40A, TM-40H</td></tr>
+          <tr><td style="padding:5px 8px;">Emerging Technology and Modernizing the Army</td><td style="padding:5px 8px;">2024-25</td><td style="padding:5px 8px;">All</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Reality Check (AI/ML implementation)</td><td style="padding:5px 8px;">2024-25</td><td style="padding:5px 8px;">TM-40H, TM-40I, TM-40J</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Army Communicator -->
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:13px;letter-spacing:.05em;">ARMY COMMUNICATOR &mdash; Cyber CoE (3)</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Leading in Data Centricity, C2 Fix Best Practices</td><td style="padding:5px 8px;">Spring 2025</td><td style="padding:5px 8px;">TM-40E, TM-40F, TM-40L</td></tr>
+          <tr><td style="padding:5px 8px;">Army Communicator Spring 2024</td><td style="padding:5px 8px;">Spring 2024</td><td style="padding:5px 8px;">TM-40E, TM-40L</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Army Communicator January 2024 &mdash; ITN Suite</td><td style="padding:5px 8px;">Jan 2024</td><td style="padding:5px 8px;">TM-40E, TM-40C</td></tr>
+        </tbody>
+      </table>
+
+      <!-- From the Green Notebook -->
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:13px;letter-spacing:.05em;">FROM THE GREEN NOTEBOOK (3)</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">How To Be a Data Literate Leader &mdash; And Why It Matters</td><td style="padding:5px 8px;">Mar 2024</td><td style="padding:5px 8px;">All, TM-40K</td></tr>
+          <tr><td style="padding:5px 8px;">Harnessing the Power of Knowledge Management</td><td style="padding:5px 8px;">Apr 2024</td><td style="padding:5px 8px;">TM-40K, TM-40F</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Understanding Weapons of Math Destruction</td><td style="padding:5px 8px;">Jul 2024</td><td style="padding:5px 8px;">TM-40G, TM-40H, TM-40I</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Infantry Magazine -->
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:13px;letter-spacing:.05em;">INFANTRY MAGAZINE &mdash; Maneuver CoE (1)</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Moneyball for Gunnery &mdash; 1/4 ID BCT data analytics</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">TM-40C, TM-40G</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Small Wars Journal -->
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:13px;letter-spacing:.05em;">SMALL WARS JOURNAL (4)</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Data as Firepower: Data Superiority as a Warfighting Concept</td><td style="padding:5px 8px;">Aug 2025</td><td style="padding:5px 8px;">All</td></tr>
+          <tr><td style="padding:5px 8px;">Elevating Information: Why the Army Should Establish Information as a Core WfF</td><td style="padding:5px 8px;">Apr 2025</td><td style="padding:5px 8px;">TM-40A, TM-40F, TM-40K</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Accelerating Decision-Making: Integrating AI into the Modern Wargame</td><td style="padding:5px 8px;">Feb 2026</td><td style="padding:5px 8px;">TM-40G, TM-40H, TM-40F</td></tr>
+          <tr><td style="padding:5px 8px;">AI-Enabled Wargaming at CGSC</td><td style="padding:5px 8px;">Jan 2026</td><td style="padding:5px 8px;">TM-40G, TM-40H, TM-40F</td></tr>
+        </tbody>
+      </table>
+
+      <!-- War on the Rocks -->
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:13px;letter-spacing:.05em;">WAR ON THE ROCKS (1)</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">The U.S. Army, AI, and Mission Command</td><td style="padding:5px 8px;">Mar 2025</td><td style="padding:5px 8px;">TM-40F, TM-40H</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Modern War Institute -->
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:13px;letter-spacing:.05em;">MODERN WAR INSTITUTE &mdash; West Point (1)</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Leadership, Lethality, and Data Literacy</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">All</td></tr>
+        </tbody>
+      </table>
+
+      <!-- CALL -->
+      <h3 style="color:var(--navy);margin:16px 0 8px;font-size:13px;letter-spacing:.05em;">CALL &mdash; Center for Army Lessons Learned (1)</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
+        <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
+        <tbody>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">FY24 MCTP Key Observations</td><td style="padding:5px 8px;">Feb 2025</td><td style="padding:5px 8px;">All</td></tr>
+        </tbody>
+      </table>
+
+    </details>
+
     <div class="callout note mt-24">
       <div class="callout-label">NOT FINDING WHAT YOU NEED?</div>
       <div class="callout-body">
@@ -4335,15 +4709,20 @@
 
     <div class="section-header">
       <div class="section-badge">SCHEDULE</div>
-      <div class="section-title">Upcoming Training &mdash; TM-10 / TM-20 / TM-30</div>
-      <div class="section-subtitle">Foundation courses &bull; Contact POC to enroll</div>
+      <div class="section-title">FY27 Annual Training Calendar &mdash; TM-20 / TM-30 / BSP</div>
+      <div class="section-subtitle">Dual-team &bull; 4-week cycle &bull; 60 classes &bull; 5 locations &bull; ~450 personnel/year</div>
+    </div>
+
+    <div class="callout caution">
+      <div class="callout-label">SAMPLE SCHEDULE</div>
+      <div class="callout-body">This is a notional planning schedule for demonstration purposes. Dates, instructors, locations, and seat availability are not real. Actual class schedules will be published via official training channels.</div>
     </div>
 
     <iframe
       id="schedule-frame"
       src="training_schedule.html"
-      style="width:100%; height:860px; border:none; border-radius:3px;"
-      title="MSS Training Schedule"
+      style="width:100%; height:2000px; border:none; border-radius:3px;"
+      title="MSS-TRMS Training Schedule"
       loading="lazy">
     </iframe>
 

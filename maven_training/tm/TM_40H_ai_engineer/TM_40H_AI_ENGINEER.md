@@ -39,6 +39,8 @@ This manual provides technical instruction for AI engineers building AI-enabled 
 
 ### 1-2. Curriculum Position, Advanced Track, and WFF Context
 
+> **NOTE:** The Army established the **49B AI/ML Officer Career Path** in 2025–26, creating the first dedicated uniformed career track for AI/ML expertise. TM-40H directly aligns to 49B qualification requirements. AI Engineers completing this course and TM-50H (Advanced) are positioned for assignment to 49B-coded billets across the force.
+
 **Prerequisite:** TM-30 (Advanced Builder) is REQUIRED. No exception.
 
 **Advanced track:** Upon completing TM-40H, qualified AI Engineers should pursue **TM-50H (Advanced AI Engineer)** for advanced topics including multi-agent orchestration, fine-tuning integration, production AI system design, and AI governance leadership on MSS.
@@ -112,6 +114,9 @@ All AIP capabilities deployed to production must be authorized. Authorization is
 - **Army CIO Memorandum (April 2024):** Establishes Army AI use policy, responsible AI principles, and human-in-the-loop requirements. This memorandum is the primary policy authority for all AI development on Army systems.
 - **UDRA v1.1 (February 2025):** Unified Data Reference Architecture. Governs data product design, domain ownership, and federated governance. All AI pipelines that produce or consume data products must align to UDRA.
 - **CDA Portal (learn-data.armydev.com):** Army Command Data Architecture portal. Reference for authoritative data product registration, domain metadata, and data stewardship contacts.
+- **Army DIR 2024-03:** Digital Engineering Policy. Army-wide digital engineering adoption directive.
+- **FM 3-12:** Cyberspace Operations and Electromagnetic Warfare. Operational context for AI systems in Army networks.
+- **DA PAM 25-2-5:** Software Assurance. Software security and assurance standards.
 
 **Authorization tiers by use case:**
 
@@ -2035,6 +2040,20 @@ Track review dispositions over time. If rejection rate exceeds 15% over a 30-day
 
 ---
 
+## APPENDIX D — PROFESSIONAL READING LIST
+
+> Curated articles from Army professional journals and military publications. These supplement doctrinal references with contemporary operational perspectives.
+
+| Source | Title | Date | Relevance |
+|---|---|---|---|
+| Military Review | "The Military Needs Frontier Models" | Aug 2025 | Large-scale AI models for defense |
+| Parameters | "Responsibly Pursuing GenAI for the War Fighter" | Winter 2025-26 | Responsible GenAI adoption |
+| MIPB | "Using AI to Create Digital Enemy Commanders" | Jul-Dec 2025 | AI adversary simulation |
+| Military Review | "Transforming the Multidomain Battlefield with AI" | 2024 | AI object detection and predictive analysis |
+| Military Review | "The Coming Military AI Revolution" | May-Jun 2024 | Strategic AI transformation |
+
+---
+
 ## GLOSSARY
 
 **Agent (AIP Agent Studio)** — A conversational or autonomous AI system that combines an LLM with defined tools, memory, and instructions to respond to user queries or complete multi-step tasks.
@@ -2134,3 +2153,9 @@ Track review dispositions over time. If rejection rate exceeds 15% over a 30-day
 *2026*
 *Reference: Army CIO Memorandum (April 2, 2024); UDRA v1.1 (February 2025)*
 *Governance: USAREUR-AF C2DAO | CDA Portal: learn-data.armydev.com*
+
+**DoD and Army Strategic References:**
+
+- **DoD Responsible AI Strategy & Implementation Pathway (June 2024 update)** — DoD framework for responsible AI development, testing, and fielding
+- **DoD AI Cybersecurity Risk Management Guide (CDAO)** — Risk management guidance for AI systems in DoD environments
+- **DoD Directive 3000.09, Autonomy in Weapon Systems (January 2023 update)** — Policy on autonomous and semi-autonomous functions in weapon systems

@@ -13,7 +13,7 @@
 # PART A — TM-40A: INTELLIGENCE WFF
 
 **Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** G2/S2 background with MSS COP and AIP Logic experience; TM-40-level certification or C2DAO INT SME
-**Doctrinal references:** FM 2-0, ATP 2-01, ATP 3-60
+**Doctrinal references:** FM 2-0, ATP 2-01, FM 3-60
 
 ---
 
@@ -26,7 +26,7 @@
 
 **Key Delivery Notes:**
 - MSS role: integrates reporting feeds, displays COP overlays, enables PIR alert configuration. It does not produce assessed intelligence.
-- Doctrinal links: MSS COP supports IPB products (FM 2-0 Ch 2), collection management (ATP 2-01), and targeting (ATP 3-60).
+- Doctrinal links: MSS COP supports IPB products (FM 2-0 Ch 2), collection management (ATP 2-01), and targeting (FM 3-60).
 - Open with a question: "Who has seen a threat overlay on MSS that turned out to be stale?" This surfaces the data currency problem early.
 - Hard rule for the course: every intelligence product built this week must have a data-as-of timestamp and a source attribution label.
 
@@ -266,7 +266,7 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 # PART B — TM-40B: FIRES WFF
 
 **Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Fires/targeting background (FSO, FA officer, or targeting cell experience); TM-40-level certification or C2DAO Fires SME
-**Doctrinal references:** FM 3-09, ATP 3-09.42, ATP 3-60
+**Doctrinal references:** FM 3-09, ATP 3-09.42, FM 3-60
 
 ---
 
@@ -275,7 +275,7 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 
 **Purpose:** Establishes MSS's role in the D3A cycle before any tool work. A fires officer who treats MSS as a mapping tool will not configure it correctly. MSS is a targeting data integration and effects assessment platform.
 
-**TLO:** The trainee will describe how MSS supports FM 3-09 fires operations and ATP 3-60 targeting, and state the critical distinction between reported effects (what fires elements transmit) and assessed effects (targeting officer judgment).
+**TLO:** The trainee will describe how MSS supports FM 3-09 fires operations and FM 3-60 targeting, and state the critical distinction between reported effects (what fires elements transmit) and assessed effects (targeting officer judgment).
 
 **Key Delivery Notes:**
 - MSS role in fires: integrates FSCM data, tracks active target lists, displays BDA from fires elements. It does not replace the fires cell's judgment.
@@ -799,7 +799,7 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 # PART E — TM-40E: PROTECTION WFF
 
 **Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Force protection officer or CBRN background; TM-40-level certification or C2DAO Protection SME
-**Doctrinal references:** ADP 3-37, FM 3-37, ATP 3-37.2
+**Doctrinal references:** ADP 3-37, ATP 3-37.2
 
 ---
 

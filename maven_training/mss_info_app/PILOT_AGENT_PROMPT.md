@@ -242,10 +242,10 @@ All panels are `<div id="panel-{id}" class="panel">`. CSS: `.panel { display:non
 - PDF link card
 
 ### SPECIALIST TRACKS (panel: `specialists`)
-- `bluf` callout: explains WFF (A–F, TM-20 prereq) vs Technical (G–L, TM-30 prereq)
+- `bluf` callout: explains WFF (A–F, TM-30 prereq) vs Technical (G–L, TM-30 prereq)
 - **Role/MOS routing table**: role → recommended track → advanced track
   - Rows grouped by WFF / Technical with section dividers
-- **WFF Track cards grid** (TM-40A through TM-40F): each `.track-card` with navy header, gold left border, track title, audience, prereq chip "TM-20 Req.", PDF link
+- **WFF Track cards grid** (TM-40A through TM-40F): each `.track-card` with navy header, gold left border, track title, audience, prereq chip "TM-30 Req.", PDF link
 - **Technical Track cards grid** (TM-40G through TM-40L): same pattern, chip "TM-30 Req."
 - CTA button → navigate to `tm40` panel
 
@@ -455,12 +455,12 @@ document.getElementById('splash-enter').addEventListener('click', () => {
 
 | Code   | Track Name               | Prereq | Panel        |
 |--------|--------------------------|--------|--------------|
-| TM-40A | Intelligence WFF         | TM-20  | `specialists`|
-| TM-40B | Fires WFF                | TM-20  | `specialists`|
-| TM-40C | Movement & Maneuver WFF  | TM-20  | `specialists`|
-| TM-40D | Sustainment WFF          | TM-20  | `specialists`|
-| TM-40E | Protection WFF           | TM-20  | `specialists`|
-| TM-40F | Mission Command WFF      | TM-20  | `specialists`|
+| TM-40A | Intelligence WFF         | TM-30  | `specialists`|
+| TM-40B | Fires WFF                | TM-30  | `specialists`|
+| TM-40C | Movement & Maneuver WFF  | TM-30  | `specialists`|
+| TM-40D | Sustainment WFF          | TM-30  | `specialists`|
+| TM-40E | Protection WFF           | TM-30  | `specialists`|
+| TM-40F | Mission Command WFF      | TM-30  | `specialists`|
 | TM-40G | ORSA                     | TM-30  | `tm40`       |
 | TM-40H | AI Engineer              | TM-30  | `tm40`       |
 | TM-40I | ML Engineer              | TM-30  | `tm40`       |
@@ -493,7 +493,7 @@ TM_50K_KNOWLEDGE_MANAGER_ADVANCED.pdf  TM_50L_SOFTWARE_ENGINEER_ADVANCED.pdf
 SYLLABUS_TM10.pdf   SYLLABUS_TM20.pdf   SYLLABUS_TM30.pdf
 SYLLABUS_TM40A.pdf through SYLLABUS_TM40L.pdf
 SYLLABUS_TM50G.pdf through SYLLABUS_TM50L.pdf
-EXAM_TM10_PRE.pdf   EXAM_TM10_POST.pdf  (pattern repeats for all TM levels)
+EXAM_TM10_PRE.pdf   EXAM_TM10_SUPPLEMENTAL.pdf  (TM-10 has optional supplemental only; TM-20+ have PRE + POST pattern)
 DATA_LITERACY_technical_reference.pdf
 DATA_LITERACY_senior_leaders.pdf
 GLOSSARY_data_foundry.pdf

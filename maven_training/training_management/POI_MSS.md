@@ -8,7 +8,7 @@
 | **Proponent** | USAREUR-AF C2DAO |
 | **Effective Date** | March 2026 |
 | **Review Cycle** | Annual or upon major platform update |
-| **Authority** | USAREUR-AF G6/G9 Data Governance Directive |
+| **Authority** | C2DAO Data Governance Directive |
 | **Classification** | UNCLASSIFIED |
 
 ---
@@ -25,7 +25,7 @@ Defines course content, instructional methods, evaluation criteria, and resource
 
 ### 1-3. Scope
 
-This POI covers eighteen courses in five tiers:
+This POI covers eighteen courses in five tiers, plus the Builder Sprint (BSP) event program:
 
 | Tier | Courses | Notes |
 |---|---|---|
@@ -34,6 +34,7 @@ This POI covers eighteen courses in five tiers:
 | 3 — Advanced Builder | TM-30 | Data-adjacent specialists and unit data leads |
 | 4a — WFF Functional | TM-40A through TM-40F | Warfighting function staff; prereq TM-30 |
 | 4b — Specialist | TM-40G through TM-40L | Role-specific specialist training; prereq TM-30 |
+| — | Builder Sprint (BSP) | **Outside TM chain.** Quarterly applied build event; prereq TM-20 + validated project; no TM credit. See BSP-SOP-001. |
 
 ### 1-4. Prerequisite Chain
 
@@ -50,7 +51,28 @@ TM-10 (all personnel)
               └── TM-40L (Software Engineer)
 ```
 
-### 1-5. Training Environment
+### 1-5. Security Clearance Requirements
+
+All MSS training courses (TM-10 through TM-50) are conducted at the UNCLASSIFIED level. No security clearance is required for course enrollment or participation. Training materials are classified UNCLASSIFIED // CUI where indicated.
+
+> **NOTE:** Trainees who will apply MSS skills to classified data environments post-graduation must hold appropriate clearances per their unit's security manager. Clearance verification is the responsibility of the sponsoring unit, not the MSS training program.
+
+> **NOTE:** Practical exercises use synthetic data within the MSS Training Environment. Where exercise materials carry CUI markings, trainees and instructors will handle, store, and dispose of those materials IAW AR 25-22 (*The Army Privacy Program*) and DoDI 5200.48 (*Controlled Unclassified Information*). CUI-marked exercise materials will not be removed from the training environment or transmitted via unencrypted channels.
+
+### 1-6. Authoritative References
+
+| Publication | Title | Relevance |
+|---|---|---|
+| AR 350-1 | Army Training and Leader Development | Master regulation for Army training policy; governs all institutional training programs |
+| TR 350-70 | Army Learning Policy and Systems | TRADOC master regulation governing POI standards, course administration, and learning products |
+| TP 350-70-14 | Training Development in Institutional Domain | TRADOC pamphlet governing POI construction, course design, and instructional system development |
+| TP 350-70-7 | Army Educational Processes | TRADOC pamphlet governing curriculum development, assessment design, and evaluation methodology |
+| ADP 7-0 | Training | Army training doctrine; establishes principles for training management across the force |
+| FM 7-0 | Training | Unit training management procedures; provides commander guidance for planning, executing, and assessing training |
+
+> **NOTE:** TR 350-70 and TP 350-70-x publications are published by TRADOC at adminpubs.tradoc.army.mil, not DA APD.
+
+### 1-7. Training Environment
 
 All MSS training is conducted in the **MSS Training Environment** — a dedicated Foundry instance with synthetic operational data. No training is conducted in the production MSS environment. Trainees do not ingest, modify, or export production operational data during training.
 
@@ -74,8 +96,8 @@ All MSS training is conducted in the **MSS Training Environment** — a dedicate
 | TM-40G | ORSA Specialist | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
 | TM-40H | AI Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
 | TM-40I | ML Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
-| TM-40J | Program Manager | Specialist | 3 days | 24 | TM-10, TM-20, TM-30 (Required) |
-| TM-40K | Knowledge Manager | Specialist | 3 days | 24 | TM-10, TM-20, TM-30 (Required) |
+| TM-40J | Program Manager | Specialist | 4 days | 32 | TM-10, TM-20, TM-30 (Required) |
+| TM-40K | Knowledge Manager | Specialist | 4 days | 32 | TM-10, TM-20, TM-30 (Required) |
 | TM-40L | Software Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
 | TM-50G | Advanced ORSA | Advanced Specialist | 5 days | 40 | TM-40G (Required) |
 | TM-50H | Advanced AI Engineer | Advanced Specialist | 5 days | 40 | TM-40H (Required) |
@@ -112,6 +134,7 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 | REV | Review | Structured review of prior material; student Q&A focused |
 | EVAL | Evaluation | Practical exercise; graded; no instructor assistance permitted |
 | WKS | Workshop | Design workshop; student product reviewed by instructor/peers |
+| SPRINT | Builder Sprint | Self-directed applied build with SME consultation available; used exclusively in BSP events; no instructor delivery |
 
 ---
 

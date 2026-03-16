@@ -65,6 +65,7 @@ def html_file_to_pdf(
     header_html: str,
     footer_html: str,
     chrome_binary: str,
+    pdf_params: dict = None,
 ) -> bool:
     """
     Convert a local HTML file to a PDF using Chrome headless CDP.
@@ -126,24 +127,37 @@ def html_file_to_pdf(
                 time.sleep(0.4)
             time.sleep(0.5)  # let JS post-processing run
 
+            defaults = {
+                "landscape":           False,
+                "displayHeaderFooter": True,
+                "headerTemplate":      header_html,
+                "footerTemplate":      footer_html,
+                "printBackground":     True,
+                "scale":               1.0,
+                "paperWidth":          8.5,
+                "paperHeight":         11.0,
+                "marginTop":           0.72,
+                "marginBottom":        0.58,
+                "marginLeft":          0.85,
+                "marginRight":         0.85,
+                "transferMode":        "ReturnAsBase64",
+            }
+            if pdf_params:
+                _ALLOWED_PDF_KEYS = {
+                    "landscape", "displayHeaderFooter", "headerTemplate",
+                    "footerTemplate", "printBackground", "scale", "paperWidth",
+                    "paperHeight", "marginTop", "marginBottom", "marginLeft",
+                    "marginRight", "pageRanges", "preferCSSPageSize",
+                    "transferMode",
+                }
+                bad_keys = set(pdf_params) - _ALLOWED_PDF_KEYS
+                if bad_keys:
+                    raise ValueError(f"Unsupported PDF params: {bad_keys}")
+                defaults.update(pdf_params)
             result = _send(
                 ws,
                 "Page.printToPDF",
-                {
-                    "landscape":           False,
-                    "displayHeaderFooter": True,
-                    "headerTemplate":      header_html,
-                    "footerTemplate":      footer_html,
-                    "printBackground":     True,
-                    "scale":               1.0,
-                    "paperWidth":          8.5,
-                    "paperHeight":         11.0,
-                    "marginTop":           0.72,
-                    "marginBottom":        0.58,
-                    "marginLeft":          0.85,
-                    "marginRight":         0.85,
-                    "transferMode":        "ReturnAsBase64",
-                },
+                defaults,
                 cmd_id=6, session_id=sid, timeout=120,
             )
         finally:
@@ -152,8 +166,14 @@ def html_file_to_pdf(
         pdf_path.write_bytes(base64.b64decode(result["data"]))
         return True
     except Exception as exc:
+        import traceback
         print(f"      ERROR: {exc}")
+        traceback.print_exc()
         return False
     finally:
         proc.terminate()
-        proc.wait(timeout=5)
+        try:
+            proc.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            proc.kill()
+            proc.wait()

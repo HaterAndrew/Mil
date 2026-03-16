@@ -6,7 +6,7 @@
 | **Level** | TM-30 (Advanced Builder — data-adjacent specialists) |
 | **Duration** | 5 days (40 hours) |
 | **Prerequisite** | TM-10 and TM-20 complete (both Go evaluations on file) |
-| **Audience** | 17/25-series signal soldiers, S6/G6 staff, G2 intelligence analysts, G9 civil affairs specialists, operational data analysts |
+| **Audience** | 17/25-series signal soldiers, S6/G6 staff, G2 intelligence analysts, operational data analysts |
 | **Format** | Instructor-led lab + design workshop + practical exercise |
 | **Location** | MSS Training Environment |
 
@@ -89,7 +89,9 @@ Complete **7+ duty days before Day 1:**
 | 0800–0900 | — | Review | Day 2 questions; common pipeline errors from the lab |
 | 0900–1000 | 10 | Lecture | Ontology design methodology: domain analysis, entity identification, relationship mapping, Action design |
 | 1000–1015 | — | Break | |
-| 1015–1200 | 11 | Lab | Individual design exercise: translate a provided mission requirement to a documented Ontology schema (Object Types, Link Types, cardinality, Actions) |
+| 1015–1115 | 11a | Lab | Individual design exercise: translate a provided mission requirement to a documented Ontology schema (Object Types, Link Types, cardinality, Actions) — solo, no instructor guidance |
+| 1115–1130 | 11b | Peer check | Structured peer review: each trainee exchanges draft schema with a partner; partner scores against the 6-item rubric; identify any zero-score item and flag to instructor before proceeding. Trainees with a flagged zero-score item revise before Block 12 |
+| 1130–1200 | 11c | Lab | Revise and finalize schema based on peer feedback; annotate cardinality and property type choices in writing — these annotations are presented in Block 12 |
 | 1200–1300 | — | Lunch | |
 | 1300–1500 | 12 | Workshop | Design critique: each trainee presents schema; class critiques against the 6-item design rubric; instructor facilitates |
 | 1500–1515 | — | Break | |
@@ -110,7 +112,7 @@ Complete **7+ duty days before Day 1:**
 | 1200–1300 | — | Lunch | |
 | 1300–1430 | 16 | Lab | AIP Logic configuration: connecting triggers, inputs, outputs; human review queue design |
 | 1430–1445 | — | Break | |
-| 1445–1600 | 17 | Lab | Data lineage: reading a lineage graph; identifying upstream sources, transforms, and downstream consumers; using lineage to diagnose pipeline issues |
+| 1445–1600 | 17 | Lab | Data lineage diagnostic inject: trainees receive a provided pipeline with a deliberate silent fault (a type mismatch 3 transforms upstream causing a 0-row output). Using only the lineage graph — no error messages — trainees must: (1) trace the lineage to the source of the fault, (2) identify the transform where the type mismatch occurs, and (3) document the fix in writing before opening the transform node. Evaluator confirms diagnosis is correct before trainee clicks. |
 | 1600–1700 | 18 | Discuss | C2DAO production standards: what constitutes a production-ready data product; quality gates |
 
 **Evening reading:** TM-30, Chapters 5–7 (Contour, Quiver, Governance) — review what you covered; read governance chapter fully before Day 5.
@@ -155,12 +157,14 @@ Complete **7+ duty days before Day 1:**
 | 2 | Build a Pipeline Builder pipeline joining two provided datasets on `unit_id`; compute an overall readiness score per unit as a calculated column |
 | 3 | Configure pipeline output in Append mode; run it twice; verify two distinct snapshot records |
 | 4 | Build a multi-page Workshop application: Page 1 portfolio view (all units, status summary, conditional formatting); Page 2 unit detail linked from Page 1 via object selection |
-| 5 | Build a Contour workbook showing readiness by battalion with a calculated column for deviation from standard |
+| 5 | Build a Quiver dashboard with linked views: an Object selector (battalion) connected to a bar chart that filters by selection; confirm filter propagation by selecting a battalion and verifying the chart updates to display only that battalion's readiness data |
 | 6 | Submit pipeline and application through the C2DAO promotion workflow with a complete change description; respond to one round of evaluator feedback |
 
 **Evaluator criteria for Ontology design:** Reviewed against the 6-item design rubric. Go requires ≥75% score with no zero-score item.
 
-**Go standard:** All 6 tasks completed. Pipeline produces correct output with two verifiable snapshot records. Workshop navigation and conditional logic validated. Contour deviation column correct. Promotion request includes complete description and trainee responded to steward feedback.
+**Go standard:** All 6 tasks completed. Pipeline produces correct output with two verifiable snapshot records. Workshop navigation and conditional logic validated. Quiver linked-view filter propagation demonstrated (selecting a battalion filters the linked bar chart). Promotion request includes complete description and trainee responded to steward feedback.
+
+NOTE: Contour proficiency — Contour analysis (LO 5) is assessed through instructor observation during the Day 4 lab (Blocks 14–15). It is not a separate evaluated task in the practical exercise. Trainees who did not demonstrate Contour proficiency during Day 4 should complete the Contour self-study in TM-30, Chapter 5 before rescheduling.
 
 ---
 
@@ -192,7 +196,7 @@ Your design document is reviewed before you build — a fatally-flawed schema mu
 | **No-Go — design rubric score below threshold or zero-score item** | Redesign required. Review TM-30, Chapter 4 (Ontology design methodology). Re-evaluation scheduled through unit training coordinator; full Day 5 re-run required. |
 | **No-Go — pipeline produces incorrect output** | Review TM-30, Chapter 3 (multi-source joins and append mode). Re-evaluation required. |
 | **No-Go — Workshop navigation or conditional logic fails** | Review TM-30, Chapter 2 (advanced Workshop). Re-evaluation required. |
-| **No-Go — Quiver linked views not configured** | Review TM-30, Chapter 6 (Quiver linked views). This is the most common single-task failure — complete the Quiver self-study exercise in TM-30 before rescheduling. |
+| **No-Go — Quiver linked views not configured** | Review TM-30, Chapter 5 (Quiver linked views). This is the most common single-task failure — complete the Quiver self-study exercise in TM-30 before rescheduling. |
 | **No-Go — promotion description incomplete** | Review TM-30, Chapter 7. Same-day retry authorized at evaluator discretion for this item only. |
 
 Re-evaluation requires full repetition of the practical exercise (all tasks), not just the failed tasks. Schedule through unit training coordinator. TM-30 qualification cannot be self-certified.
@@ -207,7 +211,7 @@ Re-evaluation requires full repetition of the practical exercise (all tasks), no
 | Multi-source joins | Both datasets must be in the same Foundry project or cross-project referenced. A join on inaccessible data silently returns 0 rows. Check row counts after every join |
 | Append mode | Configure Append mode **before** the first run. Running once in Overwrite then switching gives you 3 records after two Append runs, not 2 |
 | Contour pivot tables | Different from Excel — read TM-30, Section 5-2 before the Contour lab |
-| Quiver linked views | **Most common practical exercise No-Go.** Filter links must be explicitly configured — selecting an object does NOT automatically filter another view. Complete the Quiver self-study in TM-30, Chapter 6 the evening before Day 5. Do not skip this. |
+| Quiver linked views | **Most common practical exercise No-Go.** Filter links must be explicitly configured — selecting an object does NOT automatically filter another view. Complete the Quiver self-study in TM-30, Chapter 5 the evening before Day 5. Do not skip this. |
 | AIP Logic scope | TM-30 covers configuration only — connecting triggers, inputs, outputs on existing workflows. If the scenario asks you to author a new AI model or write prompts, that is out of scope. Raise it immediately rather than attempting it. |
 | Promotion description | "Updated Workshop application" fails. "Changed unit filter to include inactive units per S3 requirement dated 10MAR26" passes |
 

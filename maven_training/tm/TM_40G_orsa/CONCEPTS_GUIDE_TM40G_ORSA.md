@@ -334,6 +334,15 @@ Before delivering any analytical product, confirm each item.
 
 **WFF awareness:** ORSA products serve all six Warfighting Functions. TM-40A (Intelligence), TM-40B (Fires), TM-40C (Movement and Maneuver), TM-40D (Sustainment), TM-40E (Protection), and TM-40F (Mission Command) personnel are the primary consumers of ORSA decision products. Apply the decomposition framework in Section 2 to every WFF tasker — the WFF function determines the decision, the information requirement, and the appropriate method.
 
+**ORSA-specific governing references:**
+
+| Publication | Title | Relevance |
+|---|---|---|
+| DA PAM 600-3 | Officer Professional Development | Defines FA 49 (ORSA) career progression and qualifications |
+| AR 5-11 | Management of Army M&S | M&S governance policy |
+| DA PAM 5-11 | VV&A of Army Models and Simulations | Model credibility and accreditation standards |
+| ATP 5-0.3 | Multi-Service TTP for Operation Assessment | Assessment methodology, MOE/MOP analytical frameworks |
+
 *This guide is a prerequisite companion to TM-40G. Proceed to TM-40G for task-based instruction in statistical modeling, time series analysis, simulation, optimization, and decision product delivery on MSS/Foundry.*
 
 ---
@@ -341,4 +350,4 @@ Before delivering any analytical product, confirm each item.
 **HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
 Wiesbaden, Germany | 2026
 
-DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
+DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.

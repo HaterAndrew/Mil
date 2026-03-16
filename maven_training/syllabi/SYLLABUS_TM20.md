@@ -100,7 +100,7 @@ Complete **5+ duty days before Day 1:**
 | 1515–1630 | 14 | Lab | Ontology Manager: create a Link Type — connecting two Object Types, cardinality, directionality |
 | 1630–1700 | 15 | Lab | Ontology practice: design a second Object Type from a provided scenario; verify naming compliance |
 
-**Evening reading:** TM-20, Chapter 3 (Ontology write step section); TM-20, Chapter 4 (Actions section); TM-20, Chapter 5 (Workshop — skim widget overview).
+**Evening reading:** TM-20, Chapter 3 (Ontology write step section); TM-20, Chapter 4 (Actions section); TM-20, Chapter 5 (Workshop — skim widget overview); TM-20, Chapter 8 (Builder Standards and Governance).
 
 ---
 
@@ -119,7 +119,7 @@ Complete **5+ duty days before Day 1:**
 | 1530–1545 | — | Break | |
 | 1545–1700 | 20 | Lab | Workshop: connecting an Action button — trigger, confirmation prompt, post-action refresh |
 
-**Evening reading:** TM-20, Chapter 6 (Publishing/Access); TM-20, Chapter 7 (Governance — branching and promotion).
+**Evening reading:** TM-20, Chapter 6 (Publishing/Access); TM-20, Chapter 7 (Governance — branching and promotion); TM-20, Chapter 9 (Troubleshooting and Common Errors).
 
 ---
 
@@ -145,9 +145,9 @@ Complete **5+ duty days before Day 1:**
 | Before Day 1 | TM-20, Ch 2 (Project Setup and Naming) |
 | Day 1 evening | TM-20, Ch 3 (Pipeline Builder — overview, filter, rename, cast) |
 | Day 2 evening | TM-20, Ch 3 (Pipeline — joins); TM-20, Ch 4 (Ontology — property types) |
-| Day 3 evening | TM-20, Ch 4 (Actions); TM-20, Ch 5 (Workshop overview) |
-| Day 4 evening | TM-20, Ch 6 (Publishing/Access); TM-20, Ch 7 (Governance/Branching) |
-| After training | TM-20, Chapters 5–7 — full reference read |
+| Day 3 evening | TM-20, Ch 4 (Actions); TM-20, Ch 5 (Workshop overview); TM-20, Ch 8 (Builder Standards and Governance) |
+| Day 4 evening | TM-20, Ch 6 (Publishing/Access); TM-20, Ch 7 (Governance/Branching); TM-20, Ch 9 (Troubleshooting and Common Errors) |
+| After training | TM-20, Chapters 5–9 — full reference read |
 
 ---
 

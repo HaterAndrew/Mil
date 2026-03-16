@@ -1,6 +1,6 @@
 # TM-40E — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-40E teaches Protection WFF practitioners — CBRN officers, AT officers, Military Police, ADA officers, and support engineers — how to use MSS in daily protection work. The focus is operational use of MSS to accomplish protection tasks aligned to ADP 3-37, FM 3-37, and subordinate doctrine. No coding, no pipeline development, no transform experience required.
+> **BLUF:** TM-40E teaches Protection WFF practitioners — CBRN officers, AT officers, Military Police, ADA officers, and support engineers — how to use MSS in daily protection work. The focus is operational use of MSS to accomplish protection tasks aligned to ADP 3-37 and subordinate doctrine. No coding, no pipeline development, no transform experience required.
 > **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; CONCEPTS_GUIDE_TM40E_PROTECTION (required before beginning this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -13,7 +13,7 @@
 
 ## CHAPTER 1 — OVERVIEW AND THE PROTECTION WARFIGHTING FUNCTION IN MSS
 
-**BLUF:** TM-40E teaches Protection WFF practitioners — CBRN officers, AT officers, Military Police, ADA officers, and support engineers — how to use MSS in daily protection work. The focus is operational use of MSS to accomplish protection tasks aligned to ADP 3-37, FM 3-37, and subordinate doctrine. No coding, no pipeline development, no transform experience required.
+**BLUF:** TM-40E teaches Protection WFF practitioners — CBRN officers, AT officers, Military Police, ADA officers, and support engineers — how to use MSS in daily protection work. The focus is operational use of MSS to accomplish protection tasks aligned to ADP 3-37 and subordinate doctrine. No coding, no pipeline development, no transform experience required.
 
 ### 1-1. Protection Doctrine and MSS
 
@@ -102,7 +102,7 @@ TM-40E aligns to multiple doctrinal publications. Table 1-4 provides a quick ref
 
 | Domain | Primary Reference | Key Paragraphs/Sections | MSS Chapter |
 |---|---|---|---|
-| Protection WFF Overview | ADP 3-37, FM 3-37 | ADP 3-37 Ch.1; FM 3-37 Ch.2 | 1 |
+| Protection WFF Overview | ADP 3-37 | ADP 3-37 Ch.1–2 | 1 |
 | Composite Risk Management | FM 5-19 | Para 1-2 (5-step process), Ch.2 (hazard assessment), Ch.4 (risk acceptance authority) | 2 |
 | CBRN Defense | FM 3-11, FM 3-11.9, ATP 3-11.32 | FM 3-11 Ch.3 (CBRN tasks); FM 3-11.9 (hazard prediction); ATP 3-11.32 (CBRN OPDS) | 3 |
 | NBC Reporting | FM 3-11, ATP 3-11.37 | FM 3-11 Ch.4 (CBRN reporting); NBC 1–6 formats | 3, Appendix B |
@@ -116,8 +116,20 @@ TM-40E aligns to multiple doctrinal publications. Table 1-4 provides a quick ref
 | Counter-UAS | ATP 3-01.81 | ATP 3-01.81 (C-UAS operations) | 7 |
 | Survivability Operations | ATP 3-37.34 | ATP 3-37.34 Ch.2 (survivability planning), Ch.3 (construction standards) | 8 |
 | Base Camp Design | ATP 3-37.10 | ATP 3-37.10 Ch.3 (force protection in base camp design) | 8 |
-| Echelon Operations | FM 3-37, ADP 3-90 | FM 3-37 Ch.4 (echelon protection tasks) | 9 |
+| Echelon Operations | ADP 3-37, ADP 3-90 | ADP 3-37 Ch.4 (echelon protection tasks) | 9 |
 | OPSEC | FM 3-13.3 | FM 3-13.3 Ch.2 (OPSEC process) | All |
+| Protection Program | AR 525-2 (Jun 2023) | Overarching protection regulation | All |
+| OPSEC Regulation | AR 530-1 (Sep 2014) | Primary OPSEC regulation | All |
+| OPSEC TTP | ATP 3-13.3 | OPSEC tactics, techniques, and procedures | All |
+| Cyberspace/EW | FM 3-12 | Cyber component of protection WFF | 7 |
+
+**Strategic Guidance:**
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| NATO Digital Transformation Implementation Strategy (Oct 2024) | NATO | MDO interoperability context — frames protection data sharing in coalition operations |
 
 ### 1-5. Scope: What TM-40E Covers and Does Not Cover
 
@@ -158,6 +170,25 @@ TM-40E aligns to multiple doctrinal publications. Table 1-4 provides a quick ref
 | 37F | PSYOP Specialist | MISO Team, PSYOP NCO | 4 |
 | 180A | SF Warrant Officer | 18-Series (base defense focus) | 4, 5, 8 |
 | 311A/311B | CI Warrant/Agent | COUNTERINT, CI Special Agent | 4 |
+
+### 1-7. Relationship to Other TMs in the MSS Curriculum
+
+**Table 1-4. TM Curriculum Relationships**
+
+| TM | Title | Relationship to TM-40E |
+|---|---|---|
+| TM-10 | Maven User | Foundation prerequisite. Platform navigation, basic data access. Required before this manual. |
+| TM-20 | Builder | Required as prerequisite (Go evaluation on file). Builder skills are not exercised in this track — TM-40E practitioners consume pre-built products. The TM-20 cert is part of the progression chain to TM-30. |
+| TM-30 | Advanced Builder | Required prerequisite (Go evaluation on file). Advanced builder skills are not exercised in this track — TM-40E practitioners consume pre-built products. TM-30 completion certifies platform literacy at the level required before WFF track enrollment. |
+| TM-40A | Intelligence | Companion. Threat data from Intel feeds AT risk assessments; protection posture feeds intelligence picture. |
+| TM-40B | Fires | Companion. AMD coordination (Ch. 6) requires fires WFF integration; C-UAS engagement data crosses both domains. |
+| TM-40C | Movement and Maneuver | Companion. Route security and convoy protection integrate protection and maneuver data; survivability positions support maneuver units. |
+| TM-40D | Sustainment | Complementary. CBRN decontamination requires sustainment coordination; force protection affects supply route security. |
+| TM-40E | Protection | This manual. |
+| TM-40F | Mission Command | Complementary. Protection picture feeds the COP (S3 product); FPCON and SIR data feeds commander CCIR monitoring. |
+| TM-50G–L | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq TM-40G–L). Not applicable to operational protection practitioners. |
+
+> **NOTE: TM-20 and TM-30 are required as prerequisites (Go evaluations on file) but builder skills are not exercised in this manual. TM-40E assumes no ability to build pipelines or transforms. If you encounter a protection data product that does not exist and needs to be built, coordinate with your unit's designated MSS Builder (TM-30 qualified) or the C2DAO.**
 
 ---
 
@@ -1711,6 +1742,18 @@ Complete the following in order. Note any data quality issue and assign correcti
 
 ---
 
+## APPENDIX I — PROFESSIONAL READING LIST
+
+> Curated articles from Army professional journals and military publications. These supplement doctrinal references with contemporary operational perspectives.
+
+| Source | Title | Date | Relevance |
+|---|---|---|---|
+| Military Review | "Exploring AI-Enhanced Cyber and Information Ops Integration" | Mar-Apr 2025 | AI in cyber defense |
+| Army Communicator | "Leading in Data Centricity, C2 Fix Best Practices" | Spring 2025 | Data-centric protection operations |
+| Military Review | "Advancing Counter-UAS Mission Command Systems" | May-Jun 2024 | C-UAS and data integration |
+
+---
+
 ## GLOSSARY
 
 **Air Defense Warning (ADW):** A DOD-standardized system for communicating air threat levels. Levels are WHITE (no attack imminent), YELLOW (attack probable), and RED (attack imminent or occurring). ADW status is tracked in the MSS AMD workspace.
@@ -1751,3 +1794,8 @@ Complete the following in order. Note any data quality issue and assign correcti
 
 *Next scheduled review: March 2027*
 *Submit corrections or recommendations to: USAREUR-AF C2DAO, Wiesbaden, Germany*
+
+**DoD and Army Strategic References:**
+
+- **JADC2 Strategy Summary (March 2022)** — Cross-domain data integration strategy for Joint All-Domain Command and Control
+- **DoD Directive 3000.09, Autonomy in Weapon Systems (January 2023 update)** — Policy on autonomous and semi-autonomous functions in weapon systems; context for force protection and C-UAS systems

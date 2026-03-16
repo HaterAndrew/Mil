@@ -22,6 +22,15 @@ Total lead time: **10–35 duty days before Day 1**, depending on access require
 
 ---
 
+## Authoritative References
+
+| Publication | Title | Relevance |
+|---|---|---|
+| AR 350-1 | Army Training and Leader Development | Master regulation for Army training policy; governs enrollment procedures and training records |
+| AR 350-10 | Management of Army Individual Training Requirements and Resources | Governs individual training seat management, resource allocation, and enrollment processes |
+
+---
+
 ## PHASE 1 — IDENTIFY TRAINING NEED
 
 **Who:** Unit Commander, Unit Training NCO/Officer, or individual
@@ -32,7 +41,7 @@ Total lead time: **10–35 duty days before Day 1**, depending on access require
 |---|---|
 | All newly assigned USAREUR-AF personnel | TM-10 (complete within 30 days of assignment) |
 | Personnel assigned to build/maintain data products | TM-20 (complete within 90 days of data assignment) |
-| Unit data leads, data-adjacent specialists (17/25-series, S6/G6, G2/G9) | TM-30 (complete within 90 days of data-lead assignment) |
+| Unit data leads, data-adjacent specialists (17/25-series, S6/G6, G2) | TM-30 (complete within 90 days of data-lead assignment) |
 | INT/FIRES/M2/SUST/PROT/MC functional staff | TM-40A through TM-40F (prereq: TM-30; 3 days each) |
 | ORSA analysts working on MSS | TM-40G |
 | AI engineers building AIP workflows | TM-40H |
@@ -256,5 +265,82 @@ A: Yes, if the minimum class size is met (see CAD Section 1-4). Submit a request
 
 ---
 
+## BUILDER SPRINT (BSP) ENROLLMENT
+
+The Builder Sprint is a separate quarterly event outside the TM-10 through TM-50 training chain. It has its own enrollment workflow. See BUILDER_SPRINT_SOP.md (BSP-SOP-001) for full procedures. Summary below.
+
+### BSP Enrollment Summary
+
+```
+1. IDENTIFY   → 2. BRIEF      → 3. SUBMIT    → 4. VALIDATE  → 5. PROVISION → 6. CONFIRM
+(Unit)           (Candidate)     (Unit TNG)     (C2DAO)        (MSS Admin)    (C2DAO)
+```
+
+**Key differences from TM course enrollment:**
+
+| TM Course Enrollment | BSP Enrollment |
+|---|---|
+| Prereq: varies by course | Prereq: TM-20 Go on file — no exceptions |
+| No project required | **Project Brief (CAD Appendix D) required** |
+| Seat confirmed on prereq verification | Seat confirmed only after Project Brief approval |
+| Access provisioned from standard access list | Sprint workspace provisioned per project list |
+
+**BSP-specific steps:**
+
+1. Candidate prepares Project Brief (CAD Appendix D) with supervisor signature
+2. Unit Training NCO/Officer submits: standard Enrollment Request + Project Brief + TM-20 Go record
+3. C2DAO reviews Project Brief within 5 duty days — approves, returns for revision, or denies
+4. Enrollment confirmed in writing upon Project Brief approval
+5. Sprint workspace provisioned T-10 days; access confirmed by candidate T-5 days
+
+**BSP does not grant TM credit.** Completion appears in training records as a separate event type, not as a TM course completion.
+
+**BSP waivers:**
+- TM-20 prereq waiver: Not granted
+- Project Brief waiver: Not granted
+- Late brief (after T-14 days): C2DAO discretion; never later than T-5 days
+
+---
+
+## TRAINING RECORDS REQUIREMENTS
+
+C2DAO maintains the authoritative training records system for MSS training. Unit Training NCOs/Officers maintain a local copy. This section defines the minimum data standard for any training record entry.
+
+### Minimum Required Fields — Per Trainee Record
+
+| Field | Format | Notes |
+|---|---|---|
+| Trainee last name, first name | String | As it appears on orders |
+| Rank | Standard Army abbreviation (SSG, CPT, etc.) | |
+| Unit of assignment | UIC + short name | Current unit at time of training |
+| MOS/AOC | Standard format (e.g., 17C, 25D, FA49) | |
+| NIPR email | DoD email address | Official contact for records |
+| Course completed | TM-10, TM-20, TM-30, TM-40X, TM-50X, or BSP | Exact identifier |
+| Result | Go / No-Go | |
+| Evaluation date | YYYY-MM-DD | Date of practical exercise completion |
+| Evaluator name and rank | String | Must match signature on completion certificate |
+| Completion certificate number | Per certificate format | Unique identifier for audit |
+| Prerequisites on file | Y/N per prereq | Verified at enrollment; confirm at record entry |
+| Notes | Free text | No-Go remediation status, waivers, special circumstances |
+
+### Record Retention
+
+- **Individual Training Record (CAD Appendix B):** Completed by evaluator at time of evaluation. Original retained by C2DAO. Copy filed by unit Training NCO/Officer. Trainee retains completion certificate.
+- **Unit Training Status Matrix:** Maintained by C2DAO. Updated within 2 duty days of any evaluation result. Contains current Go status per trainee per course for all enrolled units.
+- **Retention period:** 3 years minimum, or through PCS cycle plus 1 year — whichever is longer. Records must be transferable to gaining unit upon PCS.
+
+### What Is NOT an Acceptable Training Record
+
+- Email confirmation of course attendance without an evaluator signature
+- Verbal attestation by supervisor that training was completed
+- Certificate from a non-C2DAO training event or commercial Palantir training (does not count toward MSS program completion)
+- Completion of a prior-version course (e.g., pre-v2.0 ORSA course, now designated TM-40G) without a re-evaluation on the current curriculum
+
+### Querying Training Records
+
+Unit Training NCOs/Officers may request a unit training status extract from C2DAO Training POC at any time. Standard format: unit name or UIC + requested course level. Response within 3 duty days. For deployments or time-sensitive situations, request via official messaging with URGENT flag for same-day response.
+
+---
+
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*Enrollment SOP | Version 1.0 | March 2026*
+*Enrollment SOP | Version 2.0 | March 2026*

@@ -30,7 +30,7 @@ Full curriculum index: [maven_training/README.md](maven_training/README.md)
 |---|---|
 | All personnel | TM-10 → TM-20 |
 | WFF functional staff (INT/FIRES/M2/SUST/PROT/MC) | TM-40A–F (after TM-30) |
-| Data-adjacent specialists (17/25-series, S6/G6, G2/G9) | TM-30 → TM-40G–L |
+| Data-adjacent specialists (17/25-series, S6/G6, G2) | TM-30 → TM-40G–L |
 | Technical specialists (engineers, analysts, data pros) | TM-30 → TM-40G–L → TM-50G–L |
 | Senior leaders (O-5+, CSM+, senior civilians) | Data Literacy for Senior Leaders |
 

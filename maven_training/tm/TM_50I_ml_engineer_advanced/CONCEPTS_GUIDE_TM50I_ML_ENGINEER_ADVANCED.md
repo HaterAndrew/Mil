@@ -231,7 +231,7 @@ If the answer is no, the tracking system is not serving its purpose. In USAREUR-
 
 ## SECTION 7 — MODEL GOVERNANCE AT PORTFOLIO SCALE
 
-**BLUF:** A model registry is governance infrastructure, not just a version control system. At portfolio scale, the registry is how USAREUR-AF G6/Data maintains accountability for every ML capability on MSS.
+**BLUF:** A model registry is governance infrastructure, not just a version control system. At portfolio scale, the registry is how C2DAO maintains accountability for every ML capability on MSS.
 
 ### 7-1. The Registry as Source of Truth
 
@@ -360,4 +360,4 @@ The ML systems built at TM-50I level inform readiness decisions for V Corps form
 
 *CONCEPTS GUIDE — TM-50I COMPANION // ADVANCED MACHINE LEARNING ENGINEER // UNCLASSIFIED*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA // WIESBADEN, GERMANY // 2026*
-*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*

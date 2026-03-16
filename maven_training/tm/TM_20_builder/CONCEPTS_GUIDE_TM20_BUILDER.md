@@ -722,4 +722,4 @@ If any answer requires looking it up, re-read the relevant section before procee
 
 *CONCEPTS GUIDE — TM-20 COMPANION, BUILDER, MAVEN SMART SYSTEM (MSS)*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026*
-*Distribution restriction: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*Distribution restriction: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*

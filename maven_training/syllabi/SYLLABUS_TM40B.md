@@ -12,7 +12,7 @@
 
 ---
 
-**BLUF:** TM-40B teaches fires staff to integrate MSS into fires and targeting workflows — configuring FSCMs on the COP, managing targeting data, building effects assessment dashboards, and supporting BDA workflows. Course applies MSS capabilities to processes in FM 3-09, ATP 3-09.42, and ATP 3-60. No coding or pipeline experience required.
+**BLUF:** TM-40B teaches fires staff to integrate MSS into fires and targeting workflows — configuring FSCMs on the COP, managing targeting data, building effects assessment dashboards, and supporting BDA workflows. Course applies MSS capabilities to processes in FM 3-09, ATP 3-09.42, and FM 3-60. No coding or pipeline experience required.
 
 ---
 
@@ -48,7 +48,7 @@ Complete **5+ duty days before Day 1:**
 
 | Time | Block | Method | Content |
 |---|---|---|---|
-| 0800–0900 | 1 | Brief | Doctrinal context: FM 3-09, ATP 3-60; how MSS supports fires and targeting; role of the fires COP in targeting board preparation |
+| 0800–0900 | 1 | Brief | Doctrinal context: FM 3-09, FM 3-60; how MSS supports fires and targeting; role of the fires COP in targeting board preparation |
 | 0900–1100 | 2 | Demo/Lab | Fires COP configuration: FSCM overlays, target list layers, data sources; display standards by echelon |
 | 1100–1115 | — | Break | |
 | 1115–1200 | 3 | Lab | Data currency verification: reading FSCM update timestamps, tracing BDA reporting sources, identifying stale feeds |
@@ -129,6 +129,14 @@ Complete **5+ duty days before Day 1:**
 | Data staleness inject | Characterize which BDA elements are affected vs. current, then brief the targeting board on what they will/will not receive. Attempting to restore the feed instead of characterizing will miss the intent |
 | Data-as-of timestamps | Must appear on the targeting product. A product without visible timestamps on the target list and BDA sections fails Task 2 |
 
+### Function-Specific Go Criteria — Fires
+
+| Criterion | Standard |
+|---|---|
+| FSCM display | FSCMs must be displayed as distinct layers from target data — a COP where FSCMs and target locations use the same layer fails this element |
+| BDA reporting distinction | Effects assessment dashboard must explicitly separate "reported effects" (source attribution required) from "assessed effects" (analytical judgment, not raw data) — a single effects column fails |
+| Fires CCIR thresholds | CCIRs configured on target status must reference the fires tracking object (confirmed target, suspected target, or specific munitions count) — generic "readiness below X%" CCIRs are not fires CCIRs |
+
 ---
 
 ## Key Tips
@@ -138,6 +146,7 @@ Complete **5+ duty days before Day 1:**
 | FSCM layers | FSCMs displayed but not linked to an authoritative data source fail the data currency check — know how to connect a layer to a source before Day 1 |
 | Confirmed/suspected distinction | Every target must have a coded status AND source attribution entry. Bring your unit's target list format as a reference |
 | BDA data staleness inject | The targeting board cannot wait for feed recovery — the FSE must tell the board exactly which targets have current BDA and which do not. Practice characterizing the gap out loud before you arrive |
+| CCIR troubleshooting | Fires CCIRs most commonly fail because the alert is tied to the wrong object type — attaching a munitions CCIR to a personnel readiness feed produces no triggers. Verify the CCIR's data source is the fires tracking dataset, not the unit readiness dataset |
 
 ---
 

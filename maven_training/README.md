@@ -6,7 +6,7 @@ HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA
 Wiesbaden, Germany
 ```
 
-**Distribution:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
+**Distribution:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.
 
 ---
 
@@ -22,7 +22,7 @@ Wiesbaden, Germany
 |-------|-------------|------------|
 | All personnel | Soldier, officer, or civilian accessing MSS for data consumption | TM-10 |
 | All staff (light builders) | Building dashboards, forms, or basic pipelines | TM-20 (prereq: TM-10) |
-| Data-adjacent specialists | 17/25-series, S6/G6, G2/G9, operational data analysts | TM-30 (prereq: TM-20) |
+| Data-adjacent specialists | 17/25-series, S6/G6, G2, operational data analysts | TM-30 (prereq: TM-20) |
 | WFF functional staff | Assigned to INT, FIRES, M2, SUST, PROTECTION, or MC | TM-40A–F (prereq: TM-30) |
 | Technical specialists | Writing code, building external apps, ML models | TM-40G–L (prereq: TM-30) |
 | Senior leaders (O-5+, CSM+) | Commanding or directing a data-capable formation | Data Literacy for Senior Leaders |
@@ -43,17 +43,21 @@ All Personnel ──────────────────────
                                                 │
                                                 ▼
 All Staff ───────────────────────────────► TM-20 (Builder)
-                                                │
-                                                ▼
-All proceeding to TM-40 ────────────────► TM-30 (Advanced Builder)
-                                           │            │
-                              ┌────────────┘            └────────────┐
-                              ▼                                      ▼
-                   WFF Staff (TM-40A–F)              Technical Specialists (TM-40G–L)
-                   TM-40A  Intelligence               TM-40G  ORSA
-                   TM-40B  Fires                      TM-40H  AI Engineer
-                   TM-40C  Movement/Maneuver          TM-40I  ML Engineer
-                   TM-40D  Sustainment                TM-40J  Program Manager
+                                           │         │
+                                           │         └──► Builder Sprint (BSP) ──────────┐
+                                           │              Quarterly. Prereq: TM-20.       │
+                                           │              Bring a real problem. Build it. │
+                                           │              Outside TM chain; no TM credit. │
+                                           ▼                                              │
+All proceeding to TM-40 ────────────────► TM-30 (Advanced Builder)                       │
+                                           │            │                                 │
+                              ┌────────────┘            └────────────┐                   │
+                              ▼                                      ▼                   │
+                   WFF Staff (TM-40A–F)              Technical Specialists (TM-40G–L) ◄──┘
+                   TM-40A  Intelligence               TM-40G  ORSA           (TM-40 requires
+                   TM-40B  Fires                      TM-40H  AI Engineer     TM-30; BSP
+                   TM-40C  Movement/Maneuver          TM-40I  ML Engineer     does not satisfy
+                   TM-40D  Sustainment                TM-40J  Program Manager this prereq)
                    TM-40E  Protection                 TM-40K  Knowledge Manager
                    TM-40F  Mission Command            TM-40L  Software Engineer
                                                             │
@@ -160,7 +164,7 @@ Competencies: CAC-based login; platform navigation; Workshop application use; au
 Competencies: Foundry project creation via Compass UI; Pipeline Builder visual ETL; Ontology Manager Object Types and Link Types via UI; Action Editor; Workshop application build and publish; project permissions management; Foundry branching via UI; USAREUR-AF naming conventions.
 
 ### TM-30 — Advanced Builder
-**Audience:** Data-adjacent specialists (17/25-series, S6/G6, G2/G9). **Prereq:** TM-10, TM-20.
+**Audience:** Data-adjacent specialists (17/25-series, S6/G6, G2). **Prereq:** TM-10, TM-20.
 
 Competencies: Multi-page Workshop with conditional logic and variable passing; advanced Pipeline Builder multi-source joins and aggregations; Ontology design (Object Types, Link Types, Actions) via UI; advanced Contour/Quiver; AIP Logic workflow configuration (not authoring); data lineage review; governance workflows; branching and production promotion; C2DAO governance standards.
 
@@ -241,7 +245,7 @@ Distribute to each trainee at course start.
 | TM-40K | [syllabi/SYLLABUS_TM40K.md](syllabi/SYLLABUS_TM40K.md) | KMOs, 37F |
 | TM-40L | [syllabi/SYLLABUS_TM40L.md](syllabi/SYLLABUS_TM40L.md) | SWEs |
 
-> **Note:** TM-50 series syllabi not yet published. TM-50 instruction is managed through the MTP. Contact training management for scheduling.
+> **Note:** TM-50G–L series syllabi are published. TM-50A–F do not exist (WFF tracks are terminal — no advanced continuation). Advanced training is available only for specialist tracks (G–L). Contact training management for scheduling.
 
 ---
 
@@ -302,7 +306,7 @@ Distribute to each trainee at course start.
 | G2/S2 analyst | TM-40G (ORSA) or TM-40K (KM) |
 | G6/S6 data officer | TM-40L (SWE) or TM-40H (AI Eng) |
 | G8/S8 resource manager | TM-40J (PM) |
-| G9/Civil Affairs | TM-40J (PM) or TM-40K (KM) |
+| Civil Affairs | TM-40J (PM) or TM-40K (KM) |
 | Data scientist (GS/contractor) | TM-40G (ORSA) or TM-40I (MLE) |
 | AI/ML engineer (GS/contractor) | TM-40H (AI Eng) or TM-40I (MLE) |
 | KMO / Knowledge Officer | TM-40K (KM) |

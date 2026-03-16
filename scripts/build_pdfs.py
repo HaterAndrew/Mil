@@ -170,6 +170,7 @@ PUB_TYPES = {
     # ── Management / planning docs (MGMT_ prefix) ─────────────────────────────
     "MGMT_CG":           ("SENIOR LEADER GUIDANCE",              "ODT-CG"),
     "MGMT_ENTERPRISE":   ("ENTERPRISE PLAN",                     "ODT-ENT"),
+    "ATIS_COURSE":       ("ATIS COURSE REGISTRATION PACKET",     "ATIS-MSS"),
     # ── Quick reference cards (REF_ prefix) ───────────────────────────────────
     "REF_":              ("QUICK REFERENCE",                     "ODT-REF"),
     "EX_10":             ("PRACTICAL EXERCISE",                  "EX-10"),
@@ -498,6 +499,8 @@ MD_TARGETS = [
     ("maven_training/training_management/COMMANDERS_GUIDE_MSS_TRAINING.md",            "COMMANDERS_GUIDE_MSS_TRAINING"),
     ("maven_training/training_management/INSTRUCTOR_OVERVIEW.md",                      "INSTRUCTOR_OVERVIEW"),
     ("maven_training/training_management/BUILDER_SPRINT_SOP.md",                       "BUILDER_SPRINT_SOP"),
+    # ── ATIS registration packet ─────────────────────────────────────────────
+    ("maven_training/atis/ATIS_COURSE_PACKET.md",                                    "ATIS_COURSE_PACKET"),
     # ── Builder Sprint (BSP) ──────────────────────────────────────────────────
     ("maven_training/builder_sprint/BSP_GUIDE.md",                                     "BSP_GUIDE"),
     ("maven_training/builder_sprint/SPRINT_PACKAGE.md",                                "BSP_SPRINT_PACKAGE"),
@@ -558,7 +561,7 @@ MD_TARGETS = [
     ("maven_training/exercises/EX-50L_software_engineer/EXERCISE.md",                  "EX_50L_SOFTWARE_ENGINEER"),
     # ── Assessments (pre/post exams) ──────────────────────────────────────────
     ("maven_training/exercises/exams/EXAM_TM10_PRE.md",                                "EXAM_TM10_PRE"),
-    ("maven_training/exercises/exams/EXAM_TM10_POST.md",                               "EXAM_TM10_POST"),
+    ("maven_training/exercises/exams/EXAM_TM10_SUPPLEMENTAL.md",                       "EXAM_TM10_SUPPLEMENTAL"),
     ("maven_training/exercises/exams/EXAM_TM20_PRE.md",                                "EXAM_TM20_PRE"),
     ("maven_training/exercises/exams/EXAM_TM20_POST.md",                               "EXAM_TM20_POST"),
     ("maven_training/exercises/exams/EXAM_TM30_PRE.md",                                "EXAM_TM30_PRE"),

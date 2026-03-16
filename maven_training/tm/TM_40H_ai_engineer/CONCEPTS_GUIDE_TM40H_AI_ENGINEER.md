@@ -405,6 +405,16 @@ If any answer requires looking it up, re-read the relevant section before procee
 
 ---
 
+## GOVERNING REFERENCES (ADDITIONAL)
+
+| Document | Relevance |
+|---|---|
+| Army DIR 2024-03 | Digital Engineering Policy — Army-wide digital engineering adoption directive |
+| FM 3-12 | Cyberspace Operations and Electromagnetic Warfare — operational context for AI systems in Army networks |
+| DA PAM 25-2-5 | Software Assurance — software security and assurance standards |
+
+---
+
 ## CURRICULUM NOTES
 
 **Prerequisite:** TM-30 (Advanced Builder) is REQUIRED before beginning TM-40H or this guide.
@@ -420,4 +430,4 @@ If any answer requires looking it up, re-read the relevant section before procee
 
 *CONCEPTS GUIDE — TM-40H COMPANION, AI ENGINEER, MAVEN SMART SYSTEM (MSS)*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026*
-*Distribution restriction: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*Distribution restriction: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*

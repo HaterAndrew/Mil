@@ -243,8 +243,8 @@ def slide_first_principles(slide):
     """Slide 1: FIRST PRINCIPLES — 2-col layout."""
     mid = X0 + CW / 2
 
-    # Left panel: WHY THE ARMY EXISTS
-    panel(slide, X0, Y0, CW/2 - 0.08, CH - 0.28,
+    # Left panel: WHY THE ARMY EXISTS — height capped above italic citation
+    panel(slide, X0, Y0, CW/2 - 0.08, CH - 0.64,
           "WHY THE ARMY EXISTS",
           ["The Army exists to fight and win the Nation's wars by providing prompt, "
            "sustained land dominance across the full range of military operations.",
@@ -256,12 +256,12 @@ def slide_first_principles(slide):
            "▸  Conduct sustained operations across all domains",
            "▸  Integrate with joint and multinational partners"],
           header_fill=NAVY, title_color=WHITE, title_size=9)
-    tb(slide, X0 + 0.08, Y0 + CH - 0.30, CW/2 - 0.20, 0.22,
+    tb(slide, X0 + 0.08, Y0 + CH - 0.58, CW/2 - 0.20, 0.22,
        "Title 10, U.S. Code  ·  ADP 1",
        font_size=7.5, color=NAVY_MID, italic=True)
 
     # Right panel: WHY A STAFF EXISTS
-    panel(slide, mid + 0.08, Y0, CW/2 - 0.08, CH - 0.28,
+    panel(slide, mid + 0.08, Y0, CW/2 - 0.08, CH - 0.56,
           "WHY A STAFF EXISTS",
           ["A staff exists for one reason: to help the commander make and execute decisions.",
            "",
@@ -273,7 +273,7 @@ def slide_first_principles(slide):
            "▸  Synchronizing execution of orders",
            "▸  Assessing whether operations achieve objectives"],
           header_fill=TEAL, title_color=WHITE, title_size=9)
-    tb(slide, mid + 0.16, Y0 + CH - 0.30, CW/2 - 0.20, 0.22,
+    tb(slide, mid + 0.16, Y0 + CH - 0.58, CW/2 - 0.20, 0.22,
        "Every role in the data space serves this chain.",
        font_size=8, color=TEAL, bold=True, italic=True)
 
@@ -305,11 +305,12 @@ def slide_operational_environment(slide):
          "Terrain · Weather · Weapons · Infrastructure",
          BLUE),
     ]
-    col_h = CH - 0.72 - 0.28  # leave room for intro + quote bar
+    col_h = CH - 0.72 - 0.58  # leave room for intro + quote bar + footer
+    panel_h = col_h - 0.28     # panel body stops above footer text
 
     for i, (title, body, footer, color) in enumerate(dims):
         cx = X0 + i * (cw3 + 0.02)
-        panel(slide, cx, Y0 + 0.28, cw3, col_h,
+        panel(slide, cx, Y0 + 0.28, cw3, panel_h,
               title, body,
               header_fill=color, title_color=WHITE, body_size=8.5)
         tb(slide, cx + 0.08, Y0 + 0.28 + col_h - 0.24, cw3 - 0.16, 0.22,
@@ -665,7 +666,7 @@ def slide_what_is_foundry(slide):
     ]
 
     qw = CW / 2 - 0.08
-    qh = (CH - 0.32) / 2 - 0.08
+    qh = (CH - 0.32) / 2 - 0.24   # shortened so bottom row stays above footer at y=6.96
 
     positions = [
         (X0,            Y0 + 0.30),

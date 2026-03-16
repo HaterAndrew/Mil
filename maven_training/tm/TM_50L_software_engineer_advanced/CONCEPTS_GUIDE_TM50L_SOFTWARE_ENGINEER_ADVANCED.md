@@ -480,4 +480,4 @@ The TM-50L lead does not reject the PR. They document each finding with its oper
 *USAREUR-AF Operational Data Team — MSS Platform Engineering | Version 1.0 — 2026*
 
 *UNCLASSIFIED*
-*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*

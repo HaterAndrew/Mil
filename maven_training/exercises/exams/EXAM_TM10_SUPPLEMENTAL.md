@@ -1,20 +1,22 @@
-# POST-TEST — TM-10: MAVEN USER
+# SUPPLEMENTAL KNOWLEDGE CHECK — TM-10: MAVEN USER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
 | **Course** | TM-10: Maven User |
-| **Form** | Post-Test |
+| **Form** | Supplemental Knowledge Check (Optional) |
 | **Level** | TM-10 (Foundational) |
 | **Audience** | All personnel — all MOS/branches, officer and enlisted |
 | **Time Allowed** | 45 minutes |
-| **Passing Score** | 70% (42/60) |
+| **Passing Score** | N/A — supplemental only |
+
+NOTE: This is an optional supplemental quiz for units that want additional knowledge reinforcement beyond the practical exercise (EX-10). **The TM-10 evaluation of record is the practical exercise (Go/No-Go), not this quiz.** Units may administer this quiz at their discretion for self-assessment or remedial training purposes. It does not affect TM-10 course completion status.
 
 ---
 
 ## INSTRUCTIONS
 
-This assessment evaluates mastery of course learning objectives. A passing score of 70% is required to receive credit. Complete independently without reference to training materials.
+This optional knowledge check covers TM-10 course content. It is not required for course completion. Answer independently without reference to training materials.
 
 ---
 
@@ -193,7 +195,7 @@ D. Remove all personally identifiable information before exporting any dataset
 | Short Answer | 5 | 6 | 30 |
 | **Total** | — | — | **60** |
 
-Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
+Scoring: N/A — Supplemental knowledge check. TM-10 evaluation of record is the practical exercise (EX-10).
 
 ---
 
@@ -233,4 +235,4 @@ SA-5. Full credit requires two issues with resolutions: (1) Incorrect PIV PIN �
 ---
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*TM-10 Post-Test | Version 1.0 | March 2026*
+*TM-10 Supplemental Knowledge Check | Version 1.1 | March 2026*

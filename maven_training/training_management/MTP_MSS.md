@@ -6,7 +6,7 @@ Wiesbaden, Germany | 2026
 
 **AUTHORITY:** Issued under authority of USAREUR-AF C2DAO; implements USAREUR-AF Command Training Guidance. Provides planning and evaluation guidance for commanders and training managers responsible for MSS training across the formation.
 
-**DISTRIBUTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
+**DISTRIBUTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.
 
 ---
 
@@ -44,8 +44,8 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | TM-40G | ORSA | ORSA analysts | 5 | TM-30 (Required) + quant background |
 | TM-40H | AI Engineer | AI/ML specialists | 5 | TM-30 (Required) + coding background |
 | TM-40I | ML Engineer | MLEs | 5 | TM-30 (Required) + coding background |
-| TM-40J | Program Manager | PMs, G8/S8 | 3 | TM-30 (Required) |
-| TM-40K | Knowledge Manager | KMOs, 37F | 3 | TM-30 (Required) |
+| TM-40J | Program Manager | PMs, G8/S8 | 4 | TM-30 (Required) |
+| TM-40K | Knowledge Manager | KMOs, 37F | 4 | TM-30 (Required) |
 | TM-40L | Software Engineer | SWEs | 5 | TM-30 (Required) + coding background |
 | TM-50G | Advanced ORSA | Senior ORSA analysts | 5 | TM-40G (Required) |
 | TM-50H | Advanced AI Engineer | Senior AI engineers | 5 | TM-40H (Required) |
@@ -57,6 +57,21 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 > **NOTE:** TM-40A–F (WFF functional tracks) require TM-10, TM-20, and TM-30 as hard prerequisites. TM-40G–L (specialist tracks) also require TM-30 as a hard prerequisite. TM-50G–L (advanced specialist tracks) require the corresponding TM-40G–L. There are NO TM-50A–F tracks.
 
 > **NOTE:** "Training days" reflects initial qualification training with instructor support. Self-paced completion may require more time. Refresher/sustainment training is shorter — see Section 11.
+
+> **BUILDER SPRINT (BSP):** A quarterly 5-day applied build event that operates **outside** the TM-10 through TM-50 training chain. Prereq: TM-20 Go on file + command-validated project. Does not grant TM-30 credit. Does not unlock TM-40 enrollment. Governed by BSP-SOP-001 (training_management/BUILDER_SPRINT_SOP.md). Appears in training records as a separate event type, not as a TM course completion.
+
+---
+
+## Authoritative References
+
+| Publication | Title | Relevance |
+|---|---|---|
+| AR 350-1 | Army Training and Leader Development | Master regulation for Army training policy; governs all institutional training programs |
+| TR 350-70 | Army Learning Policy and Systems | TRADOC master regulation governing training program design, course administration, and learning products |
+| ADP 7-0 | Training | Army training doctrine; establishes principles for training management across the force |
+| FM 7-0 | Training | Unit training management procedures; provides commander guidance for planning, executing, and assessing training |
+
+> **NOTE:** TR 350-70 is published by TRADOC at adminpubs.tradoc.army.mil, not DA APD.
 
 ---
 
@@ -322,61 +337,144 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | 8 | 1530–1600 | Classification markings and export procedures | Lecture/scenario |
 | 9 | 1600–1700 | Practical exercise (all tasks) | Evaluation |
 
-### 5-2. TM-20 — 2 Training Days (16 hours)
+### 5-2. TM-20 — 5 Training Days (40 hours)
 
-**Day 1 — Project and Pipeline Fundamentals**
-
-| Block | Time | Content | Method |
-|---|---|---|---|
-| 1 | 0800–0900 | TM-20 overview; Foundry project structure and naming conventions | Lecture |
-| 2 | 0900–1100 | Project creation: naming, markings, folder structure | Instructor-led lab |
-| 3 | 1100–1200 | Pipeline Builder: single-source ingestion and transformation | Instructor-led lab |
-| — | 1200–1300 | Lunch | — |
-| 4 | 1300–1500 | Pipeline Builder: filters, calculated columns, rename, output | Guided practice |
-| 5 | 1500–1700 | Ontology Manager: Object Types, Link Types, basic Actions | Instructor-led lab |
-
-**Day 2 — Workshop and Governance**
+**Day 1 — Project Fundamentals and File Ingestion**
 
 | Block | Time | Content | Method |
 |---|---|---|---|
-| 6 | 0800–1000 | Workshop: building applications (table, filter, metric widgets) | Instructor-led lab |
-| 7 | 1000–1100 | Workshop: publishing, access control, viewer vs. editor | Instructor-led lab |
-| 8 | 1100–1200 | Workshop: Action buttons in applications | Guided practice |
+| — | 0800–0830 | TM-20 overview; what trainees will build by Day 5; course standards and Go criteria | Brief |
+| 1 | 0830–1000 | Project creation: naming conventions, classification markings, folder structure | Instructor-led lab |
+| — | 1000–1015 | Break | — |
+| 2 | 1015–1100 | File ingestion: upload a CSV; inspect schema, types, and row count | Instructor-led lab |
+| 3 | 1100–1200 | Dataset explorer: column profiling, null detection, type mismatches | Instructor-led lab |
 | — | 1200–1300 | Lunch | — |
-| 9 | 1300–1400 | Foundry branching: create, modify, submit for promotion | Instructor-led lab |
-| 10 | 1400–1500 | Naming conventions, data stewardship, C2DAO standards review | Lecture/discussion |
-| 11 | 1500–1700 | Practical exercise (all TM-20 tasks) | Evaluation |
+| 4 | 1300–1500 | Pipeline Builder orientation: canvas layout, step library, input/output dataset config | Instructor-led lab |
+| 5 | 1500–1530 | C2DAO naming conventions: datasets, pipelines, Object Types | Lecture/discussion |
+| 6 | 1530–1700 | Individual practice: create a second project, ingest a provided dataset, confirm naming compliance | Guided practice |
 
-### 5-3. TM-30 — 3 Training Days (24 hours)
+**Day 2 — Pipeline Builder: Clean and Transform**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| — | 0800–0830 | Review: Day 1 questions; confirm all trainees have projects and ingested data | Review |
+| 7 | 0830–1030 | Pipeline: filter step, rename step, CAST for type correction | Instructor-led lab |
+| — | 1030–1045 | Break | — |
+| 8 | 1045–1200 | Pipeline: calculated columns — string functions, conditional logic (IF/CASE), COALESCE for nulls | Instructor-led lab |
+| — | 1200–1300 | Lunch | — |
+| 9 | 1300–1500 | Pipeline: date and time functions — DATEDIFF, DATE_TRUNC, CURRENT_DATE; test with known-answer records | Instructor-led lab |
+| — | 1500–1515 | Break | — |
+| 10 | 1515–1700 | End-to-end pipeline practice: build a complete clean-and-transform pipeline from raw input to typed filtered output; run and verify | Guided practice |
+
+**Day 3 — Pipeline Builder: Joins and Ontology Manager**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| — | 0800–0830 | Review: Day 2 questions; pipeline troubleshooting — error messages, schema mismatches | Review |
+| 11 | 0830–1030 | Pipeline: join step — inner/left join, key selection, handling duplicates post-join, output column selection | Instructor-led lab |
+| — | 1030–1045 | Break | — |
+| 12 | 1045–1200 | Pipeline: group-by aggregation; union step basics; output dataset configuration (overwrite vs. append) | Instructor-led lab |
+| — | 1200–1300 | Lunch | — |
+| 13 | 1300–1500 | Ontology Manager: create an Object Type — properties, types, Primary Key, display name expression | Instructor-led lab |
+| — | 1500–1515 | Break | — |
+| 14 | 1515–1630 | Ontology Manager: create a Link Type — connecting two Object Types, cardinality, directionality | Instructor-led lab |
+| 15 | 1630–1700 | Ontology practice: design a second Object Type from a provided scenario; verify naming compliance | Guided practice |
+
+**Day 4 — Ontology Write Step, Actions, and Workshop Applications**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| — | 0800–0845 | Review: Day 3 questions; access control model: Viewer vs. Editor roles | Review/discussion |
+| 16 | 0845–0945 | Pipeline: Ontology write step — connect pipeline output to Object Type; configure property mapping; run and verify | Instructor-led lab |
+| — | 0945–1000 | Break | — |
+| 17 | 1000–1130 | Actions: create a basic Action — parameter, write rule, access restriction; test from Ontology Manager | Instructor-led lab |
+| — | 1130–1145 | Break | — |
+| 18 | 1145–1300 | Workshop orientation: canvas, widget library, Object Type binding — table widget with live data | Instructor-led lab |
+| — | 1300–1400 | Lunch | — |
+| 19 | 1400–1530 | Workshop: filter widget, metric widget, bar chart widget — layout and data source configuration | Instructor-led lab |
+| — | 1530–1545 | Break | — |
+| 20 | 1545–1700 | Workshop: connecting an Action button — trigger, confirmation prompt, post-action refresh | Instructor-led lab |
+
+**Day 5 — Publishing, Governance, and Practical Exercise**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| — | 0800–0845 | Review: Day 4 questions; Workshop publishing and access configuration | Review |
+| 21 | 0845–1000 | Workshop: publishing, access control — grant Viewer and Editor roles; confirm role behavior | Instructor-led lab |
+| — | 1000–1015 | Break | — |
+| 22 | 1015–1130 | Foundry branching: create, make change, submit for data steward promotion with complete description | Instructor-led lab |
+| — | 1130–1200 | Review: C2DAO governance standards and Go/No-Go criteria for practical exercise | Review |
+| — | 1200–1300 | Lunch | — |
+| 23 | 1300–1700 | Practical exercise (all TM-20 tasks) | Evaluation |
+
+### 5-3. TM-30 — 5 Training Days (40 hours)
 
 **Day 1 — Advanced Workshop**
 
 | Block | Time | Content | Method |
 |---|---|---|---|
-| 1 | 0800–1200 | Multi-page Workshop applications, conditional logic, variable passing | Instructor-led lab |
+| — | 0800–0830 | TM-30 overview; what trainees will build by Day 5; design-first methodology | Brief |
+| 1 | 0830–1030 | Multi-page Workshop: page navigation, parameter configuration, URL deep links | Instructor-led lab |
+| — | 1030–1045 | Break | — |
+| 2 | 1045–1200 | Conditional logic: show/hide panels, conditional formatting on tables, dynamic widget visibility rules | Instructor-led lab |
 | — | 1200–1300 | Lunch | — |
-| 2 | 1300–1700 | Workshop design exercise: design and build a 3-page application from scenario | Guided practice |
+| 3 | 1300–1500 | Variable passing: passing object selections between pages; filtered detail views driven by page-1 selection | Instructor-led lab |
+| — | 1500–1515 | Break | — |
+| 4 | 1515–1700 | Design exercise: build a 3-page operations dashboard (portfolio → unit detail → historical trend); instructor critique | Guided practice |
 
-**Day 2 — Advanced Pipelines and Ontology Design**
+**Day 2 — Advanced Pipeline Builder**
 
 | Block | Time | Content | Method |
 |---|---|---|---|
-| 3 | 0800–1100 | Pipeline Builder: multi-source joins, aggregations, advanced transforms | Instructor-led lab |
-| — | 1100–1200 | Break | — |
-| 4 | 1200–1300 | Ontology design methodology: from requirements to schema | Lecture/design exercise |
-| — | 1300–1400 | Lunch | — |
-| 5 | 1400–1700 | Ontology design workshop: trainee designs schema for provided scenario | Guided practice |
+| — | 0800–0830 | Review: Day 1 questions; Workshop design critique debrief | Review |
+| 5 | 0830–1030 | Multi-source joins: inner/left/outer, handling fan-out after join, post-join deduplication patterns | Instructor-led lab |
+| — | 1030–1045 | Break | — |
+| 6 | 1045–1200 | Union transforms: combining datasets with compatible schemas, handling schema mismatches | Instructor-led lab |
+| — | 1200–1300 | Lunch | — |
+| 7 | 1300–1500 | Group-by aggregations: count, sum, min/max, computed aggregation columns; aggregate-then-join patterns | Instructor-led lab |
+| — | 1500–1515 | Break | — |
+| 8 | 1515–1630 | Output configuration: overwrite vs. append mode; append mode for snapshot pipelines and historical records | Instructor-led lab |
+| 9 | 1630–1700 | Scheduled pipeline configuration: schedule expression, build failure alert setup | Instructor-led lab |
 
-**Day 3 — Analytics and Governance**
+**Day 3 — Ontology Design**
 
 | Block | Time | Content | Method |
 |---|---|---|---|
-| 6 | 0800–1000 | Contour: pivots, calculated columns, saved views | Instructor-led lab |
-| 7 | 1000–1200 | Quiver: multi-object analysis, linked views | Instructor-led lab |
+| — | 0800–0900 | Review: Day 2 questions; common pipeline errors from the lab | Review |
+| 10 | 0900–1000 | Ontology design methodology: domain analysis, entity identification, relationship mapping, Action design | Lecture |
+| — | 1000–1015 | Break | — |
+| 11 | 1015–1200 | Individual design exercise: translate a provided mission requirement to a documented Ontology schema (Object Types, Link Types, cardinality, Actions) | Guided practice |
 | — | 1200–1300 | Lunch | — |
-| 8 | 1300–1400 | AIP Logic configuration; data lineage review | Guided demonstration |
-| 9 | 1400–1500 | C2DAO governance: promotion workflow, data stewardship review | Lecture/discussion |
-| 10 | 1500–1700 | Practical exercise (all TM-30 tasks) | Evaluation |
+| 12 | 1300–1500 | Design critique: each trainee presents schema; class critiques against the 6-item design rubric; instructor facilitates | Workshop |
+| — | 1500–1515 | Break | — |
+| 13 | 1515–1700 | Build the approved design: create the Ontology from the Day 3 design exercise; connect pipeline output via Ontology write step | Instructor-led lab |
+
+**Day 4 — Analytics Tools and AIP Logic**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| — | 0800–0830 | Review: Day 3 questions; common Ontology build errors | Review |
+| 14 | 0830–1030 | Contour: pivot tables, calculated columns, parameter controls, workbook structure, saving and sharing analysis views | Instructor-led lab |
+| — | 1030–1045 | Break | — |
+| 15 | 1045–1200 | Quiver: multi-object analysis, linked views, cross-filter propagation, drilling between Object Types | Instructor-led lab |
+| — | 1200–1300 | Lunch | — |
+| 16 | 1300–1430 | AIP Logic configuration: connecting triggers, inputs, outputs; human review queue design | Instructor-led lab |
+| — | 1430–1445 | Break | — |
+| 17 | 1445–1600 | Data lineage: reading a lineage graph; identifying upstream sources, transforms, and downstream consumers; using lineage to diagnose pipeline issues | Instructor-led lab |
+| 18 | 1600–1700 | C2DAO production standards: what constitutes a production-ready data product; quality gates | Lecture/discussion |
+
+**Day 5 — Governance and Practical Exercise**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 19 | 0800–0900 | Full C2DAO promotion workflow: branch → change → description → submit → respond to feedback → approval | Instructor-led lab |
+| 20 | 0900–1000 | Full-stack review: trace raw source → pipeline → Ontology → Workshop → governance; identify production-readiness gaps | Review |
+| — | 1000–1015 | Break | — |
+| — | 1015–1100 | Practical exercise scenario brief; design planning time — document Ontology schema on paper before touching the platform | Brief |
+| — | 1100–1130 | Design review: evaluator reviews Ontology design against 6-item rubric; trainees with fatal design flaws correct before proceeding | Evaluation |
+| — | 1130–1200 | Buffer: open lab — resolve any tool access or environment issues | Buffer |
+| — | 1200–1300 | Lunch | — |
+| 21 | 1300–1700 | Practical exercise (all TM-30 tasks) | Evaluation |
 
 ### 5-4. TM-40A–F — WFF Functional Tracks (3 Days each; prereq: TM-30)
 
@@ -665,18 +763,35 @@ Continue with TM-30 or TM-40 track based on role. No more than one TM level per 
 | Mon | TM-30 Day 1 | Data-adjacent specialists |
 | Tue | TM-30 Day 2 | Data-adjacent specialists |
 | Wed | TM-30 Day 3 + Evaluation | Data-adjacent specialists |
-| Thu | TM-40J (PM) Day 1; schedule WFF tracks (40A–F) for functional staff who completed TM-30 | G8/S8, PMs; WFF functional staff |
-| Fri | TM-40J Day 2 + Evaluation; schedule TM-40G/H/I/K/L for specialists | PMs + specialists |
+| Thu | Confirm all TM-40 enrollments; brief functional staff on WFF track options; brief specialists on G–L track options | Training NCO/Officer |
+| Fri | TM-40 scheduling coordination complete; access provisioning confirmed for all Week 3+ participants | Training NCO/Officer |
 
-**Week 3 (if WFF staff require dedicated event)**
+**Week 3 (TM-40 WFF Tracks)**
 
 | Day | Training | Audience |
 |---|---|---|
 | Mon–Wed | TM-40A (Intel WFF) — 3 days | G2/S2 Intel staff |
 | Mon–Wed | TM-40D (Sustainment WFF) — 3 days (parallel session if capacity allows) | G4/S4 staff |
-| Thu–Sat or following week | Remaining WFF tracks (B, C, E, F) as scheduled | Applicable WFF functional staff |
+| Thu–Fri or following week | Remaining WFF tracks (B, C, E, F) as scheduled | Applicable WFF functional staff |
 
-> **NOTE:** WFF tracks (TM-40A–F) require TM-10, TM-20, and TM-30 completion. Ensure WFF-track personnel complete TM-30 before enrolling. WFF and specialist (G–L) training can run concurrently in separate sessions once TM-30 is complete.
+> **NOTE:** All TM-40 tracks (A–F WFF and G–L specialist) require TM-30 completion. Ensure all TM-40 participants have TM-30 on file before enrolling. WFF and specialist (G–L) training can run concurrently in separate sessions once TM-30 is complete.
+
+**Week 4 (TM-40 Specialist Tracks — 3-day courses)**
+
+| Day | Training | Audience |
+|---|---|---|
+| Mon–Wed | TM-40G (ORSA) — 3 days | ORSA personnel |
+| Mon–Wed | TM-40H (AI Engineer) — 3 days (parallel session if capacity allows) | AI Engineer personnel |
+| Thu–Fri or following week | TM-40I (ML Engineer), TM-40L (Software Engineer) — 3 days each, as scheduled | ML Eng, SWE personnel |
+
+**Week 5 (TM-40 Specialist Tracks — 4-day courses)**
+
+| Day | Training | Audience |
+|---|---|---|
+| Mon–Thu | TM-40J (Program Manager) — 4 days | G8/S8, Program Managers |
+| Mon–Thu | TM-40K (Knowledge Manager) — 4 days (parallel session if capacity allows) | Knowledge Managers, S6 |
+
+> **NOTE:** TM-40J and TM-40K are 4-day courses (32 hours each). Do not schedule these as 3-day events. Access provisioning for TM-40H, TM-40I, and TM-40L requires 10–35 days (GPU workspaces, developer tokens) — initiate immediately after TM-30 enrollment is confirmed.
 
 ---
 
@@ -718,6 +833,26 @@ If the training environment is unavailable, coordinate with C2DAO for an approve
 | Network | Unclassified network with MSS access (confirm connectivity before training day) |
 | Trainee workstations | One per trainee; CAC-capable; network access to MSS |
 | Backup | Instructor maintains a pre-recorded demo video for each major task in case of MSS outage |
+
+### 7-4. TM-10 Throughput Risk — G-3 Action Required
+
+> **RISK FLAG — FOR G-3 ACTION**
+
+TM-10 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 30 days of assignment. At current instructor capacity and training iteration frequency, the program cannot process the full formation at the rate required to meet this standard.
+
+**The gap:**
+- TM-10 required population: all USAREUR-AF military and civilian personnel (theater-wide)
+- Current certified TM-10 instructor pool: insufficient to run concurrent iterations at scale
+- Current training frequency: insufficient to process new arrivals within the 30-day window during high-accession periods
+
+**Impact:** Portions of the formation are operating MSS without TM-10 qualification, creating data governance risk (unqualified users making classification and access decisions) and operational risk (untrained users misreading or mishandling MSS data products).
+
+**Options for G-3 consideration:**
+1. **Instructor billet increase** — authorize additional C2DAO training billets or detail TM-20/30-certified personnel from units as TM-10 instructors on a rotational basis (qualification standard: Section 8-1)
+2. **eLearning conversion of TM-10** — convert TM-10 to a self-paced computer-based training (CBT) that can be completed asynchronously; reserve the practical evaluation (Tasks 4-1, 4-2, and Ch 6 security markings) as the only instructor-administered element; this is the highest-leverage option for throughput
+3. **Unit-embedded delivery** — certify one TM-20+ instructor per major subordinate command (MSC) to deliver TM-10 within their formation; C2DAO provides materials and certifies instructors; practical evaluation remains C2DAO-administered
+
+**Recommended G-3 action:** Direct C2DAO to present options 2 and 3 with cost/risk analysis within 30 days. Until resolved, direct unit commanders to report TM-10 completion rates in the monthly Unit MSS Training Status Report (Section 10-2) and flag units below 70% completion for command attention.
 
 ---
 

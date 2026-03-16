@@ -8,6 +8,7 @@ Outputs:
   maven_training/pdf/MSS_PROGRAM_OVERVIEW_PROTO.pptx
 """
 
+import os
 import shutil
 from pathlib import Path
 from pptx import Presentation
@@ -18,7 +19,11 @@ from pptx.oxml.ns import qn
 from pptx.oxml import parse_xml
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
-TEMPLATE = Path("/home/dale/Downloads/USAREUR-AF PPT Template.pptx")
+# Template path: set via PPTX_TEMPLATE env var, or fall back to default location.
+TEMPLATE = Path(os.environ.get(
+    "PPTX_TEMPLATE",
+    Path(__file__).parent.parent / "maven_training" / "source_material" / "USAREUR-AF PPT Template.pptx"
+))
 OUT_DIR  = Path("maven_training/pdf")
 
 # ── Palette ────────────────────────────────────────────────────────────────────
@@ -251,7 +256,7 @@ PROGRESSION_CARDS = [
         "tm":       "TM-30",
         "title":    "ADVANCED BUILDER",
         "audience": "DATA-ADJACENT SPECIALISTS",
-        "target":   "17/25-series · S6/G6 · G2/G9",
+        "target":   "17/25-series · S6/G6 · G2",
         "prereq":   "Prereq: TM-20",
         "bullets":  [
             "Author Python/SQL transforms",
@@ -432,7 +437,7 @@ BASELINE_TIERS = [
     {
         "tm": "TM-30",
         "label": "DATA-ADJACENT SPECIALISTS",
-        "sub":   "17/25-series · S6 · G2/G9",
+        "sub":   "17/25-series · S6 · G2",
         "why":   "WHY CRITICAL:  Maven's power is in complex, connected products.",
         "body": (
             "Multi-source pipelines, complex Workshop apps, "
@@ -509,9 +514,9 @@ def build_overview_content(slide):
         text_box(slide, cx + 0.06, Y2 + 0.90, col_w - 0.12, 0.22,
                  tier["why"], font_size=7, bold=False, color=WHITE, wrap=False)
 
-        # Body
-        rect(slide, cx, Y2 + 1.12, col_w, 2.68, GRAY_LT)
-        text_box(slide, cx + 0.08, Y2 + 1.16, col_w - 0.16, 2.60,
+        # Body — height capped so it doesn't overlap the adoption-risk bar below
+        rect(slide, cx, Y2 + 1.12, col_w, 2.46, GRAY_LT)
+        text_box(slide, cx + 0.08, Y2 + 1.16, col_w - 0.16, 2.38,
                  tier["body"], font_size=8, color=NAVY, wrap=True)
 
     # ── Right side: specialist panels ────────────────────────────────────────
@@ -632,7 +637,7 @@ def build_program_overview_content(slide):
     X0   = 0.10
     Y0   = 0.77
     RH1  = 1.62     # row 1 height (top row)
-    RH2  = 4.60     # row 2 height (bottom row, taller)
+    RH2  = 4.06     # row 2 height — must not extend past footer at y=6.63
 
     xs = [X0, X0 + CW + GAP, X0 + 2*(CW + GAP)]
 
@@ -661,7 +666,7 @@ def build_program_overview_content(slide):
            "▪  160+ published PDFs; Markdown source in version control",
            "▪  Dedicated exercises with hands-on labs per track",
            "▪  PRE + POST assessments for every course",
-           "▪  Authority: USAREUR-AF G6/G9 Data Governance Directive (MSS-POI-001)",
+           "▪  Authority: C2DAO Data Governance Directive (MSS-POI-001)",
            "▪  Review cycle: annual or on major platform update"])
 
     Y1 = Y0 + RH1 + 0.08   # row 2 start

@@ -12,7 +12,7 @@
 
 ---
 
-**BLUF:** TM-40A teaches G2/S2 staff to integrate MSS into intelligence and targeting workflows — configuring PIR alerts, maintaining intelligence COP layers, managing collection coverage visualization, and supporting targeting decisions with fused, attributed data. Course applies MSS capabilities to processes in FM 2-0 and ATP 2-01. No coding or pipeline experience required.
+**BLUF:** TM-40A teaches G2/S2 staff to integrate MSS into intelligence and targeting workflows — configuring PIR alerts, maintaining intelligence COP layers, managing collection coverage visualization, and supporting targeting decisions with fused, attributed data. Course applies MSS capabilities to processes in FM 2-0 (Oct 2023) and ATP 2-01 (May 2023). No coding or pipeline experience required.
 
 ---
 
@@ -38,7 +38,7 @@ Complete **5+ duty days before Day 1:**
 - [ ] Read CONCEPTS_GUIDE_TM40A_INTELLIGENCE in full — Day 1 builds directly on it; do not skip
 - [ ] Confirm MSS training account is active
 - [ ] Bring your unit's current PIR list (real or notional) — used during the Day 1 CCIR/PIR alert configuration exercise
-- [ ] Review FM 2-0, Chapter 2 (Intelligence Operations) and ATP 2-01, Chapter 3 (Intelligence Support to Targeting)
+- [ ] Review FM 2-0 (Oct 2023), Chapter 2 (Intelligence Operations) and ATP 2-01 (May 2023), Chapter 3 (Intelligence Support to Targeting)
 
 ---
 
@@ -48,7 +48,7 @@ Complete **5+ duty days before Day 1:**
 
 | Time | Block | Method | Content |
 |---|---|---|---|
-| 0800–0900 | 1 | Brief | Doctrinal context: FM 2-0, ATP 2-01; how MSS supports intelligence operations and the targeting cycle |
+| 0800–0900 | 1 | Brief | Doctrinal context: FM 2-0 (Oct 2023), ATP 2-01 (May 2023); how MSS supports intelligence operations and the targeting cycle |
 | 0900–1100 | 2 | Demo/Lab | Intelligence COP configuration: threat activity layers, NAI/TAI overlays, IPB products; data sources, display standards, freshness indicators |
 | 1100–1115 | — | Break | |
 | 1115–1200 | 3 | Lab | Verifying data currency: reading timestamps, tracing data source pipelines, identifying stale feeds; escalation path when a threat feed goes dark |
@@ -97,8 +97,8 @@ Complete **5+ duty days before Day 1:**
 | When | Reading |
 |---|---|
 | Before Day 1 | CONCEPTS_GUIDE_TM40A_INTELLIGENCE (complete) |
-| Before Day 1 | FM 2-0, Ch 2 (Intelligence Operations) — review |
-| Before Day 1 | ATP 2-01, Ch 3 (Intelligence Support to Targeting) — review |
+| Before Day 1 | FM 2-0 (Oct 2023), Ch 2 (Intelligence Operations) — review |
+| Before Day 1 | ATP 2-01 (May 2023), Ch 3 (Intelligence Support to Targeting) — review |
 | Day 1 evening | TM-40A, Ch 3 (Collection Management and Requirements) |
 | Day 2 evening | TM-40A, Ch 8 (Intelligence Support to Targeting) |
 | Day 2 evening | TM-40A, Ch 4 (All-Source Analysis in MSS) |
@@ -131,6 +131,14 @@ Complete **5+ duty days before Day 1:**
 | Collection gap inject | NAI TIGER must be characterized as **unknown** (not "clear") — briefing NAI TIGER as "clear" when the feed is down is an automatic No-Go on Task 5 |
 | Targeting product | Data-as-of timestamps on every target element AND explicit confirmed/unconfirmed status marking required |
 
+### Function-Specific Go Criteria — Intelligence
+
+| Criterion | Standard |
+|---|---|
+| PIR alert thresholds | Thresholds must reference a specific intelligence indicator — "movement" is not a threshold; "vehicle count in NAI-7 exceeds 12" is |
+| Confirmed vs. unconfirmed distinction | Targeting product must visually distinguish confirmed from unconfirmed targets using separate layers or a status field — not a verbal caveat |
+| Collection gap characterization | When responding to the collection gap inject, trainee must state which PIR is affected, which collection asset is offline, and the time window of coverage gap — all three elements required for Go |
+
 ---
 
 ## Key Tips
@@ -140,6 +148,7 @@ Complete **5+ duty days before Day 1:**
 | PIR alert configuration | A PIR must be tied to a specific data feed, geographic area or threshold, AND notification path — "report enemy movement in the AOR" is not a complete alert. Bring your unit's PIR list and think through configuration before Day 1 |
 | Collection gap inject | The failure mode is briefing NAI TIGER as "clear" when the feed is down. Correct answer: "NAI TIGER status unknown — collection gap." Caveat all commander products dependent on NAI TIGER coverage |
 | Targeting product | The evaluator will ask "How do you know this target is confirmed?" — if you cannot point to a confirmation source and BDA entry, that element fails |
+| CCIR troubleshooting | PIR alerts that trigger on every data refresh are usually misconfigured as value-present rather than value-threshold alerts. Check the alert condition: does it trigger on any entry matching the PIR indicator, or on a count/status threshold? The latter is almost always what the commander needs |
 
 ---
 

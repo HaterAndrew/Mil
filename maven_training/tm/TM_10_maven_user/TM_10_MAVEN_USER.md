@@ -31,7 +31,7 @@ This Technical Manual (TM) provides operator-level instruction for the Maven Sma
 
 Those tasks are covered in TM-20 (Workshop Builder) and TM-30 (Advanced Builder). If a task you need to perform is not in this manual, contact your unit data steward before attempting it.
 
-> **NOTE:** If a task in this manual indicates it requires a builder or engineer, do not attempt it yourself. The escalation path is: (1) TM-10 operator attempt fails or is out of scope → (2) Contact your unit data steward → (3) Data steward routes to TM-20 builder (Workshop apps, basic pipelines, Ontology configuration) or TM-30 advanced builder (complex design, AIP Logic, enterprise Ontology) or TM-40 developer (code required). Chapter 7 of this manual contains the full escalation decision guide.
+NOTE: If a task in this manual indicates it requires a builder or engineer, do not attempt it yourself. The escalation path is: (1) TM-10 operator attempt fails or is out of scope → (2) Contact your unit data steward → (3) Data steward routes to TM-20 builder (Workshop apps, basic pipelines, Ontology configuration) or TM-30 advanced builder (complex design, AIP Logic, enterprise Ontology) or TM-40 developer (code required). Chapter 7 of this manual contains the full escalation decision guide.
 
 ---
 
@@ -102,12 +102,19 @@ MSS Users (you)
 
 **Governing references:**
 
-- **Army Data Plan (2022), Office of the Army Chief Information Officer** — establishes the Army-wide framework for data management, governance, and analytics in support of Multi-Domain Operations.
-- **DoD Data Strategy (2020)** — establishes the VAUTI framework (Visible, Accessible, Understandable, Trustable, Interoperable) as the DoD standard for data quality.
-- **Army CIO Data Stewardship Policy (April 2, 2024)** — establishes the stewardship hierarchy and data chain of responsibility.
+- **AR 25-1, Army Information Technology (Jul 2019)** — statutory framework for Army data governance, the VAUTI (Visible, Accessible, Understandable, Trustable, Interoperable) data quality principles as applied at the Army level, and IT management policy. This is the regulatory foundation under which MSS data operations are conducted.
 - **ADP 3-13, Information** — establishes information as a warfighting function and the foundation for understanding MSS's role in USAREUR-AF operations.
 
 NOTE: The USAREUR-AF C2DAO office is responsible for implementing and enforcing Army data policy within this command. For governance questions, access exceptions, or policy issues, contact the C2DAO office through your chain of command.
+
+**DoD and Army Strategic References:**
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+- **DoD Data Strategy (October 2020)** — Foundation for VAUTI principles (Visible, Accessible, Understandable, Trustable, Interoperable)
+- **Army Data Plan (2022)** — 11 strategic objectives for Army data transformation
+- **Army Cloud Plan (2022)** — Zero Trust, secure development, data-driven decisions
+- **Army CIO Data Stewardship Policy (April 2, 2024)** — establishes the stewardship hierarchy and data chain of responsibility
 
 ---
 
@@ -122,7 +129,7 @@ NOTE: The USAREUR-AF C2DAO office is responsible for implementing and enforcing 
 
 **Recommended (not required) prior reading:**
 - Data Literacy Technical Reference
-- Supplemental training materials available through your unit data steward or G6/Data
+- Supplemental training materials available through your unit data steward or C2DAO
 
 **Account provisioning takes 3 to 5 business days.** If you have an upcoming deployment, exercise, or TDY requiring MSS access, start the account request process early.
 
@@ -137,6 +144,7 @@ Every person who uses MSS is personally responsible for the items below. These a
 3. **Report misrouted data immediately.** If you see data at a higher classification level than your clearance, stop and report it. Do not read it, copy it, screenshot it, or act on it.
 4. **Do not export data without authorization.** All exports are logged. Downloading data to an unauthorized location is a security violation.
 5. **Log out when you are finished.** Do not leave an MSS session open on an unattended workstation.
+   **Logout procedure:** (1) Click your Profile icon in the upper right corner. (2) Select Log Out from the dropdown. (3) Wait for the login screen to confirm sign-out. (4) Close the browser tab. (5) Lock your workstation (Windows key + L).
 6. **Report incidents.** If you suspect a security violation — yours or someone else's — report it to your supervisor and unit security officer immediately.
 
 WARNING: Unauthorized access to, disclosure of, or modification of data in MSS may constitute a violation of 18 U.S.C. § 1030 (Computer Fraud and Abuse Act) and applicable Army regulations. Violations may result in loss of access, adverse action, and criminal prosecution.
@@ -160,19 +168,19 @@ NOTE: Specific phone numbers and email addresses for MSS support contacts are ma
 
 ---
 
-## 1-7A. Locating Self-Paced Training Materials
+## 1-8. Locating Self-Paced Training Materials
 
 Self-paced training materials are available within MSS for operators who need to build or refresh skills outside of structured classroom instruction. These materials include walkthroughs, reference guides, and practice exercises that can be completed independently.
 
 To find self-paced training resources, use the MSS Search bar (Chapter 3, Task 3-1) and search for terms such as "training," "self-study," or "MSS training." Training resources are typically organized within a designated training project folder managed by your unit data steward or the organizational data team.
 
-> **NOTE — USAREUR-AF Example:** Within USAREUR-AF, the Operational Data Team (ODT) maintains a self-paced training folder accessible via Compass. Search for "ODT Training" or ask your unit data steward for the current folder path. Other commands and organizations will have equivalent self-paced training resources with different names and locations. If you cannot locate training materials, contact your unit S6/G6 or data steward — do not assume they do not exist.
+NOTE — USAREUR-AF Example: Within USAREUR-AF, the Operational Data Team (ODT) maintains a self-paced training folder accessible via Compass. Search for "ODT Training" or ask your unit data steward for the current folder path. Other commands and organizations will have equivalent self-paced training resources with different names and locations. If you cannot locate training materials, contact your unit S6/G6 or data steward — do not assume they do not exist.
 
 An MSS Training Hub application may also be available in your environment. The Training Hub provides a centralized view of training resources, self-study materials, and links to reference documentation. Ask your data steward whether this application has been published in your command's MSS environment.
 
 ---
 
-## 1-8. How Data Reaches You — A Consumer's Mental Model
+## 1-9. How Data Reaches You — A Consumer's Mental Model
 
 **BLUF:** Before you read a dashboard number and act on it, you need to understand where that number came from and what could make it wrong. This section gives you that mental model.
 
@@ -205,11 +213,11 @@ SOURCE SYSTEMS                INTEGRATION             SEMANTIC LAYER          YO
 
 **The most important habit:** Before acting on a data product, know its currency (how old is it?) and its source (what system did it come from?). Both are visible in MSS — your data steward can show you where to find this information for each application you use.
 
-> **NOTE:** You are a data consumer, not a data validator. If something looks wrong, your job is to report it — not to correct it, work around it, or ignore it. The escalation path is in Table 1-2 (paragraph 1-7).
+NOTE: You are a data consumer, not a data validator. If something looks wrong, your job is to report it — not to correct it, work around it, or ignore it. The escalation path is in Table 1-2 (paragraph 1-7).
 
 ---
 
-## 1-9. MSS Training Curriculum — Learning Path
+## 1-10. MSS Training Curriculum — Learning Path
 
 TM-10 is the entry point for the MSS training curriculum. After completing TM-10, personnel may advance along one of two tracks depending on their role and assigned duties.
 
@@ -228,11 +236,11 @@ TM-10 is the entry point for the MSS training curriculum. After completing TM-10
 | TM-30 (Advanced Builder) | TM-40G — ORSA | For operational research and systems analysis specialists. Prerequisite: TM-30 (required). Duration: 5 days. |
 | TM-30 (Advanced Builder) | TM-40H — AI Engineer | For personnel building and maintaining AIP Logic workflows and AI-enabled products. Prerequisite: TM-30 (required). Duration: 5 days. |
 | TM-30 (Advanced Builder) | TM-40I — ML Engineer | For personnel developing machine learning pipelines and model integrations. Prerequisite: TM-30 (required). Duration: 5 days. |
-| TM-30 (Advanced Builder) | TM-40J — Program Manager | For data program managers coordinating MSS products and delivery. Prerequisite: TM-30 (required). Duration: 3 days. |
-| TM-30 (Advanced Builder) | TM-40K — Knowledge Manager | For knowledge managers structuring data products for organizational learning. Prerequisite: TM-30 (required). Duration: 3 days. |
+| TM-30 (Advanced Builder) | TM-40J — Program Manager | For data program managers coordinating MSS products and delivery. Prerequisite: TM-30 (required). Duration: 4 days. |
+| TM-30 (Advanced Builder) | TM-40K — Knowledge Manager | For knowledge managers structuring data products for organizational learning. Prerequisite: TM-30 (required). Duration: 4 days. |
 | TM-30 (Advanced Builder) | TM-40L — Software Engineer | For software engineers writing Python, PySpark, TypeScript, and OSDK integrations. Prerequisite: TM-30 (required). Duration: 5 days. |
 
-> **NOTE:** Not every TM-10 graduate proceeds to TM-20. Most USAREUR-AF personnel require only TM-10 operator qualification to perform their duties. Builder access (TM-20 and above) is granted through chain-of-command request and requires explicit approval. If you believe your duties require builder access, speak with your unit data steward.
+NOTE: Not every TM-10 graduate proceeds to TM-20. Most USAREUR-AF personnel require only TM-10 operator qualification to perform their duties. Builder access (TM-20 and above) is granted through chain-of-command request and requires explicit approval. If you believe your duties require builder access, speak with your unit data steward.
 
 ---
 
@@ -282,38 +290,11 @@ NOTE: Your unit data steward is your primary point of contact for everything rel
 5. Enter your CAC PIN when prompted. Type it carefully — three wrong PIN attempts will lock your CAC.
 6. Wait for the MSS home screen to load. This may take 15 to 30 seconds.
 7. Confirm your name or username appears in the upper right corner. If someone else's name appears, log out immediately and contact your S6.
-
-NOTE: If the browser does not prompt for a certificate at all, your CAC may not be seated properly in the reader, or the CAC reader drivers may not be installed. Remove and reinsert your CAC. If the problem persists, contact your S6.
-
-CAUTION: Do not allow the browser to save your PIN. Do not use "Remember Me" or autofill options for your MSS login. MSS sessions may contain sensitive operational information.
-
-CAUTION: Do not use a personal device (personal laptop, phone, tablet) to access MSS unless you have received specific written authorization from your unit security officer. Accessing MSS from an unauthorized device is a security violation regardless of whether you successfully log in.
-
----
-
-## TASK 2-3: NAVIGATE THE MSS HOME SCREEN
-
-**CONDITIONS:** Operator is logged into MSS for the first time.
-
-**STANDARDS:** Operator identifies all major navigation elements — search bar, Compass, notification bell, profile icon, and home button — and can explain the purpose of each.
-
-**EQUIPMENT:** Active MSS session.
-
-**PROCEDURE:**
-
-1. After login, you are on the MSS home screen. Take a moment to look at the layout before clicking anything.
-2. **Top navigation bar (across the top of the screen):**
-   - Far left: the MSS/Foundry logo — clicking this returns you to the home screen from anywhere in the system.
-   - Center: the **Search bar** — your fastest way to find any application, dataset, or project by name.
-   - Far right: the **Notification bell** icon (system alerts and workflow updates) and your **Profile icon** (account settings, markings, logout).
-3. **Left sidebar (narrow panel on the left edge):**
-   - **Compass icon** (looks like a folder or file explorer icon) — opens the full file browser where all MSS resources are organized by project and folder.
-   - Pinned application shortcuts may also appear here once you use the system regularly.
-4. **Main area (center of the screen):**
-   - Recently visited resources appear here automatically.
-   - Pinned items you have bookmarked appear here.
-   - Notifications and system messages may appear here.
-5. Click each navigation element once to see what it does. Do not submit any forms or execute any actions during this orientation step.
+8. Orient yourself to the home screen layout:
+   - **Top navigation bar:** MSS/Foundry logo (far left — returns to home from anywhere), Search bar (center — fastest way to find any resource), Notification bell and Profile icon (far right).
+   - **Left sidebar:** Compass icon (file browser for all MSS resources organized by project and folder).
+   - **Main area:** Recently visited resources and pinned/starred items.
+9. Click each navigation element once to see what it does. Do not submit any forms or execute any actions during this orientation step.
 
 **Table 2-1. MSS Navigation Elements at a Glance**
 
@@ -327,26 +308,11 @@ CAUTION: Do not use a personal device (personal laptop, phone, tablet) to access
 | Starred/Pinned items | Home screen | Shortcuts you have saved to frequently used resources |
 | Recent activity | Home screen | Resources you visited recently |
 
----
+NOTE: If the browser does not prompt for a certificate at all, your CAC may not be seated properly in the reader, or the CAC reader drivers may not be installed. Remove and reinsert your CAC. If the problem persists, contact your S6.
 
-## TASK 2-4: LOG OUT OF MSS
+CAUTION: Do not allow the browser to save your PIN. Do not use "Remember Me" or autofill options for your MSS login. MSS sessions may contain sensitive operational information.
 
-**CONDITIONS:** Operator has completed their work in MSS and is leaving their workstation, even briefly.
-
-**STANDARDS:** Operator logs out completely and confirms the session has ended before leaving the workstation.
-
-**EQUIPMENT:** Active MSS session.
-
-**PROCEDURE:**
-
-1. Click your **Profile icon** in the upper right corner.
-2. Select **Log Out** or **Sign Out** from the dropdown.
-3. Wait for the login screen or confirmation that you have been signed out.
-4. Close the browser tab or window.
-
-CAUTION: An unattended MSS session on an unlocked workstation gives anyone who walks up to it access to your data and the ability to perform actions under your credentials. Log out every time you step away, even for a few minutes. Lock your workstation (Windows key + L) as an additional measure.
-
-NOTE: MSS sessions expire automatically after a period of inactivity. Even if your session expires, close the browser and physically lock your workstation.
+CAUTION: Do not use a personal device (personal laptop, phone, tablet) to access MSS unless you have received specific written authorization from your unit security officer. Accessing MSS from an unauthorized device is a security violation regardless of whether you successfully log in.
 
 ---
 
@@ -376,69 +342,44 @@ Everything in MSS is a resource. Resources are organized into folders called Pro
 
 ---
 
-## TASK 3-1: FIND A RESOURCE USING SEARCH
+## TASK 3-1: FIND AND SAVE RESOURCES
 
-**CONDITIONS:** Operator is logged into MSS and knows the name (or partial name) of the application, dataset, or project they need.
+**CONDITIONS:** Operator is logged into MSS and needs to locate a specific application, dataset, or project.
 
-**STANDARDS:** Operator uses the search bar to locate a named resource, filters results by type, and opens the resource.
+**STANDARDS:** Operator locates a named resource using search OR Compass navigation, opens it, and bookmarks a frequently used resource to the home screen.
 
-**EQUIPMENT:** Active MSS session.
-
-**PROCEDURE:**
-
-1. Click anywhere in the **Search bar** at the top center of the screen. The bar highlights when active.
-2. Type the name or partial name of what you are looking for. For example: type "SITREP" to find any SITREP-related application or dataset.
-3. MSS displays results as you type. Results include all resource types (applications, datasets, projects).
-4. To narrow results to a specific type, use the filter options on the left side of the results panel. Select "Application" to show only Workshop applications, or "Dataset" to show only datasets.
-5. Click the result that matches what you need. The resource opens.
-
-NOTE: Search only returns resources you have permission to see. If you search for something you know exists but it does not appear, you may not have access to it. Contact your data steward — do not assume the resource does not exist.
-
-EXAMPLE: SPC Caldwell in the 1st ABCT S4 shop needs to find the equipment readiness dashboard for her brigade. She types "readiness" in the search bar. She sees multiple results. She filters to "Application" and finds "1ABCT Equipment Readiness Dashboard." She clicks it and the dashboard opens.
-
----
-
-## TASK 3-2: NAVIGATE USING COMPASS (FILE BROWSER)
-
-**CONDITIONS:** Operator is logged into MSS and wants to browse their unit's project folder to see all available resources.
-
-**STANDARDS:** Operator opens Compass, navigates to their unit's project folder, and identifies at least one application and one dataset within it.
-
-**EQUIPMENT:** Active MSS session, knowledge of unit project name or folder path (provided by data steward).
+**EQUIPMENT:** Active MSS session, knowledge of resource name or unit project folder path.
 
 **PROCEDURE:**
 
-1. Click the **Compass icon** in the left sidebar. The file browser opens.
-2. The file browser shows a folder tree. Folders are organized by organization and project. Navigate by clicking folder names to expand them.
-3. Find your unit's project folder. It is typically named for your unit or mission area (e.g., "V Corps / 1 CD / 1 ABCT / Readiness").
-4. Click the project folder to open it. You will see subfolders and resources inside.
-5. Identify the resource types by their icons (see Table 3-1).
-6. Click any resource to open it.
+**Method 1 — Search (fastest):**
 
-NOTE: You will only see folders and resources your account has been granted access to. Folders you cannot access appear locked or do not appear at all. This is normal and by design — do not attempt to navigate to folders outside your assigned access.
+1. Click the **Search bar** at the top center of the screen.
+2. Type the name or partial name of what you are looking for (e.g., "SITREP" or "readiness").
+3. MSS displays results as you type. Use the filter options on the left to narrow by type (Application, Dataset, Project).
+4. Click the matching result to open it.
 
-EXAMPLE: SGT Martinez in 21st TSC needs to find the weekly supply status report for his unit. He opens Compass, navigates to "21 TSC → Supply Reports → Weekly Status," and finds the Workshop application for his section.
+NOTE: Search only returns resources you have permission to see. If a resource you know exists does not appear, contact your data steward — do not assume it does not exist.
 
----
+**Method 2 — Compass (file browser):**
 
-## TASK 3-3: BOOKMARK A FREQUENTLY USED RESOURCE
+1. Click the **Compass icon** in the left sidebar.
+2. Navigate the folder tree by clicking folder names to expand them. Folders are organized by organization and project.
+3. Find your unit's project folder (typically named for your unit or mission area).
+4. Click a resource to open it. Identify resource types by their icons (see Table 3-1).
 
-**CONDITIONS:** Operator has identified a resource they will use regularly and wants quick access to it from the home screen.
+NOTE: You will only see folders and resources your account has been granted access to. Folders you cannot access appear locked or do not appear at all — this is by design.
 
-**STANDARDS:** Operator stars a resource, confirms it appears on the home screen under starred items, and can open it directly from the home screen on subsequent logins.
+**Bookmarking a resource:**
 
-**EQUIPMENT:** Active MSS session.
+1. Navigate to the resource you want to bookmark (using either method above).
+2. Click the **Star icon** next to the resource name. The star fills in to confirm it is bookmarked.
+3. Return to the home screen (click MSS logo, upper left). The resource now appears under Starred/Pinned items.
+4. To remove a bookmark, click the star again to toggle it off.
 
-**PROCEDURE:**
+NOTE: Bookmarks are personal — they affect only your view and do not change access for anyone else.
 
-1. Navigate to the resource you want to bookmark (using search or Compass).
-2. Click the **Star icon** next to the resource name. The star fills in (solid) to confirm it is bookmarked.
-3. Return to the home screen by clicking the MSS logo in the upper left.
-4. The bookmarked resource now appears under "Starred" or "Pinned" on your home screen.
-5. On future logins, click the resource from the home screen to open it directly.
-6. To remove a bookmark: navigate to the resource and click the star again to toggle it off.
-
-NOTE: Bookmarks are personal — they affect only your view. Bookmarking a resource does not change access for anyone else, and does not make the resource visible to others.
+EXAMPLE: SPC Caldwell in the 1st ABCT S4 shop needs the equipment readiness dashboard. She types "readiness" in the search bar, filters to "Application," and finds "1ABCT Equipment Readiness Dashboard." She opens it and clicks the star to bookmark it for tomorrow's shift.
 
 ---
 
@@ -446,7 +387,7 @@ NOTE: Bookmarks are personal — they affect only your view. Bookmarking a resou
 
 **BLUF:** Workshop is the main interface most MSS users will see every day. A developer in your unit or on the MSS team has built an application — a dashboard, a form, a report — and published it for your unit to use. You interact with it the same way you use any website: clicking, reading, filtering, and submitting forms. You do not need to understand how it was built.
 
-> **NOTE:** You are using an application that a TM-20 builder created. If an application is missing a feature you need, is broken, or needs modification, do not attempt to edit it yourself. Contact your unit data steward and reference TM-20, Chapter 5 (Building Workshop Applications) as the appropriate level to address the issue.
+NOTE: You are using an application that a TM-20 builder created. If an application is missing a feature you need, is broken, or needs modification, do not attempt to edit it yourself. Contact your unit data steward and reference TM-20, Chapter 5 (Building Workshop Applications) as the appropriate level to address the issue.
 
 ---
 
@@ -471,46 +412,28 @@ Workshop applications are web pages inside MSS. They are built from widgets — 
 
 ---
 
-## TASK 4-1: OPEN A WORKSHOP APPLICATION
-
-**CONDITIONS:** Operator is logged into MSS and has access to a Workshop application.
-
-**STANDARDS:** Operator locates and opens a Workshop application, waits for all widgets to load, and identifies the application's navigation structure.
-
-**EQUIPMENT:** Active MSS session, Viewer access to target application.
-
-**PROCEDURE:**
-
-1. Locate the application using search (Chapter 3, Task 3-1) or Compass (Chapter 3, Task 3-2).
-2. Click the application name. The application opens in the browser.
-3. Wait for the application to fully load. Loading spinners or skeleton placeholders will disappear when loading is complete. Do not interact with the application while it is still loading.
-4. Orient yourself: look for a title or header identifying the application. Look for page tabs or a sidebar that shows different pages within the application.
-5. If the application has multiple pages, click through each tab to understand the full scope of the application before diving into any one section.
-
-NOTE: Workshop applications are **read-only by default** unless they include a form or an action button. If you can see data but see no Submit buttons or Action buttons, you are in a view-only mode — this is normal and correct for many users.
-
-NOTE: If a Workshop application shows an "Edit" or "Builder" mode option, do not enter it unless you are a designated builder for that application. Entering builder mode and making changes to the application layout can break it for all users. Report any accidental edits to your data steward immediately.
-
----
-
-## TASK 4-1B: ORIENT TO A COMMAND-LEVEL APPLICATION
+## TASK 4-1: ORIENT TO A COMMAND-LEVEL APPLICATION
 
 **CONDITIONS:** Operator is logged into MSS and has been granted access to a command-level Workshop application — typically a commander's update brief (CUB), situation assessment (CUA), or geospatial situational awareness application — and needs to navigate and extract information from it.
 
-**STANDARDS:** Operator independently opens a command-level application, navigates its pages, reads annotated map layers, clicks on map objects to reveal supporting data panels, and correctly identifies the operationally relevant information displayed — without assistance.
+**STANDARDS:** Operator independently opens a command-level application and, without assistance:
+(1) navigates to the correct page when given a named operational domain (e.g., "personnel readiness" or "equipment status");
+(2) reads and correctly states the data currency timestamp from the application header or map widget;
+(3) clicks a specified map object and correctly reads back the object's unit designation, status, and last-update time from the pop-up panel;
+(4) uses the map legend to correctly identify what a specified color or icon represents before making any status determination.
 
-**EQUIPMENT:** Active MSS session, access to a command-level Workshop application, familiarity with Task 4-1 (Open a Workshop Application) and Task 4-2 (Read a Dashboard).
+**EQUIPMENT:** Active MSS session, access to a command-level Workshop application, familiarity with Task 4-2 (Read a Dashboard).
 
 **PROCEDURE:**
 
 **Step 1 — Navigate to the command-level application:**
 
-1. Use Search (Chapter 3, Task 3-1) or Compass (Chapter 3, Task 3-2) to locate the application by name.
+1. Use Search or Compass (Chapter 3, Task 3-1) to locate the application by name.
 2. If you do not know the application name, ask your unit data steward or section chief — they can provide the correct name and confirm your access.
 3. Click the application name to open it.
 4. Wait for all widgets and map layers to fully load before interacting.
 
-> **NOTE — USAREUR-AF Example:** Within USAREUR-AF, command-level applications include the Commander's Update Brief (CUB) and Commander's Update Assessment (CUA), which serve as the primary operational picture applications for command staff. Other commands and organizations will have equivalent applications that serve the same function under different names. The navigation skills in this task apply universally to any Workshop-based command application.
+NOTE — USAREUR-AF Example: Within USAREUR-AF, command-level applications include the Commander's Update Brief (CUB) and Commander's Update Assessment (CUA), which serve as the primary operational picture applications for command staff. Other commands and organizations will have equivalent applications that serve the same function under different names. The navigation skills in this task apply universally to any Workshop-based command application.
 
 **Step 2 — Orient to the application layout:**
 
@@ -528,7 +451,7 @@ Many command-level applications include a map widget displaying geospatial data.
 3. Read the legend before interpreting any map content. Color coding varies by application — do not assume green means ready without confirming the legend.
 4. If the map has multiple layers, a layer control panel (typically in the upper right or left corner of the map widget) lets you toggle layers on and off. Use it to reduce visual clutter when multiple overlapping layers are displayed.
 
-> **NOTE:** Gaia is the MSS map-based geospatial application used across the enterprise for situational awareness and operational overlay display. The skills in this task — reading layers, clicking on map objects, extracting data from pop-up panels — apply to Gaia and any other map-based Workshop application in your environment.
+NOTE: Gaia is the MSS map-based geospatial application used across the enterprise for situational awareness and operational overlay display. The skills in this task — reading layers, clicking on map objects, extracting data from pop-up panels — apply to Gaia and any other map-based Workshop application in your environment.
 
 **Step 4 — Click on map objects to reveal supporting data:**
 
@@ -551,26 +474,37 @@ NOTE: If a command-level application is missing information you expect to see, o
 
 ## TASK 4-2: READ A DASHBOARD
 
-**CONDITIONS:** Operator has a Workshop application open that includes a dashboard view with charts, tables, or metric tiles.
+**CONDITIONS:** Operator is logged into MSS and has access to a Workshop application containing a dashboard view.
 
-**STANDARDS:** Operator correctly reads metric tiles, interprets chart axes and legends, understands status color coding, and identifies the data timestamp.
+**STANDARDS:** Operator locates and opens a Workshop application, waits for all widgets to load, correctly reads metric tiles, interprets chart axes and legends, understands status color coding, and identifies the data timestamp.
 
-**EQUIPMENT:** Active MSS session, Workshop application open.
+**EQUIPMENT:** Active MSS session, Viewer access to target application.
 
 **PROCEDURE:**
 
-1. **Read the title and context.** The application header and each chart title tell you what you are looking at. Read these before interpreting any numbers.
-2. **Read metric tiles first.** Large single numbers (KPI tiles) show the most important summary figures. Examples: "94% — Units Reporting" or "6 — Equipment Deadlines." These give you the overall picture before you dig into charts.
-3. **Read charts with the legend open.** Every chart has a title, axis labels, and a legend (a key showing what colors or shapes mean). Read all three before interpreting the chart.
+1. Locate the application using search or Compass (Chapter 3, Task 3-1).
+2. Click the application name. Wait for all widgets to load — loading spinners disappear when complete. Do not interact while loading.
+3. Orient yourself: read the title, identify page tabs or sidebar navigation, and note the application's overall structure.
+4. **Read the title and context.** The application header and each chart title tell you what you are looking at. Read these before interpreting any numbers.
+5. **Read metric tiles first.** Large single numbers (KPI tiles) show the most important summary figures. Examples: "94% — Units Reporting" or "6 — Equipment Deadlines." These give you the overall picture before you dig into charts.
+6. **Read charts with the legend open.** Every chart has a title, axis labels, and a legend (a key showing what colors or shapes mean). Read all three before interpreting the chart.
    - X-axis (horizontal) typically shows time, unit names, or categories.
    - Y-axis (vertical) typically shows count, percentage, or quantity.
    - Bars, lines, and pie slices are color-coded. Check the legend.
-4. **Read status badges using the legend.** Green/yellow/red colors are common, but their thresholds differ by application. Find the legend or ask your data steward what the thresholds mean for that specific dashboard.
-5. **Check the data timestamp.** Look for "Data as of:" or "Last Updated:" text in the application header, footer, or in the metadata panel of individual charts. If the timestamp is older than expected, contact your data steward before making operational decisions based on the data.
+7. **Read status badges using the legend.** Green/yellow/red colors are common, but their thresholds differ by application. Find the legend or ask your data steward what the thresholds mean for that specific dashboard.
+8. **Check the data timestamp.** Look for "Data as of:" or "Last Updated:" text in the application header, footer, or in the metadata panel of individual charts. If the timestamp is older than expected, contact your data steward before making operational decisions based on the data.
+
+NOTE: Workshop applications are read-only by default unless they include a form or an action button. If you can see data but see no Submit buttons or Action buttons, you are in a view-only mode — this is normal and correct for many users.
+
+NOTE: If a Workshop application shows an "Edit" or "Builder" mode option, do not enter it unless you are a designated builder for that application. Entering builder mode and making changes to the application layout can break it for all users. Report any accidental edits to your data steward immediately.
 
 NOTE: Dashboard data reflects the last time the underlying data pipeline ran — it is not necessarily real-time. Know your pipeline's update frequency. Ask your data steward if you are unsure how current the data is.
 
 EXAMPLE: CPL Davis is on the 3rd Infantry Division G4 readiness desk in Wiesbaden. She opens the division readiness dashboard. She reads the metric tile showing "78% — Fully Mission Capable" and then looks at the bar chart showing FMC by brigade. She checks the "Data as of: 101800Z MAR 26" timestamp in the footer. The data is from yesterday's run — current enough for the morning update.
+
+**Navigating multi-page applications:**
+
+Applications with multiple pages use tabs across the top, a sidebar with page names, or labeled navigation buttons. Read the page labels before clicking to understand the purpose of each section. If a page requires selecting a record first (e.g., select a unit on the Overview page before viewing its Detail page), make that selection before navigating. Use the breadcrumb trail (if visible) to track your location.
 
 ---
 
@@ -601,30 +535,7 @@ EXAMPLE: SSG Torres is reviewing the training completion dashboard for his batta
 
 ---
 
-## TASK 4-4: NAVIGATE BETWEEN PAGES IN AN APPLICATION
-
-**CONDITIONS:** Operator has a Workshop application open that has multiple pages.
-
-**STANDARDS:** Operator identifies the navigation structure and successfully navigates between at least two pages without losing their place.
-
-**EQUIPMENT:** Active MSS session, Workshop application with multiple pages.
-
-**PROCEDURE:**
-
-1. Look for the page navigation. It appears as:
-   - Tabs across the top of the application (like browser tabs inside the app).
-   - A sidebar with a list of page names on the left side.
-   - Buttons labeled with page names (e.g., "Overview," "Detail," "Map View").
-2. Read the page labels before clicking to understand the purpose of each section.
-3. Click the page tab or name to navigate to it.
-4. If the page requires you to select a record first (e.g., select a unit in the Overview page to see its detail in the Detail page), do that selection before navigating.
-5. Use the breadcrumb trail (if visible at the top of the app) to track where you are.
-
-EXAMPLE: PFC Nguyen opens the V Corps personnel accountability application. She sees four tabs: "Theater Overview," "By Unit," "Daily Roster," and "Exceptions." She clicks "By Unit," selects her brigade from the table, and then clicks "Daily Roster" to see her brigade's daily accountability data.
-
----
-
-## TASK 4-5: SUBMIT DATA USING AN ACTION FORM
+## TASK 4-4: SUBMIT DATA USING AN ACTION FORM
 
 **CONDITIONS:** Operator has a Workshop application open that includes a data entry form and is authorized to submit data through that form.
 
@@ -652,11 +563,11 @@ WARNING: Do not submit data on behalf of another Soldier using your credentials 
 
 EXAMPLE: PFC Rodriguez is the readiness NCO for HHC, 2nd BCT in Vilseck. He submits the daily SITREP through the unit's Workshop SITREP application. He selects his unit from the dropdown, enters the readiness numbers for each status category, adds a remarks note, and clicks Submit. The green confirmation message "SITREP submitted successfully — 111845Z MAR 26" appears. He screenshots the confirmation for his records.
 
-> **NOTE:** The action form you are submitting was configured by a TM-20 builder using the Ontology Manager. If an action is missing, not functioning correctly, or needs a new field, this is a TM-20 or TM-30 builder task. Report the issue to your data steward. Refer to TM-20, Chapter 4-2 (Ontology Manager Interface Overview) for builder-level action configuration. Complex multi-step action workflows are TM-30 level — refer to TM-30, Chapter 4, Section 4-4 (Action Design).
+NOTE: The action form you are submitting was configured by a TM-20 builder using the Ontology Manager. If an action is missing, not functioning correctly, or needs a new field, this is a TM-20 or TM-30 builder task. Report the issue to your data steward. Refer to TM-20, Chapter 4-2 (Ontology Manager Interface Overview) for builder-level action configuration. Complex multi-step action workflows are TM-30 level — refer to TM-30, Chapter 4, Section 4-4 (Action Design).
 
 ---
 
-## TASK 4-6: EXECUTE AN ACTION BUTTON
+## TASK 4-5: EXECUTE AN ACTION BUTTON
 
 **CONDITIONS:** Operator has a Workshop application open that includes an action button (e.g., "Mark Complete," "Approve," "Close Report") and is authorized to execute that action.
 
@@ -681,7 +592,7 @@ EXAMPLE: 1LT Chen is a readiness officer in the 173rd Airborne Brigade in Vicenz
 
 ---
 
-## TASK 4-7: EXPORT DATA FROM A WORKSHOP APPLICATION
+## TASK 4-6: EXPORT DATA FROM A WORKSHOP APPLICATION
 
 **CONDITIONS:** Operator has a Workshop application open with export functionality enabled, is authorized to export that data, and has an approved destination for the exported file.
 
@@ -750,7 +661,7 @@ WARNING: AI-generated content in MSS is NOT authoritative and is NOT always corr
 
 **EQUIPMENT:** Active MSS session, Workshop application with AIP Logic workflow.
 
-> **NOTE:** AIP Logic workflows are designed and configured by TM-30 advanced builders. You are using a workflow that has been built for you. If the workflow produces unexpected outputs, follow the human review steps in this task. If the workflow itself is broken or needs modification, report to your data steward — do not attempt to reconfigure it. For TM-30 builder reference, see TM-30, Chapter 6 (AIP Logic Configuration).
+NOTE: AIP Logic workflows are designed and configured by TM-30 advanced builders. You are using a workflow that has been built for you. If the workflow produces unexpected outputs, follow the human review steps in this task. If the workflow itself is broken or needs modification, report to your data steward — do not attempt to reconfigure it. For TM-30 builder reference, see TM-30, Chapter 6 (AIP Logic Configuration).
 
 **PROCEDURE:**
 
@@ -779,7 +690,7 @@ EXAMPLE: SGT Okonkwo is monitoring the readiness dashboard for 1-9 FA in Grafenw
 
 **EQUIPMENT:** Active MSS session, AIP Agent interface.
 
-> **NOTE:** AIP Agents are AI interfaces designed for operator use, configured by TM-30 builders. Your role is to interact with the agent and validate its outputs before acting on them. If the agent produces consistently incorrect, outdated, or operationally unsound information, report to your data steward with screenshots or a summary of the issue. Do not alter the agent configuration. See TM-30, Chapter 6 for builder-level AIP configuration.
+NOTE: AIP Agents are AI interfaces designed for operator use, configured by TM-30 builders. Your role is to interact with the agent and validate its outputs before acting on them. If the agent produces consistently incorrect, outdated, or operationally unsound information, report to your data steward with screenshots or a summary of the issue. Do not alter the agent configuration. See TM-30, Chapter 6 for builder-level AIP configuration.
 
 **PROCEDURE:**
 
@@ -859,70 +770,53 @@ CAUTION: You are viewing a live preview of the dataset. Do not attempt to edit d
 
 ---
 
-## TASK 5-2: USE CONTOUR FOR NO-CODE ANALYSIS
+## TASK 5-2: PERFORM A BASIC LOOKUP IN CONTOUR
 
-**CONDITIONS:** Operator has Viewer access to a dataset and access to the Contour analysis tool in MSS, and needs to answer a specific analytical question (e.g., "How many Soldiers in each unit are non-deployable?").
+**CONDITIONS:** Operator has Viewer access to a dataset and access to Contour, and needs to answer a specific question about the data (e.g., "How many vehicles are in RED status?").
 
-**STANDARDS:** Operator opens Contour with a target dataset, applies a group-by aggregation, creates a basic chart, and saves the analysis to the correct folder.
+**STANDARDS:** Operator opens Contour with a target dataset, sorts and filters to find the answer, and reads the result correctly.
 
 **EQUIPMENT:** Active MSS session, Viewer access to target dataset, Contour access.
 
 **PROCEDURE:**
 
 1. Open the target dataset in Compass.
-2. Click the **Analyze in Contour** button (usually in the top toolbar of the dataset view). Contour opens with the dataset loaded as a source.
-   - Alternatively, navigate to Contour from the left sidebar and click **New Analysis**, then select the dataset.
-3. The dataset appears as a table in the Contour workspace.
-4. To **count records by a category** (e.g., count Soldiers by unit):
-   - Click **Group By** in the analysis toolbar.
-   - Select the column you want to group on (e.g., "unit_name").
-   - Click **Aggregate** and select **Count** as the function.
-   - The result table shows one row per unique unit with a count of records.
-5. To **sum a numeric column by group** (e.g., total equipment by unit):
-   - Follow the Group By steps above.
-   - In Aggregate, select **Sum** as the function and select the numeric column.
-6. To **create a chart from the result:**
-   - Click **Visualize** or the chart icon in the toolbar.
-   - Select a chart type: Bar chart works well for comparing categories; Line chart works for trends over time.
-   - Map the X-axis to your group column and the Y-axis to the aggregated value.
-   - The chart renders in the panel.
-7. To **save the analysis:** click **Save**. Name the analysis clearly (e.g., "1ABCT NonDeployable Count by Company 11MAR26"). Save to the correct location:
-   - Your personal workspace for personal reference analyses.
-   - The unit project folder for analyses your section will share.
+2. Click the **Analyze in Contour** button in the top toolbar. Contour opens with the dataset loaded.
+3. The dataset appears as a table in the Contour workspace — rows and columns, similar to a spreadsheet.
+4. To **sort** by a column: click the column header in the Contour table. Click again to reverse.
+5. To **filter** to specific records: click **Add Filter**, select a column, and enter the value you want (e.g., filter "status" to "RED").
+6. Read the filtered result. The row count at the bottom of the table tells you how many records match.
+7. To clear a filter, click the "X" on the filter tag.
 
-NOTE: Contour analyses are read-only analyses of live data. They do not modify the underlying dataset in any way. Another analyst opening the same analysis later will see updated data reflecting whatever the dataset looked like when they ran it.
+NOTE: Contour is a read-only analysis tool — it does not modify the underlying dataset. For more advanced Contour analysis (aggregations, charts, saved analyses), see TM-20.
 
-CAUTION: Before sharing any Contour analysis output with others, verify that the combined output does not reveal information at a higher classification than what you are authorized to share. Combining multiple data fields can raise the effective classification of the output (see Aggregation Risk, Section 6-4).
+CAUTION: Before sharing any Contour output, verify that the combined output does not reveal information at a higher classification than what you are authorized to share (see Aggregation Risk, Section 6-4).
 
-EXAMPLE: MAJ Williams at V Corps G1 needs to know how many Soldiers across V Corps subordinate units have expired weapon qualifications. She opens the personnel readiness dataset in Contour, groups by "unit_name," and aggregates a count of records where "weapon_qual_expired" equals true. The result table shows counts by unit. She creates a bar chart and saves it to the V Corps G1 project folder for the morning brief.
+EXAMPLE: SSG Kim at V Corps G4 needs to know how many Class IX parts requests are overdue. She opens the parts request dataset in Contour, filters "status" to "OVERDUE," and reads the row count: 47 overdue requests. She notes the result for her morning report.
 
 ---
 
-## TASK 5-3: USE QUIVER TO EXPLORE ONTOLOGY OBJECTS
+## TASK 5-3: LOOK UP AN OBJECT IN QUIVER
 
-**CONDITIONS:** Operator has access to Quiver and the relevant object types in MSS.
+**CONDITIONS:** Operator has access to Quiver and needs to find information about a specific entity (a unit, vehicle, Soldier, or other tracked object).
 
-**STANDARDS:** Operator opens Quiver, selects an object type, applies a filter, and views the properties of a selected object and its related objects.
+**STANDARDS:** Operator opens Quiver, selects the correct object type, locates a specific object, and reads its properties.
 
 **EQUIPMENT:** Active MSS session, Quiver access, access to target object types.
 
 **PROCEDURE:**
 
 1. Navigate to **Quiver** from the left sidebar or application menu.
-
-   NOTE: Quiver may not be accessible to all users. If you do not see it in the menu, you may not have access. Contact your data steward.
-
-2. In Quiver, the **Object Type catalog** appears on the left. Select the object type you want to explore (e.g., "UnitStatus," "SoldierReadiness," "EquipmentRecord").
+2. The **Object Type catalog** appears on the left. Select the type you want to explore (e.g., "Vehicle," "Unit," "SoldierReadiness").
 3. The **object list** loads in the center panel, showing all objects of that type you are authorized to see.
-4. Apply **filters** using the filter panel:
-   - Click "Add Filter," select a property, and enter the filter value (e.g., filter "brigade" to "3BCT").
-   - The object list narrows to matching records.
-5. Click any object in the list to open its **detail panel** on the right. The detail panel shows all properties of that object.
-6. Look for the **Related Objects** section in the detail panel. Click a related object type (e.g., from a Unit, navigate to its Soldiers) to explore connected records.
+4. To find a specific object, use the **filter panel**: click "Add Filter," select a property (e.g., "unit"), and enter the value (e.g., "1-7 CAV").
+5. Click any object in the list to open its **detail panel** on the right. Read the properties displayed.
 
-NOTE: Quiver shows data from the Ontology — the semantic, connected layer of MSS. Objects in Quiver are the same records that power Workshop applications. If you submit a SITREP through a Workshop form, that record becomes a Quiver object that other authorized users can see.
+NOTE: Quiver shows data from the Ontology — the semantic layer of MSS that organizes data as real-world entities and their relationships. Objects in Quiver are the same records that power Workshop applications. For advanced Ontology exploration (link traversal, related objects, Object Type relationships), see TM-20.
 
-NOTE: Quiver is a read-only exploration tool for consumer users. You cannot edit properties, create objects, or delete records from Quiver unless you have a specific builder or editor role for that object type.
+NOTE: Quiver is read-only for consumer users. You cannot edit properties or create objects from Quiver.
+
+EXAMPLE: SFC Adams at 21st TSC needs to verify the assigned unit for a specific vehicle. He opens Quiver, selects the "Vehicle" object type, filters by bumper number, and reads the "Assigned Unit" property in the detail panel.
 
 ---
 
@@ -978,7 +872,7 @@ NOTE: Quiver is a read-only exploration tool for consumer users. You cannot edit
 6. The data steward will investigate the pipeline and confirm or correct the data.
 7. For time-critical operations where the discrepancy cannot wait for pipeline resolution: brief your commander on the data uncertainty. Do not present unverified MSS data as confirmed.
 
-> **NOTE:** A data discrepancy is not automatically an error — source system delays, network issues, or reporting lag are common. The standard response is to flag it and escalate, not to ignore it or work around it.
+NOTE: A data discrepancy is not automatically an error — source system delays, network issues, or reporting lag are common. The standard response is to flag it and escalate, not to ignore it or work around it.
 
 ---
 
@@ -993,11 +887,7 @@ If you see data that appears incorrect — wrong unit, wrong number, a value tha
 
 CAUTION: Guessing at corrections, editing records outside of authorized interfaces, or working around incorrect data without reporting it degrades data integrity for everyone who uses that data downstream. One bad record can cascade into multiple bad reports.
 
-> **NOTE:** Distinguish between data that looks wrong due to user error (operator-fixable) and systematic data quality problems (builder/engineer responsibility):
-> - **Operator-fixable:** Wrong filter applied, stale view (refresh), user-level permissions issue.
-> - **Escalate to data steward → TM-20 builder:** Pipeline configuration error, incorrect transform logic, broken data feed from a known source.
-> - **Escalate to data steward → TM-30 advanced builder or TM-40 developer:** Systematic data corruption, incorrect schema mapping, validation failures at ingestion.
-> Do not attempt to modify pipelines or datasets yourself. Refer to TM-30, Chapter 3 (Advanced Pipeline Builder) for builder-level pipeline diagnostic context.
+NOTE: Distinguish between data that looks wrong due to user error (operator-fixable) and systematic data quality problems (builder/engineer responsibility). Operator-fixable: wrong filter applied, stale view (refresh), user-level permissions issue. Escalate to data steward → TM-20 builder: pipeline configuration error, incorrect transform logic, broken data feed from a known source. Escalate to data steward → TM-30 advanced builder or TM-40 developer: systematic data corruption, incorrect schema mapping, validation failures at ingestion. Do not attempt to modify pipelines or datasets yourself. Refer to TM-30, Chapter 3 (Advanced Pipeline Builder) for builder-level pipeline diagnostic context.
 
 ---
 
@@ -1113,7 +1003,7 @@ Data does not become less sensitive just because you moved it out of MSS. When y
 - MSS links work only for users who have authorization to the resource. A link shared with an unauthorized user will result in an "Access Denied" error — this is normal and intentional.
 - Do not attempt to share data by other means (screenshots, email attachments) if the recipient does not have MSS access. Instead, work with your data steward to ensure the right people have appropriate MSS access.
 
-> **NOTE:** Builders who create data products (pipelines, datasets, Workshop applications) are responsible for ensuring those products carry correct classification markings before publication. If you receive an export or data product with markings that appear incorrect, report it immediately to your data steward before sharing or acting on the data. Refer to TM-20, Chapter 8 (Builder Standards and Governance) for builder-level data marking responsibilities.
+NOTE: Builders who create data products (pipelines, datasets, Workshop applications) are responsible for ensuring those products carry correct classification markings before publication. If you receive an export or data product with markings that appear incorrect, report it immediately to your data steward before sharing or acting on the data. Refer to TM-20, Chapter 8 (Builder Standards and Governance) for builder-level data marking responsibilities.
 
 ---
 
@@ -1145,7 +1035,7 @@ Before exporting, sharing, or publishing any analysis that combines multiple dat
 
 After reporting a security incident, preserve all records (browser history, screenshots if safe to take, written notes) until the security officer tells you to do otherwise.
 
-> **NOTE:** All actions you take in MSS — form submissions, data modifications, and application interactions — are logged with your credentials, timestamp, and action type. These logs are retained for accountability reviews, security audits, and incident investigation. You are personally accountable for all activity associated with your credentials.
+NOTE: All actions you take in MSS — form submissions, data modifications, and application interactions — are logged with your credentials, timestamp, and action type. These logs are retained for accountability reviews, security audits, and incident investigation. You are personally accountable for all activity associated with your credentials.
 
 ---
 
@@ -1269,13 +1159,7 @@ Collect the following before making contact:
 
 NOTE: Current phone numbers and email addresses for the USAREUR-AF MSS Help Desk and the C2DAO office are maintained by your unit S6/G6 and in your unit SOP. This manual does not list them because they change. Obtain current contact information before you need it.
 
-> **NOTE:** The escalation path for MSS issues follows TM capability levels:
-> 1. **TM-10 (Operator):** Self-diagnose using Chapter 7 of this manual. Use the self-help checklist before escalating.
-> 2. **Data Steward:** First point of escalation. The steward triages and routes.
-> 3. **TM-20 Builder:** Workshop application issues, basic pipeline failures, Ontology configuration errors.
-> 4. **TM-30 Advanced Builder:** Complex pipeline design, Ontology architecture, AIP Logic configuration, multi-page application design.
-> 5. **TM-40 Developer (code required):** Python/PySpark transforms, TypeScript functions, OSDK development, Agent Studio.
-> Refer to TM-20, Chapter 1 and TM-30, Chapter 1 for role descriptions at each level.
+NOTE: The escalation path for MSS issues follows TM capability levels: (1) TM-10 (Operator) — self-diagnose using Chapter 7 of this manual; use the self-help checklist before escalating. (2) Data Steward — first point of escalation; the steward triages and routes. (3) TM-20 Builder — Workshop application issues, basic pipeline failures, Ontology configuration errors. (4) TM-30 Advanced Builder — complex pipeline design, Ontology architecture, AIP Logic configuration, multi-page application design. (5) TM-40 Developer (code required) — Python/PySpark transforms, TypeScript functions, OSDK development, Agent Studio. Refer to TM-20, Chapter 1 and TM-30, Chapter 1 for role descriptions at each level.
 
 ---
 
@@ -1345,6 +1229,20 @@ Policy questions → USAREUR-AF C2DAO (via chain of command)
 
 ---
 
+# APPENDIX B — PROFESSIONAL READING LIST
+
+> Curated articles from Army professional journals and military publications. These supplement doctrinal references with contemporary operational perspectives.
+
+| Source | Title | Date | Relevance |
+|---|---|---|---|
+| Military Review | "Data-Centric at the Division: 3ID's One-Year Journey" | Jan 2025 | Unit-level data transformation case study |
+| NCO Journal | "From Data to Wisdom" | Feb 2025 | Data literacy fundamentals for leaders |
+| Modern War Institute | "Leadership, Lethality, and Data Literacy" | 2024 | Strategic case for data literacy |
+| Small Wars Journal | "Data as Firepower" | Aug 2025 | Data superiority as warfighting concept |
+| CALL | FY24 MCTP Key Observations | Feb 2025 | CTC lessons on data-centric operations |
+
+---
+
 # GLOSSARY
 
 *20 core terms every MSS operator should know.*
@@ -1377,5 +1275,5 @@ Policy questions → USAREUR-AF C2DAO (via chain of command)
 *TM-10 — Maven Smart System (MSS) Operator Technical Manual*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA, Wiesbaden, Germany*
 *2026*
-*UNCLASSIFIED — Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*UNCLASSIFIED — Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*
 *For corrections or updates, contact the USAREUR-AF Operational Data Team through your unit data steward or the C2DAO office.*

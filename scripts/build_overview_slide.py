@@ -278,17 +278,17 @@ add_textbox(slide, "SCOPE & SCALE",
 
 bullets = [
     "3 core courses (TM-10/20/30) + specialty tracks for all roles",
-    "~141 published PDFs; Markdown source maintained in version control",
+    "160+ published PDFs; Markdown source in version control",
     "Dedicated exercises with hands-on labs per track",
     "PRE + POST assessments for every course",
-    "Authority: USAREUR-AF G6/G9 Data Governance Directive (MSS-POI-001)",
+    "Authority: C2DAO Data Governance Directive (MSS-POI-001)",
     "Review cycle: annual or on major platform update",
 ]
 for i, b in enumerate(bullets):
     add_textbox(slide, f"▪  {b}",
-        COL2_L + Inches(0.1), c2_scope_top + Inches(0.40) + i * Inches(0.31),
-        COL_W - Inches(0.15), Inches(0.30),
-        font_size=Pt(10), color=ARMY_BLACK)
+        COL2_L + Inches(0.1), c2_scope_top + Inches(0.34) + i * Inches(0.155),
+        COL_W - Inches(0.15), Inches(0.18),
+        font_size=Pt(8), color=ARMY_BLACK)
 
 # ─── COLUMN 3: Supporting Publications + Doctrine ────────────────────────────
 c3_top = BODY_TOP
@@ -363,20 +363,23 @@ FOOTER_TOP = SLIDE_H - Inches(0.45)
 add_rect(slide, 0, FOOTER_TOP, SLIDE_W, Inches(0.45), fill_color=ARMY_GREEN)
 add_rect(slide, 0, FOOTER_TOP, SLIDE_W, Inches(0.04), fill_color=ARMY_TAN)
 
+# Left: classification
 add_textbox(slide, "UNCLASSIFIED",
     Inches(0.25), FOOTER_TOP + Inches(0.08),
-    Inches(2.5), Inches(0.32),
+    Inches(1.8), Inches(0.32),
     font_size=Pt(9), bold=True, color=ARMY_TAN)
 
+# Center: org line (width capped to avoid overlapping right-aligned distribution text)
 add_textbox(slide, "USAREUR-AF  ·  C2DAO  ·  MSS-POI-001  ·  March 2026",
-    0, FOOTER_TOP + Inches(0.08),
-    SLIDE_W, Inches(0.32),
+    Inches(2.2), FOOTER_TOP + Inches(0.08),
+    Inches(6.1), Inches(0.32),
     font_size=Pt(9), color=WHITE, align=PP_ALIGN.CENTER)
 
-add_textbox(slide, "For official use — distribution authorized to U.S. Government agencies and contractors only",
-    SLIDE_W - Inches(5.5), FOOTER_TOP + Inches(0.08),
-    Inches(5.3), Inches(0.32),
-    font_size=Pt(8), italic=True, color=ARMY_TAN, align=PP_ALIGN.RIGHT)
+# Right: distribution note
+add_textbox(slide, "Distribution: U.S. Government agencies and contractors",
+    SLIDE_W - Inches(4.8), FOOTER_TOP + Inches(0.08),
+    Inches(4.6), Inches(0.32),
+    font_size=Pt(7), italic=True, color=ARMY_TAN, align=PP_ALIGN.RIGHT)
 
 # ── Save ──────────────────────────────────────────────────────────────────────
 out = "maven_training/MSS_PROGRAM_OVERVIEW.pptx"

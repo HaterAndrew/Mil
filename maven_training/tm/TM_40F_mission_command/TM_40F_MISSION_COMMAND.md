@@ -24,6 +24,8 @@ The USAREUR-AF C2DAO built MSS on Palantir Foundry specifically to integrate ope
 
 > **NOTE: MSS is a Mission Command enabler. Shared understanding — the foundation of Mission Command — depends on information quality, speed, and accessibility. MSS addresses all three. The principles remain constant; the information environment has changed.**
 
+> **NOTE:** The **EUCOM Thunderforge AI Planning Ecosystem** (DIU/Scale AI contract, 2024–25) employs AI agents to augment MDMP and wargaming at theater level, compressing planning timelines. Mission Command practitioners trained on MSS are the operational users of Thunderforge-class AI planning tools — the staff integration and MDMP data procedures in TM-40F are directly applicable to AI-augmented planning environments where human judgment remains authoritative over AI-generated options.
+
 ### 1-2. Scope: What TM-40F Covers and Does Not Cover
 
 **TM-40F covers:**
@@ -320,12 +322,12 @@ S6 is the primary interface between the unit and C2DAO for:
 
 ---
 
-### 2-6a. S9 / G9 Section — Civil Affairs Operations (CA/CMO Integration)
+### 2-6a. S9 / Civil Affairs Section — Civil Affairs Operations (CA/CMO Integration)
 
 **MOS:** 38A (Civil Affairs Officer), 38B (Civil Affairs Specialist); 41A (Foreign Affairs Officer) at division/corps
 **Positions:** S9 (at division and above), S5 (at BCT), CA Team Leader, CMO Coordinator
 
-**Role Description.** The S9 section (G9 at division and above; functions performed by S5 at BCT) manages civil affairs operations data and civil-military operations (CMO) integration on MSS. In USAREUR-AF's multinational operating environment, civil considerations — host-nation relationships, key leader engagement (KLE) tracking, and civil effects monitoring — are operationally significant and require dedicated data management (FM 6-0, para 3-16).
+**Role Description.** The S9 section (Civil Affairs (CA) at division and above; functions performed by S5 at BCT) manages civil affairs operations data and civil-military operations (CMO) integration on MSS. In USAREUR-AF's multinational operating environment, civil considerations — host-nation relationships, key leader engagement (KLE) tracking, and civil effects monitoring — are operationally significant and require dedicated data management (FM 6-0, para 3-16).
 
 **MSS Data Domain:**
 - Civil considerations overlay: population centers, key terrain (infrastructure, utilities, LOCs with civilian use)
@@ -1653,7 +1655,7 @@ Instructions:
 |---|---|---|
 | ADP 6-0 | Mission Command | 7 principles; shared understanding; commander's intent; disciplined initiative |
 | FM 6-0 | Commander and Staff Organization and Operations | Staff responsibilities S1–S9; CCIRs (PIR, FFIR, EEFI); battle rhythm; decision support |
-| FM 5-0 | Planning and Orders Production | Operations process; MDMP 7 steps; assessment MOE/MOP framework |
+| FM 5-0 | Planning and Orders Production (Nov 2024) | Operations process; MDMP 7 steps; assessment MOE/MOP framework |
 | ADP 5-0 | The Operations Process | Operations process fundamentals: plan, prepare, execute, assess; continuous assessment |
 | ATP 6-0.5 | Command Post Organization and Operations | Main/TAC/Alt/Jump CP; battle rhythm events; CP displacement |
 | FM 6-02 | Signal Support to Operations | Network architecture; MSS as network-enabled C2 application |
@@ -1661,6 +1663,17 @@ Instructions:
 | ADP 2-0 | Intelligence | IPB; intelligence support to the operations process |
 | FM 3-09 | Fire Support and Field Artillery Operations | Fires integration with the operations process; targeting process |
 | ATP 4-90 | Brigade Support Battalion | Logistics operations; LOGSTAT; supply support |
+| ATP 5-0.1 | Army Design Methodology | ADM critical thinking before MDMP |
+| TC 6-0.2 | Training the C2 WFF for BN/BDE/BCT | C2 training tables |
+
+**Strategic Guidance:**
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| NATO Warfighting Capstone Concept (2021) | NATO NWCC | 6 Critical Enablers including Data — frames MSS as enabler of alliance warfighting |
+| NATO Digital Transformation Implementation Strategy (Oct 2024) | NATO | Digital transformation roadmap — MDO interoperability context for mission command systems |
 
 ---
 
@@ -1681,6 +1694,19 @@ Instructions:
 | SJA | 27A (JA), 27D (Paralegal) | — | 27D | Targeting legal review; no-strike list; ROE documentation |
 | Civil Affairs | 38A (CA) | — | 38B | Civil considerations overlay; CMO event tracking |
 | FA Officers | 50A, 51A, 53A, 54A | — | — | Domain-specific (force management, engineer, info systems, IO) |
+
+---
+
+## APPENDIX F — PROFESSIONAL READING LIST
+
+> Curated articles from Army professional journals and military publications. These supplement doctrinal references with contemporary operational perspectives.
+
+| Source | Title | Date | Relevance |
+|---|---|---|---|
+| War on the Rocks | "The U.S. Army, AI, and Mission Command" | Mar 2025 | AI impact on mission command philosophy |
+| Military Review | "The True Test of Mission Command" | Sep-Oct 2024 | Mission command in practice |
+| Military Review | "Modernizing Military Decision-Making: Integrating AI into Army Planning" | Aug 2025 | AI-augmented MDMP |
+| Small Wars Journal | "Elevating Information as a Core WfF for MDO" | Apr 2025 | Information as warfighting function |
 
 ---
 
@@ -1751,5 +1777,11 @@ Instructions:
 *TM-40F — Maven Smart System (MSS): Mission Command Warfighting Function — Intermediate Operator's Manual*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 *Version 1.0 | March 2026*
-*Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.*
 *Authority: USAREUR-AF C2DAO*
+
+**DoD and Army Strategic References:**
+
+- **JADC2 Strategy Summary (March 2022)** — Cross-domain data integration strategy for Joint All-Domain Command and Control
+- **DoD Directive 3000.09, Autonomy in Weapon Systems (January 2023 update)** — Policy on autonomous and semi-autonomous functions in weapon systems; context for mission command decision support
+- **JCOIE (Joint Concept for Operating in the Information Environment)** — Joint framework for information operations and decision advantage in the information environment

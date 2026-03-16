@@ -16,6 +16,20 @@ This document gives a qualified instructor everything needed to understand the M
 
 ---
 
+## Authoritative References
+
+| Publication | Title | Relevance |
+|---|---|---|
+| AR 350-1 | Army Training and Leader Development | Master regulation for Army training policy; governs instructor qualification requirements |
+| TR 350-70 | Army Learning Policy and Systems | TRADOC master regulation governing instructor certification, course delivery standards, and learning products |
+| TP 350-70-3 | Faculty and Staff Development Program | TRADOC pamphlet governing instructor development, certification, and sustainment training |
+| TP 350-70-7 | Army Educational Processes | TRADOC pamphlet governing instructional methodology, assessment design, and evaluation |
+| FM 7-0 | Training | Unit training management procedures; provides context for how institutional training integrates with unit training plans |
+
+> **NOTE:** TR 350-70, TP 350-70-3, and TP 350-70-7 are published by TRADOC at adminpubs.tradoc.army.mil, not DA APD.
+
+---
+
 ## 1. PROGRAM OVERVIEW
 
 The MSS Training Program is a tiered, progressive curriculum that trains USAREUR-AF personnel to operate, build on, and lead with the Maven Smart System.
@@ -28,7 +42,7 @@ TM-10 → TM-20 → TM-30 → TM-40 (all tracks) → TM-50 (specialist advanced 
 
 | Level | Course | Duration | Audience | Prereq |
 |-------|--------|----------|----------|--------|
-| TM-10 | Maven User | 2 days | All MSS users | None |
+| TM-10 | Maven User | 1 day | All MSS users | None |
 | TM-20 | Builder | 5 days | Analysts, data builders | TM-10 |
 | TM-30 | Advanced Builder | 5 days | Senior analysts, pipeline builders | TM-20 |
 | TM-40A | Intelligence WFF | 3 days | G2/S2 staff | TM-30 |
@@ -37,12 +51,12 @@ TM-10 → TM-20 → TM-30 → TM-40 (all tracks) → TM-50 (specialist advanced 
 | TM-40D | Sustainment WFF | 3 days | G4/S4, FSB/BSB staff | TM-30 |
 | TM-40E | Protection WFF | 3 days | Force protection officers, CBRN | TM-30 |
 | TM-40F | Mission Command WFF | 3 days | G3/S3, battle captains, XOs | TM-30 |
-| TM-40G | ORSA | 3 days | FA49, data scientists | TM-30 |
-| TM-40H | AI Engineer | 3 days | AI engineers, AIP practitioners | TM-30 |
-| TM-40I | ML Engineer | 3 days | ML engineers | TM-30 |
-| TM-40J | Program Manager | 3 days | MSS program managers | TM-30 |
-| TM-40K | Knowledge Manager | 3 days | KMs, S6 data teams | TM-30 |
-| TM-40L | Software Engineer | 3 days | SWEs, Foundry developers | TM-30 |
+| TM-40G | ORSA | 5 days | FA49, data scientists | TM-30 |
+| TM-40H | AI Engineer | 5 days | AI engineers, AIP practitioners | TM-30 |
+| TM-40I | ML Engineer | 5 days | ML engineers | TM-30 |
+| TM-40J | Program Manager | 4 days | MSS program managers | TM-30 |
+| TM-40K | Knowledge Manager | 4 days | KMs, S6 data teams | TM-30 |
+| TM-40L | Software Engineer | 5 days | SWEs, Foundry developers | TM-30 |
 | TM-50G | Advanced ORSA | 5 days | Senior FA49, theater ORSA | TM-40G |
 | TM-50H | Advanced AI Engineer | 5 days | Senior AI engineers | TM-40H |
 | TM-50I | Advanced ML Engineer | 5 days | Senior ML engineers | TM-40I |
@@ -235,7 +249,43 @@ These are the most frequently recurring errors observed in MSS course delivery. 
 
 ---
 
-## 9. CONTACTS AND ESCALATION
+## 9. INSTRUCTOR CERTIFICATION PROCESS
+
+This section establishes the certification pathway for MSS instructors per TP 350-70-3, *Faculty and Staff Development Program*. For detailed instructor qualification standards, prerequisites, and evaluator criteria, see `training_management/FACULTY_DEVELOPMENT_PLAN.md`.
+
+### 9-1. Certification Pathway
+
+All MSS instructors must complete the following progression before independently delivering instruction:
+
+| Phase | Activity | Duration | Evaluator |
+|---|---|---|---|
+| 1. Attend | Complete the target course as a student; achieve Go on all evaluations | Per course schedule | Course lead instructor |
+| 2. Shadow | Observe a certified instructor deliver the full course; take notes on pacing, transitions, and student management | 1 course iteration | Supervising instructor |
+| 3. Co-Teach | Deliver 2–3 blocks of instruction under observation; receive structured feedback | 1 course iteration | Supervising instructor |
+| 4. Lead (Observed) | Deliver the full course as lead instructor with an observer present | 1 course iteration | Training OIC/NCOIC |
+| 5. Certify | Training OIC/NCOIC signs certification memorandum; instructor added to certified roster | Upon completion of Phase 4 | Training OIC/NCOIC |
+
+> **NOTE:** Phase 2 (Shadow) and Phase 3 (Co-Teach) may occur in the same course iteration if the supervising instructor determines the candidate is ready to deliver blocks during that iteration. Phases may not be skipped.
+
+### 9-2. Recertification
+
+- Instructors must deliver at least one iteration of their certified course every 12 months to maintain certification.
+- If 12 months elapse without delivery, the instructor must complete Phase 3 (Co-Teach) before resuming independent delivery.
+- Curriculum updates that change >25% of course content require all certified instructors to complete a delta briefing before next delivery.
+
+### 9-3. Certification Authority
+
+The USAREUR-AF C2DAO Training OIC is the certification authority for all MSS instructor certifications. Certification memoranda are maintained by the training NCOIC.
+
+### 9-4. Cross-Certification
+
+Instructors certified for one TM-40 specialist track (G–L) may cross-certify for additional tracks by completing Phases 1 and 3 for the new track. WFF tracks (A–F) require full certification pathway due to domain-specific content.
+
+> **Reference:** TP 350-70-3, *Faculty and Staff Development Program* (TRADOC). See also `training_management/FACULTY_DEVELOPMENT_PLAN.md` for instructor qualification matrices and evaluator prerequisites.
+
+---
+
+## 10. CONTACTS AND ESCALATION
 
 | Issue | Contact |
 |-------|---------|
@@ -247,7 +297,7 @@ These are the most frequently recurring errors observed in MSS course delivery. 
 
 ---
 
-## 10. QUICK REFERENCE — COURSE DOCUMENT MAP
+## 11. QUICK REFERENCE — COURSE DOCUMENT MAP
 
 For any given course, the complete instructor document set is:
 

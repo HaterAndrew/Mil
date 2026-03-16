@@ -1,6 +1,7 @@
 # TM-50I — ADVANCED MACHINE LEARNING ENGINEERING
 
 > **BLUF:** TM-50I qualifies senior machine learning engineers to design, build, and lead production ML platform capability on MSS. This manual extends TM-40I into automated MLOps, advanced neural architectures, federated learning, real-time inference, ML security, and platform architecture leadership.
+> **Prereqs:** TM-40I, Machine Learning Engineer (required — Go evaluation on file). TM-40H (AI Engineer) recommended. Data Literacy Technical Reference (recommended).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: AUTOMATED MODEL DEPLOYMENT IS A PRIVILEGED CAPABILITY. Automated pipelines that promote model versions to production without human review are classified as high-risk automation under UDRA v1.1. Implementing this pattern without a documented, C2DAO-approved automation design and explicit mission owner sign-off constitutes an unauthorized production change. The senior MLE who designs the pipeline is accountable for every automated promotion it executes.**
@@ -109,8 +110,6 @@ Personnel who do not meet these entry standards must complete TM-40I production 
 
 | Document | Relevance |
 |---|---|
-| Army CIO Data Stewardship Policy (April 2, 2024) | Foundational data governance; ML models are data products; stewardship accountability |
-| Unified Data Reference Architecture (UDRA) v1.1 (February 2025) | Domain ownership, federated governance, ML automation authorization tiers |
 | DoD Responsible AI Implementation Toolkit and Framework (RAIMTF) | Model documentation, risk assessment, accountability chain for AI systems |
 | DoD AI Ethics Principles (2020) | Responsible, equitable, traceable, reliable, governable — required properties of all DoD AI |
 | Army AI/ML Governance Framework (current) | Army-level model lifecycle, oversight, and incident reporting requirements |
@@ -118,6 +117,18 @@ Personnel who do not meet these entry standards must complete TM-40I production 
 | NATO Architecture Framework v4 (NAFv4) | Coalition architecture standards for federated or MPE-accessible ML outputs |
 | EUCOM Data Sharing Agreements | Applicable for any model consuming partner-nation data or participating in coalition federated learning |
 | learn-data.armydev.com | Authoritative reference implementations, approved patterns, and policy updates |
+| Army DIR 2024-03 | Digital Engineering Policy — Army-wide digital engineering adoption directive |
+| FM 3-12 | Cyberspace Operations and Electromagnetic Warfare — operational context for ML systems |
+| DA PAM 25-2-5 | Software Assurance — software security standards |
+
+### 1-5a. Strategic Guidance
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| Army CIO Data Stewardship Policy (April 2, 2024) | Army CIO | Foundational data governance; ML models are data products; stewardship accountability |
+| UDRA v1.1 (February 2025) | Army Enterprise | Domain ownership, federated governance, ML automation authorization tiers |
 
 ### 1-6. Advanced Governance Tiers
 
@@ -1413,4 +1424,10 @@ Any unchecked item without documented N/A justification is a STOP condition.
 *TM-50I — Advanced Machine Learning Engineering — Maven Smart System*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA*
 *Wiesbaden, Germany*
-*UNCLASSIFIED — Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*UNCLASSIFIED — Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*
+
+**DoD and Army Strategic References:**
+
+- **DoD Responsible AI Strategy & Implementation Pathway (June 2024 update)** — DoD framework for responsible AI development, testing, and fielding
+- **DoD AI Cybersecurity Risk Management Guide (CDAO)** — Risk management guidance for AI systems in DoD environments
+- **DoD Directive 3000.09, Autonomy in Weapon Systems (January 2023 update)** — Policy on autonomous and semi-autonomous functions in weapon systems

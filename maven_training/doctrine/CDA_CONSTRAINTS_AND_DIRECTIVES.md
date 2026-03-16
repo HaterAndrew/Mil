@@ -16,6 +16,35 @@ Source: USAREUR-AF G37/ODT organizational guidance, derived from theater-level o
 
 ---
 
+## Doctrinal Foundation
+
+| Publication | Title | Relevance |
+|---|---|---|
+| ADP 3-0 | Operations | Operational framework within which CDA architecture operates |
+| ADP 5-0 | The Operations Process | Plan-prepare-execute-assess cycle that CDA supports |
+| ADP 6-0 | Mission Command | C2 warfighting function and shared understanding |
+| AR 25-1 | Army Information Technology | Statutory authority for data governance and IT architecture |
+
+**Strategic Guidance:**
+
+> The following are strategic guidance documents — not doctrine — that inform CDA architecture and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| NATO Data Strategy for the Alliance (Feb 2025) | NATO | Alliance-wide data governance mandate — coalition alignment requirement for EUCOM AOR |
+| NATO Data Centric Reference Architecture v2 (2025) | NATO | Reference architecture for digital transformation — target architecture for coalition data interoperability |
+
+> **NOTE:** CDA architectural constraints are derived from these doctrinal principles as applied through CG operational guidance. They are not doctrine themselves but implement doctrine within the MSS operational context.
+
+**Theater-Level Implementation Examples:**
+
+| Initiative | Date | Implementation Context |
+|---|---|---|
+| **EUCOM BRAVO Hackathon Series** (BRAVO 100, BRAVO 101) | Mar–Summer 2024 | EUCOM Chief Data and AI Office innovation events where small teams build AI prototypes for theater warfighting challenges in 72–96 hours. 26 prototype solutions produced. Demonstrates the Understand-Adapt-Integrate cycle (Constraint III) at operational tempo — rapid prototyping under architectural constraints, with operational relevance as the acceptance criterion. |
+| **EUCOM Thunderforge AI Planning Ecosystem** (DIU/Scale AI contract) | 2024–25 | AI agents simulate wargaming and planning scenarios for EUCOM, enabling AI-augmented MDMP at theater level. Implements Constraints VI (decision speed as the critical metric), VII (observability of AI agent outputs), and IV (theater-level architecture enabling subordinate planning). |
+
+---
+
 ## I. The Change Framework
 
 Every architectural initiative must answer four questions in sequence. Skipping any step produces temporary change that does not survive leadership transitions or operational stress.

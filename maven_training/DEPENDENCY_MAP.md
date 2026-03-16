@@ -2,7 +2,7 @@
 ## USAREUR-AF Operational Data Team | C2DAO Training Branch
 
 **Generated:** 13 March 2026
-**Last updated:** 15 March 2026 (pre-v2.0 full-corpus audit; PPTX rebuild; prereq chain finalized; builder sprint (BSP) section added; 27 missing files integrated; formal curriculum audit completed — fixes applied: TM-10 Task 4-1B standards, TM-20 join scope boundary, TEO TM20-03 date [CRITICAL], TM-30 Quiver eval swap + Block 11 peer review + Block 17 diagnostic inject, TM-40F LO-5 gap, all WFF syllabi function-specific Go criteria + CCIR troubleshooting, TM-40J/K expanded to 4 days, ENROLLMENT_SOP training records section, CURRICULUM_MAINTENANCE_SOP platform monitoring + semi-annual review, MTP throughput risk item, COMMANDERS_GUIDE_MSS_TRAINING.md created)
+**Last updated:** 16 March 2026 (final editing pass: EXAM_TM10_POST → EXAM_TM10_SUPPLEMENTAL; ANNUAL_TRAINING_CALENDAR_FY27.html added; INSTRUCTOR_OVERVIEW.md integrated; stale refs cleaned across dep map, exercises README, generate_dep_map.py, audit.py, PILOT_AGENT_PROMPT)
 **Audit method:** Full manual read of all source files across 6 parallel agent passes (13 March); ralf branch content migration (14 March); Palantir Developers video mapping (14 March); full ralf file inventory and PDF build (14 March); full content read of all 30 CDA slide decks (14 March) — level assignments corrected corpus-wide; pre-v2.0 content accuracy and consistency audit across all curriculum, app, widget, and PPTX files (14 March)
 **Status at generation:** Corpus at v2.0-ready state. All naming and content issues resolved. TM-40D/E/F prereq discrepancy resolved 2026-03-14 — all WFF tracks (TM-40A–F) now require TM-30 as terminal prerequisite. Pre-v2.0 audit complete: 8 content fixes applied (README.md, POLICY_LETTER.md, cheatsheet.md, Home.tsx, TM40.tsx, mss_info_app/index.html, .gitignore, MSS_Project_Overview.pptx); MSS_Training_Progression.pptx specialist column fully rebuilt with clean WFF (A–F) / Specialist (G–L) grouping. PDFs regenerated (3 source-changed files rebuilt). See changelog entry #95–103.
 
@@ -230,7 +230,7 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 | SYLLABUS_TM10.md | [SYL] | → TM-10 [TM] |
 | EX-10_operator_basics/EXERCISE.md | [EX] | → TM-10 [TM] |
 | EXAM_TM10_PRE.md | [EXAM] | assesses TM-10 readiness |
-| EXAM_TM10_POST.md | [EXAM] | assesses TM-10 completion |
+| EXAM_TM10_SUPPLEMENTAL.md | [EXAM] | optional supplemental knowledge check for TM-10 |
 
 **Inbound references from:** TM-20, TM-30, TM-40A–F (all list TM-10 as prereq), SYLLABUS_TM20, SYLLABUS_TM30, all TM-40/50 syllabi, MTP, POI, CAD, TEO, ENROLLMENT_SOP, ANNUAL_TRAINING_SCHEDULE, CHEATSHEET, README, QUICK_START
 
@@ -311,7 +311,7 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 |---|---|---|
 | TM_40B_FIRES.md | [TM] | → TM-10, → TM-20, → TM-30, → CONCEPTS_GUIDE_TM40B (prereq read), ⇢ TM-40L (system admin) |
 | CONCEPTS_GUIDE_TM40B_FIRES.md | [CNCPT] | ↔ TM -40B [TM] (read before TM-40B), ⇢ ADP 3-19, FM 3-09, FM 3-60, ATP 3-01.8, ATP 3-52.2, ATP 3-09.42, ATP 3-09.50 |
-| SYLLABUS_TM40B.md | [SYL] | → TM-10, → TM-20, → TM-30, ⇢ FM 3-09, ATP 3-09.42, ATP 3-60 |
+| SYLLABUS_TM40B.md | [SYL] | → TM-10, → TM-20, → TM-30, ⇢ FM 3-09, ATP 3-09.42, FM 3-60 |
 | EX-40B_fires/EXERCISE.md | [EX] | → TM-40B [TM] |
 | EXAM_TM40B_PRE.md | [EXAM] | assesses TM-40B readiness |
 | EXAM_TM40B_POST.md | [EXAM] | assesses TM-40B completion |
@@ -359,7 +359,7 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 |---|---|---|
 | TM_40E_PROTECTION.md | [TM] | → TM-10, → TM-20, → TM-30, → CONCEPTS_GUIDE_TM40E (prereq read), ↔ TM-40A (AT intel), ↔ TM-40B (AMD coordination), ↔ TM-40C (base camp siting), ↔ TM-40D (CBRN resupply/medical), ↔ TM-40F (COP/CCIR protection data), ⇢ TM-40L (pipeline construction) |
 | CONCEPTS_GUIDE_TM40E_PROTECTION.md | [CNCPT] | ↔ TM -40E [TM] (Appendix A naming, Appendix H data quality) |
-| SYLLABUS_TM40E.md | [SYL] | → TM-10, → TM-20, → TM-30, ⇢ ADP 3-37, FM 3-37, ATP 3-37.2 |
+| SYLLABUS_TM40E.md | [SYL] | → TM-10, → TM-20, → TM-30, ⇢ ADP 3-37, ATP 3-37.2 |
 | EX-40E_protection/EXERCISE.md | [EX] | → TM-40E [TM] |
 | EXAM_TM40E_PRE.md | [EXAM] | assesses TM-40E readiness |
 | EXAM_TM40E_POST.md | [EXAM] | assesses TM-40E completion |
@@ -530,6 +530,7 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 | CAD_MSS.md | Course admin; access reqs by track | All TMs; TM-40J/K prereq = TM-30 required |
 | TEO_MSS.md | T&EO evaluation standards; TM20-03 Row 5 now [CRITICAL] (date arithmetic) | TM-10 through TM-40L critical performance measures |
 | ANNUAL_TRAINING_SCHEDULE.md | Schedule by track (2026) | All TMs; TM-40J/K prereq = TM-30 |
+| ANNUAL_TRAINING_CALENDAR_FY27.html | Interactive FY27 training calendar (HTML) | Visual companion to ANNUAL_TRAINING_SCHEDULE |
 | FACULTY_DEVELOPMENT_PLAN.md | Instructor quals by track | All TMs; WFF (A–F) vs. Specialist (G–L) instructor profiles |
 | COMPLETION_CERTIFICATE.md | Certificate templates | Generic; course title filled at completion |
 | CURRICULUM_MAINTENANCE_SOP.md | Maintenance SOP + Platform Monitoring procedure (Sec 2A) + Semi-Annual Deep Review (Sec 5A) | Scope: TM-10 through TM-40L |
@@ -876,3 +877,88 @@ ls maven_training/pdf/*.pdf | wc -l
 | 103 | maven_training/pdf/MSS_Training_Progression.pptx | Specialist column: original 6-slot design insufficient; partial fix left WFF A–D mixed with specialist H–I, sub-headers misplaced | Full column rebuild via python-pptx: deleted all 19 old content shapes; clean layout with "▸ WFF TRACKS (A–F)" (A–F) / "▸ SPECIALIST (G–L)" (G–L) sub-headers; TM-50 G–L note added at bottom |
 | 104 | scripts/build_pdfs.py (PDF rebuild) | 3 source files changed: POLICY_LETTER.md, cheatsheet.md, task_index.html | Hash-based rebuild: 3 PDFs regenerated (POLICY_LETTER.pdf, CHEATSHEET.pdf + task_index.html-derived); 199 unchanged |
 | 105 | DEPENDENCY_MAP.md | Audit findings not logged | This entry |
+| 106 | SYLLABUS_TM40B.md, TM40_WFF_LESSON_PLAN_OUTLINES.md, DEPENDENCY_MAP.md | ATP 3-60 (inactive, May 2015) referenced instead of superseding FM 3-60 (Aug 2023) | replace_all ATP 3-60 → FM 3-60 in all 3 files (2 + 4 + 1 = 7 instances) |
+| 107 | DEPENDENCY_MAP.md | No external doctrinal reference index | Added "External Doctrinal References" section with 32-pub table |
+| 108 | TM_40E, SYLLABUS_TM40E, DEPENDENCY_MAP, index.html, index_sharepoint.html, TM40_WFF_LESSON_PLAN_OUTLINES | Phantom FM 3-37 cited (pub does not exist); protection capstone is ADP 3-37 | Removed/replaced FM 3-37 → ADP 3-37 across 6 files (10 edits); zero instances remain |
+| 109 | TM_50K_KNOWLEDGE_MANAGER_ADVANCED | FM 6-01.1 cited (pub type wrong); correct is ATP 6-01.1 | Changed FM 6-01.1 → ATP 6-01.1 (Techniques for Effective Knowledge Management) |
+| 110 | TM_40C, CONCEPTS_GUIDE_TM40C, index.html, index_sharepoint.html | FM 3-90-1 and FM 3-90-2 cited; both merged into FM 3-90 (May 2023) | Consolidated 19 refs across 4 files → FM 3-90, Offense and Defense (May 2023) |
+| 111 | TM_40C_MOVEMENT_MANEUVER | Stale edition dates: FM 3-0 (2022), FM 3-09 (2020), FM 5-0 (2022), FM 6-0 (2014) | Updated to current: FM 3-0 (Mar 2025), FM 3-09 (Aug 2024), FM 5-0 (Nov 2024), FM 6-0 (May 2022) |
+| 112 | TM_40K, TM_50K | FM 7-0 subtitle "Train to Win in a Complex World" (2016 ed.) | Updated to current: FM 7-0, Training (Jun 2021) |
+| 113 | TM_50H_AI_ENGINEER_ADVANCED | AR 25-55 cited (rescinded; incorporated into AR 25-30) | Changed AR 25-55 → AR 25-30 (FOIA) |
+| 114 | 25 TM/doctrine/training_management files | Strategic guidance docs mixed into Governing/Doctrinal References tables | Separated into distinct "Strategic Guidance" sections; 21 files modified |
+| 115 | 13 TM files (TM-10, TM-40A–L) | No professional reading lists | Added Professional Reading List appendices with 65+ curated journal articles |
+| 116 | 7 files (CG docs, TM-40F/G/H/I, CDA) | No EUCOM theater context | Added Theater and Strategic Context sections (BRAVO Hackathon, Thunderforge, Posture Statement, 49B career path) |
+| 117 | TM-40A, TM-40C, TM-40K, TM-40L, TM-50K, TM-50L, GLOSSARY | NATO MIM standards gap — no STANAG 5643/5527, ADatP-36/5644, or CWIX references | Added 4 NATO standards to doctrine refs, CWIX context notes, glossary MIM disambiguation |
+
+---
+
+## External Doctrinal References
+
+> Publications prefixed TR/TP are published by TRADOC at adminpubs.tradoc.army.mil, not DA APD (armypubs.army.mil).
+
+| Publication | Title | Referenced By |
+|---|---|---|
+| AR 350-1 | Army Training and Leader Development | All training management docs |
+| TR 350-70 | Army Learning Policy and Systems (TRADOC) | POI, CAD, CURRICULUM_MAINTENANCE_SOP, INSTRUCTOR_OVERVIEW |
+| TP 350-70-14 | Training Development in Institutional Domain (TRADOC) | POI, CAD, CURRICULUM_MAINTENANCE_SOP |
+| TP 350-70-7 | Army Educational Processes (TRADOC) | POI, INSTRUCTOR_OVERVIEW |
+| TP 350-70-3 | Faculty and Staff Development Program (TRADOC) | INSTRUCTOR_OVERVIEW |
+| DA PAM 25-40 | Army Publishing: Action Officers' Guide | Publication standards (all docs) |
+| AR 25-50 | Preparing and Managing Correspondence | Army writing style (all docs) |
+| AR 25-1 | Army Information Technology | TM-40K, TM-40L, POLICY_LETTER, data governance |
+| DA PAM 25-1-1 | Army IT Implementation Instructions | TM-40K, TM-40L |
+| AR 25-400-2 | Army Records Management Program | TM-40K |
+| DA PAM 25-403 | Army Guide to Recordkeeping | TM-40K |
+| ATP 6-01.1 | Techniques for Effective Knowledge Management | TM-40K, TM-50K |
+| DA PAM 600-3 | Officer Professional Development | TM-40G (FA 49 ORSA) |
+| AR 5-11 | Management of Army M&S | TM-40G, TM-50G |
+| DA PAM 5-11 | VV&A of Army Models and Simulations | TM-40G, TM-50G |
+| ATP 5-0.3 | Multi-Service TTP for Operation Assessment | TM-40G, TM-50G |
+| AR 71-9 | Warfighting Capabilities Determination | TM-40G |
+| Army DIR 2024-03 | Digital Engineering Policy | TM-40H, TM-40I, TM-40L, TM-50H, TM-50I, TM-50L |
+| FM 3-12 | Cyberspace Operations and EW | TM-40E, TM-40H, TM-40I, TM-40L |
+| DA PAM 25-2-5 | Software Assurance | TM-40H, TM-40I, TM-40L |
+| FM 3-27 | Army Global Integrated Fires | TM-40B |
+| ATP 3-01.81 | Counter-UAS Techniques | TM-40B |
+| FM 3-81 | Maneuver Enhancement Brigade | TM-40C |
+| ATP 4-33 | Maintenance Operations | TM-40D |
+| FM 1-0 | Human Resources Support | TM-40D |
+| AR 525-2 | The Army Protection Program | TM-40E |
+| AR 530-1 | Operations Security | TM-40E |
+| ATP 5-0.1 | Army Design Methodology | TM-40F |
+| TC 6-0.2 | Training the C2 WFF for BN/BDE/BCT | TM-40F |
+| ATP 2-33.4 | Intelligence Analysis | TM-40A |
+| ATP 2-22.9-1 | PAI Research and OSINT | TM-40A |
+| FM 3-60 | Army Targeting | TM-40A, TM-40B |
+| | | |
+| **DoD/Joint Strategic Guidance** | | |
+| DoD Data Strategy (2020) | Data as Strategic Asset / VAUTI Framework | TM-10, TM-20, TM-30, doctrine/ |
+| DoD Data, Analytics & AI Adoption Strategy (Nov 2023) | AI Hierarchy of Needs; adopt-buy-create | COMMANDERS_GUIDE, POLICY_LETTER, doctrine/ |
+| DoD Responsible AI Strategy (Jun 2024) | Five AI Ethical Principles (RETRG) | TM-40H, TM-40I, TM-50H, TM-50I |
+| DoD Zero Trust Reference Architecture v2.0 (Jul 2022) | 152 ZT activities across 7 pillars | TM-30 |
+| DoD AI Cybersecurity Risk Mgmt Guide | Secure AI/ML development | TM-40H, TM-40I, TM-50H, TM-50I |
+| DoDI 5000.87 | Software Acquisition Pathway | TM-40L, TM-50L, TM-40J, TM-50J |
+| DoDD 3000.09 | Autonomy in Weapon Systems (Jan 2023) | TM-40A–F |
+| DoD Software Modernization Strategy (Feb 2022) | DevSecOps frameworks | TM-40L, TM-50L |
+| JADC2 Strategy Summary (Mar 2022) | Cross-domain data integration | TM-40A–F, TM-40G, TM-50G |
+| JCOIE | Operating in the Information Environment | TM-40F |
+| | | |
+| **Army Strategic Guidance** | | |
+| Army Data Plan (2022) | 11 strategic objectives for data transformation | TM-10, TM-20, TM-30, COMMANDERS_GUIDE, POLICY_LETTER |
+| Army Cloud Plan (2022) | ZT, secure dev, data-driven decisions | TM-10, TM-20, TM-30 |
+| UDRA v1.1 (Feb 2025) | Data mesh, decentralized governance | TM-30, TM-40G–L, TM-50G–L |
+| Army CIO Data Stewardship Memo (Apr 2024) | Chain of responsibility for data governance | TM-10, TM-20, TM-30, TM-40K |
+| Army Directive 2024-02 | Agile Software Dev & Acquisition (Dec 2024) | TM-40L, TM-50L, TM-40J, TM-50J |
+| | | |
+| **NATO** | | |
+| NATO Data Strategy for the Alliance (Feb 2025) | Alliance-wide data governance mandate | TM-30, TM-40K, TM-50K, CDA_CONSTRAINTS |
+| NATO Data Centric Reference Architecture v2 (2025) | Digital transformation reference arch | TM-30, CDA_CONSTRAINTS |
+| NATO Data Quality Framework (Aug 2025) | Quality governance and metrics | TM-30 |
+| NATO Digital Transformation Implementation Strategy (Oct 2024) | MDO interoperability | TM-40A–F |
+| NATO Warfighting Capstone Concept (2021) | 6 Critical Enablers incl. Data | TM-40F |
+| ADatP-34/NISP (NATO) | C3 Interoperability Standards | TM-40K, TM-50K, TM-40L, TM-50L |
+| STANAG 5636/NCMS (NATO) | Core Metadata Specification | TM-40K, TM-50K |
+| STANAG 5643 (proposed) | MIM Governance Standard | TM-40K, TM-50K, TM-40L, TM-50L |
+| ADatP-5644 | Web Service Messaging Profile (WSMP) | TM-40L, TM-50L |
+| ADatP-36 | Friendly Force Information (FFI) | TM-40A, TM-40C |
+| STANAG 5527 | Friendly Force Tracking Systems Interoperability | TM-40A |

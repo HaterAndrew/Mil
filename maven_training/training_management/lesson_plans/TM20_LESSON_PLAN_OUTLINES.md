@@ -2,13 +2,22 @@
 ## Maven Smart System (MSS) Training Program
 ### USAREUR-AF Operational Data Team — C2DAO
 
-> **Note:** These are lesson plan outlines — abbreviated LP format for instructor preparation. Use the full LP template (`LP_TEMPLATE.md`) to expand any block into a complete lesson plan. For complete lesson plan examples see `TM10/TM10_LESSON_PLANS.md`.
+NOTE: These are lesson plan outlines — abbreviated LP format for instructor preparation. Use the full LP template (`LP_TEMPLATE.md`) to expand any block into a complete lesson plan. For complete lesson plan examples see `TM10/TM10_LESSON_PLANS.md`.
 
 | Field | Value |
 |-------|-------|
 | **Course** | TM-20 Builder |
 | **Duration** | 5 days (40 hours) |
 | **Version** | 1.0 — March 2026 |
+
+---
+
+## Authoritative References
+
+| Publication | Title | Relevance |
+|---|---|---|
+| AR 350-1 | Army Training and Leader Development | Master regulation for Army training policy; governs lesson plan standards and instructional requirements |
+| FM 7-0 | Training | Unit training management procedures; context for how TM-20 builder training integrates with unit training plans |
 
 ---
 
@@ -343,6 +352,23 @@
 
 ---
 
+### BLOCK 15A — Object Views and Data Validation
+| Field | Value |
+|---|---|
+| **Lesson Title** | Object Views and Data Validation |
+| **Hours** | 1.5 |
+| **Method** | Lab |
+| **References** | TM-20, Chapter 4, Tasks 4-3 and 4-4 |
+
+**Objective:** Configure an Object View for an Object Type and use Object Explorer to validate data completeness and accuracy.
+
+**Instructor Notes:**
+- Demo Object View configuration first, then let trainees build their own
+- Object Explorer validation should be taught as a standard quality gate before promotion
+- Emphasize that validation at this stage prevents downstream Workshop errors
+
+---
+
 ## DAY 4 — ACTIONS AND WORKSHOP APPLICATIONS
 
 ### BLOCK 16 — Actions: Create Basic Action
@@ -439,6 +465,23 @@
 - Principle: least privilege. Grant Viewer unless there is a specific requirement for Editor.
 
 **Assessment:** Evaluated in Practical Exercise Task 10. Evaluator tests Viewer-role account.
+
+---
+
+### BLOCK 20A — Builder Analysis: Contour and Quiver
+| Field | Value |
+|---|---|
+| **Lesson Title** | Builder-Level Analysis in Contour and Quiver |
+| **Hours** | 2.0 |
+| **Method** | Lab |
+| **References** | TM-20, Chapter 6, Tasks 6-1 through 6-4 |
+
+**Objective:** Build a saved Contour analysis with pivot table, and configure a Quiver dashboard with Object Type views.
+
+**Instructor Notes:**
+- Distinguish from TM-10 consumer use of Contour/Quiver — builders create saved analyses and dashboards, not just one-off lookups
+- Saved Contour analyses become inputs to Workshop applications
+- Quiver dashboards are used for Ontology validation and operational data exploration
 
 ---
 
@@ -557,7 +600,7 @@ TM-20 completion qualifies a trainee to enroll in TM-30 (Advanced Builder). Upon
 - TM-40G: ORSA | TM-40H: AI Engineer | TM-40I: ML Engineer
 - TM-40J: Program Manager | TM-40K: Knowledge Manager | TM-40L: Software Engineer
 - Duration: 3–5 days depending on track.
-- Who should pursue: 17/25-series, S6/G6, G2/G9, data leads, and technical specialists.
+- Who should pursue: 17/25-series, S6/G6, G2, data leads, and technical specialists.
 
 Instructors should direct all trainees toward TM-30 as the next step. Discuss which TM-40 track is appropriate for each trainee and refer them to the Unit Training NCO/Officer for enrollment coordination.
 

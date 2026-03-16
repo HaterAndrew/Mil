@@ -428,7 +428,7 @@ At program level, stakeholder management requires a formal map — not informal 
 | USAREUR-AF G6 | O-8 equivalent | HQ USAREUR-AF | Decision authority | High (platform owner) | Bi-monthly program review brief | Bi-monthly |
 | C2DAO Chief | O-6/GS-15 | USAREUR-AF | Technical authority | High | Weekly working-level sync | Weekly |
 | EUCOM J6 | O-8 equivalent | USAREUR-AF | Resource influence | Medium | Quarterly capability update | Quarterly |
-| G2/G3/G9 Data Leads | O-4/O-5 or GS-13 | HQ USAREUR-AF | Requirements authority | High | Sprint review invitees; monthly requirements sync | Monthly |
+| G2/G3 Data Leads | O-4/O-5 or GS-13 | HQ USAREUR-AF | Requirements authority | High | Sprint review invitees; monthly requirements sync | Monthly |
 | Palantir Delivery Lead | Contractor | Task Order | Delivery accountability | High | Weekly task order status meeting | Weekly |
 | Unit S6/Data Leads | O-3/CW2-CW4 | Division/Brigade | Adoption influence | Medium | Quarterly field engagement | Quarterly |
 
@@ -1712,6 +1712,27 @@ By the end of 30 days, the incoming TM-40J PM should be able to:
 
 ---
 
+## GOVERNING REFERENCES
+
+| Publication | Title | Relevance |
+|---|---|---|
+| Army CIO Memorandum | Data and Analytics Policy (April 2024) | Data governance authority |
+| USAREUR-AF C2DAO Guidance | Command governance for data operations | Operational governance |
+| Army DIR 2024-03 | Digital Engineering Policy | Army digital transformation directive |
+| AR 25-1 | Army Information Technology | IT governance and data management policy |
+| learn-data.armydev.com | CDA Portal | Training platform reference |
+
+## Strategic Guidance
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| UDRA v1.1 | Unified Data Reference Architecture (February 2025) | Technical reference architecture |
+| DoD Data Strategy | DoD Data Strategy (2020) | Enterprise data management framework |
+
+---
+
 ## RELATED PUBLICATIONS
 
 | Publication | Title | Relationship |
@@ -1732,7 +1753,7 @@ By the end of 30 days, the incoming TM-40J PM should be able to:
 *Maven Smart System — USAREUR-AF Operational Data Team*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 *2026*
-*UNCLASSIFIED — Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*UNCLASSIFIED — Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.*
 *This publication implements Army CIO Memorandum, Data and Analytics Policy (April 2024) and aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025).*
 ## GLOSSARY
 
@@ -1795,4 +1816,9 @@ By the end of 30 days, the incoming TM-40J PM should be able to:
 **WIP Limit (Work-In-Progress Limit).** A constraint on the number of tasks or features that can be actively in progress simultaneously within a sprint or on a team's board. WIP limits reduce context switching and improve cycle time. TM-50J program managers encourage WIP limit discipline across all teams.
 
 ---
+
+**DoD and Army Strategic References:**
+
+- **DoDI 5000.87, Software Acquisition Pathway (October 2020)** — Establishes the software acquisition pathway for rapid, iterative software delivery
+- **Army Directive 2024-02, Agile Software Development (December 2024)** — Army policy for agile software development practices and delivery
 

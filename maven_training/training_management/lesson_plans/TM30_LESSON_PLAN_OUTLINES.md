@@ -7,6 +7,16 @@
 
 ---
 
+## Authoritative References
+
+| Publication | Title | Relevance |
+|---|---|---|
+| AR 350-1 | Army Training and Leader Development | Master regulation for Army training policy; governs lesson plan standards and instructional requirements |
+| FM 7-0 | Training | Unit training management procedures; context for how TM-30 advanced builder training integrates with unit training plans |
+| AR 25-1 | Army Information Technology | Establishes data governance authority; relevant to TM-30 governance and data steward review content |
+
+---
+
 ## DAY 1 — ADVANCED WORKSHOP
 
 ### Block 1 — Multi-Page Workshop
@@ -341,8 +351,8 @@ Upon receiving a TM-30 Go result, trainees are eligible to enroll in any TM-40 t
 | TM-40G | ORSA Specialist | TM-30 Required | 5 days |
 | TM-40H | AI Engineer | TM-30 Required | 5 days |
 | TM-40I | ML Engineer | TM-30 Required | 5 days |
-| TM-40J | Program Manager | TM-30 Required | 3 days |
-| TM-40K | Knowledge Manager | TM-30 Required | 3 days |
+| TM-40J | Program Manager | TM-30 Required | 4 days |
+| TM-40K | Knowledge Manager | TM-30 Required | 4 days |
 | TM-40L | Software Engineer | TM-30 Required | 5 days |
 
 **TM-30 is a hard prerequisite for all specialist tracks — not a recommendation.** Enrollment requests missing TM-30 Go documentation will not be confirmed by C2DAO.

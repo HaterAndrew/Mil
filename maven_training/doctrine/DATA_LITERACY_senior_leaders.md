@@ -8,9 +8,9 @@ Wiesbaden, Germany
 
 2026
 
-DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
+DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.
 
-PROPONENT: Headquarters, United States Army Europe and Africa (USAREUR-AF), G6/Data
+PROPONENT: Headquarters, United States Army Europe and Africa (USAREUR-AF), C2DAO
 
 ---
 
@@ -22,7 +22,7 @@ NOTE: This publication is the senior leader companion to Data Literacy Technical
 
 ## COMMANDING GENERAL'S NOTE
 
-*[To be inserted upon receipt of signed CG guidance — to be provided by G6/Data prior to publication.]*
+*[To be inserted upon receipt of signed CG guidance — to be provided by C2DAO prior to publication.]*
 
 ---
 
@@ -337,7 +337,7 @@ Data literacy exists on a continuum. Not every Soldier needs the same level of p
 |---|---|---|
 | TM-10 (Operator) | All personnel | Navigate and consume data products on MSS; observe data security and accuracy standards |
 | TM-20 (Builder) | All personnel | Build basic Workshop applications; run light transforms; manipulate and share data products |
-| TM-30 (Advanced Builder) | Data-adjacent personnel (17/25-series, S6/G6/G2/G9) | Design pipelines and Ontology objects; build complex dashboards; apply governed data patterns |
+| TM-30 (Advanced Builder) | Data-adjacent personnel (17/25-series, S6/G6/G2) | Design pipelines and Ontology objects; build complex dashboards; apply governed data patterns |
 | TM-40 Series (Specialist) | Designated specialist roles | Role-specific mastery: WFF tracks (A–F) and technical tracks (G–L) |
 | TM-50 Series (Advanced Specialist) | TM-40 graduates in senior/lead roles | Research-grade capability; leads and mentors others in specialist track |
 
@@ -461,6 +461,8 @@ Senior NCO leadership is critical. CSMs and SGMs who enforce data discipline in 
 
 **Data Literacy Technical Reference, Data Literacy** — Technical companion to this publication. Contains procedural guidance, analytical methods, data lifecycle doctrine, and the USAREUR-AF 5-Layer Data Stack architecture.
 
+**AR 25-1, Army Information Technology (Jul 2019)** — Statutory framework for Army data governance, VAUTI data quality principles, and IT management policy.
+
 **DoD Data Strategy (2020)** — Establishes the VAUTI framework as the standard for enterprise data quality and use.
 
 **Army CIO Guidance (2024) and UDRA v1.1 (2025)** — Current governance and architecture codified in Army CIO guidance (2024) and UDRA v1.1 (2025). The C2DAO ensures USAREUR-AF compliance.
@@ -469,7 +471,9 @@ Senior NCO leadership is critical. CSMs and SGMs who enforce data discipline in 
 
 **Allied Joint Publications (AJP-01, AJP-3, AJP-5)** — NATO joint doctrine governing operations, conduct, and planning.
 
-**USAREUR-AF G6/Data** — Authoritative source for technical architecture guidance, ontology standards, NATO NAFv4 alignment resources, and the USAREUR-AF 5-Layer Data Stack implementation documentation.
+**C2DAO** — Authoritative source for technical architecture guidance, ontology standards, NATO NAFv4 alignment resources, and the USAREUR-AF 5-Layer Data Stack implementation documentation.
+
+**DoD Data, Analytics & AI Adoption Strategy (November 2023)** — Establishes the AI Hierarchy of Needs and the DoD framework for scaling data, analytics, and AI adoption across the enterprise.
 
 ---
 
@@ -482,4 +486,4 @@ Senior NCO leadership is critical. CSMs and SGMs who enforce data discipline in 
 
 ---
 
-DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
+DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.

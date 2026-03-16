@@ -59,7 +59,7 @@ This is not a data problem. It is a KM architecture problem. The Advanced KM's r
 
 **BLUF:** A knowledge architecture that works for a battalion breaks at Corps. A knowledge architecture that works for a single functional domain breaks when cross-domain requirements are added. Enterprise KM architecture must be designed for scale from the beginning — retrofitting is expensive and frequently fails.
 
-The USAREUR-AF theater presents a specific challenge: multiple echelons (Army, Corps, Division, Brigade), multiple functional domains (G2, G3, G4, G6, G9, Aviation, Fires, Sustainment, Medical, Legal, CEMA, SOF, multi-domain), multiple classification levels, and coalition partner integration — all served by knowledge systems consistent enough to share information but flexible enough to meet distinct organizational requirements.
+The USAREUR-AF theater presents a specific challenge: multiple echelons (Army, Corps, Division, Brigade), multiple functional domains (G2, G3, G4, G6, Civil Affairs, Aviation, Fires, Sustainment, Medical, Legal, CEMA, SOF, multi-domain), multiple classification levels, and coalition partner integration — all served by knowledge systems consistent enough to share information but flexible enough to meet distinct organizational requirements.
 
 Centralized architecture fails predictably: no single taxonomy satisfies all functional domains, centralized review bottlenecks at scale, units stop submitting when their requirements are not met, and the system becomes dominated by the most aggressive functional area. Full decentralization produces knowledge silos requiring manual cross-unit coordination that rarely happens. The correct approach is federated architecture.
 
@@ -83,7 +83,7 @@ The shared taxonomy core is the minimum set of classification dimensions every k
 
 | Dimension | Required Values | Notes |
 |---|---|---|
-| Functional domain | G1, G2, G3, G4, G6, G9, Aviation, Fires, Sustainment, Medical, Legal, CEMA, SOF, Multi-domain | Units may add sub-domains; must map to at least one core domain |
+| Functional domain | G1, G2, G3, G4, G6, Civil Affairs, Aviation, Fires, Sustainment, Medical, Legal, CEMA, SOF, Multi-domain | Units may add sub-domains; must map to at least one core domain |
 | Echelon | Theater, Corps, Division, Brigade, Battalion | Echelon at which the lesson is applicable |
 | Exercise / operation | Defender Europe, Saber Strike, Combined Resolve, Swift Response, [named operation], Steady-state | Source event or context |
 | Quality tier | Observation, Reviewed, Validated, Doctrine | See Section 4 |
@@ -405,4 +405,4 @@ The test: if the current Advanced KM were reassigned tomorrow, could their repla
 ---
 
 *UNCLASSIFIED*
-*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.*

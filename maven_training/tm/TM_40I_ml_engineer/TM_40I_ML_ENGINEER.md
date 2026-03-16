@@ -41,6 +41,8 @@ This manual provides task-based instruction for machine learning engineers (MLEs
 
 ### 1-2. Curriculum Position, Advanced Track, and WFF Context
 
+> **NOTE:** The Army established the **49B AI/ML Officer Career Path** in 2025–26, creating the first dedicated uniformed career track for AI/ML expertise. TM-40I directly aligns to 49B qualification requirements. ML Engineers completing this course and TM-50I (Advanced) are positioned for assignment to 49B-coded billets across the force.
+
 **Prerequisite:** TM-30 (Advanced Builder) is REQUIRED. Python proficiency (scikit-learn, PyTorch or statsmodels, SQL) is required independently of the TM series.
 
 **Advanced track:** Upon completing TM-40I, qualified MLEs should pursue **TM-50I (Advanced ML Engineer)** for advanced topics including neural architecture selection, large-scale feature store design, advanced MLOps patterns, and federated learning considerations for coalition data environments.
@@ -118,14 +120,24 @@ If you cannot independently complete the prerequisite items above, stop. Access 
 
 | Document | Relevance |
 |---|---|
-| Army CIO Data Stewardship Policy (April 2, 2024) | Data governance hierarchy, stewardship responsibilities, data product standards |
-| Unified Data Reference Architecture (UDRA) v1.1 (February 2025) | Domain ownership, federated governance, ML model classification requirements |
-| DoD Data Strategy (2020) | VAUTI framework applicable to ML model outputs as data products |
 | USAREUR-AF C2DAO Guidance | Theater-level architecture standards; ML model approval authority |
 | DoD AI Ethics Principles (2020) | Responsible AI: responsible, equitable, traceable, reliable, governable |
 | Army AI/ML Framework (current) | Army-level guidance on ML model lifecycle and oversight |
 | NATO Architecture Framework v4 (NAFv4) | Coalition data architecture standards for MPE-accessible model outputs |
 | learn-data.armydev.com | Authoritative reference implementations and approved patterns |
+| Army DIR 2024-03 | Digital Engineering Policy — Army-wide digital engineering adoption directive |
+| FM 3-12 | Cyberspace Operations and Electromagnetic Warfare — operational context for ML systems |
+| DA PAM 25-2-5 | Software Assurance — software security standards |
+
+### 1-6a. Strategic Guidance
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| Army CIO Data Stewardship Policy (April 2, 2024) | Army CIO | Data governance hierarchy, stewardship responsibilities, data product standards |
+| UDRA v1.1 (February 2025) | Army Enterprise | Domain ownership, federated governance, ML model classification requirements |
+| DoD Data Strategy (2020) | OSD | VAUTI framework applicable to ML model outputs as data products |
 
 ---
 
@@ -2399,6 +2411,19 @@ def generate_evaluation_report(y_true, y_pred, y_proba,
 
 ---
 
+## APPENDIX D — PROFESSIONAL READING LIST
+
+> Curated articles from Army professional journals and military publications. These supplement doctrinal references with contemporary operational perspectives.
+
+| Source | Title | Date | Relevance |
+|---|---|---|---|
+| Military Review | "The Military Needs Frontier Models" | Aug 2025 | Large-scale ML models |
+| Army AL&T | "Commoditizing AI/ML Models" | 2024-25 | ML model lifecycle management |
+| Army Sustainment | "Predictive Logistics: Reimagining Sustainment on the 2040 Battlefield" | Winter 2025 | ML in predictive logistics |
+| Military Review | "Transforming the Multidomain Battlefield with AI" | 2024 | ML for object detection |
+
+---
+
 ## GLOSSARY
 
 **Anomaly Detection** — An ML task that identifies observations that deviate significantly from a learned baseline distribution. Used for OPDATA triage in MSS. Outputs are triage scores, not operational assessments.
@@ -2488,3 +2513,9 @@ def generate_evaluation_report(y_true, y_pred, y_proba,
 *TM-40I, Maven Smart System (MSS) Machine Learning Engineer Technical Manual*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 *Reference: learn-data.armydev.com*
+
+**DoD and Army Strategic References:**
+
+- **DoD Responsible AI Strategy & Implementation Pathway (June 2024 update)** — DoD framework for responsible AI development, testing, and fielding
+- **DoD AI Cybersecurity Risk Management Guide (CDAO)** — Risk management guidance for AI systems in DoD environments
+- **DoD Directive 3000.09, Autonomy in Weapon Systems (January 2023 update)** — Policy on autonomous and semi-autonomous functions in weapon systems

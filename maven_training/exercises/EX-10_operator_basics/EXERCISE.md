@@ -41,7 +41,7 @@ Unclassified training data simulates LOGSTAT/readiness report formats.
 - **No-Go:** Identifies wrong unit or cannot locate steward information
 
 ### Task 4 — Export a View (10 min) ⚠️ *Critical item*
-*Reference: TM-10 Chapter 7 (Security, Classification, and Markings), sections 7-1 through 7-3*
+*Reference: TM-10 Chapter 6 (Security, Classification, and Markings), sections 6-1 through 6-3*
 - [ ] Export the current filtered view (all units, current week) as a PDF
 - [ ] Verify the export includes the "Last updated" timestamp
 - [ ] Handle the export per unit classification SOP

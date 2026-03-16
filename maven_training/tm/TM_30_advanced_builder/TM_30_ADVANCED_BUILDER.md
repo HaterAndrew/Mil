@@ -18,12 +18,12 @@ and AIP Logic.
 1-2. TM-30 is the advanced tier for data-adjacent specialists — personnel who work deeply with
 data but whose primary role is operational, analytical, or systems-oriented rather than software
 development. This includes 17-series and 25-series signal soldiers, S6/G6 staff, G2 analysts,
-G9 civil affairs, and operational data analysts embedded in brigade and division staffs.
+Civil Affairs, and operational data analysts embedded in brigade and division staffs.
 
 1-3. TM-40 covers code-level development (Python transforms, TypeScript Functions on Objects,
 OSDK). If your task requires writing code, reference TM-40. TM-30 stops at the UI boundary.
 
-> **NOTE:** All items above require a TM-40 developer. For TM-20 (no-code builder) capabilities, refer to TM-20, Chapter 1. TM-30 operates at the boundary between TM-20 no-code building and TM-40 code-based development. When in doubt whether a task is TM-20 or TM-30, refer to TM-20, Chapter 1-1 (Purpose and Scope) to assess scope before escalating.
+NOTE: All items above require a TM-40 developer. For TM-20 (no-code builder) capabilities, refer to TM-20, Chapter 1. TM-30 operates at the boundary between TM-20 no-code building and TM-40 code-based development. When in doubt whether a task is TM-20 or TM-30, refer to TM-20, Chapter 1-1 (Purpose and Scope) to assess scope before escalating.
 
 1-4. Prerequisites. Before beginning TM-30 tasks, personnel must be qualified on:
 - TM-10 (Maven User): platform navigation, object search, consuming data products
@@ -46,7 +46,7 @@ Before beginning TM-30 design work, confirm you can independently perform — wi
 | Governance | Follow naming conventions | Enforce them, review peers, coordinate with Data Stewards |
 | Environment Mgmt | Aware of branching | Execute branching, review, and promotion workflows |
 
-> **NOTE:** Advanced builders design solutions that TM-10 operators and TM-20 builders will use. Before designing at TM-30 level, understand the operator workflows from TM-10, Chapter 1 (Introduction and Overview) and TM-10, Chapter 4 (Using Workshop Applications). Your design decisions directly affect operator productivity and data quality at the operational level.
+NOTE: Advanced builders design solutions that TM-10 operators and TM-20 builders will use. Before designing at TM-30 level, understand the operator workflows from TM-10, Chapter 1 (Introduction and Overview) and TM-10, Chapter 4 (Using Workshop Applications). Your design decisions directly affect operator productivity and data quality at the operational level.
 
 ## 1-3. USAREUR-AF Operational Context
 
@@ -78,9 +78,25 @@ the relevant sections.
 | Document | Authority | Key Provisions for Builders |
 |----------|-----------|------------------------------|
 | Army CIO Memorandum (April 2024) | Army CIO/G-6 | Data governance, data product ownership, access controls |
-| UDRA v1.1 (February 2025) | Army Enterprise | Unified Data Reference Architecture — domain alignment |
-| USAREUR-AF C2DAO Standards | USAREUR-AF G6 | Naming conventions, promotion gates, stewardship roles |
+| AR 25-1, Army Information Technology (Jul 2019) | Army CIO | Statutory framework for Army data governance, VAUTI data quality principles, and IT management policy |
+| USAREUR-AF C2DAO Standards | C2DAO | Naming conventions, promotion gates, stewardship roles |
 | CDA Portal (learn-data.armydev.com) | Army CDA | Training resources, design patterns, reference implementations |
+
+### 1-4a. Strategic Guidance
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|----------|-----------|-----------|
+| UDRA v1.1 (February 2025) | Army Enterprise | Unified Data Reference Architecture — domain alignment |
+| DoD Data Strategy (October 2020) | OSD | Foundation for VAUTI principles |
+| Army Data Plan (2022) | Army CIO | 11 strategic objectives for Army data transformation |
+| Army Cloud Plan (2022) | Army CIO | Zero Trust, secure development, data-driven decisions |
+| DoD Zero Trust Reference Architecture v2.0 (July 2022) | DoD CIO | Zero Trust architecture for data and application security |
+| Army CIO Data Stewardship Memo (April 2024) | Army CIO | Chain of responsibility for data governance |
+| NATO Data Strategy for the Alliance (Feb 2025) | NATO | Alliance-wide data governance mandate — governs coalition data sharing in EUCOM AOR |
+| NATO Data Centric Reference Architecture v2 (2025) | NATO | Reference architecture for digital transformation — alignment target for coalition-interoperable ontology design |
+| NATO Data Quality Framework for the Alliance (Aug 2025) | NATO | Quality governance and metrics — applicable to multi-national data products |
 
 1-9. CDA Portal. The Common Data Architecture (CDA) Portal at learn-data.armydev.com is the
 authoritative training and reference resource for Army data platform work. Advanced builders
@@ -141,7 +157,7 @@ The applications and analyses you build at TM-30 level will be used by TM-10 ope
 - Use plain language for labels, filters, and column names. Do not expose internal dataset field names to users.
 - If a user has to ask "what does this number mean?" — the answer should be visible in the application, not in a separate briefing.
 
-> **NOTE:** The CDA Portal (learn-data.armydev.com) Object Type Cookbook and DDOF Playbook contain reference patterns for Army-specific Ontology design. Consult these before designing novel Object Types from scratch.
+NOTE: The CDA Portal (learn-data.armydev.com) Object Type Cookbook and DDOF Playbook contain reference patterns for Army-specific Ontology design. Consult these before designing novel Object Types from scratch.
 
 ---
 
@@ -211,9 +227,9 @@ Each TM-40G–L track has a corresponding advanced track:
 | TM-50K | Advanced Knowledge Manager | TM-40K (required) |
 | TM-50L | Advanced Software Engineer | TM-40L (required) |
 
-> **NOTE:** There are no TM-50A through TM-50F tracks. Advanced-level training exists only for specialist tracks (G–L). WFF tracks (TM-40A–F) do not have a TM-50 continuation.
+NOTE: There are no TM-50A through TM-50F tracks. Advanced-level training exists only for specialist tracks (G–L). WFF tracks (TM-40A–F) do not have a TM-50 continuation.
 
-> **NOTE:** Select the specialist track that aligns to your assigned duties and billet. If uncertain, consult the USAREUR-AF C2DAO training coordinator. Personnel are expected to complete one specialist track; concurrent enrollment in multiple TM-40 specialist tracks requires C2DAO approval.
+NOTE: Select the specialist track that aligns to your assigned duties and billet. If uncertain, consult the USAREUR-AF C2DAO training coordinator. Personnel are expected to complete one specialist track; concurrent enrollment in multiple TM-40 specialist tracks requires C2DAO approval.
 
 ---
 
@@ -228,7 +244,7 @@ that serve as the operational data interface for commanders and staff.
 2-1. Workshop applications built at TM-30 level go beyond single-page dashboards. They serve as
 the primary operational interface for staff sections — a G2 intelligence dashboard with linked
 pages for threat assessment, unit tracking, and historical trends; an S4 readiness tracker that
-lets commanders drill from fleet overview to individual equipment status; a G9 civil-military
+lets commanders drill from fleet overview to individual equipment status; a Civil Affairs civil-military
 operations board that filters by AOR, time period, and activity type simultaneously.
 
 2-2. Advanced Workshop requires mastery of three interconnected concepts: variables, conditional
@@ -261,7 +277,7 @@ that behave like purpose-built operational software — without writing a line o
 6. Set a default value appropriate to the expected initial state of the application.
 7. Save the variable. It is now available to all widgets on all pages of the application.
 
-**NOTE:** Variable names must be unique within the application and should be descriptive enough
+NOTE: Variable names must be unique within the application and should be descriptive enough
 that another builder can understand the variable's purpose without opening a widget that uses it.
 
 **Variable types available in Workshop:**
@@ -309,7 +325,7 @@ table filters, or configure the table to show no records until a selection is ma
 5. Test the complete chain: select a division, verify brigade dropdown updates, select a brigade,
    verify tables filter correctly.
 
-**NOTE:** Always consider what should happen when a parent variable changes. If a user selects
+NOTE: Always consider what should happen when a parent variable changes. If a user selects
 a new division, the brigade variable retains its previous value until the user makes a new
 brigade selection. If the previous brigade does not belong to the new division, downstream
 widgets will show no results. Add a reset mechanism (a button that clears child variables) or
@@ -329,7 +345,7 @@ configure the brigade dropdown to auto-clear when the division variable changes.
 
 **DURATION:** 1–2 hours.
 
-> **NOTE:** Conditional layouts determine which panels or pages operators (TM-10) see based on their role or selected data state. Test your conditional layout logic against the operator workflows in TM-10, Chapter 4. Do not hide information from operators without a security or role-based justification. Refer to TM-10, Task 4-4 (Navigate Between Modules/Pages) and Task 4-3 (Apply Filters to a Dashboard) to validate layout behavior from the operator's perspective.
+NOTE: Conditional layouts determine which panels or pages operators (TM-10) see based on their role or selected data state. Test your conditional layout logic against the operator workflows in TM-10, Chapter 4. Do not hide information from operators without a security or role-based justification. Refer to TM-10, Task 4-1 (Orient to a Command-Level Application) and Task 4-3 (Apply Filters to a Dashboard) to validate layout behavior from the operator's perspective.
 
 **PROCEDURE:**
 
@@ -364,7 +380,7 @@ Common conditional visibility patterns for operational applications:
 5. Set a fallback format for unexpected values (gray or default).
 6. Save and preview.
 
-**NOTE:** Use the Army standard readiness categories (FMC, PMC, NMC) consistently. Do not
+NOTE: Use the Army standard readiness categories (FMC, PMC, NMC) consistently. Do not
 invent status labels — align to the authoritative data source definitions.
 
 **Step 3 — Configure conditional widget content (beyond visibility):**
@@ -388,7 +404,7 @@ invent status labels — align to the authoritative data source definitions.
 
 **DURATION:** 4–8 hours depending on application complexity.
 
-> **NOTE:** Decision framework — single-page vs. multi-page: If your application serves a single user role or a single operational workflow, design single-page (TM-20 scope — refer to TM-20, Chapter 5-3). If your application serves multiple user roles simultaneously (e.g., G3 operations, G4 logistics, G6 data), or integrates multiple workflows into a unified interface, design multi-page (TM-30 scope). Multi-page application navigation is what operators experience via TM-10, Task 4-4 (Navigate Between Modules/Pages). Test your navigation design against that task.
+NOTE: Decision framework — single-page vs. multi-page: If your application serves a single user role or a single operational workflow, design single-page (TM-20 scope — refer to TM-20, Chapter 5-3). If your application serves multiple user roles simultaneously (e.g., G3 operations, G4 logistics, G6 data), or integrates multiple workflows into a unified interface, design multi-page (TM-30 scope). Multi-page application navigation is what operators experience via TM-10, Task 4-1 (Orient to a Command-Level Application). Test your navigation design against that task.
 
 **PROCEDURE:**
 
@@ -432,7 +448,7 @@ invent status labels — align to the authoritative data source definitions.
 5. Add a **Back** button that navigates to the Overview page.
 6. Test the complete flow end-to-end.
 
-**NOTE:** When navigating back to the Overview page, the selection variable retains the previous
+NOTE: When navigating back to the Overview page, the selection variable retains the previous
 value unless you explicitly clear it. This is usually desirable — users can see their previous
 selection highlighted. If you need a clean state, add a button action that clears the variable
 before navigating back.
@@ -446,9 +462,9 @@ before navigating back.
 
 ---
 
-## TASK 2-4: CONFIGURE COMPLEX WIDGETS (MAPS, GANTT, NETWORK GRAPH)
+## TASK 2-4: CONFIGURE COMPLEX WIDGETS (TABLES, DYNAMIC OBJECT SETS, MAPS)
 
-**TASK:** Configure advanced Workshop widgets — including layered map displays, computed table columns, and nested dynamic object sets — for operational application use.
+**TASK:** Configure advanced Workshop widgets — including computed table columns, multi-condition dynamic object sets, and layered map displays — for operational application use.
 
 **CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Target Object Types have appropriate geometry, date, and relationship properties configured. Edit permissions on the application.
 
@@ -501,7 +517,7 @@ and store the result in a dataset.
 6. Under **Basemap**, select an appropriate operational basemap. Avoid consumer map services for sensitive operational overlays.
 7. Test the map with production-representative data. Verify load time is acceptable.
 
-**NOTE:** Map widgets require that Object Types have geometry or coordinate properties
+NOTE: Map widgets require that Object Types have geometry or coordinate properties
 configured in the Ontology. If the Object Type lacks location data, the map widget will not
 display objects. Coordinate with the Data Steward to verify location property availability
 before designing a map-dependent application.
@@ -531,7 +547,7 @@ If a data source is known to have reliability issues (e.g., a feed that occasion
 
 Do not present uncertain data as authoritative. It is better to acknowledge uncertainty than to have a commander brief wrong numbers.
 
-> **NOTE — Additional Workshop capability (self-study):** TM-30 class time covers multi-page navigation, variable passing, and conditional logic. The Workshop Scenarios feature (what-if analysis, saved scenario states, preloaded application states) is covered in four Palantir Developers reference videos: *Workshop | Creating What If Analyses with Scenarios*, *Workshop | Saving your What If Analyses*, *Workshop | Loading and Applying Scenarios*, and *Workshop | How to Preload States in Foundry Workshop Applications*. These are UI-based capabilities within TM-30 scope that builders can apply to decision-support applications requiring scenario comparison.
+NOTE: Additional Workshop capability (self-study) — TM-30 class time covers multi-page navigation, variable passing, and conditional logic. The Workshop Scenarios feature (what-if analysis, saved scenario states, preloaded application states) is covered in four Palantir Developers reference videos: *Workshop | Creating What If Analyses with Scenarios*, *Workshop | Saving your What If Analyses*, *Workshop | Loading and Applying Scenarios*, and *Workshop | How to Preload States in Foundry Workshop Applications*. These are UI-based capabilities within TM-30 scope that builders can apply to decision-support applications requiring scenario comparison.
 
 ---
 
@@ -550,7 +566,7 @@ Use Kairos when:
 
 ---
 
-### TASK 2-5A: CONFIGURE A KAIROS TIMELINE WIDGET IN WORKSHOP
+### TASK 2-5: CONFIGURE A KAIROS TIMELINE WIDGET IN WORKSHOP
 
 **TASK:** Add and configure a Kairos timeline widget in a Workshop application, connecting it to an existing Object Type with date properties, and configure swim lanes and groupings to produce an operationally meaningful timeline view.
 
@@ -616,13 +632,13 @@ TTPs for refining Kairos visualizations:
 
 Target Workbench is a Foundry-native application supporting structured targeting workflows. It integrates Ontology objects into a kill-chain and targeting cycle workflow, providing intelligence and fires staff with a structured interface for managing targeting packages, tracking target status through the targeting cycle, and coordinating engagement decisions.
 
-> **NOTE:** Target Workbench is primarily relevant to intelligence (G2/S2) and fires (fires support officer, FA) staff functions. Builders in sustainment, personnel, signal, or other functional areas should understand what Target Workbench is and that it exists — but it is not a tool you will build against unless you are supporting an intelligence or fires function. Operational use is covered in TM-40A (Intelligence WFF) and TM-40B (Fires WFF).
+NOTE: Target Workbench is primarily relevant to intelligence (G2/S2) and fires (fires support officer, FA) staff functions. Builders in sustainment, personnel, signal, or other functional areas should understand what Target Workbench is and that it exists — but it is not a tool you will build against unless you are supporting an intelligence or fires function. Operational use is covered in TM-40A (Intelligence WFF) and TM-40B (Fires WFF).
 
 **Builder responsibility:** Advanced builders supporting intelligence or fires functions are responsible for ensuring that the Object Types and properties in the Ontology are correctly structured to support Target Workbench display. Target Workbench reads from Object Types — if those Object Types are incorrectly configured (wrong property names, missing required fields, broken Link Types), Target Workbench will display incomplete or incorrect targeting data.
 
 ---
 
-### TASK 2-6A: NAVIGATE AND ORIENT TO TARGET WORKBENCH
+### TASK 2-6: NAVIGATE AND ORIENT TO TARGET WORKBENCH
 
 **TASK:** Navigate to Target Workbench, orient to its interface and data model, and identify the Ontology Object Types that feed into it.
 
@@ -658,7 +674,7 @@ through the visual pipeline interface without writing code.
 
 ## 3-1. Pipeline Builder Review and TM-30 Scope
 
-> **NOTE:** TM-20, Chapter 3 covered single-source ingestion pipelines with basic transformations. TM-30 advances to multi-source joins, complex business logic transforms, error handling that prevents silent failures, and monitoring strategy. Before designing a TM-30 pipeline, confirm the requirement genuinely exceeds TM-20 pipeline capabilities (TM-20, Chapter 3-1). If the requirement can be met with a single-source pipeline and basic transforms, build it at TM-20 level and do not escalate unnecessarily.
+NOTE: TM-20, Chapter 3 covered single-source ingestion pipelines with basic transformations. TM-30 advances to multi-source joins, complex business logic transforms, error handling that prevents silent failures, and monitoring strategy. Before designing a TM-30 pipeline, confirm the requirement genuinely exceeds TM-20 pipeline capabilities (TM-20, Chapter 3-1). If the requirement can be met with a single-source pipeline and basic transforms, build it at TM-20 level and do not escalate unnecessarily.
 
 3-1. TM-20 covered single-source Pipeline Builder work: reading a dataset, applying column
 selection, basic filters, and renaming. TM-30 advances to multi-source operations — joins,
@@ -717,7 +733,7 @@ standard — other builders must be able to read your pipeline diagram and under
 rows to not match. If the join key may contain NULLs, add a **Filter** node upstream to remove
 or handle NULL keys before the join.
 
-**NOTE:** After a join, column names from both datasets are merged into one schema. If both
+NOTE: After a join, column names from both datasets are merged into one schema. If both
 datasets have a column with the same name (other than the join key), Pipeline Builder will
 prefix them. Rename these columns immediately after the join using a **Rename Columns** node
 for readability.
@@ -786,7 +802,7 @@ Output: one row per battalion per equipment category showing fleet count and ave
 5. Set the output data type.
 6. Preview and verify values against known records.
 
-**NOTE:** Calculated columns in Pipeline Builder produce a permanent column in the output
+NOTE: Calculated columns in Pipeline Builder produce a permanent column in the output
 dataset — unlike Workshop computed columns, which are display-only. Use Pipeline Builder
 calculated columns when the value will be used in the Ontology, in Actions, or in other
 downstream pipelines.
@@ -847,7 +863,7 @@ categorical fields (fewer than 20 unique values).
 
 ## 3-2. Pipeline Naming and Documentation Standards
 
-> **NOTE:** When a TM-30 pipeline fails, the downstream impact is broad. Operators (TM-10, Task 5-1, View and Read a Dataset) see stale or missing data. Workshop applications fed by the pipeline display errors. Complex data products may serve dozens of operators or downstream pipelines. Refer to TM-10, Chapter 7-1 (Common Problems and Solutions) to understand the operator experience of a pipeline failure, then design your monitoring and alerting to detect failures before operators report them.
+NOTE: When a TM-30 pipeline fails, the downstream impact is broad. Operators (TM-10, Task 5-1, View and Read a Dataset) see stale or missing data. Workshop applications fed by the pipeline display errors. Complex data products may serve dozens of operators or downstream pipelines. Refer to TM-10, Chapter 7-1 (Common Problems and Solutions) to understand the operator experience of a pipeline failure, then design your monitoring and alerting to detect failures before operators report them.
 
 3-3. Every pipeline produced at TM-30 level must conform to C2DAO naming and documentation
 standards. A pipeline that cannot be identified, understood, or maintained by another builder
@@ -867,7 +883,7 @@ Example: `log_vehicle-fleet-maintenance-join_readiness-rollup_v1`
 
 3-6. **Dataset partitioning awareness.** Advanced builders do not configure partitioning in the UI — that is a TM-40 code-level task — but must design with it in mind. A partitioned dataset stores data in segments organized by a partition key (typically a date column). Apply date filters on partition keys as early as possible in the pipeline (immediately after the source node, before any joins). Ask the Data Steward whether a source dataset is partitioned and on what key. A missing or late-applied partition filter is the most common cause of slow pipelines.
 
-> **NOTE — Pipeline health monitoring (self-study):** Once pipelines are in production, monitoring their health is a TM-30 responsibility. The Pipeline Monitoring capability is covered in two Palantir Developers reference videos: *Pipeline Monitoring | How to Start Monitoring Data Health in Palantir Foundry* and *Pipeline Monitoring | How to Monitor Health Across a Pipeline in Palantir Foundry*. Similarly, the Schedules feature (configuration, metrics, and trigger management) is covered in three videos: *Schedules | Creation, Configuration, and Execution*, *Schedules | Management, Metrics, and Triggers*, and *Schedules | Separating Data Ownership within a Pipeline*. These tools are UI-based and within TM-30 scope.
+NOTE: Pipeline health monitoring (self-study) — Once pipelines are in production, monitoring their health is a TM-30 responsibility. The Pipeline Monitoring capability is covered in two Palantir Developers reference videos: *Pipeline Monitoring | How to Start Monitoring Data Health in Palantir Foundry* and *Pipeline Monitoring | How to Monitor Health Across a Pipeline in Palantir Foundry*. Similarly, the Schedules feature (configuration, metrics, and trigger management) is covered in three videos: *Schedules | Creation, Configuration, and Execution*, *Schedules | Management, Metrics, and Triggers*, and *Schedules | Separating Data Ownership within a Pipeline*. These tools are UI-based and within TM-30 scope.
 
 ---
 
@@ -893,7 +909,7 @@ causes those applications to break. Design carefully. Review with Data Stewards 
 the Ontology Manager graphical interface. Writing TypeScript Functions on Objects (FOO) or
 code-level ontology configuration is TM-40 scope.
 
-> **NOTE:** TM-20 Ontology configuration (TM-20, Chapter 4) is limited to: (1) simple Object Types with straightforward properties; (2) one-to-one and one-to-many Link Types without junction complexity; (3) single-step Actions with direct form-to-field mapping. If a design requires multi-step Actions, conditional routing, derived properties with complex logic, or many-to-many Link Types beyond a simple junction, it is TM-30 scope. When assessing complexity, use TM-20, Chapter 4-2 (Ontology Manager Interface Overview) as the boundary reference.
+NOTE: TM-20 Ontology configuration (TM-20, Chapter 4) is limited to: (1) simple Object Types with straightforward properties; (2) one-to-one and one-to-many Link Types without junction complexity; (3) single-step Actions with direct form-to-field mapping. If a design requires multi-step Actions, conditional routing, derived properties with complex logic, or many-to-many Link Types beyond a simple junction, it is TM-30 scope. When assessing complexity, use TM-20, Chapter 4-2 (Ontology Manager Interface Overview) as the boundary reference.
 
 ---
 
@@ -937,13 +953,13 @@ code-level ontology configuration is TM-40 scope.
    meets operational requirements.
 9. Review configuration. Request Data Steward review before publishing.
 
-**NOTE:** Do not create an Object Type for every dataset you have. Object Types are for entities
+NOTE: Do not create an Object Type for every dataset you have. Object Types are for entities
 that need to be tracked, searched, acted upon, or related to other entities over time. Reference
 data and lookup tables that are only consumed within pipelines do not need Object Types.
 
 **Step 3 — Verify property design quality:**
 
-> **NOTE:** When designing properties for an Object Type, consider how operators (TM-10) will understand and use them. Refer to TM-10, Task 5-3 (Use Quiver to Explore Ontology Objects) and Task 4-3 (Apply Filters to a Dashboard) to see how operators interact with your property names and values. Use clear operational terminology. Avoid technical abbreviations operators will not recognize.
+NOTE: When designing properties for an Object Type, consider how operators (TM-10) will understand and use them. Refer to TM-10, Task 5-3 (Use Quiver to Explore Ontology Objects) and Task 4-3 (Apply Filters to a Dashboard) to see how operators interact with your property names and values. Use clear operational terminology. Avoid technical abbreviations operators will not recognize.
 
 Avoid these common property design errors:
 
@@ -1015,7 +1031,7 @@ before publishing.
 
 **DURATION:** 3–5 hours including testing.
 
-> **NOTE:** Distinguish TM-20 Actions from TM-30 Actions: TM-20 Actions are single-step — operator fills form, field is updated. TM-30 Actions support multi-step workflows, conditional routing, and approval chains. If an Action requires: (1) sequential submission steps; (2) conditional field visibility; (3) multi-record writes; (4) command authority approval — it is TM-30 scope. If the workflow can be expressed as a single form-to-field write, hand it back to a TM-20 builder.
+NOTE: Distinguish TM-20 Actions from TM-30 Actions: TM-20 Actions are single-step — operator fills form, field is updated. TM-30 Actions support multi-step workflows, conditional routing, and approval chains. If an Action requires: (1) sequential submission steps; (2) conditional field visibility; (3) multi-record writes; (4) command authority approval — it is TM-30 scope. If the workflow can be expressed as a single form-to-field write, hand it back to a TM-20 builder.
 
 **PROCEDURE:**
 
@@ -1069,7 +1085,7 @@ Validation rules prevent bad data from entering the Ontology through Actions. Ev
 
 Configure a clear, user-facing validation error message for each rule so users understand what correction is needed.
 
-**NOTE:** Validation rules in Actions are the last line of defense before data enters the
+NOTE: Validation rules in Actions are the last line of defense before data enters the
 Ontology. Treat them as critically as input validation at any other system boundary. A missing
 validation rule is a data quality risk that will require remediation after the fact.
 
@@ -1083,6 +1099,31 @@ validation rule is a data quality risk that will require remediation after the f
 
 ---
 
+## TASK 4-4: DEFINE AN INTERFACE ON AN OBJECT TYPE
+
+**CONDITIONS:** Builder has a set of Object Types that share common properties (e.g., multiple equipment types that all have status, location, and assigned_unit) and needs to define a reusable contract across them.
+
+**STANDARDS:** Builder creates an Interface that defines shared properties, applies it to two or more Object Types, and verifies that Workshop components using the Interface work across all implementing types.
+
+**EQUIPMENT:** Ontology Manager access, at least two Object Types with overlapping properties, development branch.
+
+**PROCEDURE:**
+
+1. Identify the shared properties across your Object Types. List them: property name, data type, and purpose.
+2. In **Ontology Manager**, navigate to the **Interfaces** section.
+3. Click **Create Interface**. Name it descriptively using C2DAO naming standards (e.g., `StatusTrackable`, `GeoLocatable`, `UnitAssignable`).
+4. Add each shared property to the Interface definition. For each property, specify the name and data type — these must match exactly across all implementing Object Types.
+5. Navigate to each Object Type that should implement this Interface. In the Object Type configuration, add the Interface under **Implemented Interfaces**.
+6. Map each Interface property to the corresponding property on the Object Type. If a required property does not exist on the Object Type, add it first (Task 4-2).
+7. **Verify:** Open a Workshop application that uses one of the implementing Object Types. Confirm the Interface-based widgets (tables, charts, forms) render correctly for each implementing type.
+8. Test with at least two different Object Types to confirm the Interface contract holds.
+
+NOTE: Interfaces enable builders to create Workshop components that work across multiple Object Types without duplicating widget configuration. A table configured for the `StatusTrackable` interface will display any Object Type that implements it — units, vehicles, personnel — without reconfiguration.
+
+CAUTION: Changing an Interface definition after multiple Object Types implement it can break downstream Workshop applications. Treat Interface changes as schema changes — assess downstream impact using lineage (Chapter 7, Task 7-1) before modifying.
+
+---
+
 # CHAPTER 5 — ADVANCED ANALYTICS: CONTOUR AND QUIVER
 
 **BLUF:** Advanced analytics at TM-30 level moves beyond basic charts into complex aggregations,
@@ -1091,7 +1132,7 @@ products.
 
 ## 5-1. Advanced Contour Overview
 
-> **NOTE:** Contour at TM-20 level (TM-20, Chapter 6) supports basic filtering, sorting, and simple aggregations. Operators use Contour via TM-10, Task 5-2 (Use Contour for No-Code Analysis). TM-30 Contour adds the formula editor for calculated columns, complex multi-table aggregations, and pivot analysis. Before designing at TM-30 level, confirm the analysis requirement exceeds TM-20 Contour capabilities (TM-20, Chapter 6-2). If TM-20 Contour can handle the requirement, build there first.
+NOTE: Contour at TM-20 level (TM-20, Chapter 6) supports basic filtering, sorting, and simple aggregations. Operators use Contour via TM-10, Task 5-2 (Use Contour for No-Code Analysis). TM-30 Contour adds the formula editor for calculated columns, complex multi-table aggregations, and pivot analysis. Before designing at TM-30 level, confirm the analysis requirement exceeds TM-20 Contour capabilities (TM-20, Chapter 6-2). If TM-20 Contour can handle the requirement, build there first.
 
 ---
 
@@ -1183,7 +1224,7 @@ products.
 5. Use object relationship filters — filter based on properties of a linked Object Type.
 6. Name and save the object set for reuse.
 
-**NOTE:** Saved object sets in Quiver can be embedded in Workshop applications as the data source for Object Set widgets. This creates a single definition of a critical operational set (e.g., "All NMC vehicles in 21st TSC") that is used consistently across multiple applications.
+NOTE: Saved object sets in Quiver can be embedded in Workshop applications as the data source for Object Set widgets. This creates a single definition of a critical operational set (e.g., "All NMC vehicles in 21st TSC") that is used consistently across multiple applications.
 
 **Step 2 — Build the multi-object dashboard layout:**
 1. Open a new Quiver dashboard or layout.
@@ -1205,7 +1246,7 @@ products.
 5. Preview the metric on sample objects.
 6. Save. The metric is now available in all Quiver analyses on this Object Type.
 
-> **NOTE — Extended Quiver capability (self-study):** The Quiver tasks above cover multi-object dashboards and linked views. Four Palantir Developers reference videos go deeper on specific capabilities: *Quiver | How to Navigate the Dependency Graph and Expand your Analysis* (tracing upstream dependencies within a Quiver analysis), *Quiver | How to Use Parameters in Your Analysis* (parameter-driven filtering), *Quiver | How to Perform Ad-Hoc Aggregations*, and *Quiver | Calculating KPIs for Time Series Data in Palantir Foundry*. The time-series KPI video is particularly relevant for readiness trend analysis use cases.
+NOTE: Extended Quiver capability (self-study) — The Quiver tasks above cover multi-object dashboards and linked views. Four Palantir Developers reference videos go deeper on specific capabilities: *Quiver | How to Navigate the Dependency Graph and Expand your Analysis* (tracing upstream dependencies within a Quiver analysis), *Quiver | How to Use Parameters in Your Analysis* (parameter-driven filtering), *Quiver | How to Perform Ad-Hoc Aggregations*, and *Quiver | Calculating KPIs for Time Series Data in Palantir Foundry*. The time-series KPI video is particularly relevant for readiness trend analysis use cases.
 
 ---
 
@@ -1227,7 +1268,7 @@ Before working with any AIP tool, understand the full AIP toolset and the scope 
 
 **AI FDE (AI-Driven Feature Development Environment)** is Palantir's platform capability for code-assisted AI product development. It is addressed in section 6-4 as an awareness item. Hands-on AI FDE development is TM-40H scope.
 
-> **NOTE:** At TM-30 level, you are a consumer and configurator of AIP capabilities — not an author. Your primary contribution to AIP quality is well-designed Ontology structure: clear property names, accurate data types, complete descriptions, and correct Link Types. A poorly structured Ontology produces poor AIP outputs regardless of how well the AI model is configured. Build the data layer correctly first; AI quality follows from data quality.
+NOTE: At TM-30 level, you are a consumer and configurator of AIP capabilities — not an author. Your primary contribution to AIP quality is well-designed Ontology structure: clear property names, accurate data types, complete descriptions, and correct Link Types. A poorly structured Ontology produces poor AIP outputs regardless of how well the AI model is configured. Build the data layer correctly first; AI quality follows from data quality.
 
 ---
 
@@ -1247,11 +1288,11 @@ TM-30 builders CONFIGURE existing AIP Logic workflows — they do not author the
 
 **WARNING:** AIP Logic configurations that make autonomous decisions affecting command intent — such as flagging soldiers as non-deployable, modifying readiness records, or triggering escalation actions — require command authorization and legal review before activation. Do not activate production AIP Logic workflows that affect command decision-making without written authorization from your data steward and unit commander.
 
-**NOTE:** If you are unsure whether your configuration crosses into TM-40 territory, stop and consult your C2DAO data engineer. The cost of escalating unnecessarily is low. The cost of authoring workflows outside your qualification is high.
+NOTE: If you are unsure whether your configuration crosses into TM-40 territory, stop and consult your C2DAO data engineer. The cost of escalating unnecessarily is low. The cost of authoring workflows outside your qualification is high.
 
 ## 6-2. AIP Logic Overview
 
-> **NOTE:** AIP Logic is TM-30 only. TM-20 builders do not configure AI workflows. TM-10 operators use AIP Logic workflows that TM-30 builders design — see TM-10, Task 4-8A (Read and Respond to an AIP Logic Alert) and Task 4-8B (Interact with an AIP Agent) for the operator's perspective. Operators must review and validate AI outputs before acting on them (emphasized in TM-10, section 4-8). Design your AIP Logic workflows so outputs are easy for operators to validate quickly. Workflows that produce outputs requiring extensive operator review are operationally inefficient.
+NOTE: AIP Logic is TM-30 only. TM-20 builders do not configure AI workflows. TM-10 operators use AIP Logic workflows that TM-30 builders design — see TM-10, Task 4-8A (Read and Respond to an AIP Logic Alert) and Task 4-8B (Interact with an AIP Agent) for the operator's perspective. Operators must review and validate AI outputs before acting on them (emphasized in TM-10, section 4-8). Design your AIP Logic workflows so outputs are easy for operators to validate quickly. Workflows that produce outputs requiring extensive operator review are operationally inefficient.
 
 6-1. AIP Logic is the AI workflow layer of the platform. It enables AI-assisted analysis,
 automated reasoning, and natural language interfaces to operational data. At TM-30 level,
@@ -1338,7 +1379,7 @@ to users.
 
 **DURATION:** 2–3 hours including testing.
 
-> **NOTE:** Operators (TM-10, Task 4-8B, Interact with an AIP Agent) validate AI outputs against source data before acting. When configuring prompts, design with that human-review requirement in mind. Prompts should produce outputs that operators can quickly verify. Refer to TM-10, Task 4-8B for the validation workflow operators follow — then design your prompts to produce outputs compatible with that workflow.
+NOTE: Operators (TM-10, Task 4-8B, Interact with an AIP Agent) validate AI outputs against source data before acting. When configuring prompts, design with that human-review requirement in mind. Prompts should produce outputs that operators can quickly verify. Refer to TM-10, Task 4-8B for the validation workflow operators follow — then design your prompts to produce outputs compatible with that workflow.
 
 **PROCEDURE:**
 
@@ -1370,10 +1411,7 @@ to users.
 
 **DURATION:** 4–6 hours.
 
-> **NOTE — TM-30 vs. TM-40H Scope:**
-> TM-30 covers: creating basic agents using Ontology Object Types as data sources, writing output instructions, and validating agent responses.
-> TM-40H covers: advanced prompt engineering, custom tool development (TypeScript/Functions on Objects), agentic action logic (agents that write back to objects or trigger workflows), multi-agent orchestration, production deployment, and agent monitoring at scale.
-> If your use case requires agents that take actions — not just answer questions — escalate to a TM-40H developer.
+NOTE: TM-30 vs. TM-40H Scope — TM-30 covers: creating basic agents using Ontology Object Types as data sources, writing output instructions, and validating agent responses. TM-40H covers: advanced prompt engineering, custom tool development (TypeScript/Functions on Objects), agentic action logic (agents that write back to objects or trigger workflows), multi-agent orchestration, production deployment, and agent monitoring at scale. If your use case requires agents that take actions — not just answer questions — escalate to a TM-40H developer.
 
 **PROCEDURE:**
 
@@ -1399,7 +1437,7 @@ to users.
    - Data in the Object Type is current and correctly populated
 10. Add any approved documents or datasets as supplementary context if required by the use case.
 
-> **NOTE — Ontology quality directly determines agent quality.** An agent connected to an Object Type with poorly named properties or missing data will produce poor responses. Fix Ontology issues before deploying the agent.
+NOTE: Ontology quality directly determines agent quality. An agent connected to an Object Type with poorly named properties or missing data will produce poor responses. Fix Ontology issues before deploying the agent.
 
 **Step 4 — Write output instructions:**
 
@@ -1469,11 +1507,11 @@ Hands-on development with AI FDE is TM-40H (AI Engineer) territory. TM-30 builde
 lineage graphs, identify and report data quality issues, work with Data Stewards on resolution,
 and enforce governance standards in everything they build.
 
-> **NOTE:** TM-20 builders follow governance standards defined in TM-20, Chapter 8 (Builder Standards and Governance). TM-30 builders have additional stewardship responsibilities because your designs affect shared infrastructure and downstream systems. At TM-30 level you are responsible for: (1) understanding operator access expectations (TM-10, Chapter 6, Security, Classification, and Markings); (2) ensuring TM-20 builders can implement your designs without overstepping their scope; (3) coordinating with data stewards before modifying any shared production resource; (4) designing for the full downstream impact across all consumers, not only the immediate use case.
+NOTE: TM-20 builders follow governance standards defined in TM-20, Chapter 8 (Builder Standards and Governance). TM-30 builders have additional stewardship responsibilities because your designs affect shared infrastructure and downstream systems. At TM-30 level you are responsible for: (1) understanding operator access expectations (TM-10, Chapter 6, Security, Classification, and Markings); (2) ensuring TM-20 builders can implement your designs without overstepping their scope; (3) coordinating with data stewards before modifying any shared production resource; (4) designing for the full downstream impact across all consumers, not only the immediate use case.
 
-**NOTE — Audit Trail:** All advanced builder actions in MSS — Ontology modifications, pipeline builds, branch creation, peer reviews, and production promotions — are logged with your credentials, timestamp, and the specific resource changed. These logs are used for accountability reviews, change tracking, and incident investigation. You are personally accountable for all changes made under your credentials, including changes made on behalf of another team member.
+NOTE: Audit Trail — All advanced builder actions in MSS — Ontology modifications, pipeline builds, branch creation, peer reviews, and production promotions — are logged with your credentials, timestamp, and the specific resource changed. These logs are used for accountability reviews, change tracking, and incident investigation. You are personally accountable for all changes made under your credentials, including changes made on behalf of another team member.
 
-**NOTE — CUI (Controlled Unclassified Information):** Before designing any data product that ingests or exposes CUI, coordinate with your data steward and confirm: (a) the data is authorized for ingestion, (b) access controls are configured to restrict visibility to authorized personnel, and (c) any downstream applications exposing CUI are reviewed before publication. Coalition-facing data products require additional coordination with C2DAO and, where applicable, NATO data governance review.
+NOTE: CUI (Controlled Unclassified Information) — Before designing any data product that ingests or exposes CUI, coordinate with your data steward and confirm: (a) the data is authorized for ingestion, (b) access controls are configured to restrict visibility to authorized personnel, and (c) any downstream applications exposing CUI are reviewed before publication. Coalition-facing data products require additional coordination with C2DAO and, where applicable, NATO data governance review.
 
 ---
 
@@ -1539,7 +1577,7 @@ coordinated cutover plan.
 
 **DURATION:** 1–3 hours.
 
-> **NOTE:** Operators (TM-10, Chapter 5, Working with Data) expect data to be current, accurate, and correctly marked. Use TM-10, Task 5-4 (Verify Data Currency and Source) as the benchmark for what operators require from your data products. If your pipeline or Ontology design creates data quality issues that operators cannot resolve themselves (TM-10, Chapter 5-2, What to Do When Data Looks Wrong), you are responsible for identifying and fixing the root cause.
+NOTE: Operators (TM-10, Chapter 5, Working with Data) expect data to be current, accurate, and correctly marked. Use TM-10, Task 5-4 (Verify Data Currency and Source) as the benchmark for what operators require from your data products. If your pipeline or Ontology design creates data quality issues that operators cannot resolve themselves (TM-10, Chapter 5-2, What to Do When Data Looks Wrong), you are responsible for identifying and fixing the root cause.
 
 **PROCEDURE:**
 
@@ -1591,7 +1629,7 @@ If you cannot identify the Data Steward for a dataset or Object Type, escalate t
 
 **DURATION:** 30–60 minutes.
 
-> **NOTE:** Before designing coalition-facing data products at TM-30 level, understand TM-10, Chapter 6 (Security, Classification, and Markings), especially Task 6-1 (Verify Markings and Access Level). Coalition data must be correctly marked and access-controlled from ingestion through final product. Errors in releasability markings can result in data shared with unauthorized coalition partners — this is a hard governance gate, not a best practice. Coordinate with the USAREUR-AF C2DAO before any coalition-facing design decision.
+NOTE: Before designing coalition-facing data products at TM-30 level, understand TM-10, Chapter 6 (Security, Classification, and Markings), especially Task 6-1 (Verify Markings and Access Level). Coalition data must be correctly marked and access-controlled from ingestion through final product. Errors in releasability markings can result in data shared with unauthorized coalition partners — this is a hard governance gate, not a best practice. Coordinate with the USAREUR-AF C2DAO before any coalition-facing design decision.
 
 **PROCEDURE:**
 
@@ -1622,7 +1660,7 @@ Access control levels on the platform:
    USAREUR-AF G4 staff (viewer), G4 data team (editor)."
 7. Test access by verifying a member of each access group can interact as expected.
 
-> **NOTE — Additional access management reference (self-study):** Two Palantir Developers reference videos extend the access control content in this chapter: *Security | How to use Projects to Help Enable your Business to Scale* (using Foundry Projects as the primary access boundary for scaling data products to many users) and *Security | How to Debug a User's Access to a File* (diagnosing why a specific user cannot access a resource — useful when access complaints arrive from operators). Both are UI-based procedures within TM-30 scope.
+NOTE: Additional access management reference (self-study) — Two Palantir Developers reference videos extend the access control content in this chapter: *Security | How to use Projects to Help Enable your Business to Scale* (using Foundry Projects as the primary access boundary for scaling data products to many users) and *Security | How to Debug a User's Access to a File* (diagnosing why a specific user cannot access a resource — useful when access complaints arrive from operators). Both are UI-based procedures within TM-30 scope.
 
 ---
 
@@ -1634,7 +1672,7 @@ entirely through the platform UI without scripting or CI/CD configuration.
 
 ## 8-1. Branching and the Development Lifecycle
 
-> **NOTE:** TM-20 builders follow a development lifecycle defined in TM-20, Chapter 7 (Branching and Environment Management): develop on a branch, test, request merge, get approval, merge to main. TM-30 development follows the same pattern with more rigorous testing gates because your changes affect shared infrastructure. Operators (TM-10) only access the main/production branch. Every merge to main is a production release. Apply engineering discipline — test against TM-10 operator workflows (Chapter 4) before merging.
+NOTE: TM-20 builders follow a development lifecycle defined in TM-20, Chapter 7 (Branching and Environment Management): develop on a branch, test, request merge, get approval, merge to main. TM-30 development follows the same pattern with more rigorous testing gates because your changes affect shared infrastructure. Operators (TM-10) only access the main/production branch. Every merge to main is a production release. Apply engineering discipline — test against TM-10 operator workflows (Chapter 4) before merging.
 
 8-1. The platform uses a branching model to separate development work from production. A branch
 is an isolated copy of the environment where changes can be made, tested, and reviewed without
@@ -1774,11 +1812,13 @@ they promote.
 
 ---
 
-# CHAPTER 8A — AUTOMATIONS
+# CHAPTER 9 — AUTOMATIONS *(Self-Study / Reference)*
+
+NOTE: This chapter is self-study material. It is not included in the 5-day TM-30 course schedule. Instructors may demo Automations during Day 4 if time permits. Builders should complete this chapter independently before configuring Automations in a production environment.
 
 **BLUF:** Automations are Foundry's capability to trigger actions, pipeline runs, or object updates on a schedule or based on object state changes — configured through Ontology Manager. They eliminate manual, recurring operational data tasks and enable the platform to maintain data currency and state without human intervention for routine processes.
 
-## 8A-1. What Automations Are
+## 9-1. What Automations Are
 
 An Automation is a configured rule in Ontology Manager that monitors an Object Type's state or a schedule, and executes a defined action when the trigger condition is met. Automations operate in the background — builders configure them, and the platform executes them without operator involvement.
 
@@ -1794,11 +1834,11 @@ An Automation is a configured rule in Ontology Manager that monitors an Object T
 
 **When NOT to use Automations:**
 
-Automations execute at the Object Type level — they apply a rule to objects meeting a condition. They are not designed for complex multi-step process flows, handoff routing, or end-to-end workflow management. For processes involving multiple roles, conditional routing, and process state visibility, see Chapter 8B (Machinery).
+Automations execute at the Object Type level — they apply a rule to objects meeting a condition. They are not designed for complex multi-step process flows, handoff routing, or end-to-end workflow management. For processes involving multiple roles, conditional routing, and process state visibility, see Chapter 10 (Machinery).
 
 ---
 
-## TASK 8A-1: CONFIGURE AN AUTOMATION ON AN OBJECT TYPE
+## TASK 9-1: CONFIGURE AN AUTOMATION ON AN OBJECT TYPE
 
 **TASK:** Configure an Automation on an existing Object Type to trigger a defined action based on a schedule or object condition, test the automation in a development environment, and monitor its execution history.
 
@@ -1841,7 +1881,7 @@ Automations execute at the Object Type level — they apply a rule to objects me
 6. Under **Action**, select what happens when the trigger fires:
    - **Update Property:** Write a defined value to a specific property on the object. Example: set `inspection_status` to "OVERDUE".
    - **Create Object:** Create a new object of a specified type. Use for generating event or log records.
-   - **Execute an existing Action:** Invoke an Action already configured on the Object Type (see TM-20, Task 4-4 and TM-30, Task 4-3).
+   - **Execute an existing Action:** Invoke an Action already configured on the Object Type (see TM-20, Task 4-6 and TM-30, Task 4-3).
    - **Trigger Pipeline Build:** Initiate a pipeline refresh. This option may require TM-40 coordination to configure correctly.
 7. Configure the action parameters:
    - For **Update Property**: select the target property and specify the value to write (static value, or derived from another property on the same object).
@@ -1880,11 +1920,13 @@ NOTE: Automations that modify properties used by Workshop applications will affe
 
 ---
 
-# CHAPTER 8B — MACHINERY
+# CHAPTER 10 — MACHINERY *(Self-Study / Reference)*
+
+NOTE: This chapter is self-study material. It is not included in the 5-day TM-30 course schedule. Instructors may demo Machinery during Day 4 if time permits. Builders should complete this chapter independently before modeling processes in a production environment.
 
 **BLUF:** Machinery is Palantir Foundry's business process management layer. It enables builders to model, monitor, and automate multi-step staff processes — approval workflows, recurring reporting cycles, data quality reviews — as structured, visible process flows connected to Ontology Object Types.
 
-## 8B-1. What Machinery Is
+## 10-1. What Machinery Is
 
 Machinery manages end-to-end process flows across multiple steps and roles. Where Automations handle individual object-level triggers (one object meets a condition, one action executes), Machinery manages processes that span multiple objects, multiple people, multiple sequential steps, and require visibility into where in the process a given work item currently is.
 
@@ -1914,7 +1956,7 @@ Machinery manages end-to-end process flows across multiple steps and roles. Wher
 
 ---
 
-## TASK 8B-1: ORIENT TO MACHINERY AND MODEL A BASIC PROCESS
+## TASK 10-1: ORIENT TO MACHINERY AND MODEL A BASIC PROCESS
 
 **TASK:** Navigate to Machinery, create a basic process definition with defined steps, roles, and transitions, link the process to existing Object Types, and monitor active process instances.
 
@@ -1979,15 +2021,15 @@ NOTE: Machinery requires that the Object Types and properties used in the proces
 
 ---
 
-# CHAPTER 9 — STANDARDS, CONVENTIONS, AND BEST PRACTICES
+# CHAPTER 11 — STANDARDS, CONVENTIONS, AND BEST PRACTICES
 
 **BLUF:** Consistent standards across all products built by USAREUR-AF advanced builders
 create a coherent, maintainable data environment. This chapter specifies the naming conventions,
 design patterns, and quality standards that apply to everything built at TM-30 level.
 
-## 9-1. Naming Conventions
+## 11-1. Naming Conventions
 
-9-1. All resources created on the MSS platform by USAREUR-AF builders must follow C2DAO
+11-1. All resources created on the MSS platform by USAREUR-AF builders must follow C2DAO
 naming conventions. Non-compliant naming is a governance deficiency and will be flagged in
 Data Steward reviews.
 
@@ -2043,11 +2085,11 @@ Examples: `ops_selected_unit_string`, `log_date_filter_date`, `g2_show_classifie
 | Medical | med | G4 / Surgeon |
 | Intelligence | g2 | G2 / S2 |
 | Signal/Comms | sig | G6 / S6 |
-| Civil Affairs | g9 | G9 |
+| Civil Affairs | g9 | Civil Affairs |
 | Personnel | g1 | G1 / S1 |
 | Finance | fin | G8 |
 
-## 9-2. Design Best Practices
+## 11-2. Design Best Practices
 
 **Application design:**
 
@@ -2076,13 +2118,13 @@ Examples: `ops_selected_unit_string`, `log_date_filter_date`, `g2_show_classifie
 4. **Link Types represent real relationships.** Only create a Link Type if the relationship between two Object Types is operationally meaningful and will be traversed in downstream analysis or applications.
 5. **Primary key is sacred.** The primary key must be truly unique and stable. Changing the primary key on a production Object Type is a major breaking change.
 
-## 9-3. Performance Considerations
+## 11-3. Performance Considerations
 
-9-2. Advanced builders are responsible for the performance characteristics of what they build.
+11-2. Advanced builders are responsible for the performance characteristics of what they build.
 An application that loads slowly or a pipeline that takes hours degrades the operational
 environment for all users.
 
-9-3. Performance checklist before publishing to production:
+11-3. Performance checklist before publishing to production:
 
 | Check | How to Verify | Action if Failing |
 |-------|---------------|-------------------|
@@ -2092,9 +2134,9 @@ environment for all users.
 | Map widget object count | Preview map with production data | Limit objects displayed; add a filter requiring user selection before map populates |
 | Table row count | Preview table with production data | Implement server-side pagination; add a mandatory filter before results appear |
 
-## 9-4. USAREUR-AF C2DAO Governance Checklist Summary
+## 11-4. USAREUR-AF C2DAO Governance Checklist Summary
 
-9-4. Every product published to production must satisfy the following governance requirements:
+11-4. Every product published to production must satisfy the following governance requirements:
 
 **Naming Compliance:**
 - [ ] Dataset, pipeline, Object Type, and application names follow C2DAO naming conventions
@@ -2128,7 +2170,7 @@ environment for all users.
 
 # APPENDIX A — ADVANCED BUILDER CHECKLISTS
 
-> **NOTE:** Before initiating a TM-40 handoff, confirm the requirement genuinely exceeds TM-30 capability. Use this checklist: (1) Can this be built using TM-20 no-code tools? If yes — hand back to TM-20 builder, do not escalate to TM-40. (2) Can this be designed using TM-30 UI tools (Workshop, Ontology Manager UI, Pipeline Builder UI, AIP Logic UI)? If yes — build at TM-30 level, do not escalate. (3) Does implementation require writing code (Python, PySpark, TypeScript, SQL)? If yes — use this template and initiate TM-40 handoff. Unnecessary TM-40 escalation consumes developer capacity and delays delivery.
+NOTE: Before initiating a TM-40 handoff, confirm the requirement genuinely exceeds TM-30 capability. Use this checklist: (1) Can this be built using TM-20 no-code tools? If yes — hand back to TM-20 builder, do not escalate to TM-40. (2) Can this be designed using TM-30 UI tools (Workshop, Ontology Manager UI, Pipeline Builder UI, AIP Logic UI)? If yes — build at TM-30 level, do not escalate. (3) Does implementation require writing code (Python, PySpark, TypeScript, SQL)? If yes — use this template and initiate TM-40 handoff. Unnecessary TM-40 escalation consumes developer capacity and delays delivery.
 
 ## A-1. Pre-Build Checklist
 
@@ -2171,7 +2213,7 @@ environment for all users.
 
 # APPENDIX B — DESIGN PATTERNS REFERENCE
 
-> **NOTE:** This is the TM-30 checklist for advanced multi-page, cross-functional applications. If your application is single-page and purpose-specific, use the TM-20 checklist (TM-20, Appendix C, Workshop Application Pre-Publish Checklist) instead. Before publishing any application, test it against operator workflows in TM-10, Chapter 4 (Using Workshop Applications). An application that a trained operator cannot navigate using TM-10 procedures is not ready for publication.
+NOTE: This is the TM-30 checklist for advanced multi-page, cross-functional applications. If your application is single-page and purpose-specific, use the TM-20 checklist (TM-20, Appendix C, Workshop Application Pre-Publish Checklist) instead. Before publishing any application, test it against operator workflows in TM-10, Chapter 4 (Using Workshop Applications). An application that a trained operator cannot navigate using TM-10 procedures is not ready for publication.
 
 ## B-1. Commander's Dashboard
 
@@ -2442,4 +2484,4 @@ data-driven operational interfaces using configurable widgets without writing co
 
 *TM-30 — Maven Smart System Advanced No-Code Builder Technical Manual*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026*
-*Distribution Restriction: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*Distribution Restriction: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.*

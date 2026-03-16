@@ -89,7 +89,7 @@ OPERATIONAL EXPERIENCE (Exercise, Operation, Garrison)
 | S3 KM NCO (Brigade/Battalion) | AAR capture, lessons routing, SOP currency tracking |
 | S6 Data NCOIC | Knowledge system integration with data pipelines, search indexing |
 | G2 KM Analyst | Operational lessons, TTP extraction, classification-appropriate handling |
-| G9 KM Coordinator | Partner nation knowledge sharing, lessons exchange workflows |
+| Civil Affairs KM Coordinator | Partner nation knowledge sharing, lessons exchange workflows |
 
 ---
 
@@ -116,14 +116,29 @@ Each domain requires its own Object Types, property schemas, Link Types, and acc
 
 | Document | Relevance |
 |---|---|
-| Army CIO Data Stewardship Policy (April 2, 2024) | Data product standards, domain ownership, stewardship hierarchy |
-| UDRA v1.1 (February 2025) | Unified Data Reference Architecture — federated governance, domain structure |
-| FM 7-0 (Train to Win in a Complex World) | AAR process, training management, lessons learned integration |
+| FM 7-0 (Training) | AAR process, training management, lessons learned integration |
 | AR 25-1 (Army Enterprise Technology Management) | Information management policies, records management alignment |
 | USAREUR-AF C2DAO Guidance | Theater-level architecture standards for MSS knowledge products |
 | NATO STANAG 4778 (Lessons Learned) | Standardized format for NATO-compatible lessons learned exchange |
-| DoD Data Strategy (2020) | VAUTI framework — knowledge products must be Visible, Accessible, Understandable, Trustable, Interoperable |
 | learn-data.armydev.com | Army data literacy training portal — reference for self-directed follow-on training |
+| ATP 6-01.1 (Techniques for Effective Knowledge Management) | The Army's dedicated KM publication; covers KM solution design, content management, and KM SOPs |
+| AR 25-400-2 (Army Records Management Program, Oct 2022) | Records lifecycle management, ARIMS compliance, electronic records |
+| DA PAM 25-403 (Army Guide to Recordkeeping, Nov 2022) | Implementing guidance for AR 25-400-2; electronic records, scheduling, transfer |
+| DA PAM 25-1-1 (Army IT Implementation Instructions) | Ch 4 covers data management discipline and data governance structure |
+| NATO Core Metadata Specification / STANAG 5636 | Structured metadata standards for NATO-compatible knowledge products |
+| NATO ADatP-34 / NISP | C3 interoperability standards for data cataloging and knowledge exchange |
+| STANAG 5643 (proposed) — MIM Governance Standard | NATO MIP Information Model governance — data model versioning, change proposals, national extensions |
+
+### 1-5a. Strategic Guidance
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| Army CIO Data Stewardship Policy (April 2, 2024) | Army CIO | Data product standards, domain ownership, stewardship hierarchy |
+| UDRA v1.1 (February 2025) | Army Enterprise | Unified Data Reference Architecture — federated governance, domain structure |
+| DoD Data Strategy (2020) | OSD | VAUTI framework — knowledge products must be Visible, Accessible, Understandable, Trustable, Interoperable |
+| NATO Data Strategy for the Alliance (Feb 2025) | NATO | Alliance-wide data governance mandate — governs coalition knowledge sharing in EUCOM AOR |
 
 > **NOTE:** Knowledge management on MSS intersects with records management requirements under AR 25-400-2. Coordinate with your unit RMO (Records Management Officer) before standing up any persistent knowledge repository to ensure retention schedules are applied correctly.
 
@@ -436,7 +451,7 @@ USAREUR-AF generates lessons learned from multiple sources simultaneously. A mat
 | CALL (Center for Army Lessons Learned) | PDF reports, structured web exports | Medium — continuous | TM-40L pipeline required |
 | Unit-submitted lessons (email/form) | Unstructured text, email attachments | Variable | Workshop intake form + manual KM review |
 | Exercise observer/controller reports | Word/PDF documents, OC/T structured formats | High during exercises | Batch ingest pipeline |
-| NATO LLDB (Lessons Learned Database) | STANAG 4778 formatted records | Low — periodic | Coordinate with G9/POLAD for access |
+| NATO LLDB (Lessons Learned Database) | STANAG 4778 formatted records | Low — periodic | Coordinate with CA/POLAD for access |
 | JLLIS (Joint Lessons Learned Info System) | Structured web export | Medium | TM-40L pipeline required; coordinate with J7 |
 | Partner nation reports | Variable format, variable language | Variable | Manual ingest with AIP translation assist (Chapter 5) |
 
@@ -1406,6 +1421,19 @@ Return JSON with fields: assessment (Duplicate / Near-Duplicate / Distinct), con
 
 ---
 
+## APPENDIX D — PROFESSIONAL READING LIST
+
+> Curated articles from Army professional journals and military publications. These supplement doctrinal references with contemporary operational perspectives.
+
+| Source | Title | Date | Relevance |
+|---|---|---|---|
+| NCO Journal | "Knowledge Management and The Old Guard" | Aug 2025 | KM in practice |
+| Green Notebook | "How To Be a Data Literate Leader" | Mar 2024 | Data literacy for KM leaders |
+| Green Notebook | "Harnessing the Power of Knowledge Management" | Apr 2024 | KM fundamentals |
+| Small Wars Journal | "Elevating Information as a Core WfF for MDO" | Apr 2025 | Information as warfighting function |
+
+---
+
 ## GLOSSARY
 
 **AAR (After-Action Review).** A structured review of a training event or operation that answers four questions: what was supposed to happen, what actually happened, why was there a difference, and what will we sustain or improve. Defined in FM 7-0.
@@ -1486,7 +1514,7 @@ Return JSON with fields: assessment (Duplicate / Near-Duplicate / Distinct), con
 
 **SME (Subject Matter Expert).** A person with recognized expertise in a specific operational or technical domain. SME identification is a primary use case for the ExpertiseProfile system.
 
-**STANAG 4778.** NATO Standardization Agreement defining the format for lessons learned exchange between NATO member nations. Used by USAREUR-AF KMs for NATO LLDB integration and G9 partner nation knowledge sharing.
+**STANAG 4778.** NATO Standardization Agreement defining the format for lessons learned exchange between NATO member nations. Used by USAREUR-AF KMs for NATO LLDB integration and Civil Affairs partner nation knowledge sharing.
 
 **TTP (Tactic, Technique, Procedure).** Operationally derived guidance more specific than doctrine — the how of doing a task at the lowest level. TTPs are derived from lessons learned and validated by SMEs before becoming authoritative.
 
@@ -1502,3 +1530,8 @@ Return JSON with fields: assessment (Duplicate / Near-Duplicate / Distinct), con
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 *2026*
 *Distribution authorized to U.S. Government agencies and their contractors only.*
+
+**DoD and Army Strategic References:**
+
+- **UDRA v1.1 (February 2025)** — Unified Data Reference Architecture; domain ownership and federated governance for knowledge products
+- **Army CIO Data Stewardship Memo (April 2024)** — Chain of responsibility for data governance and stewardship

@@ -4,8 +4,8 @@
 Wiesbaden, Germany
 
 **Proponent:** USAREUR-AF C2DAO
-**Authority:** Army CIO Data and Analytics Policy (April 2024); UDRA v1.1 (February 2025)
-**Distribution:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.
+**Authority:** AR 25-1, *Army Information Technology* (Jul 2019); AR 25-30, *Army Publishing Program* (Jun 2022); DA PAM 25-40, *Army Publishing: Action Officers' Guide* (Nov 2023); Army CIO Data and Analytics Policy (April 2024); UDRA v1.1 (February 2025)
+**Distribution:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.
 **Version:** 1.0 | March 2026
 
 > **NOTE:** All TMs in the Maven training series reference "USAREUR-AF naming conventions." This document is the authoritative source. When in doubt, consult C2DAO or the responsible data steward.

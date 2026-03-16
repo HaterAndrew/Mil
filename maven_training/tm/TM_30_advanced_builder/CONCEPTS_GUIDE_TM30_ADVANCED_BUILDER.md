@@ -553,6 +553,17 @@ When TM-30 qualification is complete, select a TM-40 specialist track based on a
 
 ---
 
+## NATO AND COALITION STRATEGIC GUIDANCE
+
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| NATO Data Strategy for the Alliance (Feb 2025) | NATO | Alliance-wide data governance mandate — governs coalition data sharing requirements applicable to TM-30 ontology design |
+| NATO Data Quality Framework for the Alliance (Aug 2025) | NATO | Quality governance and metrics — applicable to multi-national data products built at TM-30 level |
+
+---
+
 ## CURRICULUM NOTES
 
 **Prerequisites:** TM-10 (Maven User) and TM-20 (Builder) are REQUIRED before beginning TM-30 or this guide. The Data Literacy Technical Reference is also required reading.
@@ -569,4 +580,4 @@ When TM-30 qualification is complete, select a TM-40 specialist track based on a
 
 *CONCEPTS GUIDE — TM-30 COMPANION, ADVANCED BUILDER, MAVEN SMART SYSTEM (MSS)*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026*
-*Distribution restriction: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, G6/Data, Wiesbaden, Germany.*
+*Distribution restriction: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*

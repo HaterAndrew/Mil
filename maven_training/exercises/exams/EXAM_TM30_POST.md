@@ -6,7 +6,7 @@
 | **Course** | TM-30: Advanced Builder |
 | **Form** | Post-Test |
 | **Level** | TM-30 (Advanced) |
-| **Audience** | Data-adjacent specialists — 17/25-series, S6/G6/G2/G9; prerequisite: TM-10 + TM-20 |
+| **Audience** | Data-adjacent specialists — 17/25-series, S6/G6/G2; prerequisite: TM-10 + TM-20 |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (42/60) |
 

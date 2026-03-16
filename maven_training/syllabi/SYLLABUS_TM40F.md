@@ -12,7 +12,7 @@
 
 ---
 
-**BLUF:** TM-40F teaches Mission Command staff to integrate MSS into the operations process — maintaining the COP, configuring CCIR alerts, building battle rhythm products, and supporting commander decisions with current integrated operational data. Course applies MSS capabilities per ADP 6-0 and FM 6-0. No coding or pipeline experience required.
+**BLUF:** TM-40F teaches Mission Command staff to integrate MSS into the operations process — maintaining the COP, configuring CCIR alerts, building battle rhythm products, and supporting commander decisions with current integrated operational data. Course applies MSS capabilities per ADP 6-0 (Jul 2019) and FM 6-0 (May 2022). No coding or pipeline experience required.
 
 ---
 
@@ -47,7 +47,7 @@ Complete **5+ duty days before Day 1:**
 
 | Time | Block | Method | Content |
 |---|---|---|---|
-| 0800–0900 | 1 | Brief | Doctrinal context: ADP 6-0, FM 6-0; how MSS supports the operations process; role of the COP in command and control |
+| 0800–0900 | 1 | Brief | Doctrinal context: ADP 6-0 (Jul 2019), FM 6-0 (May 2022); how MSS supports the operations process; role of the COP in command and control |
 | 0900–1100 | 2 | Demo/Lab | COP configuration: adding layers, setting data sources, configuring display standards by echelon; data freshness indicators |
 | 1100–1115 | — | Break | |
 | 1115–1200 | 3 | Lab | Verifying data currency: reading timestamps, tracing data source pipelines, identifying stale feeds and escalation path |
@@ -109,7 +109,7 @@ Complete **5+ duty days before Day 1:**
 
 | # | Task |
 |---|---|
-| 1 | Configure the COP with correct layers and verify data currency for all displayed feeds |
+| 1 | Configure the COP with correct layers and verify data currency for all displayed feeds; verify MSS snapshot is configured per CP displacement procedures and brief the evaluator on the handoff sequence (source, snapshot, restore — 3 steps, no notes) |
 | 2 | Build and validate 3 CCIRs from the provided commander's guidance card |
 | 3 | Construct the weekly battle rhythm dashboard with the provided event list |
 | 4 | Build the BUA read-ahead product with readiness summary, CCIR status, and operational outlook |
@@ -124,9 +124,11 @@ Complete **5+ duty days before Day 1:**
 
 | Task | Hard Standard |
 |---|---|
+| CP displacement handoff | Trainee must state the 3-step handoff sequence (source, snapshot, restore) without notes — a checklist read-back is acceptable; inability to name the steps is No-Go for that element of Task 1 |
 | CCIR thresholds | Syntactically correct but wrong thresholds do not pass — evaluator checks CCIRs against the commander guidance card |
 | Data staleness inject | Correct answer is to characterize what is known/unknown and communicate to commander before briefing — trainees who "fix" the pipeline rather than characterize and escalate will miss the intent |
 | BUA product | Data-as-of timestamps required on every data element — a product without timestamps fails that element |
+| Battle rhythm dashboard | Dashboard must reflect the trainee's provided event list — not a template. Evaluator will check 3 randomly selected events by name against the provided list. Any missing or wrong event name is No-Go for that element |
 
 ---
 
@@ -137,6 +139,7 @@ Complete **5+ duty days before Day 1:**
 | CCIR configuration | "High-casualty threshold" is not a complete CCIR — must be tied to a specific data feed, specific value, and specific notification path. Bring your unit's CCIR list and work through configuration before Day 1 |
 | Data staleness inject | Do not click faster — immediately characterize the gap and communicate it up. Every commander product relying on the stale feed must be caveated |
 | Battle rhythm dashboards | The evaluator will change underlying data and verify the dashboard updates — disconnected from live data fails the evaluation |
+| CCIR troubleshooting | Mission command CCIRs that route to "all staff" as a notification path are not correctly configured — each CCIR must route to the specific functional staff section responsible for that decision (e.g., a readiness CCIR routes to S4, not all staff). Evaluator will check routing against the commander guidance card |
 
 ---
 
