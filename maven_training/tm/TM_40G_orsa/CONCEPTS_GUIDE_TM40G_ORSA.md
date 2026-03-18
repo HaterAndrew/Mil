@@ -22,6 +22,8 @@ MSS supports several analyst roles. The boundaries are not organizational formal
 
 The platform does not enforce these boundaries. Foundry gives an ORSA access to datasets, notebooks, transforms, ontology objects, and dashboards. The fact that you can do everything does not mean you should. ORSA time is most valuable closest to the commander. Guard it accordingly.
 
+> **NOTE — Assessment Framework (TM-40G Section 1-7, Table 1-2):** TM-40G now includes a formal MOE/MOP/indicator assessment framework with worked examples. Review Table 1-2 for the standard indicator taxonomy before building any assessment product.
+
 ### 1-2. What "Decision Product" Means
 
 A decision product answers a specific question, makes uncertainty explicit, and names the action it enables. It is not a visualization, a model output dump, or a dashboard with no narrative.
@@ -111,6 +113,8 @@ Do not begin analysis on an ambiguous tasker. Return for clarification when:
 **Predictive questions require baseline descriptive analysis first.** Understand the current readiness distribution, historical trend, and seasonal patterns before building a forecast. A predictive model built without first understanding the descriptive picture produces results that are technically valid but operationally uninterpretable.
 
 **Prescriptive analysis requires explicit COA definition.** Optimization models optimize against defined constraints and objectives. If the commander has not defined the constraints and objectives, optimization produces a mathematically correct answer to the wrong question.
+
+> **NOTE — COA Evaluation and CARVER Scoring (TM-40G Sections 3-4 and 5-4):** TM-40G now provides a structured COA evaluation criteria schema (Section 3-4) and a CARVER target-value scoring methodology with Table 5-4 (Section 5-4). Use these frameworks when conducting prescriptive COA comparison analyses.
 
 ### 3-3. When Not to Model
 
@@ -237,6 +241,8 @@ The V Corps G3's weekly readiness update is a briefing product. The G3's recomme
 
 **BLUF:** Foundry's architecture changes how ORSA work is structured. Understanding the Ontology model, the Contour/Workspace split, and reproducibility requirements prevents avoidable friction.
 
+> **NOTE — Force Ratio and Combat Power Index (TM-40G Section 7-0a):** TM-40G Section 7-0a introduces a force ratio and combat power index methodology for quantitative force comparison. Reference this section when building comparative strength analyses or COA risk assessments.
+
 ### 7-1. The Ontology as an Analytical Frame
 
 The Ontology represents operational data as Objects, Properties, and Links — not raw database tables. This is an analytical frame that affects how problems are structured.
@@ -328,7 +334,7 @@ Before delivering any analytical product, confirm each item.
 **Advanced track:** TM-40G graduates should pursue **TM-50G (Advanced ORSA)** as the next step in the specialist progression. TM-50G addresses Bayesian methods, complex simulation, multi-objective optimization, and campaign analysis support at theater level.
 
 **Peer specialist cross-references:**
-- **TM-40I (ML Engineer):** Coordinate when a recurring prediction requirement exceeds one-time ORSA analysis — the MLE operationalizes the analytical approach as a production pipeline.
+- **TM-40M (ML Engineer):** Coordinate when a recurring prediction requirement exceeds one-time ORSA analysis — the MLE operationalizes the analytical approach as a production pipeline.
 - **TM-40H (AI Engineer):** Coordinate when ORSA decision products need to be wrapped in AI-assisted synthesis or automated SITREP generation workflows.
 - **TM-40L (Software Engineer):** Coordinate when ORSA products require production-grade pipeline implementation, OSDK delivery surfaces, or custom visualization logic.
 
@@ -342,6 +348,8 @@ Before delivering any analytical product, confirm each item.
 | AR 5-11 | Management of Army M&S | M&S governance policy |
 | DA PAM 5-11 | VV&A of Army Models and Simulations | Model credibility and accreditation standards |
 | ATP 5-0.3 | Multi-Service TTP for Operation Assessment | Assessment methodology, MOE/MOP analytical frameworks |
+
+> **NOTE — New Doctrine Content in TM-40G:** TM-40G now includes a formal assessment framework (MOE/MOP/indicators, Table 1-2) with the FM 5-0 COA evaluation criteria schema, a CARVER target value analysis scoring model (Table 5-4, FM 3-60 Appendix G), and force ratio/relative combat power calculations (section 7-0a, FM 5-0 Table 5-4). These sections provide the doctrinal grounding for the quantitative methods taught in this concepts guide.
 
 *This guide is a prerequisite companion to TM-40G. Proceed to TM-40G for task-based instruction in statistical modeling, time series analysis, simulation, optimization, and decision product delivery on MSS/Foundry.*
 

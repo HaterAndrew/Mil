@@ -64,6 +64,23 @@
     .rp-201{background:rgba(251,191,36,.1);color:#fbbf24;border:1px solid rgba(251,191,36,.25)}
     .rp-301{background:rgba(192,132,252,.1);color:#c084fc;border:1px solid rgba(192,132,252,.25)}
     .rp-wip{background:rgba(255,255,255,.04);color:#64748b;border:1px dashed rgba(255,255,255,.15)}
+    .rp-t3{background:rgba(244,63,94,.1);color:#fb7185;border:1px solid rgba(244,63,94,.25)}
+
+    /* T3 section */
+    .t3-section{margin-top:32px;border-top:1px solid rgba(255,255,255,.06);padding-top:28px}
+    .t3-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:14px}
+    @media(max-width:800px){.t3-grid{grid-template-columns:1fr}}
+    .t3-card{
+      padding:18px;
+      border:1px solid rgba(244,63,94,.25);
+      border-radius:4px;
+      background:linear-gradient(180deg,rgba(244,63,94,.06),rgba(244,63,94,.02));
+    }
+    .t3-card h3{margin:0 0 4px;font-size:15px;font-weight:700;color:#fb7185}
+    .t3-card .t3-subtitle{margin:0 0 8px;font-size:12px;color:#94a3b8;font-style:italic}
+    .t3-card p{margin:0 0 10px;font-size:12px;color:var(--muted);line-height:1.5}
+    .t3-prereqs{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#64748b;margin-top:8px}
+    .t3-prereqs strong{color:#94a3b8;font-weight:600}
   </style>
 </head>
 <body>
@@ -475,13 +492,13 @@
           </tr>
           <tr style="border-bottom:1px solid rgba(255,255,255,0.06)">
             <td style="padding:10px 12px;color:#fbbf24;font-family:'IBM Plex Mono',monospace;font-size:12px">Data 201</td>
-            <td style="padding:10px 12px"><span style="background:rgba(251,191,36,.1);color:#fbbf24;border:1px solid rgba(251,191,36,.3);border-radius:2px;padding:2px 8px;font-family:'IBM Plex Mono',monospace;font-size:11px">TM-30 / TM-40G–L</span></td>
-            <td style="padding:10px 12px;color:#64748b;font-size:12px">TM-50G–L (advanced specialist prereq)</td>
+            <td style="padding:10px 12px"><span style="background:rgba(251,191,36,.1);color:#fbbf24;border:1px solid rgba(251,191,36,.3);border-radius:2px;padding:2px 8px;font-family:'IBM Plex Mono',monospace;font-size:11px">TM-30 / TM-40G–M</span></td>
+            <td style="padding:10px 12px;color:#64748b;font-size:12px">TM-50G–M (advanced specialist prereq)</td>
             <td style="padding:10px 12px;color:#94a3b8;font-size:12px">Specialist tracks — semantic modeling, temporal modeling, identity governance</td>
           </tr>
           <tr>
             <td style="padding:10px 12px;color:#c084fc;font-family:'IBM Plex Mono',monospace;font-size:12px">Data 301 <span style="font-size:10px;color:#475569">(planned)</span></td>
-            <td style="padding:10px 12px"><span style="background:rgba(192,132,252,.08);color:#c084fc;border:1px dashed rgba(192,132,252,.25);border-radius:2px;padding:2px 8px;font-family:'IBM Plex Mono',monospace;font-size:11px">TM-50G–L</span></td>
+            <td style="padding:10px 12px"><span style="background:rgba(192,132,252,.08);color:#c084fc;border:1px dashed rgba(192,132,252,.25);border-radius:2px;padding:2px 8px;font-family:'IBM Plex Mono',monospace;font-size:11px">TM-50G–M</span></td>
             <td style="padding:10px 12px;color:#475569;font-size:12px">—</td>
             <td style="padding:10px 12px;color:#64748b;font-size:12px">Advanced specialists — research-grade topics</td>
           </tr>
@@ -530,6 +547,46 @@
             <span class="rp-wip">SHACL</span>
             <span class="rp-wip">KG Design</span>
             <span class="rp-301">301 Pathway</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T3 Train-the-Trainer Pathways -->
+    <div class="t3-section" id="t3-pathways">
+      <h2 style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.1em;color:#fb7185;text-transform:uppercase;margin-bottom:4px">T3 — Train-the-Trainer Pathways</h2>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6">
+        T3 tracks sit outside the main TM-10 &rarr; TM-50 chain. They certify personnel to <em>deliver</em> training rather than consume it. Each has its own prerequisite gate and selection process.
+      </p>
+      <div class="t3-grid">
+        <div class="t3-card">
+          <h3>T3-I &mdash; Instructor Certification</h3>
+          <p class="t3-subtitle">Certified MSS Instructor</p>
+          <p>
+            Transforms qualified operators into certified instructors. Covers adult learning principles, platform deep-dive for instruction, lab facilitation, assessment design, Go/No-Go standardization, and common trainee error management. Graduates enter a supervised practicum before independent teaching authorization.
+          </p>
+          <div class="role-path" style="margin-bottom:8px">
+            <span class="rp-101">TM-30 (prereq)</span>
+            <span class="rp-t3">T3-I Phase 1: Course</span>
+            <span class="rp-t3">T3-I Phase 2: Practicum</span>
+          </div>
+          <div class="t3-prereqs">
+            <strong>Gate:</strong> TM-30 Advanced Builder (Go on file) + C2DAO Training OIC selection
+          </div>
+        </div>
+        <div class="t3-card">
+          <h3>T3-F &mdash; MSC Force Multiplier</h3>
+          <p class="t3-subtitle">Unit Data Trainer (UDT)</p>
+          <p>
+            Creates a sustainment training capability at the MSC level. Graduates earn the UDT designation and are authorized to deliver TM-10 independently, facilitate TM-20 refresher labs, proctor exams, and report training status to C2DAO. Does not replace C2DAO instructor certification.
+          </p>
+          <div class="role-path" style="margin-bottom:8px">
+            <span class="rp-intro">TM-20 (prereq)</span>
+            <span class="rp-t3">T3-F Course</span>
+            <span class="rp-t3">UDT Designation</span>
+          </div>
+          <div class="t3-prereqs">
+            <strong>Gate:</strong> TM-20 Builder (Go on file) + Unit Commander nomination
           </div>
         </div>
       </div>

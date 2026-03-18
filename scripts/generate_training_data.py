@@ -2,7 +2,7 @@
 """
 Generate all synthetic training datasets for Maven Builder Training exercises.
 Run from repo root: python scripts/generate_training_data.py
-Outputs go into maven_training/exercises/EX-*/training_data/
+Outputs go into maven_training/exercises/EX_*/training_data/
 """
 
 import csv
@@ -29,9 +29,9 @@ def write_csv(path, fieldnames, rows):
 def daterange(start, n_days):
     return [start + timedelta(days=i) for i in range(n_days)]
 
-# ── EX-10: BCT Readiness ─────────────────────────────────────────────────────
+# ── EX_10: BCT Readiness ─────────────────────────────────────────────────────
 def gen_ex10():
-    out = os.path.join(BASE, "EX-10_operator_basics", "training_data")
+    out = os.path.join(BASE, "EX_10_operator_basics", "training_data")
     makedirs(out)
     start = date(2025, 9, 1)
     units = {
@@ -56,13 +56,13 @@ def gen_ex10():
                     "data_steward": steward,
                     "last_updated": d.isoformat() + "T08:00:00Z",
                 })
-    write_csv(os.path.join(out, "EX-10_BCT_Readiness_Training_Data.csv"),
+    write_csv(os.path.join(out, "EX_10_BCT_Readiness_Training_Data.csv"),
               ["date","unit","equipment_category","readiness_pct","data_steward","last_updated"], rows)
-    print(f"  EX-10: {len(rows)} rows")
+    print(f"  EX_10: {len(rows)} rows")
 
-# ── EX-20: Vehicle Availability ───────────────────────────────────────────────
+# ── EX_20: Vehicle Availability ───────────────────────────────────────────────
 def gen_ex20():
-    out = os.path.join(BASE, "EX-20_no_code_builder", "training_data")
+    out = os.path.join(BASE, "EX_20_no_code_builder", "training_data")
     makedirs(out)
     start = date(2025, 9, 1)
     companies = ["A","B","C","D"]
@@ -76,13 +76,13 @@ def gen_ex20():
                 pct = round(min(100.0, max(0.0, random.gauss(baselines[co] + offset, 3.0))), 1)
                 rows.append({"date": d.isoformat(), "company": co,
                              "vehicle_class": vc, "availability_pct": pct})
-    write_csv(os.path.join(out, "EX-20_Vehicle_Availability_Training_Data.csv"),
+    write_csv(os.path.join(out, "EX_20_Vehicle_Availability_Training_Data.csv"),
               ["date","company","vehicle_class","availability_pct"], rows)
-    print(f"  EX-20: {len(rows)} rows")
+    print(f"  EX_20: {len(rows)} rows")
 
-# ── EX-30: SIGACT Analog ──────────────────────────────────────────────────────
+# ── EX_30: SIGACT Analog ──────────────────────────────────────────────────────
 def gen_ex30():
-    out = os.path.join(BASE, "EX-30_advanced_builder", "training_data")
+    out = os.path.join(BASE, "EX_30_advanced_builder", "training_data")
     makedirs(out)
     start = date(2025, 9, 1)
     event_types = ["IED","Patrol Contact","Observation","Cache","Other"]
@@ -124,14 +124,14 @@ def gen_ex30():
     for r in rows:
         r["completeness_flag"] = ""
 
-    write_csv(os.path.join(out, "EX-30_SIGACT_Analog_Training_Data.csv"),
+    write_csv(os.path.join(out, "EX_30_SIGACT_Analog_Training_Data.csv"),
               ["event_id","date","lat","lon","event_type","unit","completeness_flag"], rows)
-    print(f"  EX-30: {len(rows)} rows (incl. 5 dupes, 3 null unit, 2 null coords)")
+    print(f"  EX_30: {len(rows)} rows (incl. 5 dupes, 3 null unit, 2 null coords)")
 
-# ── EX-40F: BCT Ops Package ───────────────────────────────────────────────────
+# ── EX_40F: BCT Ops Package ───────────────────────────────────────────────────
 def gen_ex40f():
-    out = os.path.join(BASE, "EX-40F_mission_command", "training_data",
-                       "EX-40F_BCT_Ops_Training_Data")
+    out = os.path.join(BASE, "EX_40F_mission_command", "training_data",
+                       "EX_40F_bct_ops_training_data")
     makedirs(out)
     start = date(2025, 9, 1)
 
@@ -201,12 +201,12 @@ def gen_ex40f():
     write_csv(os.path.join(out, "personnel_strength.csv"),
               ["date","battalion","strength_pct"], str_rows)
 
-    print(f"  EX-40F: geojson + {len(readiness_rows)} readiness + "
+    print(f"  EX_40F: geojson + {len(readiness_rows)} readiness + "
           f"{len(op_rows)} ops events + {len(str_rows)} strength rows")
 
-# ── EX-40G: PMCS Readiness (ORSA) ────────────────────────────────────────────
+# ── EX_40G: PMCS Readiness (ORSA) ────────────────────────────────────────────
 def gen_ex40g():
-    out = os.path.join(BASE, "EX-40G_orsa", "training_data")
+    out = os.path.join(BASE, "EX_40G_orsa", "training_data")
     makedirs(out)
     start = date(2025, 3, 1)
     equipment_classes = ["wheeled","tracked","aviation","comms"]
@@ -227,11 +227,11 @@ def gen_ex40g():
                 rows.append({"date": d.isoformat(), "battalion": bn,
                              "equipment_class": eq,
                              "readiness_pct": round(min(100.0, max(0.0, val)), 2)})
-    write_csv(os.path.join(out, "EX-40G_PMCS_Training_Data.csv"),
+    write_csv(os.path.join(out, "EX_40G_PMCS_Training_Data.csv"),
               ["date","battalion","equipment_class","readiness_pct"], rows)
-    print(f"  EX-40G: {len(rows)} rows")
+    print(f"  EX_40G: {len(rows)} rows")
 
-# ── EX-40H: INTSUM Corpus ─────────────────────────────────────────────────────
+# ── EX_40H: INTSUM Corpus ─────────────────────────────────────────────────────
 INTSUM_TEMPLATES = [
     ("PATROL_CONTACT",
      "INTSUM {id} — PATROL CONTACT\nDTG: {dtg}\nUnit: {unit}\n\n"
@@ -285,7 +285,7 @@ INTSUM_TEMPLATES = [
 ]
 
 def gen_ex40h():
-    corpus_out = os.path.join(BASE, "EX-40H_ai_engineer", "training_data", "EX-40H_INTSUM_Corpus")
+    corpus_out = os.path.join(BASE, "EX_40H_ai_engineer", "training_data", "EX_40H_intsum_corpus")
     makedirs(corpus_out)
 
     units = ["1-1 BN","1-2 BN","1-3 BN","2-1 BN","DIV CAV","1-4 BN","2-2 BN"]
@@ -331,15 +331,15 @@ def gen_ex40h():
             gt_rows.append({"doc_id": doc_id, "event_type": template_event})
 
     # Write ground truth CSV (10 docs)
-    gt_out = os.path.join(BASE, "EX-40H_ai_engineer", "training_data")
-    write_csv(os.path.join(gt_out, "EX-40H_GroundTruth_10docs.csv"),
+    gt_out = os.path.join(BASE, "EX_40H_ai_engineer", "training_data")
+    write_csv(os.path.join(gt_out, "EX_40H_GroundTruth_10docs.csv"),
               ["doc_id","event_type"], gt_rows)
 
-    print(f"  EX-40H: {n_docs} INTSUM .txt files + ground truth CSV (10 docs)")
+    print(f"  EX_40H: {n_docs} INTSUM .txt files + ground truth CSV (10 docs)")
 
-# ── EX-40I: PMCS NMC Classification ──────────────────────────────────────────
-def gen_ex40i():
-    out = os.path.join(BASE, "EX-40I_ml_engineer", "training_data")
+# ── EX_40M: PMCS NMC Classification ──────────────────────────────────────────
+def gen_ex40m():
+    out = os.path.join(BASE, "EX_40M_ml_engineer", "training_data")
     makedirs(out)
     start = date(2024, 1, 1)
     equipment_classes = ["wheeled","tracked","aviation","comms","engineer"]
@@ -379,21 +379,21 @@ def gen_ex40i():
             "unit": random.choice(units),
             "nmc_within_7d": nmc,
         })
-    write_csv(os.path.join(out, "EX-40I_PMCS_NMC_Training_Data.csv"),
+    write_csv(os.path.join(out, "EX_40M_PMCS_NMC_Training_Data.csv"),
               ["equipment_id","date","days_since_last_service",
                "maintenance_count_30d","maintenance_count_60d","maintenance_count_90d",
                "equipment_class","unit","nmc_within_7d"], rows)
     pos = sum(1 for r in rows if r["nmc_within_7d"])
-    print(f"  EX-40I: {n} rows, {pos} positive NMC ({100*pos/n:.1f}%)")
+    print(f"  EX_40M: {n} rows, {pos} positive NMC ({100*pos/n:.1f}%)")
 
-# ── EX-40J: Project Record Package ───────────────────────────────────────────
+# ── EX_40J: Project Record Package ───────────────────────────────────────────
 def gen_ex40j():
-    out = os.path.join(BASE, "EX-40J_program_manager", "training_data",
-                       "EX-40J_Project_Record_Package")
+    out = os.path.join(BASE, "EX_40J_program_manager", "training_data",
+                       "EX_40J_project_record_package")
     makedirs(out)
 
     charter = textwrap.dedent("""\
-    # EX-40J TRAINING — Project Charter
+    # EX_40J TRAINING — Project Charter
     ## LOGSTAT Aggregation Pipeline
     Classification: UNCLASSIFIED // TRAINING USE ONLY
 
@@ -433,7 +433,7 @@ def gen_ex40j():
     """)
 
     milestone_tracker = textwrap.dedent("""\
-    # EX-40J TRAINING — Milestone Tracker
+    # EX_40J TRAINING — Milestone Tracker
     ## LOGSTAT Aggregation Pipeline — 8-Week Project Plan
     Classification: UNCLASSIFIED // TRAINING USE ONLY
 
@@ -468,7 +468,7 @@ def gen_ex40j():
     """)
 
     open_tickets = textwrap.dedent("""\
-    # EX-40J TRAINING — Open Tickets
+    # EX_40J TRAINING — Open Tickets
     ## LOGSTAT Aggregation Pipeline
     Classification: UNCLASSIFIED // TRAINING USE ONLY
 
@@ -522,7 +522,7 @@ def gen_ex40j():
     """)
 
     pipeline_def = textwrap.dedent("""\
-    # EX-40J TRAINING — Pipeline Definition
+    # EX_40J TRAINING — Pipeline Definition
     ## LOGSTAT Aggregation Pipeline — Technical Description
     Classification: UNCLASSIFIED // TRAINING USE ONLY
 
@@ -574,9 +574,9 @@ def gen_ex40j():
     ]:
         with open(os.path.join(out, fname), "w") as f:
             f.write(content)
-    print("  EX-40J: 4 project record files")
+    print("  EX_40J: 4 project record files")
 
-# ── EX-40K: AAR Backlog ───────────────────────────────────────────────────────
+# ── EX_40K: AAR Backlog ───────────────────────────────────────────────────────
 AAR_OBSERVATIONS = [
     ("COMMAND_AND_CONTROL", "H",
      "Command post communications experienced 45-minute outage during EXORD execution due to "
@@ -661,7 +661,7 @@ AAR_OBSERVATIONS = [
 ]
 
 def gen_ex40k():
-    out = os.path.join(BASE, "EX-40K_knowledge_manager", "training_data", "EX-40K_AAR_Backlog")
+    out = os.path.join(BASE, "EX_40K_knowledge_manager", "training_data", "EX_40K_aar_backlog")
     makedirs(out)
     start = date(2024, 8, 1)
     units = ["1-1 BN","1-2 BN","1-3 BN","2-1 BN","DIV CAV","HHC BSB","1-4 BN"]
@@ -693,11 +693,11 @@ def gen_ex40k():
         fname = os.path.join(out, f"AAR_{idx:02d}_{d.strftime('%Y%m%d')}_{unit.replace(' ','_')}.txt")
         with open(fname, "w") as f:
             f.write(content)
-    print(f"  EX-40K: 20 AAR .txt files (records #7 and #14 contain conflicting recommendations)")
+    print(f"  EX_40K: 20 AAR .txt files (records #7 and #14 contain conflicting recommendations)")
 
-# ── EX-40L: Personnel Readiness Feed ──────────────────────────────────────────
+# ── EX_40L: Personnel Readiness Feed ──────────────────────────────────────────
 def gen_ex40l():
-    out = os.path.join(BASE, "EX-40L_software_engineer", "training_data")
+    out = os.path.join(BASE, "EX_40L_software_engineer", "training_data")
     makedirs(out)
     statuses = ["READY","PARTIALLY_READY","NOT_READY"]
     units_clean = ["1-1 BN","1-2 BN","1-3 BN","2-1 BN","DIV CAV","HHC","BSB"]
@@ -737,11 +737,11 @@ def gen_ex40l():
 
     # Mixed-case unit names for rows 50-100 (already handled above)
 
-    write_csv(os.path.join(out, "EX-40L_Personnel_Readiness_Feed.csv"),
+    write_csv(os.path.join(out, "EX_40L_Personnel_Readiness_Feed.csv"),
               ["personnel_id","unit","readiness_status","last_updated",
                "equipment_assigned","medical_flag"], rows)
     bad = (10 + 15 + 10)
-    print(f"  EX-40L: 1000 rows ({bad} validation failures: null IDs, bad status, bad dates)")
+    print(f"  EX_40L: 1000 rows ({bad} validation failures: null IDs, bad status, bad dates)")
 
 if __name__ == "__main__":
     print("Generating training datasets...")
@@ -751,8 +751,8 @@ if __name__ == "__main__":
     gen_ex40f()
     gen_ex40g()
     gen_ex40h()
-    gen_ex40i()
+    gen_ex40m()
     gen_ex40j()
     gen_ex40k()
     gen_ex40l()
-    print("\nDone. All datasets written to maven_training/exercises/EX-*/training_data/")
+    print("\nDone. All datasets written to maven_training/exercises/EX_*/training_data/")

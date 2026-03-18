@@ -30,8 +30,8 @@ Full curriculum index: [maven_training/README.md](maven_training/README.md)
 |---|---|
 | All personnel | TM-10 → TM-20 |
 | WFF functional staff (INT/FIRES/M2/SUST/PROT/MC) | TM-40A–F (after TM-30) |
-| Data-adjacent specialists (17/25-series, S6/G6, G2) | TM-30 → TM-40G–L |
-| Technical specialists (engineers, analysts, data pros) | TM-30 → TM-40G–L → TM-50G–L |
+| Data-adjacent specialists (17/25-series, S6/G6, G2) | TM-30 → TM-40G–M |
+| Technical specialists (engineers, analysts, data pros) | TM-30 → TM-40G–M → TM-50G–M |
 | Senior leaders (O-5+, CSM+, senior civilians) | Data Literacy for Senior Leaders |
 
 #### Complete Publication Hierarchy
@@ -82,9 +82,9 @@ maven_training/
 │   ├── TM_40H_ai_engineer/                   ← TM-40H: AI Engineer (AIP Logic, agents)
 │   │   ├── TM_40H_AI_ENGINEER.md
 │   │   └── CONCEPTS_GUIDE_TM40H_AI_ENGINEER.md
-│   ├── TM_40I_ml_engineer/                   ← TM-40I: Machine Learning Engineer
-│   │   ├── TM_40I_ML_ENGINEER.md
-│   │   └── CONCEPTS_GUIDE_TM40I_ML_ENGINEER.md
+│   ├── TM_40M_ml_engineer/                   ← TM-40M: Machine Learning Engineer
+│   │   ├── TM_40M_ML_ENGINEER.md
+│   │   └── CONCEPTS_GUIDE_TM40M_ML_ENGINEER.md
 │   ├── TM_40J_program_manager/               ← TM-40J: Program Manager (G8/S8, tech PMs)
 │   │   ├── TM_40J_PROGRAM_MANAGER.md
 │   │   └── CONCEPTS_GUIDE_TM40J_PROGRAM_MANAGER.md
@@ -95,16 +95,16 @@ maven_training/
 │   │   ├── TM_40L_SOFTWARE_ENGINEER.md
 │   │   └── CONCEPTS_GUIDE_TM40L_SOFTWARE_ENGINEER.md
 │   │
-│   │   ── TM-50G through TM-50L: Advanced Specialist Tracks (prereq: corresponding TM-40G–L) ──
+│   │   ── TM-50G through TM-50L: Advanced Specialist Tracks (prereq: corresponding TM-40G–M) ──
 │   ├── TM_50G_orsa_advanced/                 ← TM-50G: Advanced ORSA (prereq: TM-40G)
 │   │   ├── TM_50G_ORSA_ADVANCED.md
 │   │   └── CONCEPTS_GUIDE_TM50G_ORSA_ADVANCED.md
 │   ├── TM_50H_ai_engineer_advanced/          ← TM-50H: Advanced AI Engineer (prereq: TM-40H)
 │   │   ├── TM_50H_AI_ENGINEER_ADVANCED.md
 │   │   └── CONCEPTS_GUIDE_TM50H_AI_ENGINEER_ADVANCED.md
-│   ├── TM_50I_ml_engineer_advanced/          ← TM-50I: Advanced MLE (prereq: TM-40I)
-│   │   ├── TM_50I_ML_ENGINEER_ADVANCED.md
-│   │   └── CONCEPTS_GUIDE_TM50I_ML_ENGINEER_ADVANCED.md
+│   ├── TM_50M_ml_engineer_advanced/          ← TM-50M: Advanced MLE (prereq: TM-40M)
+│   │   ├── TM_50M_ML_ENGINEER_ADVANCED.md
+│   │   └── CONCEPTS_GUIDE_TM50M_ML_ENGINEER_ADVANCED.md
 │   ├── TM_50J_program_manager_advanced/      ← TM-50J: Advanced PM (prereq: TM-40J)
 │   │   ├── TM_50J_PROGRAM_MANAGER_ADVANCED.md
 │   │   └── CONCEPTS_GUIDE_TM50J_PROGRAM_MANAGER_ADVANCED.md
@@ -127,13 +127,13 @@ maven_training/
 │   ├── SYLLABUS_TM40F.md                     ← WFF track: Mission Command
 │   ├── SYLLABUS_TM40G.md                     ← Technical: ORSA
 │   ├── SYLLABUS_TM40H.md                     ← Technical: AI Engineer
-│   ├── SYLLABUS_TM40I.md                     ← Technical: ML Engineer
+│   ├── SYLLABUS_TM40M.md                     ← Technical: ML Engineer
 │   ├── SYLLABUS_TM40J.md                     ← Technical: Program Manager
 │   ├── SYLLABUS_TM40K.md                     ← Technical: Knowledge Manager
 │   ├── SYLLABUS_TM40L.md                     ← Technical: Software Engineer
 │   ├── SYLLABUS_TM50G.md                     ← Advanced: ORSA
 │   ├── SYLLABUS_TM50H.md                     ← Advanced: AI Engineer
-│   ├── SYLLABUS_TM50I.md                     ← Advanced: ML Engineer
+│   ├── SYLLABUS_TM50M.md                     ← Advanced: ML Engineer
 │   ├── SYLLABUS_TM50J.md                     ← Advanced: Program Manager
 │   ├── SYLLABUS_TM50K.md                     ← Advanced: Knowledge Manager
 │   └── SYLLABUS_TM50L.md                     ← Advanced: Software Engineer
@@ -152,34 +152,34 @@ maven_training/
 │   │   ├── EXAM_TM40F_PRE.md / POST.md       ← WFF: Mission Command
 │   │   ├── EXAM_TM40G_PRE.md / POST.md       ← Technical: ORSA
 │   │   ├── EXAM_TM40H_PRE.md / POST.md       ← Technical: AI Engineer
-│   │   ├── EXAM_TM40I_PRE.md / POST.md       ← Technical: ML Engineer
+│   │   ├── EXAM_TM40M_PRE.md / POST.md       ← Technical: ML Engineer
 │   │   ├── EXAM_TM40J_PRE.md / POST.md       ← Technical: Program Manager
 │   │   ├── EXAM_TM40K_PRE.md / POST.md       ← Technical: Knowledge Manager
 │   │   ├── EXAM_TM40L_PRE.md / POST.md       ← Technical: Software Engineer
 │   │   ├── EXAM_TM50G_PRE.md / POST.md       ← Advanced: ORSA
 │   │   ├── EXAM_TM50H_PRE.md / POST.md       ← Advanced: AI Engineer
-│   │   ├── EXAM_TM50I_PRE.md / POST.md       ← Advanced: ML Engineer
+│   │   ├── EXAM_TM50M_PRE.md / POST.md       ← Advanced: ML Engineer
 │   │   ├── EXAM_TM50J_PRE.md / POST.md       ← Advanced: Program Manager
 │   │   ├── EXAM_TM50K_PRE.md / POST.md       ← Advanced: Knowledge Manager
 │   │   └── EXAM_TM50L_PRE.md / POST.md       ← Advanced: Software Engineer
 │   │
-│   ├── EX-10_operator_basics/                ← Practical exercise: TM-10
+│   ├── EX_10_operator_basics/                ← Practical exercise: TM-10
 │   │   ├── ENVIRONMENT_SETUP.md
 │   │   └── EXERCISE.md
-│   ├── EX-20_no_code_builder/                ← Practical exercise: TM-20
-│   ├── EX-30_advanced_builder/               ← Practical exercise: TM-30
-│   ├── EX-40A_intelligence/                  ← Practical exercise: TM-40A (WFF)
-│   ├── EX-40B_fires/                         ← Practical exercise: TM-40B (WFF)
-│   ├── EX-40C_movement_maneuver/             ← Practical exercise: TM-40C (WFF)
-│   ├── EX-40D_sustainment/                   ← Practical exercise: TM-40D (WFF)
-│   ├── EX-40E_protection/                    ← Practical exercise: TM-40E (WFF)
-│   ├── EX-40F_mission_command/               ← Practical exercise: TM-40F (WFF)
-│   ├── EX-40G_orsa/                          ← Practical exercise: TM-40G (Technical)
-│   ├── EX-40H_ai_engineer/                   ← Practical exercise: TM-40H (Technical)
-│   ├── EX-40I_ml_engineer/                   ← Practical exercise: TM-40I (Technical)
-│   ├── EX-40J_program_manager/               ← Practical exercise: TM-40J (Technical)
-│   ├── EX-40K_knowledge_manager/             ← Practical exercise: TM-40K (Technical)
-│   └── EX-40L_software_engineer/             ← Practical exercise: TM-40L (Technical)
+│   ├── EX_20_no_code_builder/                ← Practical exercise: TM-20
+│   ├── EX_30_advanced_builder/               ← Practical exercise: TM-30
+│   ├── EX_40A_intelligence/                  ← Practical exercise: TM-40A (WFF)
+│   ├── EX_40B_fires/                         ← Practical exercise: TM-40B (WFF)
+│   ├── EX_40C_movement_maneuver/             ← Practical exercise: TM-40C (WFF)
+│   ├── EX_40D_sustainment/                   ← Practical exercise: TM-40D (WFF)
+│   ├── EX_40E_protection/                    ← Practical exercise: TM-40E (WFF)
+│   ├── EX_40F_mission_command/               ← Practical exercise: TM-40F (WFF)
+│   ├── EX_40G_orsa/                          ← Practical exercise: TM-40G (Technical)
+│   ├── EX_40H_ai_engineer/                   ← Practical exercise: TM-40H (Technical)
+│   ├── EX_40M_ml_engineer/                   ← Practical exercise: TM-40M (Technical)
+│   ├── EX_40J_program_manager/               ← Practical exercise: TM-40J (Technical)
+│   ├── EX_40K_knowledge_manager/             ← Practical exercise: TM-40K (Technical)
+│   └── EX_40L_software_engineer/             ← Practical exercise: TM-40L (Technical)
 │
 ├── training_management/                      ← Administrative and instructor publications
 │   ├── MTP_MSS.md                            ← Mission Training Plan (TLOs/ELOs, Go/No-Go criteria)

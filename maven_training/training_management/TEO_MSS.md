@@ -562,7 +562,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-40I (ML Engineer) — Critical Performance Measures
+## TM-40M (ML Engineer) — Critical Performance Measures
 
 | Task | Critical Performance Measure | Hard NO-GO |
 |---|---|---|
@@ -616,6 +616,142 @@ Evaluator:           _______________________________________
 =========================================================
 
 PERFORMANCE MEASURES
+
+Step | Description                          | GO | NO-GO | N/A | Notes
+-----|--------------------------------------|----|-------|-----|------
+1    |                                      | [] | []    | []  |
+2    |                                      | [] | []    | []  |
+3    | [CRITICAL]                           | [] | []    | []  |
+4    |                                      | [] | []    | []  |
+5    |                                      | [] | []    | []  |
+
+HARD NO-GO ITEMS VIOLATED (if any):
+_____________________________________________________________
+
+OVERALL TASK RESULT:  [ ] GO     [ ] NO-GO
+
+EVALUATOR NOTES:
+_____________________________________________________________
+_____________________________________________________________
+
+EVALUATOR SIGNATURE:  _______________________________________
+DATE:                 _______________________________________
+=========================================================
+```
+
+---
+
+# PART V — T3-I: INSTRUCTOR CERTIFICATION T&EOs
+
+---
+
+## T&EO T3I-01: Deliver a Block of Instruction (Microteaching)
+
+**Task:** Deliver a 20-minute block of instruction from a TM-10, TM-20, or TM-30 lesson plan.
+
+**Conditions:** Given a classroom with projector and student workstations; published lesson plan for the selected block; classmates role-playing as trainees at the appropriate course level. The candidate has 20 minutes.
+
+**Standards:** The candidate will deliver the block demonstrating satisfactory performance on at least 5 of 7 instructor observation criteria, with no unsatisfactory on Technical Accuracy or Evaluation Fidelity.
+
+| # | Performance Measure | GO | NO-GO |
+|---|---|---|---|
+| 1 | **[CRITICAL]** Technical accuracy: content is correct; no uncorrected errors | Content correct throughout | Uncorrected technical error |
+| 2 | Instructional clarity: explanations are clear and appropriately paced | Clear, well-paced | Confusing or inappropriate pace |
+| 3 | Student engagement: students are actively engaged; instructor identifies stuck students | Students engaged | Students disengaged; stuck students ignored |
+| 4 | Check on learning: at least 1 check-on-learning question used; questions require more than yes/no | Effective COL question(s) used | No COL questions; or yes/no only |
+| 5 | Lab management (if applicable): lab runs on schedule; instructor manages errors without solving for students | Lab on schedule; appropriate assistance | Lab off schedule; instructor solves for student |
+| 6 | **[CRITICAL]** Evaluation fidelity (if applicable): T&EO procedures followed; no assistance during eval | Procedures followed; no assistance | Procedures not followed; or assistance provided |
+| 7 | Course materials currency: lesson plan is current; references correct platform version | Current materials | Outdated materials |
+
+**Overall:** GO on 5/7 with no failure on critical items 1 or 6.
+
+---
+
+## T&EO T3I-02: Written Examination
+
+**Task:** Complete a 20-question written exam on instructional methodology, T&EO structure, evaluation procedures, and instructor performance standards.
+
+**Conditions:** Closed book, closed notes. 60 minutes. Exam administered by Senior or Master Instructor.
+
+**Standards:** Score ≥ 80% (16 of 20 correct).
+
+| # | Performance Measure | GO | NO-GO |
+|---|---|---|---|
+| 1 | Score ≥ 80% (16 of 20) | ≥ 16 correct | < 16 correct |
+
+---
+
+# PART VI — T3-F: MSC FORCE MULTIPLIER T&EOs
+
+---
+
+## T&EO T3F-01: Deliver a TM-10 Block (Teach-Back)
+
+**Task:** Deliver a 15–20 minute block of instruction from the TM-10 lesson plans.
+
+**Conditions:** Given a classroom with projector and workstations; published TM-10 lesson plan for the selected block; classmates role-playing as TM-10 trainees. The candidate has 15–20 minutes.
+
+**Standards:** The candidate will deliver the block demonstrating satisfactory technical accuracy and materials use.
+
+| # | Performance Measure | GO | NO-GO |
+|---|---|---|---|
+| 1 | Technical accuracy: content is correct; platform features demonstrated correctly | Content correct | Technical error in content or demo |
+| 2 | Materials use: follows published lesson plan; uses check-on-learning questions | Follows plan; uses COL | Deviates from plan; skips COL |
+
+**Overall:** GO on both measures.
+
+---
+
+## T&EO T3F-02: Administer a TM-10 Go/No-Go Evaluation
+
+**Task:** Administer 1 T&EO from TM10-01 through TM10-06 to a role-player and make the correct Go/No-Go decision.
+
+**Conditions:** Given a T&EO scoring sheet, a role-player performing a predetermined scenario (Go or No-Go), and the candidate's instructor binder. The evaluator observes the candidate's administration.
+
+**Standards:** The candidate will correctly score all performance measures, make the correct overall Go/No-Go decision, clearly announce the evaluation mode transition, provide no assistance during the evaluation, and properly document the result.
+
+| # | Performance Measure | GO | NO-GO |
+|---|---|---|---|
+| 1 | **[CRITICAL]** Correct overall Go/No-Go decision (matches predetermined scenario) | Correct decision | Incorrect decision |
+| 2 | All performance measures scored on the T&EO scoring sheet | All measures scored | Missing scores |
+| 3 | Clear mode transition announcement ("We are now in the evaluation") | Announced clearly | No announcement or unclear |
+| 4 | **[CRITICAL]** No assistance provided to role-player during evaluation | No assistance | Any assistance provided |
+| 5 | Result properly documented on scoring sheet (including deficiency if No-Go) | Documented | Missing documentation |
+
+**Overall:** GO on all critical items + GO on 4/5 total.
+
+---
+
+## T&EO T3F-03: Resolve Environment Issues
+
+**Task:** Diagnose and resolve 3 pre-staged MSS environment failures.
+
+**Conditions:** Given 3 workstations, each with a pre-staged failure from the set of 5 common issues. The candidate works independently. Time limits apply per issue type.
+
+**Standards:** The candidate will correctly diagnose the root cause and resolve at least 2 of 3 issues within the prescribed time limits.
+
+| # | Performance Measure | GO | NO-GO |
+|---|---|---|---|
+| 1 | Issue 1: correct diagnosis and resolution within time limit | Resolved | Not resolved |
+| 2 | Issue 2: correct diagnosis and resolution within time limit | Resolved | Not resolved |
+| 3 | Issue 3: correct diagnosis and resolution within time limit | Resolved | Not resolved |
+
+**Overall:** GO on ≥ 2 of 3.
+
+---
+
+## T&EO SCORING SHEET — T3 COURSES (BLANK TEMPLATE)
+
+```
+=========================================================
+T&EO SCORING SHEET — T3 COURSES
+=========================================================
+Trainee Name:     _______________________________________
+Course:           [ ] T3-I    [ ] T3-F
+T&EO Number:      _______________________________________
+Task Title:       _______________________________________
+Date:             _______________________________________
+=========================================================
 
 Step | Description                          | GO | NO-GO | N/A | Notes
 -----|--------------------------------------|----|-------|-----|------

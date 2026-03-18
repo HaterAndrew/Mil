@@ -78,7 +78,7 @@ the relevant sections.
 | Document | Authority | Key Provisions for Builders |
 |----------|-----------|------------------------------|
 | Army CIO Memorandum (April 2024) | Army CIO/G-6 | Data governance, data product ownership, access controls |
-| AR 25-1, Army Information Technology (Jul 2019) | Army CIO | Statutory framework for Army data governance, VAUTI data quality principles, and IT management policy |
+| AR 25-1, Army Information Technology (Jul 2019) | Army CIO | Statutory framework for Army data governance and IT management policy. NOTE: VAUTI (5 dimensions) from AR 25-1 is superseded by VAULTIS-A (8 dimensions, DDOF Playbook v2.2, Dec 2025). See Strategic Guidance below. |
 | USAREUR-AF C2DAO Standards | C2DAO | Naming conventions, promotion gates, stewardship roles |
 | CDA Portal (learn-data.armydev.com) | Army CDA | Training resources, design patterns, reference implementations |
 
@@ -89,7 +89,7 @@ the relevant sections.
 | Document | Authority | Relevance |
 |----------|-----------|-----------|
 | UDRA v1.1 (February 2025) | Army Enterprise | Unified Data Reference Architecture — domain alignment |
-| DoD Data Strategy (October 2020) | OSD | Foundation for VAUTI principles |
+| DoD Data Strategy (October 2020) | OSD | Foundation for VAULTIS (7 dimensions); extended to VAULTIS-A (8 dimensions) by DDOF Playbook v2.2 (Dec 2025). Dimensions: Visible, Accessible, Understandable, Linked, Trusted, Interoperable, Secure, Auditable. 85% weighted avg = DDOF Phase 3 quality gate. Proponent: T2COM C2DAO / HQDA CIO/G-6 / SAIS-ADD. |
 | Army Data Plan (2022) | Army CIO | 11 strategic objectives for Army data transformation |
 | Army Cloud Plan (2022) | Army CIO | Zero Trust, secure development, data-driven decisions |
 | DoD Zero Trust Reference Architecture v2.0 (July 2022) | DoD CIO | Zero Trust architecture for data and application security |
@@ -102,9 +102,108 @@ the relevant sections.
 authoritative training and reference resource for Army data platform work. Advanced builders
 should consult the following CDA resources:
 - Object Type Cookbook v2 + Addendum A — authoritative Object Type design guidance
-- DDOF Playbook — Doctrine-Driven Ontology Framework design patterns
+- DDOF Playbook v2.2 — Defense Data Orchestration Framework lifecycle and quality gates
 - Doctrine-Driven Development framework — aligning ontology models to Army operational doctrine
 - ADP to JP to NATO Crosswalk — mapping Army, Joint, and NATO data constructs
+
+1-10. DDOF Lifecycle. The Defense Data Orchestration Framework (DDOF) Playbook v2.2 (T2COM C2DAO / HQDA CIO/G-6 / SAIS-ADD, December 2025, CUI // FEDCON) governs the lifecycle of every data product built on MSS. Advanced builders must understand all six phases:
+
+| Phase | Name | Standard Duration | Gate Output |
+|-------|------|-------------------|-------------|
+| 1 | Problem Framing | 3–5 days (max 10) | Approved requirement + SMART statement + ADC intake record |
+| 2 | Data Provisioning | 5–10 days (max 30) | Secured access to authoritative sources |
+| 3 | Data Wrangling | 7–12 days (max 20) | Clean data passing VAULTIS-A at 85%+ weighted average |
+| 4 | Development | 15–25 days (max 35) | Functional product with governance controls |
+| 5 | Test & Evaluation | 7–12 days (max 20) | Validated product, sponsor sign-off, 85%+ quality |
+| 6 | Operations | Ongoing | Live product, ADC registration, monitoring operational |
+
+**MVP Mandate:** Per Secretary of the Army priorities, MVP delivery within 30 days. Extensions require C2DAO approval with documented justification.
+
+**Genesis Mission Alignment:** DDOF implements three key directives:
+- **Decision Dominance** — Compress the OODA loop by delivering validated data products faster
+- **Bureaucracy Elimination** — Automate governance; pre-authorize access by mission role
+- **Accountability** — Explicit ownership at every phase with immutable audit trails
+
+**Quality Gates:** Gates are enforced, not advisory. No progression without verified compliance. Products failing below 70% quality trigger remediate-or-retire. Products with no access in 90 days require FDM review; 180 days no access initiates retirement.
+
+WARNING: Advanced builders who skip DDOF phases or bypass quality gates create technical debt that compounds at the enterprise level. Every product without proper Phase 1 framing, Phase 3 quality validation, or Phase 6 ADC registration degrades the command's data posture.
+
+### 1-10a. DDOF Roles and Responsibilities
+
+Every DDOF lifecycle phase requires clear role assignment. The following table defines the roles, echelons, and primary functions for data product development. (Source: DDOF Playbook v2.2, T2COM C2DAO, December 2025.)
+
+| Role | Echelon | Primary Function |
+|------|---------|------------------|
+| Decision Maker (DM) | O-6+ | Articulates requirements, approves final products |
+| C2DAO | O-4/O-5 | Governance oversight, quality assurance, gate approvals |
+| Functional Data Manager (FDM) | O-3/O-4 | Product ownership, lifecycle management |
+| Data Engineer | Technical | Build and maintain data pipelines |
+| Data Scientist/ORSA | Technical | Analytical modeling, algorithm development |
+| Knowledge Manager | Staff | Documentation, training, organizational learning |
+
+Every data product must have a named FDM before entering Phase 2. The C2DAO validates role assignments at each quality gate. No product advances without an identified owner.
+
+### 1-10b. SMART Criteria for Problem Framing (Phase 1)
+
+Phase 1 Problem Framing requires a SMART statement before any development begins. Use this framework to validate the requirement is well-defined. (Source: DDOF Playbook v2.2, T2COM C2DAO, December 2025.)
+
+| Criterion | Definition | Example |
+|-----------|------------|---------|
+| Specific | What exactly do you need? | Equipment readiness by unit |
+| Measurable | How will you know it's accurate? | Match GCSS-A within 2% |
+| Achievable | Can it be built? | Platform and data exist |
+| Relevant | Does it support a decision? | Tied to METL task |
+| Time-bound | When must it be ready? | IOC by 15 JAN |
+
+A requirement that fails any SMART criterion is not ready for Phase 2. Return to the Decision Maker for refinement. Do not begin data provisioning against a vague requirement.
+
+### 1-10c. Fail-Closed Enforcement
+
+WARNING: Per Genesis Mission directives, data products must fail closed — denying access when authorization cannot be confirmed. Default deny. Explicit authorization required. All denials logged and audited. (Source: DDOF Playbook v2.2, T2COM C2DAO, December 2025.)
+
+Fail-closed means:
+- If the authorization service is unavailable, deny access.
+- If a user's role cannot be verified, deny access.
+- If marking metadata is missing or malformed, deny access.
+
+Do not implement fail-open patterns. Products that default to granting access on authorization failure will not pass Phase 5 Test & Evaluation.
+
+### 1-10d. ADC Registration Requirements (Phase 6)
+
+Phase 6 Operations requires registration in the Authoritative Data Catalog (ADC). Submit the following for every production data product. (Source: DDOF Playbook v2.2, T2COM C2DAO, December 2025.)
+
+- Product name and description
+- Owner (FDM) contact
+- Classification and handling
+- Data sources and lineage
+- Refresh frequency
+- Access method
+- VAULTIS-A quality score
+
+Products not registered in the ADC are not authorized for operational use. The C2DAO audits ADC completeness quarterly.
+
+NOTE: ADC search is mandatory before any new development. Duplicate products waste resources and create confusion. If a similar product exists, modify it rather than creating new. Conduct an ADC search during Phase 1 and document the results in the intake record. (Source: DDOF Playbook v2.2, T2COM C2DAO, December 2025.)
+
+### 1-10e. Data Operations in DDIL Environments
+
+**BLUF:** Every MSS data product must function when network connectivity is denied, degraded, intermittent, or limited (DDIL). Products designed only for persistent connectivity fail when the operational environment degrades — which is when commanders need data most.
+
+The Army Data Plan (2022) Strategic Objective 6 directs that data be "available at point of decision, at lower echelons, in DDIL environments." SO 10 further requires distributed decision-support capability across the range of military operations and changing command relationships. UDRA v1.1 Appendix E reinforces this: data products must be producible and consumable even with limited or no connectivity. ADP 6-0 warns that degraded communications require subordinates to possess enough shared understanding to act without continuous data flow.
+
+Advanced builders address DDIL by designing degradation plans into every product from Phase 1. The following table defines the four DDIL conditions, their data impact, and required MSS mitigations:
+
+| DDIL Condition | Data Impact | MSS Mitigation |
+|----------------|-------------|----------------|
+| Denied | No network access | Pre-staged data packages, local compute |
+| Degraded | Reduced bandwidth | Compressed data products, priority-based sync |
+| Intermittent | Periodic connectivity | Store-and-forward queues, delta sync |
+| Limited | Low bandwidth available | Text-only products, reduced refresh rates |
+
+Design every data product with these mitigations in mind. During Phase 1 Problem Framing, document which DDIL conditions the product must support. During Phase 3, validate that the product degrades gracefully under each applicable condition. During Phase 5 Test & Evaluation, test the product under simulated DDIL conditions before authorizing operational use.
+
+WARNING: Builders who design products assuming persistent connectivity create single points of failure. Every MSS product must have a DDIL degradation plan.
+
+(Sources: Army Data Plan (2022) SO 6, SO 10; UDRA v1.1 Appendix E; ADP 6-0.)
 
 ---
 
@@ -205,29 +304,29 @@ If a requirement is not in this table, apply the following rule: if it requires 
 
 ## 1-7. Advancement from TM-30 — Next Steps
 
-TM-30 qualification enables advancement to the specialist tracks (TM-40G–L). All six specialist tracks require TM-30 as a hard prerequisite — TM-20 alone is not sufficient.
+TM-30 qualification enables advancement to the specialist tracks (TM-40G–M). All six specialist tracks require TM-30 as a hard prerequisite — TM-20 alone is not sufficient.
 
 | Track | Title | Specialty |
 |---|---|---|
 | TM-40G | ORSA | Operational research and systems analysis; quantitative modeling, statistical analysis, decision support |
 | TM-40H | AI Engineer | AIP Logic workflow authoring, TypeScript Functions on Objects (FOO), Agent Studio |
-| TM-40I | ML Engineer | Machine learning pipeline development, model integration, PySpark transforms |
+| TM-40M | ML Engineer | Machine learning pipeline development, model integration, PySpark transforms |
 | TM-40J | Program Manager | Data product program management, delivery coordination, stakeholder engagement |
 | TM-40K | Knowledge Manager | Organizational knowledge architecture, data product documentation, taxonomy management |
 | TM-40L | Software Engineer | Python/PySpark transforms, TypeScript, OSDK integration, source connector configuration |
 
-Each TM-40G–L track has a corresponding advanced track:
+Each TM-40G–M track has a corresponding advanced track:
 
 | Advanced Track | Title | Prerequisite |
 |---|---|---|
 | TM-50G | Advanced ORSA | TM-40G (required) |
 | TM-50H | Advanced AI Engineer | TM-40H (required) |
-| TM-50I | Advanced ML Engineer | TM-40I (required) |
+| TM-50M | Advanced ML Engineer | TM-40M (required) |
 | TM-50J | Advanced Program Manager | TM-40J (required) |
 | TM-50K | Advanced Knowledge Manager | TM-40K (required) |
 | TM-50L | Advanced Software Engineer | TM-40L (required) |
 
-NOTE: There are no TM-50A through TM-50F tracks. Advanced-level training exists only for specialist tracks (G–L). WFF tracks (TM-40A–F) do not have a TM-50 continuation.
+NOTE: TM-50 is G–M only (advanced specialist tracks). WFF tracks (TM-40A–F) do not have a TM-50 continuation.
 
 NOTE: Select the specialist track that aligns to your assigned duties and billet. If uncertain, consult the USAREUR-AF C2DAO training coordinator. Personnel are expected to complete one specialist track; concurrent enrollment in multiple TM-40 specialist tracks requires C2DAO approval.
 
@@ -2117,6 +2216,42 @@ Examples: `ops_selected_unit_string`, `log_date_filter_date`, `g2_show_classifie
 3. **Status fields need valid value documentation.** Any property with a defined set of valid values must document those values in the property description.
 4. **Link Types represent real relationships.** Only create a Link Type if the relationship between two Object Types is operationally meaningful and will be traversed in downstream analysis or applications.
 5. **Primary key is sacred.** The primary key must be truly unique and stable. Changing the primary key on a production Object Type is a major breaking change.
+
+> **NOTE — Primary Key Design Rules (Palantir Best Practice)**
+> 1. The `id` (primary key) column **must be type string** — no exceptions.
+> 2. PKs must be inherently unique, derived from the object's own properties only.
+> 3. All object types require a dedicated `id` column separate from business identifiers.
+> 4. Never infer object properties from identifier values.
+> 5. Composite keys: keep readable (concatenated), never hashed.
+>
+> *Source: Palantir Developer Community — [Ontology and Pipeline Design Principles](https://community.palantir.com/t/ontology-and-pipeline-design-principles/5481)*
+
+> **NOTE — Foundry Project Architecture Taxonomy (Palantir Best Practice)**
+>
+> Organize Foundry projects into five standard types:
+>
+> | Type | Naming Convention | Purpose | Access |
+> |------|-------------------|---------|--------|
+> | Datasource | `Datasource - {Name}` | Raw ingestion, quality monitoring, clean datasets | Editors: data engineers only |
+> | Data Integration | `Integration - {Name}` | Schema definition, aggregation, health checks | Restricted |
+> | Ontology | `Ontology - {Name}` | Object Types, relationships, views | Editors: engineers/managers; Viewers: end users |
+> | Application | `Application - {Name}` | Workflows, user-facing tools | Collaborative |
+> | Sandbox | `[sandbox] Name` | Experimentation, training — no business data | Universal creator access |
+>
+> RBAC per project: OWNER (admin), EDITOR (build/modify), VIEWER (consume), DISCOVERER (names/lineage only).
+>
+> *Source: Palantir Developer Community — [Ontology and Pipeline Design Principles](https://community.palantir.com/t/ontology-and-pipeline-design-principles/5481)*
+
+> **NOTE — Object Type Naming and Maturity Standards (Palantir Best Practice)**
+> - Use natural business language — no abbreviations, no technical jargon in type names.
+> - **No versioned names** — `Message_v2` is prohibited. Create a new type or modify in place.
+> - **No `[tag]` prefixes** — use Ontology object type groups instead.
+> - Every object type must carry a **maturity status**: `Experimental`, `Active`, or `Deprecated`.
+> - Assign a dedicated **point of contact** for each object type.
+> - Timestamp properties: `{action}_at_timestamp`. Author properties: `{action}_by_user`.
+> - FK naming: `{foreign_object_type}_id` or `{link_api_name}_{foreign_object_type}_id`.
+>
+> *Source: Palantir Developer Community — [Ontology and Pipeline Design Principles](https://community.palantir.com/t/ontology-and-pipeline-design-principles/5481)*
 
 ## 11-3. Performance Considerations
 

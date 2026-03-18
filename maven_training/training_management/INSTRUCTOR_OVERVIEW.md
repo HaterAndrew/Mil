@@ -38,6 +38,9 @@ The MSS Training Program is a tiered, progressive curriculum that trains USAREUR
 
 ```
 TM-10 → TM-20 → TM-30 → TM-40 (all tracks) → TM-50 (specialist advanced only)
+
+T3-I (Instructor Certification)     ← prereq: TM-30 + C2DAO selection
+T3-F (MSC Force Multiplier)         ← prereq: TM-20 + CDR nomination
 ```
 
 | Level | Course | Duration | Audience | Prereq |
@@ -53,18 +56,27 @@ TM-10 → TM-20 → TM-30 → TM-40 (all tracks) → TM-50 (specialist advanced 
 | TM-40F | Mission Command WFF | 3 days | G3/S3, battle captains, XOs | TM-30 |
 | TM-40G | ORSA | 5 days | FA49, data scientists | TM-30 |
 | TM-40H | AI Engineer | 5 days | AI engineers, AIP practitioners | TM-30 |
-| TM-40I | ML Engineer | 5 days | ML engineers | TM-30 |
+| TM-40M | ML Engineer | 5 days | ML engineers | TM-30 |
 | TM-40J | Program Manager | 4 days | MSS program managers | TM-30 |
 | TM-40K | Knowledge Manager | 4 days | KMs, S6 data teams | TM-30 |
 | TM-40L | Software Engineer | 5 days | SWEs, Foundry developers | TM-30 |
 | TM-50G | Advanced ORSA | 5 days | Senior FA49, theater ORSA | TM-40G |
 | TM-50H | Advanced AI Engineer | 5 days | Senior AI engineers | TM-40H |
-| TM-50I | Advanced ML Engineer | 5 days | Senior ML engineers | TM-40I |
+| TM-50M | Advanced ML Engineer | 5 days | Senior ML engineers | TM-40M |
 | TM-50J | Advanced Program Manager | 3 days | Senior PMs | TM-40J |
 | TM-50K | Advanced Knowledge Manager | 3 days | Senior KMs | TM-40K |
 | TM-50L | Advanced Software Engineer | 5 days | Senior SWEs, platform leads | TM-40L |
 
-**Critical note:** There is no TM-50A through TM-50F. TM-50 is specialist advanced only (G–L). All TM-40 WFF tracks (A–F) are terminal — graduates proceed to their operational role, not to a TM-50.
+**Critical note:** TM-50 is G–M only (advanced specialist). All TM-40 WFF tracks (A–F) are terminal — graduates proceed to their operational role, not to a TM-50.
+
+**Train-the-Trainer (T3) courses** sit outside the TM numbering:
+
+| Course | Duration | Audience | Prereq | Output |
+|--------|----------|----------|--------|--------|
+| T3-I | 5 days + practicum | C2DAO-selected instructor candidates | TM-30 + C2DAO selection | Certified Instructor (→ Senior → Master) |
+| T3-F | 3 days | MSC-level data NCOs, S6, UDT nominees | TM-20 + CDR nomination | Unit Data Trainer (TM-10 delivery + TM-20 refresher) |
+
+See Instructor Tier Definitions for the full tier hierarchy. See C2DAO SME Designation Rubric for domain expertise requirements. See Unit Data Trainer SOP for UDT employment and reporting procedures.
 
 ---
 
@@ -88,9 +100,15 @@ maven_training/
 │   ├── TM_40A_intelligence/        ← (and TM_40B through TM_40L)
 │   │   ├── TM_40A_INTELLIGENCE.md
 │   │   └── CONCEPTS_GUIDE_TM40A_INTELLIGENCE.md
-│   └── TM_50G_orsa_advanced/       ← (and TM_50H through TM_50L)
-│       ├── TM_50G_ORSA_ADVANCED.md
-│       └── CONCEPTS_GUIDE_TM50G_ORSA_ADVANCED.md
+│   ├── TM_50G_orsa_advanced/       ← (and TM_50H through TM_50L)
+│   │   ├── TM_50G_ORSA_ADVANCED.md
+│   │   └── CONCEPTS_GUIDE_TM50G_ORSA_ADVANCED.md
+│   ├── T3_I_instructor_certification/
+│   │   ├── T3_I_INSTRUCTOR_CERTIFICATION.md
+│   │   └── CONCEPTS_GUIDE_T3I_INSTRUCTOR_CERTIFICATION.md
+│   └── T3_F_msc_force_multiplier/
+│       ├── T3_F_MSC_FORCE_MULTIPLIER.md
+│       └── CONCEPTS_GUIDE_T3F_MSC_FORCE_MULTIPLIER.md
 │
 ├── syllabi/                        ← One syllabus per course (schedule, learning objectives)
 │   ├── SYLLABUS_TM10.md
@@ -105,13 +123,13 @@ maven_training/
 │   │   ├── EXAM_TM40A_PRE.md
 │   │   ├── EXAM_TM40A_POST.md
 │   │   └── ...                     ← complete for all TM-10 through TM-50 series
-│   ├── EX-10_operator_basics/
+│   ├── EX_10_operator_basics/
 │   │   ├── EXERCISE.md
 │   │   └── ENVIRONMENT_SETUP.md
-│   ├── EX-20_no_code_builder/
-│   ├── EX-30_advanced_builder/
-│   ├── EX-40A_intelligence/        ← (through EX-40L)
-│   └── EX-50G_orsa/               ← (through EX-50L)
+│   ├── EX_20_no_code_builder/
+│   ├── EX_30_advanced_builder/
+│   ├── EX_40A_intelligence/        ← (through EX_40L)
+│   └── EX_50G_orsa/               ← (through EX_50L)
 │
 ├── training_management/            ← Program administration documents
 │   ├── INSTRUCTOR_OVERVIEW.md      ← this document
@@ -127,8 +145,8 @@ maven_training/
 │       ├── TM20_LESSON_PLAN_OUTLINES.md
 │       ├── TM30_LESSON_PLAN_OUTLINES.md
 │       ├── TM40_WFF_LESSON_PLAN_OUTLINES.md     ← TM-40A through TM-40F
-│       ├── TM40_SPECIALIST_LESSON_PLAN_OUTLINES.md  ← TM-40G through TM-40L
-│       └── TM50_ADVANCED_LESSON_PLAN_OUTLINES.md   ← TM-50G through TM-50L
+│       ├── TM40_SPECIALIST_LESSON_PLAN_OUTLINES.md  ← TM-40G through TM-40M
+│       └── TM50_ADVANCED_LESSON_PLAN_OUTLINES.md   ← TM-50G through TM-50M
 │
 ├── doctrine/                       ← Reference doctrine (not course-specific)
 │   ├── DATA_LITERACY_technical_reference.md
@@ -157,7 +175,7 @@ maven_training/
 1. **The TM** — read the full TM for the course you are teaching (`tm/TM_XX_name/TM_XX_NAME.md`); if a Concepts Guide exists for the course, read it too
 2. **The syllabus** — `syllabi/SYLLABUS_TMxx.md`; this is your day-by-day schedule and learning objectives
 3. **The lesson plan** — `training_management/lesson_plans/[relevant outline]`; each block has a TLO, delivery method, student activity, and common errors table
-4. **The exercise** — `exercises/EX-XX_name/EXERCISE.md` and `ENVIRONMENT_SETUP.md`; do the setup personally before Day 1, not on the morning of the exercise
+4. **The exercise** — `exercises/EX_XX_name/EXERCISE.md` and `ENVIRONMENT_SETUP.md`; do the setup personally before Day 1, not on the morning of the exercise
 5. **Both exams** — `exercises/exams/EXAM_TMxx_PRE.md` and `EXAM_TMxx_POST.md`; the answer key is embedded at the bottom of each file under "INSTRUCTOR USE ONLY" — do not distribute the full file to students
 
 ---
@@ -210,7 +228,7 @@ The practical exercise is the primary evaluation for every TM-40 and TM-50 cours
 
 2. **Automatic No-Go tasks exist.** Each exercise designates 1–2 tasks as automatic No-Go tasks — a No-Go on these tasks results in an overall course No-Go regardless of other task scores. These tasks reflect the core competency the course is designed to establish.
 
-3. **Data staleness/inject events are scripted.** Exercises with inject events (e.g., EX-40A's SIGINT feed staleness inject at T+90 min) must be executed at the prescribed time. Do not hint at the inject before it occurs.
+3. **Data staleness/inject events are scripted.** Exercises with inject events (e.g., EX_40A's SIGINT feed staleness inject at T+90 min) must be executed at the prescribed time. Do not hint at the inject before it occurs.
 
 4. **Coaching vs. evaluation.** During the exercise, do not coach. Answer direct questions about the training environment (environment issues are not evaluation events), but do not provide procedural hints. The line: "Can you show me what you're seeing on your screen?" is observation, not coaching.
 
@@ -226,7 +244,7 @@ The practical exercise is the primary evaluation for every TM-40 and TM-50 cours
 | TM-20 | 18 | 1 | Day 4–5 labs: 2 instructors required |
 | TM-30 | 12 | 1 | Day 5 PE: dedicated evaluator required |
 | TM-40 (WFF A–F) | 12 | 1 | Day 3 PE: dedicated evaluator required; T:I ≤ 6:1 for PE |
-| TM-40 (Specialist G–L) | 10 | 1 | Day 3 PE: dedicated evaluator; technical depth requires T:I ≤ 5:1 |
+| TM-40 (Specialist G–M) | 10 | 1 | Day 3 PE: dedicated evaluator; technical depth requires T:I ≤ 5:1 |
 | TM-50 (all) | 8 | 1 | Day 5 PE: dedicated evaluator; peer review component requires instructor presence throughout |
 
 If enrollment exceeds these caps, split sections. Do not exceed class maximums — the exercise environments are not designed for larger groups and evaluator attention cannot be maintained.
@@ -279,7 +297,7 @@ The USAREUR-AF C2DAO Training OIC is the certification authority for all MSS ins
 
 ### 9-4. Cross-Certification
 
-Instructors certified for one TM-40 specialist track (G–L) may cross-certify for additional tracks by completing Phases 1 and 3 for the new track. WFF tracks (A–F) require full certification pathway due to domain-specific content.
+Instructors certified for one TM-40 specialist track (G–M) may cross-certify for additional tracks by completing Phases 1 and 3 for the new track. WFF tracks (A–F) require full certification pathway due to domain-specific content.
 
 > **Reference:** TP 350-70-3, *Faculty and Staff Development Program* (TRADOC). See also `training_management/FACULTY_DEVELOPMENT_PLAN.md` for instructor qualification matrices and evaluator prerequisites.
 
@@ -309,8 +327,8 @@ For any given course, the complete instructor document set is:
 | Lesson Plan | `training_management/lesson_plans/[outline file]` | Block-by-block delivery guide |
 | PRE Exam | `exercises/exams/EXAM_TMxx_PRE.md` | Day 1 diagnostic (answer key embedded) |
 | POST Exam | `exercises/exams/EXAM_TMxx_POST.md` | Final knowledge check (answer key embedded) |
-| Exercise | `exercises/EX-XX_name/EXERCISE.md` | Practical exercise task list and evaluation criteria |
-| Environment Setup | `exercises/EX-XX_name/ENVIRONMENT_SETUP.md` | Pre-exercise environment configuration |
+| Exercise | `exercises/EX_XX_name/EXERCISE.md` | Practical exercise task list and evaluation criteria |
+| Environment Setup | `exercises/EX_XX_name/ENVIRONMENT_SETUP.md` | Pre-exercise environment configuration |
 | PDF versions | `pdf/` | Print-ready versions of all above |
 
 ---

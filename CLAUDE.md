@@ -32,6 +32,10 @@ This environment is used exclusively for work on the USAREUR-AF operational data
 - No active session turn limit. The `PreToolUse` hook (`/home/dale/.claude/hooks/turn_limit.sh`) was removed on 2026-03-11 at user request.
 - If session control is needed, recreate the hook with a desired `LIMIT` value and register it in `~/.claude/settings.json`.
 
+## Memory Quality Standards
+
+Inherited from global `~/CLAUDE.md`. Project memory dir: `~/.claude/projects/-home-dale-Desktop-claude/memory/`.
+
 ## Communication
 
 - Be concise and direct. Skip preamble.

@@ -7,8 +7,6 @@ from pptx import Presentation
 from pptx.util import Inches, Pt, Emu
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN
-from pptx.util import Inches, Pt
-import copy
 
 # ── Army color palette ────────────────────────────────────────────────────────
 ARMY_GREEN   = RGBColor(0x4B, 0x5A, 0x2A)   # OD green
@@ -197,7 +195,7 @@ path_text = (
     "TM-40  Role-Specific Tracks\n"
     "WFF Functional (A–F): INT · FIRES\n"
     "M&M · SUST · PROT · Mission Cmd\n"
-    "Technical Specialist (G–L)\n"
+    "Technical Specialist (G–M)\n"
     "\n"
     "      ↓  (specialists only)\n"
     "\n"

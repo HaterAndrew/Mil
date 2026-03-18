@@ -154,7 +154,7 @@ Complete **5+ duty days before Day 1:**
 
 | Item | Reference |
 |---|---|
-| **Practical Exercise** | EX-40D (EXERCISE.md + ENVIRONMENT_SETUP.md) — `exercises/EX-40D/` |
+| **Practical Exercise** | EX_40D (EXERCISE.md + ENVIRONMENT_SETUP.md) — `exercises/EX_40D/` |
 | **Pre-course exam** | EXAM_TM40D_PRE — `exercises/exams/EXAM_TM40D_PRE.md` |
 | **Post-course exam** | EXAM_TM40D_POST — `exercises/exams/EXAM_TM40D_POST.md` |
 

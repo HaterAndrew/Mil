@@ -31,11 +31,13 @@ This manual provides technical instruction for AI engineers building AI-enabled 
 **TM-40H does NOT cover:**
 - Basic Workshop, Pipeline Builder, or Ontology configuration — see TM-20 and TM-30
 - TypeScript OSDK development — see TM-40L (Software Engineer)
-- Model training, fine-tuning, or MLOps infrastructure — see TM-40I (ML Engineer)
+- Model training, fine-tuning, or MLOps infrastructure — see TM-40M (ML Engineer)
 - Statistical analysis or operational research methodology — see TM-40G (ORSA)
 - General Python transform development unrelated to AI pipelines — see TM-40L
 
 > **NOTE:** TM-30 is a hard prerequisite. If you cannot independently design a Workshop application, configure an Ontology model, and specify an AIP Logic workflow configuration, complete TM-30 before proceeding. TM-40H assumes TM-30 competency and builds above it — not alongside it.
+
+> **NOTE — Doctrinal Grounding (ADP 3-13):** ADP 3-13, *Information* (November 2023), is the first Army Doctrine Publication to explicitly reference artificial intelligence and machine learning as tools for processing data into information at speed. ADP 3-13 recognizes AI and ML as means of processing data into information faster than adversaries. AI systems enable speed; humans provide judgment. TM-40H trains the workforce to build and govern these systems within the MSS platform. All AI capabilities developed under this course align to the ADP 3-13 principle that technology accelerates information processing while commanders and staff retain decision authority.
 
 ### 1-2. Curriculum Position, Advanced Track, and WFF Context
 
@@ -45,7 +47,7 @@ This manual provides technical instruction for AI engineers building AI-enabled 
 
 **Advanced track:** Upon completing TM-40H, qualified AI Engineers should pursue **TM-50H (Advanced AI Engineer)** for advanced topics including multi-agent orchestration, fine-tuning integration, production AI system design, and AI governance leadership on MSS.
 
-**Peer specialist tracks:** The AI Engineer works at the boundary with the ML Engineer (TM-40I). The MLE builds and owns the trained model artifact; the AI Engineer wraps that model in AIP Logic orchestration, grounding, and human-review workflow design. Coordinate with TM-40I before any deployment where AI workflows consume ML model outputs. Coordinate with TM-40L (Software Engineer) for OSDK application layers that surface AI-generated products to operational users.
+**Peer specialist tracks:** The AI Engineer works at the boundary with the ML Engineer (TM-40M). The MLE builds and owns the trained model artifact; the AI Engineer wraps that model in AIP Logic orchestration, grounding, and human-review workflow design. Coordinate with TM-40M before any deployment where AI workflows consume ML model outputs. Coordinate with TM-40L (Software Engineer) for OSDK application layers that surface AI-generated products to operational users.
 
 **WFF awareness:** WFF-qualified personnel (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command) are the primary end-users of AI-augmented workflows built by TM-40H engineers. A WFF staff officer using an AIP-generated LOGSTAT assessment or fires assessment draft is the operational consumer. Design AI workflows with that user in mind: clear sourcing, structured human-review gates, and output formats that match the WFF staff section's product requirements.
 
@@ -87,7 +89,25 @@ The human review gate is not optional. It is a required architectural element of
 
 ---
 
-### 1-4. Capability Summary by Track
+### 1-4. PED Pipeline Mapping to AI/ML Development
+
+**BLUF:** The intelligence Processing, Exploitation, and Dissemination (PED) pipeline from FM 2-0 maps directly to AI/ML model development phases. AI engineers use this mapping to communicate with intelligence staff in doctrinal terms and to ensure AI pipelines satisfy each PED phase requirement.
+
+The PED framework (FM 2-0, *Intelligence*, October 2023) describes how raw collected information becomes finished intelligence. AI/ML systems on MSS accelerate each phase. The table below maps PED phases to their AI/ML analogs and the corresponding MSS implementation pattern.
+
+| PED Phase | AI/ML Analog | MSS Implementation |
+|---|---|---|
+| **Processing** — converting collected information into a form suitable for analysis | Data preprocessing, cleaning, normalization, feature engineering | Pipeline transforms in Code Repositories; Foundry dataset transforms that structure raw feeds into model-ready datasets |
+| **Exploitation** — applying analytical methods to derive meaning from processed data | Model training, inference, prompt-based reasoning, pattern detection | AIP Logic workflows, Agent Studio agents, ML model inference endpoints (coordinate with TM-40M for trained models) |
+| **Dissemination** — delivering intelligence products to consumers in usable formats | Model output delivery, result formatting, product generation | Workshop dashboards, Contour reports, API endpoints via OSDK (coordinate with TM-40L), AIP-generated narrative products with human review |
+
+> **NOTE:** This mapping is a training aid, not a doctrinal equivalence claim. AI/ML systems augment — they do not replace — the PED cycle. A trained analyst performs exploitation; an AI system accelerates portions of that work under analyst supervision. Every AI-generated output that enters the PED pipeline requires the same human review gate defined in Chapter 6.
+
+**Source:** FM 2-0, *Intelligence* (October 2023), Chapter 3.
+
+---
+
+### 1-5. Capability Summary by Track
 
 | Capability | -30 Builder | -40H AI Engineer |
 |---|---|---|
@@ -106,13 +126,33 @@ The human review gate is not optional. It is a required architectural element of
 
 ---
 
-### 1-5. Authorization Framework
+### 1-5a. Strategic Guidance
+
+> The following are strategic guidance documents — not doctrine — that inform MSS AI engineering design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| ADP 3-13, *Information Advantage* (2023) | TRADOC | First ADP to reference AI/ML capabilities; establishes human-machine teaming principles — AI enables speed, humans provide judgment |
+| DDOF Playbook v2.2 (Dec 2025) | CIO/G-6 | 6-phase data product lifecycle; 30-day MVP mandate; AI pipeline outputs are governed data products subject to Phase 3 quality gate |
+| DoD Data Strategy (2020) | OSD | VAULTIS-A framework (supersedes VAUTI) — 8 dimensions per DDOF Playbook v2.2; 85% weighted avg = Phase 3 quality gate |
+| UDRA v1.1 (Feb 2025) | Army Enterprise | Unified Data Reference Architecture — AI/ML model outputs classified as data products under computational governance |
+| Army Data Plan (2022) | Army CIO | 11 Strategic Objectives; SO 7 = DevSecOps workforce; SE05 = Talent pipeline for AI/data practitioners |
+| DoD Responsible AI Strategy (Jun 2024) | OSD | Five AI Ethical Principles (RETRG): Responsible, Equitable, Traceable, Reliable, Governable |
+
+**Reference:** `learn-data.armydev.com` — authoritative reference for AIP API versions, model registration, and approved deployment patterns. Consult before beginning any new AI pipeline development.
+
+---
+
+### 1-6. Authorization Framework
 
 All AIP capabilities deployed to production must be authorized. Authorization is not a one-time checkbox — it is a continuous governance requirement. The governing bodies and references are:
 
 - **C2DAO (USAREUR-AF Command, Control, and Data Architecture Office):** Command governance authority for MSS. All production AIP deployments require C2DAO coordination.
 - **Army CIO Memorandum (April 2024):** Establishes Army AI use policy, responsible AI principles, and human-in-the-loop requirements. This memorandum is the primary policy authority for all AI development on Army systems.
 - **UDRA v1.1 (February 2025):** Unified Data Reference Architecture. Governs data product design, domain ownership, and federated governance. All AI pipelines that produce or consume data products must align to UDRA.
+
+> **NOTE — UDRA Data Product Governance for ML Outputs:** UDRA v1.1 treats trained ML models and their outputs as data products subject to the same governance as any other data product. An ML model output must satisfy the **VAULTIS-A** quality standard: **V**isible (discoverable in the data catalog), **A**ccessible (available to authorized consumers via defined interfaces), **U**nderstandable (documented with metadata, lineage, and known limitations), **L**inked (connected to source data and consuming applications), **T**rusted (accuracy and bias metrics published), **I**nteroperable (conforming to shared schemas and ontology models), **S**ecure (access-controlled and classification-marked), and **A**uditable (provenance and version history retained). AI engineers must register model outputs as data products in the CDA Portal and maintain VAULTIS-A compliance throughout the model lifecycle. Failure to govern AI outputs as data products creates unmanaged risk and violates UDRA policy.
+
 - **CDA Portal (learn-data.armydev.com):** Army Command Data Architecture portal. Reference for authoritative data product registration, domain metadata, and data stewardship contacts.
 - **Army DIR 2024-03:** Digital Engineering Policy. Army-wide digital engineering adoption directive.
 - **FM 3-12:** Cyberspace Operations and Electromagnetic Warfare. Operational context for AI systems in Army networks.
@@ -133,7 +173,7 @@ See Appendix A for the complete authorization checklist.
 
 ---
 
-### 1-6. Prerequisites and Environment Setup
+### 1-7. Prerequisites and Environment Setup
 
 **Required access before beginning TM-40H tasks:**
 
@@ -1204,6 +1244,16 @@ No AIP Logic workflow or Agent Studio agent may be promoted to production withou
 6. Incident response procedure documented (what happens when the workflow produces wrong output in production)
 7. Monitoring plan in place (Chapter 9)
 
+> **NOTE — DDIL and Classified Inference Considerations**
+> Palantir is developing local inference connectors for AIP Logic to support DDIL (Denied, Degraded, Intermittent, Limited) and classified environments. This capability enables:
+> - LLM inference without cloud connectivity
+> - AIP Logic execution in classified enclaves
+> - Edge deployment for tactical operations
+>
+> Verify current availability in your MSS environment before designing workflows that depend on local inference. For DDIL data operations (non-AI), see TM-30 § 1-10e.
+>
+> *Source: Palantir Developer Community — [Local Inference for DDIL / Classified](https://community.palantir.com/t/local-inference-connector-for-aip-logic-ddil-classified-data-use-cases/6146) — feature may be beta; confirm with Palantir support.*
+
 ---
 
 ## CHAPTER 7 — PYTHON TRANSFORMS FOR AI PIPELINES
@@ -2084,7 +2134,7 @@ Track review dispositions over time. If rejection rate exceeds 15% over a 30-day
 
 **Evaluation framework** — The combination of test cases, automated checks, and human review criteria used to assess AI output quality.
 
-**Fine-tuning** — The process of additional training of an LLM on domain-specific data. Not addressed in TM-40H; see TM-40I (ML Engineer).
+**Fine-tuning** — The process of additional training of an LLM on domain-specific data. Not addressed in TM-40H; see TM-40M (ML Engineer).
 
 **Grounding** — The practice of providing LLM inference with specific source data to anchor responses in verifiable facts rather than model training data.
 

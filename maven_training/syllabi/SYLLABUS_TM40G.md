@@ -192,7 +192,7 @@ Graduates who remain in active ORSA roles and require theater-level analytical c
 |---|---|
 | Pre-course exam | EXAM_TM40G_PRE |
 | Post-course exam | EXAM_TM40G_POST |
-| Practical exercise | EX-40G (EXERCISE.md + ENVIRONMENT_SETUP.md) |
+| Practical exercise | EX_40G (EXERCISE.md + ENVIRONMENT_SETUP.md) |
 
 ---
 

@@ -1,7 +1,7 @@
 [
   {
     "id": "army_data_orientation_v1",
-    "pptx": "downloads/army_data_orientation_v1.pptx",
+    "pptx": "../../pdf/army_data_orientation_v1.pptx",
     "title": "Army Data Orientation",
     "slides": [
       "assets/army_data_orientation_v1/slide-001.png",
@@ -21,13 +21,13 @@
     ],
     "thumb": "assets/army_data_orientation_v1/thumb.png",
     "count": 14,
-    "pdf": "downloads/army_data_orientation_v1.pdf",
+    "pdf": "../../pdf/army_data_orientation_v1.pdf",
     "track": "Intro To Data",
     "maven_tm_level": "TM-10"
   },
   {
     "id": "mss_platform_overview",
-    "pptx": "downloads/mss_platform_overview.pptx",
+    "pptx": "../../pdf/mss_platform_overview.pptx",
     "title": "MSS Platform Overview",
     "slides": [
       "assets/mss_platform_overview/slide-001.png",
@@ -43,13 +43,13 @@
     ],
     "thumb": "assets/mss_platform_overview/thumb.png",
     "count": 10,
-    "pdf": "downloads/mss_platform_overview.pdf",
+    "pdf": "../../pdf/mss_platform_overview.pdf",
     "track": "TM-10 User",
     "maven_tm_level": "TM-10"
   },
   {
     "id": "army_data_orientation_v2",
-    "pptx": "downloads/army_data_orientation_v2.pptx",
+    "pptx": "../../pdf/army_data_orientation_v2.pptx",
     "title": "Army Data Orientation (v2 \u2014 End User)",
     "slides": [
       "assets/army_data_orientation_v2/slide-001.png",
@@ -70,14 +70,14 @@
     ],
     "thumb": "assets/army_data_orientation_v2/thumb.png",
     "count": 15,
-    "pdf": "downloads/army_data_orientation_v2.pdf",
+    "pdf": "../../pdf/army_data_orientation_v2.pdf",
     "track": "TM-10 User",
     "maven_tm_level": "TM-10",
     "maven_tm_note": "Replaces v1 for end-user (TM-10) audiences. Slides 12-14 rewritten from builder framing to consumer framing."
   },
   {
     "id": "architecture_primer",
-    "pptx": "downloads/architecture_primer.pptx",
+    "pptx": "../../pdf/architecture_primer.pptx",
     "title": "Architecture Primer",
     "slides": [
       "assets/architecture_primer/slide-001.png",
@@ -95,13 +95,13 @@
     ],
     "thumb": "assets/architecture_primer/thumb.png",
     "count": 12,
-    "pdf": "downloads/architecture_primer.pdf",
+    "pdf": "../../pdf/architecture_primer.pdf",
     "track": "Intro To Data",
     "maven_tm_level": "TM-20"
   },
   {
     "id": "Data_Architecture_Deep_Dive",
-    "pptx": "downloads/Data_Architecture_Deep_Dive.pptx",
+    "pptx": "../../pdf/Data_Architecture_Deep_Dive.pptx",
     "title": "Data Architecture Deep Dive",
     "slides": [
       "assets/Data_Architecture_Deep_Dive/slide-001.png",
@@ -128,13 +128,13 @@
     ],
     "thumb": "assets/Data_Architecture_Deep_Dive/thumb.png",
     "count": 21,
-    "pdf": "downloads/Data_Architecture_Deep_Dive.pdf",
+    "pdf": "../../pdf/Data_Architecture_Deep_Dive.pdf",
     "track": "Intro To Data",
     "maven_tm_level": "TM-30"
   },
   {
     "id": "2026_Data_Stack_Deep_Dive",
-    "pptx": "downloads/2026_Data_Stack_Deep_Dive.pptx",
+    "pptx": "../../pdf/2026_Data_Stack_Deep_Dive.pptx",
     "title": "2026 Data Stack \u2014 Five Layers Deep Dive",
     "slides": [
       "assets/2026_Data_Stack_Deep_Dive/slide-001.png",
@@ -150,13 +150,13 @@
     ],
     "thumb": "assets/2026_Data_Stack_Deep_Dive/thumb.png",
     "count": 10,
-    "pdf": "downloads/2026_Data_Stack_Deep_Dive.pdf",
+    "pdf": "../../pdf/2026_Data_Stack_Deep_Dive.pdf",
     "track": "Intro To Data",
     "maven_tm_level": "TM-20"
   },
   {
     "id": "L2_Ingestion_Integration_Deep_Dive",
-    "pptx": "downloads/L2_Ingestion_Integration_Deep_Dive.pptx",
+    "pptx": "../../pdf/L2_Ingestion_Integration_Deep_Dive.pptx",
     "title": "L2 \u2014 Ingestion & Integration Deep Dive",
     "slides": [
       "assets/L2_Ingestion_Integration_Deep_Dive/slide-001.png",
@@ -172,13 +172,13 @@
     ],
     "thumb": "assets/L2_Ingestion_Integration_Deep_Dive/thumb.png",
     "count": 10,
-    "pdf": "downloads/L2_Ingestion_Integration_Deep_Dive.pdf",
+    "pdf": "../../pdf/L2_Ingestion_Integration_Deep_Dive.pdf",
     "track": "Intro To Data",
     "maven_tm_level": "TM-30"
   },
   {
-    "id": "The Semantic Layer Instructions",
-    "pptx": "downloads/The_Semantic_Layer_Instructions.pptx",
+    "id": "The_Semantic_Layer_Instructions",
+    "pptx": "../../pdf/The_Semantic_Layer_Instructions.pptx",
     "title": "The Semantic Layer \u2014 Authoritative Instructions",
     "slides": [
       "assets/The_Semantic_Layer_Instructions/slide-001.png",
@@ -195,7 +195,7 @@
     ],
     "thumb": "assets/The_Semantic_Layer_Instructions/thumb.png",
     "count": 11,
-    "pdf": "downloads/The_Semantic_Layer_Instructions.pdf",
+    "pdf": "../../pdf/The_Semantic_Layer_Instructions.pdf",
     "track": "Intro To Data",
     "maven_tm_level": "TM-20",
     "maven_tm_also_supports": [
@@ -204,7 +204,7 @@
   },
   {
     "id": "What_Is_An_Ontology",
-    "pptx": "downloads/What_Is_An_Ontology.pptx",
+    "pptx": "../../pdf/What_Is_An_Ontology.pptx",
     "title": "What Is an Ontology?",
     "slides": [
       "assets/What_Is_An_Ontology/slide-001.png",
@@ -222,13 +222,13 @@
     ],
     "thumb": "assets/What_Is_An_Ontology/thumb.png",
     "count": 12,
-    "pdf": "downloads/What_Is_An_Ontology.pdf",
+    "pdf": "../../pdf/What_Is_An_Ontology.pdf",
     "track": "Intro To Data",
     "maven_tm_level": "TM-20"
   },
   {
     "id": "Data_Modeling_Foundations",
-    "pptx": "downloads/Data_Modeling_Foundations.pptx",
+    "pptx": "../../pdf/Data_Modeling_Foundations.pptx",
     "title": "Data Modeling Foundations \u2014 Normalization to Strategy",
     "slides": [
       "assets/Data_Modeling_Foundations/slide-001.png",
@@ -245,13 +245,13 @@
     ],
     "thumb": "assets/Data_Modeling_Foundations/thumb.png",
     "count": 11,
-    "pdf": "downloads/Data_Modeling_Foundations.pdf",
+    "pdf": "../../pdf/Data_Modeling_Foundations.pdf",
     "track": "Intro To Data",
     "maven_tm_level": "TM-30"
   },
   {
     "id": "Data_Platforms_Cloud_Deep_Dive",
-    "pptx": "downloads/Data_Platforms_Cloud_Deep_Dive.pptx",
+    "pptx": "../../pdf/Data_Platforms_Cloud_Deep_Dive.pptx",
     "title": "Data Platforms & Cloud Deep Dive",
     "slides": [
       "assets/Data_Platforms_Cloud_Deep_Dive/slide-001.png",
@@ -267,13 +267,13 @@
     ],
     "thumb": "assets/Data_Platforms_Cloud_Deep_Dive/thumb.png",
     "count": 10,
-    "pdf": "downloads/Data_Platforms_Cloud_Deep_Dive.pdf",
+    "pdf": "../../pdf/Data_Platforms_Cloud_Deep_Dive.pdf",
     "track": "Intro To Data",
     "maven_tm_level": "TM-30"
   },
   {
     "id": "L5_Activation_Interface_Deep_Dive",
-    "pptx": "downloads/L5_Activation_Interface_Deep_Dive.pptx",
+    "pptx": "../../pdf/L5_Activation_Interface_Deep_Dive.pptx",
     "title": "L5 \u2014 Activation & Interface Deep Dive",
     "slides": [
       "assets/L5_Activation_Interface_Deep_Dive/slide-001.png",
@@ -289,13 +289,13 @@
     ],
     "thumb": "assets/L5_Activation_Interface_Deep_Dive/thumb.png",
     "count": 10,
-    "pdf": "downloads/L5_Activation_Interface_Deep_Dive.pdf",
+    "pdf": "../../pdf/L5_Activation_Interface_Deep_Dive.pdf",
     "track": "Intro To Data",
     "maven_tm_level": "TM-20"
   },
   {
     "id": "AI_ML_Beyond_The_Hype",
-    "pptx": "downloads/AI_ML_Beyond_The_Hype.pptx",
+    "pptx": "../../pdf/AI_ML_Beyond_The_Hype.pptx",
     "title": "AI/ML \u2014 Beyond the Hype",
     "slides": [
       "assets/AI_ML_Beyond_The_Hype/slide-001.png",
@@ -312,13 +312,13 @@
     ],
     "thumb": "assets/AI_ML_Beyond_The_Hype/thumb.png",
     "count": 11,
-    "pdf": "downloads/AI_ML_Beyond_The_Hype.pdf",
+    "pdf": "../../pdf/AI_ML_Beyond_The_Hype.pdf",
     "track": "Intro To Data",
     "maven_tm_level": "TM-20"
   },
   {
     "id": "decision_advantage_deep_dive",
-    "pptx": "downloads/decision_advantage_deep_dive.pptx",
+    "pptx": "../../pdf/decision_advantage_deep_dive.pptx",
     "title": "Decision Advantage Deep Dive",
     "slides": [
       "assets/decision_advantage_deep_dive/slide-001.png",
@@ -334,7 +334,7 @@
     ],
     "thumb": "assets/decision_advantage_deep_dive/thumb.png",
     "count": 10,
-    "pdf": "downloads/decision_advantage_deep_dive.pdf",
+    "pdf": "../../pdf/decision_advantage_deep_dive.pdf",
     "track": "Intro To Data",
     "maven_tm_level": "TM-30",
     "maven_tm_also_supports": [
@@ -348,7 +348,7 @@
   },
   {
     "id": "The_Four_Layers",
-    "pptx": "downloads/The_Four_Layers.pptx",
+    "pptx": "../../pdf/The_Four_Layers.pptx",
     "title": "The Four Layers",
     "slides": [
       "assets/The_Four_Layers/slide-001.png",
@@ -367,13 +367,13 @@
     ],
     "thumb": "assets/The_Four_Layers/thumb.png",
     "count": 13,
-    "pdf": "downloads/The_Four_Layers.pdf",
+    "pdf": "../../pdf/The_Four_Layers.pdf",
     "track": "Data 101",
     "maven_tm_level": "TM-20"
   },
   {
     "id": "Data_Modeling_Fundamentals_Level1",
-    "pptx": "downloads/Data_Modeling_Fundamentals_Level1.pptx",
+    "pptx": "../../pdf/Data_Modeling_Fundamentals_Level1.pptx",
     "title": "Data Modeling Fundamentals \u2014 Level 1",
     "slides": [
       "assets/Data_Modeling_Fundamentals_Level1/slide-001.png",
@@ -394,13 +394,13 @@
     ],
     "thumb": "assets/Data_Modeling_Fundamentals_Level1/thumb.png",
     "count": 15,
-    "pdf": "downloads/Data_Modeling_Fundamentals_Level1.pdf",
+    "pdf": "../../pdf/Data_Modeling_Fundamentals_Level1.pdf",
     "track": "Data 101",
     "maven_tm_level": "TM-20"
   },
   {
     "id": "ObjectType_WhatToWatchFor",
-    "pptx": "downloads/ObjectType_WhatToWatchFor.pptx",
+    "pptx": "../../pdf/ObjectType_WhatToWatchFor.pptx",
     "title": "Object Types \u2014 What to Watch For",
     "slides": [
       "assets/ObjectType_WhatToWatchFor/slide-001.png",
@@ -419,13 +419,13 @@
     ],
     "thumb": "assets/ObjectType_WhatToWatchFor/thumb.png",
     "count": 13,
-    "pdf": "downloads/ObjectType_WhatToWatchFor.pdf",
+    "pdf": "../../pdf/ObjectType_WhatToWatchFor.pdf",
     "track": "Data 101",
     "maven_tm_level": "TM-20"
   },
   {
     "id": "Controlled_Vocabularies",
-    "pptx": "downloads/Controlled_Vocabularies.pptx",
+    "pptx": "../../pdf/Controlled_Vocabularies.pptx",
     "title": "Controlled Vocabularies",
     "slides": [
       "assets/Controlled_Vocabularies/slide-001.png",
@@ -442,7 +442,7 @@
     ],
     "thumb": "assets/Controlled_Vocabularies/thumb.png",
     "count": 11,
-    "pdf": "downloads/Controlled_Vocabularies.pdf",
+    "pdf": "../../pdf/Controlled_Vocabularies.pdf",
     "track": "Data 101",
     "maven_tm_level": "TM-20",
     "maven_tm_also_supports": [
@@ -452,7 +452,7 @@
   },
   {
     "id": "Identity_Who_Owns_The_Key",
-    "pptx": "downloads/Identity_Who_Owns_The_Key.pptx",
+    "pptx": "../../pdf/Identity_Who_Owns_The_Key.pptx",
     "title": "Identity \u2014 Who Owns the Key?",
     "slides": [
       "assets/Identity_Who_Owns_The_Key/slide-001.png",
@@ -469,7 +469,7 @@
     ],
     "thumb": "assets/Identity_Who_Owns_The_Key/thumb.png",
     "count": 11,
-    "pdf": "downloads/Identity_Who_Owns_The_Key.pdf",
+    "pdf": "../../pdf/Identity_Who_Owns_The_Key.pdf",
     "track": "Data 101",
     "maven_tm_level": "TM-20",
     "maven_tm_also_supports": [
@@ -480,7 +480,7 @@
   },
   {
     "id": "Links_and_Relationships",
-    "pptx": "downloads/Links_and_Relationships.pptx",
+    "pptx": "../../pdf/Links_and_Relationships.pptx",
     "title": "Links & Relationships",
     "slides": [
       "assets/Links_and_Relationships/slide-001.png",
@@ -497,13 +497,13 @@
     ],
     "thumb": "assets/Links_and_Relationships/thumb.png",
     "count": 11,
-    "pdf": "downloads/Links_and_Relationships.pdf",
+    "pdf": "../../pdf/Links_and_Relationships.pdf",
     "track": "Data 101",
     "maven_tm_level": "TM-20"
   },
   {
     "id": "Dont_Filter_This_Isnt_Excel",
-    "pptx": "downloads/Dont_Filter_This_Isnt_Excel.pptx",
+    "pptx": "../../pdf/Dont_Filter_This_Isnt_Excel.pptx",
     "title": "Don\u2019t Filter \u2014 This Isn\u2019t Excel",
     "slides": [
       "assets/Dont_Filter_This_Isnt_Excel/slide-001.png",
@@ -520,13 +520,13 @@
     ],
     "thumb": "assets/Dont_Filter_This_Isnt_Excel/thumb.png",
     "count": 11,
-    "pdf": "downloads/Dont_Filter_This_Isnt_Excel.pdf",
+    "pdf": "../../pdf/Dont_Filter_This_Isnt_Excel.pdf",
     "track": "Data 101",
     "maven_tm_level": "TM-20"
   },
   {
     "id": "Semantic_Modelling_Course_Intro",
-    "pptx": "downloads/Semantic_Modelling_Course_Intro.pptx",
+    "pptx": "../../pdf/Semantic_Modelling_Course_Intro.pptx",
     "title": "Semantic Modelling \u2014 Course Introduction",
     "slides": [
       "assets/Semantic_Modelling_Course_Intro/slide-001.png",
@@ -542,13 +542,13 @@
     ],
     "thumb": "assets/Semantic_Modelling_Course_Intro/thumb.png",
     "count": 10,
-    "pdf": "downloads/Semantic_Modelling_Course_Intro.pdf",
+    "pdf": "../../pdf/Semantic_Modelling_Course_Intro.pdf",
     "track": "Data 201",
     "maven_tm_level": "TM-30"
   },
   {
     "id": "Deck_01_Architecture_First_Principles",
-    "pptx": "downloads/Deck_01_Architecture_First_Principles.pptx",
+    "pptx": "../../pdf/Deck_01_Architecture_First_Principles.pptx",
     "title": "01 \u2014 Architecture First Principles",
     "slides": [
       "assets/Deck_01_Architecture_First_Principles/slide-001.png",
@@ -564,13 +564,13 @@
     ],
     "thumb": "assets/Deck_01_Architecture_First_Principles/thumb.png",
     "count": 10,
-    "pdf": "downloads/Deck_01_Architecture_First_Principles.pdf",
+    "pdf": "../../pdf/Deck_01_Architecture_First_Principles.pdf",
     "track": "Data 201",
     "maven_tm_level": "TM-30"
   },
   {
     "id": "Deck_02_Scope_Engineering",
-    "pptx": "downloads/Deck_02_Scope_Engineering.pptx",
+    "pptx": "../../pdf/Deck_02_Scope_Engineering.pptx",
     "title": "02 \u2014 Scope Engineering",
     "slides": [
       "assets/Deck_02_Scope_Engineering/slide-001.png",
@@ -586,13 +586,13 @@
     ],
     "thumb": "assets/Deck_02_Scope_Engineering/thumb.png",
     "count": 10,
-    "pdf": "downloads/Deck_02_Scope_Engineering.pdf",
+    "pdf": "../../pdf/Deck_02_Scope_Engineering.pdf",
     "track": "Data 201",
     "maven_tm_level": "TM-30"
   },
   {
     "id": "Deck_03_RDF_OWL_Foundations",
-    "pptx": "downloads/Deck_03_RDF_OWL_Foundations.pptx",
+    "pptx": "../../pdf/Deck_03_RDF_OWL_Foundations.pptx",
     "title": "03 \u2014 RDF & OWL Foundations",
     "slides": [
       "assets/Deck_03_RDF_OWL_Foundations/slide-001.png",
@@ -608,13 +608,13 @@
     ],
     "thumb": "assets/Deck_03_RDF_OWL_Foundations/thumb.png",
     "count": 10,
-    "pdf": "downloads/Deck_03_RDF_OWL_Foundations.pdf",
+    "pdf": "../../pdf/Deck_03_RDF_OWL_Foundations.pdf",
     "track": "Data 201",
     "maven_tm_level": "TM-30"
   },
   {
     "id": "Deck_04_Object_Type_Varieties",
-    "pptx": "downloads/Deck_04_Object_Type_Varieties.pptx",
+    "pptx": "../../pdf/Deck_04_Object_Type_Varieties.pptx",
     "title": "04 \u2014 Object Type Varieties",
     "slides": [
       "assets/Deck_04_Object_Type_Varieties/slide-001.png",
@@ -630,13 +630,13 @@
     ],
     "thumb": "assets/Deck_04_Object_Type_Varieties/thumb.png",
     "count": 10,
-    "pdf": "downloads/Deck_04_Object_Type_Varieties.pdf",
+    "pdf": "../../pdf/Deck_04_Object_Type_Varieties.pdf",
     "track": "Data 201",
     "maven_tm_level": "TM-30"
   },
   {
     "id": "Deck_05_Identity_Governance",
-    "pptx": "downloads/Deck_05_Identity_Governance.pptx",
+    "pptx": "../../pdf/Deck_05_Identity_Governance.pptx",
     "title": "05 \u2014 Identity & Governance",
     "slides": [
       "assets/Deck_05_Identity_Governance/slide-001.png",
@@ -652,13 +652,13 @@
     ],
     "thumb": "assets/Deck_05_Identity_Governance/thumb.png",
     "count": 10,
-    "pdf": "downloads/Deck_05_Identity_Governance.pdf",
+    "pdf": "../../pdf/Deck_05_Identity_Governance.pdf",
     "track": "Data 201",
     "maven_tm_level": "TM-30"
   },
   {
     "id": "Deck_06_Relationship_Modeling",
-    "pptx": "downloads/Deck_06_Relationship_Modeling.pptx",
+    "pptx": "../../pdf/Deck_06_Relationship_Modeling.pptx",
     "title": "06 \u2014 Relationship Modeling",
     "slides": [
       "assets/Deck_06_Relationship_Modeling/slide-001.png",
@@ -674,13 +674,13 @@
     ],
     "thumb": "assets/Deck_06_Relationship_Modeling/thumb.png",
     "count": 10,
-    "pdf": "downloads/Deck_06_Relationship_Modeling.pdf",
+    "pdf": "../../pdf/Deck_06_Relationship_Modeling.pdf",
     "track": "Data 201",
     "maven_tm_level": "TM-30"
   },
   {
     "id": "Deck_07_Temporal_Bitemporal",
-    "pptx": "downloads/Deck_07_Temporal_Bitemporal.pptx",
+    "pptx": "../../pdf/Deck_07_Temporal_Bitemporal.pptx",
     "title": "07 \u2014 Temporal & Bitemporal",
     "slides": [
       "assets/Deck_07_Temporal_Bitemporal/slide-001.png",
@@ -696,18 +696,18 @@
     ],
     "thumb": "assets/Deck_07_Temporal_Bitemporal/thumb.png",
     "count": 10,
-    "pdf": "downloads/Deck_07_Temporal_Bitemporal.pdf",
+    "pdf": "../../pdf/Deck_07_Temporal_Bitemporal.pdf",
     "track": "Data 201",
     "maven_tm_level": "TM-30",
     "maven_tm_also_supports": [
       "TM-40G",
-      "TM-40I",
+      "TM-40M",
       "TM-40L"
     ]
   },
   {
     "id": "Data_Modeling_Fundamentals_Level2",
-    "pptx": "downloads/Data_Modeling_Fundamentals_Level2.pptx",
+    "pptx": "../../pdf/Data_Modeling_Fundamentals_Level2.pptx",
     "title": "Data Modeling Fundamentals \u2014 Level 2",
     "slides": [
       "assets/Data_Modeling_Fundamentals_Level2/slide-001.png",
@@ -726,18 +726,18 @@
     ],
     "thumb": "assets/Data_Modeling_Fundamentals_Level2/thumb.png",
     "count": 13,
-    "pdf": "downloads/Data_Modeling_Fundamentals_Level2.pdf",
+    "pdf": "../../pdf/Data_Modeling_Fundamentals_Level2.pdf",
     "track": "Data 201",
     "maven_tm_level": "TM-30",
     "maven_tm_also_supports": [
       "TM-40G",
-      "TM-40I",
+      "TM-40M",
       "TM-40L"
     ]
   },
   {
     "id": "Deck_12_Capstone_Foundry",
-    "pptx": "downloads/Deck_12_Capstone_Foundry.pptx",
+    "pptx": "../../pdf/Deck_12_Capstone_Foundry.pptx",
     "title": "12 \u2014 Capstone: Foundry",
     "slides": [
       "assets/Deck_12_Capstone_Foundry/slide-001.png",
@@ -753,7 +753,7 @@
     ],
     "thumb": "assets/Deck_12_Capstone_Foundry/thumb.png",
     "count": 10,
-    "pdf": "downloads/Deck_12_Capstone_Foundry.pdf",
+    "pdf": "../../pdf/Deck_12_Capstone_Foundry.pdf",
     "track": "Data 201",
     "maven_tm_level": "TM-30",
     "maven_tm_also_supports": [
@@ -761,5 +761,139 @@
       "TM-40H",
       "TM-40L"
     ]
+  },
+  {
+    "id": "WFF_Overview",
+    "pptx": "../../pdf/WFF_Overview.pptx",
+    "title": "TM-40 Specialist Tracks \u2014 WFF Overview",
+    "slides": [],
+    "thumb": null,
+    "count": 0,
+    "pdf": null,
+    "track": "Specialist",
+    "maven_tm_level": "TM-40"
+  },
+  {
+    "id": "TM_40J_Program_Manager",
+    "pptx": "../../pdf/TM_40J_Program_Manager.pptx",
+    "title": "TM-40J \u2014 Program Manager",
+    "slides": [],
+    "thumb": null,
+    "count": 0,
+    "pdf": null,
+    "track": "Specialist",
+    "maven_tm_level": "TM-40J"
+  },
+  {
+    "id": "TM_40M_ML_Engineering",
+    "pptx": "../../pdf/TM_40M_ML_Engineering.pptx",
+    "title": "TM-40M \u2014 ML Engineering",
+    "slides": [],
+    "thumb": null,
+    "count": 0,
+    "pdf": null,
+    "track": "Specialist",
+    "maven_tm_level": "TM-40M"
+  },
+  {
+    "id": "TM_50_Advanced_Overview",
+    "pptx": "../../pdf/TM_50_Advanced_Overview.pptx",
+    "title": "TM-50 Advanced Specialist Tracks \u2014 Overview",
+    "slides": [],
+    "thumb": null,
+    "count": 0,
+    "pdf": null,
+    "track": "Advanced Specialist",
+    "maven_tm_level": "TM-50"
+  },
+  {
+    "id": "TM_50G_Advanced_ORSA",
+    "pptx": "../../pdf/TM_50G_Advanced_ORSA.pptx",
+    "title": "TM-50G \u2014 Advanced ORSA",
+    "slides": [],
+    "thumb": null,
+    "count": 0,
+    "pdf": null,
+    "track": "Advanced Specialist",
+    "maven_tm_level": "TM-50G"
+  },
+  {
+    "id": "TM_50H_Advanced_AI_Engineer",
+    "pptx": "../../pdf/TM_50H_Advanced_AI_Engineer.pptx",
+    "title": "TM-50H \u2014 Advanced AI Engineer",
+    "slides": [],
+    "thumb": null,
+    "count": 0,
+    "pdf": null,
+    "track": "Advanced Specialist",
+    "maven_tm_level": "TM-50H"
+  },
+  {
+    "id": "TM_50J_Advanced_Program_Manager",
+    "pptx": "../../pdf/TM_50J_Advanced_Program_Manager.pptx",
+    "title": "TM-50J \u2014 Advanced Program Manager",
+    "slides": [],
+    "thumb": null,
+    "count": 0,
+    "pdf": null,
+    "track": "Advanced Specialist",
+    "maven_tm_level": "TM-50J"
+  },
+  {
+    "id": "TM_50K_Advanced_Knowledge_Manager",
+    "pptx": "../../pdf/TM_50K_Advanced_Knowledge_Manager.pptx",
+    "title": "TM-50K \u2014 Advanced Knowledge Manager",
+    "slides": [],
+    "thumb": null,
+    "count": 0,
+    "pdf": null,
+    "track": "Advanced Specialist",
+    "maven_tm_level": "TM-50K"
+  },
+  {
+    "id": "TM_50L_Advanced_Software_Engineer",
+    "pptx": "../../pdf/TM_50L_Advanced_Software_Engineer.pptx",
+    "title": "TM-50L \u2014 Advanced Software Engineer",
+    "slides": [],
+    "thumb": null,
+    "count": 0,
+    "pdf": null,
+    "track": "Advanced Specialist",
+    "maven_tm_level": "TM-50L"
+  },
+  {
+    "id": "TM_50M_Advanced_ML_Engineer",
+    "pptx": "../../pdf/TM_50M_Advanced_ML_Engineer.pptx",
+    "title": "TM-50M \u2014 Advanced ML Engineer",
+    "slides": [],
+    "thumb": null,
+    "count": 0,
+    "pdf": null,
+    "track": "Advanced Specialist",
+    "maven_tm_level": "TM-50M"
+  },
+  {
+    "id": "T3_I_Instructor_Certification",
+    "pptx": "../../pdf/T3_I_Instructor_Certification.pptx",
+    "title": "T3-I \u2014 Instructor Certification Overview",
+    "slides": [],
+    "thumb": null,
+    "count": 0,
+    "pdf": "../../pdf/T3_I_Instructor_Certification.pdf",
+    "track": "Train-the-Trainer",
+    "maven_tm_level": "T3-I",
+    "maven_tm_note": "Prereq: TM-30 + C2DAO selection. 5-day classroom + practicum. Output: Certified Instructor."
+  },
+  {
+    "id": "T3_F_MSC_Force_Multiplier",
+    "pptx": "../../pdf/T3_F_MSC_Force_Multiplier.pptx",
+    "title": "T3-F \u2014 MSC Force Multiplier Overview",
+    "slides": [],
+    "thumb": null,
+    "count": 0,
+    "pdf": "../../pdf/T3_F_MSC_Force_Multiplier.pdf",
+    "track": "Train-the-Trainer",
+    "maven_tm_level": "T3-F",
+    "maven_tm_note": "Prereq: TM-20 + CDR nomination. 3-day course. Output: Unit Data Trainer (UDT)."
   }
 ]

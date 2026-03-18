@@ -1,6 +1,6 @@
 # TM-40J — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-40J qualifies Technical Project Managers, Product Owners, and Team Leads to plan, execute, and govern data, AI, and software capability builds on the Maven Smart System (MSS). This track bridges technical execution (TM-40G through TM-40L developers) and operational requirements (commanders, staff, end users).
+> **BLUF:** TM-40J qualifies Technical Project Managers, Product Owners, and Team Leads to plan, execute, and govern data, AI, and software capability builds on the Maven Smart System (MSS). This track bridges technical execution (TM-40G through TM-40M developers) and operational requirements (commanders, staff, end users).
 > **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Data Literacy Technical Reference (required); CONCEPTS_GUIDE_TM40J_PROGRAM_MANAGER (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -14,7 +14,7 @@
 
 **BLUF:** TM-40J qualifies Technical Project Managers, Product Owners, and Team Leads to plan,
 execute, and govern data, AI, and software capability builds on the Maven Smart System (MSS).
-This track bridges technical execution (TM-40G through TM-40L developers) and operational
+This track bridges technical execution (TM-40G through TM-40M developers) and operational
 requirements (commanders, staff, end users).
 
 This manual provides task-level instruction for managing the full lifecycle of a data or AI
@@ -33,7 +33,7 @@ and the operational units they support.
 - Risk and dependency management specific to data availability, model performance, and technical debt
 - Delivery planning: scope, timeline, and quality tradeoffs for data product releases
 - Coordinating across technical tracks: when to pull in TM-40H (AI Engineer), TM-40L (Software
-  Engineer), TM-40I (ML Engineer), TM-40K (Knowledge Manager), and TM-40L (SWE)
+  Engineer), TM-40M (ML Engineer), TM-40K (Knowledge Manager), and TM-40L (SWE)
 - Change management: deploying new MSS capabilities to operational users who resist change
 - Platform governance from a PM perspective: Foundry project permissions, resource allocation,
   and access stewardship
@@ -41,7 +41,7 @@ and the operational units they support.
 **TM-40J does NOT cover:**
 
 - Raw coding of Foundry transforms, Functions on Objects, or API integrations — see TM-40L
-- Machine learning model development and validation — see TM-40I (ML Engineer)
+- Machine learning model development and validation — see TM-40M (ML Engineer)
 - AI agent and workflow automation build — see TM-40H (AI Engineer)
 - Advanced statistical analysis and modeling — see TM-40G (ORSA)
 - Knowledge management architecture and data dictionary design — see TM-40K (KM)
@@ -66,7 +66,7 @@ The MSS ecosystem involves multiple technical disciplines that must be coordinat
 |--------|-------------------------------|--------------------------------------------------------------|
 | TM-40G | ORSA                          | Quantitative models, statistical analysis, analytical products |
 | TM-40H | AI Engineer                   | AI agents, AIP Logic, automated workflows, LLM integrations  |
-| TM-40I | ML Engineer                   | ML models, training pipelines, model evaluation and deployment |
+| TM-40M | ML Engineer                   | ML models, training pipelines, model evaluation and deployment |
 | TM-40J | Program Manager (Technical)   | Project tracking, stakeholder mgmt, delivery coordination    |
 | TM-40K | Knowledge Manager             | Data dictionaries, ontology governance, data stewardship     |
 | TM-40L | Software Engineer             | Custom Foundry code, Functions, API integrations, services   |
@@ -74,6 +74,28 @@ The MSS ecosystem involves multiple technical disciplines that must be coordinat
 The PM does not manage people's performance in the HR sense. The PM manages scope, timeline,
 risk, and stakeholder communication. The PM shields the technical team from requirements churn
 and ensures the team delivers the right thing to the right standard at the right time.
+
+### 1-2a. DDOF Roles and PM Oversight Responsibilities
+
+The Data and Digital Operations Framework (DDOF) defines six roles that participate in the
+data product lifecycle. The PM interacts with all six and must understand the oversight
+relationship for each.
+
+| DDOF Role | Typical Echelon | PM Oversight Responsibility |
+|---|---|---|
+| Decision Maker (DM) | O-6+ | PM ensures DM requirements are SMART-compliant (Specific, Measurable, Achievable, Relevant, Time-bound) before they enter the backlog |
+| C2DAO | O-4/O-5 | PM coordinates gate approvals with C2DAO at each DDOF phase transition |
+| Functional Data Manager (FDM) | O-3/O-4 | PM tracks FDM product lifecycle health and ensures FDM sign-off on data quality |
+| Data Engineer | Technical | PM manages sprint deliverables, pipeline schedules, and cross-team dependencies |
+| Data Scientist / ORSA | Technical | PM aligns analytical output to DM requirements and validates evaluation methodology |
+| Knowledge Manager | Staff | PM ensures documentation, ontology governance, and training compliance are current |
+
+> **NOTE:** The PM does not replace any DDOF role. The PM coordinates across roles and ensures
+> that handoffs between roles do not stall. When a DDOF gate decision is pending, the PM is
+> responsible for assembling the gate package, scheduling the review, and documenting the
+> outcome. The gate authority remains with the C2DAO and DM.
+
+*Source: DDOF Playbook v2.2, T2COM C2DAO, December 2025.*
 
 ---
 
@@ -90,7 +112,7 @@ owner, or team lead for a data or AI capability build.
 Upon completion of TM-40J, the Technical PM can:
 
 1. Stand up an Agile project structure (backlog, sprint cadence, ceremonies) for a data/AI project
-2. Write user stories and acceptance criteria that TM-40G through TM-40L developers can execute
+2. Write user stories and acceptance criteria that TM-40G through TM-40M developers can execute
    without ambiguity
 3. Manage an ML/AI project from research brief through production release using the MSS lifecycle
    model
@@ -118,7 +140,7 @@ TM-40J sits at the top of the no-code track and the entry point of the managemen
 TM-10 (User) → TM-20 (Builder) → TM-30 (Advanced Builder) → TM-40J (Technical PM)
                                                            ↘ TM-40G (ORSA)
                                                            ↘ TM-40H (AI Engineer)
-                                                           ↘ TM-40I (ML Engineer)
+                                                           ↘ TM-40M (ML Engineer)
                                                            ↘ TM-40K (KM)
                                                            ↘ TM-40L (SWE)
 ```
@@ -145,6 +167,7 @@ The following publications establish the policy, architectural, and governance f
 | USAREUR-AF C2DAO Guidance | Command governance for data operations | Operational governance |
 | Army DIR 2024-03 | Digital Engineering Policy | Army digital transformation directive |
 | AR 25-1 | Army Information Technology | IT governance and data management policy |
+| DDOF Playbook v2.2 | Data and Digital Operations Framework (T2COM C2DAO, December 2025) | DDOF roles, phases, gates, and Friction Matrix |
 | learn-data.armydev.com | CDA Portal | Training platform reference |
 
 ### 1-5a. Strategic Guidance
@@ -256,7 +279,7 @@ SO THAT [the operational or analytical outcome it enables]
 |----------------------------------------------------------------------------------------------------------------------|-------------|-------|
 | As a G4 officer, I want a live equipment readiness dashboard filtered by subordinate unit so that I can identify maintenance bottlenecks before the morning update. | TM-40L / TM-30 | M     |
 | As a data scientist, I want a cleaned and deduplicated personnel roster dataset refreshed daily so that my models have current input data. | TM-40L      | S     |
-| As a G2 analyst, I want the anomaly detection model to flag records scoring above 0.85 probability with an explanation of contributing features so that I can triage alerts without reviewing all raw data. | TM-40I      | L     |
+| As a G2 analyst, I want the anomaly detection model to flag records scoring above 0.85 probability with an explanation of contributing features so that I can triage alerts without reviewing all raw data. | TM-40M      | L     |
 | As a battalion S6, I want a Workshop form that submits equipment status updates directly to the MSS ontology so that I no longer re-key data from paper forms. | TM-40L / TM-30 | M     |
 
 **Bad user story patterns to reject:**
@@ -405,6 +428,65 @@ followed up, retrospectives become a venting session with no effect on team perf
 
 ---
 
+### 2-6. DDOF Configuration Management Friction Matrix
+
+**BLUF:** The DDOF Friction Matrix is the PM's primary diagnostic tool for identifying where
+a data product's progression through DDOF phases is blocked. The PM completes this matrix at
+each gate review and uses it to focus mitigation efforts on the specific assessment area and
+wedge causing delay.
+
+The DDOF Playbook defines three execution wedges, each containing two phases:
+
+| Wedge | Phase 1 | Phase 2 |
+|---|---|---|
+| Wedge 1 — Define | Problem Framing | Data Provisioning |
+| Wedge 2 — Build | Data Wrangling | Development |
+| Wedge 3 — Deliver | Test & Evaluation | Operations |
+
+The Friction Matrix assesses six areas against these three wedges. Each cell receives one
+rating:
+
+- **OK** — No impediments. Work proceeds as planned.
+- **FRICTION** — Impediment identified but contained. Mitigation underway. Does not block
+  adjacent phases.
+- **CASCADING FRICTION** — Impediment propagates to downstream phases or adjacent assessment
+  areas. Requires immediate PM escalation and cross-functional coordination to resolve.
+
+**DDOF Friction Matrix Template**
+
+| Assessment Area | Wedge 1 (Define) | Wedge 2 (Build) | Wedge 3 (Deliver) |
+|---|---|---|---|
+| Overall Phase Status | | | |
+| People | | | |
+| Process / Policy | | | |
+| Products | | | |
+| Resources | | | |
+| Technology | | | |
+
+### Procedure — Completing the Friction Matrix
+
+1. **Complete the matrix at each DDOF gate review.** Rate every cell based on current
+   conditions. Do not leave cells blank — an empty cell is an unassessed risk.
+
+2. **Mark FRICTION cells with a one-line root cause.** Example: "People / Wedge 2 — FRICTION:
+   TM-40M vacancy; no trained ML engineer available until backfill arrives."
+
+3. **Escalate all CASCADING FRICTION cells immediately.** A cascading friction in Wedge 1
+   blocks Wedge 2 and Wedge 3 downstream. The PM presents cascading items to the C2DAO with
+   a recommended mitigation and a timeline for resolution.
+
+4. **Track friction trends across sprints.** A cell that stays at FRICTION for three or more
+   consecutive reviews is functionally cascading — escalate it regardless of the current rating.
+
+> **WARNING:** Do not use the Friction Matrix as a static reporting artifact. The matrix is an
+> active management tool. If the PM completes it but takes no action on FRICTION or CASCADING
+> FRICTION cells, the matrix provides no value. Every non-OK cell requires a documented
+> mitigation action and an owner.
+
+*Source: DDOF Playbook v2.2 (p.15), T2COM C2DAO, December 2025.*
+
+---
+
 ## CHAPTER 3 — MANAGING ML AND AI PROJECT LIFECYCLES
 
 ### 3-1. The ML/AI Project Lifecycle
@@ -456,10 +538,10 @@ recommended TM-40 tracks to assign.
 4. **Define the success metric.** How will the PM know the model is good enough to release?
    Examples: precision/recall thresholds, false positive rate limits, agreement rate with
    subject matter expert review, stakeholder acceptance rate in evaluation. Write this down
-   before modeling begins — do not let TM-40I define done post hoc.
+   before modeling begins — do not let TM-40M define done post hoc.
 
 5. **Assign tracks.** Typical ML project assignment:
-   - TM-40I: model development, training pipeline, evaluation
+   - TM-40M: model development, training pipeline, evaluation
    - TM-40L: data pipeline, feature engineering code
    - TM-40G: baseline statistical analysis, performance benchmarking
    - TM-40H: AIP integration if model output feeds an AI agent or workflow
@@ -481,12 +563,12 @@ data is sufficient to train, validate, and run the model in production.
 
 ### Standards
 
-TM-40I and TM-40K deliver a Data Audit Report. The PM reviews the report and makes a
+TM-40M and TM-40K deliver a Data Audit Report. The PM reviews the report and makes a
 go/no-go decision before authorizing prototype development.
 
 ### Procedure
 
-1. **Pull TM-40I and TM-40K to audit each data source.** For each source, document:
+1. **Pull TM-40M and TM-40K to audit each data source.** For each source, document:
 
    | Attribute            | Question to Answer                                                    |
    |----------------------|-----------------------------------------------------------------------|
@@ -505,7 +587,7 @@ go/no-go decision before authorizing prototype development.
      stakeholder. Offer alternative: rule-based heuristics instead of ML, or a simpler
      statistical model that requires less history.
    - If labels are unavailable for a supervised approach: reassess model type. Unsupervised
-     or semi-supervised methods may apply; engage TM-40I for recommendation.
+     or semi-supervised methods may apply; engage TM-40M for recommendation.
    - If access is blocked: escalate to C2DAO immediately. Do not let access blockers sit.
 
 3. **Document the data audit decision.** Record in the project tracker: data sources approved,
@@ -527,7 +609,7 @@ deep enough to support model training. The prototype sprint begins.
 
 ### Standards
 
-At the end of the prototype phase, TM-40I delivers a working model that can run on the
+At the end of the prototype phase, TM-40M delivers a working model that can run on the
 approved input data and produce output in the defined format, with preliminary performance
 metrics against the defined success criteria.
 
@@ -537,8 +619,8 @@ metrics against the defined success criteria.
    a proof of feasibility. Resist stakeholder requests to add features, expand the data scope,
    or integrate the prototype with production Workshop before evaluation is complete.
 
-2. **Protect TM-40I from distraction.** Model development requires sustained focus. Do not pull
-   TM-40I into stakeholder demonstrations, unrelated tasks, or data pipeline work during
+2. **Protect TM-40M from distraction.** Model development requires sustained focus. Do not pull
+   TM-40M into stakeholder demonstrations, unrelated tasks, or data pipeline work during
    prototype sprints unless it is directly required for the model.
 
 3. **Check in daily on blockers — not on model progress.** Ask: "Are you blocked on anything?"
@@ -565,13 +647,13 @@ defined success metric and is ready to enter a production readiness review.
 
 ### Standards
 
-The PM conducts an Evaluation Review with TM-40I, TM-40G (for independent statistical
+The PM conducts an Evaluation Review with TM-40M, TM-40G (for independent statistical
 assessment), and at least one operational subject matter expert (SME). The review produces a
 documented pass/fail/iterate decision.
 
 ### Procedure
 
-1. **Assemble the evaluation package.** TM-40I delivers:
+1. **Assemble the evaluation package.** TM-40M delivers:
    - Performance metrics (precision, recall, F1, AUC, or task-appropriate metrics)
    - Confusion matrix or error analysis
    - Feature importance or model explanation summary
@@ -612,7 +694,7 @@ The model passes evaluation. The PM must now manage the production deployment pr
 ### Standards
 
 The PM completes the Definition of Done checklist (Appendix B), coordinates a production
-release plan with TM-40L and TM-40I, and communicates the release to operational users
+release plan with TM-40L and TM-40M, and communicates the release to operational users
 before deployment.
 
 ### Procedure
@@ -623,14 +705,14 @@ before deployment.
 2. **Build the production monitoring plan.** Define:
    - How will model performance be monitored in production? (Input data distribution shifts,
      output confidence score distribution, user override rate)
-   - Who is the model owner responsible for monitoring? (Typically TM-40I)
+   - Who is the model owner responsible for monitoring? (Typically TM-40M)
    - What threshold triggers a model review? (Define numerically — not "if it seems off")
    - What is the rollback procedure if the model degrades?
 
 3. **Coordinate the deployment window.** Schedule the production deployment during a low-
    operational-tempo window. Notify downstream users 48 hours in advance per the Safety Summary.
 
-4. **Execute the deployment with TM-40L and TM-40I present.** Run the deployment against the
+4. **Execute the deployment with TM-40L and TM-40M present.** Run the deployment against the
    production environment. Validate model outputs after deployment before declaring success.
 
 5. **Brief the operational stakeholder.** Walk the stakeholder through the production product:
@@ -649,14 +731,14 @@ data sources change schema or refresh rates.
 
 ### PM Sustainment Responsibilities
 
-1. **Schedule quarterly model reviews.** TM-40I reviews performance metrics quarterly.
+1. **Schedule quarterly model reviews.** TM-40M reviews performance metrics quarterly.
    PM reviews the report and decides: sustain, retrain, or retire.
 
 2. **Track upstream data source changes.** If a TM-40L pipeline engineer or a TM-40K KM
    flags that an input data source has changed schema or refresh rate, escalate immediately.
    A changed input can silently degrade model performance without triggering any obvious error.
 
-3. **Maintain model version tracking on MSS.** Model deployment in Foundry follows this pattern: batch inference transforms write predictions to a Foundry dataset, which then serves as the source for computed properties on Object Types, or models are integrated into AIP Logic workflows. The TM-40I model owner must keep the model card and associated dataset documentation current — reflecting version, training date, performance metrics, and owner — after every retrain.
+3. **Maintain model version tracking on MSS.** Model deployment in Foundry follows this pattern: batch inference transforms write predictions to a Foundry dataset, which then serves as the source for computed properties on Object Types, or models are integrated into AIP Logic workflows. The TM-40M model owner must keep the model card and associated dataset documentation current — reflecting version, training date, performance metrics, and owner — after every retrain.
 
 4. **Manage model retirement.** When a model is retired (superseded, no longer operationally
    relevant, or failing sustainment review), the PM coordinates: stakeholder notification,
@@ -680,7 +762,7 @@ The translation problem manifests in two directions:
 awareness on logistics." The PM must translate this into: a specific dataset, a refresh
 cadence, a display format, a user story, and acceptance criteria that TM-40L can build.
 
-**Direction 2 — Technical to Operational:** A TM-40I says "the model has an AUC of 0.87
+**Direction 2 — Technical to Operational:** A TM-40M says "the model has an AUC of 0.87
 but the recall on the minority class is 0.61 at the 0.5 threshold." The PM must translate
 this into: "The model correctly identifies roughly six out of every ten high-risk events,
 which means it misses four. For this use case, missing four out of ten is operationally
@@ -781,7 +863,7 @@ language with stakeholders:
 
 The PM holds authority over: scope, priority, stakeholder communication, release timing, and
 project tracking. The PM does not hold authority over: how a developer implements a feature,
-which algorithm a TM-40I uses, or how TM-40L structures code.
+which algorithm a TM-40M uses, or how TM-40L structures code.
 
 Attempting to micro-manage technical implementation decisions creates friction, reduces team
 ownership, and produces worse outcomes. Delegate technical decisions to the appropriate TM-40
@@ -809,9 +891,9 @@ hand-off points:
 
 | Dependency Pattern                              | PM Action                                                                          |
 |-------------------------------------------------|------------------------------------------------------------------------------------|
-| TM-40L pipeline must complete before TM-40I can train | Make pipeline story a sprint 1 item; model story a sprint 2 item with explicit dependency noted |
+| TM-40L pipeline must complete before TM-40M can train | Make pipeline story a sprint 1 item; model story a sprint 2 item with explicit dependency noted |
 | TM-40K ontology object must exist before TM-40L can write to it | TM-40K story goes in sprint backlog; TM-40L story blocked until merged |
-| TM-40H agent workflow depends on TM-40I model output format | PM defines the output schema interface in sprint planning; both tracks work to that contract |
+| TM-40H agent workflow depends on TM-40M model output format | PM defines the output schema interface in sprint planning; both tracks work to that contract |
 | TM-30 Workshop dashboard depends on TM-40L pipeline | Pipeline completes and is validated before Workshop build begins                    |
 
 ---
@@ -898,7 +980,7 @@ Project, and Team Member to Stories (as assignee).
    | size              | Enum     | S / M / L / XL                             |
    | status            | Enum     | Backlog / Ready / In Progress / In Review / Done |
    | assignee          | String   | TM-40 track + name                         |
-   | track             | Enum     | 40A / 40B / 40C / 40D / 40E / 40F / 40G / 40H / 40I / 40J / 40K / 40L / 30 |
+   | track             | Enum     | 40A / 40B / 40C / 40D / 40E / 40F / 40G / 40H / 40M / 40J / 40K / 40L / 30 |
    | blocked           | Boolean  | True if blocker exists                      |
    | blocker_description | String | Description of blocker (if blocked = true) |
    | sprint_link       | Link     | → Sprint                                    |
@@ -1146,10 +1228,10 @@ a Workshop view can display it. Managing these dependencies is a primary PM func
 
 | Pattern                                               | PM Action                                                          |
 |-------------------------------------------------------|--------------------------------------------------------------------|
-| Data pipeline (TM-40L) blocks model training (TM-40I) | Sequence sprints; pipeline in sprint N, model in sprint N+1       |
+| Data pipeline (TM-40L) blocks model training (TM-40M) | Sequence sprints; pipeline in sprint N, model in sprint N+1       |
 | External data source access blocked by C2DAO          | Escalate at sprint planning; do not let access requests age        |
 | TM-40K ontology design blocks TM-40L coding           | Start ontology design in sprint 1 even if build is sprint 2 work  |
-| TM-40H agent depends on TM-40I model endpoint         | Define API contract in sprint planning; both tracks work to spec   |
+| TM-40H agent depends on TM-40M model endpoint         | Define API contract in sprint planning; both tracks work to spec   |
 | MSS platform upgrade changes Workshop component API   | Track platform release calendar; coordinate with TM-40L on timing |
 
 > **WARNING:** Do not assume external dependencies will resolve on schedule. Treat all
@@ -1176,7 +1258,7 @@ The PM is responsible for managing the technical debt backlog — not just the f
    stories compete with feature stories without a dedicated capacity allocation. Stakeholders
    will always want features; tech debt will never win if unprotected.
 
-3. **Conduct a tech debt review at each quarterly retrospective.** TM-40L and TM-40I identify
+3. **Conduct a tech debt review at each quarterly retrospective.** TM-40L and TM-40M identify
    the highest-impact debt items. PM prioritizes the top three into the next quarter's capacity.
 
 4. **Never allow tech debt to accumulate in production monitoring.** An ML model in production
@@ -1229,7 +1311,7 @@ a late, descoped, low-quality product.
    three-sprint velocity baseline establishes a credible forecast.
 
 2. **Run a release readiness review before every production release.** The release readiness
-   review is a PM-led meeting with TM-40L, TM-40I (if ML involved), and TM-40K. The agenda:
+   review is a PM-led meeting with TM-40L, TM-40M (if ML involved), and TM-40K. The agenda:
    - Is the Definition of Done checklist complete?
    - Are all known defects triaged — none outstanding at Critical severity?
    - Is the monitoring plan in place?
@@ -1279,7 +1361,7 @@ For an ML/AI model product (in addition to the above):
 - The model has been evaluated on data it was not trained on (holdout or production sample)
 - A model card documenting training data, performance metrics, known failure modes, and
   appropriate use cases exists and is stored in the project space
-- A monitoring plan is active and the model owner (TM-40I) has accepted monitoring
+- A monitoring plan is active and the model owner (TM-40M) has accepted monitoring
   responsibility
 - The stakeholder has been briefed on how to interpret model outputs, including what the
   model does not do and what to do when the output seems wrong
@@ -1305,6 +1387,51 @@ as intended in production.
 **PM Action:** If answers to questions 1-2 indicate the product is not being used, escalate
 to Chapter 8 (Change Management). Low adoption in the first two weeks after release is the
 leading indicator of a change management problem, not a product quality problem.
+
+---
+
+### 7-6. Data Product Portfolio Health Metrics
+
+**BLUF:** PMs managing multiple data products track portfolio health using DDOF-aligned
+metrics. These metrics identify products that are stalled, degrading, or approaching
+retirement thresholds before they become operational gaps.
+
+The PM maintains a portfolio health view using the following metric categories:
+
+**Products per DDOF Phase.** Track how many data products are in each DDOF phase (Problem
+Framing, Data Provisioning, Data Wrangling, Development, Test & Evaluation, Operations).
+A healthy portfolio has products distributed across phases. A portfolio with all products
+in Development and none in Operations indicates a delivery bottleneck.
+
+**Gate Pass/Fail Rates.** Track the outcome of each DDOF gate review across the portfolio.
+A high gate-fail rate in a specific phase signals a systemic problem — insufficient data
+quality processes, unclear requirements, or inadequate evaluation methodology — not just
+individual product issues.
+
+**Time-in-Phase vs. Standard/Maximum.** Each DDOF phase has an expected duration (standard)
+and a maximum allowable duration. The PM tracks actual time-in-phase for each product. Products
+exceeding the standard duration require a documented explanation. Products exceeding the maximum
+trigger an escalation to the C2DAO for a continue/stop decision.
+
+**VAULTIS-A Quality Scores.** Data products in Operations are assessed against the VAULTIS-A
+quality dimensions (Validity, Accuracy, Uniqueness, Lineage, Timeliness, Integrity,
+Security, Accessibility). The PM tracks these scores at quarterly reviews. A product scoring
+below 70% on any VAULTIS-A dimension enters a remediation cycle.
+
+**Retirement Trigger Monitoring.** The PM monitors two retirement triggers for products in
+the Operations phase:
+
+| Trigger | Threshold | PM Action |
+|---|---|---|
+| No-access period | 90 days with zero user access | Initiate retirement review with stakeholder |
+| Extended no-access | 180 days with zero user access | Recommend retirement to C2DAO; archive product |
+| Quality degradation | VAULTIS-A score below 70% for two consecutive quarters | Initiate remediation or retirement decision |
+
+> **NOTE:** Retirement is not failure. Data products have a lifecycle. A product built for a
+> specific exercise, deployment, or reporting cycle may no longer be operationally relevant.
+> The PM's responsibility is to identify products that should be retired and execute the
+> retirement cleanly — freeing platform resources and reducing governance burden — rather
+> than allowing unused products to accumulate.
 
 ---
 
@@ -1565,7 +1692,7 @@ documented rationale. The PM signs off on the DoD — not the developer, not the
 | 1.3 | All input datasets have a documented refresh schedule and the pipeline runs on that schedule without manual intervention | Critical | |
 | 1.4 | Missing value handling is documented and tested — the pipeline does not silently produce incorrect outputs when upstream data is null or delayed | High | |
 | 1.5 | Schema changes in input datasets have been accounted for — the pipeline handles variations seen in the past 12 months | High | |
-| 1.6 | A data quality check (TM-40I: @check, or equivalent validation step) runs on critical input fields before outputs are published | High | |
+| 1.6 | A data quality check (TM-40M: @check, or equivalent validation step) runs on critical input fields before outputs are published | High | |
 
 **Section 2 — Product Function**
 
@@ -1622,7 +1749,7 @@ a trained ML model, AI agent, or LLM integration.
 | ML-4 | Operational SME has reviewed sample model outputs and accepted output quality | Critical | |
 | ML-5 | Model output display includes confidence scores or uncertainty indicators — not bare binary outputs without context | High | |
 | ML-6 | The product UI communicates what the model does NOT predict and where it should not be used | High | |
-| ML-7 | Model monitoring is configured: TM-40I has accepted model owner responsibility and defined the threshold that triggers a model review | Critical | |
+| ML-7 | Model monitoring is configured: TM-40M has accepted model owner responsibility and defined the threshold that triggers a model review | Critical | |
 | ML-8 | Model version and training date are documented in the model card and associated Foundry dataset records. Model deployment in Foundry follows this pattern: batch inference transforms write predictions to a Foundry dataset, which then serves as the source for computed properties on Object Types, or models are integrated into AIP Logic workflows. | High | |
 | ML-9 | Retraining schedule or trigger is documented (time-based or performance-based) | High | |
 
@@ -1683,6 +1810,11 @@ Not a status meeting — a coordination mechanism.
 development. Covers completeness, timeliness, historical depth, label availability, and
 schema stability. PM gate before prototype authorization.
 
+**DDOF (Data and Digital Operations Framework)** — The T2COM C2DAO framework governing
+the lifecycle of data products from problem framing through operations. Defines six roles,
+three execution wedges (Define, Build, Deliver), and phase gates. The PM uses the DDOF
+Friction Matrix (2-6) to assess execution health across all phases.
+
 **Definition of Done (DoD)** — The PM-owned quality gate checklist for production
 releases. All items must pass (or be formally waived) before a data product is deployed
 to production. See Appendix B.
@@ -1691,12 +1823,20 @@ to production. See Appendix B.
 another task or external input is available. Tracked as a Dependency Object in the project
 tracker. Managed actively by the PM to prevent sprint-level blocks.
 
+**FDM (Functional Data Manager)** — The DDOF role (typically O-3/O-4) responsible for
+managing a data product's lifecycle within a functional area. The PM tracks FDM product
+health and ensures FDM sign-off on data quality at each gate.
+
 **Feature** — A discrete, user-facing capability of a data product. Composed of one or
 more user stories. Features are prioritized in the backlog; stories are scheduled into sprints.
 
 **Foundry** — The underlying Palantir platform on which the Maven Smart System (MSS) is
 built. TM-40J personnel interact with Foundry primarily through Workshop, Ontology UI,
 Pipeline Builder, and Contour.
+
+**Friction Matrix** — The DDOF Configuration Management assessment template (5x6 grid)
+that rates six assessment areas across three execution wedges as OK, FRICTION, or CASCADING
+FRICTION. The PM's primary diagnostic tool for identifying DDOF execution blocks. See 2-6.
 
 **Kanban** — An Agile method that manages continuous flow of work using a visual board
 with WIP limits, rather than fixed-length sprints. Used for sustainment and support work
@@ -1769,12 +1909,17 @@ completed to maintain product quality and operability. Examples: hardcoded value
 tests, undocumented transforms. PM manages tech debt as a reserved backlog capacity item.
 
 **TM-40 Track** — Specialized capability track for data/AI professionals on MSS.
-Tracks: TM-40G (ORSA), TM-40H (AI Engineer), TM-40I (ML Engineer), TM-40J (Technical PM),
+Tracks: TM-40G (ORSA), TM-40H (AI Engineer), TM-40M (ML Engineer), TM-40J (Technical PM),
 TM-40K (KM), TM-40L (SWE). TM-40J coordinates across all tracks.
 
 **UDRA** — Unified Data Reference Architecture, version 1.1 (February 2025). The Army's
 authoritative data architecture guidance. Informs MSS data product design standards and
 data governance practices.
+
+**VAULTIS-A** — Data quality assessment framework with eight dimensions: Validity, Accuracy,
+Uniqueness, Lineage, Timeliness, Integrity, Security, and Accessibility. The PM tracks
+VAULTIS-A scores at quarterly reviews for all products in Operations phase. Products scoring
+below 70% on any dimension enter a remediation cycle. See 7-6.
 
 **User Story** — A brief description of a feature from the perspective of the user who
 will benefit from it. Format: "As a [user], I want [capability], so that [outcome]."

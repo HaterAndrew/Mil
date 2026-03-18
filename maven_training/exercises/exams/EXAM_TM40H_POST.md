@@ -8,7 +8,7 @@
 | **Level** | TM-40H (Specialist) |
 | **Audience** | AI/ML specialists; prerequisite: TM-10+20+30 + Python + prompt engineering familiarity |
 | **Time Allowed** | 45 minutes |
-| **Passing Score** | 70% (42/60) |
+| **Passing Score** | 70% (49/70) |
 
 ---
 
@@ -127,6 +127,20 @@ B. Using the documented rollback plan — reverting to the previous workflow ver
 C. Contacting the Palantir support team to restore the previous model version
 D. Disabling the workflow and rebuilding it from scratch
 
+**16. Per ADP 3-13, the doctrinal principle governing AI/ML integration into operational workflows is:**
+
+A. AI systems should fully automate repetitive staff tasks to free human capacity for higher-order analysis
+B. AI enables speed; humans provide judgment — no AI/ML output replaces commander decision authority
+C. AI systems are authorized for autonomous action when latency requirements exceed human reaction time
+D. AI outputs are considered equivalent to human analysis once validated during initial testing
+
+**17. FM 2-0 describes the intelligence cycle as Processing, Exploitation, and Dissemination (PED). When mapped to an AI/ML pipeline on MSS, the "Exploitation" phase corresponds to:**
+
+A. Data ingestion and ETL transforms that structure raw feeds into datasets
+B. Model training, inference, prompt-based reasoning, and pattern detection under analyst supervision
+C. Delivering formatted outputs to Workshop dashboards and Contour reports
+D. Storing processed data in the Ontology for downstream retrieval
+
 ---
 
 ## SECTION 2 — SHORT ANSWER
@@ -199,11 +213,11 @@ D. Disabling the workflow and rebuilding it from scratch
 
 | Section | Questions | Points Each | Total Points |
 |---|---|---|---|
-| Multiple Choice | 15 | 2 | 30 |
+| Multiple Choice | 17 | 2 | 34 |
 | Short Answer | 6 | 6 | 36 |
-| **Total** | — | — | **66** |
+| **Total** | — | — | **70** |
 
-Passing: 46/66 (70%) — Post-test only. Pre-test is diagnostic.
+Passing: 49/70 (70%) — Post-test only. Pre-test is diagnostic.
 
 ---
 
@@ -227,6 +241,8 @@ Passing: 46/66 (70%) — Post-test only. Pre-test is diagnostic.
 13. B — Automated personnel evaluation scoring without human review is a prohibited use case.
 14. B — Pagination handling is required when result sets exceed the single-page record limit.
 15. B — Rollback plan: revert workflow version, notify users, investigate root cause before re-deploying.
+16. B — ADP 3-13 establishes that AI enables speed while humans provide judgment. No AI/ML output replaces commander decision authority. Option A overstates automation scope — ADP 3-13 requires human judgment, not full automation. Option C describes autonomous action, which is prohibited per TM-40H policy. Option D conflates initial testing with ongoing governance — VAULTIS-A compliance is continuous. Source: ADP 3-13 / TM-40H Section 1-5a.
+17. B — Exploitation is the application of analytical methods to derive meaning from processed data. In AI/ML terms, this maps to model training, inference, and pattern detection. Option A describes Processing (data preprocessing). Option C describes Dissemination (output delivery). Option D describes a storage function not in PED. Source: FM 2-0, Chapter 3 / TM-40H Section 1-4.
 
 **Short Answer Guidance:**
 

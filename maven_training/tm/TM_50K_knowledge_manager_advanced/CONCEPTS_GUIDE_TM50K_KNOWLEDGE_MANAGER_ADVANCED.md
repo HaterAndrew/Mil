@@ -18,6 +18,8 @@ A TM-50K Advanced KM designs the infrastructure within which TM-40K KMs operate.
 
 ### 1-2. From Capture to Learning Infrastructure
 
+> **NOTE:** TM-40K now codifies the FM 6-0 five-step KM process, three KM tasks, six KM tool categories, and the five integrating processes for enterprise KM across echelons. The theater-scale learning architecture described below builds on that doctrinal foundation; review TM-40K Section 1-5b before designing cross-echelon KM systems.
+
 Tactical KM (TM-40K) is primarily concerned with capture: getting observations into a system before knowledge walks out the door at RIP/TOA. Strategic KM (TM-50K) is concerned with the full learning cycle:
 
 | Phase | Tactical KM Focus | Strategic KM Focus |
@@ -396,7 +398,7 @@ The test: if the current Advanced KM were reassigned tomorrow, could their repla
 |---|---|---|
 | TM-50G | Advanced ORSA | ORSA-derived knowledge products; analytical lessons capture |
 | TM-50H | Advanced AI Engineer | AI-assisted KM workflows; corpus design and ontology-RAG integration |
-| TM-50I | Advanced ML Engineer | Feature data governance; training corpus quality |
+| TM-50M | Advanced ML Engineer | Feature data governance; training corpus quality |
 | TM-50J | Advanced Program Manager | KM program oversight; portfolio-level knowledge governance |
 | TM-50L | Advanced Software Engineer | Platform SDK infrastructure supporting enterprise KM systems |
 

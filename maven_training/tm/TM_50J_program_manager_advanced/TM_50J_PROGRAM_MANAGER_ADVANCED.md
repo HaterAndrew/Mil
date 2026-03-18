@@ -1,12 +1,12 @@
 # TM-50J — ADVANCED PROGRAM MANAGER (TECHNICAL)
 
 > **BLUF:** TM-50J qualifies Technical Program Managers to lead the USAREUR-AF MSS data capability at scale — managing multiple concurrent product teams, directing portfolio investment, and advising senior leaders on data as an operational asset.
-> **Prereqs:** TM-40J, Program Manager (Technical) (required). Graduates of TM-40J who have managed at least one full-lifecycle MSS data or AI project from initiation through production release, with demonstrated proficiency in Agile delivery, stakeholder management, and MSS platform governance. Familiarity with TM-40G (ORSA), TM-40H (AI Engineer), TM-40I (ML Engineer), TM-40K (Knowledge Manager), and TM-40L (Software Engineer) track content strongly recommended; CONCEPTS_GUIDE_TM50J_PROGRAM_MANAGER_ADVANCED (read before this manual).
+> **Prereqs:** TM-40J, Program Manager (Technical) (required). Graduates of TM-40J who have managed at least one full-lifecycle MSS data or AI project from initiation through production release, with demonstrated proficiency in Agile delivery, stakeholder management, and MSS platform governance. Familiarity with TM-40G (ORSA), TM-40H (AI Engineer), TM-40M (ML Engineer), TM-40K (Knowledge Manager), and TM-40L (Software Engineer) track content strongly recommended; CONCEPTS_GUIDE_TM50J_PROGRAM_MANAGER_ADVANCED (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: TM-50J program managers are accountable for the health of the USAREUR-AF data capability portfolio. Decisions made at this level — team structures, vendor deliverable acceptance, product retirement, and GO/SES briefings — have direct operational consequences for USAREUR-AF and EUCOM mission readiness. Apply the same standard of care as an operational mission brief: confirm facts, coordinate with stakeholders, and communicate clearly before execution.**
 > **CAUTION: Multi-team Agile coordination (SAFe or equivalent) requires explicit dependency management across teams. An undocumented inter-team dependency is a hidden risk. Failure to surface and manage cross-team dependencies during planning creates blocked sprints, delayed releases, and degraded data product quality.**
-> **NOTE: This manual assumes full mastery of TM-40J content. Chapter references to TM-40G through TM-40L indicate the technical tracks managed by TM-50J program managers — not prerequisites for the PM role itself. Cross-references are provided to help TM-50J graduates understand the work they are overseeing.**
+> **NOTE: This manual assumes full mastery of TM-40J content. Chapter references to TM-40G through TM-40M indicate the technical tracks managed by TM-50J program managers — not prerequisites for the PM role itself. Cross-references are provided to help TM-50J graduates understand the work they are overseeing.**
 
 ---
 
@@ -41,7 +41,7 @@ TM-50J covers the following capability areas:
 
 ### 1-3. Relationship to TM-40J and the Technical Tracks
 
-TM-50J program managers oversee the work of TM-40J project managers and the technical practitioners in tracks TM-40G through TM-40L. Understanding what each track produces — and what failure looks like in each — is essential for program-level oversight.
+TM-50J program managers oversee the work of TM-40J project managers and the technical practitioners in tracks TM-40G through TM-40M. Understanding what each track produces — and what failure looks like in each — is essential for program-level oversight.
 
 **Table 1-2. Technical Tracks Managed by TM-50J**
 
@@ -49,7 +49,7 @@ TM-50J program managers oversee the work of TM-40J project managers and the tech
 |-------|------|-----------------|---------------------|
 | TM-40G | ORSA | Analytical models, campaign analysis, optimization | Over-engineered models that outrun user comprehension |
 | TM-40H | AI Engineer | AI pipeline architecture, model deployment, AIP | Technically correct pipelines that solve the wrong problem |
-| TM-40I | ML Engineer | ML model development, training, evaluation | Models that degrade silently in production |
+| TM-40M | ML Engineer | ML model development, training, evaluation | Models that degrade silently in production |
 | TM-40J | Tech PM | Project delivery, stakeholder management, product release | On-time delivery of the wrong product |
 | TM-40K | Knowledge Manager | Ontology, data governance, KM architecture | Perfect data models no one uses |
 | TM-40L | Software Engineer | Custom transforms, integrations, API layers | High-quality code solving problems that could be configured |
@@ -62,7 +62,7 @@ TM-50J graduates must recognize failure modes across all tracks and understand h
 |---|---|---|
 | TM-50G | ORSA Advanced | Portfolio-level analytical program governance; OR product review |
 | TM-50H | AI Engineer Advanced | AI program lifecycle management; governance acquisition (Chapter 8) |
-| TM-50I | ML Engineer Advanced | ML program portfolio management; automated pipeline governance |
+| TM-50M | ML Engineer Advanced | ML program portfolio management; automated pipeline governance |
 | TM-50J | Program Manager Advanced | THIS DOCUMENT |
 | TM-50K | Knowledge Manager Advanced | KM system program oversight; lessons learned program management |
 | TM-50L | Software Engineer Advanced | Platform engineering program coordination; SWE team structure |
@@ -81,14 +81,14 @@ The USAREUR-AF MSS operates in an environment characterized by:
 
 ### 1-4A. The TM-50J Program Manager Profile
 
-The TM-50J program manager is not the most technically skilled person on the team. The ORSA (TM-50G), AI Engineer (TM-50H), or ML Engineer (TM-50I) will typically have deeper technical expertise in their domains. The TM-50J's value is integrative: the ability to hold a coherent picture of the entire program simultaneously, to make decisions under uncertainty with incomplete information, and to maintain the trust of both senior leaders and technical practitioners.
+The TM-50J program manager is not the most technically skilled person on the team. The ORSA (TM-50G), AI Engineer (TM-50H), or ML Engineer (TM-50M) will typically have deeper technical expertise in their domains. The TM-50J's value is integrative: the ability to hold a coherent picture of the entire program simultaneously, to make decisions under uncertainty with incomplete information, and to maintain the trust of both senior leaders and technical practitioners.
 
 **Table 1-3. TM-50J Competency Profile**
 
 | Competency Domain | Key Behaviors | Development Path |
 |-------------------|--------------|-----------------|
 | Program-level thinking | Sees portfolio risk, not just project risk; understands how individual decisions affect the whole | Managing 3+ concurrent TM-40J-level projects; PI Planning facilitation experience |
-| Technical fluency | Understands enough of each technical track to ask the right questions and recognize when answers are implausible; reads code and data schemas | Completion of TM-40J; familiarity with TM-40G through TM-40L content; regular sprint reviews |
+| Technical fluency | Understands enough of each technical track to ask the right questions and recognize when answers are implausible; reads code and data schemas | Completion of TM-40J; familiarity with TM-40G through TM-40M content; regular sprint reviews |
 | Senior stakeholder management | Comfortable briefing GO/SES; can deliver bad news professionally; maintains trust under pressure | Direct GO/SES briefing experience; mentorship from senior military or SES leaders |
 | Quantitative reasoning | Uses delivery data analytically; interprets statistical signals; communicates metrics in operational terms | Statistical literacy; data product familiarity; Chapter 5 of this manual |
 | Change leadership | Reads organizational resistance; designs change for the military context; sustains change through personnel turbulence | Field experience with technology adoption in military formations |
@@ -505,7 +505,7 @@ Delivery metrics are correlational, not causal. A drop in velocity tells you a t
 
 1. **Ask, don't tell.** The program manager asks Team Bravo's TM-40J PM: "I'm seeing a velocity drop over the last three sprints. Walk me through what's been different."
 
-2. **Look at what changed.** The PM reports: Sprint N-2 was normal; Sprint N-1 began after the senior ML engineer (TM-40I) rotated out; Sprint N began after a major Foundry platform update that required the team to adapt three of their pipelines mid-sprint.
+2. **Look at what changed.** The PM reports: Sprint N-2 was normal; Sprint N-1 began after the senior ML engineer (TM-40M) rotated out; Sprint N began after a major Foundry platform update that required the team to adapt three of their pipelines mid-sprint.
 
 3. **Interpret the data in context.** The velocity drop is explained by two compounding factors: loss of a senior technical contributor mid-PI, and an unplanned platform migration burden. Neither is evidence of underperformance — both are evidence of a program-level risk that was not adequately mitigated.
 
@@ -568,11 +568,11 @@ Not all technical debt is equal. Classify debt before prioritizing it.
 
 **STANDARDS:** Assessment is complete when: all active products have been assessed against the debt classification framework; each identified debt item is categorized, sized (story points or days), and assigned a risk rating; the aggregate debt backlog is documented in the program tracker; a prioritized debt reduction roadmap covers the next two PIs.
 
-**EQUIPMENT:** MSS program tracker (product inventory, backlog), debt classification framework (Table 6-1), access to product documentation for each active MSS product, technical leads (TM-40G through TM-40L) for each product.
+**EQUIPMENT:** MSS program tracker (product inventory, backlog), debt classification framework (Table 6-1), access to product documentation for each active MSS product, technical leads (TM-40G through TM-40M) for each product.
 
 **PROCEDURE:**
 
-1. **Assemble the assessment team.** The debt assessment requires input from the technical practitioners who built and maintain each product. Schedule a half-day workshop with TM-40G through TM-40L leads for each active product. The PM does not lead the technical assessment — they facilitate it and document the outputs.
+1. **Assemble the assessment team.** The debt assessment requires input from the technical practitioners who built and maintain each product. Schedule a half-day workshop with TM-40G through TM-40M leads for each active product. The PM does not lead the technical assessment — they facilitate it and document the outputs.
 
 2. **Assess each product against the six debt categories.** For each category, rate the severity: None, Low, Medium, High. For any Medium or High rating, document the specific debt item, the estimated remediation cost, and the operational risk if the debt is not addressed.
 
@@ -626,11 +626,11 @@ This decision recurs constantly at the program level. A new stakeholder requirem
 
 **STANDARDS:** Decision is documented when: all three options have been evaluated against the framework in Table 6-2; a recommendation is made with supporting rationale; the decision is recorded in the program backlog and communicated to the requesting stakeholder with an expected delivery timeline.
 
-**EQUIPMENT:** Build/Buy/Configure decision framework (Table 6-2), MSS program backlog in program tracker, access to relevant technical leads (TM-40H, TM-40I, TM-40K, TM-40L), C2DAO program inventory for existing procurement options.
+**EQUIPMENT:** Build/Buy/Configure decision framework (Table 6-2), MSS program backlog in program tracker, access to relevant technical leads (TM-40H, TM-40M, TM-40K, TM-40L), C2DAO program inventory for existing procurement options.
 
 **PROCEDURE:**
 
-1. Brief the requirement to the relevant technical leads (TM-40H, TM-40I, TM-40K, TM-40L as appropriate). Ask each to assess: can this requirement be met by an existing platform feature? Rate: Yes (full fit), Partial (80% fit with acceptable gaps), No (platform feature inadequate).
+1. Brief the requirement to the relevant technical leads (TM-40H, TM-40M, TM-40K, TM-40L as appropriate). Ask each to assess: can this requirement be met by an existing platform feature? Rate: Yes (full fit), Partial (80% fit with acceptable gaps), No (platform feature inadequate).
 
 2. If consensus is "Yes" or "Partial": proceed with configure approach. Document the gap between the platform feature and the requirement. If the gap is acceptable to the stakeholder, close the analysis. If the gap is not acceptable, document why the platform feature is insufficient.
 
@@ -790,7 +790,7 @@ At program scale, the TM-50J manager makes structural decisions that TM-40J PMs 
 |------|-------|---------------|-------|
 | Technical PM | TM-40J | 1 | Required; team lead for delivery |
 | ORSA | TM-40G | 1-2 | Required if team is producing analytical products |
-| ML Engineer | TM-40I | 1 | Required if team is building or maintaining ML models |
+| ML Engineer | TM-40M | 1 | Required if team is building or maintaining ML models |
 | AI Engineer | TM-40H | 0-1 | Required if team is deploying production AI pipelines or AIP integrations |
 | Software Engineer | TM-40L | 1-2 | Required for custom transforms; optional if team is primarily configure-mode |
 | Knowledge Manager | TM-40K | 0-1 | Required if team owns ontology objects; may be shared from platform team |
@@ -1034,6 +1034,38 @@ Every significant program decision must be recorded. The change log is the insti
 
 The change log lives in the program tracking workspace on MSS. It is maintained by the program manager and is readable by all team leads. Entries should be made within 48 hours of the triggering event.
 
+### 9-6. Advanced Portfolio Governance: Multi-Product Dependency and Friction Analysis
+
+**BLUF:** TM-40J introduced the DDOF friction matrix, PM oversight roles, and portfolio health metrics for individual products. TM-50J extends these into multi-product dependency mapping, cascading friction analysis, and resource optimization across competing DDOF efforts — the portfolio-level view that prevents local product decisions from creating systemic program risk.
+
+#### 9-6a. Multi-Product Dependency Mapping
+
+DDOF products do not exist in isolation. An ontology object feeds a pipeline, which feeds a dashboard, which feeds a model, which feeds a decision product. The TM-50J program manager maps these dependencies explicitly:
+
+1. **Build the product dependency graph.** For every active DDOF product, document: upstream data sources (what feeds it), downstream consumers (what depends on it), shared ontology objects, and shared pipeline components.
+2. **Identify critical path products.** Products with many downstream dependents are single points of failure. Flag any product with three or more downstream consumers as a critical path item requiring enhanced monitoring and change control.
+3. **Publish the dependency map.** Make the dependency graph visible to all team leads. Update it at every PI Planning cycle. Use it as the primary artifact for cross-team dependency management.
+
+#### 9-6b. Cascading Friction Analysis
+
+A friction point in one product cascades through its dependents. The TM-50J PM conducts cascading friction analysis by:
+
+1. **Identify friction sources.** Use the DDOF friction matrix categories: data quality friction, pipeline reliability friction, ontology stability friction, and governance friction.
+2. **Trace downstream impact.** For each friction source, follow the dependency graph to determine which downstream products are affected. Quantify the impact: degraded data quality, delayed refresh, or complete failure.
+3. **Prioritize by blast radius.** Friction with the widest downstream impact gets priority remediation regardless of which team owns the source product. This is a portfolio-level decision, not a team-level one.
+
+#### 9-6c. Resource Optimization Across Competing DDOF Efforts
+
+When multiple DDOF efforts compete for the same resources (ORSA analyst time, FDE support, ontology review capacity, compute allocation), the TM-50J PM allocates based on operational priority and dependency criticality — not on which team lead argues most persuasively. Use the dependency map and cascading friction analysis to justify allocation decisions with evidence.
+
+> **NOTE (DDOF Playbook v2.2 — Retirement Criteria Enforcement): The program manager is accountable for enforcing DDOF automatic retirement triggers. These are not guidelines — they are program standards:**
+>
+> - **90 days no access → Foundry Data Manager (FDM) review.** If no user has accessed the product in 90 days, initiate a formal review with the product owner. Determine whether the product serves a valid but infrequent need (e.g., annual reporting) or has been abandoned.
+> - **180 days no access → retirement.** If the FDM review does not produce a documented justification for retention, retire the product. Remove from production, archive data per retention policy, and update the portfolio tracker.
+> - **Quality score below 70% → remediate or retire.** If a product's data quality score (completeness, accuracy, timeliness, consistency) falls below 70% on the quarterly quality assessment, the product owner has one PI cycle to remediate. If quality remains below threshold after remediation, retire the product.
+>
+> **Failure to enforce retirement criteria results in portfolio bloat: unmaintained products consuming platform resources, creating false signals in operational dashboards, and degrading user trust in the MSS ecosystem.**
+
 ---
 
 ## CHAPTER 10 — PROGRAM COMMUNICATION AND REPORTING
@@ -1131,7 +1163,7 @@ Senior leaders do not always attend every program review. Their understanding of
 
 **BLUF:** An ML/AI portfolio at program scale contains products at every stage of the lifecycle simultaneously. Some are in active research (early exploration, feasibility unknown), some are in active development (models being trained and evaluated), and some are in production sustainment (models serving operational users and requiring ongoing monitoring). Each stage requires different management attention and different risk posture.
 
-The TM-40I track covers the technical lifecycle of a single ML project. TM-50J covers the portfolio-level challenge: how do you manage five ML projects simultaneously when they are at different stages, competing for the same data scientist resources, and serving different operational stakeholders with different tolerance for model risk?
+The TM-40M track covers the technical lifecycle of a single ML project. TM-50J covers the portfolio-level challenge: how do you manage five ML projects simultaneously when they are at different stages, competing for the same data scientist resources, and serving different operational stakeholders with different tolerance for model risk?
 
 **Table 11-1. ML Portfolio Stage Management**
 
@@ -1162,7 +1194,7 @@ Every research project must have:
 | Criterion | Threshold | Assessment Method |
 |-----------|-----------|-----------------|
 | Model accuracy | Beats baseline by >X% on hold-out test set | Documented evaluation results |
-| Data availability | Required input data available and stable for >Y% of records | Data quality assessment (TM-40I) |
+| Data availability | Required input data available and stable for >Y% of records | Data quality assessment (TM-40M) |
 | Operational feasibility | Model outputs can be integrated into MSS workflow without >Z weeks of additional development | Technical feasibility review with TM-40H |
 | Stakeholder acceptance | Operational stakeholder has reviewed sample outputs and confirmed utility | Stakeholder review session documented |
 | Maintenance viability | Team has documented retraining cadence and performance monitoring plan | Sustainment plan document |
@@ -1177,7 +1209,7 @@ Army CIO Memo (April 2024) establishes requirements for AI system governance. Th
 |-------------|-------------|-------------|
 | Product documentation | All AI-assisted products documented with model type, training data, intended use, and limitations | Review product documentation in MSS workspace |
 | Human review gates | All AI-generated outputs that inform operational decisions have a defined human review step | Verify workflow documentation; confirm with operational users |
-| Performance monitoring | Model performance metrics tracked; alert thresholds defined | Review monitoring dashboard (TM-40I product) |
+| Performance monitoring | Model performance metrics tracked; alert thresholds defined | Review monitoring dashboard (TM-40M product) |
 | Bias assessment | Training data and outputs assessed for systematic bias relevant to the use case | Review bias assessment documentation |
 | Retraining schedule | Schedule for periodic model retraining defined and calendared | Review sustainment plan |
 | Escalation pathway | Defined process for operational users to flag model outputs they believe are incorrect | Verify user guidance and helpdesk capability |
@@ -1540,6 +1572,17 @@ Maintain a changelog in the product's MSS documentation workspace. Each version 
 
 **CONDITIONS:** A decision has been made to retire an MSS product from production. The decision has been reviewed by C2DAO and documented. A replacement capability exists or the operational need has been eliminated.
 
+**DDOF Playbook v2.2 Automatic Retirement Triggers:** Per DDOF Playbook v2.2 (T2COM C2DAO, December 2025), the following conditions automatically trigger retirement review:
+
+| Trigger | Action Required |
+|---------|----------------|
+| No access in 90 days | FDM review required — determine if product still has operational value |
+| No access in 180 days | Retirement initiated — begin formal retirement procedure below |
+| Source data discontinued | Retirement initiated — product can no longer refresh |
+| VAULTIS-A quality score drops below 70% | Remediate or retire — quality below operational threshold |
+
+NOTE: These triggers are governance requirements, not suggestions. Program managers must monitor access metrics and quality scores as part of portfolio health management.
+
 **STANDARDS:** Retirement is complete when: all active users have been notified and confirmed transition; downstream dependencies have been eliminated or migrated; data has been archived per retention policy; product access has been revoked; retirement is documented in the program record.
 
 **EQUIPMENT:** MSS Foundry (retiring product workspace, archive workspace), program tracker (dependency map, retirement record), user registry for the retiring product, C2DAO data governance policy (retention schedule), replacement capability access (if applicable).
@@ -1594,7 +1637,7 @@ Extend the existing supply chain pipeline to ingest from two additional data sou
 
 **PIO 3: Personnel Readiness ML Model — Production Release**
 Promote the personnel readiness prediction model from development to production, enabling G1 staff to generate 30-day readiness outlooks at formation level.
-- Success criteria: Model passes production readiness gate (TM-40I checklist); G1 chief reviews and accepts model validation results; human review workflow documented and tested with G1 analysts.
+- Success criteria: Model passes production readiness gate (TM-40M checklist); G1 chief reviews and accepts model validation results; human review workflow documented and tested with G1 analysts.
 - Owner: Team Charlie (TM-40J: SFC Washington)
 - Confidence: Medium (model evaluation 80% complete at PI Planning)
 
@@ -1633,7 +1676,7 @@ If capacity remains after PIO 1-5, deliver a concept brief and low-fidelity prot
 
 **PI 4 Lessons Learned:**
 - External SLA timelines must be confirmed before committing a PIO with external data dependency. PIO 2 amber was foreseeable. Build explicit SLA confirmation milestone into PI Planning for any PIO dependent on an external organization.
-- Model production release process (PIO 3) worked well. TM-40I checklist and G1 review gate are now standard and should be referenced in next PI's model releases.
+- Model production release process (PIO 3) worked well. TM-40M checklist and G1 review gate are now standard and should be referenced in next PI's model releases.
 - Ontology migration (PIO 4) completed ahead of schedule. Credit to Platform Team for early planning and 48-hour pre-migration testing. Adopt platform migration planning process as program standard.
 
 ---
@@ -1740,10 +1783,10 @@ By the end of 30 days, the incoming TM-40J PM should be able to:
 | TM-40J | Program Manager (Technical) | Prerequisite; this manual builds directly on TM-40J content |
 | TM-40G | ORSA | Technical track managed by TM-50J; reference for understanding ORSA deliverables |
 | TM-40H | AI Engineer | Technical track managed by TM-50J; reference for AI pipeline delivery standards |
-| TM-40I | ML Engineer | Technical track managed by TM-50J; reference for ML model lifecycle |
+| TM-40M | ML Engineer | Technical track managed by TM-50J; reference for ML model lifecycle |
 | TM-40K | Knowledge Manager | Technical track managed by TM-50J; reference for ontology governance |
 | TM-40L | Software Engineer | Technical track managed by TM-50J; reference for custom code standards |
-| TM-50G through TM-50L | Advanced technical tracks | Peer publications; reference for advanced capability expectations in each track |
+| TM-50G through TM-50M | Advanced technical tracks | Peer publications; reference for advanced capability expectations in each track |
 | Data Literacy Technical Reference | Data Literacy | Doctrinal foundation; establishes organizational data literacy standards |
 | Data Literacy for Senior Leaders | Senior leader data doctrine | Strategic framing for GO/SES briefings on data program value |
 

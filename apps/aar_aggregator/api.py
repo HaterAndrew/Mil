@@ -184,7 +184,10 @@ def delete_aar(aar_id: int, db: Session = Depends(get_db)):
 @app.post("/upload/parse", response_model=ParsedAARPreview)
 async def upload_parse(file: UploadFile = File(...)):
     """Parse an uploaded AAR file and return preview for review."""
+    # AAR files are typically <100 KB; reject anything over 5 MB
     content = await file.read()
+    if len(content) > 5 * 1024 * 1024:
+        raise HTTPException(status_code=400, detail="File too large (5 MB max)")
     text = content.decode("utf-8-sig")
     parsed = parse_aar_file(text)
 

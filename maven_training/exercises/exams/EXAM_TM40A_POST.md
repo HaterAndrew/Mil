@@ -8,13 +8,13 @@
 | **Level** | TM-40A (WFF Track) |
 | **Audience** | G2/S2 staff, targeting officers, all-source analysts; prerequisite: completion of TM-40A training |
 | **Time Allowed** | 30 minutes |
-| **Passing Score** | 80% (24/30 points) |
+| **Passing Score** | 80% (32/40 points) |
 
 ---
 
 ## INSTRUCTIONS
 
-This assessment confirms proficiency upon completion of TM-40A training. A score of 80% (24/30) is required for course completion certification. Results are recorded on the student training record.
+This assessment confirms proficiency upon completion of TM-40A training. A score of 80% (32/40) is required for course completion certification. Results are recorded on the student training record.
 
 ---
 
@@ -78,13 +78,27 @@ B. Build the INTSUM at 0600 using whatever data is available; caveat any element
 C. Delay the INTSUM to 0700 each day to allow the pipeline to complete — the 45-minute lag is acceptable
 D. Build the INTSUM with static data from the previous cycle until the pipeline lag is resolved
 
+**9. FM 2-0 describes the intelligence process as a continuous cycle. Table 1-1a in TM-40A maps each step of this cycle to a data platform operation. Which of the following correctly pairs an intelligence process step with its data platform analog?**
+
+A. Plan and Direct → Analytical models and dashboards
+B. Collect and Process → Data publication and API endpoints
+C. Produce (Analyze) → Data ingestion and ETL/transforms
+D. Disseminate and Integrate → Data publication, API endpoints, and COP feeds
+
+**10. FM 2-0 identifies seven characteristics of effective intelligence. Table G-0a in TM-40A applies these as data quality criteria for MSS intelligence products. Which characteristic requires that intelligence products identify known gaps explicitly and state what is missing rather than hiding absent data?**
+
+A. Timely — intelligence is available in time to support the commander's decision
+B. Predictive — intelligence provides assessments of future conditions
+C. Complete — intelligence provides sufficient detail for the decision at hand
+D. Precise — intelligence provides the level of detail required
+
 ---
 
 ## SECTION 2 — SHORT ANSWER
 
 *Answer in 3–5 sentences. (5 points each)*
 
-**9. Your commander's intelligence requirements include three PIRs. You have configured PIR alerts for all three in MSS. During a test run, PIR 2 (enemy force presence in Engagement Area BRONZE) fires when no threat data is present in that area. Walk through the troubleshooting steps you would take to identify and resolve the false-positive trigger before the next targeting working group.**
+**11. Your commander's intelligence requirements include three PIRs. You have configured PIR alerts for all three in MSS. During a test run, PIR 2 (enemy force presence in Engagement Area BRONZE) fires when no threat data is present in that area. Walk through the troubleshooting steps you would take to identify and resolve the false-positive trigger before the next targeting working group.**
 
 *(Write your answer below)*
 
@@ -93,7 +107,7 @@ _______________________________________________
 _______________________________________________
 _______________________________________________
 
-**10. The targeting officer asks why the targeting product displayed in MSS still shows Target AC-04 as unconfirmed when the S2 section submitted a confirmation report two hours ago. Explain the difference between intelligence reporting submission and MSS data display, and describe how you would resolve the discrepancy before the targeting board convenes.**
+**12. The targeting officer asks why the targeting product displayed in MSS still shows Target AC-04 as unconfirmed when the S2 section submitted a confirmation report two hours ago. Explain the difference between intelligence reporting submission and MSS data display, and describe how you would resolve the discrepancy before the targeting board convenes.**
 
 *(Write your answer below)*
 
@@ -117,7 +131,7 @@ It is 0545. The targeting working group (TWG) convenes at 0630. You open MSS to 
 
 You have 45 minutes before the TWG.
 
-**11. Describe your complete course of action for the next 45 minutes. Include: (a) what you investigate first and why, (b) what you will brief as confirmed vs. what you will caveat, (c) how you characterize the NAI TIGER data gap to the targeting board, and (d) what follow-on action you assign to resolve the PIR 1 failure.**
+**13. Describe your complete course of action for the next 45 minutes. Include: (a) what you investigate first and why, (b) what you will brief as confirmed vs. what you will caveat, (c) how you characterize the NAI TIGER data gap to the targeting board, and (d) what follow-on action you assign to resolve the PIR 1 failure.**
 
 *(Write your answer below)*
 
@@ -141,10 +155,12 @@ _______________________________________________
 6. C — read-only access to specific product; correct classification marking applied
 7. B — all-source fusion in MSS is analyst-driven, not automated; MSS displays layers for human correlation
 8. B — brief with caveat at scheduled time; notify S2 of recurring lag for pipeline-level resolution
+9. D — Table 1-1a (FM 2-0, Figure 1-2) maps Disseminate and Integrate to data publication, API endpoints, and COP feeds. Option A describes Produce; B describes Disseminate incorrectly assigned to Collect; C reverses Produce and Collect.
+10. C — Table G-0a (FM 2-0) defines "Complete" as intelligence that provides sufficient detail for the decision at hand, requiring products to identify known gaps explicitly and state what is missing. Timely addresses decision timing, Predictive addresses future conditions, and Precise addresses level of detail.
 
 **Section 2 — Expected elements:**
-9. Should include: verify the geographic boundary definition for EA BRONZE (check polygon coordinates), confirm the data source selected for PIR 2 is the correct threat activity feed, test with a known-negative event location to isolate whether the boundary or the feed is at fault, check whether multiple overlapping data sources are both feeding the trigger.
-10. Should explain: pipeline latency between report submission and dataset update in MSS; need to trace where the confirmation report is in the data pipeline (submitted to system → processed → dataset updated → COP refreshes); caveat the targeting product with "as of [last pipeline update]" until resolved; escalate to S6 if the pipeline is stalled.
+11. Should include: verify the geographic boundary definition for EA BRONZE (check polygon coordinates), confirm the data source selected for PIR 2 is the correct threat activity feed, test with a known-negative event location to isolate whether the boundary or the feed is at fault, check whether multiple overlapping data sources are both feeding the trigger.
+12. Should explain: pipeline latency between report submission and dataset update in MSS; need to trace where the confirmation report is in the data pipeline (submitted to system → processed → dataset updated → COP refreshes); caveat the targeting product with "as of [last pipeline update]" until resolved; escalate to S6 if the pipeline is stalled.
 
 **Section 3 — Expected elements:**
 (a) Investigate PIR 1 failure first — an actual intelligence event in EA BRONZE that did not trigger PIR 1 is a higher-priority problem than stale NAI TIGER data because it affects immediate targeting decisions.
@@ -154,7 +170,7 @@ _______________________________________________
 
 ---
 
-*Total points: 30. Passing score: 24 (80%).*
+*Total points: 40 (MC: 10 × 2 = 20, SA: 2 × 5 = 10, Scenario: 10). Passing score: 32 (80%).*
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*EX-TM40A-POST | Version 1.0 | March 2026*
+*EX_TM40A-POST | Version 1.0 | March 2026*

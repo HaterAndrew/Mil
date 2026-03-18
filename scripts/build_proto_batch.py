@@ -364,7 +364,7 @@ def build_progression_content(slide):
     spec_tracks = [
         ("TM-40G", "ORSA"),
         ("TM-40H", "AI Engineer"),
-        ("TM-40I", "ML Engineer"),
+        ("TM-40M", "ML Engineer"),
         ("TM-40J", "Program Manager"),
         ("TM-40K", "Knowledge Manager"),
         ("TM-40L", "Software Engineer"),
@@ -387,7 +387,7 @@ def build_progression_content(slide):
              "TM-50 SERIES  (Prereq: TM-40)", font_size=8, bold=True,
              color=WHITE, wrap=False)
     text_box(slide, x + 0.10, ty + 0.36, W_SPEC - 0.20, 0.48,
-             "Advanced / expert continuation for\nTM-40G–L tracks only.",
+             "Advanced / expert continuation for\nTM-40G–M tracks only.",
              font_size=7.5, color=NAVY)
 
     # Footer
@@ -531,18 +531,18 @@ def build_overview_content(slide):
     text_box(slide, rx + 0.08, Y2 + 0.30, rw - 0.16, 1.28,
              ("WFF Tracks: TM-40A Intelligence · TM-40B Fires · TM-40C Movement & Maneuver\n"
               "TM-40D Sustainment · TM-40E Protection · TM-40F Mission Command\n"
-              "Specialist: TM-40G ORSA · TM-40H AI Engineer · TM-40I ML Engineer\n"
+              "Specialist: TM-40G ORSA · TM-40H AI Engineer · TM-40M ML Engineer\n"
               "TM-40J Program Manager · TM-40K Knowledge Manager · TM-40L Software Engineer"),
              font_size=8, color=GRAY_LT, wrap=True)
 
     # TM-50 panel
     rect(slide, rx, Y2 + 1.66, rw, 1.10, NAVY_MID)
     text_box(slide, rx + 0.08, Y2 + 1.72, rw - 0.16, 0.22,
-             "TM-50 SERIES  —  6 Advanced Tracks  (Prereq: TM-40G–L)",
+             "TM-50 SERIES  —  6 Advanced Tracks  (Prereq: TM-40G–M)",
              font_size=8.5, bold=True, color=WHITE, wrap=False)
     text_box(slide, rx + 0.08, Y2 + 1.96, rw - 0.16, 0.76,
              "Expert-level continuation for each TM-40 specialist track.\n"
-             "TM-50G ORSA · TM-50H AI Eng · TM-50I MLE · TM-50J PM · TM-50K KM · TM-50L SWE",
+             "TM-50G ORSA · TM-50H AI Eng · TM-50M MLE · TM-50J PM · TM-50K KM · TM-50L SWE",
              font_size=8, color=GRAY_LT, wrap=True)
 
     # Training management panel
@@ -645,8 +645,8 @@ def build_program_overview_content(slide):
     panel(slide, xs[0], Y0, CW, RH1,
           "WHAT IT IS",
           ["A structured curriculum — three sequential core courses (TM-10/20/30) for "
-           "all personnel, followed by 12 functional specialist tracks (TM-40A–L) and "
-           "6 advanced tracks (TM-50G–L) for senior practitioners.",
+           "all personnel, followed by 12 functional specialist tracks (TM-40A–M) and "
+           "6 advanced tracks (TM-50G–M) for senior practitioners.",
            "",
            "All training delivered in a dedicated MSS Training Environment with "
            "synthetic OPDATA supporting hands-on lab exercises."])
@@ -685,10 +685,10 @@ def build_program_overview_content(slide):
            "",
            "TM-40 SERIES  —  WFF + Specialist tracks  (Prereq: TM-30)",
            "  WFF A–F: Intel, Fires, M&M, Sust, Prot, Msn Cmd",
-           "  Specialist G–L: ORSA, AI Eng, MLE, PM, KM, SWE",
+           "  Specialist G–M: ORSA, AI Eng, MLE, PM, KM, SWE",
            "",
-           "TM-50 SERIES  —  Advanced specialist  (Prereq: TM-40 G–L)",
-           "  50G–L: expert-level continuation per role"])
+           "TM-50 SERIES  —  Advanced specialist  (Prereq: TM-40 G–M)",
+           "  50G–M: expert-level continuation per role"])
 
     panel(slide, xs[1], Y1, CW, RH2,
           "TM-40 WFF FUNCTIONAL TRACKS  (A–F)",
@@ -701,12 +701,12 @@ def build_program_overview_content(slide):
            "TM-40E  Protection",
            "TM-40F  Mission Command",
            "",
-           "TM-40 SPECIALIST TRACKS  (G–L)",
+           "TM-40 SPECIALIST TRACKS  (G–M)",
            "Prereq: TM-30  ·  Role-specific technical depth",
            "",
            "TM-40G  ORSA",
            "TM-40H  AI Engineer",
-           "TM-40I  ML Engineer",
+           "TM-40M  ML Engineer",
            "TM-40J  Program Manager",
            "TM-40K  Knowledge Manager",
            "TM-40L  Software Engineer"])

@@ -106,7 +106,7 @@ United States Army Europe and Africa (USAREUR-AF) is the Army Service Component 
 
 As a builder, the tools you create directly affect readiness visibility and operational decision-making across this formation. A Workshop application you build may display unit status to a V Corps G3 in Poznan or track logistics readiness for a 21st TSC officer in Kaiserslautern. A pipeline you configure may feed the data behind a theater-level briefing. Understand the operational weight of what you are building before you begin.
 
-**Per ADP 3-13, information is combat power.** Builders are one of the primary means by which raw data becomes operationally useful information for commanders. This manual supports data operations governed by AR 25-1, *Army Information Technology*, which establishes policy for Army data management and the VAUTI data quality framework.
+**Per ADP 3-13, information is combat power.** Builders are one of the primary means by which raw data becomes operationally useful information for commanders. This manual supports data operations governed by AR 25-1, *Army Information Technology*, which establishes policy for Army data management. The original VAUTI data quality framework (5 dimensions, AR 25-1, 2019) has been superseded by VAULTIS (7 dimensions, DoD Data Strategy 2020) and extended to VAULTIS-A (8 dimensions, DDOF Playbook v2.2, December 2025). VAULTIS-A dimensions — Visible, Accessible, Understandable, Linked, Trusted, Interoperable, Secure, Auditable — with an 85% minimum weighted average across all 8 dimensions constituting the DDOF Phase 3 quality gate. Proponent: T2COM C2DAO / HQDA CIO/G-6 / SAIS-ADD.
 
 NOTE: As a builder, understand the operator's perspective before you build. Refer to TM-10, Chapter 4 (Using Workshop Applications) to see how operators use the applications you create. Refer to TM-10, Chapter 5 (Working with Data) to understand what operators expect in terms of data quality and currency. Build with the operator experience in mind at all times.
 
@@ -167,7 +167,7 @@ The table below identifies requirements that exceed TM-20 scope. If your require
 | Many-to-many Link Types with junction dataset logic | TM-30, Chapter 4 |
 | Python, PySpark, or SQL code transforms | TM-40L (Software Engineer) |
 | TypeScript Functions or OSDK | TM-40L (Software Engineer) |
-| Machine learning model integration | TM-40I (ML Engineer) |
+| Machine learning model integration | TM-40M (ML Engineer) |
 
 NOTE: Join scope boundary — TM-20 covers joining two datasets on a single well-known key (1:1 or 1:M relationships). This is the standard equipment-to-unit, unit-to-event join pattern. If your requirement involves three or more sources, fan-out handling after a join, group-by aggregations across sources, or union transforms combining differently-shaped datasets, that is TM-30 scope — escalate before attempting it.
 
@@ -216,7 +216,7 @@ BUILDER (YOU)
 
 > The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
 
-- **DoD Data Strategy (October 2020)** — Foundation for VAUTI principles (Visible, Accessible, Understandable, Trustable, Interoperable)
+- **DoD Data Strategy (October 2020)** — Foundation for VAULTIS principles (Visible, Accessible, Understandable, Linked, Trusted, Interoperable, Secure). VAUTI (AR 25-1, 2019) is superseded. Current standard: VAULTIS-A (8 dimensions, DDOF Playbook v2.2, Dec 2025), adding Auditable. 85% weighted average across all 8 dimensions = DDOF Phase 3 quality gate.
 - **Army Data Plan (2022)** — 11 strategic objectives for Army data transformation
 - **Army Cloud Plan (2022)** — Zero Trust, secure development, data-driven decisions
 - **Army CIO Data Stewardship Policy (April 2, 2024)** — Data stewardship hierarchy; data chain of responsibility
@@ -229,7 +229,7 @@ After completing TM-20, builders may advance to more specialized tracks based on
 
 **Next Step — Advanced Builder (required for all TM-40 tracks):**
 
-All personnel who complete TM-20 proceed to TM-30 (Advanced Builder) before enrolling in any TM-40 track. TM-30 is a hard prerequisite — no waivers — for both WFF tracks (TM-40A–F) and Specialist tracks (TM-40G–L).
+All personnel who complete TM-20 proceed to TM-30 (Advanced Builder) before enrolling in any TM-40 track. TM-30 is a hard prerequisite — no waivers — for both WFF tracks (TM-40A–F) and Specialist tracks (TM-40G–M).
 
 **WFF Tracks (TM-40A–F) — available after TM-30:**
 
@@ -244,7 +244,7 @@ Complete the WFF track aligned to your functional area. These tracks focus on MS
 | TM-40E | Protection WFF | Protection officers and NCOs |
 | TM-40F | Mission Command WFF | G6 / S6 and command staff |
 
-**Specialist Tracks (TM-40G–L) — available after TM-30:**
+**Specialist Tracks (TM-40G–M) — available after TM-30:**
 
 Specialist tracks require code-level skills in addition to TM-30. These tracks are NOT reachable from TM-20 directly. Prerequisite: TM-30 (required).
 
@@ -252,7 +252,7 @@ Specialist tracks require code-level skills in addition to TM-30. These tracks a
 |---|---|---|---|
 | TM-40G | ORSA | Operational research analysts | 5 days |
 | TM-40H | AI Engineer | AIP Logic / AI workflow developers | 5 days |
-| TM-40I | ML Engineer | Machine learning pipeline developers | 5 days |
+| TM-40M | ML Engineer | Machine learning pipeline developers | 5 days |
 | TM-40J | Program Manager | Data program managers | 4 days |
 | TM-40K | Knowledge Manager | Knowledge management specialists | 4 days |
 | TM-40L | Software Engineer | Python / TypeScript / OSDK developers | 5 days |
@@ -882,6 +882,15 @@ NOTE: The Object Types and properties you configure in the Ontology become what 
 13. Click **Preview** to confirm objects are visible and property values are correct.
 
 NOTE: The primary key must be unique per object. If your backing dataset has duplicate values in the primary key column, objects will not display correctly. Fix the dataset before configuring the Ontology.
+
+> **NOTE — Primary Key Design Rules (Palantir Best Practice)**
+> 1. The `id` (primary key) column **must be type string** — no exceptions.
+> 2. PKs must be inherently unique, derived from the object's own properties only.
+> 3. All object types require a dedicated `id` column separate from business identifiers.
+> 4. Never infer object properties from identifier values.
+> 5. Composite keys: keep readable (concatenated), never hashed.
+>
+> *Source: Palantir Developer Community — [Ontology and Pipeline Design Principles](https://community.palantir.com/t/ontology-and-pipeline-design-principles/5481)*
 
 > CAUTION: Do not expose columns containing PII, classified data, or data marked above the authorization level of intended users. Review the data with your Data Steward before configuring properties. Exclude sensitive columns by not adding them as properties.
 

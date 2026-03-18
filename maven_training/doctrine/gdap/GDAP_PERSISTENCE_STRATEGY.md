@@ -1,6 +1,6 @@
 <!-- MAVEN TRAINING CORPUS — CDA REFERENCE MATERIAL
      Source: odt_workspace/docs/architecture/gdap/persistence-strategy.md
-     Supports: TM-40H (AI Engineer), TM-40I (ML Engineer), TM-40L (Software Engineer), TM-50H/I/L (Advanced)
+     Supports: TM-40H (AI Engineer), TM-40M (ML Engineer), TM-40L (Software Engineer), TM-50H/I/L (Advanced)
      Type: Architecture Reference — GDAP Persistence Strategy
 -->
 

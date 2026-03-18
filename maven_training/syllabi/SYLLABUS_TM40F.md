@@ -147,7 +147,7 @@ Complete **5+ duty days before Day 1:**
 
 | Item | Reference |
 |---|---|
-| **Practical Exercise** | EX-40F (EXERCISE.md + ENVIRONMENT_SETUP.md) — `exercises/EX-40F/` |
+| **Practical Exercise** | EX_40F (EXERCISE.md + ENVIRONMENT_SETUP.md) — `exercises/EX_40F/` |
 | **Pre-course exam** | EXAM_TM40F_PRE — `exercises/exams/EXAM_TM40F_PRE.md` |
 | **Post-course exam** | EXAM_TM40F_POST — `exercises/exams/EXAM_TM40F_POST.md` |
 

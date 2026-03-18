@@ -2,12 +2,12 @@
 """
 Build new PPTX decks for curriculum gaps identified in content audit:
   - WFF Overview          (TM-40A–F)  → WFF_Overview.pptx
-  - ML Engineering        (TM-40I)    → TM_40I_ML_Engineering.pptx
+  - ML Engineering        (TM-40M)    → TM_40M_ML_Engineering.pptx
   - Program Manager       (TM-40J)    → TM_40J_Program_Manager.pptx
   - Advanced MSS Overview (TM-50)     → TM_50_Advanced_Overview.pptx
   - Advanced ORSA         (TM-50G)    → TM_50G_Advanced_ORSA.pptx
   - Advanced AI Eng       (TM-50H)    → TM_50H_Advanced_AI_Engineer.pptx
-  - Advanced ML Eng       (TM-50I)    → TM_50I_Advanced_ML_Engineer.pptx
+  - Advanced ML Eng       (TM-50M)    → TM_50M_Advanced_ML_Engineer.pptx
   - Advanced PM           (TM-50J)    → TM_50J_Advanced_Program_Manager.pptx
   - Advanced KM           (TM-50K)    → TM_50K_Advanced_Knowledge_Manager.pptx
   - Advanced SWE          (TM-50L)    → TM_50L_Advanced_Software_Engineer.pptx
@@ -17,6 +17,7 @@ Output: maven_training/pdf/
 """
 
 import copy
+import os
 import shutil
 from pathlib import Path
 
@@ -26,7 +27,12 @@ from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
-TEMPLATE   = Path("/home/dale/Downloads/USAREUR-AF PPT Template.pptx")
+TEMPLATE   = Path(os.environ.get(
+    "PPTX_TEMPLATE",
+    Path(__file__).parent.parent / "maven_training" / "source_material" / "USAREUR-AF PPT Template.pptx"
+))
+if not TEMPLATE.exists():
+    raise FileNotFoundError(f"Template not found: {TEMPLATE}  — set PPTX_TEMPLATE env var")
 OUTPUT_DIR = Path("maven_training/pdf")
 
 # ── Palette ────────────────────────────────────────────────────────────────────
@@ -423,19 +429,19 @@ def deck_wff_overview():
                 "  Protection Officer / 31-series / CBRN / AT → TM-40E (Protection)",
                 "  CG / DCG / CoS / XO / Battle Captain / staff officers → TM-40F (Mission Command)",
                 "▶ Multiple track enrollment: authorized for multi-functional officers",
-                "▶ Specialist tracks (TM-40G–L) are separate from WFF tracks",
+                "▶ Specialist tracks (TM-40G–M) are separate from WFF tracks",
             ]),
         ]
     )
 
 
-def deck_tm40i():
+def deck_tm40m():
     build_deck(
-        filename="TM_40I_ML_Engineering.pptx",
+        filename="TM_40M_ML_Engineering.pptx",
         title_lines=["ML ENGINEERING ON MSS",
-                     "TM-40I  ·  Specialist Track  ·  Prereq: TM-30"],
+                     "TM-40M  ·  Specialist Track  ·  Prereq: TM-30"],
         poc="USAREUR-AF  ·  C2DAO  ·  MSS",
-        header_text="ML ENGINEERING ON MSS  ·  TM-40I  ·  Specialist",
+        header_text="ML ENGINEERING ON MSS  ·  TM-40M  ·  Specialist",
         slides_content=[
             ("THE MLE ROLE IN USAREUR-AF", [
                 "ML Engineers build, evaluate, deploy, and sustain predictive models on MSS",
@@ -455,7 +461,7 @@ def deck_tm40i():
                 "▶ Code Workspace Overview",
                 "  Jupyter-compatible environment inside Foundry — no local setup required",
                 "  Connects directly to Foundry datasets, ontology objects, and model registry",
-                "▶ Key Setup Tasks (TM-40I Chapter 2)",
+                "▶ Key Setup Tasks (TM-40M Chapter 2)",
                 "  Create and configure workspace; select correct compute tier",
                 "  Connect to Foundry datasets in a notebook (no file downloads)",
                 "  Version control via Foundry's branch mechanism — not git-external",
@@ -559,10 +565,10 @@ def deck_tm40i():
                 "  SWE designs Feature Store schema; MLE populates it",
                 "  Coordinate on inference endpoint architecture and data contracts",
                 "▶ MLE Governing References",
-                "  DoD RAIMTF, Army AI Ethics Policy, MSS ML Governance SOP, TM-40I",
+                "  DoD RAIMTF, Army AI Ethics Policy, MSS ML Governance SOP, TM-40M",
             ]),
-            ("TM-40I CURRICULUM OVERVIEW AND NEXT STEPS", [
-                "▶ TM-40I Chapter Structure",
+            ("TM-40M CURRICULUM OVERVIEW AND NEXT STEPS", [
+                "▶ TM-40M Chapter Structure",
                 "  Ch 1: MLE Role and Scope",
                 "  Ch 2: Code Workspaces",
                 "  Ch 3: Feature Engineering and Feature Store",
@@ -576,7 +582,7 @@ def deck_tm40i():
                 "  Model Governance Checklist (all six gates)",
                 "  Approved Model Use Cases (USAREUR-AF)",
                 "  ML Quick Reference (imports, split patterns, drift detection, MLflow)",
-                "▶ Next Steps: Complete TM-40I → eligible for TM-50I (Advanced ML Engineer)",
+                "▶ Next Steps: Complete TM-40M → eligible for TM-50M (Advanced ML Engineer)",
             ]),
         ]
     )
@@ -651,7 +657,7 @@ def deck_tm40j():
                 "  Communicate velocity honestly — resist pressure to commit to unrealistic dates",
                 "  'Ready in 2 sprints' is a forecast, not a guarantee; qualify uncertainty",
                 "▶ Cross-Track Coordination",
-                "  PM maintains dependency log across TM-40H (AI), TM-40I (ML), TM-40L (SWE)",
+                "  PM maintains dependency log across TM-40H (AI), TM-40M (ML), TM-40L (SWE)",
                 "  Blocked dependencies escalated to PM — not resolved ad hoc by engineers",
                 "▶ Protecting the Team: PM absorbs stakeholder pressure; engineers execute",
             ]),
@@ -773,7 +779,7 @@ def deck_tm50_overview():
                 "▶ TM-50H — Advanced AI Engineer",
                 "  Multi-agent orchestration, LLM fine-tuning, advanced RAG, AI red-teaming",
                 "  Enterprise AI architecture and governance",
-                "▶ TM-50I — Advanced ML Engineer",
+                "▶ TM-50M — Advanced ML Engineer",
                 "  Advanced MLOps, federated learning, neural architectures, adversarial robustness",
                 "  ML platform architecture and leadership",
                 "▶ TM-50J — Advanced Program Manager",
@@ -820,7 +826,7 @@ def deck_tm50_overview():
                 "▶ Enrollment Prerequisite: Corresponding TM-40 Track Required",
                 "  TM-50G: requires TM-40G (ORSA)",
                 "  TM-50H: requires TM-40H (AI Engineer)",
-                "  TM-50I: requires TM-40I (ML Engineer)",
+                "  TM-50M: requires TM-40M (ML Engineer)",
                 "  TM-50J: requires TM-40J (Program Manager)",
                 "  TM-50K: requires TM-40K (Knowledge Manager)",
                 "  TM-50L: requires TM-40L (Software Engineer)",
@@ -1108,17 +1114,17 @@ def deck_tm50h():
     )
 
 
-def deck_tm50i():
+def deck_tm50m():
     build_deck(
-        filename="TM_50I_Advanced_ML_Engineer.pptx",
+        filename="TM_50M_Advanced_ML_Engineer.pptx",
         title_lines=["ADVANCED ML ENGINEERING",
-                     "TM-50I  ·  Advanced Specialist  ·  Prereq: TM-40I"],
+                     "TM-50M  ·  Advanced Specialist  ·  Prereq: TM-40M"],
         poc="USAREUR-AF  ·  C2DAO  ·  MSS",
-        header_text="ADVANCED ML ENGINEERING  ·  TM-50I  ·  Advanced Specialist",
+        header_text="ADVANCED ML ENGINEERING  ·  TM-50M  ·  Advanced Specialist",
         slides_content=[
-            ("FROM TM-40I TO TM-50I — SCOPE CHANGE", [
-                "▶ TM-40I: Build and deploy individual models following governance process",
-                "▶ TM-50I: Own the ML platform that all models operate within",
+            ("FROM TM-40M TO TM-50M — SCOPE CHANGE", [
+                "▶ TM-40M: Build and deploy individual models following governance process",
+                "▶ TM-50M: Own the ML platform that all models operate within",
                 "  Automated retraining pipelines; advanced neural architectures",
                 "  Federated learning for multi-classification environments",
                 "  Interpretability and bias auditing at enterprise scale",
@@ -1140,9 +1146,9 @@ def deck_tm50i():
                 "  Rollback trigger: automated if new model performance drops below threshold",
                 "▶ Canary Releases",
                 "  Canary: 5% traffic, extended monitoring before full rollout",
-                "  Canary failure: automatic rollback, incident report, TM-50I review",
+                "  Canary failure: automatic rollback, incident report, TM-50M review",
                 "▶ Production Readiness Gates — Advanced Version",
-                "  All TM-40I gates plus: automated retraining test, adversarial robustness check",
+                "  All TM-40M gates plus: automated retraining test, adversarial robustness check",
             ]),
             ("ADVANCED NEURAL ARCHITECTURES (CHAPTER 3)", [
                 "▶ Transformers for Operational Text",
@@ -1180,7 +1186,7 @@ def deck_tm50i():
                 "  LIME for local explanations: explain individual predictions to operators",
                 "▶ Bias Auditing for Operational Models",
                 "  Personnel-affecting models: bias audit required across MOS, echelon, gender",
-                "  Bias audit report produced by TM-50I; reviewed by independent reviewer",
+                "  Bias audit report produced by TM-50M; reviewed by independent reviewer",
                 "▶ ML Security Threat Model",
                 "  Adversarial inputs: inputs crafted to cause misclassification",
                 "  Data poisoning: corrupt training data to degrade production model",
@@ -1194,7 +1200,7 @@ def deck_tm50i():
                 "▶ Shared Feature Store Design",
                 "  Central registry: prevents duplicate feature computation across teams",
                 "  Feature versioning: reproducibility guarantee for all production models",
-                "  Feature Store governance: TM-50I approves new features before registration",
+                "  Feature Store governance: TM-50M approves new features before registration",
                 "▶ Model Registry Architecture",
                 "  Centralized: all models in one registry with metadata, lineage, and status",
                 "  Status tiers: Experimental → Staging → Production → Retired",
@@ -1205,11 +1211,11 @@ def deck_tm50i():
                 "  TM-50H (AI Engineer): share code workspace infrastructure and CI/CD",
                 "  TM-40G (ORSA): validate model assumptions; share feature store",
                 "▶ Code Review Standards for Production ML",
-                "  Every production model code reviewed by TM-50I before deployment",
+                "  Every production model code reviewed by TM-50M before deployment",
                 "  Review criteria: correctness, efficiency, governance compliance, documentation",
             ]),
             ("LEADING ML CAPABILITY — PRODUCTION READINESS AND TEAM DEVELOPMENT", [
-                "▶ Production Readiness Gates (Advanced) — TM-50I Owns the Process",
+                "▶ Production Readiness Gates (Advanced) — TM-50M Owns the Process",
                 "  Automated retraining pipeline tested and verified",
                 "  Real-time inference endpoint load-tested (if applicable)",
                 "  Advanced neural architecture: interpretability artifacts generated",
@@ -1221,7 +1227,7 @@ def deck_tm50i():
                 "  Structured code review: explain why, not just what to fix",
                 "  Pair programming on first model deployment: reduces errors, builds standards",
                 "  Succession planning: every critical ML system has a documented backup person",
-                "▶ ML Capability Roadmap: TM-50I contributes to the enterprise ML architecture",
+                "▶ ML Capability Roadmap: TM-50M contributes to the enterprise ML architecture",
                 "  Annual capability review; identify gaps in platform before they become incidents",
             ]),
         ]
@@ -1597,12 +1603,12 @@ def main():
     print(f"Building 10 new decks → {OUTPUT_DIR}/\n")
 
     deck_wff_overview()
-    deck_tm40i()
+    deck_tm40m()
     deck_tm40j()
     deck_tm50_overview()
     deck_tm50g()
     deck_tm50h()
-    deck_tm50i()
+    deck_tm50m()
     deck_tm50j()
     deck_tm50k()
     deck_tm50l()

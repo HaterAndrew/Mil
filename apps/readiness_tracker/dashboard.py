@@ -202,8 +202,8 @@ def load_trainee_detail(dodid: str):
 DISPLAY_ORDER = [
     "TM-10", "TM-20", "TM-30",
     "TM-40A", "TM-40B", "TM-40C", "TM-40D", "TM-40E", "TM-40F",
-    "TM-40G", "TM-40H", "TM-40I", "TM-40J", "TM-40K", "TM-40L",
-    "TM-50G", "TM-50H", "TM-50I", "TM-50J", "TM-50K", "TM-50L",
+    "TM-40G", "TM-40H", "TM-40M", "TM-40J", "TM-40K", "TM-40L",
+    "TM-50G", "TM-50H", "TM-50M", "TM-50J", "TM-50K", "TM-50L",
 ]
 
 FOUNDATION_COURSES = ["TM-10", "TM-20", "TM-30"]
@@ -302,6 +302,7 @@ if active_tab == "Commander's Dashboard":
                 marker=dict(color=funnel_colors[:len(df_f)]),
             ))
             fig.update_layout(height=350, margin=dict(l=10, r=10, t=10, b=10))
+            apply_plotly_theme(fig)
             st.plotly_chart(fig, use_container_width=True)
 
     with col_right:
@@ -327,6 +328,7 @@ if active_tab == "Commander's Dashboard":
             )
             fig.update_layout(height=300, showlegend=False,
                               xaxis_title="", yaxis_title="GO Completions")
+            apply_plotly_theme(fig)
             st.plotly_chart(fig, use_container_width=True)
 
     with col_d:
@@ -363,6 +365,7 @@ if active_tab == "Commander's Dashboard":
                 height=300, xaxis_tickangle=-45,
                 xaxis_title="", yaxis_title="GO Count",
             )
+            apply_plotly_theme(fig)
             st.plotly_chart(fig, use_container_width=True)
 
 
@@ -446,6 +449,7 @@ elif active_tab == "RAG Heatmap":
             xaxis_tickangle=-45,
             margin=dict(l=10, r=10, t=10, b=10),
         )
+        apply_plotly_theme(fig)
         st.plotly_chart(fig, use_container_width=True)
 
     # Summary table below
@@ -500,6 +504,7 @@ elif active_tab == "Bottleneck Analysis":
             legend=dict(orientation="h", yanchor="bottom", y=1.02),
             xaxis_title="", yaxis_title="Soldiers",
         )
+        apply_plotly_theme(fig)
         st.plotly_chart(fig, use_container_width=True)
 
     # Top bottlenecks callout
@@ -568,6 +573,7 @@ elif active_tab == "Unit Drill-Down":
             yaxis_range=[0, 105], yaxis_title="% Complete",
             xaxis_title="",
         )
+        apply_plotly_theme(fig)
         st.plotly_chart(fig, use_container_width=True)
 
     # Trainee roster for this unit
@@ -785,3 +791,11 @@ elif active_tab == "Export":
                 st.error(f"Export failed: {resp.text}")
         except requests.ConnectionError:
             st.error("Cannot reach API server.")
+
+# ---------------------------------------------------------------------------
+# Footer
+# ---------------------------------------------------------------------------
+st.markdown(
+    '<div class="app-footer">USAREUR-AF OPERATIONAL DATA TEAM — MSS TRAINING READINESS</div>',
+    unsafe_allow_html=True,
+)

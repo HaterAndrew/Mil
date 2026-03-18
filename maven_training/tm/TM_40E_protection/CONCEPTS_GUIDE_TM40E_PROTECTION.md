@@ -483,13 +483,13 @@ All six WFF tracks are at the same tier. All six WFF tracks require TM-10, TM-20
 
 ### Specialist Tracks (Prerequisite: TM-30)
 
-For personnel pursuing technical depth, specialist tracks (TM-40G–L, prereq TM-30) are available. Not required for protection WFF employment.
+For personnel pursuing technical depth, specialist tracks (TM-40G–M, prereq TM-30) are available. Not required for protection WFF employment.
 
 | Track | Title |
 |-------|-------|
 | TM-40G | ORSA (→ TM-50G) |
 | TM-40H | AI Engineer (→ TM-50H) |
-| TM-40I | ML Engineer (→ TM-50I) |
+| TM-40M | ML Engineer (→ TM-50M) |
 | TM-40J | Program Manager (→ TM-50J) |
 | TM-40K | Knowledge Manager (→ TM-50K) |
 | TM-40L | Software Engineer (→ TM-50L) |
@@ -519,4 +519,6 @@ For personnel pursuing technical depth, specialist tracks (TM-40G–L, prereq TM
 | Section 6 — Counter-UAS as an Emerging Data Domain | Chapter 7 |
 | Section 7 — Protection Failure Modes in MSS | All chapters |
 | Section 8 — Protection Data Standards | Appendices G and H |
+
+> **NOTE — New Doctrine Content in TM-40E:** TM-40E now includes CVP (Criticality-Vulnerability-Probability) analysis from ADP 3-37 with a 5-step MSS procedure and data currency WARNING (section 4-2a), OPSEC 5-step process mapped to data security analogs (section 4-7), and the GMAD (Generate-Manage-Analyze-Disseminate) framework from FM 3-34 as a data lifecycle NOTE (Ch 8). These sections ground protection data management in their authoritative doctrinal sources.
 | Section 9 — Protection Officer's Mental Model | Chapters 9–10 |

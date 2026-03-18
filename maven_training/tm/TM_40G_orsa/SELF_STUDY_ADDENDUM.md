@@ -3,11 +3,23 @@
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.
 
+**Companion Resource — Ontologize Channel:** [@Ontologize](https://www.youtube.com/@Ontologize) — Official Palantir training partner. 68 indexed video walkthroughs covering Foundry and AIP features. Full catalog with TM cross-references: [source_material/ontologize_youtube/README.md](../../source_material/ontologize_youtube/README.md)
+
 ---
 
 ## How to Use This Addendum
 
 Videos are grouped by topic and ordered from foundational to advanced. Start with the group most relevant to your current work. These are not assigned — use what helps.
+
+---
+
+## New Doctrine References (March 2026)
+
+The following doctrine sections were added to TM-40G this session. Review after the corresponding TM chapter:
+
+- **MOE/MOP Assessment Framework** — Measures of effectiveness and measures of performance for ORSA analytical products. See TM-40G concepts guide.
+- **CARVER Scoring** — Target/risk prioritization methodology applied to analytical product design. See TM-40G concepts guide.
+- **Force Ratio Computation** — Standardized force ratio calculations from MSS data for COA comparison. See TM-40G concepts guide.
 
 ---
 

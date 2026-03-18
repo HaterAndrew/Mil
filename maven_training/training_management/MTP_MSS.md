@@ -43,22 +43,26 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | TM-40F | Mission Command WFF | MC/G6/S6 staff | 3 | TM-30 (Required) |
 | TM-40G | ORSA | ORSA analysts | 5 | TM-30 (Required) + quant background |
 | TM-40H | AI Engineer | AI/ML specialists | 5 | TM-30 (Required) + coding background |
-| TM-40I | ML Engineer | MLEs | 5 | TM-30 (Required) + coding background |
+| TM-40M | ML Engineer | MLEs | 5 | TM-30 (Required) + coding background |
 | TM-40J | Program Manager | PMs, G8/S8 | 4 | TM-30 (Required) |
 | TM-40K | Knowledge Manager | KMOs, 37F | 4 | TM-30 (Required) |
 | TM-40L | Software Engineer | SWEs | 5 | TM-30 (Required) + coding background |
 | TM-50G | Advanced ORSA | Senior ORSA analysts | 5 | TM-40G (Required) |
 | TM-50H | Advanced AI Engineer | Senior AI engineers | 5 | TM-40H (Required) |
-| TM-50I | Advanced ML Engineer | Senior MLEs | 5 | TM-40I (Required) |
+| TM-50M | Advanced ML Engineer | Senior MLEs | 5 | TM-40M (Required) |
 | TM-50J | Advanced Program Manager | Senior PMs | 3 | TM-40J (Required) |
 | TM-50K | Advanced Knowledge Manager | Senior KMOs | 3 | TM-40K (Required) |
 | TM-50L | Advanced Software Engineer | Senior SWEs | 5 | TM-40L (Required) |
+| T3-I | Instructor Certification | C2DAO-selected instructor candidates | 5 + practicum | TM-30 (Required) + C2DAO selection |
+| T3-F | MSC Force Multiplier | MSC-level data NCOs, S6, UDT nominees | 3 | TM-20 (Required) + CDR nomination |
 
-> **NOTE:** TM-40A–F (WFF functional tracks) require TM-10, TM-20, and TM-30 as hard prerequisites. TM-40G–L (specialist tracks) also require TM-30 as a hard prerequisite. TM-50G–L (advanced specialist tracks) require the corresponding TM-40G–L. There are NO TM-50A–F tracks.
+> **NOTE:** TM-40A–F (WFF functional tracks) require TM-10, TM-20, and TM-30 as hard prerequisites. TM-40G–M (specialist tracks) also require TM-30 as a hard prerequisite. TM-50G–M (advanced specialist tracks) require the corresponding TM-40G–M. TM-50 is G–M only.
 
 > **NOTE:** "Training days" reflects initial qualification training with instructor support. Self-paced completion may require more time. Refresher/sustainment training is shorter — see Section 11.
 
 > **BUILDER SPRINT (BSP):** A quarterly 5-day applied build event that operates **outside** the TM-10 through TM-50 training chain. Prereq: TM-20 Go on file + command-validated project. Does not grant TM-30 credit. Does not unlock TM-40 enrollment. Governed by BSP-SOP-001 (training_management/BUILDER_SPRINT_SOP.md). Appears in training records as a separate event type, not as a TM course completion.
+
+> **TRAIN-THE-TRAINER (T3):** T3-I (Instructor Certification) and T3-F (MSC Force Multiplier) operate **outside** the TM-10 through TM-50 training chain. T3-I certifies C2DAO instructors; T3-F certifies Unit Data Trainers at the MSC level. T3-I is offered semi-annually; T3-F is offered quarterly aligned with MTT rotations. See Instructor Tier Definitions, Unit Data Trainer SOP, and MTT Operations SOP for employment and sustainment guidance.
 
 ---
 
@@ -200,18 +204,18 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 40H-05 | Write Python transforms that extract and format Ontology data for AIP Logic context | Practical: transform output matches expected schema; runs without error |
 | 40H-06 | Complete the AIP Authorization Checklist (TM-40H Appendix A) for a proposed workflow; identify prohibited use cases | Written review: evaluator scores checklist completion and prohibited-use identification |
 
-### 2-9. TM-40I — Machine Learning Engineer
+### 2-9. TM-40M — Machine Learning Engineer
 
 **TLO:** Build, evaluate, deploy, and govern machine learning models on MSS using Foundry Code Workspaces and MLOps tooling in compliance with USAREUR-AF model governance standards.
 
 | ELO | Description | Evaluation Method |
 |---|---|---|
-| 40I-01 | Configure Code Workspace with required packages, GPU allocation, and Foundry dataset connectivity | Practical: provided test script runs without errors; dataset connection confirmed |
-| 40I-02 | Build a feature engineering pipeline for a provided Foundry dataset meeting documented feature standards | Practical: output dataset reviewed against feature specification; no null leakage |
-| 40I-03 | Train and evaluate a supervised model meeting defined accuracy, precision/recall, and calibration thresholds | Practical: evaluation metrics reviewed by technical evaluator against acceptance criteria |
-| 40I-04 | Deploy a trained model to a Foundry model serving endpoint and verify live inference | Practical: inference endpoint returns predictions for 10 test records; latency within spec |
-| 40I-05 | Implement a model monitoring pipeline with drift detection and alert configuration | Practical: pipeline detects seeded drift event; alert routes correctly |
-| 40I-06 | Complete a model governance document meeting USAREUR-AF model documentation standards | Product review: document reviewed against TM-40I governance checklist |
+| 40M-01 | Configure Code Workspace with required packages, GPU allocation, and Foundry dataset connectivity | Practical: provided test script runs without errors; dataset connection confirmed |
+| 40M-02 | Build a feature engineering pipeline for a provided Foundry dataset meeting documented feature standards | Practical: output dataset reviewed against feature specification; no null leakage |
+| 40M-03 | Train and evaluate a supervised model meeting defined accuracy, precision/recall, and calibration thresholds | Practical: evaluation metrics reviewed by technical evaluator against acceptance criteria |
+| 40M-04 | Deploy a trained model to a Foundry model serving endpoint and verify live inference | Practical: inference endpoint returns predictions for 10 test records; latency within spec |
+| 40M-05 | Implement a model monitoring pipeline with drift detection and alert configuration | Practical: pipeline detects seeded drift event; alert routes correctly |
+| 40M-06 | Complete a model governance document meeting USAREUR-AF model documentation standards | Product review: document reviewed against TM-40M governance checklist |
 
 ### 2-10. TM-40L — Software Engineer
 
@@ -226,7 +230,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 40L-05 | Build a Slate application integrated with the Foundry API displaying live ontology data | Practical: application renders correctly; data refreshes on state change |
 | 40L-06 | Complete a C2DAO code review and deployment workflow for a provided OSDK application | Practical: PR created, review comments addressed, deployment checklist completed end-to-end |
 
-> **NOTE:** Developer track evaluations (TM-40H, 40I, 40L, 50H, 50I, 50L) require a qualified technical reviewer: TM-40 certified instructor, C2DAO data engineer, or equivalent. Do not evaluate developer track ELOs using a non-technical observer.
+> **NOTE:** Developer track evaluations (TM-40H, 40M, 40L, 50H, 50M, 50L) require a qualified technical reviewer: TM-40 certified instructor, C2DAO data engineer, or equivalent. Do not evaluate developer track ELOs using a non-technical observer.
 
 ---
 
@@ -643,7 +647,7 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | — | 1200–1300 | Lunch | — |
 | 15 | 1300–1700 | Practical exercise: author, test, and document AIP Logic workflow end-to-end | Evaluation |
 
-### 5-9. TM-40I — Machine Learning Engineer (4 Days)
+### 5-9. TM-40M — Machine Learning Engineer (4 Days)
 
 **Day 1 — Workspace and Feature Engineering**
 
@@ -763,7 +767,7 @@ Continue with TM-30 or TM-40 track based on role. No more than one TM level per 
 | Mon | TM-30 Day 1 | Data-adjacent specialists |
 | Tue | TM-30 Day 2 | Data-adjacent specialists |
 | Wed | TM-30 Day 3 + Evaluation | Data-adjacent specialists |
-| Thu | Confirm all TM-40 enrollments; brief functional staff on WFF track options; brief specialists on G–L track options | Training NCO/Officer |
+| Thu | Confirm all TM-40 enrollments; brief functional staff on WFF track options; brief specialists on G–M track options | Training NCO/Officer |
 | Fri | TM-40 scheduling coordination complete; access provisioning confirmed for all Week 3+ participants | Training NCO/Officer |
 
 **Week 3 (TM-40 WFF Tracks)**
@@ -774,7 +778,7 @@ Continue with TM-30 or TM-40 track based on role. No more than one TM level per 
 | Mon–Wed | TM-40D (Sustainment WFF) — 3 days (parallel session if capacity allows) | G4/S4 staff |
 | Thu–Fri or following week | Remaining WFF tracks (B, C, E, F) as scheduled | Applicable WFF functional staff |
 
-> **NOTE:** All TM-40 tracks (A–F WFF and G–L specialist) require TM-30 completion. Ensure all TM-40 participants have TM-30 on file before enrolling. WFF and specialist (G–L) training can run concurrently in separate sessions once TM-30 is complete.
+> **NOTE:** All TM-40 tracks (A–F WFF and G–M specialist) require TM-30 completion. Ensure all TM-40 participants have TM-30 on file before enrolling. WFF and specialist (G–M) training can run concurrently in separate sessions once TM-30 is complete.
 
 **Week 4 (TM-40 Specialist Tracks — 3-day courses)**
 
@@ -782,7 +786,7 @@ Continue with TM-30 or TM-40 track based on role. No more than one TM level per 
 |---|---|---|
 | Mon–Wed | TM-40G (ORSA) — 3 days | ORSA personnel |
 | Mon–Wed | TM-40H (AI Engineer) — 3 days (parallel session if capacity allows) | AI Engineer personnel |
-| Thu–Fri or following week | TM-40I (ML Engineer), TM-40L (Software Engineer) — 3 days each, as scheduled | ML Eng, SWE personnel |
+| Thu–Fri or following week | TM-40M (ML Engineer), TM-40L (Software Engineer) — 3 days each, as scheduled | ML Eng, SWE personnel |
 
 **Week 5 (TM-40 Specialist Tracks — 4-day courses)**
 
@@ -791,7 +795,7 @@ Continue with TM-30 or TM-40 track based on role. No more than one TM level per 
 | Mon–Thu | TM-40J (Program Manager) — 4 days | G8/S8, Program Managers |
 | Mon–Thu | TM-40K (Knowledge Manager) — 4 days (parallel session if capacity allows) | Knowledge Managers, S6 |
 
-> **NOTE:** TM-40J and TM-40K are 4-day courses (32 hours each). Do not schedule these as 3-day events. Access provisioning for TM-40H, TM-40I, and TM-40L requires 10–35 days (GPU workspaces, developer tokens) — initiate immediately after TM-30 enrollment is confirmed.
+> **NOTE:** TM-40J and TM-40K are 4-day courses (32 hours each). Do not schedule these as 3-day events. Access provisioning for TM-40H, TM-40M, and TM-40L requires 10–35 days (GPU workspaces, developer tokens) — initiate immediately after TM-30 enrollment is confirmed.
 
 ---
 
@@ -809,7 +813,7 @@ Continue with TM-30 or TM-40 track based on role. No more than one TM level per 
 | TM-40A–F (WFF) | Builder access | Unit MSS Administrator | 3–5 duty days |
 | TM-40G | Code Workspace (Python/R) | C2DAO | 7–10 duty days |
 | TM-40H | AIP Logic authoring + Agent Studio access | C2DAO | 7–10 duty days |
-| TM-40I | Code Workspace with GPU; model registry access | C2DAO | 10+ duty days |
+| TM-40M | Code Workspace with GPU; model registry access | C2DAO | 10+ duty days |
 | TM-40J | Builder access + GFEBS training data export | Unit MSS Admin + G8 | 5–7 duty days |
 | TM-40K | Builder access + AIP Logic configuration | Unit MSS Admin + C2DAO | 5–7 duty days |
 | TM-40L | OSDK developer access; TypeScript environment | C2DAO | 10+ duty days |
@@ -873,7 +877,7 @@ TM-10 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 3
 | TM-40F (MC WFF) | TM-40F certified; Mission Command/G6 background; TM-30 proficiency |
 | TM-40G (ORSA) | Active-duty ORSA (FA49) with Code Workspace proficiency OR C2DAO-approved contractor |
 | TM-40H (AI Eng) | C2DAO AI engineer or TM-40H certified individual |
-| TM-40I (MLE) | C2DAO ML engineer or TM-40I certified individual |
+| TM-40M (MLE) | C2DAO ML engineer or TM-40M certified individual |
 | TM-40J (PM) | TM-40J certified; PM/resource management background |
 | TM-40K (KM) | TM-40K certified; KM background (37F or equivalent) |
 | TM-40L (SWE) | C2DAO software engineer or TM-40L certified; TypeScript/Python proficiency |
@@ -894,7 +898,7 @@ TM-10 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 3
 | TM-20 | 10:1 (all portions) |
 | TM-30 | 8:1 (all portions) |
 | TM-40A–F (WFF) | 10:1 (all portions — high-volume functional staff courses) |
-| TM-40G/H/I/L | 5:1 (intensive coding/modeling content) |
+| TM-40G/H/M/L | 5:1 (intensive coding/modeling content) |
 | TM-40J/K | 10:1 (all portions) |
 
 ---
@@ -1043,8 +1047,8 @@ PERSONNEL SUMMARY:
   Total personnel requiring TM-30: [#]     TM-30 Complete: [#] ([%])
   Total WFF track assignments (TM-40A–F):  [#]  WFF Complete: [#] ([%])
     Breakdown: 40A[#] 40B[#] 40C[#] 40D[#] 40E[#] 40F[#]
-  Total specialist track assignments (TM-40G–L): [#]  Specialist Complete: [#] ([%])
-    Breakdown: 40G[#] 40H[#] 40I[#] 40J[#] 40K[#] 40L[#]
+  Total specialist track assignments (TM-40G–M): [#]  Specialist Complete: [#] ([%])
+    Breakdown: 40G[#] 40H[#] 40M[#] 40J[#] 40K[#] 40L[#]
 
 ISSUES / SHORTFALLS:
   Access provisioning delays: [Y/N — if yes, describe]
@@ -1198,11 +1202,11 @@ INSTRUCTOR CERTIFICATIONS
 
 **Scenario 40H-B:** Configure an Agent Studio agent that answers natural language questions about unit readiness by querying the Readiness Object Type. The agent must refuse questions outside its defined scope and must not take any write Actions without an explicit confirmation step.
 
-### TM-40I Scenarios (ML Engineer — Evaluator selects one per evaluation)
+### TM-40M Scenarios (ML Engineer — Evaluator selects one per evaluation)
 
-**Scenario 40I-A:** Given a provided equipment failure dataset, build: feature engineering pipeline, binary classifier for failure prediction within 30 days, evaluation report against acceptance thresholds, and a deployed inference endpoint. Produce the model governance document.
+**Scenario 40M-A:** Given a provided equipment failure dataset, build: feature engineering pipeline, binary classifier for failure prediction within 30 days, evaluation report against acceptance thresholds, and a deployed inference endpoint. Produce the model governance document.
 
-**Scenario 40I-B:** An existing model is deployed and showing data drift (evaluator seeds drift into the monitoring dataset). Diagnose the drift, characterize its type, and produce a written recommendation: retrain, adjust thresholds, or investigate data quality issue. Document the decision.
+**Scenario 40M-B:** An existing model is deployed and showing data drift (evaluator seeds drift into the monitoring dataset). Diagnose the drift, characterize its type, and produce a written recommendation: retrain, adjust thresholds, or investigate data quality issue. Document the decision.
 
 ### TM-40L Scenarios (SWE — Evaluator selects one per evaluation)
 

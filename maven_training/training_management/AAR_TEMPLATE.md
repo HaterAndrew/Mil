@@ -16,7 +16,7 @@ This AAR template follows the structure prescribed by FM 7-0, *Training* (June 2
 |-------|-------|
 | Date of training | |
 | TM level(s) covered | (e.g., TM-10, TM-20) |
-| Exercise(s) conducted | (e.g., EX-10, EX-20) |
+| Exercise(s) conducted | (e.g., EX_10, EX_20) |
 | Location / environment | (e.g., MSS sandbox, live training instance) |
 | Number of students | |
 | Instructor(s) | |

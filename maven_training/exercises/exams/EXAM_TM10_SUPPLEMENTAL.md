@@ -10,7 +10,7 @@
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | N/A — supplemental only |
 
-NOTE: This is an optional supplemental quiz for units that want additional knowledge reinforcement beyond the practical exercise (EX-10). **The TM-10 evaluation of record is the practical exercise (Go/No-Go), not this quiz.** Units may administer this quiz at their discretion for self-assessment or remedial training purposes. It does not affect TM-10 course completion status.
+NOTE: This is an optional supplemental quiz for units that want additional knowledge reinforcement beyond the practical exercise (EX_10). **The TM-10 evaluation of record is the practical exercise (Go/No-Go), not this quiz.** Units may administer this quiz at their discretion for self-assessment or remedial training purposes. It does not affect TM-10 course completion status.
 
 ---
 
@@ -195,7 +195,7 @@ D. Remove all personally identifiable information before exporting any dataset
 | Short Answer | 5 | 6 | 30 |
 | **Total** | — | — | **60** |
 
-Scoring: N/A — Supplemental knowledge check. TM-10 evaluation of record is the practical exercise (EX-10).
+Scoring: N/A — Supplemental knowledge check. TM-10 evaluation of record is the practical exercise (EX_10).
 
 ---
 

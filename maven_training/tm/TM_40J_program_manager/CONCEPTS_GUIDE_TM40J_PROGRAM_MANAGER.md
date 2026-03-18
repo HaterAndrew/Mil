@@ -32,6 +32,8 @@ A data PM does not own code, pipelines, Object Types, or Foundry Workshop applic
 
 The PM manages across people, pipelines, and products — not just projects. A project has a start and end date. A data product has a lifecycle requiring ongoing ownership, maintenance decisions, and eventual retirement. A PM who thinks only in projects will consistently under-resource the sustain phase.
 
+> **NOTE — DDOF Roles and PM Oversight (TM-40J Section 1-2a):** TM-40J Section 1-2a defines how the Data and Digital Operations Framework (DDOF) assigns roles across the data lifecycle and where PM oversight responsibilities begin and end. Review before scoping any new data program.
+
 ### 1-2. What the PM Does Not Own
 
 - **Technical architecture decisions.** The PM ensures design was reviewed by the right people, meets governance requirements, and has a realistic timeline — not whether the design is technically optimal.
@@ -76,6 +78,8 @@ Every significant data product should have a dependency map. A simple table is s
 | Application | LOGSTAT Dashboard v2 | PM, MAJ Reyes | 2026-02-10 |
 
 Maintain this table for every tier-1 product. Update it after every significant change. A dependency map six months stale is almost as dangerous as no map at all.
+
+> **NOTE — DDOF Friction Matrix (TM-40J Section 2-6):** TM-40J Section 2-6 provides a DDOF friction matrix identifying common organizational friction points between DDOF-defined roles during pipeline delivery. Use this matrix during project planning to anticipate coordination bottlenecks.
 
 ### 2-3. Types of Dependency Breaks
 
@@ -285,6 +289,8 @@ The PM who bypasses governance to deliver faster is borrowing time, not saving i
 
 This mapping prevents governance events from being discovered late. A governance review that surfaces a naming issue before the staging build is a feature. The same review surfacing the same issue after 40 hours of staging build work is a bug.
 
+> **NOTE — Portfolio Health Metrics (TM-40J Section 7-6):** TM-40J Section 7-6 introduces a standardized portfolio health metrics framework with quantitative thresholds for availability, quality, and utility scoring. Reference when building or updating portfolio health tracking artifacts.
+
 ### 7-3. Engaging C2DAO as a Partner
 
 The most effective data PMs treat C2DAO as a project partner, not a reviewer:
@@ -416,9 +422,11 @@ The following publications establish the policy, architectural, and governance f
 **Peer specialist cross-references:** The PM coordinates delivery across all specialist tracks:
 - **TM-40G (ORSA):** ORSA analytical products have specific data quality, methodology review, and product delivery requirements that affect acceptance criteria and sprint scope.
 - **TM-40H (AI Engineer):** AI workflow projects require C2DAO governance milestones and human-review-gate design as non-negotiable project requirements.
-- **TM-40I (ML Engineer):** ML projects have model governance checkpoints (Training Data Card, Model Card, C2DAO review) that must be built into every project schedule.
+- **TM-40M (ML Engineer):** ML projects have model governance checkpoints (Training Data Card, Model Card, C2DAO review) that must be built into every project schedule.
 - **TM-40K (Knowledge Manager):** KM systems have retention policy, taxonomy governance, and workflow authority requirements that affect project scope and change management.
 - **TM-40L (Software Engineer):** Production code has CI gate, peer review, and branch-promotion requirements that affect delivery timelines and cannot be compressed without creating operational risk.
+
+> **NOTE — New Doctrine Content in TM-40J:** TM-40J now includes DDOF roles and PM oversight responsibilities (section 1-2a), the DDOF Configuration Management Friction Matrix (section 2-6) for identifying execution blockers, and data product portfolio health metrics (section 7-6) covering VAULTIS-A scores, gate rates, and retirement trigger monitoring.
 
 **WFF awareness:** Data products managed by TM-40J PMs are consumed by WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). Every project schedule decision has a WFF operational consequence. Know which WFF function depends on each product and what the operational impact of degradation or delay is.
 

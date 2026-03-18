@@ -18,11 +18,11 @@
 | TM-20 | Builder | Workshop apps, basic transforms, no-code pipelines | Minimal / drag-and-drop |
 | TM-30 | Advanced Builder | Complex pipelines, Contour datasets, data modeling | Light Python, no TypeScript |
 | TM-40G | ORSA | Quantitative analysis, Commander products, statistical models | Python (analytical) |
-| TM-40I | ML Engineer | ML models, validation, deployment | Python (ML) |
+| TM-40M | ML Engineer | ML models, validation, deployment | Python (ML) |
 | TM-40H | AI Engineer | AIP Logic, Agents, LLM integration | Python + prompt engineering |
 | TM-40L | **Software Engineer** | **Production transforms, TypeScript FOO, OSDK applications** | **Python + TypeScript (production)** |
 
-The SWE's distinguishing criterion: you write code that runs in production and that other people depend on. A TM-40G ORSA writes analytical Python; a TM-40I MLE writes model training code; a TM-40L SWE writes the infrastructure layer. When an ORSA notebook produces an incorrect result, the ORSA revises it. When a production transform produces incorrect data, every analyst, every dashboard, and every staff section consuming that dataset works with bad information — and may not know it. SWE failures are silent, systemic, and operationally consequential.
+The SWE's distinguishing criterion: you write code that runs in production and that other people depend on. A TM-40G ORSA writes analytical Python; a TM-40M MLE writes model training code; a TM-40L SWE writes the infrastructure layer. When an ORSA notebook produces an incorrect result, the ORSA revises it. When a production transform produces incorrect data, every analyst, every dashboard, and every staff section consuming that dataset works with bad information — and may not know it. SWE failures are silent, systemic, and operationally consequential.
 
 **SWE responsibilities on MSS:**
 - Python transforms that execute on a schedule or trigger
@@ -33,11 +33,17 @@ The SWE's distinguishing criterion: you write code that runs in production and t
 
 **SWE boundaries (owned by others):**
 - Analysis notebooks — TM-40G
-- ML model hyperparameter tuning — TM-40I
+- ML model hyperparameter tuning — TM-40M
 - AIP Agent chain design — TM-40H
 - Workshop application GUI builds — TM-30
 
 The boundary is not about capability — it is about primary responsibility and production ownership.
+
+> **NOTE — Army Data Plan SO 7 DevSecOps (TM-40L Section 1-5b):** TM-40L Section 1-5b maps SWE responsibilities to Army Data Plan Strategic Objective 7 (DevSecOps), establishing the doctrinal basis for CI/CD pipeline standards, automated testing gates, and secure deployment practices on MSS.
+
+> **NOTE — UDRA 6 Services Architecture (TM-40L Section 1-7):** TM-40L Section 1-7 describes the UDRA six-services architecture (Discover, Access, Transport, Compute, Store, Govern) and how each service maps to SWE platform responsibilities. Reference when designing cross-service integrations.
+
+> **NOTE — UDRA 15 Required Metadata Fields:** TM-40L now documents the 15 metadata fields required by UDRA for all data assets. Ensure all production transforms and OSDK application outputs include compliant metadata before promotion.
 
 ---
 
@@ -348,10 +354,12 @@ A senior contractor SWE builds a complex equipment readiness pipeline over six m
 **Peer specialist cross-references:**
 - **TM-40K (Knowledge Manager):** High-frequency coordination point. The KM designs knowledge ontology and pipeline architecture; the SWE implements pipelines requiring custom code. Breaking ontology changes affect knowledge pipeline code — coordinate before any schema change.
 - **TM-40H (AI Engineer):** AI workflows delivered through OSDK applications require SWE implementation of the application layer. Coordinate on CBAC compliance, credential management, and application architecture before build begins.
-- **TM-40I (ML Engineer):** Coordinate on production pipeline implementation when model deployment requires custom inference infrastructure beyond standard Foundry Transforms, and on OSDK application surfaces for model-backed properties.
+- **TM-40M (ML Engineer):** Coordinate on production pipeline implementation when model deployment requires custom inference infrastructure beyond standard Foundry Transforms, and on OSDK application surfaces for model-backed properties.
 - **TM-40G (ORSA):** ORSA analytical products sometimes require OSDK delivery interfaces for commander-facing applications. Coordinate with ORSA on output format and human-review-gate design before committing to application architecture.
 
 **WFF awareness:** Software engineers on MSS build the production code layer that WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command) interact with daily. A production code failure is not an engineering metric — it is a WFF operational impact. Every application in production has a WFF customer. Know who they are, what their decision cycle is, and what degraded service means for their mission.
+
+> **NOTE — New Doctrine Content in TM-40L:** TM-40L now includes Army Data Plan SO 7 DevSecOps alignment with DDOF phases (section 1-5b), the UDRA 6-service architecture mapped to SWE responsibilities (section 1-7), and UDRA required metadata fields that pipelines must populate automatically.
 
 *Continue to TM-40L for task-based instruction in OSDK development, TypeScript Functions, Python transforms, CI/CD workflows, and security compliance.*
 

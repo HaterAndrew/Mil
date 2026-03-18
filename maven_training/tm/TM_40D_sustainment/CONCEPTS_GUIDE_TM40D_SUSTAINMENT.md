@@ -487,13 +487,13 @@ All six WFF tracks are at the same tier. All six WFF tracks require TM-10, TM-20
 
 ### Specialist Tracks (Prerequisite: TM-30)
 
-For personnel pursuing technical depth, specialist tracks (TM-40G–L, prereq TM-30) are available. Not required for sustainment WFF employment.
+For personnel pursuing technical depth, specialist tracks (TM-40G–M, prereq TM-30) are available. Not required for sustainment WFF employment.
 
 | Track | Title |
 |-------|-------|
 | TM-40G | ORSA (→ TM-50G) |
 | TM-40H | AI Engineer (→ TM-50H) |
-| TM-40I | ML Engineer (→ TM-50I) |
+| TM-40M | ML Engineer (→ TM-50M) |
 | TM-40J | Program Manager (→ TM-50J) |
 | TM-40K | Knowledge Manager (→ TM-50K) |
 | TM-40L | Software Engineer (→ TM-50L) |
@@ -501,5 +501,7 @@ For personnel pursuing technical depth, specialist tracks (TM-40G–L, prereq TM
 ---
 
 *CONCEPTS GUIDE — TM-40D Companion, Version 1.0, March 2026*
+> **NOTE — New Doctrine Content in TM-40D:** TM-40D now includes the eight sustainment principles mapped to data platform analogs (Table 1-1A, ADP 4-0), ten classes of supply with source systems, data feeds, and update frequencies (Table 2-1A), and a running estimate NOTE tying battle rhythm data to commander decision support. These sections ground sustainment data management in their authoritative doctrinal sources.
+
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 *UNCLASSIFIED // FOR OFFICIAL USE ONLY*

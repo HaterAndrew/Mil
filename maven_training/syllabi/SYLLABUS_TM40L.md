@@ -194,7 +194,7 @@ Graduates designing platform architecture or establishing development standards 
 |---|---|
 | Pre-course exam | EXAM_TM40L_PRE |
 | Post-course exam | EXAM_TM40L_POST |
-| Practical exercise | EX-40L (EXERCISE.md + ENVIRONMENT_SETUP.md) |
+| Practical exercise | EX_40L (EXERCISE.md + ENVIRONMENT_SETUP.md) |
 
 ---
 

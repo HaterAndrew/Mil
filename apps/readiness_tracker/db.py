@@ -108,17 +108,17 @@ PREREQ_CHAIN: dict[str, list[str]] = {
     "TM-40D": ["TM-30"],
     "TM-40E": ["TM-30"],
     "TM-40F": ["TM-30"],
-    # Specialist tracks (G–L) — all require TM-30
+    # Specialist tracks (G–M) — all require TM-30
     "TM-40G": ["TM-30"],
     "TM-40H": ["TM-30"],
-    "TM-40I": ["TM-30"],
+    "TM-40M": ["TM-30"],
     "TM-40J": ["TM-30"],
     "TM-40K": ["TM-30"],
     "TM-40L": ["TM-30"],
-    # Advanced specialist (G–L only — NO TM-50A through TM-50F)
+    # Advanced specialist (G–M only — NO TM-50A through TM-50F)
     "TM-50G": ["TM-40G"],
     "TM-50H": ["TM-40H"],
-    "TM-50I": ["TM-40I"],
+    "TM-50M": ["TM-40M"],
     "TM-50J": ["TM-40J"],
     "TM-50K": ["TM-40K"],
     "TM-50L": ["TM-40L"],
@@ -140,13 +140,13 @@ COURSE_CATALOG: dict[str, tuple[str, int]] = {
     "TM-40F": ("Mission Command WFF", 24),
     "TM-40G": ("ORSA", 40),
     "TM-40H": ("AI Engineer", 40),
-    "TM-40I": ("ML Engineer", 40),
+    "TM-40M": ("ML Engineer", 40),
     "TM-40J": ("Program Manager", 24),
     "TM-40K": ("Knowledge Manager", 24),
     "TM-40L": ("Software Engineer", 40),
     "TM-50G": ("Advanced ORSA", 40),
     "TM-50H": ("Advanced AI Engineer", 40),
-    "TM-50I": ("Advanced ML Engineer", 40),
+    "TM-50M": ("Advanced ML Engineer", 40),
     "TM-50J": ("Advanced Program Manager", 40),
     "TM-50K": ("Advanced Knowledge Manager", 40),
     "TM-50L": ("Advanced Software Engineer", 40),
@@ -261,8 +261,8 @@ def get_unit_rollup(db: Session, unit: str | None = None) -> list[dict]:
 COURSE_TIERS = {
     "Foundation": ["TM-10", "TM-20", "TM-30"],
     "WFF (A-F)": ["TM-40A", "TM-40B", "TM-40C", "TM-40D", "TM-40E", "TM-40F"],
-    "Specialist (G-L)": ["TM-40G", "TM-40H", "TM-40I", "TM-40J", "TM-40K", "TM-40L"],
-    "Advanced (50)": ["TM-50G", "TM-50H", "TM-50I", "TM-50J", "TM-50K", "TM-50L"],
+    "Specialist (G-M)": ["TM-40G", "TM-40H", "TM-40M", "TM-40J", "TM-40K", "TM-40L"],
+    "Advanced (50)": ["TM-50G", "TM-50H", "TM-50M", "TM-50J", "TM-50K", "TM-50L"],
 }
 
 

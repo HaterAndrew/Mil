@@ -1898,6 +1898,92 @@
       .sidebar-top { display: none; }
       .content-area main { padding: 20px 16px 40px; }
     }
+
+    /* ============================================================
+       FIND MY TRACK WIZARD
+    ============================================================ */
+    /* Find My Track toggle bar */
+    .fmt-section { margin-bottom: 20px; }
+    .fmt-toggle {
+      display: flex; align-items: center; gap: 8px; width: 100%;
+      padding: 12px 16px;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-light) 100%);
+      border: 2px solid var(--gold-dark); border-radius: var(--radius-lg);
+      cursor: pointer; color: var(--white); font-family: var(--font-ui);
+      transition: border-color 0.15s;
+    }
+    .fmt-toggle:hover { border-color: var(--gold); }
+    .fmt-toggle.open { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+    .fmt-toggle-icon { font-size: 18px; flex-shrink: 0; }
+    .fmt-toggle-text { font-size: 15px; font-weight: 700; letter-spacing: 0.3px; }
+    .fmt-toggle-sub { font-size: 11px; color: rgba(255,255,255,0.55); flex: 1; }
+    .fmt-toggle-arrow { font-size: 10px; color: var(--gold); flex-shrink: 0; margin-left: auto; }
+    .fmt-section .fmt-wizard {
+      border: 2px solid var(--gold-dark); border-top: none;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      padding: 16px; background: var(--off-white);
+    }
+    /* Quick-nav button row */
+    .qr-nav-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+    .qr-nav-btn {
+      font-family: var(--font-ui); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.3px; padding: 6px 12px;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      background: var(--off-white); color: var(--navy);
+      cursor: pointer; white-space: nowrap;
+      transition: background 0.12s, border-color 0.12s, transform 0.1s;
+    }
+    .qr-nav-btn:hover { background: var(--navy); color: var(--white); border-color: var(--navy); transform: translateY(-1px); }
+
+    .fmt-wizard { margin: 0 0 24px; }
+    .fmt-header { margin-bottom: 16px; }
+    .fmt-title { font-family: var(--font-ui); font-size: 18px; font-weight: 800; color: var(--navy); letter-spacing: .02em; }
+    .fmt-subtitle { font-size: 12px; color: var(--gray-600); margin-top: 2px; }
+    .fmt-step { margin-bottom: 16px; }
+    .fmt-step-label { font-family: var(--font-ui); font-size: 12px; font-weight: 700; color: var(--navy); letter-spacing: .04em; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .fmt-step-num { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: var(--navy); color: var(--gold-light); font-size: 11px; font-weight: 800; flex-shrink: 0; }
+    .fmt-categories { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px; }
+    .fmt-cat-btn { display: flex; flex-direction: column; align-items: flex-start; padding: 12px 14px; border-radius: var(--radius-lg); border: 2px solid var(--gray-100); background: var(--white); cursor: pointer; text-align: left; transition: all 0.15s ease; }
+    .fmt-cat-btn:hover { border-color: var(--navy-mid); background: var(--navy-pale); }
+    .fmt-cat-btn.active { border-color: var(--navy); background: var(--navy-pale); box-shadow: 0 0 0 2px rgba(12,35,64,0.15); }
+    .fmt-cat-icon { font-size: 20px; margin-bottom: 4px; }
+    .fmt-cat-label { font-family: var(--font-ui); font-size: 12px; font-weight: 700; color: var(--navy); letter-spacing: .03em; }
+    .fmt-cat-desc { font-size: 11px; color: var(--gray-600); line-height: 1.4; margin-top: 2px; }
+    .fmt-roles { display: flex; flex-direction: column; gap: 6px; }
+    .fmt-role-btn { display: flex; flex-direction: column; padding: 10px 14px; border-radius: var(--radius-lg); border: 2px solid var(--gray-100); background: var(--white); cursor: pointer; text-align: left; transition: all 0.15s ease; }
+    .fmt-role-btn:hover { border-color: var(--navy-mid); background: var(--navy-pale); }
+    .fmt-role-btn.active { border-color: var(--navy); background: var(--navy-pale); box-shadow: 0 0 0 2px rgba(12,35,64,0.15); }
+    .fmt-role-label { font-family: var(--font-ui); font-size: 12px; font-weight: 700; color: var(--navy); }
+    .fmt-role-desc { font-size: 11px; color: var(--gray-600); line-height: 1.4; margin-top: 1px; }
+    .fmt-result { margin-top: 16px; padding: 16px 18px; border-radius: var(--radius-lg); border: 2px solid var(--gold); background: linear-gradient(135deg, var(--gold-pale) 0%, var(--white) 100%); }
+    .fmt-result-header { margin-bottom: 10px; }
+    .fmt-result-badge { font-family: var(--font-ui); font-size: 9px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 4px; }
+    .fmt-result-track { font-family: var(--font-ui); font-size: 18px; font-weight: 800; color: var(--navy); }
+    .fmt-result-tm { font-size: 12px; font-weight: 700; color: var(--navy-mid); }
+    .fmt-result-desc { font-size: 13px; color: var(--gray-700); line-height: 1.5; margin-bottom: 12px; }
+    .fmt-path { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin-bottom: 14px; }
+    .fmt-path-step { display: inline-flex; align-items: center; gap: 4px; }
+    .fmt-path-arrow { color: var(--gray-400); font-size: 14px; font-weight: 700; }
+    .fmt-path-badge { display: inline-block; padding: 4px 10px; border-radius: var(--radius); font-family: var(--font-ui); font-size: 11px; font-weight: 700; letter-spacing: .03em; background: var(--navy-pale); color: var(--navy); border: 1px solid var(--gray-200); }
+    .fmt-path-badge.final { background: var(--navy); color: var(--gold-light); border-color: var(--navy); }
+    .fmt-result-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .fmt-go-btn { padding: 8px 18px; border-radius: var(--radius); background: var(--navy); color: var(--gold-light); font-family: var(--font-ui); font-size: 12px; font-weight: 700; letter-spacing: .04em; border: none; cursor: pointer; transition: background 0.15s; }
+    .fmt-go-btn:hover { background: var(--navy-light); }
+    .fmt-reset-btn { padding: 8px 14px; border-radius: var(--radius); background: transparent; color: var(--gray-600); font-family: var(--font-ui); font-size: 11px; font-weight: 600; border: 1px solid var(--gray-200); cursor: pointer; }
+    .fmt-reset-btn:hover { background: var(--gray-50); }
+
+    /* ============================================================
+       DASHBOARDS PANEL
+    ============================================================ */
+    .dash-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 16px; }
+    .dash-card { display: block; padding: 14px 16px; border-radius: var(--radius-lg); border: 1px solid var(--gray-100); background: var(--white); transition: border-color 0.15s, box-shadow 0.15s; text-decoration: none; color: inherit; cursor: pointer; }
+    .dash-card:hover { border-color: var(--navy-mid); box-shadow: 0 2px 8px rgba(12,35,64,0.08); }
+    .dash-card-hdr { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+    .dash-card-icon { font-size: 18px; }
+    .dash-card-name { font-family: var(--font-ui); font-size: 12px; font-weight: 700; color: var(--navy); letter-spacing: .03em; }
+    .dash-card-port { font-family: var(--font-mono); font-size: 10px; color: var(--gray-400); margin-left: auto; }
+    .dash-card-desc { font-size: 11px; color: var(--gray-600); line-height: 1.4; }
+    .dash-section-hdr { font-family: var(--font-ui); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gray-400); margin: 16px 0 8px; padding-bottom: 4px; border-bottom: 1px solid var(--gray-100); }
   </style>
 </head>
 <body>
@@ -1963,7 +2049,7 @@
 
       <div class="splash-tms">
         TM-10 &nbsp;&#183;&nbsp; TM-20 &nbsp;&#183;&nbsp; TM-30 &nbsp;&#183;&nbsp;
-        TM-40A&ndash;L &nbsp;&#183;&nbsp; TM-50G&ndash;L &nbsp;&#183;&nbsp; Data Lit (SL) &nbsp;&#183;&nbsp; Data Literacy
+        TM-40A&ndash;M &nbsp;&#183;&nbsp; TM-50G&ndash;M &nbsp;&#183;&nbsp; Data Lit (SL) &nbsp;&#183;&nbsp; Data Literacy
       </div>
 
       <div class="splash-rule-sm"></div>
@@ -2026,7 +2112,7 @@
 
 <div class="header-strip">
   <div class="header-strip-inner">
-    <span>TM-10 &bull; TM-20 &bull; TM-30 &bull; TM-40A–L &bull; TM-50G–L &bull; Data Lit (SL) &bull; Data Literacy</span>
+    <span>TM-10 &bull; TM-20 &bull; TM-30 &bull; TM-40A–M &bull; TM-50G–M &bull; Data Lit (SL) &bull; Data Literacy</span>
     <span>DRAFT &mdash; NOT YET APPROVED FOR DISTRIBUTION &nbsp;&bull;&nbsp; alpha</span>
   </div>
 </div>
@@ -2046,12 +2132,6 @@
     <button class="snav-pinned active" data-panel="quickref" id="snav-quickref">
       <span class="snav-pinned-icon">&#9636;</span>
       <span class="snav-pinned-label">Quick Reference</span>
-    </button>
-
-    <!-- HOME -->
-    <button class="snav-item" data-panel="home">
-      <span class="snav-item-icon">&#9632;</span>
-      <span class="snav-item-label">Home / Start Here</span>
     </button>
 
     <!-- TRAINING SCHEDULE — pinned near top for easy access -->
@@ -2149,12 +2229,18 @@
           <span class="snav-item-icon">&#9642;</span>
           <span class="snav-item-label">Task Index</span>
         </button>
+        <button class="snav-item" data-panel="dashboards">
+          <span class="snav-item-icon">&#9642;</span>
+          <span class="snav-item-label">Dashboards</span>
+        </button>
         <button class="snav-item" data-panel="support">
           <span class="snav-item-icon">&#9642;</span>
           <span class="snav-item-label">Support</span>
         </button>
       </div>
     </div>
+
+    <!-- Analytics Suite — single item points to dashboards panel -->
 
     <!-- ADMIN — hidden from typical users; subtle link at bottom of nav -->
     <div style="margin-top:auto; padding:18px 14px 6px; border-top:1px solid rgba(255,255,255,0.06);">
@@ -2177,217 +2263,6 @@
 ============================================================ -->
 <main id="main-content">
 
-  <!-- ======================================================
-       HOME PANEL
-  ====================================================== -->
-  <div id="panel-home" class="panel">
-
-    <div class="section-header">
-      <span class="section-badge">HOME</span>
-      <span class="section-title">MSS Training Curriculum &mdash; USAREUR-AF</span>
-      <span class="section-subtitle">Version 3.0 &bull; March 2026</span>
-    </div>
-
-    <div class="callout info">
-      <div class="callout-label">NEW TO MSS?</div>
-      <div class="callout-body"><strong>Start with the Quick Start guide</strong> before reading TM-10. It gets you operational in 30 minutes: log in, navigate, filter data, and export a view. &rarr; <a href="../pdf/QUICK_START.pdf" style="color:var(--navy);font-weight:700;">QUICK_START.pdf</a></div>
-    </div>
-
-    <div class="callout bluf">
-      <div class="callout-label">BLUF</div>
-      <div class="callout-body">Find your level below and follow the training path. All personnel start at TM-10. Builders add TM-20. All TM-40 tracks (WFF and specialist) require TM-30. Use the sidebar to navigate to your specific guidance.</div>
-    </div>
-
-    <div class="callout note">
-      <div class="callout-label">DOCTRINE ALIGNMENT</div>
-      <div class="callout-body">This training program is designed and governed IAW <strong>AR 350-1</strong> (Army Training and Leader Development), <strong>TR 350-70</strong> (Army Learning Policy and Systems), and <strong>FM 7-0</strong> (Training). All WFF tracks (TM-40A&ndash;F) integrate doctrinal references from the corresponding warfighting function field manuals. See the <button class="qr-link" onclick="showPanel('doctrine')">Doctrine &amp; Reference</button> panel or the DEPENDENCY_MAP for the full external doctrinal references index.</div>
-    </div>
-
-    <h2>STEP 1 &mdash; FIND YOUR LEVEL</h2>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>You Are&hellip;</th><th>Start Here</th><th>Then</th><th>Tab</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Any Soldier, officer, or civilian &mdash; using MSS to access and consume data</td>
-            <td><strong><button class="qr-link" onclick="showPanel('tm10')">TM-10 (User)</button></strong></td>
-            <td>&mdash;</td>
-            <td><span class="chip chip-navy" style="cursor:pointer;" onclick="showPanel('tm10')">TM-10</span></td>
-          </tr>
-          <tr>
-            <td>All staff &mdash; building dashboards, forms, or pipelines without coding</td>
-            <td><strong><button class="qr-link" onclick="showPanel('tm10')">TM-10</button></strong></td>
-            <td><button class="qr-link" onclick="showPanel('tm20')">TM-20 (Builder)</button></td>
-            <td><span class="chip chip-navy" style="cursor:pointer;" onclick="showPanel('tm20')">TM-20</span></td>
-          </tr>
-          <tr>
-            <td>Any staff building solutions, owning pipelines, or planning a TM-40 track &mdash; required for all TM-40 tracks</td>
-            <td><strong><button class="qr-link" onclick="showPanel('tm10')">TM-10</button> &rarr; <button class="qr-link" onclick="showPanel('tm20')">TM-20</button></strong></td>
-            <td><button class="qr-link" onclick="showPanel('tm30')">TM-30 (Advanced)</button></td>
-            <td><span class="chip chip-gold" style="cursor:pointer;" onclick="showPanel('tm30')">TM-30</span></td>
-          </tr>
-          <tr>
-            <td>WFF specialist &mdash; assigned Intel, Fires, M&amp;M, Sustainment, Protection, or Mission Command role (TM-40A&ndash;F)</td>
-            <td><strong><button class="qr-link" onclick="showPanel('tm10')">TM-10</button> &rarr; <button class="qr-link" onclick="showPanel('tm20')">TM-20</button> &rarr; <button class="qr-link" onclick="showPanel('tm30')">TM-30</button></strong></td>
-            <td><button class="qr-link" onclick="showPanel('specialists')">TM-40 WFF track</button></td>
-            <td><span class="chip chip-gold" style="cursor:pointer;" onclick="showPanel('specialists')">TM-40</span></td>
-          </tr>
-          <tr>
-            <td>Technical specialist &mdash; ORSA, AI/ML, MLE, PM, KM, SWE roles (TM-40G&ndash;L)</td>
-            <td><strong><button class="qr-link" onclick="showPanel('tm10')">TM-10</button> &rarr; <button class="qr-link" onclick="showPanel('tm20')">TM-20</button> &rarr; <button class="qr-link" onclick="showPanel('tm30')">TM-30</button></strong></td>
-            <td><button class="qr-link" onclick="showPanel('tm40')">TM-40 specialist track</button></td>
-            <td><span class="chip chip-gold" style="cursor:pointer;" onclick="showPanel('specialists')">TM-40</span></td>
-          </tr>
-          <tr>
-            <td>Senior leader (O-5+ / SGM+) directing a data-capable formation</td>
-            <td><strong><button class="qr-link" onclick="showPanel('doctrine')">Data Literacy (SL)</button></strong></td>
-            <td>Optional: Data Literacy</td>
-            <td><span class="chip chip-gray" style="cursor:pointer;" onclick="showPanel('doctrine')">DRAFT PUBS</span></td>
-          </tr>
-          <tr>
-            <td>Anyone wanting data literacy background before touching MSS</td>
-            <td><strong><button class="qr-link" onclick="showPanel('doctrine')">Data Literacy</button></strong></td>
-            <td>TM-10</td>
-            <td><span class="chip chip-gray" style="cursor:pointer;" onclick="showPanel('doctrine')">DRAFT PUBS</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h2>STEP 2 &mdash; FOLLOW THE TRAINING PATH</h2>
-
-    <!-- Data Literacy: outside the main pipeline — dashed border callout -->
-    <div style="border:2px dashed var(--gray-200);border-radius:6px;padding:14px 16px 10px;margin-bottom:16px;background:var(--off-white);">
-      <div style="font-family:var(--font-ui);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray-400);margin-bottom:10px;">OUTSIDE THE PIPELINE &mdash; BACKGROUND READING (NOT REQUIRED BEFORE TM-10, BUT RECOMMENDED)</div>
-      <div class="path-flow" style="margin-bottom:0;">
-        <div class="path-step">
-          <div class="path-connector">
-            <div class="path-dot optional" style="font-size:10px;width:34px;height:34px;">SL</div>
-            <div class="path-line dashed"></div>
-          </div>
-          <div class="path-content" style="cursor:pointer;" onclick="showPanel('doctrine')">
-            <div class="path-tm">DATA LIT (SL) &mdash; OPTIONAL (O-5+ / SGM+)</div>
-            <div class="path-name">Data Literacy for Senior Leaders <span style="font-size:11px;color:var(--navy-mid);">&#8594; Draft Pubs</span></div>
-            <div class="path-audience">Principles, command responsibilities, decision frameworks</div>
-          </div>
-        </div>
-        <div class="path-spacer"></div>
-        <div class="path-step">
-          <div class="path-connector">
-            <div class="path-dot optional" style="font-size:10px;width:34px;height:34px;">ALL</div>
-          </div>
-          <div class="path-content" style="cursor:pointer;" onclick="showPanel('doctrine')">
-            <div class="path-tm">DATA LITERACY &mdash; RECOMMENDED (ALL PERSONNEL)</div>
-            <div class="path-name">Data Literacy Reference <span style="font-size:11px;color:var(--navy-mid);">&#8594; Draft Pubs</span></div>
-            <div class="path-audience">Platform-agnostic data literacy; recommended before TM-10</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="path-flow">
-      <div class="path-step">
-        <div class="path-connector">
-          <div class="path-dot">1</div>
-          <div class="path-line"></div>
-        </div>
-        <div class="path-content" style="cursor:pointer;" onclick="showPanel('tm10')">
-          <div class="path-tm">TM-10 &mdash; REQUIRED FOR ALL PERSONNEL</div>
-          <div class="path-name">Maven User Manual <span style="font-size:11px;color:var(--navy-mid);">&#8594; TM-10</span></div>
-          <div class="path-audience">CAC login, navigation, Workshop apps, data viewing, AI tools, security</div>
-        </div>
-      </div>
-      <div class="path-spacer"></div>
-
-      <div class="path-step">
-        <div class="path-connector">
-          <div class="path-dot">2</div>
-          <div class="path-line"></div>
-        </div>
-        <div class="path-content" style="cursor:pointer;" onclick="showPanel('tm20')">
-          <div class="path-tm">TM-20 &mdash; ALL STAFF (NO-CODE BUILDER)</div>
-          <div class="path-name">Builder Manual <span style="font-size:11px;color:var(--navy-mid);">&#8594; TM-20</span></div>
-          <div class="path-audience">Pipeline Builder (visual), Ontology Manager UI, Workshop app builder</div>
-        </div>
-      </div>
-      <div class="path-spacer"></div>
-
-      <div class="path-step">
-        <div class="path-connector">
-          <div class="path-dot">3</div>
-          <div class="path-line"></div>
-        </div>
-        <div class="path-content" style="cursor:pointer;" onclick="showPanel('tm30')">
-          <div class="path-tm">TM-30 &mdash; ADVANCED BUILDERS &amp; REQUIRED FOR ALL TM-40</div>
-          <div class="path-name">Advanced Builder Manual <span style="font-size:11px;color:var(--navy-mid);">&#8594; TM-30</span></div>
-          <div class="path-audience">Complex app design, Ontology architecture, governance, C2DAO standards</div>
-        </div>
-      </div>
-      <div class="path-spacer"></div>
-
-      <div class="path-step">
-        <div class="path-connector">
-          <div class="path-dot">4</div>
-        </div>
-        <div class="path-content" style="cursor:pointer;" onclick="showPanel('specialists')">
-          <div class="path-tm">TM-40 &mdash; TWO TRACK TYPES (BY ROLE)</div>
-          <div class="path-name">Specialist &amp; Warfighting Function Tracks <span style="font-size:11px;color:var(--navy-mid);">&#8594; Specialist Tracks</span></div>
-          <div class="path-audience"><strong>WFF Tracks (TM-40A&ndash;F):</strong> Intel &bull; Fires &bull; M&amp;M &bull; Sustainment &bull; Protection &bull; Mission Command<br/><strong>Technical Tracks (TM-40G&ndash;L):</strong> ORSA &bull; AI Eng &bull; MLE &bull; PM &bull; KM &bull; SWE &mdash; Advanced versions at TM-50G&ndash;L</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="callout info">
-      <div class="callout-label">TM-40 TRACK SELECTION &mdash; BY MOS / ROLE</div>
-      <div class="callout-body">
-        <strong style="display:block;margin-bottom:4px;">Warfighting Function Tracks (TM-40A&ndash;F):</strong>
-        <strong>Intelligence (TM-40A):</strong> G2/S2, MI units, ISR analysts<br/>
-        <strong>Fires (TM-40B):</strong> FA officers/NCOs, fire support coordinators<br/>
-        <strong>Movement &amp; Maneuver (TM-40C):</strong> Maneuver units, G3/S3 data roles<br/>
-        <strong>Sustainment (TM-40D):</strong> Logistics, G4/S4, GCSS-A users<br/>
-        <strong>Protection (TM-40E):</strong> Air defense, CBRN, engineer, force protection<br/>
-        <strong>Mission Command (TM-40F):</strong> G6/S6, C2 systems, network managers<br/><br/>
-        <strong style="display:block;margin-bottom:4px;">Technical Specialist Tracks (TM-40G&ndash;L):</strong>
-        <strong>ORSA (TM-40G):</strong> FA49, G2/S2 quant analysts, wargame specialists<br/>
-        <strong>AI Engineer (TM-40H):</strong> AI/ML specialists, 17A/17C<br/>
-        <strong>ML Engineer (TM-40I):</strong> ML engineers, data scientists (GS/contractor)<br/>
-        <strong>Program Manager (TM-40J):</strong> G8/S8, PMs, resource managers<br/>
-        <strong>Knowledge Manager (TM-40K):</strong> KMOs, 37F, institutional memory leads<br/>
-        <strong>Software Engineer (TM-40L):</strong> 17A/17C, 25D/25U, GS/contractor SWEs<br/><br/>
-        <em>Not listed? Ask your commander &mdash; you may be assigned a track based on unit needs.</em><br/>
-        Full mapping: <button class="qr-link" onclick="showPanel('specialists')">Specialist Tracks &rarr;</button>
-      </div>
-    </div>
-
-    <div class="callout note mt-24">
-      <div class="callout-label">NOTE &mdash; MSS ACCOUNT ACCESS</div>
-      <div class="callout-body">MSS access requires a provisioned account. Submit your request through your unit data steward or at <strong><a href="https://mss.data.mil" target="_blank" style="color:var(--navy-mid);">mss.data.mil</a></strong>. Provisioning generally completes within 24 hours; if access is not active after 24 hours, contact your data steward directly. Do not wait until the start of a deployment or exercise.</div>
-    </div>
-
-    <!-- Specialist Tracks CTA -->
-    <div class="specialist-cta">
-      <div class="specialist-cta-text">
-        <div class="specialist-cta-label">Advanced &amp; Technical Tracks</div>
-        <div class="specialist-cta-title">Specialist Tracks &mdash; TM-40 &amp; TM-50 Series</div>
-        <div class="specialist-cta-sub">Role-specific developer manuals for ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, and Software Engineer. Prerequisite: TM-30 complete.</div>
-      </div>
-      <button class="specialist-cta-btn" onclick="showPanel('specialists')">
-        Access Specialist Tracks <span class="btn-arrow">&#8594;</span>
-      </button>
-    </div>
-
-    <div class="callout note mt-24">
-      <div class="callout-label">NOT FINDING WHAT YOU NEED?</div>
-      <div class="callout-body">
-        Contact your unit data steward for additional publications, source files, or access to restricted materials.
-        For technical support, visit the <button class="qr-link" onclick="showPanel('support')">Support page &rarr;</button>
-        For task-level procedures, use the <button class="qr-link" onclick="showPanel('taskindex')">Task Index &rarr;</button>
-      </div>
-    </div>
-
-  </div><!-- /panel-home -->
 
 
   <!-- ======================================================
@@ -3218,12 +3093,12 @@
     <div class="section-header">
       <span class="section-badge">SPECIALIST TRACKS</span>
       <span class="section-title">TM-40 &amp; TM-50 Series &mdash; WFF &amp; Technical Tracks</span>
-      <span class="section-subtitle">WFF tracks (A&ndash;F): TM-30 req. &bull; Technical tracks (G&ndash;L): TM-30 req.</span>
+      <span class="section-subtitle">WFF tracks (A&ndash;F): TM-30 req. &bull; Technical tracks (G&ndash;M): TM-30 req.</span>
     </div>
 
     <div class="callout bluf">
       <div class="callout-label">BLUF</div>
-      <div class="callout-body">TM-40 has two track types: <strong>Warfighting Function tracks (TM-40A&ndash;F)</strong> for WFF-assigned roles (Intelligence, Fires, M&amp;M, Sustainment, Protection, Mission Command) &mdash; prerequisite TM-30, no coding required &mdash; and <strong>Technical Specialist tracks (TM-40G&ndash;L)</strong> for personnel who build and engineer MSS solutions (ORSA, AI Eng, MLE, PM, KM, SWE) &mdash; prerequisite TM-30. Advanced versions (TM-50G&ndash;L) are available after completing the corresponding TM-40 technical track.</div>
+      <div class="callout-body">TM-40 has two track types: <strong>Warfighting Function tracks (TM-40A&ndash;F)</strong> for WFF-assigned roles (Intelligence, Fires, M&amp;M, Sustainment, Protection, Mission Command) &mdash; prerequisite TM-30, no coding required &mdash; and <strong>Technical Specialist tracks (TM-40G&ndash;M)</strong> for personnel who build and engineer MSS solutions (ORSA, AI Eng, MLE, PM, KM, SWE) &mdash; prerequisite TM-30. Advanced versions (TM-50G&ndash;M) are available after completing the corresponding TM-40 technical track.</div>
     </div>
 
     <h2>TRACK SELECTION BY MOS / ROLE</h2>
@@ -3240,13 +3115,13 @@
           <tr><td>G4/S4 &mdash; Logistics, GCSS-A</td><td><strong>TM-40D (Sustainment)</strong></td><td>&mdash;</td></tr>
           <tr><td>Air defense, CBRN, force protection</td><td><strong>TM-40E (Protection)</strong></td><td>&mdash;</td></tr>
           <tr><td>G6/S6 &mdash; C2 systems, networks</td><td><strong>TM-40F (Mission Command)</strong></td><td>&mdash;</td></tr>
-          <tr><td colspan="3" style="background:var(--navy-pale);font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);">Technical Specialist Tracks (TM-40G&ndash;L)</td></tr>
+          <tr><td colspan="3" style="background:var(--navy-pale);font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);">Technical Specialist Tracks (TM-40G&ndash;M)</td></tr>
           <tr><td>FA49 &mdash; Operations Research Analyst</td><td><strong>TM-40G (ORSA)</strong></td><td>TM-50G</td></tr>
           <tr><td>G2/S2 quantitative analyst</td><td><strong>TM-40G (ORSA)</strong> or TM-40K (KM)</td><td>TM-50G / TM-50K</td></tr>
           <tr><td>17A/17C &mdash; Cyber officer/NCO</td><td><strong>TM-40L (SWE)</strong> or TM-40H (AI Eng)</td><td>TM-50L / TM-50H</td></tr>
           <tr><td>25D &mdash; IT specialist</td><td><strong>TM-40L (SWE)</strong></td><td>TM-50L</td></tr>
-          <tr><td>AI/ML engineer (GS/contractor)</td><td><strong>TM-40H (AI Eng)</strong> or TM-40I (MLE)</td><td>TM-50H / TM-50I</td></tr>
-          <tr><td>Data scientist (GS/contractor)</td><td><strong>TM-40G (ORSA)</strong> or TM-40I (MLE)</td><td>TM-50G / TM-50I</td></tr>
+          <tr><td>AI/ML engineer (GS/contractor)</td><td><strong>TM-40H (AI Eng)</strong> or TM-40M (MLE)</td><td>TM-50H / TM-50M</td></tr>
+          <tr><td>Data scientist (GS/contractor)</td><td><strong>TM-40G (ORSA)</strong> or TM-40M (MLE)</td><td>TM-50G / TM-50M</td></tr>
           <tr><td>G8/S8 &mdash; Resource manager</td><td><strong>TM-40J (PM)</strong></td><td>TM-50J</td></tr>
           <tr><td>Program Manager (PM / GS)</td><td><strong>TM-40J (PM)</strong></td><td>TM-50J</td></tr>
           <tr><td>KMO / Knowledge Officer / 37F</td><td><strong>TM-40K (KM)</strong></td><td>TM-50K</td></tr>
@@ -3327,11 +3202,11 @@
         </div>
       </div>
       <div class="track-card">
-        <div class="track-card-hdr"><span class="track-tm">TM-40I &mdash; ML Engineer</span><span class="track-chip">TM-30 Req.</span></div>
+        <div class="track-card-hdr"><span class="track-tm">TM-40M &mdash; ML Engineer</span><span class="track-chip">TM-30 Req.</span></div>
         <div class="track-body">
           <div class="track-name">Model Development, Validation &amp; Deployment</div>
           <div class="track-audience">ML engineers &bull; Data scientists (GS/contractor)</div>
-          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50I &bull; <a href="../pdf/TM_40I_ML_ENGINEER.pdf" target="_blank" style="color:var(--navy);font-size:11px;font-weight:700;">Open PDF &rarr;</a></div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50M &bull; <a href="../pdf/TM_40M_ML_ENGINEER.pdf" target="_blank" style="color:var(--navy);font-size:11px;font-weight:700;">Open PDF &rarr;</a></div>
         </div>
       </div>
       <div class="track-card">
@@ -3394,7 +3269,7 @@
 
     <div class="callout bluf">
       <div class="callout-label">BLUF</div>
-      <div class="callout-body">The TM-40 Technical Specialist tracks (TM-40G&ndash;L) cover developer-level capabilities requiring coding, advanced tooling, or specialized technical expertise &mdash; prerequisite TM-30. Warfighting Function tracks (TM-40A&ndash;F) are no-code, operationally focused training covering Intelligence, Fires, M&amp;M, Sustainment, Protection, and Mission Command MSS integration &mdash; prerequisite TM-30. Select your track using the MOS/Role table on the HOME tab.</div>
+      <div class="callout-body">The TM-40 Technical Specialist tracks (TM-40G&ndash;M) cover developer-level capabilities requiring coding, advanced tooling, or specialized technical expertise &mdash; prerequisite TM-30. Warfighting Function tracks (TM-40A&ndash;F) are no-code, operationally focused training covering Intelligence, Fires, M&amp;M, Sustainment, Protection, and Mission Command MSS integration &mdash; prerequisite TM-30. Select your track using the MOS/Role table on the HOME tab.</div>
     </div>
 
     <div class="track-grid">
@@ -3445,7 +3320,7 @@
 
       <div class="track-card">
         <div class="track-card-hdr">
-          <span class="track-tm">TM-40I &mdash; ML Engineer Track</span>
+          <span class="track-tm">TM-40M &mdash; ML Engineer Track</span>
           <span class="track-chip">TM-30 Required</span>
         </div>
         <div class="track-body">
@@ -3459,7 +3334,7 @@
             <li>Implement MLOps patterns: monitoring, drift detection, retraining triggers</li>
             <li>Apply responsible AI practices and model documentation standards for operational use</li>
           </ul>
-          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50I &bull; <a href="../pdf/TM_40I_ML_ENGINEER.pdf" target="_blank" style="color:var(--navy);font-size:11px;font-weight:700;">Open PDF &rarr;</a></div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50M &bull; <a href="../pdf/TM_40M_ML_ENGINEER.pdf" target="_blank" style="color:var(--navy);font-size:11px;font-weight:700;">Open PDF &rarr;</a></div>
         </div>
       </div>
 
@@ -3473,7 +3348,7 @@
           <div class="track-audience">PMs &bull; Product owners &bull; G8/S8 &bull; Technical team leads</div>
           <ul class="track-topics">
             <li>Stand up Agile project structures (backlog, sprint cadence, ceremonies) for data and AI builds</li>
-            <li>Write user stories and acceptance criteria that TM-40G&ndash;L developers can execute without ambiguity</li>
+            <li>Write user stories and acceptance criteria that TM-40G&ndash;M developers can execute without ambiguity</li>
             <li>Manage the ML/AI project lifecycle: six phases from Problem Definition through Sustainment</li>
             <li>Translate commander requirements into prioritized, sprint-ready backlogs</li>
             <li>Specify project tracking systems (sprint boards, status dashboards) for TM-40L implementation</li>
@@ -3579,12 +3454,12 @@
     <div class="section-header">
       <span class="section-badge">TM-50</span>
       <span class="section-title">Advanced Developer Tracks</span>
-      <span class="section-subtitle">Prerequisite: TM-40 (by track) &bull; Tracks TM-50G&ndash;L &bull; All 6 tracks available</span>
+      <span class="section-subtitle">Prerequisite: TM-40 (by track) &bull; Tracks TM-50G&ndash;M &bull; All 6 tracks available</span>
     </div>
 
     <div class="callout bluf">
       <div class="callout-label">BLUF &mdash; ADVANCED TRACKS</div>
-      <div class="callout-body">The TM-50 series provides advanced-level instruction for each developer track, building directly on the corresponding TM-40 specialist manual (TM-40G&ndash;L). Intended for senior technical leads, platform architects, and senior developers designing enterprise-scale MSS capabilities. All 6 tracks are complete and available.</div>
+      <div class="callout-body">The TM-50 series provides advanced-level instruction for each developer track, building directly on the corresponding TM-40 specialist manual (TM-40G&ndash;M). Intended for senior technical leads, platform architects, and senior developers designing enterprise-scale MSS capabilities. All 6 tracks are complete and available.</div>
     </div>
 
     <h2>TM-50 SERIES &mdash; PUBLICATIONS</h2>
@@ -3619,14 +3494,14 @@
           </ul>
         </div>
       </a>
-      <a class="track-card doc-card" href="../pdf/TM_50I_ML_ENGINEER_ADVANCED.pdf" target="_blank">
+      <a class="track-card doc-card" href="../pdf/TM_50M_ML_ENGINEER_ADVANCED.pdf" target="_blank">
         <div class="track-card-hdr">
-          <div class="track-tm">TM-50I &mdash; ML Engineer Advanced</div>
+          <div class="track-tm">TM-50M &mdash; ML Engineer Advanced</div>
           <div class="track-chip">Advanced</div>
         </div>
         <div class="track-body">
           <div class="track-name">Advanced ML Engineering</div>
-          <div class="track-audience">Prerequisite: TM-40I</div>
+          <div class="track-audience">Prerequisite: TM-40M</div>
           <ul class="track-topics">
             <li>Automated retraining pipelines</li>
             <li>Transformer fine-tuning, GNNs</li>
@@ -3761,18 +3636,18 @@
           <tr><td colspan="4" style="background:var(--navy-pale);font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);">TM-40 &mdash; Technical Specialist Tracks (by role/MOS)</td></tr>
           <tr><td><strong>TM-40G</strong></td><td>ORSA / FA49</td><td>Statistical modeling, simulation, wargame analytics</td><td>After TM-30</td></tr>
           <tr><td><strong>TM-40H</strong></td><td>AI Engineers</td><td>AIP Logic authoring, Agent Studio, LLM integration</td><td>After TM-30</td></tr>
-          <tr><td><strong>TM-40I</strong></td><td>ML Engineers</td><td>Code Workspaces, model training, MLOps</td><td>After TM-30</td></tr>
+          <tr><td><strong>TM-40M</strong></td><td>ML Engineers</td><td>Code Workspaces, model training, MLOps</td><td>After TM-30</td></tr>
           <tr><td><strong>TM-40J</strong></td><td>PMs / G8</td><td>PM dashboards, milestone tracking, portfolio analysis</td><td>After TM-30</td></tr>
           <tr><td><strong>TM-40K</strong></td><td>KMs / KMOs</td><td>Knowledge repositories, AIP summarization, lessons learned</td><td>After TM-30</td></tr>
           <tr><td><strong>TM-40L</strong></td><td>SWEs</td><td>OSDK, full-stack Foundry apps, TypeScript Functions</td><td>After TM-30</td></tr>
           <tr><td colspan="4" style="background:var(--navy-pale);font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);">TM-50 &mdash; Advanced Technical Tracks (by role/MOS)</td></tr>
-          <tr><td><strong>TM-50G&ndash;L</strong></td><td>Senior developers (all tracks)</td><td>Advanced versions of each TM-40 specialist track</td><td>After TM-40 (by track)</td></tr>
-          <tr><td colspan="4" style="background:var(--navy-pale);font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);">CDA Reference &mdash; TM-30 and Specialist Tracks (TM-40G&ndash;L)</td></tr>
+          <tr><td><strong>TM-50G&ndash;M</strong></td><td>Senior developers (all tracks)</td><td>Advanced versions of each TM-40 specialist track</td><td>After TM-40 (by track)</td></tr>
+          <tr><td colspan="4" style="background:var(--navy-pale);font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);">CDA Reference &mdash; TM-30 and Specialist Tracks (TM-40G&ndash;M)</td></tr>
           <tr><td><strong>EA Series (00&ndash;05)</strong></td><td>TM-30+, TM-40K, TM-40L</td><td>Enterprise Architecture — foundation, schools of thought, artifacts, governance, military application</td><td>With or after TM-30</td></tr>
-          <tr><td><strong>CDA Doctrine Overview</strong></td><td>TM-40G&ndash;L</td><td>Doctrine-driven development; JRTC lessons; Foundry Ontology blueprint</td><td>At start of TM-40G&ndash;L</td></tr>
+          <tr><td><strong>CDA Doctrine Overview</strong></td><td>TM-40G&ndash;M</td><td>Doctrine-driven development; JRTC lessons; Foundry Ontology blueprint</td><td>At start of TM-40G&ndash;M</td></tr>
           <tr><td><strong>Identity vs. Classification</strong></td><td>TM-30, TM-40K, TM-40L</td><td>Identity resolution and classification governance at scale</td><td>With TM-30</td></tr>
           <tr><td><strong>Enterprise Data Compass</strong></td><td>TM-40J, TM-40K</td><td>Authoritative data architecture, ontology, and semantic governance standard</td><td>With TM-40J/K</td></tr>
-          <tr><td><strong>CDA Slide Library</strong></td><td>All tracks (prereq reading)</td><td>29 decks — Intro To Data (TM-10 prereq), Data 101 (TM-20 prereq), Data 201 (TM-30/40G&ndash;L prereq)</td><td>Before each TM level</td></tr>
+          <tr><td><strong>CDA Slide Library</strong></td><td>All tracks (prereq reading)</td><td>29 decks — Intro To Data (TM-10 prereq), Data 101 (TM-20 prereq), Data 201 (TM-30/40G&ndash;M prereq)</td><td>Before each TM level</td></tr>
         </tbody>
       </table>
     </div>
@@ -3780,7 +3655,7 @@
     <h2>CDA REFERENCE MATERIAL</h2>
     <div class="callout note">
       <div class="callout-label">SPECIALIST TRACK PREREQ READING</div>
-      <div class="callout-body">The CDA Reference material below is required reading for TM-30 and all TM-40G&ndash;L specialist tracks. It is <strong>not</strong> required for TM-10/20 or WFF tracks (TM-40A&ndash;F). Consult the DEPENDENCY_MAP for per-track required reading.</div>
+      <div class="callout-body">The CDA Reference material below is required reading for TM-30 and all TM-40G&ndash;M specialist tracks. It is <strong>not</strong> required for TM-10/20 or WFF tracks (TM-40A&ndash;F). Consult the DEPENDENCY_MAP for per-track required reading.</div>
     </div>
     <div class="card-grid card-grid-2">
       <div class="card">
@@ -3840,9 +3715,9 @@
 
     <!-- Card header -->
     <div class="qr-header">
-      <span class="section-badge">QUICK REF</span>
-      <span class="qr-title">MAVEN SMART SYSTEM &mdash; QUICK REFERENCE CARD</span>
-
+      <span class="section-badge">MSS TRAINING HUB</span>
+      <span class="qr-title">MAVEN SMART SYSTEM &mdash; USAREUR-AF</span>
+      <span class="section-subtitle">Version 3.0 &bull; March 2026</span>
     </div>
 
     <div class="callout info">
@@ -3852,16 +3727,115 @@
 
     <div class="callout bluf">
       <div class="callout-label">BLUF</div>
-      <div class="callout-body">All personnel start at TM-10. Builders add TM-20; data-adjacent specialists continue to TM-30; technical roles select their TM-40 track below.</div>
+      <div class="callout-body">All personnel start at TM-10. Builders add TM-20; data-adjacent specialists continue to TM-30; technical roles select their TM-40 track. Use &ldquo;Find My Track&rdquo; below or browse the reference table.</div>
+    </div>
+
+    <!-- Quick-nav button row -->
+    <div class="qr-nav-row">
+      <button class="qr-nav-btn" onclick="showPanel('schedule')">Training Schedule</button>
+      <button class="qr-nav-btn" onclick="showPanel('specialists')">Specialist Tracks</button>
+      <button class="qr-nav-btn" onclick="showPanel('documents')">All Documents</button>
+      <button class="qr-nav-btn" onclick="showPanel('taskindex')">Task Index</button>
+      <button class="qr-nav-btn" onclick="showPanel('dashboards')">Dashboards</button>
+      <button class="qr-nav-btn" onclick="showPanel('support')">Support</button>
+    </div>
+
+    <!-- FIND MY TRACK (inline, collapsible) -->
+    <div class="fmt-section">
+      <button class="fmt-toggle" id="fmt-toggle-btn" onclick="toggleFmt()">
+        <span class="fmt-toggle-icon">&#9889;</span>
+        <span class="fmt-toggle-text">Find My Track</span>
+        <span class="fmt-toggle-sub">&mdash; answer two questions to get your personalized training path</span>
+        <span class="fmt-toggle-arrow" id="fmt-toggle-arrow">&#9660;</span>
+      </button>
+
+      <div class="fmt-wizard" id="fmt-wizard" style="display:none;">
+        <!-- Step 1: Category -->
+        <div class="fmt-step">
+          <div class="fmt-step-label">
+            <span class="fmt-step-num">1</span>
+            What best describes your role?
+          </div>
+          <div class="fmt-categories" id="fmt-categories"></div>
+        </div>
+
+        <!-- Step 2: Specific role (hidden until category selected) -->
+        <div class="fmt-step" id="fmt-step2" style="display:none;">
+          <div class="fmt-step-label">
+            <span class="fmt-step-num">2</span>
+            Which role matches you best?
+          </div>
+          <div class="fmt-roles" id="fmt-roles"></div>
+        </div>
+
+        <!-- Result (hidden until role selected) -->
+        <div class="fmt-result" id="fmt-result" style="display:none;">
+          <div class="fmt-result-header">
+            <div class="fmt-result-badge">YOUR TRAINING PATH</div>
+            <div class="fmt-result-track" id="fmt-result-track"></div>
+            <div class="fmt-result-tm" id="fmt-result-tm"></div>
+          </div>
+          <div class="fmt-result-desc" id="fmt-result-desc"></div>
+          <div class="fmt-path" id="fmt-path"></div>
+          <div class="fmt-result-actions">
+            <button class="fmt-go-btn" id="fmt-go-btn">Go &rarr;</button>
+            <button class="fmt-reset-btn" onclick="fmtReset()">Start Over</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="qr-grid">
 
-      <!-- FIND YOUR TRACK — compact pointer to Home -->
-      <div class="qr-box gold-top qr-span3" style="padding:12px 16px;">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
-          <span style="font-size:12px;color:var(--gray-700);">Need to find your training track or publication? Use the full training path on the Home page.</span>
-          <button class="qr-link" onclick="showPanel('home')" style="white-space:nowrap;">Home / Start Here &rarr;</button>
+      <!-- FIND YOUR MANUAL — full width -->
+      <div class="qr-box gold-top qr-span3">
+        <div class="qr-label">Find Your Manual</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>You Are&hellip;</th><th>Start Here</th><th>Open It</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>Any personnel &mdash; viewing data for the first time</td>
+                <td>TM-10 &mdash; Maven User</td>
+                <td><button class="qr-link" onclick="showPanel('tm10')">TM-10 &rarr;</button></td>
+              </tr>
+              <tr>
+                <td>Staff building dashboards or simple pipelines (no coding)</td>
+                <td>TM-20 &mdash; Builder</td>
+                <td><button class="qr-link" onclick="showPanel('tm20')">TM-20 &rarr;</button></td>
+              </tr>
+              <tr>
+                <td>Data steward, frequent builder, or data-adjacent role (17/25-series, G2, analyst)</td>
+                <td>TM-30 &mdash; Advanced Builder</td>
+                <td><button class="qr-link" onclick="showPanel('tm30')">TM-30 &rarr;</button></td>
+              </tr>
+              <tr>
+                <td>Technical specialist or warfighting function developer</td>
+                <td>TM-40 Specialist Track</td>
+                <td><button class="qr-link" onclick="showPanel('specialists')">TM-40 &rarr;</button></td>
+              </tr>
+              <tr>
+                <td>Advanced specialist &mdash; post TM-40 completion</td>
+                <td>TM-50 Advanced Track</td>
+                <td><button class="qr-link" onclick="showPanel('tm50')">TM-50 &rarr;</button></td>
+              </tr>
+              <tr>
+                <td>O-5 / SGM+ &mdash; directing a data-capable formation</td>
+                <td>Data Literacy for Senior Leaders</td>
+                <td><button class="qr-link" onclick="showPanel('doctrine')">Draft Pubs &rarr;</button></td>
+              </tr>
+              <tr>
+                <td>All personnel &mdash; foundational data concepts before TM-10</td>
+                <td>Data Literacy Technical Reference</td>
+                <td><a class="qr-link" href="../pdf/DATA_LITERACY_technical_reference.pdf" target="_blank">PDF &rarr;</a></td>
+              </tr>
+              <tr>
+                <td>Anyone &mdash; unfamiliar term or concept</td>
+                <td>Glossary &mdash; Data &amp; Foundry</td>
+                <td><button class="qr-link" onclick="showPanel('doctrine')">Draft Pubs &rarr;</button></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
@@ -3899,28 +3873,127 @@
         <div class="qr-label">When It Breaks</div>
         <div class="qr-broken-grid">
           <div class="qr-broken-item"><strong>Can&rsquo;t log in</strong><br/>Check CAC is fully inserted; try a different port. No account? Request at <a href="https://mss.data.mil" target="_blank" style="color:var(--navy-mid);font-weight:600;">mss.data.mil</a> or through your data steward. Provisioning generally within 24 hrs; if not active after 24 hrs, contact your data steward.</div>
-          <div class="qr-broken-item"><strong>App won&rsquo;t load</strong><br/>Hard-refresh (Ctrl+Shift+R). Clear cache. Try a different browser. Still broken &rarr; <button class="qr-link" data-panel="support">Help Desk &rarr;</button></div>
+          <div class="qr-broken-item"><strong>App won&rsquo;t load</strong><br/>Hard-refresh (Ctrl+Shift+R). Clear cache. Try a different browser. Still broken &rarr; <button class="qr-link" onclick="showPanel('support')">Help Desk &rarr;</button></div>
           <div class="qr-broken-item"><strong>Button greyed out / no access</strong><br/>You&rsquo;re missing a role or write permission. Contact your data steward to request the correct access level.</div>
         </div>
         <div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(3,1fr);gap:8px;font-size:11px;color:var(--text-body);">
           <div><strong style="display:block;margin-bottom:2px;text-transform:uppercase;letter-spacing:.05em;font-size:10px;">Data Steward</strong>Account access &bull; data issues &bull; permission requests</div>
-          <div><strong style="display:block;margin-bottom:2px;text-transform:uppercase;letter-spacing:.05em;font-size:10px;">Help Desk</strong>App broken &bull; won&rsquo;t load &bull; technical errors &rarr; <button class="qr-link" data-panel="support">Support &rarr;</button></div>
+          <div><strong style="display:block;margin-bottom:2px;text-transform:uppercase;letter-spacing:.05em;font-size:10px;">Help Desk</strong>App broken &bull; won&rsquo;t load &bull; technical errors &rarr; <button class="qr-link" onclick="showPanel('support')">Support &rarr;</button></div>
           <div><strong style="display:block;margin-bottom:2px;text-transform:uppercase;letter-spacing:.05em;font-size:10px;">ODT</strong>Training questions &bull; new app or pipeline requests</div>
         </div>
       </div>
 
     </div><!-- /qr-grid -->
 
-    <!-- Flow to Home -->
-    <div class="specialist-cta" style="margin-top:32px;">
-      <div class="specialist-cta-text">
-        <div class="specialist-cta-label">Done with Quick Reference?</div>
-        <div class="specialist-cta-title">Go to Home / Start Here</div>
-        <div class="specialist-cta-sub">Find your training level, follow the full path, and navigate to your TM using the Home page overview.</div>
+    <!-- TRAINING PATH -->
+    <h2 style="margin-top:32px;">TRAINING PATH</h2>
+
+    <!-- Data Literacy: outside the main pipeline -->
+    <div style="border:2px dashed var(--gray-200);border-radius:6px;padding:14px 16px 10px;margin-bottom:16px;background:var(--off-white);">
+      <div style="font-family:var(--font-ui);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray-400);margin-bottom:10px;">OUTSIDE THE PIPELINE &mdash; BACKGROUND READING (NOT REQUIRED BEFORE TM-10, BUT RECOMMENDED)</div>
+      <div class="path-flow" style="margin-bottom:0;">
+        <div class="path-step">
+          <div class="path-connector">
+            <div class="path-dot optional" style="font-size:10px;width:34px;height:34px;">SL</div>
+            <div class="path-line dashed"></div>
+          </div>
+          <div class="path-content" style="cursor:pointer;" onclick="showPanel('doctrine')">
+            <div class="path-tm">DATA LIT (SL) &mdash; OPTIONAL (O-5+ / SGM+)</div>
+            <div class="path-name">Data Literacy for Senior Leaders <span style="font-size:11px;color:var(--navy-mid);">&#8594; Draft Pubs</span></div>
+            <div class="path-audience">Principles, command responsibilities, decision frameworks</div>
+          </div>
+        </div>
+        <div class="path-spacer"></div>
+        <div class="path-step">
+          <div class="path-connector">
+            <div class="path-dot optional" style="font-size:10px;width:34px;height:34px;">ALL</div>
+          </div>
+          <div class="path-content" style="cursor:pointer;" onclick="showPanel('doctrine')">
+            <div class="path-tm">DATA LITERACY &mdash; RECOMMENDED (ALL PERSONNEL)</div>
+            <div class="path-name">Data Literacy Reference <span style="font-size:11px;color:var(--navy-mid);">&#8594; Draft Pubs</span></div>
+            <div class="path-audience">Platform-agnostic data literacy; recommended before TM-10</div>
+          </div>
+        </div>
       </div>
-      <button class="specialist-cta-btn" onclick="showPanel('home')">
-        Home / Start Here <span class="btn-arrow">&#8594;</span>
+    </div>
+
+    <div class="path-flow">
+      <div class="path-step">
+        <div class="path-connector">
+          <div class="path-dot">1</div>
+          <div class="path-line"></div>
+        </div>
+        <div class="path-content" style="cursor:pointer;" onclick="showPanel('tm10')">
+          <div class="path-tm">TM-10 &mdash; REQUIRED FOR ALL PERSONNEL</div>
+          <div class="path-name">Maven User Manual <span style="font-size:11px;color:var(--navy-mid);">&#8594; TM-10</span></div>
+          <div class="path-audience">CAC login, navigation, Workshop apps, data viewing, AI tools, security</div>
+        </div>
+      </div>
+      <div class="path-spacer"></div>
+
+      <div class="path-step">
+        <div class="path-connector">
+          <div class="path-dot">2</div>
+          <div class="path-line"></div>
+        </div>
+        <div class="path-content" style="cursor:pointer;" onclick="showPanel('tm20')">
+          <div class="path-tm">TM-20 &mdash; ALL STAFF (NO-CODE BUILDER)</div>
+          <div class="path-name">Builder Manual <span style="font-size:11px;color:var(--navy-mid);">&#8594; TM-20</span></div>
+          <div class="path-audience">Pipeline Builder (visual), Ontology Manager UI, Workshop app builder</div>
+        </div>
+      </div>
+      <div class="path-spacer"></div>
+
+      <div class="path-step">
+        <div class="path-connector">
+          <div class="path-dot">3</div>
+          <div class="path-line"></div>
+        </div>
+        <div class="path-content" style="cursor:pointer;" onclick="showPanel('tm30')">
+          <div class="path-tm">TM-30 &mdash; DATA-ADJACENT SPECIALISTS</div>
+          <div class="path-name">Advanced Builder Manual <span style="font-size:11px;color:var(--navy-mid);">&#8594; TM-30</span></div>
+          <div class="path-audience">Complex app design, Ontology architecture, governance, C2DAO standards</div>
+        </div>
+      </div>
+      <div class="path-spacer"></div>
+
+      <div class="path-step">
+        <div class="path-connector">
+          <div class="path-dot">4</div>
+        </div>
+        <div class="path-content" style="cursor:pointer;" onclick="showPanel('specialists')">
+          <div class="path-tm">TM-40 &mdash; TWO TRACK TYPES (BY ROLE)</div>
+          <div class="path-name">Specialist &amp; Warfighting Function Tracks <span style="font-size:11px;color:var(--navy-mid);">&#8594; Specialist Tracks</span></div>
+          <div class="path-audience"><strong>WFF Tracks (TM-40A&ndash;F):</strong> Intel &bull; Fires &bull; M&amp;M &bull; Sustainment &bull; Protection &bull; Mission Command<br/><strong>Technical Tracks (TM-40G&ndash;M):</strong> ORSA &bull; AI Eng &bull; MLE &bull; PM &bull; KM &bull; SWE &mdash; Advanced versions at TM-50G&ndash;M</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Foundation CTA -->
+    <div class="specialist-cta">
+      <div class="specialist-cta-text">
+        <div class="specialist-cta-label">Start Your Training</div>
+        <div class="specialist-cta-title">Foundation &mdash; TM-10 &rarr; TM-20 &rarr; TM-30</div>
+        <div class="specialist-cta-sub">All personnel begin here. TM-10 gets you operational; TM-20 builds no-code skills; TM-30 unlocks specialist tracks.</div>
+      </div>
+      <button class="specialist-cta-btn" onclick="showPanel('tm10')">
+        Start with TM-10 <span class="btn-arrow">&#8594;</span>
       </button>
+    </div>
+
+    <div class="callout info mt-24">
+      <div class="callout-label">TRAIN THE TRAINER (T3) &mdash; INSTRUCTOR &amp; UDT PATHWAY</div>
+      <div class="callout-body">
+        Two courses sit <strong>outside</strong> the TM-10 to TM-50 chain:<br/><br/>
+        <strong>T3-I (Instructor Certification):</strong> Prereq TM-30 + C2DAO selection. 5-day classroom + supervised practicum. Certifies MSS instructors (Instructor &rarr; Senior &rarr; Master).<br/>
+        <strong>T3-F (MSC Force Multiplier):</strong> Prereq TM-20 + CDR nomination. 3 days. Trains Unit Data Trainers (UDTs) who deliver TM-10 locally at each MSC.<br/><br/>
+        See <button class="qr-link" onclick="showPanel('documents')">All Documents &rarr;</button> for T3 publications, syllabi, and SOPs.
+      </div>
+    </div>
+
+    <div class="callout note mt-24">
+      <div class="callout-label">MSS ACCOUNT ACCESS</div>
+      <div class="callout-body">MSS access requires a provisioned account. Submit your request through your unit data steward or at <strong><a href="https://mss.data.mil" target="_blank" style="color:var(--navy-mid);">mss.data.mil</a></strong>. Provisioning generally completes within 24 hours; if access is not active after 24 hours, contact your data steward directly.</div>
     </div>
 
     <div class="callout note mt-24">
@@ -4133,8 +4206,8 @@
           <div class="track-card-hdr"><div class="track-tm">TM-40H &mdash; AI Engineer</div><div class="track-chip">Specialist</div></div>
           <div class="track-body"><div class="track-name">AI Engineering</div><div class="track-audience">AI engineers — AIP Logic, Agents, LLM integration</div><ul class="track-topics"><li>AIP Logic workflow design</li><li>Agent configuration</li><li>LLM integration patterns</li></ul></div>
         </a>
-        <a class="track-card doc-card" href="../pdf/TM_40I_ML_ENGINEER.pdf" target="_blank">
-          <div class="track-card-hdr"><div class="track-tm">TM-40I &mdash; ML Engineer</div><div class="track-chip">Specialist</div></div>
+        <a class="track-card doc-card" href="../pdf/TM_40M_ML_ENGINEER.pdf" target="_blank">
+          <div class="track-card-hdr"><div class="track-tm">TM-40M &mdash; ML Engineer</div><div class="track-chip">Specialist</div></div>
           <div class="track-body"><div class="track-name">Machine Learning Engineering</div><div class="track-audience">ML engineers — model training, validation, deployment</div><ul class="track-topics"><li>Feature engineering, experiment tracking</li><li>Batch inference, model versioning</li><li>Drift detection, retraining pipelines</li></ul></div>
         </a>
         <a class="track-card doc-card" href="../pdf/TM_40J_PROGRAM_MANAGER.pdf" target="_blank">
@@ -4157,10 +4230,37 @@
       <div class="track-grid" style="margin-top:12px;">
         <a class="track-card doc-card" href="../pdf/TM_50G_ORSA_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50G &mdash; ORSA Advanced</div><div class="track-chip">Advanced</div></div><div class="track-body"><div class="track-name">Advanced ORSA</div><div class="track-audience">Nonlinear programming, stochastic models, ABMS, campaign assessment</div></div></a>
         <a class="track-card doc-card" href="../pdf/TM_50H_AI_ENGINEER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50H &mdash; AI Engineer Advanced</div><div class="track-chip">Advanced</div></div><div class="track-body"><div class="track-name">Advanced AI Engineering</div><div class="track-audience">Multi-agent orchestration, RAG, red-team assessment, AI observability</div></div></a>
-        <a class="track-card doc-card" href="../pdf/TM_50I_ML_ENGINEER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50I &mdash; ML Engineer Advanced</div><div class="track-chip">Advanced</div></div><div class="track-body"><div class="track-name">Advanced ML Engineering</div><div class="track-audience">AutoML, Transformer fine-tuning, GNNs, federated retraining, adversarial robustness</div></div></a>
+        <a class="track-card doc-card" href="../pdf/TM_50M_ML_ENGINEER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50M &mdash; ML Engineer Advanced</div><div class="track-chip">Advanced</div></div><div class="track-body"><div class="track-name">Advanced ML Engineering</div><div class="track-audience">AutoML, Transformer fine-tuning, GNNs, federated retraining, adversarial robustness</div></div></a>
         <a class="track-card doc-card" href="../pdf/TM_50J_PROGRAM_MANAGER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50J &mdash; PM Advanced</div><div class="track-chip">Advanced</div></div><div class="track-body"><div class="track-name">Advanced Program Management</div><div class="track-audience">PI planning, cross-team governance, GO/SES briefing, Palantir partnership</div></div></a>
         <a class="track-card doc-card" href="../pdf/TM_50K_KNOWLEDGE_MANAGER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50K &mdash; KM Advanced</div><div class="track-chip">Advanced</div></div><div class="track-body"><div class="track-name">Advanced Knowledge Management</div><div class="track-audience">Federated KM architecture, NATO integration, STANAG 4778, knowledge graphs</div></div></a>
         <a class="track-card doc-card" href="../pdf/TM_50L_SOFTWARE_ENGINEER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50L &mdash; SWE Advanced</div><div class="track-chip">Advanced</div></div><div class="track-body"><div class="track-name">Advanced Software Engineering</div><div class="track-audience">Scale, multi-tenancy, Kafka, OWASP, SAST, architecture review, platform governance</div></div></a>
+      </div>
+    </details>
+
+    <details>
+      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Train the Trainer &mdash; T3 (2 courses + SOPs &mdash; click to expand)</summary>
+      <div class="callout note" style="margin-top:12px;margin-bottom:12px;">
+        <div class="callout-label">NOTE &mdash; T3 PROGRAM</div>
+        <div class="callout-body">T3-I (Instructor Certification) and T3-F (MSC Force Multiplier) sit <strong>outside</strong> the TM-10 to TM-50 numbering chain. T3-I requires TM-30 + C2DAO selection. T3-F requires TM-20 + CDR nomination.</div>
+      </div>
+      <div class="track-grid" style="margin-top:12px;">
+        <a class="track-card doc-card" href="../pdf/T3_I_INSTRUCTOR_CERTIFICATION.pdf" target="_blank">
+          <div class="track-card-hdr"><div class="track-tm">T3-I &mdash; Instructor Certification</div><div class="track-chip">5 days + practicum</div></div>
+          <div class="track-body"><div class="track-name">Certify MSS Instructors</div><div class="track-audience">Prereq: TM-30 + C2DAO selection &bull; 3-tier hierarchy: Instructor &rarr; Senior &rarr; Master</div></div>
+        </a>
+        <a class="track-card doc-card" href="../pdf/T3_F_MSC_FORCE_MULTIPLIER.pdf" target="_blank">
+          <div class="track-card-hdr"><div class="track-tm">T3-F &mdash; MSC Force Multiplier</div><div class="track-chip">3 days</div></div>
+          <div class="track-body"><div class="track-name">Unit Data Trainer (UDT)</div><div class="track-audience">Prereq: TM-20 + CDR nomination &bull; Delivers TM-10 locally at your MSC</div></div>
+        </a>
+      </div>
+      <div class="card-grid card-grid-2" style="margin-top:12px;">
+        <a class="card doc-card" href="../pdf/SYLLABUS_T3I.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">T3-I Syllabus</div><div class="card-body">Instructor Certification course syllabus.</div></a>
+        <a class="card doc-card" href="../pdf/SYLLABUS_T3F.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">T3-F Syllabus</div><div class="card-body">MSC Force Multiplier course syllabus.</div></a>
+        <a class="card doc-card" href="../pdf/INSTRUCTOR_TIER_DEFINITIONS.pdf" target="_blank"><div class="card-label">SOP</div><div class="card-title">Instructor Tier Definitions</div><div class="card-body">4-tier structure: Instructor, Senior, Master, UDT.</div></a>
+        <a class="card doc-card" href="../pdf/C2DAO_SME_DESIGNATION_RUBRIC.pdf" target="_blank"><div class="card-label">SOP</div><div class="card-title">C2DAO SME Designation Rubric</div><div class="card-body">Formal SME criteria per domain.</div></a>
+        <a class="card doc-card" href="../pdf/UNIT_DATA_TRAINER_SOP.pdf" target="_blank"><div class="card-label">SOP</div><div class="card-title">Unit Data Trainer SOP</div><div class="card-body">UDT employment, reporting, sustainment.</div></a>
+        <a class="card doc-card" href="../pdf/MTT_OPERATIONS_SOP.pdf" target="_blank"><div class="card-label">SOP</div><div class="card-title">MTT Operations SOP</div><div class="card-body">Mobile Training Team rotation procedures.</div></a>
+        <a class="card doc-card" href="../pdf/SUCCESSOR_PLANNING_GUIDE.pdf" target="_blank"><div class="card-label">GUIDE</div><div class="card-title">Successor Planning Guide</div><div class="card-body">Instructor and UDT succession planning.</div></a>
       </div>
     </details>
 
@@ -4175,13 +4275,13 @@
         <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM40F_MISSION_COMMAND.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-40F Concepts Guide</div><div class="track-chip">Mission Command</div></div><div class="track-body"><div class="track-audience">Key concepts and terminology for the Mission Command WFF track.</div></div></a>
         <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM40G_ORSA.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-40G Concepts Guide</div><div class="track-chip">ORSA</div></div><div class="track-body"><div class="track-audience">Key concepts and terminology for the ORSA specialist track.</div></div></a>
         <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM40H_AI_ENGINEER.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-40H Concepts Guide</div><div class="track-chip">AI Engineer</div></div><div class="track-body"><div class="track-audience">Key concepts and terminology for the AI Engineer track.</div></div></a>
-        <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM40I_ML_ENGINEER.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-40I Concepts Guide</div><div class="track-chip">ML Engineer</div></div><div class="track-body"><div class="track-audience">Key concepts and terminology for the ML Engineer track.</div></div></a>
+        <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM40M_ML_ENGINEER.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-40M Concepts Guide</div><div class="track-chip">ML Engineer</div></div><div class="track-body"><div class="track-audience">Key concepts and terminology for the ML Engineer track.</div></div></a>
         <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM40J_PROGRAM_MANAGER.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-40J Concepts Guide</div><div class="track-chip">Program Mgr</div></div><div class="track-body"><div class="track-audience">Key concepts and terminology for the Program Manager track.</div></div></a>
         <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM40K_KNOWLEDGE_MANAGER.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-40K Concepts Guide</div><div class="track-chip">Knowledge Mgr</div></div><div class="track-body"><div class="track-audience">Key concepts and terminology for the Knowledge Manager track.</div></div></a>
         <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM40L_SOFTWARE_ENGINEER.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-40L Concepts Guide</div><div class="track-chip">Software Eng</div></div><div class="track-body"><div class="track-audience">Key concepts and terminology for the Software Engineer track.</div></div></a>
         <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM50G_ORSA_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50G Concepts Guide</div><div class="track-chip">ORSA Adv</div></div><div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50G.</div></div></a>
         <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM50H_AI_ENGINEER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50H Concepts Guide</div><div class="track-chip">AI Eng Adv</div></div><div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50H.</div></div></a>
-        <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM50I_ML_ENGINEER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50I Concepts Guide</div><div class="track-chip">MLE Adv</div></div><div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50I.</div></div></a>
+        <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM50M_ML_ENGINEER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50M Concepts Guide</div><div class="track-chip">MLE Adv</div></div><div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50M.</div></div></a>
         <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM50J_PROGRAM_MANAGER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50J Concepts Guide</div><div class="track-chip">PM Adv</div></div><div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50J.</div></div></a>
         <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM50K_KNOWLEDGE_MANAGER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50K Concepts Guide</div><div class="track-chip">KM Adv</div></div><div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50K.</div></div></a>
         <a class="track-card doc-card" href="../pdf/CONCEPTS_GUIDE_TM50L_SOFTWARE_ENGINEER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50L Concepts Guide</div><div class="track-chip">SWE Adv</div></div><div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50L.</div></div></a>
@@ -4196,7 +4296,7 @@
         <a class="card doc-card" href="../pdf/EX_30_ADVANCED_BUILDER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-30 Practical Exercise</div><div class="card-body">Advanced builder — hands-on exercise.</div></a>
         <a class="card doc-card" href="../pdf/EX_40G_ORSA.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-40G Exercise (ORSA)</div><div class="card-body">ORSA specialist practical exercise.</div></a>
         <a class="card doc-card" href="../pdf/EX_40H_AI_ENGINEER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-40H Exercise (AI Eng)</div><div class="card-body">AI Engineer practical exercise.</div></a>
-        <a class="card doc-card" href="../pdf/EX_40I_ML_ENGINEER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-40I Exercise (ML Eng)</div><div class="card-body">ML Engineer practical exercise.</div></a>
+        <a class="card doc-card" href="../pdf/EX_40M_ML_ENGINEER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-40M Exercise (ML Eng)</div><div class="card-body">ML Engineer practical exercise.</div></a>
         <a class="card doc-card" href="../pdf/EX_40J_PROGRAM_MANAGER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-40J Exercise (PM)</div><div class="card-body">Program Manager practical exercise.</div></a>
         <a class="card doc-card" href="../pdf/EX_40K_KNOWLEDGE_MANAGER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-40K Exercise (KM)</div><div class="card-body">Knowledge Manager practical exercise.</div></a>
         <a class="card doc-card" href="../pdf/EX_40L_SOFTWARE_ENGINEER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-40L Exercise (SWE)</div><div class="card-body">Software Engineer practical exercise.</div></a>
@@ -4204,10 +4304,10 @@
     </details>
 
     <details>
-      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Pre-Assessment Tests (21 &mdash; click to expand)</summary>
+      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Pre-Assessment Tests (23 &mdash; click to expand)</summary>
       <div class="callout note" style="margin-top:12px;margin-bottom:12px;">
         <div class="callout-label">NOTE &mdash; PRE-TESTS</div>
-        <div class="callout-body">Pre-assessment tests are administered before the start of each course. They establish a knowledge baseline and help instructors identify gaps. Post-assessments are administered by the instructor and are not included here.</div>
+        <div class="callout-body">Pre-assessment tests are administered before the start of each course. They establish a knowledge baseline and help instructors identify gaps.</div>
       </div>
       <div class="card-grid" style="margin-top:4px;">
         <a class="card doc-card" href="../pdf/EXAM_TM10_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-10 Pre-Assessment</div><div class="card-body">Maven User — foundation pre-test.</div></a>
@@ -4221,16 +4321,50 @@
         <a class="card doc-card" href="../pdf/EXAM_TM40F_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-40F Pre-Assessment</div><div class="card-body">Mission Command WFF track — pre-test.</div></a>
         <a class="card doc-card" href="../pdf/EXAM_TM40G_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-40G Pre-Assessment</div><div class="card-body">ORSA specialist — pre-test.</div></a>
         <a class="card doc-card" href="../pdf/EXAM_TM40H_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-40H Pre-Assessment</div><div class="card-body">AI Engineer — pre-test.</div></a>
-        <a class="card doc-card" href="../pdf/EXAM_TM40I_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-40I Pre-Assessment</div><div class="card-body">ML Engineer — pre-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM40M_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-40M Pre-Assessment</div><div class="card-body">ML Engineer — pre-test.</div></a>
         <a class="card doc-card" href="../pdf/EXAM_TM40J_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-40J Pre-Assessment</div><div class="card-body">Program Manager — pre-test.</div></a>
         <a class="card doc-card" href="../pdf/EXAM_TM40K_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-40K Pre-Assessment</div><div class="card-body">Knowledge Manager — pre-test.</div></a>
         <a class="card doc-card" href="../pdf/EXAM_TM40L_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-40L Pre-Assessment</div><div class="card-body">Software Engineer — pre-test.</div></a>
         <a class="card doc-card" href="../pdf/EXAM_TM50G_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-50G Pre-Assessment</div><div class="card-body">Advanced ORSA — pre-test.</div></a>
         <a class="card doc-card" href="../pdf/EXAM_TM50H_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-50H Pre-Assessment</div><div class="card-body">Advanced AI Engineer — pre-test.</div></a>
-        <a class="card doc-card" href="../pdf/EXAM_TM50I_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-50I Pre-Assessment</div><div class="card-body">Advanced ML Engineer — pre-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM50M_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-50M Pre-Assessment</div><div class="card-body">Advanced ML Engineer — pre-test.</div></a>
         <a class="card doc-card" href="../pdf/EXAM_TM50J_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-50J Pre-Assessment</div><div class="card-body">Advanced Program Manager — pre-test.</div></a>
         <a class="card doc-card" href="../pdf/EXAM_TM50K_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-50K Pre-Assessment</div><div class="card-body">Advanced Knowledge Manager — pre-test.</div></a>
         <a class="card doc-card" href="../pdf/EXAM_TM50L_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-50L Pre-Assessment</div><div class="card-body">Advanced Software Engineer — pre-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_T3F_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">T3-F Pre-Assessment</div><div class="card-body">MSC Force Multiplier — pre-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_T3I_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">T3-I Pre-Assessment</div><div class="card-body">Instructor Certification — pre-test.</div></a>
+      </div>
+    </details>
+
+    <details>
+      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Post-Assessment Tests (22 &mdash; click to expand)</summary>
+      <div class="callout note" style="margin-top:12px;margin-bottom:12px;">
+        <div class="callout-label">NOTE &mdash; POST-TESTS</div>
+        <div class="callout-body">Post-assessment tests are administered at the end of each course. They measure learning gains against the pre-assessment baseline.</div>
+      </div>
+      <div class="card-grid" style="margin-top:4px;">
+        <a class="card doc-card" href="../pdf/EXAM_TM20_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-20 Post-Assessment</div><div class="card-body">No-Code Builder — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM30_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-30 Post-Assessment</div><div class="card-body">Advanced Builder — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM40A_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-40A Post-Assessment</div><div class="card-body">Intelligence WFF track — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM40B_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-40B Post-Assessment</div><div class="card-body">Fires WFF track — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM40C_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-40C Post-Assessment</div><div class="card-body">Movement &amp; Maneuver WFF track — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM40D_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-40D Post-Assessment</div><div class="card-body">Sustainment WFF track — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM40E_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-40E Post-Assessment</div><div class="card-body">Protection WFF track — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM40F_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-40F Post-Assessment</div><div class="card-body">Mission Command WFF track — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM40G_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-40G Post-Assessment</div><div class="card-body">ORSA specialist — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM40H_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-40H Post-Assessment</div><div class="card-body">AI Engineer — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM40M_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-40M Post-Assessment</div><div class="card-body">ML Engineer — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM40J_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-40J Post-Assessment</div><div class="card-body">Program Manager — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM40K_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-40K Post-Assessment</div><div class="card-body">Knowledge Manager — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM40L_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-40L Post-Assessment</div><div class="card-body">Software Engineer — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM50G_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-50G Post-Assessment</div><div class="card-body">Advanced ORSA — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM50H_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-50H Post-Assessment</div><div class="card-body">Advanced AI Engineer — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM50M_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-50M Post-Assessment</div><div class="card-body">Advanced ML Engineer — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM50J_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-50J Post-Assessment</div><div class="card-body">Advanced Program Manager — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM50K_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-50K Post-Assessment</div><div class="card-body">Advanced Knowledge Manager — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_TM50L_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">TM-50L Post-Assessment</div><div class="card-body">Advanced Software Engineer — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_T3F_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">T3-F Post-Assessment</div><div class="card-body">MSC Force Multiplier — post-test.</div></a>
+        <a class="card doc-card" href="../pdf/EXAM_T3I_POST.pdf" target="_blank"><div class="card-label">POST-TEST</div><div class="card-title">T3-I Post-Assessment</div><div class="card-body">Instructor Certification — post-test.</div></a>
       </div>
     </details>
 
@@ -4248,7 +4382,7 @@
         <a class="card doc-card" href="../pdf/SYLLABUS_TM40F.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-40F Syllabus</div><div class="card-body">Mission Command warfighting function track.</div></a>
         <a class="card doc-card" href="../pdf/SYLLABUS_TM40G.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-40G Syllabus</div><div class="card-body">ORSA specialists.</div></a>
         <a class="card doc-card" href="../pdf/SYLLABUS_TM40H.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-40H Syllabus</div><div class="card-body">AI Engineers.</div></a>
-        <a class="card doc-card" href="../pdf/SYLLABUS_TM40I.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-40I Syllabus</div><div class="card-body">ML Engineers.</div></a>
+        <a class="card doc-card" href="../pdf/SYLLABUS_TM40M.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-40M Syllabus</div><div class="card-body">ML Engineers.</div></a>
         <a class="card doc-card" href="../pdf/SYLLABUS_TM40J.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-40J Syllabus</div><div class="card-body">Program Managers.</div></a>
         <a class="card doc-card" href="../pdf/SYLLABUS_TM40K.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-40K Syllabus</div><div class="card-body">Knowledge Managers.</div></a>
         <a class="card doc-card" href="../pdf/SYLLABUS_TM40L.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-40L Syllabus</div><div class="card-body">Software Engineers.</div></a>
@@ -4267,7 +4401,7 @@
     </details>
 
     <details>
-      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Administrative &amp; Institutional (11 &mdash; click to expand)</summary>
+      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Administrative &amp; Institutional (12 &mdash; click to expand)</summary>
       <div class="card-grid" style="margin-top:12px;">
         <a class="card doc-card" href="../pdf/POI_MSS.pdf" target="_blank"><div class="card-label">POI</div><div class="card-title">Program of Instruction</div><div class="card-body">MSS curriculum Program of Instruction.</div></a>
         <a class="card doc-card" href="../pdf/TEO_MSS.pdf" target="_blank"><div class="card-label">TEO</div><div class="card-title">Training &amp; Evaluation Outline</div><div class="card-body">MSS training and evaluation outline.</div></a>
@@ -4280,6 +4414,7 @@
         <a class="card doc-card" href="../pdf/AAR_TEMPLATE.pdf" target="_blank"><div class="card-label">TEMPLATE</div><div class="card-title">AAR Template</div><div class="card-body">After Action Review template for training events.</div></a>
         <a class="card doc-card" href="../pdf/FACULTY_DEVELOPMENT_PLAN.pdf" target="_blank"><div class="card-label">PLAN</div><div class="card-title">Faculty Development Plan</div><div class="card-body">Instructor and facilitator development plan.</div></a>
         <a class="card doc-card" href="../pdf/CAD_MSS.pdf" target="_blank"><div class="card-label">CAD</div><div class="card-title">Course Administrative Data</div><div class="card-body">Course administrative data sheet.</div></a>
+        <a class="card doc-card" href="../pdf/ATIS_COURSE_PACKET.pdf" target="_blank"><div class="card-label">ATIS</div><div class="card-title">ATIS Course Registration Packet</div><div class="card-body">TR 350-70 structured registration packet for all 21 courses. Phase 1: USAREUR-AF G3/7. Phase 2: T2COM.</div></a>
       </div>
     </details>
 
@@ -4343,10 +4478,15 @@
       </div>
     </details>
 
-    <details open>
+    <details open style="background:#f4f5f8;border:1px dashed var(--gray-200);border-radius:8px;padding:16px 16px 8px;margin-top:16px;">
       <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">External Doctrinal &amp; Strategic References</summary>
 
-      <div class="callout note" style="margin-top:12px;margin-bottom:12px;">
+      <div class="callout info" style="margin-top:12px;margin-bottom:12px;">
+        <div class="callout-label">REFERENCE ONLY</div>
+        <div class="callout-body">Items below are <strong>not clickable links</strong>. They are external publications listed here for reference and citation. Obtain them through official Army, DoD, or NATO distribution channels.</div>
+      </div>
+
+      <div class="callout note" style="margin-top:0;margin-bottom:12px;">
         <div class="callout-label">CLASSIFICATION</div>
         <div class="callout-body">References are categorized as <strong>Doctrine</strong> (regulatory authority &mdash; ARs, FMs, DoD Directives, NATO STANAGs) or <strong>Strategic Guidance</strong> (authoritative but not regulatory &mdash; strategies, plans, frameworks). This distinction matters for compliance and citation.</div>
       </div>
@@ -4364,7 +4504,7 @@
           <tr><td style="padding:5px 8px;">ADP 6-0</td><td style="padding:5px 8px;">Mission Command (Jul 2019)</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40F</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">ADP 7-0</td><td style="padding:5px 8px;">Training</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">Training Mgmt</td></tr>
           <tr><td style="padding:5px 8px;">AR 25-1</td><td style="padding:5px 8px;">Army Information Technology (Jul 2019)</td><td style="padding:5px 8px;">Regulation</td><td style="padding:5px 8px;">All</td></tr>
-          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">AR 25-2</td><td style="padding:5px 8px;">Army Cybersecurity (Apr 2019)</td><td style="padding:5px 8px;">Regulation</td><td style="padding:5px 8px;">TM-40H, TM-40I, TM-40L</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">AR 25-2</td><td style="padding:5px 8px;">Army Cybersecurity (Apr 2019)</td><td style="padding:5px 8px;">Regulation</td><td style="padding:5px 8px;">TM-40H, TM-40M, TM-40L</td></tr>
           <tr><td style="padding:5px 8px;">AR 25-30</td><td style="padding:5px 8px;">Army Publishing Program</td><td style="padding:5px 8px;">Regulation</td><td style="padding:5px 8px;">TM-50H</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">AR 25-400-2</td><td style="padding:5px 8px;">Army Records Management</td><td style="padding:5px 8px;">Regulation</td><td style="padding:5px 8px;">TM-40K</td></tr>
           <tr><td style="padding:5px 8px;">AR 5-11</td><td style="padding:5px 8px;">Management of Army Models and Simulations</td><td style="padding:5px 8px;">Regulation</td><td style="padding:5px 8px;">TM-40G</td></tr>
@@ -4376,7 +4516,7 @@
           <tr><td style="padding:5px 8px;">FM 3-0</td><td style="padding:5px 8px;">Operations (Mar 2025)</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">WFF (A&ndash;F)</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">FM 3-01</td><td style="padding:5px 8px;">U.S. Army Air and Missile Defense</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40B</td></tr>
           <tr><td style="padding:5px 8px;">FM 3-09</td><td style="padding:5px 8px;">Fire Support and Field Artillery Operations (Aug 2024)</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40B, TM-40C</td></tr>
-          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">FM 3-12</td><td style="padding:5px 8px;">Cyberspace and EW Operations</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40E, TM-40H, TM-40I, TM-40L</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">FM 3-12</td><td style="padding:5px 8px;">Cyberspace and EW Operations</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40E, TM-40H, TM-40M, TM-40L</td></tr>
           <tr><td style="padding:5px 8px;">FM 3-27</td><td style="padding:5px 8px;">Army Global Ballistic Missile Defense</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40B</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">FM 3-55</td><td style="padding:5px 8px;">Information Collection</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40A</td></tr>
           <tr><td style="padding:5px 8px;">FM 3-60</td><td style="padding:5px 8px;">Targeting (Aug 2023)</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40B</td></tr>
@@ -4400,7 +4540,7 @@
           <tr><td style="padding:5px 8px;">TC 6-0.2</td><td style="padding:5px 8px;">Battle Staff Operations</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40F</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">DA PAM 5-11</td><td style="padding:5px 8px;">Verification, Validation &amp; Accreditation</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40G</td></tr>
           <tr><td style="padding:5px 8px;">DA PAM 25-1-1</td><td style="padding:5px 8px;">IT Implementation Instructions</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40K, TM-40L</td></tr>
-          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">DA PAM 25-2-5</td><td style="padding:5px 8px;">Cybersecurity Technical Reference</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40H, TM-40I, TM-40L</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">DA PAM 25-2-5</td><td style="padding:5px 8px;">Cybersecurity Technical Reference</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40H, TM-40M, TM-40L</td></tr>
           <tr><td style="padding:5px 8px;">DA PAM 25-40</td><td style="padding:5px 8px;">Army Publishing Program Procedures</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">Standards</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">DA PAM 25-403</td><td style="padding:5px 8px;">Army Records Information Management</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40K</td></tr>
           <tr><td style="padding:5px 8px;">DA PAM 600-3</td><td style="padding:5px 8px;">Officer Professional Development</td><td style="padding:5px 8px;">Doctrine</td><td style="padding:5px 8px;">TM-40G</td></tr>
@@ -4415,7 +4555,7 @@
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">DoDD 3000.09</td><td style="padding:5px 8px;">Autonomy in Weapon Systems (Jan 2023)</td><td style="padding:5px 8px;">Directive</td><td style="padding:5px 8px;">WFF (A&ndash;F)</td></tr>
           <tr><td style="padding:5px 8px;">DoDI 5000.87</td><td style="padding:5px 8px;">Software Acquisition Pathway (Oct 2020)</td><td style="padding:5px 8px;">Instruction</td><td style="padding:5px 8px;">TM-40L, TM-50L, TM-40J, TM-50J</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Army Directive 2024-02</td><td style="padding:5px 8px;">Agile Software Dev &amp; Acquisition (Dec 2024)</td><td style="padding:5px 8px;">Directive</td><td style="padding:5px 8px;">TM-40L, TM-50L, TM-40J, TM-50J</td></tr>
-          <tr><td style="padding:5px 8px;">Army Directive 2024-03</td><td style="padding:5px 8px;">Army Digital Engineering</td><td style="padding:5px 8px;">Directive</td><td style="padding:5px 8px;">TM-40H, TM-40I, TM-40L</td></tr>
+          <tr><td style="padding:5px 8px;">Army Directive 2024-03</td><td style="padding:5px 8px;">Army Digital Engineering</td><td style="padding:5px 8px;">Directive</td><td style="padding:5px 8px;">TM-40H, TM-40M, TM-40L</td></tr>
         </tbody>
       </table>
 
@@ -4461,7 +4601,7 @@
           <tr><td style="padding:5px 8px;">JCOIE</td><td style="padding:5px 8px;">Joint Staff J-7</td><td style="padding:5px 8px;">Current</td><td style="padding:5px 8px;">TM-40F</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Army Data Plan</td><td style="padding:5px 8px;">Army CIO</td><td style="padding:5px 8px;">Oct 2022</td><td style="padding:5px 8px;">All</td></tr>
           <tr><td style="padding:5px 8px;">Army Cloud Plan</td><td style="padding:5px 8px;">Army CIO</td><td style="padding:5px 8px;">Oct 2022</td><td style="padding:5px 8px;">TM-10, TM-20, TM-30</td></tr>
-          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">UDRA v1.1</td><td style="padding:5px 8px;">DASA(DES)</td><td style="padding:5px 8px;">Feb 2025</td><td style="padding:5px 8px;">TM-30, Specialist (G&ndash;L)</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">UDRA v1.1</td><td style="padding:5px 8px;">DASA(DES)</td><td style="padding:5px 8px;">Feb 2025</td><td style="padding:5px 8px;">TM-30, Specialist (G&ndash;M)</td></tr>
           <tr><td style="padding:5px 8px;">Army CIO Data Stewardship Memo</td><td style="padding:5px 8px;">Army CIO</td><td style="padding:5px 8px;">Apr 2024</td><td style="padding:5px 8px;">TM-10, TM-20, TM-30, TM-40K</td></tr>
         </tbody>
       </table>
@@ -4481,12 +4621,12 @@
 
     </details>
 
-    <details open>
+    <details open style="background:#f4f5f8;border:1px dashed var(--gray-200);border-radius:8px;padding:16px 16px 8px;margin-top:16px;">
       <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Professional Reading &amp; Lessons Learned (65+ articles)</summary>
 
-      <div class="callout note" style="margin-top:12px;margin-bottom:16px;">
-        <div class="callout-label">NOTE</div>
-        <div class="callout-body">These are <strong>not doctrine</strong>. They are curated articles from Army professional journals, military publications, and think tanks that provide contemporary operational perspectives on data, AI, and digital transformation. Full reading lists are included as appendices in each TM publication.</div>
+      <div class="callout info" style="margin-top:12px;margin-bottom:12px;">
+        <div class="callout-label">REFERENCE ONLY</div>
+        <div class="callout-body">Items below are <strong>not clickable links</strong>. They are curated articles from Army professional journals, military publications, and think tanks. Obtain them through the publishing organization or your unit library. Full reading lists are included as appendices in each TM publication.</div>
       </div>
 
       <!-- Military Review -->
@@ -4496,15 +4636,15 @@
         <tbody>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Data-Centric at the Division: 3ID&rsquo;s One-Year Journey to Transform and Modernize</td><td style="padding:5px 8px;">Jan 2025</td><td style="padding:5px 8px;">All</td></tr>
           <tr><td style="padding:5px 8px;">Modernizing Military Decision-Making: Integrating AI into Army Planning</td><td style="padding:5px 8px;">Aug 2025</td><td style="padding:5px 8px;">TM-40F, TM-40H, TM-40G</td></tr>
-          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">The Military Needs Frontier Models</td><td style="padding:5px 8px;">Aug 2025</td><td style="padding:5px 8px;">TM-40H, TM-40I, TM-40L</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">The Military Needs Frontier Models</td><td style="padding:5px 8px;">Aug 2025</td><td style="padding:5px 8px;">TM-40H, TM-40M, TM-40L</td></tr>
           <tr><td style="padding:5px 8px;">Exploring AI-Enhanced Cyber and Information Operations Integration</td><td style="padding:5px 8px;">Mar-Apr 2025</td><td style="padding:5px 8px;">TM-40E, TM-40A, TM-40H</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Authorities and the Multidomain Task Force</td><td style="padding:5px 8px;">Mar-Apr 2025</td><td style="padding:5px 8px;">TM-40A, TM-40B, TM-40F</td></tr>
           <tr><td style="padding:5px 8px;">Taking a Data-Centric Approach to Unit Readiness</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">All, esp. TM-40G</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Attaining Readiness by Developing a Data-Centric Culture</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">All, esp. TM-40J</td></tr>
           <tr><td style="padding:5px 8px;">Sustaining Our People Advantage in Data-Centric Warfare</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">All</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">AI as a Combat Multiplier: Using AI to Unburden Army Staffs</td><td style="padding:5px 8px;">Sep 2024</td><td style="padding:5px 8px;">TM-40H, TM-40F, TM-40G</td></tr>
-          <tr><td style="padding:5px 8px;">Transforming the Multidomain Battlefield with AI</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">TM-40H, TM-40I, TM-40A</td></tr>
-          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">The Coming Military AI Revolution</td><td style="padding:5px 8px;">May-Jun 2024</td><td style="padding:5px 8px;">TM-40H, TM-40I</td></tr>
+          <tr><td style="padding:5px 8px;">Transforming the Multidomain Battlefield with AI</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">TM-40H, TM-40M, TM-40A</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">The Coming Military AI Revolution</td><td style="padding:5px 8px;">May-Jun 2024</td><td style="padding:5px 8px;">TM-40H, TM-40M</td></tr>
           <tr><td style="padding:5px 8px;">AI in Modern Warfare: Strategic Innovation and Emerging Risks</td><td style="padding:5px 8px;">Sep-Oct 2024</td><td style="padding:5px 8px;">All</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Advancing Counter-UAS Mission Command Systems</td><td style="padding:5px 8px;">May-Jun 2024</td><td style="padding:5px 8px;">TM-40E, TM-40F</td></tr>
           <tr><td style="padding:5px 8px;">The True Test of Mission Command</td><td style="padding:5px 8px;">Sep-Oct 2024</td><td style="padding:5px 8px;">TM-40F</td></tr>
@@ -4516,7 +4656,7 @@
       <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;">
         <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
         <tbody>
-          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Responsibly Pursuing Generative AI for the War Fighter</td><td style="padding:5px 8px;">Winter 2025-26</td><td style="padding:5px 8px;">TM-40H, TM-40I, All</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Responsibly Pursuing Generative AI for the War Fighter</td><td style="padding:5px 8px;">Winter 2025-26</td><td style="padding:5px 8px;">TM-40H, TM-40M, All</td></tr>
           <tr><td style="padding:5px 8px;">Integrating AI and ML into COP and COA Development</td><td style="padding:5px 8px;">2024-25</td><td style="padding:5px 8px;">TM-40G, TM-40H, TM-40F</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Trusting AI: Integrating AI into the Army&rsquo;s Professional Ethic</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">All</td></tr>
         </tbody>
@@ -4529,7 +4669,7 @@
         <tbody>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">FRIDAY: Unlocking OSINT for a Data-Driven Army</td><td style="padding:5px 8px;">2025</td><td style="padding:5px 8px;">TM-40A, TM-40H, TM-40L</td></tr>
           <tr><td style="padding:5px 8px;">Intelligence Support to Information Advantage</td><td style="padding:5px 8px;">Jan-Jun 2026</td><td style="padding:5px 8px;">TM-40A, TM-40K</td></tr>
-          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Using AI to Create Digital Enemy Commanders</td><td style="padding:5px 8px;">Jul-Dec 2025</td><td style="padding:5px 8px;">TM-40H, TM-40I, TM-40A</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Using AI to Create Digital Enemy Commanders</td><td style="padding:5px 8px;">Jul-Dec 2025</td><td style="padding:5px 8px;">TM-40H, TM-40M, TM-40A</td></tr>
           <tr><td style="padding:5px 8px;">The Market Knows Best: Prediction Markets for National Security</td><td style="padding:5px 8px;">Jul-Dec 2025</td><td style="padding:5px 8px;">TM-40A, TM-40G</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Army Transitioning to Support Deep Sensing in MDO</td><td style="padding:5px 8px;">Jul-Dec 2025</td><td style="padding:5px 8px;">TM-40A, TM-40B, TM-40C</td></tr>
           <tr><td style="padding:5px 8px;">Open-Source Intelligence Support to Targeting</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">TM-40A, TM-40B</td></tr>
@@ -4544,7 +4684,7 @@
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">The New Digital Kill Chain</td><td style="padding:5px 8px;">2025</td><td style="padding:5px 8px;">TM-40B, TM-40L</td></tr>
           <tr><td style="padding:5px 8px;">AI&rsquo;s New Frontier in War Planning</td><td style="padding:5px 8px;">2025</td><td style="padding:5px 8px;">TM-40B, TM-40H</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Project Convergence: Revolutionizing Targeting in LSCO</td><td style="padding:5px 8px;">2025</td><td style="padding:5px 8px;">TM-40B, TM-40A, TM-40G</td></tr>
-          <tr><td style="padding:5px 8px;">Enhancing Tactical Level Targeting With AI</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">TM-40B, TM-40H, TM-40I</td></tr>
+          <tr><td style="padding:5px 8px;">Enhancing Tactical Level Targeting With AI</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">TM-40B, TM-40H, TM-40M</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">The Future of Strategic Fires Target Acquisition</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">TM-40B, TM-40A</td></tr>
           <tr><td style="padding:5px 8px;">The Combat Aviation Brigade and Digital Call for Fire</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">TM-40B, TM-40C</td></tr>
         </tbody>
@@ -4557,7 +4697,7 @@
         <tbody>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Knowledge Management and The Old Guard</td><td style="padding:5px 8px;">Aug 2025</td><td style="padding:5px 8px;">TM-40K, TM-40F</td></tr>
           <tr><td style="padding:5px 8px;">From Data to Wisdom</td><td style="padding:5px 8px;">Feb 2025</td><td style="padding:5px 8px;">All</td></tr>
-          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Artificial Intelligence and Future Warfare</td><td style="padding:5px 8px;">Sep 2025</td><td style="padding:5px 8px;">TM-40H, TM-40I, All</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Artificial Intelligence and Future Warfare</td><td style="padding:5px 8px;">Sep 2025</td><td style="padding:5px 8px;">TM-40H, TM-40M, All</td></tr>
         </tbody>
       </table>
 
@@ -4567,7 +4707,7 @@
         <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
         <tbody>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Army Sustainment Enterprise&rsquo;s Delayed Approach to Data Modernization</td><td style="padding:5px 8px;">Winter 2025</td><td style="padding:5px 8px;">TM-40D, TM-40K</td></tr>
-          <tr><td style="padding:5px 8px;">Predictive Logistics: Reimagining Sustainment on the 2040 Battlefield</td><td style="padding:5px 8px;">Winter 2025</td><td style="padding:5px 8px;">TM-40D, TM-40H, TM-40I, TM-40G</td></tr>
+          <tr><td style="padding:5px 8px;">Predictive Logistics: Reimagining Sustainment on the 2040 Battlefield</td><td style="padding:5px 8px;">Winter 2025</td><td style="padding:5px 8px;">TM-40D, TM-40H, TM-40M, TM-40G</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Enabling Logistics in Contested Environments</td><td style="padding:5px 8px;">Spring 2025</td><td style="padding:5px 8px;">TM-40D, TM-40G</td></tr>
           <tr><td style="padding:5px 8px;">Advancing to Data-Driven Logistics Operations</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">TM-40D, TM-40K</td></tr>
         </tbody>
@@ -4579,12 +4719,12 @@
         <thead><tr style="background:#e8eaf0;color:#333;text-align:left;"><th style="padding:6px 8px;">Title</th><th style="padding:6px 8px;">Date</th><th style="padding:6px 8px;">Tracks</th></tr></thead>
         <tbody>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Accelerating the Army&rsquo;s AI Strategy</td><td style="padding:5px 8px;">2024-25</td><td style="padding:5px 8px;">TM-40H, TM-40J, All</td></tr>
-          <tr><td style="padding:5px 8px;">Commoditizing AI/ML Models</td><td style="padding:5px 8px;">2024-25</td><td style="padding:5px 8px;">TM-40H, TM-40I, TM-40L</td></tr>
+          <tr><td style="padding:5px 8px;">Commoditizing AI/ML Models</td><td style="padding:5px 8px;">2024-25</td><td style="padding:5px 8px;">TM-40H, TM-40M, TM-40L</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">The Army&rsquo;s Data (Ad)Vantage</td><td style="padding:5px 8px;">2024</td><td style="padding:5px 8px;">All</td></tr>
           <tr><td style="padding:5px 8px;">The Software Advantage</td><td style="padding:5px 8px;">2024-25</td><td style="padding:5px 8px;">TM-40L, TM-40J</td></tr>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Army Intelligence</td><td style="padding:5px 8px;">2025</td><td style="padding:5px 8px;">TM-40A, TM-40H</td></tr>
           <tr><td style="padding:5px 8px;">Emerging Technology and Modernizing the Army</td><td style="padding:5px 8px;">2024-25</td><td style="padding:5px 8px;">All</td></tr>
-          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Reality Check (AI/ML implementation)</td><td style="padding:5px 8px;">2024-25</td><td style="padding:5px 8px;">TM-40H, TM-40I, TM-40J</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Reality Check (AI/ML implementation)</td><td style="padding:5px 8px;">2024-25</td><td style="padding:5px 8px;">TM-40H, TM-40M, TM-40J</td></tr>
         </tbody>
       </table>
 
@@ -4606,7 +4746,7 @@
         <tbody>
           <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">How To Be a Data Literate Leader &mdash; And Why It Matters</td><td style="padding:5px 8px;">Mar 2024</td><td style="padding:5px 8px;">All, TM-40K</td></tr>
           <tr><td style="padding:5px 8px;">Harnessing the Power of Knowledge Management</td><td style="padding:5px 8px;">Apr 2024</td><td style="padding:5px 8px;">TM-40K, TM-40F</td></tr>
-          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Understanding Weapons of Math Destruction</td><td style="padding:5px 8px;">Jul 2024</td><td style="padding:5px 8px;">TM-40G, TM-40H, TM-40I</td></tr>
+          <tr style="background:#f8f9fa;"><td style="padding:5px 8px;">Understanding Weapons of Math Destruction</td><td style="padding:5px 8px;">Jul 2024</td><td style="padding:5px 8px;">TM-40G, TM-40H, TM-40M</td></tr>
         </tbody>
       </table>
 
@@ -4702,6 +4842,63 @@
   </div><!-- /panel-taskindex -->
 
 
+
+
+  <!-- ======================================================
+       DASHBOARDS PANEL
+  ====================================================== -->
+  <div id="panel-dashboards" class="panel">
+
+    <div class="section-header">
+      <span class="section-badge">DASHBOARDS</span>
+      <span class="section-title">Analytics &amp; Operations Suite</span>
+      <span class="section-subtitle">Streamlit applications &bull; Accessible on local network</span>
+    </div>
+
+    <div class="callout bluf">
+      <div class="callout-label">BLUF</div>
+      <div class="callout-body">These dashboards provide real-time analytics, operational management, and content quality tools for the MSS training program. Each runs as a standalone Streamlit application accessible on the local network. Contact ODT for access credentials and network configuration.</div>
+    </div>
+
+    <div class="dash-section-hdr">Training Analytics</div>
+    <div class="dash-grid">
+      <a class="dash-card" href="http://localhost:8501" target="_blank" rel="noopener"><div class="dash-card-hdr"><span class="dash-card-icon">&#128203;</span><span class="dash-card-name">Readiness Tracker</span><span class="dash-card-port">:8501</span></div><div class="dash-card-desc">Soldier training timelines, overdue flagging, printable records.</div></a>
+      <a class="dash-card" href="http://localhost:8502" target="_blank" rel="noopener"><div class="dash-card-hdr"><span class="dash-card-icon">&#128202;</span><span class="dash-card-name">Exam Analytics</span><span class="dash-card-port">:8502</span></div><div class="dash-card-desc">Score distributions, cohort comparison, item discrimination, question improvement.</div></a>
+      <a class="dash-card" href="http://localhost:8503" target="_blank" rel="noopener"><div class="dash-card-hdr"><span class="dash-card-icon">&#128221;</span><span class="dash-card-name">AAR Aggregator</span><span class="dash-card-port">:8503</span></div><div class="dash-card-desc">AAR trend analysis, priority matrix, keyword extraction, GO/NO-GO tracking.</div></a>
+      <a class="dash-card" href="http://localhost:8511" target="_blank" rel="noopener"><div class="dash-card-hdr"><span class="dash-card-icon">&#128200;</span><span class="dash-card-name">Training Metrics</span><span class="dash-card-port">:8511</span></div><div class="dash-card-desc">Executive dashboard &mdash; aggregates all training data for CG/DCG briefings.</div></a>
+    </div>
+
+    <div class="dash-section-hdr">Training Operations</div>
+    <div class="dash-grid">
+      <a class="dash-card" href="http://localhost:8504" target="_blank" rel="noopener"><div class="dash-card-hdr"><span class="dash-card-icon">&#127919;</span><span class="dash-card-name">Progress Tracker</span><span class="dash-card-port">:8504</span></div><div class="dash-card-desc">Individual soldier progress, goal tracking, stalled-soldier alerts.</div></a>
+      <a class="dash-card" href="http://localhost:8505" target="_blank" rel="noopener"><div class="dash-card-hdr"><span class="dash-card-icon">&#128197;</span><span class="dash-card-name">MTT Scheduler</span><span class="dash-card-port">:8505</span></div><div class="dash-card-desc">Mobile Training Team scheduling, resource allocation, calendar view.</div></a>
+      <a class="dash-card" href="http://localhost:8508" target="_blank" rel="noopener"><div class="dash-card-hdr"><span class="dash-card-icon">&#128100;</span><span class="dash-card-name">Enrollment Manager</span><span class="dash-card-port">:8508</span></div><div class="dash-card-desc">Class enrollment, waitlists, rosters, and seat management.</div></a>
+      <a class="dash-card" href="http://localhost:8512" target="_blank" rel="noopener"><div class="dash-card-hdr"><span class="dash-card-icon">&#129489;</span><span class="dash-card-name">Instructor Manager</span><span class="dash-card-port">:8512</span></div><div class="dash-card-desc">Instructor assignments, certifications, and availability tracking.</div></a>
+    </div>
+
+    <div class="dash-section-hdr">Content &amp; Quality</div>
+    <div class="dash-grid">
+      <a class="dash-card" href="http://localhost:8510" target="_blank" rel="noopener"><div class="dash-card-hdr"><span class="dash-card-icon">&#9989;</span><span class="dash-card-name">Data Quality</span><span class="dash-card-port">:8510</span></div><div class="dash-card-desc">Pipeline health monitoring, metric trending, active alerts.</div></a>
+      <a class="dash-card" href="http://localhost:8506" target="_blank" rel="noopener"><div class="dash-card-hdr"><span class="dash-card-icon">&#128279;</span><span class="dash-card-name">XRef Validator</span><span class="dash-card-port">:8506</span></div><div class="dash-card-desc">Cross-reference validation &mdash; find broken links and stale references.</div></a>
+      <a class="dash-card" href="http://localhost:8513" target="_blank" rel="noopener"><div class="dash-card-hdr"><span class="dash-card-icon">&#128218;</span><span class="dash-card-name">Curriculum Tracker</span><span class="dash-card-port">:8513</span></div><div class="dash-card-desc">Document version control, review cycles, freshness tracking.</div></a>
+      <a class="dash-card" href="http://localhost:8507" target="_blank" rel="noopener"><div class="dash-card-hdr"><span class="dash-card-icon">&#128269;</span><span class="dash-card-name">Glossary Search</span><span class="dash-card-port">:8507</span></div><div class="dash-card-desc">Full-text search across the MSS data foundry glossary.</div></a>
+      <a class="dash-card" href="http://localhost:8514" target="_blank" rel="noopener"><div class="dash-card-hdr"><span class="dash-card-icon">&#128161;</span><span class="dash-card-name">Lessons Learned</span><span class="dash-card-port">:8514</span></div><div class="dash-card-desc">Lessons learned database &mdash; search, tag, and trend analysis.</div></a>
+    </div>
+
+    <div class="dash-section-hdr">Distribution &amp; Sync</div>
+    <div class="dash-grid">
+      <a class="dash-card" href="http://localhost:8509" target="_blank" rel="noopener"><div class="dash-card-hdr"><span class="dash-card-icon">&#128230;</span><span class="dash-card-name">Offline Packager</span><span class="dash-card-port">:8509</span></div><div class="dash-card-desc">Build offline content packages for disconnected environments.</div></a>
+      <a class="dash-card" href="http://localhost:8515" target="_blank" rel="noopener"><div class="dash-card-hdr"><span class="dash-card-icon">&#9729;</span><span class="dash-card-name">SharePoint Sync</span><span class="dash-card-port">:8515</span></div><div class="dash-card-desc">Sync training content to SharePoint for enterprise distribution.</div></a>
+    </div>
+
+    <div class="callout note mt-24">
+      <div class="callout-label">ACCESS</div>
+      <div class="callout-body">Dashboards run on the ODT local network. To access remotely, connect via VPN first. Each application is available at <code>http://&lt;host&gt;:&lt;port&gt;</code>. Contact your ODT representative for the current host address.</div>
+    </div>
+
+  </div><!-- /panel-dashboards -->
+
+
   <!-- ======================================================
        TRAINING SCHEDULE PANEL
   ====================================================== -->
@@ -4749,7 +4946,7 @@
 <footer>
   <strong>HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA</strong><br/>
   USAREUR-AF OPERATIONAL DATA TEAM &nbsp;&bull;&nbsp;
-  TM-10 &bull; TM-20 &bull; TM-30 &bull; TM-40A&ndash;L &bull; TM-50G&ndash;L &bull; Data Lit (SL) &bull; Data Literacy<br/>
+  TM-10 &bull; TM-20 &bull; TM-30 &bull; TM-40A&ndash;M &bull; TM-50G&ndash;M &bull; Data Lit (SL) &bull; Data Literacy<br/>
   VERSION 3.1 &mdash; MARCH 2026 &mdash; DRAFT &mdash; NOT YET APPROVED FOR DISTRIBUTION<br/>
   POC: CPT Andrew Hater &nbsp;&bull;&nbsp; <a href="mailto:andrew.d.hater.mil@army.mil" style="color:var(--gold-light);text-decoration:none;">andrew.d.hater.mil@army.mil</a>
 </footer>
@@ -4865,6 +5062,23 @@
     groupEl.classList.toggle('collapsed');
   }
 
+  /* ── Find My Track: toggle + reset (global scope for onclick attrs) ───── */
+  function toggleFmt() {
+    var wizard = document.getElementById('fmt-wizard');
+    var btn = document.getElementById('fmt-toggle-btn');
+    var arrow = document.getElementById('fmt-toggle-arrow');
+    var isOpen = wizard.style.display !== 'none';
+    wizard.style.display = isOpen ? 'none' : '';
+    btn.classList.toggle('open', !isOpen);
+    arrow.innerHTML = isOpen ? '\u25BC' : '\u25B2';
+  }
+
+  function fmtReset() {
+    document.querySelectorAll('#fmt-categories .fmt-cat-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.getElementById('fmt-step2').style.display = 'none';
+    document.getElementById('fmt-result').style.display = 'none';
+  }
+
   /* ── Wire up ────────────────────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function() {
     /* Splash */
@@ -4955,6 +5169,142 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeMobileSidebar();
     });
+
+    /* ── Find My Track wizard ──────────────────────────────────────────────── */
+    var FMT_CATEGORIES = [
+      { id:'consumer', label:'Data Consumer', icon:'\uD83D\uDCCA', description:'I use MSS dashboards, views, and reports to inform decisions.',
+        roles:[{label:'Any Soldier, officer, or civilian using MSS to view data', description:'You access MSS to consume operational data — dashboards, reports, filtered views.',
+          result:{label:'Maven User',tm40:'TM-10',panel:'tm10',description:'TM-10 covers everything you need: CAC login, navigation, Workshop apps, data viewing, AI tools, and security.',path:['TM-10']}}]},
+      { id:'builder', label:'No-Code Builder', icon:'\uD83D\uDEE0', description:'I build dashboards, forms, or pipelines without writing code.',
+        roles:[{label:'Staff officer / NCO building dashboards or forms', description:'You create Workshop apps, simple pipelines, or forms for your section.',
+          result:{label:'Builder',tm40:'TM-20',panel:'tm20',description:'TM-20 teaches Pipeline Builder (visual), Ontology Manager UI, and Workshop app creation — no code required.',path:['TM-10','TM-20']}}]},
+      { id:'advanced', label:'Advanced Builder', icon:'\uD83E\uDDE9', description:'I design complex apps, manage ontology architecture, or enforce governance.',
+        roles:[{label:'Data-adjacent specialist (17/25-series, G2, data analyst)', description:'You go beyond basic building — complex app design, Ontology architecture, governance, C2DAO standards.',
+          result:{label:'Advanced Builder',tm40:'TM-30',panel:'tm30',description:'TM-30 covers complex app design, Ontology architecture, governance, and C2DAO standards.',path:['TM-10','TM-20','TM-30']}}]},
+      { id:'wff', label:'Warfighting Function', icon:'\uD83C\uDF96', description:'I\'m assigned to a specific WFF role — Intel, Fires, M&M, Sustainment, Protection, or Mission Command.',
+        roles:[
+          {label:'G2/S2 — MI units, ISR analysts', description:'Intelligence warfighting function — threat data, collection management, ISR dashboards.',
+            result:{label:'Intelligence',tm40:'TM-40A',panel:'specialists',description:'WFF-specific MSS applications for intelligence operations — no coding required.',path:['TM-10','TM-20','TM-30','TM-40A']}},
+          {label:'FA officers/NCOs — Fire support coordinators', description:'Fires warfighting function — targeting data, fire mission workflows.',
+            result:{label:'Fires',tm40:'TM-40B',panel:'specialists',description:'WFF-specific MSS applications for fire support and targeting workflows.',path:['TM-10','TM-20','TM-30','TM-40B']}},
+          {label:'Maneuver units — G3/S3 data roles', description:'Movement & Maneuver — operational movement tracking, maneuver data.',
+            result:{label:'Movement & Maneuver',tm40:'TM-40C',panel:'specialists',description:'WFF-specific MSS applications for movement and maneuver operations.',path:['TM-10','TM-20','TM-30','TM-40C']}},
+          {label:'G4/S4 — Logistics, GCSS-A users', description:'Sustainment — logistics pipelines, supply chain data, GCSS-A integration.',
+            result:{label:'Sustainment',tm40:'TM-40D',panel:'specialists',description:'WFF-specific MSS applications for sustainment and logistics operations.',path:['TM-10','TM-20','TM-30','TM-40D']}},
+          {label:'Air defense, CBRN, engineer, force protection', description:'Protection — force protection data, CBRN monitoring, engineer operations.',
+            result:{label:'Protection',tm40:'TM-40E',panel:'specialists',description:'WFF-specific MSS applications for protection and force defense.',path:['TM-10','TM-20','TM-30','TM-40E']}},
+          {label:'G6/S6 — C2 systems, network managers', description:'Mission Command — C2 data systems, network management, signal operations.',
+            result:{label:'Mission Command',tm40:'TM-40F',panel:'specialists',description:'WFF-specific MSS applications for mission command and C2 systems.',path:['TM-10','TM-20','TM-30','TM-40F']}}
+        ]},
+      { id:'technical', label:'Technical Specialist', icon:'\uD83D\uDCBB', description:'I build, engineer, or manage MSS solutions — ORSA, AI/ML, PM, KM, or SWE role.',
+        roles:[
+          {label:'FA49 — Operations Research Analyst', description:'ORSA — quantitative analysis, wargaming, optimization, statistical modeling.',
+            result:{label:'ORSA',tm40:'TM-40G',tm50:'TM-50G',panel:'tm40',description:'Quantitative analysis, optimization models, wargame data architecture on MSS.',path:['TM-10','TM-20','TM-30','TM-40G']}},
+          {label:'17A/17C — AI/ML specialist or Cyber', description:'AI Engineering — AIP Logic, Agent Studio, LLM integration, or cyber operations.',
+            result:{label:'AI Engineer',tm40:'TM-40H',tm50:'TM-50H',panel:'tm40',description:'AIP Logic workflows, Agent Studio, LLM integration, and AI red-teaming on MSS.',path:['TM-10','TM-20','TM-30','TM-40H']}},
+          {label:'ML engineer / Data scientist (GS/contractor)', description:'ML Engineering — model training, deployment, MLOps, Code Workspaces.',
+            result:{label:'ML Engineer',tm40:'TM-40M',tm50:'TM-50M',panel:'tm40',description:'Model development, experiment tracking, deployment, and MLOps patterns on MSS.',path:['TM-10','TM-20','TM-30','TM-40M']}},
+          {label:'G8/S8 — Program Manager / Resource manager', description:'Program Management — agile project management, backlogs, portfolio health.',
+            result:{label:'Program Manager',tm40:'TM-40J',tm50:'TM-50J',panel:'tm40',description:'Agile project structures, sprint management, and portfolio tracking on MSS.',path:['TM-10','TM-20','TM-30','TM-40J']}},
+          {label:'KMO / 37F — Knowledge Manager', description:'Knowledge Management — AAR systems, lessons learned, doctrine repositories.',
+            result:{label:'Knowledge Manager',tm40:'TM-40K',tm50:'TM-50K',panel:'tm40',description:'AAR capture, lessons-learned pipelines, knowledge search, and doctrine management.',path:['TM-10','TM-20','TM-30','TM-40K']}},
+          {label:'25D/25U — Software Engineer / IT specialist', description:'Software Engineering — OSDK, TypeScript/Python, Foundry API, full-stack apps.',
+            result:{label:'Software Engineer',tm40:'TM-40L',tm50:'TM-50L',panel:'tm40',description:'OSDK development, Foundry API integration, full-stack MSS applications.',path:['TM-10','TM-20','TM-30','TM-40L']}},
+          {label:'G2/S2 quantitative analyst', description:'Quant analysis — could be ORSA or KM depending on your unit role.',
+            result:{label:'ORSA or Knowledge Manager',tm40:'TM-40G / TM-40K',tm50:'TM-50G / TM-50K',panel:'specialists',description:'Talk to your supervisor — ORSA (TM-40G) for quantitative modeling or KM (TM-40K) for knowledge architecture.',path:['TM-10','TM-20','TM-30','TM-40G or TM-40K']}}
+        ]},
+      { id:'leader', label:'Senior Leader', icon:'\u2B50', description:'I\'m O-5+ / SGM+ directing a data-capable formation.',
+        roles:[{label:'Commander / Senior leader (O-5+ / SGM+)', description:'You direct data-capable formations. You need the strategic picture, not the hands-on tools.',
+          result:{label:'Data Literacy for Senior Leaders',tm40:'Data Lit (SL)',panel:'doctrine',description:'Principles, command responsibilities, and decision frameworks — how to direct and resource a data-capable organization.',path:['Data Lit (SL)']}}]}
+    ];
+
+    var fmtSelectedCat = null;
+    var fmtSelectedRole = null;
+
+    function fmtBuildCategories() {
+      var container = document.getElementById('fmt-categories');
+      if (!container) return;
+      container.innerHTML = '';
+      FMT_CATEGORIES.forEach(function(cat) {
+        var btn = document.createElement('button');
+        btn.className = 'fmt-cat-btn';
+        btn.innerHTML = '<span class="fmt-cat-icon">' + cat.icon + '</span>' +
+          '<span class="fmt-cat-label">' + cat.label + '</span>' +
+          '<span class="fmt-cat-desc">' + cat.description + '</span>';
+        btn.addEventListener('click', function() { fmtSelectCategory(cat.id); });
+        container.appendChild(btn);
+      });
+    }
+
+    function fmtSelectCategory(id) {
+      fmtSelectedCat = id;
+      fmtSelectedRole = null;
+      // highlight active category
+      document.querySelectorAll('#fmt-categories .fmt-cat-btn').forEach(function(b, i) {
+        b.classList.toggle('active', FMT_CATEGORIES[i].id === id);
+      });
+      var cat = FMT_CATEGORIES.find(function(c) { return c.id === id; });
+      if (!cat) return;
+      // if single role, auto-select
+      if (cat.roles.length === 1) {
+        document.getElementById('fmt-step2').style.display = 'none';
+        fmtShowResult(cat.roles[0].result);
+      } else {
+        fmtBuildRoles(cat.roles);
+        document.getElementById('fmt-step2').style.display = '';
+        document.getElementById('fmt-result').style.display = 'none';
+      }
+    }
+
+    function fmtBuildRoles(roles) {
+      var container = document.getElementById('fmt-roles');
+      container.innerHTML = '';
+      roles.forEach(function(r, i) {
+        var btn = document.createElement('button');
+        btn.className = 'fmt-role-btn';
+        btn.innerHTML = '<span class="fmt-role-label">' + r.label + '</span>' +
+          '<span class="fmt-role-desc">' + r.description + '</span>';
+        btn.addEventListener('click', function() {
+          fmtSelectedRole = i;
+          document.querySelectorAll('#fmt-roles .fmt-role-btn').forEach(function(b, j) {
+            b.classList.toggle('active', j === i);
+          });
+          fmtShowResult(r.result);
+        });
+        container.appendChild(btn);
+      });
+    }
+
+    function fmtShowResult(result) {
+      document.getElementById('fmt-result').style.display = '';
+      document.getElementById('fmt-result-track').textContent = result.label;
+      document.getElementById('fmt-result-tm').textContent = result.tm40 + (result.tm50 ? ' \u2192 ' + result.tm50 : '');
+      document.getElementById('fmt-result-desc').textContent = result.description;
+      // build path badges
+      var pathEl = document.getElementById('fmt-path');
+      pathEl.innerHTML = '';
+      result.path.forEach(function(step, i) {
+        if (i > 0) {
+          var arrow = document.createElement('span');
+          arrow.className = 'fmt-path-arrow';
+          arrow.textContent = '\u2192';
+          pathEl.appendChild(arrow);
+        }
+        var badge = document.createElement('span');
+        badge.className = 'fmt-path-badge' + (i === result.path.length - 1 ? ' final' : '');
+        badge.textContent = step;
+        pathEl.appendChild(badge);
+      });
+      // wire go button
+      var goBtn = document.getElementById('fmt-go-btn');
+      goBtn.textContent = 'Go to ' + result.tm40 + ' \u2192';
+      goBtn.onclick = function() { showPanel(result.panel); };
+    }
+
+    // fmtReset and toggleFmt moved to global scope (see below)
+
+    // Initialize wizard on page load
+    fmtBuildCategories();
   });
 </script>
 

@@ -650,8 +650,16 @@ Example: An incremental SITREP transform records a watermark after each run. The
 
 **VAUTI**
 *Foundry Equivalent: Foundry's data governance features — markings, lineage, ontology, and @check validators — are the mechanisms by which VAUTI compliance is achieved.*
-Definition: The DoD data quality framework established in the DoD Data Strategy (2020). Data must be Visible (findable in a catalog or directory), Accessible (retrievable by authorized users), Understandable (meaning is clearly defined), Trustable (quality and provenance are documented and verified), and Interoperable (usable across systems using common standards). VAUTI is the authoritative standard for DoD and Army data quality. All Army data systems, including Maven Smart System, are assessed against VAUTI criteria. *Source: DoD Data Strategy, 2020.*
+Definition: The DoD data quality framework established in the DoD Data Strategy (2020). Data must be Visible (findable in a catalog or directory), Accessible (retrievable by authorized users), Understandable (meaning is clearly defined), Trustable (quality and provenance are documented and verified), and Interoperable (usable across systems using common standards). VAUTI (5 dimensions) was the original Army standard per AR 25-1 (2019). It was superseded by VAULTIS (7 dimensions, DoD Data Strategy 2020) and subsequently by VAULTIS-A (8 dimensions, DDOF Playbook v2.2 2025). See VAULTIS-A. *Source: DoD Data Strategy, 2020.*
 Example: A readiness dataset achieves VAUTI compliance when: it appears in the MSS catalog (Visible), credentialed users can query it (Accessible), all columns carry clear definitions (Understandable), it has documented lineage and @check validators (Trustable), and it uses standard unit identifiers shared across G1/G3/G4 systems (Interoperable).
+
+---
+
+**VAULTIS-A**
+*Foundry Equivalent: Foundry's data governance features — markings, lineage, ontology, @check validators, and audit logs — are the mechanisms by which VAULTIS-A compliance is achieved.*
+Definition: Visible, Accessible, Understandable, Linked, Trusted, Interoperable, Secure, Auditable — the 8-dimension data quality framework defined in the DDOF Playbook v2.2 (T2COM C2DAO, December 2025). Extends DoD VAULTIS (7 goals, DoD Data Strategy 2020) by adding Auditable as an 8th dimension. All data products must score ≥85% weighted average across all eight dimensions to pass DDOF Phase 3. Supersession chain: VAUTI (5, AR 25-1 2019) → VAULTIS (7, DoD Data Strategy 2020) → VAULTIS-A (8, DDOF Playbook v2.2 2025).
+Example: A readiness dataset achieves VAULTIS-A compliance when: it is clearly marked and discoverable in the MSS catalog (Visible), authorized users can access it at 99%+ rate (Accessible), all columns carry complete metadata and user guide (Understandable), it maintains 100% linkage to sources and products (Linked), provenance is validated with 95%+ accuracy and sponsor sign-off (Trusted), it is compatible with 90%+ approved platforms (Interoperable), it is 100% compliant with security policy (Secure), and full provenance and access logs are maintained (Auditable).
+*See also: VAUTI, DDOF*
 
 ---
 
@@ -1158,8 +1166,8 @@ Example: A brigade S2 completes TM-40A (Intelligence WFF) to learn how to use MS
 ---
 
 **Specialist Track**
-*MSS Equivalent: TM-40G through TM-40L (and TM-50G through TM-50L)*
-Definition: A category of MSS training tracks (TM-40G–L) designed for personnel in designated technical billets requiring deep platform engineering or analytical capability. Specialist tracks require TM-30 (Advanced Builder) as a hard prerequisite. The six specialist tracks are: ORSA (TM-40G), AI Engineer (TM-40H), ML Engineer (TM-40I), Program Manager (TM-40J), Knowledge Manager (TM-40K), and Software Engineer (TM-40L). Each specialist track has an advanced counterpart in the TM-50 series (TM-50G–L). Specialist tracks are distinct from WFF tracks — they address technical roles, not functional staff roles.
+*MSS Equivalent: TM-40G through TM-40M (and TM-50G through TM-50M)*
+Definition: A category of MSS training tracks (TM-40G–M) designed for personnel in designated technical billets requiring deep platform engineering or analytical capability. Specialist tracks require TM-30 (Advanced Builder) as a hard prerequisite. The six specialist tracks are: ORSA (TM-40G), AI Engineer (TM-40H), ML Engineer (TM-40M), Program Manager (TM-40J), Knowledge Manager (TM-40K), and Software Engineer (TM-40L). Each specialist track has an advanced counterpart in the TM-50 series (TM-50G–M). Specialist tracks are distinct from WFF tracks — they address technical roles, not functional staff roles.
 Example: A designated ORSA billet holder completes TM-40G (ORSA) after finishing TM-30, learning to apply statistical and operations research methods to command-level analytical problems within MSS.
 *See also: Warfighting Function (WFF) Track, TM-30, TM-40 Series*
 
@@ -1271,7 +1279,7 @@ Example: A user must re-authenticate and have their attributes verified each tim
 
 **VAUTI Framework**
 *Foundry Equivalent: The design goal for any well-built Foundry pipeline and Ontology*
-Definition: DoD Data Strategy's five data properties: Visible (data is findable), Accessible (authorized users can get to it), Understandable (meaning is clear), Trustable (quality and provenance are known), Interoperable (can be used across systems). All Army data systems must meet VAUTI standards.
+Definition: DoD Data Strategy's original five data properties: Visible (data is findable), Accessible (authorized users can get to it), Understandable (meaning is clear), Trustable (quality and provenance are known), Interoperable (can be used across systems). Superseded by VAULTIS (7 dimensions, DoD Data Strategy 2020) and VAULTIS-A (8 dimensions, DDOF Playbook v2.2 2025). See VAULTIS-A for the current authoritative framework.
 Example: A readiness dataset is VAUTI-compliant when: it appears in the MSS catalog (Visible), all credentialed users can query it (Accessible), columns are labeled with clear definitions (Understandable), it has documented provenance and @check validators (Trustable), and it uses standard identifiers shared across G1/G3/G4 systems (Interoperable).
 
 ---
@@ -1315,6 +1323,8 @@ Master list of abbreviations used across USAREUR-AF Maven/Foundry publications a
 **CJADC2** — Combined Joint All Domain Command and Control
 
 **CUI** — Controlled Unclassified Information
+
+**DDOF** — Defense Data Orchestration Framework (DDOF Playbook v2.2, T2COM C2DAO, December 2025)
 
 **DEVCOM** — Combat Capabilities Development Command
 
@@ -1446,7 +1456,11 @@ Master list of abbreviations used across USAREUR-AF Maven/Foundry publications a
 
 **V Corps** — Fifth Corps (Forward)
 
-**VAUTI** — Visible, Accessible, Understandable, Trustable, Interoperable
+**VAUTI** — Visible, Accessible, Understandable, Trustable, Interoperable (superseded by VAULTIS/VAULTIS-A)
+
+**VAULTIS** — Visible, Accessible, Understandable, Linked, Trusted, Interoperable, Secure (DoD Data Strategy 2020; superseded by VAULTIS-A)
+
+**VAULTIS-A** — Visible, Accessible, Understandable, Linked, Trusted, Interoperable, Secure, Auditable (DDOF Playbook v2.2, December 2025; current authoritative standard)
 
 ---
 

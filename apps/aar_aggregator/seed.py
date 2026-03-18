@@ -172,96 +172,96 @@ DISCREPANCY_TEMPLATES = [
 # ---------------------------------------------------------------------------
 AAR_EVENTS = [
     # TM-10 events (foundation — high volume)
-    {"date": date(2025, 10, 6), "tm_levels": ["TM-10"], "exercises": ["EX-10"],
+    {"date": date(2025, 10, 6), "tm_levels": ["TM-10"], "exercises": ["EX_10"],
      "location": 0, "students": 15, "instructors": [0, 9],
      "recurring_issues": ["env_access"], "unique_issues": [0],
      "discrepancies": [1], "env_issue": True, "go_rate": 0.87},
 
-    {"date": date(2025, 11, 3), "tm_levels": ["TM-10"], "exercises": ["EX-10"],
+    {"date": date(2025, 11, 3), "tm_levels": ["TM-10"], "exercises": ["EX_10"],
      "location": 0, "students": 12, "instructors": [0, 5],
      "recurring_issues": ["env_access_v2"], "unique_issues": [2],
      "discrepancies": [], "env_issue": True, "go_rate": 0.92},
 
-    {"date": date(2025, 12, 9), "tm_levels": ["TM-10"], "exercises": ["EX-10"],
+    {"date": date(2025, 12, 9), "tm_levels": ["TM-10"], "exercises": ["EX_10"],
      "location": 4, "students": 10, "instructors": [1, 9],
      "recurring_issues": ["bandwidth"], "unique_issues": [],
      "discrepancies": [1], "env_issue": True, "go_rate": 0.80},
 
-    {"date": date(2026, 1, 13), "tm_levels": ["TM-10"], "exercises": ["EX-10"],
+    {"date": date(2026, 1, 13), "tm_levels": ["TM-10"], "exercises": ["EX_10"],
      "location": 0, "students": 14, "instructors": [0, 5],
      "recurring_issues": ["env_access"], "unique_issues": [],
      "discrepancies": [], "env_issue": False, "go_rate": 0.93},
 
-    {"date": date(2026, 2, 10), "tm_levels": ["TM-10"], "exercises": ["EX-10"],
+    {"date": date(2026, 2, 10), "tm_levels": ["TM-10"], "exercises": ["EX_10"],
      "location": 0, "students": 11, "instructors": [7, 9],
      "recurring_issues": [], "unique_issues": [6],
      "discrepancies": [], "env_issue": False, "go_rate": 0.91},
 
     # TM-20 events
-    {"date": date(2025, 10, 20), "tm_levels": ["TM-20"], "exercises": ["EX-20"],
+    {"date": date(2025, 10, 20), "tm_levels": ["TM-20"], "exercises": ["EX_20"],
      "location": 1, "students": 10, "instructors": [0, 2],
      "recurring_issues": ["tm_outdated"], "unique_issues": [4],
      "discrepancies": [2], "env_issue": False, "go_rate": 0.90},
 
-    {"date": date(2025, 12, 1), "tm_levels": ["TM-20"], "exercises": ["EX-20"],
+    {"date": date(2025, 12, 1), "tm_levels": ["TM-20"], "exercises": ["EX_20"],
      "location": 1, "students": 8, "instructors": [1, 2],
      "recurring_issues": ["tm_outdated", "bandwidth"], "unique_issues": [],
      "discrepancies": [7], "env_issue": True, "go_rate": 0.88},
 
-    {"date": date(2026, 2, 3), "tm_levels": ["TM-20"], "exercises": ["EX-20"],
+    {"date": date(2026, 2, 3), "tm_levels": ["TM-20"], "exercises": ["EX_20"],
      "location": 1, "students": 9, "instructors": [0, 3],
      "recurring_issues": ["aip_rushed"], "unique_issues": [3],
      "discrepancies": [2], "env_issue": False, "go_rate": 0.89},
 
     # TM-30 events
-    {"date": date(2025, 11, 17), "tm_levels": ["TM-30"], "exercises": ["EX-30"],
+    {"date": date(2025, 11, 17), "tm_levels": ["TM-30"], "exercises": ["EX_30"],
      "location": 1, "students": 6, "instructors": [0, 2],
      "recurring_issues": ["time_governance", "env_access"], "unique_issues": [],
      "discrepancies": [0], "env_issue": True, "go_rate": 0.83},
 
-    {"date": date(2026, 1, 27), "tm_levels": ["TM-30"], "exercises": ["EX-30"],
+    {"date": date(2026, 1, 27), "tm_levels": ["TM-30"], "exercises": ["EX_30"],
      "location": 1, "students": 7, "instructors": [1, 3],
      "recurring_issues": ["time_governance", "data_quality"], "unique_issues": [1],
      "discrepancies": [0, 5], "env_issue": False, "go_rate": 0.86},
 
-    {"date": date(2026, 3, 3), "tm_levels": ["TM-30"], "exercises": ["EX-30"],
+    {"date": date(2026, 3, 3), "tm_levels": ["TM-30"], "exercises": ["EX_30"],
      "location": 1, "students": 8, "instructors": [0, 2, 3],
      "recurring_issues": ["time_governance"], "unique_issues": [],
      "discrepancies": [0], "env_issue": False, "go_rate": 0.88},
 
     # TM-40 WFF events
-    {"date": date(2025, 12, 15), "tm_levels": ["TM-40A"], "exercises": ["EX-40A"],
+    {"date": date(2025, 12, 15), "tm_levels": ["TM-40A"], "exercises": ["EX_40A"],
      "location": 3, "students": 8, "instructors": [0, 4],
      "recurring_issues": ["data_quality"], "unique_issues": [],
      "discrepancies": [3], "env_issue": False, "go_rate": 0.88},
 
-    {"date": date(2026, 1, 20), "tm_levels": ["TM-40B"], "exercises": ["EX-40B"],
+    {"date": date(2026, 1, 20), "tm_levels": ["TM-40B"], "exercises": ["EX_40B"],
      "location": 1, "students": 6, "instructors": [1, 4],
      "recurring_issues": [], "unique_issues": [5],
      "discrepancies": [6], "env_issue": False, "go_rate": 0.83},
 
-    {"date": date(2026, 2, 17), "tm_levels": ["TM-40E"], "exercises": ["EX-40E"],
+    {"date": date(2026, 2, 17), "tm_levels": ["TM-40E"], "exercises": ["EX_40E"],
      "location": 1, "students": 7, "instructors": [0, 5],
      "recurring_issues": ["bandwidth"], "unique_issues": [8],
      "discrepancies": [], "env_issue": True, "go_rate": 0.86},
 
     # TM-40 Specialist events
-    {"date": date(2025, 11, 10), "tm_levels": ["TM-40G"], "exercises": ["EX-40G"],
+    {"date": date(2025, 11, 10), "tm_levels": ["TM-40G"], "exercises": ["EX_40G"],
      "location": 1, "students": 8, "instructors": [2, 6],
      "recurring_issues": ["aip_rushed"], "unique_issues": [],
      "discrepancies": [4], "env_issue": False, "go_rate": 0.88},
 
-    {"date": date(2026, 1, 6), "tm_levels": ["TM-40H"], "exercises": ["EX-40H"],
+    {"date": date(2026, 1, 6), "tm_levels": ["TM-40H"], "exercises": ["EX_40H"],
      "location": 1, "students": 6, "instructors": [2, 8],
      "recurring_issues": [], "unique_issues": [1, 9],
      "discrepancies": [], "env_issue": False, "go_rate": 0.83},
 
-    {"date": date(2026, 2, 24), "tm_levels": ["TM-40K"], "exercises": ["EX-40K"],
+    {"date": date(2026, 2, 24), "tm_levels": ["TM-40K"], "exercises": ["EX_40K"],
      "location": 1, "students": 10, "instructors": [0, 3, 6],
      "recurring_issues": ["data_quality"], "unique_issues": [7],
      "discrepancies": [], "env_issue": False, "go_rate": 0.90},
 
-    {"date": date(2026, 3, 10), "tm_levels": ["TM-40L"], "exercises": ["EX-40L"],
+    {"date": date(2026, 3, 10), "tm_levels": ["TM-40L"], "exercises": ["EX_40L"],
      "location": 1, "students": 7, "instructors": [2, 8],
      "recurring_issues": ["env_access"], "unique_issues": [3],
      "discrepancies": [], "env_issue": True, "go_rate": 0.86},

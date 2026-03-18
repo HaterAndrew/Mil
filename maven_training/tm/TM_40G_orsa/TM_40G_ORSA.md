@@ -36,7 +36,7 @@ This manual provides task-level instruction for ORSA officers, NCOs, and quantit
 - General Foundry pipeline development — see TM-30
 - Ontology design — see TM-30
 - Non-analytical Workshop applications — see TM-20 and TM-30
-- Machine learning model deployment to production — see TM-40I
+- Machine learning model deployment to production — see TM-40M
 - Data architecture and schema design — see TM-30 and TM-40H
 
 ### 1-2. Curriculum Position, Advanced Track, and WFF Context
@@ -47,7 +47,7 @@ This manual provides task-level instruction for ORSA officers, NCOs, and quantit
 
 **Advanced track:** Upon completing TM-40G, qualified ORSAs should pursue **TM-50G (Advanced ORSA)** for advanced topics including Bayesian methods, complex simulation design, multi-objective optimization, and campaign analysis support to USAREUR-AF operational planning.
 
-**Peer specialist tracks:** The ORSA collaborates closely with the ML Engineer (TM-40I) — the ORSA owns the analytical question and decision product; the MLE owns continuously-operating prediction pipelines at scale. Coordinate with TM-40H (AI Engineer) when wrapping ORSA analysis in automated LLM synthesis workflows. Coordinate with TM-40L (Software Engineer) for production-grade pipeline implementation and OSDK-backed delivery interfaces.
+**Peer specialist tracks:** The ORSA collaborates closely with the ML Engineer (TM-40M) — the ORSA owns the analytical question and decision product; the MLE owns continuously-operating prediction pipelines at scale. Coordinate with TM-40H (AI Engineer) when wrapping ORSA analysis in automated LLM synthesis workflows. Coordinate with TM-40L (Software Engineer) for production-grade pipeline implementation and OSDK-backed delivery interfaces.
 
 **WFF awareness:** ORSA analysts on MSS serve as quantitative decision support across all Warfighting Functions. WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command) are primary consumers of ORSA products. Design analytical products with WFF staff officers as the intended audience: commanders want decision-grade products, not statistical reports. The ORSA's decomposition framework (Decision → Information → Data → Method) applies regardless of which WFF the tasker originates from.
 
@@ -96,6 +96,8 @@ Before beginning this manual, verify you meet all prerequisites:
 | ATP 5-0.3 | Multi-Service TTP for Operation Assessment | Assessment methodology, MOE/MOP analytical frameworks |
 | AR 71-9 | Warfighting Capabilities Determination | Capabilities-based assessments — core ORSA analytical work |
 | ADP 5-0 | The Operations Process | Analytical framework for plan/prepare/execute/assess |
+| FM 5-0 | Planning and Orders Production (Nov 2024) | MDMP, COA evaluation criteria schema, assessment framework (MOE/MOP/Indicators), force ratio |
+| FM 3-60 | Targeting | CARVER target value analysis methodology (Appendix G) |
 | Army CIO Memorandum | Data and Analytics Policy (April 2024) | Data governance authority |
 
 ### 1-5a. Strategic Guidance
@@ -125,6 +127,36 @@ Every ORSA product delivered to a commander or staff officer must meet the follo
 **Standard 6 — Plain-Language Summary:** Every technical product must include a BLUF paragraph in plain language stating the finding, the confidence level, and the recommended commander action or decision point.
 
 **Standard 7 — Reproducibility:** Analysis code must be stored in the Code Workspace repository. Any analyst on the team must be able to re-run the analysis from the stored code and data and reproduce the same result.
+
+### 1-7. Assessment Framework: MOE, MOP, and Indicators
+
+**BLUF:** ORSA analysts design and maintain the assessment framework that connects observable data to commander decisions. FM 5-0 (Nov 2024), Chapter 8 defines the three-tier structure: Indicators feed Measures of Performance and Measures of Effectiveness; together these answer whether the force is accomplishing its mission.
+
+**Table 1-2. Assessment Measure Types (FM 5-0, Chapter 8)**
+
+| Measure Type | Question Answered | Nature | Example (Readiness Context) |
+|---|---|---|---|
+| **MOE** (Measure of Effectiveness) | "Did we achieve the desired effect?" | Qualitative or quantitative criteria tied to end state conditions | Percentage of BCTs at C1 readiness within 120 days |
+| **MOP** (Measure of Performance) | "Did we complete the task to standard?" | Task completion criteria — binary or scalar | Number of PMCS cycles completed per reporting period |
+| **Indicator** | "What observable data feeds the MOE/MOP?" | Reportable data point collected from operations | Daily equipment FMC rate reported via GCSS-Army |
+
+> **NOTE:** MOPs tell you whether the force executed the task. MOEs tell you whether executing the task produced the intended effect. An ORSA product that reports only MOPs (task counts) without linking them to MOEs (operational outcomes) provides activity reporting, not assessment. Design every assessment product with explicit MOE-MOP-Indicator linkage.
+
+**COA Evaluation Criteria Schema (FM 5-0, Table 5-2)**
+
+When building COA evaluation models on MSS, structure each criterion as a data object with the following fields:
+
+| Field | Definition | Example |
+|---|---|---|
+| **Short Title** | Concise label for the criterion | `TIME_TO_OBJECTIVE` |
+| **Definition** | What the criterion measures, stated as a question | "How quickly does the COA achieve the decisive point?" |
+| **Unit of Measure** | Quantifiable unit used for comparison | Hours |
+| **Benchmark** | Standard or threshold against which COAs are compared | 72 hours (OPORD planning factor) |
+| **Formula** | Calculation method for deriving the measure from raw data | `(Phase 2 end time) − (LD time)` |
+
+> **WARNING:** Do not allow COA evaluation criteria to become ad hoc. Every criterion the staff uses for COA comparison must have all five fields defined before the wargame begins. Undisciplined criteria produce undisciplined analysis — and undisciplined decisions.
+
+Implement this schema as a Foundry object type or structured dataset so that evaluation criteria are version-controlled and reusable across planning cycles. See Chapter 5 for Monte Carlo methods that propagate uncertainty through these criteria during COA comparison.
 
 ---
 
@@ -1150,6 +1182,33 @@ plt.close()
 
 > **NOTE:** The service level in stockage analysis is a commander's decision, not an analyst's assumption. Present the risk curve (Chapter 9) and let the commander select the acceptable risk level. The analyst's role is to quantify the tradeoff between stockage cost and stockout risk — not to make the risk tolerance decision.
 
+### 5-4. CARVER Target Value Analysis
+
+**BLUF:** CARVER is a structured scoring model for prioritizing targets, assets, or systems by six doctrinal factors. FM 3-60, Appendix G defines the methodology. CARVER produces a weighted numerical ranking directly implementable as a Foundry dataset and scoring pipeline on MSS.
+
+**Table 5-4. CARVER Factor Definitions (FM 3-60, Appendix G)**
+
+| Factor | Question | Score Range |
+|---|---|---|
+| **C** — Criticality | How essential is this target to the adversary's capability? | 1–5 |
+| **A** — Accessibility | Can the force reach/affect the target given terrain, defenses, and standoff? | 1–5 |
+| **R** — Recuperability | How quickly can the adversary restore the target's function after attack? | 1–5 |
+| **V** — Vulnerability | Is the target susceptible to the available means of attack? | 1–5 |
+| **E** — Effect | What collateral or cascading effects result from engaging the target? | 1–5 |
+| **R** — Recognizability | Can the force positively identify the target under expected conditions? | 1–5 |
+
+**Scoring procedure:**
+
+1. Define the target set as rows in a Foundry dataset. Each row represents one potential target, node, or system.
+2. Score each target on all six factors (1 = lowest, 5 = highest priority contribution). Use SME panels or structured elicitation — do not allow a single analyst to score unilaterally.
+3. Apply weights if the commander prioritizes certain factors (e.g., doubling the weight on Criticality for a time-sensitive targeting cycle). Document weight rationale.
+4. Compute CARVER total: `CARVER_score = wC*C + wA*A + wR*R + wV*V + wE*E + wR2*R2`. Rank targets by descending score.
+5. Present the ranked list with factor breakdowns so the commander can see why each target ranks where it does — the decomposition is as valuable as the total score.
+
+> **NOTE:** CARVER is a prioritization tool, not a targeting decision. The ranked output informs the targeting working group; it does not replace commander authority or legal review. See TM-40B (Fires) for the targeting methodology that consumes CARVER products.
+
+Implement CARVER as a reusable Foundry object type with six numeric properties (C, A, R, V, E, R2), a weights configuration, and a computed total. This allows the targeting working group to re-score rapidly as the operational picture changes.
+
 ---
 
 ## CHAPTER 6 — OPTIMIZATION
@@ -1383,6 +1442,23 @@ if len(unscheduled) > 0:
 ## CHAPTER 7 — WARGAME AND EXERCISE ANALYSIS
 
 **BLUF:** Exercise analysis is one of the highest-value ORSA activities in USAREUR-AF. Rigorous wargame data collection and analysis enables commanders to measure training effectiveness, validate TTPs, and identify pre-deployment capability gaps before they manifest in operations.
+
+### 7-0a. Force Ratio and Relative Combat Power
+
+> **NOTE — Doctrinal Responsibility:** ORSA analysts are doctrinally responsible for quantitative force ratio calculations and relative combat power assessments (FM 5-0, Table 5-4). These are structured data products that feed directly into the MDMP — specifically COA development and COA analysis (wargaming). The staff relies on ORSA to produce defensible, quantified comparisons of friendly-to-enemy capability, not subjective estimates.
+
+**Force ratio** expresses the quantitative relationship between opposing forces along a specified dimension (personnel strength, combat vehicles, fires platforms, etc.). **Relative combat power** extends force ratio by applying qualitative weighting factors — training level, morale, terrain advantage, equipment condition — to produce a more operationally relevant comparison.
+
+**ORSA implementation on MSS:**
+
+1. Build a force ratio dataset with columns: `unit_id`, `echelon`, `dimension` (e.g., armor, infantry, fires), `friendly_count`, `enemy_count`, `ratio`, `assessment_date`.
+2. Apply combat power weighting factors from the staff estimate. Document every weighting factor, its source (intelligence assessment, commander guidance, historical data), and its uncertainty range.
+3. Compute ratios by WFF, by phase, and by geographic area of operations. Present as a structured table, not a single aggregate number — aggregation hides the asymmetries that drive operational risk.
+4. Include sensitivity analysis: show how the ratio changes if key intelligence estimates are wrong by 10%, 25%, or 50%. Commanders need to know where the assessment is fragile.
+
+> **WARNING:** Force ratios are not predictive models — they are descriptive inputs to commander judgment. A 3:1 ratio does not guarantee success. Present ratios with explicit caveats about what the numbers include and exclude. Historical force ratio thresholds (e.g., "3:1 for attack") are planning factors, not physical laws.
+
+Feed force ratio products into the COA evaluation criteria schema (Section 1-7, Table 1-2) and the Monte Carlo COA comparison framework (Section 5-1) to produce integrated decision support.
 
 ### 7-1. Exercise Data Architecture
 

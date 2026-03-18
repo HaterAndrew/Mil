@@ -176,6 +176,8 @@ When multiple engineers build AI systems across the same headquarters, prompt pr
 
 ### 5-1. Grounding at Scale Is a Design Problem
 
+> **NOTE:** TM-40H now covers multi-source data fusion for AI training pipelines, adversarial ML defense (ADP 3-37 protection framework), and model drift monitoring as continuous assessment. Review TM-40H Sections 5-12 before designing multi-source retrieval pipelines or adversarial resilience at the system level described below.
+
 At TM-40H, grounding was a retrieval task: given a user query, retrieve relevant Ontology Objects and pass them to the LLM. At TM-50H, grounding a theater-level Ontology with hundreds of Object Types, thousands of Link Types, and dynamically updated properties is a multi-stage pipeline design problem.
 
 **Core tension:** Retrieve enough context for accurate reasoning, but not so much that relevant context is diluted by irrelevant context in a finite context window.
@@ -250,6 +252,8 @@ The AI registry is a living document. It must be updated when workflows are depl
 | Annual | Full portfolio audit; re-validate risk acceptance for all active workflows; review alignment with current Army AI policy; confirm deprecated workflows are fully retired |
 
 ### 6-4. Drift Monitoring Across the Portfolio
+
+> **NOTE:** TM-40H establishes DDIL (denied, disrupted, intermittent, limited) deployment considerations for AI workflows operating in contested or austere network environments. The portfolio-level drift monitoring described below must account for DDIL conditions where monitoring telemetry may itself be delayed or unavailable.
 
 **Baseline metrics.** At deployment, record representative output samples as baseline references. Define quantitative metrics (output length distribution, schema compliance rate, field population rates) and qualitative criteria for human spot-check.
 
@@ -416,7 +420,7 @@ Engineers who clear a deployment review sometimes treat that review as the end o
 | Publication | Track | Coordination Point |
 |---|---|---|
 | TM-50G | Advanced ORSA | Evaluation methodology; productionizing complex analytical models |
-| TM-50I | Advanced ML Engineer | Fine-tuning infrastructure; adversarial robustness |
+| TM-50M | Advanced ML Engineer | Fine-tuning infrastructure; adversarial robustness |
 | TM-50J | Advanced Program Manager | AI governance acquisition; lifecycle documentation |
 | TM-50K | Advanced Knowledge Manager | Corpus design; ontology-RAG integration |
 | TM-50L | Advanced Software Engineer | OSDK integration with AI systems |

@@ -28,7 +28,7 @@ These tracks apply MSS capabilities to specific warfighting functions. They are 
 
 WFF tracks focus on applying data tools to mission planning, MDMP support, and operational analysis within their functional domain. Participants build operational dashboards, configure mission-relevant datasets, and integrate data products into their unit's planning cycle.
 
-### Specialist Tracks (G–L)
+### Specialist Tracks (G–M)
 
 These tracks develop technical depth for personnel who design, build, or manage data systems in support of Army operations.
 
@@ -36,7 +36,7 @@ These tracks develop technical depth for personnel who design, build, or manage 
 |-------|---------------|----------|
 | TM-40G | Operations Research/Systems Analysis (ORSA) | ORSAs, analysts |
 | TM-40H | AI Engineer | AI developers, data engineers |
-| TM-40I | ML Engineer | ML practitioners, model developers |
+| TM-40M | ML Engineer | ML practitioners, model developers |
 | TM-40J | Program Manager | PMs, product owners |
 | TM-40K | Knowledge Manager | KMs, information managers |
 | TM-40L | Software Engineer | SWEs, platform developers |

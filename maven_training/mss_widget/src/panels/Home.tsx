@@ -23,6 +23,17 @@ export default function Home({ showPanel }: Props) {
         <div className="callout-body">Find your level below and follow the training path. All personnel start at TM-10. Builders add TM-20. Data specialists continue to TM-30. Technical roles proceed to the appropriate TM-40 track. Use the sidebar to navigate to your specific guidance.</div>
       </div>
 
+      <div className="specialist-cta" style={{marginBottom:20}}>
+        <div className="specialist-cta-text">
+          <div className="specialist-cta-label">Not sure where to start?</div>
+          <div className="specialist-cta-title">Find My Track</div>
+          <div className="specialist-cta-sub">Answer two quick questions and get your personalized training path — no reading required.</div>
+        </div>
+        <button className="specialist-cta-btn" onClick={() => showPanel('findmytrack' as any)}>
+          Find My Track <span className="btn-arrow">&#8594;</span>
+        </button>
+      </div>
+
       <h2>STEP 1 &mdash; FIND YOUR LEVEL</h2>
       <div className="table-wrap">
         <table>
@@ -49,7 +60,7 @@ export default function Home({ showPanel }: Props) {
               <td><span className="chip chip-gold" style={{cursor:'pointer'}} onClick={() => showPanel('tm30' as any)}>TM-30</span></td>
             </tr>
             <tr>
-              <td>Technical specialist &mdash; ORSA, AI/ML, MLE, PM, KM, SWE roles (TM-40G&ndash;L)</td>
+              <td>Technical specialist &mdash; ORSA, AI/ML, MLE, PM, KM, SWE roles (TM-40G&ndash;M)</td>
               <td><strong><button className="qr-link" onClick={() => showPanel('tm10' as any)}>TM-10</button> &rarr; <button className="qr-link" onClick={() => showPanel('tm20' as any)}>TM-20</button> &rarr; <button className="qr-link" onClick={() => showPanel('tm30' as any)}>TM-30</button></strong></td>
               <td><button className="qr-link" onClick={() => showPanel('tm40' as any)}>TM-40 specialist track</button></td>
               <td><span className="chip chip-gold" style={{cursor:'pointer'}} onClick={() => showPanel('specialists' as any)}>TM-40</span></td>
@@ -154,7 +165,7 @@ export default function Home({ showPanel }: Props) {
           <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('specialists' as any)}>
             <div className="path-tm">TM-40 &mdash; TWO TRACK TYPES (BY ROLE)</div>
             <div className="path-name">Specialist &amp; Warfighting Function Tracks <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; Specialist Tracks</span></div>
-            <div className="path-audience"><strong>WFF Tracks (TM-40A&ndash;F):</strong> Intel &bull; Fires &bull; M&amp;M &bull; Sustainment &bull; Protection &bull; Mission Command<br/><strong>Technical Tracks (TM-40G&ndash;L):</strong> ORSA &bull; AI Eng &bull; MLE &bull; PM &bull; KM &bull; SWE &mdash; Advanced versions at TM-50G&ndash;L</div>
+            <div className="path-audience"><strong>WFF Tracks (TM-40A&ndash;F):</strong> Intel &bull; Fires &bull; M&amp;M &bull; Sustainment &bull; Protection &bull; Mission Command<br/><strong>Technical Tracks (TM-40G&ndash;M):</strong> ORSA &bull; AI Eng &bull; MLE &bull; PM &bull; KM &bull; SWE &mdash; Advanced versions at TM-50G&ndash;M</div>
           </div>
         </div>
       </div>
@@ -169,10 +180,10 @@ export default function Home({ showPanel }: Props) {
           <strong>Sustainment (TM-40D):</strong> Logistics, G4/S4, GCSS-A users<br/>
           <strong>Protection (TM-40E):</strong> Air defense, CBRN, engineer, force protection<br/>
           <strong>Mission Command (TM-40F):</strong> G6/S6, C2 systems, network managers<br/><br/>
-          <strong style={{display:'block',marginBottom:'4px'}}>Technical Specialist Tracks (TM-40G&ndash;L):</strong>
+          <strong style={{display:'block',marginBottom:'4px'}}>Technical Specialist Tracks (TM-40G&ndash;M):</strong>
           <strong>ORSA (TM-40G):</strong> FA49, G2/S2 quant analysts, wargame specialists<br/>
           <strong>AI Engineer (TM-40H):</strong> AI/ML specialists, 17A/17C<br/>
-          <strong>ML Engineer (TM-40I):</strong> ML engineers, data scientists (GS/contractor)<br/>
+          <strong>ML Engineer (TM-40M):</strong> ML engineers, data scientists (GS/contractor)<br/>
           <strong>Program Manager (TM-40J):</strong> G8/S8, PMs, resource managers<br/>
           <strong>Knowledge Manager (TM-40K):</strong> KMOs, 37F, institutional memory leads<br/>
           <strong>Software Engineer (TM-40L):</strong> 17A/17C, 25D/25U, GS/contractor SWEs<br/><br/>
@@ -196,6 +207,16 @@ export default function Home({ showPanel }: Props) {
         <button className="specialist-cta-btn" onClick={() => showPanel('specialists' as any)}>
           Access Specialist Tracks <span className="btn-arrow">&#8594;</span>
         </button>
+      </div>
+
+      <div className="callout info mt-24">
+        <div className="callout-label">TRAIN THE TRAINER (T3) &mdash; INSTRUCTOR &amp; UDT PATHWAY</div>
+        <div className="callout-body">
+          Two courses sit <strong>outside</strong> the TM-10 to TM-50 chain:<br/><br/>
+          <strong>T3-I (Instructor Certification):</strong> Prereq TM-30 + C2DAO selection. 5-day classroom + supervised practicum. Certifies MSS instructors (Instructor &rarr; Senior &rarr; Master).<br/>
+          <strong>T3-F (MSC Force Multiplier):</strong> Prereq TM-20 + CDR nomination. 3 days. Trains Unit Data Trainers (UDTs) who deliver TM-10 locally at each MSC.<br/><br/>
+          See <button className="qr-link" onClick={() => showPanel('documents' as any)}>All Documents &rarr;</button> for T3 publications, syllabi, and SOPs.
+        </div>
       </div>
 
       <div className="callout note mt-24">

@@ -1288,46 +1288,46 @@ await defineOntology("mil.army.ddof.", async () => {
         type: "timestamp",
         displayName: "Assessment Date",
       },
-      // Individual dimension scores
-      validScore: {
+      // Individual dimension scores (DDOF Playbook v2.2 VAULTIS-A definitions)
+      visibleScore: {
         type: "double",
-        displayName: "Valid Score",
-        description: "Conforms to defined format (target 99%)",
+        displayName: "Visible Score",
+        description: "Clearly marked and discoverable (target 100% visibility in catalog/product)",
       },
-      accurateScore: {
+      accessibleScore: {
         type: "double",
-        displayName: "Accurate Score",
-        description: "Correctly represents reality (target 95%)",
+        displayName: "Accessible Score",
+        description: "Usable by authorized personnel (target 99% access rate for authorized users)",
       },
-      uniqueScore: {
+      understandableScore: {
         type: "double",
-        displayName: "Unique Score",
-        description: "No unintended duplicates (target 100%)",
+        displayName: "Understandable Score",
+        description: "Clearly documented and interpretable (target complete metadata and user guide)",
       },
       linkedScore: {
         type: "double",
         displayName: "Linked Score",
-        description: "Relationships maintained (target 100%)",
+        description: "Relationships maintained (target 100% linkage to sources/products)",
       },
-      timelyScore: {
+      trustedScore: {
         type: "double",
-        displayName: "Timely Score",
-        description: "Current for intended use (per requirement)",
+        displayName: "Trusted Score",
+        description: "Provenance and quality validated (target 95%+ accuracy, sponsor sign-off)",
       },
-      integratedScore: {
+      interoperableScore: {
         type: "double",
-        displayName: "Integrated Score",
-        description: "Combines coherently (target 90%)",
+        displayName: "Interoperable Score",
+        description: "Usable across platforms/systems (target 90%+ compatibility with approved platforms)",
       },
       secureScore: {
         type: "double",
         displayName: "Secure Score",
-        description: "Protected per classification (target 100%)",
+        description: "Protected per classification (target 100% compliance with security policy)",
       },
       auditableScore: {
         type: "double",
         displayName: "Auditable Score",
-        description: "Complete lineage available (full provenance)",
+        description: "Complete lineage available (target full provenance and access logs)",
       },
       // Aggregate
       aggregateScore: {

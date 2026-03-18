@@ -284,6 +284,7 @@ if active_tab == "Command Overview":
             fig = px.bar(df_tm, x="TM Level", y="Count",
                          color="Count", color_continuous_scale="Blues")
             fig.update_layout(height=300, showlegend=False)
+            apply_plotly_theme(fig)
             st.plotly_chart(fig, use_container_width=True)
 
     with col_r:
@@ -299,6 +300,7 @@ if active_tab == "Command Overview":
                 text=df_cat["Count"], textposition="auto",
             )])
             fig.update_layout(height=300, xaxis_tickangle=-30)
+            apply_plotly_theme(fig)
             st.plotly_chart(fig, use_container_width=True)
 
     st.markdown("---")
@@ -321,6 +323,7 @@ if active_tab == "Command Overview":
                       annotation_text="80% target")
         fig.update_layout(height=300, yaxis_range=[0, 105],
                           yaxis_title="GO Rate (%)", xaxis_title="")
+        apply_plotly_theme(fig)
         st.plotly_chart(fig, use_container_width=True)
 
     # Monthly improve trend
@@ -331,6 +334,7 @@ if active_tab == "Command Overview":
         fig = px.area(df_time, x="month", y="improve_count",
                       color_discrete_sequence=[WARNING_RED])
         fig.update_layout(height=250, yaxis_title="Improve Items", xaxis_title="")
+        apply_plotly_theme(fig)
         st.plotly_chart(fig, use_container_width=True)
 
 
@@ -378,6 +382,7 @@ elif active_tab == "Priority Matrix":
             yaxis_title="Severity (H=3, M=2, L=1)",
             yaxis=dict(tickvals=[1, 2, 3], ticktext=["Low", "Medium", "High"]),
         )
+        apply_plotly_theme(fig)
         st.plotly_chart(fig, use_container_width=True)
 
     # Action items table
@@ -420,6 +425,7 @@ elif active_tab == "Keyword Analysis":
             yaxis=dict(categoryorder="total ascending"),
             xaxis_title="Frequency", yaxis_title="",
         )
+        apply_plotly_theme(fig)
         st.plotly_chart(fig, use_container_width=True)
 
     # Category co-occurrence
@@ -437,6 +443,7 @@ elif active_tab == "Keyword Analysis":
                 title="Category Co-occurrence Matrix",
             )
             fig.update_layout(height=400)
+            apply_plotly_theme(fig)
             st.plotly_chart(fig, use_container_width=True)
 
             st.dataframe(df_co.rename(columns={
@@ -502,6 +509,7 @@ elif active_tab == "GO/NO_GO Tracking":
             )
             fig.add_hline(y=80, line_dash="dash", line_color="gray",
                           annotation_text="80% target")
+            apply_plotly_theme(fig)
             st.plotly_chart(fig, use_container_width=True)
 
         with col_r:
@@ -525,6 +533,7 @@ elif active_tab == "GO/NO_GO Tracking":
                 barmode="stack", height=400,
                 xaxis_title="", yaxis_title="Students",
             )
+            apply_plotly_theme(fig)
             st.plotly_chart(fig, use_container_width=True)
 
     # Detail table
@@ -597,6 +606,7 @@ elif active_tab == "Category Analysis":
                 hole=0.4,
             )])
             fig.update_layout(height=400, title="WFF Distribution")
+            apply_plotly_theme(fig)
             st.plotly_chart(fig, use_container_width=True)
 
         with col_r:
@@ -606,6 +616,7 @@ elif active_tab == "Category Analysis":
                 fig = px.line(df_time, x="month", y="improve_count",
                               markers=True, title="Issues Over Time")
                 fig.update_layout(height=400, yaxis_title="Count", xaxis_title="")
+                apply_plotly_theme(fig)
                 st.plotly_chart(fig, use_container_width=True)
 
     # Co-occurrence
@@ -729,7 +740,7 @@ elif active_tab == "AAR Entry":
             student_count = st.number_input("Number of Students", min_value=1, value=8)
         with col2:
             tm_input = st.text_input("TM Levels (comma-separated)", placeholder="TM-10, TM-20")
-            ex_input = st.text_input("Exercises (comma-separated)", placeholder="EX-10")
+            ex_input = st.text_input("Exercises (comma-separated)", placeholder="EX_10")
             instr_input = st.text_input("Instructor Names (comma-separated)", placeholder="MAJ SMITH, SGT KELLY")
 
         st.subheader("Section 2 -- What Was Planned")
@@ -802,3 +813,11 @@ elif active_tab == "AAR Entry":
                 st.cache_data.clear()
             elif resp:
                 st.error(f"Failed: {resp.text}")
+
+# ---------------------------------------------------------------------------
+# Footer
+# ---------------------------------------------------------------------------
+st.markdown(
+    '<div class="app-footer">USAREUR-AF OPERATIONAL DATA TEAM — MSS AAR AGGREGATOR</div>',
+    unsafe_allow_html=True,
+)

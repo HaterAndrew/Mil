@@ -105,6 +105,7 @@ TM-40B is written in alignment with the following doctrinal publications. These 
 | Document | Authority | Relevance |
 |---|---|---|
 | NATO Digital Transformation Implementation Strategy (Oct 2024) | NATO | MDO interoperability context — frames fires data sharing in coalition operations |
+| DDOF Playbook v2.2 (December 2025) | T2COM C2DAO | VAULTIS-A quality framework (8 dimensions); 6-phase data product lifecycle; 85% quality gate; MVP mandate 30 days |
 
 ---
 
@@ -349,6 +350,106 @@ TM-40B is written in alignment with the following doctrinal publications. These 
 8. FSCOORD reviews and approves BDA record. If re-attack recommended, FSCOORD routes to targeting for TWG consideration or approves immediate re-attack per ROE.
 9. Update target record in the target library: change target status from "Engaged" to "Assessed" with BDA category entered.
 10. If re-attack approved, link new mission record to original target record and re-attack recommendation.
+
+---
+
+### 2-6. D3A as Data Lifecycle
+
+2-22. The D3A targeting methodology maps directly onto the data platform lifecycle. Each phase of D3A produces, consumes, and transforms specific data products within MSS. Understanding this mapping enables fires personnel to treat D3A not merely as a doctrinal process but as a data pipeline — where each phase depends on the data quality of the preceding phase and produces structured outputs for the next.
+
+2-23. Table 2-3 maps each D3A phase to its corresponding MSS platform function and key data products. Fires staff should use this table to identify where data gaps in the targeting cycle originate and which platform functions to inspect when targeting products are incomplete or stale.
+
+**Table 2-3: D3A as Data Lifecycle — Platform Function Mapping**
+
+| D3A Phase | Data Platform Function | Key Data Products |
+|---|---|---|
+| Decide | Requirements analysis, target nomination, priority ranking | HPTL, TSS, AGM |
+| Detect | Collection management, sensor tasking, feed integration | ICSM, NAI/TAI tracking, target confidence records |
+| Deliver | Execution tracking, engagement management, asset-to-target matching | Fire missions, FSEM updates, BDA requests |
+| Assess | Effects assessment, feedback loop, re-attack recommendation | BDA reports, MOE/MOP metrics, FIREP data |
+
+> *Source: FM 3-60, Army Targeting (August 2023)*
+
+2-24. When any column in Table 2-3 is incomplete — when the Decide phase produces an HPTL with no linked collection requirements, or when the Assess phase records BDA without MOE/MOP linkage — the targeting cycle degrades. MSS makes these gaps visible. The targeting officer's job is to act on them.
+
+---
+
+### 2-7. FIVE-O Target Taxonomy
+
+2-25. FM 3-60 establishes the FIVE-O taxonomy for categorizing targets: **Facilities, Individuals, Virtual, Equipment, Organizations**. This taxonomy is not merely a doctrinal classification scheme — it maps directly to ontology object types in the MSS data platform.
+
+2-26. Table 2-4 maps FIVE-O categories to their MSS ontology equivalents and provides examples relevant to fires targeting.
+
+**Table 2-4: FIVE-O Target Taxonomy — MSS Ontology Mapping**
+
+| FIVE-O Category | Definition | MSS Object Type | Example Targets |
+|---|---|---|---|
+| Facilities | Fixed or semi-fixed structures and installations | Infrastructure object | C2 bunkers, ammo supply points, bridges, radar sites |
+| Individuals | Persons of significance to OPFOR capability | Person object | Key leaders, technical specialists, forward observers |
+| Virtual | Non-physical targets in the information domain | Cyber/information object | Communication networks, data links, EW emitters |
+| Equipment | Material systems and platforms | Equipment/asset object | Artillery systems, AD launchers, EW platforms, vehicles |
+| Organizations | Military units and organizational structures | Organization object | BN-level units, fires batteries, logistics elements |
+
+> *Source: FM 3-60, Army Targeting (August 2023)*
+
+2-27. When building or maintaining the target library in MSS, every target entry must map to one FIVE-O category. This ensures consistent data structure across echelons and enables automated aggregation of targeting data from subordinate to higher fires cells. A target that does not fit a FIVE-O category is either miscategorized or not yet sufficiently developed for nomination.
+
+> **NOTE: FIVE-O categories are mutually exclusive for target record purposes. A radar site is an Equipment target, not a Facilities target, even though it may be co-located with a fixed structure. Assign the category based on the primary targeting objective — what effect the commander seeks to achieve against that specific target.**
+
+---
+
+### 2-8. TTLODAC Fire Mission Data Schema
+
+2-28. Every fire mission processed through the fires system follows the TTLODAC data schema: **Target, Task, Location, Observer, Delivery system, Attack guidance, Communications**. TTLODAC is the structured data record for fire mission processing IAW FM 3-09. MSS fire mission records mirror this schema.
+
+2-29. Table 2-5 defines each TTLODAC element, its MSS data field, and the responsible role.
+
+**Table 2-5: TTLODAC Fire Mission Data Schema**
+
+| TTLODAC Element | Definition | MSS Data Field | Responsible Role |
+|---|---|---|---|
+| Target | What is being engaged — target number, type, and description | Target ID, target type, FIVE-O category | Targeting officer / FSO |
+| Task | Fire-for-effect, suppression, illumination, smoke, or other mission type | Mission type code | FSO / FDO |
+| Location | Grid coordinates, altitude, and target location error (TLE) category | Grid reference (MGRS), altitude, TLE category | Observer / targeting officer |
+| Observer | Who is observing the target and will adjust fires or confirm effects | Observer call sign, position, observation method | FSO / JTAC / FO |
+| Delivery system | Which weapon system is assigned to execute the mission | Asset ID, weapon type, unit | FDO / FSCOORD |
+| Attack guidance | ROE constraints, desired effects, CDE category, FSCM compliance | AGM linkage, ROE flags, CDE category | FSCOORD / SJA |
+| Communications | Frequencies, call signs, and digital links between observer and firing unit | PACE plan entries, net assignments | FSO / FDO |
+
+> *Source: FM 3-09, Fire Support and Field Artillery Operations (August 2024)*
+
+2-30. TTLODAC completeness is a fires safety issue. An incomplete TTLODAC record — missing observer data, absent ROE flags, or stale location information — creates risk of fratricide, collateral damage, or ROE violation. MSS enforces required field completion on fire mission records. Do not override required field prompts to expedite mission processing.
+
+> **WARNING: A fire mission record in MSS with an empty or defaulted Attack Guidance field has no ROE validation. Never clear a fire mission for execution without confirming that Attack Guidance reflects current ROE and FSCM constraints. The system will accept the record — it will not reject it on ROE grounds. ROE compliance is a human responsibility, not a system function.**
+
+---
+
+### 2-9. CARVER Target Value Analysis
+
+2-31. The CARVER matrix is a structured scoring methodology for target value analysis IAW FM 3-60, Appendix G. CARVER evaluates targets across six criteria: **Criticality, Accessibility, Recuperability, Vulnerability, Effect, Recognizability**. Each criterion is scored on a 1–5 scale. The aggregate score provides a quantitative basis for target prioritization.
+
+2-32. CARVER is directly implementable as an analytical pipeline in MSS. Each criterion maps to a scored data field on the target record. Automated scoring models can pre-populate CARVER values based on target type and known characteristics; the targeting officer validates and adjusts scores based on current intelligence.
+
+2-33. Table 2-6 defines each CARVER criterion and its MSS implementation.
+
+**Table 2-6: CARVER Target Value Analysis — Criteria and MSS Implementation**
+
+| CARVER Criterion | Definition | Scoring Basis (1–5) | MSS Implementation |
+|---|---|---|---|
+| Criticality | How important is the target to OPFOR capability? | 1 = minimal impact; 5 = catastrophic loss of capability | Linked to OPFOR OOB; scored against functional dependency |
+| Accessibility | Can the target be reached by available fires means? | 1 = deeply protected; 5 = fully accessible to multiple systems | Computed from range rings, terrain mask, AD threat overlay |
+| Recuperability | How quickly can the OPFOR replace or repair the target? | 1 = immediate replacement; 5 = irreplaceable within campaign timeline | Intelligence estimate; scored by targeting officer |
+| Vulnerability | How susceptible is the target to available munitions? | 1 = hardened/deeply buried; 5 = soft/exposed | Munitions-target pairing analysis; scored by FDO/targeting |
+| Effect | What is the broader operational effect of engaging the target? | 1 = localized effect only; 5 = cascading effect across OPFOR systems | Linked to commander's desired effects and HPTL priority |
+| Recognizability | Can the target be positively identified by available sensors? | 1 = extremely difficult to identify; 5 = readily identifiable | Collection capability assessment; ISR coverage overlay |
+
+> *Source: FM 3-60, Appendix G, Army Targeting (August 2023)*
+
+2-34. CARVER scoring in MSS supports the targeting working group (TWG) by providing a quantitative input to HPTL prioritization. The CARVER score does not replace the commander's judgment — it informs it. A target with a high CARVER score that the commander deprioritizes remains deprioritized. The score is an analytical tool, not an authority.
+
+2-35. To build a CARVER pipeline in MSS, the fires analyst configures a scoring model that pulls target attributes from the target library, computes preliminary CARVER scores based on standing criteria, and presents the scored target list to the targeting officer for validation before each TWG. See TM-40G (ORSA) for analytical pipeline construction techniques applicable to CARVER implementation.
+
+> **NOTE: CARVER scores are perishable. A target scored as highly accessible (A=5) today may become inaccessible (A=1) tomorrow if OPFOR repositions AD assets or the weather degrades sensor coverage. Re-score CARVER at each targeting cycle, not once per operation.**
 
 ---
 
@@ -1801,7 +1902,7 @@ For technical specialists pursuing advanced data engineering or analytical capab
 |-------|-------|----------------|
 | TM-40G | ORSA | TM-50G |
 | TM-40H | AI Engineer | TM-50H |
-| TM-40I | ML Engineer | TM-50I |
+| TM-40M | ML Engineer | TM-50M |
 | TM-40J | Program Manager | TM-50J |
 | TM-40K | Knowledge Manager | TM-50K |
 | TM-40L | Software Engineer | TM-50L |
@@ -1830,3 +1931,4 @@ For technical specialists pursuing advanced data engineering or analytical capab
 
 - **JADC2 Strategy Summary (March 2022)** — Cross-domain data integration strategy for Joint All-Domain Command and Control
 - **DoD Directive 3000.09, Autonomy in Weapon Systems (January 2023 update)** — Policy on autonomous and semi-autonomous functions in weapon systems; context for fire control and targeting systems
+- **DDOF Playbook v2.2 (December 2025)** — T2COM C2DAO; VAULTIS-A quality framework (8 dimensions); 6-phase data product lifecycle; 85% quality gate; MVP mandate 30 days

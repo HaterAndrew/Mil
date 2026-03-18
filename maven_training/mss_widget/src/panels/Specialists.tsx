@@ -10,12 +10,12 @@ export default function Specialists({ showPanel }: Props) {
       <div className="section-header">
         <span className="section-badge">SPECIALIST TRACKS</span>
         <span className="section-title">TM-40 &amp; TM-50 Series &mdash; WFF &amp; Technical Tracks</span>
-        <span className="section-subtitle">WFF tracks (A&ndash;F): TM-30 req. &bull; Technical tracks (G&ndash;L): TM-30 req.</span>
+        <span className="section-subtitle">WFF tracks (A&ndash;F): TM-30 req. &bull; Technical tracks (G&ndash;M): TM-30 req.</span>
       </div>
 
       <div className="callout bluf">
         <div className="callout-label">BLUF</div>
-        <div className="callout-body">TM-40 has two track types: <strong>Warfighting Function tracks (TM-40A&ndash;F)</strong> for WFF-assigned roles (Intelligence, Fires, M&amp;M, Sustainment, Protection, Mission Command) &mdash; prerequisite TM-30, no coding required &mdash; and <strong>Technical Specialist tracks (TM-40G&ndash;L)</strong> for personnel who build and engineer MSS solutions (ORSA, AI Eng, MLE, PM, KM, SWE) &mdash; prerequisite TM-30. Advanced versions (TM-50G&ndash;L) are available after completing the corresponding TM-40 technical track.</div>
+        <div className="callout-body">TM-40 has two track types: <strong>Warfighting Function tracks (TM-40A&ndash;F)</strong> for WFF-assigned roles (Intelligence, Fires, M&amp;M, Sustainment, Protection, Mission Command) &mdash; prerequisite TM-30, no coding required &mdash; and <strong>Technical Specialist tracks (TM-40G&ndash;M)</strong> for personnel who build and engineer MSS solutions (ORSA, AI Eng, MLE, PM, KM, SWE) &mdash; prerequisite TM-30. Advanced versions (TM-50G&ndash;M) are available after completing the corresponding TM-40 technical track.</div>
       </div>
 
       <h2>TRACK SELECTION BY MOS / ROLE</h2>
@@ -32,13 +32,13 @@ export default function Specialists({ showPanel }: Props) {
             <tr><td>G4/S4 &mdash; Logistics, GCSS-A</td><td><strong>TM-40D (Sustainment)</strong></td><td>&mdash;</td></tr>
             <tr><td>Air defense, CBRN, force protection</td><td><strong>TM-40E (Protection)</strong></td><td>&mdash;</td></tr>
             <tr><td>G6/S6 &mdash; C2 systems, networks</td><td><strong>TM-40F (Mission Command)</strong></td><td>&mdash;</td></tr>
-            <tr><td colSpan={3} style={{background:'var(--navy-pale)',fontWeight:700,fontSize:11,letterSpacing:'.06em',textTransform:'uppercase',color:'var(--navy)'}}>Technical Specialist Tracks (TM-40G&ndash;L)</td></tr>
+            <tr><td colSpan={3} style={{background:'var(--navy-pale)',fontWeight:700,fontSize:11,letterSpacing:'.06em',textTransform:'uppercase',color:'var(--navy)'}}>Technical Specialist Tracks (TM-40G&ndash;M)</td></tr>
             <tr><td>FA49 &mdash; Operations Research Analyst</td><td><strong>TM-40G (ORSA)</strong></td><td>TM-50G</td></tr>
             <tr><td>G2/S2 quantitative analyst</td><td><strong>TM-40G (ORSA)</strong> or TM-40K (KM)</td><td>TM-50G / TM-50K</td></tr>
             <tr><td>17A/17C &mdash; Cyber officer/NCO</td><td><strong>TM-40L (SWE)</strong> or TM-40H (AI Eng)</td><td>TM-50L / TM-50H</td></tr>
             <tr><td>25D &mdash; IT specialist</td><td><strong>TM-40L (SWE)</strong></td><td>TM-50L</td></tr>
-            <tr><td>AI/ML engineer (GS/contractor)</td><td><strong>TM-40H (AI Eng)</strong> or TM-40I (MLE)</td><td>TM-50H / TM-50I</td></tr>
-            <tr><td>Data scientist (GS/contractor)</td><td><strong>TM-40G (ORSA)</strong> or TM-40I (MLE)</td><td>TM-50G / TM-50I</td></tr>
+            <tr><td>AI/ML engineer (GS/contractor)</td><td><strong>TM-40H (AI Eng)</strong> or TM-40M (MLE)</td><td>TM-50H / TM-50M</td></tr>
+            <tr><td>Data scientist (GS/contractor)</td><td><strong>TM-40G (ORSA)</strong> or TM-40M (MLE)</td><td>TM-50G / TM-50M</td></tr>
             <tr><td>G8/S8 &mdash; Resource manager</td><td><strong>TM-40J (PM)</strong></td><td>TM-50J</td></tr>
             <tr><td>Program Manager (PM / GS)</td><td><strong>TM-40J (PM)</strong></td><td>TM-50J</td></tr>
             <tr><td>KMO / Knowledge Officer / 37F</td><td><strong>TM-40K (KM)</strong></td><td>TM-50K</td></tr>
@@ -119,11 +119,11 @@ export default function Specialists({ showPanel }: Props) {
           </div>
         </div>
         <div className="track-card">
-          <div className="track-card-hdr"><span className="track-tm">TM-40I &mdash; ML Engineer</span><span className="track-chip">TM-30 Req.</span></div>
+          <div className="track-card-hdr"><span className="track-tm">TM-40M &mdash; ML Engineer</span><span className="track-chip">TM-30 Req.</span></div>
           <div className="track-body">
             <div className="track-name">Model Development, Validation &amp; Deployment</div>
             <div className="track-audience">ML engineers &bull; Data scientists (GS/contractor)</div>
-            <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50I &bull; <button className="panel-nav-btn" style={{padding:'4px 10px',fontSize:10}} onClick={() => showPanel('tm40' as any)}>View TM-40 Series &rarr;</button></div>
+            <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50M &bull; <button className="panel-nav-btn" style={{padding:'4px 10px',fontSize:10}} onClick={() => showPanel('tm40' as any)}>View TM-40 Series &rarr;</button></div>
           </div>
         </div>
         <div className="track-card">

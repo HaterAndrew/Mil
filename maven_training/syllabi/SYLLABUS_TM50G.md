@@ -140,7 +140,7 @@ Complete **10+ duty days before Day 1:**
 | Track | Relevance to TM-50G |
 |---|---|
 | TM-50H (Advanced AI Eng) | AI-augmented analytical pipelines; LLM-assisted pattern recognition in ORSA products |
-| TM-50I (Advanced ML Eng) | Advanced model architectures (ensemble, Bayesian) used in ORSA modeling; drift detection for deployed ORSA models |
+| TM-50M (Advanced ML Eng) | Advanced model architectures (ensemble, Bayesian) used in ORSA modeling; drift detection for deployed ORSA models |
 | TM-50J (Advanced PM) | Communicating ORSA findings at portfolio level to GO/SES audiences; resource allocation analysis feeding PM dashboards |
 
 ---

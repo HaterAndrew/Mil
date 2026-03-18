@@ -3,11 +3,23 @@
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.
 
+**Companion Resource — Ontologize Channel:** [@Ontologize](https://www.youtube.com/@Ontologize) — Official Palantir training partner. 68 indexed video walkthroughs covering Foundry and AIP features. Full catalog with TM cross-references: [source_material/ontologize_youtube/README.md](../../source_material/ontologize_youtube/README.md)
+
 ---
 
 ## How to Use This Addendum
 
 Videos are grouped by topic and ordered from foundational to advanced. TM-50J personnel have already completed TM-40J; the TM-40J Self-Study Addendum remains relevant as a reference library. This addendum extends it with advanced and enterprise-focused content. Inline NOTEs in the TM-50J manual identify the specific sections where several of these videos directly reinforce the text.
+
+---
+
+## New Doctrine References (March 2026)
+
+The following doctrine sections were added to TM-50J this session. Review after the corresponding TM chapter:
+
+- **DDOF Friction Matrix (Portfolio Level)** — Enterprise-scale friction analysis across portfolio dependencies and cross-program integrations. See TM-50J concepts guide.
+- **Roles and PM Oversight (Enterprise)** — DDOF-aligned governance roles at the portfolio and enterprise level. See TM-50J concepts guide.
+- **Portfolio Health (DDOF-Aligned)** — Portfolio health metrics framework tied to DDOF governance standards at enterprise scale. See TM-50J concepts guide.
 
 ---
 

@@ -1,6 +1,6 @@
 # LESSON PLAN OUTLINES — TM-50 ADVANCED SPECIALIST TRACKS
 ## USAREUR-AF Operational Data Team — C2DAO
-**Covers:** TM-50G (Advanced ORSA) | TM-50H (Advanced AI Engineer) | TM-50I (Advanced ML Engineer) | TM-50J (Advanced PM) | TM-50K (Advanced KM) | TM-50L (Advanced SWE)
+**Covers:** TM-50G (Advanced ORSA) | TM-50H (Advanced AI Engineer) | TM-50M (Advanced ML Engineer) | TM-50J (Advanced PM) | TM-50K (Advanced KM) | TM-50L (Advanced SWE)
 **Version:** 1.0 — March 2026
 
 > Abbreviated LP outlines for TM-50 advanced courses.
@@ -8,7 +8,7 @@
 > Expand individual blocks using `LP_TEMPLATE.md` as needed. For full lesson plan format reference, see `TM10/TM10_LESSON_PLANS.md`.
 
 **Duration summary:**
-- TM-50G, H, I, L: 5 days (40 hours)
+- TM-50G, H, M, L: 5 days (40 hours)
 - TM-50J, K: 3 days (24 hours)
 
 **Prerequisite note:** TM-50 courses are NOT required for the majority of specialist billets. Before confirming enrollment, verify the trainee is in an active role that requires TM-50-level work. Refer to each syllabus for the prerequisite warning.
@@ -34,6 +34,8 @@
 - Reproducibility: set random seeds. Document package versions. A result that cannot be reproduced is not a result — it is a point estimate with no analytical foundation.
 
 **Assessment:** Standards are evaluated during the Day 5 practical exercise debrief. Evaluator will ask the trainee to point to each of the four non-negotiables in their submitted product.
+
+**New doctrine content (March 2026):** MOE/MOP assessment framework at theater level, CARVER scoring for multi-echelon risk prioritization, and force ratio computation integrated with Bayesian models. Reference in Blocks 1, 10–11, and 21–22.
 
 ---
 
@@ -324,7 +326,7 @@
 
 ## TM-50G COURSE COMPLETION
 
-TM-50G graduates are eligible to take TM-50H, TM-50I, or TM-50J as peer tracks. No additional prerequisites beyond domain experience.
+TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. No additional prerequisites beyond domain experience.
 
 ---
 
@@ -346,6 +348,8 @@ TM-50G graduates are eligible to take TM-50H, TM-50I, or TM-50J as peer tracks. 
 - The demo-to-production gap: a prototype that impresses in a demo can fail in production due to edge-case queries, corpus updates, model API changes, or load at scale. This course addresses all four failure domains.
 - Enterprise requirements: reproducibility, auditability, human review gates, rollback procedures, version control on prompts and data — none of these exist in a prototype.
 - Instructor opens with a real failure pattern: an AI system that passed all demo scenarios but failed on 30% of production queries because the retrieval system returned empty results on short queries. This is the course motivation.
+
+**New doctrine content (March 2026):** ADP 3-13 AI/ML framing at enterprise scale, PED-to-pipeline mapping for multi-source intelligence-AI integration, and UDRA governance framework for enterprise AI data access controls. Reference in Blocks 2–5 (RAG architecture), 14 (AI governance), and 19–20 (practical exercise).
 
 ---
 
@@ -569,9 +573,9 @@ TM-50G graduates are eligible to take TM-50H, TM-50I, or TM-50J as peer tracks. 
 
 ---
 
-# PART I — TM-50I: ADVANCED ML ENGINEERING
+# PART M — TM-50M: ADVANCED ML ENGINEERING
 
-**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** Senior ML engineer with production MLOps experience; TM-50I certified or C2DAO ML Platform SME
+**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** Senior ML engineer with production MLOps experience; TM-50M certified or C2DAO ML Platform SME
 **Advanced access required:** Python Transforms, Model Integration (registry), Code Workspace GPU
 
 ---
@@ -818,6 +822,8 @@ TM-50G graduates are eligible to take TM-50H, TM-50I, or TM-50J as peer tracks. 
 - The failure mode of applying project management to a portfolio: optimizing each project in isolation while the portfolio fails due to unmanaged interdependencies.
 - Each trainee maps their current portfolio at the start of this block. The map is used throughout the course. If a trainee manages a single project, they develop a notional portfolio for the exercises.
 
+**New doctrine content (March 2026):** DDOF friction matrix for portfolio-level integration friction analysis, roles and PM oversight mapping at enterprise scale, and portfolio health metrics tied to DDOF governance standards. Reference in Blocks 2–4 (dependency mapping and portfolio dashboard) and 10–12 (risk and practical exercise).
+
 ---
 
 ### Block 2 — Portfolio Dependency Mapping
@@ -970,6 +976,8 @@ TM-50G graduates are eligible to take TM-50H, TM-50I, or TM-50J as peer tracks. 
 - Governance clarity: every knowledge artifact has a designated owner, freshness policy, and review cadence. Without these, knowledge degrades silently.
 - Quality automation: manual quality processes fail under personnel pressure. Any quality check that can be automated should be.
 - Retrieval reliability: a knowledge system that does not return results for 30% of queries will be abandoned. Zero-recall failure is the leading cause of knowledge system non-use.
+
+**New doctrine content (March 2026):** FM 6-0 KM 5-step process at enterprise scale, developmental domains framework for theater-level KM capability maturity, and Critical Knowledge Items (CKI) identification methodology for cross-domain knowledge architectures. Reference in Blocks 2–5 (taxonomy and quality governance) and 6–8 (AI-augmented tagging and continuity systems).
 
 ---
 
@@ -1349,7 +1357,7 @@ TM-50G graduates are eligible to take TM-50H, TM-50I, or TM-50J as peer tracks. 
 - AIP Logic multi-agent features: 7+ duty days (C2DAO request)
 - CI/CD pipeline access (TM-50L): 7+ duty days (C2DAO request)
 
-**Peer review is a graded component.** For TM-50G and TM-50I, the peer review exercise (Day 4) is evaluated. A trainee who fails to conduct a substantive peer review does not receive credit for that block.
+**Peer review is a graded component.** For TM-50G and TM-50M, the peer review exercise (Day 4) is evaluated. A trainee who fails to conduct a substantive peer review does not receive credit for that block.
 
 **Evaluation format:** All TM-50 courses end with a multi-part practical evaluation. The evaluator does not answer technique questions during the evaluation. Go/No-Go is communicated at end of the final day.
 

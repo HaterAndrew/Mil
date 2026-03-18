@@ -8,13 +8,13 @@
 | **Level** | TM-40B (WFF Track) |
 | **Audience** | FSE staff, fire support officers, targeting teams, artillery/mortar officers; prerequisite: completion of TM-40B training |
 | **Time Allowed** | 30 minutes |
-| **Passing Score** | 80% (24/30 points) |
+| **Passing Score** | 80% (32/40 points) |
 
 ---
 
 ## INSTRUCTIONS
 
-This assessment confirms proficiency upon completion of TM-40B training. A score of 80% (24/30) is required for course completion certification. Results are recorded on the student training record.
+This assessment confirms proficiency upon completion of TM-40B training. A score of 80% (32/40) is required for course completion certification. Results are recorded on the student training record.
 
 ---
 
@@ -78,13 +78,27 @@ B. Continue fires planning using manual targeting and fire support coordination 
 C. Transfer all targeting authority to higher headquarters until connectivity is restored
 D. Use personal devices to access MSS through civilian network connectivity to maintain fires data display
 
+**9. Table 2-3 in TM-40B maps the D3A targeting cycle to data platform functions. Which of the following correctly pairs a D3A phase with its key data products?**
+
+A. Decide — ICSM, NAI/TAI tracking, target confidence records
+B. Detect — HPTL, TSS, AGM
+C. Deliver — Fire missions, FSEM updates, BDA requests
+D. Assess — HPTL, TSS, target nomination records
+
+**10. The CARVER scoring methodology (Table 2-6, FM 3-60 Appendix G) evaluates targets across six criteria, each scored 1–5. Which of the following correctly defines a CARVER factor and its scoring scale?**
+
+A. Criticality — how quickly the OPFOR can replace the target; 1 = immediate replacement, 5 = irreplaceable within campaign timeline
+B. Vulnerability — how important the target is to OPFOR capability; 1 = minimal impact, 5 = catastrophic loss
+C. Recuperability — how susceptible the target is to available munitions; 1 = hardened/deeply buried, 5 = soft/exposed
+D. Accessibility — whether the target can be reached by available fires means; 1 = deeply protected, 5 = fully accessible to multiple systems
+
 ---
 
 ## SECTION 2 — SHORT ANSWER
 
 *Answer in 3–5 sentences. (5 points each)*
 
-**9. Your fires officer has configured three MSS alerts for the targeting working group. During a test run, Alert 2 (HVT in TAI HAMMER) fires when no HVT data is present in that area. Walk through the troubleshooting steps you would take to identify and resolve the false-positive before the next targeting board.**
+**11. Your fires officer has configured three MSS alerts for the targeting working group. During a test run, Alert 2 (HVT in TAI HAMMER) fires when no HVT data is present in that area. Walk through the troubleshooting steps you would take to identify and resolve the false-positive before the next targeting board.**
 
 *(Write your answer below)*
 
@@ -93,7 +107,7 @@ _______________________________________________
 _______________________________________________
 _______________________________________________
 
-**10. The S3 asks why the fires product in MSS Workshop still shows Target AC-12 as unengaged when the FSE submitted a fires report confirming the mission completed 90 minutes ago. Explain the difference between fires reporting submission and MSS data display, and describe how you would resolve the discrepancy before the targeting board convenes.**
+**12. The S3 asks why the fires product in MSS Workshop still shows Target AC-12 as unengaged when the FSE submitted a fires report confirming the mission completed 90 minutes ago. Explain the difference between fires reporting submission and MSS data display, and describe how you would resolve the discrepancy before the targeting board convenes.**
 
 *(Write your answer below)*
 
@@ -117,7 +131,7 @@ It is 0615. The targeting working group convenes at 0700. You open MSS to finali
 
 You have 45 minutes before the TWG.
 
-**11. Describe your complete course of action for the next 45 minutes. Include: (a) what you investigate first and why, (b) what you will brief as confirmed vs. what you will caveat, (c) how you characterize the Target AC-09 BDA gap to the targeting board, and (d) what follow-on action you assign to resolve the Alert 1 failure.**
+**13. Describe your complete course of action for the next 45 minutes. Include: (a) what you investigate first and why, (b) what you will brief as confirmed vs. what you will caveat, (c) how you characterize the Target AC-09 BDA gap to the targeting board, and (d) what follow-on action you assign to resolve the Alert 1 failure.**
 
 *(Write your answer below)*
 
@@ -141,10 +155,12 @@ _______________________________________________
 6. B — read-only access; classification marking; verify viewer-only permissions
 7. B — data reporting gap; BDA pipeline has not updated the COP
 8. B — manual fires procedures + manual FSCM tracking + brief stale products when connectivity restored
+9. C — Table 2-3 maps the Deliver phase to fire missions, FSEM updates, and BDA requests. Option A lists Detect-phase products (ICSM, NAI/TAI tracking) incorrectly assigned to Decide. Option B lists Decide-phase products (HPTL, TSS, AGM) incorrectly assigned to Detect. Option D lists Decide-phase products incorrectly assigned to Assess.
+10. D — Table 2-6 (FM 3-60, App G) defines Accessibility as whether the target can be reached by available fires means, scored 1 (deeply protected) to 5 (fully accessible). Option A describes Recuperability, not Criticality. Option B describes Criticality, not Vulnerability. Option C describes Vulnerability, not Recuperability.
 
 **Section 2 — Expected elements:**
-9. Should include: verify the TAI HAMMER geographic boundary definition (check polygon coordinates against the targeting officer's map product), confirm the data source selected for Alert 2 is the correct HVT track feed, test with a known-negative event location outside TAI HAMMER to isolate whether the boundary or the feed configuration is the fault, check whether multiple overlapping TAI boundaries could be causing a cross-trigger.
-10. Should explain: pipeline latency between fires report submission and dataset update in MSS; the fires report enters the reporting system but the MSS dataset may not have refreshed; need to trace the data pipeline to find where the update is queued; caveat the targeting product with "as of [last pipeline update]" timestamp; escalate to S6 if the pipeline is stalled.
+11. Should include: verify the TAI HAMMER geographic boundary definition (check polygon coordinates against the targeting officer's map product), confirm the data source selected for Alert 2 is the correct HVT track feed, test with a known-negative event location outside TAI HAMMER to isolate whether the boundary or the feed configuration is the fault, check whether multiple overlapping TAI boundaries could be causing a cross-trigger.
+12. Should explain: pipeline latency between fires report submission and dataset update in MSS; the fires report enters the reporting system but the MSS dataset may not have refreshed; need to trace the data pipeline to find where the update is queued; caveat the targeting product with "as of [last pipeline update]" timestamp; escalate to S6 if the pipeline is stalled.
 
 **Section 3 — Expected elements:**
 (a) Investigate Alert 1 failure first — an actual target acquisition report placing an HVT in TAI ANVIL that did not trigger Alert 1 is a higher-priority problem than missing BDA for AC-09, because it affects an active targeting decision the board may need to make today.
@@ -154,7 +170,7 @@ _______________________________________________
 
 ---
 
-*Total points: 30. Passing score: 24 (80%).*
+*Total points: 40 (MC: 10 × 2 = 20, SA: 2 × 5 = 10, Scenario: 10). Passing score: 32 (80%).*
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*EX-TM40B-POST | Version 1.0 | March 2026*
+*EX_TM40B-POST | Version 1.0 | March 2026*

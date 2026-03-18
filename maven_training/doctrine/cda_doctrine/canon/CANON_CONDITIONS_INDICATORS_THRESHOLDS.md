@@ -1,6 +1,6 @@
 <!-- MAVEN TRAINING CORPUS — CDA REFERENCE MATERIAL
      Source: odt_workspace/docs/architecture/cda/doctrine/canon/conditions-indicators-thresholds.md
-     Supports: TM-40G (ORSA), TM-40H (AI Engineer), TM-40I (ML Engineer)
+     Supports: TM-40G (ORSA), TM-40H (AI Engineer), TM-40M (ML Engineer)
      Type: Canon
 -->
 ---

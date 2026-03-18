@@ -120,11 +120,11 @@ The **Object Type Cookbook v2.0** is the implementing document for all ontology 
 
 | Phase | Name | Duration | Gate Output |
 |-------|------|----------|-------------|
-| 1 | Problem Framing | 1-5 days | Approved requirement + SMART statement |
-| 2 | Data Provisioning | 3-10 days | Secured access to authoritative sources |
-| 3 | Data Wrangling | 5-15 days | Clean data passing VAULTIS-A at 85%+ |
-| 4 | Development | 10-30 days | Functional product with governance controls |
-| 5 | Test and Evaluation | 5-10 days | Validated product approved by decision maker |
+| 1 | Problem Framing | 3-5 days | Approved requirement + SMART statement |
+| 2 | Data Provisioning | 5-10 days | Secured access to authoritative sources |
+| 3 | Data Wrangling | 7-12 days | Clean data passing VAULTIS-A at 85%+ |
+| 4 | Development | 15-25 days | Functional product with governance controls |
+| 5 | Test and Evaluation | 7-12 days | Validated product approved by decision maker |
 | 6 | Operations | Ongoing | Live product with monitoring and refresh |
 
 **MVP Mandate:** Per Secretary of the Army priorities: MVP delivery within 30 days. Extensions require C2DAO approval with documented justification. Speed over perfection. Warfighter first.
@@ -135,14 +135,14 @@ Every data product must be scored against these eight dimensions before advancin
 
 | Dimension | Target |
 |-----------|--------|
-| **V** -- Valid | 99% |
-| **A** -- Accurate | 95% |
-| **U** -- Unique | 100% |
+| **V** -- Visible | 100% |
+| **A** -- Accessible | 99% |
+| **U** -- Understandable | 100% |
 | **L** -- Linked | 100% |
-| **T** -- Timely | (context-dependent) |
-| **I** -- Integrated | 90% |
+| **T** -- Trusted | 95% |
+| **I** -- Interoperable | 90% |
 | **S** -- Secure | 100% |
-| **A** -- Auditable | (context-dependent) |
+| **A** -- Auditable | 100% |
 
 > **Minimum Gate Score:** 85% weighted average across all eight dimensions to pass DDOF Phase 3. Products below threshold are returned for remediation with documented deficiencies.
 
@@ -190,7 +190,7 @@ The DIV (Data and Information View) in DODAF and the corresponding NAFv4 viewpoi
 |----------|---------|-----------|
 | Object Type Cookbook v2.0 | Ontology design standards, decision trees, quality metrics, peer review | CDA / ODT |
 | Cookbook Addendum A | Data scope assessment, doctrine-to-ontology alignment, bitemporal modeling | CDA / ODT |
-| DDOF Playbook v2.0 | 6-phase data product lifecycle with VAULTIS-A quality gates | ODT-1 / HQDA |
+| DDOF Playbook v2.2 | 6-phase data product lifecycle with VAULTIS-A quality gates | T2COM C2DAO / HQDA CIO/G-6 / SAIS-ADD |
 | Semantic Layer Instructions | Doctrine-first governance philosophy and stewardship model | CDA / ODT |
 | CDS Technical Reference | Cross-domain ontology patterns and NCDSMO compliance | CDA / ODT |
 | Tool Convergence Assessment | Platform consolidation onto Foundry/Vantage | CTO / ODT |

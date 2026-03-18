@@ -22,7 +22,7 @@ export const URLS = {
   // TM-40 Specialist Tracks
   TM40G:                     `${BASE}/TM_40G_ORSA.pdf`,
   TM40H:                     `${BASE}/TM_40H_AI_ENGINEER.pdf`,
-  TM40I:                     `${BASE}/TM_40I_ML_ENGINEER.pdf`,
+  TM40M:                     `${BASE}/TM_40M_ML_ENGINEER.pdf`,
   TM40J:                     `${BASE}/TM_40J_PROGRAM_MANAGER.pdf`,
   TM40K:                     `${BASE}/TM_40K_KNOWLEDGE_MANAGER.pdf`,
   TM40L:                     `${BASE}/TM_40L_SOFTWARE_ENGINEER.pdf`,
@@ -38,7 +38,7 @@ export const URLS = {
   // TM-50 Advanced Tracks
   TM50G:                     `${BASE}/TM_50G_ORSA_ADVANCED.pdf`,
   TM50H:                     `${BASE}/TM_50H_AI_ENGINEER_ADVANCED.pdf`,
-  TM50I:                     `${BASE}/TM_50I_ML_ENGINEER_ADVANCED.pdf`,
+  TM50M:                     `${BASE}/TM_50M_ML_ENGINEER_ADVANCED.pdf`,
   TM50J:                     `${BASE}/TM_50J_PROGRAM_MANAGER_ADVANCED.pdf`,
   TM50K:                     `${BASE}/TM_50K_KNOWLEDGE_MANAGER_ADVANCED.pdf`,
   TM50L:                     `${BASE}/TM_50L_SOFTWARE_ENGINEER_ADVANCED.pdf`,
@@ -51,7 +51,7 @@ export const URLS = {
   // Syllabi — Specialist
   SYL_TM40G:                 `${BASE}/SYLLABUS_TM40G.pdf`,
   SYL_TM40H:                 `${BASE}/SYLLABUS_TM40H.pdf`,
-  SYL_TM40I:                 `${BASE}/SYLLABUS_TM40I.pdf`,
+  SYL_TM40M:                 `${BASE}/SYLLABUS_TM40M.pdf`,
   SYL_TM40J:                 `${BASE}/SYLLABUS_TM40J.pdf`,
   SYL_TM40K:                 `${BASE}/SYLLABUS_TM40K.pdf`,
   SYL_TM40L:                 `${BASE}/SYLLABUS_TM40L.pdf`,
@@ -64,10 +64,18 @@ export const URLS = {
   SYL_TM40E:                 `${BASE}/SYLLABUS_TM40E.pdf`,
   SYL_TM40F:                 `${BASE}/SYLLABUS_TM40F.pdf`,
 
+  // Concepts Guides — WFF
+  CG_TM40A:                  `${BASE}/CONCEPTS_GUIDE_TM40A_INTELLIGENCE.pdf`,
+  CG_TM40B:                  `${BASE}/CONCEPTS_GUIDE_TM40B_FIRES.pdf`,
+  CG_TM40C:                  `${BASE}/CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER.pdf`,
+  CG_TM40D:                  `${BASE}/CONCEPTS_GUIDE_TM40D_SUSTAINMENT.pdf`,
+  CG_TM40E:                  `${BASE}/CONCEPTS_GUIDE_TM40E_PROTECTION.pdf`,
+  CG_TM40F:                  `${BASE}/CONCEPTS_GUIDE_TM40F_MISSION_COMMAND.pdf`,
+
   // Concepts Guides — Specialist
   CG_TM40G:                  `${BASE}/CONCEPTS_GUIDE_TM40G_ORSA.pdf`,
   CG_TM40H:                  `${BASE}/CONCEPTS_GUIDE_TM40H_AI_ENGINEER.pdf`,
-  CG_TM40I:                  `${BASE}/CONCEPTS_GUIDE_TM40I_ML_ENGINEER.pdf`,
+  CG_TM40M:                  `${BASE}/CONCEPTS_GUIDE_TM40M_ML_ENGINEER.pdf`,
   CG_TM40J:                  `${BASE}/CONCEPTS_GUIDE_TM40J_PROGRAM_MANAGER.pdf`,
   CG_TM40K:                  `${BASE}/CONCEPTS_GUIDE_TM40K_KNOWLEDGE_MANAGER.pdf`,
   CG_TM40L:                  `${BASE}/CONCEPTS_GUIDE_TM40L_SOFTWARE_ENGINEER.pdf`,
@@ -75,7 +83,7 @@ export const URLS = {
   // Concepts Guides — Advanced
   CG_TM50G:                  `${BASE}/CONCEPTS_GUIDE_TM50G_ORSA_ADVANCED.pdf`,
   CG_TM50H:                  `${BASE}/CONCEPTS_GUIDE_TM50H_AI_ENGINEER_ADVANCED.pdf`,
-  CG_TM50I:                  `${BASE}/CONCEPTS_GUIDE_TM50I_ML_ENGINEER_ADVANCED.pdf`,
+  CG_TM50M:                  `${BASE}/CONCEPTS_GUIDE_TM50M_ML_ENGINEER_ADVANCED.pdf`,
   CG_TM50J:                  `${BASE}/CONCEPTS_GUIDE_TM50J_PROGRAM_MANAGER_ADVANCED.pdf`,
   CG_TM50K:                  `${BASE}/CONCEPTS_GUIDE_TM50K_KNOWLEDGE_MANAGER_ADVANCED.pdf`,
   CG_TM50L:                  `${BASE}/CONCEPTS_GUIDE_TM50L_SOFTWARE_ENGINEER_ADVANCED.pdf`,
@@ -88,10 +96,15 @@ export const URLS = {
   // Exercises — Specialist
   EX40G:                     `${BASE}/EX_40G_ORSA.pdf`,
   EX40H:                     `${BASE}/EX_40H_AI_ENGINEER.pdf`,
-  EX40I:                     `${BASE}/EX_40I_ML_ENGINEER.pdf`,
+  EX40M:                     `${BASE}/EX_40M_ML_ENGINEER.pdf`,
   EX40J:                     `${BASE}/EX_40J_PROGRAM_MANAGER.pdf`,
   EX40K:                     `${BASE}/EX_40K_KNOWLEDGE_MANAGER.pdf`,
   EX40L:                     `${BASE}/EX_40L_SOFTWARE_ENGINEER.pdf`,
+
+  // Builder Sprint Program (BSP)
+  BSP_GUIDE:                 `${BASE}/BSP_GUIDE.pdf`,
+  BSP_SPRINT_PACKAGE:        `${BASE}/BSP_SPRINT_PACKAGE.pdf`,
+  BSP_ENVIRONMENT_SETUP:     `${BASE}/BSP_ENVIRONMENT_SETUP.pdf`,
 
   // Governance
   NAMING_STANDARDS:          `${BASE}/NAMING_AND_GOVERNANCE_STANDARDS.pdf`,
@@ -108,6 +121,23 @@ export const URLS = {
   AAR_TEMPLATE:              `${BASE}/AAR_TEMPLATE.pdf`,
   FACULTY_DEV_PLAN:          `${BASE}/FACULTY_DEVELOPMENT_PLAN.pdf`,
   CAD:                       `${BASE}/CAD_MSS.pdf`,
+
+  // Train-the-Trainer (T3)
+  T3I:                       `${BASE}/T3_I_INSTRUCTOR_CERTIFICATION.pdf`,
+  T3F:                       `${BASE}/T3_F_MSC_FORCE_MULTIPLIER.pdf`,
+  CG_T3I:                    `${BASE}/CONCEPTS_GUIDE_T3I_INSTRUCTOR_CERTIFICATION.pdf`,
+  CG_T3F:                    `${BASE}/CONCEPTS_GUIDE_T3F_MSC_FORCE_MULTIPLIER.pdf`,
+  SYL_T3I:                   `${BASE}/SYLLABUS_T3I.pdf`,
+  SYL_T3F:                   `${BASE}/SYLLABUS_T3F.pdf`,
+  EX_T3I:                    `${BASE}/EX_T3I_INSTRUCTOR_CERTIFICATION.pdf`,
+  EX_T3F:                    `${BASE}/EX_T3F_FORCE_MULTIPLIER.pdf`,
+  LP_T3I:                    `${BASE}/T3I_LESSON_PLAN_OUTLINES.pdf`,
+  LP_T3F:                    `${BASE}/T3F_LESSON_PLAN_OUTLINES.pdf`,
+  INSTRUCTOR_TIERS:          `${BASE}/INSTRUCTOR_TIER_DEFINITIONS.pdf`,
+  SME_RUBRIC:                `${BASE}/C2DAO_SME_DESIGNATION_RUBRIC.pdf`,
+  UDT_SOP:                   `${BASE}/UNIT_DATA_TRAINER_SOP.pdf`,
+  MTT_SOP:                   `${BASE}/MTT_OPERATIONS_SOP.pdf`,
+  SUCCESSOR_GUIDE:           `${BASE}/SUCCESSOR_PLANNING_GUIDE.pdf`,
 
   // Lesson Plans
   LP_TM10:                   `${BASE}/TM10_LESSON_PLANS.pdf`,

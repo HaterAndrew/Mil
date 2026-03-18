@@ -3,11 +3,23 @@
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.
 
+**Companion Resource — Ontologize Channel:** [@Ontologize](https://www.youtube.com/@Ontologize) — Official Palantir training partner. 68 indexed video walkthroughs covering Foundry and AIP features. Full catalog with TM cross-references: [source_material/ontologize_youtube/README.md](../../source_material/ontologize_youtube/README.md)
+
 ---
 
 ## How to Use This Addendum
 
 Videos are grouped by topic and ordered from foundational to advanced. TM-40G self-study references are included here for completeness — analysts who completed TM-40G recently may skip Group 1 and Group 2. Start with Groups 3 and 4 for content specific to TM-50G advanced topics.
+
+---
+
+## New Doctrine References (March 2026)
+
+The following doctrine sections were added to TM-50G this session. Review after the corresponding TM chapter:
+
+- **MOE/MOP Assessment at Theater Level** — Theater-level measures of effectiveness and performance for GO/SES analytical products. See TM-50G concepts guide.
+- **CARVER Scoring (Multi-Echelon)** — CARVER methodology applied to multi-echelon risk prioritization and Pareto optimization inputs. See TM-50G concepts guide.
+- **Force Ratio Computation (Advanced)** — Force ratio integration with Bayesian readiness models and network vulnerability analysis. See TM-50G concepts guide.
 
 ---
 

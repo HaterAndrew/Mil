@@ -101,6 +101,31 @@ camelCase; descriptive and unambiguous. Use standardized suffixes:
 - Enum values: `ALL_CAPS_UNDERSCORE` (e.g., `MISSION_CAPABLE`, `NOT_READY`, `UNKNOWN`)
 - Boolean properties: prefix with `is` or `has` (e.g., `isMissionCapable`, `hasOverdueActions`)
 
+### Object Type Naming and Lifecycle Standards
+
+**Naming Rules:**
+- Use natural business language — spell out full terms, no abbreviations in type names.
+- No versioned names — `Message_v2` is prohibited. Modify the existing type or create a new purpose-specific type.
+- No `[tag]` prefixes in object type names — use Ontology object type groups for categorization.
+- Property naming conventions:
+  - Timestamps: `{action}_at_timestamp` (e.g., `created_at_timestamp`, `submitted_at_timestamp`)
+  - Authors: `{action}_by_user` (e.g., `created_by_user`, `approved_by_user`)
+- Foreign key columns: `{foreign_object_type}_id` or `{link_api_name}_{foreign_object_type}_id`
+
+**Lifecycle Maturity:**
+
+Every object type in the MSS Ontology must carry one of three maturity statuses:
+
+| Status | Definition | Governance |
+|--------|-----------|------------|
+| Experimental | Under development, schema may change without notice | Sandbox/dev branches only |
+| Active | Production-ready, schema changes require change request | Protected; governed by C2DAO standards |
+| Deprecated | Superseded or scheduled for removal | Read-only; migration plan required |
+
+**Ownership:** Every object type requires a designated point of contact responsible for schema currency, data quality, and access control.
+
+*Source: Palantir Developer Community — [Ontology and Pipeline Design Principles](https://community.palantir.com/t/ontology-and-pipeline-design-principles/5481), adapted for USAREUR-AF governance.*
+
 ---
 
 ## SECTION 4 — LINK TYPE NAMING
@@ -239,6 +264,10 @@ def compute_readiness_summary(personnel, equipment):
 
 - Python modules: `snake_case.py`; config files: `snake_case.yaml` or `snake_case.json`
 - No spaces in any filename committed to version control
+- **Curriculum directories** use underscores as the separator between prefix and code:
+  - Training Materials: `TM_40A_intelligence`, `TM_50G_orsa_advanced`
+  - Exercises: `EX_40A_intelligence`, `EX_50G_orsa`
+  - Format: `{PREFIX}_{LEVEL}{TRACK}_{descriptor}` — all underscores, no hyphens
 
 ### 9-2. Variable and Function Naming
 
@@ -297,10 +326,10 @@ Types: `feat`, `fix`, `refactor`, `docs`, `test`, `chore`
 - [ ] Data Steward sign-off documented
 - [ ] Branch naming follows standard (Section 8)
 
-### 10-4. Before Deploying Code to Production (TM-40L / TM-40I)
+### 10-4. Before Deploying Code to Production (TM-40L / TM-40M)
 
 See the full governance checklist in the applicable TM appendix:
-- TM-40I Appendix A — Model Governance Checklist
+- TM-40M Appendix A — Model Governance Checklist
 - TM-40L Appendix B — SWE Security Checklist
 
 ---
@@ -349,7 +378,7 @@ See the full governance checklist in the applicable TM appendix:
 [ ] No hardcoded credentials or connection strings
 [ ] All SQL parameterized
 [ ] Idempotency verified (for pipelines/transforms)
-[ ] TM-specific governance checklist completed (TM-40I App. A / TM-40L App. B)
+[ ] TM-specific governance checklist completed (TM-40M App. A / TM-40L App. B)
 ```
 
 ---

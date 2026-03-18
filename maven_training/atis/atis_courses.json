@@ -5,8 +5,8 @@
     "format": "TR 350-70 ATIS Course Registration Packet",
     "phase_1_target": "USAREUR-AF G3/7 command training registration",
     "phase_2_target": "T2COM institutional registration",
-    "total_courses": 21,
-    "total_program_hours": 664
+    "total_courses": 23,
+    "total_program_hours": 728
   },
   "program": {
     "program_title": "Maven Smart System (MSS) Training Program",
@@ -1255,7 +1255,7 @@
       "teo_tasks": []
     },
     {
-      "course_id": "TM-40I",
+      "course_id": "TM-40M",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "ML Engineer",
       "tier": "Specialist",
@@ -1274,7 +1274,7 @@
       "min_class_size": 2,
       "cadence": "Semi-annual or on demand",
       "instructor_ratio": "4:1",
-      "instructor_qualification": "ML production experience; TM-40I certified; C2DAO MLE SME designation",
+      "instructor_qualification": "ML production experience; TM-40M certified; C2DAO MLE SME designation",
       "access_level": "GPU-enabled Code Workspace",
       "provisioning_lead_days": 10,
       "evaluation_type": "Practical exercise (7 tasks); model card review; GO/NO-GO",
@@ -1527,7 +1527,7 @@
       "teo_tasks": []
     },
     {
-      "course_id": "TM-50I",
+      "course_id": "TM-50M",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Advanced ML Engineer",
       "tier": "Advanced Specialist",
@@ -1538,16 +1538,16 @@
         "TM-10",
         "TM-20",
         "TM-30",
-        "TM-40I"
+        "TM-40M"
       ],
-      "prerequisite_description": "TM-40I Go on file (required)",
+      "prerequisite_description": "TM-40M Go on file (required)",
       "audience": "Senior ML engineers",
       "audience_mos": "MLEs with production model deployment experience",
       "max_class_size": 6,
       "min_class_size": 2,
       "cadence": "Annual or on demand",
       "instructor_ratio": "4:1",
-      "instructor_qualification": "TM-50I certified or C2DAO Advanced MLE SME; production ML pipeline experience",
+      "instructor_qualification": "TM-50M certified or C2DAO Advanced MLE SME; production ML pipeline experience",
       "access_level": "GPU-enabled Code Workspace + Editor",
       "provisioning_lead_days": 10,
       "evaluation_type": "Practical exercise; model governance review; GO/NO-GO",
@@ -1709,14 +1709,105 @@
       },
       "blocks": [],
       "teo_tasks": []
+    },
+    {
+      "course_id": "T3-I",
+      "atis_number": "[TBD — assigned by ATIS upon registration]",
+      "title": "Instructor Certification",
+      "tier": "Train-the-Trainer",
+      "tier_number": 6,
+      "duration_days": 5,
+      "duration_hours": 40,
+      "prerequisites": [
+        "TM-10",
+        "TM-20",
+        "TM-30"
+      ],
+      "prerequisite_description": "TM-30 Go on file (required) + C2DAO selection",
+      "audience": "C2DAO-selected instructor candidates",
+      "audience_mos": "All MOS; selected by C2DAO based on technical proficiency and teaching aptitude",
+      "max_class_size": 12,
+      "min_class_size": 4,
+      "cadence": "Semi-annual or as-needed",
+      "instructor_ratio": "6:1",
+      "instructor_qualification": "Certified Instructor (T3-I graduate) with 12+ months teaching experience; C2DAO Master Instructor designation",
+      "access_level": "Builder + training environment admin",
+      "provisioning_lead_days": 10,
+      "evaluation_type": "Practicum (teach-back evaluation, peer review, instructor panel); GO/NO-GO",
+      "evaluation_hours": 8.0,
+      "hard_nogo": "Failure to demonstrate safe learning environment; incorrect technical content delivery",
+      "remediation_hours": 8,
+      "remediation_method": "Supervised teach-back with mentor instructor; remediation practicum",
+      "equipment": {
+        "workstation": "Government workstation with CAC reader",
+        "network": "MSS training sandbox + production environment",
+        "facilities": "Classroom with projector, breakout rooms for practicum",
+        "special": "Training environment admin access; sample course materials"
+      },
+      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "hours_by_method": {
+        "lecture_brief": 4.0,
+        "lab": 12.0,
+        "discussion_review": 4.0,
+        "workshop_seminar": 12.0,
+        "evaluation": 8.0
+      },
+      "blocks": [],
+      "teo_tasks": []
+    },
+    {
+      "course_id": "T3-F",
+      "atis_number": "[TBD — assigned by ATIS upon registration]",
+      "title": "MSC Force Multiplier",
+      "tier": "Train-the-Trainer",
+      "tier_number": 6,
+      "duration_days": 3,
+      "duration_hours": 24,
+      "prerequisites": [
+        "TM-10",
+        "TM-20"
+      ],
+      "prerequisite_description": "TM-20 Go on file (required) + CDR nomination",
+      "audience": "CDR-nominated unit personnel designated as Unit Data Trainers (UDTs)",
+      "audience_mos": "All MOS; nominated by unit commander based on data proficiency and leadership potential",
+      "max_class_size": 16,
+      "min_class_size": 4,
+      "cadence": "Quarterly or as-needed",
+      "instructor_ratio": "8:1",
+      "instructor_qualification": "Certified Instructor (T3-I graduate); TM-30 certified",
+      "access_level": "Builder",
+      "provisioning_lead_days": 5,
+      "evaluation_type": "Practical exercise (UDT scenario execution, peer coaching demo); GO/NO-GO",
+      "evaluation_hours": 4.0,
+      "hard_nogo": "Failure to correctly execute TM-10 teach-back; inability to troubleshoot common user issues",
+      "remediation_hours": 4,
+      "remediation_method": "Supervised teach-back on failed tasks; paired coaching exercise",
+      "equipment": {
+        "workstation": "Government workstation with CAC reader",
+        "network": "MSS training sandbox",
+        "facilities": "Classroom with projector",
+        "special": "None"
+      },
+      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "hours_by_method": {
+        "lecture_brief": 2.0,
+        "lab": 10.0,
+        "discussion_review": 2.0,
+        "workshop_seminar": 6.0,
+        "evaluation": 4.0
+      },
+      "blocks": [],
+      "teo_tasks": []
     }
   ],
   "prerequisite_chain": {
-    "description": "TM-10 → TM-20 → TM-30 → ALL TM-40 (A-L) → TM-50 (G-L only)",
+    "description": "TM-10 → TM-20 → TM-30 → ALL TM-40 (A-M) → TM-50 (G-M only); T3-I branches from TM-30; T3-F branches from TM-20",
     "tree": {
       "TM-10": {
         "TM-20": {
+          "T3-F": {},
           "TM-30": {
+            "T3-I": {},
             "TM-40A": {},
             "TM-40B": {},
             "TM-40C": {},
@@ -1729,8 +1820,8 @@
             "TM-40H": {
               "TM-50H": {}
             },
-            "TM-40I": {
-              "TM-50I": {}
+            "TM-40M": {
+              "TM-50M": {}
             },
             "TM-40J": {
               "TM-50J": {}

@@ -48,7 +48,7 @@ All instructors must meet the following minimum qualifications before being assi
 | TM-40F (MC) | Operations officer or XO (O-4 or above preferred); TM-20 Go on file | Mission command WFF, BUA products, synchronization matrices |
 | TM-40G | FA49 officer, ORSA-designated civilian, or equivalent quantitative background; TM-40G Go on file or C2DAO ORSA SME designation | Statistical modeling, time series, Monte Carlo, LP |
 | TM-40H | AIP Logic authoring experience (minimum 3 production workflows deployed); C2DAO AI SME designation; TM-40H Go on file | AIP Logic, Agent Studio, RAG, AI safety |
-| TM-40I | ML model deployed to production (minimum 1); TM-40I Go on file; C2DAO MLE SME designation | Feature engineering, model training, MLOps, governance |
+| TM-40M | ML model deployed to production (minimum 1); TM-40M Go on file; C2DAO MLE SME designation | Feature engineering, model training, MLOps, governance |
 | TM-40J | Program management background (PM-certified preferred); TM-30 Go on file; GFEBS/IMS proficiency | IMS, GFEBS, dashboard standards |
 | TM-40K | Knowledge management background (CKM or equivalent preferred); TM-30 Go on file | KM systems, AIP summarization, PCS continuity |
 | TM-40L | Software engineering background; OSDK/Platform SDK production experience; TM-40L Go on file | OSDK, Platform SDK, TypeScript FOO, Slate, security |
@@ -70,7 +70,7 @@ Evaluators (instructors who conduct Go/No-Go evaluations) must hold a higher cer
 | TM-40F (MC) | Operations officer; MSS BUA/synchronization product proficiency |
 | TM-40G | FA49 or equivalent; C2DAO ORSA SME designation |
 | TM-40H | C2DAO AI SME; has deployed at least 3 production AIP workflows |
-| TM-40I | MLE with production deployment experience; C2DAO MLE SME designation |
+| TM-40M | MLE with production deployment experience; C2DAO MLE SME designation |
 | TM-40J | PM background; has delivered production PM dashboards on MSS |
 | TM-40K | KM background; C2DAO-designated KM evaluator |
 | TM-40L | Senior SWE; OSDK/Slate production experience; security review background |
@@ -79,32 +79,42 @@ Evaluators (instructors who conduct Go/No-Go evaluations) must hold a higher cer
 
 ## SECTION 3 — INSTRUCTOR CERTIFICATION PROCESS
 
-### 3-1. Initial Certification Path
+### 3-1. Initial Certification Path (T3-I)
 
-New instructors complete the following sequence before being permitted to teach independently:
+Effective upon the first T3-I iteration, all new instructor candidates must complete the T3-I course. The T3-I course formalizes the previous 4-phase apprenticeship into a structured, documented certification pathway.
 
-**Phase 1: Audit (2 full course iterations as student-observer)**
-- Attend the target course as an observer — not a student, not an assistant. Observe instruction, lab dynamics, and evaluation procedures.
-- Complete the Observer Checklist after each iteration (Appendix A).
-- Debrief with the lead instructor after each day.
+**T3-I Phase 1 — Classroom (5 days):**
+- Adult learning principles, Army instructional methodology, platform deep-dive for instruction
+- Lab facilitation, error management, assessment design, evaluation calibration
+- Microteaching evaluation + written exam
+- Go: 5/7 observation criteria satisfactory (hard No-Go on Technical Accuracy or Evaluation Fidelity) + written exam ≥ 80%
 
-**Phase 2: Assistant Instructor (1 full course iteration)**
-- Deliver at least 40% of the blocks of instruction, supervised by the lead instructor.
-- The lead instructor is present in the room throughout.
-- Receive written feedback from the lead instructor after each day.
-- Complete a self-assessment after the course iteration.
+**T3-I Phase 2 — Supervised Practicum (scheduled separately):**
 
-**Phase 3: Lead Instructor (Observed)**
-- Deliver the complete course independently.
-- C2DAO Training OIC or designated senior instructor observes at least 2 blocks per day.
-- Evaluator certification requires separate observation of at least 1 complete evaluation.
-- Receive a formal Instructor Observation Report (Appendix B) after the course.
+**P2-1: Co-teach (1 course iteration)** — Deliver at least 40% of the blocks of instruction, supervised by a Senior or Master Instructor.
 
-**Phase 4: Certification**
-- Upon completion of Phase 3 with a satisfactory observation report:
-  - C2DAO Training OIC issues instructor certification in writing.
-  - Certification is entered in the Instructor Roster (Appendix C).
-  - Certified instructor may now teach independently and conduct evaluations (if evaluator-certified).
+**P2-2: Lead observed (1 course iteration)** — Deliver the complete course independently. C2DAO Training OIC or designated Senior Instructor observes at least 2 blocks per day. Receive a formal Instructor Observation Report (Appendix B).
+
+**P2-3: Evaluator observation (optional)** — Conduct at least 1 complete Go/No-Go evaluation under observation.
+
+**P2-4: Certification** — Upon completion of P2-2 with a satisfactory observation report, C2DAO Training OIC issues instructor certification in writing. Certification is entered in the Instructor Roster (Appendix C). Certified instructor may now teach independently and conduct evaluations (if evaluator-certified).
+
+> **NOTE:** Instructors certified under the previous 4-phase apprenticeship model (pre-T3-I) are grandfathered. See Instructor Tier Definitions §4-1 for transition procedures.
+
+### 3-1a. Instructor Tier Structure
+
+T3-I formalizes a three-tier instructor hierarchy (plus the Unit Data Trainer tier). See Instructor Tier Definitions for full criteria, authorities, and promotion procedures.
+
+| Tier | Criteria | Authority |
+|---|---|---|
+| Instructor | T3-I Go + domain quals per §2-1 | Deliver assigned courses; conduct Go/No-Go evaluations |
+| Senior Instructor | Instructor + 12 months + 4 iterations + OIC recommendation | Certify new instructors; approve lesson plan revisions |
+| Master Instructor | Senior + 24 months + 2 cross-certs + 2 mentored candidates + OIC designation | Certify Senior Instructors; approve curriculum changes; delegation authority |
+| Unit Data Trainer | T3-F Go + CDR nomination | Deliver TM-10; facilitate TM-20 refresher (Blocks 1-10); proctor TM-10 exams |
+
+### 3-1b. C2DAO SME Designation
+
+"C2DAO SME designation" as referenced in §2-1 is formally defined in the C2DAO SME Designation Rubric. See that document for domain-specific criteria, application process, and sustainment requirements.
 
 ### 3-2. Cross-Certification (Adding Courses)
 

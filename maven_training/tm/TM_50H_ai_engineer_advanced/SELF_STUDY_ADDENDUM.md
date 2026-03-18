@@ -3,11 +3,23 @@
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.
 
+**Companion Resource — Ontologize Channel:** [@Ontologize](https://www.youtube.com/@Ontologize) — Official Palantir training partner. 68 indexed video walkthroughs covering Foundry and AIP features. Full catalog with TM cross-references: [source_material/ontologize_youtube/README.md](../../source_material/ontologize_youtube/README.md)
+
 ---
 
 ## How to Use This Addendum
 
 TM-50H builds on TM-40H. This addendum covers both the TM-40H foundational video library and the advanced TM-50H additions. If you have already reviewed the TM-40H addendum, start at Group 10 for content specific to this course. Videos marked in the TM with inline NOTE callouts are flagged here for easy cross-reference.
+
+---
+
+## New Doctrine References (March 2026)
+
+The following doctrine sections were added to TM-50H this session. Review after the corresponding TM chapter:
+
+- **ADP 3-13 AI/ML at Enterprise Scale** — Doctrinal framing for enterprise AI systems in operational information environments. See TM-50H concepts guide.
+- **PED-to-Pipeline Mapping (Multi-Source)** — Multi-source PED integration mapped to enterprise RAG and multi-agent architectures. See TM-50H concepts guide.
+- **UDRA Governance (Enterprise)** — UDRA governance framework applied to enterprise AI data access, classification handling, and cross-domain controls. See TM-50H concepts guide.
 
 ---
 

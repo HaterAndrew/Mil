@@ -5,7 +5,7 @@
 |---|---|
 | **Level** | TM-50H — Advanced AI Engineer Specialist Track |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-40H complete (Go evaluation on file); 12+ months active AI engineering experience on MSS or equivalent; demonstrated proficiency with Python, LLM APIs, and vector retrieval systems; TM-40I (ML Engineer) recommended |
+| **Prerequisites** | TM-40H complete (Go evaluation on file); 12+ months active AI engineering experience on MSS or equivalent; demonstrated proficiency with Python, LLM APIs, and vector retrieval systems; TM-40M (ML Engineer) recommended |
 | **Audience** | Senior AI engineers, AI architects, AI capability leads assigned to enterprise-level AI development on MSS |
 | **Format** | Advanced lab + architecture review + evaluated system design |
 | **Location** | MSS Training Environment (AIP Logic, Agent Studio, Python Transforms enabled; advanced model access required) |
@@ -127,7 +127,7 @@ Complete **7+ duty days before Day 1:**
 
 | Track | Relevance to TM-50H |
 |---|---|
-| TM-50I (Advanced ML Eng) | ML model serving integration with AI pipelines; retraining triggers from AI output quality monitoring |
+| TM-50M (Advanced ML Eng) | ML model serving integration with AI pipelines; retraining triggers from AI output quality monitoring |
 | TM-50G (Advanced ORSA) | AI-assisted analytical products; grounding AI reasoning in quantitative ORSA outputs |
 | TM-50L (Advanced SWE) | OSDK-backed AI system integrations; platform security requirements for AI applications consuming sensitive Ontology data |
 

@@ -514,18 +514,20 @@ All six WFF tracks are at the same tier. All six WFF tracks require TM-10, TM-20
 
 ### Specialist Tracks (Prerequisite: TM-30)
 
-For personnel pursuing technical depth beyond WFF employment, the specialist tracks (TM-40G–L, prereq TM-30) are available. GEOINT and SIGINT data management practitioners may find TM-40H (AI Engineer) and TM-40I (ML Engineer) relevant for advanced analytical capability development.
+For personnel pursuing technical depth beyond WFF employment, the specialist tracks (TM-40G–M, prereq TM-30) are available. GEOINT and SIGINT data management practitioners may find TM-40H (AI Engineer) and TM-40M (ML Engineer) relevant for advanced analytical capability development.
 
 | Track | Title |
 |-------|-------|
 | TM-40G | ORSA (→ TM-50G) |
 | TM-40H | AI Engineer (→ TM-50H) |
-| TM-40I | ML Engineer (→ TM-50I) |
+| TM-40M | ML Engineer (→ TM-50M) |
 | TM-40J | Program Manager (→ TM-50J) |
 | TM-40K | Knowledge Manager (→ TM-50K) |
 | TM-40L | Software Engineer (→ TM-50L) |
 
 ---
+
+> **NOTE — New Doctrine Content in TM-40A:** TM-40A now includes an FM 2-0 data literacy call-out validating this training, an intelligence process→data pipeline mapping table (Table 1-1a), and seven characteristics of effective intelligence as data quality standards (Table G-0a, FM 2-0). These sections ground the concepts in this guide in their authoritative doctrinal sources.
 
 *This publication supersedes all previous versions. The proponent agency for CONCEPTS_GUIDE_TM40A is the USAREUR-AF C2 Data and Analytics Office (C2DAO), Wiesbaden, Germany.*
 

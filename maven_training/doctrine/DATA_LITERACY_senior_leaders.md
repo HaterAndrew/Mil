@@ -48,13 +48,13 @@ Data literacy for senior leaders is a combat multiplier.
 
 ### 1-2. The Operational Reality
 
-The race to harness live data will determine who wins the next war — a conclusion drawn directly from USAREUR-AF's operational experience in the theater. This is not a warning about future conflict — it is a description of the competition underway now. USAREUR-AF and NATO ground forces are already integrating allied sensors, data, and AI-powered analytical tools into real-time decision-making. This is not a projected capability — it is operational today. Formations whose leaders cannot direct, evaluate, and integrate data products are already behind.
+USAREUR-AF and NATO ground forces are already integrating allied sensors, data, and AI-powered analytical tools into real-time decision-making. This is not a projected capability — it is operational today. Formations whose leaders cannot direct, evaluate, and integrate data products are already behind.
 
 Commanders already depend on data whether they recognize it or not. Every COP update, readiness report, and intelligence summary is a data product. The question is not whether commanders use data — they do. The question is whether they use it deliberately, critically, and effectively.
 
 In USAREUR-AF's operational environment, data volume has increased faster than formations' capacity to use it. Without data-literate leaders directing the analytical effort, formations either drown in data or ignore it entirely. Both outcomes degrade decision quality.
 
-> **NOTE:** The command-and-control system USAREUR-AF has built in Europe represents a level of transformation comparable to radio-enabled command in World War II. The CG has directed rapid global scaling. Data-literate leaders at every echelon are required to sustain and extend that advantage.
+> **NOTE:** Data-literate leaders at every echelon are required to sustain and extend USAREUR-AF's operational data advantage.
 
 ### 1-3. What Data Literacy Means for a Senior Leader
 
@@ -69,19 +69,26 @@ Data literacy for a senior leader is NOT the ability to write code, build databa
 | Resource | Allocate people, time, and tools to data tasks as deliberate capability investment |
 | Protect | Enforce classification and access control discipline as a command responsibility |
 
-### 1-4. The VAUTI Standard — What Makes Data Trustworthy
+### 1-4. The VAULTIS-A Standard — What Makes Data Trusted
 
-Before acting on a data product, commanders must assess it against five criteria from the DoD Data Strategy (2020): Visible, Accessible, Understandable, Trustworthy, Interoperable — the VAUTI standard.
+Before acting on a data product, commanders must assess it against eight quality dimensions. The current authoritative standard is **VAULTIS-A** (DDOF Playbook v2.2, T2COM C2DAO, December 2025), which extends the DoD Data Strategy's 7-dimension VAULTIS framework by adding Auditable.
 
-| Criterion | Meaning | Commander's Question |
+| Dimension | Target | Commander's Question |
 |---|---|---|
-| Visible | Data is discoverable | Can we find this data when we need it? |
-| Accessible | Data can be retrieved by those who need it | Do the right people have access? |
-| Understandable | Meaning, context, and limitations are clear | Does the staff know what this actually measures? |
-| Trustworthy | Accurate, current, and from a verified source | Do we have confidence in the source and method? |
-| Interoperable | Usable across systems and organizations | Can we exchange this with joint and Allied partners? |
+| **V — Visible** | 100% | Can we find this data when we need it? |
+| **A — Accessible** | 99% | Do the right people have access within SLA? |
+| **U — Understandable** | 100% | Does the staff know what this actually measures? Is metadata complete? |
+| **L — Linked** | 100% | Can we trace this data from source to decision product? |
+| **T — Trusted** | 95% | Do we have confidence in the source, method, and sponsor sign-off? |
+| **I — Interoperable** | 90% | Can we exchange this with joint and Allied partners on approved platforms? |
+| **S — Secure** | 100% | Are classification markings correct and access controls enforced? |
+| **A — Auditable** | 100% | Can we prove who accessed this data and every transformation it underwent? |
 
-A data product that fails any VAUTI criterion introduces risk into the decision it supports. Commanders must require explicit VAUTI evaluation for significant decisions.
+**Quality Gate:** 85% minimum weighted average across all eight dimensions to pass DDOF Phase 3. Products below threshold are returned for remediation.
+
+A data product that fails any VAULTIS-A dimension introduces risk into the decision it supports. Commanders must require explicit VAULTIS-A evaluation for significant decisions.
+
+NOTE: The earlier 5-dimension VAUTI standard (AR 25-1, 2019) has been superseded. The three new dimensions — Linked, Secure, Auditable — address gaps in traceability, security compliance, and provenance that are critical in the USEUCOM theater environment.
 
 In the USEUCOM AOR, interoperability carries additional weight. Data products shared with NATO Allies must meet both U.S. standards and applicable NATO data exchange standards. Interoperability is Allied nations' foremost concern, and the root cause is trust — trust that is solvable through disciplined data standards and rigorous security protocols. Data standards, disciplined handling, and rigorous security protocols build that trust at the working level.
 
@@ -325,7 +332,7 @@ Analysts directed toward conclusions rather than questions will eventually produ
 
 ---
 
-## CHAPTER 5 — BUILDING A DATA-LITERATE FORMATION
+## CHAPTER 5 — BUILDING A DATA-MITERATE FORMATION
 
 **BLUF: Data literacy is a trained and developed competency, not a natural talent. Commanders build it through deliberate training, integration into collective events, and consistent command climate.**
 
@@ -338,7 +345,7 @@ Data literacy exists on a continuum. Not every Soldier needs the same level of p
 | TM-10 (Operator) | All personnel | Navigate and consume data products on MSS; observe data security and accuracy standards |
 | TM-20 (Builder) | All personnel | Build basic Workshop applications; run light transforms; manipulate and share data products |
 | TM-30 (Advanced Builder) | Data-adjacent personnel (17/25-series, S6/G6/G2) | Design pipelines and Ontology objects; build complex dashboards; apply governed data patterns |
-| TM-40 Series (Specialist) | Designated specialist roles | Role-specific mastery: WFF tracks (A–F) and technical tracks (G–L) |
+| TM-40 Series (Specialist) | Designated specialist roles | Role-specific mastery: WFF tracks (A–F) and technical tracks (G–M) |
 | TM-50 Series (Advanced Specialist) | TM-40 graduates in senior/lead roles | Research-grade capability; leads and mentors others in specialist track |
 
 Senior leaders sit at the TM-10 level for technical skills and at a distinct "Commander" level for direction, evaluation, and command responsibilities.
@@ -439,7 +446,9 @@ Senior NCO leadership is critical. CSMs and SGMs who enforce data discipline in 
 
 **Uncertainty** — Acknowledged limits of confidence in data or analytical conclusions.
 
-**VAUTI** — DoD Data Strategy (2020) criteria: Visible, Accessible, Understandable, Trustworthy, Interoperable.
+**VAUTI** — Original 5-dimension data quality framework (AR 25-1, 2019). **Superseded** by VAULTIS/VAULTIS-A. See VAULTIS-A.
+
+**VAULTIS-A** — Current 8-dimension data quality standard (DDOF Playbook v2.2, December 2025): Visible, Accessible, Understandable, Linked, Trusted, Interoperable, Secure, Auditable. 85% minimum weighted average required to pass DDOF Phase 3 quality gate. Supersedes VAUTI and extends DoD VAULTIS.
 
 **ADP 3-13** — Army Doctrine Publication 3-13, Information. Establishes information as combat power and defines information advantage as a key operational objective.
 
@@ -461,9 +470,11 @@ Senior NCO leadership is critical. CSMs and SGMs who enforce data discipline in 
 
 **Data Literacy Technical Reference, Data Literacy** — Technical companion to this publication. Contains procedural guidance, analytical methods, data lifecycle doctrine, and the USAREUR-AF 5-Layer Data Stack architecture.
 
-**AR 25-1, Army Information Technology (Jul 2019)** — Statutory framework for Army data governance, VAUTI data quality principles, and IT management policy.
+**AR 25-1, Army Information Technology (Jul 2019)** — Statutory framework for Army data governance and IT management policy. Established the original VAUTI (5-dimension) data quality standard, now superseded by VAULTIS-A.
 
-**DoD Data Strategy (2020)** — Establishes the VAUTI framework as the standard for enterprise data quality and use.
+**DoD Data Strategy (2020)** — Establishes the VAULTIS framework (7 dimensions) as the DoD standard for enterprise data quality. Supersedes VAUTI.
+
+**DDOF Playbook v2.2 (December 2025)** — T2COM C2DAO implementing document. Extends VAULTIS to VAULTIS-A (8 dimensions, adds Auditable). Establishes the 6-phase data product lifecycle and 85% minimum quality gate. Current authoritative standard for MSS data products.
 
 **Army CIO Guidance (2024) and UDRA v1.1 (2025)** — Current governance and architecture codified in Army CIO guidance (2024) and UDRA v1.1 (2025). The C2DAO ensures USAREUR-AF compliance.
 
