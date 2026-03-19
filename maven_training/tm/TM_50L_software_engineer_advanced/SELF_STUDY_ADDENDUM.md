@@ -98,4 +98,4 @@ See `/home/dale/Desktop/claude/maven_training/tm/TM_40L_software_engineer/SELF_S
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*

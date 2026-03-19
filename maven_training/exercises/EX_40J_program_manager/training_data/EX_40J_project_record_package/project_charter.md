@@ -1,6 +1,6 @@
 # EX_40J TRAINING — Project Charter
 ## LOGSTAT Aggregation Pipeline
-**Classification:** UNCLASSIFIED // TRAINING USE ONLY
+
 
 ---
 

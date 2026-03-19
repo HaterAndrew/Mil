@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-40H COMPANION — AI ENGINEER · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** The AI engineer's job is to turn MSS data into AI-augmented workflows that increase decision velocity for operational users. This is not the same job as the ML engineer, the software engineer, or the ORSA.
+> **Forward:** The AI engineer's job is to turn MSS data into AI-augmented workflows that increase decision velocity for operational users. This is not the same job as the ML engineer, the software engineer, or the ORSA.
 > **Purpose:** Develops the mental models required to design, build, and govern AI workflows on MSS effectively. Read before beginning TM-40H task instruction.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
@@ -153,7 +153,7 @@ An ungrounded workflow produces a product that looks authoritative but cannot be
 
 ### 4-2. Vignette: LOGSTAT Synthesis for Exercise Planning
 
-A USAREUR-AF G4 planner needs to produce a pre-exercise logistics assessment for a brigade-level exercise. Current process: manually review LOGSTAT data across 8 subordinate battalions, compare against sustainment standards, draft a summary paragraph for the EXORD annex. Takes 4–6 hours.
+A USAREUR-AF G4 planner needs to produce a pre-exercise logistics assessment for a brigade-level exercise involving V Corps, 21st TSC support elements, and 10th AAMDC air defense coverage. Current process: manually review LOGSTAT data across 8 subordinate battalions and 3 AAMDC batteries, compare against sustainment standards, draft a summary paragraph for the EXORD annex. Takes 4–6 hours.
 
 | Question | Answer |
 |---|---|
@@ -342,7 +342,7 @@ C2DAO review for AI workflows is the governance gate preventing a workflow from 
 
 A workflow that cannot answer these questions clearly is not ready for C2DAO review. Think of it as the pre-deployment checklist every pilot completes — skipping it is not faster, it is the failure mode.
 
-> **NOTE — UDRA VAULTIS-A Governance for ML Outputs:** TM-40H now references the UDRA VAULTIS-A (Visible, Accessible, Understandable, Linked, Trustworthy, Interoperable, Secure — Assured) governance standard for AI/ML outputs consumed by AIP Logic workflows. Ensure all model-backed properties feeding AI workflows meet VAULTIS-A criteria before production deployment.
+> **NOTE — UDRA VAULTIS-A Governance for ML Outputs:** TM-40H now references the UDRA VAULTIS-A (Visible, Accessible, Understandable, Linked, Trustworthy, Interoperable, Secure, Auditable) governance standard for AI/ML outputs consumed by AIP Logic workflows. Ensure all model-backed properties feeding AI workflows meet VAULTIS-A criteria before production deployment.
 
 ### 8-4. Governance Before Activation — The Required Sequence
 

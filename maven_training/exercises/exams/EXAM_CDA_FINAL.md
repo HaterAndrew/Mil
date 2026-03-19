@@ -10,7 +10,7 @@ title: "CDA Final Exam"
 
 # CDA DATA ARCHITECTURE TRAINING — COMPREHENSIVE FINAL EXAMINATION
 
-**Classification: UNCLASSIFIED**
+
 **Exam Duration: 4 Hours (240 Minutes)**
 **Total Points: 300**
 **Passing Score: 240 / 300 (80%)**

@@ -62,7 +62,7 @@ D. A secure chat application for sharing operational information
 A. They indicate which office created the document
 B. They tell the user which network the data originated from
 C. They specify the authorized handling, distribution, and export procedures for the data
-D. They are only relevant for SCI-level material and can be ignored for FOUO data
+D. They are only relevant for SCI-level material and can be ignored for CUI data
 
 **7. A "filter" in a data application allows a user to:**
 
@@ -232,5 +232,5 @@ SA-5. Key points: human error is inevitable under operational stress; automated 
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-10 Pre-Test | Version 1.0 | March 2026*

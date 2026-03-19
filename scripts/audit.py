@@ -57,13 +57,12 @@ BASE_TRACKS = {"10": "maven_user", "20": "builder", "30": "advanced_builder"}
 
 ALL_TRACKS = {**BASE_TRACKS, **WFF_TRACKS, **SPEC_TRACKS, **ADV_TRACKS}
 
-# Track letter I was retired (looks like numeral 1) → renamed to M in display.
-# Filesystem paths still use "I". Map canonical code → filesystem letter.
-FS_LETTER = {"40M": "40I", "50M": "50I"}
+# Track letter I was retired (looks like numeral 1) → renamed to M everywhere.
+# Filesystem now uses M directly; no mapping needed.
 
 def fs_code(code):
-    """Return the filesystem-level track code (handles I→M rename)."""
-    return FS_LETTER.get(code, code)
+    """Return the filesystem-level track code (identity — I→M rename is complete)."""
+    return code
 
 # Old specialist labels that were re-lettered: old→new
 # TM-40A=ORSA, B=AIEng, C=MLE, D=PM, E=KM, F=SWE  →  now G–M
@@ -191,7 +190,7 @@ def check_completeness():
                  **{k: v for k, v in SPEC_TRACKS.items()}}
     for code, slug in ex_tracks.items():
         fc = fs_code(code)
-        ex_dir = MT / "exercises" / f"EX-{fc}_{slug}"
+        ex_dir = MT / "exercises" / f"EX_{fc}_{slug}"
         for fname in ("EXERCISE.md", "ENVIRONMENT_SETUP.md"):
             check_file_exists(ex_dir / fname, f"Exercise {fname}: EX_{code}")
 

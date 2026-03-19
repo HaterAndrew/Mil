@@ -1,6 +1,6 @@
 # TM-40E — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-40E teaches Protection WFF practitioners — CBRN officers, AT officers, Military Police, ADA officers, and support engineers — how to use MSS in daily protection work. The focus is operational use of MSS to accomplish protection tasks aligned to ADP 3-37 and subordinate doctrine. No coding, no pipeline development, no transform experience required.
+> **Forward:** TM-40E teaches Protection WFF practitioners — CBRN officers, AT officers, Military Police, ADA officers, and support engineers — how to use MSS in daily protection work. The focus is operational use of MSS to accomplish protection tasks aligned to ADP 3-37 and subordinate doctrine. No coding, no pipeline development, no transform experience required.
 > **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; CONCEPTS_GUIDE_TM40E_PROTECTION (required before beginning this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -15,7 +15,7 @@
 
 **BLUF:** TM-40E teaches Protection WFF practitioners — CBRN officers, AT officers, Military Police, ADA officers, and support engineers — how to use MSS in daily protection work. The focus is operational use of MSS to accomplish protection tasks aligned to ADP 3-37 and subordinate doctrine. No coding, no pipeline development, no transform experience required.
 
-### 1-1. Protection Doctrine and MSS
+### 1-1. Protection Specialist Manual
 
 The protection WFF preserves the force and its freedom of action (ADP 3-37, para 1-1). Protection encompasses all tasks that protect friendly forces, civilian partners, and critical infrastructure from all threats and hazards — kinetic, CBRN, electronic, physical, and psychological. Commanders and staffs integrate, synchronize, and direct protection activities as part of the operations process to preserve combat power across all phases of the operation.
 
@@ -135,21 +135,9 @@ TM-40E aligns to multiple doctrinal publications. Table 1-4 provides a quick ref
 
 ### 1-5. Scope: What TM-40E Covers and Does Not Cover
 
-**TM-40E covers:**
-- Operational use of MSS for CBRN defense, AT, physical security, AMD coordination, EW awareness, survivability tracking, and CRM
-- Protection Working Group data management on MSS
-- FPCON management, RAM tracking, AT assessment data management
-- CBRN event reporting, contamination overlay management, detection equipment status tracking
-- Echelon-specific guidance for company through division/corps protection cells
-- Degraded operations procedures and fallback products
+**TM-40E covers** operational use of MSS for CBRN defense, AT, physical security, AMD coordination, EW awareness, survivability tracking, and CRM; Protection Working Group data management on MSS; FPCON management, RAM tracking, AT assessment data management; CBRN event reporting, contamination overlay management, detection equipment status tracking; echelon-specific guidance for company through division/corps protection cells; and degraded operations procedures and fallback products.
 
-**TM-40E does NOT cover:**
-- Pipeline construction, data transforms, or code development — see TM-30 and TM-40L
-- Building Workshop dashboards — see TM-20
-- Intelligence analysis methods — see TM-40A
-- Kinetic fires coordination — see TM-40B
-- Information operations development — see IO officer / G7 coordination
-- Medical/CASEVAC tracking — see TM-40D (Sustainment)
+**TM-40E does NOT cover** pipeline construction, data transforms, or code development — see TM-30 and TM-40L; building Workshop dashboards — see TM-20; intelligence analysis methods — see TM-40A; kinetic fires coordination — see TM-40B; information operations development — see IO officer / G7 coordination; or medical/CASEVAC tracking — see TM-40D (Sustainment).
 
 ### 1-6. MOS Coverage and Audience
 
@@ -1653,7 +1641,7 @@ Post-laboratory or technical analysis. Format:
 | Recommended countermeasures | Prioritized list | Yes |
 | Approving authority name | Name and position | Yes |
 | Approving authority signature | Electronic signature in MSS | Yes |
-| Classification | UNCLASSIFIED, FOUO, or higher | Yes |
+| Classification | UNCLASSIFIED, CUI, or higher | Yes |
 
 ---
 
@@ -1847,7 +1835,6 @@ Complete the following in order. Note any data quality issue and assign correcti
 
 ---
 
-*UNCLASSIFIED // FOR OFFICIAL USE ONLY*
 
 *TM-40E — Maven Smart System: Protection Warfighting Function*
 *Headquarters, United States Army Europe and Africa*

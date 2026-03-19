@@ -14,16 +14,14 @@ from sqlalchemy import (
     Integer,
     String,
     UniqueConstraint,
-    create_engine,
-    event,
     func,
 )
 from sqlalchemy.orm import (
-    DeclarativeBase,
     Session,
     relationship,
-    sessionmaker,
 )
+
+from shared.database import Base, create_app_engine, create_session_factory
 
 # ---------------------------------------------------------------------------
 # Database
@@ -31,22 +29,9 @@ from sqlalchemy.orm import (
 DB_PATH = Path(__file__).parent / "exam_analytics.db"
 DATABASE_URL = f"sqlite:///{DB_PATH}"
 
-engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+engine = create_app_engine("exam_analytics")
 
-
-@event.listens_for(engine, "connect")
-def _set_sqlite_pragmas(dbapi_conn, _connection_record):
-    cursor = dbapi_conn.cursor()
-    cursor.execute("PRAGMA journal_mode=WAL")
-    cursor.execute("PRAGMA foreign_keys=ON")
-    cursor.close()
-
-
-SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)
-
-
-class Base(DeclarativeBase):
-    pass
+SessionLocal = create_session_factory(engine)
 
 
 # ---------------------------------------------------------------------------
@@ -87,7 +72,7 @@ class ExamResult(Base):
     )
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    session_id = Column(Integer, ForeignKey("exam_sessions.id"), nullable=False)
+    session_id = Column(Integer, ForeignKey("exam_sessions.id"), nullable=False, index=True)
     trainee_id = Column(String(100), nullable=False)  # DODID or name
     total_score = Column(Integer, nullable=False)
     total_possible = Column(Integer, nullable=False, default=60)

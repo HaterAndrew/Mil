@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260918_197 — TERRAIN ANALYSIS
+DTG: 180000Z SEP 2026
+Unit: 3-2 BN
+
+Summary: Flooding along the river valley near EICHWALD has reduced available crossing points. Only the bridge at grid 33T646344 remains viable for military traffic.
+
+Impact to Operations: Movement planning should account for degraded conditions. Coordination with engineer assets recommended.
+Recommended Action: Update common operational picture. Disseminate terrain overlay to subordinate units. Request engineer reconnaissance if conditions persist beyond 72 hours.

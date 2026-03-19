@@ -28,7 +28,7 @@ ROW_EVEN = RGBColor(0xEB, 0xEE, 0xF3)  # alternating row fill B
 TIMELINE_BG = RGBColor(0x0D, 0x1F, 0x3C)  # dark navy for timeline bar
 
 # ── Slide metadata ─────────────────────────────────────────────────────────────
-CLASSIFICATION = "UNCLASSIFIED"
+CLASSIFICATION = ""
 SLIDE_TITLE    = "MAVEN BUILDER TRAINING — FORCE ROLLOUT PLAN"
 POC_LINE       = "USAREUR-AF Operational Data Team  |  C2DAO  |  MAR 2026"
 
@@ -289,7 +289,7 @@ def build_content_slide(slide):
     p = ft.paragraphs[0]
     p.alignment = PP_ALIGN.CENTER
     run = p.add_run()
-    run.text = f"USAREUR-AF  ·  C2DAO  ·  MSS-POI-001  ·  MAR 2026  ·  {CLASSIFICATION}"
+    run.text = "USAREUR-AF  ·  C2DAO  ·  MSS-POI-001  ·  MAR 2026"
     run.font.size = Pt(7)
     run.font.color.rgb = NAVY2
 

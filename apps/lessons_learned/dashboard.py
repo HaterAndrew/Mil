@@ -6,6 +6,7 @@ tagging taxonomy, cross-reference matrix, and action item tracking.
 
 from __future__ import annotations
 
+import os
 import sys
 from datetime import date, timedelta
 from pathlib import Path
@@ -71,7 +72,7 @@ from theme import (
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-API_BASE = "http://localhost:8014"
+API_BASE = os.environ.get("LESSONS_LEARNED_API_URL", "http://localhost:8014")
 
 st.set_page_config(
     page_title="MSS Lessons Learned",
@@ -254,9 +255,10 @@ active_tab = st.sidebar.radio("Navigate", tab_names)
 if active_tab == "Pipeline Overview":
     st.title("Lessons Learned Pipeline Overview")
 
-    stats = load_pipeline_stats()
-    actions = load_action_items()
-    all_lessons = load_all_lessons()
+    with st.spinner("Loading data..."):
+        stats = load_pipeline_stats()
+        actions = load_action_items()
+        all_lessons = load_all_lessons()
 
     if not all_lessons:
         st.info("No lessons loaded. Seed the database to get started.")

@@ -7,6 +7,7 @@ GO/NO_GO tracking, category co-occurrence, and issue resolution.
 from __future__ import annotations
 
 import json
+import os
 import sys
 from datetime import date, timedelta
 from pathlib import Path
@@ -45,7 +46,7 @@ from theme import inject_branding, apply_plotly_theme, NAVY, NAVY_DARK, NAVY_LIG
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-API_BASE = "http://localhost:8003"
+API_BASE = os.environ.get("AAR_AGGREGATOR_API_URL", "http://localhost:8003")
 
 st.set_page_config(
     page_title="MSS AAR Aggregator",
@@ -254,7 +255,8 @@ if active_tab == "Command Overview":
 
     active_track = track_selector(key="cmd_track")
 
-    stats = load_summary_stats()
+    with st.spinner("Loading data..."):
+        stats = load_summary_stats()
     if stats.get("total_aars", 0) == 0:
         st.info("No AARs in database. Seed data or enter AARs to get started.")
         st.stop()

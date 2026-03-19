@@ -8,8 +8,8 @@
 | **Program** | Maven Smart System (MSS) Training |
 | **Proponent** | USAREUR-AF C2DAO |
 | **Effective Date** | March 2026 |
-| **Applies To** | All trainees enrolled in TM-10 through TM-40M; T3-I and T3-F candidates |
-| **Classification** | UNCLASSIFIED |
+| **Applies To** | All trainees enrolled in TM-10 through TM-50O; T3-I and T3-F candidates |
+| **Classification** | — |
 
 > **SUPERSESSION:** This CAD supersedes no prior publication. Initial publication: March 2026.
 
@@ -44,13 +44,15 @@ All training is in the **MSS Training Environment** — a Foundry instance separ
 | TM-40A–F (WFF, each track) | Quarterly or as-needed (high demand) | 12 students | 4 students |
 | TM-40G/H/M/L | Semi-annual or on demand | 6 students | 2 students |
 | TM-40J/K | Quarterly | 8 students | 3 students |
-| **Builder Sprint (BSP)** | **Quarterly (4x per FY)** | **16 participants** | **4 participants** |
+| TM-40N/O | Semi-annual or on demand | 6 students | 2 students |
+| TM-50G–O (Advanced Specialist) | Semi-annual or annual | 6 students | 2 students |
+| **Foundry Bootcamp (FBC)** | **Quarterly (4x per FY)** | **16 participants** | **4 participants** |
 | **T3-I (Instructor Certification)** | **Semi-annual** | **8 candidates** | **3 candidates** |
 | **T3-F (MSC Force Multiplier)** | **Quarterly (aligned with MTT rotation)** | **8 candidates** | **3 candidates** |
 
 > **NOTE:** WFF tracks (TM-40A–F) are expected to be the highest-volume courses after TM-10/20. Plan for more frequent scheduling. Each track runs independently; functional staff attend only the track relevant to their WFF assignment.
 
-> **NOTE (BSP):** The Builder Sprint is a separate event outside the TM course series. It is listed here for scheduling coordination purposes only. BSP governance is in BSP-SOP-001 (BUILDER_SPRINT_SOP.md). BSP enrollment uses the standard Enrollment Request Form (Appendix A) plus a Project Brief (Appendix D). Lead time: T-21 days minimum; Project Brief due T-14 days.
+> **NOTE (FBC):** The Foundry Bootcamp is a separate event outside the TM course series. It is listed here for scheduling coordination purposes only. FBC governance is in FBC-SOP-001 (FOUNDRY_BOOTCAMP_SOP.md). FBC enrollment uses the standard Enrollment Request Form (Appendix A) plus a Project Brief (Appendix D). Lead time: T-21 days minimum; Project Brief due T-14 days.
 
 Classes below the minimum size threshold are typically consolidated with a subsequent iteration. Contact C2DAO Training POC for current schedule.
 
@@ -100,6 +102,9 @@ Prerequisites are verified by C2DAO before a seat is confirmed. Do not assume en
 | TM-40J | TM-10, TM-20, TM-30 Go on file (all required) |
 | TM-40K | TM-10, TM-20, TM-30 Go on file (all required) |
 | TM-40L | TM-10, TM-20, TM-30 Go on file (all required); TypeScript or Python proficiency; REST API familiarity |
+| TM-40N | TM-10, TM-20, TM-30 Go on file (all required); design tool familiarity |
+| TM-40O | TM-10, TM-20, TM-30 Go on file (all required); Linux sysadmin background; containers/Git proficiency |
+| TM-50G–O | Corresponding TM-40 track Go on file (required) |
 
 TM-30 is a hard prerequisite for ALL TM-40 tracks — both WFF functional (TM-40A–F) and specialist (TM-40G–O), including TM-40J and TM-40K. Do not enroll any personnel in a TM-40 track without a verified TM-30 Go on file.
 
@@ -161,7 +166,8 @@ Attendance at all scheduled blocks is required. A trainee who misses more than *
 | TM-30 (40 hrs) | 4 hours |
 | TM-40A–F / WFF tracks (24 hrs) | 2.4 hours (effectively 0 — contact C2DAO if you must miss any time) |
 | TM-40G/H/M/L (40 hrs) | 4 hours |
-| TM-40J/K (24 hrs) | 2.4 hours (effectively 0 — contact C2DAO if you must miss any time) |
+| TM-40J/K (32 hrs) | 3.2 hours |
+| TM-40N/O (40 hrs) | 4 hours |
 
 An absence does not excuse a trainee from evaluation. Missed instruction that covers evaluated tasks places the full burden of self-remediation on the trainee.
 
@@ -253,7 +259,7 @@ Within 1 duty day of a No-Go result:
 1. Evaluator provides written debrief identifying each failed task and reason for No-Go
 2. Instructor and trainee complete counseling documenting: failed tasks, recommended remediation plan, re-evaluation date
 3. Unit Training NCO is notified
-4. For TM-40G/H/M/L: trainee's commander is notified
+4. For TM-40G/H/M/L/N/O: trainee's commander is notified
 
 ### 6-3. Remediation Training Requirements
 
@@ -261,7 +267,7 @@ Within 1 duty day of a No-Go result:
 |---|---|---|
 | TM-10 | 2 hours | Self-study with TM + supervised lab with instructor |
 | TM-20, TM-40A–F (WFF), TM-40J, TM-40K | 4 hours | Supervised lab on failed tasks; build from scratch on a different dataset |
-| TM-30, TM-40G, TM-40H, TM-40M, TM-40L | 8 hours | Full-day supervised lab; rebuilding failed components |
+| TM-30, TM-40G, TM-40H, TM-40M, TM-40L, TM-40N, TM-40O | 8 hours | Full-day supervised lab; rebuilding failed components |
 
 Remediation focuses on failed tasks. The re-evaluation covers all course tasks — not just previously failed ones.
 
@@ -301,6 +307,8 @@ No-Go results, remediation completion, and re-evaluation results are all documen
 | Code Workspace (TM-40G) | CPU-allocated Code Workspace for Python/R analysis | C2DAO only | 7–10 duty days |
 | GPU Code Workspace (TM-40M) | GPU-enabled Code Workspace for model training | C2DAO only | 10+ duty days |
 | OSDK Developer (TM-40L) | OSDK developer token; access to specific Object Types for development | C2DAO only | 10+ duty days |
+| Workshop Design (TM-40N) | Editor + AIP Logic configuration + design review access | C2DAO | 7–10 duty days |
+| Kubernetes Cluster (TM-40O) | Kubernetes cluster access + CI/CD pipeline access | C2DAO only | 10+ duty days |
 
 ### 7-2. Access Troubleshooting
 
@@ -408,10 +416,12 @@ NOTE: TM-30 is a hard prerequisite for ALL TM-40 tracks (A–F WFF and G–O spe
       No TM-40 enrollment will be confirmed without a verified TM-30 Go on file.
 
 TECHNICAL PREREQUISITES (TM-40 specialist tracks only)
-[ ] Code Workspace provisioned and test script passing (TM-40G/I)
+[ ] Code Workspace provisioned and test script passing (TM-40G/M)
 [ ] AIP Logic authoring access confirmed (TM-40H)
 [ ] GPU Code Workspace provisioned and test script passing (TM-40M)
 [ ] OSDK developer token active (TM-40L)
+[ ] Workshop design access (Editor + AIP Logic configuration) confirmed (TM-40N)
+[ ] Kubernetes cluster access + CI/CD pipeline access confirmed (TM-40O)
 
 Unit Training NCO/Officer:  _______________________________
 Signature:               _________________________________
@@ -561,17 +571,17 @@ C2DAO POC:       _______________________________________
 
 ---
 
-## APPENDIX D — BUILDER SPRINT PROJECT BRIEF FORM
+## APPENDIX D — FOUNDRY BOOTCAMP PROJECT BRIEF FORM
 
 ```
 =========================================================
-BUILDER SPRINT — PROJECT BRIEF
+FOUNDRY BOOTCAMP — PROJECT BRIEF
 =========================================================
 Submitted by:   _________________________________________
 Rank / Unit:    _________________________________________
 MOS:            _________________________________________
 DSN / Email:    _________________________________________
-Sprint cycle:   [ ] BSP-1  [ ] BSP-2  [ ] BSP-3  [ ] BSP-4
+Bootcamp cycle:   [ ] FBC-1  [ ] FBC-2  [ ] FBC-3  [ ] FBC-4
 FY:             _________________________________________
 
 TM-20 Go on file (date): _______________________________
@@ -604,7 +614,7 @@ Source 3: _______________________  [ ] CONFIRMED  [ ] PENDING
 NOTE: All data sources must be CONFIRMED before enrollment
 is finalized. PENDING sources must be resolved before T-5 days.
 
-SCOPE (5-day sprint):
+SCOPE (5-day bootcamp):
 In scope:
 _________________________________________________________
 _________________________________________________________
@@ -614,7 +624,7 @@ _________________________________________________________
 _________________________________________________________
 
 Does this project require any of the following?
-(If YES, route to TM-40 specialist enrollment instead of BSP)
+(If YES, route to TM-40 specialist enrollment instead of FBC)
 [ ] Python code                    YES / NO
 [ ] TypeScript / JavaScript code   YES / NO
 [ ] OSDK integration               YES / NO
@@ -637,5 +647,5 @@ C2DAO reviewer:    _______________________________________
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *CAD MSS-CAD-001 | Version 1.0 | March 2026*

@@ -14,7 +14,7 @@ category: reference
 # Data Architecture Radar -- Plan for Success
 
 *USAREUR-AF Enterprise Data Compass and Plan for Success -- Version 1.0 -- February 2026*
-*CUI // FOUO*
+*CUI*
 
 ### Authorizing Document
 
@@ -283,7 +283,7 @@ This radar is the **authoritative record** of data architecture standards, tool 
 ---
 
 *Operational Data Team -- HERMES Program -- USAREUR-AF*
-*CUI // FOUO*
+*CUI*
 *Distribution: USAREUR-AF / LANDCOM -- Operational Data Team, HERMES Program. Authorized recipients only per CUI handling procedures.*
 *Proponent: Chief Data Architect, Operational Data Team (ODT)*
 *Authority: OPORD 0015-26, USAREUR-AF Unified Data Transformation Strategy*

@@ -156,7 +156,7 @@ Complete **5+ duty days before Day 1:**
 
 | Item | Reference |
 |---|---|
-| **Practical Exercise** | EX_40A (EXERCISE.md + ENVIRONMENT_SETUP.md) — `exercises/EX_40A/` |
+| **Practical Exercise** | EX_40A (EXERCISE.md + ENVIRONMENT_SETUP.md) — `exercises/EX_40A_intelligence/` |
 | **Pre-course exam** | EXAM_TM40A_PRE — `exercises/exams/EXAM_TM40A_PRE.md` |
 | **Post-course exam** | EXAM_TM40A_POST — `exercises/exams/EXAM_TM40A_POST.md` |
 
@@ -179,5 +179,5 @@ Personnel completing multiple WFF tracks do not repeat TM-10, TM-20, or TM-30. E
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Syllabus TM-40A | Version 1.0 | March 2026*

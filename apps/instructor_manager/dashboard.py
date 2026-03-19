@@ -6,6 +6,7 @@ individual instructor detail, and teaching workload analysis.
 
 from __future__ import annotations
 
+import os
 import sys
 from datetime import date, timedelta
 from pathlib import Path
@@ -62,7 +63,7 @@ from theme import (
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-API_BASE = "http://localhost:8011"
+API_BASE = os.environ.get("INSTRUCTOR_MANAGER_API_URL", "http://localhost:8011")
 
 st.set_page_config(
     page_title="MSS Instructor Manager",
@@ -222,9 +223,10 @@ active_tab = st.sidebar.radio("Navigate", tab_names)
 if active_tab == "Instructor Overview":
     st.title("Instructor Overview")
 
-    instructors = load_instructors()
-    coverage = load_coverage()
-    expiring_30 = load_expiring(30)
+    with st.spinner("Loading data..."):
+        instructors = load_instructors()
+        coverage = load_coverage()
+        expiring_30 = load_expiring(30)
 
     if not instructors:
         st.info("No instructors loaded. Seed the database first.")

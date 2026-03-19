@@ -83,7 +83,7 @@ D. The incoming Soldier's reported readiness score after reviewing the PCS packa
 A. A single-point-of-failure knowledge risk requiring immediate mitigation: document the workflow, cross-train a second Soldier, and establish a written SOP before the NCO's PCS date
 B. A low-risk item — the NCO will brief their replacement before PCS
 C. An acceptable risk managed under the G2's succession planning process
-D. A FOUO concern that should be handled separately from the KM risk register
+D. A CUI concern that should be handled separately from the KM risk register
 
 **10. A legacy theater KM system built in 2020 has no decommission plan. The system is still referenced in weekly battle rhythm slides despite significant data staleness. Per TM-50K, this situation represents:**
 
@@ -232,5 +232,5 @@ SA-5. Full credit: quantitative measures (three required) — lesson implementat
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-50K Post-Test | Version 1.0 | March 2026*

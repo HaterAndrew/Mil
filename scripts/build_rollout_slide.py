@@ -21,7 +21,7 @@ WHITE      = RGBColor(0xFF, 0xFF, 0xFF)
 OFF_WHITE  = RGBColor(0xF3, 0xF5, 0xFA)   # --off-white  — alternating row fill
 LIGHT_GRAY = RGBColor(0xE0, 0xE4, 0xEF)   # --gray-100   — table borders
 DARK_TEXT  = RGBColor(0x0A, 0x16, 0x28)   # --gray-900   — body text
-GREEN_BANNER = RGBColor(0x1E, 0x6B, 0x2A) # UNCLASSIFIED banner green
+GREEN_BANNER = RGBColor(0x1E, 0x6B, 0x2A) # banner green
 
 # ── Slide dimensions (widescreen 16:9) ──────────────────────────────────────
 prs = Presentation()
@@ -72,20 +72,14 @@ add_rect(slide, 0, 0, 13.33, 7.5, fill_rgb=OFF_WHITE)
 # ── Header bar ───────────────────────────────────────────────────────────────
 add_rect(slide, 0, 0, 13.33, 1.0, fill_rgb=NAVY_DARK)
 
-# Classification banner (UNCLASSIFIED)
-add_rect(slide, 0, 0, 13.33, 0.22, fill_rgb=GREEN_BANNER)
-add_textbox(slide, 0, 0.01, 13.33, 0.20,
-            "UNCLASSIFIED", font_size=8, bold=True,
-            color=WHITE, align=PP_ALIGN.CENTER)
-
 # Title
-add_textbox(slide, 0.3, 0.22, 9.0, 0.55,
+add_textbox(slide, 0.3, 0.05, 9.0, 0.55,
             "MAVEN BUILDER TRAINING — FORCE ROLLOUT PLAN",
             font_size=20, bold=True, color=WHITE, align=PP_ALIGN.LEFT)
 
 # Subtitle / date
-add_textbox(slide, 0.3, 0.70, 9.0, 0.28,
-            "USAREUR-AF Operational Data Team  |  UNCLASSIFIED  |  MAR 2026",
+add_textbox(slide, 0.3, 0.53, 9.0, 0.28,
+            "USAREUR-AF Operational Data Team  |  MAR 2026",
             font_size=9, bold=False, color=GOLD_LIGHT, align=PP_ALIGN.LEFT)
 
 # Seal placeholder (right side of header)
@@ -184,11 +178,7 @@ add_textbox(slide, 0.20, footer_y + 0.04, 12.80, 0.24,
             "RECOMMENDED TIMELINE:  Directive signed NLT D+30  |  Cadre designated D+45  |  First cohort begins D+90  |  Full force completion D+180",
             font_size=8, bold=True, color=GOLD, align=PP_ALIGN.CENTER)
 
-# ── Classification footer ─────────────────────────────────────────────────────
-add_rect(slide, 0, 7.28, 13.33, 0.22, fill_rgb=GREEN_BANNER)
-add_textbox(slide, 0, 7.29, 13.33, 0.20,
-            "UNCLASSIFIED", font_size=8, bold=True,
-            color=WHITE, align=PP_ALIGN.CENTER)
+
 
 # ── Save ──────────────────────────────────────────────────────────────────────
 out_path = "maven_training/mss_info_app/Maven_Rollout_Plan.pptx"

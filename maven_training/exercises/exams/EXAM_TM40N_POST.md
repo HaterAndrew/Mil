@@ -59,7 +59,7 @@ D. The Figma file only — the SWE will figure out the details
 
 **6. When conducting user research with military personnel, a key consideration is:**
 
-A. Rank dynamics — a junior soldier may not freely critique a system in front of senior leaders; use peer groups or anonymous methods
+A. Rank dynamics — a junior Soldier may not freely critique a system in front of senior leaders; use peer groups or anonymous methods
 B. Research should only be conducted with officers
 C. All research must be conducted in a SCIF
 D. User research is not necessary in military settings because requirements come from higher headquarters
@@ -127,7 +127,7 @@ Passing: 39/56 (70%) — Post-test only. Pre-test is diagnostic.
 3. A — Classification banners must be displayed at the top and bottom of every screen, using IC/DoD mandated colors, and remain visible at all times.
 4. C — Redundant encoding (color + icon + text) is required because color alone fails for colorblind users and in poor lighting.
 5. B — A complete handoff includes mockups for all states, interaction specification, data bindings, accessibility checklist, and edge case documentation.
-6. A — Rank dynamics require peer groups or anonymous methods; a junior soldier may not freely critique a system in front of senior leaders.
+6. A — Rank dynamics require peer groups or anonymous methods; a junior Soldier may not freely critique a system in front of senior leaders.
 7. D — Workshop uses a grid-based layout with a fixed catalog of widget types; designers must know the widget vocabulary before designing.
 8. C — WCAG minimum is 44x44px, with 48x48px preferred for gloved/field operation.
 
@@ -149,5 +149,5 @@ S-14. Full credit (10 pts): in the balanced team model, the designer, engineer, 
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-40N Post-Test | Version 1.0 | March 2026*

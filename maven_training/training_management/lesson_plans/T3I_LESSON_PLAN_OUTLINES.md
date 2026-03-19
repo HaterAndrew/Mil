@@ -509,5 +509,5 @@
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Lesson Plan Outlines — T3-I Instructor Certification | Version 1.0 | March 2026*

@@ -1,6 +1,6 @@
 # TM-40F — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-40F teaches Mission Command practitioners — S3s, XOs, battle captains, and G3 staff — how to use MSS in daily operational work. No coding or pipeline development. Pure operational use of a data-enabled enterprise platform in support of the Mission Command warfighting function.
+> **Forward:** TM-40F teaches Mission Command practitioners — S3s, XOs, battle captains, and G3 staff — how to use MSS in daily operational work. No coding or pipeline development. Pure operational use of a data-enabled enterprise platform in support of the Mission Command warfighting function.
 > **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; CONCEPTS_GUIDE_TM40F_MISSION_COMMAND (required before beginning this manual). Builder skills are not exercised in this track — Mission Command practitioners operate pre-built MSS products (see paragraph 1-4, NOTE). No coding, pipeline development, or transform experience is required or assumed.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -14,7 +14,7 @@
 
 **BLUF:** TM-40F teaches Mission Command practitioners — S3s, XOs, battle captains, and G3 staff — how to use MSS in daily operational work. No coding or pipeline development. Pure operational use of a data-enabled enterprise platform in support of the Mission Command warfighting function.
 
-### 1-1. Mission Command Doctrine and MSS
+### 1-1. Mission Command Specialist Manual
 
 Mission Command is the Army's approach to command and control that empowers subordinate commanders to exercise disciplined initiative within the commander's intent, enabling agile and adaptive action (ADP 6-0, para 1-1). The seven principles of Mission Command are: build cohesive teams through mutual trust; create shared understanding; provide a clear commander's intent; exercise disciplined initiative; use mission orders; accept prudent risk; and foster collaborative, inclusive leadership (ADP 6-0, para 1-28).
 
@@ -26,29 +26,17 @@ The USAREUR-AF C2DAO built MSS on Palantir Foundry specifically to integrate ope
 
 > **NOTE:** The **EUCOM Thunderforge AI Planning Ecosystem** (DIU/Scale AI contract, 2024–25) employs AI agents to augment MDMP and wargaming at theater level, compressing planning timelines. Mission Command practitioners trained on MSS are the operational users of Thunderforge-class AI planning tools — the staff integration and MDMP data procedures in TM-40F are directly applicable to AI-augmented planning environments where human judgment remains authoritative over AI-generated options.
 
+> **NOTE:** XVIII Airborne Corps published a case study of data-enabled Mission Command in *Military Review* ("Fighting with Live Data," February 2026). Their BDA visualization capability — built by an ODT in response to the Corps commander's requirement to visualize enemy integrated fires complex attrition in real-time — delivered a prototype in 3 months, an MVP in 6, and a full handoff to the Army Intelligence Data Platform (INSCOM) in 9 months. The capability answers two questions simultaneously for the commander: *Where are there operational risks?* and *Where are there operational opportunities?* It ties intelligence reporting to targeting data, enabling longitudinal trend analysis and proactive plan adjustment. This illustrates one pattern for data-enabled Mission Command: commanders define the operational problem, a data team builds the product, and staff sections integrate it into the decision cycle. The BDA tool has since been used in exercises across XVIII ABC, 101st, and 82nd, and is being adopted by USAREUR-AF and III Corps. Different commands will apply this pattern differently based on their mission and data environment.
+>
+> *Source: Forney, Herrmann, and Steele, "Fighting with Live Data," Military Review Online Exclusive, February 2026.*
+
+> **NOTE:** In emerging terminology, the MSS applications used in TM-40F are **Automated Fighting Products (AFPs)** — the digital evolution of analog fighting products (hand-written OPORDs) through digital products (Excel/PowerPoint/SharePoint) to automated tools connected to live data. For an AFP to be useful in the MDMP, it must be deployed during steps 1-2 so the rest of the staff can leverage it during analysis and planning. MSS applications must be pre-built, tested, and maintained before combat, not created ad hoc during execution. TM-40F teaches Mission Command practitioners to consume and direct these AFPs in operational settings. *(AFP terminology from Adkins, "Achieving Decision Dominance," Military Review, January-February 2025 — one officer's proposal for how to conceptualize these products.)*
+
 ### 1-2. Scope: What TM-40F Covers and Does Not Cover
 
-**TM-40F covers:**
+**TM-40F covers** staff role integration with MSS for each section (S1 through S6, cross-functional cells, functional area officers); MDMP data support procedures for all seven steps (FM 5-0); battle rhythm design, mapping, and data product management (FM 6-0, ATP 6-0.5); CP configuration and MSS display management across echelon types (ATP 6-0.5); CCIR loading, monitoring, and decision support product management (FM 6-0); COP architecture and data layer integration (FM 6-02); assessment product generation (MOE/MOP) on MSS (ADP 5-0, FM 5-0); SITREP, SPOTREP, and readiness report generation from MSS data; degraded operations procedures and fallback products; and echelon-specific guidance from BCT through Corps.
 
-- Staff role integration with MSS for each section (S1 through S6, cross-functional cells, functional area officers)
-- MDMP data support procedures for all seven steps (FM 5-0)
-- Battle rhythm design, mapping, and data product management (FM 6-0, ATP 6-0.5)
-- CP configuration and MSS display management across echelon types (ATP 6-0.5)
-- CCIR loading, monitoring, and decision support product management (FM 6-0)
-- COP architecture and data layer integration (FM 6-02)
-- Assessment product generation (MOE/MOP) on MSS (ADP 5-0, FM 5-0)
-- SITREP, SPOTREP, and readiness report generation from MSS data
-- Degraded operations procedures and fallback products
-- Echelon-specific guidance from BCT through Corps
-
-**TM-40F does NOT cover:**
-
-- Pipeline construction, data transforms, or code development — see TM-30 and TM-40 series technical manuals
-- Ontology design or dataset schema modification — see TM-30
-- Machine learning model management — see TM-40M
-- AI Logic (AIP) application development — see TM-40H
-- Financial management data systems — see unit S6/IMO
-- Building Workshop applications — see TM-20
+**TM-40F does NOT cover** pipeline construction, data transforms, or code development — see TM-30 and TM-40 series technical manuals; ontology design or dataset schema modification — see TM-30; machine learning model management — see TM-40M; AI Logic (AIP) application development — see TM-40H; financial management data systems — see unit S6/IMO; or building Workshop applications — see TM-20.
 
 ### 1-3. Audience and MOS Coverage
 

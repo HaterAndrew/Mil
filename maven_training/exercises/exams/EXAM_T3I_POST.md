@@ -151,5 +151,5 @@ Scoring note: For short answer and scenario questions, award full points for ans
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Post-Test T3-I | Version 1.0 | March 2026*

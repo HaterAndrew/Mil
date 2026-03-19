@@ -119,11 +119,11 @@ Complete **10+ duty days before Day 1:**
 | Time | Block | Method | Content |
 |---|---|---|---|
 | 0800–0900 | 18 | Lecture | Platform security: RMF/ATO from infrastructure perspective, STIG compliance, access control, audit logging, break-glass procedures |
-| 0900–1100 | 19 | Exercise | **EX-40O Practical Exercise** begins — build and secure a platform environment from cluster to deployment (see EX-40O for full task list) |
+| 0900–1100 | 19 | Exercise | **EX_40O Practical Exercise** begins — build and secure a platform environment from cluster to deployment (see EX_40O for full task list) |
 | 1100–1115 | — | Break | |
-| 1115–1200 | 20 | Exercise | EX-40O continued |
+| 1115–1200 | 20 | Exercise | EX_40O continued |
 | 1200–1300 | — | Lunch | |
-| 1300–1500 | 21 | Exercise | EX-40O continued — air-gapped deployment and security validation |
+| 1300–1500 | 21 | Exercise | EX_40O continued — air-gapped deployment and security validation |
 | 1500–1515 | — | Break | |
 | 1515–1630 | 22 | Presentation | Platform demonstrations: each trainee presents their environment, pipeline, and security posture |
 | 1630–1700 | 23 | Evaluation | Post-test (EXAM_TM40O_POST); course evaluation; TM-50O pathway discussion |
@@ -133,6 +133,6 @@ Complete **10+ duty days before Day 1:**
 ## Post-Course
 
 - **Evaluation:** EXAM_TM40O_POST administered Day 5 (see schedule)
-- **Proficiency exercise:** EX-40O evaluated against Go/No-Go criteria
+- **Proficiency exercise:** EX_40O evaluated against Go/No-Go criteria
 - **Continuation:** TM-50O — Advanced Platform Engineer (fleet management, SRE, RMF automation, DevEx engineering)
 - **Cross-track recommendation:** Attend TM-40L (Software Engineer) overview session to understand the application developer's perspective on platform services; review TM-50L Chapter 6 (DevSecOps) for the application-side view of CI/CD

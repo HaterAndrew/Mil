@@ -199,5 +199,5 @@ WFF-track analysts (TM-40A through TM-40F) are the operational consumers of capa
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Syllabus TM-40J | Version 3.0 | March 2026*

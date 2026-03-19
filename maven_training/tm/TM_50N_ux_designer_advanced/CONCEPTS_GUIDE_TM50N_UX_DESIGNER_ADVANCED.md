@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-50N COMPANION — ADVANCED UI/UX DESIGNER · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-50N moves from designing applications to designing the system that produces applications. The advanced Designer's output is not a single interface — it is the standards, patterns, and processes that make every interface better.
+> **Forward:** TM-50N moves from designing applications to designing the system that produces applications. The advanced Designer's output is not a single interface — it is the standards, patterns, and processes that make every interface better.
 > **Purpose:** Develops mental models required to lead design at enterprise scale on MSS — design systems, DDIL patterns, coalition considerations, and design operations. Read before beginning TM-50N task instruction.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
@@ -313,5 +313,5 @@ Before proceeding to TM-50N task procedures, confirm you can answer the followin
 
 ---
 
-*CONCEPTS GUIDE — TM-50N COMPANION // ADVANCED UI/UX DESIGNER // UNCLASSIFIED*
+*CONCEPTS GUIDE — TM-50N COMPANION // ADVANCED UI/UX DESIGNER*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA // WIESBADEN, GERMANY // 2026*

@@ -145,5 +145,5 @@ S-13. Full credit (10 pts): response must describe a Soldier Centered Design app
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-40N Pre-Test | Version 1.0 | March 2026*

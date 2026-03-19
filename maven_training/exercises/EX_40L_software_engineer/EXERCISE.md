@@ -6,7 +6,7 @@
 | **Version** | 1.0 — March 2026 |
 | **Prerequisite** | TM-30 REQUIRED; TM-40L — Software Engineer Technical Manual (and TM-10 through TM-20) |
 | **Duration** | 3–4 hours |
-| **Environment** | MSS with Python Transforms, TypeScript/OSDK access, Code Workbook — see ENVIRONMENT_SETUP.md |
+| **Environment** | MSS with Python Transforms, TypeScript/OSDK access, Code Workspace — see ENVIRONMENT_SETUP.md |
 
 ## COMPANION RESOURCES
 
@@ -127,7 +127,7 @@ Self-review your Python Transform against the TM-40L code quality checklist:
 
 ## NEXT STEPS
 
-Participants who receive an overall Go on EX_40L are eligible to enroll in **TM-50L — Advanced Software Engineer**. TM-50L extends into CI/CD pipeline engineering, automated testing frameworks, and production Foundry application deployment. TM-50 is G–M only (advanced specialist tracks).
+Participants who receive an overall Go on EX_40L are eligible to enroll in **TM-50L — Advanced Software Engineer**. TM-50L extends into CI/CD pipeline engineering, automated testing frameworks, and production Foundry application deployment. TM-50 is G–O (advanced specialist tracks).
 
 ## Supplemental — Build with AIP Official Tutorials
 

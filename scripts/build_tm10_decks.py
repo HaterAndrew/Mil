@@ -41,8 +41,8 @@ FOOTER_COLOR = RGBColor(0x18, 0x33, 0x5F)
 
 SLIDE_W = Inches(13.33)
 SLIDE_H = Inches(7.50)
-FOOTER_TEXT = "USAREUR-AF  ·  C2DAO  ·  MSS-TM10  ·  MAR 2026  ·  UNCLASSIFIED"
-CLASSIF = "UNCLASSIFIED"
+FOOTER_TEXT = "USAREUR-AF  ·  C2DAO  ·  MSS-TM10  ·  MAR 2026"
+CLASSIF = ""
 
 # ── Helper functions ──────────────────────────────────────────────────────────
 
@@ -102,7 +102,7 @@ def add_multi(slide, l, t, w, h, lines, font_size=11, color=BLUE,
     return txb
 
 def add_classif_banners(slide):
-    """Top and bottom UNCLASSIFIED banners."""
+    """Top and bottom classification banners (text set by CLASSIF constant)."""
     # top banner (thin purple strip — matches existing decks)
     add_textbox(slide, 0, 0,
                 int(SLIDE_W * 0.914), int(Inches(0.31)),
@@ -157,7 +157,7 @@ def build_mss_platform_overview():
     add_textbox(s, int(Inches(1.5)), int(Inches(3.35)), int(Inches(10)), int(Inches(0.55)),
                 "Your Guide to Using MSS", 20, False, LGRAY, PP_ALIGN.CENTER)
     add_textbox(s, int(Inches(1.5)), int(Inches(4.05)), int(Inches(10)), int(Inches(0.4)),
-                "UNCLASSIFIED  ·  TM-10  ·  No Technical Background Required",
+                "TM-10  ·  No Technical Background Required",
                 12, False, GOLD, PP_ALIGN.CENTER)
     add_footer(s)
 
@@ -184,7 +184,9 @@ def build_mss_platform_overview():
             "▸  Data that was stale before it was printed",
         ]),
         ("WHAT MSS IS", TEAL, [
-            "MSS is your unit's live data environment — a single platform where",
+            "MSS is the mission command information system (MCIS) program of record,",
+            "directed by the USAREUR-AF CG to enable rapid and accurate decision-making.",
+            "It is your unit's live data environment — a single platform where",
             "readiness, personnel, equipment, and operations data are always current.",
             "",
             "▸  One login. One platform.",

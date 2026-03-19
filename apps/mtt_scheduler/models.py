@@ -5,6 +5,8 @@ from __future__ import annotations
 from datetime import date, datetime
 from typing import Literal
 
+import json
+
 from pydantic import BaseModel, Field, field_validator
 
 
@@ -75,6 +77,13 @@ class InstructorResponse(BaseModel):
     assigned_events: int = 0
     created_at: datetime | None = None
     model_config = {"from_attributes": True}
+
+    @field_validator("qualifications", mode="before")
+    @classmethod
+    def decode_qualifications(cls, v):
+        if isinstance(v, str):
+            return json.loads(v)
+        return v or []
 
 
 # ---------------------------------------------------------------------------

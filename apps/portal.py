@@ -6,7 +6,11 @@ Run: streamlit run apps/portal.py --server.port 8500
 
 from __future__ import annotations
 
+import logging
+import os
 import sys
+
+logger = logging.getLogger(__name__)
 from datetime import date
 from pathlib import Path
 
@@ -65,7 +69,7 @@ try:
     _ext_stats["overdue"] = _db.query(Milestone).filter(Milestone.status == "OVERDUE").count()
     _db.close()
 except Exception:
-    pass
+    logger.warning("Failed to load progress_tracker stats", exc_info=True)
 
 try:
     from mtt_scheduler.db import (
@@ -77,7 +81,7 @@ try:
     _ext_stats["enrollments"] = _db.query(Enrollment).count()
     _db.close()
 except Exception:
-    pass
+    logger.warning("Failed to load mtt_scheduler stats", exc_info=True)
 
 try:
     from data_quality.db import (
@@ -89,7 +93,7 @@ try:
     _ext_stats["active_alerts"] = _db.query(Alert).filter(Alert.acknowledged == False).count()
     _db.close()
 except Exception:
-    pass
+    logger.warning("Failed to load data_quality stats", exc_info=True)
 
 try:
     from glossary_search.db import (
@@ -100,7 +104,7 @@ try:
     _ext_stats["glossary_terms"] = _db.query(Term).count()
     _db.close()
 except Exception:
-    pass
+    logger.warning("Failed to load glossary_search stats", exc_info=True)
 
 try:
     from instructor_manager.db import (
@@ -115,7 +119,7 @@ try:
     _ext_stats["coverage_gaps"] = sum(1 for c in coverage if c["certified_count"] == 0)
     _db.close()
 except Exception:
-    pass
+    logger.warning("Failed to load instructor_manager stats", exc_info=True)
 
 try:
     from enrollment_manager.db import (
@@ -130,7 +134,7 @@ try:
     _ext_stats["fill_rate"] = em_stats.get("avg_fill_rate", 0)
     _db.close()
 except Exception:
-    pass
+    logger.warning("Failed to load enrollment_manager stats", exc_info=True)
 
 try:
     from curriculum_tracker.db import (
@@ -144,7 +148,7 @@ try:
     _ext_stats["stale_docs"] = len(get_stale_documents(90, _db))
     _db.close()
 except Exception:
-    pass
+    logger.warning("Failed to load curriculum_tracker stats", exc_info=True)
 
 try:
     from lessons_learned.db import (
@@ -159,7 +163,7 @@ try:
     _ext_stats["open_actions"] = ai_status.get("OPEN", 0) + ai_status.get("IN_PROGRESS", 0)
     _db.close()
 except Exception:
-    pass
+    logger.warning("Failed to load lessons_learned stats", exc_info=True)
 
 
 @st.cache_data(ttl=60)
@@ -277,21 +281,21 @@ st.markdown("---")
 # App directory — all 15 apps as icon tiles on one page
 # ---------------------------------------------------------------------------
 _APPS = [
-    {"icon": "\U0001F3AF", "name": "Readiness Tracker",       "desc": "Soldier/unit completion & RAG heatmap",   "url": "http://localhost:8501", "api": "http://localhost:8001/docs"},
-    {"icon": "\U0001F4DD", "name": "Exam Analytics",           "desc": "Pre/post scores, gain, item analysis",    "url": "http://localhost:8502", "api": "http://localhost:8002/docs"},
-    {"icon": "\U0001F4CB", "name": "AAR Aggregator",           "desc": "After-Action trends & systemic issues",   "url": "http://localhost:8503", "api": "http://localhost:8003/docs"},
-    {"icon": "\U0001F4C8", "name": "Progress Tracker",         "desc": "Individual timelines & stalled alerts",   "url": "http://localhost:8504", "api": "http://localhost:8004/docs"},
-    {"icon": "\U0001F4C5", "name": "MTT Scheduler",            "desc": "Mobile Training Team event calendar",     "url": "http://localhost:8505", "api": "http://localhost:8005/docs"},
-    {"icon": "\U0001F517", "name": "Cross-Ref Validator",      "desc": "Broken links, stale refs, prereq audit",  "url": "http://localhost:8506", "api": "http://localhost:8006/docs"},
-    {"icon": "\U0001F4D6", "name": "Glossary Search",          "desc": "Full-text term & doctrine search",        "url": "http://localhost:8507", "api": "http://localhost:8007/docs"},
-    {"icon": "\U0001F4E6", "name": "Offline Packager",         "desc": "ZIP bundles for DDIL environments",       "url": "http://localhost:8508", "api": "http://localhost:8008/docs"},
-    {"icon": "\U0001F504", "name": "SharePoint Sync",          "desc": "Change detection & sync packages",        "url": "http://localhost:8509", "api": "http://localhost:8009/docs"},
-    {"icon": "\U0001F6E1", "name": "Data Quality Monitor",     "desc": "Pipeline health, alerts & scorecards",    "url": "http://localhost:8510", "api": "http://localhost:8010/docs"},
-    {"icon": "\U0001F9D1\u200D\U0001F3EB", "name": "Instructor Manager", "desc": "Certs, coverage matrix & workload",  "url": "http://localhost:8511", "api": "http://localhost:8011/docs"},
-    {"icon": "\U0001F4CB", "name": "Enrollment Manager",       "desc": "Class rosters, waitlists & seat allocation", "url": "http://localhost:8512", "api": "http://localhost:8012/docs"},
-    {"icon": "\U0001F4DA", "name": "Curriculum Tracker",       "desc": "Doc versions, review cycles & freshness", "url": "http://localhost:8513", "api": "http://localhost:8013/docs"},
-    {"icon": "\U0001F4A1", "name": "Lessons Learned",          "desc": "TTP/WFF taxonomy & action items",         "url": "http://localhost:8514", "api": "http://localhost:8014/docs"},
-    {"icon": "\U00002B50", "name": "CG Training Metrics",      "desc": "Executive scorecard & risk register",     "url": "http://localhost:8515", "api": "http://localhost:8015/docs"},
+    {"icon": "\U0001F3AF", "name": "Readiness Tracker",       "desc": "Soldier/unit completion & RAG heatmap",   "url": os.environ.get("READINESS_TRACKER_APP_URL", "http://localhost:8501"), "api": os.environ.get("READINESS_TRACKER_API_URL", "http://localhost:8001") + "/docs"},
+    {"icon": "\U0001F4DD", "name": "Exam Analytics",           "desc": "Pre/post scores, gain, item analysis",    "url": os.environ.get("EXAM_ANALYTICS_APP_URL", "http://localhost:8502"), "api": os.environ.get("EXAM_ANALYTICS_API_URL", "http://localhost:8002") + "/docs"},
+    {"icon": "\U0001F4CB", "name": "AAR Aggregator",           "desc": "After-Action trends & systemic issues",   "url": os.environ.get("AAR_AGGREGATOR_APP_URL", "http://localhost:8503"), "api": os.environ.get("AAR_AGGREGATOR_API_URL", "http://localhost:8003") + "/docs"},
+    {"icon": "\U0001F4C8", "name": "Progress Tracker",         "desc": "Individual timelines & stalled alerts",   "url": os.environ.get("PROGRESS_TRACKER_APP_URL", "http://localhost:8504"), "api": os.environ.get("PROGRESS_TRACKER_API_URL", "http://localhost:8004") + "/docs"},
+    {"icon": "\U0001F4C5", "name": "MTT Scheduler",            "desc": "Mobile Training Team event calendar",     "url": os.environ.get("MTT_SCHEDULER_APP_URL", "http://localhost:8505"), "api": os.environ.get("MTT_SCHEDULER_API_URL", "http://localhost:8005") + "/docs"},
+    {"icon": "\U0001F517", "name": "Cross-Ref Validator",      "desc": "Broken links, stale refs, prereq audit",  "url": os.environ.get("XREF_VALIDATOR_APP_URL", "http://localhost:8506"), "api": os.environ.get("XREF_VALIDATOR_API_URL", "http://localhost:8006") + "/docs"},
+    {"icon": "\U0001F4D6", "name": "Glossary Search",          "desc": "Full-text term & doctrine search",        "url": os.environ.get("GLOSSARY_SEARCH_APP_URL", "http://localhost:8507"), "api": os.environ.get("GLOSSARY_SEARCH_API_URL", "http://localhost:8007") + "/docs"},
+    {"icon": "\U0001F4E6", "name": "Offline Packager",         "desc": "ZIP bundles for DDIL environments",       "url": os.environ.get("OFFLINE_PACKAGER_APP_URL", "http://localhost:8508"), "api": os.environ.get("OFFLINE_PACKAGER_API_URL", "http://localhost:8008") + "/docs"},
+    {"icon": "\U0001F504", "name": "SharePoint Sync",          "desc": "Change detection & sync packages",        "url": os.environ.get("SHAREPOINT_SYNC_APP_URL", "http://localhost:8509"), "api": os.environ.get("SHAREPOINT_SYNC_API_URL", "http://localhost:8009") + "/docs"},
+    {"icon": "\U0001F6E1", "name": "Data Quality Monitor",     "desc": "Pipeline health, alerts & scorecards",    "url": os.environ.get("DATA_QUALITY_APP_URL", "http://localhost:8510"), "api": os.environ.get("DATA_QUALITY_API_URL", "http://localhost:8010") + "/docs"},
+    {"icon": "\U0001F9D1\u200D\U0001F3EB", "name": "Instructor Manager", "desc": "Certs, coverage matrix & workload",  "url": os.environ.get("INSTRUCTOR_MANAGER_APP_URL", "http://localhost:8511"), "api": os.environ.get("INSTRUCTOR_MANAGER_API_URL", "http://localhost:8011") + "/docs"},
+    {"icon": "\U0001F4CB", "name": "Enrollment Manager",       "desc": "Class rosters, waitlists & seat allocation", "url": os.environ.get("ENROLLMENT_MANAGER_APP_URL", "http://localhost:8512"), "api": os.environ.get("ENROLLMENT_MANAGER_API_URL", "http://localhost:8012") + "/docs"},
+    {"icon": "\U0001F4DA", "name": "Curriculum Tracker",       "desc": "Doc versions, review cycles & freshness", "url": os.environ.get("CURRICULUM_TRACKER_APP_URL", "http://localhost:8513"), "api": os.environ.get("CURRICULUM_TRACKER_API_URL", "http://localhost:8013") + "/docs"},
+    {"icon": "\U0001F4A1", "name": "Lessons Learned",          "desc": "TTP/WFF taxonomy & action items",         "url": os.environ.get("LESSONS_LEARNED_APP_URL", "http://localhost:8514"), "api": os.environ.get("LESSONS_LEARNED_API_URL", "http://localhost:8014") + "/docs"},
+    {"icon": "\U00002B50", "name": "CG Training Metrics",      "desc": "Executive scorecard & risk register",     "url": os.environ.get("TRAINING_METRICS_APP_URL", "http://localhost:8515"), "api": os.environ.get("TRAINING_METRICS_API_URL", "http://localhost:8015") + "/docs"},
 ]
 
 # Render icon tile grid — 5 columns x 3 rows

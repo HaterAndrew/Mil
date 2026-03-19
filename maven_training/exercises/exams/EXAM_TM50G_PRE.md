@@ -232,5 +232,5 @@ SA-5. Full credit: peer review requirement = all TM-50G products must be reviewe
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-50G Pre-Test | Version 1.0 | March 2026*

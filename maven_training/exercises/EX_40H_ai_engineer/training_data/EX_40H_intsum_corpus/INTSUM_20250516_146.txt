@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250516_146 — FORCE PROTECTION
+DTG: 160000Z MAY 2025
+Unit: 4ID G2
+
+Summary: Perimeter sensor activation at FOB SCHWARZBACH (grid 34T643613) at 0230 local. QRF dispatched. Cause determined to be wildlife. No hostile activity.
+
+Assessment: Force protection posture remains at current FPCON level. No change recommended at this time pending further analysis.
+Recommended Action: Maintain heightened awareness. Review FPCON measures with all personnel. Report any suspicious activity immediately through established channels.

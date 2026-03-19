@@ -232,5 +232,5 @@ SA-5. Full credit: metrics — output quality score (human review acceptance rat
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-50H Pre-Test | Version 1.0 | March 2026*

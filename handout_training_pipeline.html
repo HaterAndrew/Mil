@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maven Training Pipeline</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  @page { size: letter; margin: 0.4in; }
+  html, body { height: 100vh; overflow: hidden; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0C2340;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 0.4in;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #fff;
+    line-height: 1.2;
+  }
+  .header h1 span.gold {
+    color: #C8971A;
+  }
+  .header .subtitle {
+    font-size: 12px;
+    font-weight: 600;
+    color: #C8971A;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-top: 5px;
+  }
+
+  /* Divider */
+  .divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #C8971A 30%, #C8971A 70%, transparent 100%);
+    margin-bottom: 18px;
+  }
+
+  /* Pipeline Table */
+  .pipeline-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 18px;
+  }
+  .pipeline-table thead th {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #C8971A;
+    padding: 7px 10px;
+    text-align: left;
+    border-bottom: 2px solid #C8971A;
+  }
+  .pipeline-table tbody td {
+    font-size: 12px;
+    padding: 8px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    vertical-align: middle;
+    line-height: 1.4;
+  }
+  .pipeline-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .pipeline-table tbody tr:nth-child(odd) {
+    background: rgba(255,255,255,0.03);
+  }
+  .pipeline-table tbody tr:hover {
+    background: rgba(200,151,26,0.06);
+  }
+
+  /* Level badge */
+  .level-badge {
+    display: inline-block;
+    background: rgba(200,151,26,0.15);
+    border: 1px solid rgba(200,151,26,0.4);
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #C8971A;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+  .level-badge.core {
+    background: rgba(200,151,26,0.25);
+    border-color: #C8971A;
+  }
+
+  .course-name {
+    font-weight: 600;
+    color: #fff;
+  }
+  .hours {
+    font-weight: 500;
+    color: rgba(255,255,255,0.75);
+    white-space: nowrap;
+  }
+  .audience {
+    font-weight: 400;
+    color: rgba(255,255,255,0.65);
+    font-size: 11.5px;
+  }
+
+  /* Stats row */
+  .stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .stat-item {
+    text-align: center;
+    padding: 10px 16px;
+    border-right: 1px solid rgba(200,151,26,0.2);
+    flex: 1;
+    min-width: 100px;
+  }
+  .stat-item:last-child {
+    border-right: none;
+  }
+  .stat-item .stat-number {
+    font-size: 22px;
+    font-weight: 800;
+    color: #C8971A;
+    line-height: 1.2;
+  }
+  .stat-item .stat-label {
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-top: 3px;
+  }
+
+  .stats-wrapper {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,151,26,0.2);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  /* References */
+  .references {
+    margin-bottom: 14px;
+  }
+  .references .ref-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #C8971A;
+    margin-bottom: 6px;
+  }
+  .references p {
+    font-size: 10px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* Training site link */
+  .site-link {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .site-link a {
+    display: inline-block;
+    background: rgba(200,151,26,0.12);
+    border: 1px solid rgba(200,151,26,0.35);
+    border-radius: 6px;
+    padding: 6px 20px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #C8971A;
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid rgba(200,151,26,0.25);
+    text-align: center;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <h1><span class="gold">Maven</span> Training Pipeline</h1>
+  <div class="subtitle">MSS Workforce Development — USAREUR-AF</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Pipeline Table -->
+<table class="pipeline-table">
+  <thead>
+    <tr>
+      <th style="width:100px;">Level</th>
+      <th>Course</th>
+      <th style="width:90px;">Hours</th>
+      <th>Audience</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="level-badge core">TM-10</span></td>
+      <td class="course-name">Maven User</td>
+      <td class="hours">8 hrs</td>
+      <td class="audience">All personnel</td>
+    </tr>
+    <tr>
+      <td><span class="level-badge core">TM-20</span></td>
+      <td class="course-name">Builder</td>
+      <td class="hours">40 hrs</td>
+      <td class="audience">Data-adjacent staff</td>
+    </tr>
+    <tr>
+      <td><span class="level-badge core">TM-30</span></td>
+      <td class="course-name">Advanced Builder</td>
+      <td class="hours">40 hrs</td>
+      <td class="audience">Unit data leads</td>
+    </tr>
+    <tr>
+      <td><span class="level-badge">TM-40</span></td>
+      <td class="course-name">Specialist <span style="font-weight:400;color:rgba(255,255,255,0.5);font-size:11px;">(14 tracks)</span></td>
+      <td class="hours">40 hrs ea</td>
+      <td class="audience">WFF analysts, engineers, PMs</td>
+    </tr>
+    <tr>
+      <td><span class="level-badge">TM-50</span></td>
+      <td class="course-name">Advanced Specialist <span style="font-weight:400;color:rgba(255,255,255,0.5);font-size:11px;">(6 tracks)</span></td>
+      <td class="hours">40 hrs ea</td>
+      <td class="audience">Senior practitioners</td>
+    </tr>
+    <tr>
+      <td><span class="level-badge">FBC</span></td>
+      <td class="course-name">Foundry Bootcamp</td>
+      <td class="hours">5 days</td>
+      <td class="audience">TM-20+ with approved projects</td>
+    </tr>
+    <tr>
+      <td><span class="level-badge">TM-SL</span></td>
+      <td class="course-name">Senior Leader / Executive</td>
+      <td class="hours">1 day</td>
+      <td class="audience">O-5 / E-9+</td>
+    </tr>
+    <tr>
+      <td><span class="level-badge">T3</span></td>
+      <td class="course-name">Instructor Pipeline</td>
+      <td class="hours">varies</td>
+      <td class="audience">Future instructors</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Stats -->
+<div class="stats-wrapper">
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-number">254</div>
+      <div class="stat-label">PDFs</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">68</div>
+      <div class="stat-label">FY27 Classes</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">7</div>
+      <div class="stat-label">Locations</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">~1,004</div>
+      <div class="stat-label">FY27 Seats</div>
+    </div>
+  </div>
+</div>
+
+<!-- References -->
+<div class="references" style="margin-top:16px;">
+  <div class="ref-title">References</div>
+  <p>AR 350-1 &nbsp;&middot;&nbsp; ADP 7-0 &nbsp;&middot;&nbsp; FM 6-0 &nbsp;&middot;&nbsp; ATP 2-01.3 &nbsp;&middot;&nbsp; AR 25-1 &nbsp;&middot;&nbsp; DA PAM 25-1-1 &nbsp;&middot;&nbsp; EUCOM Digital Modernization Strategy &nbsp;&middot;&nbsp; NATO NAFv4 / STANAGs 5636, 5643</p>
+</div>
+
+<!-- Training Site -->
+<div class="site-link">
+  <a href="https://mss-training-hub.pages.dev">mss-training-hub.pages.dev</a>
+</div>
+
+<!-- Footer -->
+<div class="footer">USAREUR-AF Operational Data Team</div>
+
+</body>
+</html>

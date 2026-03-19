@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250525_148 — OBSERVATION REPORT
+DTG: 250000Z MAY 2025
+Unit: 1AD G2
+
+Summary: OP SPARTAN reported observation of 15 unidentified vehicles moving in convoy formation along ROUTE NEPTUNE at 1200 local. Vehicles: cargo truck. Movement direction: NORTH. No hostile action observed. Convoy cleared the AO within 24 minutes.
+
+Assessment: Movement pattern deviates from established norms. Possible reconnaissance activity. Does not meet CCIR threshold at this time.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

@@ -118,7 +118,7 @@ Create a Workshop dashboard with:
 
 ## NEXT STEPS
 
-Participants who receive an overall Go on EX_40K are eligible to enroll in **TM-50K — Advanced Knowledge Manager**. TM-50K extends into enterprise knowledge architecture, cross-command taxonomy alignment, and AI-assisted knowledge capture at scale. TM-50 is G–M only (advanced specialist tracks).
+Participants who receive an overall Go on EX_40K are eligible to enroll in **TM-50K — Advanced Knowledge Manager**. TM-50K extends into enterprise knowledge architecture, cross-command taxonomy alignment, and AI-assisted knowledge capture at scale. TM-50 is G–O (advanced specialist tracks).
 
 ## Supplemental — Build with AIP Official Tutorials
 

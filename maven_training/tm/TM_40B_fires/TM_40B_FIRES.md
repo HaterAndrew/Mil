@@ -12,7 +12,7 @@
 
 ## CHAPTER 1 — OVERVIEW AND FIRES FUNCTION IN MSS
 
-### 1-1. Purpose
+### 1-1. Fires Specialist Manual
 
 1-1. This manual provides fires warfighting function (WFF) practitioners with the knowledge and tasks required to use the Maven Smart System (MSS) in support of fires planning, targeting, and assessment operations. It is written for all FA and ADA MOS personnel from individual operator through fires cell staff.
 
@@ -1909,7 +1909,6 @@ For technical specialists pursuing advanced data engineering or analytical capab
 
 ---
 
-*UNCLASSIFIED // FOR OFFICIAL USE ONLY*
 
 *TM-40B, Version 1.0, March 2026*
 

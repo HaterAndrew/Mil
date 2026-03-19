@@ -274,5 +274,5 @@ SA-5. Full credit: WFF tracks — TM-40A through TM-40F (Intelligence, Fires, Mo
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-30 Post-Test | Version 1.1 | March 2026*

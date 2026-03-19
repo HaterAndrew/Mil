@@ -9,6 +9,8 @@ from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.responses import Response
 from sqlalchemy.orm import Session
 
+from shared.middleware import SecurityHeadersMiddleware
+
 from .db import PackageRecord as PackageRecordRow, get_db, init_db
 from .models import (
     InventoryCategory,
@@ -46,6 +48,7 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
 )
+app.add_middleware(SecurityHeadersMiddleware)
 
 
 # ---------------------------------------------------------------------------

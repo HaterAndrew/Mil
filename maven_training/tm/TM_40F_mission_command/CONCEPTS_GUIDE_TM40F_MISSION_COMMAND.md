@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-40F COMPANION — MISSION COMMAND WARFIGHTING FUNCTION · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** MSS does not change the nature of Mission Command. It changes the speed, fidelity, and integration of the information that supports it. The seven principles of Mission Command remain doctrinal constants. The information environment in which those principles are exercised has changed fundamentally.
+> **Forward:** MSS does not change the nature of Mission Command. It changes the speed, fidelity, and integration of the information that supports it. The seven principles of Mission Command remain doctrinal constants. The information environment in which those principles are exercised has changed fundamentally.
 > **Prereqs:** TM-10, TM-20, and TM-30 (all required for track entry). Read this Concepts Guide before beginning TM-40F task instruction.
 > **Purpose:** This guide develops the operational mental models required to effectively integrate MSS into Mission Command functions. It is a prerequisite companion to TM-40F and must be read before beginning TM-40F task instruction. This guide is conceptual — it develops understanding, not procedures. No step-by-step tasks appear here.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
@@ -302,7 +302,7 @@ The correction is CCIR discipline. CCIRs should be reviewed at each MDMP cycle a
 - A linked decision (what commander decision does this CCIR enable)
 - An expiration condition (when does this CCIR no longer apply)
 
-> **VIGNETTE:** During a V Corps pre-DEFENDER planning cycle, the G3 section entered the planning phase with 23 active CCIRs — accumulated from the previous exercise without review. When the CCIR list was mapped to pending command decisions, 14 of the 23 had no associated decision in the current planning horizon. After a 90-minute CCIR review with the XO and operations officer, the list was reduced to 9 operational CCIRs, each with a defined threshold, an assigned monitoring section, and a Workshop alert configuration. Subsequent battle rhythm events were cleaner — commanders received fewer notifications, and the notifications they received were actionable.
+> **VIGNETTE:** During a V Corps pre-DEFENDER planning cycle, the G3 section entered the planning phase with 23 active CCIRs — accumulated from the previous exercise without review. When the CCIR list was mapped to pending command decisions, 14 of the 23 had no associated decision in the current planning horizon. After a 90-minute CCIR review with the XO and operations officer, the list was reduced to 9 operational CCIRs, each with a defined threshold, an assigned monitoring section, and a Workshop alert configuration. Subsequent battle rhythm events were cleaner — commanders received fewer notifications, and the notifications they received were actionable. 10th AAMDC conducted a similar review and found that IAMD-specific CCIRs — sensor degradation thresholds, interceptor inventory triggers, and airspace coordination alerts — had been buried in the general CCIR list without differentiation. Separating IAMD CCIRs into a dedicated monitoring track with automated MSS alerts reduced response time to air defense readiness changes from hours to minutes.
 
 ---
 
@@ -549,6 +549,8 @@ For technical specialists producing products that Mission Command practitioners 
 | TM-40J | Program Manager (→ TM-50J) |
 | TM-40K | Knowledge Manager (→ TM-50K) |
 | TM-40L | Software Engineer (→ TM-50L) |
+| TM-40N | UI/UX Designer (→ TM-50N) |
+| TM-40O | Platform Engineer (→ TM-50O) |
 
 ---
 

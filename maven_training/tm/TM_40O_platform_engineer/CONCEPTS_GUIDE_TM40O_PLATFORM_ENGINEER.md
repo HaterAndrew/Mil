@@ -1,7 +1,8 @@
 # CONCEPTS GUIDE — TM-40O COMPANION — PLATFORM ENGINEER · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** The Platform Engineer builds the floor that every other track stands on. When the platform works, nobody notices. When it fails, everybody stops.
+> **Forward:** The Platform Engineer builds the floor that every other track stands on. When the platform works, nobody notices. When it fails, everybody stops.
 > **Purpose:** Develops mental models required to design, operate, and secure infrastructure for MSS. Read before beginning TM-40O task instruction.
+> **Prereqs:** TM-30 REQUIRED (and TM-10 + TM-20 implied). Kubernetes and Linux administration experience recommended.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---

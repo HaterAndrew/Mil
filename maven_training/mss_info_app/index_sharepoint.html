@@ -24,7 +24,7 @@
       --gray-50:       #EFF1F8;
       --gray-100:      #E0E4EF;
       --gray-200:      #C4CAE0;
-      --gray-400:      #7A88A8;
+      --gray-400:      #5E6E8E;
       --gray-600:      #485878;
       --gray-700:      #303C58;
       --gray-900:      #0A1628;
@@ -44,6 +44,14 @@
 
     /* ============================================================ RESET */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Skip navigation (508/WCAG) */
+    .skip-nav {
+      position: absolute; left: -9999px; top: 0; z-index: 10000;
+      background: var(--gold); color: var(--navy); padding: 8px 16px;
+      font-weight: 700; font-size: 14px; text-decoration: none; border-radius: 0 0 4px 0;
+    }
+    .skip-nav:focus { left: 0; }
 
     body {
       font-family: var(--font-body);
@@ -1902,6 +1910,9 @@
 </head>
 <body>
 
+<!-- Skip navigation link for accessibility -->
+<a href="#main-content" class="skip-nav" id="skip-nav">Skip to main content</a>
+
 <!-- ============================================================
      SPLASH PAGE
 ============================================================ -->
@@ -1932,16 +1943,13 @@
     MSS TRAINING HUB
   </div>
   <div class="splash-data splash-data-bl">
-    DIST: UNLIMITED<br/>
-    UNCLASSIFIED
+    DIST: UNLIMITED
   </div>
   <div class="splash-data splash-data-br">
     TM-10 THRU TM-50<br/>
     Data Lit (SL) · Data Literacy
   </div>
 
-  <!-- Classification banner TOP -->
-  <div class="splash-cls">UNCLASSIFIED</div>
 
   <!-- Main content -->
   <div class="splash-body">
@@ -1990,15 +1998,11 @@
     <span>VER: 3.0.0</span>
     <span>LOC: EUCOM AOR</span>
     <span>STATUS: READY</span>
-    <span>CLASS: UNCLASSIFIED</span>
   </div>
 
-  <!-- Classification banner BOTTOM -->
-  <div class="splash-cls">UNCLASSIFIED</div>
 
 </div>
 
-<div class="banner-unclass">UNCLASSIFIED</div>
 
 <!-- ============================================================
      HEADER
@@ -2258,7 +2262,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>Any Soldier, officer, or civilian &mdash; using MSS to access and consume data</td>
+            <td>Any Soldier, officer, or Civilian &mdash; using MSS to access and consume data</td>
             <td><strong><button class="qr-link" onclick="showPanel('tm10')">TM-10 (User)</button></strong></td>
             <td>&mdash;</td>
             <td><span class="chip chip-navy" style="cursor:pointer;" onclick="showPanel('tm10')">TM-10</span></td>
@@ -2396,13 +2400,15 @@
         <strong>Sustainment (TM-40D):</strong> Logistics, G4/S4, GCSS-A users<br/>
         <strong>Protection (TM-40E):</strong> Air defense, CBRN, engineer, force protection<br/>
         <strong>Mission Command (TM-40F):</strong> G6/S6, C2 systems, network managers<br/><br/>
-        <strong style="display:block;margin-bottom:4px;">Technical Specialist Tracks (TM-40G&ndash;M):</strong>
+        <strong style="display:block;margin-bottom:4px;">Technical Specialist Tracks (TM-40G&ndash;O):</strong>
         <strong>ORSA (TM-40G):</strong> FA49, G2/S2 quant analysts, wargame specialists<br/>
         <strong>AI Engineer (TM-40H):</strong> AI/ML specialists, 17A/17C<br/>
         <strong>ML Engineer (TM-40M):</strong> ML engineers, data scientists (GS/contractor)<br/>
         <strong>Program Manager (TM-40J):</strong> G8/S8, PMs, resource managers<br/>
         <strong>Knowledge Manager (TM-40K):</strong> KMOs, 37F, institutional memory leads<br/>
-        <strong>Software Engineer (TM-40L):</strong> 17A/17C, 25D/25U, GS/contractor SWEs<br/><br/>
+        <strong>Software Engineer (TM-40L):</strong> 17A/17C, 25D/25U, GS/contractor SWEs<br/>
+        <strong>UX Designer (TM-40N):</strong> UI/UX designers, human factors (GS/contractor)<br/>
+        <strong>Platform Engineer (TM-40O):</strong> Platform engineers, DevOps, SysAdmins<br/><br/>
         <em>Not listed? Ask your commander &mdash; you may be assigned a track based on unit needs.</em><br/>
         Full mapping: <button class="qr-link" onclick="showPanel('specialists')">Specialist Tracks &rarr;</button>
       </div>
@@ -2472,7 +2478,7 @@
     </div>
 
     <h2>2. WHAT IS MSS?</h2>
-    <p>MSS is a secure, web-based platform where your unit&rsquo;s data lives and can be analyzed and acted upon. Think of it as a shared operations center for data: information from logistics, personnel, readiness, and other systems is collected, organized, and made accessible through applications your unit uses every day.</p>
+    <p>MSS is the mission command information system (MCIS) program of record, directed by the USAREUR-AF CG to enable rapid and accurate decision-making. It is a secure, web-based platform where your unit&rsquo;s data lives and can be analyzed and acted upon. Think of it as a shared operations center for data: information from logistics, personnel, readiness, and other systems is collected, organized, and made accessible through applications your unit uses every day.</p>
     <p>MSS is built on the Palantir Foundry platform, authorized for Army use under the Maven Smart System program.</p>
     <div class="callout note">
       <div class="callout-label">NOTE &mdash; WHAT IS FOUNDRY?</div>
@@ -2483,30 +2489,20 @@
       <div class="card">
         <div class="card-label">MSS DOES</div>
         <div class="card-body">
-          <ul>
-            <li>Stores data from Army systems in a single, organized location</li>
-            <li>Makes data visible through applications and dashboards</li>
-            <li>Enables units to update records, report status, and track readiness</li>
-            <li>Provides analysis tools for authorized personnel</li>
-            <li>Supports AI-assisted analysis through authorized tools</li>
-          </ul>
+          <p>Stores data from Army systems in a single, organized location; makes data visible through applications and dashboards; enables units to update records, report status, and track readiness; provides analysis tools for authorized personnel; and supports AI-assisted analysis through authorized tools.</p>
         </div>
       </div>
       <div class="card red-top">
         <div class="card-label">MSS IS NOT</div>
         <div class="card-body">
-          <ul>
-            <li>Not a replacement for official systems of record (DCPDS, GCSS-A, MEDPROS, etc.)</li>
-            <li>Not classified by default &mdash; classification depends on data markings</li>
-            <li>Not a public system &mdash; access is controlled and audited</li>
-          </ul>
+          <p>Not a replacement for official systems of record (DCPDS, GCSS-A, MEDPROS, etc.); not classified by default &mdash; classification depends on data markings; not a public system &mdash; access is controlled and audited.</p>
         </div>
       </div>
       <div class="card gold-top">
         <div class="card-label">USAREUR-AF MISSION AREAS</div>
         <div class="card-body">
           <ul>
-            <li><strong>Personnel Readiness</strong> &mdash; soldier readiness status</li>
+            <li><strong>Personnel Readiness</strong> &mdash; Soldier readiness status</li>
             <li><strong>Logistics</strong> &mdash; equipment availability &amp; maintenance</li>
             <li><strong>Operational Reporting</strong> &mdash; SITREPs and updates</li>
             <li><strong>Planning</strong> &mdash; orders, unit positions, task org</li>
@@ -3137,7 +3133,7 @@
           <tr><td>G4/S4 &mdash; Logistics, GCSS-A</td><td><strong>TM-40D (Sustainment)</strong></td><td>&mdash;</td></tr>
           <tr><td>Air defense, CBRN, force protection</td><td><strong>TM-40E (Protection)</strong></td><td>&mdash;</td></tr>
           <tr><td>G6/S6 &mdash; C2 systems, networks</td><td><strong>TM-40F (Mission Command)</strong></td><td>&mdash;</td></tr>
-          <tr><td colspan="3" style="background:var(--navy-pale);font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);">Technical Specialist Tracks (TM-40G&ndash;M)</td></tr>
+          <tr><td colspan="3" style="background:var(--navy-pale);font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);">Technical Specialist Tracks (TM-40G&ndash;O)</td></tr>
           <tr><td>FA49 &mdash; Operations Research Analyst</td><td><strong>TM-40G (ORSA)</strong></td><td>TM-50G</td></tr>
           <tr><td>G2/S2 quantitative analyst</td><td><strong>TM-40G (ORSA)</strong> or TM-40K (KM)</td><td>TM-50G / TM-50K</td></tr>
           <tr><td>17A/17C &mdash; Cyber officer/NCO</td><td><strong>TM-40L (SWE)</strong> or TM-40H (AI Eng)</td><td>TM-50L / TM-50H</td></tr>
@@ -3148,6 +3144,8 @@
           <tr><td>Program Manager (PM / GS)</td><td><strong>TM-40J (PM)</strong></td><td>TM-50J</td></tr>
           <tr><td>KMO / Knowledge Officer / 37F</td><td><strong>TM-40K (KM)</strong></td><td>TM-50K</td></tr>
           <tr><td>Civil Affairs</td><td><strong>TM-40J (PM)</strong> or TM-40K (KM)</td><td>TM-50J / TM-50K</td></tr>
+          <tr><td>UI/UX designer (GS/contractor)</td><td><strong>TM-40N (UX Designer)</strong></td><td>TM-50N</td></tr>
+          <tr><td>Platform engineer / DevOps / SysAdmin</td><td><strong>TM-40O (Platform Eng)</strong></td><td>TM-50O</td></tr>
         </tbody>
       </table>
     </div>
@@ -3253,6 +3251,22 @@
           <div class="track-name">Python/TypeScript, OSDK &amp; Code Transforms</div>
           <div class="track-audience">17A/17C &bull; 25D &bull; GS/contractor SWEs</div>
           <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50L &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" onclick="showPanel('tm40')">View TM-40 Series &rarr;</button></div>
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-card-hdr"><span class="track-tm">TM-40N &mdash; UI/UX Designer</span><span class="track-chip">TM-30 Req.</span></div>
+        <div class="track-body">
+          <div class="track-name">Soldier Centered Design, Workshop &amp; Slate UI</div>
+          <div class="track-audience">UI/UX designers &bull; Human factors &bull; GS/contractor designers</div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50N &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" onclick="showPanel('tm40')">View TM-40 Series &rarr;</button></div>
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-card-hdr"><span class="track-tm">TM-40O &mdash; Platform Engineer</span><span class="track-chip">TM-30 Req.</span></div>
+        <div class="track-body">
+          <div class="track-name">Kubernetes, CI/CD, DevSecOps &amp; Infrastructure as Code</div>
+          <div class="track-audience">Platform engineers &bull; DevOps &bull; SysAdmins &bull; 25D</div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50O &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" onclick="showPanel('tm40')">View TM-40 Series &rarr;</button></div>
         </div>
       </div>
     </div>
@@ -3425,6 +3439,46 @@
         </div>
       </div>
 
+      <div class="track-card">
+        <div class="track-card-hdr">
+          <span class="track-tm">TM-40N &mdash; UI/UX Designer Track</span>
+          <span class="track-chip">TM-30 Required</span>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Soldier Centered Design, Workshop &amp; Slate UI</div>
+          <div class="track-audience">UI/UX designers &bull; Human factors &bull; GS/contractor designers</div>
+          <ul class="track-topics">
+            <li>Conduct user research in operational and classified environments (interview, contextual inquiry, usability testing)</li>
+            <li>Design information architectures for data-dense operational displays</li>
+            <li>Build interactive prototypes from low-fidelity sketches through high-fidelity mockups</li>
+            <li>Design Workshop layouts: widget selection, dashboard hierarchy, responsive patterns</li>
+            <li>Apply visual design standards for tactical displays: classification marking, contrast, field conditions</li>
+            <li>Ensure Section 508 / WCAG 2.1 AA accessibility compliance</li>
+          </ul>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50N</div>
+        </div>
+      </div>
+
+      <div class="track-card">
+        <div class="track-card-hdr">
+          <span class="track-tm">TM-40O &mdash; Platform Engineer Track</span>
+          <span class="track-chip">TM-30 Required</span>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Kubernetes, CI/CD, DevSecOps &amp; Infrastructure as Code</div>
+          <div class="track-audience">Platform engineers &bull; DevOps &bull; SysAdmins &bull; 25D</div>
+          <ul class="track-topics">
+            <li>Architect and operate Kubernetes clusters for MSS workloads</li>
+            <li>Implement Infrastructure as Code with GitOps workflows and continuous reconciliation</li>
+            <li>Design CI/CD pipelines: automated build, test, scan, and deploy for MSS applications</li>
+            <li>Harden containers using DoD Iron Bank images, vulnerability scanning, and SHA256 digest pinning</li>
+            <li>Deploy across classification boundaries and DDIL environments (air-gapped, edge clusters)</li>
+            <li>Manage RMF/ATO lifecycle from the infrastructure perspective, STIG compliance</li>
+          </ul>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50O</div>
+        </div>
+      </div>
+
     </div>
 
     <details style="margin-top:20px;" open>
@@ -3576,6 +3630,36 @@
           </ul>
         </div>
       </a>
+      <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/TM_50N_UX_DESIGNER_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-50N &mdash; UI/UX Advanced</div>
+          <div class="track-chip">Advanced</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Advanced UI/UX Design</div>
+          <div class="track-audience">Prerequisite: TM-40N</div>
+          <ul class="track-topics">
+            <li>Design systems at scale, component libraries</li>
+            <li>DDIL-aware and cross-domain UI design</li>
+            <li>DesignOps, ResearchOps, accessibility at enterprise scale</li>
+          </ul>
+        </div>
+      </a>
+      <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/TM_50O_PLATFORM_ENGINEER_ADVANCED.pdf" target="_blank">
+        <div class="track-card-hdr">
+          <div class="track-tm">TM-50O &mdash; Platform Eng Advanced</div>
+          <div class="track-chip">Advanced</div>
+        </div>
+        <div class="track-body">
+          <div class="track-name">Advanced Platform Engineering</div>
+          <div class="track-audience">Prerequisite: TM-40O</div>
+          <ul class="track-topics">
+            <li>Multi-cluster fleet management, SRE practices</li>
+            <li>RMF/ATO automation, continuous compliance</li>
+            <li>Cross-domain infrastructure, developer experience engineering</li>
+          </ul>
+        </div>
+      </a>
     </div>
 
     <div class="callout note mt-24">
@@ -3621,7 +3705,7 @@
         <div class="card-label">SENIOR LEADERS (O-5+ / SGM+)</div>
         <div class="card-title">Data Literacy for Senior Leaders</div>
         <div class="card-body">
-          <p>Written for commanders, senior NCOs, and senior civilians. Covers command responsibilities, evaluating data products, directing a data-capable formation, and decision frameworks.</p>
+          <p>Written for commanders, senior NCOs, and senior Civilians. Covers command responsibilities, evaluating data products, directing a data-capable formation, and decision frameworks.</p>
           <p><strong>Format:</strong> Short (~20&ndash;30pp). Principles, not procedures. Chapter/paragraph numbered.</p>
           <p><strong>Key topics:</strong> Commander&rsquo;s data responsibilities &bull; Evaluating analytical products &bull; Standing up MSS capability &bull; Data governance and stewardship</p>
         </div>
@@ -3662,8 +3746,10 @@
           <tr><td><strong>TM-40J</strong></td><td>PMs / G8</td><td>PM dashboards, milestone tracking, portfolio analysis</td><td>After TM-30</td></tr>
           <tr><td><strong>TM-40K</strong></td><td>KMs / KMOs</td><td>Knowledge repositories, AIP summarization, lessons learned</td><td>After TM-30</td></tr>
           <tr><td><strong>TM-40L</strong></td><td>SWEs</td><td>OSDK, full-stack Foundry apps, TypeScript Functions</td><td>After TM-30</td></tr>
+          <tr><td><strong>TM-40N</strong></td><td>UI/UX Designers</td><td>Soldier Centered Design, Workshop &amp; Slate UI, accessibility</td><td>After TM-30</td></tr>
+          <tr><td><strong>TM-40O</strong></td><td>Platform Engineers</td><td>Kubernetes, CI/CD, DevSecOps, Infrastructure as Code</td><td>After TM-30</td></tr>
           <tr><td colspan="4" style="background:var(--navy-pale);font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);">TM-50 &mdash; Advanced Technical Tracks (by role/MOS)</td></tr>
-          <tr><td><strong>TM-50G&ndash;M</strong></td><td>Senior developers (all tracks)</td><td>Advanced versions of each TM-40 specialist track</td><td>After TM-40 (by track)</td></tr>
+          <tr><td><strong>TM-50G&ndash;O</strong></td><td>Senior developers (all tracks)</td><td>Advanced versions of each TM-40 specialist track</td><td>After TM-40 (by track)</td></tr>
         </tbody>
       </table>
     </div>
@@ -3734,7 +3820,7 @@
               <tr><td>Any personnel &mdash; viewing data for the first time</td><td>TM-10 &mdash; Maven User</td><td><button class="qr-link" data-panel="tm10">TM-10 &rarr;</button></td></tr>
               <tr><td>Staff building dashboards or simple pipelines (no coding)</td><td>TM-20 &mdash; Builder</td><td><button class="qr-link" data-panel="tm20">TM-20 &rarr;</button></td></tr>
               <tr><td>Data steward, frequent builder, or data-adjacent role (17/25-series, G2, analyst)</td><td>TM-30 &mdash; Advanced Builder</td><td><button class="qr-link" data-panel="tm30">TM-30 &rarr;</button></td></tr>
-              <tr><td>Technical specialist or warfighting function developer &mdash; ORSA &bull; AI/ML Eng &bull; PM &bull; KM &bull; SWE</td><td>TM-40 Specialist Track</td><td>
+              <tr><td>Technical specialist or warfighting function developer &mdash; ORSA &bull; AI/ML Eng &bull; PM &bull; KM &bull; SWE &bull; UX &bull; Platform Eng</td><td>TM-40 Specialist Track</td><td>
                 <div class="qr-dropdown-wrap">
                   <button class="qr-link qr-dropdown-btn" data-dropdown="dd-tm40-table" aria-expanded="false">TM-40 &#9662;</button>
                   <div class="qr-dropdown-menu" id="dd-tm40-table">
@@ -3745,6 +3831,8 @@
                     <button class="qr-dropdown-item" data-panel="tm40">TM-40J &mdash; Program Mgr</button>
                     <button class="qr-dropdown-item" data-panel="tm40">TM-40K &mdash; Knowledge Mgr</button>
                     <button class="qr-dropdown-item" data-panel="tm40">TM-40L &mdash; Software Eng</button>
+                    <button class="qr-dropdown-item" data-panel="tm40">TM-40N &mdash; UX Designer</button>
+                    <button class="qr-dropdown-item" data-panel="tm40">TM-40O &mdash; Platform Eng</button>
                   </div>
                 </div>
               </td></tr>
@@ -3759,6 +3847,8 @@
                     <button class="qr-dropdown-item" data-panel="tm50">TM-50J &mdash; Program Mgr Advanced</button>
                     <button class="qr-dropdown-item" data-panel="tm50">TM-50K &mdash; Knowledge Mgr Advanced</button>
                     <button class="qr-dropdown-item" data-panel="tm50">TM-50L &mdash; Software Eng Advanced</button>
+                    <button class="qr-dropdown-item" data-panel="tm50">TM-50N &mdash; UX Designer Advanced</button>
+                    <button class="qr-dropdown-item" data-panel="tm50">TM-50O &mdash; Platform Eng Advanced</button>
                   </div>
                 </div>
               </td></tr>
@@ -3913,7 +4003,7 @@
 
     <div class="callout note mt-24">
       <div class="callout-label">NOTE &mdash; DISTRIBUTION</div>
-      <div class="callout-body">All publications in this curriculum are UNCLASSIFIED. These are DRAFT documents — not yet approved for distribution. Do not distribute outside your organization without consulting your data steward. Do not assume these publications apply to classified MSS configurations without consulting your data steward.</div>
+      <div class="callout-body">These are DRAFT documents — not yet approved for distribution. Do not distribute outside your organization without consulting your data steward.</div>
     </div>
 
     <div class="callout note mt-24">
@@ -4028,7 +4118,7 @@
     </details>
 
     <details>
-      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">TM-40 Technical Specialist Tracks (6 &mdash; click to expand)</summary>
+      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">TM-40 Technical Specialist Tracks (8 &mdash; click to expand)</summary>
       <div class="track-grid" style="margin-top:12px;">
         <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/TM_40G_ORSA.pdf" target="_blank">
           <div class="track-card-hdr"><div class="track-tm">TM-40G &mdash; ORSA</div><div class="track-chip">Specialist</div></div>
@@ -4054,11 +4144,19 @@
           <div class="track-card-hdr"><div class="track-tm">TM-40L &mdash; Software Engineer</div><div class="track-chip">Specialist</div></div>
           <div class="track-body"><div class="track-name">Software Engineering</div><div class="track-audience">SWEs — Python/TypeScript, OSDK, code transforms</div><ul class="track-topics"><li>OSDK &amp; Platform SDK</li><li>Functions on Objects, Actions</li><li>CI/CD, security, Slate</li></ul></div>
         </a>
+        <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/TM_40N_UX_DESIGNER.pdf" target="_blank">
+          <div class="track-card-hdr"><div class="track-tm">TM-40N &mdash; UX Designer</div><div class="track-chip">Specialist</div></div>
+          <div class="track-body"><div class="track-name">UI/UX Design</div><div class="track-audience">Designers — user research, prototyping, accessibility</div><ul class="track-topics"><li>Workshop UI patterns &amp; design systems</li><li>User research in military contexts</li><li>Accessibility &amp; DDIL-aware design</li></ul></div>
+        </a>
+        <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/TM_40O_PLATFORM_ENGINEER.pdf" target="_blank">
+          <div class="track-card-hdr"><div class="track-tm">TM-40O &mdash; Platform Engineer</div><div class="track-chip">Specialist</div></div>
+          <div class="track-body"><div class="track-name">Platform Engineering</div><div class="track-audience">Platform engineers — infrastructure, SRE, RMF/ATO</div><ul class="track-topics"><li>Foundry infrastructure management</li><li>SRE practices &amp; observability</li><li>RMF/ATO compliance automation</li></ul></div>
+        </a>
       </div>
     </details>
 
     <details>
-      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">TM-50 Advanced Technical Tracks (6 &mdash; click to expand)</summary>
+      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">TM-50 Advanced Technical Tracks (8 &mdash; click to expand)</summary>
       <div class="track-grid" style="margin-top:12px;">
         <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/TM_50G_ORSA_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50G &mdash; ORSA Advanced</div><div class="track-chip">Advanced</div></div><div class="track-body"><div class="track-name">Advanced ORSA</div><div class="track-audience">Nonlinear programming, stochastic models, ABMS, campaign assessment</div></div></a>
         <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/TM_50H_AI_ENGINEER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50H &mdash; AI Engineer Advanced</div><div class="track-chip">Advanced</div></div><div class="track-body"><div class="track-name">Advanced AI Engineering</div><div class="track-audience">Multi-agent orchestration, RAG, red-team assessment, AI observability</div></div></a>
@@ -4066,11 +4164,13 @@
         <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/TM_50J_PROGRAM_MANAGER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50J &mdash; PM Advanced</div><div class="track-chip">Advanced</div></div><div class="track-body"><div class="track-name">Advanced Program Management</div><div class="track-audience">PI planning, cross-team governance, GO/SES briefing, Palantir partnership</div></div></a>
         <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/TM_50K_KNOWLEDGE_MANAGER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50K &mdash; KM Advanced</div><div class="track-chip">Advanced</div></div><div class="track-body"><div class="track-name">Advanced Knowledge Management</div><div class="track-audience">Federated KM architecture, NATO integration, STANAG 4778, knowledge graphs</div></div></a>
         <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/TM_50L_SOFTWARE_ENGINEER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50L &mdash; SWE Advanced</div><div class="track-chip">Advanced</div></div><div class="track-body"><div class="track-name">Advanced Software Engineering</div><div class="track-audience">Scale, multi-tenancy, Kafka, OWASP, SAST, architecture review, platform governance</div></div></a>
+        <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/TM_50N_UX_DESIGNER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50N &mdash; UI/UX Advanced</div><div class="track-chip">Advanced</div></div><div class="track-body"><div class="track-name">Advanced UI/UX Design</div><div class="track-audience">Design systems, DDIL-aware UI, DesignOps, enterprise accessibility</div></div></a>
+        <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/TM_50O_PLATFORM_ENGINEER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50O &mdash; Platform Eng Advanced</div><div class="track-chip">Advanced</div></div><div class="track-body"><div class="track-name">Advanced Platform Engineering</div><div class="track-audience">Fleet management, SRE, RMF/ATO automation, cross-domain infrastructure</div></div></a>
       </div>
     </details>
 
     <details>
-      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Concepts Guides (18 &mdash; click to expand)</summary>
+      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Concepts Guides (23 &mdash; click to expand)</summary>
       <div class="track-grid" style="margin-top:12px;">
         <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/CONCEPTS_GUIDE_TM40A_INTELLIGENCE.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-40A Concepts Guide</div><div class="track-chip">Intelligence</div></div><div class="track-body"><div class="track-audience">Key concepts and terminology for the Intelligence WFF track.</div></div></a>
         <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/CONCEPTS_GUIDE_TM40B_FIRES.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-40B Concepts Guide</div><div class="track-chip">Fires</div></div><div class="track-body"><div class="track-audience">Key concepts and terminology for the Fires WFF track.</div></div></a>
@@ -4084,17 +4184,22 @@
         <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/CONCEPTS_GUIDE_TM40J_PROGRAM_MANAGER.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-40J Concepts Guide</div><div class="track-chip">Program Mgr</div></div><div class="track-body"><div class="track-audience">Key concepts and terminology for the Program Manager track.</div></div></a>
         <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/CONCEPTS_GUIDE_TM40K_KNOWLEDGE_MANAGER.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-40K Concepts Guide</div><div class="track-chip">Knowledge Mgr</div></div><div class="track-body"><div class="track-audience">Key concepts and terminology for the Knowledge Manager track.</div></div></a>
         <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/CONCEPTS_GUIDE_TM40L_SOFTWARE_ENGINEER.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-40L Concepts Guide</div><div class="track-chip">Software Eng</div></div><div class="track-body"><div class="track-audience">Key concepts and terminology for the Software Engineer track.</div></div></a>
+        <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/CONCEPTS_GUIDE_TM40N_UX_DESIGNER.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-40N Concepts Guide</div><div class="track-chip">UX Designer</div></div><div class="track-body"><div class="track-audience">Key concepts and terminology for the UX Designer track.</div></div></a>
+        <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/CONCEPTS_GUIDE_TM40O_PLATFORM_ENGINEER.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-40O Concepts Guide</div><div class="track-chip">Platform Eng</div></div><div class="track-body"><div class="track-audience">Key concepts and terminology for the Platform Engineer track.</div></div></a>
         <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/CONCEPTS_GUIDE_TM50G_ORSA_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50G Concepts Guide</div><div class="track-chip">ORSA Adv</div></div><div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50G.</div></div></a>
         <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/CONCEPTS_GUIDE_TM50H_AI_ENGINEER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50H Concepts Guide</div><div class="track-chip">AI Eng Adv</div></div><div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50H.</div></div></a>
         <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/CONCEPTS_GUIDE_TM50M_ML_ENGINEER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50M Concepts Guide</div><div class="track-chip">MLE Adv</div></div><div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50M.</div></div></a>
         <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/CONCEPTS_GUIDE_TM50J_PROGRAM_MANAGER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50J Concepts Guide</div><div class="track-chip">PM Adv</div></div><div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50J.</div></div></a>
         <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/CONCEPTS_GUIDE_TM50K_KNOWLEDGE_MANAGER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50K Concepts Guide</div><div class="track-chip">KM Adv</div></div><div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50K.</div></div></a>
         <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/CONCEPTS_GUIDE_TM50L_SOFTWARE_ENGINEER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50L Concepts Guide</div><div class="track-chip">SWE Adv</div></div><div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50L.</div></div></a>
+        <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/CONCEPTS_GUIDE_TM50N_UX_DESIGNER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50N Concepts Guide</div><div class="track-chip">UX Adv</div></div><div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50N.</div></div></a>
+        <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/CONCEPTS_GUIDE_TM50O_PLATFORM_ENGINEER_ADVANCED.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-50O Concepts Guide</div><div class="track-chip">Plat Eng Adv</div></div><div class="track-body"><div class="track-audience">Advanced concepts and terminology for TM-50O.</div></div></a>
+        <a class="track-card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/CONCEPTS_GUIDE_TM_SL_SENIOR_LEADER.pdf" target="_blank"><div class="track-card-hdr"><div class="track-tm">TM-SL Concepts Guide</div><div class="track-chip">Senior Leader</div></div><div class="track-body"><div class="track-audience">Key concepts for the Senior Leader Executive Course.</div></div></a>
       </div>
     </details>
 
     <details>
-      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Practical Exercises (9 &mdash; click to expand)</summary>
+      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Practical Exercises (13 &mdash; click to expand)</summary>
       <div class="card-grid" style="margin-top:12px;">
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EX_10_OPERATOR_BASICS.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-10 Practical Exercise</div><div class="card-body">Operator basics — hands-on exercise.</div></a>
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EX_20_NO_CODE_BUILDER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-20 Practical Exercise</div><div class="card-body">No-code builder — hands-on exercise.</div></a>
@@ -4105,11 +4210,15 @@
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EX_40J_PROGRAM_MANAGER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-40J Exercise (PM)</div><div class="card-body">Program Manager practical exercise.</div></a>
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EX_40K_KNOWLEDGE_MANAGER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-40K Exercise (KM)</div><div class="card-body">Knowledge Manager practical exercise.</div></a>
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EX_40L_SOFTWARE_ENGINEER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-40L Exercise (SWE)</div><div class="card-body">Software Engineer practical exercise.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EX_40N_UX_DESIGNER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-40N Exercise (UX)</div><div class="card-body">UX Designer practical exercise.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EX_40O_PLATFORM_ENGINEER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-40O Exercise (Plat Eng)</div><div class="card-body">Platform Engineer practical exercise.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EX_50N_UX_DESIGNER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-50N Exercise (UX Adv)</div><div class="card-body">Advanced UX Designer practical exercise.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EX_50O_PLATFORM_ENGINEER.pdf" target="_blank"><div class="card-label">EXERCISE</div><div class="card-title">TM-50O Exercise (Plat Eng Adv)</div><div class="card-body">Advanced Platform Engineer practical exercise.</div></a>
       </div>
     </details>
 
     <details>
-      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Pre-Assessment Tests (21 &mdash; click to expand)</summary>
+      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Pre-Assessment Tests (27 &mdash; click to expand)</summary>
       <div class="callout note" style="margin-top:12px;margin-bottom:12px;">
         <div class="callout-label">NOTE &mdash; PRE-TESTS</div>
         <div class="callout-body">Pre-assessment tests are administered before the start of each course. They establish a knowledge baseline and help instructors identify gaps. Post-assessments are administered by the instructor and are not included here.</div>
@@ -4130,17 +4239,21 @@
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EXAM_TM40J_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-40J Pre-Assessment</div><div class="card-body">Program Manager — pre-test.</div></a>
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EXAM_TM40K_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-40K Pre-Assessment</div><div class="card-body">Knowledge Manager — pre-test.</div></a>
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EXAM_TM40L_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-40L Pre-Assessment</div><div class="card-body">Software Engineer — pre-test.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EXAM_TM40N_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-40N Pre-Assessment</div><div class="card-body">UX Designer — pre-test.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EXAM_TM40O_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-40O Pre-Assessment</div><div class="card-body">Platform Engineer — pre-test.</div></a>
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EXAM_TM50G_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-50G Pre-Assessment</div><div class="card-body">Advanced ORSA — pre-test.</div></a>
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EXAM_TM50H_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-50H Pre-Assessment</div><div class="card-body">Advanced AI Engineer — pre-test.</div></a>
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EXAM_TM50M_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-50M Pre-Assessment</div><div class="card-body">Advanced ML Engineer — pre-test.</div></a>
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EXAM_TM50J_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-50J Pre-Assessment</div><div class="card-body">Advanced Program Manager — pre-test.</div></a>
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EXAM_TM50K_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-50K Pre-Assessment</div><div class="card-body">Advanced Knowledge Manager — pre-test.</div></a>
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EXAM_TM50L_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-50L Pre-Assessment</div><div class="card-body">Advanced Software Engineer — pre-test.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EXAM_TM50N_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-50N Pre-Assessment</div><div class="card-body">Advanced UX Designer — pre-test.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/EXAM_TM50O_PRE.pdf" target="_blank"><div class="card-label">PRE-TEST</div><div class="card-title">TM-50O Pre-Assessment</div><div class="card-body">Advanced Platform Engineer — pre-test.</div></a>
       </div>
     </details>
 
     <details>
-      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Course Syllabi (15 &mdash; click to expand)</summary>
+      <summary style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);cursor:pointer;padding:8px 0;border-bottom:1px solid var(--gray-200);margin-bottom:12px;">Course Syllabi (26 &mdash; click to expand)</summary>
       <div class="card-grid" style="margin-top:12px;">
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/SYLLABUS_TM10.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-10 Syllabus</div><div class="card-body">Maven User — all staff.</div></a>
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/SYLLABUS_TM20.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-20 Syllabus</div><div class="card-body">No-Code Builder — all staff.</div></a>
@@ -4157,6 +4270,17 @@
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/SYLLABUS_TM40J.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-40J Syllabus</div><div class="card-body">Program Managers.</div></a>
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/SYLLABUS_TM40K.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-40K Syllabus</div><div class="card-body">Knowledge Managers.</div></a>
         <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/SYLLABUS_TM40L.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-40L Syllabus</div><div class="card-body">Software Engineers.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/SYLLABUS_TM40N.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-40N Syllabus</div><div class="card-body">UX Designers.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/SYLLABUS_TM40O.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-40O Syllabus</div><div class="card-body">Platform Engineers.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/SYLLABUS_TM50G.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-50G Syllabus</div><div class="card-body">Advanced ORSA.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/SYLLABUS_TM50H.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-50H Syllabus</div><div class="card-body">Advanced AI Engineer.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/SYLLABUS_TM50M.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-50M Syllabus</div><div class="card-body">Advanced ML Engineer.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/SYLLABUS_TM50J.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-50J Syllabus</div><div class="card-body">Advanced Program Manager.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/SYLLABUS_TM50K.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-50K Syllabus</div><div class="card-body">Advanced Knowledge Manager.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/SYLLABUS_TM50L.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-50L Syllabus</div><div class="card-body">Advanced Software Engineer.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/SYLLABUS_TM50N.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-50N Syllabus</div><div class="card-body">Advanced UX Designer.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/SYLLABUS_TM50O.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-50O Syllabus</div><div class="card-body">Advanced Platform Engineer.</div></a>
+        <a class="card doc-card" href="https://armyeitaas.sharepoint-mil.us/sites/USAREUR-AF_HHBN_S3/Shared%20Documents/z_test/SYLLABUS_TM_SL.pdf" target="_blank"><div class="card-label">SYLLABUS</div><div class="card-title">TM-SL Syllabus</div><div class="card-body">Senior Leader Executive Course.</div></a>
       </div>
     </details>
 
@@ -4660,7 +4784,6 @@
   POC: CPT Andrew Hater &nbsp;&bull;&nbsp; <a href="mailto:andrew.d.hater.mil@army.mil" style="color:var(--gold-light);text-decoration:none;">andrew.d.hater.mil@army.mil</a>
 </footer>
 
-<div class="banner-unclass">UNCLASSIFIED</div>
 
 <!-- ============================================================
      NAVIGATION LOGIC

@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250808_086 — TERRAIN ANALYSIS
+DTG: 080000Z AUG 2025
+Unit: 1-3 BN
+
+Summary: Snowfall accumulation of 15-20cm reported in the KALTBERG pass area. Road conditions along ROUTE AMBER degraded. Engineer assessment requested.
+
+Impact to Operations: Movement planning should account for degraded conditions. Coordination with engineer assets recommended.
+Recommended Action: Update common operational picture. Disseminate terrain overlay to subordinate units. Request engineer reconnaissance if conditions persist beyond 72 hours.

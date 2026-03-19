@@ -149,5 +149,5 @@ S-14. Full credit (10 pts): continuous compliance automation means: (1) policy-a
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-50O Post-Test | Version 1.0 | March 2026*

@@ -6,6 +6,7 @@ scheduled MSS training events across USAREUR-AF.
 
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
@@ -42,7 +43,7 @@ from theme import inject_branding, apply_plotly_theme, NAVY, NAVY_DARK, NAVY_LIG
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-API_BASE = "http://localhost:8012"
+API_BASE = os.environ.get("ENROLLMENT_MANAGER_API_URL", "http://localhost:8012")
 
 st.set_page_config(
     page_title="MSS Enrollment Manager",
@@ -207,8 +208,9 @@ active_tab = st.sidebar.radio("Navigate", tab_names)
 if active_tab == "Enrollment Overview":
     st.title("Enrollment Overview")
 
-    stats = load_stats()
-    classes = load_classes()
+    with st.spinner("Loading data..."):
+        stats = load_stats()
+        classes = load_classes()
 
     if not classes:
         st.info("No training classes found. Seed the database to get started.")

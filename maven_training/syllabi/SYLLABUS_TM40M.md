@@ -191,7 +191,7 @@ Graduates managing production ML systems or building platform infrastructure use
 |---|---|
 | Pre-course exam | EXAM_TM40M_PRE |
 | Post-course exam | EXAM_TM40M_POST |
-| Practical exercise | EX-40M (EXERCISE.md + ENVIRONMENT_SETUP.md) |
+| Practical exercise | EX_40M (EXERCISE.md + ENVIRONMENT_SETUP.md) |
 
 ---
 
@@ -201,5 +201,5 @@ WFF track analysts (TM-40A through TM-40F) are the operational consumers of pred
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Syllabus TM-40M | Version 2.0 | March 2026*

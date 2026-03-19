@@ -66,7 +66,7 @@ This directory contains interactive HTML training tools developed by the USAREUR
 
 1. These apps are self-contained. All CSS and JavaScript is inline or loaded from CDN (IBM Plex fonts from Google Fonts). No build step required.
 2. The `plan-for-success` app loads data from relative paths (`./data/meta.json`, etc.). Keep the `data/` directory co-located with `index.html`.
-3. All apps display UNCLASSIFIED // FOUO classification banners. Do not modify classification markings without authorization.
+3. Classification banners have been removed from all apps.
 4. Portal navigation links in some apps reference `../../index.html` (the CDA Portal index). These links will be broken in this `source_material` context — that is expected. The apps function fully without portal navigation.
 
 ## Provenance

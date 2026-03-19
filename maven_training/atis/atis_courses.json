@@ -71,7 +71,7 @@
     "REV": "Review",
     "EVAL": "Evaluation (practical exercise, graded)",
     "WKS": "Workshop (design workshop, peer review)",
-    "SPRINT": "Builder Sprint (self-directed applied build)"
+    "SPRINT": "Foundry Bootcamp (self-directed applied build)"
   },
   "courses": [
     {

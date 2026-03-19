@@ -1,6 +1,6 @@
 # TM-50G — ADVANCED OPERATIONS RESEARCH AND SYSTEMS ANALYSIS
 
-> **BLUF:** TM-50G prepares senior ORSA practitioners to lead advanced analytical programs on MSS, produce campaign-level decision support, and build persistent OR capability for USAREUR-AF. This is not a survey of methods — it is a practitioner guide for analysts who will own the analytical function at theater level.
+> **Forward:** TM-50G prepares senior ORSA practitioners to lead advanced analytical programs on MSS, produce campaign-level decision support, and build persistent OR capability for USAREUR-AF. This is not a survey of methods — it is a practitioner guide for analysts who will own the analytical function at theater level.
 > **Prereqs:** TM-40G, Operations Research/Systems Analysis (required). Completion of, or concurrent enrollment in, a graduate-level OR/MS program or equivalent operational ORSA experience (18+ months) strongly recommended. For AI/ML integration topics, see TM-40H (AI Engineer) and TM-40M (ML Engineer); CONCEPTS_GUIDE_TM50G_ORSA_ADVANCED (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -14,31 +14,17 @@
 
 **BLUF:** TM-50G prepares senior ORSA practitioners to lead advanced analytical programs on MSS, produce campaign-level decision support, and build persistent OR capability for USAREUR-AF. This is not a survey of methods — it is a practitioner guide for analysts who will own the analytical function at theater level.
 
-### 1-1. Purpose and Scope
+### 1-1. Advanced ORSA Manual
 
 This manual provides advanced-level ORSA procedures for senior analysts, OR team leads, and section chiefs conducting operations research on the Maven Smart System (MSS) within USAREUR-AF and supporting EUCOM requirements. It extends TM-40G into methods, products, and leadership responsibilities appropriate for senior ORSA practitioners operating at the operational and theater-strategic level.
 
-**TM-50G covers:**
+**TM-50G covers** advanced optimization (nonlinear programming, multi-objective optimization, stochastic programming, and metaheuristic methods applicable to EUCOM/USAREUR-AF logistics, force allocation, and planning problems); agent-based modeling and simulation (ABMS) for complex adaptive operational systems — urban terrain, logistics networks, and adversary behavior; Bayesian analysis and causal inference (Bayesian networks, DAGs, causal models for operational analysis, and updating prior assessments with operational data); advanced wargame and campaign analysis (designing OR support frameworks for multi-echelon wargames, campaign assessment architectures, and theater-level campaign analysis); decision analysis under deep uncertainty (DAUX) including robustness analysis, scenario-based planning, exploratory modeling, and decision-making when probability distributions cannot be reliably specified; advanced forecasting (ensemble methods, hierarchical models, state space models for multi-echelon readiness and logistics forecasting); OR products for GO/SES audiences; and building persistent OR capability including data architecture for standing analytical environments, team standards, and program management for ORSA on MSS.
 
-- Advanced optimization: nonlinear programming, multi-objective optimization, stochastic programming, and metaheuristic methods applicable to EUCOM/USAREUR-AF logistics, force allocation, and planning problems
-- Agent-based modeling and simulation (ABMS): designing, calibrating, and interpreting ABMS for complex adaptive operational systems — urban terrain, logistics networks, and adversary behavior
-- Bayesian analysis and causal inference: Bayesian networks, directed acyclic graphs (DAGs), causal models for operational analysis, and updating prior assessments with operational data
-- Advanced wargame and campaign analysis: designing OR support frameworks for multi-echelon wargames, campaign assessment architectures, and theater-level campaign analysis
-- Decision analysis under deep uncertainty (DAUX): robustness analysis, scenario-based planning, exploratory modeling, and decision-making when probability distributions cannot be reliably specified
-- Advanced forecasting: ensemble methods, hierarchical models, state space models for multi-echelon readiness and logistics forecasting
-- OR products for GO/SES audiences: structuring, reviewing, and delivering analytical products to senior leader decision-making forums
-- Building persistent OR capability: data architecture for standing analytical environments, team standards, and program management for ORSA on MSS
-
-**TM-50G does NOT cover:**
-
-- Foundation ORSA methods (regression, ARIMA, LP, Monte Carlo, wargame data collection) — see TM-40G
-- Machine learning model development and deployment — see TM-40M
-- AI engineering and production pipeline architecture — see TM-40H
-- Ontology design and Workshop application development — see TM-30
+**TM-50G does NOT cover** foundation ORSA methods (regression, ARIMA, LP, Monte Carlo, wargame data collection) — see TM-40G; machine learning model development and deployment — see TM-40M; AI engineering and production pipeline architecture — see TM-40H; or Ontology design and Workshop application development — see TM-30.
 
 ### 1-2. Target Audience
 
-**Primary audience:** ORSA-coded officers (FA49), senior warrant officers (W4–W5), and civilian analysts (GS-13/14 or equivalent) with primary ORSA function in USAREUR-AF, EUCOM J5/J8, or subordinate unit analytical cells.
+**Primary audience:** ORSA-coded officers (FA49), senior warrant officers (W4–W5), and Civilian analysts (GS-13/14 or equivalent) with primary ORSA function in USAREUR-AF, EUCOM J5/J8, or subordinate unit analytical cells.
 
 **Secondary audience:** S/G2 and J2 section chiefs who supervise ORSA cells; C2DAO senior analysts responsible for analytical product governance; senior program analysts (PM/PEO data offices) requiring advanced analytical methodology for Army modernization programs in EUCOM.
 
@@ -2204,7 +2190,6 @@ For USAREUR-AF operational contexts, Table B-3 translates statistical effect siz
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA*
 *Wiesbaden, Germany*
 
-*UNCLASSIFIED*
 *Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*
 
 *Implements: Army CIO Memorandum, Data and Analytics Policy (April 2024); Unified Data Reference Architecture (UDRA) v1.1 (February 2025)*

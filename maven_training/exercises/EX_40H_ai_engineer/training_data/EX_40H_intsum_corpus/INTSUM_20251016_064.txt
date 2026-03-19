@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20251016_064 — OBSERVATION REPORT
+DTG: 160000Z OCT 2025
+Unit: 173 ABN BDE
+
+Summary: OP RAPTOR reported observation of 5 unidentified vehicles moving in convoy formation along ROUTE MERCURY at 1530 local. Vehicles: ZIL-131. Movement direction: NORTHEAST. No hostile action observed. Convoy cleared the AO within 11 minutes.
+
+Assessment: Likely civilian logistics movement. Pattern consistent with previous observations. Possible CCIR trigger — S2 assessment pending.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

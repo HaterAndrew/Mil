@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-30 COMPANION — ADVANCED BUILDER · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-30 is the shift from building to designing. A Builder (TM-20) configures tools. An Advanced Builder (TM-30) designs systems — pipelines that others feed, Ontology models that others extend, Workshop applications that commanders rely on for operational decisions. This guide develops the mental models required before those systems are built.
+> **Forward:** TM-30 is the shift from building to designing. A Builder (TM-20) configures tools. An Advanced Builder (TM-30) designs systems — pipelines that others feed, Ontology models that others extend, Workshop applications that commanders rely on for operational decisions. This guide develops the mental models required before those systems are built.
 > **Purpose:** Establishes conceptual foundations for multi-source pipeline architecture, Ontology design, Workshop application composition, AIP Logic configuration, and data governance. Read before beginning TM-30 task instruction.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
@@ -529,6 +529,8 @@ The 21st Theater Sustainment Command G4 needs a brigade-level vehicle readiness 
 - **Access control:** G4 section can view and export. Subordinate S4s can view their own brigade, not others. Dashboard visible to commanding general read-only.
 - **Escalation trigger:** If the requirement adds a predictive maintenance model, route the model to TM-40M; TM-30 builds the Workshop display layer only.
 
+> **NOTE:** Similar dashboard patterns apply to other MSCs. 10th AAMDC requires Patriot/THAAD launcher readiness tracking with sensor-status overlays. SETAF-AF needs expeditionary vehicle readiness across dispersed Africa AOR locations with limited connectivity. The TM-30 design principles — grain management, incremental refresh, role-based access — are identical; the data sources and operational context differ.
+
 ### Vignette B — V Corps SITREP Data Quality Workflow
 
 V Corps G3 identifies that incoming SITREPs contain inconsistent status codes — "RED", "red", "R", and "DEADLINE" are all used interchangeably, breaking dashboard filters. The requirement is to standardize status at ingestion and surface data quality issues to the submitting units.
@@ -540,6 +542,8 @@ V Corps G3 identifies that incoming SITREPs contain inconsistent status codes �
 - **Action:** Configure a SITREP submission Action that validates status against the controlled vocabulary before write; invalid submissions return an error message to the submitting user.
 - **Data quality surface:** Add a Workshop widget (visible to G3 data steward only) showing submission error log: unit, submission timestamp, invalid value submitted, required value.
 - **Branch discipline:** All Ontology schema changes go through a development branch with full downstream impact audit before promotion. Estimated downstream consumers: 14 Workshop widgets, 3 Contour analyses, 2 pipeline transforms.
+
+> **NOTE:** Data quality standardization is a theater-wide problem. 56th MDC-E encounters similar inconsistencies in multi-domain effect reporting codes. SETAF-AF faces variant status codes across partner-nation reporting feeds. The pattern — controlled vocabulary, pipeline normalization, validation Actions — applies wherever free-text status values create downstream filtering failures.
 
 ---
 

@@ -20,7 +20,7 @@ Wiesbaden, Germany
 
 | Level | Who You Are | Start Here |
 |-------|-------------|------------|
-| All personnel | Soldier, officer, or civilian accessing MSS for data consumption | TM-10 |
+| All personnel | Soldier, officer, or Civilian accessing MSS for data consumption | TM-10 |
 | All staff (light builders) | Building dashboards, forms, or basic pipelines | TM-20 (prereq: TM-10) |
 | Data-adjacent specialists | 17/25-series, S6/G6, G2, operational data analysts | TM-30 (prereq: TM-20) |
 | WFF functional staff | Assigned to INT, FIRES, M2, SUST, PROTECTION, or MC | TM-40A–F (prereq: TM-30) |
@@ -46,7 +46,7 @@ All Personnel ──────────────────────
                                                 ▼
 All Staff ───────────────────────────────► TM-20 (Builder)
                                            │         │
-                                           │         └──► Builder Sprint (BSP) ──────────┐
+                                           │         └──► Foundry Bootcamp (FBC) ──────────┐
                                            │              Quarterly. Prereq: TM-20.       │
                                            │              Bring a real problem. Build it. │
                                            │              Outside TM chain; no TM credit. │
@@ -57,7 +57,7 @@ All proceeding to TM-40 ────────────────► TM-3
                               ▼                                      ▼                   │
                    WFF Staff (TM-40A–F)              Technical Specialists (TM-40G–O) ◄──┘
                    TM-40A  Intelligence               TM-40G  ORSA           (TM-40 requires
-                   TM-40B  Fires                      TM-40H  AI Engineer     TM-30; BSP
+                   TM-40B  Fires                      TM-40H  AI Engineer     TM-30; FBC
                    TM-40C  Movement/Maneuver          TM-40M  ML Engineer     does not satisfy
                    TM-40D  Sustainment                TM-40J  Program Manager this prereq)
                    TM-40E  Protection                 TM-40K  Knowledge Manager
@@ -416,5 +416,5 @@ Distribute to each trainee at course start.
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Version 5.1 | March 2026 | CDA doctrine, EA series, and source material indexed; TM-20 appendices and CONCEPTS_GUIDE files added | Supersedes v5.0*

@@ -105,7 +105,7 @@ Add the following graphics to the COP using the provided list:
 
 ## EVALUATOR NOTES
 
-**Scoring:** 6 tasks. Go on 5 of 6 = overall Go. No-Go on Task 3 or Task 5 = automatic No-Go.
+**Scoring:** 6 tasks. Go on 5 of 6 = overall Go. No-Go on Task 1 or Task 5 = automatic No-Go.
 
 ### Pre-Exercise Checklist
 

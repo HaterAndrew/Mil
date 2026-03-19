@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20261204_161 — WEATHER IMPACT
+DTG: 040000Z DEC 2026
+Unit: 1-4 BN
+
+Summary: Heavy fog expected in the SILBERBACH valley from 0400-0900 local for the next 3 days. Visibility below 200m.
+
+Operational Impact: Aviation operations degraded. ISR coverage gaps expected during affected periods.
+Recommended Action: Adjust operations tempo as needed. Monitor weather updates from corps weather team. Coordinate with aviation for revised ISR windows.

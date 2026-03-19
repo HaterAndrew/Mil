@@ -37,7 +37,7 @@ const CATEGORIES: RoleCategory[] = [
     description: 'I use MSS dashboards, views, and reports to inform decisions.',
     roles: [
       {
-        label: 'Any Soldier, officer, or civilian using MSS to view data',
+        label: 'Any Soldier, officer, or Civilian using MSS to view data',
         description: 'You access MSS to consume operational data — dashboards, reports, filtered views.',
         result: { label: 'Maven User', tm40: 'TM-10', tm40Panel: 'tm10', description: 'TM-10 covers everything you need: CAC login, navigation, Workshop apps, data viewing, AI tools, and security.', path: ['TM-10'] },
       },
@@ -179,12 +179,12 @@ export default function QuickRef({ showPanel }: Props) {
 
       {/* Quick-nav button row */}
       <div className="qr-nav-row">
-        <button className="qr-nav-btn" onClick={(e) => { e.stopPropagation(); showPanel('schedule' as any) }}>Training Schedule</button>
-        <button className="qr-nav-btn" onClick={(e) => { e.stopPropagation(); showPanel('specialists' as any) }}>Specialist Tracks</button>
-        <button className="qr-nav-btn" onClick={(e) => { e.stopPropagation(); showPanel('documents' as any) }}>All Documents</button>
-        <button className="qr-nav-btn" onClick={(e) => { e.stopPropagation(); showPanel('taskindex' as any) }}>Task Index</button>
-        <button className="qr-nav-btn" onClick={(e) => { e.stopPropagation(); showPanel('dashboards' as any) }}>Dashboards</button>
-        <button className="qr-nav-btn" onClick={(e) => { e.stopPropagation(); showPanel('support' as any) }}>Support</button>
+        <button className="qr-nav-btn" onClick={(e) => { e.stopPropagation(); showPanel('schedule') }}>Training Schedule</button>
+        <button className="qr-nav-btn" onClick={(e) => { e.stopPropagation(); showPanel('specialists') }}>Specialist Tracks</button>
+        <button className="qr-nav-btn" onClick={(e) => { e.stopPropagation(); showPanel('documents') }}>All Documents</button>
+        <button className="qr-nav-btn" onClick={(e) => { e.stopPropagation(); showPanel('taskindex') }}>Task Index</button>
+        <button className="qr-nav-btn" onClick={(e) => { e.stopPropagation(); showPanel('dashboards') }}>Dashboards</button>
+        <button className="qr-nav-btn" onClick={(e) => { e.stopPropagation(); showPanel('support') }}>Support</button>
       </div>
 
       {/* ── FIND MY TRACK (inline, collapsible) ─────────────────── */}
@@ -288,17 +288,17 @@ export default function QuickRef({ showPanel }: Props) {
                 <tr>
                   <td>Any personnel &mdash; viewing data for the first time</td>
                   <td>TM-10 &mdash; Maven User</td>
-                  <td><button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('tm10' as any) }}>TM-10 &rarr;</button></td>
+                  <td><button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('tm10') }}>TM-10 &rarr;</button></td>
                 </tr>
                 <tr>
                   <td>Staff building dashboards or simple pipelines (no coding)</td>
                   <td>TM-20 &mdash; Builder</td>
-                  <td><button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('tm20' as any) }}>TM-20 &rarr;</button></td>
+                  <td><button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('tm20') }}>TM-20 &rarr;</button></td>
                 </tr>
                 <tr>
                   <td>Data steward, frequent builder, or data-adjacent role (17/25-series, G2, analyst)</td>
                   <td>TM-30 &mdash; Advanced Builder</td>
-                  <td><button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('tm30' as any) }}>TM-30 &rarr;</button></td>
+                  <td><button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('tm30') }}>TM-30 &rarr;</button></td>
                 </tr>
                 <tr>
                   <td>Technical specialist or warfighting function developer &mdash; ORSA &bull; AI/ML Eng &bull; PM &bull; KM &bull; SWE</td>
@@ -313,12 +313,12 @@ export default function QuickRef({ showPanel }: Props) {
                       {tm40TableOpen && (
                         <div className="qr-dropdown-menu open" id="dd-tm40-table">
                           <div className="qr-dropdown-section">Select Your Track</div>
-                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm40' as any); closeDropdowns() }}>TM-40G &mdash; ORSA</button>
-                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm40' as any); closeDropdowns() }}>TM-40H &mdash; AI Engineer</button>
-                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm40' as any); closeDropdowns() }}>TM-40M &mdash; ML Engineer</button>
-                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm40' as any); closeDropdowns() }}>TM-40J &mdash; Program Mgr</button>
-                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm40' as any); closeDropdowns() }}>TM-40K &mdash; Knowledge Mgr</button>
-                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm40' as any); closeDropdowns() }}>TM-40L &mdash; Software Eng</button>
+                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm40'); closeDropdowns() }}>TM-40G &mdash; ORSA</button>
+                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm40'); closeDropdowns() }}>TM-40H &mdash; AI Engineer</button>
+                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm40'); closeDropdowns() }}>TM-40M &mdash; ML Engineer</button>
+                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm40'); closeDropdowns() }}>TM-40J &mdash; Program Mgr</button>
+                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm40'); closeDropdowns() }}>TM-40K &mdash; Knowledge Mgr</button>
+                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm40'); closeDropdowns() }}>TM-40L &mdash; Software Eng</button>
                         </div>
                       )}
                     </div>
@@ -337,12 +337,12 @@ export default function QuickRef({ showPanel }: Props) {
                       {tm50TableOpen && (
                         <div className="qr-dropdown-menu open" id="dd-tm50-table">
                           <div className="qr-dropdown-section">Select Your Track</div>
-                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm50' as any); closeDropdowns() }}>TM-50G &mdash; ORSA Advanced</button>
-                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm50' as any); closeDropdowns() }}>TM-50H &mdash; AI Engineer Advanced</button>
-                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm50' as any); closeDropdowns() }}>TM-50M &mdash; ML Engineer Advanced</button>
-                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm50' as any); closeDropdowns() }}>TM-50J &mdash; Program Mgr Advanced</button>
-                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm50' as any); closeDropdowns() }}>TM-50K &mdash; Knowledge Mgr Advanced</button>
-                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm50' as any); closeDropdowns() }}>TM-50L &mdash; Software Eng Advanced</button>
+                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm50'); closeDropdowns() }}>TM-50G &mdash; ORSA Advanced</button>
+                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm50'); closeDropdowns() }}>TM-50H &mdash; AI Engineer Advanced</button>
+                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm50'); closeDropdowns() }}>TM-50M &mdash; ML Engineer Advanced</button>
+                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm50'); closeDropdowns() }}>TM-50J &mdash; Program Mgr Advanced</button>
+                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm50'); closeDropdowns() }}>TM-50K &mdash; Knowledge Mgr Advanced</button>
+                          <button className="qr-dropdown-item" onClick={(e) => { e.stopPropagation(); showPanel('tm50'); closeDropdowns() }}>TM-50L &mdash; Software Eng Advanced</button>
                         </div>
                       )}
                     </div>
@@ -351,7 +351,7 @@ export default function QuickRef({ showPanel }: Props) {
                 <tr>
                   <td>O-5 / SGM+ &mdash; directing a data-capable formation</td>
                   <td>TM-SL &mdash; Senior Leader Exec Course</td>
-                  <td><button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('sl' as any) }}>TM-SL &rarr;</button></td>
+                  <td><button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('sl') }}>TM-SL &rarr;</button></td>
                 </tr>
                 <tr>
                   <td>All personnel &mdash; foundational data concepts before TM-10</td>
@@ -361,7 +361,7 @@ export default function QuickRef({ showPanel }: Props) {
                 <tr>
                   <td>Anyone &mdash; unfamiliar term or concept</td>
                   <td>Glossary &mdash; Data &amp; Foundry</td>
-                  <td><button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('doctrine' as any) }}>Draft Pubs &rarr;</button></td>
+                  <td><button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('doctrine') }}>Draft Pubs &rarr;</button></td>
                 </tr>
               </tbody>
             </table>
@@ -402,12 +402,12 @@ export default function QuickRef({ showPanel }: Props) {
           <div className="qr-label">When It Breaks</div>
           <div className="qr-broken-grid">
             <div className="qr-broken-item"><strong>Can&rsquo;t log in</strong><br/>Check CAC is fully inserted; try a different port. No account? Request at <a href="https://mss.data.mil" target="_blank" rel="noreferrer" style={{color:'var(--navy-mid)',fontWeight:600}}>mss.data.mil</a> or through your data steward. Provisioning generally within 24 hrs; if not active after 24 hrs, contact your data steward.</div>
-            <div className="qr-broken-item"><strong>App won&rsquo;t load</strong><br/>Hard-refresh (Ctrl+Shift+R). Clear cache. Try a different browser. Still broken &rarr; <button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('support' as any) }}>Help Desk &rarr;</button></div>
+            <div className="qr-broken-item"><strong>App won&rsquo;t load</strong><br/>Hard-refresh (Ctrl+Shift+R). Clear cache. Try a different browser. Still broken &rarr; <button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('support') }}>Help Desk &rarr;</button></div>
             <div className="qr-broken-item"><strong>Button greyed out / no access</strong><br/>You&rsquo;re missing a role or write permission. Contact your data steward to request the correct access level.</div>
           </div>
           <div style={{marginTop:'12px',paddingTop:'10px',borderTop:'1px solid var(--border)',display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'8px',fontSize:'11px',color:'var(--text-body)'}}>
             <div><strong style={{display:'block',marginBottom:'2px',textTransform:'uppercase',letterSpacing:'.05em',fontSize:'10px'}}>Data Steward</strong>Account access &bull; data issues &bull; permission requests</div>
-            <div><strong style={{display:'block',marginBottom:'2px',textTransform:'uppercase',letterSpacing:'.05em',fontSize:'10px'}}>Help Desk</strong>App broken &bull; won&rsquo;t load &bull; technical errors &rarr; <button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('support' as any) }}>Support &rarr;</button></div>
+            <div><strong style={{display:'block',marginBottom:'2px',textTransform:'uppercase',letterSpacing:'.05em',fontSize:'10px'}}>Help Desk</strong>App broken &bull; won&rsquo;t load &bull; technical errors &rarr; <button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('support') }}>Support &rarr;</button></div>
             <div><strong style={{display:'block',marginBottom:'2px',textTransform:'uppercase',letterSpacing:'.05em',fontSize:'10px'}}>ODT</strong>Training questions &bull; new app or pipeline requests</div>
           </div>
         </div>
@@ -426,7 +426,7 @@ export default function QuickRef({ showPanel }: Props) {
               <div className="path-dot optional" style={{fontSize:'10px',width:'34px',height:'34px'}}>SL</div>
               <div className="path-line dashed"></div>
             </div>
-            <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('sl' as any)}>
+            <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('sl')}>
               <div className="path-tm">TM-SL &mdash; SENIOR LEADER EXEC COURSE (O-5+ / SGM+)</div>
               <div className="path-name">Senior Leader Executive Course <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; TM-SL</span></div>
               <div className="path-audience">1-day course; replaces TM-10 for senior leaders; principles, command responsibilities, decision frameworks</div>
@@ -437,7 +437,7 @@ export default function QuickRef({ showPanel }: Props) {
             <div className="path-connector">
               <div className="path-dot optional" style={{fontSize:'10px',width:'34px',height:'34px'}}>ALL</div>
             </div>
-            <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('doctrine' as any)}>
+            <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('doctrine')}>
               <div className="path-tm">DATA LITERACY &mdash; RECOMMENDED (ALL PERSONNEL)</div>
               <div className="path-name">Data Literacy Reference <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; Draft Pubs</span></div>
               <div className="path-audience">Platform-agnostic data literacy; recommended before TM-10</div>
@@ -452,7 +452,7 @@ export default function QuickRef({ showPanel }: Props) {
             <div className="path-dot">1</div>
             <div className="path-line"></div>
           </div>
-          <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('tm10' as any)}>
+          <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('tm10')}>
             <div className="path-tm">TM-10 &mdash; REQUIRED FOR ALL PERSONNEL</div>
             <div className="path-name">Maven User Manual <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; TM-10</span></div>
             <div className="path-audience">CAC login, navigation, Workshop apps, data viewing, AI tools, security</div>
@@ -465,7 +465,7 @@ export default function QuickRef({ showPanel }: Props) {
             <div className="path-dot">2</div>
             <div className="path-line"></div>
           </div>
-          <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('tm20' as any)}>
+          <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('tm20')}>
             <div className="path-tm">TM-20 &mdash; ALL STAFF (NO-CODE BUILDER)</div>
             <div className="path-name">Builder Manual <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; TM-20</span></div>
             <div className="path-audience">Pipeline Builder (visual), Ontology Manager UI, Workshop app builder</div>
@@ -478,7 +478,7 @@ export default function QuickRef({ showPanel }: Props) {
             <div className="path-dot">3</div>
             <div className="path-line"></div>
           </div>
-          <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('tm30' as any)}>
+          <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('tm30')}>
             <div className="path-tm">TM-30 &mdash; DATA-ADJACENT SPECIALISTS</div>
             <div className="path-name">Advanced Builder Manual <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; TM-30</span></div>
             <div className="path-audience">Complex app design, Ontology architecture, governance, C2DAO standards</div>
@@ -490,7 +490,7 @@ export default function QuickRef({ showPanel }: Props) {
           <div className="path-connector">
             <div className="path-dot">4</div>
           </div>
-          <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('specialists' as any)}>
+          <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('specialists')}>
             <div className="path-tm">TM-40 &mdash; TWO TRACK TYPES (BY ROLE)</div>
             <div className="path-name">Specialist &amp; Warfighting Function Tracks <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; Specialist Tracks</span></div>
             <div className="path-audience"><strong>WFF Tracks (TM-40A&ndash;F):</strong> Intel &bull; Fires &bull; M&amp;M &bull; Sustainment &bull; Protection &bull; Mission Command<br/><strong>Technical Tracks (TM-40G&ndash;O):</strong> ORSA &bull; AI Eng &bull; MLE &bull; PM &bull; KM &bull; SWE &bull; UX &bull; Platform Eng &mdash; Advanced versions at TM-50G&ndash;O</div>
@@ -507,7 +507,7 @@ export default function QuickRef({ showPanel }: Props) {
               <div className="path-dot optional" style={{fontSize:'9px',width:'34px',height:'34px'}}>SL</div>
               <div className="path-line dashed"></div>
             </div>
-            <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('sl' as any)}>
+            <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('sl')}>
               <div className="path-tm">SENIOR LEADER EXECUTIVE COURSE &mdash; O-5+ / SGM+</div>
               <div className="path-name">Senior Leader Executive Course <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; TM-SL</span></div>
               <div className="path-audience">Directing and resourcing a data-capable formation; no technical prereqs</div>
@@ -516,12 +516,12 @@ export default function QuickRef({ showPanel }: Props) {
           <div className="path-spacer"></div>
           <div className="path-step">
             <div className="path-connector">
-              <div className="path-dot optional" style={{fontSize:'9px',width:'34px',height:'34px'}}>BSP</div>
+              <div className="path-dot optional" style={{fontSize:'9px',width:'34px',height:'34px'}}>FBC</div>
               <div className="path-line dashed"></div>
             </div>
-            <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('bsp' as any)}>
-              <div className="path-tm">BUILDER SPRINT PROGRAM &mdash; PREREQ: TM-20</div>
-              <div className="path-name">Builder Sprint (BSP) <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; BSP</span></div>
+            <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('fbc')}>
+              <div className="path-tm">FOUNDRY BOOTCAMP PROGRAM &mdash; PREREQ: TM-20</div>
+              <div className="path-name">Foundry Bootcamp (FBC) <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; FBC</span></div>
               <div className="path-audience">Intensive hands-on sprint; parallel to TM-30, not a prereq for TM-40</div>
             </div>
           </div>
@@ -531,7 +531,7 @@ export default function QuickRef({ showPanel }: Props) {
               <div className="path-dot optional" style={{fontSize:'9px',width:'34px',height:'34px'}}>T3-I</div>
               <div className="path-line dashed"></div>
             </div>
-            <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('documents' as any)}>
+            <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('documents')}>
               <div className="path-tm">INSTRUCTOR CERTIFICATION &mdash; PREREQ: TM-30 + C2DAO SELECTION</div>
               <div className="path-name">T3-I Instructor Certification <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; Documents</span></div>
               <div className="path-audience">5-day classroom + practicum; certifies MSS instructors (Instructor &rarr; Senior &rarr; Master)</div>
@@ -542,7 +542,7 @@ export default function QuickRef({ showPanel }: Props) {
             <div className="path-connector">
               <div className="path-dot optional" style={{fontSize:'9px',width:'34px',height:'34px'}}>T3-F</div>
             </div>
-            <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('documents' as any)}>
+            <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('documents')}>
               <div className="path-tm">MSC FORCE MULTIPLIER &mdash; PREREQ: TM-20 + CDR NOMINATION</div>
               <div className="path-name">T3-F Unit Data Trainer (UDT) <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; Documents</span></div>
               <div className="path-audience">Half day; trains UDTs who deliver TM-10 locally at each MSC</div>
@@ -558,7 +558,7 @@ export default function QuickRef({ showPanel }: Props) {
           <div className="specialist-cta-title">Foundation &mdash; TM-10 &rarr; TM-20 &rarr; TM-30</div>
           <div className="specialist-cta-sub">All personnel begin here. TM-10 gets you operational; TM-20 builds no-code skills; TM-30 unlocks specialist tracks.</div>
         </div>
-        <button className="specialist-cta-btn" onClick={(e) => { e.stopPropagation(); showPanel('tm10' as any) }}>
+        <button className="specialist-cta-btn" onClick={(e) => { e.stopPropagation(); showPanel('tm10') }}>
           Start with TM-10 <span className="btn-arrow">&#8594;</span>
         </button>
       </div>
@@ -569,7 +569,7 @@ export default function QuickRef({ showPanel }: Props) {
           Two courses sit <strong>outside</strong> the TM-10 to TM-50 chain:<br/><br/>
           <strong>T3-I (Instructor Certification):</strong> Prereq TM-30 + C2DAO selection. 5-day classroom + supervised practicum. Certifies MSS instructors (Instructor &rarr; Senior &rarr; Master).<br/>
           <strong>T3-F (MSC Force Multiplier):</strong> Prereq TM-20 + CDR nomination. Half day. Trains Unit Data Trainers (UDTs) who deliver TM-10 locally at each MSC.<br/><br/>
-          See <button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('documents' as any) }}>All Documents &rarr;</button> for T3 publications, syllabi, and SOPs.
+          See <button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('documents') }}>All Documents &rarr;</button> for T3 publications, syllabi, and SOPs.
         </div>
       </div>
 
@@ -582,8 +582,8 @@ export default function QuickRef({ showPanel }: Props) {
         <div className="callout-label">NOT FINDING WHAT YOU NEED?</div>
         <div className="callout-body">
           Contact your unit data steward for additional publications, source files, or access to restricted materials.
-          For technical support, visit the <button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('support' as any) }}>Support page &rarr;</button>
-          For task-level procedures, use the <button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('taskindex' as any) }}>Task Index &rarr;</button>
+          For technical support, visit the <button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('support') }}>Support page &rarr;</button>
+          For task-level procedures, use the <button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('taskindex') }}>Task Index &rarr;</button>
         </div>
       </div>
     </div>

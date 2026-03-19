@@ -232,5 +232,5 @@ SA-5. Full credit: raw data typically contains nulls, type errors, duplicate rec
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-20 Pre-Test | Version 1.0 | March 2026*

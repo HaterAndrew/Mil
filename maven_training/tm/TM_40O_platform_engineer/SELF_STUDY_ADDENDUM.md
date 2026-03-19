@@ -70,4 +70,4 @@ Videos are grouped by topic and ordered from foundational to advanced. Start wit
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*

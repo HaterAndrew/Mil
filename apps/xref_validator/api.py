@@ -7,6 +7,8 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException, Query
 
+from shared.middleware import SecurityHeadersMiddleware
+
 from .db import (
     get_filtered_issues,
     get_scan_history,
@@ -44,6 +46,7 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
 )
+app.add_middleware(SecurityHeadersMiddleware)
 
 
 # ---------------------------------------------------------------------------

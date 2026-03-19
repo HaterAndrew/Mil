@@ -49,6 +49,9 @@ Total lead time: **10–35 duty days before Day 1**, depending on access require
 | Program managers and resource managers | TM-40J |
 | Knowledge managers and KMOs | TM-40K |
 | Software engineers building Foundry integrations | TM-40L |
+| UI/UX designers working on MSS | TM-40N |
+| Platform engineers managing MSS infrastructure | TM-40O |
+| Senior specialists advancing beyond TM-40 | TM-50G through TM-50O (prereq: corresponding TM-40 track) |
 
 ### Step 2: Verify Prerequisites
 
@@ -66,6 +69,9 @@ Total lead time: **10–35 duty days before Day 1**, depending on access require
 | TM-40J | TM-10, TM-20, TM-30 Go on file (all required) |
 | TM-40K | TM-10, TM-20, TM-30 Go on file (all required) |
 | TM-40L | TM-10, TM-20, TM-30 Go on file; TypeScript or Python proficiency; REST API familiarity |
+| TM-40N | TM-10, TM-20, TM-30 Go on file; design tool familiarity |
+| TM-40O | TM-10, TM-20, TM-30 Go on file; Linux sysadmin background; containers/Git proficiency |
+| TM-50G–O | Corresponding TM-40 track Go on file (required) |
 
 ### Step 3: Check Training Schedule
 
@@ -121,6 +127,8 @@ Via NIPR email or official messaging. Subject line format: `MSS ENROLLMENT REQUE
 | TM-40H | AIP Logic authoring + Agent Studio | C2DAO only | 7–10 duty days |
 | TM-40M | GPU Code Workspace | C2DAO only | 10+ duty days |
 | TM-40L | OSDK developer access + developer token | C2DAO only | 10+ duty days |
+| TM-40N | Workshop design access (Editor + AIP Logic configuration) | C2DAO | 7–10 duty days |
+| TM-40O | Kubernetes cluster access + CI/CD pipeline access | C2DAO only | 10+ duty days |
 
 **IMPORTANT:** Lead times are minimums. For TM-40M (GPU workspace) and TM-40L (OSDK), start provisioning at least 5 weeks before Day 1.
 
@@ -130,10 +138,13 @@ Via NIPR email or official messaging. Subject line format: `MSS ENROLLMENT REQUE
 
 At T-3 duty days:
 - [ ] Trainee logs in to MSS Training Environment successfully
+- [ ] **If training requires multiple enclaves (NIPR, SIPR, MPE, etc.): trainee confirms successful login on EACH enclave.** Accounts do not carry across enclaves — each requires separate provisioning and verification.
 - [ ] Trainee confirms access level is correct (Builder access shows "Create" buttons)
-- [ ] For TM-40G/I: trainee runs the provided test script; confirms it executes without error
+- [ ] For TM-40G/M: trainee runs the provided test script; confirms it executes without error
 - [ ] For TM-40H: trainee confirms AIP Logic authoring tab appears
 - [ ] For TM-40L: trainee runs OSDK authentication test with their developer token
+- [ ] For TM-40N: trainee confirms Editor access with AIP Logic configuration active
+- [ ] For TM-40O: trainee confirms Kubernetes cluster access and CI/CD pipeline access
 
 If access is NOT confirmed at T-3:
 1. Trainee notifies MSS Administrator immediately
@@ -265,11 +276,11 @@ A: Yes, if the minimum class size is met (see CAD Section 1-4). Submit a request
 
 ---
 
-## BUILDER SPRINT (BSP) ENROLLMENT
+## FOUNDRY BOOTCAMP (FBC) ENROLLMENT
 
-The Builder Sprint is a separate quarterly event outside the TM-10 through TM-50 training chain. It has its own enrollment workflow. See BUILDER_SPRINT_SOP.md (BSP-SOP-001) for full procedures. Summary below.
+The Foundry Bootcamp is a separate quarterly event outside the TM-10 through TM-50 training chain. It has its own enrollment workflow. See FOUNDRY_BOOTCAMP_SOP.md (FBC-SOP-001) for full procedures. Summary below.
 
-### BSP Enrollment Summary
+### FBC Enrollment Summary
 
 ```
 1. IDENTIFY   → 2. BRIEF      → 3. SUBMIT    → 4. VALIDATE  → 5. PROVISION → 6. CONFIRM
@@ -278,24 +289,24 @@ The Builder Sprint is a separate quarterly event outside the TM-10 through TM-50
 
 **Key differences from TM course enrollment:**
 
-| TM Course Enrollment | BSP Enrollment |
+| TM Course Enrollment | FBC Enrollment |
 |---|---|
 | Prereq: varies by course | Prereq: TM-20 Go on file — no exceptions |
 | No project required | **Project Brief (CAD Appendix D) required** |
 | Seat confirmed on prereq verification | Seat confirmed only after Project Brief approval |
-| Access provisioned from standard access list | Sprint workspace provisioned per project list |
+| Access provisioned from standard access list | Bootcamp workspace provisioned per project list |
 
-**BSP-specific steps:**
+**FBC-specific steps:**
 
 1. Candidate prepares Project Brief (CAD Appendix D) with supervisor signature
 2. Unit Training NCO/Officer submits: standard Enrollment Request + Project Brief + TM-20 Go record
 3. C2DAO reviews Project Brief within 5 duty days — approves, returns for revision, or denies
 4. Enrollment confirmed in writing upon Project Brief approval
-5. Sprint workspace provisioned T-10 days; access confirmed by candidate T-5 days
+5. Bootcamp workspace provisioned T-10 days; access confirmed by candidate T-5 days
 
-**BSP does not grant TM credit.** Completion appears in training records as a separate event type, not as a TM course completion.
+**FBC does not grant TM credit.** Completion appears in training records as a separate event type, not as a TM course completion.
 
-**BSP waivers:**
+**FBC waivers:**
 - TM-20 prereq waiver: Not granted
 - Project Brief waiver: Not granted
 - Late brief (after T-14 days): C2DAO discretion; never later than T-5 days
@@ -315,7 +326,7 @@ C2DAO maintains the authoritative training records system for MSS training. Unit
 | Unit of assignment | UIC + short name | Current unit at time of training |
 | MOS/AOC | Standard format (e.g., 17C, 25D, FA49) | |
 | NIPR email | DoD email address | Official contact for records |
-| Course completed | TM-10, TM-20, TM-30, TM-40X, TM-50X, or BSP | Exact identifier |
+| Course completed | TM-10, TM-20, TM-30, TM-40X, TM-50X, or FBC | Exact identifier |
 | Result | Go / No-Go | |
 | Evaluation date | YYYY-MM-DD | Date of practical exercise completion |
 | Evaluator name and rank | String | Must match signature on completion certificate |
@@ -390,5 +401,5 @@ MSS training tracks prepare students for Palantir's external certification exams
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Enrollment SOP | Version 2.0 | March 2026*

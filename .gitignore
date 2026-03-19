@@ -11,3 +11,26 @@ data_skills/
 skills/
 .wrangler/
 node_modules/
+
+# Environment files
+.env.*
+.env.local
+.env.production
+
+# Certificates
+*.pem
+*.key
+*.cert
+
+# Logs
+*.log
+
+# Build artifacts
+dist/
+build/
+htmlcov/
+coverage/
+
+# IDE settings
+.vscode/
+.idea/

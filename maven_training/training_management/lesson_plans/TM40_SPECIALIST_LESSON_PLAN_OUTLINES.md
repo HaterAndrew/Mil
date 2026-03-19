@@ -840,7 +840,7 @@
 ### Blocks 19–22 — Practical Exercise and Design Presentation
 **Day:** 5
 
-**Blocks 19–21 (EX-40N Practical Exercise, ~5 hrs):** Design an MSS application from user research through handoff — including research plan, persona, information architecture, Workshop layout specification, interaction design with all states, accessibility audit, usability test findings, and design-to-development handoff package.
+**Blocks 19–21 (EX_40N Practical Exercise, ~5 hrs):** Design an MSS application from user research through handoff — including research plan, persona, information architecture, Workshop layout specification, interaction design with all states, accessibility audit, usability test findings, and design-to-development handoff package.
 
 **Block 22 (Design Presentation, 1.25 hrs):** Each trainee presents their design, research findings, and handoff package. Evaluator assesses design rationale, SCD methodology application, and handoff package completeness.
 
@@ -1089,7 +1089,7 @@
 ### Blocks 19–22 — Practical Exercise and Platform Demonstration
 **Day:** 5
 
-**Blocks 19–21 (EX-40O Practical Exercise, ~5 hrs):** Build and secure a platform environment: Kubernetes deployment with resource management and health checks, GitOps workflow with drift detection, CI/CD pipeline with security gates, container hardening, and air-gapped deployment.
+**Blocks 19–21 (EX_40O Practical Exercise, ~5 hrs):** Build and secure a platform environment: Kubernetes deployment with resource management and health checks, GitOps workflow with drift detection, CI/CD pipeline with security gates, container hardening, and air-gapped deployment.
 
 **Block 22 (Platform Demonstration, 1.25 hrs):** Each trainee presents their environment, pipeline, and security posture. Evaluator assesses infrastructure design, security controls, and operational procedures.
 
@@ -1106,5 +1106,5 @@
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-40 Specialist Lesson Plan Outlines | Version 1.2 | March 2026*

@@ -232,5 +232,5 @@ SA-5. Full credit: do not argue with the user — investigate. Ask what "the old
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-40J Pre-Test | Version 2.0 | March 2026*

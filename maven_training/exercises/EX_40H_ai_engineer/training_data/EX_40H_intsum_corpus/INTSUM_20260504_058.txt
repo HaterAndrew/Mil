@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260504_058 — FORCE PROTECTION
+DTG: 040000Z MAY 2026
+Unit: 3BCT HHC
+
+Summary: Perimeter sensor activation at FOB GRUENFELD (grid 33T158620) at 0230 local. QRF dispatched. Cause determined to be wildlife. No hostile activity.
+
+Assessment: Force protection posture remains at current FPCON level. No change recommended at this time pending further analysis.
+Recommended Action: Maintain heightened awareness. Review FPCON measures with all personnel. Report any suspicious activity immediately through established channels.

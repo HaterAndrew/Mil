@@ -1,0 +1,10 @@
+
+INTSUM INTSUM_20251108_117 — HUMINT REPORT
+DTG: 080000Z NOV 2025
+Unit: DIVARTY
+
+Summary: During engagement with a patrol debrief, information was obtained indicating the following: source reported unusual vehicle traffic near DUNKELWALD during nighttime hours over the past week.
+
+Source Reliability/Information Credibility: D-4 (Not Usually Reliable — Doubtfully True).
+Corroboration: No independent corroboration at this time. Cross-referencing with patrol reports and SIGINT holdings in progress.
+Recommended Action: Task patrols to confirm or deny reporting. Submit IIR through appropriate channels.

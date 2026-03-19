@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250316_061 — TERRAIN ANALYSIS
+DTG: 160000Z MAR 2025
+Unit: 1-1 BN
+
+Summary: Bridge at grid 36T676202 near SCHWARZBACH assessed as CLASS 40 — capable of supporting Bradley but not M1 series. Alternate crossing at grid 32T650318 remains CLASS 70.
+
+Impact to Operations: Movement planning should account for degraded conditions. Coordination with engineer assets recommended.
+Recommended Action: Update common operational picture. Disseminate terrain overlay to subordinate units. Request engineer reconnaissance if conditions persist beyond 72 hours.

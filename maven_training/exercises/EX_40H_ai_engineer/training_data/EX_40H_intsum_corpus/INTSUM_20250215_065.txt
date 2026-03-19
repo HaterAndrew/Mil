@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250215_065 — SIGINT SUMMARY
+DTG: 150000Z FEB 2025
+Unit: 1-1 BN
+
+Summary: SIGINT collection assets detected 6 HF emitter(s) in the vicinity of NAI 08 (grid 33T752368). Emissions lasted approximately 17 minutes. Intercept forwarded to technical channels for further analysis.
+
+Assessment: Low-power emissions detected. Possible handheld radio or personal communication device.
+Recommended Action: Continue collection against NAI 08. Request additional SIGINT coverage during 1800-0600 window.

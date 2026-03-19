@@ -10,7 +10,7 @@ Output: maven_training/pdf/
 
 import base64
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime
+from datetime import datetime, timezone
 import hashlib
 import json
 import os
@@ -47,7 +47,7 @@ def _find_chrome() -> str:
 
 
 CHROME = _find_chrome()
-PUB_DATE  = datetime.utcnow().strftime("%-d %B %Y").upper()
+PUB_DATE  = datetime.now(timezone.utc).strftime("%-d %B %Y").upper()
 HQ_LINES  = [
     "HEADQUARTERS",
     "UNITED STATES ARMY EUROPE AND AFRICA",
@@ -59,8 +59,7 @@ DIST_STMT = "DRAFT — NOT FOR OFFICIAL USE. FOR TRAINING PLANNING PURPOSES ONLY
 # ── Publication type metadata ─────────────────────────────────────────────────
 PUB_TYPES = {
     "TM_SL":        ("TECHNICAL MANUAL",                    "TM-SL"),
-    "T3_I":         ("TECHNICAL MANUAL",                    "T3-I"),
-    "T3_F":         ("TECHNICAL MANUAL",                    "T3-F"),
+    # T3_I and T3_F defined in Train-the-Trainer section below
     "TM_10":        ("TECHNICAL MANUAL",                    "TM-10"),
     "TM_20":        ("TECHNICAL MANUAL",                    "TM-20"),
     "TM_30":        ("TECHNICAL MANUAL",                    "TM-30"),
@@ -112,8 +111,7 @@ PUB_TYPES = {
     "TM_50_OVERVIEW":    ("ADVANCED TRACK OVERVIEW",              "TM-50"),
     "TM40_SPECIALIST":   ("LESSON PLANS",                        "TM-40"),
     "CONCEPTS_GUIDE_TM_SL": ("CONCEPTS GUIDE",                    "TM-SL"),
-    "CONCEPTS_GUIDE_T3I": ("CONCEPTS GUIDE",                      "T3-I"),
-    "CONCEPTS_GUIDE_T3F": ("CONCEPTS GUIDE",                      "T3-F"),
+    # CONCEPTS_GUIDE_T3I and CONCEPTS_GUIDE_T3F defined in Train-the-Trainer section below
     "CONCEPTS_GUIDE_TM40A": ("CONCEPTS GUIDE",                   "TM-40A"),
     "CONCEPTS_GUIDE_TM40B": ("CONCEPTS GUIDE",                   "TM-40B"),
     "CONCEPTS_GUIDE_TM40C": ("CONCEPTS GUIDE",                   "TM-40C"),
@@ -137,8 +135,7 @@ PUB_TYPES = {
     "CONCEPTS_GUIDE_TM50N": ("CONCEPTS GUIDE",                   "TM-50N"),
     "CONCEPTS_GUIDE_TM50O": ("CONCEPTS GUIDE",                   "TM-50O"),
     "SYLLABUS_TM_SL":    ("COURSE SYLLABUS",                     "TM-SL"),
-    "SYLLABUS_T3I":      ("COURSE SYLLABUS",                     "T3-I"),
-    "SYLLABUS_T3F":      ("COURSE SYLLABUS",                     "T3-F"),
+    # SYLLABUS_T3I and SYLLABUS_T3F defined in Train-the-Trainer section below
     "SYLLABUS_TM10":     ("COURSE SYLLABUS",                     "TM-10"),
     "SYLLABUS_TM20":     ("COURSE SYLLABUS",                     "TM-20"),
     "SYLLABUS_TM30":     ("COURSE SYLLABUS",                     "TM-30"),
@@ -166,10 +163,7 @@ PUB_TYPES = {
     "EX_50L":            ("PRACTICAL EXERCISE",                  "EX-50L"),
     "EX_50N":            ("PRACTICAL EXERCISE",                  "EX-50N"),
     "EX_50O":            ("PRACTICAL EXERCISE",                  "EX-50O"),
-    "EX_T3I":            ("PRACTICAL EXERCISE",                  "EX-T3I"),
-    "EX_T3F":            ("PRACTICAL EXERCISE",                  "EX-T3F"),
-    "EXAM_T3I":          ("EXAMINATION",                         "T3-I"),
-    "EXAM_T3F":          ("EXAMINATION",                         "T3-F"),
+    # EX_T3I, EX_T3F, EXAM_T3I, EXAM_T3F defined in Train-the-Trainer section below
     "SELF_STUDY_TM40A":  ("SELF-STUDY ADDENDUM",                 "TM-40A"),
     "SELF_STUDY_TM40B":  ("SELF-STUDY ADDENDUM",                 "TM-40B"),
     "SELF_STUDY_TM40C":  ("SELF-STUDY ADDENDUM",                 "TM-40C"),
@@ -199,6 +193,7 @@ PUB_TYPES = {
     "AAR_TEMPLATE":      ("AFTER-ACTION REVIEW TEMPLATE",        "AAR-MSS"),
     "CURRICULUM_MAINT":  ("STANDARD OPERATING PROCEDURE",        "SOP-MAINT"),
     "COMMANDERS_GUIDE":  ("COMMANDER'S REFERENCE GUIDE",         "CDR-GUIDE"),
+    "AR_350_1":          ("REGULATORY ALIGNMENT MAP",            "AR 350-1"),
     "INSTRUCTOR_OVERVIEW": ("INSTRUCTOR REFERENCE",              "INST-OVR"),
     # ── Architecture reference docs (ARCH_ prefix) ────────────────────────────
     "ARCH_CDA":          ("ARCHITECTURE REFERENCE",              "ODT-CDA"),
@@ -208,16 +203,10 @@ PUB_TYPES = {
     "ARCH_ONTOLOGY":     ("ARCHITECTURE REFERENCE",              "ODT-ONT"),
     # ── Management / planning docs (MGMT_ prefix) ─────────────────────────────
     "MGMT_CG":           ("SENIOR LEADER GUIDANCE",              "ODT-CG"),
-    "C2DAO_SME":         ("DESIGNATION RUBRIC",                  "C2DAO-SME"),
-    "INSTRUCTOR_TIER":   ("INSTRUCTOR TIER DEFINITIONS",         "INST-TIER"),
-    "MTT_OPERATIONS":    ("STANDARD OPERATING PROCEDURE",        "SOP-MTT"),
+    # C2DAO_SME, INSTRUCTOR_TIER, MTT_OPERATIONS defined in Train-the-Trainer section below
     "SUCCESSOR":         ("PLANNING GUIDE",                      "SUCC-PLAN"),
-    "UNIT_DATA_TRAINER": ("STANDARD OPERATING PROCEDURE",        "SOP-UDT"),
-    "DEMO_BRIEF_DCG":    ("DECISION BRIEF",                      "DCG-BRIEF"),
-    "DEMO_DCG_LEAVE":    ("LEAVE-BEHIND",                        "DCG-LB"),
-    "DEMO_DCG_TALKING":  ("TALKING POINTS",                      "DCG-TP"),
-    "T3I_LESSON":        ("LESSON PLANS",                        "T3-I"),
-    "T3F_LESSON":        ("LESSON PLANS",                        "T3-F"),
+    # UNIT_DATA_TRAINER, T3I_LESSON, T3F_LESSON defined in Train-the-Trainer section below
+    # DEMO_BRIEF_DCG, DEMO_DCG_LEAVE, DEMO_DCG_TALKING defined in Train-the-Trainer section below
     "MGMT_ENTERPRISE":   ("ENTERPRISE PLAN",                     "ODT-ENT"),
     "ATIS_COURSE":       ("ATIS COURSE REGISTRATION PACKET",     "ATIS-MSS"),
     "DEMO_BRIEF_DCG":    ("INFORMATION BRIEF",                   "ODT-DCG"),
@@ -388,7 +377,28 @@ document.addEventListener('DOMContentLoaded', function() {
 """
 
 # ── HTML template ─────────────────────────────────────────────────────────────
+def _default_subtitle(pub_type: str, pub_number: str) -> str:
+    """Derive a cover subtitle from publication metadata when the markdown
+    doesn't supply an explicit ## subtitle in its front matter."""
+    num = pub_number.upper()
+    if num.startswith("TM-10") or num == "TM-SL":
+        return "User/Operator Manual"
+    if num.startswith("TM-20"):
+        return "Administrator Manual"
+    if num.startswith("TM-30"):
+        return "Foundation Course Manual"
+    if num.startswith("TM-40") or num.startswith("TM-50"):
+        return "Specialist Course Manual"
+    if num.startswith("T3-"):
+        return "Train-the-Trainer Manual"
+    # For non-TM publications, the pub_type itself is descriptive enough.
+    return pub_type.title()
+
+
 def build_html(body_html: str, pub_type: str, pub_number: str, title: str, subtitle: str = "") -> str:
+    # If no explicit subtitle was extracted from the markdown, apply default.
+    if not subtitle:
+        subtitle = _default_subtitle(pub_type, pub_number)
     cover = f"""
 <div class="cover">
   <div class="cover-topbar"><p>DRAFT — UNOFFICIAL — NOT FOR OPERATIONAL USE</p></div>
@@ -400,7 +410,7 @@ def build_html(body_html: str, pub_type: str, pub_number: str, title: str, subti
     <div class="cover-seal-text">USAREUR&#8209;AF</div>
   </div>
   <div class="cover-title">{title}</div>
-  {"<div class='cover-subtitle'>" + subtitle + "</div>" if subtitle else ""}
+  <div class='cover-subtitle'>{subtitle}</div>
   <div class="cover-spacer"></div>
   <div class="cover-hq">{"<br>".join(HQ_LINES)}</div>
   <div class="cover-dist">{DIST_STMT}</div>
@@ -432,6 +442,10 @@ def extract_title(md_text: str):
         line = line.strip()
         if line.startswith("# ") and not title:
             title = line.lstrip("# ").strip()
+        elif title and (line == "---" or (line.startswith("# ") and not line.startswith("## "))):
+            # Hit a horizontal rule or another H1 — we're past front matter,
+            # so any ## beyond here is a section heading, not a subtitle.
+            break
         elif line.startswith("## ") and title and not subtitle:
             subtitle = line.lstrip("# ").strip()
             break
@@ -500,7 +514,9 @@ def convert_md_brief(src_rel: str, out_stem: str) -> bool:
     compact_override = """
 body, .body-content { font-size: 9.5pt; }
 .body-content { padding-top: 6pt; }
-h1, h2, h3 { font-size: 10pt; margin: 6pt 0 3pt; }
+h1 { font-size: 12pt; padding-top: 0.1in; margin: 0 0 3pt; }
+h2, h3 { font-size: 10pt; margin: 6pt 0 3pt; border-top: none; padding: 3pt 6pt; }
+.body-content h1 ~ h1 { page-break-before: auto; }
 p, li { margin: 2pt 0; line-height: 1.35; }
 table { margin: 4pt 0; }
 th, td { padding: 2pt 5pt; font-size: 9pt; }
@@ -570,22 +586,21 @@ MD_TARGETS = [
     ("maven_training/training_management/AAR_TEMPLATE.md",                             "AAR_TEMPLATE"),
     ("maven_training/training_management/CURRICULUM_MAINTENANCE_SOP.md",               "CURRICULUM_MAINTENANCE_SOP"),
     ("maven_training/training_management/COMMANDERS_GUIDE_MSS_TRAINING.md",            "COMMANDERS_GUIDE_MSS_TRAINING"),
+    ("maven_training/training_management/AR_350_1_ALIGNMENT_MAP.md",                   "AR_350_1_ALIGNMENT_MAP"),
     ("maven_training/training_management/INSTRUCTOR_OVERVIEW.md",                      "INSTRUCTOR_OVERVIEW"),
-    ("maven_training/training_management/BUILDER_SPRINT_SOP.md",                       "BUILDER_SPRINT_SOP"),
+    ("maven_training/training_management/FOUNDRY_BOOTCAMP_SOP.md",                       "FOUNDRY_BOOTCAMP_SOP"),
     ("maven_training/training_management/C2DAO_SME_DESIGNATION_RUBRIC.md",             "C2DAO_SME_DESIGNATION_RUBRIC"),
     ("maven_training/training_management/INSTRUCTOR_TIER_DEFINITIONS.md",              "INSTRUCTOR_TIER_DEFINITIONS"),
     ("maven_training/training_management/MTT_OPERATIONS_SOP.md",                       "MTT_OPERATIONS_SOP"),
     ("maven_training/training_management/SUCCESSOR_PLANNING_GUIDE.md",                 "SUCCESSOR_PLANNING_GUIDE"),
     ("maven_training/training_management/UNIT_DATA_TRAINER_SOP.md",                    "UNIT_DATA_TRAINER_SOP"),
-    ("maven_training/training_management/DEMO_BRIEF_DCG.md",                           "DEMO_BRIEF_DCG"),
-    ("maven_training/training_management/DEMO_DCG_LEAVE_BEHIND.md",                    "DEMO_DCG_LEAVE_BEHIND"),
-    ("maven_training/training_management/DEMO_DCG_TALKING_POINTS.md",                  "DEMO_DCG_TALKING_POINTS"),
+    # DEMO_BRIEF_DCG, DEMO_DCG_LEAVE_BEHIND, DEMO_DCG_TALKING_POINTS → BRIEF_TARGETS
     # ── ATIS registration packet ─────────────────────────────────────────────
     ("maven_training/atis/ATIS_COURSE_PACKET.md",                                    "ATIS_COURSE_PACKET"),
-    # ── Builder Sprint (BSP) ──────────────────────────────────────────────────
-    ("maven_training/builder_sprint/BSP_GUIDE.md",                                     "BSP_GUIDE"),
-    ("maven_training/builder_sprint/SPRINT_PACKAGE.md",                                "BSP_SPRINT_PACKAGE"),
-    ("maven_training/builder_sprint/ENVIRONMENT_SETUP.md",                             "BSP_ENVIRONMENT_SETUP"),
+    # ── Foundry Bootcamp (FBC) ──────────────────────────────────────────────────
+    ("maven_training/foundry_bootcamp/FBC_GUIDE.md",                                     "FBC_GUIDE"),
+    ("maven_training/foundry_bootcamp/SPRINT_PACKAGE.md",                                "FBC_SPRINT_PACKAGE"),
+    ("maven_training/foundry_bootcamp/ENVIRONMENT_SETUP.md",                             "FBC_ENVIRONMENT_SETUP"),
     # ── Lesson plans ──────────────────────────────────────────────────────────
     ("maven_training/training_management/lesson_plans/LP_TEMPLATE.md",                 "LP_TEMPLATE"),
     ("maven_training/training_management/lesson_plans/TM10/TM10_LESSON_PLANS.md",      "TM10_LESSON_PLANS"),
@@ -641,18 +656,18 @@ MD_TARGETS = [
     ("maven_training/exercises/EX_40M_ml_engineer/EXERCISE.md",                        "EX_40M_ML_ENGINEER"),
     ("maven_training/exercises/EX_40J_program_manager/EXERCISE.md",                    "EX_40J_PROGRAM_MANAGER"),
     ("maven_training/exercises/EX_40K_knowledge_manager/EXERCISE.md",                  "EX_40K_KNOWLEDGE_MANAGER"),
-    ("maven_training/exercises/EX-40L_software_engineer/EXERCISE.md",                  "EX_40L_SOFTWARE_ENGINEER"),
-    ("maven_training/exercises/EX-40N_ux_designer/EXERCISE.md",                       "EX_40N_UX_DESIGNER"),
-    ("maven_training/exercises/EX-40O_platform_engineer/EXERCISE.md",                 "EX_40O_PLATFORM_ENGINEER"),
+    ("maven_training/exercises/EX_40L_software_engineer/EXERCISE.md",                   "EX_40L_SOFTWARE_ENGINEER"),
+    ("maven_training/exercises/EX_40N_ux_designer/EXERCISE.md",                        "EX_40N_UX_DESIGNER"),
+    ("maven_training/exercises/EX_40O_platform_engineer/EXERCISE.md",                  "EX_40O_PLATFORM_ENGINEER"),
     # TM-50 exercises
     ("maven_training/exercises/EX_50G_orsa/EXERCISE.md",                               "EX_50G_ORSA"),
     ("maven_training/exercises/EX_50H_ai_engineer/EXERCISE.md",                        "EX_50H_AI_ENGINEER"),
     ("maven_training/exercises/EX_50M_ml_engineer/EXERCISE.md",                        "EX_50M_ML_ENGINEER"),
     ("maven_training/exercises/EX_50J_program_manager/EXERCISE.md",                    "EX_50J_PROGRAM_MANAGER"),
     ("maven_training/exercises/EX_50K_knowledge_manager/EXERCISE.md",                  "EX_50K_KNOWLEDGE_MANAGER"),
-    ("maven_training/exercises/EX-50L_software_engineer/EXERCISE.md",                  "EX_50L_SOFTWARE_ENGINEER"),
-    ("maven_training/exercises/EX-50N_ux_designer/EXERCISE.md",                       "EX_50N_UX_DESIGNER"),
-    ("maven_training/exercises/EX-50O_platform_engineer/EXERCISE.md",                 "EX_50O_PLATFORM_ENGINEER"),
+    ("maven_training/exercises/EX_50L_software_engineer/EXERCISE.md",                   "EX_50L_SOFTWARE_ENGINEER"),
+    ("maven_training/exercises/EX_50N_ux_designer/EXERCISE.md",                        "EX_50N_UX_DESIGNER"),
+    ("maven_training/exercises/EX_50O_platform_engineer/EXERCISE.md",                  "EX_50O_PLATFORM_ENGINEER"),
     # ── Assessments (pre/post exams) ──────────────────────────────────────────
     ("maven_training/exercises/exams/EXAM_TM10_PRE.md",                                "EXAM_TM10_PRE"),
     ("maven_training/exercises/exams/EXAM_TM10_SUPPLEMENTAL.md",                       "EXAM_TM10_SUPPLEMENTAL"),
@@ -856,6 +871,7 @@ BRIEF_TARGETS = [
     ("maven_training/training_management/DEMO_DCG_TALKING_POINTS.md",   "DEMO_DCG_TALKING_POINTS"),
     ("maven_training/training_management/DEMO_DCG_LEAVE_BEHIND.md",     "DEMO_DCG_LEAVE_BEHIND"),
     ("maven_training/training_management/WHITE_PAPER_MSS_TRAINING.md",  "WHITE_PAPER_MSS_TRAINING"),
+    ("maven_training/training_management/WHITE_PAPER_CDA_TRAINING.md",  "WHITE_PAPER_CDA_TRAINING"),
 ]
 
 

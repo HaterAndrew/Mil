@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-50J: ADVANCED DATA PROGRAM MANAGER — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-50J is not about managing more programs. It is about operating at a level where your decisions shape what the enterprise data architecture becomes — and advising senior leaders on portfolio strategy, not execution status.
+> **Forward:** TM-50J is not about managing more programs. It is about operating at a level where your decisions shape what the enterprise data architecture becomes — and advising senior leaders on portfolio strategy, not execution status.
 > **Purpose:** Extends mental models from TM-40J Concepts Guide to advanced data program management on MSS. Prerequisite: TM-40J Concepts Guide and TM-40J qualification.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
@@ -22,7 +22,7 @@ At TM-50J, you are a data program leader. When you approve an Ontology schema, t
 |---|---|---|
 | Time horizon | Sprints and quarters | Program increments and fiscal years |
 | Unit of analysis | Tasks, features, team velocity | Programs, dependencies, organizational capacity |
-| Stakeholder interface | Within a program | Across organizations (V Corps, 21st TSC, USAREUR-AF HQ, EUCOM, coalition) |
+| Stakeholder interface | Within a program | Across organizations (III Corps, V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, SETAF-AF, USAREUR-AF HQ, EUCOM, coalition) |
 | Consequence scope | One project | Entire portfolio; poor Ontology design propagates to every downstream product |
 
 ### 1-3. Developing the Analytical Perspective
@@ -62,7 +62,7 @@ Plot every candidate investment on two axes: operational impact (what it enables
 | Low impact, low effort | Batch. Do not let them consume significant PM attention. |
 | Low impact, high effort | Challenge the requirement. Verify stated impact is real and effort estimates are accurate. |
 
-**Vignette.** During DEFENDER 2027 portfolio planning, the data team receives 14 product requests simultaneously from V Corps, 21st TSC, and USAREUR-AF HQ. Impact-effort analysis identifies three high-impact/low-effort items (readiness dashboard updates completable in one sprint each), two high-impact/high-effort items (logistics forecasting model and personnel movement tracker requiring new Ontology schemas), and nine low-impact items. The PM presents to C2DAO with a recommendation: deliver the three quick wins immediately, initiate the two strategic investments with dedicated teams, defer the remaining nine pending bandwidth. Leadership approves. The team enters the exercise cycle with clarity about what they are building and why.
+**Vignette.** During DEFENDER 2027 portfolio planning, the data team receives 14 product requests simultaneously from V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, SETAF-AF, and USAREUR-AF HQ. Impact-effort analysis identifies three high-impact/low-effort items (readiness dashboard updates completable in one sprint each), two high-impact/high-effort items (logistics forecasting model and personnel movement tracker requiring new Ontology schemas), and nine low-impact items. The PM presents to C2DAO with a recommendation: deliver the three quick wins immediately, initiate the two strategic investments with dedicated teams, defer the remaining nine pending bandwidth. Leadership approves. The team enters the exercise cycle with clarity about what they are building and why.
 
 ### 2-3. Dependency Chain Analysis
 
@@ -121,18 +121,18 @@ Frame the ask accordingly: "Investing one sprint per quarter in architectural cl
 
 ### 4-1. The Federated Command Structure Problem
 
-**BLUF:** Data programs spanning V Corps, 21st TSC, USAREUR-AF HQ, and coalition partners operate in a federated command structure where no single authority controls all stakeholders. Coordination without authority is the defining challenge of TM-50J data program leadership.
+**BLUF:** Data programs spanning III Corps, V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, SETAF-AF, USAREUR-AF HQ, and coalition partners operate in a federated command structure where no single authority controls all stakeholders. Coordination without authority is the defining challenge of TM-50J data program leadership.
 
-USAREUR-AF cannot direct other organizations to comply with program requirements. V Corps has its own command authority, its own data priorities, and its own C2DAO relationship. 21st TSC operates under a different chain with different mission requirements. Coalition partners are sovereign. This creates a coordination environment where requirements are negotiated, governance decisions require consensus, and a disagreement between two stakeholder organizations can stall a program indefinitely.
+USAREUR-AF cannot direct other organizations to comply with program requirements. V Corps has its own command authority, its own data priorities, and its own C2DAO relationship. 21st TSC operates under a different chain with different mission requirements. 10th AAMDC, 56th MDC-E, and SETAF-AF each have distinct mission sets — IAMD, multi-domain operations, and Africa AOR engagement respectively — with corresponding data requirements. Coalition partners are sovereign. This creates a coordination environment where requirements are negotiated, governance decisions require consensus, and a disagreement between two stakeholder organizations can stall a program indefinitely.
 
 ### 4-2. How to Coordinate Without Authority
 
 | Principle | Application |
 |---|---|
-| Build relationships before you need them | Introduce yourself to V Corps and 21st TSC data teams during steady state. When you need their cooperation on a schema decision, you are calling a contact — not a stranger. |
+| Build relationships before you need them | Introduce yourself to V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, and SETAF-AF data teams during steady state. When you need their cooperation on a schema decision, you are calling a contact — not a stranger. |
 | Frame coordination as mutual benefit | Identify the benefit to V Corps of a shared Ontology schema before presenting the governance proposal. If there is no benefit to them, you have a harder case — understand that before the meeting. |
 | Document agreements explicitly | After every coordination meeting that produces a decision, send a written summary within 24 hours: what was agreed, who is responsible, and by when. Creates an audit trail; protects all parties. |
-| Escalate through the right channels | Escalate to the lowest level that has authority over both parties. Do not take a V Corps / 21st TSC disagreement to the four-star before trying to resolve it at the one-star level. |
+| Escalate through the right channels | Escalate to the lowest level that has authority over both parties. Do not take a V Corps / 21st TSC / 10th AAMDC disagreement to the four-star before trying to resolve it at the one-star level. |
 
 ### 4-3. Differing Governance Maturity
 
@@ -158,7 +158,7 @@ This is not spin. The technical requirement is real. The operational consequence
 
 | Dimension | Key Considerations |
 |---|---|
-| Personnel | Distinguish organic military/DA civilian billets (persistent, slow to hire/develop) from contractor support (faster to surge, but ceiling and labor category constraints apply). Know your contract ceiling and labor categories before briefing a resource need. |
+| Personnel | Distinguish organic military/DA Civilian billets (persistent, slow to hire/develop) from contractor support (faster to surge, but ceiling and labor category constraints apply). Know your contract ceiling and labor categories before briefing a resource need. |
 | Platform | Compute, storage, and licensing are not free or infinite. New model training workloads may require dedicated compute not in the original platform budget. Track consumption by program; surprises in platform costs are avoidable with proactive monitoring. |
 | Time | Build a deferral analysis into every resource request: if not approved, what is the revised delivery timeline and operational consequence? Forces clarity about actual priorities; gives leadership a decision with defined consequences. |
 
@@ -324,5 +324,4 @@ The theater data enterprise that supports DEFENDER 2027 and the operations that 
 
 ---
 
-*UNCLASSIFIED*
 *DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*

@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250413_133 — TERRAIN ANALYSIS
+DTG: 130000Z APR 2025
+Unit: 3BCT HHC
+
+Summary: Snowfall accumulation of 15-20cm reported in the GRUENFELD pass area. Road conditions along ROUTE ECHO degraded. Engineer assessment requested.
+
+Impact to Operations: Movement planning should account for degraded conditions. Coordination with engineer assets recommended.
+Recommended Action: Update common operational picture. Disseminate terrain overlay to subordinate units. Request engineer reconnaissance if conditions persist beyond 72 hours.

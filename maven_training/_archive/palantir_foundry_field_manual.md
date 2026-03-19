@@ -1815,7 +1815,7 @@ SECRET data
     → Marking: SECRET_MARKING
     → Users need SECRET clearance + SECRET_MARKING membership
 
-CUI / FOUO data
+CUI data
     → Marking: CUI_MARKING
     → Standard OPSEC-appropriate access control
 ```

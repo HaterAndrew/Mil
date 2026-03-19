@@ -8,6 +8,8 @@ from fastapi import Depends, FastAPI, HTTPException
 from fastapi.responses import Response
 from sqlalchemy.orm import Session
 
+from shared.middleware import SecurityHeadersMiddleware
+
 from .db import SessionLocal, get_db, init_db
 from .models import (
     FileDiff,
@@ -44,6 +46,7 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
 )
+app.add_middleware(SecurityHeadersMiddleware)
 
 
 # ---------------------------------------------------------------------------

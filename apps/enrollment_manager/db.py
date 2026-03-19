@@ -2,8 +2,14 @@
 
 from __future__ import annotations
 
+import sys
 from datetime import UTC, date, datetime
 from pathlib import Path
+
+# Ensure sibling packages (readiness_tracker, etc.) are importable
+_apps_dir = str(Path(__file__).resolve().parent.parent)
+if _apps_dir not in sys.path:
+    sys.path.insert(0, _apps_dir)
 
 from sqlalchemy import (
     Column,
@@ -49,32 +55,9 @@ class Base(DeclarativeBase):
 
 
 # ---------------------------------------------------------------------------
-# Course catalog — same as readiness_tracker for consistency
+# Course catalog — imported from readiness_tracker (single source of truth)
 # ---------------------------------------------------------------------------
-COURSE_CATALOG: dict[str, tuple[str, int]] = {
-    "TM-10": ("Maven User", 8),
-    "TM-20": ("Builder", 40),
-    "TM-30": ("Advanced Builder", 40),
-    "BSP": ("Builder Sprint", 40),
-    "TM-40A": ("Intelligence WFF", 24),
-    "TM-40B": ("Fires WFF", 24),
-    "TM-40C": ("Movement & Maneuver WFF", 24),
-    "TM-40D": ("Sustainment WFF", 24),
-    "TM-40E": ("Protection WFF", 24),
-    "TM-40F": ("Mission Command WFF", 24),
-    "TM-40G": ("ORSA", 40),
-    "TM-40H": ("AI Engineer", 40),
-    "TM-40M": ("ML Engineer", 40),
-    "TM-40J": ("Program Manager", 24),
-    "TM-40K": ("Knowledge Manager", 24),
-    "TM-40L": ("Software Engineer", 40),
-    "TM-50G": ("Advanced ORSA", 40),
-    "TM-50H": ("Advanced AI Engineer", 40),
-    "TM-50M": ("Advanced ML Engineer", 40),
-    "TM-50J": ("Advanced Program Manager", 40),
-    "TM-50K": ("Advanced Knowledge Manager", 40),
-    "TM-50L": ("Advanced Software Engineer", 40),
-}
+from readiness_tracker.db import COURSE_CATALOG  # noqa: E402
 
 
 # ---------------------------------------------------------------------------
@@ -112,7 +95,7 @@ class Enrollment(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     class_id = Column(Integer, ForeignKey("training_classes.class_id"), nullable=False)
-    dodid = Column(String(10), nullable=False)
+    dodid = Column(String(10), nullable=False, index=True)
     last_name = Column(String(50), nullable=False)
     first_name = Column(String(50), nullable=False)
     rank = Column(String(10), nullable=False)
@@ -131,7 +114,7 @@ class WaitlistEntry(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     class_id = Column(Integer, ForeignKey("training_classes.class_id"), nullable=False)
-    dodid = Column(String(10), nullable=False)
+    dodid = Column(String(10), nullable=False, index=True)
     last_name = Column(String(50), nullable=False)
     first_name = Column(String(50), nullable=False)
     rank = Column(String(10), nullable=False)

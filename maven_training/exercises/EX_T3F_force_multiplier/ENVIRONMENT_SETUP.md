@@ -69,5 +69,5 @@ Prepare 1 scenario per candidate. Each scenario specifies:
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Environment Setup — EX_T3F | Version 1.0 | March 2026*

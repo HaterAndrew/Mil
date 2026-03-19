@@ -232,5 +232,5 @@ SA-5. Full credit: decision framework applied — (1) mission fit: does the stan
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-50J Post-Test | Version 1.0 | March 2026*

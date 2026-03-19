@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260416_035 — IED EVENT
+DTG: 160000Z APR 2026
+Unit: 1-77 FA
+
+Summary: At 2040 local, a suspected IED was identified by route clearance element in grid 35T180665 along ROUTE STEEL. EOD requested and responded within 24 minutes. Device detonated during approach. No casualties due to standoff distance.
+
+Device Description: Pressure-plate initiator, command wire, approx 3kg charge. Collected for exploitation. DNA swabs taken.
+Recommended Action: Restrict movement along ROUTE STEEL until EOD clearance complete. Disseminate grid data to adjacent units.

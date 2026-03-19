@@ -1,6 +1,6 @@
 # TM-50J — ADVANCED PROGRAM MANAGER (TECHNICAL)
 
-> **BLUF:** TM-50J qualifies Technical Program Managers to lead the USAREUR-AF MSS data capability at scale — managing multiple concurrent product teams, directing portfolio investment, and advising senior leaders on data as an operational asset.
+> **Forward:** TM-50J qualifies Technical Program Managers to lead the USAREUR-AF MSS data capability at scale — managing multiple concurrent product teams, directing portfolio investment, and advising senior leaders on data as an operational asset.
 > **Prereqs:** TM-40J, Program Manager (Technical) (required). Graduates of TM-40J who have managed at least one full-lifecycle MSS data or AI project from initiation through production release, with demonstrated proficiency in Agile delivery, stakeholder management, and MSS platform governance. Familiarity with TM-40G (ORSA), TM-40H (AI Engineer), TM-40M (ML Engineer), TM-40K (Knowledge Manager), and TM-40L (Software Engineer) track content strongly recommended; CONCEPTS_GUIDE_TM50J_PROGRAM_MANAGER_ADVANCED (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -12,7 +12,7 @@
 
 ## CHAPTER 1 — INTRODUCTION AND SCOPE
 
-### 1-1. Purpose
+### 1-1. Advanced Program Manager Manual
 
 **BLUF:** TM-50J qualifies Technical Program Managers to lead the USAREUR-AF MSS data capability at scale — managing multiple concurrent product teams, directing portfolio investment, and advising senior leaders on data as an operational asset.
 
@@ -344,7 +344,7 @@ The program review brief is not a Workshop dashboard printout. It is a commander
 
 **BLUF:** Senior leaders invest in what they understand. Your ability to make data capability tangible — and credible — at the GO/SES level determines the program's long-term resource and political viability.
 
-TM-40J stakeholder management focused on working-level relationships: requirements gathering from G-staff analysts, user story validation with battalion S2/S3 shops, and change management with end users adopting new dashboards. TM-50J stakeholder management operates at a different level. You are now communicating with Generals, Senior Executive Service civilians, and senior NATO partners who set budget priorities, sign task orders, and determine whether the MSS program grows or contracts.
+TM-40J stakeholder management focused on working-level relationships: requirements gathering from G-staff analysts, user story validation with battalion S2/S3 shops, and change management with end users adopting new dashboards. TM-50J stakeholder management operates at a different level. You are now communicating with Generals, Senior Executive Service Civilians, and senior NATO partners who set budget priorities, sign task orders, and determine whether the MSS program grows or contracts.
 
 The rules change at this level:
 
@@ -656,7 +656,7 @@ This decision recurs constantly at the program level. A new stakeholder requirem
 
 **BLUF:** Palantir operates as a strategic platform partner on MSS, not simply a software vendor. Managing this relationship well requires understanding what Palantir is accountable for, what the government is accountable for, and where those boundaries create gaps.
 
-The MSS operating model combines government staff (military and civilian), Palantir forward-deployed engineers (FDEs) and deployment strategists (DSs), and other contractors operating under task orders. Understanding who does what — and who is accountable for what — is essential for the TM-50J program manager.
+The MSS operating model combines government staff (military and Civilian), Palantir forward-deployed engineers (FDEs) and deployment strategists (DSs), and other contractors operating under task orders. Understanding who does what — and who is accountable for what — is essential for the TM-50J program manager.
 
 **Table 7-1. MSS Delivery Roles**
 
@@ -664,8 +664,8 @@ The MSS operating model combines government staff (military and civilian), Palan
 |------|-----|-----------------|---------------------|
 | Palantir FDE | Palantir employee | Platform capabilities, technical architecture guidance, platform bug escalation | Operational requirements translation; government data quality; military workflow understanding |
 | Palantir DS | Palantir employee | User adoption, change management, training delivery, use case development | Code delivery under government task orders; production pipeline maintenance |
-| Government PM (TM-50J) | Military/civilian | Program delivery, task order acceptance, requirements validation, team health | Platform architecture decisions made by Palantir; platform bugs or outages |
-| Government tech leads (TM-40 series) | Military/civilian/GS | Technical delivery of government-owned products | Palantir-delivered features on task order |
+| Government PM (TM-50J) | Military/Civilian | Program delivery, task order acceptance, requirements validation, team health | Platform architecture decisions made by Palantir; platform bugs or outages |
+| Government tech leads (TM-40 series) | Military/Civilian/GS | Technical delivery of government-owned products | Palantir-delivered features on task order |
 | Task order contractors | Contractor (non-Palantir) | Deliverables specified in the task order; testing and documentation per acceptance criteria | Scope outside the task order; Palantir platform decisions |
 
 ### 7-2. Task Order Management
@@ -1800,7 +1800,6 @@ By the end of 30 days, the incoming TM-40J PM should be able to:
 *Maven Smart System — USAREUR-AF Operational Data Team*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 *2026*
-*UNCLASSIFIED — Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.*
 *This publication implements Army CIO Memorandum, Data and Analytics Policy (April 2024) and aligns to the Unified Data Reference Architecture (UDRA) v1.1 (February 2025).*
 ## GLOSSARY
 

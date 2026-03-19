@@ -232,5 +232,5 @@ SA-5. Full credit: overfitting = model learns the noise in training data and per
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-40G Pre-Test | Version 1.0 | March 2026*

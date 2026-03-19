@@ -10,6 +10,8 @@ from fastapi import Depends, FastAPI, File, HTTPException, Query, UploadFile, st
 from fastapi.responses import StreamingResponse
 from sqlalchemy.orm import Session
 
+from shared.middleware import SecurityHeadersMiddleware
+
 from .db import (
     EXAM_STRUCTURE,
     ExamResult,
@@ -48,6 +50,7 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
 )
+app.add_middleware(SecurityHeadersMiddleware)
 
 
 @app.get("/health")
@@ -144,7 +147,10 @@ async def upload_results(
     if not session:
         raise HTTPException(status_code=404, detail="Session not found")
 
-    content = await file.read()
+    contents = await file.read()
+    if len(contents) > 10 * 1024 * 1024:  # 10 MB limit
+        raise HTTPException(status_code=413, detail="File too large. Maximum size is 10 MB.")
+    content = contents
     text = content.decode("utf-8-sig")
     reader = csv.DictReader(io.StringIO(text))
 

@@ -36,7 +36,7 @@ const CATEGORIES: RoleCategory[] = [
     description: 'I use MSS dashboards, views, and reports to inform decisions.',
     roles: [
       {
-        label: 'Any Soldier, officer, or civilian using MSS to view data',
+        label: 'Any Soldier, officer, or Civilian using MSS to view data',
         description: 'You access MSS to consume operational data — dashboards, reports, filtered views.',
         result: {
           label: 'Maven User',

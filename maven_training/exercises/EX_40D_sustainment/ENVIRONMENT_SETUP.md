@@ -46,7 +46,6 @@ Print and hand to participant at exercise start (Task 3):
 
 ```
 COMMANDER'S SUSTAINMENT CCIR GUIDANCE — EX_40D TRAINING
-Classification: UNCLASSIFIED // TRAINING
 
 CCIR 1 — UNIT READINESS BELOW THRESHOLD
   Trigger: Any subordinate unit equipment or personnel readiness falls below 75%

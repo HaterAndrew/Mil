@@ -1,6 +1,6 @@
 # TM-40O — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-40O qualifies platform engineers to design, deploy, secure, and operate the infrastructure layer that MSS applications run on — Kubernetes clusters, CI/CD pipelines, container registries, GitOps workflows, and the DevSecOps toolchain. This is an infrastructure manual — it contains architecture, configuration, and operational procedures, not application code.
+> **Forward:** TM-40O qualifies platform engineers to design, deploy, secure, and operate the infrastructure layer that MSS applications run on — Kubernetes clusters, CI/CD pipelines, container registries, GitOps workflows, and the DevSecOps toolchain. This is an infrastructure manual — it contains architecture, configuration, and operational procedures, not application code.
 > **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Linux systems administration proficiency; familiarity with containers and version control
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -11,29 +11,15 @@
 
 ## CHAPTER 1 — INTRODUCTION: THE PLATFORM ENGINEER ROLE IN MSS
 
-### 1-1. Purpose and Scope
+### 1-1. Platform Engineer Specialist Manual
 
 **BLUF:** TM-40O qualifies platform engineers to build, operate, and secure the infrastructure that MSS runs on. The platform engineer builds the floor that every other track stands on.
 
 This manual provides task-based instruction for platform engineers operating on the Maven Smart System (MSS). MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. TM-40O personnel design and maintain the infrastructure layer — the compute, networking, security, and delivery mechanisms that make application development possible.
 
-**TM-40O covers:**
-- Platform-as-product: designing internal developer platforms that serve application teams
-- Kubernetes: cluster architecture, workload scheduling, resource management, multi-cluster operations
-- Infrastructure as Code (IaC): declarative configuration, GitOps workflows, continuous reconciliation, environment parity
-- Container security: DoD-hardened images (Iron Bank), vulnerability scanning, SHA256 digest pinning, supply chain security
-- CI/CD pipeline design: automated build, test, scan, and deploy workflows for MSS applications
-- Release engineering: deployment orchestration, blue/green and canary strategies, rollback procedures
-- Air-gapped and DDIL operations: deploying across classification boundaries, disconnected operations, edge cluster management
-- Platform security: RMF/ATO lifecycle from the infrastructure perspective, STIG compliance, continuous monitoring
+**TM-40O covers** platform-as-product: designing internal developer platforms that serve application teams; Kubernetes: cluster architecture, workload scheduling, resource management, multi-cluster operations; Infrastructure as Code (IaC): declarative configuration, GitOps workflows, continuous reconciliation, environment parity; container security: DoD-hardened images (Iron Bank), vulnerability scanning, SHA256 digest pinning, supply chain security; CI/CD pipeline design: automated build, test, scan, and deploy workflows for MSS applications; release engineering: deployment orchestration, blue/green and canary strategies, rollback procedures; air-gapped and DDIL operations: deploying across classification boundaries, disconnected operations, edge cluster management; and platform security: RMF/ATO lifecycle from the infrastructure perspective, STIG compliance, continuous monitoring.
 
-**TM-40O does NOT cover:**
-- Application code development (OSDK, TypeScript, Python transforms) — see TM-40L (Software Engineer)
-- Workshop or Slate application design — see TM-40N (UI/UX Designer), TM-30
-- Data pipeline design or Ontology modeling — see TM-30, TM-40H
-- ML model training or deployment — see TM-40M (ML Engineer)
-- Program/project management — see TM-40J (Program Manager)
-- Foundry platform administration (Foundry-native admin is managed by Palantir; TM-40O covers the surrounding infrastructure)
+**TM-40O does NOT cover** application code development (OSDK, TypeScript, Python transforms) — see TM-40L (Software Engineer); Workshop or Slate application design — see TM-40N (UI/UX Designer), TM-30; data pipeline design or Ontology modeling — see TM-30, TM-40H; ML model training or deployment — see TM-40M (ML Engineer); program/project management — see TM-40J (Program Manager); or Foundry platform administration (Foundry-native admin is managed by Palantir; TM-40O covers the surrounding infrastructure).
 
 > **NOTE:** TM-40O is peer to TM-40L (Software Engineer), TM-40N (UI/UX Designer), and TM-40J (Program Manager). The Platform Engineer supports all application teams by providing reliable, secure, and automated infrastructure. Coordinate across tracks — platform changes affect every downstream consumer.
 
@@ -51,7 +37,7 @@ This manual provides task-based instruction for platform engineers operating on 
 
 ### 1-3. The Platform Engineer's Role in USAREUR-AF
 
-USAREUR-AF is the Army Service Component Command (ASCC) to USEUCOM. MSS supports theater land operations across the European AOR including V Corps, 21st TSC, 7th ATC, G2 all-source, and multinational elements. Platform Engineers at TM-40O level are the infrastructure architects and operators of the USAREUR-AF data ecosystem.
+USAREUR-AF is the Army Service Component Command (ASCC) to USEUCOM and USAFRICOM. MSS supports theater land operations across the European and African AOR including III Corps, V Corps, 21st TSC, 7th ATC, 10th AAMDC, 56th MDC-E, SETAF-AF, G2 all-source, and multinational elements. Platform Engineers at TM-40O level are the infrastructure architects and operators of the USAREUR-AF data ecosystem.
 
 **The TM-40O role in the data chain:**
 

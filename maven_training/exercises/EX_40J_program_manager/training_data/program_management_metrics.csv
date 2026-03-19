@@ -1,0 +1,61 @@
+date,unit,domain,metric_value,threshold,status,records_processed,anomalies_flagged
+2025-06-01,BSB 1BCT,program_management,59.06,80.0,PASS,5975,19
+2025-06-02,1-1 IN BN,program_management,93.13,80.0,PASS,2240,15
+2025-06-03,BSB 1BCT,program_management,55.65,80.0,PASS,853,2
+2025-06-04,3-1 FA BN,program_management,82.75,80.0,FAIL,8698,18
+2025-06-05,BEB 1BCT,program_management,61.2,80.0,PASS,5642,16
+2025-06-06,BEB 1BCT,program_management,84.41,80.0,PASS,7191,7
+2025-06-07,BSB 1BCT,program_management,67.29,80.0,PASS,6405,4
+2025-06-08,BEB 1BCT,program_management,94.6,80.0,PASS,290,20
+2025-06-09,2-1 IN BN,program_management,75.28,80.0,PASS,8223,5
+2025-06-10,1-1 IN BN,program_management,87.57,80.0,PASS,5521,8
+2025-06-11,1-1 IN BN,program_management,75.35,80.0,PASS,6303,12
+2025-06-12,2-1 IN BN,program_management,53.94,80.0,PASS,9488,14
+2025-06-13,1-1 IN BN,program_management,92.83,80.0,PASS,2044,15
+2025-06-14,1-1 IN BN,program_management,55.13,80.0,PASS,9228,17
+2025-06-15,1-1 IN BN,program_management,91.3,80.0,PASS,5090,16
+2025-06-16,BEB 1BCT,program_management,60.34,80.0,PASS,5684,11
+2025-06-17,1-1 IN BN,program_management,90.83,80.0,PASS,5539,17
+2025-06-18,BEB 1BCT,program_management,80.0,80.0,PASS,6052,14
+2025-06-19,1-1 IN BN,program_management,54.87,80.0,PASS,135,10
+2025-06-20,3-1 FA BN,program_management,91.49,80.0,PASS,4883,17
+2025-06-21,BEB 1BCT,program_management,68.69,80.0,FAIL,2789,15
+2025-06-22,2-1 IN BN,program_management,91.09,80.0,PASS,6804,3
+2025-06-23,3-1 FA BN,program_management,80.54,80.0,FAIL,6537,6
+2025-06-24,BSB 1BCT,program_management,91.23,80.0,FAIL,5636,3
+2025-06-25,BSB 1BCT,program_management,52.33,80.0,PASS,9747,3
+2025-06-26,BSB 1BCT,program_management,72.87,80.0,PASS,8360,4
+2025-06-27,BSB 1BCT,program_management,50.22,80.0,PASS,9164,13
+2025-06-28,BEB 1BCT,program_management,74.15,80.0,PASS,3003,18
+2025-06-29,2-1 IN BN,program_management,86.52,80.0,FAIL,6447,19
+2025-06-30,BEB 1BCT,program_management,94.13,80.0,PASS,6402,13
+2025-07-01,BEB 1BCT,program_management,95.8,80.0,PASS,4582,12
+2025-07-02,3-1 FA BN,program_management,98.52,80.0,PASS,2285,4
+2025-07-03,BSB 1BCT,program_management,80.13,80.0,PASS,8493,9
+2025-07-04,BEB 1BCT,program_management,93.04,80.0,PASS,9169,20
+2025-07-05,2-1 IN BN,program_management,60.04,80.0,PASS,4860,11
+2025-07-06,2-1 IN BN,program_management,99.07,80.0,PASS,3013,16
+2025-07-07,BEB 1BCT,program_management,84.72,80.0,PASS,1990,11
+2025-07-08,BEB 1BCT,program_management,74.02,80.0,PASS,6939,17
+2025-07-09,3-1 FA BN,program_management,93.87,80.0,PASS,309,16
+2025-07-10,1-1 IN BN,program_management,51.26,80.0,FAIL,1027,6
+2025-07-11,3-1 FA BN,program_management,87.51,80.0,FAIL,4795,8
+2025-07-12,2-1 IN BN,program_management,91.97,80.0,PASS,4935,6
+2025-07-13,BEB 1BCT,program_management,51.62,80.0,PASS,1779,19
+2025-07-14,BEB 1BCT,program_management,93.24,80.0,PASS,9295,12
+2025-07-15,2-1 IN BN,program_management,75.55,80.0,PASS,4812,1
+2025-07-16,BSB 1BCT,program_management,69.38,80.0,PASS,5222,17
+2025-07-17,1-1 IN BN,program_management,50.65,80.0,PASS,7359,7
+2025-07-18,3-1 FA BN,program_management,87.76,80.0,PASS,9985,6
+2025-07-19,2-1 IN BN,program_management,64.71,80.0,FAIL,1320,5
+2025-07-20,2-1 IN BN,program_management,86.75,80.0,FAIL,765,13
+2025-07-21,3-1 FA BN,program_management,77.83,80.0,FAIL,9668,8
+2025-07-22,1-1 IN BN,program_management,66.53,80.0,PASS,2636,1
+2025-07-23,2-1 IN BN,program_management,96.43,80.0,PASS,5034,15
+2025-07-24,BEB 1BCT,program_management,77.51,80.0,FAIL,5307,16
+2025-07-25,2-1 IN BN,program_management,97.85,80.0,PASS,8376,5
+2025-07-26,BSB 1BCT,program_management,77.15,80.0,PASS,5824,7
+2025-07-27,2-1 IN BN,program_management,83.17,80.0,PASS,4909,6
+2025-07-28,BEB 1BCT,program_management,76.52,80.0,PASS,244,3
+2025-07-29,3-1 FA BN,program_management,72.28,80.0,PASS,4094,1
+2025-07-30,3-1 FA BN,program_management,69.07,80.0,PASS,1957,12

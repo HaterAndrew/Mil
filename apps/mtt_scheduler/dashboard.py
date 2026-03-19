@@ -7,6 +7,7 @@ across the USAREUR-AF AOR.
 
 from __future__ import annotations
 
+import os
 import sys
 from datetime import date, timedelta
 from pathlib import Path
@@ -62,7 +63,7 @@ from theme import (
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-API_BASE = "http://localhost:8005"
+API_BASE = os.environ.get("MTT_SCHEDULER_API_URL", "http://localhost:8005")
 
 st.set_page_config(
     page_title="MTT Scheduler",
@@ -249,7 +250,8 @@ if active_tab == "Event Calendar":
     st.title("MTT Event Calendar")
     st.caption("Timeline view of all scheduled MSS training events across the AOR")
 
-    events = load_events()
+    with st.spinner("Loading data..."):
+        events = load_events()
 
     if not events:
         st.info("No events scheduled. Use Event Manager to create events.")

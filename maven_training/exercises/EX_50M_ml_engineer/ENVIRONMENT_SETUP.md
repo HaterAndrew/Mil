@@ -1,4 +1,4 @@
-# ENVIRONMENT SETUP — EX-50M Advanced ML Engineer (TM-50M)
+# ENVIRONMENT SETUP — EX_50M Advanced ML Engineer (TM-50M)
 
 **Companion resources:** TM_50M_ML_ENGINEER_ADVANCED.md | SYLLABUS_TM50M | EXAM_TM50M_POST
 
@@ -109,7 +109,7 @@ Sections:
 
 ## Scoring Sheet Reference
 
-Evaluators record task Go/No-Go on standard EX-50M Evaluation Form (available from training NCO). For Task 2, photograph or screenshot the configured pipeline trigger for training records. For Task 3, the model comparison table should be attached to the evaluation form. Overall Go/No-Go, participant name, evaluator name, and date required for training record submission.
+Evaluators record task Go/No-Go on standard EX_50M Evaluation Form (available from training NCO). For Task 2, photograph or screenshot the configured pipeline trigger for training records. For Task 3, the model comparison table should be attached to the evaluation form. Overall Go/No-Go, participant name, evaluator name, and date required for training record submission.
 
 ## Notes
 

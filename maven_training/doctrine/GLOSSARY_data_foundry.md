@@ -616,7 +616,7 @@ Example: A transform that reads the raw SITREP dataset, removes records with nul
 **Unique Identifier**
 *Foundry Equivalent: Primary key on a Foundry Object Type; RID (Resource Identifier) for platform resources*
 Definition: A field whose value is guaranteed to be different for every record in a dataset — no two records share the same identifier. Unique identifiers are essential for joins, deduplication, and updates. In the Foundry Ontology, every Object Type must have a designated primary key that serves as its unique identifier.
-Example: A soldier's DODID is the unique identifier for the Soldier Object Type. No two Soldiers share the same DODID, which allows Foundry to track, update, and link the correct individual across all datasets.
+Example: A Soldier's DODID is the unique identifier for the Soldier Object Type. No two Soldiers share the same DODID, which allows Foundry to track, update, and link the correct individual across all datasets.
 
 ---
 
@@ -900,7 +900,7 @@ Example: The SECRET_EUCOM marking is applied to all datasets containing operatio
 
 **Maven Smart System (MSS)**
 *General Equivalent: Army AI enterprise platform; CJADC2 data and AI platform*
-Definition: The Army's AI and data platform built on Palantir Foundry, purpose-built for Combined Joint All Domain Command and Control (CJADC2). MSS provides data integration, analytics, geospatial visualization (Gaia), targeting workflows (Target Workbench), logistics analytics (LogX), and AI-powered analysis (AIP) across multiple Combatant Commands. For USAREUR-AF, MSS is the platform that connects operational data to command decisions. When someone in this AOR says "Maven," they mean the Foundry-based MSS deployment.
+Definition: The mission command information system (MCIS) program of record, directed by the USAREUR-AF CG to enable rapid and accurate decision-making. MSS is the Army's AI and data platform built on Palantir Foundry, purpose-built for Combined Joint All Domain Command and Control (CJADC2). MSS provides data integration, analytics, geospatial visualization (Gaia), targeting workflows (Target Workbench), logistics analytics (LogX), and AI-powered analysis (AIP) across multiple Combatant Commands. For USAREUR-AF, MSS is the platform that connects operational data to command decisions. When someone in this AOR says "Maven," they mean the Foundry-based MSS deployment.
 Example: A USAREUR-AF analyst opens Maven to view the operational picture — supply chain status, unit readiness, and ISR feeds — all fused through Foundry's Ontology, displayed in Gaia's geospatial interface, and queryable through an AIP agent.
 
 ---
@@ -1258,7 +1258,7 @@ Example: Foundry datasets derived from signals intelligence carry SCI compartmen
 
 **Sensitivity**
 *Foundry Equivalent: CBAC classification level; Marking*
-Definition: The degree to which information requires protection from unauthorized disclosure, based on the potential harm that disclosure could cause. Sensitivity encompasses both formal classification (SECRET, TOP SECRET) and controlled but unclassified information (CUI, FOUO, PII, OPSEC-sensitive data). In Foundry, sensitivity is operationalized through Markings and CBAC classification levels — higher sensitivity requires more restrictive Markings.
+Definition: The degree to which information requires protection from unauthorized disclosure, based on the potential harm that disclosure could cause. Sensitivity encompasses both formal classification (SECRET, TOP SECRET) and controlled but unclassified information (CUI, PII, OPSEC-sensitive data). In Foundry, sensitivity is operationalized through Markings and CBAC classification levels — higher sensitivity requires more restrictive Markings.
 Example: Personnel data containing DODID numbers, home addresses, and medical information is CUI with high sensitivity due to PII content. A CUI Marking is applied in Foundry, requiring explicit access grants rather than broad project-level access.
 
 ---
@@ -1342,7 +1342,7 @@ Master list of abbreviations used across USAREUR-AF Maven/Foundry publications a
 
 **FOO** — Functions on Objects (Foundry TypeScript/Python functions attached to the Ontology)
 
-**FOUO** — For Official Use Only
+**FOUO** (legacy) — For Official Use Only. Retired marking; superseded by CUI.
 
 **GEOINT** — Geospatial Intelligence
 
@@ -1454,6 +1454,8 @@ Master list of abbreviations used across USAREUR-AF Maven/Foundry publications a
 
 **UTC** — Coordinated Universal Time
 
+**III Corps** — Third Corps, recently realigned under USAREUR-AF
+
 **V Corps** — Fifth Corps (Forward)
 
 **VAUTI** — Visible, Accessible, Understandable, Trustable, Interoperable (superseded by VAULTIS/VAULTIS-A)
@@ -1466,7 +1468,6 @@ Master list of abbreviations used across USAREUR-AF Maven/Foundry publications a
 
 *This glossary was compiled from the Palantir Foundry Developer Field Manual (USAREUR-AF Operational Data Team, March 2026) and the Maven Field Manual (USAREUR-AF Operational Data Team, Version 1.0). It constitutes the authoritative combined reference for data literacy and platform terminology for this AOR.*
 
-*UNCLASSIFIED — For internal training and reference use.*
 
 *Maintained by: USAREUR-AF Operational Data Team*
 *Last Updated: March 2026*

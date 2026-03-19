@@ -199,7 +199,7 @@ export default function TM20({ showPanel }: Props) {
           <div className="specialist-cta-title">TM-30 &mdash; Advanced Builder Manual</div>
           <div className="specialist-cta-sub">For data-adjacent specialists: complex application design, advanced pipelines, Ontology architecture, AIP Logic, and C2DAO governance. Required prereq for all TM-40 tracks.</div>
         </div>
-        <button className="specialist-cta-btn" onClick={() => showPanel('tm30' as any)}>
+        <button className="specialist-cta-btn" onClick={() => showPanel('tm30')}>
           Continue to TM-30 <span className="btn-arrow">&#8594;</span>
         </button>
       </div>
@@ -208,8 +208,8 @@ export default function TM20({ showPanel }: Props) {
         <div className="callout-label">NOT FINDING WHAT YOU NEED?</div>
         <div className="callout-body">
           Contact your unit data steward for additional publications, source files, or access to restricted materials.
-          For technical support, visit the <button className="qr-link" onClick={() => showPanel('support' as any)}>Support page &rarr;</button>
-          For task-level procedures, use the <button className="qr-link" onClick={() => showPanel('taskindex' as any)}>Task Index &rarr;</button>
+          For technical support, visit the <button className="qr-link" onClick={() => showPanel('support')}>Support page &rarr;</button>
+          For task-level procedures, use the <button className="qr-link" onClick={() => showPanel('taskindex')}>Task Index &rarr;</button>
         </div>
       </div>
     </>

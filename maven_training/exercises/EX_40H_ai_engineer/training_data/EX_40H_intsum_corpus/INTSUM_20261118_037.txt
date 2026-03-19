@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20261118_037 — NAI ACTIVITY REPORT
+DTG: 180000Z NOV 2026
+Unit: 3-1 BN
+
+Summary: Persistent surveillance of NAI 02 (grid 36T750275) near GRAUSTEIN identified 4 personnel movements during hours of darkness over the 48-hour period. Pattern suggests shift rotations consistent with a manned position.
+
+Collection Assessment: Current ISR allocation provides adequate coverage of NAI 02. No additional assets requested at this time.
+Recommended Action: Maintain collection posture. Update S2 overlay with latest activity data. Cross-reference with SIGINT and HUMINT reporting.

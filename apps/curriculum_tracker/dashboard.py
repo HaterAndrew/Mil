@@ -6,6 +6,7 @@ across the maven_training/ corpus.
 
 from __future__ import annotations
 
+import os
 import sys
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -61,7 +62,7 @@ from theme import (
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-API_BASE = "http://localhost:8013"
+API_BASE = os.environ.get("CURRICULUM_TRACKER_API_URL", "http://localhost:8013")
 
 # Default scan target
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent

@@ -111,5 +111,5 @@
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Lesson Plan Outlines — T3-F MSC Force Multiplier | Version 2.0 | March 2026*

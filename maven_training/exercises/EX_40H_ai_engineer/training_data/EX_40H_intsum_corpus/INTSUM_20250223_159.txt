@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250223_159 — TERRAIN ANALYSIS
+DTG: 230000Z FEB 2025
+Unit: 2-1 BN
+
+Summary: Terrain between grids 36T216863 and 32T587559 assessed as severely restricted for mounted movement. Dismounted infiltration routes identified along the southern ridge.
+
+Impact to Operations: Movement planning should account for degraded conditions. Coordination with engineer assets recommended.
+Recommended Action: Update common operational picture. Disseminate terrain overlay to subordinate units. Request engineer reconnaissance if conditions persist beyond 72 hours.

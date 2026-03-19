@@ -1,6 +1,6 @@
-# ENVIRONMENT SETUP — EX-40M ML Engineer
+# ENVIRONMENT SETUP — EX_40M ML Engineer
 
-**Track:** EX-40M — ML Engineer (TM-40M) | **Prerequisite:** TM-30 REQUIRED | **Continuation:** TM-50M — Advanced ML Engineer
+**Track:** EX_40M — ML Engineer (TM-40M) | **Prerequisite:** TM-30 REQUIRED | **Continuation:** TM-50M — Advanced ML Engineer
 **Companion exams:** EXAM_TM40M_PRE (administer before exercise), EXAM_TM40M_POST (administer after exercise)
 
 ## Environment Type
@@ -25,7 +25,7 @@ Load synthetic PMCS records with NMC labels:
 | Row count | ~5,000 equipment events |
 | Class balance | ~10% positive rate (`nmc_within_7d = True`) — intentionally imbalanced to drive Task 3 discussion |
 | Null injection | ~5% nulls in `days_since_last_service` to require imputation |
-| Destination | `[Training Project]/EX-40M/source/` |
+| Destination | `[Training Project]/EX_40M/source/` |
 
 **Schema:** `equipment_id`, `date`, `days_since_last_service` (int), `maintenance_count_30d`, `maintenance_count_60d`, `maintenance_count_90d`, `equipment_class` (categorical), `unit`, `nmc_within_7d` (boolean, target label)
 

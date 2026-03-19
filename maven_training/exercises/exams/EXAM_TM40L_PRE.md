@@ -232,5 +232,5 @@ SA-5. Full credit: any four from — hardcoded credentials or API keys; unsaniti
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-40L Pre-Test | Version 1.0 | March 2026*

@@ -493,10 +493,11 @@ For personnel pursuing technical depth, specialist tracks (TM-40G–O, prereq TM
 | TM-40J | Program Manager (→ TM-50J) |
 | TM-40K | Knowledge Manager (→ TM-50K) |
 | TM-40L | Software Engineer (→ TM-50L) |
+| TM-40N | UI/UX Designer (→ TM-50N) |
+| TM-40O | Platform Engineer (→ TM-50O) |
 
 ---
 
-*UNCLASSIFIED // FOR OFFICIAL USE ONLY*
 
 *CONCEPTS GUIDE — TM-40E: Maven Smart System, Protection Warfighting Function*
 *Headquarters, United States Army Europe and Africa*

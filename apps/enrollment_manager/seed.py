@@ -209,9 +209,9 @@ def _build_classes(base_date: date) -> list[dict]:
             "location": "Wiesbaden", "max_seats": 20,
             "instructor": "MSG TAYLOR", "status": "SCHEDULED",
         },
-        # --- BSP ---
+        # --- FBC ---
         {
-            "course_id": "BSP", "class_name": "BSP Builder Sprint (Grafenwoehr Apr)",
+            "course_id": "FBC", "class_name": "FBC Foundry Bootcamp (Grafenwoehr Apr)",
             "start_date": base_date + timedelta(days=25),
             "end_date": base_date + timedelta(days=29),
             "location": "Grafenwoehr", "max_seats": 20,
@@ -289,7 +289,7 @@ def seed():
         # --- Enrollment assignments ---
         # Map class index to list of soldier indices to enroll
         # Classes 0-2: TM-10 (large), 3-5: TM-20, 6-7: TM-30, 8-14: TM-40 variants,
-        # 15: BSP, 16: TM-40E (full+waitlist), 17: completed, 18: cancelled, 19: TM-40M
+        # 15: FBC, 16: TM-40E (full+waitlist), 17: completed, 18: cancelled, 19: TM-40M
 
         enrollment_map: dict[int, list[int]] = {
             # TM-10 Wiesbaden Mar — partially filled (~15 of 40)
@@ -322,7 +322,7 @@ def seed():
             13: [3, 12, 35, 38],
             # TM-40L Software Engineer — light (~5 of 20)
             14: [0, 1, 13, 25, 44],
-            # BSP Grafenwoehr — moderate (~8 of 20)
+            # FBC Grafenwoehr — moderate (~8 of 20)
             15: [7, 8, 17, 18, 20, 21, 29, 30],
             # TM-40E Protection Vilseck — FULL (20 of 20, will also get waitlist entries)
             16: list(range(0, 20)),

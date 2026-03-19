@@ -76,7 +76,7 @@ No live system interaction this block. No data handling risks. The instructor sh
 **Instructor Notes:**
 Lead with the operational problem, not the technology. MSS exists because units were managing operational data through emailed Excel files, manually updated PowerPoint slides, and informal tracking systems that only one person understood. When that person PCSed, the data went with them.
 
-MSS centralizes operational data on a governed platform. It is not a website or a reporting tool — it is a data platform with a structured data model, access controls, pipelines, and applications built on top of shared data. The analogy that works for most trainees: MSS is to operational data what a COP is to a common operational picture. Everyone sees the same data, it is authoritative, and changes are visible to everyone with access.
+Per ADP 3-13, information is combat power. MSS is the USAREUR-AF platform for converting raw data into operational information — captured as knowledge through visualization — to create shared understanding among commands and staffs, enabling decisions and maintaining dominance across the European theater.
 
 Reference Slide 2 (What is MSS diagram). Walk through: data sources → ingestion → Ontology → applications layer.
 
@@ -608,7 +608,7 @@ Saving a Contour analysis: top right "Save" button. Saved analyses appear in the
 
 Exporting: "Export" option — CSV of the filtered data, or image export of the chart.
 
-NOTE: Before exporting, confirm the classification marking of the dataset. The exported file inherits the classification. A FOUO or CUI dataset exported to an unsecured location is a spillage. This will be covered more in Block 8.
+NOTE: Before exporting, confirm the classification marking of the dataset. The exported file inherits the classification. A CUI dataset exported to an unsecured location is a spillage. This will be covered more in Block 8.
 
 **Student Activity:** Save the Contour analysis with a descriptive name following naming conventions. Then export the chart as an image.
 
@@ -811,7 +811,7 @@ Data mishandling from MSS starts with not checking classification before exporti
 | # | ELO | Assessment |
 |---|---|---|
 | 1 | Locate the classification marking on a Foundry dataset | Evaluated task (Practical Exercise Task 6) |
-| 2 | State the authorized distribution for a given marking (UNCLASSIFIED, FOUO/CUI) | Evaluated task (Practical Exercise Task 6) |
+| 2 | State the authorized distribution for a given marking (UNCLASSIFIED, CUI) | Evaluated task (Practical Exercise Task 6) |
 | 3 | Describe the authorized export procedure for each classification level | Evaluated task (Practical Exercise Task 6 — verbal) |
 
 ## Resources
@@ -821,7 +821,7 @@ Data mishandling from MSS starts with not checking classification before exporti
 
 ## Introduction
 
-**ATTENTION:** "This is the block that keeps you out of trouble. Classification markings are in MSS. Before you export any file, you check the marking. If you export FOUO data to your personal Google Drive, you have just committed a spillage. The practical exercise will ask you where to find the marking and what to do with the data."
+**ATTENTION:** "This is the block that keeps you out of trouble. Classification markings are in MSS. Before you export any file, you check the marking. If you export CUI data to your personal Google Drive, you have just committed a spillage. The practical exercise will ask you where to find the marking and what to do with the data."
 
 ## Body
 
@@ -833,7 +833,7 @@ Classification markings are applied at the dataset level and at the application 
 2. Application header or documentation (if the builder included it)
 3. Object Type properties (if configured)
 
-In the Training Environment, all data is UNCLASSIFIED. But trainees must know the procedure for when they work with FOUO/CUI data in production.
+In the Training Environment, all data is UNCLASSIFIED. But trainees must know the procedure for when they work with CUI data in production.
 
 Walk through: open a training dataset, locate the Properties panel, identify the classification field.
 
@@ -849,7 +849,7 @@ Cover the three marking categories relevant to USAREUR-AF MSS:
 | Marking | Authorized Export Destination | Distribution |
 |---|---|---|
 | UNCLASSIFIED | Approved government systems; NIPR | No restriction within authorized users |
-| FOUO / CUI | Government systems only; no personal devices, no cloud storage (Google Drive, OneDrive personal) | Official use only; need-to-know |
+| CUI | Government systems only; no personal devices, no cloud storage (Google Drive, OneDrive personal) | Official use only; need-to-know |
 | CLASSIFIED | Not applicable in MSS Training Environment; do not attempt to export from production classified systems without explicit authorization | Requires appropriate handling |
 
 Procedure before any export:
@@ -861,17 +861,17 @@ Procedure before any export:
 Common violations:
 - Copy-paste data from MSS into an email or personal document
 - Screenshot a classified field visible on screen and text-message it
-- Export FOUO data to a personal Google Drive for "easier access"
+- Export CUI data to a personal Google Drive for "easier access"
 
 **Check on Learning:**
-- Q: "You export an Equipment readiness dataset and the Properties panel shows 'CUI//FOUO'. You want to email it to the S4 officer. Can you send it to their NIPR email? Can you put it on a USB drive? Can you send it to their personal email?"
+- Q: "You export an Equipment readiness dataset and the Properties panel shows 'CUI'. You want to email it to the S4 officer. Can you send it to their NIPR email? Can you put it on a USB drive? Can you send it to their personal email?"
 - A: NIPR government email — Yes, with CUI marking in the subject. USB drive — only if authorized; most USAREUR-AF policy prohibits unapproved removable media. Personal email — No. Always.
 
 ## Summary
 
 **SUMMARY:**
 - Classification markings are in the dataset Properties panel — check before every export
-- FOUO/CUI data stays on government systems; it does not go to personal devices or personal cloud storage
+- CUI data stays on government systems; it does not go to personal devices or personal cloud storage
 - Copy-paste is not an authorized export procedure — use the MSS export function
 - Label exported files with the classification marking
 
@@ -941,5 +941,5 @@ If No-Go:
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-10 Lesson Plans | Version 1.0 | March 2026*

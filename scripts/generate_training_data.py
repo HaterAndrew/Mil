@@ -395,7 +395,7 @@ def gen_ex40j():
     charter = textwrap.dedent("""\
     # EX_40J TRAINING — Project Charter
     ## LOGSTAT Aggregation Pipeline
-    Classification: UNCLASSIFIED // TRAINING USE ONLY
+
 
     ### Project Overview
     Automate daily aggregation of logistics status (LOGSTAT) reports from three
@@ -435,7 +435,7 @@ def gen_ex40j():
     milestone_tracker = textwrap.dedent("""\
     # EX_40J TRAINING — Milestone Tracker
     ## LOGSTAT Aggregation Pipeline — 8-Week Project Plan
-    Classification: UNCLASSIFIED // TRAINING USE ONLY
+
 
     Current Week: **6 of 8**
     Last Updated: Week 6 Check-in
@@ -470,7 +470,7 @@ def gen_ex40j():
     open_tickets = textwrap.dedent("""\
     # EX_40J TRAINING — Open Tickets
     ## LOGSTAT Aggregation Pipeline
-    Classification: UNCLASSIFIED // TRAINING USE ONLY
+
 
     ---
 
@@ -524,7 +524,7 @@ def gen_ex40j():
     pipeline_def = textwrap.dedent("""\
     # EX_40J TRAINING — Pipeline Definition
     ## LOGSTAT Aggregation Pipeline — Technical Description
-    Classification: UNCLASSIFIED // TRAINING USE ONLY
+
 
     ### What It Does
     This pipeline ingests daily logistics status (LOGSTAT) data from three battalion-level
@@ -673,7 +673,7 @@ def gen_ex40k():
         ex = random.choice(exercises)
         content = textwrap.dedent(f"""\
         AFTER-ACTION REPORT (AAR) — RECORD {idx:02d}
-        Classification: UNCLASSIFIED // TRAINING USE ONLY
+    
 
         date: {d.isoformat()}
         unit: {unit}

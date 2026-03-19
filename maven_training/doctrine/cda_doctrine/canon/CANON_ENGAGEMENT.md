@@ -1339,7 +1339,7 @@ SOURCE_REGISTRY = {
             "source": "DoD Operational Reports (OPSREPS)",
             "format": "XML/PDF",
             "coverage": "Iraq/Afghanistan 2001-2021",
-            "classification": "CUI/FOUO",
+            "classification": "CUI",
             "priority": "PRIMARY (modern)",
             "quality": 9,
             "access": "Requires CAC/clearance"

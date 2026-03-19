@@ -255,6 +255,10 @@ Passing: 52/74 (70%) — Post-test only. Pre-test is diagnostic.
 13. C — KS test compares empirical distributions of continuous features between periods.
 14. C — Transactions are atomic — all-or-nothing prevents partial write corruption.
 15. A — Compressed model must be independently evaluated — compression changes the model.
+16. B — Escalate to C2DAO for scope reduction before cutting T&E — a model without holdout validation and sponsor sign-off is an unauthorized deployment.
+17. B — Full lineage documented from training data through feature pipeline through model to inference outputs satisfies the "Linked" dimension.
+18. B — A functional model with documented architecture is the Phase 4 (Development) gate output per TM-40M Section 9-2a.
+19. B — Full training and inference logs retained and version history maintained in the model registry satisfies the "Auditable" dimension per TM-40M Section 9-2b.
 
 **Short Answer Guidance:**
 
@@ -272,5 +276,5 @@ SA-6. Full credit: any two WFF tracks correctly identified with an ML example �
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-40M Post-Test | Version 1.0 | March 2026*

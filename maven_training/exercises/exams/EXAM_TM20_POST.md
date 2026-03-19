@@ -232,5 +232,5 @@ SA-5. Full credit: Viewer = read-only access — can view Workshop applications 
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-20 Post-Test | Version 1.0 | March 2026*

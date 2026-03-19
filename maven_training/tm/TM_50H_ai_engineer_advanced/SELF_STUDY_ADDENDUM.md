@@ -153,4 +153,4 @@ The following doctrine sections were added to TM-50H this session. Review after 
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*

@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250104_044 — OBSERVATION REPORT
+DTG: 040000Z JAN 2025
+Unit: V CORPS G2
+
+Summary: OP SENTRY reported observation of 10 unidentified vehicles moving in convoy formation along ROUTE IRON at 0920 local. Vehicles: BMP-2. Movement direction: SOUTHWEST. No hostile action observed. Convoy cleared the AO within 17 minutes.
+
+Assessment: Unknown purpose. Vehicle type and movement pattern do not match known civilian routes. Meets PIR 2 criteria — forwarded to higher.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

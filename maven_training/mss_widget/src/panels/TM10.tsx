@@ -36,7 +36,7 @@ export default function TM10({ showPanel }: Props) {
       </div>
 
       <h2>2. WHAT IS MSS?</h2>
-      <p>MSS is a secure, web-based platform where your unit&rsquo;s data lives and can be analyzed and acted upon. Think of it as a shared operations center for data: information from logistics, personnel, readiness, and other systems is collected, organized, and made accessible through applications your unit uses every day.</p>
+      <p>MSS is the mission command information system (MCIS) program of record, directed by the USAREUR-AF CG to enable rapid and accurate decision-making. It is a secure, web-based platform where your unit&rsquo;s data lives and can be analyzed and acted upon. Think of it as a shared operations center for data: information from logistics, personnel, readiness, and other systems is collected, organized, and made accessible through applications your unit uses every day.</p>
       <p>MSS is built on the Palantir Foundry platform, authorized for Army use under the Maven Smart System program.</p>
       <div className="callout note">
         <div className="callout-label">NOTE &mdash; WHAT IS FOUNDRY?</div>
@@ -70,7 +70,7 @@ export default function TM10({ showPanel }: Props) {
           <div className="card-label">USAREUR-AF MISSION AREAS</div>
           <div className="card-body">
             <ul>
-              <li><strong>Personnel Readiness</strong> &mdash; soldier readiness status</li>
+              <li><strong>Personnel Readiness</strong> &mdash; Soldier readiness status</li>
               <li><strong>Logistics</strong> &mdash; equipment availability &amp; maintenance</li>
               <li><strong>Operational Reporting</strong> &mdash; SITREPs and updates</li>
               <li><strong>Planning</strong> &mdash; orders, unit positions, task org</li>
@@ -238,7 +238,7 @@ export default function TM10({ showPanel }: Props) {
           <div className="specialist-cta-title">TM-20 &mdash; No-Code Builder Manual</div>
           <div className="specialist-cta-sub">Learn to ingest data, build Workshop applications, create Object Types, and manage projects &mdash; all without coding. Required prereq for all builder roles.</div>
         </div>
-        <button className="specialist-cta-btn" onClick={() => showPanel('tm20' as any)}>
+        <button className="specialist-cta-btn" onClick={() => showPanel('tm20')}>
           Continue to TM-20 <span className="btn-arrow">&#8594;</span>
         </button>
       </div>
@@ -247,8 +247,8 @@ export default function TM10({ showPanel }: Props) {
         <div className="callout-label">NOT FINDING WHAT YOU NEED?</div>
         <div className="callout-body">
           Contact your unit data steward for additional publications, source files, or access to restricted materials.
-          For technical support, visit the <button className="qr-link" onClick={() => showPanel('support' as any)}>Support page &rarr;</button>
-          For task-level procedures, use the <button className="qr-link" onClick={() => showPanel('taskindex' as any)}>Task Index &rarr;</button>
+          For technical support, visit the <button className="qr-link" onClick={() => showPanel('support')}>Support page &rarr;</button>
+          For task-level procedures, use the <button className="qr-link" onClick={() => showPanel('taskindex')}>Task Index &rarr;</button>
         </div>
       </div>
     </>

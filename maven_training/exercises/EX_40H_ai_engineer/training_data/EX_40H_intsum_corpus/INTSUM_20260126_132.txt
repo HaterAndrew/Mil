@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260126_132 — NAI ACTIVITY REPORT
+DTG: 260000Z JAN 2026
+Unit: 2-12 CAV
+
+Summary: Over the past 72-hour period, 3 distinct activity events were recorded at NAI 13 (grid 37T255607) near WALDHEIM. Activity included vehicle movement, dismounted personnel, and what appears to be deliberate construction or fortification.
+
+Collection Assessment: Current ISR allocation provides adequate coverage of NAI 13. No additional assets requested at this time.
+Recommended Action: Maintain collection posture. Update S2 overlay with latest activity data. Cross-reference with SIGINT and HUMINT reporting.

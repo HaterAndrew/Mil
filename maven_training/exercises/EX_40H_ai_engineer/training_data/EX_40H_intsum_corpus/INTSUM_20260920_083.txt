@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260920_083 — WEATHER IMPACT
+DTG: 200000Z SEP 2026
+Unit: 2BCT 1AD
+
+Summary: High winds forecast for the KALTBERG corridor. Sustained 40 km/h with gusts to 70 km/h. UAS operations suspended.
+
+Operational Impact: Logistics resupply timeline may shift. Coordinate with SPO for alternate scheduling.
+Recommended Action: Adjust operations tempo as needed. Monitor weather updates from corps weather team. Coordinate with aviation for revised ISR windows.

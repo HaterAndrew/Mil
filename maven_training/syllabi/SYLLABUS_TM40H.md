@@ -204,5 +204,5 @@ WFF track analysts (TM-40A through TM-40F) are the operational consumers of AI-e
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Syllabus TM-40H | Version 2.0 | March 2026*

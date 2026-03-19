@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260902_059 — OBSERVATION REPORT
+DTG: 020000Z SEP 2026
+Unit: 1-3 BN
+
+Summary: OP TALON reported observation of 11 unidentified vehicles moving in convoy formation along ROUTE DELTA at 1900 local. Vehicles: KAMAZ. Movement direction: NORTHEAST. No hostile action observed. Convoy cleared the AO within 13 minutes.
+
+Assessment: Assessed as routine commercial traffic. No tactical significance at this time. Does not meet CCIR threshold but logged for trend analysis.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

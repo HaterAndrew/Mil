@@ -1,6 +1,6 @@
 # TM-40H — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** The AI engineer builds and owns the technical AI pipeline — from raw ontology data through LLM inference to validated, human-reviewed output. This role requires platform fluency, software engineering discipline, and a thorough understanding of AI safety requirements specific to operational military environments.
+> **Forward:** The AI engineer builds and owns the technical AI pipeline — from raw ontology data through LLM inference to validated, human-reviewed output. This role requires platform fluency, software engineering discipline, and a thorough understanding of AI safety requirements specific to operational military environments.
 > **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Data Literacy Technical Reference (required); CONCEPTS_GUIDE_TM40H_AI_ENGINEER (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -14,26 +14,13 @@
 
 **BLUF:** The AI engineer builds and owns the technical AI pipeline — from raw ontology data through LLM inference to validated, human-reviewed output. This role requires platform fluency, software engineering discipline, and a thorough understanding of AI safety requirements specific to operational military environments.
 
-### 1-1. Purpose and Scope
+### 1-1. AI Engineer Specialist Manual
 
 This manual provides technical instruction for AI engineers building AI-enabled capabilities on the Maven Smart System (MSS). MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. AI capabilities on MSS are delivered through the AIP (Artificial Intelligence Platform) product suite — specifically AIP Logic, AIP Agent Studio, and Code Workspaces.
 
-**TM-40H covers:**
-- AIP Logic workflow authoring, prompt engineering, chain design, and output handling
-- AIP Agent Studio: agent architecture, tool configuration, memory, and orchestration
-- LLM integration patterns: connecting ontology data to LLM context, grounding, retrieval-augmented generation (RAG)
-- AI safety and responsible use: human-in-the-loop requirements, output validation gates, OPSEC for AI-generated products
-- Python transforms that prepare data for AI consumption
-- Ontology integration: connecting AIP Logic workflows to Object Types and Actions
-- Testing, red-teaming, and evaluation of AI outputs
-- Production deployment and monitoring of AIP Logic workflows
+**TM-40H covers** AIP Logic workflow authoring, prompt engineering, chain design, and output handling; AIP Agent Studio: agent architecture, tool configuration, memory, and orchestration; LLM integration patterns: connecting ontology data to LLM context, grounding, retrieval-augmented generation (RAG); AI safety and responsible use: human-in-the-loop requirements, output validation gates, OPSEC for AI-generated products; Python transforms that prepare data for AI consumption; ontology integration: connecting AIP Logic workflows to Object Types and Actions; testing, red-teaming, and evaluation of AI outputs; and production deployment and monitoring of AIP Logic workflows.
 
-**TM-40H does NOT cover:**
-- Basic Workshop, Pipeline Builder, or Ontology configuration — see TM-20 and TM-30
-- TypeScript OSDK development — see TM-40L (Software Engineer)
-- Model training, fine-tuning, or MLOps infrastructure — see TM-40M (ML Engineer)
-- Statistical analysis or operational research methodology — see TM-40G (ORSA)
-- General Python transform development unrelated to AI pipelines — see TM-40L
+**TM-40H does NOT cover** basic Workshop, Pipeline Builder, or Ontology configuration — see TM-20 and TM-30; TypeScript OSDK development — see TM-40L (Software Engineer); model training, fine-tuning, or MLOps infrastructure — see TM-40M (ML Engineer); statistical analysis or operational research methodology — see TM-40G (ORSA); or general Python transform development unrelated to AI pipelines — see TM-40L.
 
 > **NOTE:** TM-30 is a hard prerequisite. If you cannot independently design a Workshop application, configure an Ontology model, and specify an AIP Logic workflow configuration, complete TM-30 before proceeding. TM-40H assumes TM-30 competency and builds above it — not alongside it.
 
@@ -55,7 +42,7 @@ This manual provides technical instruction for AI engineers building AI-enabled 
 
 ### 1-3. The AI Engineer Role in USAREUR-AF
 
-USAREUR-AF, as the ASCC to USEUCOM, operates across a complex multinational, multi-echelon environment. Major subordinate commands — V Corps, 21st TSC, 7th ATC, USAREUR-AF G2, and attached joint and multinational elements — generate and consume data at high tempo. The AI engineer's mission is to close the gap between raw data availability and decision-relevant insight, using AI inference responsibly.
+USAREUR-AF, as the ASCC to USEUCOM and USAFRICOM, operates across a complex multinational, multi-echelon environment. Major subordinate commands — III Corps, V Corps, 21st TSC, 7th ATC, 10th AAMDC, 56th MDC-E, SETAF-AF, USAREUR-AF G2, and attached joint and multinational elements — generate and consume data at high tempo. The AI engineer's mission is to close the gap between raw data availability and decision-relevant insight, using AI inference responsibly.
 
 AI engineers on MSS do not build AI for its own sake. Every AIP workflow must answer a specific operational question or automate a defined staff task. The design imperative is: **mission first, AI second.** If a well-designed Contour report or Action workflow accomplishes the mission, use it. Introduce AI inference only where natural language generation, semantic reasoning, or pattern synthesis is genuinely required.
 
@@ -1210,11 +1197,11 @@ AI inference is a data pathway. What enters the prompt is processed by the infer
 
 | Content Type | Authorized Endpoints |
 |---|---|
-| UNCLASSIFIED // FOUO operational data | Endpoints authorized for FOUO — verify before use |
+| CUI operational data | CUI-authorized endpoints only — verify before use |
 | CUI operational data | CUI-authorized endpoints only — verify accreditation |
 | SECRET data | SECRET-level endpoints only — not available on unclassified MSS |
 | NOFORN data | NOFORN-authorized endpoints only — coalition agents not authorized |
-| Unit locations, movement schedules | Treat as FOUO minimum — verify endpoint before including |
+| Unit locations, movement schedules | Treat as CUI minimum — verify endpoint before including |
 | Targeting-related data | Prohibited in AI prompts without explicit CCDR authorization |
 
 **OPSEC checklist before workflow deployment:**
@@ -1938,7 +1925,7 @@ This checklist documents the minimum authorization requirements for AIP Logic wo
 | Classification level of source data confirmed | ☐ | |
 | Inference endpoint authorized for classification level | ☐ | Endpoint name and authorization reference |
 | No classified or CUI data used in prompts at inappropriate endpoint | ☐ | |
-| FOUO data handling reviewed | ☐ | |
+| CUI data handling reviewed | ☐ | |
 
 ### A-4. Safety and Human Review
 

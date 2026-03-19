@@ -11,8 +11,12 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Optional
 
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+
+from shared.middleware import SecurityHeadersMiddleware
 
 from . import db
 from .models import (
@@ -24,29 +28,32 @@ from .models import (
 )
 
 # Default corpus root — override via POST /reindex body if needed
-CORPUS_ROOT = Path("/home/dale/Desktop/claude/maven_training")
+CORPUS_ROOT = Path(__file__).resolve().parent.parent.parent / "maven_training"
+
+
+# ---------------------------------------------------------------------------
+# App lifecycle
+# ---------------------------------------------------------------------------
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    db.init_db()
+    yield
+
 
 app = FastAPI(
     title="Glossary Search API",
     description="Full-text search across USAREUR-AF glossary, doctrine, and training terms.",
     version="1.0.0",
+    lifespan=lifespan,
 )
+app.add_middleware(SecurityHeadersMiddleware)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=["http://localhost:8500", "http://127.0.0.1:8500"],
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type"],
 )
-
-
-# ---------------------------------------------------------------------------
-# Startup: ensure DB exists
-# ---------------------------------------------------------------------------
-
-@app.on_event("startup")
-def _startup() -> None:
-    db.init_db()
 
 
 # ---------------------------------------------------------------------------

@@ -241,6 +241,8 @@ Passing: 49/70 (70%) — Post-test only. Pre-test is diagnostic.
 13. A — Automated personnel evaluation scoring without human review is a prohibited use case.
 14. A — Pagination handling is required when result sets exceed the single-page record limit.
 15. C — Rollback plan: revert workflow version, notify users, investigate root cause before re-deploying.
+16. B — AI enables speed; humans provide judgment — no AI/ML output replaces commander decision authority (ADP 3-13).
+17. B — Exploitation maps to model training, inference, prompt-based reasoning, and pattern detection under analyst supervision.
 
 **Short Answer Guidance:**
 
@@ -248,7 +250,7 @@ SA-1. Full credit: (1) incoming field reports retrieved from Ontology or dataset
 
 SA-2. Full credit: response must cite — HITL is NON-NEGOTIABLE per TM-40H policy (not "low-risk" configurable); operational risk: incorrect AI output without review could corrupt Ontology data, generate false operational reports, or trigger incorrect downstream actions; the time cost of review is deliberate — it ensures accountability and accuracy in operational data; the correct solution for speed is to optimize the review workflow, not remove it. Partial credit (3 pts) for citing policy without operational risk argument.
 
-SA-3. Full credit: red-teaming tests: prompt injection (inject instructions in simulated user input or retrieved documents); hallucination probing (inputs designed to elicit fabricated facts); classification boundary violations (inputs that test whether the workflow handles FOUO/SECRET content correctly); role-constraint bypass (attempt to make the workflow act outside its defined scope); minimum to pass before production: all critical failure modes resolved, no prompt injection vulnerabilities, output schema consistent across 100+ test cases, HITL gate confirmed functional. Partial credit (3 pts) for listing test types without minimum threshold requirement.
+SA-3. Full credit: red-teaming tests: prompt injection (inject instructions in simulated user input or retrieved documents); hallucination probing (inputs designed to elicit fabricated facts); classification boundary violations (inputs that test whether the workflow handles CUI/SECRET content correctly); role-constraint bypass (attempt to make the workflow act outside its defined scope); minimum to pass before production: all critical failure modes resolved, no prompt injection vulnerabilities, output schema consistent across 100+ test cases, HITL gate confirmed functional. Partial credit (3 pts) for listing test types without minimum threshold requirement.
 
 SA-4. Full credit: root cause — agent's tool-use authorization for the Workshop form submission tool does not require explicit user request or confirmation; agent is autonomously deciding to submit forms as part of its planning process; correct fix — configure the form submission tool with an authorization rule requiring explicit user confirmation before execution; all irreversible Actions (form submission, Ontology writes, external sends) must require human-in-the-loop approval in Agent Studio configuration. Partial credit (3 pts) for identifying root cause without specific fix.
 
@@ -258,5 +260,5 @@ SA-6. Full credit: any two WFF tracks correctly identified with an AIP example �
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-40H Post-Test | Version 1.0 | March 2026*

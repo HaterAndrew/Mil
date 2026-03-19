@@ -7,7 +7,10 @@ All training data is read from other app databases via their public functions.
 from __future__ import annotations
 
 import json
+import logging
 from contextlib import contextmanager
+
+logger = logging.getLogger(__name__)
 from datetime import UTC, date, datetime
 from pathlib import Path
 
@@ -158,6 +161,7 @@ def collect_all_metrics() -> dict:
         finally:
             db.close()
     except Exception:
+        logger.warning("Failed to load readiness_tracker metrics", exc_info=True)
         metrics.setdefault("total_trainees", 0)
         metrics.setdefault("funnel", [])
         metrics.setdefault("unit_summary", [])
@@ -168,7 +172,7 @@ def collect_all_metrics() -> dict:
         from exam_analytics.db import (
             SessionLocal as EA_Session,
             ExamSession,
-            ExamResponse,
+            ExamResult,
             cross_cohort_comparison,
             init_db as ea_init,
         )
@@ -181,14 +185,15 @@ def collect_all_metrics() -> dict:
             # Compute overall pass rate from cross-cohort data
             cohorts = cross_cohort_comparison(db)
             if cohorts:
-                total_pass = sum(c.get("pass_count", 0) for c in cohorts)
-                total_take = sum(c.get("total_count", 0) for c in cohorts)
+                total_pass = sum(c.get("pass_rate", 0) * c.get("n_students", 0) / 100 for c in cohorts)
+                total_take = sum(c.get("n_students", 0) for c in cohorts)
                 metrics["exam_pass_rate"] = round(total_pass / total_take * 100, 1) if total_take else None
             else:
                 metrics["exam_pass_rate"] = None
         finally:
             db.close()
     except Exception:
+        logger.warning("Failed to load exam_analytics metrics", exc_info=True)
         metrics.setdefault("exam_sessions_count", 0)
         metrics.setdefault("exam_pass_rate", None)
 
@@ -210,6 +215,7 @@ def collect_all_metrics() -> dict:
         finally:
             db.close()
     except Exception:
+        logger.warning("Failed to load aar_aggregator metrics", exc_info=True)
         metrics.setdefault("total_aars", 0)
         metrics.setdefault("top_issues", [])
 
@@ -228,13 +234,14 @@ def collect_all_metrics() -> dict:
         finally:
             db.close()
     except Exception:
+        logger.warning("Failed to load progress_tracker metrics", exc_info=True)
         metrics.setdefault("overdue_milestones", 0)
 
     # ----- MTT Scheduler -----
     try:
         from mtt_scheduler.db import (
             SessionLocal as MTT_Session,
-            MttEvent,
+            Event,
             init_db as mtt_init,
         )
         mtt_init()
@@ -242,14 +249,15 @@ def collect_all_metrics() -> dict:
         try:
             # Count events from today forward
             upcoming = (
-                db.query(MttEvent)
-                .filter(MttEvent.start_date >= date.today())
+                db.query(Event)
+                .filter(Event.start_date >= date.today())
                 .count()
             )
             metrics["upcoming_events"] = upcoming
         finally:
             db.close()
     except Exception:
+        logger.warning("Failed to load mtt_scheduler metrics", exc_info=True)
         metrics.setdefault("upcoming_events", 0)
 
     # ----- Data Quality -----
@@ -267,6 +275,7 @@ def collect_all_metrics() -> dict:
         finally:
             db.close()
     except Exception:
+        logger.warning("Failed to load data_quality metrics", exc_info=True)
         metrics.setdefault("active_alerts", 0)
 
     # ----- Instructor Manager (optional — may not exist yet) -----
@@ -290,6 +299,7 @@ def collect_all_metrics() -> dict:
         finally:
             db.close()
     except Exception:
+        logger.warning("Failed to load instructor_manager metrics", exc_info=True)
         metrics.setdefault("expiring_certs", 0)
         metrics.setdefault("coverage_gaps", 0)
 
@@ -304,11 +314,12 @@ def collect_all_metrics() -> dict:
         db = EM_Session()
         try:
             stats = get_enrollment_stats(db)
-            metrics["fill_rate"] = stats.get("fill_rate")
-            metrics["waitlisted_count"] = stats.get("waitlisted_count", 0)
+            metrics["fill_rate"] = stats.get("avg_fill_rate")
+            metrics["waitlisted_count"] = stats.get("total_waitlisted", 0)
         finally:
             db.close()
     except Exception:
+        logger.warning("Failed to load enrollment_manager metrics", exc_info=True)
         metrics.setdefault("fill_rate", None)
         metrics.setdefault("waitlisted_count", 0)
 
@@ -331,6 +342,7 @@ def collect_all_metrics() -> dict:
         finally:
             db.close()
     except Exception:
+        logger.warning("Failed to load curriculum_tracker metrics", exc_info=True)
         metrics.setdefault("overdue_reviews", 0)
         metrics.setdefault("stale_docs", 0)
 
@@ -355,6 +367,7 @@ def collect_all_metrics() -> dict:
         finally:
             db.close()
     except Exception:
+        logger.warning("Failed to load lessons_learned metrics", exc_info=True)
         metrics.setdefault("open_action_items", 0)
         metrics.setdefault("lessons_this_month", 0)
 

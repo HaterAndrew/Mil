@@ -1,14 +1,15 @@
 # CONCEPTS GUIDE — TM-40N COMPANION — UI/UX DESIGNER · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** The Designer is the voice of the user on the product team. Every interface a soldier touches was shaped — well or poorly — by design decisions. TM-40N ensures those decisions are informed, validated, and implementable.
+> **Forward:** The Designer is the voice of the user on the product team. Every interface a Soldier touches was shaped — well or poorly — by design decisions. TM-40N ensures those decisions are informed, validated, and implementable.
 > **Purpose:** Develops mental models required to practice Soldier Centered Design, build effective information architectures, and deliver accessible, operational application designs on MSS. Read before beginning TM-40N task instruction.
+> **Prereqs:** TM-30 REQUIRED (and TM-10 + TM-20 implied). Design tool familiarity recommended.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
 ## SECTION 1 — THE UI/UX DESIGNER'S ROLE ON MSS
 
-**BLUF:** The Designer is the voice of the user on the product team. Every interface a soldier touches was shaped — well or poorly — by design decisions.
+**BLUF:** The Designer is the voice of the user on the product team. Every interface a Soldier touches was shaped — well or poorly — by design decisions.
 
 **MSS workforce tiers (design perspective):**
 
@@ -99,7 +100,7 @@ If a design fails any of these three levels, it needs iteration.
 
 **Color is a safety system:** Classification banners, status indicators, and threat levels all use color as a primary encoding. The Designer's job is to ensure the overall color system is coherent — that status green does not clash with classification green, that the palette works for colorblind users, and that every color-encoded meaning has a redundant non-color indicator.
 
-**Typography is a readability system:** Font choices, sizes, and spacing determine whether a soldier can read the data they need, in the environment they are in, in the time they have. This is not a style preference — it is a functional requirement.
+**Typography is a readability system:** Font choices, sizes, and spacing determine whether a Soldier can read the data they need, in the environment they are in, in the time they have. This is not a style preference — it is a functional requirement.
 
 **Layout is a priority system:** What appears at the top-left gets looked at first (in LTR languages). What is large gets more attention than what is small. What is grouped together is perceived as related. Every layout decision is a priority decision.
 

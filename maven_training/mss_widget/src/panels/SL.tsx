@@ -67,7 +67,7 @@ export default function SL({ showPanel }: Props) {
             <tr><td>1030&ndash;1045</td><td>&mdash;</td><td>Break</td></tr>
             <tr><td>1045&ndash;1200</td><td>4</td><td>How data products impact your formation &mdash; data as command function, failure patterns, Commander&rsquo;s Data PIRs (Ch 3)</td></tr>
             <tr><td>1200&ndash;1300</td><td>&mdash;</td><td>Lunch</td></tr>
-            <tr><td>1300&ndash;1345</td><td>5</td><td>The training pipeline &mdash; TM-10 through TM-50, BSP, resourcing decisions (Ch 4)</td></tr>
+            <tr><td>1300&ndash;1345</td><td>5</td><td>The training pipeline &mdash; TM-10 through TM-50, FBC, resourcing decisions (Ch 4)</td></tr>
             <tr><td>1345&ndash;1430</td><td>6</td><td>Governance &mdash; the governance chain, VAUTI framework, red flags (Ch 5)</td></tr>
             <tr><td>1430&ndash;1445</td><td>&mdash;</td><td>Break</td></tr>
             <tr><td>1445&ndash;1530</td><td>7</td><td>How data projects work &mdash; agile overview, roadmap vs POAM (Ch 6)</td></tr>

@@ -139,4 +139,3 @@ Enterprise Architecture
 ---
 
 *Operational Data Team -- USAREUR-AF*
-*UNCLASSIFIED // FOUO*

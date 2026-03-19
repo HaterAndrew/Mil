@@ -69,7 +69,7 @@ D. Faster and more accurate search and retrieval by users looking for specific t
 A. Knowledge products include personally identifiable information (PII) about individual Soldiers
 B. The unit is collecting data from partner nation forces
 C. The knowledge system is hosted on an unclassified network
-D. Knowledge documents contain FOUO-marked financial data
+D. Knowledge documents contain CUI-marked financial data
 
 **8. In an Army unit, the most common failure mode in lessons learned capture is:**
 
@@ -232,5 +232,5 @@ SA-5. Full credit: any two from — (1) ExpertiseProfile objects containing indi
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-40K Pre-Test | Version 1.0 | March 2026*

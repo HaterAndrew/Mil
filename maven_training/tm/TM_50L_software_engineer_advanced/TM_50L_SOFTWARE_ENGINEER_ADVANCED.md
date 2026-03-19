@@ -1,6 +1,6 @@
 # TM-50L — ADVANCED SOFTWARE ENGINEERING
 
-> **BLUF:** TM-50L qualifies senior software engineers to lead MSS application development capability — designing platform architecture, enforcing security at scale, optimizing performance, and governing the technical practices of the USAREUR-AF SWE community.
+> **Forward:** TM-50L qualifies senior software engineers to lead MSS application development capability — designing platform architecture, enforcing security at scale, optimizing performance, and governing the technical practices of the USAREUR-AF SWE community.
 > **Prereqs:** TM-40L (Software Engineer) — required. TM-40H (AI Engineer) and TM-40M (ML Engineer) — recommended for integration track engineers. Senior-level Python and TypeScript proficiency required; CONCEPTS_GUIDE_TM50L_SOFTWARE_ENGINEER_ADVANCED (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -12,7 +12,7 @@
 
 ## CHAPTER 1 — INTRODUCTION AND SCOPE
 
-### 1-1. Purpose
+### 1-1. Advanced Software Engineer Manual
 
 **BLUF:** TM-50L qualifies senior software engineers to lead MSS application development capability — designing platform architecture, enforcing security at scale, optimizing performance, and governing the technical practices of the USAREUR-AF SWE community.
 
@@ -31,7 +31,7 @@ TM-50L scope:
 
 ### 1-2. The TM-50L Role in USAREUR-AF
 
-USAREUR-AF spans V Corps, 21st TSC, 7th ATC, G2/G3/G6 staff, and coalition partners across the European AOR. MSS supports this entire enterprise. The TM-50L engineer is responsible not for a single application but for the health and capability of the entire SWE layer.
+USAREUR-AF spans III Corps, V Corps, 21st TSC, 7th ATC, 10th AAMDC, 56th MDC-E, SETAF-AF, G2/G3/G6 staff, and coalition partners across the European and African AOR. MSS supports this entire enterprise. The TM-50L engineer is responsible not for a single application but for the health and capability of the entire SWE layer.
 
 **TM-50L responsibilities in the data chain:**
 
@@ -2965,15 +2965,15 @@ v1.0 - [DATE] - Initial version
 
 **SLA** — Service Level Agreement. Defined performance and availability targets for a service.
 
-**Tenant** — A logical grouping of users and data within MSS with defined isolation boundaries. Example tenants: V Corps, 21st TSC, coalition.
+**Tenant** — A logical grouping of users and data within MSS with defined isolation boundaries. Example tenants: III Corps, V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, SETAF-AF, coalition.
 
 **TTL** — Time to Live. The duration for which a cached value is considered valid before it is refreshed.
 
 **UDRA** — Unified Data Reference Architecture. Version 1.1 (February 2025). DoD/Army framework defining canonical data flows, domain ownership, and integration standards.
 
-**USAREUR-AF** — United States Army Europe and Africa. The Army Service Component Command to USEUCOM, headquartered in Wiesbaden, Germany.
+**USAREUR-AF** — United States Army Europe and Africa. The Army Service Component Command to USEUCOM and USAFRICOM, headquartered in Wiesbaden, Germany.
 
-**USEUCOM** — United States European Command. The Combatant Command covering the European AOR.
+**USEUCOM** — United States European Command. The Combatant Command covering the European AOR. USAREUR-AF serves as ASCC to both USEUCOM and USAFRICOM.
 
 **Vault** — HashiCorp Vault. Secrets management platform for storing and accessing credentials, tokens, and certificates.
 
@@ -2982,7 +2982,6 @@ v1.0 - [DATE] - Initial version
 *TM-50L — ADVANCED SOFTWARE ENGINEERING — MAVEN SMART SYSTEM*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA*
 *Wiesbaden, Germany — 2026*
-*UNCLASSIFIED*
 *Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.*
 
 **DoD and Army Strategic References:**

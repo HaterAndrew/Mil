@@ -118,11 +118,11 @@ Complete **10+ duty days before Day 1:**
 | Time | Block | Method | Content |
 |---|---|---|---|
 | 0800–0900 | 18 | Lecture | Design governance: pattern libraries, design review process, cross-track coordination, the designer's role in sprint ceremonies |
-| 0900–1100 | 19 | Exercise | **EX-40N Practical Exercise** begins — design an MSS application from user research through handoff (see EX-40N for full task list) |
+| 0900–1100 | 19 | Exercise | **EX_40N Practical Exercise** begins — design an MSS application from user research through handoff (see EX_40N for full task list) |
 | 1100–1115 | — | Break | |
-| 1115–1200 | 20 | Exercise | EX-40N continued |
+| 1115–1200 | 20 | Exercise | EX_40N continued |
 | 1200–1300 | — | Lunch | |
-| 1300–1500 | 21 | Exercise | EX-40N continued — usability validation and design refinement |
+| 1300–1500 | 21 | Exercise | EX_40N continued — usability validation and design refinement |
 | 1500–1515 | — | Break | |
 | 1515–1630 | 22 | Presentation | Design presentations: each trainee presents their design, research findings, and handoff package |
 | 1630–1700 | 23 | Evaluation | Post-test (EXAM_TM40N_POST); course evaluation; TM-50N pathway discussion |
@@ -132,6 +132,6 @@ Complete **10+ duty days before Day 1:**
 ## Post-Course
 
 - **Evaluation:** EXAM_TM40N_POST administered Day 5 (see schedule)
-- **Proficiency exercise:** EX-40N evaluated against Go/No-Go criteria
+- **Proficiency exercise:** EX_40N evaluated against Go/No-Go criteria
 - **Continuation:** TM-50N — Advanced UI/UX Designer (design systems, DDIL design, coalition UI, DesignOps)
 - **Cross-track recommendation:** Attend TM-40J (Program Manager) overview session to understand PM-Designer coordination; attend TM-40L (Software Engineer) overview session to understand implementation constraints

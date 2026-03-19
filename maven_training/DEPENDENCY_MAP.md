@@ -40,8 +40,8 @@
 TM-10 (all other personnel)
   └── TM-20 (builders)
         │
-        ├── [BSP] Builder Sprint ← parallel track; outside TM chain; no TM credit granted
-        │         Prereq: TM-20 Go + command-validated project. See builder_sprint/BSP_GUIDE.md
+        ├── [FBC] Foundry Bootcamp ← parallel track; outside TM chain; no TM credit granted
+        │         Prereq: TM-20 Go + command-validated project. See foundry_bootcamp/FBC_GUIDE.md
         │
         ├── [T3-F] MSC Force Multiplier ← Unit Data Trainer certification (half day)
         │         Prereq: TM-20 Go + commander nomination. Authorizes: TM-10 delivery,
@@ -76,7 +76,7 @@ TM-10 (all other personnel)
 > Specialist tracks (TM-40G–O) all require TM-30 (required, not recommended).
 > TM-40N (UI/UX Designer) and TM-40O (Platform Engineer) align with Army Software Factory (ASF) role tracks. Together with TM-40J (PM) and TM-40L (SWE), these four tracks cover all ASF career paths.
 > **Cross-track companions:** TM-40N ↔ TM-40J ↔ TM-40L form the ASF "balanced team" triad (Designer + PM + Engineer). TM-40O ↔ TM-40L (platform ↔ application boundary). TM-40O ↔ TM-40H (infrastructure for AI workloads).
-> **Builder Sprint (BSP)** is a separate quarterly event outside the TM chain. Prereq: TM-20. Does NOT grant TM-30 credit. Does NOT unlock TM-40 enrollment. See training_management/BUILDER_SPRINT_SOP.md.
+> **Foundry Bootcamp (FBC)** is a separate quarterly event outside the TM chain. Prereq: TM-20. Does NOT grant TM-30 credit. Does NOT unlock TM-40 enrollment. See training_management/FOUNDRY_BOOTCAMP_SOP.md.
 > **Senior Leader (TM-SL)** is a separate 1-day executive course outside the TM chain. Audience: O-5 / E-9+. Replaces TM-10 for senior leaders. Terminal — does not unlock TM-20 or any further progression. Does NOT grant TM-10 credit.
 > **T3-F (MSC Force Multiplier)** certifies Unit Data Trainers (UDTs) at the MSC level. Prereq: TM-20. Half day. Authorizes TM-10 delivery, TM-10 exam proctoring, and training status reporting. UDTs are the forward training presence between MTT rotations. Does NOT authorize TM-20 or any TM-30+ delivery.
 > **T3-I (Instructor Certification)** is the formal C2DAO instructor pipeline. Prereq: TM-30 + OIC selection. Phase 1 is a 5-day classroom course (adult learning, lab facilitation, evaluation calibration, microteaching). Phase 2 is a supervised practicum scheduled around actual course iterations. Graduates are authorized to teach independently per domain qualification (FDP §2-1). See UNIT_DATA_TRAINER_SOP.md for T3-F governance and FACULTY_DEVELOPMENT_PLAN.md for T3-I certification standards.
@@ -320,17 +320,17 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 
 ---
 
-## SECTION 1B — BUILDER SPRINT (BSP)
+## SECTION 1B — FOUNDRY BOOTCAMP (FBC)
 ### Prereq: TM-20 Go on file + command-approved project
 ### NOT part of the TM-10 → TM-50 sequence; does NOT grant TM credit
-> Quarterly 5-day supervised build event. Does NOT grant TM-30 credit. Does NOT unlock TM-40 enrollment. See training_management/BUILDER_SPRINT_SOP.md.
+> Quarterly 5-day supervised build event. Does NOT grant TM-30 credit. Does NOT unlock TM-40 enrollment. See training_management/FOUNDRY_BOOTCAMP_SOP.md.
 
 | File | Type | Outbound Dependencies |
 |---|---|---|
-| builder_sprint/BSP_GUIDE.md | [BSP] | → TM-20 (prereq); does NOT → TM-30 (explicitly not a substitute) |
-| builder_sprint/ENVIRONMENT_SETUP.md | [BSP] | → BSP_GUIDE (coordinator checklist for sprint setup) |
-| builder_sprint/SPRINT_PACKAGE.md | [BSP] | → BSP_GUIDE Ch 5 (evaluator/coordinator standards); → ENROLLMENT_SOP (enrollment workflow) |
-| training_management/BUILDER_SPRINT_SOP.md | [SOP] | → TM-20 (prereq); → BSP_GUIDE, → SPRINT_PACKAGE, → ENVIRONMENT_SETUP (references all BSP docs); → ANNUAL_TRAINING_SCHEDULE (quarterly calendar) |
+| foundry_bootcamp/FBC_GUIDE.md | [FBC] | → TM-20 (prereq); does NOT → TM-30 (explicitly not a substitute) |
+| foundry_bootcamp/ENVIRONMENT_SETUP.md | [FBC] | → FBC_GUIDE (coordinator checklist for bootcamp setup) |
+| foundry_bootcamp/SPRINT_PACKAGE.md | [FBC] | → FBC_GUIDE Ch 5 (evaluator/coordinator standards); → ENROLLMENT_SOP (enrollment workflow) |
+| training_management/FOUNDRY_BOOTCAMP_SOP.md | [SOP] | → TM-20 (prereq); → FBC_GUIDE, → SPRINT_PACKAGE, → ENVIRONMENT_SETUP (references all FBC docs); → ANNUAL_TRAINING_SCHEDULE (quarterly calendar) |
 
 **Inbound references from:** DEPENDENCY_MAP prereq chain, DEMO_BRIEF_CG, WHITE_PAPER_MSS_TRAINING, mss_info_app/index.html (if applicable)
 
@@ -636,7 +636,7 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 
 **Syllabi:** SYLLABUS_TM50G–O present and published
 **Exams:** EXAM_TM50G–O PRE + POST present
-**Exercises:** EX-50G–O directories present (EX_50G_orsa/, EX_50H_ai_engineer/, EX_50M_ml_engineer/, EX_50J_program_manager/, EX_50K_knowledge_manager/, EX_50L_software_engineer/, EX_50N_ux_designer/, EX_50O_platform_engineer/ — each with EXERCISE.md + ENVIRONMENT_SETUP.md)
+**Exercises:** EX_50G–O directories present (EX_50G_orsa/, EX_50H_ai_engineer/, EX_50M_ml_engineer/, EX_50J_program_manager/, EX_50K_knowledge_manager/, EX_50L_software_engineer/, EX_50N_ux_designer/, EX_50O_platform_engineer/ — each with EXERCISE.md + ENVIRONMENT_SETUP.md)
 
 ---
 
@@ -658,7 +658,7 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 
 | File | Covers | Key Cross-Refs |
 |---|---|---|
-| MTP_MSS.md | Master training plan; course overview table + TM-10 throughput risk item (Sec 7-4, G-3 action required) | All TMs + T3-F/T3-I; corrected durations: TM-20=5d, TM-30=5d, TM-40A–F=3d, TM-40G/H/M/L=5d, TM-40J/K=4d, T3-F=3d, T3-I=5d |
+| MTP_MSS.md | Master training plan; course overview table + TM-10 throughput risk item (Sec 7-4, G-3 action required) | All TMs + T3-F/T3-I; corrected durations: TM-20=5d, TM-30=5d, TM-40A–F=3d, TM-40G/H/M/L=5d, TM-40J/K=4d, T3-F=0.5d, T3-I=5d |
 | POI_MSS.md | Program of instruction; tier/prereq structure | All TMs; prereq tree A–O; TM-40J/K now correctly in TM-30 branch |
 | CAD_MSS.md | Course admin; access reqs by track | All TMs; TM-40J/K prereq = TM-30 required |
 | TEO_MSS.md | T&EO evaluation standards; TM20-03 Row 5 now [CRITICAL] (date arithmetic) | TM-10 through TM-40M critical performance measures |
@@ -677,12 +677,13 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 | AAR_TEMPLATE.md | After Action Review template | All training events; standard format for post-course review |
 | lesson_plans/LP_TEMPLATE.md | Standard lesson plan template | Blank template; TLO, Key Delivery Notes, Student Activity, Assessment blocks |
 | ENTERPRISE_V10_PLAN.md | ODT Enterprise v10 release plan (2026-03-12) | 5 bounded contexts (Architecture/Pipelines/Products/Foundry/QA); M1–M5 milestone gates; agent assignments; feature checklist |
-| ENTERPRISE_IMPLEMENTATION_PLAN.md | Enterprise implementation plan — CUI // FOUO | 6-phase/20-week hardening plan; 46 acceptance functions; 12 CG architectural constraints; current-state assessment |
-| BUILDER_SPRINT_SOP.md | Builder Sprint SOP: quarterly event enrollment, execution, evaluation | → BSP_GUIDE, → ENROLLMENT_SOP, → ANNUAL_TRAINING_SCHEDULE |
+| ENTERPRISE_IMPLEMENTATION_PLAN.md | Enterprise implementation plan — CUI | 6-phase/20-week hardening plan; 46 acceptance functions; 12 CG architectural constraints; current-state assessment |
+| FOUNDRY_BOOTCAMP_SOP.md | Foundry Bootcamp SOP: quarterly event enrollment, execution, evaluation | → FBC_GUIDE, → ENROLLMENT_SOP, → ANNUAL_TRAINING_SCHEDULE |
 | INSTRUCTOR_OVERVIEW.md | Instructor onboarding guide: program structure, materials, execution | All TMs + T3-F/T3-I; → MTP, → POI, → CAD, → TEO, → ENROLLMENT_SOP, → lesson plans |
 | DEMO_BRIEF_CG.md | CG decision brief: request TASKORD authorization for MSS MTT | → TASKORD, → WHITE_PAPER; ↔ all training management docs |
 | TASKORD_MSS_TRAINING_CELL.md | Draft TASKORD: MSS MTT activation (theater-wide) | → MTP, → POI, → ENROLLMENT_SOP, → ANNUAL_TRAINING_SCHEDULE |
 | WHITE_PAPER_MSS_TRAINING.md | Strategic white paper: case for MSS training across USAREUR-AF | → all TMs (program overview); ↔ DEMO_BRIEF_CG |
+| AR_350_1_ALIGNMENT_MAP.md | AR 350-1 alignment map: full MSS ecosystem mapped to 11 regulatory areas; SAT artifact coverage; gap analysis with mitigations | → MTP, → POI, → CAD, → TEO, → FACULTY_DEVELOPMENT_PLAN, → ENROLLMENT_SOP, → CURRICULUM_MAINTENANCE_SOP; ↔ all 15 analytics apps |
 | MSS_TRAINING_BRIEF.pptx | CG briefing slide deck (PowerPoint) | ↔ DEMO_BRIEF_CG (companion visual) |
 | lesson_plans/TM40_WFF_LESSON_PLAN_OUTLINES.md | Lesson plans: TM-40A–F WFF tracks | All WFF tracks A–F |
 | lesson_plans/TM50_ADVANCED_LESSON_PLAN_OUTLINES.md | Lesson plans: TM-50G–O advanced tracks | All advanced tracks G–O |
@@ -905,9 +906,9 @@ ls maven_training/pdf/*.pdf | wc -l
 | 41 | doctrine/mim/MIM_ONTOLOGY_DOCS.md | OSDK Maker Package full TypeScript API reference | TM-40H/L |
 | 42 | quick_reference/cda_reference/DOCTRINE_ELEMENT_FOUNDRY_MAPPING.md | Property mapping, bi-temporal fields, TS interface, OSDK queries, enums | TM-40H/M/L |
 | 43 | training_management/ENTERPRISE_V10_PLAN.md | ODT v10 release plan; 5 bounded contexts; M1–M5 gates | TM-40H/M/L |
-| 44 | training_management/ENTERPRISE_IMPLEMENTATION_PLAN.md | 6-phase/20-wk hardening plan — **CUI // FOUO** | TM-40H/M/L |
+| 44 | training_management/ENTERPRISE_IMPLEMENTATION_PLAN.md | 6-phase/20-wk hardening plan — **CUI** | TM-40H/M/L |
 
-**Note on ENTERPRISE_IMPLEMENTATION_PLAN.md:** Source document bears `CUI // FOUO` classification. Handle per local policy before committing to shared repository.
+**Note on ENTERPRISE_IMPLEMENTATION_PLAN.md:** Source document bears `CUI` classification. Handle per local policy before committing to shared repository.
 
 ---
 
@@ -1046,9 +1047,9 @@ ls maven_training/pdf/*.pdf | wc -l
 |---|---|---|---|
 | 120 | tm/T3_F_msc_force_multiplier/ (TM, CG), syllabi/SYLLABUS_T3F.md, exercises/EX_T3F_force_multiplier/ (EXERCISE, ENV_SETUP), exams/EXAM_T3F_PRE/POST.md, lesson_plans/T3F_LESSON_PLAN_OUTLINES.md, training_management/UNIT_DATA_TRAINER_SOP.md, PDFs (8) | T3-F MSC Force Multiplier (Unit Data Trainer Certification). Half-day course, prereq TM-20. Authorizes TM-10 delivery, TM-10 exam proctoring. | T3-F |
 | 121 | tm/T3_I_instructor_certification/ (TM, CG), syllabi/SYLLABUS_T3I.md, exercises/EX_T3I_instructor_certification/ (EXERCISE, ENV_SETUP), exams/EXAM_T3I_PRE/POST.md, lesson_plans/T3I_LESSON_PLAN_OUTLINES.md, PDFs (8) | NEW — T3-I Instructor Certification (C2DAO Instructor Pipeline). Phase 1: 5-day classroom, prereq TM-30 + OIC selection. Phase 2: supervised practicum. | T3-I |
-| 122 | tm/TM_40N_ux_designer/ (TM, CG, SS), syllabi/SYLLABUS_TM40N.md, exercises/EX-40N_ux_designer/ (EXERCISE, ENV_SETUP), exams/EXAM_TM40N_PRE/POST.md, PDFs (~8) | NEW — TM-40N UI/UX Designer specialist track. ASF Designer role alignment. Covers SCD, user research, IA, visual design, prototyping, usability testing, Section 508/WCAG 2.1 AA. | TM-40N |
-| 123 | tm/TM_40O_platform_engineer/ (TM, CG, SS), syllabi/SYLLABUS_TM40O.md, exercises/EX-40O_platform_engineer/ (EXERCISE, ENV_SETUP), exams/EXAM_TM40O_PRE/POST.md, PDFs (~8) | NEW — TM-40O Platform Engineer specialist track. ASF Platform Engineer role alignment. Covers K8s, IaC/GitOps, Iron Bank, CI/CD, DDIL ops, RMF/ATO. | TM-40O |
-| 124 | tm/TM_50N_ux_designer_advanced/ (TM, CG, SS), tm/TM_50O_platform_engineer_advanced/ (TM, CG, SS), syllabi/SYLLABUS_TM50N/O.md, exercises/EX-50N/50O/, exams/EXAM_TM50N/O_PRE/POST.md, PDFs (~12) | NEW — TM-50N (Advanced UI/UX) and TM-50O (Advanced Platform Eng) tracks. Prereqs: TM-40N, TM-40O respectively. | TM-50N/O |
+| 122 | tm/TM_40N_ux_designer/ (TM, CG, SS), syllabi/SYLLABUS_TM40N.md, exercises/EX_40N_ux_designer/ (EXERCISE, ENV_SETUP), exams/EXAM_TM40N_PRE/POST.md, PDFs (~8) | NEW — TM-40N UI/UX Designer specialist track. ASF Designer role alignment. Covers SCD, user research, IA, visual design, prototyping, usability testing, Section 508/WCAG 2.1 AA. | TM-40N |
+| 123 | tm/TM_40O_platform_engineer/ (TM, CG, SS), syllabi/SYLLABUS_TM40O.md, exercises/EX_40O_platform_engineer/ (EXERCISE, ENV_SETUP), exams/EXAM_TM40O_PRE/POST.md, PDFs (~8) | NEW — TM-40O Platform Engineer specialist track. ASF Platform Engineer role alignment. Covers K8s, IaC/GitOps, Iron Bank, CI/CD, DDIL ops, RMF/ATO. | TM-40O |
+| 124 | tm/TM_50N_ux_designer_advanced/ (TM, CG, SS), tm/TM_50O_platform_engineer_advanced/ (TM, CG, SS), syllabi/SYLLABUS_TM50N.md, SYLLABUS_TM50O.md, exercises/EX_50N_ux_designer/, EX_50O_platform_engineer/, exams/EXAM_TM50N/O_PRE/POST.md, PDFs (~12) | NEW — TM-50N (Advanced UI/UX) and TM-50O (Advanced Platform Eng) tracks. Prereqs: TM-40N, TM-40O respectively. | TM-50N/O |
 | 125 | tm/TM_40A–F (6 SELF_STUDY_ADDENDUM.md files) | NEW — WFF self-study addenda for all six WFF tracks (Intelligence, Fires, Movement & Maneuver, Sustainment, Protection, Mission Command). 5 groups each, 14–19 videos per track. Palantir Developers source. | TM-40A–F |
 
 ---
@@ -1140,7 +1141,7 @@ Phase 1: 3-5 days | Phase 2: 5-10 days | Phase 3: 7-12 days | Phase 4: 15-25 day
 
 | App | API Port | Dashboard Port | Purpose | TM Dependencies |
 |-----|----------|---------------|---------|-----------------|
-| readiness_tracker | 8001 | 8501 | Unit/soldier completion across prereq chain; RAG heatmap; bottleneck analysis; training funnel | → All TMs (prereq chain is authoritative); ↔ enrollment_manager, ↔ instructor_manager |
+| readiness_tracker | 8001 | 8501 | Unit/Soldier completion across prereq chain; RAG heatmap; bottleneck analysis; training funnel | → All TMs (prereq chain is authoritative); ↔ enrollment_manager, ↔ instructor_manager |
 | exam_analytics | 8002 | 8502 | Pre/post exam gain scores; item discrimination; question difficulty | → All exams (TM-10 through TM-50); ↔ readiness_tracker |
 | aar_aggregator | 8003 | 8503 | AAR trend analysis by WFF; frequency × severity matrix; recurring issues | → All WFF tracks (TM-40A–F); ↔ lessons_learned |
 
@@ -1148,7 +1149,7 @@ Phase 1: 3-5 days | Phase 2: 5-10 days | Phase 3: 7-12 days | Phase 4: 15-25 day
 
 | App | API Port | Dashboard Port | Purpose | TM Dependencies |
 |-----|----------|---------------|---------|-----------------|
-| progress_tracker | 8004 | 8504 | Individual training timelines; stalled soldier detection; overdue milestones | → readiness_tracker (prereq chain); ↔ enrollment_manager |
+| progress_tracker | 8004 | 8504 | Individual training timelines; stalled Soldier detection; overdue milestones | → readiness_tracker (prereq chain); ↔ enrollment_manager |
 | mtt_scheduler | 8005 | 8505 | MTT event scheduling across AOR; instructor/venue allocation; conflict detection | ↔ instructor_manager, ↔ enrollment_manager |
 | data_quality | 8010 | 8510 | Pipeline health monitoring; quality metrics (5 types); anomaly alerting | ↔ all pipeline-producing apps |
 
@@ -1497,3 +1498,4 @@ The analytics suite (15 Streamlit micro-apps + portal + shared theme) is integra
 | 220 | pdf/.manifest.json | 11 source hashes updated | N/A |
 | 221 | pdf/pdf_manifest.sha256 | 237 entries regenerated | N/A |
 | 222 | DEPENDENCY_MAP.html | Regenerated (144 nodes, 337 edges) | N/A |
+| 223 | handout_350_alignment.pdf | NEW — AR 350-1 alignment map (2-page PDF): 11 regulatory areas mapped to MSS components, SAT artifact coverage table, 3 identified gaps with mitigations, compliance posture summary | AR 350-1, TR 350-70, TP 350-70-14, ADP 7-0, FM 7-0 |

@@ -39,7 +39,7 @@ GRAY_LT   = RGBColor(0xE2, 0xE8, 0xF0)
 GRAY_MID  = RGBColor(0xC8, 0xD2, 0xDE)
 GOLD      = RGBColor(0xC8, 0x9A, 0x00)   # stat highlights
 
-CLASSIFICATION = "UNCLASSIFIED"
+CLASSIFICATION = ""
 
 
 # ── Low-level helpers ──────────────────────────────────────────────────────────
@@ -392,7 +392,7 @@ def build_progression_content(slide):
 
     # Footer
     text_box(slide, 0.10, 6.63, 13.13, 0.20,
-             "USAREUR-AF  ·  C2DAO  ·  MSS-POI-001  ·  MAR 2026  ·  UNCLASSIFIED",
+             "USAREUR-AF  ·  C2DAO  ·  MSS-POI-001  ·  MAR 2026",
              font_size=7, color=NAVY2, align=PP_ALIGN.CENTER, wrap=False)
 
 
@@ -593,7 +593,7 @@ def build_overview_content(slide):
 
     # Footer
     text_box(slide, 0.10, 6.63, 13.13, 0.20,
-             "USAREUR-AF  ·  C2DAO  ·  MSS-POI-001  ·  MAR 2026  ·  UNCLASSIFIED",
+             "USAREUR-AF  ·  C2DAO  ·  MSS-POI-001  ·  MAR 2026",
              font_size=7, color=NAVY2, align=PP_ALIGN.CENTER, wrap=False)
 
 
@@ -733,7 +733,7 @@ def build_program_overview_content(slide):
 
     # Footer
     text_box(slide, 0.10, 6.63, 13.13, 0.20,
-             "USAREUR-AF  ·  C2DAO  ·  MSS-POI-001  ·  MAR 2026  ·  UNCLASSIFIED",
+             "USAREUR-AF  ·  C2DAO  ·  MSS-POI-001  ·  MAR 2026",
              font_size=7, color=NAVY2, align=PP_ALIGN.CENTER, wrap=False)
 
 

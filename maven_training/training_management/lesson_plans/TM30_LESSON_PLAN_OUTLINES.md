@@ -368,5 +368,5 @@ Instructors should discuss which specialist track is appropriate for each traine
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-30 Lesson Plan Outlines | Version 1.0 | March 2026*

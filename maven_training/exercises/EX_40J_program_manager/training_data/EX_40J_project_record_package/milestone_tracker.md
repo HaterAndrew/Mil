@@ -1,6 +1,6 @@
 # EX_40J TRAINING — Milestone Tracker
 ## LOGSTAT Aggregation Pipeline — 8-Week Project Plan
-**Classification:** UNCLASSIFIED // TRAINING USE ONLY
+
 
 **Current Week:** 6 of 8 | **Last Updated:** Week 6 Check-in
 

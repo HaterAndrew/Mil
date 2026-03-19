@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Training Capacity Projection</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  @page { size: letter; margin: 0.4in; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100vh; overflow: hidden; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0C2340;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 16px 6px 16px;
+    overflow: hidden;
+  }
+
+  .header { text-align: center; margin-bottom: 10px; flex-shrink: 0; }
+  .header h1 {
+    font-size: 18px;
+    font-weight: 900;
+    color: #C8971A;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .header .subtitle {
+    font-size: 10px;
+    font-weight: 500;
+    color: #B0BEC5;
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+  }
+
+  .section-label {
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #C8971A;
+    margin-bottom: 6px;
+  }
+
+  /* Comparison chart */
+  .comparison {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 6px;
+    padding: 14px 20px 12px 20px;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+  }
+  .comp-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  }
+  .comp-bar-wrap {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 70px;
+    margin-bottom: 4px;
+  }
+  .comp-bar {
+    width: 60%;
+    border-radius: 3px 3px 0 0;
+    min-height: 6px;
+  }
+  .comp-bar.current {
+    background: #546E7A;
+    height: 12%;
+  }
+  .comp-bar.projected {
+    background: linear-gradient(180deg, #C8971A 0%, #0C2340 100%);
+    height: 90%;
+  }
+  .comp-value {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .comp-value.muted { color: #78909C; }
+  .comp-value.highlight { color: #C8971A; }
+  .comp-unit {
+    font-size: 8px;
+    color: #90A4AE;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 1px;
+  }
+  .comp-label {
+    font-size: 9px;
+    font-weight: 600;
+    color: #B0BEC5;
+    margin-top: 3px;
+  }
+  .comp-multiplier {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding-bottom: 22px;
+  }
+  .mult-badge {
+    background: rgba(200,151,26,0.15);
+    border: 1px solid rgba(200,151,26,0.4);
+    color: #C8971A;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  /* Projection rows */
+  .projections {
+    margin-bottom: 8px;
+    flex-shrink: 0;
+  }
+  .proj-row {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+  }
+  .proj-year {
+    font-size: 10px;
+    font-weight: 800;
+    color: #90A4AE;
+    text-align: right;
+  }
+  .proj-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .proj-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 16px;
+  }
+  .proj-bar {
+    height: 14px;
+    border-radius: 2px;
+    min-width: 4px;
+    position: relative;
+  }
+  .proj-bar.no-training {
+    background: #546E7A;
+  }
+  .proj-bar.with-training {
+    background: linear-gradient(90deg, #C8971A, #D4A843);
+  }
+  .proj-bar.current-only {
+    background: #455A64;
+  }
+  .proj-val {
+    font-size: 9px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .proj-val.muted { color: #78909C; }
+  .proj-val.gold { color: #C8971A; }
+  .proj-val.dim { color: #607D8B; }
+  .proj-tag {
+    font-size: 7px;
+    color: #78909C;
+    font-weight: 500;
+  }
+
+  .proj-legend {
+    display: flex;
+    gap: 14px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    padding-left: 52px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 7.5px;
+    color: #90A4AE;
+  }
+  .legend-swatch {
+    width: 10px;
+    height: 8px;
+    border-radius: 1px;
+  }
+  .legend-swatch.no { background: #546E7A; }
+  .legend-swatch.yes { background: #C8971A; }
+  .proj-note {
+    font-size: 7.5px;
+    color: #78909C;
+    padding-left: 52px;
+    margin-top: 2px;
+    font-style: italic;
+  }
+
+  /* Impact note */
+  .impact-callout {
+    background: rgba(46, 125, 50, 0.12);
+    border: 1px solid rgba(46, 125, 50, 0.4);
+    border-left: 4px solid #2E7D32;
+    border-radius: 4px;
+    padding: 7px 10px;
+    margin-bottom: 8px;
+    flex-shrink: 0;
+  }
+  .impact-label {
+    font-size: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #66BB6A;
+    margin-bottom: 2px;
+  }
+  .impact-text {
+    font-size: 8.5px;
+    line-height: 1.4;
+    color: #C8E6C9;
+  }
+
+  /* Scale-up box */
+  .scaleup {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(200,151,26,0.25);
+    border-radius: 5px;
+    padding: 8px 10px;
+    margin-bottom: 6px;
+    flex-shrink: 0;
+  }
+  .scaleup-header {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .scaleup-title {
+    font-size: 10px;
+    font-weight: 800;
+    color: #C8971A;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .scaleup-badge {
+    font-size: 9px;
+    font-weight: 700;
+    background: rgba(200,151,26,0.15);
+    color: #C8971A;
+    padding: 1px 8px;
+    border-radius: 10px;
+    border: 1px solid rgba(200,151,26,0.3);
+  }
+  .scaleup-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+  }
+  .scaleup-stat {
+    text-align: center;
+  }
+  .scaleup-num {
+    font-size: 16px;
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 1;
+  }
+  .scaleup-num span {
+    font-size: 10px;
+    color: #90A4AE;
+    font-weight: 500;
+  }
+  .scaleup-desc {
+    font-size: 7.5px;
+    color: #90A4AE;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+  .scaleup-note {
+    font-size: 8px;
+    color: #B0BEC5;
+    margin-top: 5px;
+    text-align: center;
+    font-style: italic;
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 7.5px;
+    font-weight: 600;
+    color: #607D8B;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-top: 4px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    flex-shrink: 0;
+    margin-top: auto;
+  }
+</style>
+</head>
+<body>
+
+
+<div class="content">
+
+  <div class="header">
+    <h1>Training Capacity Projection</h1>
+    <div class="subtitle">Current &rarr; FY27 &rarr; FY28 &rarr; FY29</div>
+  </div>
+
+  <!-- Bar chart comparison -->
+  <div class="section-label">Capacity Comparison</div>
+  <div class="comparison">
+    <div class="comp-item">
+      <div class="comp-bar-wrap">
+        <div class="comp-bar current"></div>
+      </div>
+      <div class="comp-value muted">120</div>
+      <div class="comp-unit">personnel / year</div>
+      <div class="comp-label">Current</div>
+    </div>
+    <div class="comp-multiplier">
+      <div class="mult-badge">8.4&times; increase</div>
+    </div>
+    <div class="comp-item">
+      <div class="comp-bar-wrap">
+        <div class="comp-bar projected"></div>
+      </div>
+      <div class="comp-value highlight">1,004</div>
+      <div class="comp-unit">personnel / year</div>
+      <div class="comp-label">5 Instructors</div>
+    </div>
+  </div>
+
+  <!-- Projection rows -->
+  <div class="section-label">Fiscal Year Projections</div>
+  <div class="projections">
+    <div class="proj-row">
+      <div class="proj-year">FY26</div>
+      <div class="proj-bars">
+        <div class="proj-bar-row">
+          <div class="proj-bar current-only" style="width: 5.5%;"></div>
+          <span class="proj-val dim">120</span>
+        </div>
+      </div>
+    </div>
+    <div class="proj-row">
+      <div class="proj-year">FY27</div>
+      <div class="proj-bars">
+        <div class="proj-bar-row">
+          <div class="proj-bar no-training" style="width: 9.2%;"></div>
+          <span class="proj-val muted">200</span>
+          <span class="proj-tag">w/o training</span>
+        </div>
+        <div class="proj-bar-row">
+          <div class="proj-bar with-training" style="width: 50%;"></div>
+          <span class="proj-val gold">1,084</span>
+          <span class="proj-tag">w/ training</span>
+        </div>
+      </div>
+    </div>
+    <div class="proj-row">
+      <div class="proj-year">FY28</div>
+      <div class="proj-bars">
+        <div class="proj-bar-row">
+          <div class="proj-bar no-training" style="width: 11.7%;"></div>
+          <span class="proj-val muted">254</span>
+          <span class="proj-tag">w/o training</span>
+        </div>
+        <div class="proj-bar-row">
+          <div class="proj-bar with-training" style="width: 80%;"></div>
+          <span class="proj-val gold">1,730</span>
+          <span class="proj-tag">w/ training</span>
+        </div>
+      </div>
+    </div>
+    <div class="proj-row">
+      <div class="proj-year">FY29</div>
+      <div class="proj-bars">
+        <div class="proj-bar-row">
+          <div class="proj-bar no-training" style="width: 13.4%;"></div>
+          <span class="proj-val muted">290</span>
+          <span class="proj-tag">w/o training</span>
+        </div>
+        <div class="proj-bar-row">
+          <div class="proj-bar with-training" style="width: 100%;"></div>
+          <span class="proj-val gold">2,163</span>
+          <span class="proj-tag">w/ training</span>
+        </div>
+      </div>
+    </div>
+    <div class="proj-legend">
+      <div class="legend-item"><div class="legend-swatch no"></div>Without training program</div>
+      <div class="legend-item"><div class="legend-swatch yes"></div>With training program</div>
+    </div>
+    <div class="proj-note">(w/ 33% PCS attrition)</div>
+  </div>
+
+  <!-- Impact note -->
+  <div class="impact-callout">
+    <div class="impact-label">Impact</div>
+    <div class="impact-text">Current model barely replaces PCS losses. With 5 instructors across 68 classes at 5 locations, trained force grows to 2,163 by FY29.</div>
+  </div>
+
+  <!-- Scale-up option -->
+  <div class="scaleup">
+    <div class="scaleup-header">
+      <div class="scaleup-title">Scale-Up Option</div>
+      <div class="scaleup-badge">9 Cadre &middot; 4 Teams</div>
+    </div>
+    <div class="scaleup-grid">
+      <div class="scaleup-stat">
+        <div class="scaleup-num">1 <span>OIC</span> + 8 <span>Instr</span></div>
+        <div class="scaleup-desc">Organization</div>
+      </div>
+      <div class="scaleup-stat">
+        <div class="scaleup-num">~120 <span>cls/yr</span></div>
+        <div class="scaleup-desc">~1,800 seats</div>
+      </div>
+      <div class="scaleup-stat">
+        <div class="scaleup-num">8+ <span>locations</span></div>
+        <div class="scaleup-desc">Theater coverage</div>
+      </div>
+    </div>
+    <div class="scaleup-note">Doubles throughput, theater saturation by FY29</div>
+  </div>
+
+  <div class="footer">USAREUR-AF Operational Data Team &middot; Training Capacity Projection</div>
+
+</div>
+
+
+</body>
+</html>

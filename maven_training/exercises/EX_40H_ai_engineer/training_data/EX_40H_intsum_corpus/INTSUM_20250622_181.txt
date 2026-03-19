@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250622_181 — FORCE PROTECTION
+DTG: 220000Z JUN 2025
+Unit: 1-3 BN
+
+Summary: Perimeter sensor activation at FOB LICHTENFELS (grid 37T216643) at 0230 local. QRF dispatched. Cause determined to be wildlife. No hostile activity.
+
+Assessment: Force protection posture remains at current FPCON level. No change recommended at this time pending further analysis.
+Recommended Action: Maintain heightened awareness. Review FPCON measures with all personnel. Report any suspicious activity immediately through established channels.

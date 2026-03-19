@@ -82,5 +82,5 @@ D. That all enrolled students have active MSS accounts and the training environm
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Pre-Test T3-F | Version 2.0 | March 2026*

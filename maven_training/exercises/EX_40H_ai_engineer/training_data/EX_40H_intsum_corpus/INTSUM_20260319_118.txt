@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260319_118 — SIGINT SUMMARY
+DTG: 190000Z MAR 2026
+Unit: V CORPS G2
+
+Summary: SIGINT collection assets detected 2 HF emitter(s) in the vicinity of NAI 11 (grid 36T356126). Emissions lasted approximately 17 minutes. Intercept forwarded to technical channels for further analysis.
+
+Assessment: Emission pattern consistent with vehicle-mounted radio. Possible mobile command post.
+Recommended Action: Continue collection against NAI 11. Request additional SIGINT coverage during 1800-0600 window.

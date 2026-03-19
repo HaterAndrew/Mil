@@ -1,96 +1,102 @@
-# MSS TRAINING PROGRAM — DECISION BRIEF
-**ODT | USAREUR-AF | March 2026 | UNCLASSIFIED**
+# CDA TRAINING CAPABILITY — DEMO BRIEF
+**ODT | USAREUR-AF | March 2026**
 
-**BLUF:** The CG directed theater-wide MSS use. No organic training capability exists — not in USAREUR-AF, not in the Army. ODT built the complete training program. Partner nations are requesting access. Request CG authorize TASKORD to activate a 5-person Mobile Training Team and execute theater-wide.
-
----
-
-## HERMES CONTEXT
-
-MSS is the training and data layer for Hermes. The CG directed theater-wide use; this is how the workforce gets trained to it.
+**BLUF:** CDA is fielded. HERMES manages the people and projects. The theater lacks skills to use it — adoption and training are both gaps. ODT built a doctrine-backed training program aligned with the CG's directive to get MSS into the hands of the NCOs. Three COAs for who owns the training mission going forward.
 
 ---
 
-## THE PROBLEM
+## A. CDA (HERMES) OVERVIEW
 
-- **No organic MSS training exists. Anywhere.** Not at any echelon in the theater. Not anywhere in the Army. The platform is fielded with zero institutional training pathway.
-- **Contractor support does not fill the gap.** Palantir offers product training but it does not cover data literacy, operational integration, or Army governance. It does not produce a trained workforce — it produces familiarity with buttons.
-- **ODT is absorbing the training mission by default.** Every class ODT teaches is time off their core mission of building and maintaining MSS capability for the theater. This is unsustainable.
-- **Partner nations are requesting training.** Allied forces operating in the USAREUR-AF MSS environment need a common training baseline. Demand exists; delivery capacity does not.
+*Visual: [hermes_overview_sl.html](../../hermes_overview_sl.html)*
 
----
+CDA defines **what** USAREUR-AF does with data. HERMES delivers the **who** and **how**:
 
-## WHAT'S BUILT
+- **Training Track:** Train the force → Certify builders → Assign access → Baseball card
+- **Project Pipeline:** Submit → Scope & Review → Prioritize → Execute → Scale & Sustain
 
-- **Training hub (live):** 254 published PDFs. Full curriculum TM-10 through TM-50, 22 published tracks. Integrated with Hermes, formatted to T2COM and Army publications, backed by doctrine and lessons learned.
-- **Governance (complete):** MTP, POI, CAD, TEO, Enrollment SOP, Faculty Dev Plan, Curriculum Maintenance SOP — all TRADOC-aligned.
-- **Coalition-ready:** Entire curriculum is UNCLASSIFIED. Integrates NATO data standards (NAFv4, STANAGs 5636/5643). No releasability barriers.
+Training feeds certified builders into the project pipeline. The two tracks form a continuous loop — the system only works if both run.
+
+**What's next:** Doctrine-backed ontology.
 
 ---
 
-**FY27 TRAINING PLAN — 60 CLASSES**
+## B. THE PROBLEM — ZOOM INTO TRAINING
 
-| Course | Classes | Days Each | Seats | Total Seats |
-|--------|---------|-----------|-------|-------------|
-| TM-20 — Builder | 32 | 5 | 15 | 480 |
-| TM-30 — Advanced Builder | 20 | 5 | 15 | 300 |
-| Builder Sprint (BSP) | 8 | 5 | 16 | 128 |
-| **TOTAL** | **60** | | | **908** |
+The theater has a **lack of skills** to operate CDA/MSS. Two root causes:
 
-5 instructors (1 OIC, 2 Alpha team, 2 Bravo team) — stationed Wiesbaden. TM-10 delivered at unit level.
+### 1. Adoption Gap
+- MSS is fielded but underutilized relative to its capability
+- Units default to legacy tools (Excel, PowerPoint, SharePoint lists) because they don't know what MSS can do
+- No institutional demand signal — MSS completion is not tied to duty positions or in-processing
 
----
+### 2. Training Gap
+- **No organic MSS training exists. Anywhere.** Not at any echelon in the theater. Not anywhere in the Army.
+- Palantir offers product training but it does not cover data literacy, operational integration, or Army governance. It produces familiarity with buttons, not a trained workforce.
+- ODT is absorbing the training mission by default — every class they teach is time off their core build-and-maintain mission. Unsustainable.
+- Partner nations operating in the USAREUR-AF MSS environment are requesting training. No delivery mechanism exists.
 
-**COURSES OF ACTION**
-
-**COA 1 — MTT Travels to Units (RECOMMENDED)**
-
-MTT rotates to 5 sites: Wiesbaden, Grafenwöhr, Vicenza, Ansbach, Ft. Hood. Students train at home station — zero unit TDY burden. Executes the published FY27 Annual Training Calendar (60 classes, OCT 26 – SEP 27).
-
-| Location | Classes | Instructor Weeks TDY | Per Diem | Travel | Rental | Subtotal |
-|----------|---------|----------------------|----------|--------|--------|----------|
-| Grafenwöhr | 17 | 17 | $38,250 | — | $6,375 | $44,625 |
-| Vicenza | 5 | 5 | $21,000 | $3,000 | $2,625 | $26,625 |
-| Ansbach | 4 | 4 | $9,000 | — | $1,500 | $10,500 |
-| Ft. Hood | 2 | 2 | $4,900 | $3,000 | $1,050 | $8,950 |
-| Wiesbaden | 32 | — (home station) | — | — | — | $0 |
-| **TOTAL** | **60** | **28 weeks** | **$73,150** | **$6,000** | **$11,550** | **$90,700** |
-
-> **Planning assumptions:** Germany per diem $225/day; Italy $300/day; CONUS $175/day. Graf/Ansbach = drive, 5 duty days (home weekends). Vicenza/Hood = fly, 7 calendar days. Rental $75/day per rotation. Trans-Atlantic RT $1,500; intra-Europe RT $500.
-
-- **Pro:** Lowest disruption to units; MTT sees each site's data environment; students stay on mission
-- **Con:** 28 weeks TDY across 5 instructors; instructor quality-of-life risk
-- **Cost: ~$91K TDY**
+### Solution
+In line with the CG's directive to **get this into the hands of the NCOs** — doctrinize Maven. Build an institutional training capability that:
+- Trains the workforce at scale (TM-10 → TM-50)
+- Certifies instructors through a formal pipeline (T3)
+- Operates independently of ODT once stood up
+- Is exportable to other ACOMs/ASCCs and eventually TRADOC
 
 ---
 
-<details>
-<summary><strong>COA 2 — Reduce Travel (~$66K TDY)</strong></summary>
+## C. MAVEN TRAINING PIPELINE
 
-| Location | Classes | Per Diem | Travel | Rental | Subtotal |
-|----------|---------|----------|--------|--------|----------|
-| Grafenwöhr | 17 | $38,250 | — | $6,375 | $44,625 |
-| Vicenza | 2 | $8,400 | $1,000 | $1,050 | $10,450 |
-| Ansbach | 4 | $9,000 | — | $1,500 | $10,500 |
-| Wiesbaden | 37 | — | — | — | $0 |
-| **TOTAL** | **60** | **$55,650** | **$1,000** | **$8,925** | **$65,575** |
+*Visual: [training_pipeline_sl.html](../../training_pipeline_sl.html)*
 
-- **Risk:** Ft. Hood and 3 Vicenza classes lose home-station delivery; ~20 students must TDY to Wiesbaden on unit funds; III Corps and SETAF-AF training access degraded
+### The Pipeline
 
-</details>
+| Level | Course | Hours | Audience |
+|-------|--------|-------|----------|
+| TM-10 | Maven User | 8 hrs | All personnel (in-processing) |
+| TM-20 | Builder | 40 hrs | Data-adjacent staff |
+| TM-30 | Advanced Builder | 40 hrs | Unit data leads |
+| TM-40 | Specialist (14 tracks) | 40 hrs ea | WFF analysts, engineers, PMs |
+| TM-50 | Advanced Specialist (6 tracks) | 40 hrs ea | Senior practitioners |
+| FBC | Foundry Bootcamp | 5 days | TM-20+ graduates with approved projects |
+| TM-SL | Senior Leader / Executive | 1 day | O-5 / E-9+ |
+| T3 | Instructor Pipeline | varies | Future instructors / unit data trainers |
 
-<details>
-<summary><strong>COA 3 — Centralize at Wiesbaden ($0 MTT TDY)</strong></summary>
+### What's Built
+- **254 published PDFs** — TM documents, concepts guides, syllabi, exercises, pre/post exams, governance docs, doctrine references
+- **Full curriculum** — TM-10 through TM-50
+- **Governance package complete** — MTP, POI, CAD, TEO, Enrollment SOP, Faculty Dev Plan, Curriculum Maintenance SOP (all TRADOC-aligned)
+- **Coalition-ready** — integrates NATO data standards (NAFv4, STANAGs 5636/5643)
 
-- **Risk:** All TDY cost shifts to units (~300 students TDY to Wiesbaden, est. $200K–$300K in distributed unit costs); highest disruption to formation; units resist sending personnel TDY for week-long courses; Graf, Vicenza, Ansbach, Hood lose all home-station training
+### References Used
+AR 350-1 (Army Training) · ADP 7-0 (Training) · FM 6-0 (Commander & Staff Organization) · ATP 2-01.3 (Intelligence Preparation) · AR 25-1 (Information Management) · DA PAM 25-1-1 (Army Data Plan) · EUCOM Digital Modernization Strategy · NATO NAFv4 / STANAGs 5636, 5643
 
-</details>
+### Maven Training Site
+mss-training-hub.pages.dev (migrating to network subdomain)
 
 ---
 
-**THE ASK — Authorize TASKORD directing MSS MTT activation (COA 1):**
+## D. RECOMMENDED COURSES OF ACTION
 
-1. **G1** — Identify 5 billets for MSS MTT *(D+30)*
-2. **G8** — Program **$91K FY27 TDY** for MTT theater rotation per COA 1 *(D+30)*
-3. **MTT** — Execute FY27 Annual Training Calendar: 60 classes, 5 sites, OCT 26 – SEP 27 *(D+90)*
-4. **G3** — Tie MSS completion to duty position requirements; integrate TM-10 into new soldier in-processing *(D+60)*
+*Visual: [POAM_FY27_IMPLEMENTATION.html](POAM_FY27_IMPLEMENTATION.html) — COA block (top-left)*
+
+### COA 1 — 7ATC
+7th Army Training Command assumes the MSS training mission. ODT serves as **proponent** — maintains curriculum, certifies instructors, updates content. 7ATC provides the institutional training infrastructure, scheduling, and instructor billets.
+- **Pro:** Leverages existing TRADOC-aligned training infrastructure; scales naturally with 7ATC's theater mission
+- **Con:** Requires 7ATC buy-in and billet allocation; coordination overhead
+
+### COA 2 — ODT
+ODT grows the training cell from within USAREUR-AF staff. Hire/assign dedicated training personnel to ODT. ODT owns curriculum, instruction, and delivery end-to-end.
+- **Pro:** Fastest standup; ODT already has the expertise and materials; tightest feedback loop
+- **Con:** Competes with ODT's core build-and-maintain mission; personnel growth required
+
+### COA 3 — Sister Directorate
+A directorate such as G37 (Training) assumes the training mission. ODT provides curriculum and initial instructor certification.
+- **Pro:** Aligns with G3/G37 training authorities; separates training from building
+- **Con:** Requires directorate willingness and technical understanding of MSS; longer standup
+
+### Risk of Inaction
+Without an organizational owner, the training program stalls. ODT burns out absorbing the training mission by default. The Army's first organic MSS training capability stops advancing while no one else is building one.
+
+---
+
+**POAM:** See [FY27 Training Implementation POAM](POAM_FY27_IMPLEMENTATION.html) for phased timeline (28 weeks, 4 phases, MAR–OCT 2026).

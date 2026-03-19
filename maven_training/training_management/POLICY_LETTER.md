@@ -118,5 +118,5 @@ Chief, C2DAO Training and Standards Division
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Policy Letter No. 1 | 12 March 2026*

@@ -39,4 +39,4 @@ dodid,course_id,result,evaluation_date,evaluator_name
 
 - DODID is PII — the `.db` file is gitignored and never committed
 - Prereq enforcement is **hard**: cannot record a GO for TM-40 without TM-30 GO
-- BSP is a parallel track off TM-20; does NOT satisfy TM-30 prereq
+- FBC is a parallel track off TM-20; does NOT satisfy TM-30 prereq

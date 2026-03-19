@@ -83,7 +83,7 @@ D. Non-compliant with TM-40K Chapter 9 — it fails the specificity requirement
 A. ExpertiseProfiles are classified at SECRET by default
 B. ExpertiseProfiles may contain PII (name, role, unit, contact information, specific expertise) about individual Soldiers, requiring access controls and handling per the Privacy Act
 C. Army Regulation 25-400-2 requires Privacy Act statements for all digital records systems
-D. ExpertiseProfile data is derived from personnel records and is automatically FOUO
+D. ExpertiseProfile data is derived from personnel records and is automatically CUI
 
 **10. The correct status workflow for a lessons-learned item in MSS is:**
 
@@ -241,6 +241,8 @@ Passing: 49/70 (70%) — Post-test only. Pre-test is diagnostic.
 13. D — Date filter and recency-first default sort is the correct knowledge browser fix.
 14. B — Privacy Act review before aggregating individual Soldier profiles is required per TM-40K Section 8-1.
 15. C — Routing must address unit designation, classification level, and echelon at minimum.
+16. B — Design is the FM 6-0 KM process step where workspace structure, Object Type schema, and information flow are created.
+17. B — CKI establishes that integrating data from multiple civil and military sources into a unified operational picture is a doctrinal mission, not just a technical convenience.
 
 **Short Answer Guidance:**
 
@@ -258,5 +260,5 @@ SA-6. Full credit: any two WFF tracks correctly identified with a KM example —
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-40K Post-Test | Version 1.0 | March 2026*

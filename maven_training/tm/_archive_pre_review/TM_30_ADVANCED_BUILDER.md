@@ -104,7 +104,7 @@ Before beginning TM-30 design work, confirm you can independently perform — wi
 ## 1-3. USAREUR-AF Operational Context
 
 1-5. USAREUR-AF is the Army Service Component Command (ASCC) to United States European Command
-(USEUCOM). Advanced builders operating in this theater support land operations across the European
+(USEUCOM) and United States Africa Command (USAFRICOM). Advanced builders operating in this theater support land operations across the European and African
 AOR and integration with NATO Allied command structures. The data products built at TM-30 level
 feed readiness reporting, logistics visibility, intelligence products, and operational dashboards
 used by commanders at brigade through theater level.

@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250929_040 — OBSERVATION REPORT
+DTG: 290000Z SEP 2025
+Unit: 2-1 BN
+
+Summary: OP RAPTOR reported observation of 10 unidentified vehicles moving in convoy formation along MSR EAGLE at 1845 local. Vehicles: ZIL-131. Movement direction: SOUTHWEST. No hostile action observed. Convoy cleared the AO within 45 minutes.
+
+Assessment: Assessed as routine commercial traffic. No tactical significance at this time. Does not meet CCIR threshold but logged for trend analysis.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

@@ -383,5 +383,5 @@ See the full governance checklist in the applicable TM appendix:
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Version 1.0 | March 2026 | Proponent: C2DAO*

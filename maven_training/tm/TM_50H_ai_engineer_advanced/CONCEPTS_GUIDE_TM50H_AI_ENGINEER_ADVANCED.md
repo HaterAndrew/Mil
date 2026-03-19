@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-50H COMPANION — ADVANCED AI ENGINEER — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** Default to the simplest architecture that solves the problem. Multi-agent systems are harder to build, debug, and govern. Use them only when a single agent genuinely cannot solve the problem.
+> **Forward:** Default to the simplest architecture that solves the problem. Multi-agent systems are harder to build, debug, and govern. Use them only when a single agent genuinely cannot solve the problem.
 > **Purpose:** Extends the mental models of the TM-40H Concepts Guide to advanced AI engineering on MSS. Prerequisite: TM-40H Concepts Guide and TM-40H qualification.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
@@ -32,7 +32,7 @@ The difference is embeddedness. An embedded AI system becomes part of the operat
 
 ### 1-3. The Intelligence Synthesis Vignette
 
-**Situation:** The G2 section at V Corps requests an AI system to support all-source intelligence synthesis — ingest reporting from multiple disciplines, identify patterns, and surface threat indicators to the analyst for review.
+**Situation:** The G2 section at V Corps requests an AI system to support all-source intelligence synthesis — ingest reporting from multiple disciplines including 10th AAMDC sensor data, 56th MDC-E electromagnetic activity reporting, and organic HUMINT/SIGINT — identify patterns, and surface threat indicators to the analyst for review.
 
 A TM-40H engineer builds an AIP Logic workflow: retrieve relevant reporting Objects from the Ontology, pass them to an LLM with a synthesis prompt, surface the output to an analyst. That workflow solves the user story.
 
@@ -429,6 +429,6 @@ Engineers who clear a deployment review sometimes treat that review as the end o
 
 ---
 
-*CONCEPTS GUIDE — TM-50H COMPANION // ADVANCED AI ENGINEER // UNCLASSIFIED*
+*CONCEPTS GUIDE — TM-50H COMPANION // ADVANCED AI ENGINEER*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA // WIESBADEN, GERMANY // 2026*
 *Questions and feedback: C2DAO, USAREUR-AF Operational Data Team, Wiesbaden.*

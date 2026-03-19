@@ -1,6 +1,6 @@
 # TM-40M — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-40M qualifies machine learning engineers to build, train, evaluate, deploy, and maintain ML models on the Maven Smart System (MSS) within USAREUR-AF. This manual covers the full ML lifecycle — from Code Workspace setup through production model governance.
+> **Forward:** TM-40M qualifies machine learning engineers to build, train, evaluate, deploy, and maintain ML models on the Maven Smart System (MSS) within USAREUR-AF. This manual covers the full ML lifecycle — from Code Workspace setup through production model governance.
 > **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (required). Proficiency in Python, scikit-learn, PyTorch or statsmodels, and SQL is assumed. Readers who cannot independently write a training loop, build a feature pipeline, and interpret a confusion matrix should complete prerequisite training before beginning this manual; CONCEPTS_GUIDE_TM40M_ML_ENGINEER (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -13,33 +13,15 @@
 
 ## CHAPTER 1 — INTRODUCTION: THE MLE ROLE ON MSS
 
-### 1-1. Purpose and Scope
+### 1-1. ML Engineer Specialist Manual
 
 **BLUF:** TM-40M qualifies machine learning engineers to build, train, evaluate, deploy, and maintain ML models on the Maven Smart System (MSS) within USAREUR-AF. This manual covers the full ML lifecycle — from Code Workspace setup through production model governance.
 
-This manual provides task-based instruction for machine learning engineers (MLEs) operating on MSS. MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. TM-40M qualified personnel design and implement predictive models, feature pipelines, and ML-backed data products that support operational decision-making across V Corps, 21st TSC, USAREUR-AF G2, and subordinate commands.
+This manual provides task-based instruction for machine learning engineers (MLEs) operating on MSS. MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. TM-40M qualified personnel design and implement predictive models, feature pipelines, and ML-backed data products that support operational decision-making across III Corps, V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, SETAF-AF, USAREUR-AF G2, and subordinate commands.
 
-**TM-40M covers:**
-- Setting up and using Code Workspaces (JupyterLab/RStudio) on Foundry
-- Reading Foundry datasets into notebooks and managing Python environments
-- Building feature engineering pipelines that feed ML training workflows
-- Training models using scikit-learn, PyTorch, statsmodels, and similar libraries
-- Evaluating model performance with operationally appropriate metrics
-- Conducting bias and fairness checks for models affecting personnel or readiness assessments
-- Publishing trained models to the Ontology and implementing model-backed Object properties
-- Implementing MLOps patterns: versioning, experiment tracking, retraining triggers, drift detection
-- Building and maintaining feature pipelines using Foundry Transforms
-- Applying ML to operational use cases: readiness prediction, logistics demand forecasting, anomaly detection in OPDATA
-- Completing model governance documentation and navigating the approval process before production deployment
+**TM-40M covers** setting up and using Code Workspaces (JupyterLab/RStudio) on Foundry; reading Foundry datasets into notebooks and managing Python environments; building feature engineering pipelines that feed ML training workflows; training models using scikit-learn, PyTorch, statsmodels, and similar libraries; evaluating model performance with operationally appropriate metrics; conducting bias and fairness checks for models affecting personnel or readiness assessments; publishing trained models to the Ontology and implementing model-backed Object properties; implementing MLOps patterns: versioning, experiment tracking, retraining triggers, drift detection; building and maintaining feature pipelines using Foundry Transforms; applying ML to operational use cases: readiness prediction, logistics demand forecasting, anomaly detection in OPDATA; and completing model governance documentation and navigating the approval process before production deployment.
 
-**TM-40M does NOT cover:**
-- Basic Python or data science fundamentals — see data_skills curriculum
-- No-code pipeline building — see TM-20 and TM-30
-- Workshop application design — see TM-30
-- Ontology design methodology — see TM-30 (consumed by MLE, not designed here)
-- TypeScript Functions on Objects or OSDK application development — see TM-40L (Software Engineer)
-- Large language model fine-tuning or Agent Studio development — see TM-40H (AI Engineer)
-- Operations research / statistical modeling for optimization — see TM-40G (ORSA)
+**TM-40M does NOT cover** basic Python or data science fundamentals — see data_skills curriculum; no-code pipeline building — see TM-20 and TM-30; Workshop application design — see TM-30; Ontology design methodology — see TM-30 (consumed by MLE, not designed here); TypeScript Functions on Objects or OSDK application development — see TM-40L (Software Engineer); large language model fine-tuning or Agent Studio development — see TM-40H (AI Engineer); or operations research / statistical modeling for optimization — see TM-40G (ORSA).
 
 ### 1-2. Curriculum Position, Advanced Track, and WFF Context
 
@@ -1947,7 +1929,7 @@ model.fit(
 
 ### 8-4. Use Case: OPDATA Anomaly Detection
 
-**Operational Problem:** USAREUR-AF G2 analyzes pattern-of-life data across the European AOR to detect deviations that may indicate operational significance. Manual review of high-volume telemetry and activity data is not scalable. An anomaly detection system that surfaces statistically unusual observations for analyst review reduces the load on limited all-source analyst capacity.
+**Operational Problem:** USAREUR-AF G2 analyzes pattern-of-life data across the European and African AOR to detect deviations that may indicate operational significance. Manual review of high-volume telemetry and activity data is not scalable. An anomaly detection system that surfaces statistically unusual observations for analyst review reduces the load on limited all-source analyst capacity.
 
 **Framing:** Unsupervised anomaly detection. No labeled ground truth for "operational anomaly." The model surfaces observations whose feature vectors are statistically unusual relative to the recent baseline. Human analysts determine operational significance — the model performs triage, not assessment.
 

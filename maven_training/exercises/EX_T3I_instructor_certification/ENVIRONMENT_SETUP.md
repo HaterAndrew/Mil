@@ -63,5 +63,5 @@ If video recording is not feasible, prepare detailed written scenario descriptio
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Environment Setup — EX_T3I | Version 1.0 | March 2026*

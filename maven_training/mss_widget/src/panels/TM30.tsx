@@ -24,7 +24,7 @@ export default function TM30({ showPanel }: Props) {
 
       <div className="callout note">
         <div className="callout-label">NOTE &mdash; IS THIS YOUR LEVEL?</div>
-        <div className="callout-body">TM-30 covers advanced no-code building &mdash; application design, pipeline architecture, governance. If your role requires <strong>coding, ML, or ORSA</strong>, TM-30 is a prerequisite to a specialist track. <button className="qr-link" onClick={() => showPanel('specialists' as any)}>View Specialist Tracks (TM-40/50) &rarr;</button></div>
+        <div className="callout-body">TM-30 covers advanced no-code building &mdash; application design, pipeline architecture, governance. If your role requires <strong>coding, ML, or ORSA</strong>, TM-30 is a prerequisite to a specialist track. <button className="qr-link" onClick={() => showPanel('specialists')}>View Specialist Tracks (TM-40/50) &rarr;</button></div>
       </div>
 
       <h2>COMPETENCIES UPON COMPLETION</h2>
@@ -179,7 +179,7 @@ export default function TM30({ showPanel }: Props) {
           <div className="specialist-cta-title">Specialist Tracks &mdash; TM-40 &amp; TM-50 Series</div>
           <div className="specialist-cta-sub">Six role-specific tracks for ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, and Software Engineer. Select your track based on MOS/role.</div>
         </div>
-        <button className="specialist-cta-btn" onClick={() => showPanel('specialists' as any)}>
+        <button className="specialist-cta-btn" onClick={() => showPanel('specialists')}>
           Access Specialist Tracks <span className="btn-arrow">&#8594;</span>
         </button>
       </div>
@@ -188,8 +188,8 @@ export default function TM30({ showPanel }: Props) {
         <div className="callout-label">NOT FINDING WHAT YOU NEED?</div>
         <div className="callout-body">
           Contact your unit data steward for additional publications, source files, or access to restricted materials.
-          For technical support, visit the <button className="qr-link" onClick={() => showPanel('support' as any)}>Support page &rarr;</button>
-          For task-level procedures, use the <button className="qr-link" onClick={() => showPanel('taskindex' as any)}>Task Index &rarr;</button>
+          For technical support, visit the <button className="qr-link" onClick={() => showPanel('support')}>Support page &rarr;</button>
+          For task-level procedures, use the <button className="qr-link" onClick={() => showPanel('taskindex')}>Task Index &rarr;</button>
         </div>
       </div>
     </>

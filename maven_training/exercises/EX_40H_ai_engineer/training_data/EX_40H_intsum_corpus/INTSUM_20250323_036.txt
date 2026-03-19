@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250323_036 — OBSERVATION REPORT
+DTG: 230000Z MAR 2025
+Unit: 3BCT 4ID
+
+Summary: OP SPARTAN reported observation of 8 unidentified vehicles moving in convoy formation along ROUTE DELTA at 2040 local. Vehicles: ZIL-131. Movement direction: WEST. No hostile action observed. Convoy cleared the AO within 18 minutes.
+
+Assessment: Unknown purpose. Vehicle type and movement pattern do not match known civilian routes. Does not meet CCIR threshold but logged for trend analysis.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

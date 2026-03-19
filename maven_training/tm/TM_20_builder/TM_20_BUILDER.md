@@ -1,6 +1,6 @@
 # TM-20 — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** This manual teaches you to build applications, data pipelines, and analyses on MSS using only the graphical user interface — no coding required.
+> **Forward:** This manual teaches you to build applications, data pipelines, and analyses on MSS using only the graphical user interface — no coding required.
 > **Prereqs:** TM-10, Maven Smart System Operator Manual (required). Data Literacy Technical Reference (recommended).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -8,35 +8,15 @@
 
 # CHAPTER 1 — INTRODUCTION
 
-## 1-1. Purpose and Scope
+## 1-1. No-Code Builder Manual
 
-This Technical Manual (TM) provides task-level instruction for USAREUR-AF personnel who build on the Maven Smart System (MSS) using no-code tools. It is written for all staff — officer, warrant, NCO, civilian — who completed TM-10 and have been granted builder access. No programming background is required. If you can use a web browser and fill out forms, you can do everything in this manual.
+This Technical Manual (TM) provides task-level instruction for USAREUR-AF personnel who build on the Maven Smart System (MSS) using no-code tools. It is written for all staff — officer, warrant, NCO, Civilian — who completed TM-10 and have been granted builder access. No programming background is required. If you can use a web browser and fill out forms, you can do everything in this manual.
 
 NOTE: Before beginning TM-20 work, verify you can independently perform the following TM-10 tasks without referencing the manual: Task 2-1 (account setup and MFA); Task 3-1 (find and save resources); Task 5-1 (dataset viewing); Chapter 6 (security markings and access controls). Builders must understand operator-level data security requirements before building. If you are uncertain about any TM-10 task, review TM-10 before proceeding.
 
-**This manual covers:**
+**This manual covers** creating and managing projects via the Compass UI; building visual ETL pipelines using Pipeline Builder (drag-and-drop, no code); connecting to data sources using pre-built UI connectors; creating Object Types and Link Types using the Ontology UI (form-based); configuring basic Actions using form-based configuration (no code); building Workshop applications with drag-and-drop widgets; publishing and sharing Workshop applications; building saved analyses in Contour; building basic dashboards in Quiver; managing project permissions and access via UI; using Foundry branching via the UI (no command line); and naming conventions and builder standards.
 
-- Creating and managing projects via the Compass UI
-- Building visual ETL pipelines using Pipeline Builder (drag-and-drop, no code)
-- Connecting to data sources using pre-built UI connectors
-- Creating Object Types and Link Types using the Ontology UI (form-based)
-- Configuring basic Actions using form-based configuration (no code)
-- Building Workshop applications with drag-and-drop widgets
-- Publishing and sharing Workshop applications
-- Building saved analyses in Contour
-- Building basic dashboards in Quiver
-- Managing project permissions and access via UI
-- Using Foundry branching via the UI (no command line)
-- Naming conventions and builder standards
-
-**This manual does NOT cover:**
-
-- Python, PySpark, or SQL transforms
-- Code editors or code repositories
-- TypeScript Functions or OSDK
-- @incremental transform configuration
-- AIP Logic configuration or Agent Studio
-- Any task requiring writing or reading code
+**This manual does NOT cover** Python, PySpark, or SQL transforms; code editors or code repositories; TypeScript Functions or OSDK; @incremental transform configuration; AIP Logic configuration or Agent Studio; or any task requiring writing or reading code.
 
 Those topics are in TM-30, Advanced Builder. If a task requires writing code, stop and contact your team's data engineer.
 
@@ -102,7 +82,7 @@ If any box is unchecked, do not build. Resolve it first.
 
 ## 1-3. USAREUR-AF Mission Context and the Builder's Role
 
-United States Army Europe and Africa (USAREUR-AF) is the Army Service Component Command (ASCC) to United States European Command (USEUCOM), responsible for theater land operations across the European Area of Responsibility (AOR) and integration with NATO Allied command structures. Major subordinate commands — V Corps (forward deployed, Poland), 21st Theater Sustainment Command (TSC), and 7th Army Training Command (ATC) — each generate and consume data that flows through MSS.
+United States Army Europe and Africa (USAREUR-AF) is the Army Service Component Command (ASCC) to United States European Command (USEUCOM) and United States Africa Command (USAFRICOM), responsible for theater land operations across the European and African Areas of Responsibility (AOR) and integration with NATO Allied command structures. Major subordinate commands — III Corps, V Corps (forward deployed, Poland), 21st Theater Sustainment Command (TSC), 7th Army Training Command (ATC), 10th AAMDC, 56th MDC-E, and SETAF-AF — each generate and consume data that flows through MSS.
 
 As a builder, the tools you create directly affect readiness visibility and operational decision-making across this formation. A Workshop application you build may display unit status to a V Corps G3 in Poznan or track logistics readiness for a 21st TSC officer in Kaiserslautern. A pipeline you configure may feed the data behind a theater-level briefing. Understand the operational weight of what you are building before you begin.
 
@@ -1080,7 +1060,7 @@ NOTE: Object Explorer shows data as of the most recent pipeline run. If you rebu
 2. Click the **Links** tab.
 3. Click **Add Link Type**.
 4. Enter a link name in camelCase verb phrase format (e.g., `assignedTo`, `reportedBy`, `locatedAt`).
-5. Enter a description of the relationship (e.g., "Connects a SoldierReadiness record to the UnitStatus of the soldier's parent unit").
+5. Enter a description of the relationship (e.g., "Connects a SoldierReadiness record to the UnitStatus of the Soldier's parent unit").
 6. Under **Target Object Type**, select the Object Type this link points to.
 7. Under **Foreign Key Configuration**:
    - Select the column in this Object Type's dataset that contains the key linking to the target.
@@ -2146,7 +2126,7 @@ NOTE: Always handle nulls BEFORE type casting. Casting a null can fail or produc
 
 ## B-4. Rollup and Aggregation (Changing Grain)
 
-**Use case:** You need a summary dataset from row-level data — for example, counting open work orders by unit from a row-per-work-order source, or summing personnel strength by company from a row-per-soldier source.
+**Use case:** You need a summary dataset from row-level data — for example, counting open work orders by unit from a row-per-work-order source, or summing personnel strength by company from a row-per-Soldier source.
 
 **When to apply:** When the Object Type or Workshop widget requires summary-level data, not individual records.
 
@@ -2207,7 +2187,7 @@ NOTE: Alert your Data Steward if the output row count drops below the historical
 
 ## B-6. Union of Multiple Sources
 
-**Use case:** The same entity type is reported by multiple source systems with different schemas (e.g., readiness data from V Corps, 21st TSC, and 7th ATC each arriving via separate feeds; or MTOE units from one system and augmentation force units from another).
+**Use case:** The same entity type is reported by multiple source systems with different schemas (e.g., readiness data from III Corps, V Corps, 21st TSC, 7th ATC, 10th AAMDC, 56th MDC-E, and SETAF-AF each arriving via separate feeds; or MTOE units from one system and augmentation force units from another).
 
 **When to apply:** When you need a single consolidated dataset representing all instances of an entity regardless of source.
 
@@ -2311,7 +2291,7 @@ Terms are defined in plain English with USAREUR-AF operational context where app
 
 **Foundry (Palantir Foundry)** — The enterprise data platform on which MSS is built. Foundry provides the full stack: data ingestion (connectors), data processing (Pipeline Builder), semantic modeling (Ontology), analysis (Contour, Quiver), and application development (Workshop). All tools described in this manual are components of Palantir Foundry deployed as MSS by USAREUR-AF.
 
-**Grain** — The level of detail represented by a single row in a dataset. Defining and documenting grain is required for every curated dataset and Ontology Object Type. Example grains: one row per unit per report date; one row per work order; one row per soldier per fiscal year. Grain determines how joins are structured and whether aggregation is needed before an output step. Grain must be documented in the dataset description.
+**Grain** — The level of detail represented by a single row in a dataset. Defining and documenting grain is required for every curated dataset and Ontology Object Type. Example grains: one row per unit per report date; one row per work order; one row per Soldier per fiscal year. Grain determines how joins are structured and whether aggregation is needed before an output step. Grain must be documented in the dataset description.
 
 **Join** — A transform step in Pipeline Builder that combines two datasets by matching rows where a specified key column has the same value in both datasets. Join types: Inner Join (only rows with matching keys in both datasets), Left Join (all rows from the left dataset, matched where possible), Right Join (all rows from the right dataset). TM-20 scope: Inner and Left joins on a single key column. Multi-key or complex joins are TM-30 scope.
 

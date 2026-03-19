@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-40D COMPANION — SUSTAINMENT WARFIGHTING FUNCTION · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** ADP 4-0 defines sustainment through six functional elements. Each element generates data. That data, historically fragmented across incompatible systems, is what MSS integrates. Understanding why MSS was built requires understanding the information problem that existed before it.
+> **Forward:** ADP 4-0 defines sustainment through six functional elements and eight principles. Each element generates data. That data, historically fragmented across incompatible systems, is what MSS integrates. Understanding why MSS was built requires understanding the information problem that existed before it.
 > **Prereqs:** This guide must be read before beginning TM-40D. TM-10 (Maven User), TM-20 (Builder), and TM-30 (Advanced Builder) are required before beginning TM-40D. Reading this Concepts Guide does not require builder skills, but TM-30 certification must be complete before enrolling in TM-40D.
 > **Purpose:** This guide develops the operational mental models required to effectively integrate MSS into Sustainment warfighting function operations. It is a prerequisite companion to TM-40D and must be read before beginning TM-40D task instruction. This guide is conceptual — it develops understanding, not procedures. No step-by-step tasks appear here.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
@@ -17,7 +17,7 @@ No other warfighting function tracks as many physical objects as sustainment. Bu
 
 This is not administrative overhead. This is how an Army sustains itself in contact. A unit that cannot account for its ammunition basic load cannot plan fires. A unit that does not know its Days of Supply for fuel cannot plan tempo. A commander who does not know strength cannot task-organize. The data is the operational picture.
 
-ADP 4-0 describes four principles of sustainment: integration, anticipation, responsiveness, and simplicity (ADP 4-0, para 2-2 through 2-5). All four have direct data implications.
+ADP 4-0 describes eight principles of sustainment: integration, anticipation, responsiveness, simplicity, economy, survivability, continuity, and improvisation (ADP 4-0). All eight have direct data implications; the first four are discussed in detail below.
 
 **Integration** means sustainment is synchronized with maneuver. Data integration is what makes this possible — specifically, the ability of the S4 and sustainment commander to see the maneuver picture and for the S3 to see the sustainment picture simultaneously. Before MSS, integration was achieved through battle rhythm events and slide products that were outdated by the time the briefing ended. MSS makes integration continuous.
 
@@ -497,6 +497,8 @@ For personnel pursuing technical depth, specialist tracks (TM-40G–O, prereq TM
 | TM-40J | Program Manager (→ TM-50J) |
 | TM-40K | Knowledge Manager (→ TM-50K) |
 | TM-40L | Software Engineer (→ TM-50L) |
+| TM-40N | UI/UX Designer (→ TM-50N) |
+| TM-40O | Platform Engineer (→ TM-50O) |
 
 ---
 
@@ -504,4 +506,3 @@ For personnel pursuing technical depth, specialist tracks (TM-40G–O, prereq TM
 > **NOTE — New Doctrine Content in TM-40D:** TM-40D now includes the eight sustainment principles mapped to data platform analogs (Table 1-1A, ADP 4-0), ten classes of supply with source systems, data feeds, and update frequencies (Table 2-1A), and a running estimate NOTE tying battle rhythm data to commander decision support. These sections ground sustainment data management in their authoritative doctrinal sources.
 
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
-*UNCLASSIFIED // FOR OFFICIAL USE ONLY*

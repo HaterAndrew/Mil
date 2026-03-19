@@ -101,4 +101,4 @@ Real-world implementations and DevCon presentations that illustrate advanced ML 
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*

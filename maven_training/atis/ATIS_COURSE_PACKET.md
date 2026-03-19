@@ -10,7 +10,7 @@
 | **Proponent DSN** | [To be assigned] |
 | **Proponent Email** | usarmy.wiesbaden.usareur-af.list.c2dao-training@army.mil |
 | **Effective Date** | March 2026 |
-| **Classification** | UNCLASSIFIED |
+| **Classification** | — |
 | **Review Cycle** | Annual or upon major platform update |
 | **Total Courses** | 23 |
 | **Total Program Hours** | 728 |
@@ -135,7 +135,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Incorrect classification marking or export procedure |
 | **Remediation Hours** | 2 hours |
 | **Remediation Method** | Self-study with TM + supervised lab with instructor |
-| **Security Clearance** | None required (UNCLASSIFIED) |
+| **Security Clearance** | None required |
 
 #### Equipment and Facility Requirements
 
@@ -206,7 +206,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Viewer-role test account can trigger Action or modify data |
 | **Remediation Hours** | 4 hours |
 | **Remediation Method** | Supervised lab on failed tasks; build from scratch on a different dataset |
-| **Security Clearance** | None required (UNCLASSIFIED) |
+| **Security Clearance** | None required |
 
 #### Equipment and Facility Requirements
 
@@ -299,7 +299,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Fatally-flawed Ontology design not corrected before build; promotion submitted without description |
 | **Remediation Hours** | 8 hours |
 | **Remediation Method** | Full-day supervised lab; rebuilding failed components |
-| **Security Clearance** | None required (UNCLASSIFIED) |
+| **Security Clearance** | None required |
 
 #### Equipment and Facility Requirements
 
@@ -384,7 +384,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Intelligence product without data-as-of timestamp or source attribution |
 | **Remediation Hours** | 4 hours |
 | **Remediation Method** | Supervised lab on failed tasks; build from scratch on a different dataset |
-| **Security Clearance** | None required (UNCLASSIFIED training environment) |
+| **Security Clearance** | None required |
 | **Doctrinal References** | FM 2-0, ATP 2-01, FM 3-60 |
 
 #### Equipment and Facility Requirements
@@ -459,7 +459,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Fire support product without FSCM visualization or clearance-of-fires integration |
 | **Remediation Hours** | 4 hours |
 | **Remediation Method** | Supervised lab on failed tasks; build from scratch on a different dataset |
-| **Security Clearance** | None required (UNCLASSIFIED training environment) |
+| **Security Clearance** | None required |
 | **Doctrinal References** | FM 3-09, ATP 3-09.42, FM 3-60 |
 
 #### Equipment and Facility Requirements
@@ -519,7 +519,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Movement tracker without unit position currency or route status attribution |
 | **Remediation Hours** | 4 hours |
 | **Remediation Method** | Supervised lab on failed tasks; build from scratch on a different dataset |
-| **Security Clearance** | None required (UNCLASSIFIED training environment) |
+| **Security Clearance** | None required |
 | **Doctrinal References** | FM 3-90-1, ATP 3-90.1, ADP 3-90 |
 
 #### Equipment and Facility Requirements
@@ -579,7 +579,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Logistics dashboard without data-as-of timestamp or supply status attribution |
 | **Remediation Hours** | 4 hours |
 | **Remediation Method** | Supervised lab on failed tasks; build from scratch on a different dataset |
-| **Security Clearance** | None required (UNCLASSIFIED training environment) |
+| **Security Clearance** | None required |
 | **Doctrinal References** | FM 4-0, ATP 4-93, ATP 4-42 |
 
 #### Equipment and Facility Requirements
@@ -639,7 +639,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Protection product without threat condition linkage or incident tracking attribution |
 | **Remediation Hours** | 4 hours |
 | **Remediation Method** | Supervised lab on failed tasks; build from scratch on a different dataset |
-| **Security Clearance** | None required (UNCLASSIFIED training environment) |
+| **Security Clearance** | None required |
 | **Doctrinal References** | ADP 3-37, ATP 3-37.34, ATP 3-37.2 |
 
 #### Equipment and Facility Requirements
@@ -699,7 +699,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | COP configuration without network status integration or data feed health monitoring |
 | **Remediation Hours** | 4 hours |
 | **Remediation Method** | Supervised lab on failed tasks; build from scratch on a different dataset |
-| **Security Clearance** | None required (UNCLASSIFIED training environment) |
+| **Security Clearance** | None required |
 | **Doctrinal References** | ADP 6-0, FM 6-0, ATP 6-0.5 |
 
 #### Equipment and Facility Requirements
@@ -759,7 +759,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Point estimate without confidence/credible interval; undocumented assumptions |
 | **Remediation Hours** | 8 hours |
 | **Remediation Method** | Full-day supervised lab; rebuilding failed components |
-| **Security Clearance** | None required (UNCLASSIFIED training environment) |
+| **Security Clearance** | None required |
 
 #### Equipment and Facility Requirements
 
@@ -843,7 +843,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Any AIP workflow writes to production Objects without human checkpoint |
 | **Remediation Hours** | 8 hours |
 | **Remediation Method** | Full-day supervised lab; rebuilding failed components |
-| **Security Clearance** | None required (UNCLASSIFIED training environment) |
+| **Security Clearance** | None required |
 
 > **MANDATORY ATTENDANCE:** Day 1 Block 1 (AI Safety Seminar) is mandatory — no exceptions, no rescheduling
 
@@ -904,7 +904,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Model calibration not performed; governance document missing required sections |
 | **Remediation Hours** | 8 hours |
 | **Remediation Method** | Full-day supervised lab; rebuilding failed components |
-| **Security Clearance** | None required (UNCLASSIFIED training environment) |
+| **Security Clearance** | None required |
 
 #### Equipment and Facility Requirements
 
@@ -963,7 +963,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Dashboard has no data-as-of timestamp |
 | **Remediation Hours** | 4 hours |
 | **Remediation Method** | Supervised lab on failed tasks; build from scratch on a different dataset |
-| **Security Clearance** | None required (UNCLASSIFIED training environment) |
+| **Security Clearance** | None required |
 
 #### Equipment and Facility Requirements
 
@@ -1022,7 +1022,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | AIP workflow auto-publishes without human review gate |
 | **Remediation Hours** | 4 hours |
 | **Remediation Method** | Supervised lab on failed tasks; build from scratch on a different dataset |
-| **Security Clearance** | None required (UNCLASSIFIED training environment) |
+| **Security Clearance** | None required |
 
 #### Equipment and Facility Requirements
 
@@ -1081,7 +1081,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Hardcoded credential in application code; validator test suite not fully passing |
 | **Remediation Hours** | 8 hours |
 | **Remediation Method** | Full-day supervised lab; rebuilding failed components |
-| **Security Clearance** | None required (UNCLASSIFIED training environment) |
+| **Security Clearance** | None required |
 
 #### Equipment and Facility Requirements
 
@@ -1140,7 +1140,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Product without uncertainty quantification, documented assumptions, peer review, or reproducibility |
 | **Remediation Hours** | 8 hours |
 | **Remediation Method** | Full-day supervised lab; rebuilding failed components |
-| **Security Clearance** | None required (UNCLASSIFIED training environment) |
+| **Security Clearance** | None required |
 
 #### Equipment and Facility Requirements
 
@@ -1199,7 +1199,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Agent deployed without authorization controls or human oversight |
 | **Remediation Hours** | 8 hours |
 | **Remediation Method** | Full-day supervised lab; rebuilding failed components |
-| **Security Clearance** | None required (UNCLASSIFIED training environment) |
+| **Security Clearance** | None required |
 
 #### Equipment and Facility Requirements
 
@@ -1258,7 +1258,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Model deployed without drift monitoring or governance documentation |
 | **Remediation Hours** | 8 hours |
 | **Remediation Method** | Full-day supervised lab; rebuilding failed components |
-| **Security Clearance** | None required (UNCLASSIFIED training environment) |
+| **Security Clearance** | None required |
 
 #### Equipment and Facility Requirements
 
@@ -1317,7 +1317,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Portfolio dashboard without cross-program roll-up or data currency indicator |
 | **Remediation Hours** | 4 hours |
 | **Remediation Method** | Supervised lab on failed tasks |
-| **Security Clearance** | None required (UNCLASSIFIED training environment) |
+| **Security Clearance** | None required |
 
 #### Equipment and Facility Requirements
 
@@ -1376,7 +1376,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Knowledge architecture without lifecycle governance or audit trail |
 | **Remediation Hours** | 4 hours |
 | **Remediation Method** | Supervised lab on failed tasks |
-| **Security Clearance** | None required (UNCLASSIFIED training environment) |
+| **Security Clearance** | None required |
 
 #### Equipment and Facility Requirements
 
@@ -1435,7 +1435,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Hard NO-GO** | Hardcoded credential; no automated test coverage; deployment without review |
 | **Remediation Hours** | 8 hours |
 | **Remediation Method** | Full-day supervised lab; rebuilding failed components |
-| **Security Clearance** | None required (UNCLASSIFIED training environment) |
+| **Security Clearance** | None required |
 
 #### Equipment and Facility Requirements
 
@@ -1479,6 +1479,6 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *ATIS Course Registration Packet | MSS-POI-001 | March 2026*
 *Generated: 2026-03-16 22:28 UTC by build_atis_packet.py*

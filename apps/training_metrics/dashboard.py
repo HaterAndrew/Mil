@@ -8,6 +8,7 @@ Answers four questions: On Track? At Risk? What Changed? Decision Required?
 from __future__ import annotations
 
 import json
+import os
 import sys
 from datetime import date, datetime
 from pathlib import Path
@@ -61,7 +62,7 @@ from theme import (
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-API_BASE = "http://localhost:8015"
+API_BASE = os.environ.get("TRAINING_METRICS_API_URL", "http://localhost:8015")
 
 st.set_page_config(
     page_title="MSS Training Executive Dashboard",
@@ -166,7 +167,8 @@ def _hex_to_rgb(hex_color: str) -> str:
 if active_tab == "Executive Summary":
     st.title("Executive Summary")
 
-    metrics = load_metrics()
+    with st.spinner("Loading data..."):
+        metrics = load_metrics()
     summary = metrics.get("executive_summary", {})
     rag = summary.get("rag", "AMBER")
     score = summary.get("readiness_score", 0)
@@ -582,7 +584,7 @@ elif active_tab == "Report Generation":
         briefing_lines.append("=" * 72)
         briefing_lines.append("MSS TRAINING EXECUTIVE BRIEFING")
         briefing_lines.append(f"Date: {date.today().isoformat()}")
-        briefing_lines.append("Classification: CUI // FOUO")
+        briefing_lines.append("Classification: CUI")
         briefing_lines.append("=" * 72)
         briefing_lines.append("")
         briefing_lines.append("BOTTOM LINE UP FRONT (BLUF)")

@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260805_173 — IED EVENT
+DTG: 050000Z AUG 2026
+Unit: 173 ABN BDE
+
+Summary: At 0110 local, a suspected IED was identified by route clearance element in grid 32T259261 along ASR WOLF. EOD requested and responded within 29 minutes. Controlled detonation conducted. Crater assessed. No friendly casualties.
+
+Device Description: Infrared trigger with command wire backup, approx 10kg charge. Collected for exploitation. DNA swabs taken.
+Recommended Action: Restrict movement along ASR WOLF until EOD clearance complete. Disseminate grid data to adjacent units.

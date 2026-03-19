@@ -221,5 +221,5 @@ Grandfathered instructors are not required to complete T3-I Phase 1 (classroom).
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Instructor Tier Definitions | Version 1.0 | March 2026*

@@ -224,5 +224,5 @@ If an MTT member becomes unavailable during the rotation:
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *MTT Operations SOP | Version 1.0 | March 2026*

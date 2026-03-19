@@ -129,10 +129,11 @@ st.markdown(_CARD_CSS, unsafe_allow_html=True)
 # ---------------------------------------------------------------------------
 # Ensure DB is initialized
 # ---------------------------------------------------------------------------
-db.init_db()
+with st.spinner("Loading data..."):
+    db.init_db()
 
-# Check if index is populated; if not, prompt reindex
-stats = db.get_stats()
+    # Check if index is populated; if not, prompt reindex
+    stats = db.get_stats()
 if stats["total_terms"] == 0:
     st.info("Index is empty. Go to the **Reindex** tab to build the glossary index.")
 

@@ -1,6 +1,6 @@
 # EX_40J TRAINING — Pipeline Definition
 ## LOGSTAT Aggregation Pipeline — Technical Description
-**Classification:** UNCLASSIFIED // TRAINING USE ONLY
+
 
 ## What It Does
 

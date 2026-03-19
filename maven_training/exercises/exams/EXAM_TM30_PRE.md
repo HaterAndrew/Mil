@@ -232,5 +232,5 @@ SA-5. Full credit: two from — (1) role-based Workshop variable — use a varia
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-30 Pre-Test | Version 1.0 | March 2026*

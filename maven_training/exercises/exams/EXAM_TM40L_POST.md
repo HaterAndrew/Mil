@@ -241,6 +241,8 @@ Passing: 49/70 (70%) — Post-test only. Pre-test is diagnostic.
 13. D — Minimum 8 test cases (per TM-40L standards).
 14. B — Hardcoded tenant IDs risk cross-tenant data access if deployed in different context.
 15. A — Strip/reject injection characters, validate length and format before using in queries or writes.
+16. B — The DDOF 30-day MVP mandate — SWEs build pipelines that deliver minimum viable products within 30 days per DDOF Phase 4.
+17. B — Classification Marking, Access Control List, and Data Steward Contact are the three security-critical UDRA v1.1 metadata fields.
 
 **Short Answer Guidance:**
 
@@ -258,5 +260,5 @@ SA-6. Full credit: any two WFF tracks correctly identified with a SWE example �
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-40L Post-Test | Version 1.0 | March 2026*

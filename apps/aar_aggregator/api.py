@@ -8,6 +8,8 @@ from datetime import date
 from fastapi import Depends, FastAPI, File, HTTPException, Query, UploadFile, status
 from sqlalchemy.orm import Session
 
+from shared.middleware import SecurityHeadersMiddleware
+
 from .db import (
     AAR,
     CurriculumDiscrepancy,
@@ -50,6 +52,7 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
 )
+app.add_middleware(SecurityHeadersMiddleware)
 
 
 @app.get("/health")

@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-50M COMPANION — ADVANCED MACHINE LEARNING ENGINEER — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-50M marks a professional transition. You are no longer primarily a model builder. You are an ML systems engineer — responsible for the infrastructure, processes, and standards that make reliable ML possible at scale.
+> **Forward:** TM-50M marks a professional transition. You are no longer primarily a model builder. You are an ML systems engineer — responsible for the infrastructure, processes, and standards that make reliable ML possible at scale.
 > **Purpose:** Extends the mental models of the TM-40M Concepts Guide to advanced ML engineering on MSS. Prerequisite: TM-40M Concepts Guide and TM-40M qualification.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
@@ -195,6 +195,8 @@ But the G4 needs to explain demand forecasts to subordinate units and to USAREUR
 
 Designing the explanation interface requires understanding which layer holds the operationally relevant reasoning for each type of question. This is architecture work that must happen before deployment.
 
+A parallel demand forecasting requirement from SETAF-AF introduces an additional complication: Africa AOR logistics data is sparser, supply chains are longer, and consumption patterns differ fundamentally from European theater operations. The stacking architecture must either train separate specialist models for SETAF-AF data distributions or introduce a domain adaptation layer. This decision affects model governance — a single model trained on combined data may underperform for both theaters, while separate models double the monitoring and retraining burden.
+
 ---
 
 ## SECTION 6 — EXPERIMENT TRACKING AS OPERATIONAL DISCIPLINE
@@ -338,7 +340,7 @@ Detecting skew requires comparing feature distributions during training against 
 | Record the model | Record the experiment, the decision rationale, and the governance lifecycle |
 | Governance at deployment | Governance as a continuous process |
 
-The ML systems built at TM-50M level inform readiness decisions for V Corps formations, logistics decisions for 21st TSC, and intelligence analysis for USAREUR-AF G2. The difference between a technically deployed ML model and an ML system that reliably supports those decisions over time is the difference between TM-40M and TM-50M work.
+The ML systems built at TM-50M level inform readiness decisions for III Corps, V Corps, 10th AAMDC, 56th MDC-E, and SETAF-AF formations, logistics decisions for 21st TSC, and intelligence analysis for USAREUR-AF G2. The difference between a technically deployed ML model and an ML system that reliably supports those decisions over time is the difference between TM-40M and TM-50M work.
 
 ---
 
@@ -362,6 +364,6 @@ The ML systems built at TM-50M level inform readiness decisions for V Corps form
 
 ---
 
-*CONCEPTS GUIDE — TM-50M COMPANION // ADVANCED MACHINE LEARNING ENGINEER // UNCLASSIFIED*
+*CONCEPTS GUIDE — TM-50M COMPANION // ADVANCED MACHINE LEARNING ENGINEER*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA // WIESBADEN, GERMANY // 2026*
 *DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*

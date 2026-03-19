@@ -232,5 +232,5 @@ SA-5. Full credit: any four from — (1) CBAC configuration and tenant isolation
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-50L Pre-Test | Version 1.0 | March 2026*

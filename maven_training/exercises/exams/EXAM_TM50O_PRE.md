@@ -117,5 +117,5 @@ S-9. Full credit (10 pts): recommendation: do not deploy the large feature now â
 
 ---
 
-*USAREUR-AF Operational Data Team â€” UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-50O Pre-Test | Version 1.0 | March 2026*

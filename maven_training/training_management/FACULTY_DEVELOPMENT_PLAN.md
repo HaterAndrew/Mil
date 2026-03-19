@@ -46,7 +46,7 @@ All instructors must meet the following minimum qualifications before being assi
 | TM-40D (SUST) | Logistics officer or NCO (88/92-series preferred); TM-20 Go on file | Sustainment WFF functions, LOGSTAT, readiness data |
 | TM-40E (PROT) | Force protection officer or CBRN officer; TM-20 Go on file | Protection WFF functions, force protection CCIRs, PERSTAT |
 | TM-40F (MC) | Operations officer or XO (O-4 or above preferred); TM-20 Go on file | Mission command WFF, BUA products, synchronization matrices |
-| TM-40G | FA49 officer, ORSA-designated civilian, or equivalent quantitative background; TM-40G Go on file or C2DAO ORSA SME designation | Statistical modeling, time series, Monte Carlo, LP |
+| TM-40G | FA49 officer, ORSA-designated Civilian, or equivalent quantitative background; TM-40G Go on file or C2DAO ORSA SME designation | Statistical modeling, time series, Monte Carlo, LP |
 | TM-40H | AIP Logic authoring experience (minimum 3 production workflows deployed); C2DAO AI SME designation; TM-40H Go on file | AIP Logic, Agent Studio, RAG, AI safety |
 | TM-40M | ML model deployed to production (minimum 1); TM-40M Go on file; C2DAO MLE SME designation | Feature engineering, model training, MLOps, governance |
 | TM-40J | Program management background (PM-certified preferred); TM-30 Go on file; GFEBS/IMS proficiency | IMS, GFEBS, dashboard standards |
@@ -423,5 +423,5 @@ INCORPORATED IN LESSON PLAN VERSION: ________________
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Faculty Development Plan | Version 1.0 | March 2026*

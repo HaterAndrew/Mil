@@ -232,5 +232,5 @@ SA-5. Full credit: a token is roughly a word piece — LLMs process text as sequ
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-40H Pre-Test | Version 1.0 | March 2026*

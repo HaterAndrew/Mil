@@ -124,7 +124,7 @@ _______________________________________________
 
 *Total points: 30. Diagnostic only — score does not affect course admission.*
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *EX_TM40B-PRE | Version 1.0 | March 2026*
 
 ---
@@ -162,5 +162,5 @@ Partial credit (6 pts): one requirement described correctly with all three eleme
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *EX_TM40B-PRE | Answer Key | Version 1.0 | March 2026*

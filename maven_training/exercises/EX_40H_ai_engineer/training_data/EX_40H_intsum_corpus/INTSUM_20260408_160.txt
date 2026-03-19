@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260408_160 — OBSERVATION REPORT
+DTG: 080000Z APR 2026
+Unit: 3BCT HHC
+
+Summary: OP OVERWATCH reported observation of 13 unidentified vehicles moving in convoy formation along ROUTE BRAVO at 1400 local. Vehicles: flatbed truck. Movement direction: EAST. No hostile action observed. Convoy cleared the AO within 11 minutes.
+
+Assessment: Assessed as routine commercial traffic. No tactical significance at this time. Possible CCIR trigger — S2 assessment pending.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

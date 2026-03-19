@@ -55,10 +55,10 @@ architecture are codified in subsequent Army CIO guidance (2024) and the Unified
 Reference Architecture (UDRA) v1.1 (2025). This publication incorporates those authorities.
 
 USAREUR-AF is the Army Service Component Command (ASCC) to United States European Command
-(USEUCOM), responsible for theater land operations from Iceland to the Caucasus. USAREUR-AF
+(USEUCOM) and United States Africa Command (USAFRICOM), responsible for theater land operations across the European and African AOR. USAREUR-AF
 supports NATO Article 5 collective defense commitments and is integrated into Joint
-All-Domain Command and Control (JADC2). Subordinate commands include V Corps (Forward),
-21st Theater Sustainment Command (21 TSC), and 7th Army Training Command (7ATC). Data
+All-Domain Command and Control (JADC2). Subordinate commands include III Corps, V Corps (Forward),
+21st Theater Sustainment Command (21 TSC), 7th Army Training Command (7ATC), 10th AAMDC, 56th MDC-E, and SETAF-AF. Data
 literacy is foundational to USAREUR-AF's ability to operate effectively across this
 multi-nation, multi-domain theater.
 
@@ -1269,8 +1269,9 @@ Access Programs (SAP) — impose additional requirements beyond the base classif
 
 7-1c. Data that is not classified may still be controlled. Controlled Unclassified Information
 (CUI) is unclassified information that requires protection under law, regulation, or
-government-wide policy. CUI categories include For Official Use Only (FOUO), Law Enforcement
-Sensitive (LES), and Privacy Act-protected information. CUI must be handled according to
+government-wide policy. CUI categories include Law Enforcement
+Sensitive (LES) and Privacy Act-protected information. (Note: For Official Use Only (FOUO) was a
+legacy marking now retired and superseded by CUI.) CUI must be handled according to
 applicable CUI policy even though it is unclassified.
 
 ---
@@ -1627,7 +1628,7 @@ assign and enforce data roles explicitly.
 
 | Tier | Title | Description | Target Population |
 |---|---|---|---|
-| TM-10 | Operator | Navigates Maven Smart System; consumes data products; follows data handling procedures; accurately enters data; observes security requirements | All Soldiers and civilians — every MOS and staff function |
+| TM-10 | Operator | Navigates Maven Smart System; consumes data products; follows data handling procedures; accurately enters data; observes security requirements | All Soldiers and Civilians — every MOS and staff function |
 | TM-20 | Builder | Builds basic Workshop applications; runs light transforms; creates and shares data products without specialist tools; identifies data quality problems | All personnel — builds on TM-10 |
 | TM-30 | Advanced Builder | Designs pipelines and Ontology objects; builds governed dashboards and complex transforms; profiles data quality; mentors TM-10/20 users | Data-adjacent personnel (17/25-series, S6/G6/G2) |
 | TM-40 Series (WFF) | Warfighting Function Specialist | Role-specific MSS integration within an assigned warfighting function. Six tracks: Intelligence (40A), Fires (40B), Movement & Maneuver (40C), Sustainment (40D), Protection (40E), Mission Command (40F). Applies MSS tools to functional domain workflows. | WFF functional staff (INT, FIRES, M2, SUST, PROT, MC); requires TM-30 prerequisite |
@@ -1662,7 +1663,7 @@ assign and enforce data roles explicitly.
 
 | Population | Minimum Standard | Training Path |
 |---|---|---|
-| All Soldiers and civilians | TM-10 (Operator) — Navigate Maven, consume data products, follow data handling and security procedures | Unit-level training; TM-10 self-paced course |
+| All Soldiers and Civilians | TM-10 (Operator) — Navigate Maven, consume data products, follow data handling and security procedures | Unit-level training; TM-10 self-paced course |
 | All personnel | TM-20 (Builder) — Build basic data products; identify and report quality issues | Unit training; TM-20 course (builds on TM-10) |
 | Data-adjacent billets (17/25-series, S6/G6/G2) | TM-30 (Advanced Builder) — Design pipelines and Ontology objects; govern data products | TM-30 course (builds on TM-20); mentored practicum |
 | WFF functional staff (INT, FIRES, M2, SUST, PROT, MC) | TM-40 Series (WFF Track) — MSS integration within assigned warfighting function | TM-40A through TM-40F per WFF assignment; prerequisite TM-30 |

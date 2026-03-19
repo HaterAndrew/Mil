@@ -1,6 +1,6 @@
 # TM-30 — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-30 qualifies data-adjacent specialists to build advanced no-code solutions on the Maven Smart System — complex Workshop applications, multi-source pipelines, well-designed ontology models, and advanced analytics — while operating within USAREUR-AF C2DAO governance requirements.
+> **Forward:** TM-30 qualifies data-adjacent specialists to build advanced no-code solutions on the Maven Smart System — complex Workshop applications, multi-source pipelines, well-designed ontology models, and advanced analytics — while operating within USAREUR-AF C2DAO governance requirements.
 > **Prereqs:** TM-10, Maven User; TM-20, Builder; Data Literacy Technical Reference (all required).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -8,7 +8,7 @@
 
 # CHAPTER 1 — INTRODUCTION AND SCOPE
 
-## 1-1. Scope and Purpose
+## 1-1. Advanced Builder Manual
 
 1-1. This manual qualifies advanced builders who operate entirely through the MSS platform user
 interface. No code is required at the TM-30 level. All tasks in this manual are accomplished
@@ -23,7 +23,7 @@ Civil Affairs, and operational data analysts embedded in brigade and division st
 1-3. TM-40 covers code-level development (Python transforms, TypeScript Functions on Objects,
 OSDK). If your task requires writing code, reference TM-40. TM-30 stops at the UI boundary.
 
-NOTE: All items above require a TM-40 developer. For TM-20 (no-code builder) capabilities, refer to TM-20, Chapter 1. TM-30 operates at the boundary between TM-20 no-code building and TM-40 code-based development. When in doubt whether a task is TM-20 or TM-30, refer to TM-20, Chapter 1-1 (Purpose and Scope) to assess scope before escalating.
+NOTE: All items above require a TM-40 developer. For TM-20 (no-code builder) capabilities, refer to TM-20, Chapter 1. TM-30 operates at the boundary between TM-20 no-code building and TM-40 code-based development. When in doubt whether a task is TM-20 or TM-30, refer to TM-20, Chapter 1-1 (No-Code Builder Manual) to assess scope before escalating.
 
 1-4. Prerequisites. Before beginning TM-30 tasks, personnel must be qualified on:
 - TM-10 (Maven User): platform navigation, object search, consuming data products
@@ -51,7 +51,7 @@ NOTE: Advanced builders design solutions that TM-10 operators and TM-20 builders
 ## 1-3. USAREUR-AF Operational Context
 
 1-5. USAREUR-AF is the Army Service Component Command (ASCC) to United States European Command
-(USEUCOM). Advanced builders operating in this theater support land operations across the European
+(USEUCOM) and United States Africa Command (USAFRICOM). Advanced builders operating in this theater support land operations across the European and African
 AOR and integration with NATO Allied command structures. The data products built at TM-30 level
 feed readiness reporting, logistics visibility, intelligence products, and operational dashboards
 used by commanders at brigade through theater level.

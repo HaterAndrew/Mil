@@ -43,7 +43,6 @@ Print and hand to participant at exercise start:
 
 ```
 COMMANDER'S CCIR GUIDANCE — EX_40F TRAINING
-Classification: UNCLASSIFIED // TRAINING
 
 CCIR 1 — READINESS THRESHOLD
   Trigger: Any subordinate battalion equipment readiness below 70%
@@ -93,7 +92,6 @@ Provide to participant at exercise start for Task 3:
 
 ```
 WEEKLY BATTLE RHYTHM — EX_40F TRAINING (Mon–Sun)
-UNCLASSIFIED // TRAINING
 
 DAILY
   0700 — Commander's Battle Update Assessment (BUA) — CDR, XO, S3, S2

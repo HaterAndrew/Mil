@@ -2,7 +2,7 @@
 
 ## Overview
 
-This directory contains all source content used to develop and support the Maven Smart System (MSS) training curriculum. Content is organized by type. All materials are UNCLASSIFIED // FOUO unless otherwise marked.
+This directory contains all source content used to develop and support the Maven Smart System (MSS) training curriculum. Content is organized by type. 
 
 Do not modify files in this directory without coordinating with the Operational Data Team (ODT). These are authoritative source materials — edits to training content belong in `maven_training/tm/`, `maven_training/syllabi/`, and related curriculum directories.
 
@@ -76,9 +76,12 @@ Authoritative reference documents used to develop curriculum content. Organized 
 **Top-level:**
 - `DDOF_Playbook_v2_2.pdf` — Defense Data Orchestration Framework lifecycle playbook (canonical copy, v2.2, December 2025, T2COM C2DAO, CUI // FEDCON)
 
-**`reference/`** — ODT-produced reference documents:
+**`reference/`** — ODT-produced reference documents and key Army publications:
 - `DDOF_Playbook_v2_2.pdf` — DDOF Playbook v2.2 (Defense Data Orchestration Framework, December 2025, T2COM C2DAO)
 - `Cross-Domain Solutions_ Complete Technical Reference for Ontology Modeling.pdf` — CDS technical reference
+- `Fighting_with_Live_Data_XVIII_ABC_ODTs_MilReview_Feb2026.pdf` — Forney, Herrmann, and Steele, "Fighting with Live Data: XVIII Airborne Corps' Experience with Its Operational Data Teams," *Military Review* Online Exclusive, February 2026. XVIII ABC's pilot experience with the ODT concept — organizational journey, manning structure, problem-solution development process, Program Increment cycles, TIO governance, BDA visualization case study, and echeloned employment concept. **Required reading for TM-40J, TM-40F. Recommended for all TM-40 tracks.**
+- `Adkins_Achieving_Decision_Dominance_MilReview_JanFeb2025.pdf` + `.md` (summary) — Adkins, "Achieving Decision Dominance: The Arduous Pursuit of Operationalized Data," *Military Review* 105, no. 1 (January-February 2025). One officer's thought piece proposing decision optimization at echelon. Introduces useful terminology: operationalized data, Automated Fighting Products (AFP), and Decision Optimization Teams (DOT). Proposes echeloned DOT employment from division through HQDA with FA 26B/49/57 workforce. Names Maven Smart System as the USCENTCOM ASCC-level COP platform. Proposes gunnery-table training model for DOT certification. **Supplementary reading for TM-40F, TM-40G, TM-40J. Recommended for all TM-40 tracks and Data Literacy Senior Leaders.**
+- `Rainey_Transformation_in_Contact_MilReview_Aug2024.pdf` — Rainey, "Continuous Transformation: Transformation in Contact," *Military Review* Online Exclusive, 9 August 2024. CSA's concept for continuous Army transformation. Establishes the operational context for ODTs and data-centric capabilities — transformation requires a data foundation, not just new technologies. SEC ARMY directed ODT experimentation under TiC 2.0. **Recommended for all TM-40 tracks and training management staff.**
 
 **`training/`** — Training materials:
 - `Intro To Data/The Semantic Layer Instructions.pdf`

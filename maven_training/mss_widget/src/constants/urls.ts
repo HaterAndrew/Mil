@@ -110,11 +110,11 @@ export const URLS = {
   EX40K:                     `${BASE}/EX_40K_KNOWLEDGE_MANAGER.pdf`,
   EX40L:                     `${BASE}/EX_40L_SOFTWARE_ENGINEER.pdf`,
 
-  // Builder Sprint Program (BSP)
-  BSP_GUIDE:                 `${BASE}/BSP_GUIDE.pdf`,
-  BSP_SPRINT_PACKAGE:        `${BASE}/BSP_SPRINT_PACKAGE.pdf`,
-  BSP_ENVIRONMENT_SETUP:     `${BASE}/BSP_ENVIRONMENT_SETUP.pdf`,
-  BUILDER_SPRINT_SOP:        `${BASE}/BUILDER_SPRINT_SOP.pdf`,
+  // Foundry Bootcamp Program (FBC)
+  FBC_GUIDE:                 `${BASE}/FBC_GUIDE.pdf`,
+  FBC_SPRINT_PACKAGE:        `${BASE}/FBC_SPRINT_PACKAGE.pdf`,
+  FBC_ENVIRONMENT_SETUP:     `${BASE}/FBC_ENVIRONMENT_SETUP.pdf`,
+  FOUNDRY_BOOTCAMP_SOP:        `${BASE}/FOUNDRY_BOOTCAMP_SOP.pdf`,
 
   // Governance
   NAMING_STANDARDS:          `${BASE}/NAMING_AND_GOVERNANCE_STANDARDS.pdf`,

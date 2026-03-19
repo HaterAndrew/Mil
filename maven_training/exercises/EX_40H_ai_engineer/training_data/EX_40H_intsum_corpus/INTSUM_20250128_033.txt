@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250128_033 — OBSERVATION REPORT
+DTG: 280000Z JAN 2025
+Unit: 1-77 FA
+
+Summary: OP RAPTOR reported observation of 8 unidentified vehicles moving in convoy formation along MSR EAGLE at 1830 local. Vehicles: KAMAZ. Movement direction: WEST. No hostile action observed. Convoy cleared the AO within 8 minutes.
+
+Assessment: Possible military resupply convoy. Vehicle types inconsistent with civilian use. Possible CCIR trigger — S2 assessment pending.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

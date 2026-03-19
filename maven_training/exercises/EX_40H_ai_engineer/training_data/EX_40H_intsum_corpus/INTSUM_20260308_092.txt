@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260308_092 — IED EVENT
+DTG: 080000Z MAR 2026
+Unit: 3-1 BN
+
+Summary: At 0140 local, a suspected IED was identified by route clearance element in grid 35T119867 along MSR EAGLE. EOD requested and responded within 26 minutes. Device rendered safe. No personnel casualties. Vehicle sustained minor damage.
+
+Device Description: Pressure-plate initiator, command wire, approx 3kg charge. Collected for exploitation. DNA swabs taken.
+Recommended Action: Restrict movement along MSR EAGLE until EOD clearance complete. Disseminate grid data to adjacent units.

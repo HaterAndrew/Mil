@@ -130,7 +130,7 @@ Draft a 5-sentence stakeholder update email. Required elements:
 
 ## NEXT STEPS
 
-Participants who receive an overall Go on EX_40J are eligible to enroll in **TM-50J — Advanced Program Manager**. TM-50J extends into portfolio-level program management, enterprise governance, and cross-functional delivery at scale. TM-50 is G–M only (advanced specialist tracks).
+Participants who receive an overall Go on EX_40J are eligible to enroll in **TM-50J — Advanced Program Manager**. TM-50J extends into portfolio-level program management, enterprise governance, and cross-functional delivery at scale. TM-50 is G–O (advanced specialist tracks).
 
 ### Evaluator Role-Play Card (Task 4)
 

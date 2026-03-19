@@ -108,5 +108,5 @@ Trainees proceeding to TM-40 tracks may access self-study addenda for those trac
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Self-Study Addendum | TM-30 | Palantir Developers External Reference Library | March 2026*

@@ -232,5 +232,5 @@ SA-5. Full credit: velocity and story points are team-level metrics measuring re
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-50J Pre-Test | Version 1.0 | March 2026*

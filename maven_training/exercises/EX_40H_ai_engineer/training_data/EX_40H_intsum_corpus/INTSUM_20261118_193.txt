@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20261118_193 — FORCE PROTECTION
+DTG: 180000Z NOV 2026
+Unit: DIVARTY
+
+Summary: Drone detected in the airspace above FOB KALTBERG at approximately 1400 local. Counter-UAS measures activated. Drone departed the area. Origin not determined.
+
+Assessment: Force protection posture remains at current FPCON level. No change recommended at this time pending further analysis.
+Recommended Action: Maintain heightened awareness. Review FPCON measures with all personnel. Report any suspicious activity immediately through established channels.

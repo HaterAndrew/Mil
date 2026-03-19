@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260604_185 — SIGINT SUMMARY
+DTG: 040000Z JUN 2026
+Unit: 1-3 BN
+
+Summary: SIGINT collection assets detected 3 HF emitter(s) in the vicinity of NAI 14 (grid 35T562138). Emissions lasted approximately 23 minutes. Intercept forwarded to technical channels for further analysis.
+
+Assessment: Emission pattern consistent with tactical radio net. Possible command element.
+Recommended Action: Continue collection against NAI 14. Request additional SIGINT coverage during 1800-0600 window.

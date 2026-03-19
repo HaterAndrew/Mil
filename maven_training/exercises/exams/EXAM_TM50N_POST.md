@@ -121,5 +121,5 @@ S-10. Full credit (10 pts): freshness indicators: (1) a timestamp showing "Last 
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-50N Post-Test | Version 1.0 | March 2026*

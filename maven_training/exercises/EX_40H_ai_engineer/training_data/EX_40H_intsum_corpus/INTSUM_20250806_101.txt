@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250806_101 — OBSERVATION REPORT
+DTG: 060000Z AUG 2025
+Unit: 1-12 CAV
+
+Summary: OP LYNX reported observation of 11 unidentified vehicles moving in convoy formation along ROUTE GOLD at 0020 local. Vehicles: ZIL-131. Movement direction: NORTHEAST. No hostile action observed. Convoy cleared the AO within 13 minutes.
+
+Assessment: Possible military resupply convoy. Vehicle types inconsistent with civilian use. Possible CCIR trigger — S2 assessment pending.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

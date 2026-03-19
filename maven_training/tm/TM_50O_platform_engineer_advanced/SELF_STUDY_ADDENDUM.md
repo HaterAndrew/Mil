@@ -84,4 +84,4 @@ See `../self_study/SELF_STUDY_TM40O_PLATFORM_ENGINEER.md` for the full list.
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*

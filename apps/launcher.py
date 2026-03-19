@@ -67,7 +67,7 @@ def start_app(dashboard_port: int) -> dict:
         api_module = f"apps.{name}.api:app"
         api_proc = subprocess.Popen(
             [sys.executable, "-m", "uvicorn", api_module,
-             "--port", str(api_port), "--host", "0.0.0.0"],
+             "--port", str(api_port), "--host", "127.0.0.1"],
             cwd=str(ROOT),
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
@@ -84,7 +84,7 @@ def start_app(dashboard_port: int) -> dict:
             [sys.executable, "-m", "streamlit", "run", dash_path,
              "--server.port", str(dashboard_port),
              "--server.headless", "true",
-             "--server.address", "0.0.0.0"],
+             "--server.address", "127.0.0.1"],
             cwd=str(ROOT),
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
@@ -157,13 +157,21 @@ class LauncherHandler(BaseHTTPRequestHandler):
             # Serve static assets from HUB_DIR (images, css, js, etc.)
             safe_path = unquote(self.path.lstrip("/"))
             if ".." not in safe_path:
-                self._serve_file(HUB_DIR / safe_path)
+                full_path = HUB_DIR / safe_path
+                resolved = full_path.resolve()
+                if not resolved.is_relative_to(HUB_DIR.resolve()):
+                    self.send_error(403, "Forbidden")
+                    return
+                self._serve_file(full_path)
             else:
                 self._json_response(403, {"ok": False, "error": "Forbidden"})
 
     def do_POST(self):
         if self.path == "/start":
             length = int(self.headers.get("Content-Length", 0))
+            if length > 1048576:  # 1 MB limit
+                self._json_response(413, {"ok": False, "error": "Request body too large. Maximum size is 1 MB."})
+                return
             body = self.rfile.read(length) if length else b"{}"
             try:
                 data = json.loads(body)
@@ -193,7 +201,7 @@ def main():
         webbrowser.open(f"http://localhost:{PORT}")
         sys.exit(0)
 
-    server = HTTPServer(("0.0.0.0", PORT), LauncherHandler)
+    server = HTTPServer(("127.0.0.1", PORT), LauncherHandler)
     url = f"http://localhost:{PORT}"
     print(f"[launcher] Dashboard Launcher running on {url}")
     print(f"[launcher] {len(APPS)} apps registered (ports 8501-8515)")

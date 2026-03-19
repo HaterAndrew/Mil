@@ -278,4 +278,4 @@ If we cannot get assessment tools in the same enclave to share a backend, we hav
 *Proponent: Operational Data Team, USAREUR-AF*
 *Authority: Chief Data and Analytics Officer, USAREUR-AF*
 *Classification Guide: Per DoDI 5200.48 and DoDM 5200.01, Vol 2*
-*CUI // FOUO*
+*CUI*

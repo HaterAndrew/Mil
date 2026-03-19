@@ -114,13 +114,13 @@ tb(slide, "Training Infrastructure: TM-10 through TM-30  |  The Baseline That Ma
    0.15, 0.38, 10.0, 0.26,
    size=9, bold=False, color=DARK_GREEN, align=PP_ALIGN.LEFT)
 
-tb(slide, "UNCLASSIFIED  |  March 2026",
+tb(slide, "March 2026",
    10.0, 0.12, 3.15, 0.44,
    size=8.5, bold=False, color=OD_GREEN, align=PP_ALIGN.RIGHT)
 
 # ── Bottom bar ────────────────────────────────────────────────────────────────
 add_rect(slide, 0, 7.17, 13.33, 0.33, GOLD)
-tb(slide, "USAREUR-AF Operational Data Team  ·  Wiesbaden, Germany  ·  UNCLASSIFIED",
+tb(slide, "USAREUR-AF Operational Data Team  ·  Wiesbaden, Germany",
    0.15, 7.19, 13.0, 0.26,
    size=7.5, bold=False, color=OD_GREEN, align=PP_ALIGN.CENTER)
 

@@ -41,7 +41,6 @@ Print and hand to participant at exercise start:
 
 ```
 COMMANDER'S PIR GUIDANCE — EX_40A TRAINING
-Classification: UNCLASSIFIED // TRAINING
 
 PIR 1 — ENEMY ADA IN AOR
   Trigger: Any confirmed enemy ADA asset within grid zone XX

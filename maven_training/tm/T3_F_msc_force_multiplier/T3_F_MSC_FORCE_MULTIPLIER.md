@@ -1,6 +1,6 @@
 # T3-F — MSC FORCE MULTIPLIER · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** T3-F certifies MSC-level personnel as Unit Data Trainers (UDTs) to deliver TM-10 independently at their units between MTT visits. Half-day course. Graduates receive the lesson plan, prove they can deliver it, and start training.
+> **Forward:** T3-F certifies MSC-level personnel as Unit Data Trainers (UDTs) to deliver TM-10 independently at their units between MTT visits. Half-day course. Graduates receive the lesson plan, prove they can deliver it, and start training.
 > **Prereqs:** TM-20, Builder (Go on file); unit commander nomination.
 > *HQ USAREUR-AF · v2.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -8,22 +8,13 @@
 
 ## CHAPTER 1 — THE UNIT DATA TRAINER
 
-### 1-1. Purpose and Scope
+### 1-1. MSC Force Multiplier Manual
 
 **BLUF:** C2DAO cannot be everywhere. USAREUR-AF is distributed across Europe. Between MTT visits, new arrivals need TM-10 (Maven User) qualification. UDTs fill that gap by delivering TM-10 using published lesson plans.
 
-**T3-F covers:**
+**T3-F covers** how to use the TM-10 training materials (lesson plans, exercises, exams, T&EOs); how to deliver TM-10 using the published lesson plans; how to administer and score TM-10 evaluations (pre-tests, post-tests, Go/No-Go practicals); and how to report training completion to C2DAO.
 
-- How to use the TM-10 training materials (lesson plans, exercises, exams, T&EOs)
-- How to deliver TM-10 using the published lesson plans
-- How to administer and score TM-10 evaluations (pre-tests, post-tests, Go/No-Go practicals)
-- How to report training completion to C2DAO
-
-**T3-F does NOT cover:**
-
-- Delivering TM-20, TM-30, or any TM-40/TM-50 course — requires C2DAO-certified instructor
-- Modifying curriculum, lesson plans, or evaluation criteria — curriculum authority resides with C2DAO
-- Advanced instructional methodology — see T3-I (Instructor Certification)
+**T3-F does NOT cover** delivering TM-20, TM-30, or any TM-40/TM-50 course (requires C2DAO-certified instructor); modifying curriculum, lesson plans, or evaluation criteria (curriculum authority resides with C2DAO); or advanced instructional methodology — see T3-I (Instructor Certification).
 
 ---
 
@@ -195,5 +186,5 @@ If a training request exceeds your authority (TM-20+, enrollment exceptions, cur
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *T3-F MSC Force Multiplier | Version 2.0 | March 2026*

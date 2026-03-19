@@ -2,8 +2,14 @@
 
 from __future__ import annotations
 
+import sys
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
+
+# Ensure sibling packages (readiness_tracker, etc.) are importable
+_apps_dir = str(Path(__file__).resolve().parent.parent)
+if _apps_dir not in sys.path:
+    sys.path.insert(0, _apps_dir)
 
 from sqlalchemy import (
     Column,
@@ -107,34 +113,9 @@ class TeachingHistory(Base):
 
 
 # ---------------------------------------------------------------------------
-# Course catalog — mirrors readiness_tracker for consistency
+# Course catalog — imported from readiness_tracker (single source of truth)
 # ---------------------------------------------------------------------------
-COURSE_CATALOG: dict[str, tuple[str, int]] = {
-    "TM-10": ("Maven User", 8),
-    "TM-20": ("Builder", 40),
-    "TM-30": ("Advanced Builder", 40),
-    "BSP": ("Builder Sprint", 40),
-    "TM-40A": ("Intelligence WFF", 24),
-    "TM-40B": ("Fires WFF", 24),
-    "TM-40C": ("Movement & Maneuver WFF", 24),
-    "TM-40D": ("Sustainment WFF", 24),
-    "TM-40E": ("Protection WFF", 24),
-    "TM-40F": ("Mission Command WFF", 24),
-    "TM-40G": ("ORSA", 40),
-    "TM-40H": ("AI Engineer", 40),
-    "TM-40M": ("ML Engineer", 40),
-    "TM-40J": ("Program Manager", 24),
-    "TM-40K": ("Knowledge Manager", 24),
-    "TM-40L": ("Software Engineer", 40),
-    "TM-50G": ("Advanced ORSA", 40),
-    "TM-50H": ("Advanced AI Engineer", 40),
-    "TM-50M": ("Advanced ML Engineer", 40),
-    "TM-50J": ("Advanced Program Manager", 40),
-    "TM-50K": ("Advanced Knowledge Manager", 40),
-    "TM-50L": ("Advanced Software Engineer", 40),
-}
-
-ALL_COURSES = list(COURSE_CATALOG.keys())
+from readiness_tracker.db import COURSE_CATALOG, ALL_COURSES  # noqa: E402
 
 
 # ---------------------------------------------------------------------------

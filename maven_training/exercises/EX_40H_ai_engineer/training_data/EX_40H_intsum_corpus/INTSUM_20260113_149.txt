@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260113_149 — OBSERVATION REPORT
+DTG: 130000Z JAN 2026
+Unit: 12th CAB
+
+Summary: OP OVERWATCH reported observation of 15 unidentified vehicles moving in convoy formation along ROUTE NEPTUNE at 2120 local. Vehicles: cargo truck. Movement direction: NORTH. No hostile action observed. Convoy cleared the AO within 38 minutes.
+
+Assessment: Likely civilian logistics movement. Pattern consistent with previous observations. Does not meet CCIR threshold but logged for trend analysis.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

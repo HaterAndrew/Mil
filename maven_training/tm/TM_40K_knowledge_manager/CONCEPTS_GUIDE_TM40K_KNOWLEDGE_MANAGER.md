@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-40K COMPANION — KNOWLEDGE MANAGER · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** The KM on MSS builds the institutional memory of the formation. The primary output is structured, findable, usable knowledge — lessons learned, SOPs, decision records, after-action content — stored in MSS in a way that supports future operations. If that knowledge cannot be found, it was never really captured.
+> **Forward:** The KM on MSS builds the institutional memory of the formation. The primary output is structured, findable, usable knowledge — lessons learned, SOPs, decision records, after-action content — stored in MSS in a way that supports future operations. If that knowledge cannot be found, it was never really captured.
 > **Purpose:** Develops the mental models required to design, implement, and maintain knowledge management solutions on MSS effectively. Read before beginning TM-40K task instruction.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
@@ -158,7 +158,7 @@ Form design and data model design are the same activity. Every field on a form c
 
 ### 4-4. Vignette — The DEFENDER 25 Lessons-Learned Form
 
-During DEFENDER 25, a G3 section designed a lessons-learned capture form with 23 fields, including 11 free-text fields. After the exercise, 312 entries were submitted. Analysis revealed:
+During DEFENDER 25, a G3 section designed a lessons-learned capture form with 23 fields, including 11 free-text fields. After the exercise, 312 entries were submitted from V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, and SETAF-AF. Analysis revealed:
 - 47% of entries had at least one required field left blank or filled with "N/A"
 - 68% of the free-text "recommendation" fields contained a single sentence or fewer
 - The "responsible unit" field contained 34 distinct spellings of unit designations, making unit-based filtering unreliable
@@ -264,7 +264,7 @@ A V Corps G3 section ran a retrospective analysis after a major unit rotation an
 
 The section designed an MSS-based knowledge handoff workflow: departing units submit a knowledge package (top-10 operational lessons, critical relationship map, known issues with pending resolution) as structured Object entries in MSS. Incoming units receive a tailored view of those entries, filtered to their functional responsibilities, delivered as a Workshop application available during the RIP/TOA week.
 
-After the next rotation cycle, the retrospective found zero repeated lessons from the prior top-five list. The knowledge existed in both cases; the architecture was the difference.
+After the next rotation cycle, the retrospective found zero repeated lessons from the prior top-five list. The knowledge existed in both cases; the architecture was the difference. SETAF-AF adopted the same model for its Africa AOR rotational forces, where RIP/TOA cycles are shorter and the operational context — partner force relationships, austere logistics networks, security cooperation engagement history — is even harder to reconstruct without structured knowledge transfer.
 
 ---
 

@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20261216_108 — NAI ACTIVITY REPORT
+DTG: 160000Z DEC 2026
+Unit: 2-1 BN
+
+Summary: Persistent surveillance of NAI 14 (grid 35T205993) near OSTBERG identified 5 personnel movements during hours of darkness over the 7-day period. Pattern suggests shift rotations consistent with a manned position.
+
+Collection Assessment: Current ISR allocation provides adequate coverage of NAI 14. No additional assets requested at this time.
+Recommended Action: Maintain collection posture. Update S2 overlay with latest activity data. Cross-reference with SIGINT and HUMINT reporting.

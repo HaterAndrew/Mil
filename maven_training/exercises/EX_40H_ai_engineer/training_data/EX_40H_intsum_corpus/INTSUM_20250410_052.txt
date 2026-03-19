@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250410_052 — TERRAIN ANALYSIS
+DTG: 100000Z APR 2025
+Unit: 12th CAB
+
+Summary: Recent rainfall has degraded trafficability along ROUTE BRAVO between grids 34T533520 and 35T984846. Wheeled vehicles unable to traverse without recovery assets staged.
+
+Impact to Operations: Movement planning should account for degraded conditions. Coordination with engineer assets recommended.
+Recommended Action: Update common operational picture. Disseminate terrain overlay to subordinate units. Request engineer reconnaissance if conditions persist beyond 72 hours.

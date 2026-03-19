@@ -6,8 +6,9 @@ import os
 import sys
 import pytest
 
-# Allow imports from sitrep_tracker/ without installing the package
+# Allow imports from sitrep_tracker/ and apps/ without installing packages
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "sitrep_tracker"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "apps"))
 
 
 @pytest.fixture(autouse=True)

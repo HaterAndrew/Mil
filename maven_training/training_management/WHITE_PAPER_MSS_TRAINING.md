@@ -1,5 +1,5 @@
 # THE STRATEGIC CASE FOR MSS TRAINING ACROSS USAREUR-AF
-**USAREUR-AF Operational Data Team | March 2026 | UNCLASSIFIED**
+**USAREUR-AF Operational Data Team | March 2026**
 
 ---
 
@@ -17,7 +17,7 @@ The USAREUR-AF MSS Training Program is a complete, doctrine-aligned curriculum u
 
 | Level | Course | Hours | Audience |
 |-------|--------|-------|----------|
-| TM-10 | Maven User | 8 hrs | All personnel — new soldier in-processing |
+| TM-10 | Maven User | 8 hrs | All personnel — new Soldier in-processing |
 | TM-20 | Builder | 40 hrs | Data-adjacent staff |
 | TM-30 | Advanced Builder | 40 hrs | Unit data leads |
 | TM-40A–F | WFF Functional | 40 hrs ea | G2/G3/G4/G5 functional staff |
@@ -47,8 +47,11 @@ MSS training does not exist in a vacuum. EUCOM and the Army are investing heavil
 | **EUCOM Thunderforge AI Planning Ecosystem** (DIU/Scale AI) | 2024–25 | AI agents augmenting MDMP and wargaming at theater level, compressing planning timelines. USAREUR-AF personnel trained in TM-40F (Mission Command), TM-40G (ORSA), TM-40H (AI Engineer), and TM-40M (ML Engineer) are the operators and builders of these capabilities. Without MSS training, the command cannot staff Thunderforge-class initiatives with qualified personnel. |
 | **EUCOM 2025 Posture Statement to Congress** | 2025 | Theater strategy explicitly references digital modernization and allied data sharing. MSS training is the mechanism that builds the workforce to deliver on those commitments. |
 | **Army 49B AI/ML Officer Career Path** | 2025–26 | The Army's first dedicated uniformed AI/ML career track. TM-40H and TM-40M directly prepare personnel for 49B qualification. MSS training is not supplemental — it is foundational to the Army's emerging AI workforce strategy. |
+| **XVIII Airborne Corps ODT Model** ("Fighting with Live Data," *Military Review*, Feb 2026) | 2022–present | XVIII ABC pioneered Operational Data Teams — multifunctional teams combining product management, UX design, software engineering, data engineering, and data science. After iterating through three organizational models, the Corps found that unified ODTs aligned to long-range planning (G-5) delivered prototype-to-POR capabilities in nine months. The ODT manning structure (PM, UX, SWE, DE, DS) maps directly to TM-40J, TM-40N, TM-40L, TM-40K, and TM-40G/M — the MSS training pipeline produces the exact skill sets the XVIII ABC model requires. SEC ARMY directed ODT experimentation under Transformation in Contact 2.0. |
+| **MCCoE Decision Optimization CONOPS** (Appendix B: ODT Concept) | 2025 | The Mission Command Center of Excellence codified ODT organization and echeloned employment (Theater Army → Corps → Division). The Army recognizes ODTs as the "action arm of decision optimization" for commanders at echelons above brigade. USAREUR-AF operates at the Theater Army ODS echelon. |
+| **"Achieving Decision Dominance"** (Adkins, *Military Review*, Jan-Feb 2025) | 2025 | A thought piece by one officer proposing terminology and organizational concepts for decision optimization at echelon. Introduces useful shorthand: "operationalized data" and "Automated Fighting Products" (AFP). Proposes Decision Optimization Teams at every echelon, manned by FA 26B, FA 49, and FA 57 personnel. Names the Maven Smart System as an ASCC-level COP platform. Supplementary context — the Forney article documents the most relevant pilot experience from XVIII ABC leadership. |
 
-An untrained formation cannot participate in these initiatives. The MSS Training Program is the bridge between EUCOM's AI/data strategy and the personnel who execute it.
+An untrained formation cannot participate in these initiatives. The MSS Training Program is the bridge between EUCOM's AI/data strategy and the personnel who execute it. XVIII ABC's published pilot experience supports this — their ODTs could not function without personnel trained in the exact disciplines the MSS curriculum delivers.
 
 ## The Ask
 

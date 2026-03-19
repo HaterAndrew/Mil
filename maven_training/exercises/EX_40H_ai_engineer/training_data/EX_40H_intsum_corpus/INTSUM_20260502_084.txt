@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260502_084 — OBSERVATION REPORT
+DTG: 020000Z MAY 2026
+Unit: 1BCT HHC
+
+Summary: OP CONDOR reported observation of 15 unidentified vehicles moving in convoy formation along ROUTE SILVER at 1520 local. Vehicles: ZIL-131. Movement direction: NORTHEAST. No hostile action observed. Convoy cleared the AO within 25 minutes.
+
+Assessment: Assessed as routine commercial traffic. No tactical significance at this time. Does not meet CCIR threshold at this time.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20261205_115 — OBSERVATION REPORT
+DTG: 050000Z DEC 2026
+Unit: 2-4 BN
+
+Summary: OP CONDOR reported observation of 12 unidentified vehicles moving in convoy formation along ASR PANTHER at 0320 local. Vehicles: URAL. Movement direction: WEST. No hostile action observed. Convoy cleared the AO within 17 minutes.
+
+Assessment: Unknown purpose. Vehicle type and movement pattern do not match known civilian routes. Meets PIR 2 criteria — forwarded to higher.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

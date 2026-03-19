@@ -201,5 +201,5 @@ The DIV (Data and Information View) in DODAF and the corresponding NAFv4 viewpoi
 ---
 
 *Operational Data Team -- HERMES Program -- USAREUR-AF*
-*CUI // FOUO*
+*CUI*
 *Enterprise Data Compass v1.0 -- February 2026*

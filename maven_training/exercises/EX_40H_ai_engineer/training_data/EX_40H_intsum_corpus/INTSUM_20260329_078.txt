@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260329_078 — OBSERVATION REPORT
+DTG: 290000Z MAR 2026
+Unit: 1BCT HHC
+
+Summary: OP SENTRY reported observation of 14 unidentified vehicles moving in convoy formation along ROUTE FALCON at 0230 local. Vehicles: UAZ. Movement direction: SOUTHWEST. No hostile action observed. Convoy cleared the AO within 40 minutes.
+
+Assessment: Movement pattern deviates from established norms. Possible reconnaissance activity. Does not meet CCIR threshold but logged for trend analysis.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

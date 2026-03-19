@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250705_196 — NAI ACTIVITY REPORT
+DTG: 050000Z JUL 2025
+Unit: 2BCT 1AD
+
+Summary: ISR coverage of NAI 13 (grid 33T838548) near WALDHEIM during the 72-hour period revealed 7 instances of vehicle activity. Vehicles assessed as military-type based on thermal and visual signatures.
+
+Collection Assessment: Current ISR allocation provides adequate coverage of NAI 13. No additional assets requested at this time.
+Recommended Action: Maintain collection posture. Update S2 overlay with latest activity data. Cross-reference with SIGINT and HUMINT reporting.

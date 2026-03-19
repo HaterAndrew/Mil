@@ -239,8 +239,8 @@
   <div>
     <div id="header-title">
       <h1>Maven Training Corpus — File Dependency Map</h1>
-      <div class="subtitle">USAREUR-AF &nbsp;|&nbsp; C2DAO &nbsp;|&nbsp; 16 MAR 2026 (v2.0 + BSP + doctrine refs) &nbsp;|&nbsp;
-        <span id="node-count">212</span> files &nbsp;|&nbsp;
+      <div class="subtitle">USAREUR-AF &nbsp;|&nbsp; C2DAO &nbsp;|&nbsp; 16 MAR 2026 (v2.0 + FBC + doctrine refs) &nbsp;|&nbsp;
+        <span id="node-count">254</span> draft publications &nbsp;|&nbsp;
         <span id="edge-count">476</span> edges &nbsp;|&nbsp;
         Pre-v2.0 audit complete &mdash; TM-30 hard prereq enforced all TM-40 tracks
       </div>
@@ -355,7 +355,7 @@
       <div class="legend-item" data-legend-types="REF,HTML"><div class="legend-swatch" style="background:#1a7a2e"></div>Reference</div>
       <div class="legend-item" data-legend-types="CNCPT,EA,CANON,PPT,SS,ARCH,CDA"><div class="legend-swatch" style="background:#8a6a10"></div>Architecture / Supplemental</div>
       <div class="legend-item" data-legend-types="TMGMT"><div class="legend-swatch" style="background:#4a5568"></div>Training Management</div>
-      <div class="legend-item" data-legend-types="BSP,SOP"><div class="legend-swatch" style="background:#8b2e14"></div>Builder Sprint</div>
+      <div class="legend-item" data-legend-types="FBC,SOP"><div class="legend-swatch" style="background:#8b2e14"></div>Foundry Bootcamp</div>
       <div class="legend-item" data-legend-types="BRIEF"><div class="legend-swatch" style="background:#7a3e8a"></div>Brief / Strategy</div>
       <hr class="legend-divider">
       <div class="legend-heading">EDGES</div>
@@ -2205,7 +2205,7 @@ const NODES = [
   {
     "id": "EX40N",
     "label": "EX-40N\nUX Designer",
-    "path": "exercises/EX-40N_ux_designer/EXERCISE.md",
+    "path": "exercises/EX_40N_ux_designer/EXERCISE.md",
     "type": "EX",
     "col": 4,
     "track": "TM-40N",
@@ -2319,7 +2319,7 @@ const NODES = [
   {
     "id": "EX40O",
     "label": "EX-40O\nPlatform Engr",
-    "path": "exercises/EX-40O_platform_engineer/EXERCISE.md",
+    "path": "exercises/EX_40O_platform_engineer/EXERCISE.md",
     "type": "EX",
     "col": 4,
     "track": "TM-40O",
@@ -4488,7 +4488,7 @@ const NODES = [
   "is_detached": true,
   "is_sidebar": false,
   "aud": ["user", "trainer"],
-  "desc": "TM-SL executive course: 1-day senior leader course (O-5/E-9+) replacing TM-10 for senior leaders. Covers data product impact, governance, agile, working with data professionals."
+  "desc": "TM-SL executive course: 1-day senior leader course (2\u00d7 quarterly; O-5/E-9+) replacing TM-10 for senior leaders. Covers data product impact, governance, agile, working with data professionals."
 },
 {
   "id": "TMSL_CG",
@@ -4525,12 +4525,12 @@ const NODES = [
   "desc": "TM-SL syllabus: 1-day schedule (9 blocks), learning objectives, assessment method, post-course checklist"
 },
 {
-  "id": "BSP_GUIDE",
-  "label": "BSP\nParticipant Guide",
-  "path": "builder_sprint/BSP_GUIDE.md",
-  "type": "BSP",
+  "id": "FBC_GUIDE",
+  "label": "FBC\nParticipant Guide",
+  "path": "foundry_bootcamp/FBC_GUIDE.md",
+  "type": "FBC",
   "col": 2,
-  "track": "Builder Sprint",
+  "track": "Foundry Bootcamp",
   "ni": 0,
   "row_len": 2,
   "max_row_len": 2,
@@ -4539,15 +4539,15 @@ const NODES = [
   "is_detached": true,
   "is_sidebar": false,
   "aud": ["user", "dev", "trainer"],
-  "desc": "Builder Sprint participant guide: 5-day supervised build event for TM-20+ personnel with approved projects"
+  "desc": "Foundry Bootcamp participant guide: 5-day supervised build event (2\u00d7 quarterly) for TM-20+ personnel with approved projects"
 },
 {
-  "id": "BSP_ENV",
-  "label": "BSP\nEnvironment Setup",
-  "path": "builder_sprint/ENVIRONMENT_SETUP.md",
-  "type": "BSP",
+  "id": "FBC_ENV",
+  "label": "FBC\nEnvironment Setup",
+  "path": "foundry_bootcamp/ENVIRONMENT_SETUP.md",
+  "type": "FBC",
   "col": 2,
-  "track": "Builder Sprint",
+  "track": "Foundry Bootcamp",
   "ni": 1,
   "row_len": 2,
   "max_row_len": 2,
@@ -4559,12 +4559,12 @@ const NODES = [
   "desc": "Coordinator checklist for sprint workspace creation, access provisioning, and pre-sprint setup"
 },
 {
-  "id": "BSP_PACKAGE",
-  "label": "BSP\nEval/Coord Package",
-  "path": "builder_sprint/SPRINT_PACKAGE.md",
-  "type": "BSP",
+  "id": "FBC_PACKAGE",
+  "label": "FBC\nEval/Coord Package",
+  "path": "foundry_bootcamp/SPRINT_PACKAGE.md",
+  "type": "FBC",
   "col": 2,
-  "track": "Builder Sprint",
+  "track": "Foundry Bootcamp",
   "ni": 0,
   "row_len": 2,
   "max_row_len": 2,
@@ -4576,12 +4576,12 @@ const NODES = [
   "desc": "Evaluator and coordinator package: Go/No-Go standards, SME ratios, evaluation records"
 },
 {
-  "id": "BSP_SOP",
-  "label": "BSP\nSOP",
-  "path": "training_management/BUILDER_SPRINT_SOP.md",
+  "id": "FBC_SOP",
+  "label": "FBC\nSOP",
+  "path": "training_management/FOUNDRY_BOOTCAMP_SOP.md",
   "type": "SOP",
   "col": 2,
-  "track": "Builder Sprint",
+  "track": "Foundry Bootcamp",
   "ni": 1,
   "row_len": 2,
   "max_row_len": 2,
@@ -4590,7 +4590,7 @@ const NODES = [
   "is_detached": true,
   "is_sidebar": false,
   "aud": ["user", "trainer"],
-  "desc": "Builder Sprint SOP: quarterly event enrollment, execution, evaluation procedures"
+  "desc": "Foundry Bootcamp SOP: 2\u00d7 quarterly event enrollment, execution, evaluation procedures"
 },
 {
   "id": "T3I",
@@ -4973,7 +4973,7 @@ const NODES = [
   "y": 1390,
   "is_sidebar": true,
   "aud": ["dev"],
-  "desc": "CUI//FOUO: 6-phase/20-week hardening plan, 46 acceptance functions, 12 CG constraints"
+  "desc": "CUI: 6-phase/20-week hardening plan, 46 acceptance functions, 12 CG constraints"
 },
 {
   "id": "MGMT_SME_RUBRIC",
@@ -7556,14 +7556,14 @@ const EDGES = [
 { "source": "TMSL_SYL",     "target": "TMSL",       "type": "companion" },
 { "source": "DOC_SENIOR",   "target": "TMSL",       "type": "companion" },
 { "source": "DOC_TECHREF",  "target": "TMSL",       "type": "companion" },
-{ "source": "T3I",          "target": "TM30",       "type": "prereq" },
+{ "source": "T3I",          "target": "TM30",       "type": "companion" },
 { "source": "T3I_CG",       "target": "T3I",        "type": "companion" },
 { "source": "T3I_SYL",      "target": "T3I",        "type": "prereq" },
 { "source": "T3I_EX",       "target": "T3I",        "type": "companion" },
 { "source": "T3I_ENV",      "target": "T3I_EX",     "type": "companion" },
 { "source": "T3I_EXAM_PRE", "target": "T3I",        "type": "companion" },
 { "source": "T3I_EXAM_POST","target": "T3I",        "type": "companion" },
-{ "source": "T3F",          "target": "TM20",       "type": "prereq" },
+{ "source": "T3F",          "target": "TM20",       "type": "companion" },
 { "source": "T3F_CG",       "target": "T3F",        "type": "companion" },
 { "source": "T3F_SYL",      "target": "T3F",        "type": "prereq" },
 { "source": "T3F_EX",       "target": "T3F",        "type": "companion" },
@@ -7585,12 +7585,12 @@ const EDGES = [
 { "source": "MGMT_SME_RUBRIC","target": "MGMT_INSTR_TIER","type": "companion" },
 { "source": "MGMT_INSTR_TIER","target": "T3I",       "type": "companion" },
 { "source": "MGMT_MTT_SOP", "target": "MGMT_SCHED",  "type": "companion" },
-{ "source": "BSP_GUIDE",    "target": "TM20",       "type": "prereq" },
-{ "source": "BSP_ENV",      "target": "BSP_GUIDE",  "type": "companion" },
-{ "source": "BSP_PACKAGE",  "target": "BSP_GUIDE",  "type": "companion" },
-{ "source": "BSP_SOP",      "target": "BSP_GUIDE",  "type": "prereq" },
-{ "source": "BSP_SOP",      "target": "MGMT_ENROLL","type": "companion" },
-{ "source": "BSP_SOP",      "target": "MGMT_SCHED", "type": "companion" },
+{ "source": "FBC_GUIDE",    "target": "TM20",       "type": "companion" },
+{ "source": "FBC_ENV",      "target": "FBC_GUIDE",  "type": "companion" },
+{ "source": "FBC_PACKAGE",  "target": "FBC_GUIDE",  "type": "companion" },
+{ "source": "FBC_SOP",      "target": "FBC_GUIDE",  "type": "prereq" },
+{ "source": "FBC_SOP",      "target": "MGMT_ENROLL","type": "companion" },
+{ "source": "FBC_SOP",      "target": "MGMT_SCHED", "type": "companion" },
 { "source": "BRIEF_DEMO",   "target": "BRIEF_TASKORD","type": "companion" },
 { "source": "BRIEF_DEMO",   "target": "BRIEF_WP",   "type": "companion" },
 { "source": "BRIEF_PPTX",   "target": "BRIEF_DEMO", "type": "companion" },
@@ -7654,8 +7654,8 @@ const TYPE_COLOR = {
   TMGMT:   "#4a5568",
   HTML:    "#4a5568",
   README:  "#4a5568",
-  // BUILDER SPRINT — red-orange
-  BSP:     "#8b2e14",
+  // FOUNDRY BOOTCAMP — red-orange
+  FBC:     "#8b2e14",
   SOP:     "#8b2e14",
   // BRIEFS / STRATEGY — purple
   BRIEF:   "#7a3e8a",
@@ -7747,7 +7747,7 @@ function relayout() {
     } else if (n.is_sidebar) {
       n.x = (n.col === 7) ? sidebarX2 : sidebarX;
     } else if (n.is_detached) {
-      // Detached nodes (e.g. BSP, TM-SL) sit just left of the flow grid
+      // Detached nodes (e.g. FBC, TM-SL) sit just left of the flow grid
       // Uses tighter spacing (NODE_W + 12) so they stay close to flow
       const detPitch = NODE_W + 12;   // ~182 px between detached columns
       const detCols  = 2;             // max ni among detached nodes
@@ -7953,7 +7953,7 @@ const PDF_PREFIX_MAP = {
   "training_management/":              "MGMT_",
   "quick_reference/cda_reference/":    "REF_",
   "quick_reference/":                  "REF_",
-  "builder_sprint/":                   "BSP_",
+  "foundry_bootcamp/":                   "FBC_",
 };
 
 function getPdfFilename(node) {
@@ -7969,7 +7969,7 @@ function getPdfFilename(node) {
   // Check if a prefix mapping applies
   for (const [dirPrefix, pdfPrefix] of Object.entries(PDF_PREFIX_MAP)) {
     if (p.startsWith(dirPrefix)) {
-      // For doctrine/builder_sprint/etc, the PDF uses a prefix + simplified name
+      // For doctrine/foundry_bootcamp/etc, the PDF uses a prefix + simplified name
       // But most PDFs just use the stem directly — check both
       return stem + ".pdf";
     }
@@ -7978,7 +7978,46 @@ function getPdfFilename(node) {
   return stem + ".pdf";
 }
 
+// Maps PPT node IDs to their .pptx filenames in pdf/
+const PPT_FILE_MAP = {
+  PPT_army_orient:     "army_data_orientation_v2.pptx",
+  PPT_arch_primer:     "architecture_primer.pptx",
+  PPT_data_arch_deep:  "Data_Architecture_Deep_Dive.pptx",
+  PPT_data_stack:      "2026_Data_Stack_Deep_Dive.pptx",
+  PPT_l2_ingest:       "L2_Ingestion_Integration_Deep_Dive.pptx",
+  PPT_sem_layer:       "The_Semantic_Layer_Instructions.pptx",
+  PPT_ontology:        "What_Is_An_Ontology.pptx",
+  PPT_data_model_f:    "Data_Modeling_Foundations.pptx",
+  PPT_data_platforms:  "Data_Platforms_Cloud_Deep_Dive.pptx",
+  PPT_l5_activate:     "L5_Activation_Interface_Deep_Dive.pptx",
+  PPT_four_layers:     "The_Four_Layers.pptx",
+  PPT_dm_fund_l1:      "Data_Modeling_Fundamentals_Level1.pptx",
+  PPT_obj_type_watch:  "ObjectType_WhatToWatchFor.pptx",
+  PPT_links_rel:       "Links_and_Relationships.pptx",
+  PPT_dont_filter:     "Dont_Filter_This_Isnt_Excel.pptx",
+  PPT_ctrl_vocab:      "Controlled_Vocabularies.pptx",
+  PPT_identity_key:    "Identity_Who_Owns_The_Key.pptx",
+  PPT_sem_model_intro: "Semantic_Modelling_Course_Intro.pptx",
+  PPT_d01_arch:        "Deck_01_Architecture_First_Principles.pptx",
+  PPT_d02_scope:       "Deck_02_Scope_Engineering.pptx",
+  PPT_d04_obj_var:     "Deck_04_Object_Type_Varieties.pptx",
+  PPT_d05_identity:    "Deck_05_Identity_Governance.pptx",
+  PPT_d06_rel_model:   "Deck_06_Relationship_Modeling.pptx",
+  PPT_ai_ml_hype:      "AI_ML_Beyond_The_Hype.pptx",
+  PPT_decision_adv:    "decision_advantage_deep_dive.pptx",
+  PPT_d03_rdf_owl:     "Deck_03_RDF_OWL_Foundations.pptx",
+  PPT_d07_temporal:    "Deck_07_Temporal_Bitemporal.pptx",
+  PPT_dm_fund_l2:      "Data_Modeling_Fundamentals_Level2.pptx",
+  PPT_d12_capstone:    "Deck_12_Capstone_Foundry.pptx",
+};
+
 function openNodePdf(node) {
+  // PPT nodes link to .pptx files, not PDFs
+  if (node.type === "PPT") {
+    const pptx = PPT_FILE_MAP[node.id];
+    if (pptx) window.open("pdf/" + pptx, "_blank");
+    return;
+  }
   const pdfFile = getPdfFilename(node);
   if (!pdfFile) return;
   // PDF dir is sibling to the source dirs
@@ -8223,6 +8262,7 @@ function toggleCDA() {
     const node = nodeById[g.getAttribute("data-id")];
     if (!node || node.type !== "PPT") return;
     g.style.display = show ? "" : "none";
+    g.setAttribute("opacity", show ? "1" : "0");
   });
   // Hide/show edges that touch PPT nodes
   document.querySelectorAll(
@@ -8400,6 +8440,9 @@ function applyAudienceFilter() {
 
     // App nodes controlled exclusively by their own checkbox
     if (node.is_app) { return; }
+
+    // PPT nodes controlled exclusively by the Slide Decks checkbox
+    if (node.type === "PPT") { return; }
 
     // Specialist tracks (col 4–5) controlled by the Specialist checkbox
     if (col === 4 || col === 5) {

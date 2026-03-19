@@ -6,6 +6,7 @@ analysis, training funnel, velocity tracking, and individual lookup.
 
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
@@ -47,7 +48,7 @@ from theme import inject_branding, apply_plotly_theme, NAVY, NAVY_DARK, NAVY_LIG
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-API_BASE = "http://localhost:8001"
+API_BASE = os.environ.get("READINESS_TRACKER_API_URL", "http://localhost:8001")
 
 st.set_page_config(
     page_title="MSS Training Readiness",
@@ -197,7 +198,7 @@ def load_trainee_detail(dodid: str):
 
 
 # ---------------------------------------------------------------------------
-# Display order for courses (excludes BSP for heatmap)
+# Display order for courses (excludes FBC for heatmap)
 # ---------------------------------------------------------------------------
 DISPLAY_ORDER = [
     "TM-10", "TM-20", "TM-30",
@@ -256,10 +257,11 @@ if active_tab == "Commander's Dashboard":
     active_courses = track_selector(key="cmd_track")
 
     # --- KPI Row ---
-    trainees = load_trainees()
-    unit_summary = load_unit_summary()
-    funnel = load_funnel()
-    velocity = load_velocity()
+    with st.spinner("Loading data..."):
+        trainees = load_trainees()
+        unit_summary = load_unit_summary()
+        funnel = load_funnel()
+        velocity = load_velocity()
 
     if not trainees:
         st.info("No trainees loaded. Seed the database or upload a roster.")

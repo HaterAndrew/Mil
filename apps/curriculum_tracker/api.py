@@ -15,6 +15,8 @@ from fastapi import Depends, FastAPI, HTTPException, Query, status
 from fastapi.responses import StreamingResponse
 from sqlalchemy.orm import Session
 
+from shared.middleware import SecurityHeadersMiddleware
+
 from .db import (
     Document,
     ReviewCycle,
@@ -58,6 +60,7 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
 )
+app.add_middleware(SecurityHeadersMiddleware)
 
 
 # ---------------------------------------------------------------------------

@@ -129,4 +129,4 @@ The following doctrine sections were added to TM-40H this session. Review after 
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*

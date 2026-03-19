@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260211_178 — PATROL CONTACT
+DTG: 110000Z FEB 2026
+Unit: 3BCT 4ID
+
+Summary: Elements of 3BCT 4ID conducted a patrol in grid 35T119570. At approximately 1045 local, the patrol encountered an unknown number of personnel moving along the ROUTE COPPER road. Personnel departed the area on foot heading south. No shots fired. Grid coordinates recorded. Report forwarded to S2 for pattern analysis.
+
+Significant Events: One patrol contact, no casualties, no weapons observed.
+Recommended Action: Monitor for pattern activity along ROUTE COPPER corridor. Increase patrol frequency in grid 35T119570 during period 0600-1800.

@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260204_056 — TERRAIN ANALYSIS
+DTG: 040000Z FEB 2026
+Unit: 3-1 BN
+
+Summary: Bridge at grid 34T533813 near BERGHEIM assessed as CLASS 40 — capable of supporting Bradley but not M1 series. Alternate crossing at grid 37T902669 remains CLASS 70.
+
+Impact to Operations: Movement planning should account for degraded conditions. Coordination with engineer assets recommended.
+Recommended Action: Update common operational picture. Disseminate terrain overlay to subordinate units. Request engineer reconnaissance if conditions persist beyond 72 hours.

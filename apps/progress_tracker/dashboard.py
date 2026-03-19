@@ -6,6 +6,7 @@ flagging, printable training records, and goal tracking.
 
 from __future__ import annotations
 
+import os
 import sys
 from datetime import date, timedelta
 from pathlib import Path
@@ -66,7 +67,7 @@ from theme import (
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-API_BASE = "http://localhost:8004"
+API_BASE = os.environ.get("PROGRESS_TRACKER_API_URL", "http://localhost:8004")
 
 st.set_page_config(
     page_title="MSS Progress Tracker",
@@ -165,7 +166,8 @@ def load_goals(dodid: str) -> list[dict]:
 # ---------------------------------------------------------------------------
 def soldier_selector(key: str = "soldier_sel") -> str | None:
     """Render a soldier search/select widget. Returns DODID or None."""
-    trainees = load_trainees()
+    with st.spinner("Loading data..."):
+        trainees = load_trainees()
     if not trainees:
         st.info("No trainees loaded. Seed both readiness_tracker and progress_tracker.")
         return None

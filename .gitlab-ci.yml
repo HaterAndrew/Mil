@@ -14,6 +14,62 @@ test:
     - if: '$CI_COMMIT_BRANCH == "main"'
       when: always
 
+lint:
+  stage: test
+  image: python:3.12-slim
+  script:
+    - pip install ruff
+    - ruff check apps/ scripts/ sitrep_tracker/ tests/
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: always
+
+security:
+  stage: test
+  image: python:3.12-slim
+  script:
+    - pip install bandit pip-audit
+    - bandit -r apps/ scripts/ sitrep_tracker/ -ll
+    - pip-audit -r requirements.txt
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: always
+
+alembic-check:
+  stage: test
+  image: python:3.12-slim
+  script:
+    - pip install -r requirements.txt alembic
+    - |
+      for app in mtt_scheduler enrollment_manager instructor_manager lessons_learned \
+                 training_metrics curriculum_tracker offline_packager sharepoint_sync \
+                 xref_validator progress_tracker glossary_search aar_aggregator data_quality; do
+        echo "--- Checking $app ---"
+        APP=$app python3 -m alembic check || exit 1
+      done
+  allow_failure: true
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: always
+
+sync-check:
+  stage: test
+  image: python:3.12-slim
+  script:
+    - python3 scripts/check_html_react_sync.py
+  allow_failure: true
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: always
+
 pages:
   stage: deploy
   needs: ["test"]

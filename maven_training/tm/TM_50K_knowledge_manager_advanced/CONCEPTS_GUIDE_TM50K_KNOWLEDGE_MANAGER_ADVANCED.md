@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-50K: ADVANCED KNOWLEDGE MANAGER — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** At TM-50K level, you are no longer maintaining a knowledge system. You are designing how the organization learns — a fundamentally different mandate with fundamentally different consequences if executed poorly.
+> **Forward:** At TM-50K level, you are no longer maintaining a knowledge system. You are designing how the organization learns — a fundamentally different mandate with fundamentally different consequences if executed poorly.
 > **Purpose:** Extends mental models from TM-40K Concepts Guide to advanced knowledge management on MSS. Prerequisite: TM-40K Concepts Guide and TM-40K qualification.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
@@ -14,7 +14,7 @@
 
 A TM-40K KM builds capture workflows, validates observations, structures repositories, and surfaces knowledge to users. Their scope is a unit. When they build poorly, that unit loses institutional memory at every rotation.
 
-A TM-50K Advanced KM designs the infrastructure within which TM-40K KMs operate. Their scope is a theater — V Corps, 21st TSC, USAREUR-AF HQ, and NATO partners. When they design poorly, the result is not a failed system — it is a theater of failed systems, each isolated, each redundant, collectively representing a massive organizational investment in knowledge that cannot be found, shared, or used.
+A TM-50K Advanced KM designs the infrastructure within which TM-40K KMs operate. Their scope is a theater — III Corps, V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, SETAF-AF, USAREUR-AF HQ, and NATO partners. When they design poorly, the result is not a failed system — it is a theater of failed systems, each isolated, each redundant, collectively representing a massive organizational investment in knowledge that cannot be found, shared, or used.
 
 ### 1-2. From Capture to Learning Infrastructure
 
@@ -47,7 +47,7 @@ A compounding learning organization has three properties:
 
 During Defender Europe 22, V Corps collected 2,400+ observations. The V Corps KM team validated 847 lessons; 312 were categorized as high-value warranting cross-domain or higher-echelon review.
 
-At exercise conclusion, 309 of 312 high-value lessons remained within the V Corps knowledge system. Three were formally escalated to USAREUR-AF doctrine staff. No distribution mechanism routed logistics lessons to 21st TSC. No linkage existed between operational planning lessons and the JOPP training program at Grafenwoehr. No coalition-releasable version of any lesson was produced.
+At exercise conclusion, 309 of 312 high-value lessons remained within the V Corps knowledge system. Three were formally escalated to USAREUR-AF doctrine staff. No distribution mechanism routed logistics lessons to 21st TSC. No IAMD coordination lessons reached 10th AAMDC. No multi-domain effects observations reached 56th MDC-E. No linkage existed between operational planning lessons and the JOPP training program at Grafenwoehr. No coalition-releasable version of any lesson was produced.
 
 Defender Europe 23 planning began 14 months later. Planners had no structured access to Defender 22 lessons — the information existed but was not findable, not linked to current planning questions, and not available to coalition partners.
 
@@ -77,7 +77,7 @@ Centralized architecture fails predictably: no single taxonomy satisfies all fun
 | Resilience to personnel loss | Low (single point of failure) | High | Federated |
 | Consistency of quality | High (if central team is strong) | Variable | Requires quality tier standards |
 
-The USAREUR-AF architecture should be federated at the storage and curation level, with a mandatory shared taxonomy core enabling cross-domain and cross-echelon search. Each major formation (V Corps, 21st TSC, USAREUR-AF HQ) maintains its own MSS knowledge repository. A Theater Knowledge Index aggregates metadata — not content — from all repositories, enabling theater-wide search without centralizing content or review authority.
+The USAREUR-AF architecture should be federated at the storage and curation level, with a mandatory shared taxonomy core enabling cross-domain and cross-echelon search. Each major formation (III Corps, V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, SETAF-AF, USAREUR-AF HQ) maintains its own MSS knowledge repository. A Theater Knowledge Index aggregates metadata — not content — from all repositories, enabling theater-wide search without centralizing content or review authority.
 
 ### 2-3. Designing the Shared Taxonomy Core
 
@@ -107,6 +107,8 @@ Critical property: no unit's knowledge is replicated into a central system it do
 V Corps operates a KM system centered on operational lessons: fires synchronization, ISR allocation, command post operations, information operations. Taxonomy is G-staff focused, exercise-driven, integrated with the JOPP review cycle.
 
 21st TSC operates a KM system centered on sustainment lessons: distribution network design, maintenance backlogs, medical logistics, contractor support integration. Taxonomy is functional-area focused, tied to logistics readiness cycles, integrated with LOGSTAT reporting.
+
+10th AAMDC operates a KM system centered on IAMD lessons: sensor-shooter integration, early warning procedures, missile defense coordination with NATO BMD architecture. 56th MDC-E captures multi-domain effects lessons: EW/cyber/space integration, cross-domain fires deconfliction, and joint targeting in contested electromagnetic environments. SETAF-AF maintains lessons focused on expeditionary operations in the Africa AOR: partner force coordination, austere logistics, and security cooperation engagement outcomes. Each system uses its own taxonomy, its own storage, and its own review cycle.
 
 A lesson about fuel distribution during Defender Europe 22 — captured in 21st TSC's system under "POL distribution, forward" — is directly relevant to V Corps planners designing fuel support for Defender Europe 23. Without a shared taxonomy mapping 21st TSC's "POL distribution" tag to the theater-level "Sustainment" domain, and without a Theater Knowledge Index making 21st TSC lessons visible to V Corps search queries, that lesson never reaches the people who need it.
 
@@ -200,7 +202,7 @@ The integrity risk is not a planner making an informed choice to use Tier 1 mate
 
 **BLUF:** Knowledge silos are the default outcome of any enterprise KM system that does not explicitly design for cross-domain integration. Every staff section with a SharePoint folder, every unit with its own Foundry dataset, every functional area with its own taxonomy is, in isolation, building a knowledge silo. The Advanced KM designs the linkages that make cross-domain knowledge discoverable.
 
-The operational cost of knowledge silos is easy to recognize in retrospect: a sustainment lesson about fuel distribution failure modes during cold-weather operations exists in the 21st TSC KM system, while a V Corps operational planner designs a cold-weather operation with a fuel support configuration that replicates the same failure mode — because they had no way to know the lesson existed.
+The operational cost of knowledge silos is easy to recognize in retrospect: a sustainment lesson about fuel distribution failure modes during cold-weather operations exists in the 21st TSC KM system, while a V Corps operational planner designs a cold-weather operation with a fuel support configuration that replicates the same failure mode — because they had no way to know the lesson existed. An IAMD coordination lesson captured by 10th AAMDC during a Patriot repositioning exercise is directly relevant to 56th MDC-E planners integrating air defense into a multi-domain task force — but it sits in a separate system with no cross-referencing mechanism.
 
 Cross-domain integration does not require merging repositories, adopting a unified taxonomy, or centralizing review authority. It requires three design elements: shared classification dimensions, linked Object Types in the Ontology, and cross-domain search access.
 
@@ -408,5 +410,4 @@ The test: if the current Advanced KM were reassigned tomorrow, could their repla
 
 ---
 
-*UNCLASSIFIED*
 *DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.*

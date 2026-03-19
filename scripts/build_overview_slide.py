@@ -107,20 +107,12 @@ add_textbox(slide,
 
 # Subtitle
 add_textbox(slide,
-    "USAREUR-AF C2DAO  ·  Wiesbaden, Germany  ·  UNCLASSIFIED",
+    "USAREUR-AF C2DAO  ·  Wiesbaden, Germany",
     Inches(0.25), Inches(0.62),
     Inches(9), Inches(0.35),
     font_size=Pt(13), bold=False, color=ARMY_TAN, align=PP_ALIGN.LEFT)
 
-# Classification badge top-right
-cls_box = add_rect(slide,
-    SLIDE_W - Inches(1.8), Inches(0.22),
-    Inches(1.6), Inches(0.38),
-    fill_color=ARMY_TAN)
-add_textbox(slide, "UNCLASSIFIED",
-    SLIDE_W - Inches(1.8), Inches(0.26),
-    Inches(1.6), Inches(0.32),
-    font_size=Pt(9), bold=True, color=DARK_GREEN, align=PP_ALIGN.CENTER)
+
 
 # ── BODY — three columns ──────────────────────────────────────────────────────
 BODY_TOP  = HEADER_H + Inches(0.18)
@@ -361,11 +353,7 @@ FOOTER_TOP = SLIDE_H - Inches(0.45)
 add_rect(slide, 0, FOOTER_TOP, SLIDE_W, Inches(0.45), fill_color=ARMY_GREEN)
 add_rect(slide, 0, FOOTER_TOP, SLIDE_W, Inches(0.04), fill_color=ARMY_TAN)
 
-# Left: classification
-add_textbox(slide, "UNCLASSIFIED",
-    Inches(0.25), FOOTER_TOP + Inches(0.08),
-    Inches(1.8), Inches(0.32),
-    font_size=Pt(9), bold=True, color=ARMY_TAN)
+
 
 # Center: org line (width capped to avoid overlapping right-aligned distribution text)
 add_textbox(slide, "USAREUR-AF  ·  C2DAO  ·  MSS-POI-001  ·  March 2026",

@@ -1,6 +1,6 @@
 # TM-40K — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** This manual trains Army Knowledge Managers (37F MOS) and staff officers in KM roles to design, build, and sustain knowledge management systems on the Maven Smart System (MSS). KMs are responsible for ensuring the formation's institutional knowledge is captured, organized, findable, and usable — not simply stored.
+> **Forward:** This manual trains Army Knowledge Managers (37F MOS) and staff officers in KM roles to design, build, and sustain knowledge management systems on the Maven Smart System (MSS). KMs are responsible for ensuring the formation's institutional knowledge is captured, organized, findable, and usable — not simply stored.
 > **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (all required); CONCEPTS_GUIDE_TM40K_KNOWLEDGE_MANAGER (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -10,30 +10,15 @@
 
 ## CHAPTER 1 — INTRODUCTION: THE KNOWLEDGE MANAGER ROLE ON MSS
 
-### 1-1. Purpose and Scope
+### 1-1. Knowledge Manager Specialist Manual
 
 **BLUF:** This manual trains Army Knowledge Managers (37F MOS) and staff officers in KM roles to design, build, and sustain knowledge management systems on the Maven Smart System (MSS). KMs are responsible for ensuring the formation's institutional knowledge is captured, organized, findable, and usable — not simply stored.
 
 This manual covers knowledge architecture design, AAR and lessons learned systems, AIP-assisted knowledge workflows, search and discovery interfaces, doctrine version management, personnel expertise mapping, and PCS/ETS knowledge transfer. It does not cover general Foundry platform operation (see TM-10 through TM-30) or developer-level coding (see TM-40G, TM-40H).
 
-**TM-40K covers:**
-- Knowledge ontology design: Object Types for documents, lessons, AARs, SOPs, expertise profiles
-- AAR capture systems using Workshop forms and structured data pipelines
-- Lessons learned ingestion, deduplication, tagging, and routing to relevant units
-- AIP Logic for document summarization, lesson extraction, content tagging, and knowledge Q&A
-- Search and discovery: Quiver and Contour configurations, Workshop browse interfaces
-- Doctrine and SOP currency tracking, change workflows, unit-level versioning
-- Personnel expertise Object Types, SME identification, and expertise gap analysis
-- Knowledge transfer workflows for PCS/ETS transitions, key person dependency mapping
-- Knowledge metrics: capture rates, access patterns, gap analysis
+**TM-40K covers** knowledge ontology design: Object Types for documents, lessons, AARs, SOPs, expertise profiles; AAR capture systems using Workshop forms and structured data pipelines; lessons learned ingestion, deduplication, tagging, and routing to relevant units; AIP Logic for document summarization, lesson extraction, content tagging, and knowledge Q&A; search and discovery: Quiver and Contour configurations, Workshop browse interfaces; doctrine and SOP currency tracking, change workflows, unit-level versioning; personnel expertise Object Types, SME identification, and expertise gap analysis; knowledge transfer workflows for PCS/ETS transitions, key person dependency mapping; and knowledge metrics: capture rates, access patterns, gap analysis.
 
-**TM-40K does NOT cover:**
-- General Workshop application construction — see TM-20 and TM-30
-- Python or PySpark coding — see TM-40G, TM-40H
-- SQL query writing — see TM-40H
-- AIP Agent Studio development — see TM-40H
-- TypeScript or OSDK development — see TM-40L
-- Data pipeline construction from scratch — see TM-30 (UI) or TM-40L (code)
+**TM-40K does NOT cover** general Workshop application construction — see TM-20 and TM-30; Python or PySpark coding — see TM-40G, TM-40H; SQL query writing — see TM-40H; AIP Agent Studio development — see TM-40H; TypeScript or OSDK development — see TM-40L; or data pipeline construction from scratch — see TM-30 (UI) or TM-40L (code).
 
 > **NOTE:** TM-40K graduates design knowledge systems that outlast their assignments. Every architecture decision should be evaluated against the question: "Will the Soldier replacing me be able to understand, maintain, and extend this system after a two-week handoff?"
 
@@ -51,7 +36,7 @@ This manual covers knowledge architecture design, AAR and lessons learned system
 
 ### 1-3. The KM Role in USAREUR-AF
 
-USAREUR-AF is the Army Service Component Command (ASCC) to United States European Command (USEUCOM), executing theater land operations across the European AOR, integrating with NATO Allied Command Operations (ACO), and supporting Joint All-Domain Command and Control (JADC2). The formation conducts major exercises — Combined Resolve, Defender Europe, Swift Response — in rotation, generating large volumes of after-action data, lessons learned, and TTPs each cycle.
+USAREUR-AF is the Army Service Component Command (ASCC) to United States European Command (USEUCOM) and United States Africa Command (USAFRICOM), executing theater land operations across the European and African AOR, integrating with NATO Allied Command Operations (ACO), and supporting Joint All-Domain Command and Control (JADC2). The formation conducts major exercises — Combined Resolve, Defender Europe, Swift Response — in rotation, generating large volumes of after-action data, lessons learned, and TTPs each cycle.
 
 The institutional challenge: USAREUR-AF has a persistently high PCS tempo. Hard-won knowledge from Combined Resolve rotations departs with the personnel who participated. Each new exercise cohort risks relearning lessons already paid for. Knowledge Managers are the formation's defense against this institutional forgetting.
 

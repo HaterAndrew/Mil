@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250403_136 — IED EVENT
+DTG: 030000Z APR 2025
+Unit: DIV CAV
+
+Summary: At 1415 local, a suspected IED was identified by route clearance element in grid 37T820993 along ROUTE DELTA. EOD requested and responded within 31 minutes. Device rendered safe. No casualties or equipment damage.
+
+Device Description: Pressure-plate initiator, command wire, approx 3kg charge. Collected for exploitation. DNA swabs taken.
+Recommended Action: Restrict movement along ROUTE DELTA until EOD clearance complete. Disseminate grid data to adjacent units.

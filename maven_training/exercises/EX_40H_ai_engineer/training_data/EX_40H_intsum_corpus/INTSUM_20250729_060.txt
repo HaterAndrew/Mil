@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250729_060 — SIGINT SUMMARY
+DTG: 290000Z JUL 2025
+Unit: 12th CAB
+
+Summary: SIGINT collection assets detected 6 HF emitter(s) in the vicinity of NAI 11 (grid 33T371505). Emissions lasted approximately 23 minutes. Intercept forwarded to technical channels for further analysis.
+
+Assessment: Low-power emissions detected. Possible handheld radio or personal communication device.
+Recommended Action: Continue collection against NAI 11. Request additional SIGINT coverage during 1800-0600 window.

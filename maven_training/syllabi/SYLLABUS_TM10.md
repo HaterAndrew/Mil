@@ -6,7 +6,7 @@
 | **Level** | TM-10 (Foundational — all personnel) |
 | **Duration** | 1 day (8 hours) |
 | **Prerequisite** | None |
-| **Audience** | All Soldiers, officers, and civilians assigned to USAREUR-AF |
+| **Audience** | All Soldiers, officers, and Civilians assigned to USAREUR-AF |
 | **Format** | Instructor-led lab + practical exercise |
 | **Location** | MSS Training Environment |
 
@@ -72,8 +72,9 @@ See **EX_10 — MSS Operator Basics** for the full task list, evaluator notes, a
 | 3 | Identify the lowest-readiness unit and the equipment category driving it; record the data steward contact | Correct unit identified; steward contact recorded |
 | 4 | Export current filtered view as PDF; verify last-updated timestamp in output; handle per classification SOP | Export completes; timestamp visible |
 | 5 | Navigate to a second dashboard relevant to your role; bookmark it to your MSS home screen | Bookmark appears on home screen |
+| 6 | State the classification marking and authorized distribution for the provided dataset (verbal or written) | Correct marking identified; correct authorized distribution stated |
 
-**Go standard:** Go on 4 of 5 tasks. No-Go on Task 2 (filters) or Task 4 (export) is an automatic overall No-Go regardless of other task results.
+**Go standard:** Go on 5 of 6 tasks. No-Go on Task 2 (filters), Task 4 (export), or Task 6 (classification) is an automatic overall No-Go regardless of other task results.
 
 ---
 
@@ -84,8 +85,8 @@ See **EX_10 — MSS Operator Basics** for the full task list, evaluator notes, a
 | Form | Description |
 |---|---|
 | **Pre-course** | No formal pre-test. Instructor confirms MSS account access before training begins. |
-| **End-of-course evaluation** | Practical exercise (5 tasks per EX_10). Evaluated using T&EO TM10-01 through TM10-05. |
-| **Passing standard** | Go on 4 of 5 tasks completed independently. Tasks 2 (filters) and 4 (export/classification) are critical items — No-Go on either is an automatic overall No-Go. |
+| **End-of-course evaluation** | Practical exercise (6 tasks per EX_10). Evaluated using T&EO TM10-01 through TM10-06. |
+| **Passing standard** | Go on 5 of 6 tasks completed independently. Tasks 2 (filters), 4 (export/classification), and 6 (classification marking) are critical items — No-Go on any is an automatic overall No-Go. |
 
 *TM-10 does not use a written POST exam. The evaluation instrument is the practical exercise scored via T&EO.*
 
@@ -95,7 +96,7 @@ See **EX_10 — MSS Operator Basics** for the full task list, evaluator notes, a
 
 | Outcome | Action |
 |---|---|
-| **No-Go — Task 2 or Task 4 (critical items)** | Full re-evaluation required. Schedule with unit training coordinator. Recommend self-study of TM-10, Chapters 3 and 7 before retake. |
+| **No-Go — Task 2, Task 4, or Task 6 (critical items)** | Full re-evaluation required. Schedule with unit training coordinator. Recommend self-study of TM-10, Chapters 3, 6, and 7 before retake. |
 | **No-Go — Tasks 1, 3, or 5 only** | Targeted task retry. Instructor may authorize same-day retry on the specific failed task at their discretion. |
 | **No-Go — two or more non-critical tasks** | Full re-evaluation required. |
 
@@ -105,7 +106,7 @@ Re-evaluation must be scheduled through the unit training coordinator. There is 
 
 ## Go Criteria
 
-Pass requires completing 4 of 5 tasks independently — no instructor hints, no external references beyond TM-10. Correct recovery from a wrong click counts. Watching the instructor or being talked through a step does not. Critical items (Tasks 2 and 4) must both be Go for an overall Go.
+Pass requires completing 5 of 6 tasks independently — no instructor hints, no external references beyond TM-10. Correct recovery from a wrong click counts. Watching the instructor or being talked through a step does not. Critical items (Tasks 2, 4, and 6) must all be Go for an overall Go.
 
 ---
 
@@ -147,5 +148,5 @@ TM-10 is the entry point for the full MSS curriculum. After completing TM-10:
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Syllabus TM-10 | Version 1.0 | March 2026*

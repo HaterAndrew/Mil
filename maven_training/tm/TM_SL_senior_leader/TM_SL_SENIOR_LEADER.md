@@ -1,7 +1,7 @@
 # TM-SL — SENIOR LEADER EXECUTIVE COURSE
 ## Maven Smart System (MSS) — USAREUR-AF
 
-> **BLUF:** This course gives battalion commanders, command sergeants major, and equivalent senior leaders the operational understanding of MSS required to lead formations that depend on data-driven decision-making. You will not build anything. You will learn what the platform produces, how data products affect your formation's readiness and operations, and how to guide your staff's use of data as a command function. TM-SL replaces TM-10 for O-5 / E-9+ personnel.
+> **Forward:** This course gives battalion commanders, command sergeants major, and equivalent senior leaders the operational understanding of MSS required to lead formations that depend on data-driven decision-making. You will not build anything. You will learn what the platform produces, how data products affect your formation's readiness and operations, and how to guide your staff's use of data as a command function. TM-SL replaces TM-10 for O-5 / E-9+ personnel.
 > **Prereqs:** None. This course assumes senior-level operational experience and familiarity with Army doctrine. No technical background required.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -9,7 +9,7 @@
 
 # CHAPTER 1 — WHY THIS COURSE EXISTS
 
-## 1-1. The Senior Leader Problem
+## 1-1. Senior Leader Manual
 
 You already know how to fight. You already know how to read an operations order, assess readiness, and make decisions under uncertainty. What you may not know is how the data environment underneath those decisions has changed — and what that means for how you lead.
 
@@ -62,7 +62,7 @@ The following doctrine and policy documents establish the authority, framework, 
 - **ADP 3-13, Information** — Establishes information as a joint function and combat power. This is the doctrinal foundation for treating data as a command function, not an IT function. Every MSS data product exists to deliver the information advantage described in ADP 3-13.
 - **ADP 6-0, Mission Command** — Establishes that commanders drive the operations process through understanding, visualizing, describing, directing, leading, and assessing. MSS directly supports three of these (understanding, directing, assessing). Chapter 3 of this course applies ADP 6-0 to data products.
 - **ADP 5-0, The Operations Process** — Defines the commander's role in planning, preparation, execution, and assessment. Data products from MSS support continuous assessment during execution — the phase where most formations lose visibility. The decision cycle in Chapter 3 maps to the assess-decide-direct loop in ADP 5-0.
-- **AR 25-1, Army Information Technology (Jul 2019)** — The regulatory foundation for Army data governance. Establishes the VAUTI (Visible, Accessible, Understandable, Trustable, Interoperable) data quality principles. Chapter 5 of this course applies VAUTI as your evaluation framework for data products.
+- **AR 25-1, Army Information Technology (Jul 2019)** — The regulatory foundation for Army data governance. Establishes the VAUTI (Visible, Accessible, Understandable, Trustable, Interoperable) data quality principles, since expanded to VAULTIS-A (adding Linked, Secure, Auditable). Chapter 5 of this course applies the full VAULTIS-A framework as your evaluation standard for data products.
 - **AR 350-1, Army Training and Leader Development** — Governs training policy and leader development. The training pipeline described in Chapter 4 (TM-10 through TM-50) is structured under AR 350-1 standards.
 - **FM 7-0, Training** — Unit training management procedures. Provides the context for how TM-SL and the broader MSS training pipeline integrate with your formation's training plan.
 
@@ -70,7 +70,7 @@ The following doctrine and policy documents establish the authority, framework, 
 
 > The following are strategic guidance documents — not doctrine — that inform MSS operations and governance.
 
-- **DoD Data Strategy (October 2020)** — Foundation for the VAUTI principles used in Chapter 5. Establishes the federal mandate that data be treated as a strategic asset.
+- **DoD Data Strategy (October 2020)** — Foundation for the VAUTI/VAULTIS-A principles used in Chapter 5. Establishes the federal mandate that data be treated as a strategic asset.
 - **Army Data Plan (2022)** — 11 strategic objectives for Army data transformation. MSS implements several of these at the theater level.
 - **Army Cloud Plan (2022)** — Zero Trust architecture, secure development, data-driven decisions.
 - **Army CIO Data Stewardship Policy (April 2, 2024)** — Establishes the stewardship hierarchy and data chain of responsibility shown in Chapter 5's governance chain.
@@ -220,17 +220,17 @@ TM-10 (all other personnel)
 
 > **NOTE:** TM-SL does not feed into the TM pipeline. A senior leader who completes TM-SL and later wants hands-on qualification enrolls in TM-10 and progresses normally.
 
-## 4-2. Builder Sprint (BSP)
+## 4-2. Foundry Bootcamp (FBC)
 
-The Builder Sprint is a quarterly 5-day supervised build event outside the TM chain. A TM-20-qualified builder brings a command-approved operational project and builds it with SME support in the room.
+The Foundry Bootcamp is a quarterly 5-day supervised build event outside the TM chain. A TM-20-qualified builder brings a command-approved operational project and builds it with SME support in the room.
 
-BSP does not grant TM-30 credit or unlock TM-40. It exists because some builders learn best when solving a real problem under pressure. It is an excellent use of builder time when your formation has a specific project that needs to get built.
+FBC does not grant TM-30 credit or unlock TM-40. It exists because some builders learn best when solving a real problem under pressure. It is an excellent use of builder time when your formation has a specific project that needs to get built.
 
-**What the commander needs to know about BSP:**
+**What the commander needs to know about FBC:**
 - Prereq: TM-20 Go + command-approved project
 - The project must have a named consumer and a specific output
 - Command sponsorship (supervisor signature) is required
-- BSP seats are limited — submit enrollment requests early
+- FBC seats are limited — submit enrollment requests early
 
 ## 4-3. Resourcing the Pipeline
 
@@ -276,7 +276,7 @@ Governance in MSS covers:
 ```
 Army CIO / Mission Area Data Officers (MADOs)
         ↓
-DoD Data Strategy (VAUTI framework)
+DoD Data Strategy (VAULTIS-A framework)
         ↓
 Army CIO Data Stewardship Policy (April 2, 2024)
         ↓
@@ -306,19 +306,24 @@ These are the indicators that your formation's data governance is breaking down:
 | Builders making changes without review | No change management process | Implement peer review for production data products |
 | Classification markings missing or inconsistent on data products | Security violation in progress | Stop. Fix immediately. Retrain. |
 
-## 5-4. The VAUTI Framework
+## 5-4. The VAUTI / VAULTIS-A Framework
 
-The DoD Data Strategy (October 2020) uses the VAUTI framework — codified in AR 25-1 — to describe the attributes of well-governed data. As a senior leader, these five attributes are your checklist for evaluating any data product:
+The DoD Data Strategy (October 2020) introduced the VAUTI framework — codified in AR 25-1 — to describe the attributes of well-governed data. Subsequent Army data governance guidance expanded VAUTI to **VAULTIS-A** by adding three dimensions: **Linked** (data connected across systems and domains), **Secure** (data protected commensurate with its sensitivity), and **Auditable** (full provenance and change history maintained for accountability). As a senior leader, these eight attributes are your checklist for evaluating any data product:
 
 | Attribute | Question to Ask |
 |---|---|
 | **Visible** | Can the people who need this data find it? |
 | **Accessible** | Can authorized users get to it without unnecessary barriers? |
 | **Understandable** | Can a consumer interpret this data without calling the builder? |
+| **Linked** | Is this data connected to related data across systems and domains? |
 | **Trusted** | Is the data accurate, current, and from a verified source? |
 | **Interoperable** | Can this data be combined with data from other systems and shared with partners? |
+| **Secure** | Is the data protected commensurate with its sensitivity and classification? |
+| **Auditable** | Is the data's provenance and change history maintained for accountability and compliance? |
 
-If a data product fails any of these five, it has a governance problem that needs command attention.
+If a data product fails any of these eight, it has a governance problem that needs command attention.
+
+> **NOTE:** Older references use VAUTI (5 attributes) or VAULTIS (7 attributes). VAULTIS-A (8 attributes) is the current standard. When evaluating data products, apply the full VAULTIS-A framework.
 
 ---
 
@@ -386,7 +391,7 @@ Senior leaders are familiar with the Plan of Action and Milestones (POAM) — a 
 
 ## 7-1. Who They Are
 
-Your formation's data professionals come from varied backgrounds. Some are 17-series Soldiers with formal training. Some are 25-series NCOs who taught themselves to build. Some are warrant officers or civilians with deep technical expertise. Some are infantry or logistics Soldiers who happened to be good with data and got pulled into the role.
+Your formation's data professionals come from varied backgrounds. Some are 17-series Soldiers with formal training. Some are 25-series NCOs who taught themselves to build. Some are warrant officers or Civilians with deep technical expertise. Some are infantry or logistics Soldiers who happened to be good with data and got pulled into the role.
 
 Regardless of background, data professionals share a common trait: they solve problems by building things. Their output is not a briefing or a memo — it is a functioning product. Treat them accordingly.
 
@@ -502,7 +507,7 @@ TM-SL is terminal — there is no TM-SL-20 or progression requirement. But the c
 |---|---|
 | Get hands-on with the platform | Enroll in TM-10 and proceed through the standard pipeline |
 | Send builders to advanced training | Ensure TM-20 Go → enroll in TM-30 → select TM-40 track |
-| Get a project built quickly | Submit a BSP project for the next quarterly sprint (requires TM-20 builder + command-approved project) |
+| Get a project built quickly | Submit a FBC project for the next quarterly bootcamp (requires TM-20 builder + command-approved project) |
 | Engage with C2DAO on data strategy | Contact your Functional Data Manager or the C2DAO directly |
 
 ## 9-3. Points of Contact
@@ -516,5 +521,5 @@ TM-SL is terminal — there is no TM-SL-20 or progression requirement. But the c
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-SL Senior Leader Executive Course | Version 1.0 | March 2026*

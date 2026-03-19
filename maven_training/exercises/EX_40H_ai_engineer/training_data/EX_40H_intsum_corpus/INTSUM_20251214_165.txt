@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20251214_165 — TERRAIN ANALYSIS
+DTG: 140000Z DEC 2025
+Unit: 2BCT 1AD
+
+Summary: Flooding along the river valley near SCHWARZBACH has reduced available crossing points. Only the bridge at grid 35T525847 remains viable for military traffic.
+
+Impact to Operations: Movement planning should account for degraded conditions. Coordination with engineer assets recommended.
+Recommended Action: Update common operational picture. Disseminate terrain overlay to subordinate units. Request engineer reconnaissance if conditions persist beyond 72 hours.

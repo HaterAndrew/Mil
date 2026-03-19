@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20251109_071 — OBSERVATION REPORT
+DTG: 090000Z NOV 2025
+Unit: 2BCT 1AD
+
+Summary: OP FALCON reported observation of 12 unidentified vehicles moving in convoy formation along ROUTE ALPHA at 1030 local. Vehicles: URAL. Movement direction: WEST. No hostile action observed. Convoy cleared the AO within 12 minutes.
+
+Assessment: Unknown purpose. Vehicle type and movement pattern do not match known civilian routes. Does not meet CCIR threshold but logged for trend analysis.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

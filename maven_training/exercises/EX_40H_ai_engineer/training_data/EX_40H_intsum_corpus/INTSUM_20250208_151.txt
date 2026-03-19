@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250208_151 — WEATHER IMPACT
+DTG: 080000Z FEB 2025
+Unit: 3-2 BN
+
+Summary: Heavy fog expected in the NORDTAL valley from 0400-0900 local for the next 3 days. Visibility below 200m.
+
+Operational Impact: Ground movement may be delayed. Route conditions will require reassessment.
+Recommended Action: Adjust operations tempo as needed. Monitor weather updates from corps weather team. Coordinate with aviation for revised ISR windows.

@@ -1,0 +1,10 @@
+
+INTSUM INTSUM_20250629_177 — HUMINT REPORT
+DTG: 290000Z JUN 2025
+Unit: 2-1 BN
+
+Summary: During engagement with a civil affairs engagement, information was obtained indicating the following: source reported that a known meeting site in LICHTENFELS has seen increased activity.
+
+Source Reliability/Information Credibility: F-6 (Cannot Be Judged — Cannot Be Judged).
+Corroboration: No independent corroboration at this time. Cross-referencing with patrol reports and SIGINT holdings in progress.
+Recommended Action: Task patrols to confirm or deny reporting. Submit IIR through appropriate channels.

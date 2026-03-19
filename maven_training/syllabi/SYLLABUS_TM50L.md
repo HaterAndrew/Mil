@@ -131,5 +131,5 @@ Complete **7+ duty days before Day 1:**
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Syllabus TM-50L | Version 1.0 | March 2026*

@@ -6,7 +6,7 @@
 | **Level** | TM-40G (ORSA Specialist Track) |
 | **Duration** | 5 days (40 hours) |
 | **Prerequisites** | TM-10, TM-20, TM-30 (all Go evaluations on file — **REQUIRED**, not recommended); Data Literacy Technical Reference (recommended); graduate-level quantitative background (statistics, linear algebra, optimization); working proficiency in Python or R |
-| **Audience** | FA49 Operations Research officers, quantitative analysts, ORSA-assigned civilians |
+| **Audience** | FA49 Operations Research officers, quantitative analysts, ORSA-assigned Civilians |
 | **Format** | Instructor-led lab + guided practice + commander brief practical |
 | **Location** | MSS Training Environment (Code Workspace provisioned) |
 
@@ -202,5 +202,5 @@ WFF track analysts (TM-40A through TM-40F) are the operational consumers of ORSA
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Syllabus TM-40G | Version 2.0 | March 2026*

@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-20 COMPANION — BUILDER · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** A Builder is a trained MSS user who creates pipelines, Ontology configurations, and applications using no-code tools. Builders are not operators, and they are not Advanced Builders or developers. Understanding where you sit in this hierarchy determines what you are authorized — and equipped — to build.
+> **Forward:** A Builder is a trained MSS user who creates pipelines, Ontology configurations, and applications using no-code tools. Builders are not operators, and they are not Advanced Builders or developers. Understanding where you sit in this hierarchy determines what you are authorized — and equipped — to build.
 > **Purpose:** Develops the mental models required to design, build, and govern no-code applications and data pipelines on MSS effectively. Read before beginning TM-20 task instruction.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
@@ -137,7 +137,7 @@ Sources available to TM-20 Builders are limited to pre-authorized connectors and
 |---|---|---|
 | Existing MSS dataset | Another team's curated SITREP feed | Data Steward confirmation that sharing is approved |
 | Pre-built connector | GCSS-A vehicle feed, SharePoint file | C2DAO approval for initial connector; Data Steward for each new use |
-| Manual file upload (exceptional) | One-time CSV of exercise data | Data Steward written approval, marked FOUO or below |
+| Manual file upload (exceptional) | One-time CSV of exercise data | Data Steward written approval, marked CUI or below |
 
 Document all ingestion sources in your pipeline description field. If you cannot name the authorizing official and the date of approval, the ingestion is not authorized.
 
@@ -184,7 +184,7 @@ A common Builder misconception: "I need my pipeline to update the Ontology." Pip
 |---|---|
 | GCSS-A vehicle status feed | One vehicle, one reporting date |
 | SITREP feed | One SITREP submission, one unit, one report period |
-| Personnel readiness | One soldier, one snapshot date |
+| Personnel readiness | One Soldier, one snapshot date |
 | Maintenance log | One maintenance event, one vehicle, one date |
 
 **Why grain matters:** Your Object Type's primary key must map to the grain. If your pipeline produces one row per vehicle per day and you set the primary key to `vehicle_id`, you get one Object per vehicle — which object represents today's record vs. yesterday's? The system will arbitrarily pick one. Primary key must uniquely identify one row at the grain you intend.
@@ -308,7 +308,7 @@ This dependency chain is the reason for the build-order rule: Pipeline first. On
 
 ### 4-1. Object Type: What It Represents and the Primary Key
 
-An **Object Type** is a named entity in MSS that represents a real-world thing: a unit, a soldier, a vehicle, a maintenance record, a SITREP submission. It is backed by a curated dataset. Each row in that dataset becomes one Object instance.
+An **Object Type** is a named entity in MSS that represents a real-world thing: a unit, a Soldier, a vehicle, a maintenance record, a SITREP submission. It is backed by a curated dataset. Each row in that dataset becomes one Object instance.
 
 The **Primary Key** is the property that uniquely identifies each object. It must be unique across every row in the backing dataset at the intended grain.
 
@@ -316,7 +316,7 @@ The **Primary Key** is the property that uniquely identifies each object. It mus
 |---|---|---|
 | `UnitStatus` | One row per unit per report date | `unit_id` + `report_date` (composite) or a generated unique ID |
 | `VehicleReadiness` | One row per vehicle (latest status only) | `vehicle_id` |
-| `SoldierReadiness` | One row per soldier | `dodid` |
+| `SoldierReadiness` | One row per Soldier | `dodid` |
 | `MaintenanceRecord` | One row per maintenance event | `event_id` |
 
 > **WARNING:** If your primary key column is not unique in the backing dataset, objects will overwrite each other. Preview your Object Type immediately after creation. If the object count is lower than your row count, you have a primary key collision — fix the dataset before continuing.
@@ -554,7 +554,7 @@ If a promoted change causes a production issue:
 
 ### 7-1. Why Naming Conventions Exist
 
-MSS is operated by dozens of teams across USAREUR-AF, V Corps, 21st TSC, and 7th ATC. A resource named ambiguously:
+MSS is operated by dozens of teams across USAREUR-AF, III Corps, V Corps, 21st TSC, 7th ATC, 10th AAMDC, 56th MDC-E, and SETAF-AF. A resource named ambiguously:
 
 - Cannot be found by a new team member who inherits the project.
 - Cannot be audited by the C2DAO during governance reviews.

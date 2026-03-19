@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250519_152 — TERRAIN ANALYSIS
+DTG: 190000Z MAY 2025
+Unit: 2-12 CAV
+
+Summary: Snowfall accumulation of 15-20cm reported in the BERGHEIM pass area. Road conditions along ASR PANTHER degraded. Engineer assessment requested.
+
+Impact to Operations: Movement planning should account for degraded conditions. Coordination with engineer assets recommended.
+Recommended Action: Update common operational picture. Disseminate terrain overlay to subordinate units. Request engineer reconnaissance if conditions persist beyond 72 hours.

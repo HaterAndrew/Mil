@@ -1,6 +1,6 @@
 # TM-40A — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** MSS integrates multi-INT data streams and intelligence cycle functions into a single enterprise environment. This chapter establishes how the Intelligence WFF operates within MSS, how MSS relates to legacy intel tools, and the access control framework governing intelligence workspaces.
+> **Forward:** MSS integrates multi-INT data streams and intelligence cycle functions into a single enterprise environment. This chapter establishes how the Intelligence WFF operates within MSS, how MSS relates to legacy intel tools, and the access control framework governing intelligence workspaces.
 > **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; CONCEPTS_GUIDE_TM40A_INTELLIGENCE (required before beginning this manual). Familiarity with MSS workspace navigation and basic data querying (TM-10 standard) is assumed. No pipeline development or code experience required.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -16,7 +16,7 @@
 
 **BLUF:** MSS integrates multi-INT data streams and intelligence cycle functions into a single enterprise environment. This chapter establishes how the Intelligence WFF operates within MSS, how MSS relates to legacy intel tools, and the access control framework governing intelligence workspaces.
 
-### 1-1. The Intelligence Warfighting Function and MSS
+### 1-1. Intelligence Specialist Manual
 
 The Intelligence WFF facilitates understanding of the operational environment, enemy, terrain and weather, and civil considerations (ADP 2-0, para 1-1). It supports the commander's situational understanding and drives the targeting cycle, operations process, and risk assessment across all warfighting functions.
 
@@ -1010,7 +1010,7 @@ The 35H maintains an RFI tracking dashboard displaying: all open RFIs by priorit
 
 | Level | MSS Access Requirement | Key Restrictions | Handling Notes |
 |---|---|---|---|
-| UNCLASSIFIED // FOUO | Standard MSS access + documented need-to-know | No distribution outside authorized users without IMO review | Mark all exports FOUO |
+| CUI | Standard MSS access + documented need-to-know | No distribution outside authorized users without IMO review | Mark all exports CUI |
 | SECRET | SECRET clearance + need-to-know | Standard SECRET handling; no foreign national access without authorization | Standard SECRET handling |
 | SECRET // NOFORN | SECRET clearance + NOFORN determination + need-to-know | Not releasable to partner nations under any circumstances | Verify before sharing with allied liaison officers |
 | SECRET // REL TO [COUNTRY] | SECRET clearance + bilateral MOU authorization + need-to-know | Releasable only to named countries per current MOU | Confirm MOU is current before any release |
@@ -1034,7 +1034,7 @@ When compiling an MSS product from multiple sources:
 | Printed document | Apply classification markings top and bottom; handle per AR 380-5 |
 | Email attachment (SIPR) | Classify per document; confirm recipient clearance and need-to-know |
 | USB/removable media | Requires IMO approval; must be authorized media; log the export with date, recipient, and classification |
-| Dashboard screenshot | Classify as FOUO minimum; confirm full classification before distribution |
+| Dashboard screenshot | Classify as CUI minimum; confirm full classification before distribution |
 | Briefing slide | Apply classification markings; G2/S2 approval before briefing outside section |
 
 ---
@@ -1091,7 +1091,7 @@ Submit workspace creation requests to the MSS administrator (35T or S6 designee)
 |---|---|
 | Requesting section | Full unit designation and section (e.g., 1BCT S2) |
 | Workspace type | IPOE / All-Source / Collection Management / GEOINT / HUMINT / CI / Targeting |
-| Required classification | FOUO / SECRET / SECRET//NOFORN / TS-SCI |
+| Required classification | CUI / SECRET / SECRET//NOFORN / TS-SCI |
 | Security manager approval | Name and date of security manager approval for the classification level |
 | Workspace owner | Name, position, and unit of the workspace owner |
 | Initial access list | Full name, position, clearance level, and access role for each initial user |
@@ -1854,4 +1854,3 @@ For technical specialists pursuing advanced analytical or engineering capability
 - **DoD Directive 3000.09, Autonomy in Weapon Systems (January 2023 update)** — Policy on autonomous and semi-autonomous functions in weapon systems; context for AI-enabled intelligence systems
 - **DDOF Playbook v2.2 (December 2025)** — T2COM C2DAO; VAULTIS-A quality framework (8 dimensions); 6-phase data product lifecycle; 85% quality gate; MVP mandate 30 days
 
-*UNCLASSIFIED // FOR OFFICIAL USE ONLY*

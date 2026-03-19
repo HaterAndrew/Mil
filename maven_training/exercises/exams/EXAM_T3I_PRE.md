@@ -115,5 +115,5 @@ D. Followed standard procedure for borderline cases
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Pre-Test T3-I | Version 1.0 | March 2026*

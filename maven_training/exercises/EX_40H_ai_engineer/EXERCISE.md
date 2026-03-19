@@ -92,7 +92,7 @@ Training dataset: ~200 synthetic INTSUM documents (plain text, unclassified).
 
 ## NEXT STEPS
 
-Participants who receive an overall Go on EX_40H are eligible to enroll in **TM-50H — Advanced AI Engineer**. TM-50H extends into multi-agent architectures, adversarial robustness, and production deployment governance. TM-50 is G–M only (advanced specialist tracks).
+Participants who receive an overall Go on EX_40H are eligible to enroll in **TM-50H — Advanced AI Engineer**. TM-50H extends into multi-agent architectures, adversarial robustness, and production deployment governance. TM-50 is G–O (advanced specialist tracks).
 
 ## Supplemental — Build with AIP Official Tutorials
 

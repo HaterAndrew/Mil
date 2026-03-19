@@ -1,5 +1,5 @@
 # MSS TRAINING PROGRAM — INFORMATION BRIEF (DCG)
-**ODT | USAREUR-AF | March 2026 | UNCLASSIFIED**
+**ODT | USAREUR-AF | March 2026**
 
 **BLUF:** The MSS training program is built, published, and governance-complete. Partner nations are requesting access. We need the DCG's endorsement to move a TASKORD request to the CG for MTT activation.
 
@@ -29,7 +29,7 @@ Inform the DCG on MSS training program readiness and request endorsement to pres
 | TM-30 — Advanced Builder | 40 hrs | Unit data leads | Published |
 | TM-40 — Specialist (14 tracks) | 40 hrs ea | WfF analysts, engineers, PMs | Published |
 | TM-50 — Advanced Specialist (6 tracks) | 40 hrs ea | Senior practitioners | Published |
-| T3 — Tier 3 (2 tracks) | TBD | MSC force multipliers, instructors | In development |
+| T3 — Tier 3 (2 tracks) | T3-I: 40 hrs; T3-F: 4 hrs | MSC force multipliers, instructors | Published |
 
 **Total published artifacts:** 254 PDFs — TM documents, concepts guides, syllabi, exercises, pre/post exams, governance documents, and doctrine references.
 
@@ -39,9 +39,9 @@ Inform the DCG on MSS training program readiness and request endorsement to pres
 
 - **Training Hub:** mss-training-hub.pages.dev (migrating to network subdomain)
 - **Course Portal:** Interactive pathway visualization with self-enrollment
-- **Builder Sprint Program (BSP):** Quarterly 5-day supervised build events for TM-20+ graduates
+- **Foundry Bootcamp Program (FBC):** Quarterly 5-day supervised build events for TM-20+ graduates
 - **Self-Study Packages:** Every TM-40/50 track includes a self-study addendum
-- **Coalition-Ready:** Entire curriculum is UNCLASSIFIED; integrates NATO data standards (NAFv4, STANAGs)
+- **Coalition-Ready:** Integrates NATO data standards (NAFv4, STANAGs)
 
 ---
 

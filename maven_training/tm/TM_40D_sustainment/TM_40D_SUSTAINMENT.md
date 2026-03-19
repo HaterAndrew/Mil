@@ -1,6 +1,6 @@
 # TM-40D — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-40D teaches sustainment practitioners — supply sergeants, maintenance NCOs, transportation coordinators, ammunition specialists, and HR professionals — how to use MSS in daily sustainment work. No coding or pipeline development. This is operational use of a data-enabled enterprise platform in direct support of the Sustainment warfighting function.
+> **Forward:** TM-40D teaches sustainment practitioners — supply sergeants, maintenance NCOs, transportation coordinators, ammunition specialists, and HR professionals — how to use MSS in daily sustainment work. No coding or pipeline development. This is operational use of a data-enabled enterprise platform in direct support of the Sustainment warfighting function.
 > **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; CONCEPTS_GUIDE_TM40D_SUSTAINMENT (required before beginning this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -14,7 +14,7 @@
 
 **BLUF:** TM-40D teaches sustainment practitioners — supply sergeants, maintenance NCOs, transportation coordinators, ammunition specialists, and HR professionals — how to use MSS in daily sustainment work. No coding or pipeline development. This is operational use of a data-enabled enterprise platform in direct support of the Sustainment warfighting function.
 
-### 1-1. The Sustainment Warfighting Function
+### 1-1. Sustainment Specialist Manual
 
 The Sustainment warfighting function is the related tasks and systems that provide support and services to ensure freedom of action, extend operational reach, and prolong endurance (ADP 4-0, para 1-1). Sustainment enables commanders to sustain their forces anywhere, in any environment, for as long as necessary (ADP 4-0, para 1-3).
 
@@ -149,26 +149,9 @@ Workspace configuration varies by sustainment echelon.
 
 ### 1-7. Scope: What TM-40D Covers and Does Not Cover
 
-**TM-40D covers:**
+**TM-40D covers** supply chain management and LOGSTAT procedures for 92A, 92Y, 90A, and S4 sections; maintenance management workflows for 91-series and 915A/914A warrant officers; transportation and distribution coordination for 88-series MOSs and 88N coordinators; ammunition management procedures for 89A and 89B specialists; petroleum and water operations for 92F and 92W specialists; HR and personnel accountability for 42A specialists; field services data management for 92G food service; echelon-specific procedures from company through TSC; and degraded operations and fallback procedures.
 
-- Supply chain management and LOGSTAT procedures for 92A, 92Y, 90A, and S4 sections
-- Maintenance management workflows for 91-series and 915A/914A warrant officers
-- Transportation and distribution coordination for 88-series MOSs and 88N coordinators
-- Ammunition management procedures for 89A and 89B specialists
-- Petroleum and water operations for 92F and 92W specialists
-- HR and personnel accountability for 42A specialists
-- Field services data management for 92G food service
-- Echelon-specific procedures from company through TSC
-- Degraded operations and fallback procedures
-
-**TM-40D does NOT cover:**
-
-- Building MSS pipelines, transforms, or dashboards — see TM-20 and TM-30
-- Ontology modification or dataset schema changes — see TM-30
-- Machine learning models — see TM-40M (TM-50M)
-- GCSS-Army transaction entry procedures — see GCSS-Army user documentation
-- SAMS-E work order entry — see SAMS-E user manuals
-- IPPS-A personnel transactions — see IPPS-A user documentation
+**TM-40D does NOT cover** building MSS pipelines, transforms, or dashboards — see TM-20 and TM-30; ontology modification or dataset schema changes — see TM-30; machine learning models — see TM-40M (TM-50M); GCSS-Army transaction entry procedures — see GCSS-Army user documentation; SAMS-E work order entry — see SAMS-E user manuals; or IPPS-A personnel transactions — see IPPS-A user documentation.
 
 ### 1-8. Relationship to Other TMs in the MSS Curriculum
 
@@ -1813,7 +1796,6 @@ Use this checklist before every distribution synchronization meeting or LOGSTAT 
 
 *TM-40D, Version 1.0, March 2026*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
-*UNCLASSIFIED // FOR OFFICIAL USE ONLY*
 
 **DoD and Army Strategic References:**
 

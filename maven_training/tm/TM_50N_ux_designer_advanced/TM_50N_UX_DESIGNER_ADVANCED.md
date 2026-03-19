@@ -1,6 +1,6 @@
 # TM-50N — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-50N qualifies advanced UI/UX designers to build and govern design systems at scale, design for DDIL and cross-domain environments, lead coalition UI integration, and establish design operations that sustain quality across the MSS application portfolio. This manual extends TM-40N from individual application design to enterprise design leadership.
+> **Forward:** TM-50N qualifies advanced UI/UX designers to build and govern design systems at scale, design for DDIL and cross-domain environments, lead coalition UI integration, and establish design operations that sustain quality across the MSS application portfolio. This manual extends TM-40N from individual application design to enterprise design leadership.
 > **Prereqs:** TM-40N, UI/UX Designer (required, Go evaluation on file); demonstrated portfolio of 2+ MSS application designs from TM-40N practical exercise or operational assignment
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -11,25 +11,15 @@
 
 ## CHAPTER 1 — INTRODUCTION: THE ADVANCED UI/UX DESIGNER ROLE IN MSS
 
-### 1-1. Purpose and Scope
+### 1-1. Advanced UX Designer Manual
 
 **BLUF:** TM-50N extends TM-40N from designing individual applications to designing the design system itself — the patterns, components, governance, and operations that ensure consistency, accessibility, and quality across the MSS application portfolio.
 
 This manual provides task-based instruction for advanced UI/UX designers operating on the Maven Smart System (MSS). TM-50N personnel define the design standards that all MSS application designers follow, lead design for complex multi-domain and coalition environments, and establish the operational processes that sustain design quality at scale.
 
-**TM-50N covers:**
-- Design systems at scale: building and maintaining reusable component libraries, pattern documentation, and design tokens across the MSS portfolio
-- DDIL-aware design: designing applications that function under denied, disrupted, intermittent, and limited bandwidth conditions
-- Cross-domain and coalition UI: designing interfaces that operate across classification levels and serve multinational users in the USAREUR-AF AOR
-- Design operations (DesignOps): design review governance, quality metrics, design tooling, onboarding new designers
-- Accessibility at enterprise scale: automated accessibility testing, remediation prioritization, compliance reporting
-- Research operations (ResearchOps): systematizing user research across the portfolio, maintaining a research repository, preventing research duplication
+**TM-50N covers** design systems at scale (building and maintaining reusable component libraries, pattern documentation, and design tokens across the MSS portfolio); DDIL-aware design (designing applications that function under denied, disrupted, intermittent, and limited bandwidth conditions); cross-domain and coalition UI (designing interfaces that operate across classification levels and serve multinational users in the USAREUR-AF AOR); design operations (DesignOps) including design review governance, quality metrics, design tooling, and onboarding new designers; accessibility at enterprise scale (automated accessibility testing, remediation prioritization, compliance reporting); and research operations (ResearchOps) including systematizing user research across the portfolio, maintaining a research repository, and preventing research duplication.
 
-**TM-50N does NOT cover:**
-- Individual application design fundamentals — see TM-40N
-- Custom widget implementation — see TM-40L, TM-50L
-- Platform infrastructure — see TM-40O, TM-50O
-- Foundry platform administration — vendor-managed
+**TM-50N does NOT cover** individual application design fundamentals — see TM-40N; custom widget implementation — see TM-40L, TM-50L; platform infrastructure — see TM-40O, TM-50O; or Foundry platform administration (vendor-managed).
 
 ### 1-2. Curriculum Position
 

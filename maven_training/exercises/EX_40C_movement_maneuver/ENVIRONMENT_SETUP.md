@@ -36,7 +36,6 @@ Print and hand to participant at exercise start (Tasks 2 and 3):
 
 ```
 GRAPHIC CONTROL MEASURES — EX_40C TRAINING
-Classification: UNCLASSIFIED // TRAINING
 
 LD — LINE OF DEPARTURE
   Grid: 48.200N / 008.300E (east-west line)
@@ -61,7 +60,6 @@ Print and hand to participant at exercise start (Task 3):
 
 ```
 COMMANDER'S CCIR GUIDANCE — EX_40C TRAINING
-Classification: UNCLASSIFIED // TRAINING
 
 CCIR 1 — MANEUVER PHASE LINE CROSSING
   Trigger: Any maneuver battalion position report places unit on or north of PL AMBER
@@ -79,7 +77,6 @@ Print and hand to participant at exercise start (Task 4):
 
 ```
 TASK ORGANIZATION — EX_40C TRAINING (ATTACK ORDER)
-Classification: UNCLASSIFIED // TRAINING
 
 BCT MAIN:
   ASSIGNED:

@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20261008_126 — OBSERVATION REPORT
+DTG: 080000Z OCT 2026
+Unit: 173 ABN BDE
+
+Summary: OP RAPTOR reported observation of 6 unidentified vehicles moving in convoy formation along ROUTE IRON at 1310 local. Vehicles: BRDM-2. Movement direction: NORTHEAST. No hostile action observed. Convoy cleared the AO within 22 minutes.
+
+Assessment: Likely civilian logistics movement. Pattern consistent with previous observations. Possible CCIR trigger — S2 assessment pending.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

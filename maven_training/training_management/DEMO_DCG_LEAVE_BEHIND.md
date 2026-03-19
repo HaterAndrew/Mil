@@ -1,5 +1,5 @@
 # MSS TRAINING PROGRAM — ONE-PAGE SUMMARY
-**ODT | USAREUR-AF | March 2026 | UNCLASSIFIED**
+**ODT | USAREUR-AF | March 2026**
 
 **BLUF:** MSS training program is built, published, and governance-complete. Partner nations are requesting access. Request TASKORD to activate a Mobile Training Team for theater-wide execution.
 
@@ -14,9 +14,9 @@
 | TM-30 Advanced Builder | 40 hrs | Unit data leads | Published |
 | TM-40 Specialist (14) | 40 hrs | WfF / technical | Published |
 | TM-50 Adv Specialist (6) | 40 hrs | Senior practitioners | Published |
-| T3 Tier 3 (2) | TBD | Instructors / MSC | In Dev |
+| T3 Tier 3 (2) | T3-I: 40 hrs; T3-F: 4 hrs | Instructors / MSC | Published |
 
-**254 published PDFs** | **22 course tracks** | **Full governance package** | **UNCLASSIFIED** | **NATO-aligned**
+**254 published PDFs** | **22 course tracks** | **Full governance package** | **NATO-aligned**
 
 ---
 
@@ -24,9 +24,9 @@
 
 - Training Hub: mss-training-hub.pages.dev (migrating to network subdomain)
 - Self-study packages for every specialist track
-- Builder Sprint Program: quarterly 5-day supervised builds
+- Foundry Bootcamp Program: quarterly 5-day supervised builds
 - Pre/post exams for every course; completion tracking via Enrollment SOP
-- Coalition-ready: UNCLASSIFIED, NATO data standards integrated
+- Coalition-ready: NATO data standards integrated
 
 ---
 
@@ -63,7 +63,7 @@ No organic MSS training capability exists anywhere. ODT absorbs training by defa
 | Theater training directive | G3 | D+45 |
 | T3 instructor cert complete | ODT | D+60 |
 | MSS tied to duty position reqs | G3 | D+60 |
-| TM-10 in new soldier in-processing | MSC CDRs | D+60 |
+| TM-10 in new Soldier in-processing | MSC CDRs | D+60 |
 | MTT cadre certified | ODT | D+75 |
 | Partner enrollment framework | G5 | D+90 |
 | MTT independent execution | MTT | D+150 |

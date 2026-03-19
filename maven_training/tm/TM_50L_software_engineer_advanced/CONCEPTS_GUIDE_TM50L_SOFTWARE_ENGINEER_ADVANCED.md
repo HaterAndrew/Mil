@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-50L: ADVANCED SOFTWARE ENGINEER — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-50L is not about writing more complex code than TM-40L. It is about taking ownership of the platform's code health, architectural patterns, and engineering standards — and shaping how the entire team writes, reviews, tests, and deploys software.
+> **Forward:** TM-50L is not about writing more complex code than TM-40L. It is about taking ownership of the platform's code health, architectural patterns, and engineering standards — and shaping how the entire team writes, reviews, tests, and deploys software.
 > **Purpose:** Extends mental models from TM-40L Concepts Guide to advanced software engineering on MSS. Prerequisite: TM-40L Concepts Guide and TM-40L qualification.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
@@ -483,5 +483,4 @@ The TM-50L lead does not reject the PR. They document each finding with its oper
 
 *USAREUR-AF Operational Data Team — MSS Platform Engineering | Version 1.0 — 2026*
 
-*UNCLASSIFIED*
 *DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*

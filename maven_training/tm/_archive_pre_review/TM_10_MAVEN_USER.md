@@ -8,7 +8,7 @@ Wiesbaden, Germany
 
 **Version 1.0 | March 2026**
 
-**APPLIES TO:** All USAREUR-AF military and civilian personnel requiring MSS access.
+**APPLIES TO:** All USAREUR-AF military and Civilian personnel requiring MSS access.
 **PREREQUISITE PUBLICATIONS:** Data Literacy Technical Reference (recommended prior reading).
 **RELATED MANUALS:** TM-20 (Workshop Builder), TM-30 (Advanced Builder/Developer).
 **DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
@@ -53,7 +53,7 @@ Read all WARNINGS and CAUTIONS in this manual before operating the system.
 
 ## 1-1. Purpose and Scope
 
-This Technical Manual (TM) provides operator-level instruction for the Maven Smart System (MSS). It is written for all USAREUR-AF military personnel (officer, warrant, NCO, and enlisted) and civilian employees who access MSS in the course of their duties.
+This Technical Manual (TM) provides operator-level instruction for the Maven Smart System (MSS). It is written for all USAREUR-AF military personnel (officer, warrant, NCO, and enlisted) and DA Civilians and Contractors who access MSS in the course of their duties.
 
 **This manual covers what you need to use MSS as a consumer of data:**
 - Logging in and navigating the platform
@@ -102,7 +102,7 @@ MSS is built on the Palantir Foundry software platform, authorized for Army use 
 
 ## 1-3. MSS in the USAREUR-AF Context
 
-United States Army Europe and Africa (USAREUR-AF) is the Army Service Component Command (ASCC) for United States European Command (USEUCOM). USAREUR-AF coordinates theater land operations across the European Area of Responsibility (AOR), integrates with NATO Allied commands, and contributes to Joint All-Domain Command and Control (JADC2). The command operates across multiple countries and time zones — including Germany, Poland, Romania, and the Baltics — coordinating with V Corps, 21st Theater Sustainment Command (TSC), 7th Army Training Command (ATC), and numerous Allied and partner nation forces.
+United States Army Europe and Africa (USAREUR-AF) is the Army Service Component Command (ASCC) for United States European Command (USEUCOM) and United States Africa Command (USAFRICOM). USAREUR-AF coordinates theater land operations across the European and African Areas of Responsibility (AOR), integrates with NATO Allied commands, and contributes to Joint All-Domain Command and Control (JADC2). The command operates across multiple countries and time zones — including Germany, Poland, Romania, and the Baltics — coordinating with V Corps, 21st Theater Sustainment Command (TSC), 7th Army Training Command (ATC), and numerous Allied and partner nation forces.
 
 MSS is USAREUR-AF's primary data and AI platform. It serves as the command's single integrated environment for theater readiness visibility, logistics status, personnel accountability, and operational reporting. MSS is not a standalone tool — it is the data backbone that supports decision-making from battalion staff through theater army.
 
@@ -967,7 +967,7 @@ Markings in MSS are labels applied to datasets, applications, and individual obj
 |---|---|---|
 | UNCLASSIFIED | No national security classification | You can still have handling restrictions — check for other markings |
 | CUI | Controlled Unclassified Information | Requires protection — cannot be placed on public-facing systems or sent unencrypted |
-| FOUO | For Official Use Only | Subcategory of CUI — same protection requirements |
+| FOUO (legacy) | For Official Use Only | Retired marking — now handled under CUI. Same protection requirements apply. |
 | SECRET | National Security classification | Requires SECRET clearance to access; must be handled on approved systems |
 | [AOR Label] | Data limited to a specific Area of Responsibility | You must have the AOR marking assigned to your account |
 | [Role Label] | Data limited to a specific function (e.g., S2-only, Medical) | Your role must match the marking to access the data |
@@ -1279,7 +1279,7 @@ Policy questions → USAREUR-AF C2DAO (via chain of command)
 | **CAC** | Common Access Card. Your personal login credential for MSS. Never share your CAC or PIN with anyone for any reason. |
 | **Compass** | MSS's file browser. Displays all resources (datasets, applications, projects) organized by folder and project. Used to navigate the platform when you know what folder your data is in. |
 | **Contour** | MSS's no-code data analysis tool. Allows you to aggregate, filter, sort, and chart data from a dataset without writing any code. Consumer users can perform basic analysis in Contour without builder access. |
-| **CUI** | Controlled Unclassified Information. Data that requires protection but is not classified. CUI cannot be placed on public-facing systems or transmitted unencrypted. Includes FOUO (For Official Use Only). |
+| **CUI** | Controlled Unclassified Information. Data that requires protection but is not classified. CUI cannot be placed on public-facing systems or transmitted unencrypted. Formerly included FOUO (For Official Use Only), now consolidated under CUI. |
 | **Dashboard** | A visual display of data in a Workshop application. Includes charts (bar, line, pie), tables (rows and columns), metric tiles (single key numbers), and status indicators. |
 | **Data Steward** | The person responsible for a specific dataset or application. Your first point of contact for data quality issues, missing access, incorrect records, and questions about data currency. If you do not know who your data steward is, ask your S6. |
 | **Dataset** | A structured table of data in MSS — rows and columns, like a spreadsheet. Each column has a name and a data type. Each row is one record (one Soldier, one vehicle, one event). |
@@ -1298,5 +1298,4 @@ Policy questions → USAREUR-AF C2DAO (via chain of command)
 *TM-10 — Maven Smart System (MSS) Operator Technical Manual*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA, Wiesbaden, Germany*
 *2026*
-*UNCLASSIFIED — DRAFT — Not yet approved for distribution.*
 *For corrections or updates, contact the USAREUR-AF Operational Data Team through your unit data steward or the C2DAO office.*

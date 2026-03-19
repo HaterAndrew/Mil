@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20261030_187 — SIGINT SUMMARY
+DTG: 300000Z OCT 2026
+Unit: 2-3 BN
+
+Summary: SIGINT collection assets detected 1 HF emitter(s) in the vicinity of NAI 08 (grid 36T587613). Emissions lasted approximately 12 minutes. Intercept forwarded to technical channels for further analysis.
+
+Assessment: Signal characteristics match known OPFOR equipment profiles.
+Recommended Action: Continue collection against NAI 08. Request additional SIGINT coverage during 1800-0600 window.

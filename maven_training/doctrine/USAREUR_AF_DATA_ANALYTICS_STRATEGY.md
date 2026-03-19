@@ -1,6 +1,6 @@
 # USAREUR-AF Data and Analytics Strategy
 
-**Classification:** UNCLASSIFIED
+
 **Published:** May 2025
 **Authority:** USAREUR-AF G3 Command Chief Data and Analytics Officer (C2DAO)
 **Signed by:** GEN Christopher T. Donahue, Commanding General, USAREUR-AF
@@ -112,7 +112,7 @@ To achieve data-centricity, USAREUR-AF must provide the infrastructure required 
 
 ### Outcome 4: Data-Ready Workforce and Processes
 
-The workforce (leaders, service members, civilians, and contractors) is recognized as a critical enabler to the success of any effort. USAREUR-AF must prioritize the development of a data-literate workforce that understands and can articulate the data needs of each warfighting function.
+The workforce (leaders, service members, Civilians, and contractors) is recognized as a critical enabler to the success of any effort. USAREUR-AF must prioritize the development of a data-literate workforce that understands and can articulate the data needs of each warfighting function.
 
 - **Objective 4.1:** A sustained data and analytics organization and governance framework
 - **Objective 4.2:** Partnerships with industry and academia

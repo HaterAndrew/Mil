@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-40A COMPANION — INTELLIGENCE WARFIGHTING FUNCTION · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** Intelligence has always been a data discipline. What MSS changes is the speed of integration and the visibility of gaps — not the analytical process itself. Intelligence practitioners who understand this distinction will use the platform effectively. Those who do not will either underuse it (treating it as just another database) or overuse it (letting the platform substitute for analytical judgment).
+> **Forward:** Intelligence has always been a data discipline. What MSS changes is the speed of integration and the visibility of gaps — not the analytical process itself. Intelligence practitioners who understand this distinction will use the platform effectively. Those who do not will either underuse it (treating it as just another database) or overuse it (letting the platform substitute for analytical judgment).
 > **Prereqs:** TM-10 (Maven User), TM-20 (Builder), and TM-30 (Advanced Builder). This guide assumes platform familiarity and focuses on conceptual integration — how intelligence doctrine, tradecraft, and the MSS data environment relate to each other. TM-30 is required before beginning TM-40A; read this Concepts Guide after TM-30 and before beginning the TM-40A task manual.
 > **Purpose:** This guide is a conceptual companion to TM-40A. It develops the mental models that intelligence practitioners need before operating MSS in an intelligence role. Read this guide before beginning TM-40A. It contains no step-by-step procedures — those are in the TM. This guide develops understanding. The TM develops skill.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
@@ -520,6 +520,8 @@ For personnel pursuing technical depth beyond WFF employment, the specialist tra
 | TM-40J | Program Manager (→ TM-50J) |
 | TM-40K | Knowledge Manager (→ TM-50K) |
 | TM-40L | Software Engineer (→ TM-50L) |
+| TM-40N | UI/UX Designer (→ TM-50N) |
+| TM-40O | Platform Engineer (→ TM-50O) |
 
 ---
 

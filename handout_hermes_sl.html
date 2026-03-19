@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HERMES — People & Project Management System</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  @page { size: letter; margin: 0.4in; }
+  html, body { height: 100vh; overflow: hidden; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0C2340;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 0.4in;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+  .header img {
+    width: 80px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  }
+  .header-text h1 {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #fff;
+    line-height: 1.2;
+  }
+  .header-text h1 span.gold {
+    color: #C8971A;
+  }
+  .header-text .subtitle {
+    font-size: 12px;
+    font-weight: 600;
+    color: #C8971A;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* Divider */
+  .divider {
+    height: 2px;
+    background: linear-gradient(90deg, #C8971A 0%, #C8971A 40%, transparent 100%);
+    margin-bottom: 22px;
+  }
+
+  /* Pipeline sections */
+  .pipeline-section {
+    margin-bottom: 16px;
+  }
+  .pipeline-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #C8971A;
+    margin-bottom: 10px;
+    padding-left: 2px;
+  }
+  .pipeline-row {
+    display: flex;
+    gap: 0;
+    align-items: stretch;
+  }
+  .pipeline-step {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .step-box {
+    flex: 1;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(200,151,26,0.3);
+    border-radius: 6px;
+    padding: 12px 10px;
+    text-align: center;
+    min-height: 68px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-box .step-icon {
+    font-size: 22px;
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+  .step-box .step-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+  }
+  .step-box .step-detail {
+    font-size: 9.5px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.6);
+    margin-top: 3px;
+    line-height: 1.3;
+  }
+  .step-arrow {
+    width: 28px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #C8971A;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  /* Highlight first step in each row */
+  .pipeline-step:first-child .step-box {
+    border-color: #C8971A;
+    background: rgba(200,151,26,0.12);
+  }
+
+  /* Blurb section */
+  .blurb-section {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(200,151,26,0.2);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+  }
+  .blurb-section .blurb-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #C8971A;
+    margin-bottom: 8px;
+  }
+  .blurb-section p {
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.88);
+  }
+  .blurb-section p em {
+    color: #C8971A;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  /* Two-column bottom */
+  .bottom-row {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+  }
+  .blurb-col {
+    flex: 1;
+  }
+
+  /* What's Next callout */
+  .next-callout {
+    width: 220px;
+    flex-shrink: 0;
+    background: rgba(200,151,26,0.1);
+    border-left: 3px solid #C8971A;
+    border-radius: 0 8px 8px 0;
+    padding: 16px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .next-callout .next-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #C8971A;
+    margin-bottom: 8px;
+  }
+  .next-callout p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.85);
+  }
+  .next-callout p strong {
+    color: #fff;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid rgba(200,151,26,0.25);
+    text-align: center;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <img src="HERMES_LOGO.jpg" alt="HERMES Logo">
+  <div class="header-text">
+    <h1><span class="gold">HERMES</span> — People &amp; Project Management System</h1>
+    <div class="subtitle">USAREUR-AF &nbsp;|&nbsp; CDA</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Training Track Pipeline -->
+<div class="pipeline-section">
+  <div class="pipeline-label">Training Track</div>
+  <div class="pipeline-row">
+    <div class="pipeline-step">
+      <div class="step-box">
+        <div class="step-icon">&#x1F393;</div>
+        <div class="step-name">Train the Force</div>
+        <div class="step-detail">MSS Training Hub<br>TM-10 → TM-50</div>
+      </div>
+    </div>
+    <div class="step-arrow">&#x25B6;</div>
+    <div class="pipeline-step">
+      <div class="step-box">
+        <div class="step-icon">&#x1F3C5;</div>
+        <div class="step-name">Certify Builders</div>
+        <div class="step-detail">Badges &amp; skill<br>verification</div>
+      </div>
+    </div>
+    <div class="step-arrow">&#x25B6;</div>
+    <div class="pipeline-step">
+      <div class="step-box">
+        <div class="step-icon">&#x1F512;</div>
+        <div class="step-name">Assign Access</div>
+        <div class="step-detail">Permission groups<br>&amp; access control</div>
+      </div>
+    </div>
+    <div class="step-arrow">&#x25B6;</div>
+    <div class="pipeline-step">
+      <div class="step-box">
+        <div class="step-icon">&#x1F4CB;</div>
+        <div class="step-name">Baseball Card</div>
+        <div class="step-detail">Skills · projects<br>Army dev resume</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Project Pipeline -->
+<div class="pipeline-section">
+  <div class="pipeline-label">Project Pipeline</div>
+  <div class="pipeline-row">
+    <div class="pipeline-step">
+      <div class="step-box">
+        <div class="step-icon">&#x1F4E5;</div>
+        <div class="step-name">Submit</div>
+        <div class="step-detail">Open to anyone<br>in the command</div>
+      </div>
+    </div>
+    <div class="step-arrow">&#x25B6;</div>
+    <div class="pipeline-step">
+      <div class="step-box">
+        <div class="step-icon">&#x1F50D;</div>
+        <div class="step-name">Scope &amp; Review</div>
+        <div class="step-detail">Data connection<br>&amp; history reviewed</div>
+      </div>
+    </div>
+    <div class="step-arrow">&#x25B6;</div>
+    <div class="pipeline-step">
+      <div class="step-box">
+        <div class="step-icon">&#x2B50;</div>
+        <div class="step-name">Prioritize</div>
+        <div class="step-detail">Steering board<br>decision gate</div>
+      </div>
+    </div>
+    <div class="step-arrow">&#x25B6;</div>
+    <div class="pipeline-step">
+      <div class="step-box">
+        <div class="step-icon">&#x1F6E0;&#xFE0F;</div>
+        <div class="step-name">Execute</div>
+        <div class="step-detail">ODT · MSC<br>build &amp; refine</div>
+      </div>
+    </div>
+    <div class="step-arrow">&#x25B6;</div>
+    <div class="pipeline-step">
+      <div class="step-box">
+        <div class="step-icon">&#x1F680;</div>
+        <div class="step-name">Scale &amp; Sustain</div>
+        <div class="step-detail">Enterprise rollout<br>&amp; maintenance</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Blurb + What's Next -->
+<div class="bottom-row">
+  <div class="blurb-col">
+    <div class="blurb-section">
+      <div class="blurb-title">How HERMES Fits Into CDA</div>
+      <p>CDA defines <em>what</em> USAREUR-AF does with data. HERMES delivers the <em>who</em> and <em>how</em> — training the workforce, then channeling certified builders into prioritized projects scaled across theater.</p>
+    </div>
+  </div>
+  <div class="next-callout">
+    <div class="next-title">What&rsquo;s Next</div>
+    <p>Next, we&rsquo;re going to begin to tackle the <strong>doctrine-backed ontology</strong>.</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">USAREUR-AF Operational Data Team</div>
+
+</body>
+</html>

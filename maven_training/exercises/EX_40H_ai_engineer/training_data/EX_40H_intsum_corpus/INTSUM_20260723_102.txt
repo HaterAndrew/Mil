@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260723_102 — OBSERVATION REPORT
+DTG: 230000Z JUL 2026
+Unit: 1AD G2
+
+Summary: OP RAPTOR reported observation of 12 unidentified vehicles moving in convoy formation along ROUTE FALCON at 0010 local. Vehicles: HET. Movement direction: WEST. No hostile action observed. Convoy cleared the AO within 26 minutes.
+
+Assessment: Possible military resupply convoy. Vehicle types inconsistent with civilian use. Possible CCIR trigger — S2 assessment pending.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

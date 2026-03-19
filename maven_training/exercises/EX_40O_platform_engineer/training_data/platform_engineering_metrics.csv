@@ -1,0 +1,61 @@
+date,unit,domain,metric_value,threshold,status,records_processed,anomalies_flagged
+2025-06-01,1-1 IN BN,platform_engineering,69.92,80.0,PASS,1083,6
+2025-06-02,3-1 FA BN,platform_engineering,73.83,80.0,PASS,7470,10
+2025-06-03,3-1 FA BN,platform_engineering,68.05,80.0,PASS,4322,11
+2025-06-04,1-1 IN BN,platform_engineering,70.59,80.0,PASS,3359,18
+2025-06-05,BEB 1BCT,platform_engineering,82.49,80.0,PASS,4763,11
+2025-06-06,3-1 FA BN,platform_engineering,83.66,80.0,PASS,7422,2
+2025-06-07,BSB 1BCT,platform_engineering,80.68,80.0,PASS,2473,5
+2025-06-08,3-1 FA BN,platform_engineering,71.09,80.0,PASS,6731,2
+2025-06-09,1-1 IN BN,platform_engineering,58.1,80.0,PASS,5291,20
+2025-06-10,3-1 FA BN,platform_engineering,85.52,80.0,PASS,6579,8
+2025-06-11,BSB 1BCT,platform_engineering,89.05,80.0,PASS,9716,16
+2025-06-12,BSB 1BCT,platform_engineering,70.7,80.0,FAIL,478,4
+2025-06-13,2-1 IN BN,platform_engineering,83.1,80.0,PASS,1411,6
+2025-06-14,2-1 IN BN,platform_engineering,69.85,80.0,FAIL,7852,17
+2025-06-15,1-1 IN BN,platform_engineering,51.32,80.0,PASS,1463,3
+2025-06-16,3-1 FA BN,platform_engineering,80.91,80.0,FAIL,6487,9
+2025-06-17,2-1 IN BN,platform_engineering,62.37,80.0,PASS,2171,4
+2025-06-18,BEB 1BCT,platform_engineering,91.93,80.0,FAIL,5946,10
+2025-06-19,BSB 1BCT,platform_engineering,73.36,80.0,PASS,4563,17
+2025-06-20,BSB 1BCT,platform_engineering,56.76,80.0,PASS,8935,5
+2025-06-21,BEB 1BCT,platform_engineering,79.88,80.0,PASS,9340,13
+2025-06-22,BEB 1BCT,platform_engineering,81.99,80.0,PASS,5788,15
+2025-06-23,BEB 1BCT,platform_engineering,61.36,80.0,FAIL,5144,11
+2025-06-24,BSB 1BCT,platform_engineering,62.99,80.0,PASS,101,16
+2025-06-25,2-1 IN BN,platform_engineering,67.19,80.0,PASS,236,15
+2025-06-26,BSB 1BCT,platform_engineering,64.98,80.0,PASS,4899,19
+2025-06-27,2-1 IN BN,platform_engineering,89.84,80.0,PASS,3189,13
+2025-06-28,BEB 1BCT,platform_engineering,71.86,80.0,PASS,6485,12
+2025-06-29,2-1 IN BN,platform_engineering,63.15,80.0,PASS,4024,16
+2025-06-30,BEB 1BCT,platform_engineering,90.38,80.0,PASS,4764,20
+2025-07-01,BEB 1BCT,platform_engineering,90.44,80.0,PASS,1221,5
+2025-07-02,2-1 IN BN,platform_engineering,64.48,80.0,PASS,7518,8
+2025-07-03,BEB 1BCT,platform_engineering,74.6,80.0,PASS,2592,1
+2025-07-04,BEB 1BCT,platform_engineering,51.11,80.0,PASS,4722,8
+2025-07-05,2-1 IN BN,platform_engineering,85.76,80.0,PASS,3914,2
+2025-07-06,2-1 IN BN,platform_engineering,50.74,80.0,PASS,6985,9
+2025-07-07,BSB 1BCT,platform_engineering,99.9,80.0,PASS,619,10
+2025-07-08,1-1 IN BN,platform_engineering,92.18,80.0,PASS,1018,8
+2025-07-09,BSB 1BCT,platform_engineering,53.57,80.0,PASS,3248,8
+2025-07-10,BSB 1BCT,platform_engineering,91.41,80.0,FAIL,4178,12
+2025-07-11,BSB 1BCT,platform_engineering,62.36,80.0,PASS,3363,14
+2025-07-12,1-1 IN BN,platform_engineering,76.06,80.0,PASS,7846,12
+2025-07-13,3-1 FA BN,platform_engineering,96.81,80.0,FAIL,791,17
+2025-07-14,BEB 1BCT,platform_engineering,56.11,80.0,PASS,4995,6
+2025-07-15,3-1 FA BN,platform_engineering,94.38,80.0,PASS,3668,3
+2025-07-16,2-1 IN BN,platform_engineering,81.65,80.0,PASS,2842,8
+2025-07-17,BEB 1BCT,platform_engineering,55.98,80.0,PASS,246,1
+2025-07-18,BEB 1BCT,platform_engineering,89.17,80.0,PASS,9868,4
+2025-07-19,3-1 FA BN,platform_engineering,88.54,80.0,PASS,8290,2
+2025-07-20,BEB 1BCT,platform_engineering,66.92,80.0,PASS,1083,1
+2025-07-21,3-1 FA BN,platform_engineering,82.23,80.0,PASS,1859,4
+2025-07-22,BSB 1BCT,platform_engineering,61.63,80.0,PASS,5790,14
+2025-07-23,2-1 IN BN,platform_engineering,51.07,80.0,PASS,2307,8
+2025-07-24,1-1 IN BN,platform_engineering,74.27,80.0,PASS,4928,17
+2025-07-25,BSB 1BCT,platform_engineering,59.49,80.0,FAIL,5796,10
+2025-07-26,BSB 1BCT,platform_engineering,63.77,80.0,PASS,9185,5
+2025-07-27,1-1 IN BN,platform_engineering,76.56,80.0,PASS,4414,17
+2025-07-28,3-1 FA BN,platform_engineering,72.7,80.0,PASS,8389,12
+2025-07-29,2-1 IN BN,platform_engineering,94.15,80.0,PASS,6065,19
+2025-07-30,2-1 IN BN,platform_engineering,66.03,80.0,FAIL,8930,12

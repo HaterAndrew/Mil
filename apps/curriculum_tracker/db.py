@@ -82,7 +82,7 @@ class ReviewCycle(Base):
     __tablename__ = "review_cycles"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    doc_id = Column(Integer, ForeignKey("documents.doc_id"), nullable=False)
+    doc_id = Column(Integer, ForeignKey("documents.doc_id"), nullable=False, index=True)
     review_type = Column(String(30), nullable=False)  # SCHEDULED/AD_HOC/POST_EXERCISE
     reviewer_name = Column(String(100), nullable=False)
     review_date = Column(Date, nullable=False)
@@ -98,7 +98,7 @@ class ChangeLog(Base):
     __tablename__ = "change_log"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    doc_id = Column(Integer, ForeignKey("documents.doc_id"), nullable=False)
+    doc_id = Column(Integer, ForeignKey("documents.doc_id"), nullable=False, index=True)
     change_date = Column(DateTime, nullable=False)
     previous_hash = Column(String(64), nullable=True)
     new_hash = Column(String(64), nullable=True)

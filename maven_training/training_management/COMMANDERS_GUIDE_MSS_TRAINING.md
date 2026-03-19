@@ -15,7 +15,7 @@
 
 **MSS is a command system. Using it well is a trained skill. Training your formation on MSS is a command responsibility.**
 
-TM-10 is mandatory for every USAREUR-AF Soldier and civilian. Higher-level training (TM-20 through TM-50) is required for personnel in data-adjacent and specialist roles. Untrained personnel cannot effectively use, build, or govern MSS — and an untrained formation cannot achieve the data readiness the CG has directed.
+TM-10 is mandatory for every USAREUR-AF Soldier and Civilian. Higher-level training (TM-20 through TM-50) is required for personnel in data-adjacent and specialist roles. Untrained personnel cannot effectively use, build, or govern MSS — and an untrained formation cannot achieve the data readiness the CG has directed.
 
 Your role: enforce training timelines, release personnel to attend, verify records are current, and hold subordinate leaders accountable for their sections' completion.
 
@@ -41,6 +41,9 @@ Your role: enforce training timelines, release personnel to attend, verify recor
 | Army Data Plan | 2022 (Army CIO) | 11 strategic objectives (SO1–SO11), 8 strategic efforts (SE01–SE08); SO 7 mandates cloud/data/DevSecOps workforce; SE05 (Talent) mandates technical skillsets at echelon; "citizen analyst" concept maps to TM-10–30 generalist track |
 | DDOF Playbook v2.2 | Dec 2025 (T2COM C2DAO) | VAULTIS-A quality framework (8 dimensions, 85% gate); 6-phase data product lifecycle; MVP mandate (30 days); retirement criteria (90/180-day no-access triggers) |
 | UDRA v1.1 | Feb 2025 (Army CIO) | Data mesh architecture — distributed data domains, computational governance, data products as first-class artifacts; VAULTIS operationalized through automated policy enforcement |
+| "Fighting with Live Data" (Forney, Herrmann, Steele) | Feb 2026 (*Military Review*) | XVIII Airborne Corps' published experience building Operational Data Teams. Documents the multifunctional ODT model (PM + UX + SWE + DE + DS) aligned to long-range planning. XVIII ABC delivered a BDA visualization prototype in 3 months, MVP in 6, and handoff to a POR in 9 — demonstrating the operational impact of properly trained and organized data teams. The ODT manning structure maps directly to TM-40J–O specialist tracks. Commanders should understand: this is the best available pilot data for how data teams produce capability. |
+| MCCoE Decision Optimization CONOPS | 2025 (MCCoE) | Codifies ODT as the "action arm of decision optimization" at echelons above brigade. Echeloned employment concept: Theater Army ODS → Corps ODS → Division ODT. SEC ARMY directed experimentation under Transformation in Contact 2.0. |
+| "Achieving Decision Dominance" (Adkins) | Jan-Feb 2025 (*Military Review*) | A thought piece by one officer proposing terminology for data team employment. Introduces useful shorthand: "operationalized data" and "Automated Fighting Products" (AFP). Names the Maven Smart System as an ASCC-level COP platform. Supplementary context — the Forney "Fighting with Live Data" article above documents the most relevant pilot experience for ODT employment. |
 
 ---
 
@@ -56,7 +59,7 @@ ADP 7-0 establishes nine principles of training that govern how the Army trains.
 |---|---|
 | **Train as you fight** | All exercises use operational data and realistic scenarios drawn from theater mission requirements — not sanitized training sets |
 | **Train to standard** | Go/No-Go certification against Task-Condition-Standard (TCS) criteria; every practical exercise has published standards evaluated by a certified C2DAO evaluator |
-| **Train to sustain** | Continuous proficiency maintenance through self-study addenda (TM-30, TM-40G–L, TM-50G–L); re-certification requirements prevent skill atrophy |
+| **Train to sustain** | Continuous proficiency maintenance through self-study addenda (TM-30, TM-40G–O, TM-50G–O); re-certification requirements prevent skill atrophy |
 | **Train to maintain** | Platform familiarity maintained through regular operational use; self-study addenda reinforce platform skills between formal training events |
 | **Train fundamentals first** | TM-10 → TM-20 → TM-30 prerequisite chain ensures foundational skills before specialization; no waivers to the prerequisite sequence |
 | **Train while operating** | MSS skills are applied immediately to the unit mission; OJT is integrated into daily operations, not deferred to a future training event |
@@ -86,7 +89,7 @@ ADP 7-0 defines three training domains that together produce and sustain Soldier
 |---|---|---|
 | **Institutional** | Formal classroom and schoolhouse training | TM-10 through TM-50 instructor-led courses; C2DAO-certified evaluators; published syllabi and lesson plans |
 | **Operational** | Unit-level training and on-the-job application | MSS skills applied to unit mission immediately upon course completion; commanders enforce operational use |
-| **Self-Development** | Individual study and professional growth | Self-study addenda (TM-30, TM-40G–L, TM-50G–L); pre-course readings; continuous proficiency maintenance between formal training events |
+| **Self-Development** | Individual study and professional growth | Self-study addenda (TM-30, TM-40G–O, TM-50G–O); pre-course readings; continuous proficiency maintenance between formal training events |
 
 A training program that addresses only one domain will not produce lasting proficiency. Your role as a commander is to ensure all three domains are active for your MSS-trained personnel — formal courses alone are insufficient without operational application and self-development.
 
@@ -101,6 +104,7 @@ A training program that addresses only one domain will not produce lasting profi
 | Unit data leads; 17/25-series, S6/G6, G2 analysts | TM-30 (Advanced Builder — 5 days) + TM-10/20 | Within 90 days of data-lead assignment |
 | G2/S2, G3/S3, G4/S4, protection, fires, MC functional staff | TM-40 WFF track (3 days) — requires TM-30 | As directed by unit training plan |
 | ORSA, AI/ML, SWE, PM, KM specialists | TM-40 specialist track (3–5 days) — requires TM-30 | As directed by unit training plan |
+| Senior specialists with TM-40 certification | TM-50 advanced specialist track (3–5 days) — requires corresponding TM-40 | As directed by unit training plan |
 
 **TM-30 is the gateway** to all TM-40 tracks. No waiver. Personnel cannot attend any TM-40 course without TM-30 on file.
 
@@ -238,5 +242,5 @@ A formation that cannot use, build, or govern MSS effectively cannot compete. Tr
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Commander's Guide | MSS Training Program | Version 1.0 | March 2026*

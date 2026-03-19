@@ -11,6 +11,8 @@ from fastapi import Depends, FastAPI, File, HTTPException, Query, UploadFile, st
 from fastapi.responses import StreamingResponse
 from sqlalchemy.orm import Session
 
+from shared.middleware import SecurityHeadersMiddleware
+
 from .db import (
     ALL_COURSES,
     PREREQ_CHAIN,
@@ -49,6 +51,7 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
 )
+app.add_middleware(SecurityHeadersMiddleware)
 
 
 # ---------------------------------------------------------------------------
@@ -202,7 +205,10 @@ def rollup_unit(unit: str, db: Session = Depends(get_db)):
 @app.post("/upload/roster", response_model=UploadResult)
 async def upload_roster(file: UploadFile = File(...), db: Session = Depends(get_db)):
     """Upload a CSV roster. Expected columns: dodid, last_name, first_name, rank, unit, mos."""
-    content = await file.read()
+    contents = await file.read()
+    if len(contents) > 10 * 1024 * 1024:  # 10 MB limit
+        raise HTTPException(status_code=413, detail="File too large. Maximum size is 10 MB.")
+    content = contents
     text = content.decode("utf-8-sig")
     reader = csv.DictReader(io.StringIO(text))
 
@@ -248,7 +254,10 @@ async def upload_roster(file: UploadFile = File(...), db: Session = Depends(get_
 @app.post("/upload/completions", response_model=UploadResult)
 async def upload_completions(file: UploadFile = File(...), db: Session = Depends(get_db)):
     """Upload completions CSV. Columns: dodid, course_id, result, evaluation_date, evaluator_name."""
-    content = await file.read()
+    contents = await file.read()
+    if len(contents) > 10 * 1024 * 1024:  # 10 MB limit
+        raise HTTPException(status_code=413, detail="File too large. Maximum size is 10 MB.")
+    content = contents
     text = content.decode("utf-8-sig")
     reader = csv.DictReader(io.StringIO(text))
 

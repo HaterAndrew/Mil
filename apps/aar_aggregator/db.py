@@ -485,7 +485,7 @@ def parse_aar_file(content: str) -> dict:
     # Try to parse TM levels
     tm_levels = []
     for line in event_lines:
-        found = re.findall(r"TM-\d{2}[A-L]?", line, re.IGNORECASE)
+        found = re.findall(r"TM-\d{2}[A-HJ-O]?", line, re.IGNORECASE)
         tm_levels.extend(found)
     tm_levels = list(set(tm_levels)) or ["TM-10"]
 

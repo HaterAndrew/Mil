@@ -612,5 +612,5 @@ Instructors should direct all trainees toward TM-30 as the next step. For traine
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-20 Lesson Plan Outlines | Version 1.0 | March 2026*

@@ -535,7 +535,7 @@ def _check_tm_file(fpath: Path, code: str, tier: str):
     # Required structural elements
     for rx, label in _TM_REQUIRED_SECTIONS:
         if not rx.search(text):
-            sev = "WARN" if label in ("BLUF statement",) else "WARN"
+            sev = "INFO" if label in ("BLUF statement",) else "WARN"
             _issue(sev, "G:STRUCTURE",
                    f"TM-{code}: '{label}' not found", fpath)
 

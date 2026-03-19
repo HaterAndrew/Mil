@@ -290,5 +290,5 @@ SUBJECT: Unit Data Trainer Designation
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Unit Data Trainer SOP | Version 1.0 | March 2026*

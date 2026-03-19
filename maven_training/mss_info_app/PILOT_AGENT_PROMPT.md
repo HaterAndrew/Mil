@@ -70,7 +70,7 @@ A static single-page application (SPA) with:
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│  UNCLASSIFIED banner — green (#1E6B2A), white text, top  │
+│  (reserved)                                               │
 ├──────────────────────────────────────────────────────────┤
 │  HEADER — navy gradient, gold bottom border (3px)        │
 │  [crest SVG]  [command label / title / subtitle]  [meta] │
@@ -85,7 +85,7 @@ A static single-page application (SPA) with:
 │  100vh     │                                             │
 ├────────────┴─────────────────────────────────────────────┤
 │  FOOTER — navy-dark, gold monospaced text                │
-│  UNCLASSIFIED banner — bottom                            │
+│  FOOTER — bottom                                         │
 └──────────────────────────────────────────────────────────┘
 ```
 
@@ -99,8 +99,7 @@ Elements (layered by z-index):
 1. `<canvas id="starCanvas">` — animated ~140 white star dots, slow parallax drift, `requestAnimationFrame` loop
 2. Radial glow — centered gold/navy gradient circle (`position:absolute`, pointer-events none)
 3. Scanline sweep — thin 2px gold horizontal line, `animation: scanDown 6s linear infinite` top-to-bottom
-4. Top + bottom classification banners: `UNCLASSIFIED` in green, white text, uppercase tracked
-5. Center content block (above canvas):
+4. Center content block (above canvas):
    - USAREUR-AF crest/logo image
    - Command label: `USAREUR-AF` (gold, tiny, tracked uppercase)
    - Main title: `MSS Training Hub` (large white bold)
@@ -113,7 +112,6 @@ Elements (layered by z-index):
 ## HEADER
 
 ```html
-<div class="banner-unclass">UNCLASSIFIED</div>
 <header>
   <div class="header-inner">
     <img src="USAREUR_Insignia.svg" class="crest" alt="USAREUR-AF Crest">
@@ -126,13 +124,12 @@ Elements (layered by z-index):
       <div class="badge">USAREUR-AF</div>
       <div>MSS TRAINING HUB</div>
       <div>VERSION 3.0 · MARCH 2026</div>
-      <div>UNCLASSIFIED</div>
     </div>
   </div>
   <div class="header-strip">
     <div class="header-strip-inner">
       <span>USAREUR-AF · OPERATIONAL DATA TEAM</span>
-      <span>MSS TRAINING HUB · V3.0 · MARCH 2026 · UNCLASSIFIED</span>
+      <span>MSS TRAINING HUB · V3.0 · MARCH 2026</span>
     </div>
   </div>
 </header>
@@ -526,7 +523,7 @@ If deploying in Foundry with PDFs hosted as Media Set items, replace `../pdf/` w
 ## BUILD PRIORITY ORDER
 
 1. CSS design tokens + reset
-2. Header + UNCLASSIFIED banners
+2. Header + banners
 3. Sidebar nav shell (structure + toggle + collapse)
 4. Panel system (`showPanel()`, active state, fade-in animation)
 5. HOME panel content (routing table, learning path)

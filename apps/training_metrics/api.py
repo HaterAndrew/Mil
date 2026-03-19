@@ -9,6 +9,8 @@ from datetime import date
 from fastapi import Depends, FastAPI, HTTPException, Query
 from sqlalchemy.orm import Session
 
+from shared.middleware import SecurityHeadersMiddleware
+
 from .db import (
     collect_all_metrics,
     get_db,
@@ -39,6 +41,7 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
 )
+app.add_middleware(SecurityHeadersMiddleware)
 
 
 # ---------------------------------------------------------------------------
@@ -108,7 +111,7 @@ def export_briefing():
     lines.append("=" * 72)
     lines.append("MSS TRAINING EXECUTIVE BRIEFING")
     lines.append(f"Date: {date.today().isoformat()}")
-    lines.append(f"Classification: CUI // FOUO")
+    lines.append(f"Classification: CUI")
     lines.append("=" * 72)
     lines.append("")
 

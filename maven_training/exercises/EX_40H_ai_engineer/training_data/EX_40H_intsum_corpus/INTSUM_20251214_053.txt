@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20251214_053 — IED EVENT
+DTG: 140000Z DEC 2025
+Unit: 4ID G2
+
+Summary: At 1415 local, a suspected IED was identified by route clearance element in grid 33T296294 along MSR EAGLE. EOD requested and responded within 39 minutes. Controlled detonation conducted. Crater assessed. No friendly casualties.
+
+Device Description: Victim-operated pressure plate, approx 5kg charge. Collected for exploitation. DNA swabs taken.
+Recommended Action: Restrict movement along MSR EAGLE until EOD clearance complete. Disseminate grid data to adjacent units.

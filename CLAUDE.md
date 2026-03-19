@@ -50,11 +50,11 @@ sitrep_tracker/          # SITREP tracking tool
 
 ## Gotchas
 
-- **Track letter I → M**: Letter I was retired because it looks like numeral 1. ML Engineer tracks are TM-40M/TM-50M, not TM-40I/TM-50I. Valid track letters: G–H, J–M.
+- **Track letter I → M**: Letter I was retired because it looks like numeral 1. ML Engineer tracks are TM-40M/TM-50M, not TM-40I/TM-50I. Valid track letters: G–H, J–O.
 - **"File X" = published output**: When user references a file by name, default to the rendered version (HTML/PDF/PPT/DOC). Only use markdown source if they explicitly say "markdown."
 - **HTML-first update order**: Always update HTML first, then port to React/SharePoint. Never derive HTML from React. Do not mention React/SharePoint unless the user brings it up.
 - **Dual maintenance**: Content changes to MSS Training Hub must go to BOTH `mss_info_app/index.html` (HTML) AND `mss_widget/src/panels/*.tsx` (React). Never update one without the other.
-- **TM-30 is a hard prereq**: TM-30 is required before ALL TM-40 tracks. BSP is a parallel track, not a prereq.
+- **TM-30 is a hard prereq**: TM-30 is required before ALL TM-40 tracks. FBC is a parallel track, not a prereq.
 - **PDF manifest**: After rebuilding PDFs, the manifest (`pdf/.manifest.json`) and SHA file (`pdf/pdf_manifest.sha256`) must also be updated.
 
 ## Environment

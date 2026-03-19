@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20261128_043 — IED EVENT
+DTG: 280000Z NOV 2026
+Unit: V CORPS G2
+
+Summary: At 2040 local, a suspected IED was identified by route clearance element in grid 37T649868 along ROUTE GOLD. EOD requested and responded within 19 minutes. Device detonated during approach. No casualties due to standoff distance.
+
+Device Description: Infrared trigger with command wire backup, approx 8kg charge. Collected for exploitation. DNA swabs taken.
+Recommended Action: Restrict movement along ROUTE GOLD until EOD clearance complete. Disseminate grid data to adjacent units.

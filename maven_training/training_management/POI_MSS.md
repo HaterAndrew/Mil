@@ -9,7 +9,7 @@
 | **Effective Date** | March 2026 |
 | **Review Cycle** | Annual or upon major platform update |
 | **Authority** | C2DAO Data Governance Directive |
-| **Classification** | UNCLASSIFIED |
+| **Classification** | — |
 
 ---
 
@@ -25,7 +25,7 @@ Defines course content, instructional methods, evaluation criteria, and resource
 
 ### 1-3. Scope
 
-This POI covers eighteen courses in five tiers, plus the Builder Sprint (BSP) event program and two Train-the-Trainer (T3) courses:
+This POI covers twenty-five courses in six tiers, plus the Senior Leader course (TM-SL), the Foundry Bootcamp (FBC) event program, and two Train-the-Trainer (T3) courses:
 
 | Tier | Courses | Notes |
 |---|---|---|
@@ -34,13 +34,17 @@ This POI covers eighteen courses in five tiers, plus the Builder Sprint (BSP) ev
 | 3 — Advanced Builder | TM-30 | Data-adjacent specialists and unit data leads |
 | 4a — WFF Functional | TM-40A through TM-40F | Warfighting function staff; prereq TM-30 |
 | 4b — Specialist | TM-40G through TM-40O | Role-specific specialist training; prereq TM-30 |
-| — | Builder Sprint (BSP) | **Outside TM chain.** Quarterly applied build event; prereq TM-20 + validated project; no TM credit. See BSP-SOP-001. |
+| 5 — Advanced Specialist | TM-50G through TM-50O | Advanced role-specific training; prereq corresponding TM-40 |
+| — | TM-SL (Senior Leader) | **Outside TM chain.** 1 day; O-5/E-9+ personnel. Replaces TM-10 for senior leaders. No further progression. |
+| — | Foundry Bootcamp (FBC) | **Outside TM chain.** Quarterly applied build event; prereq TM-20 + validated project; no TM credit. See FBC-SOP-001. |
 | — | T3-I (Instructor Certification) | **Outside TM chain.** 5 days classroom + supervised practicum; prereq TM-30 + C2DAO selection. |
 | — | T3-F (MSC Force Multiplier) | **Outside TM chain.** Half day; prereq TM-20 + CDR nomination. Produces Unit Data Trainers. |
 
 ### 1-4. Prerequisite Chain
 
 ```
+TM-SL (senior leaders — O-5/E-9+ — terminal, no further progression)
+
 TM-10 (all personnel)
   └── TM-20 (builders)
   │     └── T3-F (MSC Force Multiplier — Unit Data Trainer; + CDR nomination)
@@ -49,17 +53,19 @@ TM-10 (all personnel)
         └── TM-30 (advanced builders / data-adjacent / WFF functional staff)
               ├── T3-I (Instructor Certification; + C2DAO selection)
               ├── TM-40A through TM-40F (WFF functional tracks — INT/FIRES/M2/SUST/PROT/MC staff)
-              ├── TM-40G (ORSA)
-              ├── TM-40H (AI Engineer)
-              ├── TM-40M (ML Engineer)
-              ├── TM-40J (Program Manager)
-              ├── TM-40K (Knowledge Manager)
-              └── TM-40L (Software Engineer)
+              ├── TM-40G (ORSA) → TM-50G (Advanced ORSA)
+              ├── TM-40H (AI Engineer) → TM-50H (Advanced AI Engineer)
+              ├── TM-40J (Program Manager) → TM-50J (Advanced Program Manager)
+              ├── TM-40K (Knowledge Manager) → TM-50K (Advanced Knowledge Manager)
+              ├── TM-40L (Software Engineer) → TM-50L (Advanced Software Engineer)
+              ├── TM-40M (ML Engineer) → TM-50M (Advanced ML Engineer)
+              ├── TM-40N (UI/UX Designer) → TM-50N (Advanced UI/UX Designer)
+              └── TM-40O (Platform Engineer) → TM-50O (Advanced Platform Engineer)
 ```
 
 ### 1-5. Security Clearance Requirements
 
-All MSS training courses (TM-10 through TM-50) are conducted at the UNCLASSIFIED level. No security clearance is required for course enrollment or participation. Training materials are classified UNCLASSIFIED // CUI where indicated.
+No security clearance is required for course enrollment or participation. Training materials are marked CUI where indicated.
 
 > **NOTE:** Trainees who will apply MSS skills to classified data environments post-graduation must hold appropriate clearances per their unit's security manager. Clearance verification is the responsibility of the sponsoring unit, not the MSS training program.
 
@@ -105,17 +111,21 @@ All MSS training is conducted in the **MSS Training Environment** — a dedicate
 | TM-40J | Program Manager | Specialist | 4 days | 32 | TM-10, TM-20, TM-30 (Required) |
 | TM-40K | Knowledge Manager | Specialist | 4 days | 32 | TM-10, TM-20, TM-30 (Required) |
 | TM-40L | Software Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
+| TM-40N | UI/UX Designer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
+| TM-40O | Platform Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
 | TM-50G | Advanced ORSA | Advanced Specialist | 5 days | 40 | TM-40G (Required) |
 | TM-50H | Advanced AI Engineer | Advanced Specialist | 5 days | 40 | TM-40H (Required) |
 | TM-50M | Advanced ML Engineer | Advanced Specialist | 5 days | 40 | TM-40M (Required) |
 | TM-50J | Advanced Program Manager | Advanced Specialist | 3 days | 24 | TM-40J (Required) |
 | TM-50K | Advanced Knowledge Manager | Advanced Specialist | 3 days | 24 | TM-40K (Required) |
 | TM-50L | Advanced Software Engineer | Advanced Specialist | 5 days | 40 | TM-40L (Required) |
+| TM-50N | Advanced UI/UX Designer | Advanced Specialist | 3 days | 24 | TM-40N (Required) |
+| TM-50O | Advanced Platform Engineer | Advanced Specialist | 3 days | 24 | TM-40O (Required) |
 
 > **NOTE:** TM-40A–F (WFF functional tracks) require TM-10, TM-20, and TM-30 as hard prerequisites. TM-40G–O (specialist tracks) and TM-50G–O (advanced specialist tracks) also require TM-30 as a hard prerequisite. There are NO TM-50A–F tracks.
 
-**Total program hours (full progression to any single WFF or specialist track):** 133 hours (TM-10 through TM-40G/H/M/L); 97 hours (TM-10 through TM-40A–F)
-**Total program hours (full progression to any single advanced specialist track):** 173 hours (TM-10 through TM-50G/H/I/L)
+**Total program hours (full progression to any single WFF or specialist track):** 128 hours (TM-10 through TM-40G–O); 112 hours (TM-10 through TM-40A–F)
+**Total program hours (full progression to any single advanced specialist track):** 168 hours (TM-10 through TM-50G–O)
 
 ### 2-2. Training Philosophy
 
@@ -140,7 +150,7 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 | REV | Review | Structured review of prior material; student Q&A focused |
 | EVAL | Evaluation | Practical exercise; graded; no instructor assistance permitted |
 | WKS | Workshop | Design workshop; student product reviewed by instructor/peers |
-| SPRINT | Builder Sprint | Self-directed applied build with SME consultation available; used exclusively in BSP events; no instructor delivery |
+| SPRINT | Foundry Bootcamp | Self-directed applied build with SME consultation available; used exclusively in FBC events; no instructor delivery |
 
 ---
 
@@ -374,45 +384,55 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 
 ### 3-7. TM-40J: Program Manager
 
-**Course length:** 3 days (24 hours) | **Evaluation:** Practical exercise (7 tasks); PM Dashboard Standards Checklist review; Go/No-Go
+**Course length:** 4 days (32 hours) | **Evaluation:** Practical exercise (7 tasks); PM Dashboard Standards Checklist review; Go/No-Go
 
 | Day | Block | Title | Hours | Method | Reference |
 |---|---|---|---|---|---|
-| 1 | 1 | Program Data Architecture: Program/Milestone/Resource/Risk Object Types — Design on Paper First | 1.5 | LAB | TM-40J Ch 2 |
-| 1 | 2 | Ontology: PM Object Types, Link Types (Program↔Milestone, Program↔Risk), Action Configuration | 1.75 | LAB | TM-40J Ch 2 Sec 2-4 |
-| 1 | 3 | Pipeline Builder: IMS Ingestion, DATEDIFF, Milestone Variance, RAG Status, Data-As-Of Timestamp | 2.0 | LAB | TM-40J Ch 3 |
-| 1 | 4 | Pipeline Builder: GFEBS Obligation Data in Append Mode; Run Twice, Verify Two Snapshot Records | 2.0 | LAB | TM-40J Ch 4 Sec 4-1 |
-| 2 | 5 | Workshop: Milestone Dashboard — RAG Conditional Formatting, Data-As-Of Timestamp Widget | 2.0 | LAB | TM-40J Ch 3 Sec 3-3 |
-| 2 | 6 | Quiver: Obligation Rate Chart, Reference Line at Quarterly Target, At-Risk Program Identification | 1.25 | LAB | TM-40J Ch 4 Sec 4-2 |
-| 2 | 7 | Contour: Portfolio Health Matrix — Cross-Program Roll-Up, Sort by overall_status Ascending | 2.0 | LAB | TM-40J Ch 5 |
-| 2 | 8 | Reporting: Scheduled Pipeline, Build Failure Notification, PDF Snapshot Export | 1.25 | LAB | TM-40J Ch 6 |
-| 2 | 9 | PM Dashboard Standards Checklist Walk-Through: Every Item, Common Failures | 0.5 | DIS | TM-40J Appendix A |
-| 3 | 10 | Supervised Practice Run (Ungraded): Full Stack from Different Provided Dataset | 3.25 | LAB | TM-40J All Chapters |
-| 3 | 11 | Practical Exercise (Evaluated) | 4.0 | EVAL | TM-40J Practical Exercise Guide |
-| | | **TM-40J Total** | **24.0** | | |
+| 1 | 1 | The Technical PM Role on MSS; How TM-40J Connects Operational Requirements to Technical Execution | 0.5 | BRF | TM-40J Ch 1 |
+| 1 | 2 | Agile for Data Projects: Scrum Framework, Sprint Cadence, Backlog Management; Applied Exercise: Story Sizing | 1.5 | LAB | TM-40J Ch 2 |
+| 1 | 3 | User Stories and Acceptance Criteria: Format, Quality Standards, Definition of Ready; Applied Exercise: Rewrite Requirements | 1.75 | LAB | TM-40J Ch 2 |
+| 1 | 4 | Kanban for Operational Support; Sprint Ceremonies — Military Data Team Execution Standards; Sprint Planning Exercise | 2.0 | LAB | TM-40J Ch 2 |
+| 1 | 5 | User Story Quality Workshop: Peer Review Against Definition of Ready; Common Failure Patterns | 1.75 | WKS | TM-40J Ch 2 |
+| 2 | 6 | ML/AI Project Lifecycle: Six Phases from Problem Definition Through Sustainment; Gate Criteria; Cross-Track Handoffs | 1.5 | LEC | TM-40J Ch 3 |
+| 2 | 7 | Requirements Elicitation from Commanders and Staff: Structured Intake, Translation Problem; Interview Simulation | 1.75 | LAB | TM-40J Ch 4 |
+| 2 | 8 | Requirements Document Drill: Problem Statement, Success Criteria, Constraints, Definition of Done; Peer Review | 1.5 | LAB | TM-40J Ch 4 |
+| 2 | 9 | Stakeholder Expectations: Delivery Timelines, Scope Tradeoffs, Cross-Track Coordination; PM vs. Technical Authority | 2.25 | LEC | TM-40J Ch 4 |
+| 3 | 10 | Project Tracking System Architecture: Project Tracker Ontology Design; Sprint Board Specification; PM Requirements Spec | 2.0 | LAB | TM-40J Ch 5 |
+| 3 | 11 | Commander-Facing Project Status Dashboard: Health Roll-Up, Milestone Status, Blocking Issues; Automated Status Alerts | 1.75 | LAB | TM-40J Ch 5 |
+| 3 | 12 | Risk Management for Data Projects: Risk Register, Dependency Management, Cross-Track Blockers | 2.0 | LAB | TM-40J Ch 6 |
+| 3 | 13 | Dependency Mapping Exercise: Identify Cross-Track Dependencies for Practical Exercise Scenario; Instructor Review | 2.0 | LAB | TM-40J Ch 6 |
+| 4 | 14 | Delivery Planning: Scope/Timeline/Quality Tradeoffs, Release Planning, Definition of Done, Production Readiness Review | 1.0 | LEC | TM-40J Ch 7 |
+| 4 | 15 | Change Management: User Adoption, Resistance Management, Rollout Sequencing, Platform Governance | 0.75 | LEC | TM-40J Ch 8 |
+| 4 | 16 | Practical Exercise Scenario Brief; Environment Check | 0.75 | BRF | — |
+| 4 | 17 | Practical Exercise — Phase 1 (Tasks 1–4): Requirements Document, User Stories, Sprint Board Spec, Dashboard Spec | 2.0 | EVAL | TM-40J Practical Exercise Guide |
+| 4 | 18 | Practical Exercise — Phase 2 (Tasks 5–7): Dependency/Risk Register, Production Readiness Brief, Change Management Summary | 4.0 | EVAL | TM-40J Practical Exercise Guide |
+| | | **TM-40J Total** | **32.0** | | |
 
 ---
 
 ### 3-8. TM-40K: Knowledge Manager
 
-**Course length:** 3 days (24 hours) | **Evaluation:** Practical exercise (6 tasks); PCS package instructor review (Day 3); Go/No-Go
+**Course length:** 4 days (32 hours) | **Evaluation:** Practical exercise (6 tasks); PCS package instructor review (Day 4); Go/No-Go
 
 | Day | Block | Title | Hours | Method | Reference |
 |---|---|---|---|---|---|
-| 1 | 1 | KM Role on MSS; Knowledge Architecture Methodology; Why KM Systems Fail | 1.0 | BRF | TM-40K Ch 1 |
-| 1 | 2 | Ontology: Knowledge Object Types — Document, Lesson, AAR, SOP, ExpertiseProfile | 2.0 | LAB | TM-40K Ch 2 |
-| 1 | 3 | Workshop: AAR Submission Form — Required-Field Validation, Submission Confirmation | 0.75 | LAB | TM-40K Ch 3 Sec 3-2 |
-| 1 | 4 | Lessons Learned Pipeline: Intake, Deduplication, Tagging Taxonomy, Distribution Routing | 2.0 | LAB | TM-40K Ch 4 |
-| 1 | 5 | AIP Logic: Document Summarization; Human Review Queue — All AIP Outputs Begin as Draft | 1.75 | LAB | TM-40K Ch 5 Sec 5-1 |
-| 2 | 6 | Workshop: Knowledge Browser — Search, Filter by Tag/Unit/Date, Drill-Down | 2.0 | LAB | TM-40K Ch 5 Sec 5-4 |
-| 2 | 7 | SOP/Doctrine Version Control: Lifecycle, Version Tagging, Review Notification Workflow | 1.25 | LAB | TM-40K Ch 7 Sec 7-6 |
-| 2 | 8 | Personnel Expertise Mapping: ExpertiseProfile, Skills Taxonomy, Privacy Act Authorities | 1.0 | LAB | TM-40K Ch 8 Sec 8-1 |
-| 2 | 9 | PCS Knowledge Transfer: Key Person Dependency Analysis, Transfer Package Design | 1.25 | LAB | TM-40K Ch 9 |
-| 2 | 10 | AIP Prompt Iteration Lab: Test 5 Documents, Score Extraction, Revise, Retest | 1.5 | LAB | TM-40K Sec 5-3 |
-| 3 | 11 | PCS Package Draft Review: Each Trainee Presents; Instructor Reviews; Trainees Revise | 2.25 | WKS | TM-40K Ch 9 |
-| 3 | 12 | Practical Exercise Scenario Brief | 0.75 | BRF | — |
-| 3 | 13 | Practical Exercise (Evaluated) | 4.0 | EVAL | TM-40K Practical Exercise Guide |
-| | | **TM-40K Total** | **24.0** | | |
+| 1 | 1 | KM Role on MSS; Knowledge Architecture Methodology; Why KM Systems Fail and What Makes Them Survive Personnel Turbulence | 1.0 | BRF | TM-40K Ch 1 |
+| 1 | 2 | Ontology: Knowledge Object Types — Document, Lesson, AAR, SOP, ExpertiseProfile; Link Types; Design on Paper Before Building | 2.0 | LAB | TM-40K Ch 2 |
+| 1 | 3 | Workshop: AAR Submission Form — Required-Field Validation, Submission Confirmation, Routing to AAR Object Type | 0.75 | LAB | TM-40K Ch 3 Sec 3-2 |
+| 1 | 4 | Lessons Learned Pipeline: Intake, Deduplication, Tagging Taxonomy Design, Distribution Routing by Unit/Classification/Echelon | 2.0 | LAB | TM-40K Ch 4 |
+| 1 | 5 | AIP Logic: Document Summarization; Automatic Theme Extraction; Human Review Queue — All AIP Outputs Begin as Draft | 1.75 | LAB | TM-40K Ch 5 Sec 5-1 |
+| 2 | 6 | Workshop: Knowledge Browser — Search by Keyword, Filter by Tag/Unit/Date, Drill-Down to Lesson Detail | 2.0 | LAB | TM-40K Ch 5 Sec 5-4 |
+| 2 | 7 | SOP/Doctrine Version Control: Lifecycle Management, Version Tagging, SOP Review Notification Workflow | 1.25 | LAB | TM-40K Ch 7 Sec 7-6 |
+| 2 | 8 | AIP Prompt Iteration Lab (Extended): Test Against 5 Documents, Score Extraction Quality, Revise, Retest Minimum 3 Cycles | 2.25 | LAB | TM-40K Ch 5 Sec 5-3 |
+| 2 | 9 | Prompt Comparison Debrief: Before/After Sharing, Structural Changes, Common Prompt Failure Patterns | 1.5 | WKS | TM-40K Ch 5 Sec 5-3 |
+| 3 | 10 | Personnel Expertise Mapping: ExpertiseProfile Object Type, Skills Taxonomy, SME Directory; Privacy Act Authorities | 2.0 | LAB | TM-40K Ch 8 Sec 8-1 |
+| 3 | 11 | PCS Knowledge Transfer Methodology: Key Person Dependency Analysis, Transfer Package Design, Foundry Project Handoff | 1.0 | LAB | TM-40K Ch 9 |
+| 3 | 12 | PCS Package Requirements Brief: Chapter 9 Completeness Criteria; What a Passing Package Contains | 0.25 | BRF | TM-40K Ch 9 |
+| 3 | 13 | PCS Package Draft Lab (Full Afternoon): Each Trainee Produces Complete Draft; Submitted by 1700 for Instructor Review | 4.0 | LAB | TM-40K Ch 9 |
+| 4 | 14 | PCS Package Instructor Review: Written Feedback; Individual Conferral; Revision Against Chapter 9 Criteria | 2.25 | WKS | TM-40K Ch 9 |
+| 4 | 15 | Practical Exercise Scenario Brief; Go Criteria Review for AIP Gate and PCS Package | 0.75 | BRF | — |
+| 4 | 16 | Practical Exercise (Evaluated) | 4.0 | EVAL | TM-40K Practical Exercise Guide |
+| | | **TM-40K Total** | **32.0** | | |
 
 ---
 
@@ -447,6 +467,66 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 
 ---
 
+### 3-10. TM-40N: UI/UX Designer
+
+**Course length:** 5 days (40 hours) | **Evaluation:** Practical exercise (6 tasks); design portfolio review; Go/No-Go
+
+| Day | Block | Title | Hours | Method | Reference |
+|---|---|---|---|---|---|
+| 1 | 1 | UI/UX Role on MSS; Design Principles for Operational Data Products; Workshop Design Patterns | 1.0 | BRF | TM-40N Ch 1-2 |
+| 1 | 2 | User Research Methods: Stakeholder Interviews, Task Analysis, Persona Development for Military Users | 2.0 | LEC | TM-40N Ch 2 Sec 2-1 |
+| 1 | 3 | Information Architecture: Organizing Complex Data for Command Audiences; Navigation Design | 1.25 | LAB | TM-40N Ch 2 Sec 2-2 |
+| 1 | 4 | Wireframing Fundamentals: Low-Fidelity Prototyping for Workshop Applications | 2.0 | LAB | TM-40N Ch 3 Sec 3-1 |
+| 1 | 5 | Design Critique: Peer Review of Wireframes Against Operational Requirements | 1.25 | WKS | TM-40N Ch 3 |
+| 2 | 6 | Accessibility Standards: WCAG Compliance for Government Applications; Color Contrast, Text Sizing | 2.0 | LEC | TM-40N Ch 4 Sec 4-1 |
+| 2 | 7 | Responsive Design: Multi-Device Layouts for Field and Garrison Use | 1.25 | LAB | TM-40N Ch 4 Sec 4-2 |
+| 2 | 8 | Color Theory and Typography for Data Visualization: RAG Standards, Status Encoding | 2.0 | LAB | TM-40N Ch 5 |
+| 2 | 9 | Dashboard Layout Patterns: Summary-Detail, Drill-Down, Comparison; Anti-Patterns to Avoid | 2.25 | LAB | TM-40N Ch 5 Sec 5-3 |
+| 3 | 10 | High-Fidelity Prototyping: Workshop Application Design with Real Data Binding | 2.0 | LAB | TM-40N Ch 6 Sec 6-1 |
+| 3 | 11 | Interactive Prototyping: Conditional Visibility, State Transitions, User Flow Design | 1.25 | LAB | TM-40N Ch 6 Sec 6-2 |
+| 3 | 12 | User Testing Methodology: Test Plan Design, Task Scenarios, Observation Protocols | 2.0 | LEC | TM-40N Ch 7 Sec 7-1 |
+| 3 | 13 | Usability Testing Lab: Conduct User Test with Peer; Document Findings; Prioritize Fixes | 2.25 | LAB | TM-40N Ch 7 Sec 7-2 |
+| 4 | 14 | Design System Creation: Component Library, Style Guide, Reusable Widget Templates | 2.0 | LAB | TM-40N Ch 8 Sec 8-1 |
+| 4 | 15 | Design System: Documenting Components for Developer Handoff; Naming Conventions | 1.25 | LAB | TM-40N Ch 8 Sec 8-2 |
+| 4 | 16 | Design-Development Collaboration: Specification Documents, Design Tokens, Handoff Workflow | 2.0 | LAB | TM-40N Ch 9 |
+| 4 | 17 | Design Review Process: Submitting Designs for C2DAO Standards Review; Iteration Workflow | 1.75 | DIS | TM-40N Ch 9 Sec 9-3 |
+| 5 | 18 | Design Portfolio Standards: What Constitutes a Complete Operational UI/UX Deliverable | 1.0 | LEC | TM-40N Ch 10 |
+| 5 | 19 | Practical Exercise Scenario Brief and Design Planning Time | 1.5 | BRF | — |
+| 5 | 20 | Practical Exercise (Evaluated): User Research → Wireframe → Prototype → Test → Design System Artifact | 4.0 | EVAL | TM-40N Practical Exercise Guide |
+| | | **TM-40N Total** | **40.0** | | |
+
+---
+
+### 3-11. TM-40O: Platform Engineer
+
+**Course length:** 5 days (40 hours) | **Evaluation:** Practical exercise (6 tasks); deployment checklist review; Go/No-Go
+
+| Day | Block | Title | Hours | Method | Reference |
+|---|---|---|---|---|---|
+| 1 | 1 | Platform Engineering Role on MSS; Infrastructure Architecture Overview; Foundry Deployment Model | 1.0 | BRF | TM-40O Ch 1-2 |
+| 1 | 2 | Kubernetes Fundamentals: Cluster Architecture, Namespaces, Resource Quotas, Pod Lifecycle | 2.0 | LAB | TM-40O Ch 2 Sec 2-1 |
+| 1 | 3 | Container Management: Image Registry, Build Pipeline, Vulnerability Scanning Basics | 1.25 | LAB | TM-40O Ch 2 Sec 2-2 |
+| 1 | 4 | Foundry Infrastructure: Platform Components, Service Dependencies, Health Check Architecture | 2.0 | LAB | TM-40O Ch 3 Sec 3-1 |
+| 1 | 5 | Infrastructure-as-Code: Configuration Management Patterns for Repeatable Deployments | 1.25 | LAB | TM-40O Ch 3 Sec 3-2 |
+| 2 | 6 | Deployment Strategies: Rolling Updates, Blue-Green, Canary; Rollback Procedures | 2.0 | LAB | TM-40O Ch 4 Sec 4-1 |
+| 2 | 7 | Deployment Lab: Execute a Rolling Update; Verify Zero-Downtime; Trigger a Rollback | 1.25 | LAB | TM-40O Ch 4 Sec 4-2 |
+| 2 | 8 | Service Mesh and Networking: Ingress, Load Balancing, Service Discovery, TLS Configuration | 2.0 | LAB | TM-40O Ch 5 |
+| 2 | 9 | Storage Management: Persistent Volumes, Storage Classes, Backup and Recovery Procedures | 2.25 | LAB | TM-40O Ch 5 Sec 5-3 |
+| 3 | 10 | Monitoring Architecture: Metrics Collection, Log Aggregation, Distributed Tracing Setup | 2.0 | LAB | TM-40O Ch 6 Sec 6-1 |
+| 3 | 11 | Alerting Configuration: Threshold Alerts, Anomaly Detection, Escalation Routes, PagerDuty Integration | 1.25 | LAB | TM-40O Ch 6 Sec 6-2 |
+| 3 | 12 | Observability Dashboard Build: Health Status, Resource Utilization, Error Rates, SLI/SLO Tracking | 2.0 | LAB | TM-40O Ch 6 Sec 6-3 |
+| 3 | 13 | Incident Response: Runbook Development, Escalation Procedures, Post-Incident Review Template | 2.25 | LAB | TM-40O Ch 7 |
+| 4 | 14 | Security Hardening: Network Policies, RBAC Configuration, Secrets Management, Audit Logging | 2.0 | LAB | TM-40O Ch 8 Sec 8-1 |
+| 4 | 15 | Access Control: Service Accounts, Pod Security Standards, Least-Privilege Enforcement | 1.25 | LAB | TM-40O Ch 8 Sec 8-2 |
+| 4 | 16 | CI/CD Pipeline Design: GitOps Workflow, Automated Testing Gates, Promotion Environments | 2.0 | LAB | TM-40O Ch 9 Sec 9-1 |
+| 4 | 17 | CI/CD Lab: Build a Pipeline with Test, Scan, and Deploy Stages; Verify Gate Enforcement | 1.75 | LAB | TM-40O Ch 9 Sec 9-2 |
+| 5 | 18 | C2DAO Infrastructure Standards: Change Management, Deployment Approval, Documentation Requirements | 1.0 | LEC | TM-40O Ch 10 |
+| 5 | 19 | Practical Exercise Scenario Brief and Infrastructure Planning Time | 1.5 | BRF | — |
+| 5 | 20 | Practical Exercise (Evaluated): Deploy → Monitor → Alert → Secure → CI/CD Pipeline → Deployment Checklist | 4.0 | EVAL | TM-40O Practical Exercise Guide |
+| | | **TM-40O Total** | **40.0** | | |
+
+---
+
 ## CHAPTER 4 — TRAINING RESOURCES
 
 ### 4-1. Instructor Requirements
@@ -468,6 +548,8 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 | TM-40J | Program management background; TM-30 certified; GFEBS/IMS proficiency | 6:1 |
 | TM-40K | Knowledge management background; TM-30 certified; AIP Logic configuration proficiency | 6:1 |
 | TM-40L | Software engineering background; OSDK/Platform SDK proficiency; TM-40L certified | 4:1 |
+| TM-40N | UI/UX design background; Workshop design proficiency; TM-40N certified or C2DAO UX SME designation | 4:1 |
+| TM-40O | Platform engineering background; Kubernetes/container proficiency; TM-40O certified or C2DAO infrastructure SME designation | 4:1 |
 
 ### 4-2. Training Environment Requirements
 
@@ -483,6 +565,8 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 | TM-40J | MSS Builder | 5 duty days |
 | TM-40K | MSS Builder + AIP Logic configuration | 5–7 duty days |
 | TM-40L | OSDK developer access + developer token | 10+ duty days |
+| TM-40N | Workshop design access (Editor + AIP Logic configuration) | 7–10 duty days |
+| TM-40O | Kubernetes cluster access + CI/CD pipeline access | 10+ duty days |
 
 ### 4-3. Training Aids and Materials
 
@@ -510,17 +594,20 @@ Go requires all three:
 | TM-10 | Incorrect classification marking or export procedure |
 | TM-20 | Viewer-role test account can trigger Action or modify data |
 | TM-30 | Fatally-flawed Ontology design not corrected before build; promotion submitted without description |
+| TM-40G | Commander brief presents point estimate without uncertainty bounds |
 | TM-40H | Any AIP workflow writes to production Objects without human checkpoint |
 | TM-40M | Model calibration not performed; governance document missing required sections |
 | TM-40J | Dashboard has no data-as-of timestamp |
 | TM-40K | AIP workflow auto-publishes without human review gate |
 | TM-40L | Hardcoded credential in application code; validator test suite not fully passing |
+| TM-40N | Design delivered without documented accessibility compliance or user testing plan |
+| TM-40O | Infrastructure deployed without monitoring or alerting configuration |
 
 ### 5-3. No-Go Remediation
 
 A trainee who receives No-Go must:
 1. Receive documented counseling within 1 duty day (DA Form 4856 or equivalent)
-2. Conduct remediation on failed tasks — minimum 4 hours for TM-10/20/40J/40K; minimum 8 hours for TM-30/40G/40H/40M/40L
+2. Conduct remediation on failed tasks — minimum 4 hours for TM-10/20/40J/40K; minimum 8 hours for TM-30/40G/40H/40M/40L/40N/40O
 3. Be re-evaluated within 10 duty days
 4. A second No-Go requires C2DAO approval before a third evaluation
 
@@ -549,6 +636,8 @@ Upon successful completion (Go):
 | TM-40J | 0.5 | 17.75 | 0.5 | — | 4.0 | 22.75* |
 | TM-40K | 1.0 | 14.25 | — | 2.25 | 4.0 | 21.5* |
 | TM-40L | 2.0 | 30.0 | — | — | 4.0 | 36.0* |
+| TM-40N | 4.0 | 22.0 | 1.75 | 1.25 | 4.0 | 33.0* |
+| TM-40O | 2.5 | 30.0 | — | — | 4.0 | 36.5* |
 
 *Remainder of scheduled hours are review periods and scenario briefs not separately categorized above.
 
@@ -565,5 +654,5 @@ Upon successful completion (Go):
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *POI MSS-POI-001 | Version 1.0 | March 2026*

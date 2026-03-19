@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20251010_155 — IED EVENT
+DTG: 100000Z OCT 2025
+Unit: 2-3 BN
+
+Summary: At 2000 local, a suspected IED was identified by route clearance element in grid 35T193778 along ROUTE AMBER. EOD requested and responded within 15 minutes. Device detonated during approach. No casualties due to standoff distance.
+
+Device Description: Radio-controlled initiator (RCIED), approx 8kg charge. Collected for exploitation. DNA swabs taken.
+Recommended Action: Restrict movement along ROUTE AMBER until EOD clearance complete. Disseminate grid data to adjacent units.

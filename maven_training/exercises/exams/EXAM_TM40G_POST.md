@@ -244,5 +244,5 @@ SA-6. Full credit: any two WFF tracks correctly identified with an example — T
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-40G Post-Test | Version 1.0 | March 2026*

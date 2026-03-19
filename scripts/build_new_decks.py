@@ -44,7 +44,7 @@ GOLD      = RGBColor(0xC8, 0x9A, 0x00)
 WHITE     = RGBColor(0xFF, 0xFF, 0xFF)
 GRAY_LT   = RGBColor(0xE2, 0xE8, 0xF0)
 
-CLASSIFICATION = "UNCLASSIFIED"
+CLASSIFICATION = ""
 
 # ── Content geometry ──────────────────────────────────────────────────────────
 X0  = 0.15

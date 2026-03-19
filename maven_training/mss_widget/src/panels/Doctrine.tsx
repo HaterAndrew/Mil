@@ -29,7 +29,7 @@ export default function Doctrine({ showPanel }: Props) {
       </div>
       <div className="card-grid card-grid-2">
         <div className="card gold-top">
-          <div className="card-label">CG-SIGNED &bull; MAY 2025 &bull; UNCLASSIFIED</div>
+          <div className="card-label">CG-SIGNED &bull; MAY 2025</div>
           <div className="card-title">USAREUR-AF Data and Analytics Strategy</div>
           <div className="card-body">
             <p>Signed by GEN Donahue. Establishes the command vision for data-driven operations over the next 3&ndash;5 years. Defines four strategic outcomes: Decision Advantage, Data Interoperability, Modernize Theater Data Infrastructure, and Data-Ready Workforce.</p>
@@ -54,7 +54,7 @@ export default function Doctrine({ showPanel }: Props) {
           <div className="card-label">SENIOR LEADERS (O-5+ / SGM+)</div>
           <div className="card-title">Data Literacy for Senior Leaders</div>
           <div className="card-body">
-            <p>Written for commanders, senior NCOs, and senior civilians. Covers command responsibilities, evaluating data products, directing a data-capable formation, and decision frameworks.</p>
+            <p>Written for commanders, senior NCOs, and senior Civilians. Covers command responsibilities, evaluating data products, directing a data-capable formation, and decision frameworks.</p>
             <p><strong>Format:</strong> Short (~20&ndash;30pp). Principles, not procedures. Chapter/paragraph numbered.</p>
             <p><strong>Key topics:</strong> Commander&rsquo;s data responsibilities &bull; Evaluating analytical products &bull; Standing up MSS capability &bull; Data governance and stewardship</p>
           </div>
@@ -128,8 +128,8 @@ export default function Doctrine({ showPanel }: Props) {
         <div className="callout-label">NOT FINDING WHAT YOU NEED?</div>
         <div className="callout-body">
           Contact your unit data steward for additional publications, source files, or access to restricted materials.
-          For technical support, visit the <button className="qr-link" onClick={() => showPanel('support' as any)}>Support page &rarr;</button>
-          For task-level procedures, use the <button className="qr-link" onClick={() => showPanel('taskindex' as any)}>Task Index &rarr;</button>
+          For technical support, visit the <button className="qr-link" onClick={() => showPanel('support')}>Support page &rarr;</button>
+          For task-level procedures, use the <button className="qr-link" onClick={() => showPanel('taskindex')}>Task Index &rarr;</button>
         </div>
       </div>
     </>

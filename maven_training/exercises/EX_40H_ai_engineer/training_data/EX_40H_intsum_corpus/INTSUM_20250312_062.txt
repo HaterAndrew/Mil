@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250312_062 — OBSERVATION REPORT
+DTG: 120000Z MAR 2025
+Unit: 1BCT 1AD
+
+Summary: OP LYNX reported observation of 4 unidentified vehicles moving in convoy formation along ROUTE STEEL at 2230 local. Vehicles: fuel tanker. Movement direction: NORTHEAST. No hostile action observed. Convoy cleared the AO within 41 minutes.
+
+Assessment: Likely civilian logistics movement. Pattern consistent with previous observations. Does not meet CCIR threshold but logged for trend analysis.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

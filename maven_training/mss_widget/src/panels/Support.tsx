@@ -74,15 +74,15 @@ export default function Support({ showPanel }: Props) {
 
       <div className="callout note mt-24">
         <div className="callout-label">NOTE &mdash; DISTRIBUTION</div>
-        <div className="callout-body">All publications in this curriculum are UNCLASSIFIED. These are DRAFT documents — not yet approved for distribution. Do not distribute outside your organization without consulting your data steward. Do not assume these publications apply to classified MSS configurations without consulting your data steward.</div>
+        <div className="callout-body">These are DRAFT documents — not yet approved for distribution. Do not distribute outside your organization without consulting your data steward.</div>
       </div>
 
       <div className="callout note mt-24">
         <div className="callout-label">NOT FINDING WHAT YOU NEED?</div>
         <div className="callout-body">
           Contact your unit data steward for additional publications, source files, or access to restricted materials.
-          For technical support, visit the <button className="qr-link" onClick={() => showPanel('support' as any)}>Support page &rarr;</button>
-          For task-level procedures, use the <button className="qr-link" onClick={() => showPanel('taskindex' as any)}>Task Index &rarr;</button>
+          For technical support, visit the <button className="qr-link" onClick={() => showPanel('support')}>Support page &rarr;</button>
+          For task-level procedures, use the <button className="qr-link" onClick={() => showPanel('taskindex')}>Task Index &rarr;</button>
         </div>
       </div>
     </>

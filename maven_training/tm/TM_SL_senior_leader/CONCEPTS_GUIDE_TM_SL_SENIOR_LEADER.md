@@ -1,7 +1,7 @@
 # CONCEPTS GUIDE — TM-SL: SENIOR LEADER EXECUTIVE COURSE
 ## Maven Smart System (MSS) — USAREUR-AF
 
-> **BLUF:** Read this before attending TM-SL. It establishes the conceptual framework for how data-driven operations work at the senior leader level — why the platform exists, what it means for your formation, and what the command expects from leaders who own the data posture of their organizations. This is not a technical document. It is a leadership document.
+> **Forward:** Read this before attending TM-SL. It establishes the conceptual framework for how data-driven operations work at the senior leader level — why the platform exists, what it means for your formation, and what the command expects from leaders who own the data posture of their organizations. This is not a technical document. It is a leadership document.
 > **Prereqs:** None. Operational experience at the O-5 / E-9+ level is assumed.
 > **Purpose:** Prepare senior leaders to engage productively with TM-SL content from the first hour.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
@@ -90,7 +90,7 @@ A senior leader's role is to validate the priorities across these horizons, not 
 
 ### 4-1. A Different Kind of Soldier
 
-Data professionals — whether military, civilian, or contractor — are problem-solvers who build. Their output is a product, not a brief. They think in systems, not slides. They value clarity of intent over prescriptive direction.
+Data professionals — whether military, Civilian, or contractor — are problem-solvers who build. Their output is a product, not a brief. They think in systems, not slides. They value clarity of intent over prescriptive direction.
 
 This does not make them difficult to lead. It makes them responsive to mission-type orders: give them the problem, the constraints, and the priority. Let them determine the solution.
 
@@ -214,5 +214,5 @@ The course will move quickly. It assumes you can process information at a senior
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Concepts Guide TM-SL | Version 1.0 | March 2026*

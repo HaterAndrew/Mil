@@ -1,6 +1,6 @@
 # EX_40J TRAINING — Open Tickets
 ## LOGSTAT Aggregation Pipeline
-**Classification:** UNCLASSIFIED // TRAINING USE ONLY
+
 
 ## Ticket Summary
 

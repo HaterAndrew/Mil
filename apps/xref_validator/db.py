@@ -10,10 +10,16 @@ from __future__ import annotations
 import glob
 import os
 import re
+import sys
 import urllib.parse
 from collections import Counter
 from datetime import UTC, datetime
 from pathlib import Path
+
+# Ensure sibling packages (readiness_tracker, etc.) are importable
+_apps_dir = str(Path(__file__).resolve().parent.parent)
+if _apps_dir not in sys.path:
+    sys.path.insert(0, _apps_dir)
 
 from sqlalchemy import (
     Column,
@@ -111,32 +117,9 @@ def get_db():
 
 
 # ---------------------------------------------------------------------------
-# Authoritative prereq chain
+# Prereq chain — imported from readiness_tracker (single source of truth)
 # ---------------------------------------------------------------------------
-PREREQ_CHAIN: dict[str, list[str]] = {
-    "TM-10": [],
-    "TM-20": ["TM-10"],
-    "TM-30": ["TM-20"],
-    "BSP": ["TM-20"],
-    "TM-40A": ["TM-30"],
-    "TM-40B": ["TM-30"],
-    "TM-40C": ["TM-30"],
-    "TM-40D": ["TM-30"],
-    "TM-40E": ["TM-30"],
-    "TM-40F": ["TM-30"],
-    "TM-40G": ["TM-30"],
-    "TM-40H": ["TM-30"],
-    "TM-40M": ["TM-30"],
-    "TM-40J": ["TM-30"],
-    "TM-40K": ["TM-30"],
-    "TM-40L": ["TM-30"],
-    "TM-50G": ["TM-40G"],
-    "TM-50H": ["TM-40H"],
-    "TM-50M": ["TM-40M"],
-    "TM-50J": ["TM-40J"],
-    "TM-50K": ["TM-40K"],
-    "TM-50L": ["TM-40L"],
-}
+from readiness_tracker.db import PREREQ_CHAIN, ALL_COURSES  # noqa: E402
 
 # Valid TM identifiers
 VALID_TM_IDS = set(PREREQ_CHAIN.keys())
@@ -519,7 +502,7 @@ def _identify_file_tm(file_path: Path) -> str | None:
 
 def _normalize_tm_ref(raw: str) -> str:
     """Normalize a TM reference string like 'TM 20' or 'TM-40G' to 'TM-20'."""
-    m = re.match(r"TM[-\s]?(\d{2})([A-L])?", raw, re.IGNORECASE)
+    m = re.match(r"TM[-\s]?(\d{2})([A-HJ-O])?", raw, re.IGNORECASE)
     if not m:
         return raw
     number = m.group(1)

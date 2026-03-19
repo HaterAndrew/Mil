@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-40G COMPANION — OPERATIONS RESEARCH / SYSTEMS ANALYSIS (ORSA) · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** The ORSA's primary output is a commander's decision product. Every other capability — modeling, visualization, data access — exists in service of that product.
+> **Forward:** The ORSA's primary output is a commander's decision product. Every other capability — modeling, visualization, data access — exists in service of that product.
 > **Purpose:** Develops the analytical mental models required to operate effectively as an ORSA on MSS. Read before beginning TM-40G task instruction.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 

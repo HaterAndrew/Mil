@@ -2,7 +2,7 @@
 Single-slide MSS Training Program dep map for CG demo.
 Schema mirrors DEPENDENCY_MAP.html:
   - Solid gold arrows  = prereq edges  (TM-10 → TM-20 → TM-30)
-  - Dashed border box  = companion/parallel (BSP — not in prereq chain)
+  - Dashed border box  = companion/parallel (FBC — not in prereq chain)
   - Companion boxes    = Syllabus / Exercise / Exams per row
 Output: maven_training/training_management/MSS_TRAINING_BRIEF.pptx
 """
@@ -16,7 +16,7 @@ from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN
 from pptx.oxml.ns import qn
 
-REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.afbcath(__file__)))
 
 # ── Colors ─────────────────────────────────────────────────────────────────────
 NAVY   = RGBColor(0x1F, 0x38, 0x64)
@@ -28,7 +28,7 @@ COMP   = RGBColor(0x2E, 0x4D, 0x8A)
 TM10C  = RGBColor(0x1F, 0x38, 0x64)
 TM20C  = RGBColor(0x2E, 0x4D, 0x8A)
 TM30C  = RGBColor(0x3A, 0x62, 0xAA)
-BSPC   = RGBColor(0x7C, 0x4D, 0x0A)   # amber — BSP parallel track
+FBCC   = RGBColor(0x7C, 0x4D, 0x0A)   # amber — FBC parallel track
 CLIGHT = RGBColor(0xCC, 0xDD, 0xFF)
 
 W = Inches(13.33)
@@ -177,12 +177,12 @@ update_shape_text(s, 'TextBox 2', 'MSS TRAINING PROGRAM — USAREUR-AF')
 
 txt(s,
     "Operator training path  ·  prereq chain: TM-10 → TM-20 → TM-30  "
-    "·  BSP: quarterly parallel build sprint (dashed = not in prereq chain)",
+    "·  FBC: quarterly parallel foundry bootcamp (dashed = not in prereq chain)",
     Inches(1.16), Inches(0.70), W - Inches(1.30), Inches(0.20),
     sz=Pt(8.5), italic=True, color=LGRAY)
 
 # ── Layout geometry ────────────────────────────────────────────────────────────
-# Main grid: TM | Syllabus | Exercise | Exams  (left-biased to leave room for BSP)
+# Main grid: TM | Syllabus | Exercise | Exams  (left-biased to leave room for FBC)
 TM_W   = Inches(2.40)
 DOC_W  = Inches(2.20)
 ARR_GX = Inches(0.17)
@@ -197,18 +197,18 @@ C_EX  = C_SYL + DOC_W + ARR_GX
 C_EXM = C_EX  + DOC_W + ARR_GX
 MAIN_R = C_EXM + DOC_W   # right edge of main grid
 
-# BSP panel — to the right, spans TM-20 and TM-30 rows
-BSP_GAP = Inches(0.30)
-BSP_X   = MAIN_R + BSP_GAP
-BSP_W   = W - BSP_X - Inches(0.35)
+# FBC panel — to the right, spans TM-20 and TM-30 rows
+FBC_GAP = Inches(0.30)
+FBC_X   = MAIN_R + FBC_GAP
+FBC_W   = W - FBC_X - Inches(0.35)
 
 R1_T = Inches(0.98)
 R2_T = R1_T + BH + ROW_GAP
 R3_T = R2_T + BH + ROW_GAP
 TM_CX = LEFT_X + TM_W / 2
 
-BSP_T = R2_T
-BSP_H = BH + ROW_GAP + BH   # spans TM-20 and TM-30 rows
+FBC_T = R2_T
+FBC_H = BH + ROW_GAP + BH   # spans TM-20 and TM-30 rows
 
 # ── Row 1: TM-10 ──────────────────────────────────────────────────────────────
 tm_box(s, C_TM, R1_T, TM_W, BH,
@@ -234,10 +234,10 @@ doc_box(s, C_EX,  R2_T, DOC_W, BH, "EXERCISE", "EX_20  No-Code Builder", COMP)
 h_arrow(s, C_EXM - ARR_GX, R2_T, ARR_GX, BH)
 doc_box(s, C_EXM, R2_T, DOC_W, BH, "EXAMS", "Pre-assessment\nPost-assessment", COMP)
 
-# Dashed companion edge: TM-20 right edge → BSP left edge (dep-map schema)
+# Dashed companion edge: TM-20 right edge → FBC left edge (dep-map schema)
 dashed_connector(s,
     C_TM + TM_W, R2_T + BH / 2,
-    BSP_X,        R2_T + BH / 2)
+    FBC_X,        R2_T + BH / 2)
 
 v_arrow(s, TM_CX, R2_T + BH, ROW_GAP)
 
@@ -252,33 +252,33 @@ doc_box(s, C_EX,  R3_T, DOC_W, BH, "EXERCISE", "EX_30  Adv Builder", COMP)
 h_arrow(s, C_EXM - ARR_GX, R3_T, ARR_GX, BH)
 doc_box(s, C_EXM, R3_T, DOC_W, BH, "EXAMS", "Pre-assessment\nPost-assessment", COMP)
 
-# ── BSP sidebar — dashed border, amber, outside prereq chain ──────────────────
-rect(s, BSP_X, BSP_T, BSP_W, BSP_H,
+# ── FBC sidebar — dashed border, amber, outside prereq chain ──────────────────
+rect(s, FBC_X, FBC_T, FBC_W, FBC_H,
      fill=RGBColor(0x3A, 0x22, 0x04),   # very dark amber background
      line_color=GOLD, lw=Pt(1.5), dash=True)
 
-txt(s, "BSP",
-    BSP_X + Inches(0.12), BSP_T + Inches(0.10),
-    BSP_W - Inches(0.24), Inches(0.30),
+txt(s, "FBC",
+    FBC_X + Inches(0.12), FBC_T + Inches(0.10),
+    FBC_W - Inches(0.24), Inches(0.30),
     sz=Pt(18), bold=True, color=GOLD)
 
-txt(s, "BUILDER SPRINT",
-    BSP_X + Inches(0.12), BSP_T + Inches(0.40),
-    BSP_W - Inches(0.24), Inches(0.20),
+txt(s, "FOUNDRY BOOTCAMP",
+    FBC_X + Inches(0.12), FBC_T + Inches(0.40),
+    FBC_W - Inches(0.24), Inches(0.20),
     sz=Pt(9.5), bold=True, color=GOLD)
 
 txt(s,
     "Quarterly · 5-day supervised\nbuild event\n\n"
     "Prereq: TM-20 Go\n+ command-validated project\n\n"
     "Does NOT grant TM-30 credit\nDoes NOT unlock TM-40",
-    BSP_X + Inches(0.12), BSP_T + Inches(0.65),
-    BSP_W - Inches(0.24), BSP_H - Inches(0.75),
+    FBC_X + Inches(0.12), FBC_T + Inches(0.65),
+    FBC_W - Inches(0.24), FBC_H - Inches(0.75),
     sz=Pt(9), color=WHITE)
 
 # "parallel track" label on the dashed connector
 txt(s, "parallel track",
     C_TM + TM_W + Inches(0.05), R2_T + BH / 2 - Inches(0.22),
-    BSP_GAP + Inches(0.10), Inches(0.18),
+    FBC_GAP + Inches(0.10), Inches(0.18),
     sz=Pt(7), italic=True, color=LGRAY)
 
 # ── Depth note ─────────────────────────────────────────────────────────────────
@@ -303,8 +303,51 @@ if len(sldIdLst) > 0:
             pass
 
 # ── Save ──────────────────────────────────────────────────────────────────────
+# ── Slide 2: Capacity Projection ─────────────────────────────────────────────
+# Uses the pre-rendered PNG from scripts/capacity_graph.py
+cap_img = os.path.join(REPO_ROOT, "capacity_projection.png")
+
+# Duplicate the layout from slide 1 (same PROTO header)
+layout = prs.slide_layouts[1] if len(prs.slide_layouts) > 1 else prs.slide_layouts[0]
+s2 = prs.slides.add_slide(layout)
+clear_shapes(s2, preserve=PROTO_HEADER)
+update_shape_text(s2, 'TextBox 2', 'MSS TRAINING PROGRAM — CAPACITY PROJECTION')
+
+if os.path.exists(cap_img):
+    # Center the image on the slide with padding for the header
+    from PIL import Image
+    try:
+        with Image.open(cap_img) as im:
+            img_w, img_h = im.size
+    except ImportError:
+        # Fallback aspect ratio from our 15×7.5 figsize @ 180 dpi
+        img_w, img_h = 2700, 1350
+
+    aspect = img_w / img_h
+    # Available area below header
+    avail_w = W - Inches(0.60)
+    avail_h = H - Inches(1.10)
+    # Fit to available area preserving aspect ratio
+    if avail_w / avail_h > aspect:
+        pic_h = avail_h
+        pic_w = int(pic_h * aspect)
+    else:
+        pic_w = avail_w
+        pic_h = int(pic_w / aspect)
+
+    pic_l = (W - pic_w) // 2
+    pic_t = Inches(0.80)
+    s2.shapes.add_picture(cap_img, pic_l, pic_t, pic_w, pic_h)
+    print("  2 slides: dep map + capacity projection")
+else:
+    txt(s2, f"[capacity_projection.png not found — run scripts/capacity_graph.py first]",
+        Inches(1.0), Inches(3.0), Inches(10.0), Inches(1.0),
+        sz=Pt(14), bold=True, color=RGBColor(0x8A, 0x1A, 0x1A), align=PP_ALIGN.CENTER)
+    print("  WARNING: capacity_projection.png not found — placeholder added")
+    print("  Run: python3 scripts/capacity_graph.py  (then re-run this script)")
+
+# ── Save ──────────────────────────────────────────────────────────────────────
 out_path = os.path.join(REPO_ROOT, "maven_training", "training_management",
                         "MSS_TRAINING_BRIEF.pptx")
 prs.save(out_path)
 print(f"Saved: {out_path}")
-print("  1 slide: dep map schema — prereq chain (solid) + BSP parallel (dashed)")

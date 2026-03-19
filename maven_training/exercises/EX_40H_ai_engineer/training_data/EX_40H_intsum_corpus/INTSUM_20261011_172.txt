@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20261011_172 — IED EVENT
+DTG: 110000Z OCT 2026
+Unit: 1-1 BN
+
+Summary: At 1350 local, a suspected IED was identified by route clearance element in grid 37T643320 along ROUTE NEPTUNE. EOD requested and responded within 33 minutes. Device rendered safe. No casualties or equipment damage.
+
+Device Description: Victim-operated pressure plate, approx 5kg charge. Collected for exploitation. DNA swabs taken.
+Recommended Action: Restrict movement along ROUTE NEPTUNE until EOD clearance complete. Disseminate grid data to adjacent units.

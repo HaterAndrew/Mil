@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250226_176 — OBSERVATION REPORT
+DTG: 260000Z FEB 2025
+Unit: 1-1 BN
+
+Summary: OP HAWK reported observation of 14 unidentified vehicles moving in convoy formation along ROUTE AMBER at 0940 local. Vehicles: MTLB. Movement direction: EAST. No hostile action observed. Convoy cleared the AO within 15 minutes.
+
+Assessment: Likely civilian logistics movement. Pattern consistent with previous observations. Possible CCIR trigger — S2 assessment pending.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

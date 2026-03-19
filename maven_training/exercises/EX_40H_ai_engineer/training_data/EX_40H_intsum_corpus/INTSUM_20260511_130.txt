@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260511_130 — SIGINT SUMMARY
+DTG: 110000Z MAY 2026
+Unit: 1-12 CAV
+
+Summary: SIGINT collection assets detected 4 VHF emitter(s) in the vicinity of NAI 15 (grid 36T881656). Emissions lasted approximately 23 minutes. Intercept forwarded to technical channels for further analysis.
+
+Assessment: Intermittent emissions suggest non-standard communications schedule.
+Recommended Action: Continue collection against NAI 15. Request additional SIGINT coverage during 1800-0600 window.

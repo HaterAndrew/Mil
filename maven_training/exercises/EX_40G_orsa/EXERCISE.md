@@ -85,4 +85,4 @@ Training dataset: synthetic PMCS/maintenance cycle data, 180 days, 3 battalions,
 
 ## NEXT STEPS
 
-Participants who receive an overall Go on EX_40G are eligible to enroll in **TM-50G — Advanced ORSA**. TM-50G extends this exercise's competencies into time-series modeling, multi-source fusion, and senior-leader analytical support. TM-50 is G–M only (advanced specialist tracks).
+Participants who receive an overall Go on EX_40G are eligible to enroll in **TM-50G — Advanced ORSA**. TM-50G extends this exercise's competencies into time-series modeling, multi-source fusion, and senior-leader analytical support. TM-50 is G–O (advanced specialist tracks).

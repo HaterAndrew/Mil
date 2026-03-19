@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250209_070 — WEATHER IMPACT
+DTG: 090000Z FEB 2025
+Unit: 3BCT 4ID
+
+Summary: Severe thunderstorms forecast for the ROTFELD AO. Wind gusts up to 65 km/h. Lightning risk HIGH.
+
+Operational Impact: Logistics resupply timeline may shift. Coordinate with SPO for alternate scheduling.
+Recommended Action: Adjust operations tempo as needed. Monitor weather updates from corps weather team. Coordinate with aviation for revised ISR windows.

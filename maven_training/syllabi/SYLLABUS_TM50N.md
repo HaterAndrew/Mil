@@ -81,7 +81,7 @@ Complete **5+ duty days before Day 1:**
 | 1100–1115 | — | Break | |
 | 1115–1200 | 12 | Studio | Accessibility at enterprise scale: automated testing strategies, remediation prioritization, compliance reporting |
 | 1200–1300 | — | Lunch | |
-| 1300–1500 | 13 | Exercise | **EX-50N Capstone:** Design a design system component, DDIL pattern, and governance proposal for a real MSS portfolio gap |
+| 1300–1500 | 13 | Exercise | **EX_50N Capstone:** Design a design system component, DDIL pattern, and governance proposal for a real MSS portfolio gap |
 | 1500–1515 | — | Break | |
 | 1515–1630 | 14 | Presentation | Capstone presentations and peer review |
 | 1630–1700 | 15 | Evaluation | Post-test (EXAM_TM50N_POST); course evaluation |

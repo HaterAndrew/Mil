@@ -29,7 +29,7 @@ C2DAO SME designation certifies that a person has demonstrated domain expertise 
 ### 1-3. What SME Designation Is Not
 
 - It is not an instructor certification. SME designation is a domain qualification prerequisite — the holder must still complete T3-I (or be grandfathered under FDP §3-1) to teach independently.
-- It is not a military or civilian credential. It is an internal C2DAO designation.
+- It is not a military or Civilian credential. It is an internal C2DAO designation.
 - It does not confer authority over other personnel, assign supervisory responsibilities, or change the holder's duty position.
 
 ---
@@ -62,7 +62,7 @@ For TM-30 instruction, FDP §2-1 allows "C2DAO SME designation" as an alternativ
 | **Course Qualification** | TM-40G Go on file |
 | **Operational Experience** | 12+ months performing ORSA work on the MSS platform |
 | **Production Work** | 2+ production analytical products deployed on MSS (dashboards, models, or decision-support tools actively used by operational units) |
-| **Peer Review** | Technical review and endorsement by an FA49 officer, ORSA-designated civilian, or existing C2DAO ORSA SME |
+| **Peer Review** | Technical review and endorsement by an FA49 officer, ORSA-designated Civilian, or existing C2DAO ORSA SME |
 | **Domain Knowledge** | Demonstrated proficiency in statistical modeling, time series analysis, Monte Carlo simulation, and linear programming as applied on the MSS platform |
 
 ### 3-2. AI SME
@@ -169,5 +169,5 @@ Revocation is documented in writing by the C2DAO Training OIC and recorded in th
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *C2DAO SME Designation Rubric | Version 1.0 | March 2026*

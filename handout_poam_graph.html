@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FY27 Training Implementation POAM — Timeline</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  @page { size: letter landscape; margin: 0.4in; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100vh; overflow: hidden; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0C2340;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 20px 8px 20px;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+  }
+  .header h1 {
+    font-size: 18px;
+    font-weight: 900;
+    color: #C8971A;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .header .subtitle {
+    font-size: 10px;
+    font-weight: 500;
+    color: #B0BEC5;
+    letter-spacing: 0.5px;
+  }
+  .header .date-range {
+    font-size: 11px;
+    font-weight: 700;
+    color: #C8971A;
+    letter-spacing: 1px;
+  }
+
+  /* Gantt container */
+  .gantt {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  /* Month header row */
+  .month-row {
+    display: grid;
+    grid-template-columns: 180px repeat(28, 1fr);
+    gap: 0;
+    margin-bottom: 2px;
+    flex-shrink: 0;
+  }
+  .month-label-cell {
+    font-size: 8px;
+    font-weight: 700;
+    color: #C8971A;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 0;
+    text-align: center;
+    border-bottom: 2px solid rgba(200,151,26,0.4);
+  }
+  .month-label-cell.corner {
+    text-align: left;
+    padding-left: 4px;
+    font-size: 9px;
+    color: #B0BEC5;
+  }
+
+  /* Week numbers row */
+  .week-row {
+    display: grid;
+    grid-template-columns: 180px repeat(28, 1fr);
+    gap: 0;
+    margin-bottom: 6px;
+    flex-shrink: 0;
+  }
+  .week-num {
+    font-size: 7px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    padding: 2px 0;
+  }
+
+  /* Phase rows */
+  .phase-row {
+    display: grid;
+    grid-template-columns: 180px repeat(28, 1fr);
+    gap: 0;
+    margin-bottom: 8px;
+    align-items: center;
+    min-height: 54px;
+  }
+
+  .phase-info {
+    padding-right: 12px;
+  }
+  .phase-num {
+    font-size: 7.5px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .phase-name {
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 2px;
+  }
+  .phase-dates {
+    font-size: 8px;
+    color: #B0BEC5;
+  }
+
+  /* Gantt bars */
+  .bar-cell {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .bar {
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+  }
+  .bar-text {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: rgba(255,255,255,0.9);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 6px;
+  }
+
+  /* Phase colors */
+  .p1 .phase-num { color: #64B5F6; }
+  .p1 .bar { background: linear-gradient(90deg, #1C4478, #255A9B); border: 1px solid rgba(100,181,246,0.3); }
+
+  .p2 .phase-num { color: #C8971A; }
+  .p2 .bar { background: linear-gradient(90deg, #8A6A14, #C8971A); border: 1px solid rgba(200,151,26,0.4); }
+
+  .p3 .phase-num { color: #CE93D8; }
+  .p3 .bar { background: linear-gradient(90deg, #5C2D82, #7B1FA2); border: 1px solid rgba(206,147,216,0.3); }
+
+  .p4 .phase-num { color: #81C784; }
+  .p4 .bar { background: linear-gradient(90deg, #1A6B28, #2E7D32); border: 1px solid rgba(129,199,132,0.3); }
+
+  /* Gate markers */
+  .gate-row {
+    display: grid;
+    grid-template-columns: 180px repeat(28, 1fr);
+    gap: 0;
+    margin-bottom: 6px;
+    align-items: center;
+    min-height: 24px;
+  }
+  .gate-label {
+    font-size: 8px;
+    font-weight: 800;
+    color: #C8971A;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding-right: 12px;
+    text-align: right;
+  }
+  .gate-marker {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gate-diamond {
+    width: 10px;
+    height: 10px;
+    background: #C8971A;
+    transform: rotate(45deg);
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 0 6px rgba(200,151,26,0.4);
+  }
+  .gate-text {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 6.5px;
+    font-weight: 700;
+    color: #C8971A;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+  }
+
+  /* Today marker */
+  .today-line {
+    position: relative;
+  }
+  .today-line::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: calc(100% + 8px);
+    background: #EF5350;
+    opacity: 0.6;
+    z-index: 5;
+  }
+  .today-line::after {
+    content: 'TODAY';
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 6px;
+    font-weight: 800;
+    color: #EF5350;
+    letter-spacing: 1px;
+    z-index: 5;
+  }
+
+  /* Vertical grid lines (month boundaries) */
+  .grid-line {
+    border-left: 1px solid rgba(255,255,255,0.06);
+  }
+
+  /* COA + Risk strip at bottom */
+  .bottom-strip {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+    margin-top: auto;
+    padding-top: 8px;
+    border-top: 1px solid rgba(200,151,26,0.2);
+  }
+  .coa-mini {
+    flex: 1;
+    display: flex;
+    gap: 8px;
+  }
+  .coa-chip {
+    flex: 1;
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+    padding: 6px 8px;
+    border-top: 2px solid #C8971A;
+  }
+  .coa-chip-num {
+    font-size: 7px;
+    font-weight: 800;
+    color: #C8971A;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .coa-chip-text {
+    font-size: 8px;
+    line-height: 1.3;
+    color: #E0E0E0;
+  }
+  .risk-mini {
+    width: 280px;
+    flex-shrink: 0;
+    background: rgba(198, 40, 40, 0.15);
+    border: 1px solid rgba(198, 40, 40, 0.4);
+    border-left: 3px solid #C62828;
+    border-radius: 4px;
+    padding: 6px 10px;
+  }
+  .risk-mini-label {
+    font-size: 7px;
+    font-weight: 800;
+    color: #EF5350;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .risk-mini-text {
+    font-size: 8px;
+    line-height: 1.35;
+    color: #FFCDD2;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    font-size: 7.5px;
+    font-weight: 600;
+    color: #607D8B;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-top: 6px;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+
+<div class="content">
+
+  <div class="header">
+    <div>
+      <h1>FY27 Training Implementation POAM</h1>
+      <div class="subtitle">Gantt Timeline &mdash; Plan of Action &amp; Milestones</div>
+    </div>
+    <div class="date-range">20 MAR &mdash; 1 OCT 2026 &nbsp;&bull;&nbsp; 28 WEEKS</div>
+  </div>
+
+  <div class="gantt">
+
+    <!-- Month headers -->
+    <div class="month-row">
+      <div class="month-label-cell corner">Phase / Activity</div>
+      <!-- MAR: Wk 1-2 -->
+      <div class="month-label-cell" style="grid-column: span 2;">MAR</div>
+      <!-- APR: Wk 3-6 -->
+      <div class="month-label-cell" style="grid-column: span 4;">APR</div>
+      <!-- MAY: Wk 7-10 -->
+      <div class="month-label-cell" style="grid-column: span 4;">MAY</div>
+      <!-- JUN: Wk 11-15 -->
+      <div class="month-label-cell" style="grid-column: span 5;">JUN</div>
+      <!-- JUL: Wk 16-19 -->
+      <div class="month-label-cell" style="grid-column: span 4;">JUL</div>
+      <!-- AUG: Wk 20-23 -->
+      <div class="month-label-cell" style="grid-column: span 4;">AUG</div>
+      <!-- SEP: Wk 24-28 -->
+      <div class="month-label-cell" style="grid-column: span 5;">SEP/OCT</div>
+    </div>
+
+    <!-- Week numbers -->
+    <div class="week-row">
+      <div class="week-num"></div>
+      <div class="week-num">1</div><div class="week-num">2</div>
+      <div class="week-num">3</div><div class="week-num">4</div><div class="week-num">5</div><div class="week-num">6</div>
+      <div class="week-num">7</div><div class="week-num">8</div><div class="week-num">9</div><div class="week-num">10</div>
+      <div class="week-num">11</div><div class="week-num">12</div><div class="week-num">13</div><div class="week-num">14</div><div class="week-num">15</div>
+      <div class="week-num">16</div><div class="week-num">17</div><div class="week-num">18</div><div class="week-num">19</div>
+      <div class="week-num">20</div><div class="week-num">21</div><div class="week-num">22</div><div class="week-num">23</div>
+      <div class="week-num">24</div><div class="week-num">25</div><div class="week-num">26</div><div class="week-num">27</div><div class="week-num">28</div>
+    </div>
+
+    <!-- Phase 1: Wk 1-4 -->
+    <div class="phase-row p1">
+      <div class="phase-info">
+        <div class="phase-num">Phase 1 &middot; Wk 1&ndash;4</div>
+        <div class="phase-name">Approval &amp; Executive Alignment</div>
+        <div class="phase-dates">20 MAR &ndash; 18 APR</div>
+      </div>
+      <!-- Wk 1-4 bar -->
+      <div class="bar-cell" style="grid-column: 2 / 6;">
+        <div class="bar"><span class="bar-text">Command approval &bull; SL buy-in &bull; Dates on LRTC</span></div>
+      </div>
+    </div>
+
+    <!-- Gate 1 -->
+    <div class="gate-row">
+      <div class="gate-label">Gate 1</div>
+      <div></div><div></div><div></div>
+      <div class="gate-marker" style="grid-column: 6;">
+        <div class="gate-diamond"></div>
+        <div class="gate-text">Approval + LRTC</div>
+      </div>
+    </div>
+
+    <!-- Phase 2: Wk 5-12 -->
+    <div class="phase-row p2">
+      <div class="phase-info">
+        <div class="phase-num">Phase 2 &middot; Wk 5&ndash;12</div>
+        <div class="phase-name">Material Revision &amp; Instructor Selection</div>
+        <div class="phase-dates">19 APR &ndash; 13 JUN</div>
+      </div>
+      <!-- Wk 5-12 bar -->
+      <div class="bar-cell" style="grid-column: 6 / 14;">
+        <div class="bar"><span class="bar-text">Revised curriculum ready &bull; Cadre selected</span></div>
+      </div>
+    </div>
+
+    <!-- Gate 2 -->
+    <div class="gate-row">
+      <div class="gate-label">Gate 2</div>
+      <div class="gate-marker" style="grid-column: 14;">
+        <div class="gate-diamond"></div>
+        <div class="gate-text">Curriculum + Cadre</div>
+      </div>
+    </div>
+
+    <!-- Phase 3: Wk 13-20 -->
+    <div class="phase-row p3">
+      <div class="phase-info">
+        <div class="phase-num">Phase 3 &middot; Wk 13&ndash;20</div>
+        <div class="phase-name">Instructor Onboarding &amp; MSC Pilot</div>
+        <div class="phase-dates">14 JUN &ndash; 8 AUG</div>
+      </div>
+      <!-- Wk 13-20 bar -->
+      <div class="bar-cell" style="grid-column: 14 / 22;">
+        <div class="bar"><span class="bar-text">Cadre certified &bull; MSC pilot validated &bull; GO/NO-GO</span></div>
+      </div>
+    </div>
+
+    <!-- Gate 3 -->
+    <div class="gate-row">
+      <div class="gate-label">Gate 3</div>
+      <div class="gate-marker" style="grid-column: 22;">
+        <div class="gate-diamond"></div>
+        <div class="gate-text">GO / NO-GO</div>
+      </div>
+    </div>
+
+    <!-- Phase 4: Wk 21-28 -->
+    <div class="phase-row p4">
+      <div class="phase-info">
+        <div class="phase-num">Phase 4 &middot; Wk 21&ndash;28</div>
+        <div class="phase-name">Finalization &amp; Roll-out</div>
+        <div class="phase-dates">9 AUG &ndash; 1 OCT</div>
+      </div>
+      <!-- Wk 21-28 bar -->
+      <div class="bar-cell" style="grid-column: 22 / 30;">
+        <div class="bar"><span class="bar-text">FY27 TRAINING OPERATIONAL</span></div>
+      </div>
+    </div>
+
+    <!-- Final gate -->
+    <div class="gate-row">
+      <div class="gate-label">Operational</div>
+      <div class="gate-marker" style="grid-column: 29;">
+        <div class="gate-diamond" style="background: #2E7D32; box-shadow: 0 0 8px rgba(46,125,50,0.5);"></div>
+        <div class="gate-text" style="color: #81C784;">FY27 LIVE</div>
+      </div>
+    </div>
+
+  </div><!-- end gantt -->
+
+  <!-- COA + Risk strip -->
+  <div class="bottom-strip">
+    <div class="coa-mini">
+      <div class="coa-chip">
+        <div class="coa-chip-num">COA 1</div>
+        <div class="coa-chip-text"><strong>7ATC</strong> takes training mission; ODT is proponent.</div>
+      </div>
+      <div class="coa-chip">
+        <div class="coa-chip-num">COA 2</div>
+        <div class="coa-chip-text"><strong>ODT</strong> takes it; grow from within USAREUR-AF staff.</div>
+      </div>
+      <div class="coa-chip">
+        <div class="coa-chip-num">COA 3</div>
+        <div class="coa-chip-text"><strong>Sister Directorate</strong> assumes the training mission.</div>
+      </div>
+    </div>
+    <div class="risk-mini">
+      <div class="risk-mini-label">Risk of Inaction</div>
+      <div class="risk-mini-text">Without an owner, training stalls. ODT burns out absorbing by default. The Army's first organic MSS training capability stops advancing.</div>
+    </div>
+  </div>
+
+  <div class="footer">USAREUR-AF Operational Data Team &middot; POAM FY27</div>
+
+</div>
+
+
+</body>
+</html>

@@ -210,5 +210,5 @@
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *LP Template | Version 1.0 | March 2026*

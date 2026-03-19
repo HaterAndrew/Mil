@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260808_198 — WEATHER IMPACT
+DTG: 080000Z AUG 2026
+Unit: 1BCT HHC
+
+Summary: Heavy rainfall warning issued. 40-60mm expected over 24 hours in the WESTENAU river basin. Flash flooding possible.
+
+Operational Impact: Communications may experience degradation due to atmospheric conditions.
+Recommended Action: Adjust operations tempo as needed. Monitor weather updates from corps weather team. Coordinate with aviation for revised ISR windows.

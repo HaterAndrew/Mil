@@ -166,5 +166,5 @@ The annual review produces a brief succession posture summary:
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Successor Planning Guide | Version 1.0 | March 2026*

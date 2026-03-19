@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250316_080 — TERRAIN ANALYSIS
+DTG: 160000Z MAR 2025
+Unit: 1BCT HHC
+
+Summary: Bridge at grid 37T689299 near TIEFENTAL assessed as CLASS 40 — capable of supporting Bradley but not M1 series. Alternate crossing at grid 37T813493 remains CLASS 70.
+
+Impact to Operations: Movement planning should account for degraded conditions. Coordination with engineer assets recommended.
+Recommended Action: Update common operational picture. Disseminate terrain overlay to subordinate units. Request engineer reconnaissance if conditions persist beyond 72 hours.

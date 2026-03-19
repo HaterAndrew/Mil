@@ -28,9 +28,9 @@ NOTE: This publication is the senior leader companion to Data Literacy Technical
 
 ## PREFACE
 
-This publication establishes data literacy principles and command responsibilities for USAREUR-AF. Audience: O-5 and above, CSM, SGM, and senior civilian equivalents.
+This publication establishes data literacy principles and command responsibilities for USAREUR-AF. Audience: O-5 and above, CSM, SGM, and senior Civilian equivalents.
 
-USAREUR-AF is the ASCC to USEUCOM, responsible for theater land operations from Iceland to the Caucasus. Subordinate commands include V Corps (Forward), 21st Theater Sustainment Command (21 TSC), and 7th Army Training Command (7ATC). USAREUR-AF supports NATO Article 5 and operates in a coalition environment requiring data interoperability with Allied nations. Adversary forces actively exploit data gaps and analytical failures. Data literacy is therefore more operationally consequential here than in any peacetime garrison environment.
+USAREUR-AF is the ASCC to USEUCOM and USAFRICOM, responsible for theater land operations across the European and African AOR. Subordinate commands include III Corps, V Corps (Forward), 21st Theater Sustainment Command (21 TSC), 7th Army Training Command (7ATC), 10th AAMDC, 56th MDC-E, and SETAF-AF. USAREUR-AF supports NATO Article 5 and operates in a coalition environment requiring data interoperability with Allied nations. Adversary forces actively exploit data gaps and analytical failures. Data literacy is therefore more operationally consequential here than in any peacetime garrison environment.
 
 This publication implements ADP 3-13, Information. It tells senior leaders what they are responsible for and why it matters. Technical guidance belongs in Data Literacy Technical Reference.
 
@@ -55,6 +55,48 @@ Commanders already depend on data whether they recognize it or not. Every COP up
 In USAREUR-AF's operational environment, data volume has increased faster than formations' capacity to use it. Without data-literate leaders directing the analytical effort, formations either drown in data or ignore it entirely. Both outcomes degrade decision quality.
 
 > **NOTE:** Data-literate leaders at every echelon are required to sustain and extend USAREUR-AF's operational data advantage.
+
+### 1-2a. The ODT Model — What Senior Leaders Need to Know
+
+Operational Data Teams (ODTs) are multifunctional teams of product managers, designers, software engineers, data engineers, and data scientists that solve operational problems with data at the speed of need. XVIII Airborne Corps was among the first to pilot the concept beginning in 2022 and published their experience in *Military Review* (February 2026). The MCCoE has since codified ODT employment in the Decision Optimization CONOPS. The XVIII ABC model is one corps' pilot approach — USAREUR-AF and other commands are adapting the concept to their own echelon, mission, and manning realities. Notably, LTG Donahue directed the original Data Warfare Company activation at XVIII ABC and now commands USAREUR-AF, providing continuity of vision. The principles below are drawn from XVIII ABC's experience — senior leaders should understand them as reference points from one corps' pilot, not rigid prescriptions.
+
+**What a senior leader must understand about ODTs:**
+
+| Principle | Implication for Commanders |
+|---|---|
+| **ODTs solve problems, not requests** | Staff elements articulate a problem — not a desired solution. The ODT determines the best technical approach. Directing a specific solution ("build me a dashboard that shows X") bypasses the scoping process and often produces less effective outcomes. |
+| **Capacity is finite** | A single ODT executes 2 tasks per sprint: 1 development, 1 scoping. Starting work on a new problem requires the ODT to stop work on another. There will always be more data-centric problems than time to solve them. |
+| **Governance prevents overextension** | XVIII ABC learned this the hard way: without a CG-signed governance policy, too many customers requested ODT resources simultaneously, and efforts became overextended on unrealistic timelines. The governance process is a command responsibility. |
+| **MVP timeline: at least 5 months** | Scoping (2 wk) → Discovery (4 wk) → Framing (4 wk) → Development (8 wk) → Handoff (2 wk). This is the fastest responsible timeline. Pressure to deliver faster degrades quality. |
+| **Exercise integration is deliberate** | During exercises, MVP products receive only bug fixes and minor adjustments. Products in early phases get user research, not development. This is by design — exercises are for validation, not feature development. |
+
+**The XVIII ABC proof point:** Their ODT delivered a BDA visualization capability — prototype in 3 months, MVP in 6, handoff to an Army program of record in 9. The commander defined the problem ("visualize attrition of the enemy integrated fires complex in real-time"), the ODT built the solution, and it has since been adopted across four divisions and is being absorbed by Army enterprise programs. That is what a properly resourced, governed, and trained ODT delivers.
+
+> **NOTE:** The MSS training curriculum (TM-10 through TM-50) is the pipeline that produces the personnel who staff ODTs. Senior leaders who resource MSS training are building the workforce that enables the ODT model at echelon.
+
+*Source: Forney, Herrmann, and Steele, "Fighting with Live Data," Military Review Online Exclusive, February 2026.*
+
+### 1-2b. Automated Fighting Products — What Your Staff Is Building
+
+One useful framing for the evolution of staff products comes from Adkins ("Achieving Decision Dominance," *Military Review*, January-February 2025), a thought piece proposing terminology for data-enabled operations:
+
+| Generation | Format | Example | Limitation |
+|---|---|---|---|
+| **Analog** | Hand-written | OPORD shell filled out in the field | Slow, no data connection, single copy |
+| **Digital** | Excel / PowerPoint / SharePoint | Staff running estimate in a shared drive | Manual data entry, no live feed, version control problems |
+| **Automated (AFP)** | Visualization tool connected to live data | MSS dashboard auto-refreshing from GCSS-A pipeline | Requires trained builders, governance, and platform access |
+
+**MSS applications are AFPs.** Every dashboard your staff uses, every readiness tracker, every SITREP generator — these are Automated Fighting Products connected to live, authoritative data sources. Adkins names the Maven Smart System as an ASCC-level COP platform for this capability.
+
+**What senior leaders must understand about AFPs:**
+- AFPs reduce the time required to produce staff running estimates — freeing cognitive bandwidth for analysis and planning
+- AFPs must be built, tested, and validated **before** they are needed in combat — Adkins calculates that a division has as little as 2:22 to deploy new tools while in contact
+- Untrained personnel cannot build or maintain AFPs — the MSS training program (TM-20 through TM-50) is the pipeline that produces AFP builders
+- AFPs are not "nice-to-have IT projects" — they are operational capabilities on the same plane as any other weapon system that requires trained operators
+
+> **NOTE:** Adkins argues that without a programmatic approach to decision dominance, tactical commanders will default to ad hoc methods that do not scale under LSCO conditions. The MSS training program addresses this concern by building a systematic training pipeline. *(Adkins is one officer's proposal — the Forney "Fighting with Live Data" article in Section 1-2a above documents the most relevant pilot experience for how ODTs operationalize these concepts.)*
+
+*Source: Adkins, "Achieving Decision Dominance," Military Review 105, no. 1 (January-February 2025).*
 
 ### 1-3. What Data Literacy Means for a Senior Leader
 
@@ -458,7 +500,7 @@ Senior NCO leadership is critical. CSMs and SGMs who enforce data discipline in 
 
 **NAFv4** — NATO Architecture Framework version 4. NATO standard for data and system architecture.
 
-**USEUCOM** — United States European Command. The Combatant Command to which USAREUR-AF is the ASCC.
+**USEUCOM** — United States European Command. One of two Combatant Commands to which USAREUR-AF serves as ASCC (the other being USAFRICOM).
 
 ---
 

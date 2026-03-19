@@ -204,5 +204,5 @@ WFF track analysts (TM-40A through TM-40F) are the operational consumers of appl
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Syllabus TM-40L | Version 2.0 | March 2026*

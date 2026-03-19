@@ -109,7 +109,7 @@ D. Be reviewed by NATO SHAPE headquarters before distribution to partner nations
 **13. "Privacy Act" considerations for aggregated Soldier expertise data apply because:**
 
 A. Aggregated data about individual Soldiers' skills, locations, and assignments constitutes a system of records under the Privacy Act, requiring proper notice, access controls, and authorized use
-B. Expertise profiles are classified at FOUO by default
+B. Expertise profiles are classified as CUI by default
 C. The Privacy Act applies only to data stored on SIPR
 D. Personnel data may not be stored in a non-Army system
 
@@ -224,7 +224,7 @@ SA-1. Full credit: parallel networks = each classification domain (NIPR, SIPR, J
 
 SA-2. Full credit: acceptable — AI analyzes incoming AARs and produces Draft lesson summaries, proposes tags, and queues items for KM officer review; NOT acceptable — automatic publishing to the theater knowledge base without human review; correct procedure: AI generates Draft → KM officer queue → qualified SME or KM officer reviews each draft for accuracy, classification, sensitivity, and completeness → approves → status changes to Published → distribution routing runs; AI-generated content is NEVER auto-published regardless of confidence score. Must distinguish acceptable from unacceptable AND state the required procedure.
 
-SA-3. Full credit: required ISA elements — data ownership and sovereignty (who retains rights to shared content); classification handling requirements (how partner handles FOUO, CUI, or equivalent); authorized use restrictions (what partner can do with the information); retention and destruction requirements; incident reporting procedures; authorized user definitions; consequences of sharing before ISA: unauthorized disclosure of Army information to a foreign entity, potential UCMJ or contractual violations, and loss of control over how the information is used or retransmitted. Must include ISA content AND consequences of premature sharing.
+SA-3. Full credit: required ISA elements — data ownership and sovereignty (who retains rights to shared content); classification handling requirements (how partner handles CUI or equivalent); authorized use restrictions (what partner can do with the information); retention and destruction requirements; incident reporting procedures; authorized user definitions; consequences of sharing before ISA: unauthorized disclosure of Army information to a foreign entity, potential UCMJ or contractual violations, and loss of control over how the information is used or retransmitted. Must include ISA content AND consequences of premature sharing.
 
 SA-4. Full credit: entities — Event (operation, exercise, briefing), LessonsLearned, Doctrine (publication, policy), Unit (echelon, AOR), SME/ExpertiseProfile, DecisionPoint; relationships — Event → generated → LessonsLearned; LessonsLearned → informed → Doctrine update; Unit → owns → LessonsLearned; SME → hasExpertise → Domain; why schema is operationally sensitive: the entity types and relationship structure reveal what categories of knowledge the theater tracks, which units are linked to which operations, and what decision points the command considers significant — adversaries could use this structure to understand command priorities and information flows. Partial credit (3 pts) for entities without relationship modeling or sensitivity rationale.
 
@@ -232,5 +232,5 @@ SA-5. Full credit: quantitative — lesson submission rate per period; lessons i
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-50K Pre-Test | Version 1.0 | March 2026*

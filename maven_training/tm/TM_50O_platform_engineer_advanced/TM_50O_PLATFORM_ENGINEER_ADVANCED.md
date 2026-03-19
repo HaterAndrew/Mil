@@ -1,6 +1,6 @@
 # TM-50O — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-50O qualifies advanced platform engineers to manage multi-cluster fleets, implement platform reliability engineering (SRE practices), automate RMF/ATO compliance, and design developer experience systems that accelerate application delivery across the MSS portfolio. This manual extends TM-40O from single-cluster operations to enterprise platform leadership.
+> **Forward:** TM-50O qualifies advanced platform engineers to manage multi-cluster fleets, implement platform reliability engineering (SRE practices), automate RMF/ATO compliance, and design developer experience systems that accelerate application delivery across the MSS portfolio. This manual extends TM-40O from single-cluster operations to enterprise platform leadership.
 > **Prereqs:** TM-40O, Platform Engineer (required, Go evaluation on file); demonstrated operational experience managing MSS infrastructure from TM-40O practical exercise or operational assignment
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -11,25 +11,15 @@
 
 ## CHAPTER 1 — INTRODUCTION: THE ADVANCED PLATFORM ENGINEER ROLE IN MSS
 
-### 1-1. Purpose and Scope
+### 1-1. Advanced Platform Engineer Manual
 
 **BLUF:** TM-50O extends TM-40O from building and operating individual clusters to managing the fleet — the collection of clusters, environments, and infrastructure services that constitute the MSS platform across the USAREUR-AF AOR.
 
 This manual provides task-based instruction for advanced platform engineers operating on the Maven Smart System (MSS). TM-50O personnel architect multi-cluster topologies, define service level objectives, automate compliance, and engineer the developer experience that enables application teams to deliver at speed.
 
-**TM-50O covers:**
-- Multi-cluster fleet management: Cluster API, fleet topology, lifecycle management, upgrade strategies
-- Platform reliability engineering: SLOs, SLIs, error budgets, incident management, capacity planning
-- RMF/ATO automation: continuous compliance monitoring, automated evidence generation, STIG automation
-- Developer experience engineering: golden paths, self-service portals, internal tooling, developer productivity measurement
-- Cross-domain infrastructure: cross-domain solutions, data diode integration, multi-classification cluster management
-- Platform observability at scale: distributed tracing, log aggregation, metric federation, alerting strategy
+**TM-50O covers** multi-cluster fleet management (Cluster API, fleet topology, lifecycle management, upgrade strategies); platform reliability engineering (SLOs, SLIs, error budgets, incident management, capacity planning); RMF/ATO automation (continuous compliance monitoring, automated evidence generation, STIG automation); developer experience engineering (golden paths, self-service portals, internal tooling, developer productivity measurement); cross-domain infrastructure (cross-domain solutions, data diode integration, multi-classification cluster management); and platform observability at scale (distributed tracing, log aggregation, metric federation, alerting strategy).
 
-**TM-50O does NOT cover:**
-- Single-cluster Kubernetes fundamentals — see TM-40O
-- CI/CD pipeline basics — see TM-40O
-- Application-level architecture — see TM-50L
-- Individual application design — see TM-40N, TM-50N
+**TM-50O does NOT cover** single-cluster Kubernetes fundamentals — see TM-40O; CI/CD pipeline basics — see TM-40O; application-level architecture — see TM-50L; or individual application design — see TM-40N, TM-50N.
 
 ### 1-2. Curriculum Position
 

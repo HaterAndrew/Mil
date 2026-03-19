@@ -101,27 +101,27 @@ Instructor answer key in every POST file.
 
 | Package | Corresponds To | Prereq | Audience |
 |---------|---------------|--------|---------|
-| [EX-40G_orsa/](EX-40G_orsa/) | TM-40G ORSA | TM-30 | ORSA analysts |
-| [EX-40H_ai_engineer/](EX-40H_ai_engineer/) | TM-40H AI Engineer | TM-30 | AI engineers |
-| [EX-40I_ml_engineer/](EX-40I_ml_engineer/) | TM-40M ML Engineer | TM-30 | ML engineers |
-| [EX-40J_program_manager/](EX-40J_program_manager/) | TM-40J Program Manager | TM-30 | Technical PMs |
-| [EX-40K_knowledge_manager/](EX-40K_knowledge_manager/) | TM-40K Knowledge Manager | TM-30 | Knowledge managers |
-| [EX-40L_software_engineer/](EX-40L_software_engineer/) | TM-40L Software Engineer | TM-30 | Software engineers |
-| [EX-40N_ux_designer/](EX-40N_ux_designer/) | TM-40N UI/UX Designer | TM-30 | UI/UX designers |
-| [EX-40O_platform_engineer/](EX-40O_platform_engineer/) | TM-40O Platform Engineer | TM-30 | Platform engineers |
+| [EX_40G_orsa/](EX_40G_orsa/) | TM-40G ORSA | TM-30 | ORSA analysts |
+| [EX_40H_ai_engineer/](EX_40H_ai_engineer/) | TM-40H AI Engineer | TM-30 | AI engineers |
+| [EX_40M_ml_engineer/](EX_40M_ml_engineer/) | TM-40M ML Engineer | TM-30 | ML engineers |
+| [EX_40J_program_manager/](EX_40J_program_manager/) | TM-40J Program Manager | TM-30 | Technical PMs |
+| [EX_40K_knowledge_manager/](EX_40K_knowledge_manager/) | TM-40K Knowledge Manager | TM-30 | Knowledge managers |
+| [EX_40L_software_engineer/](EX_40L_software_engineer/) | TM-40L Software Engineer | TM-30 | Software engineers |
+| [EX_40N_ux_designer/](EX_40N_ux_designer/) | TM-40N UI/UX Designer | TM-30 | UI/UX designers |
+| [EX_40O_platform_engineer/](EX_40O_platform_engineer/) | TM-40O Platform Engineer | TM-30 | Platform engineers |
 
 ### Advanced Specialist Exercises (TM-50G–O) — Prereq: Corresponding TM-40 track (Required)
 
 | Package | Corresponds To | Prereq | Audience |
 |---------|---------------|--------|---------|
-| [EX-50G_orsa/](EX-50G_orsa/) | TM-50G Advanced ORSA | TM-40G | Senior ORSA analysts |
-| [EX-50H_ai_engineer/](EX-50H_ai_engineer/) | TM-50H Advanced AI Engineer | TM-40H | AI architects |
-| [EX-50I_ml_engineer/](EX-50I_ml_engineer/) | TM-50M Advanced ML Engineer | TM-40M | Senior ML engineers |
-| [EX-50J_program_manager/](EX-50J_program_manager/) | TM-50J Advanced PM | TM-40J | Senior technical PMs |
-| [EX-50K_knowledge_manager/](EX-50K_knowledge_manager/) | TM-50K Advanced KM | TM-40K | Senior knowledge managers |
-| [EX-50L_software_engineer/](EX-50L_software_engineer/) | TM-50L Advanced SWE | TM-40L | Senior software engineers |
-| [EX-50N_ux_designer/](EX-50N_ux_designer/) | TM-50N Advanced UI/UX Designer | TM-40N | Senior UI/UX designers |
-| [EX-50O_platform_engineer/](EX-50O_platform_engineer/) | TM-50O Advanced Platform Engineer | TM-40O | Senior platform engineers |
+| [EX_50G_orsa/](EX_50G_orsa/) | TM-50G Advanced ORSA | TM-40G | Senior ORSA analysts |
+| [EX_50H_ai_engineer/](EX_50H_ai_engineer/) | TM-50H Advanced AI Engineer | TM-40H | AI architects |
+| [EX_50M_ml_engineer/](EX_50M_ml_engineer/) | TM-50M Advanced ML Engineer | TM-40M | Senior ML engineers |
+| [EX_50J_program_manager/](EX_50J_program_manager/) | TM-50J Advanced PM | TM-40J | Senior technical PMs |
+| [EX_50K_knowledge_manager/](EX_50K_knowledge_manager/) | TM-50K Advanced KM | TM-40K | Senior knowledge managers |
+| [EX_50L_software_engineer/](EX_50L_software_engineer/) | TM-50L Advanced SWE | TM-40L | Senior software engineers |
+| [EX_50N_ux_designer/](EX_50N_ux_designer/) | TM-50N Advanced UI/UX Designer | TM-40N | Senior UI/UX designers |
+| [EX_50O_platform_engineer/](EX_50O_platform_engineer/) | TM-50O Advanced Platform Engineer | TM-40O | Senior platform engineers |
 
 ### T3 — Train-the-Trainer Exercises
 

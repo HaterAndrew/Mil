@@ -124,4 +124,4 @@ Videos are grouped by topic and ordered from foundational to advanced within eac
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*

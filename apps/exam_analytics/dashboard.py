@@ -6,6 +6,7 @@ question improvement tracking, and detailed score distributions.
 
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
@@ -41,7 +42,7 @@ from theme import inject_branding, apply_plotly_theme, NAVY, NAVY_DARK, NAVY_LIG
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-API_BASE = "http://localhost:8002"
+API_BASE = os.environ.get("EXAM_ANALYTICS_API_URL", "http://localhost:8002")
 
 st.set_page_config(
     page_title="MSS Exam Analytics",
@@ -218,7 +219,8 @@ if active_tab == "Dashboard Overview":
 
     active_track = track_selector(key="overview_track")
 
-    sessions = filter_sessions_by_track(load_sessions(), active_track)
+    with st.spinner("Loading data..."):
+        sessions = filter_sessions_by_track(load_sessions(), active_track)
     if not sessions:
         st.info("No exam sessions found. Seed the database to get started.")
         st.stop()

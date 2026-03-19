@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260523_122 — NAI ACTIVITY REPORT
+DTG: 230000Z MAY 2026
+Unit: 3-2 BN
+
+Summary: NAI 07 (grid 36T137565) near GRUENFELD showed no significant activity during the 72-hour collection window. Previous reporting of OPFOR presence has not been confirmed.
+
+Collection Assessment: Current ISR allocation provides adequate coverage of NAI 07. No additional assets requested at this time.
+Recommended Action: Maintain collection posture. Update S2 overlay with latest activity data. Cross-reference with SIGINT and HUMINT reporting.

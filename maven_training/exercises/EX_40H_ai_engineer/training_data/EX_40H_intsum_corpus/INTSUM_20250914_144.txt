@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250914_144 — NAI ACTIVITY REPORT
+DTG: 140000Z SEP 2025
+Unit: 12th CAB
+
+Summary: Over the past 7-day period, 5 distinct activity events were recorded at NAI 11 (grid 33T743199) near WALDHEIM. Activity included vehicle movement, dismounted personnel, and what appears to be deliberate construction or fortification.
+
+Collection Assessment: Current ISR allocation provides adequate coverage of NAI 11. No additional assets requested at this time.
+Recommended Action: Maintain collection posture. Update S2 overlay with latest activity data. Cross-reference with SIGINT and HUMINT reporting.

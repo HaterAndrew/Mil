@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-50O COMPANION — ADVANCED PLATFORM ENGINEER · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-50O moves from operating a cluster to operating a fleet — and from building infrastructure to building the systems that build infrastructure. The advanced Platform Engineer's output is not a running cluster — it is the automation, reliability, and developer experience that lets every cluster run itself.
+> **Forward:** TM-50O moves from operating a cluster to operating a fleet — and from building infrastructure to building the systems that build infrastructure. The advanced Platform Engineer's output is not a running cluster — it is the automation, reliability, and developer experience that lets every cluster run itself.
 > **Purpose:** Develops mental models required to manage fleet-scale infrastructure, implement SRE practices, and automate compliance on MSS. Read before beginning TM-50O task instruction.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
@@ -347,5 +347,5 @@ Before proceeding to TM-50O task procedures, confirm you can answer the followin
 
 ---
 
-*CONCEPTS GUIDE — TM-50O COMPANION // ADVANCED PLATFORM ENGINEER // UNCLASSIFIED*
+*CONCEPTS GUIDE — TM-50O COMPANION // ADVANCED PLATFORM ENGINEER*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA // WIESBADEN, GERMANY // 2026*

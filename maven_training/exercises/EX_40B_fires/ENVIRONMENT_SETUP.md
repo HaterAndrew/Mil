@@ -41,7 +41,6 @@ Print and hand to participant at exercise start:
 
 ```
 COMMANDER'S FIRES CCIR GUIDANCE — EX_40B TRAINING
-Classification: UNCLASSIFIED // TRAINING
 
 FIRES CCIR 1 — TARGET ENGAGED
   Trigger: Any target in the active target list changes status to "engaged"

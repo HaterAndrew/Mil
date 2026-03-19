@@ -1,6 +1,6 @@
 # TM-50K — ADVANCED KNOWLEDGE MANAGEMENT
 
-> **BLUF:** TM-50K trains Army Knowledge Managers at the Corps and Theater echelon to design, federate, and sustain enterprise-scale knowledge management systems on MSS. This manual assumes mastery of all TM-40K competencies. TM-50K is not a continuation of TM-40K tasks — it is an architectural shift in responsibility, scope, and risk.
+> **Forward:** TM-50K trains Army Knowledge Managers at the Corps and Theater echelon to design, federate, and sustain enterprise-scale knowledge management systems on MSS. This manual assumes mastery of all TM-40K competencies. TM-50K is not a continuation of TM-40K tasks — it is an architectural shift in responsibility, scope, and risk.
 > **Prereqs:** TM-40K, Knowledge Manager (required); TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (all required); CONCEPTS_GUIDE_TM50K_KNOWLEDGE_MANAGER_ADVANCED (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -10,7 +10,7 @@
 
 ## CHAPTER 1 — INTRODUCTION AND SCOPE
 
-### 1-1. Purpose
+### 1-1. Advanced Knowledge Manager Manual
 
 **BLUF:** TM-50K trains Army Knowledge Managers at the Corps and Theater echelon to design, federate, and sustain enterprise-scale knowledge management systems on MSS. This manual assumes mastery of all TM-40K competencies. TM-50K is not a continuation of TM-40K tasks — it is an architectural shift in responsibility, scope, and risk.
 
@@ -19,12 +19,12 @@ A TM-40K KM designs and maintains knowledge systems for a unit. A TM-50K Advance
 At USAREUR-AF, the Advanced KM role supports:
 
 - **C2DAO** enterprise knowledge governance
-- **V Corps** and subordinate Division KM architecture
+- **III Corps** and **V Corps** and subordinate Division KM architecture
 - **EUCOM J3/J7** joint and coalition knowledge sharing
 - **NATO ACO** lessons learned interoperability
 - **Exercise program management**: Defender Europe, Saber Strike, Swift Response, Combined Resolve — each generating cross-unit knowledge products that must be federated and preserved at Theater level
 
-> **NOTE:** TM-50K is not a standalone track. Soldiers and civilians attempting TM-50K without TM-40K mastery will lack the foundational vocabulary and Foundry platform competencies required to execute the tasks in Chapters 2 through 8. The prerequisite is enforced operationally, not administratively — incomplete foundations at this level produce systems that fail at scale.
+> **NOTE:** TM-50K is not a standalone track. Soldiers and Civilians attempting TM-50K without TM-40K mastery will lack the foundational vocabulary and Foundry platform competencies required to execute the tasks in Chapters 2 through 8. The prerequisite is enforced operationally, not administratively — incomplete foundations at this level produce systems that fail at scale.
 
 ---
 
@@ -89,7 +89,7 @@ THEATER KM ARCHITECT (TM-50K)
 
 ### 1-3. USAREUR-AF Knowledge Environment
 
-USAREUR-AF operates a complex knowledge environment driven by the European AOR mission set:
+USAREUR-AF operates a complex knowledge environment driven by the European and African AOR mission set:
 
 **Continuous exercise cycle.** USAREUR-AF runs 20+ major exercises annually across the AOR. Each exercise produces AARs, lessons, TTPs, and personnel expertise data. Without enterprise KM architecture, this knowledge is captured locally and lost at the next PCS rotation.
 
@@ -380,7 +380,7 @@ USAREUR-AF operates knowledge systems on multiple networks. Each network is a se
 
 | Network | Classification | MSS Instance | Use |
 |---|---|---|---|
-| NIPR (NIPRNet) | UNCLASSIFIED // FOUO, CUI | MSS-UNCLASS | Exercise lessons, unclassified TTPs, releasable doctrine, coalition-approved products |
+| NIPR (NIPRNet) | CUI | MSS-UNCLASS | Exercise lessons, unclassified TTPs, releasable doctrine, coalition-approved products |
 | SIPR (SIPRNet) | SECRET | MSS-SECRET | Operational lessons with classified context, intelligence-informed TTPs, classified SOPs |
 | JWICS | TOP SECRET/SCI | Not in scope for TM-50K | Addressed in separate C2DAO guidance |
 
@@ -1400,7 +1400,7 @@ Coordinate with USAREUR-AF C2DAO for current FMN spiral applicability and coalit
 
 **Domain Owner:** The individual (identified by billet) responsible for content quality, currency, and lifecycle management within a defined knowledge domain. Every knowledge domain must have a named owner before production deployment.
 
-**EUCOM (United States European Command):** The Unified Combatant Command to which USAREUR-AF serves as Army Service Component Command (ASCC). Theater KM architecture supports EUCOM J3/J7 integration.
+**EUCOM (United States European Command):** The Unified Combatant Command to which USAREUR-AF serves as Army Service Component Command (ASCC), along with USAFRICOM. Theater KM architecture supports EUCOM J3/J7 integration.
 
 **Federated Repository:** A knowledge architecture pattern in which multiple semi-autonomous unit repositories share a common schema and cross-unit search capability, without requiring all data to reside in a single centralized store.
 
@@ -1463,7 +1463,6 @@ Coordinate with USAREUR-AF C2DAO for current FMN spiral applicability and coalit
 *TM-50K — Advanced Knowledge Management, Maven Smart System*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA*
 *Wiesbaden, Germany — 2026*
-*UNCLASSIFIED*
 *Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.*
 
 ---

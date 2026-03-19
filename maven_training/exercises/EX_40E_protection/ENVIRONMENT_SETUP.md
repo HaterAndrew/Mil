@@ -52,7 +52,6 @@ Print and hand to participant at exercise start (Task 2):
 
 ```
 COMMANDER'S FORCE PROTECTION CCIR GUIDANCE — EX_40E TRAINING
-Classification: UNCLASSIFIED // TRAINING
 
 CCIR 1 — THREAT EVENT IN RESTRICTED AREA
   Trigger: Any threat incident reported within the following restricted area boundary:

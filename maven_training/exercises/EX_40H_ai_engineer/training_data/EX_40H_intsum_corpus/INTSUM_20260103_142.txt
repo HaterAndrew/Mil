@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260103_142 — CACHE DISCOVERY
+DTG: 030000Z JAN 2026
+Unit: 2-77 FA
+
+Summary: During area reconnaissance, elements of 2-77 FA discovered a concealed cache in grid 37T402122. Contents included anti-tank mines, small arms ammunition, and night vision devices. Cache inventoried, photographed, and evacuated for forensic exploitation.
+
+Exploitation: Items photographed and catalogued. Serial numbers recorded where legible. No biometrics collected — gloves worn.
+Recommended Action: Submit cache report to higher S2. Conduct expanded search in 500m radius.

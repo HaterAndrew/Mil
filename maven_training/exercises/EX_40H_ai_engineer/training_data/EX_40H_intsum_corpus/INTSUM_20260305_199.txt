@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260305_199 — OBSERVATION REPORT
+DTG: 050000Z MAR 2026
+Unit: 2-2 BN
+
+Summary: OP CONDOR reported observation of 4 unidentified vehicles moving in convoy formation along ASR WOLF at 2050 local. Vehicles: ZIL-131. Movement direction: NORTH. No hostile action observed. Convoy cleared the AO within 31 minutes.
+
+Assessment: Movement pattern deviates from established norms. Possible reconnaissance activity. Does not meet CCIR threshold at this time.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

@@ -1,6 +1,6 @@
 # TM-40L — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-40L qualifies software engineers to build external applications, write integration code, develop TypeScript FOO logic, and deploy production-grade solutions on the MSS platform. This is a developer manual — it contains code, not just concepts.
+> **Forward:** TM-40L qualifies software engineers to build external applications, write integration code, develop TypeScript FOO logic, and deploy production-grade solutions on the MSS platform. This is a developer manual — it contains code, not just concepts.
 > **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Python proficiency (intermediate or higher); TypeScript proficiency (intermediate or higher)
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -11,31 +11,43 @@
 
 ## CHAPTER 1 — INTRODUCTION: THE SOFTWARE ENGINEER ROLE IN MSS
 
-### 1-1. Purpose and Scope
+### 1-1. Software Engineer Specialist Manual
 
 **BLUF:** TM-40L qualifies software engineers to build external applications, write integration code, develop TypeScript FOO logic, and deploy production-grade solutions on the MSS platform. This is a developer manual — it contains code, not just concepts.
 
 This manual provides task-based instruction for software engineers operating on the Maven Smart System (MSS). MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. TM-40L personnel design and implement the technical components that advanced builders (TM-30) specify but cannot build without code.
 
-**TM-40L covers:**
-- OSDK (Ontology SDK): authenticating, querying objects, executing actions, subscribing to changes from external applications
-- Foundry Platform SDK (Python): reading and writing datasets, managing transactions, accessing file resources
-- TypeScript Functions on Objects (FOO): computed properties, bulk query patterns, performance optimization
-- Actions with complex validation: TypeScript validators, multi-step action flows, conditional logic
-- Slate: legacy custom HTML/CSS/JavaScript application development hosted on Foundry (documented for maintenance of existing Slate apps only — do not use for new development; see Chapter 7)
-- CI/CD for Foundry: repository structure, automated testing, branch promotion workflows
-- Security: CBAC in external apps, credential management, marking compliance in OSDK queries, audit trails
-- Integration patterns: REST APIs, webhooks, cross-system data flows connecting MSS to external Army systems
+**TM-40L covers** OSDK (Ontology SDK): authenticating, querying objects, executing actions, subscribing to changes from external applications; Foundry Platform SDK (Python): reading and writing datasets, managing transactions, accessing file resources; TypeScript Functions on Objects (FOO): computed properties, bulk query patterns, performance optimization; actions with complex validation: TypeScript validators, multi-step action flows, conditional logic; Slate: legacy custom HTML/CSS/JavaScript application development hosted on Foundry (documented for maintenance of existing Slate apps only — do not use for new development; see Chapter 7); CI/CD for Foundry: repository structure, automated testing, branch promotion workflows; security: CBAC in external apps, credential management, marking compliance in OSDK queries, audit trails; and integration patterns: REST APIs, webhooks, cross-system data flows connecting MSS to external Army systems.
 
-**TM-40L does NOT cover:**
-- Workshop application design (no-code/low-code) — see TM-20, TM-30
-- Pipeline Builder visual UI — see TM-20, TM-30
-- Basic Ontology modeling (UI-based) — see TM-30
-- PySpark transforms — see TM-40H (AI Engineer) for AI pipelines; TM-30 for design
-- AIP Logic configuration — see TM-30
-- Agent Studio development — see TM-40H
+**TM-40L does NOT cover** Workshop application design (no-code/low-code) — see TM-20, TM-30; Pipeline Builder visual UI — see TM-20, TM-30; basic Ontology modeling (UI-based) — see TM-30; PySpark transforms — see TM-40H (AI Engineer) for AI pipelines; TM-30 for design; AIP Logic configuration — see TM-30; or Agent Studio development — see TM-40H.
 
 > **NOTE:** TM-40L is peer to TM-40H (AI Engineer), TM-40M (ML Engineer), and TM-40G (ORSA). All four tracks require TM-30 as prerequisite. Each track owns a distinct technical domain. Coordinate across tracks — operational systems frequently require all four disciplines.
+
+### 1-1a. The ASWF Problem-Solution Development Methodology
+
+XVIII Airborne Corps published their Operational Data Team problem-solution development methodology in *Military Review* ("Fighting with Live Data," February 2026). The methodology is directly informed by the Army Software Factory (ASWF) and industry best practices. It represents one corps' approach — the specific timelines and phase gates below reflect XVIII ABC's pilot experience and may be adapted for different echelons, team sizes, and mission sets. The underlying principle — structured problem definition before solution development — is transferable regardless of organizational context.
+
+**The methodology prioritizes understanding and solving problems — not implementing preconceived solutions.** The process begins with a staff element articulating a **problem**, not a desired solution, and progresses through phases punctuated by decision points (invest, divest, pivot):
+
+| Phase | Duration | SWE Role |
+|---|---|---|
+| **Scoping** | 2 weeks | Assess technical feasibility; identify data source availability, platform constraints, integration requirements |
+| **Discovery** | 4 weeks | Prototype data access patterns; validate that required data exists and is accessible at required fidelity |
+| **Framing** | 4 weeks | Define MVP technical architecture; write implementation plan with SWE deliverables and dependencies |
+| **Development** | 8 weeks | Build MVP through iterative sprints; coordinate with DE (data pipelines), DS (models), UX (interfaces) |
+| **Handoff** | 2 weeks | Production hardening, documentation, CI/CD pipeline finalization, transition to sustainment |
+
+**Total time to MVP: at least 5 months.** The XVIII ABC BDA visualization capability followed this process: prototype in 3 months, MVP in 6, and full handoff to an Army enterprise program of record (Army Intelligence Data Platform, INSCOM) in 9 months.
+
+**During exercises:** SWEs on MVP-phase products execute bug fixes and minor adjustments based on user feedback only. No major changes. Products in discovery/framing are held stable — the SWE focuses on gathering data and validating technical assumptions for future iterations.
+
+> **NOTE:** The ASWF trains its students in this methodology. TM-40L graduates who enter ODT assignments are expected to operate within this framework from day one. The PM (TM-40J) owns the process cadence; the SWE owns the technical execution within each phase.
+
+*Source: Forney, Herrmann, and Steele, "Fighting with Live Data," Military Review Online Exclusive, February 2026.*
+
+*Supplementary: Adkins, "Achieving Decision Dominance," Military Review, Jan-Feb 2025, introduces the term "automated fighting products" (AFPs) — data visualization tools connected to live data pipelines that reduce staff burden. MSS applications built by TM-40L graduates are AFPs by this definition.*
+
+---
 
 ### 1-2. Curriculum Position, Advanced Track, and WFF Context
 
@@ -51,7 +63,7 @@ This manual provides task-based instruction for software engineers operating on 
 
 ### 1-3. The Software Engineer's Role in USAREUR-AF
 
-USAREUR-AF is the Army Service Component Command (ASCC) to USEUCOM. MSS supports theater land operations across the European AOR including V Corps, 21st TSC, 7th ATC, G2 all-source, and multinational elements. Software engineers at TM-40L level are the technical implementers of the USAREUR-AF data ecosystem.
+USAREUR-AF is the Army Service Component Command (ASCC) to USEUCOM and USAFRICOM. MSS supports theater land operations across the European and African AOR including III Corps, V Corps, 21st TSC, 7th ATC, 10th AAMDC, 56th MDC-E, SETAF-AF, G2 all-source, and multinational elements. Software engineers at TM-40L level are the technical implementers of the USAREUR-AF data ecosystem.
 
 **The TM-40L role in the data chain:**
 
@@ -2496,13 +2508,13 @@ Rotation procedure:
 
 ### 9-3. Marking Compliance in OSDK Queries
 
-**BLUF:** Foundry data markings (CUI, FOUO, coalition restrictions) are enforced at the OSDK layer. However, your application is responsible for propagating these markings in display and output.
+**BLUF:** Foundry data markings (CUI, coalition restrictions) are enforced at the OSDK layer. However, your application is responsible for propagating these markings in display and output.
 
-**CONDITIONS:** External application retrieves OSDK objects that may carry data markings (CUI, FOUO, coalition restrictions). Application presents data to end users in a UI or report output.
+**CONDITIONS:** External application retrieves OSDK objects that may carry data markings (CUI, coalition restrictions). Application presents data to end users in a UI or report output.
 
 **STANDARDS:** Markings are extracted from every OSDK object response. Highest marking in a result set is determined and displayed as a page/section banner. No marking is stripped before display. CUI data displayed without markings constitutes a spillage event.
 
-**EQUIPMENT:** Authenticated OSDK Python client; UI or report output layer; knowledge of applicable marking categories (CUI, FOUO, REL TO USA/NATO).
+**EQUIPMENT:** Authenticated OSDK Python client; UI or report output layer; knowledge of applicable marking categories (CUI, REL TO USA/NATO).
 
 **PROCEDURE — Check and propagate markings (Python):**
 
@@ -2512,7 +2524,6 @@ from enum import Enum
 
 class DataMarking(Enum):
     UNCLASSIFIED = "U"
-    FOUO = "FOUO"
     CUI = "CUI"
     CUI_REL_NATO = "CUI//REL TO USA, NATO"
 
@@ -2543,8 +2554,6 @@ def extract_object_with_markings(osdk_object) -> MarkedObject:
         highest = DataMarking.CUI_REL_NATO
     elif any("CUI" in m for m in markings):
         highest = DataMarking.CUI
-    elif any("FOUO" in m for m in markings):
-        highest = DataMarking.FOUO
 
     return MarkedObject(
         rid=osdk_object.rid,
@@ -2559,7 +2568,6 @@ def format_display_banner(marking: DataMarking) -> str:
     """Return the correct classification banner for UI display."""
     banners = {
         DataMarking.UNCLASSIFIED: "UNCLASSIFIED",
-        DataMarking.FOUO: "UNCLASSIFIED // FOR OFFICIAL USE ONLY",
         DataMarking.CUI: "CONTROLLED UNCLASSIFIED INFORMATION",
         DataMarking.CUI_REL_NATO:
             "CONTROLLED UNCLASSIFIED INFORMATION // REL TO USA, NATO",
@@ -2789,7 +2797,7 @@ Complete this checklist before any code promotion to production. Document comple
 ### B-3. Data Handling
 
 - [ ] OSDK query results are not cached beyond the user's session scope
-- [ ] Data markings (CUI, FOUO, coalition) are displayed in application UI
+- [ ] Data markings (CUI, coalition) are displayed in application UI
 - [ ] Application audit log captures all queries and action executions against sensitive objects
 - [ ] No operational data in application debug logs or error messages exposed to end users
 
@@ -2941,7 +2949,7 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 
 **DTG (Date-Time Group)** — Military date-time format: DDHHMMZMMMYYYY (e.g., 101435ZMAR2026). Used in SITREP timestamps and operational records throughout MSS.
 
-**EUCOM (United States European Command)** — Geographic Combatant Command to which USAREUR-AF is the ASCC. MSS integrations with EUCOM systems are a primary TM-40L use case.
+**EUCOM (United States European Command)** — Geographic Combatant Command to which USAREUR-AF is the ASCC (along with USAFRICOM). MSS integrations with EUCOM systems are a primary TM-40L use case.
 
 **EXORD (Execute Order)** — A command directive executing a plan. Referenced in multi-step Action workflows that manage EXORD state machine transitions.
 
@@ -2963,7 +2971,7 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 
 **Link Type (Foundry Ontology)** — A defined relationship between two Object Types. Traversing link types from external applications requires additional OSDK calls — use bulk patterns to avoid N+1 performance issues.
 
-**Marking** — A metadata tag on a Foundry object indicating its handling category (e.g., CUI, FOUO, coalition restriction). Enforced by CBAC; must be propagated in application display.
+**Marking** — A metadata tag on a Foundry object indicating its handling category (e.g., CUI, coalition restriction). Enforced by CBAC; must be propagated in application display.
 
 **MPE (Mission Partner Environment)** — Network environment enabling data sharing between U.S. forces and coalition partners. Objects accessible on MPE require NAFv4 compliance review before TM-40L integration development.
 
@@ -3005,7 +3013,9 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 
 **UDRA v1.1** — Unified Data Reference Architecture, version 1.1 (February 2025). Defines domain ownership, federated governance, and integration standards for MSS. All TM-40L integrations must align.
 
-**USAREUR-AF** — United States Army Europe and Africa. The Army Service Component Command to USEUCOM, headquartered in Wiesbaden, Germany. The operational context for all TM-40L development.
+**USAREUR-AF** — United States Army Europe and Africa. The Army Service Component Command to USEUCOM and USAFRICOM, headquartered in Wiesbaden, Germany. The operational context for all TM-40L development.
+
+**III Corps** — Third Corps, recently realigned under USAREUR-AF. Major consumer of MSS readiness data products.
 
 **V Corps** — Fifth Corps, the primary warfighting corps HQ in Europe. Major consumer of MSS readiness data products.
 

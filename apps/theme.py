@@ -102,10 +102,8 @@ def apply_plotly_theme(fig):
 _CSS = f"""
 <style>
 /* === GLOBAL OVERRIDES === */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 html, body, [class*="css"] {{
-    font-family: Inter, system-ui, -apple-system, Arial, Helvetica, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }}
 
 /* === HEADER BAR === */
@@ -416,7 +414,7 @@ def inject_branding(
 
     if show_classification:
         st.markdown(
-            '<div class="clf-banner">CUI // FOUO</div>',
+            '<div class="clf-banner">CUI</div>',
             unsafe_allow_html=True,
         )
 

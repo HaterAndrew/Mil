@@ -252,5 +252,5 @@ TM-30 graduates who demonstrate strong instructional aptitude may be nominated f
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Syllabus TM-30 | Version 2.0 | March 2026*

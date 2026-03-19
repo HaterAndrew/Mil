@@ -45,7 +45,7 @@
 | 1030–1045 | — | Break |
 | 1045–1200 | 4 | How data products impact your formation — data as command function, failure patterns, Commander's Data PIRs (Ch 3) |
 | 1200–1300 | — | Lunch |
-| 1300–1345 | 5 | The training pipeline — TM-10 through TM-50, BSP, resourcing decisions (Ch 4) |
+| 1300–1345 | 5 | The training pipeline — TM-10 through TM-50, FBC, resourcing decisions (Ch 4) |
 | 1345–1430 | 6 | Governance — the governance chain, VAUTI framework, red flags (Ch 5) |
 | 1430–1445 | — | Break |
 | 1445–1530 | 7 | How data projects work — agile overview, roadmap vs POAM (Ch 6) |
@@ -105,7 +105,7 @@ TM-SL is terminal. There is no TM-SL-20 or further SL progression.
 |---|---|
 | Get hands-on platform qualification | Enroll in TM-10 → proceed through standard pipeline |
 | Send personnel to builder training | Coordinate TM-20 enrollment through C2DAO |
-| Get a project built quickly | Submit BSP project for next quarterly sprint |
+| Get a project built quickly | Submit FBC project for next quarterly sprint |
 | Engage on data strategy | Contact Functional Data Manager or C2DAO |
 
 ---
@@ -118,5 +118,5 @@ No technical prerequisites. No account provisioning required (senior leaders obs
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Syllabus TM-SL | Version 1.0 | March 2026*

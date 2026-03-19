@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-50G COMPANION — ADVANCED OPERATIONS RESEARCH / SYSTEMS ANALYSIS (ORSA) — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** At TM-50G level, the ORSA is not just answering questions — they are shaping which questions get asked.
+> **Forward:** At TM-50G level, the ORSA is not just answering questions — they are shaping which questions get asked.
 > **Purpose:** Extends the analytical mental models of the TM-40G Concepts Guide to advanced ORSA practice on MSS. Prerequisite: TM-40G Concepts Guide and TM-40G qualification.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
@@ -89,7 +89,7 @@ Analytical wargaming in the ORSA context uses scenario modeling to stress-test a
 
 This structure forces explicit documentation of the assumptions that drive the range of outcomes. That documentation is the analytical product.
 
-**DEFENDER Exercise Vignette:** In preparing analytical support for a multi-division logistics simulation, the ORSA team runs three scenarios: base case assumes host-nation support at historical rates; pessimistic assumes 40% degradation (consistent with contingency planning assumptions); optimistic assumes marginal improvement. The pessimistic case reveals a Class V shortfall the base case conceals.
+**DEFENDER Exercise Vignette:** In preparing analytical support for a multi-division logistics simulation, the ORSA team runs three scenarios: base case assumes host-nation support at historical rates; pessimistic assumes 40% degradation (consistent with contingency planning assumptions); optimistic assumes marginal improvement. The pessimistic case reveals a Class V shortfall the base case conceals. A separate 10th AAMDC request for interceptor availability analysis under the same three scenarios reveals that the pessimistic case exhausts theater IAMD reserves 72 hours earlier than the base case — a finding with operational implications the original logistics-only analysis would not have surfaced.
 
 ### 3-2. Sensitivity Analysis — The Most Important Quality Check
 
@@ -202,7 +202,7 @@ Three risk factors specific to cross-domain military analysis:
 
 ### 6-3. NATO Exercise Coalition Data Integration — Vignette
 
-During a large-force NATO exercise, an ORSA team integrates partner-nation reporting across five allied formations. Data arrives in four formats, against three readiness definitions, at two reporting frequencies.
+During a large-force NATO exercise, an ORSA team integrates partner-nation reporting across five allied formations plus 10th AAMDC IAMD readiness data and SETAF-AF partner-force status feeds from the Africa AOR. Data arrives in six formats, against four readiness definitions, at three reporting frequencies.
 
 **Correct approach:**
 1. Produce a harmonized readiness index with documented transformation rules for each partner's data — note all assumptions
@@ -383,5 +383,5 @@ Before proceeding to TM-50G task procedures, confirm you can answer the followin
 
 ---
 
-*CONCEPTS GUIDE — TM-50G COMPANION // ADVANCED ORSA // UNCLASSIFIED*
+*CONCEPTS GUIDE — TM-50G COMPANION // ADVANCED ORSA*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA // WIESBADEN, GERMANY // 2026*

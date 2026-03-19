@@ -203,6 +203,11 @@ h1 {
   -webkit-print-color-adjust: exact;
   color-adjust: exact;
 }
+/* Force each new chapter (H1) to start on a fresh page;
+   skip the first H1 so it follows the cover page naturally. */
+.body-content h1 ~ h1 {
+  page-break-before: always;
+}
 h2 {
   font-size: 13pt;
   font-weight: bold;

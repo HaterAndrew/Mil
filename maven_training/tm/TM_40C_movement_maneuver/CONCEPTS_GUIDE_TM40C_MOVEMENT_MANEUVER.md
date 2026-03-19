@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-40C COMPANION — MOVEMENT AND MANEUVER WARFIGHTING FUNCTION · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** ADP 3-0's principles of combined arms operations, initiative, and tempo are not data concepts — but they all depend on data quality, currency, and shared access to execute. Understanding this relationship is the foundation for effective MSS use in M&M operations.
+> **Forward:** ADP 3-0's principles of combined arms operations, initiative, and tempo are not data concepts — but they all depend on data quality, currency, and shared access to execute. Understanding this relationship is the foundation for effective MSS use in M&M operations.
 > **Prereqs:** TM-10 (Maven User), TM-20 (Builder), and TM-30 (Advanced Builder). Read this Concepts Guide after completing TM-30 and before beginning TM-40C task instruction.
 > **Purpose:** This guide develops the operational mental models required to effectively integrate MSS into Movement and Maneuver warfighting function operations. It is a prerequisite companion to TM-40C and must be read before beginning TM-40C task instruction. This guide is conceptual — it develops understanding, not procedures. No step-by-step tasks appear here. The audience is S3/G3 officers, brigade and battalion commanders, and staff officers responsible for combined arms synchronization.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
@@ -502,6 +502,8 @@ For personnel pursuing technical depth, specialist tracks (TM-40G–O, prereq TM
 | TM-40J | Program Manager (→ TM-50J) |
 | TM-40K | Knowledge Manager (→ TM-50K) |
 | TM-40L | Software Engineer (→ TM-50L) |
+| TM-40N | UI/UX Designer (→ TM-50N) |
+| TM-40O | Platform Engineer (→ TM-50O) |
 
 ---
 

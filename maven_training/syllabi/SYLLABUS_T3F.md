@@ -82,5 +82,5 @@ T3-F is not a prerequisite for T3-I, but T3-F experience is valued in the select
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Syllabus T3-F | Version 2.0 | March 2026*

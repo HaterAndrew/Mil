@@ -15,12 +15,13 @@ import PanelTaskIndex from './panels/TaskIndex'
 import PanelSupport from './panels/Support'
 import PanelSchedule from './panels/Schedule'
 import PanelDashboards from './panels/Dashboards'
-import PanelBSP from './panels/BSP'
+import PanelFBC from './panels/FBC'
 import PanelSL from './panels/SL'
+import PanelFindMyTrack from './panels/FindMyTrack'
 
 type PanelId =
-  | 'quickref' | 'schedule' | 'dashboards'
-  | 'tm10' | 'tm20' | 'tm30' | 'bsp' | 'sl'
+  | 'quickref' | 'schedule' | 'dashboards' | 'findmytrack'
+  | 'tm10' | 'tm20' | 'tm30' | 'fbc' | 'sl'
   | 'specialists' | 'tm40' | 'tm50'
   | 'doctrine' | 'documents' | 'taskindex' | 'support'
 
@@ -112,7 +113,7 @@ export default function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
   const [grpFoundationOpen, setGrpFoundationOpen] = useState(true)
-  const [grpBspOpen, setGrpBspOpen] = useState(false)
+  const [grpFbcOpen, setGrpFbcOpen] = useState(false)
   const [grpSlOpen, setGrpSlOpen] = useState(false)
   const [grpSpecialistsOpen, setGrpSpecialistsOpen] = useState(false)
   const [grpResourcesOpen, setGrpResourcesOpen] = useState(false)
@@ -147,7 +148,7 @@ export default function App() {
       case 'tm10':        return <PanelTM10         showPanel={showPanel} />
       case 'tm20':        return <PanelTM20         showPanel={showPanel} />
       case 'tm30':        return <PanelTM30         showPanel={showPanel} />
-      case 'bsp':         return <PanelBSP          showPanel={showPanel} />
+      case 'fbc':         return <PanelFBC          showPanel={showPanel} />
       case 'sl':          return <PanelSL           showPanel={showPanel} />
       case 'specialists': return <PanelSpecialists  showPanel={showPanel} />
       case 'tm40':        return <PanelTM40         showPanel={showPanel} />
@@ -158,6 +159,7 @@ export default function App() {
       case 'support':      return <PanelSupport      showPanel={showPanel} />
       case 'schedule':     return <PanelSchedule     showPanel={showPanel} />
       case 'dashboards':   return <PanelDashboards />
+      case 'findmytrack':  return <PanelFindMyTrack showPanel={showPanel} />
     }
   }
 
@@ -187,9 +189,8 @@ export default function App() {
           </div>
           <div className="splash-data splash-data-tl">USAREUR-AF ODT<br/>EUCOM AOR</div>
           <div className="splash-data splash-data-tr">VER 3.1 / MAR 2026<br/>MSS TRAINING HUB</div>
-          <div className="splash-data splash-data-bl">DIST: UNLIMITED<br/>UNCLASSIFIED</div>
+          <div className="splash-data splash-data-bl">DIST: UNLIMITED</div>
           <div className="splash-data splash-data-br">TM-10 THRU TM-50<br/>Data Lit (SL) · Data Literacy</div>
-          <div className="splash-cls">UNCLASSIFIED</div>
           <div className="splash-body">
             <div className="splash-content">
               <div className="splash-crest-wrap">
@@ -224,14 +225,9 @@ export default function App() {
             <span>VER: 3.1.0</span>
             <span>LOC: EUCOM AOR</span>
             <span>STATUS: READY</span>
-            <span>CLASS: UNCLASSIFIED</span>
           </div>
-          <div className="splash-cls">UNCLASSIFIED</div>
         </div>
       )}
-
-      {/* ── Classification banner ───────────────────────────── */}
-      <div className="banner-unclass">UNCLASSIFIED</div>
 
       {/* ── Header ─────────────────────────────────────────── */}
       <header>
@@ -319,18 +315,18 @@ export default function App() {
               </div>
             </div>
 
-            {/* Builder Sprint (BSP) group */}
-            <div className={`snav-group${grpBspOpen ? '' : ' collapsed'}`}>
+            {/* Foundry Bootcamp (FBC) group */}
+            <div className={`snav-group${grpFbcOpen ? '' : ' collapsed'}`}>
               <button
                 className="snav-group-hdr"
                 style={{color:'rgba(200,151,26,0.75)'}}
-                onClick={() => setGrpBspOpen(o => !o)}
+                onClick={() => setGrpFbcOpen(o => !o)}
               >
-                Builder Sprint (BSP)
+                Foundry Bootcamp (FBC)
                 <span className="snav-group-arrow">&#8964;</span>
               </button>
               <div className="snav-group-items">
-                {navItem('bsp', 'Builder Sprint — Overview', '◾')}
+                {navItem('fbc', 'Foundry Bootcamp — Overview', '◾')}
               </div>
             </div>
 
@@ -416,7 +412,7 @@ export default function App() {
             {panel('tm10')}
             {panel('tm20')}
             {panel('tm30')}
-            {panel('bsp')}
+            {panel('fbc')}
             {panel('sl')}
             {panel('specialists')}
             {panel('tm40')}
@@ -425,6 +421,7 @@ export default function App() {
             {panel('documents')}
             {panel('taskindex')}
             {panel('dashboards')}
+            {panel('findmytrack')}
             {panel('support')}
           </main>
 
@@ -434,7 +431,6 @@ export default function App() {
             DRAFT &mdash; Not yet approved for distribution &bull; DIST: UNLIMITED
           </footer>
 
-          <div className="banner-unclass">UNCLASSIFIED</div>
         </div>
       </div>
     </>

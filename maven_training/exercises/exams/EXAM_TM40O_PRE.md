@@ -145,5 +145,5 @@ S-13. Full credit (10 pts): (1) the manual SSH change creates configuration drif
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-40O Pre-Test | Version 1.0 | March 2026*

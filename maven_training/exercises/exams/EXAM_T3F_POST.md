@@ -111,5 +111,5 @@ D. End the evaluation and start over
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Post-Test T3-F | Version 2.0 | March 2026*

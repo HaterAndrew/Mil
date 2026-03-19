@@ -4,7 +4,7 @@
 **HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
 Wiesbaden, Germany | Version 1.0 | March 2026
 
-**APPLIES TO:** All USAREUR-AF military and civilian personnel with MSS access.
+**APPLIES TO:** All USAREUR-AF military and Civilian personnel with MSS access.
 **DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.
 
 > **BLUF:** Get operational in MSS in under 30 minutes. This guide does not replace TM-10 — read TM-10 when time permits.
@@ -27,6 +27,8 @@ Wiesbaden, Germany | Version 1.0 | March 2026
 2. Authenticate with your CAC.
 3. On first login: accept the AUP when prompted.
 4. Confirm you land on the **Home** screen — navigation panel left, workspace right.
+
+**IMPORTANT:** If you work across multiple enclaves (NIPR, SIPR, MPE, etc.), repeat the login and account setup process on **each enclave** you need to access. Your account on one enclave does not carry over to another. Confirm access on every enclave before you need it operationally.
 
 **Login fails:** Verify CAC certificates are current. Contact S6/G6 help desk — no workarounds.
 

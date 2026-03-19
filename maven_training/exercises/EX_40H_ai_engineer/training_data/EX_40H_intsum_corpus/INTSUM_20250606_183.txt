@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250606_183 — NAI ACTIVITY REPORT
+DTG: 060000Z JUN 2025
+Unit: 1AD G2
+
+Summary: NAI 02 (grid 33T891743) near DUNKELWALD showed no significant activity during the 7-day collection window. Previous reporting of OPFOR presence has not been confirmed.
+
+Collection Assessment: Current ISR allocation provides adequate coverage of NAI 02. No additional assets requested at this time.
+Recommended Action: Maintain collection posture. Update S2 overlay with latest activity data. Cross-reference with SIGINT and HUMINT reporting.

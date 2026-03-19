@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250522_041 — WEATHER IMPACT
+DTG: 220000Z MAY 2025
+Unit: 3BCT HHC
+
+Summary: Heavy fog expected in the GRUENFELD valley from 0400-0900 local for the next 3 days. Visibility below 200m.
+
+Operational Impact: Aviation operations degraded. ISR coverage gaps expected during affected periods.
+Recommended Action: Adjust operations tempo as needed. Monitor weather updates from corps weather team. Coordinate with aviation for revised ISR windows.

@@ -3,7 +3,7 @@
   "subtitle": "Enterprise Data Compass & Plan for Success",
   "version": "1.0",
   "date": "February 2026",
-  "classification": "CUI // FOUO",
+  "classification": "CUI",
   "signatories": [
     { "role": "Chief Technology Officer, USAREUR-AF", "name": "" },
     { "role": "Chief Data Architect, ODT", "name": "" }

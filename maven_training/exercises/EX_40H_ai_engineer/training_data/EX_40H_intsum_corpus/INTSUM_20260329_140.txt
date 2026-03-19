@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260329_140 — THREAT ASSESSMENT
+DTG: 290000Z MAR 2026
+Unit: 1-12 CAV
+
+Summary: Anti-access threat in the SCHWARZBACH area assessed as HIGH. SIGINT and HUMINT reporting converge on possible OPFOR air defense repositioning near NAI 05 (grid 37T534806).
+
+Intelligence Gaps: Additional ISR coverage requested for NAI 05. HUMINT tasking submitted to validate current reporting.
+Recommended Action: Brief subordinate commanders on updated threat picture. Adjust patrol routes and timing as appropriate. Request additional collection assets if threat level increases.

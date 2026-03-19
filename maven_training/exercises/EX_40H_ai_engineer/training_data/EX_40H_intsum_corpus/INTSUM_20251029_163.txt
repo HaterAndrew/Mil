@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20251029_163 — WEATHER IMPACT
+DTG: 290000Z OCT 2025
+Unit: 1BCT HHC
+
+Summary: Heavy rainfall warning issued. 40-60mm expected over 24 hours in the NEUDORF river basin. Flash flooding possible.
+
+Operational Impact: Aviation operations degraded. ISR coverage gaps expected during affected periods.
+Recommended Action: Adjust operations tempo as needed. Monitor weather updates from corps weather team. Coordinate with aviation for revised ISR windows.

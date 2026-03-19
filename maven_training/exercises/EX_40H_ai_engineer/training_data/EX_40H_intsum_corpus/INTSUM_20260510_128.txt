@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260510_128 — OBSERVATION REPORT
+DTG: 100000Z MAY 2026
+Unit: 2BCT HHC
+
+Summary: OP GRANITE reported observation of 4 unidentified vehicles moving in convoy formation along MSR EAGLE at 1915 local. Vehicles: minibus. Movement direction: SOUTH. No hostile action observed. Convoy cleared the AO within 12 minutes.
+
+Assessment: Unknown purpose. Vehicle type and movement pattern do not match known civilian routes. Possible CCIR trigger — S2 assessment pending.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

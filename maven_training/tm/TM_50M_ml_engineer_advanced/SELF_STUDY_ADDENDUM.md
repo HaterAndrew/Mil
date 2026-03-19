@@ -114,4 +114,4 @@ DevCon 5 content focused on enterprise-scale ML platforms, interoperability, and
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*

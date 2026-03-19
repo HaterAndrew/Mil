@@ -87,7 +87,7 @@ B. Interact with AI-assisted workflows that process queries, generate draft outp
 C. Deploy new pipeline transforms to the production environment
 D. Manage user access permissions for the unit project
 
-**10. You receive a dataset marked "FOUO — Not for Public Release." According to TM-10 authorized export procedures, you may:**
+**10. You receive a dataset marked "CUI — Not for Public Release." According to TM-10 authorized export procedures, you may:**
 
 A. Email the dataset to your personal email for offline analysis
 B. Export to an authorized government system on the appropriate network following the data handling instructions
@@ -213,7 +213,7 @@ Scoring: N/A — Supplemental knowledge check. TM-10 evaluation of record is the
 7. B — Object Type represents a category of real-world entity in the Ontology.
 8. C — Link Type traversal from the Object detail page is the correct Quiver navigation method.
 9. B — End users interact with AIP Logic for AI-assisted workflow outputs, not configuration.
-10. B — FOUO data exports to authorized government systems only, following handling instructions.
+10. B — CUI data exports to authorized government systems only, following handling instructions.
 11. B — 403 Forbidden = permissions issue; verify project membership/role, contact data steward.
 12. B — Pipeline last-run timestamp or data-as-of indicator is the correct data freshness check.
 13. B — Multiple filter criteria use AND logic — all conditions must match simultaneously.
@@ -234,5 +234,5 @@ SA-5. Full credit requires two issues with resolutions: (1) Incorrect PIV PIN �
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-10 Supplemental Knowledge Check | Version 1.1 | March 2026*

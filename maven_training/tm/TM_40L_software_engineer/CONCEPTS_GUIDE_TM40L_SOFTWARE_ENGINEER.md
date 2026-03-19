@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-40L COMPANION — SOFTWARE ENGINEER · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** The SWE is the engineer of record for production code on MSS. Everyone else depends on it running correctly, every time.
+> **Forward:** The SWE is the engineer of record for production code on MSS. Everyone else depends on it running correctly, every time.
 > **Purpose:** Develops mental models required to write, deploy, and maintain code on MSS. Read before beginning TM-40L task instruction.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
@@ -237,6 +237,8 @@ Service account credential violations are reportable security incidents, not cod
 G3 needs a web application showing real-time personnel accountability. Personnel data lives in MSS as `Soldier` and `Unit` Object Types with `UNIT_HAS_SOLDIER` Links. The SWE builds a React frontend authenticating via individual SSO credentials. The application queries `Unit` objects and navigates `UNIT_HAS_SOLDIER` to retrieve accountability data.
 
 Because access control lives at the Ontology level, staff members see only units they have been granted access to — no application-level permission logic needed. The Ontology is the permissions model.
+
+The same application architecture scales to other MSCs — 10th AAMDC, 56th MDC-E, and SETAF-AF each deploy the identical React frontend against the same Ontology. Access control determines that a SETAF-AF personnel officer sees only SETAF-AF units, while a 10th AAMDC S1 sees only AAMDC formations. No MSC-specific code branches exist.
 
 ---
 

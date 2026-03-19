@@ -47,12 +47,16 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | TM-40J | Program Manager | PMs, G8/S8 | 4 | TM-30 (Required) |
 | TM-40K | Knowledge Manager | KMOs, 37F | 4 | TM-30 (Required) |
 | TM-40L | Software Engineer | SWEs | 5 | TM-30 (Required) + coding background |
+| TM-40N | UI/UX Designer | UI/UX designers | 5 | TM-30 (Required) + design tool familiarity |
+| TM-40O | Platform Engineer | Platform engineers | 5 | TM-30 (Required) + Linux sysadmin + containers/Git |
 | TM-50G | Advanced ORSA | Senior ORSA analysts | 5 | TM-40G (Required) |
 | TM-50H | Advanced AI Engineer | Senior AI engineers | 5 | TM-40H (Required) |
 | TM-50M | Advanced ML Engineer | Senior MLEs | 5 | TM-40M (Required) |
 | TM-50J | Advanced Program Manager | Senior PMs | 3 | TM-40J (Required) |
 | TM-50K | Advanced Knowledge Manager | Senior KMOs | 3 | TM-40K (Required) |
 | TM-50L | Advanced Software Engineer | Senior SWEs | 5 | TM-40L (Required) |
+| TM-50N | Advanced UI/UX Designer | Senior UI/UX designers | 3 | TM-40N (Required) + 2+ MSS design portfolio |
+| TM-50O | Advanced Platform Engineer | Senior platform engineers | 3 | TM-40O (Required) + operational experience |
 | T3-I | Instructor Certification | C2DAO-selected instructor candidates | 5 + practicum | TM-30 (Required) + C2DAO selection |
 | T3-F | MSC Force Multiplier | MSC-level data NCOs, S6, UDT nominees | 0.5 | TM-20 (Required) + CDR nomination |
 
@@ -60,7 +64,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 
 > **NOTE:** "Training days" reflects initial qualification training with instructor support. Self-paced completion may require more time. Refresher/sustainment training is shorter — see Section 11.
 
-> **BUILDER SPRINT (BSP):** A quarterly 5-day applied build event that operates **outside** the TM-10 through TM-50 training chain. Prereq: TM-20 Go on file + command-validated project. Does not grant TM-30 credit. Does not unlock TM-40 enrollment. Governed by BSP-SOP-001 (training_management/BUILDER_SPRINT_SOP.md). Appears in training records as a separate event type, not as a TM course completion.
+> **FOUNDRY BOOTCAMP (FBC):** A quarterly 5-day applied build event that operates **outside** the TM-10 through TM-50 training chain. Prereq: TM-20 Go on file + command-validated project. Does not grant TM-30 credit. Does not unlock TM-40 enrollment. Governed by FBC-SOP-001 (training_management/FOUNDRY_BOOTCAMP_SOP.md). Appears in training records as a separate event type, not as a TM course completion.
 
 > **TRAIN-THE-TRAINER (T3):** T3-I (Instructor Certification) and T3-F (MSC Force Multiplier) operate **outside** the TM-10 through TM-50 training chain. T3-I certifies C2DAO instructors; T3-F certifies Unit Data Trainers at the MSC level. T3-I is offered semi-annually; T3-F is offered quarterly aligned with MTT rotations. See Instructor Tier Definitions, Unit Data Trainer SOP, and MTT Operations SOP for employment and sustainment guidance.
 
@@ -232,6 +236,32 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 
 > **NOTE:** Developer track evaluations (TM-40H, 40M, 40L, 50H, 50M, 50L) require a qualified technical reviewer: TM-40 certified instructor, C2DAO data engineer, or equivalent. Do not evaluate developer track ELOs using a non-technical observer.
 
+### 2-11. TM-40N — UI/UX Designer
+
+**TLO:** Design, prototype, test, and deliver user-centered operational data product interfaces on MSS using Workshop design patterns, accessibility standards, and C2DAO design review processes.
+
+| ELO | Description | Evaluation Method |
+|---|---|---|
+| 40N-01 | Conduct user research (stakeholder interviews and task analysis) for a provided operational scenario | Written review: research findings document evaluated against user research checklist |
+| 40N-02 | Create wireframes and information architecture for a multi-page Workshop application | Design review: wireframes evaluated against information architecture rubric |
+| 40N-03 | Build a high-fidelity interactive prototype in Workshop with conditional visibility and state transitions | Practical: prototype demonstrates required interactions; evaluator tests 5 user flows |
+| 40N-04 | Conduct a user test with structured task scenarios and document findings with prioritized recommendations | Product review: test plan, observation notes, and findings document evaluated |
+| 40N-05 | Create a design system artifact (component library with documented patterns and naming conventions) | Product review: design system evaluated against completeness and developer handoff standards |
+| 40N-06 | Submit design deliverables through C2DAO design review process with accessibility compliance documentation | Practical: deliverables meet C2DAO standards; accessibility checklist completed |
+
+### 2-12. TM-40O — Platform Engineer
+
+**TLO:** Deploy, monitor, secure, and maintain infrastructure supporting MSS operational data products using Kubernetes, CI/CD pipelines, and C2DAO infrastructure standards.
+
+| ELO | Description | Evaluation Method |
+|---|---|---|
+| 40O-01 | Configure a Kubernetes deployment with correct namespace, resource quotas, and pod lifecycle management | Practical: deployment runs; resource limits enforced; pod health checks passing |
+| 40O-02 | Execute a deployment strategy (rolling update) with zero-downtime verification and rollback capability | Practical: evaluator triggers rollback; service maintains availability throughout |
+| 40O-03 | Build a monitoring and alerting configuration with metrics collection, log aggregation, and threshold alerts | Practical: monitoring dashboard displays correct metrics; alert fires on seeded anomaly |
+| 40O-04 | Implement security hardening: network policies, RBAC, secrets management, and audit logging | Practical: evaluator attempts unauthorized access; policies block correctly |
+| 40O-05 | Build a CI/CD pipeline with automated testing gates, vulnerability scanning, and promotion environments | Practical: pipeline executes end-to-end; gate blocks deployment on test failure |
+| 40O-06 | Complete C2DAO infrastructure deployment checklist with change management documentation | Written review: checklist evaluated for completeness; change documentation meets standards |
+
 ---
 
 ## 3. INDIVIDUAL TASK LIST
@@ -282,6 +312,28 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | MSS-40WFF-T05 | Build a multi-page WFF dashboard | Page 1 → Page 2 variable passing works; Page 2 data filtered by Page 1 selection |
 | MSS-40WFF-T06 | Apply C2DAO governance: naming, marking, branching, and promotion | Product meets naming standards; promotion request submitted with complete description |
 
+### 3-5. TM-40N Tasks (UI/UX Designer)
+
+| Task ID | Task | Go Standard |
+|---|---|---|
+| MSS-40N-T01 | Conduct user research for a provided operational scenario | Research document complete; findings actionable; stakeholder needs identified |
+| MSS-40N-T02 | Create wireframes and information architecture for a Workshop application | Wireframes cover all required pages; navigation hierarchy documented |
+| MSS-40N-T03 | Build a high-fidelity interactive prototype with conditional visibility | Prototype renders correctly; 5 user flows pass evaluator testing |
+| MSS-40N-T04 | Conduct user test and document findings with prioritized recommendations | Test plan followed; findings documented with severity ratings; top 3 fixes identified |
+| MSS-40N-T05 | Create a design system component library with documentation | Component library contains all required elements; naming conventions followed |
+| MSS-40N-T06 | Submit deliverables through C2DAO design review with accessibility compliance | All deliverables submitted; accessibility checklist complete; no critical failures |
+
+### 3-6. TM-40O Tasks (Platform Engineer)
+
+| Task ID | Task | Go Standard |
+|---|---|---|
+| MSS-40O-T01 | Configure a Kubernetes deployment with namespace, quotas, and health checks | Deployment running; resource limits enforced; health checks passing |
+| MSS-40O-T02 | Execute a rolling update with zero-downtime and rollback | Update completes; no service interruption; rollback successful on command |
+| MSS-40O-T03 | Build monitoring and alerting with metrics dashboard and threshold alerts | Dashboard displays correct metrics; alert fires on seeded event |
+| MSS-40O-T04 | Implement security hardening (network policies, RBAC, secrets management) | Unauthorized access attempts blocked; audit log captures events |
+| MSS-40O-T05 | Build a CI/CD pipeline with testing gates and promotion environments | Pipeline runs end-to-end; gate blocks on test failure |
+| MSS-40O-T06 | Complete deployment checklist with change management documentation | Checklist complete; change documentation meets C2DAO standards |
+
 ---
 
 ## 4. TRAINING STANDARDS AND GO/NO-GO CRITERIA
@@ -298,6 +350,8 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | TM-40H/M/L | Pass developer track practical exercise; evaluated by TM-40 certified technical reviewer |
 | TM-40J | Pass 5 of 6 ELOs; IPR product meets all PM Dashboard Standards Checklist items |
 | TM-40K | Pass 5 of 6 ELOs; PCS transfer package reviewed and approved by instructor |
+| TM-40N | Pass 5 of 6 ELOs; design portfolio reviewed by qualified UX evaluator; accessibility checklist complete |
+| TM-40O | Pass 5 of 6 ELOs; deployment verified by qualified infrastructure evaluator; monitoring operational |
 
 ### 4-2. No-Go Actions
 
@@ -515,56 +569,112 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | 12 | 1300–1400 | Practical exercise scenario brief | BRF |
 | 13 | 1400–1700 | Practical exercise (all 6 tasks) | Evaluation |
 
-### 5-5. TM-40J — Program Manager (2 Days)
+### 5-5. TM-40J — Program Manager (4 Days)
 
-**Day 1 — Data Architecture and Ingestion**
-
-| Block | Time | Content | Method |
-|---|---|---|---|
-| 1 | 0800–0900 | PM role on MSS; program data model (Program/Milestone/Resource/Risk Object Types) | Lecture/discussion |
-| 2 | 0900–1100 | Ontology: creating PM Object Types, Link Types, and properties | Instructor-led lab |
-| 3 | 1100–1200 | Pipeline Builder: IMS ingestion, date arithmetic, RAG status computation | Instructor-led lab |
-| — | 1200–1300 | Lunch | — |
-| 4 | 1300–1500 | Pipeline Builder: GFEBS obligation data; Append mode snapshot pipeline | Instructor-led lab |
-| 5 | 1500–1700 | Quiver: obligation rate visualization; budget execution charts with reference lines | Guided practice |
-
-**Day 2 — Dashboards, Portfolio, and Governance**
+**Day 1 — Agile Fundamentals and User Story Craft**
 
 | Block | Time | Content | Method |
 |---|---|---|---|
-| 6 | 0800–1000 | Workshop: milestone dashboard, RAG status formatting, data-as-of timestamp | Instructor-led lab |
-| 7 | 1000–1200 | Contour: portfolio health matrix; cross-program status roll-up | Instructor-led lab |
+| 1 | 0800–0830 | The Technical PM role on MSS; connecting operational requirements to technical execution | Brief |
+| 2 | 0830–1000 | Agile for data projects: Scrum framework, sprint cadence, backlog management; applied exercise: story sizing | Instructor-led lab |
+| — | 1000–1015 | Break | — |
+| 3 | 1015–1200 | User stories and acceptance criteria: format, quality standards, Definition of Ready; applied exercise: rewrite requirements | Instructor-led lab |
 | — | 1200–1300 | Lunch | — |
-| 8 | 1300–1400 | Reporting pipelines: scheduled refresh, failure alerting, PDF export | Guided demonstration |
-| 9 | 1400–1500 | Access management, classification, C2DAO governance for PM applications | Lecture/discussion |
-| 10 | 1500–1700 | Practical exercise | Evaluation |
+| 4 | 1300–1500 | Kanban for operational support; sprint ceremonies — military data team execution standards; sprint planning exercise | Instructor-led lab |
+| — | 1500–1515 | Break | — |
+| 5 | 1515–1700 | User story quality workshop: peer review against Definition of Ready; common failure patterns | Workshop |
 
-### 5-6. TM-40K — Knowledge Manager (2 Days)
-
-**Day 1 — Knowledge Architecture, AAR Systems, Lessons Learned**
+**Day 2 — ML/AI Lifecycle and Requirements Elicitation**
 
 | Block | Time | Content | Method |
 |---|---|---|---|
-| 1 | 0800–0900 | KM role on MSS; knowledge architecture design methodology | Lecture/discussion |
-| 2 | 0900–1100 | Ontology: Knowledge Object Types (Document, Lesson, AAR, SOP, ExpertiseProfile) | Instructor-led lab |
-| 3 | 1100–1200 | Workshop: AAR submission form design, required field validation | Instructor-led lab |
+| — | 0800–0900 | Day 1 review; gate criteria quiz — six ML lifecycle phases | Review |
+| 6 | 0900–1030 | ML/AI project lifecycle: six phases, gate criteria, cross-track handoffs, common gate-skip failure modes | Lecture |
+| — | 1030–1045 | Break | — |
+| 7 | 1045–1200 | Requirements elicitation from commanders and staff: structured intake, translation problem; interview simulation | Instructor-led lab |
 | — | 1200–1300 | Lunch | — |
-| 4 | 1300–1500 | Lessons learned pipeline: intake, deduplication, tagging, distribution routing | Instructor-led lab |
-| 5 | 1500–1700 | AIP Logic: document summarization and automatic tagging; SME review requirement | Guided lab |
+| 8 | 1300–1430 | Requirements document drill: problem statement, success criteria, constraints, definition of done; peer review | Instructor-led lab |
+| — | 1430–1445 | Break | — |
+| 9 | 1445–1700 | Stakeholder expectations: delivery timelines, scope tradeoffs, cross-track coordination; PM vs. technical authority | Lecture/discussion |
 
-**Day 2 — Search, Doctrine, Expertise, and Continuity**
+**Day 3 — Project Tracking Systems and Risk Management**
 
 | Block | Time | Content | Method |
 |---|---|---|---|
-| 6 | 0800–1000 | Workshop: knowledge browser application with search, filter, and drill-down | Instructor-led lab |
-| 7 | 1000–1100 | SOP/doctrine version control: lifecycle management, review notification workflow | Instructor-led lab |
-| 8 | 1100–1200 | Personnel expertise mapping: ExpertiseProfile, SME directory, expertise gap analysis | Guided practice |
+| — | 0800–0830 | Day 2 review; requirements document quality debrief | Review |
+| 10 | 0830–1030 | Project tracking system architecture: Ontology design, Sprint Board specification, PM requirements spec | Instructor-led lab |
+| — | 1030–1045 | Break | — |
+| 11 | 1045–1200 | Commander-facing project status dashboard: health roll-up, milestone status, blocking issues; automated alerts | Instructor-led lab |
 | — | 1200–1300 | Lunch | — |
-| 9 | 1300–1400 | PCS knowledge transfer package design; knowledge health metrics | Lecture/workshop |
-| 10 | 1400–1500 | Access control, Privacy Act considerations, C2DAO governance for KM systems | Lecture/discussion |
-| 11 | 1500–1700 | Practical exercise | Evaluation |
+| 12 | 1300–1500 | Risk management for data projects: risk register, dependency management, cross-track blockers | Instructor-led lab |
+| — | 1500–1515 | Break | — |
+| 13 | 1515–1700 | Dependency mapping exercise: identify cross-track dependencies for practical exercise scenario; instructor review | Instructor-led lab |
 
-### 5-7. TM-40G — ORSA (4 Days)
+**Day 4 — Delivery, Change Management, and Practical Exercise**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 14 | 0800–0900 | Delivery planning: scope/timeline/quality tradeoffs, release planning, Definition of Done, production readiness review | Lecture |
+| 15 | 0900–0945 | Change management: user adoption, resistance management, rollout sequencing, platform governance | Lecture |
+| — | 0945–1000 | Practical exercise scenario brief; evaluator distributes materials | Brief |
+| — | 1000–1015 | Final prep; environment check | Buffer |
+| 16 | 1015–1200 | Practical exercise — Phase 1 (Tasks 1–4): requirements document, user stories, sprint board spec, dashboard spec | Evaluation |
+| — | 1200–1300 | Lunch | — |
+| 17 | 1300–1700 | Practical exercise — Phase 2 (Tasks 5–7): dependency/risk register, production readiness brief, change management summary | Evaluation |
+
+### 5-6. TM-40K — Knowledge Manager (4 Days)
+
+**Day 1 — Knowledge Architecture, AAR Systems, and Lessons Learned**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 1 | 0800–0900 | KM role on MSS; knowledge architecture methodology; why KM systems fail and what makes them survive personnel turbulence | Brief |
+| 2 | 0900–1100 | Ontology: Knowledge Object Types — Document, Lesson, AAR, SOP, ExpertiseProfile; Link Types; design on paper before building | Instructor-led lab |
+| — | 1100–1115 | Break | — |
+| 3 | 1115–1200 | Workshop: AAR submission form — required-field validation, submission confirmation, routing to AAR Object Type | Instructor-led lab |
+| — | 1200–1300 | Lunch | — |
+| 4 | 1300–1500 | Lessons learned pipeline: intake, deduplication, tagging taxonomy design, distribution routing by unit/classification/echelon | Instructor-led lab |
+| — | 1500–1515 | Break | — |
+| 5 | 1515–1700 | AIP Logic: document summarization; automatic theme extraction; human review queue — all AIP outputs begin as Draft | Guided lab |
+
+**Day 2 — Search, Retrieval Applications, and AIP Prompt Engineering**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| — | 0800–0830 | Day 1 review; AIP review gate requirements — the non-negotiable standard | Review |
+| 6 | 0830–1030 | Workshop: knowledge browser — search by keyword, filter by tag/unit/date, drill-down to lesson detail | Instructor-led lab |
+| — | 1030–1045 | Break | — |
+| 7 | 1045–1200 | SOP/doctrine version control: lifecycle management, version tagging, SOP review notification workflow | Instructor-led lab |
+| — | 1200–1300 | Lunch | — |
+| 8 | 1315–1530 | AIP prompt iteration lab (extended): test against 5 documents, score extraction quality, revise, retest minimum 3 cycles | Instructor-led lab |
+| — | 1530–1545 | Break | — |
+| 9 | 1545–1700 | Prompt comparison debrief: before/after sharing, structural changes, common prompt failure patterns | Workshop |
+
+**Day 3 — Expertise Mapping, PCS Continuity, and Package Draft**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| — | 0800–0830 | Day 2 review; privacy act and classification of knowledge objects | Review |
+| 10 | 0830–1030 | Personnel expertise mapping: ExpertiseProfile Object Type, skills taxonomy, SME directory; Privacy Act authorities | Instructor-led lab |
+| — | 1030–1045 | Break | — |
+| 11 | 1045–1145 | PCS knowledge transfer methodology: key person dependency analysis, transfer package design, Foundry project handoff | Instructor-led lab |
+| — | 1145–1200 | PCS package requirements brief: Chapter 9 completeness criteria | Brief |
+| — | 1200–1300 | Lunch | — |
+| 12 | 1300–1700 | PCS package draft lab (full afternoon): each trainee produces complete draft; submitted by 1700 for instructor review | Instructor-led lab |
+
+**Day 4 — Governance, Instructor Review, and Practical Exercise**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| — | 0800–0830 | Day 3 review; access management, C2DAO governance for knowledge objects | Review |
+| 13 | 0830–1045 | PCS package instructor review: written feedback from overnight review; individual conferral; revision against Chapter 9 criteria | Workshop |
+| — | 1045–1100 | Break | — |
+| 14 | 1100–1145 | Practical exercise scenario brief; review Go criteria for AIP gate and PCS package completeness | Brief |
+| — | 1145–1200 | Buffer: questions / final environment check | Buffer |
+| — | 1200–1300 | Lunch | — |
+| 15 | 1300–1700 | Practical exercise (evaluated) | Evaluation |
+
+### 5-7. TM-40G — ORSA (5 Days)
 
 **Day 1 — Environment Setup and Statistical Modeling**
 
@@ -606,7 +716,18 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | — | 1200–1300 | Lunch | — |
 | 16 | 1300–1700 | Practical exercise: regression + forecast + commander brief | Evaluation |
 
-### 5-8. TM-40H — AI Engineer (4 Days)
+**Day 5 — Communicating Results and Practical Exercise**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 15 | 0800–0900 | Communicating uncertainty: confidence intervals, prediction intervals, briefing posture | Lecture |
+| 16 | 0900–1000 | Common ORSA brief failures: point estimates without bounds, methods-paper language | Discussion |
+| — | 1000–1015 | Break | — |
+| 17 | 1015–1200 | Practical exercise scenario brief and ORSA product standards review | BRF |
+| — | 1200–1300 | Lunch | — |
+| 18 | 1300–1700 | Practical exercise: regression + time series + commander brief | Evaluation |
+
+### 5-8. TM-40H — AI Engineer (5 Days)
 
 **Day 1 — Safety, Architecture, and AIP Logic Fundamentals** *(Block 1 mandatory — no exceptions)*
 
@@ -647,7 +768,18 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | — | 1200–1300 | Lunch | — |
 | 15 | 1300–1700 | Practical exercise: author, test, and document AIP Logic workflow end-to-end | Evaluation |
 
-### 5-9. TM-40M — Machine Learning Engineer (4 Days)
+**Day 5 — Production Deployment and Practical Exercise**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 15 | 0800–0900 | Production deployment: pipeline scheduling, monitoring, failure alerting, rollback | Lecture |
+| 16 | 0900–1000 | Practical exercise scenario brief and workflow design time | BRF |
+| — | 1000–1015 | Break | — |
+| 17 | 1015–1200 | Authorization checklist guidance; evaluation criteria review | BRF |
+| — | 1200–1300 | Lunch | — |
+| 18 | 1300–1700 | Practical exercise: author → test → authorize → deploy AIP workflow | Evaluation |
+
+### 5-9. TM-40M — Machine Learning Engineer (5 Days)
 
 **Day 1 — Workspace and Feature Engineering**
 
@@ -687,7 +819,18 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | — | 1200–1300 | Lunch | — |
 | 14 | 1300–1700 | Practical exercise: feature pipeline → train → evaluate → deploy → governance doc | Evaluation |
 
-### 5-10. TM-40L — Software Engineer (4 Days)
+**Day 5 — Governance and Practical Exercise**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 15 | 0800–0900 | Model governance: model card completion, assumptions, limitations, responsible AI declaration | Lecture |
+| 16 | 0900–1000 | Deployment approval and C2DAO governance for deployed models | BRF |
+| — | 1000–1015 | Break | — |
+| 17 | 1015–1200 | Practical exercise scenario brief; planning time | BRF |
+| — | 1200–1300 | Lunch | — |
+| 18 | 1300–1700 | Practical exercise: feature pipeline → train → evaluate → deploy → monitor → governance | Evaluation |
+
+### 5-10. TM-40L — Software Engineer (5 Days)
 
 **Day 1 — OSDK Fundamentals**
 
@@ -727,6 +870,125 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | 14 | 1000–1200 | Security and compliance: OSDK token handling, input sanitization, OPSEC for app code | Lecture/lab |
 | — | 1200–1300 | Lunch | — |
 | 15 | 1300–1700 | Practical exercise: OSDK query → Action validator → Slate UI end-to-end | Evaluation |
+
+**Day 5 — CI/CD, Security, and Practical Exercise**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 15 | 0800–0900 | CI/CD: repository discipline, PR workflow, automated testing, C2DAO deployment checklist | Lecture |
+| 16 | 0900–1000 | Security and compliance: token handling, input sanitization, OPSEC for app code | Lecture |
+| — | 1000–1015 | Break | — |
+| 17 | 1015–1200 | Practical exercise scenario brief; planning time | BRF |
+| — | 1200–1300 | Lunch | — |
+| 18 | 1300–1700 | Practical exercise: OSDK → validator → Slate UI → deployment checklist | Evaluation |
+
+### 5-11. TM-40N — UI/UX Designer (5 Days)
+
+**Day 1 — User Research and Information Architecture**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 1 | 0800–0900 | UI/UX role on MSS; design principles for operational data products | Lecture |
+| 2 | 0900–1100 | User research methods: stakeholder interviews, task analysis, persona development | Instructor-led lab |
+| 3 | 1100–1200 | Information architecture: organizing complex data for command audiences | Instructor-led lab |
+| — | 1200–1300 | Lunch | — |
+| 4 | 1300–1500 | Wireframing fundamentals: low-fidelity prototyping for Workshop applications | Instructor-led lab |
+| 5 | 1500–1700 | Design critique: peer review of wireframes against operational requirements | Workshop |
+
+**Day 2 — Accessibility and Visual Design**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 6 | 0800–1000 | Accessibility standards: WCAG compliance for government applications | Lecture |
+| 7 | 1000–1200 | Responsive design: multi-device layouts for field and garrison use | Instructor-led lab |
+| — | 1200–1300 | Lunch | — |
+| 8 | 1300–1500 | Color theory and typography for data visualization; RAG standards | Instructor-led lab |
+| 9 | 1500–1700 | Dashboard layout patterns: summary-detail, drill-down, comparison; anti-patterns | Instructor-led lab |
+
+**Day 3 — Prototyping and User Testing**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 10 | 0800–1000 | High-fidelity prototyping: Workshop design with real data binding | Instructor-led lab |
+| 11 | 1000–1200 | Interactive prototyping: conditional visibility, state transitions, user flow design | Instructor-led lab |
+| — | 1200–1300 | Lunch | — |
+| 12 | 1300–1500 | User testing methodology: test plan design, task scenarios, observation protocols | Lecture |
+| 13 | 1500–1700 | Usability testing lab: conduct test with peer; document findings; prioritize fixes | Guided practice |
+
+**Day 4 — Design Systems and Developer Collaboration**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 14 | 0800–1000 | Design system creation: component library, style guide, reusable widget templates | Instructor-led lab |
+| 15 | 1000–1200 | Design system documentation for developer handoff; naming conventions | Instructor-led lab |
+| — | 1200–1300 | Lunch | — |
+| 16 | 1300–1500 | Design-development collaboration: specification documents, design tokens, handoff workflow | Instructor-led lab |
+| 17 | 1500–1700 | Design review process: C2DAO standards review; iteration workflow | Discussion |
+
+**Day 5 — Portfolio Standards and Practical Exercise**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 18 | 0800–0900 | Design portfolio standards: complete operational UI/UX deliverable requirements | Lecture |
+| — | 0900–0915 | Break | — |
+| 19 | 0915–1100 | Practical exercise scenario brief and design planning time | BRF |
+| — | 1100–1200 | Buffer: open lab | Buffer |
+| — | 1200–1300 | Lunch | — |
+| 20 | 1300–1700 | Practical exercise: user research → wireframe → prototype → test → design system artifact | Evaluation |
+
+### 5-12. TM-40O — Platform Engineer (5 Days)
+
+**Day 1 — Kubernetes and Container Fundamentals**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 1 | 0800–0900 | Platform engineering role on MSS; infrastructure architecture overview | Lecture |
+| 2 | 0900–1100 | Kubernetes fundamentals: cluster architecture, namespaces, resource quotas, pod lifecycle | Instructor-led lab |
+| 3 | 1100–1200 | Container management: image registry, build pipeline, vulnerability scanning | Instructor-led lab |
+| — | 1200–1300 | Lunch | — |
+| 4 | 1300–1500 | Foundry infrastructure: platform components, service dependencies, health checks | Instructor-led lab |
+| 5 | 1500–1700 | Infrastructure-as-code: configuration management for repeatable deployments | Instructor-led lab |
+
+**Day 2 — Deployment and Networking**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 6 | 0800–1000 | Deployment strategies: rolling updates, blue-green, canary; rollback procedures | Instructor-led lab |
+| 7 | 1000–1200 | Deployment lab: execute rolling update; verify zero-downtime; trigger rollback | Instructor-led lab |
+| — | 1200–1300 | Lunch | — |
+| 8 | 1300–1500 | Service mesh and networking: ingress, load balancing, service discovery, TLS | Instructor-led lab |
+| 9 | 1500–1700 | Storage management: persistent volumes, storage classes, backup and recovery | Instructor-led lab |
+
+**Day 3 — Monitoring and Observability**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 10 | 0800–1000 | Monitoring architecture: metrics collection, log aggregation, distributed tracing | Instructor-led lab |
+| 11 | 1000–1200 | Alerting configuration: threshold alerts, anomaly detection, escalation routes | Instructor-led lab |
+| — | 1200–1300 | Lunch | — |
+| 12 | 1300–1500 | Observability dashboard build: health status, resource utilization, SLI/SLO tracking | Instructor-led lab |
+| 13 | 1500–1700 | Incident response: runbook development, escalation procedures, post-incident review | Instructor-led lab |
+
+**Day 4 — Security and CI/CD**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 14 | 0800–1000 | Security hardening: network policies, RBAC, secrets management, audit logging | Instructor-led lab |
+| 15 | 1000–1200 | Access control: service accounts, pod security standards, least-privilege | Instructor-led lab |
+| — | 1200–1300 | Lunch | — |
+| 16 | 1300–1500 | CI/CD pipeline design: GitOps workflow, testing gates, promotion environments | Instructor-led lab |
+| 17 | 1500–1700 | CI/CD lab: build pipeline with test, scan, and deploy stages | Instructor-led lab |
+
+**Day 5 — Standards and Practical Exercise**
+
+| Block | Time | Content | Method |
+|---|---|---|---|
+| 18 | 0800–0900 | C2DAO infrastructure standards: change management, deployment approval, documentation | Lecture |
+| — | 0900–0915 | Break | — |
+| 19 | 0915–1100 | Practical exercise scenario brief and infrastructure planning time | BRF |
+| — | 1100–1200 | Buffer: open lab | Buffer |
+| — | 1200–1300 | Lunch | — |
+| 20 | 1300–1700 | Practical exercise: deploy → monitor → alert → secure → CI/CD → deployment checklist | Evaluation |
 
 ---
 
@@ -780,13 +1042,13 @@ Continue with TM-30 or TM-40 track based on role. No more than one TM level per 
 
 > **NOTE:** All TM-40 tracks (A–F WFF and G–O specialist) require TM-30 completion. Ensure all TM-40 participants have TM-30 on file before enrolling. WFF and specialist (G–O) training can run concurrently in separate sessions once TM-30 is complete.
 
-**Week 4 (TM-40 Specialist Tracks — 3-day courses)**
+**Week 4 (TM-40 Specialist Tracks — 5-day courses)**
 
 | Day | Training | Audience |
 |---|---|---|
-| Mon–Wed | TM-40G (ORSA) — 3 days | ORSA personnel |
-| Mon–Wed | TM-40H (AI Engineer) — 3 days (parallel session if capacity allows) | AI Engineer personnel |
-| Thu–Fri or following week | TM-40M (ML Engineer), TM-40L (Software Engineer) — 3 days each, as scheduled | ML Eng, SWE personnel |
+| Mon–Fri | TM-40G (ORSA) — 5 days | ORSA personnel |
+| Mon–Fri | TM-40H (AI Engineer) — 5 days (parallel session if capacity allows) | AI Engineer personnel |
+| Following week | TM-40M (ML Engineer), TM-40L (Software Engineer) — 5 days each, as scheduled | ML Eng, SWE personnel |
 
 **Week 5 (TM-40 Specialist Tracks — 4-day courses)**
 
@@ -795,7 +1057,7 @@ Continue with TM-30 or TM-40 track based on role. No more than one TM level per 
 | Mon–Thu | TM-40J (Program Manager) — 4 days | G8/S8, Program Managers |
 | Mon–Thu | TM-40K (Knowledge Manager) — 4 days (parallel session if capacity allows) | Knowledge Managers, S6 |
 
-> **NOTE:** TM-40J and TM-40K are 4-day courses (32 hours each). Do not schedule these as 3-day events. Access provisioning for TM-40H, TM-40M, and TM-40L requires 10–35 days (GPU workspaces, developer tokens) — initiate immediately after TM-30 enrollment is confirmed.
+> **NOTE:** TM-40J and TM-40K are 4-day courses (32 hours each). Access provisioning for TM-40H, TM-40M, and TM-40L requires 10–35 days (GPU workspaces, developer tokens) — initiate immediately after TM-30 enrollment is confirmed.
 
 ---
 
@@ -817,6 +1079,8 @@ Continue with TM-30 or TM-40 track based on role. No more than one TM level per 
 | TM-40J | Builder access + GFEBS training data export | Unit MSS Admin + G8 | 5–7 duty days |
 | TM-40K | Builder access + AIP Logic configuration | Unit MSS Admin + C2DAO | 5–7 duty days |
 | TM-40L | OSDK developer access; TypeScript environment | C2DAO | 10+ duty days |
+| TM-40N | Workshop design access (Editor + AIP Logic configuration) | C2DAO | 7–10 duty days |
+| TM-40O | Kubernetes cluster access + CI/CD pipeline access | C2DAO | 10+ duty days |
 
 ### 7-2. Training Environment Requirements
 
@@ -845,7 +1109,7 @@ If the training environment is unavailable, coordinate with C2DAO for an approve
 TM-10 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 30 days of assignment. At current instructor capacity and training iteration frequency, the program cannot process the full formation at the rate required to meet this standard.
 
 **The gap:**
-- TM-10 required population: all USAREUR-AF military and civilian personnel (theater-wide)
+- TM-10 required population: all USAREUR-AF military and Civilian personnel (theater-wide)
 - Current certified TM-10 instructor pool: insufficient to run concurrent iterations at scale
 - Current training frequency: insufficient to process new arrivals within the 30-day window during high-accession periods
 
@@ -881,6 +1145,8 @@ TM-10 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 3
 | TM-40J (PM) | TM-40J certified; PM/resource management background |
 | TM-40K (KM) | TM-40K certified; KM background (37F or equivalent) |
 | TM-40L (SWE) | C2DAO software engineer or TM-40L certified; TypeScript/Python proficiency |
+| TM-40N (UI/UX) | TM-40N certified; UI/UX design background; Workshop design proficiency; C2DAO UX SME designation |
+| TM-40O (Platform) | TM-40O certified; Platform engineering background; Kubernetes/container proficiency; C2DAO infrastructure SME |
 
 ### 8-2. Instructor Certification Process
 
@@ -898,7 +1164,7 @@ TM-10 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 3
 | TM-20 | 10:1 (all portions) |
 | TM-30 | 8:1 (all portions) |
 | TM-40A–F (WFF) | 10:1 (all portions — high-volume functional staff courses) |
-| TM-40G/H/M/L | 5:1 (intensive coding/modeling content) |
+| TM-40G/H/M/L/N/O | 5:1 (intensive coding/modeling content) |
 | TM-40J/K | 10:1 (all portions) |
 
 ---
@@ -1017,7 +1283,7 @@ TM-10 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 3
 
 The Unit Training Status Matrix (Appendix A) is the primary tracking tool. Maintained by the unit MSS Administrator or designated training NCO; reviewed monthly.
 
-**Required fields per Soldier/civilian:**
+**Required fields per Soldier/Civilian:**
 
 | Field | Description |
 |---|---|
@@ -1048,7 +1314,7 @@ PERSONNEL SUMMARY:
   Total WFF track assignments (TM-40A–F):  [#]  WFF Complete: [#] ([%])
     Breakdown: 40A[#] 40B[#] 40C[#] 40D[#] 40E[#] 40F[#]
   Total specialist track assignments (TM-40G–O): [#]  Specialist Complete: [#] ([%])
-    Breakdown: 40G[#] 40H[#] 40M[#] 40J[#] 40K[#] 40L[#]
+    Breakdown: 40G[#] 40H[#] 40J[#] 40K[#] 40L[#] 40M[#] 40N[#] 40O[#]
 
 ISSUES / SHORTFALLS:
   Access provisioning delays: [Y/N — if yes, describe]
@@ -1214,6 +1480,18 @@ INSTRUCTOR CERTIFICATIONS
 
 **Scenario 40L-B:** Given a provided Action that writes to a Personnel Object Type, write a TypeScript validator enforcing: required field presence, valid rank enumeration, date range validation (no future dates), and cross-field logic (if status = DEPLOYED, location must be non-null). Test with 8 provided test cases (4 valid, 4 invalid).
 
+### TM-40N Scenarios (UI/UX Designer — Evaluator selects one per evaluation)
+
+**Scenario 40N-A:** A brigade S3 needs a redesigned operations dashboard. Conduct user research (interview the evaluator acting as S3), create wireframes for a 3-page Workshop application, build a high-fidelity prototype, conduct a user test with a peer, and produce a design system artifact documenting the component library.
+
+**Scenario 40N-B:** An existing readiness dashboard has been flagged for poor usability. Conduct a heuristic evaluation, document findings, redesign the information architecture, build an improved prototype with accessibility compliance, and submit through C2DAO design review.
+
+### TM-40O Scenarios (Platform Engineer — Evaluator selects one per evaluation)
+
+**Scenario 40O-A:** Deploy a provided application to a Kubernetes cluster. Configure namespace, resource quotas, rolling update strategy, monitoring dashboard with alerting, and network policies. Build a CI/CD pipeline that tests, scans, and deploys. Complete the deployment checklist.
+
+**Scenario 40O-B:** An existing deployment is experiencing intermittent failures (evaluator seeds issues). Diagnose using monitoring tools, implement alerting for the failure condition, apply security hardening, and produce a runbook documenting the incident response procedure.
+
 ### TM-30 Scenario Design Rubric (Evaluator Reference)
 
 | Criterion | Description | Weight |
@@ -1229,5 +1507,5 @@ INSTRUCTOR CERTIFICATIONS
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *MTP-MSS | Version 1.0 | March 2026*

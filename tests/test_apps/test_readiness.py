@@ -100,7 +100,7 @@ class TestPrereqChain:
         ("TM-40L", ["TM-30"]),
         ("TM-50G", ["TM-40G"]),
         ("TM-50L", ["TM-40L"]),
-        ("BSP", ["TM-20"]),
+        ("FBC", ["TM-20"]),
     ])
     def test_prereq_blocks_without_completion(self, readiness_client, course, prereqs):
         """Cannot record GO without prereqs met."""
@@ -131,13 +131,13 @@ class TestPrereqChain:
             assert record_go(readiness_client, "1234567890", course).status_code == 201
         assert record_go(readiness_client, "1234567890", "TM-50G").status_code == 201
 
-    def test_bsp_does_not_grant_tm30(self, readiness_client):
-        """BSP completion does NOT satisfy TM-30 prereq for TM-40."""
+    def test_fbc_does_not_grant_tm30(self, readiness_client):
+        """FBC completion does NOT satisfy TM-30 prereq for TM-40."""
         create_trainee(readiness_client)
         assert record_go(readiness_client, "1234567890", "TM-10").status_code == 201
         assert record_go(readiness_client, "1234567890", "TM-20").status_code == 201
-        assert record_go(readiness_client, "1234567890", "BSP").status_code == 201
-        # TM-40G requires TM-30, not BSP
+        assert record_go(readiness_client, "1234567890", "FBC").status_code == 201
+        # TM-40G requires TM-30, not FBC
         resp = record_go(readiness_client, "1234567890", "TM-40G")
         assert resp.status_code == 422
         assert "TM-30" in resp.json()["detail"]

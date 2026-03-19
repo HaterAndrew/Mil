@@ -40,7 +40,7 @@ TEAL_LT   = RGBColor(0xCF, 0xE8, 0xE6)
 VIOLET    = RGBColor(0x6B, 0x32, 0x8A)   # understanding layer
 VIOLET_LT = RGBColor(0xE8, 0xD5, 0xF0)
 
-CLASSIFICATION = "UNCLASSIFIED"
+CLASSIFICATION = ""
 
 # ── Content geometry ───────────────────────────────────────────────────────────
 Y0  = 0.70   # content start (below header + small gap)
@@ -192,7 +192,7 @@ def setup_slide(slide, header_text, classification=CLASSIFICATION):
     run.font.color.rgb = PURPLE
 
 
-def add_footer(slide, text="USAREUR-AF  ·  C2DAO  ·  MSS-POI-001  ·  MAR 2026  ·  UNCLASSIFIED"):
+def add_footer(slide, text="USAREUR-AF  ·  C2DAO  ·  MSS-POI-001  ·  MAR 2026"):
     tb(slide, X0, 6.96, CW, 0.20, text,
        font_size=7, color=NAVY2, align=PP_ALIGN.CENTER, wrap=False)
 

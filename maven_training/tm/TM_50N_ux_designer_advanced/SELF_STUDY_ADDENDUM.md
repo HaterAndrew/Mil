@@ -79,4 +79,4 @@ See `../self_study/SELF_STUDY_TM40N_UX_DESIGNER.md` for the full list.
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*

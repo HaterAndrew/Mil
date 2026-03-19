@@ -1,6 +1,6 @@
 # TM-50M — ADVANCED MACHINE LEARNING ENGINEERING
 
-> **BLUF:** TM-50M qualifies senior machine learning engineers to design, build, and lead production ML platform capability on MSS. This manual extends TM-40M into automated MLOps, advanced neural architectures, federated learning, real-time inference, ML security, and platform architecture leadership.
+> **Forward:** TM-50M qualifies senior machine learning engineers to design, build, and lead production ML platform capability on MSS. This manual extends TM-40M into automated MLOps, advanced neural architectures, federated learning, real-time inference, ML security, and platform architecture leadership.
 > **Prereqs:** TM-40M, Machine Learning Engineer (required — Go evaluation on file). TM-40H (AI Engineer) recommended. Data Literacy Technical Reference (recommended).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -13,13 +13,13 @@
 
 ## CHAPTER 1 — INTRODUCTION AND SCOPE
 
-### 1-1. Purpose
+### 1-1. Advanced ML Engineer Manual
 
 **BLUF:** TM-50M qualifies senior machine learning engineers to design, build, and lead production ML platform capability on MSS. This manual extends TM-40M into automated MLOps, advanced neural architectures, federated learning, real-time inference, ML security, and platform architecture leadership.
 
 TM-40M produced MLEs who can build and deploy models. TM-50M produces ML platform engineers — practitioners who design the infrastructure others build on. The distinction matters. A TM-40M MLE asks, "How do I deploy this model?" A TM-50M MLE asks, "What deployment infrastructure should this team use, and what are the failure modes?" TM-50M personnel operate at the level of ML system design: retraining architectures, shared feature stores, model registry standards, inference optimization, and adversarial robustness programs.
 
-USAREUR-AF requires this level of capability because MSS is not a collection of individual models — it is an ML platform supporting dozens of use cases across V Corps, 21st TSC, USAREUR-AF G2, and subordinate commands. As that platform scales, it requires practitioners who can design it, secure it, and lead it as a discipline.
+USAREUR-AF requires this level of capability because MSS is not a collection of individual models — it is an ML platform supporting dozens of use cases across III Corps, V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, SETAF-AF, USAREUR-AF G2, and subordinate commands. As that platform scales, it requires practitioners who can design it, secure it, and lead it as a discipline.
 
 ### 1-2. Scope
 
@@ -39,14 +39,7 @@ USAREUR-AF requires this level of capability because MSS is not a collection of 
 | ML leadership | Code review standards, reproducibility requirements, production readiness gates, team capability development |
 | Model documentation | DoD RAIMTF model cards, AI accountability documentation, Army policy compliance |
 
-**TM-50M does NOT cover:**
-
-- TM-40M prerequisite material — foundational MLE skills are assumed mastered
-- Basic Foundry navigation, Transform authoring, or Ontology consumption — see TM-30
-- AIP Logic application design or Agent Studio development — see TM-40H
-- Statistical optimization and operations research — see TM-40G / TM-50G
-- Program management of ML programs of record — see TM-40J
-- Foundry platform administration (enrollment, permissions, environment configuration) — contact C2DAO
+**TM-50M does NOT cover** TM-40M prerequisite material (foundational MLE skills are assumed mastered); basic Foundry navigation, Transform authoring, or Ontology consumption — see TM-30; AIP Logic application design or Agent Studio development — see TM-40H; statistical optimization and operations research — see TM-40G / TM-50G; program management of ML programs of record — see TM-40J; or Foundry platform administration (enrollment, permissions, environment configuration) — contact C2DAO.
 
 ### 1-3. The TM-50M MLE in the USAREUR-AF Data Chain
 
@@ -428,7 +421,7 @@ Federated learning does not eliminate data access controls — it provides a pat
 | Scenario | Description | Authorization Path |
 |---|---|---|
 | Cross-domain (different classification levels) | Training data exists at multiple classification levels; cannot be combined | C2DAO + data steward for each domain; ISSM coordination |
-| Cross-command (different USAREUR-AF subordinate commands) | Training data is geographically distributed across V Corps, 21st TSC nodes | C2DAO architecture review; data steward coordination per command |
+| Cross-command (different USAREUR-AF subordinate commands) | Training data is geographically distributed across III Corps, V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, SETAF-AF nodes | C2DAO architecture review; data steward coordination per command |
 | Coalition partner (MPE environment) | Partner-nation data participates in joint model training without sharing raw data | C2DAO + EUCOM J6 + applicable data sharing agreement |
 | Privacy-sensitive operational data | Personnel data used for readiness models; privacy-preserving training required | C2DAO + G1 + JAG coordination for applicable privacy framework |
 
@@ -1426,7 +1419,6 @@ Any unchecked item without documented N/A justification is a STOP condition.
 *TM-50M — Advanced Machine Learning Engineering — Maven Smart System*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA*
 *Wiesbaden, Germany*
-*UNCLASSIFIED — Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*
 
 **DoD and Army Strategic References:**
 

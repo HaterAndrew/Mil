@@ -6,6 +6,7 @@ audit, and scan history for the maven_training documentation corpus.
 
 from __future__ import annotations
 
+import os
 import sys
 from collections import Counter
 from datetime import datetime
@@ -65,7 +66,7 @@ from theme import (
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-API_BASE = "http://localhost:8006"
+API_BASE = os.environ.get("XREF_VALIDATOR_API_URL", "http://localhost:8006")
 
 st.set_page_config(
     page_title="Cross-Reference Validator",
@@ -404,7 +405,7 @@ def page_prereq_audit():
     _render_tm_card(cols[0], "TM-10", tms_with_prereq_issues, tms_with_stale_refs)
     _render_tm_card(cols[1], "TM-20", tms_with_prereq_issues, tms_with_stale_refs)
     _render_tm_card(cols[2], "TM-30", tms_with_prereq_issues, tms_with_stale_refs)
-    _render_tm_card(cols[3], "BSP", tms_with_prereq_issues, tms_with_stale_refs)
+    _render_tm_card(cols[3], "FBC", tms_with_prereq_issues, tms_with_stale_refs)
 
     st.markdown("---")
 

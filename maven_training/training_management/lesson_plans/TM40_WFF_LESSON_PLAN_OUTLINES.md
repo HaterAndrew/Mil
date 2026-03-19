@@ -929,7 +929,7 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 
 **Key Delivery Notes:**
 - Threat incident data: specific location and timing data for threat incidents is classified. Never share via unclassified channel.
-- CBRN products: contamination overlays with sensor location data are classified based on source. CBRN downwind hazard estimates may be FOUO minimum.
+- CBRN products: contamination overlays with sensor location data are classified based on source. CBRN downwind hazard estimates may be CUI minimum.
 - PERSTAT: accountability data with casualty counts is classified. Do not include in unclassified products.
 - Vulnerability assessment products: installation perimeter overlays with entry/exit points are classified. Distribute to FP cell only.
 
@@ -1165,5 +1165,5 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-40 WFF Track Lesson Plan Outlines | Version 1.0 | March 2026*

@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20260603_097 — SIGINT SUMMARY
+DTG: 030000Z JUN 2026
+Unit: 2CR SPT BN
+
+Summary: SIGINT collection assets detected 1 VHF emitter(s) in the vicinity of NAI 07 (grid 32T969530). Emissions lasted approximately 23 minutes. Intercept forwarded to technical channels for further analysis.
+
+Assessment: Low-power emissions detected. Possible handheld radio or personal communication device.
+Recommended Action: Continue collection against NAI 07. Request additional SIGINT coverage during 1800-0600 window.

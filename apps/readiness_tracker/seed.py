@@ -105,7 +105,7 @@ PROFILES = {
     "tm10_nogo": [],  # attempted TM-10, got NO_GO
     "tm20": ["TM-10", "TM-20"],
     "tm30": ["TM-10", "TM-20", "TM-30"],
-    "bsp": ["TM-10", "TM-20", "BSP"],
+    "fbc": ["TM-10", "TM-20", "FBC"],
 
     # WFF tracks (A-F)
     "wff_a": ["TM-10", "TM-20", "TM-30", "TM-40A"],
@@ -154,7 +154,7 @@ ASSIGNMENTS = [
 
     # BSB 1BCT — sustainment-focused, good TM-40D/TM-40J representation
     "wff_d", "spec_j", "wff_d", "tm20", "tm30", "tm10_only",
-    "spec_k", "wff_d", "tm10_nogo", "bsp", "multi_bh", "new",
+    "spec_k", "wff_d", "tm10_nogo", "fbc", "multi_bh", "new",
 
     # BEB 1BCT — engineering/protection focused
     "wff_e", "spec_l", "wff_c", "tm20", "wff_e", "tm10_only",
@@ -188,7 +188,7 @@ def seed():
             "TM-10": (0, 5),       # day 0-5
             "TM-20": (14, 30),     # 2-4 weeks later
             "TM-30": (45, 75),     # 6-10 weeks after TM-20
-            "BSP": (30, 60),       # parallel to TM-30 timeline
+            "FBC": (30, 60),       # parallel to TM-30 timeline
             "TM-40A": (80, 120),
             "TM-40B": (80, 120),
             "TM-40C": (80, 120),
@@ -243,8 +243,8 @@ def seed():
                 eval_date = soldier_start + timedelta(days=random.randint(offset_min, offset_max))
 
                 # Cap at today
-                if eval_date > date(2026, 3, 15):
-                    eval_date = date(2026, 3, 15)
+                if eval_date > date.today():
+                    eval_date = date.today()
 
                 db.add(Completion(
                     dodid=dodid,
@@ -267,32 +267,6 @@ def seed():
                 ))
                 total_completions += 1
                 nogo_count += 1
-
-        # Sprinkle in a few additional NO_GO results for soldiers who eventually passed
-        # (shows retake pattern)
-        nogo_extras = [
-            (3, "TM-20"),   # THOMPSON failed TM-20 initially
-            (14, "TM-30"),  # HARRIS failed TM-30 initially
-            (28, "TM-20"),  # ROBERTS failed TM-20 initially
-        ]
-        for soldier_idx, course_id in nogo_extras:
-            if soldier_idx < len(SOLDIERS):
-                existing_go = (
-                    db.query(Completion)
-                    .filter(
-                        Completion.dodid == dodids[soldier_idx],
-                        Completion.course_id == course_id,
-                        Completion.result == "GO",
-                    )
-                    .first()
-                )
-                if existing_go:
-                    # Add a NO_GO that happened before the GO
-                    nogo_date = existing_go.evaluation_date - timedelta(days=random.randint(14, 30))
-                    # Can't have two completions for same course due to unique constraint,
-                    # so record in a different way: the existing record is the GO (retry success)
-                    # Just note: in real usage the NO_GO would be overwritten by GO on retry
-                    pass
 
         db.commit()
         print(f"Seeded {len(SOLDIERS)} trainees, {total_completions} completions "

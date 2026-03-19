@@ -1,0 +1,61 @@
+date,unit,domain,metric_value,threshold,status,records_processed,anomalies_flagged
+2025-06-01,3-1 FA BN,knowledge_management,77.01,80.0,PASS,8568,11
+2025-06-02,BEB 1BCT,knowledge_management,90.14,80.0,PASS,818,9
+2025-06-03,2-1 IN BN,knowledge_management,66.02,80.0,FAIL,1672,5
+2025-06-04,BEB 1BCT,knowledge_management,76.66,80.0,PASS,3553,20
+2025-06-05,2-1 IN BN,knowledge_management,93.25,80.0,PASS,1802,6
+2025-06-06,BEB 1BCT,knowledge_management,91.44,80.0,PASS,7230,20
+2025-06-07,1-1 IN BN,knowledge_management,87.34,80.0,FAIL,7623,10
+2025-06-08,1-1 IN BN,knowledge_management,54.38,80.0,FAIL,4227,17
+2025-06-09,1-1 IN BN,knowledge_management,78.75,80.0,PASS,4337,13
+2025-06-10,BSB 1BCT,knowledge_management,72.56,80.0,PASS,5283,0
+2025-06-11,BSB 1BCT,knowledge_management,83.66,80.0,PASS,1136,18
+2025-06-12,1-1 IN BN,knowledge_management,85.04,80.0,FAIL,8338,3
+2025-06-13,3-1 FA BN,knowledge_management,89.34,80.0,PASS,1517,9
+2025-06-14,BSB 1BCT,knowledge_management,69.07,80.0,PASS,604,15
+2025-06-15,2-1 IN BN,knowledge_management,76.67,80.0,FAIL,6506,17
+2025-06-16,3-1 FA BN,knowledge_management,98.01,80.0,FAIL,6213,0
+2025-06-17,BEB 1BCT,knowledge_management,93.74,80.0,FAIL,784,0
+2025-06-18,BEB 1BCT,knowledge_management,79.83,80.0,PASS,1494,9
+2025-06-19,2-1 IN BN,knowledge_management,87.41,80.0,PASS,5733,6
+2025-06-20,BSB 1BCT,knowledge_management,95.28,80.0,PASS,2433,5
+2025-06-21,2-1 IN BN,knowledge_management,61.04,80.0,PASS,3283,3
+2025-06-22,2-1 IN BN,knowledge_management,83.55,80.0,PASS,991,17
+2025-06-23,BSB 1BCT,knowledge_management,82.23,80.0,FAIL,1203,8
+2025-06-24,1-1 IN BN,knowledge_management,59.87,80.0,PASS,5520,11
+2025-06-25,2-1 IN BN,knowledge_management,83.56,80.0,PASS,4771,19
+2025-06-26,1-1 IN BN,knowledge_management,95.01,80.0,PASS,7483,10
+2025-06-27,BEB 1BCT,knowledge_management,82.97,80.0,PASS,2596,18
+2025-06-28,BEB 1BCT,knowledge_management,68.22,80.0,PASS,7117,5
+2025-06-29,1-1 IN BN,knowledge_management,65.66,80.0,PASS,7245,8
+2025-06-30,3-1 FA BN,knowledge_management,56.72,80.0,PASS,7963,14
+2025-07-01,BSB 1BCT,knowledge_management,67.94,80.0,PASS,9138,3
+2025-07-02,2-1 IN BN,knowledge_management,82.28,80.0,FAIL,4697,4
+2025-07-03,BEB 1BCT,knowledge_management,59.82,80.0,PASS,1352,2
+2025-07-04,1-1 IN BN,knowledge_management,92.48,80.0,PASS,9633,18
+2025-07-05,BSB 1BCT,knowledge_management,88.46,80.0,PASS,700,17
+2025-07-06,3-1 FA BN,knowledge_management,77.17,80.0,PASS,7834,20
+2025-07-07,2-1 IN BN,knowledge_management,68.29,80.0,PASS,9760,9
+2025-07-08,2-1 IN BN,knowledge_management,73.24,80.0,PASS,6600,11
+2025-07-09,BEB 1BCT,knowledge_management,50.53,80.0,PASS,2817,16
+2025-07-10,2-1 IN BN,knowledge_management,72.31,80.0,FAIL,9370,4
+2025-07-11,BSB 1BCT,knowledge_management,96.96,80.0,FAIL,8089,7
+2025-07-12,1-1 IN BN,knowledge_management,63.22,80.0,PASS,3487,16
+2025-07-13,3-1 FA BN,knowledge_management,69.4,80.0,PASS,860,1
+2025-07-14,3-1 FA BN,knowledge_management,55.16,80.0,PASS,4580,8
+2025-07-15,BEB 1BCT,knowledge_management,77.22,80.0,FAIL,6301,11
+2025-07-16,BEB 1BCT,knowledge_management,82.67,80.0,PASS,8565,8
+2025-07-17,BSB 1BCT,knowledge_management,98.63,80.0,PASS,6749,11
+2025-07-18,3-1 FA BN,knowledge_management,74.34,80.0,PASS,9999,0
+2025-07-19,BEB 1BCT,knowledge_management,94.1,80.0,PASS,3868,2
+2025-07-20,BEB 1BCT,knowledge_management,82.17,80.0,PASS,3162,5
+2025-07-21,3-1 FA BN,knowledge_management,80.1,80.0,PASS,3873,13
+2025-07-22,3-1 FA BN,knowledge_management,86.01,80.0,PASS,7944,15
+2025-07-23,2-1 IN BN,knowledge_management,79.54,80.0,PASS,6832,0
+2025-07-24,2-1 IN BN,knowledge_management,52.16,80.0,PASS,2739,4
+2025-07-25,BEB 1BCT,knowledge_management,51.96,80.0,PASS,1016,5
+2025-07-26,3-1 FA BN,knowledge_management,96.12,80.0,PASS,6742,19
+2025-07-27,BEB 1BCT,knowledge_management,81.88,80.0,PASS,4744,2
+2025-07-28,2-1 IN BN,knowledge_management,72.46,80.0,PASS,7991,5
+2025-07-29,2-1 IN BN,knowledge_management,91.52,80.0,PASS,9646,5
+2025-07-30,BEB 1BCT,knowledge_management,82.98,80.0,PASS,5714,14

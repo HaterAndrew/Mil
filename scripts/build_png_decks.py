@@ -59,7 +59,7 @@ def load_alignment() -> dict:
 NAVY   = RGBColor(0x17, 0x32, 0x5C)
 PURPLE = RGBColor(0x70, 0x30, 0xA0)
 
-CLASSIFICATION = "UNCLASSIFIED"
+CLASSIFICATION = ""
 
 # ── Content area geometry ──────────────────────────────────────────────────────
 IMG_X = Inches(0.15)

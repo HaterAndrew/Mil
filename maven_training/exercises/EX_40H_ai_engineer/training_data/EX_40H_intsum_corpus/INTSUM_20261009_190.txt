@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20261009_190 — SIGINT SUMMARY
+DTG: 090000Z OCT 2026
+Unit: 2CR SPT BN
+
+Summary: SIGINT collection assets detected 6 UHF emitter(s) in the vicinity of NAI 07 (grid 32T437196). Emissions lasted approximately 23 minutes. Intercept forwarded to technical channels for further analysis.
+
+Assessment: Signal characteristics match known OPFOR equipment profiles.
+Recommended Action: Continue collection against NAI 07. Request additional SIGINT coverage during 1800-0600 window.

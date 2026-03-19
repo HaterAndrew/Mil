@@ -129,9 +129,10 @@ with st.sidebar:
 if page == "Pipeline Overview":
     st.title("Pipeline Overview")
 
-    with get_db() as db:
-        healths = get_all_health(db)
-        active_alerts = get_active_alerts(db)
+    with st.spinner("Loading data..."):
+        with get_db() as db:
+            healths = get_all_health(db)
+            active_alerts = get_active_alerts(db)
 
     if not healths:
         st.info("No pipelines registered. Use Pipeline Manager to add pipelines, or run the seed script.")

@@ -7,38 +7,21 @@ and builds self-contained ZIP archives for disconnected/DDIL environments.
 from __future__ import annotations
 
 import io
+import sys
 import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+# Ensure sibling packages (readiness_tracker, etc.) are importable
+_apps_dir = str(Path(__file__).resolve().parent.parent)
+if _apps_dir not in sys.path:
+    sys.path.insert(0, _apps_dir)
+
 # ---------------------------------------------------------------------------
-# Prerequisite chain — mirrors the official TM progression
-# TM-10 -> TM-20 -> TM-30 -> ALL TM-40 (A-M) -> TM-50 (G-M only)
+# Prereq chain — imported from readiness_tracker (single source of truth)
 # ---------------------------------------------------------------------------
-PREREQ_CHAIN: dict[str, list[str]] = {
-    "TM-10": [],
-    "TM-20": ["TM-10"],
-    "TM-30": ["TM-20"],
-    "TM-40A": ["TM-30"],
-    "TM-40B": ["TM-30"],
-    "TM-40C": ["TM-30"],
-    "TM-40D": ["TM-30"],
-    "TM-40E": ["TM-30"],
-    "TM-40F": ["TM-30"],
-    "TM-40G": ["TM-30"],
-    "TM-40H": ["TM-30"],
-    "TM-40M": ["TM-30"],
-    "TM-40J": ["TM-30"],
-    "TM-40K": ["TM-30"],
-    "TM-40L": ["TM-30"],
-    "TM-50G": ["TM-40G"],
-    "TM-50H": ["TM-40H"],
-    "TM-50M": ["TM-40M"],
-    "TM-50J": ["TM-40J"],
-    "TM-50K": ["TM-40K"],
-    "TM-50L": ["TM-40L"],
-}
+from readiness_tracker.db import PREREQ_CHAIN, ALL_COURSES  # noqa: E402
 
 # Map TM identifiers to their directory names under tm/
 _TM_DIR_MAP: dict[str, str] = {
@@ -57,12 +40,16 @@ _TM_DIR_MAP: dict[str, str] = {
     "TM-40J": "TM_40J_program_manager",
     "TM-40K": "TM_40K_knowledge_manager",
     "TM-40L": "TM_40L_software_engineer",
+    "TM-40N": "TM_40N_ui_ux_designer",
+    "TM-40O": "TM_40O_platform_engineer",
     "TM-50G": "TM_50G_orsa_advanced",
     "TM-50H": "TM_50H_ai_engineer_advanced",
     "TM-50M": "TM_50M_ml_engineer_advanced",
     "TM-50J": "TM_50J_program_manager_advanced",
     "TM-50K": "TM_50K_knowledge_manager_advanced",
     "TM-50L": "TM_50L_software_engineer_advanced",
+    "TM-50N": "TM_50N_ui_ux_designer_advanced",
+    "TM-50O": "TM_50O_platform_engineer_advanced",
 }
 
 # Map exercise identifiers to their directory names under exercises/
@@ -432,7 +419,7 @@ offline_package/
 
 ## Notes
 - This is a point-in-time snapshot. Check the MSS Training Hub for updates.
-- Content is CUI//FOUO. Handle and store accordingly.
+- Content is CUI. Handle and store accordingly.
 """
 
 

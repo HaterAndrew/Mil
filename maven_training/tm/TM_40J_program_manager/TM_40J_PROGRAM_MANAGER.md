@@ -1,6 +1,6 @@
 # TM-40J — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-40J qualifies Technical Project Managers, Product Owners, and Team Leads to plan, execute, and govern data, AI, and software capability builds on the Maven Smart System (MSS). This track bridges technical execution (TM-40G through TM-40O developers) and operational requirements (commanders, staff, end users).
+> **Forward:** TM-40J qualifies Technical Project Managers, Product Owners, and Team Leads to plan, execute, and govern data, AI, and software capability builds on the Maven Smart System (MSS). This track bridges technical execution (TM-40G through TM-40O developers) and operational requirements (commanders, staff, end users).
 > **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Data Literacy Technical Reference (required); CONCEPTS_GUIDE_TM40J_PROGRAM_MANAGER (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -10,7 +10,7 @@
 
 ## CHAPTER 1 — INTRODUCTION: THE TECHNICAL PM ROLE
 
-### 1-1. Purpose and Scope
+### 1-1. Program Manager Specialist Manual
 
 **BLUF:** TM-40J qualifies Technical Project Managers, Product Owners, and Team Leads to plan,
 execute, and govern data, AI, and software capability builds on the Maven Smart System (MSS).
@@ -22,29 +22,9 @@ project on MSS — from initial stakeholder requirements through sprint planning
 and sustainment. TM-40J graduates serve as the connective tissue between technical build teams
 and the operational units they support.
 
-**TM-40J covers:**
+**TM-40J covers** Agile project management methods adapted for data and AI projects in a military operational context; backlog management: writing user stories and acceptance criteria for data products and dashboards; managing ML and AI project lifecycles from research through production and sustainment; translating operational requirements from commanders and staff into actionable technical tasks; building live project tracking systems on MSS using Workshop, Ontology, and Pipeline Builder; risk and dependency management specific to data availability, model performance, and technical debt; delivery planning: scope, timeline, and quality tradeoffs for data product releases; coordinating across technical tracks: when to pull in TM-40H (AI Engineer), TM-40L (Software Engineer), TM-40M (ML Engineer), TM-40K (Knowledge Manager), and TM-40L (SWE); change management: deploying new MSS capabilities to operational users who resist change; and platform governance from a PM perspective: Foundry project permissions, resource allocation, and access stewardship.
 
-- Agile project management methods adapted for data and AI projects in a military operational
-  context
-- Backlog management: writing user stories and acceptance criteria for data products and dashboards
-- Managing ML and AI project lifecycles from research through production and sustainment
-- Translating operational requirements from commanders and staff into actionable technical tasks
-- Building live project tracking systems on MSS using Workshop, Ontology, and Pipeline Builder
-- Risk and dependency management specific to data availability, model performance, and technical debt
-- Delivery planning: scope, timeline, and quality tradeoffs for data product releases
-- Coordinating across technical tracks: when to pull in TM-40H (AI Engineer), TM-40L (Software
-  Engineer), TM-40M (ML Engineer), TM-40K (Knowledge Manager), and TM-40L (SWE)
-- Change management: deploying new MSS capabilities to operational users who resist change
-- Platform governance from a PM perspective: Foundry project permissions, resource allocation,
-  and access stewardship
-
-**TM-40J does NOT cover:**
-
-- Raw coding of Foundry transforms, Functions on Objects, or API integrations — see TM-40L
-- Machine learning model development and validation — see TM-40M (ML Engineer)
-- AI agent and workflow automation build — see TM-40H (AI Engineer)
-- Advanced statistical analysis and modeling — see TM-40G (ORSA)
-- Knowledge management architecture and data dictionary design — see TM-40K (KM)
+**TM-40J does NOT cover** raw coding of Foundry transforms, Functions on Objects, or API integrations — see TM-40L; machine learning model development and validation — see TM-40M (ML Engineer); AI agent and workflow automation build — see TM-40H (AI Engineer); advanced statistical analysis and modeling — see TM-40G (ORSA); or knowledge management architecture and data dictionary design — see TM-40K (KM).
 
 > **NOTE:** TM-40J is a management and coordination track. The PM does not need to write code.
 > The PM must understand enough about each technical discipline to write accurate user stories,
@@ -70,6 +50,8 @@ The MSS ecosystem involves multiple technical disciplines that must be coordinat
 | TM-40J | Program Manager (Technical)   | Project tracking, stakeholder mgmt, delivery coordination    |
 | TM-40K | Knowledge Manager             | Data dictionaries, ontology governance, data stewardship     |
 | TM-40L | Software Engineer             | Custom Foundry code, Functions, API integrations, services   |
+| TM-40N | UI/UX Designer                | Workshop layouts, Slate apps, accessibility, design systems  |
+| TM-40O | Platform Engineer             | Infrastructure, CI/CD, Kubernetes, monitoring, compliance    |
 
 The PM does not manage people's performance in the HR sense. The PM manages scope, timeline,
 risk, and stakeholder communication. The PM shields the technical team from requirements churn
@@ -96,6 +78,34 @@ relationship for each.
 > outcome. The gate authority remains with the C2DAO and DM.
 
 *Source: DDOF Playbook v2.2, T2COM C2DAO, December 2025.*
+
+### 1-2b. The XVIII ABC ODT Model — PM Role in Operational Data Teams
+
+XVIII Airborne Corps published its experience building and employing Operational Data Teams in *Military Review* (February 2026, "Fighting with Live Data"). Their pilot — one of the first in the Army — places a Product Manager (5F ASI) as one of five core roles in each ODT, alongside a UI/UX Designer, Software Engineer, Data Engineer, and Data Scientist. This mirrors the TM-40J through TM-40O specialist track structure. The XVIII ABC model is a useful reference point from one corps' pilot, not a universal template — different commands will adapt roles and governance to their own context. The lessons below are drawn from their specific experience at Corps level.
+
+**Key PM-relevant lessons from XVIII ABC:**
+
+| XVIII ABC Practice | TM-40J Application |
+|---|---|
+| **Technical Innovation Objectives (TIOs)** — staff working groups develop TIOs aligned to CAMPLAN operational problems; ODT + G-5 + CTO assess operational value and development feasibility | PM leads the TIO-equivalent scoping process: translating commander requirements into SMART-compliant problem statements, not desired solutions |
+| **Program Increment (PI) cycles** — 12-week development cycles aligned to Corps exercise cycles; CG approves the "cut line" and retains authority to retask | PM manages sprint cadence within the PI framework: delivery milestones aligned to training calendar and exercise windows |
+| **CG governance policy** — signed priorities governance prevents ODT overextension; adjudication process for competing requirements | PM enforces the governance boundary: no work enters the backlog without going through the prioritization process; PM assembles the gate package |
+| **Problem-solution methodology** — scoping (2 wk) → discovery (4 wk) → framing (4 wk) → development (8 wk) → handoff (2 wk); invest/divest/pivot gates | PM owns the process cadence and gate documentation: each decision point requires a structured recommendation with operational value assessment |
+| **Exercise integration** — MVP products get bug fixes/minor adjustments during exercises; scoping-phase products get user research only; discovery/framing held stable | PM manages exercise scope: shields team from pressure to do major adjustments during exercises while ensuring user feedback is captured for next PI |
+
+> **NOTE:** XVIII ABC's early experience without a governance policy resulted in too many customers requesting ODT resources simultaneously, with no adjudication process. The PM role is the primary defense against this failure mode. TM-40J graduates must understand that the governance process is not optional — it is a prerequisite for ODT effectiveness.
+
+*Source: Forney, Herrmann, and Steele, "Fighting with Live Data," Military Review Online Exclusive, February 2026.*
+
+**Supplementary reading — Adkins' proposal:** Adkins ("Achieving Decision Dominance," *Military Review*, January-February 2025) is a thought piece by one officer proposing terminology and concepts for data team employment. Useful shorthand for TM-40J PMs:
+
+- **Automated Fighting Products (AFP):** Adkins' term for visualization tools connected to live data that reduce staff burden and inform commander decisions. The products your team builds fit this description. The PM manages the AFP lifecycle from requirements through sustainment.
+- **Echeloned reach-back:** Adkins proposes a triage system where tactical units reach back to higher-echelon data teams for complex problems. PMs should understand their team's echelon and the reach-back relationships above and below them.
+- **MSS reference:** Adkins names the Maven Smart System as an ASCC-level COP platform.
+
+Note: The Forney "Fighting with Live Data" article above documents the most relevant pilot experience for ODT/PM employment — authored by a COL, MAJ, and CPT who led the XVIII ABC ODT pilot. Adkins provides supplementary context.
+
+*Source: Adkins, "Achieving Decision Dominance," Military Review 105, no. 1 (January-February 2025).*
 
 ---
 
@@ -143,6 +153,8 @@ TM-10 (User) → TM-20 (Builder) → TM-30 (Advanced Builder) → TM-40J (Techni
                                                            ↘ TM-40M (ML Engineer)
                                                            ↘ TM-40K (KM)
                                                            ↘ TM-40L (SWE)
+                                                           ↘ TM-40N (UI/UX Designer)
+                                                           ↘ TM-40O (Platform Engineer)
 ```
 
 The PM must have completed TM-30 to understand what each specialist track builds and why decisions
@@ -1414,8 +1426,8 @@ exceeding the standard duration require a documented explanation. Products excee
 trigger an escalation to the C2DAO for a continue/stop decision.
 
 **VAULTIS-A Quality Scores.** Data products in Operations are assessed against the VAULTIS-A
-quality dimensions (Validity, Accuracy, Uniqueness, Lineage, Timeliness, Integrity,
-Security, Accessibility). The PM tracks these scores at quarterly reviews. A product scoring
+quality dimensions (Visible, Accessible, Understandable, Linked, Trusted, Interoperable,
+Secure, Auditable). The PM tracks these scores at quarterly reviews. A product scoring
 below 70% on any VAULTIS-A dimension enters a remediation cycle.
 
 **Retirement Trigger Monitoring.** The PM monitors two retirement triggers for products in
@@ -1910,14 +1922,14 @@ tests, undocumented transforms. PM manages tech debt as a reserved backlog capac
 
 **TM-40 Track** — Specialized capability track for data/AI professionals on MSS.
 Tracks: TM-40G (ORSA), TM-40H (AI Engineer), TM-40M (ML Engineer), TM-40J (Technical PM),
-TM-40K (KM), TM-40L (SWE). TM-40J coordinates across all tracks.
+TM-40K (KM), TM-40L (SWE), TM-40N (UI/UX Designer), TM-40O (Platform Engineer). TM-40J coordinates across all tracks.
 
 **UDRA** — Unified Data Reference Architecture, version 1.1 (February 2025). The Army's
 authoritative data architecture guidance. Informs MSS data product design standards and
 data governance practices.
 
-**VAULTIS-A** — Data quality assessment framework with eight dimensions: Validity, Accuracy,
-Uniqueness, Lineage, Timeliness, Integrity, Security, and Accessibility. The PM tracks
+**VAULTIS-A** — Data quality assessment framework with eight dimensions: Visible, Accessible,
+Understandable, Linked, Trusted, Interoperable, Secure, and Auditable. The PM tracks
 VAULTIS-A scores at quarterly reviews for all products in Operations phase. Products scoring
 below 70% on any dimension enter a remediation cycle. See 7-6.
 
@@ -1942,7 +1954,6 @@ PM-facing tool for project tracking on MSS.
 *TM-40J — Technical Manual: Program Manager (Technical), Maven Smart System*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 *Army CIO Memo (April 2024) — Unified Data Reference Architecture v1.1 (February 2025)*
-*UNCLASSIFIED — Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*
 
 **DoD and Army Strategic References:**
 

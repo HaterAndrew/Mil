@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250303_116 — SIGINT SUMMARY
+DTG: 030000Z MAR 2025
+Unit: 2-2 BN
+
+Summary: SIGINT collection assets detected 3 UHF emitter(s) in the vicinity of NAI 08 (grid 36T866944). Emissions lasted approximately 12 minutes. Intercept forwarded to technical channels for further analysis.
+
+Assessment: Low-power emissions detected. Possible handheld radio or personal communication device.
+Recommended Action: Continue collection against NAI 08. Request additional SIGINT coverage during 1800-0600 window.

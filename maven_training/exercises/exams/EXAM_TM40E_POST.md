@@ -169,5 +169,5 @@ _______________________________________________
 
 *Total points: 40 (MC: 10 × 2 = 20, SA: 2 × 5 = 10, Scenario: 10). Passing score: 32 (80%).*
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *EX_TM40E-POST | Version 1.0 | March 2026*

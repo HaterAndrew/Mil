@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20251012_034 — OBSERVATION REPORT
+DTG: 120000Z OCT 2025
+Unit: 2-1 BN
+
+Summary: OP CONDOR reported observation of 3 unidentified vehicles moving in convoy formation along ROUTE MERCURY at 0340 local. Vehicles: T-72. Movement direction: WEST. No hostile action observed. Convoy cleared the AO within 30 minutes.
+
+Assessment: Movement pattern deviates from established norms. Possible reconnaissance activity. Does not meet CCIR threshold but logged for trend analysis.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

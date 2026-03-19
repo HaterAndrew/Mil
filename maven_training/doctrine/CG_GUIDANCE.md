@@ -47,4 +47,4 @@ Acceptable source types:
 - Official public guidance memoranda
 - Congressional testimony (public record)
 
-**Do not include classified, FOUO, or CUI material.**
+**Do not include classified or CUI material.**

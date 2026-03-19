@@ -208,7 +208,7 @@ Passing: N/A — Pre-test is diagnostic only.
 4. C — Federated learning trains locally on distributed data; only updates (not raw data) are shared.
 5. A — Cross-domain federated learning requires C2DAO + data steward + ISA; "no data moves" is insufficient.
 6. C — SHAP provides per-feature attributions for individual predictions.
-7. B — Disaggregated evaluation assesses performance separately across subgroups.
+7. A — Disaggregated evaluation assesses performance separately on different demographic or operational subgroups to detect performance disparities.
 8. A — Data poisoning = adversarial training example injection to manipulate learned behavior.
 9. A — Model extraction = systematic querying to reconstruct model behavior.
 10. B — Post-training quantization reduces weight precision after training to reduce memory/latency.
@@ -232,5 +232,5 @@ SA-5. Full credit: feature store = centralized system for computing, storing, an
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-50M Pre-Test | Version 1.0 | March 2026*

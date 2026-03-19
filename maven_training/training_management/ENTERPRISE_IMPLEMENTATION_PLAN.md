@@ -2,7 +2,7 @@
      Source: odt_workspace/docs/enterprise-implementation-plan.md
      Supports: TM-40H (AI Engineer), TM-40M (ML Engineer), TM-40L (Software Engineer), TM-50H/I/L (Advanced)
      Type: Project Reference — ODT Enterprise Implementation Plan
-     Classification: CUI // FOUO — handle per local policy
+     Classification: CUI — handle per local policy
 -->
 
 
@@ -11,7 +11,7 @@
 **Version**: 1.0.0
 **Date**: 2026-03-12
 **Owner**: ODT Engineering, USAREUR-AF G3
-**Classification**: CUI // FOUO
+**Classification**: CUI
 **Status**: APPROVED FOR EXECUTION
 
 ---

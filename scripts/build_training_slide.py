@@ -71,10 +71,6 @@ add_textbox(slide, 0.15, 0.58, 9.0, 0.35,
             "USAREUR-AF Operational Data Team  |  Maven Smart System (MSS)",
             10, bold=False, color=WHITE)
 
-# UNCLASS banner (top right)
-add_rect(slide, 11.3, 0.25, 1.85, 0.4, fill_rgb=ARMY_GOLD)
-add_textbox(slide, 11.3, 0.25, 1.85, 0.4,
-            "UNCLASSIFIED", 9, bold=True, color=DARK_GRAY)
 
 # ── Gold accent rule ──────────────────────────────────────────────────────────
 add_rect(slide, 0, 1.0, 13.33, 0.06, fill_rgb=ARMY_GOLD)
@@ -241,12 +237,11 @@ add_rect(slide, 0, 7.18, 13.33, 0.32, fill_rgb=DARK_GREEN)
 add_textbox(slide, 0.2, 7.19, 9.0, 0.28,
             "USAREUR-AF OD Team  ·  MSS Training Program  ·  Wiesbaden, Germany",
             7, bold=False, color=MED_GRAY)
-add_textbox(slide, 10.5, 7.19, 2.6, 0.28,
-            "UNCLASSIFIED", 7, bold=True, color=ARMY_GOLD)
+
 
 # ── Save ──────────────────────────────────────────────────────────────────────
 out_dir = os.path.join(os.path.dirname(__file__), "..", "maven_training", "pdf")
 os.makedirs(out_dir, exist_ok=True)
 out_path = os.path.join(out_dir, "MSS_Training_Progression.pptx")
 prs.save(out_path)
-print(f"Saved: {os.path.abspath(out_path)}")
+print(f"Saved: {os.path.afbcath(out_path)}")

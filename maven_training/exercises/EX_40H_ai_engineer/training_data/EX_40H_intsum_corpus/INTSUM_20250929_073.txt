@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250929_073 — IED EVENT
+DTG: 290000Z SEP 2025
+Unit: 1-2 BN
+
+Summary: At 1310 local, a suspected IED was identified by route clearance element in grid 36T544453 along ROUTE MERCURY. EOD requested and responded within 36 minutes. Device rendered safe. No casualties or equipment damage.
+
+Device Description: Radio-controlled initiator (RCIED), approx 12kg charge. Collected for exploitation. DNA swabs taken.
+Recommended Action: Restrict movement along ROUTE MERCURY until EOD clearance complete. Disseminate grid data to adjacent units.

@@ -1,0 +1,3 @@
+test_event_id,unit,grid_ref,expected_result
+CCIR_TEST_FIRE,2-1 IN BN,38S752815,FIRES
+CCIR_TEST_NOFIRE,1-1 IN BN,36S865425,NO_FIRE

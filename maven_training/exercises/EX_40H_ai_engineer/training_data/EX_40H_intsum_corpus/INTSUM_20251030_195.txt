@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20251030_195 — IED EVENT
+DTG: 300000Z OCT 2025
+Unit: 3BCT 4ID
+
+Summary: At 0140 local, a suspected IED was identified by route clearance element in grid 36T889652 along MSR LION. EOD requested and responded within 20 minutes. Device detonated during approach. No casualties due to standoff distance.
+
+Device Description: Infrared trigger with command wire backup, approx 12kg charge. Collected for exploitation. DNA swabs taken.
+Recommended Action: Restrict movement along MSR LION until EOD clearance complete. Disseminate grid data to adjacent units.

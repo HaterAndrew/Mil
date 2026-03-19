@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — T3-F COMPANION — MSC FORCE MULTIPLIER · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** This guide prepares you to deliver TM-10 at your unit. You already have platform skills from TM-20. T3-F gives you the lesson plan and makes sure you can deliver it.
+> **Forward:** This guide prepares you to deliver TM-10 at your unit. You already have platform skills from TM-20. T3-F gives you the lesson plan and makes sure you can deliver it.
 > **Purpose:** Read before T3-F. Return to individual sections as reference when delivering TM-10.
 > *HQ USAREUR-AF · v2.0 · 2026 · DISTRIB: USG only*
 
@@ -61,5 +61,5 @@ The most important UDT skill is knowing when to say "this is beyond my scope."
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Concepts Guide — T3-F MSC Force Multiplier | Version 2.0 | March 2026*

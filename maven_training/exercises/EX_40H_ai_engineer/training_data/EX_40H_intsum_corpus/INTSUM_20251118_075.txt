@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20251118_075 — IED EVENT
+DTG: 180000Z NOV 2025
+Unit: 12th CAB
+
+Summary: At 2145 local, a suspected IED was identified by route clearance element in grid 37T407619 along ROUTE STEEL. EOD requested and responded within 32 minutes. Device detonated during approach. No casualties due to standoff distance.
+
+Device Description: Victim-operated pressure plate, approx 10kg charge. Collected for exploitation. DNA swabs taken.
+Recommended Action: Restrict movement along ROUTE STEEL until EOD clearance complete. Disseminate grid data to adjacent units.

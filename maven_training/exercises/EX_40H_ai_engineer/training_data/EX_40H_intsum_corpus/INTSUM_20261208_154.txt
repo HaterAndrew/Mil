@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20261208_154 — OBSERVATION REPORT
+DTG: 080000Z DEC 2026
+Unit: 1-12 CAV
+
+Summary: OP GRANITE reported observation of 5 unidentified vehicles moving in convoy formation along ROUTE HAWK at 2140 local. Vehicles: cargo truck. Movement direction: NORTH. No hostile action observed. Convoy cleared the AO within 42 minutes.
+
+Assessment: Unknown purpose. Vehicle type and movement pattern do not match known civilian routes. Does not meet CCIR threshold at this time.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

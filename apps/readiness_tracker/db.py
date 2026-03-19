@@ -7,6 +7,7 @@ from datetime import UTC, date, datetime
 from pathlib import Path
 
 from sqlalchemy import (
+    CheckConstraint,
     Column,
     Date,
     DateTime,
@@ -14,16 +15,14 @@ from sqlalchemy import (
     Integer,
     String,
     UniqueConstraint,
-    create_engine,
-    event,
     text,
 )
 from sqlalchemy.orm import (
-    DeclarativeBase,
     Session,
     relationship,
-    sessionmaker,
 )
+
+from shared.database import Base, create_app_engine, create_session_factory
 
 # ---------------------------------------------------------------------------
 # Database path — sits next to this file; *.db is gitignored
@@ -31,22 +30,9 @@ from sqlalchemy.orm import (
 DB_PATH = Path(__file__).parent / "readiness_tracker.db"
 DATABASE_URL = f"sqlite:///{DB_PATH}"
 
-engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+engine = create_app_engine("readiness_tracker")
 
-
-@event.listens_for(engine, "connect")
-def _set_sqlite_pragmas(dbapi_conn, _connection_record):
-    cursor = dbapi_conn.cursor()
-    cursor.execute("PRAGMA journal_mode=WAL")
-    cursor.execute("PRAGMA foreign_keys=ON")
-    cursor.close()
-
-
-SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)
-
-
-class Base(DeclarativeBase):
-    pass
+SessionLocal = create_session_factory(engine)
 
 
 # ---------------------------------------------------------------------------
@@ -80,11 +66,12 @@ class Completion(Base):
     __tablename__ = "completions"
     __table_args__ = (
         UniqueConstraint("dodid", "course_id", name="uq_trainee_course"),
+        CheckConstraint("result IN ('GO', 'NO_GO')", name="ck_completion_result"),
     )
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    dodid = Column(String(10), ForeignKey("trainees.dodid"), nullable=False)
-    course_id = Column(String(10), ForeignKey("courses.course_id"), nullable=False)
+    dodid = Column(String(10), ForeignKey("trainees.dodid"), nullable=False, index=True)
+    course_id = Column(String(10), ForeignKey("courses.course_id"), nullable=False, index=True)
     result = Column(String(5), nullable=False)  # GO or NO_GO
     evaluation_date = Column(Date, nullable=False)
     evaluator_name = Column(String(100), nullable=True)
@@ -100,7 +87,7 @@ PREREQ_CHAIN: dict[str, list[str]] = {
     "TM-10": [],
     "TM-20": ["TM-10"],
     "TM-30": ["TM-20"],
-    "BSP": ["TM-20"],  # parallel track; does NOT grant TM-30 credit
+    "FBC": ["TM-20"],  # parallel track; does NOT grant TM-30 credit
     # WFF tracks (A–F) — all require TM-30
     "TM-40A": ["TM-30"],
     "TM-40B": ["TM-30"],
@@ -115,6 +102,8 @@ PREREQ_CHAIN: dict[str, list[str]] = {
     "TM-40J": ["TM-30"],
     "TM-40K": ["TM-30"],
     "TM-40L": ["TM-30"],
+    "TM-40N": ["TM-30"],
+    "TM-40O": ["TM-30"],
     # Advanced specialist (G–O only — NO TM-50A through TM-50F)
     "TM-50G": ["TM-40G"],
     "TM-50H": ["TM-40H"],
@@ -122,6 +111,8 @@ PREREQ_CHAIN: dict[str, list[str]] = {
     "TM-50J": ["TM-40J"],
     "TM-50K": ["TM-40K"],
     "TM-50L": ["TM-40L"],
+    "TM-50N": ["TM-40N"],
+    "TM-50O": ["TM-40O"],
 }
 
 ALL_COURSES = list(PREREQ_CHAIN.keys())
@@ -131,7 +122,7 @@ COURSE_CATALOG: dict[str, tuple[str, int]] = {
     "TM-10": ("Maven User", 8),
     "TM-20": ("Builder", 40),
     "TM-30": ("Advanced Builder", 40),
-    "BSP": ("Builder Sprint", 40),
+    "FBC": ("Foundry Bootcamp", 40),
     "TM-40A": ("Intelligence WFF", 24),
     "TM-40B": ("Fires WFF", 24),
     "TM-40C": ("Movement & Maneuver WFF", 24),
@@ -144,12 +135,16 @@ COURSE_CATALOG: dict[str, tuple[str, int]] = {
     "TM-40J": ("Program Manager", 24),
     "TM-40K": ("Knowledge Manager", 24),
     "TM-40L": ("Software Engineer", 40),
+    "TM-40N": ("UI/UX Designer", 24),
+    "TM-40O": ("Platform Engineer", 40),
     "TM-50G": ("Advanced ORSA", 40),
     "TM-50H": ("Advanced AI Engineer", 40),
     "TM-50M": ("Advanced ML Engineer", 40),
     "TM-50J": ("Advanced Program Manager", 40),
     "TM-50K": ("Advanced Knowledge Manager", 40),
     "TM-50L": ("Advanced Software Engineer", 40),
+    "TM-50N": ("Advanced UI/UX Designer", 40),
+    "TM-50O": ("Advanced Platform Engineer", 40),
 }
 
 
@@ -262,7 +257,7 @@ COURSE_TIERS = {
     "Foundation": ["TM-10", "TM-20", "TM-30"],
     "WFF (A-F)": ["TM-40A", "TM-40B", "TM-40C", "TM-40D", "TM-40E", "TM-40F"],
     "Specialist (G-O)": ["TM-40G", "TM-40H", "TM-40M", "TM-40J", "TM-40K", "TM-40L", "TM-40N", "TM-40O"],
-    "Advanced (50)": ["TM-50G", "TM-50H", "TM-50I", "TM-50J", "TM-50K", "TM-50L"],
+    "Advanced (50)": ["TM-50G", "TM-50H", "TM-50J", "TM-50K", "TM-50L", "TM-50M", "TM-50N", "TM-50O"],
 }
 
 
@@ -289,7 +284,7 @@ def get_rag_heatmap_data(db: Session) -> list[dict]:
                     go_set.setdefault(c.course_id, set()).add(m.dodid)
 
         for course_id in ALL_COURSES:
-            if course_id == "BSP":
+            if course_id == "FBC":
                 continue
             go_count = len(go_set.get(course_id, set()))
             pct = round(go_count / total * 100, 1) if total else 0
@@ -326,7 +321,7 @@ def get_bottleneck_analysis(db: Session) -> list[dict]:
 
     results = []
     for course_id, prereqs in PREREQ_CHAIN.items():
-        if course_id == "BSP":
+        if course_id == "FBC":
             continue
         eligible_not_done = 0
         completed = 0

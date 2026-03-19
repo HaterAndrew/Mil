@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250907_103 — NAI ACTIVITY REPORT
+DTG: 070000Z SEP 2025
+Unit: 3-2 BN
+
+Summary: NAI 10 (grid 34T584666) near LICHTENFELS showed no significant activity during the 7-day collection window. Previous reporting of OPFOR presence has not been confirmed.
+
+Collection Assessment: Current ISR allocation provides adequate coverage of NAI 10. No additional assets requested at this time.
+Recommended Action: Maintain collection posture. Update S2 overlay with latest activity data. Cross-reference with SIGINT and HUMINT reporting.

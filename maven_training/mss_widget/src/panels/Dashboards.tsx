@@ -27,7 +27,7 @@ const SECTIONS: DashSection[] = [
   {
     label: 'Training Operations',
     apps: [
-      { name: 'Progress Tracker',     icon: '\u{1F3AF}', port: 8504, description: 'Individual soldier progress, goal tracking, stalled-soldier alerts.' },
+      { name: 'Progress Tracker',     icon: '\u{1F3AF}', port: 8504, description: 'Individual Soldier progress, goal tracking, stalled-Soldier alerts.' },
       { name: 'MTT Scheduler',        icon: '\u{1F4C5}', port: 8505, description: 'Mobile Training Team scheduling, resource allocation, calendar view.' },
       { name: 'Enrollment Manager',   icon: '\u{1F464}', port: 8508, description: 'Class enrollment, waitlists, rosters, and seat management.' },
       { name: 'Instructor Manager',   icon: '\u{1F9D1}', port: 8512, description: 'Instructor assignments, certifications, and availability tracking.' },

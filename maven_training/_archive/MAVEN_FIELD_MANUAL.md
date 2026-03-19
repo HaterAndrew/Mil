@@ -7,7 +7,7 @@
 
 # MAVEN FIELD MANUAL
 ## Foundry Developer Reference — USAREUR-AF Operational Data Team
-### Version 1.0 | Classification: UNCLASSIFIED
+### Version 1.0
 
 ---
 
@@ -673,7 +673,7 @@ and summarize unit status reports.
 
 You have access to:
 - UnitStatus objects: current operational status of units
-- SoldierReport objects: individual soldier readiness reports
+- SoldierReport objects: individual Soldier readiness reports
 - UpdateStatus action: to update a unit's status
 
 Always respond concisely. Use military time format.
@@ -994,4 +994,3 @@ Before you merge to master and push to production:
 ---
 
 *Maven Field Manual v1.0 — USAREUR-AF Operational Data Team*
-*UNCLASSIFIED — For internal training use*

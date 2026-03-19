@@ -1,6 +1,6 @@
 # TM-10 — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** This manual tells you how to use the Maven Smart System (MSS) as a data consumer. It covers logging in, finding your unit's information, reading dashboards, submitting forms, and staying within authorized boundaries. No technical background is required. You do not need to know how to write code or build anything. If you can use a smartphone or a web browser, you can use MSS.
+> **Forward:** This manual tells you how to use the Maven Smart System (MSS) as a data consumer. It covers logging in, finding your unit's information, reading dashboards, submitting forms, and staying within authorized boundaries. No technical background is required. You do not need to know how to write code or build anything. If you can use a smartphone or a web browser, you can use MSS.
 > **Prereqs:** None (formal). Data Literacy Technical Reference (recommended prior reading — not required).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -8,26 +8,13 @@
 
 # CHAPTER 1 — INTRODUCTION AND OVERVIEW
 
-## 1-1. Purpose and Scope
+## 1-1. User/Operator Manual
 
-This Technical Manual (TM) provides operator-level instruction for the Maven Smart System (MSS). It is written for all USAREUR-AF military personnel (officer, warrant, NCO, and enlisted) and civilian employees who access MSS in the course of their duties.
+This Technical Manual (TM) provides operator-level instruction for the Maven Smart System (MSS). It is written for all USAREUR-AF military personnel (officer, warrant, NCO, and enlisted) and DA Civilians and Contractors who access MSS in the course of their duties.
 
-**This manual covers what you need to use MSS as a consumer of data:**
-- Logging in and navigating the platform
-- Finding and reading dashboards and reports
-- Submitting information through forms
-- Executing authorized actions
-- Working with data in analysis tools
-- Using AI assistant tools
-- Handling data securely and within your authorization
-- Troubleshooting common problems
+**This manual covers what you need to use MSS as a consumer of data** logging in and navigating the platform; finding and reading dashboards and reports; submitting information through forms; executing authorized actions; working with data in analysis tools; using AI assistant tools; handling data securely and within your authorization; and troubleshooting common problems.
 
-**This manual does NOT cover:**
-- Building applications or dashboards
-- Creating or modifying data pipelines
-- Writing any code
-- Configuring the platform in any way
-- Designing AI workflows
+**This manual does NOT cover** building applications or dashboards; creating or modifying data pipelines; writing any code; configuring the platform in any way; or designing AI workflows.
 
 Those tasks are covered in TM-20 (Workshop Builder) and TM-30 (Advanced Builder). If a task you need to perform is not in this manual, contact your unit data steward before attempting it.
 
@@ -37,23 +24,17 @@ NOTE: If a task in this manual indicates it requires a builder or engineer, do n
 
 ## 1-2. What the Maven Smart System Is
 
-MSS is a secure, web-based platform where your unit's operational data lives. Think of it like a shared operations center for information: data from logistics, personnel, readiness, and other Army systems is collected, organized, and made visible through applications your unit uses every day.
+MSS is the mission command information system (MCIS) program of record, directed by the USAREUR-AF CG to enable rapid and accurate decision-making. It is a secure, web-based platform where your unit's operational data lives. Think of it like a shared operations center for information: data from logistics, personnel, readiness, and other Army systems is collected, organized, and made visible through applications your unit uses every day.
 
 MSS is built on the Palantir Foundry software platform, authorized for Army use under the Maven Smart System program. When you log into MSS, you are logging into Foundry with Army data and Army-controlled access.
 
 **Per ADP 3-13, information is combat power.** MSS is the USAREUR-AF platform for converting raw data into the operational information commanders and staff need to make decisions and maintain decision dominance across the European theater.
 
-**What MSS does:**
-- Stores data from Army systems (GCSS-A, DCPDS, MEDPROS, unit feeds, and others) in one organized place
-- Makes that data visible through applications any Soldier can use without technical training
-- Allows units to report status, update records, and track readiness through those same applications
-- Provides analysis tools for personnel who need to look at data in more depth
-- Supports AI-assisted analysis through authorized tools
+> **NOTE:** In emerging Army terminology, the applications you use on MSS are sometimes called **Automated Fighting Products (AFPs)** — staff and leader data visualization tools connected to live data via automated pipelines that reduce the time required to produce running estimates and inform commander decision-making. The data you see in an MSS dashboard is **operationalized data** — data analyzed and presented to be immediately actionable. Every time you open a dashboard, you are consuming an AFP built from operationalized data. The training program that teaches you to use, build, and maintain these AFPs is the MSS curriculum you are beginning now. *(AFP terminology from Adkins, "Achieving Decision Dominance," Military Review, January-February 2025 — a thought piece proposing these concepts.)*
 
-**What MSS is NOT:**
-- It is not a replacement for official Army systems of record — MSS reads from those systems but does not replace them
-- It is not classified by default — the classification of data in MSS depends on what data is loaded and how it is marked
-- It is not a public system — access is tightly controlled and every action is logged
+**What MSS does** stores data from Army systems (GCSS-A, DCPDS, MEDPROS, unit feeds, and others) in one organized place; makes that data visible through applications any Soldier can use without technical training; allows units to report status, update records, and track readiness through those same applications; provides analysis tools for personnel who need to look at data in more depth; and supports AI-assisted analysis through authorized tools.
+
+**What MSS is NOT** it is not a replacement for official Army systems of record — MSS reads from those systems but does not replace them; it is not classified by default — the classification of data in MSS depends on what data is loaded and how it is marked; or a public system — access is tightly controlled and every action is logged.
 
 ---
 
@@ -112,7 +93,7 @@ NOTE: The 2025 update to Army doctrine (ADP 3-0, FM 3-0) added "Informational co
 
 ## 1-3. MSS in the USAREUR-AF Context
 
-United States Army Europe and Africa (USAREUR-AF) is the Army Service Component Command (ASCC) for United States European Command (USEUCOM). USAREUR-AF coordinates theater land operations across the European Area of Responsibility (AOR), integrates with NATO Allied commands, and contributes to Joint All-Domain Command and Control (JADC2). The command operates across multiple countries and time zones — including Germany, Poland, Romania, and the Baltics — coordinating with V Corps, 21st Theater Sustainment Command (TSC), 7th Army Training Command (ATC), and numerous Allied and partner nation forces.
+United States Army Europe and Africa (USAREUR-AF) is the Army Service Component Command (ASCC) for United States European Command (USEUCOM) and United States Africa Command (USAFRICOM). USAREUR-AF coordinates theater land operations across the European and African Areas of Responsibility (AOR), integrates with NATO Allied commands, and contributes to Joint All-Domain Command and Control (JADC2). The command operates across multiple countries and time zones — including Germany, Poland, Romania, and the Baltics — coordinating with III Corps, V Corps, 21st Theater Sustainment Command (TSC), 7th Army Training Command (ATC), 10th AAMDC, 56th MDC-E, SETAF-AF, and numerous Allied and partner nation forces.
 
 MSS is USAREUR-AF's primary data and AI platform. It serves as the command's single integrated environment for theater readiness visibility, logistics status, personnel accountability, and operational reporting. MSS is not a standalone tool — it is the data backbone that supports decision-making from battalion staff through theater army.
 
@@ -131,6 +112,22 @@ Your access level and the applications available to you depend on your assigned 
 
 ---
 
+## 1-3a. The Operational Data Team — Where MSS Capability Comes From
+
+The applications and data products you use on MSS do not appear by themselves. They are built and maintained by **Operational Data Teams (ODTs)** — multifunctional teams of product managers, UX designers, software engineers, data engineers, and data scientists who work together to solve operational problems with data.
+
+The ODT concept was first piloted by XVIII Airborne Corps beginning in 2022. XVIII ABC published its experience — including organizational lessons learned and the manning structure they arrived at — in *Military Review* (February 2026). The Mission Command Center of Excellence (MCCoE) has since codified ODT organization and echeloned employment in the **Decision Optimization Concept of Operations**, and SEC ARMY directed Army-wide experimentation under Transformation in Contact 2.0. USAREUR-AF's own ODT predates the XVIII ABC publication and operates under the C2DAO with a theater-specific organizational model. The XVIII ABC experience is a reference point — not a template — and different commands will adapt the concept to their own mission, manning, and echelon. Notably, LTG Donahue, who directed the original Data Warfare Company activation at XVIII ABC in 2022, now commands USAREUR-AF.
+
+**Why this matters to you as an MSS user:** The ODT is the team that builds the dashboards you read, the forms you submit, and the tools you use. When you encounter a data problem, a broken application, or a requirement for a new capability, the escalation path leads to the ODT. Understanding that these tools are built by a trained, organic team — not a vendor or a help desk — helps you route requests effectively and set realistic expectations for new capability delivery.
+
+USAREUR-AF's Operational Data Team operates under the C2DAO with direct alignment to theater strategy. The MSS training curriculum (TM-10 through TM-50) is the pipeline that produces the qualified personnel who staff ODTs at every echelon — from the Theater Army Operational Data Section down through subordinate Corps and Division ODTs.
+
+> **NOTE:** The MSS specialist tracks (TM-40J through TM-40O) map directly to the ODT roles employed by XVIII ABC in their pilot: Product Manager (TM-40J), UX Designer (TM-40N), Software Engineer (TM-40L), Data Engineer (TM-30/TM-40K), and Data Scientist (TM-40G/TM-40M). If your career path leads toward one of these roles, the MSS training curriculum is your qualification pathway.
+
+*Source: Forney, Herrmann, and Steele, "Fighting with Live Data," Military Review Online Exclusive, February 2026; MCCoE Decision Optimization CONOPS, Appendix B.*
+
+---
+
 ## 1-4. Governance Chain and Policy References
 
 Data governance in USAREUR-AF flows through a defined chain of authority. Knowing this chain tells you who to contact when you have a problem, a question, or need access.
@@ -138,6 +135,8 @@ Data governance in USAREUR-AF flows through a defined chain of authority. Knowin
 **Governance chain (top to bottom):**
 
 ```
+DoD CIO / CDAO
+        ↓
 Army CIO / Mission Area Data Officers (MADOs)
         ↓
 DoD Data Strategy (VAULTIS framework) / DDOF Playbook v2.2 (VAULTIS-A)
@@ -327,6 +326,7 @@ NOTE: MSS implements Zero Trust Architecture (ZTA) per Army Unified Network Plan
 4. Confirm which browser to use. MSS works best on Google Chrome or Mozilla Firefox. Internet Explorer is not supported.
 5. Ask your data steward: "Which applications am I authorized to use, and where are they?" Write down the names.
 6. Keep your data steward's contact information available. You will need it if you have questions or problems.
+7. **If you work on multiple enclaves (NIPR, SIPR, MPE, etc.), repeat steps 1–6 for each enclave.** Your MSS account on one enclave does not grant access on another. Each enclave requires separate account provisioning, a separate portal URL, and a separate first login. Confirm access on every enclave you need before relying on it operationally.
 
 NOTE: Your unit data steward is your primary point of contact for everything related to your MSS access and the data you work with. If you do not know who your data steward is, ask your S6 or immediate supervisor.
 
@@ -987,7 +987,7 @@ Markings in MSS are labels applied to datasets, applications, and individual obj
 |---|---|---|
 | UNCLASSIFIED | No national security classification | You can still have handling restrictions — check for other markings |
 | CUI | Controlled Unclassified Information | Requires protection — cannot be placed on public-facing systems or sent unencrypted |
-| FOUO | For Official Use Only | Subcategory of CUI — same protection requirements |
+| FOUO (legacy) | For Official Use Only | Retired marking — now handled under CUI. Same protection requirements apply. |
 | SECRET | National Security classification | Requires SECRET clearance to access; must be handled on approved systems |
 | [AOR Label] | Data limited to a specific Area of Responsibility | You must have the AOR marking assigned to your account |
 | [Role Label] | Data limited to a specific function (e.g., S2-only, Medical) | Your role must match the marking to access the data |
@@ -1336,7 +1336,7 @@ Policy questions → USAREUR-AF C2DAO (via chain of command)
 | **CAC** | Common Access Card. Your personal login credential for MSS. Never share your CAC or PIN with anyone for any reason. |
 | **Compass** | MSS's file browser. Displays all resources (datasets, applications, projects) organized by folder and project. Used to navigate the platform when you know what folder your data is in. |
 | **Contour** | MSS's no-code data analysis tool. Allows you to aggregate, filter, sort, and chart data from a dataset without writing any code. Consumer users can perform basic analysis in Contour without builder access. |
-| **CUI** | Controlled Unclassified Information. Data that requires protection but is not classified. CUI cannot be placed on public-facing systems or transmitted unencrypted. Includes FOUO (For Official Use Only). |
+| **CUI** | Controlled Unclassified Information. Data that requires protection but is not classified. CUI cannot be placed on public-facing systems or transmitted unencrypted. Formerly included FOUO (For Official Use Only), now consolidated under CUI. |
 | **Dashboard** | A visual display of data in a Workshop application. Includes charts (bar, line, pie), tables (rows and columns), metric tiles (single key numbers), and status indicators. |
 | **Data Steward** | The person responsible for a specific dataset or application. Your first point of contact for data quality issues, missing access, incorrect records, and questions about data currency. If you do not know who your data steward is, ask your S6. |
 | **Dataset** | A structured table of data in MSS — rows and columns, like a spreadsheet. Each column has a name and a data type. Each row is one record (one Soldier, one vehicle, one event). |
@@ -1355,5 +1355,4 @@ Policy questions → USAREUR-AF C2DAO (via chain of command)
 *TM-10 — Maven Smart System (MSS) Operator Technical Manual*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA, Wiesbaden, Germany*
 *2026*
-*UNCLASSIFIED — Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*
 *For corrections or updates, contact the USAREUR-AF Operational Data Team through your unit data steward or the C2DAO office.*

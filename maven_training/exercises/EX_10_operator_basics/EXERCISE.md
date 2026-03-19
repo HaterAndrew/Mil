@@ -55,9 +55,17 @@ Unclassified training data simulates LOGSTAT/readiness report formats.
 - **Go:** Bookmark appears on home screen after navigation
 - **No-Go:** Cannot locate secondary dashboard or bookmark fails
 
+### Task 6 — Classification Marking Identification (5 min) ⚠️ *Critical item*
+*Reference: TM-10 Chapter 6 (Security, Classification, and Markings)*
+- [ ] When prompted by the evaluator, state the classification marking displayed on the provided dataset
+- [ ] State the authorized distribution for that classification level
+- [ ] State the authorized export destination (if any) for that marking
+- **Go:** Correct classification marking identified; correct authorized distribution stated
+- **No-Go:** Incorrect classification identification or incorrect authorization statement
+
 ## EVALUATOR NOTES
 
-**Scoring:** 5 tasks. Go on 4 of 5 = overall Go. No-Go on Task 2 or Task 4 = automatic No-Go.
+**Scoring:** 6 tasks. Go on 5 of 6 = overall Go. No-Go on Task 2, Task 4, or Task 6 = automatic No-Go.
 
 **Pre-exercise checklist:**
 - Confirm all training accounts can access "BCT Readiness — EX_10 Training"
@@ -74,11 +82,13 @@ Unclassified training data simulates LOGSTAT/readiness report formats.
 | Task 3 | Identifies wrong low-readiness unit | Check against answer key; any incorrect unit = No-Go |
 | Task 4 | Export missing timestamp | Most common cause: CSV instead of PDF; note format used |
 | Task 5 | Bookmark does not appear on home | If correct action is demonstrated, retest after cache clear before marking No-Go |
+| Task 6 | States wrong classification level | Evaluator shows dataset on screen; trainee responds verbally or in writing; any incorrect marking = automatic No-Go |
 
 **Timing notes:**
 - Task 3 runs 5–15 min depending on analytical background; do not prompt within first 10 min
 - If Task 2 exceeds 15 min, ask participant to narrate approach (do not guide)
-- Total exercise rarely exceeds 50 min for participants current on TM-10
+- Task 6 is verbal/written — evaluator asks the question after Task 5 completion
+- Total exercise rarely exceeds 55 min for participants current on TM-10
 
 ---
 

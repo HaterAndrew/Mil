@@ -232,5 +232,5 @@ SA-5. Full credit: four components — (1) documented methodology and reproducib
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-50G Post-Test | Version 1.0 | March 2026*

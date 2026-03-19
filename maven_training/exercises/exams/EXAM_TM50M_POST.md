@@ -232,5 +232,5 @@ SA-5. Full credit: components — (1) Feature store: offline store (Foundry data
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-50M Post-Test | Version 1.0 | March 2026*

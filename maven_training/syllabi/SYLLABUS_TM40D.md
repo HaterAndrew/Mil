@@ -154,7 +154,7 @@ Complete **5+ duty days before Day 1:**
 
 | Item | Reference |
 |---|---|
-| **Practical Exercise** | EX_40D (EXERCISE.md + ENVIRONMENT_SETUP.md) — `exercises/EX_40D/` |
+| **Practical Exercise** | EX_40D (EXERCISE.md + ENVIRONMENT_SETUP.md) — `exercises/EX_40D_sustainment/` |
 | **Pre-course exam** | EXAM_TM40D_PRE — `exercises/exams/EXAM_TM40D_PRE.md` |
 | **Post-course exam** | EXAM_TM40D_POST — `exercises/exams/EXAM_TM40D_POST.md` |
 
@@ -177,5 +177,5 @@ Personnel completing multiple WFF tracks do not repeat TM-10, TM-20, or TM-30. E
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Syllabus TM-40D | Version 1.0 | March 2026*

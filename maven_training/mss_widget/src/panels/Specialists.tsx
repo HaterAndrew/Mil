@@ -111,7 +111,7 @@ export default function Specialists({ showPanel }: Props) {
           <div className="track-body">
             <div className="track-name">Operations Research &amp; Systems Analysis</div>
             <div className="track-audience">FA49 &bull; G2/S2 quant analysts &bull; Wargame analysts</div>
-            <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50G &bull; <button className="panel-nav-btn" style={{padding:'4px 10px',fontSize:10}} onClick={() => showPanel('tm40' as any)}>View TM-40 Series &rarr;</button></div>
+            <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50G &bull; <button className="panel-nav-btn" style={{padding:'4px 10px',fontSize:10}} onClick={() => showPanel('tm40')}>View TM-40 Series &rarr;</button></div>
           </div>
         </div>
         <div className="track-card">
@@ -119,7 +119,7 @@ export default function Specialists({ showPanel }: Props) {
           <div className="track-body">
             <div className="track-name">AIP Logic, Agent Studio &amp; LLM Integration</div>
             <div className="track-audience">AI/ML specialists &bull; 17A/17C</div>
-            <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50H &bull; <button className="panel-nav-btn" style={{padding:'4px 10px',fontSize:10}} onClick={() => showPanel('tm40' as any)}>View TM-40 Series &rarr;</button></div>
+            <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50H &bull; <button className="panel-nav-btn" style={{padding:'4px 10px',fontSize:10}} onClick={() => showPanel('tm40')}>View TM-40 Series &rarr;</button></div>
           </div>
         </div>
         <div className="track-card">
@@ -127,7 +127,7 @@ export default function Specialists({ showPanel }: Props) {
           <div className="track-body">
             <div className="track-name">Model Development, Validation &amp; Deployment</div>
             <div className="track-audience">ML engineers &bull; Data scientists (GS/contractor)</div>
-            <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50M &bull; <button className="panel-nav-btn" style={{padding:'4px 10px',fontSize:10}} onClick={() => showPanel('tm40' as any)}>View TM-40 Series &rarr;</button></div>
+            <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50M &bull; <button className="panel-nav-btn" style={{padding:'4px 10px',fontSize:10}} onClick={() => showPanel('tm40')}>View TM-40 Series &rarr;</button></div>
           </div>
         </div>
         <div className="track-card">
@@ -135,7 +135,7 @@ export default function Specialists({ showPanel }: Props) {
           <div className="track-body">
             <div className="track-name">Pipeline Mgmt, Milestones &amp; Portfolio Health</div>
             <div className="track-audience">G8/S8 &bull; PMs &bull; Civil Affairs</div>
-            <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50J &bull; <button className="panel-nav-btn" style={{padding:'4px 10px',fontSize:10}} onClick={() => showPanel('tm40' as any)}>View TM-40 Series &rarr;</button></div>
+            <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50J &bull; <button className="panel-nav-btn" style={{padding:'4px 10px',fontSize:10}} onClick={() => showPanel('tm40')}>View TM-40 Series &rarr;</button></div>
           </div>
         </div>
         <div className="track-card">
@@ -143,7 +143,7 @@ export default function Specialists({ showPanel }: Props) {
           <div className="track-body">
             <div className="track-name">Forms, Lessons Learned &amp; Institutional Memory</div>
             <div className="track-audience">KMOs &bull; 37F &bull; Civil Affairs</div>
-            <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50K &bull; <button className="panel-nav-btn" style={{padding:'4px 10px',fontSize:10}} onClick={() => showPanel('tm40' as any)}>View TM-40 Series &rarr;</button></div>
+            <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50K &bull; <button className="panel-nav-btn" style={{padding:'4px 10px',fontSize:10}} onClick={() => showPanel('tm40')}>View TM-40 Series &rarr;</button></div>
           </div>
         </div>
         <div className="track-card">
@@ -151,7 +151,7 @@ export default function Specialists({ showPanel }: Props) {
           <div className="track-body">
             <div className="track-name">Python/TypeScript, OSDK &amp; Code Transforms</div>
             <div className="track-audience">17A/17C &bull; 25D &bull; GS/contractor SWEs</div>
-            <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50L &bull; <button className="panel-nav-btn" style={{padding:'4px 10px',fontSize:10}} onClick={() => showPanel('tm40' as any)}>View TM-40 Series &rarr;</button></div>
+            <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50L &bull; <button className="panel-nav-btn" style={{padding:'4px 10px',fontSize:10}} onClick={() => showPanel('tm40')}>View TM-40 Series &rarr;</button></div>
           </div>
         </div>
       </div>
@@ -162,15 +162,15 @@ export default function Specialists({ showPanel }: Props) {
         <div className="callout-body">TM-50 tracks are advanced-level continuations requiring the corresponding TM-40 track as a prerequisite. They cover expert-level techniques, production architecture, and operational integration at scale.</div>
       </div>
       <div className="panel-nav-btns" style={{marginTop:12}}>
-        <button className="panel-nav-btn" onClick={() => showPanel('tm50' as any)}>Open TM-50 Series Full Reference &#8594;</button>
+        <button className="panel-nav-btn" onClick={() => showPanel('tm50')}>Open TM-50 Series Full Reference &#8594;</button>
       </div>
 
       <div className="callout note mt-24">
         <div className="callout-label">NOT FINDING WHAT YOU NEED?</div>
         <div className="callout-body">
           Contact your unit data steward for additional publications, source files, or access to restricted materials.
-          For technical support, visit the <button className="qr-link" onClick={() => showPanel('support' as any)}>Support page &rarr;</button>
-          For task-level procedures, use the <button className="qr-link" onClick={() => showPanel('taskindex' as any)}>Task Index &rarr;</button>
+          For technical support, visit the <button className="qr-link" onClick={() => showPanel('support')}>Support page &rarr;</button>
+          For task-level procedures, use the <button className="qr-link" onClick={() => showPanel('taskindex')}>Task Index &rarr;</button>
         </div>
       </div>
     </>

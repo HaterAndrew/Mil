@@ -114,25 +114,25 @@
 ---
 
 ### TM-40J: PROGRAM MANAGER
-*3 days | Quarterly | Max 8 students | Prereq: TM-30*
+*4 days | Quarterly | Max 8 students | Prereq: TM-30*
 
 | Iteration | Dates | Location | Quota |
 |---|---|---|---|
-| TM40J-2026-Q2 | 28–30 April 2026 | MSS Training Lab B | 8 seats |
-| TM40J-2026-Q3 | 28–30 July 2026 | MSS Training Lab B | 8 seats |
-| TM40J-2026-Q4 | 22–24 September 2026 | MSS Training Lab B | 8 seats |
+| TM40J-2026-Q2 | 28 April–1 May 2026 | MSS Training Lab B | 8 seats |
+| TM40J-2026-Q3 | 28–31 July 2026 | MSS Training Lab B | 8 seats |
+| TM40J-2026-Q4 | 22–25 September 2026 | MSS Training Lab B | 8 seats |
 
 **Enrollment deadline:** T-10 days. Builder access: 5 duty days — request at T-15.
 
 ---
 
 ### TM-40K: KNOWLEDGE MANAGER
-*3 days | Quarterly | Max 8 students | Prereq: TM-30*
+*4 days | Quarterly | Max 8 students | Prereq: TM-30*
 
 | Iteration | Dates | Location | Quota |
 |---|---|---|---|
-| TM40K-2026-Q2 | 5–7 May 2026 | MSS Training Lab B | 8 seats |
-| TM40K-2026-Q3 | 4–6 August 2026 | MSS Training Lab B | 8 seats |
+| TM40K-2026-Q2 | 5–8 May 2026 | MSS Training Lab B | 8 seats |
+| TM40K-2026-Q3 | 4–7 August 2026 | MSS Training Lab B | 8 seats |
 | TM40K-2026-Q4 | September 2026 (TBD) | MSS Training Lab B | 8 seats |
 
 **Enrollment deadline:** T-10 days. Builder + AIP Logic configuration: 5–7 duty days — request at T-17.
@@ -153,6 +153,52 @@
 
 ---
 
+### TM-40N: UI/UX DESIGNER
+*5 days | Semi-Annual | Max 6 students | Prereq: TM-30*
+
+| Iteration | Dates | Location | Quota |
+|---|---|---|---|
+| TM40N-2026-1 | TBD | MSS Training Lab B | 6 seats |
+| TM40N-2026-2 | TBD | MSS Training Lab B | 6 seats |
+
+**Enrollment deadline:** T-21 days. Workshop design access: 7–10 duty days — request at T-30.
+
+---
+
+### TM-40O: PLATFORM ENGINEER
+*5 days | Semi-Annual | Max 6 students | Prereq: TM-30*
+
+| Iteration | Dates | Location | Quota |
+|---|---|---|---|
+| TM40O-2026-1 | TBD | MSS Training Lab B | 6 seats |
+| TM40O-2026-2 | TBD | MSS Training Lab B | 6 seats |
+
+**Enrollment deadline:** T-21 days. Kubernetes cluster access: 10+ duty days — request at T-35.
+
+---
+
+### TM-50N: ADVANCED UI/UX DESIGNER
+*3 days | Annual | Max 6 students | Prereq: TM-40N*
+
+| Iteration | Dates | Location | Quota |
+|---|---|---|---|
+| TM50N-2026-1 | TBD | MSS Training Lab B | 6 seats |
+
+**Enrollment deadline:** T-14 days. Workshop design access (same as TM-40N).
+
+---
+
+### TM-50O: ADVANCED PLATFORM ENGINEER
+*3 days | Annual | Max 6 students | Prereq: TM-40O*
+
+| Iteration | Dates | Location | Quota |
+|---|---|---|---|
+| TM50O-2026-1 | TBD | MSS Training Lab B | 6 seats |
+
+**Enrollment deadline:** T-14 days. Multi-cluster access: 10+ duty days — request at T-30.
+
+---
+
 ### T3-I: INSTRUCTOR CERTIFICATION
 *5 days (Phase 1 classroom) | Semi-Annual | Max 8 candidates | Prereq: TM-30 + C2DAO selection*
 
@@ -166,7 +212,7 @@
 ---
 
 ### T3-F: MSC FORCE MULTIPLIER
-*3 days | Quarterly (aligned with MTT rotation) | Max 8 candidates | Prereq: TM-20 + CDR nomination*
+*Half day | Quarterly (aligned with MTT rotation) | Max 8 candidates | Prereq: TM-20 + CDR nomination*
 
 | Iteration | Dates | Location | Quota |
 |---|---|---|---|
@@ -191,9 +237,13 @@ TM-40A–F (WFF)   [coord w/ WFF proponents — contact C2DAO Training POC]
 TM-40G                               8-12Jun            [TBD]
 TM-40H                               15-19Jun           [TBD]
 TM-40M                               22-26Jun           [TBD]
-TM-40J            28-30Apr          28-30Jul            22-24Sep
-TM-40K                       5-7May          4-6Aug     [TBD]
+TM-40J            28Apr-1May        28-31Jul            22-25Sep
+TM-40K                       5-8May          4-7Aug     [TBD]
 TM-40L                               13-17Jul           [TBD]
+TM-40N           [TBD]                                     [TBD]
+TM-40O           [TBD]                                     [TBD]
+TM-50N           [TBD]
+TM-50O           [TBD]
 T3-I                                             [Jul TBD]
 T3-F              [aligned with MTT rotation — quarterly; dates TBD per MSC]
 ```
@@ -210,7 +260,7 @@ T3-F              [aligned with MTT rotation — quarterly; dates TBD per MSC]
 | TM-10 → TM-20 | 6 weeks before TM-20 start (must complete TM-10 first) |
 | TM-10 → TM-20 → TM-30 | 4 months before TM-30 start |
 | TM-10 → TM-20 → TM-30 → TM-40A–F (WFF tracks) | 6 months before desired TM-40 completion |
-| TM-10 → TM-20 → TM-30 → TM-40G/H/M/L | 6 months before desired TM-40 completion |
+| TM-10 → TM-20 → TM-30 → TM-40G/H/M/L/N/O | 6 months before desired TM-40 completion |
 | TM-10 → TM-20 → TM-30 → TM-40J/K | 4 months before TM-40J/K start |
 
 ### Newly Assigned Personnel (30-day TM-10 requirement)
@@ -244,5 +294,5 @@ To request a new class date, additional quota, or schedule modification:
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Annual Training Schedule | FY2026 (Mid-Year Revision) | March 2026*

@@ -232,5 +232,5 @@ SA-5. Full credit: root cause analysis — most likely architectural cause: CBAC
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-50L Post-Test | Version 1.0 | March 2026*

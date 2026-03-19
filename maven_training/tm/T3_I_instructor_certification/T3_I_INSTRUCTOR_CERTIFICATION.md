@@ -1,6 +1,6 @@
 # T3-I — INSTRUCTOR CERTIFICATION · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** T3-I certifies MSS instructors. It formalizes the instructor development pipeline into a structured course covering adult learning principles, platform deep-dive for instruction, lab facilitation, assessment design, Go/No-Go standardization, and common trainee error management. Graduates enter the supervised practicum (Phase 2) and, upon completion, are authorized to teach independently.
+> **Forward:** T3-I certifies MSS instructors. It formalizes the instructor development pipeline into a structured course covering adult learning principles, platform deep-dive for instruction, lab facilitation, assessment design, Go/No-Go standardization, and common trainee error management. Graduates enter the supervised practicum (Phase 2) and, upon completion, are authorized to teach independently.
 > **Prereqs:** TM-30, Advanced Builder (Go on file); C2DAO Training OIC selection; CONCEPTS_GUIDE_T3I_INSTRUCTOR_CERTIFICATION (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -10,29 +10,15 @@
 
 ## CHAPTER 1 — INTRODUCTION: THE MSS INSTRUCTOR
 
-### 1-1. Purpose and Scope
+### 1-1. Instructor Certification Manual
 
 **BLUF:** T3-I transforms a qualified MSS operator into a qualified MSS instructor. It replaces the previous ad-hoc 4-phase apprenticeship with a structured, documented certification pathway.
 
 This manual provides the reference material for the T3-I course. It covers everything an instructor candidate needs to understand the MSS training program, develop instructional competency, and prepare for the supervised practicum.
 
-**T3-I covers:**
+**T3-I covers** adult learning principles applied to technical training (andragogy, experiential learning cycle, scaffolding); MSS platform deep-dive from the instructor perspective — every TM-10 through TM-30 lab exercise, common break points, access issues; lab facilitation techniques including managing heterogeneous skill levels, pacing, and dead time elimination; assessment and evaluation design (T&EO structure, Go/No-Go standardization, evaluator calibration); common trainee error taxonomy (the top 10 errors by course level, root causes, intervention techniques); instructor performance standards (the 7 observation criteria from FDP §6-1); pre-course administration (environment setup, access provisioning, material preparation); and lesson improvement process (identifying gaps, proposing revisions, version control).
 
-- Adult learning principles applied to technical training (andragogy, experiential learning cycle, scaffolding)
-- MSS platform deep-dive from the instructor perspective — every TM-10 through TM-30 lab exercise, common break points, access issues
-- Lab facilitation techniques: managing heterogeneous skill levels, pacing, dead time elimination
-- Assessment and evaluation design: T&EO structure, Go/No-Go standardization, evaluator calibration
-- Common trainee error taxonomy: the top 10 errors by course level, root causes, intervention techniques
-- Instructor performance standards: the 7 observation criteria from FDP §6-1
-- Pre-course administration: environment setup, access provisioning, material preparation
-- Lesson improvement process: identifying gaps, proposing revisions, version control
-
-**T3-I does NOT cover:**
-
-- Domain-specific content for TM-40/TM-50 courses — domain qualification is a separate prerequisite per FDP §2-1
-- C2DAO SME designation — see C2DAO SME Designation Rubric
-- Unit Data Trainer certification — see T3-F (MSC Force Multiplier)
-- Curriculum design from scratch — T3-I teaches instructors to deliver and improve existing curriculum, not to author new courses
+**T3-I does NOT cover** domain-specific content for TM-40/TM-50 courses (domain qualification is a separate prerequisite per FDP §2-1); C2DAO SME designation — see C2DAO SME Designation Rubric; Unit Data Trainer certification — see T3-F (MSC Force Multiplier); or curriculum design from scratch (T3-I teaches instructors to deliver and improve existing curriculum, not to author new courses).
 
 > **NOTE:** T3-I is a two-phase program. Phase 1 (5 days classroom) is delivered as a formal course. Phase 2 (supervised practicum) is scheduled separately around actual course iterations. This manual covers Phase 1 content. Phase 2 procedures are documented in Chapter 7.
 
@@ -73,7 +59,7 @@ See Instructor Tier Definitions for full criteria.
 
 ### 2-1. Why This Matters
 
-MSS trainees are adults — military and civilian professionals with operational experience, existing mental models, and immediate performance requirements. They are not cadets in a schoolhouse. The instructional approach must account for how adults actually learn technical skills.
+MSS trainees are adults — military and Civilian professionals with operational experience, existing mental models, and immediate performance requirements. They are not cadets in a schoolhouse. The instructional approach must account for how adults actually learn technical skills.
 
 ### 2-2. Andragogy vs. Pedagogy
 
@@ -369,5 +355,5 @@ The Curriculum Maintenance SOP governs the review cadence, approval authority, a
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *T3-I Instructor Certification | Version 1.0 | March 2026*

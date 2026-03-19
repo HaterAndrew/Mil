@@ -102,5 +102,5 @@ Scored on all 7 instructor observation criteria:
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *EX_T3I Instructor Certification | Version 1.0 | March 2026*

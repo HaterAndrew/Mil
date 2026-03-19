@@ -1391,7 +1391,7 @@ resetView();
 """
 
 # Write output
-out_dir = Path("/home/dale/Desktop/claude/maven_training")
+out_dir = Path(__file__).resolve().parent.parent / "maven_training"
 out_path = out_dir / "DEPENDENCY_MAP_summary.html"  # DO NOT change to DEPENDENCY_MAP.html — that is the real 7400+ line dep map
 out_path.write_text(HTML, encoding="utf-8")
 print(f"Written: {out_path}")

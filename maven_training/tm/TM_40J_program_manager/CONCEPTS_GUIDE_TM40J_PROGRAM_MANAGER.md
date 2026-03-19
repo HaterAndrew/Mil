@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-40J COMPANION — DATA PROGRAM MANAGER · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** This guide is for data program managers accountable for a portfolio of data products on MSS. It does not teach Foundry mechanics. It develops the judgment to manage them.
+> **Forward:** This guide is for data program managers accountable for a portfolio of data products on MSS. It does not teach Foundry mechanics. It develops the judgment to manage them.
 > **Purpose:** Develops the mental models required to manage data pipelines, programs, and portfolio health on MSS effectively. Read before beginning TM-40J task instruction.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
@@ -251,12 +251,12 @@ Operational users want delivery fast. Technical producers need time to build qua
 
 ### 6-3. Managing a Multi-Team Ontology Coordination Scenario
 
-**Scenario:** V Corps G4 requests a readiness dashboard requiring a new Object Type that will also be used by 21st TSC for their own logistics pipeline. The 21st TSC data steward has existing views on how that Object Type should be structured.
+**Scenario:** V Corps G4 requests a readiness dashboard requiring a new Object Type that will also be used by 21st TSC for their own logistics pipeline and by 10th AAMDC for IAMD equipment tracking. The 21st TSC data steward and 10th AAMDC data officer each have existing views on how that Object Type should be structured.
 
 Without stakeholder management, this becomes a conflict that stalls both projects. With stakeholder management, the PM:
 
 1. Identifies the shared dependency early — before either team begins building
-2. Convenes a coordination session with V Corps G4, 21st TSC data steward, and C2DAO Ontology team
+2. Convenes a coordination session with V Corps G4, 21st TSC data steward, 10th AAMDC data officer, and C2DAO Ontology team
 3. Facilitates agreement on the Object Type schema that meets both teams' needs, or negotiates a clear owner/consumer relationship
 4. Documents the outcome and incorporates the coordination timeline into both project schedules
 5. Follows up with C2DAO to ensure the agreed schema receives formal governance approval before any build begins

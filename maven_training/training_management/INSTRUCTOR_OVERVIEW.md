@@ -60,12 +60,16 @@ T3-F (MSC Force Multiplier)         ← prereq: TM-20 + CDR nomination
 | TM-40J | Program Manager | 4 days | MSS program managers | TM-30 |
 | TM-40K | Knowledge Manager | 4 days | KMs, S6 data teams | TM-30 |
 | TM-40L | Software Engineer | 5 days | SWEs, Foundry developers | TM-30 |
+| TM-40N | UI/UX Designer | 5 days | UI/UX designers | TM-30 |
+| TM-40O | Platform Engineer | 5 days | Platform engineers | TM-30 |
 | TM-50G | Advanced ORSA | 5 days | Senior FA49, theater ORSA | TM-40G |
 | TM-50H | Advanced AI Engineer | 5 days | Senior AI engineers | TM-40H |
 | TM-50M | Advanced ML Engineer | 5 days | Senior ML engineers | TM-40M |
 | TM-50J | Advanced Program Manager | 3 days | Senior PMs | TM-40J |
 | TM-50K | Advanced Knowledge Manager | 3 days | Senior KMs | TM-40K |
 | TM-50L | Advanced Software Engineer | 5 days | Senior SWEs, platform leads | TM-40L |
+| TM-50N | Advanced UI/UX Designer | 3 days | Senior UI/UX designers | TM-40N |
+| TM-50O | Advanced Platform Engineer | 3 days | Senior platform engineers | TM-40O |
 
 **Critical note:** There is no TM-50A through TM-50F. TM-50 is specialist advanced only (G–O). All TM-40 WFF tracks (A–F) are terminal — graduates proceed to their operational role, not to a TM-50.
 
@@ -184,7 +188,7 @@ Complete these steps **no later than 5 duty days before Day 1** unless otherwise
 ### Training Environment (MSS Access)
 - [ ] Verify student training accounts are provisioned and accessible — have at least one student attempt login 2 days before Day 1
 - [ ] Load synthetic training data for the practical exercise — see `ENVIRONMENT_SETUP.md` for the specific course; do this yourself to verify before exercise day
-- [ ] For TM-50G/H/I/L: confirm Code Workspace with GPU allocation — **10 duty days minimum**; this is the most commonly missed lead time
+- [ ] For TM-50G/H/M/L: confirm Code Workspace with GPU allocation — **10 duty days minimum**; this is the most commonly missed lead time
 - [ ] For TM-50L: confirm CI/CD pipeline access — **10 duty days minimum**; separate from Code Workspace access
 
 ### Evaluator
@@ -324,5 +328,5 @@ For any given course, the complete instructor document set is:
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *INSTRUCTOR_OVERVIEW | Version 1.0 | March 2026*

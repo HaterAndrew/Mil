@@ -197,5 +197,5 @@ See T3-I Course Content, Chapter 7 for full Phase 2 procedures. See Instructor T
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Syllabus T3-I | Version 1.0 | March 2026*

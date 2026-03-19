@@ -117,5 +117,5 @@ S-9. Full credit (10 pts): the problem is inconsistency — the commander must l
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-50N Pre-Test | Version 1.0 | March 2026*

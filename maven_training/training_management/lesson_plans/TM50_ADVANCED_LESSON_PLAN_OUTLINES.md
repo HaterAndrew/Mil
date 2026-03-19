@@ -1757,5 +1757,5 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-50 Advanced Track Lesson Plan Outlines | Version 1.1 | March 2026*

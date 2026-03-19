@@ -1,6 +1,6 @@
 # TM-40N — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-40N qualifies UI/UX designers to conduct user research, design information architectures, build interactive prototypes, and deliver production-ready Workshop and Slate application designs on the MSS platform. This is a design manual — it produces validated, implementable design artifacts, not just wireframes.
+> **Forward:** TM-40N qualifies UI/UX designers to conduct user research, design information architectures, build interactive prototypes, and deliver production-ready Workshop and Slate application designs on the MSS platform. This is a design manual — it produces validated, implementable design artifacts, not just wireframes.
 > **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); familiarity with user research methods and visual design principles
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -11,30 +11,38 @@
 
 ## CHAPTER 1 — INTRODUCTION: THE UI/UX DESIGNER ROLE IN MSS
 
-### 1-1. Purpose and Scope
+### 1-1. UX Designer Specialist Manual
 
 **BLUF:** TM-40N qualifies UI/UX designers to conduct user research, design information architectures, build interactive prototypes, and deliver production-ready application designs on the MSS platform. The designer is the main conduit between the user and the product team.
 
 This manual provides task-based instruction for UI/UX designers operating on the Maven Smart System (MSS). MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. TM-40N personnel translate operational requirements into usable, accessible interfaces that WFF-qualified users (TM-40A–F) and all MSS consumers interact with daily.
 
-**TM-40N covers:**
-- Soldier Centered Design (SCD): the Army adaptation of human-centered design methodology for operational environments
-- User research: interview techniques, contextual inquiry, usability testing in classified/OCONUS settings
-- Information architecture: organizing data-dense displays for rapid decision-making under stress
-- Visual design for military applications: color systems for tactical displays, classification marking in UI, contrast and readability in field conditions
-- Workshop application design: layout patterns, widget selection, dashboard hierarchy, responsive design within Foundry constraints
-- Prototyping: low-fidelity sketches through high-fidelity interactive mockups; design-to-backlog handoff
-- Accessibility: Section 508 compliance, WCAG 2.1 AA standards, assistive technology considerations
-- Design governance: pattern libraries, design review processes, consistency across MSS applications
+**TM-40N covers** Soldier Centered Design (SCD): the Army adaptation of human-centered design methodology for operational environments; user research: interview techniques, contextual inquiry, usability testing in classified/OCONUS settings; information architecture: organizing data-dense displays for rapid decision-making under stress; visual design for military applications: color systems for tactical displays, classification marking in UI, contrast and readability in field conditions; Workshop application design: layout patterns, widget selection, dashboard hierarchy, responsive design within Foundry constraints; prototyping: low-fidelity sketches through high-fidelity interactive mockups; design-to-backlog handoff; accessibility: Section 508 compliance, WCAG 2.1 AA standards, assistive technology considerations; and design governance: pattern libraries, design review processes, consistency across MSS applications.
 
-**TM-40N does NOT cover:**
-- TypeScript/OSDK application development — see TM-40L (Software Engineer)
-- Custom React widget coding — see TM-40L; TM-40N defines the design, TM-40L implements
-- Pipeline design or data modeling — see TM-30
-- AI/ML model interface design — see TM-40H (AI Engineer) for AIP Logic; TM-40N may design the surface
-- Program/project management — see TM-40J (Program Manager)
+**TM-40N does NOT cover** TypeScript/OSDK application development — see TM-40L (Software Engineer); custom React widget coding — see TM-40L; TM-40N defines the design, TM-40L implements; pipeline design or data modeling — see TM-30; AI/ML model interface design — see TM-40H (AI Engineer) for AIP Logic; TM-40N may design the surface; or program/project management — see TM-40J (Program Manager).
 
 > **NOTE:** TM-40N is peer to TM-40J (Program Manager) and TM-40L (Software Engineer). Together, these three tracks form the ASF-aligned "balanced team" triad: PM + Designer + Engineer. All specialist tracks require TM-30 as prerequisite. Coordinate across tracks — operational systems require all three disciplines working in concert.
+
+### 1-1a. The UX Designer in the ODT — Lessons from the XVIII ABC Pilot
+
+XVIII Airborne Corps' published experience with Operational Data Teams ("Fighting with Live Data," *Military Review*, February 2026) places the UI/UX Designer (5G ASI) as one of five core roles in each ODT. In the XVIII ABC model, the Designer is a required position — demonstrated through their specific organizational iterations and contingency deployments. Other commands may structure the role differently based on team size and mission, but the XVIII ABC experience demonstrates why dedicated UX capability produces better outcomes than relying on developers to design interfaces ad hoc.
+
+**Why UX is a required ODT role:**
+
+The XVIII ABC problem-solution development methodology emphasizes **user feedback and iterative refinement** at every phase. During scoping, the Designer conducts user research to refine the problem definition. During exercises, MVPs are tested with warfighting function product owners — the Designer captures user feedback for future iterations. The BDA visualization capability that XVIII ABC delivered (prototype in 3 months, MVP in 6, POR handoff in 9) succeeded because it was designed around the commander's actual decision process: *Where are operational risks? Where are opportunities?* — not around what the data could show.
+
+**Exercise integration for Designers:** During Corps exercises, ODT involvement is aligned with solution maturity:
+- **Scoping phase:** Designer conducts user research with operational staff — interviews, contextual inquiry, observing how staff use existing tools under time pressure
+- **MVP phase:** Designer validates the interface with real users, captures usability issues, and documents minor adjustments for post-exercise sprints
+- **Discovery/Framing phase:** Products are held stable — Designer gathers data and validates design assumptions for future iterations
+
+> **NOTE:** XVIII ABC's early organizational models separated software development from data science and lacked dedicated UX roles. The result: "applications did not maximize full capabilities" and coordination was "difficult across competing priorities." The unified ODT model — with embedded UX — resolved this. TM-40N graduates entering ODT assignments are expected to operate as the user's advocate within the team from day one.
+
+*Source: Forney, Herrmann, and Steele, "Fighting with Live Data," Military Review Online Exclusive, February 2026.*
+
+*Supplementary: Adkins, "Achieving Decision Dominance," Military Review, Jan-Feb 2025, defines "automated fighting products" (AFPs) as tools that must be "commonly accessible" and "connected to live, authoritative data sources." UX design directly determines whether an AFP meets the accessibility standard. TM-40N graduates design the interface layer that makes data actionable.*
+
+---
 
 ### 1-2. Curriculum Position, Advanced Track, and WFF Context
 
@@ -50,7 +58,7 @@ This manual provides task-based instruction for UI/UX designers operating on the
 
 ### 1-3. The UI/UX Designer's Role in USAREUR-AF
 
-USAREUR-AF is the Army Service Component Command (ASCC) to USEUCOM. MSS supports theater land operations across the European AOR including V Corps, 21st TSC, 7th ATC, G2 all-source, and multinational elements. UI/UX Designers at TM-40N level are the human-systems integrators of the USAREUR-AF data ecosystem.
+USAREUR-AF is the Army Service Component Command (ASCC) to USEUCOM and USAFRICOM. MSS supports theater land operations across the European and African AOR including III Corps, V Corps, 21st TSC, 7th ATC, 10th AAMDC, 56th MDC-E, SETAF-AF, G2 all-source, and multinational elements. UI/UX Designers at TM-40N level are the human-systems integrators of the USAREUR-AF data ecosystem.
 
 **The TM-40N role in the data chain:**
 

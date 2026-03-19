@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20251226_182 — NAI ACTIVITY REPORT
+DTG: 260000Z DEC 2025
+Unit: V CORPS G2
+
+Summary: ISR coverage of NAI 14 (grid 33T341205) near BERGHEIM during the 48-hour period revealed 5 instances of vehicle activity. Vehicles assessed as military-type based on thermal and visual signatures.
+
+Collection Assessment: Current ISR allocation provides adequate coverage of NAI 14. No additional assets requested at this time.
+Recommended Action: Maintain collection posture. Update S2 overlay with latest activity data. Cross-reference with SIGINT and HUMINT reporting.

@@ -1,0 +1,9 @@
+
+INTSUM INTSUM_20250826_139 — NAI ACTIVITY REPORT
+DTG: 260000Z AUG 2025
+Unit: 1BCT HHC
+
+Summary: ISR coverage of NAI 05 (grid 35T361782) near OSTBERG during the 72-hour period revealed 8 instances of vehicle activity. Vehicles assessed as military-type based on thermal and visual signatures.
+
+Collection Assessment: Current ISR allocation provides adequate coverage of NAI 05. No additional assets requested at this time.
+Recommended Action: Maintain collection posture. Update S2 overlay with latest activity data. Cross-reference with SIGINT and HUMINT reporting.

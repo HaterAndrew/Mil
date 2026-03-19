@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — T3-I COMPANION — INSTRUCTOR CERTIFICATION · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** This guide develops the mental models required to teach MSS effectively. It does not teach platform mechanics — it teaches how to teach platform mechanics to adults under operational time pressure.
+> **Forward:** This guide develops the mental models required to teach MSS effectively. It does not teach platform mechanics — it teaches how to teach platform mechanics to adults under operational time pressure.
 > **Purpose:** Read before beginning T3-I classroom instruction. Return to individual sections as reference during Phase 2 practicum.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
@@ -36,10 +36,10 @@ MSS instruction is not vendor product training. It is not a conference demo. It 
 ### 1-2. The Mixed Classroom
 
 Every MSS course — especially TM-10 and TM-20 — contains trainees with wildly different backgrounds:
-- The 25-series soldier who has been building in Foundry for 6 months and is here for the formal certification
+- The 25-series Soldier who has been building in Foundry for 6 months and is here for the formal certification
 - The O-5 who was directed to attend and has never opened a web application more complex than email
 - The contractor with 10 years of data engineering experience who has never used Foundry specifically
-- The junior enlisted soldier who is eager but has no data background
+- The junior enlisted Soldier who is eager but has no data background
 
 **The instructor must serve all of them simultaneously.** The temptation is to teach to the middle. The reality is that the lowest-skilled trainee sets the floor (they must pass Go/No-Go) and the highest-skilled trainee sets the engagement ceiling (they will disengage if not challenged).
 
@@ -197,5 +197,5 @@ Every course iteration ends with an After-Action Review (AAR). The AAR is not a 
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Concepts Guide — T3-I Instructor Certification | Version 1.0 | March 2026*

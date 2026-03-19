@@ -15,7 +15,7 @@ Scans the `maven_training/` documentation corpus and validates all cross-referen
 
 ```
 TM-10 → TM-20 → TM-30 → ALL TM-40 (A–L)
-                       → BSP (parallel track off TM-20)
+                       → FBC (parallel track off TM-20)
 
 TM-40G → TM-50G    TM-40H → TM-50H    TM-40M → TM-50M
 TM-40J → TM-50J    TM-40K → TM-50K    TM-40L → TM-50L

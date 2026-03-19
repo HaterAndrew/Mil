@@ -338,5 +338,5 @@ All work in this repository is governed by [CLAUDE.md](CLAUDE.md). Key requireme
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Version 3.0 | March 2026*

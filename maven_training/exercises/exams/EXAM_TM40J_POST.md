@@ -244,5 +244,5 @@ SA-6. Full credit: change management plan elements — (1) stakeholder map: iden
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-40J Post-Test | Version 2.0 | March 2026*

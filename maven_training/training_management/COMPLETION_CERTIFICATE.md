@@ -45,7 +45,6 @@
 ║                                                                          ║
 ║                                                                          ║
 ║  Training Record Number: ___________________                             ║
-║                                UNCLASSIFIED                             ║
 ╚══════════════════════════════════════════════════════════════════════════╝
 ```
 
@@ -97,7 +96,6 @@
 ║                                                                          ║
 ║                                                                          ║
 ║  Training Record Number: ___________________                             ║
-║                                UNCLASSIFIED                             ║
 ╚══════════════════════════════════════════════════════════════════════════╝
 ```
 
@@ -153,7 +151,6 @@ ________________________________
 [Rank, Name]
 Chief, C2DAO Training and Standards Division
 
-                              UNCLASSIFIED
 ```
 
 ---
@@ -208,7 +205,6 @@ ________________________________
 
 ENCLOSURE: No-Go Remediation Form (CAD Appendix C)
 
-                              UNCLASSIFIED
 ```
 
 ---
@@ -255,11 +251,10 @@ Training Record Number: _____________________
 This transcript is accurate as of the date issued.
 Subsequent completions will require an updated transcript.
 
-                              UNCLASSIFIED
 =========================================================
 ```
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Completion Certificate Templates | Version 1.0 | March 2026*

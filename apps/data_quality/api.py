@@ -9,6 +9,8 @@ from typing import Optional
 from fastapi import FastAPI, HTTPException, Query
 from sqlalchemy import desc, func
 
+from shared.middleware import SecurityHeadersMiddleware
+
 from .db import (
     AlertRow,
     MetricRow,
@@ -52,6 +54,7 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
 )
+app.add_middleware(SecurityHeadersMiddleware)
 
 
 # ---------------------------------------------------------------------------

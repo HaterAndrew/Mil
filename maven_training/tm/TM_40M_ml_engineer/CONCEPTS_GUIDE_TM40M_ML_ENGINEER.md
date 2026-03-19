@@ -1,6 +1,6 @@
 # CONCEPTS GUIDE — TM-40M COMPANION — MACHINE LEARNING ENGINEER · MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** The ML Engineer builds, validates, and maintains production ML models that generate operationally useful predictions. The MLE owns the full model lifecycle — from raw feature engineering through deployed drift detection. That ownership does not end at deployment.
+> **Forward:** The ML Engineer builds, validates, and maintains production ML models that generate operationally useful predictions. The MLE owns the full model lifecycle — from raw feature engineering through deployed drift detection. That ownership does not end at deployment.
 > **Purpose:** Develops the mental models required to build, deploy, and maintain ML models on MSS effectively. Read before beginning TM-40M task instruction.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 

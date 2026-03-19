@@ -149,5 +149,5 @@ S-14. Full credit (10 pts): before changing limits, investigate: (1) is the appl
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *TM-40O Post-Test | Version 1.0 | March 2026*

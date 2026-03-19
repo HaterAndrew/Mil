@@ -127,5 +127,5 @@ All three components must be passed for T3-F Go.
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *EX_T3F MSC Force Multiplier | Version 1.0 | March 2026*

@@ -1,6 +1,6 @@
 # TM-40C — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** The Movement and Maneuver (M&M) warfighting function encompasses all tasks associated with moving and employing forces to achieve a position of advantage over the enemy (ADP 3-0, para 3-3). MSS supports M&M by integrating force tracking, route data, obstacle overlays, reconnaissance products, and operational graphics into a single enterprise platform accessible across the formation.
+> **Forward:** The Movement and Maneuver (M&M) warfighting function encompasses all tasks associated with moving and employing forces to achieve a position of advantage over the enemy (ADP 3-0, para 3-3). MSS supports M&M by integrating force tracking, route data, obstacle overlays, reconnaissance products, and operational graphics into a single enterprise platform accessible across the formation.
 > **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER (required before beginning this manual). No coding, pipeline development, or transform experience is required or assumed.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -14,7 +14,7 @@
 
 **BLUF:** The Movement and Maneuver (M&M) warfighting function encompasses all tasks associated with moving and employing forces to achieve a position of advantage over the enemy (ADP 3-0, para 3-3). MSS supports M&M by integrating force tracking, route data, obstacle overlays, reconnaissance products, and operational graphics into a single enterprise platform accessible across the formation.
 
-### 1-1. The M&M WFF in the MSS Ecosystem
+### 1-1. Movement & Maneuver Specialist Manual
 
 The Movement and Maneuver warfighting function includes the tasks of maneuver, mobility, countermobility, air maneuver, and interoperability with joint and multinational partners (ADP 3-0, para 3-3). On MSS, M&M data is not isolated — it is integrated with fires, intelligence, protection, sustainment, and mission command data layers. This integration is the operational value of MSS for M&M practitioners.
 

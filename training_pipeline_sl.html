@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maven Training Pipeline — Senior Leader Overview</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #f4f5f7;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+  }
+  /* Unit crest — pinned top-left */
+  .unit-crest {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 10;
+  }
+  .unit-crest img {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .unit-crest .crest-text h1 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a2a3a;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+  }
+  .unit-crest .crest-text .subtitle {
+    font-size: 10px;
+    color: #6a7a8a;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* Pipeline row */
+  .pipeline {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  /* Each step — fixed width for uniform spacing */
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 170px;
+  }
+
+  /* Outer ring — rounded squares to distinguish from Hermes circles */
+  .circle-wrap {
+    width: 150px;
+    height: 150px;
+    border-radius: 18px;
+    padding: 6px;
+    position: relative;
+  }
+  .circle-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    border: 3px solid transparent;
+    border-top-color: currentColor;
+    border-right-color: currentColor;
+    opacity: 0.35;
+  }
+  .circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  }
+  .circle .icon { font-size: 34px; margin-bottom: 4px; line-height: 1; }
+  .circle .label { font-size: 14px; font-weight: 600; line-height: 1.25; padding: 0 12px; }
+
+  /* Step colors — progression: light → dark as expertise deepens */
+  /* Main pipeline: steel → teal → navy → forest → deep navy+gold */
+  .t-10 .circle    { background: linear-gradient(135deg, #4682B4, #5A9BD5); }
+  .t-10 .circle-wrap { color: #5A9BD5; }
+  .t-20 .circle    { background: linear-gradient(135deg, #00838f, #00ACC1); }
+  .t-20 .circle-wrap { color: #00ACC1; }
+  .t-30 .circle    { background: linear-gradient(135deg, #1C4478, #255A9B); }
+  .t-30 .circle-wrap { color: #255A9B; }
+  .t-40 .circle    { background: linear-gradient(135deg, #2E7D32, #43A047); }
+  .t-40 .circle-wrap { color: #43A047; }
+  .t-50 .circle    { background: linear-gradient(135deg, #0C2340, #1A3A5C); }
+  .t-50 .circle-wrap { color: #1A3A5C; }
+  /* Parallel tracks — distinct from main pipeline */
+  .t-fbc .circle   { background: linear-gradient(135deg, #BF360C, #E65100); }
+  .t-fbc .circle-wrap { color: #E65100; }
+  .t-sl .circle    { background: linear-gradient(135deg, #6A1B9A, #8E24AA); }
+  .t-sl .circle-wrap { color: #8E24AA; }
+  .t-t3 .circle    { background: linear-gradient(135deg, #B71C1C, #D32F2F); }
+  .t-t3 .circle-wrap { color: #D32F2F; }
+
+  .step-desc {
+    margin-top: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #3a4a5a;
+    text-align: center;
+    max-width: 160px;
+    line-height: 1.4;
+    min-height: 66px;
+  }
+
+  /* Connector arrows — vertically centered on the 150px square */
+  .connector {
+    width: 54px;
+    height: 3px;
+    position: relative;
+    margin: 75px -6px 0;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+  /* Connector between group-box and bare step: add group-box top padding */
+  .group-box + .connector {
+    margin-top: 91px;
+  }
+  .connector::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 12px;
+    height: 3px;
+    background: #b0bec5;
+    border-radius: 2px;
+  }
+  .connector::after {
+    content: '';
+    position: absolute;
+    right: 0; top: -5px;
+    width: 0; height: 0;
+    border-top: 6.5px solid transparent;
+    border-bottom: 6.5px solid transparent;
+    border-left: 12px solid #b0bec5;
+  }
+
+  /* Dashed grouping box */
+  .group-box {
+    border: 2.5px dashed #00838f;
+    border-radius: 16px;
+    padding: 16px 20px 12px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+  }
+  .group-box .group-label {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f4f5f7;
+    padding: 0 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .group-box.core .group-label { color: #00838f; }
+  .group-box.core { border-color: #00838f; }
+  .group-box.specialist .group-label { color: #3D8F4A; }
+  .group-box.specialist { border-color: #3D8F4A; }
+
+  /* Section labels */
+  .section-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    padding: 6px 20px;
+    border-radius: 12px;
+  }
+  .section-label.main { color: #00838f; background: #e0f7fa; }
+  .section-label.parallel { color: #8A6020; background: #fef3e0; }
+  .section-label.instructor { color: #C41A1C; background: #fce4ec; }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    display: flex;
+    gap: 24px;
+    margin-top: 16px;
+    padding: 10px 28px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-value {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1a2a3a;
+    line-height: 1.2;
+  }
+  .stat-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #6a7a8a;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* References blurb */
+  .blurb {
+    max-width: 1200px;
+    text-align: center;
+    margin-top: 10px;
+    padding: 8px 24px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    line-height: 1.6;
+  }
+  .blurb .blurb-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a237e;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .blurb p {
+    font-size: 13px;
+    color: #3a4a5a;
+    margin: 0;
+  }
+
+  /* Reference grid */
+  .ref-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px 20px;
+    text-align: left;
+    font-size: 10px;
+    color: #3a4a5a;
+    line-height: 1.4;
+  }
+  .ref-grid strong {
+    color: #1a2a3a;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* New cadre indicator */
+  .cadre-badge {
+    margin-top: 4px;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #C8971A;
+    background: rgba(200,151,26,0.12);
+    border: 1px solid rgba(200,151,26,0.35);
+    border-radius: 3px;
+    padding: 2px 8px;
+  }
+
+  /* Fan-out for TM-40 tracks */
+  .fan-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #3D8F4A;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="unit-crest">
+  <img src="HERMES_LOGO.jpg" alt="HERMES">
+  <div class="crest-text">
+    <h1>Maven Training Pipeline</h1>
+    <div class="subtitle">MSS Workforce Development &mdash; USAREUR-AF</div>
+  </div>
+</div>
+
+<!-- Main training progression -->
+<div class="row">
+  <div class="section-label main">Core Progression</div>
+  <div class="pipeline">
+    <div class="group-box core">
+      <div class="group-label">Foundation</div>
+      <div class="step t-10">
+        <div class="circle-wrap">
+          <div class="circle">
+            <div class="icon">&#x1F4D6;</div>
+            <div class="label">TM-10</div>
+          </div>
+        </div>
+        <div class="step-desc">Maven User<br>8 hrs &bull; Unit-level</div>
+      <div class="cadre-badge" style="visibility:hidden;">—</div>
+      </div>
+      <div class="connector"></div>
+      <div class="step t-20">
+        <div class="circle-wrap">
+          <div class="circle">
+            <div class="icon">&#x1F6E0;&#xFE0F;</div>
+            <div class="label">TM-20</div>
+          </div>
+        </div>
+        <div class="step-desc">Builder<br>40 hrs &bull; 5 days</div>
+        <div class="cadre-badge">Dedicated Cadre Recommended</div>
+      </div>
+      <div class="connector"></div>
+      <div class="step t-30">
+        <div class="circle-wrap">
+          <div class="circle">
+            <div class="icon">&#x2699;&#xFE0F;</div>
+            <div class="label">TM-30</div>
+          </div>
+        </div>
+        <div class="step-desc">Advanced Builder<br>40 hrs &bull; 5 days</div>
+        <div class="cadre-badge">Dedicated Cadre Recommended</div>
+      </div>
+    </div>
+    <div class="connector"></div>
+    <div class="step t-40" style="padding-top:16px;">
+      <div class="circle-wrap">
+        <div class="circle">
+          <div class="icon">&#x1F3AF;</div>
+          <div class="label">TM-40/50</div>
+        </div>
+      </div>
+      <div class="step-desc">Specialist (WFF/Tech)<br>14 tracks &bull; 40 hrs ea.</div>
+      <div class="cadre-badge" style="visibility:hidden;">—</div>
+    </div>
+  </div>
+</div>
+
+<!-- Parallel tracks -->
+<div class="row">
+  <div class="section-label parallel">Parallel Tracks</div>
+  <div class="pipeline">
+    <div class="step t-fbc">
+      <div class="circle-wrap">
+        <div class="circle">
+          <div class="icon">&#x1F3D7;&#xFE0F;</div>
+          <div class="label">Bootcamp</div>
+        </div>
+      </div>
+      <div class="step-desc">Foundry Bootcamp<br>5 days &bull; Quarterly<br><em style="font-size:11px;color:#8a9aaa;">Prereq: TM-20</em></div>
+      <div class="cadre-badge">Dedicated Cadre Recommended</div>
+    </div>
+    <div class="connector"></div>
+    <div class="step t-sl">
+      <div class="circle-wrap">
+        <div class="circle">
+          <div class="icon">&#x2B50;</div>
+          <div class="label">TM-SL</div>
+        </div>
+      </div>
+      <div class="step-desc">Senior Leader / Executive<br>1 day &bull; O-5 / E-9+<br><em style="font-size:11px;color:#8a9aaa;">No prereq</em></div>
+      <div class="cadre-badge">Dedicated Cadre Recommended</div>
+    </div>
+    <div class="connector"></div>
+    <div class="step t-t3">
+      <div class="circle-wrap">
+        <div class="circle">
+          <div class="icon">&#x1F393;</div>
+          <div class="label">T3</div>
+        </div>
+      </div>
+      <div class="step-desc">Instructor Pipeline<br>T3-F (UDT) &bull; T3-I (Cert)<br><em style="font-size:11px;color:#8a9aaa;">Prereq: TM-20 / TM-30</em></div>
+      <div class="cadre-badge" style="visibility:hidden;">—</div>
+    </div>
+  </div>
+</div>
+
+<!-- Stats -->
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-value">254</div>
+    <div class="stat-label">Published PDFs</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">68</div>
+    <div class="stat-label">FY27 Classes</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">7</div>
+    <div class="stat-label">Locations (MSCs*)</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">~1,004</div>
+    <div class="stat-label">FY27 Seats</div>
+  </div>
+</div>
+
+<!-- References -->
+<div class="blurb">
+  <div class="blurb-title">References</div>
+  <div class="ref-grid">
+    <div><strong>Doctrine</strong><br>AR 350-1 &bull; ADP 7-0 &bull; FM 6-0 &bull; FM 7-0 &bull; ATP 2-01.3 &bull; AR 25-1 &bull; DA PAM 25-1-1</div>
+    <div><strong>NATO</strong><br>NAFv4 &bull; STANAG 5636 &bull; STANAG 5643</div>
+    <div><strong>Strategic Guidance</strong><br>DoD Data Strategy &bull; DoD DAAI Adoption Strategy &bull; Army Data Plan &bull; UDRA v1.1 &bull; DDOF Playbook v2.2 &bull; EUCOM Digital Modernization Strategy</div>
+    <div><strong>Professional Reading</strong><br>Military Review &bull; NCO Journal &bull; Small Wars Journal &bull; Army Green Notebook</div>
+    <div><strong>CALL</strong><br>Center for Army Lessons Learned &mdash; Data &amp; Digital Transformation Collection</div>
+    <div><strong>Platform</strong><br>Palantir Learn (learn.palantir.com) &bull; Ontologize (YouTube)</div>
+  </div>
+</div>
+
+</body>
+</html>

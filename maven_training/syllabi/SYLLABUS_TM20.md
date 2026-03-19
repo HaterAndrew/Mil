@@ -227,5 +227,5 @@ All TM-40 tracks — WFF (TM-40A–F) and Specialist (TM-40G–O) — require **
 
 ---
 
-*USAREUR-AF Operational Data Team — UNCLASSIFIED*
+*USAREUR-AF Operational Data Team*
 *Syllabus TM-20 | Version 2.0 | March 2026*

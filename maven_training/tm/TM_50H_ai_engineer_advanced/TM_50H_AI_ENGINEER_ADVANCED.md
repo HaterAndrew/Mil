@@ -1,6 +1,6 @@
 # TM-50H — ADVANCED AI ENGINEERING
 
-> **BLUF:** TM-50H qualifies senior AI engineers to architect, govern, and lead enterprise AI capability development on the Maven Smart System. The focus is on systems — multi-agent pipelines, advanced retrieval architectures, domain-adapted models, adversarial resilience, and the governance structures that make AI trustworthy at operational scale.
+> **Forward:** TM-50H qualifies senior AI engineers to architect, govern, and lead enterprise AI capability development on the Maven Smart System. The focus is on systems — multi-agent pipelines, advanced retrieval architectures, domain-adapted models, adversarial resilience, and the governance structures that make AI trustworthy at operational scale.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: THIS MANUAL CONTAINS ADVANCED TECHNIQUES INCLUDING ADVERSARIAL AI TESTING,
@@ -19,7 +19,7 @@ and the governance structures that make AI trustworthy at operational scale.
 
 ---
 
-### 1-1. Purpose and Scope
+### 1-1. Advanced AI Engineer Manual
 
 1-1. This manual trains and qualifies personnel to design and lead AI engineering capability
 at the enterprise level on MSS. Personnel completing TM-50H are expected to serve as technical
@@ -54,8 +54,8 @@ training infrastructure perspective. Senior practitioners should be familiar wit
 ### 1-2. The Senior AI Engineer Role in USAREUR-AF
 
 1-5. USAREUR-AF spans a multi-national, multi-echelon operational environment stretching from
-the Baltic to the Black Sea. The MSS platform supports V Corps and its subordinate formations,
-21st Theater Sustainment Command, 7th Army Training Command, USAREUR-AF G2, and coalition
+the Baltic to the Black Sea. The MSS platform supports III Corps, V Corps and their subordinate formations,
+21st Theater Sustainment Command, 7th Army Training Command, 10th AAMDC, 56th MDC-E, SETAF-AF, USAREUR-AF G2, and coalition
 data sharing arrangements under NATO and bilateral agreements. AI capability built on this
 platform serves real operational requirements — not demonstrations.
 
@@ -2595,7 +2595,6 @@ shared state across agents in a workflow, providing persistence and audit trail.
 
 *TM-50H, Advanced AI Engineering, Maven Smart System, USAREUR-AF Operational Data Team.*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026.*
-*UNCLASSIFIED. Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*
 
 *PREREQUISITE: TM-40H, AI Engineer. Cross-references: TM-40M, ML Engineer; TM-50M, ML Engineer Advanced; TM-50K, Knowledge Manager Advanced; TM-50L, Software Engineer Advanced.*
 
