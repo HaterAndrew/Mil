@@ -1,0 +1,10 @@
+.git
+__pycache__
+*.pyc
+*.pyo
+.env
+README.md
+sample_config.json
+fly.toml
+.gitignore
+.dockerignore
