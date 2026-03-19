@@ -1,0 +1,17 @@
+AFTER-ACTION REPORT (AAR) — RECORD 12
+Classification: UNCLASSIFIED // TRAINING USE ONLY
+
+date: 2025-01-14
+unit: DIV CAV
+exercise_name: COMBINED RESOLVE
+category: PROTECTION
+priority: M
+
+OBSERVATION:
+Chemical alarm maintenance was overdue for 3 of 8 units inspected. No tracking system was in place for sensor calibration dates.
+
+RECOMMENDATION:
+Establish a unit-level CBRN equipment maintenance tracker with 30-day calibration reminders.
+
+OPR: DIV CAV S3
+Submitted by: Training NCO

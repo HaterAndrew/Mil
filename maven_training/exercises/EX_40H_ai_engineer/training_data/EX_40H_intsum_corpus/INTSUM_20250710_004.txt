@@ -1,0 +1,8 @@
+INTSUM INTSUM_20250710_004 — IED EVENT
+DTG: 100000Z JUL 2025
+Unit: 1-4 BN
+
+Summary: At 2220 local, a suspected IED was identified by route clearance element in grid 34T606957 along ROUTE AMBER. EOD requested and responded within 18 minutes. Device rendered safe. No personnel casualties. Vehicle sustained minor damage.
+
+Device Description: Pressure-plate initiator, command wire, approx 5kg charge. Collected for exploitation. DNA swabs taken.
+Recommended Action: Restrict movement along ROUTE AMBER until EOD clearance complete. Disseminate grid data to adjacent units.

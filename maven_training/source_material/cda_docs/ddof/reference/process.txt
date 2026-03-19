@@ -1,0 +1,548 @@
+Line #	Activity	Description	Performer	ICOM	
+1	Initial Request, Meeting, Guidance	Customer provide requirements, details, vision, purpose, guidance, and end-goal	Customer	I:	Mission Need/ Requirement/ Problem Statement
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 2: Articulate the project requirements
+				M:	"MS Teams
+Product Requirement"
+2	Articulate the project requirements	Product Owner and C2DAO/ Deputy C2DAO clearly articulate the operational challenge requiring data-driven insight. Provide clear guidance to Operational Data Team.	"Product Owner
+C2DAO/ Deputy C2DAO"	I:	Step 1: Initial Request, Meeting, Guidance
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 3: Facilitate the Problem Framing
+				M:	"MS Teams
+Product Requirement/ Problem Statement"
+3	Facilitate the Problem Framing	DEC OPS Branch Chief and Project Lead facilitates the understanding of the decision context, gather relevant knowledge, and ensure alignment with organizational objectives. Provide guidance, requirements, and vision to Operational Data Team.	"DEC OPS Branch Chief
+Project Lead"	I:	Step 2: Articulate the project requirements
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 4: Perform Problem Frame Tasks
+				M:	"MS Teams
+Product Requirement/ Problem Statement/ Problem Framing Intake"
+4	Perform Problem Frame Tasks	"(Collaborative Meeting/ Discussion)
+Teams conduct preliminary research relating to the problem framing. Dive deep on the problem statement and explore any/all possible solutions.
+
+KM- Assess resources and knowledge related to problem framing. 
+BA/BPR- Assess resources and processes related to problem framing.
+Data Analyst- Preliminary data/information exploration to assess resources/process related to problem framing.
+ORSA/Data Scientist- Develop a preliminary analytical plan outlining the proposed available data and resources. Propose analytical approaches.
+Data Engineer- Preliminary data exploration to assess resources related to problem framing 
+SPO/Web Dev- Assess the feasibility of each approach based on available data and resources. Collaborate with Data  Scientist and Data Engineer relating to the problem framing
+Training & Support Team- TBD
+Data Management Team- TBD
+Cyber Security Team- TBD
+
+"	"KM Specialist
+BA/BPR
+Data Analyst SME
+ORSA/Data Scientist SME
+Data Engineer SME
+SPO/Web Developer
+Training & Support Team
+Data Management Team
+Cyber Security Team"	I:	Step 3: Facilitate the Problem Framing
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 5: Draft Problem Frame Documents
+				M:	"MS Teams
+Product Requirement/ Problem Statement/ Problem Framing Intake/ Success Criteria/ Initial Data Assessment"
+5	Draft Problem Frame Documents and Project Charter	Project Lead leads the team colaboration, gather all product, drafts Problem Frame Docs and Project Charter. Submit to DEC OPS Branch Chief for review and approval	Project Lead	I:	Step 4: Perform Problem Frame Tasks
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 6: Review/Submit Problem Framing Documents
+				M:	"MS Teams
+Project Charter/ Problem Statement/ Analytic Approach Doc./ Success Criteria/ Plemininary Data Assessment"
+6	Review/Submit Problem Framing Documents	DEC OPS Branch Chief reviews and submits Problem Statement, Analytical Approach Document, Preliminary Data Assessment to C2DAO/ Deputy C2DAO	DEC OPS Branch Chief	I:	Step 5: Draft Problem Frame Documents
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 7: Review/Submit Problem Framing Documents
+				M:	"MS Teams
+Project Charter/ Problem Statement/ Analytic Approach Doc./ Success Criteria/ Plemininary Data Assessment"
+7	Review/Submit Problem Framing Documents	C2DAO/ Deputy C2DAO reviews and submits Problem Statement, Analytical Approach Document, Preliminary Data Assessment to Customer and Product Owner for approval	C2DAO/ Deputy C2DAO	I:	Step 6: Review/Submit Problem Framing Documents
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 8: Project Charter Approved?
+				M:	"MS Teams
+Project Charter/ Problem Statement/ Analytic Approach Doc./ Success Criteria/ Plemininary Data Assessment"
+8	Project Charter Approved?	"Decision Point:
+Customer and Product Owner reviews the Project Charter (Problem Statement, Analytical Approach Document, and Preliminary Data Assessment) to ensure project is on track. 
+
+Project Charter Approved?
+If Yes, proceed to Step 9
+If No, proceed to Step 2"	"Customer
+Product Owner"	I:	Step 7: Review/Submit Problem Framing Documents
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	"Yes, Step 9: Perform Toll Gate Review
+No, Step 2: Articulate the project requirements"
+				M:	"MS Teams
+Approved Project Charter/ Problem Statement/ Analytic Approach Doc./ Success Criteria/ Plemininary Data Assessment"
+9	Perform Toll Gate Review	"DEC OPS Branch Chief and Project Lead performs toll gate review using DDOF checklist questions.
+-What specific problem does this project aim to solve, and how was it framed?
+-What assumptions were made, and have they been validated?
+-How were stakeholders involved in defining the scope and expected outcomes of the project?
+-Define success criteria: What constitutes a successful solution?"	"DEC OPS Branch Chief
+Project Lead"	I:	Step 8: Problem Statement/ Documents Approved?
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 10: Log Phase details into DDOF Builder App
+				M:	"MS Teams
+DDOF Checklist"
+10	Log Phase details into DDOF Builder App	Project Lead capture Problem Framing Details and Artifacts in DDOF Builder App 	Project Lead	I:	Step 9: Perform Toll Gate Review
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 11: Does Data Product exist in ADC?
+				M:	"DDOF Builder App
+Approved Project Charter/ Problem Statement/ Analytic Approach Doc./ Success Criteria/ Plemininary Data Assessment"
+11	Does Data Product exist in ADC?  	"Decision Point:
+DEC OPS verifies Army Data Catalog if Data Product exists. Does Data Product exist is ADC?
+
+If Yes, proceed to Step 14
+If No, proceed to Step 12"	DEC OPS Branch Chief	I:	Step 10: Log Phase details into DDOF Builder App
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	"Yes, Step 14: Use existing Data Product from Army Data Catalog as foundation
+No, Step 12: Does Data Product meet requirement for  ADC?"
+				M:	"MS Teams
+DDOF Checklist"
+12	Does Data Product meet requirement for  ADC? 	"Decision Point:
+DEC OPS verifies if Data Product meets requirements for Army Data Catalog. Does Data Product meet requirement for  ADC? 
+
+If Yes, proceed to Step 13
+If No, proceed to Step 15"	DEC OPS Branch Chief	I:	Step 9: Perform Toll Gate Review
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	"Yes, Step 13: Submit Project Chater into Army Data Catalog
+No, Step 15: Initiate Data Provisioning Phase"
+				M:	"DDOF Builder App
+Approved Project Charter/ Problem Statement/ Analytic Approach Doc./ Success Criteria/ Plemininary Data Assessment"
+13	Submit Project Chater into Army Data Catalog	C2DAO/ Deputy C2DAO submits Approved Project Charted for Army Data Catalog.	C2DAO/ Deputy C2DAO	I:	Step 12: Does Data Product meet requirement for  ADC?
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 15: Initiate Data Provisioning Phase
+				M:	"MS Teams
+Approved Project Charter/ Problem Statement/ Analytic Approach Doc./ Success Criteria/ Plemininary Data Assessment"
+14	Use existing Data Product from Army Data Catalog as foundation	Project Lead gathers all information on existing Data Product for use in project.	Project Lead	I:	Step 11: Does Data Product exist in ADC?
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 15: Initiate Data Provisioning Phase
+				M:	"MS Teams
+Approved Project Charter/ Problem Statement/ Analytic Approach Doc./ Success Criteria/ Plemininary Data Assessment"
+15	Initiate Data Provisioning Phase	DEC OPS Branch Chief and Project Lead initiates Data Provisioning Phase	"DEC OPS Branch Chief
+Project Lead"	I:	"Step 12: Does Data Product meet requirement for  ADC?
+Step 13: Submit Project Chater into Army Data Catalog
+Step 14: Use existing Data Product from Army Data Catalog as foundation"
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 12: Facilitate Data Wrangling Phase/ Coordinate with Data Stewards
+				M:	"MS Teams/ Vantage/ SPO
+Approved Project Charter/ Approved Problem Statement/ Analytical Approach Doc./ Success Criteria/ Plemininary Data Assessment"
+16	Facilitate Data Wrangling Phase/ Coordinate with Data Stewards	Project Lead facilitates the capturing of initial or existing data. Coordinate with Data Stewards/ Collaborate with Data Scientist to establish DUAs/ Overall Project Responsibility	Project Lead	I:	Step 15: Initiate Data Provisioning Phase
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	"Step 17a: Perform KM functions
+Step 17b: Perform BA/BPR functions
+Step 17c: Assist Data SMEs
+Step 17d: Connect new data 
+Step 17e: Grant access/ Establish new DUA"
+				M:	"MS Teams/ Vantage/ SPO
+Approved Problem Statement/ Analytical Approach Doc./ Success Criteria/ Plemininary Data Assessment"
+17a	Perform KM functions	"Identify Knowledge Caps- Figure out what knowledge doesn't exist within the organization that should; 
+Elicit Knowledge- Interview SMEs to document their expertise; 
+Content Creation- Turn expertise into usable formats; 
+Create Knowledge Map"	KM Specialist	I:	Step 16: Facilitate Data Wrangling Phase/ Coordinate with Data Stewards
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 18: Validate key data sources
+				M:	"MS Teams/ Vantage/ SPO
+Knowledge Map/ Data & Content Analysis/ SME Interview/ Change Management Plan"
+17b	Perform BA/BPR functions	"Elicit Knowledge- Interview SMEs to document their expertise; Identify key data sources and assist in validating the accuracy / completeness of authoritative data; 
+Identify and Document Current Process;
+Create As-Is Process Map"	BA/BPR Specialist	I:	Step 16: Facilitate Data Wrangling Phase/ Coordinate with Data Stewards
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 18: Validate key data sources
+				M:	"MS Teams/ Vantage/ SPO
+As-Is Process Map/ Data Source Map/ SME Interview/ User Stories"
+17c	Assist Data SMEs	SPO/ Web Developer assist stakeholders and Data SMEs as needed	SPO/Web Developer	I:	Step 16: Facilitate Data Wrangling Phase/ Coordinate with Data Stewards
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 18: Validate key data sources
+				M:	MS Teams/ Vantage/ SPO
+17d	Connect new data	Vantage Support Team- Connect new data to Vantage to facilitate new product	Vantage Support Team	I:	Step 16: Facilitate Data Wrangling Phase/ Coordinate with Data Stewards
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 18: Validate key data sources
+				M:	"Vantage
+DUA/ Data Access Plan"
+17e	Grant access/ Establish new DUA	Data Owner grants access to Project Lead if DUA is already in place. Establish new DUA if necessary.	Data Owner	I:	Step 16: Facilitate Data Wrangling Phase/ Coordinate with Data Stewards
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 18: Validate key data sources
+				M:	"MS Teams/ Vantage/ SPO
+Data Access Plan/ DUA"
+18	Validate key data sources	Data Analyst validates the accuracy / completeness of authoritative data and transform data into insights	Data Analyst SME	I:	"Step 17a: Perform KM functions
+Step 17b: Perform BA/BPR functions
+Step 17c: Assist Data SMEs
+Step 17d: Connect new data 
+Step 17e: Grant access/ Establish new DUA"
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 19:  Build initial ETL pipelines
+				M:	"MS Teams/ Vantage/ SPO
+Data Req. Doc./ Data Source Inventory/ Data Access Plan/ As-Is Process Map/ Data Source Map/ User Stories/ Knowledge Map/ Data & Content Analysis/ SME Interview/ Data Disctrionary/ Data Wireframe/ DUA"
+19	 Build initial ETL pipelines	Identify key data sources/ Build initial ETL pipelines to ingest data from identified sources into the data platform.	Data Engineer SME	I:	Step 18: Validate key data sources
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 20: Perform Data Integration/ Collaborate with Project Lead to establish DUAs
+				M:	"MS Teams/ Vantage/ SPO
+Data Req. Doc./ Data Source Inventory/ Data Access Plan/ Data Dictionary/ Data Wireframe/ DUA/ Data Pipeline"
+20	Perform Data Integration/ Collaborate with Project Lead to establish DUAs	Use data validation insights to determine feasibility for data integration. Evaluate the quality and completeness of data sources on their suitability for robust data modeling. / Collaborate with Project Lead to establish DUAs	ORSA/Data Scientist SME	I:	Step 19:  Build initial ETL pipelines
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 21: All Requirements Met?
+				M:	"MS Teams/ Vantage/ SPO
+Data Req. Doc./ Data Source Inventory/ Data Access Plan/ Data Dictionary/ Data Wireframe/ DUA/ Data Pipeline"
+21	All Requirements Met?	"Decision Point:
+DEC OPS Branch Chief and Project Lead determines if all aspects of Data Provisioning have been satisfied.
+
+If Yes, proceed to Step 22
+If No, proceed to Step 15"	"DEC OPS Branch Chief
+Project Lead"	I:	Step 20: Perform Data Integration/ Collaborate with Project Lead to establish DUAs
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	"Yes, Step 22: Perform Toll Gate Review
+No, Step 15: Initiate Data Provisioning Phase"
+				M:	"MS Teams/ Vantage/ SPO
+Data Req. Doc./ Data Source Inventory/ Data Access Plan/ Data Dictionary/ Data Wireframe/ DUA/ Data Pipeline"
+22	Perform Toll Gate Review	"DEC OPS Branch Chief and Project Lead performs toll gate review using DDOF checklist questions: 
+-What data sources were identified and used for this project?
+-How was data governance and security maintained during the data acquisition process?
+-What challenges were encountered in ensuring data availability and access, and how were they addressed?"	"DEC OPS Branch Chief
+Project Lead"	I:	Step 21: All Requirements Met?
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 23: Log Phase details into DDOF Builder App
+				M:	"MS Teams
+DDOF Checklist"
+23	Log Phase details into DDOF Builder App	Project Lead capture Data Provisioning Details and Artifacts in DDOF Builder App 	Project Lead	I:	Step 22: Perform Toll Gate Review
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 24: Initiate Data Wrangling Phase
+				M:	"DDOF Builder App
+Data Req. Doc./ Data Source Inventory/ Data Access Plan/ As-Is Process Map/ Data Source Map/ User Stories/ Knowledge Map/ Data & Content Analysis/ Change Management Plan/ SME Interview/ Data Disctrionary/ Data Wireframe/ DUA"
+24	Initiate Data Wrangling Phase	DEC OPS Branch Chief and Project Lead initiates Data Wrangling Phase	"DEC OPS Branch Chief
+Project Lead"	I:	Step 23: Log Phase details into DDOF Builder App
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 25: Facilitate Development Phase
+				M:	"MS Teams/ Vantage/ SPO
+Data Req. Doc./ Data Source Inventory/ Data Access Plan/ Data Dictionary/ Data Wireframe/ DUA/ Data Pipeline"
+25	Facilitate Development Phase	Project Lead facilitates and coordinate the Data Wrangling phase	Project Lead	I:	Step 24: Initiate Data Wrangling Phase
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	"Step 26a: Assist and provide guidance
+Step 26b: Integrate Data
+Step 26c: Conduct comprehensive quality-assurance
+Step 26d: Perform Exploratory Data Analysis (EDA)
+Step 26e: Assist Data SMEs"
+				M:	"MS Teams/ Vantage/ SPO
+Data Req. Doc./ Data Source Inventory/ Data Access Plan/ Data Dictionary/ Data Wireframe/ DUA/ Data Pipeline"
+26a	Assist and provide guidance	"Product Owner assists and provide guidance to ensure project is on the right track
+
+"	Project Owner	I:	Step 25: Facilitate Development Phase
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 27: Refine and maintain ETL data pipelines/ Perform advance transformation
+				M:	MS Teams/ Vantage/ SPO
+26b	Provide context and documentation for data integration	"KM Specialist integrates data from different sources and provides context and documentation to help data engineers understand the data and its relevance to the problem. 
+"	KM Specialist	I:	Step 25: Facilitate Development Phase
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 27: Refine and maintain ETL data pipelines/ Perform advance transformation
+				M:	"MS Teams/ Vantage/ SPO
+Data Source Inventory"
+26c	Conduct comprehensive quality-assurance	"Data Analyst conducts comprehensive quality-assurance on available data sources.
+"	Data Analyst SME	I:	Step 25: Facilitate Development Phase
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 27: Refine and maintain ETL data pipelines/ Perform advance transformation
+				M:	"MS Teams/ Vantage/ SPO
+EDA Visuals/ Data Quality Assessment"
+26d	Perform Exploratory Data Analysis (EDA)	"ORSA/Data Scientist performs exploratory data analysis to understand data characteristics, identify anomalies, and assess trends.
+"	ORSA/Data Scientist SME	I:	Step 25: Facilitate Development Phase
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 27: Refine and maintain ETL data pipelines/ Perform advance transformation
+				M:	"MS Teams/ Vantage/ SPO
+EDA Visuals/ Data Quality Assessment"
+26e	Assist Data SMEs	SPO/Web Dev assists Data SMEs as needed	SPO/Web Developer	I:	Step 25: Facilitate Development Phase
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 27: Refine and maintain ETL data pipelines/ Perform advance transformation
+				M:	MS Teams/ Vantage/ SPO
+27	Refine and maintain ETL data pipelines/ Perform advance transformation	Data Engineer refine and maintain ETL data pipelines to automate the data wrangling process. Implement data quality checks and validation rules. Perform advance transformation	Data Engineer SME	I:	"Step 26a: Assist and provide guidance
+Step 26b: Integrate Data
+Step 26c: Conduct comprehensive quality-assurance
+Step 26d: Perform Exploratory Data Analysis (EDA)
+Step 26e: Assist Data SMEs"
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 28: Is the Data Sufficient?
+				M:	"MS Teams/ Vantage/ SPO
+Data Req. Doc./ Data Source Inventory/ Data Access Plan/ Data Pipeline/ Curated Datasets"
+28	Is the Data Sufficient?	"Decision Point
+Data Scientist and Data Engineer run tests to ensure data is sufficient for use.
+Is the Data Sufficient?
+
+If Yes, proceed to Step 29
+If No, proceed to step 17d"	"ORSA/Data Scientist SME
+Data Engineer"	I:	Step 27: Refine and maintain ETL data pipelines/ Perform advance transformation
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	"Yes, Step 29: All Requirements Met?
+No, Step 17d: Connect new data "
+				M:	"MS Teams/ Vantage/ SPO
+Data Req. Doc./ Data Source Inventory/ Data Access Plan/ Data Pipeline/ Curated Datasets"
+29	All Requirements Met?	"Decision Point:
+DEC OPS Branch Chief and Project Lead determines if all aspects of Data Wrangling have been satisfied.
+
+If Yes, proceed to Step 25
+If No, proceed to Step 20"	"DEC OPS Branch Chief
+Project Lead"	I:	Step 28: Is the Data Sufficient?
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	"Yes, Step 30: Perform Toll Gate Review
+No, Step 24: Initiate Data Wrangling Phase"
+				M:	"MS Teams/ Vantage/ SPO
+Data Req. Doc./ Data Source Inventory/ Data Access Plan/ Data Pipeline/ Curated Datasets"
+30	Perform Toll Gate Review	"DEC OPS Branch Chief and Project Lead performs toll gate review using DDOF checklist questions: 
+-What processes were applied to clean, normalize, and transform the data?
+-How were biases or inconsistencies in the data detected and addressed?
+-What methods were used to ensure the processed data improved analytical accuracy?
+-What data quality checks and validation rules were used to ensure data integrity?"	"DEC OPS Branch Chief
+Project Lead"	I:	Step 29: All Requirements Met?
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 31: Log Phase details into DDOF Builder App
+				M:	"MS Teams
+DDOF Checklist"
+31	Log Phase details into DDOF Builder App	Project Lead capture Data Wrangling Details and Artifacts in DDOF Builder App 	Project Lead	I:	Step 30: Perform Toll Gate Review
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 32: Initiate Development Phase
+				M:	"DDOF Builder App
+Data Req. Doc./ Data Source Inventory/ Data Access Plan/ Data Pipeline/ EDA Visuals/ Data Quality Assessments/ Curated Datasets"
+32	Initiate Development Phase	DEC OPS Branch Chief and Project Lead initiates Data Wrangling Phase	"DEC OPS Branch Chief
+Project Lead"	I:	Step 31: Log Phase details into DDOF Builder App
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 33: Facilitate Development Phase
+				M:	"MS Teams/ Vantage/ SPO
+Data Req. Doc./ Data Source Inventory/ Data Access Plan/ Data Pipeline/ Curated Datasets"
+33	Facilitate Development Phase	Project Lead facilitates and coordinate the Development phase	Project Lead	I:	Step 32: Initiate Development Phase
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	"Step 34a: Develop and train predictive models
+Step 34b: Build APIs
+Step 34c: Provide website support"
+				M:	"MS Teams/ Vantage/ SPO
+Data Req. Doc./ Data Source Inventory/ Data Access Plan/ Data Pipeline/ Curated Datasets"
+34a	Develop and train predictive models	ORSA/Data Scientist- Develop and train predictive models using appropriate algorithms. Integrate models into data products.	ORSA/Data Scientist SME	I:	Step 33: Facilitate Development Phase
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 35: Vantage or Power Platform
+				M:	"Vantage/ SPO
+Data Req. Doc./ Data Source Inventory/ Data Access Plan"
+34b	Build APIs	Data Engineer- Build APIs (Application Programming Interface) to enable data product integration with existing Army systems. Implement data quality checks and validation rules.	Data Engineer SME	I:	Step 33: Facilitate Development Phase
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 35: Vantage or Power Platform
+				M:	"Vantage/ SPO
+Data Req. Doc./ Data Source Inventory/ Data Access Plan"
+34c	 Provide website support	Training & Support Team- Provide necessary graphics and website support	Training & Support Team	I:	Step 23: Facilitate Development Phase
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 35: Vantage or Power Platform
+				M:	"SPO
+Infographic"
+35	Vantage or Power Platform	"Decision Point:
+Product build in Vantage or Power Platform?
+
+Vantage, Step 36a
+SPO, Step 36b"	Project Lead	I:	"Step 34a: Develop and train predictive models
+Step 34b: Build APIs
+Step 34c: Provide website support"
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	"Vantage, Step 36a: Develop Data Product
+SPO, Step 36b: Develop Data Product"
+				M:	"Vantage/ SPO
+Data Req. Doc./ Data Source Inventory/ Data Access Plan/ DUA"
+36a	Develop Data Product	If product is built in Vantage, ORSA/Data Scientist/ Data Engineer- Develop and deploy data products on Army-approved data platforms. Implement user interfaces and data visualization tools.	"ORSA/Data Scientist SME
+Data Engineer"	I:	Step 35: Vantage or Power Platform
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 37: All Requirements Met?
+				M:	"Vantage
+Operational Data Product/ Model Documentation/ API Documentation/ Dashboard"
+36b	Develop Data Product	If product is built in SPO, SPO/ Web Development Team- Develop and deploy data products on Army-approved data platforms. Implement user interfaces and data visualization tools.	SPO/Web Developer	I:	Step 35: Vantage or Power Platform
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 37: All Requirements Met?
+				M:	"Vantage
+Operational Data Product/ Model Documentation/ API Documentation/ Dashboard"
+37	All Requirements Met?	"Decision Point:
+DEC OPS Branch Chief and Project Lead determines if all aspects of Development have been satisfied.
+
+If Yes, proceed to Step 38
+If No, proceed to Step 32"	"DEC OPS Branch Chief
+Project Lead"	I:	"Vantage, Step 36a: Develop Data Product
+SPO, Step 36b: Develop Data Product"
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	"Yes, Step 38: Perform Toll Gate Review
+No, Step 32: Initiate Development Phase"
+				M:	"Vantage/ SPO
+Operational Data Product/ Model Documentation/ API Documentation/ Dashboard"
+38	Perform Toll Gate Review	"DEC OPS Branch Chief and Project Lead performs toll gate review using DDOF checklist questions: 
+-What models or analytics approaches were developed and why were they chosen?
+-How was the balance between model complexity and interpretability achieved?
+-What alternative approaches were considered during the development phase?"	"DEC OPS Branch Chief
+Project Lead"	I:	Step 37: All Requirements Met?
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 39: Log Phase details into DDOF Builder App
+				M:	"MS Teams
+DDOF Checklist"
+39	Log Phase details into DDOF Builder App	Project Lead capture Development Details and Artifacts in DDOF Builder App 	Project Lead	I:	Step 38: Perform Toll Gate Review
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 40: Initiate Test and Evaluation Phase
+				M:	"DDOF Builder App
+Operational Data Product/ Model Documentation/ API Documentation/ Dashboard/ Data Req. Doc./ Data Source Inventory/ Data Access Plan"
+40	Initiate Test and Evaluation Phase	DEC OPS Branch Chief and Project Lead initiates Test and Evaluation Phase	"DEC OPS Branch Chief
+Project Lead"	I:	Step 39: Log Phase details into DDOF Builder App
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	"Vantage, Step 41a: Develop/ Execute test plans
+SPO, Step 41b: Develop/ Execute test plans"
+				M:	"MS Teams/ Vantage/ SPO
+Operational Data Product/ Model Documentation/ API Documentation/ Dashboard"
+41a	Develop/ Execute test plans	If product is built in Vantage, Data Scientist/Data Engineer develop and execute test plans to validate data product functionality, accuracy, and performance.	"ORSA/Data Scientist SME
+Data Engineer"	I:	Step 40: Initiate Test and Evaluation Phase
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 42: Assess/ Evaluate Data Product
+				M:	"MS Teams/ Vantage
+Test Plan/ Operational Data Product/ Model Documentation/ API Documentation"
+41b	Develop/ Execute test plans	If product is built in SPO, SPO/Web Developers develop and execute test plans to validate data product functionality, accuracy, and performance.	SPO/Web Developer	I:	Step 40: Initiate Test and Evaluation Phase
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 42: Assess/ Evaluate Data Product
+				M:	"MS Teams/ SPO
+Test Plan/ Operational Data Product/ Model Documentation/ API Documentation"
+42	Assess/ Evaluate Data Product	Assess and evaluate the data products using monitoring solutions, troubleshoot and resolve performance and production issues in the data pipelines.	Data Engineer SME	I:	"Vantage, Step 41a: Develop/ Execute test plans
+SPO, Step 41b: Develop/ Execute test plans"
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 43: Assess Data Product usability and accuracy
+				M:	"MS Teams/ Vantage/ SPO
+Test Plan Results/ Bug Reports/ Operational Data Product/ Model Documentation/ API Documentation"
+43	Assess Data Product usability and accuracy	Assess the usability and accuracy of data products by evaluating against the problem frame. 	ORSA/Data Scientist SME	I:	Step 42: Assess/ Evaluate Data Product
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 44: Assist with data quality checks
+				M:	"MS Teams/ Vantage/ SPO
+Operational Data Product/ Model Documentation/ API Documentation"
+44	Assist with data quality checks	Assist Data Scientist and ORSAs in conducting data quality checks on data product outputs 	Data Analyst SME	I:	Step 43: Assess Data Product usability and accuracy
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 45: Assist with Product Test and Eval
+				M:	"MS Teams/ Vantage/ SPO
+Operational Data Product/ Model Documentation/ API Documentation"
+45	Assist with Product Test and Eval	Capture Development Details and Artifacts in DDOF Builder App/ Assist with Product Test and Eval	Project Lead	I:	Step 44: Assist with data quality checks
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 46: Review and Submit Product for Approval
+				M:	"MS Teams/ Vantage/ SPO
+Operational Data Product/ Model Documentation/ API Documentation"
+46	Review and Submit Product for Approval	Review and Submit Product for Approval	"C2DAO/ Deputy C2DAO
+DEC OPS Branch Chief"	I:	Step 45: Assist with Product Test and Eval
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 47: Is the Product Viable?
+				M:	"MS Teams/ Vantage/ SPO
+Operational Data Product/ Model Documentation/ API Documentation"
+47	Is the Product Viable?	"Decision Point:
+Is the Product Viable?
+
+If Yes, proceed to Step 48
+If No, proceed to Step 32"	C2DAO/ Deputy C2DAO	I:	Step 46: Review and Submit Product for Approval
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	"Yes, Step 48: Product Approved?
+No, Step 32: Initiate Development Phase"
+				M:	"MS Teams/ Vantage/ SPO
+Operational Data Product/ Model Documentation/ API Documentation"
+48	Product Approved?	"Decision Point:
+Product Approved?
+
+If Yes, proceed to Step 44
+If No, proceed to Step 42"	"Customer
+Product Owner"	I:	Step 47: Is the Product Viable?
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	"Yes, Step 49: Perform Toll Gate Review
+No, Step 47: Is the Product Viable?"
+				M:	"MS Teams/ Vantage/ SPO
+Operational Data Product/ Model Documentation/ API Documentation"
+49	Perform Toll Gate Review	"DEC OPS Branch Chief and Project Lead performs toll gate review using DDOF checklist questions: 
+-What test plans were created to validate the data product's functionality and performance?
+-How were defects identified, documented, and resolved during testing?
+-What metrics were used to evaluate the success of the data product?"	"DEC OPS Branch Chief
+Project Lead"	I:	Step 48: Product Approved?
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 50: Log Phase details into DDOF Builder App
+				M:	"MS Teams
+DDOF Checklist"
+50	Log Phase details into DDOF Builder App	Project Lead capture Test and Evaluation Details and Artifacts in DDOF Builder App 	Project Lead	I:	Step 49: Perform Toll Gate Review
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 50: Initiate Operations Phase
+				M:	"DDOF Builder App
+Test Plan Results/ Bug Reports/ Operational Data Product/ Model Documentation/ API Documentation"
+51	Initiate Operations Phase	DEC OPS Branch Chief and Project Lead initiates Operations Phase	"DEC OPS Branch Chief
+Project Lead"	I:	Step 50: Log Phase details into DDOF Builder App
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 52: Utilize Data Product
+				M:	"MS Teams/ Vantage/ SPO
+Operational Data Product"
+52	Utilize Data Product	Utilize the outputted data product(s) for mission-critical decisions and provide actionable feedback on their utility, accuracy, and relevance for operational objectives.	Customer	I:	Step 51: Initiate Operations Phase
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	"Step 53a: Perform KM functions
+Step 53b: Perform BA/BPR functions
+Step 53c: Assess and refine algorithms and models
+Step 53d: Assess and evaluate the data pipelines
+Step 53e: Make product adjustments
+Step 53f: Build/Develop New Training Plan"
+				M:	"MS Teams/ Vantage/ SPO
+Operational Data Product"
+53a	Perform KM functions	KM- Develop Taxonomies & Ontologies/Maintaining Knowledge Repositories/Metadata Management	KM Specialist	I:	Step 52: Utilize Data Product
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 54: Consolidate and submit ALL documents and artifacts
+				M:	"MS Teams/ Vantage/ SPO
+Product Taxonomy/ Change Management Plan/ Knowledge Map"
+53b	Perform BA/BPR functions	BA/BPR- Develop To-Be Process and Activity Description/Develop SOPs/Process Monitoring/Maintain Process Repository	BA/BPR Specialist	I:	Step 52: Utilize Data Product
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 54: Consolidate and submit ALL documents and artifacts
+				M:	"MS Teams/ Vantage/ SPO
+To-Be Process Map/ SOP"
+53c	Assess and refine algorithms and models	Data Scientist- Assess and refine the underlying algorithms and analytical models based on user input and observed performance gaps.	ORSA/Data Scientist SME	I:	Step 52: Utilize Data Product
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 54: Consolidate and submit ALL documents and artifacts
+				M:	"MS Teams/ Vantage/ SPO
+Model Documentation/ API Documentation"
+53d	Assess and evaluate the data pipelines	Data Engineer- Assess and evaluate the data products using monitoring solutions, troubleshoot and resolve performance and production issues in the data pipelines.	Data Engineer SME	I:	Step 52: Utilize Data Product
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 54: Consolidate and submit ALL documents and artifacts
+				M:	"MS Teams/ Vantage/ SPO
+Model Documentation/ API Documentation"
+53e	Make product adjustments	SPO/Web Dev- Make final changes to reflect customer feedback.	SPO/Web Developer	I:	Step 52: Utilize Data Product
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 54: Consolidate and submit ALL documents and artifacts
+				M:	"MS Teams/ Vantage/ SPO
+Product User Guide"
+53f	Build/Develop New Training Plan	Trng & Support- Build/Develop New Training Plan	Training & Support Team	I:	Step 52: Utilize Data Product
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 54: Consolidate and submit ALL documents and artifacts
+				M:	"MS Teams/ Vantage/ SPO
+Training Plan"
+54	Consolidate and submit ALL documents and artifacts	Project Lead consolidate and submit ALL documents and artifacts to C2DAO/ Deputy C2DAO and DEC OPS Branch Chief	Project Lead	I:	"Step 53a: Perform KM functions
+Step 53b: Perform BA/BPR functions
+Step 53c: Assess and refine algorithms and models
+Step 53d: Assess and evaluate the data pipelines
+Step 53e: Make product adjustments
+Step 53f: Build/Develop New Training Plan"
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 55: Review Data Product and Artifacts/ Prepare handoff documents 
+				M:	"MS Teams/ Vantage/ SPO
+Model Documentation/ API Documentation/ Product Taxonomy/ Change Management Plan/ Knowledge Map/ Process Map/ SOP/ User Guide/ Training Plan"
+55	Review Data Product and Artifacts/ Prepare handoff documents 	C2DAO/ Deputy C2DAO and CKO reviews Data Product and Artifacts/ Prepare handoff documents and send to product owner  	Customer	I:	Step 54: Consolidate and submit ALL documents and artifacts
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 56: Accepts and Maintain Product
+				M:	"MS Teams/ Vantage/ SPO
+Model Documentation/ API Documentation/ Product Taxonomy/ Change Management Plan/ Knowledge Map/ Process Map/ SOP/ User Guide/ Training Plan"
+56	Accepts and Maintain Product	Product Owner Accepts and Maintain Product	Customer	I:	Step 55: Review Data Product and Artifacts/ Prepare handoff documents 
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 57: Perform Toll Gate Review
+				M:	"MS Teams/ Vantage/ SPO
+Model Documentation/ API Documentation/ Product Taxonomy/ Change Management Plan/ Knowledge Map/ Process Map/ SOP/ User Guide/ Training Plan"
+57	Perform Toll Gate Review	"DEC OPS Branch Chief and Project Lead performs toll gate review using DDOF checklist questions: 
+-How were the data products operationalized for decision-making within the organization?
+-Is the project registered in the Data Catalog for future reuse?
+-How was user feedback collected and used to improve the data products?"	"DEC OPS Branch Chief
+Project Lead"	I:	Step 56: Accepts and Maintain Product
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 58: Log Phase details into DDOF Builder App
+				M:	"MS Teams
+DDOF Checklist"
+58	Log Phase details into DDOF Builder App	Project Lead capture Operations Details and Artifacts in DDOF Builder App 	Project Lead	I:	Step 57: Perform Toll Gate Review
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	Step 59: Data Product approved for ADC?
+				M:	"DDOF Builder App
+Model Documentation/ API Documentation/ Product Taxonomy/ Change Management Plan/ Knowledge Map/ Process Map/ SOP/ User Guide/ Training Plan"
+59	Data Product approved for ADC?	"Decision Point:
+C2DAO/ Deputy C2DAO has approval to submit Data Product into Army Data Catalog?
+
+Yes, Step 60
+No, End Process"	C2DAO/ Deputy C2DAO	I:	Step 58: Log Phase details into DDOF Builder App
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	"Yes, Step 60: Submit Data Product for Army Data Catalog
+No, End Process"
+				M:	"DDOF Builder App
+Model Documentation/ API Documentation/ Product Taxonomy/ Change Management Plan/ Knowledge Map/ Process Map/ SOP/ User Guide/ Training Plan"
+60	Submit Data Product for Army Data Catalog	Product Lead submits Data Product for Army Data Catalog	Customer	I:	Step 59: Data Product approved for ADC?
+				C:	DDOF Playbook, DDOF ODT SOP (TBP)
+				O:	End Process
+				M:	"MS Teams/ Vantage/ SPO
+Model Documentation/ API Documentation/ Product Taxonomy/ Change Management Plan/ Knowledge Map/ Process Map/ SOP/ User Guide/ Training Plan"

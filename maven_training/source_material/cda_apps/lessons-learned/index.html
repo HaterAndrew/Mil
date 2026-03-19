@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ODT Lessons Learned #001 — AVT25 Assessment Tools: How five tools in the same enclave multiplied work exponentially by failing to share doctrinal primitives.">
+  <meta name="author" content="Operational Data Team, USAREUR-AF">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0a0f1a">
+  <title>LL-001: AVT25 Assessment Tools — ODT Lessons Learned</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='72'>📋</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --nato-950: #0a0f1a;
+      --nato-900: #0d1424;
+      --nato-800: #111b2e;
+      --nato-700: #162340;
+      --nato-600: #1e3a5f;
+      --nato-500: #2d4a6f;
+      --nato-400: #3d5a8f;
+      --nato-text: #e8edf5;
+      --nato-muted: #a8b4c4;
+      --nato-dim: #7889a0;
+      --nato-accent: #38bdf8;
+      --nato-gold: #c9a227;
+      --nato-success: #34d399;
+      --nato-error: #f87171;
+      --nato-warning: #fbbf24;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *:focus-visible {
+      outline: 2px solid var(--nato-gold);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+    html { scroll-behavior: smooth; }
+
+    .skip-nav {
+      position: fixed; top: -100px; left: 50%; transform: translateX(-50%);
+      background: var(--nato-gold); color: var(--nato-950); font-weight: 700;
+      padding: 0.5rem 1.5rem; border-radius: 0 0 6px 6px; z-index: 9999;
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem;
+      text-decoration: none; transition: top 0.2s;
+    }
+    .skip-nav:focus { top: 0; }
+
+    body {
+      font-family: 'IBM Plex Sans', system-ui, sans-serif;
+      background: var(--nato-950);
+      color: var(--nato-text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .mono { font-family: 'IBM Plex Mono', monospace; }
+
+    /* Classification Banner — DoDM 5200.01 */
+    .classification-banner {
+      background: #8B6914;
+      color: #fff;
+      text-align: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      padding: 3px 0;
+      text-transform: uppercase;
+      width: 100%;
+      z-index: 1001;
+    }
+    .classification-banner.top { position: fixed; top: 0; }
+    .classification-banner.bottom { margin-top: 0; }
+
+    /* Page Structure */
+    .page-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 80px 2rem 4rem;
+    }
+
+    /* Series Header */
+    .series-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--nato-gold);
+      background: rgba(201,162,39,0.1);
+      border: 1px solid rgba(201,162,39,0.3);
+      padding: 0.35rem 0.85rem;
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+    }
+    .series-badge .dot {
+      width: 6px; height: 6px;
+      background: var(--nato-gold);
+      border-radius: 50%;
+    }
+
+    /* Hero */
+    .ll-hero {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--nato-700);
+    }
+    .ll-hero h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, var(--nato-error) 0%, var(--nato-warning) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .ll-hero .subtitle {
+      font-size: 1.1rem;
+      color: var(--nato-muted);
+      max-width: 700px;
+    }
+
+    /* Meta strip */
+    .meta-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1.25rem;
+      padding: 0.75rem 1rem;
+      background: var(--nato-900);
+      border: 1px solid var(--nato-700);
+      border-radius: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+    }
+    .meta-item { display: flex; align-items: center; gap: 0.4rem; }
+    .meta-label { color: var(--nato-dim); text-transform: uppercase; letter-spacing: 0.05em; }
+    .meta-value { color: var(--nato-text); font-weight: 500; }
+    .meta-value.severity-critical { color: var(--nato-error); }
+
+    /* BLUF */
+    .bluf {
+      background: rgba(248,113,113,0.06);
+      border: 1px solid rgba(248,113,113,0.2);
+      border-left: 4px solid var(--nato-error);
+      border-radius: 6px;
+      padding: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .bluf-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--nato-error);
+      margin-bottom: 0.75rem;
+    }
+    .bluf-text {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--nato-text);
+    }
+    .bluf-text strong { color: #fff; }
+
+    /* Section Structure */
+    section {
+      margin-bottom: 3rem;
+    }
+    section h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--nato-text);
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    section h2 .section-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--nato-gold);
+      background: rgba(201,162,39,0.12);
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+      letter-spacing: 0.05em;
+    }
+    .section-rule {
+      width: 60px;
+      height: 2px;
+      background: var(--nato-700);
+      margin: 0.5rem 0 1.25rem;
+      border: none;
+    }
+
+    section h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--nato-accent);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    p { margin-bottom: 1rem; color: var(--nato-muted); }
+    p strong { color: var(--nato-text); }
+
+    /* The Problem Box */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin: 1.25rem 0;
+    }
+    @media (max-width: 700px) { .problem-grid { grid-template-columns: 1fr; } }
+
+    .tool-card {
+      background: var(--nato-900);
+      border: 1px solid var(--nato-700);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+    }
+    .tool-card .tool-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--nato-dim);
+      margin-bottom: 0.25rem;
+    }
+    .tool-card .tool-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--nato-text);
+    }
+
+    .primitives-box {
+      background: var(--nato-800);
+      border: 1px dashed var(--nato-error);
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    .primitives-box .label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--nato-dim);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .primitives-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+    .primitive-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.3rem 0.75rem;
+      border-radius: 4px;
+      background: rgba(248,113,113,0.1);
+      border: 1px solid rgba(248,113,113,0.3);
+      color: var(--nato-error);
+    }
+    .primitives-math {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--nato-error);
+      margin-top: 0.5rem;
+    }
+
+    /* Comparison Panels */
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin: 1.25rem 0;
+    }
+    @media (max-width: 700px) { .comparison { grid-template-columns: 1fr; } }
+
+    .compare-panel {
+      border-radius: 8px;
+      padding: 1.5rem;
+      border: 1px solid;
+    }
+    .compare-panel.before {
+      background: rgba(248,113,113,0.04);
+      border-color: rgba(248,113,113,0.2);
+    }
+    .compare-panel.after {
+      background: rgba(52,211,153,0.04);
+      border-color: rgba(52,211,153,0.2);
+    }
+    .compare-panel .panel-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .compare-panel.before .panel-label { color: var(--nato-error); }
+    .compare-panel.after .panel-label { color: var(--nato-success); }
+
+    /* Workflow Steps */
+    .workflow-steps {
+      list-style: none;
+      margin: 0.75rem 0;
+    }
+    .workflow-steps li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      padding: 0.35rem 0;
+      font-size: 0.9rem;
+      color: var(--nato-muted);
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+    .workflow-steps li:last-child { border-bottom: none; }
+    .workflow-steps .step-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--nato-dim);
+      min-width: 1.2rem;
+    }
+    .workflow-steps .step-time {
+      margin-left: auto;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--nato-dim);
+      white-space: nowrap;
+    }
+    .workflow-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 2px solid var(--nato-700);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .compare-panel.before .workflow-total { color: var(--nato-error); }
+    .compare-panel.after .workflow-total { color: var(--nato-success); }
+
+    .savings-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.4rem 0.9rem;
+      border-radius: 4px;
+      background: rgba(52,211,153,0.12);
+      color: var(--nato-success);
+      border: 1px solid rgba(52,211,153,0.3);
+      margin: 0.75rem 0;
+    }
+
+    /* Quality callout */
+    .quality-note {
+      font-size: 0.85rem;
+      color: var(--nato-dim);
+      margin-top: 0.5rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--nato-700);
+    }
+    .quality-note.bad { border-left-color: var(--nato-error); }
+    .quality-note.good { border-left-color: var(--nato-success); }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    thead th {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--nato-dim);
+      text-align: left;
+      padding: 0.6rem 1rem;
+      border-bottom: 2px solid var(--nato-700);
+      background: var(--nato-900);
+    }
+    tbody td {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: var(--nato-muted);
+    }
+    tbody td:first-child { color: var(--nato-text); font-weight: 500; }
+    tbody td.val-before {
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--nato-error);
+      font-weight: 500;
+    }
+    tbody td.val-after {
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--nato-success);
+      font-weight: 500;
+    }
+    tbody td.val-savings {
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--nato-gold);
+      font-weight: 700;
+    }
+    tbody tr:hover { background: rgba(255,255,255,0.02); }
+
+    /* Code blocks */
+    .code-block {
+      background: var(--nato-900);
+      border: 1px solid var(--nato-700);
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+      overflow-x: auto;
+    }
+    .code-block .code-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .code-block.bad .code-label { color: var(--nato-error); }
+    .code-block.good .code-label { color: var(--nato-success); }
+    .code-block pre {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: var(--nato-muted);
+      white-space: pre;
+    }
+    .code-block pre .keyword { color: var(--nato-accent); }
+    .code-block pre .string { color: var(--nato-success); }
+    .code-block pre .comment { color: var(--nato-dim); font-style: italic; }
+    .code-block pre .highlight { color: var(--nato-gold); font-weight: 600; }
+    .code-block .code-result {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--nato-700);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+    }
+    .code-block.bad .code-result { color: var(--nato-error); }
+    .code-block.good .code-result { color: var(--nato-success); }
+
+    /* Scaling visualization */
+    .scaling-viz {
+      display: flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 120px;
+      margin: 1.25rem 0;
+      padding: 0 0.5rem;
+    }
+    .scaling-bar {
+      flex: 1;
+      border-radius: 3px 3px 0 0;
+      position: relative;
+      min-width: 30px;
+      transition: height 0.3s;
+    }
+    .scaling-bar .bar-label {
+      position: absolute;
+      bottom: -1.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--nato-dim);
+      white-space: nowrap;
+    }
+    .scaling-bar .bar-value {
+      position: absolute;
+      top: -1.4rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* Quote Blocks */
+    .quote-block {
+      background: var(--nato-900);
+      border-left: 4px solid var(--nato-gold);
+      border-radius: 0 6px 6px 0;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .quote-text {
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--nato-text);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+    .quote-attr {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--nato-gold);
+      font-style: normal;
+    }
+    .quote-translation {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--nato-700);
+      font-size: 0.9rem;
+      color: var(--nato-muted);
+    }
+    .quote-translation strong { color: var(--nato-text); }
+
+    /* Phase Roadmap */
+    .phase-track {
+      display: flex;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    @media (max-width: 700px) { .phase-track { flex-direction: column; } }
+    .phase-card {
+      flex: 1;
+      background: var(--nato-900);
+      border: 1px solid var(--nato-700);
+      border-radius: 8px;
+      padding: 1.25rem;
+      position: relative;
+    }
+    .phase-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      border-radius: 8px 8px 0 0;
+    }
+    .phase-card:nth-child(1)::before { background: var(--nato-accent); }
+    .phase-card:nth-child(2)::before { background: var(--nato-gold); }
+    .phase-card:nth-child(3)::before { background: var(--nato-success); }
+    .phase-card .phase-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .phase-card:nth-child(1) .phase-num { color: var(--nato-accent); }
+    .phase-card:nth-child(2) .phase-num { color: var(--nato-gold); }
+    .phase-card:nth-child(3) .phase-num { color: var(--nato-success); }
+    .phase-card .phase-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--nato-text);
+      margin-bottom: 0.5rem;
+    }
+    .phase-card .phase-timeline {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--nato-dim);
+      margin-bottom: 0.75rem;
+    }
+    .phase-items {
+      list-style: none;
+    }
+    .phase-items li {
+      font-size: 0.85rem;
+      color: var(--nato-muted);
+      padding: 0.2rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .phase-items li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--nato-dim);
+    }
+
+    /* Bottom Line */
+    .bottom-line {
+      background: var(--nato-900);
+      border: 2px solid var(--nato-gold);
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 3rem 0 2rem;
+      text-align: center;
+    }
+    .bottom-line .bl-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--nato-gold);
+      margin-bottom: 1rem;
+    }
+    .bottom-line p {
+      font-size: 1.05rem;
+      color: var(--nato-text);
+      max-width: 700px;
+      margin: 0.5rem auto;
+    }
+    .bottom-line p strong { color: #fff; }
+    .bottom-line .doctrine {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--nato-gold);
+      margin-top: 1.5rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--nato-700);
+      padding: 2rem 0;
+      margin-top: 2rem;
+    }
+    .distribution-block {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--nato-dim);
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 600px) { .distribution-block { grid-template-columns: 1fr; } }
+    .distribution-block dt {
+      color: var(--nato-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.65rem;
+      margin-bottom: 0.15rem;
+    }
+    .distribution-block dd { margin-bottom: 0.75rem; }
+
+    /* Print */
+    @media print {
+      body { background: #fff; color: #111; }
+      .classification-banner { position: static; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page-wrapper { padding: 1rem; max-width: none; }
+      .compare-panel, .tool-card, .phase-card, .code-block, .bluf, .quote-block, .bottom-line {
+        break-inside: avoid;
+        border-color: #ccc;
+      }
+      .compare-panel.before { background: #fff5f5; }
+      .compare-panel.after { background: #f0fdf4; }
+      @page { size: letter; margin: 1in 0.75in; }
+      @page:first { margin-top: 0.5in; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Portal Navigation -->
+<div style="background:#080d18;border-bottom:1px solid #38bdf822;padding:6px 24px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+  <a href="../../index.html" style="color:#38bdf8;text-decoration:none;display:flex;align-items:center;gap:6px">← CDA Portal</a>
+  <span style="color:#ffffff22">│</span>
+  <a href="../course-portal/" style="color:#ffffff66;text-decoration:none">Course Portal</a>
+  <a href="../plan-for-success/" style="color:#ffffff66;text-decoration:none">Plan for Success</a>
+  <span style="color:#c9a227;font-weight:600">Lessons Learned</span>
+  <a href="../enterprise-data-compass/" style="color:#ffffff66;text-decoration:none">Data Compass</a>
+</div>
+
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+
+<!-- Classification Banner — DoDM 5200.01 -->
+<div class="classification-banner top" role="banner" aria-label="Classification marking">CUI // FOUO</div>
+
+<main id="main-content" class="page-wrapper" role="main">
+
+  <!-- Series Badge -->
+  <div class="series-badge">
+    <span class="dot"></span>
+    ODT Lessons Learned Series &mdash; LL-001
+  </div>
+
+  <!-- Hero -->
+  <div class="ll-hero">
+    <h1>AVT25 Assessment Tools:<br>Exponential Work Multiplication</h1>
+    <p class="subtitle">Five tools in the same enclave, all implementing the same doctrinal concepts independently. Zero shared primitives. Work multiplying exponentially with every tool added.</p>
+
+    <div class="meta-strip">
+      <div class="meta-item">
+        <span class="meta-label">Series:</span>
+        <span class="meta-value">LL-001</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Exercise:</span>
+        <span class="meta-value">AVT25</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Severity:</span>
+        <span class="meta-value severity-critical">Critical</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Category:</span>
+        <span class="meta-value">Architecture &mdash; Shared Primitives</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Doctrine Ref:</span>
+        <span class="meta-value">ADP 5-0 (The Operations Process)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLUF -->
+  <div class="bluf" role="region" aria-label="Bottom line up front">
+    <div class="bluf-label">Bottom Line Up Front</div>
+    <p class="bluf-text">
+      Five assessment tools in the <strong>same enclave</strong> each independently implemented the same three doctrinal primitives
+      (Assessment, Finding, Recommendation), resulting in <strong>15 separate implementations</strong> of the same concepts.
+      Analysts spend <strong>3 hours per assessment</strong> re-entering the same data across tools. Bug fixes take <strong>30 hours</strong>
+      instead of 6. Cross-tool queries are impossible without manual Excel aggregation.
+      <strong>This is not a cross-domain problem. This is a failure to build shared primitives from doctrine.</strong>
+    </p>
+  </div>
+
+  <!-- Section 1: The Problem -->
+  <section>
+    <h2><span class="section-num">01</span> The Problem in Numbers</h2>
+    <hr class="section-rule">
+
+    <p><strong>5 tools in the SAME ENCLAVE</strong>, all performing assessment per ADP 5-0:</p>
+
+    <div class="problem-grid">
+      <div class="tool-card">
+        <div class="tool-num">01</div>
+        <div class="tool-name">Strategic Assessments App</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-num">02</div>
+        <div class="tool-name">IMO/LOO Tool</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-num">03</div>
+        <div class="tool-name">Product Tracker</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-num">04</div>
+        <div class="tool-name">Problem Intake Form</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-num">05</div>
+        <div class="tool-name">Lessons Learned System</div>
+      </div>
+    </div>
+
+    <p>Each tool independently implemented the same three doctrinal primitives:</p>
+
+    <div class="primitives-box">
+      <div class="label">Each tool built its own version of</div>
+      <div class="primitives-row">
+        <span class="primitive-tag">Assessment</span>
+        <span class="primitive-tag">Finding</span>
+        <span class="primitive-tag">Recommendation</span>
+      </div>
+      <div class="primitives-math">5 tools &times; 3 primitives = 15 separate implementations</div>
+    </div>
+  </section>
+
+  <!-- Section 2: Analyst Time Cost -->
+  <section>
+    <h2><span class="section-num">02</span> Time Cost Per Assessment</h2>
+    <hr class="section-rule">
+
+    <div class="comparison">
+      <div class="compare-panel before">
+        <div class="panel-label">Before DBO &mdash; AVT25 Pattern</div>
+        <ol class="workflow-steps">
+          <li><span class="step-num">1.</span> Conduct assessment <span class="step-time">60 min</span></li>
+          <li><span class="step-num">2.</span> Enter in Strategic Assessments App <span class="step-time">30 min</span></li>
+          <li><span class="step-num">3.</span> Re-enter in IMO/LOO Tool <span class="step-time">30 min</span></li>
+          <li><span class="step-num">4.</span> Re-enter in Product Tracker <span class="step-time">20 min</span></li>
+          <li><span class="step-num">5.</span> Re-enter in Problem Intake Form <span class="step-time">20 min</span></li>
+          <li><span class="step-num">6.</span> Re-enter in Lessons Learned <span class="step-time">20 min</span></li>
+        </ol>
+        <div class="workflow-total">
+          <span>Total</span>
+          <span>180 min (3 hrs)</span>
+        </div>
+        <div class="quality-note bad">Data quality degrades with each re-entry: typos introduced, different phrasing causes confusion, fields omitted due to fatigue, inconsistent severity assessments.</div>
+      </div>
+
+      <div class="compare-panel after">
+        <div class="panel-label">After DBO &mdash; Target</div>
+        <ol class="workflow-steps">
+          <li><span class="step-num">1.</span> Conduct assessment <span class="step-time">60 min</span></li>
+          <li><span class="step-num">2.</span> Enter once using DBO primitives <span class="step-time">5 min</span></li>
+        </ol>
+        <div class="workflow-total">
+          <span>Total</span>
+          <span>65 min</span>
+        </div>
+        <div class="savings-badge">&#9660; 64% reduction &mdash; 115 min saved per assessment</div>
+        <div class="quality-note good">Single entry, zero transcription errors. Consistent across all tools. All fields captured once.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Scaling -->
+  <section>
+    <h2><span class="section-num">03</span> The Scaling Problem</h2>
+    <hr class="section-rule">
+
+    <h3>What happens when we add a 6th tool?</h3>
+
+    <div class="comparison">
+      <div class="compare-panel before">
+        <div class="panel-label">Before DBO &mdash; Exponential O(n&sup2;)</div>
+        <ul class="workflow-steps">
+          <li><span class="step-num">&bull;</span> New tool implements Assessment, Finding, Recommendation</li>
+          <li><span class="step-num">&bull;</span> Now 6 &times; 3 = <strong style="color:var(--nato-error)">18 implementations</strong></li>
+          <li><span class="step-num">&bull;</span> Analyst workflow: 6 tools &times; 30 min = <strong style="color:var(--nato-error)">210 min (3.5 hrs)</strong></li>
+          <li><span class="step-num">&bull;</span> Maintenance burden: 6&times; (fix bugs 6 times)</li>
+        </ul>
+        <div class="quality-note bad">Each new tool adds burden to ALL existing tools. Each new primitive must be replicated n times. Cross-tool queries become UNION across n tables.</div>
+      </div>
+
+      <div class="compare-panel after">
+        <div class="panel-label">After DBO &mdash; Linear O(n)</div>
+        <ul class="workflow-steps">
+          <li><span class="step-num">&bull;</span> New tool consumes existing Assessment primitives</li>
+          <li><span class="step-num">&bull;</span> Still <strong style="color:var(--nato-success)">3 implementations</strong> (shared backend)</li>
+          <li><span class="step-num">&bull;</span> Analyst workflow: still <strong style="color:var(--nato-success)">65 min</strong></li>
+          <li><span class="step-num">&bull;</span> Maintenance burden: 1&times; (fix once)</li>
+        </ul>
+        <div class="quality-note good">New tools are additive, not multiplicative. Primitives remain constant. Cross-tool queries are one SELECT.</div>
+      </div>
+    </div>
+
+    <h3>Scaling Projections</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Before (n=5)</th>
+          <th>Before (n=10)</th>
+          <th>After DBO</th>
+          <th>Savings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Primitive implementations</td>
+          <td class="val-before">15</td>
+          <td class="val-before">30</td>
+          <td class="val-after">3</td>
+          <td class="val-savings">80&ndash;90%</td>
+        </tr>
+        <tr>
+          <td>Time per assessment</td>
+          <td class="val-before">180 min</td>
+          <td class="val-before">330 min</td>
+          <td class="val-after">65 min</td>
+          <td class="val-savings">64&ndash;80%</td>
+        </tr>
+        <tr>
+          <td>Time per bug fix</td>
+          <td class="val-before">30 hrs</td>
+          <td class="val-before">60 hrs</td>
+          <td class="val-after">6 hrs</td>
+          <td class="val-savings">80&ndash;90%</td>
+        </tr>
+        <tr>
+          <td>Time per feature addition</td>
+          <td class="val-before">52 hrs</td>
+          <td class="val-before">102 hrs</td>
+          <td class="val-after">11 hrs</td>
+          <td class="val-savings">79&ndash;89%</td>
+        </tr>
+        <tr>
+          <td>Cross-tool query</td>
+          <td class="val-before">2&ndash;4 hrs manual</td>
+          <td class="val-before">4&ndash;8 hrs manual</td>
+          <td class="val-after">30 sec</td>
+          <td class="val-savings">&gt;99%</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>Pattern:</strong> Savings increase as n increases. The DBO approach gets <em>better</em> with scale while the AVT25 pattern gets exponentially worse.</p>
+  </section>
+
+  <!-- Section 4: Query Capability -->
+  <section>
+    <h2><span class="section-num">04</span> Query Capability</h2>
+    <hr class="section-rule">
+
+    <p><strong>Task:</strong> "Show me all critical findings from the last 30 days."</p>
+
+    <div class="code-block bad">
+      <div class="code-label">Before DBO (AVT25)</div>
+<pre><span class="comment">-- IMPOSSIBLE without manual aggregation</span>
+<span class="comment">-- 1. Query Strategic Assessments App database</span>
+<span class="comment">-- 2. Export to Excel</span>
+<span class="comment">-- 3. Query IMO/LOO Tool database</span>
+<span class="comment">-- 4. Export to Excel</span>
+<span class="comment">-- 5. Query Product Tracker database</span>
+<span class="comment">-- 6. Export to Excel</span>
+<span class="comment">-- 7. Query Problem Intake database</span>
+<span class="comment">-- 8. Export to Excel</span>
+<span class="comment">-- 9. Query Lessons Learned database</span>
+<span class="comment">-- 10. Export to Excel</span>
+<span class="comment">-- 11. Manually combine 5 Excel files</span>
+<span class="comment">-- 12. Deduplicate (same finding entered 5 times)</span>
+<span class="comment">-- 13. Format for leadership brief</span></pre>
+      <div class="code-result">Time: 2&ndash;4 hours of manual work. Result: Inconsistent, error-prone.</div>
+    </div>
+
+    <div class="code-block good">
+      <div class="code-label">After DBO</div>
+<pre><span class="keyword">SELECT</span>
+    a.title,
+    af.finding_text,
+    af.severity,
+    tac.tool_id <span class="keyword">AS</span> source_tool,
+    a.assessed_by,
+    a.assessment_date
+<span class="keyword">FROM</span> assessments a
+<span class="keyword">JOIN</span> assessment_findings af
+    <span class="keyword">ON</span> a.assessment_id = af.assessment_id
+<span class="keyword">LEFT JOIN</span> tool_assessment_contexts tac
+    <span class="keyword">ON</span> a.assessment_id = tac.assessment_id
+<span class="keyword">WHERE</span> af.severity = <span class="string">'critical'</span>
+    <span class="keyword">AND</span> a.assessment_date >= <span class="highlight">CURRENT_DATE - INTERVAL '30 days'</span>
+<span class="keyword">ORDER BY</span> a.assessment_date <span class="keyword">DESC</span>;</pre>
+      <div class="code-result">Time: 30 seconds. Result: Comprehensive, accurate, real-time.</div>
+    </div>
+  </section>
+
+  <!-- Section 5: Maintenance Cost -->
+  <section>
+    <h2><span class="section-num">05</span> Maintenance Cost</h2>
+    <hr class="section-rule">
+
+    <h3>Bug Fix: "Assessment date validation is wrong"</h3>
+    <div class="comparison">
+      <div class="compare-panel before">
+        <div class="panel-label">Before DBO</div>
+        <ol class="workflow-steps">
+          <li><span class="step-num">1.</span> Fix in Strategic Assessments App <span class="step-time">6 hrs</span></li>
+          <li><span class="step-num">2.</span> Fix in IMO/LOO Tool <span class="step-time">6 hrs</span></li>
+          <li><span class="step-num">3.</span> Fix in Product Tracker <span class="step-time">6 hrs</span></li>
+          <li><span class="step-num">4.</span> Fix in Problem Intake <span class="step-time">6 hrs</span></li>
+          <li><span class="step-num">5.</span> Fix in Lessons Learned <span class="step-time">6 hrs</span></li>
+        </ol>
+        <div class="workflow-total">
+          <span>Total</span>
+          <span>30 hours</span>
+        </div>
+      </div>
+      <div class="compare-panel after">
+        <div class="panel-label">After DBO</div>
+        <ol class="workflow-steps">
+          <li><span class="step-num">1.</span> Fix in Assessment primitive <span class="step-time">6 hrs</span></li>
+          <li><span class="step-num">&nbsp;</span> All 5 tools inherit the fix automatically</li>
+        </ol>
+        <div class="workflow-total">
+          <span>Total</span>
+          <span>6 hours</span>
+        </div>
+        <div class="savings-badge">&#9660; 80% reduction &mdash; 24 hours saved</div>
+      </div>
+    </div>
+
+    <h3>Feature Addition: "Add confidence level to assessments"</h3>
+    <div class="comparison">
+      <div class="compare-panel before">
+        <div class="panel-label">Before DBO</div>
+        <ol class="workflow-steps">
+          <li><span class="step-num">1.</span> Update 5 schemas + UIs <span class="step-time">40 hrs</span></li>
+          <li><span class="step-num">2.</span> Migrate data in 5 databases <span class="step-time">12 hrs</span></li>
+        </ol>
+        <div class="workflow-total">
+          <span>Total</span>
+          <span>52 hours</span>
+        </div>
+      </div>
+      <div class="compare-panel after">
+        <div class="panel-label">After DBO</div>
+        <ol class="workflow-steps">
+          <li><span class="step-num">1.</span> Add to Assessment primitive + backend <span class="step-time">4 hrs</span></li>
+          <li><span class="step-num">2.</span> Migrate data once <span class="step-time">2 hrs</span></li>
+          <li><span class="step-num">3.</span> Update 5 tool UIs to display field <span class="step-time">5 hrs</span></li>
+        </ol>
+        <div class="workflow-total">
+          <span>Total</span>
+          <span>11 hours</span>
+        </div>
+        <div class="savings-badge">&#9660; 79% reduction &mdash; 41 hours saved</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: The Math -->
+  <section>
+    <h2><span class="section-num">06</span> The Math of Exponential Work</h2>
+    <hr class="section-rule">
+
+    <div class="code-block" style="border-color: var(--nato-600);">
+      <div class="code-label" style="color: var(--nato-muted);">Cost Model</div>
+<pre><span class="comment">n = number of tools</span>
+<span class="comment">p = number of primitives (Assessment, Finding, Recommendation)</span>
+<span class="comment">t = time per entry</span>
+<span class="comment">m = maintenance time per change</span>
+
+<span class="highlight">Before DBO (AVT25 Pattern):</span>
+  Implementations  = n &times; p      <span class="comment">grows with both dimensions</span>
+  Entry time       = n &times; t      <span class="comment">analyst enters n times</span>
+  Maintenance      = n &times; m      <span class="comment">fix in n places</span>
+  Queries          = O(n)         <span class="comment">UNION across n tables</span>
+
+<span class="highlight">After DBO:</span>
+  Implementations  = p            <span class="comment">constant, regardless of n</span>
+  Entry time       = t            <span class="comment">analyst enters once</span>
+  Maintenance      = m            <span class="comment">fix once</span>
+  Queries          = O(1)         <span class="comment">single SELECT</span></pre>
+    </div>
+  </section>
+
+  <!-- Section 7: Quotes -->
+  <section>
+    <h2><span class="section-num">07</span> Leadership Statements</h2>
+    <hr class="section-rule">
+
+    <div class="quote-block">
+      <p class="quote-text">"Will it be easy to propagate these tools?"<br>"No. It's multiplying the work exponentially."</p>
+      <div class="quote-attr">&mdash; COS, AVT25</div>
+      <div class="quote-translation"><strong>Translation:</strong> Every new assessment tool adds burden to ALL existing tools. The work doesn't scale linearly &mdash; it scales exponentially. This is mathematically unsustainable.</div>
+    </div>
+
+    <div class="quote-block">
+      <p class="quote-text">"There's what the end user wants and there's what the right answer is. As far as we're concerned, doctrine is gospel. Start there."</p>
+      <div class="quote-attr">&mdash; ODT Chief</div>
+      <div class="quote-translation"><strong>Translation:</strong> Don't ask each tool team "what Assessment object do you want?" (results in 5 different answers). Ask ADP 5-0 "what is Assessment?" (one answer). Build it once. All tools consume it.</div>
+    </div>
+  </section>
+
+  <!-- Section 8: The Solution -->
+  <section>
+    <h2><span class="section-num">08</span> The Solution &mdash; DBO Convergence</h2>
+    <hr class="section-rule">
+
+    <div class="phase-track">
+      <div class="phase-card">
+        <div class="phase-num">Phase 1 &mdash; 30 Days</div>
+        <div class="phase-title">Build Assessment Primitives from ADP 5-0</div>
+        <div class="phase-timeline">Foundation</div>
+        <ul class="phase-items">
+          <li>Assessment (identity)</li>
+          <li>AssessmentFinding (identity)</li>
+          <li>AssessmentRecommendation (identity)</li>
+          <li>ToolAssessmentContext (classification)</li>
+        </ul>
+      </div>
+      <div class="phase-card">
+        <div class="phase-num">Phase 2 &mdash; 90 Days</div>
+        <div class="phase-title">Migrate Strategic App + IMO/LOO Tool</div>
+        <div class="phase-timeline">Proof of concept</div>
+        <ul class="phase-items">
+          <li>Demonstrates shared backend working</li>
+          <li>Proves 64% time savings</li>
+          <li>Validates cross-tool queries</li>
+        </ul>
+      </div>
+      <div class="phase-card">
+        <div class="phase-num">Phase 3 &mdash; 90 Days</div>
+        <div class="phase-title">Migrate Remaining 3 Tools</div>
+        <div class="phase-timeline">Full convergence</div>
+        <ul class="phase-items">
+          <li>Product Tracker</li>
+          <li>Problem Intake Form</li>
+          <li>Lessons Learned System</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Result</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>Before</th>
+          <th>After</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Backends</td>
+          <td class="val-before">5 tools &rarr; 5 backends</td>
+          <td class="val-after">5 tools &rarr; 1 backend</td>
+        </tr>
+        <tr>
+          <td>Analyst time</td>
+          <td class="val-before">180 min / assessment</td>
+          <td class="val-after">65 min / assessment</td>
+        </tr>
+        <tr>
+          <td>Scaling behavior</td>
+          <td class="val-before">Exponential</td>
+          <td class="val-after">Linear</td>
+        </tr>
+        <tr>
+          <td>Cross-tool queries</td>
+          <td class="val-before">Manual Excel aggregation</td>
+          <td class="val-after">Single SQL query</td>
+        </tr>
+        <tr>
+          <td>Sustainability</td>
+          <td class="val-before">Unsustainable</td>
+          <td class="val-after">Sustainable</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Bottom Line -->
+  <div class="bottom-line">
+    <div class="bl-label">Bottom Line</div>
+    <p><strong>AVT25 Assessment Tools are the smoking gun.</strong></p>
+    <p>Same enclave. Same doctrinal function. Zero shared foundation. Work multiplying exponentially.</p>
+    <p>This isn't a cross-enclave problem (CDS). This isn't a cross-workshop problem (doctrine drift). <strong>This is a fundamental failure to build shared primitives from doctrine.</strong></p>
+    <p>If we can't get assessment tools in the same enclave to share a backend, we've already lost.</p>
+    <div class="doctrine">Doctrine is gospel. Start there.</div>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer role="contentinfo">
+  <dl class="distribution-block">
+    <div>
+      <dt>Distribution</dt>
+      <dd>Authorized personnel &mdash; USAREUR-AF and supporting commands</dd>
+    </div>
+    <div>
+      <dt>Proponent</dt>
+      <dd>Operational Data Team, USAREUR-AF</dd>
+    </div>
+    <div>
+      <dt>Authority</dt>
+      <dd>Chief Data &amp; Analytics Officer, USAREUR-AF</dd>
+    </div>
+    <div>
+      <dt>Classification Guide</dt>
+      <dd>Per DoDI 5200.48 &amp; DoDM 5200.01, Vol 2</dd>
+    </div>
+  </dl>
+</footer>
+
+<!-- Classification Banner — DoDM 5200.01 -->
+<div class="classification-banner bottom" role="banner" aria-label="Classification marking">CUI // FOUO</div>
+
+</body>
+</html>

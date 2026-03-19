@@ -1,0 +1,22 @@
+{
+  "moduleId": "@gdap/course-portal",
+  "version": "0.1.0",
+  "entries": [
+    {
+      "path": "/training",
+      "label": "Training",
+      "icon": "GraduationCap",
+      "layer": "architecture",
+      "group": "Knowledge",
+      "order": 85,
+      "searchKeywords": [
+        "training", "course", "slides", "deck", "PPTX", "data stack",
+        "deep dive", "semantic layer", "data modeling"
+      ],
+      "children": [
+        { "path": "/training", "label": "All Decks", "layer": "architecture" },
+        { "path": "/training/deck", "label": "Deck Viewer", "layer": "architecture" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+INTSUM INTSUM_20251011_025 — PATROL CONTACT
+DTG: 110000Z OCT 2025
+Unit: 1-1 BN
+
+Summary: Elements of 1-1 BN conducted a patrol in grid 36T739705. At approximately 1330 local, the patrol encountered a small dismounted element moving along the ROUTE IRON road. The element dispersed upon visual contact. No shots fired. Grid coordinates recorded. Report forwarded to S2 for pattern analysis.
+
+Significant Events: One patrol contact, no casualties, no weapons observed.
+Recommended Action: Monitor for pattern activity along ROUTE IRON corridor. Increase patrol frequency in grid 36T739705 during period 0600-1800.

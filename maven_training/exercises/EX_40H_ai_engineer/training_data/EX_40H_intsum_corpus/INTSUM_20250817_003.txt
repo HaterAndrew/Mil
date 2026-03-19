@@ -1,0 +1,8 @@
+INTSUM INTSUM_20250817_003 — IED EVENT
+DTG: 170000Z AUG 2025
+Unit: 1-2 BN
+
+Summary: At 0920 local, a suspected IED was identified by route clearance element in grid 36T417003 along ROUTE IRON. EOD requested and responded within 40 minutes. Device rendered safe. No personnel casualties. Vehicle sustained minor damage.
+
+Device Description: Pressure-plate initiator, command wire, approx 5kg charge. Collected for exploitation. DNA swabs taken.
+Recommended Action: Restrict movement along ROUTE IRON until EOD clearance complete. Disseminate grid data to adjacent units.

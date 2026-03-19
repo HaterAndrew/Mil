@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POAM — FY27 Training Implementation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --navy:       #0C2340;
+      --navy-deep:  #06111F;
+      --navy-mid:   #132E52;
+      --navy-light: #1C4478;
+      --gold:       #C8971A;
+      --gold-bright:#E5B22E;
+      --gold-dim:   rgba(200,151,26,0.18);
+      --gold-fg:    #A07814;
+      --cream:      #FEFCF6;
+      --bg:         #F0F2F7;
+      --card:       #FFFFFF;
+      --text:       #1A2236;
+      --text-mid:   #3D4A66;
+      --text-light: #6B7899;
+      --border:     #E2E6F0;
+      --ff:         'Inter', system-ui, -apple-system, sans-serif;
+      --mono:       'SF Mono', 'Cascadia Code', 'Courier New', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100vh;
+      overflow: hidden;
+      font-family: var(--ff);
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Subtle diagonal hatch — military texture */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background: repeating-linear-gradient(
+        -55deg,
+        transparent,
+        transparent 40px,
+        rgba(12,35,64,0.018) 40px,
+        rgba(12,35,64,0.018) 41px
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+    body > * { position: relative; z-index: 1; }
+
+    /* ── CLASSIFICATION ── */
+    .clf {
+      background: #1A6B28;
+      color: #fff;
+      text-align: center;
+      font: 700 9px/1 var(--ff);
+      letter-spacing: 4.5px;
+      padding: 4px 0;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    /* ── HEADER ── */
+    .hdr {
+      background: linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 40%, var(--navy-mid) 100%);
+      color: #fff;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 2px solid var(--gold);
+    }
+    .hdr::before {
+      content: '';
+      position: absolute;
+      right: 36px; top: 50%;
+      transform: translateY(-50%);
+      width: 120px; height: 120px;
+      opacity: 0.04;
+      background: radial-gradient(circle, var(--gold) 30%, transparent 31%),
+                  radial-gradient(circle, transparent 48%, var(--gold) 49%, var(--gold) 52%, transparent 53%),
+                  radial-gradient(circle, transparent 68%, var(--gold) 69%, var(--gold) 71%, transparent 72%);
+      background-size: 120px 120px;
+      background-position: center;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hdr::after {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 50% 200% at 95% 50%, rgba(200,151,26,0.08) 0%, transparent 50%),
+        repeating-linear-gradient(-55deg,transparent,transparent 30px,rgba(255,255,255,0.015) 30px,rgba(255,255,255,0.015) 31px);
+      pointer-events: none;
+    }
+    .hdr-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 12px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .hdr-super {
+      font: 700 8px/1 var(--ff);
+      letter-spacing: 3px;
+      color: var(--gold-bright);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .hdr h1 {
+      font: 800 20px/1.1 var(--ff);
+      color: #fff;
+      letter-spacing: -0.2px;
+    }
+    .hdr-sub {
+      font: 500 11px/1.3 var(--ff);
+      color: rgba(255,255,255,0.6);
+      margin-top: 3px;
+    }
+    .hdr-right {
+      text-align: right;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .hdr-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy-deep);
+      font: 800 9px/1 var(--ff);
+      letter-spacing: 2px;
+      padding: 4px 12px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+    .hdr-org {
+      font: 500 9px/1.5 var(--mono);
+      color: rgba(200,151,26,0.6);
+    }
+
+    /* ── CANVAS ── */
+    .canvas {
+      flex: 1;
+      min-height: 0;
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 16px 36px 8px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Month ruler */
+    .ruler {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 4% 0 2%;
+      margin-bottom: 6px;
+      flex-shrink: 0;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+    .ruler span {
+      font: 700 8px/1 var(--ff);
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--navy);
+      opacity: 0.4;
+    }
+    .ruler span:first-child {
+      color: var(--navy-light);
+      opacity: 0.7;
+    }
+    .ruler span:last-child {
+      color: var(--gold);
+      opacity: 1;
+      font-weight: 800;
+    }
+
+    /* Stairs container — column-reverse so Phase 1 is at BOTTOM */
+    .stairs {
+      flex: 1;
+      min-height: 0;
+      position: relative;
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      gap: 0;
+    }
+    /* Subtle "USAREUR-AF" watermark behind staircase */
+    .stairs::before {
+      content: 'USAREUR-AF';
+      position: absolute;
+      bottom: 8%;
+      right: 2%;
+      font: 800 72px/1 var(--ff);
+      letter-spacing: 8px;
+      color: var(--navy);
+      opacity: 0.025;
+      transform: rotate(-25deg);
+      pointer-events: none;
+      z-index: 0;
+      white-space: nowrap;
+    }
+
+    /* SVG arrow */
+    .arrow-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: visible;
+    }
+
+    /* Steps — padding-left increases with phase, creating the diagonal */
+    .step {
+      display: flex;
+      align-items: stretch;
+      position: relative;
+      z-index: 1;
+    }
+    /* Phase 1 (bottom) = left-most, Phase 4 (top) = right-most */
+    .step[data-phase="1"] { padding-left: 0%; }
+    .step[data-phase="2"] { padding-left: 17%; }
+    .step[data-phase="3"] { padding-left: 34%; }
+    .step[data-phase="4"] { padding-left: 51%; }
+
+    /* Milestone dot */
+    .dot-col {
+      flex-shrink: 0;
+      width: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dot {
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      border: 2.5px solid var(--gold);
+      background: var(--card);
+      box-shadow: 0 0 0 3px var(--gold-dim);
+      position: relative;
+    }
+    .dot::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .step[data-phase="4"] .dot {
+      width: 16px; height: 16px;
+      background: var(--gold);
+      border-color: var(--gold-bright);
+      box-shadow: 0 0 0 3px rgba(200,151,26,0.25), 0 0 12px rgba(200,151,26,0.25);
+    }
+    .step[data-phase="4"] .dot::after { background: #fff; }
+
+    /* Card */
+    .card {
+      flex: 1;
+      max-width: 520px;
+      background: var(--card);
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 3px 12px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Color accent bar */
+    .card-accent { height: 3px; flex-shrink: 0; }
+    .step[data-phase="1"] .card-accent { background: linear-gradient(90deg, var(--navy-light), var(--navy-mid)); }
+    .step[data-phase="2"] .card-accent { background: linear-gradient(90deg, #B8891A, #D4A832); }
+    .step[data-phase="3"] .card-accent { background: linear-gradient(90deg, #7B3FA0, #9B5FC0); }
+    .step[data-phase="4"] .card-accent { background: linear-gradient(90deg, #1A8A5C, #2AAA72); }
+
+    .card-top {
+      padding: 8px 14px 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid #F2F4F8;
+      gap: 12px;
+    }
+    .card-phase {
+      font: 700 7.5px/1 var(--ff);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .step[data-phase="1"] .card-phase { color: var(--navy-light); }
+    .step[data-phase="2"] .card-phase { color: #8A6A14; }
+    .step[data-phase="3"] .card-phase { color: #5C2D82; }
+    .step[data-phase="4"] .card-phase { color: #146B4A; }
+
+    .card-title {
+      font: 700 13px/1.2 var(--ff);
+      color: var(--text);
+      letter-spacing: -0.1px;
+    }
+    .card-dates {
+      font: 600 9px/1 var(--mono);
+      color: var(--text-light);
+      white-space: nowrap;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .card-dates strong {
+      display: block;
+      font: 700 14px/1.2 var(--ff);
+      color: var(--text);
+      letter-spacing: -0.3px;
+    }
+
+    .card-body {
+      padding: 5px 14px 2px;
+      flex: 1;
+    }
+    .card-body ul { list-style: none; }
+    .card-body li {
+      font: 400 11px/1.45 var(--ff);
+      color: var(--text-mid);
+      padding: 3px 0 3px 14px;
+      position: relative;
+    }
+    .card-body li + li { border-top: 1px solid #F5F6FA; }
+    .card-body li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 9px;
+      width: 5px; height: 5px;
+      border-radius: 1px;
+      transform: rotate(45deg);
+      opacity: 0.35;
+    }
+    .step[data-phase="1"] li::before { background: var(--navy-light); }
+    .step[data-phase="2"] li::before { background: #B8891A; }
+    .step[data-phase="3"] li::before { background: #7B3FA0; }
+    .step[data-phase="4"] li::before { background: #1A8A5C; }
+
+    /* Gate — bold navy/gold treatment */
+    .gate {
+      margin: 0;
+      padding: 7px 14px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-top: 2px solid var(--gold);
+      border-radius: 0 0 7px 7px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      position: relative;
+    }
+    /* Gold left edge accent */
+    .gate::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--gold);
+    }
+    .gate-pip {
+      flex-shrink: 0;
+      font: 800 9px/1 var(--ff);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--navy-deep);
+      background: var(--gold);
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+    .gate-text {
+      font: 700 12.5px/1.3 var(--ff);
+      color: var(--gold-bright);
+      letter-spacing: 0.3px;
+    }
+
+    /* Phase 4 — the final gate gets extra emphasis */
+    .step[data-phase="4"] .card {
+      border-color: rgba(200,151,26,0.3);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 3px 14px rgba(200,151,26,0.12);
+    }
+    .step[data-phase="4"] .gate {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 100%);
+      border-top-color: var(--navy);
+    }
+    .step[data-phase="4"] .gate::before {
+      background: var(--navy);
+    }
+    .step[data-phase="4"] .gate-pip {
+      background: var(--navy);
+      color: var(--gold-bright);
+    }
+    .step[data-phase="4"] .gate-text {
+      color: var(--navy-deep);
+      font-weight: 800;
+    }
+
+    /* ── FOOTER ── */
+    .ftr {
+      flex-shrink: 0;
+      background: var(--navy-deep);
+      text-align: center;
+      padding: 6px 36px;
+      font: 500 8px/1 var(--mono);
+      letter-spacing: 1.5px;
+      color: rgba(200,151,26,0.35);
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      html, body { height: auto; overflow: visible; }
+      body { background: #fff; }
+      .clf, .hdr, .card-accent, .gate, .dot, .arrow-layer {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .card { box-shadow: none; border: 1px solid #ccc; }
+    }
+
+    /* ── ACCELERATED OPTION ── */
+    details.coa-box > summary::-webkit-details-marker { display: none; }
+    details.coa-box > summary::marker { content: ""; }
+    details.coa-box[open] .coa-hdr-sub { }
+    .coa-box {
+      position: absolute;
+      bottom: 8px;
+      right: 0;
+      width: 400px;
+      background: var(--navy);
+      border: 1px solid rgba(200,151,26,0.35);
+      border-radius: 8px;
+      overflow: hidden;
+      z-index: 4;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+    .coa-hdr {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 100%);
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .coa-hdr-title {
+      font: 800 13px/1 var(--ff);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--navy-deep);
+    }
+    .coa-hdr-sub {
+      font: 700 12px/1 var(--mono);
+      color: var(--navy-mid);
+      letter-spacing: 0.5px;
+    }
+    .coa-body {
+      padding: 8px 16px 10px;
+    }
+    .coa-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 6px 0;
+    }
+    .coa-row + .coa-row {
+      border-top: 1px solid rgba(200,151,26,0.12);
+    }
+    .coa-ph {
+      font: 800 13px/1.3 var(--ff);
+      letter-spacing: 0.3px;
+      color: var(--gold);
+      flex: 1;
+    }
+    .coa-dates {
+      font: 600 13px/1.3 var(--mono);
+      color: rgba(200,151,26,0.8);
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .coa-desc {
+      font: 500 11px/1.35 var(--ff);
+      color: rgba(255,255,255,0.65);
+      flex: 1;
+    }
+    /* Risk callout */
+    .coa-risk {
+      margin: 8px 16px 10px;
+      padding: 7px 12px;
+      background: rgba(180,40,40,0.15);
+      border: 1px solid rgba(180,40,40,0.3);
+      border-left: 3px solid #C43030;
+      border-radius: 0 4px 4px 0;
+    }
+    .coa-risk-lbl {
+      font: 800 9px/1 var(--ff);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #E05050;
+      margin-bottom: 3px;
+    }
+    .coa-risk-text {
+      font: 500 11px/1.4 var(--ff);
+      color: rgba(255,180,180,0.85);
+    }
+    .coa-gain {
+      margin: 0 16px 10px;
+      padding: 7px 12px;
+      background: rgba(26,140,90,0.12);
+      border: 1px solid rgba(26,140,90,0.25);
+      border-left: 3px solid #1A8A5C;
+      border-radius: 0 4px 4px 0;
+    }
+    .coa-gain-lbl {
+      font: 800 9px/1 var(--ff);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #2AAA72;
+      margin-bottom: 3px;
+    }
+    .coa-gain-text {
+      font: 500 11px/1.4 var(--ff);
+      color: rgba(180,255,220,0.8);
+    }
+
+    @media (max-width: 900px) {
+      .step { padding-left: 0 !important; }
+      .dot-col { display: none; }
+      .card { max-width: 100%; }
+      .arrow-layer { display: none; }
+      .ruler { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="clf">UNCLASSIFIED // FOUO</div>
+
+<div class="hdr">
+  <div class="hdr-wrap">
+    <div>
+      <div class="hdr-super">United States Army Europe &amp; Africa</div>
+      <h1>FY27 Training Implementation POAM</h1>
+      <div class="hdr-sub">Plan of Action &amp; Milestones &mdash; 20 March to 1 October 2026 &mdash; 28 Weeks</div>
+    </div>
+    <div class="hdr-right">
+      <div class="hdr-badge">POAM</div>
+      <div class="hdr-org">MSS Training Cell<br/>Operational Data Team</div>
+    </div>
+  </div>
+</div>
+
+<div class="canvas">
+
+  <div class="ruler">
+    <span>MAR</span><span>APR</span><span>MAY</span><span>JUN</span><span>JUL</span><span>AUG</span><span>SEP</span><span>OCT</span>
+  </div>
+
+  <!-- column-reverse: DOM order 1→4, renders 4 on top, 1 on bottom -->
+  <div class="stairs" id="stairs">
+
+    <svg class="arrow-layer" id="arrowSvg"></svg>
+
+    <!-- Phase 1 (renders at BOTTOM) -->
+    <div class="step" data-phase="1">
+      <div class="dot-col"><div class="dot"></div></div>
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-top">
+          <div>
+            <div class="card-phase">Phase 1 &mdash; Wk 1&ndash;4</div>
+            <div class="card-title">Approval &amp; Executive Alignment</div>
+          </div>
+          <div class="card-dates"><strong>20 MAR</strong>18 APR</div>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Initial Senior Leader brief (20 MAR)</li>
+            <li>Subsequent Senior Leader briefs as needed</li>
+            <li>Deliver executive training (TM-SL) to senior leaders</li>
+            <li>Coordinate with G3/S3 LRTC to lock FY27 training windows</li>
+          </ul>
+        </div>
+        <div class="gate">
+          <span class="gate-pip">&#9670; Gate</span>
+          <span class="gate-text">Command approval &bull; Senior leader buy-in &bull; Dates on LRTC</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="step" data-phase="2">
+      <div class="dot-col"><div class="dot"></div></div>
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-top">
+          <div>
+            <div class="card-phase">Phase 2 &mdash; Wk 5&ndash;12</div>
+            <div class="card-title">Material Revision, Development &amp; Instructor Selection</div>
+          </div>
+          <div class="card-dates"><strong>19 APR</strong>13 JUN</div>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Revise TM course material (AARs + command guidance)</li>
+            <li>Publish refined academic-by-day breakdowns</li>
+            <li>Create &ldquo;How to Interact&rdquo; guide &mdash; onboarding + training request SOP</li>
+            <li>Produce short fundamental videos</li>
+            <li>Interview top performers; select NCO instructor cadre</li>
+          </ul>
+        </div>
+        <div class="gate">
+          <span class="gate-pip">&#9670; Gate</span>
+          <span class="gate-text">Revised curriculum package ready &bull; Cadre selected</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="step" data-phase="3">
+      <div class="dot-col"><div class="dot"></div></div>
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-top">
+          <div>
+            <div class="card-phase">Phase 3 &mdash; Wk 13&ndash;20</div>
+            <div class="card-title">Instructor Onboarding &amp; MSC Pilot</div>
+          </div>
+          <div class="card-dates"><strong>14 JUN</strong>8 AUG</div>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Onboard and certify instructor cadre (faculty development)</li>
+            <li>Execute training sprint (full TM pipeline)</li>
+            <li>Execute full MSC proof-of-concept sprint (single MSC)</li>
+            <li>Conduct AARs; revise documents and courses</li>
+          </ul>
+        </div>
+        <div class="gate">
+          <span class="gate-pip">&#9670; Gate</span>
+          <span class="gate-text">Cadre certified &bull; MSC pilot validated &bull; GO/NO-GO</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 4 (renders at TOP) -->
+    <div class="step" data-phase="4">
+      <div class="dot-col"><div class="dot"></div></div>
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-top">
+          <div>
+            <div class="card-phase">Phase 4 &mdash; Wk 21&ndash;28</div>
+            <div class="card-title">Finalization &amp; Roll-out</div>
+          </div>
+          <div class="card-dates"><strong>9 AUG</strong>1 OCT</div>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Final material updates from pilot AARs</li>
+            <li>Rebuild PDFs; update training hub &amp; analytics apps</li>
+            <li>Publish complete FY27 training package</li>
+          </ul>
+        </div>
+        <div class="gate">
+          <span class="gate-pip">&#9670; Gate</span>
+          <span class="gate-text">FY27 TRAINING OPERATIONAL &mdash; 1 OCT 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accelerated Option (collapsible) -->
+    <details class="coa-box">
+      <summary class="coa-hdr" style="cursor:pointer; list-style:none;">
+        <span class="coa-hdr-title">Accelerated Option</span>
+        <span class="coa-hdr-sub">14 WK &bull; 1 JUL &nbsp;&#9660;</span>
+      </summary>
+      <div class="coa-body">
+        <div class="coa-row">
+          <span class="coa-ph">Approval</span>
+          <span class="coa-dates">20&ndash;28 MAR</span>
+        </div>
+        <div class="coa-row">
+          <span class="coa-ph">Revision</span>
+          <span class="coa-dates">29 MAR&ndash;9 MAY</span>
+        </div>
+        <div class="coa-row">
+          <span class="coa-ph">Onboarding &amp; Pilot</span>
+          <span class="coa-dates">10 MAY&ndash;14 JUN</span>
+        </div>
+        <div class="coa-row">
+          <span class="coa-ph">Roll-out</span>
+          <span class="coa-dates">15 JUN&ndash;1 JUL</span>
+        </div>
+      </div>
+      <div class="coa-risk">
+        <div class="coa-risk-lbl">&#9650; Risk</div>
+        <div class="coa-risk-text">No separate pilot validation; instructor selection and onboarding compressed into single phase; NCO cadre gets compressed faculty development; videos deferred to post-launch</div>
+      </div>
+    </details>
+
+  </div>
+</div>
+
+<div class="ftr">
+  USAREUR-AF OPERATIONAL DATA TEAM &ensp;&bull;&ensp; POAM FY27 &ensp;&bull;&ensp; 18 MAR 2026
+</div>
+
+<div class="clf">UNCLASSIFIED // FOUO</div>
+
+<script>
+(function () {
+  const svg = document.getElementById('arrowSvg');
+  const stairs = document.getElementById('stairs');
+
+  function draw() {
+    const dots = stairs.querySelectorAll('.dot');
+    if (dots.length < 2) return;
+
+    const ref = stairs.getBoundingClientRect();
+
+    /* Collect dot centers — DOM order is Phase 1,2,3,4
+       but visually Phase 1 is at bottom-left, Phase 4 at top-right
+       We want the arrow to go from Phase 1 → Phase 4 */
+    const pts = Array.from(dots).map(d => {
+      const r = d.getBoundingClientRect();
+      return {
+        x: r.left + r.width / 2 - ref.left,
+        y: r.top + r.height / 2 - ref.top
+      };
+    });
+
+    const W = ref.width;
+    const H = ref.height;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.style.width = W + 'px';
+    svg.style.height = H + 'px';
+
+    /* Smooth bezier through dots */
+    let d = `M ${pts[0].x} ${pts[0].y}`;
+    for (let i = 1; i < pts.length; i++) {
+      const prev = pts[i - 1];
+      const curr = pts[i];
+      const cpx1 = prev.x + (curr.x - prev.x) * 0.55;
+      const cpy1 = prev.y;
+      const cpx2 = prev.x + (curr.x - prev.x) * 0.45;
+      const cpy2 = curr.y;
+      d += ` C ${cpx1} ${cpy1}, ${cpx2} ${cpy2}, ${curr.x} ${curr.y}`;
+    }
+
+    /* Extend for arrowhead */
+    const last = pts[pts.length - 1];
+    const prev = pts[pts.length - 2];
+    const dx = last.x - prev.x;
+    const dy = last.y - prev.y;
+    const len = Math.sqrt(dx * dx + dy * dy) || 1;
+    const nx = dx / len;
+    const ny = dy / len;
+    d += ` L ${last.x + nx * 28} ${last.y + ny * 28}`;
+
+    svg.innerHTML = `
+      <defs>
+        <linearGradient id="ag" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#C8971A" stop-opacity="0.06"/>
+          <stop offset="40%" stop-color="#C8971A" stop-opacity="0.14"/>
+          <stop offset="100%" stop-color="#C8971A" stop-opacity="0.28"/>
+        </linearGradient>
+        <marker id="ah" markerWidth="14" markerHeight="10" refX="12" refY="5" orient="auto">
+          <path d="M0,0 L14,5 L0,10 L3,5 Z" fill="#C8971A" opacity="0.55"/>
+        </marker>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="5" result="g"/>
+          <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <path d="${d}" fill="none" stroke="url(#ag)" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="${d}" fill="none" stroke="#C8971A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.25" marker-end="url(#ah)" filter="url(#glow)"/>
+      <path d="${d}" fill="none" stroke="#C8971A" stroke-width="0.8" stroke-dasharray="2 8" opacity="0.15"/>
+    `;
+  }
+
+  requestAnimationFrame(() => draw());
+  window.addEventListener('resize', draw);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+})();
+</script>
+
+</body>
+</html>

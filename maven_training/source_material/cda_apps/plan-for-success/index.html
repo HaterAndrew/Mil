@@ -1,0 +1,1999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="USAREUR-AF Data Architecture Radar — Enterprise Data Compass & Plan for Success. Authoritative record of data standards, tool selections, and approval status.">
+  <meta name="author" content="Operational Data Team, USAREUR-AF">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0a0f1a">
+  <title>Data Architecture Radar — USAREUR-AF</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='none' stroke='%23c9a227' stroke-width='6'/><line x1='50' y1='5' x2='50' y2='95' stroke='%23c9a227' stroke-width='2'/><line x1='5' y1='50' x2='95' y2='50' stroke='%23c9a227' stroke-width='2'/></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --nato-950: #0a0f1a;
+      --nato-900: #0d1424;
+      --nato-800: #111b2e;
+      --nato-700: #162340;
+      --nato-600: #1e3a5f;
+      --nato-500: #2d4a6f;
+      --nato-400: #3d5a8f;
+      --nato-text: #e8edf5;
+      --nato-muted: #a8b4c4;
+      --nato-dim: #7889a0;
+      --nato-accent: #38bdf8;
+      --nato-accent-bright: #0ea5e9;
+      --nato-blue: #004990;
+      --nato-blue-light: #0066cc;
+      --nato-gold: #c9a227;
+      --nato-warning: #fbbf24;
+      --nato-success: #34d399;
+      --nato-error: #f87171;
+      --ring-adopt: #34d399;
+      --ring-trial: #38bdf8;
+      --ring-assess: #c9a227;
+      --ring-hold: #f87171;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *:focus-visible {
+      outline: 2px solid var(--nato-gold);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+    html { scroll-behavior: smooth; }
+
+    /* Skip Navigation (508 Compliance) */
+    .skip-nav {
+      position: fixed; top: -100px; left: 50%; transform: translateX(-50%);
+      background: var(--nato-gold); color: var(--nato-950); font-weight: 700;
+      padding: 0.5rem 1.5rem; border-radius: 0 0 6px 6px; z-index: 9999;
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem;
+      text-decoration: none; transition: top 0.2s;
+    }
+    .skip-nav:focus { top: 0; }
+    body {
+      font-family: 'IBM Plex Sans', system-ui, sans-serif;
+      background: var(--nato-950);
+      color: var(--nato-text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    .mono { font-family: 'IBM Plex Mono', monospace; }
+
+    /* Classification Banner */
+    .classification-banner {
+      background: #8B6914;
+      color: #fff;
+      text-align: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      padding: 3px 0;
+      text-transform: uppercase;
+      width: 100%;
+      z-index: 1001;
+    }
+    .classification-banner.top { position: fixed; top: 0; }
+    .classification-banner.bottom { margin-top: 0; }
+
+    /* Header */
+    header {
+      position: fixed; top: 22px; left: 0; right: 0;
+      background: rgba(13,20,36,0.97);
+      border-bottom: 1px solid var(--nato-600);
+      padding: 0; z-index: 100; backdrop-filter: blur(12px);
+    }
+    .header-top {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.5rem 2rem;
+    }
+    .header-brand { display: flex; align-items: center; gap: 0.75rem; }
+    .header-brand svg { width: 24px; height: 24px; color: var(--nato-gold); }
+    .header-title { font-weight: 600; font-size: 0.9rem; color: var(--nato-text); }
+    .header-subtitle { font-size: 0.75rem; color: var(--nato-muted); margin-left: 0.5rem; }
+    .header-tabs { display: flex; gap: 0; }
+    .tab-btn {
+      background: none; border: none; color: var(--nato-muted);
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem;
+      padding: 0.5rem 1.25rem; cursor: pointer; text-transform: uppercase;
+      letter-spacing: 1px; border-bottom: 2px solid transparent; transition: all 0.2s;
+    }
+    .tab-btn:hover { color: var(--nato-text); }
+    .tab-btn.active { color: var(--nato-gold); border-bottom-color: var(--nato-gold); }
+    .header-class {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem;
+      color: var(--nato-gold); letter-spacing: 1px;
+    }
+
+    /* Sub-nav */
+    .sub-nav {
+      display: flex; gap: 0.25rem; padding: 0.35rem 2rem;
+      background: var(--nato-900); border-top: 1px solid var(--nato-700);
+      flex-wrap: wrap; align-items: center;
+    }
+    .sub-nav-btn {
+      background: none; border: 1px solid transparent; color: var(--nato-dim);
+      font-size: 0.7rem; padding: 0.25rem 0.6rem; border-radius: 4px;
+      cursor: pointer; transition: all 0.15s; font-family: 'IBM Plex Mono', monospace;
+    }
+    .sub-nav-btn:hover { color: var(--nato-text); background: var(--nato-800); }
+    .sub-nav-btn.active { color: var(--nato-gold); border-color: var(--nato-gold); background: var(--nato-800); }
+    .breadcrumb {
+      font-size: 0.7rem; color: var(--nato-dim); padding: 0.25rem 0;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .breadcrumb a { color: var(--nato-accent); text-decoration: none; cursor: pointer; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb .sep { margin: 0 0.35rem; color: var(--nato-dim); }
+
+    /* Search */
+    .search-wrap {
+      margin-left: auto; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .search-input {
+      background: var(--nato-800); border: 1px solid var(--nato-600);
+      color: var(--nato-text); font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem; padding: 0.25rem 0.6rem; border-radius: 4px;
+      width: 180px; outline: none; transition: all 0.2s;
+    }
+    .search-input:focus { border-color: var(--nato-gold); width: 240px; }
+    .search-input::placeholder { color: var(--nato-dim); }
+    .search-count {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+      color: var(--nato-dim); white-space: nowrap;
+    }
+
+    main { max-width: 1400px; margin: 0 auto; padding: 8.5rem 2rem 4rem; }
+
+    /* Views */
+    .view { display: none; }
+    .view.active { display: block; animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Hero */
+    .hero { text-align: center; margin-bottom: 2.5rem; padding: 1.5rem 0 1rem; }
+    .hero-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem;
+      color: var(--nato-gold); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 0.75rem;
+    }
+    .hero-title {
+      font-size: 2.25rem; font-weight: 700; line-height: 1.15; margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, var(--nato-text) 0%, var(--nato-gold) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-subtitle { font-size: 1rem; color: var(--nato-muted); max-width: 600px; margin: 0 auto; }
+    .hero-version {
+      margin-top: 1rem; display: inline-flex; gap: 1.5rem;
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--nato-dim);
+    }
+    .hero-version span { display: flex; align-items: center; gap: 0.4rem; }
+    .hero-version .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--nato-gold); }
+
+    /* Authority Banner */
+    .authority {
+      background: linear-gradient(135deg, var(--nato-800) 0%, var(--nato-900) 100%);
+      border: 1px solid var(--nato-gold); border-radius: 8px;
+      padding: 1.25rem; margin-bottom: 2rem; text-align: center;
+    }
+    .authority-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem;
+      color: var(--nato-gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem;
+    }
+    .authority-text { color: var(--nato-text); font-size: 0.9rem; }
+    .authority-text strong { color: var(--nato-gold); }
+    .sig-block {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+      margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--nato-700);
+    }
+    .sig-item { text-align: center; }
+    .sig-line {
+      border-bottom: 1px solid var(--nato-dim); margin-bottom: 0.35rem;
+      padding-bottom: 0.6rem; font-size: 0.8rem; color: var(--nato-dim); font-style: italic;
+    }
+    .sig-title { font-size: 0.7rem; color: var(--nato-muted); font-weight: 600; }
+
+    /* Stats Strip */
+    .stats-strip {
+      display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .stat-chip {
+      display: flex; align-items: center; gap: 0.4rem;
+      background: var(--nato-800); border: 1px solid var(--nato-700);
+      border-radius: 6px; padding: 0.4rem 0.8rem;
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem;
+    }
+    .stat-val { font-weight: 700; color: var(--nato-gold); font-size: 0.85rem; }
+    .stat-label { color: var(--nato-muted); }
+
+    /* Radar Container */
+    .radar-wrap { display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap; }
+    .radar-svg-wrap { flex: 0 0 560px; max-width: 100%; position: relative; }
+    .radar-svg-wrap svg { width: 100%; height: auto; }
+    .radar-legend { flex: 1; min-width: 280px; }
+
+    /* Ring Legend */
+    .ring-legend { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .ring-badge {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.7rem; font-family: 'IBM Plex Mono', monospace; color: var(--nato-muted);
+      cursor: default;
+    }
+    .ring-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+    /* Legend List */
+    .legend-section { margin-bottom: 1.5rem; }
+    .legend-section-title {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem;
+      color: var(--nato-gold); text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 0.5rem; padding-bottom: 0.35rem; border-bottom: 1px solid var(--nato-700);
+    }
+    .legend-item {
+      display: flex; align-items: center; gap: 0.5rem; padding: 0.3rem 0.35rem;
+      cursor: pointer; border-radius: 4px; transition: all 0.15s;
+    }
+    .legend-item:hover { background: var(--nato-800); }
+    .legend-item.selected { background: var(--nato-700); }
+    .legend-item.search-dim { opacity: 0.25; }
+    .legend-num {
+      width: 22px; height: 22px; border-radius: 50%; display: flex;
+      align-items: center; justify-content: center; font-size: 0.6rem;
+      font-family: 'IBM Plex Mono', monospace; font-weight: 600; flex-shrink: 0;
+    }
+    .legend-num.new { border-radius: 2px; transform: rotate(45deg); }
+    .legend-num.new span { transform: rotate(-45deg); display: block; }
+    .legend-title { font-size: 0.8rem; color: var(--nato-text); }
+    .legend-ring { font-size: 0.65rem; color: var(--nato-dim); margin-left: auto; font-family: 'IBM Plex Mono', monospace; text-transform: uppercase; }
+
+    /* Mission Statement */
+    .mission-section {
+      background: linear-gradient(135deg, rgba(0,73,144,0.12) 0%, rgba(13,20,36,0.95) 70%);
+      border: 1px solid var(--nato-600); border-radius: 10px;
+      padding: 1.75rem 2rem; margin-bottom: 2rem; position: relative; overflow: hidden;
+    }
+    .mission-section::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+      background: linear-gradient(180deg, var(--nato-gold), var(--nato-accent));
+    }
+    .mission-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem;
+      color: var(--nato-gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.75rem;
+    }
+    .mission-headline {
+      font-size: 1.3rem; font-weight: 700; color: var(--nato-text); line-height: 1.4;
+      margin-bottom: 0.75rem;
+    }
+    .mission-headline em { color: var(--nato-gold); font-style: normal; font-weight: 700; }
+    .mission-body { color: var(--nato-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 0.75rem; max-width: 800px; }
+    .mission-body strong { color: var(--nato-text); }
+    .mission-principles {
+      display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem;
+      padding-top: 1rem; border-top: 1px solid var(--nato-700);
+    }
+    .mission-principle {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.7rem; font-family: 'IBM Plex Mono', monospace;
+      color: var(--nato-muted); background: var(--nato-800);
+      border: 1px solid var(--nato-700); border-radius: 4px; padding: 0.3rem 0.6rem;
+    }
+    .mission-principle .mp-icon {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--nato-gold); flex-shrink: 0;
+    }
+
+    /* Overview Layout: SVG left, Layers right */
+    .overview-layout {
+      display: flex; gap: 2rem; align-items: flex-start; margin-top: 1.5rem;
+    }
+    .overview-radar-col { flex: 0 0 560px; max-width: 100%; }
+    .overview-layers-col { flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 0.75rem; }
+
+    /* Layer Ownership Header */
+    .layers-header {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem;
+      color: var(--nato-gold); text-transform: uppercase; letter-spacing: 1.5px;
+      margin-bottom: 0.25rem; padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--nato-700);
+    }
+    .investment-rule {
+      background: var(--nato-800); border: 1px solid var(--nato-gold);
+      border-radius: 6px; padding: 0.6rem 0.85rem; margin-top: 0.25rem;
+      font-size: 0.75rem; color: var(--nato-gold);
+      font-family: 'IBM Plex Mono', monospace; text-align: center;
+    }
+    .investment-rule strong { color: var(--nato-text); }
+
+    /* Overview Wedge Cards */
+    .overview-grid { display: flex; flex-direction: column; gap: 0.75rem; }
+    .wedge-card {
+      background: var(--nato-900); border: 1px solid var(--nato-600); border-radius: 8px;
+      padding: 1rem 1.25rem; cursor: pointer; transition: all 0.25s ease; position: relative; overflow: hidden;
+    }
+    .wedge-card::after {
+      content: ''; position: absolute; inset: 0; border-radius: 8px;
+      opacity: 0; transition: opacity 0.3s;
+      background: linear-gradient(135deg, rgba(201,162,39,0.05) 0%, transparent 60%);
+    }
+    .wedge-card:hover { border-color: var(--nato-gold); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+    .wedge-card:hover::after { opacity: 1; }
+    .wedge-card.critical { border-color: var(--nato-gold); }
+    .wedge-card .critical-badge {
+      position: absolute; top: 8px; right: 8px; background: var(--nato-gold);
+      color: var(--nato-950); font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.55rem; padding: 2px 6px; border-radius: 3px; font-weight: 700;
+      text-transform: uppercase;
+    }
+    .wedge-layer {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem;
+      color: var(--nato-dim); text-transform: uppercase; letter-spacing: 1px;
+    }
+    .wedge-top-row { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; }
+    .wedge-name { font-size: 1rem; font-weight: 700; margin: 0.15rem 0; }
+    .wedge-desc { font-size: 0.78rem; color: var(--nato-muted); margin-bottom: 0.5rem; line-height: 1.5; }
+    .wedge-owner {
+      font-size: 0.6rem; font-family: 'IBM Plex Mono', monospace;
+      color: var(--nato-accent); background: rgba(56,189,248,0.08);
+      border: 1px solid rgba(56,189,248,0.2); border-radius: 3px;
+      padding: 0.1rem 0.4rem; white-space: nowrap;
+    }
+    .wedge-stats { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .wedge-stat {
+      display: flex; align-items: center; gap: 0.25rem;
+      font-size: 0.65rem; font-family: 'IBM Plex Mono', monospace;
+    }
+    .wedge-stat-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    /* Detail Panel */
+    .detail-panel {
+      position: fixed; top: 0; right: -480px; width: 480px; height: 100vh;
+      background: var(--nato-900); border-left: 1px solid var(--nato-600);
+      z-index: 200; transition: right 0.3s cubic-bezier(0.16,1,0.3,1); overflow-y: auto;
+      box-shadow: -4px 0 24px rgba(0,0,0,0.6);
+    }
+    .detail-panel.open { right: 0; }
+    .detail-panel-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem; border-bottom: 1px solid var(--nato-700);
+      position: sticky; top: 0; background: var(--nato-900); z-index: 1;
+    }
+    .detail-close {
+      background: none; border: 1px solid var(--nato-600); color: var(--nato-muted); cursor: pointer;
+      font-size: 1rem; padding: 0.25rem 0.5rem; line-height: 1; border-radius: 4px;
+      transition: all 0.15s; display: flex; align-items: center; gap: 0.35rem;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .detail-close:hover { color: var(--nato-text); border-color: var(--nato-text); background: var(--nato-800); }
+    .detail-close kbd {
+      font-size: 0.55rem; background: var(--nato-700); padding: 1px 4px;
+      border-radius: 2px; font-family: 'IBM Plex Mono', monospace; color: var(--nato-dim);
+    }
+    .detail-body { padding: 1.25rem; }
+    .detail-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .detail-meta {
+      display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;
+    }
+    .detail-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem;
+      padding: 0.15rem 0.5rem; border-radius: 3px; text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .detail-desc { color: var(--nato-muted); font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.6; }
+    .detail-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .detail-tag {
+      font-size: 0.65rem; color: var(--nato-dim); background: var(--nato-800);
+      border: 1px solid var(--nato-700); padding: 0.15rem 0.5rem; border-radius: 3px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    /* Approval Chain */
+    .approval-chain { margin-top: 1rem; }
+    .approval-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem;
+      color: var(--nato-gold); text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 0.75rem;
+    }
+    .approval-pipeline { display: flex; align-items: center; gap: 0; position: relative; }
+    .approval-step { display: flex; flex-direction: column; align-items: center; flex: 1; position: relative; }
+    .approval-connector {
+      position: absolute; top: 16px; left: 50%; width: 100%; height: 2px;
+      background: var(--nato-700); z-index: 0;
+    }
+    .approval-step:last-child .approval-connector { display: none; }
+    .approval-circle {
+      width: 32px; height: 32px; border-radius: 50%; display: flex;
+      align-items: center; justify-content: center; font-size: 0.75rem;
+      z-index: 1; position: relative; cursor: default; transition: all 0.2s;
+    }
+    .approval-circle:hover { transform: scale(1.15); }
+    .approval-circle.pending {
+      background: transparent; border: 2px dashed var(--nato-dim); color: var(--nato-dim);
+    }
+    .approval-circle.approved {
+      background: var(--nato-success); border: 2px solid var(--nato-success); color: var(--nato-950);
+    }
+    .approval-circle.blocked {
+      background: var(--nato-error); border: 2px solid var(--nato-error); color: var(--nato-950);
+    }
+    .approval-role {
+      font-size: 0.6rem; color: var(--nato-dim); margin-top: 0.35rem;
+      font-family: 'IBM Plex Mono', monospace; text-align: center;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .approval-info {
+      font-size: 0.6rem; color: var(--nato-muted); text-align: center; margin-top: 0.15rem;
+      max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+
+    /* Inline Approval (for plan) */
+    .approval-inline { display: flex; align-items: center; gap: 0.35rem; }
+    .approval-dot {
+      width: 14px; height: 14px; border-radius: 50%; display: flex;
+      align-items: center; justify-content: center; font-size: 0.5rem;
+      cursor: default; transition: transform 0.15s;
+    }
+    .approval-dot:hover { transform: scale(1.3); }
+    .approval-dot.pending { background: transparent; border: 1.5px dashed var(--nato-dim); color: var(--nato-dim); }
+    .approval-dot.approved { background: var(--nato-success); border: 1.5px solid var(--nato-success); color: var(--nato-950); }
+    .approval-dot.blocked { background: var(--nato-error); border: 1.5px solid var(--nato-error); color: var(--nato-950); }
+    .approval-dot-line {
+      width: 8px; height: 1.5px; background: var(--nato-700);
+    }
+
+    /* Plan View */
+    .plan-section { margin-bottom: 2.5rem; scroll-margin-top: 10rem; }
+    .plan-section-header {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1rem; padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--nato-700);
+    }
+    .phase-num {
+      width: 40px; height: 40px; border-radius: 8px; display: flex;
+      align-items: center; justify-content: center; font-weight: 700;
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.9rem;
+      background: var(--nato-800); border: 2px solid var(--nato-gold); color: var(--nato-gold);
+    }
+    .phase-info { flex: 1; }
+    .phase-title { font-size: 1.2rem; font-weight: 700; }
+    .phase-meta {
+      font-size: 0.75rem; color: var(--nato-dim);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .phase-progress {
+      width: 120px; text-align: right;
+    }
+    .progress-bar {
+      width: 100%; height: 6px; background: var(--nato-700);
+      border-radius: 3px; overflow: hidden; margin-bottom: 0.25rem;
+    }
+    .progress-fill { height: 100%; background: var(--nato-success); border-radius: 3px; transition: width 0.6s ease; }
+    .progress-label {
+      font-size: 0.65rem; color: var(--nato-dim);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .phase-objective {
+      color: var(--nato-muted); font-size: 0.9rem; margin-bottom: 1rem;
+      padding: 0.75rem; background: var(--nato-800); border-radius: 6px;
+      border-left: 3px solid var(--nato-gold);
+    }
+
+    /* Deliverable Cards */
+    .deliverable {
+      background: var(--nato-900); border: 1px solid var(--nato-600);
+      border-radius: 8px; padding: 1rem; margin-bottom: 0.75rem;
+      transition: border-color 0.2s;
+    }
+    .deliverable:hover { border-color: var(--nato-500); }
+    .deliverable-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .deliverable-title { font-weight: 600; font-size: 0.95rem; }
+    .deliverable-desc { color: var(--nato-muted); font-size: 0.85rem; margin-top: 0.5rem; }
+    .deliverable-approval { margin-top: 0.75rem; }
+
+    /* Exit Criteria */
+    .exit-criteria {
+      background: var(--nato-800); border: 1px solid var(--nato-600);
+      border-radius: 6px; padding: 1rem; margin-top: 1rem;
+    }
+    .exit-criteria-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem;
+      color: var(--nato-success); text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+    .exit-criteria ul { list-style: none; }
+    .exit-criteria li {
+      display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.25rem 0;
+      font-size: 0.85rem; color: var(--nato-muted);
+    }
+    .exit-criteria li::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--nato-success); margin-top: 0.45rem; flex-shrink: 0;
+    }
+
+    /* Current State Tables */
+    .state-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin-bottom: 1.5rem; }
+    .state-table th {
+      background: var(--nato-800); padding: 0.6rem 0.75rem; text-align: left;
+      font-weight: 600; color: var(--nato-gold); border-bottom: 2px solid var(--nato-600);
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; text-transform: uppercase;
+    }
+    .state-table td {
+      padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--nato-700); vertical-align: top;
+    }
+    .state-table tr:hover td { background: var(--nato-800); }
+    .state-table td:first-child { color: var(--nato-accent); font-weight: 500; }
+    .status-badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+      padding: 0.1rem 0.4rem; border-radius: 3px; text-transform: uppercase;
+    }
+    .status-badge.complete { background: rgba(52,211,153,0.15); color: var(--nato-success); }
+    .status-badge.prototype { background: rgba(56,189,248,0.15); color: var(--nato-accent); }
+
+    /* Dependencies */
+    .dep-card {
+      background: var(--nato-900); border: 1px solid var(--nato-600);
+      border-left: 3px solid var(--nato-error); border-radius: 6px;
+      padding: 0.85rem; margin-bottom: 0.75rem; transition: border-color 0.2s;
+    }
+    .dep-card:hover { border-color: var(--nato-500); border-left-color: var(--nato-error); }
+    .dep-from { font-weight: 600; font-size: 0.85rem; color: var(--nato-text); }
+    .dep-blocks { font-size: 0.8rem; color: var(--nato-error); margin: 0.25rem 0; }
+    .dep-mitigation { font-size: 0.8rem; color: var(--nato-muted); font-style: italic; }
+
+    /* Bottom Line */
+    .bottom-line {
+      background: linear-gradient(135deg, var(--nato-800), var(--nato-900));
+      border: 1px solid var(--nato-gold); border-radius: 8px;
+      padding: 1.5rem; margin-top: 2rem;
+    }
+    .bottom-line-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem;
+      color: var(--nato-gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;
+    }
+    .bottom-line ol { list-style: none; counter-reset: bl; }
+    .bottom-line li {
+      counter-increment: bl; padding: 0.5rem 0; border-bottom: 1px solid var(--nato-700);
+      font-size: 0.9rem; color: var(--nato-muted);
+    }
+    .bottom-line li:last-child { border-bottom: none; }
+    .bottom-line li::before {
+      content: counter(bl); font-family: 'IBM Plex Mono', monospace;
+      font-weight: 700; color: var(--nato-gold); margin-right: 0.75rem;
+    }
+    .bottom-line .summary {
+      margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--nato-700);
+      font-weight: 600; color: var(--nato-text); font-size: 0.95rem;
+    }
+
+    /* BLUF Box */
+    .bluf-box {
+      background: linear-gradient(135deg, rgba(201,162,39,0.08) 0%, var(--nato-900) 100%);
+      border: 1px solid var(--nato-gold); border-radius: 8px;
+      padding: 1.25rem 1.5rem; margin-bottom: 2rem; position: relative;
+    }
+    .bluf-box::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+      background: var(--nato-gold); border-radius: 8px 0 0 8px;
+    }
+    .bluf-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem;
+      color: var(--nato-gold); text-transform: uppercase; letter-spacing: 2px;
+      margin-bottom: 0.5rem; font-weight: 700;
+    }
+    .bluf-text {
+      font-size: 0.95rem; color: var(--nato-text); line-height: 1.7;
+    }
+    .bluf-text strong { color: var(--nato-gold); }
+
+    /* Data Freshness */
+    .data-freshness {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem;
+      color: var(--nato-dim); padding: 0.5rem 0; margin-top: 0.5rem;
+    }
+    .freshness-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--nato-success); animation: pulse-dot 2s infinite;
+    }
+    .freshness-dot.stale { background: var(--nato-warning); }
+    .freshness-dot.error { background: var(--nato-error); animation: none; }
+
+    /* Distribution & POC */
+    .distribution-block {
+      background: var(--nato-900); border: 1px solid var(--nato-700);
+      border-radius: 6px; padding: 1rem; margin-top: 1.5rem;
+      font-size: 0.75rem; color: var(--nato-dim);
+    }
+    .distribution-block dt {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem;
+      color: var(--nato-gold); text-transform: uppercase; letter-spacing: 1px;
+      margin-top: 0.75rem; margin-bottom: 0.15rem;
+    }
+    .distribution-block dt:first-child { margin-top: 0; }
+    .distribution-block dd { color: var(--nato-muted); margin-left: 0; }
+
+    /* Keyboard shortcut hint */
+    .kbd-hint {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-size: 0.6rem; color: var(--nato-dim); margin-left: auto;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .kbd-hint kbd {
+      background: var(--nato-700); padding: 1px 5px; border-radius: 3px;
+      font-size: 0.55rem; border: 1px solid var(--nato-600);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--nato-700); padding: 2rem;
+      text-align: center; color: var(--nato-dim); font-size: 0.8rem;
+    }
+    footer .mono { color: var(--nato-gold); }
+
+    /* Overlay */
+    .overlay {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10,15,26,0.6); z-index: 150;
+      display: none; cursor: pointer; backdrop-filter: blur(2px);
+    }
+    .overlay.open { display: block; animation: fadeIn 0.2s ease; }
+
+    /* Loading */
+    .loading-wrap {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 6rem 2rem; gap: 1rem;
+    }
+    .loading-spinner {
+      width: 40px; height: 40px; border: 3px solid var(--nato-700);
+      border-top-color: var(--nato-gold); border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loading-text {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem;
+      color: var(--nato-dim); letter-spacing: 0.5px;
+    }
+
+    /* Error State */
+    .error-state {
+      text-align: center; padding: 4rem 2rem;
+      color: var(--nato-error);
+    }
+    .error-state svg { width: 48px; height: 48px; margin-bottom: 1rem; }
+    .error-state p { color: var(--nato-muted); font-size: 0.9rem; margin-top: 0.5rem; }
+    .error-state code {
+      display: block; margin-top: 1rem; padding: 0.5rem; background: var(--nato-800);
+      border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem;
+      color: var(--nato-error); word-break: break-all;
+    }
+
+    /* SVG Blip Hover Effects */
+    .svg-blip { cursor: pointer; transition: transform 0.15s ease; }
+    .svg-blip:hover { filter: brightness(1.3) drop-shadow(0 0 4px rgba(255,255,255,0.3)); }
+    .svg-blip circle, .svg-blip rect { transition: opacity 0.15s; }
+
+    /* Pulse for new items on overview */
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; }
+    }
+
+    /* Tooltip */
+    .tooltip {
+      position: fixed; z-index: 9999; pointer-events: none;
+      background: var(--nato-800); border: 1px solid var(--nato-600);
+      border-radius: 6px; padding: 0.6rem 0.85rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      max-width: 320px; opacity: 0; transition: opacity 0.12s;
+      font-size: 0.8rem; line-height: 1.5;
+    }
+    .tooltip.visible { opacity: 1; }
+    .tooltip-title {
+      font-weight: 700; font-size: 0.8rem; color: var(--nato-text);
+      margin-bottom: 0.15rem;
+    }
+    .tooltip-ring {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+      text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem;
+      display: inline-block; padding: 0.05rem 0.35rem; border-radius: 3px;
+    }
+    .tooltip-desc {
+      color: var(--nato-muted); font-size: 0.75rem;
+    }
+    .tooltip-meta {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem;
+      color: var(--nato-dim); margin-top: 0.2rem;
+    }
+    .tooltip-status {
+      display: flex; align-items: center; gap: 0.35rem;
+      font-size: 0.7rem; margin-bottom: 0.15rem;
+    }
+    .tooltip-status-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+    }
+    .tooltip-divider {
+      border: none; border-top: 1px solid var(--nato-700);
+      margin: 0.35rem 0;
+    }
+    .tooltip-note {
+      color: var(--nato-muted); font-size: 0.7rem; font-style: italic;
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--nato-900); }
+    ::-webkit-scrollbar-thumb { background: var(--nato-600); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--nato-500); }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .overview-layout { flex-direction: column; }
+      .overview-radar-col { flex: 1; }
+      .overview-layers-col { min-width: 0; }
+      .overview-grid { flex-direction: row; flex-wrap: wrap; }
+      .wedge-card { flex: 1 1 200px; }
+    }
+    @media (max-width: 900px) {
+      .radar-wrap { flex-direction: column; }
+      .radar-svg-wrap { flex: 1; }
+      .detail-panel { width: 100%; right: -100%; }
+      .hero-title { font-size: 1.75rem; }
+      .search-input { width: 120px; }
+      .search-input:focus { width: 160px; }
+      .stats-strip { gap: 0.35rem; }
+      .stat-chip { padding: 0.3rem 0.5rem; font-size: 0.6rem; }
+      .mission-headline { font-size: 1.1rem; }
+      .mission-principles { gap: 0.5rem; }
+    }
+    @media (max-width: 600px) {
+      .header-top { padding: 0.4rem 1rem; }
+      main { padding: 8rem 1rem 2rem; }
+      .overview-grid { flex-direction: column; }
+      .deliverable-header { flex-direction: column; align-items: flex-start; }
+      .hero-title { font-size: 1.5rem; }
+      .sig-block { grid-template-columns: 1fr; gap: 1rem; }
+      .search-wrap { display: none; }
+    }
+
+    /* Print — DoD Distribution Ready */
+    @media print {
+      @page {
+        margin: 0.75in;
+        size: letter;
+      }
+      .classification-banner { position: static; background: #8B6914 !important; color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .classification-banner.top { margin-bottom: 0.5rem; }
+      .classification-banner.bottom { margin-top: 0.5rem; }
+      header, .sub-nav, .overlay, .detail-panel, .tooltip, .skip-nav { display: none !important; }
+      main { padding: 0.5rem 0; max-width: 100%; }
+      body { background: #fff; color: #111; font-size: 10pt; line-height: 1.5; }
+      .hero { margin-bottom: 1rem; padding: 0.5rem 0; }
+      .hero-title { -webkit-text-fill-color: #111; background: none; font-size: 1.5rem; }
+      .hero-subtitle { color: #444; }
+      .hero-version { color: #666; }
+      .hero-version .dot { background: #8B6914; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .mission-section { background: #f8f5ec; border-color: #8B6914; break-inside: avoid; }
+      .mission-section::before { background: #8B6914; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .mission-headline { color: #111; }
+      .mission-headline em { color: #8B6914; -webkit-text-fill-color: #8B6914; }
+      .mission-body { color: #333; }
+      .mission-body strong { color: #111; }
+      .mission-principle { background: #f0f0f0; border-color: #ccc; color: #333; }
+      .mission-principle .mp-icon { background: #8B6914; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .bluf-box { background: #f8f5ec; border-color: #8B6914; break-inside: avoid; }
+      .bluf-box::before { background: #8B6914; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .bluf-label { color: #8B6914; }
+      .bluf-text { color: #111; }
+      .bluf-text strong { color: #8B6914; }
+      .wedge-card, .deliverable, .dep-card, .authority, .bottom-line, .exit-criteria, .phase-objective {
+        background: #f8f8f8; border-color: #ccc; break-inside: avoid;
+      }
+      .wedge-card:hover { transform: none; box-shadow: none; }
+      .wedge-owner { background: #e8f4fd; border-color: #b3d9f2; color: #0066cc; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .investment-rule { background: #f8f5ec; border-color: #8B6914; color: #8B6914; }
+      .investment-rule strong { color: #111; }
+      .layers-header { color: #8B6914; border-bottom-color: #ccc; }
+      .overview-layout { flex-direction: column; }
+      .overview-radar-col { flex: 1; max-width: 100%; }
+      .overview-layers-col { min-width: 0; }
+      .overview-grid { flex-direction: row; flex-wrap: wrap; }
+      .wedge-card { flex: 1 1 200px; }
+      .ring-dot, .wedge-stat-dot, .approval-dot, .approval-circle {
+        -webkit-print-color-adjust: exact; print-color-adjust: exact;
+      }
+      .state-table th { background: #eee; color: #333; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .stat-chip { background: #f0f0f0; border-color: #ddd; }
+      .stat-val { color: #8B6914; }
+      svg text, svg circle, svg rect, svg line { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      footer { border-top-color: #ccc; color: #666; }
+      .progress-fill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .plan-section { break-inside: avoid; page-break-inside: avoid; }
+      .plan-section-header { break-after: avoid; }
+      .distribution-block { background: #f8f8f8; border-color: #ccc; }
+      .distribution-block dt { color: #8B6914; }
+      .distribution-block dd { color: #333; }
+      .data-freshness { color: #666; }
+      .freshness-dot { -webkit-print-color-adjust: exact; print-color-adjust: exact; animation: none; }
+      .kbd-hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Portal Navigation -->
+  <div style="background:#080d18;border-bottom:1px solid #38bdf822;padding:6px 24px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+    <a href="../../index.html" style="color:#38bdf8;text-decoration:none;display:flex;align-items:center;gap:6px">← CDA Portal</a>
+    <span style="color:#ffffff22">│</span>
+    <a href="../course-portal/" style="color:#ffffff66;text-decoration:none">Course Portal</a>
+    <span style="color:#c9a227;font-weight:600">Plan for Success</span>
+    <a href="../lessons-learned/" style="color:#ffffff66;text-decoration:none">Lessons Learned</a>
+    <a href="../enterprise-data-compass/" style="color:#ffffff66;text-decoration:none">Data Compass</a>
+  </div>
+  <!-- Skip Navigation (Section 508 / WCAG 2.1 AA) -->
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+  <!-- Classification Banner (Top) — Required per DoDM 5200.01 -->
+  <div class="classification-banner top" id="classTop" role="banner" aria-label="Classification marking"></div>
+
+  <header role="navigation" aria-label="Primary navigation">
+    <div class="header-top">
+      <div class="header-brand">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07"/>
+        </svg>
+        <span class="header-title">Data Architecture Radar</span>
+        <span class="header-subtitle" id="headerVersion"></span>
+      </div>
+      <div class="header-tabs" role="tablist" aria-label="View selection">
+        <button class="tab-btn active" data-tab="radar" role="tab" aria-selected="true" aria-controls="radar-view">Radar</button>
+        <button class="tab-btn" data-tab="plan" role="tab" aria-selected="false" aria-controls="plan-view">Plan</button>
+      </div>
+      <span class="header-class" id="headerClass" aria-label="Classification level"></span>
+    </div>
+    <div class="sub-nav" id="subNav" role="toolbar" aria-label="View controls"></div>
+  </header>
+
+  <main id="main-content" role="main">
+    <!-- Loading -->
+    <div id="loading" class="loading-wrap" role="status" aria-live="polite">
+      <div class="loading-spinner" aria-hidden="true"></div>
+      <div class="loading-text">Loading data architecture&hellip;</div>
+    </div>
+
+    <!-- Radar View -->
+    <div class="view" id="radar-view" role="tabpanel" aria-labelledby="radar-tab">
+      <div id="radar-content"></div>
+    </div>
+
+    <!-- Plan View -->
+    <div class="view" id="plan-view" role="tabpanel" aria-labelledby="plan-tab">
+      <div id="plan-content"></div>
+    </div>
+  </main>
+
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+  <div class="detail-panel" id="detailPanel" role="dialog" aria-modal="true" aria-label="Blip details">
+    <div class="detail-panel-header">
+      <span style="font-weight:600;">Details</span>
+      <button class="detail-close" id="detailClose" aria-label="Close detail panel">&times; <kbd>ESC</kbd></button>
+    </div>
+    <div class="detail-body" id="detailBody"></div>
+  </div>
+
+  <div class="tooltip" id="tooltip" role="tooltip" aria-hidden="true"></div>
+
+  <footer role="contentinfo">
+    <p>Operational Data Team &bull; HERMES Program &bull; USAREUR-AF</p>
+    <p style="margin-top:0.5rem;"><span class="mono" id="footerClass"></span></p>
+    <p style="margin-top:0.25rem;font-size:0.7rem;" id="footerVersion"></p>
+    <div id="footerDistribution"></div>
+  </footer>
+
+  <!-- Classification Banner (Bottom) — Required per DoDM 5200.01 -->
+  <div class="classification-banner bottom" id="classBottom" role="banner" aria-label="Classification marking"></div>
+
+  <script>
+    // ── Helpers ──
+    function el(tag, attrs, children) {
+      const e = document.createElement(tag);
+      if (attrs) {
+        if (attrs.className) e.className = attrs.className;
+        if (attrs.id) e.id = attrs.id;
+        if (attrs.html) e.innerHTML = attrs.html;
+        if (attrs.style) e.style.cssText = attrs.style;
+        if (attrs.onclick) e.onclick = attrs.onclick;
+        if (attrs.type) e.type = attrs.type;
+        if (attrs.placeholder) e.placeholder = attrs.placeholder;
+        if (attrs.role) e.setAttribute('role', attrs.role);
+        if (attrs.tabindex !== undefined) e.setAttribute('tabindex', attrs.tabindex);
+        Object.keys(attrs).filter(k => k.startsWith('data-') || k.startsWith('aria-')).forEach(k => e.setAttribute(k, attrs[k]));
+      }
+      if (children) {
+        (Array.isArray(children) ? children : [children]).forEach(c => {
+          if (typeof c === 'string') e.appendChild(document.createTextNode(c));
+          else if (c) e.appendChild(c);
+        });
+      }
+      return e;
+    }
+
+    function esc(str) {
+      const d = document.createElement('div');
+      d.textContent = str || '';
+      return d.innerHTML;
+    }
+
+    const RING_COLORS = { adopt: '#34d399', trial: '#38bdf8', assess: '#c9a227', hold: '#f87171' };
+    const QUAD_COLORS = { standards: '#c9a227', platform: '#38bdf8', ontology: '#34d399', interop: '#f87171' };
+
+    // ── Tooltip System ──
+    const tooltipEl = document.getElementById('tooltip');
+    let tooltipVisible = false;
+
+    function showTooltip(e, html) {
+      tooltipEl.innerHTML = html;
+      tooltipEl.classList.add('visible');
+      tooltipVisible = true;
+      positionTooltip(e);
+    }
+
+    function hideTooltip() {
+      tooltipEl.classList.remove('visible');
+      tooltipVisible = false;
+    }
+
+    function positionTooltip(e) {
+      if (!tooltipVisible) return;
+      const pad = 14;
+      const rect = tooltipEl.getBoundingClientRect();
+      let x = e.clientX + pad;
+      let y = e.clientY + pad;
+      if (x + rect.width > window.innerWidth - pad) x = e.clientX - rect.width - pad;
+      if (y + rect.height > window.innerHeight - pad) y = e.clientY - rect.height - pad;
+      if (x < pad) x = pad;
+      if (y < pad) y = pad;
+      tooltipEl.style.left = x + 'px';
+      tooltipEl.style.top = y + 'px';
+    }
+
+    document.addEventListener('mousemove', (e) => {
+      if (tooltipVisible) positionTooltip(e);
+    });
+
+    function blipTooltipHTML(blip) {
+      const ringInfo = META.rings.find(r => r.id === blip.ring);
+      const layerInfo = META.layers.find(l => l.id === blip.layer);
+      const quadInfo = META.quadrants.find(q => q.id === blip.quadrant);
+      const approvedCount = blip.approvalChain.filter(a => a.status === 'approved').length;
+      return '<div class="tooltip-title">' + esc(blip.title) + '</div>'
+        + '<span class="tooltip-ring" style="background:' + ringInfo.color + '22;color:' + ringInfo.color + '">' + ringInfo.name + '</span> '
+        + '<span class="tooltip-ring" style="background:' + QUAD_COLORS[blip.quadrant] + '22;color:' + QUAD_COLORS[blip.quadrant] + '">' + quadInfo.name + '</span>'
+        + (blip.isNew ? ' <span class="tooltip-ring" style="background:#34d39922;color:#34d399">New</span>' : '')
+        + '<div class="tooltip-desc">' + esc(blip.description) + '</div>'
+        + '<hr class="tooltip-divider">'
+        + '<div class="tooltip-meta">' + layerInfo.id + ' ' + layerInfo.name + ' &middot; Approvals: ' + approvedCount + '/4</div>';
+    }
+
+    function approvalTooltipHTML(step) {
+      const statusColors = { approved: '#34d399', pending: '#7889a0', blocked: '#f87171' };
+      const statusLabels = { approved: 'Approved', pending: 'Pending', blocked: 'Blocked' };
+      let html = '<div class="tooltip-status">'
+        + '<span class="tooltip-status-dot" style="background:' + statusColors[step.status] + '"></span>'
+        + '<strong style="color:' + statusColors[step.status] + '">' + step.label + ': ' + statusLabels[step.status] + '</strong>'
+        + '</div>';
+      if (step.approverName) html += '<div class="tooltip-meta">Approver: ' + esc(step.approverName) + '</div>';
+      if (step.date) html += '<div class="tooltip-meta">Date: ' + esc(step.date) + '</div>';
+      if (step.notes) {
+        html += '<hr class="tooltip-divider">';
+        html += '<div class="tooltip-note">' + esc(step.notes) + '</div>';
+      }
+      return html;
+    }
+
+    function attachTooltip(element, htmlFn) {
+      element.addEventListener('mouseenter', (e) => showTooltip(e, typeof htmlFn === 'function' ? htmlFn() : htmlFn));
+      element.addEventListener('mouseleave', hideTooltip);
+    }
+
+    let META, BLIPS, PLAN;
+    let currentView = 'radar';
+    let currentLayer = null;
+    let searchTerm = '';
+
+    // ── Data Loading ──
+    async function loadData() {
+      try {
+        const [metaRes, radarRes, planRes] = await Promise.all([
+          fetch('data/meta.json'), fetch('data/radar.json'), fetch('data/plan.json')
+        ]);
+        if (!metaRes.ok || !radarRes.ok || !planRes.ok) {
+          throw new Error('Failed to fetch data files. HTTP ' + [metaRes.status, radarRes.status, planRes.status].join('/'));
+        }
+        META = await metaRes.json();
+        const radarData = await radarRes.json();
+        BLIPS = radarData.blips;
+        PLAN = await planRes.json();
+        document.getElementById('loading').style.display = 'none';
+        initApp();
+      } catch (err) {
+        document.getElementById('loading').innerHTML =
+          '<div class="error-state">'
+          + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>'
+          + '<h3 style="color:var(--nato-error);margin-bottom:0.5rem;">Failed to Load Data</h3>'
+          + '<p>Could not load configuration files. Make sure to serve this directory via HTTP.</p>'
+          + '<code>' + esc(err.message) + '</code>'
+          + '<p style="margin-top:1rem;font-family:IBM Plex Mono,monospace;font-size:0.75rem;color:var(--nato-dim);">python3 -m http.server 8080</p>'
+          + '</div>';
+      }
+    }
+
+    // ── Init ──
+    function initApp() {
+      // Classification banners
+      document.getElementById('classTop').textContent = META.classification;
+      document.getElementById('classBottom').textContent = META.classification;
+      document.getElementById('headerVersion').textContent = 'v' + META.version;
+      document.getElementById('headerClass').textContent = META.classification;
+      document.getElementById('footerClass').textContent = META.classification;
+      document.getElementById('footerVersion').textContent = META.title + ' v' + META.version + ' \u2022 ' + META.date;
+
+      // Distribution & POC block in footer
+      const distBlock = document.getElementById('footerDistribution');
+      if (distBlock) {
+        const dl = el('dl', { className: 'distribution-block' });
+        dl.appendChild(el('dt', null, ['Distribution']));
+        dl.appendChild(el('dd', null, ['USAREUR-AF / LANDCOM \u2014 Operational Data Team, HERMES Program. Authorized recipients only per CUI handling procedures.']));
+        dl.appendChild(el('dt', null, ['Proponent']));
+        dl.appendChild(el('dd', null, ['Chief Data Architect, Operational Data Team (ODT)']));
+        dl.appendChild(el('dt', null, ['Authority']));
+        dl.appendChild(el('dd', null, ['OPORD 0015-26, USAREUR-AF Unified Data Transformation Strategy']));
+        dl.appendChild(el('dt', null, ['Classification Guide']));
+        dl.appendChild(el('dd', null, ['Controlled Unclassified Information (CUI) // For Official Use Only (FOUO). Handle per DoDI 5200.48.']));
+        distBlock.appendChild(dl);
+      }
+
+      // Tab switching
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+      });
+
+      // Detail panel
+      document.getElementById('detailClose').addEventListener('click', closeDetail);
+      document.getElementById('overlay').addEventListener('click', closeDetail);
+
+      // Keyboard shortcuts
+      document.addEventListener('keydown', handleKeyboard);
+
+      renderRadarView();
+      renderPlanView();
+      handleHash();
+      window.addEventListener('hashchange', handleHash);
+    }
+
+    // ── Keyboard Shortcuts ──
+    function handleKeyboard(e) {
+      // Escape: close detail panel or go back
+      if (e.key === 'Escape') {
+        if (document.getElementById('detailPanel').classList.contains('open')) {
+          closeDetail();
+          // Return focus to the element that opened the panel
+          const lastFocused = document.querySelector('.legend-item.selected, .svg-blip:focus');
+          if (lastFocused) lastFocused.focus();
+        } else if (currentView === 'radar' && currentLayer) {
+          showOverview();
+        }
+        return;
+      }
+      // Don't intercept when typing in search
+      if (document.activeElement && document.activeElement.classList.contains('search-input')) return;
+
+      // / to focus search
+      if (e.key === '/' && currentView === 'radar') {
+        e.preventDefault();
+        const input = document.querySelector('.search-input');
+        if (input) input.focus();
+        return;
+      }
+
+      // 1/2 to switch tabs
+      if (e.key === '1' && !e.ctrlKey && !e.metaKey) { switchTab('radar'); return; }
+      if (e.key === '2' && !e.ctrlKey && !e.metaKey) { switchTab('plan'); return; }
+
+      // ? to show keyboard shortcuts (future)
+    }
+
+    function switchTab(tab) {
+      currentView = tab;
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        const isActive = b.dataset.tab === tab;
+        b.classList.toggle('active', isActive);
+        b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.id === tab + '-view'));
+      if (tab === 'radar') renderSubNav();
+      else renderPlanSubNav();
+    }
+
+    function handleHash() {
+      const hash = location.hash.replace('#', '');
+      if (hash.startsWith('plan')) {
+        switchTab('plan');
+        const phaseId = hash.split('/')[1];
+        if (phaseId) {
+          const target = document.getElementById(phaseId);
+          if (target) setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 100);
+        }
+      } else if (hash.startsWith('radar')) {
+        switchTab('radar');
+        const layerId = hash.split('/')[1];
+        if (layerId && META.layers.find(l => l.id === layerId)) {
+          drillInto(layerId);
+        } else {
+          showOverview();
+        }
+      }
+    }
+
+    // ── Sub Nav ──
+    function renderSubNav() {
+      const nav = document.getElementById('subNav');
+      nav.innerHTML = '';
+      if (currentLayer) {
+        const bc = el('div', { className: 'breadcrumb' }, [
+          el('a', { onclick: () => showOverview() }, ['Overview']),
+          el('span', { className: 'sep' }, ['\u203A']),
+          el('span', null, [currentLayer + ' ' + META.layers.find(l => l.id === currentLayer).name])
+        ]);
+        nav.appendChild(bc);
+        const allBtn = el('button', { className: 'sub-nav-btn active', 'data-quad': 'all', onclick: (e) => filterQuadrant('all', e) }, ['All']);
+        nav.appendChild(allBtn);
+        META.quadrants.forEach(q => {
+          const btn = el('button', { className: 'sub-nav-btn', onclick: (e) => filterQuadrant(q.id, e) }, [q.name]);
+          nav.appendChild(btn);
+        });
+        // Search
+        const searchWrap = el('div', { className: 'search-wrap' });
+        const searchInput = el('input', { className: 'search-input', type: 'text', placeholder: 'Search blips  ( / )' });
+        searchInput.addEventListener('input', (e) => { searchTerm = e.target.value.toLowerCase(); applySearch(); });
+        searchInput.addEventListener('keydown', (e) => { if (e.key === 'Escape') { e.target.blur(); searchTerm = ''; e.target.value = ''; applySearch(); } });
+        searchWrap.appendChild(searchInput);
+        const searchCount = el('span', { className: 'search-count', id: 'searchCount' });
+        searchWrap.appendChild(searchCount);
+        nav.appendChild(searchWrap);
+      } else {
+        const label = el('span', { className: 'breadcrumb' }, ['Overview \u2014 Click a layer to explore']);
+        nav.appendChild(label);
+      }
+    }
+
+    function renderPlanSubNav() {
+      const nav = document.getElementById('subNav');
+      nav.innerHTML = '';
+      const items = [
+        { label: 'Current State', target: 'current-state' },
+        ...PLAN.phases.map(p => ({ label: 'Phase ' + p.number, target: p.id })),
+        { label: 'Dependencies', target: 'dependencies' }
+      ];
+      items.forEach(item => {
+        const btn = el('button', { className: 'sub-nav-btn', 'data-target': item.target, onclick: () => {
+          document.getElementById(item.target)?.scrollIntoView({ behavior: 'smooth' });
+        }}, [item.label]);
+        nav.appendChild(btn);
+      });
+    }
+
+    function filterQuadrant(qId, e) {
+      document.querySelectorAll('.sub-nav-btn').forEach(b => b.classList.remove('active'));
+      if (e && e.target) e.target.classList.add('active');
+      document.querySelectorAll('.legend-section').forEach(s => {
+        s.style.display = (qId === 'all' || s.dataset.quad === qId) ? '' : 'none';
+      });
+      document.querySelectorAll('.radar-quadrant').forEach(g => {
+        g.style.opacity = (qId === 'all' || g.dataset.quad === qId) ? '1' : '0.15';
+        g.style.transition = 'opacity 0.3s ease';
+      });
+    }
+
+    // ── Search ──
+    function applySearch() {
+      const items = document.querySelectorAll('.legend-item');
+      const svgBlips = document.querySelectorAll('.svg-blip');
+      let matchCount = 0;
+      const matchedIds = new Set();
+
+      items.forEach(item => {
+        const title = item.querySelector('.legend-title')?.textContent?.toLowerCase() || '';
+        const matches = !searchTerm || title.includes(searchTerm);
+        item.classList.toggle('search-dim', !matches);
+        if (matches) {
+          matchCount++;
+          const num = item.querySelector('.legend-num');
+          // find blip id from the blip number
+        }
+      });
+
+      // Also dim SVG blips
+      if (searchTerm) {
+        const layerBlips = BLIPS.filter(b => b.layer === currentLayer);
+        layerBlips.forEach(blip => {
+          const matches = blip.title.toLowerCase().includes(searchTerm)
+            || blip.description.toLowerCase().includes(searchTerm)
+            || (blip.tags && blip.tags.some(t => t.toLowerCase().includes(searchTerm)));
+          if (matches) matchedIds.add(blip.id);
+        });
+        svgBlips.forEach(g => {
+          const id = g.getAttribute('data-blip-id');
+          g.style.opacity = matchedIds.has(id) ? '1' : '0.15';
+          g.style.transition = 'opacity 0.3s ease';
+        });
+        matchCount = matchedIds.size;
+      } else {
+        svgBlips.forEach(g => { g.style.opacity = ''; });
+      }
+
+      const countEl = document.getElementById('searchCount');
+      if (countEl) {
+        countEl.textContent = searchTerm ? matchCount + ' found' : '';
+      }
+    }
+
+    // ── Stats ──
+    function computeStats() {
+      const total = BLIPS.length;
+      const adopted = BLIPS.filter(b => b.ring === 'adopt').length;
+      const newItems = BLIPS.filter(b => b.isNew).length;
+      const totalGates = BLIPS.length * 4;
+      const approvedGates = BLIPS.reduce((sum, b) => sum + b.approvalChain.filter(a => a.status === 'approved').length, 0);
+      const planDeliverables = PLAN.phases.reduce((sum, p) => sum + p.deliverables.length, 0);
+      const planGates = planDeliverables * 4;
+      const planApproved = PLAN.phases.reduce((sum, p) =>
+        sum + p.deliverables.reduce((s, d) => s + d.approvalChain.filter(a => a.status === 'approved').length, 0), 0);
+      return { total, adopted, newItems, totalGates, approvedGates, planDeliverables, planGates, planApproved };
+    }
+
+    // ── Radar Overview ──
+    function renderRadarView() {
+      showOverview();
+    }
+
+    function showOverview() {
+      currentLayer = null;
+      searchTerm = '';
+      const container = document.getElementById('radar-content');
+      container.innerHTML = '';
+      renderSubNav();
+      location.hash = '#radar';
+
+      // Hero
+      const hero = el('div', { className: 'hero' });
+      hero.appendChild(el('div', { className: 'hero-label' }, [META.subtitle || 'Enterprise Data Compass']));
+      hero.appendChild(el('h1', { className: 'hero-title' }, [META.title]));
+      hero.appendChild(el('p', { className: 'hero-subtitle' }, ['Definition before data. Doctrine before design. One canonical type per concept. Two-level radar tracking standards, platforms, ontology patterns, and interoperability across the 5-layer data stack.']));
+      const versionBar = el('div', { className: 'hero-version' });
+      versionBar.appendChild(el('span', null, [el('span', { className: 'dot' }), 'v' + META.version]));
+      versionBar.appendChild(el('span', null, [el('span', { className: 'dot' }), META.date]));
+      versionBar.appendChild(el('span', null, [el('span', { className: 'dot' }), BLIPS.length + ' blips']));
+      hero.appendChild(versionBar);
+      // Data freshness indicator
+      const freshness = el('div', { className: 'data-freshness' });
+      freshness.appendChild(el('span', { className: 'freshness-dot' }));
+      freshness.appendChild(document.createTextNode('Data current as of ' + META.date + ' \u2022 v' + META.version));
+      hero.appendChild(freshness);
+      container.appendChild(hero);
+
+      // Authority Banner
+      if (META.signatories && META.signatories.length) {
+        const auth = el('div', { className: 'authority' });
+        auth.appendChild(el('div', { className: 'authority-label' }, ['Authorizing Document']));
+        auth.appendChild(el('p', { className: 'authority-text', html: 'This radar is the <strong>authoritative record</strong> of data architecture standards, tool selections, and approval status for <strong>USAREUR-AF</strong>.' }));
+        const sigBlock = el('div', { className: 'sig-block' });
+        META.signatories.forEach(sig => {
+          const item = el('div', { className: 'sig-item' });
+          item.appendChild(el('div', { className: 'sig-line' }, [sig.name || '(signature pending)']));
+          item.appendChild(el('div', { className: 'sig-title' }, [sig.role]));
+          sigBlock.appendChild(item);
+        });
+        auth.appendChild(sigBlock);
+        container.appendChild(auth);
+      }
+
+      // Stats Strip
+      const stats = computeStats();
+      const strip = el('div', { className: 'stats-strip' });
+      const chips = [
+        { val: stats.total, label: 'Total Blips' },
+        { val: stats.adopted, label: 'Adopted' },
+        { val: stats.newItems, label: 'New' },
+        { val: Math.round(stats.approvedGates / stats.totalGates * 100) + '%', label: 'Radar Approved' },
+        { val: PLAN.phases.length, label: 'Phases' },
+        { val: Math.round(stats.planApproved / stats.planGates * 100) + '%', label: 'Plan Approved' }
+      ];
+      chips.forEach(c => {
+        const chip = el('div', { className: 'stat-chip' });
+        chip.appendChild(el('span', { className: 'stat-val' }, ['' + c.val]));
+        chip.appendChild(el('span', { className: 'stat-label' }, [c.label]));
+        strip.appendChild(chip);
+      });
+      container.appendChild(strip);
+
+      // Mission Statement — Decision Advantage
+      const mission = el('div', { className: 'mission-section' });
+      mission.appendChild(el('div', { className: 'mission-label' }, ['Why This Architecture Exists']));
+      mission.appendChild(el('div', { className: 'mission-headline' }, [
+        'This architecture exists to enable ',
+        el('em', null, ['decision advantage']),
+        '.'
+      ]));
+      mission.appendChild(el('p', { className: 'mission-body', html: 'The <strong>Operational Data Team</strong> exists to shorten the distance between raw data and command decisions\u200A\u2014\u200Aand accelerate every step in between. In conditions of complexity, speed, and information friction, the force that defines, governs, and shares data fastest <strong>wins</strong>. DA defines how information becomes decision advantage\u200A\u2014\u200Athis radar tracks the standards, tools, and patterns that make it real.' }));
+      mission.appendChild(el('p', { className: 'mission-body', style: 'font-size:0.82rem;color:var(--nato-dim);font-style:italic;margin-bottom:0;' }, ['Theatre-scale operational data backbone designed to unify decision advantage across warfighting functions.']));
+      const principles = el('div', { className: 'mission-principles' });
+      ['Definition Before Data', 'One Canonical Type Per Concept', 'Semantic Layer Is Critical', 'Governance By Design', 'Cross-Domain From Day One'].forEach(p => {
+        const pill = el('div', { className: 'mission-principle' });
+        pill.appendChild(el('span', { className: 'mp-icon' }));
+        pill.appendChild(document.createTextNode(p));
+        principles.appendChild(pill);
+      });
+      mission.appendChild(principles);
+      container.appendChild(mission);
+
+      // Ring legend
+      const ringLeg = el('div', { className: 'ring-legend' });
+      META.rings.forEach(r => {
+        const count = BLIPS.filter(b => b.ring === r.id).length;
+        const badge = el('div', { className: 'ring-badge' }, [
+          el('div', { className: 'ring-dot', style: 'background:' + r.color }),
+          r.name + ' \u2014 ' + r.description
+        ]);
+        attachTooltip(badge, '<div class="tooltip-title" style="color:' + r.color + '">' + r.name + '</div><div class="tooltip-desc">' + esc(r.description) + '</div><div class="tooltip-meta">' + count + ' items across all layers</div>');
+        ringLeg.appendChild(badge);
+      });
+      container.appendChild(ringLeg);
+
+      // Two-column layout: SVG left, layer cards right
+      const layout = el('div', { className: 'overview-layout' });
+
+      // Left column: Overview SVG radar
+      const radarCol = el('div', { className: 'overview-radar-col' });
+      const svgWrap = el('div', { className: 'radar-svg-wrap' });
+      svgWrap.innerHTML = buildOverviewSVG();
+      radarCol.appendChild(svgWrap);
+      attachSVGBlipTooltips(svgWrap);
+      svgWrap.querySelectorAll('.svg-wedge').forEach(wedge => {
+        wedge.style.cursor = 'pointer';
+        wedge.addEventListener('click', () => drillInto(wedge.getAttribute('data-layer')));
+      });
+      layout.appendChild(radarCol);
+
+      // Right column: Layer cards
+      const layersCol = el('div', { className: 'overview-layers-col' });
+      layersCol.appendChild(el('div', { className: 'layers-header' }, ['5-Layer Data Stack \u2014 Click to Explore']));
+
+      // Layer ownership lookup
+      const LAYER_OWNERS = {
+        L1: 'Platform / DISA',
+        L2: 'Data Engineers',
+        L3: 'CDA / ODT',
+        L4: 'Analysts / ORSA',
+        L5: 'Product Teams'
+      };
+      const LAYER_DETAILS = {
+        L1: 'Foundation compute, network, and storage. DISA cloud hosting, Foundry/Vantage designation across enclaves.',
+        L2: 'Data pipelines, ingestion, and synchronization. Pipeline Builder, Code Workbook, Data Connections feeding the stack.',
+        L3: 'The semantic foundation: ontology, object types, and governed meaning. Every object type begins with a definition grounded in doctrine.',
+        L4: 'Business intelligence, analytical models, and dashboards. Contour, Workshop Analytics, and the VAULTIS-A quality framework.',
+        L5: 'Operational applications, workflows, and AI. Where data becomes action through apps, dashboards, and the DDOF playbook.'
+      };
+
+      const grid = el('div', { className: 'overview-grid' });
+      META.layers.forEach(layer => {
+        const layerBlips = BLIPS.filter(b => b.layer === layer.id);
+        const lstats = {};
+        META.rings.forEach(r => lstats[r.id] = layerBlips.filter(b => b.ring === r.id).length);
+
+        const card = el('div', {
+          className: 'wedge-card' + (layer.critical ? ' critical' : ''),
+          tabindex: '0',
+          role: 'button',
+          'aria-label': layer.id + ' ' + layer.name + (layer.critical ? ' (Critical Layer)' : '') + ' — Click to explore',
+          onclick: () => drillInto(layer.id)
+        });
+        card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); drillInto(layer.id); } });
+        if (layer.critical) card.appendChild(el('span', { className: 'critical-badge' }, ['Critical']));
+
+        // Top row: layer ID + name + owner badge
+        const topRow = el('div', { className: 'wedge-top-row' });
+        const leftInfo = el('div');
+        leftInfo.appendChild(el('div', { className: 'wedge-layer' }, [layer.id]));
+        leftInfo.appendChild(el('div', { className: 'wedge-name' }, [layer.name]));
+        topRow.appendChild(leftInfo);
+        topRow.appendChild(el('span', { className: 'wedge-owner' }, [LAYER_OWNERS[layer.id] || '']));
+        card.appendChild(topRow);
+
+        // Richer description from LAYER_DETAILS
+        card.appendChild(el('div', { className: 'wedge-desc' }, [LAYER_DETAILS[layer.id] || layer.description]));
+
+        const statsDiv = el('div', { className: 'wedge-stats' });
+        META.rings.forEach(r => {
+          if (lstats[r.id] > 0) {
+            statsDiv.appendChild(el('div', { className: 'wedge-stat' }, [
+              el('div', { className: 'wedge-stat-dot', style: 'background:' + r.color }),
+              lstats[r.id] + ' ' + r.name
+            ]));
+          }
+        });
+        card.appendChild(statsDiv);
+        attachTooltip(card, () => {
+          const total = layerBlips.length;
+          const adopted = lstats.adopt || 0;
+          return '<div class="tooltip-title">' + layer.id + ' ' + layer.name + '</div>'
+            + '<div class="tooltip-desc">' + esc(LAYER_DETAILS[layer.id] || layer.description) + '</div>'
+            + '<hr class="tooltip-divider">'
+            + '<div class="tooltip-meta">' + total + ' items &middot; ' + adopted + ' adopted &middot; Owner: ' + (LAYER_OWNERS[layer.id] || 'TBD') + '</div>';
+        });
+        grid.appendChild(card);
+      });
+      layersCol.appendChild(grid);
+
+      // Investment rule callout
+      const investRule = el('div', { className: 'investment-rule' });
+      investRule.innerHTML = 'Investment Rule: <strong>L2 + L3 &gt; L5</strong> \u2014 Foundation before features';
+      layersCol.appendChild(investRule);
+
+      layout.appendChild(layersCol);
+      container.appendChild(layout);
+    }
+
+    function buildOverviewSVG() {
+      const cx = 280, cy = 280, maxR = 250, minR = 60;
+      const ringRadii = [minR, minR + (maxR - minR) * 0.3, minR + (maxR - minR) * 0.6, minR + (maxR - minR) * 0.85, maxR];
+      const segAngle = 72;
+      const startAngle = -90;
+
+      let svg = '<svg viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg">';
+      // Background
+      svg += '<circle cx="' + cx + '" cy="' + cy + '" r="' + maxR + '" fill="#0d1424" stroke="#1e3a5f" stroke-width="1"/>';
+      // Ring circles
+      ringRadii.forEach((r, i) => {
+        svg += '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" stroke="#1e3a5f" stroke-width="0.5" stroke-dasharray="' + (i === 0 ? '4,4' : 'none') + '"/>';
+      });
+      // Segment lines + clickable wedge areas
+      for (let i = 0; i < 5; i++) {
+        const angle = (startAngle + i * segAngle) * Math.PI / 180;
+        const x2 = cx + maxR * Math.cos(angle);
+        const y2 = cy + maxR * Math.sin(angle);
+        svg += '<line x1="' + cx + '" y1="' + cy + '" x2="' + x2 + '" y2="' + y2 + '" stroke="#1e3a5f" stroke-width="0.5"/>';
+      }
+      // Clickable wedge paths
+      for (let i = 0; i < 5; i++) {
+        const a1 = (startAngle + i * segAngle) * Math.PI / 180;
+        const a2 = (startAngle + (i + 1) * segAngle) * Math.PI / 180;
+        const x1o = cx + maxR * Math.cos(a1), y1o = cy + maxR * Math.sin(a1);
+        const x2o = cx + maxR * Math.cos(a2), y2o = cy + maxR * Math.sin(a2);
+        const x1i = cx + minR * Math.cos(a1), y1i = cy + minR * Math.sin(a1);
+        const x2i = cx + minR * Math.cos(a2), y2i = cy + minR * Math.sin(a2);
+        svg += '<path class="svg-wedge" data-layer="' + META.layers[i].id + '" d="M' + x1i + ',' + y1i + ' L' + x1o + ',' + y1o + ' A' + maxR + ',' + maxR + ' 0 0,1 ' + x2o + ',' + y2o + ' L' + x2i + ',' + y2i + ' A' + minR + ',' + minR + ' 0 0,0 ' + x1i + ',' + y1i + 'Z" fill="transparent" stroke="none" style="cursor:pointer"/>';
+        svg += '<path data-layer="' + META.layers[i].id + '" d="M' + x1i + ',' + y1i + ' L' + x1o + ',' + y1o + ' A' + maxR + ',' + maxR + ' 0 0,1 ' + x2o + ',' + y2o + ' L' + x2i + ',' + y2i + ' A' + minR + ',' + minR + ' 0 0,0 ' + x1i + ',' + y1i + 'Z" fill="rgba(201,162,39,0)" stroke="none" pointer-events="none"><animate attributeName="fill" from="rgba(201,162,39,0)" to="rgba(201,162,39,0)" dur="0.1s" begin="mouseover" fill="freeze"/></path>';
+      }
+      // Ring labels
+      const ringNames = META.rings.map(r => r.name);
+      ringRadii.slice(0, 4).forEach((r, i) => {
+        const nextR = ringRadii[i + 1];
+        const midR = (r + nextR) / 2;
+        const labelAngle = (startAngle + 2) * Math.PI / 180;
+        const lx = cx + midR * Math.cos(labelAngle);
+        const ly = cy + midR * Math.sin(labelAngle);
+        svg += '<text x="' + lx + '" y="' + ly + '" fill="' + RING_COLORS[META.rings[i].id] + '" font-size="9" font-family="IBM Plex Mono" text-anchor="middle" opacity="0.6">' + ringNames[i] + '</text>';
+      });
+      // Layer labels + blip dots
+      META.layers.forEach((layer, i) => {
+        const midAngle = (startAngle + i * segAngle + segAngle / 2) * Math.PI / 180;
+        const lx = cx + (maxR + 22) * Math.cos(midAngle);
+        const ly = cy + (maxR + 22) * Math.sin(midAngle);
+        svg += '<text x="' + lx + '" y="' + ly + '" fill="' + (layer.critical ? '#c9a227' : '#a8b4c4') + '" font-size="10" font-family="IBM Plex Mono" font-weight="' + (layer.critical ? '700' : '500') + '" text-anchor="middle" dominant-baseline="middle">' + layer.id + '</text>';
+
+        // Place blips
+        const layerBlips = BLIPS.filter(b => b.layer === layer.id);
+        layerBlips.forEach((blip, j) => {
+          const ringIdx = META.rings.findIndex(r => r.id === blip.ring);
+          const innerR = ringRadii[ringIdx];
+          const outerR = ringRadii[ringIdx + 1];
+          const seed = hashCode(blip.id);
+          const bR = innerR + (outerR - innerR) * (0.25 + (seed % 50) / 100);
+          const aStart = startAngle + i * segAngle + 4;
+          const aEnd = startAngle + (i + 1) * segAngle - 4;
+          const bAngle = (aStart + (aEnd - aStart) * ((j + 0.5) / layerBlips.length)) * Math.PI / 180;
+          const bx = cx + bR * Math.cos(bAngle);
+          const by = cy + bR * Math.sin(bAngle);
+          const color = RING_COLORS[blip.ring];
+          if (blip.isNew) {
+            svg += '<g class="svg-blip" data-blip-id="' + blip.id + '"><rect x="' + (bx - 4) + '" y="' + (by - 4) + '" width="8" height="8" fill="' + color + '" transform="rotate(45 ' + bx + ' ' + by + ')" opacity="0.85"/></g>';
+          } else {
+            svg += '<g class="svg-blip" data-blip-id="' + blip.id + '"><circle cx="' + bx + '" cy="' + by + '" r="4" fill="' + color + '" opacity="0.85"/></g>';
+          }
+        });
+      });
+      // Center label
+      svg += '<text x="' + cx + '" y="' + (cy + 3) + '" fill="#c9a227" font-size="9" font-family="IBM Plex Mono" font-weight="600" text-anchor="middle" opacity="0.8">DATA ARCH</text>';
+      svg += '</svg>';
+      return svg;
+    }
+
+    // ── Drill Into Layer ──
+    function drillInto(layerId) {
+      currentLayer = layerId;
+      searchTerm = '';
+      const container = document.getElementById('radar-content');
+      container.innerHTML = '';
+      renderSubNav();
+      location.hash = '#radar/' + layerId;
+
+      const layer = META.layers.find(l => l.id === layerId);
+      const layerBlips = BLIPS.filter(b => b.layer === layerId);
+
+      // Layer header
+      const layerHeader = el('div', { style: 'margin-bottom:1.5rem;' });
+      layerHeader.appendChild(el('div', { style: 'font-family:IBM Plex Mono,monospace;font-size:0.7rem;color:var(--nato-gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:0.25rem;' }, [layer.id + (layer.critical ? ' \u2014 CRITICAL LAYER' : '')]));
+      layerHeader.appendChild(el('h2', { style: 'font-size:1.5rem;font-weight:700;margin-bottom:0.25rem;' }, [layer.name]));
+      layerHeader.appendChild(el('p', { style: 'color:var(--nato-muted);font-size:0.9rem;' }, [layer.description + ' \u2014 ' + layerBlips.length + ' items tracked']));
+      container.appendChild(layerHeader);
+
+      // Ring legend
+      const ringLeg = el('div', { className: 'ring-legend' });
+      META.rings.forEach(r => {
+        const count = layerBlips.filter(b => b.ring === r.id).length;
+        const badge = el('div', { className: 'ring-badge' }, [
+          el('div', { className: 'ring-dot', style: 'background:' + r.color }),
+          r.name + ' (' + count + ')'
+        ]);
+        attachTooltip(badge, '<div class="tooltip-title" style="color:' + r.color + '">' + r.name + '</div><div class="tooltip-desc">' + esc(r.description) + '</div><div class="tooltip-meta">' + count + ' items in ' + layer.name + '</div>');
+        ringLeg.appendChild(badge);
+      });
+      container.appendChild(ringLeg);
+
+      const wrap = el('div', { className: 'radar-wrap' });
+
+      // SVG detail radar
+      const svgWrap = el('div', { className: 'radar-svg-wrap' });
+      svgWrap.innerHTML = buildDetailSVG(layerBlips);
+      wrap.appendChild(svgWrap);
+      attachSVGBlipTooltips(svgWrap);
+
+      // Legend
+      const legend = el('div', { className: 'radar-legend' });
+      let blipNum = 1;
+      META.quadrants.forEach(q => {
+        const qBlips = layerBlips.filter(b => b.quadrant === q.id);
+        if (qBlips.length === 0) return;
+        const section = el('div', { className: 'legend-section', 'data-quad': q.id });
+        section.appendChild(el('div', { className: 'legend-section-title' }, [q.name + ' (' + qBlips.length + ')']));
+        qBlips.forEach(blip => {
+          const num = blipNum++;
+          blip._num = num;
+          const color = RING_COLORS[blip.ring];
+          const numEl = el('div', {
+            className: 'legend-num' + (blip.isNew ? ' new' : ''),
+            style: 'background:' + color + '; color: #0a0f1a;'
+          });
+          if (blip.isNew) numEl.appendChild(el('span', null, ['' + num]));
+          else numEl.textContent = num;
+
+          const item = el('div', {
+            className: 'legend-item',
+            tabindex: '0',
+            role: 'button',
+            'aria-label': blip.title + ' — ' + blip.ring,
+            onclick: () => showDetail(blip)
+          }, [
+            numEl,
+            el('span', { className: 'legend-title' }, [blip.title]),
+            el('span', { className: 'legend-ring' }, [blip.ring])
+          ]);
+          item.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showDetail(blip); } });
+          attachTooltip(item, () => blipTooltipHTML(blip));
+          section.appendChild(item);
+        });
+        legend.appendChild(section);
+      });
+      wrap.appendChild(legend);
+      container.appendChild(wrap);
+    }
+
+    function buildDetailSVG(blips) {
+      const cx = 280, cy = 280, maxR = 250, minR = 60;
+      const ringRadii = [minR, minR + (maxR - minR) * 0.3, minR + (maxR - minR) * 0.6, minR + (maxR - minR) * 0.85, maxR];
+      const quadAngles = [
+        { start: -90, end: 0 },
+        { start: 0, end: 90 },
+        { start: 90, end: 180 },
+        { start: 180, end: 270 }
+      ];
+
+      let svg = '<svg viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg">';
+      svg += '<circle cx="' + cx + '" cy="' + cy + '" r="' + maxR + '" fill="#0d1424" stroke="#1e3a5f" stroke-width="1"/>';
+      ringRadii.forEach(r => {
+        svg += '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" stroke="#1e3a5f" stroke-width="0.5"/>';
+      });
+      // Quad lines (cross)
+      svg += '<line x1="' + cx + '" y1="' + (cy - maxR) + '" x2="' + cx + '" y2="' + (cy + maxR) + '" stroke="#1e3a5f" stroke-width="0.5"/>';
+      svg += '<line x1="' + (cx - maxR) + '" y1="' + cy + '" x2="' + (cx + maxR) + '" y2="' + cy + '" stroke="#1e3a5f" stroke-width="0.5"/>';
+
+      // Quad labels
+      const quadLabels = META.quadrants.map(q => q.name);
+      const labelPositions = [
+        { x: cx + maxR / 2, y: cy - maxR + 15 },
+        { x: cx + maxR - 30, y: cy + maxR / 2 },
+        { x: cx - maxR / 2, y: cy + maxR - 10 },
+        { x: cx - maxR + 30, y: cy - maxR / 2 }
+      ];
+      quadLabels.forEach((label, i) => {
+        const pos = labelPositions[i];
+        const color = Object.values(QUAD_COLORS)[i];
+        svg += '<text x="' + pos.x + '" y="' + pos.y + '" fill="' + color + '" font-size="9" font-family="IBM Plex Mono" text-anchor="middle" opacity="0.5">' + label + '</text>';
+      });
+
+      // Ring labels
+      META.rings.forEach((r, i) => {
+        const midR = (ringRadii[i] + ringRadii[i + 1]) / 2;
+        svg += '<text x="' + (cx + 4) + '" y="' + (cy - midR) + '" fill="' + r.color + '" font-size="8" font-family="IBM Plex Mono" opacity="0.4">' + r.name + '</text>';
+      });
+
+      // Place blips
+      let blipNum = 1;
+      META.quadrants.forEach((q, qi) => {
+        const qBlips = blips.filter(b => b.quadrant === q.id);
+        const angles = quadAngles[qi];
+        svg += '<g class="radar-quadrant" data-quad="' + q.id + '">';
+        qBlips.forEach((blip, j) => {
+          const num = blipNum++;
+          const ringIdx = META.rings.findIndex(r => r.id === blip.ring);
+          const innerR = ringRadii[ringIdx];
+          const outerR = ringRadii[ringIdx + 1];
+          const seed = hashCode(blip.id);
+          const bR = innerR + (outerR - innerR) * (0.25 + (seed % 50) / 100);
+          const aStart = angles.start + 5;
+          const aEnd = angles.end - 5;
+          const bAngle = (aStart + (aEnd - aStart) * ((j + 0.5) / Math.max(qBlips.length, 1))) * Math.PI / 180;
+          const bx = cx + bR * Math.cos(bAngle);
+          const by = cy + bR * Math.sin(bAngle);
+          const color = RING_COLORS[blip.ring];
+
+          if (blip.isNew) {
+            svg += '<g class="svg-blip" data-blip-id="' + blip.id + '" onclick="showDetail(BLIPS.find(b=>b.id===\'' + blip.id + '\'))">';
+            svg += '<rect x="' + (bx - 7) + '" y="' + (by - 7) + '" width="14" height="14" fill="' + color + '" transform="rotate(45 ' + bx + ' ' + by + ')" rx="1"/>';
+            svg += '<text x="' + bx + '" y="' + (by + 3) + '" fill="#0a0f1a" font-size="7" font-family="IBM Plex Mono" font-weight="700" text-anchor="middle">' + num + '</text>';
+            svg += '</g>';
+          } else {
+            svg += '<g class="svg-blip" data-blip-id="' + blip.id + '" onclick="showDetail(BLIPS.find(b=>b.id===\'' + blip.id + '\'))">';
+            svg += '<circle cx="' + bx + '" cy="' + by + '" r="9" fill="' + color + '"/>';
+            svg += '<text x="' + bx + '" y="' + (by + 3) + '" fill="#0a0f1a" font-size="7" font-family="IBM Plex Mono" font-weight="700" text-anchor="middle">' + num + '</text>';
+            svg += '</g>';
+          }
+        });
+        svg += '</g>';
+      });
+
+      // Center label
+      const layerObj = META.layers.find(l => l.id === currentLayer);
+      if (layerObj) {
+        svg += '<text x="' + cx + '" y="' + (cy - 4) + '" fill="' + (layerObj.critical ? '#c9a227' : '#a8b4c4') + '" font-size="10" font-family="IBM Plex Mono" font-weight="600" text-anchor="middle" opacity="0.7">' + layerObj.id + '</text>';
+        svg += '<text x="' + cx + '" y="' + (cy + 10) + '" fill="#7889a0" font-size="7" font-family="IBM Plex Mono" text-anchor="middle" opacity="0.6">' + layerObj.name + '</text>';
+      }
+
+      svg += '</svg>';
+      return svg;
+    }
+
+    function hashCode(str) {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        hash = ((hash << 5) - hash) + str.charCodeAt(i);
+        hash |= 0;
+      }
+      return Math.abs(hash);
+    }
+
+    // ── Detail Panel ──
+    function showDetail(blip) {
+      const panel = document.getElementById('detailPanel');
+      const body = document.getElementById('detailBody');
+      const overlay = document.getElementById('overlay');
+      body.innerHTML = '';
+
+      body.appendChild(el('div', { className: 'detail-title' }, [blip.title]));
+
+      const meta = el('div', { className: 'detail-meta' });
+      const layerInfo = META.layers.find(l => l.id === blip.layer);
+      meta.appendChild(el('span', {
+        className: 'detail-badge',
+        style: 'background:rgba(201,162,39,0.15); color:' + '#c9a227'
+      }, [blip.layer + ' ' + layerInfo.name]));
+      const quadInfo = META.quadrants.find(q => q.id === blip.quadrant);
+      meta.appendChild(el('span', {
+        className: 'detail-badge',
+        style: 'background:rgba(56,189,248,0.15); color:' + QUAD_COLORS[blip.quadrant]
+      }, [quadInfo.name]));
+      const ringInfo = META.rings.find(r => r.id === blip.ring);
+      meta.appendChild(el('span', {
+        className: 'detail-badge',
+        style: 'background:rgba(0,0,0,0.3); color:' + ringInfo.color
+      }, [ringInfo.name]));
+      if (blip.isNew) {
+        meta.appendChild(el('span', {
+          className: 'detail-badge',
+          style: 'background:rgba(52,211,153,0.15); color:#34d399'
+        }, ['New']));
+      }
+      body.appendChild(meta);
+      body.appendChild(el('p', { className: 'detail-desc' }, [blip.description]));
+
+      if (blip.tags && blip.tags.length) {
+        const tags = el('div', { className: 'detail-tags' });
+        blip.tags.forEach(t => tags.appendChild(el('span', { className: 'detail-tag' }, [t])));
+        body.appendChild(tags);
+      }
+
+      // Approval chain
+      body.appendChild(buildApprovalChain(blip.approvalChain));
+
+      panel.classList.add('open');
+      overlay.classList.add('open');
+      overlay.setAttribute('aria-hidden', 'false');
+      // Focus the close button for keyboard users
+      setTimeout(() => document.getElementById('detailClose').focus(), 100);
+    }
+
+    function closeDetail() {
+      document.getElementById('detailPanel').classList.remove('open');
+      document.getElementById('overlay').classList.remove('open');
+      document.getElementById('overlay').setAttribute('aria-hidden', 'true');
+    }
+
+    function buildApprovalChain(chain) {
+      const wrap = el('div', { className: 'approval-chain' });
+      wrap.appendChild(el('div', { className: 'approval-label' }, ['Approval Chain']));
+      const pipeline = el('div', { className: 'approval-pipeline' });
+      chain.forEach((step, i) => {
+        const stepEl = el('div', { className: 'approval-step' });
+        if (i < chain.length - 1) stepEl.appendChild(el('div', { className: 'approval-connector' }));
+        const circle = el('div', { className: 'approval-circle ' + step.status });
+        if (step.status === 'approved') circle.innerHTML = '\u2713';
+        else if (step.status === 'blocked') circle.innerHTML = '\u2717';
+        else circle.innerHTML = '\u25CB';
+        attachTooltip(circle, () => approvalTooltipHTML(step));
+        stepEl.appendChild(circle);
+        stepEl.appendChild(el('div', { className: 'approval-role' }, [step.label]));
+        if (step.approverName) {
+          stepEl.appendChild(el('div', { className: 'approval-info' }, [step.approverName]));
+        }
+        if (step.date) {
+          stepEl.appendChild(el('div', { className: 'approval-info' }, [step.date]));
+        }
+        pipeline.appendChild(stepEl);
+      });
+      wrap.appendChild(pipeline);
+      return wrap;
+    }
+
+    function buildInlineApproval(chain) {
+      const wrap = el('div', { className: 'approval-inline' });
+      chain.forEach((step, i) => {
+        const dot = el('div', { className: 'approval-dot ' + step.status });
+        if (step.status === 'approved') dot.innerHTML = '\u2713';
+        else if (step.status === 'blocked') dot.innerHTML = '\u2717';
+        attachTooltip(dot, () => approvalTooltipHTML(step));
+        wrap.appendChild(dot);
+        if (i < chain.length - 1) wrap.appendChild(el('div', { className: 'approval-dot-line' }));
+      });
+      return wrap;
+    }
+
+    // ── Plan View ──
+    function renderPlanView() {
+      const container = document.getElementById('plan-content');
+      container.innerHTML = '';
+      renderPlanSubNav();
+
+      // Plan Hero
+      const planHero = el('div', { style: 'margin-bottom:2rem;' });
+      planHero.appendChild(el('div', { style: 'font-family:IBM Plex Mono,monospace;font-size:0.7rem;color:var(--nato-gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:0.25rem;' }, ['Plan for Success']));
+      planHero.appendChild(el('h2', { style: 'font-size:1.75rem;font-weight:700;margin-bottom:0.5rem;' }, ['5-Phase Implementation Roadmap']));
+      planHero.appendChild(el('p', { style: 'color:var(--nato-muted);font-size:0.9rem;max-width:700px;' }, ['From establishing institutional authority through multi-echelon expansion. Each deliverable carries a 4-tier approval chain tracking progress from analyst through command signature.']));
+
+      // Plan stats
+      const stats = computeStats();
+      const planStrip = el('div', { className: 'stats-strip', style: 'justify-content:flex-start;margin-top:1rem;' });
+      [
+        { val: PLAN.phases.length, label: 'Phases' },
+        { val: stats.planDeliverables, label: 'Deliverables' },
+        { val: Math.round(stats.planApproved / stats.planGates * 100) + '%', label: 'Approved' },
+        { val: PLAN.dependencies.length, label: 'Dependencies' }
+      ].forEach(c => {
+        const chip = el('div', { className: 'stat-chip' });
+        chip.appendChild(el('span', { className: 'stat-val' }, ['' + c.val]));
+        chip.appendChild(el('span', { className: 'stat-label' }, [c.label]));
+        planStrip.appendChild(chip);
+      });
+      planHero.appendChild(planStrip);
+      container.appendChild(planHero);
+
+      // BLUF (Bottom Line Up Front) — Military brief format
+      const bluf = el('div', { className: 'bluf-box', role: 'region', 'aria-label': 'Bottom Line Up Front' });
+      bluf.appendChild(el('div', { className: 'bluf-label' }, ['BLUF \u2014 Bottom Line Up Front']));
+      bluf.appendChild(el('p', { className: 'bluf-text', html: '<strong>Definition before data. Doctrine before design. One canonical type per concept.</strong> Every object type traces to published doctrine, passes peer review, and meets VAULTIS-A quality standards before it touches production. This plan sequences 5 phases from institutional authority through multi-echelon expansion. <strong>Phase 1 must complete within 30 days</strong>\u200A\u2014\u200Awithout signed authority, everything downstream is advisory. MVP delivery per Secretary of the Army priorities: <strong>speed over perfection, warfighter first.</strong>' }));
+      container.appendChild(bluf);
+
+      // Current State
+      const stateSection = el('div', { className: 'plan-section', id: 'current-state' });
+      stateSection.appendChild(el('div', { className: 'plan-section-header' }, [
+        el('div', { className: 'phase-num', style: 'border-color: var(--nato-accent); color: var(--nato-accent);' }, ['\u2139']),
+        el('div', { className: 'phase-info' }, [
+          el('div', { className: 'phase-title' }, ['Assessment of Current State']),
+          el('div', { className: 'phase-meta' }, ['What you have built + what is missing'])
+        ])
+      ]));
+
+      // Strengths table
+      const sTable = el('table', { className: 'state-table' });
+      sTable.innerHTML = '<thead><tr><th>Asset</th><th>Status</th><th>Assessment</th></tr></thead>';
+      const sTbody = el('tbody');
+      PLAN.currentState.strengths.forEach(s => {
+        const tr = el('tr');
+        tr.appendChild(el('td', null, [s.asset]));
+        const statusClass = s.status.toLowerCase() === 'complete' ? 'complete' : 'prototype';
+        tr.appendChild(el('td', null, [el('span', { className: 'status-badge ' + statusClass }, [s.status])]));
+        tr.appendChild(el('td', { style: 'color: var(--nato-muted);' }, [s.assessment]));
+        attachTooltip(tr, '<div class="tooltip-title">' + esc(s.asset) + '</div><span class="tooltip-ring" style="background:#34d39922;color:#34d399">' + esc(s.status) + '</span><div class="tooltip-desc" style="margin-top:0.35rem">' + esc(s.assessment) + '</div>');
+        sTbody.appendChild(tr);
+      });
+      sTable.appendChild(sTbody);
+      stateSection.appendChild(sTable);
+
+      // Gaps table
+      const gTable = el('table', { className: 'state-table' });
+      gTable.innerHTML = '<thead><tr><th>Gap</th><th>Risk If Not Addressed</th></tr></thead>';
+      const gTbody = el('tbody');
+      PLAN.currentState.gaps.forEach(g => {
+        const tr = el('tr');
+        tr.appendChild(el('td', null, [g.gap]));
+        tr.appendChild(el('td', { style: 'color: var(--nato-error);' }, [g.risk]));
+        attachTooltip(tr, '<div class="tooltip-title" style="color:var(--nato-error)">' + esc(g.gap) + '</div><div class="tooltip-desc">' + esc(g.risk) + '</div>');
+        gTbody.appendChild(tr);
+      });
+      gTable.appendChild(gTbody);
+      stateSection.appendChild(gTable);
+      container.appendChild(stateSection);
+
+      // Phases
+      PLAN.phases.forEach(phase => {
+        const section = el('div', { className: 'plan-section', id: phase.id });
+
+        // Calculate progress
+        const totalGates = phase.deliverables.length * 4;
+        const approvedGates = phase.deliverables.reduce((sum, d) =>
+          sum + d.approvalChain.filter(a => a.status === 'approved').length, 0);
+        const pct = totalGates > 0 ? Math.round(approvedGates / totalGates * 100) : 0;
+
+        section.appendChild(el('div', { className: 'plan-section-header' }, [
+          el('div', { className: 'phase-num' }, ['' + phase.number]),
+          el('div', { className: 'phase-info' }, [
+            el('div', { className: 'phase-title' }, [phase.name]),
+            el('div', { className: 'phase-meta' }, [phase.duration + ' \u2022 ' + phase.deliverables.length + ' deliverables'])
+          ]),
+          el('div', { className: 'phase-progress' }, [
+            el('div', { className: 'progress-bar' }, [
+              el('div', { className: 'progress-fill', style: 'width:' + pct + '%' })
+            ]),
+            el('div', { className: 'progress-label' }, [pct + '% approved'])
+          ])
+        ]));
+
+        section.appendChild(el('div', { className: 'phase-objective' }, [phase.objective]));
+
+        // Deliverables
+        phase.deliverables.forEach(d => {
+          const approvedCount = d.approvalChain.filter(a => a.status === 'approved').length;
+          const card = el('div', { className: 'deliverable' });
+          const titleEl = el('div', { className: 'deliverable-title' }, [d.title]);
+          attachTooltip(titleEl, () => {
+            return '<div class="tooltip-title">' + esc(d.title) + '</div>'
+              + '<div class="tooltip-desc">' + esc(d.description) + '</div>'
+              + '<hr class="tooltip-divider">'
+              + '<div class="tooltip-meta">Phase ' + phase.number + ' &middot; Approvals: ' + approvedCount + '/4</div>';
+          });
+          card.appendChild(el('div', { className: 'deliverable-header' }, [
+            titleEl,
+            buildInlineApproval(d.approvalChain)
+          ]));
+          card.appendChild(el('div', { className: 'deliverable-desc' }, [d.description]));
+          card.appendChild(el('div', { className: 'deliverable-approval' }, [
+            buildApprovalChain(d.approvalChain)
+          ]));
+          section.appendChild(card);
+        });
+
+        // Exit criteria
+        const exitDiv = el('div', { className: 'exit-criteria' });
+        exitDiv.appendChild(el('div', { className: 'exit-criteria-label' }, ['Exit Criteria']));
+        const exitUl = el('ul');
+        phase.exitCriteria.forEach(c => exitUl.appendChild(el('li', null, [c])));
+        exitDiv.appendChild(exitUl);
+        section.appendChild(exitDiv);
+
+        container.appendChild(section);
+      });
+
+      // Dependencies
+      const depSection = el('div', { className: 'plan-section', id: 'dependencies' });
+      depSection.appendChild(el('div', { className: 'plan-section-header' }, [
+        el('div', { className: 'phase-num', style: 'border-color: var(--nato-error); color: var(--nato-error);' }, ['\u26A0']),
+        el('div', { className: 'phase-info' }, [
+          el('div', { className: 'phase-title' }, ['Critical Dependencies']),
+          el('div', { className: 'phase-meta' }, [PLAN.dependencies.length + ' blocking relationships'])
+        ])
+      ]));
+      PLAN.dependencies.forEach(dep => {
+        const card = el('div', { className: 'dep-card' });
+        card.appendChild(el('div', { className: 'dep-from' }, [dep.from]));
+        card.appendChild(el('div', { className: 'dep-blocks' }, ['Blocks: ' + dep.blocks]));
+        card.appendChild(el('div', { className: 'dep-mitigation' }, ['Mitigation: ' + dep.mitigation]));
+        attachTooltip(card, () => {
+          return '<div class="tooltip-title" style="color:var(--nato-error)">Dependency</div>'
+            + '<div class="tooltip-desc"><strong>If:</strong> ' + esc(dep.from) + '</div>'
+            + '<div class="tooltip-desc" style="color:#f87171"><strong>Then blocked:</strong> ' + esc(dep.blocks) + '</div>'
+            + '<hr class="tooltip-divider">'
+            + '<div class="tooltip-note">' + esc(dep.mitigation) + '</div>';
+        });
+        depSection.appendChild(card);
+      });
+      container.appendChild(depSection);
+
+      // Bottom Line
+      const bl = el('div', { className: 'bottom-line' });
+      bl.appendChild(el('div', { className: 'bottom-line-label' }, ['Bottom Line']));
+      const blOl = el('ol');
+      [PLAN.bottomLine.priority1, PLAN.bottomLine.priority2, PLAN.bottomLine.priority3].forEach(p => {
+        blOl.appendChild(el('li', null, [p]));
+      });
+      bl.appendChild(blOl);
+      bl.appendChild(el('div', { className: 'summary' }, [PLAN.bottomLine.summary]));
+      container.appendChild(bl);
+
+      // Setup scroll spy
+      setupScrollSpy();
+    }
+
+    // ── Scroll Spy ──
+    function setupScrollSpy() {
+      const sections = document.querySelectorAll('#plan-view .plan-section[id]');
+      const navBtns = document.querySelectorAll('.sub-nav .sub-nav-btn[data-target]');
+      if (!sections.length || !navBtns.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navBtns.forEach(b => b.classList.remove('active'));
+            const match = Array.from(navBtns).find(b => b.getAttribute('data-target') === entry.target.id);
+            if (match) match.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-30% 0px -60% 0px' });
+
+      sections.forEach(s => observer.observe(s));
+    }
+
+    // ── SVG Tooltip Binding ──
+    function attachSVGBlipTooltips(container) {
+      container.querySelectorAll('.svg-blip').forEach(g => {
+        const blipId = g.getAttribute('data-blip-id');
+        const blip = BLIPS.find(b => b.id === blipId);
+        if (!blip) return;
+        g.addEventListener('mouseenter', (e) => showTooltip(e, blipTooltipHTML(blip)));
+        g.addEventListener('mouseleave', hideTooltip);
+      });
+    }
+
+    // ── Boot ──
+    loadData();
+  </script>
+</body>
+</html>

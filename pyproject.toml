@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "sitrep-tracker"
+version = "1.0.0"
+description = "USAREUR-AF SITREP management CLI"
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.0",
+    "rich>=13.0",
+]
+
+[project.scripts]
+sitrep = "sitrep_tracker.cli:cli"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sitrep_tracker*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

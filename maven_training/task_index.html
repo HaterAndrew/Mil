@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MSS Task Reference Index — USAREUR-AF</title>
+  <style>
+    :root {
+      --navy:          #0C2340;
+      --navy-dark:     #071628;
+      --navy-light:    #163A6C;
+      --navy-mid:      #1E4A88;
+      --navy-pale:     #EEF2FA;
+      --gold:          #C8971A;
+      --gold-light:    #E0B840;
+      --gold-dark:     #9A7010;
+      --gold-pale:     #FDF5DC;
+      --white:         #FFFFFF;
+      --off-white:     #F3F5FA;
+      --gray-50:       #EFF1F8;
+      --gray-100:      #E0E4EF;
+      --gray-200:      #C4CAE0;
+      --gray-400:      #7A88A8;
+      --gray-600:      #485878;
+      --gray-700:      #303C58;
+      --gray-900:      #0A1628;
+      --radius:        3px;
+      --radius-lg:     6px;
+      --font-body:     'Courier New', Courier, monospace;
+      --font-ui:       Arial, Helvetica, sans-serif;
+      --shadow:        0 1px 5px rgba(0,0,0,0.12);
+      --shadow-hdr:    0 3px 16px rgba(0,0,0,0.35);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--off-white);
+      color: var(--gray-900);
+      font-size: 13px;
+      line-height: 1.55;
+      min-height: 100vh;
+    }
+
+    .banner-unclass {
+      background: #1E6B2A;
+      color: #FFFFFF;
+      text-align: center;
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 4px;
+      padding: 5px 0;
+      text-transform: uppercase;
+    }
+
+    header {
+      background: linear-gradient(155deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+      color: var(--white);
+      box-shadow: var(--shadow-hdr);
+      border-bottom: 3px solid var(--gold);
+      padding: 20px 28px 16px;
+    }
+
+    .hdr-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .hdr-patch {
+      width: 52px;
+      height: 52px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-ui);
+      font-weight: 900;
+      font-size: 11px;
+      color: var(--gold);
+      text-align: center;
+      line-height: 1.1;
+      flex-shrink: 0;
+    }
+
+    .hdr-text h1 {
+      font-family: var(--font-ui);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    .hdr-text .sub {
+      font-family: var(--font-ui);
+      font-size: 12px;
+      color: var(--gray-200);
+      margin-top: 3px;
+    }
+
+    /* ============= SEARCH BAR ============= */
+    .search-bar {
+      background: var(--navy-dark);
+      border-top: 1px solid var(--navy-mid);
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .search-bar label {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 8px 12px;
+      background: var(--navy-light);
+      border: 1px solid var(--navy-mid);
+      border-radius: var(--radius);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .search-bar input:focus {
+      border-color: var(--gold);
+    }
+
+    .search-bar input::placeholder {
+      color: var(--gray-400);
+    }
+
+    #result-count {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      color: var(--gray-400);
+      white-space: nowrap;
+      min-width: 80px;
+      text-align: right;
+    }
+
+    /* ============= FILTER PILLS ============= */
+    .filter-bar {
+      background: var(--navy);
+      border-bottom: 1px solid var(--navy-light);
+      padding: 8px 28px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-bar span {
+      font-family: var(--font-ui);
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--gray-400);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-right: 4px;
+    }
+
+    .pill {
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.12s;
+      background: var(--navy-light);
+      color: var(--gray-200);
+      border-color: var(--navy-mid);
+      user-select: none;
+    }
+
+    .pill:hover {
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+
+    .pill.active {
+      background: var(--gold);
+      color: var(--navy-dark);
+      border-color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* ============= CONTENT ============= */
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 28px 48px;
+    }
+
+    /* Section header */
+    .section-hdr {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      padding: 18px 0 8px;
+      border-bottom: 1px solid var(--gray-100);
+      margin-bottom: 6px;
+    }
+
+    .section-hdr.hidden { display: none; }
+
+    /* Task grid */
+    .task-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    /* Task card */
+    .task-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-left: 3px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      transition: border-color 0.1s, box-shadow 0.1s;
+      cursor: default;
+    }
+
+    .task-card:hover {
+      border-left-color: var(--gold);
+      box-shadow: var(--shadow);
+    }
+
+    a.task-card { cursor: pointer; }
+    a.task-card:hover .task-text { color: var(--navy-mid); }
+
+    .task-card.hidden { display: none; }
+
+    .task-text {
+      flex: 1;
+      font-size: 13px;
+      color: var(--gray-900);
+      line-height: 1.4;
+    }
+
+    .task-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 3px;
+      flex-shrink: 0;
+    }
+
+    /* TM badge */
+    .tm-badge {
+      display: inline-block;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-family: var(--font-ui);
+      font-size: 10px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    /* Color by TM tier */
+    .tm-10  { background: #E8F5E9; color: #1B5E20; border: 1px solid #A5D6A7; }
+    .tm-20  { background: #E3F2FD; color: #0D47A1; border: 1px solid #90CAF9; }
+    .tm-30  { background: #EDE7F6; color: #4527A0; border: 1px solid #CE93D8; }
+    /* WFF tracks (TM-40A–F) — prereq TM-30, no coding required */
+    .tm-40a { background: #E8F5E9; color: #1B5E20; border: 1px solid #81C784; }
+    .tm-40b { background: #FFF9C4; color: #F57F17; border: 1px solid #FFD54F; }
+    .tm-40c { background: #E3F2FD; color: #1565C0; border: 1px solid #64B5F6; }
+    .tm-40d { background: #FBE9E7; color: #BF360C; border: 1px solid #FF8A65; }
+    .tm-40e { background: #F3E5F5; color: #6A1B9A; border: 1px solid #BA68C8; }
+    .tm-40f { background: #E0F2F1; color: #004D40; border: 1px solid #4DB6AC; }
+    /* Specialist tracks (TM-40G–O) — prereq TM-30 */
+    .tm-40g { background: #FFF3E0; color: #E65100; border: 1px solid #FFCC80; }
+    .tm-40h { background: #FCE4EC; color: #880E4F; border: 1px solid #F48FB1; }
+    .tm-40m { background: #E0F7FA; color: #006064; border: 1px solid #80DEEA; }
+    .tm-40j { background: #F3E5F5; color: #6A1B9A; border: 1px solid #CE93D8; }
+    .tm-40k { background: #FFF8E1; color: #F57F17; border: 1px solid #FFE082; }
+    .tm-40l { background: #E8EAF6; color: #283593; border: 1px solid #9FA8DA; }
+    .tm-50g { background: #FBE9E7; color: #BF360C; border: 1px solid #FFAB91; }
+    .tm-50h { background: #F8BBD0; color: #880E4F; border: 1px solid #F48FB1; }
+    .tm-50m { background: #B2EBF2; color: #006064; border: 1px solid #80DEEA; }
+    .tm-50j { background: #E1BEE7; color: #4A148C; border: 1px solid #CE93D8; }
+    .tm-50k { background: #FFE0B2; color: #E65100; border: 1px solid #FFCC80; }
+    .tm-50l { background: #C5CAE9; color: #1A237E; border: 1px solid #9FA8DA; }
+    /* T3 tracks — Train-the-Trainer */
+    .t3-i  { background: #E0F2F1; color: #00695C; border: 1px solid #80CBC4; }
+    .t3-f  { background: #FFF3E0; color: #BF360C; border: 1px solid #FFAB91; }
+
+    .chapter-ref {
+      font-family: var(--font-ui);
+      font-size: 9px;
+      color: var(--gray-400);
+      white-space: nowrap;
+    }
+
+    /* No results */
+    #no-results {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--gray-400);
+      font-family: var(--font-ui);
+    }
+
+    #no-results h2 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--gray-600);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy-dark);
+      color: var(--gray-400);
+      text-align: center;
+      font-family: var(--font-ui);
+      font-size: 10px;
+      padding: 10px;
+      border-top: 2px solid var(--gold-dark);
+      letter-spacing: 1px;
+    }
+
+    /* Highlight matches */
+    mark {
+      background: var(--gold-pale);
+      color: var(--navy-dark);
+      border-radius: 2px;
+      padding: 0 1px;
+    }
+
+    /* Did-you-mean suggestion bar */
+    #suggest-bar {
+      display: none;
+      background: var(--gold-pale);
+      border-bottom: 1px solid var(--gold);
+      padding: 8px 28px;
+      font-family: var(--font-ui);
+      font-size: 12px;
+      color: var(--navy-dark);
+    }
+
+    #suggest-bar .suggest-label {
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    #suggest-bar .suggest-term {
+      display: inline-block;
+      padding: 2px 10px;
+      margin: 2px 4px;
+      border-radius: 12px;
+      background: var(--gold);
+      color: var(--navy-dark);
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.12s;
+    }
+
+    #suggest-bar .suggest-term:hover {
+      background: var(--gold-light);
+    }
+  </style>
+</head>
+<body>
+
+<div class="banner-unclass">UNCLASSIFIED</div>
+
+<header>
+  <div class="hdr-top">
+    <div class="hdr-patch">MSS<br>REF</div>
+    <div class="hdr-text">
+      <h1>MSS Task Reference Index</h1>
+      <div class="sub">USAREUR-AF Operational Data Team &nbsp;|&nbsp; What do you want to do? Search below.</div>
+    </div>
+  </div>
+</header>
+
+<div class="search-bar">
+  <label>Search:</label>
+  <input type="text" id="searchInput" placeholder="Type anything — e.g. spreadsheet, chart, login, etl, merge ..." autocomplete="off" autofocus />
+  <div id="result-count"></div>
+</div>
+
+<div class="filter-bar">
+  <span>Filter:</span>
+  <div class="pill active" data-filter="all">All</div>
+  <div class="pill" data-filter="setup">Setup &amp; Access</div>
+  <div class="pill" data-filter="navigation">Navigation</div>
+  <div class="pill" data-filter="data">Data &amp; Analysis</div>
+  <div class="pill" data-filter="build">No-Code Building</div>
+  <div class="pill" data-filter="wff">WFF Tracks (40A–F)</div>
+  <div class="pill" data-filter="ontology">Ontology &amp; Modeling</div>
+  <div class="pill" data-filter="aip">AIP &amp; AI</div>
+  <div class="pill" data-filter="code">Code &amp; SDK</div>
+  <div class="pill" data-filter="ml">Machine Learning</div>
+  <div class="pill" data-filter="pm">Program Mgmt</div>
+  <div class="pill" data-filter="km">Knowledge Mgmt</div>
+  <div class="pill" data-filter="governance">Governance &amp; Security</div>
+  <div class="pill" data-filter="advanced">Advanced / Expert</div>
+  <div class="pill" data-filter="t3">T3 (Train-the-Trainer)</div>
+</div>
+
+<div id="suggest-bar">
+  <span class="suggest-label">Did you mean:</span>
+  <span id="suggest-terms"></span>
+</div>
+
+<div class="content">
+  <div id="no-results">
+    <h2>No matching tasks found.</h2>
+    <p>Try a simpler word, a synonym, or clear the filter. Example: type "spreadsheet" instead of "dataset."</p>
+  </div>
+  <div id="task-container"></div>
+</div>
+
+<div class="banner-unclass">UNCLASSIFIED</div>
+<footer>MSS Task Reference Index &nbsp;&bull;&nbsp; USAREUR-AF Operational Data Team &nbsp;&bull;&nbsp; For training use only</footer>
+
+<script>
+// ============================================================
+// TASK DATA
+// Format: { task, tms: [{id, label, cls}], chapter, categories: [] }
+// categories map to filter pills: setup, navigation, data, build,
+//   ontology, aip, code, ml, pm, km, governance, advanced
+// ============================================================
+const TASKS = [
+
+  // ── SETUP & ACCESS ──────────────────────────────────────────
+  { task: "Set up account before first login", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 2", cat: ["setup"] },
+  { task: "Log in to MSS with CAC", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 2", cat: ["setup"] },
+  { task: "Log out of MSS", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 2", cat: ["setup"] },
+  { task: "Locate self-paced training resources", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 1", cat: ["setup"] },
+  { task: "Verify your own markings and access level", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 7", cat: ["setup","governance"] },
+  { task: "Configure new ORSA Code Workspace", tms: [{id:"tm-40g",label:"TM-40G"}], chapter: "Ch 2", cat: ["setup","code"] },
+  { task: "Create and configure Code Workspace", tms: [{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 2", cat: ["setup","code"] },
+  { task: "Manage packages in Code Workspace", tms: [{id:"tm-40g",label:"TM-40G"},{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 2", cat: ["setup","code"] },
+  { task: "Manage compute and environment resources", tms: [{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 2", cat: ["setup","code"] },
+  { task: "Configure project access and permissions", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 2", cat: ["setup","governance"] },
+
+  // ── NAVIGATION ──────────────────────────────────────────────
+  { task: "Navigate the MSS home screen", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 2", cat: ["navigation"], tags: ["homepage", "main page", "start", "landing", "first screen", "home", "where am i"] },
+  { task: "Find a resource using search", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 3", cat: ["navigation"], tags: ["look up", "look for", "where is", "find", "locate", "search bar"] },
+  { task: "Navigate using Compass file browser", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 3", cat: ["navigation"], tags: ["files", "folders", "browse", "directory", "explore", "file manager", "tree"] },
+  { task: "Bookmark a frequently used resource", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 3", cat: ["navigation"], tags: ["favorite", "pin", "save", "quick access", "shortcut", "star"] },
+  { task: "Open a Workshop application", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 4", cat: ["navigation"], tags: ["launch app", "open app", "start app", "run app", "click app"] },
+  { task: "Orient to a command-level application (e.g., CUB/CUA, Gaia)", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 4", cat: ["navigation"], tags: ["cub", "cua", "gaia", "command app", "unit app", "familiar"] },
+  { task: "Navigate between modules and pages", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 4", cat: ["navigation"], tags: ["tabs", "sections", "switch page", "move around", "menu", "sidebar"] },
+  { task: "Create a project and manage folder structure", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 2", cat: ["navigation","setup"], tags: ["new project", "folders", "organize", "directory", "file structure", "workspace"] },
+  { task: "Use Solution Designer to plan a build project", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 2", cat: ["navigation","build"], tags: ["blueprint", "plan", "architect", "design", "whiteboard", "diagram"] },
+  { task: "Build a project roadmap using forward and backward planning", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 2", cat: ["build"], tags: ["timeline", "schedule", "plan", "milestones", "gantt", "phases", "sequence"] },
+
+  // ── DATA VIEWING & EXPORT ────────────────────────────────────
+  { task: "Read and interpret a dashboard", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 4", cat: ["data"] },
+  { task: "Apply filters to a dashboard", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 4", cat: ["data"] },
+  { task: "View and read a dataset", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 5", cat: ["data"] },
+  { task: "Export data from a Workshop application", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 4", cat: ["data"] },
+  { task: "Verify data currency and source", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 5", cat: ["data"] },
+  { task: "Submit data using an action form", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 4", cat: ["data"] },
+  { task: "Execute an action button", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 4", cat: ["data"] },
+  { task: "Use Contour for no-code analysis", tms: [{id:"tm-10",label:"TM-10"},{id:"tm-20",label:"TM-20"}], chapter: "Ch 5", cat: ["data"] },
+  { task: "Use Quiver to explore ontology objects", tms: [{id:"tm-10",label:"TM-10"},{id:"tm-20",label:"TM-20"}], chapter: "Ch 5", cat: ["data"] },
+  { task: "Build saved analysis in Contour", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 6", cat: ["data"] },
+  { task: "Build complex aggregations in Contour", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 5", cat: ["data"] },
+  { task: "Create pivot tables in Contour", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 5", cat: ["data"] },
+  { task: "Calculate derived metrics in Contour", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 5", cat: ["data"] },
+  { task: "Build multi-object Quiver dashboards", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 5", cat: ["data"] },
+  { task: "Connect to Foundry datasets in notebook", tms: [{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 2", cat: ["data","code"] },
+  { task: "Write output datasets back to Foundry", tms: [{id:"tm-40g",label:"TM-40G"},{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 2", cat: ["data","code"] },
+  { task: "Build readiness forecast dashboard in Quiver", tms: [{id:"tm-40g",label:"TM-40G"}], chapter: "Ch 8", cat: ["data"] },
+  { task: "Build analytical Contour workbook for COA support", tms: [{id:"tm-40g",label:"TM-40G"}], chapter: "Ch 8", cat: ["data"] },
+
+  // ── NO-CODE PIPELINE BUILDING ────────────────────────────────
+  { task: "Create a Pipeline Builder pipeline", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 3", cat: ["build"], tags: ["etl", "data flow", "drag and drop", "no code", "point and click", "build pipeline", "data pipe"] },
+  { task: "Connect a data source in Pipeline Builder", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 3", cat: ["build"], tags: ["import", "ingest", "load data", "add data", "feed", "input source", "upload"] },
+  { task: "Transform data: filter, select, rename columns", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 3", cat: ["build"], tags: ["clean", "modify", "change columns", "pick columns", "drop columns", "rename fields"] },
+  { task: "Join datasets on a shared key", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 3", cat: ["build"], tags: ["merge", "combine", "vlookup", "xlookup", "match", "lookup", "link data", "cross reference", "foreign key"] },
+  { task: "Aggregate and summarize data", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 3", cat: ["build"], tags: ["sum", "total", "count", "average", "group by", "rollup", "stats", "statistics", "subtotal"] },
+  { task: "Append or union multiple datasets", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 3", cat: ["build"], tags: ["stack", "combine", "concatenate", "concat", "merge rows", "put together", "add rows"] },
+  { task: "Deduplicate rows and handle nulls", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 3", cat: ["build"], tags: ["remove duplicates", "dedup", "dups", "clean", "missing data", "blanks", "empty", "n/a", "dirty data"] },
+  { task: "Perform multi-source joins (inner/outer/left)", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 3", cat: ["build"], tags: ["merge", "combine", "inner join", "outer join", "left join", "match", "vlookup", "link"] },
+  { task: "Execute group-by aggregation", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 3", cat: ["build"], tags: ["group", "bucket", "categorize", "subtotal", "pivot", "summarize by"] },
+  { task: "Create calculated/derived columns", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 3", cat: ["build"], tags: ["formula", "new column", "computed field", "math", "add column", "calculate"] },
+  { task: "Perform pivot and unpivot operations", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 3", cat: ["build"], tags: ["reshape", "pivot table", "transpose", "rotate", "crosstab", "melt", "unpivot"] },
+  { task: "Partition datasets by region or classification", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 3", cat: ["build","governance"], tags: ["split", "segment", "separate", "divide", "slice", "subset by"] },
+  { task: "Handle null value logic", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 3", cat: ["build"], tags: ["missing data", "blanks", "empty", "n/a", "default value", "fill", "coalesce", "null handling"] },
+
+  // ── WORKSHOP (UI BUILDING) ───────────────────────────────────
+  { task: "Build a Workshop application with widgets", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 5", cat: ["build"], tags: ["create app", "build app", "make app", "ui", "interface", "frontend", "screen", "dashboard app"] },
+  { task: "Configure dashboard charts and metric tiles", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 5", cat: ["build"], tags: ["chart", "graph", "kpi", "gauge", "scorecard", "visual", "bar chart", "pie chart", "line chart"] },
+  { task: "Build tables with filtering and sorting", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 5", cat: ["build"], tags: ["data table", "grid", "spreadsheet", "list view", "sortable", "searchable table"] },
+  { task: "Build form widgets for data entry", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 5", cat: ["build"], tags: ["input form", "data entry", "fill out", "submit data", "user input", "text field"] },
+  { task: "Create object set widgets", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 5", cat: ["build"], tags: ["entity list", "object list", "record list", "data cards"] },
+  { task: "Configure filter controls", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 5", cat: ["build"], tags: ["dropdown", "picker", "select box", "narrow down", "refine", "search filter"] },
+  { task: "Configure layout and organize a Workshop application", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 5", cat: ["build"], tags: ["design", "arrange", "layout", "look and feel", "ui design", "organize screen", "ux"] },
+  { task: "Publish a Workshop application", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 5", cat: ["build","governance"], tags: ["go live", "release", "deploy app", "share app", "make available", "launch"] },
+  { task: "Create application variables", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 2", cat: ["build"], tags: ["state", "store value", "parameter", "variable", "dynamic"] },
+  { task: "Connect widgets to variables", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 2", cat: ["build"], tags: ["link widget", "wire up", "bind", "dynamic content", "reactive"] },
+  { task: "Implement variable chaining", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 2", cat: ["build"], tags: ["linked variables", "cascade", "chain", "dependent", "pass value"] },
+  { task: "Configure cascading dropdowns", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 2", cat: ["build"], tags: ["dependent dropdown", "chained dropdown", "linked picker", "dynamic options"] },
+  { task: "Apply conditional visibility rules", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 2", cat: ["build"], tags: ["show hide", "toggle", "conditional", "visible when", "display if", "dynamic layout"] },
+  { task: "Configure conditional widget content", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 2", cat: ["build"], tags: ["dynamic content", "show if", "change based on", "context aware"] },
+  { task: "Build multi-page application architecture", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 2", cat: ["build"], tags: ["multi page", "tabs", "pages", "navigation", "sections", "menu", "sidebar"] },
+  { task: "Design complex tables with computed columns", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 2", cat: ["build"], tags: ["calculated column", "formula column", "derived", "custom column"] },
+  { task: "Configure nested filters and dynamic object sets", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 2", cat: ["build"], tags: ["advanced filter", "multi filter", "complex filter", "chained filter"] },
+  { task: "Configure advanced map widgets", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 2", cat: ["build"], tags: ["geospatial", "gis", "map", "location", "coordinates", "gps", "overlay"] },
+  { task: "Build sprint board in Workshop", tms: [{id:"tm-40j",label:"TM-40J"}], chapter: "Ch 5", cat: ["build","pm"], tags: ["kanban", "task board", "project board", "agile board", "scrum board", "trello"] },
+  { task: "Build commander-facing project dashboard", tms: [{id:"tm-40j",label:"TM-40J"}], chapter: "Ch 5", cat: ["build","pm"], tags: ["status dashboard", "executive dashboard", "leadership view", "overview", "boss view"] },
+  { task: "Build SME directory application", tms: [{id:"tm-40k",label:"TM-40K"}], chapter: "Ch 8", cat: ["build","km"], tags: ["expert finder", "people search", "who knows", "contact list", "phone book", "yellow pages", "expertise"] },
+  { task: "Build knowledge browser application", tms: [{id:"tm-40k",label:"TM-40K"}], chapter: "Ch 6", cat: ["build","km"], tags: ["wiki", "knowledge base", "browse docs", "search docs", "documentation browser", "library"] },
+  { task: "Build a Slate application", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 7", cat: ["build","code"], tags: ["custom app", "code app", "html", "frontend", "embed", "web app"] },
+  { task: "Integrate Foundry API from Slate", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 7", cat: ["build","code"], tags: ["api call", "connect api", "data from api", "rest call", "fetch data"] },
+
+  // ── ONTOLOGY & DATA MODELING ─────────────────────────────────
+  { task: "Create an Object Type via Ontology UI", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 4", cat: ["ontology"] },
+  { task: "Add and configure properties on Object Type", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 4", cat: ["ontology"] },
+  { task: "Configure primary key on Object Type", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 4", cat: ["ontology"] },
+  { task: "Define an Interface on an Object Type", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 4", cat: ["ontology"] },
+  { task: "Configure an Object View", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 4", cat: ["ontology"] },
+  { task: "Use Object Explorer to validate object data", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 4", cat: ["ontology","build"] },
+  { task: "Create a Link Type between Object Types", tms: [{id:"tm-20",label:"TM-20"},{id:"tm-30",label:"TM-30"}], chapter: "Ch 4", cat: ["ontology"] },
+  { task: "Create and configure Actions", tms: [{id:"tm-20",label:"TM-20"},{id:"tm-30",label:"TM-30"}], chapter: "Ch 4", cat: ["ontology"] },
+  { task: "Design Object Type from operational requirements", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 4", cat: ["ontology"] },
+  { task: "Design Link Types and relationships", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 4", cat: ["ontology"] },
+  { task: "Configure action validation rules", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 4", cat: ["ontology"] },
+  { task: "Implement bi-directional link management", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 4", cat: ["ontology"] },
+  { task: "Design knowledge ontology", tms: [{id:"tm-40k",label:"TM-40K"}], chapter: "Ch 2", cat: ["ontology","km"] },
+  { task: "Design project tracker ontology", tms: [{id:"tm-40j",label:"TM-40J"}], chapter: "Ch 4", cat: ["ontology","pm"] },
+  { task: "Design program tracking ontology", tms: [{id:"tm-50j",label:"TM-50J"}], chapter: "Ch 3", cat: ["ontology","pm","advanced"] },
+  { task: "Design theater-level ontology", tms: [{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 2", cat: ["ontology","km","advanced"] },
+  { task: "Traverse link types between objects", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 2", cat: ["ontology","code"] },
+  { task: "Execute actions via OSDK", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 2", cat: ["ontology","code"] },
+  { task: "Build computed property functions", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 5", cat: ["ontology","code"] },
+  { task: "Manage ontology CI/CD", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 6", cat: ["ontology","governance","advanced"] },
+  { task: "Publish predictions as ontology object property", tms: [{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 4", cat: ["ontology","ml"] },
+
+  // ── AIP & AI WORKFLOWS ───────────────────────────────────────
+  { task: "Read and respond to an AIP Logic alert", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 4", cat: ["aip"], tags: ["ai alert", "notification", "automated alert", "smart alert", "llm alert"] },
+  { task: "Interact with AIP Agent chat interface", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 4", cat: ["aip"], tags: ["chatbot", "ai chat", "ask question", "talk to ai", "copilot", "gpt", "claude", "llm", "assistant"] },
+  { task: "Configure AIP Logic workflow parameters", tms: [{id:"tm-30",label:"TM-30"},{id:"tm-40h",label:"TM-40H"}], chapter: "Ch 6", cat: ["aip"], tags: ["ai workflow", "logic rules", "ai automation", "smart workflow", "llm config"] },
+  { task: "Configure natural language query on an Object Type", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 6", cat: ["aip"], tags: ["ask in english", "plain english", "search by question", "nlp", "smart search"] },
+  { task: "Build a basic AIP agent in Agent Studio", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 6", cat: ["aip"], tags: ["create bot", "build chatbot", "ai assistant", "agent", "copilot", "llm app"] },
+  { task: "Review and adjust parameters on an existing agent", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 6", cat: ["aip"], tags: ["tune bot", "edit agent", "change ai settings", "agent config"] },
+  { task: "Configure AIP for advanced knowledge management", tms: [{id:"tm-40k",label:"TM-40K"},{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 5", cat: ["aip","km"], tags: ["ai search", "smart search", "knowledge ai", "ai docs", "rag"] },
+  { task: "Conduct large-scale lessons synthesis with AI", tms: [{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 4", cat: ["aip","km","advanced"], tags: ["ai summarize", "bulk analysis", "ai review", "pattern extraction"] },
+  { task: "Implement AI-assisted doctrine development", tms: [{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 4", cat: ["aip","km","advanced"], tags: ["ai writing", "generate doctrine", "ai authoring", "llm writing"] },
+  { task: "Design multi-agent orchestration system", tms: [{id:"tm-50h",label:"TM-50H"}], chapter: "Ch 2", cat: ["aip","advanced"], tags: ["multi bot", "agent team", "orchestrate ai", "agent pipeline", "chain agents"] },
+  { task: "Implement orchestration patterns", tms: [{id:"tm-50h",label:"TM-50H"}], chapter: "Ch 2", cat: ["aip","advanced"], tags: ["agent coordination", "workflow pattern", "agent routing", "choreography"] },
+  { task: "Design shared state management for agents", tms: [{id:"tm-50h",label:"TM-50H"}], chapter: "Ch 2", cat: ["aip","advanced"], tags: ["agent memory", "shared context", "agent state", "cross-agent"] },
+  { task: "Implement circuit breakers and failure isolation", tms: [{id:"tm-50h",label:"TM-50H"}], chapter: "Ch 2", cat: ["aip","advanced"], tags: ["fault tolerance", "failsafe", "error handling", "resilience", "fallback"] },
+  { task: "Domain adapt LLM for Army writing style", tms: [{id:"tm-50h",label:"TM-50H"}], chapter: "Ch 3", cat: ["aip","advanced"], tags: ["fine tune", "customize ai", "army language", "military style", "prompt engineering"] },
+  { task: "Implement advanced RAG for intelligence fusion", tms: [{id:"tm-50h",label:"TM-50H"}], chapter: "Ch 4", cat: ["aip","advanced"], tags: ["retrieval augmented", "rag", "document qa", "intel search", "semantic search"] },
+  { task: "Conduct AI red-team assessment", tms: [{id:"tm-50h",label:"TM-50H"}], chapter: "Ch 5", cat: ["aip","governance","advanced"], tags: ["ai safety", "adversarial test", "jailbreak", "red team", "attack test", "security test"] },
+  { task: "Implement AI observability for production system", tms: [{id:"tm-50h",label:"TM-50H"}], chapter: "Ch 6", cat: ["aip","advanced"], tags: ["ai monitoring", "ai logs", "llm metrics", "ai dashboard", "track ai"] },
+  { task: "Build multi-modal ingestion pipeline", tms: [{id:"tm-50h",label:"TM-50H"}], chapter: "Ch 7", cat: ["aip","advanced"], tags: ["images", "documents", "pdf", "mixed data", "unstructured", "ocr", "media"] },
+  { task: "Conduct AI production readiness review", tms: [{id:"tm-50h",label:"TM-50H"}], chapter: "Ch 8", cat: ["aip","governance","advanced"], tags: ["ai go live", "ai deploy check", "production check", "launch review"] },
+  { task: "Subscribe to real-time object changes", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 2", cat: ["aip","code"], tags: ["live updates", "streaming", "push notification", "event driven", "websocket", "reactive"] },
+
+  // ── CODE, SDK & TRANSFORMS ───────────────────────────────────
+  { task: "Query objects via OSDK fundamentals", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 2", cat: ["code"] },
+  { task: "Implement pagination for object queries", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 2", cat: ["code"] },
+  { task: "Filter and sort objects via OSDK", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 2", cat: ["code"] },
+  { task: "Perform bulk object operations", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 2", cat: ["code"] },
+  { task: "Implement error handling and retries", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 2", cat: ["code"] },
+  { task: "Initialize Platform SDK", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 4", cat: ["code"] },
+  { task: "Read datasets via Platform SDK", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 4", cat: ["code"] },
+  { task: "Write datasets with transactions", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 4", cat: ["code"] },
+  { task: "Manage file resources via SDK", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 4", cat: ["code"] },
+  { task: "Manage branches programmatically", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 4", cat: ["code"] },
+  { task: "Build Functions on Objects (FOO)", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 5", cat: ["code"] },
+  { task: "Optimize FOO performance", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 5", cat: ["code"] },
+  { task: "Test FOO functions", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 5", cat: ["code"] },
+  { task: "Design action validation architecture", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 6", cat: ["code"] },
+  { task: "Write TypeScript action validators", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 6", cat: ["code"] },
+  { task: "Implement multi-step action flows", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 6", cat: ["code"] },
+  { task: "Implement REST API integrations", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 9", cat: ["code"] },
+  { task: "Manage webhook integrations", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 9", cat: ["code"] },
+  { task: "Build feature engineering transform", tms: [{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 3", cat: ["code","ml"] },
+  { task: "Build feature store entry", tms: [{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 3", cat: ["code","ml"] },
+  { task: "Version control in Code Workspaces", tms: [{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 2", cat: ["code"] },
+  { task: "Scale Platform SDK authentication", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 2", cat: ["code","advanced"] },
+  { task: "Scale dataset operations", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 2", cat: ["code","advanced"] },
+  { task: "Automate branch management", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 2", cat: ["code","advanced"] },
+  { task: "Optimize OSDK queries", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 3", cat: ["code","advanced"] },
+  { task: "Implement caching strategies", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 3", cat: ["code","advanced"] },
+  { task: "Optimize indexing and search", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 3", cat: ["code","advanced"] },
+  { task: "Integrate REST APIs at scale", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 5", cat: ["code","advanced"] },
+  { task: "Implement gRPC integration patterns", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 5", cat: ["code","advanced"] },
+  { task: "Implement event streaming (Kafka / Kinesis)", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 5", cat: ["code","advanced"] },
+  { task: "Deploy containers on MSS", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 6", cat: ["code","advanced"] },
+  { task: "Manage technical debt at scale", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 8", cat: ["code","advanced"] },
+
+  // ── MACHINE LEARNING ─────────────────────────────────────────
+  { task: "Train scikit-learn model with experiment tracking", tms: [{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 4", cat: ["ml"] },
+  { task: "Hyperparameter tuning with Optuna", tms: [{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 4", cat: ["ml"] },
+  { task: "Train PyTorch model on Foundry data", tms: [{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 4", cat: ["ml"] },
+  { task: "Compute and document model evaluation report", tms: [{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 5", cat: ["ml"] },
+  { task: "Conduct bias and fairness assessment", tms: [{id:"tm-40i",label:"TM-40M"},{id:"tm-50i",label:"TM-50M"}], chapter: "Ch 5", cat: ["ml"] },
+  { task: "Deploy batch inference as Foundry transform", tms: [{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 6", cat: ["ml"] },
+  { task: "Implement inference caching and freshness indicators", tms: [{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 6", cat: ["ml"] },
+  { task: "Implement model versioning", tms: [{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 7", cat: ["ml"] },
+  { task: "Implement drift detection", tms: [{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 7", cat: ["ml"] },
+  { task: "Configure retraining triggers", tms: [{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 7", cat: ["ml"] },
+  { task: "Complete model card documentation", tms: [{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 9", cat: ["ml","governance"] },
+  { task: "Manage production model incident", tms: [{id:"tm-40i",label:"TM-40M"}], chapter: "Ch 7", cat: ["ml"] },
+  { task: "Build linear regression readiness model", tms: [{id:"tm-40g",label:"TM-40G"}], chapter: "Ch 3", cat: ["ml"] },
+  { task: "Build readiness drop risk classifier", tms: [{id:"tm-40g",label:"TM-40G"}], chapter: "Ch 3", cat: ["ml"] },
+  { task: "Analyze unit readiness trend", tms: [{id:"tm-40g",label:"TM-40G"}], chapter: "Ch 3", cat: ["ml","data"] },
+  { task: "Build ARIMA readiness forecast", tms: [{id:"tm-40g",label:"TM-40G"}], chapter: "Ch 4", cat: ["ml"] },
+  { task: "Logistics demand forecasting (Class IX)", tms: [{id:"tm-40g",label:"TM-40G"}], chapter: "Ch 4", cat: ["ml"] },
+  { task: "Design and implement automated retraining pipeline", tms: [{id:"tm-50i",label:"TM-50M"}], chapter: "Ch 2", cat: ["ml","advanced"] },
+  { task: "Fine-tune Transformer for SITREP classification", tms: [{id:"tm-50i",label:"TM-50M"}], chapter: "Ch 2", cat: ["ml","advanced"] },
+  { task: "Build GNN for unit readiness propagation", tms: [{id:"tm-50i",label:"TM-50M"}], chapter: "Ch 3", cat: ["ml","advanced"] },
+  { task: "Implement federated retraining coordination", tms: [{id:"tm-50i",label:"TM-50M"}], chapter: "Ch 4", cat: ["ml","advanced"] },
+  { task: "Implement platform-level interpretability infrastructure", tms: [{id:"tm-50i",label:"TM-50M"}], chapter: "Ch 5", cat: ["ml","advanced"] },
+  { task: "Conduct bias audit for personnel readiness model", tms: [{id:"tm-50i",label:"TM-50M"}], chapter: "Ch 5", cat: ["ml","advanced"] },
+  { task: "Optimize production inference pipeline", tms: [{id:"tm-50i",label:"TM-50M"}], chapter: "Ch 6", cat: ["ml","advanced"] },
+  { task: "Conduct adversarial robustness evaluation", tms: [{id:"tm-50i",label:"TM-50M"}], chapter: "Ch 7", cat: ["ml","advanced"] },
+  { task: "Design shared feature store for MSS ML program", tms: [{id:"tm-50i",label:"TM-50M"}], chapter: "Ch 6", cat: ["ml","advanced"] },
+
+  // ── PROGRAM MANAGEMENT ───────────────────────────────────────
+  { task: "Execute Scrum framework for MSS projects", tms: [{id:"tm-40j",label:"TM-40J"}], chapter: "Ch 2", cat: ["pm"], tags: ["agile", "scrum", "sprint", "ceremonies", "standup", "retro", "iteration"] },
+  { task: "Write and manage user stories", tms: [{id:"tm-40j",label:"TM-40J"}], chapter: "Ch 2", cat: ["pm"], tags: ["story", "requirement", "ticket", "backlog item", "as a user", "feature request"] },
+  { task: "Define acceptance criteria", tms: [{id:"tm-40j",label:"TM-40J"}], chapter: "Ch 2", cat: ["pm"], tags: ["definition of done", "done criteria", "pass fail", "test criteria", "when is it done"] },
+  { task: "Size stories and measure velocity", tms: [{id:"tm-40j",label:"TM-40J"}], chapter: "Ch 2", cat: ["pm"], tags: ["estimate", "story points", "velocity", "burndown", "throughput", "capacity"] },
+  { task: "Run sprint ceremonies (planning, standup, review, retro)", tms: [{id:"tm-40j",label:"TM-40J"}], chapter: "Ch 2", cat: ["pm"], tags: ["meeting", "daily", "standup", "planning", "demo", "retro", "retrospective", "ceremony"] },
+  { task: "Execute Kanban for operational support work", tms: [{id:"tm-40j",label:"TM-40J"}], chapter: "Ch 2", cat: ["pm"], tags: ["kanban", "board", "wip limit", "flow", "pull system", "trello", "task board"] },
+  { task: "Manage ML/AI project lifecycle phases", tms: [{id:"tm-40j",label:"TM-40J"}], chapter: "Ch 3", cat: ["pm"], tags: ["ml project", "ai project", "lifecycle", "phases", "discovery to deploy"] },
+  { task: "Elicit requirements from stakeholders", tms: [{id:"tm-40j",label:"TM-40J"}], chapter: "Ch 4", cat: ["pm"], tags: ["gather requirements", "interview", "ask users", "needs analysis", "discovery", "stakeholder"] },
+  { task: "Manage stakeholder expectations", tms: [{id:"tm-40j",label:"TM-40J"}], chapter: "Ch 4", cat: ["pm"], tags: ["customer management", "communication", "expectations", "alignment", "updates"] },
+  { task: "Configure automated status alerts", tms: [{id:"tm-40j",label:"TM-40J"}], chapter: "Ch 5", cat: ["pm"], tags: ["auto notify", "status email", "dashboard alert", "progress alert", "automated update"] },
+  { task: "Manage risk register for data projects", tms: [{id:"tm-40j",label:"TM-40J"}], chapter: "Ch 6", cat: ["pm"], tags: ["risk", "risk log", "risk matrix", "mitigation", "likelihood", "impact"] },
+  { task: "Manage dependencies between teams", tms: [{id:"tm-40j",label:"TM-40J"},{id:"tm-50j",label:"TM-50J"}], chapter: "Ch 6", cat: ["pm"], tags: ["blocked", "dependency", "cross-team", "waiting on", "upstream", "downstream"] },
+  { task: "Plan release milestones", tms: [{id:"tm-40j",label:"TM-40J"}], chapter: "Ch 7", cat: ["pm"], tags: ["release plan", "milestone", "deadline", "timeline", "roadmap", "schedule", "ship date"] },
+  { task: "Define 'production ready' for a data product", tms: [{id:"tm-40j",label:"TM-40J"}], chapter: "Ch 7", cat: ["pm"], tags: ["done", "go live", "launch criteria", "ready to ship", "production checklist"] },
+  { task: "Implement change control for production systems", tms: [{id:"tm-40j",label:"TM-40J"}], chapter: "Ch 8", cat: ["pm","governance"], tags: ["change management", "change request", "approval", "sign off", "governance"] },
+  { task: "Execute program increment (PI) planning", tms: [{id:"tm-50j",label:"TM-50J"}], chapter: "Ch 2", cat: ["pm","advanced"], tags: ["safe", "pi planning", "big room planning", "scaled agile", "quarterly planning"] },
+  { task: "Run cross-team sprint ceremonies", tms: [{id:"tm-50j",label:"TM-50J"}], chapter: "Ch 2", cat: ["pm","advanced"], tags: ["multi-team", "scrum of scrums", "cross-team sync", "program level"] },
+  { task: "Brief GO/SES leadership on program status", tms: [{id:"tm-50j",label:"TM-50J"}], chapter: "Ch 3", cat: ["pm","advanced"], tags: ["executive brief", "leadership update", "general officer", "senior leader", "status brief", "presentation"] },
+  { task: "Implement core delivery metrics", tms: [{id:"tm-50j",label:"TM-50J"}], chapter: "Ch 5", cat: ["pm","advanced"], tags: ["dora", "lead time", "cycle time", "deployment frequency", "change failure rate", "metrics"] },
+  { task: "Manage technical debt at program scale", tms: [{id:"tm-50j",label:"TM-50J"}], chapter: "Ch 6", cat: ["pm","advanced"], tags: ["tech debt", "refactor", "legacy", "cleanup", "modernize", "pay down debt"] },
+  { task: "Execute build vs. buy vs. configure decisions", tms: [{id:"tm-50j",label:"TM-50J"}], chapter: "Ch 6", cat: ["pm","advanced"], tags: ["make vs buy", "vendor", "build or buy", "cots", "gots", "procurement"] },
+  { task: "Manage Palantir partnership / task order", tms: [{id:"tm-50j",label:"TM-50J"}], chapter: "Ch 7", cat: ["pm","advanced"], tags: ["vendor management", "contract", "task order", "palantir", "contractor"] },
+  { task: "Design data program team structure", tms: [{id:"tm-50j",label:"TM-50J"}], chapter: "Ch 8", cat: ["pm","advanced"], tags: ["org chart", "team design", "staffing", "organization", "roles", "positions"] },
+  { task: "Plan for personnel turbulence", tms: [{id:"tm-50j",label:"TM-50J"}], chapter: "Ch 8", cat: ["pm","advanced"], tags: ["turnover", "succession", "handoff", "continuity", "pcs", "rotation", "knowledge transfer"] },
+  { task: "Establish program governance", tms: [{id:"tm-50j",label:"TM-50J"}], chapter: "Ch 9", cat: ["pm","governance","advanced"], tags: ["governance", "oversight", "charter", "authority", "decision rights", "steering committee"] },
+
+  // ── KNOWLEDGE MANAGEMENT ─────────────────────────────────────
+  { task: "Configure lessons-learned intake pipeline", tms: [{id:"tm-40k",label:"TM-40K"}], chapter: "Ch 4", cat: ["km"], tags: ["aar", "after action", "lessons", "feedback", "capture lessons", "intake form"] },
+  { task: "Configure SOP review notification workflow", tms: [{id:"tm-40k",label:"TM-40K"}], chapter: "Ch 7", cat: ["km"], tags: ["sop reminder", "review cycle", "expiration", "notification", "policy review"] },
+  { task: "Design federated KM architecture", tms: [{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 2", cat: ["km","advanced"], tags: ["distributed knowledge", "multi-unit", "decentralized", "knowledge sharing"] },
+  { task: "Design federated repository patterns", tms: [{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 2", cat: ["km","advanced"], tags: ["distributed repo", "multi-site", "content federation", "shared library"] },
+  { task: "Implement classification-level parallel architecture", tms: [{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 2", cat: ["km","governance","advanced"], tags: ["multi-classification", "secret and unclass", "parallel systems", "cross-domain"] },
+  { task: "Implement multi-unit knowledge federation", tms: [{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 3", cat: ["km","advanced"], tags: ["cross-unit", "shared knowledge", "unit to unit", "theater-wide"] },
+  { task: "Integrate NATO knowledge management", tms: [{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 5", cat: ["km","advanced"], tags: ["nato", "coalition", "alliance", "partner nation", "interoperability", "interop"] },
+  { task: "Ensure STANAG 4778 conformance", tms: [{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 5", cat: ["km","governance","advanced"], tags: ["stanag", "nato standard", "compliance", "interop standard", "alliance standard"] },
+  { task: "Integrate coalition knowledge sharing", tms: [{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 5", cat: ["km","advanced"], tags: ["coalition", "ally", "partner", "multinational", "combined", "info sharing"] },
+  { task: "Design knowledge graph architecture", tms: [{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 6", cat: ["km","advanced"], tags: ["graph database", "knowledge graph", "semantic", "linked data", "entity graph", "neo4j"] },
+  { task: "Implement KM metrics and effectiveness measurement", tms: [{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 7", cat: ["km","advanced"], tags: ["km metrics", "knowledge metrics", "effectiveness", "roi", "value measurement"] },
+  { task: "Report KM value to senior leaders", tms: [{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 7", cat: ["km","advanced"], tags: ["km briefing", "leadership report", "value proposition", "justify km", "roi"] },
+  { task: "Conduct knowledge risk assessment", tms: [{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 8", cat: ["km","advanced"], tags: ["knowledge loss", "brain drain", "risk", "critical knowledge", "single point of failure"] },
+  { task: "Lead KM community of practice", tms: [{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 8", cat: ["km","advanced"], tags: ["community", "cop", "network", "practitioners", "peer group", "working group"] },
+  { task: "Conduct KM architecture audit", tms: [{id:"tm-50k",label:"TM-50K"}], chapter: "Ch 8", cat: ["km","advanced"], tags: ["km review", "architecture review", "health check", "assessment", "gap analysis"] },
+
+  // ── WFF TRACKS — INTELLIGENCE (TM-40A) ────────────────────────
+  { task: "Configure Intelligence COP layer in MSS", tms: [{id:"tm-40a",label:"TM-40A"}], chapter: "Ch 4", cat: ["build","data","wff"], tags: ["intel map", "common operating picture", "intelligence overlay", "g2", "s2", "j2", "situation map"] },
+  { task: "Build collection management tracker", tms: [{id:"tm-40a",label:"TM-40A"}], chapter: "Ch 3", cat: ["build","wff"], tags: ["collection plan", "intel collection", "pir tracker", "requirements", "information needs"] },
+  { task: "Configure all-source analysis workflow", tms: [{id:"tm-40a",label:"TM-40A"}], chapter: "Ch 4", cat: ["build","data","wff"], tags: ["all source", "intelligence fusion", "analysis", "multi-int", "intel process"] },
+  { task: "Build targeting decision support dashboard", tms: [{id:"tm-40a",label:"TM-40A"}], chapter: "Ch 8", cat: ["build","data","wff"], tags: ["targeting", "decide", "d3a", "f3ead", "target list", "strike"] },
+  { task: "Configure IPB data layer in Workshop", tms: [{id:"tm-40a",label:"TM-40A"}], chapter: "Ch 2", cat: ["build","wff"], tags: ["ipb", "intelligence prep", "battlefield", "threat", "terrain", "weather", "civil"] },
+  { task: "Produce PIR status tracker dashboard", tms: [{id:"tm-40a",label:"TM-40A"}], chapter: "Ch 3", cat: ["build","data","wff"], tags: ["pir", "priority intelligence", "information requirement", "commander questions", "intel status"] },
+
+  // ── WFF TRACKS — FIRES (TM-40B) ────────────────────────────────
+  { task: "Display targeting data and fire support overlays on MSS", tms: [{id:"tm-40b",label:"TM-40B"}], chapter: "Ch 3", cat: ["build","data","wff"], tags: ["fires overlay", "target map", "fire support", "artillery", "indirect fire", "strike"] },
+  { task: "Build effects assessment dashboard", tms: [{id:"tm-40b",label:"TM-40B"}], chapter: "Ch 8", cat: ["build","data","wff"], tags: ["bda", "battle damage", "effects", "assessment", "did it work", "target effect"] },
+  { task: "Configure fire support coordination measures tracker", tms: [{id:"tm-40b",label:"TM-40B"}], chapter: "Ch 3", cat: ["build","wff"], tags: ["fscm", "coordination", "airspace", "restricted fire", "fire support line"] },
+  { task: "Build targeting cycle data product", tms: [{id:"tm-40b",label:"TM-40B"}], chapter: "Ch 2", cat: ["build","data","wff"], tags: ["targeting cycle", "d3a", "f3ead", "find fix finish", "target workflow"] },
+  { task: "Build high-payoff target list (HPTL) tracker", tms: [{id:"tm-40b",label:"TM-40B"}], chapter: "Ch 2", cat: ["build","data","wff"], tags: ["hptl", "high value target", "hvt", "priority target", "target list"] },
+
+  // ── WFF TRACKS — MOVEMENT & MANEUVER (TM-40C) ─────────────────
+  { task: "Track unit positions and maneuver routes in MSS", tms: [{id:"tm-40c",label:"TM-40C"}], chapter: "Ch 8", cat: ["build","data","wff"], tags: ["blue force", "bft", "unit tracker", "where are units", "position", "movement", "gps"] },
+  { task: "Build route analysis and terrain visualization", tms: [{id:"tm-40c",label:"TM-40C"}], chapter: "Ch 3", cat: ["build","data","wff"], tags: ["route planning", "terrain", "elevation", "road network", "movement corridor", "map analysis"] },
+  { task: "Configure operational phase tracker", tms: [{id:"tm-40c",label:"TM-40C"}], chapter: "Ch 5", cat: ["build","wff"], tags: ["phase line", "mission phase", "timeline", "operation progress", "battle phase"] },
+  { task: "Build scheme of maneuver overlay in Workshop", tms: [{id:"tm-40c",label:"TM-40C"}], chapter: "Ch 2", cat: ["build","data","wff"], tags: ["maneuver plan", "movement overlay", "attack plan", "formation", "arrow overlay"] },
+
+  // ── WFF TRACKS — SUSTAINMENT (TM-40D) ─────────────────────────
+  { task: "View LOGSTAT and readiness data on MSS", tms: [{id:"tm-40d",label:"TM-40D"}], chapter: "Ch 2", cat: ["data","wff"], tags: ["logistics status", "supply status", "readiness", "logstat", "sustainment report", "g4", "s4"] },
+  { task: "Build supply chain visibility dashboard", tms: [{id:"tm-40d",label:"TM-40D"}], chapter: "Ch 2", cat: ["build","data","wff"], tags: ["supply chain", "logistics", "distribution", "where is my stuff", "shipping", "tracking"] },
+  { task: "Configure Class IX demand visibility tracker", tms: [{id:"tm-40d",label:"TM-40D"}], chapter: "Ch 3", cat: ["build","data","wff"], tags: ["spare parts", "class 9", "maintenance parts", "repair parts", "demand signal"] },
+  { task: "Build equipment readiness status dashboard", tms: [{id:"tm-40d",label:"TM-40D"}], chapter: "Ch 3", cat: ["build","data","wff"], tags: ["vehicle readiness", "equipment status", "maintenance", "fleet status", "deadline"] },
+  { task: "Configure distribution operations tracker", tms: [{id:"tm-40d",label:"TM-40D"}], chapter: "Ch 4", cat: ["build","wff"], tags: ["convoy", "distribution", "shipping", "transportation", "movement", "delivery"] },
+
+  // ── WFF TRACKS — PROTECTION (TM-40E) ──────────────────────────
+  { task: "Configure force protection CCIRs in MSS", tms: [{id:"tm-40e",label:"TM-40E"}], chapter: "Ch 3", cat: ["build","wff"], tags: ["force pro", "fp", "security alert", "protection ccir", "threat warning"] },
+  { task: "Build threat tracking dashboard", tms: [{id:"tm-40e",label:"TM-40E"}], chapter: "Ch 4", cat: ["build","data","wff"], tags: ["threat map", "threat tracker", "enemy activity", "incident tracker", "security"] },
+  { task: "Configure vulnerability assessment workflow", tms: [{id:"tm-40e",label:"TM-40E"}], chapter: "Ch 5", cat: ["build","data","wff"], tags: ["vulnerability", "risk assessment", "security gap", "weakness", "exposure"] },
+  { task: "Build protection COA support product", tms: [{id:"tm-40e",label:"TM-40E"}], chapter: "Ch 6", cat: ["build","data","wff"], tags: ["protection plan", "course of action", "coa", "security option", "risk mitigation"] },
+  { task: "Configure CBRN risk visualization layer", tms: [{id:"tm-40e",label:"TM-40E"}], chapter: "Ch 3", cat: ["build","data","wff"], tags: ["cbrn", "chemical", "biological", "radiological", "nuclear", "hazard", "contamination"] },
+
+  // ── WFF TRACKS — MISSION COMMAND (TM-40F) ─────────────────────
+  { task: "Configure CCIRs and build a BUA product in MSS", tms: [{id:"tm-40f",label:"TM-40F"}], chapter: "Ch 6", cat: ["build","wff"], tags: ["ccir", "bua", "battle update", "commander info", "critical information"] },
+  { task: "Build operational dashboard for battle captain", tms: [{id:"tm-40f",label:"TM-40F"}], chapter: "Ch 7", cat: ["build","data","wff"], tags: ["battle captain", "cp", "toc", "operations center", "current ops", "shift"] },
+  { task: "Configure CCIR alert and notification workflow", tms: [{id:"tm-40f",label:"TM-40F"}], chapter: "Ch 6", cat: ["build","aip","wff"], tags: ["ccir alert", "commander notification", "important event", "critical event", "automatic alert"] },
+  { task: "Build battle rhythm product in Workshop", tms: [{id:"tm-40f",label:"TM-40F"}], chapter: "Ch 4", cat: ["build","data","wff"], tags: ["battle rhythm", "meeting schedule", "briefing schedule", "daily cycle", "sync schedule"] },
+  { task: "Configure running estimate dashboard for staff sections", tms: [{id:"tm-40f",label:"TM-40F"}], chapter: "Ch 3", cat: ["build","data","wff"], tags: ["running estimate", "staff update", "g-staff", "s-staff", "staff section", "current status"] },
+  { task: "Integrate SITREP submissions into operational dashboard", tms: [{id:"tm-40f",label:"TM-40F"}], chapter: "Ch 8", cat: ["build","data","wff"], tags: ["sitrep", "situation report", "status report", "unit report", "send status", "submit report"] },
+
+  // ── ORSA ANALYSIS ─────────────────────────────────────────────
+  { task: "Conduct Monte Carlo COA risk analysis", tms: [{id:"tm-40g",label:"TM-40G"}], chapter: "Ch 5", cat: ["data"], tags: ["simulation", "random", "probability", "risk model", "what if", "coa comparison", "stochastic"] },
+  { task: "Conduct Tornado sensitivity analysis", tms: [{id:"tm-40g",label:"TM-40G"}], chapter: "Ch 5", cat: ["data"], tags: ["sensitivity", "tornado chart", "what matters most", "variable importance", "impact analysis"] },
+  { task: "Optimize personnel assignment across units", tms: [{id:"tm-40g",label:"TM-40G"}], chapter: "Ch 6", cat: ["data"], tags: ["assignment optimization", "staffing", "allocation", "personnel", "manning", "distribute people"] },
+  { task: "Design exercise data collection architecture", tms: [{id:"tm-40g",label:"TM-40G"}], chapter: "Ch 7", cat: ["data"], tags: ["exercise data", "warfighter exercise", "data capture", "training event", "collect data"] },
+  { task: "Build exercise aggregation pipeline", tms: [{id:"tm-40g",label:"TM-40G"}], chapter: "Ch 7", cat: ["data","build"], tags: ["exercise rollup", "combine exercise data", "etl exercise", "training data pipeline"] },
+  { task: "Generate post-exercise report", tms: [{id:"tm-40g",label:"TM-40G"}], chapter: "Ch 7", cat: ["data"], tags: ["aar", "after action", "exercise report", "lessons", "hot wash", "training report"] },
+  { task: "Conduct sensitivity analysis for commander brief", tms: [{id:"tm-40g",label:"TM-40G"}], chapter: "Ch 5", cat: ["data"], tags: ["brief", "what if", "sensitivity", "commander decision", "decision support"] },
+  { task: "Apply nonlinear programming on MSS", tms: [{id:"tm-50g",label:"TM-50G"}], chapter: "Ch 2", cat: ["data","advanced"], tags: ["optimization", "nonlinear", "advanced math", "operations research", "or"] },
+  { task: "Conduct multi-objective optimization for COA comparison", tms: [{id:"tm-50g",label:"TM-50G"}], chapter: "Ch 2", cat: ["data","advanced"], tags: ["multi objective", "pareto", "tradeoff", "coa comparison", "decision analysis"] },
+  { task: "Build two-stage stochastic program for theater logistics", tms: [{id:"tm-50g",label:"TM-50G"}], chapter: "Ch 2", cat: ["data","advanced"], tags: ["stochastic", "uncertainty", "logistics optimization", "supply optimization", "advanced or"] },
+  { task: "Build logistics network resiliency ABMS", tms: [{id:"tm-50g",label:"TM-50G"}], chapter: "Ch 3", cat: ["data","advanced"], tags: ["agent based", "abms", "simulation", "logistics network", "resilience", "model"] },
+  { task: "Design campaign wargame data architecture on MSS", tms: [{id:"tm-50g",label:"TM-50G"}], chapter: "Ch 5", cat: ["data","advanced"], tags: ["wargame", "campaign", "tabletop", "war game", "exercise", "scenario"] },
+  { task: "Build campaign assessment dashboard on MSS", tms: [{id:"tm-50g",label:"TM-50G"}], chapter: "Ch 5", cat: ["data","advanced"], tags: ["campaign tracker", "campaign status", "long-term assessment", "strategic dashboard"] },
+
+  // ── ADVANCED WORKSHOP TOOLS (TM-30) ──────────────────────────
+  { task: "Configure a Kairos timeline widget in Workshop", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 2", cat: ["build"], tags: ["timeline", "chronological", "event timeline", "gantt", "time chart", "sequence"] },
+  { task: "Navigate and orient to Target Workbench", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 2", cat: ["build"], tags: ["target workbench", "targeting tool", "fires tool", "targeting interface"] },
+  { task: "Configure an Automation on an Object Type", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 9", cat: ["build","governance"], tags: ["automate", "trigger", "scheduled action", "event driven", "auto run", "rule"] },
+  { task: "Model a basic process in Machinery", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 10", cat: ["build","governance"], tags: ["workflow", "process model", "business process", "state machine", "flowchart", "bpmn"] },
+
+  // ── GOVERNANCE & SECURITY ─────────────────────────────────────
+  { task: "Respond to misrouted or higher classification data", tms: [{id:"tm-10",label:"TM-10"}], chapter: "Ch 7", cat: ["governance"], tags: ["spill", "data spill", "wrong classification", "incident", "mishandled", "security incident"] },
+  { task: "Audit data lineage and dependencies", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 9", cat: ["governance"], tags: ["where did this come from", "data trail", "provenance", "origin", "data flow", "trace", "dependency map"] },
+  { task: "Implement data quality workflows", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 9", cat: ["governance"], tags: ["data quality", "dq", "clean data", "validate", "qc", "qa", "checks", "data integrity"] },
+  { task: "Configure access control granularly", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 9", cat: ["governance"], tags: ["permissions", "roles", "rbac", "fine grained", "who can see", "restrict", "lock down"] },
+  { task: "Use Foundry branching via UI", tms: [{id:"tm-20",label:"TM-20"},{id:"tm-30",label:"TM-30"}], chapter: "Ch 7", cat: ["governance"], tags: ["branch", "version", "git", "sandbox", "dev branch", "test changes", "safe to try"] },
+  { task: "Create a development branch", tms: [{id:"tm-20",label:"TM-20"},{id:"tm-30",label:"TM-30"}], chapter: "Ch 7", cat: ["governance"], tags: ["new branch", "dev branch", "feature branch", "sandbox", "isolated", "safe space"] },
+  { task: "Request and merge a branch", tms: [{id:"tm-20",label:"TM-20"},{id:"tm-30",label:"TM-30"}], chapter: "Ch 7", cat: ["governance"], tags: ["merge", "pull request", "pr", "code review", "approve", "merge request", "combine branches"] },
+  { task: "Promote changes to production environment", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 8", cat: ["governance"], tags: ["go live", "deploy", "push to prod", "release", "production", "promote"] },
+  { task: "Enforce naming conventions", tms: [{id:"tm-20",label:"TM-20"},{id:"tm-30",label:"TM-30"}], chapter: "Ch 8", cat: ["governance"], tags: ["naming", "standards", "convention", "consistent names", "naming rules", "best practice"] },
+  { task: "Document pipeline and Ontology changes", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 8", cat: ["governance"], tags: ["documentation", "changelog", "record changes", "document what changed", "notes"] },
+  { task: "Complete data quality checklist", tms: [{id:"tm-20",label:"TM-20"}], chapter: "Ch 8", cat: ["governance"], tags: ["checklist", "qa", "qc", "quality check", "before publish", "verify", "sign off"] },
+  { task: "Complete C2DAO governance checklist", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 9", cat: ["governance"], tags: ["c2dao", "governance check", "compliance", "approval", "sign off", "authority"] },
+  { task: "Conduct peer review of changes", tms: [{id:"tm-30",label:"TM-30"}], chapter: "Ch 8", cat: ["governance"], tags: ["code review", "review", "buddy check", "second look", "approve", "qc"] },
+  { task: "Implement attribute-based access control (CBAC)", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 8", cat: ["governance","code"], tags: ["abac", "cbac", "attribute access", "fine grained", "dynamic permissions", "policy"] },
+  { task: "Manage credentials securely", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 8", cat: ["governance","code"], tags: ["secrets", "password", "api key", "credential", "vault", "secure storage", "token"] },
+  { task: "Implement marking compliance (classification)", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 8", cat: ["governance"], tags: ["classification", "marking", "label", "cui", "secret", "fouo", "banner"] },
+  { task: "Implement audit trail requirements", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 8", cat: ["governance"], tags: ["audit log", "activity log", "who did what", "tracking", "compliance", "history"] },
+  { task: "Configure CI/CD pipeline", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 8", cat: ["governance","code"], tags: ["cicd", "ci cd", "continuous integration", "continuous deployment", "automation", "build pipeline", "devops"] },
+  { task: "Implement automated testing", tms: [{id:"tm-40l",label:"TM-40L"}], chapter: "Ch 8", cat: ["governance","code"], tags: ["unit test", "integration test", "test suite", "automated qa", "test pipeline", "jest", "pytest"] },
+  { task: "Design CI/CD pipeline architecture", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 6", cat: ["governance","code","advanced"], tags: ["cicd design", "devops architecture", "pipeline design", "build system"] },
+  { task: "Implement pre-commit hooks", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 6", cat: ["governance","code","advanced"], tags: ["pre-commit", "git hook", "code check", "lint", "format", "before commit"] },
+  { task: "Enforce automated testing standards", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 6", cat: ["governance","code","advanced"], tags: ["test coverage", "test policy", "must have tests", "quality gate", "test requirement"] },
+  { task: "Implement OWASP Top 10 mitigations", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 7", cat: ["governance","code","advanced"], tags: ["owasp", "security", "xss", "injection", "vulnerability", "web security", "appsec"] },
+  { task: "Prevent injection attacks", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 7", cat: ["governance","code","advanced"], tags: ["sql injection", "xss", "injection", "sanitize", "escape", "input validation", "security"] },
+  { task: "Manage secrets securely", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 7", cat: ["governance","code","advanced"], tags: ["vault", "secrets manager", "api key", "password", "credential", "token", "env var", "config"] },
+  { task: "Implement SAST (static application security testing)", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 7", cat: ["governance","code","advanced"], tags: ["sast", "static analysis", "code scan", "security scan", "sonarqube", "lint"] },
+  { task: "Conduct authorized penetration testing", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 7", cat: ["governance","advanced"], tags: ["pen test", "pentest", "ethical hacking", "security test", "red team", "vulnerability scan"] },
+  { task: "Execute architecture review", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 8", cat: ["governance","advanced"], tags: ["architecture", "design review", "tech review", "system review", "blueprint review"] },
+  { task: "Enforce platform governance", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 8", cat: ["governance","advanced"], tags: ["governance", "policy", "standards", "compliance", "rules", "guardrails"] },
+  { task: "Manage platform upgrades", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 8", cat: ["governance","advanced"], tags: ["upgrade", "patch", "update", "version upgrade", "migration", "maintenance window"] },
+  { task: "Implement tenant isolation in code", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 4", cat: ["governance","code","advanced"], tags: ["multi-tenant", "isolation", "tenant", "separate data", "partition", "boundaries"] },
+  { task: "Implement classification-aware design", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 4", cat: ["governance","code","advanced"], tags: ["classification", "multi-level", "security design", "cross-domain", "separation"] },
+  { task: "Design coalition interoperability patterns", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 4", cat: ["governance","code","advanced"], tags: ["coalition", "nato", "interop", "partner nation", "allied", "multinational", "federated"] },
+  { task: "Manage compute costs", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 4", cat: ["governance","advanced"], tags: ["cost", "budget", "billing", "spend", "optimize cost", "save money", "resources", "expensive"] },
+  { task: "Profile performance with tools", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 4", cat: ["governance","code","advanced"], tags: ["profiler", "performance", "slow", "bottleneck", "flame graph", "debug", "optimize"] },
+  { task: "Onboard new developers", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 8", cat: ["governance","advanced"], tags: ["new hire", "onboarding", "developer setup", "getting started", "ramp up", "orientation"] },
+  { task: "Conduct code review", tms: [{id:"tm-50l",label:"TM-50L"}], chapter: "Ch 8", cat: ["governance","code","advanced"], tags: ["code review", "pull request", "pr review", "peer review", "feedback", "approve code"] },
+  { task: "Implement change control at program scale", tms: [{id:"tm-50j",label:"TM-50J"}], chapter: "Ch 9", cat: ["governance","pm","advanced"], tags: ["change management", "change board", "ccb", "approval process", "governance"] },
+  { task: "Build organizational buy-in for data culture change", tms: [{id:"tm-50j",label:"TM-50J"}], chapter: "Ch 4", cat: ["governance","pm","advanced"], tags: ["culture", "adoption", "change management", "champion", "evangelism", "buy-in"] },
+
+  // ── T3-I — INSTRUCTOR CERTIFICATION ────────────────────────────
+  { task: "Deliver TM-10 orientation block (lecture + demo)", tms: [{id:"t3-i",label:"T3-I"}], chapter: "Ch 1", cat: ["t3"], tags: ["teach", "instruct", "present", "lecture", "demo", "orientation", "tm-10", "classroom", "podium"] },
+  { task: "Facilitate TM-20 hands-on lab (pipeline building)", tms: [{id:"t3-i",label:"T3-I"}], chapter: "Ch 2", cat: ["t3"], tags: ["facilitate", "lab", "hands-on", "pipeline", "tm-20", "workshop", "practical", "coaching"] },
+  { task: "Evaluate Go/No-Go practical exercise using T&EO", tms: [{id:"t3-i",label:"T3-I"}], chapter: "Ch 3", cat: ["t3"], tags: ["evaluate", "assess", "go no-go", "teo", "grading", "rubric", "performance", "standards"] },
+  { task: "Administer and score pre/post exams", tms: [{id:"t3-i",label:"T3-I"}], chapter: "Ch 4", cat: ["t3"], tags: ["exam", "test", "pre-test", "post-test", "score", "grade", "assessment", "proctoring"] },
+  { task: "Conduct after-action review (AAR) for training event", tms: [{id:"t3-i",label:"T3-I"}], chapter: "Ch 5", cat: ["t3"], tags: ["aar", "after action", "debrief", "lessons learned", "feedback", "hotwash", "improvement"] },
+  { task: "Design remediation plan for No-Go trainee", tms: [{id:"t3-i",label:"T3-I"}], chapter: "Ch 6", cat: ["t3"], tags: ["remediation", "no-go", "retrain", "improvement plan", "corrective", "retest", "individualized"] },
+  { task: "Manage classroom logistics and environment setup", tms: [{id:"t3-i",label:"T3-I"}], chapter: "Ch 7", cat: ["t3"], tags: ["logistics", "classroom", "setup", "equipment", "projector", "network", "accounts", "environment"] },
+  { task: "Deliver microteaching block with peer evaluation", tms: [{id:"t3-i",label:"T3-I"}], chapter: "Ch 8", cat: ["t3"], tags: ["microteaching", "peer eval", "practice teach", "feedback", "presentation", "dry run", "rehearsal"] },
+
+  // ── T3-F — MSC FORCE MULTIPLIER / UNIT DATA TRAINER ────────────
+  { task: "Deliver TM-10 operator orientation at unit level", tms: [{id:"t3-f",label:"T3-F"}], chapter: "Ch 1", cat: ["t3"], tags: ["orientation", "unit training", "tm-10", "brief", "familiarization", "new user", "operator"] },
+  { task: "Conduct new-user account setup and troubleshooting", tms: [{id:"t3-f",label:"T3-F"}], chapter: "Ch 2", cat: ["t3","setup"], tags: ["account", "setup", "troubleshoot", "new user", "onboard", "login", "access", "cac", "help desk"] },
+  { task: "Facilitate basic search and navigation exercise", tms: [{id:"t3-f",label:"T3-F"}], chapter: "Ch 3", cat: ["t3","navigation"], tags: ["search", "navigate", "exercise", "hands-on", "basic", "walkthrough", "guided"] },
+  { task: "Administer TM-10 practical exercise", tms: [{id:"t3-f",label:"T3-F"}], chapter: "Ch 4", cat: ["t3"], tags: ["practical", "exercise", "tm-10", "hands-on", "evaluate", "proctor", "supervise"] },
+  { task: "Submit unit training status report (UTSR)", tms: [{id:"t3-f",label:"T3-F"}], chapter: "Ch 5", cat: ["t3"], tags: ["utsr", "status report", "training status", "reporting", "unit readiness", "tracker", "completion"] },
+  { task: "Escalate technical issues to C2DAO help desk", tms: [{id:"t3-f",label:"T3-F"}], chapter: "Ch 6", cat: ["t3"], tags: ["escalate", "help desk", "c2dao", "ticket", "trouble ticket", "support", "issue", "bug", "broken"] },
+];
+
+// ── SECTION DEFINITIONS ────────────────────────────────────────
+const SECTIONS = [
+  { id: "setup",      label: "Setup & Access" },
+  { id: "navigation", label: "Navigation & Browsing" },
+  { id: "data",       label: "Data Viewing, Analysis & Export" },
+  { id: "build",      label: "No-Code Building (Pipelines & Workshop)" },
+  { id: "wff",        label: "WFF Tracks — Intelligence / Fires / M2 / Sustainment / Protection / Mission Command (TM-40A–F)" },
+  { id: "ontology",   label: "Ontology & Data Modeling" },
+  { id: "aip",        label: "AIP & AI Workflows" },
+  { id: "code",       label: "Code, SDK & Transforms" },
+  { id: "ml",         label: "Machine Learning" },
+  { id: "pm",         label: "Program Management" },
+  { id: "km",         label: "Knowledge Management" },
+  { id: "governance", label: "Governance & Security" },
+  { id: "advanced",   label: "Advanced / Expert" },
+  { id: "t3",         label: "T3 — Train-the-Trainer (Instructor Certification & Force Multiplier)" },
+];
+
+// ── PDF MAP ────────────────────────────────────────────────────
+// Relative paths from task_index.html location (maven_training/)
+const PDF = {
+  "tm-10":  "pdf/TM_10_MAVEN_USER.pdf",
+  "tm-20":  "pdf/TM_20_BUILDER.pdf",
+  "tm-30":  "pdf/TM_30_ADVANCED_BUILDER.pdf",
+  // WFF tracks — prereq TM-30
+  "tm-40a": "pdf/TM_40A_INTELLIGENCE.pdf",
+  "tm-40b": "pdf/TM_40B_FIRES.pdf",
+  "tm-40c": "pdf/TM_40C_MOVEMENT_MANEUVER.pdf",
+  "tm-40d": "pdf/TM_40D_SUSTAINMENT.pdf",
+  "tm-40e": "pdf/TM_40E_PROTECTION.pdf",
+  "tm-40f": "pdf/TM_40F_MISSION_COMMAND.pdf",
+  // Specialist tracks — prereq TM-30
+  "tm-40g": "pdf/TM_40G_ORSA.pdf",
+  "tm-40h": "pdf/TM_40H_AI_ENGINEER.pdf",
+  "tm-40i": "pdf/TM_40M_ML_ENGINEER.pdf",
+  "tm-40j": "pdf/TM_40J_PROGRAM_MANAGER.pdf",
+  "tm-40k": "pdf/TM_40K_KNOWLEDGE_MANAGER.pdf",
+  "tm-40l": "pdf/TM_40L_SOFTWARE_ENGINEER.pdf",
+  "tm-50g": "pdf/TM_50G_ORSA_ADVANCED.pdf",
+  "tm-50h": "pdf/TM_50H_AI_ENGINEER_ADVANCED.pdf",
+  "tm-50i": "pdf/TM_50M_ML_ENGINEER_ADVANCED.pdf",
+  "tm-50j": "pdf/TM_50J_PROGRAM_MANAGER_ADVANCED.pdf",
+  "tm-50k": "pdf/TM_50K_KNOWLEDGE_MANAGER_ADVANCED.pdf",
+  "tm-50l": "pdf/TM_50L_SOFTWARE_ENGINEER_ADVANCED.pdf",
+  // T3 tracks — Train-the-Trainer
+  "t3-i":   "pdf/T3_I_INSTRUCTOR_CERTIFICATION.pdf",
+  "t3-f":   "pdf/T3_F_MSC_FORCE_MULTIPLIER.pdf",
+};
+
+// ── RENDER ─────────────────────────────────────────────────────
+function buildDOM() {
+  const container = document.getElementById("task-container");
+  SECTIONS.forEach(sec => {
+    const secTasks = TASKS.filter(t => t.cat.includes(sec.id));
+    if (!secTasks.length) return;
+
+    const hdr = document.createElement("div");
+    hdr.className = "section-hdr";
+    hdr.dataset.section = sec.id;
+    hdr.textContent = sec.label;
+    container.appendChild(hdr);
+
+    const grid = document.createElement("div");
+    grid.className = "task-grid";
+    grid.dataset.section = sec.id;
+
+    secTasks.forEach((t) => {
+      // If single TM, whole card is a link; if multiple, card is div with per-badge links
+      const singlePdf = t.tms.length === 1 ? PDF[t.tms[0].id] : null;
+      const card = singlePdf
+        ? document.createElement("a")
+        : document.createElement("div");
+      card.className = "task-card";
+      if (singlePdf) {
+        card.href = singlePdf;
+        card.target = "_blank";
+        card.style.textDecoration = "none";
+        card.style.color = "inherit";
+      }
+      card.dataset.cats = t.cat.join(" ");
+      card.dataset.task = t.task.toLowerCase();
+      card.dataset.tms = t.tms.map(x => x.label.toLowerCase()).join(" ");
+      card.dataset.tags = t.tags ? t.tags.join(" ") : "";
+
+      const text = document.createElement("div");
+      text.className = "task-text";
+      text.textContent = t.task;
+      card.appendChild(text);
+
+      const meta = document.createElement("div");
+      meta.className = "task-meta";
+      t.tms.forEach(tm => {
+        const pdfUrl = PDF[tm.id];
+        // Each badge is a link to its PDF
+        const badge = document.createElement("a");
+        badge.className = "tm-badge " + tm.id;
+        badge.textContent = tm.label;
+        badge.title = "Open " + tm.label + " PDF";
+        if (pdfUrl) {
+          badge.href = pdfUrl;
+          badge.target = "_blank";
+        }
+        badge.style.textDecoration = "none";
+        // Stop click from also triggering the card link (for multi-TM cards this is a no-op)
+        badge.addEventListener("click", e => e.stopPropagation());
+        meta.appendChild(badge);
+      });
+      const chRef = document.createElement("div");
+      chRef.className = "chapter-ref";
+      chRef.textContent = t.chapter;
+      meta.appendChild(chRef);
+      card.appendChild(meta);
+
+      grid.appendChild(card);
+    });
+
+    container.appendChild(grid);
+  });
+}
+
+// ── SYNONYM / ALIAS MAP ──────────────────────────────────────────
+// Maps layman/informal terms → canonical terms that appear in task text.
+// Each key is what someone might type; values are what they probably mean.
+// Wide net: covers civilian lingo, typos, abbreviations, military slang,
+// tool-agnostic phrasing, and common non-Foundry vocabulary.
+const SYNONYMS = {
+  // Spelling variants & abbreviations → canonical forms found in task text or tags
+  "login":          ["log in"],
+  "signin":         ["sign in"],
+  "signon":         ["sign on"],
+  "logon":          ["log in"],
+  "logoff":         ["log out"],
+  "signout":        ["sign out"],
+  "logout":         ["log out"],
+  "etl":            ["pipeline"],
+  "elt":            ["pipeline"],
+  "cicd":           ["ci/cd"],
+  "ci cd":          ["ci/cd"],
+  "devops":         ["ci/cd"],
+  "sklearn":        ["scikit-learn"],
+  "realtime":       ["real-time"],
+  "grpc":           ["grpc"],
+  "vlookup":        ["merge","join"],
+  "xlookup":        ["merge","join"],
+  "sql injection":  ["injection"],
+  "xss":            ["injection"],
+  "pentest":        ["pen test"],
+  "pen test":       ["penetration"],
+  "k8s":            ["kubernetes","container"],
+  "docker":         ["container"],
+  "jupyter":        ["notebook"],
+  "pandas":         ["dataframe"],
+  "numpy":          ["dataframe"],
+  "kpi":            ["metric"],
+  "csv":            ["export"],
+  "json":           ["export"],
+  "excel":          ["export","spreadsheet"],
+  "abac":           ["cbac"],
+  "rbac":           ["access control"],
+  "standup":        ["standup"],
+  "retro":          ["retrospective"],
+  "aar":            ["after action"],
+  "pm":             ["program"],
+  "km":             ["knowledge"],
+  "ai":             ["aip","agent"],
+  "llm":            ["aip","agent"],
+  "gpt":            ["chatbot","agent"],
+  "claude":         ["chatbot","agent"],
+  "copilot":        ["chatbot","agent"],
+  "nlp":            ["natural language"],
+  "rag":            ["retrieval","semantic search"],
+  "ml":             ["machine learning","model","train"],
+  "dl":             ["deep learning","neural"],
+  "nn":             ["neural network"],
+  "bert":           ["transformer"],
+  "xai":            ["explainability","interpretability"],
+  "gnn":            ["graph neural"],
+  "intel":          ["intelligence"],
+  "g2":             ["intelligence","intel"],
+  "s2":             ["intelligence","intel"],
+  "j2":             ["intelligence","intel"],
+  "g4":             ["sustainment","logistics"],
+  "s4":             ["sustainment","logistics"],
+  "bft":            ["blue force"],
+  "fp":             ["force pro","protection"],
+  "cp":             ["command post","toc"],
+  "toc":            ["operations center","battle captain"],
+  "hptl":           ["high-payoff target","target list"],
+  "hvt":            ["high value target"],
+  "fscm":           ["fire support coordination"],
+  "bda":            ["battle damage","effects"],
+  "bua":            ["battle update"],
+  "ipb":            ["intelligence prep"],
+  "pir":            ["priority intelligence"],
+  "ccir":           ["critical information","commander"],
+  "cbrn":           ["chemical","biological","radiological","nuclear"],
+  "coa":            ["course of action"],
+  "d3a":            ["targeting cycle"],
+  "f3ead":          ["targeting cycle"],
+  "sitrep":         ["situation report","status report"],
+  "logstat":        ["logistics status"],
+  "class 9":        ["class ix","spare parts"],
+  "cui":            ["classification","marking"],
+  "fouo":           ["classification","marking"],
+  "owasp":          ["web security","injection"],
+  "sast":           ["static analysis","security scan"],
+  "dora":           ["delivery metrics","lead time"],
+  "safe":           ["scaled agile","pi planning"],
+  "ccb":            ["change board","change control"],
+  "poc":            ["community of practice"],
+  "cop":            ["common operating picture","community of practice"],
+  "neo4j":          ["knowledge graph","graph database"],
+  "bpmn":           ["process model","flowchart"],
+  "osdk":           ["sdk","query objects"],
+  "foo":            ["functions on objects","computed"],
+};
+
+
+// ── FUZZY MATCH HELPERS ──────────────────────────────────────────
+
+// Simple Levenshtein distance for short strings (typo tolerance)
+function levenshtein(a, b) {
+  const m = a.length, n = b.length;
+  if (m === 0) return n;
+  if (n === 0) return m;
+  const dp = Array.from({length: m + 1}, () => Array(n + 1).fill(0));
+  for (let i = 0; i <= m; i++) dp[i][0] = i;
+  for (let j = 0; j <= n; j++) dp[0][j] = j;
+  for (let i = 1; i <= m; i++)
+    for (let j = 1; j <= n; j++)
+      dp[i][j] = Math.min(
+        dp[i-1][j] + 1,
+        dp[i][j-1] + 1,
+        dp[i-1][j-1] + (a[i-1] === b[j-1] ? 0 : 1)
+      );
+  return dp[m][n];
+}
+
+// Find synonym matches for a query. Returns { expanded: [...terms], suggestions: [...labels] }
+function findSynonyms(q) {
+  q = q.toLowerCase().trim();
+  if (!q) return { expanded: [], suggestions: [] };
+
+  // Direct key match
+  if (SYNONYMS[q]) {
+    return { expanded: SYNONYMS[q], suggestions: SYNONYMS[q] };
+  }
+
+  // Check if query is a substring of a synonym key or vice versa
+  const partialMatches = [];
+  for (const [key, terms] of Object.entries(SYNONYMS)) {
+    if (key.includes(q) || q.includes(key)) {
+      partialMatches.push({ key, terms });
+    }
+  }
+  if (partialMatches.length > 0) {
+    const allTerms = [...new Set(partialMatches.flatMap(m => m.terms))];
+    return { expanded: allTerms, suggestions: allTerms.slice(0, 5) };
+  }
+
+  // Fuzzy: find synonym keys within edit distance 2 (typo tolerance)
+  const fuzzyMatches = [];
+  for (const [key, terms] of Object.entries(SYNONYMS)) {
+    // Only fuzzy-match single-word keys against single-word queries for sanity
+    if (!key.includes(" ") && !q.includes(" ")) {
+      const dist = levenshtein(q, key);
+      if (dist <= 2 && dist < Math.min(q.length, key.length)) {
+        fuzzyMatches.push({ key, terms, dist });
+      }
+    }
+  }
+  if (fuzzyMatches.length > 0) {
+    fuzzyMatches.sort((a, b) => a.dist - b.dist);
+    const best = fuzzyMatches.slice(0, 3);
+    const allTerms = [...new Set(best.flatMap(m => m.terms))];
+    return { expanded: allTerms, suggestions: allTerms.slice(0, 5) };
+  }
+
+  return { expanded: [], suggestions: [] };
+}
+
+// ── FILTER + SEARCH ────────────────────────────────────────────
+let activeFilter = "all";
+let searchTerm = "";
+
+function applyFilters() {
+  const cards = document.querySelectorAll(".task-card");
+  const grids = document.querySelectorAll(".task-grid");
+  const hdrs = document.querySelectorAll(".section-hdr");
+  const q = searchTerm.trim().toLowerCase();
+  const suggestBar = document.getElementById("suggest-bar");
+  const suggestTerms = document.getElementById("suggest-terms");
+
+  let totalVisible = 0;
+  let directHits = 0;
+  let synonymInfo = { expanded: [], suggestions: [] };
+
+  // First pass: count direct hits
+  if (q) {
+    cards.forEach(card => {
+      const inCategory = activeFilter === "all" || card.dataset.cats.includes(activeFilter);
+      if (inCategory && (card.dataset.task.includes(q) || card.dataset.tms.includes(q) || card.dataset.tags.includes(q))) {
+        directHits++;
+      }
+    });
+    // If few direct hits, look up synonyms
+    if (directHits < 3) {
+      synonymInfo = findSynonyms(q);
+    }
+  }
+
+  // Build expanded search terms (original query + synonym expansions)
+  const searchTerms = [q];
+  if (synonymInfo.expanded.length > 0) {
+    synonymInfo.expanded.forEach(t => searchTerms.push(t.toLowerCase()));
+  }
+
+  cards.forEach(card => {
+    const inCategory = activeFilter === "all" || card.dataset.cats.includes(activeFilter);
+    let inSearch = false;
+    let matchedTerms = [];
+    if (!q) {
+      inSearch = true;
+    } else {
+      for (const term of searchTerms) {
+        if (card.dataset.task.includes(term) || card.dataset.tms.includes(term) || card.dataset.tags.includes(term)) {
+          inSearch = true;
+          matchedTerms.push(term);
+        }
+      }
+    }
+    const show = inCategory && inSearch;
+    card.classList.toggle("hidden", !show);
+    if (show) {
+      const textEl = card.querySelector(".task-text");
+      if (q) {
+        const raw = textEl.textContent;
+        // Highlight all matched terms
+        const allHighlight = [...new Set(matchedTerms.concat([q]))].filter(t => t);
+        const escaped = allHighlight.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+        const regex = new RegExp(`(${escaped.join("|")})`, "gi");
+        textEl.innerHTML = raw.replace(regex, "<mark>$1</mark>");
+      } else {
+        textEl.innerHTML = textEl.textContent;
+      }
+      totalVisible++;
+    }
+  });
+
+  // Show "Did you mean?" bar when synonyms contributed results
+  if (q && synonymInfo.suggestions.length > 0 && directHits < 3) {
+    suggestTerms.innerHTML = "";
+    // Deduplicate and show clickable suggestions
+    const shown = [...new Set(synonymInfo.suggestions)].slice(0, 6);
+    shown.forEach(term => {
+      const span = document.createElement("span");
+      span.className = "suggest-term";
+      span.textContent = term;
+      span.addEventListener("click", () => {
+        const input = document.getElementById("searchInput");
+        input.value = term;
+        searchTerm = term;
+        applyFilters();
+        input.focus();
+      });
+      suggestTerms.appendChild(span);
+    });
+    suggestBar.style.display = "block";
+  } else {
+    suggestBar.style.display = "none";
+  }
+
+  // Hide empty sections
+  grids.forEach(grid => {
+    const hasVisible = grid.querySelectorAll(".task-card:not(.hidden)").length > 0;
+    grid.style.display = hasVisible ? "" : "none";
+  });
+  hdrs.forEach(hdr => {
+    const secId = hdr.dataset.section;
+    const grid = document.querySelector(`.task-grid[data-section="${secId}"]`);
+    hdr.classList.toggle("hidden", !grid || grid.style.display === "none");
+  });
+
+  const noResults = document.getElementById("no-results");
+  noResults.style.display = totalVisible === 0 ? "block" : "none";
+
+  const countEl = document.getElementById("result-count");
+  countEl.textContent = totalVisible === TASKS.length ? `${TASKS.length} tasks` : `${totalVisible} / ${TASKS.length}`;
+}
+
+// ── EVENT LISTENERS ────────────────────────────────────────────
+document.getElementById("searchInput").addEventListener("input", e => {
+  searchTerm = e.target.value;
+  applyFilters();
+});
+
+document.querySelectorAll(".pill").forEach(pill => {
+  pill.addEventListener("click", () => {
+    document.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
+    pill.classList.add("active");
+    activeFilter = pill.dataset.filter;
+    applyFilters();
+  });
+});
+
+// ── INIT ───────────────────────────────────────────────────────
+buildDOM();
+applyFilters();
+</script>
+</body>
+</html>

@@ -1,0 +1,1081 @@
+date,unit,equipment_category,readiness_pct,data_steward,last_updated
+2025-09-01,Unit_A,Motor Pool,84.6,training.poc@army.mil,2025-09-01T08:00:00Z
+2025-09-01,Unit_A,Comms,84.6,training.poc@army.mil,2025-09-01T08:00:00Z
+2025-09-01,Unit_A,Aviation,84.7,training.poc@army.mil,2025-09-01T08:00:00Z
+2025-09-01,Unit_A,Weapons,86.8,training.poc@army.mil,2025-09-01T08:00:00Z
+2025-09-01,Unit_B,Motor Pool,49.6,training.poc@army.mil,2025-09-01T08:00:00Z
+2025-09-01,Unit_B,Comms,56.8,training.poc@army.mil,2025-09-01T08:00:00Z
+2025-09-01,Unit_B,Aviation,63.2,training.poc@army.mil,2025-09-01T08:00:00Z
+2025-09-01,Unit_B,Weapons,61.1,training.poc@army.mil,2025-09-01T08:00:00Z
+2025-09-01,Unit_C,Motor Pool,90.6,training.poc@army.mil,2025-09-01T08:00:00Z
+2025-09-01,Unit_C,Comms,91.2,training.poc@army.mil,2025-09-01T08:00:00Z
+2025-09-01,Unit_C,Aviation,91.4,training.poc@army.mil,2025-09-01T08:00:00Z
+2025-09-01,Unit_C,Weapons,93.1,training.poc@army.mil,2025-09-01T08:00:00Z
+2025-09-02,Unit_A,Motor Pool,86.6,training.poc@army.mil,2025-09-02T08:00:00Z
+2025-09-02,Unit_A,Comms,85.3,training.poc@army.mil,2025-09-02T08:00:00Z
+2025-09-02,Unit_A,Aviation,83.2,training.poc@army.mil,2025-09-02T08:00:00Z
+2025-09-02,Unit_A,Weapons,82.5,training.poc@army.mil,2025-09-02T08:00:00Z
+2025-09-02,Unit_B,Motor Pool,50.9,training.poc@army.mil,2025-09-02T08:00:00Z
+2025-09-02,Unit_B,Comms,66.6,training.poc@army.mil,2025-09-02T08:00:00Z
+2025-09-02,Unit_B,Aviation,62.1,training.poc@army.mil,2025-09-02T08:00:00Z
+2025-09-02,Unit_B,Weapons,61.6,training.poc@army.mil,2025-09-02T08:00:00Z
+2025-09-02,Unit_C,Motor Pool,92.0,training.poc@army.mil,2025-09-02T08:00:00Z
+2025-09-02,Unit_C,Comms,88.4,training.poc@army.mil,2025-09-02T08:00:00Z
+2025-09-02,Unit_C,Aviation,90.4,training.poc@army.mil,2025-09-02T08:00:00Z
+2025-09-02,Unit_C,Weapons,91.9,training.poc@army.mil,2025-09-02T08:00:00Z
+2025-09-03,Unit_A,Motor Pool,87.2,training.poc@army.mil,2025-09-03T08:00:00Z
+2025-09-03,Unit_A,Comms,84.4,training.poc@army.mil,2025-09-03T08:00:00Z
+2025-09-03,Unit_A,Aviation,85.9,training.poc@army.mil,2025-09-03T08:00:00Z
+2025-09-03,Unit_A,Weapons,85.6,training.poc@army.mil,2025-09-03T08:00:00Z
+2025-09-03,Unit_B,Motor Pool,52.7,training.poc@army.mil,2025-09-03T08:00:00Z
+2025-09-03,Unit_B,Comms,58.1,training.poc@army.mil,2025-09-03T08:00:00Z
+2025-09-03,Unit_B,Aviation,64.0,training.poc@army.mil,2025-09-03T08:00:00Z
+2025-09-03,Unit_B,Weapons,56.7,training.poc@army.mil,2025-09-03T08:00:00Z
+2025-09-03,Unit_C,Motor Pool,86.3,training.poc@army.mil,2025-09-03T08:00:00Z
+2025-09-03,Unit_C,Comms,89.9,training.poc@army.mil,2025-09-03T08:00:00Z
+2025-09-03,Unit_C,Aviation,89.4,training.poc@army.mil,2025-09-03T08:00:00Z
+2025-09-03,Unit_C,Weapons,92.6,training.poc@army.mil,2025-09-03T08:00:00Z
+2025-09-04,Unit_A,Motor Pool,86.7,training.poc@army.mil,2025-09-04T08:00:00Z
+2025-09-04,Unit_A,Comms,82.0,training.poc@army.mil,2025-09-04T08:00:00Z
+2025-09-04,Unit_A,Aviation,87.1,training.poc@army.mil,2025-09-04T08:00:00Z
+2025-09-04,Unit_A,Weapons,82.5,training.poc@army.mil,2025-09-04T08:00:00Z
+2025-09-04,Unit_B,Motor Pool,49.7,training.poc@army.mil,2025-09-04T08:00:00Z
+2025-09-04,Unit_B,Comms,61.0,training.poc@army.mil,2025-09-04T08:00:00Z
+2025-09-04,Unit_B,Aviation,62.4,training.poc@army.mil,2025-09-04T08:00:00Z
+2025-09-04,Unit_B,Weapons,64.9,training.poc@army.mil,2025-09-04T08:00:00Z
+2025-09-04,Unit_C,Motor Pool,92.1,training.poc@army.mil,2025-09-04T08:00:00Z
+2025-09-04,Unit_C,Comms,91.6,training.poc@army.mil,2025-09-04T08:00:00Z
+2025-09-04,Unit_C,Aviation,92.2,training.poc@army.mil,2025-09-04T08:00:00Z
+2025-09-04,Unit_C,Weapons,91.9,training.poc@army.mil,2025-09-04T08:00:00Z
+2025-09-05,Unit_A,Motor Pool,83.4,training.poc@army.mil,2025-09-05T08:00:00Z
+2025-09-05,Unit_A,Comms,83.2,training.poc@army.mil,2025-09-05T08:00:00Z
+2025-09-05,Unit_A,Aviation,83.8,training.poc@army.mil,2025-09-05T08:00:00Z
+2025-09-05,Unit_A,Weapons,86.2,training.poc@army.mil,2025-09-05T08:00:00Z
+2025-09-05,Unit_B,Motor Pool,49.1,training.poc@army.mil,2025-09-05T08:00:00Z
+2025-09-05,Unit_B,Comms,70.2,training.poc@army.mil,2025-09-05T08:00:00Z
+2025-09-05,Unit_B,Aviation,59.1,training.poc@army.mil,2025-09-05T08:00:00Z
+2025-09-05,Unit_B,Weapons,58.2,training.poc@army.mil,2025-09-05T08:00:00Z
+2025-09-05,Unit_C,Motor Pool,92.4,training.poc@army.mil,2025-09-05T08:00:00Z
+2025-09-05,Unit_C,Comms,93.6,training.poc@army.mil,2025-09-05T08:00:00Z
+2025-09-05,Unit_C,Aviation,91.9,training.poc@army.mil,2025-09-05T08:00:00Z
+2025-09-05,Unit_C,Weapons,92.5,training.poc@army.mil,2025-09-05T08:00:00Z
+2025-09-06,Unit_A,Motor Pool,88.6,training.poc@army.mil,2025-09-06T08:00:00Z
+2025-09-06,Unit_A,Comms,84.8,training.poc@army.mil,2025-09-06T08:00:00Z
+2025-09-06,Unit_A,Aviation,81.4,training.poc@army.mil,2025-09-06T08:00:00Z
+2025-09-06,Unit_A,Weapons,83.7,training.poc@army.mil,2025-09-06T08:00:00Z
+2025-09-06,Unit_B,Motor Pool,53.3,training.poc@army.mil,2025-09-06T08:00:00Z
+2025-09-06,Unit_B,Comms,56.9,training.poc@army.mil,2025-09-06T08:00:00Z
+2025-09-06,Unit_B,Aviation,62.1,training.poc@army.mil,2025-09-06T08:00:00Z
+2025-09-06,Unit_B,Weapons,62.9,training.poc@army.mil,2025-09-06T08:00:00Z
+2025-09-06,Unit_C,Motor Pool,90.4,training.poc@army.mil,2025-09-06T08:00:00Z
+2025-09-06,Unit_C,Comms,92.3,training.poc@army.mil,2025-09-06T08:00:00Z
+2025-09-06,Unit_C,Aviation,92.0,training.poc@army.mil,2025-09-06T08:00:00Z
+2025-09-06,Unit_C,Weapons,95.2,training.poc@army.mil,2025-09-06T08:00:00Z
+2025-09-07,Unit_A,Motor Pool,86.5,training.poc@army.mil,2025-09-07T08:00:00Z
+2025-09-07,Unit_A,Comms,83.5,training.poc@army.mil,2025-09-07T08:00:00Z
+2025-09-07,Unit_A,Aviation,83.6,training.poc@army.mil,2025-09-07T08:00:00Z
+2025-09-07,Unit_A,Weapons,82.9,training.poc@army.mil,2025-09-07T08:00:00Z
+2025-09-07,Unit_B,Motor Pool,53.3,training.poc@army.mil,2025-09-07T08:00:00Z
+2025-09-07,Unit_B,Comms,60.0,training.poc@army.mil,2025-09-07T08:00:00Z
+2025-09-07,Unit_B,Aviation,61.8,training.poc@army.mil,2025-09-07T08:00:00Z
+2025-09-07,Unit_B,Weapons,64.6,training.poc@army.mil,2025-09-07T08:00:00Z
+2025-09-07,Unit_C,Motor Pool,89.7,training.poc@army.mil,2025-09-07T08:00:00Z
+2025-09-07,Unit_C,Comms,90.5,training.poc@army.mil,2025-09-07T08:00:00Z
+2025-09-07,Unit_C,Aviation,87.7,training.poc@army.mil,2025-09-07T08:00:00Z
+2025-09-07,Unit_C,Weapons,89.1,training.poc@army.mil,2025-09-07T08:00:00Z
+2025-09-08,Unit_A,Motor Pool,83.6,training.poc@army.mil,2025-09-08T08:00:00Z
+2025-09-08,Unit_A,Comms,86.0,training.poc@army.mil,2025-09-08T08:00:00Z
+2025-09-08,Unit_A,Aviation,88.0,training.poc@army.mil,2025-09-08T08:00:00Z
+2025-09-08,Unit_A,Weapons,85.0,training.poc@army.mil,2025-09-08T08:00:00Z
+2025-09-08,Unit_B,Motor Pool,50.9,training.poc@army.mil,2025-09-08T08:00:00Z
+2025-09-08,Unit_B,Comms,62.6,training.poc@army.mil,2025-09-08T08:00:00Z
+2025-09-08,Unit_B,Aviation,65.8,training.poc@army.mil,2025-09-08T08:00:00Z
+2025-09-08,Unit_B,Weapons,65.1,training.poc@army.mil,2025-09-08T08:00:00Z
+2025-09-08,Unit_C,Motor Pool,91.5,training.poc@army.mil,2025-09-08T08:00:00Z
+2025-09-08,Unit_C,Comms,89.2,training.poc@army.mil,2025-09-08T08:00:00Z
+2025-09-08,Unit_C,Aviation,92.6,training.poc@army.mil,2025-09-08T08:00:00Z
+2025-09-08,Unit_C,Weapons,91.7,training.poc@army.mil,2025-09-08T08:00:00Z
+2025-09-09,Unit_A,Motor Pool,88.1,training.poc@army.mil,2025-09-09T08:00:00Z
+2025-09-09,Unit_A,Comms,84.9,training.poc@army.mil,2025-09-09T08:00:00Z
+2025-09-09,Unit_A,Aviation,89.9,training.poc@army.mil,2025-09-09T08:00:00Z
+2025-09-09,Unit_A,Weapons,84.1,training.poc@army.mil,2025-09-09T08:00:00Z
+2025-09-09,Unit_B,Motor Pool,55.6,training.poc@army.mil,2025-09-09T08:00:00Z
+2025-09-09,Unit_B,Comms,62.4,training.poc@army.mil,2025-09-09T08:00:00Z
+2025-09-09,Unit_B,Aviation,60.2,training.poc@army.mil,2025-09-09T08:00:00Z
+2025-09-09,Unit_B,Weapons,58.1,training.poc@army.mil,2025-09-09T08:00:00Z
+2025-09-09,Unit_C,Motor Pool,90.7,training.poc@army.mil,2025-09-09T08:00:00Z
+2025-09-09,Unit_C,Comms,93.6,training.poc@army.mil,2025-09-09T08:00:00Z
+2025-09-09,Unit_C,Aviation,92.5,training.poc@army.mil,2025-09-09T08:00:00Z
+2025-09-09,Unit_C,Weapons,92.2,training.poc@army.mil,2025-09-09T08:00:00Z
+2025-09-10,Unit_A,Motor Pool,79.1,training.poc@army.mil,2025-09-10T08:00:00Z
+2025-09-10,Unit_A,Comms,86.8,training.poc@army.mil,2025-09-10T08:00:00Z
+2025-09-10,Unit_A,Aviation,86.4,training.poc@army.mil,2025-09-10T08:00:00Z
+2025-09-10,Unit_A,Weapons,83.6,training.poc@army.mil,2025-09-10T08:00:00Z
+2025-09-10,Unit_B,Motor Pool,47.8,training.poc@army.mil,2025-09-10T08:00:00Z
+2025-09-10,Unit_B,Comms,62.0,training.poc@army.mil,2025-09-10T08:00:00Z
+2025-09-10,Unit_B,Aviation,68.0,training.poc@army.mil,2025-09-10T08:00:00Z
+2025-09-10,Unit_B,Weapons,58.3,training.poc@army.mil,2025-09-10T08:00:00Z
+2025-09-10,Unit_C,Motor Pool,90.2,training.poc@army.mil,2025-09-10T08:00:00Z
+2025-09-10,Unit_C,Comms,93.5,training.poc@army.mil,2025-09-10T08:00:00Z
+2025-09-10,Unit_C,Aviation,90.2,training.poc@army.mil,2025-09-10T08:00:00Z
+2025-09-10,Unit_C,Weapons,90.3,training.poc@army.mil,2025-09-10T08:00:00Z
+2025-09-11,Unit_A,Motor Pool,85.2,training.poc@army.mil,2025-09-11T08:00:00Z
+2025-09-11,Unit_A,Comms,81.9,training.poc@army.mil,2025-09-11T08:00:00Z
+2025-09-11,Unit_A,Aviation,85.5,training.poc@army.mil,2025-09-11T08:00:00Z
+2025-09-11,Unit_A,Weapons,82.0,training.poc@army.mil,2025-09-11T08:00:00Z
+2025-09-11,Unit_B,Motor Pool,53.1,training.poc@army.mil,2025-09-11T08:00:00Z
+2025-09-11,Unit_B,Comms,62.0,training.poc@army.mil,2025-09-11T08:00:00Z
+2025-09-11,Unit_B,Aviation,70.0,training.poc@army.mil,2025-09-11T08:00:00Z
+2025-09-11,Unit_B,Weapons,63.0,training.poc@army.mil,2025-09-11T08:00:00Z
+2025-09-11,Unit_C,Motor Pool,93.5,training.poc@army.mil,2025-09-11T08:00:00Z
+2025-09-11,Unit_C,Comms,88.7,training.poc@army.mil,2025-09-11T08:00:00Z
+2025-09-11,Unit_C,Aviation,90.8,training.poc@army.mil,2025-09-11T08:00:00Z
+2025-09-11,Unit_C,Weapons,91.6,training.poc@army.mil,2025-09-11T08:00:00Z
+2025-09-12,Unit_A,Motor Pool,89.4,training.poc@army.mil,2025-09-12T08:00:00Z
+2025-09-12,Unit_A,Comms,80.8,training.poc@army.mil,2025-09-12T08:00:00Z
+2025-09-12,Unit_A,Aviation,87.5,training.poc@army.mil,2025-09-12T08:00:00Z
+2025-09-12,Unit_A,Weapons,86.5,training.poc@army.mil,2025-09-12T08:00:00Z
+2025-09-12,Unit_B,Motor Pool,55.4,training.poc@army.mil,2025-09-12T08:00:00Z
+2025-09-12,Unit_B,Comms,64.5,training.poc@army.mil,2025-09-12T08:00:00Z
+2025-09-12,Unit_B,Aviation,62.2,training.poc@army.mil,2025-09-12T08:00:00Z
+2025-09-12,Unit_B,Weapons,60.2,training.poc@army.mil,2025-09-12T08:00:00Z
+2025-09-12,Unit_C,Motor Pool,88.8,training.poc@army.mil,2025-09-12T08:00:00Z
+2025-09-12,Unit_C,Comms,91.4,training.poc@army.mil,2025-09-12T08:00:00Z
+2025-09-12,Unit_C,Aviation,90.7,training.poc@army.mil,2025-09-12T08:00:00Z
+2025-09-12,Unit_C,Weapons,94.6,training.poc@army.mil,2025-09-12T08:00:00Z
+2025-09-13,Unit_A,Motor Pool,83.5,training.poc@army.mil,2025-09-13T08:00:00Z
+2025-09-13,Unit_A,Comms,85.8,training.poc@army.mil,2025-09-13T08:00:00Z
+2025-09-13,Unit_A,Aviation,81.1,training.poc@army.mil,2025-09-13T08:00:00Z
+2025-09-13,Unit_A,Weapons,84.0,training.poc@army.mil,2025-09-13T08:00:00Z
+2025-09-13,Unit_B,Motor Pool,50.9,training.poc@army.mil,2025-09-13T08:00:00Z
+2025-09-13,Unit_B,Comms,64.9,training.poc@army.mil,2025-09-13T08:00:00Z
+2025-09-13,Unit_B,Aviation,67.1,training.poc@army.mil,2025-09-13T08:00:00Z
+2025-09-13,Unit_B,Weapons,61.8,training.poc@army.mil,2025-09-13T08:00:00Z
+2025-09-13,Unit_C,Motor Pool,89.0,training.poc@army.mil,2025-09-13T08:00:00Z
+2025-09-13,Unit_C,Comms,91.8,training.poc@army.mil,2025-09-13T08:00:00Z
+2025-09-13,Unit_C,Aviation,91.9,training.poc@army.mil,2025-09-13T08:00:00Z
+2025-09-13,Unit_C,Weapons,91.9,training.poc@army.mil,2025-09-13T08:00:00Z
+2025-09-14,Unit_A,Motor Pool,83.2,training.poc@army.mil,2025-09-14T08:00:00Z
+2025-09-14,Unit_A,Comms,87.8,training.poc@army.mil,2025-09-14T08:00:00Z
+2025-09-14,Unit_A,Aviation,85.2,training.poc@army.mil,2025-09-14T08:00:00Z
+2025-09-14,Unit_A,Weapons,86.7,training.poc@army.mil,2025-09-14T08:00:00Z
+2025-09-14,Unit_B,Motor Pool,54.5,training.poc@army.mil,2025-09-14T08:00:00Z
+2025-09-14,Unit_B,Comms,64.1,training.poc@army.mil,2025-09-14T08:00:00Z
+2025-09-14,Unit_B,Aviation,63.0,training.poc@army.mil,2025-09-14T08:00:00Z
+2025-09-14,Unit_B,Weapons,69.5,training.poc@army.mil,2025-09-14T08:00:00Z
+2025-09-14,Unit_C,Motor Pool,91.4,training.poc@army.mil,2025-09-14T08:00:00Z
+2025-09-14,Unit_C,Comms,90.5,training.poc@army.mil,2025-09-14T08:00:00Z
+2025-09-14,Unit_C,Aviation,91.2,training.poc@army.mil,2025-09-14T08:00:00Z
+2025-09-14,Unit_C,Weapons,93.7,training.poc@army.mil,2025-09-14T08:00:00Z
+2025-09-15,Unit_A,Motor Pool,85.3,training.poc@army.mil,2025-09-15T08:00:00Z
+2025-09-15,Unit_A,Comms,86.3,training.poc@army.mil,2025-09-15T08:00:00Z
+2025-09-15,Unit_A,Aviation,88.0,training.poc@army.mil,2025-09-15T08:00:00Z
+2025-09-15,Unit_A,Weapons,83.7,training.poc@army.mil,2025-09-15T08:00:00Z
+2025-09-15,Unit_B,Motor Pool,44.0,training.poc@army.mil,2025-09-15T08:00:00Z
+2025-09-15,Unit_B,Comms,63.0,training.poc@army.mil,2025-09-15T08:00:00Z
+2025-09-15,Unit_B,Aviation,62.8,training.poc@army.mil,2025-09-15T08:00:00Z
+2025-09-15,Unit_B,Weapons,59.9,training.poc@army.mil,2025-09-15T08:00:00Z
+2025-09-15,Unit_C,Motor Pool,92.6,training.poc@army.mil,2025-09-15T08:00:00Z
+2025-09-15,Unit_C,Comms,92.1,training.poc@army.mil,2025-09-15T08:00:00Z
+2025-09-15,Unit_C,Aviation,89.2,training.poc@army.mil,2025-09-15T08:00:00Z
+2025-09-15,Unit_C,Weapons,91.9,training.poc@army.mil,2025-09-15T08:00:00Z
+2025-09-16,Unit_A,Motor Pool,84.5,training.poc@army.mil,2025-09-16T08:00:00Z
+2025-09-16,Unit_A,Comms,81.3,training.poc@army.mil,2025-09-16T08:00:00Z
+2025-09-16,Unit_A,Aviation,86.1,training.poc@army.mil,2025-09-16T08:00:00Z
+2025-09-16,Unit_A,Weapons,84.9,training.poc@army.mil,2025-09-16T08:00:00Z
+2025-09-16,Unit_B,Motor Pool,47.4,training.poc@army.mil,2025-09-16T08:00:00Z
+2025-09-16,Unit_B,Comms,63.8,training.poc@army.mil,2025-09-16T08:00:00Z
+2025-09-16,Unit_B,Aviation,63.7,training.poc@army.mil,2025-09-16T08:00:00Z
+2025-09-16,Unit_B,Weapons,60.0,training.poc@army.mil,2025-09-16T08:00:00Z
+2025-09-16,Unit_C,Motor Pool,91.7,training.poc@army.mil,2025-09-16T08:00:00Z
+2025-09-16,Unit_C,Comms,92.8,training.poc@army.mil,2025-09-16T08:00:00Z
+2025-09-16,Unit_C,Aviation,89.7,training.poc@army.mil,2025-09-16T08:00:00Z
+2025-09-16,Unit_C,Weapons,91.7,training.poc@army.mil,2025-09-16T08:00:00Z
+2025-09-17,Unit_A,Motor Pool,85.0,training.poc@army.mil,2025-09-17T08:00:00Z
+2025-09-17,Unit_A,Comms,90.7,training.poc@army.mil,2025-09-17T08:00:00Z
+2025-09-17,Unit_A,Aviation,80.3,training.poc@army.mil,2025-09-17T08:00:00Z
+2025-09-17,Unit_A,Weapons,86.7,training.poc@army.mil,2025-09-17T08:00:00Z
+2025-09-17,Unit_B,Motor Pool,48.9,training.poc@army.mil,2025-09-17T08:00:00Z
+2025-09-17,Unit_B,Comms,61.6,training.poc@army.mil,2025-09-17T08:00:00Z
+2025-09-17,Unit_B,Aviation,68.7,training.poc@army.mil,2025-09-17T08:00:00Z
+2025-09-17,Unit_B,Weapons,62.0,training.poc@army.mil,2025-09-17T08:00:00Z
+2025-09-17,Unit_C,Motor Pool,95.0,training.poc@army.mil,2025-09-17T08:00:00Z
+2025-09-17,Unit_C,Comms,90.2,training.poc@army.mil,2025-09-17T08:00:00Z
+2025-09-17,Unit_C,Aviation,91.6,training.poc@army.mil,2025-09-17T08:00:00Z
+2025-09-17,Unit_C,Weapons,90.1,training.poc@army.mil,2025-09-17T08:00:00Z
+2025-09-18,Unit_A,Motor Pool,83.3,training.poc@army.mil,2025-09-18T08:00:00Z
+2025-09-18,Unit_A,Comms,85.2,training.poc@army.mil,2025-09-18T08:00:00Z
+2025-09-18,Unit_A,Aviation,84.3,training.poc@army.mil,2025-09-18T08:00:00Z
+2025-09-18,Unit_A,Weapons,85.5,training.poc@army.mil,2025-09-18T08:00:00Z
+2025-09-18,Unit_B,Motor Pool,42.6,training.poc@army.mil,2025-09-18T08:00:00Z
+2025-09-18,Unit_B,Comms,69.0,training.poc@army.mil,2025-09-18T08:00:00Z
+2025-09-18,Unit_B,Aviation,61.4,training.poc@army.mil,2025-09-18T08:00:00Z
+2025-09-18,Unit_B,Weapons,68.1,training.poc@army.mil,2025-09-18T08:00:00Z
+2025-09-18,Unit_C,Motor Pool,89.2,training.poc@army.mil,2025-09-18T08:00:00Z
+2025-09-18,Unit_C,Comms,91.5,training.poc@army.mil,2025-09-18T08:00:00Z
+2025-09-18,Unit_C,Aviation,96.7,training.poc@army.mil,2025-09-18T08:00:00Z
+2025-09-18,Unit_C,Weapons,89.4,training.poc@army.mil,2025-09-18T08:00:00Z
+2025-09-19,Unit_A,Motor Pool,81.3,training.poc@army.mil,2025-09-19T08:00:00Z
+2025-09-19,Unit_A,Comms,83.6,training.poc@army.mil,2025-09-19T08:00:00Z
+2025-09-19,Unit_A,Aviation,86.2,training.poc@army.mil,2025-09-19T08:00:00Z
+2025-09-19,Unit_A,Weapons,86.7,training.poc@army.mil,2025-09-19T08:00:00Z
+2025-09-19,Unit_B,Motor Pool,54.5,training.poc@army.mil,2025-09-19T08:00:00Z
+2025-09-19,Unit_B,Comms,61.1,training.poc@army.mil,2025-09-19T08:00:00Z
+2025-09-19,Unit_B,Aviation,56.4,training.poc@army.mil,2025-09-19T08:00:00Z
+2025-09-19,Unit_B,Weapons,60.5,training.poc@army.mil,2025-09-19T08:00:00Z
+2025-09-19,Unit_C,Motor Pool,93.2,training.poc@army.mil,2025-09-19T08:00:00Z
+2025-09-19,Unit_C,Comms,91.8,training.poc@army.mil,2025-09-19T08:00:00Z
+2025-09-19,Unit_C,Aviation,87.5,training.poc@army.mil,2025-09-19T08:00:00Z
+2025-09-19,Unit_C,Weapons,90.9,training.poc@army.mil,2025-09-19T08:00:00Z
+2025-09-20,Unit_A,Motor Pool,88.5,training.poc@army.mil,2025-09-20T08:00:00Z
+2025-09-20,Unit_A,Comms,90.3,training.poc@army.mil,2025-09-20T08:00:00Z
+2025-09-20,Unit_A,Aviation,86.4,training.poc@army.mil,2025-09-20T08:00:00Z
+2025-09-20,Unit_A,Weapons,85.8,training.poc@army.mil,2025-09-20T08:00:00Z
+2025-09-20,Unit_B,Motor Pool,45.7,training.poc@army.mil,2025-09-20T08:00:00Z
+2025-09-20,Unit_B,Comms,59.0,training.poc@army.mil,2025-09-20T08:00:00Z
+2025-09-20,Unit_B,Aviation,62.2,training.poc@army.mil,2025-09-20T08:00:00Z
+2025-09-20,Unit_B,Weapons,63.8,training.poc@army.mil,2025-09-20T08:00:00Z
+2025-09-20,Unit_C,Motor Pool,92.0,training.poc@army.mil,2025-09-20T08:00:00Z
+2025-09-20,Unit_C,Comms,90.1,training.poc@army.mil,2025-09-20T08:00:00Z
+2025-09-20,Unit_C,Aviation,88.9,training.poc@army.mil,2025-09-20T08:00:00Z
+2025-09-20,Unit_C,Weapons,89.6,training.poc@army.mil,2025-09-20T08:00:00Z
+2025-09-21,Unit_A,Motor Pool,82.1,training.poc@army.mil,2025-09-21T08:00:00Z
+2025-09-21,Unit_A,Comms,86.6,training.poc@army.mil,2025-09-21T08:00:00Z
+2025-09-21,Unit_A,Aviation,79.2,training.poc@army.mil,2025-09-21T08:00:00Z
+2025-09-21,Unit_A,Weapons,84.2,training.poc@army.mil,2025-09-21T08:00:00Z
+2025-09-21,Unit_B,Motor Pool,51.6,training.poc@army.mil,2025-09-21T08:00:00Z
+2025-09-21,Unit_B,Comms,67.3,training.poc@army.mil,2025-09-21T08:00:00Z
+2025-09-21,Unit_B,Aviation,62.2,training.poc@army.mil,2025-09-21T08:00:00Z
+2025-09-21,Unit_B,Weapons,65.5,training.poc@army.mil,2025-09-21T08:00:00Z
+2025-09-21,Unit_C,Motor Pool,90.3,training.poc@army.mil,2025-09-21T08:00:00Z
+2025-09-21,Unit_C,Comms,89.7,training.poc@army.mil,2025-09-21T08:00:00Z
+2025-09-21,Unit_C,Aviation,89.8,training.poc@army.mil,2025-09-21T08:00:00Z
+2025-09-21,Unit_C,Weapons,93.7,training.poc@army.mil,2025-09-21T08:00:00Z
+2025-09-22,Unit_A,Motor Pool,87.5,training.poc@army.mil,2025-09-22T08:00:00Z
+2025-09-22,Unit_A,Comms,86.2,training.poc@army.mil,2025-09-22T08:00:00Z
+2025-09-22,Unit_A,Aviation,93.3,training.poc@army.mil,2025-09-22T08:00:00Z
+2025-09-22,Unit_A,Weapons,84.9,training.poc@army.mil,2025-09-22T08:00:00Z
+2025-09-22,Unit_B,Motor Pool,52.2,training.poc@army.mil,2025-09-22T08:00:00Z
+2025-09-22,Unit_B,Comms,63.1,training.poc@army.mil,2025-09-22T08:00:00Z
+2025-09-22,Unit_B,Aviation,61.2,training.poc@army.mil,2025-09-22T08:00:00Z
+2025-09-22,Unit_B,Weapons,70.1,training.poc@army.mil,2025-09-22T08:00:00Z
+2025-09-22,Unit_C,Motor Pool,93.7,training.poc@army.mil,2025-09-22T08:00:00Z
+2025-09-22,Unit_C,Comms,88.5,training.poc@army.mil,2025-09-22T08:00:00Z
+2025-09-22,Unit_C,Aviation,90.3,training.poc@army.mil,2025-09-22T08:00:00Z
+2025-09-22,Unit_C,Weapons,91.8,training.poc@army.mil,2025-09-22T08:00:00Z
+2025-09-23,Unit_A,Motor Pool,87.0,training.poc@army.mil,2025-09-23T08:00:00Z
+2025-09-23,Unit_A,Comms,81.6,training.poc@army.mil,2025-09-23T08:00:00Z
+2025-09-23,Unit_A,Aviation,79.4,training.poc@army.mil,2025-09-23T08:00:00Z
+2025-09-23,Unit_A,Weapons,80.2,training.poc@army.mil,2025-09-23T08:00:00Z
+2025-09-23,Unit_B,Motor Pool,49.8,training.poc@army.mil,2025-09-23T08:00:00Z
+2025-09-23,Unit_B,Comms,61.6,training.poc@army.mil,2025-09-23T08:00:00Z
+2025-09-23,Unit_B,Aviation,63.2,training.poc@army.mil,2025-09-23T08:00:00Z
+2025-09-23,Unit_B,Weapons,59.3,training.poc@army.mil,2025-09-23T08:00:00Z
+2025-09-23,Unit_C,Motor Pool,88.8,training.poc@army.mil,2025-09-23T08:00:00Z
+2025-09-23,Unit_C,Comms,87.4,training.poc@army.mil,2025-09-23T08:00:00Z
+2025-09-23,Unit_C,Aviation,91.6,training.poc@army.mil,2025-09-23T08:00:00Z
+2025-09-23,Unit_C,Weapons,91.7,training.poc@army.mil,2025-09-23T08:00:00Z
+2025-09-24,Unit_A,Motor Pool,87.5,training.poc@army.mil,2025-09-24T08:00:00Z
+2025-09-24,Unit_A,Comms,87.0,training.poc@army.mil,2025-09-24T08:00:00Z
+2025-09-24,Unit_A,Aviation,84.5,training.poc@army.mil,2025-09-24T08:00:00Z
+2025-09-24,Unit_A,Weapons,88.4,training.poc@army.mil,2025-09-24T08:00:00Z
+2025-09-24,Unit_B,Motor Pool,49.5,training.poc@army.mil,2025-09-24T08:00:00Z
+2025-09-24,Unit_B,Comms,59.7,training.poc@army.mil,2025-09-24T08:00:00Z
+2025-09-24,Unit_B,Aviation,60.2,training.poc@army.mil,2025-09-24T08:00:00Z
+2025-09-24,Unit_B,Weapons,60.0,training.poc@army.mil,2025-09-24T08:00:00Z
+2025-09-24,Unit_C,Motor Pool,87.1,training.poc@army.mil,2025-09-24T08:00:00Z
+2025-09-24,Unit_C,Comms,91.3,training.poc@army.mil,2025-09-24T08:00:00Z
+2025-09-24,Unit_C,Aviation,91.4,training.poc@army.mil,2025-09-24T08:00:00Z
+2025-09-24,Unit_C,Weapons,90.3,training.poc@army.mil,2025-09-24T08:00:00Z
+2025-09-25,Unit_A,Motor Pool,83.2,training.poc@army.mil,2025-09-25T08:00:00Z
+2025-09-25,Unit_A,Comms,85.9,training.poc@army.mil,2025-09-25T08:00:00Z
+2025-09-25,Unit_A,Aviation,89.3,training.poc@army.mil,2025-09-25T08:00:00Z
+2025-09-25,Unit_A,Weapons,85.1,training.poc@army.mil,2025-09-25T08:00:00Z
+2025-09-25,Unit_B,Motor Pool,48.2,training.poc@army.mil,2025-09-25T08:00:00Z
+2025-09-25,Unit_B,Comms,59.9,training.poc@army.mil,2025-09-25T08:00:00Z
+2025-09-25,Unit_B,Aviation,61.8,training.poc@army.mil,2025-09-25T08:00:00Z
+2025-09-25,Unit_B,Weapons,57.6,training.poc@army.mil,2025-09-25T08:00:00Z
+2025-09-25,Unit_C,Motor Pool,90.8,training.poc@army.mil,2025-09-25T08:00:00Z
+2025-09-25,Unit_C,Comms,91.1,training.poc@army.mil,2025-09-25T08:00:00Z
+2025-09-25,Unit_C,Aviation,94.3,training.poc@army.mil,2025-09-25T08:00:00Z
+2025-09-25,Unit_C,Weapons,92.7,training.poc@army.mil,2025-09-25T08:00:00Z
+2025-09-26,Unit_A,Motor Pool,87.6,training.poc@army.mil,2025-09-26T08:00:00Z
+2025-09-26,Unit_A,Comms,83.2,training.poc@army.mil,2025-09-26T08:00:00Z
+2025-09-26,Unit_A,Aviation,86.7,training.poc@army.mil,2025-09-26T08:00:00Z
+2025-09-26,Unit_A,Weapons,82.2,training.poc@army.mil,2025-09-26T08:00:00Z
+2025-09-26,Unit_B,Motor Pool,51.1,training.poc@army.mil,2025-09-26T08:00:00Z
+2025-09-26,Unit_B,Comms,63.5,training.poc@army.mil,2025-09-26T08:00:00Z
+2025-09-26,Unit_B,Aviation,59.3,training.poc@army.mil,2025-09-26T08:00:00Z
+2025-09-26,Unit_B,Weapons,69.0,training.poc@army.mil,2025-09-26T08:00:00Z
+2025-09-26,Unit_C,Motor Pool,92.0,training.poc@army.mil,2025-09-26T08:00:00Z
+2025-09-26,Unit_C,Comms,87.6,training.poc@army.mil,2025-09-26T08:00:00Z
+2025-09-26,Unit_C,Aviation,92.0,training.poc@army.mil,2025-09-26T08:00:00Z
+2025-09-26,Unit_C,Weapons,90.3,training.poc@army.mil,2025-09-26T08:00:00Z
+2025-09-27,Unit_A,Motor Pool,85.0,training.poc@army.mil,2025-09-27T08:00:00Z
+2025-09-27,Unit_A,Comms,86.2,training.poc@army.mil,2025-09-27T08:00:00Z
+2025-09-27,Unit_A,Aviation,86.0,training.poc@army.mil,2025-09-27T08:00:00Z
+2025-09-27,Unit_A,Weapons,79.9,training.poc@army.mil,2025-09-27T08:00:00Z
+2025-09-27,Unit_B,Motor Pool,45.9,training.poc@army.mil,2025-09-27T08:00:00Z
+2025-09-27,Unit_B,Comms,64.7,training.poc@army.mil,2025-09-27T08:00:00Z
+2025-09-27,Unit_B,Aviation,66.6,training.poc@army.mil,2025-09-27T08:00:00Z
+2025-09-27,Unit_B,Weapons,68.7,training.poc@army.mil,2025-09-27T08:00:00Z
+2025-09-27,Unit_C,Motor Pool,94.2,training.poc@army.mil,2025-09-27T08:00:00Z
+2025-09-27,Unit_C,Comms,87.3,training.poc@army.mil,2025-09-27T08:00:00Z
+2025-09-27,Unit_C,Aviation,92.4,training.poc@army.mil,2025-09-27T08:00:00Z
+2025-09-27,Unit_C,Weapons,87.6,training.poc@army.mil,2025-09-27T08:00:00Z
+2025-09-28,Unit_A,Motor Pool,89.0,training.poc@army.mil,2025-09-28T08:00:00Z
+2025-09-28,Unit_A,Comms,85.6,training.poc@army.mil,2025-09-28T08:00:00Z
+2025-09-28,Unit_A,Aviation,82.1,training.poc@army.mil,2025-09-28T08:00:00Z
+2025-09-28,Unit_A,Weapons,90.0,training.poc@army.mil,2025-09-28T08:00:00Z
+2025-09-28,Unit_B,Motor Pool,52.3,training.poc@army.mil,2025-09-28T08:00:00Z
+2025-09-28,Unit_B,Comms,55.4,training.poc@army.mil,2025-09-28T08:00:00Z
+2025-09-28,Unit_B,Aviation,63.0,training.poc@army.mil,2025-09-28T08:00:00Z
+2025-09-28,Unit_B,Weapons,59.4,training.poc@army.mil,2025-09-28T08:00:00Z
+2025-09-28,Unit_C,Motor Pool,91.2,training.poc@army.mil,2025-09-28T08:00:00Z
+2025-09-28,Unit_C,Comms,90.2,training.poc@army.mil,2025-09-28T08:00:00Z
+2025-09-28,Unit_C,Aviation,93.5,training.poc@army.mil,2025-09-28T08:00:00Z
+2025-09-28,Unit_C,Weapons,88.4,training.poc@army.mil,2025-09-28T08:00:00Z
+2025-09-29,Unit_A,Motor Pool,85.8,training.poc@army.mil,2025-09-29T08:00:00Z
+2025-09-29,Unit_A,Comms,89.5,training.poc@army.mil,2025-09-29T08:00:00Z
+2025-09-29,Unit_A,Aviation,82.9,training.poc@army.mil,2025-09-29T08:00:00Z
+2025-09-29,Unit_A,Weapons,85.5,training.poc@army.mil,2025-09-29T08:00:00Z
+2025-09-29,Unit_B,Motor Pool,50.7,training.poc@army.mil,2025-09-29T08:00:00Z
+2025-09-29,Unit_B,Comms,59.6,training.poc@army.mil,2025-09-29T08:00:00Z
+2025-09-29,Unit_B,Aviation,64.3,training.poc@army.mil,2025-09-29T08:00:00Z
+2025-09-29,Unit_B,Weapons,62.3,training.poc@army.mil,2025-09-29T08:00:00Z
+2025-09-29,Unit_C,Motor Pool,89.3,training.poc@army.mil,2025-09-29T08:00:00Z
+2025-09-29,Unit_C,Comms,94.2,training.poc@army.mil,2025-09-29T08:00:00Z
+2025-09-29,Unit_C,Aviation,92.4,training.poc@army.mil,2025-09-29T08:00:00Z
+2025-09-29,Unit_C,Weapons,90.7,training.poc@army.mil,2025-09-29T08:00:00Z
+2025-09-30,Unit_A,Motor Pool,83.4,training.poc@army.mil,2025-09-30T08:00:00Z
+2025-09-30,Unit_A,Comms,83.0,training.poc@army.mil,2025-09-30T08:00:00Z
+2025-09-30,Unit_A,Aviation,88.1,training.poc@army.mil,2025-09-30T08:00:00Z
+2025-09-30,Unit_A,Weapons,84.6,training.poc@army.mil,2025-09-30T08:00:00Z
+2025-09-30,Unit_B,Motor Pool,51.6,training.poc@army.mil,2025-09-30T08:00:00Z
+2025-09-30,Unit_B,Comms,61.4,training.poc@army.mil,2025-09-30T08:00:00Z
+2025-09-30,Unit_B,Aviation,64.2,training.poc@army.mil,2025-09-30T08:00:00Z
+2025-09-30,Unit_B,Weapons,61.6,training.poc@army.mil,2025-09-30T08:00:00Z
+2025-09-30,Unit_C,Motor Pool,92.4,training.poc@army.mil,2025-09-30T08:00:00Z
+2025-09-30,Unit_C,Comms,90.7,training.poc@army.mil,2025-09-30T08:00:00Z
+2025-09-30,Unit_C,Aviation,92.5,training.poc@army.mil,2025-09-30T08:00:00Z
+2025-09-30,Unit_C,Weapons,92.2,training.poc@army.mil,2025-09-30T08:00:00Z
+2025-10-01,Unit_A,Motor Pool,84.7,training.poc@army.mil,2025-10-01T08:00:00Z
+2025-10-01,Unit_A,Comms,82.9,training.poc@army.mil,2025-10-01T08:00:00Z
+2025-10-01,Unit_A,Aviation,82.6,training.poc@army.mil,2025-10-01T08:00:00Z
+2025-10-01,Unit_A,Weapons,83.1,training.poc@army.mil,2025-10-01T08:00:00Z
+2025-10-01,Unit_B,Motor Pool,46.6,training.poc@army.mil,2025-10-01T08:00:00Z
+2025-10-01,Unit_B,Comms,65.0,training.poc@army.mil,2025-10-01T08:00:00Z
+2025-10-01,Unit_B,Aviation,61.8,training.poc@army.mil,2025-10-01T08:00:00Z
+2025-10-01,Unit_B,Weapons,67.5,training.poc@army.mil,2025-10-01T08:00:00Z
+2025-10-01,Unit_C,Motor Pool,95.1,training.poc@army.mil,2025-10-01T08:00:00Z
+2025-10-01,Unit_C,Comms,91.0,training.poc@army.mil,2025-10-01T08:00:00Z
+2025-10-01,Unit_C,Aviation,88.2,training.poc@army.mil,2025-10-01T08:00:00Z
+2025-10-01,Unit_C,Weapons,90.3,training.poc@army.mil,2025-10-01T08:00:00Z
+2025-10-02,Unit_A,Motor Pool,84.8,training.poc@army.mil,2025-10-02T08:00:00Z
+2025-10-02,Unit_A,Comms,81.3,training.poc@army.mil,2025-10-02T08:00:00Z
+2025-10-02,Unit_A,Aviation,84.4,training.poc@army.mil,2025-10-02T08:00:00Z
+2025-10-02,Unit_A,Weapons,85.7,training.poc@army.mil,2025-10-02T08:00:00Z
+2025-10-02,Unit_B,Motor Pool,48.4,training.poc@army.mil,2025-10-02T08:00:00Z
+2025-10-02,Unit_B,Comms,59.3,training.poc@army.mil,2025-10-02T08:00:00Z
+2025-10-02,Unit_B,Aviation,59.3,training.poc@army.mil,2025-10-02T08:00:00Z
+2025-10-02,Unit_B,Weapons,68.3,training.poc@army.mil,2025-10-02T08:00:00Z
+2025-10-02,Unit_C,Motor Pool,90.7,training.poc@army.mil,2025-10-02T08:00:00Z
+2025-10-02,Unit_C,Comms,89.5,training.poc@army.mil,2025-10-02T08:00:00Z
+2025-10-02,Unit_C,Aviation,90.3,training.poc@army.mil,2025-10-02T08:00:00Z
+2025-10-02,Unit_C,Weapons,92.7,training.poc@army.mil,2025-10-02T08:00:00Z
+2025-10-03,Unit_A,Motor Pool,83.3,training.poc@army.mil,2025-10-03T08:00:00Z
+2025-10-03,Unit_A,Comms,86.2,training.poc@army.mil,2025-10-03T08:00:00Z
+2025-10-03,Unit_A,Aviation,86.8,training.poc@army.mil,2025-10-03T08:00:00Z
+2025-10-03,Unit_A,Weapons,86.9,training.poc@army.mil,2025-10-03T08:00:00Z
+2025-10-03,Unit_B,Motor Pool,54.9,training.poc@army.mil,2025-10-03T08:00:00Z
+2025-10-03,Unit_B,Comms,60.1,training.poc@army.mil,2025-10-03T08:00:00Z
+2025-10-03,Unit_B,Aviation,66.0,training.poc@army.mil,2025-10-03T08:00:00Z
+2025-10-03,Unit_B,Weapons,59.2,training.poc@army.mil,2025-10-03T08:00:00Z
+2025-10-03,Unit_C,Motor Pool,90.3,training.poc@army.mil,2025-10-03T08:00:00Z
+2025-10-03,Unit_C,Comms,93.2,training.poc@army.mil,2025-10-03T08:00:00Z
+2025-10-03,Unit_C,Aviation,92.5,training.poc@army.mil,2025-10-03T08:00:00Z
+2025-10-03,Unit_C,Weapons,91.0,training.poc@army.mil,2025-10-03T08:00:00Z
+2025-10-04,Unit_A,Motor Pool,82.0,training.poc@army.mil,2025-10-04T08:00:00Z
+2025-10-04,Unit_A,Comms,86.4,training.poc@army.mil,2025-10-04T08:00:00Z
+2025-10-04,Unit_A,Aviation,83.4,training.poc@army.mil,2025-10-04T08:00:00Z
+2025-10-04,Unit_A,Weapons,82.7,training.poc@army.mil,2025-10-04T08:00:00Z
+2025-10-04,Unit_B,Motor Pool,47.7,training.poc@army.mil,2025-10-04T08:00:00Z
+2025-10-04,Unit_B,Comms,62.9,training.poc@army.mil,2025-10-04T08:00:00Z
+2025-10-04,Unit_B,Aviation,54.6,training.poc@army.mil,2025-10-04T08:00:00Z
+2025-10-04,Unit_B,Weapons,63.3,training.poc@army.mil,2025-10-04T08:00:00Z
+2025-10-04,Unit_C,Motor Pool,91.3,training.poc@army.mil,2025-10-04T08:00:00Z
+2025-10-04,Unit_C,Comms,89.9,training.poc@army.mil,2025-10-04T08:00:00Z
+2025-10-04,Unit_C,Aviation,92.9,training.poc@army.mil,2025-10-04T08:00:00Z
+2025-10-04,Unit_C,Weapons,92.1,training.poc@army.mil,2025-10-04T08:00:00Z
+2025-10-05,Unit_A,Motor Pool,83.5,training.poc@army.mil,2025-10-05T08:00:00Z
+2025-10-05,Unit_A,Comms,83.3,training.poc@army.mil,2025-10-05T08:00:00Z
+2025-10-05,Unit_A,Aviation,86.7,training.poc@army.mil,2025-10-05T08:00:00Z
+2025-10-05,Unit_A,Weapons,81.2,training.poc@army.mil,2025-10-05T08:00:00Z
+2025-10-05,Unit_B,Motor Pool,48.8,training.poc@army.mil,2025-10-05T08:00:00Z
+2025-10-05,Unit_B,Comms,59.8,training.poc@army.mil,2025-10-05T08:00:00Z
+2025-10-05,Unit_B,Aviation,62.2,training.poc@army.mil,2025-10-05T08:00:00Z
+2025-10-05,Unit_B,Weapons,62.7,training.poc@army.mil,2025-10-05T08:00:00Z
+2025-10-05,Unit_C,Motor Pool,91.1,training.poc@army.mil,2025-10-05T08:00:00Z
+2025-10-05,Unit_C,Comms,93.0,training.poc@army.mil,2025-10-05T08:00:00Z
+2025-10-05,Unit_C,Aviation,91.4,training.poc@army.mil,2025-10-05T08:00:00Z
+2025-10-05,Unit_C,Weapons,90.4,training.poc@army.mil,2025-10-05T08:00:00Z
+2025-10-06,Unit_A,Motor Pool,82.0,training.poc@army.mil,2025-10-06T08:00:00Z
+2025-10-06,Unit_A,Comms,86.8,training.poc@army.mil,2025-10-06T08:00:00Z
+2025-10-06,Unit_A,Aviation,86.3,training.poc@army.mil,2025-10-06T08:00:00Z
+2025-10-06,Unit_A,Weapons,88.6,training.poc@army.mil,2025-10-06T08:00:00Z
+2025-10-06,Unit_B,Motor Pool,47.4,training.poc@army.mil,2025-10-06T08:00:00Z
+2025-10-06,Unit_B,Comms,62.1,training.poc@army.mil,2025-10-06T08:00:00Z
+2025-10-06,Unit_B,Aviation,61.8,training.poc@army.mil,2025-10-06T08:00:00Z
+2025-10-06,Unit_B,Weapons,61.7,training.poc@army.mil,2025-10-06T08:00:00Z
+2025-10-06,Unit_C,Motor Pool,91.0,training.poc@army.mil,2025-10-06T08:00:00Z
+2025-10-06,Unit_C,Comms,87.9,training.poc@army.mil,2025-10-06T08:00:00Z
+2025-10-06,Unit_C,Aviation,92.5,training.poc@army.mil,2025-10-06T08:00:00Z
+2025-10-06,Unit_C,Weapons,92.2,training.poc@army.mil,2025-10-06T08:00:00Z
+2025-10-07,Unit_A,Motor Pool,87.8,training.poc@army.mil,2025-10-07T08:00:00Z
+2025-10-07,Unit_A,Comms,90.6,training.poc@army.mil,2025-10-07T08:00:00Z
+2025-10-07,Unit_A,Aviation,84.2,training.poc@army.mil,2025-10-07T08:00:00Z
+2025-10-07,Unit_A,Weapons,84.9,training.poc@army.mil,2025-10-07T08:00:00Z
+2025-10-07,Unit_B,Motor Pool,50.0,training.poc@army.mil,2025-10-07T08:00:00Z
+2025-10-07,Unit_B,Comms,68.8,training.poc@army.mil,2025-10-07T08:00:00Z
+2025-10-07,Unit_B,Aviation,55.9,training.poc@army.mil,2025-10-07T08:00:00Z
+2025-10-07,Unit_B,Weapons,63.7,training.poc@army.mil,2025-10-07T08:00:00Z
+2025-10-07,Unit_C,Motor Pool,88.4,training.poc@army.mil,2025-10-07T08:00:00Z
+2025-10-07,Unit_C,Comms,86.4,training.poc@army.mil,2025-10-07T08:00:00Z
+2025-10-07,Unit_C,Aviation,87.4,training.poc@army.mil,2025-10-07T08:00:00Z
+2025-10-07,Unit_C,Weapons,88.5,training.poc@army.mil,2025-10-07T08:00:00Z
+2025-10-08,Unit_A,Motor Pool,87.7,training.poc@army.mil,2025-10-08T08:00:00Z
+2025-10-08,Unit_A,Comms,82.8,training.poc@army.mil,2025-10-08T08:00:00Z
+2025-10-08,Unit_A,Aviation,84.4,training.poc@army.mil,2025-10-08T08:00:00Z
+2025-10-08,Unit_A,Weapons,82.1,training.poc@army.mil,2025-10-08T08:00:00Z
+2025-10-08,Unit_B,Motor Pool,52.1,training.poc@army.mil,2025-10-08T08:00:00Z
+2025-10-08,Unit_B,Comms,58.1,training.poc@army.mil,2025-10-08T08:00:00Z
+2025-10-08,Unit_B,Aviation,66.6,training.poc@army.mil,2025-10-08T08:00:00Z
+2025-10-08,Unit_B,Weapons,58.5,training.poc@army.mil,2025-10-08T08:00:00Z
+2025-10-08,Unit_C,Motor Pool,89.6,training.poc@army.mil,2025-10-08T08:00:00Z
+2025-10-08,Unit_C,Comms,91.2,training.poc@army.mil,2025-10-08T08:00:00Z
+2025-10-08,Unit_C,Aviation,91.0,training.poc@army.mil,2025-10-08T08:00:00Z
+2025-10-08,Unit_C,Weapons,93.6,training.poc@army.mil,2025-10-08T08:00:00Z
+2025-10-09,Unit_A,Motor Pool,85.3,training.poc@army.mil,2025-10-09T08:00:00Z
+2025-10-09,Unit_A,Comms,82.0,training.poc@army.mil,2025-10-09T08:00:00Z
+2025-10-09,Unit_A,Aviation,83.6,training.poc@army.mil,2025-10-09T08:00:00Z
+2025-10-09,Unit_A,Weapons,83.6,training.poc@army.mil,2025-10-09T08:00:00Z
+2025-10-09,Unit_B,Motor Pool,52.5,training.poc@army.mil,2025-10-09T08:00:00Z
+2025-10-09,Unit_B,Comms,63.3,training.poc@army.mil,2025-10-09T08:00:00Z
+2025-10-09,Unit_B,Aviation,61.6,training.poc@army.mil,2025-10-09T08:00:00Z
+2025-10-09,Unit_B,Weapons,65.0,training.poc@army.mil,2025-10-09T08:00:00Z
+2025-10-09,Unit_C,Motor Pool,90.0,training.poc@army.mil,2025-10-09T08:00:00Z
+2025-10-09,Unit_C,Comms,90.8,training.poc@army.mil,2025-10-09T08:00:00Z
+2025-10-09,Unit_C,Aviation,91.3,training.poc@army.mil,2025-10-09T08:00:00Z
+2025-10-09,Unit_C,Weapons,93.8,training.poc@army.mil,2025-10-09T08:00:00Z
+2025-10-10,Unit_A,Motor Pool,84.8,training.poc@army.mil,2025-10-10T08:00:00Z
+2025-10-10,Unit_A,Comms,84.1,training.poc@army.mil,2025-10-10T08:00:00Z
+2025-10-10,Unit_A,Aviation,82.4,training.poc@army.mil,2025-10-10T08:00:00Z
+2025-10-10,Unit_A,Weapons,86.7,training.poc@army.mil,2025-10-10T08:00:00Z
+2025-10-10,Unit_B,Motor Pool,47.9,training.poc@army.mil,2025-10-10T08:00:00Z
+2025-10-10,Unit_B,Comms,63.2,training.poc@army.mil,2025-10-10T08:00:00Z
+2025-10-10,Unit_B,Aviation,55.3,training.poc@army.mil,2025-10-10T08:00:00Z
+2025-10-10,Unit_B,Weapons,65.7,training.poc@army.mil,2025-10-10T08:00:00Z
+2025-10-10,Unit_C,Motor Pool,88.6,training.poc@army.mil,2025-10-10T08:00:00Z
+2025-10-10,Unit_C,Comms,89.6,training.poc@army.mil,2025-10-10T08:00:00Z
+2025-10-10,Unit_C,Aviation,92.9,training.poc@army.mil,2025-10-10T08:00:00Z
+2025-10-10,Unit_C,Weapons,88.6,training.poc@army.mil,2025-10-10T08:00:00Z
+2025-10-11,Unit_A,Motor Pool,84.8,training.poc@army.mil,2025-10-11T08:00:00Z
+2025-10-11,Unit_A,Comms,85.2,training.poc@army.mil,2025-10-11T08:00:00Z
+2025-10-11,Unit_A,Aviation,82.5,training.poc@army.mil,2025-10-11T08:00:00Z
+2025-10-11,Unit_A,Weapons,88.4,training.poc@army.mil,2025-10-11T08:00:00Z
+2025-10-11,Unit_B,Motor Pool,55.2,training.poc@army.mil,2025-10-11T08:00:00Z
+2025-10-11,Unit_B,Comms,55.1,training.poc@army.mil,2025-10-11T08:00:00Z
+2025-10-11,Unit_B,Aviation,56.9,training.poc@army.mil,2025-10-11T08:00:00Z
+2025-10-11,Unit_B,Weapons,64.8,training.poc@army.mil,2025-10-11T08:00:00Z
+2025-10-11,Unit_C,Motor Pool,88.7,training.poc@army.mil,2025-10-11T08:00:00Z
+2025-10-11,Unit_C,Comms,90.3,training.poc@army.mil,2025-10-11T08:00:00Z
+2025-10-11,Unit_C,Aviation,91.2,training.poc@army.mil,2025-10-11T08:00:00Z
+2025-10-11,Unit_C,Weapons,92.2,training.poc@army.mil,2025-10-11T08:00:00Z
+2025-10-12,Unit_A,Motor Pool,84.4,training.poc@army.mil,2025-10-12T08:00:00Z
+2025-10-12,Unit_A,Comms,85.2,training.poc@army.mil,2025-10-12T08:00:00Z
+2025-10-12,Unit_A,Aviation,83.1,training.poc@army.mil,2025-10-12T08:00:00Z
+2025-10-12,Unit_A,Weapons,88.2,training.poc@army.mil,2025-10-12T08:00:00Z
+2025-10-12,Unit_B,Motor Pool,48.3,training.poc@army.mil,2025-10-12T08:00:00Z
+2025-10-12,Unit_B,Comms,63.2,training.poc@army.mil,2025-10-12T08:00:00Z
+2025-10-12,Unit_B,Aviation,60.2,training.poc@army.mil,2025-10-12T08:00:00Z
+2025-10-12,Unit_B,Weapons,62.4,training.poc@army.mil,2025-10-12T08:00:00Z
+2025-10-12,Unit_C,Motor Pool,90.7,training.poc@army.mil,2025-10-12T08:00:00Z
+2025-10-12,Unit_C,Comms,90.7,training.poc@army.mil,2025-10-12T08:00:00Z
+2025-10-12,Unit_C,Aviation,89.2,training.poc@army.mil,2025-10-12T08:00:00Z
+2025-10-12,Unit_C,Weapons,92.4,training.poc@army.mil,2025-10-12T08:00:00Z
+2025-10-13,Unit_A,Motor Pool,88.5,training.poc@army.mil,2025-10-13T08:00:00Z
+2025-10-13,Unit_A,Comms,85.6,training.poc@army.mil,2025-10-13T08:00:00Z
+2025-10-13,Unit_A,Aviation,86.8,training.poc@army.mil,2025-10-13T08:00:00Z
+2025-10-13,Unit_A,Weapons,87.1,training.poc@army.mil,2025-10-13T08:00:00Z
+2025-10-13,Unit_B,Motor Pool,53.2,training.poc@army.mil,2025-10-13T08:00:00Z
+2025-10-13,Unit_B,Comms,63.1,training.poc@army.mil,2025-10-13T08:00:00Z
+2025-10-13,Unit_B,Aviation,62.7,training.poc@army.mil,2025-10-13T08:00:00Z
+2025-10-13,Unit_B,Weapons,65.0,training.poc@army.mil,2025-10-13T08:00:00Z
+2025-10-13,Unit_C,Motor Pool,91.1,training.poc@army.mil,2025-10-13T08:00:00Z
+2025-10-13,Unit_C,Comms,89.2,training.poc@army.mil,2025-10-13T08:00:00Z
+2025-10-13,Unit_C,Aviation,91.0,training.poc@army.mil,2025-10-13T08:00:00Z
+2025-10-13,Unit_C,Weapons,87.6,training.poc@army.mil,2025-10-13T08:00:00Z
+2025-10-14,Unit_A,Motor Pool,85.0,training.poc@army.mil,2025-10-14T08:00:00Z
+2025-10-14,Unit_A,Comms,86.0,training.poc@army.mil,2025-10-14T08:00:00Z
+2025-10-14,Unit_A,Aviation,88.1,training.poc@army.mil,2025-10-14T08:00:00Z
+2025-10-14,Unit_A,Weapons,85.4,training.poc@army.mil,2025-10-14T08:00:00Z
+2025-10-14,Unit_B,Motor Pool,53.2,training.poc@army.mil,2025-10-14T08:00:00Z
+2025-10-14,Unit_B,Comms,62.0,training.poc@army.mil,2025-10-14T08:00:00Z
+2025-10-14,Unit_B,Aviation,58.4,training.poc@army.mil,2025-10-14T08:00:00Z
+2025-10-14,Unit_B,Weapons,57.1,training.poc@army.mil,2025-10-14T08:00:00Z
+2025-10-14,Unit_C,Motor Pool,89.3,training.poc@army.mil,2025-10-14T08:00:00Z
+2025-10-14,Unit_C,Comms,88.5,training.poc@army.mil,2025-10-14T08:00:00Z
+2025-10-14,Unit_C,Aviation,92.1,training.poc@army.mil,2025-10-14T08:00:00Z
+2025-10-14,Unit_C,Weapons,90.6,training.poc@army.mil,2025-10-14T08:00:00Z
+2025-10-15,Unit_A,Motor Pool,86.4,training.poc@army.mil,2025-10-15T08:00:00Z
+2025-10-15,Unit_A,Comms,85.2,training.poc@army.mil,2025-10-15T08:00:00Z
+2025-10-15,Unit_A,Aviation,87.6,training.poc@army.mil,2025-10-15T08:00:00Z
+2025-10-15,Unit_A,Weapons,87.7,training.poc@army.mil,2025-10-15T08:00:00Z
+2025-10-15,Unit_B,Motor Pool,47.7,training.poc@army.mil,2025-10-15T08:00:00Z
+2025-10-15,Unit_B,Comms,61.0,training.poc@army.mil,2025-10-15T08:00:00Z
+2025-10-15,Unit_B,Aviation,60.1,training.poc@army.mil,2025-10-15T08:00:00Z
+2025-10-15,Unit_B,Weapons,56.3,training.poc@army.mil,2025-10-15T08:00:00Z
+2025-10-15,Unit_C,Motor Pool,92.2,training.poc@army.mil,2025-10-15T08:00:00Z
+2025-10-15,Unit_C,Comms,93.1,training.poc@army.mil,2025-10-15T08:00:00Z
+2025-10-15,Unit_C,Aviation,91.0,training.poc@army.mil,2025-10-15T08:00:00Z
+2025-10-15,Unit_C,Weapons,90.1,training.poc@army.mil,2025-10-15T08:00:00Z
+2025-10-16,Unit_A,Motor Pool,87.7,training.poc@army.mil,2025-10-16T08:00:00Z
+2025-10-16,Unit_A,Comms,79.1,training.poc@army.mil,2025-10-16T08:00:00Z
+2025-10-16,Unit_A,Aviation,85.4,training.poc@army.mil,2025-10-16T08:00:00Z
+2025-10-16,Unit_A,Weapons,85.4,training.poc@army.mil,2025-10-16T08:00:00Z
+2025-10-16,Unit_B,Motor Pool,48.0,training.poc@army.mil,2025-10-16T08:00:00Z
+2025-10-16,Unit_B,Comms,66.9,training.poc@army.mil,2025-10-16T08:00:00Z
+2025-10-16,Unit_B,Aviation,65.4,training.poc@army.mil,2025-10-16T08:00:00Z
+2025-10-16,Unit_B,Weapons,61.1,training.poc@army.mil,2025-10-16T08:00:00Z
+2025-10-16,Unit_C,Motor Pool,90.8,training.poc@army.mil,2025-10-16T08:00:00Z
+2025-10-16,Unit_C,Comms,90.3,training.poc@army.mil,2025-10-16T08:00:00Z
+2025-10-16,Unit_C,Aviation,90.1,training.poc@army.mil,2025-10-16T08:00:00Z
+2025-10-16,Unit_C,Weapons,88.6,training.poc@army.mil,2025-10-16T08:00:00Z
+2025-10-17,Unit_A,Motor Pool,88.4,training.poc@army.mil,2025-10-17T08:00:00Z
+2025-10-17,Unit_A,Comms,87.6,training.poc@army.mil,2025-10-17T08:00:00Z
+2025-10-17,Unit_A,Aviation,87.0,training.poc@army.mil,2025-10-17T08:00:00Z
+2025-10-17,Unit_A,Weapons,82.3,training.poc@army.mil,2025-10-17T08:00:00Z
+2025-10-17,Unit_B,Motor Pool,57.3,training.poc@army.mil,2025-10-17T08:00:00Z
+2025-10-17,Unit_B,Comms,68.9,training.poc@army.mil,2025-10-17T08:00:00Z
+2025-10-17,Unit_B,Aviation,62.7,training.poc@army.mil,2025-10-17T08:00:00Z
+2025-10-17,Unit_B,Weapons,58.8,training.poc@army.mil,2025-10-17T08:00:00Z
+2025-10-17,Unit_C,Motor Pool,89.4,training.poc@army.mil,2025-10-17T08:00:00Z
+2025-10-17,Unit_C,Comms,91.8,training.poc@army.mil,2025-10-17T08:00:00Z
+2025-10-17,Unit_C,Aviation,89.4,training.poc@army.mil,2025-10-17T08:00:00Z
+2025-10-17,Unit_C,Weapons,90.9,training.poc@army.mil,2025-10-17T08:00:00Z
+2025-10-18,Unit_A,Motor Pool,87.7,training.poc@army.mil,2025-10-18T08:00:00Z
+2025-10-18,Unit_A,Comms,81.2,training.poc@army.mil,2025-10-18T08:00:00Z
+2025-10-18,Unit_A,Aviation,90.0,training.poc@army.mil,2025-10-18T08:00:00Z
+2025-10-18,Unit_A,Weapons,88.9,training.poc@army.mil,2025-10-18T08:00:00Z
+2025-10-18,Unit_B,Motor Pool,45.7,training.poc@army.mil,2025-10-18T08:00:00Z
+2025-10-18,Unit_B,Comms,57.1,training.poc@army.mil,2025-10-18T08:00:00Z
+2025-10-18,Unit_B,Aviation,61.0,training.poc@army.mil,2025-10-18T08:00:00Z
+2025-10-18,Unit_B,Weapons,58.4,training.poc@army.mil,2025-10-18T08:00:00Z
+2025-10-18,Unit_C,Motor Pool,90.5,training.poc@army.mil,2025-10-18T08:00:00Z
+2025-10-18,Unit_C,Comms,86.4,training.poc@army.mil,2025-10-18T08:00:00Z
+2025-10-18,Unit_C,Aviation,90.6,training.poc@army.mil,2025-10-18T08:00:00Z
+2025-10-18,Unit_C,Weapons,94.2,training.poc@army.mil,2025-10-18T08:00:00Z
+2025-10-19,Unit_A,Motor Pool,82.2,training.poc@army.mil,2025-10-19T08:00:00Z
+2025-10-19,Unit_A,Comms,84.3,training.poc@army.mil,2025-10-19T08:00:00Z
+2025-10-19,Unit_A,Aviation,81.3,training.poc@army.mil,2025-10-19T08:00:00Z
+2025-10-19,Unit_A,Weapons,86.6,training.poc@army.mil,2025-10-19T08:00:00Z
+2025-10-19,Unit_B,Motor Pool,49.2,training.poc@army.mil,2025-10-19T08:00:00Z
+2025-10-19,Unit_B,Comms,68.8,training.poc@army.mil,2025-10-19T08:00:00Z
+2025-10-19,Unit_B,Aviation,62.7,training.poc@army.mil,2025-10-19T08:00:00Z
+2025-10-19,Unit_B,Weapons,60.7,training.poc@army.mil,2025-10-19T08:00:00Z
+2025-10-19,Unit_C,Motor Pool,92.0,training.poc@army.mil,2025-10-19T08:00:00Z
+2025-10-19,Unit_C,Comms,90.1,training.poc@army.mil,2025-10-19T08:00:00Z
+2025-10-19,Unit_C,Aviation,88.6,training.poc@army.mil,2025-10-19T08:00:00Z
+2025-10-19,Unit_C,Weapons,91.5,training.poc@army.mil,2025-10-19T08:00:00Z
+2025-10-20,Unit_A,Motor Pool,84.6,training.poc@army.mil,2025-10-20T08:00:00Z
+2025-10-20,Unit_A,Comms,85.4,training.poc@army.mil,2025-10-20T08:00:00Z
+2025-10-20,Unit_A,Aviation,85.9,training.poc@army.mil,2025-10-20T08:00:00Z
+2025-10-20,Unit_A,Weapons,83.7,training.poc@army.mil,2025-10-20T08:00:00Z
+2025-10-20,Unit_B,Motor Pool,51.5,training.poc@army.mil,2025-10-20T08:00:00Z
+2025-10-20,Unit_B,Comms,68.1,training.poc@army.mil,2025-10-20T08:00:00Z
+2025-10-20,Unit_B,Aviation,58.1,training.poc@army.mil,2025-10-20T08:00:00Z
+2025-10-20,Unit_B,Weapons,68.1,training.poc@army.mil,2025-10-20T08:00:00Z
+2025-10-20,Unit_C,Motor Pool,90.6,training.poc@army.mil,2025-10-20T08:00:00Z
+2025-10-20,Unit_C,Comms,89.6,training.poc@army.mil,2025-10-20T08:00:00Z
+2025-10-20,Unit_C,Aviation,95.4,training.poc@army.mil,2025-10-20T08:00:00Z
+2025-10-20,Unit_C,Weapons,91.3,training.poc@army.mil,2025-10-20T08:00:00Z
+2025-10-21,Unit_A,Motor Pool,88.4,training.poc@army.mil,2025-10-21T08:00:00Z
+2025-10-21,Unit_A,Comms,87.0,training.poc@army.mil,2025-10-21T08:00:00Z
+2025-10-21,Unit_A,Aviation,80.8,training.poc@army.mil,2025-10-21T08:00:00Z
+2025-10-21,Unit_A,Weapons,85.3,training.poc@army.mil,2025-10-21T08:00:00Z
+2025-10-21,Unit_B,Motor Pool,48.2,training.poc@army.mil,2025-10-21T08:00:00Z
+2025-10-21,Unit_B,Comms,57.3,training.poc@army.mil,2025-10-21T08:00:00Z
+2025-10-21,Unit_B,Aviation,55.8,training.poc@army.mil,2025-10-21T08:00:00Z
+2025-10-21,Unit_B,Weapons,62.4,training.poc@army.mil,2025-10-21T08:00:00Z
+2025-10-21,Unit_C,Motor Pool,92.1,training.poc@army.mil,2025-10-21T08:00:00Z
+2025-10-21,Unit_C,Comms,91.7,training.poc@army.mil,2025-10-21T08:00:00Z
+2025-10-21,Unit_C,Aviation,90.4,training.poc@army.mil,2025-10-21T08:00:00Z
+2025-10-21,Unit_C,Weapons,89.6,training.poc@army.mil,2025-10-21T08:00:00Z
+2025-10-22,Unit_A,Motor Pool,82.5,training.poc@army.mil,2025-10-22T08:00:00Z
+2025-10-22,Unit_A,Comms,83.6,training.poc@army.mil,2025-10-22T08:00:00Z
+2025-10-22,Unit_A,Aviation,82.4,training.poc@army.mil,2025-10-22T08:00:00Z
+2025-10-22,Unit_A,Weapons,84.5,training.poc@army.mil,2025-10-22T08:00:00Z
+2025-10-22,Unit_B,Motor Pool,49.9,training.poc@army.mil,2025-10-22T08:00:00Z
+2025-10-22,Unit_B,Comms,58.9,training.poc@army.mil,2025-10-22T08:00:00Z
+2025-10-22,Unit_B,Aviation,61.2,training.poc@army.mil,2025-10-22T08:00:00Z
+2025-10-22,Unit_B,Weapons,59.3,training.poc@army.mil,2025-10-22T08:00:00Z
+2025-10-22,Unit_C,Motor Pool,91.0,training.poc@army.mil,2025-10-22T08:00:00Z
+2025-10-22,Unit_C,Comms,91.9,training.poc@army.mil,2025-10-22T08:00:00Z
+2025-10-22,Unit_C,Aviation,91.3,training.poc@army.mil,2025-10-22T08:00:00Z
+2025-10-22,Unit_C,Weapons,91.8,training.poc@army.mil,2025-10-22T08:00:00Z
+2025-10-23,Unit_A,Motor Pool,80.9,training.poc@army.mil,2025-10-23T08:00:00Z
+2025-10-23,Unit_A,Comms,84.1,training.poc@army.mil,2025-10-23T08:00:00Z
+2025-10-23,Unit_A,Aviation,85.7,training.poc@army.mil,2025-10-23T08:00:00Z
+2025-10-23,Unit_A,Weapons,86.6,training.poc@army.mil,2025-10-23T08:00:00Z
+2025-10-23,Unit_B,Motor Pool,44.4,training.poc@army.mil,2025-10-23T08:00:00Z
+2025-10-23,Unit_B,Comms,62.6,training.poc@army.mil,2025-10-23T08:00:00Z
+2025-10-23,Unit_B,Aviation,66.2,training.poc@army.mil,2025-10-23T08:00:00Z
+2025-10-23,Unit_B,Weapons,61.4,training.poc@army.mil,2025-10-23T08:00:00Z
+2025-10-23,Unit_C,Motor Pool,90.8,training.poc@army.mil,2025-10-23T08:00:00Z
+2025-10-23,Unit_C,Comms,91.8,training.poc@army.mil,2025-10-23T08:00:00Z
+2025-10-23,Unit_C,Aviation,91.4,training.poc@army.mil,2025-10-23T08:00:00Z
+2025-10-23,Unit_C,Weapons,92.2,training.poc@army.mil,2025-10-23T08:00:00Z
+2025-10-24,Unit_A,Motor Pool,85.2,training.poc@army.mil,2025-10-24T08:00:00Z
+2025-10-24,Unit_A,Comms,85.4,training.poc@army.mil,2025-10-24T08:00:00Z
+2025-10-24,Unit_A,Aviation,83.0,training.poc@army.mil,2025-10-24T08:00:00Z
+2025-10-24,Unit_A,Weapons,84.6,training.poc@army.mil,2025-10-24T08:00:00Z
+2025-10-24,Unit_B,Motor Pool,54.4,training.poc@army.mil,2025-10-24T08:00:00Z
+2025-10-24,Unit_B,Comms,61.3,training.poc@army.mil,2025-10-24T08:00:00Z
+2025-10-24,Unit_B,Aviation,61.4,training.poc@army.mil,2025-10-24T08:00:00Z
+2025-10-24,Unit_B,Weapons,60.3,training.poc@army.mil,2025-10-24T08:00:00Z
+2025-10-24,Unit_C,Motor Pool,92.4,training.poc@army.mil,2025-10-24T08:00:00Z
+2025-10-24,Unit_C,Comms,89.5,training.poc@army.mil,2025-10-24T08:00:00Z
+2025-10-24,Unit_C,Aviation,92.6,training.poc@army.mil,2025-10-24T08:00:00Z
+2025-10-24,Unit_C,Weapons,89.3,training.poc@army.mil,2025-10-24T08:00:00Z
+2025-10-25,Unit_A,Motor Pool,82.4,training.poc@army.mil,2025-10-25T08:00:00Z
+2025-10-25,Unit_A,Comms,85.5,training.poc@army.mil,2025-10-25T08:00:00Z
+2025-10-25,Unit_A,Aviation,85.3,training.poc@army.mil,2025-10-25T08:00:00Z
+2025-10-25,Unit_A,Weapons,85.7,training.poc@army.mil,2025-10-25T08:00:00Z
+2025-10-25,Unit_B,Motor Pool,53.7,training.poc@army.mil,2025-10-25T08:00:00Z
+2025-10-25,Unit_B,Comms,60.6,training.poc@army.mil,2025-10-25T08:00:00Z
+2025-10-25,Unit_B,Aviation,63.6,training.poc@army.mil,2025-10-25T08:00:00Z
+2025-10-25,Unit_B,Weapons,58.8,training.poc@army.mil,2025-10-25T08:00:00Z
+2025-10-25,Unit_C,Motor Pool,93.3,training.poc@army.mil,2025-10-25T08:00:00Z
+2025-10-25,Unit_C,Comms,92.1,training.poc@army.mil,2025-10-25T08:00:00Z
+2025-10-25,Unit_C,Aviation,92.0,training.poc@army.mil,2025-10-25T08:00:00Z
+2025-10-25,Unit_C,Weapons,91.3,training.poc@army.mil,2025-10-25T08:00:00Z
+2025-10-26,Unit_A,Motor Pool,83.0,training.poc@army.mil,2025-10-26T08:00:00Z
+2025-10-26,Unit_A,Comms,84.2,training.poc@army.mil,2025-10-26T08:00:00Z
+2025-10-26,Unit_A,Aviation,86.3,training.poc@army.mil,2025-10-26T08:00:00Z
+2025-10-26,Unit_A,Weapons,85.0,training.poc@army.mil,2025-10-26T08:00:00Z
+2025-10-26,Unit_B,Motor Pool,50.4,training.poc@army.mil,2025-10-26T08:00:00Z
+2025-10-26,Unit_B,Comms,57.2,training.poc@army.mil,2025-10-26T08:00:00Z
+2025-10-26,Unit_B,Aviation,62.6,training.poc@army.mil,2025-10-26T08:00:00Z
+2025-10-26,Unit_B,Weapons,59.6,training.poc@army.mil,2025-10-26T08:00:00Z
+2025-10-26,Unit_C,Motor Pool,89.0,training.poc@army.mil,2025-10-26T08:00:00Z
+2025-10-26,Unit_C,Comms,90.7,training.poc@army.mil,2025-10-26T08:00:00Z
+2025-10-26,Unit_C,Aviation,87.7,training.poc@army.mil,2025-10-26T08:00:00Z
+2025-10-26,Unit_C,Weapons,92.3,training.poc@army.mil,2025-10-26T08:00:00Z
+2025-10-27,Unit_A,Motor Pool,87.1,training.poc@army.mil,2025-10-27T08:00:00Z
+2025-10-27,Unit_A,Comms,84.9,training.poc@army.mil,2025-10-27T08:00:00Z
+2025-10-27,Unit_A,Aviation,82.5,training.poc@army.mil,2025-10-27T08:00:00Z
+2025-10-27,Unit_A,Weapons,82.6,training.poc@army.mil,2025-10-27T08:00:00Z
+2025-10-27,Unit_B,Motor Pool,49.5,training.poc@army.mil,2025-10-27T08:00:00Z
+2025-10-27,Unit_B,Comms,53.5,training.poc@army.mil,2025-10-27T08:00:00Z
+2025-10-27,Unit_B,Aviation,62.6,training.poc@army.mil,2025-10-27T08:00:00Z
+2025-10-27,Unit_B,Weapons,64.3,training.poc@army.mil,2025-10-27T08:00:00Z
+2025-10-27,Unit_C,Motor Pool,90.4,training.poc@army.mil,2025-10-27T08:00:00Z
+2025-10-27,Unit_C,Comms,90.1,training.poc@army.mil,2025-10-27T08:00:00Z
+2025-10-27,Unit_C,Aviation,91.3,training.poc@army.mil,2025-10-27T08:00:00Z
+2025-10-27,Unit_C,Weapons,91.6,training.poc@army.mil,2025-10-27T08:00:00Z
+2025-10-28,Unit_A,Motor Pool,87.7,training.poc@army.mil,2025-10-28T08:00:00Z
+2025-10-28,Unit_A,Comms,85.0,training.poc@army.mil,2025-10-28T08:00:00Z
+2025-10-28,Unit_A,Aviation,83.3,training.poc@army.mil,2025-10-28T08:00:00Z
+2025-10-28,Unit_A,Weapons,83.8,training.poc@army.mil,2025-10-28T08:00:00Z
+2025-10-28,Unit_B,Motor Pool,50.6,training.poc@army.mil,2025-10-28T08:00:00Z
+2025-10-28,Unit_B,Comms,67.4,training.poc@army.mil,2025-10-28T08:00:00Z
+2025-10-28,Unit_B,Aviation,60.9,training.poc@army.mil,2025-10-28T08:00:00Z
+2025-10-28,Unit_B,Weapons,58.3,training.poc@army.mil,2025-10-28T08:00:00Z
+2025-10-28,Unit_C,Motor Pool,89.4,training.poc@army.mil,2025-10-28T08:00:00Z
+2025-10-28,Unit_C,Comms,87.2,training.poc@army.mil,2025-10-28T08:00:00Z
+2025-10-28,Unit_C,Aviation,91.6,training.poc@army.mil,2025-10-28T08:00:00Z
+2025-10-28,Unit_C,Weapons,88.5,training.poc@army.mil,2025-10-28T08:00:00Z
+2025-10-29,Unit_A,Motor Pool,81.9,training.poc@army.mil,2025-10-29T08:00:00Z
+2025-10-29,Unit_A,Comms,80.1,training.poc@army.mil,2025-10-29T08:00:00Z
+2025-10-29,Unit_A,Aviation,82.2,training.poc@army.mil,2025-10-29T08:00:00Z
+2025-10-29,Unit_A,Weapons,86.4,training.poc@army.mil,2025-10-29T08:00:00Z
+2025-10-29,Unit_B,Motor Pool,45.4,training.poc@army.mil,2025-10-29T08:00:00Z
+2025-10-29,Unit_B,Comms,55.9,training.poc@army.mil,2025-10-29T08:00:00Z
+2025-10-29,Unit_B,Aviation,62.6,training.poc@army.mil,2025-10-29T08:00:00Z
+2025-10-29,Unit_B,Weapons,60.8,training.poc@army.mil,2025-10-29T08:00:00Z
+2025-10-29,Unit_C,Motor Pool,91.8,training.poc@army.mil,2025-10-29T08:00:00Z
+2025-10-29,Unit_C,Comms,92.3,training.poc@army.mil,2025-10-29T08:00:00Z
+2025-10-29,Unit_C,Aviation,91.0,training.poc@army.mil,2025-10-29T08:00:00Z
+2025-10-29,Unit_C,Weapons,88.7,training.poc@army.mil,2025-10-29T08:00:00Z
+2025-10-30,Unit_A,Motor Pool,84.7,training.poc@army.mil,2025-10-30T08:00:00Z
+2025-10-30,Unit_A,Comms,86.3,training.poc@army.mil,2025-10-30T08:00:00Z
+2025-10-30,Unit_A,Aviation,83.5,training.poc@army.mil,2025-10-30T08:00:00Z
+2025-10-30,Unit_A,Weapons,81.4,training.poc@army.mil,2025-10-30T08:00:00Z
+2025-10-30,Unit_B,Motor Pool,53.9,training.poc@army.mil,2025-10-30T08:00:00Z
+2025-10-30,Unit_B,Comms,60.5,training.poc@army.mil,2025-10-30T08:00:00Z
+2025-10-30,Unit_B,Aviation,60.6,training.poc@army.mil,2025-10-30T08:00:00Z
+2025-10-30,Unit_B,Weapons,62.1,training.poc@army.mil,2025-10-30T08:00:00Z
+2025-10-30,Unit_C,Motor Pool,92.9,training.poc@army.mil,2025-10-30T08:00:00Z
+2025-10-30,Unit_C,Comms,91.5,training.poc@army.mil,2025-10-30T08:00:00Z
+2025-10-30,Unit_C,Aviation,90.4,training.poc@army.mil,2025-10-30T08:00:00Z
+2025-10-30,Unit_C,Weapons,92.2,training.poc@army.mil,2025-10-30T08:00:00Z
+2025-10-31,Unit_A,Motor Pool,90.4,training.poc@army.mil,2025-10-31T08:00:00Z
+2025-10-31,Unit_A,Comms,88.5,training.poc@army.mil,2025-10-31T08:00:00Z
+2025-10-31,Unit_A,Aviation,86.7,training.poc@army.mil,2025-10-31T08:00:00Z
+2025-10-31,Unit_A,Weapons,82.2,training.poc@army.mil,2025-10-31T08:00:00Z
+2025-10-31,Unit_B,Motor Pool,63.1,training.poc@army.mil,2025-10-31T08:00:00Z
+2025-10-31,Unit_B,Comms,57.8,training.poc@army.mil,2025-10-31T08:00:00Z
+2025-10-31,Unit_B,Aviation,60.7,training.poc@army.mil,2025-10-31T08:00:00Z
+2025-10-31,Unit_B,Weapons,59.6,training.poc@army.mil,2025-10-31T08:00:00Z
+2025-10-31,Unit_C,Motor Pool,93.9,training.poc@army.mil,2025-10-31T08:00:00Z
+2025-10-31,Unit_C,Comms,91.8,training.poc@army.mil,2025-10-31T08:00:00Z
+2025-10-31,Unit_C,Aviation,88.4,training.poc@army.mil,2025-10-31T08:00:00Z
+2025-10-31,Unit_C,Weapons,91.5,training.poc@army.mil,2025-10-31T08:00:00Z
+2025-11-01,Unit_A,Motor Pool,86.4,training.poc@army.mil,2025-11-01T08:00:00Z
+2025-11-01,Unit_A,Comms,84.2,training.poc@army.mil,2025-11-01T08:00:00Z
+2025-11-01,Unit_A,Aviation,81.9,training.poc@army.mil,2025-11-01T08:00:00Z
+2025-11-01,Unit_A,Weapons,83.2,training.poc@army.mil,2025-11-01T08:00:00Z
+2025-11-01,Unit_B,Motor Pool,48.5,training.poc@army.mil,2025-11-01T08:00:00Z
+2025-11-01,Unit_B,Comms,62.1,training.poc@army.mil,2025-11-01T08:00:00Z
+2025-11-01,Unit_B,Aviation,60.2,training.poc@army.mil,2025-11-01T08:00:00Z
+2025-11-01,Unit_B,Weapons,64.6,training.poc@army.mil,2025-11-01T08:00:00Z
+2025-11-01,Unit_C,Motor Pool,89.3,training.poc@army.mil,2025-11-01T08:00:00Z
+2025-11-01,Unit_C,Comms,87.9,training.poc@army.mil,2025-11-01T08:00:00Z
+2025-11-01,Unit_C,Aviation,89.7,training.poc@army.mil,2025-11-01T08:00:00Z
+2025-11-01,Unit_C,Weapons,93.4,training.poc@army.mil,2025-11-01T08:00:00Z
+2025-11-02,Unit_A,Motor Pool,83.6,training.poc@army.mil,2025-11-02T08:00:00Z
+2025-11-02,Unit_A,Comms,90.9,training.poc@army.mil,2025-11-02T08:00:00Z
+2025-11-02,Unit_A,Aviation,86.2,training.poc@army.mil,2025-11-02T08:00:00Z
+2025-11-02,Unit_A,Weapons,82.1,training.poc@army.mil,2025-11-02T08:00:00Z
+2025-11-02,Unit_B,Motor Pool,47.1,training.poc@army.mil,2025-11-02T08:00:00Z
+2025-11-02,Unit_B,Comms,62.9,training.poc@army.mil,2025-11-02T08:00:00Z
+2025-11-02,Unit_B,Aviation,57.9,training.poc@army.mil,2025-11-02T08:00:00Z
+2025-11-02,Unit_B,Weapons,70.3,training.poc@army.mil,2025-11-02T08:00:00Z
+2025-11-02,Unit_C,Motor Pool,89.2,training.poc@army.mil,2025-11-02T08:00:00Z
+2025-11-02,Unit_C,Comms,92.2,training.poc@army.mil,2025-11-02T08:00:00Z
+2025-11-02,Unit_C,Aviation,93.6,training.poc@army.mil,2025-11-02T08:00:00Z
+2025-11-02,Unit_C,Weapons,90.8,training.poc@army.mil,2025-11-02T08:00:00Z
+2025-11-03,Unit_A,Motor Pool,82.5,training.poc@army.mil,2025-11-03T08:00:00Z
+2025-11-03,Unit_A,Comms,84.3,training.poc@army.mil,2025-11-03T08:00:00Z
+2025-11-03,Unit_A,Aviation,85.9,training.poc@army.mil,2025-11-03T08:00:00Z
+2025-11-03,Unit_A,Weapons,87.2,training.poc@army.mil,2025-11-03T08:00:00Z
+2025-11-03,Unit_B,Motor Pool,50.2,training.poc@army.mil,2025-11-03T08:00:00Z
+2025-11-03,Unit_B,Comms,57.1,training.poc@army.mil,2025-11-03T08:00:00Z
+2025-11-03,Unit_B,Aviation,62.1,training.poc@army.mil,2025-11-03T08:00:00Z
+2025-11-03,Unit_B,Weapons,59.6,training.poc@army.mil,2025-11-03T08:00:00Z
+2025-11-03,Unit_C,Motor Pool,87.1,training.poc@army.mil,2025-11-03T08:00:00Z
+2025-11-03,Unit_C,Comms,89.7,training.poc@army.mil,2025-11-03T08:00:00Z
+2025-11-03,Unit_C,Aviation,88.4,training.poc@army.mil,2025-11-03T08:00:00Z
+2025-11-03,Unit_C,Weapons,92.1,training.poc@army.mil,2025-11-03T08:00:00Z
+2025-11-04,Unit_A,Motor Pool,89.9,training.poc@army.mil,2025-11-04T08:00:00Z
+2025-11-04,Unit_A,Comms,89.6,training.poc@army.mil,2025-11-04T08:00:00Z
+2025-11-04,Unit_A,Aviation,83.6,training.poc@army.mil,2025-11-04T08:00:00Z
+2025-11-04,Unit_A,Weapons,83.8,training.poc@army.mil,2025-11-04T08:00:00Z
+2025-11-04,Unit_B,Motor Pool,52.4,training.poc@army.mil,2025-11-04T08:00:00Z
+2025-11-04,Unit_B,Comms,65.7,training.poc@army.mil,2025-11-04T08:00:00Z
+2025-11-04,Unit_B,Aviation,60.5,training.poc@army.mil,2025-11-04T08:00:00Z
+2025-11-04,Unit_B,Weapons,61.5,training.poc@army.mil,2025-11-04T08:00:00Z
+2025-11-04,Unit_C,Motor Pool,95.0,training.poc@army.mil,2025-11-04T08:00:00Z
+2025-11-04,Unit_C,Comms,90.8,training.poc@army.mil,2025-11-04T08:00:00Z
+2025-11-04,Unit_C,Aviation,90.1,training.poc@army.mil,2025-11-04T08:00:00Z
+2025-11-04,Unit_C,Weapons,91.2,training.poc@army.mil,2025-11-04T08:00:00Z
+2025-11-05,Unit_A,Motor Pool,86.4,training.poc@army.mil,2025-11-05T08:00:00Z
+2025-11-05,Unit_A,Comms,82.4,training.poc@army.mil,2025-11-05T08:00:00Z
+2025-11-05,Unit_A,Aviation,84.4,training.poc@army.mil,2025-11-05T08:00:00Z
+2025-11-05,Unit_A,Weapons,82.1,training.poc@army.mil,2025-11-05T08:00:00Z
+2025-11-05,Unit_B,Motor Pool,49.0,training.poc@army.mil,2025-11-05T08:00:00Z
+2025-11-05,Unit_B,Comms,68.6,training.poc@army.mil,2025-11-05T08:00:00Z
+2025-11-05,Unit_B,Aviation,64.6,training.poc@army.mil,2025-11-05T08:00:00Z
+2025-11-05,Unit_B,Weapons,61.7,training.poc@army.mil,2025-11-05T08:00:00Z
+2025-11-05,Unit_C,Motor Pool,89.3,training.poc@army.mil,2025-11-05T08:00:00Z
+2025-11-05,Unit_C,Comms,90.4,training.poc@army.mil,2025-11-05T08:00:00Z
+2025-11-05,Unit_C,Aviation,92.9,training.poc@army.mil,2025-11-05T08:00:00Z
+2025-11-05,Unit_C,Weapons,90.0,training.poc@army.mil,2025-11-05T08:00:00Z
+2025-11-06,Unit_A,Motor Pool,88.6,training.poc@army.mil,2025-11-06T08:00:00Z
+2025-11-06,Unit_A,Comms,81.6,training.poc@army.mil,2025-11-06T08:00:00Z
+2025-11-06,Unit_A,Aviation,84.3,training.poc@army.mil,2025-11-06T08:00:00Z
+2025-11-06,Unit_A,Weapons,89.4,training.poc@army.mil,2025-11-06T08:00:00Z
+2025-11-06,Unit_B,Motor Pool,43.0,training.poc@army.mil,2025-11-06T08:00:00Z
+2025-11-06,Unit_B,Comms,66.2,training.poc@army.mil,2025-11-06T08:00:00Z
+2025-11-06,Unit_B,Aviation,55.5,training.poc@army.mil,2025-11-06T08:00:00Z
+2025-11-06,Unit_B,Weapons,61.7,training.poc@army.mil,2025-11-06T08:00:00Z
+2025-11-06,Unit_C,Motor Pool,90.7,training.poc@army.mil,2025-11-06T08:00:00Z
+2025-11-06,Unit_C,Comms,92.5,training.poc@army.mil,2025-11-06T08:00:00Z
+2025-11-06,Unit_C,Aviation,85.3,training.poc@army.mil,2025-11-06T08:00:00Z
+2025-11-06,Unit_C,Weapons,87.5,training.poc@army.mil,2025-11-06T08:00:00Z
+2025-11-07,Unit_A,Motor Pool,83.6,training.poc@army.mil,2025-11-07T08:00:00Z
+2025-11-07,Unit_A,Comms,85.1,training.poc@army.mil,2025-11-07T08:00:00Z
+2025-11-07,Unit_A,Aviation,82.8,training.poc@army.mil,2025-11-07T08:00:00Z
+2025-11-07,Unit_A,Weapons,84.4,training.poc@army.mil,2025-11-07T08:00:00Z
+2025-11-07,Unit_B,Motor Pool,45.8,training.poc@army.mil,2025-11-07T08:00:00Z
+2025-11-07,Unit_B,Comms,60.6,training.poc@army.mil,2025-11-07T08:00:00Z
+2025-11-07,Unit_B,Aviation,59.0,training.poc@army.mil,2025-11-07T08:00:00Z
+2025-11-07,Unit_B,Weapons,62.9,training.poc@army.mil,2025-11-07T08:00:00Z
+2025-11-07,Unit_C,Motor Pool,92.0,training.poc@army.mil,2025-11-07T08:00:00Z
+2025-11-07,Unit_C,Comms,93.6,training.poc@army.mil,2025-11-07T08:00:00Z
+2025-11-07,Unit_C,Aviation,89.8,training.poc@army.mil,2025-11-07T08:00:00Z
+2025-11-07,Unit_C,Weapons,90.4,training.poc@army.mil,2025-11-07T08:00:00Z
+2025-11-08,Unit_A,Motor Pool,85.1,training.poc@army.mil,2025-11-08T08:00:00Z
+2025-11-08,Unit_A,Comms,84.3,training.poc@army.mil,2025-11-08T08:00:00Z
+2025-11-08,Unit_A,Aviation,84.9,training.poc@army.mil,2025-11-08T08:00:00Z
+2025-11-08,Unit_A,Weapons,81.1,training.poc@army.mil,2025-11-08T08:00:00Z
+2025-11-08,Unit_B,Motor Pool,51.3,training.poc@army.mil,2025-11-08T08:00:00Z
+2025-11-08,Unit_B,Comms,58.8,training.poc@army.mil,2025-11-08T08:00:00Z
+2025-11-08,Unit_B,Aviation,58.7,training.poc@army.mil,2025-11-08T08:00:00Z
+2025-11-08,Unit_B,Weapons,56.4,training.poc@army.mil,2025-11-08T08:00:00Z
+2025-11-08,Unit_C,Motor Pool,93.1,training.poc@army.mil,2025-11-08T08:00:00Z
+2025-11-08,Unit_C,Comms,90.7,training.poc@army.mil,2025-11-08T08:00:00Z
+2025-11-08,Unit_C,Aviation,93.1,training.poc@army.mil,2025-11-08T08:00:00Z
+2025-11-08,Unit_C,Weapons,91.5,training.poc@army.mil,2025-11-08T08:00:00Z
+2025-11-09,Unit_A,Motor Pool,80.7,training.poc@army.mil,2025-11-09T08:00:00Z
+2025-11-09,Unit_A,Comms,82.3,training.poc@army.mil,2025-11-09T08:00:00Z
+2025-11-09,Unit_A,Aviation,86.9,training.poc@army.mil,2025-11-09T08:00:00Z
+2025-11-09,Unit_A,Weapons,83.1,training.poc@army.mil,2025-11-09T08:00:00Z
+2025-11-09,Unit_B,Motor Pool,46.2,training.poc@army.mil,2025-11-09T08:00:00Z
+2025-11-09,Unit_B,Comms,61.4,training.poc@army.mil,2025-11-09T08:00:00Z
+2025-11-09,Unit_B,Aviation,61.4,training.poc@army.mil,2025-11-09T08:00:00Z
+2025-11-09,Unit_B,Weapons,58.5,training.poc@army.mil,2025-11-09T08:00:00Z
+2025-11-09,Unit_C,Motor Pool,90.4,training.poc@army.mil,2025-11-09T08:00:00Z
+2025-11-09,Unit_C,Comms,90.1,training.poc@army.mil,2025-11-09T08:00:00Z
+2025-11-09,Unit_C,Aviation,86.3,training.poc@army.mil,2025-11-09T08:00:00Z
+2025-11-09,Unit_C,Weapons,91.9,training.poc@army.mil,2025-11-09T08:00:00Z
+2025-11-10,Unit_A,Motor Pool,83.0,training.poc@army.mil,2025-11-10T08:00:00Z
+2025-11-10,Unit_A,Comms,88.3,training.poc@army.mil,2025-11-10T08:00:00Z
+2025-11-10,Unit_A,Aviation,82.1,training.poc@army.mil,2025-11-10T08:00:00Z
+2025-11-10,Unit_A,Weapons,81.1,training.poc@army.mil,2025-11-10T08:00:00Z
+2025-11-10,Unit_B,Motor Pool,54.2,training.poc@army.mil,2025-11-10T08:00:00Z
+2025-11-10,Unit_B,Comms,56.5,training.poc@army.mil,2025-11-10T08:00:00Z
+2025-11-10,Unit_B,Aviation,59.8,training.poc@army.mil,2025-11-10T08:00:00Z
+2025-11-10,Unit_B,Weapons,64.1,training.poc@army.mil,2025-11-10T08:00:00Z
+2025-11-10,Unit_C,Motor Pool,90.4,training.poc@army.mil,2025-11-10T08:00:00Z
+2025-11-10,Unit_C,Comms,88.0,training.poc@army.mil,2025-11-10T08:00:00Z
+2025-11-10,Unit_C,Aviation,91.3,training.poc@army.mil,2025-11-10T08:00:00Z
+2025-11-10,Unit_C,Weapons,90.7,training.poc@army.mil,2025-11-10T08:00:00Z
+2025-11-11,Unit_A,Motor Pool,88.2,training.poc@army.mil,2025-11-11T08:00:00Z
+2025-11-11,Unit_A,Comms,86.5,training.poc@army.mil,2025-11-11T08:00:00Z
+2025-11-11,Unit_A,Aviation,92.6,training.poc@army.mil,2025-11-11T08:00:00Z
+2025-11-11,Unit_A,Weapons,80.9,training.poc@army.mil,2025-11-11T08:00:00Z
+2025-11-11,Unit_B,Motor Pool,49.9,training.poc@army.mil,2025-11-11T08:00:00Z
+2025-11-11,Unit_B,Comms,58.3,training.poc@army.mil,2025-11-11T08:00:00Z
+2025-11-11,Unit_B,Aviation,66.0,training.poc@army.mil,2025-11-11T08:00:00Z
+2025-11-11,Unit_B,Weapons,64.9,training.poc@army.mil,2025-11-11T08:00:00Z
+2025-11-11,Unit_C,Motor Pool,92.4,training.poc@army.mil,2025-11-11T08:00:00Z
+2025-11-11,Unit_C,Comms,89.6,training.poc@army.mil,2025-11-11T08:00:00Z
+2025-11-11,Unit_C,Aviation,89.7,training.poc@army.mil,2025-11-11T08:00:00Z
+2025-11-11,Unit_C,Weapons,87.3,training.poc@army.mil,2025-11-11T08:00:00Z
+2025-11-12,Unit_A,Motor Pool,89.3,training.poc@army.mil,2025-11-12T08:00:00Z
+2025-11-12,Unit_A,Comms,86.3,training.poc@army.mil,2025-11-12T08:00:00Z
+2025-11-12,Unit_A,Aviation,84.3,training.poc@army.mil,2025-11-12T08:00:00Z
+2025-11-12,Unit_A,Weapons,87.3,training.poc@army.mil,2025-11-12T08:00:00Z
+2025-11-12,Unit_B,Motor Pool,52.6,training.poc@army.mil,2025-11-12T08:00:00Z
+2025-11-12,Unit_B,Comms,65.4,training.poc@army.mil,2025-11-12T08:00:00Z
+2025-11-12,Unit_B,Aviation,56.3,training.poc@army.mil,2025-11-12T08:00:00Z
+2025-11-12,Unit_B,Weapons,59.5,training.poc@army.mil,2025-11-12T08:00:00Z
+2025-11-12,Unit_C,Motor Pool,91.4,training.poc@army.mil,2025-11-12T08:00:00Z
+2025-11-12,Unit_C,Comms,91.6,training.poc@army.mil,2025-11-12T08:00:00Z
+2025-11-12,Unit_C,Aviation,92.7,training.poc@army.mil,2025-11-12T08:00:00Z
+2025-11-12,Unit_C,Weapons,89.2,training.poc@army.mil,2025-11-12T08:00:00Z
+2025-11-13,Unit_A,Motor Pool,85.3,training.poc@army.mil,2025-11-13T08:00:00Z
+2025-11-13,Unit_A,Comms,90.5,training.poc@army.mil,2025-11-13T08:00:00Z
+2025-11-13,Unit_A,Aviation,86.7,training.poc@army.mil,2025-11-13T08:00:00Z
+2025-11-13,Unit_A,Weapons,87.2,training.poc@army.mil,2025-11-13T08:00:00Z
+2025-11-13,Unit_B,Motor Pool,49.9,training.poc@army.mil,2025-11-13T08:00:00Z
+2025-11-13,Unit_B,Comms,64.7,training.poc@army.mil,2025-11-13T08:00:00Z
+2025-11-13,Unit_B,Aviation,68.3,training.poc@army.mil,2025-11-13T08:00:00Z
+2025-11-13,Unit_B,Weapons,62.4,training.poc@army.mil,2025-11-13T08:00:00Z
+2025-11-13,Unit_C,Motor Pool,93.2,training.poc@army.mil,2025-11-13T08:00:00Z
+2025-11-13,Unit_C,Comms,89.4,training.poc@army.mil,2025-11-13T08:00:00Z
+2025-11-13,Unit_C,Aviation,92.1,training.poc@army.mil,2025-11-13T08:00:00Z
+2025-11-13,Unit_C,Weapons,92.6,training.poc@army.mil,2025-11-13T08:00:00Z
+2025-11-14,Unit_A,Motor Pool,83.1,training.poc@army.mil,2025-11-14T08:00:00Z
+2025-11-14,Unit_A,Comms,87.7,training.poc@army.mil,2025-11-14T08:00:00Z
+2025-11-14,Unit_A,Aviation,83.3,training.poc@army.mil,2025-11-14T08:00:00Z
+2025-11-14,Unit_A,Weapons,83.0,training.poc@army.mil,2025-11-14T08:00:00Z
+2025-11-14,Unit_B,Motor Pool,50.0,training.poc@army.mil,2025-11-14T08:00:00Z
+2025-11-14,Unit_B,Comms,68.8,training.poc@army.mil,2025-11-14T08:00:00Z
+2025-11-14,Unit_B,Aviation,63.1,training.poc@army.mil,2025-11-14T08:00:00Z
+2025-11-14,Unit_B,Weapons,65.3,training.poc@army.mil,2025-11-14T08:00:00Z
+2025-11-14,Unit_C,Motor Pool,89.7,training.poc@army.mil,2025-11-14T08:00:00Z
+2025-11-14,Unit_C,Comms,91.1,training.poc@army.mil,2025-11-14T08:00:00Z
+2025-11-14,Unit_C,Aviation,88.9,training.poc@army.mil,2025-11-14T08:00:00Z
+2025-11-14,Unit_C,Weapons,90.0,training.poc@army.mil,2025-11-14T08:00:00Z
+2025-11-15,Unit_A,Motor Pool,87.1,training.poc@army.mil,2025-11-15T08:00:00Z
+2025-11-15,Unit_A,Comms,84.9,training.poc@army.mil,2025-11-15T08:00:00Z
+2025-11-15,Unit_A,Aviation,88.6,training.poc@army.mil,2025-11-15T08:00:00Z
+2025-11-15,Unit_A,Weapons,84.5,training.poc@army.mil,2025-11-15T08:00:00Z
+2025-11-15,Unit_B,Motor Pool,49.3,training.poc@army.mil,2025-11-15T08:00:00Z
+2025-11-15,Unit_B,Comms,66.5,training.poc@army.mil,2025-11-15T08:00:00Z
+2025-11-15,Unit_B,Aviation,59.7,training.poc@army.mil,2025-11-15T08:00:00Z
+2025-11-15,Unit_B,Weapons,56.7,training.poc@army.mil,2025-11-15T08:00:00Z
+2025-11-15,Unit_C,Motor Pool,93.3,training.poc@army.mil,2025-11-15T08:00:00Z
+2025-11-15,Unit_C,Comms,91.7,training.poc@army.mil,2025-11-15T08:00:00Z
+2025-11-15,Unit_C,Aviation,87.1,training.poc@army.mil,2025-11-15T08:00:00Z
+2025-11-15,Unit_C,Weapons,91.1,training.poc@army.mil,2025-11-15T08:00:00Z
+2025-11-16,Unit_A,Motor Pool,84.0,training.poc@army.mil,2025-11-16T08:00:00Z
+2025-11-16,Unit_A,Comms,89.4,training.poc@army.mil,2025-11-16T08:00:00Z
+2025-11-16,Unit_A,Aviation,83.2,training.poc@army.mil,2025-11-16T08:00:00Z
+2025-11-16,Unit_A,Weapons,83.5,training.poc@army.mil,2025-11-16T08:00:00Z
+2025-11-16,Unit_B,Motor Pool,46.8,training.poc@army.mil,2025-11-16T08:00:00Z
+2025-11-16,Unit_B,Comms,58.3,training.poc@army.mil,2025-11-16T08:00:00Z
+2025-11-16,Unit_B,Aviation,59.5,training.poc@army.mil,2025-11-16T08:00:00Z
+2025-11-16,Unit_B,Weapons,57.0,training.poc@army.mil,2025-11-16T08:00:00Z
+2025-11-16,Unit_C,Motor Pool,89.1,training.poc@army.mil,2025-11-16T08:00:00Z
+2025-11-16,Unit_C,Comms,88.1,training.poc@army.mil,2025-11-16T08:00:00Z
+2025-11-16,Unit_C,Aviation,88.3,training.poc@army.mil,2025-11-16T08:00:00Z
+2025-11-16,Unit_C,Weapons,88.2,training.poc@army.mil,2025-11-16T08:00:00Z
+2025-11-17,Unit_A,Motor Pool,83.7,training.poc@army.mil,2025-11-17T08:00:00Z
+2025-11-17,Unit_A,Comms,83.3,training.poc@army.mil,2025-11-17T08:00:00Z
+2025-11-17,Unit_A,Aviation,81.9,training.poc@army.mil,2025-11-17T08:00:00Z
+2025-11-17,Unit_A,Weapons,86.2,training.poc@army.mil,2025-11-17T08:00:00Z
+2025-11-17,Unit_B,Motor Pool,49.8,training.poc@army.mil,2025-11-17T08:00:00Z
+2025-11-17,Unit_B,Comms,60.5,training.poc@army.mil,2025-11-17T08:00:00Z
+2025-11-17,Unit_B,Aviation,60.4,training.poc@army.mil,2025-11-17T08:00:00Z
+2025-11-17,Unit_B,Weapons,67.6,training.poc@army.mil,2025-11-17T08:00:00Z
+2025-11-17,Unit_C,Motor Pool,91.4,training.poc@army.mil,2025-11-17T08:00:00Z
+2025-11-17,Unit_C,Comms,91.9,training.poc@army.mil,2025-11-17T08:00:00Z
+2025-11-17,Unit_C,Aviation,86.3,training.poc@army.mil,2025-11-17T08:00:00Z
+2025-11-17,Unit_C,Weapons,89.8,training.poc@army.mil,2025-11-17T08:00:00Z
+2025-11-18,Unit_A,Motor Pool,79.6,training.poc@army.mil,2025-11-18T08:00:00Z
+2025-11-18,Unit_A,Comms,83.9,training.poc@army.mil,2025-11-18T08:00:00Z
+2025-11-18,Unit_A,Aviation,85.9,training.poc@army.mil,2025-11-18T08:00:00Z
+2025-11-18,Unit_A,Weapons,83.3,training.poc@army.mil,2025-11-18T08:00:00Z
+2025-11-18,Unit_B,Motor Pool,51.8,training.poc@army.mil,2025-11-18T08:00:00Z
+2025-11-18,Unit_B,Comms,58.4,training.poc@army.mil,2025-11-18T08:00:00Z
+2025-11-18,Unit_B,Aviation,64.0,training.poc@army.mil,2025-11-18T08:00:00Z
+2025-11-18,Unit_B,Weapons,56.6,training.poc@army.mil,2025-11-18T08:00:00Z
+2025-11-18,Unit_C,Motor Pool,90.5,training.poc@army.mil,2025-11-18T08:00:00Z
+2025-11-18,Unit_C,Comms,91.8,training.poc@army.mil,2025-11-18T08:00:00Z
+2025-11-18,Unit_C,Aviation,92.0,training.poc@army.mil,2025-11-18T08:00:00Z
+2025-11-18,Unit_C,Weapons,90.8,training.poc@army.mil,2025-11-18T08:00:00Z
+2025-11-19,Unit_A,Motor Pool,89.8,training.poc@army.mil,2025-11-19T08:00:00Z
+2025-11-19,Unit_A,Comms,84.0,training.poc@army.mil,2025-11-19T08:00:00Z
+2025-11-19,Unit_A,Aviation,83.9,training.poc@army.mil,2025-11-19T08:00:00Z
+2025-11-19,Unit_A,Weapons,78.1,training.poc@army.mil,2025-11-19T08:00:00Z
+2025-11-19,Unit_B,Motor Pool,56.2,training.poc@army.mil,2025-11-19T08:00:00Z
+2025-11-19,Unit_B,Comms,60.7,training.poc@army.mil,2025-11-19T08:00:00Z
+2025-11-19,Unit_B,Aviation,57.9,training.poc@army.mil,2025-11-19T08:00:00Z
+2025-11-19,Unit_B,Weapons,66.6,training.poc@army.mil,2025-11-19T08:00:00Z
+2025-11-19,Unit_C,Motor Pool,93.2,training.poc@army.mil,2025-11-19T08:00:00Z
+2025-11-19,Unit_C,Comms,91.2,training.poc@army.mil,2025-11-19T08:00:00Z
+2025-11-19,Unit_C,Aviation,88.4,training.poc@army.mil,2025-11-19T08:00:00Z
+2025-11-19,Unit_C,Weapons,91.8,training.poc@army.mil,2025-11-19T08:00:00Z
+2025-11-20,Unit_A,Motor Pool,83.4,training.poc@army.mil,2025-11-20T08:00:00Z
+2025-11-20,Unit_A,Comms,82.1,training.poc@army.mil,2025-11-20T08:00:00Z
+2025-11-20,Unit_A,Aviation,87.6,training.poc@army.mil,2025-11-20T08:00:00Z
+2025-11-20,Unit_A,Weapons,79.7,training.poc@army.mil,2025-11-20T08:00:00Z
+2025-11-20,Unit_B,Motor Pool,52.0,training.poc@army.mil,2025-11-20T08:00:00Z
+2025-11-20,Unit_B,Comms,63.6,training.poc@army.mil,2025-11-20T08:00:00Z
+2025-11-20,Unit_B,Aviation,69.2,training.poc@army.mil,2025-11-20T08:00:00Z
+2025-11-20,Unit_B,Weapons,63.1,training.poc@army.mil,2025-11-20T08:00:00Z
+2025-11-20,Unit_C,Motor Pool,87.3,training.poc@army.mil,2025-11-20T08:00:00Z
+2025-11-20,Unit_C,Comms,89.5,training.poc@army.mil,2025-11-20T08:00:00Z
+2025-11-20,Unit_C,Aviation,91.1,training.poc@army.mil,2025-11-20T08:00:00Z
+2025-11-20,Unit_C,Weapons,91.6,training.poc@army.mil,2025-11-20T08:00:00Z
+2025-11-21,Unit_A,Motor Pool,87.5,training.poc@army.mil,2025-11-21T08:00:00Z
+2025-11-21,Unit_A,Comms,80.1,training.poc@army.mil,2025-11-21T08:00:00Z
+2025-11-21,Unit_A,Aviation,84.2,training.poc@army.mil,2025-11-21T08:00:00Z
+2025-11-21,Unit_A,Weapons,87.4,training.poc@army.mil,2025-11-21T08:00:00Z
+2025-11-21,Unit_B,Motor Pool,55.4,training.poc@army.mil,2025-11-21T08:00:00Z
+2025-11-21,Unit_B,Comms,68.5,training.poc@army.mil,2025-11-21T08:00:00Z
+2025-11-21,Unit_B,Aviation,60.6,training.poc@army.mil,2025-11-21T08:00:00Z
+2025-11-21,Unit_B,Weapons,65.8,training.poc@army.mil,2025-11-21T08:00:00Z
+2025-11-21,Unit_C,Motor Pool,94.1,training.poc@army.mil,2025-11-21T08:00:00Z
+2025-11-21,Unit_C,Comms,93.2,training.poc@army.mil,2025-11-21T08:00:00Z
+2025-11-21,Unit_C,Aviation,92.3,training.poc@army.mil,2025-11-21T08:00:00Z
+2025-11-21,Unit_C,Weapons,92.5,training.poc@army.mil,2025-11-21T08:00:00Z
+2025-11-22,Unit_A,Motor Pool,83.0,training.poc@army.mil,2025-11-22T08:00:00Z
+2025-11-22,Unit_A,Comms,81.4,training.poc@army.mil,2025-11-22T08:00:00Z
+2025-11-22,Unit_A,Aviation,87.5,training.poc@army.mil,2025-11-22T08:00:00Z
+2025-11-22,Unit_A,Weapons,84.1,training.poc@army.mil,2025-11-22T08:00:00Z
+2025-11-22,Unit_B,Motor Pool,49.9,training.poc@army.mil,2025-11-22T08:00:00Z
+2025-11-22,Unit_B,Comms,60.0,training.poc@army.mil,2025-11-22T08:00:00Z
+2025-11-22,Unit_B,Aviation,60.6,training.poc@army.mil,2025-11-22T08:00:00Z
+2025-11-22,Unit_B,Weapons,62.8,training.poc@army.mil,2025-11-22T08:00:00Z
+2025-11-22,Unit_C,Motor Pool,89.2,training.poc@army.mil,2025-11-22T08:00:00Z
+2025-11-22,Unit_C,Comms,91.1,training.poc@army.mil,2025-11-22T08:00:00Z
+2025-11-22,Unit_C,Aviation,91.4,training.poc@army.mil,2025-11-22T08:00:00Z
+2025-11-22,Unit_C,Weapons,90.9,training.poc@army.mil,2025-11-22T08:00:00Z
+2025-11-23,Unit_A,Motor Pool,83.1,training.poc@army.mil,2025-11-23T08:00:00Z
+2025-11-23,Unit_A,Comms,87.0,training.poc@army.mil,2025-11-23T08:00:00Z
+2025-11-23,Unit_A,Aviation,89.7,training.poc@army.mil,2025-11-23T08:00:00Z
+2025-11-23,Unit_A,Weapons,83.5,training.poc@army.mil,2025-11-23T08:00:00Z
+2025-11-23,Unit_B,Motor Pool,54.3,training.poc@army.mil,2025-11-23T08:00:00Z
+2025-11-23,Unit_B,Comms,65.1,training.poc@army.mil,2025-11-23T08:00:00Z
+2025-11-23,Unit_B,Aviation,52.7,training.poc@army.mil,2025-11-23T08:00:00Z
+2025-11-23,Unit_B,Weapons,59.3,training.poc@army.mil,2025-11-23T08:00:00Z
+2025-11-23,Unit_C,Motor Pool,89.9,training.poc@army.mil,2025-11-23T08:00:00Z
+2025-11-23,Unit_C,Comms,92.4,training.poc@army.mil,2025-11-23T08:00:00Z
+2025-11-23,Unit_C,Aviation,91.3,training.poc@army.mil,2025-11-23T08:00:00Z
+2025-11-23,Unit_C,Weapons,91.9,training.poc@army.mil,2025-11-23T08:00:00Z
+2025-11-24,Unit_A,Motor Pool,86.6,training.poc@army.mil,2025-11-24T08:00:00Z
+2025-11-24,Unit_A,Comms,82.8,training.poc@army.mil,2025-11-24T08:00:00Z
+2025-11-24,Unit_A,Aviation,83.1,training.poc@army.mil,2025-11-24T08:00:00Z
+2025-11-24,Unit_A,Weapons,81.9,training.poc@army.mil,2025-11-24T08:00:00Z
+2025-11-24,Unit_B,Motor Pool,49.4,training.poc@army.mil,2025-11-24T08:00:00Z
+2025-11-24,Unit_B,Comms,61.6,training.poc@army.mil,2025-11-24T08:00:00Z
+2025-11-24,Unit_B,Aviation,62.6,training.poc@army.mil,2025-11-24T08:00:00Z
+2025-11-24,Unit_B,Weapons,59.5,training.poc@army.mil,2025-11-24T08:00:00Z
+2025-11-24,Unit_C,Motor Pool,92.6,training.poc@army.mil,2025-11-24T08:00:00Z
+2025-11-24,Unit_C,Comms,92.7,training.poc@army.mil,2025-11-24T08:00:00Z
+2025-11-24,Unit_C,Aviation,93.8,training.poc@army.mil,2025-11-24T08:00:00Z
+2025-11-24,Unit_C,Weapons,92.3,training.poc@army.mil,2025-11-24T08:00:00Z
+2025-11-25,Unit_A,Motor Pool,85.5,training.poc@army.mil,2025-11-25T08:00:00Z
+2025-11-25,Unit_A,Comms,86.7,training.poc@army.mil,2025-11-25T08:00:00Z
+2025-11-25,Unit_A,Aviation,86.5,training.poc@army.mil,2025-11-25T08:00:00Z
+2025-11-25,Unit_A,Weapons,83.4,training.poc@army.mil,2025-11-25T08:00:00Z
+2025-11-25,Unit_B,Motor Pool,54.5,training.poc@army.mil,2025-11-25T08:00:00Z
+2025-11-25,Unit_B,Comms,68.0,training.poc@army.mil,2025-11-25T08:00:00Z
+2025-11-25,Unit_B,Aviation,68.9,training.poc@army.mil,2025-11-25T08:00:00Z
+2025-11-25,Unit_B,Weapons,62.1,training.poc@army.mil,2025-11-25T08:00:00Z
+2025-11-25,Unit_C,Motor Pool,91.6,training.poc@army.mil,2025-11-25T08:00:00Z
+2025-11-25,Unit_C,Comms,91.7,training.poc@army.mil,2025-11-25T08:00:00Z
+2025-11-25,Unit_C,Aviation,91.0,training.poc@army.mil,2025-11-25T08:00:00Z
+2025-11-25,Unit_C,Weapons,92.1,training.poc@army.mil,2025-11-25T08:00:00Z
+2025-11-26,Unit_A,Motor Pool,84.7,training.poc@army.mil,2025-11-26T08:00:00Z
+2025-11-26,Unit_A,Comms,84.5,training.poc@army.mil,2025-11-26T08:00:00Z
+2025-11-26,Unit_A,Aviation,89.4,training.poc@army.mil,2025-11-26T08:00:00Z
+2025-11-26,Unit_A,Weapons,85.4,training.poc@army.mil,2025-11-26T08:00:00Z
+2025-11-26,Unit_B,Motor Pool,50.2,training.poc@army.mil,2025-11-26T08:00:00Z
+2025-11-26,Unit_B,Comms,65.1,training.poc@army.mil,2025-11-26T08:00:00Z
+2025-11-26,Unit_B,Aviation,62.5,training.poc@army.mil,2025-11-26T08:00:00Z
+2025-11-26,Unit_B,Weapons,63.0,training.poc@army.mil,2025-11-26T08:00:00Z
+2025-11-26,Unit_C,Motor Pool,90.9,training.poc@army.mil,2025-11-26T08:00:00Z
+2025-11-26,Unit_C,Comms,88.8,training.poc@army.mil,2025-11-26T08:00:00Z
+2025-11-26,Unit_C,Aviation,90.9,training.poc@army.mil,2025-11-26T08:00:00Z
+2025-11-26,Unit_C,Weapons,89.0,training.poc@army.mil,2025-11-26T08:00:00Z
+2025-11-27,Unit_A,Motor Pool,85.5,training.poc@army.mil,2025-11-27T08:00:00Z
+2025-11-27,Unit_A,Comms,82.0,training.poc@army.mil,2025-11-27T08:00:00Z
+2025-11-27,Unit_A,Aviation,87.3,training.poc@army.mil,2025-11-27T08:00:00Z
+2025-11-27,Unit_A,Weapons,86.9,training.poc@army.mil,2025-11-27T08:00:00Z
+2025-11-27,Unit_B,Motor Pool,51.0,training.poc@army.mil,2025-11-27T08:00:00Z
+2025-11-27,Unit_B,Comms,61.6,training.poc@army.mil,2025-11-27T08:00:00Z
+2025-11-27,Unit_B,Aviation,63.5,training.poc@army.mil,2025-11-27T08:00:00Z
+2025-11-27,Unit_B,Weapons,55.1,training.poc@army.mil,2025-11-27T08:00:00Z
+2025-11-27,Unit_C,Motor Pool,89.0,training.poc@army.mil,2025-11-27T08:00:00Z
+2025-11-27,Unit_C,Comms,90.7,training.poc@army.mil,2025-11-27T08:00:00Z
+2025-11-27,Unit_C,Aviation,91.6,training.poc@army.mil,2025-11-27T08:00:00Z
+2025-11-27,Unit_C,Weapons,90.9,training.poc@army.mil,2025-11-27T08:00:00Z
+2025-11-28,Unit_A,Motor Pool,82.5,training.poc@army.mil,2025-11-28T08:00:00Z
+2025-11-28,Unit_A,Comms,85.3,training.poc@army.mil,2025-11-28T08:00:00Z
+2025-11-28,Unit_A,Aviation,83.9,training.poc@army.mil,2025-11-28T08:00:00Z
+2025-11-28,Unit_A,Weapons,82.3,training.poc@army.mil,2025-11-28T08:00:00Z
+2025-11-28,Unit_B,Motor Pool,51.2,training.poc@army.mil,2025-11-28T08:00:00Z
+2025-11-28,Unit_B,Comms,61.3,training.poc@army.mil,2025-11-28T08:00:00Z
+2025-11-28,Unit_B,Aviation,66.2,training.poc@army.mil,2025-11-28T08:00:00Z
+2025-11-28,Unit_B,Weapons,64.3,training.poc@army.mil,2025-11-28T08:00:00Z
+2025-11-28,Unit_C,Motor Pool,92.3,training.poc@army.mil,2025-11-28T08:00:00Z
+2025-11-28,Unit_C,Comms,91.6,training.poc@army.mil,2025-11-28T08:00:00Z
+2025-11-28,Unit_C,Aviation,89.5,training.poc@army.mil,2025-11-28T08:00:00Z
+2025-11-28,Unit_C,Weapons,89.3,training.poc@army.mil,2025-11-28T08:00:00Z
+2025-11-29,Unit_A,Motor Pool,81.3,training.poc@army.mil,2025-11-29T08:00:00Z
+2025-11-29,Unit_A,Comms,92.2,training.poc@army.mil,2025-11-29T08:00:00Z
+2025-11-29,Unit_A,Aviation,82.3,training.poc@army.mil,2025-11-29T08:00:00Z
+2025-11-29,Unit_A,Weapons,84.5,training.poc@army.mil,2025-11-29T08:00:00Z
+2025-11-29,Unit_B,Motor Pool,48.7,training.poc@army.mil,2025-11-29T08:00:00Z
+2025-11-29,Unit_B,Comms,61.0,training.poc@army.mil,2025-11-29T08:00:00Z
+2025-11-29,Unit_B,Aviation,60.0,training.poc@army.mil,2025-11-29T08:00:00Z
+2025-11-29,Unit_B,Weapons,55.5,training.poc@army.mil,2025-11-29T08:00:00Z
+2025-11-29,Unit_C,Motor Pool,89.2,training.poc@army.mil,2025-11-29T08:00:00Z
+2025-11-29,Unit_C,Comms,88.5,training.poc@army.mil,2025-11-29T08:00:00Z
+2025-11-29,Unit_C,Aviation,90.8,training.poc@army.mil,2025-11-29T08:00:00Z
+2025-11-29,Unit_C,Weapons,89.8,training.poc@army.mil,2025-11-29T08:00:00Z

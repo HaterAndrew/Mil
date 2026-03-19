@@ -1,0 +1,350 @@
+{
+  "_editGuide": "To approve a deliverable: change status from 'pending' to 'approved', fill in approverName and date. Status options: pending, approved, blocked.",
+  "currentState": {
+    "strengths": [
+      { "asset": "Object Type Cookbook v2 + Addendum A", "status": "Complete", "assessment": "Production-grade. 9 object type varieties, decision trees, quality metrics, peer review checklists." },
+      { "asset": "Semantic Layer Instructions", "status": "Complete", "assessment": "Doctrinally sound. Definition-first, PR-based governance, full-time stewardship mandate." },
+      { "asset": "Data Modeling Foundations (L1 + L2)", "status": "Complete", "assessment": "Strong training curriculum. Covers Kimball, Inmon, Data Vault with Foundry mapping." },
+      { "asset": "2026 Data Stack Deep Dive", "status": "Complete", "assessment": "5-layer architecture with Foundry mapping. L3 correctly identified as critical layer." },
+      { "asset": "EA Curriculum (6-part series)", "status": "Complete", "assessment": "Comprehensive. Covers foundations through military application." },
+      { "asset": "Tool Convergence Assessment", "status": "Complete", "assessment": "Ready for CTO signature. 7 testable hypotheses." },
+      { "asset": "DDOF Playbook v2.2", "status": "Complete", "assessment": "6-phase lifecycle with VAULTIS-A quality framework." },
+      { "asset": "Cross-Domain Solutions Reference", "status": "Complete", "assessment": "CDS taxonomy, NCDSMO baseline, Foundry cross-enclave sync patterns." },
+      { "asset": "HERMES Program Identity", "status": "Complete", "assessment": "Landing page, OPORD 0015-26 context, team roster, timeline." },
+      { "asset": "NAF Architecture Builder", "status": "Prototype", "assessment": "React graph editor with xyflow. IR extraction pipeline works." },
+      { "asset": "Course Portal", "status": "Complete", "assessment": "Static site serving 4 training decks with slide preview and downloads." },
+      { "asset": "EA vs DA Reference Page", "status": "Complete", "assessment": "Clean interactive reference establishing DA as first-class child of EA." }
+    ],
+    "gaps": [
+      { "gap": "Enterprise Data Compass (signed)", "risk": "Without the signed Compass, every standard in the Cookbook is advisory, not authoritative." },
+      { "gap": "Starter Ontology (core object types)", "risk": "Every team builds from scratch. No shared starting point." },
+      { "gap": "Doctrine-to-Ontology Mappings", "risk": "No traceable thread from DoD Data Strategy to Foundry object type." },
+      { "gap": "Ontology Health Metrics Dashboard", "risk": "Cannot answer: is the architecture being used?" },
+      { "gap": "90-Day Tool Audit Results", "risk": "The 7 hypotheses remain untested. Leadership cannot act on assertions." },
+      { "gap": "Training Certification Mechanism", "risk": "Training becomes optional in practice." },
+      { "gap": "Cross-Domain Implementation Guide", "risk": "Each team figures out CDS independently. Inconsistent patterns." },
+      { "gap": "Sequenced Program Roadmap", "risk": "No visible critical path. Leadership cannot track progress." }
+    ]
+  },
+  "phases": [
+    {
+      "id": "phase-1",
+      "number": 1,
+      "name": "Establish Authority",
+      "duration": "30 days",
+      "objective": "Convert the existing body of work into signed, enforceable institutional authority. Without this, everything downstream is optional.",
+      "deliverables": [
+        {
+          "id": "p1-d1",
+          "title": "Enterprise Data Compass v1.0",
+          "description": "Compile the Cookbook, Semantic Layer Instructions, and 5-Layer Stack into a single signed reference. CTO and CDAO signature blocks. Version-controlled.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "Draft complete" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        },
+        {
+          "id": "p1-d2",
+          "title": "Tool Convergence Directive",
+          "description": "Get the existing convergence memo signed by the CTO. Issue moratorium on new non-strategic tool adoption.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "Memo drafted" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        },
+        {
+          "id": "p1-d3",
+          "title": "Foundry/Vantage Platform Designation",
+          "description": "Formal command guidance designating Foundry/Vantage as the authoritative operational data platform.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        },
+        {
+          "id": "p1-d4",
+          "title": "HERMES Program Charter",
+          "description": "Formalize HERMES with scope, authority, resourcing, and reporting chain.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        }
+      ],
+      "exitCriteria": [
+        "Enterprise Data Compass signed by CTO/CDAO",
+        "Tool convergence memo signed and moratorium in effect",
+        "Platform designation guidance issued",
+        "HERMES charter approved"
+      ]
+    },
+    {
+      "id": "phase-2",
+      "number": 2,
+      "name": "Build the Foundation",
+      "duration": "60 days",
+      "objective": "Deploy the first production ontology objects and complete the first doctrine-to-ontology mapping. Prove the methodology works end-to-end.",
+      "deliverables": [
+        {
+          "id": "p2-d1",
+          "title": "Core Ontology Starter Set",
+          "description": "Deploy foundational object types: Unit, Person, Equipment (entities) + WarfightingFunction, OperationalDomain, Echelon, ClassificationLevel (CVs) + Capability + SIGACT (event). Each passes Cookbook peer review.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        },
+        {
+          "id": "p2-d2",
+          "title": "First Doctrine-to-Ontology Mapping",
+          "description": "Complete Addendum A worksheet for one priority domain (Readiness or Force Structure). Document REUSE/EXTEND/CREATE decisions with full traceability.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        },
+        {
+          "id": "p2-d3",
+          "title": "CDS Architecture Pattern Validation",
+          "description": "Implement and validate Foundry cross-enclave sync for at least one object type across NIPR/SIPR.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        },
+        {
+          "id": "p2-d4",
+          "title": "DDOF Pilot Product (Phase 1-3)",
+          "description": "Run DDOF playbook end-to-end on one data product. Validate VAULTIS-A quality gates. Document lessons learned.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        }
+      ],
+      "exitCriteria": [
+        "Core starter ontology deployed in production Foundry",
+        "At least one doctrine mapping completed with peer review",
+        "CDS sync validated for at least one object type",
+        "One DDOF product through Gate 3 with VAULTIS-A scores documented"
+      ]
+    },
+    {
+      "id": "phase-3",
+      "number": 3,
+      "name": "Scale Through Training",
+      "duration": "45 days",
+      "objective": "Ensure every person building on the ontology has completed training and can pass a competency check.",
+      "deliverables": [
+        {
+          "id": "p3-d1",
+          "title": "Training Certification Program",
+          "description": "Build assessments for each level (Foundations, Level 2, Semantic Layer). Minimum passing score. Certificates tracked in HERMES.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        },
+        {
+          "id": "p3-d2",
+          "title": "Level 3 Training: Advanced Patterns",
+          "description": "New deck covering CDS ontology patterns, bitemporal modeling, entity resolution, and DDOF integration.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        },
+        {
+          "id": "p3-d3",
+          "title": "Leadership Briefing Package",
+          "description": "Condensed training for G3/G8/CTO audiences. Why it matters, how to consume it, how to govern it.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        },
+        {
+          "id": "p3-d4",
+          "title": "Train-the-Trainer Cadre",
+          "description": "Certify 3-5 instructors who can deliver training at echelon without ODT presence.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        }
+      ],
+      "exitCriteria": [
+        "Assessment mechanism deployed for all training levels",
+        "Level 3 deck complete and peer-reviewed",
+        "At least one leadership briefing delivered to GO/SES audience",
+        "3+ certified trainers outside ODT core team"
+      ]
+    },
+    {
+      "id": "phase-4",
+      "number": 4,
+      "name": "Govern and Measure",
+      "duration": "60 days",
+      "objective": "Prove the architecture is being adopted, deliver audit data, and stand up self-sustaining governance.",
+      "deliverables": [
+        {
+          "id": "p4-d1",
+          "title": "90-Day Tool and License Audit",
+          "description": "Quantify: total license costs by tool, FTEs on platform admin vs. operational output, cross-domain availability, capability overlap with Foundry.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        },
+        {
+          "id": "p4-d2",
+          "title": "Ontology Health Dashboard",
+          "description": "Foundry Workshop dashboard: object type count, link coverage, quality scores, consumer count, freshness, VAULTIS-A scores.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        },
+        {
+          "id": "p4-d3",
+          "title": "Architecture Review Board (ARB)",
+          "description": "Stand up ARB per EA_04 Governance. Connect to Cookbook peer review and DDOF Phase 1 gate. Charter, criteria, cadence.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        },
+        {
+          "id": "p4-d4",
+          "title": "Talent Reclamation Report",
+          "description": "Using audit data, quantify personnel recovered from redundant platform management. Map to Foundry roles.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        }
+      ],
+      "exitCriteria": [
+        "Audit report delivered to CTO with quantified findings",
+        "Ontology health dashboard live in production Foundry",
+        "ARB chartered and operational with first review completed",
+        "Talent reclamation report with specific transition recommendations"
+      ]
+    },
+    {
+      "id": "phase-5",
+      "number": 5,
+      "name": "Expand and Sustain",
+      "duration": "90+ days",
+      "objective": "Scale beyond USAREUR-AF core to multi-echelon, joint, and coalition adoption.",
+      "deliverables": [
+        {
+          "id": "p5-d1",
+          "title": "Multi-Echelon Deployment",
+          "description": "Push ontology access and training to division and brigade level. Measure time-to-first-product at each echelon.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        },
+        {
+          "id": "p5-d2",
+          "title": "Joint Adoption (NAVEUR / USAFE)",
+          "description": "Execute onboarding plan for NAVEUR and USAFE. Validate semantic layer supports joint operational concepts without forking.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        },
+        {
+          "id": "p5-d3",
+          "title": "NATO Interoperability Validation",
+          "description": "Test ontology objects against NAFv4 viewpoints using Architecture Builder. Validate STANAG alignment. Document gaps.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        },
+        {
+          "id": "p5-d4",
+          "title": "Program Roadmap (Live Artifact)",
+          "description": "Deploy AG Grid roadmap with actual program data. Capability gaps mapped to funded initiatives. Monthly update cadence.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        },
+        {
+          "id": "p5-d5",
+          "title": "Enterprise Data Compass v2.0",
+          "description": "Incorporate lessons learned from Phases 1-4. Update standards based on production experience. Add joint/coalition patterns. Re-sign.",
+          "approvalChain": [
+            { "role": "analyst", "label": "Analyst", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+            { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+          ]
+        }
+      ],
+      "exitCriteria": [
+        "At least 2 echelons below theater producing data products on shared ontology",
+        "At least 1 joint component onboarded to shared semantic layer",
+        "NAF alignment assessment completed with documented results",
+        "Live roadmap accessible to command leadership"
+      ]
+    }
+  ],
+  "dependencies": [
+    { "from": "CTO/CDAO signature on Enterprise Data Compass", "blocks": "All of Phase 2-5 (standards become enforceable)", "mitigation": "Pre-brief CTO. Use convergence memo as forcing function." },
+    { "from": "Core ontology starter set deployed", "blocks": "Phase 3 training (need real objects to train against)", "mitigation": "Begin design in parallel with Phase 1 signatures." },
+    { "from": "90-Day audit data", "blocks": "Phase 4 ARB decisions and Phase 5 resource reallocation", "mitigation": "Start audit data collection in Phase 1." },
+    { "from": "Certified trainers", "blocks": "Phase 5 multi-echelon deployment", "mitigation": "Identify candidates in Phase 2. Begin certification in Phase 3." },
+    { "from": "CDS pattern validation", "blocks": "Phase 5 joint and coalition adoption", "mitigation": "Start CDS work in Phase 2 and do not stop. Hardest technical risk." }
+  ],
+  "bottomLine": {
+    "priority1": "Get the Enterprise Data Compass signed. Without this, the Cookbook is a suggestion. With it, the Cookbook is law.",
+    "priority2": "Get the convergence memo signed. The moratorium creates urgency.",
+    "priority3": "Deploy the core ontology starter set. Every day without shared objects is a day teams build in isolation.",
+    "summary": "The doctrine is written. The tools are built. The training exists. Now make it real."
+  }
+}

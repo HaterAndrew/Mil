@@ -1,0 +1,219 @@
+/*
+ * NATO Dark Theme — Shared Design Tokens
+ * Used by: ea-vs-da-reference, enterprise-data-compass, lessons-learned, plan-for-success
+ *
+ * Usage: <link rel="stylesheet" href="../shared/nato-theme.css">
+ * Then override with app-specific extensions in each file's <style> block.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ─── Surface Scale ─── */
+  --nato-950: #0a0f1a;
+  --nato-900: #0d1424;
+  --nato-800: #111b2e;
+  --nato-700: #162340;
+  --nato-600: #1e3a5f;
+  --nato-500: #2d4a6f;
+  --nato-400: #3d5a8f;
+
+  /* ─── Text Scale ─── */
+  --nato-text: #e8edf5;
+  --nato-muted: #a8b4c4;
+  --nato-dim: #7889a0;
+
+  /* ─── Accents ─── */
+  --nato-accent: #38bdf8;
+  --nato-accent-bright: #0ea5e9;
+  --nato-blue: #004990;
+  --nato-blue-light: #0066cc;
+  --nato-gold: #c9a227;
+
+  /* ─── Semantic ─── */
+  --nato-warning: #fbbf24;
+  --nato-success: #34d399;
+  --nato-error: #f87171;
+}
+
+/* ─── Base Reset ─── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  background: var(--nato-950);
+  color: var(--nato-text);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* ─── Shared Header ─── */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--nato-900);
+  border-bottom: 1px solid var(--nato-600);
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-brand svg {
+  width: 24px;
+  height: 24px;
+  color: var(--nato-accent);
+}
+
+.header-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--nato-text);
+}
+
+.header-subtitle {
+  font-size: 0.75rem;
+  color: var(--nato-muted);
+  margin-left: 0.5rem;
+}
+
+.header-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  color: var(--nato-muted);
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--nato-text);
+  background: var(--nato-800);
+}
+
+.nav-link.active {
+  color: var(--nato-accent);
+  background: var(--nato-700);
+}
+
+/* ─── Classification Banner (NATO) ─── */
+.classification-banner {
+  background: #6b5900;
+  color: #fff;
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  padding: 4px 0;
+  text-transform: uppercase;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* ─── Section Base ─── */
+section {
+  margin-bottom: 3rem;
+}
+
+.section-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--nato-accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section-text {
+  color: var(--nato-muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* ─── Cards ─── */
+.card {
+  background: var(--nato-800);
+  border: 1px solid var(--nato-600);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: border-color 0.2s;
+}
+
+.card:hover {
+  border-color: var(--nato-accent);
+}
+
+/* ─── TL;DR / BLUF Box ─── */
+.tldr {
+  background: var(--nato-800);
+  border: 1px solid var(--nato-600);
+  border-left: 4px solid var(--nato-gold);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.tldr-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--nato-gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+}
+
+.tldr-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--nato-text);
+}
+
+.tldr-text strong {
+  color: var(--nato-gold);
+}
+
+/* ─── Footer ─── */
+footer {
+  border-top: 1px solid var(--nato-700);
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--nato-dim);
+}

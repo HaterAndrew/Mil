@@ -1,0 +1,17 @@
+AFTER-ACTION REPORT (AAR) — RECORD 03
+Classification: UNCLASSIFIED // TRAINING USE ONLY
+
+date: 2024-11-23
+unit: 1-3 BN
+exercise_name: SABER STRIKE
+category: FIRES
+priority: M
+
+OBSERVATION:
+Fire mission processing times averaged 18 minutes — above the 10-minute standard. Contributing factor: paper-based call-for-fire during digital system outage.
+
+RECOMMENDATION:
+Conduct quarterly analog fire mission drills to maintain proficiency independent of digital systems.
+
+OPR: 1-3 BN S3
+Submitted by: Training NCO

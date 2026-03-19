@@ -1,0 +1,2 @@
+# Cloudflare Pages — redirect root to the training hub entry point
+/ /mss_info_app/ 301

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HERMES — People & Project Management System</title>
+<style>
+  :root {
+    --bg: #0d1b2a;
+    --header-bg: #0a1520;
+    --text: #c8d8e8;
+    --accent: #4a90d9;
+    --border: #1e3a50;
+    --banner-bg: #3a1a00;
+    --banner-text: #ffcc44;
+    --node-bg: #0f2640;
+    --node-border: #1e4a6a;
+    --node-text: #c8dce8;
+    --train-bg: #0a2a1a;
+    --train-border: #2a8a4a;
+    --steer-bg: #1e0a2e;
+    --steer-border: #8a4aaa;
+    --steer-text: #cc88ff;
+    --green-bg: #0a2a1a;
+    --green-border: #2a7a4a;
+    --blocker-bg: #3a1010;
+    --blocker-border: #aa3030;
+    --blocker-text: #ff8888;
+    --line-color: #2a5a8a;
+    --dash-color: #4a7a5a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  #banner {
+    background: var(--banner-bg);
+    color: var(--banner-text);
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding: 4px 0;
+    border-bottom: 1px solid #7a3a00;
+    flex-shrink: 0;
+  }
+  #header {
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  #header h1 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #e8f4ff;
+    letter-spacing: 1px;
+  }
+  #header h1 span { color: var(--accent); }
+  #header .subtitle {
+    font-size: 10px;
+    color: #7a9ab8;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+  #canvas {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Legend */
+  #legend {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(10,21,32,0.92);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 11px;
+    z-index: 10;
+    min-width: 180px;
+  }
+  #legend .legend-heading {
+    color: #607080;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .legend-swatch {
+    width: 22px;
+    height: 14px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .legend-line {
+    width: 26px;
+    height: 0;
+    flex-shrink: 0;
+  }
+  .legend-divider {
+    border: none;
+    border-top: 1px solid #1e3a50;
+    margin: 2px 0;
+  }
+</style>
+</head>
+<body>
+<div id="banner">CUI // FOUO</div>
+<div id="header">
+  <div>
+    <h1><span>HERMES</span> — People &amp; Project Management System</h1>
+    <div class="subtitle">USAREUR-AF OPERATIONAL DATA TEAM · SYSTEM OVERVIEW</div>
+  </div>
+</div>
+<div id="canvas">
+  <svg id="diagram" viewBox="-20 -10 1240 840">
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 7" refX="10" refY="3.5"
+              markerWidth="10" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0,0 L10,3.5 L0,7 z" fill="#4a7aaa"/>
+      </marker>
+      <marker id="arrow-dash" viewBox="0 0 10 7" refX="10" refY="3.5"
+              markerWidth="10" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0,0 L10,3.5 L0,7 z" fill="#4a7a5a"/>
+      </marker>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="2" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+
+    <!-- HERMES container -->
+    <rect x="30" y="20" width="920" height="780" rx="8"
+          fill="none" stroke="#1e3a50" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.6"/>
+    <text x="50" y="48" font-family="'Courier New', monospace" font-size="10"
+          fill="#506878" letter-spacing="2">HERMES SYSTEM BOUNDARY</text>
+
+    <!-- Training App subgroup — MSS Training Hub -->
+    <rect x="60" y="70" width="300" height="260" rx="6"
+          fill="none" stroke="var(--train-border)" stroke-width="2"/>
+    <text x="80" y="95" font-family="'Courier New', monospace" font-size="10"
+          fill="#50cc70" letter-spacing="2" font-weight="bold">TRAINING APP</text>
+    <!-- Footnote marker -->
+    <text x="345" y="85" font-family="'Courier New', monospace" font-size="11"
+          fill="#50cc70" font-weight="bold">¹</text>
+    <!-- Footnote at bottom of diagram -->
+    <text x="50" y="815" font-family="'Courier New', monospace" font-size="10"
+          fill="#506878">¹ MSS Training Hub — https://mss-training-hub.pages.dev/mss_info_app/</text>
+
+    <!-- Node: MSS Training -->
+    <rect x="110" y="115" width="200" height="60" rx="5"
+          fill="var(--train-bg)" stroke="var(--train-border)" stroke-width="1.5"/>
+    <text x="210" y="140" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="13" fill="#60dd80" font-weight="bold">MSS Training</text>
+    <text x="210" y="158" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="10" fill="#4a9a6a">TM-10 → TM-50</text>
+
+    <!-- Node: Builder Badges -->
+    <rect x="110" y="210" width="200" height="54" rx="5"
+          fill="var(--train-bg)" stroke="var(--train-border)" stroke-width="1.5"/>
+    <text x="210" y="243" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="13" fill="#60dd80" font-weight="bold">Builder Badges</text>
+
+    <!-- Arrow: Training → Badges -->
+    <line x1="210" y1="175" x2="210" y2="210" stroke="#4a7aaa" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Node: Baseball Card -->
+    <rect x="60" y="380" width="220" height="70" rx="5"
+          fill="var(--node-bg)" stroke="var(--node-border)" stroke-width="1.5"/>
+    <text x="170" y="405" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="13" fill="#80c8ff" font-weight="bold">Baseball Card</text>
+    <text x="170" y="422" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="10" fill="#6a9aba">Skills · Projects</text>
+    <text x="170" y="437" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="10" fill="#6a9aba">Army Dev Resume</text>
+
+    <!-- Node: Permission Use Groups -->
+    <rect x="60" y="475" width="220" height="54" rx="5"
+          fill="var(--node-bg)" stroke="var(--node-border)" stroke-width="1.5"/>
+    <text x="170" y="500" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="13" fill="#80c8ff" font-weight="bold">Permission Use Groups</text>
+    <text x="170" y="516" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="10" fill="#6a9aba">access control</text>
+
+    <!-- Arrows: Badges → Baseball Card, Badges → PUG -->
+    <path d="M 170 264 L 170 380" stroke="#4a7aaa" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+    <path d="M 170 450 L 170 475" stroke="#4a7aaa" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+    <!-- ============ PROJECT PIPELINE (right column) ============ -->
+
+    <!-- Node: Project Submission -->
+    <rect x="470" y="70" width="260" height="60" rx="5"
+          fill="var(--node-bg)" stroke="var(--node-border)" stroke-width="1.5"/>
+    <text x="600" y="95" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="13" fill="#80c8ff" font-weight="bold">Project Submission</text>
+    <text x="600" y="113" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="10" fill="#6a9aba">open to anyone</text>
+
+    <!-- Node: Scoping & Review -->
+    <rect x="470" y="180" width="260" height="70" rx="5"
+          fill="var(--node-bg)" stroke="var(--node-border)" stroke-width="1.5"/>
+    <text x="600" y="207" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="13" fill="#80c8ff" font-weight="bold">Scoping &amp; Review</text>
+    <text x="600" y="225" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="10" fill="#6a9aba">repo + data connection</text>
+    <text x="600" y="240" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="10" fill="#6a9aba">history reviewed</text>
+
+    <!-- Node: Priority Steering Board -->
+    <rect x="470" y="300" width="260" height="54" rx="5"
+          fill="var(--steer-bg)" stroke="var(--steer-border)" stroke-width="1.5"/>
+    <text x="600" y="328" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="13" fill="var(--steer-text)" font-weight="bold">Priority Steering Board</text>
+    <text x="600" y="345" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="10" fill="#9a6abb">decision gate</text>
+
+    <!-- Node: Project Execution -->
+    <rect x="470" y="410" width="260" height="80" rx="5"
+          fill="var(--node-bg)" stroke="var(--node-border)" stroke-width="1.5"/>
+    <text x="600" y="435" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="13" fill="#80c8ff" font-weight="bold">Project Execution</text>
+    <text x="600" y="453" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="10" fill="#6a9aba">ODT / MSC / individual</text>
+    <text x="600" y="468" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="10" fill="#6a9aba">build · refine · scale</text>
+
+    <!-- Node: Integration & Scaling -->
+    <rect x="470" y="530" width="260" height="54" rx="5"
+          fill="var(--green-bg)" stroke="var(--green-border)" stroke-width="1.5"/>
+    <text x="600" y="555" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="13" fill="#60cc80" font-weight="bold">Integration &amp; Scaling</text>
+    <text x="600" y="572" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="10" fill="#4a9a6a">enterprise rollout</text>
+
+    <!-- Node: Maintenance & Sustainment -->
+    <rect x="470" y="630" width="260" height="54" rx="5"
+          fill="var(--green-bg)" stroke="var(--green-border)" stroke-width="1.5"/>
+    <text x="600" y="655" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="13" fill="#60cc80" font-weight="bold">Maintenance &amp; Sustainment</text>
+
+    <!-- Pipeline arrows -->
+    <line x1="600" y1="130" x2="600" y2="180" stroke="#4a7aaa" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="600" y1="250" x2="600" y2="300" stroke="#4a7aaa" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="600" y1="354" x2="600" y2="410" stroke="#4a7aaa" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="600" y1="490" x2="600" y2="530" stroke="#4a7aaa" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="600" y1="584" x2="600" y2="630" stroke="#4a7aaa" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Dashed: Badges → ODT (force multiplier) -->
+    <path d="M 310 240 C 400 240, 420 445, 470 450"
+          stroke="var(--dash-color)" stroke-width="1.5" stroke-dasharray="6,4"
+          fill="none" marker-end="url(#arrow-dash)"/>
+    <text x="375" y="350" font-family="'Courier New', monospace" font-size="9"
+          fill="#5a9a6a" transform="rotate(-48, 375, 350)">upskilled builders →</text>
+    <text x="385" y="365" font-family="'Courier New', monospace" font-size="9"
+          fill="#5a9a6a" transform="rotate(-48, 385, 365)">force multipliers</text>
+
+    <!-- ============ BLOCKER (outside boundary) ============ -->
+    <rect x="980" y="360" width="190" height="100" rx="5"
+          fill="var(--blocker-bg)" stroke="var(--blocker-border)" stroke-width="2"
+          stroke-dasharray="6,3"/>
+    <text x="1075" y="392" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="12" fill="var(--blocker-text)" font-weight="bold">Sub-Domain</text>
+    <text x="1075" y="410" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="12" fill="var(--blocker-text)" font-weight="bold">Hosting</text>
+    <text x="1075" y="435" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="10" fill="#aa5050" letter-spacing="2">■ BLOCKER</text>
+    <text x="1075" y="450" text-anchor="middle" font-family="'Courier New', monospace"
+          font-size="9" fill="#806060">unblocks devs at scale</text>
+
+  </svg>
+
+  <!-- Legend -->
+  <div id="legend">
+    <div class="legend-heading">LEGEND</div>
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:var(--train-bg);border:2px solid var(--train-border);"></div>
+      <span>Training App</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:var(--node-bg);border:1px solid var(--node-border);"></div>
+      <span>Pipeline Stage</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:var(--steer-bg);border:1px solid var(--steer-border);"></div>
+      <span>Decision Gate</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:var(--green-bg);border:1px solid var(--green-border);"></div>
+      <span>Sustainment</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:var(--blocker-bg);border:1px solid var(--blocker-border);"></div>
+      <span>Blocker</span>
+    </div>
+    <hr class="legend-divider">
+    <div class="legend-item">
+      <svg width="26" height="14"><line x1="0" y1="7" x2="26" y2="7" stroke="#4a7aaa" stroke-width="1.5"/></svg>
+      <span>Flow</span>
+    </div>
+    <div class="legend-item">
+      <svg width="26" height="14"><line x1="0" y1="7" x2="26" y2="7" stroke="var(--dash-color)" stroke-width="1.5" stroke-dasharray="4,3"/></svg>
+      <span>Enablement</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

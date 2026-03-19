@@ -1,0 +1,8 @@
+INTSUM INTSUM_20251030_010 — OBSERVATION REPORT
+DTG: 300000Z OCT 2025
+Unit: 1-3 BN
+
+Summary: OP OP WOLF reported observation of 12 unidentified vehicles moving in convoy formation along ROUTE GOLD at 1610 local. Vehicles: LMTV. Movement direction: NORTH. No hostile action observed. Convoy cleared the AO within 22 minutes.
+
+Assessment: Likely civilian logistics movement. Pattern consistent with previous Thursday observations. Does not meet CCIR threshold at this time.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

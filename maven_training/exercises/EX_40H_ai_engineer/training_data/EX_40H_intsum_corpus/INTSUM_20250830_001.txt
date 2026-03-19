@@ -1,0 +1,8 @@
+INTSUM INTSUM_20250830_001 — PATROL CONTACT
+DTG: 300000Z AUG 2025
+Unit: 2-2 BN
+
+Summary: Elements of 2-2 BN conducted a patrol in grid 33T394083. At approximately 0620 local, the patrol encountered a small dismounted element moving along the ROUTE DELTA road. The element dispersed upon visual contact. No shots fired. Grid coordinates recorded. Report forwarded to S2 for pattern analysis.
+
+Significant Events: One patrol contact, no casualties, no weapons observed.
+Recommended Action: Monitor for pattern activity along ROUTE DELTA corridor. Increase patrol frequency in grid 33T394083 during period 0600-1800.

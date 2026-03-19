@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSS Training Analytics Suite — Dependency Map</title>
+<style>
+  :root {
+    --bg: #0d1b2a;
+    --header-bg: #0a1520;
+    --text: #c8d8e8;
+    --accent: #4a90d9;
+    --border: #1e3a50;
+    --banner-bg: #3a1a00;
+    --banner-text: #ffcc44;
+    --gold: #c8a040;
+    --green: #2a8a4a;
+    --amber: #c8871a;
+    --red: #a83030;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  #banner {
+    background: var(--banner-bg);
+    color: var(--banner-text);
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding: 4px 0;
+    border-bottom: 1px solid #7a3a00;
+    flex-shrink: 0;
+  }
+  #header {
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 16px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  #header h1 { font-size: 15px; font-weight: bold; color: #e8f4ff; letter-spacing: 1px; }
+  #header .subtitle { font-size: 10px; color: #7a9ab8; letter-spacing: 1px; margin-top: 2px; }
+  #controls {
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-left: auto;
+  }
+  .ctrl-group { display: flex; align-items: center; gap: 6px; font-size: 11px; }
+  .ctrl-group label { cursor: pointer; user-select: none; }
+  input[type=checkbox] { accent-color: var(--accent); cursor: pointer; }
+  #search-box {
+    background: #0d2035; border: 1px solid var(--border); color: var(--text);
+    padding: 3px 8px; font-family: inherit; font-size: 11px; border-radius: 3px; width: 160px;
+  }
+  #search-box:focus { outline: 1px solid var(--accent); }
+  #svg-container {
+    flex: 1; overflow: hidden; position: relative; cursor: grab;
+  }
+  #svg-container.panning { cursor: grabbing; }
+  svg#depmap { display: block; width: 100%; height: 100%; }
+  #tooltip {
+    position: absolute; background: #0a1a2e; border: 1px solid var(--accent);
+    border-radius: 4px; padding: 8px 12px; font-size: 11px; color: #d0e8ff;
+    pointer-events: none; display: none; max-width: 380px; z-index: 100;
+    line-height: 1.5; box-shadow: 0 4px 16px rgba(0,0,0,0.7);
+  }
+  #tooltip .tt-title { font-weight: bold; color: #80c8ff; margin-bottom: 4px; font-size: 12px; }
+  #tooltip .tt-tier { color: #c8a040; font-size: 10px; font-weight: bold; letter-spacing: 1px; margin-bottom: 4px; }
+  #tooltip .tt-desc { color: #a0c0d8; font-size: 10px; margin-bottom: 4px; }
+  #tooltip .tt-section { color: #7aaac8; font-size: 10px; font-weight: bold; margin-top: 4px; letter-spacing: 1px; }
+  #tooltip .tt-item { color: #a0c0d8; font-size: 10px; padding-left: 8px; }
+  #tooltip .tt-ports { color: #608090; font-size: 10px; margin-top: 4px; }
+  #legend {
+    background: var(--header-bg); border-top: 1px solid var(--border);
+    padding: 5px 16px; display: flex; align-items: center; gap: 16px;
+    flex-wrap: wrap; flex-shrink: 0; font-size: 10px;
+  }
+  .legend-item { display: flex; align-items: center; gap: 5px; }
+  .legend-swatch { width: 16px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+  .legend-line { width: 24px; height: 2px; flex-shrink: 0; }
+  .legend-heading { color: #607080; font-weight: bold; letter-spacing: 1px; font-size: 10px; }
+  #stats-bar {
+    position: absolute; bottom: 8px; right: 12px; font-size: 10px;
+    color: #405060; pointer-events: none;
+  }
+  #info-panel {
+    position: absolute; bottom: 32px; left: 16px;
+    background: rgba(10,21,32,0.92); border: 1px solid var(--border);
+    border-radius: 6px; padding: 10px 14px; z-index: 10;
+    min-width: 200px; font-size: 10px;
+  }
+  #info-panel .ip-heading { color: #607080; font-weight: bold; letter-spacing: 1px; margin-bottom: 6px; }
+  #info-panel table { border-collapse: collapse; width: 100%; }
+  #info-panel td { padding: 1px 0; color: #a0c0d8; font-size: 10px; vertical-align: middle; }
+  #info-panel td:last-child { text-align: right; color: #c8d8e8; padding-left: 14px; white-space: nowrap; }
+  .ip-unit { color: #506070; font-size: 9px; margin-left: 2px; }
+</style>
+</head>
+<body>
+
+<div id="banner">DRAFT &mdash; NOT FOR OFFICIAL USE</div>
+
+<div id="header">
+  <div>
+    <h1>MSS Training Analytics Suite &mdash; Dependency Map</h1>
+    <div class="subtitle">USAREUR-AF &nbsp;|&nbsp; C2DAO &nbsp;|&nbsp; 18 MAR 2026 &nbsp;|&nbsp;
+      <span id="node-count">17</span> modules &nbsp;|&nbsp;
+      <span id="edge-count">0</span> edges &nbsp;|&nbsp;
+      FastAPI + Streamlit + SQLite
+    </div>
+  </div>
+  <div id="controls">
+    <div class="ctrl-group">
+      <input type="text" id="search-box" placeholder="Search apps&hellip;" oninput="handleSearch(this.value)">
+    </div>
+    <div class="ctrl-group" style="border-left:1px solid #1e3a50;padding-left:12px">
+      <input type="checkbox" id="chk-hard" checked onchange="toggleEdges()">
+      <label for="chk-hard">Hard deps</label>
+    </div>
+    <div class="ctrl-group">
+      <input type="checkbox" id="chk-soft" checked onchange="toggleEdges()">
+      <label for="chk-soft">Soft deps</label>
+    </div>
+    <div class="ctrl-group">
+      <input type="checkbox" id="chk-theme" onchange="toggleEdges()">
+      <label for="chk-theme" style="color:#c8a040">Theme links</label>
+    </div>
+    <div class="ctrl-group" style="margin-left:8px">
+      <button onclick="resetView()" style="background:#1a2a3a;border:1px solid #2a4a6a;color:#7aaad8;
+        padding:3px 10px;font-family:inherit;font-size:11px;border-radius:3px;cursor:pointer;">
+        Reset View
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="svg-container">
+  <svg id="depmap" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arrow-hard" markerWidth="6" markerHeight="6"
+              refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L6,3 z" fill="#4a90d9"/>
+      </marker>
+      <marker id="arrow-soft" markerWidth="6" markerHeight="6"
+              refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L6,3 z" fill="#888888"/>
+      </marker>
+      <marker id="arrow-theme" markerWidth="5" markerHeight="5"
+              refX="4" refY="2.5" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,5 L5,2.5 z" fill="#6a5a20"/>
+      </marker>
+      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="3" result="blur"/>
+        <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+      </filter>
+      <filter id="highlight-glow" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation="4" result="blur"/>
+        <feFlood flood-color="#ffcc44" flood-opacity="0.4" result="color"/>
+        <feComposite in="color" in2="blur" operator="in" result="glow"/>
+        <feComposite in="SourceGraphic" in2="glow" operator="over"/>
+      </filter>
+    </defs>
+    <g id="viewport">
+      <g id="edges-soft-group"></g>
+      <g id="edges-hard-group"></g>
+      <g id="edges-theme-group" style="display:none"></g>
+      <g id="nodes-group"></g>
+      <g id="labels-group"></g>
+    </g>
+  </svg>
+
+  <div id="tooltip"></div>
+  <div id="stats-bar">Scroll to zoom &middot; Drag to pan &middot; Click node to highlight dependencies</div>
+
+  <div id="info-panel">
+    <div class="ip-heading">SUITE SUMMARY</div>
+    <table>
+      <tr><td>Core</td><td>1<span class="ip-unit">app</span></td></tr>
+      <tr><td>Dependent</td><td>1<span class="ip-unit">app</span></td></tr>
+      <tr><td>Standalone</td><td>11<span class="ip-unit">apps</span></td></tr>
+      <tr><td>Aggregator</td><td>1<span class="ip-unit">app</span></td></tr>
+      <tr><td>Hub</td><td>1<span class="ip-unit">portal</span></td></tr>
+      <tr><td>Shared</td><td>1<span class="ip-unit">module</span></td></tr>
+    </table>
+    <hr style="border:none;border-top:1px solid #1e3a50;margin:5px 0">
+    <div style="display:flex;justify-content:space-between">
+      <span style="color:#607080;font-weight:bold;letter-spacing:1px">TOTAL</span>
+      <span style="color:#e8f4ff;font-weight:bold">16 <span class="ip-unit">modules</span></span>
+    </div>
+  </div>
+</div>
+
+<div id="legend">
+  <span class="legend-heading">NODES:</span>
+  <div class="legend-item"><div class="legend-swatch" style="background:#1a6a9a"></div>Core</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#8a4a1a"></div>Dependent</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#2a5a3a"></div>Standalone</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#6a2a6a"></div>Aggregator</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#5a5a1a"></div>Hub</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#4a4a4a"></div>Shared</div>
+  <span style="color:#1e3a50;margin:0 4px">|</span>
+  <span class="legend-heading">EDGES:</span>
+  <div class="legend-item"><div class="legend-line" style="background:#4a90d9"></div>Hard dep</div>
+  <div class="legend-item"><div class="legend-line" style="background:#888;border-top:1px dashed #888;height:0"></div>Soft dep</div>
+  <div class="legend-item"><div class="legend-line" style="background:#6a5a20"></div>Theme</div>
+</div>
+
+<script>
+// ─── APP DATA ───
+const apps = [
+  {
+    id: 'readiness_tracker', label: 'readiness_tracker', tier: 'core',
+    port_api: 8001, port_dash: 8501, readme: 'readiness_tracker/README.md',
+    desc: 'Authoritative trainee roster, completion history, prereq enforcement, readiness funnel.'
+  },
+  {
+    id: 'progress_tracker', label: 'progress_tracker', tier: 'dependent',
+    port_api: 8004, port_dash: 8504, readme: 'progress_tracker/README.md',
+    desc: 'Individual milestone tracking, stalled/overdue detection, training records. Requires readiness_tracker.'
+  },
+  {
+    id: 'exam_analytics', label: 'exam_analytics', tier: 'standalone',
+    port_api: 8002, port_dash: 8502, readme: 'exam_analytics/README.md',
+    desc: 'Exam session tracking, pass/fail rates, question-level analysis, cross-cohort comparison.'
+  },
+  {
+    id: 'aar_aggregator', label: 'aar_aggregator', tier: 'standalone',
+    port_api: 8003, port_dash: 8503, readme: 'aar_aggregator/README.md',
+    desc: 'After-Action Review collection, recurring issue detection, improvement tracking.'
+  },
+  {
+    id: 'mtt_scheduler', label: 'mtt_scheduler', tier: 'standalone',
+    port_api: 8005, port_dash: 8505, readme: 'mtt_scheduler/README.md',
+    desc: 'MTT event scheduling, instructor/venue assignment, enrollment across USAREUR-AF AOR.'
+  },
+  {
+    id: 'xref_validator', label: 'xref_validator', tier: 'standalone',
+    port_api: 8006, port_dash: 8506, readme: 'xref_validator/README.md',
+    desc: 'Cross-reference validation \u2014 scans corpus for broken links, stale refs, naming violations.'
+  },
+  {
+    id: 'glossary_search', label: 'glossary_search', tier: 'standalone',
+    port_api: 8007, port_dash: 8507, readme: 'glossary_search/README.md',
+    desc: 'Searchable glossary of Army/MSS terminology with fuzzy matching.'
+  },
+  {
+    id: 'offline_packager', label: 'offline_packager', tier: 'standalone',
+    port_api: null, port_dash: 8508, readme: 'offline_packager/README.md',
+    desc: 'Build offline training packages with prereq-aware dependency resolution.'
+  },
+  {
+    id: 'sharepoint_sync', label: 'sharepoint_sync', tier: 'standalone',
+    port_api: null, port_dash: 8509, readme: 'sharepoint_sync/README.md',
+    desc: 'Track sync state of maven_training/ corpus against SharePoint document library.'
+  },
+  {
+    id: 'data_quality', label: 'data_quality', tier: 'standalone',
+    port_api: 8010, port_dash: 8510, readme: 'data_quality/README.md',
+    desc: 'Data pipeline monitoring, metric thresholds, alert management, health scoring.'
+  },
+  {
+    id: 'instructor_manager', label: 'instructor_manager', tier: 'standalone',
+    port_api: 8011, port_dash: 8511, readme: 'instructor_manager/README.md',
+    desc: 'Instructor certs, course coverage matrix (RAG), expiration alerts, teaching workload.'
+  },
+  {
+    id: 'enrollment_manager', label: 'enrollment_manager', tier: 'standalone',
+    port_api: 8012, port_dash: 8512, readme: 'enrollment_manager/README.md',
+    desc: 'Class enrollment, seat allocation, waitlist management, roster CSV export.'
+  },
+  {
+    id: 'curriculum_tracker', label: 'curriculum_tracker', tier: 'standalone',
+    port_api: 8013, port_dash: 8513, readme: 'curriculum_tracker/README.md',
+    desc: 'Document versioning, review cycles, SHA-256 change detection across corpus.'
+  },
+  {
+    id: 'lessons_learned', label: 'lessons_learned', tier: 'standalone',
+    port_api: 8014, port_dash: 8514, readme: 'lessons_learned/README.md',
+    desc: 'Lessons-learned pipeline with full tagging taxonomy aligned to TM-40K KM syllabus.'
+  },
+  {
+    id: 'training_metrics', label: 'training_metrics', tier: 'aggregator',
+    port_api: 8015, port_dash: 8515, readme: 'training_metrics/README.md',
+    desc: 'Senior-leader / CG briefing dashboard. Aggregates ALL sibling apps. BLUF format.'
+  },
+  {
+    id: 'portal', label: 'portal.py', tier: 'hub',
+    port_api: null, port_dash: 8500, readme: null,
+    desc: 'Central navigation + cross-app KPI dashboard. Imports from 12+ apps.'
+  },
+  {
+    id: 'theme', label: 'theme.py', tier: 'shared',
+    port_api: null, port_dash: null, readme: null,
+    desc: 'Shared branding: Navy/Gold palette, insignia SVG, Plotly theme.'
+  }
+];
+
+// ─── EDGES ───
+// type: 'hard' = runtime dependency, 'soft' = try/except or aggregation, 'theme' = theme import
+const edges = [
+  // Hard dependencies
+  { from: 'readiness_tracker', to: 'progress_tracker', type: 'hard', label: 'PREREQ_CHAIN, COURSE_CATALOG, Trainee, check_eligibility' },
+
+  // Soft dependencies (training_metrics aggregates all)
+  { from: 'readiness_tracker', to: 'training_metrics', type: 'soft', label: 'Trainee, get_funnel_data' },
+  { from: 'exam_analytics', to: 'training_metrics', type: 'soft', label: 'ExamSession, cross_cohort_comparison' },
+  { from: 'aar_aggregator', to: 'training_metrics', type: 'soft', label: 'AAR, find_recurring_issues' },
+  { from: 'progress_tracker', to: 'training_metrics', type: 'soft', label: 'get_all_overdue' },
+  { from: 'mtt_scheduler', to: 'training_metrics', type: 'soft', label: 'MttEvent' },
+  { from: 'data_quality', to: 'training_metrics', type: 'soft', label: 'get_active_alerts' },
+  { from: 'instructor_manager', to: 'training_metrics', type: 'soft', label: 'get_expiring_certifications' },
+  { from: 'enrollment_manager', to: 'training_metrics', type: 'soft', label: 'get_enrollment_stats' },
+  { from: 'curriculum_tracker', to: 'training_metrics', type: 'soft', label: 'get_overdue_reviews' },
+  { from: 'lessons_learned', to: 'training_metrics', type: 'soft', label: 'Lesson, ActionItem' },
+
+  // Portal soft deps
+  { from: 'readiness_tracker', to: 'portal', type: 'soft', label: 'mandatory' },
+  { from: 'exam_analytics', to: 'portal', type: 'soft', label: 'mandatory' },
+  { from: 'aar_aggregator', to: 'portal', type: 'soft', label: 'mandatory' },
+  { from: 'progress_tracker', to: 'portal', type: 'soft', label: 'optional' },
+  { from: 'mtt_scheduler', to: 'portal', type: 'soft', label: 'optional' },
+  { from: 'data_quality', to: 'portal', type: 'soft', label: 'optional' },
+  { from: 'glossary_search', to: 'portal', type: 'soft', label: 'optional' },
+  { from: 'instructor_manager', to: 'portal', type: 'soft', label: 'optional' },
+  { from: 'enrollment_manager', to: 'portal', type: 'soft', label: 'optional' },
+  { from: 'curriculum_tracker', to: 'portal', type: 'soft', label: 'optional' },
+  { from: 'lessons_learned', to: 'portal', type: 'soft', label: 'optional' },
+  { from: 'training_metrics', to: 'portal', type: 'soft', label: 'optional' },
+
+  // Theme edges (all dashboards)
+  { from: 'theme', to: 'readiness_tracker', type: 'theme', label: 'branding' },
+  { from: 'theme', to: 'exam_analytics', type: 'theme', label: 'branding' },
+  { from: 'theme', to: 'aar_aggregator', type: 'theme', label: 'branding' },
+  { from: 'theme', to: 'progress_tracker', type: 'theme', label: 'branding' },
+  { from: 'theme', to: 'mtt_scheduler', type: 'theme', label: 'branding' },
+  { from: 'theme', to: 'xref_validator', type: 'theme', label: 'branding' },
+  { from: 'theme', to: 'glossary_search', type: 'theme', label: 'branding' },
+  { from: 'theme', to: 'offline_packager', type: 'theme', label: 'branding' },
+  { from: 'theme', to: 'sharepoint_sync', type: 'theme', label: 'branding' },
+  { from: 'theme', to: 'data_quality', type: 'theme', label: 'branding' },
+  { from: 'theme', to: 'instructor_manager', type: 'theme', label: 'branding' },
+  { from: 'theme', to: 'enrollment_manager', type: 'theme', label: 'branding' },
+  { from: 'theme', to: 'curriculum_tracker', type: 'theme', label: 'branding' },
+  { from: 'theme', to: 'lessons_learned', type: 'theme', label: 'branding' },
+  { from: 'theme', to: 'training_metrics', type: 'theme', label: 'branding' },
+  { from: 'theme', to: 'portal', type: 'theme', label: 'branding' },
+];
+
+// ─── TIER COLORS ───
+const tierColors = {
+  core:       { fill: '#1a6a9a', stroke: '#2a8aca', label: '#e8f4ff' },
+  dependent:  { fill: '#8a4a1a', stroke: '#ba6a2a', label: '#ffe8cc' },
+  standalone: { fill: '#2a5a3a', stroke: '#3a8a5a', label: '#d8f0e0' },
+  aggregator: { fill: '#6a2a6a', stroke: '#9a4a9a', label: '#f0d8f0' },
+  hub:        { fill: '#5a5a1a', stroke: '#8a8a3a', label: '#f0f0d0' },
+  shared:     { fill: '#4a4a4a', stroke: '#7a7a7a', label: '#e0e0e0' }
+};
+
+const edgeStyles = {
+  hard:  { color: '#4a90d9', width: 2.0, dash: '',       marker: 'url(#arrow-hard)' },
+  soft:  { color: '#888888', width: 1.2, dash: '6,3',    marker: 'url(#arrow-soft)' },
+  theme: { color: '#6a5a20', width: 0.8, dash: '3,3',    marker: 'url(#arrow-theme)' }
+};
+
+// ─── LAYOUT: hierarchical tiers ───
+function computeLayout() {
+  const W = 1400, H = 900;
+  const tiers = {
+    hub:        { y: 80 },
+    aggregator: { y: 200 },
+    core:       { y: 360 },
+    dependent:  { y: 520 },
+    standalone: { y: 680 },
+    shared:     { y: 840 }
+  };
+
+  const nodesByTier = {};
+  apps.forEach(a => {
+    if (!nodesByTier[a.tier]) nodesByTier[a.tier] = [];
+    nodesByTier[a.tier].push(a);
+  });
+
+  const positions = {};
+  Object.keys(nodesByTier).forEach(tier => {
+    const nodes = nodesByTier[tier];
+    const y = tiers[tier].y;
+    const spacing = W / (nodes.length + 1);
+    nodes.forEach((a, i) => {
+      positions[a.id] = { x: spacing * (i + 1), y: y };
+    });
+  });
+
+  return { positions, W, H };
+}
+
+// ─── SVG RENDERING ───
+let viewState = { x: 0, y: 0, scale: 1 };
+let dragging = false, dragStart = null;
+let selectedNode = null;
+
+function render() {
+  const { positions, W, H } = computeLayout();
+  const svg = document.getElementById('depmap');
+  svg.setAttribute('viewBox', `0 0 ${W} ${H + 40}`);
+
+  const nodesGrp = document.getElementById('nodes-group');
+  const labelsGrp = document.getElementById('labels-group');
+  const edgesHardGrp = document.getElementById('edges-hard-group');
+  const edgesSoftGrp = document.getElementById('edges-soft-group');
+  const edgesThemeGrp = document.getElementById('edges-theme-group');
+
+  nodesGrp.innerHTML = '';
+  labelsGrp.innerHTML = '';
+  edgesHardGrp.innerHTML = '';
+  edgesSoftGrp.innerHTML = '';
+  edgesThemeGrp.innerHTML = '';
+
+  // count visible edges
+  let edgeCount = 0;
+
+  // Draw edges
+  edges.forEach(e => {
+    const from = positions[e.from];
+    const to = positions[e.to];
+    if (!from || !to) return;
+    edgeCount++;
+
+    const style = edgeStyles[e.type];
+    const grp = e.type === 'hard' ? edgesHardGrp : (e.type === 'theme' ? edgesThemeGrp : edgesSoftGrp);
+
+    // Curved path
+    const dx = to.x - from.x;
+    const dy = to.y - from.y;
+    const cx = from.x + dx * 0.5;
+    const cy = from.y + dy * 0.3;
+
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    line.setAttribute('d', `M${from.x},${from.y} Q${cx},${cy} ${to.x},${to.y}`);
+    line.setAttribute('stroke', style.color);
+    line.setAttribute('stroke-width', style.width);
+    line.setAttribute('fill', 'none');
+    line.setAttribute('marker-end', style.marker);
+    line.setAttribute('opacity', '0.6');
+    if (style.dash) line.setAttribute('stroke-dasharray', style.dash);
+    line.dataset.from = e.from;
+    line.dataset.to = e.to;
+    line.dataset.type = e.type;
+    line.dataset.label = e.label || '';
+    grp.appendChild(line);
+  });
+
+  document.getElementById('edge-count').textContent = edgeCount;
+
+  // Draw nodes
+  apps.forEach(app => {
+    const pos = positions[app.id];
+    const tc = tierColors[app.tier];
+    const nodeW = 140, nodeH = 32;
+
+    // Node rect
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g.dataset.appId = app.id;
+    g.style.cursor = 'pointer';
+
+    const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    rect.setAttribute('x', pos.x - nodeW/2);
+    rect.setAttribute('y', pos.y - nodeH/2);
+    rect.setAttribute('width', nodeW);
+    rect.setAttribute('height', nodeH);
+    rect.setAttribute('rx', 4);
+    rect.setAttribute('fill', tc.fill);
+    rect.setAttribute('stroke', tc.stroke);
+    rect.setAttribute('stroke-width', 1.5);
+    g.appendChild(rect);
+
+    // Label
+    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    text.setAttribute('x', pos.x);
+    text.setAttribute('y', pos.y + 1);
+    text.setAttribute('text-anchor', 'middle');
+    text.setAttribute('dominant-baseline', 'middle');
+    text.setAttribute('fill', tc.label);
+    text.setAttribute('font-size', '10');
+    text.setAttribute('font-family', "'Courier New', monospace");
+    text.setAttribute('font-weight', 'bold');
+    text.textContent = app.label;
+    g.appendChild(text);
+
+    // Port label below
+    if (app.port_api || app.port_dash) {
+      const portText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      portText.setAttribute('x', pos.x);
+      portText.setAttribute('y', pos.y + nodeH/2 + 12);
+      portText.setAttribute('text-anchor', 'middle');
+      portText.setAttribute('fill', '#506070');
+      portText.setAttribute('font-size', '9');
+      portText.setAttribute('font-family', "'Courier New', monospace");
+      const parts = [];
+      if (app.port_api) parts.push('API:' + app.port_api);
+      if (app.port_dash) parts.push('UI:' + app.port_dash);
+      portText.textContent = parts.join(' / ');
+      g.appendChild(portText);
+    }
+
+    // Tier badge above
+    const badge = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    badge.setAttribute('x', pos.x);
+    badge.setAttribute('y', pos.y - nodeH/2 - 5);
+    badge.setAttribute('text-anchor', 'middle');
+    badge.setAttribute('fill', '#506070');
+    badge.setAttribute('font-size', '8');
+    badge.setAttribute('font-family', "'Courier New', monospace");
+    badge.setAttribute('letter-spacing', '1');
+    badge.textContent = '[' + app.tier.toUpperCase() + ']';
+    g.appendChild(badge);
+
+    // Interaction
+    g.addEventListener('mouseenter', (ev) => showTooltip(ev, app));
+    g.addEventListener('mousemove', (ev) => moveTooltip(ev));
+    g.addEventListener('mouseleave', hideTooltip);
+    g.addEventListener('click', () => highlightNode(app.id));
+
+    nodesGrp.appendChild(g);
+  });
+}
+
+// ─── TOOLTIP ───
+function showTooltip(ev, app) {
+  const tt = document.getElementById('tooltip');
+  let html = `<div class="tt-title">${app.label}</div>`;
+  html += `<div class="tt-tier">[${app.tier.toUpperCase()}]</div>`;
+  html += `<div class="tt-desc">${app.desc}</div>`;
+
+  if (app.port_api || app.port_dash) {
+    const parts = [];
+    if (app.port_api) parts.push('API: ' + app.port_api);
+    if (app.port_dash) parts.push('Dashboard: ' + app.port_dash);
+    html += `<div class="tt-ports">${parts.join(' &nbsp;|&nbsp; ')}</div>`;
+  }
+
+  if (app.readme) {
+    html += `<div class="tt-section" style="margin-top:6px"><a href="${app.readme}" style="color:#80b8d8;text-decoration:none;font-size:10px;">Open README &rarr;</a></div>`;
+  }
+
+  // Show dependencies
+  const deps = edges.filter(e => e.to === app.id && e.type !== 'theme');
+  if (deps.length) {
+    html += `<div class="tt-section">DEPENDS ON</div>`;
+    deps.forEach(d => {
+      const arrow = d.type === 'hard' ? '\u2192' : '\u21C0';
+      html += `<div class="tt-item">${arrow} ${d.from}</div>`;
+    });
+  }
+
+  const consumers = edges.filter(e => e.from === app.id && e.type !== 'theme');
+  if (consumers.length) {
+    html += `<div class="tt-section">CONSUMED BY</div>`;
+    consumers.forEach(d => {
+      html += `<div class="tt-item">\u2190 ${d.to}</div>`;
+    });
+  }
+
+  tt.innerHTML = html;
+  tt.style.display = 'block';
+  moveTooltip(ev);
+}
+
+function moveTooltip(ev) {
+  const tt = document.getElementById('tooltip');
+  const container = document.getElementById('svg-container');
+  const rect = container.getBoundingClientRect();
+  let x = ev.clientX - rect.left + 16;
+  let y = ev.clientY - rect.top + 16;
+  if (x + 380 > rect.width) x = ev.clientX - rect.left - 390;
+  if (y + 300 > rect.height) y = ev.clientY - rect.top - 200;
+  tt.style.left = x + 'px';
+  tt.style.top = y + 'px';
+}
+
+function hideTooltip() {
+  document.getElementById('tooltip').style.display = 'none';
+}
+
+// ─── HIGHLIGHT ───
+function highlightNode(appId) {
+  if (selectedNode === appId) { selectedNode = null; clearHighlight(); return; }
+  selectedNode = appId;
+
+  const connected = new Set([appId]);
+  edges.forEach(e => {
+    if (e.from === appId || e.to === appId) {
+      connected.add(e.from);
+      connected.add(e.to);
+    }
+  });
+
+  document.querySelectorAll('#nodes-group g').forEach(g => {
+    const id = g.dataset.appId;
+    g.style.opacity = connected.has(id) ? '1' : '0.15';
+    if (id === appId) {
+      g.querySelector('rect').setAttribute('filter', 'url(#highlight-glow)');
+    } else {
+      g.querySelector('rect').removeAttribute('filter');
+    }
+  });
+
+  document.querySelectorAll('#edges-hard-group path, #edges-soft-group path, #edges-theme-group path').forEach(p => {
+    const isConnected = p.dataset.from === appId || p.dataset.to === appId;
+    p.style.opacity = isConnected ? '1' : '0.05';
+  });
+}
+
+function clearHighlight() {
+  document.querySelectorAll('#nodes-group g').forEach(g => {
+    g.style.opacity = '1';
+    g.querySelector('rect').removeAttribute('filter');
+  });
+  document.querySelectorAll('#edges-hard-group path, #edges-soft-group path, #edges-theme-group path').forEach(p => {
+    p.style.opacity = '0.6';
+  });
+}
+
+// ─── SEARCH ───
+function handleSearch(query) {
+  if (!query) { clearHighlight(); selectedNode = null; return; }
+  const q = query.toLowerCase();
+  const matches = new Set();
+  apps.forEach(a => {
+    if (a.id.includes(q) || a.label.includes(q) || a.desc.toLowerCase().includes(q) ||
+        a.tier.includes(q)) {
+      matches.add(a.id);
+    }
+  });
+
+  document.querySelectorAll('#nodes-group g').forEach(g => {
+    g.style.opacity = matches.has(g.dataset.appId) ? '1' : '0.15';
+  });
+  document.querySelectorAll('#edges-hard-group path, #edges-soft-group path, #edges-theme-group path').forEach(p => {
+    const show = matches.has(p.dataset.from) || matches.has(p.dataset.to);
+    p.style.opacity = show ? '0.6' : '0.05';
+  });
+}
+
+// ─── TOGGLE EDGES ───
+function toggleEdges() {
+  const showHard = document.getElementById('chk-hard').checked;
+  const showSoft = document.getElementById('chk-soft').checked;
+  const showTheme = document.getElementById('chk-theme').checked;
+  document.getElementById('edges-hard-group').style.display = showHard ? '' : 'none';
+  document.getElementById('edges-soft-group').style.display = showSoft ? '' : 'none';
+  document.getElementById('edges-theme-group').style.display = showTheme ? '' : 'none';
+}
+
+// ─── PAN / ZOOM ───
+function setupPanZoom() {
+  const container = document.getElementById('svg-container');
+  const viewport = document.getElementById('viewport');
+
+  container.addEventListener('mousedown', (ev) => {
+    if (ev.button !== 0) return;
+    dragging = true;
+    dragStart = { x: ev.clientX - viewState.x, y: ev.clientY - viewState.y };
+    container.classList.add('panning');
+  });
+
+  window.addEventListener('mousemove', (ev) => {
+    if (!dragging) return;
+    viewState.x = ev.clientX - dragStart.x;
+    viewState.y = ev.clientY - dragStart.y;
+    applyTransform();
+  });
+
+  window.addEventListener('mouseup', () => {
+    dragging = false;
+    container.classList.remove('panning');
+  });
+
+  container.addEventListener('wheel', (ev) => {
+    ev.preventDefault();
+    const rect = container.getBoundingClientRect();
+    const mx = ev.clientX - rect.left;
+    const my = ev.clientY - rect.top;
+    const delta = ev.deltaY > 0 ? 0.9 : 1.1;
+    const newScale = Math.max(0.3, Math.min(5, viewState.scale * delta));
+    viewState.x = mx - (mx - viewState.x) * (newScale / viewState.scale);
+    viewState.y = my - (my - viewState.y) * (newScale / viewState.scale);
+    viewState.scale = newScale;
+    applyTransform();
+  }, { passive: false });
+}
+
+function applyTransform() {
+  const viewport = document.getElementById('viewport');
+  viewport.setAttribute('transform', `translate(${viewState.x},${viewState.y}) scale(${viewState.scale})`);
+}
+
+function resetView() {
+  viewState = { x: 0, y: 0, scale: 1 };
+  applyTransform();
+  selectedNode = null;
+  clearHighlight();
+  document.getElementById('search-box').value = '';
+}
+
+// ─── INIT ───
+render();
+setupPanZoom();
+</script>
+</body>
+</html>

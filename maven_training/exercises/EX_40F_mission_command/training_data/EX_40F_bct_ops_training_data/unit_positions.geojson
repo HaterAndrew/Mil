@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "battalion": "1-1_BN",
+        "label": "1-1 BN"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.9308,
+          49.6821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "battalion": "1-2_BN",
+        "label": "1-2 BN"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.89,
+          49.715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "battalion": "1-3_BN",
+        "label": "1-3 BN"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.96,
+          49.65
+        ]
+      }
+    }
+  ]
+}

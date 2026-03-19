@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Data Stack Course Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- Portal Navigation -->
+  <div style="background:#080d18;border-bottom:1px solid #38bdf822;padding:6px 24px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+    <a href="../../index.html" style="color:#38bdf8;text-decoration:none;display:flex;align-items:center;gap:6px">← CDA Portal</a>
+    <span style="color:#ffffff22">│</span>
+    <span style="color:#c9a227;font-weight:600">Course Portal</span>
+    <span style="color:#ffffff22">│</span>
+    <a href="../plan-for-success/" style="color:#ffffff66;text-decoration:none">Plan for Success</a>
+    <a href="../lessons-learned/" style="color:#ffffff66;text-decoration:none">Lessons Learned</a>
+    <a href="../enterprise-data-compass/" style="color:#ffffff66;text-decoration:none">Data Compass</a>
+  </div>
+  <!-- Classification Banner -->
+  <div style="background:#166534;color:#fff;text-align:center;padding:4px 0;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.15em;font-weight:600">UNCLASSIFIED</div>
+  <div class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="kicker">Course Portal</div>
+        <div class="title">Data Stack Deep Dive — Slide Library</div>
+      </div>
+      <div class="nav">
+        <a href="index.html">Decks</a>
+        <a href="downloads/">Downloads</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero">
+      <div class="card hero-card">
+        <h1>Data Stack Deep Dive</h1>
+        <p>
+          A three-track curriculum that takes you from data fundamentals through semantic modeling
+          and ontology design to architecture-level decision making. Built for data professionals,
+          architects, and leaders who need to speak the same language around doctrine-aligned data strategy.
+        </p>
+        <div class="badges">
+          <div class="badge">Primer — 12 decks</div>
+          <div class="badge">Data 101 — 7 decks</div>
+          <div class="badge">Data 201 — 10 decks</div>
+        </div>
+        <div class="hr"></div>
+        <div class="small">
+          Use <span class="kbd">←</span>/<span class="kbd">→</span> to navigate slides.
+          <span class="kbd">Home</span>/<span class="kbd">End</span> to jump. All decks available as PPTX &amp; PDF downloads.
+        </div>
+      </div>
+
+      <div class="card hero-card">
+        <div class="deck-title" style="margin-bottom:10px;">What you'll learn</div>
+        <div class="small">
+          • Five-layer data stack architecture and where your work fits<br/>
+          • Data modeling from normalization through semantic and bitemporal patterns<br/>
+          • Ontologies, controlled vocabularies, and identity governance<br/>
+          • RDF/OWL foundations for interoperable, machine-readable data<br/>
+          • How to scope, build, and govern enterprise data platforms<br/>
+        </div>
+        <div class="hr"></div>
+        <div class="small">
+          Start with the <strong>Primer</strong> track for orientation, progress through <strong>Data 101</strong> for modeling fundamentals,
+          then tackle <strong>Data 201</strong> for semantic architecture.
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-bar" id="filterBar"></div>
+
+    <div id="deckGrid"></div>
+  </div>
+
+  <script type="module">
+    import { initIndex } from './app.js?v=2';
+    initIndex();
+  </script>
+</body>
+</html>

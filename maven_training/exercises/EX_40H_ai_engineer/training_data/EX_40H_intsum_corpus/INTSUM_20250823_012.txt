@@ -1,0 +1,8 @@
+INTSUM INTSUM_20250823_012 — OBSERVATION REPORT
+DTG: 230000Z AUG 2025
+Unit: 1-1 BN
+
+Summary: OP OP RAVEN reported observation of 7 unidentified vehicles moving in convoy formation along ROUTE AMBER at 2100 local. Vehicles: FMTV. Movement direction: NORTHWEST. No hostile action observed. Convoy cleared the AO within 22 minutes.
+
+Assessment: Likely civilian logistics movement. Pattern consistent with previous Thursday observations. Does not meet CCIR threshold at this time.
+Recommended Action: Continue monitoring. Report if vehicle type or pattern changes.

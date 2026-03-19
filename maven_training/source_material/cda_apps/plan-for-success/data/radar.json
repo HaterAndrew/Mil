@@ -1,0 +1,821 @@
+{
+  "_editGuide": "Each blip needs: layer (L1-L5), quadrant (standards/platform/ontology/interop), ring (adopt/trial/assess/hold). To approve: change status from 'pending' to 'approved', fill in approverName and date. Status options: pending, approved, blocked.",
+  "blips": [
+    {
+      "id": "L1-001",
+      "title": "DISA Cloud Hosting",
+      "layer": "L1",
+      "quadrant": "platform",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "DISA-managed cloud infrastructure for Foundry/Vantage platform deployment. Provides FedRAMP-compliant compute, storage, and network.",
+      "tags": ["infrastructure", "disa"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "approved", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L1-002",
+      "title": "Foundry/Vantage Platform Designation",
+      "layer": "L1",
+      "quadrant": "platform",
+      "ring": "trial",
+      "isNew": true,
+      "description": "Formal command guidance designating Palantir Foundry/Vantage as the authoritative operational data platform. Eliminates ambiguity about tool selection.",
+      "tags": ["foundry", "directive"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "Requires convergence memo signature" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L1-003",
+      "title": "MSS/Vantage NIPR Instance",
+      "layer": "L1",
+      "quadrant": "platform",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "Mission Support Services / Vantage instance on NIPR. Primary unclassified operational data environment.",
+      "tags": ["foundry", "nipr"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "approved", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L1-004",
+      "title": "Vantage SIPR Instance",
+      "layer": "L1",
+      "quadrant": "platform",
+      "ring": "trial",
+      "isNew": false,
+      "description": "Vantage instance on SIPR for secret-level operational data. Required for cross-domain architecture.",
+      "tags": ["foundry", "sipr"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L1-005",
+      "title": "Vantage JWICS Instance",
+      "layer": "L1",
+      "quadrant": "platform",
+      "ring": "assess",
+      "isNew": true,
+      "description": "Vantage instance on JWICS for TS/SCI intelligence data. Under evaluation for USAREUR-AF deployment.",
+      "tags": ["foundry", "jwics"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L1-006",
+      "title": "Platform Team Ownership Model",
+      "layer": "L1",
+      "quadrant": "standards",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "Platform team / DISA owns L1 infrastructure. Clear RACI for compute, network, and storage provisioning.",
+      "tags": ["governance", "raci"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L2-001",
+      "title": "Pipeline Builder",
+      "layer": "L2",
+      "quadrant": "platform",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "Foundry Pipeline Builder for data ingestion and transformation pipelines. Primary L2 integration tool.",
+      "tags": ["foundry", "integration"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "approved", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L2-002",
+      "title": "Code Workbook",
+      "layer": "L2",
+      "quadrant": "platform",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "Foundry Code Workbook for custom data transformations and advanced integration logic.",
+      "tags": ["foundry", "integration"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "approved", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L2-003",
+      "title": "Data Connections",
+      "layer": "L2",
+      "quadrant": "platform",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "Foundry data connections for source system integration. Manages ingestion from external systems.",
+      "tags": ["foundry", "integration"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "approved", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L2-004",
+      "title": "Cross-Domain From Day One",
+      "layer": "L2",
+      "quadrant": "standards",
+      "ring": "adopt",
+      "isNew": true,
+      "description": "Architecture must account for NIPR, SIPR, and JWICS classification boundaries as a first-class design constraint. CDS topology is an input to data architecture, not an afterthought.",
+      "tags": ["principle", "cds"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L2-005",
+      "title": "CDS Export/Import Pattern",
+      "layer": "L2",
+      "quadrant": "interop",
+      "ring": "trial",
+      "isNew": true,
+      "description": "Source enclave → export filter → CDS guard → classification validation → transfer → target enclave → import pipeline → ontology merge.",
+      "tags": ["cds", "pattern"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L2-006",
+      "title": "Foundry Cross-Enclave Sync",
+      "layer": "L2",
+      "quadrant": "interop",
+      "ring": "assess",
+      "isNew": true,
+      "description": "Foundry cross-enclave synchronization patterns following NCDSMO baseline product standards. Hardest technical risk in the program.",
+      "tags": ["cds", "foundry"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L2-007",
+      "title": "NCDSMO Baseline Compliance",
+      "layer": "L2",
+      "quadrant": "interop",
+      "ring": "trial",
+      "isNew": false,
+      "description": "Compliance with National Cross Domain Strategy Management Office baseline product standards for all cross-domain data flows.",
+      "tags": ["cds", "compliance"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L2-008",
+      "title": "CDS Latency Documentation",
+      "layer": "L2",
+      "quadrant": "standards",
+      "ring": "trial",
+      "isNew": true,
+      "description": "CDS latency and bandwidth constraints documented for each cross-domain data flow. Required per Compass Section 6.",
+      "tags": ["cds", "documentation"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-001",
+      "title": "Definition Before Data",
+      "layer": "L3",
+      "quadrant": "standards",
+      "ring": "adopt",
+      "isNew": true,
+      "description": "Every object type begins with a human-readable definition grounded in published doctrine (FM, ADP, ATP, STANAG, MIM). The definition is the contract.",
+      "tags": ["principle"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-002",
+      "title": "One Canonical Type Per Concept",
+      "layer": "L3",
+      "quadrant": "standards",
+      "ring": "adopt",
+      "isNew": true,
+      "description": "The Ontology maintains exactly one canonical object type per doctrine concept. Type proliferation is the primary anti-pattern.",
+      "tags": ["principle"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-003",
+      "title": "Semantic Layer Is Critical Layer",
+      "layer": "L3",
+      "quadrant": "standards",
+      "ring": "adopt",
+      "isNew": true,
+      "description": "In the 5-Layer Data Stack, Layer 3 (Semantic) is where meaning is assigned. Investment in L2 + L3 takes priority over L5. A weak semantic layer produces fast garbage.",
+      "tags": ["principle"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-004",
+      "title": "Governance By Design",
+      "layer": "L3",
+      "quadrant": "standards",
+      "ring": "adopt",
+      "isNew": true,
+      "description": "Every object type change goes through peer review. Every data product follows DDOF phase gates. Every quality metric is measured by VAULTIS-A. Governance is enforced in the platform, not in email threads.",
+      "tags": ["principle", "governance"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-005",
+      "title": "Object Type Cookbook v2.0",
+      "layer": "L3",
+      "quadrant": "standards",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "The implementing document for all ontology design. 9 object type varieties, decision trees, quality metrics, peer review checklists. NATO MIM and DoDAF aligned.",
+      "tags": ["document", "cookbook"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-006",
+      "title": "Cookbook Addendum A",
+      "layer": "L3",
+      "quadrant": "standards",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "Data scope assessment, doctrine-to-ontology alignment, bitemporal modeling patterns. Extends the Cookbook with advanced assessment frameworks.",
+      "tags": ["document", "cookbook"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-007",
+      "title": "Peer Review (Mandatory)",
+      "layer": "L3",
+      "quadrant": "standards",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "Every new or modified object type requires peer review before production. Checklist-driven (Cookbook Section 9). Reviewer cannot be the author.",
+      "tags": ["governance", "process"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-008",
+      "title": "Architecture Review Board",
+      "layer": "L3",
+      "quadrant": "standards",
+      "ring": "trial",
+      "isNew": true,
+      "description": "Reviews new object types, schema changes, link additions. Biweekly cadence. Authority to approve, request revision, or reject.",
+      "tags": ["governance", "arb"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-009",
+      "title": "Entity Object Type",
+      "layer": "L3",
+      "quadrant": "ontology",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "People, units, equipment. Core ontology variety for real-world objects that persist over time.",
+      "tags": ["object-type", "cookbook"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-010",
+      "title": "Event Object Type",
+      "layer": "L3",
+      "quadrant": "ontology",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "SIGACTs, movements. Point-in-time or interval occurrences with temporal and spatial dimensions.",
+      "tags": ["object-type", "cookbook"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-011",
+      "title": "Capability Object Type",
+      "layer": "L3",
+      "quadrant": "ontology",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "What the force can do. Maps to warfighting functions and operational capabilities.",
+      "tags": ["object-type", "cookbook"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-012",
+      "title": "Controlled Vocabulary",
+      "layer": "L3",
+      "quadrant": "ontology",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "Enumerations and codes. Standardized lists (WF, Echelon, Domain, Classification) that constrain property values.",
+      "tags": ["object-type", "cookbook"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-013",
+      "title": "Reference Object (4-Tier)",
+      "layer": "L3",
+      "quadrant": "ontology",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "Lookups organized in 4 tiers of specificity. Provides standardized reference data across the ontology.",
+      "tags": ["object-type", "cookbook"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-014",
+      "title": "Relationship Link",
+      "layer": "L3",
+      "quadrant": "ontology",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "Links between objects. Defines how entities, events, and capabilities relate to each other in the ontology graph.",
+      "tags": ["object-type", "cookbook"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-015",
+      "title": "Assessment Object Type",
+      "layer": "L3",
+      "quadrant": "ontology",
+      "ring": "trial",
+      "isNew": true,
+      "description": "Scores and readiness assessments. Point-in-time evaluations tied to entities or capabilities.",
+      "tags": ["object-type", "cookbook"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-016",
+      "title": "Document Object Type",
+      "layer": "L3",
+      "quadrant": "ontology",
+      "ring": "trial",
+      "isNew": true,
+      "description": "OPORDs, products, and formal publications. Links documents to the entities and events they reference.",
+      "tags": ["object-type", "cookbook"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-017",
+      "title": "Metric Object Type",
+      "layer": "L3",
+      "quadrant": "ontology",
+      "ring": "assess",
+      "isNew": true,
+      "description": "KPIs and measures. Quantitative indicators tracked over time against targets.",
+      "tags": ["object-type", "cookbook"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-018",
+      "title": "Doctrine-to-Ontology Alignment Worksheet",
+      "layer": "L3",
+      "quadrant": "ontology",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "Cookbook Addendum A assessment. Produces REUSE, EXTEND, or CREATE NEW decision with full traceability to doctrine source.",
+      "tags": ["process", "cookbook"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-019",
+      "title": "Core Ontology Starter Set",
+      "layer": "L3",
+      "quadrant": "ontology",
+      "ring": "assess",
+      "isNew": true,
+      "description": "Unit, Person, Equipment (entities) + WarfightingFunction, OperationalDomain, Echelon, ClassificationLevel (CVs) + Capability + SIGACT (event). The minimum shared starting point.",
+      "tags": ["deliverable", "phase-2"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-020",
+      "title": "Bitemporal Modeling",
+      "layer": "L3",
+      "quadrant": "ontology",
+      "ring": "assess",
+      "isNew": true,
+      "description": "Tracking both valid-time and transaction-time for object state. Advanced pattern from Cookbook Addendum A.",
+      "tags": ["pattern", "advanced"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-021",
+      "title": "Classification Ceiling Property",
+      "layer": "L3",
+      "quadrant": "interop",
+      "ring": "adopt",
+      "isNew": true,
+      "description": "Every object type must declare its classification ceiling as a first-class property. Mandatory per Compass Section 6.",
+      "tags": ["cds", "mandatory"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-022",
+      "title": "NAFv4 Compatibility",
+      "layer": "L3",
+      "quadrant": "interop",
+      "ring": "assess",
+      "isNew": true,
+      "description": "Ontology objects validated against NAFv4 architecture viewpoints and ArchiMate mapping. Coalition interoperability requirement.",
+      "tags": ["nato", "nafv4"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-023",
+      "title": "DODAF DIV-1/2/3 Alignment",
+      "layer": "L3",
+      "quadrant": "interop",
+      "ring": "trial",
+      "isNew": false,
+      "description": "Data and Information Viewpoints as ontology design artifacts. Good ontology design directly produces compliant architecture products.",
+      "tags": ["dodaf", "architecture"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L3-024",
+      "title": "STANAG Alignment (4559/5500/APP-6)",
+      "layer": "L3",
+      "quadrant": "interop",
+      "ring": "assess",
+      "isNew": true,
+      "description": "STANAG 4559 (Intel), 5500 (TDL), APP-6 (Symbology) alignment for NATO interoperability.",
+      "tags": ["nato", "stanag"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L4-001",
+      "title": "Contour",
+      "layer": "L4",
+      "quadrant": "platform",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "Foundry Contour for interactive data analysis and BI. Primary L4 analytics tool.",
+      "tags": ["foundry", "analytics"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "approved", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L4-002",
+      "title": "Workshop Analytics",
+      "layer": "L4",
+      "quadrant": "platform",
+      "ring": "trial",
+      "isNew": false,
+      "description": "Foundry Workshop for building analytics applications with ontology-backed widgets.",
+      "tags": ["foundry", "analytics"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L4-003",
+      "title": "Quiver",
+      "layer": "L4",
+      "quadrant": "platform",
+      "ring": "assess",
+      "isNew": true,
+      "description": "Foundry Quiver for advanced analytical notebooks and model development.",
+      "tags": ["foundry", "analytics"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L4-004",
+      "title": "VAULTIS-A Quality Framework",
+      "layer": "L4",
+      "quadrant": "standards",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "8 quality dimensions: Valid (99%), Accurate (95%), Unique (100%), Linked (100%), Timely, Integrated (90%), Secure (100%), Auditable. Minimum gate score: 85% weighted average.",
+      "tags": ["quality", "vaultis"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L4-005",
+      "title": "Ontology Health Dashboard",
+      "layer": "L4",
+      "quadrant": "platform",
+      "ring": "assess",
+      "isNew": true,
+      "description": "Foundry Workshop dashboard showing: object type count by variety, link coverage, quality scores, consumer count, data freshness, VAULTIS-A scores.",
+      "tags": ["foundry", "metrics", "deliverable"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L5-001",
+      "title": "Workshop Apps",
+      "layer": "L5",
+      "quadrant": "platform",
+      "ring": "trial",
+      "isNew": false,
+      "description": "Foundry Workshop for building operational applications backed by the ontology.",
+      "tags": ["foundry", "activation"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L5-002",
+      "title": "Slate Dashboards",
+      "layer": "L5",
+      "quadrant": "platform",
+      "ring": "hold",
+      "isNew": false,
+      "description": "Legacy Foundry Slate for custom dashboards. Being superseded by Workshop and OSDK patterns.",
+      "tags": ["foundry", "legacy"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L5-003",
+      "title": "OSDK Front-End",
+      "layer": "L5",
+      "quadrant": "platform",
+      "ring": "trial",
+      "isNew": true,
+      "description": "Ontology SDK for building custom web applications directly against Foundry ontology objects.",
+      "tags": ["foundry", "osdk"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L5-004",
+      "title": "DDOF Playbook v2.2",
+      "layer": "L5",
+      "quadrant": "standards",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "6-phase data product lifecycle: Problem Framing → Data Provisioning → Data Wrangling → Development → Test & Eval → Operations. VAULTIS-A quality gates at each phase.",
+      "tags": ["document", "lifecycle"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L5-005",
+      "title": "NAF Architecture Builder",
+      "layer": "L5",
+      "quadrant": "platform",
+      "ring": "assess",
+      "isNew": true,
+      "description": "React graph editor for NAFv4 architecture composition. IR extraction pipeline from NATO PDFs. Prototype stage.",
+      "tags": ["tool", "nafv4"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L5-006",
+      "title": "Course Portal",
+      "layer": "L5",
+      "quadrant": "platform",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "Static training slide-viewer portal serving 4 training decks with 1:1 visual fidelity from PPTX. Keyboard navigation, fullscreen, downloads.",
+      "tags": ["tool", "training"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "approved", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L5-007",
+      "title": "Investment Rule: L2+L3 > L5",
+      "layer": "L5",
+      "quadrant": "standards",
+      "ring": "adopt",
+      "isNew": true,
+      "description": "L2 + L3 investment must exceed L5 investment. A strong semantic layer makes every application faster, cheaper, and more trustworthy.",
+      "tags": ["principle", "investment"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    },
+    {
+      "id": "L5-008",
+      "title": "Semantic Layer Instructions",
+      "layer": "L5",
+      "quadrant": "standards",
+      "ring": "adopt",
+      "isNew": false,
+      "description": "Doctrine-first governance philosophy and stewardship model. The philosophical backbone of the data architecture program.",
+      "tags": ["document", "governance"],
+      "approvalChain": [
+        { "role": "analyst", "label": "Analyst", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "c2dao", "label": "C2DAO", "status": "approved", "approverName": "", "date": "", "notes": "" },
+        { "role": "cto", "label": "CTO", "status": "pending", "approverName": "", "date": "", "notes": "" },
+        { "role": "command", "label": "GO / Command", "status": "pending", "approverName": "", "date": "", "notes": "" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+AFTER-ACTION REPORT (AAR) — RECORD 13
+Classification: UNCLASSIFIED // TRAINING USE ONLY
+
+date: 2025-03-30
+unit: 1-2 BN
+exercise_name: COMBINED RESOLVE
+category: SUSTAINMENT
+priority: H
+
+OBSERVATION:
+Medical evacuation was delayed 34 minutes because the 9-line MEDEVAC was submitted over voice with errors. Requestor had not practiced the format.
+
+RECOMMENDATION:
+Include 9-line MEDEVAC drills in weekly sustainment training. Laminated cards issued to all leaders.
+
+OPR: 1-2 BN S3
+Submitted by: Training NCO

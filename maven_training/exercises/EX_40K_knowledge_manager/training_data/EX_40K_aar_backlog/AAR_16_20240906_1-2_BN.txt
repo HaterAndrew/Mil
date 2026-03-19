@@ -1,0 +1,17 @@
+AFTER-ACTION REPORT (AAR) — RECORD 16
+Classification: UNCLASSIFIED // TRAINING USE ONLY
+
+date: 2024-09-06
+unit: 1-2 BN
+exercise_name: ALLIED SPIRIT
+category: FIRES
+priority: L
+
+OBSERVATION:
+Observers submitted fire missions using incorrect grid zone designator. Training on UTM grid systems is insufficient for new observers.
+
+RECOMMENDATION:
+Add UTM grid exercise to all fire observer certification courses. Use paper maps as backup.
+
+OPR: 1-2 BN S3
+Submitted by: Training NCO

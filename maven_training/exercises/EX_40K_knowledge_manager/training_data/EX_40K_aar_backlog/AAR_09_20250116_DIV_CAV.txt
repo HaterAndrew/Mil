@@ -1,0 +1,17 @@
+AFTER-ACTION REPORT (AAR) — RECORD 09
+Classification: UNCLASSIFIED // TRAINING USE ONLY
+
+date: 2025-01-16
+unit: DIV CAV
+exercise_name: LIGHTNING FORGE
+category: FIRES
+priority: M
+
+OBSERVATION:
+Suppression of enemy air defense (SEAD) was not properly synchronized with the air assault. Attack helicopter ingress route passed through an uncleared air corridor.
+
+RECOMMENDATION:
+Include SEAD timing and air corridor deconfliction in the air mission brief and synchronization matrix.
+
+OPR: DIV CAV S3
+Submitted by: Training NCO
