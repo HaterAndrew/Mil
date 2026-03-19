@@ -7,8 +7,8 @@ Checks:
   2. Stale text refs    — old specialist-letter mappings still embedded in prose
   3. Stale PDFs         — old-scheme PDFs that should no longer exist
   4. Missing PDFs       — current-scheme PDFs that are absent
-  5. Prereq labels      — ALL TM-40 tracks (A–F WFF and G–L specialist) must say TM-30
-  6. No TM-50A–F refs   — those series were retired; only TM-50G–L is valid
+  5. Prereq labels      — ALL TM-40 tracks (A–F WFF and G–M specialist) must say TM-30
+  6. No TM-50A–F refs   — those series were retired; only TM-50G–M is valid
   7. HTML/JS ids        — task_index.html and mss_info_app/index.html checked for stale ids
 
 Run from repo root:
@@ -36,7 +36,7 @@ WFF_TRACKS = {
 SPEC_TRACKS = {
     "40G": "orsa",
     "40H": "ai_engineer",
-    "40I": "ml_engineer",
+    "40M": "ml_engineer",
     "40J": "program_manager",
     "40K": "knowledge_manager",
     "40L": "software_engineer",
@@ -44,7 +44,7 @@ SPEC_TRACKS = {
 ADV_TRACKS = {
     "50G": "orsa_advanced",
     "50H": "ai_engineer_advanced",
-    "50I": "ml_engineer_advanced",
+    "50M": "ml_engineer_advanced",
     "50J": "program_manager_advanced",
     "50K": "knowledge_manager_advanced",
     "50L": "software_engineer_advanced",
@@ -54,12 +54,12 @@ BASE_TRACKS = {"10": "maven_user", "20": "builder", "30": "advanced_builder"}
 ALL_TRACKS = {**BASE_TRACKS, **WFF_TRACKS, **SPEC_TRACKS, **ADV_TRACKS}
 
 # Old specialist labels that were re-lettered: old→new
-# TM-40A=ORSA, B=AIEng, C=MLE, D=PM, E=KM, F=SWE  →  now G–L
+# TM-40A=ORSA, B=AIEng, C=MLE, D=PM, E=KM, F=SWE  →  now G–M
 STALE_SPECIALIST_LABELS = {
     # Pattern: (old display, new correct)
     r"TM[-\s]?40A\s*[=:–—(]\s*ORSA":           "TM-40G (ORSA)",
     r"TM[-\s]?40B\s*[=:–—(]\s*AI\s*Eng":        "TM-40H (AI Engineer)",
-    r"TM[-\s]?40C\s*[=:–—(]\s*ML\s*Eng":        "TM-40I (ML Engineer)",
+    r"TM[-\s]?40C\s*[=:–—(]\s*ML\s*Eng":        "TM-40M (ML Engineer)",
     r"TM[-\s]?40D\s*[=:–—(]\s*Program":         "TM-40J (Program Manager)",
     r"TM[-\s]?40E\s*[=:–—(]\s*Knowledge":       "TM-40K (Knowledge Manager)",
     r"TM[-\s]?40F\s*[=:–—(]\s*Software":        "TM-40L (Software Engineer)",
@@ -70,21 +70,21 @@ STALE_REF_PATTERNS = [
     # TM-50A through TM-50F should not exist at all.
     # Exception: lines that explicitly state they don't exist (negative-context explanations)
     # are valid and should not be flagged. Supply a skip-if pattern as the 3rd tuple element.
-    (r"\bTM[-\s]?50[A-Fa-f]\b", "TM-50A–F series retired; only TM-50G–L valid",
+    (r"\bTM[-\s]?50[A-Fa-f]\b", "TM-50A–F series retired; only TM-50G–M valid",
      r"\b(no|not|do not|don'?t)\b"),
     # Old specialist mapping labels (prose like "TM-40A (ORSA)" or "TM-40A: ORSA")
     # Must be followed immediately by an ORSA/AI/ML/PM/KM/SWE label — not WFF labels
     (r"\bTM[-\s]?40A\s*[\(\[:]?\s*ORSA",      "old specialist label: TM-40A=ORSA → now TM-40G"),
     (r"\bTM[-\s]?40B\s*[\(\[:]?\s*AI\s*Eng",  "old specialist label: TM-40B=AI Eng → now TM-40H"),
-    (r"\bTM[-\s]?40C\s*[\(\[:]?\s*ML\s*Eng",  "old specialist label: TM-40C=ML Eng → now TM-40I"),
+    (r"\bTM[-\s]?40C\s*[\(\[:]?\s*ML\s*Eng",  "old specialist label: TM-40C=ML Eng → now TM-40M"),
     (r"\bTM[-\s]?40D\s*[\(\[:]?\s*Program\s*Manager", "old specialist label: TM-40D=PM → now TM-40J"),
     (r"\bTM[-\s]?40E\s*[\(\[:]?\s*Knowledge\s*Manager", "old specialist label: TM-40E=KM → now TM-40K"),
     (r"\bTM[-\s]?40F\s*[\(\[:]?\s*Software\s*Engineer", "old specialist label: TM-40F=SWE → now TM-40L"),
     # WFF track prereq is TM-30 (policy change 2026-03-14 — all TM-40 require TM-30)
     # Old rule (TM-20 for WFF) removed. No stale-prereq check for WFF here.
     # Wrong prereq: specialist line that asserts TM-20 only (no TM-30 on same line)
-    (r"TM[-\s]?40[G-Lg-l].*prerequisite[:\s]+TM[-\s]?20(?!.*TM[-\s]?30)",
-     "specialist track (G–L) prerequisite set to TM-20; should be TM-30"),
+    (r"TM[-\s]?40[G-Mg-m].*prerequisite[:\s]+TM[-\s]?20(?!.*TM[-\s]?30)",
+     "specialist track (G–M) prerequisite set to TM-20; should be TM-30"),
 ]
 
 # PDFs that should NOT exist (stale naming scheme)
@@ -176,12 +176,9 @@ def check_completeness():
                  **{k: v for k, v in SPEC_TRACKS.items()}}
     for code, slug in ex_tracks.items():
         series = code[:2]
-        ex_dir = MT / "exercises" / f"EX-{series}{code[2:] if len(code)>2 else ''}_{slug}"
-        # Normalise: EX-10_operator_basics etc.
-        # The pattern is EX-{code}_{slug}
-        ex_dir = MT / "exercises" / f"EX-{code}_{slug}"
+        ex_dir = MT / "exercises" / f"EX_{code}_{slug}"
         for fname in ("EXERCISE.md", "ENVIRONMENT_SETUP.md"):
-            check_file_exists(ex_dir / fname, f"Exercise {fname}: EX-{code}")
+            check_file_exists(ex_dir / fname, f"Exercise {fname}: EX_{code}")
 
 
 # ══════════════════════════════════════════════════════════════════════════
@@ -203,9 +200,9 @@ def check_stale_refs():
         skip_rx = re.compile(item[2], re.IGNORECASE) if len(item) > 2 else None
         compiled.append((re.compile(pat, re.IGNORECASE), desc, skip_rx))
 
-    # Detects lines that compare/contrast WFF (A–F) vs specialist (G–L) tracks.
+    # Detects lines that compare/contrast WFF (A–F) vs specialist (G–M) tracks.
     # These are disambiguation lines; prereq mentions on them are intentional.
-    disambig_rx = re.compile(r'TM[-\s]?40[A-Fa-f].*TM[-\s]?40[G-Lg-l]', re.IGNORECASE)
+    disambig_rx = re.compile(r'TM[-\s]?40[A-Fa-f].*TM[-\s]?40[G-Mg-m]', re.IGNORECASE)
 
     # Meta-documents that intentionally describe retired/stale identifiers
     META_DOCS = {"DEPENDENCY_MAP.md"}
@@ -287,7 +284,7 @@ def check_missing_pdfs():
         "40D": "SUSTAINMENT",  "40E": "PROTECTION", "40F": "MISSION_COMMAND",
     }
     spec_ex_names = {
-        "40G": "ORSA", "40H": "AI_ENGINEER", "40I": "ML_ENGINEER",
+        "40G": "ORSA", "40H": "AI_ENGINEER", "40M": "ML_ENGINEER",
         "40J": "PROGRAM_MANAGER", "40K": "KNOWLEDGE_MANAGER", "40L": "SOFTWARE_ENGINEER",
     }
     base_ex_names = {"10": "OPERATOR_BASICS", "20": "NO_CODE_BUILDER", "30": "ADVANCED_BUILDER"}
@@ -303,7 +300,7 @@ def check_prereqs():
 
     # WFF A–F: all TM-40 tracks (including WFF) require TM-30. No stale-prereq check needed here.
 
-    # Specialist G–L: prereq must be TM-30
+    # Specialist G–M: prereq must be TM-30
     for code, slug in SPEC_TRACKS.items():
         series = code[:2]; letter = code[2]
         tm_file = MT / "tm" / f"TM_{series}{letter}_{slug}" / f"TM_{series}{letter}_{slug.upper()}.md"
@@ -331,8 +328,8 @@ def check_html():
     html_patterns = [
         # Stale anchor/id slugs mapping old letters to specialist roles
         (r'(?:id|href)=["\'].*tm-?40[a-f]-(?:orsa|ai-engineer|ml-engineer|program-manager|knowledge-manager|software-engineer)',
-         "old specialist slug in HTML id/href (A–F mapped to ORSA/AI/ML/PM/KM/SWE — should be G–L)"),
-        (r"\btm-?50[a-f]\b",            "TM-50A–F series retired; only TM-50G–L valid"),
+         "old specialist slug in HTML id/href (A–F mapped to ORSA/AI/ML/PM/KM/SWE — should be G–M)"),
+        (r"\btm-?50[a-f]\b",            "TM-50A–F series retired; only TM-50G–M valid"),
     ]
     compiled = [(re.compile(pat, re.IGNORECASE), desc) for pat, desc in html_patterns]
 

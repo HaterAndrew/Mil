@@ -8,13 +8,13 @@
 | **Level** | TM-40C (WFF Track) |
 | **Audience** | G3/S3 maneuver staff, operations officers, S3 NCOs, maneuver planners; prerequisite: completion of TM-40C training |
 | **Time Allowed** | 30 minutes |
-| **Passing Score** | 80% (24/30 points) |
+| **Passing Score** | 80% (32/40 points) |
 
 ---
 
 ## INSTRUCTIONS
 
-This assessment confirms proficiency upon completion of TM-40C training. A score of 80% (24/30) is required for course completion certification. Results are recorded on the student training record.
+This assessment confirms proficiency upon completion of TM-40C training. A score of 80% (32/40) is required for course completion certification. Results are recorded on the student training record.
 
 ---
 
@@ -78,13 +78,27 @@ B. Unit positions, axis of advance, phase line sequence, and timing data togethe
 C. Equipment readiness data only — maneuver graphics are unclassified
 D. Traffic control point locations only — all other maneuver data is publicly releasable
 
+**9. The March 2025 revision of ADP 3-0 added "I" (Informational Considerations) to the METT-TC mission variable framework, creating METT-TC(I). In the MSS planning workspace, the Informational Considerations variable addresses:**
+
+A. Personnel accountability data and unit strength reporting
+B. Information environment effects, OPSEC indicators, and adversary information capabilities
+C. Terrain analysis, weather overlays, and light data
+D. Supply chain status and logistics node capacity
+
+**10. Section 8-4a of TM-40C establishes standard force ratios for planning purposes. According to FM 5-0 planning references, what is the minimum planning ratio (friendly:threat) for a deliberate attack at the point of penetration?**
+
+A. 1:3 — the defender has the advantage in a deliberate attack
+B. 2:1 — numerical superiority is sufficient for a deliberate penetration
+C. 3:1 — three-to-one superiority at the point of penetration is the planning standard
+D. 6:1 — six-to-one is required when the enemy occupies prepared defensive positions
+
 ---
 
 ## SECTION 2 — SHORT ANSWER
 
 *Answer in 3–5 sentences. (5 points each)*
 
-**9. During a rehearsal of concept (ROC) drill, the S3 asks you to display four units simultaneously on the maneuver COP: three maneuver battalions and an attached cavalry squadron. The cavalry squadron feed is showing data that is 90 minutes old — all other feeds are current. Walk through how you would handle this discrepancy in the COP display and what you would say to the S3 before the ROC begins.**
+**11. During a rehearsal of concept (ROC) drill, the S3 asks you to display four units simultaneously on the maneuver COP: three maneuver battalions and an attached cavalry squadron. The cavalry squadron feed is showing data that is 90 minutes old — all other feeds are current. Walk through how you would handle this discrepancy in the COP display and what you would say to the S3 before the ROC begins.**
 
 *(Write your answer below)*
 
@@ -93,7 +107,7 @@ _______________________________________________
 _______________________________________________
 _______________________________________________
 
-**10. An operations officer briefs the commander that 1st Battalion has crossed Phase Line AMBER based on MSS COP data. The battalion S3 immediately calls and says they are still short of Phase Line AMBER — the COP is wrong. Explain what likely caused this discrepancy and what the operations officer should have done differently before briefing.**
+**12. An operations officer briefs the commander that 1st Battalion has crossed Phase Line AMBER based on MSS COP data. The battalion S3 immediately calls and says they are still short of Phase Line AMBER — the COP is wrong. Explain what likely caused this discrepancy and what the operations officer should have done differently before briefing.**
 
 *(Write your answer below)*
 
@@ -118,7 +132,7 @@ It is H-3 hours before an attack order brief. You are the S3 NCO responsible for
 
 The attack order brief is in three hours. The commander expects a fully configured maneuver COP.
 
-**11. Describe your complete course of action for the next three hours. Include: (a) how you prioritize and sequence the tasks, (b) how you handle the 2nd Battalion data gap before the brief, (c) what you brief to the S3 about COP status before the commander enters, and (d) one OPSEC action you take before the brief begins.**
+**13. Describe your complete course of action for the next three hours. Include: (a) how you prioritize and sequence the tasks, (b) how you handle the 2nd Battalion data gap before the brief, (c) what you brief to the S3 about COP status before the commander enters, and (d) one OPSEC action you take before the brief begins.**
 
 *(Write your answer below)*
 
@@ -142,10 +156,12 @@ _______________________________________________
 6. C — brief current status accurately; note the MSS discrepancy; do not brief incorrect MSS data as current
 7. B — 18 hours is significant for route status; validate before briefing passability
 8. B — the combination of positions, direction, phase line sequence, and timing is the most sensitive aggregate
+9. B — Table 2-1b (ADP 3-0, March 2025) defines the "I" in METT-TC(I) as Informational Considerations: information environment effects, OPSEC indicators, and adversary information capabilities. Option A describes personnel data (Troops variable), C describes Terrain and Weather, D describes sustainment data unrelated to the informational dimension.
+10. C — Section 8-4a (FM 5-0 planning reference) establishes 3:1 as the minimum planning ratio for a deliberate attack at the point of penetration. 1:3 is the defender's advantage ratio; 2:1 is below the planning standard; 6:1 describes the delay ratio, not deliberate attack.
 
 **Section 2 — Expected elements:**
-9. Should include: display the cavalry feed with a visible data-as-of timestamp; tell the S3 the cavalry position is 90 minutes old and may not reflect current location; recommend the S3 contact the cav squadron's TOC for a spot report before the ROC; note the discrepancy on the COP so the commander is not surprised.
-10. Should explain: the COP shows last reported position, not confirmed current position; the operations officer should have stated data-as-of time when briefing the phase line crossing; should have confirmed through primary reporting channel (radio check with 1st Bn S3) before briefing the commander a maneuver milestone.
+11. Should include: display the cavalry feed with a visible data-as-of timestamp; tell the S3 the cavalry position is 90 minutes old and may not reflect current location; recommend the S3 contact the cav squadron's TOC for a spot report before the ROC; note the discrepancy on the COP so the commander is not surprised.
+12. Should explain: the COP shows last reported position, not confirmed current position; the operations officer should have stated data-as-of time when briefing the phase line crossing; should have confirmed through primary reporting channel (radio check with 1st Bn S3) before briefing the commander a maneuver milestone.
 
 **Section 3 — Expected elements:**
 (a) Prioritize: load the axis of advance overlay and update task org first (missing graphics, not just stale); then address the 2nd Battalion feed — contact 2nd Bn TOC for current position; COP completeness matters more than order.
@@ -155,7 +171,7 @@ _______________________________________________
 
 ---
 
-*Total points: 30. Passing score: 24 (80%).*
+*Total points: 40 (MC: 10 × 2 = 20, SA: 2 × 5 = 10, Scenario: 10). Passing score: 32 (80%).*
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*EX-TM40C-POST | Version 1.0 | March 2026*
+*EX_TM40C-POST | Version 1.0 | March 2026*

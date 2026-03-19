@@ -25,7 +25,7 @@ Defines course content, instructional methods, evaluation criteria, and resource
 
 ### 1-3. Scope
 
-This POI covers eighteen courses in five tiers, plus the Builder Sprint (BSP) event program:
+This POI covers eighteen courses in five tiers, plus the Builder Sprint (BSP) event program and two Train-the-Trainer (T3) courses:
 
 | Tier | Courses | Notes |
 |---|---|---|
@@ -33,19 +33,25 @@ This POI covers eighteen courses in five tiers, plus the Builder Sprint (BSP) ev
 | 2 — Builder | TM-20 | All staff building or maintaining data products |
 | 3 — Advanced Builder | TM-30 | Data-adjacent specialists and unit data leads |
 | 4a — WFF Functional | TM-40A through TM-40F | Warfighting function staff; prereq TM-30 |
-| 4b — Specialist | TM-40G through TM-40L | Role-specific specialist training; prereq TM-30 |
+| 4b — Specialist | TM-40G through TM-40M | Role-specific specialist training; prereq TM-30 |
 | — | Builder Sprint (BSP) | **Outside TM chain.** Quarterly applied build event; prereq TM-20 + validated project; no TM credit. See BSP-SOP-001. |
+| — | T3-I (Instructor Certification) | **Outside TM chain.** 5 days classroom + supervised practicum; prereq TM-30 + C2DAO selection. |
+| — | T3-F (MSC Force Multiplier) | **Outside TM chain.** 3 days; prereq TM-20 + CDR nomination. Produces Unit Data Trainers. |
 
 ### 1-4. Prerequisite Chain
 
 ```
 TM-10 (all personnel)
   └── TM-20 (builders)
+  │     └── T3-F (MSC Force Multiplier — Unit Data Trainer; + CDR nomination)
+  │
+  └── TM-20 (builders)
         └── TM-30 (advanced builders / data-adjacent / WFF functional staff)
+              ├── T3-I (Instructor Certification; + C2DAO selection)
               ├── TM-40A through TM-40F (WFF functional tracks — INT/FIRES/M2/SUST/PROT/MC staff)
               ├── TM-40G (ORSA)
               ├── TM-40H (AI Engineer)
-              ├── TM-40I (ML Engineer)
+              ├── TM-40M (ML Engineer)
               ├── TM-40J (Program Manager)
               ├── TM-40K (Knowledge Manager)
               └── TM-40L (Software Engineer)
@@ -95,20 +101,20 @@ All MSS training is conducted in the **MSS Training Environment** — a dedicate
 | TM-40F | Mission Command WFF | WFF Functional | 3 days | 24 | TM-10, TM-20, TM-30 (Required) |
 | TM-40G | ORSA Specialist | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
 | TM-40H | AI Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
-| TM-40I | ML Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
+| TM-40M | ML Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
 | TM-40J | Program Manager | Specialist | 4 days | 32 | TM-10, TM-20, TM-30 (Required) |
 | TM-40K | Knowledge Manager | Specialist | 4 days | 32 | TM-10, TM-20, TM-30 (Required) |
 | TM-40L | Software Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
 | TM-50G | Advanced ORSA | Advanced Specialist | 5 days | 40 | TM-40G (Required) |
 | TM-50H | Advanced AI Engineer | Advanced Specialist | 5 days | 40 | TM-40H (Required) |
-| TM-50I | Advanced ML Engineer | Advanced Specialist | 5 days | 40 | TM-40I (Required) |
+| TM-50M | Advanced ML Engineer | Advanced Specialist | 5 days | 40 | TM-40M (Required) |
 | TM-50J | Advanced Program Manager | Advanced Specialist | 3 days | 24 | TM-40J (Required) |
 | TM-50K | Advanced Knowledge Manager | Advanced Specialist | 3 days | 24 | TM-40K (Required) |
 | TM-50L | Advanced Software Engineer | Advanced Specialist | 5 days | 40 | TM-40L (Required) |
 
-> **NOTE:** TM-40A–F (WFF functional tracks) require TM-10, TM-20, and TM-30 as hard prerequisites. TM-40G–L (specialist tracks) and TM-50G–L (advanced specialist tracks) also require TM-30 as a hard prerequisite. There are NO TM-50A–F tracks.
+> **NOTE:** TM-40A–F (WFF functional tracks) require TM-10, TM-20, and TM-30 as hard prerequisites. TM-40G–M (specialist tracks) and TM-50G–M (advanced specialist tracks) also require TM-30 as a hard prerequisite. TM-50 is G–M only.
 
-**Total program hours (full progression to any single WFF or specialist track):** 133 hours (TM-10 through TM-40G/H/I/L); 97 hours (TM-10 through TM-40A–F)
+**Total program hours (full progression to any single WFF or specialist track):** 133 hours (TM-10 through TM-40G/H/M/L); 97 hours (TM-10 through TM-40A–F)
 **Total program hours (full progression to any single advanced specialist track):** 173 hours (TM-10 through TM-50G/H/I/L)
 
 ### 2-2. Training Philosophy
@@ -335,34 +341,34 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 
 ---
 
-### 3-6. TM-40I: ML Engineer
+### 3-6. TM-40M: ML Engineer
 
 **Course length:** 5 days (40 hours) | **Evaluation:** Practical exercise (7 tasks); model card review; Go/No-Go
 
 | Day | Block | Title | Hours | Method | Reference |
 |---|---|---|---|---|---|
-| 1 | 1 | MLE Role on MSS; Model Governance Overview; Responsible AI for Operational Models | 1.0 | BRF | TM-40I Ch 1, 9 |
-| 1 | 2 | Code Workspace Setup: GPU Allocation, Package Management, Foundry Connectivity | 2.0 | LAB | TM-40I Ch 2 |
-| 1 | 3 | Foundry Write Pattern for ML: Transaction-Based Output Writes from Code Workspace | 0.75 | LAB | TM-40I Ch 2 Sec 2-4 |
-| 1 | 4 | Feature Engineering Principles: Null Handling, Encoding, Scaling, Leakage Detection | 2.0 | LEC | TM-40I Ch 3 Sec 3-1 |
-| 1 | 5 | Feature Engineering Practice: Apply Standards to Provided Dataset; Document Features | 1.75 | LAB | TM-40I Ch 3 Sec 3-2 |
-| 2 | 6 | Feature Pipeline Build: Raw → Feature Matrix (Null, Encoding, Scaling) | 2.75 | LAB | TM-40I Ch 3 Sec 3-3 |
-| 2 | 7 | Feature Pipeline: Leakage Audit — Verify No Feature Derived from Label | 0.75 | LAB | TM-40I Ch 3 Sec 3-4 |
-| 2 | 8 | Feature Pipeline: Output to Foundry Curated Dataset via Write Transaction | 2.0 | LAB | TM-40I Ch 3 Sec 3-5 |
-| 2 | 9 | Experiment Setup: Train/Test Split, Cross-Validation, Baseline Model | 1.75 | LAB | TM-40I Ch 4 Sec 4-1 |
-| 3 | 10 | Model Training: scikit-learn/PyTorch in Code Workspace; Cross-Validation; Hyperparameter Tuning | 2.75 | LAB | TM-40I Ch 4 Sec 4-2 |
-| 3 | 11 | Model Evaluation: Accuracy/Precision/Recall/ROC-AUC; Acceptance Thresholds; Calibration | 1.0 | LAB | TM-40I Ch 5 |
-| 3 | 12 | Model Comparison Exercise: Train Two Models, Select Winner, Document Rationale | 2.0 | LAB | TM-40I Ch 5 Sec 5-3 |
-| 3 | 13 | Experiment Tracking: Log Parameters/Metrics to Foundry Model Registry; Versioning | 1.75 | LAB | TM-40I Ch 6 |
-| 4 | 14 | Model Deployment: Serving Endpoint, Inference API, Latency/Throughput Verification | 2.0 | LAB | TM-40I Ch 7 Sec 7-1 |
-| 4 | 15 | Connecting Deployed Model to Ontology: Actions That Invoke Inference, Write Predictions | 1.25 | LAB | TM-40I Ch 7 Sec 7-2 |
-| 4 | 16 | Monitoring Pipeline: Data Drift Detection, Threshold Definition, Alert Routing | 2.0 | LAB | TM-40I Ch 7 Sec 7-3 |
-| 4 | 17 | Operational Use Case Patterns: Readiness Prediction, Logistics Forecasting, Anomaly Detection | 1.75 | LAB | TM-40I Ch 8 |
-| 5 | 18 | Model Governance: Model Card Completion — Assumptions, Limitations, Responsible AI Declaration | 1.0 | LAB | TM-40I Ch 9 |
+| 1 | 1 | MLE Role on MSS; Model Governance Overview; Responsible AI for Operational Models | 1.0 | BRF | TM-40M Ch 1, 9 |
+| 1 | 2 | Code Workspace Setup: GPU Allocation, Package Management, Foundry Connectivity | 2.0 | LAB | TM-40M Ch 2 |
+| 1 | 3 | Foundry Write Pattern for ML: Transaction-Based Output Writes from Code Workspace | 0.75 | LAB | TM-40M Ch 2 Sec 2-4 |
+| 1 | 4 | Feature Engineering Principles: Null Handling, Encoding, Scaling, Leakage Detection | 2.0 | LEC | TM-40M Ch 3 Sec 3-1 |
+| 1 | 5 | Feature Engineering Practice: Apply Standards to Provided Dataset; Document Features | 1.75 | LAB | TM-40M Ch 3 Sec 3-2 |
+| 2 | 6 | Feature Pipeline Build: Raw → Feature Matrix (Null, Encoding, Scaling) | 2.75 | LAB | TM-40M Ch 3 Sec 3-3 |
+| 2 | 7 | Feature Pipeline: Leakage Audit — Verify No Feature Derived from Label | 0.75 | LAB | TM-40M Ch 3 Sec 3-4 |
+| 2 | 8 | Feature Pipeline: Output to Foundry Curated Dataset via Write Transaction | 2.0 | LAB | TM-40M Ch 3 Sec 3-5 |
+| 2 | 9 | Experiment Setup: Train/Test Split, Cross-Validation, Baseline Model | 1.75 | LAB | TM-40M Ch 4 Sec 4-1 |
+| 3 | 10 | Model Training: scikit-learn/PyTorch in Code Workspace; Cross-Validation; Hyperparameter Tuning | 2.75 | LAB | TM-40M Ch 4 Sec 4-2 |
+| 3 | 11 | Model Evaluation: Accuracy/Precision/Recall/ROC-AUC; Acceptance Thresholds; Calibration | 1.0 | LAB | TM-40M Ch 5 |
+| 3 | 12 | Model Comparison Exercise: Train Two Models, Select Winner, Document Rationale | 2.0 | LAB | TM-40M Ch 5 Sec 5-3 |
+| 3 | 13 | Experiment Tracking: Log Parameters/Metrics to Foundry Model Registry; Versioning | 1.75 | LAB | TM-40M Ch 6 |
+| 4 | 14 | Model Deployment: Serving Endpoint, Inference API, Latency/Throughput Verification | 2.0 | LAB | TM-40M Ch 7 Sec 7-1 |
+| 4 | 15 | Connecting Deployed Model to Ontology: Actions That Invoke Inference, Write Predictions | 1.25 | LAB | TM-40M Ch 7 Sec 7-2 |
+| 4 | 16 | Monitoring Pipeline: Data Drift Detection, Threshold Definition, Alert Routing | 2.0 | LAB | TM-40M Ch 7 Sec 7-3 |
+| 4 | 17 | Operational Use Case Patterns: Readiness Prediction, Logistics Forecasting, Anomaly Detection | 1.75 | LAB | TM-40M Ch 8 |
+| 5 | 18 | Model Governance: Model Card Completion — Assumptions, Limitations, Responsible AI Declaration | 1.0 | LAB | TM-40M Ch 9 |
 | 5 | 19 | Deployment Approval and C2DAO Governance for Deployed Models | 1.0 | BRF | Standards Ch 4 |
 | 5 | 20 | Practical Exercise Scenario Brief; Planning Time | 1.5 | BRF | — |
-| 5 | 21 | Practical Exercise (Evaluated): Feature Pipeline → Train → Evaluate → Deploy → Monitor → Governance | 4.0 | EVAL | TM-40I Practical Exercise Guide |
-| | | **TM-40I Total** | **40.0** | | |
+| 5 | 21 | Practical Exercise (Evaluated): Feature Pipeline → Train → Evaluate → Deploy → Monitor → Governance | 4.0 | EVAL | TM-40M Practical Exercise Guide |
+| | | **TM-40M Total** | **40.0** | | |
 
 ---
 
@@ -458,7 +464,7 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 | TM-40F (MC WFF) | TM-40F certified; Mission Command/G6 background; TM-30 proficiency | 8:1 |
 | TM-40G | FA49 or equivalent ORSA background; TM-40G certified or C2DAO SME designation | 4:1 |
 | TM-40H | AIP Logic authoring experience; C2DAO AI SME designation; TM-40H certified | 4:1 |
-| TM-40I | ML production experience; TM-40I certified; C2DAO MLE SME designation | 4:1 |
+| TM-40M | ML production experience; TM-40M certified; C2DAO MLE SME designation | 4:1 |
 | TM-40J | Program management background; TM-30 certified; GFEBS/IMS proficiency | 6:1 |
 | TM-40K | Knowledge management background; TM-30 certified; AIP Logic configuration proficiency | 6:1 |
 | TM-40L | Software engineering background; OSDK/Platform SDK proficiency; TM-40L certified | 4:1 |
@@ -473,7 +479,7 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 | TM-40A–F (WFF) | MSS Builder | 5 duty days |
 | TM-40G | Code Workspace (CPU or GPU) + standard Editor | 7–10 duty days |
 | TM-40H | AIP Logic authoring + Agent Studio | 7–10 duty days |
-| TM-40I | GPU-enabled Code Workspace | 10+ duty days |
+| TM-40M | GPU-enabled Code Workspace | 10+ duty days |
 | TM-40J | MSS Builder | 5 duty days |
 | TM-40K | MSS Builder + AIP Logic configuration | 5–7 duty days |
 | TM-40L | OSDK developer access + developer token | 10+ duty days |
@@ -505,7 +511,7 @@ Go requires all three:
 | TM-20 | Viewer-role test account can trigger Action or modify data |
 | TM-30 | Fatally-flawed Ontology design not corrected before build; promotion submitted without description |
 | TM-40H | Any AIP workflow writes to production Objects without human checkpoint |
-| TM-40I | Model calibration not performed; governance document missing required sections |
+| TM-40M | Model calibration not performed; governance document missing required sections |
 | TM-40J | Dashboard has no data-as-of timestamp |
 | TM-40K | AIP workflow auto-publishes without human review gate |
 | TM-40L | Hardcoded credential in application code; validator test suite not fully passing |
@@ -514,7 +520,7 @@ Go requires all three:
 
 A trainee who receives No-Go must:
 1. Receive documented counseling within 1 duty day (DA Form 4856 or equivalent)
-2. Conduct remediation on failed tasks — minimum 4 hours for TM-10/20/40J/40K; minimum 8 hours for TM-30/40G/40H/40I/40L
+2. Conduct remediation on failed tasks — minimum 4 hours for TM-10/20/40J/40K; minimum 8 hours for TM-30/40G/40H/40M/40L
 3. Be re-evaluated within 10 duty days
 4. A second No-Go requires C2DAO approval before a third evaluation
 
@@ -539,14 +545,66 @@ Upon successful completion (Go):
 | TM-40A–F (each) | 1.0 | 15.0 | 1.0 | — | 3.0 | 20.0* |
 | TM-40G | 2.0 | 30.0 | 1.0 | — | 4.0 | 37.0* |
 | TM-40H | 3.75 | 28.25 | — | 2.0 | 4.0 | 38.0* |
-| TM-40I | 1.0 | 31.0 | — | — | 4.0 | 36.0* |
+| TM-40M | 1.0 | 31.0 | — | — | 4.0 | 36.0* |
 | TM-40J | 0.5 | 17.75 | 0.5 | — | 4.0 | 22.75* |
 | TM-40K | 1.0 | 14.25 | — | 2.25 | 4.0 | 21.5* |
 | TM-40L | 2.0 | 30.0 | — | — | 4.0 | 36.0* |
 
 *Remainder of scheduled hours are review periods and scenario briefs not separately categorized above.
 
-> **NOTE:** TM-40A–F are 3-day/24-hour courses requiring TM-30 as a prerequisite. The hours summary above reflects approximate method distribution; exact distribution varies by WFF track and is specified in the applicable WFF Syllabus. TM-50G–L course hour breakdowns are specified in the applicable advanced specialist Syllabi and are not reproduced here.
+> **NOTE:** TM-40A–F are 3-day/24-hour courses requiring TM-30 as a prerequisite. The hours summary above reflects approximate method distribution; exact distribution varies by WFF track and is specified in the applicable WFF Syllabus. TM-50G–M course hour breakdowns are specified in the applicable advanced specialist Syllabi and are not reproduced here.
+
+---
+
+## CHAPTER 8 — TRAIN-THE-TRAINER (T3) COURSES
+
+### 8-1. Overview
+
+The T3 courses sit outside the TM-10 through TM-50 operational training chain. They serve two distinct purposes:
+
+| Course | Purpose | Duration | Prerequisite | Output |
+|---|---|---|---|---|
+| T3-I | Instructor Certification | 5 days (40 hrs) classroom + supervised practicum | TM-30 Go + C2DAO selection | Certified MSS Instructor |
+| T3-F | MSC Force Multiplier | 3 days (24 hrs) | TM-20 Go + CDR nomination | Unit Data Trainer (UDT) |
+
+T3-I and T3-F are independent — neither is a prerequisite for the other.
+
+### 8-2. T3-I: Instructor Certification
+
+**Phase 1 — Classroom (5 days, 40 hours):**
+
+| Day | Focus | Hours |
+|---|---|---|
+| 1 | Foundations of MSS Instruction: adult learning principles, Army instructional methodology, training philosophy, pre-course checklist, instructor performance standards | 8 |
+| 2 | Platform Deep-Dive for Instruction: TM-10/20/30 exercise walkthroughs from instructor seat, 6 pre-staged environment failures, T&EO scoring calibration | 8 |
+| 3 | Lab Facilitation and Error Management: facilitation techniques, simulated lab facilitation, common trainee error taxonomy, coaching vs. evaluating, check-on-learning design | 8 |
+| 4 | Assessment Design and Evaluation Standardization: T&EO structure, assessment design practicum, evaluation calibration (3 performances), exam administration, No-Go counseling | 8 |
+| 5 | Microteaching and Evaluation: 20-min microteaching block (evaluated), written exam (20 questions, 80% pass), AAR, Phase 2 requirements brief | 8 |
+
+**Phase 1 Go:** Microteaching satisfactory on 5/7 criteria (hard No-Go on Technical Accuracy or Evaluation Fidelity) + written exam ≥ 80%.
+
+**Phase 2 — Supervised Practicum (scheduled separately):** Co-teach → lead observed → evaluator observation (optional) → certification.
+
+**Resources:** 1 Senior or Master Instructor per 8 candidates; classroom with projector and workstations; pre-staged environment failures; recorded trainee performances for calibration.
+
+### 8-3. T3-F: MSC Force Multiplier
+
+| Day | Focus | Hours |
+|---|---|---|
+| 1 | Understanding the Materials: TM-10 document set walkthrough, TM-20 refresher scope, abbreviated adult learning principles, pre-course checklist execution, exam administration, reporting | 8 |
+| 2 | Evaluation and Troubleshooting: T&EO walkthrough (TM10-01 through TM10-06), Go/No-Go decision exercise, No-Go procedures, 5 pre-staged environment failures, escalation decision matrix | 8 |
+| 3 | Teach-Back and Evaluation: 15–20 min teach-back (evaluated), Go/No-Go practicum (evaluated), troubleshooting exam (evaluated), AAR, certification | 8 |
+
+**Go:** Teach-back satisfactory on technical accuracy + materials use; correct Go/No-Go decision on practicum; resolve 2/3 troubleshooting issues.
+
+**Resources:** 1 Certified Instructor per 8 candidates; classroom with projector and workstations; 5 pre-staged environment failures; role-play scenarios.
+
+### 8-4. T3 Hours Summary
+
+| Course | LEC/SEM | LAB | WKS | DIS | EVAL | Total |
+|---|---|---|---|---|---|---|
+| T3-I | 9.75 | 18.5 | — | 4.0 | 7.75 | 40.0 |
+| T3-F | 3.5 | 10.5 | — | 2.0 | 8.0 | 24.0 |
 
 ---
 

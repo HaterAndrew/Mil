@@ -8,7 +8,7 @@
 | **Level** | TM-30 (Advanced) |
 | **Audience** | Data-adjacent specialists — 17/25-series, S6/G6/G2; prerequisite: TM-10 + TM-20 |
 | **Time Allowed** | 45 minutes |
-| **Passing Score** | 70% (42/60) |
+| **Passing Score** | 70% (50/72) |
 
 ---
 
@@ -127,6 +127,48 @@ B. Use a conditional show/hide block: show a text widget with "No data available
 C. Configure the filter to prevent selection of values that return no records
 D. Add a pipeline validation step that blocks empty results from being written to the dataset
 
+**16. Per DDOF Playbook v2.2, a data product that reaches Phase 3 (Data Wrangling) must pass a quality gate scored against the VAULTIS-A framework. The number of dimensions in VAULTIS-A and the minimum weighted average required to pass are:**
+
+A. 5 dimensions (Visible, Accessible, Understandable, Trusted, Interoperable); 80% weighted average
+B. 7 dimensions (Visible, Accessible, Understandable, Linked, Trusted, Interoperable, Secure); 85% weighted average
+C. 8 dimensions (Visible, Accessible, Understandable, Linked, Trusted, Interoperable, Secure, Auditable); 85% weighted average
+D. 8 dimensions (Visible, Accessible, Understandable, Linked, Trusted, Interoperable, Secure, Auditable); 90% weighted average
+
+**17. Per DDOF Playbook v2.2, a data product in production that has not been accessed by any consumer in 90 days triggers which action?**
+
+A. Automatic retirement and deletion from the platform
+B. Functional Data Manager (FDM) review; 180 days with no access initiates retirement
+C. Re-certification against all six DDOF phases before continued use
+D. Downgrade to "draft" status with read-only access until the owner re-validates
+
+**18. An advanced builder is designing an MSS application for a unit operating in an environment with intermittent network connectivity. Per TM-30 DDIL planning requirements, the correct mitigation for an intermittent (periodic connectivity) environment is:**
+
+A. Pre-staged data packages with local compute and no synchronization
+B. Store-and-forward queues with delta sync when connectivity is available
+C. Text-only data products with reduced refresh rates
+D. Full-bandwidth replication during each connectivity window
+
+**19. Per DDOF Playbook v2.2, the six lifecycle phases in correct order are:**
+
+A. Problem Framing → Data Wrangling → Data Provisioning → Development → Test & Evaluation → Operations
+B. Data Provisioning → Problem Framing → Data Wrangling → Development → Test & Evaluation → Operations
+C. Problem Framing → Data Provisioning → Data Wrangling → Development → Test & Evaluation → Operations
+D. Problem Framing → Data Provisioning → Development → Data Wrangling → Test & Evaluation → Operations
+
+**20. During DDOF Phase 1, a requirement must pass SMART criteria before advancing to Phase 2. If the mission owner states, "I need a readiness dashboard sometime this quarter," this requirement fails SMART because:**
+
+A. It is not Specific — "readiness dashboard" does not define what readiness data is needed
+B. It is not Measurable — there is no accuracy standard against an authoritative source
+C. It fails both Specific and Time-bound — the data scope is undefined and "sometime this quarter" is not a date-certain IOC
+D. It is not Achievable — readiness dashboards cannot be built in one quarter
+
+**21. Per Genesis Mission directives and DDOF Playbook v2.2, "fail-closed enforcement" means that when the authorization service is unavailable or a user's role cannot be verified, the data product must:**
+
+A. Grant read-only access until the authorization service recovers
+B. Deny access, log the denial, and require explicit re-authorization once the service recovers
+C. Fall back to the user's last known role and grant access at that level
+D. Queue the access request and grant it automatically when the authorization service returns
+
 ---
 
 ## SECTION 2 — SHORT ANSWER
@@ -189,11 +231,11 @@ D. Add a pipeline validation step that blocks empty results from being written t
 
 | Section | Questions | Points Each | Total Points |
 |---|---|---|---|
-| Multiple Choice | 15 | 2 | 30 |
+| Multiple Choice | 21 | 2 | 42 |
 | Short Answer | 5 | 6 | 30 |
-| **Total** | — | — | **60** |
+| **Total** | — | — | **72** |
 
-Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
+Passing: 50/72 (70%) — Post-test only. Pre-test is diagnostic.
 
 ---
 
@@ -217,6 +259,12 @@ Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
 13. B — Pre-aggregating the many-side before joining is the standard fan-out handling technique.
 14. B — Pivot table with unit as rows, ammo_type as columns, quantity as aggregated value.
 15. B — Conditional show/hide: show "no data" text widget when row count = 0.
+16. C — VAULTIS-A has 8 dimensions (V-A-U-L-T-I-S-A: Visible, Accessible, Understandable, Linked, Trusted, Interoperable, Secure, Auditable) and requires 85% weighted average. VAULTIS-A supersedes VAUTI (5 dimensions, AR 25-1) per DDOF Playbook v2.2 (Dec 2025). Option A describes the older VAUTI framework. Option B has 7 dimensions (omits Auditable). Option D has the correct dimensions but wrong threshold (90% vs. 85%). Source: TM-30, Section 1-10 / DDOF Playbook v2.2.
+17. B — Products with no access in 90 days require FDM review; 180 days no access initiates retirement. Quality gates are enforced, not advisory — products failing below 70% quality trigger remediate-or-retire. Option A is wrong because 90 days triggers review, not automatic retirement. Option C overstates the re-certification requirement. Option D invents a "draft" downgrade status not in doctrine. Source: TM-30, Section 1-10 / DDOF Playbook v2.2.
+18. B — Intermittent connectivity requires store-and-forward queues with delta sync. Option A describes mitigations for a denied (no network) environment. Option C describes limited (low bandwidth) mitigations. Option D is not a defined DDIL mitigation. Source: TM-30, Section 1-10e (DDIL Environments) / ADP 6-0 / UDRA v1.1.
+19. C — The correct DDOF phase order is: Phase 1 Problem Framing → Phase 2 Data Provisioning → Phase 3 Data Wrangling → Phase 4 Development → Phase 5 Test & Evaluation → Phase 6 Operations. Option A swaps Phases 2 and 3. Option B places Data Provisioning before Problem Framing. Option D places Development before Data Wrangling. Source: TM-30, Section 1-10 / DDOF Playbook v2.2.
+20. C — The requirement fails both Specific (no definition of what readiness data is needed or which units) and Time-bound ("sometime this quarter" is not a date-certain IOC). Options A and B each identify only one failure — SMART requires all five criteria, and this requirement fails at least two. Option D is incorrect because readiness dashboards are achievable within a quarter given platform and data availability. A requirement that fails any SMART criterion must be returned to the Decision Maker for refinement before Phase 2. Source: TM-30, Section 1-10b / DDOF Playbook v2.2.
+21. B — Fail-closed enforcement means deny access when authorization cannot be confirmed, log all denials, and require explicit re-authorization. Option A (read-only fallback) is a fail-open variant — not permitted. Option C (last known role fallback) is also fail-open — roles may have changed. Option D (auto-grant on recovery) bypasses explicit authorization. Per Genesis Mission directives, products that default to granting access on authorization failure will not pass Phase 5 T&E. Source: TM-30, Section 1-10c / DDOF Playbook v2.2.
 
 **Short Answer Guidance:**
 
@@ -228,9 +276,9 @@ SA-3. Full credit: Object Types — NetworkNode (node_id, type, location, status
 
 SA-4. Full credit: Builder completes work on branch → writes promotion description (what/why/QC passed) → submits for data steward review → data steward reviews naming, schema, pipeline logic, data quality → approves or returns with feedback → builder addresses feedback → re-submits → data steward approves → branch merged to production. Most common rejection point: promotion description review — most frequent reason: naming convention violations (non-C2DAO names) or missing data quality check confirmation. Partial credit (3 pts) for correct sequence without identifying rejection point.
 
-SA-5. Full credit: WFF tracks — TM-40A through TM-40F (Intelligence, Fires, Movement & Maneuver, Sustainment, Protection, Mission Command); prerequisite is TM-30 (required — same prereq chain as Specialist tracks: TM-10 + TM-20 + TM-30); example: TM-40A (Intelligence WFF) or any of A–F. Specialist tracks — TM-40G through TM-40L (ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, Software Engineer); prerequisite is TM-30 (REQUIRED hard prereq); example: TM-40G (ORSA) or any of G–L. NOTE: TM-50A–F do NOT exist; advanced specialist tracks are TM-50G–L (prereq: corresponding TM-40G–L track). Partial credit (3 pts) for correctly describing one category with correct IDs, prereq, and example.
+SA-5. Full credit: WFF tracks — TM-40A through TM-40F (Intelligence, Fires, Movement & Maneuver, Sustainment, Protection, Mission Command); prerequisite is TM-30 (required — same prereq chain as Specialist tracks: TM-10 + TM-20 + TM-30); example: TM-40A (Intelligence WFF) or any of A–F. Specialist tracks — TM-40G through TM-40M (ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, Software Engineer); prerequisite is TM-30 (REQUIRED hard prereq); example: TM-40G (ORSA) or any of G–M. NOTE: TM-50 is G–M only; advanced specialist tracks are TM-50G–M (prereq: corresponding TM-40 specialist track). Partial credit (3 pts) for correctly describing one category with correct IDs, prereq, and example.
 
 ---
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*TM-30 Post-Test | Version 1.0 | March 2026*
+*TM-30 Post-Test | Version 1.1 | March 2026*

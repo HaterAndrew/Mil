@@ -93,6 +93,8 @@ This structure forces explicit documentation of the assumptions that drive the r
 
 ### 3-2. Sensitivity Analysis — The Most Important Quality Check
 
+> **NOTE:** TM-40G now covers advanced multi-variable sensitivity analysis for MOE/MOP, including simultaneous variation of multiple parameters and interaction effects. Review that material before applying the single-variable methods below to multi-criteria assessments.
+
 Sensitivity analysis answers: which assumption, if wrong, would most change the recommendation?
 
 This is the TM-50G ORSA's most important quality check and is systematically underused. Most analysts run their model, check that results are sensible, and deliver. Sensitivity analysis requires deliberately breaking the model — varying one assumption at a time to the edge of plausible range.
@@ -160,7 +162,11 @@ More senior audiences need analysis that is more clearly scoped, more honestly u
 
 An analyst who produces a 40-page methodology report for a 48-hour decision has misallocated effort. Calibrating analytical depth to decision time is a hallmark of senior-level ORSA maturity.
 
-### 5-3. Coalition Visibility Considerations
+### 5-3. The Operations Assessment Working Group
+
+> **NOTE:** TM-40G now addresses the ORSA's role in the operations assessment working group (OAWG), including structured assessment frameworks and coordination with the G3/G5. The theater-level product guidance below assumes familiarity with that OAWG foundation; advanced ORSAs are expected to lead or advise the OAWG analytical methodology, not just contribute products to it.
+
+### 5-4. Coalition Visibility Considerations
 
 Theater-level products in USAREUR-AF frequently have coalition visibility. Key considerations:
 
@@ -175,6 +181,8 @@ Theater-level products in USAREUR-AF frequently have coalition visibility. Key c
 ## SECTION 6 — CROSS-DOMAIN DATA INTEGRATION
 
 ### 6-1. The Appeal and the Hazard
+
+> **NOTE:** TM-40G now covers structured MOE/MOP indicator frameworks and multi-variable sensitivity analysis that directly apply to cross-domain risk quantification. Ensure familiarity with the TM-40G assessment taxonomy (Section 1-7, Table 1-2) before designing cross-domain integration products at theater level.
 
 **BLUF:** Cross-domain data integration is where the most analytically interesting theater-level insights live — and where the most analytically dangerous errors originate.
 
@@ -299,6 +307,8 @@ When ORSA methods are applied to personnel data — identifying high-risk indivi
 
 ### 9-3. Anchoring to Prior Analysis
 
+> **NOTE:** TM-40G introduces Bayesian assessment updating as a formal method for incorporating new data into prior estimates. The anchoring failure described below is distinct from principled Bayesian updating — the former is cognitive bias; the latter is a disciplined framework for revising assessments. Understand the TM-40G Bayesian material before applying the diagnostic questions here.
+
 The most common senior ORSA failure mode: rerunning a prior analysis with new data and treating prior conclusions as the baseline to defend rather than the hypothesis to test.
 
 Anchoring manifests as: expecting conclusions similar to last cycle; investigating anomalies only when they produce significantly worse results; adjusting assumptions to restore prior conclusions rather than examining why new data produces different ones.
@@ -347,7 +357,7 @@ Before proceeding to TM-50G task procedures, confirm you can answer the followin
 | Section 2 (Multi-Method Analysis) | Chapter 2, Chapter 4 |
 | Section 3 (Wargaming and Sensitivity) | Chapter 5 |
 | Section 4 (Decision Analysis Under Uncertainty) | Chapter 6 |
-| Section 5 (Theater-Level Products) | Chapter 7 |
+| Section 5 (Theater-Level Products; Operations Assessment WG) | Chapter 7 |
 | Section 6 (Cross-Domain Integration) | Chapter 4, Chapter 8 |
 | Section 7 (Building Analytical Pipelines) | Chapter 8 |
 | Section 8 (Ethics and Responsibility) | Chapter 7, Appendix B |
@@ -364,7 +374,7 @@ Before proceeding to TM-50G task procedures, confirm you can answer the followin
 | Publication | Track | Coordination Point |
 |---|---|---|
 | TM-50H | Advanced AI Engineer | Productionizing ORSA models; evaluation methodology |
-| TM-50I | Advanced ML Engineer | ML methods feeding ORSA analytical products |
+| TM-50M | Advanced ML Engineer | ML methods feeding ORSA analytical products |
 | TM-50J | Advanced Program Manager | Portfolio-level OR program governance |
 | TM-50K | Advanced Knowledge Manager | Capturing and surfacing ORSA-derived insights |
 | TM-50L | Advanced Software Engineer | Platform infrastructure supporting ORSA pipelines |

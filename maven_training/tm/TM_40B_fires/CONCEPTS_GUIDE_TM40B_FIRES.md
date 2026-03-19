@@ -446,13 +446,13 @@ All six WFF tracks are at the same tier. All six WFF tracks require TM-10, TM-20
 
 ### Specialist Tracks (Prerequisite: TM-30)
 
-For personnel pursuing technical depth, specialist tracks (TM-40G–L, prereq TM-30) are available. Not required for fires WFF employment.
+For personnel pursuing technical depth, specialist tracks (TM-40G–M, prereq TM-30) are available. Not required for fires WFF employment.
 
 | Track | Title |
 |-------|-------|
 | TM-40G | ORSA (→ TM-50G) |
 | TM-40H | AI Engineer (→ TM-50H) |
-| TM-40I | ML Engineer (→ TM-50I) |
+| TM-40M | ML Engineer (→ TM-50M) |
 | TM-40J | Program Manager (→ TM-50J) |
 | TM-40K | Knowledge Manager (→ TM-50K) |
 | TM-40L | Software Engineer (→ TM-50L) |
@@ -464,6 +464,8 @@ For personnel pursuing technical depth, specialist tracks (TM-40G–L, prereq TM
 *CONCEPTS GUIDE — TM-40B COMPANION, Version 1.0, March 2026*
 
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA, Wiesbaden, Germany*
+
+> **NOTE — New Doctrine Content in TM-40B:** TM-40B now includes the D3A targeting cycle as a data lifecycle (Table 2-3), FIVE-O target taxonomy with MSS entity types (Table 2-4), TTLODAC fire mission data schema with ROE WARNING (Table 2-5), and CARVER scoring methodology with 1–5 factor ranges (Table 2-6, FM 3-60 App G). These sections ground fires data management in their authoritative doctrinal sources.
 
 *Read this guide before beginning TM-40B. The procedural knowledge in TM-40B is more durable when it rests on the conceptual foundation this guide provides.*
 

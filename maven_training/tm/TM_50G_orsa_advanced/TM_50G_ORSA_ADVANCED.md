@@ -1,7 +1,7 @@
 # TM-50G — ADVANCED OPERATIONS RESEARCH AND SYSTEMS ANALYSIS
 
 > **BLUF:** TM-50G prepares senior ORSA practitioners to lead advanced analytical programs on MSS, produce campaign-level decision support, and build persistent OR capability for USAREUR-AF. This is not a survey of methods — it is a practitioner guide for analysts who will own the analytical function at theater level.
-> **Prereqs:** TM-40G, Operations Research/Systems Analysis (required). Completion of, or concurrent enrollment in, a graduate-level OR/MS program or equivalent operational ORSA experience (18+ months) strongly recommended. For AI/ML integration topics, see TM-40H (AI Engineer) and TM-40I (ML Engineer); CONCEPTS_GUIDE_TM50G_ORSA_ADVANCED (read before this manual).
+> **Prereqs:** TM-40G, Operations Research/Systems Analysis (required). Completion of, or concurrent enrollment in, a graduate-level OR/MS program or equivalent operational ORSA experience (18+ months) strongly recommended. For AI/ML integration topics, see TM-40H (AI Engineer) and TM-40M (ML Engineer); CONCEPTS_GUIDE_TM50G_ORSA_ADVANCED (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Advanced OR products briefed at the GO/SES level without uncertainty quantification, assumption documentation, and peer review may contribute to decisions with theater-level consequences. These standards are not optional at TM-50G.**
@@ -32,7 +32,7 @@ This manual provides advanced-level ORSA procedures for senior analysts, OR team
 **TM-50G does NOT cover:**
 
 - Foundation ORSA methods (regression, ARIMA, LP, Monte Carlo, wargame data collection) — see TM-40G
-- Machine learning model development and deployment — see TM-40I
+- Machine learning model development and deployment — see TM-40M
 - AI engineering and production pipeline architecture — see TM-40H
 - Ontology design and Workshop application development — see TM-30
 
@@ -91,16 +91,16 @@ Work chapters in order for initial training. Return to individual chapters as re
 |---|---|---|---|
 | TM-40G | Foundation ORSA | ORSA officers, analysts | All methods — direct prerequisite |
 | TM-40H | AI Engineering | Data/AI engineers | Productionizing ORSA models to MSS pipelines |
-| TM-40I | ML Engineering | ML practitioners | ML methods for classification/prediction in ORSA products |
+| TM-40M | ML Engineering | ML practitioners | ML methods for classification/prediction in ORSA products |
 | TM-40J | Program Management | PMs, APMs | OR support to program analysis and cost modeling |
 | TM-50G (this) | Advanced ORSA | Senior ORSA, FA49 leads | — |
 | TM-50H | Advanced AI Engineering | Senior AI engineers | Evaluation methodology; productionizing complex ORSA models |
-| TM-50I | Advanced ML Engineering | Senior MLEs | ML pipelines that feed ORSA analytical products |
+| TM-50M | Advanced ML Engineering | Senior MLEs | ML pipelines that feed ORSA analytical products |
 | TM-50J | Advanced Program Manager | Senior PMs | Portfolio-level OR program governance |
 | TM-50K | Advanced Knowledge Manager | Senior KMs | Capturing and surfacing ORSA-derived insights |
 | TM-50L | Advanced Software Engineer | Senior SWEs | Platform infrastructure supporting ORSA pipelines |
 
-Where TM-50G methods intersect with AI/ML (e.g., using neural networks in ensemble forecasts, or ML classifiers in agent behavior models), cross-references to TM-40H and TM-40I are provided. ORSA analysts are not expected to independently deploy ML models to production — coordinate with TM-40H/I-trained engineers for production integration.
+Where TM-50G methods intersect with AI/ML (e.g., using neural networks in ensemble forecasts, or ML classifiers in agent behavior models), cross-references to TM-40H and TM-40M are provided. ORSA analysts are not expected to independently deploy ML models to production — coordinate with TM-40H/I-trained engineers for production integration.
 
 **WFF Operational Consumer Note.** Advanced ORSA products ultimately serve the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). WFF practitioners are the primary operational consumers of ORSA-derived readiness analyses, campaign assessments, logistics optimizations, and decision support products. When designing analytical products, consider the WFF audience: what decision does this analysis support, and which functional staff section will act on it?
 
@@ -600,7 +600,7 @@ An ABMS consists of:
 
 2. **Environment:** The space in which agents operate. May be geographic (grid-based, network-based), abstract (market, information space), or hybrid.
 
-3. **Rules:** Agent decision rules specifying how agents act given their state and environment. Rules may be simple (if-then logic), probabilistic, or learned (using ML — see TM-40I for integration).
+3. **Rules:** Agent decision rules specifying how agents act given their state and environment. Rules may be simple (if-then logic), probabilistic, or learned (using ML — see TM-40M for integration).
 
 4. **Emergence:** Collective patterns that arise from individual interactions and cannot be predicted from agent rules alone.
 
@@ -1425,6 +1425,40 @@ for name, n_blue, n_red, a_red, a_blue in scenarios:
     print(f"{name:<20} {n_blue:>8} {n_red:>8} {p:>14.1%}")
 ```
 
+### 5-9. Advanced Operations Assessment on MSS (FM 5-0 Ch 8)
+
+**BLUF:** TM-40G introduced MOE/MOP frameworks and CARVER scoring. TM-50G extends these into multi-variable sensitivity analysis, Bayesian updating, and longitudinal campaign assessment — the quantitative methods that transform static assessments into living decision support products.
+
+#### 5-9a. Multi-Variable Sensitivity Analysis for MOE/MOP
+
+Static MOE/MOP assessment answers the question "are we achieving the effect?" Multi-variable sensitivity analysis answers the harder question: "which variables most influence whether we achieve the effect, and how confident are we in the assessment given uncertainty in each?"
+
+The senior ORSA analyst conducts sensitivity analysis by:
+
+1. **Identify assessment variables.** For each MOE, enumerate the MOPs and indicators that feed the assessment. Map the causal chain from indicator data through MOP aggregation to MOE determination.
+2. **Vary inputs systematically.** Hold all inputs at baseline except one; vary that input across its plausible range. Record the resulting MOE change. Repeat for each input variable.
+3. **Rank by influence.** Variables that produce the largest MOE swing across their plausible range are the assessment's critical drivers. These variables require the most rigorous data collection and the tightest update cadence.
+4. **Present tornado diagrams.** Brief the Operations Assessment Working Group (OAWG) using tornado charts that show which variables drive the assessment and which are noise.
+
+#### 5-9b. Bayesian Updating of Assessments
+
+Campaign assessments degrade when they rely solely on point-in-time snapshots. Bayesian updating provides a principled method for incorporating new data into existing assessments without discarding prior knowledge.
+
+Apply Bayesian updating to operations assessment as follows:
+
+1. **Establish prior.** Use the initial assessment (from wargame analysis, historical analogue, or subject-matter estimate) as the prior probability distribution for each MOE.
+2. **Define likelihood function.** For each new data collection (indicator report, ISR collection, logistics status), define how the data relates to the MOE — what is the probability of observing this data if the effect is being achieved vs. not achieved?
+3. **Update posterior.** Apply Bayes' theorem to produce the updated assessment. The posterior becomes the new prior for the next update cycle.
+4. **Track convergence.** As data accumulates, the posterior should narrow. If it does not, the indicators may lack discriminating power — flag this to the OAWG for indicator redesign.
+
+#### 5-9c. Longitudinal Trend Analysis for Campaign Assessment
+
+Campaign assessment requires tracking MOE/MOP trajectories over time to distinguish signal from noise. Use time-series methods (covered in TM-40G) applied to assessment data: decompose trends, identify inflection points, and forecast trajectory under current operational approach.
+
+Produce longitudinal assessment products at the following cadences: weekly for active operations, bi-weekly for shaping operations, monthly for steady-state theater posture.
+
+> **NOTE (FM 6-0): The ORSA produces the quantitative assessment products that feed the commander's assessment during the Operations Assessment Working Group. The OAWG is the primary venue where ORSA analysis meets command judgment. The ORSA does not make the assessment — the commander does. The ORSA provides the quantitative foundation, uncertainty bounds, and trend analysis that enable an informed assessment. Prepare products for the OAWG with this role distinction in mind: present evidence and uncertainty, not conclusions.**
+
 ---
 
 ## CHAPTER 6 — DECISION ANALYSIS UNDER DEEP UNCERTAINTY
@@ -1985,11 +2019,11 @@ Before any analyst departs:
 
 ### 8-5. Integrating ML and AI with ORSA
 
-As MSS evolves with AI capabilities under Army CIO Memorandum (April 2024), ORSA analysts will increasingly work alongside TM-40H (AI Engineers) and TM-40I (ML Engineers). Key integration principles:
+As MSS evolves with AI capabilities under Army CIO Memorandum (April 2024), ORSA analysts will increasingly work alongside TM-40H (AI Engineers) and TM-40M (ML Engineers). Key integration principles:
 
 **ORSA owns the question and the interpretation.** ML engineers build and deploy models. ORSA analysts define what question the model should answer, what data is analytically valid, what validation is required, and how the output translates to commander decisions.
 
-**ML outputs are model inputs, not final products.** A TM-40I ML model that classifies equipment maintenance risk is an input to an ORSA logistics analysis — not a standalone product for the G4. ORSA adds the analytical layer: uncertainty quantification, sensitivity analysis, decision framing.
+**ML outputs are model inputs, not final products.** A TM-40M ML model that classifies equipment maintenance risk is an input to an ORSA logistics analysis — not a standalone product for the G4. ORSA adds the analytical layer: uncertainty quantification, sensitivity analysis, decision framing.
 
 **Human-in-the-loop gates are the ORSA analyst's responsibility.** If an ML model feeds a semi-automated decision process (scheduling, prioritization), the ORSA analyst must design and document the review gate, specify the conditions under which automated recommendations are overridden, and brief those gates to the commander who approves the system.
 

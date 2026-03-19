@@ -6,7 +6,9 @@
 
 **Source:** All videos are available on the Palantir Developers YouTube channel (@PalantirDevelopers). These are official Palantir product deep-dives that extend the TM-30 curriculum. No account is required to view.
 
-**Scope boundary:** TM-30 is entirely UI-based — no code required. All videos listed here use Palantir's graphical tools only (Workshop, Pipeline Builder, Contour, Quiver, AIP Logic configuration UI). Videos requiring Python, TypeScript, or CLI tools are NOT listed here — those belong to TM-40G–L.
+**Companion Resource — Ontologize Channel:** [@Ontologize](https://www.youtube.com/@Ontologize) — Official Palantir training partner. 68 indexed video walkthroughs covering Foundry and AIP features. Full catalog with TM cross-references: [source_material/ontologize_youtube/README.md](../../source_material/ontologize_youtube/README.md)
+
+**Scope boundary:** TM-30 is entirely UI-based — no code required. All videos listed here use Palantir's graphical tools only (Workshop, Pipeline Builder, Contour, Quiver, AIP Logic configuration UI). Videos requiring Python, TypeScript, or CLI tools are NOT listed here — those belong to TM-40G–M.
 
 ---
 
@@ -63,7 +65,21 @@ Contour pivot tables work differently from Excel. These videos supplement the Da
 
 ---
 
-## Group 5 — Platform Governance and Security (Day 5 / Ch 7 extension)
+## Group 5 — DDOF and Operational Design Patterns (Ch 1 extension)
+
+New doctrine sections added to TM-30 Chapter 1 cover foundational operational design patterns. These self-study references support the new content.
+
+| Section | What It Covers | Relevant TM Chapter |
+|---|---|---|
+| 1-10a: DDOF Roles | DDOF organizational roles (Data Officer, Data Steward, Functional Manager) and their responsibilities in the Foundry environment. Understand who owns what before building. | Ch 1 — DDOF Roles |
+| 1-10b: SMART Criteria | SMART criteria (Specific, Measurable, Achievable, Relevant, Time-bound) applied to data product requirements. Every builder-level product must trace to a SMART objective. | Ch 1 — SMART Criteria |
+| 1-10c: Fail-Closed Design | Fail-closed design principle for data pipelines — when a pipeline encounters an error, it stops and alerts rather than passing bad data downstream. Applied throughout Blocks 2–4 (Pipeline Builder). | Ch 1 — Fail-Closed |
+| 1-10d: ADC Registration | ADC (Authoritative Data Catalog) registration process for new data products. Every production dataset must be registered in the ADC before operational use. | Ch 1 — ADC Registration |
+| 1-10e: DDIL Operations | Disconnected, Degraded, Intermittent, and Limited-bandwidth (DDIL) operations considerations for MSS data products. Design for delayed sync and offline caching. | Ch 1 — DDIL Operations |
+
+---
+
+## Group 6 — Platform Governance and Security (Day 5 / Ch 7 extension)
 
 These two videos supplement the Day 5 governance content with practical security administration knowledge. Relevant for trainees who will act as MSS data stewards or project owners after TM-30.
 
@@ -82,7 +98,9 @@ These two videos supplement the Day 5 governance content with practical security
 
 **Before Day 5 practical exercise** — Watch Group 3 Quiver videos. Quiver linked view configuration is the most common single-task practical exercise failure. Do not skip these before the evaluation.
 
-**Post-TM-30 sustainment** — Groups 4 and 5 are most useful after course completion when you are operating MSS data products in a unit environment.
+**Before Day 1 reading** — Group 5 (DDOF and Operational Design Patterns) covers new Ch 1 doctrine sections. Review Sections 1-10a through 1-10e before Day 1 to understand the governance and design context for all subsequent lab work.
+
+**Post-TM-30 sustainment** — Groups 4 and 6 are most useful after course completion when you are operating MSS data products in a unit environment.
 
 ---
 

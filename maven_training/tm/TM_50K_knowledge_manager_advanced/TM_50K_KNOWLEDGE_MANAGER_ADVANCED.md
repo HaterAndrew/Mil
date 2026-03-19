@@ -78,7 +78,7 @@ THEATER KM ARCHITECT (TM-50K)
 |---|---|---|
 | TM-50G | ORSA Advanced | ORSA-derived lessons and analytical knowledge products |
 | TM-50H | AI Engineer Advanced | Corpus design and ontology-RAG integration (AI-assisted KM) |
-| TM-50I | ML Engineer Advanced | Feature data governance; training corpus quality architecture |
+| TM-50M | ML Engineer Advanced | Feature data governance; training corpus quality architecture |
 | TM-50J | Program Manager Advanced | KM program oversight and portfolio-level knowledge governance |
 | TM-50K | Knowledge Manager Advanced | THIS DOCUMENT |
 | TM-50L | Software Engineer Advanced | Platform SDK infrastructure supporting enterprise KM systems |
@@ -203,6 +203,20 @@ LAYER 4: CONSUMER INTERFACE LAYER
   - Reporting and metrics dashboards
   - Governed by: Theater KM Architect (TM-50K) in coordination with C2DAO
 ```
+
+---
+
+### 2-2a. Battle Rhythm Synchronization Across Echelons
+
+Enterprise KM architecture must synchronize knowledge products with the battle rhythm at every echelon. FM 6-0 establishes the battle rhythm as the mechanism that sequences meetings, reports, and decision points across BDE, DIV, and Corps. The advanced KM architect designs knowledge flows that feed this rhythm — not operate in parallel to it.
+
+**Vertical flow (BN → BDE → DIV → Corps):** Knowledge products move upward through aggregation. A battalion lessons-learned entry becomes a brigade trend analysis, which feeds a division knowledge brief, which informs the Corps CG's decision sync. Each aggregation step adds context and removes detail. The KM architect defines the aggregation rules and the handoff triggers at each echelon boundary.
+
+**Horizontal flow (staff sections, functional directorates):** Knowledge products move laterally between G-staff sections within the same echelon. A G2 threat assessment informs G3 OPLAN development; G4 sustainment constraints inform G3 COA analysis. The KM architect ensures cross-directorate knowledge products are discoverable, tagged by battle rhythm event, and pushed to the right consumers at the right time — not buried in a repository waiting to be pulled.
+
+**Design rule:** Every knowledge product in the enterprise KM system must be tagged with its target battle rhythm event(s) and its echelon scope. Knowledge products without battle rhythm linkage are orphaned — they exist but do not inform decisions.
+
+> **NOTE — KM integration with the five Army integrating processes (FM 5-0):** FM 5-0 identifies five integrating processes that unify staff effort: IPOE, information collection, targeting, risk management, and knowledge management. KM is one of the five — but the advanced KM architect must ensure knowledge products feed ALL five processes, not KM in isolation. IPOE consumes lessons and operational patterns. Information collection consumes knowledge gaps as collection requirements. Targeting consumes knowledge about threat patterns and engagement outcomes. Risk management consumes hazard knowledge and mitigation effectiveness data. If knowledge products only circulate within the KM process itself, the enterprise KM architecture has failed its integrating function. Design knowledge flows that deliver products to the other four integrating processes as primary consumers.
 
 ---
 

@@ -270,6 +270,8 @@ This categorization prevents two failure modes: over-escalating (consuming senio
 
 ## SECTION 9 — ADVANCED FAILURE MODES — WHAT TM-50J PMs GET WRONG
 
+> **NOTE:** TM-40J Section 9-6 now addresses dependency mapping mechanics, cascading friction from unmanaged inter-team dependencies, and enforcement standards for product retirement. The advanced failure modes below assume familiarity with that foundation; TM-50J PMs are expected to manage these dynamics at portfolio scale across organizations, not just within a single program.
+
 | Failure Mode | What Happens | The Correct Approach |
 |---|---|---|
 | Over-promising to win resources | Promises made to secure budget come due during execution; delivery falls short; credibility is damaged and the program may be cancelled — not for technical failure, but for failing the expectation set. | Present honest capability with honest timelines. If leadership pushes for more, explain the tradeoff: more delivery requires more resources or more time. Give them the choice. |
@@ -312,7 +314,7 @@ The theater data enterprise that supports DEFENDER 2027 and the operations that 
 |---|---|---|
 | TM-50G | Advanced ORSA | Portfolio-level analytical program governance; OR product review |
 | TM-50H | Advanced AI Engineer | AI program lifecycle; governance acquisition |
-| TM-50I | Advanced ML Engineer | ML program portfolio management; automated pipeline governance |
+| TM-50M | Advanced ML Engineer | ML program portfolio management; automated pipeline governance |
 | TM-50K | Advanced Knowledge Manager | KM system program oversight; knowledge program management |
 | TM-50L | Advanced Software Engineer | Platform engineering program coordination; SWE team structure |
 

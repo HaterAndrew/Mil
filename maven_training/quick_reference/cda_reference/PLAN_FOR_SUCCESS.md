@@ -131,7 +131,7 @@ This radar is the **authoritative record** of data architecture standards, tool 
 | Workshop Apps | Trial | Ontology-backed operational applications |
 | Slate Dashboards | Hold | Legacy; being superseded by Workshop/OSDK |
 | OSDK Front-End | Trial | Custom web apps against Foundry ontology |
-| DDOF Playbook v2.0 | Adopt | 6-phase data product lifecycle |
+| DDOF Playbook v2.2 | Adopt | 6-phase data product lifecycle |
 | NAF Architecture Builder | Assess | React graph editor, prototype stage |
 | Course Portal | Adopt | Training slide-viewer with 4 decks |
 | Investment Rule: L2+L3 > L5 | Adopt | Foundation before features |
@@ -149,7 +149,7 @@ This radar is the **authoritative record** of data architecture standards, tool 
 | 2026 Data Stack Deep Dive | Complete | 5-layer architecture with Foundry mapping. L3 correctly identified as critical layer. |
 | EA Curriculum (6-part series) | Complete | Comprehensive. Covers foundations through military application. |
 | Tool Convergence Assessment | Complete | Ready for CTO signature. 7 testable hypotheses. |
-| DDOF Playbook v2.0 | Complete | 6-phase lifecycle with VAULTIS-A quality framework. |
+| DDOF Playbook v2.2 | Complete | 6-phase lifecycle with VAULTIS-A quality framework. |
 | Cross-Domain Solutions Reference | Complete | CDS taxonomy, NCDSMO baseline, Foundry cross-enclave sync patterns. |
 | HERMES Program Identity | Complete | Landing page, OPORD 0015-26 context, team roster, timeline. |
 | NAF Architecture Builder | Prototype | React graph editor with xyflow. IR extraction pipeline works. |

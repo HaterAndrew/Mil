@@ -128,6 +128,9 @@ Each domain requires its own Object Types, property schemas, Link Types, and acc
 | NATO Core Metadata Specification / STANAG 5636 | Structured metadata standards for NATO-compatible knowledge products |
 | NATO ADatP-34 / NISP | C3 interoperability standards for data cataloging and knowledge exchange |
 | STANAG 5643 (proposed) — MIM Governance Standard | NATO MIP Information Model governance — data model versioning, change proposals, national extensions |
+| FM 6-0 (Commander and Staff Organization and Operations, May 2022) | Ch 5 defines the Army KM framework: 5-step process, 3 KM tasks, 6 tool categories |
+| FM 6-22 (Leader Development, Oct 2015) | Three developmental domains (institutional, operational, self-development) — governs how KM products support leader growth |
+| FM 3-57 (Civil Affairs Operations, Jul 2021) | Civil Knowledge Integration (CKI) — doctrinal analog to the KM function across Army integrating processes |
 
 ### 1-5a. Strategic Guidance
 
@@ -137,10 +140,49 @@ Each domain requires its own Object Types, property schemas, Link Types, and acc
 |---|---|---|
 | Army CIO Data Stewardship Policy (April 2, 2024) | Army CIO | Data product standards, domain ownership, stewardship hierarchy |
 | UDRA v1.1 (February 2025) | Army Enterprise | Unified Data Reference Architecture — federated governance, domain structure |
-| DoD Data Strategy (2020) | OSD | VAUTI framework — knowledge products must be Visible, Accessible, Understandable, Trustable, Interoperable |
+| DoD Data Strategy (2020) | OSD | VAULTIS-A framework (supersedes VAUTI) — knowledge products must be Visible, Accessible, Understandable, Linked, Trusted, Interoperable, Secure, Auditable. 8 dimensions per DDOF Playbook v2.2 (Dec 2025); 85% weighted avg = DDOF Phase 3 quality gate. |
 | NATO Data Strategy for the Alliance (Feb 2025) | NATO | Alliance-wide data governance mandate — governs coalition knowledge sharing in EUCOM AOR |
 
 > **NOTE:** Knowledge management on MSS intersects with records management requirements under AR 25-400-2. Coordinate with your unit RMO (Records Management Officer) before standing up any persistent knowledge repository to ensure retention schedules are applied correctly.
+
+---
+
+### 1-5b. Doctrinal KM Frameworks
+
+**BLUF:** Army doctrine defines the KM function in FM 6-0, Ch 5. Every MSS knowledge system the KM builds should map to this doctrinal framework. This section establishes the doctrinal foundation; subsequent chapters apply it to MSS.
+
+#### FM 6-0 Knowledge Management Process (May 2022, Ch 5)
+
+FM 6-0 defines knowledge management as a five-step continuous process:
+
+| Step | Action | MSS Platform Equivalent |
+|---|---|---|
+| 1 — Assess | Determine knowledge gaps, user needs, and current state | Quiver/Contour analytics on existing knowledge objects; `KnowledgeGap` Object Type |
+| 2 — Design | Define knowledge architecture, workflows, and governance | Ontology Manager — Object Types, Link Types, property schemas (Ch 2 of this manual) |
+| 3 — Develop | Build knowledge products, capture tools, and repositories | Pipeline Builder, Workshop forms, AIP Logic workflows (Chs 3–5) |
+| 4 — Pilot | Test with a limited user group; validate usability and accuracy | Staging environment deployment, user acceptance testing (Section 2-7) |
+| 5 — Implement | Field the system; train users; establish sustainment plan | Production deployment, user training via TM-10/20, sustainment SOPs (Ch 9) |
+
+FM 6-0 further defines three core KM tasks:
+
+1. **Create Knowledge.** Transform raw data and information into actionable knowledge through analysis, synthesis, and context. On MSS: AIP-assisted summarization, lesson extraction pipelines, AAR structured capture.
+2. **Retain Knowledge.** Archive, label, and identify knowledge products so they survive personnel turnover. On MSS: Ontology-enforced tagging, controlled vocabularies, `reviewDate` lifecycle tracking, version-controlled SOPs.
+3. **Transfer Knowledge.** Move knowledge to the right person at the right time. On MSS: search interfaces (Quiver/Contour), AIP Q&A agents, role-based routing workflows, PCS/ETS handoff packages.
+
+FM 6-0 identifies six categories of KM tools. The table below maps each to MSS capabilities:
+
+| FM 6-0 KM Tool Category | Definition | MSS Equivalent |
+|---|---|---|
+| Information Systems | Systems that store and process data | Foundry datasets, Ontology, Pipeline Builder |
+| Collaboration Tools | Tools enabling shared work and discussion | Workshop applications, Slate dashboards |
+| Data-Analysis Tools | Tools for examining data to extract meaning | Contour, Code Workbook, AIP Logic |
+| Search & Discovery Tools | Tools for locating knowledge products | Quiver, Contour filters, Workshop browse views |
+| Expertise-Location Tools | Tools for identifying who knows what | `ExpertiseProfile` Object Type, personnel search apps (Ch 8) |
+| Expertise-Development Tools | Tools for growing organizational knowledge | MSS training courses (TM-10 through TM-50), self-study addenda |
+
+> **NOTE (FM 6-22 — Three Developmental Domains):** FM 6-22 (Leader Development) defines three domains in which leaders grow: **Institutional** (schoolhouse training), **Operational** (unit application and OJT), and **Self-Development** (individual study). MSS knowledge products must support all three. Instructor-led courses (TM-10 through TM-50) serve the institutional domain. Unit application of MSS during exercises and operations serves the operational domain. Self-study addenda and self-paced materials serve the self-development domain. A KM who designs knowledge products for only one domain leaves two-thirds of the force development model unsupported. Source: FM 6-22, Ch 1.
+
+> **NOTE (FM 3-57 — Civil Knowledge Integration):** Civil Knowledge Integration (CKI) — the process of analyzing, evaluating, and organizing collected civil information for operational relevance — is a doctrinal validation of the KM function. CKI integrates through all five Army integrating processes: intelligence preparation of the operational environment (IPOE), information collection, targeting, risk management, and knowledge management (FM 3-57). KMs should recognize CKI as a peer discipline that validates the same organize-contextualize-disseminate pattern applied across the KM enterprise. Civil Affairs KM Coordinators (see Section 1-3, Table) use CKI methodology when building MSS knowledge products for civil information. Source: FM 3-57.
 
 ---
 
@@ -247,6 +289,20 @@ Property schemas must balance completeness (capturing all useful context) agains
 **Classification fields.** Every object type in a classification-aware knowledge system requires a `classification` property: enumeration of [UNCLASSIFIED, CUI, SECRET, NATO SECRET, RELEASABLE TO [country codes]]. Access control on Foundry datasets enforces this; the property provides a visible audit trail and supports filtering in search interfaces.
 
 > **CAUTION:** Property schemas, once adopted and populated with data, are difficult to change. Adding a property is safe. Renaming, removing, or changing the type of an existing property breaks downstream pipelines and search indexes. Design property schemas carefully before any data is loaded. Use a staging environment and a test dataset to validate the schema before production deployment.
+
+> **NOTE — Foundry Project Architecture Taxonomy (Palantir Best Practice)**
+>
+> When designing knowledge management systems, organize Foundry projects by function:
+>
+> | Type | Naming Convention | KM Relevance |
+> |------|-------------------|--------------|
+> | Datasource | `Datasource - {Name}` | Raw AAR feeds, doctrine source ingestion |
+> | Data Integration | `Integration - {Name}` | LL deduplication, classification pipelines |
+> | Ontology | `Ontology - {Name}` | Knowledge object types, expertise registries |
+> | Application | `Application - {Name}` | Search interfaces, KM dashboards |
+> | Sandbox | `[sandbox] Name` | Training exercises, KM experimentation |
+>
+> *Source: Palantir Developer Community — [Ontology and Pipeline Design Principles](https://community.palantir.com/t/ontology-and-pipeline-design-principles/5481)*
 
 ---
 

@@ -3,11 +3,23 @@
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.
 
+**Companion Resource — Ontologize Channel:** [@Ontologize](https://www.youtube.com/@Ontologize) — Official Palantir training partner. 68 indexed video walkthroughs covering Foundry and AIP features. Full catalog with TM cross-references: [source_material/ontologize_youtube/README.md](../../source_material/ontologize_youtube/README.md)
+
 ---
 
 ## How to Use This Addendum
 
 Videos are grouped by topic and ordered from foundational to advanced. TM-50K personnel have already completed TM-40K; the TM-40K Self-Study Addendum remains the reference library for unit-level KM capabilities. This addendum extends it with advanced, enterprise-scale, and multi-domain content. Inline NOTEs in the TM-50K manual identify the specific sections where several of these videos directly reinforce the text.
+
+---
+
+## New Doctrine References (March 2026)
+
+The following doctrine sections were added to TM-50K this session. Review after the corresponding TM chapter:
+
+- **FM 6-0 KM 5-Step Process (Enterprise)** — KM 5-step process applied to theater-level and cross-domain knowledge architectures. See TM-50K concepts guide.
+- **Developmental Domains (Theater Level)** — KM capability maturity framework applied at theater and enterprise scale. See TM-50K concepts guide.
+- **Critical Knowledge Items (CKI) — Cross-Domain** — CKI identification methodology for multi-domain knowledge federation and continuity systems. See TM-50K concepts guide.
 
 ---
 

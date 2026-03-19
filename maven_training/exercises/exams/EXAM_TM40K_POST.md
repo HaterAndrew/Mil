@@ -8,7 +8,7 @@
 | **Level** | TM-40K (Specialist) |
 | **Audience** | KMOs / 37F / knowledge officers; prerequisite: TM-10 + TM-20 + TM-30 (REQUIRED) |
 | **Time Allowed** | 45 minutes |
-| **Passing Score** | 70% (42/60) |
+| **Passing Score** | 70% (49/70) |
 
 ---
 
@@ -127,6 +127,20 @@ B. Unit designation, classification level, and echelon — ensuring SECRET lesso
 C. The KM officer's manually selected routing destination
 D. The submitter's echelon only — lessons are shared within the same echelon by default
 
+**16. Per FM 6-0, the KM process consists of five steps in sequence. The step during which a KM officer designs the MSS workspace structure, Object Type schema, and information flow is:**
+
+A. Assess — evaluate the current knowledge state and identify gaps
+B. Design — create the knowledge management architecture and information flow
+C. Develop — build and populate the knowledge management products
+D. Implement — deploy and enforce KM procedures across the organization
+
+**17. FM 3-57 establishes Civil Knowledge Integration (CKI) as a doctrinal framework. CKI validates the MSS data integration mission because it:**
+
+A. Provides the legal authority for Army units to collect and store civilian population data
+B. Establishes that integrating data from multiple civil and military sources into a unified operational picture is a doctrinal mission, not just a technical convenience
+C. Requires all civil affairs data to be classified SECRET before integration into MSS
+D. Mandates that KM officers serve as the sole data stewards for civil information products
+
 ---
 
 ## SECTION 2 — SHORT ANSWER
@@ -199,11 +213,11 @@ D. The submitter's echelon only — lessons are shared within the same echelon b
 
 | Section | Questions | Points Each | Total Points |
 |---|---|---|---|
-| Multiple Choice | 15 | 2 | 30 |
+| Multiple Choice | 17 | 2 | 34 |
 | Short Answer | 6 | 6 | 36 |
-| **Total** | — | — | **66** |
+| **Total** | — | — | **70** |
 
-Passing: 46/66 (70%) — Post-test only. Pre-test is diagnostic.
+Passing: 49/70 (70%) — Post-test only. Pre-test is diagnostic.
 
 ---
 
@@ -227,6 +241,8 @@ Passing: 46/66 (70%) — Post-test only. Pre-test is diagnostic.
 13. B — Date filter and recency-first default sort is the correct knowledge browser fix.
 14. B — Privacy Act review before aggregating individual Soldier profiles is required per TM-40K Section 8-1.
 15. B — Routing must address unit designation, classification level, and echelon at minimum.
+16. B — FM 6-0 defines five KM steps: Assess, Design, Develop, Pilot, Implement. "Design" is the step where workspace structure, schemas, and information flows are created. Option A (Assess) identifies gaps but does not create architecture. Option C (Develop) builds and populates products designed in Step 2. Option D (Implement) deploys what was already designed. Source: FM 6-0 / TM-40K Section 1-5b.
+17. B — FM 3-57 CKI validates data integration as a doctrinal mission — integrating civil and military data into a unified operational picture is explicitly a military function, not a technical convenience. Option A conflates integration authority with collection authority. Option C invents a classification requirement not in FM 3-57. Option D misassigns sole stewardship — CKI is a shared responsibility. Source: FM 3-57 / TM-40K Section 1-5b.
 
 **Short Answer Guidance:**
 

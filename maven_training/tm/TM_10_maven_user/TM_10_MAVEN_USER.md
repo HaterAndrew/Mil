@@ -41,7 +41,7 @@ MSS is a secure, web-based platform where your unit's operational data lives. Th
 
 MSS is built on the Palantir Foundry software platform, authorized for Army use under the Maven Smart System program. When you log into MSS, you are logging into Foundry with Army data and Army-controlled access.
 
-**Per ADP 3-13, information is combat power.** MSS is the USAREUR-AF platform for converting raw data into the operational information commanders and staff need to make decisions and maintain decision dominance across the European theater. The CG USAREUR-AF has stated directly: **"The race to harness live data will determine who wins the next war."** MSS is the command's primary instrument for winning that race.
+**Per ADP 3-13, information is combat power.** MSS is the USAREUR-AF platform for converting raw data into the operational information commanders and staff need to make decisions and maintain decision dominance across the European theater.
 
 **What MSS does:**
 - Stores data from Army systems (GCSS-A, DCPDS, MEDPROS, unit feeds, and others) in one organized place
@@ -54,6 +54,59 @@ MSS is built on the Palantir Foundry software platform, authorized for Army use 
 - It is not a replacement for official Army systems of record — MSS reads from those systems but does not replace them
 - It is not classified by default — the classification of data in MSS depends on what data is loaded and how it is marked
 - It is not a public system — access is tightly controlled and every action is logged
+
+---
+
+## 1-2a. The Cognitive Hierarchy — Why Data Matters
+
+Army doctrine (ADP 6-0, ADP 3-13) defines a four-level hierarchy that explains how raw data becomes the understanding commanders need to make decisions:
+
+| Level | Definition | MSS Example |
+|---|---|---|
+| **Data** | Unprocessed signals; numbers, text, sensor readings | A feed of GCSS-A equipment status codes arriving in MSS |
+| **Information** | Data organized to provide context and meaning | A dashboard showing "V Corps has 847 NMC vehicles by type" |
+| **Knowledge** | Information analyzed to reveal patterns and significance | An analyst's assessment that NMC rates in 2CR spiked 40% after rotation |
+| **Understanding** | Knowledge with judgment applied to comprehend the situation | The G4's determination that current NMC trends will degrade readiness below C2 within 60 days unless parts flow increases |
+
+**Per ADP 3-13, information is a dynamic of combat power** — at the same level as firepower, mobility, and survivability. MSS automates the lower tiers of this hierarchy (data → information) so humans can focus on the higher tiers (knowledge → understanding). That is why you are learning this platform.
+
+---
+
+## 1-2b. The GMAD Framework — A Doctrinal Mental Model for Data Platforms
+
+The Geospatial Engineer's GMAD framework — Generate, Manage, Analyze, Disseminate — defined in FM 3-34 (Engineer Operations) provides the closest existing Army doctrinal analog to how a data platform operates. Although GMAD was written for geospatial engineering, the four functions map directly to MSS and give every operator a simple, doctrine-grounded way to think about what the platform does.
+
+**Table 1-1a. GMAD Framework Applied to MSS**
+
+| GMAD Function | Data Platform Equivalent |
+|---|---|
+| **Generate** | Data ingestion — collecting and importing data from source systems (GCSS-A, DCPDS, MEDPROS, unit feeds) |
+| **Manage** | Data governance — storing, cataloging, securing, and maintaining data within the platform |
+| **Analyze** | Data analysis — transforming data into information and insights through pipelines, dashboards, and AI tools |
+| **Disseminate** | Data publication — sharing products with authorized consumers through Workshop applications and exports |
+
+NOTE: You do not need to memorize this framework. It is provided so you understand that MSS is not a novel concept — it follows the same doctrinal logic the Army already uses for managing geospatial products. The platform generates data, manages it under governance, analyzes it into useful products, and disseminates those products to the people who need them. (Source: FM 3-34, Engineer Operations.)
+
+---
+
+## 1-2c. The Operations Process — Where MSS Fits
+
+The Army's operations process — Plan, Prepare, Execute, Assess (ADP 5-0, FM 5-0) — is the overarching cycle that generates and consumes data products. MSS supports all four phases:
+
+| Operations Process Phase | How MSS Supports It |
+|---|---|
+| **Plan** | Commanders and staff access readiness dashboards, logistics status, and personnel data to develop courses of action |
+| **Prepare** | Units use MSS to track task completion, verify resource availability, and confirm force posture before execution |
+| **Execute** | Operators submit SITREPs, update status, and monitor operations through MSS applications in near-real time |
+| **Assess** | Leaders review dashboards and reports to evaluate progress, identify variances, and adjust operations |
+
+Every data product in MSS exists to support one or more phases of this cycle. When you open a dashboard, you are participating in the operations process — even if your task feels routine.
+
+---
+
+## 1-2d. METT-TC(I) — Data Is Now in Every Mission Variable
+
+NOTE: The 2025 update to Army doctrine (ADP 3-0, FM 3-0) added "Informational considerations" as a parenthetical to every mission variable. METT-TC becomes METT-TC(I): Mission, Enemy, Terrain and weather, Troops and support available, Time available, Civil considerations — and now Informational considerations. This means data and information are doctrinally embedded in ALL planning factors, not just intelligence. Every MSS user operates within this framework. When a commander analyzes the operational environment using METT-TC(I), the "(I)" includes the data products you access, create, and report through MSS. Accurate, timely data in the platform directly supports the informational dimension of every mission variable.
 
 ---
 
@@ -87,7 +140,7 @@ Data governance in USAREUR-AF flows through a defined chain of authority. Knowin
 ```
 Army CIO / Mission Area Data Officers (MADOs)
         ↓
-DoD Data Strategy (VAUTI framework)
+DoD Data Strategy (VAULTIS framework) / DDOF Playbook v2.2 (VAULTIS-A)
         ↓
 Army CIO Data Stewardship Policy (April 2, 2024)
         ↓
@@ -102,7 +155,7 @@ MSS Users (you)
 
 **Governing references:**
 
-- **AR 25-1, Army Information Technology (Jul 2019)** — statutory framework for Army data governance, the VAUTI (Visible, Accessible, Understandable, Trustable, Interoperable) data quality principles as applied at the Army level, and IT management policy. This is the regulatory foundation under which MSS data operations are conducted.
+- **AR 25-1, Army Information Technology (Jul 2019)** — statutory framework for Army data governance and IT management policy. Established the original VAUTI (5-dimension) data quality principles at the Army level. NOTE: VAUTI has been superseded by VAULTIS (7 dimensions — DoD Data Strategy 2020) and extended to VAULTIS-A (8 dimensions — DDOF Playbook v2.2, December 2025) which adds Linked, Secure, and Auditable. VAULTIS-A is the current operational quality gate for all MSS data products.
 - **ADP 3-13, Information** — establishes information as a warfighting function and the foundation for understanding MSS's role in USAREUR-AF operations.
 
 NOTE: The USAREUR-AF C2DAO office is responsible for implementing and enforcing Army data policy within this command. For governance questions, access exceptions, or policy issues, contact the C2DAO office through your chain of command.
@@ -111,7 +164,8 @@ NOTE: The USAREUR-AF C2DAO office is responsible for implementing and enforcing 
 
 > The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
 
-- **DoD Data Strategy (October 2020)** — Foundation for VAUTI principles (Visible, Accessible, Understandable, Trustable, Interoperable)
+- **DoD Data Strategy (October 2020)** — Establishes the VAULTIS framework (Visible, Accessible, Understandable, Linked, Trustworthy, Interoperable, Secure) as the DoD standard for data quality. Supersedes the 5-dimension VAUTI model from AR 25-1.
+- **DDOF Playbook v2.2 (December 2025)** — T2COM C2DAO implementing document. Extends VAULTIS to VAULTIS-A (adds Auditable as 8th dimension). Establishes 85% minimum weighted average across all 8 dimensions as the quality gate for DDOF Phase 3. This is the authoritative standard for MSS data product quality.
 - **Army Data Plan (2022)** — 11 strategic objectives for Army data transformation
 - **Army Cloud Plan (2022)** — Zero Trust, secure development, data-driven decisions
 - **Army CIO Data Stewardship Policy (April 2, 2024)** — establishes the stewardship hierarchy and data chain of responsibility
@@ -235,7 +289,7 @@ TM-10 is the entry point for the MSS training curriculum. After completing TM-10
 | TM-30 (Advanced Builder) | TM-40F — Mission Command WFF | For G6 / S6 and command staff applying MSS to mission command workflows. Prerequisite: TM-30 (required). Duration: 3 days. |
 | TM-30 (Advanced Builder) | TM-40G — ORSA | For operational research and systems analysis specialists. Prerequisite: TM-30 (required). Duration: 5 days. |
 | TM-30 (Advanced Builder) | TM-40H — AI Engineer | For personnel building and maintaining AIP Logic workflows and AI-enabled products. Prerequisite: TM-30 (required). Duration: 5 days. |
-| TM-30 (Advanced Builder) | TM-40I — ML Engineer | For personnel developing machine learning pipelines and model integrations. Prerequisite: TM-30 (required). Duration: 5 days. |
+| TM-30 (Advanced Builder) | TM-40M — ML Engineer | For personnel developing machine learning pipelines and model integrations. Prerequisite: TM-30 (required). Duration: 5 days. |
 | TM-30 (Advanced Builder) | TM-40J — Program Manager | For data program managers coordinating MSS products and delivery. Prerequisite: TM-30 (required). Duration: 4 days. |
 | TM-30 (Advanced Builder) | TM-40K — Knowledge Manager | For knowledge managers structuring data products for organizational learning. Prerequisite: TM-30 (required). Duration: 4 days. |
 | TM-30 (Advanced Builder) | TM-40L — Software Engineer | For software engineers writing Python, PySpark, TypeScript, and OSDK integrations. Prerequisite: TM-30 (required). Duration: 5 days. |
@@ -888,6 +942,27 @@ If you see data that appears incorrect — wrong unit, wrong number, a value tha
 CAUTION: Guessing at corrections, editing records outside of authorized interfaces, or working around incorrect data without reporting it degrades data integrity for everyone who uses that data downstream. One bad record can cascade into multiple bad reports.
 
 NOTE: Distinguish between data that looks wrong due to user error (operator-fixable) and systematic data quality problems (builder/engineer responsibility). Operator-fixable: wrong filter applied, stale view (refresh), user-level permissions issue. Escalate to data steward → TM-20 builder: pipeline configuration error, incorrect transform logic, broken data feed from a known source. Escalate to data steward → TM-30 advanced builder or TM-40 developer: systematic data corruption, incorrect schema mapping, validation failures at ingestion. Do not attempt to modify pipelines or datasets yourself. Refer to TM-30, Chapter 3 (Advanced Pipeline Builder) for builder-level pipeline diagnostic context.
+
+---
+
+## 5-5. Understanding VAULTIS-A — The Data Quality Standard
+
+Every MSS data product is measured against eight quality dimensions known as **VAULTIS-A** (DDOF Playbook v2.2, December 2025). As a data consumer, you do not score products yourself, but you should understand what these dimensions mean so you can evaluate whether the data you are using is trustworthy.
+
+| Dimension | What It Means for You |
+|---|---|
+| **V — Visible** | Can you find this data in the catalog without someone telling you where it is? |
+| **A — Accessible** | Can you actually open and use it with your current access? |
+| **U — Understandable** | Do field names, column headers, and descriptions make sense? Is there a user guide? |
+| **L — Linked** | Can you trace where this data came from and what feeds into it? |
+| **T — Trusted** | Has someone verified this data is accurate? Is there a refresh schedule? |
+| **I — Interoperable** | Can this data be shared with other systems or Allied partners? |
+| **S — Secure** | Are the classification markings correct? Are access controls enforced? |
+| **A — Auditable** | Can you prove who accessed this data and when? |
+
+**What to look for:** If a data product in MSS shows a quality score or certification badge, it means the product has been evaluated against VAULTIS-A. Products scoring 85% or higher across all eight dimensions have passed the DDOF Phase 3 quality gate and are approved for operational use. Products below that threshold may have documented limitations.
+
+**Your role as a consumer:** Report any quality issues to your data steward. If data looks stale, incomplete, or inconsistent, that information helps the product owner maintain the VAULTIS-A score. You are the front-line quality sensor.
 
 ---
 

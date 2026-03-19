@@ -1,7 +1,7 @@
 # TM-50L — ADVANCED SOFTWARE ENGINEERING
 
 > **BLUF:** TM-50L qualifies senior software engineers to lead MSS application development capability — designing platform architecture, enforcing security at scale, optimizing performance, and governing the technical practices of the USAREUR-AF SWE community.
-> **Prereqs:** TM-40L (Software Engineer) — required. TM-40H (AI Engineer) and TM-40I (ML Engineer) — recommended for integration track engineers. Senior-level Python and TypeScript proficiency required; CONCEPTS_GUIDE_TM50L_SOFTWARE_ENGINEER_ADVANCED (read before this manual).
+> **Prereqs:** TM-40L (Software Engineer) — required. TM-40H (AI Engineer) and TM-40M (ML Engineer) — recommended for integration track engineers. Senior-level Python and TypeScript proficiency required; CONCEPTS_GUIDE_TM50L_SOFTWARE_ENGINEER_ADVANCED (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING:** Infrastructure-level errors at TM-50L can corrupt shared platform state, disable access controls for multiple units, and produce data integrity failures that cascade through the entire USAREUR-AF data ecosystem. Engineering discipline at this level is not optional — it is a mission requirement.
@@ -58,7 +58,7 @@ MISSION REQUIREMENT
    integrations, CI/CD)
         |
         v
-  TM-30 / TM-40G/H/I        <- Builders and analysts
+  TM-30 / TM-40G/H/M        <- Builders and analysts
   (Ontology design,
    pipelines, AI/ML)
         |
@@ -75,7 +75,7 @@ TM-50L engineers are force multipliers. One senior engineer enabling ten TM-40L 
 |---|---|---|
 | TM-50G | ORSA Advanced | Platform infrastructure supporting analytical pipelines |
 | TM-50H | AI Engineer Advanced | OSDK integration with AI systems (Chapters 2, 7) |
-| TM-50I | ML Engineer Advanced | ML model-serving integrations; feature pipeline infrastructure |
+| TM-50M | ML Engineer Advanced | ML model-serving integrations; feature pipeline infrastructure |
 | TM-50J | Program Manager Advanced | Platform engineering program coordination; SWE team structure |
 | TM-50K | Knowledge Manager Advanced | Platform SDK patterns for KM system backends |
 | TM-50L | Software Engineer Advanced | THIS DOCUMENT |
@@ -90,7 +90,7 @@ TM-50L engineers are force multipliers. One senior engineer enabling ten TM-40L 
 
 > **NOTE:** Slate is Foundry's legacy application builder and is no longer the recommended path for new development. Use Workshop for internal Foundry applications, or OSDK-backed external applications for public-facing deployments.
 | TM-40H (AI Engineer) | Recommended — required for engineers in the integration/AI pipeline track |
-| TM-40I (ML Engineer) | Recommended — required for engineers supporting ML model serving integrations |
+| TM-40M (ML Engineer) | Recommended — required for engineers supporting ML model serving integrations |
 | Senior Python | Async concurrency, profiling, memory management, packaging, type-checked codebases |
 | Senior TypeScript | Advanced generics, module federation, build optimization, strict mode |
 | Distributed systems | Event-driven architecture, eventual consistency, back-pressure, idempotency |
@@ -133,7 +133,7 @@ Chapter 8 (Platform Leadership) is reference and guidance — not task-based. It
 
 Appendices A and B are operational references used during code review and ATO support activities.
 
-> **NOTE:** Cross-references to TM-40H (AI Engineer) and TM-40I (ML Engineer) appear throughout. These are coordination points, not redundant content. When building systems that span multiple technical domains, engage the relevant TM-40-series engineers — do not attempt to own all domains as a single SWE.
+> **NOTE:** Cross-references to TM-40H (AI Engineer) and TM-40M (ML Engineer) appear throughout. These are coordination points, not redundant content. When building systems that span multiple technical domains, engage the relevant TM-40-series engineers — do not attempt to own all domains as a single SWE.
 
 ---
 
@@ -1044,6 +1044,16 @@ C2DAO COORDINATION: [Ticket ID if production change required]
 
 7. Promote through staging to production per DevSecOps pipeline (Chapter 6).
 
+> **NOTE — Palantir Defense OSDK**
+> Palantir offers a Defense OSDK with a pre-built Defense Ontology standardized to warfighting functions. Key properties:
+> - **Consistency**: foundational data types aligned to WFF structure
+> - **Adaptability**: API-like access deployable across environments (garrison, tactical, cloud)
+> - **CJADC2 Compatibility**: designed for DoD interoperability requirements
+>
+> Request access: palantir.com/request-defense-osdk | Defense SDK overview: palantir.com/defense/sdk
+>
+> *Source: Palantir Developer Community — [Defense OSDK announcement](https://community.palantir.com/t/discover-the-power-of-palantirs-defense-osdk/3561)*
+
 ---
 
 ## CHAPTER 4 — MULTI-TENANT ARCHITECTURE AND DATA ISOLATION
@@ -1839,6 +1849,28 @@ class FoundryKinesisIngester:
 
 ---
 
+### 5-6. Advanced UDRA Implementation: Computational Governance as Code
+
+**BLUF:** UDRA v1.1 mandates that data governance move from manual policy enforcement to computational governance — standards as code, policies as code, and incentives as code. The TM-50L SWE implements this by embedding Policy Decision Points (PDPs) and Policy Enforcement Points (PEPs) directly into pipeline architecture.
+
+A **PDP** evaluates a governance rule against the current context (user identity, data classification, action requested) and returns an allow/deny decision. A **PEP** intercepts data flow at a pipeline boundary and enforces the PDP's decision. Every external integration point (Chapter 5), every tenant boundary (Chapter 4), and every deployment promotion (Chapter 6) is a candidate PEP location.
+
+**Implementation pattern:** Define governance policies as machine-readable rules (JSON/YAML policy documents version-controlled in the MSS repository). PDPs consume these rules at runtime. PEPs call PDPs before permitting data to cross a boundary. This eliminates manual policy review for routine operations and produces a complete, auditable enforcement log.
+
+### 5-7. DDIL-Resilient Pipeline Design
+
+Deployed MSS nodes must operate in Denied, Degraded, Intermittent, and Limited (DDIL) bandwidth environments. The TM-50L SWE designs pipelines that degrade gracefully when connectivity to the primary Foundry environment is lost. Source: Army Data Plan SO 6; UDRA Appendix E.
+
+**Store-and-forward:** Edge nodes queue pipeline outputs locally when upstream connectivity is unavailable. On reconnection, queued outputs transmit in order with deduplication at the receiving end (content hash or idempotency key). Design pipelines so that every output record is idempotent — re-processing the same input produces the same output without side effects.
+
+**Delta synchronization:** Transmit only changed records, not full dataset snapshots. Use change data capture (CDC) or timestamp-based incremental reads to minimize bandwidth. DDIL environments cannot tolerate full-dataset transfers on every sync cycle.
+
+**Graceful degradation:** Define explicit degradation tiers for each pipeline: Tier 1 (full connectivity — normal operation), Tier 2 (intermittent — batch sync at reduced frequency), Tier 3 (denied — local-only operation with queued outputs). Each tier has defined behavior; pipelines must not fail silently when connectivity degrades.
+
+> **NOTE — Zero trust architecture alignment:** UDRA mandates Attribute-Based Access Control (ABAC) for all data access, with encryption at rest, in motion, and in use, per DoD Zero Trust Strategy and NIST 800-39/800-37. The TM-50L SWE ensures that PDP/PEP enforcement (Section 5-6) aligns with zero trust principles: no implicit trust based on network location, every access request authenticated and authorized at the PDP, all data encrypted across every pipeline boundary. DDIL-resilient pipelines (Section 5-7) must maintain zero trust enforcement even when operating in degraded mode — store-and-forward queues encrypt data at rest, and reconnection re-authenticates before transmitting queued outputs.
+
+---
+
 ## CHAPTER 6 — DEVSECOPS FOR FOUNDRY ENVIRONMENTS
 
 ### 6-1. Scope of This Chapter
@@ -2211,6 +2243,17 @@ ENTRYPOINT ["python", "-m", "src.main"]
 ```
 
 > **CAUTION: Never include FOUNDRY_SA_TOKEN, AWS_SECRET_ACCESS_KEY, or any other secret in a Dockerfile ENV instruction. These values are embedded in the image layer and visible to anyone with image access. Inject secrets at runtime via container orchestration environment injection.**
+
+> **NOTE — When to Use Compute Modules**
+> Compute Modules provide containerized compute for workloads that exceed Code Repositories and Functions capabilities:
+> - **GPU workloads**: satellite imagery, large model inference, embedding computation
+> - **Custom runtimes**: languages/frameworks not natively supported in Foundry
+> - **Spiky demand**: auto-scaling for unpredictable computational loads
+> - **Existing code**: 60% of Compute Modules run code authored outside Foundry
+>
+> Decision guide: Use **Functions** for lightweight ontology operations. Use **Code Repositories** for Python/Java transforms. Use **Compute Modules** for containerized, GPU, or external code deployment.
+>
+> *Source: Palantir Developer Community — [Why We Built It: Compute Modules](https://community.palantir.com/t/why-we-built-it-compute-modules/3292)*
 
 ---
 

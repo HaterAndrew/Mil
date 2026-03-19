@@ -18,7 +18,7 @@ export default function TM40({ showPanel }: Props) {
 
       <div className="callout bluf">
         <div className="callout-label">BLUF</div>
-        <div className="callout-body">The TM-40 Technical Specialist tracks (TM-40G&ndash;L) cover developer-level capabilities requiring coding, advanced tooling, or specialized technical expertise &mdash; prerequisite: TM-30 complete. For Warfighting Function tracks (TM-40A&ndash;F), use the HOME tab track selector or navigate to the Specialist Tracks tab.</div>
+        <div className="callout-body">The TM-40 Technical Specialist tracks (TM-40G&ndash;M) cover developer-level capabilities requiring coding, advanced tooling, or specialized technical expertise &mdash; prerequisite: TM-30 complete. For Warfighting Function tracks (TM-40A&ndash;F), use the HOME tab track selector or navigate to the Specialist Tracks tab.</div>
       </div>
 
       <div className="track-grid">
@@ -69,7 +69,7 @@ export default function TM40({ showPanel }: Props) {
 
         <div className="track-card">
           <div className="track-card-hdr">
-            <span className="track-tm">TM-40I &mdash; ML Engineer Track</span>
+            <span className="track-tm">TM-40M &mdash; ML Engineer Track</span>
             <span className="track-chip">TM-30 Required</span>
           </div>
           <div className="track-body">
@@ -83,7 +83,7 @@ export default function TM40({ showPanel }: Props) {
               <li>Implement MLOps patterns: monitoring, drift detection, retraining triggers</li>
               <li>Apply responsible AI practices and model documentation standards for operational use</li>
             </ul>
-            <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50I</div>
+            <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50M</div>
           </div>
         </div>
 
@@ -97,7 +97,7 @@ export default function TM40({ showPanel }: Props) {
             <div className="track-audience">PMs &bull; Product owners &bull; G8/S8 &bull; Technical team leads</div>
             <ul className="track-topics">
               <li>Stand up Agile project structures (backlog, sprint cadence, ceremonies) for data and AI builds</li>
-              <li>Write user stories and acceptance criteria that TM-40G&ndash;L developers can execute without ambiguity</li>
+              <li>Write user stories and acceptance criteria that TM-40G&ndash;M developers can execute without ambiguity</li>
               <li>Manage the ML/AI project lifecycle: six phases from Problem Definition through Sustainment</li>
               <li>Translate commander requirements into prioritized, sprint-ready backlogs</li>
               <li>Specify project tracking systems (sprint boards, status dashboards) for TM-40L implementation</li>

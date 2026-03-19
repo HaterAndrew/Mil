@@ -6,7 +6,7 @@
 > **WARNING: THIS MANUAL CONTAINS ADVANCED TECHNIQUES INCLUDING ADVERSARIAL AI TESTING,
 > **WARNING: AI-GENERATED OUTPUTS ARE NOT AUTHORITATIVE. NO OUTPUT FROM ANY SYSTEM BUILT
 > **CAUTION: Fine-tuned models trained on operational corpora retain information from training
-> **NOTE:** TM-40H is a hard prerequisite. TM-50H does not re-teach AIP Logic, Agent Studio,
+> **NOTE:** TM-40H is a hard prerequisite. CONCEPTS_GUIDE_TM50H_AI_ENGINEER_ADVANCED (read before this manual). TM-50H does not re-teach AIP Logic, Agent Studio,
 
 ---
 
@@ -44,9 +44,9 @@ breakers, and failure isolation.
 | 7       | Multi-Modal AI Systems                            | AI Engineer, AI Architect     |
 | 8       | Enterprise AI Architecture and Governance         | AI Capability Lead, C2DAO     |
 
-1-4. TM-40I (ML Engineer) is the recommended companion publication. Fine-tuning (Chapter 3)
+1-4. TM-40M (ML Engineer) is the recommended companion publication. Fine-tuning (Chapter 3)
 and observability (Chapter 6) have significant overlap with MLOps infrastructure covered in
-TM-40I. Where TM-50H addresses the AI engineering perspective, TM-40I addresses the model
+TM-40M. Where TM-50H addresses the AI engineering perspective, TM-40M addresses the model
 training infrastructure perspective. Senior practitioners should be familiar with both.
 
 ---
@@ -87,13 +87,13 @@ of these three elements is missing, the capability does not go to production.
 |-------------|--------------------------------|-------------------------------------------------|
 | TM-50G      | ORSA Advanced                  | Evaluation methodology (Chapter 4, 6)           |
 | TM-50H      | AI Engineer Advanced           | THIS DOCUMENT                                   |
-| TM-50I      | ML Engineer Advanced           | Fine-tuning infrastructure (Chapter 3)          |
+| TM-50M      | ML Engineer Advanced           | Fine-tuning infrastructure (Chapter 3)          |
 | TM-50J      | Program Manager Advanced       | AI governance and acquisition (Chapter 8)       |
 | TM-50K      | Knowledge Manager Advanced     | Corpus design and ontology-RAG integration (Ch4)|
 | TM-50L      | Software Engineer Advanced     | OSDK integration with AI systems (Ch2, Ch7)     |
 
 1-9. Cross-references to companion publications appear throughout this manual with the notation
-`[→ TM-40I]` or `[→ TM-50I]`. These are not optional references — senior AI engineers are
+`[→ TM-40M]` or `[→ TM-50M]`. These are not optional references — senior AI engineers are
 expected to coordinate with counterparts in those tracks, not work in isolation.
 
 1-10. **WFF Operational Consumer Note.** The six Warfighting Function (WFF) tracks — Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F) — are the primary operational consumers of AI-enabled capabilities built by TM-50H engineers. WFF practitioners use AI-generated products to support intelligence synthesis, targeting, logistics optimization, force protection analysis, and command decision support. When designing AI systems, TM-50H engineers must understand the WFF workflows the system will be embedded in: who uses the output, under what time pressure, and what decision it supports.
@@ -407,6 +407,18 @@ review template.
 > **NOTE:** Step 7 (C2DAO architecture review) is a gate, not a formality. Allow at least
 > five business days for review. Submit the architecture document; do not submit code.
 
+> **NOTE — AI-FDE Modes/Skills Architecture (Community Pattern)**
+> The Palantir AI FDE (AI-enabled Forward Deployed Engineer) uses a hierarchical agent framework:
+> - **Modes**: broad operational contexts (e.g., data integration, ontology editing, application building)
+> - **Skills**: discrete, reusable capabilities that function across multiple modes
+> - **Prompt Library**: execution layer supporting both tiers
+>
+> This pattern applies to multi-agent design in Agent Studio — structure your agents with clear mode separation and reusable skill definitions rather than monolithic prompt chains.
+>
+> Reference: [github.com/s-andthat/palantir-ai-fde-library](https://github.com/s-andthat/palantir-ai-fde-library)
+>
+> *Source: Palantir Developer Community — [AI-FDE Core Architecture Library](https://community.palantir.com/t/ai-fde-core-architecture-library/6199) — community-contributed; verify patterns against official Palantir documentation.*
+
 ---
 
 ## CHAPTER 3 — LLM FINE-TUNING AND DOMAIN ADAPTATION
@@ -597,7 +609,7 @@ def validate_dataset(examples: list[dict], min_count: int = 1000) -> dict:
 All model weights are updated during training. Produces the strongest adaptation but
 requires the most compute, the most data, and carries the highest risk of catastrophic
 forgetting (degrading general capability while specializing). Generally not appropriate
-for Army operational AI unless operating a dedicated model deployment. [→ TM-40I Ch.4]
+for Army operational AI unless operating a dedicated model deployment. [→ TM-40M Ch.4]
 
 **Instruction Fine-Tuning (IFT)**
 
@@ -612,7 +624,7 @@ Only a small set of adapter parameters are trained; base model weights are froze
 Low-Rank Adaptation (LoRA) trains rank-decomposition matrices inserted at specific
 transformer layers. Requires significantly less compute, reduces catastrophic forgetting
 risk, and the adapter can be applied on top of the base model at inference time.
-**This is the recommended approach for MSS fine-tuning projects.** [→ TM-50I for
+**This is the recommended approach for MSS fine-tuning projects.** [→ TM-50M for
 infrastructure implementation]
 
 3-8. LoRA configuration selection guide:
@@ -1330,6 +1342,39 @@ case library; red-team report template; C2DAO authorization documentation.
 
 10. Retain the red-team report in the C2DAO governance registry. Do not delete findings
     that were accepted as risk — they are part of the system's risk documentation.
+
+### 5-12. Advanced PED-to-Pipeline Doctrine Integration
+
+**BLUF:** TM-40H established PED-to-pipeline mapping and UDRA governance. TM-50H extends these concepts into multi-source data fusion for AI training, adversarial ML defense, and model drift monitoring as continuous assessment — applying established Army doctrine to AI engineering problems.
+
+#### 5-12a. Multi-Source Data Fusion for AI Training Data (FM 2-0)
+
+FM 2-0 establishes the all-source intelligence concept: no single source provides a complete picture; reliable intelligence requires fusing multiple collection disciplines. Apply this principle to AI training data:
+
+1. **Single-source training data produces brittle models.** A model trained exclusively on one data feed inherits that feed's biases, gaps, and failure modes. When the feed degrades, the model degrades.
+2. **Fuse training data across sources.** Combine structured data (ontology objects, pipeline outputs), unstructured data (documents, reports), and semi-structured data (forms, spreadsheets) to build training corpora that reflect the operational environment's actual complexity.
+3. **Apply source reliability assessment.** Evaluate each training data source for accuracy, completeness, currency, and relevance — the same criteria intelligence analysts apply to source evaluation. Weight training samples by source quality.
+4. **Document provenance.** Every training dataset must have a documented lineage: source system, collection date range, filtering criteria, and known limitations. This is the AI equivalent of source documentation in an intelligence product.
+
+#### 5-12b. Adversarial ML Defense (ADP 3-37 Protection Applied to Models)
+
+ADP 3-37 defines protection as preserving the force's fighting potential. For AI systems, this means defending model integrity against adversarial manipulation:
+
+- **Data poisoning defense.** Validate all training data inputs against known-good baselines. Flag statistical outliers for human review before inclusion in training sets.
+- **Model extraction defense.** Restrict API access patterns that could enable model stealing. Monitor for systematic probing queries.
+- **Evasion attack defense.** Test models against adversarial examples designed to cause misclassification. Integrate adversarial samples into training to improve robustness.
+
+#### 5-12c. Model Drift Monitoring as Continuous Assessment (FM 5-0)
+
+FM 5-0 establishes the operations assessment framework: define measures, collect data, analyze trends, recommend adjustments. Apply this framework to model performance monitoring:
+
+- **MOE for AI:** Does the model achieve its intended operational effect? (e.g., correct entity resolution rate, accurate classification of logistics status)
+- **MOP for AI:** Does the model meet its technical performance standards? (e.g., latency, throughput, precision/recall thresholds)
+- **Indicators for AI:** Leading signals of degradation — input distribution shift, confidence score decline, increasing retrieval misses, user feedback trends.
+
+When indicators cross defined thresholds, trigger the model remediation process: diagnose root cause, retrain or fine-tune, validate against evaluation set, and redeploy through the standard production gate.
+
+> **NOTE (Army Data Plan SO 6/SO 10 — DDIL-Aware Deployment): Models deployed to support operational forces must function in Denied, Degraded, Intermittent, and Limited (DDIL) bandwidth environments. Design for graceful degradation: models must have a defined fallback behavior when they cannot reach cloud inference endpoints, when retrieval corpora are stale, or when input data feeds are interrupted. Document the DDIL operating mode for every production model — what capability is retained, what is lost, and what the user must know about degraded-mode outputs.**
 
 ---
 
@@ -2227,6 +2272,16 @@ dashboard for the system under review; evaluation report; red-team report.
 10. Communicate outcome to AI engineer and product owner. For Conditional Approve,
     schedule follow-up review date.
 
+> **NOTE — DDIL and Classified Inference Considerations**
+> Palantir is developing local inference connectors for AIP Logic to support DDIL (Denied, Degraded, Intermittent, Limited) and classified environments. This capability enables:
+> - LLM inference without cloud connectivity
+> - AIP Logic execution in classified enclaves
+> - Edge deployment for tactical operations
+>
+> Verify current availability in your MSS environment before designing workflows that depend on local inference. For DDIL data operations (non-AI), see TM-30 § 1-10e.
+>
+> *Source: Palantir Developer Community — [Local Inference for DDIL / Classified](https://community.palantir.com/t/local-inference-connector-for-aip-logic-ddil-classified-data-use-cases/6146) — feature may be beta; confirm with Palantir support.*
+
 ---
 
 ## APPENDIX A — AI PRODUCTION READINESS CHECKLIST
@@ -2540,7 +2595,7 @@ shared state across agents in a workflow, providing persistence and audit trail.
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026.*
 *UNCLASSIFIED. Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*
 
-*PREREQUISITE: TM-40H, AI Engineer. Cross-references: TM-40I, ML Engineer; TM-50I, ML Engineer Advanced; TM-50K, Knowledge Manager Advanced; TM-50L, Software Engineer Advanced.*
+*PREREQUISITE: TM-40H, AI Engineer. Cross-references: TM-40M, ML Engineer; TM-50M, ML Engineer Advanced; TM-50K, Knowledge Manager Advanced; TM-50L, Software Engineer Advanced.*
 
 **DoD and Army Strategic References:**
 

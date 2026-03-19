@@ -102,7 +102,7 @@ Wiesbaden, Germany | Version 1.0 | March 2026
 | Build dashboards or forms | Read **TM-20** after TM-10 |
 | 17/25-series, S6/G6, G2 | Read **TM-30** after TM-20 |
 | WFF functional staff (INT/FIRES/M2/SUST/PROT/MC) | See **TM-40A–F** after TM-30 |
-| ORSA, AI/ML engineer, PM, KM, or SWE | See **TM-40G–L** after TM-30 |
+| ORSA, AI/ML engineer, PM, KM, or SWE | See **TM-40G–M** after TM-30 |
 | O-5+ or CSM+ | Read **Data Literacy for Senior Leaders** |
 
 ---

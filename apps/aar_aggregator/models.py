@@ -5,7 +5,7 @@ from __future__ import annotations
 from datetime import date
 from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 
 # ---------------------------------------------------------------------------
@@ -20,6 +20,14 @@ class ImproveItemCreate(BaseModel):
         "INTELLIGENCE", "FIRES", "MOVEMENT_MANEUVER",
         "SUSTAINMENT", "PROTECTION", "MISSION_COMMAND",
     ] | None = None
+
+    @field_validator("category", mode="before")
+    @classmethod
+    def normalize_category(cls, v: str | None) -> str | None:
+        """Normalize WFF category to uppercase for consistent storage."""
+        if v is None:
+            return v
+        return v.strip().upper().replace(" ", "_") if isinstance(v, str) else v
 
 
 class ImproveItemOut(ImproveItemCreate):

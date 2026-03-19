@@ -344,20 +344,20 @@
 
 ## COURSE COMPLETION — NEXT STEPS
 
-Upon receiving a TM-30 Go result, trainees are eligible to enroll in any TM-40 track — all six WFF functional tracks (TM-40A–F) and all six specialist tracks (TM-40G–L). The specialist tracks are:
+Upon receiving a TM-30 Go result, trainees are eligible to enroll in any TM-40 track — all six WFF functional tracks (TM-40A–F) and all six specialist tracks (TM-40G–M). The specialist tracks are:
 
 | Track | Title | Prereq | Duration |
 |---|---|---|---|
 | TM-40G | ORSA Specialist | TM-30 Required | 5 days |
 | TM-40H | AI Engineer | TM-30 Required | 5 days |
-| TM-40I | ML Engineer | TM-30 Required | 5 days |
+| TM-40M | ML Engineer | TM-30 Required | 5 days |
 | TM-40J | Program Manager | TM-30 Required | 4 days |
 | TM-40K | Knowledge Manager | TM-30 Required | 4 days |
 | TM-40L | Software Engineer | TM-30 Required | 5 days |
 
 **TM-30 is a hard prerequisite for all specialist tracks — not a recommendation.** Enrollment requests missing TM-30 Go documentation will not be confirmed by C2DAO.
 
-NOTE: Upon completing TM-30, trainees are eligible for ALL TM-40 tracks (A–L) — both WFF functional (A–F) and specialist (G–L). TM-30 is a hard prerequisite for every TM-40 track.
+NOTE: Upon completing TM-30, trainees are eligible for ALL TM-40 tracks (A–M) — both WFF functional (A–F) and specialist (G–M). TM-30 is a hard prerequisite for every TM-40 track.
 
 Instructors should discuss which specialist track is appropriate for each trainee at the end of Day 5. Refer trainees to the Unit Training NCO/Officer for enrollment coordination and access provisioning lead times (7–10+ duty days for specialist tracks).
 

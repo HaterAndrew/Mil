@@ -3,11 +3,23 @@
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.
 
+**Companion Resource — Ontologize Channel:** [@Ontologize](https://www.youtube.com/@Ontologize) — Official Palantir training partner. 68 indexed video walkthroughs covering Foundry and AIP features. Full catalog with TM cross-references: [source_material/ontologize_youtube/README.md](../../source_material/ontologize_youtube/README.md)
+
 ---
 
 ## How to Use This Addendum
 
 Videos are grouped by topic and ordered from foundational to advanced within each group. Start with the group most relevant to your current work. Videos marked in the TM with inline NOTE callouts are flagged here as well for easy cross-reference.
+
+---
+
+## New Doctrine References (March 2026)
+
+The following doctrine sections were added to TM-40H this session. Review after the corresponding TM chapter:
+
+- **ADP 3-13 AI/ML Framing** — Doctrinal context for AI/ML in operational information environments. See TM-40H concepts guide.
+- **PED-to-Pipeline Mapping** — Processing, Exploitation, and Dissemination mapped to AIP Logic pipeline stages. See TM-40H concepts guide.
+- **UDRA Governance** — Unified Data Reference Architecture governance framework for AI data access and controls. See TM-40H concepts guide.
 
 ---
 

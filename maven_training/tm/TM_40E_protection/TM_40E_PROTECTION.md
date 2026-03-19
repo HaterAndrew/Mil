@@ -102,7 +102,7 @@ TM-40E aligns to multiple doctrinal publications. Table 1-4 provides a quick ref
 
 | Domain | Primary Reference | Key Paragraphs/Sections | MSS Chapter |
 |---|---|---|---|
-| Protection WFF Overview | ADP 3-37 | ADP 3-37 Ch.1–2 | 1 |
+| Protection WFF Overview | ADP 3-37, FM 3-37 | ADP 3-37 Ch.1–2; FM 3-37 Ch.1–3 (protection tasks, integration, assessment) | 1 |
 | Composite Risk Management | FM 5-19 | Para 1-2 (5-step process), Ch.2 (hazard assessment), Ch.4 (risk acceptance authority) | 2 |
 | CBRN Defense | FM 3-11, FM 3-11.9, ATP 3-11.32 | FM 3-11 Ch.3 (CBRN tasks); FM 3-11.9 (hazard prediction); ATP 3-11.32 (CBRN OPDS) | 3 |
 | NBC Reporting | FM 3-11, ATP 3-11.37 | FM 3-11 Ch.4 (CBRN reporting); NBC 1–6 formats | 3, Appendix B |
@@ -111,6 +111,7 @@ TM-40E aligns to multiple doctrinal publications. Table 1-4 provides a quick ref
 | Physical Security | AR 190-13, AR 190-51 | AR 190-13 Ch.2 (physical security program) | 5 |
 | Serious Incident Reporting | AR 190-40 | AR 190-40 Ch.3 (SIR categories and timelines) | 5 |
 | Air and Missile Defense | ADP 3-01, FM 3-01 | ADP 3-01 para 1-1 (AMD purpose); FM 3-01 Ch.2 (AMD tasks) | 6 |
+| CVP Analysis | ADP 3-37 (Jan 2024) | ADP 3-37 Ch.2 (CVP framework, CAL/DAL derivation) | 4, 6 |
 | CAL/DAL | FM 3-01, ADRP 3-37 | FM 3-01 para 2-3 (CAL/DAL process) | 6 |
 | Electronic Warfare | FM 3-36 | FM 3-36 Ch.2 (EW tasks), Ch.4 (EW in protection) | 7 |
 | Counter-UAS | ATP 3-01.81 | ATP 3-01.81 (C-UAS operations) | 7 |
@@ -121,6 +122,7 @@ TM-40E aligns to multiple doctrinal publications. Table 1-4 provides a quick ref
 | Protection Program | AR 525-2 (Jun 2023) | Overarching protection regulation | All |
 | OPSEC Regulation | AR 530-1 (Sep 2014) | Primary OPSEC regulation | All |
 | OPSEC TTP | ATP 3-13.3 | OPSEC tactics, techniques, and procedures | All |
+| Geospatial Engineering | FM 3-34 | GMAD framework (Generate-Manage-Analyze-Disseminate) | 8 |
 | Cyberspace/EW | FM 3-12 | Cyber component of protection WFF | 7 |
 
 **Strategic Guidance:**
@@ -130,6 +132,7 @@ TM-40E aligns to multiple doctrinal publications. Table 1-4 provides a quick ref
 | Document | Authority | Relevance |
 |---|---|---|
 | NATO Digital Transformation Implementation Strategy (Oct 2024) | NATO | MDO interoperability context — frames protection data sharing in coalition operations |
+| DDOF Playbook v2.2 (December 2025) | T2COM C2DAO | VAULTIS-A quality framework (8 dimensions); 6-phase data product lifecycle; 85% quality gate; MVP mandate 30 days |
 
 ### 1-5. Scope: What TM-40E Covers and Does Not Cover
 
@@ -186,7 +189,7 @@ TM-40E aligns to multiple doctrinal publications. Table 1-4 provides a quick ref
 | TM-40D | Sustainment | Complementary. CBRN decontamination requires sustainment coordination; force protection affects supply route security. |
 | TM-40E | Protection | This manual. |
 | TM-40F | Mission Command | Complementary. Protection picture feeds the COP (S3 product); FPCON and SIR data feeds commander CCIR monitoring. |
-| TM-50G–L | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq TM-40G–L). Not applicable to operational protection practitioners. |
+| TM-50G–M | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq TM-40G–M). Not applicable to operational protection practitioners. |
 
 > **NOTE: TM-20 and TM-30 are required as prerequisites (Go evaluations on file) but builder skills are not exercised in this manual. TM-40E assumes no ability to build pipelines or transforms. If you encounter a protection data product that does not exist and needs to be built, coordinate with your unit's designated MSS Builder (TM-30 qualified) or the C2DAO.**
 
@@ -558,6 +561,33 @@ The AT officer's MSS workflow follows the threat-assessment-countermeasure cycle
 
 ---
 
+### 4-2a. CVP Analysis Framework — Driving Protection Priorities in MSS
+
+Protection prioritization decisions depend on CVP analysis — Criticality, Vulnerability, Probability. ADP 3-37 (January 2024) establishes CVP as the framework by which commanders and protection cells determine which assets require the most protection. In MSS, CVP analysis provides the structured data foundation for producing the Critical Asset List (CAL) and the Defended Asset List (DAL).
+
+**Table 4-0. CVP Analysis Factors (IAW ADP 3-37)**
+
+| Factor | Definition | Data Requirements |
+|---|---|---|
+| Criticality | How important is the asset to mission success? | Mission analysis, task organization, asset value |
+| Vulnerability | How exposed is the asset to threats? | Threat assessment, terrain analysis, defensive posture |
+| Probability | How likely is the threat to act against this asset? | Intelligence assessment, historical pattern data |
+
+CVP analysis is not a one-time event. The protection cell reviews CVP data at each Protection Working Group meeting and updates it after any significant change to the threat picture, the unit's defensive posture, or the mission. In MSS, CVP scores are attached to assets in the protection workspace and feed directly into CAL/DAL decisions (Chapter 6, para 6-4).
+
+**MSS CVP Data Entry:**
+1. Navigate to the AT Officer zone or protection workspace.
+2. For each asset under consideration, enter Criticality, Vulnerability, and Probability scores using the standard High/Medium/Low scale.
+3. Document the rationale and data source for each factor score.
+4. MSS calculates the composite CVP risk score and ranks assets for prioritization.
+5. The ranked list informs commander's CAL/DAL decisions and resource allocation for protection measures.
+
+> **NOTE: CVP analysis produces the Critical Asset List (CAL) and Defended Asset List (DAL) — both are structured data products maintained in MSS. The CAL lists all assets requiring protection based on CVP scoring. The DAL is the subset of CAL assets that available AMD and protection resources can actively defend. The gap between CAL and DAL is accepted risk, which must be documented and briefed to the commander. See Chapter 6, para 6-4 for CAL/DAL management procedures.**
+
+> **WARNING: CVP scores are only as valid as the data feeding them. A Probability assessment based on 6-month-old threat data, or a Vulnerability assessment that does not account for a recent defensive posture change, produces a misleading protection priority list. The AT officer must verify data currency for all three CVP factors before presenting CVP-based recommendations to the commander.**
+
+---
+
 ### 4-3. FPCON Tracking and Communication in MSS
 
 Force Protection Condition (FPCON) is the DOD-standardized system for managing and communicating terrorism threat levels. MSS tracks FPCON at unit and installation level with a full change log.
@@ -675,6 +705,36 @@ MISO personnel do not manage the AT workspace. Their role is to provide data fro
 4. AT officer reviews MISO entries before incorporating them into the threat assessment. MISO field observations are "Suspected" confidence by default — they require AT officer and S2 correlation before elevation to "Probable" or "Confirmed."
 
 > **NOTE: MISO personnel are force protection multipliers, not AT officers. Their value to the AT program is in the texture of the human information environment they observe during MISO activities. The AT officer remains responsible for threat assessment and protective action decisions.**
+
+### 4-7. OPSEC 5-Step Process as a Data Security Framework
+
+Operations Security (OPSEC) is a protection task that applies across the entire force — not just within the AT cell. FM 3-13.3 establishes the 5-step OPSEC process. For MSS practitioners, the OPSEC process maps directly to data security practices on the platform. Every protection data element managed in MSS is potential intelligence for an adversary; OPSEC discipline determines whether MSS data exposure is controlled.
+
+**Table 4-2. OPSEC 5-Step Process and MSS Data Platform Analog (IAW FM 3-13.3)**
+
+| Step | OPSEC Action | Data Platform Analog |
+|---|---|---|
+| 1 | Identify critical information | Define sensitive data elements, classification rules |
+| 2 | Analyze threats | Threat intelligence feeds, adversary collection capability assessment |
+| 3 | Analyze vulnerabilities | Access audit, data exposure analysis, metadata review |
+| 4 | Assess risk | Risk scoring, residual risk acceptance |
+| 5 | Apply countermeasures | Access controls, data masking, need-to-know enforcement |
+
+**Applying the OPSEC Process to MSS Protection Data:**
+
+1. **Identify critical information.** The unit OPSEC officer and protection cell identify which protection data elements in MSS constitute critical information — data that, if obtained by an adversary, would compromise operational security. Examples: RAM schedule, specific FPCON measures, vulnerability assessment scores for specific facilities, AMD system locations and readiness states.
+
+2. **Analyze threats.** Determine which adversary collection capabilities could target MSS data. This includes insider threat, cyber exploitation, and observation of MSS terminals during field operations. Coordinate with S2 for current adversary collection capability assessments.
+
+3. **Analyze vulnerabilities.** Conduct an access audit of the protection workspace. Who has access to which data zones? Are access permissions current, or do departed personnel still have active permissions? Is metadata (timestamps, editor names, change logs) exposing patterns that reveal operational information?
+
+4. **Assess risk.** Score the risk of each critical information element being compromised. Risk = Threat × Vulnerability. Document risk scores in the OPSEC risk workspace linked to the protection workspace.
+
+5. **Apply countermeasures.** Implement data-level countermeasures in MSS: restrict workspace access to need-to-know, apply data masking for sensitive fields visible in shared views, enforce classification markings on all protection data products, and conduct periodic access reviews.
+
+> **NOTE: OPSEC is not an IT function — it is a commander's program executed by all staff. The OPSEC officer coordinates and advises, but every protection practitioner who enters data in MSS is responsible for understanding what constitutes critical information and how to protect it on the platform. AR 530-1 and ATP 3-13.3 provide the regulatory and doctrinal framework.**
+
+> **CAUTION: MSS metadata — who accessed a record, when, how frequently — can itself be critical information. An adversary who observes a sudden increase in AT workspace activity can infer a change in the threat posture. Coordinate with the OPSEC officer on metadata exposure risks specific to MSS usage patterns.**
 
 ---
 
@@ -1113,6 +1173,8 @@ The engineer section should not manage survivability data in isolation. The prot
 The engineer section's primary MSS value in the protection WFF is the quality and currency of position data. A map that shows planned positions as "complete" when they are still under construction — or completed positions as "planned" because the update was never entered — produces a false confidence in the unit's defensive posture.
 
 > **NOTE: The engineer section is the data entry authority for survivability positions. The protection officer is the data quality authority — verifying during the weekly review that survivability data reflects the physical reality of the AO. These are complementary, not competing, roles.**
+
+> **NOTE: The FM 3-34 (Geospatial Engineering) GMAD framework — Generate, Manage, Analyze, Disseminate — maps directly to the MSS data pipeline for protection geospatial products. Generate = ingest geospatial data (terrain, threat overlays, position data). Manage = govern data quality, classification, access. Analyze = transform raw geospatial data into protection overlays and threat mapping products. Disseminate = publish finished geospatial products to subordinate units and adjacent WFFs. Protection overlays, threat mapping, survivability position layers, and base camp design data in MSS all follow the GMAD-to-Ingest-Govern-Transform-Publish pipeline. Engineer sections and protection cells that understand this analog can apply FM 3-34 geospatial discipline to their MSS data management practices.**
 
 ### 8-2. Fighting Position and Survivability Position Tracking
 
@@ -1637,8 +1699,8 @@ Post-laboratory or technical analysis. Format:
 | TM-40C (Movement and Maneuver) | Physical security integration with maneuver operations; base camp siting |
 | TM-40D (Sustainment) | CBRN resupply coordination; medical tracking for CBRN casualties |
 | TM-40F (Mission Command) | COP integration; CCIR and decision support products that consume protection data |
-| TM-40G–L (Specialist Tracks) | Post-graduate technical tracks (prereq TM-30). Not required for protection WFF employment. |
-| TM-50G–L (Advanced Specialist Tracks) | Advanced technical tracks (prereq TM-40G–L). Not applicable to operational protection practitioners. |
+| TM-40G–M (Specialist Tracks) | Post-graduate technical tracks (prereq TM-30). Not required for protection WFF employment. |
+| TM-50G–M (Advanced Specialist Tracks) | Advanced technical tracks (prereq TM-40G–M). Not applicable to operational protection practitioners. |
 
 **F-2. New User Checklist.** Before using the MSS protection workspace for the first time, verify:
 
@@ -1799,3 +1861,4 @@ Complete the following in order. Note any data quality issue and assign correcti
 
 - **JADC2 Strategy Summary (March 2022)** — Cross-domain data integration strategy for Joint All-Domain Command and Control
 - **DoD Directive 3000.09, Autonomy in Weapon Systems (January 2023 update)** — Policy on autonomous and semi-autonomous functions in weapon systems; context for force protection and C-UAS systems
+- **DDOF Playbook v2.2 (December 2025)** — T2COM C2DAO; VAULTIS-A quality framework (8 dimensions); 6-phase data product lifecycle; 85% quality gate; MVP mandate 30 days

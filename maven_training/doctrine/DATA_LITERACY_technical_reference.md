@@ -26,13 +26,23 @@ This edition incorporates the following updates from the initial publication:
   v1.1 (February 2025) and data mesh principles at paragraph 3-7c and Appendix C.
 - **Policy update.** Updates Governing References to reflect that the Army Data Plan (2022)
   has been superseded in part by Army CIO guidance (2024) and UDRA v1.1 (2025).
-- **VAUTI sourcing.** Confirms VAUTI as a DoD Data Strategy (2020) standard; sourcing
-  clarified throughout.
+- **VAULTIS-A update.** Updates data quality framework from VAUTI (5 dimensions, AR 25-1
+  2019) to VAULTIS-A (8 dimensions, DDOF Playbook v2.2, December 2025). Adds Linked,
+  Secure, and Auditable dimensions. Establishes 85% minimum weighted average as DDOF
+  Phase 3 quality gate. Full supersession chain documented at paragraph 4-8.
 - **Decision dominance.** Adds paragraph 1-2e framing decision dominance as an enduring
   Army operational objective.
 - **NATO references.** Adds AJP-3.2 (Allied Joint Doctrine for Land Operations) to
   interoperability section and references.
 - **Architecture resources.** Expands reference to USAREUR-AF technical architecture and implementation resources available through C2DAO.
+- **UDRA data quality dimensions.** Adds the seven UDRA v1.1 measurement dimensions
+  (Accuracy, Completeness, Conformity, Consistency, Uniqueness, Integrity, Timeliness) at
+  paragraph 4-9, linking them to the VAULTIS-A framework.
+- **Data mesh architecture.** Adds Chapter 11 covering UDRA data mesh concepts: data products,
+  data domains, computational governance, and the six UDRA services.
+- **Army Data Plan strategic objectives.** Adds Chapter 12 with the eleven strategic
+  objectives (SO-01 through SO-11) and five strategic enablers, highlighting SE-05 (Talent) as
+  the mandate for MSS training.
 
 This publication establishes doctrine for data literacy across
 United States Army Europe and Africa (USAREUR-AF) and the broader Army. It provides the
@@ -110,15 +120,32 @@ available but no one knows how to use the data they generate. This is a common f
 
 ---
 
-**1-2. Why Data Literacy Matters for Military Operations**
+**1-2. The Cognitive Hierarchy — From Data to Understanding**
 
-1-2a. The Commanding General of USAREUR-AF has stated: **"The race to harness live data will
-determine who wins the next war."** This is not a doctrinal abstraction — it is a command
-directive. In USAREUR-AF, that race is already underway. Allied sensors, data, and
-AI-powered machine learning tools are integrated into real-time decision-making today. The CG
-has been explicit: **"This is not a projected capability or an operational needs statement to
-inform future investment. This is what we are doing today."** Data literacy is what allows
-formations to participate in — and benefit from — that capability.
+1-2a. Army doctrine (ADP 6-0, Mission Command; ADP 3-13, Information) defines a four-level
+cognitive hierarchy that is foundational to all data work:
+
+| Level | Definition (ADP 6-0) | Operational Example |
+|---|---|---|
+| **Data** | Unprocessed signals communicated between nodes | Raw GCSS-A equipment status codes, MEDPROS records, SIGINT intercepts |
+| **Information** | Data organized and processed to provide context and meaning | A dashboard showing "847 NMC vehicles by type across V Corps" |
+| **Knowledge** | Information analyzed to provide meaning and value | Assessment that NMC rates spiked 40% after rotation due to Class IX shortfall |
+| **Understanding** | Knowledge synthesized with judgment to comprehend the situation | G4's determination that readiness will degrade below C2 within 60 days without intervention |
+
+1-2b. Data platforms automate the lower tiers (data → information) so humans can focus on the
+higher tiers (knowledge → understanding). This hierarchy explains why data literacy is a
+warfighting competency, not an IT skill: the goal is not to manage data — it is to accelerate
+the commander's progression from raw data to sound understanding.
+
+1-2c. Per ADP 3-13 (November 2023), **information is a dynamic of combat power** — at the same
+level as firepower, mobility, and survivability. ADP 3-13 defines five information activities:
+Enable, Protect, Inform, Influence, Attack. Data platforms primarily serve the Enable function
+(establishing infrastructure to collect, process, store, and disseminate data) and the Protect
+function (safeguarding data and networks through access controls and classification enforcement).
+
+**1-3. Why Data Literacy Matters for Military Operations**
+
+1-3a. In USAREUR-AF, allied sensors, data, and AI-powered machine learning tools are already integrated into real-time decision-making. Data literacy is what allows formations to participate in — and benefit from — that capability.
 
 1-2b. Modern military operations generate enormous volumes of data across every warfighting
 function. Personnel systems track readiness by individual Soldier. Logistics systems track
@@ -275,13 +302,7 @@ interoperability with Allied Joint Publications (AJP-01, AJP-3, AJP-5). Data lit
 requirements in this publication apply to multinational operations and exercises as well as
 unilateral Army operations.
 
-1-5i. The CG USAREUR-AF has identified data interoperability as Allied nations' **"number
-one concern"** for coalition effectiveness. The barrier is trust: Allied nations must have
-confidence in where their data goes, how it is handled, and what security controls govern
-it. The CG has stated: **"It's trust. That's all that is. We can solve it."** Data
-literacy — including rigorous handling discipline, accurate classification, and documented
-data lineage — is how units build that trust at the working level. Formations that cannot
-demonstrate disciplined data practices cannot be trusted with coalition data and cannot
+1-5i. Data interoperability is a central concern for coalition effectiveness. The barrier is trust: Allied nations must have confidence in where their data goes, how it is handled, and what security controls govern it. Data literacy — including rigorous handling discipline, accurate classification, and documented data lineage — is how units build that trust at the working level. Formations that cannot demonstrate disciplined data practices cannot be trusted with coalition data and cannot
 participate fully in NATO integrated operations.
 
 1-5j. The real-time command-and-control system USAREUR-AF has built in Europe — integrating
@@ -928,19 +949,64 @@ supplemented by human review and periodic verification against authoritative sou
 
 ---
 
-**4-8. The VAUTI Standard**
+**4-8. The VAULTIS-A Standard**
 
-The Department of Defense Data Strategy establishes five essential properties for all Army data: Visible, Accessible, Understandable, Trustable, and Interoperable (VAUTI). All data products in USAREUR-AF must be evaluated against VAUTI standards before operational use.
+The USAREUR-AF operational quality gate for all data products is **VAULTIS-A** — eight dimensions of data quality established by the DDOF Playbook v2.2 (T2COM C2DAO, December 2025). VAULTIS-A extends the DoD Data Strategy's VAULTIS framework (7 dimensions) by adding Auditable as the eighth dimension.
 
-| VAUTI Property | Definition | How to Evaluate |
+**Lineage:** VAUTI (AR 25-1, 2019, 5 dimensions) → VAULTIS (DoD Data Strategy, 2020, 7 dimensions) → **VAULTIS-A** (DDOF Playbook v2.2, 2025, 8 dimensions). VAULTIS-A is the current authoritative standard.
+
+| VAULTIS-A Dimension | Target | Definition | How to Evaluate |
+|---|---|---|---|
+| **V — Visible** | 100% | Data is discoverable in the catalog or data product | Can you find this dataset without already knowing where it is? |
+| **A — Accessible** | 99% | Authorized users can retrieve it with acceptable latency | Can all users who need it actually access it within SLA? |
+| **U — Understandable** | 100% | Complete metadata and user guide; meaning is clear | Does it have a data dictionary, column descriptions, and context? |
+| **L — Linked** | 100% | Traced to authoritative sources and consuming products | Can you trace this data from source to consumption? |
+| **T — Trusted** | 95% | Accuracy validated, sponsor sign-off obtained | Is there a documented source, refresh schedule, quality check, and sponsor? |
+| **I — Interoperable** | 90% | Compatible with approved platforms; uses standard identifiers | Does it use standard identifiers shared with other data sources? |
+| **S — Secure** | 100% | Compliant with classification and access control policy | Are markings correct and access controls enforced? |
+| **A — Auditable** | 100% | Full provenance trail and access logs maintained | Can you trace every transformation and who accessed this data? |
+
+**Minimum Gate Score:** 85% weighted average across all eight dimensions to pass DDOF Phase 3. Products below threshold are returned for remediation with documented deficiencies.
+
+NOTE: A data product that fails any VAULTIS-A dimension is not operationally ready. Commanders should require VAULTIS-A compliance certification before incorporating any new data source into decision-making.
+
+WARNING: Earlier references to "VAUTI" (5 dimensions) reflect the superseded AR 25-1 (2019) standard. VAULTIS-A adds three critical dimensions — Linked, Secure, and Auditable — that address data traceability, security compliance, and provenance. Do not evaluate data products against the old 5-dimension standard.
+
+---
+
+**4-9. UDRA Data Quality Dimensions**
+
+4-9a. The Unified Data Reference Architecture (UDRA) v1.1 defines seven measurement dimensions
+for data quality. These dimensions provide the operational criteria for assessing whether data
+meets the standards described in the VAULTIS-A framework (paragraph 4-8). VAULTIS-A defines
+what makes data fit for use; the UDRA dimensions define how to measure it.
+
+4-9b. The seven UDRA data quality dimensions are:
+
+| Dimension | Definition | Measurement |
 |---|---|---|
-| **Visible** | Data is discoverable — users can find it in the data catalog | Can you find this dataset without already knowing where it is? |
-| **Accessible** | Authorized users can retrieve it | Can all users who need it actually access it? |
-| **Understandable** | Meaning is clear — columns, fields, and context are documented | Does it have a data dictionary or column descriptions? |
-| **Trustable** | Quality and provenance are known and validated | Is there a documented source, refresh schedule, and quality check? |
-| **Interoperable** | Can be used across systems without manual translation | Does it use standard identifiers shared with other data sources? |
+| **Accuracy** | Data correctly reflects true values | Comparison to authoritative source |
+| **Completeness** | Data contains expected information at specified time | Null/missing field analysis |
+| **Conformity** | Data follows agreed policies, standards, and procedures | Schema validation |
+| **Consistency** | Values uniformly represented within and across data sets | Cross-dataset comparison |
+| **Uniqueness** | One-to-one alignment between observed event and record | Duplicate detection |
+| **Integrity** | Pedigree, provenance, and lineage known and aligned with business rules | Lineage audit |
+| **Timeliness** | Time between event occurrence and data availability | Latency measurement |
 
-NOTE: A data product that fails any VAUTI property is not operationally ready. Commanders should require VAUTI compliance certification before incorporating any new data source into decision-making.
+4-9c. Applying the dimensions. Data stewards and analysts use these seven dimensions as the
+measurement layer when conducting quality assessments. Each VAULTIS-A gate (paragraph 4-8) maps
+to one or more of these measurement dimensions. For example, the VAULTIS-A "Trusted" dimension
+(95% target) is assessed by measuring Accuracy, Completeness, and Integrity against the
+authoritative source. The "Auditable" dimension (100% target) is assessed through Integrity and
+Timeliness checks on lineage records.
+
+4-9d. Units conducting DDOF Phase 3 quality gate assessments (paragraph 4-8) should apply these
+seven dimensions as the measurement protocol. Document findings against each dimension and
+report aggregate scores to the C2DAO for theater-wide quality tracking.
+
+**NOTE:** These seven dimensions provide the measurement criteria underneath the VAULTIS-A
+quality framework. VAULTIS-A defines what makes data fit for use; these dimensions define how
+to measure it. Source: UDRA v1.1, Table 8.
 
 ---
 
@@ -1565,10 +1631,10 @@ assign and enforce data roles explicitly.
 | TM-20 | Builder | Builds basic Workshop applications; runs light transforms; creates and shares data products without specialist tools; identifies data quality problems | All personnel — builds on TM-10 |
 | TM-30 | Advanced Builder | Designs pipelines and Ontology objects; builds governed dashboards and complex transforms; profiles data quality; mentors TM-10/20 users | Data-adjacent personnel (17/25-series, S6/G6/G2) |
 | TM-40 Series (WFF) | Warfighting Function Specialist | Role-specific MSS integration within an assigned warfighting function. Six tracks: Intelligence (40A), Fires (40B), Movement & Maneuver (40C), Sustainment (40D), Protection (40E), Mission Command (40F). Applies MSS tools to functional domain workflows. | WFF functional staff (INT, FIRES, M2, SUST, PROT, MC); requires TM-30 prerequisite |
-| TM-40 Series (Technical) | Technical Specialist | Role-specific mastery within a designated technical specialty. Six tracks: ORSA (40G), AI Engineer (40H), ML Engineer (40I), Program Manager (40J), Knowledge Manager (40K), Software Engineer (40L). Produces command-level data products independently. | Designated specialist billets (ORSA, AI Eng, ML Eng, PM, KM, SWE); requires TM-30 prerequisite |
-| TM-50 Series | Advanced Specialist | Advanced practitioner capability within a specialist track (TM-50G through TM-50L); leads, mentors, and develops new capability; research-grade analytical and engineering proficiency. No TM-50 WFF tracks. | TM-40G–L graduates in senior or lead roles; requires TM-40 in same track |
+| TM-40 Series (Technical) | Technical Specialist | Role-specific mastery within a designated technical specialty. Six tracks: ORSA (40G), AI Engineer (40H), ML Engineer (40M), Program Manager (40J), Knowledge Manager (40K), Software Engineer (40L). Produces command-level data products independently. | Designated specialist billets (ORSA, AI Eng, ML Eng, PM, KM, SWE); requires TM-30 prerequisite |
+| TM-50 Series | Advanced Specialist | Advanced practitioner capability within a specialist track (TM-50G through TM-50M); leads, mentors, and develops new capability; research-grade analytical and engineering proficiency. No TM-50 WFF tracks. | TM-40G–M graduates in senior or lead roles; requires TM-40 in same track |
 
-9-4b. The goal is not for every Soldier to reach TM-50. The goal is for every Soldier to complete TM-10, for all personnel to achieve TM-20, for data-adjacent personnel to reach TM-30, for WFF functional staff to complete the appropriate TM-40 WFF track (TM-40A–F, prereq TM-30), and for the formation to have technical specialist coverage across the TM-40 specialist tracks (TM-40G–L, prereq TM-30) appropriate to its mission. TM-50 capability (TM-50G–L) is required in senior data roles and for personnel responsible for developing and sustaining formation data capability. There are no TM-50 WFF tracks — the TM-50 series applies only to the six technical specialist tracks (G through L).
+9-4b. The goal is not for every Soldier to reach TM-50. The goal is for every Soldier to complete TM-10, for all personnel to achieve TM-20, for data-adjacent personnel to reach TM-30, for WFF functional staff to complete the appropriate TM-40 WFF track (TM-40A–F, prereq TM-30), and for the formation to have technical specialist coverage across the TM-40 specialist tracks (TM-40G–M, prereq TM-30) appropriate to its mission. TM-50 capability (TM-50G–M) is required in senior data roles and for personnel responsible for developing and sustaining formation data capability. There are no TM-50 WFF tracks — the TM-50 series applies only to the six technical specialist tracks (G through M).
 
 ---
 
@@ -1600,8 +1666,8 @@ assign and enforce data roles explicitly.
 | All personnel | TM-20 (Builder) — Build basic data products; identify and report quality issues | Unit training; TM-20 course (builds on TM-10) |
 | Data-adjacent billets (17/25-series, S6/G6/G2) | TM-30 (Advanced Builder) — Design pipelines and Ontology objects; govern data products | TM-30 course (builds on TM-20); mentored practicum |
 | WFF functional staff (INT, FIRES, M2, SUST, PROT, MC) | TM-40 Series (WFF Track) — MSS integration within assigned warfighting function | TM-40A through TM-40F per WFF assignment; prerequisite TM-30 |
-| ORSA, AI Eng, ML Eng, PM, KM, SWE billets | TM-40 Series (Technical Specialist) — Role-specific track at the assigned specialist level | TM-40G through TM-40L per billet type; prerequisite TM-30 |
-| Senior data leads, capability developers, training cadre | TM-50 Series (Advanced Specialist) — Research-grade proficiency; leads and develops capability in specialist track | TM-50G through TM-50L per track; prerequisite TM-40G–L in same track |
+| ORSA, AI Eng, ML Eng, PM, KM, SWE billets | TM-40 Series (Technical Specialist) — Role-specific track at the assigned specialist level | TM-40G through TM-40M per billet type; prerequisite TM-30 |
+| Senior data leads, capability developers, training cadre | TM-50 Series (Advanced Specialist) — Research-grade proficiency; leads and develops capability in specialist track | TM-50G through TM-50M per track; prerequisite TM-40G–M in same track |
 | Commander/Senior Leader | Commander-level (direction, evaluation, resourcing) — Not a technical track; governed by this publication and the companion senior leader guide | Data Literacy for Senior Leaders; unit immersion; C2DAO advisory |
 
 9-6c. Data literacy qualification is a readiness consideration. A unit with systematically low data literacy across the staff cannot produce the quality of analytical products required for complex operations. Commanders must assess and develop data literacy as part of overall readiness. TM-10 and TM-20 completion should be tracked as unit-level training metrics comparable to weapons qualification.
@@ -1746,6 +1812,172 @@ A commander who accepts a readiness briefing built on unverified data teaches th
 that unverified data is acceptable. A commander who asks for the source, the sample size, and
 the confidence level teaches the staff that data rigor is expected. Data culture is a command
 climate issue, and the commander owns it.
+
+---
+
+# CHAPTER 11
+
+# UNIFIED DATA REFERENCE ARCHITECTURE — DATA MESH CONCEPTS
+
+**BLUF:** The Unified Data Reference Architecture (UDRA) v1.1 establishes data mesh as the
+Army's architectural paradigm for data management. Data mesh replaces centralized data
+architectures with a model of distributed ownership, domain-aligned data products, and
+computationally enforced governance. Every formation that produces or consumes data operates
+within this architecture.
+
+---
+
+**11-1. Data Products**
+
+11-1a. A data product is a logically pre-packaged unit of data and associated metadata produced
+to satisfy a consumer's mission or business demand. A data product is not raw data. It is
+curated, documented, and governed data that is ready for consumption without additional
+preparation by the consumer.
+
+11-1b. Data products are self-describing: they include metadata that defines their content,
+schema, quality, lineage, refresh schedule, and responsible owner. A consumer can discover a
+data product in the catalog and understand what it contains, where it came from, how current
+it is, and who is accountable for its accuracy — without contacting the producer.
+
+11-1c. Data products are computationally governed: quality standards, access controls,
+classification markings, and retention policies are enforced through automated mechanisms,
+not manual review alone. This ensures consistent governance at scale across the enterprise.
+
+11-1d. Military application. In the USAREUR-AF context, a data product might be a theater
+readiness dataset published by G3 for consumption by V Corps and subordinate commands, a
+logistics consumption forecast published by 21 TSC for sustainment planning, or a geospatial
+threat layer published by G2 for operational planning. Each is owned by the producing domain,
+governed by automated policy, and consumed by authorized users across the theater.
+
+---
+
+**11-2. Data Domains**
+
+11-2a. A data domain is an organization with specific functional expertise that produces data
+products. In the Army context, data domains align to staff functions and subordinate commands.
+The G2 section is a data domain for intelligence data. The G4 section is a data domain for
+logistics data. Each domain owns and is accountable for the data it produces.
+
+11-2b. Domain ownership means the functional element closest to the data — the element with
+subject matter expertise — is responsible for its quality, accuracy, and availability. Data
+management responsibility does not centralize in a single IT element or data center. The
+producing domain manages its own data products in accordance with enterprise standards.
+
+11-2c. This principle directly supports the Army data stewardship hierarchy (paragraph 9-7).
+Functional Data Managers within each domain are accountable for data quality; the C2DAO
+provides enterprise governance and standards enforcement, not centralized data ownership.
+
+---
+
+**11-3. Computational Governance**
+
+11-3a. Computational governance is the automated enforcement of governance policies across data
+products and domains. It replaces manual, document-based governance with machine-enforceable
+rules. Two key concepts:
+
+- **Standards as code.** Data quality standards, schema requirements, and naming conventions
+  are encoded as executable rules that run automatically against data products. A data product
+  that violates a schema standard is flagged or blocked before it reaches consumers.
+
+- **Policies as code.** Access control policies, classification rules, retention schedules,
+  and handling procedures are implemented as automated controls. Policy enforcement does not
+  depend on individual compliance alone — it is built into the platform.
+
+11-3b. Computational governance enables scale. A theater-level data environment with hundreds
+of data products cannot be governed through manual review and checklists alone. Automated
+governance ensures consistent enforcement across all domains and products while freeing data
+stewards to focus on judgment-intensive decisions.
+
+---
+
+**11-4. UDRA Service Architecture**
+
+11-4a. The UDRA defines six core services that compose the Army data architecture. All data
+systems and platforms must provide or integrate with these services:
+
+| # | Service | Purpose |
+|---|---|---|
+| 1 | **Production** | Creation and curation of data products by source domains |
+| 2 | **Orchestration** | Coordination and scheduling of data pipelines, transforms, and workflows across domains |
+| 3 | **Consumption** | Discovery, access, and use of data products by authorized consumers |
+| 4 | **Access Management** | Authentication, authorization, and enforcement of need-to-know / need-to-share policies |
+| 5 | **API Brokerage** | Standardized interfaces enabling programmatic data exchange between systems and domains |
+| 6 | **Computational Governance** | Automated enforcement of quality standards, policies, and compliance requirements |
+
+11-4b. These six services operate across all layers of the USAREUR-AF 5-Layer Data Stack
+(paragraph 3-7). The Production and Orchestration services map primarily to Layers 2-3
+(Integration and Semantic). Consumption and API Brokerage map primarily to Layers 4-5
+(Analytics and Activation). Access Management and Computational Governance are cross-cutting
+services that operate at every layer.
+
+**NOTE:** Source: Unified Data Reference Architecture (UDRA) v1.1, ASA(ALT)/DASA(DES) and
+Army CIO, 6 September 2024. The UDRA is the authoritative Army architecture reference for data
+systems design. Implementation guidance specific to USAREUR-AF is available through C2DAO.
+
+---
+
+# CHAPTER 12
+
+# ARMY DATA PLAN — STRATEGIC OBJECTIVES
+
+**BLUF:** The Army Data Plan (2022) established eleven strategic objectives and five strategic
+enablers that define the Army's data management vision. Strategic Enabler 05 (Talent) is the
+mandate for MSS training: the Army cannot achieve its data objectives without a trained
+workforce. Commanders must understand these objectives to nest their unit data programs within
+the Army's strategic direction.
+
+---
+
+**12-1. Strategic Objectives**
+
+12-1a. The Army Data Plan defines eleven strategic objectives (SO) that guide Army-wide data
+management, governance, and analytics. These objectives are not aspirational — they are
+directed outcomes that all Army organizations must support.
+
+| SO | Title | Description |
+|---|---|---|
+| SO-01 | Data Governance | Establish enterprise data governance with clear roles, responsibilities, and accountability at every echelon |
+| SO-02 | Data Architecture | Implement a unified data architecture that enables interoperability, discoverability, and reuse across the enterprise |
+| SO-03 | Data Standards | Adopt and enforce common data standards, metadata schemas, and naming conventions Army-wide |
+| SO-04 | Data Quality | Ensure data accuracy, completeness, consistency, timeliness, and fitness for use through measurable quality controls |
+| SO-05 | Data Access | Enable authorized users to discover and access data when and where needed, consistent with security requirements |
+| SO-06 | Data Sharing | Promote responsible data sharing across organizations, systems, and classification domains to maximize operational value |
+| SO-07 | Data Analytics | Scale analytical capabilities to transform data into actionable insights that support decision-making at all echelons |
+| SO-08 | AI/ML Integration | Integrate artificial intelligence and machine learning into Army data systems to enhance speed and quality of analysis |
+| SO-09 | Data Security | Protect data throughout its lifecycle through classification, access controls, and compliance with security policy |
+| SO-10 | Data Infrastructure | Modernize data infrastructure (cloud, edge, tactical) to support data operations across all operating environments |
+| SO-11 | Performance Measurement | Establish metrics and accountability mechanisms to track progress against data management objectives |
+
+---
+
+**12-2. Strategic Enablers**
+
+12-2a. The Army Data Plan identifies five strategic enablers (SE) that underpin the eleven
+strategic objectives. Without these enablers, the strategic objectives cannot be achieved.
+
+| SE | Title | Description |
+|---|---|---|
+| SE-01 | Leadership | Commander and senior leader commitment to data-driven operations as a warfighting imperative |
+| SE-02 | Policy | Authoritative policy framework governing data management, access, quality, and security |
+| SE-03 | Resources | Funding, equipment, and platform investment to sustain data operations at scale |
+| SE-04 | Partnerships | Collaboration across Army, Joint, interagency, and coalition partners for data interoperability |
+| SE-05 | **Talent** | **Trained workforce with data literacy, analytical skills, and technical expertise to execute data operations** |
+
+12-2b. **SE-05 (Talent) is the mandate for MSS training.** The Army Data Plan explicitly
+recognizes that the Army cannot achieve any of its data strategic objectives without a workforce
+trained in data literacy, data management, and data analytics. The MSS Training Program
+(TM-10 through TM-50) is USAREUR-AF's implementation of SE-05. Every MSS course directly
+supports one or more of the eleven strategic objectives by developing the human capital
+required to execute them.
+
+12-2c. Nesting. Commanders aligning their unit data programs with the Army Data Plan should
+map their training and operational data activities to the relevant strategic objectives and
+enablers. The C2DAO can assist with this alignment.
+
+**NOTE:** Source: Army Data Plan (2022), Office of the Chief Information Officer (OCIO).
+Superseded in part by Army CIO Data Stewardship Policy (April 2024) and UDRA v1.1 (February
+2025) for governance and architecture specifics. The strategic objectives and enablers remain
+the foundational Army-wide framework.
 
 ---
 
@@ -1927,8 +2159,9 @@ to the data type and operational context.
 ## Army Doctrine and Regulations
 
 - **AR 25-1, Army Information Technology (Jul 2019)** — Statutory framework for Army data
-  management, data governance, and IT policy. Establishes the VAUTI data quality principles
-  at the Army level and defines the Army Data Board (ADB) as the senior data governance body.
+  management, data governance, and IT policy. Established the original VAUTI (5-dimension) data
+  quality principles. NOTE: VAUTI superseded by VAULTIS (DoD Data Strategy 2020, 7 dimensions)
+  and extended to VAULTIS-A (DDOF Playbook v2.2, 8 dimensions). See paragraph 4-8.
 - **ADP 3-13, Information** — Establishes doctrine for information as combat power and the
   foundation for information advantage. This publication implements ADP 3-13 at the data literacy
   level.
@@ -1966,7 +2199,8 @@ to the data type and operational context.
 - **Army CIO Data Stewardship Policy (April 2, 2024)** — Establishes the data stewardship hierarchy (MADO, Data Steward, Functional Data Manager, C2DAO) and data chain of responsibility. Current authoritative governance reference.
 - **Army Data Plan (2022)** — Established the foundational Army-wide framework for data management, governance, and analytics in support of Multi-Domain Operations. Superseded in part by subsequent Army CIO guidance (2024) and UDRA v1.1 (2025); remains a foundational reference.
 - **Unified Data Reference Architecture (UDRA) v1.1 (February 2025)** — Provides the Army's current reference architecture for data systems based on data mesh principles: distributed data ownership, domain-aligned data products, and federated governance.
-- **DoD Data Strategy (2020)** — Establishes the VAUTI framework (Visible, Accessible, Understandable, Trustable, Interoperable) as the DoD standard for data quality and interoperability.
+- **DoD Data Strategy (2020)** — Establishes the VAULTIS framework (Visible, Accessible, Understandable, Linked, Trustworthy, Interoperable, Secure) as the DoD standard for data quality. Supersedes the 5-dimension VAUTI model from AR 25-1.
+- **DDOF Playbook v2.2 (December 2025)** — T2COM C2DAO / HQDA CIO/G-6 / SAIS-ADD implementing document. Extends VAULTIS to VAULTIS-A (8 dimensions, adds Auditable). Establishes the 6-phase data product lifecycle and 85% minimum quality gate. Authoritative standard for all MSS data products.
 - **DoD Data, Analytics & AI Adoption Strategy (November 2023)** — Establishes the AI Hierarchy of Needs and the DoD framework for scaling data, analytics, and AI adoption across the enterprise.
 - **NATO Data Strategy for the Alliance (Feb 2025)** — Alliance-wide data governance mandate establishing common data governance principles across NATO nations. Directly applicable to USAREUR-AF data literacy requirements in the EUCOM AOR.
 
@@ -1993,6 +2227,13 @@ C2DAO for access provisioning.
 
 **Archive** — Long-term storage of data that is no longer actively used but must be retained for legal, regulatory, or historical purposes.
 
+**Army Data Plan (2022)** — The foundational Army-wide strategic framework for data management,
+governance, and analytics. Defines eleven strategic objectives (SO-01 through SO-11) and five
+strategic enablers (SE-01 through SE-05). SE-05 (Talent) is the mandate for MSS training.
+Superseded in part by Army CIO Data Stewardship Policy (2024) and UDRA v1.1 (2025) for
+governance and architecture specifics; strategic objectives remain authoritative. (See
+Chapter 12.)
+
 **Attribute Data** — Non-spatial descriptive information associated with a geographic feature.
 
 **Automation** — The use of technology to perform data processing tasks without human intervention.
@@ -2010,6 +2251,12 @@ enterprise data policy; they implement it. (Authority: Army CIO Data Stewardship
 2024.)
 
 **COA (Course of Action)** — A possible plan for accomplishing a mission, developed and compared during the MDMP.
+
+**Computational Governance** — The automated enforcement of governance policies across data
+products and domains. Implements standards as code (executable quality rules) and policies as
+code (automated access control, classification, and retention enforcement). Replaces manual,
+document-based governance with machine-enforceable controls. One of the six UDRA services.
+(See paragraph 11-3.)
 
 **Completeness** — The degree to which all required data is present in a dataset.
 
@@ -2029,9 +2276,19 @@ enterprise data policy; they implement it. (Authority: Army CIO Data Stewardship
 
 **Data Culture** — The shared values, behaviors, and practices around data within an organization.
 
+**Data Domain** — An organization with specific functional expertise that produces data products.
+In the Army context, data domains align to staff functions (G1, G2, G3, G4, etc.) and
+subordinate commands. The domain owns and is accountable for the data it produces. (See
+paragraph 11-2.)
+
 **Data Custodian** — An individual or organization with physical or technical custody of data.
 
 **Data Engineering** — The technical discipline of building systems and pipelines to collect, store, transform, and move data.
+
+**Data Mesh** — An architectural paradigm for data management based on distributed ownership,
+domain-aligned data products, federated governance, and self-serve data infrastructure. Adopted
+by the Army through the Unified Data Reference Architecture (UDRA) v1.1. Replaces centralized
+data architectures. (See Chapter 11.)
 
 **Data Lake** — A storage repository that holds large volumes of raw data in its native format until needed for analysis.
 
@@ -2044,6 +2301,11 @@ enterprise data policy; they implement it. (Authority: Army CIO Data Stewardship
 **Data Owner** — The organizational element or leader accountable for a specific dataset's accuracy, security, and authorized use.
 
 **Data Producer** — An individual, system, or organization that creates or collects data.
+
+**Data Product** — A logically pre-packaged unit of data and associated metadata produced to
+satisfy a consumer's mission or business demand. Data products are self-describing (include
+metadata for content, schema, quality, lineage, and ownership) and computationally governed
+(quality and access policies enforced through automated mechanisms). (See paragraph 11-1.)
 
 **Data Profiling** — The examination of a dataset to assess its content, structure, and quality.
 
@@ -2224,10 +2486,19 @@ centralized data architecture guidance. Implemented at USAREUR-AF level through 
 
 **Validity** — The degree to which data values conform to defined rules, formats, and ranges.
 
-**VAUTI (Visible, Accessible, Understandable, Trustable, Interoperable)** — The five
-essential data quality properties established by the DoD Data Strategy (2020) as the
-authoritative DoD-level standard for data quality and interoperability. All USAREUR-AF data
-products must satisfy VAUTI standards before operational use. (See paragraph 4-8.)
+**VAUTI (Visible, Accessible, Understandable, Trustable, Interoperable)** — The original
+five-dimension data quality framework from AR 25-1 (2019). **Superseded** by VAULTIS (DoD Data
+Strategy 2020, 7 dimensions) and VAULTIS-A (DDOF Playbook v2.2, 8 dimensions). See VAULTIS-A.
+
+**VAULTIS (Visible, Accessible, Understandable, Linked, Trustworthy, Interoperable, Secure)** —
+The seven-dimension data quality framework established by the DoD Data Strategy (2020).
+Supersedes VAUTI. Extended to VAULTIS-A by the DDOF Playbook v2.2. See VAULTIS-A.
+
+**VAULTIS-A (Visible, Accessible, Understandable, Linked, Trusted, Interoperable, Secure,
+Auditable)** — The eight-dimension data quality framework established by the DDOF Playbook v2.2
+(T2COM C2DAO, December 2025). Extends DoD VAULTIS by adding Auditable. All USAREUR-AF data
+products must achieve 85% minimum weighted average across all eight dimensions to pass DDOF
+Phase 3 quality gate. This is the current authoritative standard. (See paragraph 4-8.)
 
 **Visualization** — The representation of data in a visual form, such as a chart, graph, or map.
 

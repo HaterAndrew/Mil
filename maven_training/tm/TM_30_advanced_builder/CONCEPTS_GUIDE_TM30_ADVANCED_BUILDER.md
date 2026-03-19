@@ -404,7 +404,7 @@ Required sequence for any change to a production artifact:
 | New AIP Logic workflow authoring | NO | TM-40H (AI Eng) | TM-30 configures existing workflows |
 | Agent Studio workflow authoring | NO | TM-40H (AI Eng) | Above TM-30 scope |
 | Statistical modeling, regression, Monte Carlo | NO | TM-40G (ORSA) | ORSA methodology required |
-| ML model development and integration | NO | TM-40I (MLE) | Model development is code-layer |
+| ML model development and integration | NO | TM-40M (MLE) | Model development is code-layer |
 | OSDK application development | NO | TM-40L (SWE) | Custom application code |
 | Data product governance program management | TM-30 enforces standards | TM-40J (PM) for enterprise-level program coordination | PM track for cross-organizational governance programs |
 | Data product documentation and taxonomy | TM-30 applies standards | TM-40K (KM) for organizational knowledge architecture | KM track for enterprise knowledge design |
@@ -454,7 +454,7 @@ Escalating is not failure. Escalating when a requirement exceeds your lane is th
 | Requirement needs Python or PySpark transform authoring, OSDK integration, or custom connector configuration | **TM-40L — Software Engineer** | Code-layer pipeline and application development is SWE lane |
 | Requirement needs a new AIP Logic workflow authored from scratch, prompt engineering, Agent Studio, or TypeScript Functions on Objects | **TM-40H — AI Engineer** | LLM workflow design and AI reasoning layer is AI Eng lane |
 | Requirement involves statistical analysis: regression, forecasting, simulation, Monte Carlo, decision support modeling | **TM-40G — ORSA** | Quantitative analysis methodology is ORSA lane; tools alone do not make analysis valid |
-| Requirement needs a machine learning model built, trained, validated, or integrated into the Ontology | **TM-40I — ML Engineer** | Model development and inference pipelines are MLE lane |
+| Requirement needs a machine learning model built, trained, validated, or integrated into the Ontology | **TM-40M — ML Engineer** | Model development and inference pipelines are MLE lane |
 | Requirement involves cross-organizational coordination, data product governance program, stakeholder management across multiple units or functional areas | **TM-40J — Program Manager** | Enterprise governance coordination is PM lane |
 | Requirement involves building or restructuring a knowledge taxonomy, documentation architecture, or data product catalog for the organization | **TM-40K — Knowledge Manager** | Organizational knowledge architecture is KM lane |
 | Requirement appears to need multiple specialist tracks (e.g., ML model + Workshop application + governance program) | **TM-40J (PM) as coordinator first**, then PM routes to other specialists | Complex requirements need a PM to coordinate scope and delivery across lanes |
@@ -510,7 +510,7 @@ Configure a meaningful default filter that limits the initial query to a relevan
 
 **6. An analyst asks you to build a statistical regression model predicting equipment failure probability based on maintenance history. Is this TM-30 scope? If not, where does it route?**
 
-Not TM-30 scope. Statistical modeling requiring regression analysis routes to TM-40G (ORSA). If the requirement also involves building an ML pipeline to serve the model at inference time, that component routes to TM-40I (ML Engineer). TM-30's contribution is the Workshop application that displays ORSA or MLE outputs — not the analysis or model itself.
+Not TM-30 scope. Statistical modeling requiring regression analysis routes to TM-40G (ORSA). If the requirement also involves building an ML pipeline to serve the model at inference time, that component routes to TM-40M (ML Engineer). TM-30's contribution is the Workshop application that displays ORSA or MLE outputs — not the analysis or model itself.
 
 ---
 
@@ -527,7 +527,7 @@ The 21st Theater Sustainment Command G4 needs a brigade-level vehicle readiness 
 - **Watermark risk:** GCSS-A modification timestamps are not always updated on status-only changes. Mitigation: supplement watermark with a daily windowed full refresh of the prior 72 hours to catch missed updates.
 - **Workshop pattern:** Summary → Detail. Page 1: formation-level rollup with RAG traffic lights. Page 2 (conditional on brigade selection): brigade fleet table sorted by deadline status. Page 3 (conditional on vehicle selection): individual vehicle maintenance history timeline.
 - **Access control:** G4 section can view and export. Subordinate S4s can view their own brigade, not others. Dashboard visible to commanding general read-only.
-- **Escalation trigger:** If the requirement adds a predictive maintenance model, route the model to TM-40I; TM-30 builds the Workshop display layer only.
+- **Escalation trigger:** If the requirement adds a predictive maintenance model, route the model to TM-40M; TM-30 builds the Workshop display layer only.
 
 ### Vignette B — V Corps SITREP Data Quality Workflow
 
@@ -549,7 +549,7 @@ This guide establishes the mental models applied throughout TM-30. TM-30 task in
 
 Proceed to TM-30, Chapter 1, when you can answer the six gating questions in Section 11 without referencing this guide.
 
-When TM-30 qualification is complete, select a TM-40 specialist track based on assigned duties and billet. All specialist tracks (TM-40G through TM-40L) require TM-30 as a hard prerequisite.
+When TM-30 qualification is complete, select a TM-40 specialist track based on assigned duties and billet. All specialist tracks (TM-40G through TM-40M) require TM-30 as a hard prerequisite.
 
 ---
 
@@ -570,7 +570,7 @@ When TM-30 qualification is complete, select a TM-40 specialist track based on a
 
 **Next steps after TM-30:**
 - WFF tracks (TM-40A–F): for Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command operators. Prereq is TM-30 (required).
-- Specialist tracks (TM-40G–L): ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, Software Engineer. Prereq is TM-30 (required).
+- Specialist tracks (TM-40G–M): ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, Software Engineer. Prereq is TM-30 (required).
 
 **Peer specialist cross-references:**
 - **TM-40H (AI Engineer):** TM-30 configures AIP Logic workflows that TM-40H authors. The boundary is clear: TM-30 adjusts parameters; TM-40H changes prompts, workflow logic, and Ontology write-back integrations.

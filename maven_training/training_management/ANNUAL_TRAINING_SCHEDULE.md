@@ -101,13 +101,13 @@
 
 ---
 
-### TM-40I: ML ENGINEER
+### TM-40M: ML ENGINEER
 *5 days | Semi-Annual | Max 6 students | Prereq: TM-30*
 
 | Iteration | Dates | Location | Quota |
 |---|---|---|---|
-| TM40I-2026-1 | 22–26 June 2026 | MSS Training Lab B (GPU-enabled) | 6 seats |
-| TM40I-2026-2 | September 2026 (TBD) | MSS Training Lab B (GPU-enabled) | 6 seats |
+| TM40M-2026-1 | 22–26 June 2026 | MSS Training Lab B (GPU-enabled) | 6 seats |
+| TM40M-2026-2 | September 2026 (TBD) | MSS Training Lab B (GPU-enabled) | 6 seats |
 
 **Enrollment deadline:** T-21 days. GPU Code Workspace: 10+ duty days — request at T-35.
 
@@ -153,6 +153,32 @@
 
 ---
 
+### T3-I: INSTRUCTOR CERTIFICATION
+*5 days (Phase 1 classroom) | Semi-Annual | Max 8 candidates | Prereq: TM-30 + C2DAO selection*
+
+| Iteration | Dates | Location | Quota |
+|---|---|---|---|
+| T3I-2026-1 | July 2026 (TBD — aligned with Q4 FY26 target) | C2DAO Training Facility | 8 seats |
+| T3I-2027-1 | January 2027 (TBD) | C2DAO Training Facility | 8 seats |
+
+**Enrollment:** By C2DAO Training OIC selection. Self-nomination accepted; selection not guaranteed.
+
+---
+
+### T3-F: MSC FORCE MULTIPLIER
+*3 days | Quarterly (aligned with MTT rotation) | Max 8 candidates | Prereq: TM-20 + CDR nomination*
+
+| Iteration | Dates | Location | Quota |
+|---|---|---|---|
+| T3F-2026-1 | Q4 FY26 (aligned with first MTT rotation — TBD) | MSC site | 8 seats |
+| T3F-2026-2 | Q1 FY27 (TBD) | MSC site | 8 seats |
+| T3F-2026-3 | Q2 FY27 (TBD) | MSC site | 8 seats |
+| T3F-2026-4 | Q3 FY27 (TBD) | MSC site | 8 seats |
+
+**Enrollment:** Commander nomination memorandum to C2DAO. Lead time: T-14 days minimum.
+
+---
+
 ## ANNUAL SCHEDULE OVERVIEW — CALENDAR VIEW (MARCH–SEPTEMBER 2026)
 
 ```
@@ -164,10 +190,12 @@ TM-30                       11-15May                   10-14Aug
 TM-40A–F (WFF)   [coord w/ WFF proponents — contact C2DAO Training POC]
 TM-40G                               8-12Jun            [TBD]
 TM-40H                               15-19Jun           [TBD]
-TM-40I                               22-26Jun           [TBD]
+TM-40M                               22-26Jun           [TBD]
 TM-40J            28-30Apr          28-30Jul            22-24Sep
 TM-40K                       5-7May          4-6Aug     [TBD]
 TM-40L                               13-17Jul           [TBD]
+T3-I                                             [Jul TBD]
+T3-F              [aligned with MTT rotation — quarterly; dates TBD per MSC]
 ```
 
 ---
@@ -182,7 +210,7 @@ TM-40L                               13-17Jul           [TBD]
 | TM-10 → TM-20 | 6 weeks before TM-20 start (must complete TM-10 first) |
 | TM-10 → TM-20 → TM-30 | 4 months before TM-30 start |
 | TM-10 → TM-20 → TM-30 → TM-40A–F (WFF tracks) | 6 months before desired TM-40 completion |
-| TM-10 → TM-20 → TM-30 → TM-40G/H/I/L | 6 months before desired TM-40 completion |
+| TM-10 → TM-20 → TM-30 → TM-40G/H/M/L | 6 months before desired TM-40 completion |
 | TM-10 → TM-20 → TM-30 → TM-40J/K | 4 months before TM-40J/K start |
 
 ### Newly Assigned Personnel (30-day TM-10 requirement)
@@ -202,6 +230,7 @@ All personnel complete TM-10 at minimum 60 days before deployment. Data team mem
 | TM-10 Annual Refresher | Annual | March, June, September (30-min blocks) | Unit-scheduled; C2DAO provides content |
 | TM-20+ Quarterly Build Exercise | Quarterly | Monthly (unit-managed) | Unit-managed; C2DAO provides scenario |
 | Instructor Professional Development | Semi-annual | April, October | C2DAO-led |
+| UDT Semi-Annual PD | Semi-annual | April, October (virtual OK) | C2DAO-led; UDT-specific topics included |
 | New Feature Familiarization (platform updates) | After major Foundry releases | Variable | C2DAO-broadcast; unit-scheduled lab |
 
 ---

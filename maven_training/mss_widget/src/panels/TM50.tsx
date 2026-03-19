@@ -10,12 +10,12 @@ export default function TM50({ showPanel }: Props) {
       <div className="section-header">
         <span className="section-badge">TM-50</span>
         <span className="section-title">Advanced Developer Tracks</span>
-        <span className="section-subtitle">Prerequisite: TM-40 (by track) &bull; Tracks TM-50G&ndash;L &bull; All 6 tracks available</span>
+        <span className="section-subtitle">Prerequisite: TM-40 (by track) &bull; Tracks TM-50G&ndash;M &bull; All 6 tracks available</span>
       </div>
 
       <div className="callout bluf">
         <div className="callout-label">BLUF &mdash; ADVANCED TRACKS</div>
-        <div className="callout-body">The TM-50 series provides advanced-level instruction for each developer track, building directly on the corresponding TM-40 specialist manual (TM-40G&ndash;L). Intended for senior technical leads, platform architects, and senior developers designing enterprise-scale MSS capabilities. All 6 tracks are complete and available.</div>
+        <div className="callout-body">The TM-50 series provides advanced-level instruction for each developer track, building directly on the corresponding TM-40 specialist manual (TM-40G&ndash;M). Intended for senior technical leads, platform architects, and senior developers designing enterprise-scale MSS capabilities. All 6 tracks are complete and available.</div>
       </div>
 
       <h2>TM-50 SERIES &mdash; PUBLICATIONS</h2>
@@ -50,14 +50,14 @@ export default function TM50({ showPanel }: Props) {
             </ul>
           </div>
         </a>
-        <a className="track-card doc-card" href={URLS.TM50I} target="_blank" rel="noreferrer">
+        <a className="track-card doc-card" href={URLS.TM50M} target="_blank" rel="noreferrer">
           <div className="track-card-hdr">
-            <div className="track-tm">TM-50I &mdash; ML Engineer Advanced</div>
+            <div className="track-tm">TM-50M &mdash; ML Engineer Advanced</div>
             <div className="track-chip">Advanced</div>
           </div>
           <div className="track-body">
             <div className="track-name">Advanced ML Engineering</div>
-            <div className="track-audience">Prerequisite: TM-40I</div>
+            <div className="track-audience">Prerequisite: TM-40M</div>
             <ul className="track-topics">
               <li>Automated retraining pipelines</li>
               <li>Transformer fine-tuning, GNNs</li>

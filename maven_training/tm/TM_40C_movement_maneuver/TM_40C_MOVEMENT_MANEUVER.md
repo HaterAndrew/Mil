@@ -127,6 +127,43 @@ The MDMP is a deliberate, collaborative, and iterative planning process (FM 5-0,
 
 > **NOTE: MSS supports MDMP as a data integration layer — it does not conduct wargaming, recommend COAs, or produce the OPORD. Staff analysis and commander judgment remain the center of each MDMP step.**
 
+### 2-1a. Operational Variables and Mission Variables as MSS Data Frameworks
+
+ADP 3-0 (Operations, March 2025) establishes two complementary variable sets that define what data the M&M analyst must collect and organize in MSS. Operational variables describe the broad operational environment. Mission variables describe the specific factors a commander analyzes for a given operation. Together, they form the data collection and planning framework for every MDMP iteration.
+
+**Operational Variables — PMESII-PT (ADP 3-0, para 1-8).** The eight operational variables define the operational environment (OE) at the strategic and operational level. M&M analysts use PMESII-PT to structure OE analysis data in MSS before planning begins.
+
+**Table 2-1a. PMESII-PT Operational Variables as MSS Data Categories**
+
+| Variable | Full Name | M&M Data Relevance | MSS Data Source |
+|---|---|---|---|
+| P | Political | Host nation political boundaries, governance structures, status of forces agreements affecting freedom of movement | S9/POLAD input, Intel layer |
+| M | Military | Threat force composition, disposition, and doctrine; friendly force laydown | S2 Intel layer, BFT layer |
+| E | Economic | Infrastructure capacity (roads, bridges, rail), industrial areas affecting route planning | Route layer, engineer data |
+| S | Social | Population centers, displaced persons routes, civilian movement patterns | S9/S5 data, protection layer |
+| I | Information | Communications infrastructure, EMCON considerations, information operations effects | S6 data, IO cell input |
+| I | Infrastructure | Transportation networks, utilities, key facilities that constrain or enable maneuver | Route layer, engineer recon |
+| P | Physical Environment | Terrain, weather, hydrology, vegetation — directly affects mobility corridors | Terrain analysis layer, weather feed |
+| T | Time | Operational timelines, seasonal effects on terrain, light data | Planning timeline data |
+
+**Mission Variables — METT-TC(I) (ADP 3-0, March 2025; FM 5-0, para 2-4).** The seven mission variables are the planning data framework the commander and staff analyze for each specific operation. The "I" (Informational Considerations) was added in the March 2025 revision of ADP 3-0 to account for the information dimension of operations.
+
+**Table 2-1b. METT-TC(I) Mission Variables as MSS Planning Data**
+
+| Variable | Full Name | MSS Data Product | Primary Staff Section |
+|---|---|---|---|
+| M | Mission | OPORD/FRAGO text and graphics | S3 |
+| E | Enemy | Enemy situation overlay, SITTEMP, OB data | S2 (Intel layer) |
+| T | Terrain and Weather | Terrain analysis (OAKOC), weather overlays, light data | S2/engineer |
+| T | Troops and Support Available | Task organization, combat power dashboards, enabler availability | S3/S1/S4 |
+| T | Time Available | Planning timeline, movement timeline, phase triggers | S3 |
+| C | Civil Considerations | ASCOPE analysis, civilian movement data, key infrastructure | S9/S5 |
+| (I) | Informational Considerations | Information environment effects, OPSEC indicators, adversary information capabilities | IO cell / S3 |
+
+> **NOTE: METT-TC(I) with the added "I" for Informational Considerations reflects ADP 3-0 (March 2025). Units still using METT-TC without the "I" should update their planning frameworks. In MSS, Informational Considerations data is maintained as a separate data category in the planning workspace to ensure it is not overlooked during mission analysis.**
+
+The M&M analyst's responsibility is to ensure MSS contains structured, current data for each variable before MDMP Step 2 (Mission Analysis) begins. A mission analysis conducted against an MSS workspace that lacks data for one or more PMESII-PT or METT-TC(I) variables has a blind spot the staff may not recognize.
+
 ### 2-2. OPORD Visualization in MSS
 
 Once the OPORD is published, the S3 section maintains the OPORD graphics in MSS as the authoritative visual reference. This includes:
@@ -377,6 +414,37 @@ FM 3-98 establishes five fundamentals of reconnaissance: retain freedom of maneu
 
 > **NOTE: The reconnaissance principle "report all information rapidly and accurately" (FM 3-98) translates directly to an MSS data currency standard. Reconnaissance data that reaches the S3 but is not posted to MSS has not reached the combined arms picture. MSS is only as current as the data entered into it.**
 
+### 4-4a. Reconnaissance as a Data Collection Operation (FM 3-98)
+
+FM 3-98 (Reconnaissance and Security Operations) defines reconnaissance fundamentally as a data collection operation — the purpose is to obtain information about the enemy, terrain, and civil conditions that reduces uncertainty for the commander. Every reconnaissance mission produces structured data products that must be captured in MSS. The M&M analyst treats reconnaissance outputs as data, not just reports.
+
+**Reconnaissance Types and Their Structured Data Products.** Each reconnaissance type (FM 3-98, Chapter 2) generates a distinct set of data products. The M&M analyst must ensure MSS is configured to receive and store these products before the reconnaissance element departs.
+
+**Table 4-4a. Reconnaissance Types and MSS Data Products**
+
+| Recon Type | Purpose (FM 3-98) | Structured Data Products for MSS |
+|---|---|---|
+| Route Reconnaissance | Obtain detailed information on a specific route and adjacent terrain | Route classification (surface, width, MLC), bridge data (MLC, width, bypass), obstacle locations and types, chokepoint identification, ford site assessment, overhead clearance |
+| Zone Reconnaissance | Obtain detailed information on all routes, obstacles, terrain, and enemy forces within a zone | NAI reports, obstacle overlay updates, terrain trafficability data, enemy contact reports (SPOTREP), civilian activity, key terrain identification |
+| Area Reconnaissance | Obtain detailed information on a specific area (town, hill, bridge, intersection) | Facility/structure assessment, enemy disposition within area, obstacle data, civilian status, key infrastructure condition |
+| Reconnaissance in Force | Determine enemy strength, disposition, and reaction through deliberate contact | Enemy contact data (size, activity, location, unit, time, equipment), enemy defensive positions, engagement area boundaries, weapons systems identified |
+
+**NAI Data Structure in MSS.** Named Areas of Interest generated or refined during reconnaissance are structured data objects in the intelligence layer. Each NAI in MSS carries:
+
+- NAI designator and geographic location (point or polygon)
+- Associated PIR or IR it supports
+- Indicator list (what activity at this NAI confirms or denies)
+- Collection asset assigned
+- Observation window (start/end DTG)
+- Current status: No activity / Activity observed / PIR answered
+- Reporting history (linked SPOTREPs)
+
+**Obstacle Reports as Reconnaissance Data Products.** Route and zone reconnaissance generate obstacle report data that feeds directly into the engineer obstacle layer (Chapter 3). Each obstacle identified during reconnaissance produces a structured OBSREP object: location, type, dimensions, emplacing agency (friendly/enemy/unknown), bypass assessment, and recommended reduction method. The reconnaissance element collects this data; the engineer section validates and maintains it in MSS.
+
+**Route Classification Data from Reconnaissance.** Route reconnaissance produces the most structured data of any reconnaissance type. FM 3-34.400 defines the route classification data fields. In MSS, each route segment assessed during reconnaissance is updated with: surface type, route width, maximum vehicle classification, bridge MLC at each crossing, gradient data, chokepoint locations, and overhead clearance restrictions. This data directly feeds the route analysis products used in COA development (section 2-3) and time-distance calculations (section 5-2a).
+
+> **NOTE: Reconnaissance is the M&M commander's primary means of collecting data about the operational environment before committing the main body. A reconnaissance plan that does not specify what data products each element will collect — and how those products will enter MSS — wastes the reconnaissance effort. The S3 must coordinate with the S2 and cavalry troop to define MSS data product requirements before issuing the reconnaissance order.**
+
 ### 4-5. OP/LP Management in MSS
 
 Observation posts (OPs) and listening posts (LPs) are the physical sensors of the reconnaissance and security effort. MSS tracks OP/LP data to give the S3 a picture of the sensor grid.
@@ -449,6 +517,32 @@ Objectives are the geographic areas a unit must seize, secure, or neutralize (FM
 - Phase lines controlling movement to objective
 - Limit of advance (LOA)
 - Consolidation and reorganization area
+
+### 5-2a. Scheme of Maneuver as Structured Geospatial Data
+
+The scheme of maneuver is the commander's visualization of how forces will move and fight to accomplish the mission. In MSS, the scheme of maneuver is not a narrative paragraph — it is a set of structured geospatial data objects that must be created, attributed, and maintained in the platform throughout the operation.
+
+**Graphic Control Measures as Structured Data.** Every control measure in the scheme of maneuver — phase lines, objectives, boundaries, checkpoints, contact points, passage points, axes of advance, directions of attack, assembly areas, and limit of advance — is a discrete geospatial object in MSS. Each object carries metadata: designator, type, owning unit, effective DTG, associated OPORD/FRAGO number, and current status. These are not map annotations. They are structured data that other systems and dashboards can query, filter, and display contextually.
+
+**Table 5-2a. Scheme of Maneuver Graphic Control Measures in MSS**
+
+| Control Measure | MSS Object Type | Required Attributes | Update Trigger |
+|---|---|---|---|
+| Phase Line (PL) | Linear | Designator, DTG effective, associated unit, crossing status | OPORD/FRAGO; unit crossing report |
+| Objective (OBJ) | Polygon/Point | Designator, assigned unit, phase, status (not started/in progress/seized/secured) | OPORD/FRAGO; unit report |
+| Boundary | Linear | Designator, left/right unit, effective DTG | OPORD/FRAGO |
+| Checkpoint (CP) | Point | Designator, associated route, reporting requirement | OPORD/FRAGO; unit report |
+| Axis of Advance | Linear | Designator, assigned unit, direction, width | OPORD/FRAGO |
+| Assembly Area (AA) | Polygon | Designator, assigned unit, occupy/depart DTG | OPORD/FRAGO |
+| Limit of Advance (LOA) | Linear | Designator, effective DTG, associated phase | OPORD/FRAGO |
+
+**Route Status, Movement Rates, and Time-Distance Analysis.** Route status data (section 3-1), movement rate data, and time-distance calculations are M&M-specific data products that underpin the scheme of maneuver. MSS maintains these as structured datasets, not static overlays.
+
+- **Route status** is maintained per MSR/ASR segment with classification, current condition, and last-verified DTG.
+- **Movement rates** are stored by unit type and route classification. A mechanized infantry battalion moves at a different rate on an improved road than on an unimproved trail. MSS uses these rates when loaded to support time-distance calculations for COA analysis.
+- **Time-distance analysis** is computed from route length, route classification, unit type movement rate, and known delays (obstacles, chokepoints, passage points). The output is an estimated time of arrival for each unit at each phase line or objective — a planning product the S3 uses to synchronize the scheme of maneuver with fires, aviation, and engineer support.
+
+> **NOTE: Graphic control measures in MSS are live data objects, not static drawings. When a FRAGO changes a phase line or adds a boundary, the S3 must update the MSS object — not draw a new annotation on top of the old one. Stale control measures left in the workspace alongside current ones create ambiguity that degrades combined arms coordination.**
 
 ### 5-3. Combined Arms Team Task Organization and Tracking
 
@@ -759,6 +853,33 @@ Personnel strength data from IPPS-A integration gives the S3 a personnel readine
 | C-2 | 80–89% — substantially ready | Green-Yellow |
 | C-3 | 70–79% — marginally ready | Yellow |
 | C-4 | Below 70% — not ready | Red |
+
+### 8-4a. Force Ratio Calculations and Relative Combat Power Assessment
+
+> **NOTE: Relative combat power assessment requires quantitative force ratio data — friendly versus threat — across sectors, axes, and objectives. This is a core analytical product for M&M planners (FM 5-0, Table 5-4). The force ratio does not determine the outcome of an engagement, but it provides the quantitative baseline the commander uses when allocating forces to the main effort, supporting efforts, and reserve. Ratios without context are misleading; ratios informed by terrain, training, morale, and situational factors are the basis of sound maneuver planning.**
+
+Force ratio calculations in MSS compare friendly combat power against assessed threat combat power at each decision point, axis, or objective. The S3 section builds force ratio data from two MSS sources: the friendly combat power dashboard (section 8-4) and the S2 threat order of battle data in the intelligence layer.
+
+**Force Ratio Data Elements in MSS:**
+
+| Data Element | Source | MSS Layer | Update Trigger |
+|---|---|---|---|
+| Friendly maneuver strength (by unit type/sector) | S3 combat power dashboard | Operations layer | Personnel/equipment status change |
+| Threat assessed strength (by unit type/sector) | S2 order of battle | Intel layer | Intelligence update or reassessment |
+| Sector or axis assignment | S3 OPORD / task organization | Operations layer | OPORD or FRAGO |
+| Computed force ratio (friendly:threat) | Staff calculation from MSS data | Planning workspace | Before each COA analysis or decision point |
+
+**Standard Force Ratios (FM 5-0 Planning Reference):**
+
+| Operation Type | Minimum Planning Ratio (Friendly:Threat) |
+|---|---|
+| Deliberate attack | 3:1 at the point of penetration |
+| Hasty attack | 3:1 desired; 2.5:1 minimum acceptable |
+| Defense (prepared) | 1:3 (defender advantage) |
+| Delay | 1:6 (with prepared positions and obstacles) |
+| Counterattack | 3:1 at the point of counterattack |
+
+> **CAUTION: Force ratios are planning factors, not prescriptive requirements. A 3:1 ratio does not guarantee success, and a 1:1 ratio does not guarantee failure. The force ratio must be analyzed alongside terrain, training level, morale, surprise, and combined arms integration. Display force ratios in MSS alongside these qualitative factors so the commander can make an informed assessment — not a formulaic one.**
 
 ### 8-5. Lost Communications Procedures for Location Reporting
 
@@ -1375,34 +1496,51 @@ USAREUR-AF assessments of TM-40C proficiency identify common failure patterns th
 
 The following publications are referenced in TM-40C. Practitioners should have access to the current version of each reference. Access through the Army Publishing Directorate (APD) at armypubs.army.mil.
 
-**Army Doctrine:**
-- ADP 3-0, Operations (2019)
-- ADP 3-07, Stability (2019)
-- ADP 3-90, Offense and Defense (2019)
-- ADP 5-0, The Operations Process (2019)
-- ADP 6-0, Mission Command: Command and Control of Army Forces (2019)
-- FM 3-0, Operations (Mar 2025)
-- FM 3-09, Fire Support and Field Artillery Operations (Aug 2024)
-- FM 3-90, Offense and Defense (May 2023)
-- FM 3-96, Brigade Combat Team (2015)
-- FM 3-98, Reconnaissance and Security Operations (2015)
-- FM 5-0, Planning and Orders Production (Nov 2024)
-- FM 6-0, Commander's Activities (May 2022)
-- ATP 3-04.94, Brigade Aviation Element Headquarters and Companies (2015)
-- ATP 3-90.8, Combined Arms Breaching Operations (2020)
-- FM 3-81, Maneuver Enhancement Brigade (Nov 2021) — MEB doctrine for support area operations
-- ATP 3-90.4, Combined Arms Mobility (CUI) — breaching and mobility operations
+### K-1. Doctrinal References by M&M Domain
+
+TM-40C aligns to multiple doctrinal publications. Table K-1 provides a quick reference to the primary doctrinal sources for each M&M domain covered in this manual.
+
+**Table K-1. Doctrinal References by M&M Domain**
+
+| Publication | Key Content | MSS Chapter Reference |
+|---|---|---|
+| ADP 3-0, Operations (2019) | Foundation M&M doctrine; combined arms definition (para 1-5); M&M WFF tasks (para 3-3); operational framework | 1, 5, 9, Glossary |
+| ADP 3-07, Stability (2019) | Stability operations framework; ASCOPE civil considerations; lines of effort construct | Appendix F |
+| ADP 3-90, Offense and Defense (2019) | OAKOC terrain analysis factors (para 2-5); offensive/defensive task taxonomy | 7, 13, Glossary |
+| ADP 5-0, The Operations Process (2019) | Operations process; assessment definition and methodology (para 1-58) | 11 |
+| ADP 6-0, Mission Command (2019) | Mission command philosophy; C2 of Army forces | 1, 9 |
+| FM 3-0, Operations (Mar 2025) | Current operations doctrine; S3/G3 roles and responsibilities (para 4-2); engineer mobility/countermobility tasks (para 3-12) | 1, 3, 9, Glossary |
+| FM 3-09, Fire Support and Field Artillery Operations (Aug 2024) | Fire support doctrine; FSCM definition (para 1-1); FPF standards (para 4-23); fires-maneuver synchronization | 12, Glossary |
+| FM 3-90, Offense and Defense (May 2023) | Offense/defense TTP; objective graphics (para 1-22); phase lines (para 2-10); passage of lines (para 4-5); consolidation and reorganization (para 4-13); river crossing operations (para 5-1); defensive graphic control measures (para 3-1); engagement area development (para 3-25) | 5, 7, 13, Glossary |
+| FM 3-96, Brigade Combat Team (2015) | BCT operations; aviation officer roles (para 4-18); BCT combined arms integration (para 2-1) | 6, 9 |
+| FM 3-98, Reconnaissance and Security Operations (2015) | Recon fundamentals (para 1-8); recon objectives (para 2-4); security missions — screen, guard, cover (para 4-2); counter-reconnaissance (para 1-12); NAI/TAI definitions (para 1-11) | 4, Glossary |
+| FM 5-0, Planning and Orders Production (Nov 2024) | MDMP seven-step process (para 1-1); planning and orders production | 2 |
+| FM 6-0, Commander's Activities (May 2022) | Commander's activities; battle rhythm; running estimates | 2, 9 |
+| FM 3-81, Maneuver Enhancement Brigade (Nov 2021) | MEB doctrine; support area operations; area security | 9 |
+| ATP 3-04.94, Brigade Aviation Element (2015) | Air corridor management; aviation-ground maneuver coordination; A2C2 procedures | 6 |
+| ATP 3-90.4, Combined Arms Mobility (CUI) | Breaching and mobility operations; engineer mobility TTP | 3 |
+| ATP 3-90.8, Combined Arms Breaching Operations (2020) | SOSRA breach sequence; breach planning data requirements; combined arms breach coordination | 3 |
 
 **Standards and Policy:**
-- MIL-STD-2525D, Joint Military Symbology (2014)
-- Army CIO Memorandum, Data and Analytics Policy (April 2024)
-- ADatP-36 — Friendly Force Information (FFI): NATO standard for real-time friendly force tracking data exchange — position reports, unit status
+
+| Publication | Key Content | MSS Chapter Reference |
+|---|---|---|
+| MIL-STD-2525D, Joint Military Symbology (2014) | Tactical graphic standards; friendly/enemy/neutral color scheme; obstacle and FSCM symbology | All, Appendix B |
+| Army CIO Memorandum, Data and Analytics Policy (Apr 2024) | Army data governance and analytics policy | All |
+| ADatP-36, Friendly Force Information (FFI) | NATO standard for real-time friendly force tracking data exchange — position reports, unit status | 8, 14 |
 
 **Strategic Guidance:**
-- Unified Data Reference Architecture (UDRA) v1.1 (February 2025)
-- NATO Digital Transformation Implementation Strategy (Oct 2024) — MDO interoperability context for coalition maneuver operations
 
-**Prerequisite Manuals:**
+> The following are strategic guidance documents — not doctrine — that inform MSS training design and operational context.
+
+| Document | Authority | Relevance |
+|---|---|---|
+| Unified Data Reference Architecture (UDRA) v1.1 (Feb 2025) | Army | Enterprise data architecture reference for MSS integration |
+| NATO Digital Transformation Implementation Strategy (Oct 2024) | NATO | MDO interoperability context — frames maneuver data sharing in coalition operations |
+| DDOF Playbook v2.2 (December 2025) | T2COM C2DAO | VAULTIS-A quality framework (8 dimensions); 6-phase data product lifecycle; 85% quality gate; MVP mandate 30 days |
+
+### K-2. Prerequisite Manuals
+
 - TM-10, Maven User (Basic Operator's Manual)
 - TM-20, Builder (Light Builder's Manual)
 - TM-30, Advanced Builder
@@ -1861,7 +1999,7 @@ For technical specialists pursuing advanced capability development, specialist t
 |-------|-------|----------------|
 | TM-40G | ORSA | TM-50G |
 | TM-40H | AI Engineer | TM-50H |
-| TM-40I | ML Engineer | TM-50I |
+| TM-40M | ML Engineer | TM-50M |
 | TM-40J | Program Manager | TM-50J |
 | TM-40K | Knowledge Manager | TM-50K |
 | TM-40L | Software Engineer | TM-50L |
@@ -1887,3 +2025,4 @@ For technical specialists pursuing advanced capability development, specialist t
 
 - **JADC2 Strategy Summary (March 2022)** — Cross-domain data integration strategy for Joint All-Domain Command and Control
 - **DoD Directive 3000.09, Autonomy in Weapon Systems (January 2023 update)** — Policy on autonomous and semi-autonomous functions in weapon systems; context for autonomous maneuver systems
+- **DDOF Playbook v2.2 (December 2025)** — T2COM C2DAO; VAULTIS-A quality framework (8 dimensions); 6-phase data product lifecycle; 85% quality gate; MVP mandate 30 days

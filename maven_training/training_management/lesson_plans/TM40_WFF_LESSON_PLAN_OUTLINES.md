@@ -29,6 +29,7 @@
 - Doctrinal links: MSS COP supports IPB products (FM 2-0 Ch 2), collection management (ATP 2-01), and targeting (FM 3-60).
 - Open with a question: "Who has seen a threat overlay on MSS that turned out to be stale?" This surfaces the data currency problem early.
 - Hard rule for the course: every intelligence product built this week must have a data-as-of timestamp and a source attribution label.
+- **New doctrine content (March 2026):** Intelligence process-to-pipeline mapping (FM 2-0 steps mapped to MSS data flows) and the 7 data quality standards for intelligence products. Cover in Block 1 overview; applied throughout subsequent blocks.
 
 **Assessment:** Verbal check-on-learning. Evaluator will revisit reported vs. assessed distinction during Practical Exercise brief on Day 3.
 
@@ -281,6 +282,7 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 - MSS role in fires: integrates FSCM data, tracks active target lists, displays BDA from fires elements. It does not replace the fires cell's judgment.
 - D3A linkage: MSS supports Detect (reporting feeds), Deliver (target list management), and Assess (BDA dashboards). It does not support the Decide step — that is a human decision.
 - Hard rule for the course: every targeting product must distinguish reported effects from assessed effects. Never combine them in the same text field.
+- **New doctrine content (March 2026):** D3A lifecycle data model, FIVE-O taxonomy for Fires Object Types, TTLODAC schema for target data, and CARVER scoring methodology for target prioritization. Reference throughout Blocks 6–8 and the Practical Exercise.
 
 **Assessment:** Verbal check. Reported vs. assessed distinction revisited in Day 3 PE.
 
@@ -480,6 +482,7 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 - MSS in maneuver: integrates blue force tracking feeds, displays maneuver graphics, supports MDMP products. It does not replace voice confirmation.
 - Reported vs. confirmed position: a blue icon on MSS means a reporting system said a unit was at that location at that time — it does not mean the S3 has confirmed the unit is there now.
 - Hard rule: never brief a unit as "at grid" from MSS alone without a voice/digital confirmation timestamp.
+- **New doctrine content (March 2026):** PMESII-PT/METT-TC(I) operational variables as data layers, force ratio computation from MSS data, geospatial data integration standards, and reconnaissance as a data collection operation. Reference in Blocks 2, 6, and 8.
 
 ---
 
@@ -647,6 +650,7 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 - MSS role in sustainment: integrates LOGSTAT data, displays logistics overlays, enables readiness alerts. It does not replace the S4's situational understanding.
 - Reported vs. estimated readiness: if the last LOGSTAT is 24 hours old during operations, MSS shows reported readiness from 24 hours ago. The S4 must estimate current readiness — and label it as estimated.
 - Hard rule: never brief LOGSTAT data as "current" without checking the submission timestamp.
+- **New doctrine content (March 2026):** 8 sustainment principles (ADP 4-0) mapped to MSS data objects, 10 classes of supply as Ontology classification schema, and running estimate pattern for pipeline-fed sustainment dashboards. Reference in Blocks 2, 6, and 8.
 
 ---
 
@@ -812,6 +816,7 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 - MSS role in protection: aggregates threat incident reporting, displays installation and route vulnerability overlays, enables CCIR alerts for FP events. It does not replace threat assessment.
 - Reported vs. assessed threat: MSS can show 14 threat incidents in a grid square over 30 days. The FP officer assesses whether this constitutes a pattern. Never brief aggregated data as an assessment without that judgment step.
 - Hard rule: all protection products must identify whether coverage of an area is adequate or inadequate based on reporting density — not just presence/absence of incidents.
+- **New doctrine content (March 2026):** Critical Vulnerability Point (CVP) analysis framework, OPSEC 5-step process mapped to MSS data flows, and GMAD (Global Mission Area Designations) taxonomy for protection data classification. Reference in Blocks 3, 6, and 8.
 
 ---
 
@@ -982,6 +987,7 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 - MSS role in mission command: integrates operational data, displays COP, enables CCIR alerts, and supports battle rhythm products. It does not make decisions.
 - The mission command principle of "disciplined initiative" applies to MSS: the COP informs — it does not direct.
 - Hard rule: the assessed status (commander's judgment) must never be confused with reported status (what feeds show). Every MSS product must be clear about which it is presenting.
+- **New doctrine content (March 2026):** FM 6-0 Information Management 6-tasks framework, and information relevance-to-VAULTIS-A crosswalk for structuring mission command data products. Reference in Blocks 4, 6, and 7.
 
 ---
 

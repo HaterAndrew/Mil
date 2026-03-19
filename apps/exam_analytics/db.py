@@ -13,6 +13,7 @@ from sqlalchemy import (
     ForeignKey,
     Integer,
     String,
+    UniqueConstraint,
     create_engine,
     event,
     func,
@@ -81,6 +82,9 @@ class ExamSession(Base):
 
 class ExamResult(Base):
     __tablename__ = "exam_results"
+    __table_args__ = (
+        UniqueConstraint("session_id", "trainee_id", name="uq_session_trainee"),
+    )
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     session_id = Column(Integer, ForeignKey("exam_sessions.id"), nullable=False)

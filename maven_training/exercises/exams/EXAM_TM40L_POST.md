@@ -8,7 +8,7 @@
 | **Level** | TM-40L (Specialist) |
 | **Audience** | Software engineers; prerequisite: TM-10+20+30 + TypeScript/Python + REST API familiarity |
 | **Time Allowed** | 45 minutes |
-| **Passing Score** | 70% (42/60) |
+| **Passing Score** | 70% (49/70) |
 
 ---
 
@@ -127,6 +127,20 @@ B. Strip or reject characters that could enable injection attacks, validate leng
 C. Convert the string to uppercase before processing
 D. Verify the unit designation exists in the Ontology before accepting the input
 
+**16. Per the Army Data Plan, Strategic Objective 7 (SO 7) directs the Army to build a "Cloud, Data, DevSecOps Enabled Workforce." When mapped to the DDOF Playbook lifecycle, the DevSecOps pipeline tempo that SO 7 requires corresponds to:**
+
+A. Annual release cycles aligned with the Army fiscal year
+B. The DDOF 30-day MVP mandate — SWEs build pipelines that deliver minimum viable products within 30 days per DDOF Phase 4
+C. Quarterly sprint reviews with C2DAO governance approval at each quarter boundary
+D. Continuous deployment with no governance gates — speed is the primary metric
+
+**17. Per UDRA v1.1, every data product in the Army enterprise must carry 15 required metadata fields. Three of these fields are designated security-critical. The security-critical metadata fields are:**
+
+A. Creator, Last Modified Date, and File Size
+B. Classification Marking, Access Control List, and Data Steward Contact
+C. Schema Version, Retention Policy, and Update Frequency
+D. Domain Owner, Quality Score, and Lineage Reference
+
 ---
 
 ## SECTION 2 — SHORT ANSWER
@@ -199,11 +213,11 @@ D. Verify the unit designation exists in the Ontology before accepting the input
 
 | Section | Questions | Points Each | Total Points |
 |---|---|---|---|
-| Multiple Choice | 15 | 2 | 30 |
+| Multiple Choice | 17 | 2 | 34 |
 | Short Answer | 6 | 6 | 36 |
-| **Total** | — | — | **66** |
+| **Total** | — | — | **70** |
 
-Passing: 46/66 (70%) — Post-test only. Pre-test is diagnostic.
+Passing: 49/70 (70%) — Post-test only. Pre-test is diagnostic.
 
 ---
 
@@ -227,6 +241,8 @@ Passing: 46/66 (70%) — Post-test only. Pre-test is diagnostic.
 13. C — Minimum 8 test cases (per TM-40L standards).
 14. B — Hardcoded tenant IDs risk cross-tenant data access if deployed in different context.
 15. B — Strip/reject injection characters, validate length and format before using in queries or writes.
+16. B — Army Data Plan SO 7 requires DevSecOps tempo. DDOF Playbook v2.2 mandates 30-day MVP delivery (Phase 4). SWEs build pipelines that sustain this pace. Option A (annual) is far too slow for DevSecOps. Option C (quarterly) introduces governance lag not in DDOF. Option D removes governance gates entirely, which violates fail-closed enforcement. Source: Army Data Plan SO 7 / DDOF Playbook v2.2 / TM-40L Section 1-5b.
+17. B — The three security-critical UDRA metadata fields are Classification Marking, Access Control List, and Data Steward Contact. These are security-critical because errors in any of them can result in unauthorized access or mishandled classified data. Option A lists administrative fields. Option C lists governance fields that are not security-critical. Option D lists management fields. Source: UDRA v1.1 / TM-40L Section 1-7.
 
 **Short Answer Guidance:**
 

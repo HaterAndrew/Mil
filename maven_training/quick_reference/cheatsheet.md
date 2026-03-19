@@ -18,11 +18,11 @@
 | Mission Command (MC) WFF staff | [TM-40F — Mission Command](../tm/TM_40F_mission_command/TM_40F_MISSION_COMMAND.md) |
 | ORSA / quantitative analysis specialist | [TM-40G — ORSA](../tm/TM_40G_orsa/TM_40G_ORSA.md) |
 | AI engineering / AIP Logic / Agents | [TM-40H — AI Engineer](../tm/TM_40H_ai_engineer/TM_40H_AI_ENGINEER.md) |
-| ML model development and deployment | [TM-40I — ML Engineer](../tm/TM_40I_ml_engineer/TM_40I_ML_ENGINEER.md) |
+| ML model development and deployment | [TM-40M — ML Engineer](../tm/TM_40M_ml_engineer/TM_40M_ML_ENGINEER.md) |
 | Technical program / project management | [TM-40J — Program Manager](../tm/TM_40J_program_manager/TM_40J_PROGRAM_MANAGER.md) |
 | Knowledge management / AAR / lessons learned | [TM-40K — Knowledge Manager](../tm/TM_40K_knowledge_manager/TM_40K_KNOWLEDGE_MANAGER.md) |
 | Software engineering / OSDK / external apps | [TM-40L — Software Engineer](../tm/TM_40L_software_engineer/TM_40L_SOFTWARE_ENGINEER.md) |
-| Advanced specialist training (post-TM-40G–L) | [TM-50 Series Index](../README.md#tm-50gl----advanced-technical-specialist-tracks) |
+| Advanced specialist training (post-TM-40G–M) | [TM-50 Series Index](../README.md#tm-50gl----advanced-technical-specialist-tracks) |
 | Brief commanders / senior leaders | [Data Literacy for Senior Leaders](../doctrine/DATA_LITERACY_senior_leaders.md) |
 | Comprehensive data concepts reference | [Data Literacy Technical Reference](../doctrine/DATA_LITERACY_technical_reference.md) |
 | What does this term mean? | [Glossary — Data & Foundry](../doctrine/GLOSSARY_data_foundry.md) |
@@ -162,17 +162,17 @@ WFF functional staff (INT/FIRES/M2/SUST/PROT/MC)?
      Mission Command  → TM-40F
 
 17/25-series, S6, G6, G2, or operational data analyst?
-  → TM-30: ADVANCED BUILDER (data-adjacent), then TM-40G–L
+  → TM-30: ADVANCED BUILDER (data-adjacent), then TM-40G–M
 
 Technical specialist role? (after TM-30)
   → ORSA / quantitative analyst      → TM-40G / TM-50G
   → AI engineer / AIP Logic          → TM-40H / TM-50H
-  → ML engineer / model development  → TM-40I / TM-50I
+  → ML engineer / model development  → TM-40M / TM-50M
   → Program manager / pipeline PM    → TM-40J / TM-50J
   → Knowledge manager / IM officer   → TM-40K / TM-50K
   → Software engineer / OSDK/Python  → TM-40L / TM-50L
 
-Completed TM-40G–L? → Take the corresponding TM-50G–L advanced track.
+Completed TM-40G–M? → Take the corresponding TM-50G–M advanced track.
 ```
 
 ---
@@ -182,14 +182,14 @@ Completed TM-40G–L? → Take the corresponding TM-50G–L advanced track.
 ```
 TM-10 (no prereq) → TM-20 → TM-30 ─┬─ WFF Staff  → TM-40A through TM-40F
                                       │
-                                      └─ Technical → TM-40G through TM-40L
+                                      └─ Technical → TM-40G through TM-40M
                                                               ↓
-                                                         TM-50G through TM-50L
+                                                         TM-50G through TM-50M
 
 All staff must complete TM-10 before any other TM.
 WFF tracks (TM-40A–F): require TM-10 + TM-20 + TM-30. No coding required.
-Technical tracks (TM-40G–L): require TM-30 (or demonstrated equivalent).
-Advanced tracks (TM-50G–L): require corresponding TM-40G–L.
+Technical tracks (TM-40G–M): require TM-30 (or demonstrated equivalent).
+Advanced tracks (TM-50G–M): require corresponding TM-40G–M.
 ```
 
 ---
@@ -212,13 +212,13 @@ Advanced tracks (TM-50G–L): require corresponding TM-40G–L.
 | How do I configure CCIRs and build a BUA product? | TM-40F |
 | How do I build a statistical model for a commander product? | TM-40G |
 | How do I deploy an AIP Logic workflow? | TM-40H |
-| How do I train and validate an ML model in Foundry? | TM-40I |
+| How do I train and validate an ML model in Foundry? | TM-40M |
 | How do I track a data pipeline project in MSS? | TM-40J |
 | How do I manage forms and lessons learned in MSS? | TM-40K |
 | How do I use the OSDK in an external application? | TM-40L |
 | How do I implement advanced Bayesian methods? | TM-50G |
 | How do I build a multi-step AIP Agent? | TM-50H |
-| How do I perform model validation for operational deployment? | TM-50I |
+| How do I perform model validation for operational deployment? | TM-50M |
 | How do I manage a portfolio of data products? | TM-50J |
 | How do I build a federated knowledge taxonomy? | TM-50K |
 | How do I architect a full OSDK application? | TM-50L |

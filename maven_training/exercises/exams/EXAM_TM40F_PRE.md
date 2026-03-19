@@ -125,7 +125,7 @@ _______________________________________________
 *Total points: 30. Diagnostic only — score does not affect course admission.*
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*EX-TM40F-PRE | Version 1.0 | March 2026*
+*EX_TM40F-PRE | Version 1.0 | March 2026*
 
 ---
 
@@ -163,4 +163,4 @@ Partial credit (6 pts): one CCIR described correctly with all three elements; se
 ---
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*EX-TM40F-PRE | Answer Key | Version 1.0 | March 2026*
+*EX_TM40F-PRE | Answer Key | Version 1.0 | March 2026*

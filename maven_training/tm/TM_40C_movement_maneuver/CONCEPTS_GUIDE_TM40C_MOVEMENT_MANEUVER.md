@@ -494,13 +494,13 @@ All six WFF tracks are at the same tier. All six WFF tracks require TM-10, TM-20
 
 ### Specialist Tracks (Prerequisite: TM-30)
 
-For personnel pursuing technical depth, specialist tracks (TM-40G–L, prereq TM-30) are available. Not required for M&M WFF employment.
+For personnel pursuing technical depth, specialist tracks (TM-40G–M, prereq TM-30) are available. Not required for M&M WFF employment.
 
 | Track | Title |
 |-------|-------|
 | TM-40G | ORSA (→ TM-50G) |
 | TM-40H | AI Engineer (→ TM-50H) |
-| TM-40I | ML Engineer (→ TM-50I) |
+| TM-40M | ML Engineer (→ TM-50M) |
 | TM-40J | Program Manager (→ TM-50J) |
 | TM-40K | Knowledge Manager (→ TM-50K) |
 | TM-40L | Software Engineer (→ TM-50L) |
@@ -509,5 +509,7 @@ For personnel pursuing technical depth, specialist tracks (TM-40G–L, prereq TM
 
 *CONCEPTS GUIDE — TM-40C COMPANION: MOVEMENT AND MANEUVER WARFIGHTING FUNCTION*
 *Version 1.0 — March 2026*
+> **NOTE — New Doctrine Content in TM-40C:** TM-40C now includes PMESII-PT/METT-TC(I) data frameworks with the 2025 "I" (Informational) addition (section 2-1a), force ratio calculations with combat power CAUTION (section 8-4a), scheme of maneuver as geospatial data (section 5-2a), and reconnaissance as data collection (section 4-4a, FM 3-98). These sections ground M&M data management in their authoritative doctrinal sources.
+
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA — Wiesbaden, Germany*
 *DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*

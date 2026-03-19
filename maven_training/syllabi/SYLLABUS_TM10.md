@@ -61,7 +61,7 @@
 
 ## Practical Exercise
 
-See **EX-10 — MSS Operator Basics** for the full task list, evaluator notes, and scoring rubric. Summary below.
+See **EX_10 — MSS Operator Basics** for the full task list, evaluator notes, and scoring rubric. Summary below.
 
 **Scenario:** You are a staff officer at a BCT HQ. Your S2 needs current equipment readiness for three subordinate battalions for the daily SITREP. Navigate, filter, and export data from an existing readiness dashboard.
 
@@ -84,7 +84,7 @@ See **EX-10 — MSS Operator Basics** for the full task list, evaluator notes, a
 | Form | Description |
 |---|---|
 | **Pre-course** | No formal pre-test. Instructor confirms MSS account access before training begins. |
-| **End-of-course evaluation** | Practical exercise (5 tasks per EX-10). Evaluated using T&EO TM10-01 through TM10-05. |
+| **End-of-course evaluation** | Practical exercise (5 tasks per EX_10). Evaluated using T&EO TM10-01 through TM10-05. |
 | **Passing standard** | Go on 4 of 5 tasks completed independently. Tasks 2 (filters) and 4 (export/classification) are critical items — No-Go on either is an automatic overall No-Go. |
 
 *TM-10 does not use a written POST exam. The evaluation instrument is the practical exercise scored via T&EO.*
@@ -136,14 +136,14 @@ TM-10 is the entry point for the full MSS curriculum. After completing TM-10:
 |---|---|---|
 | **All personnel** | TM-20 (Builder) | Required before any specialist or WFF track |
 | **WFF functional staff** (G2/S2, G3/S3, G4/S4, FSE, FP, MC) | TM-20 → TM-30 → TM-40A–F (WFF tracks) | TM-30 required before any WFF track |
-| **Data specialists** (analysts, 17/25-series, ORSA, AI/ML, PM, KM, SWE) | TM-20 → TM-30 → TM-40G–L | TM-30 required before any specialist track |
+| **Data specialists** (analysts, 17/25-series, ORSA, AI/ML, PM, KM, SWE) | TM-20 → TM-30 → TM-40G–M | TM-30 required before any specialist track |
 
 **Full curriculum summary:**
 - TM-20 (Builder) — prerequisite for TM-30
 - TM-30 (Advanced Builder) — prerequisite for ALL TM-40 tracks (WFF and specialist)
 - WFF Tracks (TM-30 → TM-40A–F): Intelligence, Fires, Movement & Maneuver, Sustainment, Protection, Mission Command
-- Specialist Tracks (TM-30 → TM-40G–L): ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, Software Engineer
-- Advanced Specialist Tracks (TM-40G–L → TM-50G–L): advanced level for each specialist role
+- Specialist Tracks (TM-30 → TM-40G–M): ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, Software Engineer
+- Advanced Specialist Tracks (TM-40G–M → TM-50G–M): advanced level for each specialist role
 
 ---
 

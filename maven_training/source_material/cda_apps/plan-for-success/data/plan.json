@@ -8,7 +8,7 @@
       { "asset": "2026 Data Stack Deep Dive", "status": "Complete", "assessment": "5-layer architecture with Foundry mapping. L3 correctly identified as critical layer." },
       { "asset": "EA Curriculum (6-part series)", "status": "Complete", "assessment": "Comprehensive. Covers foundations through military application." },
       { "asset": "Tool Convergence Assessment", "status": "Complete", "assessment": "Ready for CTO signature. 7 testable hypotheses." },
-      { "asset": "DDOF Playbook v2.0", "status": "Complete", "assessment": "6-phase lifecycle with VAULTIS-A quality framework." },
+      { "asset": "DDOF Playbook v2.2", "status": "Complete", "assessment": "6-phase lifecycle with VAULTIS-A quality framework." },
       { "asset": "Cross-Domain Solutions Reference", "status": "Complete", "assessment": "CDS taxonomy, NCDSMO baseline, Foundry cross-enclave sync patterns." },
       { "asset": "HERMES Program Identity", "status": "Complete", "assessment": "Landing page, OPORD 0015-26 context, team roster, timeline." },
       { "asset": "NAF Architecture Builder", "status": "Prototype", "assessment": "React graph editor with xyflow. IR extraction pipeline works." },

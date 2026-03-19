@@ -64,12 +64,12 @@ export default function Doctrine({ showPanel }: Props) {
             <tr><td colSpan={4} style={{background:'var(--navy-pale)',fontWeight:700,fontSize:'11px',letterSpacing:'.06em',textTransform:'uppercase',color:'var(--navy)'}}>TM-40 &mdash; Technical Specialist Tracks (by role/MOS)</td></tr>
             <tr><td><strong>TM-40G</strong></td><td>ORSA / FA49</td><td>Statistical modeling, simulation, wargame analytics</td><td>After TM-30</td></tr>
             <tr><td><strong>TM-40H</strong></td><td>AI Engineers</td><td>AIP Logic authoring, Agent Studio, LLM integration</td><td>After TM-30</td></tr>
-            <tr><td><strong>TM-40I</strong></td><td>ML Engineers</td><td>Code Workspaces, model training, MLOps</td><td>After TM-30</td></tr>
+            <tr><td><strong>TM-40M</strong></td><td>ML Engineers</td><td>Code Workspaces, model training, MLOps</td><td>After TM-30</td></tr>
             <tr><td><strong>TM-40J</strong></td><td>PMs / G8</td><td>PM dashboards, milestone tracking, portfolio analysis</td><td>After TM-30</td></tr>
             <tr><td><strong>TM-40K</strong></td><td>KMs / KMOs</td><td>Knowledge repositories, AIP summarization, lessons learned</td><td>After TM-30</td></tr>
             <tr><td><strong>TM-40L</strong></td><td>SWEs</td><td>OSDK, full-stack Foundry apps, TypeScript Functions</td><td>After TM-30</td></tr>
             <tr><td colSpan={4} style={{background:'var(--navy-pale)',fontWeight:700,fontSize:'11px',letterSpacing:'.06em',textTransform:'uppercase',color:'var(--navy)'}}>TM-50 &mdash; Advanced Technical Tracks (by role/MOS)</td></tr>
-            <tr><td><strong>TM-50G&ndash;L</strong></td><td>Senior developers (all tracks)</td><td>Advanced versions of each TM-40 specialist track</td><td>After TM-40 (by track)</td></tr>
+            <tr><td><strong>TM-50G&ndash;M</strong></td><td>Senior developers (all tracks)</td><td>Advanced versions of each TM-40 specialist track</td><td>After TM-40 (by track)</td></tr>
           </tbody>
         </table>
       </div>

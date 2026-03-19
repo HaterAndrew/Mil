@@ -17,13 +17,19 @@
 | Maven User (TM-10/20) | Consumes and creates basic content | Workshop, Quiver | Navigation, basic data literacy |
 | Builder (TM-20/30) | Dashboards, views, basic transforms | Workshop, Pipeline Builder | Visual design, data connection |
 | ORSA (TM-40G) | Analysis products, commander briefs | Notepad, Contour, Python | Quantitative reasoning |
-| ML Engineer (TM-40I) | Models, predictions | Code Repos, Model Registry | Statistical methods |
+| ML Engineer (TM-40M) | Models, predictions | Code Repos, Model Registry | Statistical methods |
 | SWE (TM-40L) | Integrated applications, OSDK | Code Repos, TypeScript | Software engineering |
 | **Knowledge Manager (TM-40K)** | **Institutional knowledge architecture** | **Ontology Manager, Workshop, AIP** | **Information architecture, governance** |
 
 The KM is unique in that the primary deliverable is organizational — a designed system for capturing, organizing, and retrieving knowledge — not a single dashboard or analysis. A KM who builds a beautiful lessons-learned form but designs no retrieval interface, no governance process, and no retention policy has built an input with no output.
 
 The data steward role overlaps partially: both care about data quality and governance. The data steward governs operational data — the data used to conduct missions. The KM governs knowledge products — the accumulated learning about how to conduct missions. When a single person fills both functions, the risk is that data stewardship work crowds out knowledge management work because data stewardship has more visible short-term urgency.
+
+> **NOTE — FM 6-0 KM Process and Tools (TM-40K Section 1-5b):** TM-40K Section 1-5b codifies the FM 6-0 five-step KM process, three KM tasks, and six KM tool categories as the doctrinal foundation for all MSS knowledge management work. Review before beginning any KM architecture design.
+
+> **NOTE — FM 6-22 Developmental Domains:** TM-40K now references FM 6-22 (Army Leadership and the Profession) developmental domains as a framework for expertise profiling in MSS personnel knowledge systems.
+
+> **NOTE — FM 3-57 Civil Knowledge Integration (CKI):** TM-40K includes a note on FM 3-57 (Civil Affairs Operations) CKI methodology for capturing and structuring civil information within MSS knowledge architectures supporting civil-military operations.
 
 ### 1-2. MSS vs. SharePoint and AKO
 
@@ -78,6 +84,20 @@ Before beginning any MSS knowledge architecture, the KM completes a brief writte
 | Retention policy | How long is each knowledge type retained? What triggers end-of-life? |
 
 Spending two hours on architecture prevents two months of rebuilding after discovering the system does not support the retrieval use cases anyone actually needs.
+
+> **NOTE — Foundry Project Architecture Taxonomy (Palantir Best Practice)**
+>
+> When designing knowledge management systems, organize Foundry projects by function:
+>
+> | Type | Naming Convention | KM Relevance |
+> |------|-------------------|--------------|
+> | Datasource | `Datasource - {Name}` | Raw AAR feeds, doctrine source ingestion |
+> | Data Integration | `Integration - {Name}` | LL deduplication, classification pipelines |
+> | Ontology | `Ontology - {Name}` | Knowledge object types, expertise registries |
+> | Application | `Application - {Name}` | Search interfaces, KM dashboards |
+> | Sandbox | `[sandbox] Name` | Training exercises, KM experimentation |
+>
+> *Source: Palantir Developer Community — [Ontology and Pipeline Design Principles](https://community.palantir.com/t/ontology-and-pipeline-design-principles/5481)*
 
 ---
 
@@ -409,6 +429,8 @@ Before beginning any MSS knowledge management build, verify:
 | DA PAM 25-403 | Army Guide to Recordkeeping (Nov 2022) | Implementing guidance for AR 25-400-2; electronic records, scheduling, transfer |
 | NATO Core Metadata Specification / STANAG 5636 | Structured Metadata Standards | NATO-standard metadata schema — required for coalition-compatible knowledge products |
 | NATO ADatP-34 / NISP | C3 Interoperability Standards | Data cataloging and knowledge exchange standards for NATO interoperability |
+
+> **NOTE — New Doctrine Content in TM-40K:** TM-40K now includes FM 6-0 KM doctrine (5-step process, 3 KM tasks, 6 tool categories mapped to MSS, section 1-5b), FM 6-22 three developmental domains (Institutional/Operational/Self-Development), and FM 3-57 Civil Knowledge Integration as a doctrinal validation of the KM function.
 
 *This guide is a prerequisite companion to TM-40K. Read in full before beginning TM-40K task instruction. The mental models developed here underpin every task in TM-40K and are not repeated in the task manual.*
 

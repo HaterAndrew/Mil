@@ -637,7 +637,7 @@ COURSES = [
         "teo_tasks": [],
     },
     {
-        "course_id": "TM-40I",
+        "course_id": "TM-40M",
         "atis_number": "[TBD — assigned by ATIS upon registration]",
         "title": "ML Engineer",
         "tier": "Specialist",
@@ -652,7 +652,7 @@ COURSES = [
         "min_class_size": 2,
         "cadence": "Semi-annual or on demand",
         "instructor_ratio": "4:1",
-        "instructor_qualification": "ML production experience; TM-40I certified; C2DAO MLE SME designation",
+        "instructor_qualification": "ML production experience; TM-40M certified; C2DAO MLE SME designation",
         "access_level": "GPU-enabled Code Workspace",
         "provisioning_lead_days": 10,
         "evaluation_type": "Practical exercise (7 tasks); model card review; GO/NO-GO",
@@ -848,22 +848,22 @@ COURSES = [
         "teo_tasks": [],
     },
     {
-        "course_id": "TM-50I",
+        "course_id": "TM-50M",
         "atis_number": "[TBD — assigned by ATIS upon registration]",
         "title": "Advanced ML Engineer",
         "tier": "Advanced Specialist",
         "tier_number": 5,
         "duration_days": 5,
         "duration_hours": 40,
-        "prerequisites": ["TM-10", "TM-20", "TM-30", "TM-40I"],
-        "prerequisite_description": "TM-40I Go on file (required)",
+        "prerequisites": ["TM-10", "TM-20", "TM-30", "TM-40M"],
+        "prerequisite_description": "TM-40M Go on file (required)",
         "audience": "Senior ML engineers",
         "audience_mos": "MLEs with production model deployment experience",
         "max_class_size": 6,
         "min_class_size": 2,
         "cadence": "Annual or on demand",
         "instructor_ratio": "4:1",
-        "instructor_qualification": "TM-50I certified or C2DAO Advanced MLE SME; production ML pipeline experience",
+        "instructor_qualification": "TM-50M certified or C2DAO Advanced MLE SME; production ML pipeline experience",
         "access_level": "GPU-enabled Code Workspace + Editor",
         "provisioning_lead_days": 10,
         "evaluation_type": "Practical exercise; model governance review; GO/NO-GO",
@@ -1022,7 +1022,7 @@ def build_json(out_path: Path):
         "method_codes": METHOD_CODES,
         "courses": COURSES,
         "prerequisite_chain": {
-            "description": "TM-10 → TM-20 → TM-30 → ALL TM-40 (A-L) → TM-50 (G-L only)",
+            "description": "TM-10 → TM-20 → TM-30 → ALL TM-40 (A-M) → TM-50 (G-M only)",
             "tree": {
                 "TM-10": {
                     "TM-20": {
@@ -1031,7 +1031,7 @@ def build_json(out_path: Path):
                             "TM-40D": {}, "TM-40E": {}, "TM-40F": {},
                             "TM-40G": {"TM-50G": {}},
                             "TM-40H": {"TM-50H": {}},
-                            "TM-40I": {"TM-50I": {}},
+                            "TM-40M": {"TM-50M": {}},
                             "TM-40J": {"TM-50J": {}},
                             "TM-40K": {"TM-50K": {}},
                             "TM-40L": {"TM-50L": {}},
@@ -1157,13 +1157,13 @@ TM-10 (all personnel)
               |-- TM-40F (Mission Command WFF)
               |-- TM-40G (ORSA) ----------> TM-50G (Advanced ORSA)
               |-- TM-40H (AI Engineer) ---> TM-50H (Advanced AI Engineer)
-              |-- TM-40I (ML Engineer) ---> TM-50I (Advanced ML Engineer)
+              |-- TM-40M (ML Engineer) ---> TM-50M (Advanced ML Engineer)
               |-- TM-40J (Program Mgr) ---> TM-50J (Advanced PM)
               |-- TM-40K (Knowledge Mgr) -> TM-50K (Advanced KM)
               +-- TM-40L (Software Eng) --> TM-50L (Advanced SWE)
 ```
 
-> **NOTE:** TM-30 is a HARD prerequisite for ALL TM-40 tracks (WFF A-F and specialist G-L). There are NO TM-50A-F tracks.
+> **NOTE:** TM-30 is a HARD prerequisite for ALL TM-40 tracks (WFF A-F and specialist G-M). There are NO TM-50A-F tracks.
 
 ---
 

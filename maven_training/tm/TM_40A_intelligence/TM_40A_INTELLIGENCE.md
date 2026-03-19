@@ -8,6 +8,8 @@
 > **CAUTION: MSS aggregates data from multiple sources with varying classification levels. Derived products combining SIGINT, HUMINT, and GEOINT data may be classified higher than any individual source. Do not determine product classification by the lowest-classified input. Apply derivative classification procedures (AR 380-5) before publishing or exporting any multi-source MSS product.**
 > **NOTE: MSS is an intelligence enabler. The Intelligence cycle — Direction, Collection, Processing and Exploitation, Production, Dissemination — remains the doctrinal framework (FM 2-0). MSS accelerates and integrates the data layer within that cycle. Analytical judgment, source evaluation, and product integrity remain irreducibly human functions.**
 
+> **NOTE: FM 2-0 (October 2023), para 1-50, states: "MI professionals must develop data literacy skills... Until institutional training is adjusted to incorporate data literacy, intelligence professionals must build those skills through self-development." This TM directly addresses that doctrinal requirement. The tasks, procedures, and standards in TM-40A equip intelligence professionals with the data literacy competencies FM 2-0 identifies as essential to the modern intelligence enterprise.**
+
 ---
 
 ## CHAPTER 1 — OVERVIEW AND INTELLIGENCE FUNCTION IN MSS
@@ -45,6 +47,21 @@ FM 2-0 defines the Intelligence cycle as Direction, Collection, Processing and E
 | Dissemination | Deliver products to consumers | Workspace sharing, read-only access grants, export products | Classification review; consumer need-to-know determination |
 
 > **NOTE: MSS accelerates each phase of the Intelligence cycle but does not automate analytical judgment. The analyst's assessment — "what does this data mean for the commander's decision?" — remains a human function at every phase.**
+
+### 1-2a. The Intelligence Process as Data Pipeline
+
+The intelligence cycle maps directly to data platform operations. Intelligence professionals who understand this mapping can leverage MSS more effectively — the doctrinal process they already know is the same workflow the platform executes at the data layer.
+
+**Table 1-1a. Intelligence Process — Data Platform Operations Mapping (FM 2-0, Figure 1-2)**
+
+| Intelligence Process Step | Data Platform Analog |
+|---|---|
+| Plan and Direct | Requirements definition, collection tasking |
+| Collect and Process | Data ingestion, ETL/transforms |
+| Produce (Analyze) | Analytical models, dashboards, reports |
+| Disseminate and Integrate | Data publication, API endpoints, COP feeds |
+
+> **NOTE: This mapping is conceptual. The intelligence process involves human judgment at every step — particularly source evaluation, analytical synthesis, and classification determination — that the data platform does not replicate. The platform accelerates the data operations within each step; it does not replace the intelligence functions performed by trained analysts.**
 
 ### 1-3. Intelligence Data Categories in MSS
 
@@ -1298,6 +1315,24 @@ Every intelligence product produced on MSS must meet these standards:
 
 **Standard 6: Analyst assessment text.** Every intelligence product contains analyst-written assessment text — not just data visualization. The assessment addresses: current situation, key analytical finding, confidence level and basis, significant alternative, and intelligence gaps affecting the assessment.
 
+### G-1a. Characteristics of Effective Intelligence as Data Quality Criteria
+
+FM 2-0 identifies seven characteristics of effective intelligence. These characteristics apply directly to MSS intelligence products and serve as data quality criteria for every product the intelligence section publishes.
+
+**Table G-0a. Seven Characteristics of Effective Intelligence — MSS Application (FM 2-0)**
+
+| Characteristic | Definition | MSS Data Quality Application |
+|---|---|---|
+| Timely | Intelligence is available in time to support the commander's decision | Products display data-as-of timestamps; automated refresh intervals are set to support the battle rhythm; stale products are flagged and updated before briefing |
+| Relevant / Tailored | Intelligence addresses the commander's specific requirements | Products are built against stated PIRs and CCIR; dashboards display only the indicators and data the supported commander requires — not everything the section collects |
+| Accurate / Reliable | Intelligence correctly describes the situation | Source reliability and information credibility ratings (FM 2-22.3) are applied to all source data; confidence ratings accompany every analytical assessment; multi-source corroboration is documented |
+| Predictive | Intelligence provides assessments of future conditions | Threat COA models include probability estimates; I&W dashboards track indicators tied to future threat actions, not just historical events |
+| Usable | Intelligence is presented in a format the consumer can act on | Products use standard formats (INTSUM, INTREP, SALUTE); dashboards are designed for the consumer's decision, not the analyst's preference; export formats match the consumer's system |
+| Complete | Intelligence provides sufficient detail for the decision at hand | Products identify known gaps explicitly; products that present partial information state what is missing and why; "no data" is displayed, not hidden |
+| Precise | Intelligence provides the level of detail required | Location data uses MGRS to the appropriate precision; time data uses DTG format; quantitative assessments include ranges and confidence intervals where applicable |
+
+> **NOTE: These seven characteristics are not aspirational. They are the standard against which every intelligence product is evaluated. The section chief applies these criteria during product review (G-3). Products that fail to meet any characteristic are corrected before distribution.**
+
 ### G-2. Product-Specific Quality Standards
 
 **Table G-1. Product-Specific Quality Checklist**
@@ -1352,6 +1387,7 @@ This appendix cross-references the primary doctrinal publications governing inte
 | ATP 2-33.4 | Intelligence Analysis | All-source analysis techniques, structured analytic techniques | All |
 | ATP 2-22.9-1 | PAI Research and Open-Source Intelligence (Oct 2023) | Current OSINT/PAI research techniques; replaces inactive ATP 2-22.9 | Chapters 3–4 |
 | FM 3-55 | Information Collection | Information collection planning, R&S integration | Chapters 2–3 |
+| FM 3-84 | Intelligence Preparation of the Operational Environment (IPOE) | Theater-level IPOE procedures; complements ATP 2-01.3 at the operational and strategic echelon | All (supplements Chapter 2) |
 | ADatP-36 | Friendly Force Information (FFI) | NATO standard for real-time friendly force tracking data exchange — position reports, unit status | All |
 | STANAG 5527 | Friendly Force Tracking Systems Interoperability | NATO standard for BFT/FFT system interoperability across allied nations | All |
 
@@ -1362,6 +1398,7 @@ This appendix cross-references the primary doctrinal publications governing inte
 | Document | Authority | Relevance |
 |---|---|---|
 | NATO Digital Transformation Implementation Strategy (Oct 2024) | NATO | MDO interoperability context — frames intelligence data sharing in coalition operations |
+| DDOF Playbook v2.2 (December 2025) | T2COM C2DAO | VAULTIS-A quality framework (8 dimensions); 6-phase data product lifecycle; 85% quality gate; MVP mandate 30 days |
 
 ### F-2. Doctrinal Alignment Checklist
 
@@ -1784,7 +1821,7 @@ For technical specialists pursuing advanced analytical or engineering capability
 |-------|-------|----------------|
 | TM-40G | ORSA | TM-50G |
 | TM-40H | AI Engineer | TM-50H |
-| TM-40I | ML Engineer | TM-50I |
+| TM-40M | ML Engineer | TM-50M |
 | TM-40J | Program Manager | TM-50J |
 | TM-40K | Knowledge Manager | TM-50K |
 | TM-40L | Software Engineer | TM-50L |
@@ -1815,5 +1852,6 @@ For technical specialists pursuing advanced analytical or engineering capability
 
 - **JADC2 Strategy Summary (March 2022)** — Cross-domain data integration strategy for Joint All-Domain Command and Control
 - **DoD Directive 3000.09, Autonomy in Weapon Systems (January 2023 update)** — Policy on autonomous and semi-autonomous functions in weapon systems; context for AI-enabled intelligence systems
+- **DDOF Playbook v2.2 (December 2025)** — T2COM C2DAO; VAULTIS-A quality framework (8 dimensions); 6-phase data product lifecycle; 85% quality gate; MVP mandate 30 days
 
 *UNCLASSIFIED // FOR OFFICIAL USE ONLY*

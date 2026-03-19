@@ -8,13 +8,13 @@
 | **Level** | TM-40E (WFF Track) |
 | **Audience** | Force protection officers, CBRN officers, provost marshal staff; prerequisite: completion of TM-40E training |
 | **Time Allowed** | 30 minutes |
-| **Passing Score** | 80% (24/30 points) |
+| **Passing Score** | 80% (32/40 points) |
 
 ---
 
 ## INSTRUCTIONS
 
-This assessment confirms proficiency upon completion of TM-40E training. A score of 80% (24/30) is required for course completion certification. Results are recorded on the student training record.
+This assessment confirms proficiency upon completion of TM-40E training. A score of 80% (32/40) is required for course completion certification. Results are recorded on the student training record.
 
 ---
 
@@ -78,13 +78,27 @@ B. Characterize the data gap clearly to the protection working group, identify w
 C. Suspend the working group until full data coverage is restored
 D. Contact the software vendor to report the feed failure
 
+**9. ADP 3-37 establishes CVP (Criticality-Vulnerability-Probability) analysis as the framework for protection prioritization (section 4-2a). Which of the following correctly describes the three CVP factors?**
+
+A. Criticality = how exposed the asset is to threats; Vulnerability = how important the asset is to mission success; Probability = how quickly the asset can be replaced
+B. Criticality = how important the asset is to mission success; Vulnerability = how exposed the asset is to threats; Probability = how likely the threat is to act against this asset
+C. Criticality = how likely the threat is to act; Vulnerability = how quickly the asset can recover; Probability = how important the asset is to mission success
+D. Criticality = how hardened the asset is; Vulnerability = how many countermeasures are in place; Probability = the historical frequency of attacks in the AOR
+
+**10. The OPSEC 5-step process (FM 3-13.3) maps to data security practices on MSS (section 4-7, Table 4-2). What is the correct sequence of the five OPSEC steps?**
+
+A. Analyze threats, identify critical information, assess risk, analyze vulnerabilities, apply countermeasures
+B. Apply countermeasures, analyze threats, assess risk, identify critical information, analyze vulnerabilities
+C. Identify critical information, analyze threats, analyze vulnerabilities, assess risk, apply countermeasures
+D. Assess risk, identify critical information, analyze threats, apply countermeasures, analyze vulnerabilities
+
 ---
 
 ## SECTION 2 — SHORT ANSWER
 
 *Answer in 3–5 sentences. (5 points each)*
 
-**9. Your CCIR for threat events in the restricted area has not fired in the past 72 hours, but the S2 reports that a threat event occurred within the restricted area 24 hours ago. Walk through the troubleshooting steps you would take to determine why the CCIR did not fire and what corrective action you would take before the next protection working group.**
+**11. Your CCIR for threat events in the restricted area has not fired in the past 72 hours, but the S2 reports that a threat event occurred within the restricted area 24 hours ago. Walk through the troubleshooting steps you would take to determine why the CCIR did not fire and what corrective action you would take before the next protection working group.**
 
 *(Write your answer below)*
 
@@ -93,7 +107,7 @@ _______________________________________________
 _______________________________________________
 _______________________________________________
 
-**10. The provost marshal asks why the MSS PERSTAT display shows 1st Battalion at 94% PFD when the battalion S1 verbally confirmed 87% PFD this morning. Explain the possible reasons for this discrepancy and describe how you would characterize the PERSTAT data to the protection working group until the discrepancy is resolved.**
+**12. The provost marshal asks why the MSS PERSTAT display shows 1st Battalion at 94% PFD when the battalion S1 verbally confirmed 87% PFD this morning. Explain the possible reasons for this discrepancy and describe how you would characterize the PERSTAT data to the protection working group until the discrepancy is resolved.**
 
 *(Write your answer below)*
 
@@ -116,7 +130,7 @@ It is 1345. The protection working group begins at 1415. You open MSS and discov
 
 You have 30 minutes before the working group.
 
-**11. Describe your complete course of action for the next 30 minutes. Include: (a) what you will investigate first and why, (b) what you will brief versus what you will caveat, (c) how you will characterize the Sector SOUTH data gap and the CCIR anomaly to the commander, and (d) what follow-on actions you will assign before the working group ends.**
+**13. Describe your complete course of action for the next 30 minutes. Include: (a) what you will investigate first and why, (b) what you will brief versus what you will caveat, (c) how you will characterize the Sector SOUTH data gap and the CCIR anomaly to the commander, and (d) what follow-on actions you will assign before the working group ends.**
 
 *(Write your answer below)*
 
@@ -140,10 +154,12 @@ _______________________________________________
 6. B — present the data pattern with context; do not make route closure decisions unilaterally from MSS data alone
 7. B — aggregate sensitivity applies; the combination of threat locations, PERSTAT, and vulnerability data reveals security posture
 8. B — characterize, identify decision impact, assign follow-on; do not fix the pipeline at this level
+9. B — ADP 3-37 (section 4-2a) defines CVP as: Criticality = how important the asset is to mission success; Vulnerability = how exposed the asset is to threats; Probability = how likely the threat is to act against this asset. Option A reverses Criticality and Vulnerability. Option C scrambles all three factors. Option D conflates CVP factors with physical characteristics and historical data.
+10. C — FM 3-13.3 (Table 4-2, section 4-7) establishes the OPSEC 5-step process in order: (1) Identify critical information, (2) Analyze threats, (3) Analyze vulnerabilities, (4) Assess risk, (5) Apply countermeasures. All other options present the steps out of sequence.
 
 **Section 2 — Expected elements:**
-9. Should include: check the CCIR boundary definition against the restricted area coordinates; check whether the event that the S2 reported was entered in the correct data source feeding the CCIR; verify the event coordinates are actually within the boundary (boundary entry errors are common); test the CCIR with the known event location using the test dataset; if the CCIR boundary is confirmed wrong, update it and document the correction before the next working group.
-10. Should explain: PERSTAT in MSS reflects the last submitted report, which may not be the same as the battalion's most recent accountability formation; pipeline latency between the S1's submission and the MSS dataset update could account for the gap; a submission may not have been entered through the channel that feeds MSS; characterize to the working group by presenting both figures with timestamps and noting the discrepancy is being researched — do not brief either figure as definitive until the source of the difference is identified.
+11. Should include: check the CCIR boundary definition against the restricted area coordinates; check whether the event that the S2 reported was entered in the correct data source feeding the CCIR; verify the event coordinates are actually within the boundary (boundary entry errors are common); test the CCIR with the known event location using the test dataset; if the CCIR boundary is confirmed wrong, update it and document the correction before the next working group.
+12. Should explain: PERSTAT in MSS reflects the last submitted report, which may not be the same as the battalion's most recent accountability formation; pipeline latency between the S1's submission and the MSS dataset update could account for the gap; a submission may not have been entered through the channel that feeds MSS; characterize to the working group by presenting both figures with timestamps and noting the discrepancy is being researched — do not brief either figure as definitive until the source of the difference is identified.
 
 **Section 3 — Expected elements:**
 (a) Investigate the CCIR boundary anomaly first — two events near the restricted area boundary that may not have triggered the CCIR is a potential operational gap that affects the commander's decision calculus immediately; the Sector SOUTH staleness is also critical but the CCIR issue is both a data quality problem and a potential threat indicator.
@@ -153,7 +169,7 @@ _______________________________________________
 
 ---
 
-*Total points: 30. Passing score: 24 (80%).*
+*Total points: 40 (MC: 10 × 2 = 20, SA: 2 × 5 = 10, Scenario: 10). Passing score: 32 (80%).*
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*EX-TM40E-POST | Version 1.0 | March 2026*
+*EX_TM40E-POST | Version 1.0 | March 2026*

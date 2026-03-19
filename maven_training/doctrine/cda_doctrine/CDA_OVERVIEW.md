@@ -48,6 +48,6 @@ The following indexes must be complete and current for a full understanding of t
 
 ## Related Resources
 
-- [CDA Constraints & Directives](./CDA_CONSTRAINTS_AND_DIRECTIVES.md) — governing architectural constraints from senior leadership
+- [CDA Constraints & Directives](../CDA_CONSTRAINTS_AND_DIRECTIVES.md) — governing architectural constraints from senior leadership
 - [CDA Doctrine Overview](./CDA_DOCTRINE_OVERVIEW.md) — doctrinal framing for the architecture
 - [Enterprise Architecture Series](../enterprise_architecture/) — EA foundations, governance, and military application

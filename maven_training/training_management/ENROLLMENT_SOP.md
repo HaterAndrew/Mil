@@ -45,7 +45,7 @@ Total lead time: **10–35 duty days before Day 1**, depending on access require
 | INT/FIRES/M2/SUST/PROT/MC functional staff | TM-40A through TM-40F (prereq: TM-30; 3 days each) |
 | ORSA analysts working on MSS | TM-40G |
 | AI engineers building AIP workflows | TM-40H |
-| ML engineers building/deploying models | TM-40I |
+| ML engineers building/deploying models | TM-40M |
 | Program managers and resource managers | TM-40J |
 | Knowledge managers and KMOs | TM-40K |
 | Software engineers building Foundry integrations | TM-40L |
@@ -62,7 +62,7 @@ Total lead time: **10–35 duty days before Day 1**, depending on access require
 | TM-40A through TM-40F (WFF tracks) | TM-10, TM-20, and TM-30 Go on file; WFF functional staff designation |
 | TM-40G | TM-10, TM-20, TM-30 Go on file; graduate-level quantitative background; Python or R proficiency |
 | TM-40H | TM-10, TM-20, TM-30 Go on file; Python proficiency; Data Literacy Technical Reference read |
-| TM-40I | TM-10, TM-20, TM-30 Go on file; Python ML proficiency (pandas, scikit-learn, PyTorch) |
+| TM-40M | TM-10, TM-20, TM-30 Go on file; Python ML proficiency (pandas, scikit-learn, PyTorch) |
 | TM-40J | TM-10, TM-20, TM-30 Go on file (all required) |
 | TM-40K | TM-10, TM-20, TM-30 Go on file (all required) |
 | TM-40L | TM-10, TM-20, TM-30 Go on file; TypeScript or Python proficiency; REST API familiarity |
@@ -96,7 +96,7 @@ The Unit Training NCO/Officer submits to the unit MSS Administrator. The MSS Adm
 - [ ] All fields on the Enrollment Request Form completed
 - [ ] Prerequisites verified and documentation attached
 - [ ] For TM-30+: elevated access provisioning in place or being initiated
-- [ ] For TM-40 specialist tracks (TM-40G through TM-40L): technical prerequisites (Code Workspace, OSDK, etc.) active or being requested concurrently
+- [ ] For TM-40 specialist tracks (TM-40G through TM-40M): technical prerequisites (Code Workspace, OSDK, etc.) active or being requested concurrently
 
 ### Step 6: Forward to C2DAO Training POC
 
@@ -119,10 +119,10 @@ Via NIPR email or official messaging. Subject line format: `MSS ENROLLMENT REQUE
 | TM-30 | Editor + AIP Logic configuration | Unit MSS Admin (Editor); C2DAO (AIP Logic config) | 7 duty days |
 | TM-40G | Code Workspace (CPU) | C2DAO only | 7–10 duty days |
 | TM-40H | AIP Logic authoring + Agent Studio | C2DAO only | 7–10 duty days |
-| TM-40I | GPU Code Workspace | C2DAO only | 10+ duty days |
+| TM-40M | GPU Code Workspace | C2DAO only | 10+ duty days |
 | TM-40L | OSDK developer access + developer token | C2DAO only | 10+ duty days |
 
-**IMPORTANT:** Lead times are minimums. For TM-40I (GPU workspace) and TM-40L (OSDK), start provisioning at least 5 weeks before Day 1.
+**IMPORTANT:** Lead times are minimums. For TM-40M (GPU workspace) and TM-40L (OSDK), start provisioning at least 5 weeks before Day 1.
 
 ### Step 8: Confirm Access Before Day 1
 
@@ -339,6 +339,54 @@ C2DAO maintains the authoritative training records system for MSS training. Unit
 ### Querying Training Records
 
 Unit Training NCOs/Officers may request a unit training status extract from C2DAO Training POC at any time. Standard format: unit name or UIC + requested course level. Response within 3 duty days. For deployments or time-sensitive situations, request via official messaging with URGENT flag for same-day response.
+
+---
+
+## TRAIN-THE-TRAINER (T3) ENROLLMENT
+
+### T3-I — Instructor Certification
+
+T3-I enrollment follows a **selection** model, not the standard enrollment request process.
+
+| Step | Action | Responsible |
+|---|---|---|
+| 1 | C2DAO Training OIC identifies instructor pipeline need | Training OIC |
+| 2 | Training OIC selects candidates based on: TM-30 Go on file, platform proficiency, demonstrated aptitude for instruction, operational availability | Training OIC |
+| 3 | Training OIC issues selection notification to candidate and candidate's unit | Training OIC |
+| 4 | Candidate's unit acknowledges and confirms availability for the T3-I iteration | Unit CDR/S3 |
+| 5 | C2DAO verifies TM-30 Go and provisions instructor-level account access | C2DAO Admin |
+
+Self-nomination is permitted — candidates may submit a request to the Training OIC. Selection is not guaranteed.
+
+**Lead time:** T-21 days minimum (account provisioning for instructor-level access may require elevated coordination).
+
+### T3-F — MSC Force Multiplier
+
+T3-F enrollment follows a **commander nomination** model.
+
+| Step | Action | Responsible |
+|---|---|---|
+| 1 | Unit commander identifies need for local TM-10 delivery capability | Unit CDR |
+| 2 | Commander nominates candidate via memorandum (see UDT SOP Appendix A) | Unit CDR |
+| 3 | Nomination submitted to C2DAO Training Division | Unit Training NCO |
+| 4 | C2DAO verifies TM-20 Go on file and active MSS account | C2DAO Admin |
+| 5 | Candidate enrolled in next available T3-F iteration (typically aligned with MTT rotation to the candidate's MSC) | C2DAO Training |
+
+**Lead time:** T-14 days minimum. When aligned with an MTT rotation, coordinate via the MTT advance party procedures.
+
+---
+
+## Palantir Certification Alignment
+
+MSS training tracks prepare students for Palantir's external certification exams. The following alignment is advisory — Palantir certifications are independent of MSS completion and require separate registration.
+
+| MSS Completion | Palantir Certification | Readiness Level | Registration |
+|---------------|----------------------|-----------------|-------------|
+| TM-20 | Foundry & AIP Builder Foundations Badge | Ready to attempt | [Earn badge](https://community.palantir.com/t/earn-your-foundry-aip-builder-foundations-badge/1043) |
+| TM-30 + TM-40L | Foundry Data Engineer Certification | Well-prepared | [Prep guide](https://community.palantir.com/t/data-engineer-certification-preperation/2789) |
+| TM-30 + TM-40L | Foundry Application Developer Certification | Well-prepared | [Exam info](https://community.palantir.com/t/what-to-expect-in-foundry-application-developer-certification-exam/548) |
+
+> **NOTE:** Palantir certification exams may cover features or configurations not present in the USAREUR-AF MSS environment. Students should supplement with Palantir Learn (learn.palantir.com) and the [Ontologize YouTube channel](https://www.youtube.com/@Ontologize) for exam preparation. Coordinate with C2DAO for certification voucher availability.
 
 ---
 

@@ -31,7 +31,26 @@ MSS integrates data from all six elements into a single visible picture. Before 
 
 > **NOTE: MSS does not replace authoritative sustainment management systems. GCSS-Army remains the system of record for supply transactions. SAMS-E remains the system of record for maintenance work orders. MSS integrates and displays the data from those systems — it does not duplicate their transactional functions.**
 
-### 1-2. MSS and Sustainment Data Types
+### 1-2. The Eight Principles of Sustainment (ADP 4-0)
+
+ADP 4-0 establishes eight principles of sustainment that guide all sustainment operations. Each principle has a direct application in MSS. Sustainment practitioners using MSS should understand how the platform enables — and depends upon — these principles.
+
+**Table 1-1A. Eight Principles of Sustainment — MSS Data Platform Application**
+
+| Principle | Definition (ADP 4-0) | Data Platform Application |
+|---|---|---|
+| Integration | Combining all elements of sustainment — logistics, personnel services, and health service support — in unified operations | Cross-functional dashboards linking supply, maintenance, transportation, personnel, and medical data into a single sustainment picture. MSS eliminates stovepipe reporting by integrating source system feeds into one Ontology layer. |
+| Anticipation | Predicting future operational requirements based on current operations, intelligence, and historical data | Consumption rate modeling (Class I, III, V burn rates), predictive demand analytics, and trend dashboards that project DOS forward based on operational tempo. Enables the S4 to identify shortfalls before they become emergencies. |
+| Responsiveness | Providing the right support at the right time and place | Real-time status tracking across all supply classes, automated threshold alerts (CCIR-linked), and distribution dashboards that accelerate resupply decisions. MSS reduces the time between identifying a need and initiating a resupply action. |
+| Simplicity | Minimizing the complexity of sustainment operations and reducing the fog of logistics | Standardized data formats, clear reporting templates (LOGSTAT, readiness), and pre-built dashboard views that present complex supply chain data in an operationally relevant format. One platform replaces multiple manual trackers. |
+| Economy | Maximizing efficiency by allocating minimum essential resources to sustainment operations | Resource optimization analytics, cost-per-unit tracking, and cross-unit visibility that enables lateral transfer and redistribution before submitting new requisitions. Prevents waste by exposing excess and shortage simultaneously. |
+| Survivability | Maintaining the ability to sustain operations under adverse conditions including enemy action and environmental threats | Redundant data paths, DDIL-capable local caching (see Ch. 10), and offline LOGSTAT procedures that ensure sustainment data products remain available when network connectivity is degraded or denied. |
+| Continuity | Maintaining uninterrupted sustainment support across all phases of operations | Automated pipeline monitoring with failover procedures, shift-change data handoff protocols (see para 10-7), and persistent dashboards that maintain continuity of the sustainment picture through personnel rotations and transitions. |
+| Improvisation | Adapting sustainment operations when the plan no longer fits the situation | Flexible data models that accommodate non-standard supply sources (HNS, captured materiel, theater-provided), rapid dashboard reconfiguration for emerging requirements, and ad hoc reporting capabilities for unforeseen sustainment challenges. |
+
+> **NOTE: The eight principles are not independent — they reinforce each other. A dashboard that integrates all sustainment functions (Integration) also reduces complexity (Simplicity) and enables faster decisions (Responsiveness). Practitioners should evaluate their MSS products against all eight principles when building or modifying sustainment workspaces.**
+
+### 1-3. MSS and Sustainment Data Types
 
 **Table 1-1. Sustainment Data Types in MSS**
 
@@ -48,7 +67,7 @@ MSS integrates data from all six elements into a single visible picture. Before 
 | FLIPL / report of survey | Unit property book officer | Accountability exception tracking |
 | Personnel actions | IPPS-A | Awards, actions pipeline — HR specialist domain |
 
-### 1-3. MSS vs. Legacy Sustainment Tools
+### 1-4. MSS vs. Legacy Sustainment Tools
 
 **Table 1-2. MSS vs. Legacy Tools — Functional Comparison**
 
@@ -66,7 +85,7 @@ MSS integrates data from all six elements into a single visible picture. Before 
 
 **CAUTION: Do not use MSS as a substitute for entering transactions in authoritative systems. A supply status entered only in MSS, and not recorded in GCSS-Army, is not an official transaction. Authoritative records drive financial accountability, property book accuracy, and audit readiness.**
 
-### 1-4. Sustainment Workspace Organization
+### 1-5. Sustainment Workspace Organization
 
 MSS organizes sustainment data in unit-level workspaces. Each workspace mirrors the unit's sustainment organizational structure.
 
@@ -80,7 +99,7 @@ MSS organizes sustainment data in unit-level workspaces. Each workspace mirrors 
 - **Personnel** — PERSTAT, strength by unit, FFIR threshold monitoring
 - **Sustainment BUA** — consolidated sustainment update product for battle rhythm events
 
-### 1-5. Doctrinal References
+### 1-6. Doctrinal References
 
 TM-40D is written in alignment with the following doctrinal publications. These publications are not required reading before using this manual — but sustainment practitioners who are responsible for S4 functions or sustainment command positions should be familiar with them.
 
@@ -111,8 +130,9 @@ TM-40D is written in alignment with the following doctrinal publications. These 
 | Document | Authority | Relevance |
 |---|---|---|
 | NATO Digital Transformation Implementation Strategy (Oct 2024) | NATO | MDO interoperability context — frames sustainment data sharing in coalition operations |
+| DDOF Playbook v2.2 (December 2025) | T2COM C2DAO | VAULTIS-A quality framework (8 dimensions); 6-phase data product lifecycle; 85% quality gate; MVP mandate 30 days |
 
-### 1-6. BSB / FSB / ESB / TSB Workspace Configuration
+### 1-7. BSB / FSB / ESB / TSB Workspace Configuration
 
 Workspace configuration varies by sustainment echelon.
 
@@ -127,7 +147,7 @@ Workspace configuration varies by sustainment echelon.
 | TSC/ESC | Theater Sustainment Command / Expeditionary Sustainment Command | Theater-level distribution, HNS tracking, ASL status, strategic LOC monitoring |
 | CSSB | Combat Sustainment Support Battalion | Area sustainment, fuel points, water points, Class I–III distribution |
 
-### 1-6. Scope: What TM-40D Covers and Does Not Cover
+### 1-8. Scope: What TM-40D Covers and Does Not Cover
 
 **TM-40D covers:**
 
@@ -145,12 +165,12 @@ Workspace configuration varies by sustainment echelon.
 
 - Building MSS pipelines, transforms, or dashboards — see TM-20 and TM-30
 - Ontology modification or dataset schema changes — see TM-30
-- Machine learning models — see TM-40I (TM-50I)
+- Machine learning models — see TM-40M (TM-50M)
 - GCSS-Army transaction entry procedures — see GCSS-Army user documentation
 - SAMS-E work order entry — see SAMS-E user manuals
 - IPPS-A personnel transactions — see IPPS-A user documentation
 
-### 1-6. Relationship to Other TMs in the MSS Curriculum
+### 1-9. Relationship to Other TMs in the MSS Curriculum
 
 **Table 1-3. TM Curriculum Relationships**
 
@@ -165,11 +185,11 @@ Workspace configuration varies by sustainment echelon.
 | TM-40D | Sustainment | This manual. |
 | TM-40E | Protection | Complementary. Force protection data affects sustainment convoy routes and supply point security. |
 | TM-40F | Mission Command | Complementary. S4 sustainment products contribute to the COP (S3 product); LOGSTAT feeds commander FFIR monitoring. |
-| TM-50G–L | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq TM-30). Not applicable to operational sustainment practitioners. |
+| TM-50G–M | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq TM-30). Not applicable to operational sustainment practitioners. |
 
 > **NOTE: TM-20 and TM-30 are required as prerequisites (Go evaluations on file) but builder skills are not exercised in this manual. TM-40D assumes no ability to build pipelines or transforms. If you encounter a sustainment data product that does not exist and needs to be built, coordinate with your unit's designated MSS Builder (TM-30 qualified) or the C2DAO.**
 
-### 1-7. Audience and MOS Coverage
+### 1-10. Audience and MOS Coverage
 
 **Table 1-4. Primary Audience by Function and MOS**
 
@@ -187,7 +207,7 @@ Workspace configuration varies by sustainment echelon.
 | HR / Personnel | 42B | 42A, 42H | S1, HR NCOIC, Strength Manager |
 | Parachute Rigger | — | 92R | Rigger Section Chief |
 
-### 1-8. How to Use This Manual
+### 1-11. How to Use This Manual
 
 TM-40D is organized by sustainment function. Read Chapter 1 in full before beginning any other chapter. Subsequent chapters are organized by supply class and functional area — read the chapters that apply to your MOS and duty position. Not every practitioner needs every chapter.
 
@@ -209,7 +229,7 @@ TM-40D is organized by sustainment function. Read Chapter 1 in full before begin
 | Parachute Rigger (92R) | Ch. 1, para 5-7 |
 | All sustainers | Ch. 10 (degraded operations) |
 
-### 1-9. Prerequisites
+### 1-12. Prerequisites
 
 Before beginning this manual, verify the following:
 
@@ -249,6 +269,26 @@ The Army uses nine supply classes (Class I–IX, plus Class X — agricultural a
 | VII | Major end items | High — readiness-linked | Authorized vs. on-hand, deadline status |
 | VIII | Medical | Coordination product | Managed by HSS; S4 monitors availability |
 | IX | Repair parts | High — maintenance-linked | PLL fill rate, requisition pipeline, EDD |
+
+**Table 2-1A. Classes of Supply — Data Sources and MSS Tracking Requirements (FM 4-0)**
+
+The following table maps each class of supply to its authoritative data source, the MSS data feed mechanism, and the minimum tracking requirements for LOGSTAT and sustainment planning.
+
+| Class | Description | Authoritative Source System | MSS Data Feed | Tracking Requirement | Update Frequency |
+|---|---|---|---|---|---|
+| I | Subsistence (rations, water) | GCSS-Army, unit headcount reports | Automated feed (GCSS-Army) + manual headcount input | DOS on-hand, consumption rate per 24 hrs, ration cycle (A/B/C/MRE), water DOS | 2x daily (0600/1800) |
+| II | Clothing, individual equipment, tools, hand tools, admin supplies | GCSS-Army (property book) | Automated feed (GCSS-Army) | On-hand vs. MTOE authorization, due-in/due-out, shortfall by LIN | Weekly; daily during initial issue or reconstitution |
+| III | POL (packaged — lubricants, greases, solvents) | GCSS-Army, unit reports | Automated feed + manual reporting | On-hand gallons by product, consumption rate, DOS | Daily |
+| IIIB | Bulk petroleum (diesel, MOGAS, JP-8) | Unit fuel point records, GCSS-Army | Manual reporting + automated where available | Capacity %, throughput (gallons issued/received per 24 hrs), distribution point status, DOS | 2x daily |
+| IV | Construction and barrier materials | GCSS-Army, engineer BOM | Automated feed + manual project tracking | On-hand vs. project bill of materials, delivery status, consumption by project | As required; daily during active construction/obstacle operations |
+| V | Ammunition (all types by DODIC) | SAAS-MOD, unit ammunition officer | Automated feed (SAAS-MOD) + manual reconciliation | Basic load fill % by weapon system, ASR/CSR allocation vs. expenditure, DODIC-level on-hand, retrograde status | Daily; after every fire mission or expenditure event |
+| VI | Personal demand items | Unit-level accountability | Manual input | On-hand status; limited MSS tracking — unit responsibility | As required |
+| VII | Major end items (vehicles, weapons systems, aircraft) | GCSS-Army (property book), PBUSE | Automated feed (GCSS-Army) | Auth vs. on-hand by LIN, due-in (EDD), battle loss replacement status, readiness impact | Daily; immediately upon battle loss or receipt |
+| VIII | Medical materiel | DMLSS, TEWLS, medical logistics officer | Coordination feed — medical logistics to S4 | S4 monitors availability for LOGSTAT only; HSS manages detail. Critical shortage flags coordinated with medical platoon. | Daily (medical → S4 push) |
+| IX | Repair parts (demand-supported and initial provisioning) | GCSS-Army, SAMS-E (parts requests) | Automated feed (GCSS-Army) + SAMS-E cross-reference | PLL fill rate %, open requisition count, EDD for critical parts, NMCS parts-waiting list | Daily; update immediately upon receipt of critical parts |
+| X | Agricultural and economic development material | Theater-specific reporting | Manual input | On-hand status, distribution by project — limited MSS tracking in most formations | As required by theater SOP |
+
+> **NOTE: Class X (agricultural/economic development material) tracking requirements are theater-specific. Most tactical formations do not track Class X in MSS. TSC/ESC-level workspaces may include Class X tracking for stability operations or security cooperation missions. Coordinate with the G4 for theater-specific guidance.**
 
 ### 2-2. 92A Automated Logistician Workflow in MSS
 
@@ -1480,6 +1520,8 @@ The sustainment battle rhythm synchronizes MSS data products with decision-makin
 | Weekly readiness review | Weekly | Readiness trend, PMCS compliance | Current SAMS-E data, all work orders |
 | Class V review (with fires) | As required / battle rhythm | Ammunition dashboard | SAAS-MOD update, CSR allocation |
 
+> **NOTE: The sustainment running estimate (FM 6-0, Chapter 9) is a continuously updated assessment that the S4 maintains throughout all phases of an operation. It is not a one-time product — it is a structured data product that feeds the common operational picture (COP) and directly informs commander decisions at every battle rhythm event. The sustainment running estimate includes current supply status by class, maintenance readiness, distribution capacity, personnel strength, and projected shortfalls. MSS sustainment dashboards should mirror the running estimate format: current status, projected status, and recommended priority of support. When properly configured, the MSS LOGSTAT dashboard and sustainment workspace together constitute a digital running estimate that is always current, always accessible, and eliminates the manual consolidation that historically degraded the estimate's accuracy and timeliness. S4 sections should validate that their MSS workspace organization maps to the running estimate format prescribed in unit SOP.**
+
 ---
 
 ## APPENDIX A — SUSTAINMENT-SPECIFIC NAMING CONVENTIONS IN MSS
@@ -1787,3 +1829,4 @@ Use this checklist before every distribution synchronization meeting or LOGSTAT 
 
 - **JADC2 Strategy Summary (March 2022)** — Cross-domain data integration strategy for Joint All-Domain Command and Control
 - **DoD Directive 3000.09, Autonomy in Weapon Systems (January 2023 update)** — Policy on autonomous and semi-autonomous functions in weapon systems; context for autonomous logistics systems
+- **DDOF Playbook v2.2 (December 2025)** — T2COM C2DAO; VAULTIS-A quality framework (8 dimensions); 6-phase data product lifecycle; 85% quality gate; MVP mandate 30 days

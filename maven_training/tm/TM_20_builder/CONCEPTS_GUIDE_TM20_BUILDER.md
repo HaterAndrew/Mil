@@ -19,7 +19,7 @@ MSS users operate across a defined capability spectrum. Each level has a distinc
 | **Operator (TM-10)** | All MSS users with read access | Nothing; they consume | Dashboards, reports, queries — read only |
 | **Builder (TM-20)** | Staff with builder access and TM-20 certification | No-code pipelines, Object Types, simple Actions, Workshop apps | Pipeline Builder, Ontology UI, Workshop |
 | **Advanced Builder (TM-30)** | Technically experienced staff | Multi-source pipelines, complex Ontology patterns, AIP Logic, multi-page apps | All TM-20 tools plus @incremental, SQL/Python, TypeScript Functions |
-| **Specialist (TM-40G–L)** | Domain experts with TM-30 base | ML models, OSDK apps, AI workflows, statistical pipelines | All prior tools plus Code Workspaces, AIP Logic, Agent Studio, OSDK |
+| **Specialist (TM-40G–M)** | Domain experts with TM-30 base | ML models, OSDK apps, AI workflows, statistical pipelines | All prior tools plus Code Workspaces, AIP Logic, Agent Studio, OSDK |
 
 A TM-20 Builder builds pipelines and applications using drag-and-drop, form-based tools — no code. When a requirement demands code, custom functions, or complex conditional logic, a Builder stops and escalates. That is not a failure. That is correct execution.
 
@@ -61,7 +61,7 @@ A Builder who acts outside this chain — ingesting unauthorized data, creating 
 | Requirement needs @incremental logic or watermark-based pipeline refresh | Escalate to TM-30 |
 | Requirement needs Python, PySpark, SQL, or TypeScript | Escalate to TM-40L (Software Engineer) |
 | Requirement needs AIP Logic, Agent Studio, or AI-augmented workflows | Escalate to TM-40H (AI Engineer) |
-| Requirement needs ML model integration | Escalate to TM-40I (ML Engineer) |
+| Requirement needs ML model integration | Escalate to TM-40M (ML Engineer) |
 | Requirement needs complex many-to-many Ontology modeling | Escalate to TM-30 |
 
 ### 1-4. The Three Pre-Build Questions
@@ -320,6 +320,15 @@ The **Primary Key** is the property that uniquely identifies each object. It mus
 | `MaintenanceRecord` | One row per maintenance event | `event_id` |
 
 > **WARNING:** If your primary key column is not unique in the backing dataset, objects will overwrite each other. Preview your Object Type immediately after creation. If the object count is lower than your row count, you have a primary key collision — fix the dataset before continuing.
+
+> **NOTE — Primary Key Design Rules (Palantir Best Practice)**
+> 1. The `id` (primary key) column **must be type string** — no exceptions.
+> 2. PKs must be inherently unique, derived from the object's own properties only.
+> 3. All object types require a dedicated `id` column separate from business identifiers.
+> 4. Never infer object properties from identifier values.
+> 5. Composite keys: keep readable (concatenated), never hashed.
+>
+> *Source: Palantir Developer Community — [Ontology and Pipeline Design Principles](https://community.palantir.com/t/ontology-and-pipeline-design-principles/5481)*
 
 ### 4-2. Property: Type Immutability and Why It Matters
 
@@ -646,7 +655,7 @@ For datasets with a specific time grain, append the grain after the tier: `gcss_
 | Hierarchical Ontology modeling (three or more linked types) | No | TM-30 |
 | Any pipeline requiring Python, PySpark, or SQL code | No | TM-40L (Software Engineer) |
 | TypeScript Functions or OSDK application development | No | TM-40L (Software Engineer) |
-| Machine learning model integration | No | TM-40I (ML Engineer) |
+| Machine learning model integration | No | TM-40M (ML Engineer) |
 | AI workflow design (LLM chains, Agent Studio) | No | TM-40H (AI Engineer) |
 | Statistical analysis and modeling (ORSA work) | No | TM-40G (ORSA) |
 | Data program governance and policy | No | TM-40J (Program Manager) |
@@ -704,7 +713,7 @@ If any answer requires looking it up, re-read the relevant section before procee
 
 **Advancement tracks:** TM-20 graduates have two advancement paths:
 
-- **TM-30 (Advanced Builder):** Required for all personnel before proceeding to any TM-40 track. TM-30 is the gateway to both WFF tracks (TM-40A–F) and specialist tracks (TM-40G–L).
+- **TM-30 (Advanced Builder):** Required for all personnel before proceeding to any TM-40 track. TM-30 is the gateway to both WFF tracks (TM-40A–F) and specialist tracks (TM-40G–M).
 - **WFF Tracks (TM-40A–F):** For operational staff whose primary role is warfighting function data use, not technical development. Prerequisite: TM-30 (required).
 
 | WFF Track | Title | For Personnel |
@@ -718,7 +727,7 @@ If any answer requires looking it up, re-read the relevant section before procee
 
 **Peer references:**
 - **TM-10 (Operator Manual):** Build with the operator experience in mind. Review TM-10, Chapters 4 and 5 to understand what operators see and expect before you design any application.
-- **Data Literacy Technical Reference:** For conceptual grounding in data management, governance frameworks (DoD VAUTI), and the full five-layer Foundry architecture diagram. Recommended reading before TM-20 instruction begins.
+- **Data Literacy Technical Reference:** For conceptual grounding in data management, governance frameworks (DoD VAULTIS / VAULTIS-A), and the full five-layer Foundry architecture diagram. Recommended reading before TM-20 instruction begins.
 
 *CONCEPTS GUIDE — TM-20 COMPANION, BUILDER, MAVEN SMART SYSTEM (MSS)*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026*

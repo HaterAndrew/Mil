@@ -125,7 +125,7 @@ _______________________________________________
 *Total points: 30. Diagnostic only — score does not affect course admission.*
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*EX-TM40D-PRE | Version 1.0 | March 2026*
+*EX_TM40D-PRE | Version 1.0 | March 2026*
 
 ---
 
@@ -169,4 +169,4 @@ Partial credit (6 pts): three of five elements (four supply panels + CCIR) addre
 ---
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*EX-TM40D-PRE | Answer Key | Version 1.0 | March 2026*
+*EX_TM40D-PRE | Answer Key | Version 1.0 | March 2026*

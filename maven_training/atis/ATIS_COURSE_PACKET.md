@@ -12,8 +12,8 @@
 | **Effective Date** | March 2026 |
 | **Classification** | UNCLASSIFIED |
 | **Review Cycle** | Annual or upon major platform update |
-| **Total Courses** | 21 |
-| **Total Program Hours** | 664 |
+| **Total Courses** | 23 |
+| **Total Program Hours** | 728 |
 | **Format** | TR 350-70 compliant; structured for ATIS registration |
 | **Phase 1** | USAREUR-AF G3/7 command training registration |
 | **Phase 2** | T2COM institutional registration (future) |
@@ -22,7 +22,7 @@
 
 ## REGISTRATION STATUS
 
-> **ATIS Course Numbers:** To be assigned upon registration. Internal designators (TM-10 through TM-50L) are used throughout this packet. Upon ATIS registration, each course will receive a formal ATIS course number which will be annotated in the ATIS Number field of each course record.
+> **ATIS Course Numbers:** To be assigned upon registration. Internal designators (TM-10 through TM-50M and T3-F/T3-I) are used throughout this packet. Upon ATIS registration, each course will receive a formal ATIS course number which will be annotated in the ATIS Number field of each course record.
 
 > **T2COM Note:** This packet is structured to TR 350-70 specification. When transitioning to T2COM institutional registration, the following additional elements will be required:
 > - Formal TRADOC school partnership (proponent alignment)
@@ -60,13 +60,18 @@ TM-10 (all personnel)
               |-- TM-40F (Mission Command WFF)
               |-- TM-40G (ORSA) ----------> TM-50G (Advanced ORSA)
               |-- TM-40H (AI Engineer) ---> TM-50H (Advanced AI Engineer)
-              |-- TM-40I (ML Engineer) ---> TM-50I (Advanced ML Engineer)
+              |-- TM-40M (ML Engineer) ---> TM-50M (Advanced ML Engineer)
               |-- TM-40J (Program Mgr) ---> TM-50J (Advanced PM)
               |-- TM-40K (Knowledge Mgr) -> TM-50K (Advanced KM)
               +-- TM-40L (Software Eng) --> TM-50L (Advanced SWE)
+        |
+        +-- T3-F (MSC Force Multiplier / Unit Data Trainer)
+        |
+        +-- TM-30
+              +-- T3-I (Instructor Certification — Phase 1)
 ```
 
-> **NOTE:** TM-30 is a HARD prerequisite for ALL TM-40 tracks (WFF A-F and specialist G-L). There are NO TM-50A-F tracks.
+> **NOTE:** TM-30 is a HARD prerequisite for ALL TM-40 tracks (WFF A–F and specialist G–M). TM-50 is G–M only (advanced specialist). T3 tracks are outside the TM chain: T3-F requires TM-20 + CDR nomination; T3-I requires TM-30 + C2DAO selection.
 
 ---
 
@@ -85,16 +90,18 @@ TM-10 (all personnel)
 | TM-40F | Mission Command Warfighting Function | WFF Functional | 3 | 24 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
 | TM-40G | ORSA Specialist | Specialist | 5 | 40 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
 | TM-40H | AI Engineer | Specialist | 5 | 40 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
-| TM-40I | ML Engineer | Specialist | 5 | 40 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
+| TM-40M | ML Engineer | Specialist | 5 | 40 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
 | TM-40J | Program Manager | Specialist | 4 | 32 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
 | TM-40K | Knowledge Manager | Specialist | 4 | 32 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
 | TM-40L | Software Engineer | Specialist | 5 | 40 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
 | TM-50G | Advanced ORSA | Advanced Specialist | 5 | 40 | TM-10, TM-20, TM-30, TM-40G | [TBD — assigned by ATIS upon registration] |
 | TM-50H | Advanced AI Engineer | Advanced Specialist | 5 | 40 | TM-10, TM-20, TM-30, TM-40H | [TBD — assigned by ATIS upon registration] |
-| TM-50I | Advanced ML Engineer | Advanced Specialist | 5 | 40 | TM-10, TM-20, TM-30, TM-40I | [TBD — assigned by ATIS upon registration] |
+| TM-50M | Advanced ML Engineer | Advanced Specialist | 5 | 40 | TM-10, TM-20, TM-30, TM-40M | [TBD — assigned by ATIS upon registration] |
 | TM-50J | Advanced Program Manager | Advanced Specialist | 3 | 24 | TM-10, TM-20, TM-30, TM-40J | [TBD — assigned by ATIS upon registration] |
 | TM-50K | Advanced Knowledge Manager | Advanced Specialist | 3 | 24 | TM-10, TM-20, TM-30, TM-40K | [TBD — assigned by ATIS upon registration] |
 | TM-50L | Advanced Software Engineer | Advanced Specialist | 5 | 40 | TM-10, TM-20, TM-30, TM-40L | [TBD — assigned by ATIS upon registration] |
+| T3-F | MSC Force Multiplier | Train-the-Trainer | 3 | 24 | TM-10, TM-20 + CDR nomination | [TBD — assigned by ATIS upon registration] |
+| T3-I | Instructor Certification (Phase 1) | Train-the-Trainer | 5 | 40 | TM-10, TM-20, TM-30 + C2DAO selection | [TBD — assigned by ATIS upon registration] |
 
 ---
 
@@ -873,12 +880,12 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-### TM-40I: ML Engineer
+### TM-40M: ML Engineer
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-40I |
+| **Internal Designator** | TM-40M |
 | **Course Title** | ML Engineer |
 | **Tier** | Specialist (Tier 4) |
 | **Duration** | 5 days (40 hours) |
@@ -890,7 +897,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Min Class Size** | 2 |
 | **Scheduling Cadence** | Semi-annual or on demand |
 | **Instructor Ratio** | 4:1 |
-| **Instructor Qualification** | ML production experience; TM-40I certified; C2DAO MLE SME designation |
+| **Instructor Qualification** | ML production experience; TM-40M certified; C2DAO MLE SME designation |
 | **Access Level Required** | GPU-enabled Code Workspace |
 | **Provisioning Lead Time** | 10 duty days |
 | **Evaluation** | Practical exercise (7 tasks); model card review; GO/NO-GO |
@@ -1227,24 +1234,24 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-### TM-50I: Advanced ML Engineer
+### TM-50M: Advanced ML Engineer
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-50I |
+| **Internal Designator** | TM-50M |
 | **Course Title** | Advanced ML Engineer |
 | **Tier** | Advanced Specialist (Tier 5) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-40I Go on file (required) |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30, TM-40I |
+| **Prerequisites** | TM-40M Go on file (required) |
+| **Prerequisite Codes** | TM-10, TM-20, TM-30, TM-40M |
 | **Audience** | Senior ML engineers |
 | **Target MOS/Branch** | MLEs with production model deployment experience |
 | **Max Class Size** | 6 |
 | **Min Class Size** | 2 |
 | **Scheduling Cadence** | Annual or on demand |
 | **Instructor Ratio** | 4:1 |
-| **Instructor Qualification** | TM-50I certified or C2DAO Advanced MLE SME; production ML pipeline experience |
+| **Instructor Qualification** | TM-50M certified or C2DAO Advanced MLE SME; production ML pipeline experience |
 | **Access Level Required** | GPU-enabled Code Workspace + Editor |
 | **Provisioning Lead Time** | 10 duty days |
 | **Evaluation** | Practical exercise; model governance review; GO/NO-GO |

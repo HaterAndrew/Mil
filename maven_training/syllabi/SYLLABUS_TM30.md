@@ -219,7 +219,7 @@ Re-evaluation requires full repetition of the practical exercise (all tasks), no
 
 ## Continuation
 
-TM-30 is the gateway to **all** TM-40 tracks — both WFF (TM-40A–F) and Specialist (TM-40G–L). TM-30 completion is a **hard prerequisite — no waivers** — for every track in the TM-40 series.
+TM-30 is the gateway to **all** TM-40 tracks — both WFF (TM-40A–F) and Specialist (TM-40G–M). TM-30 completion is a **hard prerequisite — no waivers** — for every track in the TM-40 series.
 
 **WFF Tracks (TM-40A–F) — prereq: TM-30 (required):**
 
@@ -232,18 +232,18 @@ TM-30 is the gateway to **all** TM-40 tracks — both WFF (TM-40A–F) and Speci
 | TM-40E | Protection | FP officers, CBRN officers, provost marshal staff |
 | TM-40F | Mission Command | Battle captains, XOs, CDRs, MC-function staff |
 
-**Specialist Tracks (TM-40G–L) — prereq: TM-30 (required):**
+**Specialist Tracks (TM-40G–M) — prereq: TM-30 (required):**
 
 | Track | Specialist Role | Advanced Level |
 |---|---|---|
 | TM-40G | ORSA | TM-50G (Advanced ORSA) |
 | TM-40H | AI Engineer | TM-50H (Advanced AI Engineer) |
-| TM-40I | ML Engineer | TM-50I (Advanced ML Engineer) |
+| TM-40M | ML Engineer | TM-50M (Advanced ML Engineer) |
 | TM-40J | Program Manager | TM-50J (Advanced Program Manager) |
 | TM-40K | Knowledge Manager | TM-50K (Advanced Knowledge Manager) |
 | TM-40L | Software Engineer | TM-50L (Advanced Software Engineer) |
 
-**TM-50A–F do not exist.** The advanced series is TM-50G–L only. Any reference to TM-50A through TM-50F is stale and incorrect.
+The advanced series is TM-50G–M only. WFF tracks (TM-40A–F) are terminal with no TM-50 continuation.
 
 ---
 

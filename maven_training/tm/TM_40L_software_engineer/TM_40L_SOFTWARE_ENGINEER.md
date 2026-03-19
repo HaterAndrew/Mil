@@ -35,7 +35,7 @@ This manual provides task-based instruction for software engineers operating on 
 - AIP Logic configuration — see TM-30
 - Agent Studio development — see TM-40H
 
-> **NOTE:** TM-40L is peer to TM-40H (AI Engineer), TM-40I (ML Engineer), and TM-40G (ORSA). All four tracks require TM-30 as prerequisite. Each track owns a distinct technical domain. Coordinate across tracks — operational systems frequently require all four disciplines.
+> **NOTE:** TM-40L is peer to TM-40H (AI Engineer), TM-40M (ML Engineer), and TM-40G (ORSA). All four tracks require TM-30 as prerequisite. Each track owns a distinct technical domain. Coordinate across tracks — operational systems frequently require all four disciplines.
 
 ### 1-2. Curriculum Position, Advanced Track, and WFF Context
 
@@ -43,7 +43,7 @@ This manual provides task-based instruction for software engineers operating on 
 
 **Advanced track:** Upon completing TM-40L, qualified Software Engineers should pursue **TM-50L (Advanced Software Engineer)** for advanced topics including large-scale OSDK application architecture, Foundry platform extension patterns, CI/CD pipeline hardening, coalition data integration (NAFv4), and security compliance for operational software systems.
 
-**Peer specialist tracks:** The Software Engineer implements the production code layer that all other specialist tracks depend on. Coordinate with TM-40H (AI Engineer) when AI workflow outputs require OSDK application surfaces for staff-section delivery. Coordinate with TM-40I (ML Engineer) when model deployment requires custom inference infrastructure beyond standard Foundry Transforms. Coordinate with TM-40K (Knowledge Manager) on knowledge pipeline implementation — the KM defines the architecture; the SWE implements pipelines requiring custom logic. The KM-SWE interface is a high-frequency coordination point: knowledge ontology design changes have direct impact on downstream application code.
+**Peer specialist tracks:** The Software Engineer implements the production code layer that all other specialist tracks depend on. Coordinate with TM-40H (AI Engineer) when AI workflow outputs require OSDK application surfaces for staff-section delivery. Coordinate with TM-40M (ML Engineer) when model deployment requires custom inference infrastructure beyond standard Foundry Transforms. Coordinate with TM-40K (Knowledge Manager) on knowledge pipeline implementation — the KM defines the architecture; the SWE implements pipelines requiring custom logic. The KM-SWE interface is a high-frequency coordination point: knowledge ontology design changes have direct impact on downstream application code.
 
 **WFF awareness:** Software engineers on MSS build the application layer that WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command) interact with daily. An OSDK application degrading for a Fires (TM-40B) targeting workflow or a Movement and Maneuver (TM-40C) tracking tool has direct operational impact. Code quality, test coverage, and rollback procedures are not abstract engineering standards — they are WFF readiness factors.
 
@@ -135,10 +135,32 @@ Complete all of the following before beginning this manual:
 |---|---|---|
 | Army CIO Data Stewardship Policy (April 2, 2024) | Army CIO | Data stewardship hierarchy, governance chain, API access policy |
 | UDRA v1.1 (February 2025) | Army Enterprise | Unified Data Reference Architecture — domain ownership, integration standards |
-| DoD Data Strategy (2020) | OSD | VAUTI framework (Visible, Accessible, Understandable, Trustable, Interoperable) |
+| DoD Data Strategy (2020) | OSD | VAULTIS-A framework (supersedes VAUTI) — Visible, Accessible, Understandable, Linked, Trusted, Interoperable, Secure, Auditable. 8 dimensions per DDOF Playbook v2.2 (Dec 2025); 85% weighted avg = DDOF Phase 3 quality gate. |
 | NATO Digital Transformation Implementation Strategy (Oct 2024) | NATO | NATO digital transformation roadmap — MDO interoperability context for SWE deliverables |
 
 **Reference:** `learn-data.armydev.com` — authoritative reference for OSDK API versions, enrollment procedures, and approved integration patterns. Consult before beginning any new external application development.
+
+---
+
+### 1-5b. Army Data Plan SO 7 and DevSecOps Tempo
+
+**BLUF:** Army Data Plan Strategic Objective 7 directs the Army to field a "Cloud, Data, DevSecOps Enabled Workforce & Leaders That Support Digital Operations." The DDOF Playbook mandates MVP delivery within 30 days. SWEs build the pipelines and applications that sustain this tempo.
+
+SO 7 establishes the expectation that every data professional — including software engineers — operates within a DevSecOps culture. For TM-40L personnel this means:
+
+- **Speed to value.** DDOF's 30-day MVP window is the planning constraint. Design pipelines, OSDK applications, and integration services for incremental delivery, not waterfall release cycles.
+- **Shift-left security.** Embed automated security scanning and compliance checks in CI/CD pipelines (Chapter 8) before code reaches production.
+- **Continuous feedback.** Production monitoring and user feedback loops feed the next sprint — not a separate sustainment phase.
+
+> **NOTE — DevSecOps to DDOF Phase Mapping:**
+>
+> | DevSecOps Activity | DDOF Phase | SWE Action |
+> |---|---|---|
+> | Build sprint | Phase 4 — Development | Write and unit-test pipeline/application code |
+> | Automated testing + security scan | Phase 5 — Test & Evaluation | Run CI test suite, SAST/DAST scans, marking validation |
+> | CI/CD deployment + monitoring | Phase 6 — Operations | Promote to production branch, configure alerting, verify data flow |
+>
+> Phases are sequential gates. Code that fails Phase 5 security scan does not promote to Phase 6. No exceptions.
 
 ---
 
@@ -172,6 +194,29 @@ TM-40L engineers are the primary implementers of Layers 4 and 5 technical compon
 
 ---
 
+### 1-7. UDRA Service Architecture — SWE Implementation Map
+
+**BLUF:** UDRA v1.1 defines six core services for Army data ecosystems. Software engineers implement or integrate with every one of them. The table below maps each UDRA service to concrete SWE responsibilities and MSS implementation patterns.
+
+| UDRA Service | SWE Responsibility | MSS Implementation |
+|---|---|---|
+| Production | Build data pipelines and transforms | Foundry pipeline code (Python transforms, PySpark) |
+| Orchestration | Register, discover, and notify services | Data catalog integration, pipeline scheduling |
+| Consumption | APIs, dashboards, analytics surfaces | Workshop apps, OSDK external apps, API endpoints |
+| Access Management | ABAC/RBAC, zero-trust enforcement | Marking configuration, CBAC policy, access control rules |
+| API Brokerage | Endpoint management and routing | API gateway configuration, OSDK enrollment |
+| Computational Governance | Automated policy enforcement | `@check` decorators, validation rules, data quality gates |
+
+*Source: UDRA v1.1 (February 2025)*
+
+Every OSDK application, pipeline, or integration service a TM-40L engineer builds touches at least three of these services. Design reviews must identify which services a deliverable engages and confirm the implementation satisfies UDRA requirements for each.
+
+> **NOTE — UDRA Required Metadata (15 fields):** Every data product registered in the Army data ecosystem must carry these metadata fields per UDRA v1.1: `apiEndpoint`, `authorizationReference`, `creationDateTime`, `custodian`, `description`, `disclosureAndReleasability`, `format`, `handlingRestrictions`, `identifier` (UUID), `name`, `originator`, `securityClassification`, `version`. SWEs must ensure pipelines populate these fields automatically — missing metadata blocks promotion past the Computational Governance gate. Validate metadata completeness as a CI/CD check (see Chapter 8).
+
+> **WARNING: The `securityClassification`, `disclosureAndReleasability`, and `handlingRestrictions` fields are security-critical. Incorrect values can result in unauthorized data exposure. Populate these fields from authoritative source markings — never derive them from user input or default values.**
+
+---
+
 ## CHAPTER 2 — OSDK FUNDAMENTALS
 
 > **CODE EXAMPLES:** Runnable OSDK and Ontology access patterns referenced in this chapter are available in the local development shim at [`data_skills/13_foundry_patterns/ontology_modeling.py`](../../../skills/data_skills/13_foundry_patterns/ontology_modeling.py). Transform and check patterns are in [`python_transforms.py`](../../../skills/data_skills/13_foundry_patterns/python_transforms.py) and [`foundry_checks.py`](../../../skills/data_skills/13_foundry_patterns/foundry_checks.py). Activate the venv: `source skills/data_skills/.venv/bin/activate`.
@@ -195,6 +240,16 @@ The OSDK allows external Python or TypeScript applications to:
 The OSDK is not a direct database connection. It is a governed API that enforces CBAC, markings, and audit logging at every query. An external application using the OSDK cannot access data the authenticated user or service account is not authorized to see — this is the correct security behavior.
 
 > **NOTE:** The OSDK is the only approved method for external applications to interact with the MSS Ontology. Do not attempt to access Foundry datasets directly from external applications — use the OSDK for object data and the Platform SDK (Chapter 4) for dataset operations where approved.
+
+> **NOTE — Palantir Defense OSDK**
+> Palantir offers a Defense OSDK with a pre-built Defense Ontology standardized to warfighting functions. Key properties:
+> - **Consistency**: foundational data types aligned to WFF structure
+> - **Adaptability**: API-like access deployable across environments (garrison, tactical, cloud)
+> - **CJADC2 Compatibility**: designed for DoD interoperability requirements
+>
+> Request access: palantir.com/request-defense-osdk | Defense SDK overview: palantir.com/defense/sdk
+>
+> *Source: Palantir Developer Community — [Defense OSDK announcement](https://community.palantir.com/t/discover-the-power-of-palantirs-defense-osdk/3561)*
 
 ---
 
@@ -2345,6 +2400,17 @@ STEP 7: Post-promotion verification
 
 > **NOTE:** CWIX is NATO's annual interoperability validation event (~3,000 participants, 40 nations, ~25,000 tests). Foundry pipelines supporting coalition operations should target CWIX validation profiles for their domain.
 
+> **NOTE — When to Use Compute Modules**
+> Compute Modules provide containerized compute for workloads that exceed Code Repositories and Functions capabilities:
+> - **GPU workloads**: satellite imagery, large model inference, embedding computation
+> - **Custom runtimes**: languages/frameworks not natively supported in Foundry
+> - **Spiky demand**: auto-scaling for unpredictable computational loads
+> - **Existing code**: 60% of Compute Modules run code authored outside Foundry
+>
+> Decision guide: Use **Functions** for lightweight ontology operations. Use **Code Repositories** for Python/Java transforms. Use **Compute Modules** for containerized, GPU, or external code deployment.
+>
+> *Source: Palantir Developer Community — [Why We Built It: Compute Modules](https://community.palantir.com/t/why-we-built-it-compute-modules/3292)*
+
 ---
 
 ## CHAPTER 9 — SECURITY AND COMPLIANCE
@@ -2943,7 +3009,9 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 
 **V Corps** — Fifth Corps, the primary warfighting corps HQ in Europe. Major consumer of MSS readiness data products.
 
-**VAUTI** — Visible, Accessible, Understandable, Trustable, Interoperable. The DoD Data Strategy (2020) framework for data product quality. All MSS data products and integrations must satisfy all five criteria.
+**VAUTI** — Visible, Accessible, Understandable, Trustable, Interoperable. Legacy 5-dimension data quality framework from AR 25-1 (2019). Superseded by VAULTIS (DoD Data Strategy, 2020) and extended to VAULTIS-A (DDOF Playbook v2.2, December 2025). See VAULTIS-A.
+
+**VAULTIS-A** — Visible, Accessible, Understandable, Linked, Trusted, Interoperable, Secure, Auditable. The current 8-dimension data quality framework per DDOF Playbook v2.2 (December 2025). Supersedes VAUTI (AR 25-1) and VAULTIS (DoD Data Strategy 2020). All MSS data products and integrations must achieve an 85% minimum weighted average across all 8 dimensions (DDOF Phase 3 quality gate). Proponent: T2COM C2DAO / HQDA CIO/G-6 / SAIS-ADD.
 
 **Webhook** — An HTTP callback that allows a system to push event notifications to an external receiver. Used in MSS integration patterns to trigger downstream processing on Ontology state changes.
 

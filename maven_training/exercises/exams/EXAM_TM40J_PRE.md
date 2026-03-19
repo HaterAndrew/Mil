@@ -102,7 +102,7 @@ D. A metric comparing planned vs. actual delivery dates
 **12. When translating a commander's requirement into a backlog, the PM's first step should be:**
 
 A. Break the requirement immediately into user stories and size them in story points
-B. Identify the technical developer track (TM-40G through TM-40L) that will build the capability
+B. Identify the technical developer track (TM-40G through TM-40M) that will build the capability
 C. Clarify the requirement until the success criteria are specific and testable — distinguish what the user needs from what they asked for
 D. Estimate the delivery timeline and brief the commander on expected completion
 
@@ -163,7 +163,7 @@ D. The risk register for a data product that is in production sustainment
 
 &nbsp;
 
-**SA-4. You are managing a project with four developers: a TM-40H (AI Engineer), a TM-40I (ML Engineer), a TM-40K (Knowledge Manager), and a TM-40L (Software Engineer). Describe one dependency between two of these tracks that could create a blocker, and how you would manage it.**
+**SA-4. You are managing a project with four developers: a TM-40H (AI Engineer), a TM-40M (ML Engineer), a TM-40K (Knowledge Manager), and a TM-40L (Software Engineer). Describe one dependency between two of these tracks that could create a blocker, and how you would manage it.**
 
 &nbsp;
 
@@ -226,7 +226,7 @@ SA-2. Full credit: PM pushes back on the vague requirement with structured quest
 
 SA-3. Full credit: the team is trying to skip the Evaluation phase. PM questions: Has the model been evaluated against a held-out dataset not used in training? What is the performance metric and did it meet the threshold? Has the data steward reviewed the output for quality? Has the operational user seen the output and confirmed it is interpretable and actionable? Has a production readiness review been conducted against the Definition of Done? All must be answered before Production. Partial credit (3 pts) for identifying the skipped phase without the gate questions.
 
-SA-4. Full credit: any plausible cross-track dependency — e.g., TM-40L (SWE) must complete the API integration before TM-40I (ML Engineer) can run the model pipeline against live data; or TM-40K (KM) must finalize the Ontology Object Type definition before TM-40H (AI Engineer) can wire the AI agent to the correct object properties. Management: identify the dependency in the sprint planning session; assign an owner; put a due-date gate on the downstream story; raise it as a risk if the upstream work is delayed. Partial credit (3 pts) for identifying a plausible dependency without a management approach.
+SA-4. Full credit: any plausible cross-track dependency — e.g., TM-40L (SWE) must complete the API integration before TM-40M (ML Engineer) can run the model pipeline against live data; or TM-40K (KM) must finalize the Ontology Object Type definition before TM-40H (AI Engineer) can wire the AI agent to the correct object properties. Management: identify the dependency in the sprint planning session; assign an owner; put a due-date gate on the downstream story; raise it as a risk if the upstream work is delayed. Partial credit (3 pts) for identifying a plausible dependency without a management approach.
 
 SA-5. Full credit: do not argue with the user — investigate. Ask what "the old way" was and what specific concerns they have about the new capability. Common root causes: product doesn't match their workflow, they weren't involved in requirements, they don't trust the data, or they fear the product will create accountability they didn't have before. Response: schedule a 30-minute walkthrough with the user and their supervisor; identify one concrete workflow where the new capability saves them time; document their feedback and bring it back to the team as a user story for the next sprint. Resistance that is dismissed or ignored escalates — it does not resolve.
 

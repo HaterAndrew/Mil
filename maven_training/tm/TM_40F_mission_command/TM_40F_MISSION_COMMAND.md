@@ -45,7 +45,7 @@ The USAREUR-AF C2DAO built MSS on Palantir Foundry specifically to integrate ope
 
 - Pipeline construction, data transforms, or code development — see TM-30 and TM-40 series technical manuals
 - Ontology design or dataset schema modification — see TM-30
-- Machine learning model management — see TM-40I
+- Machine learning model management — see TM-40M
 - AI Logic (AIP) application development — see TM-40H
 - Financial management data systems — see unit S6/IMO
 - Building Workshop applications — see TM-20
@@ -103,11 +103,43 @@ Before beginning this manual, verify the following:
 | TM-40F | Mission Command WFF | This manual. |
 | TM-40G | ORSA | Specialist track (prereq TM-30). Companion. ORSA analysts build quantitative products that TM-40F users receive and brief. |
 | TM-40H | AI Engineer | Specialist track (prereq TM-30). Awareness-level: produces AI-enabled alerts in CCIR monitoring. |
-| TM-40I | ML Engineer | Specialist track (prereq TM-30). Awareness-level: produces predictive products on MSS. |
+| TM-40M | ML Engineer | Specialist track (prereq TM-30). Awareness-level: produces predictive products on MSS. |
 | TM-40J | Program Manager | Specialist track (prereq TM-30). PM data feeds readiness and portfolio products consumed by S3. |
 | TM-40K | Knowledge Manager | Specialist track (prereq TM-30). KM maintains information products and lessons learned accessible in MSS. |
 | TM-40L | Software Engineer | Specialist track (prereq TM-30). Builds platform integrations and data pipelines behind TM-40F products. |
-| TM-50G–L | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq TM-40G–L). Not applicable to operational staff. |
+| TM-50G–M | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq TM-40G–M). Not applicable to operational staff. |
+
+### 1-6. FM 6-0 Information Management Framework and MSS
+
+FM 6-0 (May 2022) defines information management (IM) as the science of using procedures and information systems to collect, process, store, display, disseminate, and protect knowledge products, data, and information (FM 6-0, para 4-1). MSS implements all six IM tasks as platform capabilities. Table 1-3 maps each FM 6-0 IM task to its MSS implementation.
+
+**Table 1-3. FM 6-0 Information Management Tasks — MSS Implementation**
+
+| IM Task (FM 6-0) | FM 6-0 Definition | Data Platform Implementation |
+|---|---|---|
+| Collect | Acquire data and information from organic and external sources | Data ingestion pipelines, sensor feeds, manual entry, GCSS-Army/DTMS/DPAS connectors |
+| Process | Convert data into a form suitable for analysis and decision-making | ETL transforms, data wrangling, enrichment, deduplication, schema normalization |
+| Store | Maintain data in accessible repositories with appropriate retention | Data repositories, datasets, object storage, version-controlled pipelines |
+| Display | Present data in formats that support understanding and decision-making | Dashboards, COP overlays, reports, Workshop visualizations, briefing products |
+| Disseminate | Distribute data products to authorized users at the right time | API endpoints, data sharing permissions, automated notifications, CCIR alerts |
+| Protect | Safeguard data from unauthorized access, modification, or destruction | Access controls (RBAC), encryption, classification enforcement, OPSEC markings |
+
+> **NOTE: Every staff section in the TM-40F framework (Chapter 2) executes all six IM tasks within its data domain. The S6 coordinates the technical enablement; the S3 directs the operational requirements; each section owns the accuracy and currency of its data products.**
+
+**Information Relevance Criteria.** FM 6-0, para 4-6 establishes six criteria for determining whether information meets commander requirements. These criteria map directly to the VAULTIS-A data quality dimensions used in the DDOF Playbook v2.2 (see Appendix D, Strategic Guidance). Table 1-4 provides the crosswalk.
+
+**Table 1-4. FM 6-0 Information Relevance Criteria — VAULTIS-A Crosswalk**
+
+| FM 6-0 Criterion | FM 6-0 Definition | VAULTIS-A Dimension |
+|---|---|---|
+| Accurate | Free from error; faithful to the source | Accuracy |
+| Timely | Available in time to support the decision | Timeliness |
+| Useable | In a format appropriate to the consumer | Usability |
+| Complete | Contains all elements necessary for the decision | Completeness |
+| Precise | Specific enough for the intended purpose | (Contributes to Accuracy and Completeness) |
+| Secure | Protected from unauthorized access or compromise | Security |
+
+> **NOTE: When a data product fails a VAULTIS-A quality gate (85% threshold per DDOF Playbook), staff should diagnose the failure against these six FM 6-0 criteria. This ensures corrective action is framed in doctrinal language the commander understands — not just technical metrics.**
 
 ---
 
@@ -1374,7 +1406,7 @@ At corps level, MSS employment emphasizes planning support for complex, multi-di
 - Corps-level CCIRs are typically multi-echelon and longer-horizon.
 - Planning workspace at corps supports 72-hour to 7-day planning horizons.
 - ORSA staff (TM-40G) integrated with G35 to support COA analysis and quantitative decision products.
-- AI/ML-enabled products (TM-40H, TM-40I) integrated into corps-level predictive assessments.
+- AI/ML-enabled products (TM-40H, TM-40M) integrated into corps-level predictive assessments.
 
 **Corps COP Architecture:**
 - Division-level COPs are visible within the corps COP (federated display).
@@ -1651,20 +1683,22 @@ Instructions:
 
 **Table D-1. Doctrinal References for TM-40F**
 
-| Publication | Title | Key Relevance to TM-40F |
-|---|---|---|
-| ADP 6-0 | Mission Command | 7 principles; shared understanding; commander's intent; disciplined initiative |
-| FM 6-0 | Commander and Staff Organization and Operations | Staff responsibilities S1–S9; CCIRs (PIR, FFIR, EEFI); battle rhythm; decision support |
-| FM 5-0 | Planning and Orders Production (Nov 2024) | Operations process; MDMP 7 steps; assessment MOE/MOP framework |
-| ADP 5-0 | The Operations Process | Operations process fundamentals: plan, prepare, execute, assess; continuous assessment |
-| ATP 6-0.5 | Command Post Organization and Operations | Main/TAC/Alt/Jump CP; battle rhythm events; CP displacement |
-| FM 6-02 | Signal Support to Operations | Network architecture; MSS as network-enabled C2 application |
-| ATP 5-19 | Risk Management | Risk management in planning; operational risk assessment methodology |
-| ADP 2-0 | Intelligence | IPB; intelligence support to the operations process |
-| FM 3-09 | Fire Support and Field Artillery Operations | Fires integration with the operations process; targeting process |
-| ATP 4-90 | Brigade Support Battalion | Logistics operations; LOGSTAT; supply support |
-| ATP 5-0.1 | Army Design Methodology | ADM critical thinking before MDMP |
-| TC 6-0.2 | Training the C2 WFF for BN/BDE/BCT | C2 training tables |
+| Publication | Title | Key Sections | Key Relevance to TM-40F |
+|---|---|---|---|
+| ADP 6-0 | Mission Command | Ch.1, para 1-1 (definition), para 1-28 (7 principles); Ch.2, para 2-8 (shared understanding), para 2-17 (CCIR) | 7 principles; shared understanding; commander's intent; disciplined initiative |
+| FM 6-0 (May 2022) | Commander and Staff Organization and Operations | Ch.3 (staff organization S1–S9); Ch.4, para 4-1 (IM definition), para 4-6 (information relevance criteria), para 4-8 (battle rhythm); Ch.5 (CCIRs — PIR, FFIR, EEFI); Ch.12 (decision support) | Staff responsibilities; 6 IM tasks (collect, process, store, display, disseminate, protect); CCIRs; battle rhythm; decision support; information relevance criteria |
+| FM 5-0 (Nov 2024) | Planning and Orders Production | Ch.2–8 (MDMP steps 1–7); Ch.10 (assessment — MOE/MOP framework); Appendix B (running estimates) | Operations process; MDMP 7 steps; assessment MOE/MOP framework; running estimates |
+| ADP 5-0 | The Operations Process | Ch.1 (fundamentals); Ch.2 (plan); Ch.3 (prepare); Ch.4 (execute); Ch.5 (assess — continuous assessment cycle) | Operations process fundamentals: plan, prepare, execute, assess; continuous assessment |
+| FM 3-0 | Operations | Ch.1 (operational environment); Ch.3 (elements of decisive action — offense, defense, stability); Ch.7 (information); Ch.9 (integrating processes — IPB, targeting, risk management) | Operational framework; decisive action context for MSS data products; integrating processes that drive COP and CCIR requirements |
+| ATP 6-0.5 | Command Post Organization and Operations | Ch.2 (CP types — Main/TAC/Alt/Jump); Ch.3 (battle rhythm events and design); Ch.5 (CP displacement and PACE planning) | Main/TAC/Alt/Jump CP configuration; battle rhythm event design; CP displacement procedures; MEDS concept |
+| FM 6-02 | Signal Support to Operations | Ch.3, para 3-12 (network-enabled applications); Ch.4 (signal support to the CP); Ch.6 (network operations) | Network architecture; MSS as network-enabled C2 application; CP connectivity requirements |
+| ATP 5-0.3 | Commander and Staff Estimates | Ch.2 (estimate methodology); Ch.3 (running estimate format); Appendixes B–H (staff-specific estimate formats — S1 through S6) | Running estimates inform MSS dashboard design; staff estimate formats map to MSS data domains by section; estimate update triggers align to CCIR thresholds |
+| ATP 5-19 | Risk Management | Ch.2 (5-step process); Ch.3 (hazard assessment); Ch.4 (risk acceptance authority levels) | Risk management in planning; operational risk assessment methodology; risk data on MSS |
+| ADP 2-0 | Intelligence | Ch.1 (intelligence fundamentals); Ch.2 (IPB); Ch.3 (intelligence support to the operations process — PIR management) | IPB; PIR management; intelligence support to operations process; threat overlay data |
+| FM 3-09 | Fire Support and Field Artillery Operations | Ch.2 (fire support planning); Ch.4 (targeting — D3A/decide-detect-deliver-assess); Ch.6 (fire support coordination) | Fires integration with the operations process; targeting process; BDA data flow to COP |
+| ATP 4-90 | Brigade Support Battalion | Ch.2 (logistics operations); Ch.3 (LOGSTAT reporting); Ch.5 (maintenance operations) | Logistics operations; LOGSTAT format and data flow; supply and maintenance status reporting |
+| ATP 5-0.1 | Army Design Methodology | Ch.2 (ADM steps); Ch.3 (framing the operational environment) | ADM critical thinking before MDMP; environmental framing informs MSS data requirements |
+| TC 6-0.2 | Training the C2 WFF for BN/BDE/BCT | Part I (C2 training tables); Part II (battle drills and collective tasks) | C2 training tables; collective task standards for MSS-enabled battle rhythm execution |
 
 **Strategic Guidance:**
 
@@ -1674,6 +1708,7 @@ Instructions:
 |---|---|---|
 | NATO Warfighting Capstone Concept (2021) | NATO NWCC | 6 Critical Enablers including Data — frames MSS as enabler of alliance warfighting |
 | NATO Digital Transformation Implementation Strategy (Oct 2024) | NATO | Digital transformation roadmap — MDO interoperability context for mission command systems |
+| DDOF Playbook v2.2 (December 2025) | T2COM C2DAO | VAULTIS-A quality framework (8 dimensions); 6-phase data product lifecycle; 85% quality gate; MVP mandate 30 days |
 
 ---
 
@@ -1785,3 +1820,4 @@ Instructions:
 - **JADC2 Strategy Summary (March 2022)** — Cross-domain data integration strategy for Joint All-Domain Command and Control
 - **DoD Directive 3000.09, Autonomy in Weapon Systems (January 2023 update)** — Policy on autonomous and semi-autonomous functions in weapon systems; context for mission command decision support
 - **JCOIE (Joint Concept for Operating in the Information Environment)** — Joint framework for information operations and decision advantage in the information environment
+- **DDOF Playbook v2.2 (December 2025)** — T2COM C2DAO; VAULTIS-A quality framework (8 dimensions); 6-phase data product lifecycle; 85% quality gate; MVP mandate 30 days

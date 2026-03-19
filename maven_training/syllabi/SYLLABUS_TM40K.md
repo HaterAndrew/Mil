@@ -173,7 +173,7 @@ Graduates designing enterprise knowledge architectures or leading cross-organiza
 |---|---|
 | Pre-course exam | EXAM_TM40K_PRE |
 | Post-course exam | EXAM_TM40K_POST |
-| Practical exercise | EX-40K (EXERCISE.md + ENVIRONMENT_SETUP.md) |
+| Practical exercise | EX_40K (EXERCISE.md + ENVIRONMENT_SETUP.md) |
 
 ---
 

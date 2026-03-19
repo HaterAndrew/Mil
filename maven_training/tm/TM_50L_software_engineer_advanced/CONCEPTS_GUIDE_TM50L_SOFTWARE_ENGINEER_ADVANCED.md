@@ -221,6 +221,8 @@ Architecture considerations:
 
 ### 5-1. The Security Design Mindset
 
+> **NOTE:** TM-40L now addresses computational governance as code (Army Data Plan SO 7 DevSecOps), DDIL pipeline design for contested network environments, and zero trust architecture principles for MSS platform engineering. The security design patterns below assume familiarity with that foundation; review TM-40L Sections 1-5b and 1-7 before applying advanced security engineering at enterprise scale.
+
 **BLUF:** Security is a design constraint applied from the beginning of every system, not a feature added at the end. At TM-50L level, the engineer evaluates every component for its security model before writing the first line of code.
 
 TM-40L engineers learn to implement security controls: apply CBAC markings, use HTTPS, rotate credentials. TM-50L engineers design security in from the architecture phase. Before choosing a data storage pattern, integration approach, or application architecture, ask: what is the security model of this design, and does it satisfy the requirement?
@@ -467,7 +469,7 @@ The TM-50L lead does not reject the PR. They document each finding with its oper
 |---|---|---|
 | TM-50G | Advanced ORSA | Platform infrastructure supporting analytical pipelines |
 | TM-50H | Advanced AI Engineer | OSDK integration with AI systems |
-| TM-50I | Advanced ML Engineer | ML model-serving integrations; feature pipeline infrastructure |
+| TM-50M | Advanced ML Engineer | ML model-serving integrations; feature pipeline infrastructure |
 | TM-50J | Advanced Program Manager | Platform engineering program coordination; SWE team structure |
 | TM-50K | Advanced Knowledge Manager | Platform SDK patterns for enterprise KM system backends |
 

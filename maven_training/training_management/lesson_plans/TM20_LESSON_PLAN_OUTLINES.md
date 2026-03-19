@@ -595,9 +595,9 @@ TM-20 completion qualifies a trainee to enroll in TM-30 (Advanced Builder). Upon
 - Duration: 3 days each. Role-specific MSS application for functional staff.
 - Who should pursue: INT/FIRES/M2/SUST/PROT/MC functional staff designated to use MSS for WFF products.
 
-**Specialist Tracks (TM-40G through TM-40L) — via TM-30:**
+**Specialist Tracks (TM-40G through TM-40M) — via TM-30:**
 - Prerequisite chain: TM-10 → TM-20 → TM-30 → TM-40 specialist track
-- TM-40G: ORSA | TM-40H: AI Engineer | TM-40I: ML Engineer
+- TM-40G: ORSA | TM-40H: AI Engineer | TM-40M: ML Engineer
 - TM-40J: Program Manager | TM-40K: Knowledge Manager | TM-40L: Software Engineer
 - Duration: 3–5 days depending on track.
 - Who should pursue: 17/25-series, S6/G6, G2, data leads, and technical specialists.

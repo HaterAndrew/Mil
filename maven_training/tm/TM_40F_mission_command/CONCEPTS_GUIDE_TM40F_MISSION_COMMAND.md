@@ -545,12 +545,14 @@ For technical specialists producing products that Mission Command practitioners 
 |-------|-------|
 | TM-40G | ORSA (→ TM-50G) |
 | TM-40H | AI Engineer (→ TM-50H) |
-| TM-40I | ML Engineer (→ TM-50I) |
+| TM-40M | ML Engineer (→ TM-50M) |
 | TM-40J | Program Manager (→ TM-50J) |
 | TM-40K | Knowledge Manager (→ TM-50K) |
 | TM-40L | Software Engineer (→ TM-50L) |
 
 ---
+
+> **NOTE — New Doctrine Content in TM-40F:** TM-40F now includes the FM 6-0 IM six-task mapping (Table 1-3: Collect/Process/Store/Display/Disseminate/Protect), an information relevance criteria→VAULTIS-A crosswalk (Table 1-4: Accurate/Timely/Useable/Complete/Precise/Secure mapped to VAULTIS-A dimensions), and an enhanced Appendix D with section-level detail for 14 governing publications including FM 3-0 and ATP 5-0.3. These sections ground Mission Command data management in their authoritative doctrinal sources.
 
 **HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
 Wiesbaden, Germany

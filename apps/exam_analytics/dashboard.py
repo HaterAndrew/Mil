@@ -260,6 +260,7 @@ if active_tab == "Dashboard Overview":
             )])
             fig.update_layout(height=400, xaxis_tickangle=-45, yaxis_range=[0, 105],
                               yaxis_title="Avg Score (%)")
+            apply_plotly_theme(fig)
             st.plotly_chart(fig, use_container_width=True)
 
         with col_r:
@@ -278,6 +279,7 @@ if active_tab == "Dashboard Overview":
                                   yaxis_title="Pass Rate (%)")
                 fig.add_hline(y=70, line_dash="dash", line_color="red",
                               annotation_text="70% standard")
+                apply_plotly_theme(fig)
                 st.plotly_chart(fig, use_container_width=True)
 
     # Session inventory table (already filtered by track)
@@ -338,6 +340,7 @@ elif active_tab == "Cohort Deep-Dive":
                 fig.add_vline(x=70, line_dash="dash", line_color="red",
                               annotation_text="70% passing")
             fig.update_layout(height=350, yaxis_title="Count")
+            apply_plotly_theme(fig)
             st.plotly_chart(fig, use_container_width=True)
 
         with col_r:
@@ -352,6 +355,7 @@ elif active_tab == "Cohort Deep-Dive":
                               height=350, yaxis_title="Score (%)", yaxis_range=[0, 105])
             if selected["form_type"] == "POST":
                 fig.add_hline(y=70, line_dash="dash", line_color="red")
+            apply_plotly_theme(fig)
             st.plotly_chart(fig, use_container_width=True)
 
     # Results table
@@ -432,6 +436,7 @@ elif active_tab == "Gain Score Analysis":
                 fig.add_hline(y=70, line_dash="dot", line_color="red",
                               annotation_text="Passing")
             fig.update_layout(height=400, xaxis_range=[0, 105], yaxis_range=[0, 105])
+            apply_plotly_theme(fig)
             st.plotly_chart(fig, use_container_width=True)
 
         with col_r:
@@ -445,6 +450,7 @@ elif active_tab == "Gain Score Analysis":
             fig.add_vline(x=threshold, line_dash="dash", line_color="red",
                           annotation_text=f"Threshold ({threshold}%)")
             fig.update_layout(height=400)
+            apply_plotly_theme(fig)
             st.plotly_chart(fig, use_container_width=True)
 
     # Question improvement waterfall
@@ -462,6 +468,7 @@ elif active_tab == "Gain Score Analysis":
         fig.update_layout(height=350, xaxis_title="Question",
                           yaxis_title="Improvement (% points)",
                           title="Per-Question Improvement (sorted by impact)")
+        apply_plotly_theme(fig)
         st.plotly_chart(fig, use_container_width=True)
 
     # Tables
@@ -515,6 +522,7 @@ elif active_tab == "Question Analysis":
             height=400, yaxis_range=[0, 105],
             xaxis_title="Question", yaxis_title="% Correct",
         )
+        apply_plotly_theme(fig)
         st.plotly_chart(fig, use_container_width=True)
 
     # Most missed
@@ -603,6 +611,7 @@ elif active_tab == "Item Discrimination":
                       annotation_text="Good (0.3)")
         fig.add_hline(y=0.1, line_dash="dash", line_color=WARNING_RED,
                       annotation_text="Poor (0.1)")
+        apply_plotly_theme(fig)
         st.plotly_chart(fig, use_container_width=True)
 
     # Top/Bottom group comparison
@@ -625,6 +634,7 @@ elif active_tab == "Item Discrimination":
             barmode="group", height=350,
             xaxis_title="Question", yaxis_title="Avg Points",
         )
+        apply_plotly_theme(fig)
         st.plotly_chart(fig, use_container_width=True)
 
     # Problem questions callout
@@ -682,6 +692,7 @@ elif active_tab == "Cohort Comparison":
         fig.update_layout(height=400, yaxis_range=[0, 105])
         fig.add_hline(y=70, line_dash="dash", line_color="red",
                       annotation_text="70% passing")
+        apply_plotly_theme(fig)
         st.plotly_chart(fig, use_container_width=True)
 
         # Std dev comparison — shows if cohort consistency is improving
@@ -694,6 +705,7 @@ elif active_tab == "Cohort Comparison":
                 barmode="group",
             )
             fig.update_layout(height=350, xaxis_tickangle=-45)
+            apply_plotly_theme(fig)
             st.plotly_chart(fig, use_container_width=True)
 
         with col_r:
@@ -709,6 +721,7 @@ elif active_tab == "Cohort Comparison":
                 fig.update_layout(height=350, xaxis_tickangle=-45,
                                   yaxis_range=[0, 105])
                 fig.add_hline(y=70, line_dash="dash", line_color="red")
+                apply_plotly_theme(fig)
                 st.plotly_chart(fig, use_container_width=True)
 
     # Comparison table
@@ -724,3 +737,11 @@ elif active_tab == "Cohort Comparison":
         }),
         use_container_width=True, hide_index=True,
     )
+
+# ---------------------------------------------------------------------------
+# Footer
+# ---------------------------------------------------------------------------
+st.markdown(
+    '<div class="app-footer">USAREUR-AF OPERATIONAL DATA TEAM — MSS EXAM ANALYTICS</div>',
+    unsafe_allow_html=True,
+)

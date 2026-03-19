@@ -217,7 +217,7 @@ tm_box(s, C_TM, R1_T, TM_W, BH,
 h_arrow(s, C_SYL - ARR_GX, R1_T, ARR_GX, BH)
 doc_box(s, C_SYL, R1_T, DOC_W, BH, "SYLLABUS", "TM-10", COMP)
 h_arrow(s, C_EX - ARR_GX, R1_T, ARR_GX, BH)
-doc_box(s, C_EX,  R1_T, DOC_W, BH, "EXERCISE", "EX-10  Operator", COMP)
+doc_box(s, C_EX,  R1_T, DOC_W, BH, "EXERCISE", "EX_10  Operator", COMP)
 h_arrow(s, C_EXM - ARR_GX, R1_T, ARR_GX, BH)
 doc_box(s, C_EXM, R1_T, DOC_W, BH, "EXAMS", "Pre-assessment\nPost-assessment", COMP)
 
@@ -230,7 +230,7 @@ tm_box(s, C_TM, R2_T, TM_W, BH,
 h_arrow(s, C_SYL - ARR_GX, R2_T, ARR_GX, BH)
 doc_box(s, C_SYL, R2_T, DOC_W, BH, "SYLLABUS", "TM-20", COMP)
 h_arrow(s, C_EX - ARR_GX, R2_T, ARR_GX, BH)
-doc_box(s, C_EX,  R2_T, DOC_W, BH, "EXERCISE", "EX-20  No-Code Builder", COMP)
+doc_box(s, C_EX,  R2_T, DOC_W, BH, "EXERCISE", "EX_20  No-Code Builder", COMP)
 h_arrow(s, C_EXM - ARR_GX, R2_T, ARR_GX, BH)
 doc_box(s, C_EXM, R2_T, DOC_W, BH, "EXAMS", "Pre-assessment\nPost-assessment", COMP)
 
@@ -248,7 +248,7 @@ tm_box(s, C_TM, R3_T, TM_W, BH,
 h_arrow(s, C_SYL - ARR_GX, R3_T, ARR_GX, BH)
 doc_box(s, C_SYL, R3_T, DOC_W, BH, "SYLLABUS", "TM-30", COMP)
 h_arrow(s, C_EX - ARR_GX, R3_T, ARR_GX, BH)
-doc_box(s, C_EX,  R3_T, DOC_W, BH, "EXERCISE", "EX-30  Adv Builder", COMP)
+doc_box(s, C_EX,  R3_T, DOC_W, BH, "EXERCISE", "EX_30  Adv Builder", COMP)
 h_arrow(s, C_EXM - ARR_GX, R3_T, ARR_GX, BH)
 doc_box(s, C_EXM, R3_T, DOC_W, BH, "EXAMS", "Pre-assessment\nPost-assessment", COMP)
 

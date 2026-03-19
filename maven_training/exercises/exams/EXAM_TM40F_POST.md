@@ -8,13 +8,13 @@
 | **Level** | TM-40F (WFF Track) |
 | **Audience** | G3/S3 staff, battle captains, XOs, CDRs; prerequisite: completion of TM-40F training |
 | **Time Allowed** | 30 minutes |
-| **Passing Score** | 80% (24/30 points) |
+| **Passing Score** | 80% (32/40 points) |
 
 ---
 
 ## INSTRUCTIONS
 
-This assessment confirms proficiency upon completion of TM-40F training. A score of 80% (24/30) is required for course completion certification. Results are recorded on the student training record.
+This assessment confirms proficiency upon completion of TM-40F training. A score of 80% (32/40) is required for course completion certification. Results are recorded on the student training record.
 
 ---
 
@@ -78,13 +78,27 @@ B. Continue to use MSS with reduced functionality by accessing it through person
 C. Execute manual information management procedures, maintain awareness of what MSS data is now stale, and restore connectivity per the S6 continuity plan
 D. Transfer all CCIR monitoring responsibilities to higher echelon until connectivity is restored
 
+**9. FM 6-0 defines information management (IM) as comprising six tasks. Table 1-3 in TM-40F maps each IM task to its MSS data platform implementation. Which of the following correctly lists all six FM 6-0 IM tasks?**
+
+A. Plan, Collect, Analyze, Brief, Archive, Secure
+B. Collect, Process, Store, Display, Disseminate, Protect
+C. Ingest, Transform, Model, Visualize, Share, Encrypt
+D. Receive, Validate, Catalog, Present, Distribute, Classify
+
+**10. Table 1-4 in TM-40F crosswalks FM 6-0 information relevance criteria to VAULTIS-A data quality dimensions. Which FM 6-0 criterion maps to the VAULTIS-A "Timeliness" dimension?**
+
+A. Accurate — free from error; faithful to the source
+B. Useable — in a format appropriate to the consumer
+C. Timely — available in time to support the decision
+D. Complete — contains all elements necessary for the decision
+
 ---
 
 ## SECTION 2 — SHORT ANSWER
 
 *Answer in 3–5 sentences. (5 points each)*
 
-**9. Your commander's guidance card specifies three CCIRs. You have configured all three in MSS. During a test run, CCIR 2 (geographic event trigger) fires when no events are present in the sensitivity area. Walk through the troubleshooting steps you would take to identify and resolve the false-positive trigger before the next BUA.**
+**11. Your commander's guidance card specifies three CCIRs. You have configured all three in MSS. During a test run, CCIR 2 (geographic event trigger) fires when no events are present in the sensitivity area. Walk through the troubleshooting steps you would take to identify and resolve the false-positive trigger before the next BUA.**
 
 *(Write your answer below)*
 
@@ -93,7 +107,7 @@ _______________________________________________
 _______________________________________________
 _______________________________________________
 
-**10. A subordinate unit S3 asks you why the BUA read-ahead still shows 2nd Battalion at 72% readiness when they just submitted an updated LOGSTAT showing 81%. Explain the difference between reported status and displayed status in MSS, and describe how you would resolve the discrepancy.**
+**12. A subordinate unit S3 asks you why the BUA read-ahead still shows 2nd Battalion at 72% readiness when they just submitted an updated LOGSTAT showing 81%. Explain the difference between reported status and displayed status in MSS, and describe how you would resolve the discrepancy.**
 
 *(Write your answer below)*
 
@@ -116,7 +130,7 @@ It is 0630. The morning BUA begins at 0700. You open MSS to build the final read
 
 You have 30 minutes before the BUA.
 
-**11. Describe your complete course of action for the next 30 minutes. Include: (a) what you will investigate first and why, (b) what you will brief vs. what you will caveat, (c) how you will characterize the 1st Battalion data gap to the commander, and (d) what follow-on action you will assign to resolve the CCIR 2 failure.**
+**13. Describe your complete course of action for the next 30 minutes. Include: (a) what you will investigate first and why, (b) what you will brief vs. what you will caveat, (c) how you will characterize the 1st Battalion data gap to the commander, and (d) what follow-on action you will assign to resolve the CCIR 2 failure.**
 
 *(Write your answer below)*
 
@@ -140,10 +154,12 @@ _______________________________________________
 6. C — Viewer only for commander products
 7. B — data reporting gap, not a network failure
 8. C — manual procedures + awareness of stale data + restore per S6 plan
+9. B — FM 6-0, para 4-1 defines IM as comprising six tasks: Collect, Process, Store, Display, Disseminate, and Protect (Table 1-3). Option A uses non-doctrinal terms. Options C and D use technical or alternative terminology not aligned to FM 6-0.
+10. C — Table 1-4 crosswalks FM 6-0 information relevance criteria to VAULTIS-A dimensions. "Timely" (available in time to support the decision) maps directly to the VAULTIS-A "Timeliness" dimension. Accurate maps to Accuracy, Useable maps to Usability, and Complete maps to Completeness.
 
 **Section 2 — Expected elements:**
-9. Should include: verify the geographic boundary configuration, check whether the event filter is using correct coordinate fields, check whether the sensitivity area polygon was entered correctly, test with a known-negative event location.
-10. Should explain: pipeline latency between LOGSTAT submission and dataset update; need to trace the data pipeline to find where the 81% update is held up; caveat the BUA with "as of [last update time]" until resolved.
+11. Should include: verify the geographic boundary configuration, check whether the event filter is using correct coordinate fields, check whether the sensitivity area polygon was entered correctly, test with a known-negative event location.
+12. Should explain: pipeline latency between LOGSTAT submission and dataset update; need to trace the data pipeline to find where the 81% update is held up; caveat the BUA with "as of [last update time]" until resolved.
 
 **Section 3 — Expected elements:**
 (a) Investigate CCIR 2 failure first — an actual event in the sensitivity area that did not trigger is more operationally significant than stale readiness data.
@@ -153,7 +169,7 @@ _______________________________________________
 
 ---
 
-*Total points: 30. Passing score: 24 (80%).*
+*Total points: 40 (MC: 10 × 2 = 20, SA: 2 × 5 = 10, Scenario: 10). Passing score: 32 (80%).*
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*EX-TM40F-POST | Version 1.0 | March 2026*
+*EX_TM40F-POST | Version 1.0 | March 2026*

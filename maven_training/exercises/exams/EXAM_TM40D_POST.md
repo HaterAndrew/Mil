@@ -8,13 +8,13 @@
 | **Level** | TM-40D (WFF Track) |
 | **Audience** | G4/S4 staff, FSB/BSB logistics officers, supply chain managers, property book officers; prerequisite: completion of TM-40D training |
 | **Time Allowed** | 30 minutes |
-| **Passing Score** | 80% (24/30 points) |
+| **Passing Score** | 80% (32/40 points) |
 
 ---
 
 ## INSTRUCTIONS
 
-This assessment confirms proficiency upon completion of TM-40D training. A score of 80% (24/30) is required for course completion certification. Results are recorded on the student training record.
+This assessment confirms proficiency upon completion of TM-40D training. A score of 80% (32/40) is required for course completion certification. Results are recorded on the student training record.
 
 ---
 
@@ -78,13 +78,27 @@ B. An aggregated view of supply on hand, consumption rates, and resupply timelin
 C. Distribution lists in MSS are public and cannot be restricted to authorized users
 D. Sustainment data does not warrant OPSEC controls because it is administrative in nature
 
+**9. ADP 4-0 establishes eight principles of sustainment. Table 1-1A in TM-40D maps each principle to a data platform application. Which principle's data platform analog is described as "consumption rate modeling, predictive demand analytics, and trend dashboards that project DOS forward based on operational tempo"?**
+
+A. Integration — combining all elements of sustainment into unified operations
+B. Anticipation — predicting future operational requirements based on current operations and historical data
+C. Responsiveness — providing the right support at the right time and place
+D. Simplicity — minimizing the complexity of sustainment operations
+
+**10. Table 2-1A in TM-40D maps all ten classes of supply to their data sources, MSS feeds, and update frequencies. A logistics officer needs to track repair parts requisition status. Which class of supply covers repair parts, and what is its minimum update frequency?**
+
+A. Class VII — major end items; update daily and immediately upon battle loss
+B. Class V — ammunition; update daily and after every expenditure event
+C. Class IX — repair parts (demand-supported and initial provisioning); update daily and immediately upon receipt of critical parts
+D. Class II — clothing, individual equipment, and tools; update weekly
+
 ---
 
 ## SECTION 2 — SHORT ANSWER
 
 *Answer in 3–5 sentences. (5 points each)*
 
-**9. You are an FSB S4 preparing for a sustainment sync. Your MSS readiness dashboard shows 1st Bn FSC at 91% equipment readiness. The FSC commander calls you 20 minutes before the sync and reports they are at 58% following a vehicle accident this morning that deadlined four trucks. Walk through how you handle the next 20 minutes before the sync begins.**
+**11. You are an FSB S4 preparing for a sustainment sync. Your MSS readiness dashboard shows 1st Bn FSC at 91% equipment readiness. The FSC commander calls you 20 minutes before the sync and reports they are at 58% following a vehicle accident this morning that deadlined four trucks. Walk through how you handle the next 20 minutes before the sync begins.**
 
 *(Write your answer below)*
 
@@ -93,7 +107,7 @@ _______________________________________________
 _______________________________________________
 _______________________________________________
 
-**10. The BSB S3 asks you to explain the difference between the "supply on hand" data in MSS and actual physical inventory at the ASP. A new property book officer is listening. Explain the distinction and describe what a property book officer should do to reconcile the two.**
+**12. The BSB S3 asks you to explain the difference between the "supply on hand" data in MSS and actual physical inventory at the ASP. A new property book officer is listening. Explain the distinction and describe what a property book officer should do to reconcile the two.**
 
 *(Write your answer below)*
 
@@ -116,7 +130,7 @@ It is 0615. The sustainment sync begins at 0700. You open the MSS logistics dash
 
 The G4 enters at 0655 and asks for a status update before the sync begins.
 
-**11. Describe your complete course of action. Include: (a) what you brief to the G4 in the five minutes before the sync, (b) how you handle the 2nd Bn FSC fuel data gap, (c) how you present the two triggered CCIRs, and (d) what follow-on action you assign before the sync closes.**
+**13. Describe your complete course of action. Include: (a) what you brief to the G4 in the five minutes before the sync, (b) how you handle the 2nd Bn FSC fuel data gap, (c) how you present the two triggered CCIRs, and (d) what follow-on action you assign before the sync closes.**
 
 *(Write your answer below)*
 
@@ -140,10 +154,12 @@ _______________________________________________
 6. B — verify currency first, then configure CCIRs, then build dashboard
 7. B — characterize gap, notify S6, get current status from source, caveat display
 8. B — aggregated sustainment data reveals operational endurance — significant OPSEC risk
+9. B — Table 1-1A (ADP 4-0) maps Anticipation to "consumption rate modeling, predictive demand analytics, and trend dashboards that project DOS forward based on operational tempo." Integration addresses cross-functional dashboards, Responsiveness addresses real-time threshold alerts, and Simplicity addresses standardized formats and pre-built views.
+10. C — Table 2-1A (FM 4-0) identifies Class IX as repair parts (demand-supported and initial provisioning), with update frequency of daily and immediately upon receipt of critical parts. Class VII is major end items, Class V is ammunition, and Class II is clothing/equipment with weekly updates.
 
 **Section 2 — Expected elements:**
-9. Should include: immediately note the discrepancy between dashboard (91%) and reported current status (58%); verify the last LOGSTAT submission time in MSS; update the dashboard caveat with data-as-of timestamp; prepare to brief both the MSS figure and the commander-reported figure to the G4; notify the G4 before the sync begins so they are not surprised.
-10. Should explain: MSS supply on hand reflects what was reported in the last property book submission — it is a point-in-time snapshot, not a real-time inventory; physical inventory at the ASP may differ due to issues receipted but not yet entered, losses not yet reported, or pipeline latency; to reconcile, the property book officer should compare the MSS figure against the ASP's most recent physical count and document discrepancies with the data-as-of date.
+11. Should include: immediately note the discrepancy between dashboard (91%) and reported current status (58%); verify the last LOGSTAT submission time in MSS; update the dashboard caveat with data-as-of timestamp; prepare to brief both the MSS figure and the commander-reported figure to the G4; notify the G4 before the sync begins so they are not surprised.
+12. Should explain: MSS supply on hand reflects what was reported in the last property book submission — it is a point-in-time snapshot, not a real-time inventory; physical inventory at the ASP may differ due to issues receipted but not yet entered, losses not yet reported, or pipeline latency; to reconcile, the property book officer should compare the MSS figure against the ASP's most recent physical count and document discrepancies with the data-as-of date.
 
 **Section 3 — Expected elements:**
 (a) Brief the G4: Class I and Class V current and ready to brief; 2nd Bn FSC fuel data is 13 hours stale — flag as unconfirmed; two CCIRs triggered (Class V 1st Bn, readiness 2nd Bn); G4 should be aware of these before sync opens.
@@ -153,7 +169,7 @@ _______________________________________________
 
 ---
 
-*Total points: 30. Passing score: 24 (80%).*
+*Total points: 40 (MC: 10 × 2 = 20, SA: 2 × 5 = 10, Scenario: 10). Passing score: 32 (80%).*
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*EX-TM40D-POST | Version 1.0 | March 2026*
+*EX_TM40D-POST | Version 1.0 | March 2026*

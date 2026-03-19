@@ -212,7 +212,7 @@ tracks_40 = [
     "WFF Tracks (A–F):",
     "  A Intel · B Fires · C M&M",
     "  D Sust · E Prot · F MC",
-    "Specialist Tracks (G–L):",
+    "Specialist Tracks (G–M):",
     "  G ORSA · H AI Eng · I MLE",
     "  J PM · K KM · L SWE",
 ]
@@ -233,7 +233,7 @@ add_textbox(slide, NOTE_L + 0.1, NOTE_TOP + 3.32, NOTE_W - 0.15, 0.28,
             "TM-50 SERIES  (Prereq: TM-40)", 8, bold=True,
             color=DARK_GREEN, align=PP_ALIGN.LEFT)
 add_textbox(slide, NOTE_L + 0.1, NOTE_TOP + 3.62, NOTE_W - 0.15, 1.6,
-            "Advanced / expert-level continuation\nfor each TM-40G–L track.\n\nFocus: production pipelines,\nMLOps, AIP Agents, advanced\nOntology patterns.",
+            "Advanced / expert-level continuation\nfor each TM-40G–M track.\n\nFocus: production pipelines,\nMLOps, AIP Agents, advanced\nOntology patterns.",
             7.5, bold=False, color=DARK_GRAY, align=PP_ALIGN.LEFT)
 
 # ── Footer ────────────────────────────────────────────────────────────────────

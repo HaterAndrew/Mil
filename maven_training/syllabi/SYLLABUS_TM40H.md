@@ -194,7 +194,7 @@ Graduates who move into enterprise AI architecture or multi-agent system design 
 |---|---|
 | Pre-course exam | EXAM_TM40H_PRE |
 | Post-course exam | EXAM_TM40H_POST |
-| Practical exercise | EX-40H (EXERCISE.md + ENVIRONMENT_SETUP.md) |
+| Practical exercise | EX_40H (EXERCISE.md + ENVIRONMENT_SETUP.md) |
 
 ---
 

@@ -15,7 +15,7 @@
 | Role | Primary Output | Core Platform Tools | Not Responsible For |
 |---|---|---|---|
 | **AI Engineer (TM-40H)** | AI-augmented workflows: LLM chains, Agents, grounded reasoning products | AIP Logic, Agent Studio, Code Workspaces | Model training, statistical inference, OSDK app architecture |
-| **ML Engineer (TM-40I)** | Trained models, validation pipelines, model-backed Object properties | Code Workspaces, inference transforms, Foundry datasets | Prompt design, Agent orchestration, operational workflow UX |
+| **ML Engineer (TM-40M)** | Trained models, validation pipelines, model-backed Object properties | Code Workspaces, inference transforms, Foundry datasets | Prompt design, Agent orchestration, operational workflow UX |
 | **Software Engineer (TM-40L)** | Custom applications, OSDK integrations, TypeScript UI components | OSDK, TypeScript SDK, Code Workspaces | LLM workflow design, model development, data pipeline authorship |
 
 These roles overlap at the edges. On a USAREUR-AF MSS project: the ML engineer builds a readiness prediction model; the AI engineer wraps that prediction in an AIP Logic workflow that synthesizes it with current LOGSTAT data and produces a commander's assessment draft; the software engineer surfaces that draft in a Workshop application with an approval widget. Each role has a lane.
@@ -37,6 +37,10 @@ The measure of effectiveness for an AI workflow is not "does the LLM return some
 | Selecting features, splitting datasets, tuning hyperparameters, validating model performance | ML Engineering |
 | Deciding what data to put in a prompt, structuring a chain, specifying output format, designing human review | AI Engineering |
 | Model-backed Object property feeding an AIP Logic workflow | Both coordinate at the interface; AI engineer consumes outputs, ML engineer owns model quality |
+
+> **NOTE — ADP 3-13 AI/ML Doctrine:** TM-40H Section 1-3 now includes an ADP 3-13 (Information) doctrine note placing AI/ML capabilities within the Army's information advantage framework. Review before designing any AI workflow that processes or generates information products.
+
+> **NOTE — PED-to-AI/ML Pipeline Mapping (TM-40H Section 1-4):** TM-40H maps the Processing, Exploitation, and Dissemination (PED) cycle to AIP Logic pipeline stages. Reference Section 1-4 for the standard PED-to-AI/ML workflow mapping when designing intelligence-domain AI workflows.
 
 ### 1-4. AIP Logic vs. Agent Studio vs. Traditional ML
 
@@ -338,6 +342,8 @@ C2DAO review for AI workflows is the governance gate preventing a workflow from 
 
 A workflow that cannot answer these questions clearly is not ready for C2DAO review. Think of it as the pre-deployment checklist every pilot completes — skipping it is not faster, it is the failure mode.
 
+> **NOTE — UDRA VAULTIS-A Governance for ML Outputs:** TM-40H now references the UDRA VAULTIS-A (Visible, Accessible, Understandable, Linked, Trustworthy, Interoperable, Secure — Assured) governance standard for AI/ML outputs consumed by AIP Logic workflows. Ensure all model-backed properties feeding AI workflows meet VAULTIS-A criteria before production deployment.
+
 ### 8-4. Governance Before Activation — The Required Sequence
 
 1. Decompose the use case (Section 4) and document it
@@ -422,9 +428,11 @@ If any answer requires looking it up, re-read the relevant section before procee
 **Advanced track:** TM-40H graduates should pursue **TM-50H (Advanced AI Engineer)** as the next step in the specialist progression. TM-50H addresses multi-agent orchestration at scale, fine-tuning integration, production AI system governance, and AI safety leadership for USAREUR-AF.
 
 **Peer specialist cross-references:**
-- **TM-40I (ML Engineer):** The boundary is explicit — ML engineers build and own the model; AI engineers consume its outputs in AIP Logic orchestration. Coordinate at the model/workflow interface before any production deployment.
+- **TM-40M (ML Engineer):** The boundary is explicit — ML engineers build and own the model; AI engineers consume its outputs in AIP Logic orchestration. Coordinate at the model/workflow interface before any production deployment.
 - **TM-40L (Software Engineer):** AI workflow outputs delivered through OSDK applications require SWE implementation. Coordinate on application architecture and CBAC compliance.
 - **TM-40G (ORSA):** AI workflows that automate ORSA-style synthesis still require ORSA methodology review. An AI-generated analysis is not a decision product until a qualified ORSA validates the analytical approach.
+
+> **NOTE — New Doctrine Content in TM-40H:** TM-40H now includes an ADP 3-13 doctrine grounding for AI/ML (the first ADP to reference AI explicitly), a PED-to-AI/ML pipeline mapping table (section 1-4, FM 2-0), a UDRA VAULTIS-A governance NOTE establishing that ML model outputs are governed data products, and a Strategic Guidance subsection (1-5a) with DDOF Playbook v2.2, Army Data Plan, and DoD Responsible AI Strategy references. These sections connect the technical concepts in this guide to their doctrinal authorities.
 
 **WFF awareness:** WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command) are the primary consumers of AI-augmented workflows. Every AI workflow must be designed for the specific WFF operational context: an Intelligence (TM-40A) assessment workflow has different human-review requirements than a Sustainment (TM-40D) LOGSTAT synthesis. Match the human-in-the-loop design to the WFF staff section's product authority and decision timeline.
 

@@ -36,27 +36,34 @@ Written exams are in [exams/](exams/). Each course has two forms.
 | TM-40E Protection | [EXAM_TM40E_PRE](exams/EXAM_TM40E_PRE.md) | [EXAM_TM40E_POST](exams/EXAM_TM40E_POST.md) | Force protection, CBRN, provost marshal |
 | TM-40F Mission Command | [EXAM_TM40F_PRE](exams/EXAM_TM40F_PRE.md) | [EXAM_TM40F_POST](exams/EXAM_TM40F_POST.md) | G3/S3 staff, battle captains, XOs, CDRs |
 
-### TM-40G–L — Technical Specialist Tracks
+### TM-40G–M — Technical Specialist Tracks
 
 | Course | Pre-Exam | Post-Exam | Audience |
 |--------|---------|----------|---------|
 | TM-40G ORSA | [EXAM_TM40G_PRE](exams/EXAM_TM40G_PRE.md) | [EXAM_TM40G_POST](exams/EXAM_TM40G_POST.md) | FA49, quantitative analysts |
 | TM-40H AI Engineer | [EXAM_TM40H_PRE](exams/EXAM_TM40H_PRE.md) | [EXAM_TM40H_POST](exams/EXAM_TM40H_POST.md) | AI/ML specialists, AIP Logic developers |
-| TM-40I ML Engineer | [EXAM_TM40I_PRE](exams/EXAM_TM40I_PRE.md) | [EXAM_TM40I_POST](exams/EXAM_TM40I_POST.md) | ML engineers, data scientists |
+| TM-40M ML Engineer | [EXAM_TM40M_PRE](exams/EXAM_TM40M_PRE.md) | [EXAM_TM40M_POST](exams/EXAM_TM40M_POST.md) | ML engineers, data scientists |
 | TM-40J Program Manager | [EXAM_TM40J_PRE](exams/EXAM_TM40J_PRE.md) | [EXAM_TM40J_POST](exams/EXAM_TM40J_POST.md) | PMs, G8/S8, resource managers |
 | TM-40K Knowledge Manager | [EXAM_TM40K_PRE](exams/EXAM_TM40K_PRE.md) | [EXAM_TM40K_POST](exams/EXAM_TM40K_POST.md) | KMOs, 37F, knowledge officers |
 | TM-40L Software Engineer | [EXAM_TM40L_PRE](exams/EXAM_TM40L_PRE.md) | [EXAM_TM40L_POST](exams/EXAM_TM40L_POST.md) | SWEs, OSDK developers |
 
-### TM-50G–L — Advanced Specialist Tracks
+### TM-50G–M — Advanced Specialist Tracks
 
 | Course | Pre-Exam | Post-Exam | Audience |
 |--------|---------|----------|---------|
 | TM-50G Advanced ORSA | [EXAM_TM50G_PRE](exams/EXAM_TM50G_PRE.md) | [EXAM_TM50G_POST](exams/EXAM_TM50G_POST.md) | Senior FA49, ORSA section chiefs |
 | TM-50H Advanced AI Engineer | [EXAM_TM50H_PRE](exams/EXAM_TM50H_PRE.md) | [EXAM_TM50H_POST](exams/EXAM_TM50H_POST.md) | AI architects, capability leads |
-| TM-50I Advanced ML Engineer | [EXAM_TM50I_PRE](exams/EXAM_TM50I_PRE.md) | [EXAM_TM50I_POST](exams/EXAM_TM50I_POST.md) | Senior MLEs, platform engineers |
+| TM-50M Advanced ML Engineer | [EXAM_TM50M_PRE](exams/EXAM_TM50M_PRE.md) | [EXAM_TM50M_POST](exams/EXAM_TM50M_POST.md) | Senior MLEs, platform engineers |
 | TM-50J Advanced PM | [EXAM_TM50J_PRE](exams/EXAM_TM50J_PRE.md) | [EXAM_TM50J_POST](exams/EXAM_TM50J_POST.md) | Senior technical PMs |
 | TM-50K Advanced KM | [EXAM_TM50K_PRE](exams/EXAM_TM50K_PRE.md) | [EXAM_TM50K_POST](exams/EXAM_TM50K_POST.md) | Corps/Theater KM architects |
 | TM-50L Advanced SWE | [EXAM_TM50L_PRE](exams/EXAM_TM50L_PRE.md) | [EXAM_TM50L_POST](exams/EXAM_TM50L_POST.md) | Senior SWEs, platform leads |
+
+### T3 — Train-the-Trainer (Outside TM Chain)
+
+| Course | Pre-Exam | Post-Exam | Audience |
+|--------|---------|----------|---------|
+| T3-I Instructor Certification | [EXAM_T3I_PRE](exams/EXAM_T3I_PRE.md) | [EXAM_T3I_POST](exams/EXAM_T3I_POST.md) | C2DAO-selected instructor candidates |
+| T3-F MSC Force Multiplier | [EXAM_T3F_PRE](exams/EXAM_T3F_PRE.md) | [EXAM_T3F_POST](exams/EXAM_T3F_POST.md) | CDR-nominated unit data trainers |
 
 ---
 
@@ -66,31 +73,49 @@ Written exams are in [exams/](exams/). Each course has two forms.
 
 | Package | Corresponds To | Prereq | Audience |
 |---------|---------------|--------|---------|
-| [EX-10_operator_basics/](EX-10_operator_basics/) | TM-10 | None | All personnel |
-| [EX-20_no_code_builder/](EX-20_no_code_builder/) | TM-20 | TM-10 | All staff |
-| [EX-30_advanced_builder/](EX-30_advanced_builder/) | TM-30 | TM-20 | Data-adjacent specialists |
+| [EX_10_operator_basics/](EX_10_operator_basics/) | TM-10 | None | All personnel |
+| [EX_20_no_code_builder/](EX_20_no_code_builder/) | TM-20 | TM-10 | All staff |
+| [EX_30_advanced_builder/](EX_30_advanced_builder/) | TM-30 | TM-20 | Data-adjacent specialists |
 
 ### WFF Track Exercises (TM-40A–F) — Prereq: TM-30 (Required)
 
 | Package | Corresponds To | Prereq | Audience |
 |---------|---------------|--------|---------|
-| [EX-40A_intelligence/](EX-40A_intelligence/) | TM-40A Intelligence | TM-30 | G2/S2 staff, targeting officers |
-| [EX-40B_fires/](EX-40B_fires/) | TM-40B Fires | TM-30 | FSE, fire support officers |
-| [EX-40C_movement_maneuver/](EX-40C_movement_maneuver/) | TM-40C Movement & Maneuver | TM-30 | G3/S3 maneuver staff |
-| [EX-40D_sustainment/](EX-40D_sustainment/) | TM-40D Sustainment | TM-30 | G4/S4, logistics staff |
-| [EX-40E_protection/](EX-40E_protection/) | TM-40E Protection | TM-30 | Force protection, CBRN, PM staff |
-| [EX-40F_mission_command/](EX-40F_mission_command/) | TM-40F Mission Command | TM-30 | G3/S3 staff, battle captains, CDRs |
+| [EX_40A_intelligence/](EX_40A_intelligence/) | TM-40A Intelligence | TM-30 | G2/S2 staff, targeting officers |
+| [EX_40B_fires/](EX_40B_fires/) | TM-40B Fires | TM-30 | FSE, fire support officers |
+| [EX_40C_movement_maneuver/](EX_40C_movement_maneuver/) | TM-40C Movement & Maneuver | TM-30 | G3/S3 maneuver staff |
+| [EX_40D_sustainment/](EX_40D_sustainment/) | TM-40D Sustainment | TM-30 | G4/S4, logistics staff |
+| [EX_40E_protection/](EX_40E_protection/) | TM-40E Protection | TM-30 | Force protection, CBRN, PM staff |
+| [EX_40F_mission_command/](EX_40F_mission_command/) | TM-40F Mission Command | TM-30 | G3/S3 staff, battle captains, CDRs |
 
-### Technical Specialist Exercises (TM-40G–L) — Prereq: TM-30 (Required)
+### Technical Specialist Exercises (TM-40G–M) — Prereq: TM-30 (Required)
 
 | Package | Corresponds To | Prereq | Audience |
 |---------|---------------|--------|---------|
-| [EX-40G_orsa/](EX-40G_orsa/) | TM-40G ORSA | TM-30 | ORSA analysts |
-| [EX-40H_ai_engineer/](EX-40H_ai_engineer/) | TM-40H AI Engineer | TM-30 | AI engineers |
-| [EX-40I_ml_engineer/](EX-40I_ml_engineer/) | TM-40I ML Engineer | TM-30 | ML engineers |
-| [EX-40J_program_manager/](EX-40J_program_manager/) | TM-40J Program Manager | TM-30 | Technical PMs |
-| [EX-40K_knowledge_manager/](EX-40K_knowledge_manager/) | TM-40K Knowledge Manager | TM-30 | Knowledge managers |
-| [EX-40L_software_engineer/](EX-40L_software_engineer/) | TM-40L Software Engineer | TM-30 | Software engineers |
+| [EX_40G_orsa/](EX_40G_orsa/) | TM-40G ORSA | TM-30 | ORSA analysts |
+| [EX_40H_ai_engineer/](EX_40H_ai_engineer/) | TM-40H AI Engineer | TM-30 | AI engineers |
+| [EX_40M_ml_engineer/](EX_40M_ml_engineer/) | TM-40M ML Engineer | TM-30 | ML engineers |
+| [EX_40J_program_manager/](EX_40J_program_manager/) | TM-40J Program Manager | TM-30 | Technical PMs |
+| [EX_40K_knowledge_manager/](EX_40K_knowledge_manager/) | TM-40K Knowledge Manager | TM-30 | Knowledge managers |
+| [EX_40L_software_engineer/](EX_40L_software_engineer/) | TM-40L Software Engineer | TM-30 | Software engineers |
+
+### Advanced Specialist Exercises (TM-50G–M) — Prereq: TM-40 (Required)
+
+| Package | Corresponds To | Prereq | Audience |
+|---------|---------------|--------|---------|
+| [EX_50G_orsa/](EX_50G_orsa/) | TM-50G Advanced ORSA | TM-40G | Senior ORSA analysts |
+| [EX_50H_ai_engineer/](EX_50H_ai_engineer/) | TM-50H Advanced AI Engineer | TM-40H | AI architects |
+| [EX_50M_ml_engineer/](EX_50M_ml_engineer/) | TM-50M Advanced ML Engineer | TM-40M | Senior ML engineers |
+| [EX_50J_program_manager/](EX_50J_program_manager/) | TM-50J Advanced PM | TM-40J | Senior technical PMs |
+| [EX_50K_knowledge_manager/](EX_50K_knowledge_manager/) | TM-50K Advanced KM | TM-40K | Theater KM architects |
+| [EX_50L_software_engineer/](EX_50L_software_engineer/) | TM-50L Advanced SWE | TM-40L | Senior SWEs |
+
+### Train-the-Trainer Exercises (T3) — Outside TM Chain
+
+| Package | Corresponds To | Prereq | Audience |
+|---------|---------------|--------|---------|
+| [EX_T3I_instructor_certification/](EX_T3I_instructor_certification/) | T3-I Instructor Certification | TM-30 + C2DAO selection | Instructor candidates |
+| [EX_T3F_force_multiplier/](EX_T3F_force_multiplier/) | T3-F MSC Force Multiplier | TM-20 + CDR nomination | Unit data trainers |
 
 ---
 

@@ -139,7 +139,7 @@ the relevant sections.
 authoritative training and reference resource for Army data platform work. Advanced builders
 should consult the following CDA resources:
 - Object Type Cookbook v2 + Addendum A — authoritative Object Type design guidance
-- DDOF Playbook — Doctrine-Driven Ontology Framework design patterns
+- DDOF Playbook — Defense Data Orchestration Framework design patterns
 - Doctrine-Driven Development framework — aligning ontology models to Army operational doctrine
 - ADP to JP to NATO Crosswalk — mapping Army, Joint, and NATO data constructs
 

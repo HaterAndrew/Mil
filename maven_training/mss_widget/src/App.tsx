@@ -3,7 +3,6 @@ import usareurSvg from './assets/USAREUR_Insignia.svg'
 
 // Panel components — imported below
 import PanelQuickRef from './panels/QuickRef'
-import PanelHome from './panels/Home'
 import PanelTM10 from './panels/TM10'
 import PanelTM20 from './panels/TM20'
 import PanelTM30 from './panels/TM30'
@@ -15,10 +14,12 @@ import PanelDocuments from './panels/Documents'
 import PanelTaskIndex from './panels/TaskIndex'
 import PanelSupport from './panels/Support'
 import PanelSchedule from './panels/Schedule'
+import PanelDashboards from './panels/Dashboards'
+import PanelBSP from './panels/BSP'
 
 type PanelId =
-  | 'quickref' | 'home' | 'schedule'
-  | 'tm10' | 'tm20' | 'tm30'
+  | 'quickref' | 'schedule' | 'dashboards'
+  | 'tm10' | 'tm20' | 'tm30' | 'bsp'
   | 'specialists' | 'tm40' | 'tm50'
   | 'doctrine' | 'documents' | 'taskindex' | 'support'
 
@@ -110,6 +111,7 @@ export default function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
   const [grpFoundationOpen, setGrpFoundationOpen] = useState(true)
+  const [grpBspOpen, setGrpBspOpen] = useState(false)
   const [grpSpecialistsOpen, setGrpSpecialistsOpen] = useState(false)
   const [grpResourcesOpen, setGrpResourcesOpen] = useState(false)
 
@@ -140,18 +142,19 @@ export default function App() {
   function getPanelContent(id: PanelId) {
     switch (id) {
       case 'quickref':    return <PanelQuickRef    showPanel={showPanel} />
-      case 'home':        return <PanelHome         showPanel={showPanel} />
       case 'tm10':        return <PanelTM10         showPanel={showPanel} />
       case 'tm20':        return <PanelTM20         showPanel={showPanel} />
       case 'tm30':        return <PanelTM30         showPanel={showPanel} />
+      case 'bsp':         return <PanelBSP          showPanel={showPanel} />
       case 'specialists': return <PanelSpecialists  showPanel={showPanel} />
       case 'tm40':        return <PanelTM40         showPanel={showPanel} />
       case 'tm50':        return <PanelTM50         showPanel={showPanel} />
       case 'doctrine':    return <PanelDoctrine     showPanel={showPanel} />
       case 'documents':   return <PanelDocuments    showPanel={showPanel} />
       case 'taskindex':   return <PanelTaskIndex    showPanel={showPanel} />
-      case 'support':     return <PanelSupport      showPanel={showPanel} />
-      case 'schedule':    return <PanelSchedule     showPanel={showPanel} />
+      case 'support':      return <PanelSupport      showPanel={showPanel} />
+      case 'schedule':     return <PanelSchedule     showPanel={showPanel} />
+      case 'dashboards':   return <PanelDashboards />
     }
   }
 
@@ -197,7 +200,7 @@ export default function App() {
               <div style={{marginTop:6,fontSize:10,letterSpacing:'.14em',color:'rgba(255,180,0,0.55)',textTransform:'uppercase'}}>alpha</div>
               <div className="splash-tms">
                 TM-10 &nbsp;&middot;&nbsp; TM-20 &nbsp;&middot;&nbsp; TM-30 &nbsp;&middot;&nbsp;
-                TM-40A&ndash;L &nbsp;&middot;&nbsp; TM-50G&ndash;L &nbsp;&middot;&nbsp; Data Lit (SL) &nbsp;&middot;&nbsp; Data Literacy
+                TM-40A&ndash;M &nbsp;&middot;&nbsp; TM-50G&ndash;M &nbsp;&middot;&nbsp; Data Lit (SL) &nbsp;&middot;&nbsp; Data Literacy
               </div>
               <div className="splash-rule-sm" />
               <button className="splash-enter" onClick={enterHub}>
@@ -251,7 +254,7 @@ export default function App() {
 
       <div className="header-strip">
         <div className="header-strip-inner">
-          <span>TM-10 &bull; TM-20 &bull; TM-30 &bull; TM-40A&ndash;L &bull; TM-50G&ndash;L &bull; Data Lit (SL) &bull; Data Literacy</span>
+          <span>TM-10 &bull; TM-20 &bull; TM-30 &bull; TM-40A&ndash;M &bull; TM-50G&ndash;M &bull; Data Lit (SL) &bull; Data Literacy</span>
           <span>DRAFT &mdash; NOT YET APPROVED FOR DISTRIBUTION &nbsp;&bull;&nbsp; alpha</span>
         </div>
       </div>
@@ -285,7 +288,6 @@ export default function App() {
               <span className="snav-pinned-label">Quick Reference</span>
             </button>
 
-            {navItem('home', 'Home / Start Here', '◾')}
             <button
               className={`snav-item${activePanel === 'schedule' ? ' active' : ''}`}
               style={{borderLeft:'3px solid var(--gold-dark)',paddingLeft:11,marginTop:2}}
@@ -311,6 +313,21 @@ export default function App() {
                 {navItem('tm10', 'TM-10 — Maven User', '◾')}
                 {navItem('tm20', 'TM-20 — Builder', '◾')}
                 {navItem('tm30', 'TM-30 — Advanced Builder', '◾')}
+              </div>
+            </div>
+
+            {/* Builder Sprint (BSP) group */}
+            <div className={`snav-group${grpBspOpen ? '' : ' collapsed'}`}>
+              <button
+                className="snav-group-hdr"
+                style={{color:'rgba(200,151,26,0.75)'}}
+                onClick={() => setGrpBspOpen(o => !o)}
+              >
+                Builder Sprint (BSP)
+                <span className="snav-group-arrow">&#8964;</span>
+              </button>
+              <div className="snav-group-items">
+                {navItem('bsp', 'Builder Sprint — Overview', '◾')}
               </div>
             </div>
 
@@ -344,6 +361,8 @@ export default function App() {
                 {navItem('doctrine', 'Doctrine / Data Lit', '◾')}
                 {navItem('documents', 'All Documents', '◾')}
                 {navItem('taskindex', 'Task Index', '◾')}
+                {navItem('dashboards', 'Dashboards', '◾')}
+                <a href="../DEPENDENCY_MAP.html" target="_blank" rel="noopener" className="snav-item" title="Corpus dependency map (admin tool)">&#9881; Dependency Map</a>
                 {navItem('support', 'Support', '◾')}
               </div>
             </div>
@@ -354,17 +373,18 @@ export default function App() {
         <div className="content-area" ref={contentRef}>
           <main>
             {panel('quickref')}
-            {panel('home')}
             {panel('schedule')}
             {panel('tm10')}
             {panel('tm20')}
             {panel('tm30')}
+            {panel('bsp')}
             {panel('specialists')}
             {panel('tm40')}
             {panel('tm50')}
             {panel('doctrine')}
             {panel('documents')}
             {panel('taskindex')}
+            {panel('dashboards')}
             {panel('support')}
           </main>
 

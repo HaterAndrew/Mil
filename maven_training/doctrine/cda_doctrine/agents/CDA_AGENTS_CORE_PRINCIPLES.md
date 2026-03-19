@@ -1,6 +1,6 @@
 <!-- MAVEN TRAINING CORPUS — CDA REFERENCE MATERIAL
      Source: odt_workspace/docs/architecture/cda/agents/core-principles.md
-     Supports: TM-40H (AI Engineer), TM-40I (ML Engineer), TM-40K (Knowledge Manager), TM-40L (Software Engineer), TM-50H/I/K/L (Advanced)
+     Supports: TM-40H (AI Engineer), TM-40M (ML Engineer), TM-40K (Knowledge Manager), TM-40L (Software Engineer), TM-50H/I/K/L (Advanced)
      Type: Architecture Doctrine — Core Principles
 -->
 
@@ -242,20 +242,20 @@ Every CV term MUST have:
 
 ## PRINCIPAL 12 — VAULTIS-A DATA QUALITY
 
-Every data product must meet the Army's 8-dimension quality framework (AR 25-1):
+Every data product must meet the 8-dimension VAULTIS-A quality framework (DDOF Playbook v2.2, T2COM C2DAO, December 2025). VAULTIS-A extends DoD VAULTIS (7 goals, DoD Data Strategy 2020) by adding Auditable as an 8th dimension.
 
 | Dimension | Standard | Definition |
 |-----------|----------|------------|
-| **V** — Valid | 99% | Conforms to defined schema contracts |
-| **A** — Accurate | 95% | Correctly represents reality |
-| **U** — Unique | 100% | No unintended duplicate records |
-| **L** — Linked | 100% | Cross-source relationships maintained |
-| **T** — Timely | 100% | Current per SLA / refresh cadence |
-| **I** — Integrated | 90% | Participates in ontology/identity views |
-| **S** — Secure | 100% | Env-var credentials, no hardcoded secrets |
-| **A** — Auditable | 100% | Complete lineage and provenance |
+| **V** — Visible | 100% | Clearly marked and discoverable in catalog/product |
+| **A** — Accessible | 99% | Usable by authorized personnel |
+| **U** — Understandable | 100% | Clearly documented and interpretable (complete metadata and user guide) |
+| **L** — Linked | 100% | Relationships maintained (100% linkage to sources/products) |
+| **T** — Trusted | 95% | Provenance and quality validated (sponsor sign-off) |
+| **I** — Interoperable | 90% | Usable across platforms/systems (90%+ compatibility with approved platforms) |
+| **S** — Secure | 100% | Protected per classification (100% compliance with security policy) |
+| **A** — Auditable | 100% | Complete lineage available (full provenance and access logs) |
 
-This is not optional. It is the acceptance criteria for production data.
+This is not optional. It is the acceptance criteria for production data. All data products must score ≥85% weighted average across all eight dimensions to pass DDOF Phase 3.
 
 ---
 

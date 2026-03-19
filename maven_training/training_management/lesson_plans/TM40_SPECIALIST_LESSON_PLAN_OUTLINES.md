@@ -1,7 +1,7 @@
 # LESSON PLAN OUTLINES — TM-40 SPECIALIST TRACKS
 ## USAREUR-AF Operational Data Team — C2DAO
-**Covers:** TM-40G (ORSA) | TM-40H (AI Engineer) | TM-40I (MLE) | TM-40J (PM) | TM-40K (KM) | TM-40L (SWE)
-**Version:** 1.2 — March 2026 (updated: specialist tracks renumbered G–L; WFF tracks are TM-40A–F, prereq TM-30)
+**Covers:** TM-40G (ORSA) | TM-40H (AI Engineer) | TM-40M (MLE) | TM-40J (PM) | TM-40K (KM) | TM-40L (SWE)
+**Version:** 1.2 — March 2026 (updated: specialist tracks renumbered G–M; WFF tracks are TM-40A–F, prereq TM-30)
 
 > Abbreviated LP outlines for TM-40 specialist courses.
 > Instructors at TM-40 level must have deep domain SME background — these outlines supplement SME knowledge, not replace it.
@@ -9,7 +9,7 @@
 
 ---
 
-# PART A — TM-40G: ORSA SPECIALIST
+# PART G — TM-40G: ORSA SPECIALIST
 
 **Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** FA49 or equivalent; TM-40G certified or C2DAO ORSA SME
 
@@ -28,6 +28,8 @@
 - Foundry data model review: ORSA accesses data through Code Workspace, not Pipeline Builder.
 
 **Assessment:** Evaluator will ask about each standard during the practical exercise brief.
+
+**New doctrine content (March 2026):** MOE/MOP assessment framework for analytical product evaluation, CARVER scoring methodology for target/risk prioritization, and force ratio computation standards. Instructor should reference these in Blocks 1, 13, and 16 (wargame data architecture).
 
 ---
 
@@ -191,7 +193,7 @@
 
 ---
 
-# PART B — TM-40H: AI ENGINEER
+# PART H — TM-40H: AI ENGINEER
 
 **Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** AIP Logic authoring experience; C2DAO AI SME designation
 
@@ -213,6 +215,8 @@
 - Walk through TM-40H Appendix B (Prohibited Use Cases) line by line.
 
 **Assessment:** AIP Authorization Checklist completion is evaluated in Practical Exercise Task 6.
+
+**New doctrine content (March 2026):** ADP 3-13 AI/ML framing for operational AI products, PED-to-pipeline mapping for intelligence-AI integration, and UDRA governance framework for AI data access. Instructor should reference these in Blocks 1, 5–8 (Ontology write integration), and 16 (AI Output Validation Framework).
 
 ---
 
@@ -282,7 +286,7 @@
 
 ---
 
-# PART C — TM-40I: ML ENGINEER
+# PART M — TM-40M: ML ENGINEER
 
 **Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** ML production experience; C2DAO MLE SME designation
 
@@ -291,7 +295,7 @@
 ### Block 1 — MLE Role and Model Governance Overview
 **Hours:** 1.0 | **Method:** Brief | **Day:** 1
 
-**Purpose:** Read TM-40I Chapter 9 (governance) first. The governance destination makes the technical work purposeful. Every model must eventually produce a model card.
+**Purpose:** Read TM-40M Chapter 9 (governance) first. The governance destination makes the technical work purposeful. Every model must eventually produce a model card.
 
 **TLO:** The trainee will describe the MLE role on MSS and state the required components of a model governance document (model card).
 
@@ -314,7 +318,7 @@
 **Day:** 2
 
 **Block 6:** Full feature pipeline: raw → feature matrix. Every step documented.
-**Block 7:** Leakage audit. Can any feature be derived from the label? Run the procedure from TM-40I Ch 3. This is evaluated.
+**Block 7:** Leakage audit. Can any feature be derived from the label? Run the procedure from TM-40M Ch 3. This is evaluated.
 **Block 8:** Output to Foundry curated dataset via write transaction. Verify schema.
 **Block 9:** Experiment setup: train/test split, baseline model (majority class), cross-validation configuration.
 
@@ -354,7 +358,7 @@
 
 ---
 
-# PART D — TM-40J: PROGRAM MANAGER
+# PART J — TM-40J: PROGRAM MANAGER
 
 **Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Program management background; TM-30 certified; GFEBS/IMS proficiency
 
@@ -362,6 +366,8 @@
 
 ### Block 1 — Program Data Architecture
 **Hours:** 1.5 | **Method:** Lab | **Day:** 1
+
+**New doctrine content (March 2026):** DDOF friction matrix for identifying integration friction points in program pipelines, roles and PM oversight mapping for DDOF-aligned governance, and portfolio health metrics framework. Instructor should reference these in Blocks 1, 5, and 8–9.
 
 **Purpose:** The four Object Types (Program, Milestone, Resource, Risk) must be designed on paper before touching Ontology Manager. A poorly designed PM data model means rebuilding — which takes a day the course doesn't have.
 
@@ -432,7 +438,7 @@
 
 ---
 
-# PART E — TM-40K: KNOWLEDGE MANAGER
+# PART K — TM-40K: KNOWLEDGE MANAGER
 
 **Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** KM background; TM-30 certified; AIP Logic configuration proficiency
 
@@ -440,6 +446,8 @@
 
 ### Block 1 — KM Role on MSS
 **Hours:** 1.0 | **Method:** Brief | **Day:** 1
+
+**New doctrine content (March 2026):** FM 6-0 KM 5-step process mapped to MSS knowledge workflows, developmental domains framework for KM capability maturity, and Critical Knowledge Items (CKI) identification methodology. Instructor should reference these in Blocks 1, 4–5, and 9–10.
 
 **Key Delivery Notes:**
 - The operational problem: institutional knowledge walks out at every PCS cycle. MSS is the solution — structured capture systems that survive personnel turbulence.
@@ -515,7 +523,7 @@
 
 ---
 
-# PART F — TM-40L: SOFTWARE ENGINEER
+# PART L — TM-40L: SOFTWARE ENGINEER
 
 **Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** OSDK/Platform SDK experience; TM-40L certified; C2DAO SWE SME designation
 

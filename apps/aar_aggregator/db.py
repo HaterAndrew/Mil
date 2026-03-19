@@ -76,7 +76,7 @@ class AAR(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     date = Column(Date, nullable=False)
     tm_levels = Column(JSON, nullable=False)          # ["TM-10", "TM-20"]
-    exercises = Column(JSON, nullable=True)            # ["EX-10"]
+    exercises = Column(JSON, nullable=True)            # ["EX_10"]
     location = Column(String(200), nullable=False)
     student_count = Column(Integer, nullable=False)
     instructor_names = Column(JSON, nullable=False)    # ["MAJ SMITH"]
@@ -492,7 +492,7 @@ def parse_aar_file(content: str) -> dict:
     # Exercises
     exercises = []
     for line in event_lines:
-        found = re.findall(r"EX-\d{2}[A-L]?", line, re.IGNORECASE)
+        found = re.findall(r"EX_\d{2}[A-LM]?", line, re.IGNORECASE)
         exercises.extend(found)
     exercises = list(set(exercises))
 

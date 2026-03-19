@@ -126,7 +126,7 @@ Complete **7+ duty days before Day 1:**
 | Track | Relevance to TM-50L |
 |---|---|
 | TM-50H (Advanced AI Eng) | OSDK-backed AI system integrations; security patterns for AI applications on Foundry |
-| TM-50I (Advanced ML Eng) | ML model serving infrastructure built on OSDK; platform toolchain for data science workflows |
+| TM-50M (Advanced ML Eng) | ML model serving infrastructure built on OSDK; platform toolchain for data science workflows |
 | TM-50J (Advanced PM) | Delivery governance for SWE-led programs; technical debt and architecture debt in portfolio risk reporting |
 
 ---

@@ -84,7 +84,7 @@ MSS is a secure, web-based platform where your unit's operational data lives. Th
 
 MSS is built on the Palantir Foundry software platform, authorized for Army use under the Maven Smart System program. When you log into MSS, you are logging into Foundry with Army data and Army-controlled access.
 
-**Per ADP 3-13, information is combat power.** MSS is the USAREUR-AF platform for converting raw data into the operational information commanders and staff need to make decisions and maintain decision dominance across the European theater. The CG USAREUR-AF has stated directly: **"The race to harness live data will determine who wins the next war."** MSS is the command's primary instrument for winning that race.
+**Per ADP 3-13, information is combat power.** MSS is the USAREUR-AF platform for converting raw data into the operational information commanders and staff need to make decisions and maintain decision dominance across the European theater.
 
 **What MSS does:**
 - Stores data from Army systems (GCSS-A, DCPDS, MEDPROS, unit feeds, and others) in one organized place

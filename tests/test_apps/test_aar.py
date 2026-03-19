@@ -13,7 +13,7 @@ from apps.aar_aggregator.db import parse_aar_file
 SAMPLE_AAR = {
     "date": "2026-01-27",
     "tm_levels": ["TM-10"],
-    "exercises": ["EX-10"],
+    "exercises": ["EX_10"],
     "location": "MSS sandbox",
     "student_count": 12,
     "instructor_names": ["MAJ SMITH"],
@@ -191,7 +191,7 @@ class TestFileParser:
 ## Section 1 — Event Details
 Date: 2026-01-27
 TM Levels: TM-10
-Exercises: EX-10
+Exercises: EX_10
 Location: MSS sandbox
 Number of Students: 12
 Instructors: MAJ SMITH, SGT KELLY
