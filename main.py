@@ -44,7 +44,7 @@ import click
 from .calendar_utils import build_holiday_set, get_quarter_days
 from .config import Directorate, RosterConfig
 from .export import write_excel, write_html
-from .solver import solve
+from .solver import solve, solve_joint
 
 logging.basicConfig(
     level=logging.INFO,
@@ -128,11 +128,8 @@ def main(
     )
 
     # ── Solve ─────────────────────────────────────────────────────────────────
-    click.echo(f"Solving SDNCO roster ({sdnco_cfg.n_days} days)…")
-    sdnco_sol = solve(sdnco_cfg, all_days, holiday_dates)
-
-    click.echo(f"Solving SD_Runner roster ({sd_runner_cfg.n_days} days)…")
-    sd_runner_sol = solve(sd_runner_cfg, all_days, holiday_dates)
+    click.echo(f"Solving SDNCO + SD_Runner rosters jointly ({sdnco_cfg.n_days} days)…")
+    sdnco_sol, sd_runner_sol = solve_joint(sdnco_cfg, sd_runner_cfg, all_days, holiday_dates)
 
     solutions = [sdnco_sol, sd_runner_sol]
 

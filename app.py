@@ -23,7 +23,7 @@ from flask import Flask, Response, request
 from .calendar_utils import build_holiday_set, get_quarter_days
 from .config import Directorate, RosterConfig
 from .export import _USAREUR_SVG, write_excel, write_html
-from .solver import solve
+from .solver import solve, solve_joint
 
 app = Flask(__name__)
 
@@ -556,8 +556,7 @@ def _run_solver(form):
     )
     all_days = get_quarter_days(start, end)
 
-    sdnco_sol  = solve(sdnco_cfg,  all_days, holiday_dates)
-    runner_sol = solve(runner_cfg, all_days, holiday_dates)
+    sdnco_sol, runner_sol = solve_joint(sdnco_cfg, runner_cfg, all_days, holiday_dates)
 
     return sdnco_sol, runner_sol, all_days, holiday_dates, None
 

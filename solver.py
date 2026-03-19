@@ -9,34 +9,33 @@ Given:
   W = subset of T that are weekend or holiday ("hard" days)
   K = T \\ W  (weekday non-holiday days)
 
-Decision variables:
-  x[d][t] ∈ {0, 1}   — 1 if directorate d is assigned day t
+Two roles are solved jointly: SDNCO (variables x) and SD_Runner (variables y).
 
-Constraints:
-  (C1) Coverage:    ∑_d x[d][t] = 1              ∀ t ∈ T
-  (C2) Total quota: floor(q_d) ≤ ∑_t x[d][t] ≤ ceil(q_d)   ∀ d
-                    where q_d = h_d / H * |T|,  H = ∑ h_d
-  (C3) Hard-day quota (soft, penalised):
-       ∑_{t ∈ W} x[d][t] close to w_d = h_d / H * |W|
-  (C4) Cool-down: x[d][t] + x[d][t+1] ≤ 1       ∀ d, consecutive t
-       No directorate is assigned back-to-back days (strict).
-  (C5) Monthly spread (soft, penalised):
-       For each directorate d and month m, the count of assigned days
-       should be close to the proportional monthly target.  Deviation
-       is penalised in the objective to encourage even month-to-month
-       distribution and within-month spacing.
+Decision variables:
+  x[d][t] ∈ {0, 1}   — 1 if directorate d is assigned SDNCO on day t
+  y[d][t] ∈ {0, 1}   — 1 if directorate d is assigned SD_Runner on day t
+
+Constraints (applied per role, denoted generically as z):
+  (C1) Coverage:    ∑_d z[d][t] = 1              ∀ t ∈ T
+  (C2) Total quota: floor(q_d) ≤ ∑_t z[d][t] ≤ ceil(q_d)   ∀ d
+  (C3) Hard-day quota (soft, penalised)
+  (C4) Cool-down: z[d][t] + z[d][t+1] ≤ 1       ∀ d, consecutive t   (strict)
+  (C5) Monthly spread (soft, penalised) — even month-to-month distribution
+  (C6) Same-day overlap avoidance (soft, penalised):
+       x[d][t] + y[d][t] ≤ 1 + s[d][t]   where s is a slack penalised in objective.
+       Discourages assigning the same directorate to both roles on the same day.
 
 Objective:
-  Minimise ∑_d (over_d + under_d) + α ∑_{d,m} (mo_over + mo_under)
-  where over_d / under_d measure hard-day deviation,
-  and mo_over / mo_under measure monthly deviation.
+  Minimise  ∑ hard-day deviation
+          + α · ∑ monthly spread deviation
+          + β · ∑ same-day overlap slack
 
 If the ILP is infeasible, the solver falls back to a greedy assignment
-that still respects the cool-down constraint.
+that still respects the cool-down and overlap constraints.
 
 OUTPUT
 ──────
-RosterSolution: {date → directorate_name}, plus summary statistics.
+Two RosterSolution objects (SDNCO, SD_Runner), plus summary statistics.
 """
 
 from __future__ import annotations
@@ -92,108 +91,242 @@ class RosterSolution:
     hard_day_gini: float  = 0.0          # Gini of hard days per directorate
 
 
-# ── Solver ────────────────────────────────────────────────────────────────────
+# ── Penalty weights ──────────────────────────────────────────────────────────
+MONTHLY_PENALTY = 1.5    # even month-to-month distribution
+OVERLAP_PENALTY = 3.0    # discourage same directorate on both roles same day
+SPACING_PENALTY = 0.08   # discourage clustering within a week-sized window
+
+
+# ── Joint solver (public API) ────────────────────────────────────────────────
+
+def solve_joint(
+    sdnco_cfg: RosterConfig,
+    runner_cfg: RosterConfig,
+    all_days: List[date],
+    holiday_dates: Set[date],
+) -> Tuple[RosterSolution, RosterSolution]:
+    """
+    Solve SDNCO and SD_Runner jointly so the same-day overlap constraint
+    can be enforced across roles.  Returns (sdnco_solution, runner_solution).
+    """
+    T      = all_days
+    n_days = len(T)
+    t_indices = list(range(n_days))
+
+    hard_days    = [d for d in T if classify_day(d, holiday_dates) in (WEEKEND, HOLIDAY)]
+    hard_indices = {T.index(hd) for hd in hard_days}
+    n_hard       = len(hard_days)
+
+    # Group day indices by month
+    month_indices: Dict[Tuple[int, int], List[int]] = defaultdict(list)
+    for ti, day in enumerate(T):
+        month_indices[(day.year, day.month)].append(ti)
+
+    # Shared directorate names (both configs must use the same names)
+    dir_names = [d.name for d in sdnco_cfg.directorates]
+
+    prob = pulp.LpProblem("StaffDuty_Joint", pulp.LpMinimize)
+
+    # ── Build variables and constraints for each role ────────────────────────
+    role_vars = {}   # role_tag → x dict
+    obj_terms = []
+
+    for tag, cfg in [("S", sdnco_cfg), ("R", runner_cfg)]:
+        dirs = cfg.directorates
+        H    = cfg.total_eligible
+
+        x = pulp.LpVariable.dicts(
+            f"x{tag}",
+            ((dn, ti) for dn in dir_names for ti in t_indices),
+            cat="Binary",
+        )
+        role_vars[tag] = x
+
+        # Quotas
+        total_quota: Dict[str, Tuple[int, int]] = {}
+        hard_target: Dict[str, float] = {}
+        for d in dirs:
+            q = d.eligible / H * n_days
+            total_quota[d.name] = (math.floor(q), math.ceil(q))
+            hard_target[d.name] = d.eligible / H * n_hard
+
+        # Hard-day deviation vars
+        over  = pulp.LpVariable.dicts(f"over{tag}",  dir_names, lowBound=0)
+        under = pulp.LpVariable.dicts(f"under{tag}", dir_names, lowBound=0)
+
+        # (C1) Coverage
+        for ti in t_indices:
+            prob += pulp.lpSum(x[(dn, ti)] for dn in dir_names) == 1
+
+        # (C2) Total quota
+        for d in dirs:
+            lo, hi = total_quota[d.name]
+            total_assigned = pulp.lpSum(x[(d.name, ti)] for ti in t_indices)
+            prob += total_assigned >= lo
+            prob += total_assigned <= hi
+
+        # (C3) Hard-day deviation
+        for d in dirs:
+            hard_assigned = pulp.lpSum(x[(d.name, ti)] for ti in hard_indices)
+            target = hard_target[d.name]
+            prob += hard_assigned - target <= over[d.name]
+            prob += target - hard_assigned <= under[d.name]
+
+        obj_terms.append(pulp.lpSum(over[dn] + under[dn] for dn in dir_names))
+
+        # (C4) Cool-down — strict, no back-to-back
+        for d in dirs:
+            for ti in range(n_days - 1):
+                prob += x[(d.name, ti)] + x[(d.name, ti + 1)] <= 1
+
+        # (C5) Monthly spread
+        mo_over  = {}
+        mo_under = {}
+        for d in dirs:
+            q_total = d.eligible / H * n_days
+            for ym, indices in month_indices.items():
+                month_share    = len(indices) / n_days
+                monthly_target = q_total * month_share
+                key = (d.name, ym)
+                mo_over[key]  = pulp.LpVariable(
+                    f"mo_over{tag}_{d.name}_{ym[0]}_{ym[1]}", lowBound=0)
+                mo_under[key] = pulp.LpVariable(
+                    f"mo_under{tag}_{d.name}_{ym[0]}_{ym[1]}", lowBound=0)
+                month_assigned = pulp.lpSum(x[(d.name, ti)] for ti in indices)
+                prob += month_assigned - monthly_target <= mo_over[key]
+                prob += monthly_target - month_assigned <= mo_under[key]
+
+        obj_terms.append(
+            MONTHLY_PENALTY * pulp.lpSum(
+                mo_over[k] + mo_under[k] for k in mo_over))
+
+        # Within-month spacing: for each directorate, in any sliding window
+        # of W days, penalise having more than 1 assignment.  This discourages
+        # clustering and encourages even gaps between duty days.
+        spacing_terms = []
+        WINDOW = 5  # days — ideal minimum gap between same-dir assignments
+        for d in dirs:
+            for ti in range(n_days - WINDOW + 1):
+                window_sum = pulp.lpSum(
+                    x[(d.name, ti + k)] for k in range(WINDOW))
+                sp_var = pulp.LpVariable(
+                    f"sp{tag}_{d.name}_{ti}", lowBound=0)
+                # sp_var >= window_sum - 1  (excess above 1 assignment per window)
+                prob += sp_var >= window_sum - 1
+                spacing_terms.append(sp_var)
+        if spacing_terms:
+            obj_terms.append(SPACING_PENALTY * pulp.lpSum(spacing_terms))
+
+    # (C6) Same-day overlap avoidance (soft) ──────────────────────────────────
+    xs = role_vars["S"]
+    xr = role_vars["R"]
+    overlap_slack = {}
+    for dn in dir_names:
+        for ti in t_indices:
+            s_var = pulp.LpVariable(f"olap_{dn}_{ti}", cat="Binary")
+            overlap_slack[(dn, ti)] = s_var
+            prob += xs[(dn, ti)] + xr[(dn, ti)] <= 1 + s_var
+
+    obj_terms.append(
+        OVERLAP_PENALTY * pulp.lpSum(
+            overlap_slack[k] for k in overlap_slack))
+
+    # ── Objective ────────────────────────────────────────────────────────────
+    prob += pulp.lpSum(obj_terms)
+
+    # ── Solve ────────────────────────────────────────────────────────────────
+    solver = pulp.PULP_CBC_CMD(msg=0, timeLimit=120)
+    status_code = prob.solve(solver)
+    status_str  = pulp.LpStatus[prob.status]
+    logger.info("Joint ILP solver status: %s", status_str)
+
+    if status_code not in (1,):
+        logger.warning("Joint ILP status '%s' — falling back to greedy.", status_str)
+        return _greedy_joint_fallback(
+            sdnco_cfg, runner_cfg, T, holiday_dates)
+
+    # ── Extract solutions ────────────────────────────────────────────────────
+    results = []
+    for tag, cfg in [("S", sdnco_cfg), ("R", runner_cfg)]:
+        xv = role_vars[tag]
+        assignment: Dict[date, str] = {}
+        for ti, day in enumerate(T):
+            for dn in dir_names:
+                if pulp.value(xv[(dn, ti)]) > 0.5:
+                    assignment[day] = dn
+                    break
+        results.append(_build_solution(cfg, assignment, holiday_dates, status_str))
+
+    return results[0], results[1]
+
+
+# ── Single-role solver (backward compat, used by CLI) ────────────────────────
 
 def solve(
     config: RosterConfig,
     all_days: List[date],
     holiday_dates: Set[date],
 ) -> RosterSolution:
-    """
-    Build and solve the ILP, return a RosterSolution.
+    """Solve a single role independently (no overlap constraint)."""
+    return _solve_single(config, all_days, holiday_dates)
 
-    Parameters
-    ----------
-    config        : RosterConfig with directorates and date range.
-    all_days      : Ordered list of every calendar day in the quarter.
-    holiday_dates : Set of dates classified as holidays.
-    """
+
+def _solve_single(
+    config: RosterConfig,
+    all_days: List[date],
+    holiday_dates: Set[date],
+) -> RosterSolution:
     dirs   = config.directorates
     H      = config.total_eligible
     T      = all_days
     n_days = len(T)
 
-    # Partition days by type
-    hard_days = [d for d in T if classify_day(d, holiday_dates) in (WEEKEND, HOLIDAY)]
-    soft_days = [d for d in T if d not in hard_days]
+    hard_days    = [d for d in T if classify_day(d, holiday_dates) in (WEEKEND, HOLIDAY)]
+    hard_indices = {T.index(hd) for hd in hard_days}
+    n_hard       = len(hard_days)
 
-    n_hard = len(hard_days)
+    month_indices: Dict[Tuple[int, int], List[int]] = defaultdict(list)
+    for ti, day in enumerate(T):
+        month_indices[(day.year, day.month)].append(ti)
 
-    # ── Quotas ────────────────────────────────────────────────────────────────
-    # Total day quota per directorate (proportional to eligible count)
-    total_quota: Dict[str, Tuple[int, int]] = {}   # name → (floor, ceil)
-    # Hard-day quota (proportional, used as soft target)
+    total_quota: Dict[str, Tuple[int, int]] = {}
     hard_target: Dict[str, float] = {}
-
     for d in dirs:
-        q     = d.eligible / H * n_days
+        q = d.eligible / H * n_days
         total_quota[d.name] = (math.floor(q), math.ceil(q))
         hard_target[d.name] = d.eligible / H * n_hard
 
-    # ── Build ILP ────────────────────────────────────────────────────────────
     prob = pulp.LpProblem(f"StaffDuty_{config.role}", pulp.LpMinimize)
-
     dir_names = [d.name for d in dirs]
     t_indices = list(range(n_days))
 
-    # Binary assignment variables
     x = pulp.LpVariable.dicts(
-        "x",
-        ((dn, ti) for dn in dir_names for ti in t_indices),
-        cat="Binary",
-    )
+        "x", ((dn, ti) for dn in dir_names for ti in t_indices), cat="Binary")
 
-    # Deviation variables for hard-day fairness (continuous ≥ 0)
     over  = pulp.LpVariable.dicts("over",  dir_names, lowBound=0)
     under = pulp.LpVariable.dicts("under", dir_names, lowBound=0)
 
-    # Objective placeholder — overwritten after C5 monthly spread vars are added
-
-    # (C1) Each day covered by exactly one directorate
     for ti in t_indices:
         prob += pulp.lpSum(x[(dn, ti)] for dn in dir_names) == 1
-
-    # (C2) Total quota bounds
     for d in dirs:
         lo, hi = total_quota[d.name]
         total_assigned = pulp.lpSum(x[(d.name, ti)] for ti in t_indices)
         prob += total_assigned >= lo
         prob += total_assigned <= hi
-
-    # Index hard days by their position in T
-    hard_indices = {T.index(hd) for hd in hard_days}
-
-    # (C3) Hard-day deviation tracking
     for d in dirs:
-        hard_assigned = pulp.lpSum(
-            x[(d.name, ti)] for ti in hard_indices
-        )
+        hard_assigned = pulp.lpSum(x[(d.name, ti)] for ti in hard_indices)
         target = hard_target[d.name]
         prob += hard_assigned - target <= over[d.name]
         prob += target - hard_assigned <= under[d.name]
-
-    # (C4) Cool-down: no back-to-back days for any directorate (strict)
     for d in dirs:
         for ti in range(n_days - 1):
             prob += x[(d.name, ti)] + x[(d.name, ti + 1)] <= 1
 
-    # (C5) Monthly spread: penalise deviation from monthly targets
-    # Group day indices by (year, month)
-    month_indices: Dict[Tuple[int, int], List[int]] = defaultdict(list)
-    for ti, day in enumerate(T):
-        month_indices[(day.year, day.month)].append(ti)
-
-    # Weight for monthly deviation penalty (lower than hard-day penalty
-    # so hard-day fairness takes priority, but enough to spread shifts)
-    MONTHLY_PENALTY = 0.4
-
-    mo_over = {}
-    mo_under = {}
+    mo_over, mo_under = {}, {}
     for d in dirs:
-        q_total = d.eligible / H * n_days  # total quota for this directorate
+        q_total = d.eligible / H * n_days
         for ym, indices in month_indices.items():
-            month_share = len(indices) / n_days  # fraction of quarter in this month
-            monthly_target = q_total * month_share
+            monthly_target = q_total * len(indices) / n_days
             key = (d.name, ym)
             mo_over[key]  = pulp.LpVariable(f"mo_over_{d.name}_{ym[0]}_{ym[1]}", lowBound=0)
             mo_under[key] = pulp.LpVariable(f"mo_under_{d.name}_{ym[0]}_{ym[1]}", lowBound=0)
@@ -201,38 +334,56 @@ def solve(
             prob += month_assigned - monthly_target <= mo_over[key]
             prob += monthly_target - month_assigned <= mo_under[key]
 
-    # Update objective: hard-day deviation + monthly spread penalty
-    prob += pulp.lpSum(over[dn] + under[dn] for dn in dir_names) + \
-            MONTHLY_PENALTY * pulp.lpSum(mo_over[k] + mo_under[k] for k in mo_over)
+    prob += (pulp.lpSum(over[dn] + under[dn] for dn in dir_names) +
+             MONTHLY_PENALTY * pulp.lpSum(mo_over[k] + mo_under[k] for k in mo_over))
 
-    # ── Solve ─────────────────────────────────────────────────────────────────
-    solver = pulp.PULP_CBC_CMD(msg=0)
+    solver = pulp.PULP_CBC_CMD(msg=0, timeLimit=60)
     status_code = prob.solve(solver)
     status_str  = pulp.LpStatus[prob.status]
-    logger.info("ILP solver status: %s", status_str)
 
-    if status_code not in (1, -1):  # 1=Optimal, -1=Infeasible
-        logger.warning(
-            "ILP status '%s' — falling back to greedy assignment.", status_str
-        )
+    if status_code != 1:
         return _greedy_fallback(config, T, holiday_dates, hard_target, total_quota)
 
-    if status_code == -1:
-        logger.warning("ILP infeasible — falling back to greedy assignment.")
-        return _greedy_fallback(config, T, holiday_dates, hard_target, total_quota)
-
-    # ── Extract solution ──────────────────────────────────────────────────────
     assignment: Dict[date, str] = {}
     for ti, day in enumerate(T):
         for dn in dir_names:
             if pulp.value(x[(dn, ti)]) > 0.5:
                 assignment[day] = dn
                 break
-
     return _build_solution(config, assignment, holiday_dates, status_str)
 
 
-# ── Greedy fallback ───────────────────────────────────────────────────────────
+# ── Greedy fallbacks ─────────────────────────────────────────────────────────
+
+def _greedy_joint_fallback(
+    sdnco_cfg: RosterConfig,
+    runner_cfg: RosterConfig,
+    all_days: List[date],
+    holiday_dates: Set[date],
+) -> Tuple[RosterSolution, RosterSolution]:
+    """Greedy fallback that respects cool-down and avoids same-day overlap."""
+    H_s = sdnco_cfg.total_eligible
+    H_r = runner_cfg.total_eligible
+    n_days = len(all_days)
+    n_hard = sum(1 for d in all_days if classify_day(d, holiday_dates) in (WEEKEND, HOLIDAY))
+
+    hard_target_s = {d.name: d.eligible / H_s * n_hard for d in sdnco_cfg.directorates}
+    hard_target_r = {d.name: d.eligible / H_r * n_hard for d in runner_cfg.directorates}
+    total_quota_s = {}
+    total_quota_r = {}
+    for d in sdnco_cfg.directorates:
+        q = d.eligible / H_s * n_days
+        total_quota_s[d.name] = (math.floor(q), math.ceil(q))
+    for d in runner_cfg.directorates:
+        q = d.eligible / H_r * n_days
+        total_quota_r[d.name] = (math.floor(q), math.ceil(q))
+
+    s_sol = _greedy_fallback(sdnco_cfg, all_days, holiday_dates, hard_target_s, total_quota_s)
+    r_sol = _greedy_fallback(
+        runner_cfg, all_days, holiday_dates, hard_target_r, total_quota_r,
+        avoid_assignment=s_sol.assignment)
+    return s_sol, r_sol
+
 
 def _greedy_fallback(
     config: RosterConfig,
@@ -240,26 +391,24 @@ def _greedy_fallback(
     holiday_dates: Set[date],
     hard_target: Dict[str, float],
     total_quota: Dict[str, Tuple[int, int]],
+    avoid_assignment: Dict[date, str] | None = None,
 ) -> RosterSolution:
     """
     Greedy assignment when ILP fails.
-    Sorts days so hard days are interspersed; assigns directorate with most
-    remaining quota (breaking ties by most hard-day deficit).
+    Respects cool-down and optionally avoids same-day overlap with another role.
     """
-    dirs     = config.directorates
+    dirs      = config.directorates
     dir_names = [d.name for d in dirs]
 
     remaining_total = {d.name: total_quota[d.name][1] for d in dirs}
     assigned_hard   = {d.name: 0 for d in dirs}
     assignment: Dict[date, str] = {}
 
-    # Interleave hard and soft days so hard days are spread evenly
     hard_days = [d for d in all_days if classify_day(d, holiday_dates) in (WEEKEND, HOLIDAY)]
     soft_days = [d for d in all_days if d not in set(hard_days)]
-
     ordered_days = _interleave(hard_days, soft_days)
 
-    prev_assigned: str | None = None  # track last-assigned directorate for cool-down
+    prev_assigned: str | None = None
 
     for day in ordered_days:
         is_hard = classify_day(day, holiday_dates) in (WEEKEND, HOLIDAY)
@@ -267,15 +416,18 @@ def _greedy_fallback(
         if not eligible:
             eligible = dir_names
 
-        # (C4) Cool-down: exclude the directorate assigned yesterday
+        # (C4) Cool-down
         if prev_assigned and prev_assigned in eligible and len(eligible) > 1:
             eligible = [dn for dn in eligible if dn != prev_assigned]
 
+        # (C6) Avoid same-day overlap with other role
+        if avoid_assignment and day in avoid_assignment:
+            other_dir = avoid_assignment[day]
+            if other_dir in eligible and len(eligible) > 1:
+                eligible = [dn for dn in eligible if dn != other_dir]
+
         if is_hard:
-            chosen = max(
-                eligible,
-                key=lambda dn: hard_target.get(dn, 0) - assigned_hard[dn],
-            )
+            chosen = max(eligible, key=lambda dn: hard_target.get(dn, 0) - assigned_hard[dn])
         else:
             chosen = max(eligible, key=lambda dn: remaining_total[dn])
 
