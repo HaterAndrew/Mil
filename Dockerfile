@@ -2,10 +2,10 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY staff_duty/requirements-deploy.txt ./requirements.txt
+COPY requirements-deploy.txt ./requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY staff_duty/ ./staff_duty/
+COPY . ./staff_duty/
 
 EXPOSE 8080
 
