@@ -121,7 +121,7 @@ MSS contributes to accountability by making property book data visible in contex
 
 Accountability is not automated by MSS. It is made more visible. The work of physical inventory, receipting, and GCSS-Army entry remains — MSS displays the results of that work and makes anomalies easier to identify.
 
-### 2-4. Accountability vs. Visibility
+### 2-5. Accountability vs. Visibility
 
 There is a distinction that every sustainment practitioner must internalize before using MSS: the difference between accountability and visibility.
 
@@ -135,7 +135,7 @@ The sustainment practitioner who confuses visibility with accountability will ev
 
 > **NOTE: The test for accountability is always the same: can the unit produce documentation for every line item on its property book, ammunition basic load, and personnel roster? MSS does not change this test. It provides a visibility tool that makes anomalies easier to identify — which, in turn, makes accountability easier to maintain.**
 
-### 2-5. The Risk of Supply Chain Complacency
+### 2-6. The Risk of Supply Chain Complacency
 
 MSS creates a subtle risk that did not exist in the legacy environment: supply chain complacency. In the legacy environment, the S4 who wanted to know the supply status had to make calls, pull reports, and manually compile data — an active, effortful process. That effort created natural checkpoints where discrepancies were caught.
 
@@ -249,7 +249,7 @@ The loop breaks when any step is skipped. The most common break point is deliver
 
 Distribution feedback discipline — closing convoys, confirming receipts, updating on-hand quantities — is the operational discipline that keeps the distribution feedback loop working. It is not data administration. It is a combat function.
 
-### 4-4. The S4's Role in Distribution Decision-Making
+### 4-5. The S4's Role in Distribution Decision-Making
 
 Distribution, properly understood, is a command function, not just an administrative one. Commanders who are unaware of the distribution picture cannot make informed decisions about operational tempo, resupply pauses, or maneuver risk. The S4 who manages distribution silently — solving problems without surfacing them to the commander — deprives the commander of the information needed to make risk decisions.
 
@@ -257,7 +257,7 @@ MSS changes this by making the distribution picture visible. The commander who c
 
 This is a cultural shift as much as a technical one. Some S4s resist making problems visible because they prefer to solve them before briefing. In the MSS environment, the commander may see the problem in the dashboard before the S4 has a mitigation. Senior sustainment leaders should establish a culture where the S4 proactively surfaces distribution risks — with or without a mitigation in hand — rather than managing information downward.
 
-### 4-5. Multi-Modal Distribution in USAREUR-AF
+### 4-6. Multi-Modal Distribution in USAREUR-AF
 
 USAREUR-AF is a theater with unique distribution characteristics. Unlike a continental US post or a Middle East deployment with road-dominant distribution, USAREUR-AF sustainment operates across a complex European theater with significant multi-modal options: road, rail, inland waterway, and air.
 
@@ -303,7 +303,7 @@ The LOGSTAT is not just a report submitted to higher. It is a sustainment contri
 
 This changes the nature of the sustainment brief in the battle rhythm. Instead of the S4 reporting data that the commander has not seen, the S4 is analyzing data the commander has already reviewed. The brief becomes an analytical product — "here is what the data means, here are my recommendations" — rather than an informational product — "here is the status." This is the higher-order use of MSS that distinguishes a data-enabled sustainment staff from one that simply uses the platform as a digital LOGSTAT form.
 
-### 5-3. The S4 as a Producer, Not Just a Consumer, of the COP
+### 5-4. The S4 as a Producer, Not Just a Consumer, of the COP
 
 The Mission Command COP (TM-40F) is built from contributions from every warfighting function. The S4 is a producer of COP data — not merely a consumer of it.
 
@@ -313,7 +313,7 @@ The S3 uses readiness data to task-organize. The fires officer uses Class V stat
 
 The S4 who treats MSS as an internal sustainment tool — a tool for managing the S4's own work — underutilizes the platform. The S4 who understands that the sustainment workspace on MSS contributes to the formation-wide COP, and who maintains data currency accordingly, provides real operational value to every staff section that depends on sustainment data.
 
-### 5-4. Sustainment Data as a Decision Support Tool
+### 5-5. Sustainment Data as a Decision Support Tool
 
 ADP 6-0 establishes that commanders make decisions supported by staff analysis. Sustainment data from MSS is a decision support input — specifically for:
 
@@ -487,7 +487,7 @@ All six WFF tracks are at the same tier. All six WFF tracks require TM-10, TM-20
 
 ### Specialist Tracks (Prerequisite: TM-30)
 
-For personnel pursuing technical depth, specialist tracks (TM-40G–M, prereq TM-30) are available. Not required for sustainment WFF employment.
+For personnel pursuing technical depth, specialist tracks (TM-40G–O, prereq TM-30) are available. Not required for sustainment WFF employment.
 
 | Track | Title |
 |-------|-------|

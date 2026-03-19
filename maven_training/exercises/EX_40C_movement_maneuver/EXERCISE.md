@@ -40,13 +40,13 @@ Add the following graphics to the COP using the provided list:
 
 | Graphic | Label | Standard |
 |---------|-------|----------|
-| Line of Departure | LD | Correct grid; ADRP 1-02 symbology |
-| Phase Line AMBER | PL AMBER | Correct grid; ADRP 1-02 symbology |
-| Phase Line BLACK | PL BLACK | Correct grid; ADRP 1-02 symbology |
-| Objective IRON | OBJ IRON | Correct grid; ADRP 1-02 symbology |
+| Line of Departure | LD | Correct grid; FM 1-02.1 symbology |
+| Phase Line AMBER | PL AMBER | Correct grid; FM 1-02.1 symbology |
+| Phase Line BLACK | PL BLACK | Correct grid; FM 1-02.1 symbology |
+| Objective IRON | OBJ IRON | Correct grid; FM 1-02.1 symbology |
 
 - [ ] Verify each graphic is at the correct grid coordinates per the graphic control measure list
-- [ ] Confirm all graphics use standard ADRP 1-02 symbology conventions as supported in MSS
+- [ ] Confirm all graphics use standard FM 1-02.1 symbology conventions as supported in MSS
 
 | Standard | Criteria |
 |----------|----------|

@@ -67,16 +67,7 @@ T3-F (MSC Force Multiplier)         ← prereq: TM-20 + CDR nomination
 | TM-50K | Advanced Knowledge Manager | 3 days | Senior KMs | TM-40K |
 | TM-50L | Advanced Software Engineer | 5 days | Senior SWEs, platform leads | TM-40L |
 
-**Critical note:** TM-50 is G–M only (advanced specialist). All TM-40 WFF tracks (A–F) are terminal — graduates proceed to their operational role, not to a TM-50.
-
-**Train-the-Trainer (T3) courses** sit outside the TM numbering:
-
-| Course | Duration | Audience | Prereq | Output |
-|--------|----------|----------|--------|--------|
-| T3-I | 5 days + practicum | C2DAO-selected instructor candidates | TM-30 + C2DAO selection | Certified Instructor (→ Senior → Master) |
-| T3-F | 3 days | MSC-level data NCOs, S6, UDT nominees | TM-20 + CDR nomination | Unit Data Trainer (TM-10 delivery + TM-20 refresher) |
-
-See Instructor Tier Definitions for the full tier hierarchy. See C2DAO SME Designation Rubric for domain expertise requirements. See Unit Data Trainer SOP for UDT employment and reporting procedures.
+**Critical note:** There is no TM-50A through TM-50F. TM-50 is specialist advanced only (G–O). All TM-40 WFF tracks (A–F) are terminal — graduates proceed to their operational role, not to a TM-50.
 
 ---
 
@@ -145,8 +136,8 @@ maven_training/
 │       ├── TM20_LESSON_PLAN_OUTLINES.md
 │       ├── TM30_LESSON_PLAN_OUTLINES.md
 │       ├── TM40_WFF_LESSON_PLAN_OUTLINES.md     ← TM-40A through TM-40F
-│       ├── TM40_SPECIALIST_LESSON_PLAN_OUTLINES.md  ← TM-40G through TM-40M
-│       └── TM50_ADVANCED_LESSON_PLAN_OUTLINES.md   ← TM-50G through TM-50M
+│       ├── TM40_SPECIALIST_LESSON_PLAN_OUTLINES.md  ← TM-40G through TM-40O
+│       └── TM50_ADVANCED_LESSON_PLAN_OUTLINES.md   ← TM-50G through TM-50O
 │
 ├── doctrine/                       ← Reference doctrine (not course-specific)
 │   ├── DATA_LITERACY_technical_reference.md
@@ -244,7 +235,7 @@ The practical exercise is the primary evaluation for every TM-40 and TM-50 cours
 | TM-20 | 18 | 1 | Day 4–5 labs: 2 instructors required |
 | TM-30 | 12 | 1 | Day 5 PE: dedicated evaluator required |
 | TM-40 (WFF A–F) | 12 | 1 | Day 3 PE: dedicated evaluator required; T:I ≤ 6:1 for PE |
-| TM-40 (Specialist G–M) | 10 | 1 | Day 3 PE: dedicated evaluator; technical depth requires T:I ≤ 5:1 |
+| TM-40 (Specialist G–O) | 10 | 1 | Day 3 PE: dedicated evaluator; technical depth requires T:I ≤ 5:1 |
 | TM-50 (all) | 8 | 1 | Day 5 PE: dedicated evaluator; peer review component requires instructor presence throughout |
 
 If enrollment exceeds these caps, split sections. Do not exceed class maximums — the exercise environments are not designed for larger groups and evaluator attention cannot be maintained.
@@ -297,7 +288,7 @@ The USAREUR-AF C2DAO Training OIC is the certification authority for all MSS ins
 
 ### 9-4. Cross-Certification
 
-Instructors certified for one TM-40 specialist track (G–M) may cross-certify for additional tracks by completing Phases 1 and 3 for the new track. WFF tracks (A–F) require full certification pathway due to domain-specific content.
+Instructors certified for one TM-40 specialist track (G–O) may cross-certify for additional tracks by completing Phases 1 and 3 for the new track. WFF tracks (A–F) require full certification pathway due to domain-specific content.
 
 > **Reference:** TP 350-70-3, *Faculty and Staff Development Program* (TRADOC). See also `training_management/FACULTY_DEVELOPMENT_PLAN.md` for instructor qualification matrices and evaluator prerequisites.
 

@@ -24,8 +24,8 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 
 **1. In a production MLOps pipeline, "automated model promotion gates" control:**
 
-A. The schedule at which models are retrained on new data
-B. The conditions that must be met before a trained model artifact is promoted from development to staging to production
+A. The conditions that must be met before a trained model artifact is promoted from development to staging to production
+B. The schedule at which models are retrained on new data
 C. The access permissions for who can deploy models
 D. The compute allocation for production model inference
 
@@ -39,29 +39,29 @@ D. Running the new model in shadow mode without returning its predictions to use
 **3. "A/B testing" for ML models in production measures:**
 
 A. Whether model A was trained on dataset A and model B on dataset B
-B. The difference in a defined metric (accuracy, conversion rate, operational outcome) between two model versions when exposed to equivalent real-world traffic
+B. The latency difference between two model architectures on the same hardware
 C. Whether the model's accuracy is significantly above random chance using a t-test
-D. The latency difference between two model architectures on the same hardware
+D. The difference in a defined metric (accuracy, conversion rate, operational outcome) between two model versions when exposed to equivalent real-world traffic
 
 **4. "Federated learning" is a training approach where:**
 
 A. Multiple organizations jointly fund model training on a shared centralized dataset
-B. Models are trained locally on distributed data sources without transferring the raw data to a central location — only model updates are shared
-C. The model is trained in a federated government cloud environment with shared compute
+B. The model is trained in a federated government cloud environment with shared compute
+C. Models are trained locally on distributed data sources without transferring the raw data to a central location — only model updates are shared
 D. Multiple model architectures are trained in parallel on the same dataset
 
 **5. Cross-domain federated learning coordination (e.g., between USAREUR-AF and a partner nation) requires:**
 
-A. Technical integration only — federated learning inherently provides privacy by design
-B. C2DAO approval, data steward sign-off, and a signed information sharing agreement — the claim "no data moves" is insufficient because model gradients may encode sensitive information
+A. C2DAO approval, data steward sign-off, and a signed information sharing agreement — the claim "no data moves" is insufficient because model gradients may encode sensitive information
+B. Technical integration only — federated learning inherently provides privacy by design
 C. Approval from the partner nation's equivalent of the Army CIO
 D. SJA review only for SECRET or above data
 
 **6. "SHAP (SHapley Additive exPlanations) values" provide:**
 
 A. A measure of global model accuracy across all predictions
-B. Feature-level attributions showing how much each feature contributed to an individual prediction
-C. A statistical test for whether the model is significantly better than a baseline
+B. A statistical test for whether the model is significantly better than a baseline
+C. Feature-level attributions showing how much each feature contributed to an individual prediction
 D. The marginal effect of each feature after controlling for correlations
 
 **7. "Disaggregated evaluation" in ML fairness assessment means:**
@@ -73,15 +73,15 @@ D. Running the model on disaggregated data from multiple time periods
 
 **8. "Data poisoning" in an adversarial ML context is a training-time attack where:**
 
-A. Corrupt data is introduced into the production inference pipeline
-B. Malicious training examples are injected to manipulate the model's learned behavior in a targeted or indiscriminate way
+A. Malicious training examples are injected to manipulate the model's learned behavior in a targeted or indiscriminate way
+B. Corrupt data is introduced into the production inference pipeline
 C. The model's gradient updates are intercepted and modified during distributed training
 D. The training dataset is intentionally biased by removing representative samples
 
 **9. "Model extraction" attacks attempt to:**
 
-A. Steal the model's training data by querying the model extensively
-B. Reconstruct or approximate a deployed model's behavior by querying it systematically, enabling the attacker to build a functionally equivalent copy
+A. Reconstruct or approximate a deployed model's behavior by querying it systematically, enabling the attacker to build a functionally equivalent copy
+B. Steal the model's training data by querying the model extensively
 C. Extract the model's weights from a compromised serving endpoint
 D. Modify the model's outputs by manipulating the inference endpoint
 
@@ -95,16 +95,16 @@ D. Compressing the model using knowledge distillation from a larger teacher mode
 **11. A "feature store" in an ML platform serves which primary purpose?**
 
 A. A version-controlled repository for model artifacts
-B. A centralized system for computing, storing, and serving features consistently across training and inference environments, preventing training-serving skew
+B. A catalog of approved features for each ML use case
 C. A database for storing raw training data separate from production data
-D. A catalog of approved features for each ML use case
+D. A centralized system for computing, storing, and serving features consistently across training and inference environments, preventing training-serving skew
 
 **12. "Training-serving skew" in an ML deployment occurs when:**
 
 A. The model architecture used in training differs from the serving architecture
-B. The feature computation logic differs between the training pipeline and the online inference pipeline, causing the served model to receive different feature distributions than it was trained on
+B. The model's output schema in training differs from the output schema at inference
 C. The training dataset and serving dataset come from different time periods
-D. The model's output schema in training differs from the output schema at inference
+D. The feature computation logic differs between the training pipeline and the online inference pipeline, causing the served model to receive different feature distributions than it was trained on
 
 **13. "Bias auditing" of a vehicle failure prediction model would specifically examine:**
 
@@ -116,15 +116,15 @@ D. Whether the model is more accurate than a rules-based baseline
 **14. The "PSI threshold" for triggering automated model retraining review should be documented because:**
 
 A. The Foundry platform requires PSI thresholds to be registered in the pipeline configuration
-B. Different models and use cases warrant different sensitivity to input distribution shift — the chosen threshold reflects a deliberate risk tolerance decision that should be transparent and auditable
-C. PSI thresholds are fixed at 0.20 by Army ML policy
+B. PSI thresholds are fixed at 0.20 by Army ML policy
+C. Different models and use cases warrant different sensitivity to input distribution shift — the chosen threshold reflects a deliberate risk tolerance decision that should be transparent and auditable
 D. Documentation prevents the threshold from being inadvertently changed during pipeline updates
 
 **15. A "graph neural network" (GNN) is appropriate for modeling operational C2 networks because:**
 
 A. C2 networks have a fixed structure that requires specialized graph embeddings
-B. GNNs naturally represent and learn from relational structure — nodes (units, commanders) and edges (command relationships, communication links) — enabling predictions that account for network topology
-C. GNNs are more interpretable than standard neural networks for military use cases
+B. GNNs are more interpretable than standard neural networks for military use cases
+C. GNNs naturally represent and learn from relational structure — nodes (units, commanders) and edges (command relationships, communication links) — enabling predictions that account for network topology
 D. C2 network data cannot be flattened into a tabular format
 
 ---
@@ -202,21 +202,21 @@ Passing: N/A — Pre-test is diagnostic only.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — Automated promotion gates define conditions for model progression through environments.
+1. A — Automated promotion gates define conditions for model progression through environments.
 2. B — Canary release routes small traffic percentage to new model for comparison.
-3. B — A/B testing measures defined metric differences between two model versions on real traffic.
-4. B — Federated learning trains locally on distributed data; only updates (not raw data) are shared.
-5. B — Cross-domain federated learning requires C2DAO + data steward + ISA; "no data moves" is insufficient.
-6. B — SHAP provides per-feature attributions for individual predictions.
+3. D — A/B testing measures defined metric differences between two model versions on real traffic.
+4. C — Federated learning trains locally on distributed data; only updates (not raw data) are shared.
+5. A — Cross-domain federated learning requires C2DAO + data steward + ISA; "no data moves" is insufficient.
+6. C — SHAP provides per-feature attributions for individual predictions.
 7. B — Disaggregated evaluation assesses performance separately across subgroups.
-8. B — Data poisoning = adversarial training example injection to manipulate learned behavior.
-9. B — Model extraction = systematic querying to reconstruct model behavior.
+8. A — Data poisoning = adversarial training example injection to manipulate learned behavior.
+9. A — Model extraction = systematic querying to reconstruct model behavior.
 10. B — Post-training quantization reduces weight precision after training to reduce memory/latency.
-11. B — Feature store provides consistent feature computation across training and inference.
-12. B — Training-serving skew = different feature computation logic in training vs. serving pipelines.
+11. D — Feature store provides consistent feature computation across training and inference.
+12. D — Training-serving skew = different feature computation logic in training vs. serving pipelines.
 13. B — Bias audit checks for false negative rate disparities across subgroups.
-14. B — PSI threshold documents a deliberate, auditable risk tolerance decision.
-15. B — GNNs learn from relational structure of nodes and edges representing C2 topology.
+14. C — PSI threshold documents a deliberate, auditable risk tolerance decision.
+15. C — GNNs learn from relational structure of nodes and edges representing C2 topology.
 
 **Short Answer Guidance:**
 

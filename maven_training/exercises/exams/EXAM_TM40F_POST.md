@@ -25,14 +25,14 @@ This assessment confirms proficiency upon completion of TM-40F training. A score
 **1. You are configuring a CCIR in MSS for a battalion readiness threshold. After configuring the alert, it does not fire when you input a test value that should exceed the threshold. The most likely cause is:**
 
 A. The CCIR feature is not supported in the current MSS version
-B. The threshold was entered correctly but the data source feed selected for the CCIR is the wrong dataset
+B. The test value must be submitted through the official LOGSTAT process to trigger the alert
 C. The CCIR needs 24 hours to activate after configuration
-D. The test value must be submitted through the official LOGSTAT process to trigger the alert
+D. The threshold was entered correctly but the data source feed selected for the CCIR is the wrong dataset
 
 **2. When building a Battle Update Assessment (BUA) product in MSS Workshop, which of the following formatting requirements is mandatory?**
 
-A. Use only charts — no text or tables
-B. Include a data-as-of timestamp on every data element displayed
+A. Include a data-as-of timestamp on every data element displayed
+B. Use only charts — no text or tables
 C. Route the product through the S6 for classification review before displaying to the commander
 D. Limit the product to a single page regardless of content
 
@@ -52,8 +52,8 @@ D. Brief the commander that readiness is unknown until the next LOGSTAT cycle
 
 **5. Which of the following describes a correctly structured CCIR for MSS configuration?**
 
-A. "Monitor readiness" — flagged as a standing requirement
-B. "Equipment readiness for 2nd Battalion below 65%, data source: BCT Readiness feed, notify: Battle Captain, S3 via MSS alert"
+A. "Equipment readiness for 2nd Battalion below 65%, data source: BCT Readiness feed, notify: Battle Captain, S3 via MSS alert"
+B. "Monitor readiness" — flagged as a standing requirement
 C. "Review all battalion reports daily at 0700 and compare to last week"
 D. "Alert S2 if any intelligence event occurs anywhere in the AOR"
 
@@ -67,15 +67,15 @@ D. No sharing is needed — the commander should access MSS directly
 **7. The MSS COP shows 3rd Battalion positions have not updated in 8 hours. This is most accurately characterized as:**
 
 A. 3rd Battalion has moved outside MSS coverage and is now off the grid
-B. A data reporting gap — MSS is showing the last reported position, which may no longer reflect actual location
+B. Normal behavior — COP updates are expected once every 8–12 hours
 C. A network failure requiring immediate theater notification
-D. Normal behavior — COP updates are expected once every 8–12 hours
+D. A data reporting gap — MSS is showing the last reported position, which may no longer reflect actual location
 
 **8. In degraded operations when MSS connectivity is unavailable, Mission Command staff should:**
 
 A. Suspend all decision-making until connectivity is restored
-B. Continue to use MSS with reduced functionality by accessing it through personal devices on civilian networks
-C. Execute manual information management procedures, maintain awareness of what MSS data is now stale, and restore connectivity per the S6 continuity plan
+B. Execute manual information management procedures, maintain awareness of what MSS data is now stale, and restore connectivity per the S6 continuity plan
+C. Continue to use MSS with reduced functionality by accessing it through personal devices on civilian networks
 D. Transfer all CCIR monitoring responsibilities to higher echelon until connectivity is restored
 
 **9. FM 6-0 defines information management (IM) as comprising six tasks. Table 1-3 in TM-40F maps each IM task to its MSS data platform implementation. Which of the following correctly lists all six FM 6-0 IM tasks?**
@@ -146,16 +146,14 @@ _______________________________________________
 ## ANSWER KEY (Instructor Use Only — Do Not Distribute)
 
 **Section 1:**
-1. B — wrong data source is the most common CCIR configuration failure
-2. B — data-as-of timestamps on every element are mandatory
+1. D — wrong data source is the most common CCIR configuration failure
+2. A — data-as-of timestamps on every element are mandatory
 3. C — validate before briefing; never brief an unvalidated CCIR trigger
 4. B — identify pipeline issue, escalate to S6, caveat displayed value
-5. B — complete CCIR: threshold + data source + notification path
+5. A — complete CCIR: threshold + data source + notification path
 6. C — Viewer only for commander products
-7. B — data reporting gap, not a network failure
-8. C — manual procedures + awareness of stale data + restore per S6 plan
-9. B — FM 6-0, para 4-1 defines IM as comprising six tasks: Collect, Process, Store, Display, Disseminate, and Protect (Table 1-3). Option A uses non-doctrinal terms. Options C and D use technical or alternative terminology not aligned to FM 6-0.
-10. C — Table 1-4 crosswalks FM 6-0 information relevance criteria to VAULTIS-A dimensions. "Timely" (available in time to support the decision) maps directly to the VAULTIS-A "Timeliness" dimension. Accurate maps to Accuracy, Useable maps to Usability, and Complete maps to Completeness.
+7. D — data reporting gap, not a network failure
+8. B — manual procedures + awareness of stale data + restore per S6 plan
 
 **Section 2 — Expected elements:**
 11. Should include: verify the geographic boundary configuration, check whether the event filter is using correct coordinate fields, check whether the sensitivity area polygon was entered correctly, test with a known-negative event location.

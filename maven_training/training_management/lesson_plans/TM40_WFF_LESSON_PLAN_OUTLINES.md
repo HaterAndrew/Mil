@@ -441,7 +441,7 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 **Hours:** 1.5 | **Method:** Brief/Prep | **Day:** 3 | **Time:** 1030–1200
 
 **Key Delivery Notes:**
-- Issue scenario brief. Review Go/No-Go criteria: Pass 4 of 5 tasks. Auto No-Go: target marked confirmed with single source; stale BDA briefed as current; any product missing classification marking.
+- Issue scenario brief. Review Go/No-Go criteria: Pass 5 of 6 tasks. Auto No-Go: target marked confirmed with single source; stale BDA briefed as current; any product missing classification marking.
 
 ---
 
@@ -459,8 +459,9 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 | 3 | Build targeting product: confirmed/suspected distinction, source attribution, BDA status, timestamps |
 | 4 | Build BDA dashboard: multi-element BDA with source attribution and currency indicators |
 | 5 | Respond to BDA feed failure inject: update products, caveat affected elements, brief evaluator |
+| 6 | Apply OPSEC procedures: classification marking on all products; configure distribution controls before simulated release |
 
-**Go standard:** Pass 4 of 5. Auto No-Go: confirmed target with single source; stale BDA briefed as current; product missing classification marking.
+**Go standard:** Pass 5 of 6. Auto No-Go: confirmed target with single source; stale BDA briefed as current; product missing classification marking.
 
 ---
 
@@ -609,7 +610,7 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 **Hours:** 1.5 | **Method:** Brief/Prep | **Day:** 3 | **Time:** 1030–1200
 
 **Key Delivery Notes:**
-- Issue scenario brief. Go/No-Go: Pass 4 of 5 tasks. Auto No-Go: unit position reporting gap briefed as confirmed position; any product missing classification marking.
+- Issue scenario brief. Go/No-Go: Pass 5 of 6 tasks. Auto No-Go: unit position reporting gap briefed as confirmed position; any product missing classification marking.
 
 ---
 
@@ -627,8 +628,9 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 | 3 | Build COA overlay and task organization visualization; format for commander presentation |
 | 4 | Build MDMP decision support product for a 2-COA wargame |
 | 5 | Respond to reporting gap inject: update COP, caveat product, brief evaluator correctly |
+| 6 | Apply OPSEC procedures: classification marking on all products; configure distribution controls before simulated release |
 
-**Go standard:** Pass 4 of 5. Auto No-Go: reporting gap briefed as confirmed position; product missing classification marking.
+**Go standard:** Pass 5 of 6. Auto No-Go: reporting gap briefed as confirmed position; product missing classification marking.
 
 ---
 
@@ -793,8 +795,9 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 | 3 | Build supply chain status product and readiness dashboard for sustainment sync |
 | 4 | Respond to LOGSTAT gap inject: estimate readiness, update dashboard, brief evaluator |
 | 5 | Apply OPSEC procedures to all sustainment products |
+| 6 | Configure distribution controls: restrict edit access to S4 section; verify read-only for sync attendees before simulated release |
 
-**Go standard:** Pass 4 of 5. Auto No-Go: stale LOGSTAT briefed as current; product missing classification marking.
+**Go standard:** Pass 5 of 6. Auto No-Go: stale LOGSTAT briefed as current; product missing classification marking.
 
 ---
 
@@ -964,8 +967,9 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 | 3 | Build CBRN overlay and PERSTAT dashboard with timestamps |
 | 4 | Build integrated protection picture for O-5 audience |
 | 5 | Respond to CBRN sensor offline inject: update COP, caveat coverage gap, brief evaluator |
+| 6 | Apply OPSEC procedures: classification marking on all products; configure distribution controls; verbalize export restriction for combined threat/PERSTAT/vulnerability data |
 
-**Go standard:** Pass 4 of 5. Auto No-Go: offline sensor area briefed as clear; product missing classification marking.
+**Go standard:** Pass 5 of 6. Auto No-Go: offline sensor area briefed as clear; product missing classification marking.
 
 ---
 
@@ -1117,7 +1121,7 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 **Hours:** 1.5 | **Method:** Brief/Prep | **Day:** 3 | **Time:** 1030–1200
 
 **Key Delivery Notes:**
-- Issue scenario brief. Go/No-Go: Pass 4 of 5 tasks. Auto No-Go: stale data briefed as current; CCIR product without classification marking; BUA product not formatted for CDR audience.
+- Issue scenario brief. Go/No-Go: Pass 5 of 6 tasks. Auto No-Go: stale data briefed as current; CCIR product without classification marking; BUA product not formatted for CDR audience.
 
 ---
 
@@ -1135,8 +1139,9 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 | 3 | Build battle rhythm dashboard and BUA read-ahead product |
 | 4 | Build battle tracking product and SITREP; distinguish reported from assessed |
 | 5 | Respond to readiness feed failure inject: update COP and products, caveat, brief evaluator |
+| 6 | Apply OPSEC procedures: classification marking on all products; configure distribution controls for commander audience before simulated release |
 
-**Go standard:** Pass 4 of 5. Auto No-Go: stale data briefed as current to CDR; product missing classification marking.
+**Go standard:** Pass 5 of 6. Auto No-Go: stale data briefed as current to CDR; product missing classification marking.
 
 ---
 

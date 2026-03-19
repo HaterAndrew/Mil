@@ -8,7 +8,7 @@
 | **Level** | TM-40K (Specialist) |
 | **Audience** | KMOs / 37F / knowledge officers; prerequisite: TM-10 + TM-20 + TM-30 (REQUIRED) |
 | **Time Allowed** | 45 minutes |
-| **Passing Score** | 70% (49/70) |
+| **Passing Score** | 70% (46/66) |
 
 ---
 
@@ -32,22 +32,22 @@ D. File, Tag, Category, Review, Publish
 **2. In a Workshop AAR submission form, "required-field validation" means:**
 
 A. The form requires a digital signature before submission
-B. The system prevents submission if mandatory fields (unit, date, category, observer) are empty, and displays a clear error message identifying the missing fields
-C. Required fields are highlighted in a different color as a reminder
+B. Required fields are highlighted in a different color as a reminder
+C. The system prevents submission if mandatory fields (unit, date, category, observer) are empty, and displays a clear error message identifying the missing fields
 D. The form is routed to the KM officer for completion if any fields are blank
 
 **3. A lessons-learned intake pipeline must route incoming lessons based on unit, classification level, and echelon. This is called:**
 
-A. Tagging
+A. Distribution routing logic
 B. Archiving
-C. Distribution routing logic
+C. Tagging
 D. Knowledge validation
 
 **4. Per TM-40K, an AIP Logic summarization workflow that processes AAR text MUST include:**
 
 A. A minimum of three AI inference steps to validate consistency
-B. A mandatory human review gate — the output remains in Draft status until a KM officer reviews and approves it
-C. Automatic publishing after a 24-hour review window if no feedback is received
+B. Automatic publishing after a 24-hour review window if no feedback is received
+C. A mandatory human review gate — the output remains in Draft status until a KM officer reviews and approves it
 D. A classification downgrade step before the AIP workflow processes the text
 
 **5. The human review gate for AIP-generated knowledge summaries is:**
@@ -60,23 +60,23 @@ D. Required only for documents that will be distributed outside the brigade
 **6. An AIP prompt that is producing inconsistent entity extractions (unit names formatted differently across outputs) should be improved by:**
 
 A. Switching to a different LLM model
-B. Adding explicit output format instructions and few-shot examples to the prompt, then testing against a sample set and iterating
+B. Increasing the LLM temperature setting to produce more varied outputs
 C. Post-processing the outputs with a normalization script
-D. Increasing the LLM temperature setting to produce more varied outputs
+D. Adding explicit output format instructions and few-shot examples to the prompt, then testing against a sample set and iterating
 
 **7. A knowledge browser application must support which of the following capabilities per TM-40K?**
 
 A. Full-text keyword search, filter by tag/unit/date, and drill-down to lesson detail page
 B. Browsing by document type only, with a single export-all function
-C. Real-time search against the live ADRP database
+C. Real-time search against the live ATP database
 D. Automatic translation of lessons from partner nation languages
 
 **8. A PCS knowledge transfer package that consists only of a generic "key things to know" document without project-specific details is considered:**
 
 A. Acceptable as a starting point for the incoming Soldier
-B. Non-compliant with TM-40K Chapter 9 — it fails the specificity requirement
+B. Compliant if reviewed and approved by the KM officer
 C. Acceptable if accompanied by a handoff brief
-D. Compliant if reviewed and approved by the KM officer
+D. Non-compliant with TM-40K Chapter 9 — it fails the specificity requirement
 
 **9. Privacy Act requirements for ExpertiseProfile objects in MSS apply because:**
 
@@ -94,24 +94,24 @@ D. Identified → Validated → Distributed → Closed
 
 **11. A new AAR submission comes in with the category field tagged as "LOGISTICS" but the content clearly relates to communications. Per TM-40K, the KM officer should:**
 
-A. Reject the AAR and require the submitter to resubmit with the correct category
-B. Correct the category during the review step before approving and publishing
+A. Correct the category during the review step before approving and publishing
+B. Reject the AAR and require the submitter to resubmit with the correct category
 C. Publish the AAR as submitted — content review is not within the KM officer's scope
 D. Archive the AAR until the submitter confirms the correct category
 
 **12. A lessons-learned intake pipeline that automatically assigns tags based on keyword matching would be classified as:**
 
-A. A fully automated publish workflow requiring no human review
-B. An AI-assisted pre-tagging step — tags are suggested automatically but must be reviewed and confirmed by the KM officer before the lesson is published
+A. An AI-assisted pre-tagging step — tags are suggested automatically but must be reviewed and confirmed by the KM officer before the lesson is published
+B. A fully automated publish workflow requiring no human review
 C. A validated tagging approach that eliminates the need for human categorization review
 D. A prohibited use of AI for knowledge management per TM-40K
 
 **13. Your brigade's knowledge browser displays lessons from 2019 prominently because they have the most views. Current personnel cannot easily find recent lessons. The MOST appropriate fix is:**
 
 A. Delete all lessons older than 3 years
-B. Add a date filter and configure the default sort order to show most recent lessons first
+B. Create separate knowledge browser pages for each year
 C. Archive all lessons older than 2 years
-D. Create separate knowledge browser pages for each year
+D. Add a date filter and configure the default sort order to show most recent lessons first
 
 **14. Per TM-40K Section 8-1, which of the following is required before aggregating individual Soldiers' ExpertiseProfiles into a searchable directory?**
 
@@ -123,8 +123,8 @@ D. Individual Soldier written consent for each ExpertiseProfile record
 **15. The distribution routing logic in a lessons-learned pipeline must, at minimum, route lessons based on:**
 
 A. Document file size and creation timestamp
-B. Unit designation, classification level, and echelon — ensuring SECRET lessons do not route to unclassified systems and that lessons reach the relevant audience
-C. The KM officer's manually selected routing destination
+B. The KM officer's manually selected routing destination
+C. Unit designation, classification level, and echelon — ensuring SECRET lessons do not route to unclassified systems and that lessons reach the relevant audience
 D. The submitter's echelon only — lessons are shared within the same echelon by default
 
 **16. Per FM 6-0, the KM process consists of five steps in sequence. The step during which a KM officer designs the MSS workspace structure, Object Type schema, and information flow is:**
@@ -227,22 +227,20 @@ Passing: 49/70 (70%) — Post-test only. Pre-test is diagnostic.
 
 **Multiple Choice:**
 1. B — Document, Lesson, AAR, SOP, ExpertiseProfile are the five TM-40K required Object Types.
-2. B — Required-field validation prevents submission with empty mandatory fields and displays an error.
-3. C — Distribution routing logic routes lessons by unit, classification, and echelon.
-4. B — AIP output stays Draft until KM officer reviews and approves — mandatory gate.
+2. C — Required-field validation prevents submission with empty mandatory fields and displays an error.
+3. A — Distribution routing logic routes lessons by unit, classification, and echelon.
+4. C — AIP output stays Draft until KM officer reviews and approves — mandatory gate.
 5. C — NON-NEGOTIABLE — all AIP-generated content requires human approval before publishing.
-6. B — Prompt revision with explicit format instructions and few-shot examples, then test-score-iterate.
+6. D — Prompt revision with explicit format instructions and few-shot examples, then test-score-iterate.
 7. A — Knowledge browser requires keyword search, tag/unit/date filter, and drill-down to lesson detail.
-8. B — Generic documents without project-specific details fail TM-40K Chapter 9 specificity requirement.
+8. D — Generic documents without project-specific details fail TM-40K Chapter 9 specificity requirement.
 9. B — ExpertiseProfiles contain PII about individual Soldiers requiring Privacy Act handling.
 10. B — Draft → KM Review → Published (with optional Archived) is the correct status workflow.
-11. B — KM officer corrects category during review before approving and publishing.
-12. B — AI-suggested tags are a pre-tagging aid — KM officer must confirm before publishing.
-13. B — Date filter and recency-first default sort is the correct knowledge browser fix.
+11. A — KM officer corrects category during review before approving and publishing.
+12. A — AI-suggested tags are a pre-tagging aid — KM officer must confirm before publishing.
+13. D — Date filter and recency-first default sort is the correct knowledge browser fix.
 14. B — Privacy Act review before aggregating individual Soldier profiles is required per TM-40K Section 8-1.
-15. B — Routing must address unit designation, classification level, and echelon at minimum.
-16. B — FM 6-0 defines five KM steps: Assess, Design, Develop, Pilot, Implement. "Design" is the step where workspace structure, schemas, and information flows are created. Option A (Assess) identifies gaps but does not create architecture. Option C (Develop) builds and populates products designed in Step 2. Option D (Implement) deploys what was already designed. Source: FM 6-0 / TM-40K Section 1-5b.
-17. B — FM 3-57 CKI validates data integration as a doctrinal mission — integrating civil and military data into a unified operational picture is explicitly a military function, not a technical convenience. Option A conflates integration authority with collection authority. Option C invents a classification requirement not in FM 3-57. Option D misassigns sole stewardship — CKI is a shared responsibility. Source: FM 3-57 / TM-40K Section 1-5b.
+15. C — Routing must address unit designation, classification level, and echelon at minimum.
 
 **Short Answer Guidance:**
 

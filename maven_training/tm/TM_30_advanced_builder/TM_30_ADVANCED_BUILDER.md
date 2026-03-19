@@ -304,7 +304,20 @@ If a requirement is not in this table, apply the following rule: if it requires 
 
 ## 1-7. Advancement from TM-30 — Next Steps
 
-TM-30 qualification enables advancement to the specialist tracks (TM-40G–M). All six specialist tracks require TM-30 as a hard prerequisite — TM-20 alone is not sufficient.
+TM-30 qualification enables advancement to all TM-40 tracks — both the six WFF functional tracks (TM-40A–F) and the eight specialist tracks (TM-40G–O). All TM-40 tracks require TM-30 as a hard prerequisite — TM-20 alone is not sufficient.
+
+**WFF Functional Tracks (TM-40A through TM-40F):**
+
+| Track | Title | Audience |
+|---|---|---|
+| TM-40A | Intelligence | S2/G2 staff; intelligence analysts using MSS for WFF products |
+| TM-40B | Fires | Fires staff; targeting analysts using MSS for fires products |
+| TM-40C | Movement & Maneuver | M&M staff; using MSS for movement and maneuver products |
+| TM-40D | Sustainment | Sustainment staff; using MSS for logistics and sustainment products |
+| TM-40E | Protection | Protection staff; using MSS for protection products |
+| TM-40F | Mission Command | MC staff; using MSS for mission command products |
+
+**Specialist Tracks (TM-40G through TM-40O):**
 
 | Track | Title | Specialty |
 |---|---|---|
@@ -314,8 +327,10 @@ TM-30 qualification enables advancement to the specialist tracks (TM-40G–M). A
 | TM-40J | Program Manager | Data product program management, delivery coordination, stakeholder engagement |
 | TM-40K | Knowledge Manager | Organizational knowledge architecture, data product documentation, taxonomy management |
 | TM-40L | Software Engineer | Python/PySpark transforms, TypeScript, OSDK integration, source connector configuration |
+| TM-40N | UI/UX Designer | User interface design, user experience research, MSS application usability |
+| TM-40O | Platform Engineer | Platform infrastructure, deployment pipelines, environment configuration |
 
-Each TM-40G–M track has a corresponding advanced track:
+Each TM-40G–O track has a corresponding advanced track:
 
 | Advanced Track | Title | Prerequisite |
 |---|---|---|
@@ -325,8 +340,14 @@ Each TM-40G–M track has a corresponding advanced track:
 | TM-50J | Advanced Program Manager | TM-40J (required) |
 | TM-50K | Advanced Knowledge Manager | TM-40K (required) |
 | TM-50L | Advanced Software Engineer | TM-40L (required) |
+| TM-50N | Advanced UI/UX Designer | TM-40N (required) |
+| TM-50O | Advanced Platform Engineer | TM-40O (required) |
 
-NOTE: TM-50 is G–M only (advanced specialist tracks). WFF tracks (TM-40A–F) do not have a TM-50 continuation.
+**Train-the-Trainer Track — available after TM-30:**
+
+T3-I (Instructor Certification) is a 5-day instructor pipeline course. Prereq: TM-30 Go + C2DAO Training OIC selection. Certifies personnel to deliver TM-20, TM-30, and TM-40 courses as primary instructor.
+
+NOTE: There are no TM-50A through TM-50F tracks. Advanced-level training exists only for specialist tracks (G–O). WFF tracks (TM-40A–F) do not have a TM-50 continuation.
 
 NOTE: Select the specialist track that aligns to your assigned duties and billet. If uncertain, consult the USAREUR-AF C2DAO training coordinator. Personnel are expected to complete one specialist track; concurrent enrollment in multiple TM-40 specialist tracks requires C2DAO approval.
 
@@ -2348,7 +2369,7 @@ NOTE: Before initiating a TM-40 handoff, confirm the requirement genuinely excee
 
 # APPENDIX B — DESIGN PATTERNS REFERENCE
 
-NOTE: This is the TM-30 checklist for advanced multi-page, cross-functional applications. If your application is single-page and purpose-specific, use the TM-20 checklist (TM-20, Appendix C, Workshop Application Pre-Publish Checklist) instead. Before publishing any application, test it against operator workflows in TM-10, Chapter 4 (Using Workshop Applications). An application that a trained operator cannot navigate using TM-10 procedures is not ready for publication.
+NOTE: This is the TM-30 checklist for advanced multi-page, cross-functional applications. If your application is single-page and purpose-specific, use the TM-20 checklist (TM-20, Appendix A, Section A-4, Workshop Application Checklist) instead. Before publishing any application, test it against operator workflows in TM-10, Chapter 4 (Using Workshop Applications). An application that a trained operator cannot navigate using TM-10 procedures is not ready for publication.
 
 ## B-1. Commander's Dashboard
 

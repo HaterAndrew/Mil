@@ -1,6 +1,6 @@
 <!-- MAVEN TRAINING CORPUS — CDA REFERENCE MATERIAL
      Source: odt_workspace/schemas/ontology/doctrine-element-foundry-mapping.md
-     Supports: TM-40H (AI Engineer), TM-40M (ML Engineer), TM-40L (Software Engineer), TM-50H/M/L (Advanced)
+     Supports: TM-40H (AI Engineer), TM-40M (ML Engineer), TM-40L (Software Engineer), TM-50H/I/L (Advanced)
      Type: Quick Reference — DoctrineElement → Foundry Mapping
 -->
 

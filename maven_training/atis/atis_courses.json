@@ -1801,7 +1801,7 @@
     }
   ],
   "prerequisite_chain": {
-    "description": "TM-10 → TM-20 → TM-30 → ALL TM-40 (A-M) → TM-50 (G-M only); T3-I branches from TM-30; T3-F branches from TM-20",
+    "description": "TM-10 → TM-20 → TM-30 → ALL TM-40 (A-O) → TM-50 (G-O only)",
     "tree": {
       "TM-10": {
         "TM-20": {

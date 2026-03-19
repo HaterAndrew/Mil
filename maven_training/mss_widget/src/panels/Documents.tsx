@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from 'react'
 import { URLS } from '../constants/urls'
 
 // PDFs not yet in the URLS constants — constructed from the same media set base
@@ -31,6 +32,40 @@ interface Props {
 }
 
 export default function Documents({ showPanel }: Props) {
+  const [search, setSearch] = useState('')
+  const contentRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const root = contentRef.current
+    if (!root) return
+    const q = search.toLowerCase().trim()
+
+    // Filter doc-card links and track-card links
+    root.querySelectorAll<HTMLElement>('.doc-card').forEach(card => {
+      const text = card.textContent?.toLowerCase() ?? ''
+      card.style.display = q && !text.includes(q) ? 'none' : ''
+    })
+
+    // Filter table rows (doctrinal refs, reading lists)
+    root.querySelectorAll<HTMLElement>('tbody tr').forEach(row => {
+      const text = row.textContent?.toLowerCase() ?? ''
+      row.style.display = q && !text.includes(q) ? 'none' : ''
+    })
+
+    // Auto-open details sections that have visible matches; collapse empty ones
+    root.querySelectorAll<HTMLDetailsElement>('details').forEach(det => {
+      if (!q) { det.removeAttribute('data-search-opened'); return }
+      const hasVisible = det.querySelector('.doc-card:not([style*="display: none"]), tbody tr:not([style*="display: none"])') !== null
+      if (hasVisible && !det.open) {
+        det.open = true
+        det.setAttribute('data-search-opened', '1')
+      } else if (!hasVisible && det.getAttribute('data-search-opened') === '1') {
+        det.open = false
+        det.removeAttribute('data-search-opened')
+      }
+    })
+  }, [search])
+
   return (
     <>
       <div className="section-header">
@@ -38,6 +73,24 @@ export default function Documents({ showPanel }: Props) {
         <div className="section-title">All Training Publications</div>
         <div className="section-subtitle">Click any publication to open the PDF</div>
       </div>
+
+      <div style={{position:'sticky',top:0,zIndex:100,background:'var(--navy)',padding:'12px 20px',display:'flex',alignItems:'center',gap:12,boxShadow:'0 2px 8px rgba(0,0,0,.25)',borderRadius:4,marginBottom:16}}>
+        <label htmlFor="doc-search" style={{fontFamily:'Arial,Helvetica,sans-serif',fontSize:11,fontWeight:700,color:'#C8971A',letterSpacing:2,textTransform:'uppercase',whiteSpace:'nowrap'}}>Search:</label>
+        <input
+          id="doc-search"
+          type="text"
+          placeholder="Filter publications by title, track, or keyword..."
+          autoComplete="off"
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          style={{flex:1,padding:'8px 12px',background:'#163A6C',border:'1px solid #1E4A88',borderRadius:3,color:'#fff',fontFamily:"'Courier New',Courier,monospace",fontSize:14,outline:'none'}}
+        />
+        {search && (
+          <button onClick={() => setSearch('')} style={{background:'none',border:'none',color:'#7A88A8',cursor:'pointer',fontSize:16,padding:'4px 8px'}} title="Clear search">&times;</button>
+        )}
+      </div>
+
+      <div ref={contentRef}>
 
       <h2>Reference Documents</h2>
       <div className="card-grid card-grid-2">
@@ -129,7 +182,7 @@ export default function Documents({ showPanel }: Props) {
       </details>
 
       <details>
-        <summary style={{fontSize:14,fontWeight:700,letterSpacing:'.08em',textTransform:'uppercase',color:'var(--navy)',cursor:'pointer',padding:'8px 0',borderBottom:'1px solid var(--gray-200)',marginBottom:12}}>TM-40 Technical Specialist Tracks (6 &mdash; click to expand)</summary>
+        <summary style={{fontSize:14,fontWeight:700,letterSpacing:'.08em',textTransform:'uppercase',color:'var(--navy)',cursor:'pointer',padding:'8px 0',borderBottom:'1px solid var(--gray-200)',marginBottom:12}}>TM-40 Technical Specialist Tracks (8 &mdash; click to expand)</summary>
         <div className="track-grid" style={{marginTop:12}}>
           <a className="track-card doc-card" href={URLS.TM40G} target="_blank" rel="noreferrer">
             <div className="track-card-hdr"><div className="track-tm">TM-40G &mdash; ORSA</div><div className="track-chip">Specialist</div></div>
@@ -155,11 +208,19 @@ export default function Documents({ showPanel }: Props) {
             <div className="track-card-hdr"><div className="track-tm">TM-40L &mdash; Software Engineer</div><div className="track-chip">Specialist</div></div>
             <div className="track-body"><div className="track-name">Software Engineering</div><div className="track-audience">SWEs — Python/TypeScript, OSDK, code transforms</div><ul className="track-topics"><li>OSDK &amp; Platform SDK</li><li>Functions on Objects, Actions</li><li>CI/CD, security, Slate</li></ul></div>
           </a>
+          <a className="track-card doc-card" href={URLS.TM40N} target="_blank" rel="noreferrer">
+            <div className="track-card-hdr"><div className="track-tm">TM-40N &mdash; UI/UX Designer</div><div className="track-chip">Specialist</div></div>
+            <div className="track-body"><div className="track-name">UI/UX Design</div><div className="track-audience">Designers — Soldier Centered Design, Workshop UI, accessibility</div><ul className="track-topics"><li>User research, contextual inquiry</li><li>Information architecture, prototyping</li><li>Section 508, WCAG 2.1 AA</li></ul></div>
+          </a>
+          <a className="track-card doc-card" href={URLS.TM40O} target="_blank" rel="noreferrer">
+            <div className="track-card-hdr"><div className="track-tm">TM-40O &mdash; Platform Engineer</div><div className="track-chip">Specialist</div></div>
+            <div className="track-body"><div className="track-name">Platform Engineering</div><div className="track-audience">Platform engineers — Kubernetes, CI/CD, DevSecOps, IaC</div><ul className="track-topics"><li>K8s cluster operations</li><li>GitOps, container security</li><li>DDIL deployment, RMF/ATO</li></ul></div>
+          </a>
         </div>
       </details>
 
       <details>
-        <summary style={{fontSize:14,fontWeight:700,letterSpacing:'.08em',textTransform:'uppercase',color:'var(--navy)',cursor:'pointer',padding:'8px 0',borderBottom:'1px solid var(--gray-200)',marginBottom:12}}>TM-50 Advanced Technical Tracks (6 &mdash; click to expand)</summary>
+        <summary style={{fontSize:14,fontWeight:700,letterSpacing:'.08em',textTransform:'uppercase',color:'var(--navy)',cursor:'pointer',padding:'8px 0',borderBottom:'1px solid var(--gray-200)',marginBottom:12}}>TM-50 Advanced Technical Tracks (8 &mdash; click to expand)</summary>
         <div className="track-grid" style={{marginTop:12}}>
           <a className="track-card doc-card" href={URLS.TM50G} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50G &mdash; ORSA Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced ORSA</div><div className="track-audience">Nonlinear programming, stochastic models, ABMS, campaign assessment</div></div></a>
           <a className="track-card doc-card" href={URLS.TM50H} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50H &mdash; AI Engineer Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced AI Engineering</div><div className="track-audience">Multi-agent orchestration, RAG, red-team assessment, AI observability</div></div></a>
@@ -167,6 +228,8 @@ export default function Documents({ showPanel }: Props) {
           <a className="track-card doc-card" href={URLS.TM50J} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50J &mdash; PM Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced Program Management</div><div className="track-audience">PI planning, cross-team governance, GO/SES briefing, Palantir partnership</div></div></a>
           <a className="track-card doc-card" href={URLS.TM50K} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50K &mdash; KM Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced Knowledge Management</div><div className="track-audience">Federated KM architecture, NATO integration, STANAG 4778, knowledge graphs</div></div></a>
           <a className="track-card doc-card" href={URLS.TM50L} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50L &mdash; SWE Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced Software Engineering</div><div className="track-audience">Scale, multi-tenancy, Kafka, OWASP, SAST, architecture review, platform governance</div></div></a>
+          <a className="track-card doc-card" href={URLS.TM50N} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50N &mdash; UI/UX Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced UI/UX Design</div><div className="track-audience">Design systems, DDIL-aware UI, DesignOps, enterprise accessibility</div></div></a>
+          <a className="track-card doc-card" href={URLS.TM50O} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50O &mdash; Platform Eng Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced Platform Engineering</div><div className="track-audience">Fleet management, SRE, RMF/ATO automation, cross-domain infrastructure</div></div></a>
         </div>
       </details>
 
@@ -438,7 +501,7 @@ export default function Documents({ showPanel }: Props) {
             <tr><td style={{padding:'5px 8px'}}>JCOIE</td><td style={{padding:'5px 8px'}}>Joint Staff J-7</td><td style={{padding:'5px 8px'}}>Current</td><td style={{padding:'5px 8px'}}>TM-40F</td></tr>
             <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Army Data Plan</td><td style={{padding:'5px 8px'}}>Army CIO</td><td style={{padding:'5px 8px'}}>Oct 2022</td><td style={{padding:'5px 8px'}}>All</td></tr>
             <tr><td style={{padding:'5px 8px'}}>Army Cloud Plan</td><td style={{padding:'5px 8px'}}>Army CIO</td><td style={{padding:'5px 8px'}}>Oct 2022</td><td style={{padding:'5px 8px'}}>TM-10, TM-20, TM-30</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>UDRA v1.1</td><td style={{padding:'5px 8px'}}>DASA(DES)</td><td style={{padding:'5px 8px'}}>Feb 2025</td><td style={{padding:'5px 8px'}}>TM-30, Specialist (G–M)</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>UDRA v1.1</td><td style={{padding:'5px 8px'}}>DASA(DES)</td><td style={{padding:'5px 8px'}}>Feb 2025</td><td style={{padding:'5px 8px'}}>TM-30, Specialist (G–O)</td></tr>
             <tr><td style={{padding:'5px 8px'}}>Army CIO Data Stewardship Memo</td><td style={{padding:'5px 8px'}}>Army CIO</td><td style={{padding:'5px 8px'}}>Apr 2024</td><td style={{padding:'5px 8px'}}>TM-10, TM-20, TM-30, TM-40K</td></tr>
           </tbody>
         </table>
@@ -643,6 +706,8 @@ export default function Documents({ showPanel }: Props) {
           For task-level procedures, use the <button className="qr-link" onClick={() => showPanel('taskindex' as any)}>Task Index &rarr;</button>
         </div>
       </div>
+
+      </div>{/* /contentRef */}
     </>
   )
 }

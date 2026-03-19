@@ -1,4 +1,6 @@
 
+import { URLS } from '../constants/urls'
+
 interface Props {
   showPanel: (id: string) => void
 }
@@ -15,6 +17,11 @@ export default function BSP({ showPanel }: Props) {
       <div className="callout bluf">
         <div className="callout-label">BLUF</div>
         <div className="callout-body">The Builder Sprint is a quarterly 5-day supervised build event. You bring a validated operational problem; you build a solution; SMEs are available for consultation. Minimal instruction &mdash; this is not a course. You leave with a functional product and a handoff package. BSP does not replace TM-30 and does not grant credit toward TM-40 enrollment.</div>
+      </div>
+
+      <div className="callout info">
+        <div className="callout-label">PUBLICATION</div>
+        <div className="callout-body"><strong>BSP &mdash; Builder Sprint Participant Guide</strong> &mdash; Full reference document. &nbsp;<a href={URLS.BSP_GUIDE} target="_blank" rel="noopener noreferrer" style={{color:'var(--navy)',fontWeight:700,fontSize:'14px'}}>Open PDF &rarr;</a></div>
       </div>
 
       <div className="callout warning">
@@ -103,9 +110,10 @@ export default function BSP({ showPanel }: Props) {
       <div className="callout info">
         <div className="callout-label">DOCUMENTS</div>
         <div className="callout-body">
-          Participant Guide: <strong>builder_sprint/BSP_GUIDE.md</strong> &nbsp;&bull;&nbsp;
-          Coordinator Package: <strong>builder_sprint/SPRINT_PACKAGE.md</strong> &nbsp;&bull;&nbsp;
-          SOP: <strong>training_management/BUILDER_SPRINT_SOP.md</strong> &nbsp;&bull;&nbsp;
+          Participant Guide: <a href={URLS.BSP_GUIDE} target="_blank" rel="noopener noreferrer" style={{color:'var(--navy)',fontWeight:700}}>BSP_GUIDE.pdf</a> &nbsp;&bull;&nbsp;
+          Coordinator Package: <a href={URLS.BSP_SPRINT_PACKAGE} target="_blank" rel="noopener noreferrer" style={{color:'var(--navy)',fontWeight:700}}>BSP_SPRINT_PACKAGE.pdf</a> &nbsp;&bull;&nbsp;
+          SOP: <a href={URLS.BUILDER_SPRINT_SOP} target="_blank" rel="noopener noreferrer" style={{color:'var(--navy)',fontWeight:700}}>BUILDER_SPRINT_SOP.pdf</a> &nbsp;&bull;&nbsp;
+          Environment Setup: <a href={URLS.BSP_ENVIRONMENT_SETUP} target="_blank" rel="noopener noreferrer" style={{color:'var(--navy)',fontWeight:700}}>BSP_ENVIRONMENT_SETUP.pdf</a> &nbsp;&bull;&nbsp;
           Project Brief form: <strong>CAD Appendix D</strong>
         </div>
       </div>

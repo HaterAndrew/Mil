@@ -20,6 +20,7 @@ pages:
   script:
     - mkdir -p public
     - cp maven_training/mss_info_app/index.html public/index.html
+    - cp maven_training/mss_info_app/training_schedule.html public/training_schedule.html
   artifacts:
     paths:
       - public

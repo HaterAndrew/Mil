@@ -144,7 +144,7 @@ Object Types are nouns — real-world entities that commanders and staff think, 
 
 | Question | What It Prevents |
 |---|---|
-| Does this entity exist in Army doctrine (FM, ADP, ADRP, CATS)? | Prevents inventing entities that have no operational meaning |
+| Does this entity exist in Army doctrine (FM, ADP, ATP, CATS)? | Prevents inventing entities that have no operational meaning |
 | What does a commander or staff officer need to do with this entity? | Grounds the design in operational use, not data convenience |
 | Does an Object Type for this entity already exist in the MSS Ontology? | Prevents duplication — always check before creating |
 
@@ -549,7 +549,7 @@ This guide establishes the mental models applied throughout TM-30. TM-30 task in
 
 Proceed to TM-30, Chapter 1, when you can answer the six gating questions in Section 11 without referencing this guide.
 
-When TM-30 qualification is complete, select a TM-40 specialist track based on assigned duties and billet. All specialist tracks (TM-40G through TM-40M) require TM-30 as a hard prerequisite.
+When TM-30 qualification is complete, select a TM-40 specialist track based on assigned duties and billet. All specialist tracks (TM-40G through TM-40O) require TM-30 as a hard prerequisite.
 
 ---
 
@@ -570,7 +570,7 @@ When TM-30 qualification is complete, select a TM-40 specialist track based on a
 
 **Next steps after TM-30:**
 - WFF tracks (TM-40A–F): for Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command operators. Prereq is TM-30 (required).
-- Specialist tracks (TM-40G–M): ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, Software Engineer. Prereq is TM-30 (required).
+- Specialist tracks (TM-40G–O): ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, Software Engineer, UX Designer, Platform Engineer. Prereq is TM-30 (required).
 
 **Peer specialist cross-references:**
 - **TM-40H (AI Engineer):** TM-30 configures AIP Logic workflows that TM-40H authors. The boundary is clear: TM-30 adjusts parameters; TM-40H changes prompts, workflow logic, and Ontology write-back integrations.

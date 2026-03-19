@@ -71,7 +71,7 @@ TM-10 (all personnel)
               +-- T3-I (Instructor Certification — Phase 1)
 ```
 
-> **NOTE:** TM-30 is a HARD prerequisite for ALL TM-40 tracks (WFF A–F and specialist G–M). TM-50 is G–M only (advanced specialist). T3 tracks are outside the TM chain: T3-F requires TM-20 + CDR nomination; T3-I requires TM-30 + C2DAO selection.
+> **NOTE:** TM-30 is a HARD prerequisite for ALL TM-40 tracks (WFF A-F and specialist G-O). There are NO TM-50A-F tracks.
 
 ---
 
@@ -100,7 +100,7 @@ TM-10 (all personnel)
 | TM-50J | Advanced Program Manager | Advanced Specialist | 3 | 24 | TM-10, TM-20, TM-30, TM-40J | [TBD — assigned by ATIS upon registration] |
 | TM-50K | Advanced Knowledge Manager | Advanced Specialist | 3 | 24 | TM-10, TM-20, TM-30, TM-40K | [TBD — assigned by ATIS upon registration] |
 | TM-50L | Advanced Software Engineer | Advanced Specialist | 5 | 40 | TM-10, TM-20, TM-30, TM-40L | [TBD — assigned by ATIS upon registration] |
-| T3-F | MSC Force Multiplier | Train-the-Trainer | 3 | 24 | TM-10, TM-20 + CDR nomination | [TBD — assigned by ATIS upon registration] |
+| T3-F | MSC Force Multiplier | Train-the-Trainer | 0.5 | 4 | TM-10, TM-20 + CDR nomination | [TBD — assigned by ATIS upon registration] |
 | T3-I | Instructor Certification (Phase 1) | Train-the-Trainer | 5 | 40 | TM-10, TM-20, TM-30 + C2DAO selection | [TBD — assigned by ATIS upon registration] |
 
 ---

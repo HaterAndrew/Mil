@@ -91,4 +91,4 @@ After TM-30, branch based on role:
 - TM-40F — Mission Command (G3/S3 staff, battle captains, XOs, CDRs)
 
 **Specialist tracks — technical/analytical tracks (prereq: TM-30 required):**
-- TM-40G through TM-40M per specialist billet assignment
+- TM-40G through TM-40O per specialist billet assignment

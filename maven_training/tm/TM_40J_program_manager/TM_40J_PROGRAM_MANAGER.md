@@ -1,6 +1,6 @@
 # TM-40J — MAVEN SMART SYSTEM (MSS)
 
-> **BLUF:** TM-40J qualifies Technical Project Managers, Product Owners, and Team Leads to plan, execute, and govern data, AI, and software capability builds on the Maven Smart System (MSS). This track bridges technical execution (TM-40G through TM-40M developers) and operational requirements (commanders, staff, end users).
+> **BLUF:** TM-40J qualifies Technical Project Managers, Product Owners, and Team Leads to plan, execute, and govern data, AI, and software capability builds on the Maven Smart System (MSS). This track bridges technical execution (TM-40G through TM-40O developers) and operational requirements (commanders, staff, end users).
 > **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Data Literacy Technical Reference (required); CONCEPTS_GUIDE_TM40J_PROGRAM_MANAGER (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
@@ -14,7 +14,7 @@
 
 **BLUF:** TM-40J qualifies Technical Project Managers, Product Owners, and Team Leads to plan,
 execute, and govern data, AI, and software capability builds on the Maven Smart System (MSS).
-This track bridges technical execution (TM-40G through TM-40M developers) and operational
+This track bridges technical execution (TM-40G through TM-40O developers) and operational
 requirements (commanders, staff, end users).
 
 This manual provides task-level instruction for managing the full lifecycle of a data or AI
@@ -112,7 +112,7 @@ owner, or team lead for a data or AI capability build.
 Upon completion of TM-40J, the Technical PM can:
 
 1. Stand up an Agile project structure (backlog, sprint cadence, ceremonies) for a data/AI project
-2. Write user stories and acceptance criteria that TM-40G through TM-40M developers can execute
+2. Write user stories and acceptance criteria that TM-40G through TM-40O developers can execute
    without ambiguity
 3. Manage an ML/AI project from research brief through production release using the MSS lifecycle
    model
@@ -980,7 +980,7 @@ Project, and Team Member to Stories (as assignee).
    | size              | Enum     | S / M / L / XL                             |
    | status            | Enum     | Backlog / Ready / In Progress / In Review / Done |
    | assignee          | String   | TM-40 track + name                         |
-   | track             | Enum     | 40A / 40B / 40C / 40D / 40E / 40F / 40G / 40H / 40M / 40J / 40K / 40L / 30 |
+   | track             | Enum     | 40A / 40B / 40C / 40D / 40E / 40F / 40G / 40H / 40M / 40J / 40K / 40L / 40N / 40O / 30 |
    | blocked           | Boolean  | True if blocker exists                      |
    | blocker_description | String | Description of blocker (if blocked = true) |
    | sprint_link       | Link     | → Sprint                                    |

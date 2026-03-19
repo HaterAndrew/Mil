@@ -24,8 +24,8 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 
 **1. When displaying IED reporting data on the MSS COP, the protection officer's most important data quality check before a protection working group is:**
 
-A. Verify the symbology matches ADRP 1-02 standards
-B. Verify the data-as-of timestamp for the threat reporting feed — IED data that is 24–48 hours old may not reflect current threat conditions on routes or in the AOR
+A. Verify the data-as-of timestamp for the threat reporting feed — IED data that is 24–48 hours old may not reflect current threat conditions on routes or in the AOR
+B. Verify the symbology matches FM 1-02.1 standards
 C. Confirm that all reports have been validated by theater intelligence
 D. Ensure IED reports are displayed using red symbols only
 
@@ -39,21 +39,21 @@ D. Generate automated force protection orders
 **3. A vulnerability assessment is being conducted using MSS data. Which statement best describes the limitation of this data?**
 
 A. MSS vulnerability data is classified and cannot be accessed by force protection officers
-B. MSS can display reported threat data and unit locations; vulnerability assessment requires human judgment to evaluate those factors against protection capabilities and gaps — MSS does not generate vulnerability scores
-C. Vulnerability assessment data in MSS is real-time and eliminates the need for physical site surveys
+B. Vulnerability assessment data in MSS is real-time and eliminates the need for physical site surveys
+C. MSS can display reported threat data and unit locations; vulnerability assessment requires human judgment to evaluate those factors against protection capabilities and gaps — MSS does not generate vulnerability scores
 D. MSS vulnerability overlays are binding — assessed vulnerabilities must be reported to theater immediately
 
 **4. CBRN sensor data can be integrated into MSS to support protection operations. The key limitation a CBRN officer must understand is:**
 
 A. CBRN data requires a separate platform and cannot be displayed alongside maneuver data
-B. CBRN sensor data feeds may have latency, coverage gaps, and sensor reliability variability — displayed hazard boundaries should be treated as estimated, not definitive
+B. Once a CBRN hazard area is displayed in MSS, it cannot be modified until theater approves
 C. CBRN data in MSS is automatically updated by the theater chemical officer
-D. Once a CBRN hazard area is displayed in MSS, it cannot be modified until theater approves
+D. CBRN sensor data feeds may have latency, coverage gaps, and sensor reliability variability — displayed hazard boundaries should be treated as estimated, not definitive
 
 **5. A force protection CCIR configured in MSS to alert when threat reporting in a defined area exceeds a threshold fires unexpectedly. The protection officer should:**
 
-A. Immediately execute the force protection plan without investigation
-B. Verify the alert by checking the data source, reviewing the raw reports, and assessing whether the reports reflect a genuine threat pattern or are duplicates or reporting artifacts before escalating
+A. Verify the alert by checking the data source, reviewing the raw reports, and assessing whether the reports reflect a genuine threat pattern or are duplicates or reporting artifacts before escalating
+B. Immediately execute the force protection plan without investigation
 C. Dismiss the alert and reconfigure the threshold higher to reduce false positives
 D. Transfer the alert to the S2 — force protection CCIRs are an intelligence function
 
@@ -67,15 +67,15 @@ D. Classified personnel records that are not accessible below battalion level
 **7. Area security data displayed on the MSS COP is most useful for the protection working group when it:**
 
 A. Shows all terrain features in the AOR with no filter applied
-B. Displays threat reporting, patrol sectors, checkpoint locations, and friendly unit positions together — enabling the working group to assess security coverage and identify gaps
+B. Includes only incidents that have been confirmed by military police reporting channels
 C. Is limited to the past 24 hours of data to prevent information overload
-D. Includes only incidents that have been confirmed by military police reporting channels
+D. Displays threat reporting, patrol sectors, checkpoint locations, and friendly unit positions together — enabling the working group to assess security coverage and identify gaps
 
 **8. Which of the following describes a correct OPSEC consideration for protection data products in MSS?**
 
 A. Force protection data is administrative and does not require distribution controls
-B. Threat reporting locations, patrol patterns, checkpoint positions, and PERSTAT data — in combination — reveal security posture and potential gaps; this aggregate must be protected and distributed only to those with operational need to know
-C. OPSEC applies only to intelligence data, not force protection data
+B. OPSEC applies only to intelligence data, not force protection data
+C. Threat reporting locations, patrol patterns, checkpoint positions, and PERSTAT data — in combination — reveal security posture and potential gaps; this aggregate must be protected and distributed only to those with operational need to know
 D. PERSTAT data is unclassified and can be shared freely within the brigade
 
 ---
@@ -135,14 +135,14 @@ _______________________________________________
 
 **Multiple Choice:**
 
-1. B — Verify the data-as-of timestamp for the threat reporting feed; IED data 24–48 hours old may not reflect current threat conditions. Symbology and theater validation are secondary checks.
+1. A — Verify the data-as-of timestamp for the threat reporting feed; IED data 24–48 hours old may not reflect current threat conditions. Symbology and theater validation are secondary checks.
 2. B — Threat trending analysis identifies patterns in threat data over time to support protection planning; it does not predict specific events or replace IPB.
-3. B — MSS displays reported threat data and unit locations; vulnerability assessment requires human judgment against protection capabilities and gaps — MSS does not generate vulnerability scores.
-4. B — CBRN sensor data has latency, coverage gaps, and sensor reliability variability; displayed hazard boundaries should be treated as estimated, not definitive.
-5. B — Verify the alert by checking the data source, reviewing raw reports, and assessing whether the reports reflect a genuine pattern or are duplicates/artifacts before escalating; do not immediately execute, dismiss, or transfer.
+3. C — MSS displays reported threat data and unit locations; vulnerability assessment requires human judgment against protection capabilities and gaps — MSS does not generate vulnerability scores.
+4. D — CBRN sensor data has latency, coverage gaps, and sensor reliability variability; displayed hazard boundaries should be treated as estimated, not definitive.
+5. A — Verify the alert by checking the data source, reviewing raw reports, and assessing whether the reports reflect a genuine pattern or are duplicates/artifacts before escalating; do not immediately execute, dismiss, or transfer.
 6. B — PERSTAT provides reported personnel strength from the last submission — not real-time individual GPS tracking or accountability at the individual level.
-7. B — Area security data is most useful when it displays threat reporting, patrol sectors, checkpoint locations, and friendly positions together to enable gap assessment.
-8. B — Threat locations, patrol patterns, checkpoints, and PERSTAT data in combination reveal security posture and gaps; the aggregate must be protected and distributed only to those with operational need to know.
+7. D — Area security data is most useful when it displays threat reporting, patrol sectors, checkpoint locations, and friendly positions together to enable gap assessment.
+8. C — Threat locations, patrol patterns, checkpoints, and PERSTAT data in combination reveal security posture and gaps; the aggregate must be protected and distributed only to those with operational need to know.
 
 **Short Answer Guidance:**
 

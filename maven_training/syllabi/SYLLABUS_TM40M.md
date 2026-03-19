@@ -191,7 +191,7 @@ Graduates managing production ML systems or building platform infrastructure use
 |---|---|
 | Pre-course exam | EXAM_TM40M_PRE |
 | Post-course exam | EXAM_TM40M_POST |
-| Practical exercise | EX_40M (EXERCISE.md + ENVIRONMENT_SETUP.md) |
+| Practical exercise | EX-40M (EXERCISE.md + ENVIRONMENT_SETUP.md) |
 
 ---
 

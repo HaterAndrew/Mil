@@ -7,7 +7,7 @@
 
 ## Purpose
 
-TM-40 is the third tier of the Maven Skill Set (MSS) training program. It branches into twelve parallel tracks — six Warfighting Function (WFF) tracks and six Specialist tracks — each tailored to a specific operational or technical role. Completion of TM-30 is required before enrolling in any TM-40 track.
+TM-40 is the third tier of the Maven Skill Set (MSS) training program. It branches into fourteen parallel tracks — six Warfighting Function (WFF) tracks and eight Specialist tracks — each tailored to a specific operational or technical role. Completion of TM-30 is required before enrolling in any TM-40 track.
 
 ---
 
@@ -28,7 +28,7 @@ These tracks apply MSS capabilities to specific warfighting functions. They are 
 
 WFF tracks focus on applying data tools to mission planning, MDMP support, and operational analysis within their functional domain. Participants build operational dashboards, configure mission-relevant datasets, and integrate data products into their unit's planning cycle.
 
-### Specialist Tracks (G–M)
+### Specialist Tracks (G–O)
 
 These tracks develop technical depth for personnel who design, build, or manage data systems in support of Army operations.
 
@@ -40,8 +40,12 @@ These tracks develop technical depth for personnel who design, build, or manage 
 | TM-40J | Program Manager | PMs, product owners |
 | TM-40K | Knowledge Manager | KMs, information managers |
 | TM-40L | Software Engineer | SWEs, platform developers |
+| TM-40N | UI/UX Designer | UX designers, product designers |
+| TM-40O | Platform Engineer | Platform engineers, DevOps, infrastructure leads |
 
 Specialist tracks require deeper engagement with Foundry platform capabilities: pipeline construction, ontology design, model integration, and application development.
+
+**ASF Balanced Team Alignment.** TM-40N, TM-40J, and TM-40L form the Army Software Factory (ASF) "balanced team" triad — Designer, Product Manager, and Software Engineer. TM-40O complements this triad by providing the infrastructure and deployment pipeline expertise that enables balanced-team products to reach production. TM-40O also cross-references TM-40H (AI Engineer) for ML platform operations.
 
 ---
 

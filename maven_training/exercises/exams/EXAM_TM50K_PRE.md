@@ -32,21 +32,21 @@ D. The number of KM officers assigned to the enterprise
 **2. In a federated knowledge system, "cross-domain federation" via "parallel networks" means:**
 
 A. Two networks share a single database with synchronized copies at each classification level
-B. Each classification domain operates its own separate knowledge system — there is no automated bridge between classification levels
+B. Users with appropriate clearance can query both networks simultaneously through a single interface
 C. Knowledge is automatically replicated from lower to higher classification networks
-D. Users with appropriate clearance can query both networks simultaneously through a single interface
+D. Each classification domain operates its own separate knowledge system — there is no automated bridge between classification levels
 
 **3. A "knowledge graph" represents information as:**
 
-A. A hierarchical taxonomy of document categories
-B. A network of entities (nodes) and the relationships between them (edges), enabling complex relational queries and inference
+A. A network of entities (nodes) and the relationships between them (edges), enabling complex relational queries and inference
+B. A hierarchical taxonomy of document categories
 C. A visual flowchart of the KM process workflow
 D. A diagram of the KM system's database schema
 
 **4. "AI-assisted doctrine development" in a TM-50K context means:**
 
-A. AI automatically generates updated doctrine publications when new lessons are collected
-B. AI generates Draft summaries or proposed doctrine updates that are reviewed and revised by subject-matter experts before any publication or distribution
+A. AI generates Draft summaries or proposed doctrine updates that are reviewed and revised by subject-matter experts before any publication or distribution
+B. AI automatically generates updated doctrine publications when new lessons are collected
 C. AI validates doctrine documents against Army formatting standards
 D. AI identifies outdated doctrine paragraphs for human review and deletion
 
@@ -60,9 +60,9 @@ D. It defines the minimum security requirements for coalition network connection
 **6. "Information sharing agreements" (ISAs) for partner nation knowledge exchange are required because:**
 
 A. Partner nation personnel require a separate MSS user account under a separate ISA
-B. Data sovereignty, classification handling, and permitted use of shared information must be formally agreed upon before any knowledge exchange begins — implicit sharing is not authorized
+B. ISAs provide legal protection against partner nation misuse of shared information
 C. Army Regulation 380-5 requires ISAs for all information shared with non-Army organizations
-D. ISAs provide legal protection against partner nation misuse of shared information
+D. Data sovereignty, classification handling, and permitted use of shared information must be formally agreed upon before any knowledge exchange begins — implicit sharing is not authorized
 
 **7. "Knowledge risk" in an enterprise KM program refers to:**
 
@@ -74,9 +74,9 @@ D. The risk that knowledge products contain factually incorrect information
 **8. A "knowledge system decommission plan" must be developed before deployment because:**
 
 A. Army Regulation requires all software systems to have a decommission plan before ATO approval
-B. Organizational dependencies on a knowledge system make decommissioning extremely difficult without advance planning — a system without a decommission plan is a long-term liability
+B. The decommission plan is reviewed annually as part of the governance cycle
 C. The decommission plan defines the backup and recovery procedures for the system
-D. The decommission plan is reviewed annually as part of the governance cycle
+D. Organizational dependencies on a knowledge system make decommissioning extremely difficult without advance planning — a system without a decommission plan is a long-term liability
 
 **9. "KM metrics" for an enterprise knowledge program should include both:**
 
@@ -88,42 +88,42 @@ D. Number of new lessons added per month and number of SOP updates
 **10. In a knowledge graph for a theater-level HQ, "schema management at enterprise scale" requires:**
 
 A. A single senior KM officer who reviews all schema changes before implementation
-B. A versioned schema with a formal change control process — entity and relationship definitions are operationally sensitive and uncontrolled schema changes can break downstream queries and pipelines
-C. Automatic schema generation from the underlying database structure
+B. Automatic schema generation from the underlying database structure
+C. A versioned schema with a formal change control process — entity and relationship definitions are operationally sensitive and uncontrolled schema changes can break downstream queries and pipelines
 D. A separate schema for each organizational unit in the theater HQ
 
 **11. Crossing a classification boundary with knowledge content is governed by which principle?**
 
 A. Knowledge products may be shared across classification levels if the content is relevant to the recipient
-B. Classification boundary crossing requires prior approval from the Security Officer (SSO/ISSO) — sharing content from a higher to a lower classification network is never automated or assumed
-C. Information can be automatically downgraded for partner nation sharing if it contains no marked sensitive passages
+B. Information can be automatically downgraded for partner nation sharing if it contains no marked sensitive passages
+C. Classification boundary crossing requires prior approval from the Security Officer (SSO/ISSO) — sharing content from a higher to a lower classification network is never automated or assumed
 D. Classification boundary decisions are made by the originating office, not the receiving KM
 
 **12. "Coalition knowledge sharing" via NATO IMP (Information Management Policy) framework requires that shared knowledge products:**
 
 A. Be translated into all official NATO languages before sharing
-B. Meet the partner nation's information requirements as defined in the sharing agreement, be handled per the agreed classification scheme, and be marked with releasability designators
-C. Be stored in a NATO-hosted knowledge repository
+B. Be stored in a NATO-hosted knowledge repository
+C. Meet the partner nation's information requirements as defined in the sharing agreement, be handled per the agreed classification scheme, and be marked with releasability designators
 D. Be reviewed by NATO SHAPE headquarters before distribution to partner nations
 
 **13. "Privacy Act" considerations for aggregated Soldier expertise data apply because:**
 
-A. Expertise profiles are classified at FOUO by default
-B. Aggregated data about individual Soldiers' skills, locations, and assignments constitutes a system of records under the Privacy Act, requiring proper notice, access controls, and authorized use
+A. Aggregated data about individual Soldiers' skills, locations, and assignments constitutes a system of records under the Privacy Act, requiring proper notice, access controls, and authorized use
+B. Expertise profiles are classified at FOUO by default
 C. The Privacy Act applies only to data stored on SIPR
 D. Personnel data may not be stored in a non-Army system
 
 **14. A "knowledge risk register" in an enterprise KM program should capture:**
 
 A. All documents that have not been updated in the last 12 months
-B. Known risks to knowledge availability: personnel departure without transfer, single-point-of-failure experts, stale critical SOPs, system dependencies without backup, and capabilities that will be lost at the next major PCS cycle
-C. Classified knowledge products that require additional access controls
+B. Classified knowledge products that require additional access controls
+C. Known risks to knowledge availability: personnel departure without transfer, single-point-of-failure experts, stale critical SOPs, system dependencies without backup, and capabilities that will be lost at the next major PCS cycle
 D. AI-generated knowledge products that have not yet been human-reviewed
 
 **15. The most significant long-term risk of an enterprise KM system that lacks a decommission plan is:**
 
-A. The system will become a security vulnerability as its software ages without updates
-B. The organization becomes permanently dependent on the system — even after it no longer serves its purpose, the cost and complexity of decommissioning without a plan makes it effectively undiscardable
+A. The organization becomes permanently dependent on the system — even after it no longer serves its purpose, the cost and complexity of decommissioning without a plan makes it effectively undiscardable
+B. The system will become a security vulnerability as its software ages without updates
 C. The data stored in the system will become corrupted over time without active maintenance
 D. The system will be decommissioned by the IT department without KM officer input
 
@@ -203,20 +203,20 @@ Passing: N/A — Pre-test is diagnostic only.
 
 **Multiple Choice:**
 1. B — Enterprise KM complexity: governance diversity, cross-echelon flow, multi-system integration.
-2. B — Parallel networks = separate systems per domain with no automated bridge between classification levels.
-3. B — Knowledge graph = entities (nodes) and relationships (edges) enabling relational queries.
-4. B — AI-assisted doctrine = Draft only, reviewed by SMEs before any publication.
+2. D — Parallel networks = separate systems per domain with no automated bridge between classification levels.
+3. A — Knowledge graph = entities (nodes) and relationships (edges) enabling relational queries.
+4. A — AI-assisted doctrine = Draft only, reviewed by SMEs before any publication.
 5. B — STANAG 4778 = standardized NATO information management format for alliance interoperability.
-6. B — ISA required because data sovereignty, classification handling, and permitted use must be formally agreed.
+6. D — ISA required because data sovereignty, classification handling, and permitted use must be formally agreed.
 7. B — Knowledge risk = risk of critical knowledge being unavailable when needed.
-8. B — Without decommission plan, organizational dependencies make the system effectively permanent.
+8. D — Without decommission plan, organizational dependencies make the system effectively permanent.
 9. B — KM metrics require both quantitative and qualitative measures.
-10. B — Enterprise schema requires versioned, formal change control — schema changes can break downstream systems.
-11. B — Classification boundary crossing requires SSO/ISSO approval — never automated.
-12. B — Shared knowledge must meet ISA requirements, be handled per agreed classification scheme, and carry releasability designators.
-13. B — Aggregated Soldier expertise data is a Privacy Act system of records.
-14. B — Knowledge risk register captures personnel departure, single-point-of-failure experts, stale SOPs, system dependencies.
-15. B — Lack of decommission plan creates permanent organizational dependency — effectively undiscardable.
+10. C — Enterprise schema requires versioned, formal change control — schema changes can break downstream systems.
+11. C — Classification boundary crossing requires SSO/ISSO approval — never automated.
+12. C — Shared knowledge must meet ISA requirements, be handled per agreed classification scheme, and carry releasability designators.
+13. A — Aggregated Soldier expertise data is a Privacy Act system of records.
+14. C — Knowledge risk register captures personnel departure, single-point-of-failure experts, stale SOPs, system dependencies.
+15. A — Lack of decommission plan creates permanent organizational dependency — effectively undiscardable.
 
 **Short Answer Guidance:**
 

@@ -25,8 +25,8 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 **1. In data modeling, a "schema design" process involves:**
 
 A. Selecting the color scheme and layout of a dashboard
-B. Defining the entities, attributes, relationships, and constraints that structure a data system
-C. Writing SQL queries to extract data from a production database
+B. Writing SQL queries to extract data from a production database
+C. Defining the entities, attributes, relationships, and constraints that structure a data system
 D. Configuring user access roles for a new data project
 
 **2. A "many-to-many" relationship between two entities in a data model is typically implemented using:**
@@ -39,14 +39,14 @@ D. A view that calculates the relationship on query
 **3. In a multi-table JOIN operation, a "fan-out" problem occurs when:**
 
 A. Two tables share the same primary key, causing a conflict
-B. A one-to-many join causes duplicate rows in aggregated results, inflating counts or sums
+B. The query joins more than three tables, exceeding the platform's limit
 C. A join condition references a column with nulls
-D. The query joins more than three tables, exceeding the platform's limit
+D. A one-to-many join causes duplicate rows in aggregated results, inflating counts or sums
 
 **4. A GROUP BY aggregation in a data pipeline is used to:**
 
-A. Sort records alphabetically by a specified column
-B. Calculate summary metrics (count, sum, average) for each unique value of a grouping column
+A. Calculate summary metrics (count, sum, average) for each unique value of a grouping column
+B. Sort records alphabetically by a specified column
 C. Filter records to a specific subset of rows
 D. Join two datasets on a common field
 
@@ -73,29 +73,29 @@ D. The visualization to update based on a scheduled refresh
 
 **8. "Data governance" in the context of promotion workflows refers to:**
 
-A. The encryption standard applied to data in transit
-B. The review and approval process ensuring changes meet quality and policy standards before reaching production
+A. The review and approval process ensuring changes meet quality and policy standards before reaching production
+B. The encryption standard applied to data in transit
 C. The automated validation checks run during pipeline execution
 D. The role-based permissions assigned to each user in the project
 
 **9. A scheduled pipeline that runs at 0600 daily and sends an email alert on failure is an example of:**
 
 A. Reactive pipeline management
-B. Proactive automated monitoring with alerting
+B. On-demand pipeline execution
 C. Manual pipeline orchestration
-D. On-demand pipeline execution
+D. Proactive automated monitoring with alerting
 
 **10. In a multi-page application, "URL deep linking" allows:**
 
 A. The application to load faster by caching page state
-B. A specific application page and its filter state to be shared via a URL so the recipient lands directly in the correct view
-C. Users to bookmark the application's login page
+B. Users to bookmark the application's login page
+C. A specific application page and its filter state to be shared via a URL so the recipient lands directly in the correct view
 D. The system to track which pages each user visits for audit purposes
 
 **11. A "union" operation requires that:**
 
-A. Both datasets share at least one common column for a join key
-B. Both datasets have compatible column schemas (same names and types)
+A. Both datasets have compatible column schemas (same names and types)
+B. Both datasets share at least one common column for a join key
 C. One dataset is a subset of the other
 D. The datasets originate from the same source system
 
@@ -108,23 +108,23 @@ D. A pipeline step that writes data to the Ontology
 
 **13. Which of the following is a valid concern when designing an Ontology schema?**
 
-A. Whether the entity has enough rows to justify an Object Type
-B. Whether the proposed Object Types model the actual mission relationships or simply mirror source table structure
+A. Whether the proposed Object Types model the actual mission relationships or simply mirror source table structure
+B. Whether the entity has enough rows to justify an Object Type
 C. Whether the data was collected within the last 30 days
 D. Whether each Object Type has at least five properties
 
 **14. In the context of data pipeline scheduling, an "email alert on build failure" is most directly useful for:**
 
 A. Informing end users that the dashboard data is stale
-B. Notifying the pipeline owner immediately when automated data refresh fails so the issue can be resolved
+B. Preventing users from accessing the dashboard when data is not current
 C. Documenting pipeline failures in the audit log
-D. Preventing users from accessing the dashboard when data is not current
+D. Notifying the pipeline owner immediately when automated data refresh fails so the issue can be resolved
 
 **15. When passing variables between pages in a multi-page application, the purpose is to:**
 
 A. Share access credentials between application pages
-B. Carry context (such as a selected unit or date range) from one page to another without requiring the user to re-enter it
-C. Synchronize the data refresh schedule across pages
+B. Synchronize the data refresh schedule across pages
+C. Carry context (such as a selected unit or date range) from one page to another without requiring the user to re-enter it
 D. Limit each page's access to a specific dataset
 
 ---
@@ -202,21 +202,21 @@ Passing: N/A — Pre-test is diagnostic only.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — Schema design defines entities, attributes, relationships, and constraints.
+1. C — Schema design defines entities, attributes, relationships, and constraints.
 2. B — Many-to-many relationships use a junction/bridge table with foreign keys to both entities.
-3. B — Fan-out: a one-to-many join duplicates rows, inflating aggregated totals.
-4. B — GROUP BY calculates summary metrics per unique grouping value.
+3. D — Fan-out: a one-to-many join duplicates rows, inflating aggregated totals.
+4. A — GROUP BY calculates summary metrics per unique grouping value.
 5. C — Conditional show/hide logic is equivalent to an if-then-else statement.
 6. B — Append adds to existing data; Overwrite deletes and replaces.
 7. B — Parameter control allows interactive user input that adjusts the analysis.
-8. B — Governance in promotion context = review/approval before reaching production.
-9. B — Proactive automated monitoring with alerting; not reactive (which waits for user discovery).
-10. B — URL deep linking encodes page state in the URL for direct navigation sharing.
-11. B — Union requires compatible schemas; join requires a common key.
+8. A — Governance in promotion context = review/approval before reaching production.
+9. D — Proactive automated monitoring with alerting; not reactive (which waits for user discovery).
+10. C — URL deep linking encodes page state in the URL for direct navigation sharing.
+11. A — Union requires compatible schemas; join requires a common key.
 12. B — Object Types should represent meaningful mission-relevant real-world entities.
-13. B — Schema design should model actual operational relationships, not just mirror source tables.
-14. B — Email alert on failure enables immediate owner notification for rapid resolution.
-15. B — Variable passing carries context between pages so users don't re-enter filters.
+13. A — Schema design should model actual operational relationships, not just mirror source tables.
+14. D — Email alert on failure enables immediate owner notification for rapid resolution.
+15. C — Variable passing carries context between pages so users don't re-enter filters.
 
 **Short Answer Guidance:**
 

@@ -25,14 +25,14 @@ This assessment confirms proficiency upon completion of TM-40A training. A score
 **1. You have configured a PIR alert in MSS tied to the threat activity layer for NAI TIGER. The alert does not fire when a test event is placed inside NAI TIGER's boundaries. The most likely cause is:**
 
 A. PIR alerts are not supported in the current MSS version
-B. The geographic boundary for NAI TIGER is incorrectly defined in the alert configuration, or the alert is drawing from a different data feed than the one containing the test event
+B. The test event must be submitted through the official intelligence reporting channel to register in MSS
 C. Alerts require 24 hours to activate after initial configuration
-D. The test event must be submitted through the official intelligence reporting channel to register in MSS
+D. The geographic boundary for NAI TIGER is incorrectly defined in the alert configuration, or the alert is drawing from a different data feed than the one containing the test event
 
 **2. When building a targeting product in MSS Workshop, which of the following is mandatory for every target displayed?**
 
-A. A photograph of the target attached to the data record
-B. A data-as-of timestamp and a clear distinction between confirmed and unconfirmed target status
+A. A data-as-of timestamp and a clear distinction between confirmed and unconfirmed target status
+B. A photograph of the target attached to the data record
 C. Automated BDA score calculated by the MSS targeting module before the product can be shared
 D. Approval from the targeting officer at the next higher echelon before display on the COP
 
@@ -52,9 +52,9 @@ D. Defer the MCOA brief entirely until new collection is complete
 
 **5. A correctly structured PIR configured as an MSS alert includes:**
 
-A. "Watch for enemy activity" — flagged as a standing PIR
+A. "Trigger: Threat activity event in NAI TIGER or NAI WOLF; data source: Threat Activity feed; notify: S2, targeting officer via MSS alert"
 B. "Report any change in threat force disposition anywhere in the AOR to the S2"
-C. "Trigger: Threat activity event in NAI TIGER or NAI WOLF; data source: Threat Activity feed; notify: S2, targeting officer via MSS alert"
+C. "Watch for enemy activity" — flagged as a standing PIR
 D. "All NAIs should be checked daily and briefed at the morning sync"
 
 **6. Intelligence products built in MSS Workshop must be shared with targeting officers from a supported but non-organic unit. The correct sharing approach is:**
@@ -67,9 +67,9 @@ D. Share via screenshot in the unit's messaging platform — this avoids MSS acc
 **7. All-source fusion using MSS is best described as:**
 
 A. An automated process where MSS correlates HUMINT, SIGINT, and IMINT feeds and produces a fused intelligence estimate without analyst involvement
-B. The analyst's use of MSS to display and compare multiple intelligence data layers simultaneously — identifying corroboration, contradiction, and gaps across sources to support a human-produced assessment
+B. Replacing all-source analysis with AI-generated threat assessments that are displayed directly on the COP
 C. A feature available only to G2 staff at division level — BCT-level analysts do not have access to multi-source layers
-D. Replacing all-source analysis with AI-generated threat assessments that are displayed directly on the COP
+D. The analyst's use of MSS to display and compare multiple intelligence data layers simultaneously — identifying corroboration, contradiction, and gaps across sources to support a human-produced assessment
 
 **8. Your S2 has been directed to build a daily intelligence summary (INTSUM) product in MSS Workshop. The product must be ready at 0600 each day. The data pipeline feeding the threat activity layer consistently lags by 45 minutes after each reporting cycle close. The correct course of action is:**
 
@@ -147,13 +147,13 @@ _______________________________________________
 ## ANSWER KEY (Instructor Use Only — Do Not Distribute)
 
 **Section 1:**
-1. B — geographic boundary misconfiguration or wrong data feed is the most common PIR alert failure
-2. B — data-as-of timestamp and confirmed/unconfirmed distinction are mandatory for all targeting products
+1. D — geographic boundary misconfiguration or wrong data feed is the most common PIR alert failure
+2. A — data-as-of timestamp and confirmed/unconfirmed distinction are mandatory for all targeting products
 3. C — absence of reporting means unknown, not clear; brief as collection gap and recommend re-tasking
 4. B — caveat with data age, assess whether conditions could have changed, recommend updated collection
-5. C — complete PIR alert: trigger condition + data source + notification path
+5. A — complete PIR alert: trigger condition + data source + notification path
 6. C — read-only access to specific product; correct classification marking applied
-7. B — all-source fusion in MSS is analyst-driven, not automated; MSS displays layers for human correlation
+7. D — all-source fusion in MSS is analyst-driven, not automated; MSS displays layers for human correlation
 8. B — brief with caveat at scheduled time; notify S2 of recurring lag for pipeline-level resolution
 9. D — Table 1-1a (FM 2-0, Figure 1-2) maps Disseminate and Integrate to data publication, API endpoints, and COP feeds. Option A describes Produce; B describes Disseminate incorrectly assigned to Collect; C reverses Produce and Collect.
 10. C — Table G-0a (FM 2-0) defines "Complete" as intelligence that provides sufficient detail for the decision at hand, requiring products to identify known gaps explicitly and state what is missing. Timely addresses decision timing, Predictive addresses future conditions, and Precise addresses level of detail.

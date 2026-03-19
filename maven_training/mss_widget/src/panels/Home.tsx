@@ -60,7 +60,7 @@ export default function Home({ showPanel }: Props) {
               <td><span className="chip chip-gold" style={{cursor:'pointer'}} onClick={() => showPanel('tm30' as any)}>TM-30</span></td>
             </tr>
             <tr>
-              <td>Technical specialist &mdash; ORSA, AI/ML, MLE, PM, KM, SWE roles (TM-40G&ndash;M)</td>
+              <td>Technical specialist &mdash; ORSA, AI/ML, MLE, PM, KM, SWE, UI/UX, Platform roles (TM-40G&ndash;O)</td>
               <td><strong><button className="qr-link" onClick={() => showPanel('tm10' as any)}>TM-10</button> &rarr; <button className="qr-link" onClick={() => showPanel('tm20' as any)}>TM-20</button> &rarr; <button className="qr-link" onClick={() => showPanel('tm30' as any)}>TM-30</button></strong></td>
               <td><button className="qr-link" onClick={() => showPanel('tm40' as any)}>TM-40 specialist track</button></td>
               <td><span className="chip chip-gold" style={{cursor:'pointer'}} onClick={() => showPanel('specialists' as any)}>TM-40</span></td>
@@ -165,7 +165,7 @@ export default function Home({ showPanel }: Props) {
           <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('specialists' as any)}>
             <div className="path-tm">TM-40 &mdash; TWO TRACK TYPES (BY ROLE)</div>
             <div className="path-name">Specialist &amp; Warfighting Function Tracks <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; Specialist Tracks</span></div>
-            <div className="path-audience"><strong>WFF Tracks (TM-40A&ndash;F):</strong> Intel &bull; Fires &bull; M&amp;M &bull; Sustainment &bull; Protection &bull; Mission Command<br/><strong>Technical Tracks (TM-40G&ndash;M):</strong> ORSA &bull; AI Eng &bull; MLE &bull; PM &bull; KM &bull; SWE &mdash; Advanced versions at TM-50G&ndash;M</div>
+            <div className="path-audience"><strong>WFF Tracks (TM-40A&ndash;F):</strong> Intel &bull; Fires &bull; M&amp;M &bull; Sustainment &bull; Protection &bull; Mission Command<br/><strong>Technical Tracks (TM-40G&ndash;O):</strong> ORSA &bull; AI Eng &bull; MLE &bull; PM &bull; KM &bull; SWE &mdash; Advanced versions at TM-50G&ndash;O</div>
           </div>
         </div>
       </div>
@@ -180,13 +180,15 @@ export default function Home({ showPanel }: Props) {
           <strong>Sustainment (TM-40D):</strong> Logistics, G4/S4, GCSS-A users<br/>
           <strong>Protection (TM-40E):</strong> Air defense, CBRN, engineer, force protection<br/>
           <strong>Mission Command (TM-40F):</strong> G6/S6, C2 systems, network managers<br/><br/>
-          <strong style={{display:'block',marginBottom:'4px'}}>Technical Specialist Tracks (TM-40G&ndash;M):</strong>
+          <strong style={{display:'block',marginBottom:'4px'}}>Technical Specialist Tracks (TM-40G&ndash;O):</strong>
           <strong>ORSA (TM-40G):</strong> FA49, G2/S2 quant analysts, wargame specialists<br/>
           <strong>AI Engineer (TM-40H):</strong> AI/ML specialists, 17A/17C<br/>
           <strong>ML Engineer (TM-40M):</strong> ML engineers, data scientists (GS/contractor)<br/>
           <strong>Program Manager (TM-40J):</strong> G8/S8, PMs, resource managers<br/>
           <strong>Knowledge Manager (TM-40K):</strong> KMOs, 37F, institutional memory leads<br/>
-          <strong>Software Engineer (TM-40L):</strong> 17A/17C, 25D/25U, GS/contractor SWEs<br/><br/>
+          <strong>Software Engineer (TM-40L):</strong> 17A/17C, 25D/25U, GS/contractor SWEs<br/>
+          <strong>UI/UX Designer (TM-40N):</strong> UI/UX designers, human factors, GS/contractor designers<br/>
+          <strong>Platform Engineer (TM-40O):</strong> DevOps, platform engineers, SysAdmins, 25D (infra focus)<br/><br/>
           <em>Not listed? Ask your commander &mdash; you may be assigned a track based on unit needs.</em><br/>
           Full mapping: <button className="qr-link" onClick={() => showPanel('specialists' as any)}>Specialist Tracks &rarr;</button>
         </div>

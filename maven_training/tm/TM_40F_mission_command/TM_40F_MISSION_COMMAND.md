@@ -107,39 +107,7 @@ Before beginning this manual, verify the following:
 | TM-40J | Program Manager | Specialist track (prereq TM-30). PM data feeds readiness and portfolio products consumed by S3. |
 | TM-40K | Knowledge Manager | Specialist track (prereq TM-30). KM maintains information products and lessons learned accessible in MSS. |
 | TM-40L | Software Engineer | Specialist track (prereq TM-30). Builds platform integrations and data pipelines behind TM-40F products. |
-| TM-50G–M | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq TM-40G–M). Not applicable to operational staff. |
-
-### 1-6. FM 6-0 Information Management Framework and MSS
-
-FM 6-0 (May 2022) defines information management (IM) as the science of using procedures and information systems to collect, process, store, display, disseminate, and protect knowledge products, data, and information (FM 6-0, para 4-1). MSS implements all six IM tasks as platform capabilities. Table 1-3 maps each FM 6-0 IM task to its MSS implementation.
-
-**Table 1-3. FM 6-0 Information Management Tasks — MSS Implementation**
-
-| IM Task (FM 6-0) | FM 6-0 Definition | Data Platform Implementation |
-|---|---|---|
-| Collect | Acquire data and information from organic and external sources | Data ingestion pipelines, sensor feeds, manual entry, GCSS-Army/DTMS/DPAS connectors |
-| Process | Convert data into a form suitable for analysis and decision-making | ETL transforms, data wrangling, enrichment, deduplication, schema normalization |
-| Store | Maintain data in accessible repositories with appropriate retention | Data repositories, datasets, object storage, version-controlled pipelines |
-| Display | Present data in formats that support understanding and decision-making | Dashboards, COP overlays, reports, Workshop visualizations, briefing products |
-| Disseminate | Distribute data products to authorized users at the right time | API endpoints, data sharing permissions, automated notifications, CCIR alerts |
-| Protect | Safeguard data from unauthorized access, modification, or destruction | Access controls (RBAC), encryption, classification enforcement, OPSEC markings |
-
-> **NOTE: Every staff section in the TM-40F framework (Chapter 2) executes all six IM tasks within its data domain. The S6 coordinates the technical enablement; the S3 directs the operational requirements; each section owns the accuracy and currency of its data products.**
-
-**Information Relevance Criteria.** FM 6-0, para 4-6 establishes six criteria for determining whether information meets commander requirements. These criteria map directly to the VAULTIS-A data quality dimensions used in the DDOF Playbook v2.2 (see Appendix D, Strategic Guidance). Table 1-4 provides the crosswalk.
-
-**Table 1-4. FM 6-0 Information Relevance Criteria — VAULTIS-A Crosswalk**
-
-| FM 6-0 Criterion | FM 6-0 Definition | VAULTIS-A Dimension |
-|---|---|---|
-| Accurate | Free from error; faithful to the source | Accuracy |
-| Timely | Available in time to support the decision | Timeliness |
-| Useable | In a format appropriate to the consumer | Usability |
-| Complete | Contains all elements necessary for the decision | Completeness |
-| Precise | Specific enough for the intended purpose | (Contributes to Accuracy and Completeness) |
-| Secure | Protected from unauthorized access or compromise | Security |
-
-> **NOTE: When a data product fails a VAULTIS-A quality gate (85% threshold per DDOF Playbook), staff should diagnose the failure against these six FM 6-0 criteria. This ensures corrective action is framed in doctrinal language the commander understands — not just technical metrics.**
+| TM-50G–O | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq TM-40G–O). Not applicable to operational staff. |
 
 ---
 

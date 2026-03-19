@@ -1,13 +1,13 @@
 # TM-50 — Advanced Specialist Track Overview
 
-**Prerequisite:** Corresponding TM-40 specialist track (G–M)
-**Track availability:** TM-50G, TM-50H, TM-50M, TM-50J, TM-50K, TM-50L only
+**Prerequisite:** Corresponding TM-40 specialist track (G–O)
+**Track availability:** TM-50G, TM-50H, TM-50M, TM-50J, TM-50K, TM-50L, TM-50N, TM-50O only
 
 ---
 
 ## Purpose
 
-TM-50 is the advanced tier of the Maven Skill Set (MSS) training program, available exclusively to graduates of the TM-40 specialist tracks (G–M). WFF track graduates (TM-40A through TM-40F) do not have a TM-50 continuation path. TM-50 develops senior technical proficiency and prepares graduates to serve as subject matter experts, platform leads, and instructors.
+TM-50 is the advanced tier of the Maven Skill Set (MSS) training program, available exclusively to graduates of the TM-40 specialist tracks (G–O). WFF track graduates (TM-40A through TM-40F) do not have a TM-50 continuation path. TM-50 develops senior technical proficiency and prepares graduates to serve as subject matter experts, platform leads, and instructors.
 
 ---
 
@@ -21,6 +21,8 @@ TM-50 is the advanced tier of the Maven Skill Set (MSS) training program, availa
 | TM-50J | Advanced Program Manager | TM-40J |
 | TM-50K | Advanced Knowledge Manager | TM-40K |
 | TM-50L | Advanced Software Engineer | TM-40L |
+| TM-50N | Advanced UI/UX Designer | TM-40N |
+| TM-50O | Advanced Platform Engineer | TM-40O |
 
 ---
 

@@ -115,7 +115,7 @@ PROFILES = {
     "wff_e": ["TM-10", "TM-20", "TM-30", "TM-40E"],
     "wff_f": ["TM-10", "TM-20", "TM-30", "TM-40F"],
 
-    # Specialist tracks (G-M)
+    # Specialist tracks (G-O)
     "spec_g": ["TM-10", "TM-20", "TM-30", "TM-40G"],
     "spec_h": ["TM-10", "TM-20", "TM-30", "TM-40H"],
     "spec_i": ["TM-10", "TM-20", "TM-30", "TM-40M"],

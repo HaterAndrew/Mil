@@ -68,7 +68,7 @@ The MTT rotates through MSCs on a quarterly cycle. Each rotation covers 1-3 MSC 
 Q3 FY26 (first rotation)
   └── MSC A — Week 1-2
         ├── TM-20 (5 days)
-        ├── T3-F (3 days, overlapping with TM-20 week 1)
+        ├── T3-F (half day, during TM-20 week 1)
         └── UDT observation (existing UDTs)
 
 Q4 FY26
@@ -126,7 +126,7 @@ A typical 2-week MTT rotation at a single MSC:
 
 | Week | Day | Course A | Course B |
 |---|---|---|---|
-| 1 | Mon-Fri | TM-20 (Class 1) | T3-F (Mon-Wed, if UDT candidates available) |
+| 1 | Mon-Fri | TM-20 (Class 1) | T3-F (Mon AM, if UDT candidates available) |
 | 2 | Mon-Fri | TM-30 or TM-40 (scheduled) | UDT observations (scheduled around course delivery) |
 
 The exact schedule varies by MSC training needs. The MTT Lead builds the schedule during the T-90 planning conference based on:
@@ -138,8 +138,8 @@ The exact schedule varies by MSC training needs. The MTT Lead builds the schedul
 ### 5-2. T3-F Delivery During MTT Rotation
 
 T3-F is delivered concurrently with other courses when possible:
-- MTT Lead or designated instructor delivers T3-F (3 days) while other MTT members deliver TM-20/30/40
-- T3-F candidates must be available for all 3 days without competing duties
+- MTT Lead or designated instructor delivers T3-F (half day) while other MTT members deliver TM-20/30/40
+- T3-F candidates must be available for the morning session without competing duties
 - If only 1-2 UDT candidates at a given MSC, consolidate with the next MSC on the rotation if geography permits
 
 ### 5-3. UDT Observation During MTT Rotation

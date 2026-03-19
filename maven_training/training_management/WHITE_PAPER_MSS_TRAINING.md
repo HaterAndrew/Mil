@@ -21,8 +21,8 @@ The USAREUR-AF MSS Training Program is a complete, doctrine-aligned curriculum u
 | TM-20 | Builder | 40 hrs | Data-adjacent staff |
 | TM-30 | Advanced Builder | 40 hrs | Unit data leads |
 | TM-40A–F | WFF Functional | 40 hrs ea | G2/G3/G4/G5 functional staff |
-| TM-40G–M | Technical Specialist | 40 hrs ea | ORSA, AI, ML, PM, KM, SWE |
-| TM-50G–M | Advanced Specialist | 40 hrs ea | Senior technical staff |
+| TM-40G–O | Technical Specialist | 40 hrs ea | ORSA, AI, ML, PM, KM, SWE, UX, PE |
+| TM-50G–O | Advanced Specialist | 40 hrs ea | Senior technical staff |
 
 254 training products are published. The portal is live. The governance framework is complete.
 

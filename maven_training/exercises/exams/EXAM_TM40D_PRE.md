@@ -24,8 +24,8 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 
 **1. When displaying Class III (B) (bulk fuel) supply on hand in MSS, the most important data quality check the S4 should perform before a sustainment sync is:**
 
-A. Confirm that the symbology matches the Army logistics color standards
-B. Verify the data-as-of timestamp — logistics data can change significantly between reporting cycles and stale data may reflect a critical shortfall or false surplus
+A. Verify the data-as-of timestamp — logistics data can change significantly between reporting cycles and stale data may reflect a critical shortfall or false surplus
+B. Confirm that the symbology matches the Army logistics color standards
 C. Ensure the data is formatted as a bar chart rather than a table
 D. Confirm that all Class IX (repair parts) data is displayed on the same layer
 
@@ -33,27 +33,27 @@ D. Confirm that all Class IX (repair parts) data is displayed on the same layer
 
 A. Real-time feeds that update the moment a unit submits a report
 B. Data that reflects what was reported at the last LOGSTAT submission cycle — latency between unit submission and MSS display must be understood and communicated
-C. Automated systems that replace the need for units to submit manual LOGSTATs
-D. Classified pipelines that cannot be viewed by below-brigade echelon staff
+C. Classified pipelines that cannot be viewed by below-brigade echelon staff
+D. Automated systems that replace the need for units to submit manual LOGSTATs
 
 **3. An S4 builds a readiness dashboard in MSS showing equipment readiness by battalion. The commander asks why one battalion shows 94% readiness when the battalion S4 reported 71% this morning. The most likely explanation is:**
 
 A. MSS automatically adjusts readiness data to account for pending maintenance actions
-B. The dashboard is pulling from a dataset that has not yet been updated with the morning LOGSTAT submission — there is pipeline latency between unit reporting and MSS display
-C. The battalion S4 entered incorrect data into the reporting system
+B. The battalion S4 entered incorrect data into the reporting system
+C. The dashboard is pulling from a dataset that has not yet been updated with the morning LOGSTAT submission — there is pipeline latency between unit reporting and MSS display
 D. 94% is the correct figure — battalion-level reporting is unreliable
 
 **4. Supply chain analytics in MSS are best used to:**
 
 A. Automatically reorder supplies when on-hand quantities fall below threshold
-B. Support G4 analysis of consumption trends, forecast sustainment requirements, and identify developing shortfalls — decision authority remains with the S4/G4
+B. Generate automated supply requests to the corps support command
 C. Replace the Property Book Unit Supply Enhanced (PBUSE) system for property accountability
-D. Generate automated supply requests to the corps support command
+D. Support G4 analysis of consumption trends, forecast sustainment requirements, and identify developing shortfalls — decision authority remains with the S4/G4
 
 **5. Which of the following MSS CCIR configurations would best support a BSB S4 monitoring Class V (ammunition) consumption during a sustained operation?**
 
-A. An alert that fires when any subordinate unit submits a LOGSTAT
-B. An alert that fires when Class V on-hand falls below the commander's specified consumption threshold, sourced from the Class V supply reporting feed
+A. An alert that fires when Class V on-hand falls below the commander's specified consumption threshold, sourced from the Class V supply reporting feed
+B. An alert that fires when any subordinate unit submits a LOGSTAT
 C. A daily dashboard refresh that shows ammunition status without a configured alert
 D. A manual threshold check performed by the S4 each morning
 
@@ -67,15 +67,15 @@ D. Classified equipment disposition that is not accessible below brigade level
 **7. Transportation and distribution data in MSS is most valuable for which sustainment task?**
 
 A. Generating automated convoy manifests and movement orders
-B. Providing visibility of distribution pipeline status — what is in transit, expected delivery windows, and routing chokepoints — to support sustainment synchronization
+B. Calculating fuel consumption rates for wheeled vehicles
 C. Replacing the movement control officer's tracking responsibilities
-D. Calculating fuel consumption rates for wheeled vehicles
+D. Providing visibility of distribution pipeline status — what is in transit, expected delivery windows, and routing chokepoints — to support sustainment synchronization
 
 **8. Which of the following represents a correct OPSEC consideration for sustainment data products in MSS?**
 
 A. Logistics data is unclassified and can be shared outside the unit without restriction
-B. Supply on-hand quantities, consumption rates, and resupply timelines — when aggregated — can reveal unit readiness posture and operational timelines; distribution must be controlled accordingly
-C. OPSEC applies only to personnel data, not logistics data
+B. OPSEC applies only to personnel data, not logistics data
+C. Supply on-hand quantities, consumption rates, and resupply timelines — when aggregated — can reveal unit readiness posture and operational timelines; distribution must be controlled accordingly
 D. Transportation route data is exempt from distribution controls because it is based on open-source road networks
 
 ---
@@ -135,14 +135,14 @@ _______________________________________________
 
 **Multiple Choice:**
 
-1. B — Verify the data-as-of timestamp; logistics data changes significantly between reporting cycles and stale data may reflect a critical shortfall or false surplus. Symbology and chart format are secondary.
+1. A — Verify the data-as-of timestamp; logistics data changes significantly between reporting cycles and stale data may reflect a critical shortfall or false surplus. Symbology and chart format are secondary.
 2. B — LOGSTAT pipeline data reflects what was reported at the last submission cycle; latency between unit submission and MSS display must be understood and communicated to commanders and the G4.
-3. B — The dashboard is pulling from a dataset not yet updated with the morning LOGSTAT submission; pipeline latency between unit reporting and MSS display is the most likely explanation.
-4. B — Supply chain analytics support G4 analysis of consumption trends, forecast requirements, and shortfall identification; decision authority remains with the S4/G4 — MSS does not auto-reorder.
-5. B — An alert that fires when Class V on-hand falls below the commander's threshold sourced from the Class V supply reporting feed is the correct CCIR configuration; other options are manual or unfocused.
+3. C — The dashboard is pulling from a dataset not yet updated with the morning LOGSTAT submission; pipeline latency between unit reporting and MSS display is the most likely explanation.
+4. D — Supply chain analytics support G4 analysis of consumption trends, forecast requirements, and shortfall identification; decision authority remains with the S4/G4 — MSS does not auto-reorder.
+5. A — An alert that fires when Class V on-hand falls below the commander's threshold sourced from the Class V supply reporting feed is the correct CCIR configuration; other options are manual or unfocused.
 6. B — Property accountability data reflects reported on-hand quantities from property book submissions — not real-time GPS tracking of individual items.
-7. B — Transportation and distribution data provides visibility of pipeline status, in-transit items, delivery windows, and routing chokepoints to support sustainment synchronization.
-8. B — Aggregated supply quantities, consumption rates, and resupply timelines reveal unit readiness posture and operational timelines; distribution must be controlled accordingly.
+7. D — Transportation and distribution data provides visibility of pipeline status, in-transit items, delivery windows, and routing chokepoints to support sustainment synchronization.
+8. C — Aggregated supply quantities, consumption rates, and resupply timelines reveal unit readiness posture and operational timelines; distribution must be controlled accordingly.
 
 **Short Answer Guidance:**
 

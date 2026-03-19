@@ -8,7 +8,7 @@
 
 ## SECTION 1 — WHAT IS A BUILDER?
 
-**BLUF:** A Builder is a trained MSS user who creates pipelines, Ontology configurations, and applications using no-code tools. Builders are not operators, and they are not Advanced Builders or developers. Understanding where you sit in this hierarchy determines what you are authorized — and equipped — to build.
+The Builder role sits at the center of the MSS capability spectrum — above the Operator who only consumes data, and below the Advanced Builder who writes code. This section defines the Builder's lane, explains how it relates to the governance chain, and establishes the boundaries that keep no-code work production-safe.
 
 ### 1-1. The Three-Level Spectrum
 
@@ -19,7 +19,7 @@ MSS users operate across a defined capability spectrum. Each level has a distinc
 | **Operator (TM-10)** | All MSS users with read access | Nothing; they consume | Dashboards, reports, queries — read only |
 | **Builder (TM-20)** | Staff with builder access and TM-20 certification | No-code pipelines, Object Types, simple Actions, Workshop apps | Pipeline Builder, Ontology UI, Workshop |
 | **Advanced Builder (TM-30)** | Technically experienced staff | Multi-source pipelines, complex Ontology patterns, AIP Logic, multi-page apps | All TM-20 tools plus @incremental, SQL/Python, TypeScript Functions |
-| **Specialist (TM-40G–M)** | Domain experts with TM-30 base | ML models, OSDK apps, AI workflows, statistical pipelines | All prior tools plus Code Workspaces, AIP Logic, Agent Studio, OSDK |
+| **Specialist (TM-40G–O)** | Domain experts with TM-30 base | ML models, OSDK apps, AI workflows, statistical pipelines | All prior tools plus Code Workspaces, AIP Logic, Agent Studio, OSDK |
 
 A TM-20 Builder builds pipelines and applications using drag-and-drop, form-based tools — no code. When a requirement demands code, custom functions, or complex conditional logic, a Builder stops and escalates. That is not a failure. That is correct execution.
 
@@ -705,15 +705,13 @@ If any answer requires looking it up, re-read the relevant section before procee
 
 ---
 
----
-
 ## CURRICULUM NOTES
 
 **Prerequisite:** TM-10 (Maven User) is REQUIRED before beginning TM-20 or this guide. TM-20 assumes full operator competency. Review TM-10, Tasks 2-1 through 2-4, 3-1 through 3-3, 5-1, and Chapter 7 before proceeding.
 
 **Advancement tracks:** TM-20 graduates have two advancement paths:
 
-- **TM-30 (Advanced Builder):** Required for all personnel before proceeding to any TM-40 track. TM-30 is the gateway to both WFF tracks (TM-40A–F) and specialist tracks (TM-40G–M).
+- **TM-30 (Advanced Builder):** Required for all personnel before proceeding to any TM-40 track. TM-30 is the gateway to both WFF tracks (TM-40A–F) and specialist tracks (TM-40G–O).
 - **WFF Tracks (TM-40A–F):** For operational staff whose primary role is warfighting function data use, not technical development. Prerequisite: TM-30 (required).
 
 | WFF Track | Title | For Personnel |

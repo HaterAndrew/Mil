@@ -409,8 +409,6 @@ If any answer requires looking it up, re-read the relevant section before procee
 
 ---
 
----
-
 ## GOVERNING REFERENCES (ADDITIONAL)
 
 | Document | Relevance |

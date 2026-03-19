@@ -25,35 +25,35 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 **1. In a supervised machine learning problem, the "training set" is used to:**
 
 A. Evaluate the final model's performance before deployment
-B. Learn the model parameters by fitting to labeled examples
+B. Simulate model behavior under production conditions
 C. Tune hyperparameters without overfitting to the test set
-D. Simulate model behavior under production conditions
+D. Learn the model parameters by fitting to labeled examples
 
 **2. "Feature leakage" in a machine learning pipeline occurs when:**
 
 A. A feature column contains too many null values to be useful
-B. Information from the future (relative to the prediction target) or from the target itself is inadvertently included in the training features
+B. The test set is inadvertently included in the training data during cross-validation
 C. Model weights from the training phase are exposed to end users
-D. The test set is inadvertently included in the training data during cross-validation
+D. Information from the future (relative to the prediction target) or from the target itself is inadvertently included in the training features
 
 **3. In a classification problem, "precision" measures:**
 
 A. The fraction of actual positive cases that the model correctly identifies
-B. The fraction of predicted positive cases that are truly positive
+B. The model's performance relative to a random baseline
 C. The overall fraction of all cases the model classifies correctly
-D. The model's performance relative to a random baseline
+D. The fraction of predicted positive cases that are truly positive
 
 **4. "Recall" (also called sensitivity) measures:**
 
 A. The fraction of predicted positive cases that are truly positive
-B. The fraction of actual positive cases correctly identified by the model
-C. The total accuracy of the model across all classes
+B. The total accuracy of the model across all classes
+C. The fraction of actual positive cases correctly identified by the model
 D. The model's false positive rate
 
 **5. A ROC-AUC score of 0.50 indicates:**
 
-A. A perfect classifier
-B. A model performing at chance (no better than random guessing)
+A. A model performing at chance (no better than random guessing)
+B. A perfect classifier
 C. A model with 50% accuracy
 D. A severely overfit model
 
@@ -66,15 +66,15 @@ D. Validate that the model's predictions are within expected bounds
 
 **7. "Hyperparameter tuning" refers to:**
 
-A. Adjusting the model's learned weights during training
-B. Selecting the best values for configuration parameters (learning rate, tree depth, etc.) that are set before training
+A. Selecting the best values for configuration parameters (learning rate, tree depth, etc.) that are set before training
+B. Adjusting the model's learned weights during training
 C. Retraining the model on new data after deployment
 D. Reducing the number of features to improve model interpretability
 
 **8. A model trained on 2022 data is deployed in 2025 to predict equipment failures. Performance has degraded. The most likely cause is:**
 
-A. The model's hyperparameters are no longer optimal
-B. Data drift — the statistical distribution of the input features has changed since training
+A. Data drift — the statistical distribution of the input features has changed since training
+B. The model's hyperparameters are no longer optimal
 C. The model was overfit to the 2022 test set
 D. The model's feature importances have been altered by the deployment environment
 
@@ -87,30 +87,30 @@ D. All models require feature scaling regardless of type
 
 **10. A model card is a document that:**
 
-A. Describes the hardware configuration required to train the model
-B. Summarizes a model's intended use, performance metrics, limitations, training data, and ethical considerations
+A. Summarizes a model's intended use, performance metrics, limitations, training data, and ethical considerations
+B. Describes the hardware configuration required to train the model
 C. Contains the model's serialized weights for portability
 D. Lists all API endpoints exposed by the model serving infrastructure
 
 **11. "Data poisoning" in ML security refers to:**
 
 A. Using low-quality or biased training data that degrades model performance
-B. Adversarially injecting malicious training examples to manipulate model behavior
-C. Exposing the training data to unauthorized users
+B. Exposing the training data to unauthorized users
+C. Adversarially injecting malicious training examples to manipulate model behavior
 D. Retraining a model on data that has already been used for evaluation
 
 **12. In an imbalanced classification dataset (e.g., 95% negative, 5% positive), a model that always predicts "negative" will achieve:**
 
 A. 5% accuracy
-B. 95% accuracy but 0% recall for the positive class
-C. 50% accuracy by chance
+B. 50% accuracy by chance
+C. 95% accuracy but 0% recall for the positive class
 D. A ROC-AUC of 0.95
 
 **13. "Platt scaling" is a technique used to:**
 
 A. Reduce model training time by scaling the feature matrix
-B. Calibrate a classifier's output probability scores so they reflect true probabilities
-C. Scale the model's gradient updates during training
+B. Scale the model's gradient updates during training
+C. Calibrate a classifier's output probability scores so they reflect true probabilities
 D. Normalize the model's output predictions to a [0,1] range
 
 **14. "Model versioning" in an ML deployment pipeline ensures:**
@@ -202,19 +202,19 @@ Passing: N/A — Pre-test is diagnostic only.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — Training set is used to learn model parameters.
-2. B — Feature leakage = future or target-derived information leaks into training features.
-3. B — Precision = TP / (TP + FP) — fraction of predicted positives that are truly positive.
-4. B — Recall = TP / (TP + FN) — fraction of actual positives correctly identified.
-5. B — AUC = 0.50 = random chance performance.
+1. D — Training set is used to learn model parameters.
+2. D — Feature leakage = future or target-derived information leaks into training features.
+3. D — Precision = TP / (TP + FP) — fraction of predicted positives that are truly positive.
+4. C — Recall = TP / (TP + FN) — fraction of actual positives correctly identified.
+5. A — AUC = 0.50 = random chance performance.
 6. B — Cross-validation estimates generalization performance via multiple train/test splits.
-7. B — Hyperparameter tuning selects configuration parameters set before training.
-8. B — Data drift is the most common cause of post-deployment performance degradation.
+7. A — Hyperparameter tuning selects configuration parameters set before training.
+8. A — Data drift is the most common cause of post-deployment performance degradation.
 9. B — KNN and SVM use distance metrics that are scale-dependent; decision trees are not.
-10. B — Model card summarizes intended use, performance, limitations, training data, and ethics.
-11. B — Data poisoning = adversarial injection of malicious training examples.
-12. B — Always-negative classifier achieves 95% accuracy but 0% recall for the positive class.
-13. B — Platt scaling calibrates probability outputs to reflect true probabilities.
+10. A — Model card summarizes intended use, performance, limitations, training data, and ethics.
+11. C — Data poisoning = adversarial injection of malicious training examples.
+12. C — Always-negative classifier achieves 95% accuracy but 0% recall for the positive class.
+13. C — Platt scaling calibrates probability outputs to reflect true probabilities.
 14. B — Model versioning uniquely identifies artifacts and enables rollback.
 15. B — PSI detects distribution shift between reference and monitoring periods.
 

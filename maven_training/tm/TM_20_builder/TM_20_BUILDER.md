@@ -38,7 +38,7 @@ NOTE: Before beginning TM-20 work, verify you can independently perform the foll
 - AIP Logic configuration or Agent Studio
 - Any task requiring writing or reading code
 
-Those topics are in TM-30, Advanced Builder/Developer. If a task requires writing code, stop and contact your team's data engineer.
+Those topics are in TM-30, Advanced Builder. If a task requires writing code, stop and contact your team's data engineer.
 
 ---
 
@@ -159,7 +159,7 @@ The table below identifies requirements that exceed TM-20 scope. If your require
 
 | IF the requirement needs this... | THEN escalate to... |
 |---|---|
-| Multi-step Actions with conditional routing, sequential submission steps, approval chains, or multi-record writes | TM-30, Chapter 4, Section 4-4 |
+| Multi-step Actions with conditional routing, sequential submission steps, approval chains, or multi-record writes | TM-30, Chapter 4, Task 4-3 |
 | Multi-source joins (3+ sources), fan-out handling, post-join deduplication, or union transforms | TM-30, Chapter 3 |
 | AIP Logic configuration or Agent Studio integration | TM-30 |
 | Multi-page Workshop applications with conditional navigation between pages | TM-30, Chapter 2 |
@@ -185,12 +185,12 @@ USAREUR-AF C2DAO
   |  Theater-level data governance authority
   |  Approves new data sources, ontology changes, access policies
   v
+FUNCTIONAL DATA MANAGER
+  |  Day-to-day oversight of a specific data domain
+  v
 UNIT DATA STEWARD
   |  Your unit's accountable data official
   |  First point of contact for any data question
-  v
-FUNCTIONAL DATA MANAGER
-  |  Day-to-day oversight of a specific data domain
   v
 BUILDER (YOU)
      Build within approved scope on approved data
@@ -229,7 +229,7 @@ After completing TM-20, builders may advance to more specialized tracks based on
 
 **Next Step — Advanced Builder (required for all TM-40 tracks):**
 
-All personnel who complete TM-20 proceed to TM-30 (Advanced Builder) before enrolling in any TM-40 track. TM-30 is a hard prerequisite — no waivers — for both WFF tracks (TM-40A–F) and Specialist tracks (TM-40G–M).
+All personnel who complete TM-20 proceed to TM-30 (Advanced Builder) before enrolling in any TM-40 track. TM-30 is a hard prerequisite — no waivers — for both WFF tracks (TM-40A–F) and Specialist tracks (TM-40G–O).
 
 **WFF Tracks (TM-40A–F) — available after TM-30:**
 
@@ -244,7 +244,7 @@ Complete the WFF track aligned to your functional area. These tracks focus on MS
 | TM-40E | Protection WFF | Protection officers and NCOs |
 | TM-40F | Mission Command WFF | G6 / S6 and command staff |
 
-**Specialist Tracks (TM-40G–M) — available after TM-30:**
+**Specialist Tracks (TM-40G–O) — available after TM-30:**
 
 Specialist tracks require code-level skills in addition to TM-30. These tracks are NOT reachable from TM-20 directly. Prerequisite: TM-30 (required).
 
@@ -256,6 +256,12 @@ Specialist tracks require code-level skills in addition to TM-30. These tracks a
 | TM-40J | Program Manager | Data program managers | 4 days |
 | TM-40K | Knowledge Manager | Knowledge management specialists | 4 days |
 | TM-40L | Software Engineer | Python / TypeScript / OSDK developers | 5 days |
+| TM-40N | UI/UX Designer | User interface and experience designers | 5 days |
+| TM-40O | Platform Engineer | Platform infrastructure and deployment specialists | 5 days |
+
+**Train-the-Trainer Track — available after TM-20:**
+
+T3-F (MSC Force Multiplier) is a half-day Unit Data Trainer certification. Prereq: TM-20 Go + commander nomination. Authorizes TM-10 delivery and TM-10 exam proctoring. T3-F does NOT require TM-30.
 
 NOTE: If you are unsure which path applies to your billet, consult your unit data steward or the USAREUR-AF C2DAO training coordinator.
 
@@ -1090,7 +1096,7 @@ NOTE: If linked objects do not appear in preview, verify that foreign key values
 
 NOTE: For complex relationship modeling, consult your team lead or data steward before building. Incorrect link configurations are difficult to fix after they are in production use.
 
-NOTE: If an Ontology design requires any of the following, it exceeds TM-20 scope and must be escalated to a TM-30 advanced builder: (1) Many-to-many Link Types with complex junction logic; (2) Multi-step Actions with conditional routing or approval chains; (3) Derived properties requiring formula logic beyond the basic UI; (4) Ontology models that feed coalition-facing or MPE data products. Refer to TM-30, Chapter 4 (Ontology Design Methodology) for the TM-30 design process, and to TM-30, Chapter 5 (Advanced Action Design via UI) for complex Action patterns.
+NOTE: If an Ontology design requires any of the following, it exceeds TM-20 scope and must be escalated to a TM-30 advanced builder: (1) Many-to-many Link Types with complex junction logic; (2) Multi-step Actions with conditional routing or approval chains; (3) Derived properties requiring formula logic beyond the basic UI; (4) Ontology models that feed coalition-facing or MPE data products. Refer to TM-30, Chapter 4 (Ontology Design Methodology) for the TM-30 design process, and to TM-30, Chapter 4 (Ontology Design Through the UI), Task 4-3 for complex Action patterns.
 
 ---
 
@@ -1153,7 +1159,7 @@ If your requirement cannot be met with a single-step form-based write-back Actio
 
 > CAUTION: Actions that write to datasets affect all downstream applications. Before enabling a write-back Action in production, test it on a development branch with test data — not with live operational records.
 
-NOTE: Multi-step Actions with conditional routing, sequential submission steps, approval chains, or multi-record writes are TM-30 scope — refer to TM-30, Chapter 4, Section 4-4. These do NOT require code (TypeScript is TM-40 scope). TM-20 Actions are single-step: operator fills a form, one field in the backing dataset is updated.
+NOTE: Multi-step Actions with conditional routing, sequential submission steps, approval chains, or multi-record writes are TM-30 scope — refer to TM-30, Chapter 4, Task 4-3. These do NOT require code (TypeScript is TM-40 scope). TM-20 Actions are single-step: operator fills a form, one field in the backing dataset is updated.
 
 ---
 
@@ -1460,7 +1466,7 @@ Use Quiver when you need a simple, shareable dashboard with a few metrics and ch
 
 Use Workshop when you need a full interactive application with filters, forms, Actions, and complex layout.
 
-NOTE: Operators interact with Contour and Quiver using TM-10, Task 5-2 (Use Contour for No-Code Analysis) and Task 5-3 (Use Quiver to Explore Ontology Objects). When building saved analyses or Quiver configurations, understand the operator's analysis workflow from TM-10. Build analyses that support workflows operators actually perform. For advanced Contour capabilities (formula editor, multi-table aggregations, pivot analysis), refer to TM-30, Chapter 7 (Advanced Contour and Quiver).
+NOTE: Operators interact with Contour and Quiver using TM-10, Task 5-2 (Use Contour for No-Code Analysis) and Task 5-3 (Use Quiver to Explore Ontology Objects). When building saved analyses or Quiver configurations, understand the operator's analysis workflow from TM-10. Build analyses that support workflows operators actually perform. For advanced Contour capabilities (formula editor, multi-table aggregations, pivot analysis), refer to TM-30, Chapter 5 (Advanced Analytics: Contour and Quiver).
 
 ---
 
@@ -1576,7 +1582,7 @@ NOTE: Quiver dashboards do not support Actions, complex filters, or form submiss
 
 ---
 
-## TASK 6-4: ADD AN OBJECT TYPE VIEW IN QUIVER
+## TASK 6-4: CONFIGURE AUTOMATIC REFRESH ON A QUIVER DASHBOARD
 
 **TASK:** Configure automatic refresh on a Quiver dashboard.
 
@@ -1750,7 +1756,7 @@ NOTE: When in doubt on a conflict, do not guess. Contact the team member whose b
 
 ## 8-1. Overview
 
-NOTE: Builder standards exist because builders have elevated privileges that operators (TM-10) do not have. Before building, understand the security markings and access controls that govern operator data access (TM-10, Chapter 6, Security, Classification, and Markings). Your applications, pipelines, and Ontology configurations must respect those controls. For TM-30-level governance responsibilities on shared infrastructure, refer to TM-30, Chapter 8 (Data Governance and Stewardship).
+NOTE: Builder standards exist because builders have elevated privileges that operators (TM-10) do not have. Before building, understand the security markings and access controls that govern operator data access (TM-10, Chapter 6, Security, Classification, and Markings). Your applications, pipelines, and Ontology configurations must respect those controls. For TM-30-level governance responsibilities on shared infrastructure, refer to TM-30, Chapter 7 (Data Governance and Lineage).
 
 Builder standards are not optional. They exist to maintain data quality, operational reliability, and security across the USAREUR-AF MSS environment. All TM-20 builders are accountable for the quality and compliance of everything they publish.
 

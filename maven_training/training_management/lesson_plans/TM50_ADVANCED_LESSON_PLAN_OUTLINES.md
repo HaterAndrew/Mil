@@ -1,6 +1,6 @@
 # LESSON PLAN OUTLINES — TM-50 ADVANCED SPECIALIST TRACKS
 ## USAREUR-AF Operational Data Team — C2DAO
-**Covers:** TM-50G (Advanced ORSA) | TM-50H (Advanced AI Engineer) | TM-50M (Advanced ML Engineer) | TM-50J (Advanced PM) | TM-50K (Advanced KM) | TM-50L (Advanced SWE)
+**Covers:** TM-50G (Advanced ORSA) | TM-50H (Advanced AI Engineer) | TM-50M (Advanced ML Engineer) | TM-50J (Advanced PM) | TM-50K (Advanced KM) | TM-50L (Advanced SWE) | TM-50N (Advanced UX Designer) | TM-50O (Advanced Platform Engineer)
 **Version:** 1.0 — March 2026
 
 > Abbreviated LP outlines for TM-50 advanced courses.
@@ -9,7 +9,7 @@
 
 **Duration summary:**
 - TM-50G, H, M, L: 5 days (40 hours)
-- TM-50J, K: 3 days (24 hours)
+- TM-50J, K, N, O: 3 days (24 hours)
 
 **Prerequisite note:** TM-50 courses are NOT required for the majority of specialist billets. Before confirming enrollment, verify the trainee is in an active role that requires TM-50-level work. Refer to each syllabus for the prerequisite warning.
 
@@ -1346,6 +1346,396 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 
 ---
 
+# PART N — TM-50N: ADVANCED UI/UX DESIGNER
+
+**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Senior Designer with design system and enterprise UX experience; TM-50N certified or C2DAO Advanced UX SME
+**Note:** TM-50N is 3 days (24 hours), not 5 days.
+
+---
+
+### Block 1 — From Application Design to Design Systems
+**Hours:** 1.0 | **Method:** Seminar | **Day:** 1 | **Time:** 0800–0900
+
+**Purpose:** TM-50N moves from designing applications to designing the system that produces applications. The advanced Designer's output is not a single interface — it is the standards, patterns, and processes that make every interface better. This block establishes the scale shift before any system-level design work begins.
+
+**TLO:** The trainee will distinguish enterprise design system leadership from individual application design, describe the design system as a product with its own backlog and release cycle, and state the three principles that determine design system adoption: documentation quality, governance clarity, and developer integration.
+
+**Key Delivery Notes:**
+- Scale shift: "How should this dashboard look?" → "How should all dashboards look?" "Is this form accessible?" → "How do we ensure every form across the portfolio is accessible?"
+- Design system product mindset: component requests from application teams are feature requests. Breaking changes require migration guides. Deprecating a component requires a sunset period.
+- The design system serves two user populations: designers (who compose interfaces from system components) and developers (who implement components). Both must find the system usable.
+
+**Assessment:** Design system mindset evaluated throughout course; assessed in capstone (Day 3).
+
+---
+
+### Block 2 — Design Token Architecture
+**Hours:** 2.0 | **Method:** Studio | **Day:** 1 | **Time:** 0900–1100
+
+**TLO:** The trainee will define a design token architecture covering classification colors, status colors, typography, and spacing — with locked vs. configurable token governance and an inheritance hierarchy for MSS.
+
+**Key Delivery Notes:**
+- Token categories: color (classification, status, background, text), typography (scale, weight, line height), spacing (grid, padding, margin), elevation (shadow, z-index). Each category has a defined set of tokens.
+- Locked vs. configurable: classification banner colors are locked — no application may override them. Status indicator colors are locked. Background and accent colors are configurable within the approved palette. Document which tokens are locked and which are configurable.
+- Inheritance hierarchy: global tokens → category tokens → component tokens. A component inherits from the category level unless explicitly overridden. This ensures consistency while allowing component-specific variation.
+- Token naming convention: semantic names (`color-status-ready`, `color-status-warning`), not visual names (`green`, `amber`). Semantic names survive palette changes.
+
+**Assessment:** Token architecture evaluated in capstone design system component (Day 3).
+
+---
+
+### Block 3 — Component Documentation Standard
+**Hours:** 0.75 | **Method:** Studio | **Day:** 1 | **Time:** 1115–1200
+
+**Key Delivery Notes:**
+- Component documentation includes: description, variants (with visual examples), usage guidelines (do/don't), accessibility notes, data binding patterns, responsive behavior, and code examples.
+- Do/don't examples: show correct usage AND common misuse. "Do: use the status badge with redundant text label. Don't: use color alone to indicate status."
+- The documentation quality test: can a TM-40N designer or TM-40L developer use this component correctly without asking the design system team a question? If not, the documentation is incomplete.
+
+---
+
+### Block 4 — Design System Case Study
+**Hours:** 2.0 | **Method:** Case Study | **Day:** 1 | **Time:** 1300–1500
+
+**TLO:** The trainee will review a portfolio of MSS applications, identify consistency gaps that a design system would prevent, and propose system-level fixes with implementation priority.
+
+**Key Delivery Notes:**
+- Review 3–5 existing MSS applications. For each, identify: (1) visual inconsistencies (different color meanings, different button styles), (2) interaction inconsistencies (different filter behaviors, different error patterns), (3) accessibility inconsistencies (different contrast approaches, different keyboard navigation patterns).
+- System-level fix: do not fix individual applications — propose the design system component or pattern that would prevent the inconsistency portfolio-wide.
+- Implementation priority: fix inconsistencies that affect operational comprehension first (classification marking, status meaning). Fix aesthetic inconsistencies last.
+
+---
+
+### Block 5 — Design Governance
+**Hours:** 1.75 | **Method:** Seminar | **Day:** 1 | **Time:** 1515–1700
+
+**TLO:** The trainee will establish a design review governance process with defined gates, reviewers, criteria, and a deviation management procedure.
+
+**Key Delivery Notes:**
+- Design review gates: when in the development lifecycle does design review occur? Before implementation begins (design review), during implementation (implementation review), before deployment (final accessibility/standards check).
+- Reviewers: who reviews? The design system team reviews system-level patterns. Domain designers review application-level layout. Accessibility specialist reviews compliance.
+- Deviation management: what happens when an application needs to deviate from the design system? Document the deviation, the rationale, and the planned resolution (contribute a new component, update an existing component, or accept the deviation as an exception).
+- Quality metrics: portfolio consistency score (how many applications comply with the design system?), component coverage (how much of the typical application is covered by system components?), deviation rate.
+
+---
+
+### Block 6 — DDIL-Aware Design
+**Hours:** 2.0 | **Method:** Seminar + Studio | **Day:** 2 | **Time:** 0830–1030
+
+**Purpose:** DDIL is not an edge case — it is a primary operating condition in the USAREUR-AF AOR. Design for disconnection first; connectivity is the bonus.
+
+**TLO:** The trainee will design a DDIL-aware application implementing data freshness indicators, offline-first interaction patterns, and graceful degradation across all four DDIL tiers.
+
+**Key Delivery Notes:**
+- Four-tier DDIL design model: (1) Connected (full functionality), (2) Degraded (reduced bandwidth — progressive loading, compressed assets), (3) Intermittent (queue actions, sync when connected), (4) Disconnected (cached data only, all writes queued).
+- Data freshness indicators: every data element has an age. A readiness report from 10 minutes ago is useful. From 4 hours ago, it requires a caveat. From 24 hours ago, it may be misleading. The Designer must encode these freshness states visually so the user never makes a decision on unknowingly stale data.
+- Offline-first interaction patterns: design for "no network" as the default state. Show cached data with freshness indicators. Queue user actions for sync. Never show a blank screen.
+- Graceful degradation: at each DDIL tier, define what functionality remains available and what is disabled. Display the current connectivity status and what the user can/cannot do.
+
+**Assessment:** DDIL design pattern evaluated in capstone (Day 3).
+
+---
+
+### Block 7 — DDIL Design Exercise
+**Hours:** 1.25 | **Method:** Studio | **Day:** 2 | **Time:** 1045–1200
+
+**Key Delivery Notes:**
+- Redesign an existing MSS application for DDIL resilience. Add freshness indicators, offline states, and queue patterns.
+- For each DDIL tier, annotate the design with: what data is available, what actions are possible, what visual indicators change, and what the user experience is.
+- Peer review: swap designs and evaluate whether the DDIL behavior is clear to a user without explanation.
+
+---
+
+### Block 8 — Cross-Domain UI Design
+**Hours:** 2.0 | **Method:** Seminar + Studio | **Day:** 2 | **Time:** 1300–1500
+
+**TLO:** The trainee will produce a cross-domain UI specification that maintains unambiguous classification marking across classification transitions — with documented ISSM review requirements.
+
+**Key Delivery Notes:**
+- Cross-domain design principle: the user must always know, without doubt, what classification level they are operating at and what classification the data they are viewing carries. This is not a UX problem to "solve" by making it seamless — it is a security requirement to make explicit.
+- Multi-classification display patterns: when a single screen shows data from multiple classification levels, each data element must carry its classification marking. Aggregated displays must carry the highest classification present.
+- Classification boundary transitions: when the user navigates from one classification level to another, the transition must be unambiguous — visual break, banner change, confirmation dialog. Accidental classification boundary crossing is a security incident.
+- ISSM review: every cross-domain UI design requires ISSM review before implementation. The Designer prepares the design with classification annotations; the ISSM validates the marking scheme.
+
+---
+
+### Block 9 — Coalition UI Design
+**Hours:** 1.75 | **Method:** Studio | **Day:** 2 | **Time:** 1515–1700
+
+**Key Delivery Notes:**
+- International conventions: date format (DD-MMM-YYYY for NATO), time format (24-hour with timezone), number format (period vs. comma as decimal separator varies by nation). Design for the lowest common denominator.
+- Releasability markings: coalition data carries releasability designations (REL TO, NOFORN). The UI must display releasability alongside classification. A datum that is SECRET//REL TO USA, GBR is different from SECRET//NOFORN.
+- Multi-language considerations: not full localization, but design for non-native English readers. Use full terms with abbreviations in parentheses on first use. Maintain a glossary accessible from every screen. Avoid idioms and colloquialisms in UI text.
+- NATO partner interoperability: design patterns must accommodate NATO standard terminology where it differs from US usage.
+
+---
+
+### Block 10 — DesignOps
+**Hours:** 1.0 | **Method:** Seminar | **Day:** 3 | **Time:** 0800–0900
+
+**TLO:** The trainee will describe the operational processes for design at scale — tooling, onboarding, research repositories — and establish a DesignOps framework for an MSS design team.
+
+**Key Delivery Notes:**
+- DesignOps is to design what DevOps is to development — the operational practices that let design scale beyond individual heroics.
+- DesignOps functions: design system maintenance, research repository management, design review governance, tooling and templates, new designer onboarding.
+- Without DesignOps: components drift, each app reinvents patterns, same user groups interviewed repeatedly, insights lost at PCS, months of ramp-up for new designers.
+
+---
+
+### Block 11 — Research Repository
+**Hours:** 2.0 | **Method:** Studio | **Day:** 3 | **Time:** 0900–1100
+
+**TLO:** The trainee will build a research repository entry from existing user research data, tagged for reuse by other design teams — with tagging taxonomy and retrieval guidelines.
+
+**Key Delivery Notes:**
+- User research is expensive: operational access, security clearance requirements, user availability constraints. Every finding should be documented, tagged, and searchable so future teams build on existing knowledge rather than re-conducting the same studies.
+- Research repository entry: study date, research questions, methodology, participants (role/rank, not names), key findings, design implications, linked personas, linked design decisions.
+- Tagging taxonomy: tag by domain (WFF, track), user population (rank range, role type), methodology (interview, observation, usability test), and finding type (pain point, workflow gap, design validation).
+- Retrieval guidelines: before starting new user research, search the repository first. Duplicate research wastes operational access.
+
+---
+
+### Block 12 — Accessibility at Enterprise Scale
+**Hours:** 0.75 | **Method:** Studio | **Day:** 3 | **Time:** 1115–1200
+
+**Key Delivery Notes:**
+- Automated testing strategies: integrate accessibility scanning into the CI/CD pipeline. Catch contrast, alt text, and ARIA issues automatically.
+- Remediation prioritization: Critical accessibility failures (keyboard navigation broken, screen reader unusable) before Major (contrast below threshold) before Minor (missing ARIA labels on non-interactive elements).
+- Compliance reporting: produce a portfolio-wide accessibility compliance report. Track compliance rate per application. Set targets and review quarterly.
+
+---
+
+### Block 13 — Capstone Exercise
+**Hours:** 2.0 | **Method:** Evaluation | **Day:** 3 | **Time:** 1300–1500
+
+**Tasks:**
+
+| Task | Standard |
+|------|----------|
+| 1 | Design a design system component with full documentation: variants, accessibility notes, do/don't examples, data binding, and responsive behavior |
+| 2 | Design a DDIL pattern for an MSS application covering all four DDIL tiers with freshness indicators and offline states |
+| 3 | Produce a design governance proposal covering review gates, deviation management, and quality metrics |
+
+**Go standard:** Pass all 3 tasks. Component documentation is implementation-ready. DDIL pattern covers all four tiers. Governance proposal includes deviation management.
+
+**Hard No-Go:** Design system component with no accessibility documentation. DDIL design that shows a blank screen at any tier. Governance proposal with no deviation management process.
+
+---
+
+### Block 14 — Capstone Presentations and Peer Review
+**Hours:** 1.25 | **Method:** Workshop | **Day:** 3 | **Time:** 1515–1630
+
+**Key Delivery Notes:**
+- Each trainee presents their capstone: design system component, DDIL pattern, and governance proposal.
+- Peer review: structured critique using TM-50N review criteria. Focus on implementation feasibility, documentation completeness, and operational applicability.
+- Evaluator debrief: feedback on design system thinking, DDIL awareness, and governance maturity.
+
+---
+
+### Block 15 — Post-Test and Course Evaluation
+**Hours:** 0.5 | **Method:** Evaluation | **Day:** 3 | **Time:** 1630–1700
+
+**Post-test:** EXAM_TM50N_POST administered. Course evaluation.
+
+---
+
+---
+
+# PART O — TM-50O: ADVANCED PLATFORM ENGINEER
+
+**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Senior Platform Engineer with multi-cluster fleet management and SRE experience; TM-50O certified or C2DAO Advanced Platform SME
+**Note:** TM-50O is 3 days (24 hours), not 5 days.
+
+---
+
+### Block 1 — From Cluster Operations to Fleet Management
+**Hours:** 1.0 | **Method:** Seminar | **Day:** 1 | **Time:** 0800–0900
+
+**Purpose:** TM-50O moves from operating a single cluster to operating a fleet — and from building infrastructure to building the systems that build infrastructure. The same principle that made TM-40O treat pods as cattle applies at TM-50O to clusters themselves.
+
+**TLO:** The trainee will distinguish fleet management from single-cluster operations, describe the fleet topology model for MSS (hub and edge clusters across regions and classification levels), and state the Cluster API approach to declarative cluster lifecycle management.
+
+**Key Delivery Notes:**
+- Scale shift: "How do I deploy to this cluster?" → "How do I deploy to 20 clusters safely?" "Is this cluster healthy?" → "What is the fleet-wide health posture?" "How do I upgrade Kubernetes?" → "How do I upgrade the fleet without downtime?"
+- Fleet management is systems thinking: at TM-40O, you solve problems one cluster at a time. At TM-50O, you solve problems by building systems that solve them automatically across the fleet. Manual procedures that work for one cluster do not scale to twenty.
+- Cluster API: clusters are provisioned from templates, configured via GitOps, upgraded in waves, and decommissioned when no longer needed. Clusters are cattle, not pets — the same principle from TM-40O applied one level up.
+
+**Assessment:** Fleet management approach evaluated throughout course; assessed in capstone (Day 3).
+
+---
+
+### Block 2 — Fleet Provisioning
+**Hours:** 2.0 | **Method:** Lab | **Day:** 1 | **Time:** 0900–1100
+
+**TLO:** The trainee will define cluster templates and provision a multi-cluster fleet declaratively using Cluster API — with parameterized configuration for region, classification level, and workload profile.
+
+**Key Delivery Notes:**
+- Cluster template: defines the cluster's Kubernetes version, node pool configuration, network configuration, and default policies. Templates are versioned in Git.
+- Parameterized provisioning: same template, different parameters for each environment (region, classification, workload profile). Do not maintain separate templates for each cluster.
+- Fleet topology: hub cluster (management plane, GitOps controllers, monitoring aggregation) and edge clusters (workload execution, regional deployment). Design the topology before provisioning.
+
+---
+
+### Block 3 — Fleet-Wide Upgrades
+**Hours:** 0.75 | **Method:** Lab | **Day:** 1 | **Time:** 1115–1200
+
+**Key Delivery Notes:**
+- Wave-based rollout: upgrade clusters in waves — canary cluster first (lowest-risk workload), then wave 1 (non-production), then wave 2 (production non-critical), then wave 3 (production critical). Wait for validation between waves.
+- Canary validation: after upgrading the canary cluster, run automated health checks. If health checks pass, proceed to wave 1. If they fail, stop and investigate. Never proceed to the next wave with a failing canary.
+- Automated rollback: if a wave fails validation, automatically rollback the affected clusters to the previous version. Manual intervention should not be required for rollback.
+
+---
+
+### Block 4 — SRE Fundamentals: SLOs, SLIs, and Error Budgets
+**Hours:** 2.0 | **Method:** Seminar + Lab | **Day:** 1 | **Time:** 1300–1500
+
+**Purpose:** Perfect reliability is impossible and undesirable. SRE defines "reliable enough" and manages the gap between perfect and enough. Error budgets convert reliability from a vague aspiration into a concrete decision framework.
+
+**TLO:** The trainee will define SLOs and SLIs for MSS platform services, compute an error budget, and describe the budget-based decision policy (when the budget is exhausted, stop shipping and fix reliability).
+
+**Key Delivery Notes:**
+- SLI (Service Level Indicator): the metric that measures the service's behavior. For a platform: API server availability (% of successful API calls), pod scheduling latency (p99 time from pod creation to running), deployment success rate.
+- SLO (Service Level Objective): the target for the SLI. "API server availability >= 99.9% over 30 days." The SLO is a decision boundary — above the SLO, ship features; below the SLO, fix reliability.
+- Error budget: 100% minus the SLO target. For 99.9% availability, the error budget is 0.1% = ~43 minutes of downtime per month. This budget is available for deployments, experiments, upgrades, and maintenance.
+- Budget-based policy: when the error budget is exhausted, the team stops shipping features and focuses on reliability. This aligns platform engineers and application developers on shared trade-offs.
+
+**Assessment:** SLO framework evaluated in capstone (Day 3).
+
+---
+
+### Block 5 — Incident Management
+**Hours:** 1.75 | **Method:** Lab | **Day:** 1 | **Time:** 1515–1700
+
+**TLO:** The trainee will execute a blameless post-incident review following the detect-triage-mitigate-resolve-review-improve framework — producing an incident report with timeline, root cause, and preventive actions.
+
+**Key Delivery Notes:**
+- Tabletop exercise: walk through a platform incident scenario. The trainee practices the full incident lifecycle: detect (alert fires), triage (severity assessment), mitigate (immediate action to reduce impact), resolve (permanent fix), review (blameless postmortem), improve (preventive actions implemented).
+- Blameless: the postmortem identifies system failures, not individual failures. "The deployment process allowed an untested change to reach production" — not "Engineer X deployed without testing." Systems fail; fix the system.
+- Incident report: timeline (with DTGs), impact assessment, root cause analysis, contributing factors, immediate actions taken, and preventive actions with owners and deadlines.
+- Preventive actions must be trackable: add to the team backlog with priority. A preventive action that is "noted" but never implemented is a future incident waiting to happen.
+
+---
+
+### Block 6 — RMF/ATO Compliance Automation
+**Hours:** 2.0 | **Method:** Seminar + Lab | **Day:** 2 | **Time:** 0830–1030
+
+**TLO:** The trainee will build an automated compliance pipeline that generates RMF evidence from live system data — scan results, configuration baselines, access logs — and present the evidence through a compliance dashboard.
+
+**Key Delivery Notes:**
+- Continuous compliance: if compliance is a manual process, it is a point-in-time snapshot that is outdated the moment it is completed. Continuous compliance means the system proves its own compliance state — automatically, continuously, with evidence.
+- Evidence generation: automated vulnerability scans (evidence of patch compliance), configuration baseline comparisons (evidence of configuration compliance), access log aggregation (evidence of access control compliance). All evidence timestamped and stored.
+- Evidence API: the AO can query compliance status at any time. Evidence is always current. No manual checklist required.
+- Why this matters: the ATO is the legal authorization to process operational data. If the ATO is revoked because compliance evidence is stale, MSS goes offline — every WFF track loses their platform.
+
+---
+
+### Block 7 — STIG Automation
+**Hours:** 1.25 | **Method:** Lab | **Day:** 2 | **Time:** 1045–1200
+
+**TLO:** The trainee will implement policy-as-code STIG checks with pass/fail/exception reporting and a compliance dashboard.
+
+**Key Delivery Notes:**
+- Policy-as-code: STIG requirements expressed as code that can be automatically evaluated against live system state. Each STIG finding has a corresponding policy check.
+- Pass/fail/exception: each check returns pass (compliant), fail (non-compliant), or exception (non-compliant with documented and approved exception). Exceptions require an exception memo from the AO — the automation tracks the memo and its expiration date.
+- Compliance dashboard: aggregate pass/fail/exception across all STIG findings. Filter by severity. Track compliance trend over time. A declining compliance trend triggers a review.
+
+---
+
+### Block 8 — Developer Experience Engineering
+**Hours:** 2.0 | **Method:** Seminar + Lab | **Day:** 2 | **Time:** 1300–1500
+
+**TLO:** The trainee will design a golden path for MSS application onboarding that takes a new project from template to deployed application in <90 minutes — with pre-configured CI/CD, monitoring, and security scanning.
+
+**Key Delivery Notes:**
+- Golden path: a pre-tested, documented, secured, and supported path from "new project" to "deployed application." Developer runs a template command, gets a repo with CI/CD pipeline, monitoring dashboards, security scanning, and deployment configuration pre-configured.
+- Golden paths are not mandatory — developers can deviate. But the golden path is tested, documented, secured, and supported. Deviation paths are "you built it, you own it." This creates a natural incentive to follow the golden path.
+- DORA metrics: deployment frequency, lead time for changes, change failure rate, time to restore service. These are the primary signal for developer experience. If DORA metrics are declining, the platform is failing its users — regardless of infrastructure metrics.
+- Self-service portal: developers should be able to provision what they need without filing a ticket. Every ticket is a platform gap.
+
+---
+
+### Block 9 — Golden Path Build
+**Hours:** 1.75 | **Method:** Lab | **Day:** 2 | **Time:** 1515–1700
+
+**Key Delivery Notes:**
+- Build an application onboarding template: pre-configured repository structure, Dockerfile (hardened base, multi-stage, non-root), CI/CD pipeline definition with security gates, Kubernetes manifests with resource limits and health checks, monitoring dashboard template, and a README with onboarding instructions.
+- Test the golden path: have a peer trainee follow the golden path from template to deployed application. Measure time to deploy. Target: <90 minutes. If it takes longer, identify the bottleneck and fix it.
+- Onboarding documentation: the golden path README is the first document a new developer reads. It must be clear, complete, and tested.
+
+---
+
+### Block 10 — Fleet-Scale Observability
+**Hours:** 1.0 | **Method:** Seminar | **Day:** 3 | **Time:** 0800–0900
+
+**TLO:** The trainee will describe federated observability architecture across multiple clusters — covering federated metrics, centralized logging, distributed tracing, and SLO-based alerting at fleet scale.
+
+**Key Delivery Notes:**
+- At fleet scale, observability is not "can I see what this pod is doing?" — it is "can I correlate an event across 20 clusters, 200 services, and 3 classification domains to understand what happened and why?"
+- Federated metrics: Prometheus federation or remote-write to a central metrics store. Cross-cluster dashboards aggregate metrics from all clusters. SLO-based alerts fire when fleet-wide SLIs breach SLO thresholds.
+- Centralized logging: logs from all clusters forwarded to a centralized log store. Cross-cluster search capability. Retention policies per classification level.
+- Alert philosophy at scale: alert on SLO violations, not on individual pod restarts. A single pod restart is noise. A fleet-wide increase in pod restart rate is a signal.
+
+---
+
+### Block 11 — Federated Monitoring Lab
+**Hours:** 2.0 | **Method:** Lab | **Day:** 3 | **Time:** 0900–1100
+
+**TLO:** The trainee will configure cross-cluster metric federation and SLO-based alerting — demonstrating correlation of metrics across multiple clusters.
+
+**Key Delivery Notes:**
+- Configure Prometheus federation between two training clusters. Build a cross-cluster dashboard showing fleet-wide resource utilization, pod health, and deployment status.
+- SLO-based alerting: configure an alert that fires when the fleet-wide API server availability drops below the SLO target. Demonstrate that the alert fires and routes to the correct notification channel.
+- Cross-cluster correlation: when a platform event (e.g., upgrade) occurs on one cluster, correlate the metric impact across all clusters in the federation.
+
+---
+
+### Block 12 — Cross-Domain Infrastructure
+**Hours:** 0.75 | **Method:** Seminar | **Day:** 3 | **Time:** 1115–1200
+
+**Key Delivery Notes:**
+- Multi-classification cluster management: separate clusters per classification level. Configuration replication through approved cross-domain solutions (data diodes, CDS). Never direct network connectivity between classification levels.
+- Data diode integration: one-way data transfer from lower to higher classification. Monitoring data from UNCLASSIFIED clusters can flow to SECRET monitoring aggregation. Not the reverse.
+- Cross-domain replication: application artifacts (container images, configuration) must be replicated to each classification level through approved transfer procedures. Air-gapped deployment procedures from TM-40O apply at fleet scale.
+
+---
+
+### Block 13 — Capstone Exercise
+**Hours:** 2.0 | **Method:** Evaluation | **Day:** 3 | **Time:** 1300–1500
+
+**Tasks:**
+
+| Task | Standard |
+|------|----------|
+| 1 | Design a fleet topology for MSS spanning hub and edge clusters across two regions — with cluster templates, upgrade strategy, and rollback procedures |
+| 2 | Define SLOs and SLIs for MSS platform services with error budgets and budget-based decision policies |
+| 3 | Build an automated compliance pipeline that generates RMF evidence from live system data with a compliance dashboard |
+| 4 | Configure federated observability across multiple clusters with SLO-based alerting |
+
+**Go standard:** Pass all 4 tasks. Fleet topology is declaratively provisioned. SLOs include error budgets with decision policies. Compliance pipeline produces evidence automatically. Federated alerting fires on SLO breach.
+
+**Hard No-Go:** Fleet upgrade strategy with no rollback procedure. SLO definition with no error budget. Compliance pipeline that requires manual evidence collection.
+
+---
+
+### Block 14 — Capstone Presentations and Peer Review
+**Hours:** 1.25 | **Method:** Workshop | **Day:** 3 | **Time:** 1515–1630
+
+**Key Delivery Notes:**
+- Each trainee presents their capstone: fleet topology, SLO framework, compliance pipeline, and observability architecture.
+- Peer review: structured critique using TM-50O review criteria. Focus on scalability, automation completeness, and operational feasibility.
+- Evaluator debrief: feedback on fleet management thinking, SRE maturity, and compliance automation depth.
+
+---
+
+### Block 15 — Post-Test and Course Evaluation
+**Hours:** 0.5 | **Method:** Evaluation | **Day:** 3 | **Time:** 1630–1700
+
+**Post-test:** EXAM_TM50O_POST administered. Course evaluation.
+
+---
+
+---
+
 ## TM-50 INSTRUCTOR NOTES — APPLICABLE TO ALL TRACKS
 
 **Instructor qualification bar is high.** TM-50 instructors must be actively practicing at the level they teach. An instructor who completed TM-50G two years ago and has not done advanced ORSA work since is not qualified to teach TM-50G. Verify currency before assignment.
@@ -1356,6 +1746,8 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 - Code Workspace GPU allocation: 7–10 duty days (C2DAO request)
 - AIP Logic multi-agent features: 7+ duty days (C2DAO request)
 - CI/CD pipeline access (TM-50L): 7+ duty days (C2DAO request)
+- Design tool licenses (TM-50N): 7+ duty days (coordinate with C2DAO)
+- Multi-cluster fleet access (TM-50O): 10+ duty days (C2DAO request; requires namespace-admin on training fleet)
 
 **Peer review is a graded component.** For TM-50G and TM-50M, the peer review exercise (Day 4) is evaluated. A trainee who fails to conduct a substantive peer review does not receive credit for that block.
 
@@ -1366,4 +1758,4 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 ---
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*TM-50 Advanced Track Lesson Plan Outlines | Version 1.0 | March 2026*
+*TM-50 Advanced Track Lesson Plan Outlines | Version 1.1 | March 2026*

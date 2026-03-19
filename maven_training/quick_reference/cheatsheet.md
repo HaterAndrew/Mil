@@ -22,7 +22,7 @@
 | Technical program / project management | [TM-40J — Program Manager](../tm/TM_40J_program_manager/TM_40J_PROGRAM_MANAGER.md) |
 | Knowledge management / AAR / lessons learned | [TM-40K — Knowledge Manager](../tm/TM_40K_knowledge_manager/TM_40K_KNOWLEDGE_MANAGER.md) |
 | Software engineering / OSDK / external apps | [TM-40L — Software Engineer](../tm/TM_40L_software_engineer/TM_40L_SOFTWARE_ENGINEER.md) |
-| Advanced specialist training (post-TM-40G–M) | [TM-50 Series Index](../README.md#tm-50gl----advanced-technical-specialist-tracks) |
+| Advanced specialist training (post-TM-40G–O) | [TM-50 Series Index](../README.md#tm-50go----advanced-technical-specialist-tracks) |
 | Brief commanders / senior leaders | [Data Literacy for Senior Leaders](../doctrine/DATA_LITERACY_senior_leaders.md) |
 | Comprehensive data concepts reference | [Data Literacy Technical Reference](../doctrine/DATA_LITERACY_technical_reference.md) |
 | What does this term mean? | [Glossary — Data & Foundry](../doctrine/GLOSSARY_data_foundry.md) |
@@ -162,7 +162,7 @@ WFF functional staff (INT/FIRES/M2/SUST/PROT/MC)?
      Mission Command  → TM-40F
 
 17/25-series, S6, G6, G2, or operational data analyst?
-  → TM-30: ADVANCED BUILDER (data-adjacent), then TM-40G–M
+  → TM-30: ADVANCED BUILDER (data-adjacent), then TM-40G–O
 
 Technical specialist role? (after TM-30)
   → ORSA / quantitative analyst      → TM-40G / TM-50G
@@ -172,7 +172,7 @@ Technical specialist role? (after TM-30)
   → Knowledge manager / IM officer   → TM-40K / TM-50K
   → Software engineer / OSDK/Python  → TM-40L / TM-50L
 
-Completed TM-40G–M? → Take the corresponding TM-50G–M advanced track.
+Completed TM-40G–O? → Take the corresponding TM-50G–O advanced track.
 ```
 
 ---
@@ -182,14 +182,14 @@ Completed TM-40G–M? → Take the corresponding TM-50G–M advanced track.
 ```
 TM-10 (no prereq) → TM-20 → TM-30 ─┬─ WFF Staff  → TM-40A through TM-40F
                                       │
-                                      └─ Technical → TM-40G through TM-40M
+                                      └─ Technical → TM-40G through TM-40O
                                                               ↓
-                                                         TM-50G through TM-50M
+                                                         TM-50G through TM-50O
 
 All staff must complete TM-10 before any other TM.
 WFF tracks (TM-40A–F): require TM-10 + TM-20 + TM-30. No coding required.
-Technical tracks (TM-40G–M): require TM-30 (or demonstrated equivalent).
-Advanced tracks (TM-50G–M): require corresponding TM-40G–M.
+Technical tracks (TM-40G–O): require TM-30 (or demonstrated equivalent).
+Advanced tracks (TM-50G–O): require corresponding TM-40G–O.
 ```
 
 ---

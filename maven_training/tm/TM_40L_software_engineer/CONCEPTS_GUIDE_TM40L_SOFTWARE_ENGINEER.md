@@ -332,8 +332,6 @@ A senior contractor SWE builds a complex equipment readiness pipeline over six m
 
 ---
 
----
-
 ## GOVERNING REFERENCES (ADDITIONAL)
 
 | Document | Relevance |

@@ -450,10 +450,10 @@
 
 **Purpose:** Validates knowledge of instructional methodology, T&EO structure, evaluation procedures, and instructor performance standards.
 
-**TLO:** The candidate will achieve ≥ 80% (16/20) on the written exam.
+**TLO:** The candidate will achieve ≥ 80% (40/50) on the written exam.
 
 **Key Delivery Notes:**
-- 20 questions: mix of multiple choice and short answer
+- 16 questions (50 points): mix of multiple choice and short answer
 - Topics: adult learning principles, TCS framework, T&EO structure, Go/No-Go procedures, evaluation calibration, error management, instructor performance standards, pre-course administration
 - Closed book, closed notes
 - 60 minutes

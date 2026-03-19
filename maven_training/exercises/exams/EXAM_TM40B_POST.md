@@ -25,14 +25,14 @@ This assessment confirms proficiency upon completion of TM-40B training. A score
 **1. You configured an MSS alert to notify the FSO when an HVT enters TAI ANVIL. The alert does not fire when you input a test event placing an HVT inside TAI ANVIL's coordinates. The most likely cause is:**
 
 A. MSS does not support geographic-based alerts for fires data
-B. The TAI ANVIL geographic boundary is incorrectly defined in the alert configuration, or the alert is pulling from a different target data feed than the one containing the test event
+B. The test event must be submitted through the official fires reporting channel before MSS can register it
 C. Fires alerts require 48 hours to activate after initial configuration
-D. The test event must be submitted through the official fires reporting channel before MSS can register it
+D. The TAI ANVIL geographic boundary is incorrectly defined in the alert configuration, or the alert is pulling from a different target data feed than the one containing the test event
 
 **2. During a targeting working group, you display a fires product in MSS Workshop. The targeting officer asks how old the target data is. The product has no data-as-of timestamps on any element. You should:**
 
-A. Estimate the data age based on the last time you updated the product manually and brief that estimate
-B. Halt the brief, add explicit data-as-of timestamps to all data elements before continuing, and note the omission for after-action review
+A. Halt the brief, add explicit data-as-of timestamps to all data elements before continuing, and note the omission for after-action review
+B. Estimate the data age based on the last time you updated the product manually and brief that estimate
 C. Proceed with the brief since the targeting officer can check the source datasets independently
 D. Note the omission verbally and continue — adding timestamps is only required for products distributed outside the unit
 
@@ -46,8 +46,8 @@ D. Request that the targeting board defer any decisions on Target AC-07 until MS
 **4. FSCMs on the MSS COP are 24 hours old and have not been updated since the last planning cycle. The targeting board is about to approve a fire mission. You should:**
 
 A. Proceed with the targeting board — FSCMs are stable unless changed by written order, and 24 hours is within normal refresh tolerance
-B. Pause the targeting board; verify FSCM status with the S3 and higher fires cell before approving any fires; brief the board that displayed FSCMs may not reflect the current coordination picture
-C. Delete the stale FSCMs from the COP and proceed without them until updated versions are received
+B. Delete the stale FSCMs from the COP and proceed without them until updated versions are received
+C. Pause the targeting board; verify FSCM status with the S3 and higher fires cell before approving any fires; brief the board that displayed FSCMs may not reflect the current coordination picture
 D. Route the fire mission to higher headquarters for approval since your FSCMs are outdated
 
 **5. A correctly structured fires alert in MSS for ammunition readiness includes:**
@@ -66,17 +66,17 @@ D. Add the AVLO as an editor so they can annotate the product directly with deco
 
 **7. After a fires mission, the MSS COP still displays the engaged target as active. The most accurate characterization is:**
 
-A. The target was not successfully engaged — MSS would automatically update target status upon successful engagement
-B. A data reporting gap — MSS is displaying the last reported target status; the fires reporting chain has not yet submitted post-strike reporting, or the BDA pipeline has not updated the display
+A. A data reporting gap — MSS is displaying the last reported target status; the fires reporting chain has not yet submitted post-strike reporting, or the BDA pipeline has not updated the display
+B. The target was not successfully engaged — MSS would automatically update target status upon successful engagement
 C. A system error requiring immediate notification to the MSS administrator
 D. Normal behavior — COP target displays are always one reporting cycle behind actual fires execution
 
 **8. In a degraded connectivity scenario where MSS is unavailable, fire support personnel should:**
 
 A. Suspend all fires planning until MSS connectivity is restored
-B. Continue fires planning using manual targeting and fire support coordination procedures; maintain a manual record of FSCM locations and target status; identify which MSS-supported products are now stale and brief accordingly when connectivity is restored
+B. Use personal devices to access MSS through civilian network connectivity to maintain fires data display
 C. Transfer all targeting authority to higher headquarters until connectivity is restored
-D. Use personal devices to access MSS through civilian network connectivity to maintain fires data display
+D. Continue fires planning using manual targeting and fire support coordination procedures; maintain a manual record of FSCM locations and target status; identify which MSS-supported products are now stale and brief accordingly when connectivity is restored
 
 **9. Table 2-3 in TM-40B maps the D3A targeting cycle to data platform functions. Which of the following correctly pairs a D3A phase with its key data products?**
 
@@ -147,16 +147,14 @@ _______________________________________________
 ## ANSWER KEY (Instructor Use Only — Do Not Distribute)
 
 **Section 1:**
-1. B — geographic boundary misconfiguration or wrong data feed is the most common fires alert failure
-2. B — halt and add timestamps before continuing; omission must be corrected, not estimated
+1. D — geographic boundary misconfiguration or wrong data feed is the most common fires alert failure
+2. A — halt and add timestamps before continuing; omission must be corrected, not estimated
 3. B — brief IDA as reported; characterize as initial assessment only; do not brief as destroyed without CUBA
-4. B — pause the board; verify FSCMs before approving any fires; brief the FSCM currency gap
+4. C — pause the board; verify FSCMs before approving any fires; brief the FSCM currency gap
 5. C — complete fires alert: trigger condition + data source + notification path
 6. B — read-only access; classification marking; verify viewer-only permissions
-7. B — data reporting gap; BDA pipeline has not updated the COP
-8. B — manual fires procedures + manual FSCM tracking + brief stale products when connectivity restored
-9. C — Table 2-3 maps the Deliver phase to fire missions, FSEM updates, and BDA requests. Option A lists Detect-phase products (ICSM, NAI/TAI tracking) incorrectly assigned to Decide. Option B lists Decide-phase products (HPTL, TSS, AGM) incorrectly assigned to Detect. Option D lists Decide-phase products incorrectly assigned to Assess.
-10. D — Table 2-6 (FM 3-60, App G) defines Accessibility as whether the target can be reached by available fires means, scored 1 (deeply protected) to 5 (fully accessible). Option A describes Recuperability, not Criticality. Option B describes Criticality, not Vulnerability. Option C describes Vulnerability, not Recuperability.
+7. A — data reporting gap; BDA pipeline has not updated the COP
+8. D — manual fires procedures + manual FSCM tracking + brief stale products when connectivity restored
 
 **Section 2 — Expected elements:**
 11. Should include: verify the TAI HAMMER geographic boundary definition (check polygon coordinates against the targeting officer's map product), confirm the data source selected for Alert 2 is the correct HVT track feed, test with a known-negative event location outside TAI HAMMER to isolate whether the boundary or the feed configuration is the fault, check whether multiple overlapping TAI boundaries could be causing a cross-trigger.

@@ -39,15 +39,15 @@ D. Requiring all teams to share a single backlog to eliminate dependency conflic
 **3. A data product in the portfolio has been in maintenance-only mode for 18 months and its original operational use case has shifted. The PM's recommended action per TM-50J is:**
 
 A. Continue maintenance — operational data products should never be decommissioned without direct commander direction
-B. Initiate a formal retirement review: assess current usage, identify remaining dependencies, develop a migration plan for dependent teams, create a decommission timeline, and obtain stakeholder approval
-C. Archive the project and remove it from the portfolio dashboard
+B. Archive the project and remove it from the portfolio dashboard
+C. Initiate a formal retirement review: assess current usage, identify remaining dependencies, develop a migration plan for dependent teams, create a decommission timeline, and obtain stakeholder approval
 D. Transfer ownership to the data steward to reduce PM workload
 
 **4. A TM-50J portfolio health dashboard must display program health at which granularity?**
 
 A. Overall health only — individual program details clutter the portfolio view
-B. Overall composite health plus individual dimension ratings (schedule, cost, technical performance, risk, team health) per program, with trend direction
-C. Financial health only — non-financial metrics are assessed in separate program reviews
+B. Financial health only — non-financial metrics are assessed in separate program reviews
+C. Overall composite health plus individual dimension ratings (schedule, cost, technical performance, risk, team health) per program, with trend direction
 D. RED programs only — GREEN programs do not require active monitoring
 
 **5. Per TM-50J, a Palantir task order deliverable that passes contractor-run acceptance tests but fails an independent technical review must be:**
@@ -59,8 +59,8 @@ D. Accepted with a formal risk log entry documenting the technical reviewer's fi
 
 **6. "Technical debt as operational risk" means that unaddressed technical debt in an operational MSS system:**
 
-A. Increases the program's financial cost in future fiscal years
-B. Increases the risk of system failure, pipeline breakage, or inability to respond to urgent operational requirements — debt is not just a developer concern; it is a mission readiness factor
+A. Increases the risk of system failure, pipeline breakage, or inability to respond to urgent operational requirements — debt is not just a developer concern; it is a mission readiness factor
+B. Increases the program's financial cost in future fiscal years
 C. Reduces the program's performance rating in the annual program review
 D. Creates a contractual liability under the task order
 
@@ -74,56 +74,56 @@ D. By program age descending — oldest programs first
 **8. Per TM-50J standards, what is the PM's obligation when presenting a program status brief to a GO and the data shows the program is behind schedule with no credible recovery plan?**
 
 A. Present the scheduled recovery plan even if the PM doubts its feasibility
-B. Provide an honest assessment: state the schedule variance, the root cause, the realistic recovery options with their trade-offs, the resources required, and the decision required from the GO
+B. Coordinate with the G3 to ensure the brief language does not undermine command confidence
 C. Delay the brief until a recovery plan is developed
-D. Coordinate with the G3 to ensure the brief language does not undermine command confidence
+D. Provide an honest assessment: state the schedule variance, the root cause, the realistic recovery options with their trade-offs, the resources required, and the decision required from the GO
 
 **9. Using individual engineer story-point completion as a performance metric causes which specific dysfunctional behavior?**
 
 A. Engineers inflate story-point estimates for all tasks to artificially increase apparent velocity
-B. Both story-point inflation AND reduced collaboration (engineers avoid helping teammates because it doesn't show up in their individual metrics)
+B. Team velocity becomes unreliable as a planning tool
 C. Engineers focus exclusively on high-complexity tasks to maximize story-point output
-D. Team velocity becomes unreliable as a planning tool
+D. Both story-point inflation AND reduced collaboration (engineers avoid helping teammates because it doesn't show up in their individual metrics)
 
 **10. An ML/AI portfolio governance requirement for TM-50J means a PM must track:**
 
-A. The compute cost and licensing fees for all AI models in the portfolio
-B. Model versions in production, their acceptance threshold compliance, monitoring status, retraining schedules, and compliance with Army CIO and DoD RAIMTF requirements — not just delivery milestones
+A. Model versions in production, their acceptance threshold compliance, monitoring status, retraining schedules, and compliance with Army CIO and DoD RAIMTF requirements — not just delivery milestones
+B. The compute cost and licensing fees for all AI models in the portfolio
 C. The number of AI-generated products reviewed by humans per quarter
 D. Whether each AI system has been red-teamed within the last six months
 
 **11. The most significant risk of awarding a Palantir task order without requiring independent technical review of deliverables is:**
 
 A. The contracting officer cannot approve payment without independent review
-B. Contractor self-assessment of quality is not sufficient — deliverables may be technically non-compliant or contain significant technical debt that the contracting officer lacks the expertise to detect
+B. The task order may be subject to protest if review requirements are not documented in the PWS
 C. The Army loses the ability to enforce warranty terms if defects are discovered later
-D. The task order may be subject to protest if review requirements are not documented in the PWS
+D. Contractor self-assessment of quality is not sufficient — deliverables may be technically non-compliant or contain significant technical debt that the contracting officer lacks the expertise to detect
 
 **12. Velocity is most useful as a PM tool when it is used to:**
 
 A. Compare team productivity across different development teams
-B. Provide a stable baseline for iteration capacity planning within the same team over time — not as a cross-team or individual comparison metric
-C. Demonstrate program productivity to senior leaders and stakeholders
+B. Demonstrate program productivity to senior leaders and stakeholders
+C. Provide a stable baseline for iteration capacity planning within the same team over time — not as a cross-team or individual comparison metric
 D. Identify underperforming engineers who fall below the team's average velocity
 
 **13. A "data product retirement risk event" is triggered when:**
 
 A. A data product's pipeline fails and data has not refreshed in 48 hours
-B. Organizational dependencies on a data product exceed the program's planned decommission date, or a product without a decommission plan has no owner to maintain it
-C. A data product's data quality falls below the minimum threshold for use in operational briefings
+B. A data product's data quality falls below the minimum threshold for use in operational briefings
+C. Organizational dependencies on a data product exceed the program's planned decommission date, or a product without a decommission plan has no owner to maintain it
 D. The program manager responsible for the data product PCSs without a replacement
 
 **14. "Program financial stewardship" at the TM-50J level requires the PM to:**
 
-A. Approve all task order invoices before payment
-B. Monitor obligation and expenditure rates against quarterly targets, identify risks of year-end fund expiration or under-execution, and brief senior leaders on financial health with sufficient lead time to take corrective action
+A. Monitor obligation and expenditure rates against quarterly targets, identify risks of year-end fund expiration or under-execution, and brief senior leaders on financial health with sufficient lead time to take corrective action
+B. Approve all task order invoices before payment
 C. Prepare the program's PPBE submission to higher headquarters
 D. Maintain a separate tracking system for all credit card purchases within the program
 
 **15. A SAFe PI Planning session produces PI objectives that the teams have rated as "committed." This means:**
 
-A. The teams have a contractual obligation to deliver all committed objectives without modification
-B. The teams have high confidence in their ability to deliver these objectives within the PI, based on their capacity, dependencies, and technical understanding — but committed is not a guarantee
+A. The teams have high confidence in their ability to deliver these objectives within the PI, based on their capacity, dependencies, and technical understanding — but committed is not a guarantee
+B. The teams have a contractual obligation to deliver all committed objectives without modification
 C. The PM can report 100% delivery probability for committed objectives to higher headquarters
 D. Any failure to deliver a committed objective requires a formal After-Action Review
 
@@ -204,19 +204,19 @@ Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
 **Multiple Choice:**
 1. B — Program board with team plans, dependency links, and risk flags is the key PI Planning artifact.
 2. B — Cross-team dependency identification, tracking, and resolution before blockage is the PM's dependency management responsibility.
-3. B — Formal retirement review with usage assessment, dependency mapping, migration plan, timeline, and stakeholder approval.
-4. B — Portfolio dashboard requires composite health plus individual dimension ratings with trend direction.
+3. C — Formal retirement review with usage assessment, dependency mapping, migration plan, timeline, and stakeholder approval.
+4. C — Portfolio dashboard requires composite health plus individual dimension ratings with trend direction.
 5. B — Independent technical review is the binding quality gate; contractor self-certification is insufficient.
-6. B — Technical debt is an operational risk factor — it affects mission readiness, not just developer productivity.
+6. A — Technical debt is an operational risk factor — it affects mission readiness, not just developer productivity.
 7. B — Sort by composite health ascending — RED programs requiring most attention first.
-8. B — Honest assessment: state variance, root cause, realistic recovery options, trade-offs, and decision required.
-9. B — Story-point inflation AND reduced collaboration are both caused by individual velocity metrics.
-10. B — ML/AI governance tracks model versions, acceptance compliance, monitoring, retraining schedules, and policy compliance.
-11. B — Independent technical review is required because contractor self-certification is insufficient for technical quality.
-12. B — Velocity is most useful for within-team capacity planning over time, not cross-team comparison.
-13. B — Retirement risk event: dependencies exceed decommission date or product has no owner/decommission plan.
-14. B — Financial stewardship: monitor obligation/expenditure rates, identify year-end risk, brief senior leaders with lead time.
-15. B — Committed = high team confidence; not a guarantee or contractual obligation.
+8. D — Honest assessment: state variance, root cause, realistic recovery options, trade-offs, and decision required.
+9. D — Story-point inflation AND reduced collaboration are both caused by individual velocity metrics.
+10. A — ML/AI governance tracks model versions, acceptance compliance, monitoring, retraining schedules, and policy compliance.
+11. D — Independent technical review is required because contractor self-certification is insufficient for technical quality.
+12. C — Velocity is most useful for within-team capacity planning over time, not cross-team comparison.
+13. C — Retirement risk event: dependencies exceed decommission date or product has no owner/decommission plan.
+14. A — Financial stewardship: monitor obligation/expenditure rates, identify year-end risk, brief senior leaders with lead time.
+15. A — Committed = high team confidence; not a guarantee or contractual obligation.
 
 **Short Answer Guidance:**
 

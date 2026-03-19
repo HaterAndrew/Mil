@@ -8,7 +8,7 @@
 | **Level** | TM-40H (Specialist) |
 | **Audience** | AI/ML specialists; prerequisite: TM-10+20+30 + Python + prompt engineering familiarity |
 | **Time Allowed** | 45 minutes |
-| **Passing Score** | 70% (49/70) |
+| **Passing Score** | 70% (46/66) |
 
 ---
 
@@ -25,16 +25,16 @@ This assessment evaluates mastery of course learning objectives. A passing score
 **1. When completing an AIP Authorization Checklist for a proposed AI workflow, the first category checked must be:**
 
 A. Model selection and performance thresholds
-B. Whether the use case falls in a prohibited category (lethal autonomous targeting, unchecked personnel evaluation, classification without review)
-C. Compute resource requirements and cost estimate
+B. Compute resource requirements and cost estimate
+C. Whether the use case falls in a prohibited category (lethal autonomous targeting, unchecked personnel evaluation, classification without review)
 D. Whether the workflow will integrate with an existing Ontology Object Type
 
 **2. In AIP Logic, the "Draft → Review → Publish" workflow enforces:**
 
 A. That all AIP workflows are reviewed by the MSS program office before deployment
-B. That no AIP Logic output is released to operational users without passing through an authorized human review step
+B. That pipeline dependencies are validated before the AIP workflow is activated
 C. That the workflow code is reviewed by a security engineer before reaching production
-D. That pipeline dependencies are validated before the AIP workflow is activated
+D. That no AIP Logic output is released to operational users without passing through an authorized human review step
 
 **3. A human-in-the-loop (HITL) requirement for an AIP Logic workflow is classified as:**
 
@@ -53,16 +53,16 @@ D. Pre-summarize documents using a pipeline before feeding them to AIP Logic
 **5. In a RAG architecture for an MSS operational workflow, the correct sequence of operations is:**
 
 A. Prompt → LLM → Retrieval → Context injection → Output → Write to Ontology
-B. Retrieval → Context injection into prompt → LLM inference → Output review → Write to Ontology
+B. Write to Ontology → Retrieval → LLM inference → Output
 C. LLM inference → Retrieval of supporting documents → Output rewrite → Write to Ontology
-D. Write to Ontology → Retrieval → LLM inference → Output
+D. Retrieval → Context injection into prompt → LLM inference → Output review → Write to Ontology
 
 **6. An AIP Logic workflow writes a summarized lesson learned to an Ontology Object upon completion. Per TM-40H standards, this write action must:**
 
 A. Occur automatically after the LLM inference step to minimize latency
-B. Be gated behind a human review step — the output is written only after a reviewer approves it
+B. Require data steward approval for every individual write operation
 C. Be performed by a separate pipeline, not within the AIP Logic workflow
-D. Require data steward approval for every individual write operation
+D. Be gated behind a human review step — the output is written only after a reviewer approves it
 
 **7. When red-teaming an AIP Logic workflow against the USAREUR-AF AI Output Validation Framework, you should test for:**
 
@@ -73,22 +73,22 @@ D. Whether the LLM's output matches expected results across 100 standard test ca
 
 **8. You are building an AIP Logic workflow to extract key entities (unit names, grid coordinates, equipment types) from field reports. The LLM is producing inconsistently formatted outputs. The correct iterative improvement approach per TM-40H is:**
 
-A. Fine-tune the LLM on correctly-formatted examples to lock in the output format
-B. Revise the prompt to explicitly specify the output schema, add few-shot examples, test against a sample set, score outputs, and iterate until the format is consistent
+A. Revise the prompt to explicitly specify the output schema, add few-shot examples, test against a sample set, score outputs, and iterate until the format is consistent
+B. Fine-tune the LLM on correctly-formatted examples to lock in the output format
 C. Add a post-processing script that normalizes any output format into the target schema
 D. Switch to a rules-based entity extraction system instead of an LLM
 
 **9. Military terminology (DTG, DODAAC, MTOE, OPORD) in AIP Logic prompts is important because:**
 
 A. It reduces token count by using abbreviations
-B. Correct terminology in the prompt improves the model's ability to correctly process and extract operationally relevant entities from military documents
-C. It is required by Army CIO policy for all AI prompts on Army networks
+B. It is required by Army CIO policy for all AI prompts on Army networks
+C. Correct terminology in the prompt improves the model's ability to correctly process and extract operationally relevant entities from military documents
 D. It prevents the LLM from generating responses in non-military language
 
 **10. An Agent Studio agent is configured with multiple tools including a database query tool and an email send tool. The correct authorization control configuration is:**
 
-A. Grant the agent access to all tools by default and rely on the agent's own judgment to use them appropriately
-B. Define explicit tool-use authorization rules for each tool, specifying which tools can be used under which conditions and requiring human approval for irreversible actions (e.g., sending email)
+A. Define explicit tool-use authorization rules for each tool, specifying which tools can be used under which conditions and requiring human approval for irreversible actions (e.g., sending email)
+B. Grant the agent access to all tools by default and rely on the agent's own judgment to use them appropriately
 C. Allow the agent to use any tool it determines is relevant without human oversight
 D. Disable the email tool — agents may not send external communications under any circumstances
 
@@ -102,29 +102,29 @@ D. Real-time display of LLM inference tokens consumed per run
 **12. An AIP Logic workflow that processes maintenance records produces a structured JSON output. The field `action_required` contains values like "yes", "YES", "Yes", "1", and "true" for the same condition. This is an example of:**
 
 A. A prompt injection vulnerability
-B. Inconsistent output schema — the prompt must be revised to enforce a strict output format for this field
-C. A data type mismatch in the target Ontology property
+B. A data type mismatch in the target Ontology property
+C. Inconsistent output schema — the prompt must be revised to enforce a strict output format for this field
 D. Normal LLM variability — post-processing normalization is always required for JSON outputs
 
 **13. Per USAREUR-AF AI policy, which of the following use cases is PROHIBITED for AIP Logic automation?**
 
-A. Generating a draft equipment readiness summary for analyst review
-B. Automatically assigning a performance evaluation score to a Soldier based on AI analysis of their records without human review
+A. Automatically assigning a performance evaluation score to a Soldier based on AI analysis of their records without human review
+B. Generating a draft equipment readiness summary for analyst review
 C. Summarizing incoming maintenance work orders into a daily digest for the G4 NCOIC
 D. Extracting unit designations and grid references from OSINT reports for analyst review
 
 **14. A Python transform that extracts Ontology data for AIP Logic context must handle pagination when:**
 
-A. The Ontology dataset contains more than 100 columns
-B. The result set exceeds the single-page record limit and additional pages must be fetched to retrieve all records
+A. The result set exceeds the single-page record limit and additional pages must be fetched to retrieve all records
+B. The Ontology dataset contains more than 100 columns
 C. The transform runs in an incremental (@incremental) mode
 D. The Ontology Object Type has more than 10 Link Types
 
 **15. After a production AIP Logic workflow produces an output that is later found to be incorrect, the rollback procedure requires:**
 
 A. Deleting the affected output records from the Ontology and rerunning the workflow manually
-B. Using the documented rollback plan — reverting to the previous workflow version, notifying affected users, and investigating root cause before re-deploying
-C. Contacting the Palantir support team to restore the previous model version
+B. Contacting the Palantir support team to restore the previous model version
+C. Using the documented rollback plan — reverting to the previous workflow version, notifying affected users, and investigating root cause before re-deploying
 D. Disabling the workflow and rebuilding it from scratch
 
 **16. Per ADP 3-13, the doctrinal principle governing AI/ML integration into operational workflows is:**
@@ -226,23 +226,21 @@ Passing: 49/70 (70%) — Post-test only. Pre-test is diagnostic.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — Prohibited category check is the first and most critical gate on the AIP Authorization Checklist.
-2. B — Draft→Review→Publish enforces human review before operational distribution.
+1. C — Prohibited category check is the first and most critical gate on the AIP Authorization Checklist.
+2. D — Draft→Review→Publish enforces human review before operational distribution.
 3. B — HITL is NON-NEGOTIABLE — not configurable, not conditional on classification level.
 4. B — Chunking with overlap is the correct strategy for documents exceeding context window.
-5. B — Retrieval → context injection → LLM → review → write is the correct RAG sequence.
-6. B — Ontology write must be gated behind human review, not automatic after inference.
+5. D — Retrieval → context injection → LLM → review → write is the correct RAG sequence.
+6. D — Ontology write must be gated behind human review, not automatic after inference.
 7. B — Red-teaming tests prompt injection, hallucinations, classification boundary violations, role bypass.
-8. B — Prompt revision with explicit schema, few-shot examples, test/score/iterate is the correct approach.
-9. B — Military terminology in prompts improves entity extraction accuracy for military documents.
-10. B — Explicit tool-use authorization rules with human approval for irreversible actions is correct.
+8. A — Prompt revision with explicit schema, few-shot examples, test/score/iterate is the correct approach.
+9. C — Military terminology in prompts improves entity extraction accuracy for military documents.
+10. A — Explicit tool-use authorization rules with human approval for irreversible actions is correct.
 11. B — Output quality metrics, alert thresholds, and rollback procedure are required monitoring elements.
-12. B — Inconsistent output format requires prompt revision to enforce strict schema, not normalization.
-13. B — Automated personnel evaluation scoring without human review is a prohibited use case.
-14. B — Pagination handling is required when result sets exceed the single-page record limit.
-15. B — Rollback plan: revert workflow version, notify users, investigate root cause before re-deploying.
-16. B — ADP 3-13 establishes that AI enables speed while humans provide judgment. No AI/ML output replaces commander decision authority. Option A overstates automation scope — ADP 3-13 requires human judgment, not full automation. Option C describes autonomous action, which is prohibited per TM-40H policy. Option D conflates initial testing with ongoing governance — VAULTIS-A compliance is continuous. Source: ADP 3-13 / TM-40H Section 1-5a.
-17. B — Exploitation is the application of analytical methods to derive meaning from processed data. In AI/ML terms, this maps to model training, inference, and pattern detection. Option A describes Processing (data preprocessing). Option C describes Dissemination (output delivery). Option D describes a storage function not in PED. Source: FM 2-0, Chapter 3 / TM-40H Section 1-4.
+12. C — Inconsistent output format requires prompt revision to enforce strict schema, not normalization.
+13. A — Automated personnel evaluation scoring without human review is a prohibited use case.
+14. A — Pagination handling is required when result sets exceed the single-page record limit.
+15. C — Rollback plan: revert workflow version, notify users, investigate root cause before re-deploying.
 
 **Short Answer Guidance:**
 

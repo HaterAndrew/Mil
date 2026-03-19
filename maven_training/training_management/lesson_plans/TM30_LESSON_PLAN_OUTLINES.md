@@ -344,7 +344,7 @@
 
 ## COURSE COMPLETION — NEXT STEPS
 
-Upon receiving a TM-30 Go result, trainees are eligible to enroll in any TM-40 track — all six WFF functional tracks (TM-40A–F) and all six specialist tracks (TM-40G–M). The specialist tracks are:
+Upon receiving a TM-30 Go result, trainees are eligible to enroll in any TM-40 track — all six WFF functional tracks (TM-40A–F) and all eight specialist tracks (TM-40G–O). The specialist tracks are:
 
 | Track | Title | Prereq | Duration |
 |---|---|---|---|
@@ -354,12 +354,17 @@ Upon receiving a TM-30 Go result, trainees are eligible to enroll in any TM-40 t
 | TM-40J | Program Manager | TM-30 Required | 4 days |
 | TM-40K | Knowledge Manager | TM-30 Required | 4 days |
 | TM-40L | Software Engineer | TM-30 Required | 5 days |
+| TM-40N | UI/UX Designer | TM-30 Required | 5 days |
+| TM-40O | Platform Engineer | TM-30 Required | 5 days |
 
 **TM-30 is a hard prerequisite for all specialist tracks — not a recommendation.** Enrollment requests missing TM-30 Go documentation will not be confirmed by C2DAO.
 
-NOTE: Upon completing TM-30, trainees are eligible for ALL TM-40 tracks (A–M) — both WFF functional (A–F) and specialist (G–M). TM-30 is a hard prerequisite for every TM-40 track.
+NOTE: Upon completing TM-30, trainees are eligible for ALL TM-40 tracks (A–O) — both WFF functional (A–F) and specialist (G–O). TM-30 is a hard prerequisite for every TM-40 track.
 
-Instructors should discuss which specialist track is appropriate for each trainee at the end of Day 5. Refer trainees to the Unit Training NCO/Officer for enrollment coordination and access provisioning lead times (7–10+ duty days for specialist tracks).
+**T3-I (Instructor Certification) — parallel path:**
+TM-30 graduates who demonstrate strong instructional aptitude may be nominated for T3-I (Instructor Certification). T3-I is a 5-day course that qualifies graduates to deliver TM-10, TM-20, and TM-30 as certified instructors. Nominations require unit commander endorsement and C2DAO approval.
+
+Instructors should discuss which specialist track is appropriate for each trainee at the end of Day 5. For trainees with strong instructional aptitude, also highlight T3-I as an available path. Refer trainees to the Unit Training NCO/Officer for enrollment coordination and access provisioning lead times (7–10+ duty days for specialist tracks).
 
 ---
 

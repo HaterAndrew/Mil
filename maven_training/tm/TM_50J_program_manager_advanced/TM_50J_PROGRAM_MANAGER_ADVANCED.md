@@ -6,7 +6,7 @@
 
 > **WARNING: TM-50J program managers are accountable for the health of the USAREUR-AF data capability portfolio. Decisions made at this level — team structures, vendor deliverable acceptance, product retirement, and GO/SES briefings — have direct operational consequences for USAREUR-AF and EUCOM mission readiness. Apply the same standard of care as an operational mission brief: confirm facts, coordinate with stakeholders, and communicate clearly before execution.**
 > **CAUTION: Multi-team Agile coordination (SAFe or equivalent) requires explicit dependency management across teams. An undocumented inter-team dependency is a hidden risk. Failure to surface and manage cross-team dependencies during planning creates blocked sprints, delayed releases, and degraded data product quality.**
-> **NOTE: This manual assumes full mastery of TM-40J content. Chapter references to TM-40G through TM-40M indicate the technical tracks managed by TM-50J program managers — not prerequisites for the PM role itself. Cross-references are provided to help TM-50J graduates understand the work they are overseeing.**
+> **NOTE: This manual assumes full mastery of TM-40J content. Chapter references to TM-40G through TM-40O indicate the technical tracks managed by TM-50J program managers — not prerequisites for the PM role itself. Cross-references are provided to help TM-50J graduates understand the work they are overseeing.**
 
 ---
 
@@ -41,7 +41,7 @@ TM-50J covers the following capability areas:
 
 ### 1-3. Relationship to TM-40J and the Technical Tracks
 
-TM-50J program managers oversee the work of TM-40J project managers and the technical practitioners in tracks TM-40G through TM-40M. Understanding what each track produces — and what failure looks like in each — is essential for program-level oversight.
+TM-50J program managers oversee the work of TM-40J project managers and the technical practitioners in tracks TM-40G through TM-40O. Understanding what each track produces — and what failure looks like in each — is essential for program-level oversight.
 
 **Table 1-2. Technical Tracks Managed by TM-50J**
 
@@ -53,6 +53,8 @@ TM-50J program managers oversee the work of TM-40J project managers and the tech
 | TM-40J | Tech PM | Project delivery, stakeholder management, product release | On-time delivery of the wrong product |
 | TM-40K | Knowledge Manager | Ontology, data governance, KM architecture | Perfect data models no one uses |
 | TM-40L | Software Engineer | Custom transforms, integrations, API layers | High-quality code solving problems that could be configured |
+| TM-40N | UI/UX Designer | Workshop applications, user interfaces, dashboards | Beautiful interfaces that don't solve the operational problem |
+| TM-40O | Platform Engineer | Platform configuration, DevSecOps, infrastructure | Over-automated environments that operators cannot troubleshoot |
 
 TM-50J graduates must recognize failure modes across all tracks and understand how to intervene at the program level — not by doing the technical work, but by restructuring teams, realigning priorities, removing blockers, or escalating to C2DAO leadership.
 
@@ -66,6 +68,8 @@ TM-50J graduates must recognize failure modes across all tracks and understand h
 | TM-50J | Program Manager Advanced | THIS DOCUMENT |
 | TM-50K | Knowledge Manager Advanced | KM system program oversight; lessons learned program management |
 | TM-50L | Software Engineer Advanced | Platform engineering program coordination; SWE team structure |
+| TM-50N | UI/UX Designer Advanced | Design team coordination; UX requirements management |
+| TM-50O | Platform Engineer Advanced | Platform capacity planning; infrastructure program management |
 
 **WFF Operational Consumer Note.** The six Warfighting Function (WFF) tracks — Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F) — represent the primary operational stakeholder base for MSS programs. TM-50J program managers must understand WFF requirements when scoping data products, managing stakeholder relationships, and communicating program value to GO/SES audiences. WFF staff sections define the demand signal; the data program exists to serve their mission decisions.
 
@@ -88,7 +92,7 @@ The TM-50J program manager is not the most technically skilled person on the tea
 | Competency Domain | Key Behaviors | Development Path |
 |-------------------|--------------|-----------------|
 | Program-level thinking | Sees portfolio risk, not just project risk; understands how individual decisions affect the whole | Managing 3+ concurrent TM-40J-level projects; PI Planning facilitation experience |
-| Technical fluency | Understands enough of each technical track to ask the right questions and recognize when answers are implausible; reads code and data schemas | Completion of TM-40J; familiarity with TM-40G through TM-40M content; regular sprint reviews |
+| Technical fluency | Understands enough of each technical track to ask the right questions and recognize when answers are implausible; reads code and data schemas | Completion of TM-40J; familiarity with TM-40G through TM-40O content; regular sprint reviews |
 | Senior stakeholder management | Comfortable briefing GO/SES; can deliver bad news professionally; maintains trust under pressure | Direct GO/SES briefing experience; mentorship from senior military or SES leaders |
 | Quantitative reasoning | Uses delivery data analytically; interprets statistical signals; communicates metrics in operational terms | Statistical literacy; data product familiarity; Chapter 5 of this manual |
 | Change leadership | Reads organizational resistance; designs change for the military context; sustains change through personnel turbulence | Field experience with technology adoption in military formations |
@@ -568,11 +572,11 @@ Not all technical debt is equal. Classify debt before prioritizing it.
 
 **STANDARDS:** Assessment is complete when: all active products have been assessed against the debt classification framework; each identified debt item is categorized, sized (story points or days), and assigned a risk rating; the aggregate debt backlog is documented in the program tracker; a prioritized debt reduction roadmap covers the next two PIs.
 
-**EQUIPMENT:** MSS program tracker (product inventory, backlog), debt classification framework (Table 6-1), access to product documentation for each active MSS product, technical leads (TM-40G through TM-40M) for each product.
+**EQUIPMENT:** MSS program tracker (product inventory, backlog), debt classification framework (Table 6-1), access to product documentation for each active MSS product, technical leads (TM-40G through TM-40O) for each product.
 
 **PROCEDURE:**
 
-1. **Assemble the assessment team.** The debt assessment requires input from the technical practitioners who built and maintain each product. Schedule a half-day workshop with TM-40G through TM-40M leads for each active product. The PM does not lead the technical assessment — they facilitate it and document the outputs.
+1. **Assemble the assessment team.** The debt assessment requires input from the technical practitioners who built and maintain each product. Schedule a half-day workshop with TM-40G through TM-40O leads for each active product. The PM does not lead the technical assessment — they facilitate it and document the outputs.
 
 2. **Assess each product against the six debt categories.** For each category, rate the severity: None, Low, Medium, High. For any Medium or High rating, document the specific debt item, the estimated remediation cost, and the operational risk if the debt is not addressed.
 
@@ -1786,7 +1790,7 @@ By the end of 30 days, the incoming TM-40J PM should be able to:
 | TM-40M | ML Engineer | Technical track managed by TM-50J; reference for ML model lifecycle |
 | TM-40K | Knowledge Manager | Technical track managed by TM-50J; reference for ontology governance |
 | TM-40L | Software Engineer | Technical track managed by TM-50J; reference for custom code standards |
-| TM-50G through TM-50M | Advanced technical tracks | Peer publications; reference for advanced capability expectations in each track |
+| TM-50G through TM-50O | Advanced technical tracks | Peer publications; reference for advanced capability expectations in each track |
 | Data Literacy Technical Reference | Data Literacy | Doctrinal foundation; establishes organizational data literacy standards |
 | Data Literacy for Senior Leaders | Senior leader data doctrine | Strategic framing for GO/SES briefings on data program value |
 

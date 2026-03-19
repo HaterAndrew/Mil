@@ -345,7 +345,7 @@ Data literacy exists on a continuum. Not every Soldier needs the same level of p
 | TM-10 (Operator) | All personnel | Navigate and consume data products on MSS; observe data security and accuracy standards |
 | TM-20 (Builder) | All personnel | Build basic Workshop applications; run light transforms; manipulate and share data products |
 | TM-30 (Advanced Builder) | Data-adjacent personnel (17/25-series, S6/G6/G2) | Design pipelines and Ontology objects; build complex dashboards; apply governed data patterns |
-| TM-40 Series (Specialist) | Designated specialist roles | Role-specific mastery: WFF tracks (A–F) and technical tracks (G–M) |
+| TM-40 Series (Specialist) | Designated specialist roles | Role-specific mastery: WFF tracks (A–F) and technical tracks (G–O) |
 | TM-50 Series (Advanced Specialist) | TM-40 graduates in senior/lead roles | Research-grade capability; leads and mentors others in specialist track |
 
 Senior leaders sit at the TM-10 level for technical skills and at a distinct "Commander" level for direction, evaluation, and command responsibilities.

@@ -24,8 +24,8 @@ This assessment confirms proficiency upon completion of TM-40E training. A score
 
 **1. You have configured a force protection CCIR in MSS to alert when a threat event occurs within the restricted area boundary surrounding FOB KESTREL. During the protection working group, a threat event is reported inside the boundary but the CCIR does not fire. The most likely cause is:**
 
-A. CCIR geographic alerts require 30-minute polling intervals — the event has not yet been processed
-B. The geographic boundary in the CCIR definition does not correctly match the restricted area — the boundary was entered with incorrect coordinates or default dimensions
+A. The geographic boundary in the CCIR definition does not correctly match the restricted area — the boundary was entered with incorrect coordinates or default dimensions
+B. CCIR geographic alerts require 30-minute polling intervals — the event has not yet been processed
 C. CCIR alerts only function when the MSS operator is actively logged in
 D. Threat events must be confirmed by the S2 before a CCIR can trigger
 
@@ -39,21 +39,21 @@ D. Delay the protection working group until the Sector SOUTH feed is restored
 **3. PERSTAT displayed in MSS shows 3rd Battalion at 91% personnel present for duty. Before briefing this figure to the protection working group, you must:**
 
 A. Confirm the figure with 3rd Battalion S1 — PERSTAT in MSS is never authoritative
-B. Verify the data-as-of timestamp — PERSTAT in MSS reflects the last submitted report, not real-time accountability
-C. Convert the percentage to a headcount before briefing — percentages are not acceptable in a protection product
+B. Convert the percentage to a headcount before briefing — percentages are not acceptable in a protection product
+C. Verify the data-as-of timestamp — PERSTAT in MSS reflects the last submitted report, not real-time accountability
 D. Obtain the battalion commander's approval to brief 3rd Battalion personnel data to the working group
 
 **4. A CBRN officer is integrating synthetic hazard sensor data into the MSS COP. The officer displays a hazard boundary and briefs the protection working group that the affected area is confirmed. The correct characterization of this information is:**
 
 A. Confirmed — sensor data in MSS reflects validated CBRN readings
-B. Estimated — CBRN sensor feeds may have latency, coverage gaps, and sensor reliability variability; the displayed boundary is a model estimate, not a confirmed boundary
+B. Classified — CBRN hazard boundaries cannot be briefed below theater level
 C. Preliminary — all CBRN data requires 24-hour laboratory confirmation before display in MSS
-D. Classified — CBRN hazard boundaries cannot be briefed below theater level
+D. Estimated — CBRN sensor feeds may have latency, coverage gaps, and sensor reliability variability; the displayed boundary is a model estimate, not a confirmed boundary
 
 **5. Your force protection CCIR for casualties above threshold fires unexpectedly during a routine training period when no casualties have been reported. The correct first action is:**
 
-A. Execute force protection Plan B immediately — the CCIR system does not produce false positives
-B. Verify the alert by checking the casualty data source, reviewing the raw records that triggered the threshold, and confirming whether the trigger reflects a genuine event or a data entry error before escalating
+A. Verify the alert by checking the casualty data source, reviewing the raw records that triggered the threshold, and confirming whether the trigger reflects a genuine event or a data entry error before escalating
+B. Execute force protection Plan B immediately — the CCIR system does not produce false positives
 C. Reconfigure the casualty threshold to a higher value to eliminate false positives
 D. Transfer CCIR monitoring to the S1 — casualty data is a personnel function
 
@@ -67,15 +67,15 @@ D. Brief the route as safe — three events in 14 days is below the theater repo
 **7. For OPSEC purposes, force protection products containing threat locations, PERSTAT data, and vulnerability overlays should be:**
 
 A. Shared broadly within the brigade to maximize situational awareness
-B. Treated as sensitive in aggregate — individually some elements may be unclassified, but the combination reveals security posture and gaps and must be distributed only to those with operational need to know
+B. Exported to PDF and emailed to all working group attendees after each meeting
 C. Classified at the SECRET level automatically when threat data is included
-D. Exported to PDF and emailed to all working group attendees after each meeting
+D. Treated as sensitive in aggregate — individually some elements may be unclassified, but the combination reveals security posture and gaps and must be distributed only to those with operational need to know
 
 **8. When a threat reporting feed fails during a protection working group, the force protection officer's primary responsibility is:**
 
 A. Fix the pipeline immediately — the working group cannot proceed without complete data
-B. Characterize the data gap clearly to the protection working group, identify what decisions are and are not supportable with current data, and assign follow-on action to restore or verify the feed
-C. Suspend the working group until full data coverage is restored
+B. Suspend the working group until full data coverage is restored
+C. Characterize the data gap clearly to the protection working group, identify what decisions are and are not supportable with current data, and assign follow-on action to restore or verify the feed
 D. Contact the software vendor to report the feed failure
 
 **9. ADP 3-37 establishes CVP (Criticality-Vulnerability-Probability) analysis as the framework for protection prioritization (section 4-2a). Which of the following correctly describes the three CVP factors?**
@@ -146,16 +146,14 @@ _______________________________________________
 ## ANSWER KEY (Instructor Use Only — Do Not Distribute)
 
 **Section 1:**
-1. B — incorrect boundary coordinates are the most common geographic CCIR failure; the boundary must precisely match the restricted area specification
+1. A — incorrect boundary coordinates are the most common geographic CCIR failure; the boundary must precisely match the restricted area specification
 2. B — characterize the gap, caveat all affected products, request a spot report; do not extrapolate, remove, or delay
-3. B — PERSTAT reflects the last submitted report; timestamp verification is mandatory before briefing
-4. B — CBRN hazard boundaries from sensor feeds are estimates, not confirmed areas; this is a critical safety and operational distinction
-5. B — verify before escalating; the CCIR system can produce false positives from data entry errors
+3. C — PERSTAT reflects the last submitted report; timestamp verification is mandatory before briefing
+4. D — CBRN hazard boundaries from sensor feeds are estimates, not confirmed areas; this is a critical safety and operational distinction
+5. A — verify before escalating; the CCIR system can produce false positives from data entry errors
 6. B — present the data pattern with context; do not make route closure decisions unilaterally from MSS data alone
-7. B — aggregate sensitivity applies; the combination of threat locations, PERSTAT, and vulnerability data reveals security posture
-8. B — characterize, identify decision impact, assign follow-on; do not fix the pipeline at this level
-9. B — ADP 3-37 (section 4-2a) defines CVP as: Criticality = how important the asset is to mission success; Vulnerability = how exposed the asset is to threats; Probability = how likely the threat is to act against this asset. Option A reverses Criticality and Vulnerability. Option C scrambles all three factors. Option D conflates CVP factors with physical characteristics and historical data.
-10. C — FM 3-13.3 (Table 4-2, section 4-7) establishes the OPSEC 5-step process in order: (1) Identify critical information, (2) Analyze threats, (3) Analyze vulnerabilities, (4) Assess risk, (5) Apply countermeasures. All other options present the steps out of sequence.
+7. D — aggregate sensitivity applies; the combination of threat locations, PERSTAT, and vulnerability data reveals security posture
+8. C — characterize, identify decision impact, assign follow-on; do not fix the pipeline at this level
 
 **Section 2 — Expected elements:**
 11. Should include: check the CCIR boundary definition against the restricted area coordinates; check whether the event that the S2 reported was entered in the correct data source feeding the CCIR; verify the event coordinates are actually within the boundary (boundary entry errors are common); test the CCIR with the known event location using the test dataset; if the CCIR boundary is confirmed wrong, update it and document the correction before the next working group.

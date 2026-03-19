@@ -365,8 +365,6 @@ Before proceeding to TM-50G task procedures, confirm you can answer the followin
 
 ---
 
----
-
 ## APPENDIX C — PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION
 
 **Peer TM-50 Publications.** The following advanced-track publications share overlapping concerns with TM-50G ORSA practice. Coordinate with practitioners in these tracks rather than operating in isolation.
@@ -378,6 +376,8 @@ Before proceeding to TM-50G task procedures, confirm you can answer the followin
 | TM-50J | Advanced Program Manager | Portfolio-level OR program governance |
 | TM-50K | Advanced Knowledge Manager | Capturing and surfacing ORSA-derived insights |
 | TM-50L | Advanced Software Engineer | Platform infrastructure supporting ORSA pipelines |
+| TM-50N | Advanced UI/UX Designer | Data visualization design; dashboard UX for ORSA outputs |
+| TM-50O | Advanced Platform Engineer | Infrastructure for analytical workloads; compute scaling |
 
 **WFF Operational Consumer Note.** Advanced ORSA analytical work ultimately supports the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). These practitioners are the operational consumers of readiness analyses, logistics optimizations, campaign assessments, and decision support products. The judgment questions addressed in this Concepts Guide — which method fits the problem, how to present uncertainty, when to advise a different question — are ultimately answered in terms of what a WFF staff section needs to make a decision.
 

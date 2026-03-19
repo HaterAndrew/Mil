@@ -96,7 +96,7 @@ The Unit Training NCO/Officer submits to the unit MSS Administrator. The MSS Adm
 - [ ] All fields on the Enrollment Request Form completed
 - [ ] Prerequisites verified and documentation attached
 - [ ] For TM-30+: elevated access provisioning in place or being initiated
-- [ ] For TM-40 specialist tracks (TM-40G through TM-40M): technical prerequisites (Code Workspace, OSDK, etc.) active or being requested concurrently
+- [ ] For TM-40 specialist tracks (TM-40G through TM-40O): technical prerequisites (Code Workspace, OSDK, etc.) active or being requested concurrently
 
 ### Step 6: Forward to C2DAO Training POC
 

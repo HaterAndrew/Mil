@@ -24,7 +24,7 @@ Wiesbaden, Germany
 | All staff (light builders) | Building dashboards, forms, or basic pipelines | TM-20 (prereq: TM-10) |
 | Data-adjacent specialists | 17/25-series, S6/G6, G2, operational data analysts | TM-30 (prereq: TM-20) |
 | WFF functional staff | Assigned to INT, FIRES, M2, SUST, PROTECTION, or MC | TM-40A–F (prereq: TM-30) |
-| Technical specialists | Writing code, building external apps, ML models | TM-40G–M (prereq: TM-30) |
+| Technical specialists | Writing code, building external apps, ML models | TM-40G–O (prereq: TM-30) |
 | Senior leaders (O-5+, CSM+) | Commanding or directing a data-capable formation | Data Literacy for Senior Leaders |
 | Instructor candidates | C2DAO-selected, TM-30 certified | T3-I (prereq: TM-30 + C2DAO selection) |
 | Unit data trainers | CDR-nominated, TM-20 certified | T3-F (prereq: TM-20 + CDR nomination) |
@@ -32,7 +32,7 @@ Wiesbaden, Germany
 
 > **TM-40 Disambiguation:** Two distinct sub-series share the TM-40 designation.
 > - **TM-40A–F** — Warfighting Function tracks. Prereq: TM-30. No coding required. Audience: functional WFF staff.
-> - **TM-40G–M** — Technical Specialist tracks. Prereq: TM-30. Audience: engineers, analysts, and data professionals.
+> - **TM-40G–O** — Technical Specialist tracks. Prereq: TM-30. Audience: engineers, analysts, and data professionals.
 >
 > Confirm your sub-series against your role before enrolling.
 
@@ -55,7 +55,7 @@ All proceeding to TM-40 ────────────────► TM-3
                                            │            │                                 │
                               ┌────────────┘            └────────────┐                   │
                               ▼                                      ▼                   │
-                   WFF Staff (TM-40A–F)              Technical Specialists (TM-40G–M) ◄──┘
+                   WFF Staff (TM-40A–F)              Technical Specialists (TM-40G–O) ◄──┘
                    TM-40A  Intelligence               TM-40G  ORSA           (TM-40 requires
                    TM-40B  Fires                      TM-40H  AI Engineer     TM-30; BSP
                    TM-40C  Movement/Maneuver          TM-40M  ML Engineer     does not satisfy
@@ -64,11 +64,7 @@ All proceeding to TM-40 ────────────────► TM-3
                    TM-40F  Mission Command            TM-40L  Software Engineer
                                                             │
                                                             ▼
-                                                     TM-50G–50M (Advanced)
-
-TRAIN-THE-TRAINER (T3) — SEPARATE BRANCH (outside TM chain)
-  TM-30 + C2DAO Selection ──► T3-I (Instructor Certification) ─── 5 days
-  TM-20 + CDR Nomination  ──► T3-F (MSC Force Multiplier)     ─── 3 days
+                                                     TM-50G–50O (Advanced)
 ```
 
 ### Step 3 — Reference the Glossary
@@ -88,9 +84,9 @@ Consult the [Data & Foundry Glossary](doctrine/GLOSSARY_data_foundry.md) to tran
 | Glossary — Data & Foundry Terms | [doctrine/GLOSSARY_data_foundry.md](doctrine/GLOSSARY_data_foundry.md) | All personnel |
 | CDA Constraints and Directives | [doctrine/CDA_CONSTRAINTS_AND_DIRECTIVES.md](doctrine/CDA_CONSTRAINTS_AND_DIRECTIVES.md) | TM-30+, all specialists |
 
-### CDA Doctrine and Enterprise Architecture (TM-30, TM-40G–M)
+### CDA Doctrine and Enterprise Architecture (TM-30, TM-40G–O)
 
-Reference material supporting TM-30 and specialist tracks. Primarily targeted at TM-40G–M; WFF tracks (TM-40A–F) may use as supplemental reading.
+Reference material supporting TM-30 and specialist tracks. Primarily targeted at TM-40G–O; WFF tracks (TM-40A–F) may use as supplemental reading.
 
 **Enterprise Architecture Series:**
 
@@ -101,13 +97,13 @@ Reference material supporting TM-30 and specialist tracks. Primarily targeted at
 | EA Schools of Thought | [doctrine/enterprise_architecture/EA_02_SCHOOLS_OF_THOUGHT.md](doctrine/enterprise_architecture/EA_02_SCHOOLS_OF_THOUGHT.md) | TM-30, TM-40K |
 | EA Artifacts and Views | [doctrine/enterprise_architecture/EA_03_ARTIFACTS_AND_VIEWS.md](doctrine/enterprise_architecture/EA_03_ARTIFACTS_AND_VIEWS.md) | TM-40K, TM-40L |
 | EA Governance | [doctrine/enterprise_architecture/EA_04_GOVERNANCE.md](doctrine/enterprise_architecture/EA_04_GOVERNANCE.md) | TM-40K |
-| EA Military Application | [doctrine/enterprise_architecture/EA_05_MILITARY_APPLICATION.md](doctrine/enterprise_architecture/EA_05_MILITARY_APPLICATION.md) | TM-30, TM-40G–M |
+| EA Military Application | [doctrine/enterprise_architecture/EA_05_MILITARY_APPLICATION.md](doctrine/enterprise_architecture/EA_05_MILITARY_APPLICATION.md) | TM-30, TM-40G–O |
 
 **CDA Doctrine Series:**
 
 | Publication | File | Supports |
 |-------------|------|----------|
-| Doctrine-Driven Development Overview | [doctrine/cda_doctrine/CDA_DOCTRINE_OVERVIEW.md](doctrine/cda_doctrine/CDA_DOCTRINE_OVERVIEW.md) | TM-40G–M |
+| Doctrine-Driven Development Overview | [doctrine/cda_doctrine/CDA_DOCTRINE_OVERVIEW.md](doctrine/cda_doctrine/CDA_DOCTRINE_OVERVIEW.md) | TM-40G–O |
 | CDA Doctrine Agent | [doctrine/cda_doctrine/CDA_DOCTRINE_AGENT.md](doctrine/cda_doctrine/CDA_DOCTRINE_AGENT.md) | TM-40H, TM-40L |
 | AVT25 Assessment Case Study | [doctrine/cda_doctrine/CDA_AVT25_ASSESSMENT.md](doctrine/cda_doctrine/CDA_AVT25_ASSESSMENT.md) | TM-40G, TM-40H |
 | Identity vs. Classification | [doctrine/cda_doctrine/CDA_IDENTITY_VS_CLASSIFICATION.md](doctrine/cda_doctrine/CDA_IDENTITY_VS_CLASSIFICATION.md) | TM-30, TM-40K, TM-40L |
@@ -131,7 +127,7 @@ Reference material supporting TM-30 and specialist tracks. Primarily targeted at
 | TM-40E — Protection | [tm/TM_40E_protection/TM_40E_PROTECTION.md](tm/TM_40E_protection/TM_40E_PROTECTION.md) | [CONCEPTS_GUIDE_TM40E](tm/TM_40E_protection/CONCEPTS_GUIDE_TM40E_PROTECTION.md) | Protection |
 | TM-40F — Mission Command | [tm/TM_40F_mission_command/TM_40F_MISSION_COMMAND.md](tm/TM_40F_mission_command/TM_40F_MISSION_COMMAND.md) | [CONCEPTS_GUIDE_TM40F](tm/TM_40F_mission_command/CONCEPTS_GUIDE_TM40F_MISSION_COMMAND.md) | MC |
 
-### TM-40G–M — Technical Specialist Tracks (Prereq: TM-30)
+### TM-40G–O — Technical Specialist Tracks (Prereq: TM-30)
 
 | Publication | File | Concepts Guide | Audience |
 |-------------|------|----------------|----------|
@@ -142,9 +138,9 @@ Reference material supporting TM-30 and specialist tracks. Primarily targeted at
 | TM-40K — Knowledge Manager | [tm/TM_40K_knowledge_manager/TM_40K_KNOWLEDGE_MANAGER.md](tm/TM_40K_knowledge_manager/TM_40K_KNOWLEDGE_MANAGER.md) | [CONCEPTS_GUIDE_TM40K](tm/TM_40K_knowledge_manager/CONCEPTS_GUIDE_TM40K_KNOWLEDGE_MANAGER.md) | KMOs, 37F |
 | TM-40L — Software Engineer | [tm/TM_40L_software_engineer/TM_40L_SOFTWARE_ENGINEER.md](tm/TM_40L_software_engineer/TM_40L_SOFTWARE_ENGINEER.md) | [CONCEPTS_GUIDE_TM40L](tm/TM_40L_software_engineer/CONCEPTS_GUIDE_TM40L_SOFTWARE_ENGINEER.md) | SWEs |
 
-### TM-50G–M — Advanced Technical Specialist Tracks
+### TM-50G–O — Advanced Technical Specialist Tracks
 
-Each TM-50 track builds on its TM-40G–M counterpart. Prereq: corresponding TM-40G–M.
+Each TM-50 track builds on its TM-40G–O counterpart. Prereq: corresponding TM-40G–O.
 
 | Publication | File | Concepts Guide | Audience | Prereq |
 |-------------|------|----------------|----------|--------|
@@ -193,7 +189,7 @@ Competencies: Multi-page Workshop with conditional logic and variable passing; a
 | TM-40E | Protection | Force protection, CBRN staff | Threat tracking, vulnerability assessment, protection COA support |
 | TM-40F | Mission Command | C2/MC staff, battle captains | Operational dashboards, CCIR management, battle rhythm products |
 
-### TM-40G–M — Technical Specialist Tracks
+### TM-40G–O — Technical Specialist Tracks
 **Prereq:** TM-30.
 
 | Track | Audience | Key Competencies |
@@ -213,7 +209,7 @@ Competencies: Multi-page Workshop with conditional logic and variable passing; a
 | Track | Prereq | Duration | Audience | Output |
 |-------|--------|----------|----------|--------|
 | T3-I Instructor Certification | TM-30 + C2DAO selection | 5 days (classroom + practicum) | C2DAO-selected instructor candidates | Certified Instructor |
-| T3-F MSC Force Multiplier | TM-20 + CDR nomination | 3 days | CDR-nominated unit personnel | Unit Data Trainer (UDT) |
+| T3-F MSC Force Multiplier | TM-20 + CDR nomination | Half day | CDR-nominated unit personnel | Unit Data Trainer (UDT) |
 
 ---
 
@@ -273,10 +269,7 @@ Distribute to each trainee at course start.
 | TM-40K | [syllabi/SYLLABUS_TM40K.md](syllabi/SYLLABUS_TM40K.md) | KMOs, 37F |
 | TM-40L | [syllabi/SYLLABUS_TM40L.md](syllabi/SYLLABUS_TM40L.md) | SWEs |
 
-| T3-I | [syllabi/SYLLABUS_T3I.md](syllabi/SYLLABUS_T3I.md) | C2DAO-selected instructor candidates |
-| T3-F | [syllabi/SYLLABUS_T3F.md](syllabi/SYLLABUS_T3F.md) | CDR-nominated unit data trainers |
-
-> **Note:** TM-50G–M series syllabi are published. WFF tracks (TM-40A–F) are terminal — no advanced continuation. Advanced training is available only for specialist tracks (TM-50G–M). T3-I/T3-F are separate Train-the-Trainer tracks outside the TM chain. Contact training management for scheduling.
+> **Note:** TM-50G–O series syllabi are published. TM-50A–F do not exist (WFF tracks are terminal — no advanced continuation). Advanced training is available only for specialist tracks (G–O). Contact training management for scheduling.
 
 ---
 
@@ -390,7 +383,7 @@ Distribute to each trainee at course start.
 5. If building: complete [TM-20](tm/TM_20_builder/TM_20_BUILDER.md)
 6. Complete [TM-30](tm/TM_30_advanced_builder/TM_30_ADVANCED_BUILDER.md)
 7. WFF functional staff: proceed to TM-40A–F per function (after TM-30)
-8. Technical specialists: proceed to TM-40G–M per role (after TM-30)
+8. Technical specialists: proceed to TM-40G–O per role (after TM-30)
 
 ### S6 shop standing up MSS capability
 
@@ -399,7 +392,7 @@ Distribute to each trainee at course start.
 3. Designated builders complete TM-20
 4. Designated data leads complete TM-30
 5. Reference Glossary throughout
-6. Technical specialists proceed to TM-40G–M per role
+6. Technical specialists proceed to TM-40G–O per role
 7. WFF functional staff proceed to TM-40A–F per function
 
 ### TM-40 Track Selection by MOS/Role

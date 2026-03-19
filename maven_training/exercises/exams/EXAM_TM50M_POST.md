@@ -25,14 +25,14 @@ This assessment evaluates mastery of course learning objectives. A passing score
 **1. A TM-50M automated model promotion gate requires C2DAO approval before promoting to production. This means:**
 
 A. The pipeline automatically promotes the model if C2DAO's automated checklist passes
-B. A data steward and C2DAO review must occur as a human-in-the-loop step — the promotion is not automatic regardless of gate results
-C. C2DAO approval is only required for models that process SECRET data
+B. C2DAO approval is only required for models that process SECRET data
+C. A data steward and C2DAO review must occur as a human-in-the-loop step — the promotion is not automatic regardless of gate results
 D. C2DAO approval replaces the standard ML acceptance threshold check
 
 **2. A new vehicle failure prediction model achieves higher AUC-ROC than the current production model. The decision to promote to production should be based on:**
 
-A. AUC-ROC improvement alone — it is the definitive production readiness metric
-B. A comprehensive evaluation against all acceptance thresholds (recall ≥75%, calibration, AUC-ROC, disaggregated subgroup performance) plus C2DAO review — one metric improvement is not sufficient
+A. A comprehensive evaluation against all acceptance thresholds (recall ≥75%, calibration, AUC-ROC, disaggregated subgroup performance) plus C2DAO review — one metric improvement is not sufficient
+B. AUC-ROC improvement alone — it is the definitive production readiness metric
 C. A GO-level approval based on the AUC-ROC improvement
 D. The model's performance on the training set, which demonstrates its capability ceiling
 
@@ -46,9 +46,9 @@ D. Running both models on the same traffic simultaneously using request duplicat
 **4. Cross-domain federated learning between USAREUR-AF and a NATO partner requires which approvals BEFORE any technical integration begins?**
 
 A. Technical approval from both organizations' IT departments
-B. C2DAO approval, both organizations' data steward sign-off, and a signed information sharing agreement covering the federated model gradient exchange — the technical claim "no data moves" does not eliminate governance requirements
+B. Army CIO approval for cross-coalition ML programs
 C. SJA review only — federated learning is covered under existing data sharing authorities
-D. Army CIO approval for cross-coalition ML programs
+D. C2DAO approval, both organizations' data steward sign-off, and a signed information sharing agreement covering the federated model gradient exchange — the technical claim "no data moves" does not eliminate governance requirements
 
 **5. A SHAP analysis of a failure prediction model shows that `unit_echelon` has the highest global feature importance but should be operationally irrelevant to equipment failure. This finding should trigger:**
 
@@ -66,30 +66,30 @@ D. Report the finding to the G4 and let them decide whether the discrepancy is a
 
 **7. Model compression (quantization to int8) reduces the model's AUC-ROC from 0.87 to 0.83. Per TM-50M standards, the correct action is:**
 
-A. Accept the degradation — 0.83 is still above 0.80, which is a common threshold
-B. Evaluate the compressed model against ALL acceptance thresholds independently; the compressed model is a different model and prior production approval does not transfer
+A. Evaluate the compressed model against ALL acceptance thresholds independently; the compressed model is a different model and prior production approval does not transfer
+B. Accept the degradation — 0.83 is still above 0.80, which is a common threshold
 C. Re-compress at float16 precision to find a compression level that maintains AUC-ROC
 D. Submit a waiver to the data steward documenting the 4-point AUC-ROC degradation
 
 **8. The "PSI threshold documentation" requirement in TM-50M means:**
 
 A. Recording the PSI threshold value in the pipeline configuration comments
-B. Documenting the chosen threshold, the rationale for it (risk tolerance for this model and use case), and the escalation procedure when it is crossed — creating an auditable governance record
-C. Setting the PSI threshold at the Foundry platform level for all models in the project
+B. Setting the PSI threshold at the Foundry platform level for all models in the project
+C. Documenting the chosen threshold, the rationale for it (risk tolerance for this model and use case), and the escalation procedure when it is crossed — creating an auditable governance record
 D. Reviewing and updating PSI thresholds annually regardless of model performance
 
 **9. An adversarially robust model should be evaluated using which specific attack type for a failure prediction system?**
 
-A. Black-box model extraction attacks only — white-box attacks require internal access
-B. Adversarial example attacks that perturb feature values within plausible operational ranges to test whether small input changes produce dramatically different failure predictions
+A. Adversarial example attacks that perturb feature values within plausible operational ranges to test whether small input changes produce dramatically different failure predictions
+B. Black-box model extraction attacks only — white-box attacks require internal access
 C. SQL injection attacks against the feature computation pipeline
 D. Prompt injection attacks against the model serving endpoint
 
 **10. A "model registry" in a TM-50M MLOps architecture must record which of the following for each registered model version?**
 
 A. Model source code and hyperparameter search results only
-B. Model artifact hash, training data version, performance metrics on validation set, calibration results, disaggregated subgroup metrics, C2DAO approval status, and deployment history
-C. Model artifact and the date it was promoted to production
+B. Model artifact and the date it was promoted to production
+C. Model artifact hash, training data version, performance metrics on validation set, calibration results, disaggregated subgroup metrics, C2DAO approval status, and deployment history
 D. Training compute cost and inference latency benchmarks
 
 **11. "Real-time inference" latency optimization for a vehicle failure prediction model deployed on Foundry should first address:**
@@ -102,29 +102,29 @@ D. Switching to a lighter model architecture without evaluating accuracy impact
 **12. The "no data moves" claim in a federated learning proposal is insufficient for governance approval because:**
 
 A. Data always moves in federated learning — the claim is technically incorrect
-B. Model gradients can encode information about the training data and may be reconstructed via gradient inversion attacks, meaning sensitive information can be exposed through the gradient exchange
+B. Regulatory frameworks require that all data exchanges be explicitly authorized regardless of form
 C. The claim applies only to the raw data, not the model artifacts that are shared
-D. Regulatory frameworks require that all data exchanges be explicitly authorized regardless of form
+D. Model gradients can encode information about the training data and may be reconstructed via gradient inversion attacks, meaning sensitive information can be exposed through the gradient exchange
 
 **13. A neural network model for operational text classification (e.g., categorizing maintenance SITREPs) is retrained on 6 months of new data. Before deploying the updated model, you must:**
 
 A. Verify the new model achieves higher accuracy than the previous version
-B. Run the full acceptance evaluation suite including all acceptance thresholds, calibration check, disaggregated evaluation, and adversarial robustness test — and obtain C2DAO approval before promotion
+B. Submit the model to the MSS program office for technical review
 C. Confirm the model's training loss converged and the validation loss did not increase
-D. Submit the model to the MSS program office for technical review
+D. Run the full acceptance evaluation suite including all acceptance thresholds, calibration check, disaggregated evaluation, and adversarial robustness test — and obtain C2DAO approval before promotion
 
 **14. A feature store's "online store" component serves which function that the "offline store" does not?**
 
-A. Versioning feature definitions for auditability
-B. Providing low-latency feature retrieval for real-time inference requests — the offline store is optimized for batch processing, not sub-millisecond response times
+A. Providing low-latency feature retrieval for real-time inference requests — the offline store is optimized for batch processing, not sub-millisecond response times
+B. Versioning feature definitions for auditability
 C. Storing the complete feature history for model retraining
 D. Computing complex features that require access to the full historical record
 
 **15. The TM-50M "peer review by a second TM-50M qualified engineer" requirement for production ML work exists because:**
 
 A. Two engineers working independently reduces the probability of bugs by 50%
-B. The complexity and operational stakes of TM-50M work (architecture decisions, adversarial robustness, bias auditing, production promotion gates) require a second expert reviewer to catch methodological errors, governance gaps, or security issues not visible to a single engineer
-C. Army policy requires two-person integrity for all production code deployments
+B. Army policy requires two-person integrity for all production code deployments
+C. The complexity and operational stakes of TM-50M work (architecture decisions, adversarial robustness, bias auditing, production promotion gates) require a second expert reviewer to catch methodological errors, governance gaps, or security issues not visible to a single engineer
 D. Peer review replaces the C2DAO approval step for ML model promotions
 
 ---
@@ -202,21 +202,21 @@ Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — C2DAO approval is a human-in-the-loop step, not an automated gate bypass.
-2. B — All acceptance thresholds (recall, calibration, AUC, disaggregated) plus C2DAO review required.
+1. C — C2DAO approval is a human-in-the-loop step, not an automated gate bypass.
+2. A — All acceptance thresholds (recall, calibration, AUC, disaggregated) plus C2DAO review required.
 3. B — Statistically valid canary requires sufficient sample size for the minimum meaningful difference at required power.
-4. B — C2DAO + data stewards + ISA required before any technical integration; "no data moves" is insufficient.
+4. D — C2DAO + data stewards + ISA required before any technical integration; "no data moves" is insufficient.
 5. B — Unexpected feature importance requires investigation for spurious correlation or proxy discrimination.
 6. B — 52% recall for tracked vehicles fails the ≥75% threshold; the model cannot be deployed as-is.
-7. B — Compressed model must be independently evaluated against all acceptance thresholds.
-8. B — PSI threshold documentation = threshold value + rationale + escalation procedure, creating governance record.
-9. B — Adversarial examples with plausible feature perturbations test failure prediction stability.
-10. B — Model registry must record artifact hash, training data version, metrics, calibration, disaggregated metrics, C2DAO status, deployment history.
+7. A — Compressed model must be independently evaluated against all acceptance thresholds.
+8. C — PSI threshold documentation = threshold value + rationale + escalation procedure, creating governance record.
+9. A — Adversarial examples with plausible feature perturbations test failure prediction stability.
+10. C — Model registry must record artifact hash, training data version, metrics, calibration, disaggregated metrics, C2DAO status, deployment history.
 11. B — Profile the pipeline to identify the bottleneck before applying optimizations.
-12. B — Gradients can encode training data information; gradient inversion attacks can reconstruct sensitive data.
-13. B — Full acceptance suite + calibration + disaggregated + adversarial test + C2DAO approval required.
-14. B — Online store provides low-latency real-time feature retrieval for inference requests.
-15. B — TM-50M complexity and operational stakes require second expert reviewer for errors not visible to one engineer.
+12. D — Gradients can encode training data information; gradient inversion attacks can reconstruct sensitive data.
+13. D — Full acceptance suite + calibration + disaggregated + adversarial test + C2DAO approval required.
+14. A — Online store provides low-latency real-time feature retrieval for inference requests.
+15. C — TM-50M complexity and operational stakes require second expert reviewer for errors not visible to one engineer.
 
 **Short Answer Guidance:**
 

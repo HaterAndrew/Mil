@@ -10,12 +10,12 @@ export default function Specialists({ showPanel }: Props) {
       <div className="section-header">
         <span className="section-badge">SPECIALIST TRACKS</span>
         <span className="section-title">TM-40 &amp; TM-50 Series &mdash; WFF &amp; Technical Tracks</span>
-        <span className="section-subtitle">WFF tracks (A&ndash;F): TM-30 req. &bull; Technical tracks (G&ndash;M): TM-30 req.</span>
+        <span className="section-subtitle">WFF tracks (A&ndash;F): TM-30 req. &bull; Technical tracks (G&ndash;O): TM-30 req.</span>
       </div>
 
       <div className="callout bluf">
         <div className="callout-label">BLUF</div>
-        <div className="callout-body">TM-40 has two track types: <strong>Warfighting Function tracks (TM-40A&ndash;F)</strong> for WFF-assigned roles (Intelligence, Fires, M&amp;M, Sustainment, Protection, Mission Command) &mdash; prerequisite TM-30, no coding required &mdash; and <strong>Technical Specialist tracks (TM-40G&ndash;M)</strong> for personnel who build and engineer MSS solutions (ORSA, AI Eng, MLE, PM, KM, SWE) &mdash; prerequisite TM-30. Advanced versions (TM-50G&ndash;M) are available after completing the corresponding TM-40 technical track.</div>
+        <div className="callout-body">TM-40 has two track types: <strong>Warfighting Function tracks (TM-40A&ndash;F)</strong> for WFF-assigned roles (Intelligence, Fires, M&amp;M, Sustainment, Protection, Mission Command) &mdash; prerequisite TM-30, no coding required &mdash; and <strong>Technical Specialist tracks (TM-40G&ndash;O)</strong> for personnel who build and engineer MSS solutions (ORSA, AI Eng, MLE, PM, KM, SWE, UX Designer, Platform Eng) &mdash; prerequisite TM-30. Advanced versions (TM-50G&ndash;O) are available after completing the corresponding TM-40 technical track.</div>
       </div>
 
       <h2>TRACK SELECTION BY MOS / ROLE</h2>
@@ -32,7 +32,7 @@ export default function Specialists({ showPanel }: Props) {
             <tr><td>G4/S4 &mdash; Logistics, GCSS-A</td><td><strong>TM-40D (Sustainment)</strong></td><td>&mdash;</td></tr>
             <tr><td>Air defense, CBRN, force protection</td><td><strong>TM-40E (Protection)</strong></td><td>&mdash;</td></tr>
             <tr><td>G6/S6 &mdash; C2 systems, networks</td><td><strong>TM-40F (Mission Command)</strong></td><td>&mdash;</td></tr>
-            <tr><td colSpan={3} style={{background:'var(--navy-pale)',fontWeight:700,fontSize:11,letterSpacing:'.06em',textTransform:'uppercase',color:'var(--navy)'}}>Technical Specialist Tracks (TM-40G&ndash;M)</td></tr>
+            <tr><td colSpan={3} style={{background:'var(--navy-pale)',fontWeight:700,fontSize:11,letterSpacing:'.06em',textTransform:'uppercase',color:'var(--navy)'}}>Technical Specialist Tracks (TM-40G&ndash;O)</td></tr>
             <tr><td>FA49 &mdash; Operations Research Analyst</td><td><strong>TM-40G (ORSA)</strong></td><td>TM-50G</td></tr>
             <tr><td>G2/S2 quantitative analyst</td><td><strong>TM-40G (ORSA)</strong> or TM-40K (KM)</td><td>TM-50G / TM-50K</td></tr>
             <tr><td>17A/17C &mdash; Cyber officer/NCO</td><td><strong>TM-40L (SWE)</strong> or TM-40H (AI Eng)</td><td>TM-50L / TM-50H</td></tr>
@@ -43,6 +43,10 @@ export default function Specialists({ showPanel }: Props) {
             <tr><td>Program Manager (PM / GS)</td><td><strong>TM-40J (PM)</strong></td><td>TM-50J</td></tr>
             <tr><td>KMO / Knowledge Officer / 37F</td><td><strong>TM-40K (KM)</strong></td><td>TM-50K</td></tr>
             <tr><td>Civil Affairs</td><td><strong>TM-40J (PM)</strong> or TM-40K (KM)</td><td>TM-50J / TM-50K</td></tr>
+            <tr><td>UI/UX Designer (GS/contractor)</td><td><strong>TM-40N (UI/UX)</strong></td><td>TM-50N</td></tr>
+            <tr><td>Human Factors / User Researcher</td><td><strong>TM-40N (UI/UX)</strong></td><td>TM-50N</td></tr>
+            <tr><td>DevOps / Platform Engineer (GS/contractor)</td><td><strong>TM-40O (Platform)</strong></td><td>TM-50O</td></tr>
+            <tr><td>25D &mdash; IT specialist (infra focus)</td><td><strong>TM-40O (Platform)</strong></td><td>TM-50O</td></tr>
           </tbody>
         </table>
       </div>

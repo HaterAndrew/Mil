@@ -33,10 +33,10 @@ This POI covers eighteen courses in five tiers, plus the Builder Sprint (BSP) ev
 | 2 — Builder | TM-20 | All staff building or maintaining data products |
 | 3 — Advanced Builder | TM-30 | Data-adjacent specialists and unit data leads |
 | 4a — WFF Functional | TM-40A through TM-40F | Warfighting function staff; prereq TM-30 |
-| 4b — Specialist | TM-40G through TM-40M | Role-specific specialist training; prereq TM-30 |
+| 4b — Specialist | TM-40G through TM-40O | Role-specific specialist training; prereq TM-30 |
 | — | Builder Sprint (BSP) | **Outside TM chain.** Quarterly applied build event; prereq TM-20 + validated project; no TM credit. See BSP-SOP-001. |
 | — | T3-I (Instructor Certification) | **Outside TM chain.** 5 days classroom + supervised practicum; prereq TM-30 + C2DAO selection. |
-| — | T3-F (MSC Force Multiplier) | **Outside TM chain.** 3 days; prereq TM-20 + CDR nomination. Produces Unit Data Trainers. |
+| — | T3-F (MSC Force Multiplier) | **Outside TM chain.** Half day; prereq TM-20 + CDR nomination. Produces Unit Data Trainers. |
 
 ### 1-4. Prerequisite Chain
 
@@ -112,7 +112,7 @@ All MSS training is conducted in the **MSS Training Environment** — a dedicate
 | TM-50K | Advanced Knowledge Manager | Advanced Specialist | 3 days | 24 | TM-40K (Required) |
 | TM-50L | Advanced Software Engineer | Advanced Specialist | 5 days | 40 | TM-40L (Required) |
 
-> **NOTE:** TM-40A–F (WFF functional tracks) require TM-10, TM-20, and TM-30 as hard prerequisites. TM-40G–M (specialist tracks) and TM-50G–M (advanced specialist tracks) also require TM-30 as a hard prerequisite. TM-50 is G–M only.
+> **NOTE:** TM-40A–F (WFF functional tracks) require TM-10, TM-20, and TM-30 as hard prerequisites. TM-40G–O (specialist tracks) and TM-50G–O (advanced specialist tracks) also require TM-30 as a hard prerequisite. There are NO TM-50A–F tracks.
 
 **Total program hours (full progression to any single WFF or specialist track):** 133 hours (TM-10 through TM-40G/H/M/L); 97 hours (TM-10 through TM-40A–F)
 **Total program hours (full progression to any single advanced specialist track):** 173 hours (TM-10 through TM-50G/H/I/L)
@@ -552,59 +552,7 @@ Upon successful completion (Go):
 
 *Remainder of scheduled hours are review periods and scenario briefs not separately categorized above.
 
-> **NOTE:** TM-40A–F are 3-day/24-hour courses requiring TM-30 as a prerequisite. The hours summary above reflects approximate method distribution; exact distribution varies by WFF track and is specified in the applicable WFF Syllabus. TM-50G–M course hour breakdowns are specified in the applicable advanced specialist Syllabi and are not reproduced here.
-
----
-
-## CHAPTER 8 — TRAIN-THE-TRAINER (T3) COURSES
-
-### 8-1. Overview
-
-The T3 courses sit outside the TM-10 through TM-50 operational training chain. They serve two distinct purposes:
-
-| Course | Purpose | Duration | Prerequisite | Output |
-|---|---|---|---|---|
-| T3-I | Instructor Certification | 5 days (40 hrs) classroom + supervised practicum | TM-30 Go + C2DAO selection | Certified MSS Instructor |
-| T3-F | MSC Force Multiplier | 3 days (24 hrs) | TM-20 Go + CDR nomination | Unit Data Trainer (UDT) |
-
-T3-I and T3-F are independent — neither is a prerequisite for the other.
-
-### 8-2. T3-I: Instructor Certification
-
-**Phase 1 — Classroom (5 days, 40 hours):**
-
-| Day | Focus | Hours |
-|---|---|---|
-| 1 | Foundations of MSS Instruction: adult learning principles, Army instructional methodology, training philosophy, pre-course checklist, instructor performance standards | 8 |
-| 2 | Platform Deep-Dive for Instruction: TM-10/20/30 exercise walkthroughs from instructor seat, 6 pre-staged environment failures, T&EO scoring calibration | 8 |
-| 3 | Lab Facilitation and Error Management: facilitation techniques, simulated lab facilitation, common trainee error taxonomy, coaching vs. evaluating, check-on-learning design | 8 |
-| 4 | Assessment Design and Evaluation Standardization: T&EO structure, assessment design practicum, evaluation calibration (3 performances), exam administration, No-Go counseling | 8 |
-| 5 | Microteaching and Evaluation: 20-min microteaching block (evaluated), written exam (20 questions, 80% pass), AAR, Phase 2 requirements brief | 8 |
-
-**Phase 1 Go:** Microteaching satisfactory on 5/7 criteria (hard No-Go on Technical Accuracy or Evaluation Fidelity) + written exam ≥ 80%.
-
-**Phase 2 — Supervised Practicum (scheduled separately):** Co-teach → lead observed → evaluator observation (optional) → certification.
-
-**Resources:** 1 Senior or Master Instructor per 8 candidates; classroom with projector and workstations; pre-staged environment failures; recorded trainee performances for calibration.
-
-### 8-3. T3-F: MSC Force Multiplier
-
-| Day | Focus | Hours |
-|---|---|---|
-| 1 | Understanding the Materials: TM-10 document set walkthrough, TM-20 refresher scope, abbreviated adult learning principles, pre-course checklist execution, exam administration, reporting | 8 |
-| 2 | Evaluation and Troubleshooting: T&EO walkthrough (TM10-01 through TM10-06), Go/No-Go decision exercise, No-Go procedures, 5 pre-staged environment failures, escalation decision matrix | 8 |
-| 3 | Teach-Back and Evaluation: 15–20 min teach-back (evaluated), Go/No-Go practicum (evaluated), troubleshooting exam (evaluated), AAR, certification | 8 |
-
-**Go:** Teach-back satisfactory on technical accuracy + materials use; correct Go/No-Go decision on practicum; resolve 2/3 troubleshooting issues.
-
-**Resources:** 1 Certified Instructor per 8 candidates; classroom with projector and workstations; 5 pre-staged environment failures; role-play scenarios.
-
-### 8-4. T3 Hours Summary
-
-| Course | LEC/SEM | LAB | WKS | DIS | EVAL | Total |
-|---|---|---|---|---|---|---|
-| T3-I | 9.75 | 18.5 | — | 4.0 | 7.75 | 40.0 |
-| T3-F | 3.5 | 10.5 | — | 2.0 | 8.0 | 24.0 |
+> **NOTE:** TM-40A–F are 3-day/24-hour courses requiring TM-30 as a prerequisite. The hours summary above reflects approximate method distribution; exact distribution varies by WFF track and is specified in the applicable WFF Syllabus. TM-50G–O course hour breakdowns are specified in the applicable advanced specialist Syllabi and are not reproduced here.
 
 ---
 

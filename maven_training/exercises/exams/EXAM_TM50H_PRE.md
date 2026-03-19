@@ -25,14 +25,14 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 **1. In a multi-agent AI system, a "circuit breaker" pattern is used to:**
 
 A. Limit the compute cost of running multiple agents concurrently
-B. Stop an agent chain from continuing to execute when a failure or anomalous condition is detected, preventing cascading failures
+B. Monitor agent communication for adversarial content injection
 C. Route agent tasks to the appropriate specialized sub-agent
-D. Monitor agent communication for adversarial content injection
+D. Stop an agent chain from continuing to execute when a failure or anomalous condition is detected, preventing cascading failures
 
 **2. "Shared state" in a multi-agent system creates which primary risk?**
 
-A. State synchronization overhead reduces inference speed
-B. Multiple agents reading and writing shared state can produce race conditions and inconsistent outputs if not managed with proper coordination mechanisms
+A. Multiple agents reading and writing shared state can produce race conditions and inconsistent outputs if not managed with proper coordination mechanisms
+B. State synchronization overhead reduces inference speed
 C. Shared state is prohibited on Army networks due to security policy
 D. Agents with shared state cannot be individually monitored or audited
 
@@ -46,49 +46,49 @@ D. Fine-tuning produces more deterministic outputs than RAG
 **4. Fine-tuning an LLM on Army operational corpora requires SJA review because:**
 
 A. LLM fine-tuning is classified as a weapons system modification under Army Regulation
-B. Operational corpora may contain sensitive information, and encoding it into a model's weights creates persistent knowledge that may be accessible in unauthorized contexts
+B. The review determines whether the fine-tuned model qualifies as a new system requiring an ATO
 C. SJA review is required for all ML model training on government networks
-D. The review determines whether the fine-tuned model qualifies as a new system requiring an ATO
+D. Operational corpora may contain sensitive information, and encoding it into a model's weights creates persistent knowledge that may be accessible in unauthorized contexts
 
 **5. "Hybrid retrieval" in an advanced RAG architecture combines:**
 
 A. Two separate LLM inference calls — one for retrieval and one for generation
-B. Dense (semantic embedding) and sparse (keyword/BM25) retrieval signals to capture both semantic similarity and exact-match relevance
-C. Retrieval from classified and unclassified corpora simultaneously
+B. Retrieval from classified and unclassified corpora simultaneously
+C. Dense (semantic embedding) and sparse (keyword/BM25) retrieval signals to capture both semantic similarity and exact-match relevance
 D. RAG and fine-tuning in the same inference pipeline
 
 **6. "Re-ranking" in a RAG pipeline refers to:**
 
 A. Re-ordering documents in the corpus by recency before retrieval
-B. A post-retrieval step that reorders candidate documents by relevance quality before injecting them into the prompt context
-C. Re-running the embedding model to update document vectors
+B. Re-running the embedding model to update document vectors
+C. A post-retrieval step that reorders candidate documents by relevance quality before injecting them into the prompt context
 D. The process of removing low-quality documents from the corpus
 
 **7. Adversarial prompt injection testing in TM-50H must be conducted:**
 
 A. In the production environment to test real-world resilience
-B. In an isolated test environment — never in production where injected content could affect real data or operations
-C. Only by red team personnel with SECRET clearance
+B. Only by red team personnel with SECRET clearance
+C. In an isolated test environment — never in production where injected content could affect real data or operations
 D. After deployment, using production logs to identify real injection attempts
 
 **8. "AI observability" in a production AI system includes monitoring:**
 
 A. User login counts and session durations
-B. Output quality metrics, input distribution shifts, latency trends, and anomalous output patterns that may indicate model degradation or adversarial activity
-C. Model weight updates applied during online learning
+B. Model weight updates applied during online learning
+C. Output quality metrics, input distribution shifts, latency trends, and anomalous output patterns that may indicate model degradation or adversarial activity
 D. Compute and memory utilization on the inference server
 
 **9. The DoD Responsible AI Implementation Taskforce (RAIMTF) guidelines (2024) require which of the following for operational AI systems?**
 
 A. All DoD AI systems must be approved by the Joint AI Center before deployment
-B. AI systems must be designed with responsible AI principles: explainability, reliability, governability, traceability, and bias minimization
+B. AI output review periods of 90 days are required before any operational use
 C. All operational AI systems must use only Government-developed models
-D. AI output review periods of 90 days are required before any operational use
+D. AI systems must be designed with responsible AI principles: explainability, reliability, governability, traceability, and bias minimization
 
 **10. The Army CIO Memorandum (April 2024) on generative AI requires which specific human-in-the-loop provision?**
 
-A. All AI outputs must be reviewed by a GO before official release
-B. AI-generated content must be reviewed by a human before it is used for official purposes, and the human reviewer bears responsibility for the content
+A. AI-generated content must be reviewed by a human before it is used for official purposes, and the human reviewer bears responsibility for the content
+B. All AI outputs must be reviewed by a GO before official release
 C. AI systems may not generate text longer than 500 words without human segmentation review
 D. AI-generated content must be watermarked to identify it as machine-generated
 
@@ -108,15 +108,15 @@ D. AI models used for classified data must be separately trained from unclassifi
 
 **13. An AI system that produces outputs that drift gradually over time without any model changes is most likely exhibiting:**
 
-A. Catastrophic forgetting from online fine-tuning
-B. Input distribution shift — the statistical properties of incoming data have changed, causing the model's responses to drift even though model weights are unchanged
+A. Input distribution shift — the statistical properties of incoming data have changed, causing the model's responses to drift even though model weights are unchanged
+B. Catastrophic forgetting from online fine-tuning
 C. Prompt injection attacks from adversarial users
 D. Output degradation due to inference endpoint load
 
 **14. "Failure isolation" in a multi-agent system is achieved by:**
 
-A. Running all agents on separate compute instances
-B. Designing agents so that a failure in one agent does not propagate to other agents — using circuit breakers, timeouts, and independent state management
+A. Designing agents so that a failure in one agent does not propagate to other agents — using circuit breakers, timeouts, and independent state management
+B. Running all agents on separate compute instances
 C. Monitoring each agent's output independently without shared logging
 D. Using a separate LLM model for each agent to prevent model-level correlation
 
@@ -202,20 +202,20 @@ Passing: N/A — Pre-test is diagnostic only.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — Circuit breaker stops agent chain execution on failure to prevent cascading failures.
-2. B — Shared state creates race conditions and inconsistent outputs without coordination mechanisms.
+1. D — Circuit breaker stops agent chain execution on failure to prevent cascading failures.
+2. A — Shared state creates race conditions and inconsistent outputs without coordination mechanisms.
 3. B — Fine-tuning modifies model weights — persistent, cannot be quickly updated without retraining.
-4. B — Operational corpora may encode sensitive information into model weights accessible in unauthorized contexts.
-5. B — Hybrid retrieval combines dense (semantic) and sparse (keyword) signals.
-6. B — Re-ranking reorders retrieved candidates by quality before prompt injection.
-7. B — Adversarial testing must be in isolated environment — never in production.
-8. B — AI observability monitors output quality, input distribution, latency, and anomalous patterns.
-9. B — DoD RAIMTF: responsible AI principles — explainability, reliability, governability, traceability, bias minimization.
-10. B — Army CIO Memo (April 2024): human review before official use; reviewer bears responsibility.
+4. D — Operational corpora may encode sensitive information into model weights accessible in unauthorized contexts.
+5. C — Hybrid retrieval combines dense (semantic) and sparse (keyword) signals.
+6. C — Re-ranking reorders retrieved candidates by quality before prompt injection.
+7. C — Adversarial testing must be in isolated environment — never in production.
+8. C — AI observability monitors output quality, input distribution, latency, and anomalous patterns.
+9. D — DoD RAIMTF: responsible AI principles — explainability, reliability, governability, traceability, bias minimization.
+10. A — Army CIO Memo (April 2024): human review before official use; reviewer bears responsibility.
 11. B — Rate limiting bounds blast radius of agent-chain failures before human intervention.
 12. B — Inference endpoints must only process data at or below the configured classification level.
-13. B — Input distribution shift causes model output drift without weight changes.
-14. B — Failure isolation via circuit breakers, timeouts, and independent state management.
+13. A — Input distribution shift causes model output drift without weight changes.
+14. A — Failure isolation via circuit breakers, timeouts, and independent state management.
 15. B — Shared writable namespace: one buggy/compromised agent can corrupt data affecting all agents.
 
 **Short Answer Guidance:**

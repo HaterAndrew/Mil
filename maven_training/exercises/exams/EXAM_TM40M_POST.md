@@ -8,7 +8,7 @@
 | **Level** | TM-40M (Specialist) |
 | **Audience** | ML engineers / data scientists; prerequisite: TM-10+20+30 + Python + statistics |
 | **Time Allowed** | 45 minutes |
-| **Passing Score** | 70% (52/74) |
+| **Passing Score** | 70% (46/66) |
 
 ---
 
@@ -24,64 +24,64 @@ This assessment evaluates mastery of course learning objectives. A passing score
 
 **1. When configuring a GPU-enabled Code Workspace for ML development in Foundry, environment reproducibility requires:**
 
-A. Installing all packages interactively via the terminal before each session
-B. Defining a requirements file (or equivalent) that pins package versions, enabling identical environment reconstruction
+A. Defining a requirements file (or equivalent) that pins package versions, enabling identical environment reconstruction
+B. Installing all packages interactively via the terminal before each session
 C. Using only pre-installed Foundry-approved packages without adding new dependencies
 D. Reusing the same workspace session across multiple projects to maintain environment consistency
 
 **2. A feature engineering step that calculates "days since last maintenance" from a timestamp field is BEST described as:**
 
 A. A categorical encoding step
-B. A time-based derived feature
-C. A null imputation step
+B. A null imputation step
+C. A time-based derived feature
 D. A feature scaling step
 
 **3. Your pipeline computes "inspection_pass_rate" using data from the same week as the target label "failed_next_inspection." This is a feature leakage issue because:**
 
 A. The pass rate uses a rolling window that is too long
-B. The inspection data from the same week as the label contains information that would not be available at prediction time
+B. The feature uses a different aggregation window than other features in the pipeline
 C. The pass rate is highly correlated with the target, which violates independence assumptions
-D. The feature uses a different aggregation window than other features in the pipeline
+D. The inspection data from the same week as the label contains information that would not be available at prediction time
 
 **4. The USAREUR-AF minimum acceptance threshold for recall on a vehicle failure prediction model is:**
 
 A. 60% — sufficient for most operational use cases
-B. 70% — consistent with general passing standards
-C. 75% — established threshold for safety-relevant failure prediction
+B. 75% — established threshold for safety-relevant failure prediction
+C. 70% — consistent with general passing standards
 D. 85% — required for all binary classification models
 
 **5. "Model calibration" refers to:**
 
 A. Adjusting the model's decision threshold for a specific use case
-B. Ensuring the model's predicted probabilities reflect the true frequency of outcomes at each probability level
-C. Retraining the model on recent data to account for concept drift
+B. Retraining the model on recent data to account for concept drift
+C. Ensuring the model's predicted probabilities reflect the true frequency of outcomes at each probability level
 D. Balancing precision and recall by selecting the optimal classification threshold
 
 **6. Platt scaling and isotonic regression are both techniques used to:**
 
-A. Reduce model complexity and prevent overfitting
-B. Calibrate a model's output probabilities to better reflect true likelihoods
+A. Calibrate a model's output probabilities to better reflect true likelihoods
+B. Reduce model complexity and prevent overfitting
 C. Increase the speed of model inference in production
 D. Handle class imbalance during model training
 
 **7. A model drift monitoring pipeline detects that the PSI (Population Stability Index) for the `mileage_since_service` feature has exceeded 0.25. This indicates:**
 
-A. A minor shift in the feature distribution — continue monitoring
+A. A significant distribution shift — the model should be flagged for retraining review
 B. A moderate shift that warrants investigation — likely a data collection or operational change
-C. A significant distribution shift — the model should be flagged for retraining review
+C. A minor shift in the feature distribution — continue monitoring
 D. A pipeline error — PSI above 0.2 always indicates a data ingestion failure
 
 **8. Per TM-40M, the Foundry model registry is used to:**
 
 A. Store the model's Python source code in version control
-B. Track trained model artifacts, their versions, performance metrics, and deployment status
+B. Monitor model output quality in real-time after deployment
 C. Deploy models directly to production serving endpoints
-D. Monitor model output quality in real-time after deployment
+D. Track trained model artifacts, their versions, performance metrics, and deployment status
 
 **9. To connect a deployed model serving endpoint to an Ontology Object so predictions are available as Object properties, the correct MSS architecture is:**
 
-A. Schedule a pipeline that calls the endpoint and writes results back to the Ontology via a write transaction
-B. Build a Workshop widget that calls the endpoint on demand and displays results without writing to the Ontology
+A. Build a Workshop widget that calls the endpoint on demand and displays results without writing to the Ontology
+B. Schedule a pipeline that calls the endpoint and writes results back to the Ontology via a write transaction
 C. Use an AIP Logic workflow to manually copy predictions into the Ontology
 D. Deploy the model as a Foundry function that runs at query time rather than as a stored prediction
 
@@ -95,9 +95,9 @@ D. AUC-ROC — the only metric suitable for imbalanced datasets
 **11. A model card required under USAREUR-AF documentation standards must include which of the following fields?**
 
 A. Model source code and hyperparameter grid search results
-B. Intended use, out-of-scope uses, training data description, performance metrics, known limitations, and responsible AI declaration
+B. The full feature importance table and SHAP value distributions
 C. A deployment approval signature from the MSS program office
-D. The full feature importance table and SHAP value distributions
+D. Intended use, out-of-scope uses, training data description, performance metrics, known limitations, and responsible AI declaration
 
 **12. You have trained and registered a new version of a predictive maintenance model. Before deploying to production, you must verify the serving endpoint with:**
 
@@ -109,21 +109,21 @@ D. A manual review of the model's weights to confirm they updated correctly
 **13. When implementing drift detection in a model monitoring pipeline, the Kolmogorov-Smirnov (KS) test is used to:**
 
 A. Detect concept drift in the model's output predictions
-B. Compare the empirical distribution of a continuous feature between a reference period and a monitoring period
-C. Test whether feature importance rankings have shifted between model versions
+B. Test whether feature importance rankings have shifted between model versions
+C. Compare the empirical distribution of a continuous feature between a reference period and a monitoring period
 D. Validate that the model's calibration curve has not degraded
 
 **14. Per TM-40M, a write transaction from Code Workspace to a Foundry dataset is the preferred method for committing model outputs because:**
 
 A. Write transactions bypass the Foundry access control layer, enabling faster writes
-B. Transactions are atomic — either all records commit or none, preventing partial writes that could corrupt downstream pipelines
-C. Write transactions automatically trigger the downstream pipeline to refresh
+B. Write transactions automatically trigger the downstream pipeline to refresh
+C. Transactions are atomic — either all records commit or none, preventing partial writes that could corrupt downstream pipelines
 D. Transactions encrypt the output data before writing to the dataset
 
 **15. A compressed (quantized) version of a model shows 2% lower accuracy than the full-precision version. Per TM-40M standards, this means:**
 
-A. The compressed model can be deployed — 2% is within acceptable degradation tolerance
-B. The compressed model must be evaluated against all acceptance thresholds independently — compression changes the model and prior approval does not transfer
+A. The compressed model must be evaluated against all acceptance thresholds independently — compression changes the model and prior approval does not transfer
+B. The compressed model can be deployed — 2% is within acceptable degradation tolerance
 C. The model must be recompressed at a lower quantization level
 D. The deployment must wait for a full retraining on the quantized architecture
 
@@ -240,25 +240,21 @@ Passing: 52/74 (70%) — Post-test only. Pre-test is diagnostic.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — Pinned requirements file enables reproducible environment reconstruction.
-2. B — Days-since-timestamp is a time-based derived feature.
-3. B — Data from the same period as the label is not available at prediction time — leakage.
-4. C — USAREUR-AF minimum recall threshold for failure prediction = 75%.
-5. B — Calibration ensures predicted probabilities match observed frequencies.
-6. B — Platt scaling and isotonic regression both calibrate probability outputs.
-7. C — PSI > 0.20 = significant distribution shift; PSI 0.10-0.20 = moderate; <0.10 = stable.
-8. B — Model registry tracks artifacts, versions, metrics, and deployment status.
-9. A — Scheduled pipeline calls endpoint and writes predictions to Ontology via write transaction.
+1. A — Pinned requirements file enables reproducible environment reconstruction.
+2. C — Days-since-timestamp is a time-based derived feature.
+3. D — Data from the same period as the label is not available at prediction time — leakage.
+4. B — USAREUR-AF minimum recall threshold for failure prediction = 75%.
+5. C — Calibration ensures predicted probabilities match observed frequencies.
+6. A — Platt scaling and isotonic regression both calibrate probability outputs.
+7. A — PSI > 0.20 = significant distribution shift; PSI 0.10-0.20 = moderate; <0.10 = stable.
+8. D — Model registry tracks artifacts, versions, metrics, and deployment status.
+9. B — Scheduled pipeline calls endpoint and writes predictions to Ontology via write transaction.
 10. B — Recall for the failure class is most important — missing failures is the critical error type.
-11. B — Model card required fields: intended use, out-of-scope use, training data, metrics, limitations, responsible AI declaration.
+11. D — Model card required fields: intended use, out-of-scope use, training data, metrics, limitations, responsible AI declaration.
 12. B — Live inference on held-out test records validates format, latency, and accuracy.
-13. B — KS test compares empirical distributions of continuous features between periods.
-14. B — Transactions are atomic — all-or-nothing prevents partial write corruption.
-15. B — Compressed model must be independently evaluated — compression changes the model.
-16. B — Escalate to C2DAO for scope reduction. Per TM-40M Section 9-2a, the 30-day MVP mandate is a hard constraint; however, Phase 5 T&E must not be bypassed. A model shipped without holdout validation and sponsor sign-off is an unauthorized deployment. Option A directly violates this — deploying without T&E is not permitted. Option C invents an auto-extension policy that does not exist. Option D bypasses required development and evaluation phases. Source: DDOF Playbook v2.2 / TM-40M Section 9-2a.
-17. B — "Linked" means full lineage from training data through the feature pipeline through the model to inference outputs. This is the VAULTIS-A definition for the Linked dimension applied to ML models per TM-40M Section 9-2b. Option A describes downstream consumption (not lineage). Option C describes a retraining workflow, not lineage documentation. Option D describes a registry URL, which is part of "Visible," not "Linked." Source: DDOF Playbook v2.2 / UDRA v1.1 / TM-40M Section 9-2b.
-18. B — Phase 4 (Development) gate output is a functional model with documented architecture. Option A describes the Phase 5 (T&E) gate output — test report with metrics and sponsor sign-off. Option C describes a later governance artifact (model card, Section 9-3) that is completed after Phase 5 evaluation. Option D describes a deployment activity that occurs after Phase 5 approval. Source: TM-40M Section 9-2a / DDOF Playbook v2.2.
-19. B — The "Auditable" dimension for ML models requires full training and inference logs retained with version history maintained in the model registry. Option A conflates explainability (an aspect of "Understandable") with auditability. Option C invents an external auditor certification not required by VAULTIS-A. Option D describes documentation that falls under the "Understandable" dimension (model card), not "Auditable." VAULTIS-A compliance is not a one-time checkpoint — auditability must persist throughout the model's production lifecycle. Source: TM-40M Section 9-2b / DDOF Playbook v2.2 / UDRA v1.1.
+13. C — KS test compares empirical distributions of continuous features between periods.
+14. C — Transactions are atomic — all-or-nothing prevents partial write corruption.
+15. A — Compressed model must be independently evaluated — compression changes the model.
 
 **Short Answer Guidance:**
 
@@ -277,4 +273,4 @@ SA-6. Full credit: any two WFF tracks correctly identified with an ML example �
 ---
 
 *USAREUR-AF Operational Data Team — UNCLASSIFIED*
-*TM-40M Post-Test | Version 1.1 | March 2026*
+*TM-40M Post-Test | Version 1.0 | March 2026*

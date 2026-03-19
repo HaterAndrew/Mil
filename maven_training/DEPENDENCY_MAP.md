@@ -4,7 +4,7 @@
 > **PUBLISHED OUTPUT:** The authoritative HTML dependency map is `maven_training/DEPENDENCY_MAP.html` (7,400+ lines). **Do NOT overwrite it with the short ~900-line file produced by `scripts/generate_dep_map.py`.** That script generates a disposable summary — it must NEVER write to `DEPENDENCY_MAP.html`. If you need to update the dep map, edit `DEPENDENCY_MAP.html` directly. Never open, reference, or show the short generated version.
 
 **Generated:** 13 March 2026
-**Last structural change:** 18 March 2026 — Added T3 Train-the-Trainer tracks: T3-I (Instructor Certification, 5 days, prereq TM-30) and T3-F (MSC Force Multiplier / Unit Data Trainer, 3 days, prereq TM-20); added TM-40N (UI/UX Designer) and TM-40O (Platform Engineer) specialist tracks with TM-50N/TM-50O advanced tracks; ASF role alignment (PM, Designer, SWE, Platform Engineer); prereq chain extended G–O
+**Last structural change:** 18 March 2026 — Added T3 Train-the-Trainer tracks: T3-I (Instructor Certification, 5 days, prereq TM-30) and T3-F (MSC Force Multiplier / Unit Data Trainer, half day, prereq TM-20); added TM-40N (UI/UX Designer) and TM-40O (Platform Engineer) specialist tracks with TM-50N/TM-50O advanced tracks; ASF role alignment (PM, Designer, SWE, Platform Engineer); prereq chain extended G–O
 **Last updated:** 18 March 2026 (integrated USAREUR-AF Data and Analytics Strategy (CG-signed May 2025) and Unified Data Transition Strategy (CUI quarterly product cycle) into corpus — Sec 0B, Sec 5, External Refs, doctrine panel, publications index; changelog #118–119)
 **Audit method:** Full manual read of all source files across 6 parallel agent passes (13 March); ralf branch content migration (14 March); Palantir Developers video mapping (14 March); full ralf file inventory and PDF build (14 March); full content read of all 30 CDA slide decks (14 March) — level assignments corrected corpus-wide; pre-v2.0 content accuracy and consistency audit across all curriculum, app, widget, and PPTX files (14 March)
 **Status at generation:** Corpus at v2.0-ready state. All naming and content issues resolved. TM-40D/E/F prereq discrepancy resolved 2026-03-14 — all WFF tracks (TM-40A–F) now require TM-30 as terminal prerequisite. TM-40N (UI/UX Designer), TM-40O (Platform Engineer), and corresponding TM-50N/TM-50O advanced tracks added 2026-03-18 with ASF role alignment. Pre-v2.0 audit complete: 8 content fixes applied (README.md, POLICY_LETTER.md, cheatsheet.md, Home.tsx, TM40.tsx, mss_info_app/index.html, .gitignore, MSS_Project_Overview.pptx); MSS_Training_Progression.pptx specialist column fully rebuilt with clean WFF (A–F) / Specialist (G–O) grouping. PDFs regenerated (3 source-changed files rebuilt). See changelog entry #95–103.
@@ -43,9 +43,9 @@ TM-10 (all other personnel)
         ├── [BSP] Builder Sprint ← parallel track; outside TM chain; no TM credit granted
         │         Prereq: TM-20 Go + command-validated project. See builder_sprint/BSP_GUIDE.md
         │
-        ├── [T3-F] MSC Force Multiplier ← Unit Data Trainer certification
+        ├── [T3-F] MSC Force Multiplier ← Unit Data Trainer certification (half day)
         │         Prereq: TM-20 Go + commander nomination. Authorizes: TM-10 delivery,
-        │         TM-20 refresher facilitation (Blocks 1-10), TM-10 exam proctoring.
+        │         TM-10 exam proctoring, training status reporting to C2DAO.
         │         Does NOT grant TM-30 credit. Does NOT unlock TM-40 enrollment.
         │
         └── TM-30 (advanced builders / data-adjacent)
@@ -78,7 +78,7 @@ TM-10 (all other personnel)
 > **Cross-track companions:** TM-40N ↔ TM-40J ↔ TM-40L form the ASF "balanced team" triad (Designer + PM + Engineer). TM-40O ↔ TM-40L (platform ↔ application boundary). TM-40O ↔ TM-40H (infrastructure for AI workloads).
 > **Builder Sprint (BSP)** is a separate quarterly event outside the TM chain. Prereq: TM-20. Does NOT grant TM-30 credit. Does NOT unlock TM-40 enrollment. See training_management/BUILDER_SPRINT_SOP.md.
 > **Senior Leader (TM-SL)** is a separate 1-day executive course outside the TM chain. Audience: O-5 / E-9+. Replaces TM-10 for senior leaders. Terminal — does not unlock TM-20 or any further progression. Does NOT grant TM-10 credit.
-> **T3-F (MSC Force Multiplier)** certifies Unit Data Trainers (UDTs) at the MSC level. Prereq: TM-20. 3 days. Authorizes TM-10 delivery, TM-20 refresher facilitation (Blocks 1-10 only), TM-10 exam proctoring, and training status reporting. UDTs are the forward training presence between MTT rotations. Does NOT authorize TM-20 initial certification or any TM-30+ delivery.
+> **T3-F (MSC Force Multiplier)** certifies Unit Data Trainers (UDTs) at the MSC level. Prereq: TM-20. Half day. Authorizes TM-10 delivery, TM-10 exam proctoring, and training status reporting. UDTs are the forward training presence between MTT rotations. Does NOT authorize TM-20 or any TM-30+ delivery.
 > **T3-I (Instructor Certification)** is the formal C2DAO instructor pipeline. Prereq: TM-30 + OIC selection. Phase 1 is a 5-day classroom course (adult learning, lab facilitation, evaluation calibration, microteaching). Phase 2 is a supervised practicum scheduled around actual course iterations. Graduates are authorized to teach independently per domain qualification (FDP §2-1). See UNIT_DATA_TRAINER_SOP.md for T3-F governance and FACULTY_DEVELOPMENT_PLAN.md for T3-I certification standards.
 
 ---
@@ -323,6 +323,7 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 ## SECTION 1B — BUILDER SPRINT (BSP)
 ### Prereq: TM-20 Go on file + command-approved project
 ### NOT part of the TM-10 → TM-50 sequence; does NOT grant TM credit
+> Quarterly 5-day supervised build event. Does NOT grant TM-30 credit. Does NOT unlock TM-40 enrollment. See training_management/BUILDER_SPRINT_SOP.md.
 
 | File | Type | Outbound Dependencies |
 |---|---|---|
@@ -333,15 +334,13 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 
 **Inbound references from:** DEPENDENCY_MAP prereq chain, DEMO_BRIEF_CG, WHITE_PAPER_MSS_TRAINING, mss_info_app/index.html (if applicable)
 
-**Key governance note:** BSP is a quarterly 5-day supervised build event. Prereq: TM-20 Go + command-validated project. Does NOT grant TM-30 credit. Does NOT unlock TM-40 enrollment.
-
 ---
 
 ## SECTION 1C — TRAIN THE TRAINER (T3)
 
 ### T3-F: MSC Force Multiplier (Unit Data Trainer Certification)
 #### Prereq: TM-20 Go on file + unit commander nomination
-#### 3 days (24 hours) — Authorizes TM-10 delivery, TM-20 refresher facilitation (Blocks 1-10), TM-10 exam proctoring
+#### Half day (4 hours) — Authorizes TM-10 delivery, TM-10 exam proctoring, training status reporting
 
 | File | Type | Outbound Dependencies |
 |---|---|---|
@@ -357,7 +356,7 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 
 **Inbound references from:** DEPENDENCY_MAP prereq chain, FACULTY_DEVELOPMENT_PLAN (instructor ecosystem), INSTRUCTOR_OVERVIEW (UDT tier), TASKORD_MSS_TRAINING_CELL (MTT delivery of T3-F at MSC sites)
 
-**Key governance note:** T3-F creates a sustainment capability, not a replacement for C2DAO instructors. UDTs deliver TM-10 and facilitate TM-20 refresher labs (Blocks 1-10 only) between MTT rotations. UDTs do NOT deliver TM-20 initial certification, TM-30, or any TM-40/TM-50 courses. Curriculum authority remains with C2DAO.
+**Key governance note:** T3-F creates a sustainment capability, not a replacement for C2DAO instructors. UDTs deliver TM-10 between MTT rotations. UDTs do NOT deliver TM-20, TM-30, or any TM-40/TM-50 courses. Curriculum authority remains with C2DAO.
 
 ### T3-I: Instructor Certification (C2DAO Instructor Pipeline)
 #### Prereq: TM-30 Go on file + C2DAO Training OIC selection
@@ -1045,7 +1044,7 @@ ls maven_training/pdf/*.pdf | wc -l
 
 | # | Files Added / Modified | Change | Level |
 |---|---|---|---|
-| 120 | tm/T3_F_msc_force_multiplier/ (TM, CG), syllabi/SYLLABUS_T3F.md, exercises/EX_T3F_force_multiplier/ (EXERCISE, ENV_SETUP), exams/EXAM_T3F_PRE/POST.md, lesson_plans/T3F_LESSON_PLAN_OUTLINES.md, training_management/UNIT_DATA_TRAINER_SOP.md, PDFs (8) | NEW — T3-F MSC Force Multiplier (Unit Data Trainer Certification). 3-day course, prereq TM-20. Authorizes TM-10 delivery, TM-20 refresher facilitation (Blocks 1-10), TM-10 exam proctoring. | T3-F |
+| 120 | tm/T3_F_msc_force_multiplier/ (TM, CG), syllabi/SYLLABUS_T3F.md, exercises/EX_T3F_force_multiplier/ (EXERCISE, ENV_SETUP), exams/EXAM_T3F_PRE/POST.md, lesson_plans/T3F_LESSON_PLAN_OUTLINES.md, training_management/UNIT_DATA_TRAINER_SOP.md, PDFs (8) | T3-F MSC Force Multiplier (Unit Data Trainer Certification). Half-day course, prereq TM-20. Authorizes TM-10 delivery, TM-10 exam proctoring. | T3-F |
 | 121 | tm/T3_I_instructor_certification/ (TM, CG), syllabi/SYLLABUS_T3I.md, exercises/EX_T3I_instructor_certification/ (EXERCISE, ENV_SETUP), exams/EXAM_T3I_PRE/POST.md, lesson_plans/T3I_LESSON_PLAN_OUTLINES.md, PDFs (8) | NEW — T3-I Instructor Certification (C2DAO Instructor Pipeline). Phase 1: 5-day classroom, prereq TM-30 + OIC selection. Phase 2: supervised practicum. | T3-I |
 | 122 | tm/TM_40N_ux_designer/ (TM, CG, SS), syllabi/SYLLABUS_TM40N.md, exercises/EX-40N_ux_designer/ (EXERCISE, ENV_SETUP), exams/EXAM_TM40N_PRE/POST.md, PDFs (~8) | NEW — TM-40N UI/UX Designer specialist track. ASF Designer role alignment. Covers SCD, user research, IA, visual design, prototyping, usability testing, Section 508/WCAG 2.1 AA. | TM-40N |
 | 123 | tm/TM_40O_platform_engineer/ (TM, CG, SS), syllabi/SYLLABUS_TM40O.md, exercises/EX-40O_platform_engineer/ (EXERCISE, ENV_SETUP), exams/EXAM_TM40O_PRE/POST.md, PDFs (~8) | NEW — TM-40O Platform Engineer specialist track. ASF Platform Engineer role alignment. Covers K8s, IaC/GitOps, Iron Bank, CI/CD, DDIL ops, RMF/ATO. | TM-40O |

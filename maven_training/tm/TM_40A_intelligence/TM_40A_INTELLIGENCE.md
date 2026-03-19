@@ -413,7 +413,7 @@ SIGACTs are the primary record of battlefield events in MSS. Every SIGACT entere
 
 **Periodic SIGACT analysis.** See Section 4-2 on Pattern of Life Analysis for the analytical use of SIGACT data. SIGACT entry is a data function; SIGACT analysis is an analytical function. Both are required.
 
-### 4-5. Link Analysis and Network Mapping
+### 4-4. Link Analysis and Network Mapping
 
 Link analysis identifies relationships between entities — organizations, locations, equipment, events. In MSS, it is performed by querying and visualizing Ontology object relationships to map threat networks, supply chains, and command relationships.
 
@@ -421,7 +421,7 @@ Link analysis identifies relationships between entities — organizations, locat
 
 > **CAUTION: Persons of interest in a network map must be referenced by designated case or contact numbers — never by full name, physical description, or identifying information — in MSS unless the workspace has been specifically authorized for that data category. Coordinate with the CI section (35L) and the unit legal advisor before creating person-linked objects in MSS. Creating a person-linked object without this authorization may violate AR 381-10 and Privacy Act requirements.**
 
-### 4-6. Indications and Warning Monitoring
+### 4-5. Indications and Warning Monitoring
 
 I&W monitoring tracks threat indicators against established warning conditions. MSS supports I&W through indicator objects linked to COA overlays (Chapter 2), collection assets (Chapter 3), and reporting datasets.
 
@@ -444,7 +444,7 @@ I&W monitoring tracks threat indicators against established warning conditions. 
 8. When enough indicators have shifted to support a COA determination change, prepare an I&W update brief for the G2/S2. Do not change the IPOE COA assessment without G2/S2 review and approval.
 ---
 
-### 4-7. Building and Maintaining Threat Models
+### 4-6. Building and Maintaining Threat Models
 
 A threat model in MSS is a persistent analytical product linking threat ORBAT objects, capability assessments, POL data, and COA analysis into a single queryable representation of the threat in the AOR.
 
@@ -459,7 +459,7 @@ A threat model in MSS is a persistent analytical product linking threat ORBAT ob
 
 > **NOTE: Threat models in MSS are analytical products, not authoritative assessments. They represent the unit S2/G2 analytical judgment as of the last update. Brief the last-updated date and analyst confidence level when presenting threat model outputs to the commander. An unreviewed threat model can mislead a commander as badly as no threat model at all.**
 
-### 4-8. Threat Model Maintenance Cycle Standards
+### 4-7. Threat Model Maintenance Cycle Standards
 
 The following maintenance standards apply to all intelligence sections using MSS.
 
@@ -480,7 +480,7 @@ The following maintenance standards apply to all intelligence sections using MSS
 
 **Threat model update documentation.** When updating a threat model object, enter in the object notes: what changed, what reporting drove the change, and the analyst's confidence in the updated assessment. This documentation creates an analytical audit trail and supports intelligence continuity across personnel rotations.
 
-### 4-9. Source and Information Reliability Standards
+### 4-8. Source and Information Reliability Standards
 
 All reporting objects entered in MSS must carry: source reliability rating (A–F per FM 2-22.3, Appendix H), information credibility rating (1–6), date of information (not entry date), and collection method.
 

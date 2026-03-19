@@ -293,6 +293,11 @@ TM-10 is the entry point for the MSS training curriculum. After completing TM-10
 | TM-30 (Advanced Builder) | TM-40J — Program Manager | For data program managers coordinating MSS products and delivery. Prerequisite: TM-30 (required). Duration: 4 days. |
 | TM-30 (Advanced Builder) | TM-40K — Knowledge Manager | For knowledge managers structuring data products for organizational learning. Prerequisite: TM-30 (required). Duration: 4 days. |
 | TM-30 (Advanced Builder) | TM-40L — Software Engineer | For software engineers writing Python, PySpark, TypeScript, and OSDK integrations. Prerequisite: TM-30 (required). Duration: 5 days. |
+| TM-30 (Advanced Builder) | TM-40N — UI/UX Designer | For personnel designing user interfaces and user experience for MSS applications. Prerequisite: TM-30 (required). Duration: 5 days. |
+| TM-30 (Advanced Builder) | TM-40O — Platform Engineer | For personnel managing platform infrastructure, deployments, and environment configuration. Prerequisite: TM-30 (required). Duration: 5 days. |
+| TM-20 (Builder) | T3-F — MSC Force Multiplier | Half-day Unit Data Trainer certification. Prereq: TM-20 Go + commander nomination. Authorizes TM-10 delivery and TM-10 exam proctoring. |
+| TM-30 (Advanced Builder) | T3-I — Instructor Certification | 5-day instructor pipeline course. Prereq: TM-30 Go + C2DAO Training OIC selection. |
+| Any qualification level | TM-SL — Senior Leader | For senior leaders (O-5 / E-9+). Provides data-informed decision-making framework without technical prerequisites. Duration: 1 day. |
 
 NOTE: Not every TM-10 graduate proceeds to TM-20. Most USAREUR-AF personnel require only TM-10 operator qualification to perform their duties. Builder access (TM-20 and above) is granted through chain-of-command request and requires explicit approval. If you believe your duties require builder access, speak with your unit data steward.
 

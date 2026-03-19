@@ -25,14 +25,14 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 **1. In TypeScript, an `async` function returns:**
 
 A. The resolved value of the computation directly
-B. A `Promise` that resolves to the return value
-C. A callback function that must be invoked manually
+B. A callback function that must be invoked manually
+C. A `Promise` that resolves to the return value
 D. An `Observable` stream of values
 
 **2. "Pagination" in a REST API context means:**
 
-A. Breaking a web page into multiple sections for rendering performance
-B. Returning large result sets in smaller chunks (pages) with a cursor or offset to retrieve subsequent pages
+A. Returning large result sets in smaller chunks (pages) with a cursor or offset to retrieve subsequent pages
+B. Breaking a web page into multiple sections for rendering performance
 C. Caching API responses to reduce server load
 D. Versioning API endpoints to maintain backward compatibility
 
@@ -46,8 +46,8 @@ D. The request requires authentication before it can be processed
 **4. The `try/catch/finally` pattern in TypeScript is used for:**
 
 A. Iterating over arrays and handling empty results
-B. Structured error handling — catching exceptions, providing fallback logic, and ensuring cleanup code runs
-C. Validating function parameters before execution
+B. Validating function parameters before execution
+C. Structured error handling — catching exceptions, providing fallback logic, and ensuring cleanup code runs
 D. Typing asynchronous function return values
 
 **5. "Rate limiting" in an API context means:**
@@ -66,24 +66,24 @@ D. Define enumerated constant values
 
 **7. A WebSocket connection differs from a standard HTTP request in that:**
 
-A. WebSocket uses UDP instead of TCP for faster transmission
-B. WebSocket maintains a persistent, bidirectional connection enabling real-time push notifications without polling
+A. WebSocket maintains a persistent, bidirectional connection enabling real-time push notifications without polling
+B. WebSocket uses UDP instead of TCP for faster transmission
 C. WebSocket is only available on secure (HTTPS) connections
 D. WebSocket responses are automatically cached by the browser
 
 **8. In a REST API, "input sanitization" before processing user-supplied data is important to prevent:**
 
 A. Data type mismatches that cause TypeScript compilation errors
-B. Injection attacks (SQL injection, command injection) where malicious input manipulates system behavior
-C. Performance degradation from large payload sizes
+B. Performance degradation from large payload sizes
+C. Injection attacks (SQL injection, command injection) where malicious input manipulates system behavior
 D. Unauthorized access to restricted API endpoints
 
 **9. A "webhook" is best described as:**
 
 A. A library for building REST APIs in TypeScript
-B. An HTTP callback — when an event occurs, the server sends an HTTP POST to a pre-registered URL
+B. A type of persistent connection similar to WebSocket
 C. A tool for testing API endpoints during development
-D. A type of persistent connection similar to WebSocket
+D. An HTTP callback — when an event occurs, the server sends an HTTP POST to a pre-registered URL
 
 **10. "Hardcoded credentials" in source code are a security risk because:**
 
@@ -95,37 +95,37 @@ D. They prevent the application from running in multiple environments
 **11. In a JavaScript/TypeScript application, `Promise.all([...])` is used to:**
 
 A. Execute an array of promises sequentially, waiting for each to complete before starting the next
-B. Execute multiple promises concurrently and wait for all of them to resolve (or one to reject)
+B. Convert an array of synchronous values into a resolved promise
 C. Retry a failed promise until it succeeds
-D. Convert an array of synchronous values into a resolved promise
+D. Execute multiple promises concurrently and wait for all of them to resolve (or one to reject)
 
 **12. An API that returns the first 100 records but the full dataset contains 10,000 records requires the client to:**
 
 A. Accept the first 100 records as a representative sample
-B. Implement pagination logic to repeatedly fetch subsequent pages until all records are retrieved
-C. Request the full dataset in a single call with a `limit=10000` parameter
+B. Request the full dataset in a single call with a `limit=10000` parameter
+C. Implement pagination logic to repeatedly fetch subsequent pages until all records are retrieved
 D. Export the data to a file and process it offline
 
 **13. "Input validation at system boundaries" in a software engineering context means:**
 
-A. Validating the database schema before any query is executed
-B. Checking and sanitizing all external inputs (user input, API responses, file data) before processing them in the application
+A. Checking and sanitizing all external inputs (user input, API responses, file data) before processing them in the application
+B. Validating the database schema before any query is executed
 C. Running unit tests on all functions that accept input parameters
 D. Validating TypeScript type annotations at runtime
 
 **14. In a client-server architecture, "state management" in a frontend application refers to:**
 
-A. The persistence of data in the server-side database
-B. Managing and updating the application's in-memory representation of data as user interactions and API responses change it
+A. Managing and updating the application's in-memory representation of data as user interactions and API responses change it
+B. The persistence of data in the server-side database
 C. The storage of user session tokens on the client
 D. Synchronizing application state across multiple browser tabs
 
 **15. A "code review" before merging a pull request serves which primary purpose?**
 
 A. Verifying that the code compiles and all tests pass
-B. A human review of logic correctness, security, standards compliance, and maintainability before changes reach production
+B. Ensuring the developer followed the correct branching workflow
 C. Documenting the changes made in the commit history
-D. Ensuring the developer followed the correct branching workflow
+D. A human review of logic correctness, security, standards compliance, and maintainability before changes reach production
 
 ---
 
@@ -202,21 +202,21 @@ Passing: N/A — Pre-test is diagnostic only.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — `async` functions return a Promise that resolves to the return value.
-2. B — Pagination returns large result sets in smaller pages with a cursor/offset.
+1. C — `async` functions return a Promise that resolves to the return value.
+2. A — Pagination returns large result sets in smaller pages with a cursor/offset.
 3. B — 202 Accepted = request received for async processing, result not yet available.
-4. B — try/catch/finally is for structured error handling with cleanup.
+4. C — try/catch/finally is for structured error handling with cleanup.
 5. B — Rate limiting restricts the number of requests per time period.
 6. B — TypeScript `interface` describes object shape without providing implementation.
-7. B — WebSocket maintains persistent bidirectional connection for real-time communication.
-8. B — Input sanitization prevents injection attacks.
-9. B — Webhook = HTTP callback triggered by server-side event.
+7. A — WebSocket maintains persistent bidirectional connection for real-time communication.
+8. C — Input sanitization prevents injection attacks.
+9. D — Webhook = HTTP callback triggered by server-side event.
 10. B — Hardcoded credentials are exposed in repos and cannot be rotated without code changes.
-11. B — Promise.all executes concurrently and waits for all promises to resolve.
-12. B — Pagination logic must be implemented to retrieve all pages.
-13. B — Input validation at system boundaries checks all external inputs before processing.
-14. B — State management maintains the application's in-memory data representation.
-15. B — Code review verifies logic, security, standards compliance, and maintainability.
+11. D — Promise.all executes concurrently and waits for all promises to resolve.
+12. C — Pagination logic must be implemented to retrieve all pages.
+13. A — Input validation at system boundaries checks all external inputs before processing.
+14. A — State management maintains the application's in-memory data representation.
+15. D — Code review verifies logic, security, standards compliance, and maintainability.
 
 **Short Answer Guidance:**
 

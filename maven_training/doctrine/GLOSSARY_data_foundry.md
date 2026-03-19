@@ -1166,8 +1166,8 @@ Example: A brigade S2 completes TM-40A (Intelligence WFF) to learn how to use MS
 ---
 
 **Specialist Track**
-*MSS Equivalent: TM-40G through TM-40M (and TM-50G through TM-50M)*
-Definition: A category of MSS training tracks (TM-40G–M) designed for personnel in designated technical billets requiring deep platform engineering or analytical capability. Specialist tracks require TM-30 (Advanced Builder) as a hard prerequisite. The six specialist tracks are: ORSA (TM-40G), AI Engineer (TM-40H), ML Engineer (TM-40M), Program Manager (TM-40J), Knowledge Manager (TM-40K), and Software Engineer (TM-40L). Each specialist track has an advanced counterpart in the TM-50 series (TM-50G–M). Specialist tracks are distinct from WFF tracks — they address technical roles, not functional staff roles.
+*MSS Equivalent: TM-40G through TM-40O (and TM-50G through TM-50O)*
+Definition: A category of MSS training tracks (TM-40G–O) designed for personnel in designated technical billets requiring deep platform engineering or analytical capability. Specialist tracks require TM-30 (Advanced Builder) as a hard prerequisite. The eight specialist tracks are: ORSA (TM-40G), AI Engineer (TM-40H), ML Engineer (TM-40M), Program Manager (TM-40J), Knowledge Manager (TM-40K), Software Engineer (TM-40L), UX Designer (TM-40N), and Platform Engineer (TM-40O). Each specialist track has an advanced counterpart in the TM-50 series (TM-50G–O). Specialist tracks are distinct from WFF tracks — they address technical roles, not functional staff roles.
 Example: A designated ORSA billet holder completes TM-40G (ORSA) after finishing TM-30, learning to apply statistical and operations research methods to command-level analytical problems within MSS.
 *See also: Warfighting Function (WFF) Track, TM-30, TM-40 Series*
 

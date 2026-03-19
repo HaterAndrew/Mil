@@ -24,8 +24,8 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 
 **1. A data system that allows users to view, filter, and interact with unit data through a structured interface is most accurately described as:**
 
-A. A word processing application
-B. A data-driven operational platform
+A. A data-driven operational platform
+B. A word processing application
 C. A classified messaging system
 D. A logistics scheduling tool
 
@@ -33,8 +33,8 @@ D. A logistics scheduling tool
 
 A. Call the system vendor's support line
 B. Attempt to log in three more times using different passwords
-C. Check whether your credentials and access permissions are valid for that system
-D. Submit a help desk ticket immediately without attempting any troubleshooting
+C. Submit a help desk ticket immediately without attempting any troubleshooting
+D. Check whether your credentials and access permissions are valid for that system
 
 **3. In most Army data systems, "authentication" refers to:**
 
@@ -45,9 +45,9 @@ D. Assigning a classification marking to a document
 
 **4. A CAC (Common Access Card) is primarily used in Army IT systems to:**
 
-A. Store unclassified unit rosters
+A. Authenticate user identity for secure system access
 B. Provide physical access to motor pools only
-C. Authenticate user identity for secure system access
+C. Store unclassified unit rosters
 D. Replace the requirement for a system password on all networks
 
 **5. Which of the following BEST describes a "dashboard" in a data platform context?**
@@ -67,15 +67,15 @@ D. They are only relevant for SCI-level material and can be ignored for FOUO dat
 **7. A "filter" in a data application allows a user to:**
 
 A. Remove corrupt records from a dataset permanently
-B. Narrow the displayed data to records matching specific criteria
+B. Merge two data tables into one combined view
 C. Export all data to a PDF for offline review
-D. Merge two data tables into one combined view
+D. Narrow the displayed data to records matching specific criteria
 
 **8. You need to submit a status update for your unit's equipment in a data system. The feature that typically allows a user to submit or modify data is called:**
 
-A. A pipeline
+A. An Action
 B. A transform
-C. An Action
+C. A pipeline
 D. A branch
 
 **9. Which of the following is a common reason a user might receive a "403 Forbidden" error when accessing a data system?**
@@ -102,9 +102,9 @@ D. Scheduling leave for personnel using a paper DA 31
 **12. A "dataset" is best described as:**
 
 A. A single data point or measurement
-B. A collection of related data organized in a structured format
+B. A type of database software
 C. A secure folder on a classified network drive
-D. A type of database software
+D. A collection of related data organized in a structured format
 
 **13. Which of the following BEST describes the concept of "role-based access control" in a data system?**
 
@@ -115,8 +115,8 @@ D. Access is granted based on time of day and network availability
 
 **14. When exporting data from an Army operational system, the FIRST consideration should be:**
 
-A. The file format required by the receiving system
-B. Whether the export is authorized based on the data's classification and handling instructions
+A. Whether the export is authorized based on the data's classification and handling instructions
+B. The file format required by the receiving system
 C. The size of the file relative to email attachment limits
 D. Whether the data can be opened on a personal device
 
@@ -202,20 +202,20 @@ Passing: N/A — Pre-test is diagnostic only.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — A data-driven operational platform is the correct category; the other options are unrelated system types.
-2. C — Credential/permission verification is the correct first troubleshooting step before escalating.
+1. A — A data-driven operational platform is the correct category; the other options are unrelated system types.
+2. D — Credential/permission verification is the correct first troubleshooting step before escalating.
 3. B — Authentication is identity verification; authorization is the approval of access.
-4. C — CAC provides PKI-based identity authentication for secure system access.
+4. A — CAC provides PKI-based identity authentication for secure system access.
 5. B — A dashboard is a configurable visual summary interface; the other options are not dashboards.
 6. C — Classification markings govern authorized handling, distribution, and export procedures.
-7. B — Filtering narrows displayed records to those matching specified criteria without deleting data.
-8. C — An Action is the platform feature that allows users to submit or modify data.
+7. D — Filtering narrows displayed records to those matching specified criteria without deleting data.
+8. A — An Action is the platform feature that allows users to submit or modify data.
 9. C — 403 Forbidden indicates insufficient permissions, not timeout (401/session) or maintenance.
 10. B — Data quality encompasses accuracy, completeness, and reliability of the data itself.
 11. B — Equipment readiness tracking is a primary data platform use case in Army units.
-12. B — A dataset is a structured collection of related data records.
+12. D — A dataset is a structured collection of related data records.
 13. C — Role-based access control assigns permissions based on role, not individual or time.
-14. B — Classification and authorized handling review must precede any export action.
+14. A — Classification and authorized handling review must precede any export action.
 15. D — A bar chart uses rectangular bars; the other options describe different chart types.
 
 **Short Answer Guidance:**

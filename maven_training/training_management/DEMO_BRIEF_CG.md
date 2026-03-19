@@ -28,78 +28,69 @@ MSS is the training and data layer for Hermes. The CG directed theater-wide use;
 
 ---
 
-## COURSES OF ACTION
+**FY27 TRAINING PLAN — 60 CLASSES**
 
-### COA 1 — Full MTT Activation (Recommended)
+| Course | Classes | Days Each | Seats | Total Seats |
+|--------|---------|-----------|-------|-------------|
+| TM-20 — Builder | 32 | 5 | 15 | 480 |
+| TM-30 — Advanced Builder | 20 | 5 | 15 | 300 |
+| Builder Sprint (BSP) | 8 | 5 | 16 | 128 |
+| **TOTAL** | **60** | | | **908** |
 
-5-person permanent MTT: 1 OIC (O-3/CW3) + 4 instructors, dual-team model (Alpha/Bravo). 60 classes/year: 32 TM-20, 20 TM-30, 8 Builder Sprints. ~450 personnel/year throughput across 5 locations. TM-10 pushed to unit level — 8 hours, designed for in-processing, units execute organically. Partner nation slots integrated into MTT rotations to meet existing demand signal.
-
-Phased standup: D+0–D+90 sourcing and instructor certification, D+90–D+150 MTT shadow-teaches alongside ODT, D+150+ independent execution.
-
-**Pros:** Only COA that scales to theater. Standardized training quality across all MSCs. Frees ODT to return to their core mission. Builds the instructor cadre needed for long-term self-sufficiency — MTT trains unit-level instructors who eventually take over. Only COA that delivers partner nation training. Only COA that positions USAREUR-AF as the Army's first MSS training proponent.
-
-**Cons:** Requires 5 billets (TDA augmentation) and TDY funding. T3 instructor certification must be completed before MTT can operate independently.
-
-### COA 2 — ODT-Led Continuation
-
-ODT continues absorbing the training mission with 2–3 TDY augmentees per rotation. No dedicated team. No TASKORD. ~20–30 classes/year. App migrates to network subdomain. G3 publishes training directive.
-
-**Pros:** No new billets. Executable under current authorities.
-
-**Cons:** ODT mission continues to degrade — every class taught is a class not spent building capability. Not sustainable past 12 months. Throughput is roughly half of COA 1. Cannot deliver partner nation training at scale. Does not build an instructor cadre. Does not create an exportable model. This is the status quo with a name on it.
-
-### COA 3 — Limited Quarterly Delivery + Self-Study
-
-Publish all materials to network subdomain. Units execute TM-10 organically. ODT delivers TM-20 and TM-30 on a quarterly basis at very limited scale — roughly 4–8 classes per year, constrained by ODT availability. All other progression (TM-40/50, specialist tracks) is self-study only. No dedicated MTT. No partner nation delivery.
-
-**Pros:** Minimal additional resources. Materials are already built. Some structured instruction exists for TM-20/30 rather than pure self-study.
-
-**Cons:** ODT remains tethered to the training mission indefinitely — quarterly delivery still pulls them off their core build/maintain work. 4–8 classes per year means ~60–120 personnel through TM-20/30 annually, a fraction of theater demand. No scalability path. Cannot train partner nations. No instructor cadre development. Quality is inconsistent for TM-10 at unit level. The program exists on paper but does not reach critical mass.
+5 instructors (1 OIC, 2 Alpha team, 2 Bravo team) — stationed Wiesbaden. TM-10 delivered at unit level.
 
 ---
 
-## COA COMPARISON
+**COURSES OF ACTION**
 
-| Criterion | COA 1 (MTT) | COA 2 (ODT-Led) | COA 3 (Quarterly) |
-|-----------|-------------|------------------|-------------------|
-| Annual throughput | ~450 pers / 60 classes | ~150 pers / 25 classes | ~90 pers / 6 classes |
-| Partner training | Yes | No | No |
-| ODT freed | Yes (D+150) | No | No |
-| Standardized quality | Yes | Partial | No |
-| Instructor cadre built | Yes | No | No |
-| Army proponent path | Yes | No | No |
-| Resource cost | 5 billets + TDY | TDY only | Minimal |
-| Sustainable > 12 months | Yes | No | No |
+**COA 1 — MTT Travels to Units (RECOMMENDED)**
 
----
+MTT rotates to 5 sites: Wiesbaden, Grafenwöhr, Vicenza, Ansbach, Ft. Hood. Students train at home station — zero unit TDY burden. Executes the published FY27 Annual Training Calendar (60 classes, OCT 26 – SEP 27).
 
-## STRATEGIC CONTEXT
+| Location | Classes | Instructor Weeks TDY | Per Diem | Travel | Rental | Subtotal |
+|----------|---------|----------------------|----------|--------|--------|----------|
+| Grafenwöhr | 17 | 17 | $38,250 | — | $6,375 | $44,625 |
+| Vicenza | 5 | 5 | $21,000 | $3,000 | $2,625 | $26,625 |
+| Ansbach | 4 | 4 | $9,000 | — | $1,500 | $10,500 |
+| Ft. Hood | 2 | 2 | $4,900 | $3,000 | $1,050 | $8,950 |
+| Wiesbaden | 32 | — (home station) | — | — | — | $0 |
+| **TOTAL** | **60** | **28 weeks** | **$73,150** | **$6,000** | **$11,550** | **$90,700** |
 
-This is the first institutional MSS training program in the Army. No one else has built it — not TRADOC, not the schoolhouse, not Palantir. If COA 1 is approved:
+> **Planning assumptions:** Germany per diem $225/day; Italy $300/day; CONUS $175/day. Graf/Ansbach = drive, 5 duty days (home weekends). Vicenza/Hood = fly, 7 calendar days. Rental $75/day per rotation. Trans-Atlantic RT $1,500; intra-Europe RT $500.
 
-- **NATO:** Partner nations in the USAREUR-AF environment train to the same standard. Interoperability becomes a shared curriculum, not a slide deck.
-- **Army-wide:** The curriculum, governance, and training model are exportable. Other ACOMs/ASCCs adopt the same program. TRADOC absorbs it into the institutional domain. USAREUR-AF built it — the Army scales it.
-
----
-
-## THE ASK — Authorize TASKORD (COA 1)
-
-| Phase | Tasking | OPR | NLT |
-|-------|---------|-----|-----|
-| 1 | Identify 5 MTT billets (1 OIC, 4 instr) via TDA | G1 | D+30 |
-| 1 | Identify FY26 TDY funding for theater rotation | G8 | D+30 |
-| 1 | SJA review: Palantir IP, partner nation legal framework | SJA | D+30 |
-| 1 | Work with ODT/Palantir to host app on network subdomain | G6 | D+45 |
-| 1 | Publish theater training directive | G3 | D+45 |
-| 1 | Complete T3 instructor certification curriculum | ODT | D+60 |
-| 1 | MSCs designate unit TM-10 instructor; integrate into in-processing | MSC CDRs | D+60 |
-| 1 | Tie MSS completion to duty position requirements | G3 | D+60 |
-| 1 | Certify initial MTT cadre under T3 standards | ODT | D+75 |
-| 2 | MTT shadow-teaches alongside ODT | MTT/ODT | D+90 |
-| 2 | Partner nation enrollment framework coordinated | G5 | D+90 |
-| 2 | MSS training completion in theater readiness reporting | G3 | D+90 |
-| 3 | MTT executes independently; first TM-20 cohort | MTT | D+150 |
+- **Pro:** Lowest disruption to units; MTT sees each site's data environment; students stay on mission
+- **Con:** 28 weeks TDY across 5 instructors; instructor quality-of-life risk
+- **Cost: ~$91K TDY**
 
 ---
 
-**POC:** CPT Andrew Hater | Operational Data Team | USAREUR-AF | andrew.d.hater.mil@army.mil
+<details>
+<summary><strong>COA 2 — Reduce Travel (~$66K TDY)</strong></summary>
+
+| Location | Classes | Per Diem | Travel | Rental | Subtotal |
+|----------|---------|----------|--------|--------|----------|
+| Grafenwöhr | 17 | $38,250 | — | $6,375 | $44,625 |
+| Vicenza | 2 | $8,400 | $1,000 | $1,050 | $10,450 |
+| Ansbach | 4 | $9,000 | — | $1,500 | $10,500 |
+| Wiesbaden | 37 | — | — | — | $0 |
+| **TOTAL** | **60** | **$55,650** | **$1,000** | **$8,925** | **$65,575** |
+
+- **Risk:** Ft. Hood and 3 Vicenza classes lose home-station delivery; ~20 students must TDY to Wiesbaden on unit funds; III Corps and SETAF-AF training access degraded
+
+</details>
+
+<details>
+<summary><strong>COA 3 — Centralize at Wiesbaden ($0 MTT TDY)</strong></summary>
+
+- **Risk:** All TDY cost shifts to units (~300 students TDY to Wiesbaden, est. $200K–$300K in distributed unit costs); highest disruption to formation; units resist sending personnel TDY for week-long courses; Graf, Vicenza, Ansbach, Hood lose all home-station training
+
+</details>
+
+---
+
+**THE ASK — Authorize TASKORD directing MSS MTT activation (COA 1):**
+
+1. **G1** — Identify 5 billets for MSS MTT *(D+30)*
+2. **G8** — Program **$91K FY27 TDY** for MTT theater rotation per COA 1 *(D+30)*
+3. **MTT** — Execute FY27 Annual Training Calendar: 60 classes, 5 sites, OCT 26 – SEP 27 *(D+90)*
+4. **G3** — Tie MSS completion to duty position requirements; integrate TM-10 into new soldier in-processing *(D+60)*

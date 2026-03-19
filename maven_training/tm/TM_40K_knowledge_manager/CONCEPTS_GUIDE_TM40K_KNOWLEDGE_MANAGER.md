@@ -405,8 +405,6 @@ Before beginning any MSS knowledge management build, verify:
 
 ---
 
----
-
 ## CURRICULUM NOTES
 
 **Prerequisite:** TM-30 (Advanced Builder) is REQUIRED — not recommended. The KM who has not designed Ontology models and Workshop applications cannot effectively architect knowledge systems on MSS.

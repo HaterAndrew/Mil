@@ -472,6 +472,8 @@ The TM-50L lead does not reject the PR. They document each finding with its oper
 | TM-50M | Advanced ML Engineer | ML model-serving integrations; feature pipeline infrastructure |
 | TM-50J | Advanced Program Manager | Platform engineering program coordination; SWE team structure |
 | TM-50K | Advanced Knowledge Manager | Platform SDK patterns for enterprise KM system backends |
+| TM-50N | Advanced UI/UX Designer | Frontend design collaboration; design system implementation |
+| TM-50O | Advanced Platform Engineer | Platform/application boundary; DevOps collaboration; deployment targets |
 
 **WFF Operational Consumer Note.** The software platform built and governed by TM-50L engineers is the delivery mechanism for all capabilities consumed by the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). Platform reliability, security, and performance are not engineering abstractions — they determine whether a G2 analyst can pull an intelligence synthesis at 0300, whether a G4 planner can access logistics forecasts before a decision brief, and whether the G3's force disposition display is current when the commander needs it. The failure modes addressed in this guide — over-engineering, observability debt, security as compliance — have direct operational consequences for WFF practitioners.
 

@@ -52,6 +52,16 @@ All instructors must meet the following minimum qualifications before being assi
 | TM-40J | Program management background (PM-certified preferred); TM-30 Go on file; GFEBS/IMS proficiency | IMS, GFEBS, dashboard standards |
 | TM-40K | Knowledge management background (CKM or equivalent preferred); TM-30 Go on file | KM systems, AIP summarization, PCS continuity |
 | TM-40L | Software engineering background; OSDK/Platform SDK production experience; TM-40L Go on file | OSDK, Platform SDK, TypeScript FOO, Slate, security |
+| TM-40N | UI/UX design background; MSS dashboard design experience; TM-40N Go on file | Soldier Centered Design, design tokens, Workshop dashboards |
+| TM-40O | Platform engineering background; Foundry infrastructure/DevOps experience; TM-40O Go on file | Infrastructure provisioning, CI/CD, fleet management, security |
+| TM-50G | FA49 or equivalent; TM-50G Go on file; C2DAO Senior ORSA SME designation | Advanced optimization, wargaming models, campaign analysis |
+| TM-50H | C2DAO Senior AI SME; TM-50H Go on file; has deployed 5+ production AI workflows | Advanced AIP Logic, multi-agent orchestration, AI safety evaluation |
+| TM-50M | Senior MLE; TM-50M Go on file; C2DAO Senior MLE SME designation | Advanced MLOps, feature stores, adversarial robustness |
+| TM-50J | Senior PM background; TM-50J Go on file; portfolio-level program delivery experience | Portfolio governance, resource cases, coalition coordination |
+| TM-50K | Senior KM background; TM-50K Go on file; C2DAO Senior KM SME designation | Enterprise KM architecture, cross-domain knowledge systems |
+| TM-50L | Senior SWE; TM-50L Go on file; platform architecture production experience | Advanced OSDK, platform SDK patterns, security architecture |
+| TM-50N | Senior UI/UX designer; TM-50N Go on file; design system architecture experience | Design system governance, cross-platform UX, accessibility |
+| TM-50O | Senior platform engineer; TM-50O Go on file; fleet-scale infrastructure experience | Advanced fleet management, wave upgrades, platform reliability |
 
 ### 2-2. Evaluator Certification
 
@@ -74,6 +84,16 @@ Evaluators (instructors who conduct Go/No-Go evaluations) must hold a higher cer
 | TM-40J | PM background; has delivered production PM dashboards on MSS |
 | TM-40K | KM background; C2DAO-designated KM evaluator |
 | TM-40L | Senior SWE; OSDK/Slate production experience; security review background |
+| TM-40N | Senior UI/UX designer; MSS design system production experience |
+| TM-40O | Senior platform engineer; Foundry infrastructure production experience |
+| TM-50G | C2DAO Senior ORSA SME; TM-50G certified instructor |
+| TM-50H | C2DAO Senior AI SME; TM-50H certified instructor |
+| TM-50M | C2DAO Senior MLE SME; TM-50M certified instructor |
+| TM-50J | Senior PM; TM-50J certified instructor; portfolio delivery experience |
+| TM-50K | C2DAO Senior KM SME; TM-50K certified instructor |
+| TM-50L | Senior SWE; TM-50L certified instructor; platform architecture experience |
+| TM-50N | Senior UI/UX designer; TM-50N certified instructor; design system governance experience |
+| TM-50O | Senior platform engineer; TM-50O certified instructor; fleet-scale operations experience |
 
 ---
 
@@ -110,7 +130,7 @@ T3-I formalizes a three-tier instructor hierarchy (plus the Unit Data Trainer ti
 | Instructor | T3-I Go + domain quals per §2-1 | Deliver assigned courses; conduct Go/No-Go evaluations |
 | Senior Instructor | Instructor + 12 months + 4 iterations + OIC recommendation | Certify new instructors; approve lesson plan revisions |
 | Master Instructor | Senior + 24 months + 2 cross-certs + 2 mentored candidates + OIC designation | Certify Senior Instructors; approve curriculum changes; delegation authority |
-| Unit Data Trainer | T3-F Go + CDR nomination | Deliver TM-10; facilitate TM-20 refresher (Blocks 1-10); proctor TM-10 exams |
+| Unit Data Trainer | T3-F Go + CDR nomination | Deliver TM-10; administer TM-10 Go/No-Go evaluations; proctor TM-10 exams |
 
 ### 3-1b. C2DAO SME Designation
 
@@ -124,6 +144,19 @@ An instructor certified for one course level may be cross-certified for an adjac
 - Phase 3 (Lead, Observed): 1 course iteration
 
 An instructor certified for TM-30 who wishes to teach TM-40J or TM-40K may use the cross-certification path if they have the domain background requirement. Instructors teaching WFF tracks (TM-40A–F) require functional domain expertise (INT, FIRES, M2, SUST, PROT, or MC) in addition to TM-30 certification — the cross-certification path applies to all TM-40 instructors.
+
+### 3-3. Phase Model Reconciliation (FDP ↔ T3-I)
+
+This plan uses a 4-phase governance model describing the full instructor certification lifecycle. The T3-I course implements these phases in a 2-phase delivery structure. The mapping is:
+
+| FDP Phase | FDP Activity | T3-I Equivalent |
+|---|---|---|
+| Phase 1 (Audit) | 2 iterations as student-observer | Pre-T3-I screening — candidate observation prior to course selection |
+| Phase 2 (Assistant) | 1 iteration as assistant instructor | T3-I Phase 1 (5-day classroom) — instructional methodology, platform deep-dive, microteaching |
+| Phase 3 (Lead Observed) | 1 iteration as lead, observed | T3-I Phase 2 practicum, steps P2-1 (co-teach) through P2-3 (evaluator observation) |
+| Phase 4 (Certification) | OIC issues certification | T3-I Phase 2 final step, P2-4 (certification memorandum) |
+
+Where this plan references "Phases 1-4," the corresponding T3-I procedures are documented in the T3-I course manual, Chapters 1-7. For instructor candidates entering through T3-I (all new candidates after the first T3-I iteration), the T3-I Phase 2 practicum procedures in Chapter 7 govern the detailed execution of FDP Phases 2-4.
 
 ---
 

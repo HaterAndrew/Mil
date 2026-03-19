@@ -82,6 +82,8 @@ THEATER KM ARCHITECT (TM-50K)
 | TM-50J | Program Manager Advanced | KM program oversight and portfolio-level knowledge governance |
 | TM-50K | Knowledge Manager Advanced | THIS DOCUMENT |
 | TM-50L | Software Engineer Advanced | Platform SDK infrastructure supporting enterprise KM systems |
+| TM-50N | UI/UX Designer Advanced | Information architecture; knowledge portal UX |
+| TM-50O | Platform Engineer Advanced | Knowledge platform infrastructure; search and retrieval systems |
 
 **WFF Operational Consumer Note.** Knowledge management at the advanced level exists to ensure that the operational insights generated across exercises, operations, and analytical work are discoverable and usable by the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). WFF practitioners are the primary end-users of validated lessons, TTPs, and doctrine products. Enterprise KM architecture must be designed with WFF operational workflows as the primary retrieval use case — if G3 (Movement and Maneuver) planners cannot find sustainment lessons relevant to their operation, the knowledge system has failed regardless of technical quality.
 
@@ -869,7 +871,7 @@ Knowledge graphs must evolve as the operational environment, doctrine, and techn
 
 **Graph evolution triggers:**
 - New doctrine publication (requires new `DoctrinePub` node and review of `REFERENCES` edges)
-- ADP/ADRP revision (may require updating `relevantAreas` properties across linked TTPs and SOPs)
+- ADP revision (may require updating `relevantAreas` properties across linked TTPs and SOPs)
 - Unit reorganization (requires updating `UnitRecord` nodes and reviewing all attribution edges)
 - New exercise type or operational requirement (may require new `KnowledgeDomain` nodes and vocabulary updates)
 - Technology change in MSS (Ontology Manager updates may affect how edges are stored or traversed)

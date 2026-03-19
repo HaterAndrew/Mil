@@ -1,4 +1,4 @@
-# EX_40M — ML Engineer
+# EX-40M — ML Engineer
 ## Practical Exercise — TM-40M Proficiency
 
 | Field | Value |
@@ -109,11 +109,11 @@ Write a model card covering all six required sections: purpose, training data, f
 
 - Task 2 (model training) averages 60–90 min depending on model complexity; gradient boosted trees will take longer
 - Task 3 (confusion matrix and threshold) is conceptually straightforward but participants often spend significant time on the operational consequence reasoning — this is intentional
-- Consider splitting EX_40M across two sessions if time is constrained
+- Consider splitting EX-40M across two sessions if time is constrained
 
 ## NEXT STEPS
 
-Participants who receive an overall Go on EX_40M are eligible to enroll in **TM-50M — Advanced ML Engineer**. TM-50M extends into model retraining pipelines, drift detection, and MLOps governance for production Foundry environments. TM-50 is G–M only (advanced specialist tracks).
+Participants who receive an overall Go on EX-40M are eligible to enroll in **TM-50M — Advanced ML Engineer**. TM-50M extends into model retraining pipelines, drift detection, and MLOps governance for production Foundry environments. No TM-50A–F tracks exist.
 
 ## ENVIRONMENT SETUP
 

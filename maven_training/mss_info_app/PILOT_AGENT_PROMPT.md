@@ -160,7 +160,7 @@ Header: `linear-gradient(155deg, navy-dark 0%, navy 50%, navy-light 100%)`. Gold
 
 ▼ TM-40 & TM-50 SPECIALIST
    ► WFF Tracks (A–F)
-   ► Technical Tracks (G–M)
+   ► Technical Tracks (G–O)
    ► Advanced Tracks (TM-50)
 
 ▼ REFERENCE
@@ -212,7 +212,7 @@ All panels are `<div id="panel-{id}" class="panel">`. CSS: `.panel { display:non
 - `info` callout: "New to MSS? Start with Quick Start guide"
 - `bluf` callout: find your level, follow the path
 - **Find Your Level table**: role description → recommended TM → clickable chip → navigate panel
-  - Rows: Any personnel (TM-10), All staff (TM-20), Data-adjacent (TM-30), Technical specialist (TM-40G–M), WFF specialist (TM-40A–F), Senior leader (Doctrine), Data literacy background
+  - Rows: Any personnel (TM-10), All staff (TM-20), Data-adjacent (TM-30), Technical specialist (TM-40G–O), WFF specialist (TM-40A–F), Senior leader (Doctrine), Data literacy background
 - **Learning path diagram**: vertical chain TM-10 → TM-20 → TM-30 → branch to TM-40 WFF / TM-40 Specialist → TM-50
 - `note` callout: "Not finding what you need? Contact data steward."
 
@@ -242,11 +242,11 @@ All panels are `<div id="panel-{id}" class="panel">`. CSS: `.panel { display:non
 - PDF link card
 
 ### SPECIALIST TRACKS (panel: `specialists`)
-- `bluf` callout: explains WFF (A–F, TM-30 prereq) vs Technical (G–M, TM-30 prereq)
+- `bluf` callout: explains WFF (A–F, TM-30 prereq) vs Technical (G–O, TM-30 prereq)
 - **Role/MOS routing table**: role → recommended track → advanced track
   - Rows grouped by WFF / Technical with section dividers
 - **WFF Track cards grid** (TM-40A through TM-40F): each `.track-card` with navy header, gold left border, track title, audience, prereq chip "TM-30 Req.", PDF link
-- **Technical Track cards grid** (TM-40G through TM-40M): same pattern, chip "TM-30 Req."
+- **Technical Track cards grid** (TM-40G through TM-40O): same pattern, chip "TM-30 Req."
 - CTA button → navigate to `tm40` panel
 
 ### TM-40 (Technical Specialist)
@@ -254,7 +254,7 @@ All panels are `<div id="panel-{id}" class="panel">`. CSS: `.panel { display:non
 - Each card: description, audience, prereq (TM-30), PDF link
 
 ### TM-50 (Advanced Developer)
-- Same six tracks as TM-40G–M but advanced level (TM-50G through TM-50M)
+- Same eight tracks as TM-40G–O but advanced level (TM-50G through TM-50O)
 - Prereq: corresponding TM-40 track
 - `note` callout: TM-50 is available only after completing corresponding TM-40
 
@@ -271,7 +271,7 @@ All panels are `<div id="panel-{id}" class="panel">`. CSS: `.panel { display:non
 ### TASK INDEX
 - "I want to…" task-based routing table
 - Tasks mapped to TM number + section
-- Dropdown quick-selectors for WFF tracks (A–F) and Technical tracks (G–M)
+- Dropdown quick-selectors for WFF tracks (A–F) and Technical tracks (G–O)
 
 ### QUICK REF (pinned)
 - Role-to-track routing table (condensed, all rows)
@@ -468,7 +468,7 @@ document.getElementById('splash-enter').addEventListener('click', () => {
 | TM-40K | Knowledge Manager        | TM-30  | `tm40`       |
 | TM-40L | Software Engineer        | TM-30  | `tm40`       |
 
-**TM-50 is G–M only.** WFF tracks (TM-40A–F) are terminal with no TM-50 continuation.
+**TM-50 is G–O only. There is NO TM-50A through TM-50F.**
 
 ---
 

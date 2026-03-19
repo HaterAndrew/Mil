@@ -99,8 +99,10 @@ Work chapters in order for initial training. Return to individual chapters as re
 | TM-50J | Advanced Program Manager | Senior PMs | Portfolio-level OR program governance |
 | TM-50K | Advanced Knowledge Manager | Senior KMs | Capturing and surfacing ORSA-derived insights |
 | TM-50L | Advanced Software Engineer | Senior SWEs | Platform infrastructure supporting ORSA pipelines |
+| TM-50N | Advanced UI/UX Designer | Senior UX designers | Data visualization design; dashboard UX for ORSA outputs |
+| TM-50O | Advanced Platform Engineer | Senior platform engineers | Infrastructure for analytical workloads; compute scaling |
 
-Where TM-50G methods intersect with AI/ML (e.g., using neural networks in ensemble forecasts, or ML classifiers in agent behavior models), cross-references to TM-40H and TM-40M are provided. ORSA analysts are not expected to independently deploy ML models to production — coordinate with TM-40H/I-trained engineers for production integration.
+Where TM-50G methods intersect with AI/ML (e.g., using neural networks in ensemble forecasts, or ML classifiers in agent behavior models), cross-references to TM-40H and TM-40M are provided. ORSA analysts are not expected to independently deploy ML models to production — coordinate with TM-40H/M-trained engineers for production integration.
 
 **WFF Operational Consumer Note.** Advanced ORSA products ultimately serve the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). WFF practitioners are the primary operational consumers of ORSA-derived readiness analyses, campaign assessments, logistics optimizations, and decision support products. When designing analytical products, consider the WFF audience: what decision does this analysis support, and which functional staff section will act on it?
 

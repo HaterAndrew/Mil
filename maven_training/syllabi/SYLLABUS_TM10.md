@@ -136,14 +136,14 @@ TM-10 is the entry point for the full MSS curriculum. After completing TM-10:
 |---|---|---|
 | **All personnel** | TM-20 (Builder) | Required before any specialist or WFF track |
 | **WFF functional staff** (G2/S2, G3/S3, G4/S4, FSE, FP, MC) | TM-20 → TM-30 → TM-40A–F (WFF tracks) | TM-30 required before any WFF track |
-| **Data specialists** (analysts, 17/25-series, ORSA, AI/ML, PM, KM, SWE) | TM-20 → TM-30 → TM-40G–M | TM-30 required before any specialist track |
+| **Data specialists** (analysts, 17/25-series, ORSA, AI/ML, PM, KM, SWE) | TM-20 → TM-30 → TM-40G–O | TM-30 required before any specialist track |
 
 **Full curriculum summary:**
 - TM-20 (Builder) — prerequisite for TM-30
 - TM-30 (Advanced Builder) — prerequisite for ALL TM-40 tracks (WFF and specialist)
 - WFF Tracks (TM-30 → TM-40A–F): Intelligence, Fires, Movement & Maneuver, Sustainment, Protection, Mission Command
-- Specialist Tracks (TM-30 → TM-40G–M): ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, Software Engineer
-- Advanced Specialist Tracks (TM-40G–M → TM-50G–M): advanced level for each specialist role
+- Specialist Tracks (TM-30 → TM-40G–O): ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, Software Engineer, UX Designer, Platform Engineer
+- Advanced Specialist Tracks (TM-40G–O → TM-50G–O): advanced level for each specialist role
 
 ---
 

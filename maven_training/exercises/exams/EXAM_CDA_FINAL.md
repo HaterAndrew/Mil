@@ -32,28 +32,28 @@ title: "CDA Final Exam"
 **1.** According to ADP 1 and Title 10 U.S. Code, the Army exists to:
 
 - (A) Defend the homeland against all threats foreign and domestic
-- (B) Fight and win the Nation's wars by providing prompt, sustained land dominance across the full range of military operations
-- (C) Organize, train, and equip forces for joint and coalition operations in support of combatant commanders
+- (B) Organize, train, and equip forces for joint and coalition operations in support of combatant commanders
+- (C) Fight and win the Nation's wars by providing prompt, sustained land dominance across the full range of military operations
 - (D) Maintain readiness to deploy and sustain forces in support of national security objectives
 
 **2.** ADP 3-13 defines three dimensions of the operational environment. A data practitioner's work primarily resides in which dimension?
 
 - (A) The Human Dimension
-- (B) The Physical Dimension
-- (C) The Information Dimension
+- (B) The Information Dimension
+- (C) The Physical Dimension
 - (D) The Cyber Dimension
 
 **3.** The cognitive hierarchy defined in ADP 3-13, arranged from the base upward, is:
 
 - (A) Information → Data → Knowledge → Understanding → Decision
-- (B) Data → Information → Knowledge → Understanding → Decision/Action
+- (B) Observation → Data → Information → Judgment → Decision/Action
 - (C) Data → Knowledge → Information → Understanding → Decision/Action
-- (D) Observation → Data → Information → Judgment → Decision/Action
+- (D) Data → Information → Knowledge → Understanding → Decision/Action
 
 **4.** According to ADP 1-01 (Doctrine Primer), doctrine is defined as:
 
-- (A) Standing orders issued by a commanding officer that govern unit operations and training standards
-- (B) Fundamental principles, with supporting tactics, techniques, procedures, and terms and symbols, used for the conduct of operations and as a guide for actions
+- (A) Fundamental principles, with supporting tactics, techniques, procedures, and terms and symbols, used for the conduct of operations and as a guide for actions
+- (B) Standing orders issued by a commanding officer that govern unit operations and training standards
 - (C) A body of regulatory guidance mandating specific systems and technologies for Army use
 - (D) Codified lessons learned from combat operations maintained by the Center for Army Lessons Learned
 
@@ -74,16 +74,16 @@ title: "CDA Final Exam"
 **7.** At the time of the Army Data Orientation briefing, how many legacy business systems was the Army consolidating, and how many had been shut down in two quarters?
 
 - (A) ~500 systems; 50 killed
-- (B) ~800 systems; 100 killed
+- (B) ~600 systems; 75 killed
 - (C) ~1,200 systems; 200 killed
-- (D) ~600 systems; 75 killed
+- (D) ~800 systems; 100 killed
 
 **8.** The Doctrine-to-Decision chain presented in the Architecture Primer is:
 
 - (A) Doctrine → Data Architecture → Ontology → Decisions
-- (B) Doctrine → Ontology → Data Architecture → Decisions
+- (B) Mission → Technology → Ontology → Applications
 - (C) Data → Ontology → Doctrine → Decisions
-- (D) Mission → Technology → Ontology → Applications
+- (D) Doctrine → Ontology → Data Architecture → Decisions
 
 **9.** The Stability Stack presented in the Architecture Primer orders layers from most stable to most volatile as:
 
@@ -95,37 +95,37 @@ title: "CDA Final Exam"
 **10.** The Architecture Primer presents a 200-year communication example (1820 courier, 1944 field radio, 1991 satellite comms, 2026 digital network) to demonstrate that:
 
 - (A) Communication technology has improved exponentially over time
-- (B) Each new technology required a complete redesign of Army doctrine
-- (C) The mission never changed — only the mechanism did
+- (B) The mission never changed — only the mechanism did
+- (C) Each new technology required a complete redesign of Army doctrine
 - (D) Modern digital networks make previous communication methods obsolete
 
 **11.** According to the course materials, what is the relationship between an ontology and Army doctrine?
 
-- (A) Ontology replaces doctrine with machine-readable formats
-- (B) An ontology is doctrine expressed in machine-readable form
+- (A) An ontology is doctrine expressed in machine-readable form
+- (B) Ontology replaces doctrine with machine-readable formats
 - (C) Doctrine and ontology serve different purposes and should be maintained independently
 - (D) Ontology is a subset of doctrine focused exclusively on data standards
 
 **12.** The ADP 3-13 Foreword states: "Information is central to everything we do — it is the basis of __________, a fundamental element of __________, and the foundation for communicating thoughts, opinions, and ideas."
 
 - (A) operations; warfighting
-- (B) intelligence; command and control
-- (C) readiness; force management
+- (B) readiness; force management
+- (C) intelligence; command and control
 - (D) analysis; decision support
 
 **13.** The "Legacy Mindset" vs. "Enterprise Mindset" comparison includes which of the following contrasts?
 
 - (A) "Build the best custom system" → "Use commercial off-the-shelf only"
-- (B) "Data belongs to my organization" → "Data is a shared Army asset"
-- (C) "Automate everything" → "Keep manual processes for accountability"
+- (B) "Automate everything" → "Keep manual processes for accountability"
+- (C) "Data belongs to my organization" → "Data is a shared Army asset"
 - (D) "Centralize all systems at the Pentagon" → "Distribute systems to each installation"
 
 **14.** The readiness reporting transformation described in the course materials states that since November 2025:
 
 - (A) Unit readiness reviews shifted from live data to standardized PowerPoint briefings for consistency
-- (B) The Total Army Readiness Review shifted from static presentations built through thousands of man-hours to live data reporting
+- (B) Manual readiness assessments were replaced with AI-generated readiness predictions
 - (C) Readiness data was moved from Foundry to the Defense Readiness Reporting System exclusively
-- (D) Manual readiness assessments were replaced with AI-generated readiness predictions
+- (D) The Total Army Readiness Review shifted from static presentations built through thousands of man-hours to live data reporting
 
 **15.** According to the Architecture Primer, enterprise architecture "used to focus on systems" but modern architecture focuses on:
 
@@ -165,35 +165,35 @@ title: "CDA Final Exam"
 **22.** The five layers of the 2026 Data Stack, from bottom to top, are:
 
 - (A) Data, Processing, Analytics, Visualization, Action
-- (B) Infrastructure & Orchestration, Ingestion & Integration, Semantic & Modeling, Intelligence & Inference, Activation & Interface
+- (B) Collection, Processing, Analysis, Dissemination, Feedback
 - (C) Storage, Compute, Transform, Model, Serve
-- (D) Collection, Processing, Analysis, Dissemination, Feedback
+- (D) Infrastructure & Orchestration, Ingestion & Integration, Semantic & Modeling, Intelligence & Inference, Activation & Interface
 
 **23.** According to the 2026 Data Stack deck, which layer is described as "The Truth Layer"?
 
-- (A) L1 — Infrastructure & Orchestration
+- (A) L3 — Semantic & Modeling
 - (B) L2 — Ingestion & Integration
-- (C) L3 — Semantic & Modeling
+- (C) L1 — Infrastructure & Orchestration
 - (D) L4 — Intelligence & Inference
 
 **24.** The investment priority formula presented in the 2026 Data Stack is:
 
 - (A) L4 + L5 > L1
-- (B) L1 + L2 > L3
-- (C) L2 + L3 > L5
+- (B) L2 + L3 > L5
+- (C) L1 + L2 > L3
 - (D) L3 + L4 > L2
 
 **25.** The "Weak Link Rule" states:
 
 - (A) The weakest team member determines the project's success
-- (B) Your stack is only as strong as its weakest layer
+- (B) Data quality is only as good as the weakest source system
 - (C) Security is only as strong as the weakest access point
-- (D) Data quality is only as good as the weakest source system
+- (D) Your stack is only as strong as its weakest layer
 
 **26.** According to the 2026 Data Stack, which layer is "the most common skill gap" where "LLMs can serve as a stop-gap for simple integrations, but production-grade pipelines still require deep expertise"?
 
-- (A) L1 — Infrastructure
-- (B) L2 — Ingestion & Integration
+- (A) L2 — Ingestion & Integration
+- (B) L1 — Infrastructure
 - (C) L3 — Semantic & Modeling
 - (D) L5 — Activation & Interface
 
@@ -206,17 +206,17 @@ title: "CDA Final Exam"
 
 **28.** The course identifies Foundry's primary competitive advantage as residing in which layer?
 
-- (A) L1 — Apollo infrastructure
+- (A) L3 — The Ontology layer
 - (B) L2 — Pipeline Builder transforms
-- (C) L3 — The Ontology layer
+- (C) L1 — Apollo infrastructure
 - (D) L5 — Slate and Workshop applications
 
 **29.** The Four Layers deck identifies what as the "#1 cause of Foundry ontology failure"?
 
 - (A) Insufficient data quality in source systems
-- (B) Treating the Ontology like a database (Ontology-Dataset Confusion)
+- (B) Poor application design in Workshop
 - (C) Inadequate pipeline performance
-- (D) Poor application design in Workshop
+- (D) Treating the Ontology like a database (Ontology-Dataset Confusion)
 
 **30.** In the Four Layers model, what is the correct statement about the relationship between datasets and pipelines?
 
@@ -274,31 +274,31 @@ title: "CDA Final Exam"
 
 **36.** The three building blocks of every ontology are:
 
-- (A) Tables, Views, and Indexes
+- (A) Object Types (nouns), Properties (adjectives), and Links (verbs)
 - (B) Entities, Attributes, and Relationships
-- (C) Object Types (nouns), Properties (adjectives), and Links (verbs)
+- (C) Tables, Views, and Indexes
 - (D) Classes, Methods, and Interfaces
 
 **37.** The Definition Clarity Test asks:
 
 - (A) "Is this object type documented in the data dictionary?"
-- (B) "Can you explain what this object type represents without mentioning a source system?"
-- (C) "Does this object type have a primary key defined?"
+- (B) "Does this object type have a primary key defined?"
+- (C) "Can you explain what this object type represents without mentioning a source system?"
 - (D) "Has this object type been approved by the governance board?"
 
 **38.** Which of the following definitions PASSES the Definition Clarity Test?
 
 - (A) "This is the data from GCSS-Army about equipment"
-- (B) "This is the DTMS training records table"
-- (C) "Equipment is a persistent asset with a serial number, nomenclature, and status"
+- (B) "Equipment is a persistent asset with a serial number, nomenclature, and status"
+- (C) "This is the DTMS training records table"
 - (D) "This is the DRRS unit data we pulled last week"
 
 **39.** The course describes the ontology as fundamentally different from a spreadsheet. Which contrast is accurate?
 
 - (A) Spreadsheets hold definitions; ontologies hold data
 - (B) Spreadsheets require organizational agreement; ontologies don't
-- (C) The ontology is the agreement, not the data — it can be defined before any data exists
-- (D) Ontologies are always more complex than spreadsheets
+- (C) Ontologies are always more complex than spreadsheets
+- (D) The ontology is the agreement, not the data — it can be defined before any data exists
 
 **40.** The Object Type Design deck demonstrates that baking unit names, exercise names, or date ranges into object type names leads to what the course calls:
 
@@ -324,16 +324,16 @@ title: "CDA Final Exam"
 **43.** Exercise context (e.g., JRTC 24-01) should be modeled in an object type as:
 
 - (A) Part of the object type name to distinguish exercise data from operational data
-- (B) A separate object type for each exercise with its own pipeline
-- (C) A boolean property (`isExercise`) and a string property (`exerciseName`) on the canonical type
+- (B) A boolean property (`isExercise`) and a string property (`exerciseName`) on the canonical type
+- (C) A separate object type for each exercise with its own pipeline
 - (D) A separate Ontology namespace for exercise data
 
 **44.** The seven-item checklist from the Object Type Design deck includes all of the following EXCEPT:
 
 - (A) Can you define it without mentioning a source system?
 - (B) Does a primary key authority exist?
-- (C) Has the object type been tested with at least 1,000 rows of sample data?
-- (D) Would this name still make sense in 5 years?
+- (C) Would this name still make sense in 5 years?
+- (D) Has the object type been tested with at least 1,000 rows of sample data?
 
 ---
 
@@ -381,59 +381,59 @@ title: "CDA Final Exam"
 
 **52.** The four properties of a good primary key are:
 
-- (A) Unique, Indexed, Computed, Versioned
-- (B) Unique, Not Null, Immutable, Stable
+- (A) Unique, Not Null, Immutable, Stable
+- (B) Unique, Indexed, Computed, Versioned
 - (C) Unique, Sequential, Auto-generated, Integer
 - (D) Unique, Descriptive, Human-readable, Short
 
 **53.** A foreign key is:
 
 - (A) A column encrypted for security purposes
-- (B) A column that points to the primary key of another table, creating relationships
-- (C) A key imported from an external system
+- (B) A key imported from an external system
+- (C) A column that points to the primary key of another table, creating relationships
 - (D) A secondary unique identifier within the same table
 
 **54.** In Foundry's Ontology, foreign keys become:
 
 - (A) Properties on the object type
-- (B) Links between object types
-- (C) Computed columns in pipelines
+- (B) Computed columns in pipelines
+- (C) Links between object types
 - (D) Indexes on datasets
 
 **55.** The six dimensions of data quality are:
 
 - (A) Speed, Volume, Variety, Veracity, Value, Velocity
-- (B) Completeness, Accuracy, Consistency, Timeliness, Uniqueness, Validity
-- (C) Precision, Recall, F1, Accuracy, AUC, Specificity
+- (B) Precision, Recall, F1, Accuracy, AUC, Specificity
+- (C) Completeness, Accuracy, Consistency, Timeliness, Uniqueness, Validity
 - (D) Integrity, Availability, Confidentiality, Authenticity, Non-repudiation, Accountability
 
 **56.** Normalization is to __________ as denormalization is to __________.
 
 - (A) OLAP; OLTP
-- (B) OLTP (writes); OLAP (reads)
+- (B) Modern systems; Legacy systems
 - (C) Small datasets; Large datasets
-- (D) Modern systems; Legacy systems
+- (D) OLTP (writes); OLAP (reads)
 
 **57.** The Kimball methodology, introduced in 1996 with "The Data Warehouse Toolkit," is characterized by:
 
-- (A) Top-down, enterprise-wide 3NF normalized data warehouse
-- (B) Bottom-up, star schema with fact tables and dimension tables
+- (A) Bottom-up, star schema with fact tables and dimension tables
+- (B) Top-down, enterprise-wide 3NF normalized data warehouse
 - (C) Hub-Link-Satellite architecture with insert-only loading
 - (D) Domain-oriented decentralized data ownership
 
 **58.** The Inmon methodology defines a data warehouse as:
 
 - (A) A star schema optimized for business intelligence queries
-- (B) A subject-oriented, integrated, time-variant, and non-volatile collection of data in support of management's decisions
+- (B) A fully denormalized One Big Table optimized for cloud data warehousing
 - (C) An agile, auditable integration layer using hash keys for scalability
-- (D) A fully denormalized One Big Table optimized for cloud data warehousing
+- (D) A subject-oriented, integrated, time-variant, and non-volatile collection of data in support of management's decisions
 
 **59.** Data Vault 2.0, developed by Dan Linstedt, uses three component types:
 
 - (A) Facts, Dimensions, and Bridges
-- (B) Hubs (business keys), Links (relationships), and Satellites (descriptive attributes with history)
+- (B) Sources, Transforms, and Targets
 - (C) Entities, Attributes, and Relations
-- (D) Sources, Transforms, and Targets
+- (D) Hubs (business keys), Links (relationships), and Satellites (descriptive attributes with history)
 
 ---
 
@@ -479,8 +479,8 @@ Then answer: The course states that "many organizations use a hybrid." Describe 
 
 **63.** ADP 3-13 defines information advantage as:
 
-- (A) Having more data than the adversary
-- (B) A condition when a force holds the initiative in terms of situational understanding, decision making, and relevant actor behavior
+- (A) A condition when a force holds the initiative in terms of situational understanding, decision making, and relevant actor behavior
+- (B) Having more data than the adversary
 - (C) Superior technology infrastructure enabling faster data processing
 - (D) Complete knowledge of the enemy's capabilities and intentions
 
@@ -494,30 +494,30 @@ Then answer: The course states that "many organizations use a hybrid." Describe 
 **65.** The three pillars of decision advantage from ADP 3-13 are:
 
 - (A) Speed, Security, Surprise
-- (B) Superior Understanding, Superior Decision Making, Superior Influence
-- (C) Collect, Process, Disseminate
+- (B) Collect, Process, Disseminate
+- (C) Superior Understanding, Superior Decision Making, Superior Influence
 - (D) Observe, Orient, Decide, Act
 
 **66.** The nine elements of a decision are organized into three functional layers. The Input Layer consists of:
 
-- (A) Alternatives, Constraints, Uncertainty
+- (A) Information, Awareness, Intent
 - (B) Authority, Selection, Agency
-- (C) Information, Awareness, Intent
+- (C) Alternatives, Constraints, Uncertainty
 - (D) Evaluation, Authority, Selection
 
 **67.** According to the Decision Advantage deck, which node is described as "the most neglected and highest-value node in virtually every enterprise system"?
 
 - (A) Information
 - (B) Awareness
-- (C) Evaluation
-- (D) Selection
+- (C) Selection
+- (D) Evaluation
 
 **68.** The compound effect calculation from the Decision Advantage deck demonstrates that a 15% improvement at each of five nodes in the decision chain results in:
 
 - (A) A 75% total improvement (additive)
-- (B) An overall chain quality increase from 12.0% to 30.7% (multiplicative)
+- (B) A 15% improvement in overall decision quality
 - (C) A 2x improvement in decision speed
-- (D) A 15% improvement in overall decision quality
+- (D) An overall chain quality increase from 12.0% to 30.7% (multiplicative)
 
 **69.** The Decision Advantage deck states that "empty nodes are multipliers of __________":
 
@@ -560,29 +560,29 @@ Then answer: The course identifies the Selection node as having "the most critic
 
 **72.** Gruber (1993) defined an ontology as:
 
-- (A) "A formal representation of knowledge within a domain using classes and properties"
-- (B) "A specification of a conceptualization — a designed artifact intended for knowledge sharing and reuse"
+- (A) "A specification of a conceptualization — a designed artifact intended for knowledge sharing and reuse"
+- (B) "A formal representation of knowledge within a domain using classes and properties"
 - (C) "A machine-readable dictionary of domain-specific terms and relationships"
 - (D) "A graph database schema optimized for semantic queries"
 
 **73.** The four evaluation criteria for an ontology (from Gruber's definition as taught in the course) are:
 
 - (A) Completeness, Performance, Scalability, Usability
-- (B) Clarity, Coherence, Extendibility, Minimal Encoding Bias
+- (B) Correctness, Consistency, Availability, Partition Tolerance
 - (C) Accuracy, Precision, Recall, F1 Score
-- (D) Correctness, Consistency, Availability, Partition Tolerance
+- (D) Clarity, Coherence, Extendibility, Minimal Encoding Bias
 
 **74.** The five W3C standards that form the "vendor-agnostic backbone" of semantic engineering are:
 
-- (A) HTML, CSS, JavaScript, WebAssembly, HTTP
-- (B) RDF, OWL 2, SKOS, SHACL, SPARQL
+- (A) RDF, OWL 2, SKOS, SHACL, SPARQL
+- (B) HTML, CSS, JavaScript, WebAssembly, HTTP
 - (C) XML, JSON, YAML, CSV, Parquet
 - (D) SQL, NoSQL, GraphQL, REST, gRPC
 
 **75.** OWL operates under the Open-World Assumption, which means:
 
-- (A) All data is publicly accessible and unclassified
-- (B) Missing data does not equal false — if the ontology doesn't say something, it means we don't know yet
+- (A) Missing data does not equal false — if the ontology doesn't say something, it means we don't know yet
+- (B) All data is publicly accessible and unclassified
 - (C) Any agent can add new axioms to the ontology without governance
 - (D) The ontology is always incomplete and never reaches a final state
 
@@ -595,37 +595,37 @@ Then answer: The course identifies the Selection node as having "the most critic
 
 **77.** The four OWL 2 profiles, matched to their primary use case, are:
 
-- (A) EL (Scalable classification), QL (Query rewriting/OBDA), RL (Rule-based reasoning), Full DL (Maximum expressivity)
-- (B) EL (Enterprise Large), QL (Query Language), RL (Relational Logic), Full DL (Data Lake)
+- (A) EL (Enterprise Large), QL (Query Language), RL (Relational Logic), Full DL (Data Lake)
+- (B) EL (Scalable classification), QL (Query rewriting/OBDA), RL (Rule-based reasoning), Full DL (Maximum expressivity)
 - (C) EL (Event Logging), QL (Queue Logic), RL (Real-time Logic), Full DL (Deep Learning)
 - (D) EL (Edge Layer), QL (Query Layer), RL (Reasoning Layer), Full DL (Full Data Layer)
 
 **78.** The Nine Canonical Object Type Varieties are:
 
 - (A) Entity, Event, Reference, Table, View, Index, Trigger, Function, Procedure
-- (B) Entity, Event, Controlled Vocab, Capability, Relationship Object, Aggregate, Reference, Document, Temporal State
+- (B) Core, Extension, Abstract, Concrete, Composite, Leaf, Bridge, Hub, Satellite
 - (C) Person, Place, Thing, Event, Concept, Relationship, Attribute, Metric, Rule
-- (D) Core, Extension, Abstract, Concrete, Composite, Leaf, Bridge, Hub, Satellite
+- (D) Entity, Event, Controlled Vocab, Capability, Relationship Object, Aggregate, Reference, Document, Temporal State
 
 **79.** The Identity Authority Matrix requires which columns for every entity type?
 
-- (A) Entity Type, Source System, Table Name, Column Name
-- (B) Entity Type, ID Authority, ID Format, Immutability, Governance Owner
+- (A) Entity Type, ID Authority, ID Format, Immutability, Governance Owner
+- (B) Entity Type, Source System, Table Name, Column Name
 - (C) Entity Type, Primary Key, Foreign Keys, Indexes
 - (D) Entity Type, Data Owner, Data Steward, Classification Level
 
 **80.** In record linkage theory as taught in the course, the three match categories and their thresholds are:
 
-- (A) Exact (100%), Partial (50-99%), None (0-49%)
-- (B) Matches (≥ 0.95), Possible Matches (0.70-0.95), Non-Matches (< 0.70)
+- (A) Matches (≥ 0.95), Possible Matches (0.70-0.95), Non-Matches (< 0.70)
+- (B) Exact (100%), Partial (50-99%), None (0-49%)
 - (C) High (≥ 0.90), Medium (0.50-0.90), Low (< 0.50)
 - (D) Confirmed (≥ 0.99), Probable (0.80-0.99), Unlikely (< 0.80)
 
 **81.** "Schema fit" vs. "scope fit" is a distinction introduced in the Scope Engineering deck. A type that passes schema fit but fails scope fit means:
 
 - (A) The data structure is wrong but the population is complete
-- (B) The properties and datatypes are correct, but the data only covers a fraction of the real-world population, time range, or geography needed
-- (C) The ontology definition is unclear but the data is clean
+- (B) The ontology definition is unclear but the data is clean
+- (C) The properties and datatypes are correct, but the data only covers a fraction of the real-world population, time range, or geography needed
 - (D) The SHACL constraints validate but the OWL axioms are inconsistent
 
 ---
@@ -704,7 +704,7 @@ Using every relevant concept from the curriculum, write a comprehensive remediat
 
 *Answers for Sections I-VI multiple choice:*
 
-1-B, 2-C, 3-B, 4-B, 5-B, 6-B, 7-B, 8-B, 9-C, 10-C, 11-B, 12-B, 13-B, 14-B, 15-C, 22-B, 23-C, 24-C, 25-B, 26-B, 27-B, 28-C, 29-B, 30-B, 31-C, 35-B, 36-C, 37-B, 38-C, 39-C, 40-B, 41-B, 42-C, 43-C, 44-C, 52-B, 53-B, 54-B, 55-B, 56-B, 57-B, 58-B, 59-B, 63-B, 64-B, 65-B, 66-C, 67-D, 68-B, 69-C, 72-B, 73-B, 74-B, 75-B, 76-B, 77-A, 78-B, 79-B, 80-B, 81-B
+1-C, 2-B, 3-D, 4-A, 5-B, 6-B, 7-D, 8-D, 9-C, 10-B, 11-A, 12-C, 13-C, 14-D, 15-C, 22-D, 23-A, 24-B, 25-D, 26-A, 27-B, 28-A, 29-D, 30-B, 31-C, 35-B, 36-A, 37-C, 38-B, 39-D, 40-B, 41-B, 42-C, 43-B, 44-D, 52-A, 53-C, 54-C, 55-C, 56-D, 57-A, 58-D, 59-D, 63-A, 64-B, 65-C, 66-A, 67-C, 68-D, 69-C, 72-A, 73-D, 74-A, 75-A, 76-B, 77-B, 78-D, 79-A, 80-A, 81-C
 
 ---
 

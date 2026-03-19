@@ -14,6 +14,11 @@ export const URLS = {
   DATA_LITERACY_SL:          `${BASE}/DATA_LITERACY_senior_leaders.pdf`,
   DATA_LITERACY_TECH:        `${BASE}/DATA_LITERACY_technical_reference.pdf`,
 
+  // Senior Leader Executive Course (TM-SL)
+  TM_SL:                     `${BASE}/TM_SL_SENIOR_LEADER.pdf`,
+  CG_TM_SL:                  `${BASE}/CONCEPTS_GUIDE_TM_SL_SENIOR_LEADER.pdf`,
+  SYL_TM_SL:                 `${BASE}/SYLLABUS_TM_SL.pdf`,
+
   // Foundation TMs
   TM10:                      `${BASE}/TM_10_MAVEN_USER.pdf`,
   TM20:                      `${BASE}/TM_20_BUILDER.pdf`,
@@ -26,6 +31,8 @@ export const URLS = {
   TM40J:                     `${BASE}/TM_40J_PROGRAM_MANAGER.pdf`,
   TM40K:                     `${BASE}/TM_40K_KNOWLEDGE_MANAGER.pdf`,
   TM40L:                     `${BASE}/TM_40L_SOFTWARE_ENGINEER.pdf`,
+  TM40N:                     `${BASE}/TM_40N_UX_DESIGNER.pdf`,
+  TM40O:                     `${BASE}/TM_40O_PLATFORM_ENGINEER.pdf`,
 
   // TM-40 WFF Tracks
   TM40A:                     `${BASE}/TM_40A_INTELLIGENCE.pdf`,
@@ -42,6 +49,8 @@ export const URLS = {
   TM50J:                     `${BASE}/TM_50J_PROGRAM_MANAGER_ADVANCED.pdf`,
   TM50K:                     `${BASE}/TM_50K_KNOWLEDGE_MANAGER_ADVANCED.pdf`,
   TM50L:                     `${BASE}/TM_50L_SOFTWARE_ENGINEER_ADVANCED.pdf`,
+  TM50N:                     `${BASE}/TM_50N_UX_DESIGNER_ADVANCED.pdf`,
+  TM50O:                     `${BASE}/TM_50O_PLATFORM_ENGINEER_ADVANCED.pdf`,
 
   // Syllabi — Foundation
   SYL_TM10:                  `${BASE}/SYLLABUS_TM10.pdf`,
@@ -105,6 +114,7 @@ export const URLS = {
   BSP_GUIDE:                 `${BASE}/BSP_GUIDE.pdf`,
   BSP_SPRINT_PACKAGE:        `${BASE}/BSP_SPRINT_PACKAGE.pdf`,
   BSP_ENVIRONMENT_SETUP:     `${BASE}/BSP_ENVIRONMENT_SETUP.pdf`,
+  BUILDER_SPRINT_SOP:        `${BASE}/BUILDER_SPRINT_SOP.pdf`,
 
   // Governance
   NAMING_STANDARDS:          `${BASE}/NAMING_AND_GOVERNANCE_STANDARDS.pdf`,

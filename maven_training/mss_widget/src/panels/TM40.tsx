@@ -13,12 +13,12 @@ export default function TM40({ showPanel }: Props) {
       <div className="section-header">
         <span className="section-badge">TM-40</span>
         <span className="section-title">Technical Specialist Tracks &mdash; Developer Manuals</span>
-        <span className="section-subtitle">Prerequisite: TM-30 &bull; Six tracks by role &bull; Advanced versions at TM-50</span>
+        <span className="section-subtitle">Prerequisite: TM-30 &bull; Eight tracks by role &bull; Advanced versions at TM-50</span>
       </div>
 
       <div className="callout bluf">
         <div className="callout-label">BLUF</div>
-        <div className="callout-body">The TM-40 Technical Specialist tracks (TM-40G&ndash;M) cover developer-level capabilities requiring coding, advanced tooling, or specialized technical expertise &mdash; prerequisite: TM-30 complete. For Warfighting Function tracks (TM-40A&ndash;F), use the HOME tab track selector or navigate to the Specialist Tracks tab.</div>
+        <div className="callout-body">The TM-40 Technical Specialist tracks (TM-40G&ndash;O) cover developer-level capabilities requiring coding, advanced tooling, or specialized technical expertise &mdash; prerequisite: TM-30 complete. For Warfighting Function tracks (TM-40A&ndash;F), use the HOME tab track selector or navigate to the Specialist Tracks tab.</div>
       </div>
 
       <div className="track-grid">
@@ -97,7 +97,7 @@ export default function TM40({ showPanel }: Props) {
             <div className="track-audience">PMs &bull; Product owners &bull; G8/S8 &bull; Technical team leads</div>
             <ul className="track-topics">
               <li>Stand up Agile project structures (backlog, sprint cadence, ceremonies) for data and AI builds</li>
-              <li>Write user stories and acceptance criteria that TM-40G&ndash;M developers can execute without ambiguity</li>
+              <li>Write user stories and acceptance criteria that TM-40G&ndash;O developers can execute without ambiguity</li>
               <li>Manage the ML/AI project lifecycle: six phases from Problem Definition through Sustainment</li>
               <li>Translate commander requirements into prioritized, sprint-ready backlogs</li>
               <li>Specify project tracking systems (sprint boards, status dashboards) for TM-40L implementation</li>
@@ -149,6 +149,46 @@ export default function TM40({ showPanel }: Props) {
               <li>Apply USAREUR-AF code review and deployment standards for MSS applications</li>
             </ul>
             <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50L</div>
+          </div>
+        </div>
+
+        <div className="track-card">
+          <div className="track-card-hdr">
+            <span className="track-tm">TM-40N &mdash; UI/UX Designer Track</span>
+            <span className="track-chip">TM-30 Required</span>
+          </div>
+          <div className="track-body">
+            <div className="track-name">Soldier Centered Design, Workshop &amp; Slate UI</div>
+            <div className="track-audience">UI/UX designers &bull; Human factors &bull; GS/contractor designers</div>
+            <ul className="track-topics">
+              <li>Conduct user research in operational and classified environments (interview, contextual inquiry, usability testing)</li>
+              <li>Design information architectures for data-dense operational displays</li>
+              <li>Build interactive prototypes from low-fidelity sketches through high-fidelity mockups</li>
+              <li>Design Workshop layouts: widget selection, dashboard hierarchy, responsive patterns</li>
+              <li>Apply visual design standards for tactical displays: classification marking, contrast, field conditions</li>
+              <li>Ensure Section 508 / WCAG 2.1 AA accessibility compliance</li>
+            </ul>
+            <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50N</div>
+          </div>
+        </div>
+
+        <div className="track-card">
+          <div className="track-card-hdr">
+            <span className="track-tm">TM-40O &mdash; Platform Engineer Track</span>
+            <span className="track-chip">TM-30 Required</span>
+          </div>
+          <div className="track-body">
+            <div className="track-name">Kubernetes, CI/CD, DevSecOps &amp; Infrastructure as Code</div>
+            <div className="track-audience">Platform engineers &bull; DevOps &bull; SysAdmins &bull; 25D</div>
+            <ul className="track-topics">
+              <li>Architect and operate Kubernetes clusters for MSS workloads</li>
+              <li>Implement Infrastructure as Code with GitOps workflows and continuous reconciliation</li>
+              <li>Design CI/CD pipelines: automated build, test, scan, and deploy for MSS applications</li>
+              <li>Harden containers using DoD Iron Bank images, vulnerability scanning, and SHA256 digest pinning</li>
+              <li>Deploy across classification boundaries and DDIL environments (air-gapped, edge clusters)</li>
+              <li>Manage RMF/ATO lifecycle from the infrastructure perspective, STIG compliance</li>
+            </ul>
+            <div className="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50O</div>
           </div>
         </div>
 

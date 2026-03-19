@@ -111,8 +111,7 @@ TM-40E aligns to multiple doctrinal publications. Table 1-4 provides a quick ref
 | Physical Security | AR 190-13, AR 190-51 | AR 190-13 Ch.2 (physical security program) | 5 |
 | Serious Incident Reporting | AR 190-40 | AR 190-40 Ch.3 (SIR categories and timelines) | 5 |
 | Air and Missile Defense | ADP 3-01, FM 3-01 | ADP 3-01 para 1-1 (AMD purpose); FM 3-01 Ch.2 (AMD tasks) | 6 |
-| CVP Analysis | ADP 3-37 (Jan 2024) | ADP 3-37 Ch.2 (CVP framework, CAL/DAL derivation) | 4, 6 |
-| CAL/DAL | FM 3-01, ADRP 3-37 | FM 3-01 para 2-3 (CAL/DAL process) | 6 |
+| CAL/DAL | FM 3-01, ADP 3-37 | FM 3-01 para 2-3 (CAL/DAL process) | 6 |
 | Electronic Warfare | FM 3-36 | FM 3-36 Ch.2 (EW tasks), Ch.4 (EW in protection) | 7 |
 | Counter-UAS | ATP 3-01.81 | ATP 3-01.81 (C-UAS operations) | 7 |
 | Survivability Operations | ATP 3-37.34 | ATP 3-37.34 Ch.2 (survivability planning), Ch.3 (construction standards) | 8 |
@@ -176,7 +175,7 @@ TM-40E aligns to multiple doctrinal publications. Table 1-4 provides a quick ref
 
 ### 1-7. Relationship to Other TMs in the MSS Curriculum
 
-**Table 1-4. TM Curriculum Relationships**
+**Table 1-5. TM Curriculum Relationships**
 
 | TM | Title | Relationship to TM-40E |
 |---|---|---|
@@ -189,7 +188,7 @@ TM-40E aligns to multiple doctrinal publications. Table 1-4 provides a quick ref
 | TM-40D | Sustainment | Complementary. CBRN decontamination requires sustainment coordination; force protection affects supply route security. |
 | TM-40E | Protection | This manual. |
 | TM-40F | Mission Command | Complementary. Protection picture feeds the COP (S3 product); FPCON and SIR data feeds commander CCIR monitoring. |
-| TM-50G–M | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq TM-40G–M). Not applicable to operational protection practitioners. |
+| TM-50G–O | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq TM-40G–O). Not applicable to operational protection practitioners. |
 
 > **NOTE: TM-20 and TM-30 are required as prerequisites (Go evaluations on file) but builder skills are not exercised in this manual. TM-40E assumes no ability to build pipelines or transforms. If you encounter a protection data product that does not exist and needs to be built, coordinate with your unit's designated MSS Builder (TM-30 qualified) or the C2DAO.**
 
@@ -1699,8 +1698,8 @@ Post-laboratory or technical analysis. Format:
 | TM-40C (Movement and Maneuver) | Physical security integration with maneuver operations; base camp siting |
 | TM-40D (Sustainment) | CBRN resupply coordination; medical tracking for CBRN casualties |
 | TM-40F (Mission Command) | COP integration; CCIR and decision support products that consume protection data |
-| TM-40G–M (Specialist Tracks) | Post-graduate technical tracks (prereq TM-30). Not required for protection WFF employment. |
-| TM-50G–M (Advanced Specialist Tracks) | Advanced technical tracks (prereq TM-40G–M). Not applicable to operational protection practitioners. |
+| TM-40G–O (Specialist Tracks) | Post-graduate technical tracks (prereq TM-30). Not required for protection WFF employment. |
+| TM-50G–O (Advanced Specialist Tracks) | Advanced technical tracks (prereq TM-40G–O). Not applicable to operational protection practitioners. |
 
 **F-2. New User Checklist.** Before using the MSS protection workspace for the first time, verify:
 

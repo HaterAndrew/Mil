@@ -420,8 +420,6 @@ Bias mitigation is most effective during feature engineering and training, not a
 
 ---
 
----
-
 ## GOVERNING REFERENCES (ADDITIONAL)
 
 | Document | Relevance |
@@ -446,7 +444,6 @@ Bias mitigation is most effective during feature engineering and training, not a
 **WFF awareness:** ML models deployed on MSS attach prediction properties to Ontology objects visible to WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). A readiness prediction score is seen by Sustainment (TM-40D) staff; a threat pattern model output is seen by Intelligence (TM-40A) staff. Design model outputs and explainability with the consuming WFF function's operational context and decision authority in mind.
 
 > **NOTE — New Doctrine Content in TM-40M:** TM-40M now includes DDOF Phases 4-5 mapped to ML development workflow, VAULTIS-A governance applied to ML model outputs as UDRA data products, and an ADP 3-13 human-machine teaming WARNING establishing that AI enables speed but humans provide judgment.
-
 *This document is a prerequisite companion to TM-40M (ML Engineer). Proceed to TM-40M task instruction upon completion.*
 
 ---

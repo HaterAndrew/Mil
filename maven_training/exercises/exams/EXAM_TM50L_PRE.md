@@ -25,23 +25,23 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 **1. In a multi-tenant platform architecture, "tenant isolation" ensures:**
 
 A. Each tenant has its own dedicated compute cluster
-B. One tenant's data is inaccessible to other tenants' applications and queries, preventing cross-tenant data exposure regardless of how queries are constructed
-C. Tenants are physically separated on different network segments
+B. Tenants are physically separated on different network segments
+C. One tenant's data is inaccessible to other tenants' applications and queries, preventing cross-tenant data exposure regardless of how queries are constructed
 D. Tenant administrators cannot see the platform-level configuration
 
 **2. "Content-Based Access Control" (CBAC) in a Foundry multi-tenant environment grants access based on:**
 
 A. The user's organizational role defined in Active Directory
-B. Attributes of the data content itself (classification, unit, sensitivity markings) rather than only user role or resource location
-C. The tenant's subscription tier and licensed feature set
+B. The tenant's subscription tier and licensed feature set
+C. Attributes of the data content itself (classification, unit, sensitivity markings) rather than only user role or resource location
 D. The time of day and network location of the access request
 
 **3. A "bulk operation" in the Platform SDK differs from per-record operations because:**
 
 A. Bulk operations bypass access control checks for performance
-B. Bulk operations process multiple records in a single API call, reducing network overhead and improving throughput compared to N individual calls
+B. Bulk operations write directly to the database, bypassing Ontology validation
 C. Bulk operations require elevated permissions not available to standard SDK clients
-D. Bulk operations write directly to the database, bypassing Ontology validation
+D. Bulk operations process multiple records in a single API call, reducing network overhead and improving throughput compared to N individual calls
 
 **4. "Static Application Security Testing" (SAST) in a DevSecOps pipeline:**
 
@@ -53,14 +53,14 @@ D. Validates that the application handles malformed HTTP requests correctly
 **5. "Dynamic Application Security Testing" (DAST) in a DevSecOps pipeline:**
 
 A. Analyzes source code for known vulnerability patterns
-B. Tests the running application by sending malformed or adversarial inputs to discover runtime vulnerabilities
+B. Validates API schemas against a defined specification
 C. Scans infrastructure-as-code templates for misconfigurations
-D. Validates API schemas against a defined specification
+D. Tests the running application by sending malformed or adversarial inputs to discover runtime vulnerabilities
 
 **6. In event streaming architecture, a Kafka "consumer group" processes messages by:**
 
-A. Each consumer in the group independently reading all messages from the topic
-B. Distributing topic partitions across consumers in the group so that each message is processed by exactly one consumer — enabling parallel processing at scale
+A. Distributing topic partitions across consumers in the group so that each message is processed by exactly one consumer — enabling parallel processing at scale
+B. Each consumer in the group independently reading all messages from the topic
 C. Having a single designated consumer read messages and broadcast them to others in the group
 D. Consuming only the most recent message on each partition, discarding older messages
 
@@ -74,9 +74,9 @@ D. gRPC automatically handles retry logic and circuit breaking
 **8. In an Ontology-level CI pipeline for Foundry, "Ontology CI" validates:**
 
 A. That all pipeline code compiles without errors
-B. That changes to Object Types, Link Types, and properties do not break existing downstream consumers, queries, or Action validators
+B. That the Ontology schema conforms to USAREUR-AF naming conventions
 C. That all new features are covered by unit tests before merge
-D. That the Ontology schema conforms to USAREUR-AF naming conventions
+D. That changes to Object Types, Link Types, and properties do not break existing downstream consumers, queries, or Action validators
 
 **9. An "ATO (Authority to Operate)" package for a Foundry-based system typically requires:**
 
@@ -88,8 +88,8 @@ D. Annual revalidation by the MSS program office
 **10. "Branch automation" in the Platform SDK refers to:**
 
 A. Automatically merging branches after a defined time period without human review
-B. Programmatic creation, management, and merging of Foundry dataset branches via SDK calls, enabling automated data management workflows
-C. Automatically creating feature branches when a Jira ticket is created
+B. Automatically creating feature branches when a Jira ticket is created
+C. Programmatic creation, management, and merging of Foundry dataset branches via SDK calls, enabling automated data management workflows
 D. Running pipeline builds on branches without requiring a data steward to trigger them manually
 
 **11. "Cache invalidation" is considered one of the hardest problems in software engineering because:**
@@ -101,8 +101,8 @@ D. Different programming languages implement cache invalidation incompatibly
 
 **12. An OWASP-informed secure code review of a Foundry OSDK integration would specifically check for which vulnerability category?**
 
-A. Buffer overflow vulnerabilities in TypeScript string handling
-B. Injection vulnerabilities — specifically unsanitized user input being incorporated into Ontology queries or Action parameters that could alter query logic
+A. Injection vulnerabilities — specifically unsanitized user input being incorporated into Ontology queries or Action parameters that could alter query logic
+B. Buffer overflow vulnerabilities in TypeScript string handling
 C. Cross-site scripting (XSS) in server-rendered HTML templates
 D. Broken cryptographic algorithm usage in data-at-rest encryption
 
@@ -116,14 +116,14 @@ D. Store records in a local queue and process them once per hour to avoid overlo
 **14. A "write-through cache" strategy means:**
 
 A. Writes go to the cache only; the database is updated asynchronously
-B. Writes update both the cache and the underlying database synchronously — the cache is always consistent with the database
-C. Reads populate the cache on the first miss; subsequent reads serve from cache
+B. Reads populate the cache on the first miss; subsequent reads serve from cache
+C. Writes update both the cache and the underlying database synchronously — the cache is always consistent with the database
 D. Writes bypass the cache and go directly to the database; the cache is invalidated on write
 
 **15. Platform governance at the TM-50L level includes which responsibility that is NOT present at TM-40L?**
 
-A. Writing TypeScript code that passes Ontology CI checks
-B. Setting and enforcing platform-wide coding standards, conducting architecture reviews of other engineers' designs, and onboarding and developing junior engineers to TM-40L competency
+A. Setting and enforcing platform-wide coding standards, conducting architecture reviews of other engineers' designs, and onboarding and developing junior engineers to TM-40L competency
+B. Writing TypeScript code that passes Ontology CI checks
 C. Submitting pull requests that pass the standard code review checklist
 D. Ensuring personal work is covered by the minimum required test cases
 
@@ -202,21 +202,21 @@ Passing: N/A — Pre-test is diagnostic only.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — Tenant isolation = data inaccessibility across tenants regardless of query construction.
-2. B — CBAC grants access based on content attributes (classification, unit, sensitivity).
-3. B — Bulk operations process multiple records in a single API call, reducing overhead vs. N individual calls.
+1. C — Tenant isolation = data inaccessibility across tenants regardless of query construction.
+2. C — CBAC grants access based on content attributes (classification, unit, sensitivity).
+3. D — Bulk operations process multiple records in a single API call, reducing overhead vs. N individual calls.
 4. B — SAST analyzes source code without executing it.
-5. B — DAST tests the running application with adversarial inputs.
-6. B — Consumer groups distribute partitions so each message is processed by exactly one consumer.
+5. D — DAST tests the running application with adversarial inputs.
+6. A — Consumer groups distribute partitions so each message is processed by exactly one consumer.
 7. A — gRPC uses HTTP/2 + binary Protocol Buffers: lower latency and higher throughput than REST/JSON.
-8. B — Ontology CI validates that schema changes do not break existing downstream consumers.
+8. D — Ontology CI validates that schema changes do not break existing downstream consumers.
 9. B — ATO requires system description, data flows, security controls mapping, boundary diagram, risk assessment.
-10. B — Branch automation = programmatic SDK-driven branch creation, management, and merging.
+10. C — Branch automation = programmatic SDK-driven branch creation, management, and merging.
 11. B — Cache invalidation is hard because determining when data is stale and coordinating read/write paths requires careful design.
-12. B — Injection vulnerabilities (unsanitized input in Ontology queries/Action parameters) are the primary OWASP concern for OSDK integrations.
+12. A — Injection vulnerabilities (unsanitized input in Ontology queries/Action parameters) are the primary OWASP concern for OSDK integrations.
 13. B — Batch writes reduce API call overhead and maintain transaction integrity.
-14. B — Write-through: writes update both cache and database synchronously; cache always consistent.
-15. B — Platform governance = setting standards, architecture reviews, onboarding/developing junior engineers — not present at TM-40L.
+14. C — Write-through: writes update both cache and database synchronously; cache always consistent.
+15. A — Platform governance = setting standards, architecture reviews, onboarding/developing junior engineers — not present at TM-40L.
 
 **Short Answer Guidance:**
 

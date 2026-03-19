@@ -108,14 +108,14 @@ PREREQ_CHAIN: dict[str, list[str]] = {
     "TM-40D": ["TM-30"],
     "TM-40E": ["TM-30"],
     "TM-40F": ["TM-30"],
-    # Specialist tracks (G–M) — all require TM-30
+    # Specialist tracks (G–O) — all require TM-30
     "TM-40G": ["TM-30"],
     "TM-40H": ["TM-30"],
     "TM-40M": ["TM-30"],
     "TM-40J": ["TM-30"],
     "TM-40K": ["TM-30"],
     "TM-40L": ["TM-30"],
-    # Advanced specialist (G–M only — NO TM-50A through TM-50F)
+    # Advanced specialist (G–O only — NO TM-50A through TM-50F)
     "TM-50G": ["TM-40G"],
     "TM-50H": ["TM-40H"],
     "TM-50M": ["TM-40M"],
@@ -261,8 +261,8 @@ def get_unit_rollup(db: Session, unit: str | None = None) -> list[dict]:
 COURSE_TIERS = {
     "Foundation": ["TM-10", "TM-20", "TM-30"],
     "WFF (A-F)": ["TM-40A", "TM-40B", "TM-40C", "TM-40D", "TM-40E", "TM-40F"],
-    "Specialist (G-M)": ["TM-40G", "TM-40H", "TM-40M", "TM-40J", "TM-40K", "TM-40L"],
-    "Advanced (50)": ["TM-50G", "TM-50H", "TM-50M", "TM-50J", "TM-50K", "TM-50L"],
+    "Specialist (G-O)": ["TM-40G", "TM-40H", "TM-40M", "TM-40J", "TM-40K", "TM-40L", "TM-40N", "TM-40O"],
+    "Advanced (50)": ["TM-50G", "TM-50H", "TM-50I", "TM-50J", "TM-50K", "TM-50L"],
 }
 
 

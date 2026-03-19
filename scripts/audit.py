@@ -7,8 +7,8 @@ Checks:
   2. Stale text refs    — old specialist-letter mappings still embedded in prose
   3. Stale PDFs         — old-scheme PDFs that should no longer exist
   4. Missing PDFs       — current-scheme PDFs that are absent
-  5. Prereq labels      — ALL TM-40 tracks (A–F WFF and G–M specialist) must say TM-30
-  6. No TM-50A–F refs   — those series were retired; only TM-50G–M is valid
+  5. Prereq labels      — ALL TM-40 tracks (A–F WFF and G–O specialist) must say TM-30
+  6. No TM-50A–F refs   — those series were retired; only TM-50G–O is valid
   7. HTML/JS ids        — task_index.html and mss_info_app/index.html checked for stale ids
 
 Run from repo root:
@@ -40,6 +40,8 @@ SPEC_TRACKS = {
     "40J": "program_manager",
     "40K": "knowledge_manager",
     "40L": "software_engineer",
+    "40N": "ux_designer",
+    "40O": "platform_engineer",
 }
 ADV_TRACKS = {
     "50G": "orsa_advanced",
@@ -48,10 +50,20 @@ ADV_TRACKS = {
     "50J": "program_manager_advanced",
     "50K": "knowledge_manager_advanced",
     "50L": "software_engineer_advanced",
+    "50N": "ux_designer_advanced",
+    "50O": "platform_engineer_advanced",
 }
 BASE_TRACKS = {"10": "maven_user", "20": "builder", "30": "advanced_builder"}
 
 ALL_TRACKS = {**BASE_TRACKS, **WFF_TRACKS, **SPEC_TRACKS, **ADV_TRACKS}
+
+# Track letter I was retired (looks like numeral 1) → renamed to M in display.
+# Filesystem paths still use "I". Map canonical code → filesystem letter.
+FS_LETTER = {"40M": "40I", "50M": "50I"}
+
+def fs_code(code):
+    """Return the filesystem-level track code (handles I→M rename)."""
+    return FS_LETTER.get(code, code)
 
 # Old specialist labels that were re-lettered: old→new
 # TM-40A=ORSA, B=AIEng, C=MLE, D=PM, E=KM, F=SWE  →  now G–M
@@ -70,7 +82,7 @@ STALE_REF_PATTERNS = [
     # TM-50A through TM-50F should not exist at all.
     # Exception: lines that explicitly state they don't exist (negative-context explanations)
     # are valid and should not be flagged. Supply a skip-if pattern as the 3rd tuple element.
-    (r"\bTM[-\s]?50[A-Fa-f]\b", "TM-50A–F series retired; only TM-50G–M valid",
+    (r"\bTM[-\s]?50[A-Fa-f]\b", "TM-50A–F series retired; only TM-50G–O valid",
      r"\b(no|not|do not|don'?t)\b"),
     # Old specialist mapping labels (prose like "TM-40A (ORSA)" or "TM-40A: ORSA")
     # Must be followed immediately by an ORSA/AI/ML/PM/KM/SWE label — not WFF labels
@@ -83,8 +95,8 @@ STALE_REF_PATTERNS = [
     # WFF track prereq is TM-30 (policy change 2026-03-14 — all TM-40 require TM-30)
     # Old rule (TM-20 for WFF) removed. No stale-prereq check for WFF here.
     # Wrong prereq: specialist line that asserts TM-20 only (no TM-30 on same line)
-    (r"TM[-\s]?40[G-Mg-m].*prerequisite[:\s]+TM[-\s]?20(?!.*TM[-\s]?30)",
-     "specialist track (G–M) prerequisite set to TM-20; should be TM-30"),
+    (r"TM[-\s]?40[G-Og-o].*prerequisite[:\s]+TM[-\s]?20(?!.*TM[-\s]?30)",
+     "specialist track (G–O) prerequisite set to TM-20; should be TM-30"),
 ]
 
 # PDFs that should NOT exist (stale naming scheme)
@@ -136,14 +148,15 @@ def check_completeness():
 
     # TM source files
     for code, slug in {**WFF_TRACKS, **SPEC_TRACKS, **ADV_TRACKS}.items():
-        series = code[:2]          # "40" or "50"
-        letter = code[2]           # A–L
+        fc = fs_code(code)
+        series = fc[:2]          # "40" or "50"
+        letter = fc[2]           # filesystem letter
         dir_name = f"TM_{series}{letter}_{slug}"
         tm_dir   = MT / "tm" / dir_name
         tm_file  = tm_dir / f"TM_{series}{letter}_{slug.upper()}.md"
         cg_file  = tm_dir / f"CONCEPTS_GUIDE_TM{series}{letter}_{slug.upper()}.md"
-        check_file_exists(tm_file,  f"TM source: TM-{series}{letter}")
-        check_file_exists(cg_file,  f"Concepts Guide: TM-{series}{letter}")
+        check_file_exists(tm_file,  f"TM source: TM-{code}")
+        check_file_exists(cg_file,  f"Concepts Guide: TM-{code}")
 
     # Base TM source files
     for code, slug in BASE_TRACKS.items():
@@ -154,20 +167,22 @@ def check_completeness():
 
     # Syllabi — TM10/20/30 + all 40 + all 50
     for code in list(BASE_TRACKS) + list(WFF_TRACKS) + list(SPEC_TRACKS) + list(ADV_TRACKS):
-        syl = MT / "syllabi" / f"SYLLABUS_TM{code}.md"
+        fc = fs_code(code)
+        syl = MT / "syllabi" / f"SYLLABUS_TM{fc}.md"
         check_file_exists(syl, f"Syllabus: TM-{code}")
 
     # Exams — all tracks get PRE + POST, except TM-10 which has PRE + SUPPLEMENTAL
     for code in list(BASE_TRACKS) + list(WFF_TRACKS) + list(SPEC_TRACKS) + list(ADV_TRACKS):
+        fc = fs_code(code)
         # PRE exam for all tracks
-        exam_pre = MT / "exercises" / "exams" / f"EXAM_TM{code}_PRE.md"
+        exam_pre = MT / "exercises" / "exams" / f"EXAM_TM{fc}_PRE.md"
         check_file_exists(exam_pre, f"Exam PRE: TM-{code}")
         # POST exam for all tracks except TM-10 (which uses SUPPLEMENTAL)
         if code == "10":
             exam_supp = MT / "exercises" / "exams" / "EXAM_TM10_SUPPLEMENTAL.md"
             check_file_exists(exam_supp, "Exam SUPPLEMENTAL: TM-10")
         else:
-            exam_post = MT / "exercises" / "exams" / f"EXAM_TM{code}_POST.md"
+            exam_post = MT / "exercises" / "exams" / f"EXAM_TM{fc}_POST.md"
             check_file_exists(exam_post, f"Exam POST: TM-{code}")
 
     # Exercise dirs — TM10/20/30 + all TM-40 (not TM-50; no exercise dirs for advanced)
@@ -175,8 +190,8 @@ def check_completeness():
                  **{k: v for k, v in WFF_TRACKS.items()},
                  **{k: v for k, v in SPEC_TRACKS.items()}}
     for code, slug in ex_tracks.items():
-        series = code[:2]
-        ex_dir = MT / "exercises" / f"EX_{code}_{slug}"
+        fc = fs_code(code)
+        ex_dir = MT / "exercises" / f"EX-{fc}_{slug}"
         for fname in ("EXERCISE.md", "ENVIRONMENT_SETUP.md"):
             check_file_exists(ex_dir / fname, f"Exercise {fname}: EX_{code}")
 
@@ -256,7 +271,7 @@ def check_missing_pdfs():
         if name not in existing:
             fail("MISSING PDF", f"expected PDF absent: {name}")
 
-    # TM source PDFs
+    # TM source PDFs (PDFs use canonical track code, not filesystem alias)
     for code, slug in {**WFF_TRACKS, **SPEC_TRACKS, **ADV_TRACKS}.items():
         series = code[:2]; letter = code[2]
         want(f"TM_{series}{letter}_{slug.upper()}.pdf")
@@ -286,6 +301,7 @@ def check_missing_pdfs():
     spec_ex_names = {
         "40G": "ORSA", "40H": "AI_ENGINEER", "40M": "ML_ENGINEER",
         "40J": "PROGRAM_MANAGER", "40K": "KNOWLEDGE_MANAGER", "40L": "SOFTWARE_ENGINEER",
+        "40N": "UX_DESIGNER", "40O": "PLATFORM_ENGINEER",
     }
     base_ex_names = {"10": "OPERATOR_BASICS", "20": "NO_CODE_BUILDER", "30": "ADVANCED_BUILDER"}
     for code, label in {**base_ex_names, **wff_ex_names, **spec_ex_names}.items():
@@ -300,9 +316,10 @@ def check_prereqs():
 
     # WFF A–F: all TM-40 tracks (including WFF) require TM-30. No stale-prereq check needed here.
 
-    # Specialist G–M: prereq must be TM-30
+    # Specialist G–O: prereq must be TM-30
     for code, slug in SPEC_TRACKS.items():
-        series = code[:2]; letter = code[2]
+        fc = fs_code(code)
+        series = fc[:2]; letter = fc[2]
         tm_file = MT / "tm" / f"TM_{series}{letter}_{slug}" / f"TM_{series}{letter}_{slug.upper()}.md"
         if not tm_file.exists():
             continue
@@ -328,8 +345,8 @@ def check_html():
     html_patterns = [
         # Stale anchor/id slugs mapping old letters to specialist roles
         (r'(?:id|href)=["\'].*tm-?40[a-f]-(?:orsa|ai-engineer|ml-engineer|program-manager|knowledge-manager|software-engineer)',
-         "old specialist slug in HTML id/href (A–F mapped to ORSA/AI/ML/PM/KM/SWE — should be G–M)"),
-        (r"\btm-?50[a-f]\b",            "TM-50A–F series retired; only TM-50G–M valid"),
+         "old specialist slug in HTML id/href (A–F mapped to ORSA/AI/ML/PM/KM/SWE — should be G–L)"),
+        (r"\btm-?50[a-f]\b",            "TM-50A–F series retired; only TM-50G–O valid"),
     ]
     compiled = [(re.compile(pat, re.IGNORECASE), desc) for pat, desc in html_patterns]
 
@@ -351,7 +368,7 @@ def check_syllabus_prereqs():
     # WFF A–F syllabi: all TM-40 tracks require TM-30, so TM-30 in WFF syllabi is correct. No check needed.
 
     for code in SPEC_TRACKS:
-        syl = MT / "syllabi" / f"SYLLABUS_TM{code}.md"
+        syl = MT / "syllabi" / f"SYLLABUS_TM{fs_code(code)}.md"
         if not syl.exists():
             continue
         for lineno, line in scan_text(syl):

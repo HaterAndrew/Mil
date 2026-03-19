@@ -411,8 +411,6 @@ Engineers who clear a deployment review sometimes treat that review as the end o
 
 ---
 
----
-
 ## APPENDIX — PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION
 
 **Peer TM-50 Publications.** Senior AI engineers should coordinate with practitioners in these companion advanced-track publications.
@@ -424,6 +422,8 @@ Engineers who clear a deployment review sometimes treat that review as the end o
 | TM-50J | Advanced Program Manager | AI governance acquisition; lifecycle documentation |
 | TM-50K | Advanced Knowledge Manager | Corpus design; ontology-RAG integration |
 | TM-50L | Advanced Software Engineer | OSDK integration with AI systems |
+| TM-50N | Advanced UI/UX Designer | UI/UX for AI-driven applications; model output presentation |
+| TM-50O | Advanced Platform Engineer | Infrastructure for AI/ML workloads; GPU provisioning; deployment pipelines |
 
 **WFF Operational Consumer Note.** AI systems built by TM-50H engineers are embedded in the operational workflows of the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). The system-design questions addressed in this guide — embeddedness, meaningful oversight, lifecycle governance — must be answered in terms of the specific WFF workflows the AI system will serve. A G2 intelligence synthesis system has different failure mode consequences than a G4 logistics optimization system; both require meaningful oversight, but the oversight design reflects the operational context.
 

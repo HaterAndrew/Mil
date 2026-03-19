@@ -90,4 +90,4 @@ Upon successful completion of EX_10, participants are cleared to proceed to:
 
 After TM-20, all personnel proceed to TM-30. TM-30 is required before any TM-40 track:
 - **WFF tracks (TM-40A–F)**: role-specific data application training by Warfighting Function (prereq: TM-30 required)
-- **Specialist tracks (TM-40G–M)**: technical specialist tracks (prereq: TM-30 required)
+- **Specialist tracks (TM-40G–O)**: technical specialist tracks (prereq: TM-30 required)

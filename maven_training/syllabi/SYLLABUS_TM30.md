@@ -115,7 +115,7 @@ Complete **7+ duty days before Day 1:**
 | 1445–1600 | 17 | Lab | Data lineage diagnostic inject: trainees receive a provided pipeline with a deliberate silent fault (a type mismatch 3 transforms upstream causing a 0-row output). Using only the lineage graph — no error messages — trainees must: (1) trace the lineage to the source of the fault, (2) identify the transform where the type mismatch occurs, and (3) document the fix in writing before opening the transform node. Evaluator confirms diagnosis is correct before trainee clicks. |
 | 1600–1700 | 18 | Discuss | C2DAO production standards: what constitutes a production-ready data product; quality gates |
 
-**Evening reading:** TM-30, Chapters 5–7 (Contour, Quiver, Governance) — review what you covered; read governance chapter fully before Day 5.
+**Evening reading:** TM-30, Chapters 5–7 (Contour and Quiver, AIP Logic, Governance) — review what you covered; read governance chapter fully before Day 5.
 
 ---
 
@@ -219,7 +219,7 @@ Re-evaluation requires full repetition of the practical exercise (all tasks), no
 
 ## Continuation
 
-TM-30 is the gateway to **all** TM-40 tracks — both WFF (TM-40A–F) and Specialist (TM-40G–M). TM-30 completion is a **hard prerequisite — no waivers** — for every track in the TM-40 series.
+TM-30 is the gateway to **all** TM-40 tracks — both WFF (TM-40A–F) and Specialist (TM-40G–O). TM-30 completion is a **hard prerequisite — no waivers** — for every track in the TM-40 series.
 
 **WFF Tracks (TM-40A–F) — prereq: TM-30 (required):**
 
@@ -232,7 +232,7 @@ TM-30 is the gateway to **all** TM-40 tracks — both WFF (TM-40A–F) and Speci
 | TM-40E | Protection | FP officers, CBRN officers, provost marshal staff |
 | TM-40F | Mission Command | Battle captains, XOs, CDRs, MC-function staff |
 
-**Specialist Tracks (TM-40G–M) — prereq: TM-30 (required):**
+**Specialist Tracks (TM-40G–O) — prereq: TM-30 (required):**
 
 | Track | Specialist Role | Advanced Level |
 |---|---|---|
@@ -242,8 +242,13 @@ TM-30 is the gateway to **all** TM-40 tracks — both WFF (TM-40A–F) and Speci
 | TM-40J | Program Manager | TM-50J (Advanced Program Manager) |
 | TM-40K | Knowledge Manager | TM-50K (Advanced Knowledge Manager) |
 | TM-40L | Software Engineer | TM-50L (Advanced Software Engineer) |
+| TM-40N | UX Designer | TM-50N (Advanced UX Designer) |
+| TM-40O | Platform Engineer | TM-50O (Advanced Platform Engineer) |
 
-The advanced series is TM-50G–M only. WFF tracks (TM-40A–F) are terminal with no TM-50 continuation.
+**T3-I (Instructor Certification) — parallel path:**
+TM-30 graduates who demonstrate strong instructional aptitude may be nominated for T3-I (Instructor Certification). T3-I is a 5-day course that qualifies graduates to deliver TM-10, TM-20, and TM-30 as certified instructors. See SYLLABUS_T3I for details.
+
+**TM-50A–F do not exist.** The advanced series is TM-50G–O only. Any reference to TM-50A through TM-50F is stale and incorrect.
 
 ---
 

@@ -16,10 +16,11 @@ import PanelSupport from './panels/Support'
 import PanelSchedule from './panels/Schedule'
 import PanelDashboards from './panels/Dashboards'
 import PanelBSP from './panels/BSP'
+import PanelSL from './panels/SL'
 
 type PanelId =
   | 'quickref' | 'schedule' | 'dashboards'
-  | 'tm10' | 'tm20' | 'tm30' | 'bsp'
+  | 'tm10' | 'tm20' | 'tm30' | 'bsp' | 'sl'
   | 'specialists' | 'tm40' | 'tm50'
   | 'doctrine' | 'documents' | 'taskindex' | 'support'
 
@@ -112,6 +113,7 @@ export default function App() {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
   const [grpFoundationOpen, setGrpFoundationOpen] = useState(true)
   const [grpBspOpen, setGrpBspOpen] = useState(false)
+  const [grpSlOpen, setGrpSlOpen] = useState(false)
   const [grpSpecialistsOpen, setGrpSpecialistsOpen] = useState(false)
   const [grpResourcesOpen, setGrpResourcesOpen] = useState(false)
 
@@ -146,6 +148,7 @@ export default function App() {
       case 'tm20':        return <PanelTM20         showPanel={showPanel} />
       case 'tm30':        return <PanelTM30         showPanel={showPanel} />
       case 'bsp':         return <PanelBSP          showPanel={showPanel} />
+      case 'sl':          return <PanelSL           showPanel={showPanel} />
       case 'specialists': return <PanelSpecialists  showPanel={showPanel} />
       case 'tm40':        return <PanelTM40         showPanel={showPanel} />
       case 'tm50':        return <PanelTM50         showPanel={showPanel} />
@@ -200,7 +203,7 @@ export default function App() {
               <div style={{marginTop:6,fontSize:10,letterSpacing:'.14em',color:'rgba(255,180,0,0.55)',textTransform:'uppercase'}}>alpha</div>
               <div className="splash-tms">
                 TM-10 &nbsp;&middot;&nbsp; TM-20 &nbsp;&middot;&nbsp; TM-30 &nbsp;&middot;&nbsp;
-                TM-40A&ndash;M &nbsp;&middot;&nbsp; TM-50G&ndash;M &nbsp;&middot;&nbsp; Data Lit (SL) &nbsp;&middot;&nbsp; Data Literacy
+                TM-40A&ndash;O &nbsp;&middot;&nbsp; TM-50G&ndash;O &nbsp;&middot;&nbsp; Data Lit (SL) &nbsp;&middot;&nbsp; Data Literacy
               </div>
               <div className="splash-rule-sm" />
               <button className="splash-enter" onClick={enterHub}>
@@ -254,7 +257,7 @@ export default function App() {
 
       <div className="header-strip">
         <div className="header-strip-inner">
-          <span>TM-10 &bull; TM-20 &bull; TM-30 &bull; TM-40A&ndash;M &bull; TM-50G&ndash;M &bull; Data Lit (SL) &bull; Data Literacy</span>
+          <span>TM-10 &bull; TM-20 &bull; TM-30 &bull; TM-40A&ndash;O &bull; TM-50G&ndash;O &bull; Data Lit (SL) &bull; Data Literacy</span>
           <span>DRAFT &mdash; NOT YET APPROVED FOR DISTRIBUTION &nbsp;&bull;&nbsp; alpha</span>
         </div>
       </div>
@@ -331,6 +334,21 @@ export default function App() {
               </div>
             </div>
 
+            {/* Senior Leader (TM-SL) group */}
+            <div className={`snav-group${grpSlOpen ? '' : ' collapsed'}`}>
+              <button
+                className="snav-group-hdr"
+                style={{color:'rgba(200,151,26,0.75)'}}
+                onClick={() => setGrpSlOpen(o => !o)}
+              >
+                Senior Leader (TM-SL)
+                <span className="snav-group-arrow">&#8964;</span>
+              </button>
+              <div className="snav-group-items">
+                {navItem('sl', 'Exec Course — Overview', '◾')}
+              </div>
+            </div>
+
             {/* Specialist tracks group */}
             <div className={`snav-group${grpSpecialistsOpen ? '' : ' collapsed'}`}>
               <button
@@ -366,6 +384,27 @@ export default function App() {
                 {navItem('support', 'Support', '◾')}
               </div>
             </div>
+
+            {/* Train the Trainer (T3) — greyed out placeholder */}
+            <div className="snav-group collapsed" style={{opacity:0.4,pointerEvents:'none'}}>
+              <button
+                className="snav-group-hdr"
+                style={{color:'var(--gray-400)',cursor:'default'}}
+              >
+                Train the Trainer (T3)
+                <span style={{fontSize:9,marginLeft:6,color:'var(--gray-400)'}}>COMING SOON</span>
+              </button>
+              <div className="snav-group-items">
+                <button className="snav-item" disabled style={{cursor:'default'}}>
+                  <span className="snav-item-icon">&#9642;</span>
+                  <span className="snav-item-label">T3-I &mdash; Instructor Cert</span>
+                </button>
+                <button className="snav-item" disabled style={{cursor:'default'}}>
+                  <span className="snav-item-icon">&#9642;</span>
+                  <span className="snav-item-label">T3-F &mdash; Force Multiplier</span>
+                </button>
+              </div>
+            </div>
           </div>
         </nav>
 
@@ -378,6 +417,7 @@ export default function App() {
             {panel('tm20')}
             {panel('tm30')}
             {panel('bsp')}
+            {panel('sl')}
             {panel('specialists')}
             {panel('tm40')}
             {panel('tm50')}

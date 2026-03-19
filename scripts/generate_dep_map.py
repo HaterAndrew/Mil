@@ -41,21 +41,21 @@ add("DOC_CHEAT",    "cheatsheet.md",              "quick_reference/cheatsheet.md
 # ---- TM-10 CLUSTER (column 1) ----
 add("TM10",         "TM_10\nMAVEN USER",    "tm/TM_10_maven_user/TM_10_MAVEN_USER.md",            "TM",   1, "TM-10")
 add("SYL10",        "SYLLABUS\nTM10",       "syllabi/SYLLABUS_TM10.md",                            "SYL",  1, "TM-10")
-add("EX10",         "EX_10\nOperator",      "exercises/EX_10_operator_basics/EXERCISE.md",         "EX",   1, "TM-10")
+add("EX10",         "EX-10\nOperator",      "exercises/EX_10_operator_basics/EXERCISE.md",          "EX",   1, "TM-10")
 add("EXAM10PRE",    "EXAM TM10\nPRE",       "exercises/exams/EXAM_TM10_PRE.md",                    "EXAM", 1, "TM-10")
 add("EXAM10SUPP",   "EXAM TM10\nSUPP",      "exercises/exams/EXAM_TM10_SUPPLEMENTAL.md",           "EXAM", 1, "TM-10")
 
 # ---- TM-20 CLUSTER (column 2) ----
 add("TM20",         "TM_20\nBUILDER",       "tm/TM_20_builder/TM_20_BUILDER.md",                  "TM",   2, "TM-20")
 add("SYL20",        "SYLLABUS\nTM20",       "syllabi/SYLLABUS_TM20.md",                            "SYL",  2, "TM-20")
-add("EX20",         "EX_20\nNo-Code Builder","exercises/EX_20_no_code_builder/EXERCISE.md",        "EX",   2, "TM-20")
+add("EX20",         "EX-20\nNo-Code Builder","exercises/EX_20_no_code_builder/EXERCISE.md",         "EX",   2, "TM-20")
 add("EXAM20PRE",    "EXAM TM20\nPRE",       "exercises/exams/EXAM_TM20_PRE.md",                    "EXAM", 2, "TM-20")
 add("EXAM20POST",   "EXAM TM20\nPOST",      "exercises/exams/EXAM_TM20_POST.md",                   "EXAM", 2, "TM-20")
 
 # ---- TM-30 CLUSTER (column 3) ----
 add("TM30",         "TM_30\nADV BUILDER",   "tm/TM_30_advanced_builder/TM_30_ADVANCED_BUILDER.md","TM",   3, "TM-30")
 add("SYL30",        "SYLLABUS\nTM30",       "syllabi/SYLLABUS_TM30.md",                            "SYL",  3, "TM-30")
-add("EX30",         "EX_30\nAdv Builder",   "exercises/EX_30_advanced_builder/EXERCISE.md",        "EX",   3, "TM-30")
+add("EX30",         "EX-30\nAdv Builder",   "exercises/EX_30_advanced_builder/EXERCISE.md",         "EX",   3, "TM-30")
 add("EXAM30PRE",    "EXAM TM30\nPRE",       "exercises/exams/EXAM_TM30_PRE.md",                    "EXAM", 3, "TM-30")
 add("EXAM30POST",   "EXAM TM30\nPOST",      "exercises/exams/EXAM_TM30_POST.md",                   "EXAM", 3, "TM-30")
 
@@ -73,7 +73,7 @@ for letter, dirname, label in WFF_TRACKS:
     add(f"TM40{letter}",       f"TM_40{letter}\n{label}",          f"tm/TM_40{letter}_{dirname}/TM_40{letter}_{dirname.upper()}.md",                               "TM",  4, t)
     add(f"CG40{letter}",       f"CONCEPTS GUIDE\nTM40{letter}",    f"tm/TM_40{letter}_{dirname}/CONCEPTS_GUIDE_TM40{letter}_{dirname.upper()}.md",                 "CG",  4, t)
     add(f"SYL40{letter}",      f"SYLLABUS\nTM40{letter}",          f"syllabi/SYLLABUS_TM40{letter}.md",                                                            "SYL", 4, t)
-    add(f"EX40{letter}",       f"EX_40{letter}\n{label}",          f"exercises/EX_40{letter}_{dirname}/EXERCISE.md",                                               "EX",  4, t)
+    add(f"EX40{letter}",       f"EX-40{letter}\n{label}",          f"exercises/EX_40{letter}_{dirname}/EXERCISE.md",                                               "EX",  4, t)
     add(f"EXAM40{letter}PRE",  f"EXAM TM40{letter}\nPRE",          f"exercises/exams/EXAM_TM40{letter}_PRE.md",                                                    "EXAM",4, t)
     add(f"EXAM40{letter}POST", f"EXAM TM40{letter}\nPOST",         f"exercises/exams/EXAM_TM40{letter}_POST.md",                                                   "EXAM",4, t)
 
@@ -108,7 +108,7 @@ for letter, dirname, label in SPEC_TRACKS:
     add(f"TM40{letter}",       f"TM_40{letter}\n{label}",          f"tm/TM_40{letter}_{dirname}/TM_40{letter}_{dirname.upper()}.md",                               "TM",  4, t)
     add(f"CG40{letter}",       f"CONCEPTS GUIDE\nTM40{letter}",    f"tm/TM_40{letter}_{dirname}/CONCEPTS_GUIDE_TM40{letter}_{dirname.upper()}.md",                 "CG",  4, t)
     add(f"SYL40{letter}",      f"SYLLABUS\nTM40{letter}",          f"syllabi/SYLLABUS_TM40{letter}.md",                                                            "SYL", 4, t)
-    add(f"EX40{letter}",       f"EX_40{letter}\n{label}",          f"exercises/EX_40{letter}_{dirname}/EXERCISE.md",                                               "EX",  4, t)
+    add(f"EX40{letter}",       f"EX-40{letter}\n{label}",          f"exercises/EX_40{letter}_{dirname}/EXERCISE.md",                                               "EX",  4, t)
     add(f"EXAM40{letter}PRE",  f"EXAM TM40{letter}\nPRE",          f"exercises/exams/EXAM_TM40{letter}_PRE.md",                                                    "EXAM",4, t)
     add(f"EXAM40{letter}POST", f"EXAM TM40{letter}\nPOST",         f"exercises/exams/EXAM_TM40{letter}_POST.md",                                                   "EXAM",4, t)
 
@@ -1116,6 +1116,11 @@ function renderNodes() {{
     g.addEventListener("mousemove",  (e) => moveTooltip(e));
     g.addEventListener("mouseleave", hideTooltip);
 
+    // Click → navigate to file
+    g.addEventListener("click", () => {{
+      if (n.path) window.open(n.path, "_blank");
+    }});
+
     if (n.type === "CDA") {{
       document.getElementById("cda-nodes-grp").appendChild(g);
     }} else {{
@@ -1387,7 +1392,7 @@ resetView();
 
 # Write output
 out_dir = Path("/home/dale/Desktop/claude/maven_training")
-out_path = out_dir / "DEPENDENCY_MAP.html"
+out_path = out_dir / "DEPENDENCY_MAP_summary.html"  # DO NOT change to DEPENDENCY_MAP.html — that is the real 7400+ line dep map
 out_path.write_text(HTML, encoding="utf-8")
 print(f"Written: {out_path}")
 print(f"File size: {out_path.stat().st_size / 1024:.1f} KB")

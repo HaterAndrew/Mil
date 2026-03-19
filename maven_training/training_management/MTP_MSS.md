@@ -54,9 +54,9 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | TM-50K | Advanced Knowledge Manager | Senior KMOs | 3 | TM-40K (Required) |
 | TM-50L | Advanced Software Engineer | Senior SWEs | 5 | TM-40L (Required) |
 | T3-I | Instructor Certification | C2DAO-selected instructor candidates | 5 + practicum | TM-30 (Required) + C2DAO selection |
-| T3-F | MSC Force Multiplier | MSC-level data NCOs, S6, UDT nominees | 3 | TM-20 (Required) + CDR nomination |
+| T3-F | MSC Force Multiplier | MSC-level data NCOs, S6, UDT nominees | 0.5 | TM-20 (Required) + CDR nomination |
 
-> **NOTE:** TM-40A–F (WFF functional tracks) require TM-10, TM-20, and TM-30 as hard prerequisites. TM-40G–M (specialist tracks) also require TM-30 as a hard prerequisite. TM-50G–M (advanced specialist tracks) require the corresponding TM-40G–M. TM-50 is G–M only.
+> **NOTE:** TM-40A–F (WFF functional tracks) require TM-10, TM-20, and TM-30 as hard prerequisites. TM-40G–O (specialist tracks) also require TM-30 as a hard prerequisite. TM-50G–O (advanced specialist tracks) require the corresponding TM-40G–O. There are NO TM-50A–F tracks.
 
 > **NOTE:** "Training days" reflects initial qualification training with instructor support. Self-paced completion may require more time. Refresher/sustainment training is shorter — see Section 11.
 
@@ -295,7 +295,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | TM-30 | Pass 5 of 6 tasks (T01–T06); Ontology design document reviewed and approved |
 | TM-40A–F (WFF) | Pass all 6 WFF tasks (T01–T06); WFF dashboard meets standard; data governance requirements met |
 | TM-40G | Pass 5 of 6 ELOs; ORSA product brief reviewed by qualified ORSA evaluator |
-| TM-40H/I/L | Pass developer track practical exercise; evaluated by TM-40 certified technical reviewer |
+| TM-40H/M/L | Pass developer track practical exercise; evaluated by TM-40 certified technical reviewer |
 | TM-40J | Pass 5 of 6 ELOs; IPR product meets all PM Dashboard Standards Checklist items |
 | TM-40K | Pass 5 of 6 ELOs; PCS transfer package reviewed and approved by instructor |
 
@@ -767,7 +767,7 @@ Continue with TM-30 or TM-40 track based on role. No more than one TM level per 
 | Mon | TM-30 Day 1 | Data-adjacent specialists |
 | Tue | TM-30 Day 2 | Data-adjacent specialists |
 | Wed | TM-30 Day 3 + Evaluation | Data-adjacent specialists |
-| Thu | Confirm all TM-40 enrollments; brief functional staff on WFF track options; brief specialists on G–M track options | Training NCO/Officer |
+| Thu | Confirm all TM-40 enrollments; brief functional staff on WFF track options; brief specialists on G–O track options | Training NCO/Officer |
 | Fri | TM-40 scheduling coordination complete; access provisioning confirmed for all Week 3+ participants | Training NCO/Officer |
 
 **Week 3 (TM-40 WFF Tracks)**
@@ -778,7 +778,7 @@ Continue with TM-30 or TM-40 track based on role. No more than one TM level per 
 | Mon–Wed | TM-40D (Sustainment WFF) — 3 days (parallel session if capacity allows) | G4/S4 staff |
 | Thu–Fri or following week | Remaining WFF tracks (B, C, E, F) as scheduled | Applicable WFF functional staff |
 
-> **NOTE:** All TM-40 tracks (A–F WFF and G–M specialist) require TM-30 completion. Ensure all TM-40 participants have TM-30 on file before enrolling. WFF and specialist (G–M) training can run concurrently in separate sessions once TM-30 is complete.
+> **NOTE:** All TM-40 tracks (A–F WFF and G–O specialist) require TM-30 completion. Ensure all TM-40 participants have TM-30 on file before enrolling. WFF and specialist (G–O) training can run concurrently in separate sessions once TM-30 is complete.
 
 **Week 4 (TM-40 Specialist Tracks — 3-day courses)**
 
@@ -1047,7 +1047,7 @@ PERSONNEL SUMMARY:
   Total personnel requiring TM-30: [#]     TM-30 Complete: [#] ([%])
   Total WFF track assignments (TM-40A–F):  [#]  WFF Complete: [#] ([%])
     Breakdown: 40A[#] 40B[#] 40C[#] 40D[#] 40E[#] 40F[#]
-  Total specialist track assignments (TM-40G–M): [#]  Specialist Complete: [#] ([%])
+  Total specialist track assignments (TM-40G–O): [#]  Specialist Complete: [#] ([%])
     Breakdown: 40G[#] 40H[#] 40M[#] 40J[#] 40K[#] 40L[#]
 
 ISSUES / SHORTFALLS:

@@ -8,7 +8,7 @@
 | **Level** | TM-40L (Specialist) |
 | **Audience** | Software engineers; prerequisite: TM-10+20+30 + TypeScript/Python + REST API familiarity |
 | **Time Allowed** | 45 minutes |
-| **Passing Score** | 70% (49/70) |
+| **Passing Score** | 70% (46/66) |
 
 ---
 
@@ -25,15 +25,15 @@ This assessment evaluates mastery of course learning objectives. A passing score
 **1. In OSDK authentication architecture, the three components required to initialize a Foundry client are:**
 
 A. Username, password, and domain
-B. Client instance, authentication token, and generated type definitions
+B. OAuth2 client ID, client secret, and redirect URI
 C. API key, project ID, and namespace
-D. OAuth2 client ID, client secret, and redirect URI
+D. Client instance, authentication token, and generated type definitions
 
 **2. When querying an Object Type via OSDK using `ResourceIterator`, you MUST:**
 
 A. Retrieve only the first page of results — additional pages require a separate API call pattern
-B. Iterate through all pages until the iterator is exhausted to ensure all records are retrieved
-C. Set a `limit` parameter equal to the total expected record count to retrieve all records in one call
+B. Set a `limit` parameter equal to the total expected record count to retrieve all records in one call
+C. Iterate through all pages until the iterator is exhausted to ensure all records are retrieved
 D. Use `Promise.all` to fetch all pages concurrently for performance
 
 **3. A `ResourceIterator` that is only partially consumed (e.g., `break` after the first 10 records) will:**
@@ -45,38 +45,38 @@ D. Throw an unhandled exception when the connection is closed
 
 **4. After executing an Action via OSDK, the correct pattern to confirm completion is:**
 
-A. Assume completion after a 5-second `setTimeout` delay
-B. Retrieve the task ID from the Action response and poll the task status endpoint until the status is "SUCCEEDED" or "FAILED"
+A. Retrieve the task ID from the Action response and poll the task status endpoint until the status is "SUCCEEDED" or "FAILED"
+B. Assume completion after a 5-second `setTimeout` delay
 C. Listen for a WebSocket event on the affected Object Type for the change
 D. Re-query the Object and check whether the expected property change is present
 
 **5. When traversing a Link Type via OSDK to get related objects (e.g., from a Vehicle to its MaintenanceRecords), the correct approach is:**
 
 A. Make a separate raw HTTP call to the Foundry datasets API to fetch the related records
-B. Use the OSDK Link traversal method on the object instance to navigate the relationship within the Ontology
-C. Re-query the MaintenanceRecord Object Type with a filter on the vehicle ID
+B. Re-query the MaintenanceRecord Object Type with a filter on the vehicle ID
+C. Use the OSDK Link traversal method on the object instance to navigate the relationship within the Ontology
 D. Export both Object Types to arrays and perform an in-memory join in TypeScript
 
 **6. A TypeScript Function on Objects (FOO) that needs to compute a derived property for 500 Vehicle objects should use which pattern?**
 
 A. A per-object loop that calls the Ontology API once per vehicle (N+1 calls)
-B. A bulk query that fetches all required related records in a single operation before computing derived values
-C. A `Promise.all` of 500 concurrent individual object API calls
+B. A `Promise.all` of 500 concurrent individual object API calls
+C. A bulk query that fetches all required related records in a single operation before computing derived values
 D. A cached query that runs once daily and stores results in a global variable
 
 **7. A TypeScript Action validator must have at minimum how many distinct validation conditions?**
 
-A. One — the primary validation check
+A. Three distinct conditions, including at least one cross-field validation
 B. Two — one for required fields and one for format
-C. Three distinct conditions, including at least one cross-field validation
+C. One — the primary validation check
 D. Five — one per expected failure mode
 
 **8. In a Slate application, after the user executes an Action (submits a form), the correct pattern for updating the displayed data is:**
 
 A. Set a 3-second timer and re-fetch data after the delay
-B. Update a state variable based on the Action's completion event, triggering a reactive data refresh in the components bound to that state
+B. Manually reload the entire application window after the Action completes
 C. Redirect the user to a loading page and back after 2 seconds
-D. Manually reload the entire application window after the Action completes
+D. Update a state variable based on the Action's completion event, triggering a reactive data refresh in the components bound to that state
 
 **9. When implementing WebSocket subscriptions to Ontology Object change notifications via OSDK, an important consideration is:**
 
@@ -87,8 +87,8 @@ D. Subscription data is encrypted end-to-end and cannot be logged for debugging
 
 **10. The C2DAO code review and deployment checklist requires which of the following credential-handling verifications?**
 
-A. Credentials are stored in a `.env` file committed to the repository with appropriate `.gitignore` rules
-B. No credentials are hardcoded in source code; all credentials are injected via environment variables or secrets management at runtime
+A. No credentials are hardcoded in source code; all credentials are injected via environment variables or secrets management at runtime
+B. Credentials are stored in a `.env` file committed to the repository with appropriate `.gitignore` rules
 C. Credentials are rotated at least quarterly regardless of deployment frequency
 D. A separate code review is conducted by the vendor for credential-related changes
 
@@ -102,16 +102,16 @@ D. A format validation
 **12. A Platform SDK write transaction for committing dataset changes is preferred over a simple write because:**
 
 A. Transactions bypass schema validation for faster writes
-B. Transactions are atomic — either all records are written successfully or none are, preventing partial writes that could corrupt downstream consumers
-C. Transactions encrypt data at rest as part of the write operation
+B. Transactions encrypt data at rest as part of the write operation
+C. Transactions are atomic — either all records are written successfully or none are, preventing partial writes that could corrupt downstream consumers
 D. Transactions automatically trigger dependent pipeline refreshes
 
 **13. The minimum number of test cases required for a TypeScript Action validator under TM-40L standards is:**
 
 A. 3 — one per validation condition
 B. 5 — standard unit test coverage minimum
-C. 8 — sufficient to cover each validation condition with both passing and failing cases
-D. 15 — comprehensive coverage for production-grade code
+C. 15 — comprehensive coverage for production-grade code
+D. 8 — sufficient to cover each validation condition with both passing and failing cases
 
 **14. In a Foundry multi-tenant environment, why is hardcoding a tenant ID never acceptable — even in a test context?**
 
@@ -122,8 +122,8 @@ D. It is acceptable in test contexts — the restriction applies only to product
 
 **15. A C2DAO input sanitization requirement for a Slate application that accepts a unit designation string from users means you must:**
 
-A. Validate that the string contains only ASCII characters
-B. Strip or reject characters that could enable injection attacks, validate length bounds, and ensure the value matches expected format patterns before using it in any query or write operation
+A. Strip or reject characters that could enable injection attacks, validate length bounds, and ensure the value matches expected format patterns before using it in any query or write operation
+B. Validate that the string contains only ASCII characters
 C. Convert the string to uppercase before processing
 D. Verify the unit designation exists in the Ontology before accepting the input
 
@@ -226,23 +226,21 @@ Passing: 49/70 (70%) — Post-test only. Pre-test is diagnostic.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — OSDK client requires: client instance + authentication token + generated type definitions.
-2. B — ResourceIterator must be fully consumed to retrieve all pages.
+1. D — OSDK client requires: client instance + authentication token + generated type definitions.
+2. C — ResourceIterator must be fully consumed to retrieve all pages.
 3. B — Breaking early retrieves only those records — subsequent pages are not fetched.
-4. B — Poll task status using the task ID from the Action response until SUCCEEDED or FAILED.
-5. B — OSDK Link traversal method on the object instance is the correct pattern.
-6. B — Bulk query fetches all related records in one call; N+1 per-object loop is the anti-pattern.
-7. C — Minimum 3 distinct conditions, including at least one cross-field validation.
-8. B — State variable update on Action completion triggers reactive data refresh.
+4. A — Poll task status using the task ID from the Action response until SUCCEEDED or FAILED.
+5. C — OSDK Link traversal method on the object instance is the correct pattern.
+6. C — Bulk query fetches all related records in one call; N+1 per-object loop is the anti-pattern.
+7. A — Minimum 3 distinct conditions, including at least one cross-field validation.
+8. D — State variable update on Action completion triggers reactive data refresh.
 9. B — Subscription handlers must be idempotent for duplicate event delivery.
-10. B — No hardcoded credentials; all injected via environment variables or secrets management.
+10. A — No hardcoded credentials; all injected via environment variables or secrets management.
 11. B — New mileage vs. current mileage comparison is a single-field range validation (one field context).
-12. B — Transactions are atomic — all-or-nothing prevents partial writes.
-13. C — Minimum 8 test cases (per TM-40L standards).
+12. C — Transactions are atomic — all-or-nothing prevents partial writes.
+13. D — Minimum 8 test cases (per TM-40L standards).
 14. B — Hardcoded tenant IDs risk cross-tenant data access if deployed in different context.
-15. B — Strip/reject injection characters, validate length and format before using in queries or writes.
-16. B — Army Data Plan SO 7 requires DevSecOps tempo. DDOF Playbook v2.2 mandates 30-day MVP delivery (Phase 4). SWEs build pipelines that sustain this pace. Option A (annual) is far too slow for DevSecOps. Option C (quarterly) introduces governance lag not in DDOF. Option D removes governance gates entirely, which violates fail-closed enforcement. Source: Army Data Plan SO 7 / DDOF Playbook v2.2 / TM-40L Section 1-5b.
-17. B — The three security-critical UDRA metadata fields are Classification Marking, Access Control List, and Data Steward Contact. These are security-critical because errors in any of them can result in unauthorized access or mishandled classified data. Option A lists administrative fields. Option C lists governance fields that are not security-critical. Option D lists management fields. Source: UDRA v1.1 / TM-40L Section 1-7.
+15. A — Strip/reject injection characters, validate length and format before using in queries or writes.
 
 **Short Answer Guidance:**
 

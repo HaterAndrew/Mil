@@ -24,29 +24,29 @@ This assessment evaluates mastery of course learning objectives. A passing score
 
 **1. Per USAREUR-AF C2DAO naming conventions, a correct Foundry project name for 1st Cavalry Division's G4 logistics team would most closely follow which pattern?**
 
-A. `CavalryDiv-G4-Logistics`
-B. `1CD_G4_LOGISTICS_OPDATA`
+A. `1CD_G4_LOGISTICS_OPDATA`
+B. `CavalryDiv-G4-Logistics`
 C. `LogisticsProject_1CD`
 D. `1st_Cav_G4`
 
 **2. After ingesting a new file into Foundry, the FIRST data quality checks you should perform are:**
 
 A. Schema validation, then immediately publish the dataset to the Ontology
-B. Row count verification, data type validation, and null check on required fields
-C. Export the dataset and open it in Excel to review visually
+B. Export the dataset and open it in Excel to review visually
+C. Row count verification, data type validation, and null check on required fields
 D. Run the dataset through a Pipeline Builder pipeline without reviewing it first
 
 **3. In Pipeline Builder, you need to keep only records where the `unit` field equals "1-16 CAV". The correct step type is:**
 
 A. Rename column
 B. Calculated column
-C. Filter rows
-D. Type cast
+C. Type cast
+D. Filter rows
 
 **4. You are building a pipeline that joins a maintenance dataset to a vehicle roster on the `vehicle_id` field. Before executing the join, you notice that `vehicle_id` is stored as INTEGER in the vehicle roster but as TEXT in the maintenance dataset. You should:**
 
-A. Proceed — Pipeline Builder automatically resolves type mismatches in joins
-B. Cast both fields to the same data type in a type cast step before the join
+A. Cast both fields to the same data type in a type cast step before the join
+B. Proceed — Pipeline Builder automatically resolves type mismatches in joins
 C. Delete the maintenance dataset and re-ingest it with correct types
 D. Contact the data steward and wait for the source data to be fixed before proceeding
 
@@ -68,48 +68,48 @@ D. Must be a system-generated UUID and cannot be a business key from source data
 
 A. In the Workshop widget that calls the Action
 B. In the Pipeline Builder pipeline that processes the Action result
-C. In the Action's parameter definition (type, validation rules, and description)
-D. In the Ontology Manager's property definition for the mileage field
+C. In the Ontology Manager's property definition for the mileage field
+D. In the Action's parameter definition (type, validation rules, and description)
 
 **8. In a Workshop application, you want a bar chart to only display data relevant to the unit selected in a dropdown filter widget. The correct configuration is:**
 
-A. Build separate bar charts for each unit and hide/show based on the selection
-B. Link the filter widget's output variable to the bar chart's filter input
+A. Link the filter widget's output variable to the bar chart's filter input
+B. Build separate bar charts for each unit and hide/show based on the selection
 C. Export the dropdown selection to a pipeline that regenerates the chart
 D. Use conditional formatting on the chart to hide non-matching bars
 
 **9. Your Workshop application has an Action button that submits a maintenance status update. To restrict this button so only Editors (not Viewers) can submit updates, you:**
 
 A. Remove the button from the application layout when accessed by a Viewer
-B. Configure the Action's access-control rule to require the Editor role
-C. Add a password prompt to the Action form
+B. Add a password prompt to the Action form
+C. Configure the Action's access-control rule to require the Editor role
 D. Create two separate Workshop applications — one for Viewers and one for Editors
 
 **10. You need to grant a new analyst read-only access to your unit's MSS project. The correct role to assign is:**
 
 A. Owner
-B. Editor
-C. Viewer
+B. Viewer
+C. Editor
 D. Builder
 
 **11. You have completed development of a new pipeline and Workshop application in your development environment. To promote these to production per USAREUR-AF C2DAO workflow, you must:**
 
 A. Export the pipeline configuration and email it to the data steward for manual re-creation
-B. Create a Foundry branch with your changes, write a promotion description, and submit for data steward review
-C. Grant your account Owner access to the production environment and deploy directly
+B. Grant your account Owner access to the production environment and deploy directly
+C. Create a Foundry branch with your changes, write a promotion description, and submit for data steward review
 D. Submit a helpdesk ticket requesting a scheduled maintenance window for the deployment
 
 **12. In Pipeline Builder, a "calculated column" step that produces a `readiness_pct` column by dividing `mission_ready` by `total_assigned` requires that `total_assigned`:**
 
 A. Be stored as a text field
-B. Never contain zero (to avoid division-by-zero errors)
+B. Be rounded to the nearest integer before the division
 C. Equal `mission_ready` for the calculation to be valid
-D. Be rounded to the nearest integer before the division
+D. Never contain zero (to avoid division-by-zero errors)
 
 **13. A Foundry dataset "ingest" operation that imports a CSV file into the platform will:**
 
-A. Automatically apply all transforms from your pipeline to the raw data
-B. Create a raw dataset containing the file's data, which then requires a pipeline to transform and clean it
+A. Create a raw dataset containing the file's data, which then requires a pipeline to transform and clean it
+B. Automatically apply all transforms from your pipeline to the raw data
 C. Immediately publish the data to the Ontology as a new Object Type
 D. Replace any existing dataset with the same name without warning
 
@@ -123,8 +123,8 @@ D. Calculated column
 **15. Your Workshop application displays a table of open maintenance work orders. After submitting a new work order via an Action, the table does not update immediately. The MOST likely cause is:**
 
 A. The Action failed silently and the submission was not recorded
-B. The Workshop table refreshes on a schedule or requires a manual refresh — the submission was recorded but the view has not yet updated
-C. The table is connected to the wrong dataset
+B. The table is connected to the wrong dataset
+C. The Workshop table refreshes on a schedule or requires a manual refresh — the submission was recorded but the view has not yet updated
 D. The Action's access control prevents the new record from appearing for the submitting user
 
 ---
@@ -202,21 +202,21 @@ Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — C2DAO naming follows `ECHELON_OFFICE_FUNCTION_TYPE` uppercase pattern; Option B matches closest.
-2. B — Row count, type validation, and null check are the three required post-ingest quality checks.
-3. C — Filter rows is the correct step for keeping records matching a condition.
-4. B — Type cast step before the join resolves the type mismatch; Pipeline Builder does not auto-resolve.
+1. A — C2DAO naming follows `ECHELON_OFFICE_FUNCTION_TYPE` uppercase pattern; Option A matches closest.
+2. C — Row count, type validation, and null check are the three required post-ingest quality checks.
+3. D — Filter rows is the correct step for keeping records matching a condition.
+4. A — Type cast step before the join resolves the type mismatch; Pipeline Builder does not auto-resolve.
 5. B — ONE-TO-MANY: one Unit has many Vehicles, each Vehicle belongs to one Unit.
 6. B — Primary Key drives upsert logic — matching = update, new = insert.
-7. C — Parameter-level type and validation rules are defined in the Action parameter configuration.
-8. B — Linking filter widget output variable to chart filter input is the correct Workshop wiring.
-9. B — Action access-control rule restricts execution to the required role.
-10. C — Viewer is the read-only role; Editor allows building; Owner manages access.
-11. B — Branch, write promotion description, submit for data steward review is the correct C2DAO workflow.
-12. B — Division by zero is a pipeline error; zero in the denominator must be handled (COALESCE or filter).
-13. B — Ingest creates a raw dataset; transforms are applied by a downstream pipeline.
+7. D — Parameter-level type and validation rules are defined in the Action parameter configuration.
+8. A — Linking filter widget output variable to chart filter input is the correct Workshop wiring.
+9. C — Action access-control rule restricts execution to the required role.
+10. B — Viewer is the read-only role; Editor allows building; Owner manages access.
+11. C — Branch, write promotion description, submit for data steward review is the correct C2DAO workflow.
+12. D — Division by zero is a pipeline error; zero in the denominator must be handled (COALESCE or filter).
+13. A — Ingest creates a raw dataset; transforms are applied by a downstream pipeline.
 14. B — Rename column is the correct step type for changing column names.
-15. B — Workshop tables refresh on schedule or manually; Action submission is recorded but view may lag.
+15. C — Workshop tables refresh on schedule or manually; Action submission is recorded but view may lag.
 
 **Short Answer Guidance:**
 

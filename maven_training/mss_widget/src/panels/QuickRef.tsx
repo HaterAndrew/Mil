@@ -107,7 +107,7 @@ const CATEGORIES: RoleCategory[] = [
       {
         label: 'Commander / Senior leader (O-5+ / SGM+)',
         description: 'You direct data-capable formations. You need the strategic picture, not the hands-on tools.',
-        result: { label: 'Data Literacy for Senior Leaders', tm40: 'Data Lit (SL)', tm40Panel: 'doctrine', description: 'Principles, command responsibilities, and decision frameworks — how to direct and resource a data-capable organization.', path: ['Data Lit (SL)'] },
+        result: { label: 'Senior Leader Executive Course', tm40: 'TM-SL', tm40Panel: 'sl', description: '1-day executive course: principles, command responsibilities, and decision frameworks. Replaces TM-10 for O-5 / E-9+. No technical prerequisites.', path: ['TM-SL'] },
       },
     ],
   },
@@ -350,8 +350,8 @@ export default function QuickRef({ showPanel }: Props) {
                 </tr>
                 <tr>
                   <td>O-5 / SGM+ &mdash; directing a data-capable formation</td>
-                  <td>Data Literacy for Senior Leaders</td>
-                  <td><button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('doctrine' as any) }}>Draft Pubs &rarr;</button></td>
+                  <td>TM-SL &mdash; Senior Leader Exec Course</td>
+                  <td><button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('sl' as any) }}>TM-SL &rarr;</button></td>
                 </tr>
                 <tr>
                   <td>All personnel &mdash; foundational data concepts before TM-10</td>
@@ -426,10 +426,10 @@ export default function QuickRef({ showPanel }: Props) {
               <div className="path-dot optional" style={{fontSize:'10px',width:'34px',height:'34px'}}>SL</div>
               <div className="path-line dashed"></div>
             </div>
-            <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('doctrine' as any)}>
-              <div className="path-tm">DATA LIT (SL) &mdash; OPTIONAL (O-5+ / SGM+)</div>
-              <div className="path-name">Data Literacy for Senior Leaders <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; Draft Pubs</span></div>
-              <div className="path-audience">Principles, command responsibilities, decision frameworks</div>
+            <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('sl' as any)}>
+              <div className="path-tm">TM-SL &mdash; SENIOR LEADER EXEC COURSE (O-5+ / SGM+)</div>
+              <div className="path-name">Senior Leader Executive Course <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; TM-SL</span></div>
+              <div className="path-audience">1-day course; replaces TM-10 for senior leaders; principles, command responsibilities, decision frameworks</div>
             </div>
           </div>
           <div className="path-spacer"></div>
@@ -493,7 +493,60 @@ export default function QuickRef({ showPanel }: Props) {
           <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('specialists' as any)}>
             <div className="path-tm">TM-40 &mdash; TWO TRACK TYPES (BY ROLE)</div>
             <div className="path-name">Specialist &amp; Warfighting Function Tracks <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; Specialist Tracks</span></div>
-            <div className="path-audience"><strong>WFF Tracks (TM-40A&ndash;F):</strong> Intel &bull; Fires &bull; M&amp;M &bull; Sustainment &bull; Protection &bull; Mission Command<br/><strong>Technical Tracks (TM-40G&ndash;M):</strong> ORSA &bull; AI Eng &bull; MLE &bull; PM &bull; KM &bull; SWE &mdash; Advanced versions at TM-50G&ndash;M</div>
+            <div className="path-audience"><strong>WFF Tracks (TM-40A&ndash;F):</strong> Intel &bull; Fires &bull; M&amp;M &bull; Sustainment &bull; Protection &bull; Mission Command<br/><strong>Technical Tracks (TM-40G&ndash;O):</strong> ORSA &bull; AI Eng &bull; MLE &bull; PM &bull; KM &bull; SWE &bull; UX &bull; Platform Eng &mdash; Advanced versions at TM-50G&ndash;O</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Parallel Tracks — outside the main pipeline */}
+      <div style={{border:'2px dashed var(--gray-200)',borderRadius:'6px',padding:'14px 16px 10px',marginTop:'16px',marginBottom:'16px',background:'var(--off-white)'}}>
+        <div style={{fontFamily:'var(--font-ui)',fontSize:'9px',fontWeight:700,letterSpacing:'2px',textTransform:'uppercase',color:'var(--gray-400)',marginBottom:'10px'}}>PARALLEL TRACKS &mdash; OUTSIDE THE TM-10 &rarr; TM-50 PIPELINE</div>
+        <div className="path-flow" style={{marginBottom:0}}>
+          <div className="path-step">
+            <div className="path-connector">
+              <div className="path-dot optional" style={{fontSize:'9px',width:'34px',height:'34px'}}>SL</div>
+              <div className="path-line dashed"></div>
+            </div>
+            <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('sl' as any)}>
+              <div className="path-tm">SENIOR LEADER EXECUTIVE COURSE &mdash; O-5+ / SGM+</div>
+              <div className="path-name">Senior Leader Executive Course <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; TM-SL</span></div>
+              <div className="path-audience">Directing and resourcing a data-capable formation; no technical prereqs</div>
+            </div>
+          </div>
+          <div className="path-spacer"></div>
+          <div className="path-step">
+            <div className="path-connector">
+              <div className="path-dot optional" style={{fontSize:'9px',width:'34px',height:'34px'}}>BSP</div>
+              <div className="path-line dashed"></div>
+            </div>
+            <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('bsp' as any)}>
+              <div className="path-tm">BUILDER SPRINT PROGRAM &mdash; PREREQ: TM-20</div>
+              <div className="path-name">Builder Sprint (BSP) <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; BSP</span></div>
+              <div className="path-audience">Intensive hands-on sprint; parallel to TM-30, not a prereq for TM-40</div>
+            </div>
+          </div>
+          <div className="path-spacer"></div>
+          <div className="path-step">
+            <div className="path-connector">
+              <div className="path-dot optional" style={{fontSize:'9px',width:'34px',height:'34px'}}>T3-I</div>
+              <div className="path-line dashed"></div>
+            </div>
+            <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('documents' as any)}>
+              <div className="path-tm">INSTRUCTOR CERTIFICATION &mdash; PREREQ: TM-30 + C2DAO SELECTION</div>
+              <div className="path-name">T3-I Instructor Certification <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; Documents</span></div>
+              <div className="path-audience">5-day classroom + practicum; certifies MSS instructors (Instructor &rarr; Senior &rarr; Master)</div>
+            </div>
+          </div>
+          <div className="path-spacer"></div>
+          <div className="path-step">
+            <div className="path-connector">
+              <div className="path-dot optional" style={{fontSize:'9px',width:'34px',height:'34px'}}>T3-F</div>
+            </div>
+            <div className="path-content" style={{cursor:'pointer'}} onClick={() => showPanel('documents' as any)}>
+              <div className="path-tm">MSC FORCE MULTIPLIER &mdash; PREREQ: TM-20 + CDR NOMINATION</div>
+              <div className="path-name">T3-F Unit Data Trainer (UDT) <span style={{fontSize:'11px',color:'var(--navy-mid)'}}>&#8594; Documents</span></div>
+              <div className="path-audience">Half day; trains UDTs who deliver TM-10 locally at each MSC</div>
+            </div>
           </div>
         </div>
       </div>
@@ -515,7 +568,7 @@ export default function QuickRef({ showPanel }: Props) {
         <div className="callout-body">
           Two courses sit <strong>outside</strong> the TM-10 to TM-50 chain:<br/><br/>
           <strong>T3-I (Instructor Certification):</strong> Prereq TM-30 + C2DAO selection. 5-day classroom + supervised practicum. Certifies MSS instructors (Instructor &rarr; Senior &rarr; Master).<br/>
-          <strong>T3-F (MSC Force Multiplier):</strong> Prereq TM-20 + CDR nomination. 3 days. Trains Unit Data Trainers (UDTs) who deliver TM-10 locally at each MSC.<br/><br/>
+          <strong>T3-F (MSC Force Multiplier):</strong> Prereq TM-20 + CDR nomination. Half day. Trains Unit Data Trainers (UDTs) who deliver TM-10 locally at each MSC.<br/><br/>
           See <button className="qr-link" onClick={(e) => { e.stopPropagation(); showPanel('documents' as any) }}>All Documents &rarr;</button> for T3 publications, syllabi, and SOPs.
         </div>
       </div>

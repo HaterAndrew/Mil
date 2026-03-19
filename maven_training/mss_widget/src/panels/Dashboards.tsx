@@ -1,3 +1,5 @@
+import { useCallback, useMemo, useRef, useState } from 'react'
+
 interface DashApp {
   name: string
   icon: string
@@ -9,6 +11,8 @@ interface DashSection {
   label: string
   apps: DashApp[]
 }
+
+const LAUNCHER_URL = 'http://localhost:8400'
 
 const SECTIONS: DashSection[] = [
   {
@@ -48,26 +52,109 @@ const SECTIONS: DashSection[] = [
   },
 ]
 
+function getDashHost(): string {
+  const host = window.location.hostname
+  const proto = window.location.protocol
+  const isLocal = proto === 'file:' || host === '' || host === 'localhost' || host === '127.0.0.1' ||
+    /^10\./.test(host) || /^192\.168\./.test(host) ||
+    /^172\.(1[6-9]|2\d|3[01])\./.test(host)
+  if (isLocal && host && host !== 'localhost') return host
+  return 'localhost'
+}
+
+function useIsLocal(): boolean {
+  return useMemo(() => {
+    const host = window.location.hostname
+    const proto = window.location.protocol
+    return proto === 'file:' || host === '' || host === 'localhost' || host === '127.0.0.1' ||
+      /^10\./.test(host) || /^192\.168\./.test(host) ||
+      /^172\.(1[6-9]|2\d|3[01])\./.test(host)
+  }, [])
+}
+
 export default function Dashboards() {
+  const isLocal = useIsLocal()
+  const [activeApp, setActiveApp] = useState<DashApp | null>(null)
+  const [loading, setLoading] = useState(false)
+  const [iframeSrc, setIframeSrc] = useState('about:blank')
+  const viewerRef = useRef<HTMLDivElement>(null)
+  const dashHost = getDashHost()
+
+  const openApp = useCallback((app: DashApp) => {
+    setActiveApp(app)
+    setLoading(true)
+    setIframeSrc('about:blank')
+    setTimeout(() => viewerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50)
+
+    const url = `http://${dashHost}:${app.port}`
+
+    fetch(`${LAUNCHER_URL}/start`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ port: app.port }),
+    })
+      .then(() => {
+        setTimeout(() => { setLoading(false); setIframeSrc(url) }, 2000)
+      })
+      .catch(() => {
+        setLoading(false)
+        setIframeSrc(url)
+      })
+  }, [dashHost])
+
+  function closeViewer() {
+    setActiveApp(null)
+    setLoading(false)
+    setIframeSrc('about:blank')
+  }
+
   return (
     <>
       <div className="section-header">
         <span className="section-badge">DASHBOARDS</span>
         <span className="section-title">Analytics &amp; Operations Suite</span>
-        <span className="section-subtitle">Streamlit applications &bull; Accessible on local network</span>
+        <span className="section-subtitle">Streamlit applications &bull; Click any card to open</span>
       </div>
 
       <div className="callout bluf">
         <div className="callout-label">BLUF</div>
-        <div className="callout-body">These dashboards provide real-time analytics, operational management, and content quality tools for the MSS training program. Each runs as a standalone Streamlit application accessible on the local network. Contact ODT for access credentials and network configuration.</div>
+        <div className="callout-body">These dashboards provide real-time analytics, operational management, and content quality tools for the MSS training program. Click any card below to load the application. On the ODT local network, apps load live. On Cloudflare, apps require VPN to the ODT network.</div>
       </div>
+
+      {!isLocal && (
+        <div className="dash-remote-banner visible">
+          <strong>Remote access:</strong> Dashboard apps run on the ODT local network. Connect to VPN before opening a dashboard.
+        </div>
+      )}
+
+      {activeApp && (
+        <div className="dash-viewer visible" ref={viewerRef}>
+          <div className="dash-viewer-toolbar">
+            <span className="dash-viewer-title">{activeApp.name}</span>
+            <span className="dash-viewer-port">:{activeApp.port}</span>
+            <a className="dash-viewer-open" href={`http://${dashHost}:${activeApp.port}`} target="_blank" rel="noopener">Open in new tab</a>
+            <button className="dash-viewer-close" onClick={closeViewer}>Close</button>
+          </div>
+          {loading && (
+            <div className="dash-viewer-loading">
+              <div className="dash-loading-spinner" />
+              <p>Starting application...</p>
+            </div>
+          )}
+          {!loading && <iframe src={iframeSrc} style={{ width: '100%', height: 700, border: 'none' }} />}
+        </div>
+      )}
 
       {SECTIONS.map(section => (
         <div key={section.label}>
           <div className="dash-section-hdr">{section.label}</div>
           <div className="dash-grid">
             {section.apps.map(app => (
-              <div key={app.name} className="dash-card">
+              <div
+                key={app.name}
+                className={`dash-card${activeApp?.port === app.port ? ' active' : ''}`}
+                onClick={() => openApp(app)}
+              >
                 <div className="dash-card-hdr">
                   <span className="dash-card-icon">{app.icon}</span>
                   <span className="dash-card-name">{app.name}</span>

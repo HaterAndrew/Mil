@@ -23,7 +23,7 @@
 
 T3-I Phase 1 has two evaluated components on Day 5:
 1. **Microteaching** — deliver a 20-minute block of instruction from TM-10, TM-20, or TM-30
-2. **Written Exam** — 20 questions covering adult learning principles, T&EO structure, evaluation procedures, error management, and instructor performance standards
+2. **Written Exam** — 16 questions covering adult learning principles, T&EO structure, evaluation procedures, error management, and instructor performance standards
 
 Both components must be passed for Phase 1 Go.
 
@@ -68,10 +68,10 @@ Scored on all 7 instructor observation criteria:
 ## TASK 2 — WRITTEN EXAM (60 minutes)
 
 ### Parameters
-- [ ] 20 questions (multiple choice and short answer)
+- [ ] 16 questions (50 points; multiple choice and short answer)
 - [ ] Closed book, closed notes
 - [ ] 60-minute time limit
-- [ ] Passing score: 80% (16 of 20)
+- [ ] Passing score: 80% (40 of 50)
 
 ### Topics Covered
 | Topic | Approximate Questions |
@@ -86,7 +86,7 @@ Scored on all 7 instructor observation criteria:
 
 | Standard | Criteria |
 |----------|----------|
-| **Go** | ≥ 80% (16 of 20 correct) |
+| **Go** | ≥ 80% (40 of 50 points) |
 | **No-Go** | < 80%; one re-take authorized within 10 duty days |
 
 ---

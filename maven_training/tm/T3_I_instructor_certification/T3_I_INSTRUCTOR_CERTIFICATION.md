@@ -36,6 +36,8 @@ This manual provides the reference material for the T3-I course. It covers every
 
 > **NOTE:** T3-I is a two-phase program. Phase 1 (5 days classroom) is delivered as a formal course. Phase 2 (supervised practicum) is scheduled separately around actual course iterations. This manual covers Phase 1 content. Phase 2 procedures are documented in Chapter 7.
 
+> **GOVERNANCE:** The Faculty Development Plan (FDP) establishes the overarching 4-phase instructor certification lifecycle (Audit → Assistant → Lead Observed → Certification). T3-I implements FDP Phases 2-4 through its 2-phase delivery structure. See FDP §3-3 for the phase reconciliation mapping. The FDP remains the authoritative governance document for instructor qualification standards, sustainment requirements, and performance standards.
+
 ---
 
 ### 1-2. The Instructor in the MSS Ecosystem

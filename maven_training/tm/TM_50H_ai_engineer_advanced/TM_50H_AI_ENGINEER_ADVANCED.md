@@ -91,6 +91,8 @@ of these three elements is missing, the capability does not go to production.
 | TM-50J      | Program Manager Advanced       | AI governance and acquisition (Chapter 8)       |
 | TM-50K      | Knowledge Manager Advanced     | Corpus design and ontology-RAG integration (Ch4)|
 | TM-50L      | Software Engineer Advanced     | OSDK integration with AI systems (Ch2, Ch7)     |
+| TM-50N      | UI/UX Designer Advanced        | UI/UX for AI-driven applications; model output presentation |
+| TM-50O      | Platform Engineer Advanced     | Infrastructure for AI/ML workloads; GPU provisioning; deployment pipelines |
 
 1-9. Cross-references to companion publications appear throughout this manual with the notation
 `[→ TM-40M]` or `[→ TM-50M]`. These are not optional references — senior AI engineers are

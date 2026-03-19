@@ -128,7 +128,7 @@ Complete **10+ duty days before Day 1:**
 | 0800–0830 | — | Brief | Day 5 overview; microteaching schedule; evaluation criteria reminder (7 observation criteria) |
 | 0830–1200 | 22 | **Eval** | **Microteaching blocks:** each candidate delivers a 20-minute block to the class; evaluated by instructor on all 7 criteria; peer feedback after each block |
 | 1200–1300 | — | Lunch | |
-| 1300–1400 | 23 | **Eval** | **Written exam:** 20 questions covering adult learning principles, T&EO structure, evaluation procedures, error management, instructor performance standards; 80% passing score |
+| 1300–1400 | 23 | **Eval** | **Written exam:** 16 questions (50 points) covering adult learning principles, T&EO structure, evaluation procedures, error management, instructor performance standards; 80% passing score |
 | 1400–1500 | 24 | Discussion | Microteaching debrief: instructor provides individual feedback on microteaching performance; Go/No-Go results announced |
 | 1500–1600 | 25 | Brief | Phase 2 requirements brief: P2-1 (co-teach), P2-2 (lead observed), P2-3 (evaluator observation), P2-4 (certification); scheduling guidance |
 | 1600–1700 | 26 | Discussion | AAR: what went well, what to change; lesson improvement notes; course feedback |
@@ -155,10 +155,10 @@ Complete **10+ duty days before Day 1:**
 
 | Parameter | Detail |
 |---|---|
-| Questions | 20 (multiple choice and short answer) |
+| Questions | 16 questions (50 points; multiple choice and short answer) |
 | Topics | Adult learning principles, TCS framework, T&EO structure, Go/No-Go procedures, evaluation calibration, error management, instructor performance standards, pre-course administration |
 | Time | 60 minutes |
-| Passing score | 80% (16 of 20) |
+| Passing score | 80% (40 of 50) |
 | Open reference | Closed book; closed notes |
 
 ---

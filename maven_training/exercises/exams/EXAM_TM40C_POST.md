@@ -25,14 +25,14 @@ This assessment confirms proficiency upon completion of TM-40C training. A score
 **1. You configure a CCIR in MSS to alert when any maneuver battalion crosses Phase Line AMBER. After configuring the alert, it does not fire during a test run even though test data shows 2nd Battalion at the correct grid reference. The most likely cause is:**
 
 A. Geographic CCIR alerts require 30-minute activation lead time after configuration
-B. The CCIR is configured against the wrong data source — it may be pointed at a static position layer rather than the live unit position feed
+B. The test data must be submitted through an official movement report to trigger the alert
 C. Phase line-based CCIRs are not supported in the current MSS version
-D. The test data must be submitted through an official movement report to trigger the alert
+D. The CCIR is configured against the wrong data source — it may be pointed at a static position layer rather than the live unit position feed
 
 **2. A maneuver planner builds a COA sketch overlay in MSS showing axis of advance, phase lines, and unit boundaries. Before distributing this product for the COA brief, the most important check is:**
 
-A. Verify the overlay colors match the brigade's standard slide template
-B. Confirm data-as-of timestamps are displayed, OPSEC markings are applied, and distribution is limited to personnel with operational need to know
+A. Confirm data-as-of timestamps are displayed, OPSEC markings are applied, and distribution is limited to personnel with operational need to know
+B. Verify the overlay colors match the brigade's standard slide template
 C. Export the overlay to PowerPoint before the brief to prevent MSS connectivity issues
 D. Route the product through the S6 for network classification review
 
@@ -52,8 +52,8 @@ D. MSS replaces the red cell function by automating enemy COA generation
 
 **5. An obstacle overlay in MSS has been loaded from an engineer report submitted three days ago. The maneuver planner should:**
 
-A. Use the overlay without verification — three days is within normal obstacle data standards
-B. Display the overlay with a data-as-of timestamp, note to the staff that obstacle conditions may have changed, and coordinate with the engineer section for current status
+A. Display the overlay with a data-as-of timestamp, note to the staff that obstacle conditions may have changed, and coordinate with the engineer section for current status
+B. Use the overlay without verification — three days is within normal obstacle data standards
 C. Delete the overlay and wait for a new engineer report before displaying any obstacles
 D. Convert the overlay to a static image so the data-as-of problem is no longer displayed
 
@@ -67,9 +67,9 @@ D. Contact the task org data administrator and wait for an automated update
 **7. A route corridor displayed on the MSS COP shows green status (passable) based on a report submitted 18 hours ago. A staff officer wants to brief the route as passable for tonight's movement. The operations officer should:**
 
 A. Brief the route as passable — green status in MSS is authoritative
-B. Validate the 18-hour-old data against current route reconnaissance or TCP reports before briefing passability; 18 hours is significant for route status
+B. Remove the route from the COP and conduct the brief without route status
 C. Display the route with yellow status to be conservative
-D. Remove the route from the COP and conduct the brief without route status
+D. Validate the 18-hour-old data against current route reconnaissance or TCP reports before briefing passability; 18 hours is significant for route status
 
 **8. When applying OPSEC procedures to a maneuver visualization product in MSS, which combination of elements requires the most careful handling?**
 
@@ -148,13 +148,13 @@ _______________________________________________
 ## ANSWER KEY (Instructor Use Only — Do Not Distribute)
 
 **Section 1:**
-1. B — wrong data source is the most common geographic CCIR failure; the alert must point to the live feed
-2. B — OPSEC marking and distribution control are the critical checks before distribution of any maneuver product
+1. D — wrong data source is the most common geographic CCIR failure; the alert must point to the live feed
+2. A — OPSEC marking and distribution control are the critical checks before distribution of any maneuver product
 3. C — last reported position displayed with caveat is correct; never brief stale data as current
 4. B — MSS supports visualization and data access; analysis and judgment remain with the staff
-5. B — display with timestamp and coordinate with engineers; obstacle data currency is operationally significant
+5. A — display with timestamp and coordinate with engineers; obstacle data currency is operationally significant
 6. C — brief current status accurately; note the MSS discrepancy; do not brief incorrect MSS data as current
-7. B — 18 hours is significant for route status; validate before briefing passability
+7. D — 18 hours is significant for route status; validate before briefing passability
 8. B — the combination of positions, direction, phase line sequence, and timing is the most sensitive aggregate
 9. B — Table 2-1b (ADP 3-0, March 2025) defines the "I" in METT-TC(I) as Informational Considerations: information environment effects, OPSEC indicators, and adversary information capabilities. Option A describes personnel data (Troops variable), C describes Terrain and Weather, D describes sustainment data unrelated to the informational dimension.
 10. C — Section 8-4a (FM 5-0 planning reference) establishes 3:1 as the minimum planning ratio for a deliberate attack at the point of penetration. 1:3 is the defender's advantage ratio; 2:1 is below the planning standard; 6:1 describes the delay ratio, not deliberate attack.

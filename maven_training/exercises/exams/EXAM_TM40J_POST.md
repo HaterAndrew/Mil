@@ -25,14 +25,14 @@ This assessment evaluates mastery of TM-40J course learning objectives. A passin
 **1. Per TM-40J, the Technical PM's primary role is to:**
 
 A. Write code and build the technical components of MSS capabilities
-B. Manage scope, timeline, risk, and stakeholder communication — ensuring the technical team delivers the right thing to the right standard at the right time
-C. Conduct personnel evaluations and manage workload for all TM-40 specialist tracks
+B. Conduct personnel evaluations and manage workload for all TM-40 specialist tracks
+C. Manage scope, timeline, risk, and stakeholder communication — ensuring the technical team delivers the right thing to the right standard at the right time
 D. Serve as the technical lead for AI and ML model development on the team
 
 **2. Per TM-40J, a user story that is ready to be assigned to a developer must meet which standard?**
 
-A. It has been approved by the G6 data steward and added to the Ontology backlog
-B. It is written in the standard "As a [role], I want [capability] so that [benefit]" format with acceptance criteria a developer can confirm complete without follow-up questions
+A. It is written in the standard "As a [role], I want [capability] so that [benefit]" format with acceptance criteria a developer can confirm complete without follow-up questions
+B. It has been approved by the G6 data steward and added to the Ontology backlog
 C. It has been sized in story points and assigned to a sprint before the product owner reviews it
 D. It has been reviewed by the relevant WFF-track analyst to confirm operational need
 
@@ -46,15 +46,15 @@ D. Concept → Architecture → Development → Integration → Acceptance → O
 **4. Per TM-40J, the gate between the Prototype phase and the Evaluation phase requires:**
 
 A. Commander approval and a signed EXORD authorizing model use in operational reporting
-B. The model has been evaluated against a held-out dataset not used in training, and performance meets the defined threshold
+B. The data steward has certified the training data as authoritative
 C. The product owner has demonstrated the prototype to the operational stakeholder
-D. The data steward has certified the training data as authoritative
+D. The model has been evaluated against a held-out dataset not used in training, and performance meets the defined threshold
 
 **5. In TM-40J's Scrum framework for data projects, "sprint planning" requires the PM to:**
 
 A. Assign developers to individual tasks based on their TM-40 qualification level
-B. Set the sprint goal, select backlog items the team commits to completing, and confirm dependencies are cleared before the sprint starts
-C. Update the risk register with any new risks identified since the previous sprint
+B. Update the risk register with any new risks identified since the previous sprint
+C. Set the sprint goal, select backlog items the team commits to completing, and confirm dependencies are cleared before the sprint starts
 D. Brief the WFF-track stakeholders on what will be delivered in the upcoming sprint
 
 **6. Per TM-40J Chapter 4, the "translation problem" in requirements management refers to:**
@@ -67,16 +67,16 @@ D. The challenge of aligning USAREUR-AF MSS with coalition partner data standard
 **7. A PM builds a Sprint Board on MSS Workshop with the following Object Types: Project, Sprint, and Story. The Sprint Board correctly surfaces all stories assigned to the current sprint. Which TM-40J Chapter covers the build procedure for this tracking system?**
 
 A. Chapter 2 — Agile Project Management
-B. Chapter 4 — Stakeholder Management and Requirements Translation
-C. Chapter 5 — Building Project Tracking Systems on MSS
+B. Chapter 5 — Building Project Tracking Systems on MSS
+C. Chapter 4 — Stakeholder Management and Requirements Translation
 D. Chapter 7 — Delivery Planning and Production Readiness
 
 **8. Per TM-40J, "protecting the team from scope sprawl" means:**
 
 A. Encrypting project data so that unauthorized stakeholders cannot access sprint plans
-B. Managing the backlog so that new requirements from stakeholders are properly evaluated, sized, and triaged before they are added to an active sprint
+B. Ensuring that TM-40 developer qualifications are current before assigning complex build tasks
 C. Conducting a security review before any new data source is connected to the project pipeline
-D. Ensuring that TM-40 developer qualifications are current before assigning complex build tasks
+D. Managing the backlog so that new requirements from stakeholders are properly evaluated, sized, and triaged before they are added to an active sprint
 
 **9. The TM-40J risk register entry for a data availability risk MUST include:**
 
@@ -88,43 +88,43 @@ D. A reference to the ADP or FM that governs the affected data domain
 **10. Per TM-40J, the Definition of Done for a data product requires which of the following before production release?**
 
 A. All story points in the sprint are marked complete, the pipeline has run at least once, and the product owner has signed off
-B. Quality checks pass, documentation is complete, governance requirements are met, the operational user has accepted the product, and the production readiness review is complete against Appendix B criteria
+B. The Commander has reviewed the product in a formal IPR and authorized production deployment
 C. The WFF-track stakeholder has verified that the product matches their original requirement statement
-D. The Commander has reviewed the product in a formal IPR and authorized production deployment
+D. Quality checks pass, documentation is complete, governance requirements are met, the operational user has accepted the product, and the production readiness review is complete against Appendix B criteria
 
 **11. A TM-40J PM is managing a team that includes a TM-40H (AI Engineer) and a TM-40L (Software Engineer). The AI Engineer's work depends on an API integration the Software Engineer is building. The CORRECT action for the PM at sprint planning is:**
 
-A. Assign both stories to the same sprint and accept the dependency as a known risk
+A. Document the dependency in the risk register with the SWE story as a gate; assign the AI Engineer story with a clear blocker tag referencing the SWE story; flag for daily standup monitoring
 B. Move the AI Engineer's story to the following sprint until the API integration story is confirmed done
-C. Document the dependency in the risk register with the SWE story as a gate; assign the AI Engineer story with a clear blocker tag referencing the SWE story; flag for daily standup monitoring
+C. Assign both stories to the same sprint and accept the dependency as a known risk
 D. Escalate the dependency to the G6 data steward for resolution before sprint planning proceeds
 
 **12. Per TM-40J Chapter 8, the MOST common reason operational users resist a new MSS capability is:**
 
-A. Technical defects in the data product that surfaced during the rollout
+A. Lack of trust, unfamiliarity with the new tool, or concern that the product will create accountability they didn't have before
 B. Senior leadership did not formally direct adoption through an EXORD or policy letter
-C. Lack of trust, unfamiliarity with the new tool, or concern that the product will create accountability they didn't have before
+C. Technical defects in the data product that surfaced during the rollout
 D. The product was not demonstrated during a formal IPR before deployment
 
 **13. A commander-facing Project Status Dashboard on MSS Workshop, per TM-40J Chapter 5, must display:**
 
 A. The complete sprint backlog, velocity trend chart, and developer utilization by TM-40 track
-B. Overall project health, current sprint status, top blocking risks, milestone timeline, and a data-as-of timestamp
-C. The full risk register, all closed stories, and the project charter with acceptance criteria
+B. The full risk register, all closed stories, and the project charter with acceptance criteria
+C. Overall project health, current sprint status, top blocking risks, milestone timeline, and a data-as-of timestamp
 D. A comparison of planned vs. actual story points for all sprints completed to date
 
 **14. Per TM-40J, automated status alerts on the MSS Sprint Board should be configured to fire when:**
 
-A. Any team member updates a story's status to "In Progress"
-B. A story has been in "In Progress" status for more than one sprint cycle, or a sprint-level milestone is overdue
+A. A story has been in "In Progress" status for more than one sprint cycle, or a sprint-level milestone is overdue
+B. Any team member updates a story's status to "In Progress"
 C. A new requirement is added to the project backlog by a stakeholder
 D. The pipeline powering the Commander Dashboard has run successfully
 
 **15. Per TM-40J, a Technical PM should pursue TM-50J (Advanced Program Manager) if they meet which criteria?**
 
 A. They have completed TM-40J and passed the post-test with a score of 85% or higher
-B. They have a TM-40J Go evaluation on file and 18+ months leading technical data, AI, or software delivery programs
-C. They have been assigned to a TM-50 development program by their unit G6 or data office
+B. They have been assigned to a TM-50 development program by their unit G6 or data office
+C. They have a TM-40J Go evaluation on file and 18+ months leading technical data, AI, or software delivery programs
 D. They have completed at least one full ML project lifecycle from Problem Definition through Sustainment
 
 ---
@@ -212,21 +212,21 @@ Passing: 46/66 (70%) — Post-test only. Pre-test is diagnostic.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — PM manages scope, timeline, risk, and stakeholder communication; does not write code.
-2. B — Ready story has user-perspective format with acceptance criteria testable without follow-up.
+1. C — PM manages scope, timeline, risk, and stakeholder communication; does not write code.
+2. A — Ready story has user-perspective format with acceptance criteria testable without follow-up.
 3. B — Problem Definition → Data Audit → Prototype → Evaluation → Production → Sustainment.
-4. B — Gate requires evaluation against held-out dataset and performance meeting defined threshold.
-5. B — Sprint planning: set goal, select committed items, confirm dependencies are cleared.
+4. D — Gate requires evaluation against held-out dataset and performance meeting defined threshold.
+5. C — Sprint planning: set goal, select committed items, confirm dependencies are cleared.
 6. B — Translation problem: gap between what stakeholders ask for and what they actually need.
-7. C — Sprint Board build procedure is Chapter 5 (Building Project Tracking Systems on MSS).
-8. B — Scope protection = evaluating new requirements before they enter an active sprint.
+7. B — Sprint Board build procedure is Chapter 5 (Building Project Tracking Systems on MSS).
+8. D — Scope protection = evaluating new requirements before they enter an active sprint.
 9. B — Risk register entry requires description, likelihood, impact, mitigation, owner, and due date.
-10. B — DoD requires quality, documentation, governance, user acceptance, and production readiness review.
-11. C — Document dependency, block the downstream story, flag for standup monitoring.
-12. C — Resistance most often stems from distrust, unfamiliarity, or accountability concerns.
-13. B — Commander Dashboard: overall health, sprint status, blocking risks, milestone timeline, data-as-of.
-14. B — Alerts fire when a story exceeds one sprint in progress, or a sprint milestone is overdue.
-15. B — TM-50J requires TM-40J Go evaluation + 18+ months leading technical data/AI/software programs.
+10. D — DoD requires quality, documentation, governance, user acceptance, and production readiness review.
+11. A — Document dependency, block the downstream story, flag for standup monitoring.
+12. A — Resistance most often stems from distrust, unfamiliarity, or accountability concerns.
+13. C — Commander Dashboard: overall health, sprint status, blocking risks, milestone timeline, data-as-of.
+14. A — Alerts fire when a story exceeds one sprint in progress, or a sprint milestone is overdue.
+15. C — TM-50J requires TM-40J Go evaluation + 18+ months leading technical data/AI/software programs.
 
 **Short Answer Guidance:**
 

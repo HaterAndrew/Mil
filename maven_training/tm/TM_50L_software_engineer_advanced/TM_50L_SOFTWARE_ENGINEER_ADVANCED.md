@@ -79,6 +79,8 @@ TM-50L engineers are force multipliers. One senior engineer enabling ten TM-40L 
 | TM-50J | Program Manager Advanced | Platform engineering program coordination; SWE team structure |
 | TM-50K | Knowledge Manager Advanced | Platform SDK patterns for KM system backends |
 | TM-50L | Software Engineer Advanced | THIS DOCUMENT |
+| TM-50N | UI/UX Designer Advanced | Frontend design collaboration; design system implementation |
+| TM-50O | Platform Engineer Advanced | Platform/application boundary; DevOps collaboration; deployment targets |
 
 **WFF Operational Consumer Note.** The software infrastructure built by TM-50L engineers is the delivery layer for capabilities consumed by all six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). WFF practitioners access MSS data through Workshop applications, OSDK dashboards, and API integrations that TM-50L engineers architect and govern. Platform reliability, security, and performance are not abstract engineering concerns — they directly determine whether WFF staff sections can access the operational picture they need at the moment they need it.
 

@@ -24,17 +24,17 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 
 **1. The primary purpose of the Common Operating Picture (COP) in Mission Command is to:**
 
-A. Automatically generate course of action recommendations for the commander
-B. Provide all echelons a shared understanding of the operational environment based on reported status
+A. Provide all echelons a shared understanding of the operational environment based on reported status
+B. Automatically generate course of action recommendations for the commander
 C. Replace the Intelligence Preparation of the Battlefield (IPB) process
 D. Record all orders and annexes for post-mission review
 
 **2. A Commander's Critical Information Requirement (CCIR) is best described as:**
 
 A. A data feed that automatically updates the COP in real time
-B. Information the commander needs to make a critical decision or take a decisive action
+B. Any piece of intelligence information rated as Priority Intelligence Requirement (PIR)
 C. A standing report submitted daily by all subordinate units
-D. Any piece of intelligence information rated as Priority Intelligence Requirement (PIR)
+D. Information the commander needs to make a critical decision or take a decisive action
 
 **3. In the context of MSS, "data currency" refers to:**
 
@@ -54,8 +54,8 @@ D. MDMP is only used when MSS is unavailable in degraded operations
 
 A. Immediately brief the commander that readiness has dropped below 70%
 B. Dismiss the alert since the data is stale and recheck tomorrow
-C. Verify data currency, contact the source unit to confirm current status, and characterize the uncertainty when briefing the commander
-D. Disable the CCIR and wait for fresh data before reconfiguring it
+C. Disable the CCIR and wait for fresh data before reconfiguring it
+D. Verify data currency, contact the source unit to confirm current status, and characterize the uncertainty when briefing the commander
 
 **6. During a CP displacement, which action is most important to coordinate with the S6 before moving?**
 
@@ -66,8 +66,8 @@ D. Exporting all current CCIR configurations to a PDF for manual tracking
 
 **7. The difference between "reported status" and "assessed status" in a commander product is:**
 
-A. Reported status is classified; assessed status is unclassified
-B. Reported status is what the data shows has been submitted; assessed status is the commander's judgment about actual conditions, which may differ
+A. Reported status is what the data shows has been submitted; assessed status is the commander's judgment about actual conditions, which may differ
+B. Reported status is classified; assessed status is unclassified
 C. Reported status is real-time; assessed status is from the previous reporting cycle
 D. They are synonyms and can be used interchangeably in a BUA product
 
@@ -135,13 +135,13 @@ _______________________________________________
 
 **Multiple Choice:**
 
-1. B — The COP provides all echelons a shared understanding of the operational environment based on reported status; it does not generate recommendations or replace IPB.
-2. B — A CCIR is information the commander needs to make a critical decision or take a decisive action; it is not a data feed, a standing report, or limited to intelligence information.
+1. A — The COP provides all echelons a shared understanding of the operational environment based on reported status; it does not generate recommendations or replace IPB.
+2. D — A CCIR is information the commander needs to make a critical decision or take a decisive action; it is not a data feed, a standing report, or limited to intelligence information.
 3. B — Data currency refers to how recently the displayed data was last updated from its source; not cost, classification, or record count.
 4. C — MSS provides data and visualization support within the operations process; it does not replace staff judgment, generate COAs, or substitute for MDMP.
-5. C — Verify data currency, contact the source unit to confirm current status, and characterize the uncertainty when briefing the commander; do not brief stale data as fact, dismiss the alert, or disable the CCIR.
+5. D — Verify data currency, contact the source unit to confirm current status, and characterize the uncertainty when briefing the commander; do not brief stale data as fact, dismiss the alert, or disable the CCIR.
 6. B — Ensuring MSS network connectivity continuity is the most important action before CP displacement; loss of COP continuity during displacement creates a command and control gap.
-7. B — Reported status is what the data shows has been submitted; assessed status is the commander's judgment about actual conditions, which may differ; they are not synonyms and must not be combined without explicit labeling.
+7. A — Reported status is what the data shows has been submitted; assessed status is the commander's judgment about actual conditions, which may differ; they are not synonyms and must not be combined without explicit labeling.
 8. C — Correct OPSEC: share via MSS Workshop with read-only permissions for authorized accounts; apply correct classification marking before distribution. Options A, B, and D are distribution control violations.
 
 **Short Answer Guidance:**

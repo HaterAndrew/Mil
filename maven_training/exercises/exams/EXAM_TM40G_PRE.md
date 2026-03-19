@@ -25,8 +25,8 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 **1. In a linear regression model, the coefficient of determination (R²) represents:**
 
 A. The probability that the model's predictions are correct
-B. The proportion of variance in the dependent variable explained by the independent variables
-C. The average absolute difference between predicted and actual values
+B. The average absolute difference between predicted and actual values
+C. The proportion of variance in the dependent variable explained by the independent variables
 D. The statistical significance of the largest coefficient in the model
 
 **2. A residual in a regression model is defined as:**
@@ -39,21 +39,21 @@ D. The intercept term in the regression equation
 **3. In time series analysis, an "ARIMA(p,d,q)" model's "d" parameter specifies:**
 
 A. The number of autoregressive lags
-B. The order of differencing applied to make the series stationary
-C. The number of moving average terms
+B. The number of moving average terms
+C. The order of differencing applied to make the series stationary
 D. The seasonal period of the time series
 
 **4. A Monte Carlo simulation is used to:**
 
-A. Solve linear programming problems with continuous decision variables
-B. Estimate the probability distribution of an outcome by running many random trials
+A. Estimate the probability distribution of an outcome by running many random trials
+B. Solve linear programming problems with continuous decision variables
 C. Fit a regression model to historical time series data
 D. Optimize a supply chain by minimizing total transportation cost
 
 **5. In operations research, a "sensitivity analysis" on a linear program answers:**
 
-A. How well the model fits the training data
-B. How much the optimal solution changes if a constraint or objective coefficient is varied
+A. How much the optimal solution changes if a constraint or objective coefficient is varied
+B. How well the model fits the training data
 C. Whether the LP solution is unique or has multiple optima
 D. The confidence interval around the predicted optimal value
 
@@ -66,9 +66,9 @@ D. The variance of the forecast model used to support the analysis
 
 **7. A "confidence interval" for a point estimate means:**
 
-A. The range within which the true population parameter falls with a specified probability over repeated sampling
+A. The minimum and maximum values in the dataset
 B. The accuracy of a single prediction from the model
-C. The minimum and maximum values in the dataset
+C. The range within which the true population parameter falls with a specified probability over repeated sampling
 D. The interval within which the model was trained
 
 **8. "Cross-validation" in model evaluation is primarily used to:**
@@ -80,24 +80,24 @@ D. Validate that input data meets schema requirements before modeling
 
 **9. In the context of a commander's brief, a "BLUF" (Bottom Line Up Front) means:**
 
-A. The most detailed technical section is placed first
-B. The key finding and recommended action are stated at the beginning before supporting analysis
+A. The key finding and recommended action are stated at the beginning before supporting analysis
+B. The most detailed technical section is placed first
 C. The brief opens with background context and builds to conclusions
 D. All charts are placed before any text explanation
 
 **10. Setting a "random seed" in a simulation is important because:**
 
 A. It makes the simulation run faster by reducing randomness
-B. It ensures reproducibility — the same seed produces the same sequence of random numbers
+B. It is required by Army policy for all approved modeling tools
 C. It prevents the simulation from producing extreme outliers
-D. It is required by Army policy for all approved modeling tools
+D. It ensures reproducibility — the same seed produces the same sequence of random numbers
 
 **11. A linear programming (LP) formulation must include:**
 
 A. A loss function, training data, and validation metrics
-B. An objective function to optimize and a set of constraints that bound the solution space
+B. A network diagram showing the flow of resources
 C. A probability distribution for each decision variable
-D. A network diagram showing the flow of resources
+D. An objective function to optimize and a set of constraints that bound the solution space
 
 **12. In Army operations research, the distinction between "prediction interval" and "confidence interval" matters most when:**
 
@@ -117,8 +117,8 @@ D. The series has been smoothed to remove seasonal variation
 
 A. "The model predicts 450 units."
 B. "Demand will be between 380 and 520 units."
-C. "Estimated demand is 450 units (90% CI: 380–520). We are 90% confident the true demand falls within this range."
-D. "The model has 90% accuracy."
+C. "The model has 90% accuracy."
+D. "Estimated demand is 450 units (90% CI: 380–520). We are 90% confident the true demand falls within this range."
 
 **15. In a resource allocation problem where the G4 must distribute 500 maintenance man-hours across 12 units to maximize fleet readiness, the MOST appropriate analytical approach is:**
 
@@ -202,20 +202,20 @@ Passing: N/A — Pre-test is diagnostic only.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — R² is the proportion of variance explained by the model (coefficient of determination).
+1. C — R² is the proportion of variance explained by the model (coefficient of determination).
 2. B — Residual = observed value minus predicted value.
-3. B — The "d" in ARIMA is the order of differencing.
-4. B — Monte Carlo estimates outcome probability distributions through random trials.
-5. B — Sensitivity analysis shows how the optimal solution changes with parameter variation.
+3. C — The "d" in ARIMA is the order of differencing.
+4. A — Monte Carlo estimates outcome probability distributions through random trials.
+5. A — Sensitivity analysis shows how the optimal solution changes with parameter variation.
 6. B — Risk = probability × impact is the standard operations research definition.
-7. A — Confidence interval is the range capturing the true parameter with specified probability over repeated sampling.
+7. C — Confidence interval is the range capturing the true parameter with specified probability over repeated sampling.
 8. B — Cross-validation estimates generalization performance on held-out data.
-9. B — BLUF places key finding and recommended action first.
-10. B — Random seed ensures reproducibility of simulation results.
-11. B — LP requires an objective function and constraints.
+9. A — BLUF places key finding and recommended action first.
+10. D — Random seed ensures reproducibility of simulation results.
+11. D — LP requires an objective function and constraints.
 12. A — Prediction vs. confidence interval distinction is critical when a commander needs a bound on a specific future value.
 13. B — Stationarity = statistical properties do not change over time.
-14. C — Full uncertainty communication with CI label and interpretation is the correct format.
+14. D — Full uncertainty communication with CI label and interpretation is the correct format.
 15. C — LP with man-hour constraints and readiness objective is the appropriate formulation.
 
 **Short Answer Guidance:**

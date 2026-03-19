@@ -325,8 +325,6 @@ Before delivering any analytical product, confirm each item.
 
 ---
 
----
-
 ## CURRICULUM NOTES
 
 **Prerequisite:** TM-30 (Advanced Builder) is REQUIRED before beginning TM-40G or this guide. Graduate-level quantitative background (statistics, R or Python) is separately required.

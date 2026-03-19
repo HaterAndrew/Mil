@@ -355,6 +355,8 @@ The ML systems built at TM-50M level inform readiness decisions for V Corps form
 | TM-50J | Advanced Program Manager | ML program lifecycle; governance documentation |
 | TM-50K | Advanced Knowledge Manager | Feature data governance; training corpus design |
 | TM-50L | Advanced Software Engineer | Platform SDK infrastructure; OSDK model-serving integrations |
+| TM-50N | Advanced UI/UX Designer | Feature engineering UI; model monitoring dashboards |
+| TM-50O | Advanced Platform Engineer | ML platform infrastructure; training pipeline orchestration |
 
 **WFF Operational Consumer Note.** ML models built and maintained by TM-50M engineers serve the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). Readiness prediction models serve G3 (Movement and Maneuver). Logistics demand forecasting serves G4 (Sustainment). Personnel risk models may serve G1 and G6. The mental model shift described in this guide — from model builder to ML systems engineer — must account for the diversity of WFF consumers: different latency requirements, different interpretability needs, and different consequences of model failure.
 

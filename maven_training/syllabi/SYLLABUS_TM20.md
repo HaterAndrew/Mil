@@ -210,7 +210,7 @@ Full re-evaluation requires scheduling through the unit training coordinator. Sa
 
 ## Continuation
 
-TM-20 completion qualifies personnel to advance to TM-30 (Advanced Builder). **All TM-40 tracks — both WFF (A–F) and Specialist (G–M) — require TM-30 completion before enrollment.** TM-30 is a hard prerequisite — no waivers — for every TM-40 track. Confirm completion with your unit training coordinator before registering.
+TM-20 completion qualifies personnel to advance to TM-30 (Advanced Builder). **All TM-40 tracks — both WFF (A–F) and Specialist (G–O) — require TM-30 completion before enrollment.** TM-30 is a hard prerequisite — no waivers — for every TM-40 track. Confirm completion with your unit training coordinator before registering.
 
 | Path | Track | Prerequisite | Who |
 |---|---|---|---|
@@ -221,9 +221,9 @@ TM-20 completion qualifies personnel to advance to TM-30 (Advanced Builder). **A
 | **WFF — Sustainment** | TM-40D | TM-30 (required) | G4/S4 staff, logistics officers, supply chain managers |
 | **WFF — Protection** | TM-40E | TM-30 (required) | FP officers, CBRN officers, provost marshal staff |
 | **WFF — Mission Command** | TM-40F | TM-30 (required) | Battle captains, XOs, CDRs, MC-function staff |
-| **Specialist path** | TM-40G–M (via TM-30) | TM-30 (required) | Data analysts, 17/25-series, ORSA, AI/ML, PM, KM, SWE |
+| **Specialist path** | TM-40G–O (via TM-30) | TM-30 (required) | Data analysts, 17/25-series, ORSA, AI/ML, PM, KM, SWE |
 
-All TM-40 tracks — WFF (TM-40A–F) and Specialist (TM-40G–M) — require **TM-30** as a hard prerequisite. Specialist tracks (TM-40G–M) additionally require code-level preparation per their individual syllabi.
+All TM-40 tracks — WFF (TM-40A–F) and Specialist (TM-40G–O) — require **TM-30** as a hard prerequisite. Specialist tracks (TM-40G–O) additionally require code-level preparation per their individual syllabi.
 
 ---
 

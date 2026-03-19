@@ -7,9 +7,9 @@ export default function Doctrine({ showPanel }: Props) {
   return (
     <>
       <div className="section-header">
-        <span className="section-badge">DRAFT PUBS</span>
-        <span className="section-title">Draft Data Literacy Publications</span>
-        <span className="section-subtitle">DRAFT &mdash; Not yet approved for distribution &bull; Foundational data literacy content &bull; Platform-agnostic</span>
+        <span className="section-badge">STRATEGY &amp; DOCTRINE</span>
+        <span className="section-title">Command Strategy &amp; Data Literacy Publications</span>
+        <span className="section-subtitle">Command-level strategy &bull; VAULTIS framework &bull; Foundational data literacy content &bull; Platform-agnostic</span>
       </div>
 
       <div className="callout caution">
@@ -22,6 +22,33 @@ export default function Doctrine({ showPanel }: Props) {
         <div className="callout-body">Before touching MSS, understand <em>why</em> data matters. Data Literacy for Senior Leaders is written for commanders and senior leaders. Data Literacy Technical Reference is the comprehensive reference for all personnel. Neither publication is platform-specific.</div>
       </div>
 
+      <h2>COMMAND STRATEGY</h2>
+      <div className="callout note">
+        <div className="callout-label">STRATEGIC CONTEXT</div>
+        <div className="callout-body">The documents below establish the command-level vision and process for data-driven operations at USAREUR-AF. They provide the <strong>why</strong> behind the training program and define how capability development flows from problem identification through fielding.</div>
+      </div>
+      <div className="card-grid card-grid-2">
+        <div className="card gold-top">
+          <div className="card-label">CG-SIGNED &bull; MAY 2025 &bull; UNCLASSIFIED</div>
+          <div className="card-title">USAREUR-AF Data and Analytics Strategy</div>
+          <div className="card-body">
+            <p>Signed by GEN Donahue. Establishes the command vision for data-driven operations over the next 3&ndash;5 years. Defines four strategic outcomes: Decision Advantage, Data Interoperability, Modernize Theater Data Infrastructure, and Data-Ready Workforce.</p>
+            <p><strong>Key frameworks:</strong> VAULTIS data attributes &bull; Cognitive Hierarchy (Data &rarr; Information &rarr; Knowledge &rarr; Shared Understanding &rarr; Decision Advantage) &bull; Decision Dominance</p>
+            <p><strong>Vision:</strong> <em>Leverage data at speed and scale for decision dominance and optimized operations.</em></p>
+          </div>
+        </div>
+        <div className="card">
+          <div className="card-label">CUI &bull; ODT / CTO</div>
+          <div className="card-title">Unified Data Transition Strategy</div>
+          <div className="card-body">
+            <p>Quarterly product cycle for identifying, developing, and deploying data capabilities. Two phases: Discovery &amp; Framing (Problem ID &rarr; Bootcamp &rarr; CADs) and Iteration &amp; Implementation (PoC &rarr; Exercise validation).</p>
+            <p><strong>Key events:</strong> Foundry Bootcamp &bull; Capability Awareness Days (CADs) &bull; CG-chaired Priority Steering Board (PSB) &bull; Forcing Function exercises</p>
+            <p><strong>Decision gate:</strong> Persevere, pivot, or divest at exercise validation.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>DRAFT DATA LITERACY PUBLICATIONS</h2>
       <div className="card-grid card-grid-2">
         <div className="card gold-top">
           <div className="card-label">SENIOR LEADERS (O-5+ / SGM+)</div>
@@ -48,6 +75,9 @@ export default function Doctrine({ showPanel }: Props) {
         <table>
           <thead><tr><th>Publication</th><th>Audience</th><th>Purpose</th><th>When to Read</th></tr></thead>
           <tbody>
+            <tr><td colSpan={4} style={{background:'var(--navy-pale)',fontWeight:700,fontSize:'11px',letterSpacing:'.06em',textTransform:'uppercase',color:'var(--navy)'}}>Command Strategy</td></tr>
+            <tr><td><strong>Data &amp; Analytics Strategy</strong></td><td>All personnel</td><td>CG-signed command vision; 4 strategic outcomes; VAULTIS; decision dominance</td><td>Strategic context for all training</td></tr>
+            <tr><td><strong>Unified Data Transition Strategy</strong></td><td>TM-30+, ODT, CTO</td><td>Quarterly product cycle; PSB; capability development process (CUI)</td><td>Before product submissions</td></tr>
             <tr><td colSpan={4} style={{background:'var(--navy-pale)',fontWeight:700,fontSize:'11px',letterSpacing:'.06em',textTransform:'uppercase',color:'var(--navy)'}}>Foundation &mdash; All Personnel</td></tr>
             <tr><td><strong>Data Literacy (SL)</strong></td><td>O-5+ / SGM+, Sr Civilians</td><td>Principles, command responsibilities</td><td>Before directing MSS use</td></tr>
             <tr><td><strong>Data Literacy</strong></td><td>All personnel</td><td>Comprehensive data literacy reference</td><td>Before TM-10 (recommended)</td></tr>
@@ -69,7 +99,7 @@ export default function Doctrine({ showPanel }: Props) {
             <tr><td><strong>TM-40K</strong></td><td>KMs / KMOs</td><td>Knowledge repositories, AIP summarization, lessons learned</td><td>After TM-30</td></tr>
             <tr><td><strong>TM-40L</strong></td><td>SWEs</td><td>OSDK, full-stack Foundry apps, TypeScript Functions</td><td>After TM-30</td></tr>
             <tr><td colSpan={4} style={{background:'var(--navy-pale)',fontWeight:700,fontSize:'11px',letterSpacing:'.06em',textTransform:'uppercase',color:'var(--navy)'}}>TM-50 &mdash; Advanced Technical Tracks (by role/MOS)</td></tr>
-            <tr><td><strong>TM-50G&ndash;M</strong></td><td>Senior developers (all tracks)</td><td>Advanced versions of each TM-40 specialist track</td><td>After TM-40 (by track)</td></tr>
+            <tr><td><strong>TM-50G&ndash;O</strong></td><td>Senior developers (all tracks)</td><td>Advanced versions of each TM-40 specialist track</td><td>After TM-40 (by track)</td></tr>
           </tbody>
         </table>
       </div>

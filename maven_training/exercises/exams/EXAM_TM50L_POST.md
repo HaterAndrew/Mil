@@ -25,8 +25,8 @@ This assessment evaluates mastery of course learning objectives. A passing score
 **1. A junior engineer on your team proposes bypassing CBAC on a staging tenant "just until the sprint demo is done" because the test data setup is taking too long. Per TM-50L, your response is:**
 
 A. Allow it for the staging environment only — CBAC bypass is acceptable in non-production tenants
-B. Reject the bypass without exception — CBAC bypass is NEVER acceptable in any environment; the correct fix is to set up properly scoped test data for each tenant
-C. Allow it if the data steward approves it in writing for the duration of the sprint
+B. Allow it if the data steward approves it in writing for the duration of the sprint
+C. Reject the bypass without exception — CBAC bypass is NEVER acceptable in any environment; the correct fix is to set up properly scoped test data for each tenant
 D. Allow it with a formal risk acceptance signed by the tech lead
 
 **2. The Platform SDK credentials used for an automated ingestion pipeline are discovered in a commit to the team's Git repository. Per TM-50L, the IMMEDIATE required actions are:**
@@ -46,43 +46,43 @@ D. That the change passes SAST scanning for security vulnerabilities
 **4. Per TM-50L, a C2DAO sign-off is required for which of the following operations?**
 
 A. Adding a new Widget to a Workshop application
-B. Both Ontology branch merges to production AND changes to CBAC policy configurations
+B. Deploying a new Contour analysis to the production project
 C. Any Pipeline Builder pipeline change that affects a curated dataset
-D. Deploying a new Contour analysis to the production project
+D. Both Ontology branch merges to production AND changes to CBAC policy configurations
 
 **5. A high-throughput ingestion pipeline consuming events from a Kinesis stream into a Foundry dataset should implement which pattern to prevent partial writes from corrupting downstream consumers?**
 
-A. Write each event individually as it is consumed from the stream
-B. Buffer events into batches, write the batch in a single Foundry write transaction (atomic commit), and only advance the Kinesis checkpoint after the transaction commits successfully
+A. Buffer events into batches, write the batch in a single Foundry write transaction (atomic commit), and only advance the Kinesis checkpoint after the transaction commits successfully
+B. Write each event individually as it is consumed from the stream
 C. Write events directly to the Ontology Object Type to skip the intermediate dataset step
 D. Use a separate pipeline to validate each event before it is written to the dataset
 
 **6. You are profiling a Foundry OSDK query that returns all Vehicle Objects for V Corps (approximately 18,000 records). The query takes 47 seconds. The FIRST profiling step is:**
 
 A. Add an index to the `unit_designation` property on the Vehicle Object Type
-B. Identify whether the bottleneck is in the OSDK client pagination overhead, the Ontology query execution, or the network transfer — by measuring latency at each stage separately before applying any optimization
-C. Reduce the number of properties returned per object to a minimal subset
+B. Reduce the number of properties returned per object to a minimal subset
+C. Identify whether the bottleneck is in the OSDK client pagination overhead, the Ontology query execution, or the network transfer — by measuring latency at each stage separately before applying any optimization
 D. Split the query into parallel requests by unit echelon to reduce per-query record counts
 
 **7. A "cache-aside" caching strategy for frequently queried Ontology data means:**
 
 A. The application writes to the cache and database simultaneously on every write
-B. On a cache miss, the application fetches from the Ontology, populates the cache, and serves the result; on cache hit, the application serves from cache without querying the Ontology
-C. The cache is pre-populated at application startup with all expected queries
+B. The cache is pre-populated at application startup with all expected queries
+C. On a cache miss, the application fetches from the Ontology, populates the cache, and serves the result; on cache hit, the application serves from cache without querying the Ontology
 D. Writes invalidate the cache asynchronously after the database write completes
 
 **8. An external Army logistics system will push real-time supply requisition data via gRPC to a USAREUR-AF MSS ingestion endpoint. Before the external feed is activated in production, which step is required per TM-50L?**
 
 A. A load test demonstrating the endpoint can handle peak message volume
-B. A security review of the external data feed — validating data provenance, input schema, and ensuring that untrusted external data is validated and sanitized before entering the Foundry Ontology
+B. A data steward review confirming the Ontology schema can accommodate the new data fields
 C. A GO-level authorization memorandum approving the external integration
-D. A data steward review confirming the Ontology schema can accommodate the new data fields
+D. A security review of the external data feed — validating data provenance, input schema, and ensuring that untrusted external data is validated and sanitized before entering the Foundry Ontology
 
 **9. Performance profiling of a production Foundry environment per TM-50L requires:**
 
 A. Running profiling queries directly against the production Ontology without restriction — performance data is non-sensitive
-B. Coordination with the C2DAO data steward before running profiling queries in production — resource-intensive profiling can degrade platform performance for operational users
-C. Using only pre-approved profiling queries from the USAREUR-AF approved query library
+B. Using only pre-approved profiling queries from the USAREUR-AF approved query library
+C. Coordination with the C2DAO data steward before running profiling queries in production — resource-intensive profiling can degrade platform performance for operational users
 D. Conducting all profiling during off-peak hours without additional coordination
 
 **10. A TM-50L security assessment of a Slate application reveals that a user-supplied unit designation string is interpolated directly into an Ontology Object filter query without sanitization. This is classified as:**
@@ -101,29 +101,29 @@ D. An engineer from outside the team to prevent conflict of interest
 
 **12. In a multi-tenant USAREUR-AF MSS deployment, cross-tenant data bleed would violate which Army Regulation?**
 
-A. AR 600-8-2 (Suspension of Favorable Personnel Actions)
-B. AR 25-2 (Army Cybersecurity), which requires that information systems protect data from unauthorized access — cross-tenant bleed constitutes unauthorized access to another unit's operational data
+A. AR 25-2 (Army Cybersecurity), which requires that information systems protect data from unauthorized access — cross-tenant bleed constitutes unauthorized access to another unit's operational data
+B. AR 600-8-2 (Suspension of Favorable Personnel Actions)
 C. AR 380-5 (Department of the Army Information Security Program)
 D. AR 25-400-2 (The Army Records Information Management System)
 
 **13. An Ontology branch automation workflow that creates a new dataset branch, runs pipeline transforms, validates output quality, and merges to main without human review is:**
 
-A. Acceptable if all automated quality checks pass — this is the purpose of branch automation
-B. Non-compliant with C2DAO requirements — branch merges to production require C2DAO sign-off as a human-in-the-loop step regardless of automated check results
+A. Non-compliant with C2DAO requirements — branch merges to production require C2DAO sign-off as a human-in-the-loop step regardless of automated check results
+B. Acceptable if all automated quality checks pass — this is the purpose of branch automation
 C. Acceptable for dataset branches; non-compliant only for Ontology schema branches
 D. Acceptable if the pipeline is designated as low-risk by the data steward
 
 **14. When onboarding a new TM-40L engineer to the platform, the FIRST topic to cover per TM-50L onboarding standards is:**
 
 A. The OSDK authentication pattern and ResourceIterator pagination
-B. CBAC configuration, tenant isolation architecture, and the absolute prohibition on CBAC bypass — because a misunderstanding of tenant isolation is the failure mode with the highest potential for irreversible data exposure harm
+B. The Ontology CI pipeline and how to run it locally
 C. The C2DAO branch workflow and promotion requirements
-D. The Ontology CI pipeline and how to run it locally
+D. CBAC configuration, tenant isolation architecture, and the absolute prohibition on CBAC bypass — because a misunderstanding of tenant isolation is the failure mode with the highest potential for irreversible data exposure harm
 
 **15. A platform architecture review reveals that two separate MSS programs are querying the same large Vehicle Object set independently, each running full-table scans 12 times per day. The correct TM-50L architectural recommendation is:**
 
-A. Migrate both programs to use gRPC instead of the OSDK for better query performance
-B. Implement a shared caching layer (or a pre-computed Foundry dataset view) that both programs consume — eliminating redundant full-table scans and reducing platform load
+A. Implement a shared caching layer (or a pre-computed Foundry dataset view) that both programs consume — eliminating redundant full-table scans and reducing platform load
+B. Migrate both programs to use gRPC instead of the OSDK for better query performance
 C. Add indexes to all queried properties on the Vehicle Object Type
 D. Reduce each program's query frequency to 6 times per day as a rate-limiting measure
 
@@ -202,21 +202,21 @@ Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — CBAC bypass is NEVER acceptable in any environment; set up properly scoped test data instead.
+1. C — CBAC bypass is NEVER acceptable in any environment; set up properly scoped test data instead.
 2. B — Report immediately as security incident, rotate credentials, audit access log, investigate root cause.
 3. B — Ontology CI validates that downstream consumers (OSDK queries, validators, FOOs, pipelines) will not break.
-4. B — C2DAO sign-off required for both Ontology branch merges AND CBAC policy changes.
-5. B — Buffer into batches, write in atomic transaction, advance checkpoint only after successful commit.
-6. B — Profile at each stage (client pagination, query execution, network) before applying any optimization.
-7. B — Cache-aside: fetch from Ontology on miss, populate cache, serve from cache on hit.
-8. B — Security review of external data feed required (provenance, schema, input validation) before activation.
-9. B — Production profiling requires C2DAO data steward coordination to prevent degrading operational users.
+4. D — C2DAO sign-off required for both Ontology branch merges AND CBAC policy changes.
+5. A — Buffer into batches, write in atomic transaction, advance checkpoint only after successful commit.
+6. C — Profile at each stage (client pagination, query execution, network) before applying any optimization.
+7. C — Cache-aside: fetch from Ontology on miss, populate cache, serve from cache on hit.
+8. D — Security review of external data feed required (provenance, schema, input validation) before activation.
+9. C — Production profiling requires C2DAO data steward coordination to prevent degrading operational users.
 10. B — Critical injection vulnerability — unsanitized user input in query logic can expose unauthorized records.
 11. B — Peer reviewer must be TM-50L qualified to review platform-level CBAC, Ontology CI, and SDK integrations.
-12. B — AR 25-2 (Army Cybersecurity) governs protection from unauthorized data access; cross-tenant bleed = violation.
-13. B — Branch merges to production require C2DAO human sign-off — not automated regardless of check results.
-14. B — CBAC and tenant isolation first — highest potential harm from misunderstanding; CBAC bypass can expose operational data irreversibly.
-15. B — Shared caching layer or pre-computed view eliminates redundant full-table scans across both programs.
+12. A — AR 25-2 (Army Cybersecurity) governs protection from unauthorized data access; cross-tenant bleed = violation.
+13. A — Branch merges to production require C2DAO human sign-off — not automated regardless of check results.
+14. D — CBAC and tenant isolation first — highest potential harm from misunderstanding; CBAC bypass can expose operational data irreversibly.
+15. A — Shared caching layer or pre-computed view eliminates redundant full-table scans across both programs.
 
 **Short Answer Guidance:**
 

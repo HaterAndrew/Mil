@@ -24,15 +24,15 @@ This assessment evaluates mastery of course learning objectives. A passing score
 
 **1. A multi-agent system has three agents: a retrieval agent, a generation agent, and a validation agent. The retrieval agent begins timing out intermittently. Without a circuit breaker, the most likely consequence is:**
 
-A. The validation agent will catch the errors and produce correct output despite the retrieval failures
-B. Generation agent receives empty or partial context, produces low-quality or hallucinated output, and the bad output propagates through the validation step — corrupting the Ontology with incorrect data
+A. Generation agent receives empty or partial context, produces low-quality or hallucinated output, and the bad output propagates through the validation step — corrupting the Ontology with incorrect data
+B. The validation agent will catch the errors and produce correct output despite the retrieval failures
 C. The system automatically retries the retrieval agent until success
 D. The generation agent skips retrieval context and falls back to its base model knowledge
 
 **2. The rate-limiting requirement for an agent chain that can write to the Foundry Ontology is specifically designed to:**
 
-A. Comply with Foundry API rate limits to prevent HTTP 429 errors
-B. Prevent an uncontrolled agent chain from executing a large number of irreversible Ontology writes before a human can detect and intervene in a failure scenario
+A. Prevent an uncontrolled agent chain from executing a large number of irreversible Ontology writes before a human can detect and intervene in a failure scenario
+B. Comply with Foundry API rate limits to prevent HTTP 429 errors
 C. Ensure the agent does not exceed compute budget allocated for the project
 D. Limit agent outputs to the number of records a human reviewer can process per shift
 
@@ -46,28 +46,28 @@ D. The review determines the classification level of the fine-tuned model artifa
 **4. In a hybrid retrieval RAG architecture, combining dense and sparse retrieval improves over dense-only retrieval because:**
 
 A. Dense retrieval alone is too computationally expensive for production deployments
-B. Sparse retrieval captures exact-match keywords (military unit designators, equipment NSNs, location names) that semantic embeddings may fail to retrieve accurately
+B. Dense retrieval does not support chunked documents
 C. Sparse retrieval enforces classification constraints that dense retrieval cannot
-D. Dense retrieval does not support chunked documents
+D. Sparse retrieval captures exact-match keywords (military unit designators, equipment NSNs, location names) that semantic embeddings may fail to retrieve accurately
 
 **5. A corpus quality evaluation for a RAG system used for operational planning should assess:**
 
 A. Document count only — larger corpora always produce better retrieval quality
-B. Document freshness, deduplication, classification handling, coverage of relevant topics, and chunk coherence — poor corpus quality directly degrades generation quality regardless of LLM capability
+B. Whether documents are in PDF or plain-text format
 C. The embedding model's performance on a generic benchmark dataset
-D. Whether documents are in PDF or plain-text format
+D. Document freshness, deduplication, classification handling, coverage of relevant topics, and chunk coherence — poor corpus quality directly degrades generation quality regardless of LLM capability
 
 **6. Adversarial prompt injection testing MUST occur in an isolated environment because:**
 
 A. Army policy prohibits testing adversarial techniques on production systems
-B. Injected adversarial prompts could cause the system to write incorrect data to the production Ontology, send unauthorized communications, or expose sensitive information to the attacker
-C. Production inference endpoints have rate limits that would prevent effective testing
+B. Production inference endpoints have rate limits that would prevent effective testing
+C. Injected adversarial prompts could cause the system to write incorrect data to the production Ontology, send unauthorized communications, or expose sensitive information to the attacker
 D. Isolated environments provide a ground-truth dataset to evaluate injection success rates
 
 **7. A TM-50H AI observability pipeline detects that the acceptance rate of AI-generated outputs by human reviewers has dropped from 87% to 61% over four weeks. The correct response is:**
 
-A. Increase the frequency of human review to catch more errors
-B. Treat this as a quality degradation alert — investigate root cause (input distribution shift, prompt drift, model issue), remediate before the rate drops further, and consider rollback if the rate approaches the minimum acceptable threshold
+A. Treat this as a quality degradation alert — investigate root cause (input distribution shift, prompt drift, model issue), remediate before the rate drops further, and consider rollback if the rate approaches the minimum acceptable threshold
+B. Increase the frequency of human review to catch more errors
 C. The drop is within normal operational variance — continue monitoring
 D. Retrain the model on the last four weeks of rejected outputs to improve performance
 
@@ -81,8 +81,8 @@ D. The system's decision logic must be approved by the chain of command annually
 **9. The Army CIO Memorandum (April 2024) assigns responsibility for AI-generated content to:**
 
 A. The AI system developer, who must certify accuracy before the system is deployed
-B. The human reviewer who reviewed and approved the content for official use — AI does not bear legal responsibility
-C. The commanding officer of the unit that deployed the AI system
+B. The commanding officer of the unit that deployed the AI system
+C. The human reviewer who reviewed and approved the content for official use — AI does not bear legal responsibility
 D. The data steward who manages the AI system's input data
 
 **10. An enterprise AI architecture review for a new multi-modal AI system (text + imagery) must verify which classification constraint?**
@@ -95,15 +95,15 @@ D. Imagery inputs must be downsampled to reduce classification risk before proce
 **11. A production AI system's monitoring pipeline should alert when which of the following is detected?**
 
 A. The model produces an output containing a word not in its training vocabulary
-B. Consecutive human reviewer rejections exceed a defined threshold, the input PSI crosses 0.20, or latency p95 exceeds the SLA
+B. The model produces outputs longer than the average output length from the previous week
 C. A single human reviewer disagrees with two model outputs in one shift
-D. The model produces outputs longer than the average output length from the previous week
+D. Consecutive human reviewer rejections exceed a defined threshold, the input PSI crosses 0.20, or latency p95 exceeds the SLA
 
 **12. An agent configured with both a document retrieval tool and a Foundry Ontology write tool should require human approval before executing the write tool because:**
 
 A. Ontology writes require Editor role which agents do not normally hold
-B. Ontology writes are irreversible — incorrect writes can corrupt operational data, and human approval ensures accountability and prevents runaway agent writes
-C. The Foundry API does not support agent-initiated write transactions
+B. The Foundry API does not support agent-initiated write transactions
+C. Ontology writes are irreversible — incorrect writes can corrupt operational data, and human approval ensures accountability and prevents runaway agent writes
 D. Write operations exceed the inference endpoint's token limit
 
 **13. "Corpus quality drift" in a RAG system refers to:**
@@ -116,14 +116,14 @@ D. Classification labels on corpus documents becoming incorrect over time
 **14. A TM-50H AI governance checklist requires that all enterprise AI systems have:**
 
 A. A separate MSS project for each AI model in production
-B. Documented ownership, a defined review cycle, a decommission plan, and compliance mapping to Army CIO Memo and DoD RAIMTF requirements
-C. Quarterly GO-level review of all AI outputs
+B. Quarterly GO-level review of all AI outputs
+C. Documented ownership, a defined review cycle, a decommission plan, and compliance mapping to Army CIO Memo and DoD RAIMTF requirements
 D. A dedicated AI engineer with TM-50H qualification assigned to each system
 
 **15. The most important security control for an enterprise AI system that processes operational data is:**
 
-A. Using a private LLM that does not send data outside the government network
-B. Defense-in-depth: classification-level-appropriate inference endpoint, access controls on input data, sanitized prompts, output review, and monitoring — no single control is sufficient alone
+A. Defense-in-depth: classification-level-appropriate inference endpoint, access controls on input data, sanitized prompts, output review, and monitoring — no single control is sufficient alone
+B. Using a private LLM that does not send data outside the government network
 C. Encrypting all prompts before sending to the inference endpoint
 D. Restricting system access to users with a minimum TS/SCI clearance
 
@@ -202,21 +202,21 @@ Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — Without circuit breaker, partial/empty context propagates through the chain producing bad outputs that corrupt the Ontology.
-2. B — Rate limiting bounds irreversible Ontology writes before human intervention is possible.
+1. A — Without circuit breaker, partial/empty context propagates through the chain producing bad outputs that corrupt the Ontology.
+2. A — Rate limiting bounds irreversible Ontology writes before human intervention is possible.
 3. B — Operational corpus encodes sensitive information into weights accessible via adversarial prompting.
-4. B — Sparse retrieval captures exact-match military identifiers (NSNs, unit designators) that semantic embedding misses.
-5. B — Corpus quality must cover freshness, deduplication, classification, topic coverage, and chunk coherence.
-6. B — Injected prompts in production could write incorrect data, send unauthorized comms, or expose sensitive information.
-7. B — Quality degradation alert requires root cause investigation and remediation; consider rollback.
+4. D — Sparse retrieval captures exact-match military identifiers (NSNs, unit designators) that semantic embedding misses.
+5. D — Corpus quality must cover freshness, deduplication, classification, topic coverage, and chunk coherence.
+6. C — Injected prompts in production could write incorrect data, send unauthorized comms, or expose sensitive information.
+7. A — Quality degradation alert requires root cause investigation and remediation; consider rollback.
 8. B — Governability = ability to modify, retrain, shut down, or override by authorized humans.
-9. B — Human reviewer who approved AI content bears responsibility per Army CIO Memo.
+9. C — Human reviewer who approved AI content bears responsibility per Army CIO Memo.
 10. B — Endpoint classification level must match the highest classification of any input modality.
-11. B — Alert on consecutive reviewer rejections exceeding threshold, PSI > 0.20, or latency p95 SLA breach.
-12. B — Ontology writes are irreversible; human approval prevents runaway writes and ensures accountability.
+11. D — Alert on consecutive reviewer rejections exceeding threshold, PSI > 0.20, or latency p95 SLA breach.
+12. C — Ontology writes are irreversible; human approval prevents runaway writes and ensures accountability.
 13. B — Corpus quality drift = documents becoming outdated, duplicated, or misaligned with operational context.
-14. B — Enterprise AI governance requires ownership, review cycle, decommission plan, and compliance mapping.
-15. B — Defense-in-depth: no single control is sufficient; classification endpoint + access controls + output review + monitoring.
+14. C — Enterprise AI governance requires ownership, review cycle, decommission plan, and compliance mapping.
+15. A — Defense-in-depth: no single control is sufficient; classification endpoint + access controls + output review + monitoring.
 
 **Short Answer Guidance:**
 

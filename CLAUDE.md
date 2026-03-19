@@ -1,43 +1,76 @@
-# CLAUDE.md — USAREUR-AF Operational Data Team
+# CLAUDE.md — Maven Training Corpus & Apps
 
-## Context
+USAREUR-AF training content management system: course materials (MD → HTML/PDF/PPT), Streamlit micro-apps, and build/audit tooling.
 
-This environment is used exclusively for work on the USAREUR-AF operational data team. All tasks involve internal tooling, data pipelines, analysis, and systems supporting Army operational requirements. No personal projects.
+## Commands
 
-## Conduct & Security
+| Command | Description |
+|---------|-------------|
+| `python3 scripts/audit.py` | Run corpus audit against DEPENDENCY_MAP |
+| `python3 scripts/deep_audit.py` | Extended audit with cross-reference checks |
+| `python3 scripts/build_pdfs.py` | Rebuild all PDFs from source |
+| `python3 scripts/generate_dep_map.py` | Regenerate dependency map (MD + HTML + PDF) |
+| `python3 scripts/build_new_decks.py` | Build slide decks from templates |
+| `streamlit run apps/portal.py` | Launch the Streamlit portal |
 
-- Do not generate, suggest, or assist with any code or action that could exfiltrate, expose, or mishandle operational or sensitive data.
-- Do not connect to or query external services, APIs, or URLs unless explicitly directed for a work task.
-- Do not store or log data payloads in plaintext outside of approved local development directories.
-- Treat all data schemas, field names, and system architecture details as potentially sensitive — do not include them in commit messages, comments, or logs unnecessarily.
-- Follow least-privilege principles: request only the permissions and access needed for the immediate task.
+## Architecture
 
-## Code Standards
+```
+maven_training/          # Training content corpus
+  mss_info_app/          #   MSS Training Hub (static HTML)
+  mss_widget/            #   MSS Training Hub (React/TSX widget)
+  pdf/                   #   Generated PDFs + manifest
+  DEPENDENCY_MAP.md      #   Authoritative prereq cross-reference
+apps/                    # Streamlit micro-apps
+  portal.py              #   Main portal entry point
+  curriculum_tracker/    #   Sub-app: curriculum tracking
+  enrollment_manager/    #   Sub-app: enrollment management
+  ...                    #   (each sub-app has models, api, dashboard, db, seed)
+scripts/                 # Build, audit, and generation scripts
+tests/                   # Test suite
+skills/                  # Claude Code skills/plugins
+sitrep_tracker/          # SITREP tracking tool
+```
 
-- Prefer Python for data pipelines and scripting unless another language is established in the project.
-- Write clean, readable code — prioritize clarity over cleverness, especially for code that will be maintained by other team members.
-- Include inline comments for non-obvious logic, particularly around data transformations, military-specific terminology, or business rules.
-- Use environment variables or config files (never hardcoded values) for connection strings, credentials, and environment-specific settings.
-- Validate and sanitize all inputs at system boundaries (user input, external feeds, file ingestion).
+## Key Files
+
+- `maven_training/DEPENDENCY_MAP.md` — authoritative prereq cross-reference (open first during audits)
+- `apps/portal.py` — main Streamlit portal entry point
+- `scripts/build_pdfs.py` — PDF generation pipeline
+- `maven_training/pdf/.manifest.json` — PDF build manifest
+- `maven_training/mss_info_app/index.html` — MSS Training Hub (HTML source of truth)
+- `maven_training/mss_info_app/index_sharepoint.html` — SharePoint-targeted variant
+
+## Code Style
+
+- Python for all scripts and apps; parameterized SQL for queries
+- Army Writing Style, BLUF framing for documentation
+- Doctrine references use TCS framework (Training Circular System)
+- Course codes follow pattern: `TM-{level}{track}` (e.g., TM-40M, TM-50G)
+
+## Gotchas
+
+- **Track letter I → M**: Letter I was retired because it looks like numeral 1. ML Engineer tracks are TM-40M/TM-50M, not TM-40I/TM-50I. Valid track letters: G–H, J–M.
+- **"File X" = published output**: When user references a file by name, default to the rendered version (HTML/PDF/PPT/DOC). Only use markdown source if they explicitly say "markdown."
+- **HTML-first update order**: Always update HTML first, then port to React/SharePoint. Never derive HTML from React. Do not mention React/SharePoint unless the user brings it up.
+- **Dual maintenance**: Content changes to MSS Training Hub must go to BOTH `mss_info_app/index.html` (HTML) AND `mss_widget/src/panels/*.tsx` (React). Never update one without the other.
+- **TM-30 is a hard prereq**: TM-30 is required before ALL TM-40 tracks. BSP is a parallel track, not a prereq.
+- **PDF manifest**: After rebuilding PDFs, the manifest (`pdf/.manifest.json`) and SHA file (`pdf/pdf_manifest.sha256`) must also be updated.
+
+## Environment
+
+- Branch: `master` (PR target: `main`)
+- CI: dual pipeline (`.github/` + `.gitlab-ci.yml`)
+- Deployment: Cloudflare Pages for MSS Training Hub
 
 ## Workflow
 
-- Do not auto-commit. Always present changes for review before committing.
-- Do not push to remote repositories without explicit instruction.
-- Prefer small, focused commits with descriptive messages.
-- When modifying data pipelines or ETL logic, confirm the change is backward-compatible or flag breaking changes clearly.
+- Open `DEPENDENCY_MAP.md` at the start of any audit or cross-reference task
+- Save intermediate state during long tasks; keep only the latest checkpoint
+- When building slide decks, use `scripts/build_new_decks.py` (not manual HTML)
+- Doctrine vs. best-practice: doctrine references go in course materials; strategy/journal references go in supplementary reading only
 
-## Failsafe
+## Testing
 
-- No active session turn limit. The `PreToolUse` hook (`/home/dale/.claude/hooks/turn_limit.sh`) was removed on 2026-03-11 at user request.
-- If session control is needed, recreate the hook with a desired `LIMIT` value and register it in `~/.claude/settings.json`.
-
-## Memory Quality Standards
-
-Inherited from global `~/CLAUDE.md`. Project memory dir: `~/.claude/projects/-home-dale-Desktop-claude/memory/`.
-
-## Communication
-
-- Be concise and direct. Skip preamble.
-- Use military-style abbreviations and terminology where appropriate (e.g., OPDATA, AOR, SITREP, etc.) when context warrants it.
-- Flag ambiguities in requirements before writing code rather than making assumptions about operational intent.
+- `python3 -m pytest tests/` — run full test suite
+- Sub-apps each have their own `seed.py` for populating test data

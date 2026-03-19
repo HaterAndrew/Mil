@@ -8,13 +8,13 @@
 | **Level** | T3-I (Train the Trainer — Instructor Chain) |
 | **Audience** | T3-I candidates completing Phase 1 |
 | **Time Allowed** | 60 minutes |
-| **Passing Score** | 80% (16 of 20) |
+| **Passing Score** | 80% (40 of 50) |
 
 ---
 
 ## INSTRUCTIONS
 
-This is an evaluated exam. Closed book, closed notes. You have 60 minutes. Answer all questions. Your score contributes to the Phase 1 Go/No-Go determination. You must score ≥ 80% (16 of 20) to pass.
+This is an evaluated exam. Closed book, closed notes. You have 60 minutes. Answer all questions. Your score contributes to the Phase 1 Go/No-Go determination. You must score ≥ 80% (40 of 50) to pass.
 
 ---
 
@@ -24,57 +24,57 @@ This is an evaluated exam. Closed book, closed notes. You have 60 minutes. Answe
 
 **1. According to Knowles' adult learning principles, the most effective way to open a new block of MSS instruction is:**
 
-A. Read the TLO statement aloud so trainees know the learning objective
+A. Explain the operational problem this skill solves — give trainees a reason to engage
 B. Begin with a demonstration of the platform feature to be covered
-C. Explain the operational problem this skill solves — give trainees a reason to engage
+C. Read the TLO statement aloud so trainees know the learning objective
 D. Administer a brief quiz to assess prior knowledge
 
 **2. In the Kolb Experiential Learning Cycle, the "Reflective Observation" phase corresponds to which MSS instructional activity?**
 
 A. The trainee performs a lab exercise
-B. The trainee reviews what happened during the lab exercise (check-on-learning)
+B. The trainee applies the concept to a new scenario
 C. The instructor explains the underlying concept
-D. The trainee applies the concept to a new scenario
+D. The trainee reviews what happened during the lab exercise (check-on-learning)
 
 **3. The "75% rule" for MSS lab blocks states that:**
 
-A. At least 75% of trainees must complete the exercise within the allotted time
-B. Trainees should have hands on keyboard for at least 75% of any lab block
+A. Trainees should have hands on keyboard for at least 75% of any lab block
+B. At least 75% of trainees must complete the exercise within the allotted time
 C. At least 75% of course content must be delivered via lecture
 D. Instructors must circulate to at least 75% of student workstations per block
 
 **4. Which of the following correctly describes the relationship between TCS and T&EOs?**
 
-A. TCS defines learning objectives; T&EOs translate those objectives into observable, scorable performance measures
+A. TCS applies only to TM-10; T&EOs apply to all courses
 B. TCS is used for lectures; T&EOs are used for lab exercises
-C. TCS applies only to TM-10; T&EOs apply to all courses
+C. TCS defines learning objectives; T&EOs translate those objectives into observable, scorable performance measures
 D. TCS and T&EOs are independent systems that serve different purposes
 
 **5. An instructor observes that 60% of the class is stuck on the same pipeline build step. The best response is:**
 
 A. Continue circulating and assist students individually
-B. Stop individual assistance and do a group demonstration of the step everyone is stuck on
-C. Move on to the next block and tell stuck students to catch up during the break
+B. Move on to the next block and tell stuck students to catch up during the break
+C. Stop individual assistance and do a group demonstration of the step everyone is stuck on
 D. Extend the lab by 30 minutes to give everyone more time
 
 **6. During a TM-20 Go/No-Go evaluation, a trainee builds a correct pipeline but uses a different transform sequence than the one taught in the course. The evaluator should:**
 
-A. Give Go — the result meets the standard, and the T&EO does not specify a required method
-B. Give No-Go — the trainee deviated from the taught procedure
+A. Give No-Go — the trainee deviated from the taught procedure
+B. Give Go — the result meets the standard, and the T&EO does not specify a required method
 C. Ask the trainee to redo the task using the taught sequence
 D. Give Go but note a deficiency in the observation report
 
 **7. The two "hard No-Go" criteria for instructor evaluation (T3-I microteaching and annual observations) are:**
 
 A. Student Engagement and Lab Management
-B. Technical Accuracy and Evaluation Fidelity
+B. Check on Learning and Student Engagement
 C. Instructional Clarity and Course Materials Currency
-D. Check on Learning and Student Engagement
+D. Technical Accuracy and Evaluation Fidelity
 
 **8. A trainee's MSS account works in the production environment but not in the training environment. The most likely root cause is:**
 
-A. The trainee's CAC certificate has expired
-B. The trainee's account was provisioned for the wrong environment
+A. The trainee's account was provisioned for the wrong environment
+B. The trainee's CAC certificate has expired
 C. The MSS platform is experiencing an outage
 D. The trainee is using the wrong browser
 
@@ -128,14 +128,14 @@ D. To evaluate the instructor's performance against the 7 criteria
 
 | Q | Answer | Points | Reference |
 |---|---|---|---|
-| 1 | **C** — operational context first (Knowles: Need to Know) | 2 | T3-I Course Content §2-2 |
-| 2 | **B** — reflective observation = check-on-learning | 2 | T3-I Course Content §2-3 |
-| 3 | **B** — 75% hands-on time in lab blocks | 2 | T3-I Concepts Guide §2-1 |
-| 4 | **A** — TCS → objectives → T&EOs → scorable measures | 2 | T3-I Course Content §3-2, §6-1 |
-| 5 | **B** — 50%+ stuck = group catch-up | 2 | T3-I Course Content §5-3 |
-| 6 | **A** — result meets standard; method not specified | 2 | T3-I Course Content §6-2 |
-| 7 | **B** — Technical Accuracy and Evaluation Fidelity | 2 | T3-I Course Content §8-2 |
-| 8 | **B** — account provisioned for wrong environment | 2 | T3-I Course Content §4-3 |
+| 1 | **A** — operational context first (Knowles: Need to Know) | 2 | T3-I Course Content §2-2 |
+| 2 | **D** — reflective observation = check-on-learning | 2 | T3-I Course Content §2-3 |
+| 3 | **A** — 75% hands-on time in lab blocks | 2 | T3-I Concepts Guide §2-1 |
+| 4 | **C** — TCS → objectives → T&EOs → scorable measures | 2 | T3-I Course Content §3-2, §6-1 |
+| 5 | **C** — 50%+ stuck = group catch-up | 2 | T3-I Course Content §5-3 |
+| 6 | **B** — result meets standard; method not specified | 2 | T3-I Course Content §6-2 |
+| 7 | **D** — Technical Accuracy and Evaluation Fidelity | 2 | T3-I Course Content §8-2 |
+| 8 | **A** — account provisioned for wrong environment | 2 | T3-I Course Content §4-3 |
 | 9 | **B** — one concept per step to manage working memory | 2 | T3-I Concepts Guide §2-2 |
 | 10 | **B** — planned → happened → why → change | 2 | T3-I Concepts Guide §6-2 |
 | 11 | Redirect: "Let me walk you through the thinking. What are you trying to accomplish?" Guide them through the reasoning, not the clicks. During instruction you scaffold — you don't take the keyboard. This develops independence. If you solve it for them, they learn nothing. (Help gradient reference) | 4 | T3-I Course Content §5-2 |

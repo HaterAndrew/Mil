@@ -183,6 +183,6 @@ Format in document header: `**Version 1.2 | Month Year**`
 | 2026-03-12 | All TMs | Addition | Version tags added to all TM-10 through TM-50M documents | 1.0 | C2DAO |
 | 2026-03-12 | TM-50 series | Addition | Prerequisite warning blocks added to all TM-50 documents | 1.0 | C2DAO |
 | 2026-03-12 | QUICK_START.md | Addition | New 30-minute operator onboarding guide created | 1.0 | C2DAO |
-| 2026-03-12 | exercises/ | Addition | Exercise stubs created for TM-10 through TM-40M tracks (WFF TM-40A–F and specialist TM-40G–M) | 1.0 | C2DAO |
+| 2026-03-12 | exercises/ | Addition | Exercise stubs created for TM-10 through TM-40L tracks (WFF TM-40A–F and specialist TM-40G–O) | 1.0 | C2DAO |
 | 2026-03-12 | AAR_TEMPLATE.md | Addition | Instructor AAR/feedback template created | 1.0 | C2DAO |
 | 2026-03-12 | This SOP | Creation | Initial publication | 1.0 | C2DAO |

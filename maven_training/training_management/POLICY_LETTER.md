@@ -50,7 +50,7 @@ SUBJECT: USAREUR-AF Maven Smart System (MSS) Training Program — Program Direct
 | TM-20 (Builder) | Required before building any project, pipeline, Ontology, or Workshop application | TM-10 |
 | TM-30 (Advanced Builder) | Required before serving as a unit data lead or deploying multi-source production data products | TM-20 |
 | TM-40 WFF tracks (A–F) | Required before performing warfighting function operator duties on MSS | TM-30 |
-| TM-40 specialist tracks (G–M) | Required before performing specialist functions (ORSA, AI, ML, PM, KM, SWE) | TM-30 |
+| TM-40 specialist tracks (G–O) | Required before performing specialist functions (ORSA, AI, ML, PM, KM, SWE) | TM-30 |
 
    **c.** Commanders will ensure newly assigned personnel complete TM-10 within **30 days** of assignment to a USAREUR-AF unit. Personnel assigned to data-adjacent roles will complete the appropriate higher training level within **90 days** of assignment.
 
@@ -79,7 +79,7 @@ SUBJECT: USAREUR-AF Maven Smart System (MSS) Training Program — Program Direct
 
 **6. INSTRUCTOR STANDARDS.** All new instructor candidates will complete the T3-I (Instructor Certification) course. Instructors will meet the qualifications and maintain the certifications specified in the Faculty Development Plan, Instructor Tier Definitions, and Program of Instruction (POI-MSS-001). The instructor tier structure (Instructor → Senior Instructor → Master Instructor) is defined in the Instructor Tier Definitions document. C2DAO will maintain an instructor roster and conduct annual instructor observations. C2DAO SME designation criteria are defined in the C2DAO SME Designation Rubric.
 
-**7. UNIT DATA TRAINERS.** Unit commanders may nominate personnel for the T3-F (MSC Force Multiplier) course to establish local TM-10 training capability. Unit Data Trainers (UDTs) are authorized to deliver TM-10 independently, facilitate TM-20 refresher labs (Blocks 1-10), proctor TM-10 exams as a standalone activity, and report training status to C2DAO. UDTs are not authorized to deliver TM-20 initial certification, TM-30 or above, or to modify curriculum. UDT employment, reporting, and sustainment procedures are governed by the Unit Data Trainer SOP.
+**7. UNIT DATA TRAINERS.** Unit commanders may nominate personnel for the T3-F (MSC Force Multiplier) course to establish local TM-10 training capability. Unit Data Trainers (UDTs) are authorized to deliver TM-10 independently, proctor TM-10 exams as a standalone activity, and report training status to C2DAO. UDTs are not authorized to deliver TM-20 or above, or to modify curriculum. UDT employment, reporting, and sustainment procedures are governed by the Unit Data Trainer SOP.
 
 **8. ACCESS PROVISIONING.** Units will ensure personnel have the appropriate MSS access level provisioned before they attend training. Arriving at training without provisioned access is a unit administrative failure. Access lead times are published in the Course Administrative Data and the Program of Instruction.
 

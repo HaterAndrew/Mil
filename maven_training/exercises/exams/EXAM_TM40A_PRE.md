@@ -24,17 +24,17 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 
 **1. The primary purpose of Intelligence Preparation of the Battlefield (IPB) in the context of MSS is to:**
 
-A. Automatically generate targeting solutions for fire support elements
-B. Provide a structured method for analyzing the threat, terrain, and weather to support the commander's decision-making, with MSS used to display and disseminate IPB products
+A. Provide a structured method for analyzing the threat, terrain, and weather to support the commander's decision-making, with MSS used to display and disseminate IPB products
+B. Automatically generate targeting solutions for fire support elements
 C. Replace the targeting process by aggregating all-source data feeds into a single automated output
 D. Record intelligence reports for post-operation historical review only
 
 **2. A Priority Intelligence Requirement (PIR) differs from a Commander's Critical Information Requirement (CCIR) in that:**
 
 A. PIRs are submitted by subordinate units; CCIRs are issued by higher headquarters
-B. A PIR is a type of CCIR focused specifically on intelligence about the enemy or environment needed to support a critical decision
+B. PIRs are only used during the targeting process; CCIRs apply to all staff functions
 C. CCIRs are classified; PIRs are unclassified
-D. PIRs are only used during the targeting process; CCIRs apply to all staff functions
+D. A PIR is a type of CCIR focused specifically on intelligence about the enemy or environment needed to support a critical decision
 
 **3. In MSS, an intelligence data layer is best described as:**
 
@@ -46,16 +46,16 @@ D. A static map overlay imported from a flat file and manually refreshed each re
 **4. Collection management in MSS supports the collection manager by:**
 
 A. Replacing the collection matrix with an AI-generated collection plan
-B. Allowing the collection manager to visualize collection asset coverage, task status, and gaps against PIRs — supporting decisions on collection priorities and re-tasking
-C. Automatically re-tasking organic collection assets when a PIR threshold is crossed
+B. Automatically re-tasking organic collection assets when a PIR threshold is crossed
+C. Allowing the collection manager to visualize collection asset coverage, task status, and gaps against PIRs — supporting decisions on collection priorities and re-tasking
 D. Generating ISR task orders and routing them to ASCC for approval without staff review
 
 **5. When displaying intelligence products on the MSS COP, data currency is critical because:**
 
 A. Intelligence data pipelines are automatically classified and do not require manual currency verification
-B. Threat activity and enemy disposition data can change rapidly — displaying stale intelligence without a caveat may lead to decisions based on conditions that no longer exist
+B. Currency is only relevant for logistics and readiness data, not intelligence products
 C. MSS automatically flags intelligence data older than one hour and removes it from the COP display
-D. Currency is only relevant for logistics and readiness data, not intelligence products
+D. Threat activity and enemy disposition data can change rapidly — displaying stale intelligence without a caveat may lead to decisions based on conditions that no longer exist
 
 **6. A targeting officer using MSS to support a targeting working group should ensure that target data displayed includes:**
 
@@ -66,8 +66,8 @@ D. Targeting data is displayed automatically by MSS — no manual configuration 
 
 **7. All-source analysis using MSS is best supported by:**
 
-A. Running automated correlation algorithms that fuse all data feeds without analyst review
-B. Configuring MSS to display multiple intelligence data layers simultaneously — HUMINT, SIGINT, IMINT analogs — so the analyst can correlate reporting across sources and identify patterns or gaps
+A. Configuring MSS to display multiple intelligence data layers simultaneously — HUMINT, SIGINT, IMINT analogs — so the analyst can correlate reporting across sources and identify patterns or gaps
+B. Running automated correlation algorithms that fuse all data feeds without analyst review
 C. Limiting the MSS display to a single data source at a time to prevent information overload
 D. Exporting all raw data to a spreadsheet for analysis offline before re-importing conclusions into MSS
 
@@ -135,13 +135,13 @@ _______________________________________________
 
 **Multiple Choice:**
 
-1. B — IPB is a structured analytical method for analyzing threat, terrain, and weather to support commander decisions; MSS displays and disseminates IPB products, not generates them.
-2. B — A PIR is a specific type of CCIR focused on intelligence about the enemy or environment; CCIRs also encompass FFIRs (friendly force information requirements).
+1. A — IPB is a structured analytical method for analyzing threat, terrain, and weather to support commander decisions; MSS displays and disseminates IPB products, not generates them.
+2. D — A PIR is a specific type of CCIR focused on intelligence about the enemy or environment; CCIRs also encompass FFIRs (friendly force information requirements).
 3. B — An intelligence data layer is a configured display element on the COP showing a specific dataset with a data source and currency timestamp; not a static import or automated pipeline.
-4. B — MSS collection management lets the collection manager visualize coverage, task status, and gaps against PIRs; it does not auto-retask assets or replace the collection matrix.
-5. B — Threat and enemy disposition data changes rapidly; displaying stale intelligence without a caveat may drive decisions based on conditions that no longer exist; MSS does not auto-remove stale data.
+4. C — MSS collection management lets the collection manager visualize coverage, task status, and gaps against PIRs; it does not auto-retask assets or replace the collection matrix.
+5. D — Threat and enemy disposition data changes rapidly; displaying stale intelligence without a caveat may drive decisions based on conditions that no longer exist; MSS does not auto-remove stale data.
 6. B — Targeting products must include designation, PIR/CCIR linkage, source attribution, and timestamps; unconfirmed targets must be clearly distinguished from confirmed — not hidden from view.
-7. B — MSS supports all-source analysis by displaying multiple layers simultaneously for analyst correlation; automated fusion without analyst review is not the TM-40A standard.
+7. A — MSS supports all-source analysis by displaying multiple layers simultaneously for analyst correlation; automated fusion without analyst review is not the TM-40A standard.
 8. C — Correct OPSEC: read-only sharing for authorized accounts; correct classification marking; no raw data layer export. Options A, B, and D are distribution control violations.
 
 **Short Answer Guidance:**

@@ -25,15 +25,15 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 **1. In MSS, the primary value of displaying unit positions on the Common Operating Picture (COP) is to:**
 
 A. Automate movement orders and route assignments for subordinate units
-B. Provide a shared reported-position picture that supports maneuver synchronization and command decisions
+B. Generate obstacle overlays based on GPS data
 C. Replace the unit's reporting requirement to higher headquarters
-D. Generate obstacle overlays based on GPS data
+D. Provide a shared reported-position picture that supports maneuver synchronization and command decisions
 
 **2. When analyzing route options using MSS, the maneuver planner should treat MSS route data as:**
 
 A. Authoritative ground truth that eliminates the need for route reconnaissance
-B. One data source to inform planning — route conditions require validation through reconnaissance and engineer assessment
-C. Superseding all doctrinal terrain analysis products
+B. Superseding all doctrinal terrain analysis products
+C. One data source to inform planning — route conditions require validation through reconnaissance and engineer assessment
 D. Applicable only to vehicle convoys, not tactical formations
 
 **3. An operations officer uses MSS to display unit positions for a movement-to-contact. The data-as-of timestamp on the 2nd Battalion layer shows it has not updated in four hours. The operations officer should:**
@@ -45,8 +45,8 @@ D. Assume 2nd Battalion has not moved and brief accordingly
 
 **4. Which of the following best describes MSS support to the Military Decision-Making Process (MDMP) during Course of Action (COA) development?**
 
-A. MSS generates COAs automatically based on unit positions and terrain data
-B. MSS provides data visualization and overlay tools that support staff analysis and COA sketching — it does not replace staff judgment
+A. MSS provides data visualization and overlay tools that support staff analysis and COA sketching — it does not replace staff judgment
+B. MSS generates COAs automatically based on unit positions and terrain data
 C. MDMP is suspended during operations when MSS is available
 D. MSS applies only to the COA Analysis (war gaming) step of MDMP
 
@@ -60,15 +60,15 @@ D. They include satellite imagery for all displayed terrain
 **6. Traffic Control Point (TCP) data in MSS is most useful for which of the following maneuver planning tasks?**
 
 A. Generating personnel accountability reports for the provost marshal
-B. Identifying choke points and supporting ground mobility analysis during route planning and movement synchronization
+B. Determining vehicle maintenance status along planned routes
 C. Replacing the requirement for a movement control officer
-D. Determining vehicle maintenance status along planned routes
+D. Identifying choke points and supporting ground mobility analysis during route planning and movement synchronization
 
 **7. Which of the following is an OPSEC consideration specific to maneuver data products in MSS?**
 
-A. Unit position data and axis of advance overlays reflect current and projected friendly locations — distribution must be limited to those with operational need to know
+A. OPSEC restrictions apply only to intelligence products, not maneuver planning products
 B. Maneuver data is unclassified and can be shared freely within the unit SharePoint
-C. OPSEC restrictions apply only to intelligence products, not maneuver planning products
+C. Unit position data and axis of advance overlays reflect current and projected friendly locations — distribution must be limited to those with operational need to know
 D. Route data is exempt from OPSEC procedures because it is based on open-source map data
 
 **8. Task organization visibility in MSS supports maneuver synchronization by:**
@@ -135,13 +135,13 @@ _______________________________________________
 
 **Multiple Choice:**
 
-1. B — The COP provides a shared reported-position picture supporting maneuver synchronization and command decisions; it does not automate movement orders or replace reporting requirements.
-2. B — MSS route data is one source to inform planning; route conditions require validation through reconnaissance and engineer assessment before relying on them for movement.
+1. D — The COP provides a shared reported-position picture supporting maneuver synchronization and command decisions; it does not automate movement orders or replace reporting requirements.
+2. C — MSS route data is one source to inform planning; route conditions require validation through reconnaissance and engineer assessment before relying on them for movement.
 3. B — Characterize the gap to the commander and verify current position through primary reporting channels before briefing; do not assume, brief as current, or remove the layer without explanation.
-4. B — MSS provides data visualization and overlay tools supporting staff analysis and COA sketching; it does not replace staff judgment or generate COAs automatically.
+4. A — MSS provides data visualization and overlay tools supporting staff analysis and COA sketching; it does not replace staff judgment or generate COAs automatically.
 5. A — Standard military symbology with clear data-as-of attribution is the most important characteristic; PowerPoint formatting, auto-generation, and satellite imagery are not the standard.
-6. B — TCP data identifies choke points and supports ground mobility analysis during route planning and movement synchronization; it does not generate accountability reports or replace the MCO.
-7. A — Unit positions and axes of advance reflect current and projected friendly locations; distribution must be limited to those with operational need to know.
+6. D — TCP data identifies choke points and supports ground mobility analysis during route planning and movement synchronization; it does not generate accountability reports or replace the MCO.
+7. C — Unit positions and axes of advance reflect current and projected friendly locations; distribution must be limited to those with operational need to know.
 8. B — Task org visibility in MSS shows which units are under operational control of which HQ, enabling staff to identify synchronization gaps; it does not automate re-routing or replace FRAGOs.
 
 **Short Answer Guidance:**

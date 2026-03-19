@@ -31,43 +31,43 @@ D. To satisfy reporting requirements for higher headquarters
 
 **2. "Tacit knowledge" in knowledge management theory refers to:**
 
-A. Knowledge stored in official documents, manuals, and databases
-B. Knowledge that is difficult to articulate — personal experience, intuition, and skill-based expertise
+A. Knowledge that is difficult to articulate — personal experience, intuition, and skill-based expertise
+B. Knowledge stored in official documents, manuals, and databases
 C. Classified knowledge protected by access control
 D. Knowledge that has been validated and approved for distribution
 
 **3. A "Lessons Learned" system in the Army is distinct from a simple document library because it:**
 
-A. Contains only documents classified at SECRET or above
-B. Captures observations, identifies issues, and tracks whether corrective actions were implemented and validated
+A. Captures observations, identifies issues, and tracks whether corrective actions were implemented and validated
+B. Contains only documents classified at SECRET or above
 C. Restricts access to OPDS-A and higher echelon staff only
 D. Automatically distributes all lessons to TRADOC for doctrine updates
 
 **4. "Knowledge transfer" in the context of Soldier PCS (Permanent Change of Station) is critical because:**
 
-A. Departing Soldiers are required to submit a DA Form 2062 for all knowledge products
-B. Institutional knowledge (procedures, contacts, context) leaves with the Soldier unless deliberately captured and transferred
+A. Institutional knowledge (procedures, contacts, context) leaves with the Soldier unless deliberately captured and transferred
+B. Departing Soldiers are required to submit a DA Form 2062 for all knowledge products
 C. Army Regulation requires all Soldiers to brief their replacement before departing
 D. PCS knowledge transfer is only relevant for O-4 and above
 
 **5. A Standard Operating Procedure (SOP) in Army knowledge management serves as:**
 
 A. A training plan for new Soldiers on basic warrior tasks
-B. A documented, repeatable procedure that captures how a task is performed to enable consistent execution and training
+B. A formal memorandum for record approved by the unit commander
 C. A legal document governing contractor performance
-D. A formal memorandum for record approved by the unit commander
+D. A documented, repeatable procedure that captures how a task is performed to enable consistent execution and training
 
 **6. In a knowledge management system, "tagging" documents with metadata (unit, topic, date, classification) enables:**
 
 A. Automatic encryption of tagged documents
-B. Faster and more accurate search and retrieval by users looking for specific types of content
+B. Routing of documents to the correct approval workflow
 C. Automatic distribution to all units that share the same tag values
-D. Routing of documents to the correct approval workflow
+D. Faster and more accurate search and retrieval by users looking for specific types of content
 
 **7. The Privacy Act of 1974 is relevant to Army knowledge management when:**
 
-A. The unit is collecting data from partner nation forces
-B. Knowledge products include personally identifiable information (PII) about individual Soldiers
+A. Knowledge products include personally identifiable information (PII) about individual Soldiers
+B. The unit is collecting data from partner nation forces
 C. The knowledge system is hosted on an unclassified network
 D. Knowledge documents contain FOUO-marked financial data
 
@@ -81,8 +81,8 @@ D. Lessons are stored in the wrong echelon's system
 **9. A "knowledge broker" role in a KM program is best described as:**
 
 A. A system administrator who manages user access to the knowledge database
-B. A person who connects knowledge seekers with the right people, documents, or expertise
-C. An automated workflow that routes knowledge products to authorized consumers
+B. An automated workflow that routes knowledge products to authorized consumers
+C. A person who connects knowledge seekers with the right people, documents, or expertise
 D. A data steward who validates the technical quality of knowledge products
 
 **10. When designing a knowledge management workflow, "required-field validation" on a submission form ensures:**
@@ -94,9 +94,9 @@ D. The submitted knowledge product is automatically approved for distribution
 
 **11. In Army knowledge management doctrine, a "lessons learned" item progresses through which sequence before it can be considered a validated lesson?**
 
-A. Observation → Collection → Validation → Distribution
+A. Capture → Tag → Approve → Delete
 B. Report → Archive → Review → Publish
-C. Capture → Tag → Approve → Delete
+C. Observation → Collection → Validation → Distribution
 D. Identify → Analyze → Recommend → Implement
 
 **12. "Distribution routing" in a knowledge management pipeline refers to:**
@@ -109,22 +109,22 @@ D. Sending all knowledge products to higher headquarters for review
 **13. A knowledge management officer notices that the unit's lessons-learned database has not been updated in six months. The MOST likely operational risk is:**
 
 A. The database software will expire and data will be lost
-B. Current operational experience is not being captured, leaving new personnel without the benefit of recent lessons from their predecessors
+B. The existing lessons will become outdated and automatically archived
 C. Higher headquarters will conduct an inspection and find the system non-compliant
-D. The existing lessons will become outdated and automatically archived
+D. Current operational experience is not being captured, leaving new personnel without the benefit of recent lessons from their predecessors
 
 **14. When an AI tool generates a draft summary of a lessons-learned database, the output must be:**
 
 A. Published directly to the knowledge system if it passes a spell check
-B. Reviewed and approved by a qualified human knowledge manager before distribution
-C. Submitted to the unit commander for signature before distribution
+B. Submitted to the unit commander for signature before distribution
+C. Reviewed and approved by a qualified human knowledge manager before distribution
 D. Held for 30 days before release to allow time for corrections
 
 **15. A PCS knowledge transfer package for a departing S6 NCO should prioritize which content?**
 
 A. A copy of all emails the NCO sent during their assignment
-B. Documented SOPs, key contacts, active project status, recurring tasks, and access credentials transfer instructions
-C. A list of all Soldiers the NCO has counseled during their assignment
+B. A list of all Soldiers the NCO has counseled during their assignment
+C. Documented SOPs, key contacts, active project status, recurring tasks, and access credentials transfer instructions
 D. A personal assessment of each team member's strengths and weaknesses
 
 ---
@@ -203,20 +203,20 @@ Passing: N/A — Pre-test is diagnostic only.
 
 **Multiple Choice:**
 1. B — AAR captures what happened, why, and how to improve — organizational learning.
-2. B — Tacit knowledge = difficult-to-articulate personal experience, intuition, skill.
-3. B — Lessons learned systems track observations, issues, and corrective action implementation.
-4. B — Institutional knowledge leaves with the Soldier unless deliberately captured.
-5. B — SOP documents repeatable procedures for consistent execution and training.
-6. B — Tagging enables faster, more accurate search and retrieval.
-7. B — Privacy Act applies when knowledge products contain PII about individual Soldiers.
+2. A — Tacit knowledge = difficult-to-articulate personal experience, intuition, skill.
+3. A — Lessons learned systems track observations, issues, and corrective action implementation.
+4. A — Institutional knowledge leaves with the Soldier unless deliberately captured.
+5. D — SOP documents repeatable procedures for consistent execution and training.
+6. D — Tagging enables faster, more accurate search and retrieval.
+7. A — Privacy Act applies when knowledge products contain PII about individual Soldiers.
 8. B — Failure to document verbally-identified lessons before personnel departure is the most common failure mode.
-9. B — Knowledge broker connects seekers with people, documents, or expertise.
+9. C — Knowledge broker connects seekers with people, documents, or expertise.
 10. B — Required-field validation ensures minimum essential metadata for retrieval and distribution.
-11. A — Observation → Collection → Validation → Distribution is the Army lessons-learned sequence.
+11. C — Observation → Collection → Validation → Distribution is the Army lessons-learned sequence.
 12. B — Distribution routing directs products to appropriate audiences based on criteria.
-13. B — Unupdated system means current experience is not captured for new personnel.
-14. B — AI-generated content requires human review before distribution.
-15. B — SOPs, key contacts, project status, recurring tasks, and access transfer are the priority content.
+13. D — Unupdated system means current experience is not captured for new personnel.
+14. C — AI-generated content requires human review before distribution.
+15. C — SOPs, key contacts, project status, recurring tasks, and access transfer are the priority content.
 
 **Short Answer Guidance:**
 

@@ -24,8 +24,8 @@ This assessment confirms proficiency upon completion of TM-40D training. A score
 
 **1. You configure a CCIR in MSS to alert when Class III (B) supply on hand falls below a 2-day consumption threshold. The alert fires during a test, but the S4 officer says the battalion just reported full tanks this morning. The most likely cause is:**
 
-A. Class III CCIRs have a 6-hour delay built into the system by design
-B. The CCIR is configured against an older dataset that predates the morning LOGSTAT submission — the live feed has not yet propagated to the dashboard layer the CCIR is monitoring
+A. The CCIR is configured against an older dataset that predates the morning LOGSTAT submission — the live feed has not yet propagated to the dashboard layer the CCIR is monitoring
+B. Class III CCIRs have a 6-hour delay built into the system by design
 C. The alert threshold was set too high and needs to be reconfigured
 D. The battalion's morning report was submitted incorrectly and should be corrected before continuing
 
@@ -39,21 +39,21 @@ D. The property book officer entered the wrong quantity during the last data loa
 **3. During a sustainment synchronization, the readiness dashboard shows 2nd FSC at 88% equipment readiness. The FSC commander reports they are at 61% due to three vehicles deadlined for parts this week. The S4 officer's correct action is:**
 
 A. Brief the dashboard figure — MSS data supersedes verbal reports
-B. Note the discrepancy, verify through the readiness reporting channel when the last FSC LOGSTAT was submitted, caveat the dashboard figure with data-as-of time, and brief the actual reported status the commander provided
-C. Pull the FSC commander out of the sync to correct the data before continuing
+B. Pull the FSC commander out of the sync to correct the data before continuing
+C. Note the discrepancy, verify through the readiness reporting channel when the last FSC LOGSTAT was submitted, caveat the dashboard figure with data-as-of time, and brief the actual reported status the commander provided
 D. File a data quality report and delay the sync until MSS is updated
 
 **4. An S4 wants to use MSS supply chain analytics to forecast Class I (ration) requirements for a 14-day operation. The most accurate statement about this capability is:**
 
 A. MSS forecast tools generate binding resupply orders that the support battalion must execute
-B. MSS analytics can model consumption trends against historical data to support planning estimates — the S4 must validate the model assumptions against current operational factors before using the output
+B. Supply forecast data in MSS is automatically submitted to theater as a logistics request
 C. Forecasting in MSS requires coding access and is not available to S4 staff
-D. Supply forecast data in MSS is automatically submitted to theater as a logistics request
+D. MSS analytics can model consumption trends against historical data to support planning estimates — the S4 must validate the model assumptions against current operational factors before using the output
 
 **5. The G4 directs you to build a logistics COP layer that shows distribution status — supplies currently in transit and expected delivery windows. The data staleness concern unique to distribution status (compared to supply on hand) is:**
 
-A. Distribution data is more sensitive than supply data and requires a higher classification level
-B. Distribution status changes rapidly — a convoy that departed four hours ago may have already arrived, been diverted, or been delayed; distribution data ages faster than static supply-on-hand data and requires more frequent validation
+A. Distribution status changes rapidly — a convoy that departed four hours ago may have already arrived, been diverted, or been delayed; distribution data ages faster than static supply-on-hand data and requires more frequent validation
+B. Distribution data is more sensitive than supply data and requires a higher classification level
 C. Distribution data can only be displayed as a table, not as a map layer
 D. In-transit data is not available in MSS and must be tracked manually
 
@@ -67,15 +67,15 @@ D. Configure CCIRs only — dashboards are optional for sustainment syncs
 **7. A supply chain manager identifies that the Class IX (repair parts) on-hand data in MSS has not updated in 36 hours. Parts requests are time-sensitive during sustained operations. The correct action is:**
 
 A. Brief the 36-hour-old data as current until the feed is restored
-B. Characterize the data gap, notify the G6/S6 to investigate the pipeline failure, contact supply units directly for current status, and caveat all Class IX displays with the data-as-of timestamp until the feed is restored
+B. Manually update the MSS display with data from phone calls and text messages
 C. Remove the Class IX layer from the dashboard to avoid confusing the commander
-D. Manually update the MSS display with data from phone calls and text messages
+D. Characterize the data gap, notify the G6/S6 to investigate the pipeline failure, contact supply units directly for current status, and caveat all Class IX displays with the data-as-of timestamp until the feed is restored
 
 **8. Which of the following is the most operationally significant OPSEC risk associated with publishing an aggregated sustainment dashboard to a wide distribution list?**
 
 A. Dashboard colors may not match the unit's standard briefing format
-B. An aggregated view of supply on hand, consumption rates, and resupply timelines reveals the unit's operational endurance — an adversary with this data can infer planned operational tempo and duration
-C. Distribution lists in MSS are public and cannot be restricted to authorized users
+B. Distribution lists in MSS are public and cannot be restricted to authorized users
+C. An aggregated view of supply on hand, consumption rates, and resupply timelines reveals the unit's operational endurance — an adversary with this data can infer planned operational tempo and duration
 D. Sustainment data does not warrant OPSEC controls because it is administrative in nature
 
 **9. ADP 4-0 establishes eight principles of sustainment. Table 1-1A in TM-40D maps each principle to a data platform application. Which principle's data platform analog is described as "consumption rate modeling, predictive demand analytics, and trend dashboards that project DOS forward based on operational tempo"?**
@@ -146,16 +146,14 @@ _______________________________________________
 ## ANSWER KEY (Instructor Use Only — Do Not Distribute)
 
 **Section 1:**
-1. B — pipeline latency between LOGSTAT submission and dashboard update is the most common cause
+1. A — pipeline latency between LOGSTAT submission and dashboard update is the most common cause
 2. B — property book reflects reported on-hand; maintenance status is a separate data source
-3. B — verify data-as-of time; caveat the figure; brief actual status the commander provided
-4. B — analytics support planning estimates; S4 must validate assumptions against operational factors
-5. B — distribution data ages faster than supply-on-hand; frequent validation required
+3. C — verify data-as-of time; caveat the figure; brief actual status the commander provided
+4. D — analytics support planning estimates; S4 must validate assumptions against operational factors
+5. A — distribution data ages faster than supply-on-hand; frequent validation required
 6. B — verify currency first, then configure CCIRs, then build dashboard
-7. B — characterize gap, notify S6, get current status from source, caveat display
-8. B — aggregated sustainment data reveals operational endurance — significant OPSEC risk
-9. B — Table 1-1A (ADP 4-0) maps Anticipation to "consumption rate modeling, predictive demand analytics, and trend dashboards that project DOS forward based on operational tempo." Integration addresses cross-functional dashboards, Responsiveness addresses real-time threshold alerts, and Simplicity addresses standardized formats and pre-built views.
-10. C — Table 2-1A (FM 4-0) identifies Class IX as repair parts (demand-supported and initial provisioning), with update frequency of daily and immediately upon receipt of critical parts. Class VII is major end items, Class V is ammunition, and Class II is clothing/equipment with weekly updates.
+7. D — characterize gap, notify S6, get current status from source, caveat display
+8. C — aggregated sustainment data reveals operational endurance — significant OPSEC risk
 
 **Section 2 — Expected elements:**
 11. Should include: immediately note the discrepancy between dashboard (91%) and reported current status (58%); verify the last LOGSTAT submission time in MSS; update the dashboard caveat with data-as-of timestamp; prepare to brief both the MSS figure and the commander-reported figure to the G4; notify the G4 before the sync begins so they are not surprised.

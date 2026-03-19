@@ -76,15 +76,13 @@ Certification is recorded in:
 | Deliver TM-10 | Full course, all 9 blocks | Using provided lesson plans, slides, and materials |
 | Administer TM-10 Go/No-Go evaluations | Using T&EO scoring sheets | Must follow T&EO procedures exactly; no ad-hoc evaluation criteria |
 | Proctor TM-10 pre/post exams | As standalone activity | For self-study or remote personnel who need a formal evaluation; answer key handling per INSTRUCTOR_OVERVIEW §5 |
-| Facilitate TM-20 refresher labs | Blocks 1-10 only | Project creation, file ingestion, pipeline basics. Refresher only — not initial TM-20 certification |
 | Report training status | Unit Training Status Report | To C2DAO within 5 duty days of each iteration |
-| Troubleshoot access issues | 5 common issues | CAC auth failure, expired account, wrong environment, missing project access, stale training data |
 
 ### 3-2. What UDTs Cannot Do
 
 | Limitation | Reason |
 |---|---|
-| Deliver TM-20 initial certification | Requires C2DAO-certified instructor; domain expertise beyond UDT scope |
+| Deliver TM-20 or any course above TM-10 | Requires C2DAO-certified instructor |
 | Deliver TM-30 or any TM-40/TM-50 course | Beyond UDT qualification; requires T3-I certification and domain expertise |
 | Modify curriculum, lesson plans, or evaluation criteria | Curriculum authority resides with C2DAO; UDTs deliver as published |
 | Grant enrollment exceptions or waive prerequisites | Enrollment authority resides with C2DAO per Enrollment SOP |
@@ -174,7 +172,7 @@ The UDT conducts remediation and re-evaluation for TM-10 tasks. If the student f
 
 UDTs escalate to C2DAO when:
 - A training need exceeds UDT scope (any TM-20+ request)
-- An environment or access issue cannot be resolved using the 5 troubleshooting procedures taught in T3-F
+- An environment or access issue cannot be resolved quickly
 - A student fails re-evaluation after remediation
 - The UDT identifies a potential lesson plan error or gap
 - Commander directs a training exception that the UDT cannot authorize
@@ -270,10 +268,9 @@ SUBJECT: Unit Data Trainer Designation
 
 2. The designated UDT is authorized to:
    a. Deliver TM-10 (Maven User) independently
-   b. Facilitate TM-20 refresher labs (Blocks 1-10)
-   c. Administer TM-10 Go/No-Go evaluations
-   d. Proctor TM-10 pre/post exams as standalone activity
-   e. Report training status to C2DAO
+   b. Administer TM-10 Go/No-Go evaluations
+   c. Proctor TM-10 pre/post exams as standalone activity
+   d. Report training status to C2DAO
 
 3. The designated UDT is NOT authorized to:
    a. Deliver TM-20 initial certification or any TM-30+ course

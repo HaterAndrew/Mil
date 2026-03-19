@@ -401,6 +401,8 @@ The test: if the current Advanced KM were reassigned tomorrow, could their repla
 | TM-50M | Advanced ML Engineer | Feature data governance; training corpus quality |
 | TM-50J | Advanced Program Manager | KM program oversight; portfolio-level knowledge governance |
 | TM-50L | Advanced Software Engineer | Platform SDK infrastructure supporting enterprise KM systems |
+| TM-50N | Advanced UI/UX Designer | Information architecture; knowledge portal UX |
+| TM-50O | Advanced Platform Engineer | Knowledge platform infrastructure; search and retrieval systems |
 
 **WFF Operational Consumer Note.** Enterprise knowledge management exists to serve operational decision-making. The six Warfighting Function (WFF) tracks — Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F) — are the primary users of validated lessons, TTPs, and doctrine products. The design principles in this guide — federated architecture, quality tiers, cross-domain linkage, application over capture — must all be evaluated against whether WFF practitioners can find and use the knowledge they need at the moment they need it. A KM system that serves only KMs has failed.
 

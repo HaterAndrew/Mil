@@ -101,7 +101,7 @@ Prerequisites are verified by C2DAO before a seat is confirmed. Do not assume en
 | TM-40K | TM-10, TM-20, TM-30 Go on file (all required) |
 | TM-40L | TM-10, TM-20, TM-30 Go on file (all required); TypeScript or Python proficiency; REST API familiarity |
 
-TM-30 is a hard prerequisite for ALL TM-40 tracks — both WFF functional (TM-40A–F) and specialist (TM-40G–M), including TM-40J and TM-40K. Do not enroll any personnel in a TM-40 track without a verified TM-30 Go on file.
+TM-30 is a hard prerequisite for ALL TM-40 tracks — both WFF functional (TM-40A–F) and specialist (TM-40G–O), including TM-40J and TM-40K. Do not enroll any personnel in a TM-40 track without a verified TM-30 Go on file.
 
 ### 2-3. Technical Prerequisite Verification (Specialist Tracks)
 
@@ -324,8 +324,8 @@ If you believe your MSS account credentials have been compromised, or if you obs
 | TM-20 | Government workstation with CAC reader | MSS production + training sandbox | Classroom, projector | None |
 | TM-30 | Government workstation with CAC reader | MSS production + training sandbox | Classroom, projector, whiteboard | None |
 | TM-40 A–F (WFF) | Government workstation with CAC reader | MSS production + WFF-specific datasets | Classroom, projector | None |
-| TM-40 G–M (Specialist) | Government workstation with CAC reader | MSS training sandbox + development environment | Lab with individual workstations | IDE access (TM-40H/I/L) |
-| TM-50 G–M (Advanced) | Government workstation with CAC reader | MSS training sandbox + development environment | Lab with individual workstations | IDE access, GPU compute (TM-50M) |
+| TM-40 G–O (Specialist) | Government workstation with CAC reader | MSS training sandbox + development environment | Lab with individual workstations | IDE access (TM-40H/M/L) |
+| TM-50 G–O (Advanced) | Government workstation with CAC reader | MSS training sandbox + development environment | Lab with individual workstations | IDE access, GPU compute (TM-50M) |
 
 > **NOTE:** All courses require reliable network connectivity (minimum 5 Mbps per student) to the MSS training environment. Units hosting training must coordinate network access with their local NEC/signal section NLT 10 business days prior to course start.
 
@@ -404,7 +404,7 @@ TM-10 Go Date:           _________ (required for TM-20+)
 TM-20 Go Date:           _________ (required for TM-30)
 TM-30 Go Date:           _________ (required for ALL TM-40 tracks — WFF and specialist)
 
-NOTE: TM-30 is a hard prerequisite for ALL TM-40 tracks (A–F WFF and G–M specialist).
+NOTE: TM-30 is a hard prerequisite for ALL TM-40 tracks (A–F WFF and G–O specialist).
       No TM-40 enrollment will be confirmed without a verified TM-30 Go on file.
 
 TECHNICAL PREREQUISITES (TM-40 specialist tracks only)
@@ -470,7 +470,7 @@ TM-30 | ADVANCED BUILDER (5 days)
   Certified Date: ___________________________________________
 
 TM-40 WFF TRACK (circle):         40A  40B  40C  40D  40E  40F
-TM-40 SPECIALIST TRACK (circle):  40G  40H  40M  40J  40K  40L
+TM-40 SPECIALIST TRACK (circle):  40G  40H  40M  40J  40K  40L  40N  40O
   Attended:     ___________________________________________
   Evaluator:    ___________________________________________
   Result:       [ ] GO     [ ] NO-GO

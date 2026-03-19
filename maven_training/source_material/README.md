@@ -35,7 +35,7 @@ Interactive browser-based slide viewer serving the CDA training deck library. Co
 - `ObjectType_WhatToWatchFor.pdf` — Object type anti-patterns
 - `2026_Data_Stack_Deep_Dive.pdf` — 5-Layer Data Stack with Foundry mapping
 
-**Data 201 series** — Advanced builder / specialist prereq for TM-30 and TM-40G–M.
+**Data 201 series** — Advanced builder / specialist prereq for TM-30 and TM-40G–O.
 - `Deck_01_Architecture_First_Principles.pdf` — EA/DA first principles
 - `Deck_02_Scope_Engineering.pdf` — Scope and requirements engineering
 - `Deck_03_RDF_OWL_Foundations.pdf` — Semantic web and ontology foundations
@@ -51,7 +51,7 @@ Interactive browser-based slide viewer serving the CDA training deck library. Co
 
 **Portal files:** `index.html`, `deck.html`, `pathways.html`, `app.js`, `styles.css`, `manifest.json`, `nav-manifest.json`, `portal-module.tsx`
 
-**TM Track support:** TM-10 through TM-40G–M (all tracks, as prereq reading)
+**TM Track support:** TM-10 through TM-40G–O (all tracks, as prereq reading)
 
 ---
 
@@ -126,7 +126,7 @@ Official U.S. Army doctrine publications used as source material across all TM t
 | TM-40J (Program Manager) | cda_apps/enterprise-data-compass; cda_apps/plan-for-success; cda_docs/official_us/acquisition |
 | TM-40K (Knowledge Manager) | cda_apps/ea-vs-da-reference; cda_apps/enterprise-data-compass |
 | TM-40L (Software Engineer) | course_portal Data 201; cda_apps/ea-vs-da-reference; cda_docs/official_nato |
-| TM-50G–M (Advanced series) | All Data 201 + cda_docs/official_nato + cda_docs/official_us |
+| TM-50G–O (Advanced series) | All Data 201 + cda_docs/official_nato + cda_docs/official_us |
 
 ---
 

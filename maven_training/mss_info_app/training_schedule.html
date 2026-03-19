@@ -6,105 +6,103 @@
   <title>MSS-TRMS — Training Schedule FY27</title>
   <style>
     :root {
-      --bg:        #060D1A;
-      --bg-panel:  #0A1628;
-      --bg-row:    #0E1D35;
-      --bg-row-alt:#0C1A30;
-      --bg-hover:  #142644;
-      --gold:      #C8971A;
-      --gold-dim:  rgba(200,151,26,0.55);
-      --gold-vdim: rgba(200,151,26,0.25);
-      --amber:     #E8A917;
-      --green:     #22C55E;
-      --green-dim: rgba(34,197,94,0.7);
-      --cyan:      #06B6D4;
-      --cyan-dim:  rgba(6,182,212,0.6);
-      --white-dim: rgba(226,232,240,0.5);
-      --tm20:      #60A5FA;
-      --tm30:      #A78BFA;
-      --bsp:       #FBBF24;
-      --mtt:       #34D399;
-      --alpha:     #60A5FA;
-      --bravo:     #F59E0B;
-      --mono:      'Courier New', Courier, 'Liberation Mono', monospace;
+      --bg:        #FFFFFF;
+      --bg-panel:  #F5F5F5;
+      --bg-row:    #FFFFFF;
+      --bg-row-alt:#F7F9FC;
+      --bg-hover:  #EEF2F7;
+      --hdr-bg:    #003366;
+      --hdr-lt:    #004080;
+      --text:      #333333;
+      --text-dim:  #666666;
+      --text-vdim: #999999;
+      --border:    #CCCCCC;
+      --border-lt: #DDDDDD;
+      --blue:      #003366;
+      --blue-med:  #336699;
+      --link:      #0066CC;
+      --green:     #006633;
+      --green-bg:  #E6F5EC;
+      --amber:     #996600;
+      --amber-bg:  #FFF8E6;
+      --cyan:      #006699;
+      --cyan-bg:   #E6F2F8;
+      --tm20:      #003399;
+      --tm30:      #660099;
+      --bsp:       #996600;
+      --mtt:       #006633;
+      --alpha:     #003399;
+      --bravo:     #994400;
+      --sl:        #800020;
+      --sans:      Verdana, Arial, Helvetica, sans-serif;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: var(--mono);
+      font-family: var(--sans);
       background: var(--bg);
-      color: var(--gold);
-      font-size: 12px;
+      color: var(--text);
+      font-size: 11px;
       line-height: 1.5;
       padding: 0;
     }
 
-    body::after {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.05) 2px,rgba(0,0,0,0.05) 4px);
-      pointer-events: none;
-      z-index: 9999;
-    }
-
     .sys-header {
-      background: linear-gradient(180deg, #0F1E38, #0A1628);
-      border-bottom: 1px solid var(--gold-dim);
+      background: var(--hdr-bg);
+      border-bottom: 3px solid #CC9900;
     }
 
     .sys-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 6px 16px;
-      border-bottom: 1px solid var(--gold-vdim);
-      background: rgba(200,151,26,0.04);
+      padding: 8px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
     }
 
     .sys-title {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--amber);
-      text-shadow: 0 0 8px rgba(200,151,26,0.3);
+      letter-spacing: 1px;
+      color: #FFFFFF;
     }
 
-    .sys-title span { color: var(--gold-dim); font-weight: 400; }
+    .sys-title span { color: #CCCC99; font-weight: 400; font-size: 12px; }
 
     .sys-right {
-      font-size: 9px;
-      color: var(--gold-dim);
-      letter-spacing: 1px;
+      font-size: 10px;
+      color: #CCCC99;
+      letter-spacing: 0.5px;
       text-align: right;
     }
 
     .sys-status {
       display: flex;
       gap: 20px;
-      padding: 4px 16px;
-      font-size: 9px;
-      letter-spacing: 1px;
-      color: var(--gold-dim);
+      padding: 5px 16px;
+      font-size: 10px;
+      letter-spacing: 0.5px;
+      color: rgba(255,255,255,0.7);
+      background: var(--hdr-lt);
     }
 
-    .sys-status .val { color: rgba(34,197,94,0.7); }
-    .sys-status .lbl { color: var(--gold-vdim); }
+    .sys-status .val { color: #FFFFFF; font-weight: 700; }
+    .sys-status .lbl { color: rgba(255,255,255,0.6); }
 
-    .content { padding: 12px 16px 20px; }
+    .content { padding: 14px 16px 20px; }
 
     .org-banner {
       display: flex;
       gap: 8px;
       align-items: stretch;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .org-card {
       flex: 1;
       background: var(--bg-panel);
-      border: 1px solid var(--gold-vdim);
+      border: 1px solid var(--border);
       padding: 8px 12px;
       display: flex;
       align-items: center;
@@ -116,31 +114,31 @@
       font-weight: 700;
       letter-spacing: 1px;
       padding: 3px 8px;
-      border: 1px solid;
       flex-shrink: 0;
+      color: #FFFFFF;
     }
 
-    .org-badge.oic   { color: var(--amber); border-color: var(--amber); }
-    .org-badge.alpha  { color: var(--alpha); border-color: var(--alpha); }
-    .org-badge.bravo  { color: var(--bravo); border-color: var(--bravo); }
+    .org-badge.oic   { background: var(--hdr-bg); }
+    .org-badge.alpha  { background: var(--alpha); }
+    .org-badge.bravo  { background: var(--bravo); }
 
     .org-info {
       font-size: 10px;
-      color: var(--gold-dim);
+      color: var(--text-dim);
     }
 
-    .org-info strong { color: var(--gold); }
+    .org-info strong { color: var(--text); }
 
     .metrics {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .metric-card {
       background: var(--bg-panel);
-      border: 1px solid var(--gold-vdim);
+      border: 1px solid var(--border);
       padding: 10px 12px;
       text-align: center;
     }
@@ -148,9 +146,8 @@
     .metric-val {
       font-size: 22px;
       font-weight: 700;
-      color: var(--amber);
+      color: var(--hdr-bg);
       line-height: 1.2;
-      text-shadow: 0 0 10px rgba(200,151,26,0.25);
     }
 
     .metric-val.clr-green { color: var(--green); }
@@ -161,30 +158,30 @@
       font-size: 8px;
       font-weight: 700;
       letter-spacing: 1.5px;
-      color: var(--gold-dim);
+      color: var(--text-dim);
       margin-top: 2px;
     }
 
     .metric-sub {
-      font-size: 8px;
-      color: var(--gold-vdim);
-      letter-spacing: 0.5px;
-      margin-top: 1px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 3px;
     }
 
     .summary {
-      font-size: 10px;
-      color: var(--gold-dim);
-      letter-spacing: 0.8px;
-      padding: 6px 0 10px;
-      border-bottom: 1px solid var(--gold-vdim);
-      margin-bottom: 10px;
+      font-size: 11px;
+      color: var(--text-dim);
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      background: #FFFFEE;
+      margin-bottom: 12px;
     }
 
-    .summary b { color: var(--gold); }
+    .summary b { color: var(--text); }
 
     .tbl-wrap {
-      border: 1px solid var(--gold-vdim);
+      border: 1px solid var(--border);
       overflow-x: auto;
     }
 
@@ -196,93 +193,100 @@
     }
 
     thead th {
-      font-size: 8px;
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: 1.5px;
-      color: var(--amber);
-      background: #0F1E38;
+      letter-spacing: 0.5px;
+      color: #FFFFFF;
+      background: var(--hdr-bg);
       padding: 6px 10px;
       text-align: left;
-      border-bottom: 1px solid var(--gold-dim);
+      border-bottom: 2px solid #CC9900;
+      border-right: 1px solid rgba(255,255,255,0.15);
       white-space: nowrap;
       position: sticky;
       top: 0;
       z-index: 1;
     }
 
+    thead th:last-child { border-right: none; }
+
     tbody tr { background: var(--bg-row); }
     tbody tr:nth-child(even) { background: var(--bg-row-alt); }
     tbody tr:hover { background: var(--bg-hover); }
 
-    tbody tr.q-sep td { border-top: 2px solid var(--gold-vdim); }
+    tbody tr.q-sep td { border-top: 3px solid var(--hdr-bg); }
 
     tbody td {
       padding: 4px 10px;
-      border-bottom: 1px solid rgba(200,151,26,0.08);
-      color: var(--gold);
+      border-bottom: 1px solid var(--border-lt);
+      border-right: 1px solid #EEEEEE;
+      color: var(--text);
       white-space: nowrap;
     }
 
-    .td-cls  { color: var(--white-dim); }
+    tbody td:last-child { border-right: none; }
+
+    .td-cls  { color: var(--text-dim); }
     .td-tm20 { color: var(--tm20); font-weight: 700; }
     .td-tm30 { color: var(--tm30); font-weight: 700; }
     .td-bsp  { color: var(--bsp); font-weight: 700; }
     .td-a    { color: var(--alpha); }
     .td-b    { color: var(--bravo); }
-    .td-mtt  { color: var(--mtt); }
+    .td-mtt  { color: var(--mtt); font-weight: 700; }
+    .td-sl   { color: var(--sl); font-weight: 700; }
 
     .chip {
-      font-size: 7.5px;
+      font-size: 9px;
       font-weight: 700;
-      letter-spacing: 1px;
-      padding: 1px 6px;
-      border: 1px solid;
+      letter-spacing: 0.5px;
+      padding: 2px 8px;
       display: inline-block;
+      border-radius: 2px;
     }
 
-    .chip-open { color: var(--green); border-color: var(--green-dim); }
-    .chip-low  { color: var(--amber); border-color: rgba(232,169,23,0.5); }
-    .chip-plan { color: var(--cyan); border-color: var(--cyan-dim); }
+    .chip-open { color: var(--green); background: var(--green-bg); }
+    .chip-low  { color: var(--amber); background: var(--amber-bg); }
+    .chip-plan { color: var(--cyan); background: var(--cyan-bg); }
 
     .enroll-note {
       padding: 8px 12px;
-      font-size: 10px;
-      color: var(--gold-dim);
-      border: 1px solid var(--gold-vdim);
+      font-size: 11px;
+      color: var(--text-dim);
+      border: 1px solid var(--border);
       border-top: none;
-      background: rgba(200,151,26,0.03);
+      background: #F9F9F9;
       margin-bottom: 10px;
     }
 
-    .enroll-note strong { color: var(--cyan); }
+    .enroll-note strong { color: var(--hdr-bg); }
 
     .fn-bar {
       display: flex;
-      gap: 2px;
-      background: #0F1E38;
-      border-top: 1px solid var(--gold-vdim);
-      padding: 4px 8px;
+      gap: 4px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      padding: 6px 8px;
       margin-top: 10px;
     }
 
     .fn-key {
-      font-size: 8px;
-      letter-spacing: 0.5px;
-      padding: 2px 8px;
-      color: var(--gold-dim);
-      border: 1px solid var(--gold-vdim);
-      background: rgba(200,151,26,0.04);
+      font-size: 9px;
+      padding: 3px 10px;
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+      background: #FFFFFF;
     }
 
-    .fn-key b { color: var(--amber); margin-right: 4px; }
+    .fn-key b { color: var(--hdr-bg); margin-right: 4px; }
 
     .sys-footer {
-      font-size: 8px;
-      color: var(--gold-vdim);
-      letter-spacing: 1px;
-      padding: 4px 16px;
+      font-size: 9px;
+      color: var(--text-vdim);
+      letter-spacing: 0.5px;
+      padding: 6px 16px;
       text-align: right;
-      border-top: 1px solid rgba(200,151,26,0.1);
+      border-top: 1px solid var(--border-lt);
+      background: var(--bg-panel);
     }
 
     @media (max-width: 700px) {
@@ -303,7 +307,7 @@
       <span><span class="lbl">PROGRAM:</span> <span class="val">MSS-POI-001</span></span>
       <span><span class="lbl">CYCLE:</span> <span class="val">4-WK</span></span>
       <span><span class="lbl">MODE:</span> <span class="val">DUAL-TEAM</span></span>
-      <span><span class="lbl">CLASSES:</span> <span class="val">60</span></span>
+      <span><span class="lbl">CLASSES:</span> <span class="val">68</span></span>
       <span><span class="lbl">STATUS:</span> <span class="val">PLANNING</span></span>
     </div>
   </div>
@@ -329,14 +333,14 @@
     <!-- Key Metrics -->
     <div class="metrics">
       <div class="metric-card">
-        <div class="metric-val">60</div>
+        <div class="metric-val">68</div>
         <div class="metric-lbl">TOTAL CLASSES</div>
-        <div class="metric-sub">32 TM-20 &bull; 20 TM-30 &bull; 8 BSP</div>
+        <div class="metric-sub">32 TM-20 &bull; 20 TM-30 &bull; 8 BSP &bull; 8 TM-SL</div>
       </div>
       <div class="metric-card">
-        <div class="metric-val clr-green">908</div>
+        <div class="metric-val clr-green">1004</div>
         <div class="metric-lbl">TOTAL SEATS</div>
-        <div class="metric-sub">~450 unique personnel</div>
+        <div class="metric-sub">~490 unique personnel</div>
       </div>
       <div class="metric-card">
         <div class="metric-val clr-cyan">5</div>
@@ -356,7 +360,7 @@
     </div>
 
     <div class="summary">
-      <b>60/40 split:</b> TM-20 heavy &mdash; build the base first &nbsp;|&nbsp; <b>BSP 2&times;/quarter</b> &nbsp;|&nbsp; <b>1 off week/month</b> &nbsp;|&nbsp; <b>5 sites:</b> Wiesbaden &bull; Grafenw&ouml;hr &bull; Vicenza &bull; Ansbach &bull; Ft. Hood MTT &nbsp;|&nbsp; TM-10 at unit level
+      <b>60/40 split:</b> TM-20 heavy &mdash; build the base first &nbsp;|&nbsp; <b>BSP 2&times;/quarter</b> &nbsp;|&nbsp; <b>TM-SL 2&times;/quarter</b> (off weeks) &nbsp;|&nbsp; <b>5 sites:</b> Wiesbaden &bull; Grafenw&ouml;hr &bull; Vicenza &bull; Ansbach &bull; Ft. Hood MTT &nbsp;|&nbsp; TM-10 at unit level
     </div>
 
     <!-- Class listing -->
@@ -376,8 +380,8 @@
         </thead>
         <tbody>
           <!-- ══════════════════════════════════════════ -->
-          <!-- Q1: OCT–DEC 2026  (15 classes)           -->
-          <!-- 8 TM-20 + 5 TM-30 + 2 BSP               -->
+          <!-- Q1: OCT–DEC 2026  (17 classes)           -->
+          <!-- 8 TM-20 + 5 TM-30 + 2 BSP + 2 TM-SL     -->
           <!-- ══════════════════════════════════════════ -->
 
           <!-- OCT: 4 TM-20, 2 TM-30 -->
@@ -387,7 +391,8 @@
           <tr><td class="td-cls">004-FY27</td><td class="td-tm20">TM-20</td><td class="td-b">BRAVO</td><td>13&ndash;17 OCT 26</td><td>Grafenw&ouml;hr, Bldg 244</td><td>SSG Williams</td><td>10 / 15</td><td><span class="chip chip-open">OPEN</span></td></tr>
           <tr><td class="td-cls">005-FY27</td><td class="td-tm30">TM-30</td><td class="td-a">ALPHA</td><td>20&ndash;24 OCT 26</td><td>Wiesbaden, Clay Kaserne</td><td>CW3 Thompson</td><td>4 / 15</td><td><span class="chip chip-low">4 LEFT</span></td></tr>
           <tr><td class="td-cls">006-FY27</td><td class="td-tm30">TM-30</td><td class="td-b">BRAVO</td><td>20&ndash;24 OCT 26</td><td>Grafenw&ouml;hr, Bldg 244</td><td>CW2 Rodriguez</td><td>10 / 15</td><td><span class="chip chip-open">OPEN</span></td></tr>
-          <!-- OFF week: 27–31 OCT -->
+          <!-- OFF week: 27–31 OCT (TM-SL scheduled) -->
+          <tr><td class="td-cls">SL1-FY27</td><td class="td-sl">TM-SL</td><td>OIC</td><td>28 OCT 26</td><td>Wiesbaden, Clay Kaserne</td><td>OIC</td><td>12 / 12</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
 
           <!-- NOV: 2 TM-20, 2 TM-30, 1 BSP -->
           <tr><td class="td-cls">007-FY27</td><td class="td-tm20">TM-20</td><td class="td-a">ALPHA</td><td>02&ndash;06 NOV 26</td><td>Wiesbaden, Clay Kaserne</td><td>SFC Chen</td><td>15 / 15</td><td><span class="chip chip-open">OPEN</span></td></tr>
@@ -395,6 +400,9 @@
           <tr><td class="td-cls">009-FY27</td><td class="td-tm30">TM-30</td><td class="td-a">ALPHA</td><td>09&ndash;13 NOV 26</td><td>Wiesbaden, Clay Kaserne</td><td>CW3 Thompson</td><td>15 / 15</td><td><span class="chip chip-open">OPEN</span></td></tr>
           <tr><td class="td-cls">010-FY27</td><td class="td-tm30">TM-30</td><td class="td-b">BRAVO</td><td>09&ndash;13 NOV 26</td><td>Grafenw&ouml;hr, Bldg 244</td><td>CW2 Rodriguez</td><td>15 / 15</td><td><span class="chip chip-open">OPEN</span></td></tr>
           <tr><td class="td-cls">011-FY27</td><td class="td-bsp">BSP #1</td><td>ALL</td><td>16&ndash;20 NOV 26</td><td>Wiesbaden, Clay Kaserne</td><td>OIC</td><td>12 / 16</td><td><span class="chip chip-open">OPEN</span></td></tr>
+
+          <!-- OFF week: 23–27 NOV (TM-SL scheduled) -->
+          <tr><td class="td-cls">SL2-FY27</td><td class="td-sl">TM-SL</td><td>OIC</td><td>24 NOV 26</td><td>Wiesbaden, Clay Kaserne</td><td>OIC</td><td>12 / 12</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
 
           <!-- DEC: 2 TM-20, 1 TM-30, 1 BSP (Alpha to Vicenza) -->
           <tr><td class="td-cls">012-FY27</td><td class="td-tm20">TM-20</td><td class="td-a">ALPHA</td><td>30 NOV&ndash;04 DEC 26</td><td class="td-mtt">Vicenza, Caserma Del Din</td><td>SFC Chen</td><td>15 / 15</td><td><span class="chip chip-open">OPEN</span></td></tr>
@@ -404,8 +412,8 @@
           <!-- Holiday block: 21 DEC – 02 JAN -->
 
           <!-- ══════════════════════════════════════════ -->
-          <!-- Q2: JAN–MAR 2027  (15 classes)            -->
-          <!-- 8 TM-20 + 5 TM-30 + 2 BSP                -->
+          <!-- Q2: JAN–MAR 2027  (17 classes)            -->
+          <!-- 8 TM-20 + 5 TM-30 + 2 BSP + 2 TM-SL      -->
           <!-- ══════════════════════════════════════════ -->
 
           <!-- JAN: 4 TM-20, 2 TM-30 -->
@@ -415,7 +423,8 @@
           <tr><td class="td-cls">019-FY27</td><td class="td-tm20">TM-20</td><td class="td-b">BRAVO</td><td>11&ndash;15 JAN 27</td><td>Grafenw&ouml;hr, Bldg 244</td><td>SSG Williams</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
           <tr><td class="td-cls">020-FY27</td><td class="td-tm30">TM-30</td><td class="td-a">ALPHA</td><td>18&ndash;22 JAN 27</td><td>Wiesbaden, Clay Kaserne</td><td>CW3 Thompson</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
           <tr><td class="td-cls">021-FY27</td><td class="td-tm30">TM-30</td><td class="td-b">BRAVO</td><td>18&ndash;22 JAN 27</td><td>Grafenw&ouml;hr, Bldg 244</td><td>CW2 Rodriguez</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
-          <!-- OFF week: 25–29 JAN -->
+          <!-- OFF week: 25–29 JAN (TM-SL scheduled) -->
+          <tr><td class="td-cls">SL3-FY27</td><td class="td-sl">TM-SL</td><td>OIC</td><td>27 JAN 27</td><td>Wiesbaden, Clay Kaserne</td><td>OIC</td><td>12 / 12</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
 
           <!-- FEB: 2 TM-20, 2 TM-30, 1 BSP (Alpha to Ansbach) -->
           <tr><td class="td-cls">022-FY27</td><td class="td-tm20">TM-20</td><td class="td-a">ALPHA</td><td>01&ndash;05 FEB 27</td><td>Ansbach, Storck Bks</td><td>SFC Chen</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
@@ -424,6 +433,9 @@
           <tr><td class="td-cls">025-FY27</td><td class="td-tm30">TM-30</td><td class="td-b">BRAVO</td><td>08&ndash;12 FEB 27</td><td>Grafenw&ouml;hr, Bldg 244</td><td>CW2 Rodriguez</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
           <tr><td class="td-cls">026-FY27</td><td class="td-bsp">BSP #3</td><td>ALL</td><td>15&ndash;19 FEB 27</td><td>Wiesbaden, Clay Kaserne</td><td>OIC</td><td>16 / 16</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
 
+          <!-- OFF week: 22–26 FEB (TM-SL scheduled) -->
+          <tr><td class="td-cls">SL4-FY27</td><td class="td-sl">TM-SL</td><td>OIC</td><td>24 FEB 27</td><td>Wiesbaden, Clay Kaserne</td><td>OIC</td><td>12 / 12</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
+
           <!-- MAR: 2 TM-20, 1 TM-30, 1 BSP (Alpha to Ft. Hood, Bravo to Vicenza) -->
           <tr><td class="td-cls">027-FY27</td><td class="td-tm20">TM-20</td><td class="td-a">ALPHA</td><td>01&ndash;05 MAR 27</td><td class="td-mtt">Ft. Hood, TX (III Corps MTT)</td><td>SFC Chen</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
           <tr><td class="td-cls">028-FY27</td><td class="td-tm20">TM-20</td><td class="td-b">BRAVO</td><td>01&ndash;05 MAR 27</td><td class="td-mtt">Vicenza, Caserma Del Din</td><td>SSG Williams</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
@@ -431,8 +443,8 @@
           <tr><td class="td-cls">030-FY27</td><td class="td-bsp">BSP #4</td><td>ALL</td><td>15&ndash;19 MAR 27</td><td>Wiesbaden, Clay Kaserne</td><td>OIC</td><td>16 / 16</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
 
           <!-- ══════════════════════════════════════════ -->
-          <!-- Q3: APR–JUN 2027  (15 classes)            -->
-          <!-- 8 TM-20 + 5 TM-30 + 2 BSP                -->
+          <!-- Q3: APR–JUN 2027  (17 classes)            -->
+          <!-- 8 TM-20 + 5 TM-30 + 2 BSP + 2 TM-SL      -->
           <!-- ══════════════════════════════════════════ -->
 
           <!-- APR: 4 TM-20, 2 TM-30 -->
@@ -442,7 +454,8 @@
           <tr><td class="td-cls">034-FY27</td><td class="td-tm20">TM-20</td><td class="td-b">BRAVO</td><td>05&ndash;09 APR 27</td><td>Grafenw&ouml;hr, Bldg 244</td><td>SSG Williams</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
           <tr><td class="td-cls">035-FY27</td><td class="td-tm30">TM-30</td><td class="td-a">ALPHA</td><td>12&ndash;16 APR 27</td><td>Wiesbaden, Clay Kaserne</td><td>CW3 Thompson</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
           <tr><td class="td-cls">036-FY27</td><td class="td-tm30">TM-30</td><td class="td-b">BRAVO</td><td>12&ndash;16 APR 27</td><td>Grafenw&ouml;hr, Bldg 244</td><td>CW2 Rodriguez</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
-          <!-- OFF week: 19–23 APR -->
+          <!-- OFF week: 19–23 APR (TM-SL scheduled) -->
+          <tr><td class="td-cls">SL5-FY27</td><td class="td-sl">TM-SL</td><td>OIC</td><td>21 APR 27</td><td>Wiesbaden, Clay Kaserne</td><td>OIC</td><td>12 / 12</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
 
           <!-- MAY: 2 TM-20, 2 TM-30, 1 BSP (Alpha to Vicenza, Bravo to Ansbach) -->
           <tr><td class="td-cls">037-FY27</td><td class="td-tm20">TM-20</td><td class="td-a">ALPHA</td><td>03&ndash;07 MAY 27</td><td class="td-mtt">Vicenza, Caserma Del Din</td><td>SFC Chen</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
@@ -451,6 +464,9 @@
           <tr><td class="td-cls">040-FY27</td><td class="td-tm30">TM-30</td><td class="td-b">BRAVO</td><td>10&ndash;14 MAY 27</td><td>Ansbach, Storck Bks</td><td>CW2 Rodriguez</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
           <tr><td class="td-cls">041-FY27</td><td class="td-bsp">BSP #5</td><td>ALL</td><td>17&ndash;21 MAY 27</td><td>Wiesbaden, Clay Kaserne</td><td>OIC</td><td>16 / 16</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
 
+          <!-- OFF week: 24–28 MAY (TM-SL scheduled) -->
+          <tr><td class="td-cls">SL6-FY27</td><td class="td-sl">TM-SL</td><td>OIC</td><td>26 MAY 27</td><td>Wiesbaden, Clay Kaserne</td><td>OIC</td><td>12 / 12</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
+
           <!-- JUN: 2 TM-20, 1 TM-30, 1 BSP (Wiesbaden surge) -->
           <tr><td class="td-cls">042-FY27</td><td class="td-tm20">TM-20</td><td class="td-a">ALPHA</td><td>31 MAY&ndash;04 JUN 27</td><td>Wiesbaden, Clay Kaserne</td><td>SFC Chen</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
           <tr><td class="td-cls">043-FY27</td><td class="td-tm20">TM-20</td><td class="td-b">BRAVO</td><td>31 MAY&ndash;04 JUN 27</td><td>Wiesbaden, Clay Kaserne</td><td>SSG Williams</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
@@ -458,8 +474,8 @@
           <tr><td class="td-cls">045-FY27</td><td class="td-bsp">BSP #6</td><td>ALL</td><td>14&ndash;18 JUN 27</td><td>Wiesbaden, Clay Kaserne</td><td>OIC</td><td>16 / 16</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
 
           <!-- ══════════════════════════════════════════ -->
-          <!-- Q4: JUL–SEP 2027  (15 classes)            -->
-          <!-- 8 TM-20 + 5 TM-30 + 2 BSP                -->
+          <!-- Q4: JUL–SEP 2027  (17 classes)            -->
+          <!-- 8 TM-20 + 5 TM-30 + 2 BSP + 2 TM-SL      -->
           <!-- ══════════════════════════════════════════ -->
 
           <!-- JUL: 4 TM-20, 2 TM-30 -->
@@ -469,7 +485,8 @@
           <tr><td class="td-cls">049-FY27</td><td class="td-tm20">TM-20</td><td class="td-b">BRAVO</td><td>05&ndash;09 JUL 27</td><td>Grafenw&ouml;hr, Bldg 244</td><td>SSG Williams</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
           <tr><td class="td-cls">050-FY27</td><td class="td-tm30">TM-30</td><td class="td-a">ALPHA</td><td>12&ndash;16 JUL 27</td><td>Wiesbaden, Clay Kaserne</td><td>CW3 Thompson</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
           <tr><td class="td-cls">051-FY27</td><td class="td-tm30">TM-30</td><td class="td-b">BRAVO</td><td>12&ndash;16 JUL 27</td><td>Grafenw&ouml;hr, Bldg 244</td><td>CW2 Rodriguez</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
-          <!-- OFF week: 19–23 JUL (summer block starts) -->
+          <!-- OFF week: 19–23 JUL (TM-SL scheduled) -->
+          <tr><td class="td-cls">SL7-FY27</td><td class="td-sl">TM-SL</td><td>OIC</td><td>21 JUL 27</td><td>Wiesbaden, Clay Kaserne</td><td>OIC</td><td>12 / 12</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
 
           <!-- AUG: 2 TM-20, 2 TM-30, 1 BSP -->
           <tr><td class="td-cls">052-FY27</td><td class="td-tm20">TM-20</td><td class="td-a">ALPHA</td><td>02&ndash;06 AUG 27</td><td>Wiesbaden, Clay Kaserne</td><td>SFC Chen</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
@@ -477,6 +494,9 @@
           <tr><td class="td-cls">054-FY27</td><td class="td-tm30">TM-30</td><td class="td-a">ALPHA</td><td>09&ndash;13 AUG 27</td><td>Wiesbaden, Clay Kaserne</td><td>CW3 Thompson</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
           <tr><td class="td-cls">055-FY27</td><td class="td-tm30">TM-30</td><td class="td-b">BRAVO</td><td>09&ndash;13 AUG 27</td><td>Grafenw&ouml;hr, Bldg 244</td><td>CW2 Rodriguez</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
           <tr><td class="td-cls">056-FY27</td><td class="td-bsp">BSP #7</td><td>ALL</td><td>16&ndash;20 AUG 27</td><td>Wiesbaden, Clay Kaserne</td><td>OIC</td><td>16 / 16</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
+
+          <!-- OFF week: 23–27 AUG (TM-SL scheduled) -->
+          <tr><td class="td-cls">SL8-FY27</td><td class="td-sl">TM-SL</td><td>OIC</td><td>25 AUG 27</td><td>Wiesbaden, Clay Kaserne</td><td>OIC</td><td>12 / 12</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
 
           <!-- SEP: 2 TM-20, 1 TM-30, 1 BSP (close out FY) -->
           <tr><td class="td-cls">057-FY27</td><td class="td-tm20">TM-20</td><td class="td-a">ALPHA</td><td>30 AUG&ndash;03 SEP 27</td><td>Wiesbaden, Clay Kaserne</td><td>SFC Chen</td><td>15 / 15</td><td><span class="chip chip-plan">PLANNED</span></td></tr>
@@ -488,7 +508,7 @@
     </div>
 
     <div class="enroll-note">
-      <strong>ENROLL:</strong> Contact listed POC to reserve a seat. MSS account request NLT 5 duty days before course start. TM-10 completed at unit level prior to enrollment. TM-20 Go required before TM-30. BSP requires TM-20 Go + command-approved project.
+      <strong>ENROLL:</strong> Contact listed POC to reserve a seat. MSS account request NLT 5 duty days before course start. TM-10 completed at unit level prior to enrollment. TM-20 Go required before TM-30. BSP requires TM-20 Go + command-approved project. <strong>TM-SL:</strong> O-5+/E-9+ only; no prereqs; 1-day exec course; replaces TM-10 for senior leaders.
     </div>
 
     <div class="fn-bar">

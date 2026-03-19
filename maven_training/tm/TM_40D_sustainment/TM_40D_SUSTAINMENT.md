@@ -103,7 +103,7 @@ MSS organizes sustainment data in unit-level workspaces. Each workspace mirrors 
 
 TM-40D is written in alignment with the following doctrinal publications. These publications are not required reading before using this manual — but sustainment practitioners who are responsible for S4 functions or sustainment command positions should be familiar with them.
 
-**Table 1-2. Primary Doctrinal References**
+**Table 1-3. Primary Doctrinal References**
 
 | Publication | Title | Relevance to TM-40D |
 |---|---|---|
@@ -136,7 +136,7 @@ TM-40D is written in alignment with the following doctrinal publications. These 
 
 Workspace configuration varies by sustainment echelon.
 
-**Table 1-3. Workspace Configuration by Sustainment Echelon**
+**Table 1-4. Workspace Configuration by Sustainment Echelon**
 
 | Echelon | Unit | Primary MSS Products |
 |---|---|---|
@@ -147,7 +147,7 @@ Workspace configuration varies by sustainment echelon.
 | TSC/ESC | Theater Sustainment Command / Expeditionary Sustainment Command | Theater-level distribution, HNS tracking, ASL status, strategic LOC monitoring |
 | CSSB | Combat Sustainment Support Battalion | Area sustainment, fuel points, water points, Class I–III distribution |
 
-### 1-8. Scope: What TM-40D Covers and Does Not Cover
+### 1-7. Scope: What TM-40D Covers and Does Not Cover
 
 **TM-40D covers:**
 
@@ -170,9 +170,9 @@ Workspace configuration varies by sustainment echelon.
 - SAMS-E work order entry — see SAMS-E user manuals
 - IPPS-A personnel transactions — see IPPS-A user documentation
 
-### 1-9. Relationship to Other TMs in the MSS Curriculum
+### 1-8. Relationship to Other TMs in the MSS Curriculum
 
-**Table 1-3. TM Curriculum Relationships**
+**Table 1-5. TM Curriculum Relationships**
 
 | TM | Title | Relationship to TM-40D |
 |---|---|---|
@@ -185,13 +185,13 @@ Workspace configuration varies by sustainment echelon.
 | TM-40D | Sustainment | This manual. |
 | TM-40E | Protection | Complementary. Force protection data affects sustainment convoy routes and supply point security. |
 | TM-40F | Mission Command | Complementary. S4 sustainment products contribute to the COP (S3 product); LOGSTAT feeds commander FFIR monitoring. |
-| TM-50G–M | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq TM-30). Not applicable to operational sustainment practitioners. |
+| TM-50G–O | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq TM-30). Not applicable to operational sustainment practitioners. |
 
 > **NOTE: TM-20 and TM-30 are required as prerequisites (Go evaluations on file) but builder skills are not exercised in this manual. TM-40D assumes no ability to build pipelines or transforms. If you encounter a sustainment data product that does not exist and needs to be built, coordinate with your unit's designated MSS Builder (TM-30 qualified) or the C2DAO.**
 
-### 1-10. Audience and MOS Coverage
+### 1-9. Audience and MOS Coverage
 
-**Table 1-4. Primary Audience by Function and MOS**
+**Table 1-6. Primary Audience by Function and MOS**
 
 | Function | Officer / Warrant | Enlisted | Position Examples |
 |---|---|---|---|
@@ -207,7 +207,7 @@ Workspace configuration varies by sustainment echelon.
 | HR / Personnel | 42B | 42A, 42H | S1, HR NCOIC, Strength Manager |
 | Parachute Rigger | — | 92R | Rigger Section Chief |
 
-### 1-11. How to Use This Manual
+### 1-10. How to Use This Manual
 
 TM-40D is organized by sustainment function. Read Chapter 1 in full before beginning any other chapter. Subsequent chapters are organized by supply class and functional area — read the chapters that apply to your MOS and duty position. Not every practitioner needs every chapter.
 
@@ -229,7 +229,7 @@ TM-40D is organized by sustainment function. Read Chapter 1 in full before begin
 | Parachute Rigger (92R) | Ch. 1, para 5-7 |
 | All sustainers | Ch. 10 (degraded operations) |
 
-### 1-12. Prerequisites
+### 1-11. Prerequisites
 
 Before beginning this manual, verify the following:
 
@@ -1198,16 +1198,6 @@ In addition to FLIPL tracking in Chapter 3 (equipment), MSS tracks unit-level pr
 - MSS tracks sensitive item inventory completion by unit
 - Required frequencies: weapons/NVGs — daily; COMSEC — weekly; controlled items — as directed
 - Units with overdue inventories flagged in MSS accountability dashboard
-
-### 8-4. Services Management Data
-
-**Laundry and Bath Services:**
-- Capacity tracking: number of personnel served per day vs. capacity
-- Schedule tracking: unit appointment windows for laundry/bath assets
-- Status: operational, limited, offline
-
-**Mortuary Affairs:**
-> **WARNING: Mortuary affairs data is subject to strict privacy and handling requirements IAW AR 638-34. Mortuary affairs records in MSS must be handled at the appropriate classification level. Access to mortuary affairs data workspace must be restricted to authorized personnel only. Contact the unit S1 and Judge Advocate before entering or distributing any mortuary affairs data in MSS.**
 
 ### 8-4. Services Management Data
 

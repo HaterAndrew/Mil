@@ -206,36 +206,6 @@
     color: #405060;
     pointer-events: none;
   }
-  #doctrine-panel {
-    position: absolute;
-    bottom: 32px;
-    right: 16px;
-    background: rgba(10,21,32,0.92);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 10px 14px;
-    pointer-events: all;
-    z-index: 10;
-    max-width: 360px;
-    min-width: 200px;
-    cursor: grab;
-    user-select: none;
-    max-height: 50vh;
-    overflow-y: auto;
-  }
-  #doctrine-panel.dragging { cursor: grabbing; }
-  #doctrine-panel .doc-table { border-collapse: collapse; width: 100%; }
-  #doctrine-panel .doc-table td {
-    padding: 2px 0; color: #a0c0d8; font-size: 10px; vertical-align: top;
-  }
-  #doctrine-panel .doc-table td:first-child {
-    color: #7ab8d8; font-weight: bold; white-space: nowrap; padding-right: 10px;
-  }
-  #doctrine-panel .doc-table td:last-child { color: #8898a8; }
-  #doctrine-panel .doc-cat {
-    color: #607080; font-weight: bold; font-size: 9px; letter-spacing: 1px;
-    padding-top: 5px; padding-bottom: 2px;
-  }
   #corpus-panel {
     position: absolute;
     bottom: 32px;
@@ -270,8 +240,8 @@
     <div id="header-title">
       <h1>Maven Training Corpus — File Dependency Map</h1>
       <div class="subtitle">USAREUR-AF &nbsp;|&nbsp; C2DAO &nbsp;|&nbsp; 16 MAR 2026 (v2.0 + BSP + doctrine refs) &nbsp;|&nbsp;
-        <span id="node-count">209</span> files &nbsp;|&nbsp;
-        <span id="edge-count">474</span> edges &nbsp;|&nbsp;
+        <span id="node-count">212</span> files &nbsp;|&nbsp;
+        <span id="edge-count">476</span> edges &nbsp;|&nbsp;
         Pre-v2.0 audit complete &mdash; TM-30 hard prereq enforced all TM-40 tracks
       </div>
     </div>
@@ -303,6 +273,10 @@
     <div class="ctrl-group" style="border-left:1px solid #1e3a50;padding-left:12px">
       <input type="checkbox" id="chk-cda" onchange="toggleCDA()">
       <label for="chk-cda" style="color:#c8a040">Slide Decks</label>
+    </div>
+    <div class="ctrl-group">
+      <input type="checkbox" id="chk-apps" onchange="toggleApps()">
+      <label for="chk-apps" style="color:#2a9acc">Analytics Apps</label>
     </div>
     <div class="ctrl-group" style="margin-left:8px">
       <button onclick="resetView()" style="background:#1a2a3a;border:1px solid #2a4a6a;color:#7aaad8;
@@ -342,10 +316,11 @@
 
     <!-- Main transform group for pan/zoom -->
     <g id="viewport">
+      <g id="app-bg-group"></g>
+      <g id="labels-group"></g>
       <g id="edges-companion-group"></g>
       <g id="edges-prereq-group"></g>
       <g id="nodes-group"></g>
-      <g id="labels-group"></g>
       <!-- CDA overlay — hidden by default, toggled via checkbox -->
       <g id="cda-group" style="display:none">
         <g id="cda-edges-grp"></g>
@@ -379,7 +354,7 @@
       <div class="legend-item" data-legend-types="TM,CG,SYL,EX,EXAM" style="margin-top:6px"><div class="legend-swatch" style="background:#1a5cb8"></div>Course &amp; Assessment</div>
       <div class="legend-item" data-legend-types="REF,HTML"><div class="legend-swatch" style="background:#1a7a2e"></div>Reference</div>
       <div class="legend-item" data-legend-types="CNCPT,EA,CANON,PPT,SS,ARCH,CDA"><div class="legend-swatch" style="background:#8a6a10"></div>Architecture / Supplemental</div>
-      <div class="legend-item" data-legend-types="TMGMT"><div class="legend-swatch" style="background:#4a5568"></div>Admin / Training Mgmt</div>
+      <div class="legend-item" data-legend-types="TMGMT"><div class="legend-swatch" style="background:#4a5568"></div>Training Management</div>
       <div class="legend-item" data-legend-types="BSP,SOP"><div class="legend-swatch" style="background:#8b2e14"></div>Builder Sprint</div>
       <div class="legend-item" data-legend-types="BRIEF"><div class="legend-swatch" style="background:#7a3e8a"></div>Brief / Strategy</div>
       <hr class="legend-divider">
@@ -389,57 +364,6 @@
     </div>
   </div>
 
-  <div id="doctrine-panel">
-    <div class="legend-heading panel-toggle-heading" onclick="togglePanelCollapse('doctrine')">
-      EXTERNAL DOCTRINAL REFERENCES <span class="panel-arrow" id="doctrine-arrow">&#9660;</span>
-    </div>
-    <div id="doctrine-content" style="display:none">
-      <div style="color:#8898a8;font-size:9px;margin:4px 0 6px;line-height:1.4">
-        Army publications governing the MSS training program.<br>
-        TR/TP pubs: TRADOC (adminpubs.tradoc.army.mil), not DA APD.
-      </div>
-      <table class="doc-table">
-        <tr><td colspan="2" class="doc-cat">REGULATORY FOUNDATION</td></tr>
-        <tr><td>AR 350-1</td><td>Army Training and Leader Development</td></tr>
-        <tr><td>TR 350-70</td><td>Army Learning Policy and Systems (TRADOC)</td></tr>
-        <tr><td>TP 350-70-14</td><td>Training Dev in Institutional Domain</td></tr>
-        <tr><td>TP 350-70-7</td><td>Army Educational Processes</td></tr>
-        <tr><td>TP 350-70-3</td><td>Faculty &amp; Staff Development Program</td></tr>
-        <tr><td colspan="2" class="doc-cat">PUBLISHING &amp; CORRESPONDENCE</td></tr>
-        <tr><td>DA PAM 25-40</td><td>Army Publishing: Action Officers' Guide</td></tr>
-        <tr><td>AR 25-50</td><td>Preparing and Managing Correspondence</td></tr>
-        <tr><td colspan="2" class="doc-cat">IT, DATA &amp; RECORDS MGMT</td></tr>
-        <tr><td>AR 25-1</td><td>Army Information Technology</td></tr>
-        <tr><td>DA PAM 25-1-1</td><td>Army IT Implementation Instructions</td></tr>
-        <tr><td>AR 25-400-2</td><td>Army Records Management Program</td></tr>
-        <tr><td>DA PAM 25-403</td><td>Army Guide to Recordkeeping</td></tr>
-        <tr><td>ATP 6-01.1</td><td>Techniques for Effective Knowledge Mgmt</td></tr>
-        <tr><td colspan="2" class="doc-cat">ORSA / M&amp;S</td></tr>
-        <tr><td>DA PAM 600-3</td><td>Officer Professional Development (FA 49)</td></tr>
-        <tr><td>AR 5-11</td><td>Management of Army M&amp;S</td></tr>
-        <tr><td>DA PAM 5-11</td><td>VV&amp;A of Army Models and Simulations</td></tr>
-        <tr><td>ATP 5-0.3</td><td>Multi-Service TTP for Op Assessment</td></tr>
-        <tr><td>AR 71-9</td><td>Warfighting Capabilities Determination</td></tr>
-        <tr><td colspan="2" class="doc-cat">DIGITAL ENGINEERING &amp; SOFTWARE</td></tr>
-        <tr><td>Army DIR 2024-03</td><td>Digital Engineering Policy</td></tr>
-        <tr><td>DA PAM 25-2-5</td><td>Software Assurance</td></tr>
-        <tr><td colspan="2" class="doc-cat">WFF DOCTRINE (TM-40A&ndash;F)</td></tr>
-        <tr><td>ATP 2-33.4</td><td>Intelligence Analysis</td></tr>
-        <tr><td>ATP 2-22.9-1</td><td>PAI Research and OSINT</td></tr>
-        <tr><td>FM 3-60</td><td>Army Targeting</td></tr>
-        <tr><td>FM 3-27</td><td>Army Global Integrated Fires</td></tr>
-        <tr><td>ATP 3-01.81</td><td>Counter-UAS Techniques</td></tr>
-        <tr><td>FM 3-81</td><td>Maneuver Enhancement Brigade</td></tr>
-        <tr><td>ATP 4-33</td><td>Maintenance Operations</td></tr>
-        <tr><td>FM 1-0</td><td>Human Resources Support</td></tr>
-        <tr><td>AR 525-2</td><td>The Army Protection Program</td></tr>
-        <tr><td>AR 530-1</td><td>Operations Security</td></tr>
-        <tr><td>FM 3-12</td><td>Cyberspace Operations and EW</td></tr>
-        <tr><td>ATP 5-0.1</td><td>Army Design Methodology</td></tr>
-        <tr><td>TC 6-0.2</td><td>Training the C2 WFF for BN/BDE/BCT</td></tr>
-      </table>
-    </div>
-  </div>
 </div>
 
 <script>
@@ -588,7 +512,7 @@ const NODES = [
   {
     "id": "EX10",
     "label": "EX-10\nOperator",
-    "path": "exercises/EX-10_operator_basics/EXERCISE.md",
+    "path": "exercises/EX_10_operator_basics/EXERCISE.md",
     "type": "EX",
     "col": 1,
     "track": "TM-10",
@@ -655,7 +579,7 @@ const NODES = [
     "x": 30,
     "y": 546,
     "is_sidebar": false,
-    "aud": [
+    "aud": ["user", 
       "dev",
       "trainer"
     ],
@@ -674,7 +598,7 @@ const NODES = [
     "x": 214,
     "y": 546,
     "is_sidebar": false,
-    "aud": [
+    "aud": ["user", 
       "dev",
       "trainer"
     ],
@@ -683,7 +607,7 @@ const NODES = [
   {
     "id": "EX20",
     "label": "EX-20\nNo-Code Builder",
-    "path": "exercises/EX-20_no_code_builder/EXERCISE.md",
+    "path": "exercises/EX_20_no_code_builder/EXERCISE.md",
     "type": "EX",
     "col": 2,
     "track": "TM-20",
@@ -693,7 +617,7 @@ const NODES = [
     "x": 398,
     "y": 546,
     "is_sidebar": false,
-    "aud": [
+    "aud": ["user", 
       "dev",
       "trainer"
     ],
@@ -712,7 +636,7 @@ const NODES = [
     "x": 582,
     "y": 546,
     "is_sidebar": false,
-    "aud": [
+    "aud": ["user", 
       "dev",
       "trainer"
     ],
@@ -731,7 +655,7 @@ const NODES = [
     "x": 766,
     "y": 546,
     "is_sidebar": false,
-    "aud": [
+    "aud": ["user", 
       "dev",
       "trainer"
     ],
@@ -750,7 +674,7 @@ const NODES = [
     "x": 30,
     "y": 784,
     "is_sidebar": false,
-    "aud": [
+    "aud": ["user", 
       "dev",
       "trainer"
     ],
@@ -769,7 +693,7 @@ const NODES = [
     "x": 214,
     "y": 784,
     "is_sidebar": false,
-    "aud": [
+    "aud": ["user", 
       "dev",
       "trainer"
     ],
@@ -778,7 +702,7 @@ const NODES = [
   {
     "id": "EX30",
     "label": "EX-30\nAdv Builder",
-    "path": "exercises/EX-30_advanced_builder/EXERCISE.md",
+    "path": "exercises/EX_30_advanced_builder/EXERCISE.md",
     "type": "EX",
     "col": 3,
     "track": "TM-30",
@@ -788,7 +712,7 @@ const NODES = [
     "x": 398,
     "y": 784,
     "is_sidebar": false,
-    "aud": [
+    "aud": ["user", 
       "dev",
       "trainer"
     ],
@@ -807,7 +731,7 @@ const NODES = [
     "x": 582,
     "y": 784,
     "is_sidebar": false,
-    "aud": [
+    "aud": ["user", 
       "dev",
       "trainer"
     ],
@@ -826,7 +750,7 @@ const NODES = [
     "x": 766,
     "y": 784,
     "is_sidebar": false,
-    "aud": [
+    "aud": ["user", 
       "dev",
       "trainer"
     ],
@@ -851,7 +775,7 @@ const NODES = [
       "trainer",
       "specialist"
     ],
-    "desc": "TM-40 level overview: twelve parallel tracks covering WFF (A-F) and specialist (G-L) roles — all require TM-30"
+    "desc": "TM-40 level overview: fourteen parallel tracks covering WFF (A-F) and specialist (G-O) roles — all require TM-30"
   },
   {
     "id": "TM40A",
@@ -861,8 +785,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40A",
     "ni": 0,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 30,
     "y": 1022,
     "is_sidebar": false,
@@ -880,8 +804,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40A",
     "ni": 1,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 214,
     "y": 1022,
     "is_sidebar": false,
@@ -899,8 +823,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40A",
     "ni": 2,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 398,
     "y": 1022,
     "is_sidebar": false,
@@ -913,13 +837,13 @@ const NODES = [
   {
     "id": "EX40A",
     "label": "EX-40A\nIntelligence",
-    "path": "exercises/EX-40A_intelligence/EXERCISE.md",
+    "path": "exercises/EX_40A_intelligence/EXERCISE.md",
     "type": "EX",
     "col": 4,
     "track": "TM-40A",
     "ni": 3,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 582,
     "y": 1022,
     "is_sidebar": false,
@@ -937,8 +861,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40A",
     "ni": 4,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 766,
     "y": 1022,
     "is_sidebar": false,
@@ -956,8 +880,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40A",
     "ni": 5,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 950,
     "y": 1022,
     "is_sidebar": false,
@@ -975,8 +899,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40B",
     "ni": 0,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 30,
     "y": 1082,
     "is_sidebar": false,
@@ -994,8 +918,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40B",
     "ni": 1,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 214,
     "y": 1082,
     "is_sidebar": false,
@@ -1013,8 +937,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40B",
     "ni": 2,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 398,
     "y": 1082,
     "is_sidebar": false,
@@ -1027,13 +951,13 @@ const NODES = [
   {
     "id": "EX40B",
     "label": "EX-40B\nFires",
-    "path": "exercises/EX-40B_fires/EXERCISE.md",
+    "path": "exercises/EX_40B_fires/EXERCISE.md",
     "type": "EX",
     "col": 4,
     "track": "TM-40B",
     "ni": 3,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 582,
     "y": 1082,
     "is_sidebar": false,
@@ -1051,8 +975,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40B",
     "ni": 4,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 766,
     "y": 1082,
     "is_sidebar": false,
@@ -1070,8 +994,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40B",
     "ni": 5,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 950,
     "y": 1082,
     "is_sidebar": false,
@@ -1089,8 +1013,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40C",
     "ni": 0,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 30,
     "y": 1142,
     "is_sidebar": false,
@@ -1108,8 +1032,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40C",
     "ni": 1,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 214,
     "y": 1142,
     "is_sidebar": false,
@@ -1127,8 +1051,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40C",
     "ni": 2,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 398,
     "y": 1142,
     "is_sidebar": false,
@@ -1141,13 +1065,13 @@ const NODES = [
   {
     "id": "EX40C",
     "label": "EX-40C\nMvt & Maneuver",
-    "path": "exercises/EX-40C_movement_maneuver/EXERCISE.md",
+    "path": "exercises/EX_40C_movement_maneuver/EXERCISE.md",
     "type": "EX",
     "col": 4,
     "track": "TM-40C",
     "ni": 3,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 582,
     "y": 1142,
     "is_sidebar": false,
@@ -1165,8 +1089,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40C",
     "ni": 4,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 766,
     "y": 1142,
     "is_sidebar": false,
@@ -1184,8 +1108,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40C",
     "ni": 5,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 950,
     "y": 1142,
     "is_sidebar": false,
@@ -1203,8 +1127,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40D",
     "ni": 0,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 30,
     "y": 1202,
     "is_sidebar": false,
@@ -1222,8 +1146,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40D",
     "ni": 1,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 214,
     "y": 1202,
     "is_sidebar": false,
@@ -1241,8 +1165,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40D",
     "ni": 2,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 398,
     "y": 1202,
     "is_sidebar": false,
@@ -1255,13 +1179,13 @@ const NODES = [
   {
     "id": "EX40D",
     "label": "EX-40D\nSustainment",
-    "path": "exercises/EX-40D_sustainment/EXERCISE.md",
+    "path": "exercises/EX_40D_sustainment/EXERCISE.md",
     "type": "EX",
     "col": 4,
     "track": "TM-40D",
     "ni": 3,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 582,
     "y": 1202,
     "is_sidebar": false,
@@ -1279,8 +1203,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40D",
     "ni": 4,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 766,
     "y": 1202,
     "is_sidebar": false,
@@ -1298,8 +1222,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40D",
     "ni": 5,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 950,
     "y": 1202,
     "is_sidebar": false,
@@ -1317,8 +1241,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40E",
     "ni": 0,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 30,
     "y": 1262,
     "is_sidebar": false,
@@ -1336,8 +1260,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40E",
     "ni": 1,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 214,
     "y": 1262,
     "is_sidebar": false,
@@ -1355,8 +1279,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40E",
     "ni": 2,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 398,
     "y": 1262,
     "is_sidebar": false,
@@ -1369,13 +1293,13 @@ const NODES = [
   {
     "id": "EX40E",
     "label": "EX-40E\nProtection",
-    "path": "exercises/EX-40E_protection/EXERCISE.md",
+    "path": "exercises/EX_40E_protection/EXERCISE.md",
     "type": "EX",
     "col": 4,
     "track": "TM-40E",
     "ni": 3,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 582,
     "y": 1262,
     "is_sidebar": false,
@@ -1393,8 +1317,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40E",
     "ni": 4,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 766,
     "y": 1262,
     "is_sidebar": false,
@@ -1412,8 +1336,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40E",
     "ni": 5,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 950,
     "y": 1262,
     "is_sidebar": false,
@@ -1431,8 +1355,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40F",
     "ni": 0,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 30,
     "y": 1322,
     "is_sidebar": false,
@@ -1450,8 +1374,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40F",
     "ni": 1,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 214,
     "y": 1322,
     "is_sidebar": false,
@@ -1469,8 +1393,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40F",
     "ni": 2,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 398,
     "y": 1322,
     "is_sidebar": false,
@@ -1483,13 +1407,13 @@ const NODES = [
   {
     "id": "EX40F",
     "label": "EX-40F\nMission Cmd",
-    "path": "exercises/EX-40F_mission_command/EXERCISE.md",
+    "path": "exercises/EX_40F_mission_command/EXERCISE.md",
     "type": "EX",
     "col": 4,
     "track": "TM-40F",
     "ni": 3,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 582,
     "y": 1322,
     "is_sidebar": false,
@@ -1507,8 +1431,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40F",
     "ni": 4,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 766,
     "y": 1322,
     "is_sidebar": false,
@@ -1526,8 +1450,8 @@ const NODES = [
     "col": 4,
     "track": "TM-40F",
     "ni": 5,
-    "row_len": 6,
-    "max_row_len": 6,
+    "row_len": 7,
+    "max_row_len": 7,
     "x": 950,
     "y": 1322,
     "is_sidebar": false,
@@ -1597,7 +1521,7 @@ const NODES = [
   {
     "id": "EX40G",
     "label": "EX-40G\nORSA",
-    "path": "exercises/EX-40G_orsa/EXERCISE.md",
+    "path": "exercises/EX_40G_orsa/EXERCISE.md",
     "type": "EX",
     "col": 4,
     "track": "TM-40G",
@@ -1711,7 +1635,7 @@ const NODES = [
   {
     "id": "EX40H",
     "label": "EX-40H\nAI Engineer",
-    "path": "exercises/EX-40H_ai_engineer/EXERCISE.md",
+    "path": "exercises/EX_40H_ai_engineer/EXERCISE.md",
     "type": "EX",
     "col": 4,
     "track": "TM-40H",
@@ -1766,12 +1690,12 @@ const NODES = [
     "desc": "TM-40H post-test: demonstrate AI engineering competency on Foundry"
   },
   {
-    "id": "TM40I",
+    "id": "TM40M",
     "label": "TM -40I\nML Engineer",
-    "path": "tm/TM_40I_ml_engineer/TM_40I_ML_ENGINEER.md",
+    "path": "tm/TM_40M_ml_engineer/TM_40M_ML_ENGINEER.md",
     "type": "TM",
     "col": 4,
-    "track": "TM-40I",
+    "track": "TM-40M",
     "ni": 0,
     "row_len": 6,
     "max_row_len": 6,
@@ -1782,15 +1706,15 @@ const NODES = [
       "dev",
       "specialist"
     ],
-    "desc": "TM-40I course manual: Foundry for ML Engineers \u2014 pipelines, feature stores, model ops"
+    "desc": "TM-40M course manual: Foundry for ML Engineers \u2014 pipelines, feature stores, model ops"
   },
   {
     "id": "CG40I",
-    "label": "CONCEPTS GUIDE\nTM40I",
-    "path": "tm/TM_40I_ml_engineer/CONCEPTS_GUIDE_TM40I_ML_ENGINEER.md",
+    "label": "CONCEPTS GUIDE\nTM40M",
+    "path": "tm/TM_40M_ml_engineer/CONCEPTS_GUIDE_TM40M_ML_ENGINEER.md",
     "type": "CG",
     "col": 4,
-    "track": "TM-40I",
+    "track": "TM-40M",
     "ni": 1,
     "row_len": 6,
     "max_row_len": 6,
@@ -1805,11 +1729,11 @@ const NODES = [
   },
   {
     "id": "SYL40I",
-    "label": "SYLLABUS\nTM40I",
-    "path": "syllabi/SYLLABUS_TM40I.md",
+    "label": "SYLLABUS\nTM40M",
+    "path": "syllabi/SYLLABUS_TM40M.md",
     "type": "SYL",
     "col": 4,
-    "track": "TM-40I",
+    "track": "TM-40M",
     "ni": 2,
     "row_len": 6,
     "max_row_len": 6,
@@ -1820,15 +1744,15 @@ const NODES = [
       "dev",
       "specialist"
     ],
-    "desc": "TM-40I syllabus: learning objectives, schedule, and grading for the ML Engineer track"
+    "desc": "TM-40M syllabus: learning objectives, schedule, and grading for the ML Engineer track"
   },
   {
     "id": "EX40I",
     "label": "EX-40I\nML Engineer",
-    "path": "exercises/EX-40I_ml_engineer/EXERCISE.md",
+    "path": "exercises/EX_40M_ml_engineer/EXERCISE.md",
     "type": "EX",
     "col": 4,
-    "track": "TM-40I",
+    "track": "TM-40M",
     "ni": 3,
     "row_len": 6,
     "max_row_len": 6,
@@ -1839,15 +1763,15 @@ const NODES = [
       "dev",
       "specialist"
     ],
-    "desc": "TM-40I lab: build end-to-end ML pipelines and feature stores in Foundry"
+    "desc": "TM-40M lab: build end-to-end ML pipelines and feature stores in Foundry"
   },
   {
     "id": "EXAM40IPRE",
-    "label": "EXAM TM40I\nPRE",
-    "path": "exercises/exams/EXAM_TM40I_PRE.md",
+    "label": "EXAM TM40M\nPRE",
+    "path": "exercises/exams/EXAM_TM40M_PRE.md",
     "type": "EXAM",
     "col": 4,
-    "track": "TM-40I",
+    "track": "TM-40M",
     "ni": 4,
     "row_len": 6,
     "max_row_len": 6,
@@ -1858,15 +1782,15 @@ const NODES = [
       "dev",
       "specialist"
     ],
-    "desc": "TM-40I pre-test: confirm TM-30 proficiency before ML Engineer content begins"
+    "desc": "TM-40M pre-test: confirm TM-30 proficiency before ML Engineer content begins"
   },
   {
     "id": "EXAM40IPOST",
-    "label": "EXAM TM40I\nPOST",
-    "path": "exercises/exams/EXAM_TM40I_POST.md",
+    "label": "EXAM TM40M\nPOST",
+    "path": "exercises/exams/EXAM_TM40M_POST.md",
     "type": "EXAM",
     "col": 4,
-    "track": "TM-40I",
+    "track": "TM-40M",
     "ni": 5,
     "row_len": 6,
     "max_row_len": 6,
@@ -1877,7 +1801,7 @@ const NODES = [
       "dev",
       "specialist"
     ],
-    "desc": "TM-40I post-test: demonstrate ML engineering competency on Foundry"
+    "desc": "TM-40M post-test: demonstrate ML engineering competency on Foundry"
   },
   {
     "id": "TM40J",
@@ -1939,7 +1863,7 @@ const NODES = [
   {
     "id": "EX40J",
     "label": "EX-40J\nProg Manager",
-    "path": "exercises/EX-40J_program_manager/EXERCISE.md",
+    "path": "exercises/EX_40J_program_manager/EXERCISE.md",
     "type": "EX",
     "col": 4,
     "track": "TM-40J",
@@ -2053,7 +1977,7 @@ const NODES = [
   {
     "id": "EX40K",
     "label": "EX-40K\nKnwl Manager",
-    "path": "exercises/EX-40K_knowledge_manager/EXERCISE.md",
+    "path": "exercises/EX_40K_knowledge_manager/EXERCISE.md",
     "type": "EX",
     "col": 4,
     "track": "TM-40K",
@@ -2167,7 +2091,7 @@ const NODES = [
   {
     "id": "EX40L",
     "label": "EX-40L\nSoftware Engr",
-    "path": "exercises/EX-40L_software_engineer/EXERCISE.md",
+    "path": "exercises/EX_40L_software_engineer/EXERCISE.md",
     "type": "EX",
     "col": 4,
     "track": "TM-40L",
@@ -2222,6 +2146,234 @@ const NODES = [
     "desc": "TM-40L post-test: demonstrate software engineering competency on Foundry"
   },
   {
+    "id": "TM40N",
+    "label": "TM -40N\nUX Designer",
+    "path": "tm/TM_40N_ux_designer/TM_40N_UX_DESIGNER.md",
+    "type": "TM",
+    "col": 4,
+    "track": "TM-40N",
+    "ni": 0,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1742,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40N course manual: Soldier Centered Design, user research, information architecture, visual design, accessibility for MSS"
+  },
+  {
+    "id": "CG40N",
+    "label": "CONCEPTS GUIDE\nTM40N",
+    "path": "tm/TM_40N_ux_designer/CONCEPTS_GUIDE_TM40N_UX_DESIGNER.md",
+    "type": "CG",
+    "col": 4,
+    "track": "TM-40N",
+    "ni": 1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 214,
+    "y": 1742,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Concepts guide: SCD methodology, design thinking, balanced team model, Workshop design constraints"
+  },
+  {
+    "id": "SYL40N",
+    "label": "SYLLABUS\nTM40N",
+    "path": "syllabi/SYLLABUS_TM40N.md",
+    "type": "SYL",
+    "col": 4,
+    "track": "TM-40N",
+    "ni": 2,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 398,
+    "y": 1742,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40N syllabus: learning objectives, schedule, and grading for the UI/UX Designer track"
+  },
+  {
+    "id": "EX40N",
+    "label": "EX-40N\nUX Designer",
+    "path": "exercises/EX-40N_ux_designer/EXERCISE.md",
+    "type": "EX",
+    "col": 4,
+    "track": "TM-40N",
+    "ni": 3,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 582,
+    "y": 1742,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40N lab: design an MSS application from user research through usability-tested handoff"
+  },
+  {
+    "id": "EXAM40NPRE",
+    "label": "EXAM TM40N\nPRE",
+    "path": "exercises/exams/EXAM_TM40N_PRE.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40N",
+    "ni": 4,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 766,
+    "y": 1742,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40N pre-test: confirm design and research baseline before UI/UX Designer content begins"
+  },
+  {
+    "id": "EXAM40NPOST",
+    "label": "EXAM TM40N\nPOST",
+    "path": "exercises/exams/EXAM_TM40N_POST.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40N",
+    "ni": 5,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 950,
+    "y": 1742,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40N post-test: demonstrate UI/UX design competency on MSS"
+  },
+  {
+    "id": "TM40O",
+    "label": "TM -40O\nPlatform Engr",
+    "path": "tm/TM_40O_platform_engineer/TM_40O_PLATFORM_ENGINEER.md",
+    "type": "TM",
+    "col": 4,
+    "track": "TM-40O",
+    "ni": 0,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 30,
+    "y": 1802,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40O course manual: Kubernetes, CI/CD, container security, GitOps, air-gapped deployment for MSS"
+  },
+  {
+    "id": "CG40O",
+    "label": "CONCEPTS GUIDE\nTM40O",
+    "path": "tm/TM_40O_platform_engineer/CONCEPTS_GUIDE_TM40O_PLATFORM_ENGINEER.md",
+    "type": "CG",
+    "col": 4,
+    "track": "TM-40O",
+    "ni": 1,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 214,
+    "y": 1802,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Concepts guide: platform-as-product, K8s mental model, IaC, container security, CI/CD trust gradient"
+  },
+  {
+    "id": "SYL40O",
+    "label": "SYLLABUS\nTM40O",
+    "path": "syllabi/SYLLABUS_TM40O.md",
+    "type": "SYL",
+    "col": 4,
+    "track": "TM-40O",
+    "ni": 2,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 398,
+    "y": 1802,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40O syllabus: learning objectives, schedule, and grading for the Platform Engineer track"
+  },
+  {
+    "id": "EX40O",
+    "label": "EX-40O\nPlatform Engr",
+    "path": "exercises/EX-40O_platform_engineer/EXERCISE.md",
+    "type": "EX",
+    "col": 4,
+    "track": "TM-40O",
+    "ni": 3,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 582,
+    "y": 1802,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40O lab: build a secure platform environment from cluster to air-gapped deployment"
+  },
+  {
+    "id": "EXAM40OPRE",
+    "label": "EXAM TM40O\nPRE",
+    "path": "exercises/exams/EXAM_TM40O_PRE.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40O",
+    "ni": 4,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 766,
+    "y": 1802,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40O pre-test: confirm Linux, containers, and Git baseline before Platform Engineer content begins"
+  },
+  {
+    "id": "EXAM40OPOST",
+    "label": "EXAM TM40O\nPOST",
+    "path": "exercises/exams/EXAM_TM40O_POST.md",
+    "type": "EXAM",
+    "col": 4,
+    "track": "TM-40O",
+    "ni": 5,
+    "row_len": 6,
+    "max_row_len": 6,
+    "x": 950,
+    "y": 1802,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-40O post-test: demonstrate platform engineering competency on MSS"
+  },
+  {
     "id": "TM50_OVERVIEW",
     "label": "TM -50\nOVERVIEW",
     "path": "tm/TM_50_overview/TM_50_OVERVIEW.md",
@@ -2232,14 +2384,14 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 30,
-    "y": 1860,
+    "y": 2040,
     "is_sidebar": false,
     "aud": [
       "dev",
       "trainer",
       "specialist"
     ],
-    "desc": "TM-50 level overview: six advanced specialist tracks (G-L) requiring corresponding TM-40 completion"
+    "desc": "TM-50 level overview: eight advanced specialist tracks (G-O) requiring corresponding TM-40 completion"
   },
   {
     "id": "TM50G",
@@ -2252,7 +2404,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 30,
-    "y": 1860,
+    "y": 2040,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2271,7 +2423,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 214,
-    "y": 1860,
+    "y": 2040,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2290,7 +2442,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 398,
-    "y": 1860,
+    "y": 2040,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2309,7 +2461,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 582,
-    "y": 1860,
+    "y": 2040,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2328,7 +2480,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 766,
-    "y": 1860,
+    "y": 2040,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2347,7 +2499,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 30,
-    "y": 1920,
+    "y": 2100,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2366,7 +2518,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 214,
-    "y": 1920,
+    "y": 2100,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2385,7 +2537,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 398,
-    "y": 1920,
+    "y": 2100,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2404,7 +2556,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 582,
-    "y": 1920,
+    "y": 2100,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2423,7 +2575,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 766,
-    "y": 1920,
+    "y": 2100,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2432,36 +2584,36 @@ const NODES = [
     "desc": "TM-50H post-test: demonstrate advanced AI engineering competency"
   },
   {
-    "id": "TM50I",
+    "id": "TM50M",
     "label": "TM -50I\nAdv ML Engr",
-    "path": "tm/TM_50I_ml_engineer_advanced/TM_50I_ML_ENGINEER_ADVANCED.md",
+    "path": "tm/TM_50M_ml_engineer_advanced/TM_50M_ML_ENGINEER_ADVANCED.md",
     "type": "TM",
     "col": 5,
-    "track": "TM-50I",
+    "track": "TM-50M",
     "ni": 0,
     "row_len": 5,
     "max_row_len": 5,
     "x": 30,
-    "y": 1980,
+    "y": 2160,
     "is_sidebar": false,
     "aud": [
       "dev",
       "specialist"
     ],
-    "desc": "TM-50I advanced course: expert ML engineering \u2014 distributed training, real-time inference"
+    "desc": "TM-50M advanced course: expert ML engineering \u2014 distributed training, real-time inference"
   },
   {
     "id": "CG50I",
-    "label": "CONCEPTS GUIDE\nTM50I",
-    "path": "tm/TM_50I_ml_engineer_advanced/CONCEPTS_GUIDE_TM50I_ML_ENGINEER_ADVANCED.md",
+    "label": "CONCEPTS GUIDE\nTM50M",
+    "path": "tm/TM_50M_ml_engineer_advanced/CONCEPTS_GUIDE_TM50M_ML_ENGINEER_ADVANCED.md",
     "type": "CG",
     "col": 5,
-    "track": "TM-50I",
+    "track": "TM-50M",
     "ni": 1,
     "row_len": 5,
     "max_row_len": 5,
     "x": 214,
-    "y": 1980,
+    "y": 2160,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2471,60 +2623,60 @@ const NODES = [
   },
   {
     "id": "SYL50I",
-    "label": "SYLLABUS\nTM50I",
-    "path": "syllabi/SYLLABUS_TM50I.md",
+    "label": "SYLLABUS\nTM50M",
+    "path": "syllabi/SYLLABUS_TM50M.md",
     "type": "SYL",
     "col": 5,
-    "track": "TM-50I",
+    "track": "TM-50M",
     "ni": 2,
     "row_len": 5,
     "max_row_len": 5,
     "x": 398,
-    "y": 1980,
+    "y": 2160,
     "is_sidebar": false,
     "aud": [
       "dev",
       "specialist"
     ],
-    "desc": "TM-50I syllabus: advanced ML Engineer learning objectives and grading"
+    "desc": "TM-50M syllabus: advanced ML Engineer learning objectives and grading"
   },
   {
     "id": "EXAM50IPRE",
-    "label": "EXAM TM50I\nPRE",
-    "path": "exercises/exams/EXAM_TM50I_PRE.md",
+    "label": "EXAM TM50M\nPRE",
+    "path": "exercises/exams/EXAM_TM50M_PRE.md",
     "type": "EXAM",
     "col": 5,
-    "track": "TM-50I",
+    "track": "TM-50M",
     "ni": 3,
     "row_len": 5,
     "max_row_len": 5,
     "x": 582,
-    "y": 1980,
+    "y": 2160,
     "is_sidebar": false,
     "aud": [
       "dev",
       "specialist"
     ],
-    "desc": "TM-50I pre-test: confirm TM-40I proficiency before advanced ML content"
+    "desc": "TM-50M pre-test: confirm TM-40M proficiency before advanced ML content"
   },
   {
     "id": "EXAM50IPOST",
-    "label": "EXAM TM50I\nPOST",
-    "path": "exercises/exams/EXAM_TM50I_POST.md",
+    "label": "EXAM TM50M\nPOST",
+    "path": "exercises/exams/EXAM_TM50M_POST.md",
     "type": "EXAM",
     "col": 5,
-    "track": "TM-50I",
+    "track": "TM-50M",
     "ni": 4,
     "row_len": 5,
     "max_row_len": 5,
     "x": 766,
-    "y": 1980,
+    "y": 2160,
     "is_sidebar": false,
     "aud": [
       "dev",
       "specialist"
     ],
-    "desc": "TM-50I post-test: demonstrate advanced ML engineering competency"
+    "desc": "TM-50M post-test: demonstrate advanced ML engineering competency"
   },
   {
     "id": "TM50J",
@@ -2537,7 +2689,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 30,
-    "y": 2040,
+    "y": 2220,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2556,7 +2708,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 214,
-    "y": 2040,
+    "y": 2220,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2575,7 +2727,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 398,
-    "y": 2040,
+    "y": 2220,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2594,7 +2746,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 582,
-    "y": 2040,
+    "y": 2220,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2613,7 +2765,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 766,
-    "y": 2040,
+    "y": 2220,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2632,7 +2784,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 30,
-    "y": 2100,
+    "y": 2280,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2651,7 +2803,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 214,
-    "y": 2100,
+    "y": 2280,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2670,7 +2822,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 398,
-    "y": 2100,
+    "y": 2280,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2689,7 +2841,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 582,
-    "y": 2100,
+    "y": 2280,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2708,7 +2860,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 766,
-    "y": 2100,
+    "y": 2280,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2727,7 +2879,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 30,
-    "y": 2160,
+    "y": 2340,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2746,7 +2898,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 214,
-    "y": 2160,
+    "y": 2340,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2765,7 +2917,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 398,
-    "y": 2160,
+    "y": 2340,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2784,7 +2936,7 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 582,
-    "y": 2160,
+    "y": 2340,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -2803,13 +2955,203 @@ const NODES = [
     "row_len": 5,
     "max_row_len": 5,
     "x": 766,
-    "y": 2160,
+    "y": 2340,
     "is_sidebar": false,
     "aud": [
       "dev",
       "specialist"
     ],
     "desc": "TM-50L post-test: demonstrate advanced software engineering competency"
+  },
+  {
+    "id": "TM50N",
+    "label": "TM -50N\nAdv UX",
+    "path": "tm/TM_50N_ux_designer_advanced/TM_50N_UX_DESIGNER_ADVANCED.md",
+    "type": "TM",
+    "col": 5,
+    "track": "TM-50N",
+    "ni": 0,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 30,
+    "y": 2400,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50N advanced course: design systems at scale, DDIL design, coalition UI, DesignOps"
+  },
+  {
+    "id": "CG50N",
+    "label": "CONCEPTS GUIDE\nTM50N",
+    "path": "tm/TM_50N_ux_designer_advanced/CONCEPTS_GUIDE_TM50N_UX_DESIGNER_ADVANCED.md",
+    "type": "CG",
+    "col": 5,
+    "track": "TM-50N",
+    "ni": 1,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 214,
+    "y": 2400,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Advanced concepts guide: design systems, DDIL patterns, cross-domain design, DesignOps"
+  },
+  {
+    "id": "SYL50N",
+    "label": "SYLLABUS\nTM50N",
+    "path": "syllabi/SYLLABUS_TM50N.md",
+    "type": "SYL",
+    "col": 5,
+    "track": "TM-50N",
+    "ni": 2,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 398,
+    "y": 2400,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50N syllabus: advanced UI/UX Designer learning objectives and grading"
+  },
+  {
+    "id": "EXAM50NPRE",
+    "label": "EXAM TM50N\nPRE",
+    "path": "exercises/exams/EXAM_TM50N_PRE.md",
+    "type": "EXAM",
+    "col": 5,
+    "track": "TM-50N",
+    "ni": 3,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 582,
+    "y": 2400,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50N pre-test: confirm TM-40N proficiency before advanced UI/UX content"
+  },
+  {
+    "id": "EXAM50NPOST",
+    "label": "EXAM TM50N\nPOST",
+    "path": "exercises/exams/EXAM_TM50N_POST.md",
+    "type": "EXAM",
+    "col": 5,
+    "track": "TM-50N",
+    "ni": 4,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 766,
+    "y": 2400,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50N post-test: demonstrate advanced UI/UX design competency"
+  },
+  {
+    "id": "TM50O",
+    "label": "TM -50O\nAdv Platform",
+    "path": "tm/TM_50O_platform_engineer_advanced/TM_50O_PLATFORM_ENGINEER_ADVANCED.md",
+    "type": "TM",
+    "col": 5,
+    "track": "TM-50O",
+    "ni": 0,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 30,
+    "y": 2460,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50O advanced course: fleet management, SRE, RMF automation, developer experience engineering"
+  },
+  {
+    "id": "CG50O",
+    "label": "CONCEPTS GUIDE\nTM50O",
+    "path": "tm/TM_50O_platform_engineer_advanced/CONCEPTS_GUIDE_TM50O_PLATFORM_ENGINEER_ADVANCED.md",
+    "type": "CG",
+    "col": 5,
+    "track": "TM-50O",
+    "ni": 1,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 214,
+    "y": 2460,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "Advanced concepts guide: fleet management, reliability engineering, compliance as code, DevEx"
+  },
+  {
+    "id": "SYL50O",
+    "label": "SYLLABUS\nTM50O",
+    "path": "syllabi/SYLLABUS_TM50O.md",
+    "type": "SYL",
+    "col": 5,
+    "track": "TM-50O",
+    "ni": 2,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 398,
+    "y": 2460,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50O syllabus: advanced Platform Engineer learning objectives and grading"
+  },
+  {
+    "id": "EXAM50OPRE",
+    "label": "EXAM TM50O\nPRE",
+    "path": "exercises/exams/EXAM_TM50O_PRE.md",
+    "type": "EXAM",
+    "col": 5,
+    "track": "TM-50O",
+    "ni": 3,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 582,
+    "y": 2460,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50O pre-test: confirm TM-40O proficiency before advanced Platform Engineer content"
+  },
+  {
+    "id": "EXAM50OPOST",
+    "label": "EXAM TM50O\nPOST",
+    "path": "exercises/exams/EXAM_TM50O_POST.md",
+    "type": "EXAM",
+    "col": 5,
+    "track": "TM-50O",
+    "ni": 4,
+    "row_len": 5,
+    "max_row_len": 5,
+    "x": 766,
+    "y": 2460,
+    "is_sidebar": false,
+    "aud": [
+      "dev",
+      "specialist"
+    ],
+    "desc": "TM-50O post-test: demonstrate advanced platform engineering competency"
   },
   {
     "id": "MGMT_MTP",
@@ -3329,13 +3671,13 @@ const NODES = [
     "label": "Data Platforms\n& Cloud",
     "path": "source_material/course_portal/PPT_data_platforms",
     "type": "PPT",
-    "col": 2,
+    "col": 4,
     "track": "Slide Decks",
-    "ni": 5,
-    "row_len": 6,
+    "ni": 2,
+    "row_len": 4,
     "max_row_len": 6,
     "x": 30,
-    "y": 606,
+    "y": 1922,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -3348,13 +3690,13 @@ const NODES = [
     "label": "L5 Activation &\nInterface",
     "path": "source_material/course_portal/PPT_l5_activate",
     "type": "PPT",
-    "col": 2,
+    "col": 4,
     "track": "Slide Decks B",
-    "ni": 0,
-    "row_len": 6,
+    "ni": 1,
+    "row_len": 4,
     "max_row_len": 6,
     "x": 30,
-    "y": 666,
+    "y": 1922,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -3617,10 +3959,10 @@ const NODES = [
     "col": 4,
     "track": "Slide Decks",
     "ni": 0,
-    "row_len": 6,
+    "row_len": 4,
     "max_row_len": 6,
     "x": 30,
-    "y": 1742,
+    "y": 1862,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -3636,10 +3978,10 @@ const NODES = [
     "col": 4,
     "track": "Slide Decks",
     "ni": 1,
-    "row_len": 6,
+    "row_len": 4,
     "max_row_len": 6,
     "x": 30,
-    "y": 1742,
+    "y": 1862,
     "is_sidebar": false,
     "aud": [
       "user",
@@ -3655,10 +3997,10 @@ const NODES = [
     "col": 4,
     "track": "Slide Decks",
     "ni": 2,
-    "row_len": 6,
+    "row_len": 4,
     "max_row_len": 6,
     "x": 30,
-    "y": 1742,
+    "y": 1862,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -3674,10 +4016,10 @@ const NODES = [
     "col": 4,
     "track": "Slide Decks",
     "ni": 3,
-    "row_len": 6,
+    "row_len": 4,
     "max_row_len": 6,
     "x": 30,
-    "y": 1742,
+    "y": 1862,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -3692,11 +4034,11 @@ const NODES = [
     "type": "PPT",
     "col": 4,
     "track": "Slide Decks",
-    "ni": 4,
-    "row_len": 6,
+    "ni": 0,
+    "row_len": 4,
     "max_row_len": 6,
     "x": 30,
-    "y": 1742,
+    "y": 1922,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -3711,11 +4053,11 @@ const NODES = [
     "type": "PPT",
     "col": 4,
     "track": "Slide Decks",
-    "ni": 5,
-    "row_len": 6,
+    "ni": 3,
+    "row_len": 4,
     "max_row_len": 6,
     "x": 30,
-    "y": 1742,
+    "y": 1922,
     "is_sidebar": false,
     "aud": [
       "dev",
@@ -3782,12 +4124,12 @@ const NODES = [
   "desc": "Optional self-study: Palantir Developers AI Engineer deep-dives (RAG, Evals, MCP, Observability, Safety, Agent Studio, AIP Logic)"
 },
 {
-  "id": "SS_TM40I",
-  "label": "SELF-STUDY\nTM-40I",
-  "path": "tm/TM_40I_ml_engineer/SELF_STUDY_ADDENDUM.md",
+  "id": "SS_TM40M",
+  "label": "SELF-STUDY\nTM-40M",
+  "path": "tm/TM_40M_ml_engineer/SELF_STUDY_ADDENDUM.md",
   "type": "SS",
   "col": 4,
-  "track": "TM-40I",
+  "track": "TM-40M",
   "ni": 6,
   "row_len": 7,
   "max_row_len": 7,
@@ -3868,7 +4210,7 @@ const NODES = [
   "row_len": 6,
   "max_row_len": 6,
   "x": 950,
-  "y": 1860,
+  "y": 2040,
   "is_sidebar": false,
   "aud": [
     "dev",
@@ -3887,7 +4229,7 @@ const NODES = [
   "row_len": 6,
   "max_row_len": 6,
   "x": 950,
-  "y": 1920,
+  "y": 2100,
   "is_sidebar": false,
   "aud": [
     "dev",
@@ -3896,17 +4238,17 @@ const NODES = [
   "desc": "Optional self-study: TM-40H content plus 8 advanced AI Engineer additions (multi-agent, observability, enterprise scale)"
 },
 {
-  "id": "SS_TM50I",
-  "label": "SELF-STUDY\nTM-50I",
-  "path": "tm/TM_50I_ml_engineer_advanced/SELF_STUDY_ADDENDUM.md",
+  "id": "SS_TM50M",
+  "label": "SELF-STUDY\nTM-50M",
+  "path": "tm/TM_50M_ml_engineer_advanced/SELF_STUDY_ADDENDUM.md",
   "type": "SS",
   "col": 5,
-  "track": "TM-50I",
+  "track": "TM-50M",
   "ni": 5,
   "row_len": 6,
   "max_row_len": 6,
   "x": 950,
-  "y": 1980,
+  "y": 2160,
   "is_sidebar": false,
   "aud": [
     "dev",
@@ -3925,7 +4267,7 @@ const NODES = [
   "row_len": 6,
   "max_row_len": 6,
   "x": 950,
-  "y": 2040,
+  "y": 2220,
   "is_sidebar": false,
   "aud": [
     "dev",
@@ -3944,7 +4286,7 @@ const NODES = [
   "row_len": 6,
   "max_row_len": 6,
   "x": 950,
-  "y": 2100,
+  "y": 2280,
   "is_sidebar": false,
   "aud": [
     "dev",
@@ -3963,13 +4305,109 @@ const NODES = [
   "row_len": 6,
   "max_row_len": 6,
   "x": 950,
-  "y": 2160,
+  "y": 2340,
   "is_sidebar": false,
   "aud": [
     "dev",
     "specialist"
   ],
   "desc": "Optional self-study: TM-50L additions plus reference to TM-40L addendum (Code-based AI, interoperability, Gallatin observability)"
+},
+{
+  "id": "SS_TM40A",
+  "label": "SELF-STUDY\nTM-40A",
+  "path": "tm/TM_40A_intelligence/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 4,
+  "track": "TM-40A",
+  "ni": 6,
+  "row_len": 7,
+  "max_row_len": 7,
+  "x": 1134,
+  "y": 1022,
+  "is_sidebar": false,
+  "aud": ["dev", "specialist"],
+  "desc": "Optional self-study: Intelligence WFF deep-dives for TM-40A students"
+},
+{
+  "id": "SS_TM40B",
+  "label": "SELF-STUDY\nTM-40B",
+  "path": "tm/TM_40B_fires/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 4,
+  "track": "TM-40B",
+  "ni": 6,
+  "row_len": 7,
+  "max_row_len": 7,
+  "x": 1134,
+  "y": 1082,
+  "is_sidebar": false,
+  "aud": ["dev", "specialist"],
+  "desc": "Optional self-study: Fires WFF deep-dives for TM-40B students"
+},
+{
+  "id": "SS_TM40C",
+  "label": "SELF-STUDY\nTM-40C",
+  "path": "tm/TM_40C_movement_maneuver/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 4,
+  "track": "TM-40C",
+  "ni": 6,
+  "row_len": 7,
+  "max_row_len": 7,
+  "x": 1134,
+  "y": 1142,
+  "is_sidebar": false,
+  "aud": ["dev", "specialist"],
+  "desc": "Optional self-study: Movement & Maneuver WFF deep-dives for TM-40C students"
+},
+{
+  "id": "SS_TM40D",
+  "label": "SELF-STUDY\nTM-40D",
+  "path": "tm/TM_40D_sustainment/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 4,
+  "track": "TM-40D",
+  "ni": 6,
+  "row_len": 7,
+  "max_row_len": 7,
+  "x": 1134,
+  "y": 1202,
+  "is_sidebar": false,
+  "aud": ["dev", "specialist"],
+  "desc": "Optional self-study: Sustainment WFF deep-dives for TM-40D students"
+},
+{
+  "id": "SS_TM40E",
+  "label": "SELF-STUDY\nTM-40E",
+  "path": "tm/TM_40E_protection/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 4,
+  "track": "TM-40E",
+  "ni": 6,
+  "row_len": 7,
+  "max_row_len": 7,
+  "x": 1134,
+  "y": 1262,
+  "is_sidebar": false,
+  "aud": ["dev", "specialist"],
+  "desc": "Optional self-study: Protection WFF deep-dives for TM-40E students"
+},
+{
+  "id": "SS_TM40F",
+  "label": "SELF-STUDY\nTM-40F",
+  "path": "tm/TM_40F_mission_command/SELF_STUDY_ADDENDUM.md",
+  "type": "SS",
+  "col": 4,
+  "track": "TM-40F",
+  "ni": 6,
+  "row_len": 7,
+  "max_row_len": 7,
+  "x": 1134,
+  "y": 1322,
+  "is_sidebar": false,
+  "aud": ["dev", "specialist"],
+  "desc": "Optional self-study: Mission Command WFF deep-dives for TM-40F students"
 },
 {
   "id": "GDAP_Docs",
@@ -4036,6 +4474,57 @@ const NODES = [
   "desc": "Architecture quick reference cards: DoctrineElement→Foundry mapping, EA vs DA, Enterprise Data Compass, Lessons Learned, Plan for Success. PDFs: REF_*.pdf"
 },
 {
+  "id": "TMSL",
+  "label": "TM-SL\nSENIOR LEADER",
+  "path": "tm/TM_SL_senior_leader/TM_SL_SENIOR_LEADER.md",
+  "type": "TM",
+  "col": 0,
+  "track": "TM-SL",
+  "ni": 0,
+  "row_len": 2,
+  "max_row_len": 2,
+  "x": -380,
+  "y": 310,
+  "is_detached": true,
+  "is_sidebar": false,
+  "aud": ["user", "trainer"],
+  "desc": "TM-SL executive course: 1-day senior leader course (O-5/E-9+) replacing TM-10 for senior leaders. Covers data product impact, governance, agile, working with data professionals."
+},
+{
+  "id": "TMSL_CG",
+  "label": "Concepts Guide\nTM-SL",
+  "path": "tm/TM_SL_senior_leader/CONCEPTS_GUIDE_TM_SL_SENIOR_LEADER.md",
+  "type": "CG",
+  "col": 0,
+  "track": "TM-SL",
+  "ni": 1,
+  "row_len": 2,
+  "max_row_len": 2,
+  "x": -196,
+  "y": 310,
+  "is_detached": true,
+  "is_sidebar": false,
+  "aud": ["user", "trainer"],
+  "desc": "TM-SL concepts guide: read-ahead companion covering data environment changes, agile mindset, leading data professionals, platform overview"
+},
+{
+  "id": "TMSL_SYL",
+  "label": "SYLLABUS\nTM-SL",
+  "path": "syllabi/SYLLABUS_TM_SL.md",
+  "type": "SYL",
+  "col": 1,
+  "track": "TM-SL",
+  "ni": 0,
+  "row_len": 2,
+  "max_row_len": 2,
+  "x": -380,
+  "y": 370,
+  "is_detached": true,
+  "is_sidebar": false,
+  "aud": ["user", "trainer"],
+  "desc": "TM-SL syllabus: 1-day schedule (9 blocks), learning objectives, assessment method, post-course checklist"
+},
+{
   "id": "BSP_GUIDE",
   "label": "BSP\nParticipant Guide",
   "path": "builder_sprint/BSP_GUIDE.md",
@@ -4049,7 +4538,7 @@ const NODES = [
   "y": 635,
   "is_detached": true,
   "is_sidebar": false,
-  "aud": ["dev", "trainer"],
+  "aud": ["user", "dev", "trainer"],
   "desc": "Builder Sprint participant guide: 5-day supervised build event for TM-20+ personnel with approved projects"
 },
 {
@@ -4066,7 +4555,7 @@ const NODES = [
   "y": 635,
   "is_detached": true,
   "is_sidebar": false,
-  "aud": ["trainer"],
+  "aud": ["user", "trainer"],
   "desc": "Coordinator checklist for sprint workspace creation, access provisioning, and pre-sprint setup"
 },
 {
@@ -4083,7 +4572,7 @@ const NODES = [
   "y": 695,
   "is_detached": true,
   "is_sidebar": false,
-  "aud": ["trainer"],
+  "aud": ["user", "trainer"],
   "desc": "Evaluator and coordinator package: Go/No-Go standards, SME ratios, evaluation records"
 },
 {
@@ -4100,8 +4589,263 @@ const NODES = [
   "y": 695,
   "is_detached": true,
   "is_sidebar": false,
-  "aud": ["trainer"],
+  "aud": ["user", "trainer"],
   "desc": "Builder Sprint SOP: quarterly event enrollment, execution, evaluation procedures"
+},
+{
+  "id": "T3I",
+  "label": "T3-I\nINSTRUCTOR CERT",
+  "path": "tm/T3_I_instructor_certification/T3_I_INSTRUCTOR_CERTIFICATION.md",
+  "type": "TMGMT",
+  "col": 7,
+  "track": "T3 Trainer",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1394,
+  "y": 970,
+  "is_detached": false,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "T3-I instructor certification: 5-day course (Phase 1) covering adult learning, lab facilitation, assessment design, microteaching. Prereq: TM-30 Go."
+},
+{
+  "id": "T3I_CG",
+  "label": "Concepts Guide\nT3-I",
+  "path": "tm/T3_I_instructor_certification/CONCEPTS_GUIDE_T3I_INSTRUCTOR_CERTIFICATION.md",
+  "type": "TMGMT",
+  "col": 7,
+  "track": "T3 Trainer",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1394,
+  "y": 1030,
+  "is_detached": false,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "T3-I concepts guide: read-ahead companion for instructor candidates"
+},
+{
+  "id": "T3I_SYL",
+  "label": "SYLLABUS\nT3-I",
+  "path": "syllabi/SYLLABUS_T3I.md",
+  "type": "TMGMT",
+  "col": 7,
+  "track": "T3 Trainer",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1394,
+  "y": 1090,
+  "is_detached": false,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "T3-I syllabus: 5-day schedule, learning objectives, Phase 1/Phase 2 structure"
+},
+{
+  "id": "T3I_EX",
+  "label": "EXERCISE\nT3-I",
+  "path": "exercises/EX_T3I_instructor_certification/EXERCISE.md",
+  "type": "TMGMT",
+  "col": 7,
+  "track": "T3 Trainer",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1394,
+  "y": 1150,
+  "is_detached": false,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "T3-I practical exercise: microteaching, lab facilitation, and Go/No-Go calibration"
+},
+{
+  "id": "T3I_ENV",
+  "label": "ENV SETUP\nT3-I",
+  "path": "exercises/EX_T3I_instructor_certification/ENVIRONMENT_SETUP.md",
+  "type": "TMGMT",
+  "col": 7,
+  "track": "T3 Trainer",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1394,
+  "y": 1210,
+  "is_detached": false,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "T3-I environment setup: classroom and platform configuration for instructor certification"
+},
+{
+  "id": "T3I_EXAM_PRE",
+  "label": "EXAM T3-I\nPRE",
+  "path": "exercises/exams/EXAM_T3I_PRE.md",
+  "type": "TMGMT",
+  "col": 7,
+  "track": "T3 Trainer",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1394,
+  "y": 1270,
+  "is_detached": false,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "T3-I pre-test: baseline assessment for instructor candidates"
+},
+{
+  "id": "T3I_EXAM_POST",
+  "label": "EXAM T3-I\nPOST",
+  "path": "exercises/exams/EXAM_T3I_POST.md",
+  "type": "TMGMT",
+  "col": 7,
+  "track": "T3 Trainer",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1394,
+  "y": 1330,
+  "is_detached": false,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "T3-I post-test: validation assessment for instructor certification"
+},
+{
+  "id": "T3F",
+  "label": "T3-F\nFORCE MULTIPLIER",
+  "path": "tm/T3_F_msc_force_multiplier/T3_F_MSC_FORCE_MULTIPLIER.md",
+  "type": "TMGMT",
+  "col": 7,
+  "track": "T3 Trainer",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1394,
+  "y": 1430,
+  "is_detached": false,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "T3-F MSC Force Multiplier: 3-day UDT certification for local TM-10 delivery sustainment. Prereq: TM-20 Go."
+},
+{
+  "id": "T3F_CG",
+  "label": "Concepts Guide\nT3-F",
+  "path": "tm/T3_F_msc_force_multiplier/CONCEPTS_GUIDE_T3F_MSC_FORCE_MULTIPLIER.md",
+  "type": "TMGMT",
+  "col": 7,
+  "track": "T3 Trainer",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1394,
+  "y": 1490,
+  "is_detached": false,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "T3-F concepts guide: read-ahead for UDT candidates"
+},
+{
+  "id": "T3F_SYL",
+  "label": "SYLLABUS\nT3-F",
+  "path": "syllabi/SYLLABUS_T3F.md",
+  "type": "TMGMT",
+  "col": 7,
+  "track": "T3 Trainer",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1394,
+  "y": 1550,
+  "is_detached": false,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "T3-F syllabus: 3-day schedule, learning objectives, UDT certification requirements"
+},
+{
+  "id": "T3F_EX",
+  "label": "EXERCISE\nT3-F",
+  "path": "exercises/EX_T3F_force_multiplier/EXERCISE.md",
+  "type": "TMGMT",
+  "col": 7,
+  "track": "T3 Trainer",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1394,
+  "y": 1610,
+  "is_detached": false,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "T3-F practical exercise: TM-10 teach-back, exam proctoring, and evaluation practicum"
+},
+{
+  "id": "T3F_ENV",
+  "label": "ENV SETUP\nT3-F",
+  "path": "exercises/EX_T3F_force_multiplier/ENVIRONMENT_SETUP.md",
+  "type": "TMGMT",
+  "col": 7,
+  "track": "T3 Trainer",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1394,
+  "y": 1670,
+  "is_detached": false,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "T3-F environment setup: classroom and platform configuration for UDT certification"
+},
+{
+  "id": "T3F_EXAM_PRE",
+  "label": "EXAM T3-F\nPRE",
+  "path": "exercises/exams/EXAM_T3F_PRE.md",
+  "type": "TMGMT",
+  "col": 7,
+  "track": "T3 Trainer",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1394,
+  "y": 1730,
+  "is_detached": false,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "T3-F pre-test: baseline assessment for UDT candidates"
+},
+{
+  "id": "T3F_EXAM_POST",
+  "label": "EXAM T3-F\nPOST",
+  "path": "exercises/exams/EXAM_T3F_POST.md",
+  "type": "TMGMT",
+  "col": 7,
+  "track": "T3 Trainer",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1394,
+  "y": 1790,
+  "is_detached": false,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "T3-F post-test: validation assessment for UDT certification"
+},
+{
+  "id": "MGMT_UDT_SOP",
+  "label": "Unit Data\nTrainer SOP",
+  "path": "training_management/UNIT_DATA_TRAINER_SOP.md",
+  "type": "TMGMT",
+  "col": 7,
+  "track": "T3 Trainer",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1394,
+  "y": 1850,
+  "is_detached": false,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "Unit Data Trainer SOP: authorities, reporting requirements, and sustainment procedures for T3-F graduates"
 },
 {
   "id": "MGMT_INSTRUCT",
@@ -4232,6 +4976,102 @@ const NODES = [
   "desc": "CUI//FOUO: 6-phase/20-week hardening plan, 46 acceptance functions, 12 CG constraints"
 },
 {
+  "id": "MGMT_SME_RUBRIC",
+  "label": "C2DAO SME\nDesignation Rubric",
+  "path": "training_management/C2DAO_SME_DESIGNATION_RUBRIC.md",
+  "type": "TMGMT",
+  "col": 6,
+  "track": "Training Mgmt",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1450,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "C2DAO SME designation rubric: criteria for subject matter expert certification and tier assignment"
+},
+{
+  "id": "MGMT_INSTR_TIER",
+  "label": "Instructor Tier\nDefinitions",
+  "path": "training_management/INSTRUCTOR_TIER_DEFINITIONS.md",
+  "type": "TMGMT",
+  "col": 6,
+  "track": "Training Mgmt",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1510,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "Instructor tier definitions: qualification levels, authorities, and progression criteria"
+},
+{
+  "id": "MGMT_MTT_SOP",
+  "label": "MTT Operations\nSOP",
+  "path": "training_management/MTT_OPERATIONS_SOP.md",
+  "type": "TMGMT",
+  "col": 6,
+  "track": "Training Mgmt",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1570,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "Mobile Training Team operations SOP: planning, execution, and reporting procedures for MTT rotations"
+},
+{
+  "id": "MGMT_SUCCESSOR",
+  "label": "Successor\nPlanning Guide",
+  "path": "training_management/SUCCESSOR_PLANNING_GUIDE.md",
+  "type": "TMGMT",
+  "col": 6,
+  "track": "Training Mgmt",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1630,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "Successor planning guide: continuity procedures for MSS training program key billets"
+},
+{
+  "id": "LP_T3I",
+  "label": "T3-I\nLesson Plans",
+  "path": "training_management/lesson_plans/T3I_LESSON_PLAN_OUTLINES.md",
+  "type": "TMGMT",
+  "col": 6,
+  "track": "Training Mgmt",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1690,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "T3-I instructor guide: lesson timing and facilitation notes for instructor certification"
+},
+{
+  "id": "LP_T3F",
+  "label": "T3-F\nLesson Plans",
+  "path": "training_management/lesson_plans/T3F_LESSON_PLAN_OUTLINES.md",
+  "type": "TMGMT",
+  "col": 6,
+  "track": "Training Mgmt",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1750,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "T3-F instructor guide: lesson timing and facilitation notes for UDT certification"
+},
+{
   "id": "BRIEF_DEMO",
   "label": "CG Decision\nBrief",
   "path": "training_management/DEMO_BRIEF_CG.md",
@@ -4242,10 +5082,58 @@ const NODES = [
   "row_len": 1,
   "max_row_len": 1,
   "x": 1194,
-  "y": 1510,
+  "y": 1870,
   "is_sidebar": true,
   "aud": ["trainer"],
   "desc": "CG decision brief: request TASKORD to activate MSS Mobile Training Team (MTT)"
+},
+{
+  "id": "BRIEF_DCG",
+  "label": "DCG Decision\nBrief",
+  "path": "training_management/DEMO_BRIEF_DCG.md",
+  "type": "BRIEF",
+  "col": 6,
+  "track": "CG Strategy",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1930,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "DCG decision brief: MSS training activation brief for deputy commanding general"
+},
+{
+  "id": "BRIEF_DCG_LEAVE",
+  "label": "DCG Leave\nBehind",
+  "path": "training_management/DEMO_DCG_LEAVE_BEHIND.md",
+  "type": "BRIEF",
+  "col": 6,
+  "track": "CG Strategy",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 1990,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "DCG leave-behind: executive summary document for post-brief reference"
+},
+{
+  "id": "BRIEF_DCG_TALK",
+  "label": "DCG Talking\nPoints",
+  "path": "training_management/DEMO_DCG_TALKING_POINTS.md",
+  "type": "BRIEF",
+  "col": 6,
+  "track": "CG Strategy",
+  "ni": 0,
+  "row_len": 1,
+  "max_row_len": 1,
+  "x": 1194,
+  "y": 2050,
+  "is_sidebar": true,
+  "aud": ["trainer"],
+  "desc": "DCG talking points: presenter notes for DCG decision brief"
 },
 {
   "id": "BRIEF_TASKORD",
@@ -4258,7 +5146,7 @@ const NODES = [
   "row_len": 1,
   "max_row_len": 1,
   "x": 1194,
-  "y": 1570,
+  "y": 1930,
   "is_sidebar": true,
   "aud": ["trainer"],
   "desc": "Draft TASKORD: activate MSS Mobile Training Team for theater-wide TM-10/20/30 delivery"
@@ -4274,7 +5162,7 @@ const NODES = [
   "row_len": 1,
   "max_row_len": 1,
   "x": 1194,
-  "y": 1630,
+  "y": 1990,
   "is_sidebar": true,
   "aud": ["trainer"],
   "desc": "Strategic white paper: the case for standardized MSS training across USAREUR-AF"
@@ -4290,7 +5178,7 @@ const NODES = [
   "row_len": 1,
   "max_row_len": 1,
   "x": 1194,
-  "y": 1690,
+  "y": 2050,
   "is_sidebar": true,
   "aud": ["trainer"],
   "desc": "CG briefing slide deck (PowerPoint): visual companion to DEMO_BRIEF_CG"
@@ -4306,7 +5194,7 @@ const NODES = [
   "row_len": 1,
   "max_row_len": 1,
   "x": 1194,
-  "y": 1750,
+  "y": 2110,
   "is_sidebar": true,
   "aud": ["dev"],
   "desc": "SharePoint-hosted variant of MSS Training Hub \u2014 adapted for SharePoint embedding constraints"
@@ -4322,7 +5210,7 @@ const NODES = [
   "row_len": 1,
   "max_row_len": 1,
   "x": 1194,
-  "y": 1810,
+  "y": 2170,
   "is_sidebar": true,
   "aud": ["dev"],
   "desc": "System prompt for MSS pilot AI agent \u2014 context and instructions for training hub assistant"
@@ -4338,11 +5226,29 @@ const NODES = [
   "row_len": 1,
   "max_row_len": 1,
   "x": 1194,
-  "y": 1870,
+  "y": 2410,
   "is_sidebar": true,
   "aud": ["dev"],
   "desc": "Deployment guide: Cloudflare Pages, SharePoint, and Foundry hosting instructions"
-}
+},
+// ── ANALYTICS APPS (toggleable overlay, far-left column) ──
+{"id":"APP_portal","label":"Training\nPortal","path":"apps/portal.py","type":"APP_HUB","col":7,"track":"Analytics Apps","ni":0,"row_len":1,"max_row_len":3,"x":1500,"y":190,"is_app":true,"aud":["dev"],"desc":"Central navigation + cross-app KPI dashboard. Port 8500."},
+{"id":"APP_training_metrics","label":"Training Metrics\nDashboard","path":"apps/training_metrics/","type":"APP_AGG","col":7,"track":"Analytics Apps","ni":0,"row_len":1,"max_row_len":3,"x":1500,"y":310,"is_app":true,"aud":["dev"],"desc":"Senior-leader / CG briefing dashboard. Aggregates ALL sibling apps. API 8015 / UI 8515."},
+{"id":"APP_readiness_tracker","label":"Readiness\nTracker","path":"apps/readiness_tracker/","type":"APP_CORE","col":7,"track":"Analytics Apps","ni":0,"row_len":1,"max_row_len":3,"x":1500,"y":430,"is_app":true,"aud":["dev"],"desc":"Authoritative trainee roster, completion history, prereq enforcement. API 8001 / UI 8501."},
+{"id":"APP_progress_tracker","label":"Progress\nTracker","path":"apps/progress_tracker/","type":"APP_DEP","col":7,"track":"Analytics Apps","ni":0,"row_len":1,"max_row_len":3,"x":1500,"y":550,"is_app":true,"aud":["dev"],"desc":"Individual milestone tracking, stalled/overdue detection. Requires readiness_tracker. API 8004 / UI 8504."},
+{"id":"APP_exam_analytics","label":"Exam\nAnalytics","path":"apps/exam_analytics/","type":"APP_STAND","col":7,"track":"Analytics Apps","ni":0,"row_len":3,"max_row_len":3,"x":1500,"y":670,"is_app":true,"aud":["dev"],"desc":"Exam session tracking, pass/fail rates, question-level analysis. API 8002 / UI 8502."},
+{"id":"APP_aar_aggregator","label":"After-Action\nReviews","path":"apps/aar_aggregator/","type":"APP_STAND","col":7,"track":"Analytics Apps","ni":1,"row_len":3,"max_row_len":3,"x":1690,"y":670,"is_app":true,"aud":["dev"],"desc":"After-Action Review collection, recurring issue detection. API 8003 / UI 8503."},
+{"id":"APP_mtt_scheduler","label":"MTT\nScheduler","path":"apps/mtt_scheduler/","type":"APP_STAND","col":7,"track":"Analytics Apps","ni":2,"row_len":3,"max_row_len":3,"x":1880,"y":670,"is_app":true,"aud":["dev"],"desc":"MTT event scheduling, instructor/venue assignment. API 8005 / UI 8505."},
+{"id":"APP_xref_validator","label":"Cross-Reference\nValidator","path":"apps/xref_validator/","type":"APP_STAND","col":7,"track":"Analytics Apps","ni":0,"row_len":3,"max_row_len":3,"x":1500,"y":790,"is_app":true,"aud":["dev"],"desc":"Cross-reference validation — broken links, stale refs. API 8006 / UI 8506."},
+{"id":"APP_glossary_search","label":"Glossary\nSearch","path":"apps/glossary_search/","type":"APP_STAND","col":7,"track":"Analytics Apps","ni":1,"row_len":3,"max_row_len":3,"x":1690,"y":790,"is_app":true,"aud":["dev"],"desc":"Searchable Army/MSS terminology glossary with fuzzy matching. API 8007 / UI 8507."},
+{"id":"APP_offline_packager","label":"Offline\nPackager","path":"apps/offline_packager/","type":"APP_STAND","col":7,"track":"Analytics Apps","ni":2,"row_len":3,"max_row_len":3,"x":1880,"y":790,"is_app":true,"aud":["dev"],"desc":"Build offline training packages with prereq-aware dependency resolution. UI 8508."},
+{"id":"APP_sharepoint_sync","label":"SharePoint\nSync","path":"apps/sharepoint_sync/","type":"APP_STAND","col":7,"track":"Analytics Apps","ni":0,"row_len":3,"max_row_len":3,"x":1500,"y":910,"is_app":true,"aud":["dev"],"desc":"Track sync state of corpus against SharePoint document library. UI 8509."},
+{"id":"APP_data_quality","label":"Data Quality\nMonitor","path":"apps/data_quality/","type":"APP_STAND","col":7,"track":"Analytics Apps","ni":1,"row_len":3,"max_row_len":3,"x":1690,"y":910,"is_app":true,"aud":["dev"],"desc":"Data pipeline monitoring, metric thresholds, alert management. API 8010 / UI 8510."},
+{"id":"APP_instructor_manager","label":"Instructor\nManager","path":"apps/instructor_manager/","type":"APP_STAND","col":7,"track":"Analytics Apps","ni":2,"row_len":3,"max_row_len":3,"x":1880,"y":910,"is_app":true,"aud":["dev"],"desc":"Instructor certs, course coverage matrix (RAG), expiration alerts. API 8011 / UI 8511."},
+{"id":"APP_enrollment_manager","label":"Enrollment\nManager","path":"apps/enrollment_manager/","type":"APP_STAND","col":7,"track":"Analytics Apps","ni":0,"row_len":3,"max_row_len":3,"x":1500,"y":1030,"is_app":true,"aud":["dev"],"desc":"Class enrollment, seat allocation, waitlist management. API 8012 / UI 8512."},
+{"id":"APP_curriculum_tracker","label":"Curriculum\nTracker","path":"apps/curriculum_tracker/","type":"APP_STAND","col":7,"track":"Analytics Apps","ni":1,"row_len":3,"max_row_len":3,"x":1690,"y":1030,"is_app":true,"aud":["dev"],"desc":"Document versioning, review cycles, SHA-256 change detection. API 8013 / UI 8513."},
+{"id":"APP_lessons_learned","label":"Lessons\nLearned","path":"apps/lessons_learned/","type":"APP_STAND","col":7,"track":"Analytics Apps","ni":2,"row_len":3,"max_row_len":3,"x":1880,"y":1030,"is_app":true,"aud":["dev"],"desc":"Lessons-learned pipeline with tagging taxonomy aligned to TM-40K. API 8014 / UI 8514."},
+{"id":"APP_theme","label":"Shared Theme\n& Branding","path":"apps/theme.py","type":"APP_SHARED","col":7,"track":"Analytics Apps","ni":0,"row_len":1,"max_row_len":3,"x":1500,"y":1150,"is_app":true,"aud":["dev"],"desc":"Shared branding: Navy/Gold palette, USAREUR-AF insignia SVG, Plotly theme."}
 ];
 const EDGES = [
   {
@@ -4453,16 +5359,20 @@ const EDGES = [
   { "source": "TM40F",  "target": "TM40_OVERVIEW", "type": "prereq" },
   { "source": "TM40G",  "target": "TM40_OVERVIEW", "type": "prereq" },
   { "source": "TM40H",  "target": "TM40_OVERVIEW", "type": "prereq" },
-  { "source": "TM40I",  "target": "TM40_OVERVIEW", "type": "prereq" },
+  { "source": "TM40M",  "target": "TM40_OVERVIEW", "type": "prereq" },
   { "source": "TM40J",  "target": "TM40_OVERVIEW", "type": "prereq" },
   { "source": "TM40K",  "target": "TM40_OVERVIEW", "type": "prereq" },
   { "source": "TM40L",  "target": "TM40_OVERVIEW", "type": "prereq" },
   { "source": "TM50G",  "target": "TM50_OVERVIEW", "type": "prereq" },
   { "source": "TM50H",  "target": "TM50_OVERVIEW", "type": "prereq" },
-  { "source": "TM50I",  "target": "TM50_OVERVIEW", "type": "prereq" },
+  { "source": "TM50M",  "target": "TM50_OVERVIEW", "type": "prereq" },
   { "source": "TM50J",  "target": "TM50_OVERVIEW", "type": "prereq" },
   { "source": "TM50K",  "target": "TM50_OVERVIEW", "type": "prereq" },
   { "source": "TM50L",  "target": "TM50_OVERVIEW", "type": "prereq" },
+  { "source": "TM40N",  "target": "TM40_OVERVIEW", "type": "prereq" },
+  { "source": "TM40O",  "target": "TM40_OVERVIEW", "type": "prereq" },
+  { "source": "TM50N",  "target": "TM50_OVERVIEW", "type": "prereq" },
+  { "source": "TM50O",  "target": "TM50_OVERVIEW", "type": "prereq" },
   {
     "source": "TM40A",
     "target": "TM10",
@@ -4864,22 +5774,22 @@ const EDGES = [
     "type": "prereq"
   },
   {
-    "source": "TM40I",
+    "source": "TM40M",
     "target": "TM10",
     "type": "prereq"
   },
   {
-    "source": "TM40I",
+    "source": "TM40M",
     "target": "TM20",
     "type": "prereq"
   },
   {
-    "source": "TM40I",
+    "source": "TM40M",
     "target": "TM30",
     "type": "prereq"
   },
   {
-    "source": "TM40I",
+    "source": "TM40M",
     "target": "CG40I",
     "type": "prereq"
   },
@@ -4900,17 +5810,17 @@ const EDGES = [
   },
   {
     "source": "EX40I",
-    "target": "TM40I",
+    "target": "TM40M",
     "type": "prereq"
   },
   {
     "source": "EXAM40IPRE",
-    "target": "TM40I",
+    "target": "TM40M",
     "type": "prereq"
   },
   {
     "source": "EXAM40IPOST",
-    "target": "TM40I",
+    "target": "TM40M",
     "type": "prereq"
   },
   {
@@ -5064,6 +5974,106 @@ const EDGES = [
     "type": "prereq"
   },
   {
+    "source": "TM40N",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40N",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40N",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40N",
+    "target": "CG40N",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40N",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40N",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40N",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "EX40N",
+    "target": "TM40N",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40NPRE",
+    "target": "TM40N",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40NPOST",
+    "target": "TM40N",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40O",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40O",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40O",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "TM40O",
+    "target": "CG40O",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40O",
+    "target": "TM10",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40O",
+    "target": "TM20",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL40O",
+    "target": "TM30",
+    "type": "prereq"
+  },
+  {
+    "source": "EX40O",
+    "target": "TM40O",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40OPRE",
+    "target": "TM40O",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM40OPOST",
+    "target": "TM40O",
+    "type": "prereq"
+  },
+  {
     "source": "TM50G",
     "target": "TM40G",
     "type": "prereq"
@@ -5114,28 +6124,28 @@ const EDGES = [
     "type": "prereq"
   },
   {
-    "source": "TM50I",
-    "target": "TM40I",
+    "source": "TM50M",
+    "target": "TM40M",
     "type": "prereq"
   },
   {
-    "source": "TM50I",
+    "source": "TM50M",
     "target": "CG50I",
     "type": "prereq"
   },
   {
     "source": "SYL50I",
-    "target": "TM40I",
+    "target": "TM40M",
     "type": "prereq"
   },
   {
     "source": "EXAM50IPRE",
-    "target": "TM50I",
+    "target": "TM50M",
     "type": "prereq"
   },
   {
     "source": "EXAM50IPOST",
-    "target": "TM50I",
+    "target": "TM50M",
     "type": "prereq"
   },
   {
@@ -5211,6 +6221,56 @@ const EDGES = [
   {
     "source": "EXAM50LPOST",
     "target": "TM50L",
+    "type": "prereq"
+  },
+  {
+    "source": "TM50N",
+    "target": "TM40N",
+    "type": "prereq"
+  },
+  {
+    "source": "TM50N",
+    "target": "CG50N",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL50N",
+    "target": "TM40N",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM50NPRE",
+    "target": "TM50N",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM50NPOST",
+    "target": "TM50N",
+    "type": "prereq"
+  },
+  {
+    "source": "TM50O",
+    "target": "TM40O",
+    "type": "prereq"
+  },
+  {
+    "source": "TM50O",
+    "target": "CG50O",
+    "type": "prereq"
+  },
+  {
+    "source": "SYL50O",
+    "target": "TM40O",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM50OPRE",
+    "target": "TM50O",
+    "type": "prereq"
+  },
+  {
+    "source": "EXAM50OPOST",
+    "target": "TM50O",
     "type": "prereq"
   },
   {
@@ -5385,7 +6445,7 @@ const EDGES = [
   },
   {
     "source": "MGMT_FACULTY",
-    "target": "TM40I",
+    "target": "TM40M",
     "type": "prereq"
   },
   {
@@ -5445,7 +6505,7 @@ const EDGES = [
   },
   {
     "source": "MGMT_FACULTY",
-    "target": "TM50I",
+    "target": "TM50M",
     "type": "prereq"
   },
   {
@@ -5520,7 +6580,7 @@ const EDGES = [
   },
   {
     "source": "LP_TM40SPEC",
-    "target": "TM40I",
+    "target": "TM40M",
     "type": "prereq"
   },
   {
@@ -5630,7 +6690,7 @@ const EDGES = [
   },
   {
     "source": "TM40F",
-    "target": "TM40I",
+    "target": "TM40M",
     "type": "companion"
   },
   {
@@ -5655,11 +6715,11 @@ const EDGES = [
   },
   {
     "source": "TM40G",
-    "target": "TM40I",
+    "target": "TM40M",
     "type": "companion"
   },
   {
-    "source": "TM40I",
+    "source": "TM40M",
     "target": "TM40G",
     "type": "companion"
   },
@@ -5685,21 +6745,21 @@ const EDGES = [
   },
   {
     "source": "TM50G",
-    "target": "TM50I",
+    "target": "TM50M",
     "type": "companion"
   },
   {
-    "source": "TM50I",
+    "source": "TM50M",
     "target": "TM50G",
     "type": "companion"
   },
   {
     "source": "TM50H",
-    "target": "TM50I",
+    "target": "TM50M",
     "type": "companion"
   },
   {
-    "source": "TM50I",
+    "source": "TM50M",
     "target": "TM50H",
     "type": "companion"
   },
@@ -5935,7 +6995,7 @@ const EDGES = [
   },
   {
     "source": "HTML_MSS",
-    "target": "TM40I",
+    "target": "TM40M",
     "type": "companion"
   },
   {
@@ -6045,7 +7105,7 @@ const EDGES = [
   },
   {
     "source": "HTML_TASKIDX",
-    "target": "TM40I",
+    "target": "TM40M",
     "type": "companion"
   },
   {
@@ -6075,7 +7135,7 @@ const EDGES = [
   },
   {
     "source": "HTML_TASKIDX",
-    "target": "TM50I",
+    "target": "TM50M",
     "type": "companion"
   },
   {
@@ -6105,7 +7165,7 @@ const EDGES = [
   },
   {
     "source": "CDA_Doctrine",
-    "target": "TM40I",
+    "target": "TM40M",
     "type": "companion"
   },
   {
@@ -6240,7 +7300,7 @@ const EDGES = [
   },
   {
     "source": "PPT_ai_ml_hype",
-    "target": "TM40I",
+    "target": "TM40M",
     "type": "companion"
   },
   {
@@ -6285,7 +7345,7 @@ const EDGES = [
   },
   {
     "source": "PPT_d07_temporal",
-    "target": "TM40I",
+    "target": "TM40M",
     "type": "companion"
   },
   {
@@ -6300,7 +7360,7 @@ const EDGES = [
   },
   {
     "source": "PPT_dm_fund_l2",
-    "target": "TM40I",
+    "target": "TM40M",
     "type": "companion"
   },
   {
@@ -6316,6 +7376,26 @@ const EDGES = [
   {
     "source": "PPT_d12_capstone",
     "target": "TM40L",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_l5_activate",
+    "target": "TM40N",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_decision_adv",
+    "target": "TM40N",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_data_platforms",
+    "target": "TM40O",
+    "type": "companion"
+  },
+  {
+    "source": "PPT_d12_capstone",
+    "target": "TM40O",
     "type": "companion"
   },
   {
@@ -6405,8 +7485,8 @@ const EDGES = [
   "type": "companion"
 },
 {
-  "source": "SS_TM40I",
-  "target": "TM40I",
+  "source": "SS_TM40M",
+  "target": "TM40M",
   "type": "companion"
 },
 {
@@ -6435,8 +7515,8 @@ const EDGES = [
   "type": "companion"
 },
 {
-  "source": "SS_TM50I",
-  "target": "TM50I",
+  "source": "SS_TM50M",
+  "target": "TM50M",
   "type": "companion"
 },
 {
@@ -6456,11 +7536,11 @@ const EDGES = [
 },
 { "source": "GDAP_Docs", "target": "TM40G", "type": "companion" },
 { "source": "GDAP_Docs", "target": "TM40H", "type": "companion" },
-{ "source": "GDAP_Docs", "target": "TM40I", "type": "companion" },
+{ "source": "GDAP_Docs", "target": "TM40M", "type": "companion" },
 { "source": "GDAP_Docs", "target": "TM40K", "type": "companion" },
 { "source": "GDAP_Docs", "target": "TM40L", "type": "companion" },
 { "source": "MIM_Docs",  "target": "TM40H", "type": "companion" },
-{ "source": "MIM_Docs",  "target": "TM40I", "type": "companion" },
+{ "source": "MIM_Docs",  "target": "TM40M", "type": "companion" },
 { "source": "MIM_Docs",  "target": "TM40J", "type": "companion" },
 { "source": "MIM_Docs",  "target": "TM40K", "type": "companion" },
 { "source": "MIM_Docs",  "target": "TM40L", "type": "companion" },
@@ -6469,9 +7549,42 @@ const EDGES = [
 { "source": "EA_Docs",   "target": "TM40K", "type": "companion" },
 { "source": "EA_Docs",   "target": "TM40L", "type": "companion" },
 { "source": "ARCH_REF",  "target": "TM40H", "type": "companion" },
-{ "source": "ARCH_REF",  "target": "TM40I", "type": "companion" },
+{ "source": "ARCH_REF",  "target": "TM40M", "type": "companion" },
 { "source": "ARCH_REF",  "target": "TM40K", "type": "companion" },
 { "source": "ARCH_REF",  "target": "TM40L", "type": "companion" },
+{ "source": "TMSL_CG",      "target": "TMSL",       "type": "companion" },
+{ "source": "TMSL_SYL",     "target": "TMSL",       "type": "companion" },
+{ "source": "DOC_SENIOR",   "target": "TMSL",       "type": "companion" },
+{ "source": "DOC_TECHREF",  "target": "TMSL",       "type": "companion" },
+{ "source": "T3I",          "target": "TM30",       "type": "prereq" },
+{ "source": "T3I_CG",       "target": "T3I",        "type": "companion" },
+{ "source": "T3I_SYL",      "target": "T3I",        "type": "prereq" },
+{ "source": "T3I_EX",       "target": "T3I",        "type": "companion" },
+{ "source": "T3I_ENV",      "target": "T3I_EX",     "type": "companion" },
+{ "source": "T3I_EXAM_PRE", "target": "T3I",        "type": "companion" },
+{ "source": "T3I_EXAM_POST","target": "T3I",        "type": "companion" },
+{ "source": "T3F",          "target": "TM20",       "type": "prereq" },
+{ "source": "T3F_CG",       "target": "T3F",        "type": "companion" },
+{ "source": "T3F_SYL",      "target": "T3F",        "type": "prereq" },
+{ "source": "T3F_EX",       "target": "T3F",        "type": "companion" },
+{ "source": "T3F_ENV",      "target": "T3F_EX",     "type": "companion" },
+{ "source": "T3F_EXAM_PRE", "target": "T3F",        "type": "companion" },
+{ "source": "T3F_EXAM_POST","target": "T3F",        "type": "companion" },
+{ "source": "MGMT_UDT_SOP", "target": "T3F",        "type": "companion" },
+{ "source": "SS_TM40A",     "target": "TM40A",      "type": "companion" },
+{ "source": "SS_TM40B",     "target": "TM40B",      "type": "companion" },
+{ "source": "SS_TM40C",     "target": "TM40C",      "type": "companion" },
+{ "source": "SS_TM40D",     "target": "TM40D",      "type": "companion" },
+{ "source": "SS_TM40E",     "target": "TM40E",      "type": "companion" },
+{ "source": "SS_TM40F",     "target": "TM40F",      "type": "companion" },
+{ "source": "BRIEF_DCG",    "target": "BRIEF_DEMO",  "type": "companion" },
+{ "source": "BRIEF_DCG_LEAVE","target": "BRIEF_DCG", "type": "companion" },
+{ "source": "BRIEF_DCG_TALK","target": "BRIEF_DCG",  "type": "companion" },
+{ "source": "LP_T3I",       "target": "T3I",         "type": "companion" },
+{ "source": "LP_T3F",       "target": "T3F",         "type": "companion" },
+{ "source": "MGMT_SME_RUBRIC","target": "MGMT_INSTR_TIER","type": "companion" },
+{ "source": "MGMT_INSTR_TIER","target": "T3I",       "type": "companion" },
+{ "source": "MGMT_MTT_SOP", "target": "MGMT_SCHED",  "type": "companion" },
 { "source": "BSP_GUIDE",    "target": "TM20",       "type": "prereq" },
 { "source": "BSP_ENV",      "target": "BSP_GUIDE",  "type": "companion" },
 { "source": "BSP_PACKAGE",  "target": "BSP_GUIDE",  "type": "companion" },
@@ -6491,7 +7604,32 @@ const EDGES = [
 { "source": "LP_TM50ADV",   "target": "TM50G",      "type": "companion" },
 { "source": "HTML_SP",      "target": "HTML_MSS",   "type": "companion" },
 { "source": "HTML_PILOT",   "target": "HTML_MSS",   "type": "companion" },
-{ "source": "HTML_DEPLOY",  "target": "HTML_MSS",   "type": "companion" }
+{ "source": "HTML_DEPLOY",  "target": "HTML_MSS",   "type": "companion" },
+{ "source": "TM40N", "target": "TM40J", "type": "companion" },
+{ "source": "TM40N", "target": "TM40L", "type": "companion" },
+{ "source": "TM40O", "target": "TM40L", "type": "companion" },
+{ "source": "TM40O", "target": "TM40H", "type": "companion" },
+{ "source": "TM50N", "target": "TM50J", "type": "companion" },
+{ "source": "TM50N", "target": "TM50L", "type": "companion" },
+{ "source": "TM50O", "target": "TM50L", "type": "companion" },
+{ "source": "TM50O", "target": "TM50N", "type": "companion" }
+,
+// ── ANALYTICS APP EDGES ──
+{ "source": "APP_readiness_tracker", "target": "APP_progress_tracker", "type": "prereq" },
+{ "source": "APP_readiness_tracker", "target": "APP_training_metrics", "type": "companion" },
+{ "source": "APP_exam_analytics", "target": "APP_training_metrics", "type": "companion" },
+{ "source": "APP_aar_aggregator", "target": "APP_training_metrics", "type": "companion" },
+{ "source": "APP_progress_tracker", "target": "APP_training_metrics", "type": "companion" },
+{ "source": "APP_mtt_scheduler", "target": "APP_training_metrics", "type": "companion" },
+{ "source": "APP_data_quality", "target": "APP_training_metrics", "type": "companion" },
+{ "source": "APP_instructor_manager", "target": "APP_training_metrics", "type": "companion" },
+{ "source": "APP_enrollment_manager", "target": "APP_training_metrics", "type": "companion" },
+{ "source": "APP_curriculum_tracker", "target": "APP_training_metrics", "type": "companion" },
+{ "source": "APP_lessons_learned", "target": "APP_training_metrics", "type": "companion" },
+{ "source": "APP_readiness_tracker", "target": "APP_portal", "type": "companion" },
+{ "source": "APP_exam_analytics", "target": "APP_portal", "type": "companion" },
+{ "source": "APP_aar_aggregator", "target": "APP_portal", "type": "companion" },
+{ "source": "APP_training_metrics", "target": "APP_portal", "type": "companion" }
 ];
 
 // Node type color map
@@ -6521,13 +7659,20 @@ const TYPE_COLOR = {
   SOP:     "#8b2e14",
   // BRIEFS / STRATEGY — purple
   BRIEF:   "#7a3e8a",
+  // ANALYTICS APPS — teal
+  APP_CORE:   "#1a6a9a",
+  APP_DEP:    "#8a4a1a",
+  APP_STAND:  "#1a7a5a",
+  APP_AGG:    "#6a2a6a",
+  APP_HUB:    "#5a5a1a",
+  APP_SHARED: "#4a5a5a",
 };
 
 const NODE_W = 170;
 const NODE_H = 50;
 const SVG_W  = 2200;
 const SVG_H  = 3250;
-const TIER_HEADERS = {"-1": "ARCH / CDA / GDAP / MIM / EA — Architecture & Reference Material  |  ARCH_*.pdf · MGMT_*.pdf · REF_*.pdf", "0": "DOCTRINE & STANDARDS — Program-Wide Reference", "1": "TM-10 — Foundry Basics  |  All Personnel", "2": "TM-20 — No-Code Builder  |  Operator / Analyst", "3": "TM-30 — Advanced Builder  |  Data Engineer", "4": "TM-40 — WFF Analyst Tracks (A–F)   ·   Specialist Roles (G–L)", "5": "TM-50 — Advanced Specialization  |  Expert Level"};
+const TIER_HEADERS = {"-1": "ARCH / CDA / GDAP / MIM / EA — Architecture & Reference Material  |  ARCH_*.pdf · MGMT_*.pdf · REF_*.pdf", "0": "DOCTRINE & STANDARDS — Program-Wide Reference", "1": "TM-10 — Foundry Basics  |  All Personnel", "2": "TM-20 — No-Code Builder  |  Operator / Analyst", "3": "TM-30 — Advanced Builder  |  Data Engineer", "4": "TM-40 — WFF Analyst Tracks (A–F)   ·   Specialist Roles (G–O)", "5": "TM-50 — Advanced Specialization  |  Expert Level"};
 
 // ============================================================
 // BUILD NODE INDEX & ADJACENCY
@@ -6570,7 +7715,7 @@ function relayout() {
   const W = container.clientWidth || window.innerWidth;
   const PAD = 24;
   const SIDEBAR_W = NODE_W + 32;   // sidebar column width
-  const SIDEBAR_GAP = 48;          // gap between flow area and sidebar
+  const SIDEBAR_GAP = 240;         // gap between flow area and sidebar
 
   // TM-40/50 are branching tracks — offset right to show divergence from TM-30
   const COL_OFFSET = { 4: 1, 5: 2 };  // extra slots right per col
@@ -6578,24 +7723,35 @@ function relayout() {
   // Effective width = max(colOffset + row_len) across all non-sidebar nodes
   let maxEffLen = 0;
   NODES.forEach(n => {
-    if (!n.is_sidebar && !n.is_detached) {
+    if (!n.is_sidebar && !n.is_detached && !n.is_app) {
       const eff = (COL_OFFSET[n.col] || 0) + n.row_len;
       if (eff > maxEffLen) maxEffLen = eff;
     }
   });
   if (maxEffLen < 1) maxEffLen = 1;
 
-  // Flow area width (excludes sidebar)
-  const flowW  = W - SIDEBAR_W - SIDEBAR_GAP - PAD * 2;
+  // Flow area width (excludes sidebar — 2 sidebar columns)
+  const flowW  = W - SIDEBAR_W * 2 - SIDEBAR_GAP - PAD * 2;
   // Pitch = space per node (center-to-center), capped at a readable max
   const pitchX  = Math.min(Math.max(flowW / maxEffLen, NODE_W + 8), 400);
-  const sidebarX = PAD + maxEffLen * pitchX + SIDEBAR_GAP;
+  const sidebarX  = PAD + maxEffLen * pitchX + SIDEBAR_GAP;
+  const sidebarX2 = sidebarX + SIDEBAR_W;  // second sidebar column (T3 Trainer)
+
+  // App column: far-left, separate from flow area
+  const appPitch = NODE_W + 16;   // 186 px between app columns
+  const appOriginX = -(3 * appPitch + 48);  // left edge of 3-wide app grid
 
   NODES.forEach(n => {
-    if (n.is_sidebar) {
-      n.x = sidebarX;
+    if (n.is_app) {
+      n.x = appOriginX + n.ni * appPitch;
+    } else if (n.is_sidebar) {
+      n.x = (n.col === 7) ? sidebarX2 : sidebarX;
     } else if (n.is_detached) {
-      // Detached nodes (e.g. BSP) keep their explicit x — not part of the flow grid
+      // Detached nodes (e.g. BSP, TM-SL) sit just left of the flow grid
+      // Uses tighter spacing (NODE_W + 12) so they stay close to flow
+      const detPitch = NODE_W + 12;   // ~182 px between detached columns
+      const detCols  = 2;             // max ni among detached nodes
+      n.x = PAD - (detCols - n.ni) * detPitch;
     } else {
       const offset = COL_OFFSET[n.col] || 0;
       n.x = PAD + (n.ni + offset) * pitchX;
@@ -6643,6 +7799,7 @@ function fitView(pad) {
   let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
   let count = 0;
   document.querySelectorAll(".node-grp").forEach(g => {
+    if (g.style.display === "none") return;
     if (parseFloat(g.getAttribute("opacity") || "1") < 0.1) return;
     const n = nodeById[g.getAttribute("data-id")];
     if (!n) return;
@@ -6767,9 +7924,9 @@ function renderEdges() {
       prereqGrp.appendChild(path);
     } else {
       path.setAttribute("stroke", "#8888aa");
-      path.setAttribute("stroke-width", "0.8");
+      path.setAttribute("stroke-width", "1.1");
       path.setAttribute("stroke-dasharray", "5,4");
-      path.setAttribute("opacity", "0.35");
+      path.setAttribute("opacity", "0.5");
       path.setAttribute("marker-end", "url(#arrow-companion)");
       companionGrp.appendChild(path);
     }
@@ -6779,6 +7936,56 @@ function renderEdges() {
 // ============================================================
 // RENDER NODES
 // ============================================================
+// ============================================================
+// CLICK → OPEN PDF
+// ============================================================
+// Maps a node's markdown path to its corresponding PDF filename.
+// Convention: the .md filename (without extension) becomes the PDF name,
+// with special prefixes for certain directories.
+const PDF_PREFIX_MAP = {
+  "doctrine/enterprise_architecture/": "ARCH_",
+  "doctrine/cda_doctrine/agents/":     "ARCH_",
+  "doctrine/cda_doctrine/canon/":      "ARCH_CDA_",
+  "doctrine/cda_doctrine/":            "ARCH_",
+  "doctrine/gdap/":                    "ARCH_",
+  "doctrine/mim/":                     "ARCH_",
+  "doctrine/":                         "ARCH_",
+  "training_management/":              "MGMT_",
+  "quick_reference/cda_reference/":    "REF_",
+  "quick_reference/":                  "REF_",
+  "builder_sprint/":                   "BSP_",
+};
+
+function getPdfFilename(node) {
+  const p = node.path;
+  if (!p) return null;
+
+  // Extract the .md filename (last segment, strip extension)
+  const segments = p.split("/");
+  const mdFile = segments[segments.length - 1];
+  if (!mdFile.endsWith(".md")) return null;
+  let stem = mdFile.replace(/\.md$/, "");
+
+  // Check if a prefix mapping applies
+  for (const [dirPrefix, pdfPrefix] of Object.entries(PDF_PREFIX_MAP)) {
+    if (p.startsWith(dirPrefix)) {
+      // For doctrine/builder_sprint/etc, the PDF uses a prefix + simplified name
+      // But most PDFs just use the stem directly — check both
+      return stem + ".pdf";
+    }
+  }
+
+  return stem + ".pdf";
+}
+
+function openNodePdf(node) {
+  const pdfFile = getPdfFilename(node);
+  if (!pdfFile) return;
+  // PDF dir is sibling to the source dirs
+  const pdfUrl = "pdf/" + pdfFile;
+  window.open(pdfUrl, "_blank");
+}
+
 function renderNodes() {
   const grp = document.getElementById("nodes-group");
   grp.innerHTML = "";
@@ -6854,6 +8061,9 @@ function renderNodes() {
       g.appendChild(txt);
     });
 
+    // Click → open PDF
+    g.addEventListener("click", () => openNodePdf(n));
+
     // Hover events
     g.addEventListener("mouseenter", (e) => showTooltip(n, e));
     g.addEventListener("mousemove",  (e) => moveTooltip(e));
@@ -6884,6 +8094,8 @@ function showTooltip(node, e) {
   let html = `<div class="tt-title">${node.label.replace("\n"," ")}</div>`;
   if (node.desc) html += `<div class="tt-desc">${node.desc}</div>`;
   html += `<div class="tt-path">maven_training/${node.path}</div>`;
+  const pdfFile = getPdfFilename(node);
+  if (pdfFile) html += `<div style="color:#80c8ff;font-size:10px;margin-top:3px;">&#128196; Click to open PDF</div>`;
   html += `<div>Type: <span style="color:#80c8ff">${node.type}</span> &nbsp;|&nbsp; Track: <span style="color:#80c8ff">${node.track}</span></div>`;
 
   if (prereqs.length) {
@@ -7034,8 +8246,128 @@ function toggleCDA() {
 }
 
 // ============================================================
+// ANALYTICS APPS TOGGLE
+// ============================================================
+function toggleApps() {
+  const show = document.getElementById("chk-apps").checked;
+
+  // Remove previous app tier bands
+  document.getElementById("app-bg-group").innerHTML = "";
+
+  // Full view switch: show ONLY apps, or ONLY corpus
+  document.querySelectorAll(".node-grp").forEach(g => {
+    const node = nodeById[g.getAttribute("data-id")];
+    if (!node) return;
+    if (node.is_app) {
+      g.style.display = show ? "" : "none";
+      g.setAttribute("opacity", show ? "1" : "0");
+    } else {
+      g.style.display = show ? "none" : "";
+      g.setAttribute("opacity", show ? "0" : "1");
+    }
+  });
+
+  // Edges: show only app edges or only corpus edges
+  document.querySelectorAll(
+    "#edges-prereq-group path, #edges-companion-group path"
+  ).forEach(p => {
+    const src = p.getAttribute("data-src");
+    const tgt = p.getAttribute("data-tgt");
+    const srcNode = nodeById[src];
+    const tgtNode = nodeById[tgt];
+    const isAppEdge = (srcNode && srcNode.is_app) || (tgtNode && tgtNode.is_app);
+    if (isAppEdge) {
+      p.style.display = show ? "" : "none";
+    } else {
+      p.style.display = show ? "none" : "";
+    }
+  });
+
+  // Track labels
+  document.querySelectorAll("#labels-group text").forEach(el => {
+    const track = el.getAttribute("data-track");
+    if (track === "Analytics Apps") {
+      el.style.display = show ? "" : "none";
+    } else if (show) {
+      el.style.display = "none";
+    }
+  });
+
+  // Corpus tier header bands
+  document.querySelectorAll("#labels-group rect, #labels-group line").forEach(el => {
+    el.style.display = show ? "none" : "";
+  });
+
+  // Disable/enable other controls when in app view
+  ["chk-prereq","chk-companion","chk-cda","chk-aud-spec"].forEach(id => {
+    document.getElementById(id).disabled = show;
+  });
+  document.querySelectorAll(".aud-btn").forEach(b => { b.disabled = show; });
+
+  if (show) {
+    // Draw app tier bands
+    const appBg = document.getElementById("app-bg-group");
+    const appTiers = [
+      { label: "HUB",        yTop: 30,   yBot: 160,  fill: "#141a10", accent: "#5a5a1a", text: "#8a8a3a", desc: "Central Navigation" },
+      { label: "AGGREGATOR", yTop: 170,  yBot: 330,  fill: "#140a14", accent: "#6a2a6a", text: "#9a4a9a", desc: "Executive Roll-Up" },
+      { label: "CORE",       yTop: 340,  yBot: 490,  fill: "#0a1420", accent: "#1a6a9a", text: "#2a8aca", desc: "Authoritative Data Source" },
+      { label: "DEPENDENT",  yTop: 500,  yBot: 650,  fill: "#1a1008", accent: "#8a4a1a", text: "#ba6a2a", desc: "Requires Core" },
+      { label: "STANDALONE", yTop: 660,  yBot: 1280, fill: "#0a1410", accent: "#1a7a5a", text: "#2aaa7a", desc: "Independent \u2014 Own Database" },
+      { label: "SHARED",     yTop: 1290, yBot: 1460, fill: "#0e1214", accent: "#4a5a5a", text: "#7a8a8a", desc: "Common Module" },
+    ];
+    appTiers.forEach(t => {
+      const band = document.createElementNS("http://www.w3.org/2000/svg","rect");
+      band.setAttribute("x","150"); band.setAttribute("y", t.yTop);
+      band.setAttribute("width","2400"); band.setAttribute("height", t.yBot - t.yTop);
+      band.setAttribute("fill", t.fill); band.setAttribute("class","app-tier-band");
+      appBg.appendChild(band);
+      const strip = document.createElementNS("http://www.w3.org/2000/svg","rect");
+      strip.setAttribute("x","150"); strip.setAttribute("y", t.yTop);
+      strip.setAttribute("width","4"); strip.setAttribute("height", t.yBot - t.yTop);
+      strip.setAttribute("fill", t.accent); strip.setAttribute("class","app-tier-band");
+      appBg.appendChild(strip);
+      const sep = document.createElementNS("http://www.w3.org/2000/svg","line");
+      sep.setAttribute("x1","150"); sep.setAttribute("y1", t.yTop);
+      sep.setAttribute("x2","2200"); sep.setAttribute("y2", t.yTop);
+      sep.setAttribute("stroke", t.accent); sep.setAttribute("stroke-width","1");
+      sep.setAttribute("stroke-opacity","0.5"); sep.setAttribute("class","app-tier-band");
+      appBg.appendChild(sep);
+      const lbl = document.createElementNS("http://www.w3.org/2000/svg","text");
+      lbl.setAttribute("x","170"); lbl.setAttribute("y", t.yTop + 22);
+      lbl.setAttribute("fill", t.text); lbl.setAttribute("font-size","14");
+      lbl.setAttribute("font-family","Courier New,monospace");
+      lbl.setAttribute("font-weight","bold"); lbl.setAttribute("letter-spacing","2");
+      lbl.setAttribute("class","app-tier-band");
+      lbl.textContent = t.label;
+      appBg.appendChild(lbl);
+      const desc = document.createElementNS("http://www.w3.org/2000/svg","text");
+      desc.setAttribute("x","170"); desc.setAttribute("y", t.yTop + 38);
+      desc.setAttribute("fill", t.text + "88"); desc.setAttribute("font-size","9");
+      desc.setAttribute("font-family","Courier New,monospace");
+      desc.setAttribute("letter-spacing","0.5"); desc.setAttribute("class","app-tier-band");
+      desc.textContent = t.desc;
+      appBg.appendChild(desc);
+    });
+
+    // Update header
+    document.getElementById("header-title").querySelector("h1").textContent =
+      "MSS Training Analytics Suite \u2014 App Architecture";
+    fitView(80);
+  } else {
+    document.getElementById("header-title").querySelector("h1").textContent =
+      "Maven Training Corpus \u2014 File Dependency Map";
+    // Restore normal corpus view
+    applyAudienceFilter();
+    toggleCDA();
+    fitView(50);
+  }
+  updateCorpusPanel();
+}
+
+// ============================================================
 // AUDIENCE FILTER
 // ============================================================
+
 function setAudience(btn) {
   document.querySelectorAll(".aud-btn").forEach(b => b.classList.remove("active"));
   btn.classList.add("active");
@@ -7046,39 +8378,41 @@ function applyAudienceFilter() {
   const active   = document.querySelector(".aud-btn.active");
   const view     = active ? active.dataset.val : "operator";
   const showSpec = document.getElementById("chk-aud-spec").checked;
-
-  // Column-based rules (aud tags used only to exclude dev-only nodes from non-dev views):
-  //   operator → col 0–3 (doctrine + TM-10/20/30), no dev-only nodes
-  //   trainer  → col 0–3 + col 6 (adds training management), no dev-only nodes
-  //   dev      → everything (all columns)
-  // Specialist checkbox independently hides/shows col 4–5 (TM-40/50)
+  // Aud-tag rules — each node declares which views can see it:
+  //   "user"       → visible in operator view
+  //   "trainer"    → visible in trainer view
+  //   "dev"        → visible in dev view
+  //   "specialist" → controlled by the Specialist checkbox (col 4–5 tracks)
+  // Dev view sees everything. Specialist checkbox independently toggles col 4–5.
 
   const hiddenIds = new Set();
   audienceHiddenIds.clear();
   const visibleTracks = new Set();
+  const audTag = (view === "operator") ? "user" : view;  // map view name → aud tag
 
   document.querySelectorAll(".node-grp").forEach(g => {
     const node = nodeById[g.getAttribute("data-id")];
     if (!node) return;
-    const col     = node.col;
-    const aud     = node.aud || [];
-    const devOnly = aud.length === 1 && aud[0] === "dev";
+    const col = node.col;
+    const aud = node.aud || [];
 
     let visible = false;
 
-    if (view === "dev") {
-      visible = true;                                         // dev sees everything
-    } else if (view === "trainer") {
-      visible = ((col >= 0 && col <= 3) || col === 6) && !devOnly;
-    } else {                                                  // operator
-      visible = col >= 0 && col <= 3 && !devOnly;
+    // App nodes controlled exclusively by their own checkbox
+    if (node.is_app) { return; }
+
+    // Specialist tracks (col 4–5) controlled by the Specialist checkbox
+    if (col === 4 || col === 5) {
+      visible = showSpec;
+    } else if (view === "dev") {
+      visible = true;
+    } else {
+      // Aud-tag match: node is visible if the current view's tag is in the node's aud array
+      visible = aud.includes(audTag);
     }
 
-    // Specialist toggle: when on, always show TM-40/50 (additive across all views)
-    //                   when off, always hide TM-40/50
-    if (col === 4 || col === 5)                          visible = showSpec;
-    if (col === -1)                                      visible = showSpec;
-    if (col === 6 && aud.includes('specialist'))         visible = showSpec && view !== 'operator';
+    // Sidebar specialist nodes (e.g. LP_TM40SPEC): show only when specialist is on + trainer/dev
+    if (node.is_sidebar && aud.includes('specialist'))  visible = showSpec && (view !== 'operator');
 
     g.setAttribute("opacity", visible ? "1" : "0");
     if (!visible) hiddenIds.add(node.id);
@@ -7103,7 +8437,9 @@ function applyAudienceFilter() {
     const sn   = nodeById[src];
     const tn   = nodeById[tgt];
     const pptHidden = !cdaOn && ((sn && sn.type === "PPT") || (tn && tn.type === "PPT"));
-    p.style.display = (hiddenIds.has(src) || hiddenIds.has(tgt) || pptHidden) ? "none" : "";
+    const appsOn = document.getElementById("chk-apps").checked;
+    const appHidden = !appsOn && ((sn && sn.is_app) || (tn && tn.is_app));
+    p.style.display = (hiddenIds.has(src) || hiddenIds.has(tgt) || pptHidden || appHidden) ? "none" : "";
   });
 
   // Re-apply edge checkbox state so audience switch doesn't override the toggles
@@ -7465,9 +8801,19 @@ function updateCorpusPanel() {
     const pptCount = countVisiblePPT(view, showSpec);
     if (pptCount > 0) rows.push({ label: "Presentations", pptx: pptCount });
   }
+  const appsOn2 = document.getElementById("chk-apps").checked;
+  if (appsOn2) {
+    rows.length = 0;
+    rows.push({ label: "Hub (Portal)", apps: 1 });
+    rows.push({ label: "Aggregator", apps: 1 });
+    rows.push({ label: "Core", apps: 1 });
+    rows.push({ label: "Dependent", apps: 1 });
+    rows.push({ label: "Standalone", apps: 11 });
+    rows.push({ label: "Shared Module", apps: 1 });
+  }
 
   document.getElementById("cp-view-label").textContent =
-    view.toUpperCase() + (showSpec ? " + SPEC" : "");
+    appsOn2 ? "APP SUITE" : view.toUpperCase() + (showSpec ? " + SPEC" : "");
 
   const table = document.getElementById("cp-table");
   table.innerHTML = "";
@@ -7478,7 +8824,9 @@ function updateCorpusPanel() {
     const tdLbl = document.createElement("td");
     const tdCnt = document.createElement("td");
     tdLbl.textContent = r.label;
-    if (r.pptx && !r.pdf) {
+    if (r.apps) {
+      tdCnt.innerHTML = r.apps + '<span class="cp-unit">apps</span>';
+    } else if (r.pptx && !r.pdf) {
       tdCnt.innerHTML = r.pptx + '<span class="cp-unit">PPTX</span>';
       totalPptx      += r.pptx;
     } else {
@@ -7490,8 +8838,13 @@ function updateCorpusPanel() {
     table.appendChild(tr);
   });
 
-  let tot = totalPdf + " PDF";
-  if (totalPptx > 0) tot += " · " + totalPptx + " PPTX";
+  let tot;
+  if (appsOn2) {
+    tot = "16 apps + portal";
+  } else {
+    tot = totalPdf + " PDF";
+    if (totalPptx > 0) tot += " · " + totalPptx + " PPTX";
+  }
   document.getElementById("cp-total").textContent = tot;
 }
 
@@ -7537,35 +8890,6 @@ function togglePanelCollapse(which) {
   });
 })();
 
-// Doctrine panel drag (mirrors corpus panel drag)
-(function() {
-  const pnl = document.getElementById("doctrine-panel");
-  let dragging = false, ox = 0, oy = 0;
-  pnl.addEventListener("mousedown", e => {
-    dragging = true;
-    pnl.classList.add("dragging");
-    const rect = pnl.getBoundingClientRect();
-    const par  = pnl.parentElement.getBoundingClientRect();
-    pnl.style.bottom = "auto";
-    pnl.style.right  = "auto";
-    pnl.style.left   = (rect.left - par.left) + "px";
-    pnl.style.top    = (rect.top  - par.top)  + "px";
-    ox = e.clientX - rect.left;
-    oy = e.clientY - rect.top;
-    e.stopPropagation();
-  });
-  window.addEventListener("mousemove", e => {
-    if (!dragging) return;
-    const par = pnl.parentElement.getBoundingClientRect();
-    pnl.style.left = (e.clientX - par.left - ox) + "px";
-    pnl.style.top  = (e.clientY - par.top  - oy) + "px";
-  });
-  window.addEventListener("mouseup", () => {
-    if (!dragging) return;
-    dragging = false;
-    pnl.classList.remove("dragging");
-  });
-})();
 
 // ============================================================
 // INIT
@@ -7578,6 +8902,9 @@ resetView();
 // Apply default initial state: Operator view, Specialist off, Slide Decks off
 applyAudienceFilter();
 toggleCDA();
+toggleApps();
+// Re-fit view after filters so operator view zooms correctly
+fitView(50);
 // Place legend in safe empty space (defer one frame so offsetWidth is real)
 requestAnimationFrame(positionLegend);
 

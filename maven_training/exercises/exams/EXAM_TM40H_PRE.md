@@ -25,51 +25,51 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 **1. A large language model (LLM) generates text by:**
 
 A. Retrieving stored answers from a database of pre-approved responses
-B. Predicting the most likely next token(s) in a sequence based on learned probability distributions from training data
-C. Executing deterministic rule-based logic against a structured knowledge base
+B. Executing deterministic rule-based logic against a structured knowledge base
+C. Predicting the most likely next token(s) in a sequence based on learned probability distributions from training data
 D. Running a nearest-neighbor search against vector embeddings of the input query
 
 **2. "Prompt engineering" refers to:**
 
 A. Writing Python code that calls an LLM API
 B. Fine-tuning an LLM on domain-specific training data
-C. Crafting and structuring input text to guide an LLM toward desired outputs
-D. Configuring the inference endpoint for an LLM deployment
+C. Configuring the inference endpoint for an LLM deployment
+D. Crafting and structuring input text to guide an LLM toward desired outputs
 
 **3. In AI system design, "human-in-the-loop" means:**
 
 A. A human monitors system uptime but does not review individual outputs
-B. A human reviews and approves AI-generated outputs before they are acted upon or distributed
-C. Human feedback is used to fine-tune the model after deployment
+B. Human feedback is used to fine-tune the model after deployment
+C. A human reviews and approves AI-generated outputs before they are acted upon or distributed
 D. The AI system notifies a human when it encounters low-confidence outputs
 
 **4. "Hallucination" in the context of LLMs refers to:**
 
 A. Outputs that are intentionally misleading due to adversarial inputs
-B. The model generating plausible-sounding but factually incorrect or fabricated information
+B. An output that cites a real source but misquotes it
 C. A model that produces inconsistent outputs across repeated identical prompts
-D. An output that cites a real source but misquotes it
+D. The model generating plausible-sounding but factually incorrect or fabricated information
 
 **5. "Retrieval-Augmented Generation" (RAG) improves LLM output quality by:**
 
-A. Fine-tuning the LLM on domain-specific data before deployment
-B. Retrieving relevant documents at inference time and including them in the prompt as context
+A. Retrieving relevant documents at inference time and including them in the prompt as context
+B. Fine-tuning the LLM on domain-specific data before deployment
 C. Increasing the size of the LLM's context window to include all available documents
 D. Running multiple LLM instances in parallel and aggregating their outputs
 
 **6. The "context window" of an LLM limits:**
 
-A. The number of API calls that can be made per minute
-B. The total number of tokens (input + output) the model can process in a single inference call
+A. The total number of tokens (input + output) the model can process in a single inference call
+B. The number of API calls that can be made per minute
 C. The number of documents that can be stored in the retrieval corpus
 D. The maximum number of users who can query the model simultaneously
 
 **7. Which of the following is an example of an appropriate use of AI in an Army operational context?**
 
 A. Autonomous lethal targeting without human review
-B. AI-generated draft summary of maintenance trends for analyst review and approval before distribution
+B. AI-generated operations orders published directly to the field without commander review
 C. Automated release of SITREP data to coalition partners without classification review
-D. AI-generated operations orders published directly to the field without commander review
+D. AI-generated draft summary of maintenance trends for analyst review and approval before distribution
 
 **8. "Structured output" from an LLM (e.g., JSON format) is useful in automated pipelines because:**
 
@@ -80,16 +80,16 @@ D. Structured outputs bypass the context window limitation
 
 **9. "Chain-of-thought" prompting is a technique where:**
 
-A. Multiple LLM calls are made sequentially with each output feeding the next input
-B. The prompt instructs the model to reason step-by-step before producing a final answer
+A. The prompt instructs the model to reason step-by-step before producing a final answer
+B. Multiple LLM calls are made sequentially with each output feeding the next input
 C. The prompt includes example input-output pairs to guide the model
 D. The model's output is validated by a second LLM call
 
 **10. An AI system that autonomously submits data to an operational system without any human review step would violate which principle?**
 
 A. Least-privilege access control
-B. Human-in-the-loop (HITL) requirement
-C. Data minimization policy
+B. Data minimization policy
+C. Human-in-the-loop (HITL) requirement
 D. Classification handling procedures
 
 **11. The Army CIO Memorandum (April 2024) on AI use establishes which of the following requirements?**
@@ -122,8 +122,8 @@ D. A subset of the training corpus for fine-tuning the model
 
 **15. Which of the following is a key risk of deploying an LLM-based system into an operational Army context without red-teaming?**
 
-A. The model will require more compute resources than anticipated
-B. The system may produce outputs that are incorrect, biased, or manipulable in ways that were not anticipated during development
+A. The system may produce outputs that are incorrect, biased, or manipulable in ways that were not anticipated during development
+B. The model will require more compute resources than anticipated
 C. The deployment will violate software licensing agreements
 D. Users will overload the inference endpoint during peak operational periods
 
@@ -202,21 +202,21 @@ Passing: N/A — Pre-test is diagnostic only.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — LLMs generate text by predicting next tokens from learned probability distributions.
-2. C — Prompt engineering = crafting input text to guide LLM outputs.
-3. B — HITL = human reviews and approves outputs before action or distribution.
-4. B — Hallucination = plausible but factually incorrect or fabricated content.
-5. B — RAG retrieves documents at inference time to include as context.
-6. B — Context window limits total tokens (input + output) per inference call.
-7. B — AI-generated draft for human review before distribution is appropriate.
+1. C — LLMs generate text by predicting next tokens from learned probability distributions.
+2. D — Prompt engineering = crafting input text to guide LLM outputs.
+3. C — HITL = human reviews and approves outputs before action or distribution.
+4. D — Hallucination = plausible but factually incorrect or fabricated content.
+5. A — RAG retrieves documents at inference time to include as context.
+6. A — Context window limits total tokens (input + output) per inference call.
+7. D — AI-generated draft for human review before distribution is appropriate.
 8. B — Structured outputs can be parsed programmatically by downstream systems.
-9. B — Chain-of-thought = prompt instructs model to reason step-by-step.
-10. B — Autonomous action without human review violates the HITL requirement.
+9. A — Chain-of-thought = prompt instructs model to reason step-by-step.
+10. C — Autonomous action without human review violates the HITL requirement.
 11. C — Army CIO Memo (April 2024): AI content requires human review; use cases must comply with policy.
 12. B — Prompt injection = malicious instructions attempting to override intended behavior.
 13. B — Chunking breaks documents into context-window-sized segments.
 14. B — Few-shot prompting uses example pairs in the prompt to demonstrate desired format.
-15. B — Without red-teaming, incorrect, biased, or adversarially manipulable outputs may reach operational use.
+15. A — Without red-teaming, incorrect, biased, or adversarially manipulable outputs may reach operational use.
 
 **Short Answer Guidance:**
 

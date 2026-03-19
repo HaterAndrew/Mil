@@ -1,4 +1,4 @@
-# EX_50M — Advanced ML Engineering
+# EX-50M — Advanced ML Engineering
 ## Practical Exercise — TM-50M Proficiency
 
 | Field | Value |

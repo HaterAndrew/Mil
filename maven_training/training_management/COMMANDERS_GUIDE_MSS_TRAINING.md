@@ -201,14 +201,13 @@ A Unit Data Trainer (UDT) is a MSC-level person who has completed the T3-F (MSC 
 | Action | Timeline |
 |---|---|
 | **Nominate a UDT candidate** | Identify a TM-20-qualified person with training responsibilities (data NCO, S6, data steward). Submit nomination memorandum to C2DAO. |
-| **Support T3-F attendance** | Release the nominee for the 3-day T3-F course (typically delivered during the MTT's rotation to your MSC). |
+| **Support T3-F attendance** | Release the nominee for the half-day T3-F course (typically delivered during the MTT's rotation to your MSC). |
 | **Employ the UDT** | Direct the UDT to deliver TM-10 to new arrivals. Ensure classroom access and protected training time. |
 | **Plan for succession** | When your UDT PCSs or changes duty, nominate a replacement NLT 60 days before departure. |
 
 ### What Your UDT Can Do
 
 - Deliver TM-10 (Maven User) independently — all 9 blocks, Go/No-Go evaluation, pre/post tests
-- Facilitate TM-20 refresher labs (Blocks 1-10 only: project creation, file ingestion, pipeline basics)
 - Proctor TM-10 exams for self-study or remote personnel as a standalone activity
 - Report training status to C2DAO
 

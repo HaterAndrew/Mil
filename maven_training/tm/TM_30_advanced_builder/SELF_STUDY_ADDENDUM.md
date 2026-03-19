@@ -6,9 +6,7 @@
 
 **Source:** All videos are available on the Palantir Developers YouTube channel (@PalantirDevelopers). These are official Palantir product deep-dives that extend the TM-30 curriculum. No account is required to view.
 
-**Companion Resource — Ontologize Channel:** [@Ontologize](https://www.youtube.com/@Ontologize) — Official Palantir training partner. 68 indexed video walkthroughs covering Foundry and AIP features. Full catalog with TM cross-references: [source_material/ontologize_youtube/README.md](../../source_material/ontologize_youtube/README.md)
-
-**Scope boundary:** TM-30 is entirely UI-based — no code required. All videos listed here use Palantir's graphical tools only (Workshop, Pipeline Builder, Contour, Quiver, AIP Logic configuration UI). Videos requiring Python, TypeScript, or CLI tools are NOT listed here — those belong to TM-40G–M.
+**Scope boundary:** TM-30 is entirely UI-based — no code required. All videos listed here use Palantir's graphical tools only (Workshop, Pipeline Builder, Contour, Quiver, AIP Logic configuration UI). Videos requiring Python, TypeScript, or CLI tools are NOT listed here — those belong to TM-40G–O.
 
 ---
 
@@ -96,7 +94,7 @@ These two videos supplement the Day 5 governance content with practical security
 
 **Day 2 trainees** — Group 2 (Pipeline scheduling and monitoring) pairs directly with the Day 2 evening reading (TM-30, Ch 3).
 
-**Before Day 5 practical exercise** — Watch Group 3 Quiver videos. Quiver linked view configuration is the most common single-task practical exercise failure. Do not skip these before the evaluation.
+**Before Day 4 practical exercise** — Watch Group 3 Quiver videos. Quiver linked view configuration is the most common single-task practical exercise failure. Do not skip these before the evaluation.
 
 **Before Day 1 reading** — Group 5 (DDOF and Operational Design Patterns) covers new Ch 1 doctrine sections. Review Sections 1-10a through 1-10e before Day 1 to understand the governance and design context for all subsequent lab work.
 

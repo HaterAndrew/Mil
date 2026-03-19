@@ -25,57 +25,57 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 **1. In Scrum, a "sprint" is:**
 
 A. A meeting where the team reviews the work completed in the last iteration
-B. A time-boxed period of work (typically 1–4 weeks) in which the team commits to completing a defined set of backlog items
+B. A daily check-in meeting where each team member reports blockers
 C. A prioritized list of features and work items for the project
-D. A daily check-in meeting where each team member reports blockers
+D. A time-boxed period of work (typically 1–4 weeks) in which the team commits to completing a defined set of backlog items
 
 **2. A "user story" in Agile development is best described as:**
 
 A. A technical specification document listing all system requirements
-B. A short description of a desired outcome written from the perspective of the end user, often in the format: "As a [role], I want [capability] so that [benefit]"
-C. A risk register entry describing a potential failure scenario
+B. A risk register entry describing a potential failure scenario
+C. A short description of a desired outcome written from the perspective of the end user, often in the format: "As a [role], I want [capability] so that [benefit]"
 D. A test case documenting expected system behavior
 
 **3. "Acceptance criteria" for a user story serve which purpose?**
 
-A. They define how long the story will take to complete
-B. They define specific, testable conditions that must be met for the story to be considered done
+A. They define specific, testable conditions that must be met for the story to be considered done
+B. They define how long the story will take to complete
 C. They assign the story to a developer track
 D. They document the business justification for the story
 
 **4. In a project context, a "blocker" is:**
 
-A. A stakeholder who is resistant to adopting a new capability
+A. An impediment that prevents a team member from making progress on their work until it is resolved
 B. A dependency on another team that is expected to resolve in the next sprint
-C. An impediment that prevents a team member from making progress on their work until it is resolved
+C. A stakeholder who is resistant to adopting a new capability
 D. A low-priority backlog item that is deferred to a later sprint
 
 **5. A "sprint retrospective" is primarily focused on:**
 
 A. Reviewing and accepting completed work with the product owner and stakeholders
 B. Planning the next sprint's backlog
-C. Improving the team's process — what went well, what didn't, and what the team will do differently
-D. Updating the project risk register with new risks discovered during the sprint
+C. Updating the project risk register with new risks discovered during the sprint
+D. Improving the team's process — what went well, what didn't, and what the team will do differently
 
 **6. The "Definition of Done" (DoD) for a data product specifies:**
 
 A. The date by which the product must be delivered to the operational user
-B. The set of conditions that must be met before the product is considered ready for production release — including quality, documentation, and governance checks
-C. The list of stakeholders who must sign off on the product before release
+B. The list of stakeholders who must sign off on the product before release
+C. The set of conditions that must be met before the product is considered ready for production release — including quality, documentation, and governance checks
 D. The minimum performance threshold for the product's underlying data pipeline
 
 **7. In a six-phase ML project lifecycle (Problem Definition → Data Audit → Prototype → Evaluation → Production → Sustainment), the PRIMARY purpose of the Data Audit phase is to:**
 
 A. Build the first version of the model and test it against a small dataset
-B. Assess whether the data needed for the model actually exists, is accessible, and is of sufficient quality
-C. Deploy the model to the production environment and notify operational users
+B. Deploy the model to the production environment and notify operational users
+C. Assess whether the data needed for the model actually exists, is accessible, and is of sufficient quality
 D. Define the business problem the model will solve and identify stakeholders
 
 **8. A product owner's PRIMARY responsibility in an Agile team is:**
 
 A. Writing code and building the technical components of the product
-B. Facilitating sprint ceremonies (planning, standup, review, retrospective)
-C. Representing stakeholder needs, maintaining and prioritizing the product backlog, and ensuring the team builds the right thing
+B. Representing stakeholder needs, maintaining and prioritizing the product backlog, and ensuring the team builds the right thing
+C. Facilitating sprint ceremonies (planning, standup, review, retrospective)
 D. Managing the team's personnel evaluations and workload assignments
 
 **9. "Scope creep" in project management refers to:**
@@ -89,8 +89,8 @@ D. A risk that the project's quality standards will exceed what is operationally
 
 A. A log of all past issues that were resolved during the project
 B. A list of stakeholder concerns that were raised at project kickoff
-C. A documented record of identified risks, including likelihood, impact, mitigation actions, owners, and due dates
-D. A financial tracking tool for project budget risks
+C. A financial tracking tool for project budget risks
+D. A documented record of identified risks, including likelihood, impact, mitigation actions, owners, and due dates
 
 **11. "Velocity" in Agile refers to:**
 
@@ -102,29 +102,29 @@ D. A metric comparing planned vs. actual delivery dates
 **12. When translating a commander's requirement into a backlog, the PM's first step should be:**
 
 A. Break the requirement immediately into user stories and size them in story points
-B. Identify the technical developer track (TM-40G through TM-40M) that will build the capability
+B. Identify the technical developer track (TM-40G through TM-40O) that will build the capability
 C. Clarify the requirement until the success criteria are specific and testable — distinguish what the user needs from what they asked for
 D. Estimate the delivery timeline and brief the commander on expected completion
 
 **13. A "dependency" in project management is:**
 
-A. A risk that has already materialized and is causing active impact
-B. A piece of work that cannot start or complete until another piece of work is done, often by a different team
+A. A piece of work that cannot start or complete until another piece of work is done, often by a different team
+B. A risk that has already materialized and is causing active impact
 C. A stakeholder who must approve deliverables before the team can proceed
 D. A technical prerequisite for a pipeline to run correctly
 
 **14. In change management, resistance to adopting a new data capability from operational users is MOST often caused by:**
 
-A. Technical quality problems with the data product
-B. Lack of trust, unfamiliarity with the new tool, or concern that the new product will reveal performance problems
+A. Lack of trust, unfamiliarity with the new tool, or concern that the new product will reveal performance problems
+B. Technical quality problems with the data product
 C. Insufficient briefing from senior leadership on the operational requirement
 D. Integration failures between the new capability and existing reporting systems
 
 **15. A "kanban board" is most useful for managing:**
 
 A. A long-term program roadmap across multiple fiscal years
-B. A sprint backlog for a two-week development sprint with a fixed team
-C. Ongoing operational support work with continuous flow — where work items arrive and are completed without fixed sprint boundaries
+B. Ongoing operational support work with continuous flow — where work items arrive and are completed without fixed sprint boundaries
+C. A sprint backlog for a two-week development sprint with a fixed team
 D. The risk register for a data product that is in production sustainment
 
 ---
@@ -202,21 +202,21 @@ Passing: N/A — Pre-test is diagnostic only.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — Sprint = time-boxed iteration in which the team commits to completing a defined backlog set.
-2. B — User story = short user-perspective description of desired outcome.
-3. B — Acceptance criteria define specific, testable conditions for a story to be done.
-4. C — Blocker = impediment preventing progress until resolved.
-5. C — Retrospective = process improvement (went well, didn't, will change).
-6. B — Definition of Done = conditions a product must meet before production release.
-7. B — Data Audit = assess data existence, accessibility, and quality.
-8. C — Product owner owns the backlog and represents stakeholder needs.
+1. D — Sprint = time-boxed iteration in which the team commits to completing a defined backlog set.
+2. C — User story = short user-perspective description of desired outcome.
+3. A — Acceptance criteria define specific, testable conditions for a story to be done.
+4. A — Blocker = impediment preventing progress until resolved.
+5. D — Retrospective = process improvement (went well, didn't, will change).
+6. C — Definition of Done = conditions a product must meet before production release.
+7. C — Data Audit = assess data existence, accessibility, and quality.
+8. B — Product owner owns the backlog and represents stakeholder needs.
 9. B — Scope creep = unplanned requirement additions without schedule/resource adjustment.
-10. C — Risk register = documented risks with likelihood, impact, mitigation, owners, and dates.
+10. D — Risk register = documented risks with likelihood, impact, mitigation, owners, and dates.
 11. B — Velocity = work completed in a sprint (story points or tasks).
 12. C — First step: clarify until success criteria are specific and testable.
-13. B — Dependency = work blocked on another piece of work, often by another team.
-14. B — Resistance most often stems from distrust, unfamiliarity, or concern about visibility.
-15. C — Kanban = continuous flow work without fixed sprints (operational support).
+13. A — Dependency = work blocked on another piece of work, often by another team.
+14. A — Resistance most often stems from distrust, unfamiliarity, or concern about visibility.
+15. B — Kanban = continuous flow work without fixed sprints (operational support).
 
 **Short Answer Guidance:**
 

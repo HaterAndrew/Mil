@@ -25,8 +25,8 @@ This assessment evaluates mastery of course learning objectives. A passing score
 **1. A theater KM officer is designing a knowledge federation architecture connecting NIPR and SIPR knowledge repositories for V Corps. The correct architectural pattern is:**
 
 A. A synchronized bridge that copies approved NIPR lessons upward to SIPR automatically upon KM officer tagging
-B. Parallel networks — each classification domain maintains its own separate repository with no automated bridge; cross-domain transfers require individual SSO/ISSO-reviewed human-controlled sanitization
-C. A shared API layer that queries both repositories simultaneously for users with appropriate clearances
+B. A shared API layer that queries both repositories simultaneously for users with appropriate clearances
+C. Parallel networks — each classification domain maintains its own separate repository with no automated bridge; cross-domain transfers require individual SSO/ISSO-reviewed human-controlled sanitization
 D. A single SIPR-hosted repository with NIPR users accessing a read-only downgraded view
 
 **2. The V Corps Civil Affairs CIMIC section proposes automating doctrine updates: when 10 or more NIPR lessons share a common theme, an AI workflow automatically drafts a doctrine amendment and publishes it to the theater SOP library. Per TM-50K, which element of this proposal is NON-COMPLIANT?**
@@ -39,49 +39,49 @@ D. Using NIPR-sourced lessons as the input corpus for doctrine development
 **3. An AI-assisted doctrine workflow that generates a Draft update to a theater-level SOP based on 18 validated lessons must label the output prominently as:**
 
 A. "AUTO-GENERATED — PENDING VALIDATION"
-B. "DRAFT — AI-ASSISTED. MANDATORY SME REVIEW REQUIRED BEFORE PUBLICATION OR DISTRIBUTION"
+B. "DRAFT — AWAITING G3 APPROVAL"
 C. "FOR OFFICIAL USE ONLY — RESTRICTED DISTRIBUTION PENDING COMMANDER APPROVAL"
-D. "DRAFT — AWAITING G3 APPROVAL"
+D. "DRAFT — AI-ASSISTED. MANDATORY SME REVIEW REQUIRED BEFORE PUBLICATION OR DISTRIBUTION"
 
 **4. Before USAREUR-AF begins sharing lessons-learned products with a Bundeswehr partner unit via their NATO interoperability portal, which step must be completed FIRST?**
 
 A. Upload a representative sample of lessons to test portal compatibility
-B. Establish a signed information sharing agreement covering data ownership, classification handling, permitted use, and retention requirements, with OPSEC review complete
+B. Obtain a USAREUR-AF G2 release approval for each individual lesson before sharing
 C. Coordinate with the partner unit's KM officer to confirm the MSS platform formats are compatible
-D. Obtain a USAREUR-AF G2 release approval for each individual lesson before sharing
+D. Establish a signed information sharing agreement covering data ownership, classification handling, permitted use, and retention requirements, with OPSEC review complete
 
 **5. STANAG 4778 is relevant to the USAREUR-AF theater KM architecture because:**
 
-A. It mandates that all NATO nations use a common KM software platform
-B. It establishes standardized information management and sharing formats that enable interoperability between USAREUR-AF and alliance partner KM systems
+A. It establishes standardized information management and sharing formats that enable interoperability between USAREUR-AF and alliance partner KM systems
+B. It mandates that all NATO nations use a common KM software platform
 C. It defines classification equivalencies between U.S. and NATO classification schemes
 D. It specifies the encryption standards required for NATO knowledge product transmission
 
 **6. A TM-50K knowledge graph schema for V Corps theater operations is considered operationally sensitive because:**
 
-A. The graph contains classified lesson content that requires SIPR-level handling
-B. The entity types and relationship structure reveal what categories of information the Corps tracks, which units are linked to which operations, and what the command considers significant — adversaries could exploit this structure to understand intelligence priorities and decision processes
+A. The entity types and relationship structure reveal what categories of information the Corps tracks, which units are linked to which operations, and what the command considers significant — adversaries could exploit this structure to understand intelligence priorities and decision processes
+B. The graph contains classified lesson content that requires SIPR-level handling
 C. Knowledge graph schemas contain embedded connection strings to the underlying database
 D. The schema identifies individual Soldiers who authored knowledge products
 
 **7. A TM-50K enterprise KM metrics report for a corps commander briefing should include which combination?**
 
 A. Document count and total storage consumed by the knowledge system
-B. Quantitative metrics (lesson implementation rate, knowledge reuse rate, PCS continuity score, time-to-find) AND qualitative metrics (user-reported relevance, commander assessment of decision support) — neither category alone is sufficient
-C. System uptime and search query response time only
+B. System uptime and search query response time only
+C. Quantitative metrics (lesson implementation rate, knowledge reuse rate, PCS continuity score, time-to-find) AND qualitative metrics (user-reported relevance, commander assessment of decision support) — neither category alone is sufficient
 D. Number of new lessons submitted per month and number of SOP revisions
 
 **8. The "PCS continuity score" KM metric measures:**
 
-A. The percentage of Soldiers who complete PCS knowledge transfer training before departure
-B. The proportion of critical role-specific knowledge that has been captured and transferred before the departing Soldier departs — assessing how much institutional knowledge survived the PCS cycle
+A. The proportion of critical role-specific knowledge that has been captured and transferred before the departing Soldier departs — assessing how much institutional knowledge survived the PCS cycle
+B. The percentage of Soldiers who complete PCS knowledge transfer training before departure
 C. The number of days between a Soldier's departure date and the date their PCS package is submitted
 D. The incoming Soldier's reported readiness score after reviewing the PCS package
 
 **9. A theater knowledge risk register identifies that one senior G2 NCO holds exclusive expertise in a critical MSS intelligence correlation workflow — no documentation exists and no other Soldier has been trained. This is classified in the risk register as:**
 
-A. A low-risk item — the NCO will brief their replacement before PCS
-B. A single-point-of-failure knowledge risk requiring immediate mitigation: document the workflow, cross-train a second Soldier, and establish a written SOP before the NCO's PCS date
+A. A single-point-of-failure knowledge risk requiring immediate mitigation: document the workflow, cross-train a second Soldier, and establish a written SOP before the NCO's PCS date
+B. A low-risk item — the NCO will brief their replacement before PCS
 C. An acceptable risk managed under the G2's succession planning process
 D. A FOUO concern that should be handled separately from the KM risk register
 
@@ -95,16 +95,16 @@ D. Acceptable if the data steward confirms the system is still meeting user need
 **11. When designing an enterprise knowledge graph schema for a theater-level HQ, an uncontrolled schema change (adding a new entity type without change control review) creates which primary risk?**
 
 A. The new entity type may conflict with an existing NATO interoperability requirement
-B. Downstream pipelines and queries built on the current schema may break without warning, potentially corrupting KM workflows that depend on the schema structure
-C. The new entity type may not be visible to users with Viewer-only access
+B. The new entity type may not be visible to users with Viewer-only access
+C. Downstream pipelines and queries built on the current schema may break without warning, potentially corrupting KM workflows that depend on the schema structure
 D. The change will invalidate the system's current ATO
 
 **12. The "knowledge reuse rate" metric is defined as:**
 
 A. The number of users who accessed the knowledge system at least once in the reporting period
-B. The proportion of lessons or knowledge products that were accessed and cited or referenced in subsequent planning, training, or operations — indicating the knowledge is being applied, not just stored
+B. The percentage of knowledge products that have been updated in the last 12 months
 C. The average number of times each knowledge product is viewed per month
-D. The percentage of knowledge products that have been updated in the last 12 months
+D. The proportion of lessons or knowledge products that were accessed and cited or referenced in subsequent planning, training, or operations — indicating the knowledge is being applied, not just stored
 
 **13. A V Corps KM officer is asked to share a comprehensive expertise directory of all Soldiers in the AOR with specific technical skills with a coalition partner for multinational task force assignment. Per TM-50K, before sharing this directory the KM officer must:**
 
@@ -123,8 +123,8 @@ D. A vendor support contract for the underlying KM platform
 **15. When a TM-50K qualified KM architect determines that crossing a classification boundary is required to share a specific knowledge product with a lower-classification partner, the correct procedure is:**
 
 A. Redact the classified portions and share the remainder without further review
-B. Engage the SSO/ISSO BEFORE beginning the design — classification boundary crossing procedures must be approved and documented before any technical implementation begins
-C. Route the product through the G2 downgrade process and share upon approval
+B. Route the product through the G2 downgrade process and share upon approval
+C. Engage the SSO/ISSO BEFORE beginning the design — classification boundary crossing procedures must be approved and documented before any technical implementation begins
 D. Share the product with a classification caveat that transfers responsibility to the recipient
 
 ---
@@ -202,21 +202,21 @@ Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — Parallel networks with no automated bridge; cross-domain transfer = individual human-controlled sanitization with SSO/ISSO review.
+1. C — Parallel networks with no automated bridge; cross-domain transfer = individual human-controlled sanitization with SSO/ISSO review.
 2. B — Auto-publishing without mandatory SME review is NON-COMPLIANT regardless of workflow sophistication.
-3. B — AI-assisted doctrine output must be prominently labeled as Draft with mandatory SME review required.
-4. B — Signed ISA with OPSEC review must be completed before any sharing begins.
-5. B — STANAG 4778 establishes standardized NATO information management formats for alliance interoperability.
-6. B — Graph schema reveals command priorities, tracked entities, and decision processes — operationally sensitive.
-7. B — Both quantitative and qualitative metrics are required; neither alone is sufficient.
-8. B — PCS continuity score = proportion of critical knowledge captured and transferred before departure.
-9. B — Single-point-of-failure = HIGH risk requiring immediate documentation, cross-training, and SOP creation before PCS.
+3. D — AI-assisted doctrine output must be prominently labeled as Draft with mandatory SME review required.
+4. D — Signed ISA with OPSEC review must be completed before any sharing begins.
+5. A — STANAG 4778 establishes standardized NATO information management formats for alliance interoperability.
+6. A — Graph schema reveals command priorities, tracked entities, and decision processes — operationally sensitive.
+7. C — Both quantitative and qualitative metrics are required; neither alone is sufficient.
+8. A — PCS continuity score = proportion of critical knowledge captured and transferred before departure.
+9. A — Single-point-of-failure = HIGH risk requiring immediate documentation, cross-training, and SOP creation before PCS.
 10. B — No decommission plan = governance liability and knowledge risk that worsens with organizational dependency.
-11. B — Uncontrolled schema changes break downstream pipelines and queries that depend on the current schema structure.
-12. B — Knowledge reuse rate = proportion of lessons accessed and applied (cited/referenced) in subsequent work.
+11. C — Uncontrolled schema changes break downstream pipelines and queries that depend on the current schema structure.
+12. D — Knowledge reuse rate = proportion of lessons accessed and applied (cited/referenced) in subsequent work.
 13. B — Privacy Act review, ISA confirmation for this specific use, OPSEC review, and partner access scope verification all required.
 14. B — Enterprise governance requires defined ownership, schema change control, currency review, Privacy Act oversight, and decommission plans.
-15. B — SSO/ISSO engagement BEFORE design — classification boundary procedures must be approved before technical implementation begins.
+15. C — SSO/ISSO engagement BEFORE design — classification boundary procedures must be approved before technical implementation begins.
 
 **Short Answer Guidance:**
 

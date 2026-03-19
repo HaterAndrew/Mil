@@ -25,63 +25,63 @@ This assessment evaluates mastery of course learning objectives. A passing score
 **1. You are building a multi-page Workshop application where Page 2 should display maintenance details for the vehicle selected on Page 1. The correct TM-30 implementation approach is:**
 
 A. Export the Page 1 selection to a pipeline variable and rebuild the dataset on navigation
-B. Configure a URL deep link on Page 1 that passes the selected vehicle ID as a variable to Page 2
+B. Use a conditional show/hide block on Page 1 to display the maintenance details in an expandable panel
 C. Rebuild the Page 2 filters using the same dropdown as Page 1 — no variable passing is needed
-D. Use a conditional show/hide block on Page 1 to display the maintenance details in an expandable panel
+D. Configure a URL deep link on Page 1 that passes the selected vehicle ID as a variable to Page 2
 
 **2. Your Pipeline Builder pipeline joins a unit roster (4,000 rows) to a training event table (12,000 rows) on `soldier_id`, where each Soldier can appear in multiple events. A SUM of duty hours after the join returns a value 3x higher than expected. The MOST likely cause is:**
 
 A. The pipeline is running a full outer join instead of a left join
-B. A one-to-many join fan-out is duplicating the unit roster rows, tripling aggregate sums
-C. The `duty_hours` column contains nulls that are being interpreted as zeros
+B. The `duty_hours` column contains nulls that are being interpreted as zeros
+C. A one-to-many join fan-out is duplicating the unit roster rows, tripling aggregate sums
 D. The GROUP BY step is grouping by the wrong column
 
 **3. In a Pipeline Builder pipeline, a "union" step that combines two quarterly report datasets requires:**
 
-A. Both datasets to share a primary key column for the union
-B. Both datasets to have identical column names and compatible data types
+A. Both datasets to have identical column names and compatible data types
+B. Both datasets to share a primary key column for the union
 C. The pipeline to run a deduplication step after the union
 D. Both datasets to originate from the same source system
 
 **4. A Pipeline Builder pipeline that uses an "Append" transaction mode will:**
 
 A. Overwrite the target dataset on each run
-B. Validate each record against the schema before writing
-C. Add new records to the existing dataset without deleting prior records, enabling history tracking
+B. Add new records to the existing dataset without deleting prior records, enabling history tracking
+C. Validate each record against the schema before writing
 D. Write only records that are different from the previous pipeline run
 
 **5. You are configuring a scheduled pipeline to refresh a logistics dataset at 0400 daily and notify the G4 NCOIC by email on failure. The email alert is configured in:**
 
-A. The Workshop application settings
-B. The pipeline's schedule and alerting configuration
+A. The pipeline's schedule and alerting configuration
+B. The Workshop application settings
 C. The Ontology Manager notification settings
 D. The data steward's project settings
 
 **6. A Soldier who has completed TM-30 and wants to pursue specialized data work in operations research wants to know which track to take next. The correct answer is:**
 
 A. TM-40A — Intelligence WFF Track (for G2/S2 staff applying MSS to intelligence operations)
-B. TM-40G — ORSA Specialist Track (for FA49 and quantitative analysts; operations research focus)
-C. TM-50G — Advanced ORSA Track (prereq: TM-40G — not yet accessible to a TM-30 graduate)
+B. TM-50G — Advanced ORSA Track (prereq: TM-40G — not yet accessible to a TM-30 graduate)
+C. TM-40G — ORSA Specialist Track (for FA49 and quantitative analysts; operations research focus)
 D. TM-40F — Mission Command WFF Track (for MC-function staff applying MSS to command products)
 
 **7. In the C2DAO promotion workflow, the data steward's role during promotion review includes:**
 
 A. Automatically approving all changes submitted by Editor-role users
-B. Reviewing the change description, validating naming conventions, checking data quality, and approving or returning the branch with feedback
+B. Only reviewing changes that affect Object Types — pipeline changes are auto-approved
 C. Deploying the branch to production without further review once a Builder submits it
-D. Only reviewing changes that affect Object Types — pipeline changes are auto-approved
+D. Reviewing the change description, validating naming conventions, checking data quality, and approving or returning the branch with feedback
 
 **8. A G2 analyst asks you to configure (not author) an AIP Logic workflow to summarize incoming OSINT reports. Per TM-30 procedures, "configure" means:**
 
 A. Writing the prompt engineering and chain logic for the AIP workflow
-B. Selecting pre-built workflow templates, setting input/output parameters, and connecting to authorized data sources — not writing new chain logic
+B. Reviewing and red-teaming the workflow against adversarial inputs
 C. Deploying the workflow to production after testing
-D. Reviewing and red-teaming the workflow against adversarial inputs
+D. Selecting pre-built workflow templates, setting input/output parameters, and connecting to authorized data sources — not writing new chain logic
 
 **9. You are building a Contour analysis of fuel consumption trends. You need to calculate a column showing each vehicle's consumption as a percentage of the fleet average. The correct Contour feature for this is:**
 
-A. A filter control applied to the fleet average row
-B. A calculated column using a window function or the fleet average as a reference value
+A. A calculated column using a window function or the fleet average as a reference value
+B. A filter control applied to the fleet average row
 C. A pivot table with fleet average as the row header
 D. A parameter control set to the fleet average value
 
@@ -101,8 +101,8 @@ D. The conditional formatting rule references the wrong field in the dataset
 
 **12. Per TM-30 procedures, which of the following is a REQUIRED element in a promotion description when submitting a branch for data steward review?**
 
-A. The names of all users who reviewed the branch before submission
-B. A description of what changed, why it changed, and confirmation that data quality checks passed
+A. A description of what changed, why it changed, and confirmation that data quality checks passed
+B. The names of all users who reviewed the branch before submission
 C. A signed memorandum from the project owner approving the change
 D. A comparison of pipeline run times before and after the change
 
@@ -116,15 +116,15 @@ D. Using a union step instead of a join when multiple sources are present
 **14. You need to build a Contour pivot table showing ammunition consumption by unit (rows) and ammunition type (columns), with totals. The correct Contour configuration step is:**
 
 A. Build a bar chart and manually transpose the axes
-B. Configure a pivot table with `unit` as the row dimension, `ammo_type` as the column dimension, and `quantity` as the aggregated value
-C. Export the dataset and create the pivot table in Excel
+B. Export the dataset and create the pivot table in Excel
+C. Configure a pivot table with `unit` as the row dimension, `ammo_type` as the column dimension, and `quantity` as the aggregated value
 D. Build a calculated column that pre-aggregates by unit and type before the pivot step
 
 **15. A Workshop application page should display a "No data available" message when a filter variable returns no matching records, instead of showing an empty table. The correct TM-30 implementation is:**
 
 A. Set the table's empty-state message in the table widget configuration
-B. Use a conditional show/hide block: show a text widget with "No data available" when the table row count equals zero, hide it otherwise
-C. Configure the filter to prevent selection of values that return no records
+B. Configure the filter to prevent selection of values that return no records
+C. Use a conditional show/hide block: show a text widget with "No data available" when the table row count equals zero, hide it otherwise
 D. Add a pipeline validation step that blocks empty results from being written to the dataset
 
 **16. Per DDOF Playbook v2.2, a data product that reaches Phase 3 (Data Wrangling) must pass a quality gate scored against the VAULTIS-A framework. The number of dimensions in VAULTIS-A and the minimum weighted average required to pass are:**
@@ -244,27 +244,21 @@ Passing: 50/72 (70%) — Post-test only. Pre-test is diagnostic.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — URL deep link with vehicle ID variable passed to Page 2 is the correct TM-30 multi-page approach.
-2. B — Fan-out from a 1:M join on soldier_id duplicates roster rows, tripling aggregated sums.
-3. B — Union requires identical column names and compatible types; no join key is needed.
-4. C — Append adds records without deleting prior data, enabling historical accumulation.
-5. B — Schedule and alerting configuration is where email alerts are set in Pipeline Builder.
-6. B — TM-40G is the ORSA Specialist Track for FA49 and quantitative analysts. Options A and D are WFF tracks targeting warfighting function staff roles, not operations research. Option C (TM-50G) is the Advanced ORSA track, which requires TM-40G as its prerequisite — a Soldier who has completed only TM-30 is not yet eligible. All TM-40 tracks (WFF and Specialist) require TM-30 as a hard prerequisite.
-7. B — Data steward reviews, validates, and approves or returns with feedback.
-8. B — "Configure" = select templates, set parameters, connect sources; not writing chain logic.
-9. B — Calculated column using fleet average reference value is the correct Contour approach.
+1. D — URL deep link with vehicle ID variable passed to Page 2 is the correct TM-30 multi-page approach.
+2. C — Fan-out from a 1:M join on soldier_id duplicates roster rows, tripling aggregated sums.
+3. A — Union requires identical column names and compatible types; no join key is needed.
+4. B — Append adds records without deleting prior data, enabling historical accumulation.
+5. A — Schedule and alerting configuration is where email alerts are set in Pipeline Builder.
+6. C — TM-40G is the ORSA Specialist Track for FA49 and quantitative analysts. Options A and D are WFF tracks targeting warfighting function staff roles, not operations research. Option B (TM-50G) is the Advanced ORSA track, which requires TM-40G as its prerequisite — a Soldier who has completed only TM-30 is not yet eligible. All TM-40 tracks (WFF and Specialist) require TM-30 as a hard prerequisite.
+7. D — Data steward reviews, validates, and approves or returns with feedback.
+8. D — "Configure" = select templates, set parameters, connect sources; not writing chain logic.
+9. A — Calculated column using fleet average reference value is the correct Contour approach.
 10. B — Cross-object filter propagation: selection in one panel updates linked panels to show related records.
 11. B — Workshop table cache lag; table has not refreshed to show updated pipeline data.
-12. B — Promotion description must include what changed, why, and data quality check confirmation.
+12. A — Promotion description must include what changed, why, and data quality check confirmation.
 13. B — Pre-aggregating the many-side before joining is the standard fan-out handling technique.
-14. B — Pivot table with unit as rows, ammo_type as columns, quantity as aggregated value.
-15. B — Conditional show/hide: show "no data" text widget when row count = 0.
-16. C — VAULTIS-A has 8 dimensions (V-A-U-L-T-I-S-A: Visible, Accessible, Understandable, Linked, Trusted, Interoperable, Secure, Auditable) and requires 85% weighted average. VAULTIS-A supersedes VAUTI (5 dimensions, AR 25-1) per DDOF Playbook v2.2 (Dec 2025). Option A describes the older VAUTI framework. Option B has 7 dimensions (omits Auditable). Option D has the correct dimensions but wrong threshold (90% vs. 85%). Source: TM-30, Section 1-10 / DDOF Playbook v2.2.
-17. B — Products with no access in 90 days require FDM review; 180 days no access initiates retirement. Quality gates are enforced, not advisory — products failing below 70% quality trigger remediate-or-retire. Option A is wrong because 90 days triggers review, not automatic retirement. Option C overstates the re-certification requirement. Option D invents a "draft" downgrade status not in doctrine. Source: TM-30, Section 1-10 / DDOF Playbook v2.2.
-18. B — Intermittent connectivity requires store-and-forward queues with delta sync. Option A describes mitigations for a denied (no network) environment. Option C describes limited (low bandwidth) mitigations. Option D is not a defined DDIL mitigation. Source: TM-30, Section 1-10e (DDIL Environments) / ADP 6-0 / UDRA v1.1.
-19. C — The correct DDOF phase order is: Phase 1 Problem Framing → Phase 2 Data Provisioning → Phase 3 Data Wrangling → Phase 4 Development → Phase 5 Test & Evaluation → Phase 6 Operations. Option A swaps Phases 2 and 3. Option B places Data Provisioning before Problem Framing. Option D places Development before Data Wrangling. Source: TM-30, Section 1-10 / DDOF Playbook v2.2.
-20. C — The requirement fails both Specific (no definition of what readiness data is needed or which units) and Time-bound ("sometime this quarter" is not a date-certain IOC). Options A and B each identify only one failure — SMART requires all five criteria, and this requirement fails at least two. Option D is incorrect because readiness dashboards are achievable within a quarter given platform and data availability. A requirement that fails any SMART criterion must be returned to the Decision Maker for refinement before Phase 2. Source: TM-30, Section 1-10b / DDOF Playbook v2.2.
-21. B — Fail-closed enforcement means deny access when authorization cannot be confirmed, log all denials, and require explicit re-authorization. Option A (read-only fallback) is a fail-open variant — not permitted. Option C (last known role fallback) is also fail-open — roles may have changed. Option D (auto-grant on recovery) bypasses explicit authorization. Per Genesis Mission directives, products that default to granting access on authorization failure will not pass Phase 5 T&E. Source: TM-30, Section 1-10c / DDOF Playbook v2.2.
+14. C — Pivot table with unit as rows, ammo_type as columns, quantity as aggregated value.
+15. C — Conditional show/hide: show "no data" text widget when row count = 0.
 
 **Short Answer Guidance:**
 
@@ -276,7 +270,7 @@ SA-3. Full credit: Object Types — NetworkNode (node_id, type, location, status
 
 SA-4. Full credit: Builder completes work on branch → writes promotion description (what/why/QC passed) → submits for data steward review → data steward reviews naming, schema, pipeline logic, data quality → approves or returns with feedback → builder addresses feedback → re-submits → data steward approves → branch merged to production. Most common rejection point: promotion description review — most frequent reason: naming convention violations (non-C2DAO names) or missing data quality check confirmation. Partial credit (3 pts) for correct sequence without identifying rejection point.
 
-SA-5. Full credit: WFF tracks — TM-40A through TM-40F (Intelligence, Fires, Movement & Maneuver, Sustainment, Protection, Mission Command); prerequisite is TM-30 (required — same prereq chain as Specialist tracks: TM-10 + TM-20 + TM-30); example: TM-40A (Intelligence WFF) or any of A–F. Specialist tracks — TM-40G through TM-40M (ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, Software Engineer); prerequisite is TM-30 (REQUIRED hard prereq); example: TM-40G (ORSA) or any of G–M. NOTE: TM-50 is G–M only; advanced specialist tracks are TM-50G–M (prereq: corresponding TM-40 specialist track). Partial credit (3 pts) for correctly describing one category with correct IDs, prereq, and example.
+SA-5. Full credit: WFF tracks — TM-40A through TM-40F (Intelligence, Fires, Movement & Maneuver, Sustainment, Protection, Mission Command); prerequisite is TM-30 (required — same prereq chain as Specialist tracks: TM-10 + TM-20 + TM-30); example: TM-40A (Intelligence WFF) or any of A–F. Specialist tracks — TM-40G through TM-40O (ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, Software Engineer, UX Designer, Platform Engineer); prerequisite is TM-30 (REQUIRED hard prereq); example: TM-40G (ORSA) or any of G–O. NOTE: TM-50A–F do NOT exist; advanced specialist tracks are TM-50G–O (prereq: corresponding TM-40G–O track). Partial credit (3 pts) for correctly describing one category with correct IDs, prereq, and example.
 
 ---
 

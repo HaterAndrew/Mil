@@ -49,6 +49,9 @@ Phased approach. Phase 1 (D+0–D+90): sourcing, T3 certification, curriculum ha
 ### "Could TRADOC pick this up?"
 That's the long-term vision for Army-wide scaling. USAREUR-AF proves the model, TRADOC absorbs it. The governance package is already TRADOC-formatted. The curriculum is exportable to other ACOMs/ASCCs. But someone has to prove it works first — that's what COA 1 does.
 
+### "How is this different from G4's DIU?"
+Different scope, different problem. DIU is Palantir product training — it teaches staff how to navigate Vantage, use Contour, and operate Foundry tools. That's platform familiarization. MSS training starts where DIU stops. We teach data literacy, ontology architecture, pipeline engineering, governance standards, and operational integration across warfighting functions. DIU has ~7 courses focused on button-clicking; we have 22 published tracks covering specialists from ORSA to AI Engineer to Software Engineer, each with pre/post exams, hands-on exercises, and self-study paths. DIU also has no instructor certification, no faculty development plan, no TRADOC-formatted governance, and no scalability model — it runs when G4 schedules it and stops when they don't. Our program is designed for institutional adoption: MTT delivery, partner nation integration, and eventual TRADOC absorption. They're complementary — a Soldier who completes DIU's Foundation Operator Course is better prepared for our TM-10. But DIU does not and cannot replace what we built.
+
 ### "Is any of this classified?"
 No. All curriculum is UNCLASSIFIED. The training hub is currently on Cloudflare Pages, migrating to a network subdomain. Course content teaches platform skills and data literacy — no operational data is included in training materials. This is why partner nation training is immediately executable with no releasability review required.
 

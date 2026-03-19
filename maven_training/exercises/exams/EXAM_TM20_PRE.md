@@ -24,58 +24,58 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 
 **1. In a relational database, a "primary key" is:**
 
-A. The first column in any table
-B. A field or combination of fields that uniquely identifies each record in a table
+A. A field or combination of fields that uniquely identifies each record in a table
+B. The first column in any table
 C. The most frequently queried field in a dataset
 D. A field that stores the date a record was created
 
 **2. When joining two database tables, the join field must:**
 
 A. Contain only numeric values
-B. Be the same data type in both tables and represent the same entity
-C. Be a date field in at least one of the tables
+B. Be a date field in at least one of the tables
+C. Be the same data type in both tables and represent the same entity
 D. Exist in both tables as the first column
 
 **3. A pipeline that reads raw source data, transforms it, and writes clean output to a target system is generally called:**
 
-A. An API endpoint
+A. An ETL (Extract, Transform, Load) process
 B. A dashboard
-C. An ETL (Extract, Transform, Load) process
+C. An API endpoint
 D. A version control workflow
 
 **4. In data terms, "null" means:**
 
 A. Zero (the numeric value)
-B. An empty string with no characters
-C. The absence of a value — the field contains nothing
+B. The absence of a value — the field contains nothing
+C. An empty string with no characters
 D. A value that failed a type validation check
 
 **5. "Type casting" in a data pipeline refers to:**
 
-A. Assigning roles to columns in a join operation
-B. Converting a field's data type (e.g., from text to number)
+A. Converting a field's data type (e.g., from text to number)
+B. Assigning roles to columns in a join operation
 C. Adding a new calculated column to a dataset
 D. Filtering records based on a field's data type
 
 **6. In a data schema, "cardinality" describes:**
 
 A. The maximum number of rows a table can hold
-B. The relationship between the number of records on each side of a table join (one-to-one, one-to-many, etc.)
-C. The order in which columns appear in a table
+B. The order in which columns appear in a table
+C. The relationship between the number of records on each side of a table join (one-to-one, one-to-many, etc.)
 D. The compression ratio of a stored dataset
 
 **7. Access control in a data system is best described as:**
 
-A. Encrypting data at rest
-B. Defining who can read, write, or modify specific data or system components
+A. Defining who can read, write, or modify specific data or system components
+B. Encrypting data at rest
 C. Auditing user login history
 D. Preventing external systems from querying the database
 
 **8. A "calculated column" in a data transformation is:**
 
 A. A column imported from an external system
-B. A column derived from arithmetic or logical operations on existing columns
-C. The primary key column of a dataset
+B. The primary key column of a dataset
+C. A column derived from arithmetic or logical operations on existing columns
 D. A column that stores running totals
 
 **9. Which of the following is an example of a "filter" step in a data pipeline?**
@@ -88,16 +88,16 @@ D. Merging two datasets on a common field
 **10. In project data management, "naming conventions" are important because:**
 
 A. They prevent unauthorized users from finding data
-B. They ensure consistent, discoverable, and interpretable naming across all artifacts
+B. They compress file sizes for faster data transfer
 C. They are required by Army Regulation for all digital files
-D. They compress file sizes for faster data transfer
+D. They ensure consistent, discoverable, and interpretable naming across all artifacts
 
 **11. A "union" operation in data transformation:**
 
 A. Joins two tables side-by-side based on a shared key
-B. Stacks two tables with the same schema on top of each other to combine rows
+B. Creates a new column based on a formula
 C. Filters one table using values from another table
-D. Creates a new column based on a formula
+D. Stacks two tables with the same schema on top of each other to combine rows
 
 **12. In a Workshop-style dashboard, "conditional formatting" refers to:**
 
@@ -109,9 +109,9 @@ D. Configuring which users can see which widgets
 **13. An "audit trail" in a data system is:**
 
 A. A log of all automated pipeline runs
-B. A record of who made what changes to data, and when
+B. A list of approved data exports from the system
 C. A summary report of data quality checks
-D. A list of approved data exports from the system
+D. A record of who made what changes to data, and when
 
 **14. "Data governance" in an Army data platform context most directly refers to:**
 
@@ -202,19 +202,19 @@ Passing: N/A — Pre-test is diagnostic only.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — Primary key uniquely identifies each record; it is not necessarily the first column or a date field.
-2. B — Join fields must match in data type and represent the same entity for a valid join.
-3. C — ETL (Extract, Transform, Load) is the standard term for a source-to-target data pipeline.
-4. C — Null means the absence of a value, not zero or empty string.
-5. B — Type casting converts a field's data type from one type to another.
-6. B — Cardinality describes the numeric relationship between joined tables (1:1, 1:M, M:M).
-7. B — Access control defines who can read, write, or modify data/system components.
-8. B — A calculated column is derived from operations on existing columns.
+1. A — Primary key uniquely identifies each record; it is not necessarily the first column or a date field.
+2. C — Join fields must match in data type and represent the same entity for a valid join.
+3. A — ETL (Extract, Transform, Load) is the standard term for a source-to-target data pipeline.
+4. B — Null means the absence of a value, not zero or empty string.
+5. A — Type casting converts a field's data type from one type to another.
+6. C — Cardinality describes the numeric relationship between joined tables (1:1, 1:M, M:M).
+7. A — Access control defines who can read, write, or modify data/system components.
+8. C — A calculated column is derived from operations on existing columns.
 9. C — Filtering to keep only "Active" records is a filter step; the other options describe other transform types.
-10. B — Naming conventions ensure consistent, discoverable, interpretable artifact naming.
-11. B — Union stacks rows from two compatible schemas; join combines columns on a key.
+10. D — Naming conventions ensure consistent, discoverable, interpretable artifact naming.
+11. D — Union stacks rows from two compatible schemas; join combines columns on a key.
 12. B — Conditional formatting changes visual styling based on field value conditions.
-13. B — Audit trail records who made what changes to data and when.
+13. D — Audit trail records who made what changes to data and when.
 14. B — Data governance covers policies, roles, and processes for accurate and appropriate data use.
 15. B — Review error log, identify root cause, fix, then re-run is the correct pipeline failure response.
 

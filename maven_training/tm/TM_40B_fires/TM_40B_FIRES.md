@@ -170,7 +170,7 @@ TM-40B is written in alignment with the following doctrinal publications. These 
 
 ---
 
-**Table 1-1: Fires Data Categories in MSS**
+**Table 1-4: Fires Data Categories in MSS**
 
 | Data Category | Subcategories | Primary MOS Owner | Update Frequency | Safety Criticality |
 |--------------|--------------|-------------------|-----------------|-------------------|
@@ -218,53 +218,53 @@ TM-40B is written in alignment with the following doctrinal publications. These 
 
 ### 2-3. Detect: Sensor Feed Integration and Target Tracking
 
-2-8. The Detect phase covers all collection activity that locates, identifies, and tracks HPTs. MSS aggregates detection data from multiple sources: radar feeds, ISR product reporting, human source reporting entered by intelligence personnel, and manual updates entered by 13F FSOs.
+2-10. The Detect phase covers all collection activity that locates, identifies, and tracks HPTs. MSS aggregates detection data from multiple sources: radar feeds, ISR product reporting, human source reporting entered by intelligence personnel, and manual updates entered by 13F FSOs.
 
-2-9. Target tracking in MSS links detection data to HPTL entries. When a Q-36 radar reports a confirmed artillery position, that report links to the artillery target category on the HPTL and populates the target track with location, type, confidence level, and time of report.
+2-11. Target tracking in MSS links detection data to HPTL entries. When a Q-36 radar reports a confirmed artillery position, that report links to the artillery target category on the HPTL and populates the target track with location, type, confidence level, and time of report.
 
-2-10. Radar data visualization in MSS provides a geographic display of POO/POI data on the fires operational overlay. The radar feed does not replace the radar's organic display; it provides the fires staff visibility of radar-detected events on the integrated fires picture.
+2-12. Radar data visualization in MSS provides a geographic display of POO/POI data on the fires operational overlay. The radar feed does not replace the radar's organic display; it provides the fires staff visibility of radar-detected events on the integrated fires picture.
 
-2-11. ISR synchronization in MSS links the ISR synchronization matrix (ISRM) to the HPTL. Collection assets assigned against HPT categories appear on the ISRM display. When an asset reports a positive find, that find updates the target track automatically if the data feed is active, or through manual entry by intelligence or fires personnel.
+2-13. ISR synchronization in MSS links the ISR synchronization matrix (ISRM) to the HPTL. Collection assets assigned against HPT categories appear on the ISRM display. When an asset reports a positive find, that find updates the target track automatically if the data feed is active, or through manual entry by intelligence or fires personnel.
 
-2-12. Target confidence levels in MSS:
+2-14. Target confidence levels in MSS:
 - **Confirmed:** Target positively identified by two or more independent sources or by direct observation
 - **Suspected:** Target reported by one source; awaiting corroboration
 - **Templated:** Target placed at expected location based on OPFOR TTPs; not yet detected
 
 > **CAUTION: Never plan fires against a templated target without confirming currency of the template and compliance with ROE for templated target attack. Templated locations reflect expected positions, not confirmed ones.**
 
-2-13. Target location error (TLE) and its impact on fires: Every target location in MSS carries an implicit TLE — the difference between the reported position and the actual target position. TLE is not a constant. It varies by collection method, sensor capability, and age of the detection. A target located by survey-grade JDAM terminal guidance has very low TLE. A target reported by a ground observer with binoculars at 8km has potentially significant TLE. MSS does not compute TLE automatically — the targeting officer enters the location confidence level that represents TLE in categorical form. Fires planned against a high-TLE target require munitions with wider effects radii or multiple delivery runs to compensate.
+2-15. Target location error (TLE) and its impact on fires: Every target location in MSS carries an implicit TLE — the difference between the reported position and the actual target position. TLE is not a constant. It varies by collection method, sensor capability, and age of the detection. A target located by survey-grade JDAM terminal guidance has very low TLE. A target reported by a ground observer with binoculars at 8km has potentially significant TLE. MSS does not compute TLE automatically — the targeting officer enters the location confidence level that represents TLE in categorical form. Fires planned against a high-TLE target require munitions with wider effects radii or multiple delivery runs to compensate.
 
-2-14. ISR synchronization matrix (ISRM) in MSS: The ISRM displays which collection assets are tasked against which HPT categories, their collection windows, and their reporting status. The targeting officer reviews the ISRM daily at division and above to identify collection gaps — HPT categories with no active collection coverage — and generate requests to fill those gaps. MSS links ISRM data to the HPTL target categories, making the collection-to-fires relationship visible in a single display.
+2-16. ISR synchronization matrix (ISRM) in MSS: The ISRM displays which collection assets are tasked against which HPT categories, their collection windows, and their reporting status. The targeting officer reviews the ISRM daily at division and above to identify collection gaps — HPT categories with no active collection coverage — and generate requests to fill those gaps. MSS links ISRM data to the HPTL target categories, making the collection-to-fires relationship visible in a single display.
 
 ---
 
 ### 2-4. Deliver: Fire Mission Tracking and FSEM Coordination
 
-2-13. The Deliver phase is where fires resources execute against confirmed targets. MSS supports the Deliver phase through fire mission tracking, FSEM management, asset-to-target matching, and delivery deconfliction.
+2-17. The Deliver phase is where fires resources execute against confirmed targets. MSS supports the Deliver phase through fire mission tracking, FSEM management, asset-to-target matching, and delivery deconfliction.
 
-2-14. Fire mission tracking in MSS provides visibility of active, pending, and completed fire missions. Each fire mission record in MSS carries: mission number, requesting unit, target number and type, weapon system assigned, time of request, time of execution, and execution status.
+2-18. Fire mission tracking in MSS provides visibility of active, pending, and completed fire missions. Each fire mission record in MSS carries: mission number, requesting unit, target number and type, weapon system assigned, time of request, time of execution, and execution status.
 
-2-15. FSEM management in MSS organizes the fire support execution matrix by phase line, objective, or time period IAW the fire support plan. The FSEM in MSS is a live document — it updates as mission assignments are made and completed.
+2-19. FSEM management in MSS organizes the fire support execution matrix by phase line, objective, or time period IAW the fire support plan. The FSEM in MSS is a live document — it updates as mission assignments are made and completed.
 
-2-16. Asset-to-target matching in MSS supports the fires cell in assigning the most appropriate system to each target. MSS displays available fires assets with their current status, range rings overlaid on the fires picture, and current ammunition loads. The FSCOORD or targeting officer uses this display to make assignment decisions; MSS does not make assignments automatically.
+2-20. Asset-to-target matching in MSS supports the fires cell in assigning the most appropriate system to each target. MSS displays available fires assets with their current status, range rings overlaid on the fires picture, and current ammunition loads. The FSCOORD or targeting officer uses this display to make assignment decisions; MSS does not make assignments automatically.
 
-2-17. Delivery deconfliction in MSS occurs through the FSCM overlay and airspace coordination display. Before clearing any fire mission near an FSCM boundary, the FSO confirms FSCM currency in MSS and cross-checks with the establishing headquarters. The airspace deconfliction module prevents assignment of fire missions through active ACAs without explicit coordination.
+2-21. Delivery deconfliction in MSS occurs through the FSCM overlay and airspace coordination display. Before clearing any fire mission near an FSCM boundary, the FSO confirms FSCM currency in MSS and cross-checks with the establishing headquarters. The airspace deconfliction module prevents assignment of fire missions through active ACAs without explicit coordination.
 
 ---
 
 ### 2-5. Assess: BDA Tracking and Effectiveness Reporting
 
-2-18. The Assess phase closes the targeting cycle. BDA — battle damage assessment — records the effects achieved against the target and drives the re-attack recommendation. MSS is the primary platform for BDA recording in USAREUR-AF formations.
+2-22. The Assess phase closes the targeting cycle. BDA — battle damage assessment — records the effects achieved against the target and drives the re-attack recommendation. MSS is the primary platform for BDA recording in USAREUR-AF formations.
 
-2-19. BDA in MSS records three levels of assessment IAW FM 3-60:
+2-23. BDA in MSS records three levels of assessment IAW FM 3-60:
 - **Physical destruction:** Percentage of target physically destroyed or damaged
 - **Functional damage:** Whether the target can still perform its function
 - **System disruption:** Impact on the OPFOR capability system the target supported
 
-2-20. Re-attack recommendations in MSS link directly to the BDA record. When BDA indicates insufficient effects, the targeting officer generates a re-attack recommendation within MSS, links it to the original target record, and routes it for FSCOORD approval.
+2-24. Re-attack recommendations in MSS link directly to the BDA record. When BDA indicates insufficient effects, the targeting officer generates a re-attack recommendation within MSS, links it to the original target record, and routes it for FSCOORD approval.
 
-2-21. Fires effectiveness reports (FIREP) aggregate BDA data across the targeting cycle and report fires effectiveness to the commander. MSS generates the data for FIREP; the fires cell analyzes and formats it.
+2-25. Fires effectiveness reports (FIREP) aggregate BDA data across the targeting cycle and report fires effectiveness to the commander. MSS generates the data for FIREP; the fires cell analyzes and formats it.
 
 ---
 

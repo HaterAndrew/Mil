@@ -317,6 +317,8 @@ The theater data enterprise that supports DEFENDER 2027 and the operations that 
 | TM-50M | Advanced ML Engineer | ML program portfolio management; automated pipeline governance |
 | TM-50K | Advanced Knowledge Manager | KM system program oversight; knowledge program management |
 | TM-50L | Advanced Software Engineer | Platform engineering program coordination; SWE team structure |
+| TM-50N | Advanced UI/UX Designer | Design team coordination; UX requirements management |
+| TM-50O | Advanced Platform Engineer | Platform capacity planning; infrastructure program management |
 
 **WFF Operational Consumer Note.** All MSS data programs managed by TM-50J program managers ultimately serve the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). WFF staff sections define the demand signal for the portfolio. The program health questions addressed in this guide — adoption, architectural debt, resource cases, coalition coordination — must ultimately be evaluated against whether WFF practitioners are making better operational decisions as a result of the data program.
 

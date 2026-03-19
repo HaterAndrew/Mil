@@ -327,8 +327,6 @@ Coordinate with the S6 and the unit IMO for specific cross-domain procedures at 
 
 ---
 
----
-
 ## SECTION 8 — THE INTELLIGENCE-FIRES INTEGRATION MENTAL MODEL
 
 **BLUF:** Intelligence and fires are the most tightly coupled WFF pair in the targeting cycle. The D3A methodology requires intelligence to both feed and close the targeting loop. MSS enables this integration through a shared data environment — but the integration must be designed and validated before it is needed, not constructed during a targeting event.
@@ -403,8 +401,6 @@ The doctrinal protections against adversary data layer manipulation are the same
 - **PACE plan for data.** Maintain the ability to operate without MSS and without the data feeds that feed MSS. An intelligence section that can conduct IPOE from raw collection, without MSS integration, cannot be fully disabled by adversary action against the data layer.
 
 > **NOTE: FM 2-0 identifies "vulnerability to deception and manipulation" as a fundamental characteristic of intelligence (FM 2-0, para 1-12). MSS does not eliminate this vulnerability. The more data MSS integrates, the more consequential a systematic deception operation can be. Analytical skepticism is a force protection function, not an obstacle to production speed.**
-
----
 
 ---
 
@@ -514,7 +510,7 @@ All six WFF tracks are at the same tier. All six WFF tracks require TM-10, TM-20
 
 ### Specialist Tracks (Prerequisite: TM-30)
 
-For personnel pursuing technical depth beyond WFF employment, the specialist tracks (TM-40G–M, prereq TM-30) are available. GEOINT and SIGINT data management practitioners may find TM-40H (AI Engineer) and TM-40M (ML Engineer) relevant for advanced analytical capability development.
+For personnel pursuing technical depth beyond WFF employment, the specialist tracks (TM-40G–O, prereq TM-30) are available. GEOINT and SIGINT data management practitioners may find TM-40H (AI Engineer) and TM-40M (ML Engineer) relevant for advanced analytical capability development.
 
 | Track | Title |
 |-------|-------|

@@ -446,7 +446,7 @@ All six WFF tracks are at the same tier. All six WFF tracks require TM-10, TM-20
 
 ### Specialist Tracks (Prerequisite: TM-30)
 
-For personnel pursuing technical depth, specialist tracks (TM-40G–M, prereq TM-30) are available. Not required for fires WFF employment.
+For personnel pursuing technical depth, specialist tracks (TM-40G–O, prereq TM-30) are available. Not required for fires WFF employment.
 
 | Track | Title |
 |-------|-------|

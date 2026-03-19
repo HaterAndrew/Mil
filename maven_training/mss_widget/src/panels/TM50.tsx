@@ -10,12 +10,12 @@ export default function TM50({ showPanel }: Props) {
       <div className="section-header">
         <span className="section-badge">TM-50</span>
         <span className="section-title">Advanced Developer Tracks</span>
-        <span className="section-subtitle">Prerequisite: TM-40 (by track) &bull; Tracks TM-50G&ndash;M &bull; All 6 tracks available</span>
+        <span className="section-subtitle">Prerequisite: TM-40 (by track) &bull; Tracks TM-50G&ndash;O &bull; All 8 tracks available</span>
       </div>
 
       <div className="callout bluf">
         <div className="callout-label">BLUF &mdash; ADVANCED TRACKS</div>
-        <div className="callout-body">The TM-50 series provides advanced-level instruction for each developer track, building directly on the corresponding TM-40 specialist manual (TM-40G&ndash;M). Intended for senior technical leads, platform architects, and senior developers designing enterprise-scale MSS capabilities. All 6 tracks are complete and available.</div>
+        <div className="callout-body">The TM-50 series provides advanced-level instruction for each developer track, building directly on the corresponding TM-40 specialist manual (TM-40G&ndash;O). Intended for senior technical leads, platform architects, and senior developers designing enterprise-scale MSS capabilities. All 8 tracks are complete and available.</div>
       </div>
 
       <h2>TM-50 SERIES &mdash; PUBLICATIONS</h2>
@@ -107,6 +107,36 @@ export default function TM50({ showPanel }: Props) {
               <li>Scale, multi-tenancy, event streaming</li>
               <li>OWASP, SAST, authorized pen testing</li>
               <li>Architecture review, platform governance</li>
+            </ul>
+          </div>
+        </a>
+        <a className="track-card doc-card" href={URLS.TM50N} target="_blank" rel="noreferrer">
+          <div className="track-card-hdr">
+            <div className="track-tm">TM-50N &mdash; UI/UX Advanced</div>
+            <div className="track-chip">Advanced</div>
+          </div>
+          <div className="track-body">
+            <div className="track-name">Advanced UI/UX Design</div>
+            <div className="track-audience">Prerequisite: TM-40N</div>
+            <ul className="track-topics">
+              <li>Design systems at scale, component libraries</li>
+              <li>DDIL-aware and cross-domain UI design</li>
+              <li>DesignOps, ResearchOps, accessibility at enterprise scale</li>
+            </ul>
+          </div>
+        </a>
+        <a className="track-card doc-card" href={URLS.TM50O} target="_blank" rel="noreferrer">
+          <div className="track-card-hdr">
+            <div className="track-tm">TM-50O &mdash; Platform Eng Advanced</div>
+            <div className="track-chip">Advanced</div>
+          </div>
+          <div className="track-body">
+            <div className="track-name">Advanced Platform Engineering</div>
+            <div className="track-audience">Prerequisite: TM-40O</div>
+            <ul className="track-topics">
+              <li>Multi-cluster fleet management, SRE practices</li>
+              <li>RMF/ATO automation, continuous compliance</li>
+              <li>Cross-domain infrastructure, developer experience engineering</li>
             </ul>
           </div>
         </a>

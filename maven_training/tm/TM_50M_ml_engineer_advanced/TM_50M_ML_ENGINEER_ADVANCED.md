@@ -1,7 +1,7 @@
 # TM-50M — ADVANCED MACHINE LEARNING ENGINEERING
 
 > **BLUF:** TM-50M qualifies senior machine learning engineers to design, build, and lead production ML platform capability on MSS. This manual extends TM-40M into automated MLOps, advanced neural architectures, federated learning, real-time inference, ML security, and platform architecture leadership.
-> **Prereqs:** TM-40M, Machine Learning Engineer (required — Go evaluation on file). TM-40H (AI Engineer) recommended. Data Literacy Technical Reference (recommended). CONCEPTS_GUIDE_TM50M_ML_ENGINEER_ADVANCED (read before this manual).
+> **Prereqs:** TM-40M, Machine Learning Engineer (required — Go evaluation on file). TM-40H (AI Engineer) recommended. Data Literacy Technical Reference (recommended).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: AUTOMATED MODEL DEPLOYMENT IS A PRIVILEGED CAPABILITY. Automated pipelines that promote model versions to production without human review are classified as high-risk automation under UDRA v1.1. Implementing this pattern without a documented, C2DAO-approved automation design and explicit mission owner sign-off constitutes an unauthorized production change. The senior MLE who designs the pipeline is accountable for every automated promotion it executes.**
@@ -87,6 +87,8 @@ The TM-50M MLE is a force multiplier — not because they write the most code, b
 | TM-50J | Program Manager Advanced | ML program lifecycle; governance documentation requirements |
 | TM-50K | Knowledge Manager Advanced | Feature data governance; training corpus design |
 | TM-50L | Software Engineer Advanced | Platform SDK infrastructure; OSDK model-serving integrations |
+| TM-50N | UI/UX Designer Advanced | Feature engineering UI; model monitoring dashboards |
+| TM-50O | Platform Engineer Advanced | ML platform infrastructure; training pipeline orchestration |
 
 **WFF Operational Consumer Note.** The six Warfighting Function (WFF) tracks — Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F) — are the primary operational consumers of ML models built and maintained by TM-50M engineers. Readiness prediction, logistics demand forecasting, personnel risk models, and anomaly detection all feed WFF staff sections. When designing ML systems, account for the WFF end-user: calibration, interpretability, and latency requirements vary significantly by WFF function and decision context.
 

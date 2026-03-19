@@ -15,7 +15,7 @@
 
 ## What This Course Does for You
 
-After this course you can manage the full lifecycle of a data or AI project on MSS — from initial requirement through sprint execution, production release, and sustainment. You will write user stories that TM-40G through TM-40M developers can execute without ambiguity, translate a commander requirement into a prioritized backlog, understand the architecture of MSS project tracking systems well enough to direct their construction, and manage risk and change across a technical build team.
+After this course you can manage the full lifecycle of a data or AI project on MSS — from initial requirement through sprint execution, production release, and sustainment. You will write user stories that TM-40G through TM-40O developers can execute without ambiguity, translate a commander requirement into a prioritized backlog, understand the architecture of MSS project tracking systems well enough to direct their construction, and manage risk and change across a technical build team.
 
 TM-40J graduates are the connective tissue between the operational unit stating the requirement and the technical team building the capability. The PM does not write code. The PM makes the team able to.
 
@@ -28,7 +28,7 @@ Four days provides time to work through all eight TM chapters with applied exerc
 By the end of training, you will be able to:
 
 1. Stand up an Agile project structure (backlog, sprint cadence, ceremonies) for a data or AI project in a military operational context
-2. Write user stories and acceptance criteria that TM-40G through TM-40M developers can execute without ambiguity, including story sizing and velocity tracking
+2. Write user stories and acceptance criteria that TM-40G through TM-40O developers can execute without ambiguity, including story sizing and velocity tracking
 3. Manage an ML or AI project from research brief through the six lifecycle phases (Problem Definition, Data Audit, Prototype, Evaluation, Production, Sustainment) using the TM-40J lifecycle model
 4. Translate a commander or staff officer requirement into a structured requirements document and a prioritized, sprint-ready backlog
 5. Understand the architecture of an MSS project tracking system (sprint board, commander-facing status dashboard, automated status alerts) and direct its construction by TM-40L/TM-40H developers
@@ -184,7 +184,7 @@ Graduates managing multi-program portfolios or theater-level data initiatives ma
 
 ## Relationship to Other Tracks
 
-TM-40J is the coordination hub of the TM-40 specialist series. The PM does not build what TM-40G through TM-40M builds — the PM delivers it. Understanding each specialist track's scope is not optional.
+TM-40J is the coordination hub of the TM-40 specialist series. The PM does not build what TM-40G through TM-40O builds — the PM delivers it. Understanding each specialist track's scope is not optional.
 
 WFF-track analysts (TM-40A through TM-40F) are the operational consumers of capabilities built by teams the TM-40J PM leads. A program manager who does not understand what Sustainment (TM-40D) or Mission Command (TM-40F) analysts need from an MSS product cannot write requirements that are operationally sound.
 

@@ -62,7 +62,7 @@ The following doctrine sections were added to TM-40G this session. Review after 
 |---|---|---|
 | *Applied AI: Scaling AI Workflows and Task Execution with AIP* | How Palantir AIP orchestrates multi-step analytical workflows and integrates AI-generated outputs into operational decision products — relevant as ORSA products increasingly incorporate automated synthesis layers. | Ch 8 |
 | *Deep Dive: Optimizing Data Pipelines with Iceberg Tables and Lightweight Compute \| DevCon 4* | Foundry Iceberg table format and lightweight compute for high-volume pipeline optimization — applicable when the ORSA data layer grows to include high-frequency readiness or logistics feeds. | Ch 2 |
-| *Deep Dive: Advanced Ontology \| DevCon 5* | Advanced Ontology patterns including object type hierarchies and action types — relevant for ORSA analysts coordinating with TM-40H/30 practitioners on the data model supporting cross-domain analysis. | Ch 2 |
+| *Deep Dive: Advanced Ontology \| DevCon 5* | Advanced Ontology patterns including object type hierarchies and action types — relevant for ORSA analysts coordinating with TM-40H / TM-30 practitioners on the data model supporting cross-domain analysis. | Ch 2 |
 | *Anduril: Ontology: Launchpad for Operations* | Case study on operationalizing the Palantir Ontology as the semantic layer for a complex operational environment — illustrates how a well-designed Ontology enables rapid analytical product development. | Ch 1, Ch 2 |
 
 ---
