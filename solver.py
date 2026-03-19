@@ -94,7 +94,7 @@ class RosterSolution:
 # ── Penalty weights ──────────────────────────────────────────────────────────
 MONTHLY_PENALTY = 1.5    # even month-to-month distribution
 OVERLAP_PENALTY = 3.0    # discourage same directorate on both roles same day
-SPACING_PENALTY = 0.08   # discourage clustering within a week-sized window
+SPACING_PENALTY = 0.6    # balance within-month halves to prevent clustering
 
 
 # ── Joint solver (public API) ────────────────────────────────────────────────
@@ -200,22 +200,30 @@ def solve_joint(
             MONTHLY_PENALTY * pulp.lpSum(
                 mo_over[k] + mo_under[k] for k in mo_over))
 
-        # Within-month spacing: for each directorate, in any sliding window
-        # of W days, penalise having more than 1 assignment.  This discourages
-        # clustering and encourages even gaps between duty days.
-        spacing_terms = []
-        WINDOW = 5  # days — ideal minimum gap between same-dir assignments
+        # Within-month spacing: split each month into two halves and
+        # penalise deviation from half the monthly target in each half.
+        # This prevents front- or back-loading within a month without
+        # creating O(n_days × n_dirs) extra variables.
+        half_over  = {}
+        half_under = {}
         for d in dirs:
-            for ti in range(n_days - WINDOW + 1):
-                window_sum = pulp.lpSum(
-                    x[(d.name, ti + k)] for k in range(WINDOW))
-                sp_var = pulp.LpVariable(
-                    f"sp{tag}_{d.name}_{ti}", lowBound=0)
-                # sp_var >= window_sum - 1  (excess above 1 assignment per window)
-                prob += sp_var >= window_sum - 1
-                spacing_terms.append(sp_var)
-        if spacing_terms:
-            obj_terms.append(SPACING_PENALTY * pulp.lpSum(spacing_terms))
+            q_total = d.eligible / H * n_days
+            for ym, indices in month_indices.items():
+                mid = len(indices) // 2
+                for half_idx, half_indices in enumerate([indices[:mid], indices[mid:]]):
+                    half_target = q_total * len(half_indices) / n_days
+                    key = (d.name, ym, half_idx)
+                    half_over[key]  = pulp.LpVariable(
+                        f"ho{tag}_{d.name}_{ym[0]}_{ym[1]}_{half_idx}", lowBound=0)
+                    half_under[key] = pulp.LpVariable(
+                        f"hu{tag}_{d.name}_{ym[0]}_{ym[1]}_{half_idx}", lowBound=0)
+                    half_sum = pulp.lpSum(x[(d.name, ti)] for ti in half_indices)
+                    prob += half_sum - half_target <= half_over[key]
+                    prob += half_target - half_sum  <= half_under[key]
+
+        obj_terms.append(
+            SPACING_PENALTY * pulp.lpSum(
+                half_over[k] + half_under[k] for k in half_over))
 
     # (C6) Same-day overlap avoidance (soft) ──────────────────────────────────
     xs = role_vars["S"]
