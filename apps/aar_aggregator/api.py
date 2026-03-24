@@ -6,9 +6,9 @@ from contextlib import asynccontextmanager
 from datetime import date
 
 from fastapi import Depends, FastAPI, File, HTTPException, Query, UploadFile, status
+from shared.auth import verify_api_key
+from shared.factory import create_app
 from sqlalchemy.orm import Session
-
-from shared.middleware import SecurityHeadersMiddleware
 
 from .db import (
     AAR,
@@ -46,13 +46,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(
-    title="AAR Aggregator",
-    description="Ingest AARs, aggregate trends, and flag recurring issues.",
-    version="1.0.0",
-    lifespan=lifespan,
-)
-app.add_middleware(SecurityHeadersMiddleware)
+app = create_app(title="AAR Aggregator", version="1.0.0", lifespan=lifespan)
 
 
 @app.get("/health")
@@ -63,7 +57,11 @@ def health():
 # ---------------------------------------------------------------------------
 # AAR CRUD
 # ---------------------------------------------------------------------------
-@app.post("/aars", response_model=AARSummary, status_code=status.HTTP_201_CREATED)
+@app.post(
+    "/aars", response_model=AARSummary,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(verify_api_key)],
+)
 def create_aar(payload: AARCreate, db: Session = Depends(get_db)):
     aar = AAR(
         date=payload.date,
@@ -172,7 +170,7 @@ def get_aar(aar_id: int, db: Session = Depends(get_db)):
     )
 
 
-@app.delete("/aars/{aar_id}", status_code=status.HTTP_204_NO_CONTENT)
+@app.delete("/aars/{aar_id}", status_code=status.HTTP_204_NO_CONTENT, dependencies=[Depends(verify_api_key)])
 def delete_aar(aar_id: int, db: Session = Depends(get_db)):
     aar = db.query(AAR).filter(AAR.id == aar_id).first()
     if not aar:
@@ -184,7 +182,7 @@ def delete_aar(aar_id: int, db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # File upload + parse
 # ---------------------------------------------------------------------------
-@app.post("/upload/parse", response_model=ParsedAARPreview)
+@app.post("/upload/parse", response_model=ParsedAARPreview, dependencies=[Depends(verify_api_key)])
 async def upload_parse(file: UploadFile = File(...)):
     """Parse an uploaded AAR file and return preview for review."""
     # AAR files are typically <100 KB; reject anything over 5 MB
@@ -205,7 +203,11 @@ async def upload_parse(file: UploadFile = File(...)):
     return ParsedAARPreview(parsed=parsed, warnings=warnings)
 
 
-@app.post("/upload/confirm", response_model=AARSummary, status_code=status.HTTP_201_CREATED)
+@app.post(
+    "/upload/confirm", response_model=AARSummary,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(verify_api_key)],
+)
 def upload_confirm(payload: AARCreate, db: Session = Depends(get_db)):
     """Save a previously parsed (and possibly edited) AAR."""
     return create_aar(payload, db)

@@ -1,0 +1,182 @@
+{
+  "pipeline builder": [
+    "TM-20",
+    "TM-30"
+  ],
+  "pipeline": [
+    "TM-20",
+    "TM-30",
+    "TM-40L"
+  ],
+  "ontology": [
+    "TM-20",
+    "TM-30",
+    "TM-40K"
+  ],
+  "workshop": [
+    "TM-10",
+    "TM-20",
+    "TM-30"
+  ],
+  "aip logic": [
+    "TM-30"
+  ],
+  "aip": [
+    "TM-30",
+    "TM-40H"
+  ],
+  "agent studio": [
+    "TM-30",
+    "TM-40H"
+  ],
+  "quiver": [
+    "TM-20",
+    "TM-30"
+  ],
+  "contour": [
+    "TM-20",
+    "TM-30"
+  ],
+  "code repositories": [
+    "TM-40L",
+    "TM-40O"
+  ],
+  "code workbook": [
+    "TM-40G",
+    "TM-40L",
+    "TM-40M"
+  ],
+  "foundry ml": [
+    "TM-40M",
+    "TM-50M"
+  ],
+  "model studio": [
+    "TM-40M",
+    "TM-50M"
+  ],
+  "actions": [
+    "TM-20",
+    "TM-30"
+  ],
+  "object type": [
+    "TM-20",
+    "TM-30"
+  ],
+  "object views": [
+    "TM-20",
+    "TM-30"
+  ],
+  "writeback": [
+    "TM-20",
+    "TM-30"
+  ],
+  "automations": [
+    "TM-30"
+  ],
+  "autopilot": [
+    "TM-30"
+  ],
+  "machinery": [
+    "TM-30"
+  ],
+  "data connection": [
+    "TM-40O"
+  ],
+  "data integration": [
+    "TM-40O"
+  ],
+  "magritte": [
+    "TM-40O"
+  ],
+  "slate": [
+    "TM-40L",
+    "TM-40N"
+  ],
+  "osdk": [
+    "TM-40L",
+    "TM-50L"
+  ],
+  "developer console": [
+    "TM-40L",
+    "TM-40O"
+  ],
+  "third-party": [
+    "TM-40O"
+  ],
+  "security": [
+    "TM-10",
+    "TM-30"
+  ],
+  "markings": [
+    "TM-10",
+    "TM-30"
+  ],
+  "permissions": [
+    "TM-10",
+    "TM-30"
+  ],
+  "sensitive data": [
+    "TM-10",
+    "TM-30"
+  ],
+  "gaia": [
+    "TM-10"
+  ],
+  "compass": [
+    "TM-10"
+  ],
+  "workflow lineage": [
+    "TM-30",
+    "TM-40J"
+  ],
+  "scheduling": [
+    "TM-40J"
+  ],
+  "ci/cd": [
+    "TM-40O",
+    "TM-50O"
+  ],
+  "compute module": [
+    "TM-40O",
+    "TM-50O"
+  ],
+  "webhook": [
+    "TM-40O"
+  ],
+  "data health": [
+    "TM-30"
+  ],
+  "data quality": [
+    "TM-30",
+    "TM-40G"
+  ],
+  "typeclass": [
+    "TM-30"
+  ],
+  "interface": [
+    "TM-30"
+  ],
+  "transforms": [
+    "TM-40L",
+    "TM-40O"
+  ],
+  "functions": [
+    "TM-40L"
+  ],
+  "foundry branching": [
+    "TM-20",
+    "TM-30"
+  ],
+  "marketplace": [
+    "TM-40L",
+    "TM-40O"
+  ],
+  "document intelligence": [
+    "TM-40H",
+    "TM-40K"
+  ],
+  "notepad": [
+    "TM-10",
+    "TM-20"
+  ]
+}

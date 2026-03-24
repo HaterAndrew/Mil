@@ -65,11 +65,15 @@ try:
     )
     pt_init()
     _db = PT_Session()
-    _ext_stats["milestones"] = _db.query(Milestone).count()
-    _ext_stats["overdue"] = _db.query(Milestone).filter(Milestone.status == "OVERDUE").count()
-    _db.close()
-except Exception:
-    logger.warning("Failed to load progress_tracker stats", exc_info=True)
+    try:
+        _ext_stats["milestones"] = _db.query(Milestone).count()
+        _ext_stats["overdue"] = _db.query(Milestone).filter(Milestone.status == "OVERDUE").count()
+    finally:
+        _db.close()
+except Exception as e:
+    logger.warning("Failed to load progress_tracker stats: %s", e, exc_info=True)
+    _ext_stats["milestones"] = "unavailable"
+    _ext_stats["overdue"] = "unavailable"
 
 try:
     from mtt_scheduler.db import (
@@ -77,11 +81,15 @@ try:
     )
     mtt_init()
     _db = MTT_Session()
-    _ext_stats["events"] = _db.query(Event).count()
-    _ext_stats["enrollments"] = _db.query(Enrollment).count()
-    _db.close()
-except Exception:
-    logger.warning("Failed to load mtt_scheduler stats", exc_info=True)
+    try:
+        _ext_stats["events"] = _db.query(Event).count()
+        _ext_stats["enrollments"] = _db.query(Enrollment).count()
+    finally:
+        _db.close()
+except Exception as e:
+    logger.warning("Failed to load mtt_scheduler stats: %s", e, exc_info=True)
+    _ext_stats["events"] = "unavailable"
+    _ext_stats["enrollments"] = "unavailable"
 
 try:
     from data_quality.db import (
@@ -89,11 +97,15 @@ try:
     )
     dq_init()
     _db = DQ_Session()
-    _ext_stats["pipelines"] = _db.query(Pipeline).count()
-    _ext_stats["active_alerts"] = _db.query(Alert).filter(Alert.acknowledged == False).count()
-    _db.close()
-except Exception:
-    logger.warning("Failed to load data_quality stats", exc_info=True)
+    try:
+        _ext_stats["pipelines"] = _db.query(Pipeline).count()
+        _ext_stats["active_alerts"] = _db.query(Alert).filter(Alert.acknowledged == False).count()
+    finally:
+        _db.close()
+except Exception as e:
+    logger.warning("Failed to load data_quality stats: %s", e, exc_info=True)
+    _ext_stats["pipelines"] = "unavailable"
+    _ext_stats["active_alerts"] = "unavailable"
 
 try:
     from glossary_search.db import (
@@ -101,10 +113,13 @@ try:
     )
     gs_init()
     _db = GS_Session()
-    _ext_stats["glossary_terms"] = _db.query(Term).count()
-    _db.close()
-except Exception:
-    logger.warning("Failed to load glossary_search stats", exc_info=True)
+    try:
+        _ext_stats["glossary_terms"] = _db.query(Term).count()
+    finally:
+        _db.close()
+except Exception as e:
+    logger.warning("Failed to load glossary_search stats: %s", e, exc_info=True)
+    _ext_stats["glossary_terms"] = "unavailable"
 
 try:
     from instructor_manager.db import (
@@ -113,13 +128,18 @@ try:
     )
     im_init()
     _db = IM_Session()
-    _ext_stats["instructors"] = _db.query(Instructor).filter(Instructor.status == "ACTIVE").count()
-    _ext_stats["expiring_certs"] = len(get_expiring_certifications(30, _db))
-    coverage = get_coverage_matrix(_db)
-    _ext_stats["coverage_gaps"] = sum(1 for c in coverage if c["certified_count"] == 0)
-    _db.close()
-except Exception:
-    logger.warning("Failed to load instructor_manager stats", exc_info=True)
+    try:
+        _ext_stats["instructors"] = _db.query(Instructor).filter(Instructor.status == "ACTIVE").count()
+        _ext_stats["expiring_certs"] = len(get_expiring_certifications(30, _db))
+        coverage = get_coverage_matrix(_db)
+        _ext_stats["coverage_gaps"] = sum(1 for c in coverage if c["certified_count"] == 0)
+    finally:
+        _db.close()
+except Exception as e:
+    logger.warning("Failed to load instructor_manager stats: %s", e, exc_info=True)
+    _ext_stats["instructors"] = "unavailable"
+    _ext_stats["expiring_certs"] = "unavailable"
+    _ext_stats["coverage_gaps"] = "unavailable"
 
 try:
     from enrollment_manager.db import (
@@ -127,14 +147,20 @@ try:
     )
     em_init()
     _db = EM_Session()
-    em_stats = get_enrollment_stats(_db)
-    _ext_stats["classes"] = em_stats.get("total_classes", 0)
-    _ext_stats["enrolled"] = em_stats.get("total_enrolled", 0)
-    _ext_stats["waitlisted"] = em_stats.get("total_waitlisted", 0)
-    _ext_stats["fill_rate"] = em_stats.get("avg_fill_rate", 0)
-    _db.close()
-except Exception:
-    logger.warning("Failed to load enrollment_manager stats", exc_info=True)
+    try:
+        em_stats = get_enrollment_stats(_db)
+        _ext_stats["classes"] = em_stats.get("total_classes", 0)
+        _ext_stats["enrolled"] = em_stats.get("total_enrolled", 0)
+        _ext_stats["waitlisted"] = em_stats.get("total_waitlisted", 0)
+        _ext_stats["fill_rate"] = em_stats.get("avg_fill_rate", 0)
+    finally:
+        _db.close()
+except Exception as e:
+    logger.warning("Failed to load enrollment_manager stats: %s", e, exc_info=True)
+    _ext_stats["classes"] = "unavailable"
+    _ext_stats["enrolled"] = "unavailable"
+    _ext_stats["waitlisted"] = "unavailable"
+    _ext_stats["fill_rate"] = "unavailable"
 
 try:
     from curriculum_tracker.db import (
@@ -143,12 +169,17 @@ try:
     )
     ct_init()
     _db = CT_Session()
-    _ext_stats["tracked_docs"] = _db.query(Document).count()
-    _ext_stats["overdue_reviews"] = len(get_overdue_reviews(_db))
-    _ext_stats["stale_docs"] = len(get_stale_documents(90, _db))
-    _db.close()
-except Exception:
-    logger.warning("Failed to load curriculum_tracker stats", exc_info=True)
+    try:
+        _ext_stats["tracked_docs"] = _db.query(Document).count()
+        _ext_stats["overdue_reviews"] = len(get_overdue_reviews(_db))
+        _ext_stats["stale_docs"] = len(get_stale_documents(90, _db))
+    finally:
+        _db.close()
+except Exception as e:
+    logger.warning("Failed to load curriculum_tracker stats: %s", e, exc_info=True)
+    _ext_stats["tracked_docs"] = "unavailable"
+    _ext_stats["overdue_reviews"] = "unavailable"
+    _ext_stats["stale_docs"] = "unavailable"
 
 try:
     from lessons_learned.db import (
@@ -157,13 +188,38 @@ try:
     )
     ll_init()
     _db = LL_Session()
-    ll_stats = get_pipeline_stats(_db)
-    ai_status = get_action_item_status(_db)
-    _ext_stats["lessons"] = ll_stats.get("total_lessons", 0)
-    _ext_stats["open_actions"] = ai_status.get("OPEN", 0) + ai_status.get("IN_PROGRESS", 0)
-    _db.close()
-except Exception:
-    logger.warning("Failed to load lessons_learned stats", exc_info=True)
+    try:
+        ll_stats = get_pipeline_stats(_db)
+        ai_status = get_action_item_status(_db)
+        _ext_stats["lessons"] = ll_stats.get("total_lessons", 0)
+        _ext_stats["open_actions"] = ai_status.get("OPEN", 0) + ai_status.get("IN_PROGRESS", 0)
+    finally:
+        _db.close()
+except Exception as e:
+    logger.warning("Failed to load lessons_learned stats: %s", e, exc_info=True)
+    _ext_stats["lessons"] = "unavailable"
+    _ext_stats["open_actions"] = "unavailable"
+
+
+# Map stat keys back to app names for the degradation warning
+_STAT_KEY_TO_APP = {
+    "milestones": "Progress Tracker", "overdue": "Progress Tracker",
+    "events": "MTT Scheduler", "enrollments": "MTT Scheduler",
+    "pipelines": "Data Quality Monitor", "active_alerts": "Data Quality Monitor",
+    "glossary_terms": "Glossary Search",
+    "instructors": "Instructor Manager", "expiring_certs": "Instructor Manager",
+    "coverage_gaps": "Instructor Manager",
+    "classes": "Enrollment Manager", "enrolled": "Enrollment Manager",
+    "waitlisted": "Enrollment Manager", "fill_rate": "Enrollment Manager",
+    "tracked_docs": "Curriculum Tracker", "overdue_reviews": "Curriculum Tracker",
+    "stale_docs": "Curriculum Tracker",
+    "lessons": "Lessons Learned", "open_actions": "Lessons Learned",
+}
+_failed_apps = sorted({
+    _STAT_KEY_TO_APP[k]
+    for k, v in _ext_stats.items()
+    if v == "unavailable"
+})
 
 
 @st.cache_data(ttl=60)
@@ -273,6 +329,12 @@ d4.metric("Waitlisted", _ext_stats.get("waitlisted", "--"))
 d5.metric("Tracked Docs", _ext_stats.get("tracked_docs", "--"))
 d6.metric("Lessons", _ext_stats.get("lessons", "--"))
 d7.metric("Open Actions", _ext_stats.get("open_actions", "--"))
+
+if _failed_apps:
+    st.warning(
+        f"Could not reach: {', '.join(_failed_apps)}. "
+        "Check that these services are running."
+    )
 
 st.markdown("---")
 

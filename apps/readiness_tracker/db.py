@@ -22,6 +22,7 @@ from sqlalchemy.orm import (
     relationship,
 )
 
+from shared.audit_mixin import AuditMixin
 from shared.database import Base, create_app_engine, create_session_factory
 
 # ---------------------------------------------------------------------------
@@ -38,7 +39,7 @@ SessionLocal = create_session_factory(engine)
 # ---------------------------------------------------------------------------
 # ORM models
 # ---------------------------------------------------------------------------
-class Trainee(Base):
+class Trainee(Base, AuditMixin):
     __tablename__ = "trainees"
 
     dodid = Column(String(10), primary_key=True)
@@ -47,7 +48,6 @@ class Trainee(Base):
     rank = Column(String(10), nullable=False)
     unit = Column(String(50), nullable=False)
     mos = Column(String(10), nullable=True)
-    created_at = Column(DateTime, default=lambda: datetime.now(UTC))
 
     completions = relationship(
         "Completion", back_populates="trainee", cascade="all, delete-orphan"
@@ -62,7 +62,7 @@ class Course(Base):
     hours = Column(Integer, nullable=False)
 
 
-class Completion(Base):
+class Completion(Base, AuditMixin):
     __tablename__ = "completions"
     __table_args__ = (
         UniqueConstraint("dodid", "course_id", name="uq_trainee_course"),
@@ -75,7 +75,6 @@ class Completion(Base):
     result = Column(String(5), nullable=False)  # GO or NO_GO
     evaluation_date = Column(Date, nullable=False)
     evaluator_name = Column(String(100), nullable=True)
-    created_at = Column(DateTime, default=lambda: datetime.now(UTC))
 
     trainee = relationship("Trainee", back_populates="completions")
 

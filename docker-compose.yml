@@ -1,0 +1,50 @@
+# ============================================================
+# docker-compose.yml — MSS Training Analytics Portal
+# ============================================================
+# Usage:
+#   docker compose up -d          # Start portal
+#   docker compose logs -f        # Stream logs
+#   docker compose down -v        # Stop + remove volumes
+# ============================================================
+
+services:
+  portal:
+    build:
+      context: .
+      target: runtime
+    ports:
+      - "8501:8501"
+    environment:
+      STREAMLIT_SERVER_PORT: "8501"
+      STREAMLIT_SERVER_ADDRESS: "0.0.0.0"
+      STREAMLIT_SERVER_HEADLESS: "true"
+      API_KEY: "${API_KEY:?Set API_KEY in .env or environment}"
+    volumes:
+      - app_data:/data
+    restart: unless-stopped
+
+  # Development override: mount source for live reload
+  portal-dev:
+    build:
+      context: .
+      target: runtime
+    ports:
+      - "8501:8501"
+    environment:
+      STREAMLIT_SERVER_PORT: "8501"
+      STREAMLIT_SERVER_ADDRESS: "0.0.0.0"
+      STREAMLIT_SERVER_HEADLESS: "true"
+      STREAMLIT_SERVER_RUN_ON_SAVE: "true"
+      AUTH_DISABLED: "true"
+    volumes:
+      - ./apps:/app/apps
+      - ./maven_training:/app/maven_training
+      - ./scripts:/app/scripts
+      - app_data:/data
+    profiles:
+      - dev
+    restart: unless-stopped
+
+volumes:
+  app_data:
+    driver: local

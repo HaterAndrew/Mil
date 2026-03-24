@@ -6,6 +6,20 @@
 
 > **WARNING: An Advanced KM who builds enterprise systems without governance structures is not building capability — they are building uncontrolled risk. Every system at this level requires defined ownership, documented architecture, security review, and a decommission plan. A system without a decommission plan will outlive its usefulness and become a liability.**
 
+## Table of Contents
+
+- [CHAPTER 1 — INTRODUCTION AND SCOPE](#chapter-1--introduction-and-scope)
+- [CHAPTER 2 — ENTERPRISE KM ARCHITECTURE (CORPS/THEATER LEVEL)](#chapter-2--enterprise-km-architecture-corpstheater-level)
+- [CHAPTER 3 — CROSS-DOMAIN KNOWLEDGE FEDERATION](#chapter-3--cross-domain-knowledge-federation)
+- [CHAPTER 4 — AI-ASSISTED DOCTRINE AND LESSONS LEARNED AT SCALE](#chapter-4--ai-assisted-doctrine-and-lessons-learned-at-scale)
+- [CHAPTER 5 — COALITION KNOWLEDGE SHARING (NATO/PARTNERS)](#chapter-5--coalition-knowledge-sharing-natopartners)
+- [CHAPTER 6 — KNOWLEDGE GRAPH DESIGN AND MAINTENANCE](#chapter-6--knowledge-graph-design-and-maintenance)
+- [CHAPTER 7 — KM METRICS AND EFFECTIVENESS MEASUREMENT](#chapter-7--km-metrics-and-effectiveness-measurement)
+- [CHAPTER 8 — INSTITUTIONAL MEMORY AND KNOWLEDGE RISK MANAGEMENT](#chapter-8--institutional-memory-and-knowledge-risk-management)
+- [APPENDIX A — KM ARCHITECTURE ASSESSMENT CHECKLIST](#appendix-a--km-architecture-assessment-checklist)
+- [APPENDIX B — NATO/COALITION KM STANDARDS REFERENCE](#appendix-b--natocoalition-km-standards-reference)
+- [GLOSSARY](#glossary)
+
 ---
 
 ## CHAPTER 1 — INTRODUCTION AND SCOPE

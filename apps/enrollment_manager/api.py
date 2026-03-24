@@ -8,12 +8,11 @@ from contextlib import asynccontextmanager
 
 from fastapi import Depends, FastAPI, HTTPException, Query, status
 from fastapi.responses import StreamingResponse
+from shared.auth import verify_api_key
+from shared.factory import create_app
 from sqlalchemy.orm import Session
 
-from shared.middleware import SecurityHeadersMiddleware
-
 from .db import (
-    COURSE_CATALOG,
     Enrollment,
     TrainingClass,
     WaitlistEntry,
@@ -46,13 +45,12 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(
+app = create_app(
     title="Enrollment Manager",
     description="Manage class enrollment, seat allocation, and waitlists for MSS Training.",
     version="1.0.0",
     lifespan=lifespan,
 )
-app.add_middleware(SecurityHeadersMiddleware)
 
 
 # ---------------------------------------------------------------------------
@@ -66,7 +64,8 @@ def health():
 # ---------------------------------------------------------------------------
 # Training Classes
 # ---------------------------------------------------------------------------
-@app.post("/classes", response_model=TrainingClassResponse, status_code=status.HTTP_201_CREATED)
+@app.post("/classes", response_model=TrainingClassResponse, status_code=status.HTTP_201_CREATED,
+           dependencies=[Depends(verify_api_key)])
 def create_class(payload: TrainingClassCreate, db: Session = Depends(get_db)):
     tc = TrainingClass(**payload.model_dump())
     db.add(tc)
@@ -103,7 +102,7 @@ def get_class(class_id: int, db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # Enrollment
 # ---------------------------------------------------------------------------
-@app.post("/classes/{class_id}/enroll", response_model=dict)
+@app.post("/classes/{class_id}/enroll", response_model=dict, dependencies=[Depends(verify_api_key)])
 def enroll(class_id: int, payload: EnrollmentCreate, db: Session = Depends(get_db)):
     """Enroll a student. Auto-waitlists if class is full."""
     try:
@@ -121,7 +120,7 @@ def enroll(class_id: int, payload: EnrollmentCreate, db: Session = Depends(get_d
         raise HTTPException(status_code=422, detail=str(e))
 
 
-@app.get("/classes/{class_id}/roster", response_model=list[EnrollmentResponse])
+@app.get("/classes/{class_id}/roster", response_model=list[EnrollmentResponse], dependencies=[Depends(verify_api_key)])
 def class_roster(class_id: int, db: Session = Depends(get_db)):
     roster = get_class_roster(class_id, db)
     return [EnrollmentResponse.model_validate(e) for e in roster]
@@ -141,14 +140,14 @@ def class_availability(class_id: int, db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # Waitlist
 # ---------------------------------------------------------------------------
-@app.post("/classes/{class_id}/promote-waitlist")
+@app.post("/classes/{class_id}/promote-waitlist", dependencies=[Depends(verify_api_key)])
 def promote(class_id: int, db: Session = Depends(get_db)):
     """Promote top waitlisted students to enrolled when seats are available."""
     promoted = promote_waitlist(class_id, db)
     return {"promoted_count": len(promoted), "promoted": promoted}
 
 
-@app.get("/classes/{class_id}/waitlist", response_model=list[WaitlistResponse])
+@app.get("/classes/{class_id}/waitlist", response_model=list[WaitlistResponse], dependencies=[Depends(verify_api_key)])
 def class_waitlist(class_id: int, db: Session = Depends(get_db)):
     entries = (
         db.query(WaitlistEntry)
@@ -162,7 +161,7 @@ def class_waitlist(class_id: int, db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # Student lookup
 # ---------------------------------------------------------------------------
-@app.get("/students/{dodid}/enrollments")
+@app.get("/students/{dodid}/enrollments", dependencies=[Depends(verify_api_key)])
 def student_enrollments(dodid: str, db: Session = Depends(get_db)):
     return get_student_enrollments(dodid, db)
 
@@ -178,7 +177,7 @@ def stats(db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # Export
 # ---------------------------------------------------------------------------
-@app.get("/export/csv")
+@app.get("/export/csv", dependencies=[Depends(verify_api_key)])
 def export_csv(db: Session = Depends(get_db)):
     """Export all enrollments as a downloadable CSV."""
     enrollments = (

@@ -2,14 +2,13 @@
 
 from __future__ import annotations
 
-import json
 from contextlib import asynccontextmanager
 from datetime import date
 
 from fastapi import Depends, FastAPI, HTTPException, Query
+from shared.auth import verify_api_key
+from shared.factory import create_app
 from sqlalchemy.orm import Session
-
-from shared.middleware import SecurityHeadersMiddleware
 
 from .db import (
     collect_all_metrics,
@@ -35,13 +34,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(
-    title="Training Metrics Executive Dashboard",
-    description="Aggregates KPIs from all MSS Training apps into a senior-leader briefing view.",
-    version="1.0.0",
-    lifespan=lifespan,
-)
-app.add_middleware(SecurityHeadersMiddleware)
+app = create_app(title="Training Metrics Executive Dashboard", version="1.0.0", lifespan=lifespan)
 
 
 # ---------------------------------------------------------------------------
@@ -65,7 +58,7 @@ def get_metrics():
 # ---------------------------------------------------------------------------
 # Snapshots — save / list / latest
 # ---------------------------------------------------------------------------
-@app.post("/snapshots", response_model=SnapshotResponse, status_code=201)
+@app.post("/snapshots", response_model=SnapshotResponse, status_code=201, dependencies=[Depends(verify_api_key)])
 def create_snapshot(payload: SnapshotCreate, db: Session = Depends(get_db)):
     """Capture a point-in-time snapshot of all metrics."""
     data = collect_all_metrics()
@@ -100,7 +93,7 @@ def latest_snapshot(
 # ---------------------------------------------------------------------------
 # Briefing export — BLUF format
 # ---------------------------------------------------------------------------
-@app.get("/export/briefing")
+@app.get("/export/briefing", dependencies=[Depends(verify_api_key)])
 def export_briefing():
     """Generate a text-based executive briefing in BLUF format."""
     data = collect_all_metrics()

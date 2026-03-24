@@ -9,9 +9,9 @@ from datetime import date
 
 from fastapi import Depends, FastAPI, File, HTTPException, Query, UploadFile, status
 from fastapi.responses import StreamingResponse
+from shared.auth import verify_api_key
+from shared.factory import create_app
 from sqlalchemy.orm import Session
-
-from shared.middleware import SecurityHeadersMiddleware
 
 from .db import (
     ALL_COURSES,
@@ -45,13 +45,12 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(
+app = create_app(
     title="Training Readiness Tracker",
     description="Track soldier/unit completion across the MSS TM prereq chain.",
     version="1.0.0",
     lifespan=lifespan,
 )
-app.add_middleware(SecurityHeadersMiddleware)
 
 
 # ---------------------------------------------------------------------------
@@ -65,7 +64,8 @@ def health():
 # ---------------------------------------------------------------------------
 # Trainees
 # ---------------------------------------------------------------------------
-@app.post("/trainees", response_model=TraineeResponse, status_code=status.HTTP_201_CREATED)
+@app.post("/trainees", response_model=TraineeResponse, status_code=status.HTTP_201_CREATED,
+           dependencies=[Depends(verify_api_key)])
 def create_trainee(payload: TraineeCreate, db: Session = Depends(get_db)):
     existing = db.query(Trainee).filter(Trainee.dodid == payload.dodid).first()
     if existing:
@@ -79,7 +79,7 @@ def create_trainee(payload: TraineeCreate, db: Session = Depends(get_db)):
     return resp
 
 
-@app.get("/trainees", response_model=list[TraineeListItem])
+@app.get("/trainees", response_model=list[TraineeListItem], dependencies=[Depends(verify_api_key)])
 def list_trainees(
     unit: str | None = None,
     limit: int = Query(100, ge=1, le=500),
@@ -98,7 +98,7 @@ def list_trainees(
     return result
 
 
-@app.get("/trainees/{dodid}", response_model=TraineeResponse)
+@app.get("/trainees/{dodid}", response_model=TraineeResponse, dependencies=[Depends(verify_api_key)])
 def get_trainee(dodid: str, db: Session = Depends(get_db)):
     trainee = db.query(Trainee).filter(Trainee.dodid == dodid).first()
     if not trainee:
@@ -114,7 +114,8 @@ def get_trainee(dodid: str, db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # Completions
 # ---------------------------------------------------------------------------
-@app.post("/completions", response_model=CompletionResponse, status_code=status.HTTP_201_CREATED)
+@app.post("/completions", response_model=CompletionResponse, status_code=status.HTTP_201_CREATED,
+           dependencies=[Depends(verify_api_key)])
 def record_completion(payload: CompletionCreate, db: Session = Depends(get_db)):
     # Verify trainee exists
     trainee = db.query(Trainee).filter(Trainee.dodid == payload.dodid).first()
@@ -155,7 +156,7 @@ def record_completion(payload: CompletionCreate, db: Session = Depends(get_db)):
     return CompletionResponse.model_validate(comp)
 
 
-@app.get("/completions", response_model=list[CompletionResponse])
+@app.get("/completions", response_model=list[CompletionResponse], dependencies=[Depends(verify_api_key)])
 def list_completions(
     dodid: str | None = None,
     course_id: str | None = None,
@@ -172,7 +173,7 @@ def list_completions(
 # ---------------------------------------------------------------------------
 # Eligibility
 # ---------------------------------------------------------------------------
-@app.get("/eligibility/{dodid}/{course_id}", response_model=EligibilityCheck)
+@app.get("/eligibility/{dodid}/{course_id}", response_model=EligibilityCheck, dependencies=[Depends(verify_api_key)])
 def check_trainee_eligibility(dodid: str, course_id: str, db: Session = Depends(get_db)):
     eligible, missing = check_eligibility(dodid, course_id, db)
     return EligibilityCheck(
@@ -202,7 +203,7 @@ def rollup_unit(unit: str, db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # CSV upload — roster
 # ---------------------------------------------------------------------------
-@app.post("/upload/roster", response_model=UploadResult)
+@app.post("/upload/roster", response_model=UploadResult, dependencies=[Depends(verify_api_key)])
 async def upload_roster(file: UploadFile = File(...), db: Session = Depends(get_db)):
     """Upload a CSV roster. Expected columns: dodid, last_name, first_name, rank, unit, mos."""
     contents = await file.read()
@@ -251,7 +252,7 @@ async def upload_roster(file: UploadFile = File(...), db: Session = Depends(get_
 # ---------------------------------------------------------------------------
 # CSV upload — completions
 # ---------------------------------------------------------------------------
-@app.post("/upload/completions", response_model=UploadResult)
+@app.post("/upload/completions", response_model=UploadResult, dependencies=[Depends(verify_api_key)])
 async def upload_completions(file: UploadFile = File(...), db: Session = Depends(get_db)):
     """Upload completions CSV. Columns: dodid, course_id, result, evaluation_date, evaluator_name."""
     contents = await file.read()
@@ -322,7 +323,7 @@ async def upload_completions(file: UploadFile = File(...), db: Session = Depends
 # ---------------------------------------------------------------------------
 # Export
 # ---------------------------------------------------------------------------
-@app.get("/export/csv")
+@app.get("/export/csv", dependencies=[Depends(verify_api_key)])
 def export_csv(
     unit: str | None = None,
     db: Session = Depends(get_db),

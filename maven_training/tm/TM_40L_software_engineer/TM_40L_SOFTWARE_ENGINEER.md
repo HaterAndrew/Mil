@@ -17,7 +17,7 @@
 
 This manual provides task-based instruction for software engineers operating on the Maven Smart System (MSS). MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. TM-40L personnel design and implement the technical components that advanced builders (TM-30) specify but cannot build without code.
 
-**TM-40L covers** OSDK (Ontology SDK): authenticating, querying objects, executing actions, subscribing to changes from external applications; Foundry Platform SDK (Python): reading and writing datasets, managing transactions, accessing file resources; TypeScript Functions on Objects (FOO): computed properties, bulk query patterns, performance optimization; actions with complex validation: TypeScript validators, multi-step action flows, conditional logic; Slate: legacy custom HTML/CSS/JavaScript application development hosted on Foundry (documented for maintenance of existing Slate apps only — do not use for new development; see Chapter 7); CI/CD for Foundry: repository structure, automated testing, branch promotion workflows; security: CBAC in external apps, credential management, marking compliance in OSDK queries, audit trails; and integration patterns: REST APIs, webhooks, cross-system data flows connecting MSS to external Army systems.
+**TM-40L covers** OSDK (Ontology SDK): authenticating, querying objects, executing actions, subscribing to changes from external applications; OSDK Health Dialog for error visibility and debugging; temporary media uploads via OSDK and Functions; Pilot for AI-assisted OSDK application scaffolding; Model Context Protocol (MCP) for connecting AI agents to the Ontology; Foundry Platform SDK (Python): reading and writing datasets, managing transactions, accessing file resources; TypeScript Functions on Objects (FOO): computed properties, bulk query patterns, performance optimization; actions with complex validation: TypeScript validators, multi-step action flows, conditional logic; Slate: legacy custom HTML/CSS/JavaScript application development hosted on Foundry (documented for maintenance of existing Slate apps only — do not use for new development; see Chapter 7); CI/CD for Foundry: repository structure, automated testing, branch promotion workflows; security: CBAC in external apps, credential management, marking compliance in OSDK queries, audit trails; and integration patterns: REST APIs, webhooks, cross-system data flows connecting MSS to external Army systems.
 
 **TM-40L does NOT cover** Workshop application design (no-code/low-code) — see TM-20, TM-30; Pipeline Builder visual UI — see TM-20, TM-30; basic Ontology modeling (UI-based) — see TM-30; PySpark transforms — see TM-40H (AI Engineer) for AI pipelines; TM-30 for design; AIP Logic configuration — see TM-30; or Agent Studio development — see TM-40H.
 
@@ -855,7 +855,7 @@ async function subscribeToUnitStatusChanges(
 
 ### 3-3. Bulk Object Operations
 
-> **NOTE — Palantir Developers reference:** *Code in Production: Lennar x MCP | DevCon 3* — Covers Model Context Protocol (MCP) integration with Foundry in a production deployment, an emerging pattern for enabling LLM tool use against the Ontology from external application contexts. Relevant to engineers building AI-integrated OSDK applications. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+> **NOTE — Palantir Developers reference:** *Code in Production: Lennar x MCP | DevCon 3* — Covers Model Context Protocol (MCP) integration with Foundry in a production deployment, an emerging pattern for enabling LLM tool use against the Ontology from external application contexts. Relevant to engineers building AI-integrated OSDK applications. Available on the Palantir Developers YouTube channel (@PalantirDevelopers). See **Chapter 10** for full MCP coverage.
 
 **BLUF:** When processing multiple objects, use batch query patterns instead of per-object loops. Per-object queries (N+1 pattern) at operational scale will breach rate limits and degrade performance for all MSS users.
 
@@ -996,6 +996,197 @@ def with_retry(
         f"OSDK operation failed after {max_attempts} attempts"
     ) from last_exc
 ```
+
+---
+
+### 3-5. OSDK Health Dialog — Error Visibility and Debugging
+
+**BLUF:** OSDK errors now surface in the Health Dialog (Q1 2026). Use it as the first-line debugging tool for OSDK application failures before resorting to log analysis or network traces.
+
+**CONDITIONS:** OSDK application is registered in the Foundry application enrollment. Health Dialog is accessible from the Foundry navigation bar (Administration > Health). Engineer has developer or admin permissions on the enrolled application.
+
+**STANDARDS:** All OSDK application errors are reviewed through Health Dialog before escalating. Error patterns (repeated 403s, persistent timeouts, schema mismatches) are documented in the unit data ops log when they indicate systemic issues.
+
+**Background:** Prior to Q1 2026, OSDK errors were only visible in application-side logs and network traces. Engineers had to correlate client-side HTTP status codes with server-side Foundry logs — a time-consuming process, especially for intermittent failures in production. The Health Dialog consolidates OSDK errors into a single, platform-native interface.
+
+**What the Health Dialog shows for OSDK applications:**
+
+| Error Category | Information Displayed | Action |
+|---|---|---|
+| Authentication failures (401) | Token expiration time, token type, requesting application | Rotate token; verify enrollment is active |
+| Authorization failures (403) | Object type, action, requesting principal, missing CBAC grant | Contact data steward; verify enrollment scope includes the object type |
+| Schema mismatches | Expected vs. actual property types, object type version | Regenerate OSDK client against current Ontology; redeploy |
+| Rate limit violations (429) | Request count, window, limit threshold | Reduce query frequency; implement batching (see 3-3) |
+| Action validation failures | Validator name, validation message, input parameters | Review validator logic (see Chapter 6); check input data |
+| Connectivity / timeout errors | Endpoint, latency, failure count over time | Check network path; verify MSS platform status |
+
+**PROCEDURE — Using Health Dialog to triage OSDK errors:**
+
+1. Navigate to **Administration > Health** in Foundry.
+2. Select the enrolled OSDK application from the application list.
+3. Review the error timeline — identify whether errors are transient (spikes) or persistent (flat elevated rate).
+4. For each error category, expand the detail panel. The dialog provides the failing request context: object type, action name, requesting principal, and timestamp.
+5. Cross-reference with application-side logs using the request timestamp and correlation ID (if your application logs correlation IDs per 9-4).
+6. For 403 errors: verify the application enrollment includes the required Object Types and Actions. A common cause is an Ontology change that added a new Object Type consumed by the application but not yet included in the enrollment scope.
+7. For schema mismatches: regenerate the OSDK client package against the current Ontology version and redeploy. Schema mismatches typically occur after an Ontology edit (property rename, type change) that the application has not yet adopted.
+
+> **NOTE:** Health Dialog is a platform feature — it does not require application code changes to enable. However, the quality of error context depends on proper OSDK client usage. Applications that swallow exceptions or retry silently may not surface errors to Health Dialog. Let errors propagate to the OSDK layer so the platform can capture them.
+
+> **CAUTION:** Health Dialog may display object type names, action names, and property names that are operationally sensitive. Access Health Dialog only from approved workstations. Do not screenshot or export Health Dialog data to uncontrolled systems.
+
+---
+
+### 3-6. Temporary Media Uploads via OSDK and Functions
+
+**BLUF:** OSDK and Foundry Functions now support temporary media uploads (Q1 2026). Use this capability for user-submitted images, documents, and attachments that must be processed or attached to Ontology objects without requiring a permanent dataset file store.
+
+**CONDITIONS:** OSDK client initialized and authenticated (TypeScript or Python). Target Action or Function accepts a media attachment parameter. Foundry enrollment includes the media upload capability for the application. File size does not exceed platform limits (check current limits in Foundry documentation — typically 100 MB per upload).
+
+**STANDARDS:** Temporary media uploads are used for transient content that will be processed and either attached to an Ontology object or discarded. Do not use temporary uploads as a persistent storage mechanism — use Platform SDK dataset file resources (see 4-5) for permanent file storage. All uploaded media is validated for file type and size before submission. Sensitive media (CUI-marked images, classified documents) follows the same marking and handling requirements as any other MSS data.
+
+**Background:** Prior to Q1 2026, attaching user-submitted files to Ontology objects required a multi-step workflow: upload to a staging dataset via Platform SDK, run a transform to extract metadata, then link to the target object. Temporary media uploads simplify this to a single OSDK call — the file is uploaded as part of an Action execution or Function invocation, and the platform handles temporary storage and cleanup.
+
+**Use cases in the USAREUR-AF context:**
+
+| Use Case | Description | Object Type |
+|---|---|---|
+| SITREP photo attachments | Field units attach photos to SITREP submissions via external app | Sitrep |
+| Equipment damage documentation | Maintenance teams upload damage photos during NMC reporting | Equipment |
+| AAR supporting documents | After-action review submissions include scanned documents | AAREntry |
+| ISR product ingestion | Imagery products attached to collection request objects | CollectionRequest |
+
+**PROCEDURE — Temporary media upload with Action execution (TypeScript):**
+
+```typescript
+import { client } from "./foundryClient";
+import { SubmitSitrepWithAttachment } from "@osdk/generated";
+
+/**
+ * Submit a SITREP with an attached photo via OSDK Action.
+ *
+ * The media file is uploaded as a temporary attachment — the platform
+ * stores it for the duration of the Action processing window, then
+ * the Action logic persists it to the appropriate object property.
+ *
+ * File validation occurs client-side before upload and server-side
+ * in the Action validator.
+ */
+async function submitSitrepWithPhoto(
+  unitId: string,
+  sitrepData: SitrepPayload,
+  photoFile: File,
+): Promise<void> {
+  // Validate file before upload — reject oversized or disallowed types
+  const MAX_FILE_SIZE_MB = 25;
+  const ALLOWED_TYPES = ["image/jpeg", "image/png", "application/pdf"];
+
+  if (photoFile.size > MAX_FILE_SIZE_MB * 1024 * 1024) {
+    throw new Error(
+      `File exceeds ${MAX_FILE_SIZE_MB} MB limit: ${photoFile.name}`
+    );
+  }
+  if (!ALLOWED_TYPES.includes(photoFile.type)) {
+    throw new Error(
+      `File type not allowed: ${photoFile.type}. Allowed: ${ALLOWED_TYPES.join(", ")}`
+    );
+  }
+
+  // Execute Action with temporary media attachment
+  await client(SubmitSitrepWithAttachment).applyAction({
+    unitId,
+    readinessLevel: sitrepData.readinessLevel,
+    narrativeSummary: sitrepData.narrative,
+    attachment: photoFile,  // Temporary media upload — platform handles storage
+  });
+}
+```
+
+**PROCEDURE — Temporary media upload in a Foundry Function (TypeScript):**
+
+```typescript
+import {
+  Function,
+  Attachment,
+  OntologyEditFunction,
+} from "@foundry/functions-api";
+import { Objects } from "@foundry/ontology-api";
+
+/**
+ * Process an uploaded equipment damage photo.
+ * The Function receives the temporary media upload, validates it,
+ * and attaches it to the Equipment object.
+ */
+export class EquipmentFunctions {
+  @OntologyEditFunction()
+  public async attachDamagePhoto(
+    equipment: Objects.Equipment,
+    damagePhoto: Attachment,
+    description: string,
+  ): Promise<void> {
+    // Platform provides the Attachment handle for the temporary upload
+    // Validate attachment metadata
+    const metadata = await damagePhoto.getMetadata();
+    if (metadata.sizeBytes > 25 * 1024 * 1024) {
+      throw new Error("Attachment exceeds 25 MB limit");
+    }
+
+    // Attach to Equipment object — platform persists from temporary storage
+    equipment.damagePhotoAttachment = damagePhoto;
+    equipment.damageDescription = description;
+    equipment.lastInspectionDtg = new Date().toISOString();
+  }
+}
+```
+
+> **NOTE:** Temporary media uploads have a platform-defined retention window. If the Action or Function does not persist the attachment to an object property or dataset, the temporary file is automatically deleted after the retention period expires. Do not rely on temporary storage for any data that must be retained.
+
+> **CAUTION:** Uploaded media inherits the marking of the target object. If a user uploads an uncontrolled image to a CUI-marked Equipment object, the image becomes CUI upon attachment. Brief users on marking implications before enabling media upload in operational applications.
+
+---
+
+### 3-7. Pilot — AI-Assisted OSDK Application Development
+
+**BLUF:** Pilot (launched March 2026) is an AI-powered tool that generates React application scaffolding, components, and OSDK integration code. Use Pilot to accelerate initial application development; do not use it as a substitute for engineering review and production hardening.
+
+**CONDITIONS:** Pilot is enabled in the Foundry environment. Engineer has developer permissions and an active OSDK application enrollment. Engineer has working knowledge of React, TypeScript, and OSDK patterns (Chapters 2–3 of this manual).
+
+**STANDARDS:** All Pilot-generated code undergoes the same review, testing, and CI/CD standards as manually written code (see Chapter 8). Pilot output is a starting point — not a deployable artifact. Engineers must validate generated OSDK queries for correctness, CBAC compliance, error handling, and performance before promotion.
+
+**What Pilot generates:**
+
+| Output | Description | Engineer Review Required |
+|---|---|---|
+| React project scaffolding | Project structure, build config, dependency setup | Verify dependency versions; confirm no unnecessary packages |
+| OSDK client initialization | Authentication setup, client configuration | Verify auth pattern matches deployment model (BFF vs. SPA); confirm credential handling |
+| Object query components | React components that query and display Ontology objects | Validate filters, pagination, error handling; confirm CBAC scoping |
+| Action execution forms | Form components that execute Actions via OSDK | Validate input sanitization, validation logic, error messaging |
+| Link traversal views | Components that navigate object relationships | Check for N+1 patterns; confirm batch loading (see 3-3) |
+
+**When to use Pilot vs. manual development:**
+
+| Scenario | Recommendation | Rationale |
+|---|---|---|
+| New application from scratch | **Use Pilot** for initial scaffolding | Saves hours on boilerplate; ensures standard project structure |
+| Rapid prototype for stakeholder demo | **Use Pilot** for quick component generation | Accelerates time to visual output; prototype code is disposable |
+| Adding features to existing production app | **Manual development** | Pilot does not understand existing app architecture, custom patterns, or team conventions |
+| Complex multi-step Action workflows | **Manual development** | Pilot generates simple Action forms; multi-step flows (Chapter 6) require domain-specific validation logic |
+| Security-critical integration code | **Manual development** | Credential handling, webhook verification, and CBAC enforcement require deliberate engineering (Chapter 9) |
+| Performance-sensitive bulk operations | **Manual development** | Pilot may generate naive query patterns; bulk patterns (3-3) require intentional optimization |
+
+**PROCEDURE — Using Pilot to scaffold an OSDK application:**
+
+1. Open Pilot from the Foundry Developer Console.
+2. Describe the application in natural language — include the target Object Types, Actions, and the user-facing purpose. Example: *"Build a React app that displays Equipment objects filtered by owning unit, shows readiness status, and allows users to submit maintenance requests via the SubmitMaintenanceRequest Action."*
+3. Review the generated project structure. Confirm it includes: OSDK client setup, authentication configuration, component hierarchy, and build scripts.
+4. **Validate OSDK client initialization.** Confirm the auth pattern is correct for the deployment target (OAuth2 PKCE for SPAs; service account for server-rendered BFF). Pilot defaults may not match your deployment model.
+5. **Validate generated queries.** Open each component that queries the Ontology. Confirm: explicit page size limits are set (see 2-4); filters match the intended data scope; error handling wraps all OSDK calls (see 3-4).
+6. **Validate Action forms.** Confirm: input fields are validated and sanitized; Action parameters match the current Ontology Action definition; user feedback (success/error) is displayed.
+7. **Add missing production requirements.** Pilot-generated code typically lacks: audit logging (see 9-4); marking display for CUI/coalition data (see 9-3); retry logic for transient errors (see 3-4); CBAC-aware error messaging (see 9-1).
+8. Run all CI/CD checks (lint, type check, unit tests) before any branch promotion (see Chapter 8).
+
+> **WARNING:** Pilot generates code based on the current Ontology schema. If the Ontology changes after generation, Pilot-generated components may reference stale Object Types, properties, or Actions. Always regenerate the OSDK client and validate components after Ontology changes.
+
+> **CAUTION:** Do not input operational data, real unit names, or classified information into Pilot prompts. Use generic descriptions and placeholder data during generation. Replace with operational specifics only in the local development environment.
 
 ---
 
@@ -2739,6 +2930,210 @@ def verify_webhook_signature(
 
 ---
 
+## CHAPTER 10 — MODEL CONTEXT PROTOCOL (MCP) INTEGRATION
+
+> **NOTE — Palantir Developers reference:** *Code in Production: Lennar x MCP | DevCon 3* — Production case study of MCP integration with Foundry. Demonstrates connecting an LLM agent to the Ontology using MCP for tool-use workflows. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+
+### 10-1. What Is MCP
+
+**BLUF:** The Model Context Protocol (MCP) is an open standard for connecting AI agents to external tools and data sources. Foundry released MCP as an application-level feature in January 2026. MCP enables AI agents to query the Ontology, execute Actions, and retrieve object data through a standardized protocol — without custom OSDK integration code for each agent.
+
+MCP defines a client-server architecture: the AI agent (client) discovers available tools from an MCP server, then invokes those tools during reasoning. In the Foundry context, the MCP server exposes Ontology Object Types, Actions, and Functions as tools that the agent can call. The agent does not access the Ontology directly — all access flows through the MCP server, which enforces CBAC and audit logging.
+
+**Why MCP matters for TM-40L engineers:**
+
+| Without MCP | With MCP |
+|---|---|
+| Each AI agent requires custom OSDK integration code | Agent discovers Ontology capabilities through standard protocol |
+| Agent tool definitions are hardcoded and brittle to Ontology changes | Tool definitions are dynamically generated from current Ontology schema |
+| Adding a new Object Type to an agent requires code change + redeploy | Adding a new Object Type to the MCP server makes it immediately available to all connected agents |
+| Each agent implementation duplicates CBAC enforcement, pagination, error handling | MCP server handles CBAC, pagination, and error handling centrally |
+
+**MCP is NOT a replacement for OSDK.** OSDK remains the approved SDK for building external applications that present data to human users (dashboards, forms, portals). MCP is specifically for enabling AI agents to interact with the Ontology programmatically during autonomous or semi-autonomous reasoning workflows. If the consumer is a human user, use OSDK. If the consumer is an AI agent, evaluate MCP.
+
+**Scope boundary:** MCP server configuration and Ontology exposure are application-level concerns owned by the TM-40L engineer. The AI agent logic itself (prompt engineering, reasoning chains, model selection) is owned by the TM-40H (AI Engineer). Coordinate across tracks when deploying MCP-enabled workflows.
+
+---
+
+### 10-2. MCP Architecture in Foundry
+
+**CONDITIONS:** Foundry environment has MCP enabled (application-level feature, January 2026). Engineer has developer permissions on the target Ontology project. MCP server is provisioned through the Foundry Developer Console.
+
+**STANDARDS:** MCP servers expose only the Object Types and Actions required by the consuming agent — no blanket Ontology exposure. CBAC is enforced on every MCP tool invocation. All MCP tool calls are audit-logged.
+
+**Architecture:**
+
+```
+AI Agent (LLM)
+     |
+     | MCP Protocol (JSON-RPC over stdio or HTTP+SSE)
+     v
+MCP Server (Foundry-hosted)
+     |
+     | OSDK (internal)
+     v
+MSS Ontology
+  - Object Types (query, get)
+  - Actions (execute)
+  - Functions (invoke)
+     |
+     v
+CBAC Enforcement + Audit Log
+```
+
+**MCP server components:**
+
+| Component | Description | SWE Responsibility |
+|---|---|---|
+| Tool definitions | Schema describing each Ontology capability (Object Type queries, Actions, Functions) the agent can invoke | Configure which Object Types, Actions, and Functions are exposed; define parameter schemas |
+| Transport layer | Communication channel between agent and MCP server (stdio for local; HTTP+SSE for remote) | Select transport based on deployment model; configure endpoint security |
+| Authentication | Identity under which MCP tool calls execute against the Ontology | Configure service account or user-delegated auth; follows same patterns as OSDK (see 2-2) |
+| CBAC enforcement | Access control on every tool invocation | Inherits from Foundry CBAC — no additional configuration, but verify enrollment scope covers exposed tools |
+| Audit logging | Record of every tool call: who, what, when, parameters, result summary | Automatic for Foundry-hosted MCP servers; verify logs are accessible in Health Dialog (see 3-5) |
+
+**Transport options:**
+
+| Transport | Use Case | Security Considerations |
+|---|---|---|
+| stdio (standard I/O) | Local development; agent and MCP server run on same machine | No network exposure; suitable for development and testing |
+| HTTP + Server-Sent Events (SSE) | Production deployment; agent and MCP server on different hosts | Requires TLS 1.2+; authenticate agent-to-server connection; restrict to approved network paths |
+
+---
+
+### 10-3. Configuring an MCP Server for Ontology Access
+
+**CONDITIONS:** MCP feature enabled in Foundry. Target Object Types and Actions are defined in the Ontology. OSDK application enrollment exists for the MCP server (or a new enrollment will be created). Service account or OAuth2 credentials are provisioned.
+
+**STANDARDS:** MCP server configuration follows least-privilege: expose only the Object Types, Actions, and Functions the consuming agent requires. Configuration is version-controlled alongside application code. Changes to exposed tools require C2DAO review when they affect production Ontology access.
+
+**EQUIPMENT:** Foundry Developer Console access; OSDK application enrollment; service account token (for server-to-server) or OAuth2 configuration (for user-delegated).
+
+**PROCEDURE — Configure a Foundry MCP server:**
+
+1. **Create or select an OSDK application enrollment.** The MCP server uses an enrollment to determine which Object Types, Actions, and Functions it can expose. Use an existing enrollment or create a new one scoped to the agent's requirements.
+
+2. **Define the MCP server configuration.** The configuration specifies which Ontology capabilities are exposed as MCP tools:
+
+```json
+{
+  "mcpServer": {
+    "name": "mss-readiness-agent-tools",
+    "description": "MCP tools for the V Corps readiness monitoring agent",
+    "transport": "http_sse",
+    "authentication": {
+      "type": "service_account",
+      "tokenEnvVar": "MCP_SERVICE_ACCOUNT_TOKEN"
+    },
+    "tools": {
+      "objectTypes": [
+        {
+          "apiName": "Unit",
+          "operations": ["query", "get"],
+          "description": "Query and retrieve unit objects with readiness status"
+        },
+        {
+          "apiName": "Equipment",
+          "operations": ["query", "get"],
+          "description": "Query equipment objects by unit and status"
+        }
+      ],
+      "actions": [
+        {
+          "apiName": "FlagReadinessAnomaly",
+          "description": "Flag a unit readiness anomaly for staff review"
+        }
+      ],
+      "functions": [
+        {
+          "apiName": "computeUnitReadinessScore",
+          "description": "Compute aggregate readiness score for a unit"
+        }
+      ]
+    }
+  }
+}
+```
+
+3. **Provision credentials.** For server-to-server deployment (most common for autonomous agents), use a service account token stored in the environment variable specified in the configuration. For user-delegated scenarios (agent acting on behalf of a logged-in user), configure OAuth2 per section 2-2.
+
+4. **Deploy the MCP server.** For Foundry-hosted MCP servers, deploy through the Developer Console. For self-hosted MCP servers (e.g., running alongside an external agent), deploy the MCP server application to your infrastructure and configure the agent to connect to it.
+
+5. **Validate tool discovery.** Connect a test agent (or use the MCP inspector tool) and verify the agent can discover the exposed tools. Confirm tool schemas match the current Ontology definitions.
+
+6. **Validate CBAC enforcement.** Attempt a tool call for an Object Type the service account does not have access to. Confirm the MCP server returns an authorization error, not data.
+
+---
+
+### 10-4. MCP Use Cases in the USAREUR-AF Context
+
+**Operational use cases where MCP provides value over direct OSDK integration:**
+
+| Use Case | Agent Description | MCP Tools Exposed | Track Coordination |
+|---|---|---|---|
+| Readiness monitoring | Autonomous agent monitors unit readiness, flags anomalies | Unit (query), Equipment (query), FlagReadinessAnomaly (action) | TM-40H (agent logic), TM-40L (MCP config) |
+| SITREP analysis | Agent reads submitted SITREPs, extracts trends, generates summary | Sitrep (query), Unit (query), computeTrendScore (function) | TM-40H (analysis logic), TM-40L (MCP config), TM-40A (Intel validation) |
+| Data quality audit | Agent scans Object Types for data quality issues (missing fields, stale records) | Multiple Object Types (query), FlagDataQualityIssue (action) | TM-40H (audit logic), TM-40L (MCP config), TM-40K (KM oversight) |
+| Maintenance prediction | Agent analyzes equipment maintenance history, predicts upcoming failures | Equipment (query), MaintenanceRecord (query), computeFailureProbability (function) | TM-40H (model logic), TM-40M (ML model), TM-40L (MCP config) |
+
+**PROCEDURE — Connecting an AI agent to MCP (Python example using the MCP Python SDK):**
+
+```python
+from mcp import ClientSession, StdioServerParameters
+from mcp.client.stdio import stdio_client
+
+async def connect_to_foundry_mcp() -> None:
+    """
+    Connect an AI agent to the Foundry MCP server and
+    discover available Ontology tools.
+
+    This is the agent-side connection pattern. The agent
+    discovers tools, then invokes them during reasoning.
+    """
+    # Configure connection to the MCP server
+    server_params = StdioServerParameters(
+        command="foundry-mcp-server",
+        args=["--config", "mcp_config.json"],
+        env={
+            "MCP_SERVICE_ACCOUNT_TOKEN": os.environ["MCP_SERVICE_ACCOUNT_TOKEN"],
+        },
+    )
+
+    async with stdio_client(server_params) as (read, write):
+        async with ClientSession(read, write) as session:
+            # Initialize the MCP session
+            await session.initialize()
+
+            # Discover available tools — these map to Ontology capabilities
+            tools = await session.list_tools()
+            for tool in tools:
+                print(f"Tool: {tool.name} — {tool.description}")
+
+            # Example: invoke a query tool
+            result = await session.call_tool(
+                "query_Unit",
+                arguments={
+                    "filter": {
+                        "property": "readinessLevel",
+                        "type": "lt",
+                        "value": "C3",
+                    },
+                    "pageSize": 50,
+                },
+            )
+
+            # Process results — agent uses these in reasoning
+            for unit in result.content:
+                print(f"Unit: {unit}")
+```
+
+> **NOTE:** The MCP Python SDK (`mcp` package) is the reference client implementation. For TypeScript agents, use the `@modelcontextprotocol/sdk` package. Both implement the same protocol specification.
+
+> **WARNING:** MCP gives AI agents the ability to execute Actions — state-modifying operations on the Ontology. Scope Action exposure carefully. An agent with access to a delete or modify Action can alter operational data autonomously. Use read-only tool exposure for monitoring agents; add write Actions only for agents with explicit human-in-the-loop approval gates.
+
+> **CAUTION:** MCP tool calls consume the same OSDK rate limits as direct OSDK queries. An agent making rapid, unbounded tool calls can exhaust rate limits and degrade performance for all MSS users. Implement agent-side rate limiting or configure the MCP server with call frequency bounds.
+
+---
+
 ## APPENDIX A — OSDK QUICK REFERENCE
 
 ### A-1. Python OSDK Common Patterns
@@ -2965,6 +3360,8 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 
 **G6** — Signal/communications staff section. Responsible for Army network infrastructure and cybersecurity implementation. Relevant to credential provisioning and integration approvals.
 
+**Health Dialog (Foundry)** — Platform-native interface that displays OSDK application errors, including authentication failures, authorization failures, schema mismatches, and rate-limit violations. First-line debugging tool for OSDK applications (Q1 2026). See section 3-5.
+
 **HMAC (Hash-based Message Authentication Code)** — Cryptographic signature mechanism used to verify webhook payload integrity and authenticity.
 
 **ISR (Intelligence, Surveillance, Reconnaissance)** — The collection, processing, and dissemination of information. ISR tracking applications are a common TM-40L deliverable.
@@ -2972,6 +3369,8 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 **Link Type (Foundry Ontology)** — A defined relationship between two Object Types. Traversing link types from external applications requires additional OSDK calls — use bulk patterns to avoid N+1 performance issues.
 
 **Marking** — A metadata tag on a Foundry object indicating its handling category (e.g., CUI, coalition restriction). Enforced by CBAC; must be propagated in application display.
+
+**MCP (Model Context Protocol)** — Open standard for connecting AI agents to external tools and data sources. Released as a Foundry application-level feature in January 2026. Enables AI agents to query the Ontology, execute Actions, and invoke Functions through a standardized protocol without custom OSDK integration code. See Chapter 10.
 
 **MPE (Mission Partner Environment)** — Network environment enabling data sharing between U.S. forces and coalition partners. Objects accessible on MPE require NAFv4 compliance review before TM-40L integration development.
 
@@ -2991,6 +3390,8 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 
 **PAT (Personal Access Token)** — Developer credential for Foundry access. Authenticates as the issuing user. Approved for local development only — never in deployed applications.
 
+**Pilot (Foundry)** — AI-powered tool for generating React OSDK application scaffolding, components, and integration code (launched March 2026). Accelerates initial development but does not replace engineering review. All Pilot-generated code must meet the same CI/CD and security standards as manually written code. See section 3-7.
+
 **Pipeline Builder** — Foundry's visual ETL tool for building data transformation workflows. TM-30 scope for design; Platform SDK provides programmatic access to datasets produced by pipelines.
 
 **PMC (Partially Mission Capable)** — Equipment status indicating the item can perform some but not all assigned missions.
@@ -3004,6 +3405,8 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 **Slate** — A legacy Foundry environment for building custom HTML/CSS/JavaScript applications hosted within the Foundry platform. Applications inherit the user's Foundry session and CBAC. **Slate is deprecated — do not use for new development.** Use Workshop for internal Foundry applications. For public-facing portals, build an external application using the OSDK or Platform SDK.
 
 **Snapshot Transaction** — A dataset write transaction type that replaces all existing data in a dataset atomically. Used for full-refresh pipelines. Requires data steward coordination before use on shared datasets.
+
+**Temporary Media Upload** — OSDK and Foundry Functions capability (Q1 2026) enabling user-submitted files (images, documents, attachments) to be uploaded as part of Action execution or Function invocation without requiring a permanent dataset file store. Temporary uploads are retained for a platform-defined window and must be persisted to an object property or dataset by the processing logic. See section 3-6.
 
 **TLS (Transport Layer Security)** — Cryptographic protocol securing HTTPS connections. TLS 1.2 minimum required for all MSS integrations; TLS 1.3 preferred for new integrations.
 

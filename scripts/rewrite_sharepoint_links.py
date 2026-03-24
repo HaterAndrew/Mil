@@ -15,6 +15,7 @@ Output:
 import re
 import sys
 from pathlib import Path
+from urllib.parse import urlparse
 
 INDEX_SRC = Path("maven_training/mss_info_app/index.html")
 INDEX_OUT = Path("maven_training/mss_info_app/index_sharepoint.html")
@@ -26,6 +27,21 @@ def main():
         sys.exit(1)
 
     base_url = sys.argv[1].rstrip("/")
+
+    # Validate URL: must be absolute https:// — reject javascript:, data:, relative URLs
+    parsed = urlparse(base_url)
+    if parsed.scheme != "https":
+        print(f"ERROR: URL scheme must be https://, got '{parsed.scheme or '(none)'}://'")
+        sys.exit(1)
+    if not parsed.netloc:
+        print("ERROR: URL must be absolute (include hostname)")
+        sys.exit(1)
+    lower_url = base_url.lower()
+    for bad_scheme in ("javascript:", "data:"):
+        if bad_scheme in lower_url:
+            print(f"ERROR: URL must not contain '{bad_scheme}'")
+            sys.exit(1)
+
     html = INDEX_SRC.read_text(encoding="utf-8")
 
     # Replace all ../pdf/FILENAME.pdf with absolute SharePoint URL

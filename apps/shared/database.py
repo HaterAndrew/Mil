@@ -1,6 +1,7 @@
 """Shared database utilities for all Maven Training micro-apps."""
 import logging
 from pathlib import Path
+
 from sqlalchemy import create_engine, event
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
 

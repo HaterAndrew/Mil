@@ -4,13 +4,14 @@ from __future__ import annotations
 
 import csv
 import io
+import re
 from contextlib import asynccontextmanager
 
 from fastapi import Depends, FastAPI, File, HTTPException, Query, UploadFile, status
 from fastapi.responses import StreamingResponse
+from shared.auth import verify_api_key
+from shared.factory import create_app
 from sqlalchemy.orm import Session
-
-from shared.middleware import SecurityHeadersMiddleware
 
 from .db import (
     EXAM_STRUCTURE,
@@ -44,13 +45,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(
-    title="Exam Analytics Dashboard",
-    description="Analyze pre/post exam results, gain scores, and question difficulty.",
-    version="1.0.0",
-    lifespan=lifespan,
-)
-app.add_middleware(SecurityHeadersMiddleware)
+app = create_app(title="Exam Analytics Dashboard", version="1.0.0", lifespan=lifespan)
 
 
 @app.get("/health")
@@ -61,7 +56,11 @@ def health():
 # ---------------------------------------------------------------------------
 # Sessions
 # ---------------------------------------------------------------------------
-@app.post("/sessions", response_model=ExamSessionResponse, status_code=status.HTTP_201_CREATED)
+@app.post(
+    "/sessions", response_model=ExamSessionResponse,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(verify_api_key)],
+)
 def create_session(payload: ExamSessionCreate, db: Session = Depends(get_db)):
     session = ExamSession(**payload.model_dump())
     db.add(session)
@@ -95,7 +94,11 @@ def get_session(session_id: int, db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # Results
 # ---------------------------------------------------------------------------
-@app.post("/results/{session_id}", response_model=ExamResultResponse, status_code=status.HTTP_201_CREATED)
+@app.post(
+    "/results/{session_id}", response_model=ExamResultResponse,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(verify_api_key)],
+)
 def record_result(session_id: int, payload: ExamResultCreate, db: Session = Depends(get_db)):
     session = db.query(ExamSession).filter(ExamSession.id == session_id).first()
     if not session:
@@ -123,7 +126,7 @@ def record_result(session_id: int, payload: ExamResultCreate, db: Session = Depe
     return ExamResultResponse.model_validate(result)
 
 
-@app.get("/results/{session_id}", response_model=list[ExamResultResponse])
+@app.get("/results/{session_id}", response_model=list[ExamResultResponse], dependencies=[Depends(verify_api_key)])
 def list_results(session_id: int, db: Session = Depends(get_db)):
     results = db.query(ExamResult).filter(ExamResult.session_id == session_id).all()
     return [ExamResultResponse.model_validate(r) for r in results]
@@ -132,7 +135,7 @@ def list_results(session_id: int, db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # CSV upload — exam results
 # ---------------------------------------------------------------------------
-@app.post("/upload/results/{session_id}", response_model=UploadResult)
+@app.post("/upload/results/{session_id}", response_model=UploadResult, dependencies=[Depends(verify_api_key)])
 async def upload_results(
     session_id: int,
     file: UploadFile = File(...),
@@ -247,7 +250,7 @@ def session_questions(session_id: int, db: Session = Depends(get_db)):
     return question_difficulty(session_id, db)
 
 
-@app.get("/gain-scores", response_model=list[GainScoreResponse])
+@app.get("/gain-scores", response_model=list[GainScoreResponse], dependencies=[Depends(verify_api_key)])
 def gain_scores(
     pre_session_id: int = Query(...),
     post_session_id: int = Query(...),
@@ -258,7 +261,7 @@ def gain_scores(
     return gains
 
 
-@app.get("/gain-scores/flagged", response_model=list[GainScoreResponse])
+@app.get("/gain-scores/flagged", response_model=list[GainScoreResponse], dependencies=[Depends(verify_api_key)])
 def flagged_gain_scores(
     pre_session_id: int = Query(...),
     post_session_id: int = Query(...),
@@ -273,7 +276,7 @@ def flagged_gain_scores(
 # ---------------------------------------------------------------------------
 # Export
 # ---------------------------------------------------------------------------
-@app.get("/export/csv/{session_id}")
+@app.get("/export/csv/{session_id}", dependencies=[Depends(verify_api_key)])
 def export_session_csv(session_id: int, db: Session = Depends(get_db)):
     session = db.query(ExamSession).filter(ExamSession.id == session_id).first()
     if not session:
@@ -293,9 +296,10 @@ def export_session_csv(session_id: int, db: Session = Depends(get_db)):
         writer.writerow(row)
 
     output.seek(0)
-    filename = f"exam_{session.course_id}_{session.form_type}_{session.cohort_label}.csv"
+    safe = re.sub(r'[^A-Za-z0-9_\-]', '_', f"{session.course_id}_{session.form_type}_{session.cohort_label}")
+    filename = f"exam_{safe}.csv"
     return StreamingResponse(
         iter([output.getvalue()]),
         media_type="text/csv",
-        headers={"Content-Disposition": f"attachment; filename={filename}"},
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
     )

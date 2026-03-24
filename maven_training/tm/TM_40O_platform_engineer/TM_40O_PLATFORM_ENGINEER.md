@@ -1,11 +1,26 @@
 # TM-40O — MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** TM-40O qualifies platform engineers to design, deploy, secure, and operate the infrastructure layer that MSS applications run on — Kubernetes clusters, CI/CD pipelines, container registries, GitOps workflows, and the DevSecOps toolchain. This is an infrastructure manual — it contains architecture, configuration, and operational procedures, not application code.
-> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Linux systems administration proficiency; familiarity with containers and version control
+> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Linux systems administration proficiency; familiarity with containers and version control; CONCEPTS_GUIDE_TM40O_PLATFORM_ENGINEER (read before this manual)
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Infrastructure errors at TM-40O level affect every application and every user on the platform simultaneously. A misconfigured cluster, a broken pipeline, or a compromised container image has blast radius across the entire MSS ecosystem. Apply defense-in-depth. Test changes in non-production first. Maintain rollback capability for every change.**
 > **CAUTION: Platform credentials, service account tokens, cluster certificates, and container registry keys are high-value operational secrets. Compromise of platform-level credentials constitutes a critical security incident with potential access to all tenant data. Report immediately to unit S6/G6, C2DAO, and ISSM.**
+
+## Table of Contents
+
+- [CHAPTER 1 — INTRODUCTION: THE PLATFORM ENGINEER ROLE IN MSS](#chapter-1--introduction-the-platform-engineer-role-in-mss)
+- [CHAPTER 2 — PLATFORM-AS-PRODUCT](#chapter-2--platform-as-product)
+- [CHAPTER 3 — KUBERNETES FOR MSS](#chapter-3--kubernetes-for-mss)
+- [CHAPTER 4 — INFRASTRUCTURE AS CODE (IaC)](#chapter-4--infrastructure-as-code-iac)
+- [CHAPTER 5 — CONTAINER SECURITY AND SUPPLY CHAIN](#chapter-5--container-security-and-supply-chain)
+- [CHAPTER 6 — CI/CD PIPELINE DESIGN](#chapter-6--cicd-pipeline-design)
+- [CHAPTER 7 — COMPUTE MODULES](#chapter-7--compute-modules)
+- [CHAPTER 8 — AIR-GAPPED AND DDIL OPERATIONS](#chapter-8--air-gapped-and-ddil-operations)
+- [CHAPTER 9 — OBSERVABILITY](#chapter-9--observability)
+- [CHAPTER 10 — PLATFORM SECURITY AND COMPLIANCE](#chapter-10--platform-security-and-compliance)
+- [APPENDIX A — GLOSSARY](#appendix-a--glossary)
+- [APPENDIX B — REFERENCES](#appendix-b--references)
 
 ---
 
@@ -258,9 +273,212 @@ SOURCE → BUILD → TEST → SCAN → PACKAGE → DEPLOY → VERIFY → MONITOR
 
 ---
 
-## CHAPTER 7 — AIR-GAPPED AND DDIL OPERATIONS
+## CHAPTER 7 — COMPUTE MODULES
 
-### 7-1. Air-Gapped Deployment
+### 7-1. Compute Modules Overview
+
+**BLUF:** Compute Modules allow platform engineers to deploy and run containerized workloads directly on Foundry infrastructure without provisioning external Kubernetes clusters. GA as of February 2026, Compute Modules eliminate the need to stand up and maintain separate compute environments for workloads that can run within the Foundry ecosystem.
+
+**Task:** Deploy and operate containerized workloads using Compute Modules on Foundry infrastructure.
+
+**Conditions:** Given access to a Foundry environment with Compute Modules enabled, a container image stored in an approved registry, and a defined resource allocation.
+
+**Standards:**
+- Container deploys successfully and reaches a healthy running state within the target environment
+- Resource requests and limits are configured per workload requirements
+- Workload is observable through Foundry-native monitoring and the History tab
+- Scaling configuration matches operational demand patterns
+
+**What Compute Modules are:**
+
+Compute Modules are a Foundry-native capability for deploying and running containers directly on Foundry infrastructure. Rather than provisioning and managing external Kubernetes clusters, platform engineers define container workloads within Foundry and let the platform handle scheduling, networking, and lifecycle management. This reduces operational overhead for workloads that do not require full cluster autonomy.
+
+**Key characteristics:**
+
+| Characteristic | Description |
+|----------------|-------------|
+| Container-native | Deploy standard OCI-compliant container images |
+| Foundry-managed infrastructure | No cluster provisioning, node management, or control plane maintenance |
+| Integrated observability | Replica history, run logs, and change tracking built in |
+| Scheduled scaling | Time-based replica scaling with override windows |
+| Auditability | Full history of changes, deployments, and replica state |
+
+**When to use Compute Modules vs. external Kubernetes:**
+
+| Factor | Compute Modules | External Kubernetes |
+|--------|----------------|---------------------|
+| Workload scope | Single-purpose containers that serve Foundry workflows | Complex multi-service applications requiring custom networking, service mesh, or stateful orchestration |
+| Operational overhead | Low — Foundry manages infrastructure | High — team manages cluster lifecycle |
+| Customization | Foundry-defined resource and networking model | Full control over cluster configuration |
+| Air-gapped/edge | Requires Foundry connectivity | Can operate independently |
+| Compliance posture | Inherits Foundry's ATO boundary | Separate ATO boundary for each cluster |
+
+> **NOTE:** Compute Modules do not replace Kubernetes for all workloads. Workloads requiring custom networking policies, service mesh, persistent volumes with specific IOPS guarantees, or autonomous edge operation still require dedicated cluster infrastructure (see Chapters 3 and 8). Compute Modules are the right choice when the workload fits within Foundry's managed compute model and the operational simplicity outweighs the reduced customization.
+
+### 7-2. Deploying Containerized Workloads
+
+**BLUF:** Deploying a container on Compute Modules follows a repeatable sequence: define the image, configure resources, set environment variables, and deploy. The platform handles scheduling and networking.
+
+**Task:** Deploy a containerized workload to a Compute Module.
+
+**Conditions:** Given an approved container image (Iron Bank or organization-approved registry), defined resource requirements, and appropriate Foundry project permissions.
+
+**Standards:**
+- Image referenced by SHA256 digest (not mutable tag)
+- Resource requests and limits explicitly configured
+- Environment variables and secrets injected through Foundry's configuration interface (not baked into the image)
+- Deployment verified healthy before routing traffic or enabling downstream dependencies
+
+**Deployment procedure:**
+
+1. **Select or create the Compute Module** within the target Foundry project. Name it according to the organization's naming convention.
+2. **Specify the container image.** Use the full image reference including registry path and SHA256 digest. Do not use `:latest` or other mutable tags — digest pinning prevents silent image changes between deployments.
+3. **Configure resource allocation.** Set CPU and memory requests and limits based on workload profiling. Over-provisioning wastes shared capacity; under-provisioning causes OOMKilled events and degraded performance.
+4. **Set environment variables and secrets.** Use Foundry's configuration management to inject runtime configuration. Secrets must come from Foundry's secrets integration — never embed credentials in the container image or environment variable definitions visible in version control.
+5. **Configure networking.** Define exposed ports and any required ingress rules. Foundry manages internal networking; the platform engineer configures what is exposed and to whom.
+6. **Deploy and verify.** Initiate the deployment and monitor replica status. Verify the workload reaches a healthy state by checking container logs and health endpoints.
+
+> **CAUTION:** Container images deployed through Compute Modules must meet the same security standards as any other production container on MSS. Iron Bank base images, vulnerability scanning, digest pinning, non-root execution — all requirements from Chapter 5 apply. Compute Modules simplify infrastructure management; they do not relax security standards.
+
+### 7-3. Replica History and Debugging
+
+**BLUF:** Compute Modules maintain a full history of every replica that has run, including start/stop times, exit codes, and logs. Use replica history as the first-line debugging and auditing tool.
+
+**Task:** Access and interpret replica history for debugging failed or degraded workloads.
+
+**Conditions:** Given a deployed Compute Module with one or more historical replica runs.
+
+**Standards:**
+- Platform engineer can identify failed replicas, their exit codes, and the time window of failure
+- Root cause determination uses replica logs and state transitions, not guesswork
+- Findings are documented in the incident record or maintenance log
+
+**Accessing replica history:**
+
+Replica history is available within the Compute Module's management interface. Each replica entry includes:
+
+| Field | Purpose |
+|-------|---------|
+| Replica ID | Unique identifier for the specific replica instance |
+| Start time | When the replica was scheduled and started |
+| Stop time | When the replica terminated (if applicable) |
+| Exit code | Process exit code (0 = clean shutdown; non-zero = error) |
+| Status | Current state (running, succeeded, failed, terminated) |
+| Logs | Container stdout/stderr output for the replica's lifetime |
+
+**Debugging workflow:**
+
+1. **Identify the failure window.** Correlate user-reported issues or alert timestamps with replica history to find which replica(s) were running during the incident.
+2. **Check exit codes.** A non-zero exit code indicates the container process terminated abnormally. Common patterns: exit code 137 (OOMKilled — increase memory limits), exit code 1 (application error — check logs).
+3. **Review replica logs.** Examine stdout/stderr for error messages, stack traces, and application-level diagnostics. If logging is structured (JSON), filter by severity or component.
+4. **Compare with previous successful runs.** Identify what changed between the last successful replica and the failed one — configuration change, image update, or environmental factor.
+5. **Cross-reference with the History tab** (see Section 7-5) to determine whether a configuration change immediately preceded the failure.
+
+**Auditing use case:** Replica history provides a tamper-evident record of what ran, when, and with what result. This record supports ATO continuous monitoring requirements by demonstrating that only approved containers executed on the platform and that anomalous terminations were investigated.
+
+### 7-4. Scheduled Replica Scaling
+
+**BLUF:** Compute Modules support time-based replica scaling with override windows. Use scheduled scaling to match capacity to predictable demand patterns without manual intervention.
+
+**Task:** Configure scheduled replica scaling with time-based overrides for a Compute Module.
+
+**Conditions:** Given a deployed Compute Module with a known demand pattern (e.g., higher usage during duty hours, surge during exercises).
+
+**Standards:**
+- Baseline replica count matches off-peak demand
+- Scheduled scale-up aligns with known high-demand periods
+- Override windows are documented with justification
+- Scaling changes are verified through replica history
+
+**Scaling configuration:**
+
+| Parameter | Description |
+|-----------|-------------|
+| Baseline replicas | Default replica count during normal operations |
+| Scheduled scale-up | Time-based rules that increase replica count during defined windows (e.g., 0600–1800 CEST duty hours) |
+| Scheduled scale-down | Time-based rules that reduce replicas during low-demand periods |
+| Override window | Temporary scaling rule that supersedes the schedule (e.g., exercise surge from D-3 to D+5) |
+
+**Configuration guidance:**
+
+1. **Establish baseline.** Use historical metrics to determine the minimum replica count that sustains acceptable performance during off-peak hours.
+2. **Define scheduled windows.** Map known demand patterns to scaling rules. For MSS, typical patterns include: duty-hour scaling (CEST business hours), exercise surge periods, and reporting deadlines.
+3. **Set override windows for exercises and operations.** When an exercise or operational surge is planned, create a time-bounded override that increases capacity for the duration. Document the override in the operation order or FRAGO as an infrastructure preparation task.
+4. **Monitor and adjust.** After each scaling event, review replica history and performance metrics. If scale-up was insufficient or scale-down caused degradation, adjust thresholds.
+
+> **NOTE:** Scheduled scaling addresses predictable demand. For unpredictable spikes, coordinate with Foundry platform administration on autoscaling capabilities or maintain headroom in the baseline replica count. Do not rely on reactive scaling alone for mission-critical workloads.
+
+### 7-5. History Tab — Viewing Changes and Past Runs
+
+**BLUF:** The History tab provides a chronological audit trail of every configuration change, deployment, and scaling event for a Compute Module. Use it to answer the question: "What changed, and when?"
+
+**Task:** Use the History tab to audit configuration changes and correlate them with operational events.
+
+**Conditions:** Given a Compute Module with deployment history.
+
+**Standards:**
+- Platform engineer can trace any current configuration to the change that set it
+- Configuration changes are correlated with operational outcomes (success/failure)
+- Audit evidence is available for RMF/ATO continuous monitoring
+
+**What the History tab captures:**
+
+| Event Type | Details Recorded |
+|------------|-----------------|
+| Configuration change | What changed (image, environment variables, resource limits, scaling rules), who changed it, when |
+| Deployment | Image deployed, replica count, deployment outcome |
+| Scaling event | Scheduled or manual scaling action, previous and new replica count |
+| Replica lifecycle | Replica start/stop events, exit codes, duration |
+
+**Operational use of the History tab:**
+
+- **Incident investigation.** When a workload degrades, check the History tab first. If a configuration change occurred immediately before the degradation, it is the likely cause. This follows the "what changed?" principle — most incidents are caused by changes, not spontaneous failures.
+- **Change verification.** After applying a configuration change, verify in the History tab that the change was applied as intended. Do not assume — verify.
+- **Compliance evidence.** The History tab provides the audit trail that RMF requires: who changed what, when, and what the system state was before and after. Export or screenshot this data during ATO evidence collection.
+- **Knowledge transfer.** When a platform engineer transitions responsibility for a Compute Module, the History tab provides context that runbooks alone cannot capture — the operational history of the workload.
+
+### 7-6. CI/CD Integration
+
+**BLUF:** Compute Modules integrate into existing CI/CD pipeline patterns. The deployment target changes from a Kubernetes cluster to a Compute Module; the pipeline stages (build, test, scan, package, deploy) remain the same.
+
+**Task:** Integrate Compute Module deployment into an existing CI/CD pipeline.
+
+**Conditions:** Given an existing CI/CD pipeline (Chapter 6) and a target Compute Module.
+
+**Standards:**
+- Pipeline deploys to the Compute Module without manual intervention
+- All security gates (Chapter 6, Section 6-2) are enforced before deployment
+- Deployment is verified via automated health checks
+- Rollback capability is maintained
+
+**Integration pattern:**
+
+```
+SOURCE → BUILD → TEST → SCAN → PACKAGE → DEPLOY TO COMPUTE MODULE → VERIFY
+  │        │       │       │       │              │                       │
+  Git    Compile  Unit   SAST   Container    Foundry API /            Replica
+  push   deps     Integ  DAST   image        CLI push to             health
+         lint     E2E    SCA    sign/push    Compute Module           check
+                         CVE
+```
+
+The pipeline stages from Chapter 6 (Section 6-1) remain unchanged through the PACKAGE stage. The DEPLOY stage targets the Compute Module through Foundry's API or CLI tooling instead of `kubectl apply` against a Kubernetes cluster.
+
+**Implementation considerations:**
+
+1. **Deployment automation.** Use Foundry's API or CLI to update the Compute Module's container image reference as part of the pipeline's deploy stage. The pipeline should pass the new image digest (not tag) to the Compute Module configuration.
+2. **Health verification.** After deployment, the pipeline should poll the Compute Module's replica status until the new replica reaches a healthy state or a timeout threshold is exceeded. If the health check fails, the pipeline should trigger a rollback to the previous image digest.
+3. **Rollback procedure.** Maintain the previous known-good image digest. If the newly deployed image fails health checks, the pipeline automatically reverts the Compute Module to the previous digest. This mirrors the rolling update strategy from Chapter 6 (Section 6-3).
+4. **Security gate enforcement.** All security gates from Chapter 6 (Section 6-2) apply. The container image must pass vulnerability scanning, SAST, and SCA checks before the pipeline proceeds to the deploy stage. Compute Modules do not bypass security requirements — they change the deployment target, not the security posture.
+5. **GitOps compatibility.** If the team uses a GitOps workflow (Chapter 4, Section 4-2), the Compute Module configuration can be stored in Git alongside other infrastructure definitions. The GitOps controller reconciles the Compute Module's desired state from the repository, maintaining the same change control discipline as cluster-based deployments.
+
+> **NOTE:** Teams transitioning workloads from self-managed Kubernetes deployments to Compute Modules should update their pipeline configurations incrementally. Run both deployment targets in parallel during transition to verify parity before decommissioning the cluster-based deployment.
+
+---
+
+## CHAPTER 8 — AIR-GAPPED AND DDIL OPERATIONS
+
+### 8-1. Air-Gapped Deployment
 
 **BLUF:** MSS operates across classification boundaries. Platform Engineers must deploy software to environments with no internet connectivity. Every external dependency must be pre-packaged.
 
@@ -271,7 +489,7 @@ SOURCE → BUILD → TEST → SCAN → PACKAGE → DEPLOY → VERIFY → MONITOR
 3. **Dependency mirroring:** Language package registries (npm, PyPI, Maven) mirrored internally. Build pipelines reference internal mirrors, not public registries.
 4. **Certificate management:** Internal PKI for TLS within the air-gapped environment. Certificate rotation procedures documented and tested.
 
-### 7-2. DDIL-Resilient Infrastructure
+### 8-2. DDIL-Resilient Infrastructure
 
 **BLUF:** USAREUR-AF operates across the European AOR where network connectivity ranges from fiber to satellite to nothing. Design infrastructure that degrades gracefully, not catastrophically.
 
@@ -285,7 +503,7 @@ SOURCE → BUILD → TEST → SCAN → PACKAGE → DEPLOY → VERIFY → MONITOR
 | Bandwidth awareness | Sync operations prioritize by mission criticality; bulk transfers scheduled during high-bandwidth windows |
 | Health reporting | Edge clusters report health status when connected; alerts trigger on missed check-ins |
 
-### 7-3. Edge Cluster Management
+### 8-3. Edge Cluster Management
 
 **BLUF:** When you manage clusters at the edge — forward deployed, low bandwidth, possibly disconnected — traditional cluster management breaks down. Plan for autonomous operation.
 
@@ -298,9 +516,9 @@ Edge cluster considerations:
 
 ---
 
-## CHAPTER 8 — OBSERVABILITY
+## CHAPTER 9 — OBSERVABILITY
 
-### 8-1. The Three Pillars: Metrics, Logs, Traces
+### 9-1. The Three Pillars: Metrics, Logs, Traces
 
 **BLUF:** If you cannot observe the platform, you cannot operate it. Observability is not optional tooling — it is the difference between diagnosing an incident in minutes and guessing for hours.
 
@@ -314,7 +532,7 @@ Observability rests on three pillars. Each serves a distinct purpose; all three 
 
 Metrics tell you *something is wrong*. Logs tell you *what happened*. Traces tell you *where in the chain it happened*. A platform that collects only one or two pillars leaves blind spots that extend incident resolution time and increase operational risk.
 
-### 8-2. What to Monitor in a Kubernetes Environment
+### 9-2. What to Monitor in a Kubernetes Environment
 
 **BLUF:** Monitor at every layer — cluster infrastructure, platform services, and application workloads. A healthy node does not guarantee a healthy application.
 
@@ -337,7 +555,7 @@ Metrics tell you *something is wrong*. Logs tell you *what happened*. Traces tel
 - Request latency by percentile (p50, p95, p99)
 - Resource utilization vs. requests/limits (identify over-provisioned or starved workloads)
 
-### 8-3. Alerting
+### 9-3. Alerting
 
 **BLUF:** An alert that fires constantly is ignored. An alert that never fires is untested. Design alerts that are actionable, routed to the right responder, and tied to a runbook.
 
@@ -351,7 +569,7 @@ Metrics tell you *something is wrong*. Logs tell you *what happened*. Traces tel
 3. **Every alert has a runbook.** The alert message links to a procedure. On-call personnel should not need to reverse-engineer the response during an incident.
 4. **Suppress flapping.** Use appropriate evaluation windows and hysteresis to prevent alerts from firing and clearing repeatedly during transient spikes.
 
-### 8-4. Observability and Operational Readiness
+### 9-4. Observability and Operational Readiness
 
 **BLUF:** A platform without observability is not operationally ready. Observability provides the evidence base for readiness assessments, capacity planning, and ATO continuous monitoring.
 
@@ -365,9 +583,9 @@ Observability directly supports MSS operational readiness in three ways:
 
 ---
 
-## CHAPTER 9 — PLATFORM SECURITY AND COMPLIANCE
+## CHAPTER 10 — PLATFORM SECURITY AND COMPLIANCE
 
-### 9-1. RMF/ATO from the Platform Perspective
+### 10-1. RMF/ATO from the Platform Perspective
 
 **BLUF:** The Risk Management Framework (RMF) and Authority to Operate (ATO) are not paperwork exercises — they are the legal authorization for MSS to process operational data. Platform Engineers generate the evidence that sustains the ATO.
 
@@ -381,7 +599,7 @@ Observability directly supports MSS operational readiness in three ways:
 | POA&M items | Remediate platform-level findings; provide timelines and evidence of closure |
 | Incident response | Execute platform-level IR procedures; preserve evidence; support forensics |
 
-### 9-2. STIG Compliance
+### 10-2. STIG Compliance
 
 **BLUF:** Security Technical Implementation Guides (STIGs) define the hardening standard for DoD systems. Platform Engineers automate STIG compliance — manual STIG checks do not scale.
 
@@ -390,7 +608,7 @@ Observability directly supports MSS operational readiness in three ways:
 - Document exceptions/waivers for STIG findings that cannot be remediated (with ISSM approval)
 - Re-scan after every platform change; compliance is continuous, not point-in-time
 
-### 9-3. Access Control and Audit
+### 10-3. Access Control and Audit
 
 **BLUF:** Platform-level access is god-mode access. Control it accordingly.
 
@@ -399,7 +617,7 @@ Observability directly supports MSS operational readiness in three ways:
 - **Audit logging:** Every administrative action logged, timestamped, and attributed to a specific individual. Logs are immutable and forwarded to a separate system.
 - **Break-glass procedures:** Documented emergency access procedures for when normal access paths are unavailable. Break-glass use triggers automatic review.
 
-### 9-4. Secrets Management
+### 10-4. Secrets Management
 
 **BLUF:** Hardcoded secrets in source code, container images, or pipeline configurations are unacceptable. A single leaked credential can compromise the entire platform. Manage secrets as first-class infrastructure objects with encryption, access control, and rotation.
 
@@ -433,6 +651,7 @@ Observability directly supports MSS operational readiness in three ways:
 
 | Term | Definition |
 |------|-----------|
+| Compute Module | Foundry-native capability for deploying and running containers on Foundry-managed infrastructure (GA Feb 2026) |
 | IDP | Internal Developer Platform — self-service infrastructure for application teams |
 | IaC | Infrastructure as Code — managing infrastructure through version-controlled configuration files |
 | GitOps | Operating model where Git is the source of truth for infrastructure and application state |

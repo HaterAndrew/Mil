@@ -462,6 +462,71 @@
     padding: 2px 8px;
   }
 
+  /* POAM button — top-right of Maven view */
+  .poam-btn {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    z-index: 10;
+  }
+  .poam-btn button, .poam-btn a {
+    display: inline-block;
+    padding: 8px 18px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #1a237e;
+    background: #eef0ff;
+    border: 1.5px solid #c5cae9;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+  .poam-btn button:hover, .poam-btn a:hover {
+    background: #dde2ff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .poam-btn a {
+    margin-right: 8px;
+  }
+
+  /* POAM embedded view */
+  #poamView {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  #poamView iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  .poam-back {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    z-index: 10;
+  }
+  .poam-back button {
+    padding: 8px 18px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #1a237e;
+    background: #eef0ff;
+    border: 1.5px solid #c5cae9;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+  .poam-back button:hover {
+    background: #dde2ff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
   /* View toggle — hide/show */
   .hidden { display: none !important; }
 </style>
@@ -643,6 +708,11 @@
   </div>
 </div>
 
+<div class="poam-btn">
+  <button onclick="window.open('maven_training/mss_info_app/index.html','_blank')">Training App &#x25B6;</button>
+  <button onclick="showPoam()">POAM &#x25B6;</button>
+</div>
+
 <div class="main-content">
 
 <!-- Core Progression -->
@@ -709,7 +779,7 @@
           <div class="label">Bootcamp</div>
         </div>
       </div>
-      <div class="step-desc">Foundry Bootcamp<br>5 days &bull; Quarterly<br><em style="font-size:11px;color:#8a9aaa;">Prereq: TM-20</em></div>
+      <div class="step-desc">Foundry Bootcamp<br>5 days &bull; 2x Quarterly<br><em style="font-size:11px;color:#8a9aaa;">Prereq: TM-20</em></div>
       <div class="cadre-badge">Dedicated Cadre Recommended</div>
     </div>
     <div class="connector"></div>
@@ -720,7 +790,7 @@
           <div class="label">TM-SL</div>
         </div>
       </div>
-      <div class="step-desc">Senior Leader / Executive<br>1 day &bull; O-5 / E-9+<br><em style="font-size:11px;color:#8a9aaa;">No prereq</em></div>
+      <div class="step-desc">Senior Leader<br>1 day &bull; O-5 / E-9+<br><em style="font-size:11px;color:#8a9aaa;">No prereq</em></div>
       <div class="cadre-badge">Dedicated Cadre Recommended</div>
     </div>
     <div class="connector"></div>
@@ -741,19 +811,19 @@
 <div class="stats-bar">
   <div class="stat">
     <div class="stat-value">254</div>
-    <div class="stat-label">Published PDFs</div>
+    <div class="stat-label">Draft Publications</div>
   </div>
   <div class="stat">
     <div class="stat-value">68</div>
-    <div class="stat-label">FY27 Classes</div>
+    <div class="stat-label">Proposed Classes</div>
   </div>
   <div class="stat">
     <div class="stat-value">7</div>
-    <div class="stat-label">Locations (MSCs)</div>
+    <div class="stat-label" style="text-transform:none;">LOCATIONS (MSCs)</div>
   </div>
   <div class="stat">
-    <div class="stat-value">~1,004</div>
-    <div class="stat-label">FY27 Seats</div>
+    <div class="stat-value">1,004</div>
+    <div class="stat-label">Proposed Seats</div>
   </div>
 </div>
 
@@ -774,16 +844,36 @@
 </div><!-- end mavenView -->
 
 
+<!-- ═══════════════════════════════════════════════════════
+     VIEW 3: POAM (embedded)
+     ═══════════════════════════════════════════════════════ -->
+<div id="poamView" class="hidden">
+  <div class="poam-back">
+    <button onclick="showMaven()">&#x25C0; Training</button>
+  </div>
+  <iframe src="maven_training/training_management/POAM_FY27_IMPLEMENTATION.html"></iframe>
+</div>
+
+
 <script>
 /* ── View toggle ── */
-function showMaven() {
+function hideAll() {
   document.getElementById('hermesView').classList.add('hidden');
+  document.getElementById('mavenView').classList.add('hidden');
+  document.getElementById('poamView').classList.add('hidden');
+}
+function showMaven() {
+  hideAll();
   document.getElementById('mavenView').classList.remove('hidden');
 }
 function showHermes() {
-  document.getElementById('mavenView').classList.add('hidden');
+  hideAll();
   document.getElementById('hermesView').classList.remove('hidden');
   requestAnimationFrame(drawAll);
+}
+function showPoam() {
+  hideAll();
+  document.getElementById('poamView').classList.remove('hidden');
 }
 
 /* ── HERMES cross-link arrow ── */

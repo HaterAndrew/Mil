@@ -22,6 +22,14 @@ from sqlalchemy import (
 )
 from sqlalchemy.orm import Session, declarative_base, relationship, sessionmaker
 
+import sys
+from pathlib import Path as _Path
+_apps_dir = str(_Path(__file__).resolve().parent.parent)
+if _apps_dir not in sys.path:
+    sys.path.insert(0, _apps_dir)
+
+from shared.audit_mixin import AuditMixin
+
 from .models import (
     AlertSeverity,
     MetricStatus,
@@ -44,7 +52,7 @@ Base = declarative_base()
 # ORM tables
 # ---------------------------------------------------------------------------
 
-class PipelineRow(Base):
+class PipelineRow(Base, AuditMixin):
     __tablename__ = "pipelines"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -57,7 +65,6 @@ class PipelineRow(Base):
     status = Column(String(20), default=PipelineStatus.UNKNOWN.value)
     last_run = Column(DateTime, nullable=True)
     last_success = Column(DateTime, nullable=True)
-    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
     metrics = relationship("MetricRow", back_populates="pipeline", cascade="all, delete-orphan")
     alerts = relationship("AlertRow", back_populates="pipeline", cascade="all, delete-orphan")

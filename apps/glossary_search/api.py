@@ -8,15 +8,13 @@ Run:  uvicorn apps.glossary_search.api:app --port 8007 --reload
 
 from __future__ import annotations
 
+from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Optional
 
-from contextlib import asynccontextmanager
-
-from fastapi import FastAPI, HTTPException, Query
-from fastapi.middleware.cors import CORSMiddleware
-
-from shared.middleware import SecurityHeadersMiddleware
+from fastapi import Depends, FastAPI, HTTPException, Query
+from shared.auth import verify_api_key
+from shared.factory import create_app
 
 from . import db
 from .models import (
@@ -40,20 +38,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(
-    title="Glossary Search API",
-    description="Full-text search across USAREUR-AF glossary, doctrine, and training terms.",
-    version="1.0.0",
-    lifespan=lifespan,
-)
-app.add_middleware(SecurityHeadersMiddleware)
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:8500", "http://127.0.0.1:8500"],
-    allow_methods=["GET", "POST"],
-    allow_headers=["Content-Type"],
-)
+app = create_app(title="Glossary Search API", version="1.0.0", lifespan=lifespan)
 
 
 # ---------------------------------------------------------------------------
@@ -145,13 +130,13 @@ def list_categories() -> list[CategoryCount]:
     return [CategoryCount(**c) for c in cats]
 
 
-@app.post("/reindex")
+@app.post("/reindex", dependencies=[Depends(verify_api_key)])
 def reindex() -> dict:
     """Drop and rebuild the term index from source markdown files."""
     if not CORPUS_ROOT.is_dir():
         raise HTTPException(
             status_code=400,
-            detail=f"Corpus root not found: {CORPUS_ROOT}",
+            detail="Corpus root directory not found",
         )
     count = db.reindex(CORPUS_ROOT)
     return {"status": "ok", "terms_indexed": count}

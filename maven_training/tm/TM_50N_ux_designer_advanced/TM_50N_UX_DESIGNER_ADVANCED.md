@@ -1,11 +1,22 @@
 # TM-50N — MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** TM-50N qualifies advanced UI/UX designers to build and govern design systems at scale, design for DDIL and cross-domain environments, lead coalition UI integration, and establish design operations that sustain quality across the MSS application portfolio. This manual extends TM-40N from individual application design to enterprise design leadership.
-> **Prereqs:** TM-40N, UI/UX Designer (required, Go evaluation on file); demonstrated portfolio of 2+ MSS application designs from TM-40N practical exercise or operational assignment
+> **Prereqs:** TM-40N, UI/UX Designer (required, Go evaluation on file); demonstrated portfolio of 2+ MSS application designs from TM-40N practical exercise or operational assignment; CONCEPTS_GUIDE_TM50N_UX_DESIGNER_ADVANCED (read before this manual)
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Design system decisions at TM-50N level propagate across every MSS application. A poorly designed component, an inconsistent pattern, or a broken accessibility standard scales from one application to the entire portfolio. Validate design system changes across representative applications before publishing.**
 > **CAUTION: Cross-domain and coalition UI design involves classification boundary decisions. Designs that cross classification levels must be reviewed by the ISSM before implementation. Do not assume a design pattern valid at one classification level is valid at another.**
+
+## Table of Contents
+
+- [CHAPTER 1 — INTRODUCTION: THE ADVANCED UI/UX DESIGNER ROLE IN MSS](#chapter-1--introduction-the-advanced-uiux-designer-role-in-mss)
+- [CHAPTER 2 — DESIGN SYSTEMS AT SCALE](#chapter-2--design-systems-at-scale)
+- [CHAPTER 3 — DDIL-AWARE DESIGN](#chapter-3--ddil-aware-design)
+- [CHAPTER 4 — CROSS-DOMAIN AND COALITION UI](#chapter-4--cross-domain-and-coalition-ui)
+- [CHAPTER 5 — DESIGN OPERATIONS (DESIGNOPS)](#chapter-5--design-operations-designops)
+- [CHAPTER 6 — ACCESSIBILITY AT ENTERPRISE SCALE](#chapter-6--accessibility-at-enterprise-scale)
+- [APPENDIX A — REFERENCES](#appendix-a--references)
+- [APPENDIX B — PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION](#appendix-b--peer-tm-50-cross-references-and-wff-integration)
 
 ---
 

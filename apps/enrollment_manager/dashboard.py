@@ -39,6 +39,7 @@ from enrollment_manager.db import (
 )
 
 from theme import inject_branding, apply_plotly_theme, NAVY, NAVY_DARK, NAVY_LIGHT, NAVY_MID, GOLD, GOLD_DARK, GOLD_LIGHT, RAG_GREEN, RAG_AMBER, RAG_RED, GRAY_400, GRAY_700
+from shared.sanitize import safe_html
 
 # ---------------------------------------------------------------------------
 # Config
@@ -373,7 +374,7 @@ elif active_tab == "Class Manager":
             f'<div style="display:inline-block; padding:4px 12px; '
             f'background:{rag_color}; color:white; font-weight:bold; '
             f'font-size:12px; border-radius:3px; letter-spacing:1px;">'
-            f'{rag_label} &mdash; {class_info["status"]}</div>',
+            f'{rag_label} &mdash; {safe_html(class_info["status"])}</div>',
             unsafe_allow_html=True,
         )
 

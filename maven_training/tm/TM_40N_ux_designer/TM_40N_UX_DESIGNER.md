@@ -1,7 +1,7 @@
 # TM-40N — MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** TM-40N qualifies UI/UX designers to conduct user research, design information architectures, build interactive prototypes, and deliver production-ready Workshop and Slate application designs on the MSS platform. This is a design manual — it produces validated, implementable design artifacts, not just wireframes.
-> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); familiarity with user research methods and visual design principles
+> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); familiarity with user research methods and visual design principles; CONCEPTS_GUIDE_TM40N_UX_DESIGNER (read before this manual)
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Design decisions at TM-40N level directly shape how commanders and staff consume operational data. A poorly designed dashboard can obscure critical information, delay decisions, or create false confidence in incomplete data. Apply Soldier Centered Design discipline. Validate with users. Test in representative environments.**

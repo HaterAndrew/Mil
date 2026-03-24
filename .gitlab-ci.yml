@@ -6,8 +6,8 @@ test:
   stage: test
   image: python:3.12-slim
   script:
-    - pip install -r requirements.txt
-    - python3 -m pytest tests/ -v
+    - REQ=requirements-lock.txt; [ -f "$REQ" ] || REQ=requirements.txt; pip install -r "$REQ" pytest-cov
+    - python3 -m pytest tests/ -v --cov=apps --cov=scripts --cov=sitrep_tracker --cov-report=term-missing
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
       when: always
@@ -32,7 +32,7 @@ security:
   script:
     - pip install bandit pip-audit
     - bandit -r apps/ scripts/ sitrep_tracker/ -ll
-    - pip-audit -r requirements.txt
+    - pip-audit -r requirements-lock.txt
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
       when: always
@@ -43,7 +43,7 @@ alembic-check:
   stage: test
   image: python:3.12-slim
   script:
-    - pip install -r requirements.txt alembic
+    - REQ=requirements-lock.txt; [ -f "$REQ" ] || REQ=requirements.txt; pip install -r "$REQ" alembic
     - |
       for app in mtt_scheduler enrollment_manager instructor_manager lessons_learned \
                  training_metrics curriculum_tracker offline_packager sharepoint_sync \
@@ -51,7 +51,6 @@ alembic-check:
         echo "--- Checking $app ---"
         APP=$app python3 -m alembic check || exit 1
       done
-  allow_failure: true
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
       when: always
@@ -63,7 +62,6 @@ sync-check:
   image: python:3.12-slim
   script:
     - python3 scripts/check_html_react_sync.py
-  allow_failure: true
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
       when: always

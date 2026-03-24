@@ -5,25 +5,21 @@ from __future__ import annotations
 import csv
 import io
 from contextlib import asynccontextmanager
-from datetime import date
 
 from fastapi import Depends, FastAPI, HTTPException, Query, status
 from fastapi.responses import StreamingResponse
+from shared.auth import verify_api_key
+from shared.factory import create_app
 from sqlalchemy.orm import Session
-
-from shared.middleware import SecurityHeadersMiddleware
 
 from .db import (
     COURSE_CATALOG,
     Certification,
     Instructor,
     TeachingHistory,
-    get_certified_instructors,
     get_coverage_matrix,
     get_db,
     get_expiring_certifications,
-    get_instructor_certifications,
-    get_instructor_load,
     init_db,
 )
 from .models import (
@@ -47,13 +43,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(
-    title="Instructor Certification Manager",
-    description="Track instructor certifications, teaching history, and course coverage for MSS Training.",
-    version="1.0.0",
-    lifespan=lifespan,
-)
-app.add_middleware(SecurityHeadersMiddleware)
+app = create_app(title="Instructor Certification Manager", version="1.0.0", lifespan=lifespan)
 
 
 # ---------------------------------------------------------------------------
@@ -67,7 +57,11 @@ def health():
 # ---------------------------------------------------------------------------
 # Instructors
 # ---------------------------------------------------------------------------
-@app.post("/instructors", response_model=InstructorResponse, status_code=status.HTTP_201_CREATED)
+@app.post(
+    "/instructors", response_model=InstructorResponse,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(verify_api_key)],
+)
 def create_instructor(payload: InstructorCreate, db: Session = Depends(get_db)):
     existing = db.query(Instructor).filter(Instructor.instructor_id == payload.instructor_id).first()
     if existing:
@@ -79,7 +73,7 @@ def create_instructor(payload: InstructorCreate, db: Session = Depends(get_db)):
     return InstructorResponse.model_validate(instructor)
 
 
-@app.get("/instructors", response_model=list[InstructorResponse])
+@app.get("/instructors", response_model=list[InstructorResponse], dependencies=[Depends(verify_api_key)])
 def list_instructors(
     unit: str | None = None,
     status_filter: str | None = Query(None, alias="status"),
@@ -96,7 +90,7 @@ def list_instructors(
     return [InstructorResponse.model_validate(i) for i in instructors]
 
 
-@app.get("/instructors/{instructor_id}", response_model=InstructorResponse)
+@app.get("/instructors/{instructor_id}", response_model=InstructorResponse, dependencies=[Depends(verify_api_key)])
 def get_instructor(instructor_id: str, db: Session = Depends(get_db)):
     instructor = db.query(Instructor).filter(Instructor.instructor_id == instructor_id).first()
     if not instructor:
@@ -107,7 +101,11 @@ def get_instructor(instructor_id: str, db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # Certifications
 # ---------------------------------------------------------------------------
-@app.post("/certifications", response_model=CertificationResponse, status_code=status.HTTP_201_CREATED)
+@app.post(
+    "/certifications", response_model=CertificationResponse,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(verify_api_key)],
+)
 def create_certification(payload: CertificationCreate, db: Session = Depends(get_db)):
     # Verify instructor exists
     instructor = db.query(Instructor).filter(Instructor.instructor_id == payload.instructor_id).first()
@@ -125,7 +123,7 @@ def create_certification(payload: CertificationCreate, db: Session = Depends(get
     return CertificationResponse.model_validate(cert)
 
 
-@app.get("/certifications", response_model=list[CertificationResponse])
+@app.get("/certifications", response_model=list[CertificationResponse], dependencies=[Depends(verify_api_key)])
 def list_certifications(
     instructor_id: str | None = None,
     course_id: str | None = None,
@@ -139,7 +137,7 @@ def list_certifications(
     return [CertificationResponse.model_validate(c) for c in q.all()]
 
 
-@app.get("/certifications/expiring", response_model=list[ExpirationAlert])
+@app.get("/certifications/expiring", response_model=list[ExpirationAlert], dependencies=[Depends(verify_api_key)])
 def expiring_certifications(
     days: int = Query(30, ge=1, le=365),
     db: Session = Depends(get_db),
@@ -151,7 +149,11 @@ def expiring_certifications(
 # ---------------------------------------------------------------------------
 # Teaching History
 # ---------------------------------------------------------------------------
-@app.post("/teaching-history", response_model=TeachingHistoryResponse, status_code=status.HTTP_201_CREATED)
+@app.post(
+    "/teaching-history", response_model=TeachingHistoryResponse,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(verify_api_key)],
+)
 def record_teaching(payload: TeachingHistoryCreate, db: Session = Depends(get_db)):
     # Verify instructor exists
     instructor = db.query(Instructor).filter(Instructor.instructor_id == payload.instructor_id).first()
@@ -177,7 +179,7 @@ def coverage_matrix(db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # Export
 # ---------------------------------------------------------------------------
-@app.get("/export/csv")
+@app.get("/export/csv", dependencies=[Depends(verify_api_key)])
 def export_csv(db: Session = Depends(get_db)):
     """Export all instructor certifications as a downloadable CSV."""
     certs = (

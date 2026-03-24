@@ -9,20 +9,17 @@ from datetime import UTC, datetime
 
 from fastapi import Depends, FastAPI, HTTPException, Query, status
 from fastapi.responses import StreamingResponse
+from shared.auth import verify_api_key
+from shared.factory import create_app
 from sqlalchemy.orm import Session
-
-from shared.middleware import SecurityHeadersMiddleware
 
 from .db import (
     ActionItem,
     Lesson,
     LessonComment,
     LessonTag,
-    SessionLocal,
-    get_action_item_status,
     get_cross_reference,
     get_db,
-    get_lessons_by_tag,
     get_pipeline_stats,
     get_tag_frequency,
     get_trend_analysis,
@@ -52,13 +49,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(
-    title="Lessons Learned Pipeline",
-    description="Structured lessons-learned pipeline with full tagging taxonomy (TM-40K).",
-    version="1.0.0",
-    lifespan=lifespan,
-)
-app.add_middleware(SecurityHeadersMiddleware)
+app = create_app(title="Lessons Learned Pipeline", version="1.0.0", lifespan=lifespan)
 
 
 # ---------------------------------------------------------------------------
@@ -72,7 +63,11 @@ def health():
 # ---------------------------------------------------------------------------
 # Lessons
 # ---------------------------------------------------------------------------
-@app.post("/lessons", response_model=LessonResponse, status_code=status.HTTP_201_CREATED)
+@app.post(
+    "/lessons", response_model=LessonResponse,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(verify_api_key)],
+)
 def create_lesson(payload: LessonCreate, db: Session = Depends(get_db)):
     lesson = Lesson(**payload.model_dump())
     db.add(lesson)
@@ -112,7 +107,11 @@ def get_lesson(lesson_id: int, db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # Tags
 # ---------------------------------------------------------------------------
-@app.post("/lessons/{lesson_id}/tags", response_model=LessonTagOut, status_code=status.HTTP_201_CREATED)
+@app.post(
+    "/lessons/{lesson_id}/tags", response_model=LessonTagOut,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(verify_api_key)],
+)
 def add_tag(lesson_id: int, payload: LessonTagCreate, db: Session = Depends(get_db)):
     lesson = db.query(Lesson).filter(Lesson.id == lesson_id).first()
     if not lesson:
@@ -149,7 +148,11 @@ def list_tags(lesson_id: int, db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # Action Items
 # ---------------------------------------------------------------------------
-@app.post("/lessons/{lesson_id}/actions", response_model=ActionItemResponse, status_code=status.HTTP_201_CREATED)
+@app.post(
+    "/lessons/{lesson_id}/actions", response_model=ActionItemResponse,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(verify_api_key)],
+)
 def add_action(lesson_id: int, payload: ActionItemCreate, db: Session = Depends(get_db)):
     lesson = db.query(Lesson).filter(Lesson.id == lesson_id).first()
     if not lesson:
@@ -173,7 +176,11 @@ def list_actions(lesson_id: int, db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # Comments
 # ---------------------------------------------------------------------------
-@app.post("/lessons/{lesson_id}/comments", response_model=CommentOut, status_code=status.HTTP_201_CREATED)
+@app.post(
+    "/lessons/{lesson_id}/comments", response_model=CommentOut,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(verify_api_key)],
+)
 def add_comment(lesson_id: int, payload: CommentCreate, db: Session = Depends(get_db)):
     lesson = db.query(Lesson).filter(Lesson.id == lesson_id).first()
     if not lesson:
@@ -229,7 +236,7 @@ def pipeline_stats(db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # Export
 # ---------------------------------------------------------------------------
-@app.get("/export/csv")
+@app.get("/export/csv", dependencies=[Depends(verify_api_key)])
 def export_csv(db: Session = Depends(get_db)):
     """Export all lessons with tags as a downloadable CSV."""
     lessons = db.query(Lesson).order_by(Lesson.submit_date.desc()).all()

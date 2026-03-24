@@ -1,7 +1,7 @@
 # TM-50M — ADVANCED MACHINE LEARNING ENGINEERING
 
 > **Forward:** TM-50M qualifies senior machine learning engineers to design, build, and lead production ML platform capability on MSS. This manual extends TM-40M into automated MLOps, advanced neural architectures, federated learning, real-time inference, ML security, and platform architecture leadership.
-> **Prereqs:** TM-40M, Machine Learning Engineer (required — Go evaluation on file). TM-40H (AI Engineer) recommended. Data Literacy Technical Reference (recommended).
+> **Prereqs:** TM-40M, Machine Learning Engineer (required — Go evaluation on file). TM-40H (AI Engineer) recommended. Data Literacy Technical Reference (recommended); CONCEPTS_GUIDE_TM50M_ML_ENGINEER_ADVANCED (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: AUTOMATED MODEL DEPLOYMENT IS A PRIVILEGED CAPABILITY. Automated pipelines that promote model versions to production without human review are classified as high-risk automation under UDRA v1.1. Implementing this pattern without a documented, C2DAO-approved automation design and explicit mission owner sign-off constitutes an unauthorized production change. The senior MLE who designs the pipeline is accountable for every automated promotion it executes.**

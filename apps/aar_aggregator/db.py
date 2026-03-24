@@ -28,6 +28,14 @@ from sqlalchemy.orm import (
 )
 from sqlalchemy.types import JSON
 
+import sys
+from pathlib import Path as _Path
+_apps_dir = str(_Path(__file__).resolve().parent.parent)
+if _apps_dir not in sys.path:
+    sys.path.insert(0, _apps_dir)
+
+from shared.audit_mixin import AuditMixin
+
 # ---------------------------------------------------------------------------
 # Database
 # ---------------------------------------------------------------------------
@@ -70,7 +78,7 @@ WFF_VALUES = [c.value for c in WFFCategory]
 # ---------------------------------------------------------------------------
 # ORM models
 # ---------------------------------------------------------------------------
-class AAR(Base):
+class AAR(Base, AuditMixin):
     __tablename__ = "aars"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -84,7 +92,6 @@ class AAR(Base):
     actual_execution = Column(Text, nullable=False)
     instructor_recommendations = Column(Text, nullable=True)
     submitted_by = Column(String(100), nullable=False)
-    created_at = Column(DateTime, default=lambda: datetime.now(UTC))
 
     sustains = relationship("SustainItem", back_populates="aar", cascade="all, delete-orphan")
     improves = relationship("ImproveItem", back_populates="aar", cascade="all, delete-orphan")

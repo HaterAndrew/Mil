@@ -10,11 +10,16 @@ independently of the CDP plumbing.
 
 import base64
 import json
+import os
 import socket
 import subprocess
 import time
 import urllib.request
 from pathlib import Path
+
+# Maximum decoded PDF size (100 MB). Base64 encodes ~33% overhead,
+# so the encoded string limit is ~133 MB.
+_MAX_PDF_BYTES = 100 * 1024 * 1024
 
 import websocket
 
@@ -28,7 +33,8 @@ def _free_port() -> int:
 
 def _wait_for_browser_ws(port: int, retries: int = 20) -> str:
     """Return the browser-level WebSocket URL from /json/version."""
-    for _ in range(retries):
+    last_err = None
+    for attempt in range(1, retries + 1):
         try:
             data = json.loads(
                 urllib.request.urlopen(
@@ -36,9 +42,12 @@ def _wait_for_browser_ws(port: int, retries: int = 20) -> str:
                 ).read()
             )
             return data["webSocketDebuggerUrl"]
-        except Exception:
+        except Exception as exc:
+            last_err = exc
             time.sleep(0.4)
-    raise RuntimeError(f"Chrome CDP not ready on port {port}")
+    raise RuntimeError(
+        f"Chrome CDP not ready on port {port} after {retries} attempts: {last_err}"
+    )
 
 
 def _send(ws, method: str, params: dict = None, cmd_id: int = 1,
@@ -81,18 +90,23 @@ def html_file_to_pdf(
         True on success, False on any error (error is printed to stdout).
     """
     port = _free_port()
+    chrome_args = [
+        chrome_binary,
+        f"--remote-debugging-port={port}",
+        "--headless=new",
+        "--disable-gpu",
+        "--disable-dev-shm-usage",
+        "--disable-extensions",
+        "--remote-allow-origins=*",
+        f"--user-data-dir=/tmp/chrome-pdf-{port}",
+    ]
+    # Only disable the Chrome sandbox when running in containerized environments
+    # (Docker, CI runners) where the kernel sandbox is unavailable.
+    # Set CHROME_NO_SANDBOX=1 to enable this flag; default is sandboxed.
+    if os.environ.get("CHROME_NO_SANDBOX") == "1":
+        chrome_args.append("--no-sandbox")
     proc = subprocess.Popen(
-        [
-            chrome_binary,
-            f"--remote-debugging-port={port}",
-            "--headless=new",
-            "--disable-gpu",
-            "--no-sandbox",
-            "--disable-dev-shm-usage",
-            "--disable-extensions",
-            "--remote-allow-origins=*",
-            f"--user-data-dir=/tmp/chrome-pdf-{port}",
-        ],
+        chrome_args,
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
     )
@@ -163,7 +177,15 @@ def html_file_to_pdf(
         finally:
             ws.close()
 
-        pdf_path.write_bytes(base64.b64decode(result["data"]))
+        b64_data = result["data"]
+        # Estimate decoded size: base64 inflates by ~4/3, so decoded ≈ len * 3/4
+        estimated_size = len(b64_data) * 3 // 4
+        if estimated_size > _MAX_PDF_BYTES:
+            raise ValueError(
+                f"PDF data too large ({estimated_size / (1024*1024):.1f} MB); "
+                f"limit is {_MAX_PDF_BYTES / (1024*1024):.0f} MB"
+            )
+        pdf_path.write_bytes(base64.b64decode(b64_data))
         return True
     except Exception as exc:
         import traceback

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { ErrorBoundary } from './ErrorBoundary'
 import usareurSvg from './assets/USAREUR_Insignia.svg'
 
 // Panel components — imported below
@@ -138,7 +139,11 @@ export default function App() {
 
   const panel = (id: PanelId) => (
     <div id={`panel-${id}`} className={`panel${activePanel === id ? ' active' : ''}`}>
-      {activePanel === id && getPanelContent(id)}
+      {activePanel === id && (
+        <ErrorBoundary key={activePanel}>
+          {getPanelContent(id)}
+        </ErrorBoundary>
+      )}
     </div>
   )
 

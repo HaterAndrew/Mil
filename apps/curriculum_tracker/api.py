@@ -13,14 +13,13 @@ from pathlib import Path
 
 from fastapi import Depends, FastAPI, HTTPException, Query, status
 from fastapi.responses import StreamingResponse
+from shared.auth import verify_api_key
+from shared.factory import create_app
 from sqlalchemy.orm import Session
-
-from shared.middleware import SecurityHeadersMiddleware
 
 from .db import (
     Document,
     ReviewCycle,
-    ChangeLog,
     get_db,
     get_document_history,
     get_freshness_report,
@@ -54,13 +53,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(
-    title="Curriculum Tracker",
-    description="Track curriculum document versions, review cycles, and content freshness.",
-    version="1.0.0",
-    lifespan=lifespan,
-)
-app.add_middleware(SecurityHeadersMiddleware)
+app = create_app(title="Curriculum Tracker", version="1.0.0", lifespan=lifespan)
 
 
 # ---------------------------------------------------------------------------
@@ -74,7 +67,7 @@ def health():
 # ---------------------------------------------------------------------------
 # Scan
 # ---------------------------------------------------------------------------
-@app.post("/scan", response_model=ScanResult)
+@app.post("/scan", response_model=ScanResult, dependencies=[Depends(verify_api_key)])
 def trigger_scan(db: Session = Depends(get_db)):
     """Scan maven_training/ directory, hash .md files, upsert documents."""
     counts = scan_directory(MAVEN_TRAINING_PATH, db)
@@ -122,7 +115,11 @@ def get_document(doc_id: int, db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # Reviews
 # ---------------------------------------------------------------------------
-@app.post("/reviews", response_model=ReviewCycleResponse, status_code=status.HTTP_201_CREATED)
+@app.post(
+    "/reviews", response_model=ReviewCycleResponse,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(verify_api_key)],
+)
 def create_review(payload: ReviewCycleCreate, db: Session = Depends(get_db)):
     # Verify document exists
     doc = db.query(Document).filter(Document.doc_id == payload.doc_id).first()
@@ -207,7 +204,7 @@ def review_summary(db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # Export
 # ---------------------------------------------------------------------------
-@app.get("/export/csv")
+@app.get("/export/csv", dependencies=[Depends(verify_api_key)])
 def export_csv(
     doc_type: str | None = None,
     db: Session = Depends(get_db),

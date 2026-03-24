@@ -273,7 +273,7 @@ table {
   width: 100%;
   font-size: 9.5pt;
   margin: 0.12in 0;
-  page-break-inside: avoid;
+  page-break-inside: auto;
 }
 thead tr th {
   background: var(--navy);
@@ -321,7 +321,7 @@ pre {
   white-space: pre-wrap;
   word-break: break-word;
   overflow-wrap: anywhere;
-  page-break-inside: avoid;
+  page-break-inside: auto;
   margin: 0.1in 0;
   -webkit-print-color-adjust: exact;
   color-adjust: exact;

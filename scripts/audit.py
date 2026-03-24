@@ -110,6 +110,7 @@ STALE_PDF_PATTERNS = [
 
 # ── helpers ────────────────────────────────────────────────────────────────
 issues = []
+_skipped_files = 0  # files that failed to read during scanning
 
 def fail(category, msg, path=None, line=None):
     loc = ""
@@ -135,8 +136,11 @@ def scan_text(path, skip_dirs=("_archive", "_archive_pre_review", "pdf")):
         with open(p, encoding="utf-8", errors="replace") as fh:
             for i, line in enumerate(fh, 1):
                 yield i, line
-    except Exception:
-        pass
+    except Exception as exc:
+        global _skipped_files
+        _skipped_files += 1
+        rel = p.relative_to(ROOT) if p.is_absolute() else p
+        print(f"  WARN  could not read {rel}: {exc}")
 
 
 # ══════════════════════════════════════════════════════════════════════════
@@ -389,6 +393,8 @@ def main():
     check_syllabus_prereqs()
 
     print()
+    if _skipped_files:
+        print(f"  NOTE: {_skipped_files} file(s) could not be read and were skipped.\n")
     if not issues:
         print("✓  AUDIT PASSED — no issues found.")
         return 0

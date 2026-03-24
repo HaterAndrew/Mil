@@ -5,15 +5,13 @@ from __future__ import annotations
 from contextlib import asynccontextmanager
 
 from fastapi import Depends, FastAPI, HTTPException, Query, status
+from shared.auth import verify_api_key
+from shared.factory import create_app
 from sqlalchemy.orm import Session
-
-from shared.middleware import SecurityHeadersMiddleware
 
 from .db import (
     Goal,
     Milestone,
-    SessionLocal,
-    flag_overdue,
     generate_training_record,
     get_all_overdue,
     get_db,
@@ -26,8 +24,8 @@ from .models import (
     GoalCreate,
     GoalResponse,
     MilestoneCreate,
-    MilestoneResponse,
     MilestoneRecordItem,
+    MilestoneResponse,
     StalledSoldier,
     TrainingRecordOut,
 )
@@ -42,13 +40,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(
-    title="Progress Tracker",
-    description="Track individual training timelines, flag stalled progression, generate training records.",
-    version="1.0.0",
-    lifespan=lifespan,
-)
-app.add_middleware(SecurityHeadersMiddleware)
+app = create_app(title="Progress Tracker", version="1.0.0", lifespan=lifespan)
 
 
 # ---------------------------------------------------------------------------
@@ -62,7 +54,11 @@ def health():
 # ---------------------------------------------------------------------------
 # Milestones
 # ---------------------------------------------------------------------------
-@app.post("/milestones", response_model=MilestoneResponse, status_code=status.HTTP_201_CREATED)
+@app.post(
+    "/milestones", response_model=MilestoneResponse,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(verify_api_key)],
+)
 def create_milestone(payload: MilestoneCreate, db: Session = Depends(get_db)):
     milestone = Milestone(
         dodid=payload.dodid,
@@ -159,7 +155,11 @@ def training_record(dodid: str, db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # Goals
 # ---------------------------------------------------------------------------
-@app.post("/goals", response_model=GoalResponse, status_code=status.HTTP_201_CREATED)
+@app.post(
+    "/goals", response_model=GoalResponse,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(verify_api_key)],
+)
 def create_goal(payload: GoalCreate, db: Session = Depends(get_db)):
     goal = Goal(
         dodid=payload.dodid,
@@ -171,7 +171,8 @@ def create_goal(payload: GoalCreate, db: Session = Depends(get_db)):
     db.refresh(goal)
 
     # Check eligibility via readiness_tracker
-    from readiness_tracker.db import SessionLocal as RTSession, check_eligibility
+    from readiness_tracker.db import SessionLocal as RTSession
+    from readiness_tracker.db import check_eligibility
     rt_db = RTSession()
     try:
         eligible, missing = check_eligibility(goal.dodid, goal.target_course, rt_db)

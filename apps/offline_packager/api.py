@@ -7,11 +7,12 @@ from pathlib import Path
 
 from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.responses import Response
+from shared.auth import verify_api_key
+from shared.factory import create_app
 from sqlalchemy.orm import Session
 
-from shared.middleware import SecurityHeadersMiddleware
-
-from .db import PackageRecord as PackageRecordRow, get_db, init_db
+from .db import PackageRecord as PackageRecordRow
+from .db import get_db, init_db
 from .models import (
     InventoryCategory,
     InventoryResponse,
@@ -20,11 +21,11 @@ from .models import (
     PackageSummary,
 )
 from .packager import (
+    PREREQ_CHAIN,
     build_package,
     discover_content,
     estimate_size,
     get_all_tms_with_prereqs,
-    PREREQ_CHAIN,
     resolve_dependencies,
 )
 
@@ -42,13 +43,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(
-    title="Offline Package Builder",
-    description="Build self-contained ZIP packages of MSS training content for DDIL environments.",
-    version="1.0.0",
-    lifespan=lifespan,
-)
-app.add_middleware(SecurityHeadersMiddleware)
+app = create_app(title="Offline Package Builder", version="1.0.0", lifespan=lifespan)
 
 
 # ---------------------------------------------------------------------------
@@ -94,7 +89,7 @@ def get_inventory():
 # ---------------------------------------------------------------------------
 # Preview
 # ---------------------------------------------------------------------------
-@app.post("/preview", response_model=PackageSummary)
+@app.post("/preview", response_model=PackageSummary, dependencies=[Depends(verify_api_key)])
 def preview_package(request: PackageRequest):
     """Preview what a package will contain without building it."""
     if not MAVEN_TRAINING_PATH.is_dir():
@@ -128,7 +123,7 @@ def preview_package(request: PackageRequest):
 # ---------------------------------------------------------------------------
 # Build
 # ---------------------------------------------------------------------------
-@app.post("/packages", status_code=201)
+@app.post("/packages", status_code=201, dependencies=[Depends(verify_api_key)])
 def build(request: PackageRequest, db: Session = Depends(get_db)):
     """Build an offline package and return it as a ZIP download."""
     if not MAVEN_TRAINING_PATH.is_dir():

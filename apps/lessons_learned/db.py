@@ -26,6 +26,14 @@ from sqlalchemy.orm import (
     sessionmaker,
 )
 
+import sys
+from pathlib import Path as _Path
+_apps_dir = str(_Path(__file__).resolve().parent.parent)
+if _apps_dir not in sys.path:
+    sys.path.insert(0, _apps_dir)
+
+from shared.audit_mixin import AuditMixin
+
 # ---------------------------------------------------------------------------
 # Database path — sits next to this file; *.db is gitignored
 # ---------------------------------------------------------------------------
@@ -53,7 +61,7 @@ class Base(DeclarativeBase):
 # ---------------------------------------------------------------------------
 # ORM models
 # ---------------------------------------------------------------------------
-class Lesson(Base):
+class Lesson(Base, AuditMixin):
     __tablename__ = "lessons"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -65,7 +73,6 @@ class Lesson(Base):
     submit_date = Column(Date, nullable=False)
     status = Column(String(20), nullable=False, default="NEW")  # NEW/VALIDATED/ACTIONABLE/IMPLEMENTED/ARCHIVED
     priority = Column(String(10), nullable=False, default="MEDIUM")  # HIGH/MEDIUM/LOW
-    created_at = Column(DateTime, default=lambda: datetime.now(UTC))
 
     tags = relationship("LessonTag", back_populates="lesson", cascade="all, delete-orphan")
     action_items = relationship("ActionItem", back_populates="lesson", cascade="all, delete-orphan")

@@ -2699,7 +2699,7 @@ MSS applications accrue technical debt. Left unmanaged, debt degrades platform r
 
 | ID | Category | Description | Impact | Est. Effort | Target Qtr | Status |
 |----|----------|-------------|--------|-------------|------------|--------|
-| TD-001 | Security | pip-audit reports CVE-2024-XXXX in requests==2.28 | Medium | 0.5 days | 26Q2 | Open |
+| TD-001 | Security | pip-audit reports CVE-2024-34069 in werkzeug<3.0.6 (debugger RCE) | Medium | 0.5 days | 26Q2 | Open |
 | TD-002 | Performance | Unit search endpoint does full scan on each call | High | 2 days | 26Q2 | In Progress |
 
 ### 8-6. Platform Governance

@@ -732,6 +732,62 @@ Prompt quality directly determines AIP output quality. KMs are responsible for p
 
 ---
 
+### 5-6a. Document Intelligence for Knowledge Extraction (GA Q1 2026)
+
+**BLUF:** AIP Document Intelligence — generally available as of Q1 2026 — automates the document parsing, chunking, and embedding pipeline that KMs previously configured manually or coordinated with AI engineers (TM-40H) to build. Document Intelligence allows KMs to ingest document collections into the knowledge repository with structured, searchable, AI-retrievable content without custom code.
+
+**What Document Intelligence provides to KMs:**
+
+| Capability | KM Application |
+|---|---|
+| Automated document parsing | Extract text from uploaded AARs, SOPs, doctrine PDFs, exercise reports, and partner nation documents without manual conversion |
+| Configurable chunking | Split extracted text into coherent passages that align with knowledge retrieval needs — chapter-level for SOPs, observation-level for AARs |
+| Platform-managed embedding | Embed document chunks for semantic similarity search without sourcing, maintaining, or validating a custom embedding model |
+| Integrated retrieval | AIP Logic workflows (Sections 5-3 and 5-4) and Agent Studio agents can query Document Intelligence directly for relevant passages |
+
+**Impact on KM knowledge workflows:**
+
+Document Intelligence changes the document ingestion phase of the lessons learned pipeline (Chapter 4) and the AIP-assisted knowledge workflows in this chapter. Previously, ingesting an unstructured document into the knowledge repository required either (a) manual extraction by a KM or (b) coordination with a TM-40H AI engineer to build a custom parsing and embedding pipeline. Document Intelligence reduces this to a configuration task.
+
+**Updated document ingestion pattern:**
+
+```
+DOCUMENT SOURCE (CALL report, exercise AAR, doctrine PDF)
+        |
+        v
+UPLOAD TO FOUNDRY FILES
+        |
+        v
+AIP DOCUMENT INTELLIGENCE
+  |- Parse document into structured text
+  |- Chunk text into coherent passages
+  |- Embed passages for semantic retrieval
+  |- Index in managed vector store
+        |
+        v
+AIP LOGIC WORKFLOW (Section 5-3 Summarization / Section 5-5 Tagging)
+  |- Retrieve relevant chunks from Document Intelligence
+  |- Summarize, extract lessons, suggest tags
+  |- Create Draft Lesson objects with status = Draft, requiresReview = true
+        |
+        v
+KM REVIEW QUEUE (unchanged — KM validates all extracted content)
+```
+
+**Configuration guidance:**
+
+1. Coordinate with the MSS platform team to confirm Document Intelligence is activated on your enrollment.
+2. Upload document collections to a designated Foundry Files location (one per knowledge domain recommended).
+3. Configure Document Intelligence to index the target file collections. Select chunking strategy appropriate to document type: paragraph-level for AARs (captures individual observations), section-level for SOPs (preserves procedural context).
+4. Update existing AIP Logic summarization workflows (Section 5-3) to use Document Intelligence as the retrieval source instead of raw file text injection.
+5. Update the Knowledge Q&A workflow (Section 5-4) to include Document Intelligence as a retrieval source alongside ontology object queries.
+
+> **NOTE:** Document Intelligence supplements — it does not replace — the structured knowledge ontology (Chapter 2). Parsed and embedded document chunks enable AI-assisted retrieval and summarization. Structured `Lesson`, `SOP`, and `TTP` objects in the Ontology remain the authoritative knowledge records. Document Intelligence feeds the pipeline; the Ontology stores the validated output. KMs must continue to review, validate, and publish extracted content as structured knowledge objects.
+
+> **CAUTION:** AIP-generated content from Document Intelligence retrieval requires the same human review standard defined in Section 5-2. Automated parsing does not equal validated knowledge. Every extracted lesson, summary, or tag suggestion must pass through the KM Review Queue before publication.
+
+---
+
 ## CHAPTER 6 — SEARCH AND DISCOVERY SYSTEMS
 
 > **NOTE — Palantir Developers reference:** *Building with Palantir AIP: Semantic Search* — Covers the semantic search capabilities within Palantir AIP that form the foundation of knowledge retrieval applications. Review before building the AIP Q&A widget in Section 6-6, as semantic search is the underlying retrieval mechanism. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
@@ -759,6 +815,47 @@ MSS provides multiple tools for knowledge discovery. Each serves a different sea
 | AIP Q&A (Chapter 5) | Natural language question answering | Users who want an answer, not a list of documents |
 
 A complete knowledge discovery system uses all five modalities. Users approach knowledge with different questions; design for the full range.
+
+---
+
+### 6-2a. Core Object Views (GA February 2026)
+
+**BLUF:** Core Object Views — generally available as of February 2026 — provide standardized, platform-managed views for browsing and exploring Ontology objects. Core Object Views give KMs a consistent, out-of-the-box interface for knowledge browsing and exploration without building custom Workshop applications for every Object Type.
+
+**What Core Object Views provide:**
+
+| Capability | KM Application |
+|---|---|
+| Standard object detail view | Consistent display of object properties, linked objects, and action buttons across all knowledge Object Types — no custom Workshop page required per type |
+| Configurable property layout | KMs define which properties appear, their display order, and grouping — applied platform-wide to every surface that renders the object |
+| Linked object navigation | One-click traversal from a Lesson to its source AAR, related TTPs, associated SOPs, and relevant SME profiles — the link chain from Section 6-3 rendered automatically |
+| Inline action execution | Users can execute configured Actions (flag for review, save to collection, suggest SOP update) directly from the object view without navigating to a separate application |
+| Consistent cross-application experience | The same object view renders in Workshop, Agent Studio responses, search results, and notification links — users learn one layout |
+
+**Impact on knowledge browser design:**
+
+Core Object Views change the build strategy for the knowledge browser described in Section 6-3 and the task in Section 6-6. Previously, KMs built custom detail views in Workshop for each knowledge Object Type. Core Object Views provide the detail view as a platform-managed component, reducing Workshop configuration effort and ensuring consistency.
+
+**Updated knowledge browser architecture:**
+
+| Component | Before Core Object Views | With Core Object Views |
+|---|---|---|
+| Results list (center panel) | Custom Workshop Object List widget | Custom Workshop Object List widget (unchanged) |
+| Detail view (right panel) | Custom Workshop property display, manually configured per Object Type | Core Object View — configure once per Object Type, rendered automatically |
+| Link chain navigation | Custom Link Explorer widgets, manually connected | Automatic linked object rendering in Core Object View |
+| Actions (flag, save, suggest update) | Custom Action buttons wired to each detail page | Actions configured in Core Object View, rendered inline |
+| Filter panel (left panel) | Custom Object Set Filter widgets | Custom Object Set Filter widgets (unchanged) |
+
+**Configuration guidance:**
+
+1. For each knowledge Object Type (`Lesson`, `AAR`, `SOP`, `TTP`, `ExpertiseProfile`), configure a Core Object View in the Ontology Manager.
+2. Define the property layout: group properties by function (identification, content, metadata, governance). Place the most-used properties at the top.
+3. Configure the linked objects section: prioritize the Lesson-AAR-Exercise-TTP-SOP link chain. Display linked objects in the order users most commonly traverse them.
+4. Register Actions on each Core Object View: "Flag for Review," "Save to Unit Collection," and type-specific actions (e.g., "Suggest SOP Update" on Lesson views).
+5. Test the Core Object View by navigating to a published object from multiple surfaces — Workshop, search results, Agent Studio response links — and confirm consistent rendering.
+6. Update the knowledge browser application (Section 6-6) to use Core Object Views for the detail panel instead of custom property display widgets. Retain the custom filter panel and results list.
+
+> **NOTE:** Core Object Views do not replace the Workshop knowledge browser application. The browser's filter panel, results list layout, and AIP Q&A integration remain custom Workshop components. Core Object Views replace the per-Object-Type detail panel, reducing maintenance and ensuring that every surface where a knowledge object appears renders the same view. Design the Core Object View as the single source of truth for how a knowledge object is displayed.
 
 ---
 
@@ -1493,6 +1590,8 @@ Return JSON with fields: assessment (Duplicate / Near-Duplicate / Distinct), con
 
 **Combined Resolve.** A semi-annual USAREUR-AF-hosted multinational exercise series that generates a large volume of AAR data, lessons learned, and TTPs. A primary driver of knowledge capture operations for USAREUR-AF KMs.
 
+**Core Object Views.** A platform-managed standard view (GA February 2026) for browsing and exploring Ontology objects. Provides consistent object detail display, linked object navigation, and inline action execution across all Foundry surfaces. See Section 6-2a.
+
 **Contour.** Foundry's multi-dimensional analysis tool. Used by KMs for lesson pattern analysis, coverage gap identification, and cross-exercise trend analysis.
 
 **Controlled Vocabulary.** A defined set of allowed values for a tag or classification field. Controlled vocabularies enforce consistent tagging, which is the foundation of reliable knowledge search.
@@ -1500,6 +1599,8 @@ Return JSON with fields: assessment (Duplicate / Near-Duplicate / Distinct), con
 **Defender Europe.** A U.S. Army Europe-led exercise series involving large-scale logistics and force projection across the European AOR. Generates exercise-specific lessons in sustainment, transportation, and C2.
 
 **Deduplication.** The process of identifying and managing duplicate or near-duplicate knowledge objects. Duplicates are suppressed, not deleted; near-duplicates are flagged for KM review.
+
+**Document Intelligence (AIP).** A managed Foundry service (GA Q1 2026) that extracts text from uploaded documents, chunks it into semantically coherent passages, embeds passages using a platform-managed model, and provides similarity-based retrieval for AIP Logic and Agent Studio workflows. Enables KMs to ingest document collections without custom code. See Section 5-6a.
 
 **Domain Owner.** The individual accountable for the quality, currency, and accuracy of knowledge in a defined knowledge domain. Domain ownership is a governance requirement under UDRA v1.1.
 

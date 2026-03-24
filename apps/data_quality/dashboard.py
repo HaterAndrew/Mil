@@ -49,6 +49,7 @@ from apps.data_quality.models import (
     PipelineStatus,
     AlertSeverity,
 )
+from apps.shared.sanitize import safe_html
 
 # ---------------------------------------------------------------------------
 # Page config & branding
@@ -89,19 +90,19 @@ SEVERITY_COLORS = {
 def _status_badge(status: str) -> str:
     """Return an HTML badge span for a status value."""
     color = STATUS_COLORS.get(status, GRAY_400)
-    return f'<span style="background:{color};color:#fff;padding:2px 10px;border-radius:3px;font-size:12px;font-weight:bold;letter-spacing:0.5px">{status}</span>'
+    return f'<span style="background:{color};color:#fff;padding:2px 10px;border-radius:3px;font-size:12px;font-weight:bold;letter-spacing:0.5px">{safe_html(status)}</span>'
 
 
 def _severity_badge(severity: str) -> str:
     """Return an HTML badge span for alert severity."""
     color = SEVERITY_COLORS.get(severity, GRAY_400)
-    return f'<span style="background:{color};color:#fff;padding:2px 10px;border-radius:3px;font-size:11px;font-weight:bold">{severity}</span>'
+    return f'<span style="background:{color};color:#fff;padding:2px 10px;border-radius:3px;font-size:11px;font-weight:bold">{safe_html(severity)}</span>'
 
 
 def _metric_badge(status: str) -> str:
     """Return an HTML badge span for metric status."""
     color = METRIC_STATUS_COLORS.get(status, GRAY_400)
-    return f'<span style="background:{color};color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:bold">{status}</span>'
+    return f'<span style="background:{color};color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:bold">{safe_html(status)}</span>'
 
 
 # ---------------------------------------------------------------------------
@@ -162,7 +163,7 @@ if page == "Pipeline Overview":
                 h = healths[idx]
                 with col:
                     st.markdown(
-                        f"### {h.name} {_status_badge(h.overall_status.value)}",
+                        f"### {safe_html(h.name)} {_status_badge(h.overall_status.value)}",
                         unsafe_allow_html=True,
                     )
                     st.caption(f"Uptime: {h.uptime_pct}% | Avg latency: {h.avg_latency_ms} ms")
@@ -201,7 +202,7 @@ if page == "Pipeline Overview":
                     # Mini metric summary
                     if h.metrics_summary:
                         badges = " ".join(
-                            f"{mt}: {_metric_badge(info['status'])}"
+                            f"{safe_html(mt)}: {_metric_badge(info['status'])}"
                             for mt, info in h.metrics_summary.items()
                         )
                         st.markdown(badges, unsafe_allow_html=True)
@@ -231,11 +232,11 @@ elif page == "Pipeline Detail":
         if health and pipe:
             st.markdown(
                 f"**Status:** {_status_badge(health.overall_status.value)} &nbsp; "
-                f"**Owner:** {pipe.owner} &nbsp; "
-                f"**Schedule:** {pipe.schedule}",
+                f"**Owner:** {safe_html(pipe.owner)} &nbsp; "
+                f"**Schedule:** {safe_html(pipe.schedule)}",
                 unsafe_allow_html=True,
             )
-            st.caption(f"{pipe.source_system} -> {pipe.target_system} | {pipe.description}")
+            st.caption(f"{safe_html(pipe.source_system)} -> {safe_html(pipe.target_system)} | {safe_html(pipe.description or '')}")
 
             c1, c2, c3 = st.columns(3)
             c1.metric("Uptime", f"{health.uptime_pct}%")
@@ -287,10 +288,15 @@ elif page == "Pipeline Detail":
                 st.markdown("---")
                 st.subheader("Recent Alerts")
                 for a in alerts[:10]:
+                    ts_display = (
+                        a['timestamp'].strftime('%d %b %H:%MZ')
+                        if isinstance(a['timestamp'], datetime)
+                        else safe_html(str(a['timestamp']))
+                    )
                     st.markdown(
-                        f"{_severity_badge(a['severity'])} **{a['metric_type']}** "
-                        f"— value: {a['value']}, threshold: {a['threshold']} "
-                        f"({a['timestamp'].strftime('%d %b %H:%MZ') if isinstance(a['timestamp'], datetime) else a['timestamp']})",
+                        f"{_severity_badge(a['severity'])} **{safe_html(str(a['metric_type']))}** "
+                        f"— value: {safe_html(str(a['value']))}, threshold: {safe_html(str(a['threshold']))} "
+                        f"({ts_display})",
                         unsafe_allow_html=True,
                     )
 
@@ -329,14 +335,14 @@ elif page == "Alert Center":
                 with ac1:
                     st.markdown(_severity_badge(a["severity"]), unsafe_allow_html=True)
                 with ac2:
-                    st.markdown(f"**{a['pipeline_name']}** — {a['metric_type']}")
+                    st.markdown(f"**{safe_html(str(a['pipeline_name']))}** — {safe_html(str(a['metric_type']))}")
                 with ac3:
                     ts_str = (
                         a["timestamp"].strftime("%d %b %Y %H:%MZ")
                         if isinstance(a["timestamp"], datetime)
-                        else str(a["timestamp"])
+                        else safe_html(str(a["timestamp"]))
                     )
-                    st.markdown(f"Value: **{a['value']}** (threshold: {a['threshold']}) | {ts_str}")
+                    st.markdown(f"Value: **{safe_html(str(a['value']))}** (threshold: {safe_html(str(a['threshold']))}) | {ts_str}")
                 with ac4:
                     if st.button("Acknowledge", key=f"ack_{a['id']}"):
                         with get_db() as db:
@@ -527,10 +533,10 @@ elif page == "Pipeline Manager":
         st.info("No pipelines registered.")
     else:
         for p in pipes:
-            with st.expander(f"{p.name} — {p.status}"):
-                st.markdown(f"**Owner:** {p.owner} | **Schedule:** {p.schedule}")
-                st.markdown(f"**Source:** {p.source_system} | **Target:** {p.target_system}")
-                st.markdown(f"**Description:** {p.description or 'N/A'}")
+            with st.expander(f"{safe_html(p.name)} — {safe_html(p.status)}"):
+                st.markdown(f"**Owner:** {safe_html(p.owner)} | **Schedule:** {safe_html(p.schedule)}")
+                st.markdown(f"**Source:** {safe_html(p.source_system)} | **Target:** {safe_html(p.target_system)}")
+                st.markdown(f"**Description:** {safe_html(p.description or 'N/A')}")
                 if p.last_run:
                     st.caption(f"Last run: {p.last_run} | Last success: {p.last_success or 'Never'}")
 

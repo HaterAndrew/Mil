@@ -640,6 +640,71 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 
 ---
 
+## SECTION 4B — ARCHITECTURE PUBLICATIONS (PDF)
+
+Standalone reference material. These are published PDF outputs of the CDA, EA, GDAP, MIM, and Ontology architecture documents. No prerequisites — not part of the TM course sequence. Source markdown lives in `doctrine/` subdirectories (cross-referenced in Section 0B).
+
+### CDA — Cognitive Data Architecture
+
+| PDF | Type | Description |
+|---|---|---|
+| ARCH_CDA_OVERVIEW.pdf | [SUPP] | CDA enterprise index and user taxonomy |
+| ARCH_CDA_DOCTRINE_OVERVIEW.pdf | [SUPP] | Doctrine-driven development overview |
+| ARCH_CDA_DOCTRINE_AGENT.pdf | [SUPP] | Doctrine agent architecture |
+| ARCH_CDA_AVT25_ASSESSMENT.pdf | [SUPP] | AVT-25 assessment framework |
+| ARCH_CDA_IDENTITY_VS_CLASSIFICATION.pdf | [SUPP] | Identity vs classification design patterns |
+| ARCH_CDA_CONSTRAINTS_AND_DIRECTIVES.pdf | [SUPP] | 12 operational constraints and directives |
+| ARCH_CDA_CANON_ADP_CROSSWALK.pdf | [CANON] | ADP crosswalk for all specialist tracks |
+| ARCH_CDA_CANON_CONDITIONS.pdf | [CANON] | Conditions, indicators, and thresholds |
+| ARCH_CDA_CANON_ENGAGEMENT.pdf | [CANON] | Engagement canon |
+| ARCH_CDA_CANON_INFORMATION.pdf | [CANON] | Information canon |
+| ARCH_CDA_AGENTS_OVERVIEW.pdf | [SUPP] | Agents subsystem index and hierarchy diagram |
+| ARCH_CDA_AGENTS_CORE_PRINCIPLES.pdf | [SUPP] | 12 bedrock principles: Stability Stack, Four-Layer Architecture, anti-patterns |
+| ARCH_CDA_AGENTS_ONTOLOGY_ENGINEER.pdf | [SUPP] | Ontology engineer agent specialization (RDF, OWL2, SHACL, SPARQL) |
+| ARCH_CDA_AGENTS_ENTITY_RESOLUTION.pdf | [SUPP] | 9-stage entity resolution pipeline |
+| ARCH_CDA_AGENTS_INGESTION_INTEGRATION.pdf | [SUPP] | Five-Stage Ingestion Pattern, ELT, Dagster DAG |
+
+### Enterprise Architecture
+
+| PDF | Type | Description |
+|---|---|---|
+| ARCH_EA_00_REFERENCE_CARD.pdf | [EA] | EA quick-reference card |
+| ARCH_EA_01_FOUNDATION.pdf | [EA] | EA foundational concepts |
+| ARCH_EA_02_SCHOOLS_OF_THOUGHT.pdf | [EA] | EA schools of thought |
+| ARCH_EA_03_ARTIFACTS_AND_VIEWS.pdf | [EA] | EA artifacts and views |
+| ARCH_EA_04_GOVERNANCE.pdf | [EA] | EA governance |
+| ARCH_EA_05_MILITARY_APPLICATION.pdf | [EA] | EA military application |
+
+### GDAP — Global Doctrine Alignment Platform
+
+| PDF | Type | Description |
+|---|---|---|
+| ARCH_GDAP_OVERVIEW.pdf | [SUPP] | Platform quickstart, LlamaIndex retrieval stack, API endpoints |
+| ARCH_GDAP_VISION.pdf | [SUPP] | Full vision: 10 use-case domains, 20 pipeline steps, DVEE |
+| ARCH_GDAP_PERSISTENCE_STRATEGY.pdf | [SUPP] | DuckDB canonical truth, LlamaIndex serving artifacts, versioning policy |
+| ARCH_GDAP_ACCEPTANCE_TESTS.pdf | [SUPP] | P0/P1/P2 release gates across 9 sections |
+| ARCH_GDAP_ADR_0001_LLAMAINDEX.pdf | [SUPP] | ADR-0001: DuckDB/LlamaIndex boundary rules |
+
+### MIM — MIP Information Model
+
+| PDF | Type | Description |
+|---|---|---|
+| ARCH_MIM_OVERVIEW.pdf | [SUPP] | Toolchain: HTML/XSD parsers, Foundry backend, repo structure |
+| ARCH_MIM_STANDARD.pdf | [SUPP] | MIM semantic model: namespaces, types, roles, design principles |
+| ARCH_MIM_STATE.pdf | [SUPP] | Project snapshot: maturity, passing/failing tests, priorities |
+| ARCH_MIM_ACADEMICS.pdf | [SUPP] | NATO interoperability, MIM-Foundry alignment, UML-OT mapping |
+| ARCH_MIM_DECISION_RECORDS.pdf | [SUPP] | ADR structure: repo-level and per-package decisions |
+| ARCH_MIM_FUTURE_CLASSES.pdf | [SUPP] | Planned packages: mim-studio, mim-ui, adapters, backends, mim-sdk |
+| ARCH_MIM_ONTOLOGY_DOCS.pdf | [SUPP] | OSDK Maker Package TypeScript API |
+
+### Ontology
+
+| PDF | Type | Description |
+|---|---|---|
+| ARCH_ONTOLOGY_DESIGN_PRINCIPLES.pdf | [SUPP] | DDD, DRY, Open/Closed, PECS, Composition; Foundry-specific |
+
+---
+
 ## SECTION 5 — DOCTRINE & STANDARDS
 
 | File | Type | Referenced By |
@@ -669,10 +734,10 @@ Bedrock → specialization hierarchy. Core Principles govern; specialized docs e
 | CURRICULUM_MAINTENANCE_SOP.md | Maintenance SOP + Platform Monitoring procedure (Sec 2A) + Semi-Annual Deep Review (Sec 5A) | Scope: TM-10 through TM-40O |
 | ENROLLMENT_SOP.md | Enrollment process + prereq verification + Training Records Requirements section (minimum data standard, retention, query process) | All TMs; TM-40J/K prereq = TM-30 required |
 | COMMANDERS_GUIDE_MSS_TRAINING.md | Commander/XO reference: who trains on what, timelines, CDR responsibilities, throughput risk | → ENROLLMENT_SOP; → MTP; all TM levels |
-| TM10_LESSON_PLANS.md | Lesson plan: TM-10 | TM-10 Ch 1–8, DATA_LITERACY_technical_reference Ch 1 |
-| TM20_LESSON_PLAN_OUTLINES.md | Lesson plan: TM-20 | TM-20 Ch 2–5, NAMING_AND_GOVERNANCE_STANDARDS |
-| TM30_LESSON_PLAN_OUTLINES.md | Lesson plan: TM-30 | TM-30 Ch 2–9, Standards Ch 3–4 |
-| TM40_SPECIALIST_LESSON_PLAN_OUTLINES.md | Lesson plans: TM-40G–O | All specialist tracks G–O; WFF A–F managed separately with WFF proponents |
+| lesson_plans/TM10/TM10_LESSON_PLANS.md | Lesson plan: TM-10 | TM-10 Ch 1–8, DATA_LITERACY_technical_reference Ch 1 |
+| lesson_plans/TM20_LESSON_PLAN_OUTLINES.md | Lesson plan: TM-20 | TM-20 Ch 2–5, NAMING_AND_GOVERNANCE_STANDARDS |
+| lesson_plans/TM30_LESSON_PLAN_OUTLINES.md | Lesson plan: TM-30 | TM-30 Ch 2–9, Standards Ch 3–4 |
+| lesson_plans/TM40_SPECIALIST_LESSON_PLAN_OUTLINES.md | Lesson plans: TM-40G–O | All specialist tracks G–O; WFF A–F managed separately with WFF proponents |
 | POLICY_LETTER.md | Training policy letter | All tracks; command direction and training requirements by echelon |
 | AAR_TEMPLATE.md | After Action Review template | All training events; standard format for post-course review |
 | lesson_plans/LP_TEMPLATE.md | Standard lesson plan template | Blank template; TLO, Key Delivery Notes, Student Activity, Assessment blocks |
@@ -1498,4 +1563,4 @@ The analytics suite (15 Streamlit micro-apps + portal + shared theme) is integra
 | 220 | pdf/.manifest.json | 11 source hashes updated | N/A |
 | 221 | pdf/pdf_manifest.sha256 | 237 entries regenerated | N/A |
 | 222 | DEPENDENCY_MAP.html | Regenerated (144 nodes, 337 edges) | N/A |
-| 223 | handout_350_alignment.pdf | NEW — AR 350-1 alignment map (2-page PDF): 11 regulatory areas mapped to MSS components, SAT artifact coverage table, 3 identified gaps with mitigations, compliance posture summary | AR 350-1, TR 350-70, TP 350-70-14, ADP 7-0, FM 7-0 |
+| 223 | pdf/AR_350_1_ALIGNMENT_MAP.pdf | AR 350-1 alignment map (PDF): 11 regulatory areas mapped to MSS components, SAT artifact coverage table, 3 identified gaps with mitigations, compliance posture summary | AR 350-1, TR 350-70, TP 350-70-14, ADP 7-0, FM 7-0 |

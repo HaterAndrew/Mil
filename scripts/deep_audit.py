@@ -59,6 +59,8 @@ SPEC_TRACKS = {
     "40G": "orsa",
     "40H": "ai_engineer",
     "40M": "ml_engineer",
+    "40N": "ux_designer",
+    "40O": "platform_engineer",
     "40J": "program_manager",
     "40K": "knowledge_manager",
     "40L": "software_engineer",
@@ -67,6 +69,8 @@ ADV_TRACKS = {
     "50G": "orsa_advanced",
     "50H": "ai_engineer_advanced",
     "50M": "ml_engineer_advanced",
+    "50N": "ux_designer_advanced",
+    "50O": "platform_engineer_advanced",
     "50J": "program_manager_advanced",
     "50K": "knowledge_manager_advanced",
     "50L": "software_engineer_advanced",
@@ -668,17 +672,17 @@ def check_J():
     if idx.exists():
         text = read_text(idx)
         wff_refs  = len(set(re.findall(r'tm-40[a-f]', text, re.IGNORECASE)))
-        spec_refs = len(set(re.findall(r'tm-40[g-m]', text, re.IGNORECASE)))
-        adv_refs  = len(set(re.findall(r'tm-50[g-m]', text, re.IGNORECASE)))
+        spec_refs = len(set(re.findall(r'tm-40[g-o]', text, re.IGNORECASE)))
+        adv_refs  = len(set(re.findall(r'tm-50[g-o]', text, re.IGNORECASE)))
         if wff_refs < 6:
             warn("J:CARD-COUNT",
                  f"mss_info_app/index.html: only {wff_refs}/6 WFF track codes (TM-40A–F) found")
-        if spec_refs < 6:
+        if spec_refs < 8:
             warn("J:CARD-COUNT",
-                 f"mss_info_app/index.html: only {spec_refs}/6 specialist track codes (TM-40G–M) found")
-        if adv_refs < 6:
+                 f"mss_info_app/index.html: only {spec_refs}/8 specialist track codes (TM-40G–O) found")
+        if adv_refs < 8:
             warn("J:CARD-COUNT",
-                 f"mss_info_app/index.html: only {adv_refs}/6 advanced track codes (TM-50G–M) found")
+                 f"mss_info_app/index.html: only {adv_refs}/8 advanced track codes (TM-50G–O) found")
 
         # All TM-40 tracks (WFF + Specialist) require TM-30
         # Flag any WFF card that shows TM-20 prereq without TM-30
@@ -792,9 +796,9 @@ def check_L():
 # Matches any TM-XX reference that is definitively NOT a valid track code
 _INVALID_TRACK_RX = re.compile(
     r"\bTM[-\s]?("
-    r"40[N-Zn-z]"        # TM-40 beyond M
+    r"40[P-Zp-z]"        # TM-40 beyond O
     r"|50[A-Fa-f]"       # TM-50A–F (retired)
-    r"|50[N-Zn-z]"       # TM-50 beyond M
+    r"|50[P-Zp-z]"       # TM-50 beyond O
     r"|[6-9]\d[A-Z]?"    # TM-60+ (hypothetical future)
     r")\b",
     re.IGNORECASE,

@@ -6,9 +6,9 @@ from contextlib import asynccontextmanager
 from datetime import date
 
 from fastapi import Depends, FastAPI, HTTPException, Query, status
+from shared.auth import verify_api_key
+from shared.factory import create_app
 from sqlalchemy.orm import Session
-
-from shared.middleware import SecurityHeadersMiddleware
 
 from .db import (
     Enrollment,
@@ -16,11 +16,9 @@ from .db import (
     Instructor,
     Venue,
     check_instructor_conflicts,
-    event_instructors,
     get_calendar_data,
     get_capacity_utilization,
     get_db,
-    get_location_summary,
     init_db,
 )
 from .models import (
@@ -45,13 +43,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(
-    title="MTT Scheduler",
-    description="Mobile Training Team scheduling for USAREUR-AF theater-wide MSS training events.",
-    version="1.0.0",
-    lifespan=lifespan,
-)
-app.add_middleware(SecurityHeadersMiddleware)
+app = create_app(title="MTT Scheduler", version="1.0.0", lifespan=lifespan)
 
 
 # ---------------------------------------------------------------------------
@@ -65,7 +57,11 @@ def health():
 # ---------------------------------------------------------------------------
 # Events CRUD
 # ---------------------------------------------------------------------------
-@app.post("/events", response_model=EventResponse, status_code=status.HTTP_201_CREATED)
+@app.post(
+    "/events", response_model=EventResponse,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(verify_api_key)],
+)
 def create_event(payload: EventCreate, db: Session = Depends(get_db)):
     ev = Event(
         name=payload.name,
@@ -119,7 +115,7 @@ def get_event(event_id: int, db: Session = Depends(get_db)):
     return resp
 
 
-@app.put("/events/{event_id}", response_model=EventResponse)
+@app.put("/events/{event_id}", response_model=EventResponse, dependencies=[Depends(verify_api_key)])
 def update_event(event_id: int, payload: EventCreate, db: Session = Depends(get_db)):
     ev = db.query(Event).filter(Event.id == event_id).first()
     if not ev:
@@ -139,7 +135,7 @@ def update_event(event_id: int, payload: EventCreate, db: Session = Depends(get_
     return resp
 
 
-@app.patch("/events/{event_id}/status")
+@app.patch("/events/{event_id}/status", dependencies=[Depends(verify_api_key)])
 def update_event_status(
     event_id: int,
     new_status: str = Query(..., alias="status"),
@@ -156,7 +152,7 @@ def update_event_status(
     return {"id": ev.id, "status": ev.status}
 
 
-@app.post("/events/{event_id}/instructors/{instructor_id}")
+@app.post("/events/{event_id}/instructors/{instructor_id}", dependencies=[Depends(verify_api_key)])
 def assign_instructor(event_id: int, instructor_id: int, db: Session = Depends(get_db)):
     ev = db.query(Event).filter(Event.id == event_id).first()
     if not ev:
@@ -182,7 +178,7 @@ def assign_instructor(event_id: int, instructor_id: int, db: Session = Depends(g
     return {"detail": f"Instructor {inst.name} assigned to event {ev.name}"}
 
 
-@app.delete("/events/{event_id}/instructors/{instructor_id}")
+@app.delete("/events/{event_id}/instructors/{instructor_id}", dependencies=[Depends(verify_api_key)])
 def unassign_instructor(event_id: int, instructor_id: int, db: Session = Depends(get_db)):
     ev = db.query(Event).filter(Event.id == event_id).first()
     if not ev:
@@ -200,7 +196,11 @@ def unassign_instructor(event_id: int, instructor_id: int, db: Session = Depends
 # ---------------------------------------------------------------------------
 # Instructors CRUD
 # ---------------------------------------------------------------------------
-@app.post("/instructors", response_model=InstructorResponse, status_code=status.HTTP_201_CREATED)
+@app.post(
+    "/instructors", response_model=InstructorResponse,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(verify_api_key)],
+)
 def create_instructor(payload: InstructorCreate, db: Session = Depends(get_db)):
     inst = Instructor(
         name=payload.name,
@@ -242,7 +242,11 @@ def get_instructor(instructor_id: int, db: Session = Depends(get_db)):
     return resp
 
 
-@app.delete("/instructors/{instructor_id}", status_code=status.HTTP_204_NO_CONTENT)
+@app.delete(
+    "/instructors/{instructor_id}",
+    status_code=status.HTTP_204_NO_CONTENT,
+    dependencies=[Depends(verify_api_key)],
+)
 def delete_instructor(instructor_id: int, db: Session = Depends(get_db)):
     inst = db.query(Instructor).filter(Instructor.id == instructor_id).first()
     if not inst:
@@ -254,7 +258,11 @@ def delete_instructor(instructor_id: int, db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # Enrollments CRUD
 # ---------------------------------------------------------------------------
-@app.post("/enrollments", response_model=EnrollmentResponse, status_code=status.HTTP_201_CREATED)
+@app.post(
+    "/enrollments", response_model=EnrollmentResponse,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(verify_api_key)],
+)
 def create_enrollment(payload: EnrollmentCreate, db: Session = Depends(get_db)):
     ev = db.query(Event).filter(Event.id == payload.event_id).first()
     if not ev:
@@ -306,7 +314,7 @@ def list_enrollments(
     return [EnrollmentResponse.model_validate(e) for e in q.all()]
 
 
-@app.patch("/enrollments/{enrollment_id}/status")
+@app.patch("/enrollments/{enrollment_id}/status", dependencies=[Depends(verify_api_key)])
 def update_enrollment_status(
     enrollment_id: int,
     new_status: str = Query(..., alias="status"),
@@ -326,7 +334,11 @@ def update_enrollment_status(
 # ---------------------------------------------------------------------------
 # Venues CRUD
 # ---------------------------------------------------------------------------
-@app.post("/venues", response_model=VenueResponse, status_code=status.HTTP_201_CREATED)
+@app.post(
+    "/venues", response_model=VenueResponse,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[Depends(verify_api_key)],
+)
 def create_venue(payload: VenueCreate, db: Session = Depends(get_db)):
     venue = Venue(**payload.model_dump())
     db.add(venue)
@@ -348,7 +360,7 @@ def get_venue(venue_id: int, db: Session = Depends(get_db)):
     return VenueResponse.model_validate(venue)
 
 
-@app.delete("/venues/{venue_id}", status_code=status.HTTP_204_NO_CONTENT)
+@app.delete("/venues/{venue_id}", status_code=status.HTTP_204_NO_CONTENT, dependencies=[Depends(verify_api_key)])
 def delete_venue(venue_id: int, db: Session = Depends(get_db)):
     venue = db.query(Venue).filter(Venue.id == venue_id).first()
     if not venue:

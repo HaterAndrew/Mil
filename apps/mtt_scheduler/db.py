@@ -26,6 +26,14 @@ from sqlalchemy.orm import (
     sessionmaker,
 )
 
+import sys
+from pathlib import Path as _Path
+_apps_dir = str(_Path(__file__).resolve().parent.parent)
+if _apps_dir not in sys.path:
+    sys.path.insert(0, _apps_dir)
+
+from shared.audit_mixin import AuditMixin
+
 # ---------------------------------------------------------------------------
 # Database path — sits next to this file; *.db is gitignored
 # ---------------------------------------------------------------------------
@@ -64,7 +72,7 @@ event_instructors = Table(
 # ---------------------------------------------------------------------------
 # ORM models
 # ---------------------------------------------------------------------------
-class Event(Base):
+class Event(Base, AuditMixin):
     __tablename__ = "events"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -77,7 +85,6 @@ class Event(Base):
     max_capacity = Column(Integer, nullable=False)
     status = Column(String(20), nullable=False, default="PLANNED")
     notes = Column(Text, nullable=True)
-    created_at = Column(DateTime, default=lambda: datetime.now(UTC))
 
     venue = relationship("Venue", back_populates="events")
     instructors = relationship(

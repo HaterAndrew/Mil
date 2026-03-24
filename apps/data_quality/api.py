@@ -6,10 +6,10 @@ from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from typing import Optional
 
-from fastapi import FastAPI, HTTPException, Query
-from sqlalchemy import desc, func
-
-from shared.middleware import SecurityHeadersMiddleware
+from fastapi import Depends, FastAPI, HTTPException, Query
+from shared.auth import verify_api_key
+from shared.factory import create_app
+from sqlalchemy import func
 
 from .db import (
     AlertRow,
@@ -37,7 +37,6 @@ from .models import (
     PipelineStatus,
 )
 
-
 # ---------------------------------------------------------------------------
 # App lifespan — initialize DB on startup
 # ---------------------------------------------------------------------------
@@ -48,20 +47,14 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(
-    title="Data Quality Monitor API",
-    description="Track pipeline health, data quality metrics, and anomaly alerts.",
-    version="1.0.0",
-    lifespan=lifespan,
-)
-app.add_middleware(SecurityHeadersMiddleware)
+app = create_app(title="Data Quality Monitor API", version="1.0.0", lifespan=lifespan)
 
 
 # ---------------------------------------------------------------------------
 # Pipeline CRUD
 # ---------------------------------------------------------------------------
 
-@app.post("/pipelines", response_model=PipelineResponse, status_code=201)
+@app.post("/pipelines", response_model=PipelineResponse, status_code=201, dependencies=[Depends(verify_api_key)])
 def create_pipeline(payload: PipelineCreate):
     """Register a new data pipeline."""
     with get_db() as db:
@@ -92,7 +85,7 @@ def get_pipeline(pipeline_id: int):
         return row
 
 
-@app.put("/pipelines/{pipeline_id}", response_model=PipelineResponse)
+@app.put("/pipelines/{pipeline_id}", response_model=PipelineResponse, dependencies=[Depends(verify_api_key)])
 def update_pipeline(pipeline_id: int, payload: PipelineCreate):
     """Update an existing pipeline registration."""
     with get_db() as db:
@@ -106,7 +99,7 @@ def update_pipeline(pipeline_id: int, payload: PipelineCreate):
         return row
 
 
-@app.delete("/pipelines/{pipeline_id}", status_code=204)
+@app.delete("/pipelines/{pipeline_id}", status_code=204, dependencies=[Depends(verify_api_key)])
 def delete_pipeline(pipeline_id: int):
     """Remove a pipeline and all associated data."""
     with get_db() as db:
@@ -120,7 +113,7 @@ def delete_pipeline(pipeline_id: int):
 # Metrics
 # ---------------------------------------------------------------------------
 
-@app.post("/metrics", response_model=MetricResponse, status_code=201)
+@app.post("/metrics", response_model=MetricResponse, status_code=201, dependencies=[Depends(verify_api_key)])
 def record_metric(payload: MetricCreate):
     """Record a metric observation for a pipeline.
 
@@ -273,7 +266,7 @@ def list_alerts(
         )
 
 
-@app.post("/alerts/{alert_id}/ack", response_model=AlertOut)
+@app.post("/alerts/{alert_id}/ack", response_model=AlertOut, dependencies=[Depends(verify_api_key)])
 def ack_alert(alert_id: int, ack_by: str = Query("operator")):
     """Acknowledge an alert."""
     with get_db() as db:

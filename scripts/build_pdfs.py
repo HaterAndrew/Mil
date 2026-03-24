@@ -27,6 +27,31 @@ from pathlib import Path
 from chrome_cdp import html_file_to_pdf
 from publication_css import PAGE_CSS
 
+# ── Security: HTML sanitization ──────────────────────────────────────────────
+# Remove dangerous tags and attributes from markdown-rendered HTML before
+# passing to Chrome for PDF generation. No external deps — uses stdlib re.
+_SANITIZE_PATTERNS = [
+    (re.compile(r"<script[\s>].*?</script>", re.IGNORECASE | re.DOTALL), ""),
+    (re.compile(r"<iframe[\s>].*?</iframe>", re.IGNORECASE | re.DOTALL), ""),
+    (re.compile(r"<script[^>]*/>", re.IGNORECASE), ""),
+    (re.compile(r"<iframe[^>]*/>", re.IGNORECASE), ""),
+    (re.compile(r"\s+on(error|load)\s*=\s*[\"'][^\"']*[\"']", re.IGNORECASE), ""),
+    (re.compile(r"\s+on(error|load)\s*=\s*\S+", re.IGNORECASE), ""),
+    (re.compile(r'href\s*=\s*["\']javascript:[^"\']*["\']', re.IGNORECASE), 'href="#"'),
+    (re.compile(r"href\s*=\s*javascript:\S+", re.IGNORECASE), 'href="#"'),
+]
+
+
+def _sanitize_html(html: str) -> str:
+    """Strip <script>, <iframe>, on-event attrs, and javascript: URIs."""
+    for pattern, replacement in _SANITIZE_PATTERNS:
+        html = pattern.sub(replacement, html)
+    return html
+
+
+# Default timeout (seconds) for Chrome PDF generation per file.
+_PDF_TIMEOUT_SECS = int(os.environ.get("PDF_TIMEOUT", "60"))
+
 # ── Config ────────────────────────────────────────────────────────────────────
 REPO_ROOT = Path(__file__).parent.parent
 OUT_DIR   = REPO_ROOT / "maven_training" / "pdf"
@@ -475,10 +500,31 @@ def md_to_body_html(md_path: Path):
         text,
         extensions=["tables", "fenced_code", "toc", "attr_list"],
     )
+    # Sanitize rendered HTML before passing to Chrome
+    body = _sanitize_html(body)
     return body, title, subtitle
 
 
 # CDP functions are in scripts/chrome_cdp.py — html_file_to_pdf imported at top
+
+
+# ── Timeout wrapper for Chrome PDF generation ────────────────────────────────
+def _pdf_with_timeout(html_path, pdf_path, header, footer, chrome, pdf_params=None):
+    """Run html_file_to_pdf with a per-file timeout.
+
+    Uses concurrent.futures to enforce the timeout without SIGALRM
+    (which is not safe in multi-threaded builds).
+    """
+    from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeout
+    with ThreadPoolExecutor(max_workers=1) as executor:
+        future = executor.submit(
+            html_file_to_pdf, html_path, pdf_path, header, footer, chrome, pdf_params
+        )
+        try:
+            return future.result(timeout=_PDF_TIMEOUT_SECS)
+        except FuturesTimeout:
+            print(f"      TIMEOUT: Chrome PDF generation exceeded {_PDF_TIMEOUT_SECS}s for {html_path.name}")
+            return False
 
 
 # ── Conversion helpers ────────────────────────────────────────────────────────
@@ -490,14 +536,20 @@ def convert_md(src_rel: str, out_stem: str) -> bool:
     pub_type, pub_number = get_pub_meta(out_stem)
     body_html, title, subtitle = md_to_body_html(src)
     full_html = build_html(body_html, pub_type, pub_number, title, subtitle)
-    with tempfile.NamedTemporaryFile(
-        suffix=".html", mode="w", encoding="utf-8", delete=False
-    ) as tmp:
-        tmp.write(full_html)
-        tmp_path = Path(tmp.name)
-    pdf_path = OUT_DIR / f"{out_stem}.pdf"
-    ok = html_file_to_pdf(tmp_path, pdf_path, make_header(pub_number), FOOTER_TEMPLATE, CHROME)
-    tmp_path.unlink(missing_ok=True)
+    tmp_path = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            suffix=".html", mode="w", encoding="utf-8", delete=False
+        ) as tmp:
+            tmp.write(full_html)
+            tmp_path = Path(tmp.name)
+        pdf_path = OUT_DIR / f"{out_stem}.pdf"
+        ok = _pdf_with_timeout(
+            tmp_path, pdf_path, make_header(pub_number), FOOTER_TEMPLATE, CHROME,
+        )
+    finally:
+        if tmp_path:
+            tmp_path.unlink(missing_ok=True)
     print(f"  {'OK  ' if ok else 'FAIL'} {out_stem}.pdf")
     return ok
 
@@ -538,14 +590,20 @@ hr { margin: 4pt 0; }
 {CALLOUT_JS}
 </body>
 </html>"""
-    with tempfile.NamedTemporaryFile(
-        suffix=".html", mode="w", encoding="utf-8", delete=False
-    ) as tmp:
-        tmp.write(full_html)
-        tmp_path = Path(tmp.name)
-    pdf_path = OUT_DIR / f"{out_stem}.pdf"
-    ok = html_file_to_pdf(tmp_path, pdf_path, make_header(pub_number), FOOTER_TEMPLATE, CHROME)
-    tmp_path.unlink(missing_ok=True)
+    tmp_path = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            suffix=".html", mode="w", encoding="utf-8", delete=False
+        ) as tmp:
+            tmp.write(full_html)
+            tmp_path = Path(tmp.name)
+        pdf_path = OUT_DIR / f"{out_stem}.pdf"
+        ok = _pdf_with_timeout(
+            tmp_path, pdf_path, make_header(pub_number), FOOTER_TEMPLATE, CHROME,
+        )
+    finally:
+        if tmp_path:
+            tmp_path.unlink(missing_ok=True)
     print(f"  {'OK  ' if ok else 'FAIL'} {out_stem}.pdf")
     return ok
 
@@ -556,7 +614,7 @@ def convert_html_direct(src_rel: str, out_stem: str, pub_number: str = "MSS-HUB"
         print(f"  SKIP  {src_rel}")
         return False
     pdf_path = OUT_DIR / f"{out_stem}.pdf"
-    ok = html_file_to_pdf(src, pdf_path, make_header(pub_number), FOOTER_TEMPLATE, CHROME)
+    ok = _pdf_with_timeout(src, pdf_path, make_header(pub_number), FOOTER_TEMPLATE, CHROME)
     print(f"  {'OK  ' if ok else 'FAIL'} {out_stem}.pdf")
     return ok
 
@@ -793,6 +851,14 @@ MD_TARGETS = [
     ("maven_training/tm/TM_50O_platform_engineer_advanced/CONCEPTS_GUIDE_TM50O_PLATFORM_ENGINEER_ADVANCED.md","CONCEPTS_GUIDE_TM50O_PLATFORM_ENGINEER_ADVANCED"),
     # ── Self-study addenda (Palantir Developers reference library) ────────────
     ("maven_training/tm/TM_30_advanced_builder/SELF_STUDY_ADDENDUM.md",                "SELF_STUDY_TM30_ADVANCED_BUILDER"),
+    # WFF tracks (A–F)
+    ("maven_training/tm/TM_40A_intelligence/SELF_STUDY_ADDENDUM.md",                   "SELF_STUDY_TM40A_INTELLIGENCE"),
+    ("maven_training/tm/TM_40B_fires/SELF_STUDY_ADDENDUM.md",                          "SELF_STUDY_TM40B_FIRES"),
+    ("maven_training/tm/TM_40C_movement_maneuver/SELF_STUDY_ADDENDUM.md",              "SELF_STUDY_TM40C_MOVEMENT_MANEUVER"),
+    ("maven_training/tm/TM_40D_sustainment/SELF_STUDY_ADDENDUM.md",                    "SELF_STUDY_TM40D_SUSTAINMENT"),
+    ("maven_training/tm/TM_40E_protection/SELF_STUDY_ADDENDUM.md",                     "SELF_STUDY_TM40E_PROTECTION"),
+    ("maven_training/tm/TM_40F_mission_command/SELF_STUDY_ADDENDUM.md",                "SELF_STUDY_TM40F_MISSION_COMMAND"),
+    # Specialist tracks (G–O)
     ("maven_training/tm/TM_40G_orsa/SELF_STUDY_ADDENDUM.md",                          "SELF_STUDY_TM40G_ORSA"),
     ("maven_training/tm/TM_40H_ai_engineer/SELF_STUDY_ADDENDUM.md",                   "SELF_STUDY_TM40H_AI_ENGINEER"),
     ("maven_training/tm/TM_40M_ml_engineer/SELF_STUDY_ADDENDUM.md",                   "SELF_STUDY_TM40M_ML_ENGINEER"),

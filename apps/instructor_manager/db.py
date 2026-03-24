@@ -28,6 +28,8 @@ from sqlalchemy.orm import (
     sessionmaker,
 )
 
+from shared.audit_mixin import AuditMixin
+
 # ---------------------------------------------------------------------------
 # Database path — sits next to this file; *.db is gitignored
 # ---------------------------------------------------------------------------
@@ -55,7 +57,7 @@ class Base(DeclarativeBase):
 # ---------------------------------------------------------------------------
 # ORM models
 # ---------------------------------------------------------------------------
-class Instructor(Base):
+class Instructor(Base, AuditMixin):
     __tablename__ = "instructors"
 
     instructor_id = Column(String(10), primary_key=True)
@@ -67,7 +69,6 @@ class Instructor(Base):
     email = Column(String(100), nullable=True)
     phone = Column(String(20), nullable=True)
     status = Column(String(10), nullable=False, default="ACTIVE")  # ACTIVE/INACTIVE/TDY
-    created_at = Column(DateTime, default=lambda: datetime.now(UTC))
 
     certifications = relationship(
         "Certification", back_populates="instructor", cascade="all, delete-orphan"
@@ -77,7 +78,7 @@ class Instructor(Base):
     )
 
 
-class Certification(Base):
+class Certification(Base, AuditMixin):
     __tablename__ = "certifications"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -89,7 +90,6 @@ class Certification(Base):
     expiration_date = Column(Date, nullable=False)
     certifying_authority = Column(String(100), nullable=True)
     status = Column(String(10), nullable=False, default="CURRENT")  # CURRENT/EXPIRED/PENDING
-    created_at = Column(DateTime, default=lambda: datetime.now(UTC))
 
     instructor = relationship("Instructor", back_populates="certifications")
 

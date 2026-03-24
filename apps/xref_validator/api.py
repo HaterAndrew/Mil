@@ -5,9 +5,9 @@ from __future__ import annotations
 import threading
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, HTTPException, Query
-
-from shared.middleware import SecurityHeadersMiddleware
+from fastapi import Depends, FastAPI, HTTPException, Query
+from shared.auth import verify_api_key
+from shared.factory import create_app
 
 from .db import (
     get_filtered_issues,
@@ -36,17 +36,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(
-    title="Cross-Reference Validator",
-    description=(
-        "Scans the maven_training documentation corpus and validates "
-        "cross-references, internal links, chapter references, and "
-        "prereq chain consistency."
-    ),
-    version="1.0.0",
-    lifespan=lifespan,
-)
-app.add_middleware(SecurityHeadersMiddleware)
+app = create_app(title="Cross-Reference Validator", version="1.0.0", lifespan=lifespan)
 
 
 # ---------------------------------------------------------------------------
@@ -60,7 +50,7 @@ def health():
 # ---------------------------------------------------------------------------
 # Scan operations
 # ---------------------------------------------------------------------------
-@app.post("/scan", response_model=ScanResult)
+@app.post("/scan", response_model=ScanResult, dependencies=[Depends(verify_api_key)])
 def trigger_scan(request: ScanRequest | None = None):
     """Trigger a new cross-reference validation scan.
 

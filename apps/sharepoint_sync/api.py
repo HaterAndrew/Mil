@@ -6,11 +6,11 @@ from contextlib import asynccontextmanager
 
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.responses import Response
+from shared.auth import verify_api_key
+from shared.factory import create_app
 from sqlalchemy.orm import Session
 
-from shared.middleware import SecurityHeadersMiddleware
-
-from .db import SessionLocal, get_db, init_db
+from .db import get_db, init_db
 from .models import (
     FileDiff,
     SharePointVariant,
@@ -40,13 +40,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(
-    title="SharePoint Sync",
-    description="Track sync state between local maven_training content and SharePoint/Cloudflare.",
-    version="1.0.0",
-    lifespan=lifespan,
-)
-app.add_middleware(SecurityHeadersMiddleware)
+app = create_app(title="SharePoint Sync", version="1.0.0", lifespan=lifespan)
 
 
 # ---------------------------------------------------------------------------
@@ -95,7 +89,7 @@ def get_diff(db: Session = Depends(get_db)):
 # ---------------------------------------------------------------------------
 # Record sync
 # ---------------------------------------------------------------------------
-@app.post("/sync", response_model=SyncRecordResponse, status_code=201)
+@app.post("/sync", response_model=SyncRecordResponse, status_code=201, dependencies=[Depends(verify_api_key)])
 def create_sync(payload: SyncRecordCreate, db: Session = Depends(get_db)):
     """Record current file state as the new sync baseline."""
     current = compute_file_hashes(SOURCE_ROOT)

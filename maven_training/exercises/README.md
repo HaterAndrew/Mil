@@ -47,7 +47,7 @@ Instructor answer key in every POST file.
 |--------|---------|----------|---------|
 | TM-40G ORSA | [EXAM_TM40G_PRE](exams/EXAM_TM40G_PRE.md) | [EXAM_TM40G_POST](exams/EXAM_TM40G_POST.md) | FA49, quantitative analysts |
 | TM-40H AI Engineer | [EXAM_TM40H_PRE](exams/EXAM_TM40H_PRE.md) | [EXAM_TM40H_POST](exams/EXAM_TM40H_POST.md) | AI/ML specialists, AIP Logic developers |
-| TM-40M ML Engineer | [EXAM_TM40I_PRE](exams/EXAM_TM40I_PRE.md) | [EXAM_TM40I_POST](exams/EXAM_TM40I_POST.md) | ML engineers, data scientists |
+| TM-40M ML Engineer | [EXAM_TM40M_PRE](exams/EXAM_TM40M_PRE.md) | [EXAM_TM40M_POST](exams/EXAM_TM40M_POST.md) | ML engineers, data scientists |
 | TM-40J Program Manager | [EXAM_TM40J_PRE](exams/EXAM_TM40J_PRE.md) | [EXAM_TM40J_POST](exams/EXAM_TM40J_POST.md) | PMs, G8/S8, resource managers |
 | TM-40K Knowledge Manager | [EXAM_TM40K_PRE](exams/EXAM_TM40K_PRE.md) | [EXAM_TM40K_POST](exams/EXAM_TM40K_POST.md) | KMOs, 37F, knowledge officers |
 | TM-40L Software Engineer | [EXAM_TM40L_PRE](exams/EXAM_TM40L_PRE.md) | [EXAM_TM40L_POST](exams/EXAM_TM40L_POST.md) | SWEs, OSDK developers |
@@ -60,7 +60,7 @@ Instructor answer key in every POST file.
 |--------|---------|----------|---------|
 | TM-50G Advanced ORSA | [EXAM_TM50G_PRE](exams/EXAM_TM50G_PRE.md) | [EXAM_TM50G_POST](exams/EXAM_TM50G_POST.md) | Senior FA49, ORSA section chiefs |
 | TM-50H Advanced AI Engineer | [EXAM_TM50H_PRE](exams/EXAM_TM50H_PRE.md) | [EXAM_TM50H_POST](exams/EXAM_TM50H_POST.md) | AI architects, capability leads |
-| TM-50M Advanced ML Engineer | [EXAM_TM50I_PRE](exams/EXAM_TM50I_PRE.md) | [EXAM_TM50I_POST](exams/EXAM_TM50I_POST.md) | Senior MLEs, platform engineers |
+| TM-50M Advanced ML Engineer | [EXAM_TM50M_PRE](exams/EXAM_TM50M_PRE.md) | [EXAM_TM50M_POST](exams/EXAM_TM50M_POST.md) | Senior MLEs, platform engineers |
 | TM-50J Advanced PM | [EXAM_TM50J_PRE](exams/EXAM_TM50J_PRE.md) | [EXAM_TM50J_POST](exams/EXAM_TM50J_POST.md) | Senior technical PMs |
 | TM-50K Advanced KM | [EXAM_TM50K_PRE](exams/EXAM_TM50K_PRE.md) | [EXAM_TM50K_POST](exams/EXAM_TM50K_POST.md) | Corps/Theater KM architects |
 | TM-50L Advanced SWE | [EXAM_TM50L_PRE](exams/EXAM_TM50L_PRE.md) | [EXAM_TM50L_POST](exams/EXAM_TM50L_POST.md) | Senior SWEs, platform leads |

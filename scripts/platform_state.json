@@ -1,0 +1,2139 @@
+{
+  "last_reviewed_date": "2026-03-24",
+  "last_fetch_date": "2026-03-24T15:23:13.435558+00:00",
+  "cached_entries": [
+    {
+      "title": "GPT-5.4 Mini and GPT-5.4 Nano are now available in AIP",
+      "description": "GPT-5.4 mini and GPT-5.4 nano are now available directly from OpenAI for non-georestricted enrollments.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-03-19",
+      "date_display": "March 19, 2026",
+      "app": "Language Model Service"
+    },
+    {
+      "title": "Enforce default preview behavior in Pipeline Builder",
+      "description": "You can now configure Pipeline Builder to require manual confirmation before running previews, preventing unintended runs and saving compute resources. To enable this setting, navigate to **Control Panel > Pipeline Builder**, and toggle the **Enable preview confirmation by default** option. With this new option, enrollment administrators can choose whether previews run automatically or require manual confirmation for all users in an enrollment. User preference settings in Pipeline Builder remain available, allowing individuals to override the default if they wish.",
+      "category": "Data connectivity & integration",
+      "type": "FEATURE",
+      "date": "2026-03-19",
+      "date_display": "March 19, 2026",
+      "app": "Pipeline Builder"
+    },
+    {
+      "title": "Health checks are now available for virtual and Iceberg tables",
+      "description": "You can now configure [health checks](/foundry/health-checks/overview/) for [virtual](/foundry/data-integration/virtual-tables/) as well as [managed and virtual Iceberg tables](/foundry/iceberg/managed-virtual/) to enable monitoring and alerting for common issues, such as primary key, schema, and time since last updated checks. Additionally, this functionality extends to virtual tables sourced from [Databricks](/foundry/available-connectors/databricks/#virtual-tables), [Snowflake](/foundry/available-connectors/snowflake/#virtual-tables), and [BigQuery](/foundry/available-connectors/bigquery/#virtual-tables).",
+      "category": "Data connectivity & integration",
+      "type": "FEATURE",
+      "date": "2026-03-19",
+      "date_display": "March 19, 2026",
+      "app": "Virtual Tables"
+    },
+    {
+      "title": "Improved timestamp handling in Model Studio model inference",
+      "description": "Model Studio now handles timestamps more consistently during model inference. When your training data has a `Timestamp` column type with daily or multiple-day frequency, the model output will now correctly return a `Timestamp` instead of a `Date`. Additionally, if your input data for inference includes a `Timestamp` with a timezone, the model will now preserve that timezone in its output.",
+      "category": "Model connectivity & development",
+      "type": "FIX",
+      "date": "2026-03-19",
+      "date_display": "March 19, 2026",
+      "app": "Model Studio"
+    },
+    {
+      "title": "Visualize, monitor, and debug your automation workflows with Autopilot",
+      "description": "As teams chain together automations, logic functions, and actions in Foundry, understanding how those systems behave becomes difficult. [Autopilot](/foundry/autopilot/overview/), now available in beta, provides the visibility needed to visualize how automations connect, trace objects through your workflow, and debug failures in one place. As a beta product, functionality and appearance may change during active development.",
+      "category": "Use case development",
+      "type": "APPLICATION",
+      "date": "2026-03-19",
+      "date_display": "March 19, 2026",
+      "app": "AIP Autopilot"
+    },
+    {
+      "title": "AIP Analyst: Persist sessions in workshop on unmount",
+      "description": "AIP Analyst chat sessions in Workshop will now persist when the workshop tab changes or the section containing the chat is collapsed. The PR also provides a reset button for returning to an empty state.",
+      "category": "AI Platform (AIP)",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-18",
+      "date_display": "March 18, 2026",
+      "app": "AIP Analyst"
+    },
+    {
+      "title": "Support target branch selection",
+      "description": "AIP Evals now has branch selection support for the evals run configuration, allowing users to run evaluation suites against specific Foundry branches (not just main). Note that only Logic global branches are currently supported, not functions global branches.",
+      "category": "AI Platform (AIP)",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-18",
+      "date_display": "March 18, 2026",
+      "app": "AIP Evals"
+    },
+    {
+      "title": "AIP Logic now supports target branch selection",
+      "description": "AIP Logic now has branch selection support for the evals run configuration, allowing users to run evaluation suites against specific Foundry branches (not just main). Note that only Logic global branches are currently supported, not functions global branches.",
+      "category": "AI Platform (AIP)",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-18",
+      "date_display": "March 18, 2026",
+      "app": "AIP Logic"
+    },
+    {
+      "title": "Promote critical object types for improved discoverability",
+      "description": "Ontology admins can now promote an object type to mark it as a core, critical resource. Promoted object types will be annotated with a purple \"verified\" checkmark and will appear higher in search results in applications across the platform, including Object Explorer, Gaia, AIP Logic, Slate, and Workshop. Favorited object types will also appear more prominently in search results. See the [status documentation](/foundry/object-link-types/metadata-statuses) for more details.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-03-18",
+      "date_display": "March 18, 2026",
+      "app": "Ontology Management"
+    },
+    {
+      "title": "App Pairing now available in Vertex",
+      "description": "Vertex now supports [App Pairing](/foundry/cross-app-interactivity/app-pairing/), enabling real-time, cross-application workflows between Vertex and other platform applications. Both the standalone Vertex application and the Vertex Workshop widget can now be paired with other supported applications, including AIP Agents and Workshop modules. Paired agents and applications can execute [commands](/foundry/cross-app-interactivity/commands-overview/) directly on Vertex.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-03-18",
+      "date_display": "March 18, 2026",
+      "app": "Vertex"
+    },
+    {
+      "title": "New color grouping layout in Workflow Lineage",
+      "description": "You can now organize your nodes by color groupings in Workflow Lineage! This new layout clusters nodes of the same color together, arranging them in a clear, grid-like pattern for easier visualization and analysis. To use the color layout, first select your nodes (use CMD + A to select all). Then, select \"Lay out nodes\" and choose \"Color Layout\" (or use the J key shortcut).",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-18",
+      "date_display": "March 18, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Carbon \"What's New\" sidebar will no longer display archived updates",
+      "description": "The Carbon \"What's New\" sidebar will no longer display archived updates. Previously, archived updates would appear alongside active ones; now only active (non-archived) updates are shown.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-18",
+      "date_display": "March 18, 2026",
+      "app": "Carbon"
+    },
+    {
+      "title": "Boost RAG accuracy with chunking and embedding in AIP Document Intelligence",
+      "description": "AIP Document Intelligence now supports chunking and embedding extracted text across all enrollments. Alongside document extraction powered by vision language models and OCR, you can now process documents end-to-end directly within the platform. Chunking is a critical step in document-centric workflows — it determines the granularity of text passed to models in RAG systems, directly impacting retrieval accuracy and downstream generation quality. The new chunking strategy is optimized for Markdown and handles complex structures such as bullet points and tables, improving on the existing raw-text chunking available in Pipeline Builder and AIP Logic. Access this capability through AIP Document Intelligence's text extraction workflow, or deploy it via Python transforms with an option to generate embeddings to support RAG-based workflows.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-03-17",
+      "date_display": "March 17, 2026",
+      "app": "AIP Document Intelligence"
+    },
+    {
+      "title": "Enforce incremental execution in Pipeline Builder",
+      "description": "You can now ensure incremental execution in your pipelines with the **Require incremental execution** setting in Pipeline Builder. With this setting enabled, jobs configured to run incrementally will automatically fail if they cannot do so. This helps prevent accidentally snapshotted inputs, forced snapshots from output schema changes, and other unintended snapshot scenarios.",
+      "category": "Data connectivity & integration",
+      "type": "FEATURE",
+      "date": "2026-03-17",
+      "date_display": "March 17, 2026",
+      "app": "Pipeline Builder"
+    },
+    {
+      "title": "Share control of your branches with role-based security",
+      "description": "Branch creators can now assign users roles to control who can manage and merge their Foundry branches. Previously, only the branch creator could manage and merge a branch. With role-based security, branch creators can delegate ownership to other users and groups, removing bottlenecks while maintaining control over who can access and manage the branch.",
+      "category": "Developer toolchain",
+      "type": "FEATURE",
+      "date": "2026-03-17",
+      "date_display": "March 17, 2026",
+      "app": "Foundry Branching"
+    },
+    {
+      "title": "Maps terminology and labels updated",
+      "description": "The Maps documentation has been updated to align with the current user interface. References to \"Geometries\" have been replaced with \"Displays\" throughout the documentation to match the terminology used in the application. Additionally, the labels section has been updated to reflect recent enhancements to label functionality, and screenshots have been refreshed to show the current user interface.",
+      "category": "Management & enablement",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-17",
+      "date_display": "March 17, 2026",
+      "app": "Platform Documentation"
+    },
+    {
+      "title": "Recently used functions in AIP Assist menu",
+      "description": "The AIP Assist functions menu in Notepad now displays your three most recently used functions. Choosing a recently used function will run it with the selected content using your saved input format. The output format matches the input format by default but can be changed when inserting the content into Notepad.",
+      "category": "Analytics",
+      "type": "FEATURE",
+      "date": "2026-03-16",
+      "date_display": "March 16, 2026",
+      "app": "Notepad"
+    },
+    {
+      "title": "Recently used functions in Edit with AIP popover",
+      "description": "You can now quickly access your three most recently used functions in the **Edit with AIP** popover in Notepad. This makes it easier to reuse functions you work with frequently.",
+      "category": "Analytics",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-16",
+      "date_display": "March 16, 2026",
+      "app": "Notepad"
+    },
+    {
+      "title": "Ontology SQL card for querying object sets in Quiver",
+      "description": "Quiver now includes an [Ontology SQL card](/foundry/quiver/card-ontology-sql) that allows you to write SQL queries against object sets in your analysis. Using standard SQL syntax, you can select, filter, join, and aggregate object data to produce tabular results directly in Quiver.",
+      "category": "Analytics",
+      "type": "FEATURE",
+      "date": "2026-03-16",
+      "date_display": "March 16, 2026",
+      "app": "Quiver"
+    },
+    {
+      "title": "Upgraded branch security enabled for all users",
+      "description": "Security for Foundry Branches is now based on roles, and users and groups can be made owner of a branch, allowing them to administer and merge it. [Learn more about branch security.](/foundry/foundry-branching/branch-security)",
+      "category": "Developer toolchain",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-16",
+      "date_display": "March 16, 2026",
+      "app": "Foundry Branching"
+    },
+    {
+      "title": "Interface parameters supported in Automate actions",
+      "description": "Automate now supports interface parameters in actions. You can pass objects that implement an interface to actions that accept that interface as a parameter type. This includes single interface references, object sets of interfaces, and reference lists of interfaces.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-03-16",
+      "date_display": "March 16, 2026",
+      "app": "Automate"
+    },
+    {
+      "title": "Configure default styles for interfaces with geometry properties in Ontology Manager",
+      "description": "Ontology Manager now allows you to configure default styles for interfaces with geometry properties. This enhancement extends the recent capability to add interfaces to Gaia maps as layers.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-16",
+      "date_display": "March 16, 2026",
+      "app": "Ontology Management"
+    },
+    {
+      "title": "New checkpoint types for iframe attributes in custom widgets",
+      "description": "New checkpoint types are now available for iframe attributes in custom widgets. These checkpoints are triggered when an application builder opts-in to additional iframe attributes declared by a custom widget developer including: allow `camera`; allow `microphone`; `allow-downloads`.",
+      "category": "Security & governance",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-16",
+      "date_display": "March 16, 2026",
+      "app": "Checkpoints"
+    },
+    {
+      "title": "Enable additional iframe attributes",
+      "description": "Custom widget developers can now request specific browser features like camera access and popup windows that are restricted by default. The builder in the host application (for example, Workshop) must then manually opt-in to the requested attribute values for them to take effect. Checkpoint types for some attribute values can be defined to capture justification and maintain auditability.",
+      "category": "Use case development",
+      "type": "FEATURE",
+      "date": "2026-03-16",
+      "date_display": "March 16, 2026",
+      "app": "Custom Widgets"
+    },
+    {
+      "title": "The AI forward deployed engineer is now generally available",
+      "description": "AI FDE, the AI forward deployed engineer, is now generally available for enrollments with AIP enabled. AI FDE allows you to operate Foundry with natural language, using conversations to unlock the power of the Palantir platform. AI FDE makes platform interactions more intuitive and accessible for all users, regardless of technical expertise, while maintaining complete control and visibility into tool use and data access.",
+      "category": "AI Platform (AIP)",
+      "type": "APPLICATION",
+      "date": "2026-03-12",
+      "date_display": "March 12, 2026",
+      "app": "AI FDE"
+    },
+    {
+      "title": "GPT-5.4 is now available in AIP",
+      "description": "GPT-5.4 is now available directly from OpenAI and Azure for non-georestricted enrollments.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-03-12",
+      "date_display": "March 12, 2026",
+      "app": "Language Model Service"
+    },
+    {
+      "title": "Gemini 3.1 Flash-Lite is now available in AIP",
+      "description": "Gemini 3.1 Flash-Lite is now available directly from Google VertexAI for non-georestricted enrollments.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-03-12",
+      "date_display": "March 12, 2026",
+      "app": "Language Model Service"
+    },
+    {
+      "title": "Output files and file sets in Pipeline Builder",
+      "description": "Pipeline Builder now supports outputting files and file sets. After transforming your file input, select the transform you want to output, then choose **Add output** and **Output file**. Security markings can also be configured on file outputs.",
+      "category": "Data connectivity & integration",
+      "type": "FEATURE",
+      "date": "2026-03-12",
+      "date_display": "March 12, 2026",
+      "app": "Pipeline Builder"
+    },
+    {
+      "title": "Python transforms preview in Visual Studio Code now support media sets",
+      "description": "You can now preview media sets in Visual Studio Code workspaces. All media set inputs are supported in preview mode, while for outputs, only the `put_media_item` operation is currently supported. Note that incremental preview is not supported for media sets.",
+      "category": "Developer toolchain",
+      "type": "FEATURE",
+      "date": "2026-03-12",
+      "date_display": "March 12, 2026",
+      "app": "Code Workspaces - VS Code"
+    },
+    {
+      "title": "Monitoring status color mode in Workflow Lineage",
+      "description": "Workflow Lineage now includes the **Monitoring status** color mode, which visualizes the status of monitors for resources in your graph. When enabled, nodes are colored based on the highest severity alert from monitors you have access to, showing whether resources are healthy or have high, medium, or low severity warnings. Note that resources may have additional alerts that are not visible to you, depending on your permissions. This color mode also highlights nodes that are eligible for monitoring but do not have monitoring configured, making it easier to identify gaps in your monitoring coverage.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-03-12",
+      "date_display": "March 12, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "New shortcuts from Gaia maps to Workflow Lineage",
+      "description": "You can now add Gaia map resources as nodes in Workflow Lineage by using the shortcut `Cmd + I` (macOS) or `Ctrl + I` (Windows). Alternatively, you can also add Gaia maps as nodes by selecting **Add > Add to Workflow Lineage** in the **File** menu when viewing a Gaia map.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-03-12",
+      "date_display": "March 12, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Last reindexed color mode in Workflow Lineage",
+      "description": "Workflow Lineage now includes a color mode that visualizes when objects were last reindexed in Object Storage v2. This visualization helps you identify objects that were reindexed within the past day, week, month, or year, as well as objects that failed reindexing or have never been indexed. The exact reindex date is displayed beneath each node on the graph.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-03-12",
+      "date_display": "March 12, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Enter a custom prompt when editing a Notepad document with AIP",
+      "description": "You can now enter a custom prompt when editing a [Notepad document](/foundry/notepad/overview/) with AIP.",
+      "category": "Analytics",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-11",
+      "date_display": "March 11, 2026",
+      "app": "Notepad"
+    },
+    {
+      "title": "Improved Properties tab availability in Quiver time series plots",
+      "description": "The **Properties** tab in Quiver time series plot editors has been improved to appear consistently across more plot types, show properties of all objects backing the series, and provide a link to open the object view in a new tab.",
+      "category": "Analytics",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-11",
+      "date_display": "March 11, 2026",
+      "app": "Quiver"
+    },
+    {
+      "title": "Access replica history in Compute Modules",
+      "description": "You can now access replica history for your compute modules to debug the status of all replicas from any run over the last 7 days. View metrics, logs, replica lifespans, and termination reasons to gain insights and troubleshoot recent runs.",
+      "category": "Developer toolchain",
+      "type": "FEATURE",
+      "date": "2026-03-11",
+      "date_display": "March 11, 2026",
+      "app": "Compute Modules"
+    },
+    {
+      "title": "Improved visibility of newly created branches in branch selectors",
+      "description": "Newly created Foundry Branches now appear immediately in branch selectors. Previously, branches could take up to five minutes to appear after creation.",
+      "category": "Developer toolchain",
+      "type": "FIX",
+      "date": "2026-03-11",
+      "date_display": "March 11, 2026",
+      "app": "Foundry Branching"
+    },
+    {
+      "title": "Debug page for fired monitor alerts in Troubleshoot Alerts tab",
+      "description": "The **Troubleshoot alerts** tab now includes a dedicated debug page for fired monitor alerts. This page displays the monitor's alert history over the past 30 days, along with the firing value, the threshold value, and a full breakdown of all severity conditions. The alert debug page is currently available for function and action types, with additional sections and support for more resource types planned in future updates.",
+      "category": "Observability",
+      "type": "FEATURE",
+      "date": "2026-03-11",
+      "date_display": "March 11, 2026",
+      "app": "Data Health"
+    },
+    {
+      "title": "Updated Object Explorer landing page for ontology discoverability",
+      "description": "The Object Explorer landing page has been redesigned to improve discoverability, with clearer organization of object types and more prominent display of promoted and favorited items.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-03-11",
+      "date_display": "March 11, 2026",
+      "app": "Object Explorer"
+    },
+    {
+      "title": "New Object Explorer shortcut",
+      "description": "A new **Ontology** shortcut is now pinned to the top of the Foundry navigation bar, providing direct access to Object Explorer as the primary tool for ontology search and analysis.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-03-11",
+      "date_display": "March 11, 2026",
+      "app": "Object Explorer"
+    },
+    {
+      "title": "Object storage indexing status visualization in Workflow Lineage",
+      "description": "Workflow Lineage now includes a color mode that visualizes Object Storage v2 indexing status for object type nodes. When enabled, nodes are colored based on whether their last indexing job was successful or failed, with the color intensity indicating how recently the event occurred. Each object type node displays a timestamp showing exactly when the most recent indexing event took place, making it easier to monitor and troubleshoot your object storage indexing status at a glance.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-03-11",
+      "date_display": "March 11, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Model lifecycle stages visible in Workflow Lineage search",
+      "description": "Workflow Lineage now displays lifecycle stage information for models in search results. You can quickly identify which models are experimental, deprecated, or sunset directly in the search interface, making it easier to choose the appropriate models for your workflows.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-11",
+      "date_display": "March 11, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Improved media item picker in Workshop",
+      "description": "Workshop now offers an improved picker for media items, making it easier to select and work with media content. Media items are also now set as the default option when configuring media previews.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-11",
+      "date_display": "March 11, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Improved filter options for string properties in Workshop",
+      "description": "Workshop now displays filter component menus for all string properties, including those that do not support exact matching. Previously, these menus were hidden entirely. For properties without exact match support, the menu now shows the **Keyword** search option while other options appear disabled with a helpful tooltip. Additionally, derived properties now support keyword search, and the filter interface indicates whether a property is indexed for regex when the **Keyword** option is selected.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-11",
+      "date_display": "March 11, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Object type cards display variable reference counts",
+      "description": "Workshop now displays the number of variables that reference each object type directly on the object type cards in the overview sidebar. This makes it easier for module builders to understand how object types are being used throughout their application without having to search for references manually.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-11",
+      "date_display": "March 11, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Update Workshop's documentation to cover new features and ensure style consistency",
+      "description": "Documentation for Workshop has been updated with new content covering features such as: \n\n- [Triggering actions from the Media Uploader widget](/foundry/workshop/widgets-media-uploader/)\n- [Controlling auto-refresh updates with events](/foundry/workshop/auto-refresh/#control-auto-refresh-updates-with-events)\n- [Using the **Changelog** panel during rebasing](/foundry/workshop/changelog/#using-the-changelog-panel-during-rebasing)\n- [Chaining an event with an action](/foundry/workshop/widgets-button-group/#chaining-an-event-with-an-action)\n\nAdditionally, the updates include improved guidance in [Workshop's introductory tutorial](/foundry/workshop/getting-started/) as well as terminology and style consistency improvements throughout the application's documentation.",
+      "category": "Management & enablement",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-10",
+      "date_display": "March 10, 2026",
+      "app": "Platform Documentation"
+    },
+    {
+      "title": "Inline image attachments now supported in Automate",
+      "description": "You can now choose how attachments appear in emails sent from automations. When adding attachments to emails in Automate, a new toggle now allows attachments to be rendered as inline images instead of PDFs. This provides more control over email presentation.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-09",
+      "date_display": "March 9, 2026",
+      "app": "Automate"
+    },
+    {
+      "title": "Project selection available during installation configuration",
+      "description": "Users can now select projects during the Marketplace installation configuration phase rather than during the installation job. This provides the flexibility to choose an existing project or create a new one using the standardized project creation flow. Additionally, users can lock projects during installation configuration to map project roles to Marketplace roles, and unlock projects from either the Compass access side panel or installation settings.",
+      "category": "Product delivery",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-09",
+      "date_display": "March 9, 2026",
+      "app": "Marketplace"
+    },
+    {
+      "title": "Improved code editor theming and accessibility",
+      "description": "Code editors throughout Slate now use a dedicated light theme with improved color contrast and broader syntax coverage. The affected editors include JavaScript (Functions, Libraries, Events/Actions), CSS/LESS (Styles), SQL (SQL/Foundry Datasource queries), and JSON (HTTPJSON queries, Function inputs). The improvements include better readability with consistent syntax coloring, colors that meet WCAG 2.1 AA contrast requirements, expanded language support with more token types, and refreshed Handlebars template syntax using a purple-toned palette.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-09",
+      "date_display": "March 9, 2026",
+      "app": "Slate"
+    },
+    {
+      "title": "Customizable security display option for property lists",
+      "description": "Workshop now offers customizable display options for security information in property lists. You can toggle a setting in the widget panel to show a compact or responsive icon format, saving space in your application's interface while still providing property-specific security context.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-09",
+      "date_display": "March 9, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Fixed conditional coloring in metric cards using different object properties",
+      "description": "Workshop metric cards now correctly apply dynamic conditional coloring rules when the color is based on a different property than the one being displayed. Previously, coloring rules that referenced a property other than the displayed value (such as coloring by `name` while displaying `age`) would fail to apply.",
+      "category": "Use case development",
+      "type": "FIX",
+      "date": "2026-03-09",
+      "date_display": "March 9, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Introducing Pilot, Foundry's AI-powered tool for building React OSDK applications",
+      "description": "Pilot is an AI-powered application builder that lets you create full-stack applications on top of your ontology using natural language prompts. Pilot will be available in beta starting the week of March 9. To use Pilot, describe the application you want to build, and Pilot will generate the ontology, design, and front-end code in an isolated workspace with no manual data wiring or UI coding required.",
+      "category": "AI Platform (AIP)",
+      "type": "APPLICATION",
+      "date": "2026-03-05",
+      "date_display": "March 5, 2026",
+      "app": "Pilot"
+    },
+    {
+      "title": "Generate notional data with LLMs in Pipeline Builder",
+      "description": "You can now use LLMs to generate richer, more flexible datasets in manually entered tables in Pipeline Builder. Describe the data you want, reference other columns in your prompt for dynamic generation, and preview up to 10 rows of LLM-generated data before applying changes to your full table. You can also lock and unlock columns to control which data gets regenerated and which stays the same. These two new features are now available on all enrollments.",
+      "category": "Data connectivity & integration",
+      "type": "FEATURE",
+      "date": "2026-03-05",
+      "date_display": "March 5, 2026",
+      "app": "Pipeline Builder"
+    },
+    {
+      "title": "Track your Workshop applications with usage metrics",
+      "description": "Workshop now includes a built-in Metrics tab in the editor sidebar, giving module builders direct visibility into how their applications are being used. Usage metrics track two categories of data—action submissions and layout views—so builders can understand which parts of their module are most active and identify trends over time. All metrics are aggregate counts and are not attributable to any specific user.",
+      "category": "Use case development",
+      "type": "FEATURE",
+      "date": "2026-03-05",
+      "date_display": "March 5, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "AI FDE new change mode and request clarification skills",
+      "description": "AI FDE now includes two new skills: Change mode and Request clarification. AI FDE can switch to a different mode mid-task when the work requires it, without needing you to switch manually. It can also ask follow-up questions—using either multiple-choice or free-text prompts—when it needs more information before proceeding.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-03-04",
+      "date_display": "March 4, 2026",
+      "app": "AI FDE"
+    },
+    {
+      "title": "New \"manage skills\" skill",
+      "description": "AI FDE now has a skill called **Manage skills** that allows it to tidy its working memory and turn skills on or off as needed, enabling it to better adapt to the workflow at hand.",
+      "category": "AI Platform (AIP)",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-04",
+      "date_display": "March 4, 2026",
+      "app": "AI FDE"
+    },
+    {
+      "title": "Notepad integration with AI FDE",
+      "description": "You can now read and write Notepad documents directly from AI FDE. This integration enables you to work with Notepad documents as part of your AI FDE workflows.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-03-04",
+      "date_display": "March 4, 2026",
+      "app": "AI FDE"
+    },
+    {
+      "title": "Improved object type differentiation in Data Lineage resource selector",
+      "description": "Data Lineage now displays ontology names in the subtitle when multiple object types share the same display name across different ontologies. For example, if you have two object types both named \"Customer\" from different ontologies, you'll see the ontology name in the subtitle to help differentiate them. If an object type name is unique or duplicates are from the same ontology, only the object type ID will be shown as before.",
+      "category": "Data connectivity & integration",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-04",
+      "date_display": "March 4, 2026",
+      "app": "Data Lineage"
+    },
+    {
+      "title": "Improved export operations in Peer Manager",
+      "description": "When downloading a peering job's update payload as an XML file, a `PEER_MANAGER_CDS_PAYLOAD_EXPORT` checkpoint type will now be triggered instead of the generic `FRONTEND_EXPORT` checkpoint type. When downloading object type schemas as XSD files for cross-domain connections, a `PEER_MANAGER_OBJECT_TYPE_SCHEMAS_EXPORT` checkpoint type will now be triggered instead of the `FRONTEND_EXPORT` checkpoint type.\n\nFor more details on these checkpoint types, see Peer Manager checkpoint types documentation in [Checkpoint types](https://www.palantir.com/docs/foundry/checkpoints/checkpoint-types).",
+      "category": "Data connectivity & integration",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-04",
+      "date_display": "March 4, 2026",
+      "app": "Peer Manager"
+    },
+    {
+      "title": "Configure visibility and text of action toast messages in Ontology Manager",
+      "description": "Ontology Manager now allows you to customize the visibility and text of toast messages that appear when actions are executed. You can configure actions to hide the success message toast, customize the in-progress message (default is \"Applying edits...\"), or completely hide the in-progress toast. This enhancement is particularly useful for Workshop applications where the default toast messages might not align with the user's conceptual understanding of the action being performed.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-04",
+      "date_display": "March 4, 2026",
+      "app": "Ontology Management"
+    },
+    {
+      "title": "New peering checkpoint types",
+      "description": "New checkpoint types `PEER_MANAGER_CDS_PAYLOAD_EXPORT` and `PEER_MANAGER_OBJECT_TYPE_SCHEMAS_EXPORT` for exports initiated by users in Peer Manager are now available for use. See [checkpoint types documentation](/foundry/checkpoints/checkpoint-types/).",
+      "category": "Security & governance",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-04",
+      "date_display": "March 4, 2026",
+      "app": "Checkpoints"
+    },
+    {
+      "title": "Fixed role grant display when hovering in project permissions",
+      "description": "Role grant changes in the project permissions panel now remain visible when hovering over roles. Previously, proposed role changes would disappear when hovering over them before saving, making it difficult to review permission changes.",
+      "category": "Security & governance",
+      "type": "FIX",
+      "date": "2026-03-04",
+      "date_display": "March 4, 2026",
+      "app": "Projects"
+    },
+    {
+      "title": "Carbon workspaces now moved to trash instead of permanently deleted",
+      "description": "Workspaces in Carbon are now moved to the trash instead of being permanently deleted when using the workspace deletion option. This change allows you to recover workspaces from the trash in Compass if they were deleted accidentally.",
+      "category": "Use case development",
+      "type": "FIX",
+      "date": "2026-03-04",
+      "date_display": "March 4, 2026",
+      "app": "Carbon"
+    },
+    {
+      "title": "Customizable action notification messages",
+      "description": "Workshop now provides more control over the notification messages that appear when actions are executed. You can now hide or customize both the in-progress message (\"Applying edits...\") and the success message that appears after an action completes. This is particularly useful for creating seamless user experiences in applications where the default messaging does not match the conceptual model of what the action is doing.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-04",
+      "date_display": "March 4, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "GPT-5.3 Codex now available in AIP",
+      "description": "GPT-5.3 Codex is now available directly from OpenAI for non-georestricted enrollments.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-03-03",
+      "date_display": "March 3, 2026",
+      "app": "Language Model Service"
+    },
+    {
+      "title": "Perform time series analysis with a dedicated workspace in Quiver",
+      "description": "Quiver now includes a redesigned analysis creation experience, making it easier to choose the right workspace for your task. When creating a new analysis, you can now select from three analysis types: Quiver analysis, time series analysis, and object set path analysis. As part of this update, we are introducing the [**time series analysis workspace**](/foundry/quiver/analysis-types/#time-series-analysis/), a dedicated interface purpose-built for ad-hoc time series analysis. It provides a streamlined environment for visualizing and comparing time series data without the full complexity of a Quiver analysis, making it accessible to a wider range of users. When a more advanced workspace is needed, a time series analysis can be opened directly in Quiver. Additionally, the [**Time Series Analysis widget**]( /docs/foundry/workshop/widget-time-series-analysis/) brings the same interface and tooling to Workshop, allowing application builders to embed time series analysis directly in their applications. The widget includes fine-grained configuration options to tailor the experience for operational users.",
+      "category": "Analytics",
+      "type": "FEATURE",
+      "date": "2026-03-03",
+      "date_display": "March 3, 2026",
+      "app": "Quiver"
+    },
+    {
+      "title": "New Observability documentation category added",
+      "description": "A new top-level Observability category has been added to the documentation sidebar, consolidating content that was previously split across Data Integration and Workflow Lineage sections. This category includes health checks, monitoring views, and Workflow Lineage observability content. The reorganization improves navigation while maintaining all existing URLs through permanent redirects.",
+      "category": "Management & enablement",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-03",
+      "date_display": "March 3, 2026",
+      "app": "Platform Documentation"
+    },
+    {
+      "title": "Expanded Workflow Lineage access across the platform",
+      "description": "You can now open Workflow Lineage graphs from more locations across the platform using the `Cmd+i` (macOS) or `Ctrl+i` (Windows) shortcut, as well as a dedicated navigation option available on various resource types. Leverage this feature to better explore and understand your workflows from different applications across the Palantir ecosystem.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-03-03",
+      "date_display": "March 3, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Set maximum duration for streaming pipelines in Pipeline Builder",
+      "description": "Pipeline Builder now allows you to set a maximum duration for streaming pipeline jobs. When deploying a streaming pipeline, you can specify a maximum runtime between one minute and seven days using the new Max Duration setting in the deployment menu. For non-main branches, this setting is enabled by default with a one day duration limit.",
+      "category": "Data connectivity & integration",
+      "type": "FEATURE",
+      "date": "2026-03-02",
+      "date_display": "March 2, 2026",
+      "app": "Pipeline Builder"
+    },
+    {
+      "title": "Function and action monitors now support Workshop and third-party application scopes",
+      "description": "Function and action monitors now support two new dynamic scopes; Workshop and third-party applications. You can set up a monitor that automatically includes all functions and actions used by an application, including any added in the future, without requiring manual updates. Similarly, functions and actions removed from an application will automatically stop being monitored.",
+      "category": "Observability",
+      "type": "FEATURE",
+      "date": "2026-03-02",
+      "date_display": "March 2, 2026",
+      "app": "Data Health"
+    },
+    {
+      "title": "Monitor status visualization in Workflow Lineage",
+      "description": "Workflow Lineage now includes a color mode that visualizes monitoring status for resources in your graph. When enabled, nodes are colored based on the maximum severity of their firing monitors or marked as healthy if all monitors are passing. The visualization also highlights which nodes are eligible for monitoring but do not have monitoring configured.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-03-02",
+      "date_display": "March 2, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Improved variable search behavior in Workshop",
+      "description": "Workshop now automatically scrolls to the top of the variable list when you modify a search query. This ensures that all matching variables are visible, preventing results from being hidden when the list was previously scrolled down.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-28",
+      "date_display": "February 28, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Pivot transform table in Quiver",
+      "description": "The [pivot transform table](/foundry/quiver/card-pivot-transform-table/) card is now available in Quiver, allowing you to group and aggregate data from a transform table using customizable row and column properties with flexible aggregation options (such as totals, counts, and unique values).",
+      "category": "Analytics",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-27",
+      "date_display": "February 27, 2026",
+      "app": "Quiver"
+    },
+    {
+      "title": "Models shipped through Marketplace now support `use_sidecar=True` Transforms annotation",
+      "description": "Model assets can now be packaged in Marketplace products when they are used as a sidecar `ModelInput` in transforms. This enables sharing models as part of Marketplace products when referenced in transforms.",
+      "category": "Model connectivity & development",
+      "type": "FEATURE",
+      "date": "2026-02-27",
+      "date_display": "February 27, 2026",
+      "app": "Models"
+    },
+    {
+      "title": "Claude Sonnet 4.6 now available for UK enrollments",
+      "description": "Claude Sonnet 4.6 is now available from AWS Bedrock on UK georestricted enrollments.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-02-26",
+      "date_display": "February 26, 2026",
+      "app": "Language Model Service"
+    },
+    {
+      "title": "Compass-managed permissions for Developer Console applications",
+      "description": "Developer Console applications can now inherit permissions from their parent project or folder using Compass-managed user permissions. Learn more in the [Developer Console documentation](/foundry/developer-console/permissions). Support for CBAC enrollments is in active development and expected to roll out at the end of March. Prior to this change, Developer Console users were automatically set as the `Owner` of the applications they created and had to manually share each application with other users and groups from the **Sharing & tokens** section of their application. This legacy model required per-application permission management.",
+      "category": "Developer toolchain",
+      "type": "FEATURE",
+      "date": "2026-02-26",
+      "date_display": "February 26, 2026",
+      "app": "Developer Console"
+    },
+    {
+      "title": "New files landing page and the ability to promote files",
+      "description": "Starting the week of February 23, a redesigned Files landing page, along with the introduction of a Promoted status, will be available across all enrollments. These changes are designed to help users find relevant content as the volume of resources on the platform increases.",
+      "category": "Security & governance",
+      "type": "FEATURE",
+      "date": "2026-02-26",
+      "date_display": "February 26, 2026",
+      "app": "Projects"
+    },
+    {
+      "title": "Custom background colors for Workshop sections and pages",
+      "description": "Workshop sections and pages now support custom background colors, giving application builders better control over the visual design of their modules. In addition to the existing preset shades, you can now apply any hex color or Blueprint color to section and page backgrounds. Saved colors defined at the module level are also available as section and page background options, making it straightforward to maintain a consistent color palette across an application.",
+      "category": "Use case development",
+      "type": "FEATURE",
+      "date": "2026-02-26",
+      "date_display": "February 26, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "North-of-ontology log search available in Workflow Lineage",
+      "description": "Workflow Lineage now allows you to search across all north-of-ontology service logs produced by a resource over the past seven days. Log search aggregates logs from every execution, making it easy to investigate recurring errors or track down intermittent issues.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-02-25",
+      "date_display": "February 25, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Microsoft Word export support in Workshop",
+      "description": "Workshop now supports exporting Microsoft Word (DOCX) files via function-backed exports, allowing you to download documents in a widely compatible format for offline use, review, or distribution.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-25",
+      "date_display": "February 25, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Gemini 3.1 Pro now available via VertexAI",
+      "description": "Gemini 3.1 Pro model is now available from VertexAI on commercial, non-georestricted enrollments.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-02-24",
+      "date_display": "February 24, 2026",
+      "app": "Language Model Service"
+    },
+    {
+      "title": "Claude Sonnet 4.6 now available from Anthropic, AWS Bedrock, and Google Vertex",
+      "description": "Claude Sonnet 4.6 is now available from Anthropic, AWS Bedrock, and Google Vertex on non-georestricted enrollments. For US and EU georestricted enrollments, this model is available from AWS Bedrock and Google Vertex.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-02-24",
+      "date_display": "February 24, 2026",
+      "app": "Language Model Service"
+    },
+    {
+      "title": "Open in Workflow Lineage option for Notepad documents",
+      "description": "You can now open a Notepad document in Workflow Lineage directly from Notepad. This feature is available through the **Open in Workflow Lineage** option in the **File** menu dropdown or by using the keyboard shortcut `Cmd+i` (Mac) or `Ctrl+i` (Windows) .",
+      "category": "Analytics",
+      "type": "FEATURE",
+      "date": "2026-02-24",
+      "date_display": "February 24, 2026",
+      "app": "Notepad"
+    },
+    {
+      "title": "Allow searching for markings by marking ID",
+      "description": "Pipeline Builder now allows you to search for an output's markings by the marking's ID in addition to its name. To search for a marking, choose **Configure markings** in **Pipeline outputs** to render the **Security markings** modal, where you can select the configuration icon and choose **Search by ID** before entering the marking's ID in the **Search all markings IDs** search bar.",
+      "category": "Data connectivity & integration",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-24",
+      "date_display": "February 24, 2026",
+      "app": "Pipeline Builder"
+    },
+    {
+      "title": "Function effects supported in Automate",
+      "description": "You can now run functions when an [automation](/foundry/automate/overview/) triggers or recovers, enabling you to automatically analyze data, transform inputs, and return completed results. [Learn more about function effects in Automate](/foundry/automate/effect-function).",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-02-24",
+      "date_display": "February 24, 2026",
+      "app": "Automate"
+    },
+    {
+      "title": "Filter trashed resources from Workflow Lineage graphs",
+      "description": "Workflow Lineage now includes a trash icon in its toolbar that enables you to remove trashed resources from your graph and exclude them from node connections. This allows you to focus on active resources and simplifies navigation, especially when working with complex workflows containing many nodes. You can add the trashed resources back to your graph by selecting the trash icon again.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-24",
+      "date_display": "February 24, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Automatically obfuscate sensitive data in Sensitive Data Scanner using Cipher",
+      "description": "Sensitive Data Scanner now supports a new Match Action type, [**Obfuscate Data**](/foundry/sensitive-data-scanner/create-match-actions/create-an-obfuscate-data-match-action/), allowing you to automatically encrypt or hash matched sensitive data using [Cipher](/foundry/cipher/overview/). This addition joins the existing Match Action types, **Apply Markings** and **Create Issues**, giving data governance users more direct control over how sensitive data is handled when a match is detected.",
+      "category": "Security & governance",
+      "type": "FEATURE",
+      "date": "2026-02-24",
+      "date_display": "February 24, 2026",
+      "app": "Sensitive Data Scanner"
+    },
+    {
+      "title": "Custom widgets available in Workshop mobile",
+      "description": "Custom widgets can now be used in Workshop mobile applications. Users can access and interact with custom widgets when using Workshop on mobile devices.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-24",
+      "date_display": "February 24, 2026",
+      "app": "Custom Widgets"
+    },
+    {
+      "title": "Custom widgets available in Workshop mobile",
+      "description": "Custom widgets can now be used in Workshop mobile applications. Developers should ensure their widgets are compatible with mobile layouts for optimal user experience. Future updates will improve search and discovery features to allow filtering for mobile-compatible custom widgets.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-24",
+      "date_display": "February 24, 2026",
+      "app": "Custom Widgets"
+    },
+    {
+      "title": "Media references supported in function-backed columns",
+      "description": "Function-backed columns in Workshop now properly display media references as image previews instead of showing \"unsupported type.\" This applies to both single media references and arrays of media references, matching the behavior of standard media reference columns.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-24",
+      "date_display": "February 24, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Improved accessibility for scrollable lists",
+      "description": "Workshop now provides better screen reader support for scrollable lists of items. This accessibility improvement ensures more accurate semantic structure and clearer announcements when navigating through lists with assistive technologies.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-24",
+      "date_display": "February 24, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Improved pivot table width behavior",
+      "description": "Pivot tables in Workshop now properly expand to fill available space when the parent container width changes while the **Fill Width** option is enabled. Previously, pivot tables would only adjust their width when interacted with directly, leaving empty space when container dimensions changed.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-24",
+      "date_display": "February 24, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Open in Workflow Lineage option added to Quiver",
+      "description": "You can now open your Quiver dashboard in Workflow Lineage directly from the **File** menu. This new option displays the Quiver dashboard node and its directly related nodes in a Workflow Lineage graph. You can also use the keyboard shortcut `Cmd+i` (Mac) or `Ctrl+i` (Windows)  to quickly access this functionality.",
+      "category": "Analytics",
+      "type": "FEATURE",
+      "date": "2026-02-23",
+      "date_display": "February 23, 2026",
+      "app": "Quiver"
+    },
+    {
+      "title": "Add support for secret rotation checkpoint",
+      "description": "The **Rotate OAuth client secret** checkpoint type is now available. Users can now configure checkpoints to appear when rotating the secret of an OAuth client in [Developer Console](/foundry/developer-console/overview/).",
+      "category": "Developer toolchain",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-23",
+      "date_display": "February 23, 2026",
+      "app": "Developer Console"
+    },
+    {
+      "title": "Open Machinery processes in Workflow Lineage",
+      "description": "You can now open Machinery processes in Workflow Lineage directly from the Machinery application. Access this functionality through the new **Open in Workflow Lineage** option in the **File** menu dropdown, or by using the keyboard shortcut `ctrl + i` (Windows) or `cmd + i` (macOS).",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-23",
+      "date_display": "February 23, 2026",
+      "app": "Machinery"
+    },
+    {
+      "title": "Create materializations for object types in Ontology Manager",
+      "description": "Ontology Manager now supports creating materializations for object types. This feature allows you to define how object data should be materialized. Currently, this functionality is limited to materializations on the main branch only.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-23",
+      "date_display": "February 23, 2026",
+      "app": "Ontology Management"
+    },
+    {
+      "title": "View inherited link type constraints for interfaces in Ontology Manager",
+      "description": "Ontology Manager now displays which link type constraints are inherited when working with interfaces that extend other interfaces. This information is visible both on the **Extensions** tab and when previewing a new extension, making it easier to understand inheritance relationships between interfaces.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-23",
+      "date_display": "February 23, 2026",
+      "app": "Ontology Management"
+    },
+    {
+      "title": "Search for Gaia maps in Workflow Lineage",
+      "description": "You can now search for Gaia maps directly in the left search panel of Workflow Lineage. Previously, Gaia map nodes could only be accessed by expanding from existing nodes on the graph. This enhancement makes it easier to find and incorporate Gaia maps into your workflow visualizations. \n\n**Note:** To search for Gaia maps in Workflow Lineage, your enrollment must use both Foundry and Gotham.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-23",
+      "date_display": "February 23, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Enhanced interface details panel in Workflow Lineage",
+      "description": "Workflow Lineage now provides more comprehensive information in the interface details panel. When viewing an interface, you can now see its properties, the object types that implement it, and the interfaces it extends from. This additional context makes it easier to understand interface relationships and structure within your ontology.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-23",
+      "date_display": "February 23, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Model selection now available during Marketplace installation",
+      "description": "You can now select models during product installation in Marketplace rather than packaging them with your pipeline. This new model selector in the installation app allows you to choose the appropriate model version at installation time, reducing the size of packaged products while ensuring that dependent blocks receive the exact model version they require.",
+      "category": "Product delivery",
+      "type": "FEATURE",
+      "date": "2026-02-23",
+      "date_display": "February 23, 2026",
+      "app": "DevOps"
+    },
+    {
+      "title": "Model selection available during Marketplace product installation",
+      "description": "Users can now select models during product installation in Marketplace. This eliminates the need to package models when shipping pipelines, providing more flexibility and potentially reducing package size. The new model selector allows users to resolve specific model versions required by dependent components.",
+      "category": "Product delivery",
+      "type": "FEATURE",
+      "date": "2026-02-23",
+      "date_display": "February 23, 2026",
+      "app": "Marketplace"
+    },
+    {
+      "title": "Open in Data Lineage option in File menu",
+      "description": "Slate now includes an \"Open in Data Lineage\" option in the File dropdown menu. This option opens a new Data Lineage graph displaying the Slate node and its directly related nodes. Application builders can also use the keyboard shortcut `Ctrl+i` (Windows) or `Cmd+i` (Mac) to access this functionality.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-23",
+      "date_display": "February 23, 2026",
+      "app": "Slate"
+    },
+    {
+      "title": "Variable list in Workshop now shows variables used in active page",
+      "description": "Workshop's variable list now includes a partition for variables used in the active page, in addition to the existing partition for variables used in the selected widget. Only one partition is shown at a time, with the widget partition taking precedence when a widget is selected.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-23",
+      "date_display": "February 23, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Consistent simplified user display across Workshop widgets",
+      "description": "Workshop now displays user information consistently across all widgets. Object Dropdown, Object List, and Property List widgets now use the same simplified user display as Object Tables, showing only essential user information in popovers instead of the full user profile with additional details.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-23",
+      "date_display": "February 23, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Core Object Views are now available",
+      "description": "Foundry now automatically creates a core [Object View](/foundry/object-views/overview/) for a new object type to provide a standardized representation of all its objects, ensuring other users have a holistic understanding of its schema and links without requiring additional configuration. Core Object Views provide a consistent, complete display of object data after object type creation, and they are now generally available across Foundry enrollments. [Learn more about core Object Views](/foundry/object-views/core-object-views/).",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-02-19",
+      "date_display": "February 19, 2026",
+      "app": "Object Views"
+    },
+    {
+      "title": "You can now view performance metrics for your Logic functions in Workflow Lineage",
+      "description": "You can now view execution and p95 metrics for your Logic functions directly in Workflow Lineage in the bottom **Function metrics** panel.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-02-19",
+      "date_display": "February 19, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Markdown editing mode now available in the text input widget",
+      "description": "Workshop text input widgets now support Markdown editing mode, providing a rich text formatting toolbar and the ability to toggle between rich text and raw Markdown views. Enable this feature by selecting the Markdown format option in the widget's configuration panel.",
+      "category": "Use case development",
+      "type": "FEATURE",
+      "date": "2026-02-19",
+      "date_display": "February 19, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "You can now view performance metrics of your Logic in Workflow Lineage",
+      "description": "You can now view execution and p95 metrics for your Logic functions directly in Workflow Lineage in the bottom **Function metrics** panel.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-02-18",
+      "date_display": "February 18, 2026",
+      "app": "AIP Logic"
+    },
+    {
+      "title": "Image resizing in Flow Capture",
+      "description": "Flow Capture now allows you to resize images and have those changes persist in documentation. Resized images also carry over to Notepad and PDF exports.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-02-18",
+      "date_display": "February 18, 2026",
+      "app": "Flow Capture"
+    },
+    {
+      "title": "Flow Capture prevents accidental recording interruptions when opening links",
+      "description": "Flow Capture now intercepts links that would open in new tabs during recording sessions. When clicking a link that would normally open in a new tab (via target=\"_blank\" or cmd/ctrl+click), users are presented with a dialog offering two options: open in a new tab (exiting the recording context) or open in the current tab (continuing the recording). This prevents accidental loss of recording context when navigating between pages.",
+      "category": "AI Platform (AIP)",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-18",
+      "date_display": "February 18, 2026",
+      "app": "Flow Capture"
+    },
+    {
+      "title": "Open Pipeline Builder objects in Workflow Lineage",
+      "description": "You can now open Pipeline Builder object types directly in Workflow Lineage from within Pipeline Builder. This integration allows for seamless navigation between your pipeline definitions and their visualization in the Workflow Lineage graph.",
+      "category": "Data connectivity & integration",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-18",
+      "date_display": "February 18, 2026",
+      "app": "Pipeline Builder"
+    },
+    {
+      "title": "Historical resource queue utilization view in Resource Management",
+      "description": "Resource Management now provides visibility into historical resource queue utilization. You can view the usage patterns of vCPUs or vGPUs for any queue over the past 7 days, allowing you to monitor utilization trends and identify usage spikes. This historical view helps determine if your queues are appropriately sized for your workloads and assists with troubleshooting resource-related issues.",
+      "category": "Management & enablement",
+      "type": "FEATURE",
+      "date": "2026-02-18",
+      "date_display": "February 18, 2026",
+      "app": "Resource Management"
+    },
+    {
+      "title": "Model functions now supported in TypeScript v2 and Python functions",
+      "description": "To use model functions in TypeScript v2 and Python repositories, your model functions must be **tied to an ontology**. Starting February 2026, all new model functions will automatically be ontology-bound. Existing space-bound model functions can be migrated from the model user interface. See [Functions on models](/foundry/functions/functions-on-models) for code examples and detailed usage and migration instructions.",
+      "category": "Model connectivity & development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-18",
+      "date_display": "February 18, 2026",
+      "app": "Modeling"
+    },
+    {
+      "title": "Function ontology binding displayed in Workflow Lineage sidebar",
+      "description": "Workflow Lineage now displays ontology binding information in the details sidebar when you select a function. This makes it easier to identify which ontology a function is associated with, providing better context when working with functions across multiple ontologies.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-18",
+      "date_display": "February 18, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Strict mode added to folder tracking in DevOps",
+      "description": "DevOps now offers a strict mode option for folder tracking. When enabled, strict mode performs additional validations to ensure that only resources from within the designated source folder can be added to your product, preventing accidental inclusion of external resources. You can enable this option in the folder tracking settings of your DevOps product.",
+      "category": "Product delivery",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-18",
+      "date_display": "February 18, 2026",
+      "app": "DevOps"
+    },
+    {
+      "title": "Keyboard shortcut added to open Workflow Lineage from DevOps Resources Overview",
+      "description": "You can now use the keyboard shortcut `Cmd+I` (Mac) or `Ctrl+I` (Windows) in the DevOps Resources overview page to quickly open the selected resource in Workflow Lineage. This shortcut provides faster access to workflow visualization and management directly from your DevOps drafts.",
+      "category": "Product delivery",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-18",
+      "date_display": "February 18, 2026",
+      "app": "DevOps"
+    },
+    {
+      "title": "Keyboard shortcut for Workflow Lineage added to Resources overview",
+      "description": "Users can now open Workflow Lineage directly from the Resources overview page using the keyboard shortcut `Cmd+i` (Mac) or `Ctrl+i` (Windows).",
+      "category": "Product delivery",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-18",
+      "date_display": "February 18, 2026",
+      "app": "Marketplace"
+    },
+    {
+      "title": "Strict mode added to folder tracking in DevOps",
+      "description": "DevOps now supports strict mode for folder tracking, which performs additional validations to ensure no resources from outside the source folder can be added to your product. Users can enable strict folder tracking in the folder tracking configuration section when creating a new folder tracked product or editing an existing folder tracked product.",
+      "category": "Product delivery",
+      "type": "FEATURE",
+      "date": "2026-02-18",
+      "date_display": "February 18, 2026",
+      "app": "Marketplace"
+    },
+    {
+      "title": "Cross-store linked products now available in DevOps",
+      "description": "DevOps now supports linking stores together, enabling linked products to span across multiple stores. To configure linked stores, navigate to the store settings page and add the store in the **Linked stores** section.",
+      "category": "Product delivery",
+      "type": "FEATURE",
+      "date": "2026-02-18",
+      "date_display": "February 18, 2026",
+      "app": "Marketplace"
+    },
+    {
+      "title": "Search Workshop variables by ID",
+      "description": "Workshop now allows you to search for variables by their unique IDs in addition to their display names. Enter a variable ID (found in the JSON configuration of widgets) in the search field to quickly locate specific variables in your modules.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-18",
+      "date_display": "February 18, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Hover-activated add buttons in Workshop layouts",
+      "description": "Workshop now displays **Add widget** and **Set layout** options only when you hover over sections in your module layouts in edit mode. This better reflects the look of your module when it is published and streamlines the module building process.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-18",
+      "date_display": "February 18, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Monitoring views now support project scopes for ontology resources",
+      "description": "Monitoring views now support **project scopes for ontology resources**, allowing you to dynamically monitor ontology resources across one or multiple projects. Supported resource types are: object types, many-to-many links, actions, and functions. Any new resources created in or added to the project will now be automatically monitored.",
+      "category": "Observability",
+      "type": "FEATURE",
+      "date": "2026-02-17",
+      "date_display": "February 17, 2026",
+      "app": "Data Health"
+    },
+    {
+      "title": "Furnace is now the default SQL warehousing engine",
+      "description": "[Furnace](/foundry/sql-warehousing/furnace) is now rolled out as the default [SQL warehousing](/foundry/sql-warehousing/overview/) engine, replacing the [legacy Spark and Direct Read](/foundry/analytics-connectivity/architecture#execution-engines) engines. Furnace provides a unified SQL experience with intelligent backing engine selection, automatically choosing between Spark and Trino based on workload and performance characteristics, and leverages the [transforms compute rate type](/foundry/sql-warehousing/compute-usage/) under the hood. The new architecture decouples query parsing from execution, enabling consistent behavior across in-platform queries, ODBC/JDBC connections, and Arrow Flight SQL integrations. You can access Furnace SQL from [SQL Console](/foundry/sql-warehousing/sql-console/). This transition is automatic and should not require changes to existing workflows. Reference the [SQL dialect documentation](/foundry/sql-warehousing/sql-dialect/) for syntax details.",
+      "category": "Analytics",
+      "type": "FEATURE",
+      "date": "2026-02-16",
+      "date_display": "February 16, 2026",
+      "app": "SQL Warehousing"
+    },
+    {
+      "title": "Unsaved changes confirmation in Flow Capture",
+      "description": "Flow Capture now displays a confirmation dialog when you attempt to navigate away from the edit page with unsaved changes. This prevents accidental loss of work by giving you the option to stay on the page and save your changes.",
+      "category": "AI Platform (AIP)",
+      "type": "FIX",
+      "date": "2026-02-14",
+      "date_display": "February 14, 2026",
+      "app": "Flow Capture"
+    },
+    {
+      "title": "Data Connection exports are now supported in Marketplace",
+      "description": "Data Connection exports can now be packaged alongside syncs in Marketplace. In order to add an export to your marketplace product, use the **Add output** option, which will prompt you to select a Data Connection source. The dialog will walk you through and allow you to include syncs as well as exports in your Marketplace product.",
+      "category": "Product delivery",
+      "type": "FEATURE",
+      "date": "2026-02-14",
+      "date_display": "February 14, 2026",
+      "app": "DevOps"
+    },
+    {
+      "title": "Improved filter list widget chart behavior",
+      "description": "Filter list widget charts now maintain their size during loading states, reducing layout shifts. The active filter range remains visible even when no data matches the filter criteria. Dark mode support has also been enhanced with improved contrast.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-14",
+      "date_display": "February 14, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Claude Opus 4.6 available from Anthropic, AWS Bedrock, and Google Vertex",
+      "description": "Claude Opus 4.6 is now available from Anthropic, AWS Bedrock, and Google Vertex on non-georestricted enrollments. For US and EU non-georestricted enrollments, the model is available from AWS Bedrock and Google Vertex.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-02-12",
+      "date_display": "February 12, 2026",
+      "app": "Language Model Service"
+    },
+    {
+      "title": "Model Studio, our no-code model training tool, is now generally available",
+      "description": "Model Studio, a new workspace that allows users to train and deploy machine learning models, will be generally available the week of February 9. Model Studio transforms the complex task of building production-grade models into a streamlined no-code process that makes advanced machine learning more accessible. Whether you are a data scientist looking to accelerate your workflow, or a business user eager to unlock insights from your data, Model Studio provides essential tools and a user-friendly interface that simplifies the journey from data to model. [Learn more about Model Studio](/foundry/model-studio/overview/).",
+      "category": "Model connectivity & development",
+      "type": "APPLICATION",
+      "date": "2026-02-12",
+      "date_display": "February 12, 2026",
+      "app": "Model Studio"
+    },
+    {
+      "title": "Dataset materializations now supported for object types with row-level policies",
+      "description": "Dataset materializations are now supported for object types with row-level policies on organizations. This applies for restricted views and object security policies that reference a mandatory control property with a set of allowed organizations.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-02-12",
+      "date_display": "February 12, 2026",
+      "app": "Indexing"
+    },
+    {
+      "title": "Access Workflow Lineage in Automate with keyboard shortcut and action button",
+      "description": "You can now open Workflow Lineage from an automation through an action button on the overview page or by using the `cmd+i` (macOS) or `ctrl+i` (Windows) keyboard shortcut.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-11",
+      "date_display": "February 11, 2026",
+      "app": "Automate"
+    },
+    {
+      "title": "Geospatial map nodes in Workflow Lineage",
+      "description": "Workflow Lineage now supports geospatial map nodes in workflow visualizations. You can access these nodes through new connection buttons from other nodes, such as object types. This allows you to incorporate geospatial data into your ontology visualizations and better understand relationships between geospatial resources and other ontological elements.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-02-11",
+      "date_display": "February 11, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Expanded node visualization when opening items in Workflow Lineage",
+      "description": "Workflow Lineage now automatically displays upstream and downstream nodes when opening a single item. Previously, when opening an Object Type, Action Type, Function, or Logic Function from Ontology Manager, only the selected node would appear in the graph. With this improvement, related nodes are immediately visible, providing better context and reducing the need for manual exploration.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-11",
+      "date_display": "February 11, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Bulk move resources in Data Lineage",
+      "description": "Data Lineage now supports bulk selection and movement of resources. You can select multiple resources within the same project and move them to a different folder or project in a single operation. When moving resources, the system performs the same permission checks and provides the same warnings as when moving resources in Projects.",
+      "category": "Data connectivity & integration",
+      "type": "FEATURE",
+      "date": "2026-02-10",
+      "date_display": "February 10, 2026",
+      "app": "Data Lineage"
+    },
+    {
+      "title": "Project-based coloring for migrated objects in Data Lineage",
+      "description": "Data Lineage now displays folder, project, and portfolio color modes for object types and action types that have been migrated to projects. This enhancement provides consistent visual representation of project-based permissions across your data lineage graphs.",
+      "category": "Data connectivity & integration",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-10",
+      "date_display": "February 10, 2026",
+      "app": "Data Lineage"
+    },
+    {
+      "title": "Create unscoped Developer Console applications",
+      "description": "Developers can now create unscoped Developer Console applications and update the scope of existing applications at any time. Learn more in the [Developer Console documentation](/foundry/developer-console/application-scopes).",
+      "category": "Developer toolchain",
+      "type": "FEATURE",
+      "date": "2026-02-10",
+      "date_display": "February 10, 2026",
+      "app": "Developer Console"
+    },
+    {
+      "title": "Customizable node width in Workflow Lineage graphs",
+      "description": "Workflow Lineage now allows you to adjust node widths for each workflow graph individually. This enhancement makes it easier to read and work with nodes that have longer names by providing better visualization of their complete labels.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-10",
+      "date_display": "February 10, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Presentation mode in Workflow Lineage",
+      "description": "Presentation mode is now available in Workflow Lineage for all enrollments. Use the presentation mode for Workflow Lineage to create and organize visual frames of your workflow graph, making it easier to present your work. To get started, select the project screen icon in the bottom of the graph.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-02-10",
+      "date_display": "February 10, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Visual indicators for conditionally visible sections in Workshop",
+      "description": "Workshop now displays icons and tooltips in the layout panel to indicate which sections have conditional visibility enabled. This makes it easier to identify and manage conditionally visible sections, even when they are currently hidden.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-10",
+      "date_display": "February 10, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Review uploaded videos in Flow Capture",
+      "description": "Flow Capture now supports a complete review phase for uploaded videos. After uploading a prerecorded demo, you can review the extracted screenshots in a thumbnail grid, adjust timestamps, delete unwanted images, and confirm your selections before finalizing the documentation. This completes the video upload workflow, enabling you to use prerecorded demos as a starting point for documentation.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-02-09",
+      "date_display": "February 9, 2026",
+      "app": "Flow Capture"
+    },
+    {
+      "title": "Create streaming time series conditions in Automate",
+      "description": "Users can now evaluate time series conditions at low latency using streaming data.  Review the [streaming alerting](/foundry/time-series/alerting-overview#streaming-alerting) documentation for more information.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-02-09",
+      "date_display": "February 9, 2026",
+      "app": "Automate"
+    },
+    {
+      "title": "Function upgrade panels visible without node selection in Workflow Lineage",
+      "description": "Workflow Lineage now displays function upgrade panels in the bottom bar even when no nodes are selected in your graph. Previously, you needed to select nodes to see bottom panels. With this improvement, function upgrade, model usage and submission criteria upgrade panels  appear automatically, making it easier to identify and apply available upgrades across your workflow.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-09",
+      "date_display": "February 9, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Workshop displays deprecated object types in Module Overview panel",
+      "description": "Workshop now shows when an object type is marked as deprecated in Ontology Manager directly in the module overview panel, making it easier to identify deprecated ontology entities in your modules.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-09",
+      "date_display": "February 9, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Conditional visibility for metric cards",
+      "description": "Workshop now supports conditional visibility for metric cards, allowing you to show or hide these components based on variable values or other conditions. This functionality works similarly to conditional visibility for other components like buttons.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-09",
+      "date_display": "February 9, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Execute SQL Query API is now generally available",
+      "description": "The Execute SQL Query API is now generally available. This API enables programmatic execution of SQL queries against tabular data in Foundry, with support for referencing datasets and tables by path or RID. Learn more about executing SQL queries in the [API documentation](/foundry/api/v2/sql-queries-v2-resources/sql-queries/execute-sql-query).",
+      "category": "Analytics",
+      "type": "FEATURE",
+      "date": "2026-02-06",
+      "date_display": "February 6, 2026",
+      "app": "SQL Warehousing"
+    },
+    {
+      "title": "Claude Sonnet 4.5, Claude Haiku 4.5 now available in Japan region",
+      "description": "Claude Sonnet 4.5 and Claude Haiku 4.5 models are now available from AWS Bedrock on Japan georestricted enrollments.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-02-05",
+      "date_display": "February 5, 2026",
+      "app": "Language Model Service"
+    },
+    {
+      "title": "Deploy containers with compute modules",
+      "description": "[Compute modules](/foundry/compute-modules/overview/) are now generally available in Foundry. With compute modules, you can run containers that scale dynamically based on load, bringing your existing code, in any language, into Foundry without rewriting it.",
+      "category": "Developer toolchain",
+      "type": "APPLICATION",
+      "date": "2026-02-05",
+      "date_display": "February 5, 2026",
+      "app": "Compute Modules"
+    },
+    {
+      "title": "The public documentation home page has been redesigned",
+      "description": "The documentation home page has been redesigned to better integrate content for different audiences. Toggles are now available in the top right of the explore and reference documentation sections, allowing users to choose the content that is most relevant to them and surface content according to capabilities or products.",
+      "category": "Management & enablement",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-05",
+      "date_display": "February 5, 2026",
+      "app": "Platform Documentation"
+    },
+    {
+      "title": "Edit test case parameters directly from table headers",
+      "description": "AIP Evals now allows you to edit test case parameters directly from table column headers. You can select any column header to modify parameter names, types, and optionality settings inline. A new add column button in the header row makes it easy to add new parameters, and validation errors now appear directly on individual column headers for more precise feedback. The existing schema editor remains available through a minimal icon button when you need to perform more complex operations like column reordering.",
+      "category": "AI Platform (AIP)",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-04",
+      "date_display": "February 4, 2026",
+      "app": "AIP Evals"
+    },
+    {
+      "title": "Edit test case parameters inline in AIP Logic",
+      "description": "You can now edit test case parameters directly from column headers in AIP Logic. Select any column header to modify parameter names, types, and optionality without opening the full schema editor. A new '+' icon in the header row allows you to quickly add new parameters, and validation errors now appear on individual column headers for easier troubleshooting.",
+      "category": "AI Platform (AIP)",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-04",
+      "date_display": "February 4, 2026",
+      "app": "AIP Logic"
+    },
+    {
+      "title": "Improved link type display when editing permissions in Workflow Lineage",
+      "description": "Workflow Lineage now distinguishes between link types that will be affected by permission changes and those that will not when using the permissions editing dialog. When editing object type permissions, the dialog separates link types into those that will have their permissions updated (based on your edit permissions) and those that will remain unaffected. This makes it clearer which ontological resources will have their permissions changed when using the bulk role updater.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-04",
+      "date_display": "February 4, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Hide and restore frames in Workflow Lineage presentations",
+      "description": "Workflow Lineage now allows you to hide individual frames in presentation mode without deleting them. Hidden frames can be restored later when needed, giving you more flexibility in how you organize and present your workflow visualizations. Navigation buttons automatically disable when all frames in a particular direction are hidden, providing clear visual feedback about available navigation options.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-04",
+      "date_display": "February 4, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Improved handling of auto-save conflicts in Workflow Lineage",
+      "description": "Workflow Lineage now correctly preserves your latest auto-saved changes when resolving auto-save conflicts. Previously, choosing to abandon changes during an auto-save conflict would revert to the last manually saved state, potentially losing significant work. Now, the system reloads to the most recent auto-saved version, ensuring your latest changes are retained.",
+      "category": "Ontology building",
+      "type": "FIX",
+      "date": "2026-02-04",
+      "date_display": "February 4, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Improved interface visualization in Workflow Lineage",
+      "description": "Workflow Lineage now provides a more comprehensive visualization when opening interfaces from Ontology Manager. Instead of displaying object types that implement the interface in a simple grid layout, the system now creates a full dynamic layout showing richer relationships. This enhanced view includes interfaces the chosen interface extends, interfaces that extend it, and object types and interfaces referenced in link type constraints, giving you a more complete picture of your interface relationships.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-04",
+      "date_display": "February 4, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "New AIP Analyst Export checkpoint type",
+      "description": "The **AIP Analyst Export** checkpoint type is now available. Users can now configure checkpoints to appear when exporting AIP Analyst chats to PDF, enabling organizations to capture justifications for these exports.",
+      "category": "Security & governance",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-04",
+      "date_display": "February 4, 2026",
+      "app": "Checkpoints"
+    },
+    {
+      "title": "Jump to select component in the layout sidebar",
+      "description": "Workshop now includes a button in the layout sidebar header that automatically scrolls to and highlights the currently selected widget or layout component. This makes it easier to locate components in the layout tree, especially in complex modules with many elements.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-04",
+      "date_display": "February 4, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Deploy document extraction workflows with AIP Document Intelligence",
+      "description": "AIP Document Intelligence will be generally available on February 4, 2026 and is enabled by default for all AIP enrollments. AIP Document Intelligence is a low-code application for configuring and deploying document extraction workflows. Users can upload sample documents, experiment with different extraction strategies, and evaluate results based on quality, speed, and cost—all before deploying at scale. AIP Document Intelligence then generates Python transforms that can process entire document collections using the selected strategy, converting PDFs and images into structured Markdown with preserved tables and formatting.",
+      "category": "AI Platform (AIP)",
+      "type": "APPLICATION",
+      "date": "2026-02-03",
+      "date_display": "February 3, 2026",
+      "app": "AIP Document Intelligence"
+    },
+    {
+      "title": "GPT-5.2 Codex now available in AIP",
+      "description": "GPT-5.2 Codex is now available directly from OpenAI for non-georestricted enrollments.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-02-03",
+      "date_display": "February 3, 2026",
+      "app": "Language Model Service"
+    },
+    {
+      "title": "Improved VS Code workspace and Palantir extension documentation",
+      "description": "Documentation for VS Code workspaces and the Palantir extension has been reorganized to provide clearer guidance and a more intuitive learning path. The updated documentation makes it easier to find information about specific workflows and features.",
+      "category": "Developer toolchain",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-03",
+      "date_display": "February 3, 2026",
+      "app": "VS Code Extension"
+    },
+    {
+      "title": "Transforms documentation improvements",
+      "description": "Documentation for transforms and VS Code workspaces has been refactored to provide more concise language and better workflow guidance. The updated pages include transforms preview, code-defined filtering, environment debugger, extension features, transforms build, VS Code workspaces overview, and benefits documentation.",
+      "category": "Management & enablement",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-03",
+      "date_display": "February 3, 2026",
+      "app": "Platform Documentation"
+    },
+    {
+      "title": "Multi-ontology support in Workflow Lineage",
+      "description": "Workflow Lineage just became a lot more robust - you can now visualize resources across multiple ontologies in one unified graph. Instantly identify cross-ontology relationships, spot external resources at a glance, and switch between ontologies without leaving your workflow view.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-02-03",
+      "date_display": "February 3, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "New Ontology query filter in Resource Management",
+      "description": "Resource Management now includes an **All Ontology queries** option in the **Source** dropdown of the **Analysis** tab. This new filter allows users to view usage data from Ontology query sources, providing a consolidated view of Ontology-related resource consumption.",
+      "category": "Management & enablement",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-02",
+      "date_display": "February 2, 2026",
+      "app": "Resource Management"
+    },
+    {
+      "title": "Fixed date range selection for Today and Yesterday shortcuts",
+      "description": "The filter list widget and date input components now apply date ranges when using the \"Today\" or \"Yesterday\" shortcuts. Previously, these shortcuts included an extra day at the end of the selected range.",
+      "category": "Use case development",
+      "type": "FIX",
+      "date": "2026-02-02",
+      "date_display": "February 2, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Introducing Resource Context in Upgrade Assistant",
+      "description": "Upgrade Assistant now features a Resource Context panel that opens when selecting any resource. The panel displays the resource's current assignees and status alongside a full history of changes including status transitions, assignment updates, ignore actions and initial reporting. Each history entry shows what changed, when and by whom, providing full insight into how a resource reached its current state.",
+      "category": "Management & enablement",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-01",
+      "date_display": "February 1, 2026",
+      "app": "Upgrade Assistant"
+    },
+    {
+      "title": "OSDK errors displayed in Health Dialog",
+      "description": "Slate now displays Object Service Development Kit (OSDK) loading errors in the Health Dialog, providing a persistent way to identify and resolve configuration issues. When OSDK fails to load, users can access the new OSDK tab in the Health Dialog to view detailed error information and guidance. The dialog includes a direct link to open the OSDK configuration panel, making it easier to troubleshoot and fix the issue.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-01",
+      "date_display": "February 1, 2026",
+      "app": "Slate"
+    },
+    {
+      "title": "Improved visibility options for action parameters",
+      "description": "Workshop now displays visibility options for action parameters without requiring you to select a default value. This makes it easier to configure and view multi-purpose actions where different parameters need to be shown or hidden depending on the context.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-01",
+      "date_display": "February 1, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Improved text wrapping for struct properties in Workshop widgets",
+      "description": "Workshop now properly supports text wrapping for struct properties and arrays of struct properties in the property list, object table, and object list widgets when the **Enable value wrapping** option is turned on. Additionally, struct values in object tables now show proper ellipsis truncation when content is too long to display fully, with hover tooltips showing the complete value.",
+      "category": "Use case development",
+      "type": "FIX",
+      "date": "2026-02-01",
+      "date_display": "February 1, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Improved alignment of variable selector popover",
+      "description": "The \"create new\" popover in the variable selector sidebar now aligns precisely with its corresponding menu item, preventing accidental closures when users interact with it.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-01",
+      "date_display": "February 1, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Fixed padding around Gantt chart widget",
+      "description": "The Gantt charts widget now display without excessive padding, accommodating the recent [Blueprint ↗](https://blueprintjs.com/) design update.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-02-01",
+      "date_display": "February 1, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "View changes and past runs in the new History tab",
+      "description": "You can now access a complete history of changes and runs for your compute modules in the new **History** tab. This chronological record helps you track configuration changes over time and investigate past deployments for debugging purposes.",
+      "category": "Developer toolchain",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-31",
+      "date_display": "January 31, 2026",
+      "app": "Compute Modules"
+    },
+    {
+      "title": "Automatically package resources in DevOps by tracking a source folder",
+      "description": "DevOps now supports a new folder tracking mode, allowing products to monitor a specified source folder. Any changes made to the contents of this folder will automatically be detected and incorporated when starting a new version or performing a refresh. Migration helpers are included to help transition existing manually packaged products to the new folder tracking mode.",
+      "category": "Product delivery",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-31",
+      "date_display": "January 31, 2026",
+      "app": "DevOps"
+    },
+    {
+      "title": "Fixed scrolling in queries panel when hovering over parameter fields",
+      "description": "Slate now allows scrolling in the queries panel even when the mouse cursor is hovering over parameter input fields. Previously, these input fields would capture scroll events, preventing users from scrolling through the panel while the cursor was positioned over a parameter field.",
+      "category": "Use case development",
+      "type": "FIX",
+      "date": "2026-01-31",
+      "date_display": "January 31, 2026",
+      "app": "Slate"
+    },
+    {
+      "title": "Data source filtering in Queries panel",
+      "description": "The Queries panel in Slate now includes filtering capabilities that allow application builders to filter queries by data source. When multiple data sources are present, a filter icon appears next to the search input, providing a dropdown menu with checkboxes for each unique data source. Users can select or deselect all data sources using dedicated buttons, and the filter works in conjunction with the existing search functionality.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-31",
+      "date_display": "January 31, 2026",
+      "app": "Slate"
+    },
+    {
+      "title": "Improved media display in object list widget",
+      "description": "Embedded media in the object list widget now displays behind object properties instead of covering them, improving legibility. The background has also been made more opaque to enhance contrast.",
+      "category": "Use case development",
+      "type": "FIX",
+      "date": "2026-01-31",
+      "date_display": "January 31, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Improved layout handling for conditionally hidden sections",
+      "description": "Workshop now properly removes conditionally hidden sections from the layout. Previously, hidden sections would still affect padding and spacing between other sections. With this fix, conditionally hidden sections are completely removed from the layout, ensuring proper alignment and spacing between visible sections.",
+      "category": "Use case development",
+      "type": "FIX",
+      "date": "2026-01-31",
+      "date_display": "January 31, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Variable-backed column visibility now works with combined object types in Workshop",
+      "description": "Workshop now supports variable-backed column visibility filtering in object tables when the **Combine multiple object types** option is enabled. Previously, this filtering functionality only worked when different object types were displayed in separate tabs.",
+      "category": "Use case development",
+      "type": "FIX",
+      "date": "2026-01-31",
+      "date_display": "January 31, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Develop and test object views safely with Foundry Branching",
+      "description": "Object views are now supported in Foundry Branching, enabling you to develop and test object view changes in isolation before deploying them to production.\n\nObject views are critical interfaces between your ontology and end users. Branching enables safer iteration by allowing you to test changes in isolation, collaborate with multiple teams without conflicts, and ensure quality before deployment—using the same workflows you already use for Workshop modules and Ontology resources.",
+      "category": "Developer toolchain",
+      "type": "FEATURE",
+      "date": "2026-01-29",
+      "date_display": "January 29, 2026",
+      "app": "Foundry Branching"
+    },
+    {
+      "title": "Track function duration and action metrics in Workflow Lineage",
+      "description": "Workflow Lineage now includes a **Function metrics** tab that provides performance insights for your workflow functions and actions. The **P95 duration** sub-tab displays execution duration at the 95th percentile with intuitive graphs, allowing you to instantly spot performance spikes and proactively address potential issues. The **Executions** sub-tab shows the number of successful and failed executions for functions and actions, helping you identify reliability trends and troubleshoot issues more efficiently. These new metrics provide powerful insights, making it easier to monitor and optimize workflow functions.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-01-29",
+      "date_display": "January 29, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "New run history filtering in Workflow Lineage",
+      "description": "You can now [filter run history](/aip-observability/run-history/#filter-run-history) in Workflow Lineage to quickly find specific executions of functions, actions, automations, and logic. The **Run history** tab provides a complete view of all executions over the past seven days, and filtering by multiple criteria makes it faster to debug issues or audit workflows in high-volume environments.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-01-29",
+      "date_display": "January 29, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Automatically package resources in DevOps by tracking a source folder",
+      "description": "Products packaged in DevOps can now track a source folder. Each time you release a new version, DevOps automatically discovers and includes relevant the resources within the folder. Existing products can be migrated to track a source folder through a one-time migration process. [Learn more about tracking a source folder](https://www.palantir.com/docs/foundry/foundry-devops/folder-tracking/).",
+      "category": "Product delivery",
+      "type": "FEATURE",
+      "date": "2026-01-29",
+      "date_display": "January 29, 2026",
+      "app": "DevOps"
+    },
+    {
+      "title": "Run evaluation suites against multiple functions in AIP Evals",
+      "description": "AIP Evals now supports running evaluation suites against multiple execution targets simultaneously. You can add multiple Foundry functions or Logic functions to an evaluation suite, each with different input/output signatures and evaluator configurations. When configuring a run, you can switch to multi-target mode via the \"Test multiple functions\" button and select which targets to include. In the results view, you can select and compare results from runs across different targets, allowing you to efficiently evaluate and compare multiple implementations at once. [Learn more about configuring additional target functions in your evaluation suite](/foundry/aip-evals/create-suite/#additional-target-functions).",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-01-28",
+      "date_display": "January 28, 2026",
+      "app": "AIP Evals"
+    },
+    {
+      "title": "Scrollable derived property previews in Workshop",
+      "description": "Workshop now displays scrollbars for derived property previews when they contain large values. Previously, these previews could overflow their container, making it difficult to view all content.",
+      "category": "Use case development",
+      "type": "FIX",
+      "date": "2026-01-28",
+      "date_display": "January 28, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Monitor usage with rate limit hit tracking in Resource Management",
+      "description": "The Resource Management application now includes rate limit hit tracking in the **AIP usage and limits** view. Rate limit hits provide visibility into when users, projects, or applications reach their assigned rate limits in Foundry. This feature enables administrators to proactively monitor usage, identify capacity constraints, and troubleshoot issues related to rate limiting.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-01-27",
+      "date_display": "January 27, 2026",
+      "app": "Language Model Service"
+    },
+    {
+      "title": "GPT-4.1 mini now available in additional regions",
+      "description": "GPT-4.1 mini is now available from Azure OpenAI in Australia, Canada, Japan, and the United Kingdom for georestricted enrollments.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-01-27",
+      "date_display": "January 27, 2026",
+      "app": "Language Model Service"
+    },
+    {
+      "title": "Approximate nearest neighbor join available in Pipeline Builder",
+      "description": "Pipeline Builder now offers approximate nearest neighbor (ANN) join functionality for faster semantic search operations. Unlike the KNN join which finds the exact K nearest neighbors for each row, the ANN join uses Spark's ML library to efficiently find estimated close matches. This approach provides substantial improvements in processing speed with only a slight reduction in precision.",
+      "category": "Data connectivity & integration",
+      "type": "FEATURE",
+      "date": "2026-01-27",
+      "date_display": "January 27, 2026",
+      "app": "Pipeline Builder"
+    },
+    {
+      "title": "Active preview for Python transforms",
+      "description": "Active preview is now available for users of the Palantir extension for Visual Studio Code, enabling automatic updates to Python transform previews every time code is saved. Active preview eliminates the need to manually trigger previews after each code change, so your preview panel maintains synchronization and provides continuous feedback during development. Intelligent caching keeps subsequent previews fast by reusing code-defined filter results, project resources, and dependencies.",
+      "category": "Developer toolchain",
+      "type": "FEATURE",
+      "date": "2026-01-27",
+      "date_display": "January 27, 2026",
+      "app": "VS Code Extension"
+    },
+    {
+      "title": "Quiver nodes now supported in Workflow Lineage",
+      "description": "Users can now view quiver dashboards as nodes in Workflow Lineage graphs. Quiver dashboard nodes function the same as other resource nodes, and have connections to the object types they use and the workshop modules they appear in. Different color modes can be used to view usage metrics, resource permissions, last modified dates, and more.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-01-27",
+      "date_display": "January 27, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Marketplace parameter variables in Slate",
+      "description": "Slate now supports configuring variables as Marketplace parameters. Application builders can mark specific variables as parameters that can be customized during Marketplace installation. The Variables Panel includes a visual indicator for variables configured as Marketplace parameters and maintains synchronization when variables are renamed or deleted. Note that global and shared variables are not supported as Marketplace parameters.",
+      "category": "Use case development",
+      "type": "FEATURE",
+      "date": "2026-01-27",
+      "date_display": "January 27, 2026",
+      "app": "Slate"
+    },
+    {
+      "title": "Improved display of empty strings in array variables",
+      "description": "Workshop now displays empty strings in array variables as empty quotes (`\"\"`) in the variable preview. Previously, arrays containing empty strings did not clearly indicate the presence of those elements.",
+      "category": "Use case development",
+      "type": "FIX",
+      "date": "2026-01-27",
+      "date_display": "January 27, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "New checkpoint for opening application now available",
+      "description": "New checkpoint type now available for `Open AIP Analyst`. You can now use the Checkpoints application to set up a prompt requiring user interaction before AIP Analyst is allowed to load.",
+      "category": "AI Platform (AIP)",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-26",
+      "date_display": "January 26, 2026",
+      "app": "AIP Analyst"
+    },
+    {
+      "title": "Extended retention period for function metrics",
+      "description": "Near real-time metrics for functions are now retained for 30 days instead of 7 days. This extended retention period allows you to observe longer-term performance trends and conduct more comprehensive analysis of your functions over time.",
+      "category": "Data connectivity & integration",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-26",
+      "date_display": "January 26, 2026",
+      "app": "Code Repositories"
+    },
+    {
+      "title": "View compute usage for builds in the Builds application",
+      "description": "You can now view compute usage for completed builds in the Builds application. Enable this feature by selecting the settings icon in the application header and toggling **Show compute usage**. When enabled, a new column appears in the builds table displaying the total compute resources consumed by all jobs in a finished build, using the same units shown in the Resource Management application.",
+      "category": "Data connectivity & integration",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-26",
+      "date_display": "January 26, 2026",
+      "app": "Job Tracker"
+    },
+    {
+      "title": "Temporary media uploads in OSDK and functions",
+      "description": "Media sets now support temporary media uploads in both OSDK and functions through the new media upload flow. This feature allows you to upload media generated in TSv2 Functions, Python Functions, and improves and simplifies the media upload flow in the OSDK. This new media upload method is side effect free; meaning no more orphaned media items! Temporarily uploaded media remains accessible for one hour before being automatically deleted. This functionality is available in OSDK generator version 2.6.0 or greater. [Learn more about media handling in functions](/foundry/functions/media/).",
+      "category": "Data connectivity & integration",
+      "type": "FEATURE",
+      "date": "2026-01-26",
+      "date_display": "January 26, 2026",
+      "app": "Media sets"
+    },
+    {
+      "title": "Schedule replica scaling with time-based overrides in Compute Modules",
+      "description": "You can now schedule automatic scaling adjustments for your compute modules with time-based overrides. On the **Configure** page, set specific minimum and maximum replica counts for designated time periods by specifying days of the week, start and end times, and time zone for when these override settings should automatically apply.",
+      "category": "Developer toolchain",
+      "type": "FEATURE",
+      "date": "2026-01-26",
+      "date_display": "January 26, 2026",
+      "app": "Compute Modules"
+    },
+    {
+      "title": "Schedule replica scaling with timed overrides in compute modules",
+      "description": "You can now schedule automatic scaling adjustments for your compute modules with timed overrides. On the **Configure** page, use the new toggle in the scaling section to set specific minimum and maximum replica counts for designated time periods. Specify the days of the week, start and end times, and time zone for when these override settings should automatically apply.",
+      "category": "Developer toolchain",
+      "type": "FEATURE",
+      "date": "2026-01-26",
+      "date_display": "January 26, 2026",
+      "app": "Compute Modules"
+    },
+    {
+      "title": "Extended retention period for function and action metrics",
+      "description": "Near real-time metrics for functions and actions are now retained for 30 days instead of 7 days. This extended retention period allows you to observe longer-term performance trends and conduct more comprehensive analysis of your functions and actions over time.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-26",
+      "date_display": "January 26, 2026",
+      "app": "Actions"
+    },
+    {
+      "title": "Visualize action types with new color mode in Workflow Lineage",
+      "description": "Workflow Lineage now includes a new Action Rule color mode that visually distinguishes between different types of actions in your workflow. This color-coding system instantly shows whether an action runs a function, creates, modifies, or deletes an object. When used alongside the Action Rule histogram, you can quickly get a comprehensive overview of rule actions across your entire graph and filter actions within your current selection, making it easier to understand and manage complex workflows.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-01-26",
+      "date_display": "January 26, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "New checkpoint type for AIP application access",
+      "description": "A new checkpoint type is now available for when users open the AIP application. This allows administrators to configure checkpoints that appear when users attempt to access AIP, providing an additional layer of governance for sensitive analytics workflows.",
+      "category": "Security & governance",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-26",
+      "date_display": "January 26, 2026",
+      "app": "Checkpoints"
+    },
+    {
+      "title": "Simplified user display in Workshop object tables",
+      "description": "Workshop object tables now display user information in a simplified format. The new format removes hyperlinks on usernames and no longer shows popular files, while still displaying the user's full name, username, email address, and profile picture.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-26",
+      "date_display": "January 26, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Preserved new lines in metric card tooltip descriptions",
+      "description": "Metric card widgets now correctly display tooltip descriptions with new lines preserved. Previously, new lines in tooltip descriptions were not rendered, causing formatted text to appear as a single continuous string.",
+      "category": "Use case development",
+      "type": "FIX",
+      "date": "2026-01-26",
+      "date_display": "January 26, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Fixed filter pills resizing on hover in Workshop",
+      "description": "Filter pills in Workshop now maintain a consistent size when hovered over. Previously, these pills would resize on hover, sometimes causing layout shifts and screen flickering at certain widths.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-26",
+      "date_display": "January 26, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Reserved capacity available for LLMs in AIP",
+      "description": "Reserved capacity is now available by default on many LLMs for non-georestricted enrollments and some US/EU georestricted enrollments. Reserved capacity helps protect critical production workflows from shared project or enrollment limits by reserving dedicated tokens per minute (TPM) and requests per minute (RPM).",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-01-22",
+      "date_display": "January 22, 2026",
+      "app": "Language Model Service"
+    },
+    {
+      "title": "Extended retention period for function and action metrics",
+      "description": "Near real-time metrics for functions and actions are now retained for 30 days instead of 7 days. This extended retention period allows you to observe longer-term performance trends and conduct more comprehensive analysis of your functions and actions over time.",
+      "category": "Observability",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-22",
+      "date_display": "January 22, 2026",
+      "app": "Data Health"
+    },
+    {
+      "title": "Updated Automate documentation with improved structure and new content",
+      "description": "The Automate documentation has been restructured to improve discoverability. Updates include explanations of new features with current interface screenshots, expanded guidance for project and global scope modes, clarified limitations for automation dependencies, and a new workflow for backfilling large object sets using function-backed batches. Access the [full documentation](/foundry/automate/overview/).",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-22",
+      "date_display": "January 22, 2026",
+      "app": "Automate"
+    },
+    {
+      "title": "Configurable markings now available on media reference properties",
+      "description": "Managing data access and compliance for media sets often requires precise control over how markings are inherited and applied across your ontology. Configurable markings for media reference properties in Ontology Manager are now available on all Foundry enrollments. This capability allows you to define which markings are inherited per media source when configuring media reference properties.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-01-22",
+      "date_display": "January 22, 2026",
+      "app": "Ontology Management"
+    },
+    {
+      "title": "Snowflake external pipelines now available",
+      "description": "[External pipelines](/foundry/building-pipelines/create-external-pipeline-pb/) in Pipeline Builder now support Snowflake. This allows users to orchestrate pipelines in Pipeline Builder while having the execution performed in Snowflake through [snowpark-connect ↗](https://docs.snowflake.com/en/developer-guide/snowpark-connect/snowpark-connect-overview).",
+      "category": "Data connectivity & integration",
+      "type": "FEATURE",
+      "date": "2026-01-20",
+      "date_display": "January 20, 2026",
+      "app": "Pipeline Builder"
+    },
+    {
+      "title": "Developer Console documentation has been reorganized",
+      "description": "Developer Console documentation has been moved from the Ontology SDK section to its own dedicated section. The content has been reorganized into core concepts and how-to guides page groups for improved navigation. Media assets have been updated and consolidated, and all cross-references and navigation elements have been updated to reflect these changes.",
+      "category": "Management & enablement",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-20",
+      "date_display": "January 20, 2026",
+      "app": "Platform Documentation"
+    },
+    {
+      "title": "Snowflake connector now supports programmatic access token authentication",
+      "description": "Data Connection now supports programmatic access token (PAT) authentication for Snowflake sources. This authentication method provides an alternative to username and password authentication for connecting to Snowflake data sources. [Learn about authentication in the Snowflake connector](/foundry/available-connectors/snowflake#authentication).",
+      "category": "Data connectivity & integration",
+      "type": "FEATURE",
+      "date": "2026-01-19",
+      "date_display": "January 19, 2026",
+      "app": "Data Connection"
+    },
+    {
+      "title": "Enhanced User Activity Metrics with improved analytics capabilities",
+      "description": "The User Activity Metrics interface has been redesigned to provide more detailed insights into platform usage. You can now analyze user engagement through multiple dimensions including time periods, application types, engagement types (view/edit), resources, and user groups. This enhanced interface allows administrators to toggle between platform-wide usage metrics and resource-specific analytics for more targeted monitoring and reporting.",
+      "category": "Management & enablement",
+      "type": "FEATURE",
+      "date": "2026-01-19",
+      "date_display": "January 19, 2026",
+      "app": "Control Panel"
+    },
+    {
+      "title": "Tabular data support in Slate Variables panel",
+      "description": "The **Variables** panel in Slate now supports displaying and editing tabular data in a spreadsheet-like interface. Application builders can view and manipulate data with features such as column resizing, cell editing, and context menus. The panel also supports uploading CSV files with simple tables, making it easier to work with structured data in Slate applications.",
+      "category": "Use case development",
+      "type": "FEATURE",
+      "date": "2026-01-19",
+      "date_display": "January 19, 2026",
+      "app": "Slate"
+    },
+    {
+      "title": "Fixed model display in Pipeline Builder proposal and diff views",
+      "description": "Pipeline Builder now correctly displays model information in proposal and diff views. This ensures that imported models are properly identified and displayed across different branches when viewing pipeline changes or during rebase operations.",
+      "category": "Data connectivity & integration",
+      "type": "FIX",
+      "date": "2026-01-18",
+      "date_display": "January 18, 2026",
+      "app": "Pipeline Builder"
+    },
+    {
+      "title": "Improved user and viewer group management in Control Panel",
+      "description": "Control Panel now provides clearer management of user groups and viewer groups. The create/edit form includes a new `User groups` field, and the previously named `Associated groups` field has been renamed to `Viewer groups` for clarity. Additionally, `Initial assignee` and `Viewer group` information now appear as separate badges, with a new `User group` badge added to better distinguish between different types of group assignments.",
+      "category": "Management & enablement",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-18",
+      "date_display": "January 18, 2026",
+      "app": "Control Panel"
+    },
+    {
+      "title": "Restrict access to support types in Foundry Issues",
+      "description": "Platform administrators can now restrict which users are able to apply support types to Foundry issues. This enables the implementation of escalation policies within support setups, such as allowing only L1 support teams to escalate to L2 support teams, while still ensuring reporters can see the new support type applied to their issues.",
+      "category": "Management & enablement",
+      "type": "FEATURE",
+      "date": "2026-01-18",
+      "date_display": "January 18, 2026",
+      "app": "Issues"
+    },
+    {
+      "title": "Object Views integrated with Foundry Branching",
+      "description": "Object Views now work with Foundry Branching, allowing you to add, modify, and remove object views and their associated workshops directly on branches. You can rebase object views from the main branch, deploy changes to object views, and use modified object views from a branch within applications such as Workshop.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-01-18",
+      "date_display": "January 18, 2026",
+      "app": "Object Views"
+    },
+    {
+      "title": "Observability tab added for object types and link types in Ontology Manager",
+      "description": "Ontology Manager now includes an Observability tab for object types and link types. This tab displays existing monitor rules applied to the resource or prompts you to set up monitor rules if none exist, making it easier to track and manage monitoring for your ontology resources.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-01-18",
+      "date_display": "January 18, 2026",
+      "app": "Ontology Management"
+    },
+    {
+      "title": "Event triggers for string dropdown widget",
+      "description": "The string dropdown widget in Workshop now supports event triggers on selection and deselection of values. This allows you to create more interactive applications by configuring actions that respond when you select, deselect, or re-select the same value in a dropdown.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-18",
+      "date_display": "January 18, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Auto-fix for YouTube URLs in iframe widget",
+      "description": "Workshop now detects when a standard YouTube URL is pasted into an iframe widget and offers a one-click solution to convert it to the proper embedded format required for display.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-18",
+      "date_display": "January 18, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Enhanced configuration options for numeric input widgets in Workshop",
+      "description": "Workshop's numeric input widget now supports additional configuration options. Module builders can set minimum and maximum bounds to restrict input values, define custom step sizes for incremental adjustments, and specify decimal precision up to 10 decimal places. When bounds are set, invalid inputs are automatically clamped to the closest valid value.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-17",
+      "date_display": "January 17, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "The VertexAI model family can now be enabled on IL2 enrollments",
+      "description": "Google Cloud Platform's VertexAI models are now available to be enabled on IL2 enrollments in AIP. VertexAI enabled IL2 enrollments will be able to use Google’s best in class Gemini models and Anthropic Claude 4.5 and Claude 4 model families.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-01-15",
+      "date_display": "January 15, 2026",
+      "app": "Language Model Service"
+    },
+    {
+      "title": "Gemini 3 Pro and Gemini 3 Flash now available via VertexAI",
+      "description": "Gemini 3 series models are now available from VertexAI on commercial, non-georestricted enrollments. Note that Gemini 3 Pro and Gemini 3 Flash are still in preview status from GCP. Within AIP, Gemini 3 Pro and Gemini 3 Flash have all of the characteristics and behavior of a generally available AIP model.",
+      "category": "AI Platform (AIP)",
+      "type": "FEATURE",
+      "date": "2026-01-15",
+      "date_display": "January 15, 2026",
+      "app": "Language Model Service"
+    },
+    {
+      "title": "Communicate between Foundry instances with the Foundry connector",
+      "description": "A new connector is now generally available in Data Connection for all enrollments, allowing Foundry instances to interface with each other. Users can now benefit from first class support for communication between Foundry instances, in addition to existing support for communication between Foundry and systems like PostgreSQL, AWS S3, Snowflake, and hundreds more.",
+      "category": "Data connectivity & integration",
+      "type": "FEATURE",
+      "date": "2026-01-15",
+      "date_display": "January 15, 2026",
+      "app": "Data Connection"
+    },
+    {
+      "title": "Configure output write modes for faster pipelines in Pipeline Builder",
+      "description": "You can now configure different write modes in Pipeline Builder for faster pipelines. Double click on your output node and select **Configure Write mode** to get started. Write modes include: `Snapshot replace`, `Snapshot only new rows`, `Snapshot replace and remove`, `Append only new rows`, and `Always append rows`.",
+      "category": "Data connectivity & integration",
+      "type": "FEATURE",
+      "date": "2026-01-15",
+      "date_display": "January 15, 2026",
+      "app": "Pipeline Builder"
+    },
+    {
+      "title": "Resources can now be pinned to the top of the Files page in Compass",
+      "description": "Pinned resources display at the top of the Files page of any given project. This allows you to highlight the important files of a project and access them quickly.",
+      "category": "Security & governance",
+      "type": "FEATURE",
+      "date": "2026-01-15",
+      "date_display": "January 15, 2026",
+      "app": "Projects"
+    },
+    {
+      "title": "Manage custom space roles in Control Panel",
+      "description": "Administrators can now [manage space roles](/foundry/platform-security-management/manage-orgs-and-spaces/#manage-a-space) and workflow permissions from the **Space permissions** page in Control Panel. Each space comes with a set of default roles and the ability to create custom roles for greater flexibility in managing permissions.",
+      "category": "Security & governance",
+      "type": "FEATURE",
+      "date": "2026-01-15",
+      "date_display": "January 15, 2026",
+      "app": "Projects"
+    },
+    {
+      "title": "New ontologies will now use project permissions",
+      "description": "All ontologies created after Wednesday, January 21, will use the project permissions system by default. With project-based permissions, the ability to view, edit, and manage ontology resources are managed through [Compass](/foundry/compass/overview/), the Palantir platform's filesystem. This is the same permissions system other resource types use.",
+      "category": "Security & governance",
+      "type": "FEATURE",
+      "date": "2026-01-15",
+      "date_display": "January 15, 2026",
+      "app": "Projects"
+    },
+    {
+      "title": "Create test cases from AIP Logic run logs",
+      "description": "You can now create evaluation test cases directly from historical execution data in AIP Logic. A new **Add as test case** option appears in the Run Log view header, allowing you to quickly convert function execution results into test cases for your evaluation suites. This streamlines the workflow between developing Logic functions and testing them in AIP Evals.",
+      "category": "AI Platform (AIP)",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-14",
+      "date_display": "January 14, 2026",
+      "app": "AIP Evals"
+    },
+    {
+      "title": "Create test cases from execution data in AIP Logic",
+      "description": "You can now create evaluation test cases directly from historical execution data in AIP Logic. A new **Add as test case** option in the Run Log view allows you to quickly convert execution results into test cases for new or existing evaluation suites. This streamlines the process of building comprehensive test suites based on actual function executions.",
+      "category": "AI Platform (AIP)",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-14",
+      "date_display": "January 14, 2026",
+      "app": "AIP Logic"
+    },
+    {
+      "title": "Filter selected nodes by rule type in Workflow Lineage",
+      "description": "When selecting multiple nodes in Workflow Lineage, you can now filter by rule type in the details panel. The histogram view includes a new category that groups nodes based on their action rules (create object, run function, etc.), making it easier to identify and select specific types of actions in complex workflows.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-14",
+      "date_display": "January 14, 2026",
+      "app": "Workflow Lineage"
+    },
+    {
+      "title": "Connect AI agents to your Ontology using Model Context Protocol (MCP)",
+      "description": "Ontology MCP enables developers to expose [Developer Console](/foundry/developer-console/overview/) applications to AI agents through the Model Context Protocol (MCP), an open standard for connecting agents to data sources. Resources in your Developer Console application (including objects, actions, and queries) become tools that agents can discover and use. This works with pro-code frameworks (LangChain, CrewAI, custom Python/TypeScript) and low-code platforms (Copilot Studio, other agent builders). Ontology MCP will be available in beta for all users with Developer Console access by the end of January 2026.",
+      "category": "Developer toolchain",
+      "type": "APPLICATION",
+      "date": "2026-01-13",
+      "date_display": "January 13, 2026",
+      "app": "Ontology MCP"
+    },
+    {
+      "title": "Lightweight transforms now supports running models as sidecars",
+      "description": "Available in `palantir_models >=0.2010.0`, lightweight python transforms now supports running [models as sidecar containers](/foundry/integrate-models/transform-model-input/#running-models-as-sidecar-containers). This enables all the benefits of running models as sidecars (stronger Python environment and compute resources separation, simplified usage of models cross-repositories, and more predictable model environments) to the platform's optimized single node compute engine.",
+      "category": "Model connectivity & development",
+      "type": "FEATURE",
+      "date": "2026-01-12",
+      "date_display": "January 12, 2026",
+      "app": "Modeling"
+    },
+    {
+      "title": "Set up and inspect monitoring rules for functions and actions in Ontology Manager",
+      "description": "You can now set up and inspect existing monitoring rules for functions and actions directly in Ontology Manager. This update provides visibility into the active monitoring rule status and history for these resources, making it easier to track and manage their performance.",
+      "category": "Observability",
+      "type": "FEATURE",
+      "date": "2026-01-12",
+      "date_display": "January 12, 2026",
+      "app": "Data Health"
+    },
+    {
+      "title": "Copy and paste parameter overrides in action forms",
+      "description": "Ontology Manager now allows you to copy and paste parameter override configurations between parameters in action forms. You can copy overrides from one parameter and paste them to another parameter in the same or different action form. When pasting, known parameter IDs are automatically filled, while unknown parameter IDs prompt you to either map them to available parameters or discard those criteria.",
+      "category": "Ontology building",
+      "type": "FEATURE",
+      "date": "2026-01-12",
+      "date_display": "January 12, 2026",
+      "app": "Ontology Management"
+    },
+    {
+      "title": "Monitor functions and actions with monitoring rules in Ontology Manager",
+      "description": "Ontology Manager now allows you to set up and inspect monitoring rules directly for functions and actions. You can view active monitoring rule status and history for these resources, providing better visibility into their performance and reliability.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-12",
+      "date_display": "January 12, 2026",
+      "app": "Ontology Management"
+    },
+    {
+      "title": "Creation of static boolean arrays in variable transformations has been fixed",
+      "description": "Workshop now allows users to create boolean arrays with static values in variable transformations. Previously, users could only create boolean arrays by referencing existing variable values.",
+      "category": "Use case development",
+      "type": "FIX",
+      "date": "2026-01-12",
+      "date_display": "January 12, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Permission check added to Checkpoints scope selection",
+      "description": "Checkpoints now validates user permissions at the scope selection step. When configuring approval workflows, users must have the appropriate permissions for the selected scope before they can proceed with checkpoint configuration.",
+      "category": "Security & governance",
+      "type": "ENHANCEMENT",
+      "date": "2026-01-10",
+      "date_display": "January 10, 2026",
+      "app": "Checkpoints"
+    },
+    {
+      "title": "Fixed Japanese character support in Workshop Excel downloads",
+      "description": "Workshop now correctly preserves Japanese characters in Excel sheet names when downloading data that includes derived columns.",
+      "category": "Use case development",
+      "type": "FIX",
+      "date": "2026-01-10",
+      "date_display": "January 10, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Introducing listeners in Data Connection for capturing inbound webhooks",
+      "description": "We are excited to introduce listeners [Beta] which enable the receipt of events from external systems that either do not support OAuth 2.0 authentication directly or cannot provide a configurable payload compatible standard Foundry API endpoints. This means you can now receive inbound webhook events in the Palantir platform. The feature is currently in the beta phase of development. To enable on your enrollment, contact Palantir Support. [Learn more from the documentation on Listeners](/foundry/data-connection/listeners-overview/).",
+      "category": "Data connectivity & integration",
+      "type": "FEATURE",
+      "date": "2026-01-08",
+      "date_display": "January 8, 2026",
+      "app": "Data Connection"
+    },
+    {
+      "title": "Approvals required to publish new product versions in Foundry DevOps",
+      "description": "Marketplace now supports locking down new product versions in a store, requiring approval from a store editor who did not create the product version draft. To approve a new product version, store editors require the `marketplace:finalize-block-set` operation permission on the Marketplace store. [Learn more about managing store permissions in Marketplace](/foundry/foundry-devops/manage-store-permissions/).",
+      "category": "Product delivery",
+      "type": "FEATURE",
+      "date": "2026-01-05",
+      "date_display": "January 5, 2026",
+      "app": "Marketplace"
+    },
+    {
+      "title": "Cipher Checkpoint UI Cancel Fix",
+      "description": "[Cipher](/foundry/cipher/overview/) values now remain encrypted after you cancel checkpoints in [Checkpoints](/foundry/checkpoints/overview/).",
+      "category": "Security & governance",
+      "type": "FIX",
+      "date": "2026-01-05",
+      "date_display": "January 5, 2026",
+      "app": "Checkpoints"
+    }
+  ]
+}

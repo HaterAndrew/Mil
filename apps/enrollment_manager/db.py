@@ -30,6 +30,8 @@ from sqlalchemy.orm import (
     sessionmaker,
 )
 
+from shared.audit_mixin import AuditMixin
+
 # ---------------------------------------------------------------------------
 # Database path — sits next to this file; *.db is gitignored
 # ---------------------------------------------------------------------------
@@ -63,7 +65,7 @@ from readiness_tracker.db import COURSE_CATALOG  # noqa: E402
 # ---------------------------------------------------------------------------
 # ORM models
 # ---------------------------------------------------------------------------
-class TrainingClass(Base):
+class TrainingClass(Base, AuditMixin):
     """A scheduled training class (one offering of a course)."""
     __tablename__ = "training_classes"
 
@@ -76,7 +78,6 @@ class TrainingClass(Base):
     max_seats = Column(Integer, nullable=False)
     instructor_name = Column(String(100), nullable=True)
     status = Column(String(20), nullable=False, default="SCHEDULED")  # SCHEDULED/IN_PROGRESS/COMPLETED/CANCELLED
-    created_at = Column(DateTime, default=lambda: datetime.now(UTC))
 
     enrollments = relationship(
         "Enrollment", back_populates="training_class", cascade="all, delete-orphan"
@@ -86,7 +87,7 @@ class TrainingClass(Base):
     )
 
 
-class Enrollment(Base):
+class Enrollment(Base, AuditMixin):
     """A student enrolled in a training class."""
     __tablename__ = "enrollments"
     __table_args__ = (
@@ -103,7 +104,6 @@ class Enrollment(Base):
     enrollment_date = Column(Date, nullable=False)
     status = Column(String(20), nullable=False, default="ENROLLED")  # ENROLLED/WAITLISTED/DROPPED/COMPLETED/NO_SHOW
     seat_number = Column(Integer, nullable=True)
-    created_at = Column(DateTime, default=lambda: datetime.now(UTC))
 
     training_class = relationship("TrainingClass", back_populates="enrollments")
 

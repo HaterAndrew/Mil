@@ -4,6 +4,68 @@
 > **Prereqs:** TM-10, Maven User; TM-20, Builder; Data Literacy Technical Reference (all required).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
+## Table of Contents
+
+- [1-1. Advanced Builder Manual](#1-1-advanced-builder-manual)
+- [1-2. What TM-30 Advances Beyond TM-20](#1-2-what-tm-30-advances-beyond-tm-20)
+- [1-3. USAREUR-AF Operational Context](#1-3-usareur-af-operational-context)
+- [1-4. Governing Policy References](#1-4-governing-policy-references)
+- [1-5. Design Principles for Advanced Builders](#1-5-design-principles-for-advanced-builders)
+- [1-6. TM-30 Scope Boundaries](#1-6-tm-30-scope-boundaries)
+- [1-7. Advancement from TM-30 — Next Steps](#1-7-advancement-from-tm-30--next-steps)
+- [2-1. Overview of Advanced Workshop Capability](#2-1-overview-of-advanced-workshop-capability)
+- [TASK 2-1: CONFIGURE APPLICATION VARIABLES AND STATE MANAGEMENT](#task-2-1-configure-application-variables-and-state-management)
+- [TASK 2-2: IMPLEMENT CONDITIONAL LOGIC AND VISIBILITY RULES](#task-2-2-implement-conditional-logic-and-visibility-rules)
+- [TASK 2-3: DESIGN A MULTI-PAGE WORKSHOP APPLICATION](#task-2-3-design-a-multi-page-workshop-application)
+- [TASK 2-4: CONFIGURE COMPLEX WIDGETS (TABLES, DYNAMIC OBJECT SETS, MAPS)](#task-2-4-configure-complex-widgets-tables-dynamic-object-sets-maps)
+- [2-2. Designing for Operational Tempo and Data Currency](#2-2-designing-for-operational-tempo-and-data-currency)
+- [2-5. Kairos Timeline Integration](#2-5-kairos-timeline-integration)
+- [2-6. Target Workbench](#2-6-target-workbench)
+- [3-1. Pipeline Builder Review and TM-30 Scope](#3-1-pipeline-builder-review-and-tm-30-scope)
+- [TASK 3-1: PERFORM A MULTI-SOURCE JOIN](#task-3-1-perform-a-multi-source-join)
+- [TASK 3-2: CONFIGURE DATASET AGGREGATIONS](#task-3-2-configure-dataset-aggregations)
+- [TASK 3-3: IMPLEMENT AN ADVANCED TRANSFORMATION PATTERN](#task-3-3-implement-an-advanced-transformation-pattern)
+- [3-2. Pipeline Naming and Documentation Standards](#3-2-pipeline-naming-and-documentation-standards)
+- [4-1. Ontology as Operational Data Model](#4-1-ontology-as-operational-data-model)
+- [TASK 4-1: DESIGN AND CREATE AN OBJECT TYPE FROM A COMMAND REQUIREMENT](#task-4-1-design-and-create-an-object-type-from-a-command-requirement)
+- [TASK 4-2: CREATE A LINK TYPE AND CONFIGURE CARDINALITY](#task-4-2-create-a-link-type-and-configure-cardinality)
+- [TASK 4-3: DESIGN A MULTI-STEP ACTION WITH APPROVAL ROUTING](#task-4-3-design-a-multi-step-action-with-approval-routing)
+- [TASK 4-4: DEFINE AN INTERFACE ON AN OBJECT TYPE](#task-4-4-define-an-interface-on-an-object-type)
+- [5-1. Advanced Contour Overview](#5-1-advanced-contour-overview)
+- [TASK 5-1: BUILD AN ADVANCED CONTOUR ANALYSIS WITH PIVOT AND FORMULA LOGIC](#task-5-1-build-an-advanced-contour-analysis-with-pivot-and-formula-logic)
+- [TASK 5-2: BUILD A MULTI-OBJECT QUIVER DASHBOARD](#task-5-2-build-a-multi-object-quiver-dashboard)
+- [6-0. AIP Landscape at TM-30 Level](#6-0-aip-landscape-at-tm-30-level)
+- [6-1. TM-30 vs. TM-40 Scope in AIP Logic](#6-1-tm-30-vs-tm-40-scope-in-aip-logic)
+- [6-2. AIP Logic Overview](#6-2-aip-logic-overview)
+- [TASK 6-1: CONFIGURE AIP LOGIC WORKFLOW PARAMETERS](#task-6-1-configure-aip-logic-workflow-parameters)
+- [TASK 6-2: CONFIGURE NATURAL LANGUAGE QUERY ON AN OBJECT TYPE](#task-6-2-configure-natural-language-query-on-an-object-type)
+- [TASK 6-3: BUILD AND CONFIGURE A BASIC AIP AGENT](#task-6-3-build-and-configure-a-basic-aip-agent)
+- [6-4. AI FDE (AI-Driven Feature Development Environment)](#6-4-ai-fde-ai-driven-feature-development-environment)
+- [TASK 7-1: PERFORM A DOWNSTREAM IMPACT ASSESSMENT USING LINEAGE](#task-7-1-perform-a-downstream-impact-assessment-using-lineage)
+- [TASK 7-2: EXECUTE A DATA QUALITY INVESTIGATION](#task-7-2-execute-a-data-quality-investigation)
+- [TASK 7-3: CONFIGURE ACCESS CONTROLS ON A WORKSHOP APPLICATION](#task-7-3-configure-access-controls-on-a-workshop-application)
+- [8-1. Branching and the Development Lifecycle](#8-1-branching-and-the-development-lifecycle)
+- [TASK 8-1: CREATE AND CONFIGURE A DEVELOPMENT BRANCH](#task-8-1-create-and-configure-a-development-branch)
+- [TASK 8-2: CONDUCT A PEER REVIEW](#task-8-2-conduct-a-peer-review)
+- [TASK 8-3: PROMOTE CHANGES TO PRODUCTION](#task-8-3-promote-changes-to-production)
+- [8-2. Production Discipline](#8-2-production-discipline)
+- [9-1. What Automations Are](#9-1-what-automations-are)
+- [TASK 9-1: CONFIGURE AN AUTOMATION ON AN OBJECT TYPE](#task-9-1-configure-an-automation-on-an-object-type)
+- [10-1. What Machinery Is](#10-1-what-machinery-is)
+- [TASK 10-1: ORIENT TO MACHINERY AND MODEL A BASIC PROCESS](#task-10-1-orient-to-machinery-and-model-a-basic-process)
+- [11-1. Naming Conventions](#11-1-naming-conventions)
+- [11-2. Design Best Practices](#11-2-design-best-practices)
+- [11-3. Performance Considerations](#11-3-performance-considerations)
+- [11-4. USAREUR-AF C2DAO Governance Checklist Summary](#11-4-usareur-af-c2dao-governance-checklist-summary)
+- [A-1. Pre-Build Checklist](#a-1-pre-build-checklist)
+- [A-2. Build Checklist](#a-2-build-checklist)
+- [A-3. Review and Promotion Checklist](#a-3-review-and-promotion-checklist)
+- [B-1. Commander's Dashboard](#b-1-commanders-dashboard)
+- [B-2. Status Board with Write-Back](#b-2-status-board-with-write-back)
+- [B-3. Readiness Rollup Pipeline](#b-3-readiness-rollup-pipeline)
+- [B-4. Hierarchical Object Type Model](#b-4-hierarchical-object-type-model)
+- [B-5. Data Quality Dashboard](#b-5-data-quality-dashboard)
+
 ---
 
 # CHAPTER 1 — INTRODUCTION AND SCOPE
@@ -1410,6 +1472,20 @@ TM-30 builders CONFIGURE existing AIP Logic workflows — they do not author the
 
 NOTE: If you are unsure whether your configuration crosses into TM-40 territory, stop and consult your C2DAO data engineer. The cost of escalating unnecessarily is low. The cost of authoring workflows outside your qualification is high.
 
+### 6-1a. Q1 2026 AIP Logic Feature Updates
+
+The following capabilities were added to AIP Logic in Q1 2026 and are within TM-30 configuration scope:
+
+**Branch selection for evals run configuration.** AIP Logic now supports selecting a specific branch when configuring evaluation (evals) runs. Builders can run evals against a development branch before promoting to production — verifying that workflow parameter changes produce correct outputs in the branch environment without affecting live data. When configuring an evals run, select the target branch under **Run Configuration > Branch**. Always run evals against your development branch first; do not run untested evals against the production branch.
+
+**Debugging panel for AIP Logic configuration.** A dedicated debugging panel is now available within the AIP Logic configuration interface. The panel displays real-time execution traces, input/output inspection for each workflow step, and error diagnostics — enabling builders to identify configuration issues without escalating to a TM-40 developer for every troubleshooting event. Access the debugging panel from the **Debug** tab within any AIP Logic workflow configuration view. Use it to:
+- Inspect the inputs and outputs of each workflow step during a test execution
+- Identify which step in the workflow produced an unexpected result
+- View error messages and stack traces for failed executions
+- Verify that data source connections are resolving correctly
+
+NOTE: The debugging panel is a diagnostic tool — it does not allow modification of workflow logic. If the panel reveals a logic error in the workflow itself (not a configuration error), escalate to the TM-40 developer. Configuration errors (wrong data source, incorrect parameter value, bad filter) are TM-30 scope and should be corrected directly.
+
 ## 6-2. AIP Logic Overview
 
 NOTE: AIP Logic is TM-30 only. TM-20 builders do not configure AI workflows. TM-10 operators use AIP Logic workflows that TM-30 builders design — see TM-10, Task 4-8A (Read and Respond to an AIP Logic Alert) and Task 4-8B (Interact with an AIP Agent) for the operator's perspective. Operators must review and validate AI outputs before acting on them (emphasized in TM-10, section 4-8). Design your AIP Logic workflows so outputs are easy for operators to validate quickly. Workflows that produce outputs requiring extensive operator review are operationally inefficient.
@@ -1633,6 +1709,25 @@ NOTE: Audit Trail — All advanced builder actions in MSS — Ontology modificat
 
 NOTE: CUI (Controlled Unclassified Information) — Before designing any data product that ingests or exposes CUI, coordinate with your data steward and confirm: (a) the data is authorized for ingestion, (b) access controls are configured to restrict visibility to authorized personnel, and (c) any downstream applications exposing CUI are reviewed before publication. Coalition-facing data products require additional coordination with C2DAO and, where applicable, NATO data governance review.
 
+### 7-0a. Q1 2026 Lineage and Governance Feature Updates
+
+The following capabilities were added to the platform lineage and governance toolset in Q1 2026:
+
+**Presentation mode for lineage graphs.** Lineage graphs now support a presentation mode that renders a clean, full-screen view of the dependency graph — suitable for Data Steward briefings, peer reviews, and command presentations. Activate presentation mode from the **View** menu within any lineage graph. Use this mode when briefing downstream impact assessments (Task 7-1) to commanders or governance boards. Presentation mode suppresses technical metadata and highlights the data flow path for non-technical audiences.
+
+**Multi-ontology support.** The lineage view now traces dependencies across multiple ontologies within the same environment. For USAREUR-AF builders operating in environments where multiple ontologies coexist (e.g., theater-level ontology and coalition-shared ontology), lineage graphs display cross-ontology links and dependencies. This is critical for downstream impact assessments — a change in one ontology may affect Object Types, pipelines, or applications in another. When performing Task 7-1, verify that the lineage graph is displaying cross-ontology dependencies by confirming the **Multi-Ontology** toggle is enabled.
+
+**Log search functionality.** A log search capability is now available within the lineage and governance interface. Builders can search execution logs, audit trails, and change histories by keyword, resource name, date range, or user. Use log search to:
+- Investigate when a specific resource was last modified and by whom
+- Trace the execution history of a pipeline or automation across a defined time window
+- Support data quality investigations (Task 7-2) by identifying when a data issue first appeared
+
+Access log search from the **Logs** panel within lineage or from the platform's global search interface.
+
+**Monitoring status color modes.** Lineage graphs now support configurable color modes for monitoring status — enabling builders to visualize resource health at a glance. Available modes include: health status (green/amber/red based on execution success rate), freshness (color-coded by time since last update), and access level (color-coded by permission tier). Select the color mode from the lineage graph toolbar. Use health status mode during routine monitoring and freshness mode when investigating stale data issues.
+
+**Expanded access across the platform.** Lineage views are now accessible from additional platform entry points — including directly from Workshop applications, Contour analyses, and Object Explorer — without navigating to the dedicated lineage tool. This reduces friction for builders performing ad hoc impact assessments. When viewing any resource, look for the **Lineage** icon in the resource header to access the lineage graph in context.
+
 ---
 
 ## TASK 7-1: PERFORM A DOWNSTREAM IMPACT ASSESSMENT USING LINEAGE
@@ -1809,6 +1904,24 @@ affecting the production environment that other users depend on.
 8-3. Never develop directly on the production branch. If you are making changes in production,
 you are doing it wrong.
 
+### 8-1a. Q1 2026 Branch Security Updates
+
+**Role-based security for branches.** The platform now supports role-based access control on individual branches. Branch creators and administrators can assign users specific roles — such as Viewer, Developer, or Manager — to control who can view, commit to, review, and merge a given branch. This capability replaces the previous model where branch access was controlled solely through project-level permissions.
+
+When creating a branch (Task 8-1), configure branch roles under **Branch Settings > Security**:
+
+| Branch Role | Permissions |
+|---|---|
+| Viewer | Can view branch contents; cannot commit changes |
+| Developer | Can view and commit changes; cannot merge to production |
+| Manager | Full control — can commit, review, approve, and merge |
+
+Assign the minimum role necessary for each user. Builders working on their own development branch should be assigned the Developer role; the reviewing Data Steward or peer reviewer should be assigned the Manager role to authorize promotion.
+
+**Upgraded branch security enabled for all users.** As of Q1 2026, upgraded branch security is enabled platform-wide for all users. This means role-based branch permissions are no longer an opt-in feature — they are the default. All existing branches have been migrated to the new security model. Builders who previously relied on project-level permissions alone must verify that their branch-level roles are correctly configured. Review branch security settings on all active development branches and confirm that roles align with your team's access requirements. Report any access discrepancies to the Data Steward.
+
+NOTE: Branch security roles are separate from application-level and Object Type-level access controls (Task 7-3). A user with Manager role on a branch can merge changes to production, but the promoted resources still respect their own access controls. Branch security governs who can develop and promote; resource-level security governs who can consume.
+
 ---
 
 ## TASK 8-1: CREATE AND CONFIGURE A DEVELOPMENT BRANCH
@@ -1955,6 +2068,24 @@ An Automation is a configured rule in Ontology Manager that monitors an Object T
 **When NOT to use Automations:**
 
 Automations execute at the Object Type level — they apply a rule to objects meeting a condition. They are not designed for complex multi-step process flows, handoff routing, or end-to-end workflow management. For processes involving multiple roles, conditional routing, and process state visibility, see Chapter 10 (Machinery).
+
+### 9-1a. Q1 2026 Automations Feature Updates
+
+The following capabilities were added to Foundry Automations in Q1 2026 and are within TM-30 configuration scope:
+
+**Interface parameters in Automate actions.** Automate actions now support interface parameters — enabling builders to pass structured input values when an automation triggers an Action on an Object Type. Previously, automated actions could only execute with static or object-derived values. With interface parameter support, builders can configure automations that pass dynamic input values defined by an interface (see Task 4-4, Define an Interface on an Object Type). When configuring an Automate action (Task 9-1, Step 3), select **Action with Interface Parameters** and map the interface fields to the appropriate source values (object properties, static values, or computed expressions). This enables more flexible automation logic without requiring TM-40 code-level development.
+
+**Function effects in Automate.** Automations can now trigger function effects — platform-defined side effects that execute as part of an automation action. Function effects extend the range of actions available to automations beyond simple property updates and object creation. Examples include triggering a notification, writing an audit log entry, or invoking a platform-registered function. At TM-30 level, configure function effects only when they have been pre-built and approved by a TM-40 developer. Do not author new function effects — that is TM-40 scope. When a function effect is available for use, it appears in the **Action** dropdown during automation configuration.
+
+**Streaming time series conditions.** Automations now support trigger conditions based on streaming time series data. Builders can configure automations that fire when a time series property crosses a threshold, deviates from a trend, or meets a rate-of-change condition. This is operationally relevant for monitoring sensor feeds, readiness indicators, or logistics metrics that update continuously. When defining a trigger (Task 9-1, Step 2), select **Time Series Condition** and configure the property, evaluation window, and threshold. Coordinate with the Data Steward to confirm that the time series data source updates at sufficient frequency to support the intended trigger cadence.
+
+**Autopilot — visualization, monitoring, and debugging for automation workflows.** Autopilot is a new platform tool for visualizing, monitoring, and debugging automation workflows. It provides a graphical view of all active automations on an Object Type — showing trigger conditions, action chains, execution status, and error states in a single dashboard. Use Autopilot to:
+- Visualize the full set of automations configured on an Object Type and their relationships
+- Monitor execution status in real time — identify failed, delayed, or stuck automations
+- Debug automation issues by inspecting trigger evaluation results and action execution logs
+- Identify conflicts between automations (e.g., two automations writing to the same property with different values)
+
+Access Autopilot from the **Automations** panel on any Object Type or from the platform's global tools menu. Autopilot is a monitoring and diagnostic tool — it does not replace the configuration workflow in Task 9-1. Use Autopilot for ongoing monitoring (Task 9-1, Step 5) and for troubleshooting automation failures before escalating to a TM-40 developer.
 
 ---
 

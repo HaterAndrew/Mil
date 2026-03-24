@@ -1,11 +1,22 @@
 # TM-50O — MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** TM-50O qualifies advanced platform engineers to manage multi-cluster fleets, implement platform reliability engineering (SRE practices), automate RMF/ATO compliance, and design developer experience systems that accelerate application delivery across the MSS portfolio. This manual extends TM-40O from single-cluster operations to enterprise platform leadership.
-> **Prereqs:** TM-40O, Platform Engineer (required, Go evaluation on file); demonstrated operational experience managing MSS infrastructure from TM-40O practical exercise or operational assignment
+> **Prereqs:** TM-40O, Platform Engineer (required, Go evaluation on file); demonstrated operational experience managing MSS infrastructure from TM-40O practical exercise or operational assignment; CONCEPTS_GUIDE_TM50O_PLATFORM_ENGINEER_ADVANCED (read before this manual)
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Fleet-level platform decisions at TM-50O level affect every cluster, every application, and every user across the MSS ecosystem simultaneously. A misconfigured fleet-wide policy, a botched cluster upgrade, or a broken cross-domain replication has theater-wide blast radius. Validate changes on canary clusters before fleet-wide rollout. Maintain rollback capability at every level.**
 > **CAUTION: Fleet management credentials and cross-domain replication keys are the highest-value secrets in the MSS infrastructure. Compromise enables access across classification boundaries. Store, rotate, and audit these credentials with extreme rigor. Report any suspected compromise immediately to ISSM, S6/G6, and C2DAO.**
+
+## Table of Contents
+
+- [CHAPTER 1 — INTRODUCTION: THE ADVANCED PLATFORM ENGINEER ROLE IN MSS](#chapter-1--introduction-the-advanced-platform-engineer-role-in-mss)
+- [CHAPTER 2 — MULTI-CLUSTER FLEET MANAGEMENT](#chapter-2--multi-cluster-fleet-management)
+- [CHAPTER 3 — PLATFORM RELIABILITY ENGINEERING](#chapter-3--platform-reliability-engineering)
+- [CHAPTER 4 — RMF/ATO AUTOMATION](#chapter-4--rmfato-automation)
+- [CHAPTER 5 — DEVELOPER EXPERIENCE ENGINEERING](#chapter-5--developer-experience-engineering)
+- [CHAPTER 6 — PLATFORM OBSERVABILITY AT SCALE](#chapter-6--platform-observability-at-scale)
+- [APPENDIX A — REFERENCES](#appendix-a--references)
+- [APPENDIX B — PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION](#appendix-b--peer-tm-50-cross-references-and-wff-integration)
 
 ---
 

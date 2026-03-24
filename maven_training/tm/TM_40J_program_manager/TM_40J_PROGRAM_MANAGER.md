@@ -6,6 +6,21 @@
 
 > **WARNING:** MSS data products built under TM-40J oversight directly support commander decision
 
+## Table of Contents
+
+- [CHAPTER 1 — INTRODUCTION: THE TECHNICAL PM ROLE](#chapter-1--introduction-the-technical-pm-role)
+- [CHAPTER 2 — AGILE PROJECT MANAGEMENT FOR DATA AND AI PROJECTS](#chapter-2--agile-project-management-for-data-and-ai-projects)
+- [CHAPTER 3 — MANAGING ML AND AI PROJECT LIFECYCLES](#chapter-3--managing-ml-and-ai-project-lifecycles)
+- [CHAPTER 4 — STAKEHOLDER MANAGEMENT AND REQUIREMENTS TRANSLATION](#chapter-4--stakeholder-management-and-requirements-translation)
+- [CHAPTER 5 — BUILDING PROJECT TRACKING SYSTEMS ON MSS](#chapter-5--building-project-tracking-systems-on-mss)
+- [CHAPTER 6 — RISK AND DEPENDENCY MANAGEMENT](#chapter-6--risk-and-dependency-management)
+- [CHAPTER 7 — DELIVERY PLANNING AND PRODUCTION READINESS](#chapter-7--delivery-planning-and-production-readiness)
+- [CHAPTER 8 — CHANGE MANAGEMENT AND USER ADOPTION](#chapter-8--change-management-and-user-adoption)
+- [APPENDIX A — PROJECT KICKOFF CHECKLIST](#appendix-a--project-kickoff-checklist)
+- [APPENDIX B — DEFINITION OF DONE — DATA PRODUCT STANDARDS](#appendix-b--definition-of-done--data-product-standards)
+- [APPENDIX C — PROFESSIONAL READING LIST](#appendix-c--professional-reading-list)
+- [GLOSSARY](#glossary)
+
 ---
 
 ## CHAPTER 1 — INTRODUCTION: THE TECHNICAL PM ROLE

@@ -30,6 +30,14 @@ from sqlalchemy.orm import (
     sessionmaker,
 )
 
+import sys
+from pathlib import Path as _Path
+_apps_dir = str(_Path(__file__).resolve().parent.parent)
+if _apps_dir not in sys.path:
+    sys.path.insert(0, _apps_dir)
+
+from shared.audit_mixin import AuditMixin
+
 # ---------------------------------------------------------------------------
 # Database path — sits next to this file; *.db is gitignored
 # ---------------------------------------------------------------------------
@@ -57,7 +65,7 @@ class Base(DeclarativeBase):
 # ---------------------------------------------------------------------------
 # ORM models
 # ---------------------------------------------------------------------------
-class Document(Base):
+class Document(Base, AuditMixin):
     __tablename__ = "documents"
 
     doc_id = Column(Integer, primary_key=True, autoincrement=True)
@@ -68,7 +76,6 @@ class Document(Base):
     current_version = Column(String(20), default="1.0")
     last_modified = Column(DateTime, nullable=True)
     file_hash = Column(String(64), nullable=True)  # SHA-256
-    created_at = Column(DateTime, default=lambda: datetime.now(UTC))
 
     reviews = relationship(
         "ReviewCycle", back_populates="document", cascade="all, delete-orphan"
@@ -78,7 +85,7 @@ class Document(Base):
     )
 
 
-class ReviewCycle(Base):
+class ReviewCycle(Base, AuditMixin):
     __tablename__ = "review_cycles"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -89,7 +96,6 @@ class ReviewCycle(Base):
     status = Column(String(30), nullable=False)  # APPROVED/CHANGES_REQUIRED/IN_REVIEW/OVERDUE
     notes = Column(Text, nullable=True)
     next_review_date = Column(Date, nullable=True)
-    created_at = Column(DateTime, default=lambda: datetime.now(UTC))
 
     document = relationship("Document", back_populates="reviews")
 

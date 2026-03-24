@@ -12,7 +12,11 @@ interface DashSection {
   apps: DashApp[]
 }
 
-const LAUNCHER_URL = 'http://localhost:8400'
+function getLauncherUrl(): string {
+  const proto = window.location.protocol === 'https:' ? 'https:' : 'http:'
+  return `${proto}//localhost:8400`
+}
+const LAUNCHER_URL = getLauncherUrl()
 
 const SECTIONS: DashSection[] = [
   {
@@ -86,7 +90,8 @@ export default function Dashboards() {
     setIframeSrc('about:blank')
     setTimeout(() => viewerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50)
 
-    const url = `http://${dashHost}:${app.port}`
+    const proto = window.location.protocol === 'https:' ? 'https:' : 'http:'
+    const url = `${proto}//${dashHost}:${app.port}`
 
     fetch(`${LAUNCHER_URL}/start`, {
       method: 'POST',
@@ -132,7 +137,7 @@ export default function Dashboards() {
           <div className="dash-viewer-toolbar">
             <span className="dash-viewer-title">{activeApp.name}</span>
             <span className="dash-viewer-port">:{activeApp.port}</span>
-            <a className="dash-viewer-open" href={`http://${dashHost}:${activeApp.port}`} target="_blank" rel="noopener">Open in new tab</a>
+            <a className="dash-viewer-open" href={`${window.location.protocol}//${dashHost}:${activeApp.port}`} target="_blank" rel="noopener">Open in new tab</a>
             <button className="dash-viewer-close" onClick={closeViewer}>Close</button>
           </div>
           {loading && (

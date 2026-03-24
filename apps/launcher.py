@@ -9,6 +9,7 @@ Opens http://localhost:8400 in the default browser.
 Dashboard clicks auto-start the corresponding Streamlit app.
 """
 
+import hmac
 import subprocess
 import socket
 import sys
@@ -104,8 +105,18 @@ def stop_all():
 
 
 class LauncherHandler(BaseHTTPRequestHandler):
+    # Allowed CORS origins — launcher and all dashboard ports
+    _ALLOWED_ORIGINS = {
+        f"http://localhost:{p}" for p in [PORT] | set(APPS.keys())
+    } | {
+        f"http://127.0.0.1:{p}" for p in [PORT] | set(APPS.keys())
+    }
+
     def _cors(self):
-        self.send_header("Access-Control-Allow-Origin", "*")
+        origin = self.headers.get("Origin", "")
+        if origin in self._ALLOWED_ORIGINS:
+            self.send_header("Access-Control-Allow-Origin", origin)
+            self.send_header("Vary", "Origin")
         self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
         self.send_header("Access-Control-Allow-Headers", "Content-Type")
 
@@ -185,6 +196,11 @@ class LauncherHandler(BaseHTTPRequestHandler):
             result = start_app(port)
             self._json_response(200 if result["ok"] else 400, result)
         elif self.path == "/stop-all":
+            api_key = os.environ.get("API_KEY", "")
+            provided = self.headers.get("X-API-Key", "")
+            if api_key and not hmac.compare_digest(provided, api_key):
+                self._json_response(401, {"ok": False, "error": "Unauthorized"})
+                return
             stop_all()
             self._json_response(200, {"ok": True, "message": "All apps stopped"})
         else:

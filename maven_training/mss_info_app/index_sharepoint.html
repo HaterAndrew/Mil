@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://armyeitaas.sharepoint-mil.us; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src 'self' https://armyeitaas.sharepoint-mil.us; connect-src 'self'" />
   <title>MSS Training Hub — USAREUR-AF</title>
   <style>
     /* ============================================================
@@ -2251,7 +2252,7 @@
 
     <div class="callout note">
       <div class="callout-label">DOCTRINE ALIGNMENT</div>
-      <div class="callout-body">This training program is designed and governed IAW <strong>AR 350-1</strong> (Army Training and Leader Development), <strong>TR 350-70</strong> (Army Learning Policy and Systems), and <strong>FM 7-0</strong> (Training). All WFF tracks (TM-40A&ndash;F) integrate doctrinal references from the corresponding warfighting function field manuals. See the <button class="qr-link" onclick="showPanel('doctrine')">Doctrine &amp; Reference</button> panel or the DEPENDENCY_MAP for the full external doctrinal references index.</div>
+      <div class="callout-body">This training program is designed and governed IAW <strong>AR 350-1</strong> (Army Training and Leader Development), <strong>TR 350-70</strong> (Army Learning Policy and Systems), and <strong>FM 7-0</strong> (Training). All WFF tracks (TM-40A&ndash;F) integrate doctrinal references from the corresponding warfighting function field manuals. See the <button class="qr-link" data-panel="doctrine">Doctrine &amp; Reference</button> panel or the DEPENDENCY_MAP for the full external doctrinal references index.</div>
     </div>
 
     <h2>STEP 1 &mdash; FIND YOUR LEVEL</h2>
@@ -2263,45 +2264,45 @@
         <tbody>
           <tr>
             <td>Any Soldier, officer, or Civilian &mdash; using MSS to access and consume data</td>
-            <td><strong><button class="qr-link" onclick="showPanel('tm10')">TM-10 (User)</button></strong></td>
+            <td><strong><button class="qr-link" data-panel="tm10">TM-10 (User)</button></strong></td>
             <td>&mdash;</td>
-            <td><span class="chip chip-navy" style="cursor:pointer;" onclick="showPanel('tm10')">TM-10</span></td>
+            <td><span class="chip chip-navy" style="cursor:pointer;" data-panel="tm10">TM-10</span></td>
           </tr>
           <tr>
             <td>All staff &mdash; building dashboards, forms, or pipelines without coding</td>
-            <td><strong><button class="qr-link" onclick="showPanel('tm10')">TM-10</button></strong></td>
-            <td><button class="qr-link" onclick="showPanel('tm20')">TM-20 (Builder)</button></td>
-            <td><span class="chip chip-navy" style="cursor:pointer;" onclick="showPanel('tm20')">TM-20</span></td>
+            <td><strong><button class="qr-link" data-panel="tm10">TM-10</button></strong></td>
+            <td><button class="qr-link" data-panel="tm20">TM-20 (Builder)</button></td>
+            <td><span class="chip chip-navy" style="cursor:pointer;" data-panel="tm20">TM-20</span></td>
           </tr>
           <tr>
             <td>Data-adjacent specialist &mdash; 17/25-series, G2, data analyst</td>
-            <td><strong><button class="qr-link" onclick="showPanel('tm10')">TM-10</button> &rarr; <button class="qr-link" onclick="showPanel('tm20')">TM-20</button></strong></td>
-            <td><button class="qr-link" onclick="showPanel('tm30')">TM-30 (Advanced)</button></td>
-            <td><span class="chip chip-gold" style="cursor:pointer;" onclick="showPanel('tm30')">TM-30</span></td>
+            <td><strong><button class="qr-link" data-panel="tm10">TM-10</button> &rarr; <button class="qr-link" data-panel="tm20">TM-20</button></strong></td>
+            <td><button class="qr-link" data-panel="tm30">TM-30 (Advanced)</button></td>
+            <td><span class="chip chip-gold" style="cursor:pointer;" data-panel="tm30">TM-30</span></td>
           </tr>
           <tr>
             <td>Technical specialist &mdash; ORSA, AI/ML, MLE, PM, KM, SWE roles (TM-40G&ndash;M)</td>
-            <td><strong><button class="qr-link" onclick="showPanel('tm10')">TM-10</button> &rarr; <button class="qr-link" onclick="showPanel('tm20')">TM-20</button> &rarr; <button class="qr-link" onclick="showPanel('tm30')">TM-30</button></strong></td>
-            <td><button class="qr-link" onclick="showPanel('tm40')">TM-40 specialist track</button></td>
-            <td><span class="chip chip-gold" style="cursor:pointer;" onclick="showPanel('specialists')">TM-40</span></td>
+            <td><strong><button class="qr-link" data-panel="tm10">TM-10</button> &rarr; <button class="qr-link" data-panel="tm20">TM-20</button> &rarr; <button class="qr-link" data-panel="tm30">TM-30</button></strong></td>
+            <td><button class="qr-link" data-panel="tm40">TM-40 specialist track</button></td>
+            <td><span class="chip chip-gold" style="cursor:pointer;" data-panel="specialists">TM-40</span></td>
           </tr>
           <tr>
             <td>WFF specialist &mdash; assigned Intel, Fires, M&amp;M, Sustainment, Protection, or Mission Command role (TM-40A&ndash;F)</td>
-            <td><strong><button class="qr-link" onclick="showPanel('tm10')">TM-10</button> &rarr; <button class="qr-link" onclick="showPanel('tm20')">TM-20</button> &rarr; <button class="qr-link" onclick="showPanel('tm30')">TM-30</button></strong></td>
-            <td><button class="qr-link" onclick="showPanel('specialists')">TM-40 WFF track</button></td>
-            <td><span class="chip chip-gold" style="cursor:pointer;" onclick="showPanel('specialists')">TM-40</span></td>
+            <td><strong><button class="qr-link" data-panel="tm10">TM-10</button> &rarr; <button class="qr-link" data-panel="tm20">TM-20</button> &rarr; <button class="qr-link" data-panel="tm30">TM-30</button></strong></td>
+            <td><button class="qr-link" data-panel="specialists">TM-40 WFF track</button></td>
+            <td><span class="chip chip-gold" style="cursor:pointer;" data-panel="specialists">TM-40</span></td>
           </tr>
           <tr>
             <td>Senior leader (O-5+ / SGM+) directing a data-capable formation</td>
-            <td><strong><button class="qr-link" onclick="showPanel('doctrine')">Data Literacy (SL)</button></strong></td>
+            <td><strong><button class="qr-link" data-panel="doctrine">Data Literacy (SL)</button></strong></td>
             <td>Optional: Data Literacy</td>
-            <td><span class="chip chip-gray" style="cursor:pointer;" onclick="showPanel('doctrine')">DRAFT PUBS</span></td>
+            <td><span class="chip chip-gray" style="cursor:pointer;" data-panel="doctrine">DRAFT PUBS</span></td>
           </tr>
           <tr>
             <td>Anyone wanting data literacy background before touching MSS</td>
-            <td><strong><button class="qr-link" onclick="showPanel('doctrine')">Data Literacy</button></strong></td>
+            <td><strong><button class="qr-link" data-panel="doctrine">Data Literacy</button></strong></td>
             <td>TM-10</td>
-            <td><span class="chip chip-gray" style="cursor:pointer;" onclick="showPanel('doctrine')">DRAFT PUBS</span></td>
+            <td><span class="chip chip-gray" style="cursor:pointer;" data-panel="doctrine">DRAFT PUBS</span></td>
           </tr>
         </tbody>
       </table>
@@ -2318,7 +2319,7 @@
             <div class="path-dot optional" style="font-size:10px;width:34px;height:34px;">SL</div>
             <div class="path-line dashed"></div>
           </div>
-          <div class="path-content" style="cursor:pointer;" onclick="showPanel('doctrine')">
+          <div class="path-content" style="cursor:pointer;" data-panel="doctrine">
             <div class="path-tm">DATA LIT (SL) &mdash; OPTIONAL (O-5+ / SGM+)</div>
             <div class="path-name">Data Literacy for Senior Leaders <span style="font-size:11px;color:var(--navy-mid);">&#8594; Draft Pubs</span></div>
             <div class="path-audience">Principles, command responsibilities, decision frameworks</div>
@@ -2329,7 +2330,7 @@
           <div class="path-connector">
             <div class="path-dot optional" style="font-size:10px;width:34px;height:34px;">ALL</div>
           </div>
-          <div class="path-content" style="cursor:pointer;" onclick="showPanel('doctrine')">
+          <div class="path-content" style="cursor:pointer;" data-panel="doctrine">
             <div class="path-tm">DATA LITERACY &mdash; RECOMMENDED (ALL PERSONNEL)</div>
             <div class="path-name">Data Literacy Reference <span style="font-size:11px;color:var(--navy-mid);">&#8594; Draft Pubs</span></div>
             <div class="path-audience">Platform-agnostic data literacy; recommended before TM-10</div>
@@ -2344,7 +2345,7 @@
           <div class="path-dot">1</div>
           <div class="path-line"></div>
         </div>
-        <div class="path-content" style="cursor:pointer;" onclick="showPanel('tm10')">
+        <div class="path-content" style="cursor:pointer;" data-panel="tm10">
           <div class="path-tm">TM-10 &mdash; REQUIRED FOR ALL PERSONNEL</div>
           <div class="path-name">Maven User Manual <span style="font-size:11px;color:var(--navy-mid);">&#8594; TM-10</span></div>
           <div class="path-audience">CAC login, navigation, Workshop apps, data viewing, AI tools, security</div>
@@ -2357,7 +2358,7 @@
           <div class="path-dot">2</div>
           <div class="path-line"></div>
         </div>
-        <div class="path-content" style="cursor:pointer;" onclick="showPanel('tm20')">
+        <div class="path-content" style="cursor:pointer;" data-panel="tm20">
           <div class="path-tm">TM-20 &mdash; ALL STAFF (NO-CODE BUILDER)</div>
           <div class="path-name">Builder Manual <span style="font-size:11px;color:var(--navy-mid);">&#8594; TM-20</span></div>
           <div class="path-audience">Pipeline Builder (visual), Ontology Manager UI, Workshop app builder</div>
@@ -2370,7 +2371,7 @@
           <div class="path-dot">3</div>
           <div class="path-line"></div>
         </div>
-        <div class="path-content" style="cursor:pointer;" onclick="showPanel('tm30')">
+        <div class="path-content" style="cursor:pointer;" data-panel="tm30">
           <div class="path-tm">TM-30 &mdash; DATA-ADJACENT SPECIALISTS</div>
           <div class="path-name">Advanced Builder Manual <span style="font-size:11px;color:var(--navy-mid);">&#8594; TM-30</span></div>
           <div class="path-audience">Complex app design, Ontology architecture, governance, C2DAO standards</div>
@@ -2382,7 +2383,7 @@
         <div class="path-connector">
           <div class="path-dot">4</div>
         </div>
-        <div class="path-content" style="cursor:pointer;" onclick="showPanel('specialists')">
+        <div class="path-content" style="cursor:pointer;" data-panel="specialists">
           <div class="path-tm">TM-40 &mdash; TWO TRACK TYPES (BY ROLE)</div>
           <div class="path-name">Specialist &amp; Warfighting Function Tracks <span style="font-size:11px;color:var(--navy-mid);">&#8594; Specialist Tracks</span></div>
           <div class="path-audience"><strong>WFF Tracks (TM-40A&ndash;F):</strong> Intel &bull; Fires &bull; M&amp;M &bull; Sustainment &bull; Protection &bull; Mission Command<br/><strong>Technical Tracks (TM-40G&ndash;M):</strong> ORSA &bull; AI Eng &bull; MLE &bull; PM &bull; KM &bull; SWE &mdash; Advanced versions at TM-50G&ndash;M</div>
@@ -2410,7 +2411,7 @@
         <strong>UX Designer (TM-40N):</strong> UI/UX designers, human factors (GS/contractor)<br/>
         <strong>Platform Engineer (TM-40O):</strong> Platform engineers, DevOps, SysAdmins<br/><br/>
         <em>Not listed? Ask your commander &mdash; you may be assigned a track based on unit needs.</em><br/>
-        Full mapping: <button class="qr-link" onclick="showPanel('specialists')">Specialist Tracks &rarr;</button>
+        Full mapping: <button class="qr-link" data-panel="specialists">Specialist Tracks &rarr;</button>
       </div>
     </div>
 
@@ -2426,7 +2427,7 @@
         <div class="specialist-cta-title">Specialist Tracks &mdash; TM-40 &amp; TM-50 Series</div>
         <div class="specialist-cta-sub">Role-specific developer manuals for ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, and Software Engineer. Prerequisite: TM-30 complete.</div>
       </div>
-      <button class="specialist-cta-btn" onclick="showPanel('specialists')">
+      <button class="specialist-cta-btn" data-panel="specialists">
         Access Specialist Tracks <span class="btn-arrow">&#8594;</span>
       </button>
     </div>
@@ -2435,8 +2436,8 @@
       <div class="callout-label">NOT FINDING WHAT YOU NEED?</div>
       <div class="callout-body">
         Contact your unit data steward for additional publications, source files, or access to restricted materials.
-        For technical support, visit the <button class="qr-link" onclick="showPanel('support')">Support page &rarr;</button>
-        For task-level procedures, use the <button class="qr-link" onclick="showPanel('taskindex')">Task Index &rarr;</button>
+        For technical support, visit the <button class="qr-link" data-panel="support">Support page &rarr;</button>
+        For task-level procedures, use the <button class="qr-link" data-panel="taskindex">Task Index &rarr;</button>
       </div>
     </div>
 
@@ -2672,7 +2673,7 @@
         <div class="specialist-cta-title">TM-20 &mdash; No-Code Builder Manual</div>
         <div class="specialist-cta-sub">Learn to ingest data, build Workshop applications, create Object Types, and manage projects &mdash; all without coding. Required prereq for all builder roles.</div>
       </div>
-      <button class="specialist-cta-btn" onclick="showPanel('tm20')">
+      <button class="specialist-cta-btn" data-panel="tm20">
         Continue to TM-20 <span class="btn-arrow">&#8594;</span>
       </button>
     </div>
@@ -2681,8 +2682,8 @@
       <div class="callout-label">NOT FINDING WHAT YOU NEED?</div>
       <div class="callout-body">
         Contact your unit data steward for additional publications, source files, or access to restricted materials.
-        For technical support, visit the <button class="qr-link" onclick="showPanel('support')">Support page &rarr;</button>
-        For task-level procedures, use the <button class="qr-link" onclick="showPanel('taskindex')">Task Index &rarr;</button>
+        For technical support, visit the <button class="qr-link" data-panel="support">Support page &rarr;</button>
+        For task-level procedures, use the <button class="qr-link" data-panel="taskindex">Task Index &rarr;</button>
       </div>
     </div>
 
@@ -2889,7 +2890,7 @@
         <div class="specialist-cta-title">TM-30 &mdash; Advanced Builder Manual</div>
         <div class="specialist-cta-sub">For data-adjacent specialists: complex application design, advanced pipelines, Ontology architecture, AIP Logic, and C2DAO governance. Required prereq for all TM-40 tracks.</div>
       </div>
-      <button class="specialist-cta-btn" onclick="showPanel('tm30')">
+      <button class="specialist-cta-btn" data-panel="tm30">
         Continue to TM-30 <span class="btn-arrow">&#8594;</span>
       </button>
     </div>
@@ -2898,8 +2899,8 @@
       <div class="callout-label">NOT FINDING WHAT YOU NEED?</div>
       <div class="callout-body">
         Contact your unit data steward for additional publications, source files, or access to restricted materials.
-        For technical support, visit the <button class="qr-link" onclick="showPanel('support')">Support page &rarr;</button>
-        For task-level procedures, use the <button class="qr-link" onclick="showPanel('taskindex')">Task Index &rarr;</button>
+        For technical support, visit the <button class="qr-link" data-panel="support">Support page &rarr;</button>
+        For task-level procedures, use the <button class="qr-link" data-panel="taskindex">Task Index &rarr;</button>
       </div>
     </div>
 
@@ -2929,7 +2930,7 @@
 
     <div class="callout note">
       <div class="callout-label">NOTE &mdash; IS THIS YOUR LEVEL?</div>
-      <div class="callout-body">TM-30 covers advanced no-code building &mdash; application design, pipeline architecture, governance. If your role requires <strong>coding, ML, or ORSA</strong>, TM-30 is a prerequisite to a specialist track. <button class="qr-link" onclick="showPanel('specialists')">View Specialist Tracks (TM-40/50) &rarr;</button></div>
+      <div class="callout-body">TM-30 covers advanced no-code building &mdash; application design, pipeline architecture, governance. If your role requires <strong>coding, ML, or ORSA</strong>, TM-30 is a prerequisite to a specialist track. <button class="qr-link" data-panel="specialists">View Specialist Tracks (TM-40/50) &rarr;</button></div>
     </div>
 
     <h2>COMPETENCIES UPON COMPLETION</h2>
@@ -3086,7 +3087,7 @@
         <div class="specialist-cta-title">Specialist Tracks &mdash; TM-40 &amp; TM-50 Series</div>
         <div class="specialist-cta-sub">Six role-specific tracks for ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, and Software Engineer. Select your track based on MOS/role.</div>
       </div>
-      <button class="specialist-cta-btn" onclick="showPanel('specialists')">
+      <button class="specialist-cta-btn" data-panel="specialists">
         Access Specialist Tracks <span class="btn-arrow">&#8594;</span>
       </button>
     </div>
@@ -3095,8 +3096,8 @@
       <div class="callout-label">NOT FINDING WHAT YOU NEED?</div>
       <div class="callout-body">
         Contact your unit data steward for additional publications, source files, or access to restricted materials.
-        For technical support, visit the <button class="qr-link" onclick="showPanel('support')">Support page &rarr;</button>
-        For task-level procedures, use the <button class="qr-link" onclick="showPanel('taskindex')">Task Index &rarr;</button>
+        For technical support, visit the <button class="qr-link" data-panel="support">Support page &rarr;</button>
+        For task-level procedures, use the <button class="qr-link" data-panel="taskindex">Task Index &rarr;</button>
       </div>
     </div>
 
@@ -3210,7 +3211,7 @@
         <div class="track-body">
           <div class="track-name">Operations Research &amp; Systems Analysis</div>
           <div class="track-audience">FA49 &bull; G2/S2 quant analysts &bull; Wargame analysts</div>
-          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50G &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" onclick="showPanel('tm40')">View TM-40 Series &rarr;</button></div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50G &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" data-panel="tm40">View TM-40 Series &rarr;</button></div>
         </div>
       </div>
       <div class="track-card">
@@ -3218,7 +3219,7 @@
         <div class="track-body">
           <div class="track-name">AIP Logic, Agent Studio &amp; LLM Integration</div>
           <div class="track-audience">AI/ML specialists &bull; 17A/17C</div>
-          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50H &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" onclick="showPanel('tm40')">View TM-40 Series &rarr;</button></div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50H &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" data-panel="tm40">View TM-40 Series &rarr;</button></div>
         </div>
       </div>
       <div class="track-card">
@@ -3226,7 +3227,7 @@
         <div class="track-body">
           <div class="track-name">Model Development, Validation &amp; Deployment</div>
           <div class="track-audience">ML engineers &bull; Data scientists (GS/contractor)</div>
-          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50M &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" onclick="showPanel('tm40')">View TM-40 Series &rarr;</button></div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50M &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" data-panel="tm40">View TM-40 Series &rarr;</button></div>
         </div>
       </div>
       <div class="track-card">
@@ -3234,7 +3235,7 @@
         <div class="track-body">
           <div class="track-name">Pipeline Mgmt, Milestones &amp; Portfolio Health</div>
           <div class="track-audience">G8/S8 &bull; PMs &bull; Civil Affairs</div>
-          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50J &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" onclick="showPanel('tm40')">View TM-40 Series &rarr;</button></div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50J &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" data-panel="tm40">View TM-40 Series &rarr;</button></div>
         </div>
       </div>
       <div class="track-card">
@@ -3242,7 +3243,7 @@
         <div class="track-body">
           <div class="track-name">Forms, Lessons Learned &amp; Institutional Memory</div>
           <div class="track-audience">KMOs &bull; 37F &bull; Civil Affairs</div>
-          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50K &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" onclick="showPanel('tm40')">View TM-40 Series &rarr;</button></div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50K &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" data-panel="tm40">View TM-40 Series &rarr;</button></div>
         </div>
       </div>
       <div class="track-card">
@@ -3250,7 +3251,7 @@
         <div class="track-body">
           <div class="track-name">Python/TypeScript, OSDK &amp; Code Transforms</div>
           <div class="track-audience">17A/17C &bull; 25D &bull; GS/contractor SWEs</div>
-          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50L &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" onclick="showPanel('tm40')">View TM-40 Series &rarr;</button></div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50L &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" data-panel="tm40">View TM-40 Series &rarr;</button></div>
         </div>
       </div>
       <div class="track-card">
@@ -3258,7 +3259,7 @@
         <div class="track-body">
           <div class="track-name">Soldier Centered Design, Workshop &amp; Slate UI</div>
           <div class="track-audience">UI/UX designers &bull; Human factors &bull; GS/contractor designers</div>
-          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50N &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" onclick="showPanel('tm40')">View TM-40 Series &rarr;</button></div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50N &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" data-panel="tm40">View TM-40 Series &rarr;</button></div>
         </div>
       </div>
       <div class="track-card">
@@ -3266,7 +3267,7 @@
         <div class="track-body">
           <div class="track-name">Kubernetes, CI/CD, DevSecOps &amp; Infrastructure as Code</div>
           <div class="track-audience">Platform engineers &bull; DevOps &bull; SysAdmins &bull; 25D</div>
-          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50O &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" onclick="showPanel('tm40')">View TM-40 Series &rarr;</button></div>
+          <div class="track-prereq">Prereq: TM-30 &bull; Advanced: TM-50O &bull; <button class="panel-nav-btn" style="padding:4px 10px;font-size:10px;" data-panel="tm40">View TM-40 Series &rarr;</button></div>
         </div>
       </div>
     </div>
@@ -3277,15 +3278,15 @@
       <div class="callout-body">TM-50 tracks are advanced-level continuations requiring the corresponding TM-40 track as a prerequisite. They cover expert-level techniques, production architecture, and operational integration at scale.</div>
     </div>
     <div class="panel-nav-btns" style="margin-top:12px;">
-      <button class="panel-nav-btn" onclick="showPanel('tm50')">Open TM-50 Series Full Reference &#8594;</button>
+      <button class="panel-nav-btn" data-panel="tm50">Open TM-50 Series Full Reference &#8594;</button>
     </div>
 
     <div class="callout note mt-24">
       <div class="callout-label">NOT FINDING WHAT YOU NEED?</div>
       <div class="callout-body">
         Contact your unit data steward for additional publications, source files, or access to restricted materials.
-        For technical support, visit the <button class="qr-link" onclick="showPanel('support')">Support page &rarr;</button>
-        For task-level procedures, use the <button class="qr-link" onclick="showPanel('taskindex')">Task Index &rarr;</button>
+        For technical support, visit the <button class="qr-link" data-panel="support">Support page &rarr;</button>
+        For task-level procedures, use the <button class="qr-link" data-panel="taskindex">Task Index &rarr;</button>
       </div>
     </div>
 
@@ -3505,7 +3506,7 @@
         <div class="specialist-cta-title">TM-50 &mdash; Advanced Developer Tracks</div>
         <div class="specialist-cta-sub">Expert-level continuation of each TM-40 specialist track. For senior technical leads, platform architects, and developers building enterprise-scale MSS capabilities.</div>
       </div>
-      <button class="specialist-cta-btn" onclick="showPanel('tm50')">
+      <button class="specialist-cta-btn" data-panel="tm50">
         Continue to TM-50 <span class="btn-arrow">&#8594;</span>
       </button>
     </div>
@@ -3514,8 +3515,8 @@
       <div class="callout-label">NOT FINDING WHAT YOU NEED?</div>
       <div class="callout-body">
         Contact your unit data steward for additional publications, source files, or access to restricted materials.
-        For technical support, visit the <button class="qr-link" onclick="showPanel('support')">Support page &rarr;</button>
-        For task-level procedures, use the <button class="qr-link" onclick="showPanel('taskindex')">Task Index &rarr;</button>
+        For technical support, visit the <button class="qr-link" data-panel="support">Support page &rarr;</button>
+        For task-level procedures, use the <button class="qr-link" data-panel="taskindex">Task Index &rarr;</button>
       </div>
     </div>
 
@@ -3671,8 +3672,8 @@
       <div class="callout-label">NOT FINDING WHAT YOU NEED?</div>
       <div class="callout-body">
         Contact your unit data steward for additional publications, source files, or access to restricted materials.
-        For technical support, visit the <button class="qr-link" onclick="showPanel('support')">Support page &rarr;</button>
-        For task-level procedures, use the <button class="qr-link" onclick="showPanel('taskindex')">Task Index &rarr;</button>
+        For technical support, visit the <button class="qr-link" data-panel="support">Support page &rarr;</button>
+        For task-level procedures, use the <button class="qr-link" data-panel="taskindex">Task Index &rarr;</button>
       </div>
     </div>
 
@@ -3778,8 +3779,8 @@
       <div class="callout-label">NOT FINDING WHAT YOU NEED?</div>
       <div class="callout-body">
         Contact your unit data steward for additional publications, source files, or access to restricted materials.
-        For technical support, visit the <button class="qr-link" onclick="showPanel('support')">Support page &rarr;</button>
-        For task-level procedures, use the <button class="qr-link" onclick="showPanel('taskindex')">Task Index &rarr;</button>
+        For technical support, visit the <button class="qr-link" data-panel="support">Support page &rarr;</button>
+        For task-level procedures, use the <button class="qr-link" data-panel="taskindex">Task Index &rarr;</button>
       </div>
     </div>
 
@@ -3913,7 +3914,7 @@
         <div class="specialist-cta-title">Go to Home / Start Here</div>
         <div class="specialist-cta-sub">Find your training level, follow the full path, and navigate to your TM using the Home page overview.</div>
       </div>
-      <button class="specialist-cta-btn" onclick="showPanel('home')">
+      <button class="specialist-cta-btn" data-panel="home">
         Home / Start Here <span class="btn-arrow">&#8594;</span>
       </button>
     </div>
@@ -3922,8 +3923,8 @@
       <div class="callout-label">NOT FINDING WHAT YOU NEED?</div>
       <div class="callout-body">
         Contact your unit data steward for additional publications, source files, or access to restricted materials.
-        For technical support, visit the <button class="qr-link" onclick="showPanel('support')">Support page &rarr;</button>
-        For task-level procedures, use the <button class="qr-link" onclick="showPanel('taskindex')">Task Index &rarr;</button>
+        For technical support, visit the <button class="qr-link" data-panel="support">Support page &rarr;</button>
+        For task-level procedures, use the <button class="qr-link" data-panel="taskindex">Task Index &rarr;</button>
       </div>
     </div>
 
@@ -4010,8 +4011,8 @@
       <div class="callout-label">NOT FINDING WHAT YOU NEED?</div>
       <div class="callout-body">
         Contact your unit data steward for additional publications, source files, or access to restricted materials.
-        For technical support, visit the <button class="qr-link" onclick="showPanel('support')">Support page &rarr;</button>
-        For task-level procedures, use the <button class="qr-link" onclick="showPanel('taskindex')">Task Index &rarr;</button>
+        For technical support, visit the <button class="qr-link" data-panel="support">Support page &rarr;</button>
+        For task-level procedures, use the <button class="qr-link" data-panel="taskindex">Task Index &rarr;</button>
       </div>
     </div>
 
@@ -4699,8 +4700,8 @@
       <div class="callout-label">NOT FINDING WHAT YOU NEED?</div>
       <div class="callout-body">
         Contact your unit data steward for additional publications, source files, or access to restricted materials.
-        For technical support, visit the <button class="qr-link" onclick="showPanel('support')">Support page &rarr;</button>
-        For task-level procedures, use the <button class="qr-link" onclick="showPanel('taskindex')">Task Index &rarr;</button>
+        For technical support, visit the <button class="qr-link" data-panel="support">Support page &rarr;</button>
+        For task-level procedures, use the <button class="qr-link" data-panel="taskindex">Task Index &rarr;</button>
       </div>
     </div>
 
@@ -4729,8 +4730,8 @@
       <div class="callout-label">NOT FINDING WHAT YOU NEED?</div>
       <div class="callout-body">
         Contact your unit data steward for additional publications, source files, or access to restricted materials.
-        For technical support, visit the <button class="qr-link" onclick="showPanel('support')">Support page &rarr;</button>
-        For task-level procedures, use the <button class="qr-link" onclick="showPanel('taskindex')">Task Index &rarr;</button>
+        For technical support, visit the <button class="qr-link" data-panel="support">Support page &rarr;</button>
+        For task-level procedures, use the <button class="qr-link" data-panel="taskindex">Task Index &rarr;</button>
       </div>
     </div>
 
@@ -4760,8 +4761,8 @@
       <div class="callout-label">NOT FINDING WHAT YOU NEED?</div>
       <div class="callout-body">
         Contact your unit data steward for additional publications, source files, or access to restricted materials.
-        For technical support, visit the <button class="qr-link" onclick="showPanel('support')">Support page &rarr;</button>
-        For task-level procedures, use the <button class="qr-link" onclick="showPanel('taskindex')">Task Index &rarr;</button>
+        For technical support, visit the <button class="qr-link" data-panel="support">Support page &rarr;</button>
+        For task-level procedures, use the <button class="qr-link" data-panel="taskindex">Task Index &rarr;</button>
       </div>
     </div>
 

@@ -19,9 +19,9 @@
 
 This manual provides task-based instruction for machine learning engineers (MLEs) operating on MSS. MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. TM-40M qualified personnel design and implement predictive models, feature pipelines, and ML-backed data products that support operational decision-making across III Corps, V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, SETAF-AF, USAREUR-AF G2, and subordinate commands.
 
-**TM-40M covers** setting up and using Code Workspaces (JupyterLab/RStudio) on Foundry; reading Foundry datasets into notebooks and managing Python environments; building feature engineering pipelines that feed ML training workflows; training models using scikit-learn, PyTorch, statsmodels, and similar libraries; evaluating model performance with operationally appropriate metrics; conducting bias and fairness checks for models affecting personnel or readiness assessments; publishing trained models to the Ontology and implementing model-backed Object properties; implementing MLOps patterns: versioning, experiment tracking, retraining triggers, drift detection; building and maintaining feature pipelines using Foundry Transforms; applying ML to operational use cases: readiness prediction, logistics demand forecasting, anomaly detection in OPDATA; and completing model governance documentation and navigating the approval process before production deployment.
+**TM-40M covers** setting up and using Code Workspaces (JupyterLab/RStudio) on Foundry; reading Foundry datasets into notebooks and managing Python environments; building feature engineering pipelines that feed ML training workflows; training models using scikit-learn, PyTorch, statsmodels, and similar libraries; training models using Model Studio (Palantir's no-code model training workspace, GA February 2026); evaluating model performance with operationally appropriate metrics; conducting bias and fairness checks for models affecting personnel or readiness assessments; publishing trained models to the Ontology and implementing model-backed Object properties; implementing MLOps patterns: versioning, experiment tracking, retraining triggers, drift detection; building and maintaining feature pipelines using Foundry Transforms; applying ML to operational use cases: readiness prediction, logistics demand forecasting, anomaly detection in OPDATA; and completing model governance documentation and navigating the approval process before production deployment.
 
-**TM-40M does NOT cover** basic Python or data science fundamentals — see data_skills curriculum; no-code pipeline building — see TM-20 and TM-30; Workshop application design — see TM-30; Ontology design methodology — see TM-30 (consumed by MLE, not designed here); TypeScript Functions on Objects or OSDK application development — see TM-40L (Software Engineer); large language model fine-tuning or Agent Studio development — see TM-40H (AI Engineer); or operations research / statistical modeling for optimization — see TM-40G (ORSA).
+**TM-40M does NOT cover** basic Python or data science fundamentals — see data_skills curriculum; no-code pipeline building — see TM-20 and TM-30 (no-code model training via Model Studio IS covered in Chapter 10); Workshop application design — see TM-30; Ontology design methodology — see TM-30 (consumed by MLE, not designed here); TypeScript Functions on Objects or OSDK application development — see TM-40L (Software Engineer); large language model fine-tuning or Agent Studio development — see TM-40H (AI Engineer); or operations research / statistical modeling for optimization — see TM-40G (ORSA).
 
 ### 1-2. Curriculum Position, Advanced Track, and WFF Context
 
@@ -2236,6 +2236,170 @@ MODEL INCIDENT REPORT — [DATE] [TIME]Z
 | Retrain recommendation review | Weekly | MLE | Initiate retrain if triggers active |
 | Governance audit preparation | Quarterly | MLE + data steward | C2DAO review |
 | Model card currency check | Quarterly | MLE | Update card if any field outdated |
+
+---
+
+## CHAPTER 10 — MODEL STUDIO
+
+### 10-1. Overview
+
+**BLUF:** Model Studio is Palantir's no-code model training workspace, generally available as of February 2026. It enables MLEs and qualified builders to train, evaluate, and deploy ML models without writing code. Model Studio expands the population of personnel who can produce governed ML models on MSS — but it does not replace code-based approaches for complex architectures.
+
+Model Studio provides a guided interface for the core ML workflow: dataset selection, feature configuration, algorithm selection, hyperparameter tuning, evaluation, and deployment. Models trained in Studio follow the same governance gates (Chapter 9) and monitoring obligations as code-trained models. The tool does not reduce governance requirements — it reduces the engineering barrier to reaching those gates.
+
+**When to use Model Studio vs. code-based approaches:**
+
+| Criterion | Model Studio | Code Workbook / Custom Transforms |
+|---|---|---|
+| Tabular classification and regression | Preferred | Not required unless custom preprocessing needed |
+| Standard algorithms (gradient boosting, random forest, logistic regression, linear regression) | Supported | Also supported |
+| Complex neural architectures (CNNs, transformers, custom layers) | Not supported | Required |
+| Custom loss functions | Not supported | Required |
+| Ensemble methods (stacking, blending, custom voting) | Not supported | Required |
+| Rapid prototyping / proof of concept | Preferred — fastest path to a baseline model | Use for iteration after Studio baseline |
+| Explainability requirements (SHAP, LIME) | Built-in feature importance; limited advanced explainability | Full control over explainability tooling |
+| Non-tabular data (images, text, geospatial tensors) | Not supported | Required |
+| Timestamp-aware feature engineering | Supported (improved timestamp handling, Feb 2026 GA) | Full control |
+
+> **NOTE:** Model Studio is a starting point, not a ceiling. The recommended workflow for new use cases: build a baseline in Studio first, evaluate whether Studio's accuracy meets the operational threshold, and escalate to Code Workbook only if the threshold is not met or the architecture requires code. This approach satisfies the DDOF 30-day MVP mandate (Section 9-2a) by producing a deployable baseline in days rather than weeks.
+
+---
+
+### 10-2. Task: Train a Model in Model Studio
+
+**CONDITIONS:** Feature dataset available in Foundry. MLE or qualified builder has Foundry Editor role. Use case authorized by C2DAO (Gate 1 complete).
+
+**STANDARDS:** Model trained on a proper train/test split. Algorithm and hyperparameters documented. Evaluation metrics recorded. Model artifact saved to a governed Foundry dataset ready for deployment review.
+
+**EQUIPMENT:** Foundry platform access; curated feature dataset; C2DAO use case authorization on file.
+
+**PROCEDURE:**
+
+1. Navigate to Model Studio from the Foundry left navigation panel. Select **New Model**.
+
+2. Select the input dataset. Choose the curated feature dataset — not raw source data. The dataset must already have feature engineering applied (Chapter 3 procedures apply regardless of whether training is code-based or no-code).
+
+> **WARNING:** Model Studio does not replace feature engineering. A model trained on raw, uncurated data will produce unreliable results regardless of the algorithm selected. Complete Chapter 3 feature engineering procedures before entering Studio.
+
+3. Configure the target variable. Select the column the model will predict. Studio will auto-detect whether the task is classification or regression based on the target column's data type.
+
+4. Configure features. Select the feature columns to include. Studio displays summary statistics (mean, distribution, missing values) for each column. Exclude columns that are:
+   - Identifiers (UICs, SSNs, names) — these are not features
+   - Leaky features (columns derived from the target or available only after the prediction point)
+   - High-cardinality categoricals without encoding strategy
+
+5. Configure timestamp handling. For time-series operational data, specify the timestamp column. Studio's improved timestamp handling (GA February 2026) supports:
+   - Temporal train/test splitting (prevents data leakage from future observations)
+   - Time-aware feature windowing (rolling aggregates aligned to prediction time)
+   - Inference-time timestamp alignment (model applies the correct temporal context at scoring time)
+
+> **WARNING:** For operational data with a time dimension, you MUST configure the timestamp column. Failure to do so results in random train/test splits that leak future data into training — producing artificially inflated accuracy that will not hold in production. This is the same temporal split requirement as Section 4-2 but enforced through the Studio interface.
+
+6. Select the algorithm. Studio supports:
+   - Gradient Boosted Trees (XGBoost) — default recommendation for tabular data
+   - Random Forest
+   - Logistic Regression (classification only)
+   - Linear Regression (regression only)
+   - Light GBM
+
+   Select the algorithm appropriate to the use case. When uncertain, start with Gradient Boosted Trees — it provides the strongest baseline for most MSS tabular use cases.
+
+7. Configure hyperparameters. Studio provides sensible defaults. Adjust only with justification:
+   - **Learning rate:** Default 0.1; reduce for noisy data
+   - **Max depth:** Default 6; reduce if overfitting on small datasets
+   - **Number of estimators:** Default 100; increase if validation loss is still decreasing
+   - **Early stopping:** Enable early stopping with patience of 10 rounds
+
+8. Start training. Studio displays real-time training progress including train/validation loss curves. Training runs execute on Foundry compute — no local resources consumed.
+
+9. Review evaluation results. Studio provides:
+   - Accuracy, precision, recall, F1 (classification) or RMSE, MAE, R² (regression)
+   - Confusion matrix (classification)
+   - Feature importance ranking
+   - Train vs. validation performance comparison (overfitting detection)
+
+   Apply the same evaluation standards from Chapter 5. Studio-trained models are not exempt from operational threshold review.
+
+10. Save the model. Studio saves the trained model artifact to a Foundry dataset. Record the artifact dataset path — this is required for the model card (Section 9-3) and deployment (Section 10-3).
+
+---
+
+### 10-3. Task: Deploy a Studio-Trained Model to Production
+
+**CONDITIONS:** Model trained in Studio. Evaluation metrics meet operational thresholds. Gate 3 (Evaluation Acceptance) complete. Gate 4 (Pre-Production Review) scheduled.
+
+**STANDARDS:** Model deployed via Studio's deployment interface or promoted to a production inference Transform. Inference outputs written to a governed Foundry dataset. Model registered in the model registry with version, artifact path, and deployment date.
+
+**EQUIPMENT:** Trained model artifact in Foundry; model card (Section 9-3); C2DAO gate package; target Ontology Object Type (if deploying as Object property).
+
+**PROCEDURE:**
+
+1. From the Model Studio interface, select the trained model and choose **Deploy**.
+
+2. Configure the deployment target:
+   - **Batch inference:** Model scores a dataset on a schedule (daily, weekly). Output written to a Foundry dataset. This is the standard deployment pattern for most MSS use cases.
+   - **Ontology property:** Model output mapped to an Object Type property visible in Workshop applications. Coordinate with the -30 builder for Object Type schema.
+   - **Live inference (if available):** Model exposed as an API endpoint for real-time scoring. Requires additional C2DAO review for latency-sensitive use cases.
+
+3. Configure the inference schedule. For batch deployments, set the schedule to match the data freshness SLA agreed with the data steward. Do not set inference frequency higher than the source data refresh rate — scoring stale data more frequently does not improve predictions.
+
+4. Configure timestamp alignment for inference. Studio's improved timestamp handling ensures the model applies the correct temporal context at inference time. Verify that:
+   - The inference input dataset includes the same timestamp column used during training
+   - The model scores records using only data available at or before the prediction timestamp
+   - Rolling window features are computed relative to the inference timestamp, not the current system time
+
+5. Register the model in the model registry:
+
+```python
+# Register Studio-trained model in the project model registry
+# Run this in a Code Workspace after Studio deployment
+from foundry.transforms import Dataset
+import pandas as pd
+from datetime import datetime
+
+registry = Dataset.get("/ml/<project>/model_registry/<model_name>_registry")
+df_registry = registry.pandas()
+
+new_entry = pd.DataFrame([{
+    "model_name": "<model_name>",
+    "version": "<version>",
+    "training_method": "model_studio",
+    "algorithm": "<algorithm_selected>",
+    "artifact_path": "<studio_artifact_dataset_path>",
+    "deployed_date": datetime.utcnow().isoformat(),
+    "status": "PRODUCTION",
+    "evaluation_f1": <f1_score>,
+    "evaluation_accuracy": <accuracy>,
+    "notes": "Trained via Model Studio; timestamp-aware deployment"
+}])
+
+df_updated = pd.concat([df_registry, new_entry], ignore_index=True)
+# Write updated registry back to Foundry
+```
+
+6. Submit the Gate 5 (Production Deployment Approval) package to C2DAO. The gate package is identical for Studio-trained and code-trained models. Studio does not bypass any governance gate.
+
+7. Confirm drift monitoring is active (Chapter 7, Section 7-6). Studio-deployed models require the same monitoring obligations as code-deployed models — see Section 9-5.
+
+---
+
+### 10-4. Limitations and Escalation to Code
+
+Model Studio accelerates the path from curated data to deployed model. It does not cover the full MLE capability set. The following scenarios require escalation to Code Workbook or custom Transforms:
+
+| Scenario | Why Studio Cannot Handle It | Code-Based Alternative |
+|---|---|---|
+| Custom neural architectures (CNN, LSTM, transformer) | Studio supports tree-based and linear models only | PyTorch or TensorFlow in Code Workspace (Section 4-4) |
+| Custom loss functions | Studio uses standard loss functions per algorithm | Define custom loss in training script |
+| Ensemble methods (stacking, blending) | Studio trains single models; no multi-model composition | scikit-learn StackingClassifier or custom ensemble code |
+| Non-tabular inputs (images, free text, geospatial tensors) | Studio operates on tabular datasets only | Specialized libraries in Code Workspace |
+| Advanced explainability (SHAP force plots, LIME, counterfactuals) | Studio provides feature importance only | SHAP/LIME libraries in Code Workspace (Section 5-5) |
+| Feature engineering requiring custom Python logic | Studio consumes pre-engineered features; no inline transforms | Feature pipeline in Transforms (Chapter 3) |
+| Hyperparameter search beyond Studio's grid | Studio supports limited hyperparameter ranges | Optuna, Ray Tune, or manual grid search in Code Workspace |
+
+**Escalation procedure:** When a Studio-trained baseline does not meet the operational threshold and the limitation is architectural (not data quality), document the Studio baseline results in the model card, then develop a code-based alternative in a Code Workspace. The Studio baseline serves as the minimum performance benchmark — the code-based model must exceed it to justify the additional development time.
+
+> **NOTE:** A Studio-trained model that meets the operational threshold is the correct production choice even if a code-based model might achieve marginally higher accuracy. Engineering time spent exceeding an already-met threshold is time not spent on the next mission requirement. Ship the model that works; optimize only when the mission demands it.
 
 ---
 

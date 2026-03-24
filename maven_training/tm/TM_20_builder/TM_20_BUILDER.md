@@ -2249,6 +2249,32 @@ NOTE: Alert your Data Steward if the output row count drops below the historical
 
 ---
 
+# Q1 2026 PLATFORM UPDATES
+
+The following Palantir Foundry updates affect TM-20 content. Builders should familiarize themselves with these changes.
+
+## Object Views — General Availability
+
+Object Views reached GA in Q1 2026. Key improvements relevant to TM-20 builders:
+
+- **Section-based layouts:** Object Views now support configurable sections (grouping related properties under collapsible headers) in addition to the flat property list. Builders can organize properties into operational groupings (e.g., "Identity," "Status," "Location") for improved readability.
+- **Conditional visibility:** Properties can be shown or hidden based on the value of another property. Example: a "Maintenance Notes" section appears only when equipment status is "NMC."
+- **Linked Object previews:** Object Views can now display inline previews of linked objects (e.g., a `MaintenanceRecord` view can show the linked `UnitStatus` object's key properties without navigating away).
+- **Impact on TASK 4-3:** The Object View configuration procedure in this manual remains valid. The new section-based layout is an optional enhancement — builders should adopt it for Object Types with more than 10 displayed properties.
+
+## Pipeline Builder Enhancements
+
+- **Live row-count preview:** Pipeline Builder now displays estimated row counts at each node in the pipeline graph without requiring a full build. Use this to detect fan-out or unexpected filtering earlier in the build process.
+- **Improved error messages:** Transform node errors now include the specific column name and sample values that caused the failure, reducing diagnostic time.
+- **Template pipelines:** Builders can now save a pipeline configuration as a template and instantiate copies for similar data sources. This supports the standard ingestion patterns in Appendix B.
+
+## Foundry Branching Improvements
+
+- **Branch comparison view:** Before submitting a merge request, builders can now view a side-by-side diff of all resource changes (pipeline logic, Ontology edits, Workshop layout) between the dev branch and production. This supports the review process described in TASK 7-3.
+- **Auto-conflict detection:** Foundry now flags merge conflicts before submission, preventing failed merges that previously required C2DAO intervention to resolve.
+
+---
+
 # GLOSSARY
 
 Terms are defined in plain English with USAREUR-AF operational context where applicable. Foundry-specific terms reflect TM-20 no-code usage; TM-30 and advanced usage is noted where the term has a broader meaning.

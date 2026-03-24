@@ -8,6 +8,20 @@
 > **CAUTION: Fine-tuned models trained on operational corpora retain information from training
 > **NOTE:** TM-40H is a hard prerequisite. CONCEPTS_GUIDE_TM50H_AI_ENGINEER_ADVANCED (read before this manual). TM-50H does not re-teach AIP Logic, Agent Studio,
 
+## Table of Contents
+
+- [CHAPTER 1 — INTRODUCTION AND SCOPE](#chapter-1--introduction-and-scope)
+- [CHAPTER 2 — MULTI-AGENT ORCHESTRATION SYSTEMS](#chapter-2--multi-agent-orchestration-systems)
+- [CHAPTER 3 — LLM FINE-TUNING AND DOMAIN ADAPTATION](#chapter-3--llm-fine-tuning-and-domain-adaptation)
+- [CHAPTER 4 — ADVANCED RAG ARCHITECTURE](#chapter-4--advanced-rag-architecture)
+- [CHAPTER 5 — AI RED-TEAMING AND ADVERSARIAL TESTING](#chapter-5--ai-red-teaming-and-adversarial-testing)
+- [CHAPTER 6 — PRODUCTION AI OBSERVABILITY](#chapter-6--production-ai-observability)
+- [CHAPTER 7 — MULTI-MODAL AI SYSTEMS](#chapter-7--multi-modal-ai-systems)
+- [CHAPTER 8 — ENTERPRISE AI ARCHITECTURE AND GOVERNANCE](#chapter-8--enterprise-ai-architecture-and-governance)
+- [APPENDIX A — AI PRODUCTION READINESS CHECKLIST](#appendix-a--ai-production-readiness-checklist)
+- [APPENDIX B — AI EVALUATION FRAMEWORK](#appendix-b--ai-evaluation-framework)
+- [GLOSSARY](#glossary)
+
 ---
 
 ## CHAPTER 1 — INTRODUCTION AND SCOPE
@@ -558,7 +572,7 @@ def prepare_finetuning_example(
 
     return {
         "messages": [
-            {"role": "system", "content": "<SYSTEM_PROMPT_PLACEHOLDER>"},
+            {"role": "system", "content": "You are a military data analysis assistant. Given structured operational data, provide concise analytical summaries. Follow BLUF format. Do not speculate beyond the data provided. Flag anomalies and trends."},
             {"role": "user", "content": prompt},
             {"role": "assistant", "content": completion},
         ],

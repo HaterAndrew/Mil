@@ -8,6 +8,7 @@ USAREUR-AF Maven Training corpus.
 Output: maven_training/DEPENDENCY_MAP.html
 """
 
+import html as html_mod
 import os
 import json
 from pathlib import Path
@@ -21,13 +22,14 @@ from pathlib import Path
 NODES = []
 
 def add(node_id, label, path, node_type, column, track):
+    # Escape all user-visible strings that may end up in innerHTML via JS tooltips
     NODES.append({
         "id": node_id,
-        "label": label,
-        "path": path,
-        "type": node_type,
+        "label": html_mod.escape(label),
+        "path": html_mod.escape(path),
+        "type": html_mod.escape(node_type),
         "col": column,
-        "track": track,
+        "track": html_mod.escape(track),
     })
 
 

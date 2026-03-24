@@ -312,6 +312,38 @@ print(f"Workspace: {foundry.env.workspace_name()}")
 
 ---
 
+### 2-5a. AI Forward Deployed Engineer (AI FDE) — GA March 2026
+
+**BLUF:** The AI Forward Deployed Engineer (AI FDE) is a platform-level AI coding assistant within Foundry, generally available as of March 2026. AI FDE accelerates development work inside Code Workspaces by providing context-aware code generation, transform authoring assistance, and inline documentation — reducing the time from design to working code for AI engineers.
+
+**What AI FDE provides:**
+
+| Capability | How AI Engineers Use It |
+|---|---|
+| Context-aware code generation | Generate Python transforms, AIP Logic functions, and data pipeline code from natural language descriptions within Code Workspaces |
+| Transform authoring assistance | Scaffold transform boilerplate, suggest Foundry SDK patterns, and auto-complete Ontology API calls based on the current project context |
+| Inline documentation | Generate docstrings, inline comments, and usage examples for transforms and pipeline code |
+| Debugging assistance | Analyze error traces and suggest fixes using knowledge of Foundry SDK patterns and common failure modes |
+| Code review suggestions | Identify potential issues in transform logic, suggest performance improvements, and flag anti-patterns |
+
+**AI FDE in the AI engineer workflow:**
+
+AI FDE does not replace engineering judgment. It accelerates the implementation phase — the translation from a validated design (Chapter 3) to working code. The AI engineer remains responsible for design decisions, security review, testing (Chapter 8), and production governance (Chapter 9).
+
+**Standard interaction pattern:**
+
+1. Design the workflow architecture per Chapter 3 guidelines (human responsibility).
+2. Use AI FDE to generate initial transform code and AIP Logic function implementations from your design specifications.
+3. Review all generated code for correctness, security, and compliance with MSS coding standards.
+4. Test generated code using the evaluation framework in Chapter 8 — AI FDE output is untested code until you validate it.
+5. Iterate with AI FDE for refinement, but own every line that enters production.
+
+> **CAUTION:** AI FDE-generated code is subject to the same review and testing requirements as human-authored code. Do not deploy AI FDE-generated transforms to production without completing the pre-deployment checklist (Chapter 9, Section 9-1). AI FDE accelerates writing code; it does not accelerate the obligation to test, review, and authorize that code.
+
+> **NOTE:** AI FDE operates within the Foundry security boundary and has access only to project-scoped resources. It does not send code or data to external services. Confirm with the MSS platform team that AI FDE is enabled on your enrollment before relying on it in your development workflow.
+
+---
+
 ## CHAPTER 3 — AIP LOGIC: AUTHORING WORKFLOWS
 
 **BLUF:** AIP Logic workflows are the primary mechanism for structured AI inference on MSS. Build them as software — version controlled, tested against development data, and reviewed before production deployment.
@@ -970,6 +1002,64 @@ def retrieve_relevant_passages(
 ```
 
 > **NOTE:** Semantic search quality depends on the quality of the document embedding dataset and the embedding model. Before deploying a RAG pipeline that searches doctrine or SOP documents, verify that: (1) the embedding dataset is current and reflects the latest document versions, (2) the same embedding model is used for both indexing and query-time retrieval, and (3) the embedding pipeline is governed as a production transform with appropriate scheduling and data quality checks. Coordinate with the MSS platform team on embedding model selection and compute resource requirements.
+
+---
+
+### 5-3a. AIP Document Intelligence (GA Q1 2026)
+
+**BLUF:** AIP Document Intelligence — generally available as of Q1 2026 — provides native document extraction, chunking, and embedding within the Foundry platform. This capability eliminates the need for the custom embedding pipeline described in Section 5-3 for most RAG use cases, replacing it with a managed, platform-supported service.
+
+**What Document Intelligence provides:**
+
+| Capability | Description | Prior Approach (5-3) |
+|---|---|---|
+| Document extraction | Parses uploaded documents (PDF, DOCX, HTML, TXT) into structured text | Manual ingestion transform or external parser |
+| Native chunking | Splits extracted text into semantically coherent passages using configurable chunk strategies | Custom Python chunking logic in Code Workspaces |
+| Native embedding | Embeds chunks using a platform-managed embedding model | Custom embedding model sourced and maintained by the AI engineer |
+| Vector storage | Stores embeddings as a managed Foundry dataset with automatic indexing | Custom embedding dataset built and maintained via transform |
+| Retrieval API | Provides similarity search over embedded chunks, directly consumable by AIP Logic and Agent Studio | Custom cosine similarity function (see Section 5-3 code example) |
+
+**Enrollment support:** Document Intelligence is available to all MSS enrollments. No additional provisioning is required beyond standard AIP access. Coordinate with the MSS platform team to confirm activation on your enrollment.
+
+**Impact on RAG pipeline design:**
+
+Document Intelligence changes the standard RAG architecture for document-heavy use cases (doctrine libraries, SOP collections, FRAGORD repositories). Where Section 5-2 describes a RAG pipeline that retrieves structured ontology objects, and Section 5-3 describes a custom-built vector search over embedded documents, Document Intelligence provides the document retrieval layer as a managed service.
+
+**Updated RAG pipeline with Document Intelligence:**
+
+```
+DOCUMENT CORPUS (uploaded to Foundry)
+        |
+        v
+AIP DOCUMENT INTELLIGENCE
+  |- Extract text from documents
+  |- Chunk text into semantically coherent passages
+  |- Embed chunks using platform-managed model
+  |- Store in managed vector index
+        |
+        v
+AIP LOGIC / AGENT STUDIO
+  |- User query triggers retrieval from Document Intelligence
+  |- Top-k relevant chunks returned by similarity score
+  |- Chunks injected as grounded context in LLM prompt
+  |- LLM generates response with chunk-level citations
+        |
+        v
+HUMAN REVIEW GATE (unchanged — still required)
+```
+
+**When to use Document Intelligence vs. custom embedding (Section 5-3):**
+
+| Scenario | Recommended Approach |
+|---|---|
+| RAG over a document library (doctrine, SOPs, AARs, FRAGORDs) | Document Intelligence — simpler, maintained by platform |
+| RAG over structured ontology objects (equipment records, readiness data) | Ontology-based RAG (Section 5-2) — Document Intelligence is for documents, not structured data |
+| Custom embedding model required (domain-specific, fine-tuned, multilingual) | Custom embedding pipeline (Section 5-3) — Document Intelligence uses a platform-managed model |
+| Embedding logic requires custom chunking strategies tied to document format | Custom pipeline (Section 5-3) with justification documented |
+
+> **NOTE:** Document Intelligence does not replace the ontology-based RAG pattern in Section 5-2. Ontology-grounded retrieval (querying Object Types by property filters) remains the correct pattern for structured operational data. Document Intelligence targets the unstructured document retrieval use case — the same problem Section 5-3 solves with custom code. For most document-based RAG pipelines, Document Intelligence is now the preferred approach. Retain custom embedding pipelines only where a specific technical requirement (custom model, custom chunking, multilingual embedding) justifies the engineering overhead.
+
+> **CAUTION:** Document Intelligence does not change human review requirements. AI-generated outputs grounded in Document Intelligence retrieval still require the same human review gate defined in Chapter 6. The retrieval source changed; the review obligation did not.
 
 ---
 
@@ -2096,6 +2186,10 @@ Track review dispositions over time. If rejection rate exceeds 15% over a 30-day
 **Agent (AIP Agent Studio)** — A conversational or autonomous AI system that combines an LLM with defined tools, memory, and instructions to respond to user queries or complete multi-step tasks.
 
 **AIP (Artificial Intelligence Platform)** — The Palantir product suite within MSS that provides LLM integration capabilities, including AIP Logic, Agent Studio, and associated developer SDKs.
+
+**AIP Document Intelligence** — A managed Foundry service (GA Q1 2026) that extracts text from uploaded documents, chunks it into semantically coherent passages, embeds chunks using a platform-managed model, and provides similarity-based retrieval for RAG pipelines. Replaces custom embedding pipelines for most document-based use cases. See Section 5-3a.
+
+**AI FDE (AI Forward Deployed Engineer)** — A platform-level AI coding assistant within Foundry (GA March 2026) that provides context-aware code generation, transform authoring assistance, and debugging support inside Code Workspaces. See Section 2-5a.
 
 **AIP Logic** — A visual workflow builder within AIP that orchestrates sequences of data retrieval, function execution, and LLM inference calls.
 
