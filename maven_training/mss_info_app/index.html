@@ -1726,32 +1726,36 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 10px 14px;
-      margin: 4px 8px 8px;
-      background: rgba(200,151,26,0.1);
-      border: 1px solid rgba(200,151,26,0.25);
-      border-radius: 4px;
+      padding: 11px 16px;
+      margin: 6px 8px 10px;
+      background: linear-gradient(135deg, rgba(200,151,26,0.12) 0%, rgba(200,151,26,0.06) 100%);
+      border: 1px solid rgba(200,151,26,0.3);
+      border-radius: 6px;
       cursor: pointer;
       font-family: var(--font-ui);
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-light);
       white-space: nowrap;
       overflow: hidden;
-      transition: background 0.15s, border-color 0.15s;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
     }
 
     .snav-pinned:hover,
     .snav-pinned.active {
-      background: rgba(200,151,26,0.18);
-      border-color: var(--gold-dark);
+      background: linear-gradient(135deg, rgba(200,151,26,0.22) 0%, rgba(200,151,26,0.10) 100%);
+      border-color: var(--gold);
+      color: var(--gold-light);
+      box-shadow: 0 2px 8px rgba(200,151,26,0.2);
     }
 
     .snav-pinned-icon {
-      font-size: 14px;
+      font-size: 15px;
       flex-shrink: 0;
+      opacity: 0.85;
     }
 
     /* Standard nav item */
@@ -2169,7 +2173,7 @@
 
     <!-- QUICK REF — pinned -->
     <button class="snav-pinned active" data-panel="quickref" id="snav-quickref">
-      <span class="snav-pinned-icon">&#9636;</span>
+      <span class="snav-pinned-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
       <span class="snav-pinned-label">Home</span>
     </button>
 
