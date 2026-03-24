@@ -463,7 +463,7 @@ tbody td {
 .callout.caution .callout-label::before  { content: '⚑  '; }
 .callout.note    .callout-label::before  { content: '●  '; }
 .callout.bluf    .callout-label::before  { content: '►  '; }
-.callout.info    .callout-label::before  { content: 'ℹ  '; }
+.callout.info    .callout-label::before  { content: '◆  '; }
 
 /* ============================================================
    QUICK REFERENCE CARD LAYOUT

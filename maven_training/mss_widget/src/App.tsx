@@ -284,7 +284,7 @@ export default function App() {
               onClick={() => showPanel('quickref')}
             >
               <span className="snav-pinned-icon">&#9636;</span>
-              <span className="snav-pinned-label">Quick Reference</span>
+              <span className="snav-pinned-label">Home</span>
             </button>
 
             <button
