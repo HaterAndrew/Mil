@@ -2342,12 +2342,6 @@
       </div>
     </div>
 
-    <!-- FIND MY TRACK — utility, pinned above Tools for visibility -->
-    <button class="snav-item" data-panel="findmytrack" id="snav-findmytrack" style="border-left:3px solid var(--gold-dark);padding-left:11px;margin-top:2px;">
-      <span class="snav-item-icon" style="color:var(--gold);">&#127919;</span>
-      <span class="snav-item-label" style="color:var(--gold-light);">Find My Track</span>
-    </button>
-
     <div class="snav-divider"></div>
 
     <!-- TOOLS -->
@@ -5735,56 +5729,6 @@
   </div><!-- /panel-dashboards -->
 
 
-  <!-- ======================================================
-       FIND MY TRACK PANEL
-  ====================================================== -->
-  <div id="panel-findmytrack" class="panel">
-
-    <div class="section-header">
-      <span class="section-badge">WIZARD</span>
-      <span class="section-title">Find My Track</span>
-      <span class="section-subtitle">Answer two questions to get your personalized training path</span>
-    </div>
-
-    <div class="callout bluf">
-      <div class="callout-label">BLUF</div>
-      <div class="callout-body">Not sure which course to take? Select the category that best describes your role, then pick your specific position. The wizard maps you to the right TM track and shows your full training path.</div>
-    </div>
-
-    <!-- Step 1: Category -->
-    <div class="fmt-step">
-      <div class="fmt-step-label">
-        <span class="fmt-step-num">1</span>
-        What best describes your role?
-      </div>
-      <div class="fmt-categories" id="fmtp-categories"></div>
-    </div>
-
-    <!-- Step 2: Role (shown when category has multiple roles) -->
-    <div class="fmt-step" id="fmtp-step2" style="display:none;">
-      <div class="fmt-step-label">
-        <span class="fmt-step-num">2</span>
-        Which role matches you best?
-      </div>
-      <div class="fmt-roles" id="fmtp-roles"></div>
-    </div>
-
-    <!-- Result -->
-    <div class="fmt-result" id="fmtp-result" style="display:none;">
-      <div class="fmt-result-header">
-        <div class="fmt-result-badge">YOUR TRAINING PATH</div>
-        <div class="fmt-result-track" id="fmtp-result-track"></div>
-        <div class="fmt-result-tm" id="fmtp-result-tm"></div>
-      </div>
-      <div class="fmt-result-desc" id="fmtp-result-desc"></div>
-      <div class="fmt-path" id="fmtp-path"></div>
-      <div class="fmt-result-actions">
-        <button class="fmt-go-btn" id="fmtp-go-btn">Go to track &rarr;</button>
-        <button class="fmt-reset-btn" id="fmtp-reset-btn">Start Over</button>
-      </div>
-    </div>
-
-  </div><!-- /panel-findmytrack -->
 
 
 
@@ -6359,125 +6303,6 @@
   });
 </script>
 
-<!-- Find My Track — standalone panel instance -->
-<script>
-(function() {
-  var pathPanelMap = {
-    'TM-10':'tm10','TM-20':'tm20','TM-30':'tm30',
-    'TM-40A':'specialists','TM-40B':'specialists','TM-40C':'specialists',
-    'TM-40D':'specialists','TM-40E':'specialists','TM-40F':'specialists',
-    'TM-40G':'tm40','TM-40H':'tm40','TM-40M':'tm40',
-    'TM-40J':'tm40','TM-40K':'tm40','TM-40L':'tm40',
-    'TM-40N':'tm40','TM-40O':'tm40',
-    'TM-50G':'tm50','TM-50H':'tm50','TM-50M':'tm50',
-    'TM-50J':'tm50','TM-50K':'tm50','TM-50L':'tm50',
-    'TM-50N':'tm50','TM-50O':'tm50',
-    'Data Lit (SL)':'sl','TM-SL':'sl'
-  };
-  var selectedCat = null;
-
-  function buildCategories() {
-    var container = document.getElementById('fmtp-categories');
-    if (!container || typeof FMT_CATEGORIES === 'undefined') return;
-    while (container.firstChild) container.removeChild(container.firstChild);
-    FMT_CATEGORIES.forEach(function(cat) {
-      var btn = document.createElement('button');
-      btn.className = 'fmt-cat-btn';
-      btn.setAttribute('data-fmtp-cat', cat.id);
-      var iconSpan = document.createElement('span'); iconSpan.className = 'fmt-cat-icon'; iconSpan.textContent = cat.icon;
-      var labelSpan = document.createElement('span'); labelSpan.className = 'fmt-cat-label'; labelSpan.textContent = cat.label;
-      var descSpan = document.createElement('span'); descSpan.className = 'fmt-cat-desc'; descSpan.textContent = cat.description;
-      btn.appendChild(iconSpan); btn.appendChild(labelSpan); btn.appendChild(descSpan);
-      btn.addEventListener('click', function() { selectCategory(cat.id); });
-      container.appendChild(btn);
-    });
-  }
-
-  function selectCategory(id) {
-    selectedCat = id;
-    document.querySelectorAll('#fmtp-categories .fmt-cat-btn').forEach(function(b) {
-      b.classList.toggle('active', b.getAttribute('data-fmtp-cat') === id);
-    });
-    var cat = FMT_CATEGORIES.find(function(c) { return c.id === id; });
-    if (!cat) return;
-    if (cat.roles.length === 1) {
-      document.getElementById('fmtp-step2').style.display = 'none';
-      showResult(cat.roles[0].result);
-      setTimeout(function() { document.getElementById('fmtp-result').scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 50);
-    } else {
-      buildRoles(cat.roles);
-      document.getElementById('fmtp-step2').style.display = '';
-      document.getElementById('fmtp-result').style.display = 'none';
-      setTimeout(function() { document.getElementById('fmtp-step2').scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 50);
-    }
-  }
-
-  function buildRoles(roles) {
-    var container = document.getElementById('fmtp-roles');
-    while (container.firstChild) container.removeChild(container.firstChild);
-    roles.forEach(function(r, i) {
-      var btn = document.createElement('button');
-      btn.className = 'fmt-role-btn';
-      var labelSpan = document.createElement('span'); labelSpan.className = 'fmt-role-label'; labelSpan.textContent = r.label;
-      var descSpan = document.createElement('span'); descSpan.className = 'fmt-role-desc'; descSpan.textContent = r.description;
-      btn.appendChild(labelSpan); btn.appendChild(descSpan);
-      btn.addEventListener('click', function() {
-        document.querySelectorAll('#fmtp-roles .fmt-role-btn').forEach(function(b, j) {
-          b.classList.toggle('active', j === i);
-        });
-        showResult(r.result);
-        setTimeout(function() { document.getElementById('fmtp-result').scrollIntoView({ behavior:'smooth', block:'nearest' }); }, 50);
-      });
-      container.appendChild(btn);
-    });
-  }
-
-  function showResult(result) {
-    document.getElementById('fmtp-result').style.display = '';
-    document.getElementById('fmtp-result-track').textContent = result.label;
-    document.getElementById('fmtp-result-tm').textContent = result.tm40 + (result.tm50 ? ' \u2192 ' + result.tm50 : '');
-    document.getElementById('fmtp-result-desc').textContent = result.description;
-    var pathEl = document.getElementById('fmtp-path');
-    while (pathEl.firstChild) pathEl.removeChild(pathEl.firstChild);
-    result.path.forEach(function(step, i) {
-      if (i > 0) {
-        var arrow = document.createElement('span');
-        arrow.className = 'fmt-path-arrow';
-        arrow.textContent = '\u2192';
-        pathEl.appendChild(arrow);
-      }
-      var badge = document.createElement('span');
-      badge.className = 'fmt-path-badge' + (i === result.path.length - 1 ? ' final' : '');
-      badge.textContent = step;
-      var panelId = pathPanelMap[step];
-      if (panelId) {
-        badge.style.cursor = 'pointer';
-        badge.addEventListener('click', (function(pid) { return function() { showPanel(pid); }; })(panelId));
-      }
-      pathEl.appendChild(badge);
-    });
-    var goBtn = document.getElementById('fmtp-go-btn');
-    goBtn.textContent = 'Go to ' + result.tm40 + ' \u2192';
-    goBtn.onclick = function() { showPanel(result.panel); };
-  }
-
-  window.fmtpReset = function() {
-    selectedCat = null;
-    document.querySelectorAll('#fmtp-categories .fmt-cat-btn').forEach(function(b) { b.classList.remove('active'); });
-    document.getElementById('fmtp-step2').style.display = 'none';
-    document.getElementById('fmtp-result').style.display = 'none';
-  };
-
-  var resetBtn = document.getElementById('fmtp-reset-btn');
-  if (resetBtn) resetBtn.addEventListener('click', fmtpReset);
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', buildCategories);
-  } else {
-    buildCategories();
-  }
-})();
-</script>
 
 <div class="sidebar-overlay" id="sidebar-overlay" role="button" aria-label="Close navigation menu" tabindex="-1"></div>
 
