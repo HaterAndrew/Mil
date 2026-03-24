@@ -166,6 +166,32 @@ Adkins ("Achieving Decision Dominance," *Military Review*, January-February 2025
 
 Adkins proposes a 4-phase, 5-year implementation: (1) Reorganize/pilot with XVIII ABC, (2) Revise training and doctrine, (3) Expand DOTs at echelon, (4) Validate through exercises. The MSS training program and USAREUR-AF's ODT are executing phases 1–3 concurrently.
 
+## Related: Army Reserve ODT Pilot — Mojave Falcon (June 2025)
+
+The Army Reserve's first Operational Data Team deployment at Exercise Mojave Falcon (Fort Hunter Liggett, June 2025) provides a complementary data point to the XVIII ABC active-component experience. The OCAR Chief Data and Analytics Office deployed an ODT supporting the 79th Theater Sustainment Command and 311th Expeditionary Sustainment Command, focused on logistics optimization using Palantir, Tableau, and Power BI.
+
+**Key findings that reinforce XVIII ABC lessons:**
+
+| XVIII ABC Lesson | Mojave Falcon Validation |
+|---|---|
+| Governance prevents overextension | Reserve ODT encountered data governance confusion — personnel unclear on responsibilities for managing digital artifacts under joint/Army policy. Export between classified/unclassified systems required approvals nobody had pre-coordinated. |
+| Capacity is finite | Staff who hadn't trained on tools beforehand resisted learning during the exercise: "I don't have time to figure out a new tool while we're trying to execute." |
+| MVP timeline requires patience | Cultural resistance from leaders comfortable with "map boards and acetate overlays" slowed adoption. |
+
+**Critical new insight:** Operational data teams should deploy to units that already possess a data literacy baseline. Deploying a specialized analytics team to a unit with no digital muscle memory is not a great use of resources. This validates the MSS training prerequisite chain — TM-30 before specialist employment — and reinforces the Unit Data Trainer (T3-F) model as a mechanism for building baseline literacy before ODT integration.
+
+Early adopters within the exercise — future battalion and brigade commanders, CW5s, and SGMs — embraced the capability and requested predictive analysis. The institutional culture challenge, not the technology, remains the limiting factor.
+
+*Source: Perkins, Jim. "Lessons from the Army Reserve's First Operational Data Team." War on the Rocks, July 2025.*
+
+## Related: First Army ODT Mobilization Simulation (2026)
+
+First Army's Operational Data Team, in partnership with the Georgia Tech Research Institute, developed an advanced simulation capability that models thousands of Reserve Component units simultaneously for large-scale mobilization planning. Deployed on the Army Data Platform with global accessibility, the simulation integrates combatant command requirements, unit status, training schedules, weapons platforms, range capacity, and transportation logistics — enabling planners to "assess changes and their impacts in minutes instead of weeks."
+
+This represents the most advanced publicly documented ODT product to date: a 13-person team managing seven critical projects over two years, demonstrating what a mature, resourced ODT delivers at echelon. The capability directly supports TM-50G (Advanced ORSA) and TM-50H (Advanced AI Engineer) competencies.
+
+*Source: "First Army Operational Data Team delivers breakthrough simulation that streamlines Large-Scale Mobilization Operations." army.mil, 2026.*
+
 ## References
 
 - Forney, Andrew J., Ryan C. Herrmann, and Haley A. Steele. "Fighting with Live Data: XVIII Airborne Corps' Experience with Its Operational Data Teams." *Military Review* Online Exclusive, February 2026.
@@ -176,6 +202,12 @@ Adkins proposes a 4-phase, 5-year implementation: (1) Reorganize/pilot with XVII
 - MCCoE, *Decision Optimization* (Fort Leavenworth, KS, 3 April 2024).
 - MCCoE, *Decision-Driven Data Concept of Operations* (white paper, Fort Leavenworth, KS, 6 July 2023).
 - ASA(ALT), *Unified Data Reference Architecture* (Washington, DC, 22 March 2024).
+- Perkins, Jim. "Lessons from the Army Reserve's First Operational Data Team." *War on the Rocks*, July 2025.
+- "From mapboards to dashboards: Army Reserve data experiment shines at Operation Mojave Falcon." army.mil, 2025.
+- "First Army Operational Data Team delivers breakthrough simulation that streamlines Large-Scale Mobilization Operations." army.mil, 2026.
+- "Army's Combined Arms Command to integrate Maven C2 smart system into training and education." army.mil, February 2026.
+- CALL 25-10, *Commander and Staff Guide to Data Literacy*. Center for Army Lessons Learned, April 2025.
+- Brito, Gary M. "Data Literacy: How We Prepare for the Future." *Military Review* Online Exclusive, January 2025.
 
 ---
 

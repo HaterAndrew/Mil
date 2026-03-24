@@ -274,6 +274,82 @@ If we cannot get assessment tools in the same enclave to share a backend, we hav
 
 ---
 
+---
+
+# LL-002: Data Literacy Baseline Required Before ODT Employment
+
+*ODT Lessons Learned Series -- LL-002*
+
+Deploying specialized ODTs to units without a data literacy baseline wastes ODT capacity and produces minimal operational value. Units must possess foundational skills before ODT integration.
+
+| Field | Value |
+|-------|-------|
+| Series | LL-002 |
+| Exercise | Mojave Falcon (Army Reserve, Jun 2025) |
+| Severity | Significant |
+| Category | Training -- Prerequisite Enforcement |
+| Doctrine Ref | MCCoE Decision Optimization CONOPS; ADP 7-0 (Training) |
+
+## Bottom Line Up Front
+
+The Army Reserve's first ODT deployment at Exercise Mojave Falcon (Fort Hunter Liggett, June 2025) demonstrated that **ODTs are not a substitute for baseline training**. Staff who had not trained on data tools before the exercise refused to learn them during operations. Leaders who lacked data literacy could not articulate analytical requirements, resulting in ODT capacity wasted on ad-hoc requests rather than structured problem-solving.
+
+## 01 -- The Problem
+
+The OCAR Chief Data and Analytics Office deployed an ODT supporting the 79th TSC and 311th ESC. The team brought Palantir, Tableau, and Power BI capabilities. Key friction points:
+
+- **Cultural resistance:** Some staff preferred "map boards and acetate overlays." One intelligence officer stated they were "just calling all routes red because we don't really see a pattern" — demonstrating a fundamental analytical gap no ODT can fix on the fly.
+- **Training gaps:** Personnel had not trained on tools beforehand. One officer said: "This is great, but I don't have time to figure out a new tool while we're trying to execute."
+- **Data governance confusion:** Personnel unclear on responsibilities for managing digital artifacts. Export from classified to unclassified required approvals nobody had pre-coordinated.
+- **Simulation data quality:** Exercise data poorly mimicked real-world conditions — ammunition lacked TAMIS-level granularity; food and fuel information was oversimplified.
+
+## 02 -- What Worked
+
+Early adopters — future battalion and brigade commanders, CW5s, and SGMs — embraced the ODT, requested data analysis, and leaned into predictive capabilities. These leaders represent the formation's data-literate nucleus. The ODT found that elevating the quality of questions staff asked produced more value than delivering finished products.
+
+## 03 -- Lesson
+
+**ODTs should deploy to units that already possess a data literacy baseline.** Deploying a specialized analytics team to a unit with no digital muscle memory is not a great use of resources. This is an institutional culture challenge, not a technology limitation.
+
+**Application to MSS Training:**
+- TM-10 (Maven User) and TM-20 (Builder) establish the minimum baseline. Units must complete TM-10 theater-wide before ODT integration produces full value.
+- The Unit Data Trainer (T3-F) model builds local capacity between MTT visits — exactly the mechanism needed to create the baseline that ODTs require.
+- TM-30 is the hard prerequisite before specialist employment. Mojave Falcon validates this: personnel without TM-30-level skills cannot effectively consume or direct ODT products.
+
+*Source: Perkins, Jim. "Lessons from the Army Reserve's First Operational Data Team." War on the Rocks, July 2025.*
+
+---
+
+# LL-003: Complementary Army Data Literacy Programs
+
+*ODT Lessons Learned Series -- LL-003*
+
+Multiple Army organizations are simultaneously developing data literacy training. Awareness of complementary programs prevents duplication and enables cross-referencing.
+
+| Field | Value |
+|-------|-------|
+| Series | LL-003 |
+| Severity | Informational |
+| Category | Training -- Institutional Awareness |
+| Doctrine Ref | ADP 7-0 (Training); TR 350-70 |
+
+## Programs Identified
+
+| Program | Proponent | Format | Audience | Relevance to MSS |
+|---|---|---|---|---|
+| **Signal School Data for Leaders Course** | U.S. Army Signal School (Fort Eisenhower) | 4-day MTT, Power BI focused | Senior military leaders | Establishes commander data literacy baseline. Complementary to TM-SL. Created by CPT Derek Koslowski, CDO at Signal School. First MTT delivered at Fort Cavazos, Nov 2024. Topics: data literacy, data governance, cloud fundamentals, storytelling with data, zero trust. |
+| **AKMP Data Immersion Course** | MCCoE/C2ID (AKMP) | 32-hour online | KMs at DIV+ level | Covers data governance, Army Data Catalog, data workforce roles, GenAI, Vantage. Aligns with TM-40K. |
+| **Data Literacy 101 (DL101-TTC)** | West Point CDAS | 5-day TTC, 10 hrs instruction | Train-the-Trainer | Foundational data literacy + teaching methodology. 140 attendees at Jun 2024 iteration. |
+| **TRADOC OCKO Data Literacy Portal** | TRADOC C2DAO | Online courses | TRADOC workforce | Central hub for data literacy training. Decision Optimization Branch targeting FOC Dec 2025. |
+| **CALL 25-10** | Center for Army Lessons Learned | Handbook (PDF) | Commanders and staff | Data literacy fundamentals tailored for military leaders. Published Apr 2025. |
+| **CAC Maven Integration** | MCCoE/CGSC/CAC C2DAO | 8-hr operator course + PME integration | CGSC students, operators | Maven being integrated into KM Qual Course, SAMS, SCP, and Data Academy Builders Course. Train-the-trainer held Feb 2026. |
+
+## Bottom Line
+
+The MSS Training Program is ahead of the institutional curve — our curriculum is published, delivering, and evaluated to Go/No-Go standard while many of these programs are still in pilot. Awareness of these programs enables cross-referencing in supplementary reading sections and validates the MSS training design against institutional Army direction.
+
+---
+
 *Distribution: Authorized personnel -- USAREUR-AF and supporting commands*
 *Proponent: Operational Data Team, USAREUR-AF*
 *Authority: Chief Data and Analytics Officer, USAREUR-AF*

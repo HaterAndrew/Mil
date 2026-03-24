@@ -2217,6 +2217,11 @@ For USAREUR-AF operational contexts, Table B-3 translates statistical effect siz
 | UDRA v1.1 | Unified Data Reference Architecture (February 2025) | Technical reference architecture |
 | JADC2 Strategy Summary | Joint All-Domain Command and Control (March 2022) | Cross-domain data integration strategy |
 
+**Supplementary Reading — Advanced ODT Use Cases:**
+
+- **First Army ODT Mobilization Simulation (2026)** — First Army's 13-person ODT, partnering with Georgia Tech Research Institute, built a simulation modeling thousands of RC units simultaneously for LSCO mobilization planning on the Army Data Platform. Integrates CCMD requirements, unit status, training schedules, weapons platforms, range capacity, and transportation logistics. Enables planners to assess changes in minutes instead of weeks. This represents the most advanced publicly documented ODT analytical product — demonstrating campaign-level ORSA at echelon. Directly relevant to TM-50G competencies in advanced optimization, simulation, and decision analysis under deep uncertainty.
+- **Army Reserve ODT at Mojave Falcon (June 2025)** — First Army Reserve ODT deployment supporting 79th TSC/311th ESC. Used Palantir, Tableau, and Power BI for logistics optimization. Key finding for ORSA practitioners: data quality in simulations poorly mimicked real-world conditions — ammunition lacked granularity compared to actual TAMIS data; food and fuel information was oversimplified. Validates TM-50G emphasis on model calibration and validation against operational data.
+
 ---
 
 *End of TM-50G*

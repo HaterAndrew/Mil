@@ -2204,6 +2204,9 @@ to the data type and operational context.
 - **DDOF Playbook v2.2 (December 2025)** — T2COM C2DAO / HQDA CIO/G-6 / SAIS-ADD implementing document. Extends VAULTIS to VAULTIS-A (8 dimensions, adds Auditable). Establishes the 6-phase data product lifecycle and 85% minimum quality gate. Authoritative standard for all MSS data products.
 - **DoD Data, Analytics & AI Adoption Strategy (November 2023)** — Establishes the AI Hierarchy of Needs and the DoD framework for scaling data, analytics, and AI adoption across the enterprise.
 - **NATO Data Strategy for the Alliance (Feb 2025)** — Alliance-wide data governance mandate establishing common data governance principles across NATO nations. Directly applicable to USAREUR-AF data literacy requirements in the EUCOM AOR.
+- **CALL 25-10, Commander and Staff Guide to Data Literacy (April 2025)** — CALL handbook providing an accessible introduction to data literacy for commanders and staff. Covers data interpretation, analytical pitfalls, and data tool use within military contexts. Companion resource to this publication's senior leader edition.
+- **Brito, Gary M. "Data Literacy: How We Prepare for the Future." *Military Review* Online Exclusive, January 2025.** — TRADOC CG's article establishing data literacy as an Army-wide readiness imperative.
+- **TRADOC OCKO Data Literacy Training Portal** — TRADOC's central hub for data literacy training across the enterprise, maintained by the Command Chief Data and Analytics Office (C2DAO). Includes Data Literacy 101, Data Immersion Course for Knowledge Managers, and the KM Qualification Course. Available at tradoc.army.mil/ocko/training-portal/data-literacy/.
 
 Access requires a valid CAC and USAREUR-AF network account. Contact your unit S6 or
 C2DAO for access provisioning.

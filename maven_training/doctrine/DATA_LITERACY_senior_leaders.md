@@ -520,6 +520,8 @@ Senior NCO leadership is critical. CSMs and SGMs who enforce data discipline in 
 
 **Army CIO Guidance (2024) and UDRA v1.1 (2025)** — Current governance and architecture codified in Army CIO guidance (2024) and UDRA v1.1 (2025). The C2DAO ensures USAREUR-AF compliance.
 
+**CALL 25-10, Commander and Staff Guide to Data Literacy (April 2025)** — Center for Army Lessons Learned handbook providing an accessible introduction to data literacy tailored for commanders and staff. Covers data interpretation, analysis, and application within military contexts including intelligence analysis and operational planning. Progresses from foundational concepts to real-world applications. Directly complements this publication.
+
 **NATO Architecture Framework version 4 (NAFv4)** — NATO standard for data and system architecture. USAREUR-AF data operations must align to NAFv4 for coalition interoperability.
 
 **Allied Joint Publications (AJP-01, AJP-3, AJP-5)** — NATO joint doctrine governing operations, conduct, and planning.
@@ -527,6 +529,8 @@ Senior NCO leadership is critical. CSMs and SGMs who enforce data discipline in 
 **C2DAO** — Authoritative source for technical architecture guidance, ontology standards, NATO NAFv4 alignment resources, and the USAREUR-AF 5-Layer Data Stack implementation documentation.
 
 **DoD Data, Analytics & AI Adoption Strategy (November 2023)** — Establishes the AI Hierarchy of Needs and the DoD framework for scaling data, analytics, and AI adoption across the enterprise.
+
+**Brito, Gary M. "Data Literacy: How We Prepare for the Future." *Military Review* Online Exclusive, January 2025.** — TRADOC Commanding General's statement on Army-wide data literacy as a readiness imperative. Establishes senior leader intent for data-literate formations at every echelon.
 
 ---
 

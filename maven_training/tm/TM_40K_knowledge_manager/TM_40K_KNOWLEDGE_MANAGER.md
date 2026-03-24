@@ -1576,3 +1576,9 @@ Return JSON with fields: assessment (Duplicate / Near-Duplicate / Distinct), con
 
 - **UDRA v1.1 (February 2025)** — Unified Data Reference Architecture; domain ownership and federated governance for knowledge products
 - **Army CIO Data Stewardship Memo (April 2024)** — Chain of responsibility for data governance and stewardship
+
+**Supplementary Reading — MCCoE and Army Knowledge Management:**
+
+- **AKMP Data Immersion Course for Knowledge Managers (MCCoE/C2ID, February 2025)** — MCCoE's Command and Control Integration Directorate runs a 32-hour online course for operational knowledge managers at division level and above. Curriculum covers data governance, Army Data Catalog, data workforce roles, data-centric question triage, generative AI capabilities, and Vantage. Prerequisites: 2-hour Excel course and 2-hour Contour course. A September 2024 pilot demonstrated substantial post-course improvement across data governance, analysis, platform use, and product development. TM-40K graduates should be aware of this complementary MCCoE program — it validates the same competencies from the institutional training perspective.
+- **Knowledge Management Qualification Course (MCCoE/TRADOC)** — The Army's institutional KM course, administered by MCCoE. Maven instruction is being integrated into the KMQC curriculum as part of the CAC Maven C2 integration initiative (February 2026). TM-40K graduates are directly aligned to this career development pathway.
+- **CALL 25-10, Commander and Staff Guide to Data Literacy (April 2025)** — CALL handbook covering data literacy for commanders and staff. Useful reference for KMs building products consumed by senior leaders.

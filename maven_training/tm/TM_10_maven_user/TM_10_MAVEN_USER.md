@@ -1,10 +1,10 @@
 # TM-10 — MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** This manual tells you how to use the Maven Smart System (MSS) as a data consumer. It covers logging in, finding your unit's information, reading dashboards, submitting forms, and staying within authorized boundaries. No technical background is required. You do not need to know how to write code or build anything. If you can use a smartphone or a web browser, you can use MSS.
+> **Foreword:** This manual tells you how to use the Maven Smart System (MSS) as a data consumer. It covers logging in, finding your unit's information, reading dashboards, submitting forms, and staying within authorized boundaries. No technical background is required. You do not need to know how to write code or build anything. If you can use a smartphone or a web browser, you can use MSS.
+> **Proponent:** USAREUR-AF Operational Data Team (ODT)
 > **Prereqs:** None (formal). Data Literacy Technical Reference (recommended prior reading — not required).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
----
 
 # CHAPTER 1 — INTRODUCTION AND OVERVIEW
 
@@ -124,7 +124,9 @@ USAREUR-AF's Operational Data Team operates under the C2DAO with direct alignmen
 
 > **NOTE:** The MSS specialist tracks (TM-40J through TM-40O) map directly to the ODT roles employed by XVIII ABC in their pilot: Product Manager (TM-40J), UX Designer (TM-40N), Software Engineer (TM-40L), Data Engineer (TM-30/TM-40K), and Data Scientist (TM-40G/TM-40M). If your career path leads toward one of these roles, the MSS training curriculum is your qualification pathway.
 
-*Source: Forney, Herrmann, and Steele, "Fighting with Live Data," Military Review Online Exclusive, February 2026; MCCoE Decision Optimization CONOPS, Appendix B.*
+In February 2026, the Combined Arms Command at Fort Leavenworth began formally integrating Maven into institutional training and professional military education. MCCoE senior instructors are developing a standardized 8-hour hands-on operator course; the Command and General Staff College is incorporating Maven into core curriculum for field grade officers; and the CAC Data Academy is offering a Low-Code/No-Code Builders Course. This means the institutional Army is now building toward the same competencies this training program delivers — the MSS curriculum (TM-10 through TM-50) prepares you for tools and skills the Army is scaling enterprise-wide.
+
+*Sources: Forney, Herrmann, and Steele, "Fighting with Live Data," Military Review Online Exclusive, February 2026; MCCoE Decision Optimization CONOPS, Appendix B; "Army's Combined Arms Command to integrate Maven C2 smart system into training and education," army.mil, February 2026.*
 
 ---
 
@@ -300,7 +302,6 @@ TM-10 is the entry point for the MSS training curriculum. After completing TM-10
 
 NOTE: Not every TM-10 graduate proceeds to TM-20. Most USAREUR-AF personnel require only TM-10 operator qualification to perform their duties. Builder access (TM-20 and above) is granted through chain-of-command request and requires explicit approval. If you believe your duties require builder access, speak with your unit data steward.
 
----
 
 # CHAPTER 2 — ACCESSING MSS
 
@@ -373,7 +374,6 @@ CAUTION: Do not allow the browser to save your PIN. Do not use "Remember Me" or 
 
 CAUTION: Do not use a personal device (personal laptop, phone, tablet) to access MSS unless you have received specific written authorization from your unit security officer. Accessing MSS from an unauthorized device is a security violation regardless of whether you successfully log in.
 
----
 
 # CHAPTER 3 — NAVIGATING THE PLATFORM
 
@@ -440,7 +440,6 @@ NOTE: Bookmarks are personal — they affect only your view and do not change ac
 
 EXAMPLE: SPC Caldwell in the 1st ABCT S4 shop needs the equipment readiness dashboard. She types "readiness" in the search bar, filters to "Application," and finds "1ABCT Equipment Readiness Dashboard." She opens it and clicks the star to bookmark it for tomorrow's shift.
 
----
 
 # CHAPTER 4 — USING WORKSHOP APPLICATIONS
 
@@ -771,7 +770,6 @@ NOTE: Do not enter sensitive personal identifying information (SSN, full medical
 
 EXAMPLE: WO2 Patterson at 21st TSC G4 in Sembach Kaserne needs a quick readiness summary for the weekly sustainment brief. She opens the AIP Agent in the sustainment dashboard and types: "What percentage of Class IX parts requests from the past 7 days have been filled within the 48-hour standard, broken down by commodity class?" The agent returns a table with fill rates by class. She clicks through to verify two of the numbers against the dataset. Both match. She uses the table in her brief, noting "Source: MSS AIP Agent output, verified against raw data, as of 111900Z MAR 26."
 
----
 
 # CHAPTER 5 — WORKING WITH DATA
 
@@ -969,7 +967,6 @@ Every MSS data product is measured against eight quality dimensions known as **V
 
 **Your role as a consumer:** Report any quality issues to your data steward. If data looks stale, incomplete, or inconsistent, that information helps the product owner maintain the VAULTIS-A score. You are the front-line quality sensor.
 
----
 
 # CHAPTER 6 — SECURITY, CLASSIFICATION, AND MARKINGS
 
@@ -1117,7 +1114,6 @@ After reporting a security incident, preserve all records (browser history, scre
 
 NOTE: All actions you take in MSS — form submissions, data modifications, and application interactions — are logged with your credentials, timestamp, and action type. These logs are retained for accountability reviews, security audits, and incident investigation. You are personally accountable for all activity associated with your credentials.
 
----
 
 # CHAPTER 7 — TROUBLESHOOTING AND SUPPORT
 
@@ -1241,13 +1237,10 @@ NOTE: Current phone numbers and email addresses for the USAREUR-AF MSS Help Desk
 
 NOTE: The escalation path for MSS issues follows TM capability levels: (1) TM-10 (Operator) — self-diagnose using Chapter 7 of this manual; use the self-help checklist before escalating. (2) Data Steward — first point of escalation; the steward triages and routes. (3) TM-20 Builder — Workshop application issues, basic pipeline failures, Ontology configuration errors. (4) TM-30 Advanced Builder — complex pipeline design, Ontology architecture, AIP Logic configuration, multi-page application design. (5) TM-40 Developer (code required) — Python/PySpark transforms, TypeScript functions, OSDK development, Agent Studio. Refer to TM-20, Chapter 1 and TM-30, Chapter 1 for role descriptions at each level.
 
----
 
 # APPENDIX A — QUICK REFERENCE CARD
 
 *Print this page. Keep it at your workstation for the first 30 days on MSS.*
-
----
 
 ```
 ╔══════════════════════════════════════════════════════════════╗
@@ -1307,7 +1300,6 @@ App error (with error code) → USAREUR-AF MSS Help Desk via S6/G6
 Policy questions → USAREUR-AF C2DAO (via chain of command)
 ```
 
----
 
 # APPENDIX B — PROFESSIONAL READING LIST
 
@@ -1321,7 +1313,6 @@ Policy questions → USAREUR-AF C2DAO (via chain of command)
 | Small Wars Journal | "Data as Firepower" | Aug 2025 | Data superiority as warfighting concept |
 | CALL | FY24 MCTP Key Observations | Feb 2025 | CTC lessons on data-centric operations |
 
----
 
 # GLOSSARY
 
