@@ -868,11 +868,11 @@
       color: var(--gold-dark); margin-bottom: 14px;
     }
     .prog-row {
-      display: flex; align-items: center; justify-content: center;
+      display: flex; align-items: flex-start; justify-content: center;
       gap: 0; flex-wrap: nowrap;
     }
     .prog-foundation {
-      display: flex; align-items: center; gap: 0;
+      display: flex; align-items: flex-start; gap: 0;
       border: 2px dashed #5ABFAD; border-radius: 12px;
       padding: 18px 20px; position: relative;
     }
@@ -899,7 +899,7 @@
       font-family: var(--font-ui); font-size: 15px; font-weight: 800;
       letter-spacing: 1px; margin-bottom: 4px;
     }
-    .prog-card-wrap { display: flex; flex-direction: column; align-items: center; }
+    .prog-card-wrap { display: flex; flex-direction: column; align-items: center; width: 130px; }
     .prog-card-name {
       font-family: var(--font-ui); font-size: 11px; font-weight: 600;
       text-align: center; margin-top: 6px; color: var(--gray-600);
@@ -915,10 +915,12 @@
     .prog-arrow {
       font-size: 20px; color: var(--gray-200); margin: 0 8px;
       flex-shrink: 0; user-select: none;
+      margin-top: 60px;
     }
     .prog-arrow-outer {
       font-size: 20px; color: var(--gray-200); margin: 0 12px;
       flex-shrink: 0; user-select: none;
+      margin-top: 60px;
     }
     .prog-cadre {
       display: inline-block; margin-top: 8px;
