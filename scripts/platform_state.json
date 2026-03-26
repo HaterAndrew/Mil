@@ -1,7 +1,142 @@
 {
   "last_reviewed_date": "2026-03-24",
-  "last_fetch_date": "2026-03-24T15:57:52.956152+00:00",
+  "last_fetch_date": "2026-03-26T13:59:34.251299+00:00",
   "cached_entries": [
+    {
+      "title": "Foundry Branching renamed to Global Branching",
+      "description": "Foundry Branching has been renamed to Global Branching across the platform. You will see this new name reflected in both the Global Branching application and other applications that interact with branches. All functionality remains the same.",
+      "category": "Developer toolchain",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-24",
+      "date_display": "March 24, 2026",
+      "app": "Foundry Branching"
+    },
+    {
+      "title": "Manual object selection for code function cards in Quiver",
+      "description": "**Code function object set** and **Code function categorical plot** cards in Quiver now support manually selecting an object for functions with an object parameter. Previously, these parameter values could only be provided by referencing another card, but now you can select objects directly within the card editor.",
+      "category": "Analytics",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-23",
+      "date_display": "March 23, 2026",
+      "app": "Quiver"
+    },
+    {
+      "title": "Support for faster compute for improved pipeline performance",
+      "description": "HyperAuto pipelines now support faster compute backed by DataFusion, providing up to 12x speed improvements over standard Spark compute. You can create new pipelines with faster compute enabled or switch existing batch pipelines to this compute type through the **Batch Compute Setting**s section of the pipeline configuration.",
+      "category": "Data connectivity & integration",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-23",
+      "date_display": "March 23, 2026",
+      "app": "HyperAuto"
+    },
+    {
+      "title": "Iceberg supports Google Cloud Storage for bring-your-own-bucket storage",
+      "description": "Foundry Iceberg now supports Google Cloud Storage (GCS) as a bring-your-own-bucket (BYOB) storage option. You can now store Foundry Iceberg tables in customer-owned GCS buckets, in addition to the existing support for AWS S3 and Azure ADLS. Learn more about [Iceberg architecture options](/foundry/iceberg/managed-virtual/) and [setting up BYOB Iceberg storage](/foundry/iceberg/iceberg-byob/).",
+      "category": "Data connectivity & integration",
+      "type": "FEATURE",
+      "date": "2026-03-23",
+      "date_display": "March 23, 2026",
+      "app": "Iceberg"
+    },
+    {
+      "title": "Improved visibility for sampling strategy errors",
+      "description": "Input sampling strategy errors now appear as a node badge on the graph and in the **Pipeline errors** panel.",
+      "category": "Data connectivity & integration",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-23",
+      "date_display": "March 23, 2026",
+      "app": "Pipeline Builder"
+    },
+    {
+      "title": "Preserve color groups when copying and pasting nodes",
+      "description": "Pipeline Builder now preserves color group assignments when you copy and paste nodes using keyboard shortcuts (Ctrl+C / Ctrl+V). Previously, color groups were maintained when duplicating nodes locally (Ctrl+D), but were lost when using clipboard operations. This improvement ensures consistent color preservation across all duplication methods, including when pasting nodes between different pipelines.",
+      "category": "Data connectivity & integration",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-23",
+      "date_display": "March 23, 2026",
+      "app": "Pipeline Builder"
+    },
+    {
+      "title": "Function and action monitors now support Workflow Lineage as a dynamic scope",
+      "description": "Function and action monitors now support Workflow Lineage as a new dynamic scope. You can set up a monitor that automatically includes all functions and actions used by a Workflow Lineage, including any added in the future, without requiring manual updates. Similarly, functions and actions removed from a Workflow Lineage will automatically stop being monitored.",
+      "category": "Observability",
+      "type": "FEATURE",
+      "date": "2026-03-23",
+      "date_display": "March 23, 2026",
+      "app": "Data Health"
+    },
+    {
+      "title": "Browser locale selection for notification attachments",
+      "description": "You can now select a browser locale for notification attachments. This allows documents to be rendered according to specific localization settings. The dropdown menu defaults to your current locale on creation and displays the existing value for previously created attachments.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-23",
+      "date_display": "March 23, 2026",
+      "app": "Automate"
+    },
+    {
+      "title": "Pass properties as inputs to geometry style functions in Ontology Manager",
+      "description": "Ontology Manager now allows you to pass properties as inputs to object type rendering functions for geometry styles. This capability enables more customized per-object rendering behavior based on specific properties. When you save a function with property inputs, they are saved to the object type's default styles and can be inherited in Gaia.",
+      "category": "Ontology building",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-23",
+      "date_display": "March 23, 2026",
+      "app": "Ontology Management"
+    },
+    {
+      "title": "Improved JSON editing in Slate widget Raw tab",
+      "description": "The **Raw** tab in the Slate widget editor now provides enhanced JSON editing capabilities. The editor displays JSON errors more clearly and only enables the **Update** option when changes have been made and there are no errors. Additionally, interaction properties with excessively long values now include a **Show more** option that allows users to expand and collapse the full content.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-23",
+      "date_display": "March 23, 2026",
+      "app": "Slate"
+    },
+    {
+      "title": "Faster `if/else` variable transforms",
+      "description": "Workshop now processes `if-else` variable transforms more efficiently. Instead of waiting for all upstream variables to resolve before proceeding, the runtime evaluates the condition as soon as the necessary inputs are available. This optimization can reduce computation time by up to a second for each `if-else` variable evaluation.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-23",
+      "date_display": "March 23, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Fixed timestamp display in XY charts",
+      "description": "Workshop now correctly displays timestamps in XY charts by treating them as categorical values rather than continuous numerical values. This ensures timestamps appear properly formatted instead of being rendered as numbers on the Y-axis.",
+      "category": "Use case development",
+      "type": "FIX",
+      "date": "2026-03-23",
+      "date_display": "March 23, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Display text inside PDF highlight annotations",
+      "description": "Workshop's PDF viewer now supports displaying text inside highlight annotations. When configured, the PDF viewer can show text values from a selected property directly within highlighted regions on the document, rather than just showing colored rectangles. This makes annotations more informative by allowing important text to be visible directly on the document.",
+      "category": "Use case development",
+      "type": "ENHANCEMENT",
+      "date": "2026-03-23",
+      "date_display": "March 23, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Custom widgets section added to module editor",
+      "description": "Workshop now includes a dedicated section for custom widgets in the module editor, making it easier to manage and track widgets used in your application. The new section displays the number of custom widgets in your module, provides links to documentation, shows widget titles and usage locations, and indicates when newer versions are available.",
+      "category": "Use case development",
+      "type": "FEATURE",
+      "date": "2026-03-23",
+      "date_display": "March 23, 2026",
+      "app": "Workshop"
+    },
+    {
+      "title": "Iceberg catalog now supports all-or-nothing transactions",
+      "description": "Foundry's Iceberg catalog now provides all-or-nothing transaction semantics for jobs that perform multiple writes. All table writes are wrapped in a single transaction that either commits fully or is discarded entirely, preventing partial updates from persisting if a job fails mid-run. This matches the existing behaviour of Foundry catalog dataset transactions and ensures that pipelines with multiple outputs remain in a consistent state on failure and retry. Learn more about [Iceberg transactions in Foundry.](/foundry/iceberg/transactions/)",
+      "category": "Data connectivity & integration",
+      "type": "FEATURE",
+      "date": "2026-03-20",
+      "date_display": "March 20, 2026",
+      "app": "Iceberg"
+    },
     {
       "title": "GPT-5.4 Mini and GPT-5.4 Nano are now available in AIP",
       "description": "GPT-5.4 mini and GPT-5.4 nano are now available directly from OpenAI for non-georestricted enrollments.",
