@@ -1,8 +1,22 @@
 # MSS Training Hub — Deployment Guide
 
-**Artifact:** `mss_info_app/index.html` + `pdf/` (~141 PDFs)
-**Target:** mss.data.mil (Foundry stack)
+**Artifact:** `mss_info_app/index.html` + `pdf/` (~326 documents)
 **Owner:** USAREUR-AF Operational Data Team
+
+### Deployment Targets
+| Platform | URL / Location | Method |
+|----------|---------------|--------|
+| Cloudflare Pages | (via git push) | Auto-deploy from `master` |
+| Foundry | mss.data.mil | Code Repository (Static Website) |
+| Google Cloud Run (NIPR) | `http://34.38.132.172` | `deploy/` directory → container → Cloud Run + regional LB |
+
+### NIPR Notes
+- Cloud Run service: `mss-training-hub` in `europe-west1`, project `heimdall-prototype-odt`
+- Ingress: `internal-and-cloud-load-balancing` (org policy requirement)
+- Regional LB with static IP `34.38.132.172` fronts the service
+- PDFs served via embedded PDF.js viewer (NIPR firewall blocks direct PDF downloads)
+- Dashboards and admin links hidden (localhost Streamlit apps not available on NIPR)
+- `deploy/` directory contains the NIPR-specific build (flattened paths, PDF.js, nginx config)
 
 ---
 
@@ -23,7 +37,7 @@
    ```
    maven_training/
    ├── mss_info_app/index.html   ← entry point
-   └── pdf/                      ← ~141 PDFs (verify vs. repo size limit)
+   └── pdf/                      ← ~326 documents (verify vs. repo size limit)
    ```
    Only these two directories are required for the hub to function.
 

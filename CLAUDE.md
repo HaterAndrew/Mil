@@ -61,7 +61,8 @@ sitrep_tracker/          # SITREP tracking tool
 
 - Branch: `master` (PR target: `main`)
 - CI: dual pipeline (`.github/` + `.gitlab-ci.yml`)
-- Deployment: Cloudflare Pages for MSS Training Hub
+- Deployment: Cloudflare Pages (auto from git), Foundry (mss.data.mil), Google Cloud Run/NIPR (`http://34.38.132.172`)
+- NIPR deploy: `deploy/` dir in `maven_training/` → Cloud Run `mss-training-hub` in `europe-west1` on `heimdall-prototype-odt`
 
 ## Workflow
 

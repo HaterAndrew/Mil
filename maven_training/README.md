@@ -62,6 +62,8 @@ All proceeding to TM-40 ────────────────► TM-3
                    TM-40D  Sustainment                TM-40J  Program Manager this prereq)
                    TM-40E  Protection                 TM-40K  Knowledge Manager
                    TM-40F  Mission Command            TM-40L  Software Engineer
+                                                      TM-40N  UI/UX Designer
+                                                      TM-40O  Platform Engineer
                                                             │
                                                             ▼
                                                      TM-50G–50O (Advanced)
@@ -137,6 +139,8 @@ Reference material supporting TM-30 and specialist tracks. Primarily targeted at
 | TM-40J — Program Manager | [tm/TM_40J_program_manager/TM_40J_PROGRAM_MANAGER.md](tm/TM_40J_program_manager/TM_40J_PROGRAM_MANAGER.md) | [CONCEPTS_GUIDE_TM40J](tm/TM_40J_program_manager/CONCEPTS_GUIDE_TM40J_PROGRAM_MANAGER.md) | PMs, G8/S8 |
 | TM-40K — Knowledge Manager | [tm/TM_40K_knowledge_manager/TM_40K_KNOWLEDGE_MANAGER.md](tm/TM_40K_knowledge_manager/TM_40K_KNOWLEDGE_MANAGER.md) | [CONCEPTS_GUIDE_TM40K](tm/TM_40K_knowledge_manager/CONCEPTS_GUIDE_TM40K_KNOWLEDGE_MANAGER.md) | KMOs, 37F |
 | TM-40L — Software Engineer | [tm/TM_40L_software_engineer/TM_40L_SOFTWARE_ENGINEER.md](tm/TM_40L_software_engineer/TM_40L_SOFTWARE_ENGINEER.md) | [CONCEPTS_GUIDE_TM40L](tm/TM_40L_software_engineer/CONCEPTS_GUIDE_TM40L_SOFTWARE_ENGINEER.md) | SWEs |
+| TM-40N — UI/UX Designer | [tm/TM_40N_ux_designer/TM_40N_UX_DESIGNER.md](tm/TM_40N_ux_designer/TM_40N_UX_DESIGNER.md) | [CONCEPTS_GUIDE_TM40N](tm/TM_40N_ux_designer/CONCEPTS_GUIDE_TM40N_UX_DESIGNER.md) | UI/UX designers |
+| TM-40O — Platform Engineer | [tm/TM_40O_platform_engineer/TM_40O_PLATFORM_ENGINEER.md](tm/TM_40O_platform_engineer/TM_40O_PLATFORM_ENGINEER.md) | [CONCEPTS_GUIDE_TM40O](tm/TM_40O_platform_engineer/CONCEPTS_GUIDE_TM40O_PLATFORM_ENGINEER.md) | Platform engineers |
 
 ### TM-50G–O — Advanced Technical Specialist Tracks
 
@@ -150,6 +154,8 @@ Each TM-50 track builds on its TM-40G–O counterpart. Prereq: corresponding TM-
 | TM-50J — Advanced PM | [tm/TM_50J_program_manager_advanced/TM_50J_PROGRAM_MANAGER_ADVANCED.md](tm/TM_50J_program_manager_advanced/TM_50J_PROGRAM_MANAGER_ADVANCED.md) | [CONCEPTS_GUIDE_TM50J](tm/TM_50J_program_manager_advanced/CONCEPTS_GUIDE_TM50J_PROGRAM_MANAGER_ADVANCED.md) | Senior tech PMs | TM-40J |
 | TM-50K — Advanced KM | [tm/TM_50K_knowledge_manager_advanced/TM_50K_KNOWLEDGE_MANAGER_ADVANCED.md](tm/TM_50K_knowledge_manager_advanced/TM_50K_KNOWLEDGE_MANAGER_ADVANCED.md) | [CONCEPTS_GUIDE_TM50K](tm/TM_50K_knowledge_manager_advanced/CONCEPTS_GUIDE_TM50K_KNOWLEDGE_MANAGER_ADVANCED.md) | Senior KMOs | TM-40K |
 | TM-50L — Advanced SWE | [tm/TM_50L_software_engineer_advanced/TM_50L_SOFTWARE_ENGINEER_ADVANCED.md](tm/TM_50L_software_engineer_advanced/TM_50L_SOFTWARE_ENGINEER_ADVANCED.md) | [CONCEPTS_GUIDE_TM50L](tm/TM_50L_software_engineer_advanced/CONCEPTS_GUIDE_TM50L_SOFTWARE_ENGINEER_ADVANCED.md) | Senior SWEs | TM-40L |
+| TM-50N — Advanced UI/UX | [tm/TM_50N_ux_designer_advanced/TM_50N_UX_DESIGNER_ADVANCED.md](tm/TM_50N_ux_designer_advanced/TM_50N_UX_DESIGNER_ADVANCED.md) | [CONCEPTS_GUIDE_TM50N](tm/TM_50N_ux_designer_advanced/CONCEPTS_GUIDE_TM50N_UX_DESIGNER_ADVANCED.md) | Senior UI/UX | TM-40N |
+| TM-50O — Advanced Platform Eng | [tm/TM_50O_platform_engineer_advanced/TM_50O_PLATFORM_ENGINEER_ADVANCED.md](tm/TM_50O_platform_engineer_advanced/TM_50O_PLATFORM_ENGINEER_ADVANCED.md) | [CONCEPTS_GUIDE_TM50O](tm/TM_50O_platform_engineer_advanced/CONCEPTS_GUIDE_TM50O_PLATFORM_ENGINEER_ADVANCED.md) | Senior platform engineers | TM-40O |
 
 ### T3 — Train-the-Trainer (Outside TM Chain)
 
@@ -200,6 +206,8 @@ Competencies: Multi-page Workshop with conditional logic and variable passing; a
 | TM-40J Program Manager | PMs, G8/S8 | Agile PM (Scrum/Kanban) for data/AI; user stories for data products; ML/AI lifecycle management; sprint tracking dashboards; change management and user adoption |
 | TM-40K Knowledge Manager | KMOs, 37F | AAR capture systems; lessons-learned ingestion pipelines; AIP Logic for knowledge summarization; semantic search systems; doctrine/SOP version control; expertise registries |
 | TM-40L Software Engineer | SWEs | OSDK (TypeScript/Python); Foundry Platform SDK; TypeScript Functions on Objects; Action validators; Slate applications; USAREUR-AF code review and deployment standards |
+| TM-40N UI/UX Designer | UI/UX designers (ASF) | Foundry UI patterns; Workshop layout and UX; user research for data products; design systems; accessibility; prototype-to-production handoff |
+| TM-40O Platform Engineer | Platform engineers (ASF) | Foundry platform administration; compute resource management; data connection architecture; security and access control; environment management; CI/CD for Foundry |
 
 > **NOTE — TM-40J/TM-40K Prereq:** TM-30 is required (not recommended) for both TM-40J and TM-40K. Route all PMs and KMOs through TM-30 before enrolling in TM-40J or TM-40K regardless of whether their teams write code. Consult the ENROLLMENT_SOP for waiver procedures.
 
@@ -268,6 +276,8 @@ Distribute to each trainee at course start.
 | TM-40J | [syllabi/SYLLABUS_TM40J.md](syllabi/SYLLABUS_TM40J.md) | PMs, G8/S8 |
 | TM-40K | [syllabi/SYLLABUS_TM40K.md](syllabi/SYLLABUS_TM40K.md) | KMOs, 37F |
 | TM-40L | [syllabi/SYLLABUS_TM40L.md](syllabi/SYLLABUS_TM40L.md) | SWEs |
+| TM-40N | [syllabi/SYLLABUS_TM40N.md](syllabi/SYLLABUS_TM40N.md) | UI/UX designers |
+| TM-40O | [syllabi/SYLLABUS_TM40O.md](syllabi/SYLLABUS_TM40O.md) | Platform engineers |
 
 > **Note:** TM-50G–O series syllabi are published. TM-50A–F do not exist (WFF tracks are terminal — no advanced continuation). Advanced training is available only for specialist tracks (G–O). Contact training management for scheduling.
 

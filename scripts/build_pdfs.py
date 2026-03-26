@@ -991,6 +991,8 @@ def main():
                         help="Parallel Chrome workers (default: 4)")
     parser.add_argument("--force", action="store_true",
                         help="Rebuild all PDFs even if source is unchanged")
+    parser.add_argument("--dry-run", action="store_true",
+                        help="Show what would be rebuilt without actually building")
     args = parser.parse_args()
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -1029,7 +1031,18 @@ def main():
 
     if not tasks:
         print("Nothing to rebuild — all PDFs are up to date.")
-        _save_manifest(manifest)
+        if not args.dry_run:
+            _save_manifest(manifest)
+        return
+
+    if args.dry_run:
+        print(f"DRY RUN — {len(tasks)} PDF(s) would be rebuilt:\n")
+        for fn, rel, stem in tasks:
+            src = REPO_ROOT / rel
+            current_hash = _file_hash(src) if src.exists() else "N/A"
+            old_hash = manifest.get(str(src), "N/A")
+            changed = "NEW" if old_hash == "N/A" else "CHANGED"
+            print(f"  {changed:7s}  {stem}.pdf  ({rel})")
         return
 
     print(f"Building {len(tasks)} PDFs with {args.workers} parallel worker(s)...\n")

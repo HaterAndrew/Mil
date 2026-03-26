@@ -30,8 +30,8 @@ Full curriculum index: [maven_training/README.md](maven_training/README.md)
 |---|---|
 | All personnel | TM-10 → TM-20 |
 | WFF functional staff (INT/FIRES/M2/SUST/PROT/MC) | TM-40A–F (after TM-30) |
-| Data-adjacent specialists (17/25-series, S6/G6, G2) | TM-30 → TM-40G–M |
-| Technical specialists (engineers, analysts, data pros) | TM-30 → TM-40G–M → TM-50G–M |
+| Data-adjacent specialists (17/25-series, S6/G6, G2) | TM-30 → TM-40G–O |
+| Technical specialists (engineers, analysts, data pros) | TM-30 → TM-40G–O → TM-50G–O |
 | Senior leaders (O-5+, CSM+, senior civilians) | Data Literacy for Senior Leaders |
 
 #### Complete Publication Hierarchy
@@ -94,8 +94,14 @@ maven_training/
 │   ├── TM_40L_software_engineer/             ← TM-40L: Software Engineer (OSDK, TypeScript)
 │   │   ├── TM_40L_SOFTWARE_ENGINEER.md
 │   │   └── CONCEPTS_GUIDE_TM40L_SOFTWARE_ENGINEER.md
+│   ├── TM_40N_ux_designer/                   ← TM-40N: UI/UX Designer (ASF role track)
+│   │   ├── TM_40N_UX_DESIGNER.md
+│   │   └── CONCEPTS_GUIDE_TM40N_UX_DESIGNER.md
+│   ├── TM_40O_platform_engineer/             ← TM-40O: Platform Engineer (ASF role track)
+│   │   ├── TM_40O_PLATFORM_ENGINEER.md
+│   │   └── CONCEPTS_GUIDE_TM40O_PLATFORM_ENGINEER.md
 │   │
-│   │   ── TM-50G through TM-50L: Advanced Specialist Tracks (prereq: corresponding TM-40G–M) ──
+│   │   ── TM-50G through TM-50O: Advanced Specialist Tracks (prereq: corresponding TM-40G–O) ──
 │   ├── TM_50G_orsa_advanced/                 ← TM-50G: Advanced ORSA (prereq: TM-40G)
 │   │   ├── TM_50G_ORSA_ADVANCED.md
 │   │   └── CONCEPTS_GUIDE_TM50G_ORSA_ADVANCED.md
@@ -111,9 +117,15 @@ maven_training/
 │   ├── TM_50K_knowledge_manager_advanced/    ← TM-50K: Advanced KM (prereq: TM-40K)
 │   │   ├── TM_50K_KNOWLEDGE_MANAGER_ADVANCED.md
 │   │   └── CONCEPTS_GUIDE_TM50K_KNOWLEDGE_MANAGER_ADVANCED.md
-│   └── TM_50L_software_engineer_advanced/    ← TM-50L: Advanced SWE (prereq: TM-40L)
-│       ├── TM_50L_SOFTWARE_ENGINEER_ADVANCED.md
-│       └── CONCEPTS_GUIDE_TM50L_SOFTWARE_ENGINEER_ADVANCED.md
+│   ├── TM_50L_software_engineer_advanced/    ← TM-50L: Advanced SWE (prereq: TM-40L)
+│   │   ├── TM_50L_SOFTWARE_ENGINEER_ADVANCED.md
+│   │   └── CONCEPTS_GUIDE_TM50L_SOFTWARE_ENGINEER_ADVANCED.md
+│   ├── TM_50N_ux_designer_advanced/          ← TM-50N: Advanced UI/UX (prereq: TM-40N)
+│   │   ├── TM_50N_UX_DESIGNER_ADVANCED.md
+│   │   └── CONCEPTS_GUIDE_TM50N_UX_DESIGNER_ADVANCED.md
+│   └── TM_50O_platform_engineer_advanced/    ← TM-50O: Advanced Platform Eng (prereq: TM-40O)
+│       ├── TM_50O_PLATFORM_ENGINEER_ADVANCED.md
+│       └── CONCEPTS_GUIDE_TM50O_PLATFORM_ENGINEER_ADVANCED.md
 │
 ├── syllabi/                                  ← Student/instructor-facing course syllabi
 │   ├── SYLLABUS_TM10.md
@@ -131,12 +143,16 @@ maven_training/
 │   ├── SYLLABUS_TM40J.md                     ← Technical: Program Manager
 │   ├── SYLLABUS_TM40K.md                     ← Technical: Knowledge Manager
 │   ├── SYLLABUS_TM40L.md                     ← Technical: Software Engineer
+│   ├── SYLLABUS_TM40N.md                     ← Technical: UI/UX Designer
+│   ├── SYLLABUS_TM40O.md                     ← Technical: Platform Engineer
 │   ├── SYLLABUS_TM50G.md                     ← Advanced: ORSA
 │   ├── SYLLABUS_TM50H.md                     ← Advanced: AI Engineer
 │   ├── SYLLABUS_TM50M.md                     ← Advanced: ML Engineer
 │   ├── SYLLABUS_TM50J.md                     ← Advanced: Program Manager
 │   ├── SYLLABUS_TM50K.md                     ← Advanced: Knowledge Manager
-│   └── SYLLABUS_TM50L.md                     ← Advanced: Software Engineer
+│   ├── SYLLABUS_TM50L.md                     ← Advanced: Software Engineer
+│   ├── SYLLABUS_TM50N.md                     ← Advanced: UI/UX Designer
+│   └── SYLLABUS_TM50O.md                     ← Advanced: Platform Engineer
 │
 ├── exercises/
 │   ├── README.md
@@ -156,12 +172,16 @@ maven_training/
 │   │   ├── EXAM_TM40J_PRE.md / POST.md       ← Technical: Program Manager
 │   │   ├── EXAM_TM40K_PRE.md / POST.md       ← Technical: Knowledge Manager
 │   │   ├── EXAM_TM40L_PRE.md / POST.md       ← Technical: Software Engineer
+│   │   ├── EXAM_TM40N_PRE.md / POST.md       ← Technical: UI/UX Designer
+│   │   ├── EXAM_TM40O_PRE.md / POST.md       ← Technical: Platform Engineer
 │   │   ├── EXAM_TM50G_PRE.md / POST.md       ← Advanced: ORSA
 │   │   ├── EXAM_TM50H_PRE.md / POST.md       ← Advanced: AI Engineer
 │   │   ├── EXAM_TM50M_PRE.md / POST.md       ← Advanced: ML Engineer
 │   │   ├── EXAM_TM50J_PRE.md / POST.md       ← Advanced: Program Manager
 │   │   ├── EXAM_TM50K_PRE.md / POST.md       ← Advanced: Knowledge Manager
-│   │   └── EXAM_TM50L_PRE.md / POST.md       ← Advanced: Software Engineer
+│   │   ├── EXAM_TM50L_PRE.md / POST.md       ← Advanced: Software Engineer
+│   │   ├── EXAM_TM50N_PRE.md / POST.md       ← Advanced: UI/UX Designer
+│   │   └── EXAM_TM50O_PRE.md / POST.md       ← Advanced: Platform Engineer
 │   │
 │   ├── EX_10_operator_basics/                ← Practical exercise: TM-10
 │   │   ├── ENVIRONMENT_SETUP.md
@@ -179,7 +199,9 @@ maven_training/
 │   ├── EX_40M_ml_engineer/                   ← Practical exercise: TM-40M (Technical)
 │   ├── EX_40J_program_manager/               ← Practical exercise: TM-40J (Technical)
 │   ├── EX_40K_knowledge_manager/             ← Practical exercise: TM-40K (Technical)
-│   └── EX_40L_software_engineer/             ← Practical exercise: TM-40L (Technical)
+│   ├── EX_40L_software_engineer/             ← Practical exercise: TM-40L (Technical)
+│   ├── EX_40N_ux_designer/                  ← Practical exercise: TM-40N (Technical)
+│   └── EX_40O_platform_engineer/            ← Practical exercise: TM-40O (Technical)
 │
 ├── training_management/                      ← Administrative and instructor publications
 │   ├── MTP_MSS.md                            ← Mission Training Plan (TLOs/ELOs, Go/No-Go criteria)

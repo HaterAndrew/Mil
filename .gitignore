@@ -31,6 +31,14 @@ build/
 htmlcov/
 coverage/
 
+# Print / export artifacts
+print_*.html
+hermes_overview_clean.html
+
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+
 # IDE settings
 .vscode/
 .idea/

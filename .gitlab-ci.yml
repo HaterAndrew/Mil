@@ -68,6 +68,41 @@ sync-check:
     - if: '$CI_COMMIT_BRANCH == "main"'
       when: always
 
+audit-check:
+  stage: test
+  image: python:3.12-slim
+  script:
+    - python3 scripts/audit.py
+    - python3 scripts/lint_dep_map.py
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: always
+
+manifest-drift-check:
+  stage: test
+  image: python:3.12-slim
+  script:
+    - REQ=requirements-lock.txt; [ -f "$REQ" ] || REQ=requirements.txt; pip install -r "$REQ"
+    - python3 scripts/build_pdfs.py --dry-run
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: always
+
+sharepoint-sync-check:
+  stage: test
+  image: python:3.12-slim
+  script:
+    - python3 scripts/check_sharepoint_sync.py
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: always
+
 pages:
   stage: deploy
   needs: ["test"]

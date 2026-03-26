@@ -26,7 +26,9 @@ from .db import (
     promote_waitlist,
 )
 from .models import (
+    BatchStatusUpdate,
     ClassAvailability,
+    CourseDistribution,
     EnrollmentCreate,
     EnrollmentResponse,
     EnrollmentStats,
@@ -172,6 +174,82 @@ def student_enrollments(dodid: str, db: Session = Depends(get_db)):
 @app.get("/stats", response_model=EnrollmentStats)
 def stats(db: Session = Depends(get_db)):
     return EnrollmentStats(**get_enrollment_stats(db))
+
+
+# ---------------------------------------------------------------------------
+# Batch status update
+# ---------------------------------------------------------------------------
+@app.patch("/classes/{class_id}/batch-status", dependencies=[Depends(verify_api_key)])
+def batch_status_update(class_id: int, payload: BatchStatusUpdate, db: Session = Depends(get_db)):
+    """Update enrollment status for multiple students at once (drop, complete, no-show)."""
+    tc = db.query(TrainingClass).filter(TrainingClass.class_id == class_id).first()
+    if not tc:
+        raise HTTPException(status_code=404, detail=f"Class {class_id} not found")
+
+    updated = []
+    not_found = []
+    for dodid in payload.dodids:
+        enrollment = (
+            db.query(Enrollment)
+            .filter(Enrollment.class_id == class_id, Enrollment.dodid == dodid)
+            .first()
+        )
+        if enrollment:
+            enrollment.status = payload.new_status
+            updated.append(dodid)
+        else:
+            not_found.append(dodid)
+
+    db.commit()
+    return {
+        "updated_count": len(updated),
+        "updated": updated,
+        "not_found": not_found,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Course distribution analytics
+# ---------------------------------------------------------------------------
+@app.get("/analytics/course-distribution", response_model=list[CourseDistribution])
+def course_distribution(db: Session = Depends(get_db)):
+    """Enrollment distribution grouped by course_id."""
+    courses = db.query(TrainingClass.course_id).distinct().all()
+    results = []
+    for (course_id,) in courses:
+        classes = db.query(TrainingClass).filter(TrainingClass.course_id == course_id).all()
+        total_enrolled = 0
+        total_waitlisted = 0
+        fill_rates = []
+        locations = set()
+        for tc in classes:
+            enrolled = (
+                db.query(Enrollment)
+                .filter(Enrollment.class_id == tc.class_id, Enrollment.status == "ENROLLED")
+                .count()
+            )
+            waitlisted = (
+                db.query(WaitlistEntry)
+                .filter(WaitlistEntry.class_id == tc.class_id, WaitlistEntry.status == "WAITING")
+                .count()
+            )
+            total_enrolled += enrolled
+            total_waitlisted += waitlisted
+            if tc.max_seats > 0:
+                fill_rates.append(enrolled / tc.max_seats * 100)
+            locations.add(tc.location)
+
+        avg_fill = round(sum(fill_rates) / len(fill_rates), 1) if fill_rates else 0.0
+        results.append(CourseDistribution(
+            course_id=course_id,
+            total_classes=len(classes),
+            total_enrolled=total_enrolled,
+            total_waitlisted=total_waitlisted,
+            avg_fill_rate=avg_fill,
+            locations=sorted(locations),
+        ))
+
+    return sorted(results, key=lambda r: r.course_id)
 
 
 # ---------------------------------------------------------------------------

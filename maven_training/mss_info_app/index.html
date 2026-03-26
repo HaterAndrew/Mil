@@ -493,6 +493,13 @@
       vertical-align: top;
     }
 
+    /* Fixed-width columns for reference/doctrine tables: Date and Tracks columns stay aligned */
+    #panel-doctrine table,
+    #panel-documents table { table-layout: fixed; width: 100%; }
+    #panel-doctrine table td:last-child,
+    #panel-documents table td:last-child { width: 22%; }
+    #panel-documents table td:nth-last-child(2) { width: 12%; white-space: nowrap; }
+
     /* ============================================================
        CALLOUTS
     ============================================================ */
@@ -2359,10 +2366,11 @@
           <span class="snav-item-icon">&#9642;</span>
           <span class="snav-item-label">Task Index</span>
         </button>
-        <button class="snav-item" data-panel="dashboards">
+        <!-- Dashboards hidden — localhost Streamlit apps, not available on deployed versions -->
+        <!--<button class="snav-item" data-panel="dashboards">
           <span class="snav-item-icon">&#9642;</span>
           <span class="snav-item-label">Dashboards</span>
-        </button>
+        </button>-->
         <button class="snav-item" data-panel="support">
           <span class="snav-item-icon">&#9642;</span>
           <span class="snav-item-label">Support</span>
@@ -2388,17 +2396,7 @@
 
     <!-- ADMIN — hidden from typical users; subtle link at bottom of nav -->
     <div style="margin-top:auto; padding:18px 14px 6px; border-top:1px solid rgba(255,255,255,0.06);">
-      <a href="../DEPENDENCY_MAP.html" target="_blank" rel="noopener"
-         style="font-size:10px; color:rgba(255,255,255,0.18); text-decoration:none; letter-spacing:0.5px;"
-         title="Corpus dependency map (admin tool)">&#9881; DEPENDENCY MAP</a>
-      &nbsp;&middot;&nbsp;
-      <a href="../../hermes_overview.html" target="_blank" rel="noopener"
-         style="font-size:10px; color:rgba(255,255,255,0.18); text-decoration:none; letter-spacing:0.5px;"
-         title="HERMES system overview (admin tool)">&#9881; HERMES</a>
-      &nbsp;&middot;&nbsp;
-      <button data-panel="doctrine"
-         style="font-size:10px; color:rgba(255,255,255,0.18); background:none; border:none; cursor:pointer; text-decoration:none; letter-spacing:0.5px; font-family:inherit;"
-         title="Draft publications (reference)">&#9881; DRAFT PUBS</button>
+      <!-- Admin links hidden — relative paths not available on deployed versions -->
     </div>
 
   </nav>
@@ -4066,7 +4064,13 @@
 
     <h2>FULL PUBLICATIONS INDEX</h2>
     <div class="table-wrap">
-      <table>
+      <table style="table-layout:fixed;width:100%;">
+        <colgroup>
+          <col style="width:18%;">
+          <col style="width:22%;">
+          <col style="width:40%;">
+          <col style="width:20%;">
+        </colgroup>
         <thead><tr><th>Publication</th><th>Audience</th><th>Purpose</th><th>When to Read</th></tr></thead>
         <tbody>
           <tr><td colspan="4" style="background:var(--navy-pale);font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);">Foundation &mdash; All Personnel</td></tr>

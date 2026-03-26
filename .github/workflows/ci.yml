@@ -72,6 +72,43 @@ jobs:
           python-version: "3.12"
       - run: python3 scripts/check_html_react_sync.py
 
+  audit-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run corpus audit
+        run: python3 scripts/audit.py
+      - name: Run dependency map linter
+        run: python3 scripts/lint_dep_map.py
+
+  manifest-drift-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          REQ=requirements-lock.txt
+          [ -f "$REQ" ] || REQ=requirements.txt
+          pip install -r "$REQ"
+      - name: Check PDF manifest drift
+        run: python3 scripts/build_pdfs.py --dry-run
+
+  sharepoint-sync-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check SharePoint variant sync
+        run: python3 scripts/check_sharepoint_sync.py
+
   platform-update-check:
     runs-on: ubuntu-latest
     steps:

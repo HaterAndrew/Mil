@@ -109,3 +109,31 @@ class EnrollmentStats(BaseModel):
     total_enrolled: int
     total_waitlisted: int
     avg_fill_rate: float
+
+
+# ---------------------------------------------------------------------------
+# Batch operations
+# ---------------------------------------------------------------------------
+class BatchStatusUpdate(BaseModel):
+    dodids: list[str] = Field(..., min_length=1)
+    new_status: Literal["DROPPED", "COMPLETED", "NO_SHOW"] = Field(...)
+
+    @field_validator("dodids")
+    @classmethod
+    def validate_dodids(cls, v: list[str]) -> list[str]:
+        for d in v:
+            if not d.isdigit() or len(d) != 10:
+                raise ValueError(f"Invalid DODID: {d}")
+        return v
+
+
+# ---------------------------------------------------------------------------
+# Course distribution
+# ---------------------------------------------------------------------------
+class CourseDistribution(BaseModel):
+    course_id: str
+    total_classes: int
+    total_enrolled: int
+    total_waitlisted: int
+    avg_fill_rate: float
+    locations: list[str]
