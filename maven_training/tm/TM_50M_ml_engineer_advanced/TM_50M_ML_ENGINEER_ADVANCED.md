@@ -1,13 +1,13 @@
 # TM-50M — ADVANCED MACHINE LEARNING ENGINEERING
 
-> **Forward:** TM-50M qualifies senior machine learning engineers to design, build, and lead production ML platform capability on MSS. This manual extends TM-40M into automated MLOps, advanced neural architectures, federated learning, real-time inference, ML security, and platform architecture leadership.
-> **Prereqs:** TM-40M, Machine Learning Engineer (required — Go evaluation on file). TM-40H (AI Engineer) recommended. Data Literacy Technical Reference (recommended); CONCEPTS_GUIDE_TM50M_ML_ENGINEER_ADVANCED (read before this manual).
+> **Forward:** SL 5M qualifies senior machine learning engineers to design, build, and lead production ML platform capability on MSS. This manual extends SL 4M into automated MLOps, advanced neural architectures, federated learning, real-time inference, ML security, and platform architecture leadership.
+> **Prereqs:** SL 4M, Machine Learning Engineer (required — Go evaluation on file). SL 4H (AI Engineer) recommended. Data Literacy Technical Reference (recommended); CONCEPTS_GUIDE_TM50M_ML_ENGINEER_ADVANCED (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: AUTOMATED MODEL DEPLOYMENT IS A PRIVILEGED CAPABILITY. Automated pipelines that promote model versions to production without human review are classified as high-risk automation under UDRA v1.1. Implementing this pattern without a documented, C2DAO-approved automation design and explicit mission owner sign-off constitutes an unauthorized production change. The senior MLE who designs the pipeline is accountable for every automated promotion it executes.**
 > **WARNING: CROSS-DOMAIN FEDERATED LEARNING. Federated learning patterns that coordinate gradient updates across classification-separated environments may be subject to EUCOM data sharing agreements, coalition partner protocols, and USAREUR-AF C2DAO architecture review. Do not initiate cross-domain federated training without written authorization from the data steward and C2DAO. "No data moves" is not a sufficient authorization argument — the aggregated model weights can encode information from the source domains.**
 > **CAUTION: MODEL COMPRESSION AND PRODUCTION EQUIVALENCE. A quantized or pruned model is a different model from the full-precision original. Performance metrics from the full-precision model do not transfer. Every compressed model variant must be independently evaluated on an operationally representative holdout set before deployment. Failure to re-evaluate may result in silent performance degradation in production.**
-> **NOTE: TM-50M targets senior MLEs with production responsibility — personnel designing platform-level infrastructure, leading ML capability for a major MSS program, or serving as the ML technical authority for a command. This is not a follow-on to TM-40M for general practitioners. It is a specialization track for personnel who will own the platform, not just operate it.**
+> **NOTE: SL 5M targets senior MLEs with production responsibility — personnel designing platform-level infrastructure, leading ML capability for a major MSS program, or serving as the ML technical authority for a command. This is not a follow-on to SL 4M for general practitioners. It is a specialization track for personnel who will own the platform, not just operate it.**
 
 ---
 
@@ -15,15 +15,15 @@
 
 ### 1-1. Advanced ML Engineer Manual
 
-**BLUF:** TM-50M qualifies senior machine learning engineers to design, build, and lead production ML platform capability on MSS. This manual extends TM-40M into automated MLOps, advanced neural architectures, federated learning, real-time inference, ML security, and platform architecture leadership.
+**BLUF:** SL 5M qualifies senior machine learning engineers to design, build, and lead production ML platform capability on MSS. This manual extends SL 4M into automated MLOps, advanced neural architectures, federated learning, real-time inference, ML security, and platform architecture leadership.
 
-TM-40M produced MLEs who can build and deploy models. TM-50M produces ML platform engineers — practitioners who design the infrastructure others build on. The distinction matters. A TM-40M MLE asks, "How do I deploy this model?" A TM-50M MLE asks, "What deployment infrastructure should this team use, and what are the failure modes?" TM-50M personnel operate at the level of ML system design: retraining architectures, shared feature stores, model registry standards, inference optimization, and adversarial robustness programs.
+SL 4M produced MLEs who can build and deploy models. SL 5M produces ML platform engineers — practitioners who design the infrastructure others build on. The distinction matters. A SL 4M MLE asks, "How do I deploy this model?" A SL 5M MLE asks, "What deployment infrastructure should this team use, and what are the failure modes?" SL 5M personnel operate at the level of ML system design: retraining architectures, shared feature stores, model registry standards, inference optimization, and adversarial robustness programs.
 
 USAREUR-AF requires this level of capability because MSS is not a collection of individual models — it is an ML platform supporting dozens of use cases across III Corps, V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, SETAF-AF, USAREUR-AF G2, and subordinate commands. As that platform scales, it requires practitioners who can design it, secure it, and lead it as a discipline.
 
 ### 1-2. Scope
 
-**TM-50M covers:**
+**SL 5M covers:**
 
 | Topic | Description |
 |---|---|
@@ -35,24 +35,24 @@ USAREUR-AF requires this level of capability because MSS is not a collection of 
 | Real-time inference | Latency optimization, request batching, model compression, quantization, benchmarking |
 | ML security | Adversarial robustness, data poisoning detection, model extraction defense, supply chain |
 | Platform architecture | Feature stores, model registries, experiment tracking, shared ML infrastructure design |
-| Cross-domain ML | AIP Logic integration (TM-40H interface), Agent Studio model consumption patterns |
+| Cross-domain ML | AIP Logic integration (SL 4H interface), Agent Studio model consumption patterns |
 | ML leadership | Code review standards, reproducibility requirements, production readiness gates, team capability development |
 | Model documentation | DoD RAIMTF model cards, AI accountability documentation, Army policy compliance |
 
-**TM-50M does NOT cover** TM-40M prerequisite material (foundational MLE skills are assumed mastered); basic Foundry navigation, Transform authoring, or Ontology consumption — see TM-30; AIP Logic application design or Agent Studio development — see TM-40H; statistical optimization and operations research — see TM-40G / TM-50G; program management of ML programs of record — see TM-40J; or Foundry platform administration (enrollment, permissions, environment configuration) — contact C2DAO.
+**SL 5M does NOT cover** SL 4M prerequisite material (foundational MLE skills are assumed mastered); basic Foundry navigation, Transform authoring, or Ontology consumption — see SL 3; AIP Logic application design or Agent Studio development — see SL 4H; statistical optimization and operations research — see SL 4G / SL 5G; program management of ML programs of record — see SL 4J; or Foundry platform administration (enrollment, permissions, environment configuration) — contact C2DAO.
 
-### 1-3. The TM-50M MLE in the USAREUR-AF Data Chain
+### 1-3. The SL 5M MLE in the USAREUR-AF Data Chain
 
 ```
 USAREUR-AF COMMANDER / C2DAO
 (Policy, governance, architecture authority)
        |
        v
-  TM-50M SENIOR MLE                 <- You are here
+  SL 5M SENIOR MLE                 <- You are here
   (Platform design, automation, security, leadership)
        |
        v
-  TM-40M MLE
+  SL 4M MLE
   (Model build, train, evaluate, deploy)
        |
        v
@@ -60,46 +60,46 @@ USAREUR-AF COMMANDER / C2DAO
   (Production Ontology, inference endpoints, monitoring)
        |
        v
-  TM-40H (AI Eng) / TM-30 (Workshop)
+  SL 4H (AI Eng) / SL 3 (Workshop)
   (Downstream consumers: AIP Logic, dashboards, apps)
        |
        v
-  TM-10 USER
+  SL 1 USER
   (Operational decision supported)
 ```
 
-The TM-50M MLE is a force multiplier — not because they write the most code, but because the infrastructure they design determines what the TM-40M practitioners beneath them can build and how safely they can build it. A poorly designed feature store creates incorrect features for every model that uses it. A misconfigured model registry loses experiment reproducibility across the platform. A missing adversarial robustness gate exposes every deployed model to the same attack class.
+The SL 5M MLE is a force multiplier — not because they write the most code, but because the infrastructure they design determines what the SL 4M practitioners beneath them can build and how safely they can build it. A poorly designed feature store creates incorrect features for every model that uses it. A misconfigured model registry loses experiment reproducibility across the platform. A missing adversarial robustness gate exposes every deployed model to the same attack class.
 
-### 1-3A. Relationship to Other TM-50 Publications
+### 1-3A. Relationship to Other SL 5 Publications
 
-| Publication | Track | Key Overlap with TM-50M |
+| Publication | Track | Key Overlap with SL 5M |
 |---|---|---|
-| TM-50G | ORSA Advanced | Statistical validation methods; uncertainty quantification for ML outputs |
-| TM-50H | AI Engineer Advanced | AIP Logic integration; fine-tuning infrastructure (Chapter 3); adversarial robustness |
-| TM-50M | ML Engineer Advanced | THIS DOCUMENT |
-| TM-50J | Program Manager Advanced | ML program lifecycle; governance documentation requirements |
-| TM-50K | Knowledge Manager Advanced | Feature data governance; training corpus design |
-| TM-50L | Software Engineer Advanced | Platform SDK infrastructure; OSDK model-serving integrations |
-| TM-50N | UI/UX Designer Advanced | Feature engineering UI; model monitoring dashboards |
-| TM-50O | Platform Engineer Advanced | ML platform infrastructure; training pipeline orchestration |
+| SL 5G | ORSA Advanced | Statistical validation methods; uncertainty quantification for ML outputs |
+| SL 5H | AI Engineer Advanced | AIP Logic integration; fine-tuning infrastructure (Chapter 3); adversarial robustness |
+| SL 5M | ML Engineer Advanced | THIS DOCUMENT |
+| SL 5J | Program Manager Advanced | ML program lifecycle; governance documentation requirements |
+| SL 5K | Knowledge Manager Advanced | Feature data governance; training corpus design |
+| SL 5L | Software Engineer Advanced | Platform SDK infrastructure; OSDK model-serving integrations |
+| SL 5N | UI/UX Designer Advanced | Feature engineering UI; model monitoring dashboards |
+| SL 5O | Platform Engineer Advanced | ML platform infrastructure; training pipeline orchestration |
 
-**WFF Operational Consumer Note.** The six Warfighting Function (WFF) tracks — Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F) — are the primary operational consumers of ML models built and maintained by TM-50M engineers. Readiness prediction, logistics demand forecasting, personnel risk models, and anomaly detection all feed WFF staff sections. When designing ML systems, account for the WFF end-user: calibration, interpretability, and latency requirements vary significantly by WFF function and decision context.
+**WFF Operational Consumer Note.** The six Warfighting Function (WFF) tracks — Intelligence (SL 4A), Fires (SL 4B), Movement and Maneuver (SL 4C), Sustainment (SL 4D), Protection (SL 4E), and Mission Command (SL 4F) — are the primary operational consumers of ML models built and maintained by SL 5M engineers. Readiness prediction, logistics demand forecasting, personnel risk models, and anomaly detection all feed WFF staff sections. When designing ML systems, account for the WFF end-user: calibration, interpretability, and latency requirements vary significantly by WFF function and decision context.
 
 ### 1-4. Prerequisites and Entry Standards
 
-TM-50M entry requires demonstrated proficiency at TM-40M level. The following are entry conditions, not goals.
+SL 5M entry requires demonstrated proficiency at SL 4M level. The following are entry conditions, not goals.
 
 | Prerequisite | Verification Standard |
 |---|---|
-| TM-40M completion | Certification on file, confirmed by supervisor |
+| SL 4M completion | Certification on file, confirmed by supervisor |
 | Production model deployment | Has deployed at least one model to MSS Ontology in a production use case |
 | Drift monitoring implementation | Has implemented and operated a drift detection pipeline on a production model |
-| Model governance completion | Has independently completed TM-40M Appendix A governance checklist for a production model |
+| Model governance completion | Has independently completed SL 4M Appendix A governance checklist for a production model |
 | Python proficiency (advanced) | Can write multi-class sklearn pipelines, custom PyTorch training loops, and Foundry Transform pipelines without reference |
 | MLOps tooling | Familiar with experiment tracking, model versioning, and pipeline orchestration concepts |
 | Git / code review | Has conducted peer code reviews; understands branching strategy for production ML repositories |
 
-Personnel who do not meet these entry standards must complete TM-40M production experience requirements first. There is no accelerated path.
+Personnel who do not meet these entry standards must complete SL 4M production experience requirements first. There is no accelerated path.
 
 ### 1-5. Governing References
 
@@ -127,11 +127,11 @@ Personnel who do not meet these entry standards must complete TM-40M production 
 
 ### 1-6. Advanced Governance Tiers
 
-TM-40M covered the baseline six-gate governance process. TM-50M introduces automation authorization tiers that apply to the more powerful capabilities in this manual.
+SL 4M covered the baseline six-gate governance process. SL 5M introduces automation authorization tiers that apply to the more powerful capabilities in this manual.
 
 | Automation Tier | Description | Additional Approval Required |
 |---|---|---|
-| Tier 0 (Manual) | All model promotions require human review and explicit approval | None (TM-40M standard) |
+| Tier 0 (Manual) | All model promotions require human review and explicit approval | None (SL 4M standard) |
 | Tier 1 (Monitored Automation) | Automated retraining; human approval gate before any production promotion | C2DAO design review of automation architecture |
 | Tier 2 (Gated Automation) | Automated retraining; automated promotion if all production readiness gates pass | C2DAO + mission owner sign-off; automatic rollback required |
 | Tier 3 (Full Automation) | Automated retraining and promotion with no human approval step | Not authorized on MSS without USAREUR-AF CIO exception |
@@ -146,7 +146,7 @@ TM-40M covered the baseline six-gate governance process. TM-50M introduces autom
 
 **BLUF:** Advanced MLOps on MSS means automating the full model lifecycle — data ingestion through production deployment — with explicit governance gates, rollback capability, and comprehensive monitoring. This chapter covers automated retraining pipeline design, A/B model deployment, canary releases, and production readiness gates.
 
-TM-40M introduced drift detection and manual retraining. TM-50M builds the infrastructure that makes retraining automated, auditable, and safe. The distinction is architectural: where TM-40M MLEs respond to drift, TM-50M MLEs design systems that detect drift, validate a new model, and promote it with defined human oversight requirements — consistently, every time, across every model on the platform.
+SL 4M introduced drift detection and manual retraining. SL 5M builds the infrastructure that makes retraining automated, auditable, and safe. The distinction is architectural: where SL 4M MLEs respond to drift, SL 5M MLEs design systems that detect drift, validate a new model, and promote it with defined human oversight requirements — consistently, every time, across every model on the platform.
 
 ### 2-2. Automated Retraining Pipeline Architecture
 
@@ -264,7 +264,7 @@ A canary release is a production deployment pattern where the new model version 
 
 ### 2-6. Production Readiness Gates
 
-Every automated retraining pipeline must enforce a defined set of production readiness gates before any model version reaches production. These gates are not the same as the governance approval gates in TM-40M — they are automated technical checks that run as part of the pipeline.
+Every automated retraining pipeline must enforce a defined set of production readiness gates before any model version reaches production. These gates are not the same as the governance approval gates in SL 4M — they are automated technical checks that run as part of the pipeline.
 
 **Required production readiness gates (automated):**
 
@@ -295,9 +295,9 @@ Automated gates must pass before the human-reviewed gates are presented. Do not 
 
 ### 3-1. Overview
 
-**BLUF:** Two neural architectures are operationally relevant at TM-50M level on MSS: transformer-based models for operational text (SITREPs, maintenance records, intelligence summaries) and graph neural networks (GNNs) for C2 network analysis. This chapter covers architecture selection, implementation, operational validation, and deployment considerations for both.
+**BLUF:** Two neural architectures are operationally relevant at SL 5M level on MSS: transformer-based models for operational text (SITREPs, maintenance records, intelligence summaries) and graph neural networks (GNNs) for C2 network analysis. This chapter covers architecture selection, implementation, operational validation, and deployment considerations for both.
 
-The majority of MSS ML use cases are served by well-tuned gradient boosting models and classical neural networks — the practitioner who reaches for a transformer for a tabular readiness prediction problem is choosing complexity without operational justification. TM-50M covers advanced neural architectures because there are genuine operational problems that require them, not because they are technically sophisticated.
+The majority of MSS ML use cases are served by well-tuned gradient boosting models and classical neural networks — the practitioner who reaches for a transformer for a tabular readiness prediction problem is choosing complexity without operational justification. SL 5M covers advanced neural architectures because there are genuine operational problems that require them, not because they are technically sophisticated.
 
 ### 3-2. Transformers for Operational Text
 
@@ -518,11 +518,11 @@ where:
 
 ### 5-1. Overview
 
-**BLUF:** Advanced interpretability at TM-50M level means operating SHAP and LIME at production scale, designing interpretability as a platform capability (not a per-model afterthought), and conducting bias audits that satisfy DoD AI Ethics Principles, Army CIO policy (April 2024), and RAIMTF requirements. This chapter covers SHAP at scale, LIME for local explanations, fairness metrics for operational models, bias remediation, and the audit documentation trail required for DoD compliance.
+**BLUF:** Advanced interpretability at SL 5M level means operating SHAP and LIME at production scale, designing interpretability as a platform capability (not a per-model afterthought), and conducting bias audits that satisfy DoD AI Ethics Principles, Army CIO policy (April 2024), and RAIMTF requirements. This chapter covers SHAP at scale, LIME for local explanations, fairness metrics for operational models, bias remediation, and the audit documentation trail required for DoD compliance.
 
 ### 5-2. SHAP at Production Scale
 
-TM-40M introduced SHAP for model explanation. At TM-50M level, the challenge is not computing SHAP — it is computing SHAP at the volume, frequency, and latency that production operational models require.
+SL 4M introduced SHAP for model explanation. At SL 5M level, the challenge is not computing SHAP — it is computing SHAP at the volume, frequency, and latency that production operational models require.
 
 **SHAP computational complexity by explainer type:**
 
@@ -563,7 +563,7 @@ TM-40M introduced SHAP for model explanation. At TM-50M level, the challenge is 
    - `top_features`: pre-computed array of (feature_name, shap_value) sorted by |shap_value| descending, top 5 — pre-computation reduces dashboard rendering latency
    Registering this schema in the MSS Ontology as a standard property set enables -30 builders to consume explanations without knowing the underlying model.
 
-2. **Implement explainer selection logic.** Write a utility function that, given a trained model artifact, selects the appropriate explainer type (TreeExplainer for tree models, LinearExplainer for linear models, DeepExplainer for neural networks) and instantiates it with a compressed background dataset. This function is the platform library that TM-40M MLEs call — they should not need to implement explainer selection themselves.
+2. **Implement explainer selection logic.** Write a utility function that, given a trained model artifact, selects the appropriate explainer type (TreeExplainer for tree models, LinearExplainer for linear models, DeepExplainer for neural networks) and instantiates it with a compressed background dataset. This function is the platform library that SL 4M MLEs call — they should not need to implement explainer selection themselves.
 
 3. **Integrate explanation into the inference Transform.** Modify the standard inference Transform template to include an explanation step after prediction. For batch models: compute SHAP values for all predictions in the batch, append as columns to the output dataset. For models where TreeExplainer is applicable, this adds < 5% to total inference time at typical MSS batch sizes (10k–100k records).
 
@@ -757,7 +757,7 @@ The fallback behavior must be documented in the pipeline runbook and tested in a
 
 **BLUF:** ML models on MSS face real security threats: adversarial inputs designed to cause misprediction, data poisoning attacks that corrupt the training process, and model extraction attacks that reverse-engineer proprietary model behavior. This chapter covers the threat model for MSS ML systems, defensive techniques for adversarial robustness, data poisoning detection, model extraction defense, and supply chain security for ML artifacts.
 
-ML security is not a research concern on MSS — it is an operational requirement. USAREUR-AF MSS models inform decisions in a contested information environment. A threat actor with knowledge of the operational models used for readiness assessment, logistics forecasting, or anomaly detection has an operational incentive to subvert those models. The TM-50M MLE is responsible for ensuring that MSS models are hardened against these threat classes.
+ML security is not a research concern on MSS — it is an operational requirement. USAREUR-AF MSS models inform decisions in a contested information environment. A threat actor with knowledge of the operational models used for readiness assessment, logistics forecasting, or anomaly detection has an operational incentive to subvert those models. The SL 5M MLE is responsible for ensuring that MSS models are hardened against these threat classes.
 
 ### 7-2. Threat Model for MSS ML Systems
 
@@ -883,7 +883,7 @@ If any anomaly is detected, quarantine the checkpoint, notify the C2DAO, and do 
 
 ### 8-1. Overview
 
-**BLUF:** TM-50M MLEs design and lead the ML platform that TM-40M practitioners build on. This chapter covers shared feature store design, model registry architecture, experiment tracking at scale, cross-track integration (TM-40H, TM-40G), code review standards for production ML, reproducibility requirements, and the production readiness framework for leading an ML team.
+**BLUF:** SL 5M MLEs design and lead the ML platform that SL 4M practitioners build on. This chapter covers shared feature store design, model registry architecture, experiment tracking at scale, cross-track integration (SL 4H, SL 4G), code review standards for production ML, reproducibility requirements, and the production readiness framework for leading an ML team.
 
 ### 8-2. Shared Feature Store Design
 
@@ -935,9 +935,9 @@ A feature store is a centralized system for storing, serving, and managing ML fe
 
 ### 8-4. Model Registry Architecture
 
-> **NOTE:** Foundry has no native "Model Registry" product. The MSS model registry described in this section is MSS-built infrastructure: a versioned Foundry dataset serving as the authoritative model catalog, combined with the governance tracking system and documentation artifacts defined by the C2DAO. The deployment pattern for a registered model is: batch inference Transform writing to a Foundry dataset → output dataset surfaced as a computed Object property via the Ontology (or consumed via AIP Logic integration). TM-50M MLEs design and maintain this MSS-internal construct — it is not a Foundry platform capability that is provisioned or configured through the Foundry UI.
+> **NOTE:** Foundry has no native "Model Registry" product. The MSS model registry described in this section is MSS-built infrastructure: a versioned Foundry dataset serving as the authoritative model catalog, combined with the governance tracking system and documentation artifacts defined by the C2DAO. The deployment pattern for a registered model is: batch inference Transform writing to a Foundry dataset → output dataset surfaced as a computed Object property via the Ontology (or consumed via AIP Logic integration). SL 5M MLEs design and maintain this MSS-internal construct — it is not a Foundry platform capability that is provisioned or configured through the Foundry UI.
 
-The MSS model registry is the authoritative record of all ML models in the platform. At TM-50M level, the registry is not just a storage system — it is the governance backbone of the ML platform.
+The MSS model registry is the authoritative record of all ML models in the platform. At SL 5M level, the registry is not just a storage system — it is the governance backbone of the ML platform.
 
 **Model registry required fields for MSS:**
 
@@ -983,17 +983,17 @@ Experiment tracking at scale means that every training run is logged, reproducib
 
 Reproducibility requirement: given an experiment run ID, any MLE on the team must be able to reproduce the training run and obtain identical (within floating-point tolerance) model weights. This requires: the exact training dataset version, the exact feature pipeline version, the exact hyperparameter configuration, and the exact random seed — all recorded in the experiment tracker.
 
-### 8-6. Cross-Track Integration: TM-40H (AI Engineer) and TM-40G (ORSA)
+### 8-6. Cross-Track Integration: SL 4H (AI Engineer) and SL 4G (ORSA)
 
-TM-50M MLEs design integration interfaces between the ML platform and adjacent capability tracks. The two most common integration points are:
+SL 5M MLEs design integration interfaces between the ML platform and adjacent capability tracks. The two most common integration points are:
 
-**Integration with TM-40H (AI Engineer): AIP Logic and Agent Studio**
+**Integration with SL 4H (AI Engineer): AIP Logic and Agent Studio**
 
-> **NOTE — Palantir Developers reference:** *Applied AI: Scaling AI Workflows and Task Execution with AIP* — Covers how AIP workflows scale across complex, multi-step task execution — directly relevant to the design of AIP Logic integrations that consume ML model outputs from the MSS platform. Provides the TM-50M MLE with the AI Engineer's perspective on workflow orchestration, clarifying the interface design requirements for model endpoints. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+> **NOTE — Palantir Developers reference:** *Applied AI: Scaling AI Workflows and Task Execution with AIP* — Covers how AIP workflows scale across complex, multi-step task execution — directly relevant to the design of AIP Logic integrations that consume ML model outputs from the MSS platform. Provides the SL 5M MLE with the AI Engineer's perspective on workflow orchestration, clarifying the interface design requirements for model endpoints. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 AIP Logic enables AI-powered workflows that can call ML model endpoints as part of a broader automated pipeline. Agent Studio enables autonomous agents that can query model outputs, trigger Actions, and orchestrate multi-step workflows.
 
-| Integration Pattern | TM-40H Responsibility | TM-50M MLE Responsibility |
+| Integration Pattern | SL 4H Responsibility | SL 5M MLE Responsibility |
 |---|---|---|
 | Agent calls model endpoint | AI Eng designs the agent workflow and the endpoint call | MLE ensures endpoint is documented, schema-stable, and latency-compliant; model card is readable by AI Eng |
 | AIP Logic uses model output as condition | AI Eng implements the Logic workflow | MLE registers the model output schema in the Ontology; ensures prediction confidence scores are calibrated |
@@ -1001,11 +1001,11 @@ AIP Logic enables AI-powered workflows that can call ML model endpoints as part 
 
 The MLE-AI Eng interface contract: the MLE publishes a stable inference interface (schema, latency SLA, versioning policy) and a readable model card. The AI Eng is a consumer, not a model expert. The MLE cannot expect the AI Eng to debug model behavior — that is the MLE's responsibility.
 
-**Integration with TM-40G (ORSA): Statistical Validation and Uncertainty Quantification**
+**Integration with SL 4G (ORSA): Statistical Validation and Uncertainty Quantification**
 
 ORSA practitioners on MSS are the statistical domain experts. They are the most qualified reviewers of model evaluation methodology, uncertainty quantification approaches, and the interpretation of model outputs in operational decision frameworks.
 
-| Integration Pattern | TM-40G ORSA Responsibility | TM-50M MLE Responsibility |
+| Integration Pattern | SL 4G ORSA Responsibility | SL 5M MLE Responsibility |
 |---|---|---|
 | Validation of evaluation methodology | Reviews evaluation metrics for statistical validity; flags methodological weaknesses | Presents methodology for ORSA review; incorporates feedback; documents disagreements |
 | Uncertainty quantification | Advises on calibration, confidence interval construction, decision thresholds | Implements UQ outputs; surfaces them in model card and dashboard |
@@ -1033,41 +1033,41 @@ Code review in production ML must check correctness properties that standard sof
 | Resource cleanup | Are large objects (training datasets, intermediate tensors) explicitly deleted after use? (Foundry workspace memory is shared; leaking memory affects other jobs) |
 | Governance integration | Are all governance artifacts (evaluation metrics, model card, deployment authorization) generated by the pipeline, not manually assembled post-hoc? |
 
-> **NOTE:** Code review is not optional for production ML code on MSS. Every pull request that touches a production feature pipeline, model training script, or inference Transform must have at least one reviewer who is a TM-40M qualified MLE. Senior code (automated retraining pipelines, shared feature store Transforms, model registry integration) requires a TM-50M qualified reviewer.
+> **NOTE:** Code review is not optional for production ML code on MSS. Every pull request that touches a production feature pipeline, model training script, or inference Transform must have at least one reviewer who is a SL 4M qualified MLE. Senior code (automated retraining pipelines, shared feature store Transforms, model registry integration) requires a SL 5M qualified reviewer.
 
 ### 8-8. Leading ML Capability: Production Readiness Gates and Team Development
 
-The TM-50M MLE's leadership responsibilities extend beyond technical design. They include: setting and enforcing production readiness standards, developing TM-40M practitioners on the team, and building a culture of operational ML accountability.
+The SL 5M MLE's leadership responsibilities extend beyond technical design. They include: setting and enforcing production readiness standards, developing SL 4M practitioners on the team, and building a culture of operational ML accountability.
 
 **Production readiness framework for MSS ML teams:**
 
 | Stage | Artifact Required | Reviewer |
 |---|---|---|
 | Use case authorization | Use case brief; data availability assessment | C2DAO |
-| Design review | Model design document; feature pipeline spec; governance plan | TM-50M senior MLE + C2DAO |
-| Pre-training review | Data quality report; feature schema validation; bias plan | TM-50M senior MLE |
-| Evaluation review | Evaluation report; bias audit; ORSA methodology sign-off | Mission owner + TM-50M senior MLE |
-| Pre-deployment review | Full production readiness checklist (Appendix A); model card (Appendix B); rollback procedure | TM-50M senior MLE + C2DAO |
-| Post-deployment review (30 days) | Monitoring report; drift status; operational user feedback | TM-50M senior MLE + data steward |
+| Design review | Model design document; feature pipeline spec; governance plan | SL 5M senior MLE + C2DAO |
+| Pre-training review | Data quality report; feature schema validation; bias plan | SL 5M senior MLE |
+| Evaluation review | Evaluation report; bias audit; ORSA methodology sign-off | Mission owner + SL 5M senior MLE |
+| Pre-deployment review | Full production readiness checklist (Appendix A); model card (Appendix B); rollback procedure | SL 5M senior MLE + C2DAO |
+| Post-deployment review (30 days) | Monitoring report; drift status; operational user feedback | SL 5M senior MLE + data steward |
 
-**Team development responsibilities for TM-50M MLEs:**
+**Team development responsibilities for SL 5M MLEs:**
 
-- Conduct structured code review for all TM-40M practitioners, providing documented, specific, actionable feedback — not just approval/rejection
+- Conduct structured code review for all SL 4M practitioners, providing documented, specific, actionable feedback — not just approval/rejection
 - Lead post-incident reviews for all production ML incidents; publish findings to the team
 - Maintain the team's shared knowledge base: approved patterns, anti-patterns with documented failure modes, lessons from past incidents
 - Review and update production readiness gate criteria annually; incorporate lessons from incidents and from platform evolution
-- Identify knowledge gaps in the TM-40M team; recommend or design targeted training to address them
+- Identify knowledge gaps in the SL 4M team; recommend or design targeted training to address them
 - Represent ML capability requirements to C2DAO in architecture reviews; advocate for platform investments that unblock the team
 
 ---
 
 ## APPENDIX A — ML PRODUCTION READINESS CHECKLIST (ADVANCED)
 
-**Purpose:** This checklist extends the TM-40M governance checklist for models operating under TM-50M scope: automated retraining pipelines, real-time inference endpoints, federated models, or models with advanced neural architectures. Complete all items. Mark N/A only if the item is genuinely inapplicable — document the justification.
+**Purpose:** This checklist extends the SL 4M governance checklist for models operating under SL 5M scope: automated retraining pipelines, real-time inference endpoints, federated models, or models with advanced neural architectures. Complete all items. Mark N/A only if the item is genuinely inapplicable — document the justification.
 
 **Model Identifier:** ____________________________
 **Version:** ____________________________
-**Responsible TM-50M MLE:** ____________________________
+**Responsible SL 5M MLE:** ____________________________
 **Date of Review:** ____________________________
 
 ---
@@ -1162,8 +1162,8 @@ The TM-50M MLE's leadership responsibilities extend beyond technical design. The
 | 7.3 | Experiment run fully reproducible from registry (dataset version, feature version, seed, config) | ☐ | |
 | 7.4 | Model registered in MSS model registry with all required fields complete | ☐ | |
 | 7.5 | Model card complete per Appendix B; all RAIMTF-required sections present | ☐ | |
-| 7.6 | Code review completed by TM-50M qualified reviewer for all production-scope code | ☐ | |
-| 7.7 | TM-40M governance checklist also completed (this checklist does not replace it) | ☐ | |
+| 7.6 | Code review completed by SL 5M qualified reviewer for all production-scope code | ☐ | |
+| 7.7 | SL 4M governance checklist also completed (this checklist does not replace it) | ☐ | |
 | 7.8 | C2DAO deployment authorization obtained and logged | ☐ | |
 
 **Section scores:**
@@ -1173,7 +1173,7 @@ The TM-50M MLE's leadership responsibilities extend beyond technical design. The
 **Decision:** All items checked (or N/A with justification) required before production deployment.
 Any unchecked item without documented N/A justification is a STOP condition.
 
-**TM-50M Senior MLE Signature:** ____________________________
+**SL 5M Senior MLE Signature:** ____________________________
 **Date:** ____________________________
 **C2DAO Authorization Reference:** ____________________________
 
@@ -1253,7 +1253,7 @@ Any unchecked item without documented N/A justification is a STOP condition.
 
 **SECTION 5: BIAS AND FAIRNESS (required for personnel models; recommended for all models)**
 
-5-1. **Protected Attributes Evaluated.** [List all protected attributes evaluated per Section 5-5 of TM-50M.]
+5-1. **Protected Attributes Evaluated.** [List all protected attributes evaluated per Section 5-5 of SL 5M.]
 
 5-2. **Disaggregated Performance.**
 
@@ -1416,7 +1416,7 @@ Any unchecked item without documented N/A justification is a STOP condition.
 
 ---
 
-*TM-50M — Advanced Machine Learning Engineering — Maven Smart System*
+*SL 5M — Advanced Machine Learning Engineering — Maven Smart System*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA*
 *Wiesbaden, Germany*
 

@@ -165,33 +165,33 @@ add_textbox(slide, "LEARNING PATH",
     font_size=Pt(10), bold=True, color=WHITE)
 
 path_text = (
-    "TM-10  Maven User\n"
+    "SL 1  Maven User\n"
     "All personnel — navigate MSS, read\n"
     "dashboards, verify data currency\n"
     "\n"
-    "      ↓  prereq: TM-10\n"
+    "      ↓  prereq: SL 1\n"
     "\n"
-    "TM-20  Builder\n"
+    "SL 2  Builder\n"
     "All staff — dashboards, forms,\n"
     "basic pipelines (no-code / low-code)\n"
     "\n"
-    "      ↓  prereq: TM-20\n"
+    "      ↓  prereq: SL 2\n"
     "\n"
-    "TM-30  Advanced Builder\n"
+    "SL 3  Advanced Builder\n"
     "Data-adjacent specialists, unit data\n"
     "leads — pipeline authoring, governance,\n"
     "production promotion\n"
     "\n"
-    "      ↓  prereq: TM-30\n"
+    "      ↓  prereq: SL 3\n"
     "\n"
-    "TM-40  Role-Specific Tracks\n"
+    "SL 4  Role-Specific Tracks\n"
     "WFF Functional (A–F): INT · FIRES\n"
     "M&M · SUST · PROT · Mission Cmd\n"
     "Technical Specialist (G–M)\n"
     "\n"
     "      ↓  (specialists only)\n"
     "\n"
-    "TM-50  Advanced / Expert"
+    "SL 5  Advanced / Expert"
 )
 add_textbox(slide, path_text,
     COL1_L + Inches(0.1), c1_path_top + Inches(0.38),
@@ -204,18 +204,18 @@ c2_top = BODY_TOP
 # WFF TRACKS card
 card2a_h = Inches(2.55)
 add_card(slide, COL2_L, c2_top, COL_W, card2a_h, header_color=ARMY_GREEN)
-add_textbox(slide, "TM-40 WFF FUNCTIONAL TRACKS (A–F)",
+add_textbox(slide, "SL 4 WFF FUNCTIONAL TRACKS (A–F)",
     COL2_L + Inches(0.08), c2_top + Inches(0.05),
     COL_W - Inches(0.1), Inches(0.26),
     font_size=Pt(10), bold=True, color=WHITE)
 
 wff_rows = [
-    ("TM-40A", "Intelligence"),
-    ("TM-40B", "Fires"),
-    ("TM-40C", "Movement & Maneuver"),
-    ("TM-40D", "Sustainment"),
-    ("TM-40E", "Protection"),
-    ("TM-40F", "Mission Command"),
+    ("SL 4A", "Intelligence"),
+    ("SL 4B", "Fires"),
+    ("SL 4C", "Movement & Maneuver"),
+    ("SL 4D", "Sustainment"),
+    ("SL 4E", "Protection"),
+    ("SL 4F", "Mission Command"),
 ]
 row_top = c2_top + Inches(0.38)
 row_h   = Inches(0.29)
@@ -235,7 +235,7 @@ for i, (code, name) in enumerate(wff_rows):
         font_size=Pt(9.5), color=ARMY_BLACK)
 
 prereq_note_top = row_top + len(wff_rows) * row_h + Inches(0.06)
-add_textbox(slide, "Prereq: TM-30  ·  No coding required  ·  Audience: functional WFF staff",
+add_textbox(slide, "Prereq: SL 3  ·  No coding required  ·  Audience: functional WFF staff",
     COL2_L + Inches(0.1), prereq_note_top,
     COL_W - Inches(0.15), Inches(0.32),
     font_size=Pt(8.5), italic=True, color=RGBColor(0x55, 0x55, 0x55))
@@ -267,7 +267,7 @@ add_textbox(slide, "SCOPE & SCALE",
     font_size=Pt(10), bold=True, color=WHITE)
 
 bullets = [
-    "3 core courses (TM-10/20/30) + specialty tracks for all roles",
+    "3 core courses (SL 1/2/3) + specialty tracks for all roles",
     "160+ published PDFs; Markdown source in version control",
     "Dedicated exercises with hands-on labs per track",
     "PRE + POST assessments for every course",
@@ -330,11 +330,11 @@ doc_items = [
     ("Data Literacy — Senior Leaders",
      "Strategic framing for O-5+, CSM+, and senior civilians. Principles, not procedures."),
     ("Data Literacy — Technical Reference",
-     "Foundation data concepts for all personnel. Recommended pre-reading before TM-10."),
+     "Foundation data concepts for all personnel. Recommended pre-reading before SL 1."),
     ("Foundry Glossary",
      "Army data terms mapped to Palantir Foundry equivalents. All personnel."),
     ("CDA Constraints & Directives",
-     "Authoritative constraints on data architecture decisions. Required for TM-30+ and all specialists."),
+     "Authoritative constraints on data architecture decisions. Required for SL 3+ and all specialists."),
 ]
 di_top = c3_doc_top + Inches(0.38)
 di_h   = Inches(0.52)

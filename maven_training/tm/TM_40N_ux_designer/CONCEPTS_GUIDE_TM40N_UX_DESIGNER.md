@@ -1,8 +1,8 @@
-# CONCEPTS GUIDE — TM-40N COMPANION — UI/UX DESIGNER · MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 4N COMPANION — UI/UX DESIGNER · MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** The Designer is the voice of the user on the product team. Every interface a Soldier touches was shaped — well or poorly — by design decisions. TM-40N ensures those decisions are informed, validated, and implementable.
-> **Purpose:** Develops mental models required to practice Soldier Centered Design, build effective information architectures, and deliver accessible, operational application designs on MSS. Read before beginning TM-40N task instruction.
-> **Prereqs:** TM-30 REQUIRED (and TM-10 + TM-20 implied). Design tool familiarity recommended.
+> **Forward:** The Designer is the voice of the user on the product team. Every interface a Soldier touches was shaped — well or poorly — by design decisions. SL 4N ensures those decisions are informed, validated, and implementable.
+> **Purpose:** Develops mental models required to practice Soldier Centered Design, build effective information architectures, and deliver accessible, operational application designs on MSS. Read before beginning SL 4N task instruction.
+> **Prereqs:** SL 3 REQUIRED (and SL 1 + SL 2 implied). Design tool familiarity recommended.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -15,21 +15,21 @@
 
 | Tier | Designation | Relationship to Designer |
 |------|-------------|-------------------------|
-| TM-10 | Maven User | Primary end user — designs must serve this population |
-| TM-20 | Builder | Builds Workshop apps from Designer specifications |
-| TM-30 | Advanced Builder | Builds complex Workshop/Pipeline apps from Designer specifications |
-| TM-40J | Program Manager | Balanced team partner — owns backlog, validates priorities |
-| TM-40L | Software Engineer | Balanced team partner — implements custom code from Designer specs |
-| TM-40N | **UI/UX Designer** | **Conducts research, defines design, validates usability** |
-| TM-40O | Platform Engineer | Infrastructure partner — defines deployment/performance constraints |
+| SL 1 | Maven User | Primary end user — designs must serve this population |
+| SL 2 | Builder | Builds Workshop apps from Designer specifications |
+| SL 3 | Advanced Builder | Builds complex Workshop/Pipeline apps from Designer specifications |
+| SL 4J | Program Manager | Balanced team partner — owns backlog, validates priorities |
+| SL 4L | Software Engineer | Balanced team partner — implements custom code from Designer specs |
+| SL 4N | **UI/UX Designer** | **Conducts research, defines design, validates usability** |
+| SL 4O | Platform Engineer | Infrastructure partner — defines deployment/performance constraints |
 
 The Designer's distinguishing criterion: you are the team member whose primary job is understanding the user. PMs understand stakeholder priorities. SWEs understand technical feasibility. The Designer understands what the person actually sitting at the keyboard needs to see, do, and decide — and translates that understanding into implementable design artifacts.
 
 **Designer boundaries (owned by others):**
-- Backlog prioritization decisions — TM-40J
-- Code implementation — TM-40L, TM-30
-- Infrastructure and deployment — TM-40O
-- Data modeling and pipeline design — TM-30, TM-40H
+- Backlog prioritization decisions — SL 4J
+- Code implementation — SL 4L, SL 3
+- Infrastructure and deployment — SL 4O
+- Data modeling and pipeline design — SL 3, SL 4H
 
 The boundary is not about capability — it is about primary responsibility and design ownership.
 
@@ -129,17 +129,17 @@ Designing for accessibility and designing for operational conditions produce the
 **The balanced team triad:**
 
 ```
-     PM (TM-40J)
+     PM (SL 4J)
     /           \
    /    USER     \
   /   RESEARCH    \
-Designer (TM-40N) ——— Engineer (TM-40L)
+Designer (SL 4N) ——— Engineer (SL 4L)
 ```
 
 The three roles form a triangle around the user. The Designer conducts the research. The PM translates findings into priorities. The Engineer translates priorities into working software. The Designer validates the working software against the original user needs. The cycle repeats.
 
 **Handoff quality checklist:**
-A design handoff is ready for engineering when a SWE (TM-40L) can:
+A design handoff is ready for engineering when a SWE (SL 4L) can:
 - [ ] Build the interface without asking "what should happen when...?" for any state
 - [ ] Identify every data source (Ontology property, computed value, static text)
 - [ ] Implement every interaction (click, filter, sort, submit, navigate)
@@ -165,8 +165,8 @@ If any of these require a follow-up conversation, the handoff is incomplete.
 **Workshop constraints (what you cannot do):**
 - No custom CSS within Workshop (use Slate or custom widgets for pixel-perfect design)
 - Limited responsive behavior — test at all target screen sizes
-- Widget catalog is fixed — cannot create new widget types without custom code (TM-40L territory)
+- Widget catalog is fixed — cannot create new widget types without custom code (SL 4L territory)
 - Animation and transitions are not supported in Workshop
 - Complex multi-step workflows require careful state management
 
-**Design implication:** Design within Workshop's vocabulary first. If the requirement exceeds Workshop capabilities, escalate to TM-40L for custom implementation via Slate or OSDK application. Document which design elements require custom code vs. Workshop-native implementation.
+**Design implication:** Design within Workshop's vocabulary first. If the requirement exceeds Workshop capabilities, escalate to SL 4L for custom implementation via Slate or OSDK application. Document which design elements require custom code vs. Workshop-native implementation.

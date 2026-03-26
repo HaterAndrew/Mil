@@ -1,6 +1,6 @@
 # ENVIRONMENT SETUP — EX_40M ML Engineer
 
-**Track:** EX_40M — ML Engineer (TM-40M) | **Prerequisite:** TM-30 REQUIRED | **Continuation:** TM-50M — Advanced ML Engineer
+**Track:** EX_40M — ML Engineer (SL 4M) | **Prerequisite:** SL 3 REQUIRED | **Continuation:** SL 5M — Advanced ML Engineer
 **Companion exams:** EXAM_TM40M_PRE (administer before exercise), EXAM_TM40M_POST (administer after exercise)
 
 ## Environment Type

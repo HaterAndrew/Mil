@@ -1,10 +1,10 @@
 # EX_40E — Protection
-## Practical Exercise — TM-40E Proficiency
+## Practical Exercise — SL 4E Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-10, TM-20, TM-30 (required); TM-40E and CONCEPTS_GUIDE_TM40E_PROTECTION (current track) |
+| **Prerequisite** | SL 1, SL 2, SL 3 (required); SL 4E and CONCEPTS_GUIDE_TM40E_PROTECTION (current track) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS training instance, standard user access — see ENVIRONMENT_SETUP.md |
 | **Companion TM** | TM_40E_PROTECTION.md |

@@ -8,7 +8,7 @@
 | **Program** | Maven Smart System (MSS) Training |
 | **Proponent** | USAREUR-AF C2DAO |
 | **Effective Date** | March 2026 |
-| **Applies To** | All trainees enrolled in TM-10 through TM-50O; T3-I and T3-F candidates |
+| **Applies To** | All trainees enrolled in SL 1 through SL 5O; T3-I and T3-F candidates |
 | **Classification** | — |
 
 > **SUPERSESSION:** This CAD supersedes no prior publication. Initial publication: March 2026.
@@ -23,7 +23,7 @@ This CAD governs all administrative requirements for MSS training. Read it befor
 
 ### 1-2. Training Proponent
 
-**USAREUR-AF C2DAO** is the proponent for all MSS training. Course content, access provisioning, schedule, and evaluation disputes go to C2DAO. Your unit MSS Administrator handles account provisioning for standard access (TM-10/20). C2DAO handles elevated access (TM-30 AIP, TM-40 Code Workspace, TM-40L OSDK).
+**USAREUR-AF C2DAO** is the proponent for all MSS training. Course content, access provisioning, schedule, and evaluation disputes go to C2DAO. Your unit MSS Administrator handles account provisioning for standard access (SL 1/SL 2). C2DAO handles elevated access (SL 3 AIP, SL 4 Code Workspace, SL 4L OSDK).
 
 **Proponent Point of Contact:**
 - Organization: USAREUR-AF C2DAO Training Branch
@@ -38,19 +38,19 @@ All training is in the **MSS Training Environment** — a Foundry instance separ
 
 | Course | Typical Cadence | Max Class Size | Min Class Size |
 |---|---|---|---|
-| TM-10 | Monthly or as-needed | 20 students | 4 students |
-| TM-20 | Quarterly | 12 students | 4 students |
-| TM-30 | Quarterly | 8 students | 3 students |
-| TM-40A–F (WFF, each track) | Quarterly or as-needed (high demand) | 12 students | 4 students |
-| TM-40G/H/M/L | Semi-annual or on demand | 6 students | 2 students |
-| TM-40J/K | Quarterly | 8 students | 3 students |
-| TM-40N/O | Semi-annual or on demand | 6 students | 2 students |
-| TM-50G–O (Advanced Specialist) | Semi-annual or annual | 6 students | 2 students |
+| SL 1 | Monthly or as-needed | 20 students | 4 students |
+| SL 2 | Quarterly | 12 students | 4 students |
+| SL 3 | Quarterly | 8 students | 3 students |
+| SL 4A–F (WFF, each track) | Quarterly or as-needed (high demand) | 12 students | 4 students |
+| SL 4G/H/M/L | Semi-annual or on demand | 6 students | 2 students |
+| SL 4J/K | Quarterly | 8 students | 3 students |
+| SL 4N/O | Semi-annual or on demand | 6 students | 2 students |
+| SL 5G–O (Advanced Specialist) | Semi-annual or annual | 6 students | 2 students |
 | **Foundry Bootcamp (FBC)** | **Quarterly (4x per FY)** | **16 participants** | **4 participants** |
 | **T3-I (Instructor Certification)** | **Semi-annual** | **8 candidates** | **3 candidates** |
 | **T3-F (MSC Force Multiplier)** | **Quarterly (aligned with MTT rotation)** | **8 candidates** | **3 candidates** |
 
-> **NOTE:** WFF tracks (TM-40A–F) are expected to be the highest-volume courses after TM-10/20. Plan for more frequent scheduling. Each track runs independently; functional staff attend only the track relevant to their WFF assignment.
+> **NOTE:** WFF tracks (SL 4A–F) are expected to be the highest-volume courses after SL 1/SL 2. Plan for more frequent scheduling. Each track runs independently; functional staff attend only the track relevant to their WFF assignment.
 
 > **NOTE (FBC):** The Foundry Bootcamp is a separate event outside the TM course series. It is listed here for scheduling coordination purposes only. FBC governance is in FBC-SOP-001 (FOUNDRY_BOOTCAMP_SOP.md). FBC enrollment uses the standard Enrollment Request Form (Appendix A) plus a Project Brief (Appendix D). Lead time: T-21 days minimum; Project Brief due T-14 days.
 
@@ -87,35 +87,35 @@ Prerequisites are verified by C2DAO before a seat is confirmed. Do not assume en
 
 | Course | Prerequisites (all must be verified as Go) |
 |---|---|
-| TM-10 | None. All personnel eligible. |
-| TM-20 | TM-10 Go on file |
-| TM-30 | TM-10 and TM-20 Go on file |
-| TM-40A (Intel WFF) | TM-10, TM-20, and TM-30 Go on file (all required). |
-| TM-40B (Fires WFF) | TM-10, TM-20, and TM-30 Go on file (all required). |
-| TM-40C (M2 WFF) | TM-10, TM-20, and TM-30 Go on file (all required). |
-| TM-40D (SUST WFF) | TM-10, TM-20, and TM-30 Go on file (all required). |
-| TM-40E (PROT WFF) | TM-10, TM-20, and TM-30 Go on file (all required). |
-| TM-40F (MC WFF) | TM-10, TM-20, and TM-30 Go on file (all required). |
-| TM-40G | TM-10, TM-20, TM-30 Go on file (all required); quantitative background (statistics, linear algebra); Python or R proficiency |
-| TM-40H | TM-10, TM-20, TM-30 Go on file (all required); Python proficiency; Data Literacy Technical Reference read |
-| TM-40M | TM-10, TM-20, TM-30 Go on file (all required); Python proficiency (pandas, scikit-learn, PyTorch or equivalent) |
-| TM-40J | TM-10, TM-20, TM-30 Go on file (all required) |
-| TM-40K | TM-10, TM-20, TM-30 Go on file (all required) |
-| TM-40L | TM-10, TM-20, TM-30 Go on file (all required); TypeScript or Python proficiency; REST API familiarity |
-| TM-40N | TM-10, TM-20, TM-30 Go on file (all required); design tool familiarity |
-| TM-40O | TM-10, TM-20, TM-30 Go on file (all required); Linux sysadmin background; containers/Git proficiency |
-| TM-50G–O | Corresponding TM-40 track Go on file (required) |
+| SL 1 | None. All personnel eligible. |
+| SL 2 | SL 1 Go on file |
+| SL 3 | SL 1 and SL 2 Go on file |
+| SL 4A (Intel WFF) | SL 1, SL 2, and SL 3 Go on file (all required). |
+| SL 4B (Fires WFF) | SL 1, SL 2, and SL 3 Go on file (all required). |
+| SL 4C (M2 WFF) | SL 1, SL 2, and SL 3 Go on file (all required). |
+| SL 4D (SUST WFF) | SL 1, SL 2, and SL 3 Go on file (all required). |
+| SL 4E (PROT WFF) | SL 1, SL 2, and SL 3 Go on file (all required). |
+| SL 4F (MC WFF) | SL 1, SL 2, and SL 3 Go on file (all required). |
+| SL 4G | SL 1, SL 2, SL 3 Go on file (all required); quantitative background (statistics, linear algebra); Python or R proficiency |
+| SL 4H | SL 1, SL 2, SL 3 Go on file (all required); Python proficiency; Data Literacy Technical Reference read |
+| SL 4M | SL 1, SL 2, SL 3 Go on file (all required); Python proficiency (pandas, scikit-learn, PyTorch or equivalent) |
+| SL 4J | SL 1, SL 2, SL 3 Go on file (all required) |
+| SL 4K | SL 1, SL 2, SL 3 Go on file (all required) |
+| SL 4L | SL 1, SL 2, SL 3 Go on file (all required); TypeScript or Python proficiency; REST API familiarity |
+| SL 4N | SL 1, SL 2, SL 3 Go on file (all required); design tool familiarity |
+| SL 4O | SL 1, SL 2, SL 3 Go on file (all required); Linux sysadmin background; containers/Git proficiency |
+| SL 5G–O | Corresponding SL 4 track Go on file (required) |
 
-TM-30 is a hard prerequisite for ALL TM-40 tracks — both WFF functional (TM-40A–F) and specialist (TM-40G–O), including TM-40J and TM-40K. Do not enroll any personnel in a TM-40 track without a verified TM-30 Go on file.
+SL 3 is a hard prerequisite for ALL SL 4 tracks — both WFF functional (SL 4A–F) and specialist (SL 4G–O), including SL 4J and SL 4K. Do not enroll any personnel in a SL 4 track without a verified SL 3 Go on file.
 
 ### 2-3. Technical Prerequisite Verification (Specialist Tracks)
 
-For TM-40G, TM-40H, TM-40M, and TM-40L, trainees must verify the required access level is active **before Day 1**:
+For SL 4G, SL 4H, SL 4M, and SL 4L, trainees must verify the required access level is active **before Day 1**:
 
-- [ ] Code Workspace running provided test script (TM-40G, TM-40M)
-- [ ] AIP Logic authoring access active (TM-40H)
-- [ ] GPU-enabled Code Workspace running provided test script (TM-40M)
-- [ ] OSDK developer access and developer token working (TM-40L)
+- [ ] Code Workspace running provided test script (SL 4G, SL 4M)
+- [ ] AIP Logic authoring access active (SL 4H)
+- [ ] GPU-enabled Code Workspace running provided test script (SL 4M)
+- [ ] OSDK developer access and developer token working (SL 4L)
 
 If access is not confirmed before Day 1, the seat may be forfeited. Do not arrive expecting to resolve access issues on Day 1 morning.
 
@@ -128,18 +128,18 @@ If access is not confirmed before Day 1, the seat may be forfeited. Do not arriv
 Report on Day 1 NLT 15 minutes before the scheduled start time. Training starts at 0800 unless otherwise published. Report to the designated MSS Training Room.
 
 **Day 1 readiness checklist:**
-- [ ] CAC and PIV PIN — know your PIV PIN before you arrive. Tested on Day 1 of TM-10.
+- [ ] CAC and PIV PIN — know your PIV PIN before you arrive. Tested on Day 1 of SL 1.
 - [ ] Network connectivity to MSS Training Environment confirmed on the MSS-connected workstation
 - [ ] Account active in the MSS Training Environment (test login before Day 1)
 - [ ] Required pre-course reading completed (see course syllabus)
-- [ ] For TM-40L: configured laptop (Node.js LTS, TypeScript, IDE) brought to training
+- [ ] For SL 4L: configured laptop (Node.js LTS, TypeScript, IDE) brought to training
 
 ### 3-2. Day-Before Checklist
 
 - [ ] Log in to the MSS Training Environment and confirm your access level matches the requirement
 - [ ] Review the course syllabus to confirm pre-course reading is complete
 - [ ] Check that any elevated access (Builder, Editor, Code Workspace, OSDK) is active
-- [ ] For TM-40M/40L: run the provided test script on your workspace/environment; if it fails, contact C2DAO **today**, not tomorrow
+- [ ] For SL 4M/40L: run the provided test script on your workspace/environment; if it fails, contact C2DAO **today**, not tomorrow
 
 If access issues cannot be resolved before Day 1, notify your unit MSS Administrator and the C2DAO Training POC immediately.
 
@@ -149,7 +149,7 @@ If access issues cannot be resolved before Day 1, notify your unit MSS Administr
 - Printed or digital copy of the relevant TM (provided by C2DAO before course)
 - Printed course syllabus
 - Note-taking materials
-- For TM-40L: personal laptop configured per the pre-course checklist (external IDE permitted and recommended)
+- For SL 4L: personal laptop configured per the pre-course checklist (external IDE permitted and recommended)
 
 ---
 
@@ -161,17 +161,17 @@ Attendance at all scheduled blocks is required. A trainee who misses more than *
 
 | Course | Max Missed Hours (10% threshold) |
 |---|---|
-| TM-10 (8 hrs) | 0 hours — no absences permitted for a 1-day course |
-| TM-20 (40 hrs) | 4 hours |
-| TM-30 (40 hrs) | 4 hours |
-| TM-40A–F / WFF tracks (24 hrs) | 2.4 hours (effectively 0 — contact C2DAO if you must miss any time) |
-| TM-40G/H/M/L (40 hrs) | 4 hours |
-| TM-40J/K (32 hrs) | 3.2 hours |
-| TM-40N/O (40 hrs) | 4 hours |
+| SL 1 (8 hrs) | 0 hours — no absences permitted for a 1-day course |
+| SL 2 (40 hrs) | 4 hours |
+| SL 3 (40 hrs) | 4 hours |
+| SL 4A–F / WFF tracks (24 hrs) | 2.4 hours (effectively 0 — contact C2DAO if you must miss any time) |
+| SL 4G/H/M/L (40 hrs) | 4 hours |
+| SL 4J/K (32 hrs) | 3.2 hours |
+| SL 4N/O (40 hrs) | 4 hours |
 
 An absence does not excuse a trainee from evaluation. Missed instruction that covers evaluated tasks places the full burden of self-remediation on the trainee.
 
-**No absence from TM-40H Block 1 (AI Safety Seminar) is permitted under any circumstances.** This block cannot be made up independently. A trainee who misses it must attend TM-40H at a future iteration.
+**No absence from SL 4H Block 1 (AI Safety Seminar) is permitted under any circumstances.** This block cannot be made up independently. A trainee who misses it must attend SL 4H at a future iteration.
 
 ### 4-2. Tardiness
 
@@ -259,15 +259,15 @@ Within 1 duty day of a No-Go result:
 1. Evaluator provides written debrief identifying each failed task and reason for No-Go
 2. Instructor and trainee complete counseling documenting: failed tasks, recommended remediation plan, re-evaluation date
 3. Unit Training NCO is notified
-4. For TM-40G/H/M/L/N/O: trainee's commander is notified
+4. For SL 4G/H/M/L/N/O: trainee's commander is notified
 
 ### 6-3. Remediation Training Requirements
 
 | Course | Minimum Remediation Hours | Method |
 |---|---|---|
-| TM-10 | 2 hours | Self-study with TM + supervised lab with instructor |
-| TM-20, TM-40A–F (WFF), TM-40J, TM-40K | 4 hours | Supervised lab on failed tasks; build from scratch on a different dataset |
-| TM-30, TM-40G, TM-40H, TM-40M, TM-40L, TM-40N, TM-40O | 8 hours | Full-day supervised lab; rebuilding failed components |
+| SL 1 | 2 hours | Self-study with TM + supervised lab with instructor |
+| SL 2, SL 4A–F (WFF), SL 4J, SL 4K | 4 hours | Supervised lab on failed tasks; build from scratch on a different dataset |
+| SL 3, SL 4G, SL 4H, SL 4M, SL 4L, SL 4N, SL 4O | 8 hours | Full-day supervised lab; rebuilding failed components |
 
 Remediation focuses on failed tasks. The re-evaluation covers all course tasks — not just previously failed ones.
 
@@ -298,17 +298,17 @@ No-Go results, remediation completion, and re-evaluation results are all documen
 
 | Access Level | Description | Who Provisions | Lead Time |
 |---|---|---|---|
-| Viewer (TM-10) | View data, dashboards, Workshop apps, Contour, Quiver, AIP; cannot build or modify | Unit MSS Administrator | 5 duty days |
-| Builder (TM-20, 40A–F WFF, 40J, 40K) | Create projects, ingest data, build pipelines, Object Types, Actions, Workshop apps | Unit MSS Administrator | 5 duty days |
-| Editor (TM-30) | Edit and promote production data products; includes Builder capabilities | Unit MSS Administrator | 7 duty days |
-| AIP Logic Configuration (TM-30, 40K) | Configure AIP Logic workflows; cannot author | C2DAO or designated admin | 7 duty days |
-| AIP Logic Authoring (TM-40H) | Author and modify AIP Logic workflows | C2DAO only | 7–10 duty days |
-| Agent Studio (TM-40H) | Configure and test Agent Studio agents | C2DAO only | 7–10 duty days |
-| Code Workspace (TM-40G) | CPU-allocated Code Workspace for Python/R analysis | C2DAO only | 7–10 duty days |
-| GPU Code Workspace (TM-40M) | GPU-enabled Code Workspace for model training | C2DAO only | 10+ duty days |
-| OSDK Developer (TM-40L) | OSDK developer token; access to specific Object Types for development | C2DAO only | 10+ duty days |
-| Workshop Design (TM-40N) | Editor + AIP Logic configuration + design review access | C2DAO | 7–10 duty days |
-| Kubernetes Cluster (TM-40O) | Kubernetes cluster access + CI/CD pipeline access | C2DAO only | 10+ duty days |
+| Viewer (SL 1) | View data, dashboards, Workshop apps, Contour, Quiver, AIP; cannot build or modify | Unit MSS Administrator | 5 duty days |
+| Builder (SL 2, 40A–F WFF, 40J, 40K) | Create projects, ingest data, build pipelines, Object Types, Actions, Workshop apps | Unit MSS Administrator | 5 duty days |
+| Editor (SL 3) | Edit and promote production data products; includes Builder capabilities | Unit MSS Administrator | 7 duty days |
+| AIP Logic Configuration (SL 3, 40K) | Configure AIP Logic workflows; cannot author | C2DAO or designated admin | 7 duty days |
+| AIP Logic Authoring (SL 4H) | Author and modify AIP Logic workflows | C2DAO only | 7–10 duty days |
+| Agent Studio (SL 4H) | Configure and test Agent Studio agents | C2DAO only | 7–10 duty days |
+| Code Workspace (SL 4G) | CPU-allocated Code Workspace for Python/R analysis | C2DAO only | 7–10 duty days |
+| GPU Code Workspace (SL 4M) | GPU-enabled Code Workspace for model training | C2DAO only | 10+ duty days |
+| OSDK Developer (SL 4L) | OSDK developer token; access to specific Object Types for development | C2DAO only | 10+ duty days |
+| Workshop Design (SL 4N) | Editor + AIP Logic configuration + design review access | C2DAO | 7–10 duty days |
+| Kubernetes Cluster (SL 4O) | Kubernetes cluster access + CI/CD pipeline access | C2DAO only | 10+ duty days |
 
 ### 7-2. Access Troubleshooting
 
@@ -328,12 +328,12 @@ If you believe your MSS account credentials have been compromised, or if you obs
 
 | Course | Workstation | Network Access | Facilities | Special Equipment |
 |---|---|---|---|---|
-| TM-10 | Government workstation with CAC reader | MSS production environment | Classroom, projector | None |
-| TM-20 | Government workstation with CAC reader | MSS production + training sandbox | Classroom, projector | None |
-| TM-30 | Government workstation with CAC reader | MSS production + training sandbox | Classroom, projector, whiteboard | None |
-| TM-40 A–F (WFF) | Government workstation with CAC reader | MSS production + WFF-specific datasets | Classroom, projector | None |
-| TM-40 G–O (Specialist) | Government workstation with CAC reader | MSS training sandbox + development environment | Lab with individual workstations | IDE access (TM-40H/M/L) |
-| TM-50 G–O (Advanced) | Government workstation with CAC reader | MSS training sandbox + development environment | Lab with individual workstations | IDE access, GPU compute (TM-50M) |
+| SL 1 | Government workstation with CAC reader | MSS production environment | Classroom, projector | None |
+| SL 2 | Government workstation with CAC reader | MSS production + training sandbox | Classroom, projector | None |
+| SL 3 | Government workstation with CAC reader | MSS production + training sandbox | Classroom, projector, whiteboard | None |
+| SL 4 A–F (WFF) | Government workstation with CAC reader | MSS production + WFF-specific datasets | Classroom, projector | None |
+| SL 4 G–O (Specialist) | Government workstation with CAC reader | MSS training sandbox + development environment | Lab with individual workstations | IDE access (SL 4H/M/L) |
+| SL 5 G–O (Advanced) | Government workstation with CAC reader | MSS training sandbox + development environment | Lab with individual workstations | IDE access, GPU compute (SL 5M) |
 
 > **NOTE:** All courses require reliable network connectivity (minimum 5 Mbps per student) to the MSS training environment. Units hosting training must coordinate network access with their local NEC/signal section NLT 10 business days prior to course start.
 
@@ -408,20 +408,20 @@ Preferred Course Date:   _________________________________
 Alternate Date:          _________________________________
 
 PREREQUISITES (attach Go evaluation records)
-TM-10 Go Date:           _________ (required for TM-20+)
-TM-20 Go Date:           _________ (required for TM-30)
-TM-30 Go Date:           _________ (required for ALL TM-40 tracks — WFF and specialist)
+SL 1 Go Date:           _________ (required for SL 2+)
+SL 2 Go Date:           _________ (required for SL 3)
+SL 3 Go Date:           _________ (required for ALL SL 4 tracks — WFF and specialist)
 
-NOTE: TM-30 is a hard prerequisite for ALL TM-40 tracks (A–F WFF and G–O specialist).
-      No TM-40 enrollment will be confirmed without a verified TM-30 Go on file.
+NOTE: SL 3 is a hard prerequisite for ALL SL 4 tracks (A–F WFF and G–O specialist).
+      No SL 4 enrollment will be confirmed without a verified SL 3 Go on file.
 
-TECHNICAL PREREQUISITES (TM-40 specialist tracks only)
-[ ] Code Workspace provisioned and test script passing (TM-40G/M)
-[ ] AIP Logic authoring access confirmed (TM-40H)
-[ ] GPU Code Workspace provisioned and test script passing (TM-40M)
-[ ] OSDK developer token active (TM-40L)
-[ ] Workshop design access (Editor + AIP Logic configuration) confirmed (TM-40N)
-[ ] Kubernetes cluster access + CI/CD pipeline access confirmed (TM-40O)
+TECHNICAL PREREQUISITES (SL 4 specialist tracks only)
+[ ] Code Workspace provisioned and test script passing (SL 4G/M)
+[ ] AIP Logic authoring access confirmed (SL 4H)
+[ ] GPU Code Workspace provisioned and test script passing (SL 4M)
+[ ] OSDK developer token active (SL 4L)
+[ ] Workshop design access (Editor + AIP Logic configuration) confirmed (SL 4N)
+[ ] Kubernetes cluster access + CI/CD pipeline access confirmed (SL 4O)
 
 Unit Training NCO/Officer:  _______________________________
 Signature:               _________________________________
@@ -455,7 +455,7 @@ Date of Arrival USAREUR-AF: _____________________________
 COURSE COMPLETION RECORD
 =========================================================
 
-TM-10 | MAVEN USER (1 day)
+SL 1 | MAVEN USER (1 day)
   Attended:     ___________________________________________
   Evaluator:    ___________________________________________
   Result:       [ ] GO     [ ] NO-GO
@@ -463,7 +463,7 @@ TM-10 | MAVEN USER (1 day)
   Re-eval Result: [ ] GO   [ ] NO-GO  [ ] N/A
   Certified Date: ___________________________________________
 
-TM-20 | BUILDER (5 days)
+SL 2 | BUILDER (5 days)
   Attended:     ___________________________________________
   Evaluator:    ___________________________________________
   Result:       [ ] GO     [ ] NO-GO
@@ -471,7 +471,7 @@ TM-20 | BUILDER (5 days)
   Re-eval Result: [ ] GO   [ ] NO-GO  [ ] N/A
   Certified Date: ___________________________________________
 
-TM-30 | ADVANCED BUILDER (5 days)
+SL 3 | ADVANCED BUILDER (5 days)
   Attended:     ___________________________________________
   Evaluator:    ___________________________________________
   Result:       [ ] GO     [ ] NO-GO
@@ -479,8 +479,8 @@ TM-30 | ADVANCED BUILDER (5 days)
   Re-eval Result: [ ] GO   [ ] NO-GO  [ ] N/A
   Certified Date: ___________________________________________
 
-TM-40 WFF TRACK (circle):         40A  40B  40C  40D  40E  40F
-TM-40 SPECIALIST TRACK (circle):  40G  40H  40M  40J  40K  40L  40N  40O
+SL 4 WFF TRACK (circle):         40A  40B  40C  40D  40E  40F
+SL 4 SPECIALIST TRACK (circle):  40G  40H  40M  40J  40K  40L  40N  40O
   Attended:     ___________________________________________
   Evaluator:    ___________________________________________
   Result:       [ ] GO     [ ] NO-GO
@@ -500,7 +500,7 @@ Re-eval Scheduled:  _____________________________________
 =========================================================
 SUSTAINMENT TRAINING RECORD
 =========================================================
-Annual TM-10 refresher:
+Annual SL 1 refresher:
   Date:  _________________  Instructor:  ________________
   Date:  _________________  Instructor:  ________________
 
@@ -584,7 +584,7 @@ DSN / Email:    _________________________________________
 Bootcamp cycle:   [ ] FBC-1  [ ] FBC-2  [ ] FBC-3  [ ] FBC-4
 FY:             _________________________________________
 
-TM-20 Go on file (date): _______________________________
+SL 2 Go on file (date): _______________________________
 
 PROBLEM STATEMENT (2–5 sentences — what is the problem,
 who has it, what would solving it look like):
@@ -624,7 +624,7 @@ _________________________________________________________
 _________________________________________________________
 
 Does this project require any of the following?
-(If YES, route to TM-40 specialist enrollment instead of FBC)
+(If YES, route to SL 4 specialist enrollment instead of FBC)
 [ ] Python code                    YES / NO
 [ ] TypeScript / JavaScript code   YES / NO
 [ ] OSDK integration               YES / NO

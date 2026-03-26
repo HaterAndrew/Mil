@@ -376,25 +376,38 @@ def page_prereq_audit():
     prereq_issues = get_filtered_issues(issue_type="PREREQ_MISMATCH")
     stale_issues = get_filtered_issues(issue_type="STALE_REF")
 
+    # Convert TM-XX identifiers (from document context) to SL format (course context)
+    def _tm_to_sl(tm_id: str) -> str:
+        """Convert TM-XX document identifier to SL course code."""
+        _map = {"TM-10": "SL 1", "TM-20": "SL 2", "TM-30": "SL 3"}
+        if tm_id in _map:
+            return _map[tm_id]
+        import re as _re
+        m = _re.match(r"TM-(\d{2})([A-O])", tm_id)
+        if m:
+            level = {"40": "4", "50": "5"}.get(m.group(1), m.group(1))
+            return f"SL {level}{m.group(2)}"
+        return tm_id
+
     # Determine which TMs have issues
     tms_with_prereq_issues: set[str] = set()
     for issue in prereq_issues:
-        # Extract TM from description
+        # Extract TM from description (descriptions use TM-XX from file paths)
         import re
         m = re.search(r"(TM-\d{2}[A-M]?)\s+doc", issue.description)
         if m:
-            tms_with_prereq_issues.add(m.group(1))
+            tms_with_prereq_issues.add(_tm_to_sl(m.group(1)))
 
     tms_with_stale_refs: set[str] = set()
     for issue in stale_issues:
-        # Flag based on file path
+        # Flag based on file path (file paths use TM_XX format)
         import re
         m = re.search(r"TM[-_]?(\d{2})[-_]?([A-M])?", issue.file_path, re.IGNORECASE)
         if m:
             number = m.group(1)
             suffix = (m.group(2) or "").upper()
             tm_id = f"TM-{number}{suffix}" if suffix else f"TM-{number}"
-            tms_with_stale_refs.add(tm_id)
+            tms_with_stale_refs.add(_tm_to_sl(tm_id))
 
     # Render the chain diagram
     st.subheader("Prereq Chain")
@@ -402,34 +415,34 @@ def page_prereq_audit():
     # Foundation tier
     st.markdown("### Foundation")
     cols = st.columns(4)
-    _render_tm_card(cols[0], "TM-10", tms_with_prereq_issues, tms_with_stale_refs)
-    _render_tm_card(cols[1], "TM-20", tms_with_prereq_issues, tms_with_stale_refs)
-    _render_tm_card(cols[2], "TM-30", tms_with_prereq_issues, tms_with_stale_refs)
+    _render_tm_card(cols[0], "SL 1", tms_with_prereq_issues, tms_with_stale_refs)
+    _render_tm_card(cols[1], "SL 2", tms_with_prereq_issues, tms_with_stale_refs)
+    _render_tm_card(cols[2], "SL 3", tms_with_prereq_issues, tms_with_stale_refs)
     _render_tm_card(cols[3], "FBC", tms_with_prereq_issues, tms_with_stale_refs)
 
     st.markdown("---")
 
-    # WFF tracks (TM-40A through TM-40F)
-    st.markdown("### WFF Tracks (TM-40A through TM-40F)")
+    # WFF tracks (SL 4A through SL 4F)
+    st.markdown("### WFF Tracks (SL 4A through SL 4F)")
     cols = st.columns(6)
     for i, suffix in enumerate("ABCDEF"):
-        _render_tm_card(cols[i], f"TM-40{suffix}", tms_with_prereq_issues, tms_with_stale_refs)
+        _render_tm_card(cols[i], f"SL 4{suffix}", tms_with_prereq_issues, tms_with_stale_refs)
 
     st.markdown("---")
 
-    # Specialist tracks (TM-40G through TM-40M)
-    st.markdown("### Specialist Tracks (TM-40G through TM-40M)")
+    # Specialist tracks (SL 4G through SL 4M)
+    st.markdown("### Specialist Tracks (SL 4G through SL 4M)")
     cols = st.columns(7)
     for i, suffix in enumerate("GHMJKL"):
-        _render_tm_card(cols[i], f"TM-40{suffix}", tms_with_prereq_issues, tms_with_stale_refs)
+        _render_tm_card(cols[i], f"SL 4{suffix}", tms_with_prereq_issues, tms_with_stale_refs)
 
     st.markdown("---")
 
-    # Advanced tracks (TM-50G through TM-50M)
-    st.markdown("### Advanced Specialist (TM-50G through TM-50M)")
+    # Advanced tracks (SL 5G through SL 5M)
+    st.markdown("### Advanced Specialist (SL 5G through SL 5M)")
     cols = st.columns(7)
     for i, suffix in enumerate("GHMJKL"):
-        _render_tm_card(cols[i], f"TM-50{suffix}", tms_with_prereq_issues, tms_with_stale_refs)
+        _render_tm_card(cols[i], f"SL 5{suffix}", tms_with_prereq_issues, tms_with_stale_refs)
 
     # Issue details
     if prereq_issues:

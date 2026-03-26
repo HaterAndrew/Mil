@@ -1,10 +1,10 @@
 # EX_40C — Movement & Maneuver
-## Practical Exercise — TM-40C Proficiency
+## Practical Exercise — SL 4C Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-10, TM-20, TM-30 (required); TM-40C and CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER (current track) |
+| **Prerequisite** | SL 1, SL 2, SL 3 (required); SL 4C and CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER (current track) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS training instance, standard user access — see ENVIRONMENT_SETUP.md |
 | **Companion TM** | TM_40C_MOVEMENT_MANEUVER.md |

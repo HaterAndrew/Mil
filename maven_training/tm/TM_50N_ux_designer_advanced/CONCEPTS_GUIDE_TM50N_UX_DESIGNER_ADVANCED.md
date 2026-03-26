@@ -1,7 +1,7 @@
-# CONCEPTS GUIDE — TM-50N COMPANION — ADVANCED UI/UX DESIGNER · MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 5N COMPANION — ADVANCED UI/UX DESIGNER · MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** TM-50N moves from designing applications to designing the system that produces applications. The advanced Designer's output is not a single interface — it is the standards, patterns, and processes that make every interface better.
-> **Purpose:** Develops mental models required to lead design at enterprise scale on MSS — design systems, DDIL patterns, coalition considerations, and design operations. Read before beginning TM-50N task instruction.
+> **Forward:** SL 5N moves from designing applications to designing the system that produces applications. The advanced Designer's output is not a single interface — it is the standards, patterns, and processes that make every interface better.
+> **Purpose:** Develops mental models required to lead design at enterprise scale on MSS — design systems, DDIL patterns, coalition considerations, and design operations. Read before beginning SL 5N task instruction.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -12,13 +12,13 @@
 
 **BLUF:** A design system is a product that serves other products. Your users are designers and developers, not end users.
 
-At TM-40N, the Designer builds one application at a time. The quality of that application depends on the individual Designer's skill, judgment, and consistency. That model does not scale. When the MSS portfolio grows to 20, 50, or 100 applications, individual heroics cannot sustain quality — systemic solutions can.
+At SL 4N, the Designer builds one application at a time. The quality of that application depends on the individual Designer's skill, judgment, and consistency. That model does not scale. When the MSS portfolio grows to 20, 50, or 100 applications, individual heroics cannot sustain quality — systemic solutions can.
 
-A TM-50N Designer who continues designing individual applications is underperforming. The advanced Designer's job is to build the infrastructure — component libraries, design tokens, pattern documentation, governance processes — that makes every TM-40N Designer more effective. This is the same shift an advanced SWE makes from writing code to building the systems that make code better.
+A SL 5N Designer who continues designing individual applications is underperforming. The advanced Designer's job is to build the infrastructure — component libraries, design tokens, pattern documentation, governance processes — that makes every SL 4N Designer more effective. This is the same shift an advanced SWE makes from writing code to building the systems that make code better.
 
 ### 1-2. The Scale Shift
 
-| TM-40N (Application Design) | TM-50N (Design Systems) |
+| SL 4N (Application Design) | SL 5N (Design Systems) |
 |-----------------------------|------------------------|
 | "How should this dashboard look?" | "How should all dashboards look?" |
 | "What color means 'ready'?" | "What color system ensures consistency across 50 applications?" |
@@ -28,7 +28,7 @@ A TM-50N Designer who continues designing individual applications is underperfor
 
 ### 1-3. The Design System Product Mindset
 
-The design system has its own backlog, roadmap, and release cycle. Component requests from application teams are feature requests. Breaking changes require migration guides. Deprecating a component requires a sunset period. Treat the design system with the same rigor TM-40L applies to shared code libraries.
+The design system has its own backlog, roadmap, and release cycle. Component requests from application teams are feature requests. Breaking changes require migration guides. Deprecating a component requires a sunset period. Treat the design system with the same rigor SL 4L applies to shared code libraries.
 
 **Component governance model:**
 
@@ -197,7 +197,7 @@ Automation catches approximately 30-40% of accessibility issues. The remaining 6
 
 ---
 
-## SECTION 6 — ADVANCED FAILURE MODES: WHAT TM-50N DESIGNERS GET WRONG
+## SECTION 6 — ADVANCED FAILURE MODES: WHAT SL 5N DESIGNERS GET WRONG
 
 ### 6-1. Overview
 
@@ -217,7 +217,7 @@ Automation catches approximately 30-40% of accessibility issues. The remaining 6
 
 ### 6-3. The Adoption Problem
 
-The most common TM-50N failure: building a design system that no one uses. A design system that is technically excellent but ignored by application teams has zero value. Adoption requires:
+The most common SL 5N failure: building a design system that no one uses. A design system that is technically excellent but ignored by application teams has zero value. Adoption requires:
 
 1. **The system must be easier than the alternative.** If using the design system is harder than building from scratch, teams will build from scratch. Measure time-to-first-screen with and without the design system.
 2. **Documentation must be complete and current.** Undocumented components are invisible components.
@@ -226,19 +226,19 @@ The most common TM-50N failure: building a design system that no one uses. A des
 
 ### 6-4. The Classification Complacency Risk
 
-As Designers become comfortable working in classified environments, they may unconsciously reduce the visual prominence of classification indicators — treating them as "visual noise" rather than security controls. This is a professional hazard at the TM-50N level. Classification indicators must remain prominent, unambiguous, and visually distinct regardless of how many times the Designer has seen them. The standard is set for the least experienced user under the most stressful conditions.
+As Designers become comfortable working in classified environments, they may unconsciously reduce the visual prominence of classification indicators — treating them as "visual noise" rather than security controls. This is a professional hazard at the SL 5N level. Classification indicators must remain prominent, unambiguous, and visually distinct regardless of how many times the Designer has seen them. The standard is set for the least experienced user under the most stressful conditions.
 
 ---
 
 ## SECTION 7 — THE DESIGN-DEVELOPMENT PARTNERSHIP
 
-### 7-1. Why This Matters at TM-50N
+### 7-1. Why This Matters at SL 5N
 
-**BLUF:** A design system that designers love but developers cannot implement is a failure. The TM-50N Designer must build for both audiences simultaneously.
+**BLUF:** A design system that designers love but developers cannot implement is a failure. The SL 5N Designer must build for both audiences simultaneously.
 
-At TM-40N, the Designer hands off a design spec and a developer implements it. At TM-50N, the Designer is building the shared infrastructure that both designers and developers consume. The component library is simultaneously a design artifact and a code artifact. Decisions made in the design layer — token names, component APIs, state management patterns — directly constrain what developers can build.
+At SL 4N, the Designer hands off a design spec and a developer implements it. At SL 5N, the Designer is building the shared infrastructure that both designers and developers consume. The component library is simultaneously a design artifact and a code artifact. Decisions made in the design layer — token names, component APIs, state management patterns — directly constrain what developers can build.
 
-### 7-2. Coordination Points with TM-50L
+### 7-2. Coordination Points with SL 5L
 
 | Design Decision | Developer Impact | Coordination Requirement |
 |----------------|-----------------|-------------------------|
@@ -263,25 +263,25 @@ At TM-40N, the Designer hands off a design spec and a developer implements it. A
 | Research repository | Document and tag every research finding; prevent duplicate studies; survive rotations |
 | Accessibility is not optional | Legal requirement, operational necessity, and quality indicator; design for it from the start |
 | Adoption over elegance | A design system nobody uses has zero value; optimize for adoption, then refine |
-| Developer partnership | Components must work in both design tools and production code; co-design with TM-50L |
+| Developer partnership | Components must work in both design tools and production code; co-design with SL 5L |
 
 ---
 
 ## APPENDIX A — CONCEPTS GUIDE SELF-ASSESSMENT
 
-Before proceeding to TM-50N task procedures, confirm you can answer the following from memory:
+Before proceeding to SL 5N task procedures, confirm you can answer the following from memory:
 
-1. What distinguishes TM-50N design work from TM-40N, and why is continuing to design individual applications an underperformance at TM-50N level?
+1. What distinguishes SL 5N design work from SL 4N, and why is continuing to design individual applications an underperformance at SL 5N level?
 2. What are the four DDIL design tiers, and what design response does each require?
 3. What three elements must accompany every data element displayed under DDIL conditions?
 4. Why must classification boundary transitions require deliberate user action, and what design error does optimizing for speed across boundaries introduce?
 5. Name three DesignOps functions and explain what happens to the portfolio without each.
 6. What percentage of accessibility issues can automated tools catch, and what must cover the remainder?
-7. What is the most common TM-50N failure mode, and what four conditions must a design system meet to achieve adoption?
+7. What is the most common SL 5N failure mode, and what four conditions must a design system meet to achieve adoption?
 
 ---
 
-## APPENDIX B — CROSS-REFERENCE TO TM-50N CHAPTERS
+## APPENDIX B — CROSS-REFERENCE TO SL 5N CHAPTERS
 
 | Concepts Guide Section | Corresponding TM-50N Chapter |
 |------------------------|------------------------------|
@@ -295,23 +295,23 @@ Before proceeding to TM-50N task procedures, confirm you can answer the followin
 
 ---
 
-## APPENDIX C — PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION
+## APPENDIX C — PEER SL 5 CROSS-REFERENCES AND WFF INTEGRATION
 
-**Peer TM-50 Publications.** Advanced UI/UX Designers should coordinate with practitioners in these companion advanced-track publications.
+**Peer SL 5 Publications.** Advanced UI/UX Designers should coordinate with practitioners in these companion advanced-track publications.
 
 | Publication | Track | Coordination Point |
 |---|---|---|
-| TM-50G | Advanced ORSA | Data visualization design for analytical products; dashboard UX for ORSA outputs |
-| TM-50H | Advanced AI Engineer | UI/UX for AI-driven applications; presenting model outputs and uncertainty to users |
-| TM-50M | Advanced ML Engineer | Visualization of ML model performance; feature importance displays |
-| TM-50J | Advanced Program Manager | Portfolio-level product strategy; design system roadmap prioritization |
-| TM-50K | Advanced Knowledge Manager | Knowledge portal UX; search interface design; taxonomy visualization |
-| TM-50L | Advanced Software Engineer | Design system implementation architecture; shared component libraries; token-to-code pipeline |
-| TM-50O | Advanced Platform Engineer | Platform portal design; performance budgets; deployment constraints affecting design patterns |
+| SL 5G | Advanced ORSA | Data visualization design for analytical products; dashboard UX for ORSA outputs |
+| SL 5H | Advanced AI Engineer | UI/UX for AI-driven applications; presenting model outputs and uncertainty to users |
+| SL 5M | Advanced ML Engineer | Visualization of ML model performance; feature importance displays |
+| SL 5J | Advanced Program Manager | Portfolio-level product strategy; design system roadmap prioritization |
+| SL 5K | Advanced Knowledge Manager | Knowledge portal UX; search interface design; taxonomy visualization |
+| SL 5L | Advanced Software Engineer | Design system implementation architecture; shared component libraries; token-to-code pipeline |
+| SL 5O | Advanced Platform Engineer | Platform portal design; performance budgets; deployment constraints affecting design patterns |
 
-**WFF Operational Consumer Note.** Design systems and UX patterns built by TM-50N designers are consumed by the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). These practitioners are the operational users of every dashboard, COP layer, and decision support product in the portfolio. The design questions addressed in this Concepts Guide — DDIL resilience, classification explicitness, data freshness indicators, accessibility — must be answered in terms of what a WFF staff section needs to make a decision under operational conditions. A G2 intelligence dashboard has different layout priorities than a G4 sustainment status board; both must be accessible, DDIL-resilient, and unambiguous about data freshness.
+**WFF Operational Consumer Note.** Design systems and UX patterns built by SL 5N designers are consumed by the six Warfighting Function (WFF) tracks: Intelligence (SL 4A), Fires (SL 4B), Movement and Maneuver (SL 4C), Sustainment (SL 4D), Protection (SL 4E), and Mission Command (SL 4F). These practitioners are the operational users of every dashboard, COP layer, and decision support product in the portfolio. The design questions addressed in this Concepts Guide — DDIL resilience, classification explicitness, data freshness indicators, accessibility — must be answered in terms of what a WFF staff section needs to make a decision under operational conditions. A G2 intelligence dashboard has different layout priorities than a G4 sustainment status board; both must be accessible, DDIL-resilient, and unambiguous about data freshness.
 
 ---
 
-*CONCEPTS GUIDE — TM-50N COMPANION // ADVANCED UI/UX DESIGNER*
+*CONCEPTS GUIDE — SL 5N COMPANION // ADVANCED UI/UX DESIGNER*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA // WIESBADEN, GERMANY // 2026*

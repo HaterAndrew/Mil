@@ -37,7 +37,7 @@ The theater has a **lack of skills** to operate CDA/MSS. Two root causes:
 
 ### Solution
 In line with the CG's directive to **get this into the hands of the NCOs** — doctrinize Maven. Build an institutional training capability that:
-- Trains the workforce at scale (TM-10 → TM-50)
+- Trains the workforce at scale (SL 1 → SL 5)
 - Certifies instructors through a formal pipeline (T3)
 - Operates independently of ODT once stood up
 - Is exportable to other ACOMs/ASCCs and eventually TRADOC
@@ -52,18 +52,18 @@ In line with the CG's directive to **get this into the hands of the NCOs** — d
 
 | Level | Course | Hours | Audience |
 |-------|--------|-------|----------|
-| TM-10 | Maven User | 8 hrs | All personnel (in-processing) |
-| TM-20 | Builder | 40 hrs | Data-adjacent staff |
-| TM-30 | Advanced Builder | 40 hrs | Unit data leads |
-| TM-40 | Specialist (14 tracks) | 40 hrs ea | WFF analysts, engineers, PMs |
-| TM-50 | Advanced Specialist (6 tracks) | 40 hrs ea | Senior practitioners |
-| FBC | Foundry Bootcamp | 5 days | TM-20+ graduates with approved projects |
-| TM-SL | Senior Leader / Executive | 1 day | O-5 / E-9+ |
+| SL 1 | Maven User | 8 hrs | All personnel (in-processing) |
+| SL 2 | Builder | 40 hrs | Data-adjacent staff |
+| SL 3 | Advanced Builder | 40 hrs | Unit data leads |
+| SL 4 | Specialist (14 tracks) | 40 hrs ea | WFF analysts, engineers, PMs |
+| SL 5 | Advanced Specialist (6 tracks) | 40 hrs ea | Senior practitioners |
+| FBC | Foundry Bootcamp | 5 days | SL 2+ graduates with approved projects |
+| EXEC | Senior Leader / Executive | 1 day | O-5 / E-9+ |
 | T3 | Instructor Pipeline | varies | Future instructors / unit data trainers |
 
 ### What's Built
 - **254 published PDFs** — TM documents, concepts guides, syllabi, exercises, pre/post exams, governance docs, doctrine references
-- **Full curriculum** — TM-10 through TM-50
+- **Full curriculum** — SL 1 through SL 5
 - **Governance package complete** — MTP, POI, CAD, TEO, Enrollment SOP, Faculty Dev Plan, Curriculum Maintenance SOP (all TRADOC-aligned)
 - **Coalition-ready** — integrates NATO data standards (NAFv4, STANAGs 5636/5643)
 

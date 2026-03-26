@@ -1,10 +1,10 @@
 # TM-40J — MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** TM-40J qualifies Technical Project Managers, Product Owners, and Team Leads to plan, execute, and govern data, AI, and software capability builds on the Maven Smart System (MSS). This track bridges technical execution (TM-40G through TM-40O developers) and operational requirements (commanders, staff, end users).
-> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Data Literacy Technical Reference (required); CONCEPTS_GUIDE_TM40J_PROGRAM_MANAGER (read before this manual).
+> **Forward:** SL 4J qualifies Technical Project Managers, Product Owners, and Team Leads to plan, execute, and govern data, AI, and software capability builds on the Maven Smart System (MSS). This track bridges technical execution (SL 4G through SL 4O developers) and operational requirements (commanders, staff, end users).
+> **Prereqs:** SL 1, Maven User; SL 2, Builder; SL 3, Advanced Builder (required); Data Literacy Technical Reference (required); CONCEPTS_GUIDE_TM40J_PROGRAM_MANAGER (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
-> **WARNING:** MSS data products built under TM-40J oversight directly support commander decision
+> **WARNING:** MSS data products built under SL 4J oversight directly support commander decision
 
 ## Table of Contents
 
@@ -27,24 +27,24 @@
 
 ### 1-1. Program Manager Specialist Manual
 
-**BLUF:** TM-40J qualifies Technical Project Managers, Product Owners, and Team Leads to plan,
+**BLUF:** SL 4J qualifies Technical Project Managers, Product Owners, and Team Leads to plan,
 execute, and govern data, AI, and software capability builds on the Maven Smart System (MSS).
-This track bridges technical execution (TM-40G through TM-40O developers) and operational
+This track bridges technical execution (SL 4G through SL 4O developers) and operational
 requirements (commanders, staff, end users).
 
 This manual provides task-level instruction for managing the full lifecycle of a data or AI
 project on MSS — from initial stakeholder requirements through sprint planning, execution, release,
-and sustainment. TM-40J graduates serve as the connective tissue between technical build teams
+and sustainment. SL 4J graduates serve as the connective tissue between technical build teams
 and the operational units they support.
 
-**TM-40J covers** Agile project management methods adapted for data and AI projects in a military operational context; backlog management: writing user stories and acceptance criteria for data products and dashboards; managing ML and AI project lifecycles from research through production and sustainment; translating operational requirements from commanders and staff into actionable technical tasks; building live project tracking systems on MSS using Workshop, Ontology, and Pipeline Builder; risk and dependency management specific to data availability, model performance, and technical debt; delivery planning: scope, timeline, and quality tradeoffs for data product releases; coordinating across technical tracks: when to pull in TM-40H (AI Engineer), TM-40L (Software Engineer), TM-40M (ML Engineer), TM-40K (Knowledge Manager), and TM-40L (SWE); change management: deploying new MSS capabilities to operational users who resist change; and platform governance from a PM perspective: Foundry project permissions, resource allocation, and access stewardship.
+**SL 4J covers** Agile project management methods adapted for data and AI projects in a military operational context; backlog management: writing user stories and acceptance criteria for data products and dashboards; managing ML and AI project lifecycles from research through production and sustainment; translating operational requirements from commanders and staff into actionable technical tasks; building live project tracking systems on MSS using Workshop, Ontology, and Pipeline Builder; risk and dependency management specific to data availability, model performance, and technical debt; delivery planning: scope, timeline, and quality tradeoffs for data product releases; coordinating across technical tracks: when to pull in SL 4H (AI Engineer), SL 4L (Software Engineer), SL 4M (ML Engineer), SL 4K (Knowledge Manager), and SL 4L (SWE); change management: deploying new MSS capabilities to operational users who resist change; and platform governance from a PM perspective: Foundry project permissions, resource allocation, and access stewardship.
 
-**TM-40J does NOT cover** raw coding of Foundry transforms, Functions on Objects, or API integrations — see TM-40L; machine learning model development and validation — see TM-40M (ML Engineer); AI agent and workflow automation build — see TM-40H (AI Engineer); advanced statistical analysis and modeling — see TM-40G (ORSA); or knowledge management architecture and data dictionary design — see TM-40K (KM).
+**SL 4J does NOT cover** raw coding of Foundry transforms, Functions on Objects, or API integrations — see SL 4L; machine learning model development and validation — see SL 4M (ML Engineer); AI agent and workflow automation build — see SL 4H (AI Engineer); advanced statistical analysis and modeling — see SL 4G (ORSA); or knowledge management architecture and data dictionary design — see SL 4K (KM).
 
-> **NOTE:** TM-40J is a management and coordination track. The PM does not need to write code.
+> **NOTE:** SL 4J is a management and coordination track. The PM does not need to write code.
 > The PM must understand enough about each technical discipline to write accurate user stories,
 > identify blockers, assess risk, and make scope tradeoff decisions. Technical depth comes from
-> the TM-40 specialists the PM leads.
+> the SL 4 specialists the PM leads.
 
 ---
 
@@ -59,14 +59,14 @@ The MSS ecosystem involves multiple technical disciplines that must be coordinat
 
 | Track  | Role                          | What They Build                                              |
 |--------|-------------------------------|--------------------------------------------------------------|
-| TM-40G | ORSA                          | Quantitative models, statistical analysis, analytical products |
-| TM-40H | AI Engineer                   | AI agents, AIP Logic, automated workflows, LLM integrations  |
-| TM-40M | ML Engineer                   | ML models, training pipelines, model evaluation and deployment |
-| TM-40J | Program Manager (Technical)   | Project tracking, stakeholder mgmt, delivery coordination    |
-| TM-40K | Knowledge Manager             | Data dictionaries, ontology governance, data stewardship     |
-| TM-40L | Software Engineer             | Custom Foundry code, Functions, API integrations, services   |
-| TM-40N | UI/UX Designer                | Workshop layouts, Slate apps, accessibility, design systems  |
-| TM-40O | Platform Engineer             | Infrastructure, CI/CD, Kubernetes, monitoring, compliance    |
+| SL 4G | ORSA                          | Quantitative models, statistical analysis, analytical products |
+| SL 4H | AI Engineer                   | AI agents, AIP Logic, automated workflows, LLM integrations  |
+| SL 4M | ML Engineer                   | ML models, training pipelines, model evaluation and deployment |
+| SL 4J | Program Manager (Technical)   | Project tracking, stakeholder mgmt, delivery coordination    |
+| SL 4K | Knowledge Manager             | Data dictionaries, ontology governance, data stewardship     |
+| SL 4L | Software Engineer             | Custom Foundry code, Functions, API integrations, services   |
+| SL 4N | UI/UX Designer                | Workshop layouts, Slate apps, accessibility, design systems  |
+| SL 4O | Platform Engineer             | Infrastructure, CI/CD, Kubernetes, monitoring, compliance    |
 
 The PM does not manage people's performance in the HR sense. The PM manages scope, timeline,
 risk, and stakeholder communication. The PM shields the technical team from requirements churn
@@ -96,11 +96,11 @@ relationship for each.
 
 ### 1-2b. The XVIII ABC ODT Model — PM Role in Operational Data Teams
 
-XVIII Airborne Corps published its experience building and employing Operational Data Teams in *Military Review* (February 2026, "Fighting with Live Data"). Their pilot — one of the first in the Army — places a Product Manager (5F ASI) as one of five core roles in each ODT, alongside a UI/UX Designer, Software Engineer, Data Engineer, and Data Scientist. This mirrors the TM-40J through TM-40O specialist track structure. The XVIII ABC model is a useful reference point from one corps' pilot, not a universal template — different commands will adapt roles and governance to their own context. The lessons below are drawn from their specific experience at Corps level.
+XVIII Airborne Corps published its experience building and employing Operational Data Teams in *Military Review* (February 2026, "Fighting with Live Data"). Their pilot — one of the first in the Army — places a Product Manager (5F ASI) as one of five core roles in each ODT, alongside a UI/UX Designer, Software Engineer, Data Engineer, and Data Scientist. This mirrors the SL 4J through SL 4O specialist track structure. The XVIII ABC model is a useful reference point from one corps' pilot, not a universal template — different commands will adapt roles and governance to their own context. The lessons below are drawn from their specific experience at Corps level.
 
 **Key PM-relevant lessons from XVIII ABC:**
 
-| XVIII ABC Practice | TM-40J Application |
+| XVIII ABC Practice | SL 4J Application |
 |---|---|
 | **Technical Innovation Objectives (TIOs)** — staff working groups develop TIOs aligned to CAMPLAN operational problems; ODT + G-5 + CTO assess operational value and development feasibility | PM leads the TIO-equivalent scoping process: translating commander requirements into SMART-compliant problem statements, not desired solutions |
 | **Program Increment (PI) cycles** — 12-week development cycles aligned to Corps exercise cycles; CG approves the "cut line" and retains authority to retask | PM manages sprint cadence within the PI framework: delivery milestones aligned to training calendar and exercise windows |
@@ -108,11 +108,11 @@ XVIII Airborne Corps published its experience building and employing Operational
 | **Problem-solution methodology** — scoping (2 wk) → discovery (4 wk) → framing (4 wk) → development (8 wk) → handoff (2 wk); invest/divest/pivot gates | PM owns the process cadence and gate documentation: each decision point requires a structured recommendation with operational value assessment |
 | **Exercise integration** — MVP products get bug fixes/minor adjustments during exercises; scoping-phase products get user research only; discovery/framing held stable | PM manages exercise scope: shields team from pressure to do major adjustments during exercises while ensuring user feedback is captured for next PI |
 
-> **NOTE:** XVIII ABC's early experience without a governance policy resulted in too many customers requesting ODT resources simultaneously, with no adjudication process. The PM role is the primary defense against this failure mode. TM-40J graduates must understand that the governance process is not optional — it is a prerequisite for ODT effectiveness.
+> **NOTE:** XVIII ABC's early experience without a governance policy resulted in too many customers requesting ODT resources simultaneously, with no adjudication process. The PM role is the primary defense against this failure mode. SL 4J graduates must understand that the governance process is not optional — it is a prerequisite for ODT effectiveness.
 
 *Source: Forney, Herrmann, and Steele, "Fighting with Live Data," Military Review Online Exclusive, February 2026.*
 
-**Supplementary reading — Adkins' proposal:** Adkins ("Achieving Decision Dominance," *Military Review*, January-February 2025) is a thought piece by one officer proposing terminology and concepts for data team employment. Useful shorthand for TM-40J PMs:
+**Supplementary reading — Adkins' proposal:** Adkins ("Achieving Decision Dominance," *Military Review*, January-February 2025) is a thought piece by one officer proposing terminology and concepts for data team employment. Useful shorthand for SL 4J PMs:
 
 - **Automated Fighting Products (AFP):** Adkins' term for visualization tools connected to live data that reduce staff burden and inform commander decisions. The products your team builds fit this description. The PM manages the AFP lifecycle from requirements through sustainment.
 - **Echeloned reach-back:** Adkins proposes a triage system where tactical units reach back to higher-echelon data teams for complex problems. PMs should understand their team's echelon and the reach-back relationships above and below them.
@@ -128,16 +128,16 @@ Note: The Forney "Fighting with Live Data" article above documents the most rele
 
 ### Conditions
 
-Personnel seeking TM-40J qualification have completed TM-30 (Advanced Builder) and can operate
+Personnel seeking SL 4J qualification have completed SL 3 (Advanced Builder) and can operate
 MSS at the advanced no-code level. They are assigned or designated as a project lead, product
 owner, or team lead for a data or AI capability build.
 
 ### Standards
 
-Upon completion of TM-40J, the Technical PM can:
+Upon completion of SL 4J, the Technical PM can:
 
 1. Stand up an Agile project structure (backlog, sprint cadence, ceremonies) for a data/AI project
-2. Write user stories and acceptance criteria that TM-40G through TM-40O developers can execute
+2. Write user stories and acceptance criteria that SL 4G through SL 4O developers can execute
    without ambiguity
 3. Manage an ML/AI project from research brief through production release using the MSS lifecycle
    model
@@ -150,43 +150,43 @@ Upon completion of TM-40J, the Technical PM can:
 
 ### Equipment
 
-- MSS account with Builder access (TM-30 level)
+- MSS account with Builder access (SL 3 level)
 - Foundry Workshop, Pipeline Builder, and Ontology UI access
 - Access to the USAREUR-AF C2DAO project space for coordination
 - Connectivity to project communication channels (Teams, SharePoint, or MSS-hosted)
 
 ---
 
-### 1-4. TM-40J in the Curriculum Architecture
+### 1-4. SL 4J in the Curriculum Architecture
 
-TM-40J sits at the top of the no-code track and the entry point of the management track.
+SL 4J sits at the top of the no-code track and the entry point of the management track.
 
 ```
-TM-10 (User) → TM-20 (Builder) → TM-30 (Advanced Builder) → TM-40J (Technical PM)
-                                                           ↘ TM-40G (ORSA)
-                                                           ↘ TM-40H (AI Engineer)
-                                                           ↘ TM-40M (ML Engineer)
-                                                           ↘ TM-40K (KM)
-                                                           ↘ TM-40L (SWE)
-                                                           ↘ TM-40N (UI/UX Designer)
-                                                           ↘ TM-40O (Platform Engineer)
+SL 1 (User) → SL 2 (Builder) → SL 3 (Advanced Builder) → SL 4J (Technical PM)
+                                                           ↘ SL 4G (ORSA)
+                                                           ↘ SL 4H (AI Engineer)
+                                                           ↘ SL 4M (ML Engineer)
+                                                           ↘ SL 4K (KM)
+                                                           ↘ SL 4L (SWE)
+                                                           ↘ SL 4N (UI/UX Designer)
+                                                           ↘ SL 4O (Platform Engineer)
 ```
 
-The PM must have completed TM-30 to understand what each specialist track builds and why decisions
+The PM must have completed SL 3 to understand what each specialist track builds and why decisions
 have technical consequences. A PM who has never built on MSS cannot accurately estimate effort,
 identify blockers, or write meaningful acceptance criteria for MSS-based deliverables.
 
-**Prerequisite (explicit):** TM-30 (Advanced Builder) is REQUIRED — not recommended.
+**Prerequisite (explicit):** SL 3 (Advanced Builder) is REQUIRED — not recommended.
 
-**Advanced track:** Upon completing TM-40J, qualified Technical PMs should pursue **TM-50J (Advanced Program Manager)** for advanced topics including multi-program portfolio management, enterprise data governance leadership, cross-command integration coordination, and MSS capability roadmap ownership.
+**Advanced track:** Upon completing SL 4J, qualified Technical PMs should pursue **SL 5J (Advanced Program Manager)** for advanced topics including multi-program portfolio management, enterprise data governance leadership, cross-command integration coordination, and MSS capability roadmap ownership.
 
-**WFF awareness:** The Technical PM coordinates delivery of data products consumed by WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). Understanding which WFF function a product serves is not optional context — it determines the operational consequence of delivery delays, quality failures, and scope changes. A readiness dashboard degrading for a Sustainment (TM-40D) staff section has a different operational risk profile than a training schedule tool.
+**WFF awareness:** The Technical PM coordinates delivery of data products consumed by WFF-qualified users (SL 4A through SL 4F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). Understanding which WFF function a product serves is not optional context — it determines the operational consequence of delivery delays, quality failures, and scope changes. A readiness dashboard degrading for a Sustainment (SL 4D) staff section has a different operational risk profile than a training schedule tool.
 
 ---
 
 ### 1-5. Governing References
 
-The following publications establish the policy, architectural, and governance framework within which TM-40J program managers operate. Familiarity with these references is required — not recommended.
+The following publications establish the policy, architectural, and governance framework within which SL 4J program managers operate. Familiarity with these references is required — not recommended.
 
 | Publication | Title | Relevance |
 |---|---|---|
@@ -245,7 +245,7 @@ learns each sprint.
 ### Conditions
 
 The PM is standing up a new data or AI project on MSS with a team of two to eight personnel
-across TM-40 tracks.
+across SL 4 tracks.
 
 ### Standards
 
@@ -259,7 +259,7 @@ ceremonies (sprint planning, daily standup, sprint review, retrospective).
    who uses it, and what operational outcome it enables. Post this in the project space. All
    backlog prioritization decisions reference this statement.
 
-2. **Identify team members and tracks.** List each team member and their TM-40 track. Clarify
+2. **Identify team members and tracks.** List each team member and their SL 4 track. Clarify
    who contributes to what layer of the product (data pipeline, model, dashboard, API).
 
 3. **Set sprint length.** Recommend: two-week sprints for projects with six or more team members
@@ -304,10 +304,10 @@ SO THAT [the operational or analytical outcome it enables]
 
 | Story                                                                                                                | Track Owner | Size  |
 |----------------------------------------------------------------------------------------------------------------------|-------------|-------|
-| As a G4 officer, I want a live equipment readiness dashboard filtered by subordinate unit so that I can identify maintenance bottlenecks before the morning update. | TM-40L / TM-30 | M     |
-| As a data scientist, I want a cleaned and deduplicated personnel roster dataset refreshed daily so that my models have current input data. | TM-40L      | S     |
-| As a G2 analyst, I want the anomaly detection model to flag records scoring above 0.85 probability with an explanation of contributing features so that I can triage alerts without reviewing all raw data. | TM-40M      | L     |
-| As a battalion S6, I want a Workshop form that submits equipment status updates directly to the MSS ontology so that I no longer re-key data from paper forms. | TM-40L / TM-30 | M     |
+| As a G4 officer, I want a live equipment readiness dashboard filtered by subordinate unit so that I can identify maintenance bottlenecks before the morning update. | SL 4L / SL 3 | M     |
+| As a data scientist, I want a cleaned and deduplicated personnel roster dataset refreshed daily so that my models have current input data. | SL 4L      | S     |
+| As a G2 analyst, I want the anomaly detection model to flag records scoring above 0.85 probability with an explanation of contributing features so that I can triage alerts without reviewing all raw data. | SL 4M      | L     |
+| As a battalion S6, I want a Workshop form that submits equipment status updates directly to the MSS ontology so that I no longer re-key data from paper forms. | SL 4L / SL 3 | M     |
 
 **Bad user story patterns to reject:**
 
@@ -496,7 +496,7 @@ rating:
    conditions. Do not leave cells blank — an empty cell is an unassessed risk.
 
 2. **Mark FRICTION cells with a one-line root cause.** Example: "People / Wedge 2 — FRICTION:
-   TM-40M vacancy; no trained ML engineer available until backfill arrives."
+   SL 4M vacancy; no trained ML engineer available until backfill arrives."
 
 3. **Escalate all CASCADING FRICTION cells immediately.** A cascading friction in Wedge 1
    blocks Wedge 2 and Wedge 3 downstream. The PM presents cascading items to the C2DAO with
@@ -545,7 +545,7 @@ development resources.
 
 The PM produces a one-page Problem Definition document containing: the operational question
 the model must answer, the input data sources, the output format, the success metric, and the
-recommended TM-40 tracks to assign.
+recommended SL 4 tracks to assign.
 
 ### Procedure
 
@@ -555,7 +555,7 @@ recommended TM-40 tracks to assign.
    problem definition.
 
 2. **Identify the input data.** What datasets does the model need? Where do they live on MSS?
-   What is the refresh rate? Who owns them? Pull in TM-40K (KM) to validate data availability
+   What is the refresh rate? Who owns them? Pull in SL 4K (KM) to validate data availability
    and quality before committing to a model approach.
 
 3. **Define the output format.** A ranked list? A probability score per record? A binary
@@ -565,17 +565,17 @@ recommended TM-40 tracks to assign.
 4. **Define the success metric.** How will the PM know the model is good enough to release?
    Examples: precision/recall thresholds, false positive rate limits, agreement rate with
    subject matter expert review, stakeholder acceptance rate in evaluation. Write this down
-   before modeling begins — do not let TM-40M define done post hoc.
+   before modeling begins — do not let SL 4M define done post hoc.
 
 5. **Assign tracks.** Typical ML project assignment:
-   - TM-40M: model development, training pipeline, evaluation
-   - TM-40L: data pipeline, feature engineering code
-   - TM-40G: baseline statistical analysis, performance benchmarking
-   - TM-40H: AIP integration if model output feeds an AI agent or workflow
-   - TM-40K: data dictionary, ontology objects for model inputs/outputs
-   - TM-40J (PM): project tracking, stakeholder communication, gate reviews
+   - SL 4M: model development, training pipeline, evaluation
+   - SL 4L: data pipeline, feature engineering code
+   - SL 4G: baseline statistical analysis, performance benchmarking
+   - SL 4H: AIP integration if model output feeds an AI agent or workflow
+   - SL 4K: data dictionary, ontology objects for model inputs/outputs
+   - SL 4J (PM): project tracking, stakeholder communication, gate reviews
 
-> **NOTE:** Engage TM-40K at problem definition, not after the model is built. Data quality
+> **NOTE:** Engage SL 4K at problem definition, not after the model is built. Data quality
 > issues surface early if the KM is involved in assessing input sources. Discovering a critical
 > data quality problem after two sprints of model development is a PM failure.
 
@@ -590,12 +590,12 @@ data is sufficient to train, validate, and run the model in production.
 
 ### Standards
 
-TM-40M and TM-40K deliver a Data Audit Report. The PM reviews the report and makes a
+SL 4M and SL 4K deliver a Data Audit Report. The PM reviews the report and makes a
 go/no-go decision before authorizing prototype development.
 
 ### Procedure
 
-1. **Pull TM-40M and TM-40K to audit each data source.** For each source, document:
+1. **Pull SL 4M and SL 4K to audit each data source.** For each source, document:
 
    | Attribute            | Question to Answer                                                    |
    |----------------------|-----------------------------------------------------------------------|
@@ -609,12 +609,12 @@ go/no-go decision before authorizing prototype development.
 
 2. **PM gate — Data Audit Review.** Review the completed Data Audit Report. Gate criteria:
    - If critical fields are less than 80% complete: stop. Require data remediation before
-     proceeding. Assign TM-40L to build a data quality pipeline.
+     proceeding. Assign SL 4L to build a data quality pipeline.
    - If historical depth is insufficient for training: stop. Present the constraint to the
      stakeholder. Offer alternative: rule-based heuristics instead of ML, or a simpler
      statistical model that requires less history.
    - If labels are unavailable for a supervised approach: reassess model type. Unsupervised
-     or semi-supervised methods may apply; engage TM-40M for recommendation.
+     or semi-supervised methods may apply; engage SL 4M for recommendation.
    - If access is blocked: escalate to C2DAO immediately. Do not let access blockers sit.
 
 3. **Document the data audit decision.** Record in the project tracker: data sources approved,
@@ -636,7 +636,7 @@ deep enough to support model training. The prototype sprint begins.
 
 ### Standards
 
-At the end of the prototype phase, TM-40M delivers a working model that can run on the
+At the end of the prototype phase, SL 4M delivers a working model that can run on the
 approved input data and produce output in the defined format, with preliminary performance
 metrics against the defined success criteria.
 
@@ -646,8 +646,8 @@ metrics against the defined success criteria.
    a proof of feasibility. Resist stakeholder requests to add features, expand the data scope,
    or integrate the prototype with production Workshop before evaluation is complete.
 
-2. **Protect TM-40M from distraction.** Model development requires sustained focus. Do not pull
-   TM-40M into stakeholder demonstrations, unrelated tasks, or data pipeline work during
+2. **Protect SL 4M from distraction.** Model development requires sustained focus. Do not pull
+   SL 4M into stakeholder demonstrations, unrelated tasks, or data pipeline work during
    prototype sprints unless it is directly required for the model.
 
 3. **Check in daily on blockers — not on model progress.** Ask: "Are you blocked on anything?"
@@ -674,19 +674,19 @@ defined success metric and is ready to enter a production readiness review.
 
 ### Standards
 
-The PM conducts an Evaluation Review with TM-40M, TM-40G (for independent statistical
+The PM conducts an Evaluation Review with SL 4M, SL 4G (for independent statistical
 assessment), and at least one operational subject matter expert (SME). The review produces a
 documented pass/fail/iterate decision.
 
 ### Procedure
 
-1. **Assemble the evaluation package.** TM-40M delivers:
+1. **Assemble the evaluation package.** SL 4M delivers:
    - Performance metrics (precision, recall, F1, AUC, or task-appropriate metrics)
    - Confusion matrix or error analysis
    - Feature importance or model explanation summary
    - Examples of correct predictions and failure cases
 
-2. **Assign TM-40G to conduct independent validation.** TM-40G (ORSA) independently reviews
+2. **Assign SL 4G to conduct independent validation.** SL 4G (ORSA) independently reviews
    the methodology and performance claims. The ORSA does not re-train the model — they
    validate the evaluation process and flag any statistical concerns.
 
@@ -721,7 +721,7 @@ The model passes evaluation. The PM must now manage the production deployment pr
 ### Standards
 
 The PM completes the Definition of Done checklist (Appendix B), coordinates a production
-release plan with TM-40L and TM-40M, and communicates the release to operational users
+release plan with SL 4L and SL 4M, and communicates the release to operational users
 before deployment.
 
 ### Procedure
@@ -732,14 +732,14 @@ before deployment.
 2. **Build the production monitoring plan.** Define:
    - How will model performance be monitored in production? (Input data distribution shifts,
      output confidence score distribution, user override rate)
-   - Who is the model owner responsible for monitoring? (Typically TM-40M)
+   - Who is the model owner responsible for monitoring? (Typically SL 4M)
    - What threshold triggers a model review? (Define numerically — not "if it seems off")
    - What is the rollback procedure if the model degrades?
 
 3. **Coordinate the deployment window.** Schedule the production deployment during a low-
    operational-tempo window. Notify downstream users 48 hours in advance per the Safety Summary.
 
-4. **Execute the deployment with TM-40L and TM-40M present.** Run the deployment against the
+4. **Execute the deployment with SL 4L and SL 4M present.** Run the deployment against the
    production environment. Validate model outputs after deployment before declaring success.
 
 5. **Brief the operational stakeholder.** Walk the stakeholder through the production product:
@@ -758,14 +758,14 @@ data sources change schema or refresh rates.
 
 ### PM Sustainment Responsibilities
 
-1. **Schedule quarterly model reviews.** TM-40M reviews performance metrics quarterly.
+1. **Schedule quarterly model reviews.** SL 4M reviews performance metrics quarterly.
    PM reviews the report and decides: sustain, retrain, or retire.
 
-2. **Track upstream data source changes.** If a TM-40L pipeline engineer or a TM-40K KM
+2. **Track upstream data source changes.** If a SL 4L pipeline engineer or a SL 4K KM
    flags that an input data source has changed schema or refresh rate, escalate immediately.
    A changed input can silently degrade model performance without triggering any obvious error.
 
-3. **Maintain model version tracking on MSS.** Model deployment in Foundry follows this pattern: batch inference transforms write predictions to a Foundry dataset, which then serves as the source for computed properties on Object Types, or models are integrated into AIP Logic workflows. The TM-40M model owner must keep the model card and associated dataset documentation current — reflecting version, training date, performance metrics, and owner — after every retrain.
+3. **Maintain model version tracking on MSS.** Model deployment in Foundry follows this pattern: batch inference transforms write predictions to a Foundry dataset, which then serves as the source for computed properties on Object Types, or models are integrated into AIP Logic workflows. The SL 4M model owner must keep the model card and associated dataset documentation current — reflecting version, training date, performance metrics, and owner — after every retrain.
 
 4. **Manage model retirement.** When a model is retired (superseded, no longer operationally
    relevant, or failing sustainment review), the PM coordinates: stakeholder notification,
@@ -787,9 +787,9 @@ The translation problem manifests in two directions:
 
 **Direction 1 — Operational to Technical:** A commander says "I need better situational
 awareness on logistics." The PM must translate this into: a specific dataset, a refresh
-cadence, a display format, a user story, and acceptance criteria that TM-40L can build.
+cadence, a display format, a user story, and acceptance criteria that SL 4L can build.
 
-**Direction 2 — Technical to Operational:** A TM-40M says "the model has an AUC of 0.87
+**Direction 2 — Technical to Operational:** A SL 4M says "the model has an AUC of 0.87
 but the recall on the minority class is 0.61 at the 0.5 threshold." The PM must translate
 this into: "The model correctly identifies roughly six out of every ten high-risk events,
 which means it misses four. For this use case, missing four out of ten is operationally
@@ -890,10 +890,10 @@ language with stakeholders:
 
 The PM holds authority over: scope, priority, stakeholder communication, release timing, and
 project tracking. The PM does not hold authority over: how a developer implements a feature,
-which algorithm a TM-40M uses, or how TM-40L structures code.
+which algorithm a SL 4M uses, or how SL 4L structures code.
 
 Attempting to micro-manage technical implementation decisions creates friction, reduces team
-ownership, and produces worse outcomes. Delegate technical decisions to the appropriate TM-40
+ownership, and produces worse outcomes. Delegate technical decisions to the appropriate SL 4
 track and hold them accountable to the acceptance criteria — not to the implementation method.
 
 ### 4-4b. Protecting the Team from Scope Sprawl
@@ -913,15 +913,15 @@ PM procedure for incoming scope requests during a sprint:
 
 ### 4-4c. Cross-Track Coordination
 
-When a story requires multiple TM-40 tracks, the PM must sequence the work and manage the
+When a story requires multiple SL 4 tracks, the PM must sequence the work and manage the
 hand-off points:
 
 | Dependency Pattern                              | PM Action                                                                          |
 |-------------------------------------------------|------------------------------------------------------------------------------------|
-| TM-40L pipeline must complete before TM-40M can train | Make pipeline story a sprint 1 item; model story a sprint 2 item with explicit dependency noted |
-| TM-40K ontology object must exist before TM-40L can write to it | TM-40K story goes in sprint backlog; TM-40L story blocked until merged |
-| TM-40H agent workflow depends on TM-40M model output format | PM defines the output schema interface in sprint planning; both tracks work to that contract |
-| TM-30 Workshop dashboard depends on TM-40L pipeline | Pipeline completes and is validated before Workshop build begins                    |
+| SL 4L pipeline must complete before SL 4M can train | Make pipeline story a sprint 1 item; model story a sprint 2 item with explicit dependency noted |
+| SL 4K ontology object must exist before SL 4L can write to it | SL 4K story goes in sprint backlog; SL 4L story blocked until merged |
+| SL 4H agent workflow depends on SL 4M model output format | PM defines the output schema interface in sprint planning; both tracks work to that contract |
+| SL 3 Workshop dashboard depends on SL 4L pipeline | Pipeline completes and is validated before Workshop build begins                    |
 
 ---
 
@@ -955,7 +955,7 @@ An MSS-based tracker eliminates all of these. This chapter covers the procedure 
 ### Conditions
 
 The PM is setting up a new project on MSS and needs a tracking infrastructure. This task is
-performed in coordination with TM-40K (Knowledge Manager) if a new ontology design is needed,
+performed in coordination with SL 4K (Knowledge Manager) if a new ontology design is needed,
 or by the PM using an existing project tracker template if one is available in the USAREUR-AF
 project tracker library.
 
@@ -978,7 +978,7 @@ Project, and Team Member to Stories (as assignee).
    |-------------------|----------|---------------------------------------------|
    | project_name      | String   | Short name, used as display label           |
    | product_vision    | String   | One-paragraph product vision statement      |
-   | pm_owner          | String   | PM name and TM-40J track                   |
+   | pm_owner          | String   | PM name and SL 4J track                   |
    | start_date        | Date     |                                             |
    | target_end_date   | Date     | Expected delivery — not a commitment        |
    | current_status    | Enum     | On Track / At Risk / Blocked / Complete     |
@@ -1006,7 +1006,7 @@ Project, and Team Member to Stories (as assignee).
    | acceptance_criteria | String | Full AC text                               |
    | size              | Enum     | S / M / L / XL                             |
    | status            | Enum     | Backlog / Ready / In Progress / In Review / Done |
-   | assignee          | String   | TM-40 track + name                         |
+   | assignee          | String   | SL 4 track + name                         |
    | track             | Enum     | 40A / 40B / 40C / 40D / 40E / 40F / 40G / 40H / 40M / 40J / 40K / 40L / 40N / 40O / 30 |
    | blocked           | Boolean  | True if blocker exists                      |
    | blocker_description | String | Description of blocker (if blocked = true) |
@@ -1017,16 +1017,16 @@ Project, and Team Member to Stories (as assignee).
    **Dependency Object Type** — see Chapter 6.
 
 3. **Create the Object Types in the Foundry Ontology UI.** Use the UI to create types and
-   properties. Coordinate with TM-40K if the project tracker will share any Object Types
+   properties. Coordinate with SL 4K if the project tracker will share any Object Types
    with the enterprise ontology (e.g., linking Team Members to an existing Personnel object).
 
 4. **Configure write access for all team members.** Each team member must have write access
    to update their own Story records. The PM configures role-based access in the Foundry
    project settings.
 
-> **NOTE:** If TM-40K has already designed a standard project tracker ontology for USAREUR-AF,
+> **NOTE:** If SL 4K has already designed a standard project tracker ontology for USAREUR-AF,
 > use it. Ontology proliferation — every PM designing their own object types — creates
-> governance debt that TM-40K must clean up. Check before designing.
+> governance debt that SL 4K must clean up. Check before designing.
 
 ---
 
@@ -1151,7 +1151,7 @@ not Complete).
 
 ### Procedure
 
-1. **Coordinate with TM-40H** to configure the alert logic using AIP Logic or a lightweight
+1. **Coordinate with SL 4H** to configure the alert logic using AIP Logic or a lightweight
    Pipeline Builder scheduled transform.
 
 2. **Define the alert recipients** in the notification configuration. Do not configure alerts
@@ -1255,11 +1255,11 @@ a Workshop view can display it. Managing these dependencies is a primary PM func
 
 | Pattern                                               | PM Action                                                          |
 |-------------------------------------------------------|--------------------------------------------------------------------|
-| Data pipeline (TM-40L) blocks model training (TM-40M) | Sequence sprints; pipeline in sprint N, model in sprint N+1       |
+| Data pipeline (SL 4L) blocks model training (SL 4M) | Sequence sprints; pipeline in sprint N, model in sprint N+1       |
 | External data source access blocked by C2DAO          | Escalate at sprint planning; do not let access requests age        |
-| TM-40K ontology design blocks TM-40L coding           | Start ontology design in sprint 1 even if build is sprint 2 work  |
-| TM-40H agent depends on TM-40M model endpoint         | Define API contract in sprint planning; both tracks work to spec   |
-| MSS platform upgrade changes Workshop component API   | Track platform release calendar; coordinate with TM-40L on timing |
+| SL 4K ontology design blocks SL 4L coding           | Start ontology design in sprint 1 even if build is sprint 2 work  |
+| SL 4H agent depends on SL 4M model endpoint         | Define API contract in sprint planning; both tracks work to spec   |
+| MSS platform upgrade changes Workshop component API   | Track platform release calendar; coordinate with SL 4L on timing |
 
 > **WARNING:** Do not assume external dependencies will resolve on schedule. Treat all
 > external dependencies (C2DAO access requests, data source onboarding, platform upgrades)
@@ -1285,7 +1285,7 @@ The PM is responsible for managing the technical debt backlog — not just the f
    stories compete with feature stories without a dedicated capacity allocation. Stakeholders
    will always want features; tech debt will never win if unprotected.
 
-3. **Conduct a tech debt review at each quarterly retrospective.** TM-40L and TM-40M identify
+3. **Conduct a tech debt review at each quarterly retrospective.** SL 4L and SL 4M identify
    the highest-impact debt items. PM prioritizes the top three into the next quarter's capacity.
 
 4. **Never allow tech debt to accumulate in production monitoring.** An ML model in production
@@ -1338,7 +1338,7 @@ a late, descoped, low-quality product.
    three-sprint velocity baseline establishes a credible forecast.
 
 2. **Run a release readiness review before every production release.** The release readiness
-   review is a PM-led meeting with TM-40L, TM-40M (if ML involved), and TM-40K. The agenda:
+   review is a PM-led meeting with SL 4L, SL 4M (if ML involved), and SL 4K. The agenda:
    - Is the Definition of Done checklist complete?
    - Are all known defects triaged — none outstanding at Critical severity?
    - Is the monitoring plan in place?
@@ -1379,7 +1379,7 @@ For a dashboard or data pipeline product:
 - Access control is configured to production roles (not the developer's personal account)
 - The product has been demonstrated to at least one operational user who confirmed it meets
   the requirement
-- A data steward (TM-40K) has reviewed and accepted the ontology design
+- A data steward (SL 4K) has reviewed and accepted the ontology design
 - The PM has completed Appendix B and no items are outstanding at Critical severity
 
 For an ML/AI model product (in addition to the above):
@@ -1388,7 +1388,7 @@ For an ML/AI model product (in addition to the above):
 - The model has been evaluated on data it was not trained on (holdout or production sample)
 - A model card documenting training data, performance metrics, known failure modes, and
   appropriate use cases exists and is stored in the project space
-- A monitoring plan is active and the model owner (TM-40M) has accepted monitoring
+- A monitoring plan is active and the model owner (SL 4M) has accepted monitoring
   responsibility
 - The stakeholder has been briefed on how to interpret model outputs, including what the
   model does not do and what to do when the output seems wrong
@@ -1607,21 +1607,21 @@ product. This includes:
 **Access Management:**
 - Review project membership quarterly. Remove accounts of personnel who have PCS'd, completed
   TDY, or no longer require access.
-- Coordinate all access additions and removals with TM-40K (KM/Data Steward) and the C2DAO.
+- Coordinate all access additions and removals with SL 4K (KM/Data Steward) and the C2DAO.
 - Do not grant admin or builder access to users who only need consumer access. Apply
   least-privilege.
 
 **Resource Allocation:**
 - Monitor dataset storage usage in the project. Unmanaged pipeline output accumulation can
   hit storage quotas and degrade platform performance for other users in the AOR.
-- Coordinate with TM-40L to implement dataset retention policies on pipeline outputs that
+- Coordinate with SL 4L to implement dataset retention policies on pipeline outputs that
   generate large volumes.
 - Report resource constraint concerns to the C2DAO before they become capacity incidents.
 
 **Ontology Governance:**
-- Do not modify shared enterprise Ontology types (managed by TM-40K) without C2DAO review.
+- Do not modify shared enterprise Ontology types (managed by SL 4K) without C2DAO review.
 - When a project-local Object Type matures to the point where it should be promoted to the
-  enterprise ontology, coordinate the promotion with TM-40K — do not attempt it directly.
+  enterprise ontology, coordinate the promotion with SL 4K — do not attempt it directly.
 
 **Audit Trails:**
 - MSS maintains activity logs for Object edits, pipeline runs, and Workshop access.
@@ -1652,10 +1652,10 @@ starts until all items are complete or formally accepted as known gaps with a pl
 
 **Section 2 — Team Structure**
 
-- [ ] All team members identified by name and TM-40 track
+- [ ] All team members identified by name and SL 4 track
 - [ ] PM role confirmed (Scrum Master / Product Owner)
-- [ ] TM-40K (Knowledge Manager) identified for ontology and data dictionary coordination
-- [ ] TM-40L (or appropriate developer track) assigned to pipeline work
+- [ ] SL 4K (Knowledge Manager) identified for ontology and data dictionary coordination
+- [ ] SL 4L (or appropriate developer track) assigned to pipeline work
 - [ ] Cross-track dependencies mapped and initial dependency records created
 
 **Section 3 — MSS Project Setup**
@@ -1679,7 +1679,7 @@ starts until all items are complete or formally accepted as known gaps with a pl
 
 - [ ] C2DAO coordination initiated if project involves shared enterprise Ontology types
 - [ ] Access control plan documented (who gets which role on production product)
-- [ ] Data classification of all input sources confirmed with TM-40K
+- [ ] Data classification of all input sources confirmed with SL 4K
 - [ ] Change management stakeholder map drafted
 - [ ] Communication plan for production release drafted (even if T-0 is months away)
 
@@ -1719,7 +1719,7 @@ documented rationale. The PM signs off on the DoD — not the developer, not the
 | 1.3 | All input datasets have a documented refresh schedule and the pipeline runs on that schedule without manual intervention | Critical | |
 | 1.4 | Missing value handling is documented and tested — the pipeline does not silently produce incorrect outputs when upstream data is null or delayed | High | |
 | 1.5 | Schema changes in input datasets have been accounted for — the pipeline handles variations seen in the past 12 months | High | |
-| 1.6 | A data quality check (TM-40M: @check, or equivalent validation step) runs on critical input fields before outputs are published | High | |
+| 1.6 | A data quality check (SL 4M: @check, or equivalent validation step) runs on critical input fields before outputs are published | High | |
 
 **Section 2 — Product Function**
 
@@ -1738,7 +1738,7 @@ documented rationale. The PM signs off on the DoD — not the developer, not the
 |---|------|----------|--------|
 | 3.1 | Production roles are configured — access is not running under a developer's personal account | Critical | |
 | 3.2 | Least-privilege applied — users have the minimum access level required for their role | Critical | |
-| 3.3 | Access control reviewed and signed off by TM-40K (Data Steward) | High | |
+| 3.3 | Access control reviewed and signed off by SL 4K (Data Steward) | High | |
 | 3.4 | C2DAO coordination complete for any ontology types shared with the enterprise | High | |
 | 3.5 | No test accounts, sandbox credentials, or temporary access grants present in the production configuration | Critical | |
 
@@ -1747,7 +1747,7 @@ documented rationale. The PM signs off on the DoD — not the developer, not the
 | # | Item | Priority | Status |
 |---|------|----------|--------|
 | 4.1 | User guide complete and reviewed by at least one end user | High | |
-| 4.2 | Data dictionary entry updated in the project's TM-40K-managed data dictionary for all new datasets or ontology types | High | |
+| 4.2 | Data dictionary entry updated in the project's SL 4K-managed data dictionary for all new datasets or ontology types | High | |
 | 4.3 | Pipeline documentation updated — transform logic, schedule, and dependencies documented | High | |
 | 4.4 | Known limitations section in the user guide accurately describes what the product does NOT do | High | |
 
@@ -1772,11 +1772,11 @@ a trained ML model, AI agent, or LLM integration.
 |---|------|----------|--------|
 | ML-1 | Model card exists and is stored in the project space: documents training data, algorithm, evaluation metrics, known failure modes, and appropriate use cases | Critical | |
 | ML-2 | Model was evaluated on held-out data (not the training set). Evaluation metrics meet the defined success threshold from the Problem Definition (3-2) | Critical | |
-| ML-3 | TM-40G (ORSA) has conducted independent validation of the evaluation methodology | High | |
+| ML-3 | SL 4G (ORSA) has conducted independent validation of the evaluation methodology | High | |
 | ML-4 | Operational SME has reviewed sample model outputs and accepted output quality | Critical | |
 | ML-5 | Model output display includes confidence scores or uncertainty indicators — not bare binary outputs without context | High | |
 | ML-6 | The product UI communicates what the model does NOT predict and where it should not be used | High | |
-| ML-7 | Model monitoring is configured: TM-40M has accepted model owner responsibility and defined the threshold that triggers a model review | Critical | |
+| ML-7 | Model monitoring is configured: SL 4M has accepted model owner responsibility and defined the threshold that triggers a model review | Critical | |
 | ML-8 | Model version and training date are documented in the model card and associated Foundry dataset records. Model deployment in Foundry follows this pattern: batch inference transforms write predictions to a Foundry dataset, which then serves as the source for computed properties on Object Types, or models are integrated into AIP Logic workflows. | High | |
 | ML-9 | Retraining schedule or trigger is documented (time-based or performance-based) | High | |
 
@@ -1807,7 +1807,7 @@ cycles (sprints), adapts to change, and emphasizes working products over compreh
 plans. Contrast with waterfall (fixed scope, fixed timeline, single delivery).
 
 **AIP Logic** — The Maven Smart System capability for configuring AI-driven workflow
-automation and agent behaviors without writing code. Managed by TM-40H (AI Engineer).
+automation and agent behaviors without writing code. Managed by SL 4H (AI Engineer).
 
 **Backlog** — The prioritized list of all work items (user stories, tasks, defects) for
 a project. Maintained by the PM. Groomed continuously as new requirements arrive or
@@ -1858,7 +1858,7 @@ health and ensures FDM sign-off on data quality at each gate.
 more user stories. Features are prioritized in the backlog; stories are scheduled into sprints.
 
 **Foundry** — The underlying Palantir platform on which the Maven Smart System (MSS) is
-built. TM-40J personnel interact with Foundry primarily through Workshop, Ontology UI,
+built. SL 4J personnel interact with Foundry primarily through Workshop, Ontology UI,
 Pipeline Builder, and Contour.
 
 **Friction Matrix** — The DDOF Configuration Management assessment template (5x6 grid)
@@ -1878,12 +1878,12 @@ input data distribution shifts away from the training distribution. Detected thr
 production monitoring. Triggers a retraining review.
 
 **MSS (Maven Smart System)** — The USAREUR-AF operational data and AI platform built
-on Palantir Foundry. The platform within which all TM-40J project tracking, dashboards,
+on Palantir Foundry. The platform within which all SL 4J project tracking, dashboards,
 and data products are built and operated.
 
 **Ontology** — The structured, semantic data model in Foundry that defines Object Types,
 their properties, and the links between them. The foundation of all MSS Workshop
-applications and Analytics. Governed by TM-40K (KM/Data Steward) at the enterprise level.
+applications and Analytics. Governed by SL 4K (KM/Data Steward) at the enterprise level.
 
 **OPDATA** — Operational data. Data generated by or supporting theater operations.
 The primary source of requirements for MSS capability builds in USAREUR-AF.
@@ -1891,7 +1891,7 @@ The primary source of requirements for MSS capability builds in USAREUR-AF.
 **Product Backlog** — See Backlog.
 
 **Product Owner** — In Scrum, the role responsible for backlog prioritization and
-stakeholder representation. At USAREUR-AF, TM-40J TMs typically fulfill this role
+stakeholder representation. At USAREUR-AF, SL 4J TMs typically fulfill this role
 alongside Scrum Master responsibilities.
 
 **Production Ready** — A state in which a data product meets all Definition of Done
@@ -1910,7 +1910,7 @@ four ceremonies: Sprint Planning, Daily Standup, Sprint Review, and Retrospectiv
 Suited for data/AI projects with defined product outcomes and moderate team sizes.
 
 **Scrum Master** — In Scrum, the role responsible for facilitating ceremonies, removing
-blockers, and protecting the team from external disruption. At USAREUR-AF, TM-40J TMs
+blockers, and protecting the team from external disruption. At USAREUR-AF, SL 4J TMs
 typically fulfill this role.
 
 **Sprint** — A fixed-length development cycle (1 or 2 weeks) in Scrum. Each sprint has
@@ -1925,19 +1925,19 @@ completed work to stakeholders via live demo in MSS. Not a PowerPoint slide deck
 
 **Stakeholder** — Any person or organization with an interest in the outcome of a data
 product. Includes operational users, commanding officers, and data governance stakeholders
-(C2DAO, TM-40K).
+(C2DAO, SL 4K).
 
 **Story Points** — A unit of effort estimation for user stories. Often uses Fibonacci
 sequence (1/2/3/5/8/13). Used to measure sprint velocity and forecast delivery timelines.
-TM-40J tracks use T-shirt sizing (S/M/L/XL) as a simpler equivalent.
+SL 4J tracks use T-shirt sizing (S/M/L/XL) as a simpler equivalent.
 
 **Technical Debt** — Work deferred to meet a delivery deadline that must eventually be
 completed to maintain product quality and operability. Examples: hardcoded values, missing
 tests, undocumented transforms. PM manages tech debt as a reserved backlog capacity item.
 
-**TM-40 Track** — Specialized capability track for data/AI professionals on MSS.
-Tracks: TM-40G (ORSA), TM-40H (AI Engineer), TM-40M (ML Engineer), TM-40J (Technical PM),
-TM-40K (KM), TM-40L (SWE), TM-40N (UI/UX Designer), TM-40O (Platform Engineer). TM-40J coordinates across all tracks.
+**SL 4 Track** — Specialized capability track for data/AI professionals on MSS.
+Tracks: SL 4G (ORSA), SL 4H (AI Engineer), SL 4M (ML Engineer), SL 4J (Technical PM),
+SL 4K (KM), SL 4L (SWE), SL 4N (UI/UX Designer), SL 4O (Platform Engineer). SL 4J coordinates across all tracks.
 
 **UDRA** — Unified Data Reference Architecture, version 1.1 (February 2025). The Army's
 authoritative data architecture guidance. Informs MSS data product design standards and
@@ -1960,13 +1960,13 @@ forecast delivery timelines and plan release milestones.
 stories a team member can have In Progress simultaneously. Enforces completion before
 starting new work. Recommended: 2 per developer.
 
-**Workshop** — The Foundry application builder tool. TM-40J PMs build sprint boards,
+**Workshop** — The Foundry application builder tool. SL 4J PMs build sprint boards,
 stakeholder-facing dashboards, and commander status products in Workshop. The primary
 PM-facing tool for project tracking on MSS.
 
 ---
 
-*TM-40J — Technical Manual: Program Manager (Technical), Maven Smart System*
+*SL 4J — Technical Manual: Program Manager (Technical), Maven Smart System*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 *Army CIO Memo (April 2024) — Unified Data Reference Architecture v1.1 (February 2025)*
 

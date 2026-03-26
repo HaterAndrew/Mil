@@ -1,10 +1,10 @@
 # EX_30 — Advanced Builder
-## Practical Exercise — TM-30 Proficiency
+## Practical Exercise — SL 3 Proficiency
 
 | | |
 |---|---|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-30 (and TM-10, TM-20) |
+| **Prerequisite** | SL 3 (and SL 1, SL 2) |
 | **Duration** | 2–3 hours |
 | **Environment** | MSS training instance with Pipeline Builder and Contour/Quiver access — see ENVIRONMENT_SETUP.md |
 
@@ -81,26 +81,26 @@ Training dataset: synthetic SIGACT-analog events with date, grid, event type, an
 
 ## NEXT STEPS
 
-Upon successful completion of EX-30, participants are cleared to proceed to TM-40 tracks. TM-30 is a **required** prereq for all TM-40A–O tracks.
+Upon successful completion of EX-30, participants are cleared to proceed to SL 4 tracks. SL 3 is a **required** prereq for all TM-40A–O tracks.
 
-**TM-40 Tracks (select by role):**
+**SL 4 Tracks (select by role):**
 
 *WFF Functional Tracks (TM-40A–F):*
-- TM-40A — Intelligence (G2/S2 staff, targeting officers, all-source analysts)
-- TM-40B — Fires (FSOs, FSEs, targeting officers, fires NCOs)
-- TM-40C — Movement & Maneuver (G3/S3 staff, operations officers, maneuver planners)
-- TM-40D — Sustainment (G4/S4 staff, logistics officers, supply chain managers)
-- TM-40E — Protection (FP officers, CBRN officers, provost marshal staff)
-- TM-40F — Mission Command (battle captains, XOs, CDRs, MC-function staff)
+- SL 4A — Intelligence (G2/S2 staff, targeting officers, all-source analysts)
+- SL 4B — Fires (FSOs, FSEs, targeting officers, fires NCOs)
+- SL 4C — Movement & Maneuver (G3/S3 staff, operations officers, maneuver planners)
+- SL 4D — Sustainment (G4/S4 staff, logistics officers, supply chain managers)
+- SL 4E — Protection (FP officers, CBRN officers, provost marshal staff)
+- SL 4F — Mission Command (battle captains, XOs, CDRs, MC-function staff)
 
 *Specialist Tracks (TM-40G–O):*
-- TM-40G — ORSA (FA49, quantitative analysts)
-- TM-40H — AI Engineer (AI/ML specialists, AIP Logic developers)
-- TM-40M — ML Engineer (ML engineers, data scientists)
-- TM-40J — Program Manager (technical PMs, G8/S8, resource managers)
-- TM-40K — Knowledge Manager (KMOs, 37F, knowledge officers)
-- TM-40L — Software Engineer (SWEs, OSDK developers)
-- TM-40N — UI/UX Designer (UI/UX designers, Workshop developers)
-- TM-40O — Platform Engineer (platform engineers, DevSecOps)
+- SL 4G — ORSA (FA49, quantitative analysts)
+- SL 4H — AI Engineer (AI/ML specialists, AIP Logic developers)
+- SL 4M — ML Engineer (ML engineers, data scientists)
+- SL 4J — Program Manager (technical PMs, G8/S8, resource managers)
+- SL 4K — Knowledge Manager (KMOs, 37F, knowledge officers)
+- SL 4L — Software Engineer (SWEs, OSDK developers)
+- SL 4N — UI/UX Designer (UI/UX designers, Workshop developers)
+- SL 4O — Platform Engineer (platform engineers, DevSecOps)
 
-After completing a TM-40 specialist track, participants may continue to the corresponding **TM-50 advanced track** (TM-50G–O). Advanced exercises for TM-50 tracks are available in the EX-50 series directories.
+After completing a SL 4 specialist track, participants may continue to the corresponding **SL 5 advanced track** (TM-50G–O). Advanced exercises for SL 5 tracks are available in the EX-50 series directories.

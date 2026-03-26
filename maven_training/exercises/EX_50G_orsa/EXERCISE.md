@@ -1,11 +1,11 @@
 # EX_50G — Advanced ORSA
-## Practical Exercise — TM-50G Proficiency
+## Practical Exercise — SL 5G Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40G complete (Go on file); TM-50G course completion; Code Workspace with GPU allocation confirmed |
-| **Duration** | 6–8 hours (typically executed Day 5 of TM-50G) |
+| **Prerequisite** | SL 4G complete (Go on file); SL 5G course completion; Code Workspace with GPU allocation confirmed |
+| **Duration** | 6–8 hours (typically executed Day 5 of SL 5G) |
 | **Environment** | MSS Code Workspace (GPU-enabled); Python environment with scipy, pymc, networkx, mesa installed; see ENVIRONMENT_SETUP.md |
 | **Companion TM** | TM_50G_ORSA_ADVANCED.md |
 | **Syllabus** | SYLLABUS_TM50G |

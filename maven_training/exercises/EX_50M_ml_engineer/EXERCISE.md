@@ -1,11 +1,11 @@
 # EX_50M — Advanced ML Engineering
-## Practical Exercise — TM-50M Proficiency
+## Practical Exercise — SL 5M Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40M complete (Go on file); TM-50M course completion; Code Workspace with GPU and pipeline write access confirmed |
-| **Duration** | 6–8 hours (typically executed Day 5 of TM-50M) |
+| **Prerequisite** | SL 4M complete (Go on file); SL 5M course completion; Code Workspace with GPU and pipeline write access confirmed |
+| **Duration** | 6–8 hours (typically executed Day 5 of SL 5M) |
 | **Environment** | MSS Code Workspace (Python, GPU), Pipeline Builder (write access), Ontology read; see ENVIRONMENT_SETUP.md |
 | **Companion TM** | TM_50M_ML_ENGINEER_ADVANCED.md |
 | **Syllabus** | SYLLABUS_TM50M |

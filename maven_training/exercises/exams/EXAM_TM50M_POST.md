@@ -1,12 +1,12 @@
-# POST-TEST — TM-50M: ADVANCED ML ENGINEER
+# POST-TEST — SL 5M: ADVANCED ML ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-50M: Advanced ML Engineer |
+| **Course** | SL 5M: Advanced ML Engineer |
 | **Form** | Post-Test |
-| **Level** | TM-50M (Advanced Specialist) |
-| **Audience** | Senior ML engineers / data scientists; prerequisite: TM-40M + production ML experience |
+| **Level** | SL 5M (Advanced Specialist) |
+| **Audience** | Senior ML engineers / data scientists; prerequisite: SL 4M + production ML experience |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (42/60) |
 
@@ -22,7 +22,7 @@ This assessment evaluates mastery of course learning objectives. A passing score
 
 *Circle the letter of the best answer. (2 points each)*
 
-**1. A TM-50M automated model promotion gate requires C2DAO approval before promoting to production. This means:**
+**1. A SL 5M automated model promotion gate requires C2DAO approval before promoting to production. This means:**
 
 A. The pipeline automatically promotes the model if C2DAO's automated checklist passes
 B. C2DAO approval is only required for models that process SECRET data
@@ -64,14 +64,14 @@ B. The model fails the acceptance criteria — both subgroup recalls must meet t
 C. The model is acceptable for wheeled vehicles only — deploy with a warning label for tracked vehicles
 D. Report the finding to the G4 and let them decide whether the discrepancy is acceptable
 
-**7. Model compression (quantization to int8) reduces the model's AUC-ROC from 0.87 to 0.83. Per TM-50M standards, the correct action is:**
+**7. Model compression (quantization to int8) reduces the model's AUC-ROC from 0.87 to 0.83. Per SL 5M standards, the correct action is:**
 
 A. Evaluate the compressed model against ALL acceptance thresholds independently; the compressed model is a different model and prior production approval does not transfer
 B. Accept the degradation — 0.83 is still above 0.80, which is a common threshold
 C. Re-compress at float16 precision to find a compression level that maintains AUC-ROC
 D. Submit a waiver to the data steward documenting the 4-point AUC-ROC degradation
 
-**8. The "PSI threshold documentation" requirement in TM-50M means:**
+**8. The "PSI threshold documentation" requirement in SL 5M means:**
 
 A. Recording the PSI threshold value in the pipeline configuration comments
 B. Setting the PSI threshold at the Foundry platform level for all models in the project
@@ -85,7 +85,7 @@ B. Black-box model extraction attacks only — white-box attacks require interna
 C. SQL injection attacks against the feature computation pipeline
 D. Prompt injection attacks against the model serving endpoint
 
-**10. A "model registry" in a TM-50M MLOps architecture must record which of the following for each registered model version?**
+**10. A "model registry" in a SL 5M MLOps architecture must record which of the following for each registered model version?**
 
 A. Model source code and hyperparameter search results only
 B. Model artifact and the date it was promoted to production
@@ -120,11 +120,11 @@ B. Versioning feature definitions for auditability
 C. Storing the complete feature history for model retraining
 D. Computing complex features that require access to the full historical record
 
-**15. The TM-50M "peer review by a second TM-50M qualified engineer" requirement for production ML work exists because:**
+**15. The SL 5M "peer review by a second SL 5M qualified engineer" requirement for production ML work exists because:**
 
 A. Two engineers working independently reduces the probability of bugs by 50%
 B. Army policy requires two-person integrity for all production code deployments
-C. The complexity and operational stakes of TM-50M work (architecture decisions, adversarial robustness, bias auditing, production promotion gates) require a second expert reviewer to catch methodological errors, governance gaps, or security issues not visible to a single engineer
+C. The complexity and operational stakes of SL 5M work (architecture decisions, adversarial robustness, bias auditing, production promotion gates) require a second expert reviewer to catch methodological errors, governance gaps, or security issues not visible to a single engineer
 D. Peer review replaces the C2DAO approval step for ML model promotions
 
 ---
@@ -173,7 +173,7 @@ D. Peer review replaces the C2DAO approval step for ML model promotions
 
 &nbsp;
 
-**SA-5. Describe the TM-50M platform architecture for the USAREUR-AF ML platform, including the feature store, model registry, experiment tracking, and shared ML infrastructure components. Explain how this architecture prevents the three most common failure modes in production ML systems.**
+**SA-5. Describe the SL 5M platform architecture for the USAREUR-AF ML platform, including the feature store, model registry, experiment tracking, and shared ML infrastructure components. Explain how this architecture prevents the three most common failure modes in production ML systems.**
 
 &nbsp;
 
@@ -216,7 +216,7 @@ Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
 12. D — Gradients can encode training data information; gradient inversion attacks can reconstruct sensitive data.
 13. D — Full acceptance suite + calibration + disaggregated + adversarial test + C2DAO approval required.
 14. A — Online store provides low-latency real-time feature retrieval for inference requests.
-15. C — TM-50M complexity and operational stakes require second expert reviewer for errors not visible to one engineer.
+15. C — SL 5M complexity and operational stakes require second expert reviewer for errors not visible to one engineer.
 
 **Short Answer Guidance:**
 

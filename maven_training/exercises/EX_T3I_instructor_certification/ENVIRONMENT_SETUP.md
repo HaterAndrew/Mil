@@ -10,7 +10,7 @@
 | **MSS Access** | Instructor-level account with Builder access + training environment admin |
 | **Classroom** | Projector, instructor workstation, 1 workstation per candidate |
 | **Accounts** | All candidates verified in MSS Training Environment before Day 1 |
-| **Materials** | Published lesson plans for TM-10, TM-20, TM-30 (for microteaching block selection) |
+| **Materials** | Published lesson plans for SL 1, SL 2, SL 3 (for microteaching block selection) |
 | **Pre-staged Failures** | 6 environment failures configured per Block 9 (Day 2) — see setup procedures below |
 | **Recorded Performances** | 5 pre-recorded trainee performances for calibration exercises (2 for Block 10, 3 for Block 19) |
 | **Role-Play Scripts** | Prepared role-play scenarios for Blocks 12 (facilitation), 14 (error management), 15 (evaluator discipline), 21 (No-Go counseling) |
@@ -38,11 +38,11 @@ Prepare 5 screen-recorded trainee performances before the course:
 
 | # | Used In | Performance Quality | Scenario |
 |---|---|---|---|
-| 1 | Block 10 (Day 2) | Clear Go | TM-20 pipeline building — all measures met cleanly |
-| 2 | Block 10 (Day 2) | Borderline | TM-20 pipeline building — correct output but governance metadata incomplete |
-| 3 | Block 19 (Day 4) | Clear Go | TM-10 practical exercise — all measures met |
-| 4 | Block 19 (Day 4) | Clear No-Go | TM-10 practical exercise — classification marking error (critical item) |
-| 5 | Block 19 (Day 4) | Borderline | TM-10 practical exercise — 4 of 5 non-critical passed, all critical passed |
+| 1 | Block 10 (Day 2) | Clear Go | SL 2 pipeline building — all measures met cleanly |
+| 2 | Block 10 (Day 2) | Borderline | SL 2 pipeline building — correct output but governance metadata incomplete |
+| 3 | Block 19 (Day 4) | Clear Go | SL 1 practical exercise — all measures met |
+| 4 | Block 19 (Day 4) | Clear No-Go | SL 1 practical exercise — classification marking error (critical item) |
+| 5 | Block 19 (Day 4) | Borderline | SL 1 practical exercise — 4 of 5 non-critical passed, all critical passed |
 
 If video recording is not feasible, prepare detailed written scenario descriptions with specific performance details for each measure.
 
@@ -59,7 +59,7 @@ If video recording is not feasible, prepare detailed written scenario descriptio
 - [ ] Secure answer key in instructor binder
 - [ ] Prepare role-play scripts for facilitation, error management, and No-Go counseling blocks
 - [ ] Verify projector and instructor workstation connectivity
-- [ ] Review lesson plans for TM-10, TM-20, TM-30 to assign microteaching blocks if needed
+- [ ] Review lesson plans for SL 1, SL 2, SL 3 to assign microteaching blocks if needed
 
 ---
 

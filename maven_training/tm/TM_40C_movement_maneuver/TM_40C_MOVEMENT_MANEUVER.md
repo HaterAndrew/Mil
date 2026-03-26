@@ -1,7 +1,7 @@
 # TM-40C — MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** The Movement and Maneuver (M&M) warfighting function encompasses all tasks associated with moving and employing forces to achieve a position of advantage over the enemy (ADP 3-0, para 3-3). MSS supports M&M by integrating force tracking, route data, obstacle overlays, reconnaissance products, and operational graphics into a single enterprise platform accessible across the formation.
-> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER (required before beginning this manual). No coding, pipeline development, or transform experience is required or assumed.
+> **Prereqs:** SL 1, Maven User; SL 2, Builder; SL 3, Advanced Builder; CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER (required before beginning this manual). No coding, pipeline development, or transform experience is required or assumed.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Using stale MSS obstacle or route data without verification during a breach or route clearance operation can result in personnel casualties and mission failure. Always confirm obstacle and route data currency against S2 and engineer reporting channels before committing forces.**
@@ -1110,7 +1110,7 @@ M&M practitioners generate and consume several report types in MSS. Understandin
 | Contact Report | CONTREP | Up immediately | Entered into MSS after voice — updates BFT and enemy overlay |
 | Route Reconnaissance Report | RTE RECON | To S3 / engineer | Entered into route and obstacle layers |
 | Obstacle Report | OBSREP | To engineer / S3 | Entered into obstacle layer by engineer section |
-| NBC Report | NBCR | Up to higher | Entered into protection layer (see TM-40E) |
+| NBC Report | NBCR | Up to higher | Entered into protection layer (see SL 4E) |
 | Engineer Report | ENGREP | To S3 / S4 | Route status, bridge classification, obstacle status update |
 | Air Mission Report | AMR | To aviation / S3 | LZ/PZ status, corridor status, air mission completion |
 | Personnel Status Report | PERSTAT | Up to higher | Sourced from IPPS-A integration; displayed in MSS |
@@ -1406,18 +1406,18 @@ Liaison officers (LNOs) are the primary human interface for data exchange with p
 
 ## CHAPTER 15 — TRAINING AND CERTIFICATION STANDARDS
 
-**BLUF:** MSS certification for M&M practitioners requires completion of TM-10, TM-20, and TM-30 prerequisites and demonstrated proficiency on the tasks in this manual. This chapter describes the training path, assessment criteria, and recertification requirements for M&M practitioners.
+**BLUF:** MSS certification for M&M practitioners requires completion of SL 1, SL 2, and SL 3 prerequisites and demonstrated proficiency on the tasks in this manual. This chapter describes the training path, assessment criteria, and recertification requirements for M&M practitioners.
 
 ### 15-1. Training Prerequisites and Path
 
-**Prerequisites for TM-40C:**
-1. TM-10, Maven User (Basic) — Completed and documented
-2. TM-20, Builder — Completed and documented
-3. TM-30, Advanced Builder — Completed and documented
-4. CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER — Read prior to beginning TM-40C
+**Prerequisites for SL 4C:**
+1. SL 1, Maven User (Basic) — Completed and documented
+2. SL 2, Builder — Completed and documented
+3. SL 3, Advanced Builder — Completed and documented
+4. CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER — Read prior to beginning SL 4C
 5. Unit MOS qualification (11A, 19A, 12A, 15A, or equivalent) — Active
 
-**TM-40C Training Sequence:**
+**SL 4C Training Sequence:**
 1. Read the CONCEPTS_GUIDE (prerequisite)
 2. Chapter 1 — Classroom/online instruction (overview and workspace orientation)
 3. Chapters 2–5 — Practical exercises (planning, routing, reconnaissance, ground combat)
@@ -1428,9 +1428,9 @@ Liaison officers (LNOs) are the primary human interface for data exchange with p
 
 ### 15-2. Certification Assessment Criteria
 
-A practitioner is certified at the TM-40C level when they demonstrate proficiency on the following tasks:
+A practitioner is certified at the SL 4C level when they demonstrate proficiency on the following tasks:
 
-**Table 15-1. TM-40C Certification Task List**
+**Table 15-1. SL 4C Certification Task List**
 
 | Task | Type | Minimum Standard |
 |---|---|---|
@@ -1446,13 +1446,13 @@ A practitioner is certified at the TM-40C level when they demonstrate proficienc
 
 ### 15-3. Recertification Requirements
 
-TM-40C certification is valid for 24 months. Recertification requires:
+SL 4C certification is valid for 24 months. Recertification requires:
 
-- Completion of any platform updates to TM-40C since initial certification
+- Completion of any platform updates to SL 4C since initial certification
 - Practical assessment on a minimum of three tasks from Table 15-1
 - Demonstrated proficiency on degraded operations procedures
 
-> **NOTE: Recertification requirements apply to the platform skills described in TM-40C. MOS qualification and unit training requirements (JRTC, DEFENDER exercise participation, etc.) are separate from MSS certification and governed by applicable Army training management publications.**
+> **NOTE: Recertification requirements apply to the platform skills described in SL 4C. MOS qualification and unit training requirements (JRTC, DEFENDER exercise participation, etc.) are separate from MSS certification and governed by applicable Army training management publications.**
 
 ### 15-3a. Leader Assessment Standards — XO and S3
 
@@ -1481,7 +1481,7 @@ Leaders responsible for the S3 section's MSS employment must be able to assess, 
 
 ### 15-4. Unit-Level Training Integration
 
-TM-40C proficiency is not sustained by initial certification alone. S3 sections must integrate MSS M&M tasks into regular unit training events to sustain skills and train newly assigned personnel.
+SL 4C proficiency is not sustained by initial certification alone. S3 sections must integrate MSS M&M tasks into regular unit training events to sustain skills and train newly assigned personnel.
 
 **Recommended Unit Training Integration:**
 
@@ -1491,7 +1491,7 @@ TM-40C proficiency is not sustained by initial certification alone. S3 sections 
 | Command Post Exercise (CPX) | Full MSS employment by all staff sections; assess cross-section data standards | Semi-annually |
 | Mission Rehearsal Exercise (MRE) | Live DEFENDER-standard MSS employment; degraded ops exercise included | Annually (DEFENDER preparation) |
 | Battle Captain Shift Training | Route update, FRAGO graphic processing, SITREP data pull | Monthly |
-| New Personnel Orientation | TM-10, TM-20, TM-30, and TM-40C read-through; supervised workspace access | Within 30 days of assignment |
+| New Personnel Orientation | SL 1, SL 2, SL 3, and SL 4C read-through; supervised workspace access | Within 30 days of assignment |
 
 ### 15-4a. Sustainment of Proficiency During High-Operational-Tempo Periods
 
@@ -1511,7 +1511,7 @@ These three activities, conducted consistently, sustain the core proficiency req
 
 ### 15-5. Common Assessment Failures and Remediation
 
-USAREUR-AF assessments of TM-40C proficiency identify common failure patterns that appear across units. S3 sections should self-assess against these patterns before formal assessments.
+USAREUR-AF assessments of SL 4C proficiency identify common failure patterns that appear across units. S3 sections should self-assess against these patterns before formal assessments.
 
 **Common Assessment Failures:**
 
@@ -1527,11 +1527,11 @@ USAREUR-AF assessments of TM-40C proficiency identify common failure patterns th
 
 ## APPENDIX K — REFERENCES
 
-The following publications are referenced in TM-40C. Practitioners should have access to the current version of each reference. Access through the Army Publishing Directorate (APD) at armypubs.army.mil.
+The following publications are referenced in SL 4C. Practitioners should have access to the current version of each reference. Access through the Army Publishing Directorate (APD) at armypubs.army.mil.
 
 ### K-1. Doctrinal References by M&M Domain
 
-TM-40C aligns to multiple doctrinal publications. Table K-1 provides a quick reference to the primary doctrinal sources for each M&M domain covered in this manual.
+SL 4C aligns to multiple doctrinal publications. Table K-1 provides a quick reference to the primary doctrinal sources for each M&M domain covered in this manual.
 
 **Table K-1. Doctrinal References by M&M Domain**
 
@@ -1574,18 +1574,18 @@ TM-40C aligns to multiple doctrinal publications. Table K-1 provides a quick ref
 
 ### K-2. Prerequisite Manuals
 
-- TM-10, Maven User (Basic Operator's Manual)
-- TM-20, Builder (Light Builder's Manual)
-- TM-30, Advanced Builder
+- SL 1, Maven User (Basic Operator's Manual)
+- SL 2, Builder (Light Builder's Manual)
+- SL 3, Advanced Builder
 - CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER (companion to this manual)
 
 ---
 
 ## APPENDIX L — QUICK REFERENCE: KEY STANDARDS SUMMARY
 
-The following table consolidates the key data currency and update standards from across TM-40C. Print and post at the S3 section workstation.
+The following table consolidates the key data currency and update standards from across SL 4C. Print and post at the S3 section workstation.
 
-**Table L-1. TM-40C Key Standards at a Glance**
+**Table L-1. SL 4C Key Standards at a Glance**
 
 | Task | Standard | Chapter |
 |---|---|---|
@@ -1902,7 +1902,7 @@ The S3 section maintains MSS as part of the unit battle rhythm. The following te
 
 The following tasks appear in this manual with full Conditions/Standards/Procedure blocks. This appendix provides a quick-reference summary of the standard for each task.
 
-**Table J-1. TM-40C Task Standards Summary**
+**Table J-1. SL 4C Task Standards Summary**
 
 | Task | Standard | Reference |
 |---|---|---|
@@ -2009,33 +2009,33 @@ The following tasks appear in this manual with full Conditions/Standards/Procedu
 
 ### WFF Peer Tracks
 
-TM-40C is one of six Warfighting Function tracks at the same tier. All six WFF tracks require TM-10, TM-20, and TM-30 as prerequisites. M&M practitioners should develop working familiarity with TM-40A (Intelligence) and TM-40F (Mission Command) — the peer tracks with the most intensive M&M coordination requirements.
+SL 4C is one of six Warfighting Function tracks at the same tier. All six WFF tracks require SL 1, SL 2, and SL 3 as prerequisites. M&M practitioners should develop working familiarity with SL 4A (Intelligence) and SL 4F (Mission Command) — the peer tracks with the most intensive M&M coordination requirements.
 
 **Table. WFF Peer Track Quick Reference**
 
 | Track | Title | Prereq | Primary M&M Coordination Point |
 |-------|-------|--------|--------------------------------|
-| TM-40A | Intelligence WFF | TM-10 + TM-20 + TM-30 | NAI/TAI overlays, PIR/IR supporting reconnaissance |
-| TM-40B | Fires WFF | TM-10 + TM-20 + TM-30 | FSCM coordination, airspace deconfliction |
-| TM-40C | Movement and Maneuver WFF | TM-10 + TM-20 + TM-30 | This manual |
-| TM-40D | Sustainment WFF | TM-10 + TM-20 + TM-30 | Maneuver unit readiness, route capacity, supply constraints |
-| TM-40E | Protection WFF | TM-10 + TM-20 + TM-30 | Physical security, NBC threat overlays (see NBC report cross-ref) |
-| TM-40F | Mission Command WFF | TM-10 + TM-20 + TM-30 | Combined arms COP, CCIR thresholds for maneuver triggers |
+| SL 4A | Intelligence WFF | SL 1 + SL 2 + SL 3 | NAI/TAI overlays, PIR/IR supporting reconnaissance |
+| SL 4B | Fires WFF | SL 1 + SL 2 + SL 3 | FSCM coordination, airspace deconfliction |
+| SL 4C | Movement and Maneuver WFF | SL 1 + SL 2 + SL 3 | This manual |
+| SL 4D | Sustainment WFF | SL 1 + SL 2 + SL 3 | Maneuver unit readiness, route capacity, supply constraints |
+| SL 4E | Protection WFF | SL 1 + SL 2 + SL 3 | Physical security, NBC threat overlays (see NBC report cross-ref) |
+| SL 4F | Mission Command WFF | SL 1 + SL 2 + SL 3 | Combined arms COP, CCIR thresholds for maneuver triggers |
 
-### Specialist Tracks (Prerequisite: TM-30)
+### Specialist Tracks (Prerequisite: SL 3)
 
-For technical specialists pursuing advanced capability development, specialist tracks are available after completing TM-30. Not required for M&M WFF employment.
+For technical specialists pursuing advanced capability development, specialist tracks are available after completing SL 3. Not required for M&M WFF employment.
 
 **Table. Specialist and Advanced Track Quick Reference**
 
 | Track | Title | Advanced Track |
 |-------|-------|----------------|
-| TM-40G | ORSA | TM-50G |
-| TM-40H | AI Engineer | TM-50H |
-| TM-40M | ML Engineer | TM-50M |
-| TM-40J | Program Manager | TM-50J |
-| TM-40K | Knowledge Manager | TM-50K |
-| TM-40L | Software Engineer | TM-50L |
+| SL 4G | ORSA | SL 5G |
+| SL 4H | AI Engineer | SL 5H |
+| SL 4M | ML Engineer | SL 5M |
+| SL 4J | Program Manager | SL 5J |
+| SL 4K | Knowledge Manager | SL 5K |
+| SL 4L | Software Engineer | SL 5L |
 
 ---
 
@@ -2050,7 +2050,7 @@ For technical specialists pursuing advanced capability development, specialist t
 
 ---
 
-*TM-40C — MOVEMENT AND MANEUVER WARFIGHTING FUNCTION — Version 1.0 — March 2026*
+*SL 4C — MOVEMENT AND MANEUVER WARFIGHTING FUNCTION — Version 1.0 — March 2026*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA — Wiesbaden, Germany*
 *DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*
 

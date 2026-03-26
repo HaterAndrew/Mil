@@ -8,7 +8,7 @@ import pytest
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
-def create_session(client, course_id="TM-40G", form_type="PRE", cohort="Test Cohort"):
+def create_session(client, course_id="SL 4G", form_type="PRE", cohort="Test Cohort"):
     resp = client.post("/sessions", json={
         "course_id": course_id,
         "form_type": form_type,
@@ -61,7 +61,7 @@ class TestHealth:
 class TestSessions:
     def test_create_session(self, exam_client):
         data = create_session(exam_client)
-        assert data["course_id"] == "TM-40G"
+        assert data["course_id"] == "SL 4G"
         assert data["form_type"] == "PRE"
 
     def test_list_sessions(self, exam_client):

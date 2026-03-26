@@ -21,7 +21,7 @@ This SOP governs the employment, authorities, limitations, reporting, and sustai
 
 ### 1-2. Problem Statement
 
-USAREUR-AF is geographically distributed across Europe. C2DAO cannot permanently station instructors at every MSC. The MTT rotates through MSCs on a quarterly cycle, but personnel turnover, new arrivals, and ongoing readiness requirements create a continuous demand for TM-10 (Maven User) training between MTT visits. UDTs fill that gap.
+USAREUR-AF is geographically distributed across Europe. C2DAO cannot permanently station instructors at every MSC. The MTT rotates through MSCs on a quarterly cycle, but personnel turnover, new arrivals, and ongoing readiness requirements create a continuous demand for SL 1 (Maven User) training between MTT visits. UDTs fill that gap.
 
 ### 1-3. References
 
@@ -42,16 +42,16 @@ USAREUR-AF is geographically distributed across Europe. C2DAO cannot permanently
 
 | Criterion | Requirement |
 |---|---|
-| Course Qualification | TM-20 Go on file (minimum) |
+| Course Qualification | SL 2 Go on file (minimum) |
 | Duty Position | Assigned to a billet or duty with training responsibilities: data NCO, S6 staff, unit data steward, or equivalent |
 | Commander Nomination | Unit commander signs nomination letter identifying the candidate and certifying the duty position requirement |
 | Platform Access | Active MSS account with Builder-level access |
 
 ### 2-2. Nomination Process
 
-1. Unit commander identifies need for local TM-10 delivery capability
+1. Unit commander identifies need for local SL 1 delivery capability
 2. Commander nominates candidate via memorandum to C2DAO Training Division (template at Appendix A)
-3. C2DAO Training Division verifies TM-20 Go on file and platform access
+3. C2DAO Training Division verifies SL 2 Go on file and platform access
 4. Candidate is enrolled in next available T3-F iteration
 5. Upon T3-F Go, C2DAO issues UDT designation memorandum (template at Appendix B)
 
@@ -73,17 +73,17 @@ Certification is recorded in:
 
 | Authority | Scope | Notes |
 |---|---|---|
-| Deliver TM-10 | Full course, all 9 blocks | Using provided lesson plans, slides, and materials |
-| Administer TM-10 Go/No-Go evaluations | Using T&EO scoring sheets | Must follow T&EO procedures exactly; no ad-hoc evaluation criteria |
-| Proctor TM-10 pre/post exams | As standalone activity | For self-study or remote personnel who need a formal evaluation; answer key handling per INSTRUCTOR_OVERVIEW §5 |
+| Deliver SL 1 | Full course, all 9 blocks | Using provided lesson plans, slides, and materials |
+| Administer SL 1 Go/No-Go evaluations | Using T&EO scoring sheets | Must follow T&EO procedures exactly; no ad-hoc evaluation criteria |
+| Proctor SL 1 pre/post exams | As standalone activity | For self-study or remote personnel who need a formal evaluation; answer key handling per INSTRUCTOR_OVERVIEW §5 |
 | Report training status | Unit Training Status Report | To C2DAO within 5 duty days of each iteration |
 
 ### 3-2. What UDTs Cannot Do
 
 | Limitation | Reason |
 |---|---|
-| Deliver TM-20 or any course above TM-10 | Requires C2DAO-certified instructor |
-| Deliver TM-30 or any TM-40/TM-50 course | Beyond UDT qualification; requires T3-I certification and domain expertise |
+| Deliver SL 2 or any course above SL 1 | Requires C2DAO-certified instructor |
+| Deliver SL 3 or any SL 4/SL 5 course | Beyond UDT qualification; requires T3-I certification and domain expertise |
 | Modify curriculum, lesson plans, or evaluation criteria | Curriculum authority resides with C2DAO; UDTs deliver as published |
 | Grant enrollment exceptions or waive prerequisites | Enrollment authority resides with C2DAO per Enrollment SOP |
 | Certify other instructors or UDTs | Instructor certification authority resides with C2DAO Training OIC or designated Senior/Master Instructor |
@@ -98,34 +98,34 @@ Certification is recorded in:
 
 ```
 MTT visits MSC (quarterly)
-  ├── Delivers TM-20, TM-30, TM-40 as scheduled
+  ├── Delivers SL 2, SL 3, SL 4 as scheduled
   ├── Delivers T3-F to nominated UDT candidates
   └── Observes existing UDTs, provides feedback
 
 Between MTT visits:
-  └── UDT delivers TM-10 to new arrivals, refresher personnel
+  └── UDT delivers SL 1 to new arrivals, refresher personnel
       └── Reports completions to C2DAO
 ```
 
 ### 4-2. Scheduling
 
-UDTs coordinate TM-10 delivery with their unit training NCO/officer. Recommended cadence:
-- Monthly TM-10 iteration if unit receives 5+ new personnel per month
-- Bi-monthly TM-10 iteration if fewer new arrivals
+UDTs coordinate SL 1 delivery with their unit training NCO/officer. Recommended cadence:
+- Monthly SL 1 iteration if unit receives 5+ new personnel per month
+- Bi-monthly SL 1 iteration if fewer new arrivals
 - Minimum 1 iteration per quarter to maintain UDT designation
 
 ### 4-3. Class Size and Resources
 
 | Parameter | Standard |
 |---|---|
-| Maximum students per UDT | 12 (consistent with TM-10 T:I ratio) |
+| Maximum students per UDT | 12 (consistent with SL 1 T:I ratio) |
 | Minimum students | 3 (below 3, consider individual instruction or consolidation with adjacent unit) |
 | Room requirements | Classroom with projector; each student needs a workstation with MSS access |
-| Materials | TM-10 lesson plans, TM-10 student handout, pre-test/post-test packets, T&EO scoring sheets — all available in the training repository |
+| Materials | SL 1 lesson plans, SL 1 student handout, pre-test/post-test packets, T&EO scoring sheets — all available in the training repository |
 
 ### 4-4. Pre-Course Checklist (UDT Version)
 
-Before each TM-10 delivery, the UDT completes:
+Before each SL 1 delivery, the UDT completes:
 
 - [ ] Verify all enrolled students have active MSS accounts with Viewer access
 - [ ] Confirm training environment is accessible (test login from classroom workstations)
@@ -141,13 +141,13 @@ Before each TM-10 delivery, the UDT completes:
 
 ### 5-1. Unit Training Status Report
 
-After each TM-10 iteration, the UDT submits a report to C2DAO containing:
+After each SL 1 iteration, the UDT submits a report to C2DAO containing:
 
 | Field | Description |
 |---|---|
 | UDT Name | Reporting UDT |
 | Unit | UDT's assigned unit |
-| Iteration Date(s) | Date(s) of TM-10 delivery |
+| Iteration Date(s) | Date(s) of SL 1 delivery |
 | Students Enrolled | Number enrolled at start |
 | Students Completed | Number who completed all blocks |
 | Go Results | Names and number of students receiving Go |
@@ -166,12 +166,12 @@ No-Go results are reported to C2DAO within 24 hours of the Go/No-Go evaluation. 
 - Scheduling remediation training
 - Re-evaluating within 10 duty days
 
-The UDT conducts remediation and re-evaluation for TM-10 tasks. If the student fails re-evaluation, the UDT escalates to C2DAO for guidance.
+The UDT conducts remediation and re-evaluation for SL 1 tasks. If the student fails re-evaluation, the UDT escalates to C2DAO for guidance.
 
 ### 5-3. Escalation
 
 UDTs escalate to C2DAO when:
-- A training need exceeds UDT scope (any TM-20+ request)
+- A training need exceeds UDT scope (any SL 2+ request)
 - An environment or access issue cannot be resolved quickly
 - A student fails re-evaluation after remediation
 - The UDT identifies a potential lesson plan error or gap
@@ -183,18 +183,18 @@ UDTs escalate to C2DAO when:
 
 ### 6-1. Quarterly Delivery Requirement
 
-UDTs must deliver at least 1 TM-10 iteration per quarter to maintain designation. If the quarterly requirement cannot be met (e.g., no new personnel, extended unit deployment), the UDT notifies C2DAO in advance. C2DAO may grant an exception for 1 quarter; 2 consecutive quarters without delivery triggers a re-observation requirement.
+UDTs must deliver at least 1 SL 1 iteration per quarter to maintain designation. If the quarterly requirement cannot be met (e.g., no new personnel, extended unit deployment), the UDT notifies C2DAO in advance. C2DAO may grant an exception for 1 quarter; 2 consecutive quarters without delivery triggers a re-observation requirement.
 
 ### 6-2. Semi-Annual PD Participation
 
 UDTs attend the C2DAO semi-annual PD session (April, October). Virtual attendance is authorized for geographically separated UDTs. The PD session includes:
-- Course currency review (platform changes affecting TM-10)
+- Course currency review (platform changes affecting SL 1)
 - Evaluation standardization calibration
 - UDT-specific topics (troubleshooting updates, reporting feedback)
 
 ### 6-3. Annual Re-Certification
 
-C2DAO observes each UDT annually. The observation covers at least 2 blocks of TM-10 instruction and 1 Go/No-Go evaluation. Virtual observation (via VTC during a live TM-10 iteration) is authorized.
+C2DAO observes each UDT annually. The observation covers at least 2 blocks of SL 1 instruction and 1 Go/No-Go evaluation. Virtual observation (via VTC during a live SL 1 iteration) is authorized.
 
 Re-certification criteria:
 - Satisfactory observation on technical accuracy, materials use, and evaluation fidelity
@@ -204,12 +204,12 @@ Re-certification criteria:
 ### 6-4. Designation Lapse
 
 UDT designation lapses if:
-- 6 months pass without delivering a TM-10 iteration (with no approved exception)
+- 6 months pass without delivering a SL 1 iteration (with no approved exception)
 - Annual re-certification observation is unsatisfactory on 2+ criteria
 - The UDT PCSs or changes duty position such that training responsibilities are no longer assigned
 
 Reinstatement requires:
-- Re-observation by C2DAO (1 TM-10 iteration, virtual authorized)
+- Re-observation by C2DAO (1 SL 1 iteration, virtual authorized)
 - Satisfactory observation report
 - Updated commander nomination if duty position changed
 
@@ -233,12 +233,12 @@ SUBJECT: Nomination for Unit Data Trainer — T3-F Course
    Email:         _______________________________________
    Phone:         _______________________________________
 
-2. The nominee holds a TM-20 Go evaluation on file.
-   Date of TM-20 Go: ______________
+2. The nominee holds a SL 2 Go evaluation on file.
+   Date of SL 2 Go: ______________
 
 3. The nominee is assigned to a duty position with training
    responsibilities and will serve as the unit's primary
-   point of contact for MSS TM-10 training delivery.
+   point of contact for MSS SL 1 training delivery.
 
 4. POC for this nomination: ____________________________
 
@@ -267,13 +267,13 @@ SUBJECT: Unit Data Trainer Designation
    Unit:          _______________________________________
 
 2. The designated UDT is authorized to:
-   a. Deliver TM-10 (Maven User) independently
-   b. Administer TM-10 Go/No-Go evaluations
-   c. Proctor TM-10 pre/post exams as standalone activity
+   a. Deliver SL 1 (Maven User) independently
+   b. Administer SL 1 Go/No-Go evaluations
+   c. Proctor SL 1 pre/post exams as standalone activity
    d. Report training status to C2DAO
 
 3. The designated UDT is NOT authorized to:
-   a. Deliver TM-20 initial certification or any TM-30+ course
+   a. Deliver SL 2 initial certification or any SL 3+ course
    b. Modify curriculum or evaluation criteria
    c. Grant enrollment exceptions
 

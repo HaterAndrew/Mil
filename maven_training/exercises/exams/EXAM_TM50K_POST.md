@@ -1,12 +1,12 @@
-# POST-TEST — TM-50K: ADVANCED KNOWLEDGE MANAGER
+# POST-TEST — SL 5K: ADVANCED KNOWLEDGE MANAGER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-50K: Advanced Knowledge Manager |
+| **Course** | SL 5K: Advanced Knowledge Manager |
 | **Form** | Post-Test |
-| **Level** | TM-50K (Advanced Specialist) |
-| **Audience** | Corps/Theater-level KMOs, enterprise KM architects; prerequisite: TM-40K + enterprise KM experience |
+| **Level** | SL 5K (Advanced Specialist) |
+| **Audience** | Corps/Theater-level KMOs, enterprise KM architects; prerequisite: SL 4K + enterprise KM experience |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (42/60) |
 
@@ -29,7 +29,7 @@ B. A shared API layer that queries both repositories simultaneously for users wi
 C. Parallel networks — each classification domain maintains its own separate repository with no automated bridge; cross-domain transfers require individual SSO/ISSO-reviewed human-controlled sanitization
 D. A single SIPR-hosted repository with NIPR users accessing a read-only downgraded view
 
-**2. The V Corps Civil Affairs CIMIC section proposes automating doctrine updates: when 10 or more NIPR lessons share a common theme, an AI workflow automatically drafts a doctrine amendment and publishes it to the theater SOP library. Per TM-50K, which element of this proposal is NON-COMPLIANT?**
+**2. The V Corps Civil Affairs CIMIC section proposes automating doctrine updates: when 10 or more NIPR lessons share a common theme, an AI workflow automatically drafts a doctrine amendment and publishes it to the theater SOP library. Per SL 5K, which element of this proposal is NON-COMPLIANT?**
 
 A. Using AI to identify thematic clusters across lessons
 B. Automatically publishing the AI-drafted amendment without mandatory SME review
@@ -57,14 +57,14 @@ B. It mandates that all NATO nations use a common KM software platform
 C. It defines classification equivalencies between U.S. and NATO classification schemes
 D. It specifies the encryption standards required for NATO knowledge product transmission
 
-**6. A TM-50K knowledge graph schema for V Corps theater operations is considered operationally sensitive because:**
+**6. A SL 5K knowledge graph schema for V Corps theater operations is considered operationally sensitive because:**
 
 A. The entity types and relationship structure reveal what categories of information the Corps tracks, which units are linked to which operations, and what the command considers significant — adversaries could exploit this structure to understand intelligence priorities and decision processes
 B. The graph contains classified lesson content that requires SIPR-level handling
 C. Knowledge graph schemas contain embedded connection strings to the underlying database
 D. The schema identifies individual Soldiers who authored knowledge products
 
-**7. A TM-50K enterprise KM metrics report for a corps commander briefing should include which combination?**
+**7. A SL 5K enterprise KM metrics report for a corps commander briefing should include which combination?**
 
 A. Document count and total storage consumed by the knowledge system
 B. System uptime and search query response time only
@@ -85,7 +85,7 @@ B. A low-risk item — the NCO will brief their replacement before PCS
 C. An acceptable risk managed under the G2's succession planning process
 D. A CUI concern that should be handled separately from the KM risk register
 
-**10. A legacy theater KM system built in 2020 has no decommission plan. The system is still referenced in weekly battle rhythm slides despite significant data staleness. Per TM-50K, this situation represents:**
+**10. A legacy theater KM system built in 2020 has no decommission plan. The system is still referenced in weekly battle rhythm slides despite significant data staleness. Per SL 5K, this situation represents:**
 
 A. Normal system lifecycle status — systems remain in service until replaced
 B. A knowledge risk and governance liability — the absence of a decommission plan means the organization has no structured path to retire the system, and dependencies will make it progressively harder to decommission
@@ -106,7 +106,7 @@ B. The percentage of knowledge products that have been updated in the last 12 mo
 C. The average number of times each knowledge product is viewed per month
 D. The proportion of lessons or knowledge products that were accessed and cited or referenced in subsequent planning, training, or operations — indicating the knowledge is being applied, not just stored
 
-**13. A V Corps KM officer is asked to share a comprehensive expertise directory of all Soldiers in the AOR with specific technical skills with a coalition partner for multinational task force assignment. Per TM-50K, before sharing this directory the KM officer must:**
+**13. A V Corps KM officer is asked to share a comprehensive expertise directory of all Soldiers in the AOR with specific technical skills with a coalition partner for multinational task force assignment. Per SL 5K, before sharing this directory the KM officer must:**
 
 A. Classify the directory at NATO SECRET before sharing
 B. Conduct a Privacy Act review of the aggregated expertise data, confirm an ISA is in place covering this specific use, obtain OPSEC review, and verify the partner's authorized access scope before any sharing
@@ -120,7 +120,7 @@ B. Defined ownership for each repository, a schema change control board, a regul
 C. Weekly commander review of all new knowledge submissions
 D. A vendor support contract for the underlying KM platform
 
-**15. When a TM-50K qualified KM architect determines that crossing a classification boundary is required to share a specific knowledge product with a lower-classification partner, the correct procedure is:**
+**15. When a SL 5K qualified KM architect determines that crossing a classification boundary is required to share a specific knowledge product with a lower-classification partner, the correct procedure is:**
 
 A. Redact the classified portions and share the remainder without further review
 B. Route the product through the G2 downgrade process and share upon approval
@@ -163,7 +163,7 @@ D. Share the product with a classification caveat that transfers responsibility 
 
 &nbsp;
 
-**SA-4. Describe the TM-50K knowledge risk register for a theater-level command. What categories of risk must be tracked, give two concrete examples of entries from a USAREUR-AF Corps context, and describe the escalation process when a risk is rated HIGH.**
+**SA-4. Describe the SL 5K knowledge risk register for a theater-level command. What categories of risk must be tracked, give two concrete examples of entries from a USAREUR-AF Corps context, and describe the escalation process when a risk is rated HIGH.**
 
 &nbsp;
 

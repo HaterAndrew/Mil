@@ -1,7 +1,7 @@
 # T3-I — INSTRUCTOR CERTIFICATION · MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** T3-I certifies MSS instructors. It formalizes the instructor development pipeline into a structured course covering adult learning principles, platform deep-dive for instruction, lab facilitation, assessment design, Go/No-Go standardization, and common trainee error management. Graduates enter the supervised practicum (Phase 2) and, upon completion, are authorized to teach independently.
-> **Prereqs:** TM-30, Advanced Builder (Go on file); C2DAO Training OIC selection; CONCEPTS_GUIDE_T3I_INSTRUCTOR_CERTIFICATION (read before this manual).
+> **Prereqs:** SL 3, Advanced Builder (Go on file); C2DAO Training OIC selection; CONCEPTS_GUIDE_T3I_INSTRUCTOR_CERTIFICATION (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING:** Instructor quality directly affects operational data quality across USAREUR-AF. An MSS data product built by a trainee is only as good as the instruction they received.
@@ -16,9 +16,9 @@
 
 This manual provides the reference material for the T3-I course. It covers everything an instructor candidate needs to understand the MSS training program, develop instructional competency, and prepare for the supervised practicum.
 
-**T3-I covers** adult learning principles applied to technical training (andragogy, experiential learning cycle, scaffolding); MSS platform deep-dive from the instructor perspective — every TM-10 through TM-30 lab exercise, common break points, access issues; lab facilitation techniques including managing heterogeneous skill levels, pacing, and dead time elimination; assessment and evaluation design (T&EO structure, Go/No-Go standardization, evaluator calibration); common trainee error taxonomy (the top 10 errors by course level, root causes, intervention techniques); instructor performance standards (the 7 observation criteria from FDP §6-1); pre-course administration (environment setup, access provisioning, material preparation); and lesson improvement process (identifying gaps, proposing revisions, version control).
+**T3-I covers** adult learning principles applied to technical training (andragogy, experiential learning cycle, scaffolding); MSS platform deep-dive from the instructor perspective — every SL 1 through SL 3 lab exercise, common break points, access issues; lab facilitation techniques including managing heterogeneous skill levels, pacing, and dead time elimination; assessment and evaluation design (T&EO structure, Go/No-Go standardization, evaluator calibration); common trainee error taxonomy (the top 10 errors by course level, root causes, intervention techniques); instructor performance standards (the 7 observation criteria from FDP §6-1); pre-course administration (environment setup, access provisioning, material preparation); and lesson improvement process (identifying gaps, proposing revisions, version control).
 
-**T3-I does NOT cover** domain-specific content for TM-40/TM-50 courses (domain qualification is a separate prerequisite per FDP §2-1); C2DAO SME designation — see C2DAO SME Designation Rubric; Unit Data Trainer certification — see T3-F (MSC Force Multiplier); or curriculum design from scratch (T3-I teaches instructors to deliver and improve existing curriculum, not to author new courses).
+**T3-I does NOT cover** domain-specific content for SL 4/SL 5 courses (domain qualification is a separate prerequisite per FDP §2-1); C2DAO SME designation — see C2DAO SME Designation Rubric; Unit Data Trainer certification — see T3-F (MSC Force Multiplier); or curriculum design from scratch (T3-I teaches instructors to deliver and improve existing curriculum, not to author new courses).
 
 > **NOTE:** T3-I is a two-phase program. Phase 1 (5 days classroom) is delivered as a formal course. Phase 2 (supervised practicum) is scheduled separately around actual course iterations. This manual covers Phase 1 content. Phase 2 procedures are documented in Chapter 7.
 
@@ -28,7 +28,7 @@ This manual provides the reference material for the T3-I course. It covers every
 
 ### 1-2. The Instructor in the MSS Ecosystem
 
-The MSS Training Program is a tiered, progressive curriculum spanning TM-10 (Maven User) through TM-50 (Advanced Specialist). Instructors are the primary mechanism for quality assurance across this entire chain. Every Go/No-Go decision an instructor makes determines whether a person enters the operational data ecosystem with the skills to contribute — or the gaps to cause harm.
+The MSS Training Program is a tiered, progressive curriculum spanning SL 1 (Maven User) through SL 5 (Advanced Specialist). Instructors are the primary mechanism for quality assurance across this entire chain. Every Go/No-Go decision an instructor makes determines whether a person enters the operational data ecosystem with the skills to contribute — or the gaps to cause harm.
 
 The training program operates in a geographically distributed theater (USAREUR-AF across Europe). Instructors travel with the MTT, deliver courses at MSC locations, certify Unit Data Trainers, and maintain training standards across a theater where no two sites have identical infrastructure, connectivity, or personnel tempo.
 
@@ -48,7 +48,7 @@ See Instructor Tier Definitions for full criteria.
 
 | Prerequisite | Requirement |
 |---|---|
-| TM-30 Go | On file with C2DAO. TM-30 is the minimum operational qualification — it ensures the candidate can build on MSS, not just use it. |
+| SL 3 Go | On file with C2DAO. SL 3 is the minimum operational qualification — it ensures the candidate can build on MSS, not just use it. |
 | C2DAO Selection | The C2DAO Training OIC selects instructor candidates based on operational need, platform proficiency, and demonstrated aptitude for instruction. Self-nomination is permitted but selection is not guaranteed. |
 | Domain Qualification | Not required for T3-I entry, but required before independent teaching assignment. See FDP §2-1 for domain requirements by course level. |
 | Pre-Course Reading | CONCEPTS_GUIDE_T3I_INSTRUCTOR_CERTIFICATION (complete before Day 1) |
@@ -70,7 +70,7 @@ Malcolm Knowles identified six principles of adult learning that directly apply 
 | **Need to Know** | Adults need to know why they are learning something before they engage. Every block of instruction must begin with operational context: "Here is the mission problem this skill solves." |
 | **Self-Concept** | Adults resist being treated as dependent learners. Lab-heavy instruction works because it puts the trainee in control. Lectures where the trainee passively watches the instructor build are the weakest delivery method. |
 | **Experience** | Adults bring operational experience. Use it. Ask the Intel analyst how they currently track CCIRs before showing them the MSS way. Build on what they know. |
-| **Readiness** | Adults learn what they need to learn for their current role. TM-40 WFF tracks succeed because the content maps directly to the trainee's job. |
+| **Readiness** | Adults learn what they need to learn for their current role. SL 4 WFF tracks succeed because the content maps directly to the trainee's job. |
 | **Orientation** | Adults are problem-oriented, not subject-oriented. Frame every exercise as a problem to solve, not a feature to learn. |
 | **Motivation** | Adults are motivated by internal factors (competence, job performance) more than external ones (grades, rankings). Go/No-Go evaluations work because they certify operational competence, not academic achievement. |
 
@@ -120,10 +120,10 @@ T3-I does not require memorization of these publications. It requires understand
 
 Every learning objective in the MSS curriculum is written in TCS format:
 
-| Element | Definition | Example (TM-20, Pipeline Building) |
+| Element | Definition | Example (SL 2, Pipeline Building) |
 |---|---|---|
 | **Task** | What the trainee will do (action verb) | Build a Pipeline Builder pipeline |
-| **Condition** | The circumstances under which the task is performed | Given a MSS training environment with Editor access, a source dataset, and the TM-20 task reference |
+| **Condition** | The circumstances under which the task is performed | Given a MSS training environment with Editor access, a source dataset, and the SL 2 task reference |
 | **Standard** | The measurable performance criteria | Pipeline ingests source data, applies at least 2 transforms, outputs to a dataset; pipeline builds successfully on first execution; pipeline is governed with description and tags per C2DAO naming standards |
 
 **Instructors must understand TCS because:**
@@ -166,15 +166,15 @@ Teaching on MSS is different from building on MSS. The instructor must:
 - Be able to diagnose and resolve failures in real time without disrupting the class
 - Maintain a second environment (instructor account) to demonstrate while trainees work in their own accounts
 
-### 4-2. TM-10 Through TM-30 Exercise Walkthroughs
+### 4-2. SL 1 Through SL 3 Exercise Walkthroughs
 
-T3-I Day 2 covers a full walkthrough of every lab exercise in TM-10, TM-20, and TM-30 from the instructor perspective. The walkthrough covers:
+T3-I Day 2 covers a full walkthrough of every lab exercise in SL 1, SL 2, and SL 3 from the instructor perspective. The walkthrough covers:
 
 | Course | Key Failure Points | Instructor Action |
 |---|---|---|
-| TM-10 | CAC authentication failure; Viewer vs. Builder confusion; export/classification marking errors | Pre-verify all student accounts before Day 1; demo the correct classification marking before students attempt it |
-| TM-20 | Pipeline build failures (source schema change, type mismatch); Workshop layout issues; governance metadata omission | Keep a pre-built reference pipeline for comparison; teach "check the build log first" as the universal troubleshooting step |
-| TM-30 | Ontology design errors (circular links, missing PKs, wrong cardinality); AIP Logic config errors; Quiver linked view failures | Use the design critique rubric to catch errors early; pre-stage a known-bad Ontology for the critique exercise |
+| SL 1 | CAC authentication failure; Viewer vs. Builder confusion; export/classification marking errors | Pre-verify all student accounts before Day 1; demo the correct classification marking before students attempt it |
+| SL 2 | Pipeline build failures (source schema change, type mismatch); Workshop layout issues; governance metadata omission | Keep a pre-built reference pipeline for comparison; teach "check the build log first" as the universal troubleshooting step |
+| SL 3 | Ontology design errors (circular links, missing PKs, wrong cardinality); AIP Logic config errors; Quiver linked view failures | Use the design critique rubric to catch errors early; pre-stage a known-bad Ontology for the critique exercise |
 
 ### 4-3. Environment Troubleshooting
 

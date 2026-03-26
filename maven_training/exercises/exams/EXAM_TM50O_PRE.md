@@ -1,12 +1,12 @@
-# PRE-TEST — TM-50O: ADVANCED PLATFORM ENGINEER
+# PRE-TEST — SL 5O: ADVANCED PLATFORM ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-50O: Advanced Platform Engineer |
+| **Course** | SL 5O: Advanced Platform Engineer |
 | **Form** | Pre-Test |
-| **Level** | TM-50O (Advanced Specialist) |
-| **Audience** | Experienced platform engineers; prerequisite: TM-40O Go |
+| **Level** | SL 5O (Advanced Specialist) |
+| **Audience** | Experienced platform engineers; prerequisite: SL 4O Go |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
@@ -65,7 +65,7 @@ D. The time between product releases
 
 **6. What is a "golden path" in platform engineering? Why is it valuable even though developers are not required to follow it?**
 
-**7. Explain the difference between managing a single Kubernetes cluster (TM-40O) and managing a fleet of clusters (TM-50O). What new challenges emerge at fleet scale?**
+**7. Explain the difference between managing a single Kubernetes cluster (SL 4O) and managing a fleet of clusters (SL 5O). What new challenges emerge at fleet scale?**
 
 **8. What is a "blameless post-incident review"? Why is "blameless" important?**
 
@@ -107,7 +107,7 @@ Passing: N/A — Pre-test is diagnostic only.
 
 SA-6. Full credit: a golden path is an opinionated, pre-configured, tested, and documented approach for common tasks (e.g., "deploy a new Python service" template with CI/CD, monitoring, RBAC, and network policies pre-configured). It is valuable because: (1) it encodes best practices — developers get security, observability, and compliance by default without being experts in each; (2) it reduces onboarding time — new teams can ship a working, compliant service in hours instead of weeks; (3) it is not mandatory — developers can deviate, but the golden path is the supported, recommended, and easiest option. Partial credit (3 pts) for correct definition without explaining why it is valuable despite being optional.
 
-SA-7. Full credit: single cluster (TM-40O) = managing one Kubernetes environment — deployments, networking, storage, RBAC, and security within that cluster. Fleet (TM-50O) = managing many clusters across environments (dev, prod, edge, air-gapped) — new challenges: configuration consistency across clusters, version skew management, fleet-wide upgrades (wave strategy), centralized observability across clusters, policy enforcement at scale, and handling clusters with different connectivity (hub vs. edge). Partial credit (3 pts) for correct distinction without naming specific fleet-scale challenges.
+SA-7. Full credit: single cluster (SL 4O) = managing one Kubernetes environment — deployments, networking, storage, RBAC, and security within that cluster. Fleet (SL 5O) = managing many clusters across environments (dev, prod, edge, air-gapped) — new challenges: configuration consistency across clusters, version skew management, fleet-wide upgrades (wave strategy), centralized observability across clusters, policy enforcement at scale, and handling clusters with different connectivity (hub vs. edge). Partial credit (3 pts) for correct distinction without naming specific fleet-scale challenges.
 
 SA-8. Full credit: a blameless post-incident review analyzes an incident by focusing on contributing factors, system design, and process improvements — not on identifying individuals to blame. "Blameless" is important because: (1) blame discourages honesty — engineers will hide mistakes or avoid reporting near-misses if they fear punishment; (2) the root cause of incidents is almost always a system/process failure, not an individual failure — blaming individuals misses the systemic fix; (3) blameless culture encourages proactive reporting, which leads to faster detection and prevention of future incidents. Partial credit (3 pts) for correct definition without explaining why blamelessness matters.
 

@@ -1,6 +1,6 @@
 # ENVIRONMENT SETUP — EX_40K Knowledge Manager
 
-**Track:** EX_40K — Knowledge Manager (TM-40K) | **Prerequisite:** TM-30 REQUIRED | **Continuation:** TM-50K — Advanced Knowledge Manager
+**Track:** EX_40K — Knowledge Manager (SL 4K) | **Prerequisite:** SL 3 REQUIRED | **Continuation:** SL 5K — Advanced Knowledge Manager
 **Companion exams:** EXAM_TM40K_PRE (administer before exercise), EXAM_TM40K_POST (administer after exercise)
 
 ## Environment Type

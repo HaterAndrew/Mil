@@ -1,11 +1,11 @@
 # EX_50H — Advanced AI Engineering
-## Practical Exercise — TM-50H Proficiency
+## Practical Exercise — SL 5H Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40H complete (Go on file); TM-50H course completion; AIP Logic and Code Workspace access confirmed |
-| **Duration** | 6–8 hours (typically executed Day 5 of TM-50H) |
+| **Prerequisite** | SL 4H complete (Go on file); SL 5H course completion; AIP Logic and Code Workspace access confirmed |
+| **Duration** | 6–8 hours (typically executed Day 5 of SL 5H) |
 | **Environment** | MSS Code Workspace (Python), AIP Logic (multi-agent orchestration), Ontology access; see ENVIRONMENT_SETUP.md |
 | **Companion TM** | TM_50H_AI_ENGINEER_ADVANCED.md |
 | **Syllabus** | SYLLABUS_TM50H |

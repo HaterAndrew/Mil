@@ -1,20 +1,20 @@
-# COURSE SYLLABUS — TM-50M: ADVANCED MACHINE LEARNING ENGINEERING
+# COURSE SYLLABUS — SL 5M: ADVANCED MACHINE LEARNING ENGINEERING
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Level** | TM-50M — Advanced ML Engineer Specialist Track |
+| **Level** | SL 5M — Advanced ML Engineer Specialist Track |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-40M complete (Go evaluation on file); 12+ months active ML engineering experience; demonstrated proficiency deploying and monitoring models in production; familiarity with MLOps concepts and distributed data frameworks |
+| **Prerequisites** | SL 4M complete (Go evaluation on file); 12+ months active ML engineering experience; demonstrated proficiency deploying and monitoring models in production; familiarity with MLOps concepts and distributed data frameworks |
 | **Audience** | Senior ML engineers, ML platform engineers, data scientists leading production ML systems on MSS |
 | **Format** | Advanced lab + architecture review + evaluated MLOps pipeline build |
 | **Location** | MSS Training Environment (Python Transforms, Model Integration, Code Workspace with GPU allocation required) |
 
-> **PREREQUISITE WARNING:** TM-50M is not required for most ML engineer billets. It is intended for engineers managing production ML systems, building the platform other data scientists use, or implementing enterprise MLOps governance.
+> **PREREQUISITE WARNING:** SL 5M is not required for most ML engineer billets. It is intended for engineers managing production ML systems, building the platform other data scientists use, or implementing enterprise MLOps governance.
 
 ---
 
-**BLUF:** TM-50M addresses the full production lifecycle of ML systems at enterprise scale — not model building (covered in TM-40M), but the infrastructure, governance, and organizational patterns required to keep models working and trustworthy over time. Drift detection, automated retraining, model governance documentation, and responsible deployment are the core of this course.
+**BLUF:** SL 5M addresses the full production lifecycle of ML systems at enterprise scale — not model building (covered in SL 4M), but the infrastructure, governance, and organizational patterns required to keep models working and trustworthy over time. Drift detection, automated retraining, model governance documentation, and responsible deployment are the core of this course.
 
 ---
 
@@ -49,7 +49,7 @@ Complete **7+ duty days before Day 1:**
 
 | Time | Block | Method | Content |
 |---|---|---|---|
-| 0800–0900 | 1 | Seminar | TM-50M scope; the production model lifecycle; why models fail silently; drift taxonomy |
+| 0800–0900 | 1 | Seminar | SL 5M scope; the production model lifecycle; why models fail silently; drift taxonomy |
 | 0900–1100 | 2 | Lab | Data drift detection: population stability index (PSI), Kullback-Leibler divergence, feature distribution monitoring pipelines |
 | 1100–1115 | — | Break | |
 | 1115–1200 | 3 | Lab | Concept drift: label distribution monitoring, prediction confidence trends, sliding window detection |
@@ -101,7 +101,7 @@ Complete **7+ duty days before Day 1:**
 | Time | Block | Method | Content |
 |---|---|---|---|
 | 0800–0900 | 14 | Seminar | USAREUR-AF model governance package requirements; model card standard; deprecation criteria |
-| 0900–1100 | 15 | Workshop | Participant model audit: audit the model card you prepared against the TM-50M governance checklist |
+| 0900–1100 | 15 | Workshop | Participant model audit: audit the model card you prepared against the SL 5M governance checklist |
 | 1100–1115 | — | Break | |
 | 1115–1200 | 16 | Workshop | Peer model card exchange: critique a peer's model card for gaps, optimistic limitations, missing lineage |
 | 1200–1300 | — | Lunch | |
@@ -122,13 +122,13 @@ Complete **7+ duty days before Day 1:**
 
 ## Peer Advanced Tracks
 
-| Track | Relevance to TM-50M |
+| Track | Relevance to SL 5M |
 |---|---|
-| TM-50H (Advanced AI Eng) | AI inference integration with deployed ML models; shared governance requirements for AI/ML production systems |
-| TM-50G (Advanced ORSA) | Ensemble and Bayesian methods overlap; ORSA analysts consuming ML predictions for COA analysis |
-| TM-50L (Advanced SWE) | OSDK integration for model inference endpoints; CI/CD pipeline patterns applicable to ML pipeline deployment |
+| SL 5H (Advanced AI Eng) | AI inference integration with deployed ML models; shared governance requirements for AI/ML production systems |
+| SL 5G (Advanced ORSA) | Ensemble and Bayesian methods overlap; ORSA analysts consuming ML predictions for COA analysis |
+| SL 5L (Advanced SWE) | OSDK integration for model inference endpoints; CI/CD pipeline patterns applicable to ML pipeline deployment |
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*Syllabus TM-50M | Version 1.0 | March 2026*
+*Syllabus SL 5M | Version 1.0 | March 2026*

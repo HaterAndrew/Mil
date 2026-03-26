@@ -1,8 +1,8 @@
-# LESSON PLANS — TM-10 MAVEN USER
+# LESSON PLANS — SL 1 MAVEN USER
 ## Maven Smart System (MSS) Training Program
 ### USAREUR-AF Operational Data Team — C2DAO
 
-**Course:** TM-10 — Maven User
+**Course:** SL 1 — Maven User
 **Course Duration:** 1 day (8 hours)
 **All 9 lesson plans contained in this file.**
 
@@ -13,8 +13,8 @@
 | Publication | Title | Relevance |
 |---|---|---|
 | AR 350-1 | Army Training and Leader Development | Master regulation for Army training policy; governs lesson plan standards and instructional requirements |
-| FM 7-0 | Training | Unit training management procedures; context for how TM-10 integrates with unit training plans |
-| AR 25-1 | Army Information Technology | Establishes data governance authority; foundational context for MSS data handling procedures taught in TM-10 |
+| FM 7-0 | Training | Unit training management procedures; context for how SL 1 integrates with unit training plans |
+| AR 25-1 | Army Information Technology | Establishes data governance authority; foundational context for MSS data handling procedures taught in SL 1 |
 
 ---
 
@@ -22,10 +22,10 @@
 
 | Field | Value |
 |---|---|
-| **Course** | TM-10 Maven User |
+| **Course** | SL 1 Maven User |
 | **Lesson Title** | MSS Overview and Data Literacy Fundamentals |
 | **Block Number** | Block 1 |
-| **POI Reference** | TM-10 Block 1 |
+| **POI Reference** | SL 1 Block 1 |
 | **Hours** | 1.0 |
 | **Method** | Lecture |
 | **Time** | 0800–0900 |
@@ -44,12 +44,12 @@ This block establishes why MSS exists, what it replaces, and what the trainee's 
 | 1 | State what MSS replaces in the unit data workflow (manually updated PowerPoints, emailed spreadsheets, stovepiped reporting) | Verbal check on learning |
 | 2 | Describe the four-tier training progression and state which tier applies to them | Verbal check on learning |
 | 3 | Identify three USAREUR-AF use cases for MSS (readiness tracking, logistics, SITREP, personnel accountability) | Verbal check on learning |
-| 4 | State the difference between consuming a data product (TM-10) and building one (TM-20+) | Verbal check on learning |
+| 4 | State the difference between consuming a data product (SL 1) and building one (SL 2+) | Verbal check on learning |
 
 ## Resources
 
-**Instructor:** TM-10 presentation slides, Block 1 deck; Data Literacy Technical Reference Chapter 1 (supporting reference)
-**Student:** TM-10, Chapter 1 (pre-read, should be complete)
+**Instructor:** SL 1 presentation slides, Block 1 deck; Data Literacy Technical Reference Chapter 1 (supporting reference)
+**Student:** SL 1, Chapter 1 (pre-read, should be complete)
 **Aids:** Projector; MSS screenshots embedded in slides (no live demo this block)
 
 ## Safety and Security
@@ -66,7 +66,7 @@ No live system interaction this block. No data handling risks. The instructor sh
 1. What MSS is and what it replaced in the unit workflow (10 min)
 2. The Foundry data model: datasets → pipelines → Ontology → applications (15 min)
 3. USAREUR-AF use cases — what is running on MSS right now (15 min)
-4. Training progression: TM-10 through TM-40, and where you are (10 min)
+4. Training progression: SL 1 through SL 4, and where you are (10 min)
 5. Check on learning and transition to Block 2 (10 min)
 
 ## Body
@@ -92,14 +92,14 @@ Reference Slide 2 (What is MSS diagram). Walk through: data sources → ingestio
 ### Sub-Topic 2: The Foundry Data Model — 15 minutes
 
 **Instructor Notes:**
-Trainees do not need to understand Foundry architecture deeply at TM-10 — but they need a mental model that prevents confusion during labs. Introduce the four layers:
+Trainees do not need to understand Foundry architecture deeply at SL 1 — but they need a mental model that prevents confusion during labs. Introduce the four layers:
 
 1. **Datasets** — raw data ingested into Foundry (CSV, Excel, database feeds). The raw material.
 2. **Pipelines** — transforms that clean, join, and compute on datasets. The manufacturing step.
 3. **Ontology** — the semantic layer. Datasets become Objects (Equipment, Unit, Personnel) with properties. This is what makes MSS "smart" — data has meaning, not just rows and columns.
 4. **Applications** — Workshop apps, Contour analyses, Quiver views built on top of the Ontology. What the user sees.
 
-TM-10 trainees only interact with layer 4 (applications) and occasionally layer 3 (Quiver). They do not build layers 1-3 in this course.
+SL 1 trainees only interact with layer 4 (applications) and occasionally layer 3 (Quiver). They do not build layers 1-3 in this course.
 
 Reference Slide 3 (Four Layers diagram). Use the analogy: datasets are the raw intel reports; the pipeline is the intel analyst who processes them; the Ontology is the common operational picture; applications are the brief.
 
@@ -139,27 +139,27 @@ Ask trainees which of these categories their unit needs. This activates prior ex
 **Instructor Notes:**
 Explain the progression clearly. Reference POI Course Summary table.
 
-- **TM-10 (this course):** All personnel. Consume data products, execute authorized actions, handle exports. No building.
-- **TM-20:** All staff who need to build data products. Visual, no code.
-- **TM-30:** Data-adjacent specialists (17/25-series, S6, G2). Advanced building, Ontology design, analytics.
-- **TM-40A–F (WFF tracks):** Role-specific tracks for INT, FIRES, M&M, Sustainment, Protection, and Mission Command functional staff. Prerequisite: TM-30. No coding required.
-- **TM-40G–O (Specialist tracks):** Role-specific specialist tracks for ORSA, AI engineers, ML engineers, PMs, KMs, software engineers, UX designers, and platform engineers. Prerequisite: TM-30.
+- **SL 1 (this course):** All personnel. Consume data products, execute authorized actions, handle exports. No building.
+- **SL 2:** All staff who need to build data products. Visual, no code.
+- **SL 3:** Data-adjacent specialists (17/25-series, S6, G2). Advanced building, Ontology design, analytics.
+- **SL 4A–F (WFF tracks):** Role-specific tracks for INT, FIRES, M&M, Sustainment, Protection, and Mission Command functional staff. Prerequisite: SL 3. No coding required.
+- **SL 4G–O (Specialist tracks):** Role-specific specialist tracks for ORSA, AI engineers, ML engineers, PMs, KMs, software engineers, UX designers, and platform engineers. Prerequisite: SL 3.
 
-Emphasize: TM-10 is the foundation for all higher training. There are no waivers. Senior personnel sometimes push back on this — have a clear, brief response: "The evaluation confirms you can navigate MSS and handle classification procedures correctly. Passing TM-10 is required for TM-20 enrollment. There are no exceptions."
+Emphasize: SL 1 is the foundation for all higher training. There are no waivers. Senior personnel sometimes push back on this — have a clear, brief response: "The evaluation confirms you can navigate MSS and handle classification procedures correctly. Passing SL 1 is required for SL 2 enrollment. There are no exceptions."
 
 **Student Activity:** Each trainee identifies on their copy of the syllabus which TM level is their likely terminal level based on their role.
 
 **Check on Learning:**
 - Q: "An S3 NCO who will maintain the unit SITREP tracker and add new fields to the Workshop application — which TM level do they need to complete?"
-- A: TM-20 (Builder). Workshop application maintenance requires the Builder skill set.
+- A: SL 2 (Builder). Workshop application maintenance requires the Builder skill set.
 
 ## Summary
 
 **SUMMARY:**
 - MSS is a data platform — not a reporting tool. It provides a single source of truth for operational data.
-- The four layers are datasets, pipelines, Ontology, and applications. TM-10 users work in applications.
+- The four layers are datasets, pipelines, Ontology, and applications. SL 1 users work in applications.
 - Real USAREUR-AF data products — readiness, SITREPs, logistics, personnel — run on MSS.
-- Your training level determines what you can do: TM-10 = consume and act on data; TM-20+ = build.
+- Your training level determines what you can do: SL 1 = consume and act on data; SL 2+ = build.
 
 **REMOTIVATION:** You are about to log in to the platform that your unit S3, G4, and commander use to make decisions. After the next eight blocks today, you will be able to navigate it, use it, and handle its data correctly. This is not classroom theory — this is the operational tool.
 
@@ -203,7 +203,7 @@ Login failure is the most common Day 1 delay. This block ensures every trainee h
 
 ## Resources
 
-**Instructor:** TM-10 Block 2 slides; instructor account in Training Environment; printed or digital TM-10 Chapter 2
+**Instructor:** SL 1 Block 2 slides; instructor account in Training Environment; printed or digital TM-10 Chapter 2
 **Student:** Workstation with CAC reader; network access to MSS Training Environment; TM-10 Chapter 2
 **Datasets:** Training Environment pre-configured with unit training project
 
@@ -255,11 +255,11 @@ Once logged in, orient trainees to the interface. Cover:
 - How to find a specific project by name using the Projects navigation
 - Folder structure within a project: Datasets, Pipelines, Ontology, Applications
 
-Instructor demo: navigate to the TM-10 Training Project. Show the folder structure. Open the README file if one exists.
+Instructor demo: navigate to the SL 1 Training Project. Show the folder structure. Open the README file if one exists.
 
 Students will see their training project is pre-loaded with synthetic data. They should not modify anything in this block — just navigate.
 
-**Student Activity:** Each trainee navigates to the TM-10 Training Project, finds the Datasets folder, counts how many datasets are present, and notes the name of the first dataset alphabetically. They will confirm this with the instructor.
+**Student Activity:** Each trainee navigates to the SL 1 Training Project, finds the Datasets folder, counts how many datasets are present, and notes the name of the first dataset alphabetically. They will confirm this with the instructor.
 
 **Check on Learning:**
 - Q: "What is the difference between Projects and Compass in the left navigation?"
@@ -326,7 +326,7 @@ N/A (1-day course).
 
 ## Purpose
 
-Workshop is the primary interface most TM-10 trainees will use every day — it is how operational data products are surfaced to consumers. This block teaches the trainee to read, navigate, filter, and interpret a Workshop application so they can use what the unit data team has built.
+Workshop is the primary interface most SL 1 trainees will use every day — it is how operational data products are surfaced to consumers. This block teaches the trainee to read, navigate, filter, and interpret a Workshop application so they can use what the unit data team has built.
 
 ## Learning Objectives
 
@@ -341,8 +341,8 @@ Workshop is the primary interface most TM-10 trainees will use every day — it 
 
 ## Resources
 
-**Instructor:** TM-10 Block 3 slides; pre-built Training Workshop application with SITREP, readiness, and equipment data
-**Student:** TM-10 Chapter 3; access to TM-10 Training Workshop Application
+**Instructor:** SL 1 Block 3 slides; pre-built Training Workshop application with SITREP, readiness, and equipment data
+**Student:** TM-10 Chapter 3; access to SL 1 Training Workshop Application
 **Datasets/Apps:** Training Workshop Application pre-deployed in Training Environment with synthetic SITREP data
 
 ## Introduction
@@ -378,7 +378,7 @@ Point out: Workshop applications look different from each other — the builder 
 The table widget is the most common Workshop component. Cover:
 - Clicking a column header to sort
 - Using the filter controls (dropdowns, search boxes, date pickers) that the builder has configured
-- Understanding that available filters are determined by the builder — a TM-10 user cannot add new filters that were not built in
+- Understanding that available filters are determined by the builder — a SL 1 user cannot add new filters that were not built in
 - Selecting a row (object selection) — note that in some applications, selecting a row drives other widgets on the page
 
 Lab step: find the SITREP submission table on the Submissions page. Apply a filter for "Last 7 Days" on the submission date column. Observe how the row count changes.
@@ -442,7 +442,7 @@ Assessed in Block 9 (Practical Exercise): filter table to last 7 days and identi
 
 ## Purpose
 
-Actions are how authorized users write data back to the Ontology. An Action submits a status update, completes a form, records an event, or modifies an Object property. Most TM-10 trainees have exactly one or two Actions they are authorized to execute — this block teaches them to execute those correctly and understand what they are doing to the data.
+Actions are how authorized users write data back to the Ontology. An Action submits a status update, completes a form, records an event, or modifies an Object property. Most SL 1 trainees have exactly one or two Actions they are authorized to execute — this block teaches them to execute those correctly and understand what they are doing to the data.
 
 ## Learning Objectives
 
@@ -457,7 +457,7 @@ Actions are how authorized users write data back to the Ontology. An Action subm
 
 ## Resources
 
-**Instructor:** TM-10 Block 4 slides; Training Workshop Application with a pre-configured Action (UpdateSITREPStatus)
+**Instructor:** SL 1 Block 4 slides; Training Workshop Application with a pre-configured Action (UpdateSITREPStatus)
 **Student:** TM-10 Chapter 4; access to Training Workshop Application
 
 ## Introduction
@@ -471,7 +471,7 @@ Actions are how authorized users write data back to the Ontology. An Action subm
 ### Sub-Topic 1: What Actions Are and How They Work — 15 minutes
 
 **Instructor Notes:**
-Actions are defined by the builder and authorized to specific roles. A TM-10 user can only execute Actions they are authorized for — they cannot create Actions or modify what an Action does.
+Actions are defined by the builder and authorized to specific roles. A SL 1 user can only execute Actions they are authorized for — they cannot create Actions or modify what an Action does.
 
 Three things an Action typically does:
 1. Presents a form with parameters (fields to fill in)
@@ -542,7 +542,7 @@ Assessed in Block 9 (Practical Exercise): Execute the Status Update Action (Task
 
 ## Purpose
 
-Contour is the ad hoc analysis tool — it lets users build charts and filtered views on demand from datasets and Ontology data, without writing code and without waiting for a builder. A TM-10 trainee who can use Contour can answer a commander's question in five minutes rather than submitting an analysis request to the data shop.
+Contour is the ad hoc analysis tool — it lets users build charts and filtered views on demand from datasets and Ontology data, without writing code and without waiting for a builder. A SL 1 trainee who can use Contour can answer a commander's question in five minutes rather than submitting an analysis request to the data shop.
 
 ## Learning Objectives
 
@@ -557,7 +557,7 @@ Contour is the ad hoc analysis tool — it lets users build charts and filtered 
 
 ## Resources
 
-**Instructor:** TM-10 Block 5 slides; Training Environment dataset suitable for Contour (equipment readiness by unit)
+**Instructor:** SL 1 Block 5 slides; Training Environment dataset suitable for Contour (equipment readiness by unit)
 **Student:** TM-10 Chapter 5
 
 ## Introduction
@@ -656,7 +656,7 @@ Quiver is the Object exploration tool — it surfaces the Ontology layer directl
 
 ## Resources
 
-**Instructor:** TM-10 Block 6 slides; Equipment Object Type pre-configured in Training Environment
+**Instructor:** SL 1 Block 6 slides; Equipment Object Type pre-configured in Training Environment
 **Student:** TM-10 Chapter 6
 
 ## Introduction
@@ -737,11 +737,11 @@ Assessed in Block 9 (Practical Exercise): export filtered table to CSV (Task 4 �
 
 ## Purpose
 
-AIP Logic and Agent Studio are AI-enabled tools in MSS. TM-10 users do not build AI workflows — they interact with them through Workshop applications or through the AIP interface directly. This block teaches the trainee to use an AIP interface correctly and, more importantly, to understand what AI outputs are and are not.
+AIP Logic and Agent Studio are AI-enabled tools in MSS. SL 1 users do not build AI workflows — they interact with them through Workshop applications or through the AIP interface directly. This block teaches the trainee to use an AIP interface correctly and, more importantly, to understand what AI outputs are and are not.
 
 ## Learning Objectives
 
-**TLO:** Given an AIP Logic interface configured for TM-10 training, the trainee will submit a query, interpret the output, and correctly state the limitations and authorized uses of AIP-generated outputs — to standard.
+**TLO:** Given an AIP Logic interface configured for SL 1 training, the trainee will submit a query, interpret the output, and correctly state the limitations and authorized uses of AIP-generated outputs — to standard.
 
 | # | ELO | Assessment |
 |---|---|---|
@@ -751,7 +751,7 @@ AIP Logic and Agent Studio are AI-enabled tools in MSS. TM-10 users do not build
 
 ## Resources
 
-**Instructor:** TM-10 Block 7 slides; AIP Logic interface configured for training (document Q&A on synthetic SITREP data)
+**Instructor:** SL 1 Block 7 slides; AIP Logic interface configured for training (document Q&A on synthetic SITREP data)
 **Student:** TM-10 Chapter 4
 
 ## Introduction
@@ -816,7 +816,7 @@ Data mishandling from MSS starts with not checking classification before exporti
 
 ## Resources
 
-**Instructor:** TM-10 Block 8 slides; examples of classification markings in the Training Environment
+**Instructor:** SL 1 Block 8 slides; examples of classification markings in the Training Environment
 **Student:** TM-10 Chapter 6
 
 ## Introduction
@@ -875,7 +875,7 @@ Common violations:
 - Copy-paste is not an authorized export procedure — use the MSS export function
 - Label exported files with the classification marking
 
-**CLOSE:** One block left — the practical exercise. You have 60 minutes. The tasks cover login, Workshop, Actions, Contour, export, and classification. You may reference your TM-10 and this syllabus. No instructor assistance once the exercise begins.
+**CLOSE:** One block left — the practical exercise. You have 60 minutes. The tasks cover login, Workshop, Actions, Contour, export, and classification. You may reference your SL 1 and this syllabus. No instructor assistance once the exercise begins.
 
 ## Assessment
 
@@ -896,7 +896,7 @@ Directly evaluated in Block 9 (Practical Exercise): state classification marking
 
 ## Purpose
 
-The practical exercise confirms that the trainee can independently perform the six operational tasks that constitute TM-10 competency. The evaluator observes but does not assist.
+The practical exercise confirms that the trainee can independently perform the six operational tasks that constitute SL 1 competency. The evaluator observes but does not assist.
 
 ## Scenario
 
@@ -904,7 +904,7 @@ The practical exercise confirms that the trainee can independently perform the s
 
 ## Pre-Exercise Brief (Delivered by Evaluator)
 
-"You have 60 minutes. You may reference TM-10 and your course syllabus. You may not ask me for help — I will not answer questions about the tasks. If you have an access or system error that prevents completing a task, tell me immediately and I will document it. A system error that I document will not count against you. A wrong answer that you don't flag will.
+"You have 60 minutes. You may reference SL 1 and your course syllabus. You may not ask me for help — I will not answer questions about the tasks. If you have an access or system error that prevents completing a task, tell me immediately and I will document it. A system error that I document will not count against you. A wrong answer that you don't flag will.
 
 The scenario and task instructions are in the envelope in front of you. You may begin."
 
@@ -936,10 +936,10 @@ All 6 tasks completed independently, to standard. Task 6 (classification) is a h
 
 If No-Go:
 1. Evaluator provides written debrief within 1 duty day
-2. Remediation: minimum 2 hours (self-study TM-10 + supervised lab)
+2. Remediation: minimum 2 hours (self-study SL 1 + supervised lab)
 3. Re-evaluation within 10 duty days using a different scenario
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*TM-10 Lesson Plans | Version 1.0 | March 2026*
+*SL 1 Lesson Plans | Version 1.0 | March 2026*

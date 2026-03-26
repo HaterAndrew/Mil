@@ -1,4 +1,4 @@
-# LESSON PLAN OUTLINES — TM-20 BUILDER
+# LESSON PLAN OUTLINES — SL 2 BUILDER
 ## Maven Smart System (MSS) Training Program
 ### USAREUR-AF Operational Data Team — C2DAO
 
@@ -6,7 +6,7 @@ NOTE: These are lesson plan outlines — abbreviated LP format for instructor pr
 
 | Field | Value |
 |-------|-------|
-| **Course** | TM-20 Builder |
+| **Course** | SL 2 Builder |
 | **Duration** | 5 days (40 hours) |
 | **Version** | 1.0 — March 2026 |
 
@@ -17,7 +17,7 @@ NOTE: These are lesson plan outlines — abbreviated LP format for instructor pr
 | Publication | Title | Relevance |
 |---|---|---|
 | AR 350-1 | Army Training and Leader Development | Master regulation for Army training policy; governs lesson plan standards and instructional requirements |
-| FM 7-0 | Training | Unit training management procedures; context for how TM-20 builder training integrates with unit training plans |
+| FM 7-0 | Training | Unit training management procedures; context for how SL 2 builder training integrates with unit training plans |
 
 ---
 
@@ -303,7 +303,7 @@ NOTE: These are lesson plan outlines — abbreviated LP format for instructor pr
 | Error | Detail |
 |-------|--------|
 | Not documenting property types before building | Leads to type correction rework |
-| Using STRING for everything | Creates query performance issues at scale; violates TM-20 standard |
+| Using STRING for everything | Creates query performance issues at scale; violates SL 2 standard |
 
 **Assessment:** Evaluated in Practical Exercise Task 4.
 
@@ -358,7 +358,7 @@ NOTE: These are lesson plan outlines — abbreviated LP format for instructor pr
 | **Lesson Title** | Object Views and Data Validation |
 | **Hours** | 1.5 |
 | **Method** | Lab |
-| **References** | TM-20, Chapter 4, Tasks 4-3 and 4-4 |
+| **References** | SL 2, Chapter 4, Tasks 4-3 and 4-4 |
 
 **Objective:** Configure an Object View for an Object Type and use Object Explorer to validate data completeness and accuracy.
 
@@ -374,7 +374,7 @@ NOTE: These are lesson plan outlines — abbreviated LP format for instructor pr
 ### BLOCK 16 — Actions: Create Basic Action
 **Hours:** 1.5 | **Method:** Lab | **Time:** 0830–1000
 
-**Purpose:** Actions are the write-back mechanism — how authorized users update Object properties from Workshop applications. Every TM-20 data product needs at least one Action.
+**Purpose:** Actions are the write-back mechanism — how authorized users update Object properties from Workshop applications. Every SL 2 data product needs at least one Action.
 
 **TLO:** Given an Object Type, the trainee will create an Action with a named parameter, a write rule targeting an Object property, and an access restriction — test the Action from Ontology Manager.
 
@@ -474,12 +474,12 @@ NOTE: These are lesson plan outlines — abbreviated LP format for instructor pr
 | **Lesson Title** | Builder-Level Analysis in Contour and Quiver |
 | **Hours** | 2.0 |
 | **Method** | Lab |
-| **References** | TM-20, Chapter 6, Tasks 6-1 through 6-4 |
+| **References** | SL 2, Chapter 6, Tasks 6-1 through 6-4 |
 
 **Objective:** Build a saved Contour analysis with pivot table, and configure a Quiver dashboard with Object Type views.
 
 **Instructor Notes:**
-- Distinguish from TM-10 consumer use of Contour/Quiver — builders create saved analyses and dashboards, not just one-off lookups
+- Distinguish from SL 1 consumer use of Contour/Quiver — builders create saved analyses and dashboards, not just one-off lookups
 - Saved Contour analyses become inputs to Workshop applications
 - Quiver dashboards are used for Ontology validation and operational data exploration
 
@@ -582,35 +582,35 @@ NOTE: These are lesson plan outlines — abbreviated LP format for instructor pr
 
 ## COURSE COMPLETION — NEXT STEPS
 
-Upon receiving a TM-20 Go result, trainees have two continuation paths depending on their role:
+Upon receiving a SL 2 Go result, trainees have two continuation paths depending on their role:
 
-**All TM-40 tracks (WFF and Specialist) require TM-30 as a hard prerequisite.**
+**All SL 4 tracks (WFF and Specialist) require SL 3 as a hard prerequisite.**
 
-TM-20 completion qualifies a trainee to enroll in TM-30 (Advanced Builder). Upon completing TM-30, they are eligible for all TM-40 tracks:
+SL 2 completion qualifies a trainee to enroll in SL 3 (Advanced Builder). Upon completing SL 3, they are eligible for all SL 4 tracks:
 
-**WFF Functional Tracks (TM-40A through TM-40F) — via TM-30:**
-- Prerequisite chain: TM-10 → TM-20 → TM-30 → TM-40 WFF track
-- TM-40A: Intelligence WFF | TM-40B: Fires WFF | TM-40C: Movement & Maneuver WFF
-- TM-40D: Sustainment WFF | TM-40E: Protection WFF | TM-40F: Mission Command WFF
+**WFF Functional Tracks (SL 4A through SL 4F) — via SL 3:**
+- Prerequisite chain: SL 1 → SL 2 → SL 3 → SL 4 WFF track
+- SL 4A: Intelligence WFF | SL 4B: Fires WFF | SL 4C: Movement & Maneuver WFF
+- SL 4D: Sustainment WFF | SL 4E: Protection WFF | SL 4F: Mission Command WFF
 - Duration: 3 days each. Role-specific MSS application for functional staff.
 - Who should pursue: INT/FIRES/M2/SUST/PROT/MC functional staff designated to use MSS for WFF products.
 
-**Specialist Tracks (TM-40G through TM-40O) — via TM-30:**
-- Prerequisite chain: TM-10 → TM-20 → TM-30 → TM-40 specialist track
-- TM-40G: ORSA | TM-40H: AI Engineer | TM-40M: ML Engineer
-- TM-40J: Program Manager | TM-40K: Knowledge Manager | TM-40L: Software Engineer
-- TM-40N: UI/UX Designer | TM-40O: Platform Engineer
+**Specialist Tracks (SL 4G through SL 4O) — via SL 3:**
+- Prerequisite chain: SL 1 → SL 2 → SL 3 → SL 4 specialist track
+- SL 4G: ORSA | SL 4H: AI Engineer | SL 4M: ML Engineer
+- SL 4J: Program Manager | SL 4K: Knowledge Manager | SL 4L: Software Engineer
+- SL 4N: UI/UX Designer | SL 4O: Platform Engineer
 - Duration: 3–5 days depending on track.
 - Who should pursue: 17/25-series, S6/G6, G2, data leads, and technical specialists.
 
 **T3-F (MSC Force Multiplier) — parallel path:**
-- Prereq: TM-20 (no TM-30 required)
+- Prereq: SL 2 (no SL 3 required)
 - Duration: 5 days. Trains MSC-level data champions to advocate for and coordinate MSS adoption at battalion/brigade level.
 - Who should pursue: Field-grade officers, senior NCOs, and MSC staff designated as unit data leads.
 
-Instructors should direct all trainees toward TM-30 as the next step. For trainees designated as MSC-level data champions, also highlight T3-F as an available parallel path. Discuss which TM-40 track is appropriate for each trainee and refer them to the Unit Training NCO/Officer for enrollment coordination.
+Instructors should direct all trainees toward SL 3 as the next step. For trainees designated as MSC-level data champions, also highlight T3-F as an available parallel path. Discuss which SL 4 track is appropriate for each trainee and refer them to the Unit Training NCO/Officer for enrollment coordination.
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*TM-20 Lesson Plan Outlines | Version 1.0 | March 2026*
+*SL 2 Lesson Plan Outlines | Version 1.0 | March 2026*

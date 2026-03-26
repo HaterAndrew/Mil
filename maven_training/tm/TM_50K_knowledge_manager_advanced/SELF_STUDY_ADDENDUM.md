@@ -1,4 +1,4 @@
-# Self-Study Addendum — TM-50K Knowledge Manager Advanced
+# Self-Study Addendum — SL 5K Knowledge Manager Advanced
 ## Palantir Developers Reference Library
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.
@@ -9,7 +9,7 @@
 
 ## How to Use This Addendum
 
-Videos are grouped by topic and ordered from foundational to advanced. TM-50K personnel have already completed TM-40K; the TM-40K Self-Study Addendum remains the reference library for unit-level KM capabilities. This addendum extends it with advanced, enterprise-scale, and multi-domain content. Inline NOTEs in the TM-50K manual identify the specific sections where several of these videos directly reinforce the text.
+Videos are grouped by topic and ordered from foundational to advanced. SL 5K personnel have already completed SL 4K; the SL 4K Self-Study Addendum remains the reference library for unit-level KM capabilities. This addendum extends it with advanced, enterprise-scale, and multi-domain content. Inline NOTEs in the SL 5K manual identify the specific sections where several of these videos directly reinforce the text.
 
 ---
 
@@ -62,7 +62,7 @@ The following doctrine sections were added to TM-50K this session. Review after 
 
 | Video | What it Covers | Relevant TM Chapter |
 |---|---|---|
-| *Deep Dive: Advanced Agent Reasoning with Knowledge Nodes x First Solar \| DevCon 4* | AIP Knowledge Nodes enabling agents to reason over structured knowledge at production scale; the enterprise extension of the TM-40K Q&A design | Ch 4 — AI-Assisted Doctrine |
+| *Deep Dive: Advanced Agent Reasoning with Knowledge Nodes x First Solar \| DevCon 4* | AIP Knowledge Nodes enabling agents to reason over structured knowledge at production scale; the enterprise extension of the SL 4K Q&A design | Ch 4 — AI-Assisted Doctrine |
 | *Deep Dive: Interoperability at Scale with the Multimodal Data Plane \| DevCon 5* | Multimodal Data Plane for knowledge federation and interoperability across heterogeneous Theater data sources | Ch 6 — Knowledge Graph Design |
 | *Product Launch: Hivemind \| DevCon 5* | Multi-agent coordination at enterprise scale; advanced AIP architecture for Theater-level synthesis workflows | Ch 4 — AI-Assisted Doctrine |
 | *Building Enterprise Autonomy with Shyam Sankar, CTO* | Strategic framing for enterprise-scale AI deployment; organizational conditions for autonomous knowledge synthesis | Ch 4, Ch 8 |

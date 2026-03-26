@@ -1,12 +1,12 @@
-# PRE-TEST — TM-40D: SUSTAINMENT
+# PRE-TEST — SL 4D: SUSTAINMENT
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40D: Sustainment WFF Track |
+| **Course** | SL 4D: Sustainment WFF Track |
 | **Form** | Pre-Test |
-| **Level** | TM-40D (WFF Track) |
-| **Audience** | G4/S4 staff, FSB/BSB logistics officers, supply chain managers, property book officers; prerequisite: TM-10 + TM-20 + TM-30 complete |
+| **Level** | SL 4D (WFF Track) |
+| **Audience** | G4/S4 staff, FSB/BSB logistics officers, supply chain managers, property book officers; prerequisite: SL 1 + SL 2 + SL 3 complete |
 | **Time Allowed** | 20 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

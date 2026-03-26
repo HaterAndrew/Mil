@@ -1,4 +1,4 @@
-# Self-Study Addendum — TM-40L Software Engineer
+# Self-Study Addendum — SL 4L Software Engineer
 ## Palantir Developers Reference Library
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.
@@ -9,7 +9,7 @@
 
 ## How to Use This Addendum
 
-Videos are grouped by topic and ordered from foundational to advanced within each group. Start with the group most relevant to your current work or the chapter you just completed. Selected videos are also cited inline within TM-40L where content most directly reinforces a specific section.
+Videos are grouped by topic and ordered from foundational to advanced within each group. Start with the group most relevant to your current work or the chapter you just completed. Selected videos are also cited inline within SL 4L where content most directly reinforces a specific section.
 
 ---
 

@@ -41,18 +41,18 @@ SUBJECT: USAREUR-AF Maven Smart System (MSS) Training Program — Program Direct
 
 **3. TRAINING REQUIREMENT.**
 
-   **a.** TM-10 (Maven User) is mandatory for all USAREUR-AF personnel who require access to the production MSS environment. There are no waivers. Rank, seniority, or prior data experience does not substitute for a TM-10 evaluation with a Go result on file.
+   **a.** SL 1 (Maven User) is mandatory for all USAREUR-AF personnel who require access to the production MSS environment. There are no waivers. Rank, seniority, or prior data experience does not substitute for a SL 1 evaluation with a Go result on file.
 
    **b.** Personnel who build, maintain, or support MSS data products must complete the appropriate higher-level training before performing those duties:
 
 | TM Level | Requirement | Prerequisite |
 |----------|-------------|-------------|
-| TM-20 (Builder) | Required before building any project, pipeline, Ontology, or Workshop application | TM-10 |
-| TM-30 (Advanced Builder) | Required before serving as a unit data lead or deploying multi-source production data products | TM-20 |
-| TM-40 WFF tracks (A–F) | Required before performing warfighting function operator duties on MSS | TM-30 |
-| TM-40 specialist tracks (G–O) | Required before performing specialist functions (ORSA, AI, ML, PM, KM, SWE) | TM-30 |
+| SL 2 (Builder) | Required before building any project, pipeline, Ontology, or Workshop application | SL 1 |
+| SL 3 (Advanced Builder) | Required before serving as a unit data lead or deploying multi-source production data products | SL 2 |
+| SL 4 WFF tracks (A–F) | Required before performing warfighting function operator duties on MSS | SL 3 |
+| SL 4 specialist tracks (G–O) | Required before performing specialist functions (ORSA, AI, ML, PM, KM, SWE) | SL 3 |
 
-   **c.** Commanders will ensure newly assigned personnel complete TM-10 within **30 days** of assignment to a USAREUR-AF unit. Personnel assigned to data-adjacent roles will complete the appropriate higher training level within **90 days** of assignment.
+   **c.** Commanders will ensure newly assigned personnel complete SL 1 within **30 days** of assignment to a USAREUR-AF unit. Personnel assigned to data-adjacent roles will complete the appropriate higher training level within **90 days** of assignment.
 
 **4. GOVERNANCE STANDARDS.** The following governance standards are in force for all MSS data products. Violations will result in data steward rejection of the affected product:
 
@@ -74,18 +74,18 @@ SUBJECT: USAREUR-AF Maven Smart System (MSS) Training Program — Program Direct
 
 | Personnel Category | Sustainment Requirement |
 |-------------------|------------------------|
-| All personnel | Annual TM-10 refresher |
-| TM-20 and above | Quarterly build exercises |
+| All personnel | Annual SL 1 refresher |
+| SL 2 and above | Quarterly build exercises |
 
 **6. INSTRUCTOR STANDARDS.** All new instructor candidates will complete the T3-I (Instructor Certification) course. Instructors will meet the qualifications and maintain the certifications specified in the Faculty Development Plan, Instructor Tier Definitions, and Program of Instruction (POI-MSS-001). The instructor tier structure (Instructor → Senior Instructor → Master Instructor) is defined in the Instructor Tier Definitions document. C2DAO will maintain an instructor roster and conduct annual instructor observations. C2DAO SME designation criteria are defined in the C2DAO SME Designation Rubric.
 
-**7. UNIT DATA TRAINERS.** Unit commanders may nominate personnel for the T3-F (MSC Force Multiplier) course to establish local TM-10 training capability. Unit Data Trainers (UDTs) are authorized to deliver TM-10 independently, proctor TM-10 exams as a standalone activity, and report training status to C2DAO. UDTs are not authorized to deliver TM-20 or above, or to modify curriculum. UDT employment, reporting, and sustainment procedures are governed by the Unit Data Trainer SOP.
+**7. UNIT DATA TRAINERS.** Unit commanders may nominate personnel for the T3-F (MSC Force Multiplier) course to establish local SL 1 training capability. Unit Data Trainers (UDTs) are authorized to deliver SL 1 independently, proctor SL 1 exams as a standalone activity, and report training status to C2DAO. UDTs are not authorized to deliver SL 2 or above, or to modify curriculum. UDT employment, reporting, and sustainment procedures are governed by the Unit Data Trainer SOP.
 
 **8. ACCESS PROVISIONING.** Units will ensure personnel have the appropriate MSS access level provisioned before they attend training. Arriving at training without provisioned access is a unit administrative failure. Access lead times are published in the Course Administrative Data and the Program of Instruction.
 
 **9. REPORTING.** Units will maintain the Unit Training Status Matrix (see MTP Appendix A) and report MSS training status to C2DAO quarterly. Required report elements:
 
-- Total personnel requiring TM-10
+- Total personnel requiring SL 1
 - Number with Go result on file
 - Any personnel in No-Go remediation status
 

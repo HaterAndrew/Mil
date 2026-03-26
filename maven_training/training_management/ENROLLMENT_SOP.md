@@ -39,19 +39,19 @@ Total lead time: **10–35 duty days before Day 1**, depending on access require
 
 | Personnel Category | Required Training Level |
 |---|---|
-| All newly assigned USAREUR-AF personnel | TM-10 (complete within 30 days of assignment) |
-| Personnel assigned to build/maintain data products | TM-20 (complete within 90 days of data assignment) |
-| Unit data leads, data-adjacent specialists (17/25-series, S6/G6, G2) | TM-30 (complete within 90 days of data-lead assignment) |
-| INT/FIRES/M2/SUST/PROT/MC functional staff | TM-40A through TM-40F (prereq: TM-30; 3 days each) |
-| ORSA analysts working on MSS | TM-40G |
-| AI engineers building AIP workflows | TM-40H |
-| ML engineers building/deploying models | TM-40M |
-| Program managers and resource managers | TM-40J |
-| Knowledge managers and KMOs | TM-40K |
-| Software engineers building Foundry integrations | TM-40L |
-| UI/UX designers working on MSS | TM-40N |
-| Platform engineers managing MSS infrastructure | TM-40O |
-| Senior specialists advancing beyond TM-40 | TM-50G through TM-50O (prereq: corresponding TM-40 track) |
+| All newly assigned USAREUR-AF personnel | SL 1 (complete within 30 days of assignment) |
+| Personnel assigned to build/maintain data products | SL 2 (complete within 90 days of data assignment) |
+| Unit data leads, data-adjacent specialists (17/25-series, S6/G6, G2) | SL 3 (complete within 90 days of data-lead assignment) |
+| INT/FIRES/M2/SUST/PROT/MC functional staff | SL 4A through SL 4F (prereq: SL 3; 3 days each) |
+| ORSA analysts working on MSS | SL 4G |
+| AI engineers building AIP workflows | SL 4H |
+| ML engineers building/deploying models | SL 4M |
+| Program managers and resource managers | SL 4J |
+| Knowledge managers and KMOs | SL 4K |
+| Software engineers building Foundry integrations | SL 4L |
+| UI/UX designers working on MSS | SL 4N |
+| Platform engineers managing MSS infrastructure | SL 4O |
+| Senior specialists advancing beyond SL 4 | SL 5G through SL 5O (prereq: corresponding SL 4 track) |
 
 ### Step 2: Verify Prerequisites
 
@@ -59,19 +59,19 @@ Total lead time: **10–35 duty days before Day 1**, depending on access require
 
 | Course | Prerequisites to Verify |
 |---|---|
-| TM-10 | None |
-| TM-20 | TM-10 Go on file |
-| TM-30 | TM-10 and TM-20 Go on file |
-| TM-40A through TM-40F (WFF tracks) | TM-10, TM-20, and TM-30 Go on file; WFF functional staff designation |
-| TM-40G | TM-10, TM-20, TM-30 Go on file; graduate-level quantitative background; Python or R proficiency |
-| TM-40H | TM-10, TM-20, TM-30 Go on file; Python proficiency; Data Literacy Technical Reference read |
-| TM-40M | TM-10, TM-20, TM-30 Go on file; Python ML proficiency (pandas, scikit-learn, PyTorch) |
-| TM-40J | TM-10, TM-20, TM-30 Go on file (all required) |
-| TM-40K | TM-10, TM-20, TM-30 Go on file (all required) |
-| TM-40L | TM-10, TM-20, TM-30 Go on file; TypeScript or Python proficiency; REST API familiarity |
-| TM-40N | TM-10, TM-20, TM-30 Go on file; design tool familiarity |
-| TM-40O | TM-10, TM-20, TM-30 Go on file; Linux sysadmin background; containers/Git proficiency |
-| TM-50G–O | Corresponding TM-40 track Go on file (required) |
+| SL 1 | None |
+| SL 2 | SL 1 Go on file |
+| SL 3 | SL 1 and SL 2 Go on file |
+| SL 4A through SL 4F (WFF tracks) | SL 1, SL 2, and SL 3 Go on file; WFF functional staff designation |
+| SL 4G | SL 1, SL 2, SL 3 Go on file; graduate-level quantitative background; Python or R proficiency |
+| SL 4H | SL 1, SL 2, SL 3 Go on file; Python proficiency; Data Literacy Technical Reference read |
+| SL 4M | SL 1, SL 2, SL 3 Go on file; Python ML proficiency (pandas, scikit-learn, PyTorch) |
+| SL 4J | SL 1, SL 2, SL 3 Go on file (all required) |
+| SL 4K | SL 1, SL 2, SL 3 Go on file (all required) |
+| SL 4L | SL 1, SL 2, SL 3 Go on file; TypeScript or Python proficiency; REST API familiarity |
+| SL 4N | SL 1, SL 2, SL 3 Go on file; design tool familiarity |
+| SL 4O | SL 1, SL 2, SL 3 Go on file; Linux sysadmin background; containers/Git proficiency |
+| SL 5G–O | Corresponding SL 4 track Go on file (required) |
 
 ### Step 3: Check Training Schedule
 
@@ -91,7 +91,7 @@ The Enrollment Request Form is in CAD Appendix A. Complete all fields:
 - Trainee personal data (name, rank, unit, MOS, DSN, email)
 - Requested course and preferred dates
 - Prerequisites with verification dates (attach Go evaluation records or training record extracts)
-- Technical prerequisites (for TM-40 courses — confirm access provisioning status)
+- Technical prerequisites (for SL 4 courses — confirm access provisioning status)
 - Unit Training NCO/Officer signature
 
 ### Step 5: Submit to MSS Administrator
@@ -101,8 +101,8 @@ The Unit Training NCO/Officer submits to the unit MSS Administrator. The MSS Adm
 **MSS Administrator review checklist:**
 - [ ] All fields on the Enrollment Request Form completed
 - [ ] Prerequisites verified and documentation attached
-- [ ] For TM-30+: elevated access provisioning in place or being initiated
-- [ ] For TM-40 specialist tracks (TM-40G through TM-40O): technical prerequisites (Code Workspace, OSDK, etc.) active or being requested concurrently
+- [ ] For SL 3+: elevated access provisioning in place or being initiated
+- [ ] For SL 4 specialist tracks (SL 4G through SL 4O): technical prerequisites (Code Workspace, OSDK, etc.) active or being requested concurrently
 
 ### Step 6: Forward to C2DAO Training POC
 
@@ -120,17 +120,17 @@ Via NIPR email or official messaging. Subject line format: `MSS ENROLLMENT REQUE
 
 | Course | Access Level Required | Who Provisions | Minimum Lead Time |
 |---|---|---|---|
-| TM-10 | Viewer | Unit MSS Administrator | 5 duty days |
-| TM-20, TM-40A–F (WFF), TM-40J, TM-40K | Builder | Unit MSS Administrator | 5 duty days |
-| TM-30 | Editor + AIP Logic configuration | Unit MSS Admin (Editor); C2DAO (AIP Logic config) | 7 duty days |
-| TM-40G | Code Workspace (CPU) | C2DAO only | 7–10 duty days |
-| TM-40H | AIP Logic authoring + Agent Studio | C2DAO only | 7–10 duty days |
-| TM-40M | GPU Code Workspace | C2DAO only | 10+ duty days |
-| TM-40L | OSDK developer access + developer token | C2DAO only | 10+ duty days |
-| TM-40N | Workshop design access (Editor + AIP Logic configuration) | C2DAO | 7–10 duty days |
-| TM-40O | Kubernetes cluster access + CI/CD pipeline access | C2DAO only | 10+ duty days |
+| SL 1 | Viewer | Unit MSS Administrator | 5 duty days |
+| SL 2, SL 4A–F (WFF), SL 4J, SL 4K | Builder | Unit MSS Administrator | 5 duty days |
+| SL 3 | Editor + AIP Logic configuration | Unit MSS Admin (Editor); C2DAO (AIP Logic config) | 7 duty days |
+| SL 4G | Code Workspace (CPU) | C2DAO only | 7–10 duty days |
+| SL 4H | AIP Logic authoring + Agent Studio | C2DAO only | 7–10 duty days |
+| SL 4M | GPU Code Workspace | C2DAO only | 10+ duty days |
+| SL 4L | OSDK developer access + developer token | C2DAO only | 10+ duty days |
+| SL 4N | Workshop design access (Editor + AIP Logic configuration) | C2DAO | 7–10 duty days |
+| SL 4O | Kubernetes cluster access + CI/CD pipeline access | C2DAO only | 10+ duty days |
 
-**IMPORTANT:** Lead times are minimums. For TM-40M (GPU workspace) and TM-40L (OSDK), start provisioning at least 5 weeks before Day 1.
+**IMPORTANT:** Lead times are minimums. For SL 4M (GPU workspace) and SL 4L (OSDK), start provisioning at least 5 weeks before Day 1.
 
 ### Step 8: Confirm Access Before Day 1
 
@@ -140,11 +140,11 @@ At T-3 duty days:
 - [ ] Trainee logs in to MSS Training Environment successfully
 - [ ] **If training requires multiple enclaves (NIPR, SIPR, MPE, etc.): trainee confirms successful login on EACH enclave.** Accounts do not carry across enclaves — each requires separate provisioning and verification.
 - [ ] Trainee confirms access level is correct (Builder access shows "Create" buttons)
-- [ ] For TM-40G/M: trainee runs the provided test script; confirms it executes without error
-- [ ] For TM-40H: trainee confirms AIP Logic authoring tab appears
-- [ ] For TM-40L: trainee runs OSDK authentication test with their developer token
-- [ ] For TM-40N: trainee confirms Editor access with AIP Logic configuration active
-- [ ] For TM-40O: trainee confirms Kubernetes cluster access and CI/CD pipeline access
+- [ ] For SL 4G/M: trainee runs the provided test script; confirms it executes without error
+- [ ] For SL 4H: trainee confirms AIP Logic authoring tab appears
+- [ ] For SL 4L: trainee runs OSDK authentication test with their developer token
+- [ ] For SL 4N: trainee confirms Editor access with AIP Logic configuration active
+- [ ] For SL 4O: trainee confirms Kubernetes cluster access and CI/CD pipeline access
 
 If access is NOT confirmed at T-3:
 1. Trainee notifies MSS Administrator immediately
@@ -201,7 +201,7 @@ The unit Training NCO/Officer confirms pre-course requirements are complete at T
 Upon Go evaluation result:
 1. Evaluator completes Individual Training Record (CAD Appendix B)
 2. Evaluator signs and issues Completion Certificate to trainee
-3. For TM-30 and above: C2DAO sends Commander Notification Letter within 3 duty days
+3. For SL 3 and above: C2DAO sends Commander Notification Letter within 3 duty days
 4. C2DAO updates Unit Training Status Matrix within 2 duty days
 5. Trainee retains certificate; copy filed by unit Training NCO/Officer
 
@@ -209,7 +209,7 @@ Upon No-Go evaluation result:
 1. Evaluator completes Individual Training Record (No-Go section)
 2. Evaluator completes No-Go Remediation Form (CAD Appendix C)
 3. Counseling conducted within 1 duty day (unit)
-4. For TM-40 series: C2DAO sends Commander Notification Letter within 3 duty days
+4. For SL 4 series: C2DAO sends Commander Notification Letter within 3 duty days
 5. Remediation plan established; re-evaluation scheduled within 10 duty days
 
 ---
@@ -229,7 +229,7 @@ Upon No-Go evaluation result:
 | Report for training | Day 1 NLT 15 min before start | Trainee |
 | Evaluator documents result | Day of evaluation | Evaluator |
 | C2DAO updates training records | Within 2 duty days of evaluation | C2DAO Training POC |
-| Commander notification (TM-30+) | Within 3 duty days of evaluation | C2DAO Training POC |
+| Commander notification (SL 3+) | Within 3 duty days of evaluation | C2DAO Training POC |
 
 ---
 
@@ -251,7 +251,7 @@ A trainee re-enrolling after a No-Go does not need a new full enrollment request
 
 If a trainee cannot attend after confirmation:
 1. Notify C2DAO Training POC at least T-5 days to allow seat reallocation
-2. Elevated access (TM-30+) will be suspended until re-enrollment
+2. Elevated access (SL 3+) will be suspended until re-enrollment
 3. Unit is responsible for the forfeited quota
 
 ### Command-Directed Training
@@ -262,11 +262,11 @@ When C2DAO or higher headquarters directs unit-wide MSS training, the enrollment
 
 ## FREQUENTLY ASKED QUESTIONS
 
-**Q: My Soldier completed TM-10 at a previous assignment. Do they need to repeat it?**
-A: No — TM-10 completion is permanent. Verify the Go result is on file (request a transcript from C2DAO if the Individual Training Record is not available). Annual sustainment refresher is still required.
+**Q: My Soldier completed SL 1 at a previous assignment. Do they need to repeat it?**
+A: No — SL 1 completion is permanent. Verify the Go result is on file (request a transcript from C2DAO if the Individual Training Record is not available). Annual sustainment refresher is still required.
 
-**Q: My Soldier has extensive Foundry experience from a contractor background. Can they waive TM-10?**
-A: No. TM-10 is required for all USAREUR-AF personnel regardless of prior experience. The evaluation confirms USAREUR-AF classification procedures and data governance requirements — not just platform proficiency.
+**Q: My Soldier has extensive Foundry experience from a contractor background. Can they waive SL 1?**
+A: No. SL 1 is required for all USAREUR-AF personnel regardless of prior experience. The evaluation confirms USAREUR-AF classification procedures and data governance requirements — not just platform proficiency.
 
 **Q: The trainee's access isn't working on Day 1. What happens?**
 A: If the issue is a unit-side provisioning failure (access never requested), the trainee will likely need to reschedule. If the issue is C2DAO or platform-side (access was requested and confirmed but not functioning), C2DAO will attempt to resolve. Document the issue and notify C2DAO immediately.
@@ -278,7 +278,7 @@ A: Yes, if the minimum class size is met (see CAD Section 1-4). Submit a request
 
 ## FOUNDRY BOOTCAMP (FBC) ENROLLMENT
 
-The Foundry Bootcamp is a separate quarterly event outside the TM-10 through TM-50 training chain. It has its own enrollment workflow. See FOUNDRY_BOOTCAMP_SOP.md (FBC-SOP-001) for full procedures. Summary below.
+The Foundry Bootcamp is a separate quarterly event outside the SL 1 through SL 5 training chain. It has its own enrollment workflow. See FOUNDRY_BOOTCAMP_SOP.md (FBC-SOP-001) for full procedures. Summary below.
 
 ### FBC Enrollment Summary
 
@@ -291,7 +291,7 @@ The Foundry Bootcamp is a separate quarterly event outside the TM-10 through TM-
 
 | TM Course Enrollment | FBC Enrollment |
 |---|---|
-| Prereq: varies by course | Prereq: TM-20 Go on file — no exceptions |
+| Prereq: varies by course | Prereq: SL 2 Go on file — no exceptions |
 | No project required | **Project Brief (CAD Appendix D) required** |
 | Seat confirmed on prereq verification | Seat confirmed only after Project Brief approval |
 | Access provisioned from standard access list | Bootcamp workspace provisioned per project list |
@@ -299,7 +299,7 @@ The Foundry Bootcamp is a separate quarterly event outside the TM-10 through TM-
 **FBC-specific steps:**
 
 1. Candidate prepares Project Brief (CAD Appendix D) with supervisor signature
-2. Unit Training NCO/Officer submits: standard Enrollment Request + Project Brief + TM-20 Go record
+2. Unit Training NCO/Officer submits: standard Enrollment Request + Project Brief + SL 2 Go record
 3. C2DAO reviews Project Brief within 5 duty days — approves, returns for revision, or denies
 4. Enrollment confirmed in writing upon Project Brief approval
 5. Bootcamp workspace provisioned T-10 days; access confirmed by candidate T-5 days
@@ -307,7 +307,7 @@ The Foundry Bootcamp is a separate quarterly event outside the TM-10 through TM-
 **FBC does not grant TM credit.** Completion appears in training records as a separate event type, not as a TM course completion.
 
 **FBC waivers:**
-- TM-20 prereq waiver: Not granted
+- SL 2 prereq waiver: Not granted
 - Project Brief waiver: Not granted
 - Late brief (after T-14 days): C2DAO discretion; never later than T-5 days
 
@@ -326,7 +326,7 @@ C2DAO maintains the authoritative training records system for MSS training. Unit
 | Unit of assignment | UIC + short name | Current unit at time of training |
 | MOS/AOC | Standard format (e.g., 17C, 25D, FA49) | |
 | NIPR email | DoD email address | Official contact for records |
-| Course completed | TM-10, TM-20, TM-30, TM-40X, TM-50X, or FBC | Exact identifier |
+| Course completed | SL 1, SL 2, SL 3, SL 4X, SL 5X, or FBC | Exact identifier |
 | Result | Go / No-Go | |
 | Evaluation date | YYYY-MM-DD | Date of practical exercise completion |
 | Evaluator name and rank | String | Must match signature on completion certificate |
@@ -345,7 +345,7 @@ C2DAO maintains the authoritative training records system for MSS training. Unit
 - Email confirmation of course attendance without an evaluator signature
 - Verbal attestation by supervisor that training was completed
 - Certificate from a non-C2DAO training event or commercial Palantir training (does not count toward MSS program completion)
-- Completion of a prior-version course (e.g., pre-v2.0 ORSA course, now designated TM-40G) without a re-evaluation on the current curriculum
+- Completion of a prior-version course (e.g., pre-v2.0 ORSA course, now designated SL 4G) without a re-evaluation on the current curriculum
 
 ### Querying Training Records
 
@@ -362,10 +362,10 @@ T3-I enrollment follows a **selection** model, not the standard enrollment reque
 | Step | Action | Responsible |
 |---|---|---|
 | 1 | C2DAO Training OIC identifies instructor pipeline need | Training OIC |
-| 2 | Training OIC selects candidates based on: TM-30 Go on file, platform proficiency, demonstrated aptitude for instruction, operational availability | Training OIC |
+| 2 | Training OIC selects candidates based on: SL 3 Go on file, platform proficiency, demonstrated aptitude for instruction, operational availability | Training OIC |
 | 3 | Training OIC issues selection notification to candidate and candidate's unit | Training OIC |
 | 4 | Candidate's unit acknowledges and confirms availability for the T3-I iteration | Unit CDR/S3 |
-| 5 | C2DAO verifies TM-30 Go and provisions instructor-level account access | C2DAO Admin |
+| 5 | C2DAO verifies SL 3 Go and provisions instructor-level account access | C2DAO Admin |
 
 Self-nomination is permitted — candidates may submit a request to the Training OIC. Selection is not guaranteed.
 
@@ -377,10 +377,10 @@ T3-F enrollment follows a **commander nomination** model.
 
 | Step | Action | Responsible |
 |---|---|---|
-| 1 | Unit commander identifies need for local TM-10 delivery capability | Unit CDR |
+| 1 | Unit commander identifies need for local SL 1 delivery capability | Unit CDR |
 | 2 | Commander nominates candidate via memorandum (see UDT SOP Appendix A) | Unit CDR |
 | 3 | Nomination submitted to C2DAO Training Division | Unit Training NCO |
-| 4 | C2DAO verifies TM-20 Go on file and active MSS account | C2DAO Admin |
+| 4 | C2DAO verifies SL 2 Go on file and active MSS account | C2DAO Admin |
 | 5 | Candidate enrolled in next available T3-F iteration (typically aligned with MTT rotation to the candidate's MSC) | C2DAO Training |
 
 **Lead time:** T-14 days minimum. When aligned with an MTT rotation, coordinate via the MTT advance party procedures.
@@ -393,9 +393,9 @@ MSS training tracks prepare students for Palantir's external certification exams
 
 | MSS Completion | Palantir Certification | Readiness Level | Registration |
 |---------------|----------------------|-----------------|-------------|
-| TM-20 | Foundry & AIP Builder Foundations Badge | Ready to attempt | [Earn badge](https://community.palantir.com/t/earn-your-foundry-aip-builder-foundations-badge/1043) |
-| TM-30 + TM-40L | Foundry Data Engineer Certification | Well-prepared | [Prep guide](https://community.palantir.com/t/data-engineer-certification-preperation/2789) |
-| TM-30 + TM-40L | Foundry Application Developer Certification | Well-prepared | [Exam info](https://community.palantir.com/t/what-to-expect-in-foundry-application-developer-certification-exam/548) |
+| SL 2 | Foundry & AIP Builder Foundations Badge | Ready to attempt | [Earn badge](https://community.palantir.com/t/earn-your-foundry-aip-builder-foundations-badge/1043) |
+| SL 3 + SL 4L | Foundry Data Engineer Certification | Well-prepared | [Prep guide](https://community.palantir.com/t/data-engineer-certification-preperation/2789) |
+| SL 3 + SL 4L | Foundry Application Developer Certification | Well-prepared | [Exam info](https://community.palantir.com/t/what-to-expect-in-foundry-application-developer-certification-exam/548) |
 
 > **NOTE:** Palantir certification exams may cover features or configurations not present in the USAREUR-AF MSS environment. Students should supplement with Palantir Learn (learn.palantir.com) and the [Ontologize YouTube channel](https://www.youtube.com/@Ontologize) for exam preparation. Coordinate with C2DAO for certification voucher availability.
 

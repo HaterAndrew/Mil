@@ -1,9 +1,9 @@
-# LESSON PLAN OUTLINES — TM-30 ADVANCED BUILDER
+# LESSON PLAN OUTLINES — SL 3 ADVANCED BUILDER
 ## USAREUR-AF Operational Data Team — C2DAO
-**Course:** TM-30 Advanced Builder | **Duration:** 5 days (40 hours) | **Version:** 1.0 — March 2026
+**Course:** SL 3 Advanced Builder | **Duration:** 5 days (40 hours) | **Version:** 1.0 — March 2026
 
 > Abbreviated LP format. Expand using `LP_TEMPLATE.md` as needed.
-> Instructor prerequisite: TM-40-level (any track) or C2DAO SME designation. T:I ratio 6:1.
+> Instructor prerequisite: SL 4-level (any track) or C2DAO SME designation. T:I ratio 6:1.
 
 ---
 
@@ -12,8 +12,8 @@
 | Publication | Title | Relevance |
 |---|---|---|
 | AR 350-1 | Army Training and Leader Development | Master regulation for Army training policy; governs lesson plan standards and instructional requirements |
-| FM 7-0 | Training | Unit training management procedures; context for how TM-30 advanced builder training integrates with unit training plans |
-| AR 25-1 | Army Information Technology | Establishes data governance authority; relevant to TM-30 governance and data steward review content |
+| FM 7-0 | Training | Unit training management procedures; context for how SL 3 advanced builder training integrates with unit training plans |
+| AR 25-1 | Army Information Technology | Establishes data governance authority; relevant to SL 3 governance and data steward review content |
 
 ---
 
@@ -22,7 +22,7 @@
 ### Block 1 — Multi-Page Workshop
 **Hours:** 2.0 | **Method:** Lab | **Time:** 0830–1030
 
-**Purpose:** TM-30 Workshop applications serve multiple user types from a single application — commanders see portfolios, analysts see details, logisticians see specific views. Multi-page applications require explicit design for navigation and data flow.
+**Purpose:** SL 3 Workshop applications serve multiple user types from a single application — commanders see portfolios, analysts see details, logisticians see specific views. Multi-page applications require explicit design for navigation and data flow.
 
 **TLO:** Given a scenario, the trainee will build a multi-page Workshop application with page navigation controls, page-level parameters, and at least two URL deep links — to standard.
 
@@ -83,7 +83,7 @@
 
 **Purpose:** Applying Blocks 1–3 to a defined scenario under instructor critique. This is the first instructor-observed design exercise — it reveals design thinking gaps before the complex Days 3–5 work.
 
-**TLO:** Given a scenario, the trainee will build a 3-page dashboard (portfolio → unit detail → historical trend) meeting the design exercise requirements — reviewed by instructor against TM-30 design standards.
+**TLO:** Given a scenario, the trainee will build a 3-page dashboard (portfolio → unit detail → historical trend) meeting the design exercise requirements — reviewed by instructor against SL 3 design standards.
 
 **Key Delivery Notes:**
 - Provide the scenario brief at the start of the block. Trainees have 10 minutes to plan on paper before opening the tool.
@@ -99,7 +99,7 @@
 ### Block 5 — Multi-Source Joins
 **Hours:** 2.0 | **Method:** Lab | **Time:** 0830–1030
 
-**Purpose:** Production pipelines typically join 3+ sources. Fan-out from a many-to-many join is the most common and most destructive data quality error. Mastery of join type selection and fan-out detection is non-negotiable at TM-30.
+**Purpose:** Production pipelines typically join 3+ sources. Fan-out from a many-to-many join is the most common and most destructive data quality error. Mastery of join type selection and fan-out detection is non-negotiable at SL 3.
 
 **TLO:** Given three datasets with different join conditions, the trainee will build pipelines using inner, left, and outer joins, identify fan-out in a provided example, correct it, and document the resolution.
 
@@ -147,7 +147,7 @@
 ### Block 8 — Append Mode and Snapshot Pipelines
 **Hours:** 1.25 | **Method:** Lab | **Time:** 1515–1630
 
-**Purpose:** Append mode enables historical records — essential for trend analysis and audit trails. Configuring it incorrectly is the most common TM-30 data governance error.
+**Purpose:** Append mode enables historical records — essential for trend analysis and audit trails. Configuring it incorrectly is the most common SL 3 data governance error.
 
 **TLO:** The trainee will configure a pipeline in Append mode, run it twice, verify two distinct snapshot records exist with different timestamps, and document when Append vs. Overwrite mode is appropriate.
 
@@ -178,16 +178,16 @@
 ### Block 10 — Ontology Design Methodology (Lecture)
 **Hours:** 1.0 | **Method:** Lecture | **Time:** 0900–1000
 
-**Purpose:** Good Ontology design comes from understanding the domain before touching the tool. This lecture establishes the TM-30 design methodology: entity identification, relationship mapping, Action design — all on paper before Ontology Manager opens.
+**Purpose:** Good Ontology design comes from understanding the domain before touching the tool. This lecture establishes the SL 3 design methodology: entity identification, relationship mapping, Action design — all on paper before Ontology Manager opens.
 
-**TLO:** The trainee will describe the 4-step TM-30 Ontology design methodology and apply it to a provided domain description — producing a documented design before any tool interaction.
+**TLO:** The trainee will describe the 4-step SL 3 Ontology design methodology and apply it to a provided domain description — producing a documented design before any tool interaction.
 
 **Key Delivery Notes:**
 - Step 1: Domain entities — what are the "things" in this domain? Equipment, Units, Milestones, Personnel, Documents.
 - Step 2: Properties — what do we need to know about each thing? What does a user query on?
 - Step 3: Relationships — which entities relate to which? What is the cardinality?
 - Step 4: Actions — what do authorized users need to do? What properties do they write? Who is authorized?
-- Every TM-30 design must be documented before it is built. "I'll figure it out as I go" fails the design review.
+- Every SL 3 design must be documented before it is built. "I'll figure it out as I go" fails the design review.
 
 ---
 
@@ -211,13 +211,13 @@
 ### Block 12 — Design Critique Workshop
 **Hours:** 2.0 | **Method:** Workshop | **Time:** 1300–1500
 
-**Purpose:** TM-30 builders are the data leads of their formation. They must be able to explain and defend design decisions. The critique session builds this professional skill.
+**Purpose:** SL 3 builders are the data leads of their formation. They must be able to explain and defend design decisions. The critique session builds this professional skill.
 
 **TLO:** Each trainee will present their Ontology design to the class, receive critique from peers against the design rubric, and revise the design as directed before build.
 
 **Key Delivery Notes:**
 - Each trainee presents their design (2–3 minutes). Class applies the rubric. Instructor facilitates.
-- Common rubric failures at TM-30: cardinality without justification, duplicate Object Types for entities that should be the same type, Actions with no access restriction.
+- Common rubric failures at SL 3: cardinality without justification, duplicate Object Types for entities that should be the same type, Actions with no access restriction.
 - Critique is professional, not personal. "The cardinality on Equipment-to-Unit is MANY_TO_MANY but the scenario implies MANY_TO_ONE — what is the reason for that choice?"
 
 ---
@@ -236,7 +236,7 @@
 ### Block 14 — Contour: Advanced Analysis
 **Hours:** 2.0 | **Method:** Lab | **Time:** 0830–1030
 
-**Purpose:** TM-30 Contour use goes beyond basic charts. Pivot tables, calculated columns, and saved workbooks turn Contour into a repeatable analysis tool rather than a one-time chart builder.
+**Purpose:** SL 3 Contour use goes beyond basic charts. Pivot tables, calculated columns, and saved workbooks turn Contour into a repeatable analysis tool rather than a one-time chart builder.
 
 **TLO:** The trainee will build a Contour workbook with a pivot table, a calculated analysis column, a parameter control, and a saved view shared with the project.
 
@@ -250,7 +250,7 @@
 ### Block 15 — Quiver: Multi-Object Analysis
 **Hours:** 1.25 | **Method:** Lab | **Time:** 1045–1200
 
-**Purpose:** Quiver's power is in linked views and cross-filter propagation — multiple Object Type views that respond to a selection in one view. This is the TM-30 skill that TM-10 trainees cannot do.
+**Purpose:** Quiver's power is in linked views and cross-filter propagation — multiple Object Type views that respond to a selection in one view. This is the SL 3 skill that SL 1 trainees cannot do.
 
 **TLO:** The trainee will configure a multi-Object Quiver dashboard with linked views and cross-filter propagation — selecting an Object in one view narrows the related objects shown in a second view.
 
@@ -264,12 +264,12 @@
 ### Block 16 — AIP Logic Configuration
 **Hours:** 1.5 | **Method:** Lab | **Time:** 1300–1430
 
-**Purpose:** TM-30 covers AIP Logic configuration — connecting triggers, inputs, and outputs — not authoring. Trainees learn to configure and review workflows, not build them from scratch.
+**Purpose:** SL 3 covers AIP Logic configuration — connecting triggers, inputs, and outputs — not authoring. Trainees learn to configure and review workflows, not build them from scratch.
 
 **TLO:** Given an existing AIP Logic workflow template, the trainee will configure input sources, output destinations, trigger conditions, and a human review queue — verifying the workflow routes uncertain outputs to review before writing to production Objects.
 
 **Key Delivery Notes:**
-- Configuration vs. authoring: TM-30 trainees configure pre-built workflows (changing input source, output Object Type, trigger). They do not author the prompt logic — that is TM-40H.
+- Configuration vs. authoring: SL 3 trainees configure pre-built workflows (changing input source, output Object Type, trigger). They do not author the prompt logic — that is SL 4H.
 - Human review queue design: all AIP Logic outputs that write to production Objects must route through a review queue. Configuration: output with status = "Draft" → human review → status = "Published". No direct writes to Published status.
 - Trainees should be able to read the lineage graph and identify what the workflow does before configuring it.
 
@@ -278,7 +278,7 @@
 ### Block 17 — Data Lineage
 **Hours:** 1.25 | **Method:** Lab | **Time:** 1445–1600
 
-**Purpose:** Lineage graphs are how TM-30 builders diagnose pipeline failures and understand upstream data dependencies. A builder who cannot read a lineage graph cannot effectively maintain production data products.
+**Purpose:** Lineage graphs are how SL 3 builders diagnose pipeline failures and understand upstream data dependencies. A builder who cannot read a lineage graph cannot effectively maintain production data products.
 
 **TLO:** Given a Foundry lineage graph, the trainee will identify the upstream source datasets, the transforms in the pipeline, and the downstream consumers — and use this to diagnose a described pipeline issue.
 
@@ -292,7 +292,7 @@
 ### Block 18 — C2DAO Production Standards Discussion
 **Hours:** 1.0 | **Method:** Discussion | **Time:** 1600–1700
 
-**Purpose:** Production standards are what separate a training exercise from a data product a commander can trust. This discussion establishes the professional standard for TM-30 builders.
+**Purpose:** Production standards are what separate a training exercise from a data product a commander can trust. This discussion establishes the professional standard for SL 3 builders.
 
 **Key Delivery Notes:**
 - What makes a data product production-ready: correct naming, classification marking, documented Ontology design, pipeline running without error on schedule, workshop application tested with correct access control, data steward approval.
@@ -344,29 +344,29 @@
 
 ## COURSE COMPLETION — NEXT STEPS
 
-Upon receiving a TM-30 Go result, trainees are eligible to enroll in any TM-40 track — all six WFF functional tracks (TM-40A–F) and all eight specialist tracks (TM-40G–O). The specialist tracks are:
+Upon receiving a SL 3 Go result, trainees are eligible to enroll in any SL 4 track — all six WFF functional tracks (SL 4A–F) and all eight specialist tracks (SL 4G–O). The specialist tracks are:
 
 | Track | Title | Prereq | Duration |
 |---|---|---|---|
-| TM-40G | ORSA Specialist | TM-30 Required | 5 days |
-| TM-40H | AI Engineer | TM-30 Required | 5 days |
-| TM-40M | ML Engineer | TM-30 Required | 5 days |
-| TM-40J | Program Manager | TM-30 Required | 4 days |
-| TM-40K | Knowledge Manager | TM-30 Required | 4 days |
-| TM-40L | Software Engineer | TM-30 Required | 5 days |
-| TM-40N | UI/UX Designer | TM-30 Required | 5 days |
-| TM-40O | Platform Engineer | TM-30 Required | 5 days |
+| SL 4G | ORSA Specialist | SL 3 Required | 5 days |
+| SL 4H | AI Engineer | SL 3 Required | 5 days |
+| SL 4M | ML Engineer | SL 3 Required | 5 days |
+| SL 4J | Program Manager | SL 3 Required | 4 days |
+| SL 4K | Knowledge Manager | SL 3 Required | 4 days |
+| SL 4L | Software Engineer | SL 3 Required | 5 days |
+| SL 4N | UI/UX Designer | SL 3 Required | 5 days |
+| SL 4O | Platform Engineer | SL 3 Required | 5 days |
 
-**TM-30 is a hard prerequisite for all specialist tracks — not a recommendation.** Enrollment requests missing TM-30 Go documentation will not be confirmed by C2DAO.
+**SL 3 is a hard prerequisite for all specialist tracks — not a recommendation.** Enrollment requests missing SL 3 Go documentation will not be confirmed by C2DAO.
 
-NOTE: Upon completing TM-30, trainees are eligible for ALL TM-40 tracks (A–O) — both WFF functional (A–F) and specialist (G–O). TM-30 is a hard prerequisite for every TM-40 track.
+NOTE: Upon completing SL 3, trainees are eligible for ALL SL 4 tracks (A–O) — both WFF functional (A–F) and specialist (G–O). SL 3 is a hard prerequisite for every SL 4 track.
 
 **T3-I (Instructor Certification) — parallel path:**
-TM-30 graduates who demonstrate strong instructional aptitude may be nominated for T3-I (Instructor Certification). T3-I is a 5-day course that qualifies graduates to deliver TM-10, TM-20, and TM-30 as certified instructors. Nominations require unit commander endorsement and C2DAO approval.
+SL 3 graduates who demonstrate strong instructional aptitude may be nominated for T3-I (Instructor Certification). T3-I is a 5-day course that qualifies graduates to deliver SL 1, SL 2, and SL 3 as certified instructors. Nominations require unit commander endorsement and C2DAO approval.
 
 Instructors should discuss which specialist track is appropriate for each trainee at the end of Day 5. For trainees with strong instructional aptitude, also highlight T3-I as an available path. Refer trainees to the Unit Training NCO/Officer for enrollment coordination and access provisioning lead times (7–10+ duty days for specialist tracks).
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*TM-30 Lesson Plan Outlines | Version 1.0 | March 2026*
+*SL 3 Lesson Plan Outlines | Version 1.0 | March 2026*

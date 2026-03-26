@@ -1,7 +1,7 @@
-# CONCEPTS GUIDE — TM-50K: ADVANCED KNOWLEDGE MANAGER — MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 5K: ADVANCED KNOWLEDGE MANAGER — MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** At TM-50K level, you are no longer maintaining a knowledge system. You are designing how the organization learns — a fundamentally different mandate with fundamentally different consequences if executed poorly.
-> **Purpose:** Extends mental models from TM-40K Concepts Guide to advanced knowledge management on MSS. Prerequisite: TM-40K Concepts Guide and TM-40K qualification.
+> **Forward:** At SL 5K level, you are no longer maintaining a knowledge system. You are designing how the organization learns — a fundamentally different mandate with fundamentally different consequences if executed poorly.
+> **Purpose:** Extends mental models from TM-40K Concepts Guide to advanced knowledge management on MSS. Prerequisite: TM-40K Concepts Guide and SL 4K qualification.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -10,17 +10,17 @@
 
 ### 1-1. The Shift in Role
 
-**BLUF:** At TM-50K level, you are no longer maintaining a knowledge system. You are designing how the organization learns — a fundamentally different mandate with fundamentally different consequences if executed poorly.
+**BLUF:** At SL 5K level, you are no longer maintaining a knowledge system. You are designing how the organization learns — a fundamentally different mandate with fundamentally different consequences if executed poorly.
 
-A TM-40K KM builds capture workflows, validates observations, structures repositories, and surfaces knowledge to users. Their scope is a unit. When they build poorly, that unit loses institutional memory at every rotation.
+A SL 4K KM builds capture workflows, validates observations, structures repositories, and surfaces knowledge to users. Their scope is a unit. When they build poorly, that unit loses institutional memory at every rotation.
 
-A TM-50K Advanced KM designs the infrastructure within which TM-40K KMs operate. Their scope is a theater — III Corps, V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, SETAF-AF, USAREUR-AF HQ, and NATO partners. When they design poorly, the result is not a failed system — it is a theater of failed systems, each isolated, each redundant, collectively representing a massive organizational investment in knowledge that cannot be found, shared, or used.
+A SL 5K Advanced KM designs the infrastructure within which SL 4K KMs operate. Their scope is a theater — III Corps, V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, SETAF-AF, USAREUR-AF HQ, and NATO partners. When they design poorly, the result is not a failed system — it is a theater of failed systems, each isolated, each redundant, collectively representing a massive organizational investment in knowledge that cannot be found, shared, or used.
 
 ### 1-2. From Capture to Learning Infrastructure
 
-> **NOTE:** TM-40K now codifies the FM 6-0 five-step KM process, three KM tasks, six KM tool categories, and the five integrating processes for enterprise KM across echelons. The theater-scale learning architecture described below builds on that doctrinal foundation; review TM-40K Section 1-5b before designing cross-echelon KM systems.
+> **NOTE:** SL 4K now codifies the FM 6-0 five-step KM process, three KM tasks, six KM tool categories, and the five integrating processes for enterprise KM across echelons. The theater-scale learning architecture described below builds on that doctrinal foundation; review TM-40K Section 1-5b before designing cross-echelon KM systems.
 
-Tactical KM (TM-40K) is primarily concerned with capture: getting observations into a system before knowledge walks out the door at RIP/TOA. Strategic KM (TM-50K) is concerned with the full learning cycle:
+Tactical KM (SL 4K) is primarily concerned with capture: getting observations into a system before knowledge walks out the door at RIP/TOA. Strategic KM (SL 5K) is concerned with the full learning cycle:
 
 | Phase | Tactical KM Focus | Strategic KM Focus |
 |---|---|---|
@@ -362,9 +362,9 @@ The test: if the current Advanced KM were reassigned tomorrow, could their repla
 
 ---
 
-## SECTION 9 — ADVANCED FAILURE MODES — WHAT TM-50K KMs GET WRONG
+## SECTION 9 — ADVANCED FAILURE MODES — WHAT SL 5K KMs GET WRONG
 
-**BLUF:** Advanced KM failures are more subtle than TM-40K failures. Sophisticated architecture can obscure fundamental problems until the system is deployed at scale, at which point remediation is expensive. A TM-40K KM who builds a poor system affects a unit. A TM-50K KM who builds a poor system affects a theater.
+**BLUF:** Advanced KM failures are more subtle than SL 4K failures. Sophisticated architecture can obscure fundamental problems until the system is deployed at scale, at which point remediation is expensive. A SL 4K KM who builds a poor system affects a unit. A SL 5K KM who builds a poor system affects a theater.
 
 | Failure Mode | Indicators | Correction |
 |---|---|---|
@@ -392,21 +392,21 @@ The test: if the current Advanced KM were reassigned tomorrow, could their repla
 
 ---
 
-## PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION
+## PEER SL 5 CROSS-REFERENCES AND WFF INTEGRATION
 
-**Peer TM-50 Publications.** Advanced KMs design the knowledge infrastructure that supports all specialist tracks. Coordinate with practitioners in these companion publications.
+**Peer SL 5 Publications.** Advanced KMs design the knowledge infrastructure that supports all specialist tracks. Coordinate with practitioners in these companion publications.
 
 | Publication | Track | Coordination Point |
 |---|---|---|
-| TM-50G | Advanced ORSA | ORSA-derived knowledge products; analytical lessons capture |
-| TM-50H | Advanced AI Engineer | AI-assisted KM workflows; corpus design and ontology-RAG integration |
-| TM-50M | Advanced ML Engineer | Feature data governance; training corpus quality |
-| TM-50J | Advanced Program Manager | KM program oversight; portfolio-level knowledge governance |
-| TM-50L | Advanced Software Engineer | Platform SDK infrastructure supporting enterprise KM systems |
-| TM-50N | Advanced UI/UX Designer | Information architecture; knowledge portal UX |
-| TM-50O | Advanced Platform Engineer | Knowledge platform infrastructure; search and retrieval systems |
+| SL 5G | Advanced ORSA | ORSA-derived knowledge products; analytical lessons capture |
+| SL 5H | Advanced AI Engineer | AI-assisted KM workflows; corpus design and ontology-RAG integration |
+| SL 5M | Advanced ML Engineer | Feature data governance; training corpus quality |
+| SL 5J | Advanced Program Manager | KM program oversight; portfolio-level knowledge governance |
+| SL 5L | Advanced Software Engineer | Platform SDK infrastructure supporting enterprise KM systems |
+| SL 5N | Advanced UI/UX Designer | Information architecture; knowledge portal UX |
+| SL 5O | Advanced Platform Engineer | Knowledge platform infrastructure; search and retrieval systems |
 
-**WFF Operational Consumer Note.** Enterprise knowledge management exists to serve operational decision-making. The six Warfighting Function (WFF) tracks — Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F) — are the primary users of validated lessons, TTPs, and doctrine products. The design principles in this guide — federated architecture, quality tiers, cross-domain linkage, application over capture — must all be evaluated against whether WFF practitioners can find and use the knowledge they need at the moment they need it. A KM system that serves only KMs has failed.
+**WFF Operational Consumer Note.** Enterprise knowledge management exists to serve operational decision-making. The six Warfighting Function (WFF) tracks — Intelligence (SL 4A), Fires (SL 4B), Movement and Maneuver (SL 4C), Sustainment (SL 4D), Protection (SL 4E), and Mission Command (SL 4F) — are the primary users of validated lessons, TTPs, and doctrine products. The design principles in this guide — federated architecture, quality tiers, cross-domain linkage, application over capture — must all be evaluated against whether WFF practitioners can find and use the knowledge they need at the moment they need it. A KM system that serves only KMs has failed.
 
 ---
 

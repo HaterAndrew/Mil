@@ -1,12 +1,12 @@
-# POST-TEST — TM-40A: INTELLIGENCE
+# POST-TEST — SL 4A: INTELLIGENCE
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40A: Intelligence WFF Track |
+| **Course** | SL 4A: Intelligence WFF Track |
 | **Form** | Post-Test |
-| **Level** | TM-40A (WFF Track) |
-| **Audience** | G2/S2 staff, targeting officers, all-source analysts; prerequisite: completion of TM-40A training |
+| **Level** | SL 4A (WFF Track) |
+| **Audience** | G2/S2 staff, targeting officers, all-source analysts; prerequisite: completion of SL 4A training |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | 80% (32/40 points) |
 
@@ -14,7 +14,7 @@
 
 ## INSTRUCTIONS
 
-This assessment confirms proficiency upon completion of TM-40A training. A score of 80% (32/40) is required for course completion certification. Results are recorded on the student training record.
+This assessment confirms proficiency upon completion of SL 4A training. A score of 80% (32/40) is required for course completion certification. Results are recorded on the student training record.
 
 ---
 
@@ -78,14 +78,14 @@ B. Build the INTSUM at 0600 using whatever data is available; caveat any element
 C. Delay the INTSUM to 0700 each day to allow the pipeline to complete — the 45-minute lag is acceptable
 D. Build the INTSUM with static data from the previous cycle until the pipeline lag is resolved
 
-**9. FM 2-0 describes the intelligence process as a continuous cycle. Table 1-1a in TM-40A maps each step of this cycle to a data platform operation. Which of the following correctly pairs an intelligence process step with its data platform analog?**
+**9. FM 2-0 describes the intelligence process as a continuous cycle. Table 1-1a in SL 4A maps each step of this cycle to a data platform operation. Which of the following correctly pairs an intelligence process step with its data platform analog?**
 
 A. Plan and Direct → Analytical models and dashboards
 B. Collect and Process → Data publication and API endpoints
 C. Produce (Analyze) → Data ingestion and ETL/transforms
 D. Disseminate and Integrate → Data publication, API endpoints, and COP feeds
 
-**10. FM 2-0 identifies seven characteristics of effective intelligence. Table G-0a in TM-40A applies these as data quality criteria for MSS intelligence products. Which characteristic requires that intelligence products identify known gaps explicitly and state what is missing rather than hiding absent data?**
+**10. FM 2-0 identifies seven characteristics of effective intelligence. Table G-0a in SL 4A applies these as data quality criteria for MSS intelligence products. Which characteristic requires that intelligence products identify known gaps explicitly and state what is missing rather than hiding absent data?**
 
 A. Timely — intelligence is available in time to support the commander's decision
 B. Predictive — intelligence provides assessments of future conditions

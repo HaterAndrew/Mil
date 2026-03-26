@@ -1,11 +1,11 @@
 # EX_50L — Advanced Software Engineering
-## Practical Exercise — TM-50L Proficiency
+## Practical Exercise — SL 5L Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40L complete (Go on file); TM-50L course completion; OSDK TypeScript SDK (advanced), CI/CD pipeline access, and Code Workspace confirmed |
-| **Duration** | 6–8 hours (typically executed Day 5 of TM-50L) |
+| **Prerequisite** | SL 4L complete (Go on file); SL 5L course completion; OSDK TypeScript SDK (advanced), CI/CD pipeline access, and Code Workspace confirmed |
+| **Duration** | 6–8 hours (typically executed Day 5 of SL 5L) |
 | **Environment** | MSS Code Workspace (TypeScript + Python), OSDK advanced access, CI/CD pipeline (training environment), Ontology editor; see ENVIRONMENT_SETUP.md |
 | **Companion TM** | TM_50L_SOFTWARE_ENGINEER_ADVANCED.md |
 | **Syllabus** | SYLLABUS_TM50L |
@@ -92,7 +92,7 @@ Produce a platform handoff package:
 
 ## EVALUATOR NOTES
 
-**Scoring:** 5 tasks. Go on 4 of 5 = overall Go. No-Go on Task 1 or Task 4 = automatic No-Go (architecture review and security review are the core competencies at TM-50L level).
+**Scoring:** 5 tasks. Go on 4 of 5 = overall Go. No-Go on Task 1 or Task 4 = automatic No-Go (architecture review and security review are the core competencies at SL 5L level).
 
 ### Pre-Exercise Checklist
 

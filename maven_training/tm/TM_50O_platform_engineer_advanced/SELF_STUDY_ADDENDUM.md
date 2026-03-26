@@ -1,4 +1,4 @@
-# Self-Study Addendum — TM-50O: Advanced Platform Engineer
+# Self-Study Addendum — SL 5O: Advanced Platform Engineer
 ## Palantir Developers Reference Library
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.
@@ -7,7 +7,7 @@
 
 ## How to Use This Addendum
 
-TM-50O builds directly on TM-40O. The full TM-40O addendum (located at `../self_study/SELF_STUDY_TM40O_PLATFORM_ENGINEER.md`) remains relevant — all videos in that addendum apply at TM-50O level. This addendum adds videos specifically relevant to TM-50O's advanced and enterprise-level content: multi-cluster fleet management, platform reliability engineering, RMF/ATO automation, developer experience engineering, and platform observability at scale.
+SL 5O builds directly on SL 4O. The full SL 4O addendum (located at `../self_study/SELF_STUDY_TM40O_PLATFORM_ENGINEER.md`) remains relevant — all videos in that addendum apply at SL 5O level. This addendum adds videos specifically relevant to SL 5O's advanced and enterprise-level content: multi-cluster fleet management, platform reliability engineering, RMF/ATO automation, developer experience engineering, and platform observability at scale.
 
 Videos are grouped by topic. Within each group, content is ordered from foundational to advanced.
 
@@ -70,9 +70,9 @@ Videos are grouped by topic. Within each group, content is ordered from foundati
 
 ---
 
-## Full TM-40O Addendum Reference
+## Full SL 4O Addendum Reference
 
-All video groups from the TM-40O Self-Study Addendum remain applicable at TM-50O:
+All video groups from the SL 4O Self-Study Addendum remain applicable at SL 5O:
 
 - **CI/CD Pipeline and Code Repository Operations** — foundational for Chapter 5 (Golden Paths) and fleet-wide pipeline templates
 - **Security, Compliance, and Access Control** — directly supports Chapter 4 (RMF/ATO Automation) and Chapter 6 (Observability)

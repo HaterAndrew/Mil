@@ -74,7 +74,7 @@ The following SAT artifacts are maintained in `training_management/` and satisfy
 
 **AR 350-1 Reference:** Ch 3-1 (Mission Essential Task List)
 
-**Description:** MSS course learning outcomes are not yet explicitly mapped to unit Mission Essential Task Lists. The WFF tracks (TM-40A through TM-40F) provide a natural mapping framework but the formal linkage has not been documented.
+**Description:** MSS course learning outcomes are not yet explicitly mapped to unit Mission Essential Task Lists. The WFF tracks (SL 4A through SL 4F) provide a natural mapping framework but the formal linkage has not been documented.
 
 **Mitigation:** Pending G3 METL review. WFF track outcomes will be mapped to corresponding collective and individual tasks upon completion.
 

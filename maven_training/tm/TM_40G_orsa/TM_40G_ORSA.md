@@ -1,7 +1,7 @@
 # TM-40G — MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** ORSA analysts translate operational questions into mathematical models and translate results into commander-actionable recommendations. This manual provides the technical procedures for conducting that work on MSS/Foundry using Code Workspaces.
-> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (all required). Quantitative background equivalent to graduate-level statistics, and working proficiency in R or Python, required before beginning this manual; CONCEPTS_GUIDE_TM40G_ORSA (read before this manual).
+> **Prereqs:** SL 1, Maven User; SL 2, Builder; SL 3, Advanced Builder; Data Literacy Technical Reference (all required). Quantitative background equivalent to graduate-level statistics, and working proficiency in R or Python, required before beginning this manual; CONCEPTS_GUIDE_TM40G_ORSA (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Analytical products without uncertainty quantification may cause commanders to make decisions with false precision. Confidence intervals, sensitivity ranges, and explicit model limitations are MANDATORY components of every ORSA deliverable presented to a commander.**
@@ -18,21 +18,21 @@
 
 This manual provides task-level instruction for ORSA officers, NCOs, and quantitative analysts conducting operations research and systems analysis on the Maven Smart System (MSS). MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry.
 
-**TM-40G covers** configuring and using Code Workspaces (R and Python environments) within Foundry; connecting Foundry datasets to Code Workspace analysis environments; statistical modeling: regression, classification, and model validation for readiness and logistics applications; time series forecasting: readiness trend analysis and logistics demand forecasting using ARIMA/SARIMA patterns; Monte Carlo simulation: risk analysis for COA comparison, logistics planning uncertainty quantification; optimization: linear programming for resource allocation and scheduling against operational constraints; wargame and exercise analysis: data collection architecture, aggregation pipelines, outcome measurement; building analytical decision support products in Quiver and Contour for commander consumption; uncertainty communication standards: confidence intervals, sensitivity analysis, briefing product standards; and connecting MSS data to external ORSA tools following C2DAO-approved data handling procedures.
+**SL 4G covers** configuring and using Code Workspaces (R and Python environments) within Foundry; connecting Foundry datasets to Code Workspace analysis environments; statistical modeling: regression, classification, and model validation for readiness and logistics applications; time series forecasting: readiness trend analysis and logistics demand forecasting using ARIMA/SARIMA patterns; Monte Carlo simulation: risk analysis for COA comparison, logistics planning uncertainty quantification; optimization: linear programming for resource allocation and scheduling against operational constraints; wargame and exercise analysis: data collection architecture, aggregation pipelines, outcome measurement; building analytical decision support products in Quiver and Contour for commander consumption; uncertainty communication standards: confidence intervals, sensitivity analysis, briefing product standards; and connecting MSS data to external ORSA tools following C2DAO-approved data handling procedures.
 
-**TM-40G does NOT cover** general Foundry pipeline development — see TM-30; ontology design — see TM-30; non-analytical Workshop applications — see TM-20 and TM-30; machine learning model deployment to production — see TM-40M; or data architecture and schema design — see TM-30 and TM-40H.
+**SL 4G does NOT cover** general Foundry pipeline development — see SL 3; ontology design — see SL 3; non-analytical Workshop applications — see SL 2 and SL 3; machine learning model deployment to production — see SL 4M; or data architecture and schema design — see SL 3 and SL 4H.
 
 ### 1-2. Curriculum Position, Advanced Track, and WFF Context
 
-> **NOTE:** The **EUCOM Thunderforge AI Planning Ecosystem** (DIU/Scale AI contract, 2024–25) employs AI agents to simulate wargaming and planning scenarios at theater level, enabling AI-augmented MDMP and compressing planning timelines. ORSA analysts trained on MSS are essential participants in Thunderforge-class initiatives — the quantitative decision-support skills in TM-40G (and advanced methods in TM-50G) directly enable the human-machine teaming required for AI-assisted wargaming and COA analysis.
+> **NOTE:** The **EUCOM Thunderforge AI Planning Ecosystem** (DIU/Scale AI contract, 2024–25) employs AI agents to simulate wargaming and planning scenarios at theater level, enabling AI-augmented MDMP and compressing planning timelines. ORSA analysts trained on MSS are essential participants in Thunderforge-class initiatives — the quantitative decision-support skills in SL 4G (and advanced methods in SL 5G) directly enable the human-machine teaming required for AI-assisted wargaming and COA analysis.
 
-**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED. Completion of TM-20 and TM-10 is assumed. A graduate-level quantitative background (statistics, R or Python) is required independently of the TM series.
+**Prerequisite:** SL 3 (Advanced Builder) is REQUIRED. Completion of SL 2 and SL 1 is assumed. A graduate-level quantitative background (statistics, R or Python) is required independently of the TM series.
 
-**Advanced track:** Upon completing TM-40G, qualified ORSAs should pursue **TM-50G (Advanced ORSA)** for advanced topics including Bayesian methods, complex simulation design, multi-objective optimization, and campaign analysis support to USAREUR-AF operational planning.
+**Advanced track:** Upon completing SL 4G, qualified ORSAs should pursue **SL 5G (Advanced ORSA)** for advanced topics including Bayesian methods, complex simulation design, multi-objective optimization, and campaign analysis support to USAREUR-AF operational planning.
 
-**Peer specialist tracks:** The ORSA collaborates closely with the ML Engineer (TM-40M) — the ORSA owns the analytical question and decision product; the MLE owns continuously-operating prediction pipelines at scale. Coordinate with TM-40H (AI Engineer) when wrapping ORSA analysis in automated LLM synthesis workflows. Coordinate with TM-40L (Software Engineer) for production-grade pipeline implementation and OSDK-backed delivery interfaces.
+**Peer specialist tracks:** The ORSA collaborates closely with the ML Engineer (SL 4M) — the ORSA owns the analytical question and decision product; the MLE owns continuously-operating prediction pipelines at scale. Coordinate with SL 4H (AI Engineer) when wrapping ORSA analysis in automated LLM synthesis workflows. Coordinate with SL 4L (Software Engineer) for production-grade pipeline implementation and OSDK-backed delivery interfaces.
 
-**WFF awareness:** ORSA analysts on MSS serve as quantitative decision support across all Warfighting Functions. WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command) are primary consumers of ORSA products. Design analytical products with WFF staff officers as the intended audience: commanders want decision-grade products, not statistical reports. The ORSA's decomposition framework (Decision → Information → Data → Method) applies regardless of which WFF the tasker originates from.
+**WFF awareness:** ORSA analysts on MSS serve as quantitative decision support across all Warfighting Functions. WFF-qualified users (SL 4A through SL 4F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command) are primary consumers of ORSA products. Design analytical products with WFF staff officers as the intended audience: commanders want decision-grade products, not statistical reports. The ORSA's decomposition framework (Decision → Information → Data → Method) applies regardless of which WFF the tasker originates from.
 
 ### 1-2a. ORSA in the Decision Optimization Discipline
 
@@ -42,9 +42,9 @@ The primary reference for the ORSA role in data teams is the XVIII ABC experienc
 
 **Supplementary context:** Adkins ("Achieving Decision Dominance," January-February 2025) is a thought piece proposing terminology for data team employment. Adkins identifies FA 49 (ORSA) as one of three core functional areas for what he terms Decision Optimization Teams (DOTs). His shorthand — AFP, operationalized data, DOT — has entered common usage and provides useful framing, but the article is one officer's proposal, not doctrine.
 
-**What this means for TM-40G graduates:** You are not a standalone analyst producing reports on request. In the ODT model, you are an embedded team member producing **Automated Fighting Products** — visualization tools connected to live data via automated pipelines that reduce staff burden and inform commander decisions. Your products must be operationalized (immediately actionable by the consumer) and your methods must be transparent (uncertainty quantification, model limitations, confidence intervals). The MSS platform is the delivery mechanism; your quantitative skills are the engine.
+**What this means for SL 4G graduates:** You are not a standalone analyst producing reports on request. In the ODT model, you are an embedded team member producing **Automated Fighting Products** — visualization tools connected to live data via automated pipelines that reduce staff burden and inform commander decisions. Your products must be operationalized (immediately actionable by the consumer) and your methods must be transparent (uncertainty quantification, model limitations, confidence intervals). The MSS platform is the delivery mechanism; your quantitative skills are the engine.
 
-> **NOTE:** Adkins names the Maven Smart System as an ASCC-level COP platform. The analytical products you build on MSS in TM-40G align with the AFP concept.
+> **NOTE:** Adkins names the Maven Smart System as an ASCC-level COP platform. The analytical products you build on MSS in SL 4G align with the AFP concept.
 
 *Sources: Forney et al., "Fighting with Live Data," Military Review Online Exclusive (2026); Adkins, "Achieving Decision Dominance," Military Review 105, no. 1 (2025).*
 
@@ -68,9 +68,9 @@ ORSA analysts provide the USAREUR-AF commander and staff with quantitative decis
 Before beginning this manual, verify you meet all prerequisites:
 
 **Platform prerequisites:**
-- [ ] TM-10 complete — can operate MSS, access datasets, use Workshop applications
-- [ ] TM-20 complete — can build basic Pipeline Builder transforms and Workshop applications
-- [ ] TM-30 complete — can design ontology models, advanced pipelines, and Contour analyses
+- [ ] SL 1 complete — can operate MSS, access datasets, use Workshop applications
+- [ ] SL 2 complete — can build basic Pipeline Builder transforms and Workshop applications
+- [ ] SL 3 complete — can design ontology models, advanced pipelines, and Contour analyses
 - [ ] Code Workspace access provisioned — confirm with unit MSS Administrator
 
 **Quantitative prerequisites:**
@@ -178,7 +178,7 @@ Foundry Code Workspaces provide containerized development environments (Jupyter 
 
 ### 2-2. Task: Configure a New ORSA Code Workspace
 
-**CONDITIONS:** You have TM-30 proficiency, MSS access, and a defined analytical task requiring Code Workspace development. A Foundry project folder has been provisioned for your ORSA team.
+**CONDITIONS:** You have SL 3 proficiency, MSS access, and a defined analytical task requiring Code Workspace development. A Foundry project folder has been provisioned for your ORSA team.
 
 **STANDARDS:** Workspace is configured, connects to at least one Foundry dataset, passes a smoke test, and is documented in the team repository.
 
@@ -1202,7 +1202,7 @@ plt.close()
 4. Compute CARVER total: `CARVER_score = wC*C + wA*A + wR*R + wV*V + wE*E + wR2*R2`. Rank targets by descending score.
 5. Present the ranked list with factor breakdowns so the commander can see why each target ranks where it does — the decomposition is as valuable as the total score.
 
-> **NOTE:** CARVER is a prioritization tool, not a targeting decision. The ranked output informs the targeting working group; it does not replace commander authority or legal review. See TM-40B (Fires) for the targeting methodology that consumes CARVER products.
+> **NOTE:** CARVER is a prioritization tool, not a targeting decision. The ranked output informs the targeting working group; it does not replace commander authority or legal review. See SL 4B (Fires) for the targeting methodology that consumes CARVER products.
 
 Implement CARVER as a reusable Foundry object type with six numeric properties (C, A, R, V, E, R2), a weights configuration, and a computed total. This allows the targeting working group to re-score rapidly as the operational picture changes.
 

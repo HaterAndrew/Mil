@@ -1,10 +1,10 @@
 # EX_50N — Advanced UI/UX Designer
-## Practical Exercise — TM-50N Proficiency
+## Practical Exercise — SL 5N Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40N REQUIRED (Go evaluation on file); TM-50N — Advanced UI/UX Designer Technical Manual |
+| **Prerequisite** | SL 4N REQUIRED (Go evaluation on file); SL 5N — Advanced UI/UX Designer Technical Manual |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS with Workshop access, design tool (Figma or equivalent) — see EX_40N ENVIRONMENT_SETUP.md (same environment) |
 
@@ -12,7 +12,7 @@
 
 | Resource | Reference |
 |----------|-----------|
-| Technical Manual | TM-50N — Advanced UI/UX Designer |
+| Technical Manual | SL 5N — Advanced UI/UX Designer |
 | Syllabus | SYLLABUS_TM50N |
 | Pre-Exercise Exam | EXAM_TM50N_PRE |
 | Post-Exercise Exam | EXAM_TM50N_POST |
@@ -31,12 +31,12 @@ The MSS application portfolio has grown to 10+ Workshop applications built by di
 
 | Standard | Criteria |
 |----------|----------|
-| **Go** | Component documented per TM-50N §2-2 standard; tokens have governance rules; accessibility notes complete |
+| **Go** | Component documented per SL 5N §2-2 standard; tokens have governance rules; accessibility notes complete |
 | **No-Go** | Component lacks documentation, tokens, or accessibility specification |
 
 ### Task 2 — DDIL-Aware Redesign (45 min)
 
-- [ ] Select an existing MSS application design (from TM-40N exercise or provided example)
+- [ ] Select an existing MSS application design (from SL 4N exercise or provided example)
 - [ ] Redesign for DDIL resilience: add data freshness indicators, offline-first interaction patterns, graceful degradation
 - [ ] Design for all four DDIL tiers (full connectivity, degraded, intermittent, disconnected)
 - [ ] Annotate the design with tier-specific behavior for each data element and interaction

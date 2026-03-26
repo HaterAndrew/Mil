@@ -17,8 +17,8 @@ def seed_documents(curriculum_db):
         Document(
             file_path="tm/TM_10/overview.md",
             doc_type="TM",
-            course_id="TM-10",
-            title="TM-10 Overview",
+            course_id="SL 1",
+            title="SL 1 Overview",
             current_version="1.0",
             last_modified=datetime(2026, 1, 15, tzinfo=timezone.utc),
             file_hash="abc123",
@@ -26,8 +26,8 @@ def seed_documents(curriculum_db):
         Document(
             file_path="tm/TM_20/overview.md",
             doc_type="TM",
-            course_id="TM-20",
-            title="TM-20 Overview",
+            course_id="SL 2",
+            title="SL 2 Overview",
             current_version="1.1",
             last_modified=datetime(2026, 2, 1, tzinfo=timezone.utc),
             file_hash="def456",
@@ -35,8 +35,8 @@ def seed_documents(curriculum_db):
         Document(
             file_path="syllabi/TM_30_syllabus.md",
             doc_type="SYLLABUS",
-            course_id="TM-30",
-            title="TM-30 Syllabus",
+            course_id="SL 3",
+            title="SL 3 Syllabus",
             current_version="2.0",
             last_modified=datetime(2025, 6, 1, tzinfo=timezone.utc),
             file_hash="ghi789",
@@ -76,9 +76,9 @@ class TestDocuments:
 
     def test_list_by_course_id(self, curriculum_client, curriculum_db):
         seed_documents(curriculum_db)
-        resp = curriculum_client.get("/documents", params={"course_id": "TM-10"})
+        resp = curriculum_client.get("/documents", params={"course_id": "SL 1"})
         assert len(resp.json()) == 1
-        assert resp.json()[0]["course_id"] == "TM-10"
+        assert resp.json()[0]["course_id"] == "SL 1"
 
     def test_get_document(self, curriculum_client, curriculum_db):
         seed_documents(curriculum_db)
@@ -94,7 +94,7 @@ class TestDocuments:
 
     def test_stale_documents(self, curriculum_client, curriculum_db):
         seed_documents(curriculum_db)
-        # TM-30 syllabus was modified 2025-06-01, should be stale at 90-day threshold
+        # SL 3 syllabus was modified 2025-06-01, should be stale at 90-day threshold
         resp = curriculum_client.get("/documents/stale", params={"days": 90})
         assert resp.status_code == 200
         paths = [d["file_path"] for d in resp.json()]
@@ -250,4 +250,4 @@ class TestExport:
         resp = curriculum_client.get("/export/csv")
         assert resp.status_code == 200
         assert "text/csv" in resp.headers["content-type"]
-        assert "TM-10" in resp.text
+        assert "SL 1" in resp.text

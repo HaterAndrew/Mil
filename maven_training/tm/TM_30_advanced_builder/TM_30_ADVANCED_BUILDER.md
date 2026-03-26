@@ -1,18 +1,18 @@
 # TM-30 — MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** TM-30 qualifies data-adjacent specialists to build advanced no-code solutions on the Maven Smart System — complex Workshop applications, multi-source pipelines, well-designed ontology models, and advanced analytics — while operating within USAREUR-AF C2DAO governance requirements.
-> **Prereqs:** TM-10, Maven User; TM-20, Builder; Data Literacy Technical Reference (all required).
+> **Forward:** SL 3 qualifies data-adjacent specialists to build advanced no-code solutions on the Maven Smart System — complex Workshop applications, multi-source pipelines, well-designed ontology models, and advanced analytics — while operating within USAREUR-AF C2DAO governance requirements.
+> **Prereqs:** SL 1, Maven User; SL 2, Builder; Data Literacy Technical Reference (all required).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 ## Table of Contents
 
 - [1-1. Advanced Builder Manual](#1-1-advanced-builder-manual)
-- [1-2. What TM-30 Advances Beyond TM-20](#1-2-what-tm-30-advances-beyond-tm-20)
+- [1-2. What SL 3 Advances Beyond SL 2](#1-2-what-tm-30-advances-beyond-tm-20)
 - [1-3. USAREUR-AF Operational Context](#1-3-usareur-af-operational-context)
 - [1-4. Governing Policy References](#1-4-governing-policy-references)
 - [1-5. Design Principles for Advanced Builders](#1-5-design-principles-for-advanced-builders)
-- [1-6. TM-30 Scope Boundaries](#1-6-tm-30-scope-boundaries)
-- [1-7. Advancement from TM-30 — Next Steps](#1-7-advancement-from-tm-30--next-steps)
+- [1-6. SL 3 Scope Boundaries](#1-6-tm-30-scope-boundaries)
+- [1-7. Advancement from SL 3 — Next Steps](#1-7-advancement-from-tm-30--next-steps)
 - [2-1. Overview of Advanced Workshop Capability](#2-1-overview-of-advanced-workshop-capability)
 - [TASK 2-1: CONFIGURE APPLICATION VARIABLES AND STATE MANAGEMENT](#task-2-1-configure-application-variables-and-state-management)
 - [TASK 2-2: IMPLEMENT CONDITIONAL LOGIC AND VISIBILITY RULES](#task-2-2-implement-conditional-logic-and-visibility-rules)
@@ -21,7 +21,7 @@
 - [2-2. Designing for Operational Tempo and Data Currency](#2-2-designing-for-operational-tempo-and-data-currency)
 - [2-5. Kairos Timeline Integration](#2-5-kairos-timeline-integration)
 - [2-6. Target Workbench](#2-6-target-workbench)
-- [3-1. Pipeline Builder Review and TM-30 Scope](#3-1-pipeline-builder-review-and-tm-30-scope)
+- [3-1. Pipeline Builder Review and SL 3 Scope](#3-1-pipeline-builder-review-and-tm-30-scope)
 - [TASK 3-1: PERFORM A MULTI-SOURCE JOIN](#task-3-1-perform-a-multi-source-join)
 - [TASK 3-2: CONFIGURE DATASET AGGREGATIONS](#task-3-2-configure-dataset-aggregations)
 - [TASK 3-3: IMPLEMENT AN ADVANCED TRANSFORMATION PATTERN](#task-3-3-implement-an-advanced-transformation-pattern)
@@ -34,8 +34,8 @@
 - [5-1. Advanced Contour Overview](#5-1-advanced-contour-overview)
 - [TASK 5-1: BUILD AN ADVANCED CONTOUR ANALYSIS WITH PIVOT AND FORMULA LOGIC](#task-5-1-build-an-advanced-contour-analysis-with-pivot-and-formula-logic)
 - [TASK 5-2: BUILD A MULTI-OBJECT QUIVER DASHBOARD](#task-5-2-build-a-multi-object-quiver-dashboard)
-- [6-0. AIP Landscape at TM-30 Level](#6-0-aip-landscape-at-tm-30-level)
-- [6-1. TM-30 vs. TM-40 Scope in AIP Logic](#6-1-tm-30-vs-tm-40-scope-in-aip-logic)
+- [6-0. AIP Landscape at SL 3 Level](#6-0-aip-landscape-at-tm-30-level)
+- [6-1. SL 3 vs. SL 4 Scope in AIP Logic](#6-1-tm-30-vs-tm-40-scope-in-aip-logic)
 - [6-2. AIP Logic Overview](#6-2-aip-logic-overview)
 - [TASK 6-1: CONFIGURE AIP LOGIC WORKFLOW PARAMETERS](#task-6-1-configure-aip-logic-workflow-parameters)
 - [TASK 6-2: CONFIGURE NATURAL LANGUAGE QUERY ON AN OBJECT TYPE](#task-6-2-configure-natural-language-query-on-an-object-type)
@@ -73,31 +73,31 @@
 ## 1-1. Advanced Builder Manual
 
 1-1. This manual qualifies advanced builders who operate entirely through the MSS platform user
-interface. No code is required at the TM-30 level. All tasks in this manual are accomplished
+interface. No code is required at the SL 3 level. All tasks in this manual are accomplished
 through Foundry's graphical tools: Workshop, Pipeline Builder, Ontology Manager, Contour, Quiver,
 and AIP Logic.
 
-1-2. TM-30 is the advanced tier for data-adjacent specialists — personnel who work deeply with
+1-2. SL 3 is the advanced tier for data-adjacent specialists — personnel who work deeply with
 data but whose primary role is operational, analytical, or systems-oriented rather than software
 development. This includes 17-series and 25-series signal soldiers, S6/G6 staff, G2 analysts,
 Civil Affairs, and operational data analysts embedded in brigade and division staffs.
 
-1-3. TM-40 covers code-level development (Python transforms, TypeScript Functions on Objects,
-OSDK). If your task requires writing code, reference TM-40. TM-30 stops at the UI boundary.
+1-3. SL 4 covers code-level development (Python transforms, TypeScript Functions on Objects,
+OSDK). If your task requires writing code, reference SL 4. SL 3 stops at the UI boundary.
 
-NOTE: All items above require a TM-40 developer. For TM-20 (no-code builder) capabilities, refer to TM-20, Chapter 1. TM-30 operates at the boundary between TM-20 no-code building and TM-40 code-based development. When in doubt whether a task is TM-20 or TM-30, refer to TM-20, Chapter 1-1 (No-Code Builder Manual) to assess scope before escalating.
+NOTE: All items above require a SL 4 developer. For SL 2 (no-code builder) capabilities, refer to TM-20, Chapter 1. SL 3 operates at the boundary between SL 2 no-code building and SL 4 code-based development. When in doubt whether a task is SL 2 or SL 3, refer to TM-20, Chapter 1-1 (No-Code Builder Manual) to assess scope before escalating.
 
-1-4. Prerequisites. Before beginning TM-30 tasks, personnel must be qualified on:
-- TM-10 (Maven User): platform navigation, object search, consuming data products
-- TM-20 (Builder): basic Workshop, basic Pipeline Builder, basic Object Type configuration,
+1-4. Prerequisites. Before beginning SL 3 tasks, personnel must be qualified on:
+- SL 1 (Maven User): platform navigation, object search, consuming data products
+- SL 2 (Builder): basic Workshop, basic Pipeline Builder, basic Object Type configuration,
   basic Contour and Quiver
 - Data Literacy Technical Reference: data governance principles, Army data policy, command data authority
 
-Before beginning TM-30 design work, confirm you can independently perform — without manual reference — all TM-10 operator tasks (Chapters 2-6) and all TM-20 builder tasks including Workshop application building (TM-20, Chapter 5), Ontology configuration (TM-20, Chapter 4), pipeline management (TM-20, Chapter 3), and branching/governance (TM-20, Chapter 7). If you cannot confidently perform any of these tasks without reference, complete the relevant TM before advancing.
+Before beginning SL 3 design work, confirm you can independently perform — without manual reference — all SL 1 operator tasks (Chapters 2-6) and all SL 2 builder tasks including Workshop application building (TM-20, Chapter 5), Ontology configuration (TM-20, Chapter 4), pipeline management (TM-20, Chapter 3), and branching/governance (TM-20, Chapter 7). If you cannot confidently perform any of these tasks without reference, complete the relevant TM before advancing.
 
-## 1-2. What TM-30 Advances Beyond TM-20
+## 1-2. What SL 3 Advances Beyond SL 2
 
-| Capability Area | TM-20 Level | TM-30 Level |
+| Capability Area | SL 2 Level | SL 3 Level |
 |-----------------|-------------|-------------|
 | Workshop | Single-page apps, basic widgets | Multi-page apps, conditional logic, variable passing |
 | Pipeline Builder | Single-source transforms, basic filters | Multi-source joins, aggregations, calculated columns |
@@ -108,17 +108,17 @@ Before beginning TM-30 design work, confirm you can independently perform — wi
 | Governance | Follow naming conventions | Enforce them, review peers, coordinate with Data Stewards |
 | Environment Mgmt | Aware of branching | Execute branching, review, and promotion workflows |
 
-NOTE: Advanced builders design solutions that TM-10 operators and TM-20 builders will use. Before designing at TM-30 level, understand the operator workflows from TM-10, Chapter 1 (Introduction and Overview) and TM-10, Chapter 4 (Using Workshop Applications). Your design decisions directly affect operator productivity and data quality at the operational level.
+NOTE: Advanced builders design solutions that SL 1 operators and SL 2 builders will use. Before designing at SL 3 level, understand the operator workflows from TM-10, Chapter 1 (Introduction and Overview) and TM-10, Chapter 4 (Using Workshop Applications). Your design decisions directly affect operator productivity and data quality at the operational level.
 
 ## 1-3. USAREUR-AF Operational Context
 
 1-5. USAREUR-AF is the Army Service Component Command (ASCC) to United States European Command
 (USEUCOM) and United States Africa Command (USAFRICOM). Advanced builders operating in this theater support land operations across the European and African
-AOR and integration with NATO Allied command structures. The data products built at TM-30 level
+AOR and integration with NATO Allied command structures. The data products built at SL 3 level
 feed readiness reporting, logistics visibility, intelligence products, and operational dashboards
 used by commanders at brigade through theater level.
 
-1-6. Errors at TM-30 level have formation-wide impact. A broken Workshop application that
+1-6. Errors at SL 3 level have formation-wide impact. A broken Workshop application that
 misrepresents equipment readiness affects commanders' decisions. A poorly designed pipeline join
 that duplicates records inflates SITREP counts. A misconfigured Action that overwrites data without
 validation corrupts the operational picture. Build with the same discipline you apply to any
@@ -271,7 +271,7 @@ WARNING: Builders who design products assuming persistent connectivity create si
 
 ## 1-5. Design Principles for Advanced Builders
 
-**BLUF:** Advanced builders design systems that other people depend on. This section is not about Foundry features — it is about how to think before you use them. These principles apply across every TM-30 task.
+**BLUF:** Advanced builders design systems that other people depend on. This section is not about Foundry features — it is about how to think before you use them. These principles apply across every SL 3 task.
 
 **1. Start with the command requirement, not the tool capability.**
 
@@ -279,11 +279,11 @@ Foundry has many powerful tools. The most common advanced builder failure is sel
 
 > *What does a commander or staff officer need to decide, and what information do they need to make that decision correctly?*
 
-Every piece of TM-30 work — an Ontology design, a multi-source pipeline, an AIP Logic workflow — should be traceable back to an operational requirement. If you cannot trace it back, you are building something that may not be needed.
+Every piece of SL 3 work — an Ontology design, a multi-source pipeline, an AIP Logic workflow — should be traceable back to an operational requirement. If you cannot trace it back, you are building something that may not be needed.
 
 **2. Ontology design is domain modeling, not database configuration.**
 
-When you design Object Types and Link Types at TM-30 level, you are not configuring a database — you are modeling operational reality. The questions to ask:
+When you design Object Types and Link Types at SL 3 level, you are not configuring a database — you are modeling operational reality. The questions to ask:
 
 - **What are the real-world entities?** (A Soldier, a vehicle, a unit, a maintenance event — these are nouns. Object Types are nouns.)
 - **What are the real-world relationships?** (A Soldier *is assigned to* a unit. A vehicle *has* maintenance events. These are Links.)
@@ -293,7 +293,7 @@ If you cannot describe your Ontology design in plain operational language withou
 
 **3. Every production change has downstream consequences.**
 
-At TM-30 level, the resources you modify are shared. An Object Type you change is used by Workshop applications, Contour analyses, and Quiver dashboards you may not even know exist.
+At SL 3 level, the resources you modify are shared. An Object Type you change is used by Workshop applications, Contour analyses, and Quiver dashboards you may not even know exist.
 
 Before modifying any shared production resource:
 1. **Audit downstream dependencies** — Ontology Manager shows all downstream consumers of an Object Type. Run this audit before touching anything.
@@ -312,7 +312,7 @@ When building multi-source pipelines, the most common error is not getting wrong
 
 **5. Your users are operators, not data scientists.**
 
-The applications and analyses you build at TM-30 level will be used by TM-10 operators — Soldiers and staff officers who are not data experts. Design for them:
+The applications and analyses you build at SL 3 level will be used by SL 1 operators — Soldiers and staff officers who are not data experts. Design for them:
 
 - A dashboard that requires explanation to use has a design problem, not a user education problem.
 - Use plain language for labels, filters, and column names. Do not expose internal dataset field names to users.
@@ -324,7 +324,7 @@ NOTE: The CDA Portal (learn-data.armydev.com) Object Type Cookbook and DDOF Play
 
 **PRODUCTION INCIDENT CASE STUDY — "The Renamed Property"**
 
-A TM-30 builder at V Corps was tasked with updating the `SoldierReadiness` Object Type to use clearer property names. One change seemed minor: renaming the property `unitStatus` to `unitOperationalStatus` — more descriptive, clearer in the UI.
+A SL 3 builder at V Corps was tasked with updating the `SoldierReadiness` Object Type to use clearer property names. One change seemed minor: renaming the property `unitStatus` to `unitOperationalStatus` — more descriptive, clearer in the UI.
 
 The builder made the change on the main branch and published directly without a downstream impact assessment.
 
@@ -343,75 +343,75 @@ What the builder should have done:
 
 ---
 
-## 1-6. TM-30 Scope Boundaries
+## 1-6. SL 3 Scope Boundaries
 
-TM-30 covers the full range of no-code, UI-based advanced building on MSS. Certain requirements exceed TM-30 scope and require TM-40 (software engineer) support.
+SL 3 covers the full range of no-code, UI-based advanced building on MSS. Certain requirements exceed SL 3 scope and require SL 4 (software engineer) support.
 
-| Requirement | TM-30 Scope? | Action |
+| Requirement | SL 3 Scope? | Action |
 |---|---|---|
 | Multi-page Workshop app with variable-driven navigation | YES | Build per Chapter 2 |
 | Multi-source join with grain management | YES | Build per Chapter 3 |
 | Complex Ontology with hierarchical Object Types | YES | Design per Chapter 4 |
 | AIP Logic workflow parameter configuration | YES | Configure per Chapter 6 |
-| Python or PySpark transforms | NO — TM-40 | Refer to TM-40L |
-| TypeScript Functions on Objects (FOO) | NO — TM-40 | Refer to TM-40H/TM-40L |
-| OSDK integration | NO — TM-40 | Refer to TM-40L |
-| Authoring new AIP Logic workflows | NO — TM-40 | Refer to TM-40H |
-| Configuring source connectors (new connector types) | NO — TM-40 | Refer to TM-40L |
-| Writing custom data quality checks in code | NO — TM-40 | Refer to TM-40L |
+| Python or PySpark transforms | NO — SL 4 | Refer to SL 4L |
+| TypeScript Functions on Objects (FOO) | NO — SL 4 | Refer to SL 4H/SL 4L |
+| OSDK integration | NO — SL 4 | Refer to SL 4L |
+| Authoring new AIP Logic workflows | NO — SL 4 | Refer to SL 4H |
+| Configuring source connectors (new connector types) | NO — SL 4 | Refer to SL 4L |
+| Writing custom data quality checks in code | NO — SL 4 | Refer to SL 4L |
 
-If a requirement is not in this table, apply the following rule: if it requires writing, editing, or debugging code in any language — it is TM-40 scope.
+If a requirement is not in this table, apply the following rule: if it requires writing, editing, or debugging code in any language — it is SL 4 scope.
 
 ---
 
-## 1-7. Advancement from TM-30 — Next Steps
+## 1-7. Advancement from SL 3 — Next Steps
 
-TM-30 qualification enables advancement to all TM-40 tracks — both the six WFF functional tracks (TM-40A–F) and the eight specialist tracks (TM-40G–O). All TM-40 tracks require TM-30 as a hard prerequisite — TM-20 alone is not sufficient.
+SL 3 qualification enables advancement to all SL 4 tracks — both the six WFF functional tracks (SL 4A–F) and the eight specialist tracks (SL 4G–O). All SL 4 tracks require SL 3 as a hard prerequisite — SL 2 alone is not sufficient.
 
-**WFF Functional Tracks (TM-40A through TM-40F):**
+**WFF Functional Tracks (SL 4A through SL 4F):**
 
 | Track | Title | Audience |
 |---|---|---|
-| TM-40A | Intelligence | S2/G2 staff; intelligence analysts using MSS for WFF products |
-| TM-40B | Fires | Fires staff; targeting analysts using MSS for fires products |
-| TM-40C | Movement & Maneuver | M&M staff; using MSS for movement and maneuver products |
-| TM-40D | Sustainment | Sustainment staff; using MSS for logistics and sustainment products |
-| TM-40E | Protection | Protection staff; using MSS for protection products |
-| TM-40F | Mission Command | MC staff; using MSS for mission command products |
+| SL 4A | Intelligence | S2/G2 staff; intelligence analysts using MSS for WFF products |
+| SL 4B | Fires | Fires staff; targeting analysts using MSS for fires products |
+| SL 4C | Movement & Maneuver | M&M staff; using MSS for movement and maneuver products |
+| SL 4D | Sustainment | Sustainment staff; using MSS for logistics and sustainment products |
+| SL 4E | Protection | Protection staff; using MSS for protection products |
+| SL 4F | Mission Command | MC staff; using MSS for mission command products |
 
-**Specialist Tracks (TM-40G through TM-40O):**
+**Specialist Tracks (SL 4G through SL 4O):**
 
 | Track | Title | Specialty |
 |---|---|---|
-| TM-40G | ORSA | Operational research and systems analysis; quantitative modeling, statistical analysis, decision support |
-| TM-40H | AI Engineer | AIP Logic workflow authoring, TypeScript Functions on Objects (FOO), Agent Studio |
-| TM-40M | ML Engineer | Machine learning pipeline development, model integration, PySpark transforms |
-| TM-40J | Program Manager | Data product program management, delivery coordination, stakeholder engagement |
-| TM-40K | Knowledge Manager | Organizational knowledge architecture, data product documentation, taxonomy management |
-| TM-40L | Software Engineer | Python/PySpark transforms, TypeScript, OSDK integration, source connector configuration |
-| TM-40N | UI/UX Designer | User interface design, user experience research, MSS application usability |
-| TM-40O | Platform Engineer | Platform infrastructure, deployment pipelines, environment configuration |
+| SL 4G | ORSA | Operational research and systems analysis; quantitative modeling, statistical analysis, decision support |
+| SL 4H | AI Engineer | AIP Logic workflow authoring, TypeScript Functions on Objects (FOO), Agent Studio |
+| SL 4M | ML Engineer | Machine learning pipeline development, model integration, PySpark transforms |
+| SL 4J | Program Manager | Data product program management, delivery coordination, stakeholder engagement |
+| SL 4K | Knowledge Manager | Organizational knowledge architecture, data product documentation, taxonomy management |
+| SL 4L | Software Engineer | Python/PySpark transforms, TypeScript, OSDK integration, source connector configuration |
+| SL 4N | UI/UX Designer | User interface design, user experience research, MSS application usability |
+| SL 4O | Platform Engineer | Platform infrastructure, deployment pipelines, environment configuration |
 
-Each TM-40G–O track has a corresponding advanced track:
+Each SL 4G–O track has a corresponding advanced track:
 
 | Advanced Track | Title | Prerequisite |
 |---|---|---|
-| TM-50G | Advanced ORSA | TM-40G (required) |
-| TM-50H | Advanced AI Engineer | TM-40H (required) |
-| TM-50M | Advanced ML Engineer | TM-40M (required) |
-| TM-50J | Advanced Program Manager | TM-40J (required) |
-| TM-50K | Advanced Knowledge Manager | TM-40K (required) |
-| TM-50L | Advanced Software Engineer | TM-40L (required) |
-| TM-50N | Advanced UI/UX Designer | TM-40N (required) |
-| TM-50O | Advanced Platform Engineer | TM-40O (required) |
+| SL 5G | Advanced ORSA | SL 4G (required) |
+| SL 5H | Advanced AI Engineer | SL 4H (required) |
+| SL 5M | Advanced ML Engineer | SL 4M (required) |
+| SL 5J | Advanced Program Manager | SL 4J (required) |
+| SL 5K | Advanced Knowledge Manager | SL 4K (required) |
+| SL 5L | Advanced Software Engineer | SL 4L (required) |
+| SL 5N | Advanced UI/UX Designer | SL 4N (required) |
+| SL 5O | Advanced Platform Engineer | SL 4O (required) |
 
-**Train-the-Trainer Track — available after TM-30:**
+**Train-the-Trainer Track — available after SL 3:**
 
-T3-I (Instructor Certification) is a 5-day instructor pipeline course. Prereq: TM-30 Go + C2DAO Training OIC selection. Certifies personnel to deliver TM-20, TM-30, and TM-40 courses as primary instructor.
+T3-I (Instructor Certification) is a 5-day instructor pipeline course. Prereq: SL 3 Go + C2DAO Training OIC selection. Certifies personnel to deliver SL 2, SL 3, and SL 4 courses as primary instructor.
 
-NOTE: There are no TM-50A through TM-50F tracks. Advanced-level training exists only for specialist tracks (G–O). WFF tracks (TM-40A–F) do not have a TM-50 continuation.
+NOTE: There are no TM-50A through TM-50F tracks. Advanced-level training exists only for specialist tracks (G–O). WFF tracks (SL 4A–F) do not have a SL 5 continuation.
 
-NOTE: Select the specialist track that aligns to your assigned duties and billet. If uncertain, consult the USAREUR-AF C2DAO training coordinator. Personnel are expected to complete one specialist track; concurrent enrollment in multiple TM-40 specialist tracks requires C2DAO approval.
+NOTE: Select the specialist track that aligns to your assigned duties and billet. If uncertain, consult the USAREUR-AF C2DAO training coordinator. Personnel are expected to complete one specialist track; concurrent enrollment in multiple SL 4 specialist tracks requires C2DAO approval.
 
 ---
 
@@ -423,7 +423,7 @@ that serve as the operational data interface for commanders and staff.
 
 ## 2-1. Overview of Advanced Workshop Capability
 
-2-1. Workshop applications built at TM-30 level go beyond single-page dashboards. They serve as
+2-1. Workshop applications built at SL 3 level go beyond single-page dashboards. They serve as
 the primary operational interface for staff sections — a G2 intelligence dashboard with linked
 pages for threat assessment, unit tracking, and historical trends; an S4 readiness tracker that
 lets commanders drill from fleet overview to individual equipment status; a Civil Affairs civil-military
@@ -439,7 +439,7 @@ that behave like purpose-built operational software — without writing a line o
 
 **TASK:** Configure Workshop application variables, connect widgets to read and write those variables, and implement cascading variable chains to drive dynamic application behavior.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Access to a Workshop application in edit mode. TM-20 qualification confirmed.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Access to a Workshop application in edit mode. SL 2 qualification confirmed.
 
 **STANDARDS:** Builder configures application variables correctly, demonstrates variable passing between widgets and pages, and verifies dynamic behavior through test interactions before publishing. All variable names comply with C2DAO naming conventions.
 
@@ -519,7 +519,7 @@ configure the brigade dropdown to auto-clear when the division variable changes.
 
 **TASK:** Configure Workshop widgets and panels to show or hide based on application state, and apply conditional formatting within widgets to indicate status values.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Existing multi-widget Workshop application available in edit mode. TM-20 qualification confirmed.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Existing multi-widget Workshop application available in edit mode. SL 2 qualification confirmed.
 
 **STANDARDS:** Builder correctly applies conditional visibility rules so that widgets and panels display or hide based on application state, without any visible layout breaks in the published application.
 
@@ -527,7 +527,7 @@ configure the brigade dropdown to auto-clear when the division variable changes.
 
 **DURATION:** 1–2 hours.
 
-NOTE: Conditional layouts determine which panels or pages operators (TM-10) see based on their role or selected data state. Test your conditional layout logic against the operator workflows in TM-10, Chapter 4. Do not hide information from operators without a security or role-based justification. Refer to TM-10, Task 4-1 (Orient to a Command-Level Application) and Task 4-3 (Apply Filters to a Dashboard) to validate layout behavior from the operator's perspective.
+NOTE: Conditional layouts determine which panels or pages operators (SL 1) see based on their role or selected data state. Test your conditional layout logic against the operator workflows in TM-10, Chapter 4. Do not hide information from operators without a security or role-based justification. Refer to TM-10, Task 4-1 (Orient to a Command-Level Application) and Task 4-3 (Apply Filters to a Dashboard) to validate layout behavior from the operator's perspective.
 
 **PROCEDURE:**
 
@@ -578,7 +578,7 @@ invent status labels — align to the authoritative data source definitions.
 
 **TASK:** Design and build a multi-page Workshop application with logical page structure, cross-page variable passing, and complete navigation tested end-to-end.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Workshop application with more than one logical section or audience required. Edit permissions on the application.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Workshop application with more than one logical section or audience required. Edit permissions on the application.
 
 **STANDARDS:** Builder creates a logical page structure with clear navigation, passes variables across pages correctly, and verifies that the published application loads each page without error.
 
@@ -586,7 +586,7 @@ invent status labels — align to the authoritative data source definitions.
 
 **DURATION:** 4–8 hours depending on application complexity.
 
-NOTE: Decision framework — single-page vs. multi-page: If your application serves a single user role or a single operational workflow, design single-page (TM-20 scope — refer to TM-20, Chapter 5-3). If your application serves multiple user roles simultaneously (e.g., G3 operations, G4 logistics, G6 data), or integrates multiple workflows into a unified interface, design multi-page (TM-30 scope). Multi-page application navigation is what operators experience via TM-10, Task 4-1 (Orient to a Command-Level Application). Test your navigation design against that task.
+NOTE: Decision framework — single-page vs. multi-page: If your application serves a single user role or a single operational workflow, design single-page (SL 2 scope — refer to TM-20, Chapter 5-3). If your application serves multiple user roles simultaneously (e.g., G3 operations, G4 logistics, G6 data), or integrates multiple workflows into a unified interface, design multi-page (SL 3 scope). Multi-page application navigation is what operators experience via TM-10, Task 4-1 (Orient to a Command-Level Application). Test your navigation design against that task.
 
 **PROCEDURE:**
 
@@ -648,7 +648,7 @@ before navigating back.
 
 **TASK:** Configure advanced Workshop widgets — including computed table columns, multi-condition dynamic object sets, and layered map displays — for operational application use.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Target Object Types have appropriate geometry, date, and relationship properties configured. Edit permissions on the application.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Target Object Types have appropriate geometry, date, and relationship properties configured. Edit permissions on the application.
 
 **STANDARDS:** Builder configures complex widgets with correct data bindings, tests all interactive behaviors with production-representative data, and verifies load performance before publishing.
 
@@ -729,7 +729,7 @@ If a data source is known to have reliability issues (e.g., a feed that occasion
 
 Do not present uncertain data as authoritative. It is better to acknowledge uncertainty than to have a commander brief wrong numbers.
 
-NOTE: Additional Workshop capability (self-study) — TM-30 class time covers multi-page navigation, variable passing, and conditional logic. The Workshop Scenarios feature (what-if analysis, saved scenario states, preloaded application states) is covered in four Palantir Developers reference videos: *Workshop | Creating What If Analyses with Scenarios*, *Workshop | Saving your What If Analyses*, *Workshop | Loading and Applying Scenarios*, and *Workshop | How to Preload States in Foundry Workshop Applications*. These are UI-based capabilities within TM-30 scope that builders can apply to decision-support applications requiring scenario comparison.
+NOTE: Additional Workshop capability (self-study) — SL 3 class time covers multi-page navigation, variable passing, and conditional logic. The Workshop Scenarios feature (what-if analysis, saved scenario states, preloaded application states) is covered in four Palantir Developers reference videos: *Workshop | Creating What If Analyses with Scenarios*, *Workshop | Saving your What If Analyses*, *Workshop | Loading and Applying Scenarios*, and *Workshop | How to Preload States in Foundry Workshop Applications*. These are UI-based capabilities within SL 3 scope that builders can apply to decision-support applications requiring scenario comparison.
 
 ---
 
@@ -752,7 +752,7 @@ Use Kairos when:
 
 **TASK:** Add and configure a Kairos timeline widget in a Workshop application, connecting it to an existing Object Type with date properties, and configure swim lanes and groupings to produce an operationally meaningful timeline view.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. A Workshop application exists in edit mode. At least one Object Type is published with at minimum two date or datetime properties (a start date and an end date or duration). Builder is working on a development branch.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. A Workshop application exists in edit mode. At least one Object Type is published with at minimum two date or datetime properties (a start date and an end date or duration). Builder is working on a development branch.
 
 **STANDARDS:** Builder adds a Kairos widget to the application, connects it to the correct Object Type, configures start and end date properties, defines at least one swim lane grouping, and verifies the timeline displays correctly with production-representative data before publishing.
 
@@ -814,7 +814,7 @@ TTPs for refining Kairos visualizations:
 
 Target Workbench is a Foundry-native application supporting structured targeting workflows. It integrates Ontology objects into a kill-chain and targeting cycle workflow, providing intelligence and fires staff with a structured interface for managing targeting packages, tracking target status through the targeting cycle, and coordinating engagement decisions.
 
-NOTE: Target Workbench is primarily relevant to intelligence (G2/S2) and fires (fires support officer, FA) staff functions. Builders in sustainment, personnel, signal, or other functional areas should understand what Target Workbench is and that it exists — but it is not a tool you will build against unless you are supporting an intelligence or fires function. Operational use is covered in TM-40A (Intelligence WFF) and TM-40B (Fires WFF).
+NOTE: Target Workbench is primarily relevant to intelligence (G2/S2) and fires (fires support officer, FA) staff functions. Builders in sustainment, personnel, signal, or other functional areas should understand what Target Workbench is and that it exists — but it is not a tool you will build against unless you are supporting an intelligence or fires function. Operational use is covered in SL 4A (Intelligence WFF) and SL 4B (Fires WFF).
 
 **Builder responsibility:** Advanced builders supporting intelligence or fires functions are responsible for ensuring that the Object Types and properties in the Ontology are correctly structured to support Target Workbench display. Target Workbench reads from Object Types — if those Object Types are incorrectly configured (wrong property names, missing required fields, broken Link Types), Target Workbench will display incomplete or incorrect targeting data.
 
@@ -824,9 +824,9 @@ NOTE: Target Workbench is primarily relevant to intelligence (G2/S2) and fires (
 
 **TASK:** Navigate to Target Workbench, orient to its interface and data model, and identify the Ontology Object Types that feed into it.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Builder is supporting an intelligence or fires function. Target Workbench has been deployed in the command's MSS environment and access has been granted by the Data Steward.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Builder is supporting an intelligence or fires function. Target Workbench has been deployed in the command's MSS environment and access has been granted by the Data Steward.
 
-**STANDARDS:** Builder navigates to Target Workbench, identifies the targeting workflow stages displayed, traces the connection between displayed data and the underlying Ontology Object Types, and can explain to a TM-40 developer or Data Steward which Object Types need to be correctly structured for Target Workbench to display complete data.
+**STANDARDS:** Builder navigates to Target Workbench, identifies the targeting workflow stages displayed, traces the connection between displayed data and the underlying Ontology Object Types, and can explain to a SL 4 developer or Data Steward which Object Types need to be correctly structured for Target Workbench to display complete data.
 
 **EQUIPMENT:** MSS platform access; Target Workbench access; Ontology Manager access.
 
@@ -839,31 +839,31 @@ NOTE: Target Workbench is primarily relevant to intelligence (G2/S2) and fires (
    - Review the targeting stages or phases displayed (the targeting cycle steps: detect, identify, decide, execute, assess, or equivalent command-specific framework)
    - Identify how targets are organized and displayed (by priority, by status, by geographic area)
    - Review any target records visible and note which properties are displayed for each target
-3. Navigate to Ontology Manager. Identify the Object Types that feed Target Workbench by searching for Object Types with names related to targeting, intelligence objects, or named areas of interest. Your TM-40 developer or unit data steward can provide the specific Object Type names if they are not immediately identifiable.
+3. Navigate to Ontology Manager. Identify the Object Types that feed Target Workbench by searching for Object Types with names related to targeting, intelligence objects, or named areas of interest. Your SL 4 developer or unit data steward can provide the specific Object Type names if they are not immediately identifiable.
 4. Open one of the identified Object Types and compare its configured properties to the fields displayed in Target Workbench. Confirm that the Object Type's properties include all fields Target Workbench requires.
 5. Identify any properties that appear missing, incorrectly named, or incorrectly typed — these are the builder's responsibility to fix before Target Workbench displays complete data.
-6. Document findings and coordinate with the Data Steward and TM-40 developer on any required Ontology fixes.
+6. Document findings and coordinate with the Data Steward and SL 4 developer on any required Ontology fixes.
 
-NOTE: Do not modify Target Workbench application configuration directly. Target Workbench is a managed Palantir application — your role as a TM-30 builder is to ensure the underlying Ontology data is correctly structured. Application-level Target Workbench configuration is TM-40H/TM-40A/TM-40B scope.
+NOTE: Do not modify Target Workbench application configuration directly. Target Workbench is a managed Palantir application — your role as a SL 3 builder is to ensure the underlying Ontology data is correctly structured. Application-level Target Workbench configuration is SL 4H/SL 4A/SL 4B scope.
 
 ---
 
 # CHAPTER 3 — ADVANCED PIPELINE BUILDER
 
-**BLUF:** Advanced Pipeline Builder work at TM-30 level involves joining multiple source datasets,
+**BLUF:** Advanced Pipeline Builder work at SL 3 level involves joining multiple source datasets,
 applying complex transformations and aggregations, and producing analysis-ready outputs — all
 through the visual pipeline interface without writing code.
 
-## 3-1. Pipeline Builder Review and TM-30 Scope
+## 3-1. Pipeline Builder Review and SL 3 Scope
 
-NOTE: TM-20, Chapter 3 covered single-source ingestion pipelines with basic transformations. TM-30 advances to multi-source joins, complex business logic transforms, error handling that prevents silent failures, and monitoring strategy. Before designing a TM-30 pipeline, confirm the requirement genuinely exceeds TM-20 pipeline capabilities (TM-20, Chapter 3-1). If the requirement can be met with a single-source pipeline and basic transforms, build it at TM-20 level and do not escalate unnecessarily.
+NOTE: TM-20, Chapter 3 covered single-source ingestion pipelines with basic transformations. SL 3 advances to multi-source joins, complex business logic transforms, error handling that prevents silent failures, and monitoring strategy. Before designing a SL 3 pipeline, confirm the requirement genuinely exceeds SL 2 pipeline capabilities (TM-20, Chapter 3-1). If the requirement can be met with a single-source pipeline and basic transforms, build it at SL 2 level and do not escalate unnecessarily.
 
-3-1. TM-20 covered single-source Pipeline Builder work: reading a dataset, applying column
-selection, basic filters, and renaming. TM-30 advances to multi-source operations — joins,
+3-1. SL 2 covered single-source Pipeline Builder work: reading a dataset, applying column
+selection, basic filters, and renaming. SL 3 advances to multi-source operations — joins,
 unions, aggregations, and derived columns using Pipeline Builder's visual transform library.
 
 3-2. Pipeline Builder represents each transformation as a visual node connected by data flow
-edges. At TM-30 level, pipelines will include multiple input branches that merge, transform,
+edges. At SL 3 level, pipelines will include multiple input branches that merge, transform,
 and flow into one or more outputs. Readability of the pipeline graph is itself a quality
 standard — other builders must be able to read your pipeline diagram and understand what it does.
 
@@ -873,7 +873,7 @@ standard — other builders must be able to read your pipeline diagram and under
 
 **TASK:** Configure a Pipeline Builder join of two or more source datasets on a shared key field, select the correct join type, handle NULL values from unmatched rows, and verify output row counts.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Two or more source datasets with a common key field available. Pipeline Builder access confirmed. Source dataset schemas reviewed and documented before beginning.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Two or more source datasets with a common key field available. Pipeline Builder access confirmed. Source dataset schemas reviewed and documented before beginning.
 
 **STANDARDS:** Builder completes a join correctly, verifies row counts before and after to confirm join logic, identifies and handles NULL values from unmatched rows, and documents the join key in the pipeline node description.
 
@@ -942,7 +942,7 @@ for readability.
 
 **TASK:** Configure a Pipeline Builder Group By aggregation to summarize a dataset, add calculated columns from aggregated values, and verify output against expected results.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Source dataset with repeating rows requiring summarization available. Clear definition of the grouping key and the aggregation metrics required before beginning.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Source dataset with repeating rows requiring summarization available. Clear definition of the grouping key and the aggregation metrics required before beginning.
 
 **STANDARDS:** Builder configures aggregation grouping and metrics correctly, verifies output row count is less than input (confirming rollup occurred), and names output columns descriptively.
 
@@ -1001,7 +1001,7 @@ downstream pipelines.
 
 **TASK:** Implement a multi-source union with deduplication to combine same-schema records from multiple subordinate unit feeds into a single analysis-ready dataset.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Two or more source datasets with compatible schemas available. Data Steward has confirmed deduplication key field and logic.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Two or more source datasets with compatible schemas available. Data Steward has confirmed deduplication key field and logic.
 
 **STANDARDS:** Builder configures the union with correct schema mapping, implements deduplication correctly, verifies output represents the expected unique record count, and documents the deduplication logic.
 
@@ -1045,9 +1045,9 @@ categorical fields (fewer than 20 unique values).
 
 ## 3-2. Pipeline Naming and Documentation Standards
 
-NOTE: When a TM-30 pipeline fails, the downstream impact is broad. Operators (TM-10, Task 5-1, View and Read a Dataset) see stale or missing data. Workshop applications fed by the pipeline display errors. Complex data products may serve dozens of operators or downstream pipelines. Refer to TM-10, Chapter 7-1 (Common Problems and Solutions) to understand the operator experience of a pipeline failure, then design your monitoring and alerting to detect failures before operators report them.
+NOTE: When a SL 3 pipeline fails, the downstream impact is broad. Operators (TM-10, Task 5-1, View and Read a Dataset) see stale or missing data. Workshop applications fed by the pipeline display errors. Complex data products may serve dozens of operators or downstream pipelines. Refer to TM-10, Chapter 7-1 (Common Problems and Solutions) to understand the operator experience of a pipeline failure, then design your monitoring and alerting to detect failures before operators report them.
 
-3-3. Every pipeline produced at TM-30 level must conform to C2DAO naming and documentation
+3-3. Every pipeline produced at SL 3 level must conform to C2DAO naming and documentation
 standards. A pipeline that cannot be identified, understood, or maintained by another builder
 is a governance deficiency.
 
@@ -1063,9 +1063,9 @@ Example: `log_vehicle-fleet-maintenance-join_readiness-rollup_v1`
 - **Refresh Cadence:** How often should this pipeline run? On schedule or on-demand?
 - **Data Steward:** Who is responsible for this pipeline?
 
-3-6. **Dataset partitioning awareness.** Advanced builders do not configure partitioning in the UI — that is a TM-40 code-level task — but must design with it in mind. A partitioned dataset stores data in segments organized by a partition key (typically a date column). Apply date filters on partition keys as early as possible in the pipeline (immediately after the source node, before any joins). Ask the Data Steward whether a source dataset is partitioned and on what key. A missing or late-applied partition filter is the most common cause of slow pipelines.
+3-6. **Dataset partitioning awareness.** Advanced builders do not configure partitioning in the UI — that is a SL 4 code-level task — but must design with it in mind. A partitioned dataset stores data in segments organized by a partition key (typically a date column). Apply date filters on partition keys as early as possible in the pipeline (immediately after the source node, before any joins). Ask the Data Steward whether a source dataset is partitioned and on what key. A missing or late-applied partition filter is the most common cause of slow pipelines.
 
-NOTE: Pipeline health monitoring (self-study) — Once pipelines are in production, monitoring their health is a TM-30 responsibility. The Pipeline Monitoring capability is covered in two Palantir Developers reference videos: *Pipeline Monitoring | How to Start Monitoring Data Health in Palantir Foundry* and *Pipeline Monitoring | How to Monitor Health Across a Pipeline in Palantir Foundry*. Similarly, the Schedules feature (configuration, metrics, and trigger management) is covered in three videos: *Schedules | Creation, Configuration, and Execution*, *Schedules | Management, Metrics, and Triggers*, and *Schedules | Separating Data Ownership within a Pipeline*. These tools are UI-based and within TM-30 scope.
+NOTE: Pipeline health monitoring (self-study) — Once pipelines are in production, monitoring their health is a SL 3 responsibility. The Pipeline Monitoring capability is covered in two Palantir Developers reference videos: *Pipeline Monitoring | How to Start Monitoring Data Health in Palantir Foundry* and *Pipeline Monitoring | How to Monitor Health Across a Pipeline in Palantir Foundry*. Similarly, the Schedules feature (configuration, metrics, and trigger management) is covered in three videos: *Schedules | Creation, Configuration, and Execution*, *Schedules | Management, Metrics, and Triggers*, and *Schedules | Separating Data Ownership within a Pipeline*. These tools are UI-based and within SL 3 scope.
 
 ---
 
@@ -1087,11 +1087,11 @@ and AIP Logic workflow that touches operational data does so through the Ontolog
 Link Type, or restructuring an Object Type after other teams have built applications against it
 causes those applications to break. Design carefully. Review with Data Stewards before publishing.
 
-4-3. TM-30 scope: This chapter covers designing Object Types, Link Types, and Actions through
+4-3. SL 3 scope: This chapter covers designing Object Types, Link Types, and Actions through
 the Ontology Manager graphical interface. Writing TypeScript Functions on Objects (FOO) or
-code-level ontology configuration is TM-40 scope.
+code-level ontology configuration is SL 4 scope.
 
-NOTE: TM-20 Ontology configuration (TM-20, Chapter 4) is limited to: (1) simple Object Types with straightforward properties; (2) one-to-one and one-to-many Link Types without junction complexity; (3) single-step Actions with direct form-to-field mapping. If a design requires multi-step Actions, conditional routing, derived properties with complex logic, or many-to-many Link Types beyond a simple junction, it is TM-30 scope. When assessing complexity, use TM-20, Chapter 4-2 (Ontology Manager Interface Overview) as the boundary reference.
+NOTE: SL 2 Ontology configuration (TM-20, Chapter 4) is limited to: (1) simple Object Types with straightforward properties; (2) one-to-one and one-to-many Link Types without junction complexity; (3) single-step Actions with direct form-to-field mapping. If a design requires multi-step Actions, conditional routing, derived properties with complex logic, or many-to-many Link Types beyond a simple junction, it is SL 3 scope. When assessing complexity, use TM-20, Chapter 4-2 (Ontology Manager Interface Overview) as the boundary reference.
 
 ---
 
@@ -1099,7 +1099,7 @@ NOTE: TM-20 Ontology configuration (TM-20, Chapter 4) is limited to: (1) simple 
 
 **TASK:** Starting from a documented command requirement, design and create an Object Type in Ontology Manager with a correctly defined primary key, well-named properties, appropriate visibility settings, and full documentation.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Identified operational entity to model. Source data schema documented and available. Coordination with Data Steward on naming and property standards completed before beginning.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Identified operational entity to model. Source data schema documented and available. Coordination with Data Steward on naming and property standards completed before beginning.
 
 **STANDARDS:** Builder creates an Object Type with a correctly defined primary key, well-named properties with correct data types, appropriate visibility settings, and documentation in the description field. Object Type passes Data Steward review before publication to production.
 
@@ -1141,7 +1141,7 @@ data and lookup tables that are only consumed within pipelines do not need Objec
 
 **Step 3 — Verify property design quality:**
 
-NOTE: When designing properties for an Object Type, consider how operators (TM-10) will understand and use them. Refer to TM-10, Task 5-3 (Use Quiver to Explore Ontology Objects) and Task 4-3 (Apply Filters to a Dashboard) to see how operators interact with your property names and values. Use clear operational terminology. Avoid technical abbreviations operators will not recognize.
+NOTE: When designing properties for an Object Type, consider how operators (SL 1) will understand and use them. Refer to TM-10, Task 5-3 (Use Quiver to Explore Ontology Objects) and Task 4-3 (Apply Filters to a Dashboard) to see how operators interact with your property names and values. Use clear operational terminology. Avoid technical abbreviations operators will not recognize.
 
 Avoid these common property design errors:
 
@@ -1161,7 +1161,7 @@ Status properties: if a status field has a defined set of valid values (FMC, PMC
 
 **TASK:** Create a Link Type between two existing Object Types, configure correct cardinality and directionality, define link labels, and submit for Data Steward review.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Two existing Object Types with a defined operational relationship. Coordination with Data Steward completed before beginning.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Two existing Object Types with a defined operational relationship. Coordination with Data Steward completed before beginning.
 
 **STANDARDS:** Builder creates a Link Type with the correct directionality, cardinality, and naming. Link Type is documented and passes Data Steward review.
 
@@ -1205,7 +1205,7 @@ before publishing.
 
 **TASK:** Design and configure a multi-step Action in Ontology Manager with conditional routing and approval chain logic for a workflow requiring command authority sign-off.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Identified workflow where users need to create, update, or delete ontology object data through the platform UI. Data Steward authorization to create write-back capability obtained before beginning.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Identified workflow where users need to create, update, or delete ontology object data through the platform UI. Data Steward authorization to create write-back capability obtained before beginning.
 
 **STANDARDS:** Builder creates an Action with correct parameter definitions, appropriate validation rules, clear user-facing labels, and appropriate authorization controls. Action is tested end-to-end in a non-production environment before promotion.
 
@@ -1213,7 +1213,7 @@ before publishing.
 
 **DURATION:** 3–5 hours including testing.
 
-NOTE: Distinguish TM-20 Actions from TM-30 Actions: TM-20 Actions are single-step — operator fills form, field is updated. TM-30 Actions support multi-step workflows, conditional routing, and approval chains. If an Action requires: (1) sequential submission steps; (2) conditional field visibility; (3) multi-record writes; (4) command authority approval — it is TM-30 scope. If the workflow can be expressed as a single form-to-field write, hand it back to a TM-20 builder.
+NOTE: Distinguish SL 2 Actions from SL 3 Actions: SL 2 Actions are single-step — operator fills form, field is updated. SL 3 Actions support multi-step workflows, conditional routing, and approval chains. If an Action requires: (1) sequential submission steps; (2) conditional field visibility; (3) multi-record writes; (4) command authority approval — it is SL 3 scope. If the workflow can be expressed as a single form-to-field write, hand it back to a SL 2 builder.
 
 **PROCEDURE:**
 
@@ -1308,13 +1308,13 @@ CAUTION: Changing an Interface definition after multiple Object Types implement 
 
 # CHAPTER 5 — ADVANCED ANALYTICS: CONTOUR AND QUIVER
 
-**BLUF:** Advanced analytics at TM-30 level moves beyond basic charts into complex aggregations,
+**BLUF:** Advanced analytics at SL 3 level moves beyond basic charts into complex aggregations,
 cross-object analysis, and saved analytical views that become persistent operational intelligence
 products.
 
 ## 5-1. Advanced Contour Overview
 
-NOTE: Contour at TM-20 level (TM-20, Chapter 6) supports basic filtering, sorting, and simple aggregations. Operators use Contour via TM-10, Task 5-2 (Use Contour for No-Code Analysis). TM-30 Contour adds the formula editor for calculated columns, complex multi-table aggregations, and pivot analysis. Before designing at TM-30 level, confirm the analysis requirement exceeds TM-20 Contour capabilities (TM-20, Chapter 6-2). If TM-20 Contour can handle the requirement, build there first.
+NOTE: Contour at SL 2 level (TM-20, Chapter 6) supports basic filtering, sorting, and simple aggregations. Operators use Contour via TM-10, Task 5-2 (Use Contour for No-Code Analysis). SL 3 Contour adds the formula editor for calculated columns, complex multi-table aggregations, and pivot analysis. Before designing at SL 3 level, confirm the analysis requirement exceeds SL 2 Contour capabilities (TM-20, Chapter 6-2). If SL 2 Contour can handle the requirement, build there first.
 
 ---
 
@@ -1322,7 +1322,7 @@ NOTE: Contour at TM-20 level (TM-20, Chapter 6) supports basic filtering, sortin
 
 **TASK:** Build a Contour analysis using multi-level Group By aggregation, calculated columns with conditional formulas, and pivot analysis, and save the result as a shareable operational analysis product.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Published dataset or Object Type with sufficient data for analysis available. Contour access confirmed. Analysis requirement documented and agreed upon with the requestor before beginning.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Published dataset or Object Type with sufficient data for analysis available. Contour access confirmed. Analysis requirement documented and agreed upon with the requestor before beginning.
 
 **STANDARDS:** Builder produces analysis with correct aggregations, meaningful calculated columns, saved views configured for reuse, and shared appropriately with the intended audience.
 
@@ -1388,7 +1388,7 @@ NOTE: Contour at TM-20 level (TM-20, Chapter 6) supports basic filtering, sortin
 
 **TASK:** Build a Quiver dashboard that displays analysis across multiple Object Types simultaneously, with views linked so that object selection in one view filters related views.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Published Ontology with defined Object Types and Link Types available. Quiver access confirmed.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Published Ontology with defined Object Types and Link Types available. Quiver access confirmed.
 
 **STANDARDS:** Builder creates multi-object analyses, configures linked views, defines custom object sets, and produces shareable analytical modules that link correctly across object types.
 
@@ -1434,70 +1434,70 @@ NOTE: Extended Quiver capability (self-study) — The Quiver tasks above cover m
 
 # CHAPTER 6 — AIP LOGIC CONFIGURATION
 
-**BLUF:** At TM-30 level, builders configure and manage AIP Logic workflows and their operational
+**BLUF:** At SL 3 level, builders configure and manage AIP Logic workflows and their operational
 parameters through the UI — activating, tuning, and monitoring AI-assisted processes without
 authoring underlying model logic.
 
-## 6-0. AIP Landscape at TM-30 Level
+## 6-0. AIP Landscape at SL 3 Level
 
-Before working with any AIP tool, understand the full AIP toolset and the scope each tool represents at TM-30 level. Palantir's AI Platform (AIP) includes several distinct capabilities that serve different purposes and require different qualification levels to configure.
+Before working with any AIP tool, understand the full AIP toolset and the scope each tool represents at SL 3 level. Palantir's AI Platform (AIP) includes several distinct capabilities that serve different purposes and require different qualification levels to configure.
 
-**AIP Logic** is the platform's rule-based and AI-assisted workflow automation layer. It enables builders to connect AI reasoning to Ontology data and configure automated processes that surface insights, flag conditions, or trigger actions based on data state. TM-30 builders configure existing AIP Logic workflows — adjusting parameters, connecting data sources, enabling natural language query. Full workflow authoring is TM-40 scope. Tasks 6-1 and 6-2 (below) cover the TM-30 AIP Logic configuration scope in full.
+**AIP Logic** is the platform's rule-based and AI-assisted workflow automation layer. It enables builders to connect AI reasoning to Ontology data and configure automated processes that surface insights, flag conditions, or trigger actions based on data state. SL 3 builders configure existing AIP Logic workflows — adjusting parameters, connecting data sources, enabling natural language query. Full workflow authoring is SL 4 scope. Tasks 6-1 and 6-2 (below) cover the SL 3 AIP Logic configuration scope in full.
 
-**AIP Analyst** is a natural language interface that allows users to query Ontology objects and datasets using plain English. A user can type "Which vehicles in 3rd ABCT have been deadlined for more than 30 days?" and AIP Analyst returns structured results from the Ontology — without requiring the user to write a filter or run a Contour analysis. AIP Analyst is distinct from AIP Logic: Logic is automated (runs on schedule or trigger without user prompting); Analyst is interactive (the user queries on demand). Builder role at TM-30: ensure the Object Types and properties backing the data are correctly configured with clear names, accurate data types, and meaningful descriptions — these directly affect the quality of AIP Analyst query results. No dedicated task is required for AIP Analyst at TM-30 level; orientation is sufficient.
+**AIP Analyst** is a natural language interface that allows users to query Ontology objects and datasets using plain English. A user can type "Which vehicles in 3rd ABCT have been deadlined for more than 30 days?" and AIP Analyst returns structured results from the Ontology — without requiring the user to write a filter or run a Contour analysis. AIP Analyst is distinct from AIP Logic: Logic is automated (runs on schedule or trigger without user prompting); Analyst is interactive (the user queries on demand). Builder role at SL 3: ensure the Object Types and properties backing the data are correctly configured with clear names, accurate data types, and meaningful descriptions — these directly affect the quality of AIP Analyst query results. No dedicated task is required for AIP Analyst at SL 3 level; orientation is sufficient.
 
-**AIP Agent Studio** is Foundry's environment for building AI agents that can reason over Ontology data and take actions on behalf of users. Agent Studio is addressed in Task 6-3. TM-30 covers basic agent creation — connecting Object Types, writing output instructions, and testing responses. Advanced agent development — custom tool configuration, agentic action logic (agents that write back to objects or trigger workflows), production deployment, and multi-agent orchestration — is TM-40H (AI Engineer) and TM-40G (ORSA) scope.
+**AIP Agent Studio** is Foundry's environment for building AI agents that can reason over Ontology data and take actions on behalf of users. Agent Studio is addressed in Task 6-3. SL 3 covers basic agent creation — connecting Object Types, writing output instructions, and testing responses. Advanced agent development — custom tool configuration, agentic action logic (agents that write back to objects or trigger workflows), production deployment, and multi-agent orchestration — is SL 4H (AI Engineer) and SL 4G (ORSA) scope.
 
-**AI FDE (AI-Driven Feature Development Environment)** is Palantir's platform capability for code-assisted AI product development. It is addressed in section 6-4 as an awareness item. Hands-on AI FDE development is TM-40H scope.
+**AI FDE (AI-Driven Feature Development Environment)** is Palantir's platform capability for code-assisted AI product development. It is addressed in section 6-4 as an awareness item. Hands-on AI FDE development is SL 4H scope.
 
-NOTE: At TM-30 level, you are a consumer and configurator of AIP capabilities — not an author. Your primary contribution to AIP quality is well-designed Ontology structure: clear property names, accurate data types, complete descriptions, and correct Link Types. A poorly structured Ontology produces poor AIP outputs regardless of how well the AI model is configured. Build the data layer correctly first; AI quality follows from data quality.
+NOTE: At SL 3 level, you are a consumer and configurator of AIP capabilities — not an author. Your primary contribution to AIP quality is well-designed Ontology structure: clear property names, accurate data types, complete descriptions, and correct Link Types. A poorly structured Ontology produces poor AIP outputs regardless of how well the AI model is configured. Build the data layer correctly first; AI quality follows from data quality.
 
 ---
 
-## 6-1. TM-30 vs. TM-40 Scope in AIP Logic
+## 6-1. SL 3 vs. SL 4 Scope in AIP Logic
 
-TM-30 builders CONFIGURE existing AIP Logic workflows — they do not author them from scratch.
+SL 3 builders CONFIGURE existing AIP Logic workflows — they do not author them from scratch.
 
 | Activity | Scope | Who Does It |
 |---|---|---|
-| Adjust workflow input parameters (thresholds, filter values, schedule) | TM-30 | Advanced builder |
-| Connect a workflow to a new data source (via UI) | TM-30 | Advanced builder |
-| Modify plain-language prompt text for operational context | TM-30 | Advanced builder |
-| Enable/disable natural language query on an Object Type | TM-30 | Advanced builder |
-| Author a new AIP Logic workflow from scratch | TM-40 | AI engineer (TM-40H) |
-| Write TypeScript functions or modify workflow logic code | TM-40 | AI engineer (TM-40H) |
-| Integrate AIP Logic with external systems | TM-40 | AI engineer (TM-40H) |
+| Adjust workflow input parameters (thresholds, filter values, schedule) | SL 3 | Advanced builder |
+| Connect a workflow to a new data source (via UI) | SL 3 | Advanced builder |
+| Modify plain-language prompt text for operational context | SL 3 | Advanced builder |
+| Enable/disable natural language query on an Object Type | SL 3 | Advanced builder |
+| Author a new AIP Logic workflow from scratch | SL 4 | AI engineer (SL 4H) |
+| Write TypeScript functions or modify workflow logic code | SL 4 | AI engineer (SL 4H) |
+| Integrate AIP Logic with external systems | SL 4 | AI engineer (SL 4H) |
 
 **WARNING:** AIP Logic configurations that make autonomous decisions affecting command intent — such as flagging soldiers as non-deployable, modifying readiness records, or triggering escalation actions — require command authorization and legal review before activation. Do not activate production AIP Logic workflows that affect command decision-making without written authorization from your data steward and unit commander.
 
-NOTE: If you are unsure whether your configuration crosses into TM-40 territory, stop and consult your C2DAO data engineer. The cost of escalating unnecessarily is low. The cost of authoring workflows outside your qualification is high.
+NOTE: If you are unsure whether your configuration crosses into SL 4 territory, stop and consult your C2DAO data engineer. The cost of escalating unnecessarily is low. The cost of authoring workflows outside your qualification is high.
 
 ### 6-1a. Q1 2026 AIP Logic Feature Updates
 
-The following capabilities were added to AIP Logic in Q1 2026 and are within TM-30 configuration scope:
+The following capabilities were added to AIP Logic in Q1 2026 and are within SL 3 configuration scope:
 
 **Branch selection for evals run configuration.** AIP Logic now supports selecting a specific branch when configuring evaluation (evals) runs. Builders can run evals against a development branch before promoting to production — verifying that workflow parameter changes produce correct outputs in the branch environment without affecting live data. When configuring an evals run, select the target branch under **Run Configuration > Branch**. Always run evals against your development branch first; do not run untested evals against the production branch.
 
-**Debugging panel for AIP Logic configuration.** A dedicated debugging panel is now available within the AIP Logic configuration interface. The panel displays real-time execution traces, input/output inspection for each workflow step, and error diagnostics — enabling builders to identify configuration issues without escalating to a TM-40 developer for every troubleshooting event. Access the debugging panel from the **Debug** tab within any AIP Logic workflow configuration view. Use it to:
+**Debugging panel for AIP Logic configuration.** A dedicated debugging panel is now available within the AIP Logic configuration interface. The panel displays real-time execution traces, input/output inspection for each workflow step, and error diagnostics — enabling builders to identify configuration issues without escalating to a SL 4 developer for every troubleshooting event. Access the debugging panel from the **Debug** tab within any AIP Logic workflow configuration view. Use it to:
 - Inspect the inputs and outputs of each workflow step during a test execution
 - Identify which step in the workflow produced an unexpected result
 - View error messages and stack traces for failed executions
 - Verify that data source connections are resolving correctly
 
-NOTE: The debugging panel is a diagnostic tool — it does not allow modification of workflow logic. If the panel reveals a logic error in the workflow itself (not a configuration error), escalate to the TM-40 developer. Configuration errors (wrong data source, incorrect parameter value, bad filter) are TM-30 scope and should be corrected directly.
+NOTE: The debugging panel is a diagnostic tool — it does not allow modification of workflow logic. If the panel reveals a logic error in the workflow itself (not a configuration error), escalate to the SL 4 developer. Configuration errors (wrong data source, incorrect parameter value, bad filter) are SL 3 scope and should be corrected directly.
 
 ## 6-2. AIP Logic Overview
 
-NOTE: AIP Logic is TM-30 only. TM-20 builders do not configure AI workflows. TM-10 operators use AIP Logic workflows that TM-30 builders design — see TM-10, Task 4-8A (Read and Respond to an AIP Logic Alert) and Task 4-8B (Interact with an AIP Agent) for the operator's perspective. Operators must review and validate AI outputs before acting on them (emphasized in TM-10, section 4-8). Design your AIP Logic workflows so outputs are easy for operators to validate quickly. Workflows that produce outputs requiring extensive operator review are operationally inefficient.
+NOTE: AIP Logic is SL 3 only. SL 2 builders do not configure AI workflows. SL 1 operators use AIP Logic workflows that SL 3 builders design — see TM-10, Task 4-8A (Read and Respond to an AIP Logic Alert) and Task 4-8B (Interact with an AIP Agent) for the operator's perspective. Operators must review and validate AI outputs before acting on them (emphasized in TM-10, section 4-8). Design your AIP Logic workflows so outputs are easy for operators to validate quickly. Workflows that produce outputs requiring extensive operator review are operationally inefficient.
 
 6-1. AIP Logic is the AI workflow layer of the platform. It enables AI-assisted analysis,
-automated reasoning, and natural language interfaces to operational data. At TM-30 level,
-builders do not author AIP Logic workflows — that is TM-40 scope. TM-30 builders:
+automated reasoning, and natural language interfaces to operational data. At SL 3 level,
+builders do not author AIP Logic workflows — that is SL 4 scope. SL 3 builders:
 - Configure the operational parameters of existing AIP Logic workflows
 - Connect workflows to appropriate data sources and Object Types
 - Activate and deactivate workflows in production
 - Monitor workflow health and output quality
-- Report configuration issues to TM-40-level developers
+- Report configuration issues to SL 4-level developers
 
 6-2. **CAUTION:** AIP Logic workflows that consume operational data can produce outputs that
 appear authoritative. Before activating an AIP Logic workflow in production:
@@ -1512,11 +1512,11 @@ appear authoritative. Before activating an AIP Logic workflow in production:
 
 **TASK:** Configure operational parameters of an existing AIP Logic workflow — including data source connections, prompt text, scheduling, and confidence thresholds — and test with representative sample data before activating in production.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Existing AIP Logic workflow created by a TM-40 developer available. Appropriate configuration access granted by Data Steward. Workflow purpose and expected behavior documented by the TM-40 developer.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Existing AIP Logic workflow created by a SL 4 developer available. Appropriate configuration access granted by Data Steward. Workflow purpose and expected behavior documented by the SL 4 developer.
 
 **STANDARDS:** Builder correctly configures workflow parameters, connects data sources, tests with representative sample data, and documents the configuration for future reference.
 
-**EQUIPMENT:** MSS platform access; AIP Logic configuration access; documented workflow specification from the TM-40 developer.
+**EQUIPMENT:** MSS platform access; AIP Logic configuration access; documented workflow specification from the SL 4 developer.
 
 **DURATION:** 2–3 hours.
 
@@ -1525,7 +1525,7 @@ appear authoritative. Before activating an AIP Logic workflow in production:
 **Step 1 — Configure workflow parameters:**
 1. Navigate to AIP Logic in the platform.
 2. Open the target workflow. Verify you have configuration access (not just view access).
-3. Review the workflow's purpose and expected behavior as documented by the TM-40 developer.
+3. Review the workflow's purpose and expected behavior as documented by the SL 4 developer.
 4. Under **Configuration**, review each configurable parameter:
    - Data source connections (which Object Types or datasets the workflow reads)
    - Output target (where the workflow writes its results)
@@ -1553,11 +1553,11 @@ first-line monitoring of workflows they have configured.
 | Review workflow execution logs | Weekly | Identify errors or failed executions |
 | Spot-check AI output quality | Bi-weekly | Compare AI outputs to known-correct answers on sample records |
 | Verify data source freshness | Weekly | Confirm source data is updating on schedule |
-| Review user feedback flags | As received | Investigate flagged outputs, report to TM-40 developer |
+| Review user feedback flags | As received | Investigate flagged outputs, report to SL 4 developer |
 | Check confidence score distribution | Monthly | Significant shift may indicate data drift |
 
 6-3. If monitoring reveals a workflow producing systematically incorrect outputs, deactivate
-it immediately and escalate to the TM-40 developer and Data Steward. Do not leave an incorrect
+it immediately and escalate to the SL 4 developer and Data Steward. Do not leave an incorrect
 AI workflow active in production while investigating — it will continue to surface bad outputs
 to users.
 
@@ -1567,7 +1567,7 @@ to users.
 
 **TASK:** Configure a natural language query interface on a Workshop application, defining data scope, operational prompt guidance, output format, and source citation, and test with representative operational questions.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. AIP Logic query interface created by a TM-40 developer, available for configuration. Data Steward has authorized the data scope for natural language query access.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. AIP Logic query interface created by a SL 4 developer, available for configuration. Data Steward has authorized the data scope for natural language query access.
 
 **STANDARDS:** Builder configures scope correctly to least-privilege, adds prompt guidance appropriate to the operational context, enables source citation, and tests with at least five representative operational questions before activating in production.
 
@@ -1599,7 +1599,7 @@ NOTE: Operators (TM-10, Task 4-8B, Interact with an AIP Agent) validate AI outpu
 
 **TASK:** Navigate to AIP Agent Studio, build a basic agent from scratch against an existing Ontology, configure its data sources and output instructions, test it against operational queries, and document the configuration. Additionally, review and adjust parameters on an existing agent.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. At least one well-structured Object Type with populated data is available in a development environment. Builder has Agent Studio author access in the development project. Data Steward has approved the data sources the agent will query.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. At least one well-structured Object Type with populated data is available in a development environment. Builder has Agent Studio author access in the development project. Data Steward has approved the data sources the agent will query.
 
 **STANDARDS:** Builder creates a functioning agent connected to at least one Object Type, writes a clear output instruction block, tests the agent with at least three operational queries, evaluates output quality against source data, and produces a configuration document. Builder can also locate an existing agent, review its configuration, and make authorized parameter adjustments.
 
@@ -1607,7 +1607,7 @@ NOTE: Operators (TM-10, Task 4-8B, Interact with an AIP Agent) validate AI outpu
 
 **DURATION:** 4–6 hours.
 
-NOTE: TM-30 vs. TM-40H Scope — TM-30 covers: creating basic agents using Ontology Object Types as data sources, writing output instructions, and validating agent responses. TM-40H covers: advanced prompt engineering, custom tool development (TypeScript/Functions on Objects), agentic action logic (agents that write back to objects or trigger workflows), multi-agent orchestration, production deployment, and agent monitoring at scale. If your use case requires agents that take actions — not just answer questions — escalate to a TM-40H developer.
+NOTE: SL 3 vs. SL 4H Scope — SL 3 covers: creating basic agents using Ontology Object Types as data sources, writing output instructions, and validating agent responses. SL 4H covers: advanced prompt engineering, custom tool development (TypeScript/Functions on Objects), agentic action logic (agents that write back to objects or trigger workflows), multi-agent orchestration, production deployment, and agent monitoring at scale. If your use case requires agents that take actions — not just answer questions — escalate to a SL 4H developer.
 
 **PROCEDURE:**
 
@@ -1643,7 +1643,7 @@ NOTE: Ontology quality directly determines agent quality. An agent connected to 
    - **Scope:** What should the agent answer, and what should it decline? (Example: "Answer only questions that can be addressed using the connected data sources. If a question cannot be answered from available data, say so clearly.")
    - **Format:** How should responses be structured? (Example: "Respond in plain English. Use bullet points for lists. Always cite the Object name or dataset when referencing specific data.")
    - **Limitations:** What must the agent always state? (Example: "Always note that outputs are AI-generated and require human review before operational use.")
-13. Keep output instructions concise. Long, complex instruction blocks at TM-30 level are a signal the agent's scope is too broad — narrow the use case.
+13. Keep output instructions concise. Long, complex instruction blocks at SL 3 level are a signal the agent's scope is too broad — narrow the use case.
 
 > **CAUTION:** Do not instruct the agent to present AI-generated outputs as confirmed facts. All agents must communicate that responses require human verification. This is a non-negotiable output instruction requirement.
 
@@ -1660,15 +1660,15 @@ NOTE: Ontology quality directly determines agent quality. An agent connected to 
 
 **Step 6 — Adjust parameters on an existing agent (separate task):**
 
-TM-30 builders are authorized to adjust the following parameters on agents created by others:
+SL 3 builders are authorized to adjust the following parameters on agents created by others:
 
-| Parameter | TM-30 Authority | Notes |
+| Parameter | SL 3 Authority | Notes |
 |---|---|---|
 | Context sources | Yes | Add or remove approved Object Types or datasets |
 | Output instructions | Partial | Adjust operational terminology, formatting, unit-specific language |
 | Linked Object Types | Yes | Within authorized data scope and with Data Steward approval |
-| Agent tools / action logic | No — TM-40H | Do not modify — escalate |
-| System prompt reasoning logic | No — TM-40H | Do not modify — escalate |
+| Agent tools / action logic | No — SL 4H | Do not modify — escalate |
+| System prompt reasoning logic | No — SL 4H | Do not modify — escalate |
 
 18. When adjusting an existing agent, document the pre-change configuration before editing.
 19. Make one change at a time and retest after each change to isolate the effect.
@@ -1677,11 +1677,11 @@ TM-30 builders are authorized to adjust the following parameters on agents creat
 
 20. Produce a configuration document for the agent covering: purpose, data sources, output instruction summary, test queries and results, and any known limitations.
 21. Submit the configuration document to the Data Steward for review before sharing the agent with end users.
-22. Do not publish the agent to production. Production deployment is TM-40H scope — coordinate with a TM-40H developer to transition a validated agent to production.
+22. Do not publish the agent to production. Production deployment is SL 4H scope — coordinate with a SL 4H developer to transition a validated agent to production.
 
 **How builder-side Ontology quality affects agent performance:**
 
-AIP agents reason over the properties and values on the Object Types they are connected to. If Object Type properties have ambiguous names, missing descriptions, or incorrect data types, the agent will produce lower-quality responses. The single most impactful action a TM-30 builder can take to improve agent quality is ensuring well-named, well-described, correctly typed properties on all linked Object Types. Fix the Ontology first; tune the agent second.
+AIP agents reason over the properties and values on the Object Types they are connected to. If Object Type properties have ambiguous names, missing descriptions, or incorrect data types, the agent will produce lower-quality responses. The single most impactful action a SL 3 builder can take to improve agent quality is ensuring well-named, well-described, correctly typed properties on all linked Object Types. Fix the Ontology first; tune the agent second.
 
 ---
 
@@ -1689,11 +1689,11 @@ AIP agents reason over the properties and values on the Object Types they are co
 
 AI FDE is Palantir's platform capability for code-assisted AI product development, integrating AI tooling directly into the Foundry development workflow. AI FDE supports developers in building AI-enabled Foundry applications by providing AI-assisted code generation, testing, and iteration within the platform's development environment.
 
-TM-30 scope: awareness only. AI FDE represents the direction of the AIP engineering toolchain and is relevant context for advanced builders who work alongside TM-40 developers. Understanding what AI FDE is — and what it is for — helps TM-30 builders communicate effectively with TM-40 engineers and understand the development environment those engineers are working in.
+SL 3 scope: awareness only. AI FDE represents the direction of the AIP engineering toolchain and is relevant context for advanced builders who work alongside SL 4 developers. Understanding what AI FDE is — and what it is for — helps SL 3 builders communicate effectively with SL 4 engineers and understand the development environment those engineers are working in.
 
-**Reference:** *Product Launch: AI FDE | DevCon 3* — available on the Palantir Developers YouTube channel (@PalantirDevelopers) — provides an orientation to the AI FDE platform direction and the AIP engineering toolchain. TM-30 builders are encouraged to watch this reference for situational awareness.
+**Reference:** *Product Launch: AI FDE | DevCon 3* — available on the Palantir Developers YouTube channel (@PalantirDevelopers) — provides an orientation to the AI FDE platform direction and the AIP engineering toolchain. SL 3 builders are encouraged to watch this reference for situational awareness.
 
-Hands-on development with AI FDE is TM-40H (AI Engineer) territory. TM-30 builders do not configure, use, or manage AI FDE directly.
+Hands-on development with AI FDE is SL 4H (AI Engineer) territory. SL 3 builders do not configure, use, or manage AI FDE directly.
 
 ---
 
@@ -1703,7 +1703,7 @@ Hands-on development with AI FDE is TM-40H (AI Engineer) territory. TM-30 builde
 lineage graphs, identify and report data quality issues, work with Data Stewards on resolution,
 and enforce governance standards in everything they build.
 
-NOTE: TM-20 builders follow governance standards defined in TM-20, Chapter 8 (Builder Standards and Governance). TM-30 builders have additional stewardship responsibilities because your designs affect shared infrastructure and downstream systems. At TM-30 level you are responsible for: (1) understanding operator access expectations (TM-10, Chapter 6, Security, Classification, and Markings); (2) ensuring TM-20 builders can implement your designs without overstepping their scope; (3) coordinating with data stewards before modifying any shared production resource; (4) designing for the full downstream impact across all consumers, not only the immediate use case.
+NOTE: SL 2 builders follow governance standards defined in TM-20, Chapter 8 (Builder Standards and Governance). SL 3 builders have additional stewardship responsibilities because your designs affect shared infrastructure and downstream systems. At SL 3 level you are responsible for: (1) understanding operator access expectations (TM-10, Chapter 6, Security, Classification, and Markings); (2) ensuring SL 2 builders can implement your designs without overstepping their scope; (3) coordinating with data stewards before modifying any shared production resource; (4) designing for the full downstream impact across all consumers, not only the immediate use case.
 
 NOTE: Audit Trail — All advanced builder actions in MSS — Ontology modifications, pipeline builds, branch creation, peer reviews, and production promotions — are logged with your credentials, timestamp, and the specific resource changed. These logs are used for accountability reviews, change tracking, and incident investigation. You are personally accountable for all changes made under your credentials, including changes made on behalf of another team member.
 
@@ -1734,7 +1734,7 @@ Access log search from the **Logs** panel within lineage or from the platform's 
 
 **TASK:** Use the platform lineage graph to identify all downstream dependencies of a resource targeted for modification, notify downstream owners, and document findings before executing any change.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Access to the Lineage view for a dataset, Object Type, or pipeline. Understanding of the upstream data sources that feed the product. Planned modification to a shared resource identified.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Access to the Lineage view for a dataset, Object Type, or pipeline. Understanding of the upstream data sources that feed the product. Planned modification to a shared resource identified.
 
 **STANDARDS:** Builder correctly interprets a lineage graph, identifies all upstream dependencies, lists all downstream consumers, notifies downstream owners, and documents findings clearly for Data Steward review.
 
@@ -1784,7 +1784,7 @@ coordinated cutover plan.
 
 **TASK:** Identify, document, and report a data quality issue, trace it to its source using the lineage graph, and coordinate with the Data Steward for resolution.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Identified data quality issue in a dataset or Object Type. Data Steward contact information available.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Identified data quality issue in a dataset or Object Type. Data Steward contact information available.
 
 **STANDARDS:** Builder correctly identifies and documents a data quality issue, reports it through the appropriate channel, traces probable source, and follows up until resolution is confirmed.
 
@@ -1836,7 +1836,7 @@ If you cannot identify the Data Steward for a dataset or Object Type, escalate t
 
 **TASK:** Configure sharing and permissions on a Workshop application, verify least-privilege access for the intended audience, and document the access configuration.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Workshop application, dataset, or Object Type requiring access configuration. Appropriate administrative rights confirmed. Access requirements documented and approved by Data Steward.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Workshop application, dataset, or Object Type requiring access configuration. Appropriate administrative rights confirmed. Access requirements documented and approved by Data Steward.
 
 **STANDARDS:** Builder configures access using least-privilege principle, documents the access rationale, and verifies the configuration grants access to intended users and denies access to all others before publishing.
 
@@ -1844,7 +1844,7 @@ If you cannot identify the Data Steward for a dataset or Object Type, escalate t
 
 **DURATION:** 30–60 minutes.
 
-NOTE: Before designing coalition-facing data products at TM-30 level, understand TM-10, Chapter 6 (Security, Classification, and Markings), especially Task 6-1 (Verify Markings and Access Level). Coalition data must be correctly marked and access-controlled from ingestion through final product. Errors in releasability markings can result in data shared with unauthorized coalition partners — this is a hard governance gate, not a best practice. Coordinate with the USAREUR-AF C2DAO before any coalition-facing design decision.
+NOTE: Before designing coalition-facing data products at SL 3 level, understand TM-10, Chapter 6 (Security, Classification, and Markings), especially Task 6-1 (Verify Markings and Access Level). Coalition data must be correctly marked and access-controlled from ingestion through final product. Errors in releasability markings can result in data shared with unauthorized coalition partners — this is a hard governance gate, not a best practice. Coordinate with the USAREUR-AF C2DAO before any coalition-facing design decision.
 
 **PROCEDURE:**
 
@@ -1875,7 +1875,7 @@ Access control levels on the platform:
    USAREUR-AF G4 staff (viewer), G4 data team (editor)."
 7. Test access by verifying a member of each access group can interact as expected.
 
-NOTE: Additional access management reference (self-study) — Two Palantir Developers reference videos extend the access control content in this chapter: *Security | How to use Projects to Help Enable your Business to Scale* (using Foundry Projects as the primary access boundary for scaling data products to many users) and *Security | How to Debug a User's Access to a File* (diagnosing why a specific user cannot access a resource — useful when access complaints arrive from operators). Both are UI-based procedures within TM-30 scope.
+NOTE: Additional access management reference (self-study) — Two Palantir Developers reference videos extend the access control content in this chapter: *Security | How to use Projects to Help Enable your Business to Scale* (using Foundry Projects as the primary access boundary for scaling data products to many users) and *Security | How to Debug a User's Access to a File* (diagnosing why a specific user cannot access a resource — useful when access complaints arrive from operators). Both are UI-based procedures within SL 3 scope.
 
 ---
 
@@ -1887,7 +1887,7 @@ entirely through the platform UI without scripting or CI/CD configuration.
 
 ## 8-1. Branching and the Development Lifecycle
 
-NOTE: TM-20 builders follow a development lifecycle defined in TM-20, Chapter 7 (Branching and Environment Management): develop on a branch, test, request merge, get approval, merge to main. TM-30 development follows the same pattern with more rigorous testing gates because your changes affect shared infrastructure. Operators (TM-10) only access the main/production branch. Every merge to main is a production release. Apply engineering discipline — test against TM-10 operator workflows (Chapter 4) before merging.
+NOTE: SL 2 builders follow a development lifecycle defined in TM-20, Chapter 7 (Branching and Environment Management): develop on a branch, test, request merge, get approval, merge to main. SL 3 development follows the same pattern with more rigorous testing gates because your changes affect shared infrastructure. Operators (SL 1) only access the main/production branch. Every merge to main is a production release. Apply engineering discipline — test against SL 1 operator workflows (Chapter 4) before merging.
 
 8-1. The platform uses a branching model to separate development work from production. A branch
 is an isolated copy of the environment where changes can be made, tested, and reviewed without
@@ -1928,7 +1928,7 @@ NOTE: Branch security roles are separate from application-level and Object Type-
 
 **TASK:** Create a named development branch from the production branch, configure workspace to the branch, and verify isolation from production before beginning any development work.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Identified change to implement. Data Steward awareness of the planned change confirmed.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Identified change to implement. Data Steward awareness of the planned change confirmed.
 
 **STANDARDS:** Builder creates a named branch with a descriptive name, completes all development in the branch, and does not merge to production without peer review and Data Steward sign-off.
 
@@ -1956,7 +1956,7 @@ NOTE: Branch security roles are separate from application-level and Object Type-
 
 **TASK:** Submit a completed development branch for peer review, or conduct a review of a peer's branch, ensuring all changes are tested and documented before authorizing promotion.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Completed development in a branch. All changes tested in the development branch. Ready for review.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Completed development in a branch. All changes tested in the development branch. Ready for review.
 
 **STANDARDS:** Builder submits a review request with complete documentation of changes. Reviewer examines all changes, tests functionality, and provides written approval or documented change requests before promotion is authorized.
 
@@ -1996,7 +1996,7 @@ NOTE: Branch security roles are separate from application-level and Object Type-
 
 **TASK:** Execute the promotion of a reviewed and approved development branch to the production environment, verify production health after promotion, and notify downstream owners.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Approved review documented. Data Steward sign-off obtained. Scheduled promotion window coordinated with downstream owners.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Approved review documented. Data Steward sign-off obtained. Scheduled promotion window coordinated with downstream owners.
 
 **STANDARDS:** Builder executes promotion during the authorized window, confirms production environment is healthy after promotion, and notifies downstream application owners within one hour of completion.
 
@@ -2047,7 +2047,7 @@ they promote.
 
 # CHAPTER 9 — AUTOMATIONS *(Self-Study / Reference)*
 
-NOTE: This chapter is self-study material. It is not included in the 5-day TM-30 course schedule. Instructors may demo Automations during Day 4 if time permits. Builders should complete this chapter independently before configuring Automations in a production environment.
+NOTE: This chapter is self-study material. It is not included in the 5-day SL 3 course schedule. Instructors may demo Automations during Day 4 if time permits. Builders should complete this chapter independently before configuring Automations in a production environment.
 
 **BLUF:** Automations are Foundry's capability to trigger actions, pipeline runs, or object updates on a schedule or based on object state changes — configured through Ontology Manager. They eliminate manual, recurring operational data tasks and enable the platform to maintain data currency and state without human intervention for routine processes.
 
@@ -2071,11 +2071,11 @@ Automations execute at the Object Type level — they apply a rule to objects me
 
 ### 9-1a. Q1 2026 Automations Feature Updates
 
-The following capabilities were added to Foundry Automations in Q1 2026 and are within TM-30 configuration scope:
+The following capabilities were added to Foundry Automations in Q1 2026 and are within SL 3 configuration scope:
 
-**Interface parameters in Automate actions.** Automate actions now support interface parameters — enabling builders to pass structured input values when an automation triggers an Action on an Object Type. Previously, automated actions could only execute with static or object-derived values. With interface parameter support, builders can configure automations that pass dynamic input values defined by an interface (see Task 4-4, Define an Interface on an Object Type). When configuring an Automate action (Task 9-1, Step 3), select **Action with Interface Parameters** and map the interface fields to the appropriate source values (object properties, static values, or computed expressions). This enables more flexible automation logic without requiring TM-40 code-level development.
+**Interface parameters in Automate actions.** Automate actions now support interface parameters — enabling builders to pass structured input values when an automation triggers an Action on an Object Type. Previously, automated actions could only execute with static or object-derived values. With interface parameter support, builders can configure automations that pass dynamic input values defined by an interface (see Task 4-4, Define an Interface on an Object Type). When configuring an Automate action (Task 9-1, Step 3), select **Action with Interface Parameters** and map the interface fields to the appropriate source values (object properties, static values, or computed expressions). This enables more flexible automation logic without requiring SL 4 code-level development.
 
-**Function effects in Automate.** Automations can now trigger function effects — platform-defined side effects that execute as part of an automation action. Function effects extend the range of actions available to automations beyond simple property updates and object creation. Examples include triggering a notification, writing an audit log entry, or invoking a platform-registered function. At TM-30 level, configure function effects only when they have been pre-built and approved by a TM-40 developer. Do not author new function effects — that is TM-40 scope. When a function effect is available for use, it appears in the **Action** dropdown during automation configuration.
+**Function effects in Automate.** Automations can now trigger function effects — platform-defined side effects that execute as part of an automation action. Function effects extend the range of actions available to automations beyond simple property updates and object creation. Examples include triggering a notification, writing an audit log entry, or invoking a platform-registered function. At SL 3 level, configure function effects only when they have been pre-built and approved by a SL 4 developer. Do not author new function effects — that is SL 4 scope. When a function effect is available for use, it appears in the **Action** dropdown during automation configuration.
 
 **Streaming time series conditions.** Automations now support trigger conditions based on streaming time series data. Builders can configure automations that fire when a time series property crosses a threshold, deviates from a trend, or meets a rate-of-change condition. This is operationally relevant for monitoring sensor feeds, readiness indicators, or logistics metrics that update continuously. When defining a trigger (Task 9-1, Step 2), select **Time Series Condition** and configure the property, evaluation window, and threshold. Coordinate with the Data Steward to confirm that the time series data source updates at sufficient frequency to support the intended trigger cadence.
 
@@ -2085,7 +2085,7 @@ The following capabilities were added to Foundry Automations in Q1 2026 and are 
 - Debug automation issues by inspecting trigger evaluation results and action execution logs
 - Identify conflicts between automations (e.g., two automations writing to the same property with different values)
 
-Access Autopilot from the **Automations** panel on any Object Type or from the platform's global tools menu. Autopilot is a monitoring and diagnostic tool — it does not replace the configuration workflow in Task 9-1. Use Autopilot for ongoing monitoring (Task 9-1, Step 5) and for troubleshooting automation failures before escalating to a TM-40 developer.
+Access Autopilot from the **Automations** panel on any Object Type or from the platform's global tools menu. Autopilot is a monitoring and diagnostic tool — it does not replace the configuration workflow in Task 9-1. Use Autopilot for ongoing monitoring (Task 9-1, Step 5) and for troubleshooting automation failures before escalating to a SL 4 developer.
 
 ---
 
@@ -2093,7 +2093,7 @@ Access Autopilot from the **Automations** panel on any Object Type or from the p
 
 **TASK:** Configure an Automation on an existing Object Type to trigger a defined action based on a schedule or object condition, test the automation in a development environment, and monitor its execution history.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. Target Object Type exists and is correctly configured. Data Steward has authorized the automated write-back or property modification. Builder is working on a development branch.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. Target Object Type exists and is correctly configured. Data Steward has authorized the automated write-back or property modification. Builder is working on a development branch.
 
 **STANDARDS:** Builder correctly configures the automation trigger (schedule or condition), defines the action to execute, tests the automation in a development environment with representative data, verifies correct execution, and documents the automation in the Object Type's description field. Automation is approved by the Data Steward before promotion to production.
 
@@ -2133,7 +2133,7 @@ Access Autopilot from the **Automations** panel on any Object Type or from the p
    - **Update Property:** Write a defined value to a specific property on the object. Example: set `inspection_status` to "OVERDUE".
    - **Create Object:** Create a new object of a specified type. Use for generating event or log records.
    - **Execute an existing Action:** Invoke an Action already configured on the Object Type (see TM-20, Task 4-6 and TM-30, Task 4-3).
-   - **Trigger Pipeline Build:** Initiate a pipeline refresh. This option may require TM-40 coordination to configure correctly.
+   - **Trigger Pipeline Build:** Initiate a pipeline refresh. This option may require SL 4 coordination to configure correctly.
 7. Configure the action parameters:
    - For **Update Property**: select the target property and specify the value to write (static value, or derived from another property on the same object).
    - For **Create Object**: specify the Object Type to create and map required properties from the triggering object.
@@ -2173,7 +2173,7 @@ NOTE: Automations that modify properties used by Workshop applications will affe
 
 # CHAPTER 10 — MACHINERY *(Self-Study / Reference)*
 
-NOTE: This chapter is self-study material. It is not included in the 5-day TM-30 course schedule. Instructors may demo Machinery during Day 4 if time permits. Builders should complete this chapter independently before modeling processes in a production environment.
+NOTE: This chapter is self-study material. It is not included in the 5-day SL 3 course schedule. Instructors may demo Machinery during Day 4 if time permits. Builders should complete this chapter independently before modeling processes in a production environment.
 
 **BLUF:** Machinery is Palantir Foundry's business process management layer. It enables builders to model, monitor, and automate multi-step staff processes — approval workflows, recurring reporting cycles, data quality reviews — as structured, visible process flows connected to Ontology Object Types.
 
@@ -2211,7 +2211,7 @@ Machinery manages end-to-end process flows across multiple steps and roles. Wher
 
 **TASK:** Navigate to Machinery, create a basic process definition with defined steps, roles, and transitions, link the process to existing Object Types, and monitor active process instances.
 
-**CONDITIONS:** Builder has completed TM-10 and TM-20 and is TM-30 qualified. An operational process has been identified and documented by the Data Steward and process owner. Ontology Object Types representing the work items in the process exist and are correctly configured. Data Steward has authorized Machinery configuration for this process.
+**CONDITIONS:** Builder has completed SL 1 and SL 2 and is SL 3 qualified. An operational process has been identified and documented by the Data Steward and process owner. Ontology Object Types representing the work items in the process exist and are correctly configured. Data Steward has authorized Machinery configuration for this process.
 
 **STANDARDS:** Builder creates a process definition with at least two steps, at least two role assignments, and at least one conditional transition. Process is connected to the correct Object Type. A test process instance is initiated and successfully transitions through at least one step before branch submission for review.
 
@@ -2276,7 +2276,7 @@ NOTE: Machinery requires that the Object Types and properties used in the proces
 
 **BLUF:** Consistent standards across all products built by USAREUR-AF advanced builders
 create a coherent, maintainable data environment. This chapter specifies the naming conventions,
-design patterns, and quality standards that apply to everything built at TM-30 level.
+design patterns, and quality standards that apply to everything built at SL 3 level.
 
 ## 11-1. Naming Conventions
 
@@ -2457,7 +2457,7 @@ environment for all users.
 
 # APPENDIX A — ADVANCED BUILDER CHECKLISTS
 
-NOTE: Before initiating a TM-40 handoff, confirm the requirement genuinely exceeds TM-30 capability. Use this checklist: (1) Can this be built using TM-20 no-code tools? If yes — hand back to TM-20 builder, do not escalate to TM-40. (2) Can this be designed using TM-30 UI tools (Workshop, Ontology Manager UI, Pipeline Builder UI, AIP Logic UI)? If yes — build at TM-30 level, do not escalate. (3) Does implementation require writing code (Python, PySpark, TypeScript, SQL)? If yes — use this template and initiate TM-40 handoff. Unnecessary TM-40 escalation consumes developer capacity and delays delivery.
+NOTE: Before initiating a SL 4 handoff, confirm the requirement genuinely exceeds SL 3 capability. Use this checklist: (1) Can this be built using SL 2 no-code tools? If yes — hand back to SL 2 builder, do not escalate to SL 4. (2) Can this be designed using SL 3 UI tools (Workshop, Ontology Manager UI, Pipeline Builder UI, AIP Logic UI)? If yes — build at SL 3 level, do not escalate. (3) Does implementation require writing code (Python, PySpark, TypeScript, SQL)? If yes — use this template and initiate SL 4 handoff. Unnecessary SL 4 escalation consumes developer capacity and delays delivery.
 
 ## A-1. Pre-Build Checklist
 
@@ -2500,7 +2500,7 @@ NOTE: Before initiating a TM-40 handoff, confirm the requirement genuinely excee
 
 # APPENDIX B — DESIGN PATTERNS REFERENCE
 
-NOTE: This is the TM-30 checklist for advanced multi-page, cross-functional applications. If your application is single-page and purpose-specific, use the TM-20 checklist (TM-20, Appendix A, Section A-4, Workshop Application Checklist) instead. Before publishing any application, test it against operator workflows in TM-10, Chapter 4 (Using Workshop Applications). An application that a trained operator cannot navigate using TM-10 procedures is not ready for publication.
+NOTE: This is the SL 3 checklist for advanced multi-page, cross-functional applications. If your application is single-page and purpose-specific, use the SL 2 checklist (SL 2, Appendix A, Section A-4, Workshop Application Checklist) instead. Before publishing any application, test it against operator workflows in TM-10, Chapter 4 (Using Workshop Applications). An application that a trained operator cannot navigate using SL 1 procedures is not ready for publication.
 
 ## B-1. Commander's Dashboard
 
@@ -2601,8 +2601,8 @@ object data through the platform UI. Actions execute validation rules before wri
 
 **AIP Logic**
 The AI workflow layer of the MSS platform. Enables AI-assisted analysis, automated reasoning,
-and natural language query interfaces. TM-30 builders configure existing AIP Logic workflows;
-authoring is TM-40 scope.
+and natural language query interfaces. SL 3 builders configure existing AIP Logic workflows;
+authoring is SL 4 scope.
 
 **API Name**
 The machine-readable identifier for an Object Type, property, or Action. Distinct from the
@@ -2769,6 +2769,6 @@ data-driven operational interfaces using configurable widgets without writing co
 
 ---
 
-*TM-30 — Maven Smart System Advanced No-Code Builder Technical Manual*
+*SL 3 — Maven Smart System Advanced No-Code Builder Technical Manual*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026*
 *Distribution Restriction: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.*

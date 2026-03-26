@@ -1,7 +1,7 @@
-# CONCEPTS GUIDE — TM-20 COMPANION — BUILDER · MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 2 COMPANION — BUILDER · MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** A Builder is a trained MSS user who creates pipelines, Ontology configurations, and applications using no-code tools. Builders are not operators, and they are not Advanced Builders or developers. Understanding where you sit in this hierarchy determines what you are authorized — and equipped — to build.
-> **Purpose:** Develops the mental models required to design, build, and govern no-code applications and data pipelines on MSS effectively. Read before beginning TM-20 task instruction.
+> **Purpose:** Develops the mental models required to design, build, and govern no-code applications and data pipelines on MSS effectively. Read before beginning SL 2 task instruction.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -16,12 +16,12 @@ MSS users operate across a defined capability spectrum. Each level has a distinc
 
 | Level | Who They Are | What They Build | What They Touch |
 |---|---|---|---|
-| **Operator (TM-10)** | All MSS users with read access | Nothing; they consume | Dashboards, reports, queries — read only |
-| **Builder (TM-20)** | Staff with builder access and TM-20 certification | No-code pipelines, Object Types, simple Actions, Workshop apps | Pipeline Builder, Ontology UI, Workshop |
-| **Advanced Builder (TM-30)** | Technically experienced staff | Multi-source pipelines, complex Ontology patterns, AIP Logic, multi-page apps | All TM-20 tools plus @incremental, SQL/Python, TypeScript Functions |
-| **Specialist (TM-40G–O)** | Domain experts with TM-30 base | ML models, OSDK apps, AI workflows, statistical pipelines | All prior tools plus Code Workspaces, AIP Logic, Agent Studio, OSDK |
+| **Operator (SL 1)** | All MSS users with read access | Nothing; they consume | Dashboards, reports, queries — read only |
+| **Builder (SL 2)** | Staff with builder access and SL 2 certification | No-code pipelines, Object Types, simple Actions, Workshop apps | Pipeline Builder, Ontology UI, Workshop |
+| **Advanced Builder (SL 3)** | Technically experienced staff | Multi-source pipelines, complex Ontology patterns, AIP Logic, multi-page apps | All SL 2 tools plus @incremental, SQL/Python, TypeScript Functions |
+| **Specialist (SL 4G–O)** | Domain experts with SL 3 base | ML models, OSDK apps, AI workflows, statistical pipelines | All prior tools plus Code Workspaces, AIP Logic, Agent Studio, OSDK |
 
-A TM-20 Builder builds pipelines and applications using drag-and-drop, form-based tools — no code. When a requirement demands code, custom functions, or complex conditional logic, a Builder stops and escalates. That is not a failure. That is correct execution.
+A SL 2 Builder builds pipelines and applications using drag-and-drop, form-based tools — no code. When a requirement demands code, custom functions, or complex conditional logic, a Builder stops and escalates. That is not a failure. That is correct execution.
 
 ### 1-2. The Builder's Relationship to the Governance Chain
 
@@ -50,19 +50,19 @@ A Builder who acts outside this chain — ingesting unauthorized data, creating 
 
 ### 1-3. When to Build vs. When to Escalate
 
-**Rule of thumb:** If you cannot complete the requirement using only Pipeline Builder nodes, Ontology Manager form fields, and Workshop widget properties — escalate. Do not approximate a TM-30 solution with TM-20 tools.
+**Rule of thumb:** If you cannot complete the requirement using only Pipeline Builder nodes, Ontology Manager form fields, and Workshop widget properties — escalate. Do not approximate a SL 3 solution with SL 2 tools.
 
 | Situation | Builder Action |
 |---|---|
 | Requirement fits within Pipeline Builder, Ontology UI, and Workshop drag-and-drop | Build it |
 | Requirement needs a single-source filter/rename/join/aggregate | Build it |
 | Requirement needs a simple, single-step form Action | Build it |
-| Requirement needs multi-step conditional routing, approval chains, or multi-record writes | Escalate to TM-30 |
-| Requirement needs @incremental logic or watermark-based pipeline refresh | Escalate to TM-30 |
-| Requirement needs Python, PySpark, SQL, or TypeScript | Escalate to TM-40L (Software Engineer) |
-| Requirement needs AIP Logic, Agent Studio, or AI-augmented workflows | Escalate to TM-40H (AI Engineer) |
-| Requirement needs ML model integration | Escalate to TM-40M (ML Engineer) |
-| Requirement needs complex many-to-many Ontology modeling | Escalate to TM-30 |
+| Requirement needs multi-step conditional routing, approval chains, or multi-record writes | Escalate to SL 3 |
+| Requirement needs @incremental logic or watermark-based pipeline refresh | Escalate to SL 3 |
+| Requirement needs Python, PySpark, SQL, or TypeScript | Escalate to SL 4L (Software Engineer) |
+| Requirement needs AIP Logic, Agent Studio, or AI-augmented workflows | Escalate to SL 4H (AI Engineer) |
+| Requirement needs ML model integration | Escalate to SL 4M (ML Engineer) |
+| Requirement needs complex many-to-many Ontology modeling | Escalate to SL 3 |
 
 ### 1-4. The Three Pre-Build Questions
 
@@ -127,11 +127,11 @@ The curated dataset feeds the `VehicleStatus` Object Type in the Ontology, which
 
 ### 2-2. Extract: Source Systems and Ingestion Boundaries
 
-Sources available to TM-20 Builders are limited to pre-authorized connectors and existing MSS datasets. You do not create new connectors or modify connector configurations. You use what has been approved.
+Sources available to SL 2 Builders are limited to pre-authorized connectors and existing MSS datasets. You do not create new connectors or modify connector configurations. You use what has been approved.
 
 > **WARNING:** Before connecting any new data source, coordinate with your unit Data Steward and the USAREUR-AF C2DAO. Unauthorized ingestion of operational data — even from Army systems — may violate Army CIO policy and create compliance findings. The approval requirement applies even if you personally have access to the source system.
 
-**Authorized source types for TM-20 Builders:**
+**Authorized source types for SL 2 Builders:**
 
 | Source Type | Example | Who Authorizes |
 |---|---|---|
@@ -141,11 +141,11 @@ Sources available to TM-20 Builders are limited to pre-authorized connectors and
 
 Document all ingestion sources in your pipeline description field. If you cannot name the authorizing official and the date of approval, the ingestion is not authorized.
 
-### 2-3. Transform: What Is Appropriate at TM-20 Level
+### 2-3. Transform: What Is Appropriate at SL 2 Level
 
-TM-20 transforms are limited to the no-code nodes available in Pipeline Builder. These cover the majority of operational data requirements.
+SL 2 transforms are limited to the no-code nodes available in Pipeline Builder. These cover the majority of operational data requirements.
 
-| Transform Operation | Pipeline Builder Node | TM-20? |
+| Transform Operation | Pipeline Builder Node | SL 2? |
 |---|---|---|
 | Filter rows by column value, date range, or null | Filter | Yes |
 | Select, rename, reorder, or drop columns | Select Columns | Yes |
@@ -154,12 +154,12 @@ TM-20 transforms are limited to the no-code nodes available in Pipeline Builder.
 | Append (union) two datasets with matching schemas | Append | Yes |
 | Remove exact duplicate rows | Deduplicate | Yes |
 | Parse dates from string format | Select Columns (type cast) | Yes |
-| Multi-step conditional business logic | — | **No — escalate to TM-30** |
-| Deduplication across sources with fuzzy matching | — | **No — escalate to TM-30** |
-| Watermark-based incremental processing | — | **No — escalate to TM-30** |
-| Custom Python/SQL transformations | — | **No — escalate to TM-40L** |
+| Multi-step conditional business logic | — | **No — escalate to SL 3** |
+| Deduplication across sources with fuzzy matching | — | **No — escalate to SL 3** |
+| Watermark-based incremental processing | — | **No — escalate to SL 3** |
+| Custom Python/SQL transformations | — | **No — escalate to SL 4L** |
 
-> **CAUTION:** Do not attempt to approximate complex logic using chains of simple nodes. A Builder who builds a 20-node pipeline to work around missing TM-30 capability produces something fragile, undocumented, and impossible for a replacement to maintain. Escalate when the requirement exceeds TM-20 tools.
+> **CAUTION:** Do not attempt to approximate complex logic using chains of simple nodes. A Builder who builds a 20-node pipeline to work around missing SL 3 capability produces something fragile, undocumented, and impossible for a replacement to maintain. Escalate when the requirement exceeds SL 2 tools.
 
 ### 2-4. Load: Writing to a Dataset vs. Writing to the Ontology
 
@@ -209,13 +209,13 @@ After an inner join on `vehicle_id`:
 
 A Workshop table built on this dataset would show 60 vehicles instead of 20. A count metric would show "60 vehicles" when the fleet is 20. The fix is to aggregate maintenance events to one-per-vehicle (latest event) before joining. Know your grain and protect it through every transform.
 
-> **NOTE:** Unexpected row multiplication after a join is the most common TM-20 data quality problem. Always check row counts before and after each join. If the count grows beyond what you expect, stop and investigate before proceeding.
+> **NOTE:** Unexpected row multiplication after a join is the most common SL 2 data quality problem. Always check row counts before and after each join. If the count grows beyond what you expect, stop and investigate before proceeding.
 
 ### 2-6. Idempotency: Why Pipelines Should Produce the Same Output If Re-Run
 
 An **idempotent** pipeline produces identical output every time it runs on the same input data, regardless of how many times it runs. A non-idempotent pipeline appends duplicate rows, changes row counts on each run, or behaves differently based on internal state.
 
-TM-20 Builders using Pipeline Builder's output node (full refresh mode, which is the default) get idempotency automatically — the output dataset is overwritten on each build. Do not change the output mode to append unless your Data Steward has explicitly authorized it and your pipeline includes deduplication logic.
+SL 2 Builders using Pipeline Builder's output node (full refresh mode, which is the default) get idempotency automatically — the output dataset is overwritten on each build. Do not change the output mode to append unless your Data Steward has explicitly authorized it and your pipeline includes deduplication logic.
 
 **Why idempotency matters for USAREUR-AF operations:** If a pipeline runs twice due to a platform retry, the output dataset should look the same as if it ran once. A readiness report showing double the actual equipment count because the pipeline appended twice is an operational data integrity failure.
 
@@ -260,11 +260,11 @@ TM-20 Builders using Pipeline Builder's output node (full refresh mode, which is
                              │ Read from Ontology
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│  LAYER 4: APPLICATIONS (TM-20 scope)                           │
+│  LAYER 4: APPLICATIONS (SL 2 scope)                           │
 │  Workshop: drag-and-drop user applications                     │
 │  Contour: saved exploratory analysis                           │
 │  Quiver: self-service analytics and dashboards                 │
-│  AIP Logic / Agent Studio: AI workflows (TM-40H scope only)   │
+│  AIP Logic / Agent Studio: AI workflows (SL 4H scope only)   │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -304,7 +304,7 @@ This dependency chain is the reason for the build-order rule: Pipeline first. On
 
 ## SECTION 4 — ONTOLOGY CONCEPTS FOR BUILDERS
 
-**BLUF:** The Ontology is the most consequential thing a TM-20 Builder configures. A pipeline mistake affects one output dataset. An Ontology mistake affects every application reading that Object Type. Understand the core concepts before configuring anything.
+**BLUF:** The Ontology is the most consequential thing a SL 2 Builder configures. A pipeline mistake affects one output dataset. An Ontology mistake affects every application reading that Object Type. Understand the core concepts before configuring anything.
 
 ### 4-1. Object Type: What It Represents and the Primary Key
 
@@ -355,7 +355,7 @@ A **Link Type** defines a relationship between two Object Types. Links allow Wor
 |---|---|---|
 | **Many-to-One** | Many source objects → one target object | Many soldiers assigned to one unit |
 | **One-to-One** | One source → one target | One vehicle → one current maintenance record |
-| **Many-to-Many** | Many source → many target | Soldiers with multiple qualifications; qualifications held by multiple soldiers — requires junction dataset (TM-30 scope) |
+| **Many-to-Many** | Many source → many target | Soldiers with multiple qualifications; qualifications held by multiple soldiers — requires junction dataset (SL 3 scope) |
 
 **USAREUR-AF example:** A `SoldierReadiness` Object Type linked to `UnitStatus` via `assignedTo` (many-to-one). The foreign key in `SoldierReadiness` is `unit_id`. The primary key on `UnitStatus` is `unit_id`. When the link is configured, clicking a `UnitStatus` object in Workshop shows all soldiers assigned to that unit.
 
@@ -378,7 +378,7 @@ An **Action** is a user-triggered operation that writes a value back to an Objec
 | **Pipeline output** | Automated schedule or manual build | When the pipeline runs | Nightly refresh of vehicle status from GCSS-A |
 | **Action** | An operator submitting a form in Workshop | On demand, any time | S4 NCO marks a vehicle as returned from maintenance |
 
-TM-20 Actions are single-step and form-based: one form, one submit, one field updated. Multi-step Actions with conditional routing or approval chains are TM-30 scope.
+SL 2 Actions are single-step and form-based: one form, one submit, one field updated. Multi-step Actions with conditional routing or approval chains are SL 3 scope.
 
 > **CAUTION:** Actions that write to datasets affect all downstream applications immediately. Test every Action on a development branch with test data — never on live operational records — before promoting to production.
 
@@ -409,7 +409,7 @@ TM-20 Actions are single-step and form-based: one form, one submit, one field up
 | **Metric Tile** | Displaying a single KPI (total deadlined vehicles: 14) | The metric is not immediately interpretable without context |
 | **Filter — Dropdown** | Letting users restrict data by a known category (unit, status, class) | The distinct values are > 50; use a Search filter instead |
 | **Filter — Date Range** | Restricting data to a time window | Your data has no date property to filter on |
-| **Form / Action Widget** | Allowing operators to submit status updates | The Action requires multi-step logic or conditional fields — escalate to TM-30 |
+| **Form / Action Widget** | Allowing operators to submit status updates | The Action requires multi-step logic or conditional fields — escalate to SL 3 |
 | **Map** | Displaying geographically distributed data (unit locations, logistics nodes) | Your data has no latitude/longitude or geocodable address |
 | **Object Explorer** | Showing detailed properties of one selected object | Users need to compare multiple objects — use a Table |
 
@@ -459,7 +459,7 @@ Workshop applications have two access roles:
 | Table is slow to scroll | Displaying too many columns; no pagination | Remove unnecessary columns; enable pagination |
 | Chart takes > 10 seconds to render | Source Object Type has 50,000+ objects with no pre-aggregation | Aggregate in Pipeline Builder before the Ontology; chart only aggregated data |
 | Application times out | Joining two large datasets in Workshop widget config | Perform joins in Pipeline Builder, not Workshop; Workshop is for display, not computation |
-| Action form submits slowly | Action writes to a large dataset without indexing | Escalate to TM-30 for optimization |
+| Action form submits slowly | Action writes to a large dataset without indexing | Escalate to SL 3 for optimization |
 
 ### 5-5. Publishing and Sharing
 
@@ -611,7 +611,7 @@ For datasets with a specific time grain, append the grain after the tier: `gcss_
 
 ## SECTION 8 — COMMON BUILDER ANTI-PATTERNS
 
-**BLUF:** Most build failures are not technical failures — they are design or governance failures. The following anti-patterns represent the most common ways TM-20 Builders produce outputs that are fragile, non-compliant, or operationally harmful.
+**BLUF:** Most build failures are not technical failures — they are design or governance failures. The following anti-patterns represent the most common ways SL 2 Builders produce outputs that are fragile, non-compliant, or operationally harmful.
 
 | Anti-Pattern | Why It Happens | Why It's Harmful | Correct Approach |
 |---|---|---|---|
@@ -624,15 +624,15 @@ For datasets with a specific time grain, append the grain after the tier: `gcss_
 | **Scheduling pipelines to run more frequently than source data updates** | Trying to make data appear "as real-time as possible" | Excessive builds waste platform resources, may rate-limit connectors, and produce identical outputs with extra overhead | Match refresh cadence to source update frequency; daily is appropriate for most USAREUR-AF feeds |
 | **Deploying to production without peer review** | Time pressure; "it works on my branch" | A second set of eyes catches naming violations, grain problems, and broken filters that the Builder missed | Peer review is required before promotion; document the reviewer and date in the resource description |
 | **Documenting after the fact (or not at all)** | Documentation feels like overhead | A replacement Builder inheriting an undocumented pipeline has no way to understand the data flow, source system, or known limitations | Fill pipeline description before branch merge; description format is specified in TM-20, Task 3-6 |
-| **Attempting TM-30 patterns with TM-20 tools** | The requirement genuinely needs TM-30 capability; Builder tries to approximate | Produces fragile, unmaintainable pipelines and Ontology configurations; creates technical debt that TM-30 builders spend time unraveling | Recognize TM-30 patterns (see Section 9); escalate correctly rather than approximating |
+| **Attempting SL 3 patterns with SL 2 tools** | The requirement genuinely needs SL 3 capability; Builder tries to approximate | Produces fragile, unmaintainable pipelines and Ontology configurations; creates technical debt that SL 3 builders spend time unraveling | Recognize SL 3 patterns (see Section 9); escalate correctly rather than approximating |
 
 ---
 
-## SECTION 9 — ESCALATION GUIDE: TM-20 VS. TM-30 VS. TM-40
+## SECTION 9 — ESCALATION GUIDE: SL 2 VS. SL 3 VS. SL 4
 
-**BLUF:** Knowing when to stop and escalate is a core Builder competency. The table below defines the scope boundary between TM-20, TM-30, and TM-40. When in doubt, escalate.
+**BLUF:** Knowing when to stop and escalate is a core Builder competency. The table below defines the scope boundary between SL 2, SL 3, and SL 4. When in doubt, escalate.
 
-| Task | TM-20 Builder? | Escalate To... |
+| Task | SL 2 Builder? | Escalate To... |
 |---|---|---|
 | Single-source filter, rename, and column select | Yes | — |
 | Simple inner or left join on a shared key | Yes | — |
@@ -645,21 +645,21 @@ For datasets with a specific time grain, append the grain after the tier: `gcss_
 | Build a single-page Workshop application with filters, tables, and charts | Yes | — |
 | Schedule a pipeline refresh | Yes | — |
 | Manage project access using the UI access list | Yes | — |
-| Multi-source join with deduplication across sources | No | TM-30 |
-| Watermark-based incremental pipeline (@incremental) | No | TM-30 |
-| Many-to-many Link Type with junction dataset logic | No | TM-30 |
-| Multi-step Action with conditional routing or approval chain | No | TM-30 |
-| Multi-page Workshop application with conditional navigation | No | TM-30 |
-| AIP Logic workflow configuration | No | TM-30 (config) / TM-40H (design) |
-| Custom business logic requiring conditional transforms | No | TM-30 |
-| Hierarchical Ontology modeling (three or more linked types) | No | TM-30 |
-| Any pipeline requiring Python, PySpark, or SQL code | No | TM-40L (Software Engineer) |
-| TypeScript Functions or OSDK application development | No | TM-40L (Software Engineer) |
-| Machine learning model integration | No | TM-40M (ML Engineer) |
-| AI workflow design (LLM chains, Agent Studio) | No | TM-40H (AI Engineer) |
-| Statistical analysis and modeling (ORSA work) | No | TM-40G (ORSA) |
-| Data program governance and policy | No | TM-40J (Program Manager) |
-| Knowledge management architecture | No | TM-40K (Knowledge Manager) |
+| Multi-source join with deduplication across sources | No | SL 3 |
+| Watermark-based incremental pipeline (@incremental) | No | SL 3 |
+| Many-to-many Link Type with junction dataset logic | No | SL 3 |
+| Multi-step Action with conditional routing or approval chain | No | SL 3 |
+| Multi-page Workshop application with conditional navigation | No | SL 3 |
+| AIP Logic workflow configuration | No | SL 3 (config) / SL 4H (design) |
+| Custom business logic requiring conditional transforms | No | SL 3 |
+| Hierarchical Ontology modeling (three or more linked types) | No | SL 3 |
+| Any pipeline requiring Python, PySpark, or SQL code | No | SL 4L (Software Engineer) |
+| TypeScript Functions or OSDK application development | No | SL 4L (Software Engineer) |
+| Machine learning model integration | No | SL 4M (ML Engineer) |
+| AI workflow design (LLM chains, Agent Studio) | No | SL 4H (AI Engineer) |
+| Statistical analysis and modeling (ORSA work) | No | SL 4G (ORSA) |
+| Data program governance and policy | No | SL 4J (Program Manager) |
+| Knowledge management architecture | No | SL 4K (Knowledge Manager) |
 | New data source connector configuration | No | Data Steward + C2DAO |
 | Top-level project creation | No | Data Steward + C2DAO |
 | Ontology changes affecting coalition-facing data products | No | C2DAO review required |
@@ -669,7 +669,7 @@ For datasets with a specific time grain, append the grain after the tier: `gcss_
 
 ## SUMMARY: THE BUILDER'S PRE-BUILD CHECKLIST
 
-Before starting any TM-20 build task, confirm:
+Before starting any SL 2 build task, confirm:
 
 | Item | Confirmed |
 |---|---|
@@ -688,18 +688,18 @@ Before starting any TM-20 build task, confirm:
 
 ---
 
-## TRANSITION TO TM-20
+## TRANSITION TO SL 2
 
-This guide establishes the mental models applied throughout TM-20. TM-20 task instruction assumes this conceptual foundation — it will not re-explain why branching is required, why grain must be protected through joins, or why the three-phase build order is mandatory.
+This guide establishes the mental models applied throughout SL 2. SL 2 task instruction assumes this conceptual foundation — it will not re-explain why branching is required, why grain must be protected through joins, or why the three-phase build order is mandatory.
 
 Proceed to TM-20, Chapter 1, when you can answer the following without referencing this guide:
 
 1. What are the three pre-build questions, and why must they be answered before opening any build tool?
 2. What is data grain, and what happens to grain during a join when the right-side dataset has multiple rows per key?
-3. What is the correct build order for TM-20 work, and why?
+3. What is the correct build order for SL 2 work, and why?
 4. What is the difference between a dataset and an Ontology Object Type?
 5. What is the difference between an Ontology Action and a pipeline write?
-6. When should a TM-20 Builder stop and escalate to TM-30?
+6. When should a SL 2 Builder stop and escalate to SL 3?
 
 If any answer requires looking it up, re-read the relevant section before proceeding.
 
@@ -707,26 +707,26 @@ If any answer requires looking it up, re-read the relevant section before procee
 
 ## CURRICULUM NOTES
 
-**Prerequisite:** TM-10 (Maven User) is REQUIRED before beginning TM-20 or this guide. TM-20 assumes full operator competency. Review TM-10, Tasks 2-1 through 2-4, 3-1 through 3-3, 5-1, and Chapter 7 before proceeding.
+**Prerequisite:** SL 1 (Maven User) is REQUIRED before beginning SL 2 or this guide. SL 2 assumes full operator competency. Review SL 1, Tasks 2-1 through 2-4, 3-1 through 3-3, 5-1, and Chapter 7 before proceeding.
 
-**Advancement tracks:** TM-20 graduates have two advancement paths:
+**Advancement tracks:** SL 2 graduates have two advancement paths:
 
-- **TM-30 (Advanced Builder):** Required for all personnel before proceeding to any TM-40 track. TM-30 is the gateway to both WFF tracks (TM-40A–F) and specialist tracks (TM-40G–O).
-- **WFF Tracks (TM-40A–F):** For operational staff whose primary role is warfighting function data use, not technical development. Prerequisite: TM-30 (required).
+- **SL 3 (Advanced Builder):** Required for all personnel before proceeding to any SL 4 track. SL 3 is the gateway to both WFF tracks (SL 4A–F) and specialist tracks (SL 4G–O).
+- **WFF Tracks (SL 4A–F):** For operational staff whose primary role is warfighting function data use, not technical development. Prerequisite: SL 3 (required).
 
 | WFF Track | Title | For Personnel |
 |---|---|---|
-| TM-40A | Intelligence WFF | G2 / S2 staff |
-| TM-40B | Fires WFF | Fire support personnel |
-| TM-40C | Movement & Maneuver WFF | G3 / S3 staff |
-| TM-40D | Sustainment WFF | G4 / S4 / logistics staff |
-| TM-40E | Protection WFF | Protection officers and NCOs |
-| TM-40F | Mission Command WFF | G6 / S6 and command staff |
+| SL 4A | Intelligence WFF | G2 / S2 staff |
+| SL 4B | Fires WFF | Fire support personnel |
+| SL 4C | Movement & Maneuver WFF | G3 / S3 staff |
+| SL 4D | Sustainment WFF | G4 / S4 / logistics staff |
+| SL 4E | Protection WFF | Protection officers and NCOs |
+| SL 4F | Mission Command WFF | G6 / S6 and command staff |
 
 **Peer references:**
-- **TM-10 (Operator Manual):** Build with the operator experience in mind. Review TM-10, Chapters 4 and 5 to understand what operators see and expect before you design any application.
-- **Data Literacy Technical Reference:** For conceptual grounding in data management, governance frameworks (DoD VAULTIS / VAULTIS-A), and the full five-layer Foundry architecture diagram. Recommended reading before TM-20 instruction begins.
+- **SL 1 (Operator Manual):** Build with the operator experience in mind. Review SL 1, Chapters 4 and 5 to understand what operators see and expect before you design any application.
+- **Data Literacy Technical Reference:** For conceptual grounding in data management, governance frameworks (DoD VAULTIS / VAULTIS-A), and the full five-layer Foundry architecture diagram. Recommended reading before SL 2 instruction begins.
 
-*CONCEPTS GUIDE — TM-20 COMPANION, BUILDER, MAVEN SMART SYSTEM (MSS)*
+*CONCEPTS GUIDE — SL 2 COMPANION, BUILDER, MAVEN SMART SYSTEM (MSS)*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026*
 *Distribution restriction: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*

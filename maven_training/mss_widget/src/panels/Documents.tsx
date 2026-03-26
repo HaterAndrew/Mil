@@ -128,18 +128,18 @@ export default function Documents({ showPanel }: Props) {
 
       <h2>Technical Manuals — Foundation (All Staff)</h2>
       <div className="card-grid">
-        <a className="card gold-top doc-card" href={URLS.TM10} target="_blank" rel="noreferrer">
-          <div className="card-label">TM-10</div>
+        <a className="card gold-top doc-card" href={URLS.SL1} target="_blank" rel="noreferrer">
+          <div className="card-label">TM-10 (SL 1)</div>
           <div className="card-title">Maven User</div>
           <div className="card-body">Operate MSS, consume data, use dashboards and AIP. Required for all staff.</div>
         </a>
-        <a className="card gold-top doc-card" href={URLS.TM20} target="_blank" rel="noreferrer">
-          <div className="card-label">TM-20</div>
+        <a className="card gold-top doc-card" href={URLS.SL2} target="_blank" rel="noreferrer">
+          <div className="card-label">TM-20 (SL 2)</div>
           <div className="card-title">No-Code Builder</div>
           <div className="card-body">Pipeline Builder, Workshop, basic Ontology. All staff with build responsibilities.</div>
         </a>
-        <a className="card gold-top doc-card" href={URLS.TM30} target="_blank" rel="noreferrer">
-          <div className="card-label">TM-30</div>
+        <a className="card gold-top doc-card" href={URLS.SL3} target="_blank" rel="noreferrer">
+          <div className="card-label">TM-30 (SL 3)</div>
           <div className="card-title">Advanced No-Code Builder</div>
           <div className="card-body">Advanced Workshop, complex pipelines, AIP Logic. Data-adjacent MOS (17/25-series, G2).</div>
         </a>
@@ -148,33 +148,33 @@ export default function Documents({ showPanel }: Props) {
       <details>
         <summary style={{fontSize:14,fontWeight:700,letterSpacing:'.08em',textTransform:'uppercase',color:'var(--navy)',cursor:'pointer',padding:'8px 0',borderBottom:'1px solid var(--gray-200)',marginBottom:12}}>TM-40 Warfighting Function Tracks (6 &mdash; click to expand)</summary>
         <div className="card-grid card-grid-2" style={{marginTop:12}}>
-          <a className="card doc-card" href={URLS.TM40A} target="_blank" rel="noreferrer">
-            <div className="card-label">TM-40A &mdash; INTELLIGENCE</div>
+          <a className="card doc-card" href={URLS.SL4A} target="_blank" rel="noreferrer">
+            <div className="card-label">TM-40A (SL 4A) &mdash; INTELLIGENCE</div>
             <div className="card-title">Intelligence Warfighting Function</div>
             <div className="card-body">MSS integration for intelligence operations and data products.</div>
           </a>
-          <a className="card doc-card" href={URLS.TM40B} target="_blank" rel="noreferrer">
-            <div className="card-label">TM-40B &mdash; FIRES</div>
+          <a className="card doc-card" href={URLS.SL4B} target="_blank" rel="noreferrer">
+            <div className="card-label">TM-40B (SL 4B) &mdash; FIRES</div>
             <div className="card-title">Fires Warfighting Function</div>
             <div className="card-body">MSS integration for fires coordination and targeting data.</div>
           </a>
-          <a className="card doc-card" href={URLS.TM40C} target="_blank" rel="noreferrer">
-            <div className="card-label">TM-40C &mdash; MOVEMENT &amp; MANEUVER</div>
+          <a className="card doc-card" href={URLS.SL4C} target="_blank" rel="noreferrer">
+            <div className="card-label">TM-40C (SL 4C) &mdash; MOVEMENT &amp; MANEUVER</div>
             <div className="card-title">Movement &amp; Maneuver WFF</div>
             <div className="card-body">MSS integration for maneuver and mobility data products.</div>
           </a>
-          <a className="card doc-card" href={URLS.TM40D} target="_blank" rel="noreferrer">
-            <div className="card-label">TM-40D &mdash; SUSTAINMENT</div>
+          <a className="card doc-card" href={URLS.SL4D} target="_blank" rel="noreferrer">
+            <div className="card-label">TM-40D (SL 4D) &mdash; SUSTAINMENT</div>
             <div className="card-title">Sustainment Warfighting Function</div>
             <div className="card-body">MSS integration for logistics and sustainment data.</div>
           </a>
-          <a className="card doc-card" href={URLS.TM40E} target="_blank" rel="noreferrer">
-            <div className="card-label">TM-40E &mdash; PROTECTION</div>
+          <a className="card doc-card" href={URLS.SL4E} target="_blank" rel="noreferrer">
+            <div className="card-label">TM-40E (SL 4E) &mdash; PROTECTION</div>
             <div className="card-title">Protection Warfighting Function</div>
             <div className="card-body">MSS integration for force protection data and reporting.</div>
           </a>
-          <a className="card doc-card" href={URLS.TM40F} target="_blank" rel="noreferrer">
-            <div className="card-label">TM-40F &mdash; MISSION COMMAND</div>
+          <a className="card doc-card" href={URLS.SL4F} target="_blank" rel="noreferrer">
+            <div className="card-label">TM-40F (SL 4F) &mdash; MISSION COMMAND</div>
             <div className="card-title">Mission Command WFF</div>
             <div className="card-body">MSS integration for mission command, C2, and operational reporting.</div>
           </a>
@@ -184,36 +184,36 @@ export default function Documents({ showPanel }: Props) {
       <details>
         <summary style={{fontSize:14,fontWeight:700,letterSpacing:'.08em',textTransform:'uppercase',color:'var(--navy)',cursor:'pointer',padding:'8px 0',borderBottom:'1px solid var(--gray-200)',marginBottom:12}}>TM-40 Technical Specialist Tracks (8 &mdash; click to expand)</summary>
         <div className="track-grid" style={{marginTop:12}}>
-          <a className="track-card doc-card" href={URLS.TM40G} target="_blank" rel="noreferrer">
-            <div className="track-card-hdr"><div className="track-tm">TM-40G &mdash; ORSA</div><div className="track-chip">Specialist</div></div>
+          <a className="track-card doc-card" href={URLS.SL4G} target="_blank" rel="noreferrer">
+            <div className="track-card-hdr"><div className="track-tm">TM-40G (SL 4G) &mdash; ORSA</div><div className="track-chip">Specialist</div></div>
             <div className="track-body"><div className="track-name">Operational Research Systems Analysis</div><div className="track-audience">ORSA specialists — quantitative methods, commander products</div><ul className="track-topics"><li>Regression, classification, forecasting</li><li>Monte Carlo COA analysis</li><li>Optimization and sensitivity analysis</li></ul></div>
           </a>
-          <a className="track-card doc-card" href={URLS.TM40H} target="_blank" rel="noreferrer">
-            <div className="track-card-hdr"><div className="track-tm">TM-40H &mdash; AI Engineer</div><div className="track-chip">Specialist</div></div>
+          <a className="track-card doc-card" href={URLS.SL4H} target="_blank" rel="noreferrer">
+            <div className="track-card-hdr"><div className="track-tm">TM-40H (SL 4H) &mdash; AI Engineer</div><div className="track-chip">Specialist</div></div>
             <div className="track-body"><div className="track-name">AI Engineering</div><div className="track-audience">AI engineers — AIP Logic, Agents, LLM integration</div><ul className="track-topics"><li>AIP Logic workflow design</li><li>Agent configuration</li><li>LLM integration patterns</li></ul></div>
           </a>
-          <a className="track-card doc-card" href={URLS.TM40M} target="_blank" rel="noreferrer">
-            <div className="track-card-hdr"><div className="track-tm">TM-40M &mdash; ML Engineer</div><div className="track-chip">Specialist</div></div>
+          <a className="track-card doc-card" href={URLS.SL4M} target="_blank" rel="noreferrer">
+            <div className="track-card-hdr"><div className="track-tm">TM-40M (SL 4M) &mdash; ML Engineer</div><div className="track-chip">Specialist</div></div>
             <div className="track-body"><div className="track-name">Machine Learning Engineering</div><div className="track-audience">ML engineers — model training, validation, deployment</div><ul className="track-topics"><li>Feature engineering, experiment tracking</li><li>Batch inference, model versioning</li><li>Drift detection, retraining pipelines</li></ul></div>
           </a>
-          <a className="track-card doc-card" href={URLS.TM40J} target="_blank" rel="noreferrer">
-            <div className="track-card-hdr"><div className="track-tm">TM-40J &mdash; Program Manager</div><div className="track-chip">Specialist</div></div>
+          <a className="track-card doc-card" href={URLS.SL4J} target="_blank" rel="noreferrer">
+            <div className="track-card-hdr"><div className="track-tm">TM-40J (SL 4J) &mdash; Program Manager</div><div className="track-chip">Specialist</div></div>
             <div className="track-body"><div className="track-name">Data Program Management</div><div className="track-audience">PMs — pipelines, milestones, portfolio health</div><ul className="track-topics"><li>Scrum / Kanban for data projects</li><li>ML/AI project lifecycle</li><li>Risk register, release planning</li></ul></div>
           </a>
-          <a className="track-card doc-card" href={URLS.TM40K} target="_blank" rel="noreferrer">
-            <div className="track-card-hdr"><div className="track-tm">TM-40K &mdash; Knowledge Manager</div><div className="track-chip">Specialist</div></div>
+          <a className="track-card doc-card" href={URLS.SL4K} target="_blank" rel="noreferrer">
+            <div className="track-card-hdr"><div className="track-tm">TM-40K (SL 4K) &mdash; Knowledge Manager</div><div className="track-chip">Specialist</div></div>
             <div className="track-body"><div className="track-name">Knowledge Management</div><div className="track-audience">KMs — forms, lessons learned, institutional memory</div><ul className="track-topics"><li>Knowledge ontology design</li><li>Lessons-learned intake pipeline</li><li>SOP review workflows</li></ul></div>
           </a>
-          <a className="track-card doc-card" href={URLS.TM40L} target="_blank" rel="noreferrer">
-            <div className="track-card-hdr"><div className="track-tm">TM-40L &mdash; Software Engineer</div><div className="track-chip">Specialist</div></div>
+          <a className="track-card doc-card" href={URLS.SL4L} target="_blank" rel="noreferrer">
+            <div className="track-card-hdr"><div className="track-tm">TM-40L (SL 4L) &mdash; Software Engineer</div><div className="track-chip">Specialist</div></div>
             <div className="track-body"><div className="track-name">Software Engineering</div><div className="track-audience">SWEs — Python/TypeScript, OSDK, code transforms</div><ul className="track-topics"><li>OSDK &amp; Platform SDK</li><li>Functions on Objects, Actions</li><li>CI/CD, security, Slate</li></ul></div>
           </a>
-          <a className="track-card doc-card" href={URLS.TM40N} target="_blank" rel="noreferrer">
-            <div className="track-card-hdr"><div className="track-tm">TM-40N &mdash; UI/UX Designer</div><div className="track-chip">Specialist</div></div>
+          <a className="track-card doc-card" href={URLS.SL4N} target="_blank" rel="noreferrer">
+            <div className="track-card-hdr"><div className="track-tm">TM-40N (SL 4N) &mdash; UI/UX Designer</div><div className="track-chip">Specialist</div></div>
             <div className="track-body"><div className="track-name">UI/UX Design</div><div className="track-audience">Designers — Soldier Centered Design, Workshop UI, accessibility</div><ul className="track-topics"><li>User research, contextual inquiry</li><li>Information architecture, prototyping</li><li>Section 508, WCAG 2.1 AA</li></ul></div>
           </a>
-          <a className="track-card doc-card" href={URLS.TM40O} target="_blank" rel="noreferrer">
-            <div className="track-card-hdr"><div className="track-tm">TM-40O &mdash; Platform Engineer</div><div className="track-chip">Specialist</div></div>
+          <a className="track-card doc-card" href={URLS.SL4O} target="_blank" rel="noreferrer">
+            <div className="track-card-hdr"><div className="track-tm">TM-40O (SL 4O) &mdash; Platform Engineer</div><div className="track-chip">Specialist</div></div>
             <div className="track-body"><div className="track-name">Platform Engineering</div><div className="track-audience">Platform engineers — Kubernetes, CI/CD, DevSecOps, IaC</div><ul className="track-topics"><li>K8s cluster operations</li><li>GitOps, container security</li><li>DDIL deployment, RMF/ATO</li></ul></div>
           </a>
         </div>
@@ -222,14 +222,14 @@ export default function Documents({ showPanel }: Props) {
       <details>
         <summary style={{fontSize:14,fontWeight:700,letterSpacing:'.08em',textTransform:'uppercase',color:'var(--navy)',cursor:'pointer',padding:'8px 0',borderBottom:'1px solid var(--gray-200)',marginBottom:12}}>TM-50 Advanced Technical Tracks (8 &mdash; click to expand)</summary>
         <div className="track-grid" style={{marginTop:12}}>
-          <a className="track-card doc-card" href={URLS.TM50G} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50G &mdash; ORSA Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced ORSA</div><div className="track-audience">Nonlinear programming, stochastic models, ABMS, campaign assessment</div></div></a>
-          <a className="track-card doc-card" href={URLS.TM50H} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50H &mdash; AI Engineer Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced AI Engineering</div><div className="track-audience">Multi-agent orchestration, RAG, red-team assessment, AI observability</div></div></a>
-          <a className="track-card doc-card" href={URLS.TM50M} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50M &mdash; ML Engineer Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced ML Engineering</div><div className="track-audience">AutoML, Transformer fine-tuning, GNNs, federated retraining, adversarial robustness</div></div></a>
-          <a className="track-card doc-card" href={URLS.TM50J} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50J &mdash; PM Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced Program Management</div><div className="track-audience">PI planning, cross-team governance, GO/SES briefing, Palantir partnership</div></div></a>
-          <a className="track-card doc-card" href={URLS.TM50K} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50K &mdash; KM Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced Knowledge Management</div><div className="track-audience">Federated KM architecture, NATO integration, STANAG 4778, knowledge graphs</div></div></a>
-          <a className="track-card doc-card" href={URLS.TM50L} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50L &mdash; SWE Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced Software Engineering</div><div className="track-audience">Scale, multi-tenancy, Kafka, OWASP, SAST, architecture review, platform governance</div></div></a>
-          <a className="track-card doc-card" href={URLS.TM50N} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50N &mdash; UI/UX Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced UI/UX Design</div><div className="track-audience">Design systems, DDIL-aware UI, DesignOps, enterprise accessibility</div></div></a>
-          <a className="track-card doc-card" href={URLS.TM50O} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50O &mdash; Platform Eng Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced Platform Engineering</div><div className="track-audience">Fleet management, SRE, RMF/ATO automation, cross-domain infrastructure</div></div></a>
+          <a className="track-card doc-card" href={URLS.SL5G} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50G (SL 5G) &mdash; ORSA Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced ORSA</div><div className="track-audience">Nonlinear programming, stochastic models, ABMS, campaign assessment</div></div></a>
+          <a className="track-card doc-card" href={URLS.SL5H} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50H (SL 5H) &mdash; AI Engineer Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced AI Engineering</div><div className="track-audience">Multi-agent orchestration, RAG, red-team assessment, AI observability</div></div></a>
+          <a className="track-card doc-card" href={URLS.SL5M} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50M (SL 5M) &mdash; ML Engineer Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced ML Engineering</div><div className="track-audience">AutoML, Transformer fine-tuning, GNNs, federated retraining, adversarial robustness</div></div></a>
+          <a className="track-card doc-card" href={URLS.SL5J} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50J (SL 5J) &mdash; PM Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced Program Management</div><div className="track-audience">PI planning, cross-team governance, GO/SES briefing, Palantir partnership</div></div></a>
+          <a className="track-card doc-card" href={URLS.SL5K} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50K (SL 5K) &mdash; KM Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced Knowledge Management</div><div className="track-audience">Federated KM architecture, NATO integration, STANAG 4778, knowledge graphs</div></div></a>
+          <a className="track-card doc-card" href={URLS.SL5L} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50L (SL 5L) &mdash; SWE Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced Software Engineering</div><div className="track-audience">Scale, multi-tenancy, Kafka, OWASP, SAST, architecture review, platform governance</div></div></a>
+          <a className="track-card doc-card" href={URLS.SL5N} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50N (SL 5N) &mdash; UI/UX Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced UI/UX Design</div><div className="track-audience">Design systems, DDIL-aware UI, DesignOps, enterprise accessibility</div></div></a>
+          <a className="track-card doc-card" href={URLS.SL5O} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50O (SL 5O) &mdash; Platform Eng Advanced</div><div className="track-chip">Advanced</div></div><div className="track-body"><div className="track-name">Advanced Platform Engineering</div><div className="track-audience">Fleet management, SRE, RMF/ATO automation, cross-domain infrastructure</div></div></a>
         </div>
       </details>
 
@@ -237,16 +237,16 @@ export default function Documents({ showPanel }: Props) {
         <summary style={{fontSize:14,fontWeight:700,letterSpacing:'.08em',textTransform:'uppercase',color:'var(--navy)',cursor:'pointer',padding:'8px 0',borderBottom:'1px solid var(--gray-200)',marginBottom:12}}>Train the Trainer &mdash; T3 (2 courses + SOPs &mdash; click to expand)</summary>
         <div className="callout note" style={{marginTop:12,marginBottom:12}}>
           <div className="callout-label">NOTE &mdash; T3 PROGRAM</div>
-          <div className="callout-body">T3-I (Instructor Certification) and T3-F (MSC Force Multiplier) sit <strong>outside</strong> the TM-10 to TM-50 numbering chain. T3-I requires TM-30 + C2DAO selection. T3-F requires TM-20 + CDR nomination. See the Commander's Guide for nomination procedures.</div>
+          <div className="callout-body">T3-I (Instructor Certification) and T3-F (MSC Force Multiplier) sit <strong>outside</strong> the SL 1 to SL 5 training chain. T3-I requires SL 3 + C2DAO selection. T3-F requires SL 2 + CDR nomination. See the Commander's Guide for nomination procedures.</div>
         </div>
         <div className="track-grid" style={{marginTop:12}}>
           <a className="track-card doc-card" href={URLS.T3I} target="_blank" rel="noreferrer">
             <div className="track-card-hdr"><div className="track-tm">T3-I &mdash; Instructor Certification</div><div className="track-chip">5 days + practicum</div></div>
-            <div className="track-body"><div className="track-name">Certify MSS Instructors</div><div className="track-audience">Prereq: TM-30 + C2DAO selection &bull; 3-tier hierarchy: Instructor &rarr; Senior &rarr; Master</div></div>
+            <div className="track-body"><div className="track-name">Certify MSS Instructors</div><div className="track-audience">Prereq: SL 3 + C2DAO selection &bull; 3-tier hierarchy: Instructor &rarr; Senior &rarr; Master</div></div>
           </a>
           <a className="track-card doc-card" href={URLS.T3F} target="_blank" rel="noreferrer">
             <div className="track-card-hdr"><div className="track-tm">T3-F &mdash; MSC Force Multiplier</div><div className="track-chip">3 days</div></div>
-            <div className="track-body"><div className="track-name">Unit Data Trainer (UDT)</div><div className="track-audience">Prereq: TM-20 + CDR nomination &bull; Delivers TM-10 locally at your MSC</div></div>
+            <div className="track-body"><div className="track-name">Unit Data Trainer (UDT)</div><div className="track-audience">Prereq: SL 2 + CDR nomination &bull; Delivers SL 1 locally at your MSC</div></div>
           </a>
         </div>
         <div className="card-grid card-grid-2" style={{marginTop:12}}>
@@ -263,39 +263,39 @@ export default function Documents({ showPanel }: Props) {
       <details>
         <summary style={{fontSize:14,fontWeight:700,letterSpacing:'.08em',textTransform:'uppercase',color:'var(--navy)',cursor:'pointer',padding:'8px 0',borderBottom:'1px solid var(--gray-200)',marginBottom:12}}>Concepts Guides (18 &mdash; click to expand)</summary>
         <div className="track-grid" style={{marginTop:12}}>
-          <a className="track-card doc-card" href={URLS.CG_TM40A} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40A Concepts Guide</div><div className="track-chip">Intelligence</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the Intelligence WFF track.</div></div></a>
-          <a className="track-card doc-card" href={URLS.CG_TM40B} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40B Concepts Guide</div><div className="track-chip">Fires</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the Fires WFF track.</div></div></a>
-          <a className="track-card doc-card" href={URLS.CG_TM40C} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40C Concepts Guide</div><div className="track-chip">Movement &amp; Maneuver</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the Movement &amp; Maneuver WFF track.</div></div></a>
-          <a className="track-card doc-card" href={URLS.CG_TM40D} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40D Concepts Guide</div><div className="track-chip">Sustainment</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the Sustainment WFF track.</div></div></a>
-          <a className="track-card doc-card" href={URLS.CG_TM40E} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40E Concepts Guide</div><div className="track-chip">Protection</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the Protection WFF track.</div></div></a>
-          <a className="track-card doc-card" href={URLS.CG_TM40F} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40F Concepts Guide</div><div className="track-chip">Mission Command</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the Mission Command WFF track.</div></div></a>
-          <a className="track-card doc-card" href={URLS.CG_TM40G} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40G Concepts Guide</div><div className="track-chip">ORSA</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the ORSA specialist track.</div></div></a>
-          <a className="track-card doc-card" href={URLS.CG_TM40H} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40H Concepts Guide</div><div className="track-chip">AI Engineer</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the AI Engineer track.</div></div></a>
-          <a className="track-card doc-card" href={URLS.CG_TM40M} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40M Concepts Guide</div><div className="track-chip">ML Engineer</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the ML Engineer track.</div></div></a>
-          <a className="track-card doc-card" href={URLS.CG_TM40J} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40J Concepts Guide</div><div className="track-chip">Program Mgr</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the Program Manager track.</div></div></a>
-          <a className="track-card doc-card" href={URLS.CG_TM40K} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40K Concepts Guide</div><div className="track-chip">Knowledge Mgr</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the Knowledge Manager track.</div></div></a>
-          <a className="track-card doc-card" href={URLS.CG_TM40L} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40L Concepts Guide</div><div className="track-chip">Software Eng</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the Software Engineer track.</div></div></a>
-          <a className="track-card doc-card" href={URLS.CG_TM50G} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50G Concepts Guide</div><div className="track-chip">ORSA Adv</div></div><div className="track-body"><div className="track-audience">Advanced concepts and terminology for TM-50G.</div></div></a>
-          <a className="track-card doc-card" href={URLS.CG_TM50H} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50H Concepts Guide</div><div className="track-chip">AI Eng Adv</div></div><div className="track-body"><div className="track-audience">Advanced concepts and terminology for TM-50H.</div></div></a>
-          <a className="track-card doc-card" href={URLS.CG_TM50M} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50M Concepts Guide</div><div className="track-chip">MLE Adv</div></div><div className="track-body"><div className="track-audience">Advanced concepts and terminology for TM-50M.</div></div></a>
-          <a className="track-card doc-card" href={URLS.CG_TM50J} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50J Concepts Guide</div><div className="track-chip">PM Adv</div></div><div className="track-body"><div className="track-audience">Advanced concepts and terminology for TM-50J.</div></div></a>
-          <a className="track-card doc-card" href={URLS.CG_TM50K} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50K Concepts Guide</div><div className="track-chip">KM Adv</div></div><div className="track-body"><div className="track-audience">Advanced concepts and terminology for TM-50K.</div></div></a>
-          <a className="track-card doc-card" href={URLS.CG_TM50L} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50L Concepts Guide</div><div className="track-chip">SWE Adv</div></div><div className="track-body"><div className="track-audience">Advanced concepts and terminology for TM-50L.</div></div></a>
+          <a className="track-card doc-card" href={URLS.CG_SL4A} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40A (SL 4A) Concepts Guide</div><div className="track-chip">Intelligence</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the Intelligence WFF track.</div></div></a>
+          <a className="track-card doc-card" href={URLS.CG_SL4B} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40B (SL 4B) Concepts Guide</div><div className="track-chip">Fires</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the Fires WFF track.</div></div></a>
+          <a className="track-card doc-card" href={URLS.CG_SL4C} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40C (SL 4C) Concepts Guide</div><div className="track-chip">Movement &amp; Maneuver</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the Movement &amp; Maneuver WFF track.</div></div></a>
+          <a className="track-card doc-card" href={URLS.CG_SL4D} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40D (SL 4D) Concepts Guide</div><div className="track-chip">Sustainment</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the Sustainment WFF track.</div></div></a>
+          <a className="track-card doc-card" href={URLS.CG_SL4E} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40E (SL 4E) Concepts Guide</div><div className="track-chip">Protection</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the Protection WFF track.</div></div></a>
+          <a className="track-card doc-card" href={URLS.CG_SL4F} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40F (SL 4F) Concepts Guide</div><div className="track-chip">Mission Command</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the Mission Command WFF track.</div></div></a>
+          <a className="track-card doc-card" href={URLS.CG_SL4G} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40G (SL 4G) Concepts Guide</div><div className="track-chip">ORSA</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the ORSA specialist track.</div></div></a>
+          <a className="track-card doc-card" href={URLS.CG_SL4H} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40H (SL 4H) Concepts Guide</div><div className="track-chip">AI Engineer</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the AI Engineer track.</div></div></a>
+          <a className="track-card doc-card" href={URLS.CG_SL4M} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40M (SL 4M) Concepts Guide</div><div className="track-chip">ML Engineer</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the ML Engineer track.</div></div></a>
+          <a className="track-card doc-card" href={URLS.CG_SL4J} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40J (SL 4J) Concepts Guide</div><div className="track-chip">Program Mgr</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the Program Manager track.</div></div></a>
+          <a className="track-card doc-card" href={URLS.CG_SL4K} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40K (SL 4K) Concepts Guide</div><div className="track-chip">Knowledge Mgr</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the Knowledge Manager track.</div></div></a>
+          <a className="track-card doc-card" href={URLS.CG_SL4L} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-40L (SL 4L) Concepts Guide</div><div className="track-chip">Software Eng</div></div><div className="track-body"><div className="track-audience">Key concepts and terminology for the Software Engineer track.</div></div></a>
+          <a className="track-card doc-card" href={URLS.CG_SL5G} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50G (SL 5G) Concepts Guide</div><div className="track-chip">ORSA Adv</div></div><div className="track-body"><div className="track-audience">Advanced concepts and terminology for SL 5G.</div></div></a>
+          <a className="track-card doc-card" href={URLS.CG_SL5H} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50H (SL 5H) Concepts Guide</div><div className="track-chip">AI Eng Adv</div></div><div className="track-body"><div className="track-audience">Advanced concepts and terminology for SL 5H.</div></div></a>
+          <a className="track-card doc-card" href={URLS.CG_SL5M} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50M (SL 5M) Concepts Guide</div><div className="track-chip">MLE Adv</div></div><div className="track-body"><div className="track-audience">Advanced concepts and terminology for SL 5M.</div></div></a>
+          <a className="track-card doc-card" href={URLS.CG_SL5J} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50J (SL 5J) Concepts Guide</div><div className="track-chip">PM Adv</div></div><div className="track-body"><div className="track-audience">Advanced concepts and terminology for SL 5J.</div></div></a>
+          <a className="track-card doc-card" href={URLS.CG_SL5K} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50K (SL 5K) Concepts Guide</div><div className="track-chip">KM Adv</div></div><div className="track-body"><div className="track-audience">Advanced concepts and terminology for SL 5K.</div></div></a>
+          <a className="track-card doc-card" href={URLS.CG_SL5L} target="_blank" rel="noreferrer"><div className="track-card-hdr"><div className="track-tm">TM-50L (SL 5L) Concepts Guide</div><div className="track-chip">SWE Adv</div></div><div className="track-body"><div className="track-audience">Advanced concepts and terminology for SL 5L.</div></div></a>
         </div>
       </details>
 
       <details>
         <summary style={{fontSize:14,fontWeight:700,letterSpacing:'.08em',textTransform:'uppercase',color:'var(--navy)',cursor:'pointer',padding:'8px 0',borderBottom:'1px solid var(--gray-200)',marginBottom:12}}>Practical Exercises (9 &mdash; click to expand)</summary>
         <div className="card-grid" style={{marginTop:12}}>
-          <a className="card doc-card" href={URLS.EX10} target="_blank" rel="noreferrer"><div className="card-label">EXERCISE</div><div className="card-title">TM-10 Practical Exercise</div><div className="card-body">Operator basics — hands-on exercise.</div></a>
-          <a className="card doc-card" href={URLS.EX20} target="_blank" rel="noreferrer"><div className="card-label">EXERCISE</div><div className="card-title">TM-20 Practical Exercise</div><div className="card-body">No-code builder — hands-on exercise.</div></a>
-          <a className="card doc-card" href={URLS.EX30} target="_blank" rel="noreferrer"><div className="card-label">EXERCISE</div><div className="card-title">TM-30 Practical Exercise</div><div className="card-body">Advanced builder — hands-on exercise.</div></a>
-          <a className="card doc-card" href={URLS.EX40G} target="_blank" rel="noreferrer"><div className="card-label">EXERCISE</div><div className="card-title">TM-40G Exercise (ORSA)</div><div className="card-body">ORSA specialist practical exercise.</div></a>
-          <a className="card doc-card" href={URLS.EX40H} target="_blank" rel="noreferrer"><div className="card-label">EXERCISE</div><div className="card-title">TM-40H Exercise (AI Eng)</div><div className="card-body">AI Engineer practical exercise.</div></a>
-          <a className="card doc-card" href={URLS.EX40M} target="_blank" rel="noreferrer"><div className="card-label">EXERCISE</div><div className="card-title">TM-40M Exercise (ML Eng)</div><div className="card-body">ML Engineer practical exercise.</div></a>
-          <a className="card doc-card" href={URLS.EX40J} target="_blank" rel="noreferrer"><div className="card-label">EXERCISE</div><div className="card-title">TM-40J Exercise (PM)</div><div className="card-body">Program Manager practical exercise.</div></a>
-          <a className="card doc-card" href={URLS.EX40K} target="_blank" rel="noreferrer"><div className="card-label">EXERCISE</div><div className="card-title">TM-40K Exercise (KM)</div><div className="card-body">Knowledge Manager practical exercise.</div></a>
-          <a className="card doc-card" href={URLS.EX40L} target="_blank" rel="noreferrer"><div className="card-label">EXERCISE</div><div className="card-title">TM-40L Exercise (SWE)</div><div className="card-body">Software Engineer practical exercise.</div></a>
+          <a className="card doc-card" href={URLS.EX_SL1} target="_blank" rel="noreferrer"><div className="card-label">EXERCISE</div><div className="card-title">SL 1 Practical Exercise</div><div className="card-body">Operator basics — hands-on exercise.</div></a>
+          <a className="card doc-card" href={URLS.EX_SL2} target="_blank" rel="noreferrer"><div className="card-label">EXERCISE</div><div className="card-title">SL 2 Practical Exercise</div><div className="card-body">No-code builder — hands-on exercise.</div></a>
+          <a className="card doc-card" href={URLS.EX_SL3} target="_blank" rel="noreferrer"><div className="card-label">EXERCISE</div><div className="card-title">SL 3 Practical Exercise</div><div className="card-body">Advanced builder — hands-on exercise.</div></a>
+          <a className="card doc-card" href={URLS.EX_SL4G} target="_blank" rel="noreferrer"><div className="card-label">EXERCISE</div><div className="card-title">SL 4G Exercise (ORSA)</div><div className="card-body">ORSA specialist practical exercise.</div></a>
+          <a className="card doc-card" href={URLS.EX_SL4H} target="_blank" rel="noreferrer"><div className="card-label">EXERCISE</div><div className="card-title">SL 4H Exercise (AI Eng)</div><div className="card-body">AI Engineer practical exercise.</div></a>
+          <a className="card doc-card" href={URLS.EX_SL4M} target="_blank" rel="noreferrer"><div className="card-label">EXERCISE</div><div className="card-title">SL 4M Exercise (ML Eng)</div><div className="card-body">ML Engineer practical exercise.</div></a>
+          <a className="card doc-card" href={URLS.EX_SL4J} target="_blank" rel="noreferrer"><div className="card-label">EXERCISE</div><div className="card-title">SL 4J Exercise (PM)</div><div className="card-body">Program Manager practical exercise.</div></a>
+          <a className="card doc-card" href={URLS.EX_SL4K} target="_blank" rel="noreferrer"><div className="card-label">EXERCISE</div><div className="card-title">SL 4K Exercise (KM)</div><div className="card-body">Knowledge Manager practical exercise.</div></a>
+          <a className="card doc-card" href={URLS.EX_SL4L} target="_blank" rel="noreferrer"><div className="card-label">EXERCISE</div><div className="card-title">SL 4L Exercise (SWE)</div><div className="card-body">Software Engineer practical exercise.</div></a>
         </div>
       </details>
 
@@ -306,58 +306,58 @@ export default function Documents({ showPanel }: Props) {
           <div className="callout-body">Pre-assessment tests are administered before the start of each course. They establish a knowledge baseline and help instructors identify gaps. Post-assessments are administered by the instructor and are not included here.</div>
         </div>
         <div className="card-grid" style={{marginTop:4}}>
-          <a className="card doc-card" href={EXAM_TM10_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-10 Pre-Assessment</div><div className="card-body">Maven User — foundation pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM20_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-20 Pre-Assessment</div><div className="card-body">No-Code Builder — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM30_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-30 Pre-Assessment</div><div className="card-body">Advanced Builder — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM40A_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-40A Pre-Assessment</div><div className="card-body">Intelligence WFF track — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM40B_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-40B Pre-Assessment</div><div className="card-body">Fires WFF track — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM40C_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-40C Pre-Assessment</div><div className="card-body">Movement &amp; Maneuver WFF track — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM40D_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-40D Pre-Assessment</div><div className="card-body">Sustainment WFF track — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM40E_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-40E Pre-Assessment</div><div className="card-body">Protection WFF track — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM40F_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-40F Pre-Assessment</div><div className="card-body">Mission Command WFF track — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM40G_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-40G Pre-Assessment</div><div className="card-body">ORSA specialist — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM40H_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-40H Pre-Assessment</div><div className="card-body">AI Engineer — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM40M_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-40M Pre-Assessment</div><div className="card-body">ML Engineer — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM40J_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-40J Pre-Assessment</div><div className="card-body">Program Manager — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM40K_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-40K Pre-Assessment</div><div className="card-body">Knowledge Manager — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM40L_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-40L Pre-Assessment</div><div className="card-body">Software Engineer — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM50G_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-50G Pre-Assessment</div><div className="card-body">Advanced ORSA — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM50H_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-50H Pre-Assessment</div><div className="card-body">Advanced AI Engineer — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM50M_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-50M Pre-Assessment</div><div className="card-body">Advanced ML Engineer — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM50J_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-50J Pre-Assessment</div><div className="card-body">Advanced Program Manager — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM50K_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-50K Pre-Assessment</div><div className="card-body">Advanced Knowledge Manager — pre-test.</div></a>
-          <a className="card doc-card" href={EXAM_TM50L_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">TM-50L Pre-Assessment</div><div className="card-body">Advanced Software Engineer — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM10_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 1 Pre-Assessment</div><div className="card-body">Maven User — foundation pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM20_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 2 Pre-Assessment</div><div className="card-body">No-Code Builder — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM30_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 3 Pre-Assessment</div><div className="card-body">Advanced Builder — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM40A_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 4A Pre-Assessment</div><div className="card-body">Intelligence WFF track — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM40B_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 4B Pre-Assessment</div><div className="card-body">Fires WFF track — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM40C_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 4C Pre-Assessment</div><div className="card-body">Movement &amp; Maneuver WFF track — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM40D_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 4D Pre-Assessment</div><div className="card-body">Sustainment WFF track — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM40E_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 4E Pre-Assessment</div><div className="card-body">Protection WFF track — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM40F_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 4F Pre-Assessment</div><div className="card-body">Mission Command WFF track — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM40G_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 4G Pre-Assessment</div><div className="card-body">ORSA specialist — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM40H_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 4H Pre-Assessment</div><div className="card-body">AI Engineer — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM40M_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 4M Pre-Assessment</div><div className="card-body">ML Engineer — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM40J_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 4J Pre-Assessment</div><div className="card-body">Program Manager — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM40K_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 4K Pre-Assessment</div><div className="card-body">Knowledge Manager — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM40L_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 4L Pre-Assessment</div><div className="card-body">Software Engineer — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM50G_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 5G Pre-Assessment</div><div className="card-body">Advanced ORSA — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM50H_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 5H Pre-Assessment</div><div className="card-body">Advanced AI Engineer — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM50M_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 5M Pre-Assessment</div><div className="card-body">Advanced ML Engineer — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM50J_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 5J Pre-Assessment</div><div className="card-body">Advanced Program Manager — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM50K_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 5K Pre-Assessment</div><div className="card-body">Advanced Knowledge Manager — pre-test.</div></a>
+          <a className="card doc-card" href={EXAM_TM50L_PRE} target="_blank" rel="noreferrer"><div className="card-label">PRE-TEST</div><div className="card-title">SL 5L Pre-Assessment</div><div className="card-body">Advanced Software Engineer — pre-test.</div></a>
         </div>
       </details>
 
       <details>
         <summary style={{fontSize:14,fontWeight:700,letterSpacing:'.08em',textTransform:'uppercase',color:'var(--navy)',cursor:'pointer',padding:'8px 0',borderBottom:'1px solid var(--gray-200)',marginBottom:12}}>Course Syllabi (15 &mdash; click to expand)</summary>
         <div className="card-grid" style={{marginTop:12}}>
-          <a className="card doc-card" href={URLS.SYL_TM10} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">TM-10 Syllabus</div><div className="card-body">Maven User — all staff.</div></a>
-          <a className="card doc-card" href={URLS.SYL_TM20} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">TM-20 Syllabus</div><div className="card-body">No-Code Builder — all staff.</div></a>
-          <a className="card doc-card" href={URLS.SYL_TM30} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">TM-30 Syllabus</div><div className="card-body">Advanced No-Code Builder — data-adjacent MOS.</div></a>
-          <a className="card doc-card" href={URLS.SYL_TM40A} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">TM-40A Syllabus</div><div className="card-body">Intelligence warfighting function track.</div></a>
-          <a className="card doc-card" href={URLS.SYL_TM40B} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">TM-40B Syllabus</div><div className="card-body">Fires warfighting function track.</div></a>
-          <a className="card doc-card" href={URLS.SYL_TM40C} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">TM-40C Syllabus</div><div className="card-body">Movement &amp; Maneuver warfighting function track.</div></a>
-          <a className="card doc-card" href={URLS.SYL_TM40D} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">TM-40D Syllabus</div><div className="card-body">Sustainment warfighting function track.</div></a>
-          <a className="card doc-card" href={URLS.SYL_TM40E} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">TM-40E Syllabus</div><div className="card-body">Protection warfighting function track.</div></a>
-          <a className="card doc-card" href={URLS.SYL_TM40F} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">TM-40F Syllabus</div><div className="card-body">Mission Command warfighting function track.</div></a>
-          <a className="card doc-card" href={URLS.SYL_TM40G} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">TM-40G Syllabus</div><div className="card-body">ORSA specialists.</div></a>
-          <a className="card doc-card" href={URLS.SYL_TM40H} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">TM-40H Syllabus</div><div className="card-body">AI Engineers.</div></a>
-          <a className="card doc-card" href={URLS.SYL_TM40M} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">TM-40M Syllabus</div><div className="card-body">ML Engineers.</div></a>
-          <a className="card doc-card" href={URLS.SYL_TM40J} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">TM-40J Syllabus</div><div className="card-body">Program Managers.</div></a>
-          <a className="card doc-card" href={URLS.SYL_TM40K} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">TM-40K Syllabus</div><div className="card-body">Knowledge Managers.</div></a>
-          <a className="card doc-card" href={URLS.SYL_TM40L} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">TM-40L Syllabus</div><div className="card-body">Software Engineers.</div></a>
+          <a className="card doc-card" href={URLS.SYL_SL1} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">SL 1 Syllabus</div><div className="card-body">Maven User — all staff.</div></a>
+          <a className="card doc-card" href={URLS.SYL_SL2} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">SL 2 Syllabus</div><div className="card-body">No-Code Builder — all staff.</div></a>
+          <a className="card doc-card" href={URLS.SYL_SL3} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">SL 3 Syllabus</div><div className="card-body">Advanced No-Code Builder — data-adjacent MOS.</div></a>
+          <a className="card doc-card" href={URLS.SYL_SL4A} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">SL 4A Syllabus</div><div className="card-body">Intelligence warfighting function track.</div></a>
+          <a className="card doc-card" href={URLS.SYL_SL4B} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">SL 4B Syllabus</div><div className="card-body">Fires warfighting function track.</div></a>
+          <a className="card doc-card" href={URLS.SYL_SL4C} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">SL 4C Syllabus</div><div className="card-body">Movement &amp; Maneuver warfighting function track.</div></a>
+          <a className="card doc-card" href={URLS.SYL_SL4D} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">SL 4D Syllabus</div><div className="card-body">Sustainment warfighting function track.</div></a>
+          <a className="card doc-card" href={URLS.SYL_SL4E} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">SL 4E Syllabus</div><div className="card-body">Protection warfighting function track.</div></a>
+          <a className="card doc-card" href={URLS.SYL_SL4F} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">SL 4F Syllabus</div><div className="card-body">Mission Command warfighting function track.</div></a>
+          <a className="card doc-card" href={URLS.SYL_SL4G} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">SL 4G Syllabus</div><div className="card-body">ORSA specialists.</div></a>
+          <a className="card doc-card" href={URLS.SYL_SL4H} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">SL 4H Syllabus</div><div className="card-body">AI Engineers.</div></a>
+          <a className="card doc-card" href={URLS.SYL_SL4M} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">SL 4M Syllabus</div><div className="card-body">ML Engineers.</div></a>
+          <a className="card doc-card" href={URLS.SYL_SL4J} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">SL 4J Syllabus</div><div className="card-body">Program Managers.</div></a>
+          <a className="card doc-card" href={URLS.SYL_SL4K} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">SL 4K Syllabus</div><div className="card-body">Knowledge Managers.</div></a>
+          <a className="card doc-card" href={URLS.SYL_SL4L} target="_blank" rel="noreferrer"><div className="card-label">SYLLABUS</div><div className="card-title">SL 4L Syllabus</div><div className="card-body">Software Engineers.</div></a>
         </div>
       </details>
 
       <details>
         <summary style={{fontSize:14,fontWeight:700,letterSpacing:'.08em',textTransform:'uppercase',color:'var(--navy)',cursor:'pointer',padding:'8px 0',borderBottom:'1px solid var(--gray-200)',marginBottom:12}}>Lesson Plans (5 &mdash; click to expand)</summary>
         <div className="card-grid" style={{marginTop:12}}>
-          <a className="card doc-card" href={URLS.LP_TM10} target="_blank" rel="noreferrer"><div className="card-label">LESSON PLAN</div><div className="card-title">TM-10 Lesson Plans</div><div className="card-body">Instructor lesson plans for TM-10 Maven User.</div></a>
-          <a className="card doc-card" href={URLS.LP_TM20} target="_blank" rel="noreferrer"><div className="card-label">LESSON PLAN</div><div className="card-title">TM-20 Lesson Plan Outlines</div><div className="card-body">Instructor lesson plan outlines for TM-20 Builder.</div></a>
-          <a className="card doc-card" href={URLS.LP_TM30} target="_blank" rel="noreferrer"><div className="card-label">LESSON PLAN</div><div className="card-title">TM-30 Lesson Plan Outlines</div><div className="card-body">Instructor lesson plan outlines for TM-30 Advanced Builder.</div></a>
-          <a className="card doc-card" href={URLS.LP_TM40_SPECIALIST} target="_blank" rel="noreferrer"><div className="card-label">LESSON PLAN</div><div className="card-title">TM-40 Specialist Lesson Plans</div><div className="card-body">Instructor lesson plan outlines for all TM-40 specialist tracks.</div></a>
+          <a className="card doc-card" href={URLS.LP_SL1} target="_blank" rel="noreferrer"><div className="card-label">LESSON PLAN</div><div className="card-title">SL 1 Lesson Plans</div><div className="card-body">Instructor lesson plans for SL 1 Maven User.</div></a>
+          <a className="card doc-card" href={URLS.LP_SL2} target="_blank" rel="noreferrer"><div className="card-label">LESSON PLAN</div><div className="card-title">SL 2 Lesson Plan Outlines</div><div className="card-body">Instructor lesson plan outlines for SL 2 Builder.</div></a>
+          <a className="card doc-card" href={URLS.LP_SL3} target="_blank" rel="noreferrer"><div className="card-label">LESSON PLAN</div><div className="card-title">SL 3 Lesson Plan Outlines</div><div className="card-body">Instructor lesson plan outlines for SL 3 Advanced Builder.</div></a>
+          <a className="card doc-card" href={URLS.LP_SL4_SPECIALIST} target="_blank" rel="noreferrer"><div className="card-label">LESSON PLAN</div><div className="card-title">SL 4 Specialist Lesson Plans</div><div className="card-body">Instructor lesson plan outlines for all SL 4 specialist tracks.</div></a>
           <a className="card doc-card" href={URLS.LP_TEMPLATE} target="_blank" rel="noreferrer"><div className="card-label">TEMPLATE</div><div className="card-title">Lesson Plan Template</div><div className="card-body">Blank lesson plan template for course development.</div></a>
         </div>
       </details>
@@ -397,53 +397,53 @@ export default function Documents({ showPanel }: Props) {
           <thead><tr style={{background:'var(--navy)',color:'#fff',textAlign:'left'}}><th style={{padding:'6px 8px'}}>Publication</th><th style={{padding:'6px 8px'}}>Title</th><th style={{padding:'6px 8px'}}>Type</th><th style={{padding:'6px 8px'}}>Tracks</th></tr></thead>
           <tbody>
             <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ADP 3-0</td><td style={{padding:'5px 8px'}}>Operations</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>WFF (A–F)</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>ADP 3-19</td><td style={{padding:'5px 8px'}}>Fires</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40B</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ADP 3-37</td><td style={{padding:'5px 8px'}}>Protection of the Force (Jul 2019)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40E</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>ADP 3-90</td><td style={{padding:'5px 8px'}}>Offense and Defense</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40C</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ADP 5-0</td><td style={{padding:'5px 8px'}}>The Operations Process</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40F, TM-40G</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>ADP 6-0</td><td style={{padding:'5px 8px'}}>Mission Command (Jul 2019)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40F</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>ADP 3-19</td><td style={{padding:'5px 8px'}}>Fires</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4B</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ADP 3-37</td><td style={{padding:'5px 8px'}}>Protection of the Force (Jul 2019)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4E</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>ADP 3-90</td><td style={{padding:'5px 8px'}}>Offense and Defense</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4C</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ADP 5-0</td><td style={{padding:'5px 8px'}}>The Operations Process</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4F, SL 4G</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>ADP 6-0</td><td style={{padding:'5px 8px'}}>Mission Command (Jul 2019)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4F</td></tr>
             <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ADP 7-0</td><td style={{padding:'5px 8px'}}>Training</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>Training Mgmt</td></tr>
             <tr><td style={{padding:'5px 8px'}}>AR 25-1</td><td style={{padding:'5px 8px'}}>Army Information Technology (Jul 2019)</td><td style={{padding:'5px 8px'}}>Regulation</td><td style={{padding:'5px 8px'}}>All</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>AR 25-2</td><td style={{padding:'5px 8px'}}>Army Cybersecurity (Apr 2019)</td><td style={{padding:'5px 8px'}}>Regulation</td><td style={{padding:'5px 8px'}}>TM-40H, TM-40M, TM-40L</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>AR 25-30</td><td style={{padding:'5px 8px'}}>Army Publishing Program</td><td style={{padding:'5px 8px'}}>Regulation</td><td style={{padding:'5px 8px'}}>TM-50H</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>AR 25-400-2</td><td style={{padding:'5px 8px'}}>Army Records Management</td><td style={{padding:'5px 8px'}}>Regulation</td><td style={{padding:'5px 8px'}}>TM-40K</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>AR 5-11</td><td style={{padding:'5px 8px'}}>Management of Army Models and Simulations</td><td style={{padding:'5px 8px'}}>Regulation</td><td style={{padding:'5px 8px'}}>TM-40G</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>AR 71-9</td><td style={{padding:'5px 8px'}}>Warfighting Analysis</td><td style={{padding:'5px 8px'}}>Regulation</td><td style={{padding:'5px 8px'}}>TM-40G</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>AR 25-2</td><td style={{padding:'5px 8px'}}>Army Cybersecurity (Apr 2019)</td><td style={{padding:'5px 8px'}}>Regulation</td><td style={{padding:'5px 8px'}}>SL 4H, SL 4M, SL 4L</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>AR 25-30</td><td style={{padding:'5px 8px'}}>Army Publishing Program</td><td style={{padding:'5px 8px'}}>Regulation</td><td style={{padding:'5px 8px'}}>SL 5H</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>AR 25-400-2</td><td style={{padding:'5px 8px'}}>Army Records Management</td><td style={{padding:'5px 8px'}}>Regulation</td><td style={{padding:'5px 8px'}}>SL 4K</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>AR 5-11</td><td style={{padding:'5px 8px'}}>Management of Army Models and Simulations</td><td style={{padding:'5px 8px'}}>Regulation</td><td style={{padding:'5px 8px'}}>SL 4G</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>AR 71-9</td><td style={{padding:'5px 8px'}}>Warfighting Analysis</td><td style={{padding:'5px 8px'}}>Regulation</td><td style={{padding:'5px 8px'}}>SL 4G</td></tr>
             <tr><td style={{padding:'5px 8px'}}>AR 350-1</td><td style={{padding:'5px 8px'}}>Army Training and Leader Development</td><td style={{padding:'5px 8px'}}>Regulation</td><td style={{padding:'5px 8px'}}>Training Mgmt</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>AR 525-2</td><td style={{padding:'5px 8px'}}>Force Protection</td><td style={{padding:'5px 8px'}}>Regulation</td><td style={{padding:'5px 8px'}}>TM-40E</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>AR 530-1</td><td style={{padding:'5px 8px'}}>Operations Security</td><td style={{padding:'5px 8px'}}>Regulation</td><td style={{padding:'5px 8px'}}>TM-40E</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>FM 2-0</td><td style={{padding:'5px 8px'}}>Intelligence (Oct 2023)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40A</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>AR 525-2</td><td style={{padding:'5px 8px'}}>Force Protection</td><td style={{padding:'5px 8px'}}>Regulation</td><td style={{padding:'5px 8px'}}>SL 4E</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>AR 530-1</td><td style={{padding:'5px 8px'}}>Operations Security</td><td style={{padding:'5px 8px'}}>Regulation</td><td style={{padding:'5px 8px'}}>SL 4E</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>FM 2-0</td><td style={{padding:'5px 8px'}}>Intelligence (Oct 2023)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4A</td></tr>
             <tr><td style={{padding:'5px 8px'}}>FM 3-0</td><td style={{padding:'5px 8px'}}>Operations (Mar 2025)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>WFF (A–F)</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>FM 3-01</td><td style={{padding:'5px 8px'}}>U.S. Army Air and Missile Defense</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40B</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>FM 3-09</td><td style={{padding:'5px 8px'}}>Fire Support and Field Artillery Operations (Aug 2024)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40B, TM-40C</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>FM 3-12</td><td style={{padding:'5px 8px'}}>Cyberspace and EW Operations</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40E, TM-40H, TM-40M, TM-40L</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>FM 3-27</td><td style={{padding:'5px 8px'}}>Army Global Ballistic Missile Defense</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40B</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>FM 3-55</td><td style={{padding:'5px 8px'}}>Information Collection</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40A</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>FM 3-60</td><td style={{padding:'5px 8px'}}>Targeting (Aug 2023)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40B</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>FM 3-81</td><td style={{padding:'5px 8px'}}>Maneuver Enhancement Brigade</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40C</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>FM 3-90</td><td style={{padding:'5px 8px'}}>Offense and Defense (May 2023)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40C</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>FM 4-0</td><td style={{padding:'5px 8px'}}>Sustainment (Aug 2024)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40D</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>FM 1-0</td><td style={{padding:'5px 8px'}}>Human Resources Support</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40D</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>FM 5-0</td><td style={{padding:'5px 8px'}}>Planning and Orders Production (Nov 2024)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40F, TM-40C</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>FM 6-0</td><td style={{padding:'5px 8px'}}>Commander's Activities (May 2022)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40F, TM-40C</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>FM 3-01</td><td style={{padding:'5px 8px'}}>U.S. Army Air and Missile Defense</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4B</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>FM 3-09</td><td style={{padding:'5px 8px'}}>Fire Support and Field Artillery Operations (Aug 2024)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4B, SL 4C</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>FM 3-12</td><td style={{padding:'5px 8px'}}>Cyberspace and EW Operations</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4E, SL 4H, SL 4M, SL 4L</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>FM 3-27</td><td style={{padding:'5px 8px'}}>Army Global Ballistic Missile Defense</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4B</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>FM 3-55</td><td style={{padding:'5px 8px'}}>Information Collection</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4A</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>FM 3-60</td><td style={{padding:'5px 8px'}}>Targeting (Aug 2023)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4B</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>FM 3-81</td><td style={{padding:'5px 8px'}}>Maneuver Enhancement Brigade</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4C</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>FM 3-90</td><td style={{padding:'5px 8px'}}>Offense and Defense (May 2023)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4C</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>FM 4-0</td><td style={{padding:'5px 8px'}}>Sustainment (Aug 2024)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4D</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>FM 1-0</td><td style={{padding:'5px 8px'}}>Human Resources Support</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4D</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>FM 5-0</td><td style={{padding:'5px 8px'}}>Planning and Orders Production (Nov 2024)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4F, SL 4C</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>FM 6-0</td><td style={{padding:'5px 8px'}}>Commander's Activities (May 2022)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4F, SL 4C</td></tr>
             <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>FM 7-0</td><td style={{padding:'5px 8px'}}>Training (Jun 2021)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>Training Mgmt</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>ATP 2-01</td><td style={{padding:'5px 8px'}}>Collection Management (May 2023)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40A</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ATP 2-33.4</td><td style={{padding:'5px 8px'}}>Intelligence Analysis</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40A</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>ATP 2-22.9-1</td><td style={{padding:'5px 8px'}}>PAI/OSINT (Oct 2023)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40A</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ATP 3-01.81</td><td style={{padding:'5px 8px'}}>Counter-UAS</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40B</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>ATP 3-09.42</td><td style={{padding:'5px 8px'}}>Fire Support for M&amp;M</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40B</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ATP 3-13.3</td><td style={{padding:'5px 8px'}}>Army Operations Security</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40E</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>ATP 3-90.4</td><td style={{padding:'5px 8px'}}>Combined Arms Mobility</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40C</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ATP 5-0.1</td><td style={{padding:'5px 8px'}}>Army Design Methodology</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40F</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>ATP 5-0.3</td><td style={{padding:'5px 8px'}}>Multi-Service Tactics for Ops Assessment</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40G</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ATP 6-01.1</td><td style={{padding:'5px 8px'}}>Techniques for Effective Knowledge Management</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40K, TM-50K</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>TC 6-0.2</td><td style={{padding:'5px 8px'}}>Battle Staff Operations</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40F</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>DA PAM 5-11</td><td style={{padding:'5px 8px'}}>Verification, Validation &amp; Accreditation</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40G</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>DA PAM 25-1-1</td><td style={{padding:'5px 8px'}}>IT Implementation Instructions</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40K, TM-40L</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>DA PAM 25-2-5</td><td style={{padding:'5px 8px'}}>Cybersecurity Technical Reference</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40H, TM-40M, TM-40L</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>ATP 2-01</td><td style={{padding:'5px 8px'}}>Collection Management (May 2023)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4A</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ATP 2-33.4</td><td style={{padding:'5px 8px'}}>Intelligence Analysis</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4A</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>ATP 2-22.9-1</td><td style={{padding:'5px 8px'}}>PAI/OSINT (Oct 2023)</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4A</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ATP 3-01.81</td><td style={{padding:'5px 8px'}}>Counter-UAS</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4B</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>ATP 3-09.42</td><td style={{padding:'5px 8px'}}>Fire Support for M&amp;M</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4B</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ATP 3-13.3</td><td style={{padding:'5px 8px'}}>Army Operations Security</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4E</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>ATP 3-90.4</td><td style={{padding:'5px 8px'}}>Combined Arms Mobility</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4C</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ATP 5-0.1</td><td style={{padding:'5px 8px'}}>Army Design Methodology</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4F</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>ATP 5-0.3</td><td style={{padding:'5px 8px'}}>Multi-Service Tactics for Ops Assessment</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4G</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ATP 6-01.1</td><td style={{padding:'5px 8px'}}>Techniques for Effective Knowledge Management</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4K, SL 5K</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>TC 6-0.2</td><td style={{padding:'5px 8px'}}>Battle Staff Operations</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4F</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>DA PAM 5-11</td><td style={{padding:'5px 8px'}}>Verification, Validation &amp; Accreditation</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4G</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>DA PAM 25-1-1</td><td style={{padding:'5px 8px'}}>IT Implementation Instructions</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4K, SL 4L</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>DA PAM 25-2-5</td><td style={{padding:'5px 8px'}}>Cybersecurity Technical Reference</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4H, SL 4M, SL 4L</td></tr>
             <tr><td style={{padding:'5px 8px'}}>DA PAM 25-40</td><td style={{padding:'5px 8px'}}>Army Publishing Program Procedures</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>Standards</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>DA PAM 25-403</td><td style={{padding:'5px 8px'}}>Army Records Information Management</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40K</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>DA PAM 600-3</td><td style={{padding:'5px 8px'}}>Officer Professional Development</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>TM-40G</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>DA PAM 25-403</td><td style={{padding:'5px 8px'}}>Army Records Information Management</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4K</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>DA PAM 600-3</td><td style={{padding:'5px 8px'}}>Officer Professional Development</td><td style={{padding:'5px 8px'}}>Doctrine</td><td style={{padding:'5px 8px'}}>SL 4G</td></tr>
           </tbody>
         </table>
 
@@ -453,9 +453,9 @@ export default function Documents({ showPanel }: Props) {
           <thead><tr style={{background:'var(--navy)',color:'#fff',textAlign:'left'}}><th style={{padding:'6px 8px'}}>Publication</th><th style={{padding:'6px 8px'}}>Title</th><th style={{padding:'6px 8px'}}>Type</th><th style={{padding:'6px 8px'}}>Tracks</th></tr></thead>
           <tbody>
             <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>DoDD 3000.09</td><td style={{padding:'5px 8px'}}>Autonomy in Weapon Systems (Jan 2023)</td><td style={{padding:'5px 8px'}}>Directive</td><td style={{padding:'5px 8px'}}>WFF (A–F)</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>DoDI 5000.87</td><td style={{padding:'5px 8px'}}>Software Acquisition Pathway (Oct 2020)</td><td style={{padding:'5px 8px'}}>Instruction</td><td style={{padding:'5px 8px'}}>TM-40L, TM-50L, TM-40J, TM-50J</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Army Directive 2024-02</td><td style={{padding:'5px 8px'}}>Agile Software Dev &amp; Acquisition (Dec 2024)</td><td style={{padding:'5px 8px'}}>Directive</td><td style={{padding:'5px 8px'}}>TM-40L, TM-50L, TM-40J, TM-50J</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>Army Directive 2024-03</td><td style={{padding:'5px 8px'}}>Army Digital Engineering</td><td style={{padding:'5px 8px'}}>Directive</td><td style={{padding:'5px 8px'}}>TM-40H, TM-40M, TM-40L</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>DoDI 5000.87</td><td style={{padding:'5px 8px'}}>Software Acquisition Pathway (Oct 2020)</td><td style={{padding:'5px 8px'}}>Instruction</td><td style={{padding:'5px 8px'}}>SL 4L, SL 5L, SL 4J, SL 5J</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Army Directive 2024-02</td><td style={{padding:'5px 8px'}}>Agile Software Dev &amp; Acquisition (Dec 2024)</td><td style={{padding:'5px 8px'}}>Directive</td><td style={{padding:'5px 8px'}}>SL 4L, SL 5L, SL 4J, SL 5J</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>Army Directive 2024-03</td><td style={{padding:'5px 8px'}}>Army Digital Engineering</td><td style={{padding:'5px 8px'}}>Directive</td><td style={{padding:'5px 8px'}}>SL 4H, SL 4M, SL 4L</td></tr>
           </tbody>
         </table>
 
@@ -477,12 +477,12 @@ export default function Documents({ showPanel }: Props) {
         <table style={{width:'100%',borderCollapse:'collapse',fontSize:13,marginBottom:16}}>
           <thead><tr style={{background:'var(--navy)',color:'#fff',textAlign:'left'}}><th style={{padding:'6px 8px'}}>Publication</th><th style={{padding:'6px 8px'}}>Title</th><th style={{padding:'6px 8px'}}>Type</th><th style={{padding:'6px 8px'}}>Tracks</th></tr></thead>
           <tbody>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ADatP-34 / NISP</td><td style={{padding:'5px 8px'}}>C3 Interoperability Standards and Profiles</td><td style={{padding:'5px 8px'}}>Standard</td><td style={{padding:'5px 8px'}}>TM-40K, TM-40L</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>STANAG 5636 / NCMS</td><td style={{padding:'5px 8px'}}>Core Metadata Specification</td><td style={{padding:'5px 8px'}}>STANAG</td><td style={{padding:'5px 8px'}}>TM-40K, TM-50K</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>STANAG 5643 (proposed)</td><td style={{padding:'5px 8px'}}>MIM Governance Standard</td><td style={{padding:'5px 8px'}}>STANAG</td><td style={{padding:'5px 8px'}}>TM-40K, TM-40L, TM-50K, TM-50L</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>ADatP-5644</td><td style={{padding:'5px 8px'}}>Web Service Messaging Profile (WSMP)</td><td style={{padding:'5px 8px'}}>Standard</td><td style={{padding:'5px 8px'}}>TM-40L, TM-50L</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ADatP-36</td><td style={{padding:'5px 8px'}}>Friendly Force Information (FFI)</td><td style={{padding:'5px 8px'}}>Standard</td><td style={{padding:'5px 8px'}}>TM-40A, TM-40C</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>STANAG 5527</td><td style={{padding:'5px 8px'}}>FFT Systems Interoperability</td><td style={{padding:'5px 8px'}}>STANAG</td><td style={{padding:'5px 8px'}}>TM-40A</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ADatP-34 / NISP</td><td style={{padding:'5px 8px'}}>C3 Interoperability Standards and Profiles</td><td style={{padding:'5px 8px'}}>Standard</td><td style={{padding:'5px 8px'}}>SL 4K, SL 4L</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>STANAG 5636 / NCMS</td><td style={{padding:'5px 8px'}}>Core Metadata Specification</td><td style={{padding:'5px 8px'}}>STANAG</td><td style={{padding:'5px 8px'}}>SL 4K, SL 5K</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>STANAG 5643 (proposed)</td><td style={{padding:'5px 8px'}}>MIM Governance Standard</td><td style={{padding:'5px 8px'}}>STANAG</td><td style={{padding:'5px 8px'}}>SL 4K, SL 4L, SL 5K, SL 5L</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>ADatP-5644</td><td style={{padding:'5px 8px'}}>Web Service Messaging Profile (WSMP)</td><td style={{padding:'5px 8px'}}>Standard</td><td style={{padding:'5px 8px'}}>SL 4L, SL 5L</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>ADatP-36</td><td style={{padding:'5px 8px'}}>Friendly Force Information (FFI)</td><td style={{padding:'5px 8px'}}>Standard</td><td style={{padding:'5px 8px'}}>SL 4A, SL 4C</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>STANAG 5527</td><td style={{padding:'5px 8px'}}>FFT Systems Interoperability</td><td style={{padding:'5px 8px'}}>STANAG</td><td style={{padding:'5px 8px'}}>SL 4A</td></tr>
           </tbody>
         </table>
 
@@ -493,16 +493,16 @@ export default function Documents({ showPanel }: Props) {
           <tbody>
             <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>DoD Data Strategy</td><td style={{padding:'5px 8px'}}>OSD</td><td style={{padding:'5px 8px'}}>Oct 2020</td><td style={{padding:'5px 8px'}}>All</td></tr>
             <tr><td style={{padding:'5px 8px'}}>DoD Data, Analytics &amp; AI Adoption Strategy</td><td style={{padding:'5px 8px'}}>CDAO</td><td style={{padding:'5px 8px'}}>Nov 2023</td><td style={{padding:'5px 8px'}}>All</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>DoD Responsible AI Strategy</td><td style={{padding:'5px 8px'}}>CDAO</td><td style={{padding:'5px 8px'}}>Jun 2024</td><td style={{padding:'5px 8px'}}>TM-40H/M, TM-50H/M</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>DoD Zero Trust Reference Architecture v2.0</td><td style={{padding:'5px 8px'}}>DISA/NSA</td><td style={{padding:'5px 8px'}}>Jul 2022</td><td style={{padding:'5px 8px'}}>TM-30</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>DoD AI Cybersecurity Risk Mgmt Guide</td><td style={{padding:'5px 8px'}}>DoD CIO</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>TM-40H/M, TM-50H/M</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>DoD Software Modernization Strategy</td><td style={{padding:'5px 8px'}}>OSD CIO</td><td style={{padding:'5px 8px'}}>Feb 2022</td><td style={{padding:'5px 8px'}}>TM-40L, TM-50L</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>JADC2 Strategy Summary</td><td style={{padding:'5px 8px'}}>Joint Staff</td><td style={{padding:'5px 8px'}}>Mar 2022</td><td style={{padding:'5px 8px'}}>WFF (A–F), TM-40G</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>JCOIE</td><td style={{padding:'5px 8px'}}>Joint Staff J-7</td><td style={{padding:'5px 8px'}}>Current</td><td style={{padding:'5px 8px'}}>TM-40F</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>DoD Responsible AI Strategy</td><td style={{padding:'5px 8px'}}>CDAO</td><td style={{padding:'5px 8px'}}>Jun 2024</td><td style={{padding:'5px 8px'}}>SL 4H/M, SL 5H/M</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>DoD Zero Trust Reference Architecture v2.0</td><td style={{padding:'5px 8px'}}>DISA/NSA</td><td style={{padding:'5px 8px'}}>Jul 2022</td><td style={{padding:'5px 8px'}}>SL 3</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>DoD AI Cybersecurity Risk Mgmt Guide</td><td style={{padding:'5px 8px'}}>DoD CIO</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>SL 4H/M, SL 5H/M</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>DoD Software Modernization Strategy</td><td style={{padding:'5px 8px'}}>OSD CIO</td><td style={{padding:'5px 8px'}}>Feb 2022</td><td style={{padding:'5px 8px'}}>SL 4L, SL 5L</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>JADC2 Strategy Summary</td><td style={{padding:'5px 8px'}}>Joint Staff</td><td style={{padding:'5px 8px'}}>Mar 2022</td><td style={{padding:'5px 8px'}}>WFF (A–F), SL 4G</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>JCOIE</td><td style={{padding:'5px 8px'}}>Joint Staff J-7</td><td style={{padding:'5px 8px'}}>Current</td><td style={{padding:'5px 8px'}}>SL 4F</td></tr>
             <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Army Data Plan</td><td style={{padding:'5px 8px'}}>Army CIO</td><td style={{padding:'5px 8px'}}>Oct 2022</td><td style={{padding:'5px 8px'}}>All</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>Army Cloud Plan</td><td style={{padding:'5px 8px'}}>Army CIO</td><td style={{padding:'5px 8px'}}>Oct 2022</td><td style={{padding:'5px 8px'}}>TM-10, TM-20, TM-30</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>UDRA v1.1</td><td style={{padding:'5px 8px'}}>DASA(DES)</td><td style={{padding:'5px 8px'}}>Feb 2025</td><td style={{padding:'5px 8px'}}>TM-30, Specialist (G–O)</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>Army CIO Data Stewardship Memo</td><td style={{padding:'5px 8px'}}>Army CIO</td><td style={{padding:'5px 8px'}}>Apr 2024</td><td style={{padding:'5px 8px'}}>TM-10, TM-20, TM-30, TM-40K</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>Army Cloud Plan</td><td style={{padding:'5px 8px'}}>Army CIO</td><td style={{padding:'5px 8px'}}>Oct 2022</td><td style={{padding:'5px 8px'}}>SL 1, SL 2, SL 3</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>UDRA v1.1</td><td style={{padding:'5px 8px'}}>DASA(DES)</td><td style={{padding:'5px 8px'}}>Feb 2025</td><td style={{padding:'5px 8px'}}>SL 3, Specialist (G–O)</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>Army CIO Data Stewardship Memo</td><td style={{padding:'5px 8px'}}>Army CIO</td><td style={{padding:'5px 8px'}}>Apr 2024</td><td style={{padding:'5px 8px'}}>SL 1, SL 2, SL 3, SL 4K</td></tr>
           </tbody>
         </table>
 
@@ -511,11 +511,11 @@ export default function Documents({ showPanel }: Props) {
         <table style={{width:'100%',borderCollapse:'collapse',fontSize:13,marginBottom:16}}>
           <thead><tr style={{background:'#e8eaf0',color:'#333',textAlign:'left'}}><th style={{padding:'6px 8px'}}>Document</th><th style={{padding:'6px 8px'}}>Date</th><th style={{padding:'6px 8px'}}>Tracks</th></tr></thead>
           <tbody>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>NATO Data Strategy for the Alliance</td><td style={{padding:'5px 8px'}}>Feb 2025</td><td style={{padding:'5px 8px'}}>TM-30, TM-40K, TM-50K</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>NATO Data Centric Reference Architecture v2</td><td style={{padding:'5px 8px'}}>2025</td><td style={{padding:'5px 8px'}}>TM-30</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>NATO Data Quality Framework for the Alliance</td><td style={{padding:'5px 8px'}}>Aug 2025</td><td style={{padding:'5px 8px'}}>TM-30</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>NATO Data Strategy for the Alliance</td><td style={{padding:'5px 8px'}}>Feb 2025</td><td style={{padding:'5px 8px'}}>SL 3, SL 4K, SL 5K</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>NATO Data Centric Reference Architecture v2</td><td style={{padding:'5px 8px'}}>2025</td><td style={{padding:'5px 8px'}}>SL 3</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>NATO Data Quality Framework for the Alliance</td><td style={{padding:'5px 8px'}}>Aug 2025</td><td style={{padding:'5px 8px'}}>SL 3</td></tr>
             <tr><td style={{padding:'5px 8px'}}>NATO Digital Transformation Implementation Strategy</td><td style={{padding:'5px 8px'}}>Oct 2024</td><td style={{padding:'5px 8px'}}>WFF (A–F)</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>NATO Warfighting Capstone Concept</td><td style={{padding:'5px 8px'}}>2021</td><td style={{padding:'5px 8px'}}>TM-40F</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>NATO Warfighting Capstone Concept</td><td style={{padding:'5px 8px'}}>2021</td><td style={{padding:'5px 8px'}}>SL 4F</td></tr>
           </tbody>
         </table>
       </details>
@@ -534,19 +534,19 @@ export default function Documents({ showPanel }: Props) {
           <thead><tr style={{background:'#e8eaf0',color:'#333',textAlign:'left'}}><th style={{padding:'6px 8px'}}>Title</th><th style={{padding:'6px 8px'}}>Date</th><th style={{padding:'6px 8px'}}>Tracks</th></tr></thead>
           <tbody>
             <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Data-Centric at the Division: 3ID's One-Year Journey to Transform and Modernize</td><td style={{padding:'5px 8px'}}>Jan 2025</td><td style={{padding:'5px 8px'}}>All</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>Modernizing Military Decision-Making: Integrating AI into Army Planning</td><td style={{padding:'5px 8px'}}>Aug 2025</td><td style={{padding:'5px 8px'}}>TM-40F, TM-40H, TM-40G</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>The Military Needs Frontier Models</td><td style={{padding:'5px 8px'}}>Aug 2025</td><td style={{padding:'5px 8px'}}>TM-40H, TM-40M, TM-40L</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>Exploring AI-Enhanced Cyber and Information Operations Integration</td><td style={{padding:'5px 8px'}}>Mar-Apr 2025</td><td style={{padding:'5px 8px'}}>TM-40E, TM-40A, TM-40H</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Authorities and the Multidomain Task Force</td><td style={{padding:'5px 8px'}}>Mar-Apr 2025</td><td style={{padding:'5px 8px'}}>TM-40A, TM-40B, TM-40F</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>Taking a Data-Centric Approach to Unit Readiness</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>All, esp. TM-40G</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Attaining Readiness by Developing a Data-Centric Culture</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>All, esp. TM-40J</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>Modernizing Military Decision-Making: Integrating AI into Army Planning</td><td style={{padding:'5px 8px'}}>Aug 2025</td><td style={{padding:'5px 8px'}}>SL 4F, SL 4H, SL 4G</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>The Military Needs Frontier Models</td><td style={{padding:'5px 8px'}}>Aug 2025</td><td style={{padding:'5px 8px'}}>SL 4H, SL 4M, SL 4L</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>Exploring AI-Enhanced Cyber and Information Operations Integration</td><td style={{padding:'5px 8px'}}>Mar-Apr 2025</td><td style={{padding:'5px 8px'}}>SL 4E, SL 4A, SL 4H</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Authorities and the Multidomain Task Force</td><td style={{padding:'5px 8px'}}>Mar-Apr 2025</td><td style={{padding:'5px 8px'}}>SL 4A, SL 4B, SL 4F</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>Taking a Data-Centric Approach to Unit Readiness</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>All, esp. SL 4G</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Attaining Readiness by Developing a Data-Centric Culture</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>All, esp. SL 4J</td></tr>
             <tr><td style={{padding:'5px 8px'}}>Sustaining Our People Advantage in Data-Centric Warfare</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>All</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>AI as a Combat Multiplier: Using AI to Unburden Army Staffs</td><td style={{padding:'5px 8px'}}>Sep 2024</td><td style={{padding:'5px 8px'}}>TM-40H, TM-40F, TM-40G</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>Transforming the Multidomain Battlefield with AI</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>TM-40H, TM-40M, TM-40A</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>The Coming Military AI Revolution</td><td style={{padding:'5px 8px'}}>May-Jun 2024</td><td style={{padding:'5px 8px'}}>TM-40H, TM-40M</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>AI as a Combat Multiplier: Using AI to Unburden Army Staffs</td><td style={{padding:'5px 8px'}}>Sep 2024</td><td style={{padding:'5px 8px'}}>SL 4H, SL 4F, SL 4G</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>Transforming the Multidomain Battlefield with AI</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>SL 4H, SL 4M, SL 4A</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>The Coming Military AI Revolution</td><td style={{padding:'5px 8px'}}>May-Jun 2024</td><td style={{padding:'5px 8px'}}>SL 4H, SL 4M</td></tr>
             <tr><td style={{padding:'5px 8px'}}>AI in Modern Warfare: Strategic Innovation and Emerging Risks</td><td style={{padding:'5px 8px'}}>Sep-Oct 2024</td><td style={{padding:'5px 8px'}}>All</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Advancing Counter-UAS Mission Command Systems</td><td style={{padding:'5px 8px'}}>May-Jun 2024</td><td style={{padding:'5px 8px'}}>TM-40E, TM-40F</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>The True Test of Mission Command</td><td style={{padding:'5px 8px'}}>Sep-Oct 2024</td><td style={{padding:'5px 8px'}}>TM-40F</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Advancing Counter-UAS Mission Command Systems</td><td style={{padding:'5px 8px'}}>May-Jun 2024</td><td style={{padding:'5px 8px'}}>SL 4E, SL 4F</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>The True Test of Mission Command</td><td style={{padding:'5px 8px'}}>Sep-Oct 2024</td><td style={{padding:'5px 8px'}}>SL 4F</td></tr>
           </tbody>
         </table>
 
@@ -555,8 +555,8 @@ export default function Documents({ showPanel }: Props) {
         <table style={{width:'100%',borderCollapse:'collapse',fontSize:13,marginBottom:16}}>
           <thead><tr style={{background:'#e8eaf0',color:'#333',textAlign:'left'}}><th style={{padding:'6px 8px'}}>Title</th><th style={{padding:'6px 8px'}}>Date</th><th style={{padding:'6px 8px'}}>Tracks</th></tr></thead>
           <tbody>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Responsibly Pursuing Generative AI for the War Fighter</td><td style={{padding:'5px 8px'}}>Winter 2025-26</td><td style={{padding:'5px 8px'}}>TM-40H, TM-40M, All</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>Integrating AI and ML into COP and COA Development</td><td style={{padding:'5px 8px'}}>2024-25</td><td style={{padding:'5px 8px'}}>TM-40G, TM-40H, TM-40F</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Responsibly Pursuing Generative AI for the War Fighter</td><td style={{padding:'5px 8px'}}>Winter 2025-26</td><td style={{padding:'5px 8px'}}>SL 4H, SL 4M, All</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>Integrating AI and ML into COP and COA Development</td><td style={{padding:'5px 8px'}}>2024-25</td><td style={{padding:'5px 8px'}}>SL 4G, SL 4H, SL 4F</td></tr>
             <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Trusting AI: Integrating AI into the Army's Professional Ethic</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>All</td></tr>
           </tbody>
         </table>
@@ -566,12 +566,12 @@ export default function Documents({ showPanel }: Props) {
         <table style={{width:'100%',borderCollapse:'collapse',fontSize:13,marginBottom:16}}>
           <thead><tr style={{background:'#e8eaf0',color:'#333',textAlign:'left'}}><th style={{padding:'6px 8px'}}>Title</th><th style={{padding:'6px 8px'}}>Date</th><th style={{padding:'6px 8px'}}>Tracks</th></tr></thead>
           <tbody>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>FRIDAY: Unlocking OSINT for a Data-Driven Army</td><td style={{padding:'5px 8px'}}>2025</td><td style={{padding:'5px 8px'}}>TM-40A, TM-40H, TM-40L</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>Intelligence Support to Information Advantage</td><td style={{padding:'5px 8px'}}>Jan-Jun 2026</td><td style={{padding:'5px 8px'}}>TM-40A, TM-40K</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Using AI to Create Digital Enemy Commanders</td><td style={{padding:'5px 8px'}}>Jul-Dec 2025</td><td style={{padding:'5px 8px'}}>TM-40H, TM-40M, TM-40A</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>The Market Knows Best: Prediction Markets for National Security</td><td style={{padding:'5px 8px'}}>Jul-Dec 2025</td><td style={{padding:'5px 8px'}}>TM-40A, TM-40G</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Army Transitioning to Support Deep Sensing in MDO</td><td style={{padding:'5px 8px'}}>Jul-Dec 2025</td><td style={{padding:'5px 8px'}}>TM-40A, TM-40B, TM-40C</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>Open-Source Intelligence Support to Targeting</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>TM-40A, TM-40B</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>FRIDAY: Unlocking OSINT for a Data-Driven Army</td><td style={{padding:'5px 8px'}}>2025</td><td style={{padding:'5px 8px'}}>SL 4A, SL 4H, SL 4L</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>Intelligence Support to Information Advantage</td><td style={{padding:'5px 8px'}}>Jan-Jun 2026</td><td style={{padding:'5px 8px'}}>SL 4A, SL 4K</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Using AI to Create Digital Enemy Commanders</td><td style={{padding:'5px 8px'}}>Jul-Dec 2025</td><td style={{padding:'5px 8px'}}>SL 4H, SL 4M, SL 4A</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>The Market Knows Best: Prediction Markets for National Security</td><td style={{padding:'5px 8px'}}>Jul-Dec 2025</td><td style={{padding:'5px 8px'}}>SL 4A, SL 4G</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Army Transitioning to Support Deep Sensing in MDO</td><td style={{padding:'5px 8px'}}>Jul-Dec 2025</td><td style={{padding:'5px 8px'}}>SL 4A, SL 4B, SL 4C</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>Open-Source Intelligence Support to Targeting</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>SL 4A, SL 4B</td></tr>
           </tbody>
         </table>
 
@@ -580,12 +580,12 @@ export default function Documents({ showPanel }: Props) {
         <table style={{width:'100%',borderCollapse:'collapse',fontSize:13,marginBottom:16}}>
           <thead><tr style={{background:'#e8eaf0',color:'#333',textAlign:'left'}}><th style={{padding:'6px 8px'}}>Title</th><th style={{padding:'6px 8px'}}>Date</th><th style={{padding:'6px 8px'}}>Tracks</th></tr></thead>
           <tbody>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>The New Digital Kill Chain</td><td style={{padding:'5px 8px'}}>2025</td><td style={{padding:'5px 8px'}}>TM-40B, TM-40L</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>AI's New Frontier in War Planning</td><td style={{padding:'5px 8px'}}>2025</td><td style={{padding:'5px 8px'}}>TM-40B, TM-40H</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Project Convergence: Revolutionizing Targeting in LSCO</td><td style={{padding:'5px 8px'}}>2025</td><td style={{padding:'5px 8px'}}>TM-40B, TM-40A, TM-40G</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>Enhancing Tactical Level Targeting With AI</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>TM-40B, TM-40H, TM-40M</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>The Future of Strategic Fires Target Acquisition</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>TM-40B, TM-40A</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>The Combat Aviation Brigade and Digital Call for Fire</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>TM-40B, TM-40C</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>The New Digital Kill Chain</td><td style={{padding:'5px 8px'}}>2025</td><td style={{padding:'5px 8px'}}>SL 4B, SL 4L</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>AI's New Frontier in War Planning</td><td style={{padding:'5px 8px'}}>2025</td><td style={{padding:'5px 8px'}}>SL 4B, SL 4H</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Project Convergence: Revolutionizing Targeting in LSCO</td><td style={{padding:'5px 8px'}}>2025</td><td style={{padding:'5px 8px'}}>SL 4B, SL 4A, SL 4G</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>Enhancing Tactical Level Targeting With AI</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>SL 4B, SL 4H, SL 4M</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>The Future of Strategic Fires Target Acquisition</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>SL 4B, SL 4A</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>The Combat Aviation Brigade and Digital Call for Fire</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>SL 4B, SL 4C</td></tr>
           </tbody>
         </table>
 
@@ -594,9 +594,9 @@ export default function Documents({ showPanel }: Props) {
         <table style={{width:'100%',borderCollapse:'collapse',fontSize:13,marginBottom:16}}>
           <thead><tr style={{background:'#e8eaf0',color:'#333',textAlign:'left'}}><th style={{padding:'6px 8px'}}>Title</th><th style={{padding:'6px 8px'}}>Date</th><th style={{padding:'6px 8px'}}>Tracks</th></tr></thead>
           <tbody>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Knowledge Management and The Old Guard</td><td style={{padding:'5px 8px'}}>Aug 2025</td><td style={{padding:'5px 8px'}}>TM-40K, TM-40F</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Knowledge Management and The Old Guard</td><td style={{padding:'5px 8px'}}>Aug 2025</td><td style={{padding:'5px 8px'}}>SL 4K, SL 4F</td></tr>
             <tr><td style={{padding:'5px 8px'}}>From Data to Wisdom</td><td style={{padding:'5px 8px'}}>Feb 2025</td><td style={{padding:'5px 8px'}}>All</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Artificial Intelligence and Future Warfare</td><td style={{padding:'5px 8px'}}>Sep 2025</td><td style={{padding:'5px 8px'}}>TM-40H, TM-40M, All</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Artificial Intelligence and Future Warfare</td><td style={{padding:'5px 8px'}}>Sep 2025</td><td style={{padding:'5px 8px'}}>SL 4H, SL 4M, All</td></tr>
           </tbody>
         </table>
 
@@ -605,10 +605,10 @@ export default function Documents({ showPanel }: Props) {
         <table style={{width:'100%',borderCollapse:'collapse',fontSize:13,marginBottom:16}}>
           <thead><tr style={{background:'#e8eaf0',color:'#333',textAlign:'left'}}><th style={{padding:'6px 8px'}}>Title</th><th style={{padding:'6px 8px'}}>Date</th><th style={{padding:'6px 8px'}}>Tracks</th></tr></thead>
           <tbody>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Army Sustainment Enterprise's Delayed Approach to Data Modernization</td><td style={{padding:'5px 8px'}}>Winter 2025</td><td style={{padding:'5px 8px'}}>TM-40D, TM-40K</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>Predictive Logistics: Reimagining Sustainment on the 2040 Battlefield</td><td style={{padding:'5px 8px'}}>Winter 2025</td><td style={{padding:'5px 8px'}}>TM-40D, TM-40H, TM-40M, TM-40G</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Enabling Logistics in Contested Environments</td><td style={{padding:'5px 8px'}}>Spring 2025</td><td style={{padding:'5px 8px'}}>TM-40D, TM-40G</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>Advancing to Data-Driven Logistics Operations</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>TM-40D, TM-40K</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Army Sustainment Enterprise's Delayed Approach to Data Modernization</td><td style={{padding:'5px 8px'}}>Winter 2025</td><td style={{padding:'5px 8px'}}>SL 4D, SL 4K</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>Predictive Logistics: Reimagining Sustainment on the 2040 Battlefield</td><td style={{padding:'5px 8px'}}>Winter 2025</td><td style={{padding:'5px 8px'}}>SL 4D, SL 4H, SL 4M, SL 4G</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Enabling Logistics in Contested Environments</td><td style={{padding:'5px 8px'}}>Spring 2025</td><td style={{padding:'5px 8px'}}>SL 4D, SL 4G</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>Advancing to Data-Driven Logistics Operations</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>SL 4D, SL 4K</td></tr>
           </tbody>
         </table>
 
@@ -617,13 +617,13 @@ export default function Documents({ showPanel }: Props) {
         <table style={{width:'100%',borderCollapse:'collapse',fontSize:13,marginBottom:16}}>
           <thead><tr style={{background:'#e8eaf0',color:'#333',textAlign:'left'}}><th style={{padding:'6px 8px'}}>Title</th><th style={{padding:'6px 8px'}}>Date</th><th style={{padding:'6px 8px'}}>Tracks</th></tr></thead>
           <tbody>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Accelerating the Army's AI Strategy</td><td style={{padding:'5px 8px'}}>2024-25</td><td style={{padding:'5px 8px'}}>TM-40H, TM-40J, All</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>Commoditizing AI/ML Models</td><td style={{padding:'5px 8px'}}>2024-25</td><td style={{padding:'5px 8px'}}>TM-40H, TM-40M, TM-40L</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Accelerating the Army's AI Strategy</td><td style={{padding:'5px 8px'}}>2024-25</td><td style={{padding:'5px 8px'}}>SL 4H, SL 4J, All</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>Commoditizing AI/ML Models</td><td style={{padding:'5px 8px'}}>2024-25</td><td style={{padding:'5px 8px'}}>SL 4H, SL 4M, SL 4L</td></tr>
             <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>The Army's Data (Ad)Vantage</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>All</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>The Software Advantage</td><td style={{padding:'5px 8px'}}>2024-25</td><td style={{padding:'5px 8px'}}>TM-40L, TM-40J</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Army Intelligence</td><td style={{padding:'5px 8px'}}>2025</td><td style={{padding:'5px 8px'}}>TM-40A, TM-40H</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>The Software Advantage</td><td style={{padding:'5px 8px'}}>2024-25</td><td style={{padding:'5px 8px'}}>SL 4L, SL 4J</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Army Intelligence</td><td style={{padding:'5px 8px'}}>2025</td><td style={{padding:'5px 8px'}}>SL 4A, SL 4H</td></tr>
             <tr><td style={{padding:'5px 8px'}}>Emerging Technology and Modernizing the Army</td><td style={{padding:'5px 8px'}}>2024-25</td><td style={{padding:'5px 8px'}}>All</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Reality Check (AI/ML implementation)</td><td style={{padding:'5px 8px'}}>2024-25</td><td style={{padding:'5px 8px'}}>TM-40H, TM-40M, TM-40J</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Reality Check (AI/ML implementation)</td><td style={{padding:'5px 8px'}}>2024-25</td><td style={{padding:'5px 8px'}}>SL 4H, SL 4M, SL 4J</td></tr>
           </tbody>
         </table>
 
@@ -632,9 +632,9 @@ export default function Documents({ showPanel }: Props) {
         <table style={{width:'100%',borderCollapse:'collapse',fontSize:13,marginBottom:16}}>
           <thead><tr style={{background:'#e8eaf0',color:'#333',textAlign:'left'}}><th style={{padding:'6px 8px'}}>Title</th><th style={{padding:'6px 8px'}}>Date</th><th style={{padding:'6px 8px'}}>Tracks</th></tr></thead>
           <tbody>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Leading in Data Centricity, C2 Fix Best Practices</td><td style={{padding:'5px 8px'}}>Spring 2025</td><td style={{padding:'5px 8px'}}>TM-40E, TM-40F, TM-40L</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>Army Communicator Spring 2024</td><td style={{padding:'5px 8px'}}>Spring 2024</td><td style={{padding:'5px 8px'}}>TM-40E, TM-40L</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Army Communicator January 2024 — ITN Suite</td><td style={{padding:'5px 8px'}}>Jan 2024</td><td style={{padding:'5px 8px'}}>TM-40E, TM-40C</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Leading in Data Centricity, C2 Fix Best Practices</td><td style={{padding:'5px 8px'}}>Spring 2025</td><td style={{padding:'5px 8px'}}>SL 4E, SL 4F, SL 4L</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>Army Communicator Spring 2024</td><td style={{padding:'5px 8px'}}>Spring 2024</td><td style={{padding:'5px 8px'}}>SL 4E, SL 4L</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Army Communicator January 2024 — ITN Suite</td><td style={{padding:'5px 8px'}}>Jan 2024</td><td style={{padding:'5px 8px'}}>SL 4E, SL 4C</td></tr>
           </tbody>
         </table>
 
@@ -643,9 +643,9 @@ export default function Documents({ showPanel }: Props) {
         <table style={{width:'100%',borderCollapse:'collapse',fontSize:13,marginBottom:16}}>
           <thead><tr style={{background:'#e8eaf0',color:'#333',textAlign:'left'}}><th style={{padding:'6px 8px'}}>Title</th><th style={{padding:'6px 8px'}}>Date</th><th style={{padding:'6px 8px'}}>Tracks</th></tr></thead>
           <tbody>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>How To Be a Data Literate Leader — And Why It Matters</td><td style={{padding:'5px 8px'}}>Mar 2024</td><td style={{padding:'5px 8px'}}>All, TM-40K</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>Harnessing the Power of Knowledge Management</td><td style={{padding:'5px 8px'}}>Apr 2024</td><td style={{padding:'5px 8px'}}>TM-40K, TM-40F</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Understanding Weapons of Math Destruction</td><td style={{padding:'5px 8px'}}>Jul 2024</td><td style={{padding:'5px 8px'}}>TM-40G, TM-40H, TM-40M</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>How To Be a Data Literate Leader — And Why It Matters</td><td style={{padding:'5px 8px'}}>Mar 2024</td><td style={{padding:'5px 8px'}}>All, SL 4K</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>Harnessing the Power of Knowledge Management</td><td style={{padding:'5px 8px'}}>Apr 2024</td><td style={{padding:'5px 8px'}}>SL 4K, SL 4F</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Understanding Weapons of Math Destruction</td><td style={{padding:'5px 8px'}}>Jul 2024</td><td style={{padding:'5px 8px'}}>SL 4G, SL 4H, SL 4M</td></tr>
           </tbody>
         </table>
 
@@ -654,7 +654,7 @@ export default function Documents({ showPanel }: Props) {
         <table style={{width:'100%',borderCollapse:'collapse',fontSize:13,marginBottom:16}}>
           <thead><tr style={{background:'#e8eaf0',color:'#333',textAlign:'left'}}><th style={{padding:'6px 8px'}}>Title</th><th style={{padding:'6px 8px'}}>Date</th><th style={{padding:'6px 8px'}}>Tracks</th></tr></thead>
           <tbody>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Moneyball for Gunnery — 1/4 ID BCT data analytics</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>TM-40C, TM-40G</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Moneyball for Gunnery — 1/4 ID BCT data analytics</td><td style={{padding:'5px 8px'}}>2024</td><td style={{padding:'5px 8px'}}>SL 4C, SL 4G</td></tr>
           </tbody>
         </table>
 
@@ -664,9 +664,9 @@ export default function Documents({ showPanel }: Props) {
           <thead><tr style={{background:'#e8eaf0',color:'#333',textAlign:'left'}}><th style={{padding:'6px 8px'}}>Title</th><th style={{padding:'6px 8px'}}>Date</th><th style={{padding:'6px 8px'}}>Tracks</th></tr></thead>
           <tbody>
             <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Data as Firepower: Data Superiority as a Warfighting Concept</td><td style={{padding:'5px 8px'}}>Aug 2025</td><td style={{padding:'5px 8px'}}>All</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>Elevating Information: Why the Army Should Establish Information as a Core WfF</td><td style={{padding:'5px 8px'}}>Apr 2025</td><td style={{padding:'5px 8px'}}>TM-40A, TM-40F, TM-40K</td></tr>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Accelerating Decision-Making: Integrating AI into the Modern Wargame</td><td style={{padding:'5px 8px'}}>Feb 2026</td><td style={{padding:'5px 8px'}}>TM-40G, TM-40H, TM-40F</td></tr>
-            <tr><td style={{padding:'5px 8px'}}>AI-Enabled Wargaming at CGSC</td><td style={{padding:'5px 8px'}}>Jan 2026</td><td style={{padding:'5px 8px'}}>TM-40G, TM-40H, TM-40F</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>Elevating Information: Why the Army Should Establish Information as a Core WfF</td><td style={{padding:'5px 8px'}}>Apr 2025</td><td style={{padding:'5px 8px'}}>SL 4A, SL 4F, SL 4K</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>Accelerating Decision-Making: Integrating AI into the Modern Wargame</td><td style={{padding:'5px 8px'}}>Feb 2026</td><td style={{padding:'5px 8px'}}>SL 4G, SL 4H, SL 4F</td></tr>
+            <tr><td style={{padding:'5px 8px'}}>AI-Enabled Wargaming at CGSC</td><td style={{padding:'5px 8px'}}>Jan 2026</td><td style={{padding:'5px 8px'}}>SL 4G, SL 4H, SL 4F</td></tr>
           </tbody>
         </table>
 
@@ -675,7 +675,7 @@ export default function Documents({ showPanel }: Props) {
         <table style={{width:'100%',borderCollapse:'collapse',fontSize:13,marginBottom:16}}>
           <thead><tr style={{background:'#e8eaf0',color:'#333',textAlign:'left'}}><th style={{padding:'6px 8px'}}>Title</th><th style={{padding:'6px 8px'}}>Date</th><th style={{padding:'6px 8px'}}>Tracks</th></tr></thead>
           <tbody>
-            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>The U.S. Army, AI, and Mission Command</td><td style={{padding:'5px 8px'}}>Mar 2025</td><td style={{padding:'5px 8px'}}>TM-40F, TM-40H</td></tr>
+            <tr style={{background:'#f8f9fa'}}><td style={{padding:'5px 8px'}}>The U.S. Army, AI, and Mission Command</td><td style={{padding:'5px 8px'}}>Mar 2025</td><td style={{padding:'5px 8px'}}>SL 4F, SL 4H</td></tr>
           </tbody>
         </table>
 

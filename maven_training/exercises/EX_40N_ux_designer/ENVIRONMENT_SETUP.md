@@ -1,6 +1,6 @@
 # ENVIRONMENT SETUP — EX_40N UI/UX Designer
 
-**Track:** EX_40N — UI/UX Designer (TM-40N) | **Prerequisite:** TM-30 REQUIRED | **Continuation:** TM-50N — Advanced UI/UX Designer
+**Track:** EX_40N — UI/UX Designer (SL 4N) | **Prerequisite:** SL 3 REQUIRED | **Continuation:** SL 5N — Advanced UI/UX Designer
 **Companion exams:** EXAM_TM40N_PRE (administer before exercise), EXAM_TM40N_POST (administer after exercise)
 
 ## Environment Type
@@ -48,7 +48,7 @@ Ensure the training MSS environment has:
 
 - Confirm design tool access (Figma or equivalent) for each trainee
 - Provide the **MSS Design System Template** (described below) to each trainee
-- Provide the MSS accessibility checklist (TM-40N §6-2) as a printable handout
+- Provide the MSS accessibility checklist (SL 4N §6-2) as a printable handout
 
 ### 5. MSS Design System Template
 
@@ -65,4 +65,4 @@ The MSS Design System Template is a Figma (or equivalent) file that provides pre
 | Navigation shell | Sidebar and top-bar navigation frame matching the MSS application layout |
 | Chart templates | Bar, line, donut, and KPI card components using the MSS color palette |
 
-**NOTE:** The template enforces MSS visual consistency across trainee designs. Trainees may extend or compose components but should not override base styles (colors, classification banners, typography) during the exercise. Customization of base styles is covered in TM-50N (Advanced UI/UX Designer).
+**NOTE:** The template enforces MSS visual consistency across trainee designs. Trainees may extend or compose components but should not override base styles (colors, classification banners, typography) during the exercise. Customization of base styles is covered in SL 5N (Advanced UI/UX Designer).

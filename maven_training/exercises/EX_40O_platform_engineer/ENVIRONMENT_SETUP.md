@@ -1,6 +1,6 @@
 # ENVIRONMENT SETUP — EX_40O Platform Engineer
 
-**Track:** EX_40O — Platform Engineer (TM-40O) | **Prerequisite:** TM-30 REQUIRED | **Continuation:** TM-50O — Advanced Platform Engineer
+**Track:** EX_40O — Platform Engineer (SL 4O) | **Prerequisite:** SL 3 REQUIRED | **Continuation:** SL 5O — Advanced Platform Engineer
 **Companion exams:** EXAM_TM40O_PRE (administer before exercise), EXAM_TM40O_POST (administer after exercise)
 
 ## Environment Type

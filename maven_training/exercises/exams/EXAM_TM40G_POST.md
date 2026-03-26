@@ -1,12 +1,12 @@
-# POST-TEST — TM-40G: ORSA
+# POST-TEST — SL 4G: ORSA
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40G: ORSA |
+| **Course** | SL 4G: ORSA |
 | **Form** | Post-Test |
-| **Level** | TM-40G (Specialist) |
-| **Audience** | FA49 / ORSA analysts; prerequisite: TM-10+20+30 + graduate-level quantitative methods + Python or R proficiency |
+| **Level** | SL 4G (Specialist) |
+| **Audience** | FA49 / ORSA analysts; prerequisite: SL 1+20+30 + graduate-level quantitative methods + Python or R proficiency |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (46/66) |
 
@@ -106,7 +106,7 @@ B. Download the dataset as a CSV from the MSS UI and read it with `pd.read_csv()
 C. Clone the dataset's Git repository and import it as a Python module
 D. Submit a data request to the data steward who exports the data and emails it to you
 
-**13. An ORSA team is asked to support a COA comparison. COA A has a higher expected readiness gain; COA B has lower variance in outcomes. Per TM-40G, the analyst's role in the brief is to:**
+**13. An ORSA team is asked to support a COA comparison. COA A has a higher expected readiness gain; COA B has lower variance in outcomes. Per SL 4G, the analyst's role in the brief is to:**
 
 A. Present both COAs with their quantified risk profiles and let the commander make the decision based on operational risk tolerance
 B. Recommend the COA with higher expected gain — that is always the analytically superior choice
@@ -143,7 +143,7 @@ D. A list of ORSA analysts who reviewed the product
 
 &nbsp;
 
-**SA-2. A Monte Carlo simulation comparing two COAs shows: COA A — 10th percentile outcome: −12 units readiness, 50th: +8, 90th: +22. COA B — 10th: +2, 50th: +9, 90th: +14. The S3 says "COA A has the higher upside, recommend it." Write the ORSA response you would provide to the S3, applying TM-40G standards.**
+**SA-2. A Monte Carlo simulation comparing two COAs shows: COA A — 10th percentile outcome: −12 units readiness, 50th: +8, 90th: +22. COA B — 10th: +2, 50th: +9, 90th: +14. The S3 says "COA A has the higher upside, recommend it." Write the ORSA response you would provide to the S3, applying SL 4G standards.**
 
 &nbsp;
 
@@ -183,7 +183,7 @@ D. A list of ORSA analysts who reviewed the product
 
 &nbsp;
 
-**SA-6. Describe how an ORSA analyst's quantitative work directly supports two WFF functions. For each, identify the WFF track (TM-40A through TM-40F) and give a concrete example of an ORSA product that supports decision-making in that function.**
+**SA-6. Describe how an ORSA analyst's quantitative work directly supports two WFF functions. For each, identify the WFF track (SL 4A through SL 4F) and give a concrete example of an ORSA product that supports decision-making in that function.**
 
 &nbsp;
 
@@ -240,7 +240,7 @@ SA-4. Full credit: decision variables: x_i = man-hours allocated to unit i (i = 
 
 SA-5. Full credit: the statement has two problems — (1) it presents only a point estimate without a confidence interval; (2) "the model predicts" implies certainty; corrected statement: "Analytical estimate: 94% readiness (90% CI: 88%–98%). This estimate is based on [model type], trained on [time period], and assumes [key assumption]. Limitations: [state one limitation]. The 90% CI means that under repeated sampling, the true readiness would fall within this range 90% of the time." Full credit requires identifying both problems AND providing a corrected statement with CI and limitation.
 
-SA-6. Full credit: any two WFF tracks correctly identified with an example — TM-40A (Intelligence): ORSA supports intel fusion by quantifying probability of enemy COAs or estimating adversary logistics capacity; TM-40B (Fires): ORSA supports fires by modeling target prioritization or computing probability of kill; TM-40C (Movement & Maneuver): ORSA supports M&M by optimizing route selection or modeling force employment timing; TM-40D (Sustainment): ORSA supports sustainment by forecasting fuel/ammunition demand or optimizing distribution; TM-40E (Protection): ORSA supports protection by modeling threat probability distributions or analyzing force protection trade-offs; TM-40F (Mission Command): ORSA supports MC by building dashboard analytics or quantifying COA risk for commander decision-making. Each response must identify the correct TM-40 letter (A–F) and provide a concrete product example for full credit.
+SA-6. Full credit: any two WFF tracks correctly identified with an example — SL 4A (Intelligence): ORSA supports intel fusion by quantifying probability of enemy COAs or estimating adversary logistics capacity; SL 4B (Fires): ORSA supports fires by modeling target prioritization or computing probability of kill; SL 4C (Movement & Maneuver): ORSA supports M&M by optimizing route selection or modeling force employment timing; SL 4D (Sustainment): ORSA supports sustainment by forecasting fuel/ammunition demand or optimizing distribution; SL 4E (Protection): ORSA supports protection by modeling threat probability distributions or analyzing force protection trade-offs; SL 4F (Mission Command): ORSA supports MC by building dashboard analytics or quantifying COA risk for commander decision-making. Each response must identify the correct SL 4 letter (A–F) and provide a concrete product example for full credit.
 
 ---
 

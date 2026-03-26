@@ -1,7 +1,7 @@
-# CONCEPTS GUIDE — TM-50H COMPANION — ADVANCED AI ENGINEER — MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 5H COMPANION — ADVANCED AI ENGINEER — MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** Default to the simplest architecture that solves the problem. Multi-agent systems are harder to build, debug, and govern. Use them only when a single agent genuinely cannot solve the problem.
-> **Purpose:** Extends the mental models of the TM-40H Concepts Guide to advanced AI engineering on MSS. Prerequisite: TM-40H Concepts Guide and TM-40H qualification.
+> **Purpose:** Extends the mental models of the TM-40H Concepts Guide to advanced AI engineering on MSS. Prerequisite: TM-40H Concepts Guide and SL 4H qualification.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -10,9 +10,9 @@
 
 ### 1-1. The Categorical Shift
 
-In TM-40H, an AI workflow was a bounded capability: a user invokes it, it runs, it produces an output, the user reviews the output. The system boundary was clear. The human was always present at invocation and output review. Failure was visible and contained.
+In SL 4H, an AI workflow was a bounded capability: a user invokes it, it runs, it produces an output, the user reviews the output. The system boundary was clear. The human was always present at invocation and output review. Failure was visible and contained.
 
-At TM-50H level, that model breaks. An operationally embedded AI system may:
+At SL 5H level, that model breaks. An operationally embedded AI system may:
 - Run continuously without a human invoking each instance
 - Chain multiple agents whose combined behavior is not directly observable
 - Write outputs into the Ontology that feed other downstream systems, including other AI systems
@@ -23,7 +23,7 @@ The difference is embeddedness. An embedded AI system becomes part of the operat
 
 ### 1-2. What Changes at the System Level
 
-| TM-40H Level | TM-50H Level |
+| SL 4H Level | SL 5H Level |
 |---|---|
 | Build a workflow a user invokes | Build an orchestration layer that coordinates when and how workflows fire |
 | Individual workflows produce outputs and terminate | AI systems maintain state: what has been processed, what context is being carried forward |
@@ -34,9 +34,9 @@ The difference is embeddedness. An embedded AI system becomes part of the operat
 
 **Situation:** The G2 section at V Corps requests an AI system to support all-source intelligence synthesis — ingest reporting from multiple disciplines including 10th AAMDC sensor data, 56th MDC-E electromagnetic activity reporting, and organic HUMINT/SIGINT — identify patterns, and surface threat indicators to the analyst for review.
 
-A TM-40H engineer builds an AIP Logic workflow: retrieve relevant reporting Objects from the Ontology, pass them to an LLM with a synthesis prompt, surface the output to an analyst. That workflow solves the user story.
+A SL 4H engineer builds an AIP Logic workflow: retrieve relevant reporting Objects from the Ontology, pass them to an LLM with a synthesis prompt, surface the output to an analyst. That workflow solves the user story.
 
-A TM-50H systems designer asks different questions:
+A SL 5H systems designer asks different questions:
 - What happens when reporting volume exceeds the LLM context window? (Grounding pipeline design)
 - What happens when reporting from one discipline contradicts another? (Agent conflict resolution)
 - Who owns the output once the analyst acts on it? (Provenance and accountability)
@@ -44,7 +44,7 @@ A TM-50H systems designer asks different questions:
 - How will a commander in six months know this synthesis was AI-generated? (Long-term governance)
 - When this system is retired, what happens to analysts who have come to depend on it?
 
-These questions are not more technical. They are architectural, operational, and institutional. That is TM-50H practice.
+These questions are not more technical. They are architectural, operational, and institutional. That is SL 5H practice.
 
 ---
 
@@ -136,7 +136,7 @@ Session continuity is valuable when the task involves an evolving operational pi
 
 ### 4-1. Prompts as Managed Artifacts
 
-At TM-40H, a prompt is something you write and iterate on until it works. At TM-50H, a prompt is a managed artifact with a version history, dependencies, test suite, and change control process.
+At SL 4H, a prompt is something you write and iterate on until it works. At SL 5H, a prompt is a managed artifact with a version history, dependencies, test suite, and change control process.
 
 When you have 30-40 prompts across a multi-agent system and a change to one prompt changes the behavior of agents downstream that consume its output, prompt management is a systems engineering problem.
 
@@ -176,9 +176,9 @@ When multiple engineers build AI systems across the same headquarters, prompt pr
 
 ### 5-1. Grounding at Scale Is a Design Problem
 
-> **NOTE:** TM-40H now covers multi-source data fusion for AI training pipelines, adversarial ML defense (ADP 3-37 protection framework), and model drift monitoring as continuous assessment. Review TM-40H Sections 5-12 before designing multi-source retrieval pipelines or adversarial resilience at the system level described below.
+> **NOTE:** SL 4H now covers multi-source data fusion for AI training pipelines, adversarial ML defense (ADP 3-37 protection framework), and model drift monitoring as continuous assessment. Review SL 4H Sections 5-12 before designing multi-source retrieval pipelines or adversarial resilience at the system level described below.
 
-At TM-40H, grounding was a retrieval task: given a user query, retrieve relevant Ontology Objects and pass them to the LLM. At TM-50H, grounding a theater-level Ontology with hundreds of Object Types, thousands of Link Types, and dynamically updated properties is a multi-stage pipeline design problem.
+At SL 4H, grounding was a retrieval task: given a user query, retrieve relevant Ontology Objects and pass them to the LLM. At SL 5H, grounding a theater-level Ontology with hundreds of Object Types, thousands of Link Types, and dynamically updated properties is a multi-stage pipeline design problem.
 
 **Core tension:** Retrieve enough context for accurate reasoning, but not so much that relevant context is diluted by irrelevant context in a finite context window.
 
@@ -253,7 +253,7 @@ The AI registry is a living document. It must be updated when workflows are depl
 
 ### 6-4. Drift Monitoring Across the Portfolio
 
-> **NOTE:** TM-40H establishes DDIL (denied, disrupted, intermittent, limited) deployment considerations for AI workflows operating in contested or austere network environments. The portfolio-level drift monitoring described below must account for DDIL conditions where monitoring telemetry may itself be delayed or unavailable.
+> **NOTE:** SL 4H establishes DDIL (denied, disrupted, intermittent, limited) deployment considerations for AI workflows operating in contested or austere network environments. The portfolio-level drift monitoring described below must account for DDIL conditions where monitoring telemetry may itself be delayed or unavailable.
 
 **Baseline metrics.** At deployment, record representative output samples as baseline references. Define quantitative metrics (output length distribution, schema compliance rate, field population rates) and qualitative criteria for human spot-check.
 
@@ -280,11 +280,11 @@ Do not skip steps 4-6 because the technical owner believes the problem is "fixed
 
 ### 7-1. Beyond Basic Human-in-the-Loop
 
-The TM-40H principle — a qualified human reviews AI outputs before they inform decisions — is necessary but not sufficient at TM-50H scale.
+The SL 4H principle — a qualified human reviews AI outputs before they inform decisions — is necessary but not sufficient at SL 5H scale.
 
 The problem: when a headquarters runs dozens of AI-assisted workflows and analysts review AI-generated outputs as part of their normal workflow, "human-in-the-loop" becomes nominal. The human is technically in the loop, but review is cursory and increasingly rubber-stamp. The loop exists on paper. The oversight does not.
 
-This is not a failure of individual analysts. It is a predictable consequence of scale and tempo. The TM-50H engineer's responsibility is to design systems that support meaningful oversight.
+This is not a failure of individual analysts. It is a predictable consequence of scale and tempo. The SL 5H engineer's responsibility is to design systems that support meaningful oversight.
 
 ### 7-2. Automation Bias
 
@@ -331,7 +331,7 @@ If any condition is not met, the human-in-the-loop design is nominal, not substa
 
 ### 8-1. The Full Lifecycle
 
-TM-40H engineers build. TM-50H engineers own. Ownership encompasses the full product lifecycle — including retirement. Advanced AI engineers who do not plan for retirement will eventually be forced to retire systems in crisis.
+SL 4H engineers build. SL 5H engineers own. Ownership encompasses the full product lifecycle — including retirement. Advanced AI engineers who do not plan for retirement will eventually be forced to retire systems in crisis.
 
 | Phase | Primary Activities | Key Governance Artifact |
 |---|---|---|
@@ -363,7 +363,7 @@ An orphaned AI workflow is a governance liability. Retire it until ownership is 
 
 ### 8-4. The Succession Plan as a Governance Artifact
 
-Every AI workflow at TM-50H level should have a documented succession plan from the day it enters production:
+Every AI workflow at SL 5H level should have a documented succession plan from the day it enters production:
 - What does this workflow do, in terms a replacement designer can understand?
 - What manual process or alternative would users employ if this workflow did not exist?
 - What are the critical design decisions and why were they made?
@@ -374,7 +374,7 @@ The succession plan is an operational continuity document. It belongs in the AI 
 
 ---
 
-## SECTION 9 — ADVANCED FAILURE MODES: WHAT TM-50H ENGINEERS GET WRONG
+## SECTION 9 — ADVANCED FAILURE MODES: WHAT SL 5H ENGINEERS GET WRONG
 
 | Failure Mode | Description | Diagnostic Question |
 |---|---|---|
@@ -386,7 +386,7 @@ The succession plan is an operational continuity document. It belongs in the AI 
 
 ### 9-1. Unnecessary Complexity Detail
 
-The engineering challenge of TM-50H is knowing when *not* to use the advanced techniques you now know. Complexity has operational costs: more governance overhead, harder for successors to maintain, more obscure failure modes. Every layer of complexity you add is a layer the next engineer must understand when something breaks at 0200.
+The engineering challenge of SL 5H is knowing when *not* to use the advanced techniques you now know. Complexity has operational costs: more governance overhead, harder for successors to maintain, more obscure failure modes. Every layer of complexity you add is a layer the next engineer must understand when something breaks at 0200.
 
 ### 9-2. Treating Governance as a Deployment Gate
 
@@ -411,24 +411,24 @@ Engineers who clear a deployment review sometimes treat that review as the end o
 
 ---
 
-## APPENDIX — PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION
+## APPENDIX — PEER SL 5 CROSS-REFERENCES AND WFF INTEGRATION
 
-**Peer TM-50 Publications.** Senior AI engineers should coordinate with practitioners in these companion advanced-track publications.
+**Peer SL 5 Publications.** Senior AI engineers should coordinate with practitioners in these companion advanced-track publications.
 
 | Publication | Track | Coordination Point |
 |---|---|---|
-| TM-50G | Advanced ORSA | Evaluation methodology; productionizing complex analytical models |
-| TM-50M | Advanced ML Engineer | Fine-tuning infrastructure; adversarial robustness |
-| TM-50J | Advanced Program Manager | AI governance acquisition; lifecycle documentation |
-| TM-50K | Advanced Knowledge Manager | Corpus design; ontology-RAG integration |
-| TM-50L | Advanced Software Engineer | OSDK integration with AI systems |
-| TM-50N | Advanced UI/UX Designer | UI/UX for AI-driven applications; model output presentation |
-| TM-50O | Advanced Platform Engineer | Infrastructure for AI/ML workloads; GPU provisioning; deployment pipelines |
+| SL 5G | Advanced ORSA | Evaluation methodology; productionizing complex analytical models |
+| SL 5M | Advanced ML Engineer | Fine-tuning infrastructure; adversarial robustness |
+| SL 5J | Advanced Program Manager | AI governance acquisition; lifecycle documentation |
+| SL 5K | Advanced Knowledge Manager | Corpus design; ontology-RAG integration |
+| SL 5L | Advanced Software Engineer | OSDK integration with AI systems |
+| SL 5N | Advanced UI/UX Designer | UI/UX for AI-driven applications; model output presentation |
+| SL 5O | Advanced Platform Engineer | Infrastructure for AI/ML workloads; GPU provisioning; deployment pipelines |
 
-**WFF Operational Consumer Note.** AI systems built by TM-50H engineers are embedded in the operational workflows of the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). The system-design questions addressed in this guide — embeddedness, meaningful oversight, lifecycle governance — must be answered in terms of the specific WFF workflows the AI system will serve. A G2 intelligence synthesis system has different failure mode consequences than a G4 logistics optimization system; both require meaningful oversight, but the oversight design reflects the operational context.
+**WFF Operational Consumer Note.** AI systems built by SL 5H engineers are embedded in the operational workflows of the six Warfighting Function (WFF) tracks: Intelligence (SL 4A), Fires (SL 4B), Movement and Maneuver (SL 4C), Sustainment (SL 4D), Protection (SL 4E), and Mission Command (SL 4F). The system-design questions addressed in this guide — embeddedness, meaningful oversight, lifecycle governance — must be answered in terms of the specific WFF workflows the AI system will serve. A G2 intelligence synthesis system has different failure mode consequences than a G4 logistics optimization system; both require meaningful oversight, but the oversight design reflects the operational context.
 
 ---
 
-*CONCEPTS GUIDE — TM-50H COMPANION // ADVANCED AI ENGINEER*
+*CONCEPTS GUIDE — SL 5H COMPANION // ADVANCED AI ENGINEER*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA // WIESBADEN, GERMANY // 2026*
 *Questions and feedback: C2DAO, USAREUR-AF Operational Data Team, Wiesbaden.*

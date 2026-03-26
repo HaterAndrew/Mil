@@ -1,10 +1,10 @@
 # EX_40N — UI/UX Designer
-## Practical Exercise — TM-40N Proficiency
+## Practical Exercise — SL 4N Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-30 REQUIRED; TM-40N — UI/UX Designer Technical Manual (and TM-10 through TM-20) |
+| **Prerequisite** | SL 3 REQUIRED; SL 4N — UI/UX Designer Technical Manual (and SL 1 through SL 2) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS with Workshop access, design tool (Figma or equivalent) — see ENVIRONMENT_SETUP.md |
 
@@ -12,11 +12,11 @@
 
 | Resource | Reference |
 |----------|-----------|
-| Technical Manual | TM-40N — UI/UX Designer |
+| Technical Manual | SL 4N — UI/UX Designer |
 | Syllabus | SYLLABUS_TM40N |
 | Pre-Exercise Exam | EXAM_TM40N_PRE |
 | Post-Exercise Exam | EXAM_TM40N_POST |
-| Continuation Track | TM-50N — Advanced UI/UX Designer |
+| Continuation Track | SL 5N — Advanced UI/UX Designer |
 
 ## WFF AWARENESS
 
@@ -26,7 +26,7 @@ The application designed in this exercise will serve WFF track personnel (TM-40A
 
 The OPDATA team has received a request from a staff section to build a new MSS Workshop application. The application will display operational data and support a specific decision-making workflow. The requesting unit has provided a brief requirements document, but has not specified how the application should look or behave.
 
-The trainee will conduct the full SCD design cycle: research → define → develop → validate — producing a design specification package ready for handoff to a TM-40L Software Engineer.
+The trainee will conduct the full SCD design cycle: research → define → develop → validate — producing a design specification package ready for handoff to a SL 4L Software Engineer.
 
 **Training context:** Trainees will use paired role-playing for user research (partner acts as the staff section user). Design tool and Workshop access provided.
 
@@ -82,7 +82,7 @@ The trainee will conduct the full SCD design cycle: research → define → deve
 
 ### Task 5 — Accessibility Audit (20 min)
 
-- [ ] Complete the MSS accessibility checklist (TM-40N §6-2) against your design
+- [ ] Complete the MSS accessibility checklist (SL 4N §6-2) against your design
 - [ ] Verify keyboard navigability of all interactive elements
 - [ ] Verify text alternatives for all non-text content
 - [ ] Verify touch target sizes (minimum 44x44px)
@@ -102,7 +102,7 @@ The trainee will conduct the full SCD design cycle: research → define → deve
 
 | Standard | Criteria |
 |----------|----------|
-| **Go** | Usability test conducted with a non-designer; at least 1 design change based on test findings; handoff package complete and a TM-40L SWE could implement without follow-up |
+| **Go** | Usability test conducted with a non-designer; at least 1 design change based on test findings; handoff package complete and a SL 4L SWE could implement without follow-up |
 | **No-Go** | No usability test conducted; handoff package incomplete or requires follow-up clarification for implementation |
 
 ---

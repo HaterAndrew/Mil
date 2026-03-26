@@ -1,10 +1,10 @@
 # EX_40L — Software Engineer
-## Practical Exercise — TM-40L Proficiency
+## Practical Exercise — SL 4L Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-30 REQUIRED; TM-40L — Software Engineer Technical Manual (and TM-10 through TM-20) |
+| **Prerequisite** | SL 3 REQUIRED; SL 4L — Software Engineer Technical Manual (and SL 1 through SL 2) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS with Python Transforms, TypeScript/OSDK access, Code Workspace — see ENVIRONMENT_SETUP.md |
 
@@ -12,11 +12,11 @@
 
 | Resource | Reference |
 |----------|-----------|
-| Technical Manual | TM-40L — Software Engineer |
+| Technical Manual | SL 4L — Software Engineer |
 | Syllabus | SYLLABUS_TM40L |
 | Pre-Exercise Exam | EXAM_TM40L_PRE |
 | Post-Exercise Exam | EXAM_TM40L_POST |
-| Continuation Track | TM-50L — Advanced Software Engineer |
+| Continuation Track | SL 5L — Advanced Software Engineer |
 
 ## WFF AWARENESS
 
@@ -80,7 +80,7 @@ The OPDATA team needs a Python Transform pipeline that ingests a synthetic perso
 
 ### Task 5 — Code Review Checklist (20 min)
 
-Self-review your Python Transform against the TM-40L code quality checklist:
+Self-review your Python Transform against the SL 4L code quality checklist:
 
 | Criterion | Check |
 |-----------|-------|
@@ -127,7 +127,7 @@ Self-review your Python Transform against the TM-40L code quality checklist:
 
 ## NEXT STEPS
 
-Participants who receive an overall Go on EX_40L are eligible to enroll in **TM-50L — Advanced Software Engineer**. TM-50L extends into CI/CD pipeline engineering, automated testing frameworks, and production Foundry application deployment. TM-50 is G–O (advanced specialist tracks).
+Participants who receive an overall Go on EX_40L are eligible to enroll in **SL 5L — Advanced Software Engineer**. SL 5L extends into CI/CD pipeline engineering, automated testing frameworks, and production Foundry application deployment. SL 5 is G–O (advanced specialist tracks).
 
 ## Supplemental — Build with AIP Official Tutorials
 

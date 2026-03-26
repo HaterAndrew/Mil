@@ -1,6 +1,6 @@
 # ENVIRONMENT SETUP — EX_50N Advanced UI/UX Designer
 
-**Track:** EX_50N — Advanced UI/UX Designer (TM-50N) | **Prerequisite:** TM-40N REQUIRED (Go evaluation on file) | **Base environment:** EX_40N
+**Track:** EX_50N — Advanced UI/UX Designer (SL 5N) | **Prerequisite:** SL 4N REQUIRED (Go evaluation on file) | **Base environment:** EX_40N
 **Companion exams:** EXAM_TM50N_PRE (administer before exercise), EXAM_TM50N_POST (administer after exercise)
 
 ## Environment Type
@@ -15,9 +15,9 @@ Complete **all** EX_40N environment setup steps before proceeding:
 2. Workshop environment with application creation permissions
 3. Role-playing partners with guidance cards
 4. Design tool access (Figma or equivalent) with MSS Design System Template
-5. MSS accessibility checklist (TM-40N SS6-2) as printable handout
+5. MSS accessibility checklist (SL 4N SS6-2) as printable handout
 
-## TM-50N-Specific Additions
+## SL 5N-Specific Additions
 
 The following extend the EX_40N environment for advanced-level tasks.
 

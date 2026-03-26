@@ -1,18 +1,18 @@
-# LESSON PLAN OUTLINES — TM-40 WFF TRACKS
+# LESSON PLAN OUTLINES — SL 4 WFF TRACKS
 ## USAREUR-AF Operational Data Team — C2DAO
-**Covers:** TM-40A (Intelligence) | TM-40B (Fires) | TM-40C (Movement & Maneuver) | TM-40D (Sustainment) | TM-40E (Protection) | TM-40F (Mission Command)
+**Covers:** SL 4A (Intelligence) | SL 4B (Fires) | SL 4C (Movement & Maneuver) | SL 4D (Sustainment) | SL 4E (Protection) | SL 4F (Mission Command)
 **Version:** 1.0 — March 2026
 
-> Abbreviated LP outlines for TM-40 WFF functional courses. All six tracks follow the same 3-day structure with WFF-specific content.
+> Abbreviated LP outlines for SL 4 WFF functional courses. All six tracks follow the same 3-day structure with WFF-specific content.
 > Instructors must have functional staff background in the WFF they are teaching. These outlines supplement that expertise — they do not replace it.
 > Expand using `LP_TEMPLATE.md`. For complete LP examples see `TM10/TM10_LESSON_PLANS.md`.
-> **Prerequisite for all WFF tracks:** TM-10, TM-20, TM-30 (Go evaluations on file). No coding or pipeline experience required of trainees.
+> **Prerequisite for all WFF tracks:** SL 1, SL 2, SL 3 (Go evaluations on file). No coding or pipeline experience required of trainees.
 
 ---
 
-# PART A — TM-40A: INTELLIGENCE WFF
+# PART A — SL 4A: INTELLIGENCE WFF
 
-**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** G2/S2 background with MSS COP and AIP Logic experience; TM-40-level certification or C2DAO INT SME
+**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** G2/S2 background with MSS COP and AIP Logic experience; SL 4-level certification or C2DAO INT SME
 **Doctrinal references:** FM 2-0, ATP 2-01, FM 3-60
 
 ---
@@ -256,17 +256,17 @@
 
 ---
 
-## TM-40A COURSE COMPLETION — NEXT STEPS
+## SL 4A COURSE COMPLETION — NEXT STEPS
 
-TM-40A graduates are eligible to re-enroll in any other WFF track independently (no additional prerequisites beyond TM-30). Personnel with analytical roles may also consider specialist tracks TM-40G (ORSA) or TM-40H (AI Engineer) if they meet the domain prerequisites.
-
----
+SL 4A graduates are eligible to re-enroll in any other WFF track independently (no additional prerequisites beyond SL 3). Personnel with analytical roles may also consider specialist tracks SL 4G (ORSA) or SL 4H (AI Engineer) if they meet the domain prerequisites.
 
 ---
 
-# PART B — TM-40B: FIRES WFF
+---
 
-**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Fires/targeting background (FSO, FA officer, or targeting cell experience); TM-40-level certification or C2DAO Fires SME
+# PART B — SL 4B: FIRES WFF
+
+**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Fires/targeting background (FSO, FA officer, or targeting cell experience); SL 4-level certification or C2DAO Fires SME
 **Doctrinal references:** FM 3-09, ATP 3-09.42, FM 3-60
 
 ---
@@ -467,9 +467,9 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 
 ---
 
-# PART C — TM-40C: MOVEMENT AND MANEUVER WFF
+# PART C — SL 4C: MOVEMENT AND MANEUVER WFF
 
-**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** G3/S3 background (operations officer or senior S3 NCO); TM-40-level certification or C2DAO M&M SME
+**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** G3/S3 background (operations officer or senior S3 NCO); SL 4-level certification or C2DAO M&M SME
 **Doctrinal references:** ADP 3-0, FM 3-0, ATP 3-90.90
 
 ---
@@ -636,9 +636,9 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 
 ---
 
-# PART D — TM-40D: SUSTAINMENT WFF
+# PART D — SL 4D: SUSTAINMENT WFF
 
-**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** G4/S4 background (logistics officer or senior S4 NCO); TM-40-level certification or C2DAO sustainment SME
+**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** G4/S4 background (logistics officer or senior S4 NCO); SL 4-level certification or C2DAO sustainment SME
 **Doctrinal references:** ADP 4-0, FM 4-0, ATP 4-0.1
 
 ---
@@ -803,9 +803,9 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 
 ---
 
-# PART E — TM-40E: PROTECTION WFF
+# PART E — SL 4E: PROTECTION WFF
 
-**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Force protection officer or CBRN background; TM-40-level certification or C2DAO Protection SME
+**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Force protection officer or CBRN background; SL 4-level certification or C2DAO Protection SME
 **Doctrinal references:** ADP 3-37, ATP 3-37.2
 
 ---
@@ -975,9 +975,9 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 
 ---
 
-# PART F — TM-40F: MISSION COMMAND WFF
+# PART F — SL 4F: MISSION COMMAND WFF
 
-**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** G3/S3, battle captain, or XO background; TM-40-level certification or C2DAO Mission Command SME
+**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** G3/S3, battle captain, or XO background; SL 4-level certification or C2DAO Mission Command SME
 **Doctrinal references:** ADP 6-0, FM 6-0
 
 ---
@@ -1166,4 +1166,4 @@ TM-40A graduates are eligible to re-enroll in any other WFF track independently 
 ---
 
 *USAREUR-AF Operational Data Team*
-*TM-40 WFF Track Lesson Plan Outlines | Version 1.0 | March 2026*
+*SL 4 WFF Track Lesson Plan Outlines | Version 1.0 | March 2026*

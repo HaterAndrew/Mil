@@ -1,4 +1,4 @@
-# Self-Study Addendum — TM-40B: Fires Warfighting Function
+# Self-Study Addendum — SL 4B: Fires Warfighting Function
 ## Palantir Developers Reference Library
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.
@@ -59,7 +59,7 @@ The following doctrine sections were added to TM-40B this session. Review after 
 |---|---|---|
 | *Why do I need Palantir if I already have a cloud data platform?* | What Foundry provides beyond standard data capabilities — useful framing for fires officers comparing MSS to legacy fires management tools. | Ch 1 |
 | *Deep Dive: Optimizing Data Pipelines with Iceberg Tables and Lightweight Compute \| DevCon 4* | Pipeline optimization for high-volume data — applicable when fires data pipelines grow to include high-frequency sensor feeds and C-RAM tracking data. | Ch 6 |
-| *Platform APIs x SLB for Digital Sustainability* | Foundry Platform API integration — applicable to fires officers coordinating with TM-40L/40H on automating fires data pipeline feeds from AFATDS and IBCS. | Ch 1 |
+| *Platform APIs x SLB for Digital Sustainability* | Foundry Platform API integration — applicable to fires officers coordinating with SL 4L/SL 4H on automating fires data pipeline feeds from AFATDS and IBCS. | Ch 1 |
 
 ---
 

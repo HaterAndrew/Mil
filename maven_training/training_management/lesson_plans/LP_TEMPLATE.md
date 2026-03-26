@@ -11,7 +11,7 @@
 
 | Field | Value |
 |-------|-------|
-| **Course** | (e.g., TM-20 Builder) |
+| **Course** | (e.g., SL 2 Builder) |
 | **Lesson Title** | (descriptive title of this block) |
 | **Lesson Number** | (Block number within course, e.g., Block 7) |
 | **POI Reference** | (POI block reference, e.g., TM-20 Block 7) |

@@ -56,10 +56,10 @@ class ExamSession(Base):
     __tablename__ = "exam_sessions"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    course_id = Column(String(10), nullable=False)   # e.g., "TM-40G"
+    course_id = Column(String(10), nullable=False)   # e.g., "SL 4G"
     form_type = Column(String(4), nullable=False)     # PRE or POST
     administration_date = Column(Date, nullable=False)
-    cohort_label = Column(String(100), nullable=False) # e.g., "TM-40G FY26 Q2"
+    cohort_label = Column(String(100), nullable=False) # e.g., "SL 4G FY26 Q2"
     created_at = Column(DateTime, default=lambda: datetime.now(UTC))
 
     results = relationship("ExamResult", back_populates="session", cascade="all, delete-orphan")

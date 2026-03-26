@@ -1,7 +1,7 @@
 # TM-40F — MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** TM-40F teaches Mission Command practitioners — S3s, XOs, battle captains, and G3 staff — how to use MSS in daily operational work. No coding or pipeline development. Pure operational use of a data-enabled enterprise platform in support of the Mission Command warfighting function.
-> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; CONCEPTS_GUIDE_TM40F_MISSION_COMMAND (required before beginning this manual). Builder skills are not exercised in this track — Mission Command practitioners operate pre-built MSS products (see paragraph 1-4, NOTE). No coding, pipeline development, or transform experience is required or assumed.
+> **Forward:** SL 4F teaches Mission Command practitioners — S3s, XOs, battle captains, and G3 staff — how to use MSS in daily operational work. No coding or pipeline development. Pure operational use of a data-enabled enterprise platform in support of the Mission Command warfighting function.
+> **Prereqs:** SL 1, Maven User; SL 2, Builder; SL 3, Advanced Builder; CONCEPTS_GUIDE_TM40F_MISSION_COMMAND (required before beginning this manual). Builder skills are not exercised in this track — Mission Command practitioners operate pre-built MSS products (see paragraph 1-4, NOTE). No coding, pipeline development, or transform experience is required or assumed.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Presenting MSS data to a commander without verifying data currency and source validation can lead to decisions based on false situational awareness. Always confirm data-as-of timestamp and source pipeline status before the BUA or any commander brief.**
@@ -12,7 +12,7 @@
 
 ## CHAPTER 1 — INTRODUCTION: DOCTRINAL BASIS AND PURPOSE
 
-**BLUF:** TM-40F teaches Mission Command practitioners — S3s, XOs, battle captains, and G3 staff — how to use MSS in daily operational work. No coding or pipeline development. Pure operational use of a data-enabled enterprise platform in support of the Mission Command warfighting function.
+**BLUF:** SL 4F teaches Mission Command practitioners — S3s, XOs, battle captains, and G3 staff — how to use MSS in daily operational work. No coding or pipeline development. Pure operational use of a data-enabled enterprise platform in support of the Mission Command warfighting function.
 
 ### 1-1. Mission Command Specialist Manual
 
@@ -24,19 +24,19 @@ The USAREUR-AF C2DAO built MSS on Palantir Foundry specifically to integrate ope
 
 > **NOTE: MSS is a Mission Command enabler. Shared understanding — the foundation of Mission Command — depends on information quality, speed, and accessibility. MSS addresses all three. The principles remain constant; the information environment has changed.**
 
-> **NOTE:** The **EUCOM Thunderforge AI Planning Ecosystem** (DIU/Scale AI contract, 2024–25) employs AI agents to augment MDMP and wargaming at theater level, compressing planning timelines. Mission Command practitioners trained on MSS are the operational users of Thunderforge-class AI planning tools — the staff integration and MDMP data procedures in TM-40F are directly applicable to AI-augmented planning environments where human judgment remains authoritative over AI-generated options.
+> **NOTE:** The **EUCOM Thunderforge AI Planning Ecosystem** (DIU/Scale AI contract, 2024–25) employs AI agents to augment MDMP and wargaming at theater level, compressing planning timelines. Mission Command practitioners trained on MSS are the operational users of Thunderforge-class AI planning tools — the staff integration and MDMP data procedures in SL 4F are directly applicable to AI-augmented planning environments where human judgment remains authoritative over AI-generated options.
 
 > **NOTE:** XVIII Airborne Corps published a case study of data-enabled Mission Command in *Military Review* ("Fighting with Live Data," February 2026). Their BDA visualization capability — built by an ODT in response to the Corps commander's requirement to visualize enemy integrated fires complex attrition in real-time — delivered a prototype in 3 months, an MVP in 6, and a full handoff to the Army Intelligence Data Platform (INSCOM) in 9 months. The capability answers two questions simultaneously for the commander: *Where are there operational risks?* and *Where are there operational opportunities?* It ties intelligence reporting to targeting data, enabling longitudinal trend analysis and proactive plan adjustment. This illustrates one pattern for data-enabled Mission Command: commanders define the operational problem, a data team builds the product, and staff sections integrate it into the decision cycle. The BDA tool has since been used in exercises across XVIII ABC, 101st, and 82nd, and is being adopted by USAREUR-AF and III Corps. Different commands will apply this pattern differently based on their mission and data environment.
 >
 > *Source: Forney, Herrmann, and Steele, "Fighting with Live Data," Military Review Online Exclusive, February 2026.*
 
-> **NOTE:** In emerging terminology, the MSS applications used in TM-40F are **Automated Fighting Products (AFPs)** — the digital evolution of analog fighting products (hand-written OPORDs) through digital products (Excel/PowerPoint/SharePoint) to automated tools connected to live data. For an AFP to be useful in the MDMP, it must be deployed during steps 1-2 so the rest of the staff can leverage it during analysis and planning. MSS applications must be pre-built, tested, and maintained before combat, not created ad hoc during execution. TM-40F teaches Mission Command practitioners to consume and direct these AFPs in operational settings. *(AFP terminology from Adkins, "Achieving Decision Dominance," Military Review, January-February 2025 — one officer's proposal for how to conceptualize these products.)*
+> **NOTE:** In emerging terminology, the MSS applications used in SL 4F are **Automated Fighting Products (AFPs)** — the digital evolution of analog fighting products (hand-written OPORDs) through digital products (Excel/PowerPoint/SharePoint) to automated tools connected to live data. For an AFP to be useful in the MDMP, it must be deployed during steps 1-2 so the rest of the staff can leverage it during analysis and planning. MSS applications must be pre-built, tested, and maintained before combat, not created ad hoc during execution. SL 4F teaches Mission Command practitioners to consume and direct these AFPs in operational settings. *(AFP terminology from Adkins, "Achieving Decision Dominance," Military Review, January-February 2025 — one officer's proposal for how to conceptualize these products.)*
 
-### 1-2. Scope: What TM-40F Covers and Does Not Cover
+### 1-2. Scope: What SL 4F Covers and Does Not Cover
 
-**TM-40F covers** staff role integration with MSS for each section (S1 through S6, cross-functional cells, functional area officers); MDMP data support procedures for all seven steps (FM 5-0); battle rhythm design, mapping, and data product management (FM 6-0, ATP 6-0.5); CP configuration and MSS display management across echelon types (ATP 6-0.5); CCIR loading, monitoring, and decision support product management (FM 6-0); COP architecture and data layer integration (FM 6-02); assessment product generation (MOE/MOP) on MSS (ADP 5-0, FM 5-0); SITREP, SPOTREP, and readiness report generation from MSS data; degraded operations procedures and fallback products; and echelon-specific guidance from BCT through Corps.
+**SL 4F covers** staff role integration with MSS for each section (S1 through S6, cross-functional cells, functional area officers); MDMP data support procedures for all seven steps (FM 5-0); battle rhythm design, mapping, and data product management (FM 6-0, ATP 6-0.5); CP configuration and MSS display management across echelon types (ATP 6-0.5); CCIR loading, monitoring, and decision support product management (FM 6-0); COP architecture and data layer integration (FM 6-02); assessment product generation (MOE/MOP) on MSS (ADP 5-0, FM 5-0); SITREP, SPOTREP, and readiness report generation from MSS data; degraded operations procedures and fallback products; and echelon-specific guidance from BCT through Corps.
 
-**TM-40F does NOT cover** pipeline construction, data transforms, or code development — see TM-30 and TM-40 series technical manuals; ontology design or dataset schema modification — see TM-30; machine learning model management — see TM-40M; AI Logic (AIP) application development — see TM-40H; financial management data systems — see unit S6/IMO; or building Workshop applications — see TM-20.
+**SL 4F does NOT cover** pipeline construction, data transforms, or code development — see SL 3 and SL 4 series technical manuals; ontology design or dataset schema modification — see SL 3; machine learning model management — see SL 4M; AI Logic (AIP) application development — see SL 4H; financial management data systems — see unit S6/IMO; or building Workshop applications — see SL 2.
 
 ### 1-3. Audience and MOS Coverage
 
@@ -62,7 +62,7 @@ This manual is written for Mission Command practitioners who consume and direct 
 Before beginning this manual, verify the following:
 
 **Platform prerequisites:**
-- [ ] TM-10 complete — can log into MSS, navigate Workshop, access assigned datasets, and use standard dashboard views
+- [ ] SL 1 complete — can log into MSS, navigate Workshop, access assigned datasets, and use standard dashboard views
 - [ ] CONCEPTS_GUIDE_TM40F complete — Mission Command doctrine / MSS integration mental models established
 - [ ] MSS account provisioned with appropriate role and permissions — coordinate with unit S6
 
@@ -72,30 +72,30 @@ Before beginning this manual, verify the following:
 - [ ] Familiar with basic CP organization and staff section responsibilities at your echelon
 - [ ] Completed unit-level OPSEC training for MSS data handling
 
-> **NOTE: TM-20 and TM-30 are required as prerequisites (Go evaluations on file) but builder skills are not exercised in this manual. TM-40F assumes no ability to build pipelines or transforms. If you encounter a data product that does not exist and needs to be built, coordinate with your unit's designated MSS Builder (TM-30 qualified) or the C2DAO.**
+> **NOTE: SL 2 and SL 3 are required as prerequisites (Go evaluations on file) but builder skills are not exercised in this manual. SL 4F assumes no ability to build pipelines or transforms. If you encounter a data product that does not exist and needs to be built, coordinate with your unit's designated MSS Builder (SL 3 qualified) or the C2DAO.**
 
 ### 1-5. Relationship to Other TMs in the MSS Curriculum
 
 **Table 1-2. TM Curriculum Relationships**
 
-| TM | Title | Relationship to TM-40F |
+| TM | Title | Relationship to SL 4F |
 |---|---|---|
-| TM-10 | Maven User | Foundation prerequisite. Platform navigation, basic data access. |
-| TM-20 | Builder | Required as prerequisite (Go evaluation on file). Builder skills are not exercised in this track — TM-40F practitioners consume pre-built products. The TM-20 cert is part of the progression chain to TM-30. |
-| TM-30 | Advanced Builder | Required prerequisite (Go evaluation on file). Advanced builder skills are not exercised in this track. TM-30 completion certifies platform literacy at the level required before WFF track enrollment. |
-| TM-40A | Intelligence WFF | WFF peer track (prereq TM-10 + TM-20 + TM-30). PIR-derived CCIR components feed the Mission Command CCIR dashboard. |
-| TM-40B | Fires WFF | WFF peer track (prereq TM-10 + TM-20 + TM-30). Fires products integrate into the commander's COP and CCIR monitoring. |
-| TM-40C | Movement and Maneuver WFF | WFF peer track (prereq TM-10 + TM-20 + TM-30). Force tracking, route status, and phase line reporting feed the COP. |
-| TM-40D | Sustainment WFF | WFF peer track (prereq TM-10 + TM-20 + TM-30). LOGSTAT feeds commander FFIR thresholds and sustainment picture on the COP. |
-| TM-40E | Protection WFF | WFF peer track (prereq TM-10 + TM-20 + TM-30). Protection data integrates into the COP; CCIR thresholds consume protection status. |
-| TM-40F | Mission Command WFF | This manual. |
-| TM-40G | ORSA | Specialist track (prereq TM-30). Companion. ORSA analysts build quantitative products that TM-40F users receive and brief. |
-| TM-40H | AI Engineer | Specialist track (prereq TM-30). Awareness-level: produces AI-enabled alerts in CCIR monitoring. |
-| TM-40M | ML Engineer | Specialist track (prereq TM-30). Awareness-level: produces predictive products on MSS. |
-| TM-40J | Program Manager | Specialist track (prereq TM-30). PM data feeds readiness and portfolio products consumed by S3. |
-| TM-40K | Knowledge Manager | Specialist track (prereq TM-30). KM maintains information products and lessons learned accessible in MSS. |
-| TM-40L | Software Engineer | Specialist track (prereq TM-30). Builds platform integrations and data pipelines behind TM-40F products. |
-| TM-50G–O | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq TM-40G–O). Not applicable to operational staff. |
+| SL 1 | Maven User | Foundation prerequisite. Platform navigation, basic data access. |
+| SL 2 | Builder | Required as prerequisite (Go evaluation on file). Builder skills are not exercised in this track — SL 4F practitioners consume pre-built products. The SL 2 cert is part of the progression chain to SL 3. |
+| SL 3 | Advanced Builder | Required prerequisite (Go evaluation on file). Advanced builder skills are not exercised in this track. SL 3 completion certifies platform literacy at the level required before WFF track enrollment. |
+| SL 4A | Intelligence WFF | WFF peer track (prereq SL 1 + SL 2 + SL 3). PIR-derived CCIR components feed the Mission Command CCIR dashboard. |
+| SL 4B | Fires WFF | WFF peer track (prereq SL 1 + SL 2 + SL 3). Fires products integrate into the commander's COP and CCIR monitoring. |
+| SL 4C | Movement and Maneuver WFF | WFF peer track (prereq SL 1 + SL 2 + SL 3). Force tracking, route status, and phase line reporting feed the COP. |
+| SL 4D | Sustainment WFF | WFF peer track (prereq SL 1 + SL 2 + SL 3). LOGSTAT feeds commander FFIR thresholds and sustainment picture on the COP. |
+| SL 4E | Protection WFF | WFF peer track (prereq SL 1 + SL 2 + SL 3). Protection data integrates into the COP; CCIR thresholds consume protection status. |
+| SL 4F | Mission Command WFF | This manual. |
+| SL 4G | ORSA | Specialist track (prereq SL 3). Companion. ORSA analysts build quantitative products that SL 4F users receive and brief. |
+| SL 4H | AI Engineer | Specialist track (prereq SL 3). Awareness-level: produces AI-enabled alerts in CCIR monitoring. |
+| SL 4M | ML Engineer | Specialist track (prereq SL 3). Awareness-level: produces predictive products on MSS. |
+| SL 4J | Program Manager | Specialist track (prereq SL 3). PM data feeds readiness and portfolio products consumed by S3. |
+| SL 4K | Knowledge Manager | Specialist track (prereq SL 3). KM maintains information products and lessons learned accessible in MSS. |
+| SL 4L | Software Engineer | Specialist track (prereq SL 3). Builds platform integrations and data pipelines behind SL 4F products. |
+| SL 5G–O | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq SL 4G–O). Not applicable to operational staff. |
 
 ---
 
@@ -466,7 +466,7 @@ The IO Officer maintains IO integration data in the MSS COP. Data domain: IO eve
 
 1. **Enforce data update standards.** The XO holds sections accountable for maintaining their MSS data on schedule. If the S4 LOGSTAT is stale before the BUA, the XO addresses it — not as a platform problem, but as a staff discipline issue.
 2. **Direct battle rhythm synchronization.** The XO reviews the battle rhythm template (Appendix B) and ensures that every recurring event has a designated MSS product and a responsible section. Gaps in the battle rhythm data coverage are a command risk.
-3. **Approve MSS product development requests.** Product development requests (Appendix A, para A-4) that require Builder-level development (TM-20) or C2DAO support are routed through the XO for priority setting before submission. The XO balances competing requests and ensures C2DAO bandwidth is used efficiently.
+3. **Approve MSS product development requests.** Product development requests (Appendix A, para A-4) that require Builder-level development (SL 2) or C2DAO support are routed through the XO for priority setting before submission. The XO balances competing requests and ensures C2DAO bandwidth is used efficiently.
 4. **Conduct monthly MSS data quality review.** The XO leads a monthly (or per operational tempo) review of MSS data quality:
    - Are CCIR thresholds current and aligned to the commander's published CCIRs?
    - Are access lists current? Has the S6 conducted the quarterly access audit?
@@ -1361,8 +1361,8 @@ At corps level, MSS employment emphasizes planning support for complex, multi-di
 - Corps G3 accesses subordinate division MSS workspaces for aggregated readiness, logistics, and assessment data.
 - Corps-level CCIRs are typically multi-echelon and longer-horizon.
 - Planning workspace at corps supports 72-hour to 7-day planning horizons.
-- ORSA staff (TM-40G) integrated with G35 to support COA analysis and quantitative decision products.
-- AI/ML-enabled products (TM-40H, TM-40M) integrated into corps-level predictive assessments.
+- ORSA staff (SL 4G) integrated with G35 to support COA analysis and quantitative decision products.
+- AI/ML-enabled products (SL 4H, SL 4M) integrated into corps-level predictive assessments.
 
 **Corps COP Architecture:**
 - Division-level COPs are visible within the corps COP (federated display).
@@ -1540,7 +1540,7 @@ When MSS connectivity is restored after Level 3 or Level 4 degradation:
 
 ### A-4. MSS Product Development Request Format
 
-Use this format when requesting a new MSS data product from a unit Builder (TM-20 qualified) or C2DAO:
+Use this format when requesting a new MSS data product from a unit Builder (SL 2 qualified) or C2DAO:
 
 ---
 
@@ -1631,15 +1631,15 @@ Instructions:
 | Readiness Trend | 30/90-day readiness trends | S3, XO, Commander | Consumer (read) | S3, S4 | <24 hours (weekly review) |
 | Reporting Workspace (SITREP) | SITREP and reporting product compilation | Battle Captain, S3 | Consumer (read/write) | S3 | Per reporting schedule |
 
-> **NOTE: "Consumer (read)" access means the dashboard is a pre-built product visible to operational staff. Modifying dashboard configuration (adding data sources, changing thresholds, changing layouts) requires Builder access (TM-20 qualified) or coordination with C2DAO.**
+> **NOTE: "Consumer (read)" access means the dashboard is a pre-built product visible to operational staff. Modifying dashboard configuration (adding data sources, changing thresholds, changing layouts) requires Builder access (SL 2 qualified) or coordination with C2DAO.**
 
 ---
 
 ## APPENDIX D — DOCTRINAL REFERENCES QUICK CARD
 
-**Table D-1. Doctrinal References for TM-40F**
+**Table D-1. Doctrinal References for SL 4F**
 
-| Publication | Title | Key Sections | Key Relevance to TM-40F |
+| Publication | Title | Key Sections | Key Relevance to SL 4F |
 |---|---|---|---|
 | ADP 6-0 | Mission Command | Ch.1, para 1-1 (definition), para 1-28 (7 principles); Ch.2, para 2-8 (shared understanding), para 2-17 (CCIR) | 7 principles; shared understanding; commander's intent; disciplined initiative |
 | FM 6-0 (May 2022) | Commander and Staff Organization and Operations | Ch.3 (staff organization S1–S9); Ch.4, para 4-1 (IM definition), para 4-6 (information relevance criteria), para 4-8 (battle rhythm); Ch.5 (CCIRs — PIR, FFIR, EEFI); Ch.12 (decision support) | Staff responsibilities; 6 IM tasks (collect, process, store, display, disseminate, protect); CCIRs; battle rhythm; decision support; information relevance criteria |
@@ -1765,7 +1765,7 @@ Instructions:
 
 ---
 
-*TM-40F — Maven Smart System (MSS): Mission Command Warfighting Function — Intermediate Operator's Manual*
+*SL 4F — Maven Smart System (MSS): Mission Command Warfighting Function — Intermediate Operator's Manual*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 *Version 1.0 | March 2026*
 *Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.*

@@ -1,12 +1,12 @@
 # TM-50L — ADVANCED SOFTWARE ENGINEERING
 
-> **Forward:** TM-50L qualifies senior software engineers to lead MSS application development capability — designing platform architecture, enforcing security at scale, optimizing performance, and governing the technical practices of the USAREUR-AF SWE community.
-> **Prereqs:** TM-40L (Software Engineer) — required. TM-40H (AI Engineer) and TM-40M (ML Engineer) — recommended for integration track engineers. Senior-level Python and TypeScript proficiency required; CONCEPTS_GUIDE_TM50L_SOFTWARE_ENGINEER_ADVANCED (read before this manual).
+> **Forward:** SL 5L qualifies senior software engineers to lead MSS application development capability — designing platform architecture, enforcing security at scale, optimizing performance, and governing the technical practices of the USAREUR-AF SWE community.
+> **Prereqs:** SL 4L (Software Engineer) — required. SL 4H (AI Engineer) and SL 4M (ML Engineer) — recommended for integration track engineers. Senior-level Python and TypeScript proficiency required; CONCEPTS_GUIDE_TM50L_SOFTWARE_ENGINEER_ADVANCED (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
-> **WARNING:** Infrastructure-level errors at TM-50L can corrupt shared platform state, disable access controls for multiple units, and produce data integrity failures that cascade through the entire USAREUR-AF data ecosystem. Engineering discipline at this level is not optional — it is a mission requirement.
+> **WARNING:** Infrastructure-level errors at SL 5L can corrupt shared platform state, disable access controls for multiple units, and produce data integrity failures that cascade through the entire USAREUR-AF data ecosystem. Engineering discipline at this level is not optional — it is a mission requirement.
 > **CAUTION:** Platform SDK credentials with dataset write access are high-privilege operational secrets. Exposure constitutes a security incident. Report immediately to unit S6/G6 and C2DAO. Rotate immediately.
-> **NOTE:** TM-50L tasks are not solo work. Always operate with a second qualified engineer as reviewer. For Ontology branch merges and CBAC policy changes, also require C2DAO sign-off.
+> **NOTE:** SL 5L tasks are not solo work. Always operate with a second qualified engineer as reviewer. For Ontology branch merges and CBAC policy changes, also require C2DAO sign-off.
 
 ---
 
@@ -14,13 +14,13 @@
 
 ### 1-1. Advanced Software Engineer Manual
 
-**BLUF:** TM-50L qualifies senior software engineers to lead MSS application development capability — designing platform architecture, enforcing security at scale, optimizing performance, and governing the technical practices of the USAREUR-AF SWE community.
+**BLUF:** SL 5L qualifies senior software engineers to lead MSS application development capability — designing platform architecture, enforcing security at scale, optimizing performance, and governing the technical practices of the USAREUR-AF SWE community.
 
-This manual builds directly on TM-40L. It does not repeat TM-40L content. If a concept was covered in TM-40L, this manual references it and extends it. Engineers who have not completed TM-40L will lack the foundational context required for TM-50L tasks.
+This manual builds directly on SL 4L. It does not repeat SL 4L content. If a concept was covered in SL 4L, this manual references it and extends it. Engineers who have not completed SL 4L will lack the foundational context required for SL 5L tasks.
 
-TM-50L scope:
+SL 5L scope:
 
-| Domain | TM-40L Baseline | TM-50L Extension |
+| Domain | SL 4L Baseline | SL 5L Extension |
 |---|---|---|
 | Platform SDK | Dataset read/write, transaction management | Infrastructure integrations at scale, branch automation, bulk operations |
 | Performance | Writing functional queries | Query profiling, caching architecture, indexing strategy, compute cost management |
@@ -29,11 +29,11 @@ TM-50L scope:
 | DevSecOps | CI/CD for code repos | Full DevSecOps pipeline: Ontology CI, automated security scanning, ATO support |
 | Leadership | Individual contributor | Architecture review, code standards, developer onboarding, platform governance |
 
-### 1-2. The TM-50L Role in USAREUR-AF
+### 1-2. The SL 5L Role in USAREUR-AF
 
-USAREUR-AF spans III Corps, V Corps, 21st TSC, 7th ATC, 10th AAMDC, 56th MDC-E, SETAF-AF, G2/G3/G6 staff, and coalition partners across the European and African AOR. MSS supports this entire enterprise. The TM-50L engineer is responsible not for a single application but for the health and capability of the entire SWE layer.
+USAREUR-AF spans III Corps, V Corps, 21st TSC, 7th ATC, 10th AAMDC, 56th MDC-E, SETAF-AF, G2/G3/G6 staff, and coalition partners across the European and African AOR. MSS supports this entire enterprise. The SL 5L engineer is responsible not for a single application but for the health and capability of the entire SWE layer.
 
-**TM-50L responsibilities in the data chain:**
+**SL 5L responsibilities in the data chain:**
 
 ```
 MISSION REQUIREMENT
@@ -45,7 +45,7 @@ MISSION REQUIREMENT
    tenant boundaries)
         |
         v
-  TM-50L SENIOR SWE         <- You are here
+  SL 5L SENIOR SWE         <- You are here
   (Platform architecture,
    reusable components,
    performance governance,
@@ -53,12 +53,12 @@ MISSION REQUIREMENT
    SWE community leadership)
         |
         v
-  TM-40L SWE TEAM           <- Your developers
+  SL 4L SWE TEAM           <- Your developers
   (OSDK apps, FOO, Workshop/OSDK-external,
    integrations, CI/CD)
         |
         v
-  TM-30 / TM-40G/H/M        <- Builders and analysts
+  SL 3 / SL 4G/H/M        <- Builders and analysts
   (Ontology design,
    pipelines, AI/ML)
         |
@@ -67,32 +67,32 @@ MISSION REQUIREMENT
   (Commanders, staff, EUCOM)
 ```
 
-TM-50L engineers are force multipliers. One senior engineer enabling ten TM-40L developers to build correctly produces ten times the correct output. One senior engineer who builds solo produces one application. Lead.
+SL 5L engineers are force multipliers. One senior engineer enabling ten SL 4L developers to build correctly produces ten times the correct output. One senior engineer who builds solo produces one application. Lead.
 
-### 1-2A. Relationship to Other TM-50 Publications
+### 1-2A. Relationship to Other SL 5 Publications
 
-| Publication | Track | Key Overlap with TM-50L |
+| Publication | Track | Key Overlap with SL 5L |
 |---|---|---|
-| TM-50G | ORSA Advanced | Platform infrastructure supporting analytical pipelines |
-| TM-50H | AI Engineer Advanced | OSDK integration with AI systems (Chapters 2, 7) |
-| TM-50M | ML Engineer Advanced | ML model-serving integrations; feature pipeline infrastructure |
-| TM-50J | Program Manager Advanced | Platform engineering program coordination; SWE team structure |
-| TM-50K | Knowledge Manager Advanced | Platform SDK patterns for KM system backends |
-| TM-50L | Software Engineer Advanced | THIS DOCUMENT |
-| TM-50N | UI/UX Designer Advanced | Frontend design collaboration; design system implementation |
-| TM-50O | Platform Engineer Advanced | Platform/application boundary; DevOps collaboration; deployment targets |
+| SL 5G | ORSA Advanced | Platform infrastructure supporting analytical pipelines |
+| SL 5H | AI Engineer Advanced | OSDK integration with AI systems (Chapters 2, 7) |
+| SL 5M | ML Engineer Advanced | ML model-serving integrations; feature pipeline infrastructure |
+| SL 5J | Program Manager Advanced | Platform engineering program coordination; SWE team structure |
+| SL 5K | Knowledge Manager Advanced | Platform SDK patterns for KM system backends |
+| SL 5L | Software Engineer Advanced | THIS DOCUMENT |
+| SL 5N | UI/UX Designer Advanced | Frontend design collaboration; design system implementation |
+| SL 5O | Platform Engineer Advanced | Platform/application boundary; DevOps collaboration; deployment targets |
 
-**WFF Operational Consumer Note.** The software infrastructure built by TM-50L engineers is the delivery layer for capabilities consumed by all six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). WFF practitioners access MSS data through Workshop applications, OSDK dashboards, and API integrations that TM-50L engineers architect and govern. Platform reliability, security, and performance are not abstract engineering concerns — they directly determine whether WFF staff sections can access the operational picture they need at the moment they need it.
+**WFF Operational Consumer Note.** The software infrastructure built by SL 5L engineers is the delivery layer for capabilities consumed by all six Warfighting Function (WFF) tracks: Intelligence (SL 4A), Fires (SL 4B), Movement and Maneuver (SL 4C), Sustainment (SL 4D), Protection (SL 4E), and Mission Command (SL 4F). WFF practitioners access MSS data through Workshop applications, OSDK dashboards, and API integrations that SL 5L engineers architect and govern. Platform reliability, security, and performance are not abstract engineering concerns — they directly determine whether WFF staff sections can access the operational picture they need at the moment they need it.
 
 ### 1-3. Prerequisites
 
 | Prerequisite | Verification Method |
 |---|---|
-| TM-40L (Software Engineer) | Demonstrated proficiency: OSDK Python + TypeScript, Platform SDK, FOO, Workshop/OSDK-external apps, CI/CD, CBAC in apps |
+| SL 4L (Software Engineer) | Demonstrated proficiency: OSDK Python + TypeScript, Platform SDK, FOO, Workshop/OSDK-external apps, CI/CD, CBAC in apps |
 
 > **NOTE:** Slate is Foundry's legacy application builder and is no longer the recommended path for new development. Use Workshop for internal Foundry applications, or OSDK-backed external applications for public-facing deployments.
-| TM-40H (AI Engineer) | Recommended — required for engineers in the integration/AI pipeline track |
-| TM-40M (ML Engineer) | Recommended — required for engineers supporting ML model serving integrations |
+| SL 4H (AI Engineer) | Recommended — required for engineers in the integration/AI pipeline track |
+| SL 4M (ML Engineer) | Recommended — required for engineers supporting ML model serving integrations |
 | Senior Python | Async concurrency, profiling, memory management, packaging, type-checked codebases |
 | Senior TypeScript | Advanced generics, module federation, build optimization, strict mode |
 | Distributed systems | Event-driven architecture, eventual consistency, back-pressure, idempotency |
@@ -131,11 +131,11 @@ Chapters 2–5 are technical reference and task chapters. Each section follows t
 
 Chapter 6 (DevSecOps) and Chapter 7 (Security Assessment) require coordination with C2DAO before execution. Do not begin security assessment activities without written authorization.
 
-Chapter 8 (Platform Leadership) is reference and guidance — not task-based. It describes how TM-50L engineers operate in the leadership role.
+Chapter 8 (Platform Leadership) is reference and guidance — not task-based. It describes how SL 5L engineers operate in the leadership role.
 
 Appendices A and B are operational references used during code review and ATO support activities.
 
-> **NOTE:** Cross-references to TM-40H (AI Engineer) and TM-40M (ML Engineer) appear throughout. These are coordination points, not redundant content. When building systems that span multiple technical domains, engage the relevant TM-40-series engineers — do not attempt to own all domains as a single SWE.
+> **NOTE:** Cross-references to SL 4H (AI Engineer) and SL 4M (ML Engineer) appear throughout. These are coordination points, not redundant content. When building systems that span multiple technical domains, engage the relevant SL 4-series engineers — do not attempt to own all domains as a single SWE.
 
 ---
 
@@ -143,11 +143,11 @@ Appendices A and B are operational references used during code review and ATO su
 
 ### 2-1. Scope of This Chapter
 
-**BLUF:** The Platform SDK at TM-50L level goes beyond dataset read/write. This chapter covers infrastructure-level operations: bulk dataset management at scale, branch automation, transaction patterns for high-throughput ingestion, dataset lineage management, and the operational patterns required to manage a production MSS data environment programmatically.
+**BLUF:** The Platform SDK at SL 5L level goes beyond dataset read/write. This chapter covers infrastructure-level operations: bulk dataset management at scale, branch automation, transaction patterns for high-throughput ingestion, dataset lineage management, and the operational patterns required to manage a production MSS data environment programmatically.
 
 > **NOTE — Palantir Developers reference:** *Deep Dive: Code-Based AI Development with Ontology* — Covers code-based development patterns that extend traditional OSDK and Platform SDK usage into AI-integrated workflows, relevant to senior SWEs designing infrastructure that supports AI engineer and ML engineer deliverables. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
-TM-40L covered Platform SDK fundamentals: authenticating, reading datasets, writing transactions, accessing file resources. This chapter extends to infrastructure-level use cases that arise when managing the platform at scale.
+SL 4L covered Platform SDK fundamentals: authenticating, reading datasets, writing transactions, accessing file resources. This chapter extends to infrastructure-level use cases that arise when managing the platform at scale.
 
 > **NOTE:** Platform SDK operations at this level can affect shared infrastructure. Bulk deletes, branch merges, and large transaction writes should always be tested in a development or staging environment before execution against production. Coordinate all production operations with C2DAO.
 
@@ -367,7 +367,7 @@ SCHEMA MIGRATION PROCEDURE:
 
 **2-3c. Dataset Lineage Management**
 
-TM-50L engineers are responsible for maintaining accurate lineage metadata for datasets they manage. Lineage is not optional — it is required for ATO continuous monitoring and for debugging data quality incidents.
+SL 5L engineers are responsible for maintaining accurate lineage metadata for datasets they manage. Lineage is not optional — it is required for ATO continuous monitoring and for debugging data quality incidents.
 
 ```python
 def register_dataset_lineage(
@@ -914,7 +914,7 @@ def analyze_query_performance(
 
 **PROCEDURE:**
 1. Identify high-cost patterns using the principles table below.
-2. For full-scan transforms, convert to `@incremental` with watermarks — see TM-40H.
+2. For full-scan transforms, convert to `@incremental` with watermarks — see SL 4H.
 3. For on-demand aggregations, pre-materialize results in a scheduled transform (see example below).
 4. Identify and consolidate redundant transforms computing the same output.
 5. Switch transform schedules from fixed-interval to event-triggered where source data changes are detectable.
@@ -924,7 +924,7 @@ def analyze_query_performance(
 
 | Pattern | Impact | Mitigation |
 |---|---|---|
-| Full dataset scan on each transform run | High CPU/IO | Use @incremental transforms with watermarks — see TM-40H |
+| Full dataset scan on each transform run | High CPU/IO | Use @incremental transforms with watermarks — see SL 4H |
 | FOO property recomputed on every object fetch | High CPU per query | Pre-materialize frequently-used computed properties |
 | On-demand aggregation across millions of objects | High memory/CPU | Pre-aggregate in scheduled transform; serve pre-aggregated results |
 | Redundant transforms (multiple pipelines recomputing the same output) | Wasted compute | Identify shared compute; consolidate to single canonical transform |
@@ -969,9 +969,9 @@ def compute_readiness_summary(raw: DataFrame) -> DataFrame:
 
 **CONDITIONS:** A production MSS application is underperforming. You need to systematically diagnose the bottleneck and document findings for C2DAO review.
 
-**STANDARDS:** Profiling is performed in development or staging — never in production without C2DAO authorization. Findings are documented in a performance incident report. Proposed fixes are reviewed by a second TM-50L engineer before production deployment.
+**STANDARDS:** Profiling is performed in development or staging — never in production without C2DAO authorization. Findings are documented in a performance incident report. Proposed fixes are reviewed by a second SL 5L engineer before production deployment.
 
-**EQUIPMENT:** Python `cProfile`, `pstats`, `io` modules; development or staging MSS environment with representative data volume; performance incident report template (see below); second TM-50L engineer for review.
+**EQUIPMENT:** Python `cProfile`, `pstats`, `io` modules; development or staging MSS environment with representative data volume; performance incident report template (see below); second SL 5L engineer for review.
 
 **PROCEDURE — Performance profiling workflow:**
 
@@ -1036,7 +1036,7 @@ PROPOSED FIX:
 RISK ASSESSMENT:
 [Impact of proposed fix on other consumers / tenants]
 
-REVIEWER: [Second TM-50L engineer]
+REVIEWER: [Second SL 5L engineer]
 C2DAO COORDINATION: [Ticket ID if production change required]
 ```
 
@@ -1080,7 +1080,7 @@ MSS multi-tenancy is implemented through a combination of:
 | Ontology Visibility Rules | Which Object Types are visible to which users | C2DAO / Builders |
 | Service Account Scoping | Which datasets/objects a service account can access | C2DAO |
 
-TM-50L engineers do not own CBAC schema — that is C2DAO. TM-50L engineers design applications that correctly consume and enforce the CBAC model.
+SL 5L engineers do not own CBAC schema — that is C2DAO. SL 5L engineers design applications that correctly consume and enforce the CBAC model.
 
 **Tenant boundary model:**
 
@@ -1853,7 +1853,7 @@ class FoundryKinesisIngester:
 
 ### 5-6. Advanced UDRA Implementation: Computational Governance as Code
 
-**BLUF:** UDRA v1.1 mandates that data governance move from manual policy enforcement to computational governance — standards as code, policies as code, and incentives as code. The TM-50L SWE implements this by embedding Policy Decision Points (PDPs) and Policy Enforcement Points (PEPs) directly into pipeline architecture.
+**BLUF:** UDRA v1.1 mandates that data governance move from manual policy enforcement to computational governance — standards as code, policies as code, and incentives as code. The SL 5L SWE implements this by embedding Policy Decision Points (PDPs) and Policy Enforcement Points (PEPs) directly into pipeline architecture.
 
 A **PDP** evaluates a governance rule against the current context (user identity, data classification, action requested) and returns an allow/deny decision. A **PEP** intercepts data flow at a pipeline boundary and enforces the PDP's decision. Every external integration point (Chapter 5), every tenant boundary (Chapter 4), and every deployment promotion (Chapter 6) is a candidate PEP location.
 
@@ -1861,7 +1861,7 @@ A **PDP** evaluates a governance rule against the current context (user identity
 
 ### 5-7. DDIL-Resilient Pipeline Design
 
-Deployed MSS nodes must operate in Denied, Degraded, Intermittent, and Limited (DDIL) bandwidth environments. The TM-50L SWE designs pipelines that degrade gracefully when connectivity to the primary Foundry environment is lost. Source: Army Data Plan SO 6; UDRA Appendix E.
+Deployed MSS nodes must operate in Denied, Degraded, Intermittent, and Limited (DDIL) bandwidth environments. The SL 5L SWE designs pipelines that degrade gracefully when connectivity to the primary Foundry environment is lost. Source: Army Data Plan SO 6; UDRA Appendix E.
 
 **Store-and-forward:** Edge nodes queue pipeline outputs locally when upstream connectivity is unavailable. On reconnection, queued outputs transmit in order with deduplication at the receiving end (content hash or idempotency key). Design pipelines so that every output record is idempotent — re-processing the same input produces the same output without side effects.
 
@@ -1869,7 +1869,7 @@ Deployed MSS nodes must operate in Denied, Degraded, Intermittent, and Limited (
 
 **Graceful degradation:** Define explicit degradation tiers for each pipeline: Tier 1 (full connectivity — normal operation), Tier 2 (intermittent — batch sync at reduced frequency), Tier 3 (denied — local-only operation with queued outputs). Each tier has defined behavior; pipelines must not fail silently when connectivity degrades.
 
-> **NOTE — Zero trust architecture alignment:** UDRA mandates Attribute-Based Access Control (ABAC) for all data access, with encryption at rest, in motion, and in use, per DoD Zero Trust Strategy and NIST 800-39/800-37. The TM-50L SWE ensures that PDP/PEP enforcement (Section 5-6) aligns with zero trust principles: no implicit trust based on network location, every access request authenticated and authorized at the PDP, all data encrypted across every pipeline boundary. DDIL-resilient pipelines (Section 5-7) must maintain zero trust enforcement even when operating in degraded mode — store-and-forward queues encrypt data at rest, and reconnection re-authenticates before transmitting queued outputs.
+> **NOTE — Zero trust architecture alignment:** UDRA mandates Attribute-Based Access Control (ABAC) for all data access, with encryption at rest, in motion, and in use, per DoD Zero Trust Strategy and NIST 800-39/800-37. The SL 5L SWE ensures that PDP/PEP enforcement (Section 5-6) aligns with zero trust principles: no implicit trust based on network location, every access request authenticated and authorized at the PDP, all data encrypted across every pipeline boundary. DDIL-resilient pipelines (Section 5-7) must maintain zero trust enforcement even when operating in degraded mode — store-and-forward queues encrypt data at rest, and reconnection re-authenticates before transmitting queued outputs.
 
 ---
 
@@ -1881,7 +1881,7 @@ Deployed MSS nodes must operate in Denied, Degraded, Intermittent, and Limited (
 
 > **NOTE — Palantir Developers reference:** *Product Launch: Developer Experience | DevCon 5* — Covers developer experience improvements announced at DevCon 5, including toolchain enhancements relevant to CI/CD pipeline setup and the DevSecOps workflow described in this chapter. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
-TM-40L covered CI/CD fundamentals. This chapter covers the full DevSecOps pipeline: security scanning, Ontology CI, automated testing at scale, ATO-supporting artifact generation, and the governance processes that connect technical practices to the RMF/ATO lifecycle.
+SL 4L covered CI/CD fundamentals. This chapter covers the full DevSecOps pipeline: security scanning, Ontology CI, automated testing at scale, ATO-supporting artifact generation, and the governance processes that connect technical practices to the RMF/ATO lifecycle.
 
 ### 6-2. CI/CD Pipeline Architecture for MSS
 
@@ -1907,7 +1907,7 @@ CI PIPELINE (automated):
   8. Artifact generation (see 6-5 for ATO artifacts)
   |
   v (all gates pass)
-CODE REVIEW (second TM-50L engineer)
+CODE REVIEW (second SL 5L engineer)
   |
   v
 STAGING BRANCH PROMOTION
@@ -2263,7 +2263,7 @@ ENTRYPOINT ["python", "-m", "src.main"]
 
 ### 7-1. Scope of This Chapter
 
-**BLUF:** TM-50L engineers are responsible for the security posture of MSS applications. This chapter covers OWASP-based secure code review in the Foundry context, secrets management, injection prevention, input validation, and authorized penetration testing patterns.
+**BLUF:** SL 5L engineers are responsible for the security posture of MSS applications. This chapter covers OWASP-based secure code review in the Foundry context, secrets management, injection prevention, input validation, and authorized penetration testing patterns.
 
 > **WARNING: Security assessment activities (penetration testing, vulnerability scanning, active probing) require written authorization from C2DAO and the USAREUR-AF ISSM before execution. Unauthorized security testing against MSS constitutes a computer security incident regardless of intent. Obtain authorization in writing before any assessment activity.**
 
@@ -2577,11 +2577,11 @@ class TestCBACBoundaries:
 
 ### 8-1. Scope of This Chapter
 
-**BLUF:** TM-50L engineers are not just senior individual contributors. They lead the MSS SWE community — defining standards, conducting architecture reviews, onboarding developers, managing technical debt, and maintaining the platform's engineering health. This chapter covers the leadership responsibilities of the TM-50L role.
+**BLUF:** SL 5L engineers are not just senior individual contributors. They lead the MSS SWE community — defining standards, conducting architecture reviews, onboarding developers, managing technical debt, and maintaining the platform's engineering health. This chapter covers the leadership responsibilities of the SL 5L role.
 
 ### 8-2. Architecture Review
 
-**CONDITIONS:** A TM-40L developer or team proposes a new MSS application, integration, or significant change to an existing system.
+**CONDITIONS:** A SL 4L developer or team proposes a new MSS application, integration, or significant change to an existing system.
 
 **STANDARDS:** All new MSS applications and major changes undergo architecture review before development begins. Architecture review is documented. Findings are resolved before development proceeds. Review covers security, performance, multi-tenancy, and maintainability.
 
@@ -2595,7 +2595,7 @@ class TestCBACBoundaries:
 | **Multi-tenancy** | Does this system serve multiple tenants? How is isolation enforced — CBAC, service accounts, code? What happens if isolation fails? |
 | **Performance** | What is the expected query volume? Are there N+1 risks? What is the caching strategy? What is the performance SLA? How was it validated? |
 | **External integrations** | What external systems are connected? How are failures handled? Is the integration idempotent? Has C2DAO authorized the integration? |
-| **Maintainability** | Can a new TM-40L developer understand and maintain this without the original author? Are abstractions well-chosen? Is the test coverage plan realistic? |
+| **Maintainability** | Can a new SL 4L developer understand and maintain this without the original author? Are abstractions well-chosen? Is the test coverage plan realistic? |
 | **Operability** | How will failures be detected? What monitoring and alerting is in place? What is the runbook for common failure modes? |
 | **ATO impact** | Does this change affect the ATO boundary? Does it introduce new data flows, new integrations, or new access patterns that require ATO amendment? |
 
@@ -2633,9 +2633,9 @@ C2DAO Coordination: [TICKET ID or N/A]
 
 ### 8-3. Code Review Standards
 
-**CONDITIONS:** You are conducting code review for a TM-40L developer's pull request.
+**CONDITIONS:** You are conducting code review for a SL 4L developer's pull request.
 
-**STANDARDS:** All code merged to staging or production branches has been reviewed by a TM-50L engineer. Review is substantive — not a rubber stamp. Security findings are blocking. Performance findings are blocking if exceeding defined thresholds. Findings are documented, not just verbally communicated.
+**STANDARDS:** All code merged to staging or production branches has been reviewed by a SL 5L engineer. Review is substantive — not a rubber stamp. Security findings are blocking. Performance findings are blocking if exceeding defined thresholds. Findings are documented, not just verbally communicated.
 
 **EQUIPMENT:** Repository pull request interface (Foundry Code Repositories or equivalent); Appendix A code review checklist; access to the application's architecture documentation and test results.
 
@@ -2663,7 +2663,7 @@ C2DAO Coordination: [TICKET ID or N/A]
 
 ### 8-4. Developer Onboarding
 
-**CONDITIONS:** A new TM-40L engineer joins the MSS SWE team. You are responsible for onboarding them to team standards and the MSS environment.
+**CONDITIONS:** A new SL 4L engineer joins the MSS SWE team. You are responsible for onboarding them to team standards and the MSS environment.
 
 **STANDARDS:** New engineers can independently build and deploy an MSS application within 30 days of onboarding. Onboarding covers security, tooling, platform access, and team standards. Onboarding is documented — not ad hoc.
 
@@ -2673,14 +2673,14 @@ C2DAO Coordination: [TICKET ID or N/A]
 
 | Week | Activities | Validation |
 |---|---|---|
-| Week 1 | TM-40L review (if not current); C2DAO credentialing; development environment setup; repository access; pre-commit hook installation | Can connect to dev MSS, run test suite |
-| Week 2 | Codebase walkthrough with TM-50L mentor; first PR (small change) reviewed by TM-50L | First merged PR |
-| Week 3 | Assigned first independent task with TM-50L review; security training (Appendix A checklist walkthrough) | Task completed, security checklist reviewed |
+| Week 1 | SL 4L review (if not current); C2DAO credentialing; development environment setup; repository access; pre-commit hook installation | Can connect to dev MSS, run test suite |
+| Week 2 | Codebase walkthrough with SL 5L mentor; first PR (small change) reviewed by SL 5L | First merged PR |
+| Week 3 | Assigned first independent task with SL 5L review; security training (Appendix A checklist walkthrough) | Task completed, security checklist reviewed |
 | Week 4 | Architecture review participation (as observer); deployment to staging via CI pipeline | Attended architecture review; deployed to staging independently |
 
 ### 8-5. Technical Debt Management
 
-MSS applications accrue technical debt. Left unmanaged, debt degrades platform reliability and makes future development harder. TM-50L engineers are responsible for tracking and managing debt on systems they own.
+MSS applications accrue technical debt. Left unmanaged, debt degrades platform reliability and makes future development harder. SL 5L engineers are responsible for tracking and managing debt on systems they own.
 
 **Technical debt categories:**
 
@@ -2695,7 +2695,7 @@ MSS applications accrue technical debt. Left unmanaged, debt degrades platform r
 
 **TECHNICAL DEBT REGISTER**
 
-**System:** [NAME] &nbsp;|&nbsp; **Last updated:** [DATE] &nbsp;|&nbsp; **Owner:** [TM-50L engineer]
+**System:** [NAME] &nbsp;|&nbsp; **Last updated:** [DATE] &nbsp;|&nbsp; **Owner:** [SL 5L engineer]
 
 | ID | Category | Description | Impact | Est. Effort | Target Qtr | Status |
 |----|----------|-------------|--------|-------------|------------|--------|
@@ -2704,11 +2704,11 @@ MSS applications accrue technical debt. Left unmanaged, debt degrades platform r
 
 ### 8-6. Platform Governance
 
-TM-50L engineers participate in MSS platform governance — the process by which the SWE community, C2DAO, and stakeholders make decisions about platform direction, standards, and investments.
+SL 5L engineers participate in MSS platform governance — the process by which the SWE community, C2DAO, and stakeholders make decisions about platform direction, standards, and investments.
 
 **Platform governance responsibilities:**
 
-| Activity | Frequency | TM-50L Role |
+| Activity | Frequency | SL 5L Role |
 |---|---|---|
 | SWE community sync | Monthly | Present, vote on standards changes, raise architectural concerns |
 | C2DAO coordination | As needed | Represent SWE requirements; provide technical input on CBAC and infrastructure decisions |
@@ -2832,11 +2832,11 @@ Use this checklist for every pull request review on MSS application code.
 
 ### B-1. Overview
 
-The Authority to Operate (ATO) process under RMF (NIST SP 800-37) requires technical documentation of security controls for MSS applications. TM-50L engineers are primary contributors to ATO packages for systems they build and own. This appendix describes the artifacts TM-50L engineers are responsible for producing.
+The Authority to Operate (ATO) process under RMF (NIST SP 800-37) requires technical documentation of security controls for MSS applications. SL 5L engineers are primary contributors to ATO packages for systems they build and own. This appendix describes the artifacts SL 5L engineers are responsible for producing.
 
-> **NOTE:** The ISSM and C2DAO lead the ATO process. TM-50L engineers do not own the ATO — they provide technical evidence and documentation. Coordinate with the ISSM before beginning ATO documentation work to ensure artifacts meet current RMF requirements.
+> **NOTE:** The ISSM and C2DAO lead the ATO process. SL 5L engineers do not own the ATO — they provide technical evidence and documentation. Coordinate with the ISSM before beginning ATO documentation work to ensure artifacts meet current RMF requirements.
 
-### B-2. TM-50L-Owned ATO Artifacts
+### B-2. SL 5L-Owned ATO Artifacts
 
 | Artifact | Description | RMF Control Families |
 |---|---|---|
@@ -2877,7 +2877,7 @@ For each significant data flow:
 
 ### B-5. Continuous Monitoring Contributions
 
-ATO is not a one-time event — it requires continuous monitoring. TM-50L engineers support continuous monitoring by:
+ATO is not a one-time event — it requires continuous monitoring. SL 5L engineers support continuous monitoring by:
 
 - Running automated dependency vulnerability scans (pip-audit, npm audit) monthly. Document findings. Remediate within SLA (Critical: 30 days, High: 60 days, Medium: 90 days).
 - Running SAST on every code change (CI pipeline). Document unresolved findings with risk acceptance.
@@ -2979,7 +2979,7 @@ v1.0 - [DATE] - Initial version
 
 ---
 
-*TM-50L — ADVANCED SOFTWARE ENGINEERING — MAVEN SMART SYSTEM*
+*SL 5L — ADVANCED SOFTWARE ENGINEERING — MAVEN SMART SYSTEM*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA*
 *Wiesbaden, Germany — 2026*
 *Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.*

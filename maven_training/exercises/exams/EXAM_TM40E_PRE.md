@@ -1,12 +1,12 @@
-# PRE-TEST — TM-40E: PROTECTION
+# PRE-TEST — SL 4E: PROTECTION
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40E: Protection WFF Track |
+| **Course** | SL 4E: Protection WFF Track |
 | **Form** | Pre-Test |
-| **Level** | TM-40E (WFF Track) |
-| **Audience** | Force protection officers, CBRN officers, provost marshal staff, G2/S2 force protection analysts; prerequisite: TM-10 + TM-20 + TM-30 complete |
+| **Level** | SL 4E (WFF Track) |
+| **Audience** | Force protection officers, CBRN officers, provost marshal staff, G2/S2 force protection analysts; prerequisite: SL 1 + SL 2 + SL 3 complete |
 | **Time Allowed** | 20 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

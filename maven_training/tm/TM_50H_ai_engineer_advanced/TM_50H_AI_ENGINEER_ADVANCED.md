@@ -1,12 +1,12 @@
 # TM-50H — ADVANCED AI ENGINEERING
 
-> **Forward:** TM-50H qualifies senior AI engineers to architect, govern, and lead enterprise AI capability development on the Maven Smart System. The focus is on systems — multi-agent pipelines, advanced retrieval architectures, domain-adapted models, adversarial resilience, and the governance structures that make AI trustworthy at operational scale.
+> **Forward:** SL 5H qualifies senior AI engineers to architect, govern, and lead enterprise AI capability development on the Maven Smart System. The focus is on systems — multi-agent pipelines, advanced retrieval architectures, domain-adapted models, adversarial resilience, and the governance structures that make AI trustworthy at operational scale.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: THIS MANUAL CONTAINS ADVANCED TECHNIQUES INCLUDING ADVERSARIAL AI TESTING,
 > **WARNING: AI-GENERATED OUTPUTS ARE NOT AUTHORITATIVE. NO OUTPUT FROM ANY SYSTEM BUILT
 > **CAUTION: Fine-tuned models trained on operational corpora retain information from training
-> **NOTE:** TM-40H is a hard prerequisite. CONCEPTS_GUIDE_TM50H_AI_ENGINEER_ADVANCED (read before this manual). TM-50H does not re-teach AIP Logic, Agent Studio,
+> **NOTE:** SL 4H is a hard prerequisite. CONCEPTS_GUIDE_TM50H_AI_ENGINEER_ADVANCED (read before this manual). SL 5H does not re-teach AIP Logic, Agent Studio,
 
 ## Table of Contents
 
@@ -26,7 +26,7 @@
 
 ## CHAPTER 1 — INTRODUCTION AND SCOPE
 
-**BLUF:** TM-50H qualifies senior AI engineers to architect, govern, and lead enterprise AI
+**BLUF:** SL 5H qualifies senior AI engineers to architect, govern, and lead enterprise AI
 capability development on the Maven Smart System. The focus is on systems — multi-agent
 pipelines, advanced retrieval architectures, domain-adapted models, adversarial resilience,
 and the governance structures that make AI trustworthy at operational scale.
@@ -36,17 +36,17 @@ and the governance structures that make AI trustworthy at operational scale.
 ### 1-1. Advanced AI Engineer Manual
 
 1-1. This manual trains and qualifies personnel to design and lead AI engineering capability
-at the enterprise level on MSS. Personnel completing TM-50H are expected to serve as technical
+at the enterprise level on MSS. Personnel completing SL 5H are expected to serve as technical
 leads, architecture reviewers, and AI capability owners — not just individual contributors.
 
-1-2. TM-50H builds directly on TM-40H. The distinction is architectural scope. Where TM-40H
-teaches you to build an AIP Logic workflow, TM-50H teaches you to design the system of workflows.
-Where TM-40H covers a single RAG pipeline, TM-50H covers hybrid retrieval architectures, corpus
-quality evaluation, re-ranking, and end-to-end evaluation pipelines. Where TM-40H covers
-deploying an agent, TM-50H covers orchestrating fleets of agents with shared state, circuit
+1-2. SL 5H builds directly on SL 4H. The distinction is architectural scope. Where SL 4H
+teaches you to build an AIP Logic workflow, SL 5H teaches you to design the system of workflows.
+Where SL 4H covers a single RAG pipeline, SL 5H covers hybrid retrieval architectures, corpus
+quality evaluation, re-ranking, and end-to-end evaluation pipelines. Where SL 4H covers
+deploying an agent, SL 5H covers orchestrating fleets of agents with shared state, circuit
 breakers, and failure isolation.
 
-1-3. TM-50H covers the following subject areas:
+1-3. SL 5H covers the following subject areas:
 
 | Chapter | Subject                                           | Primary Audience              |
 |---------|---------------------------------------------------|-------------------------------|
@@ -58,9 +58,9 @@ breakers, and failure isolation.
 | 7       | Multi-Modal AI Systems                            | AI Engineer, AI Architect     |
 | 8       | Enterprise AI Architecture and Governance         | AI Capability Lead, C2DAO     |
 
-1-4. TM-40M (ML Engineer) is the recommended companion publication. Fine-tuning (Chapter 3)
+1-4. SL 4M (ML Engineer) is the recommended companion publication. Fine-tuning (Chapter 3)
 and observability (Chapter 6) have significant overlap with MLOps infrastructure covered in
-TM-40M. Where TM-50H addresses the AI engineering perspective, TM-40M addresses the model
+SL 4M. Where SL 5H addresses the AI engineering perspective, SL 4M addresses the model
 training infrastructure perspective. Senior practitioners should be familiar with both.
 
 ---
@@ -84,7 +84,7 @@ DoD RAIMTF requirements (2024), Army CIO Memo (April 2024), and USAREUR-AF C2DAO
 Document accountability. Own the AI production readiness gate for your domain.
 
 **Team Leadership.** Conduct architecture reviews. Establish team coding and evaluation
-standards. Onboard and mentor TM-40H engineers. Review pull requests and promote quality.
+standards. Onboard and mentor SL 4H engineers. Review pull requests and promote quality.
 
 1-7. The senior AI engineer does not operate without oversight. Every AI capability at this
 level requires a named product owner who has accepted documented risk, a data steward who
@@ -93,26 +93,26 @@ of these three elements is missing, the capability does not go to production.
 
 ---
 
-### 1-3. Relationship to Other TM-50 Publications
+### 1-3. Relationship to Other SL 5 Publications
 
-1-8. TM-50 publications cover the advanced tier for each specialized track:
+1-8. SL 5 publications cover the advanced tier for each specialized track:
 
-| Publication | Track                          | Key Overlap with TM-50H                         |
+| Publication | Track                          | Key Overlap with SL 5H                         |
 |-------------|--------------------------------|-------------------------------------------------|
-| TM-50G      | ORSA Advanced                  | Evaluation methodology (Chapter 4, 6)           |
-| TM-50H      | AI Engineer Advanced           | THIS DOCUMENT                                   |
-| TM-50M      | ML Engineer Advanced           | Fine-tuning infrastructure (Chapter 3)          |
-| TM-50J      | Program Manager Advanced       | AI governance and acquisition (Chapter 8)       |
-| TM-50K      | Knowledge Manager Advanced     | Corpus design and ontology-RAG integration (Ch4)|
-| TM-50L      | Software Engineer Advanced     | OSDK integration with AI systems (Ch2, Ch7)     |
-| TM-50N      | UI/UX Designer Advanced        | UI/UX for AI-driven applications; model output presentation |
-| TM-50O      | Platform Engineer Advanced     | Infrastructure for AI/ML workloads; GPU provisioning; deployment pipelines |
+| SL 5G      | ORSA Advanced                  | Evaluation methodology (Chapter 4, 6)           |
+| SL 5H      | AI Engineer Advanced           | THIS DOCUMENT                                   |
+| SL 5M      | ML Engineer Advanced           | Fine-tuning infrastructure (Chapter 3)          |
+| SL 5J      | Program Manager Advanced       | AI governance and acquisition (Chapter 8)       |
+| SL 5K      | Knowledge Manager Advanced     | Corpus design and ontology-RAG integration (Ch4)|
+| SL 5L      | Software Engineer Advanced     | OSDK integration with AI systems (Ch2, Ch7)     |
+| SL 5N      | UI/UX Designer Advanced        | UI/UX for AI-driven applications; model output presentation |
+| SL 5O      | Platform Engineer Advanced     | Infrastructure for AI/ML workloads; GPU provisioning; deployment pipelines |
 
 1-9. Cross-references to companion publications appear throughout this manual with the notation
-`[→ TM-40M]` or `[→ TM-50M]`. These are not optional references — senior AI engineers are
+`[→ SL 4M]` or `[→ SL 5M]`. These are not optional references — senior AI engineers are
 expected to coordinate with counterparts in those tracks, not work in isolation.
 
-1-10. **WFF Operational Consumer Note.** The six Warfighting Function (WFF) tracks — Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F) — are the primary operational consumers of AI-enabled capabilities built by TM-50H engineers. WFF practitioners use AI-generated products to support intelligence synthesis, targeting, logistics optimization, force protection analysis, and command decision support. When designing AI systems, TM-50H engineers must understand the WFF workflows the system will be embedded in: who uses the output, under what time pressure, and what decision it supports.
+1-10. **WFF Operational Consumer Note.** The six Warfighting Function (WFF) tracks — Intelligence (SL 4A), Fires (SL 4B), Movement and Maneuver (SL 4C), Sustainment (SL 4D), Protection (SL 4E), and Mission Command (SL 4F) — are the primary operational consumers of AI-enabled capabilities built by SL 5H engineers. WFF practitioners use AI-generated products to support intelligence synthesis, targeting, logistics optimization, force protection analysis, and command decision support. When designing AI systems, SL 5H engineers must understand the WFF workflows the system will be embedded in: who uses the output, under what time pressure, and what decision it supports.
 
 ---
 
@@ -162,7 +162,7 @@ AI agents in coordinated operation.
 
 ### 2-1. Overview of Multi-Agent Architecture
 
-2-1. A single AIP Logic workflow — as covered in TM-40H — routes a prompt through a defined
+2-1. A single AIP Logic workflow — as covered in SL 4H — routes a prompt through a defined
 sequence of steps: context retrieval, prompt construction, LLM inference, output handling.
 This model works well for bounded tasks: summarize this SITREP, classify this document,
 generate this report section.
@@ -640,7 +640,7 @@ Only a small set of adapter parameters are trained; base model weights are froze
 Low-Rank Adaptation (LoRA) trains rank-decomposition matrices inserted at specific
 transformer layers. Requires significantly less compute, reduces catastrophic forgetting
 risk, and the adapter can be applied on top of the base model at inference time.
-**This is the recommended approach for MSS fine-tuning projects.** [→ TM-50M for
+**This is the recommended approach for MSS fine-tuning projects.** [→ SL 5M for
 infrastructure implementation]
 
 3-8. LoRA configuration selection guide:
@@ -738,7 +738,7 @@ USAREUR-AF operational use cases.
 
 ### 4-1. Limitations of Baseline RAG
 
-4-1. TM-40H covers basic RAG: chunk documents, embed with a vector model, store in a vector
+4-1. SL 4H covers basic RAG: chunk documents, embed with a vector model, store in a vector
 index, retrieve top-k by cosine similarity, inject into prompt context. This approach fails
 predictably in several operational scenarios:
 
@@ -1361,7 +1361,7 @@ case library; red-team report template; C2DAO authorization documentation.
 
 ### 5-12. Advanced PED-to-Pipeline Doctrine Integration
 
-**BLUF:** TM-40H established PED-to-pipeline mapping and UDRA governance. TM-50H extends these concepts into multi-source data fusion for AI training, adversarial ML defense, and model drift monitoring as continuous assessment — applying established Army doctrine to AI engineering problems.
+**BLUF:** SL 4H established PED-to-pipeline mapping and UDRA governance. SL 5H extends these concepts into multi-source data fusion for AI training, adversarial ML defense, and model drift monitoring as continuous assessment — applying established Army doctrine to AI engineering problems.
 
 #### 5-12a. Multi-Source Data Fusion for AI Training Data (FM 2-0)
 
@@ -1467,7 +1467,7 @@ signal of impending output quality degradation.
 
 6-7. Implement a weekly input distribution report that summarizes top query clusters
 and flags emerging query types with no corresponding corpus coverage. Review this report
-with the corpus manager (typically the Knowledge Manager, → TM-50K) to drive corpus
+with the corpus manager (typically the Knowledge Manager, → SL 5K) to drive corpus
 updates.
 
 ---
@@ -1491,7 +1491,7 @@ coverage degradation. Alert if rate exceeds 10% of queries in any 24-hour window
 
 **Corpus freshness audit.** Quarterly audit of the retrieval corpus: identify any documents
 older than 12 months, cross-reference against the publication registry to identify superseded
-publications, and remove or update stale content. [→ TM-50K for corpus governance procedures]
+publications, and remove or update stale content. [→ SL 5K for corpus governance procedures]
 
 ---
 
@@ -2208,7 +2208,7 @@ current, and be maintained in the C2DAO AI System Registry:
 ### 8-7. Leading AI Capability Development: Standards and Reviews
 
 8-13. The senior AI engineer leads the team, not just the code. Key leadership
-responsibilities at the TM-50H level:
+responsibilities at the SL 5H level:
 
 **Code and Prompt Review.** Review all production-bound prompts and AIP Logic workflow
 configurations for: safety compliance, output validation logic, circuit breakers, and
@@ -2294,7 +2294,7 @@ dashboard for the system under review; evaluation report; red-team report.
 > - AIP Logic execution in classified enclaves
 > - Edge deployment for tactical operations
 >
-> Verify current availability in your MSS environment before designing workflows that depend on local inference. For DDIL data operations (non-AI), see TM-30 § 1-10e.
+> Verify current availability in your MSS environment before designing workflows that depend on local inference. For DDIL data operations (non-AI), see SL 3 § 1-10e.
 >
 > *Source: Palantir Developer Community — [Local Inference for DDIL / Classified](https://community.palantir.com/t/local-inference-connector-for-aip-logic-ddil-classified-data-use-cases/6146) — feature may be beta; confirm with Palantir support.*
 
@@ -2607,10 +2607,10 @@ shared state across agents in a workflow, providing persistence and audit trail.
 
 ---
 
-*TM-50H, Advanced AI Engineering, Maven Smart System, USAREUR-AF Operational Data Team.*
+*SL 5H, Advanced AI Engineering, Maven Smart System, USAREUR-AF Operational Data Team.*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026.*
 
-*PREREQUISITE: TM-40H, AI Engineer. Cross-references: TM-40M, ML Engineer; TM-50M, ML Engineer Advanced; TM-50K, Knowledge Manager Advanced; TM-50L, Software Engineer Advanced.*
+*PREREQUISITE: SL 4H, AI Engineer. Cross-references: SL 4M, ML Engineer; SL 5M, ML Engineer Advanced; SL 5K, Knowledge Manager Advanced; SL 5L, Software Engineer Advanced.*
 
 **DoD and Army Strategic References:**
 

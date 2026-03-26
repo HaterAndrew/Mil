@@ -1,10 +1,10 @@
-# ENVIRONMENT SETUP — EX_50J Advanced Program Manager (TM-50J)
+# ENVIRONMENT SETUP — EX_50J Advanced Program Manager (SL 5J)
 
 **Companion resources:** TM_50J_PROGRAM_MANAGER_ADVANCED.md | SYLLABUS_TM50J | EXAM_TM50J_POST
 
 ## Environment Type
 
-MSS Workshop (standard PM access). This is the least technically complex of the TM-50 exercises — no Code Workspace, no Pipeline Builder, no GPU allocation required. The exercise is a product and decision-making exercise, not a technical build exercise. Confirm Workshop access only.
+MSS Workshop (standard PM access). This is the least technically complex of the SL 5 exercises — no Code Workspace, no Pipeline Builder, no GPU allocation required. The exercise is a product and decision-making exercise, not a technical build exercise. Confirm Workshop access only.
 
 ## Required Access
 
@@ -77,7 +77,7 @@ Evaluators record task Go/No-Go on standard EX_50J Evaluation Form (available fr
 
 ## Notes
 
-- This is the only TM-50 exercise that does not require Code Workspace or GPU allocation — it is a product-and-decision exercise
+- This is the only SL 5 exercise that does not require Code Workspace or GPU allocation — it is a product-and-decision exercise
 - If the evaluator is not available for Task 4 (10-minute verbal brief), an asynchronous written response may substitute, but the live Q&A component is strongly preferred
-- The portfolio candidates are calibrated for approximately 90 minutes of analysis work at the TM-50J level; if a participant completes Task 1 in under 60 minutes, probe depth of the framework scoring before awarding Go
-- The "planted issues" in the dashboard are designed to test the skills explicitly taught in TM-50J (program health dashboard standards, distribution controls) — they should not be trivially obvious on first view
+- The portfolio candidates are calibrated for approximately 90 minutes of analysis work at the SL 5J level; if a participant completes Task 1 in under 60 minutes, probe depth of the framework scoring before awarding Go
+- The "planted issues" in the dashboard are designed to test the skills explicitly taught in SL 5J (program health dashboard standards, distribution controls) — they should not be trivially obvious on first view

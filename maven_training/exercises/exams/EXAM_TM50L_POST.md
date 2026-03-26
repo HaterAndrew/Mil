@@ -1,12 +1,12 @@
-# POST-TEST — TM-50L: ADVANCED SOFTWARE ENGINEER
+# POST-TEST — SL 5L: ADVANCED SOFTWARE ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-50L: Advanced Software Engineer |
+| **Course** | SL 5L: Advanced Software Engineer |
 | **Form** | Post-Test |
-| **Level** | TM-50L (Advanced Specialist) |
-| **Audience** | Senior SWEs / platform architects / tech leads; prerequisite: TM-40L + production MSS SWE experience |
+| **Level** | SL 5L (Advanced Specialist) |
+| **Audience** | Senior SWEs / platform architects / tech leads; prerequisite: SL 4L + production MSS SWE experience |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (42/60) |
 
@@ -22,14 +22,14 @@ This assessment evaluates mastery of course learning objectives. A passing score
 
 *Circle the letter of the best answer. (2 points each)*
 
-**1. A junior engineer on your team proposes bypassing CBAC on a staging tenant "just until the sprint demo is done" because the test data setup is taking too long. Per TM-50L, your response is:**
+**1. A junior engineer on your team proposes bypassing CBAC on a staging tenant "just until the sprint demo is done" because the test data setup is taking too long. Per SL 5L, your response is:**
 
 A. Allow it for the staging environment only — CBAC bypass is acceptable in non-production tenants
 B. Allow it if the data steward approves it in writing for the duration of the sprint
 C. Reject the bypass without exception — CBAC bypass is NEVER acceptable in any environment; the correct fix is to set up properly scoped test data for each tenant
 D. Allow it with a formal risk acceptance signed by the tech lead
 
-**2. The Platform SDK credentials used for an automated ingestion pipeline are discovered in a commit to the team's Git repository. Per TM-50L, the IMMEDIATE required actions are:**
+**2. The Platform SDK credentials used for an automated ingestion pipeline are discovered in a commit to the team's Git repository. Per SL 5L, the IMMEDIATE required actions are:**
 
 A. Delete the commit and rebase history to remove the credentials; notify the team to pull the latest branch
 B. Report the exposure as a security incident immediately, rotate the credentials, audit the access log for any unauthorized use during the exposure window, and investigate how the credentials reached the repository
@@ -40,10 +40,10 @@ D. Assess the repository's access permissions — if only cleared team members h
 
 A. That the change has been approved by the program manager
 B. That no existing downstream OSDK queries, Action validators, TypeScript FOOs, or Pipeline Builder pipelines will break due to the schema change — specifically checking for removed or renamed properties that are referenced downstream
-C. That the change was authored by a TM-50L qualified engineer
+C. That the change was authored by a SL 5L qualified engineer
 D. That the change passes SAST scanning for security vulnerabilities
 
-**4. Per TM-50L, a C2DAO sign-off is required for which of the following operations?**
+**4. Per SL 5L, a C2DAO sign-off is required for which of the following operations?**
 
 A. Adding a new Widget to a Workshop application
 B. Deploying a new Contour analysis to the production project
@@ -71,31 +71,31 @@ B. The cache is pre-populated at application startup with all expected queries
 C. On a cache miss, the application fetches from the Ontology, populates the cache, and serves the result; on cache hit, the application serves from cache without querying the Ontology
 D. Writes invalidate the cache asynchronously after the database write completes
 
-**8. An external Army logistics system will push real-time supply requisition data via gRPC to a USAREUR-AF MSS ingestion endpoint. Before the external feed is activated in production, which step is required per TM-50L?**
+**8. An external Army logistics system will push real-time supply requisition data via gRPC to a USAREUR-AF MSS ingestion endpoint. Before the external feed is activated in production, which step is required per SL 5L?**
 
 A. A load test demonstrating the endpoint can handle peak message volume
 B. A data steward review confirming the Ontology schema can accommodate the new data fields
 C. A GO-level authorization memorandum approving the external integration
 D. A security review of the external data feed — validating data provenance, input schema, and ensuring that untrusted external data is validated and sanitized before entering the Foundry Ontology
 
-**9. Performance profiling of a production Foundry environment per TM-50L requires:**
+**9. Performance profiling of a production Foundry environment per SL 5L requires:**
 
 A. Running profiling queries directly against the production Ontology without restriction — performance data is non-sensitive
 B. Using only pre-approved profiling queries from the USAREUR-AF approved query library
 C. Coordination with the C2DAO data steward before running profiling queries in production — resource-intensive profiling can degrade platform performance for operational users
 D. Conducting all profiling during off-peak hours without additional coordination
 
-**10. A TM-50L security assessment of a Slate application reveals that a user-supplied unit designation string is interpolated directly into an Ontology Object filter query without sanitization. This is classified as:**
+**10. A SL 5L security assessment of a Slate application reveals that a user-supplied unit designation string is interpolated directly into an Ontology Object filter query without sanitization. This is classified as:**
 
 A. An informational finding — TypeScript type safety prevents this from being exploitable
 B. A critical injection vulnerability — unsanitized user input in query logic can alter query behavior, potentially exposing records outside the user's authorized scope
 C. A medium-severity finding — Ontology queries are parameterized by the OSDK and not directly injectable
 D. A low-severity finding — the application is only accessible to cleared users who would not attempt injection
 
-**11. The TM-50L peer review requirement for all platform-level work mandates that the reviewer must be:**
+**11. The SL 5L peer review requirement for all platform-level work mandates that the reviewer must be:**
 
 A. Any engineer on the team who did not author the code
-B. A second TM-50L qualified engineer — the complexity of platform-level CBAC configurations, Ontology CI changes, and SDK integrations requires reviewer expertise at the same qualification level
+B. A second SL 5L qualified engineer — the complexity of platform-level CBAC configurations, Ontology CI changes, and SDK integrations requires reviewer expertise at the same qualification level
 C. The tech lead, regardless of their TM qualification level
 D. An engineer from outside the team to prevent conflict of interest
 
@@ -113,14 +113,14 @@ B. Acceptable if all automated quality checks pass — this is the purpose of br
 C. Acceptable for dataset branches; non-compliant only for Ontology schema branches
 D. Acceptable if the pipeline is designated as low-risk by the data steward
 
-**14. When onboarding a new TM-40L engineer to the platform, the FIRST topic to cover per TM-50L onboarding standards is:**
+**14. When onboarding a new SL 4L engineer to the platform, the FIRST topic to cover per SL 5L onboarding standards is:**
 
 A. The OSDK authentication pattern and ResourceIterator pagination
 B. The Ontology CI pipeline and how to run it locally
 C. The C2DAO branch workflow and promotion requirements
 D. CBAC configuration, tenant isolation architecture, and the absolute prohibition on CBAC bypass — because a misunderstanding of tenant isolation is the failure mode with the highest potential for irreversible data exposure harm
 
-**15. A platform architecture review reveals that two separate MSS programs are querying the same large Vehicle Object set independently, each running full-table scans 12 times per day. The correct TM-50L architectural recommendation is:**
+**15. A platform architecture review reveals that two separate MSS programs are querying the same large Vehicle Object set independently, each running full-table scans 12 times per day. The correct SL 5L architectural recommendation is:**
 
 A. Implement a shared caching layer (or a pre-computed Foundry dataset view) that both programs consume — eliminating redundant full-table scans and reducing platform load
 B. Migrate both programs to use gRPC instead of the OSDK for better query performance
@@ -153,7 +153,7 @@ D. Reduce each program's query frequency to 6 times per day as a rate-limiting m
 
 &nbsp;
 
-**SA-3. A senior engineer submits a pull request that modifies the CBAC policy for the 1st Armored Division tenant — expanding read access to a new set of Object Types. Describe the complete review and approval process required before this change can merge to production, citing all required TM-50L governance steps.**
+**SA-3. A senior engineer submits a pull request that modifies the CBAC policy for the 1st Armored Division tenant — expanding read access to a new set of Object Types. Describe the complete review and approval process required before this change can merge to production, citing all required SL 5L governance steps.**
 
 &nbsp;
 
@@ -173,7 +173,7 @@ D. Reduce each program's query frequency to 6 times per day as a rate-limiting m
 
 &nbsp;
 
-**SA-5. Three months after a new Platform SDK-based pipeline went into production, a data steward reports that the 1st Cavalry Division's Vehicle readiness data briefly appeared in a query run by a 3rd Armored Brigade Combat Team analyst who should not have access. Conduct a root-cause analysis: what failure controls should have caught this, what is the most likely architectural cause, and describe the remediation and reporting steps required under TM-50L.**
+**SA-5. Three months after a new Platform SDK-based pipeline went into production, a data steward reports that the 1st Cavalry Division's Vehicle readiness data briefly appeared in a query run by a 3rd Armored Brigade Combat Team analyst who should not have access. Conduct a root-cause analysis: what failure controls should have caught this, what is the most likely architectural cause, and describe the remediation and reporting steps required under SL 5L.**
 
 &nbsp;
 
@@ -212,7 +212,7 @@ Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
 8. D — Security review of external data feed required (provenance, schema, input validation) before activation.
 9. C — Production profiling requires C2DAO data steward coordination to prevent degrading operational users.
 10. B — Critical injection vulnerability — unsanitized user input in query logic can expose unauthorized records.
-11. B — Peer reviewer must be TM-50L qualified to review platform-level CBAC, Ontology CI, and SDK integrations.
+11. B — Peer reviewer must be SL 5L qualified to review platform-level CBAC, Ontology CI, and SDK integrations.
 12. A — AR 25-2 (Army Cybersecurity) governs protection from unauthorized data access; cross-tenant bleed = violation.
 13. A — Branch merges to production require C2DAO human sign-off — not automated regardless of check results.
 14. D — CBAC and tenant isolation first — highest potential harm from misunderstanding; CBAC bypass can expose operational data irreversibly.
@@ -224,11 +224,11 @@ SA-1. Full credit: methodology — (1) SAST: run static analysis on the TypeScri
 
 SA-2. Full credit: ingestion protocol — gRPC (high-throughput, low-latency; 30K records/min requires binary serialization); buffering/batching — consumer buffers incoming events into batches of configurable size (e.g., 1,000 records or 5 seconds, whichever comes first); transaction pattern — each batch written as an atomic Foundry write transaction; Kinesis/stream checkpoint advanced only after successful commit — if transaction fails, batch is retried without data loss; input validation — all incoming records validated against a strict schema (required fields, type checks, value range checks) BEFORE being included in the write transaction; records that fail validation are routed to an error queue for investigation rather than dropped silently or written; preventing Ontology corruption — schema validation layer between stream consumer and Foundry write; no external field passes directly into the Ontology without explicit type-checked mapping. All five components required for full credit.
 
-SA-3. Full credit: required steps in order — (1) CBAC policy changes require peer review by a second TM-50L qualified engineer (not just any reviewer); (2) the second TM-50L engineer reviews the policy change for correctness and potential cross-tenant exposure risk; (3) submit a C2DAO branch for the CBAC change with a complete description of what access is being expanded, why, and what data is now accessible; (4) C2DAO data steward reviews the CBAC change independently — this is a separate human sign-off from the peer review; (5) data steward approves the branch merge; (6) after merge, verify the CBAC change in staging by confirming that (a) the intended access is now permitted and (b) access that should remain restricted is still denied; (7) document the change in the access control configuration log. All seven steps required; peer review by TM-50L qualified engineer and C2DAO sign-off are both mandatory.
+SA-3. Full credit: required steps in order — (1) CBAC policy changes require peer review by a second SL 5L qualified engineer (not just any reviewer); (2) the second SL 5L engineer reviews the policy change for correctness and potential cross-tenant exposure risk; (3) submit a C2DAO branch for the CBAC change with a complete description of what access is being expanded, why, and what data is now accessible; (4) C2DAO data steward reviews the CBAC change independently — this is a separate human sign-off from the peer review; (5) data steward approves the branch merge; (6) after merge, verify the CBAC change in staging by confirming that (a) the intended access is now permitted and (b) access that should remain restricted is still denied; (7) document the change in the access control configuration log. All seven steps required; peer review by SL 5L qualified engineer and C2DAO sign-off are both mandatory.
 
 SA-4. Full credit: pipeline stages — (1) Linting and format check: ensures code conforms to platform style standards; blocking: any lint error; (2) SAST scan: static analysis for security vulnerabilities (injection, hardcoded secrets, broad permissions); blocking: any HIGH or CRITICAL finding; (3) Unit tests: validates individual functions and modules; blocking: any test failure; (4) Ontology schema compatibility check: validates that renamed or removed properties are not referenced by any downstream consumer (OSDK query, Action validator, FOO, Pipeline Builder); blocking: any breaking schema change without migration path; (5) Integration tests: validates end-to-end behavior in a staging environment with scoped test data; blocking: any test failure or CBAC misconfiguration detected; (6) Security scan for dependency vulnerabilities: checks package dependencies for known CVEs; blocking: any CRITICAL CVE in a direct dependency; (7) C2DAO promotion review (human step): data steward reviews change description and approves merge. All stages with tools and blocking criteria required; human C2DAO step must be identified as the final gate.
 
-SA-5. Full credit: root cause analysis — most likely architectural cause: CBAC policy misconfiguration — either the 1st Cavalry Division data does not have a `owning_unit` attribute set correctly, or the 3rd ABCT user's CBAC policy was configured with an overly broad grant; failed controls: (1) CBAC configuration peer review by second TM-50L engineer should have caught the overly broad policy; (2) Ontology CI should include a CBAC policy test that validates out-of-scope access is denied; (3) staging environment access testing should have verified cross-tenant isolation before production deployment; remediation steps: (1) immediately audit the CBAC configuration and restrict access to correct scope; (2) audit the access log for the full exposure window to determine what data was accessed and by whom; (3) report the incident through the security incident reporting process (AR 25-2 requires reporting of unauthorized access); (4) notify the 1st Cavalry Division data owner of the exposure; (5) fix the CBAC policy with C2DAO sign-off; (6) add a regression test to Ontology CI that validates this specific cross-tenant boundary. Must include exposure audit, security incident report requirement, and regression test addition.
+SA-5. Full credit: root cause analysis — most likely architectural cause: CBAC policy misconfiguration — either the 1st Cavalry Division data does not have a `owning_unit` attribute set correctly, or the 3rd ABCT user's CBAC policy was configured with an overly broad grant; failed controls: (1) CBAC configuration peer review by second SL 5L engineer should have caught the overly broad policy; (2) Ontology CI should include a CBAC policy test that validates out-of-scope access is denied; (3) staging environment access testing should have verified cross-tenant isolation before production deployment; remediation steps: (1) immediately audit the CBAC configuration and restrict access to correct scope; (2) audit the access log for the full exposure window to determine what data was accessed and by whom; (3) report the incident through the security incident reporting process (AR 25-2 requires reporting of unauthorized access); (4) notify the 1st Cavalry Division data owner of the exposure; (5) fix the CBAC policy with C2DAO sign-off; (6) add a regression test to Ontology CI that validates this specific cross-tenant boundary. Must include exposure audit, security incident report requirement, and regression test addition.
 
 ---
 

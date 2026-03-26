@@ -1,4 +1,4 @@
-# ENVIRONMENT SETUP — EX_50G Advanced ORSA (TM-50G)
+# ENVIRONMENT SETUP — EX_50G Advanced ORSA (SL 5G)
 
 **Companion resources:** TM_50G_ORSA_ADVANCED.md | SYLLABUS_TM50G | EXAM_TM50G_POST
 
@@ -108,6 +108,6 @@ Evaluators record task Go/No-Go on standard EX_50G Evaluation Form (available fr
 ## Notes
 
 - GPU allocation is required for MCMC sampling (Task 1 with pymc); CPU-only sampling may time out on the 90-day dataset at full MCMC
-- The peer review notebook errors are calibrated at the level a TM-50G-qualified analyst should catch; do not hint at error locations during the exercise
+- The peer review notebook errors are calibrated at the level a SL 5G-qualified analyst should catch; do not hint at error locations during the exercise
 - If the training environment does not support Code Workspace with Python on exercise day, postpone — there is no viable substitution for this exercise
 - All datasets are entirely synthetic; field names mirror operational schemas for training realism but contain no actual LOGSTAT or operational data

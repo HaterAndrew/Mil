@@ -1,8 +1,8 @@
-# CONCEPTS GUIDE — TM-40O COMPANION — PLATFORM ENGINEER · MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 4O COMPANION — PLATFORM ENGINEER · MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** The Platform Engineer builds the floor that every other track stands on. When the platform works, nobody notices. When it fails, everybody stops.
-> **Purpose:** Develops mental models required to design, operate, and secure infrastructure for MSS. Read before beginning TM-40O task instruction.
-> **Prereqs:** TM-30 REQUIRED (and TM-10 + TM-20 implied). Kubernetes and Linux administration experience recommended.
+> **Purpose:** Develops mental models required to design, operate, and secure infrastructure for MSS. Read before beginning SL 4O task instruction.
+> **Prereqs:** SL 3 REQUIRED (and SL 1 + SL 2 implied). Kubernetes and Linux administration experience recommended.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -15,24 +15,24 @@
 
 | Tier | Designation | Platform Relationship |
 |------|-------------|----------------------|
-| TM-10 | Maven User | End user — consumes applications running on the platform |
-| TM-20 | Builder | Builds on Workshop — platform provides the runtime |
-| TM-30 | Advanced Builder | Builds pipelines — platform provides compute and orchestration |
-| TM-40L | Software Engineer | Writes application code — platform provides CI/CD, deployment, runtime |
-| TM-40N | UI/UX Designer | Designs applications — platform defines performance/deployment constraints |
-| TM-40H/M | AI/ML Engineer | Trains and deploys models — platform provides GPU compute, serving infrastructure |
-| TM-40O | **Platform Engineer** | **Builds and operates the infrastructure all others depend on** |
+| SL 1 | Maven User | End user — consumes applications running on the platform |
+| SL 2 | Builder | Builds on Workshop — platform provides the runtime |
+| SL 3 | Advanced Builder | Builds pipelines — platform provides compute and orchestration |
+| SL 4L | Software Engineer | Writes application code — platform provides CI/CD, deployment, runtime |
+| SL 4N | UI/UX Designer | Designs applications — platform defines performance/deployment constraints |
+| SL 4H/M | AI/ML Engineer | Trains and deploys models — platform provides GPU compute, serving infrastructure |
+| SL 4O | **Platform Engineer** | **Builds and operates the infrastructure all others depend on** |
 
 The Platform Engineer's distinguishing criterion: you own the systems that other people's code runs on. When a SWE's application fails, the SWE fixes the application. When the platform fails, every application fails. Platform failures are simultaneous, cross-cutting, and high-blast-radius.
 
 **Platform Engineer boundaries (owned by others):**
-- Application code — TM-40L
-- Application design — TM-40N
-- Data modeling and pipeline logic — TM-30, TM-40H
-- ML model architecture — TM-40M
+- Application code — SL 4L
+- Application design — SL 4N
+- Data modeling and pipeline logic — SL 3, SL 4H
+- ML model architecture — SL 4M
 - Foundry-native platform administration — Palantir (vendor-managed)
 
-The boundary is clear: the Platform Engineer owns the infrastructure around Foundry, not Foundry itself. Kubernetes clusters, CI/CD pipelines, container registries, monitoring stacks, and the deployment toolchain — these are TM-40O territory.
+The boundary is clear: the Platform Engineer owns the infrastructure around Foundry, not Foundry itself. Kubernetes clusters, CI/CD pipelines, container registries, monitoring stacks, and the deployment toolchain — these are SL 4O territory.
 
 ---
 
@@ -51,7 +51,7 @@ The boundary is clear: the Platform Engineer owns the infrastructure around Foun
 | "Security is a gate at the end" | "Security is embedded in every stage" |
 
 **Who is your user?**
-The Platform Engineer's primary users are application developers (TM-40L, TM-30). Secondary users are data engineers (TM-40H, TM-40M) and the security team (ISSM). Design the platform to serve these users — measure success by their productivity, not by infrastructure uptime alone.
+The Platform Engineer's primary users are application developers (SL 4L, SL 3). Secondary users are data engineers (SL 4H, SL 4M) and the security team (ISSM). Design the platform to serve these users — measure success by their productivity, not by infrastructure uptime alone.
 
 ---
 

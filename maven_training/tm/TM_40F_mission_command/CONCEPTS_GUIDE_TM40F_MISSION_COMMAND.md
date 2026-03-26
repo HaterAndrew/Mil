@@ -1,8 +1,8 @@
-# CONCEPTS GUIDE — TM-40F COMPANION — MISSION COMMAND WARFIGHTING FUNCTION · MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 4F COMPANION — MISSION COMMAND WARFIGHTING FUNCTION · MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** MSS does not change the nature of Mission Command. It changes the speed, fidelity, and integration of the information that supports it. The seven principles of Mission Command remain doctrinal constants. The information environment in which those principles are exercised has changed fundamentally.
-> **Prereqs:** TM-10, TM-20, and TM-30 (all required for track entry). Read this Concepts Guide before beginning TM-40F task instruction.
-> **Purpose:** This guide develops the operational mental models required to effectively integrate MSS into Mission Command functions. It is a prerequisite companion to TM-40F and must be read before beginning TM-40F task instruction. This guide is conceptual — it develops understanding, not procedures. No step-by-step tasks appear here.
+> **Prereqs:** SL 1, SL 2, and SL 3 (all required for track entry). Read this Concepts Guide before beginning SL 4F task instruction.
+> **Purpose:** This guide develops the operational mental models required to effectively integrate MSS into Mission Command functions. It is a prerequisite companion to SL 4F and must be read before beginning SL 4F task instruction. This guide is conceptual — it develops understanding, not procedures. No step-by-step tasks appear here.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -75,7 +75,7 @@ Overstated: treating MSS data as a sufficient basis for operational decisions �
 
 Data-informed Mission Command means: commanders and staffs use integrated, current, analytically assessed data as one input among several to operational decisions. Other inputs include commander experience, tacit knowledge about unit and personnel factors that no data system captures, political and institutional context, and the commander's judgment about risk. MSS improves one category of input. It does not reduce the others.
 
-The Mission Command practitioner who understands this distinction will use MSS confidently — neither dismissing its capabilities nor overrelying on its outputs. That balance is the professional competency TM-40F develops.
+The Mission Command practitioner who understands this distinction will use MSS confidently — neither dismissing its capabilities nor overrelying on its outputs. That balance is the professional competency SL 4F develops.
 
 > **VIGNETTE:** During a brigade-level WAREX at Grafenwoehr, the brigade S3 built a readiness synchronization dashboard in MSS that consolidated all battalion readiness, equipment status, and training completion data into a single Workshop view. The CG and S3 used it daily for planning. Battalion S3s, however, had not been given access or training on the dashboard — they continued submitting manual readiness reports by email. At a planning meeting, the brigade S3 referenced readiness numbers that differed from what a battalion S3 had just reported. The discrepancy traced to a two-day ingestion lag in one data source — which the brigade S3 was unaware of because no one had validated it. The fix required a data quality correction, two hours of revalidation, and a delayed planning decision. The root cause was not technical — it was the lack of a shared understanding process that included subordinate sections in the same MSS environment their higher headquarters was using. After the exercise, the brigade established a shared MSS orientation requirement for all battalion S3s before the next major exercise.
 
@@ -129,7 +129,7 @@ Static planning data is a snapshot: the readiness report from last Tuesday, the 
 
 MSS planning data is current: the readiness status from this morning's GCSS-Army feed, the logistics posture updated from the last transmission cycle, personnel accountability from the most recent IPPS-A transaction. The gap between data currency and planning reality is compressed.
 
-This creates a practical planning discipline shift. Staffs accustomed to static data build buffers and margins to account for data staleness — a readiness estimate might carry a 10% degradation assumption to account for the lag between the last report and current reality. With live MSS data, that buffer can be reduced — but not eliminated. Understanding the ingestion lag for each MSS data source, and accounting for it in planning assumptions, is a Mission Command practitioner skill that TM-40F develops.
+This creates a practical planning discipline shift. Staffs accustomed to static data build buffers and margins to account for data staleness — a readiness estimate might carry a 10% degradation assumption to account for the lag between the last report and current reality. With live MSS data, that buffer can be reduced — but not eliminated. Understanding the ingestion lag for each MSS data source, and accounting for it in planning assumptions, is a Mission Command practitioner skill that SL 4F develops.
 
 ### 2-5. MDMP and MSS — Accelerating the Planning Cycle
 
@@ -463,7 +463,7 @@ Mission Command practitioners must apply data presentation discipline to every p
 
 **Why it happens:** Initial platform rollouts designate one technical point of contact, and broader training never follows.
 
-**Correction:** All staff section chiefs and senior NCOs require baseline MSS proficiency (TM-10 minimum). Distribute the capability.
+**Correction:** All staff section chiefs and senior NCOs require baseline MSS proficiency (SL 1 minimum). Distribute the capability.
 
 ### 7-5. Failure Mode: Treating MSS as the Single Source of Truth
 
@@ -518,7 +518,7 @@ Before using MSS data to support a commander brief or assessment, confirm each i
 
 ---
 
-*This guide is a prerequisite companion to TM-40F. Proceed to TM-40F for task-based instruction in MSS integration within the Mission Command warfighting function.*
+*This guide is a prerequisite companion to SL 4F. Proceed to SL 4F for task-based instruction in MSS integration within the Mission Command warfighting function.*
 
 ---
 
@@ -526,35 +526,35 @@ Before using MSS data to support a commander brief or assessment, confirm each i
 
 ### WFF Peer Tracks
 
-All six WFF tracks are at the same tier. Mission Command is the integrating WFF — TM-40F practitioners receive and present data products from all five peer WFF tracks on the COP and CCIR dashboard.
+All six WFF tracks are at the same tier. Mission Command is the integrating WFF — SL 4F practitioners receive and present data products from all five peer WFF tracks on the COP and CCIR dashboard.
 
 | Track | Title | Prereq | Relationship to Mission Command WFF |
 |-------|-------|--------|-------------------------------------|
-| TM-40A | Intelligence WFF | TM-10 + TM-20 + TM-30 | PIR-derived CCIR components; INTSUM feeds the intelligence picture on the COP |
-| TM-40B | Fires WFF | TM-10 + TM-20 + TM-30 | Fires products integrate into the CCIR dashboard; FSCM overlays on the COP |
-| TM-40C | Movement and Maneuver WFF | TM-10 + TM-20 + TM-30 | Force tracking, phase lines, objectives — the ground maneuver layer of the COP |
-| TM-40D | Sustainment WFF | TM-10 + TM-20 + TM-30 | LOGSTAT feeds commander FFIR thresholds; sustainment picture on the COP |
-| TM-40E | Protection WFF | TM-10 + TM-20 + TM-30 | Protection status integrates into the COP; CCIR thresholds consume protection data |
-| TM-40F | Mission Command WFF | TM-10 + TM-20 + TM-30 | This track |
+| SL 4A | Intelligence WFF | SL 1 + SL 2 + SL 3 | PIR-derived CCIR components; INTSUM feeds the intelligence picture on the COP |
+| SL 4B | Fires WFF | SL 1 + SL 2 + SL 3 | Fires products integrate into the CCIR dashboard; FSCM overlays on the COP |
+| SL 4C | Movement and Maneuver WFF | SL 1 + SL 2 + SL 3 | Force tracking, phase lines, objectives — the ground maneuver layer of the COP |
+| SL 4D | Sustainment WFF | SL 1 + SL 2 + SL 3 | LOGSTAT feeds commander FFIR thresholds; sustainment picture on the COP |
+| SL 4E | Protection WFF | SL 1 + SL 2 + SL 3 | Protection status integrates into the COP; CCIR thresholds consume protection data |
+| SL 4F | Mission Command WFF | SL 1 + SL 2 + SL 3 | This track |
 
-### Specialist Tracks (Prerequisite: TM-30)
+### Specialist Tracks (Prerequisite: SL 3)
 
-For technical specialists producing products that Mission Command practitioners consume, specialist tracks are available after completing TM-30.
+For technical specialists producing products that Mission Command practitioners consume, specialist tracks are available after completing SL 3.
 
 | Track | Title |
 |-------|-------|
-| TM-40G | ORSA (→ TM-50G) |
-| TM-40H | AI Engineer (→ TM-50H) |
-| TM-40M | ML Engineer (→ TM-50M) |
-| TM-40J | Program Manager (→ TM-50J) |
-| TM-40K | Knowledge Manager (→ TM-50K) |
-| TM-40L | Software Engineer (→ TM-50L) |
-| TM-40N | UI/UX Designer (→ TM-50N) |
-| TM-40O | Platform Engineer (→ TM-50O) |
+| SL 4G | ORSA (→ SL 5G) |
+| SL 4H | AI Engineer (→ SL 5H) |
+| SL 4M | ML Engineer (→ SL 5M) |
+| SL 4J | Program Manager (→ SL 5J) |
+| SL 4K | Knowledge Manager (→ SL 5K) |
+| SL 4L | Software Engineer (→ SL 5L) |
+| SL 4N | UI/UX Designer (→ SL 5N) |
+| SL 4O | Platform Engineer (→ SL 5O) |
 
 ---
 
-> **NOTE — New Doctrine Content in TM-40F:** TM-40F now includes the FM 6-0 IM six-task mapping (Table 1-3: Collect/Process/Store/Display/Disseminate/Protect), an information relevance criteria→VAULTIS-A crosswalk (Table 1-4: Accurate/Timely/Useable/Complete/Precise/Secure mapped to VAULTIS-A dimensions), and an enhanced Appendix D with section-level detail for 14 governing publications including FM 3-0 and ATP 5-0.3. These sections ground Mission Command data management in their authoritative doctrinal sources.
+> **NOTE — New Doctrine Content in SL 4F:** SL 4F now includes the FM 6-0 IM six-task mapping (Table 1-3: Collect/Process/Store/Display/Disseminate/Protect), an information relevance criteria→VAULTIS-A crosswalk (Table 1-4: Accurate/Timely/Useable/Complete/Precise/Secure mapped to VAULTIS-A dimensions), and an enhanced Appendix D with section-level detail for 14 governing publications including FM 3-0 and ATP 5-0.3. These sections ground Mission Command data management in their authoritative doctrinal sources.
 
 **HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA**
 Wiesbaden, Germany

@@ -1,12 +1,12 @@
-# PRE-TEST — TM-50M: ADVANCED ML ENGINEER
+# PRE-TEST — SL 5M: ADVANCED ML ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-50M: Advanced ML Engineer |
+| **Course** | SL 5M: Advanced ML Engineer |
 | **Form** | Pre-Test |
-| **Level** | TM-50M (Advanced Specialist) |
-| **Audience** | Senior ML engineers / data scientists; prerequisite: TM-40M + production ML experience |
+| **Level** | SL 5M (Advanced Specialist) |
+| **Audience** | Senior ML engineers / data scientists; prerequisite: SL 4M + production ML experience |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

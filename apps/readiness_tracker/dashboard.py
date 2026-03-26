@@ -201,17 +201,17 @@ def load_trainee_detail(dodid: str):
 # Display order for courses (excludes FBC for heatmap)
 # ---------------------------------------------------------------------------
 DISPLAY_ORDER = [
-    "TM-10", "TM-20", "TM-30",
-    "TM-40A", "TM-40B", "TM-40C", "TM-40D", "TM-40E", "TM-40F",
-    "TM-40G", "TM-40H", "TM-40M", "TM-40J", "TM-40K", "TM-40L",
-    "TM-50G", "TM-50H", "TM-50M", "TM-50J", "TM-50K", "TM-50L",
+    "SL 1", "SL 2", "SL 3",
+    "SL 4A", "SL 4B", "SL 4C", "SL 4D", "SL 4E", "SL 4F",
+    "SL 4G", "SL 4H", "SL 4M", "SL 4J", "SL 4K", "SL 4L",
+    "SL 5G", "SL 5H", "SL 5M", "SL 5J", "SL 5K", "SL 5L",
 ]
 
-FOUNDATION_COURSES = ["TM-10", "TM-20", "TM-30"]
+FOUNDATION_COURSES = ["SL 1", "SL 2", "SL 3"]
 
 # Track view options — Foundation is always the default
 TRACK_OPTIONS = {
-    "Foundation (TM-10/20/30)": FOUNDATION_COURSES,
+    "Foundation (SL 1/2/3)": FOUNDATION_COURSES,
     "All Courses": DISPLAY_ORDER,
 }
 
@@ -275,16 +275,16 @@ if active_tab == "Commander's Dashboard":
         for t in trainees
     ) / total if total else 0
     # Highest foundation milestone
-    tm10_count = sum(1 for t in trainees if "TM-10" in t["courses"])
-    tm20_count = sum(1 for t in trainees if "TM-20" in t["courses"])
-    tm30_count = sum(1 for t in trainees if "TM-30" in t["courses"])
+    tm10_count = sum(1 for t in trainees if "SL 1" in t["courses"])
+    tm20_count = sum(1 for t in trainees if "SL 2" in t["courses"])
+    tm30_count = sum(1 for t in trainees if "SL 3" in t["courses"])
 
     c1, c2, c3, c4, c5 = st.columns(5)
     c1.metric("Total Trainees", total)
     c2.metric("Units", units)
-    c3.metric("TM-10 Complete", tm10_count, delta=f"{tm10_count/total*100:.0f}%")
-    c4.metric("TM-20 Complete", tm20_count, delta=f"{tm20_count/total*100:.0f}%")
-    c5.metric("TM-30 Complete", tm30_count, delta=f"{tm30_count/total*100:.0f}%")
+    c3.metric("SL 1 Complete", tm10_count, delta=f"{tm10_count/total*100:.0f}%")
+    c4.metric("SL 2 Complete", tm20_count, delta=f"{tm20_count/total*100:.0f}%")
+    c5.metric("SL 3 Complete", tm30_count, delta=f"{tm30_count/total*100:.0f}%")
 
     st.markdown("---")
 
@@ -349,11 +349,11 @@ if active_tab == "Commander's Dashboard":
             # Color by tier
             tier_colors = []
             for c in active_courses:
-                if c.startswith("TM-1") or c.startswith("TM-2") or c.startswith("TM-3"):
+                if c.startswith("SL 1") or c.startswith("SL 2") or c.startswith("SL 3"):
                     tier_colors.append(NAVY_MID)
-                elif c.startswith("TM-40") and c[-1] in "ABCDEF":
+                elif c.startswith("SL 4") and c[-1] in "ABCDEF":
                     tier_colors.append(RAG_GREEN)
-                elif c.startswith("TM-40"):
+                elif c.startswith("SL 4"):
                     tier_colors.append(RAG_AMBER)
                 else:
                     tier_colors.append(WARNING_RED)

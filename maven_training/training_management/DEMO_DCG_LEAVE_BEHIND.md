@@ -9,11 +9,11 @@
 
 | Course | Hours | Audience | Status |
 |--------|-------|----------|--------|
-| TM-10 Maven User | 8 hrs | All personnel | Published |
-| TM-20 Builder | 40 hrs | Data-adjacent staff | Published |
-| TM-30 Advanced Builder | 40 hrs | Unit data leads | Published |
-| TM-40 Specialist (14) | 40 hrs | WfF / technical | Published |
-| TM-50 Adv Specialist (6) | 40 hrs | Senior practitioners | Published |
+| SL 1 Maven User | 8 hrs | All personnel | Published |
+| SL 2 Builder | 40 hrs | Data-adjacent staff | Published |
+| SL 3 Advanced Builder | 40 hrs | Unit data leads | Published |
+| SL 4 Specialist (14) | 40 hrs | WfF / technical | Published |
+| SL 5 Adv Specialist (6) | 40 hrs | Senior practitioners | Published |
 | T3 Tier 3 (2) | T3-I: 40 hrs; T3-F: 4 hrs | Instructors / MSC | Published |
 
 **254 published PDFs** | **22 course tracks** | **Full governance package** | **NATO-aligned**
@@ -48,7 +48,7 @@ No organic MSS training capability exists anywhere. ODT absorbs training by defa
 |-----|-------------|------------|----------|
 | 1 (Rec) | 5-person MTT, dual-team, phased standup | ~450/yr, 60 classes | Yes |
 | 2 | ODT continues with TDY augmentees | ~150/yr, 25 classes | No |
-| 3 | Quarterly ODT-led TM-20/30 + unit self-study | ~90/yr, 6 classes | No |
+| 3 | Quarterly ODT-led SL 2/3 + unit self-study | ~90/yr, 6 classes | No |
 
 ---
 
@@ -63,7 +63,7 @@ No organic MSS training capability exists anywhere. ODT absorbs training by defa
 | Theater training directive | G3 | D+45 |
 | T3 instructor cert complete | ODT | D+60 |
 | MSS tied to duty position reqs | G3 | D+60 |
-| TM-10 in new Soldier in-processing | MSC CDRs | D+60 |
+| SL 1 in new Soldier in-processing | MSC CDRs | D+60 |
 | MTT cadre certified | ODT | D+75 |
 | Partner enrollment framework | G5 | D+90 |
 | MTT independent execution | MTT | D+150 |

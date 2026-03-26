@@ -36,15 +36,15 @@ def _synthetic_snapshot(report_date: date, week_offset: int) -> dict:
     tm50_pct = min(30, 10 + (3 - week_offset) * 3)
 
     funnel = [
-        {"stage": "TM-10: Maven User", "count": int(base_trainees * tm10_pct / 100),
+        {"stage": "SL 1: Maven User", "count": int(base_trainees * tm10_pct / 100),
          "total": base_trainees, "pct": tm10_pct},
-        {"stage": "TM-20: Builder", "count": int(base_trainees * tm20_pct / 100),
+        {"stage": "SL 2: Builder", "count": int(base_trainees * tm20_pct / 100),
          "total": base_trainees, "pct": tm20_pct},
-        {"stage": "TM-30: Advanced Builder", "count": int(base_trainees * tm30_pct / 100),
+        {"stage": "SL 3: Advanced Builder", "count": int(base_trainees * tm30_pct / 100),
          "total": base_trainees, "pct": tm30_pct},
-        {"stage": "TM-40: Any Specialization", "count": int(base_trainees * tm40_pct / 100),
+        {"stage": "SL 4: Any Specialization", "count": int(base_trainees * tm40_pct / 100),
          "total": base_trainees, "pct": tm40_pct},
-        {"stage": "TM-50: Advanced", "count": int(base_trainees * tm50_pct / 100),
+        {"stage": "SL 5: Advanced", "count": int(base_trainees * tm50_pct / 100),
          "total": base_trainees, "pct": tm50_pct},
     ]
 
@@ -63,7 +63,7 @@ def _synthetic_snapshot(report_date: date, week_offset: int) -> dict:
         })
 
     # Bottleneck top 3
-    bottleneck_courses = ["TM-20", "TM-30", "TM-40A"]
+    bottleneck_courses = ["SL 2", "SL 3", "SL 4A"]
     bottleneck_top3 = [
         {
             "course_id": c,
@@ -138,7 +138,7 @@ def _synthetic_snapshot(report_date: date, week_offset: int) -> dict:
         "exam_sessions_count": random.randint(8, 15),
         "total_aars": base_aars,
         "top_issues": [
-            {"issue": "Insufficient lab time for TM-30", "count": random.randint(3, 7)},
+            {"issue": "Insufficient lab time for SL 3", "count": random.randint(3, 7)},
             {"issue": "Network connectivity during exercises", "count": random.randint(2, 5)},
         ],
         "overdue_milestones": base_overdue,

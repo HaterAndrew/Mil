@@ -4,7 +4,7 @@
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-30 REQUIRED; C2DAO Training OIC selection; CONCEPTS_GUIDE_T3I (read before course) |
+| **Prerequisite** | SL 3 REQUIRED; C2DAO Training OIC selection; CONCEPTS_GUIDE_T3I (read before course) |
 | **Duration** | Day 5 — Microteaching (20 min per candidate) + Written Exam (60 min) |
 | **Environment** | MSS Training Environment; classroom with projector; student workstations for role-play |
 
@@ -22,7 +22,7 @@
 ## EXERCISE OVERVIEW
 
 T3-I Phase 1 has two evaluated components on Day 5:
-1. **Microteaching** — deliver a 20-minute block of instruction from TM-10, TM-20, or TM-30
+1. **Microteaching** — deliver a 20-minute block of instruction from SL 1, SL 2, or SL 3
 2. **Written Exam** — 16 questions covering adult learning principles, T&EO structure, evaluation procedures, error management, and instructor performance standards
 
 Both components must be passed for Phase 1 Go.
@@ -32,7 +32,7 @@ Both components must be passed for Phase 1 Go.
 ## TASK 1 — MICROTEACHING (20 minutes)
 
 ### Preparation (Day 4 evening)
-- [ ] Select a lesson block from TM-10, TM-20, or TM-30 (instructor may direct to avoid duplicates)
+- [ ] Select a lesson block from SL 1, SL 2, or SL 3 (instructor may direct to avoid duplicates)
 - [ ] Review the published lesson plan for the selected block
 - [ ] Prepare to deliver the block to the T3-I class (classmates role-play as trainees at the appropriate level)
 - [ ] Plan at least 1 check-on-learning question and 1 student activity

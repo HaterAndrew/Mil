@@ -1,12 +1,12 @@
-# POST-TEST — TM-50H: ADVANCED AI ENGINEER
+# POST-TEST — SL 5H: ADVANCED AI ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-50H: Advanced AI Engineer |
+| **Course** | SL 5H: Advanced AI Engineer |
 | **Form** | Post-Test |
-| **Level** | TM-50H (Advanced Specialist) |
-| **Audience** | Senior AI engineers; prerequisite: TM-40H + production AI experience |
+| **Level** | SL 5H (Advanced Specialist) |
+| **Audience** | Senior AI engineers; prerequisite: SL 4H + production AI experience |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (42/60) |
 
@@ -64,7 +64,7 @@ B. Production inference endpoints have rate limits that would prevent effective 
 C. Injected adversarial prompts could cause the system to write incorrect data to the production Ontology, send unauthorized communications, or expose sensitive information to the attacker
 D. Isolated environments provide a ground-truth dataset to evaluate injection success rates
 
-**7. A TM-50H AI observability pipeline detects that the acceptance rate of AI-generated outputs by human reviewers has dropped from 87% to 61% over four weeks. The correct response is:**
+**7. A SL 5H AI observability pipeline detects that the acceptance rate of AI-generated outputs by human reviewers has dropped from 87% to 61% over four weeks. The correct response is:**
 
 A. Treat this as a quality degradation alert — investigate root cause (input distribution shift, prompt drift, model issue), remediate before the rate drops further, and consider rollback if the rate approaches the minimum acceptable threshold
 B. Increase the frequency of human review to catch more errors
@@ -113,12 +113,12 @@ B. The corpus of retrievable documents becoming outdated, duplicated, or misalig
 C. The chunking strategy becoming misaligned with document lengths as new documents are added
 D. Classification labels on corpus documents becoming incorrect over time
 
-**14. A TM-50H AI governance checklist requires that all enterprise AI systems have:**
+**14. A SL 5H AI governance checklist requires that all enterprise AI systems have:**
 
 A. A separate MSS project for each AI model in production
 B. Quarterly GO-level review of all AI outputs
 C. Documented ownership, a defined review cycle, a decommission plan, and compliance mapping to Army CIO Memo and DoD RAIMTF requirements
-D. A dedicated AI engineer with TM-50H qualification assigned to each system
+D. A dedicated AI engineer with SL 5H qualification assigned to each system
 
 **15. The most important security control for an enterprise AI system that processes operational data is:**
 

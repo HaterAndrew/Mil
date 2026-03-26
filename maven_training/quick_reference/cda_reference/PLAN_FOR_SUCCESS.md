@@ -290,7 +290,7 @@ The USAREUR-AF data architecture and training investment aligns with — and in 
 | AKMP Data Immersion Course | MCCoE/C2ID | Operational (2nd iteration Feb 2025) | 32-hour KM course on Vantage, data governance, GenAI. Aligns to TM-40K. |
 | TRADOC Decision Optimization Branch | TRADOC C2DAO/OCKO | FOC Dec 2025 | 6–8 simultaneous data/KM training projects. Our Phase 3 (Scale Through Training) parallels TRADOC's timeline. |
 | CALL 25-10, Commander and Staff Guide to Data Literacy | CALL | Published Apr 2025 | Institutional recognition that data literacy requires formal education — same premise as our program. |
-| Signal School Data for Leaders MTT | Signal School (Fort Eisenhower) | Operational (Nov 2024 first delivery) | 4-day Power BI course for leaders. Complementary to TM-SL. |
+| Signal School Data for Leaders MTT | Signal School (Fort Eisenhower) | Operational (Nov 2024 first delivery) | 4-day Power BI course for leaders. Complementary to TM-EXEC. |
 | Army Reserve ODT Pilot (Mojave Falcon) | OCAR | Complete (Jun 2025) | Validated that data literacy baseline is prerequisite for ODT effectiveness. |
 | First Army ODT Mobilization Simulation | First Army + Georgia Tech | Operational (2026) | Most advanced publicly documented ODT product. Campaign-level ORSA on Army Data Platform. |
 

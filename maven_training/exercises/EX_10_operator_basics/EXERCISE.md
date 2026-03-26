@@ -1,10 +1,10 @@
 # EX_10 — MSS Operator Basics
-## Practical Exercise — TM-10 Proficiency
+## Practical Exercise — SL 1 Proficiency
 
 | | |
 |---|---|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-10 |
+| **Prerequisite** | SL 1 |
 | **Duration** | 45–60 min |
 | **Environment** | MSS training instance or sandbox — see ENVIRONMENT_SETUP.md |
 
@@ -88,7 +88,7 @@ Unclassified training data simulates LOGSTAT/readiness report formats.
 - Task 3 runs 5–15 min depending on analytical background; do not prompt within first 10 min
 - If Task 2 exceeds 15 min, ask participant to narrate approach (do not guide)
 - Task 6 is verbal/written — evaluator asks the question after Task 5 completion
-- Total exercise rarely exceeds 55 min for participants current on TM-10
+- Total exercise rarely exceeds 55 min for participants current on SL 1
 
 ---
 
@@ -96,8 +96,8 @@ Unclassified training data simulates LOGSTAT/readiness report formats.
 
 Upon successful completion of EX_10, participants are cleared to proceed to:
 
-- **TM-20 — No-Code Builder** (recommended for all staff who need to build or modify dashboards and pipelines)
+- **SL 2 — No-Code Builder** (recommended for all staff who need to build or modify dashboards and pipelines)
 
-After TM-20, all personnel proceed to TM-30. TM-30 is required before any TM-40 track:
-- **WFF tracks (TM-40A–F)**: role-specific data application training by Warfighting Function (prereq: TM-30 required)
-- **Specialist tracks (TM-40G–O)**: technical specialist tracks (prereq: TM-30 required)
+After SL 2, all personnel proceed to SL 3. SL 3 is required before any SL 4 track:
+- **WFF tracks (TM-40A–F)**: role-specific data application training by Warfighting Function (prereq: SL 3 required)
+- **Specialist tracks (TM-40G–O)**: technical specialist tracks (prereq: SL 3 required)

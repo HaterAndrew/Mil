@@ -111,7 +111,7 @@ Any of the following triggers a mandatory curriculum review:
 - If the change affects a SYLLABUS or exercise package, update those documents too
 
 ### Step 6 — Notify
-- Brief instructors on any change affecting TM-10 through TM-30 (broad audience impact)
+- Brief instructors on any change affecting SL 1 through SL 3 (broad audience impact)
 - Email C2DAO distribution for any major version change
 
 ---
@@ -146,7 +146,7 @@ The quarterly checklist (Section 5) is a maintenance check. The semi-annual deep
 | **Teach-test alignment** | For every evaluated task in every syllabus: is it explicitly taught in the daily schedule? If not, add instruction or remove the evaluation. | SME per track |
 | **LO-to-evaluation mapping** | Every Learning Objective must map to at least one evaluated task. Orphaned LOs are either added to the evaluation or reclassified as knowledge-only. | SME per track |
 | **Platform accuracy** | 10% random sample of TM task steps verified against the current MSS platform by a practitioner (not the author). Steps that no longer match the UI are flagged. | Platform Monitor + SME |
-| **Prerequisite chain integrity** | Verify that TM-40/50 content does not re-teach TM-30 material, and TM-30 content does not re-teach TM-20 material. Content that duplicates a lower level is flagged for removal or restructuring. | Curriculum Owner |
+| **Prerequisite chain integrity** | Verify that SL 4/5 content does not re-teach SL 3 material, and SL 3 content does not re-teach SL 2 material. Content that duplicates a lower level is flagged for removal or restructuring. | Curriculum Owner |
 | **AAR trend analysis** | All AAR discrepancy reports from the preceding 6 months reviewed in aggregate. Identify patterns (same task failing repeatedly, same concept misunderstood) and address with curriculum changes, not just individual remediation. | Curriculum Owner + Instructors |
 | **Go/No-Go standard quality** | All practical exercise Go standards reviewed against Bloom's taxonomy level appropriate to the course level. Vague standards ("demonstrates understanding," "performs adequately") are rewritten with specific measurable criteria. | SME per track |
 | **Duration sufficiency** | Block time vs. content volume check: is the allocated time sufficient for the taught content, including student practice time? Flag any block where instruction time leaves no room for practice. | Instructors |
@@ -180,9 +180,9 @@ Format in document header: `**Version 1.2 | Month Year**`
 
 | Date | Document | Change Type | Summary | Version After | Author |
 |------|----------|-------------|---------|---------------|--------|
-| 2026-03-12 | All TMs | Addition | Version tags added to all TM-10 through TM-50M documents | 1.0 | C2DAO |
-| 2026-03-12 | TM-50 series | Addition | Prerequisite warning blocks added to all TM-50 documents | 1.0 | C2DAO |
+| 2026-03-12 | All TMs | Addition | Version tags added to all SL 1 through SL 5M documents | 1.0 | C2DAO |
+| 2026-03-12 | SL 5 series | Addition | Prerequisite warning blocks added to all SL 5 documents | 1.0 | C2DAO |
 | 2026-03-12 | QUICK_START.md | Addition | New 30-minute operator onboarding guide created | 1.0 | C2DAO |
-| 2026-03-12 | exercises/ | Addition | Exercise stubs created for TM-10 through TM-40L tracks (WFF TM-40A–F and specialist TM-40G–O) | 1.0 | C2DAO |
+| 2026-03-12 | exercises/ | Addition | Exercise stubs created for SL 1 through SL 4L tracks (WFF SL 4A–F and specialist SL 4G–O) | 1.0 | C2DAO |
 | 2026-03-12 | AAR_TEMPLATE.md | Addition | Instructor AAR/feedback template created | 1.0 | C2DAO |
 | 2026-03-12 | This SOP | Creation | Initial publication | 1.0 | C2DAO |

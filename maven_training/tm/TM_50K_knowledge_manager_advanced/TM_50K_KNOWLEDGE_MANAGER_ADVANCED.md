@@ -1,7 +1,7 @@
 # TM-50K — ADVANCED KNOWLEDGE MANAGEMENT
 
-> **Forward:** TM-50K trains Army Knowledge Managers at the Corps and Theater echelon to design, federate, and sustain enterprise-scale knowledge management systems on MSS. This manual assumes mastery of all TM-40K competencies. TM-50K is not a continuation of TM-40K tasks — it is an architectural shift in responsibility, scope, and risk.
-> **Prereqs:** TM-40K, Knowledge Manager (required); TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (all required); CONCEPTS_GUIDE_TM50K_KNOWLEDGE_MANAGER_ADVANCED (read before this manual).
+> **Forward:** SL 5K trains Army Knowledge Managers at the Corps and Theater echelon to design, federate, and sustain enterprise-scale knowledge management systems on MSS. This manual assumes mastery of all SL 4K competencies. SL 5K is not a continuation of SL 4K tasks — it is an architectural shift in responsibility, scope, and risk.
+> **Prereqs:** SL 4K, Knowledge Manager (required); SL 1, Maven User; SL 2, Builder; SL 3, Advanced Builder; Data Literacy Technical Reference (all required); CONCEPTS_GUIDE_TM50K_KNOWLEDGE_MANAGER_ADVANCED (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: An Advanced KM who builds enterprise systems without governance structures is not building capability — they are building uncontrolled risk. Every system at this level requires defined ownership, documented architecture, security review, and a decommission plan. A system without a decommission plan will outlive its usefulness and become a liability.**
@@ -26,9 +26,9 @@
 
 ### 1-1. Advanced Knowledge Manager Manual
 
-**BLUF:** TM-50K trains Army Knowledge Managers at the Corps and Theater echelon to design, federate, and sustain enterprise-scale knowledge management systems on MSS. This manual assumes mastery of all TM-40K competencies. TM-50K is not a continuation of TM-40K tasks — it is an architectural shift in responsibility, scope, and risk.
+**BLUF:** SL 5K trains Army Knowledge Managers at the Corps and Theater echelon to design, federate, and sustain enterprise-scale knowledge management systems on MSS. This manual assumes mastery of all SL 4K competencies. SL 5K is not a continuation of SL 4K tasks — it is an architectural shift in responsibility, scope, and risk.
 
-A TM-40K KM designs and maintains knowledge systems for a unit. A TM-50K Advanced KM designs the architecture that TM-40K KMs operate within. The Advanced KM is the enterprise KM architect — defining standards, patterns, governance structures, and integration interfaces that make federated knowledge possible across a Theater.
+A SL 4K KM designs and maintains knowledge systems for a unit. A SL 5K Advanced KM designs the architecture that SL 4K KMs operate within. The Advanced KM is the enterprise KM architect — defining standards, patterns, governance structures, and integration interfaces that make federated knowledge possible across a Theater.
 
 At USAREUR-AF, the Advanced KM role supports:
 
@@ -38,23 +38,23 @@ At USAREUR-AF, the Advanced KM role supports:
 - **NATO ACO** lessons learned interoperability
 - **Exercise program management**: Defender Europe, Saber Strike, Swift Response, Combined Resolve — each generating cross-unit knowledge products that must be federated and preserved at Theater level
 
-> **NOTE:** TM-50K is not a standalone track. Soldiers and Civilians attempting TM-50K without TM-40K mastery will lack the foundational vocabulary and Foundry platform competencies required to execute the tasks in Chapters 2 through 8. The prerequisite is enforced operationally, not administratively — incomplete foundations at this level produce systems that fail at scale.
+> **NOTE:** SL 5K is not a standalone track. Soldiers and Civilians attempting SL 5K without SL 4K mastery will lack the foundational vocabulary and Foundry platform competencies required to execute the tasks in Chapters 2 through 8. The prerequisite is enforced operationally, not administratively — incomplete foundations at this level produce systems that fail at scale.
 
 ---
 
 ### 1-2. The Advanced KM Role: Architect, Not Operator
 
-The distinction between TM-40K and TM-50K is architectural authority and scope of impact.
+The distinction between SL 4K and SL 5K is architectural authority and scope of impact.
 
-**TM-40K KM (Unit level):**
+**SL 4K KM (Unit level):**
 - Designs and builds knowledge objects within an established ontology
 - Operates within governance structures set by the enterprise
 - Manages a single unit's knowledge domains
 - Builds AIP workflows that serve a defined user population
 - Maintains a knowledge repository with a single clear ownership chain
 
-**TM-50K Advanced KM (Corps/Theater level):**
-- Designs the ontologies that TM-40K KMs operate within
+**SL 5K Advanced KM (Corps/Theater level):**
+- Designs the ontologies that SL 4K KMs operate within
 - Establishes the governance structures — access controls, naming conventions, ownership assignments, lifecycle policies — that all subordinate KMs follow
 - Federates knowledge across multiple units without creating brittle centralized dependencies
 - Integrates knowledge systems across classification levels (parallel networks, not bridges)
@@ -66,19 +66,19 @@ The distinction between TM-40K and TM-50K is architectural authority and scope o
 **The Advanced KM chain of responsibility:**
 
 ```
-THEATER KM ARCHITECT (TM-50K)
+THEATER KM ARCHITECT (SL 5K)
     |
     |-- Sets: ontology standards, governance policies, federation patterns
     |-- Owns: Theater-level knowledge repositories, cross-unit linking schemas
     |-- Integrates: NATO/coalition knowledge interfaces, joint knowledge products
     |
-    +--- CORPS/DIVISION KM (TM-40K)
+    +--- CORPS/DIVISION KM (SL 4K)
              |
              |-- Implements: Theater standards in unit repositories
              |-- Manages: Unit-specific knowledge domains
              |-- Reports: KM metrics to Theater KM Architect
              |
-             +--- BDE/BN KM (TM-40K)
+             +--- BDE/BN KM (SL 4K)
                       |
                       |-- Operates: AAR capture, lessons routing, SOP tracking
                       |-- Contributes: Knowledge objects to federated repository
@@ -86,20 +86,20 @@ THEATER KM ARCHITECT (TM-50K)
 
 ---
 
-### 1-2A. Relationship to Other TM-50 Publications
+### 1-2A. Relationship to Other SL 5 Publications
 
-| Publication | Track | Key Overlap with TM-50K |
+| Publication | Track | Key Overlap with SL 5K |
 |---|---|---|
-| TM-50G | ORSA Advanced | ORSA-derived lessons and analytical knowledge products |
-| TM-50H | AI Engineer Advanced | Corpus design and ontology-RAG integration (AI-assisted KM) |
-| TM-50M | ML Engineer Advanced | Feature data governance; training corpus quality architecture |
-| TM-50J | Program Manager Advanced | KM program oversight and portfolio-level knowledge governance |
-| TM-50K | Knowledge Manager Advanced | THIS DOCUMENT |
-| TM-50L | Software Engineer Advanced | Platform SDK infrastructure supporting enterprise KM systems |
-| TM-50N | UI/UX Designer Advanced | Information architecture; knowledge portal UX |
-| TM-50O | Platform Engineer Advanced | Knowledge platform infrastructure; search and retrieval systems |
+| SL 5G | ORSA Advanced | ORSA-derived lessons and analytical knowledge products |
+| SL 5H | AI Engineer Advanced | Corpus design and ontology-RAG integration (AI-assisted KM) |
+| SL 5M | ML Engineer Advanced | Feature data governance; training corpus quality architecture |
+| SL 5J | Program Manager Advanced | KM program oversight and portfolio-level knowledge governance |
+| SL 5K | Knowledge Manager Advanced | THIS DOCUMENT |
+| SL 5L | Software Engineer Advanced | Platform SDK infrastructure supporting enterprise KM systems |
+| SL 5N | UI/UX Designer Advanced | Information architecture; knowledge portal UX |
+| SL 5O | Platform Engineer Advanced | Knowledge platform infrastructure; search and retrieval systems |
 
-**WFF Operational Consumer Note.** Knowledge management at the advanced level exists to ensure that the operational insights generated across exercises, operations, and analytical work are discoverable and usable by the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). WFF practitioners are the primary end-users of validated lessons, TTPs, and doctrine products. Enterprise KM architecture must be designed with WFF operational workflows as the primary retrieval use case — if G3 (Movement and Maneuver) planners cannot find sustainment lessons relevant to their operation, the knowledge system has failed regardless of technical quality.
+**WFF Operational Consumer Note.** Knowledge management at the advanced level exists to ensure that the operational insights generated across exercises, operations, and analytical work are discoverable and usable by the six Warfighting Function (WFF) tracks: Intelligence (SL 4A), Fires (SL 4B), Movement and Maneuver (SL 4C), Sustainment (SL 4D), Protection (SL 4E), and Mission Command (SL 4F). WFF practitioners are the primary end-users of validated lessons, TTPs, and doctrine products. Enterprise KM architecture must be designed with WFF operational workflows as the primary retrieval use case — if G3 (Movement and Maneuver) planners cannot find sustainment lessons relevant to their operation, the knowledge system has failed regardless of technical quality.
 
 ### 1-3. USAREUR-AF Knowledge Environment
 
@@ -131,7 +131,7 @@ USAREUR-AF operates a complex knowledge environment driven by the European and A
 | AR 25-400-2 (Army Records Management and Declassification Agency) | Records retention schedules applicable to knowledge repositories |
 | USAREUR-AF C2DAO Guidance | Theater architecture standards — enterprise KM must conform |
 | Joint Lessons Learned Information System (JLLIS) | DoD-level lessons platform — USAREUR-AF lessons feed into JLLIS |
-| Center for Army Lessons Learned (CALL) | Army lessons learned repository — TM-50K systems must integrate or feed CALL appropriately |
+| Center for Army Lessons Learned (CALL) | Army lessons learned repository — SL 5K systems must integrate or feed CALL appropriately |
 | NATO Core Metadata Specification / STANAG 5636 | Structured metadata standards — required for NATO-compatible knowledge products at theater level |
 | NATO ADatP-34 / NISP | C3 interoperability standards for data cataloging and cross-domain knowledge exchange |
 | STANAG 5643 (proposed) — MIM Governance Standard | NATO MIP Information Model governance — data model versioning, change proposals, national extensions |
@@ -199,25 +199,25 @@ LAYER 1: THEATER STANDARDS LAYER
   - Naming conventions and identifier formats
   - Access control policy templates
   - Lifecycle and review cycle policies
-  - Governed by: Theater KM Architect (TM-50K)
+  - Governed by: Theater KM Architect (SL 5K)
 
 LAYER 2: DOMAIN REPOSITORIES
   - Corps/Division/Functional-area knowledge repositories
   - Each repository conforms to Theater standards
   - Each repository has a named domain owner
-  - Governed by: Corps/Division KM (TM-40K)
+  - Governed by: Corps/Division KM (SL 4K)
 
 LAYER 3: UNIT CONTRIBUTION LAYER
   - Brigade/Battalion-level knowledge capture and contribution
   - Structured ingestion pipelines that validate against Theater schemas
   - Unit KMs contribute objects; Theater KM reviews and federates
-  - Governed by: Unit KM (TM-40K)
+  - Governed by: Unit KM (SL 4K)
 
 LAYER 4: CONSUMER INTERFACE LAYER
   - Search and discovery interfaces for cross-domain knowledge access
   - AIP Q&A interfaces that query across federated domains
   - Reporting and metrics dashboards
-  - Governed by: Theater KM Architect (TM-50K) in coordination with C2DAO
+  - Governed by: Theater KM Architect (SL 5K) in coordination with C2DAO
 ```
 
 ---
@@ -396,7 +396,7 @@ USAREUR-AF operates knowledge systems on multiple networks. Each network is a se
 |---|---|---|---|
 | NIPR (NIPRNet) | CUI | MSS-UNCLASS | Exercise lessons, unclassified TTPs, releasable doctrine, coalition-approved products |
 | SIPR (SIPRNet) | SECRET | MSS-SECRET | Operational lessons with classified context, intelligence-informed TTPs, classified SOPs |
-| JWICS | TOP SECRET/SCI | Not in scope for TM-50K | Addressed in separate C2DAO guidance |
+| JWICS | TOP SECRET/SCI | Not in scope for SL 5K | Addressed in separate C2DAO guidance |
 
 **Parallel network KM design requirements:**
 
@@ -498,17 +498,17 @@ Defender Europe, Saber Strike, and Combined Resolve generate the largest single-
 
 ### 4-2. AIP Capabilities for Advanced KM
 
-TM-40K introduced AIP Logic for unit-level tasks: single-document summarization, content tagging, knowledge Q&A over a single repository. TM-50K Advanced KM uses AIP at a different scale:
+SL 4K introduced AIP Logic for unit-level tasks: single-document summarization, content tagging, knowledge Q&A over a single repository. SL 5K Advanced KM uses AIP at a different scale:
 
-| Capability | TM-40K Application | TM-50K Advanced Application |
+| Capability | SL 4K Application | SL 5K Advanced Application |
 |---|---|---|
 | Document summarization | Summarize a single AAR | Batch summarize 200 AARs; extract cross-unit themes |
 | Content tagging | Tag individual lessons | Bulk-tag incoming lessons; identify tagging inconsistencies across units |
 | Knowledge Q&A | Q&A over a single unit repository | Q&A over the Theater consolidated repository; cross-unit answer synthesis |
-| Contradiction detection | Not at TM-40K level | Identify conflicting recommendations across lessons from different units |
-| TTP pattern extraction | Not at TM-40K level | Extract emerging TTP patterns from large lesson sets; draft TTP templates |
-| Doctrine gap analysis | Not at TM-40K level | Compare lesson set recommendations to current doctrine; flag gaps |
-| Readability and format review | Not at TM-40K level | Apply Army Writing Style checks across bulk lesson submissions |
+| Contradiction detection | Not at SL 4K level | Identify conflicting recommendations across lessons from different units |
+| TTP pattern extraction | Not at SL 4K level | Extract emerging TTP patterns from large lesson sets; draft TTP templates |
+| Doctrine gap analysis | Not at SL 4K level | Compare lesson set recommendations to current doctrine; flag gaps |
+| Readability and format review | Not at SL 4K level | Apply Army Writing Style checks across bulk lesson submissions |
 
 > **WARNING: AIP outputs at this scale require staged human review. Do not design a pipeline that feeds AI-generated content directly to a Theater-wide distribution channel without a KM review gate. Scale amplifies errors. A misclassified lesson in a single-unit system is a minor problem. A systematically misclassified lesson batch in a Theater-wide system misleads everyone.**
 
@@ -860,7 +860,7 @@ This navigational capability — following relationship paths to find relevant k
 
 ### 6-4. Knowledge Graph Maintenance at Scale
 
-A Theater knowledge graph with thousands of nodes and tens of thousands of edges degrades without active maintenance. At TM-40K level, maintenance is manageable manually. At TM-50K scale, maintenance requires automated monitoring and systematic processes.
+A Theater knowledge graph with thousands of nodes and tens of thousands of edges degrades without active maintenance. At SL 4K level, maintenance is manageable manually. At SL 5K scale, maintenance requires automated monitoring and systematic processes.
 
 **Knowledge graph health indicators:**
 
@@ -1158,7 +1158,7 @@ Beyond reacting to specific departures, the Theater KM Architect must design the
 
 **STANDARDS:** Upon completion, the CoP will have: a defined membership, a regular meeting cadence, a standards library accessible to all members, a peer consultation mechanism, and a new-KM onboarding pathway.
 
-**EQUIPMENT:** MSS Foundry access (Workshop, Ontology Manager), approved collaboration platform for virtual synchronization, Theater KM Schema Registry, TM-40K and TM-50K publications, G1 personnel roster.
+**EQUIPMENT:** MSS Foundry access (Workshop, Ontology Manager), approved collaboration platform for virtual synchronization, Theater KM Schema Registry, SL 4K and SL 5K publications, G1 personnel roster.
 
 **PROCEDURE:**
 
@@ -1168,19 +1168,19 @@ Beyond reacting to specific departures, the Theater KM Architect must design the
 
 3. **Build the CoP standards library in MSS.** Create a `KnowledgeDomain` object of type `COMMUNITY_OF_PRACTICE` that contains:
    - Theater KM Schema Registry (current version)
-   - Standard operating procedures for common KM tasks (based on TM-40K and TM-50K)
+   - Standard operating procedures for common KM tasks (based on SL 4K and SL 5K)
    - Lessons from KM system failures and improvements (yes, KM produces lessons about KM)
    - Template Workshop applications, AIP prompt libraries, pipeline templates
    - Training resources and self-development references
 
 4. **Create the new-KM onboarding pathway.** A new KM arriving at a Theater unit should be able to become productive within 30 days. The onboarding pathway includes:
-   - Day 1-5: TM-10 through TM-30 review (if not current), account provisioning on MSS
-   - Day 6-14: TM-40K review, unit knowledge system walkthrough with Theater KM Architect
+   - Day 1-5: SL 1 through SL 3 review (if not current), account provisioning on MSS
+   - Day 6-14: SL 4K review, unit knowledge system walkthrough with Theater KM Architect
    - Day 15-21: First supervised task in their unit knowledge domain (capture, review, or maintenance)
    - Day 22-30: Independent operation with Theater KM Architect as available resource
    - Day 31+: Full performance, integrated into CoP monthly synchronization
 
-5. **Establish peer consultation mechanism.** KMs at Brigade and Battalion level encounter novel problems that TM-40K does not fully address. They need access to more experienced KMs without escalating through command channels. A CoP Slack channel (or approved equivalent) with Theater KM Architect and senior unit KMs available for queries provides this — and the question/answer record becomes a self-populating knowledge resource for the CoP standards library.
+5. **Establish peer consultation mechanism.** KMs at Brigade and Battalion level encounter novel problems that SL 4K does not fully address. They need access to more experienced KMs without escalating through command channels. A CoP Slack channel (or approved equivalent) with Theater KM Architect and senior unit KMs available for queries provides this — and the question/answer record becomes a self-populating knowledge resource for the CoP standards library.
 
 6. **Conduct annual KM capability assessment.** Each year, the Theater KM Architect assesses each unit KM's performance against Theater standards: knowledge object quality in their domain, metrics reporting timeliness, CoP participation, onboarding of new personnel. Assessment results inform: training priorities, architecture support priorities, and recommendation for billet-level KM capability ratings to be included in Theater readiness reporting.
 
@@ -1392,11 +1392,11 @@ Coordinate with USAREUR-AF C2DAO for current FMN spiral applicability and coalit
 
 ## GLOSSARY
 
-**Terms are defined as used in this manual. Cross-references to TM-40K terms are noted where applicable.**
+**Terms are defined as used in this manual. Cross-references to SL 4K terms are noted where applicable.**
 
 **AAR (After-Action Review):** A structured review of a task, event, or operation to identify what was planned, what occurred, why it occurred, and what will be sustained or improved. The primary source document for lessons learned generation. (FM 7-0)
 
-**AIP (Artificial Intelligence Platform):** Palantir's AI orchestration layer within Foundry, enabling large language model integration, AI Logic workflow development, and AIP-assisted data and knowledge tasks on MSS. (See TM-40K for unit-level AIP usage; this manual covers Theater-scale applications.)
+**AIP (Artificial Intelligence Platform):** Palantir's AI orchestration layer within Foundry, enabling large language model integration, AI Logic workflow development, and AIP-assisted data and knowledge tasks on MSS. (See SL 4K for unit-level AIP usage; this manual covers Theater-scale applications.)
 
 **AJP-5 (Allied Joint Publication-5):** NATO doctrine governing operational-level planning in combined allied operations. USAREUR-AF knowledge products supporting combined planning must align with AJP-5 structure and terminology.
 
@@ -1464,7 +1464,7 @@ Coordinate with USAREUR-AF C2DAO for current FMN spiral applicability and coalit
 
 **STANAG 4778:** NATO Standardization Agreement governing lessons learned format and exchange. All USAREUR-AF lessons submitted to NATO systems must conform to STANAG 4778 format.
 
-**Theater KM Architect:** The Advanced KM (TM-50K qualified) responsible for designing and governing the enterprise knowledge architecture across USAREUR-AF. Sets standards, manages federation, leads the KM CoP, and measures system effectiveness.
+**Theater KM Architect:** The Advanced KM (SL 5K qualified) responsible for designing and governing the enterprise knowledge architecture across USAREUR-AF. Sets standards, manages federation, leads the KM CoP, and measures system effectiveness.
 
 **Two-Person Rule (KM context):** The design principle that every critical knowledge domain must have both an owner and a trained, actively engaged deputy who can operate the domain independently. Not a compliance checkbox — a genuine operational continuity requirement.
 
@@ -1474,7 +1474,7 @@ Coordinate with USAREUR-AF C2DAO for current FMN spiral applicability and coalit
 
 ---
 
-*TM-50K — Advanced Knowledge Management, Maven Smart System*
+*SL 5K — Advanced Knowledge Management, Maven Smart System*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA*
 *Wiesbaden, Germany — 2026*
 *Distribution: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.*
@@ -1482,7 +1482,7 @@ Coordinate with USAREUR-AF C2DAO for current FMN spiral applicability and coalit
 ---
 
 *PIN: 1050E-000*
-*This manual supersedes no prior publication. Prerequisite: TM-40K, Knowledge Manager.*
+*This manual supersedes no prior publication. Prerequisite: SL 4K, Knowledge Manager.*
 
 **KM-specific governing references:**
 

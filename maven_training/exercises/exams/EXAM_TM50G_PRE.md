@@ -1,12 +1,12 @@
-# PRE-TEST — TM-50G: ADVANCED ORSA
+# PRE-TEST — SL 5G: ADVANCED ORSA
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-50G: Advanced ORSA |
+| **Course** | SL 5G: Advanced ORSA |
 | **Form** | Pre-Test |
-| **Level** | TM-50G (Advanced Specialist) |
-| **Audience** | FA49 / senior ORSA analysts; prerequisite: TM-40G + 18 months ORSA experience + graduate quantitative methods |
+| **Level** | SL 5G (Advanced Specialist) |
+| **Audience** | FA49 / senior ORSA analysts; prerequisite: SL 4G + 18 months ORSA experience + graduate quantitative methods |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
@@ -113,19 +113,19 @@ B. Running the wargame adjudication process as the primary controller
 C. Briefing the commander on the wargame results after all moves are adjudicated
 D. Serving as the opposing force (OPFOR) commander during the wargame
 
-**14. An "analytical product governance" requirement for a TM-50G level product means:**
+**14. An "analytical product governance" requirement for a SL 5G level product means:**
 
 A. Only products with more than 1,000 data records require governance review
 B. Products are classified at the SECRET level by default
 C. All products must be reviewed by a peer ORSA before delivery to the commander
 D. Products must be archived in GFEBS for audit purposes
 
-**15. The most significant difference between TM-40G and TM-50G ORSA work is:**
+**15. The most significant difference between SL 4G and SL 5G ORSA work is:**
 
-A. TM-50G uses Python; TM-40G uses R
-B. TM-50G requires a higher random seed value in Monte Carlo simulations
-C. TM-50G addresses problems with deep uncertainty, system-level complexity, and GO/SES briefings where TM-40G techniques are insufficient
-D. TM-50G involves a larger dataset size
+A. SL 5G uses Python; SL 4G uses R
+B. SL 5G requires a higher random seed value in Monte Carlo simulations
+C. SL 5G addresses problems with deep uncertainty, system-level complexity, and GO/SES briefings where SL 4G techniques are insufficient
+D. SL 5G involves a larger dataset size
 
 ---
 
@@ -163,7 +163,7 @@ D. TM-50G involves a larger dataset size
 
 &nbsp;
 
-**SA-4. A GO asks for a "best estimate" of adversary force reconstitution time. You have significant uncertainty in the key parameters. Describe how you would construct and present the estimate to meet TM-50G GO/SES briefing standards.**
+**SA-4. A GO asks for a "best estimate" of adversary force reconstitution time. You have significant uncertainty in the key parameters. Describe how you would construct and present the estimate to meet SL 5G GO/SES briefing standards.**
 
 &nbsp;
 
@@ -173,7 +173,7 @@ D. TM-50G involves a larger dataset size
 
 &nbsp;
 
-**SA-5. Describe the "peer review requirement" for TM-50G analytical products and explain why this requirement exists at the advanced ORSA level but is not formalized at TM-40G.**
+**SA-5. Describe the "peer review requirement" for SL 5G analytical products and explain why this requirement exists at the advanced ORSA level but is not formalized at SL 4G.**
 
 &nbsp;
 
@@ -215,8 +215,8 @@ Passing: N/A — Pre-test is diagnostic only.
 11. C — Hierarchical models handle nested data structures where estimates at each level inform other levels.
 12. D — GO/SES briefings focus on strategic implications, key finding, and decision required.
 13. A — ORSA quantifies COA outcomes, adjudicates ambiguous results, and assesses campaign-level risk.
-14. C — TM-50G products require peer review by another ORSA before commander delivery.
-15. C — TM-50G addresses deep uncertainty, system complexity, and GO/SES communication gaps that TM-40G methods cannot handle.
+14. C — SL 5G products require peer review by another ORSA before commander delivery.
+15. C — SL 5G addresses deep uncertainty, system complexity, and GO/SES communication gaps that SL 4G methods cannot handle.
 
 **Short Answer Guidance:**
 
@@ -228,7 +228,7 @@ SA-3. Full credit: calibration challenge — logistics behavior involves human d
 
 SA-4. Full credit: construct the estimate using a range of assumptions for the uncertain parameters; present as a distribution or scenario range (e.g., 15–45 days depending on key assumptions); identify the most sensitive parameter (sensitivity analysis); present to GO as: "Under assumption A: 15 days. Under assumption B: 45 days. The key uncertainty is [parameter]. Our recommended planning range is [X–Y] days." Do not present a single point estimate; state assumptions explicitly; provide backup slides with methodology. Full credit requires scenario range + key uncertainty identification + GO briefing format.
 
-SA-5. Full credit: peer review requirement = all TM-50G products must be reviewed by at least one other TM-50G qualified ORSA before delivery to the GO/SES; this exists at TM-50G because products influence strategic and operational decisions at the highest command levels — an undetected methodological error could produce catastrophically incorrect analytical conclusions; at TM-40G the stakes are lower (battalion/brigade level) and peer review is a best practice; at TM-50G the analytical complexity (nonlinear optimization, causal inference, ABMS) creates greater potential for subtle errors that only a peer can detect. Partial credit (3 pts) for the requirement without explaining why it escalates at TM-50G.
+SA-5. Full credit: peer review requirement = all SL 5G products must be reviewed by at least one other SL 5G qualified ORSA before delivery to the GO/SES; this exists at SL 5G because products influence strategic and operational decisions at the highest command levels — an undetected methodological error could produce catastrophically incorrect analytical conclusions; at SL 4G the stakes are lower (battalion/brigade level) and peer review is a best practice; at SL 5G the analytical complexity (nonlinear optimization, causal inference, ABMS) creates greater potential for subtle errors that only a peer can detect. Partial credit (3 pts) for the requirement without explaining why it escalates at SL 5G.
 
 ---
 

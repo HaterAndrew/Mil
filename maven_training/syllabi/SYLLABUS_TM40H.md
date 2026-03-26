@@ -1,18 +1,18 @@
-# COURSE SYLLABUS — TM-40H: AI ENGINEER
+# COURSE SYLLABUS — SL 4H: AI ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Level** | TM-40H (AI Engineer Specialist Track) |
+| **Level** | SL 4H (AI Engineer Specialist Track) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-10, TM-20, TM-30 (all Go evaluations on file — **REQUIRED**, not recommended); Data Literacy Technical Reference (required); working Python proficiency; familiarity with prompt engineering concepts recommended |
+| **Prerequisites** | SL 1, SL 2, SL 3 (all Go evaluations on file — **REQUIRED**, not recommended); Data Literacy Technical Reference (required); working Python proficiency; familiarity with prompt engineering concepts recommended |
 | **Audience** | AI/ML specialists, data engineers building AI-enabled pipelines on MSS |
 | **Format** | Instructor-led lab + safety seminar + practical exercise |
 | **Location** | MSS Training Environment (AIP Logic and Agent Studio access required) |
 
 ---
 
-**BLUF:** TM-40H teaches AI engineers to author AIP Logic workflows, configure Agent Studio agents, build RAG pipelines grounded in Ontology data, and deliver AI products meeting USAREUR-AF human-in-the-loop and OPSEC requirements. AIP Logic and Agent Studio are the most powerful — and highest-risk — tools in MSS. Day 1 begins with mandatory AI safety training. **This block cannot be skipped or rescheduled.**
+**BLUF:** SL 4H teaches AI engineers to author AIP Logic workflows, configure Agent Studio agents, build RAG pipelines grounded in Ontology data, and deliver AI products meeting USAREUR-AF human-in-the-loop and OPSEC requirements. AIP Logic and Agent Studio are the most powerful — and highest-risk — tools in MSS. Day 1 begins with mandatory AI safety training. **This block cannot be skipped or rescheduled.**
 
 ---
 
@@ -35,7 +35,7 @@
 
 Complete **7–10+ duty days before Day 1:**
 
-- [ ] Request AIP Logic **authoring** access from C2DAO — AIP Logic configuration access (TM-30 level) is insufficient; you need authoring privileges
+- [ ] Request AIP Logic **authoring** access from C2DAO — AIP Logic configuration access (SL 3 level) is insufficient; you need authoring privileges
 - [ ] Request Agent Studio access from C2DAO
 - [ ] Confirm both access levels are active and working before Day 1
 - [ ] Read TM-40H, Chapter 1 (Introduction) — full read, 30 min (**required, not optional**)
@@ -184,7 +184,7 @@ Complete **7–10+ duty days before Day 1:**
 
 ## Continuation
 
-Graduates who move into enterprise AI architecture or multi-agent system design roles may pursue **TM-50H (Advanced AI Engineering)**. TM-50H covers enterprise-scale RAG infrastructure, multi-agent orchestration, AI governance frameworks, and evaluated system architecture. Prerequisites: TM-40H Go evaluation on file; 12+ months active AI engineering experience on MSS or equivalent.
+Graduates who move into enterprise AI architecture or multi-agent system design roles may pursue **SL 5H (Advanced AI Engineering)**. SL 5H covers enterprise-scale RAG infrastructure, multi-agent orchestration, AI governance frameworks, and evaluated system architecture. Prerequisites: SL 4H Go evaluation on file; 12+ months active AI engineering experience on MSS or equivalent.
 
 ---
 
@@ -200,9 +200,9 @@ Graduates who move into enterprise AI architecture or multi-agent system design 
 
 ## Relationship to WFF Tracks
 
-WFF track analysts (TM-40A through TM-40F) are the operational consumers of AI-enabled tools built in this course. AI engineers should understand the operational workflows each WFF community uses on MSS: intelligence analysts (TM-40A) consume structured extraction products and automated reporting; mission command analysts (TM-40F) use AIP Logic workflows for information synthesis and course of action support; all WFF communities benefit from human-review-gated AI products that meet USAREUR-AF safety standards.
+WFF track analysts (SL 4A through SL 4F) are the operational consumers of AI-enabled tools built in this course. AI engineers should understand the operational workflows each WFF community uses on MSS: intelligence analysts (SL 4A) consume structured extraction products and automated reporting; mission command analysts (SL 4F) use AIP Logic workflows for information synthesis and course of action support; all WFF communities benefit from human-review-gated AI products that meet USAREUR-AF safety standards.
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*Syllabus TM-40H | Version 2.0 | March 2026*
+*Syllabus SL 4H | Version 2.0 | March 2026*

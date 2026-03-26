@@ -1,12 +1,12 @@
-# POST-TEST — TM-40O: PLATFORM ENGINEER
+# POST-TEST — SL 4O: PLATFORM ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40O: Platform Engineer |
+| **Course** | SL 4O: Platform Engineer |
 | **Form** | Post-Test |
-| **Level** | TM-40O (Specialist) |
-| **Audience** | Platform engineers completing TM-40O training |
+| **Level** | SL 4O (Specialist) |
+| **Audience** | Platform engineers completing SL 4O training |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (39/56) |
 
@@ -14,7 +14,7 @@
 
 ## INSTRUCTIONS
 
-This assessment evaluates knowledge and skills gained during TM-40O training. Answer all questions. A score of 70% or higher is required for course credit.
+This assessment evaluates knowledge and skills gained during SL 4O training. Answer all questions. A score of 70% or higher is required for course credit.
 
 ---
 
@@ -84,7 +84,7 @@ D. Container images from exceeding a maximum file size
 
 *Answer in 2–3 sentences. (5 points each)*
 
-**9. Explain the difference between "imperative" and "declarative" infrastructure management. Why does TM-40O require declarative approaches?**
+**9. Explain the difference between "imperative" and "declarative" infrastructure management. Why does SL 4O require declarative approaches?**
 
 **10. What is "drift detection" in a GitOps context? Why is drift dangerous, and how is it resolved?**
 
@@ -133,7 +133,7 @@ Passing: 39/56 (70%) — Post-test only. Pre-test is diagnostic.
 
 **Short Answer Guidance:**
 
-SA-9. Full credit: imperative = issuing step-by-step commands to reach a desired state ("create this pod, then scale to 3 replicas"); declarative = describing the desired end state and letting the system figure out how to get there ("I want 3 replicas of this pod running"). TM-40O requires declarative because: it is auditable (the desired state is in Git), reproducible (any engineer can re-apply the same manifest), and drift-detectable (GitOps controllers compare declared state to actual state). Partial credit (3 pts) for correct distinction without connecting to TM-40O requirements.
+SA-9. Full credit: imperative = issuing step-by-step commands to reach a desired state ("create this pod, then scale to 3 replicas"); declarative = describing the desired end state and letting the system figure out how to get there ("I want 3 replicas of this pod running"). SL 4O requires declarative because: it is auditable (the desired state is in Git), reproducible (any engineer can re-apply the same manifest), and drift-detectable (GitOps controllers compare declared state to actual state). Partial credit (3 pts) for correct distinction without connecting to SL 4O requirements.
 
 SA-10. Full credit: drift = the running cluster state no longer matches what is declared in Git; it is dangerous because the system behaves differently from what engineers expect, changes are undocumented and unreproducible, and a rebuild from Git would lose the drifted changes; resolution: the GitOps controller continuously reconciles — detecting drift and reverting the cluster to match Git (or alerting if manual intervention is needed). Partial credit (3 pts) for correct definition without explaining danger and resolution.
 

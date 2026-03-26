@@ -1,12 +1,12 @@
 {
   "_meta": {
-    "generated": "2026-03-16T22:28:23.081538+00:00Z",
+    "generated": "2026-03-26T12:51:29.835009+00:00Z",
     "generator": "build_atis_packet.py",
     "format": "TR 350-70 ATIS Course Registration Packet",
     "phase_1_target": "USAREUR-AF G3/7 command training registration",
     "phase_2_target": "T2COM institutional registration",
-    "total_courses": 23,
-    "total_program_hours": 728
+    "total_courses": 21,
+    "total_program_hours": 664
   },
   "program": {
     "program_title": "Maven Smart System (MSS) Training Program",
@@ -16,7 +16,7 @@
     "proponent_dsn": "[To be assigned]",
     "proponent_email": "usarmy.wiesbaden.usareur-af.list.c2dao-training@army.mil",
     "effective_date": "March 2026",
-    "classification": "UNCLASSIFIED",
+    "classification": "",
     "review_cycle": "Annual or upon major platform update",
     "authority": "C2DAO Data Governance Directive",
     "training_environment": "MSS Training Environment (dedicated Foundry instance, synthetic data)",
@@ -75,7 +75,7 @@
   },
   "courses": [
     {
-      "course_id": "TM-10",
+      "course_id": "SL 1",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Maven User",
       "tier": "Foundation",
@@ -90,7 +90,7 @@
       "min_class_size": 4,
       "cadence": "Monthly or as-needed",
       "instructor_ratio": "10:1",
-      "instructor_qualification": "TM-20 certified; 90 days active MSS use",
+      "instructor_qualification": "SL 2 certified; 90 days active MSS use",
       "access_level": "Viewer (standard)",
       "provisioning_lead_days": 5,
       "evaluation_type": "Practical exercise (6 tasks, GO/NO-GO)",
@@ -104,7 +104,7 @@
         "facilities": "Classroom, projector",
         "special": "None"
       },
-      "security_clearance": "None required (UNCLASSIFIED)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 1.5,
         "lab": 5.5,
@@ -178,16 +178,16 @@
         }
       ],
       "teo_tasks": [
-        "TM10-01: Log In and Navigate to Designated Application",
-        "TM10-02: Filter Table to Identify Missing Submissions",
-        "TM10-03: Execute an Authorized Action",
-        "TM10-04: Export Filtered Table to CSV",
-        "TM10-05: Build a Basic Contour Chart",
-        "TM10-06: Explore Object Types in Quiver"
+        "SL1-01: Log In and Navigate to Designated Application",
+        "SL1-02: Filter Table to Identify Missing Submissions",
+        "SL1-03: Execute an Authorized Action",
+        "SL1-04: Export Filtered Table to CSV",
+        "SL1-05: Build a Basic Contour Chart",
+        "SL1-06: Explore Object Types in Quiver"
       ]
     },
     {
-      "course_id": "TM-20",
+      "course_id": "SL 2",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Builder",
       "tier": "Builder",
@@ -195,16 +195,16 @@
       "duration_days": 5,
       "duration_hours": 40,
       "prerequisites": [
-        "TM-10"
+        "SL 1"
       ],
-      "prerequisite_description": "TM-10 Go on file",
+      "prerequisite_description": "SL 1 Go on file",
       "audience": "All staff assigned to build or maintain MSS data products",
       "audience_mos": "All MOS with data product responsibilities",
       "max_class_size": 12,
       "min_class_size": 4,
       "cadence": "Quarterly",
       "instructor_ratio": "8:1",
-      "instructor_qualification": "TM-30 certified; 6+ months Foundry build experience; able to troubleshoot all TM-20 labs",
+      "instructor_qualification": "SL 3 certified; 6+ months Foundry build experience; able to troubleshoot all SL 2 labs",
       "access_level": "Builder",
       "provisioning_lead_days": 5,
       "evaluation_type": "Practical exercise (11 tasks, GO/NO-GO)",
@@ -218,7 +218,7 @@
         "facilities": "Classroom, projector",
         "special": "None"
       },
-      "security_clearance": "None required (UNCLASSIFIED)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 0.0,
         "lab": 31.25,
@@ -404,21 +404,21 @@
         }
       ],
       "teo_tasks": [
-        "TM20-01: Create a Foundry Project with Correct Naming and Structure",
-        "TM20-02: Ingest a File and Verify Data Quality",
-        "TM20-03: Build a Clean/Transform Pipeline",
-        "TM20-04: Build a Join Pipeline with Derived Columns",
-        "TM20-05: Create an Object Type with Properties and PK",
-        "TM20-06: Create a Link Type Between Object Types",
-        "TM20-07: Configure a Pipeline Ontology Write Step",
-        "TM20-08: Configure an Action with Parameter and Access Control",
-        "TM20-09: Build a Workshop Application with Table, Filter, Metric, Chart",
-        "TM20-10: Connect an Action Button to a Workshop Widget",
-        "TM20-11: Manage Access Control (Viewer/Editor) and Verify Role Behavior"
+        "SL2-01: Create a Foundry Project with Correct Naming and Structure",
+        "SL2-02: Ingest a File and Verify Data Quality",
+        "SL2-03: Build a Clean/Transform Pipeline",
+        "SL2-04: Build a Join Pipeline with Derived Columns",
+        "SL2-05: Create an Object Type with Properties and PK",
+        "SL2-06: Create a Link Type Between Object Types",
+        "SL2-07: Configure a Pipeline Ontology Write Step",
+        "SL2-08: Configure an Action with Parameter and Access Control",
+        "SL2-09: Build a Workshop Application with Table, Filter, Metric, Chart",
+        "SL2-10: Connect an Action Button to a Workshop Widget",
+        "SL2-11: Manage Access Control (Viewer/Editor) and Verify Role Behavior"
       ]
     },
     {
-      "course_id": "TM-30",
+      "course_id": "SL 3",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Advanced Builder",
       "tier": "Advanced",
@@ -426,17 +426,17 @@
       "duration_days": 5,
       "duration_hours": 40,
       "prerequisites": [
-        "TM-10",
-        "TM-20"
+        "SL 1",
+        "SL 2"
       ],
-      "prerequisite_description": "TM-10 and TM-20 Go on file",
+      "prerequisite_description": "SL 1 and SL 2 Go on file",
       "audience": "Data-adjacent specialists, unit data leads",
       "audience_mos": "17-series, 25-series, S6/G6, G2, unit data leads",
       "max_class_size": 8,
       "min_class_size": 3,
       "cadence": "Quarterly",
       "instructor_ratio": "6:1",
-      "instructor_qualification": "TM-40 (any track) or C2DAO SME designation; able to conduct design critiques",
+      "instructor_qualification": "SL 4 (any track) or C2DAO SME designation; able to conduct design critiques",
       "access_level": "Editor + AIP Logic configuration",
       "provisioning_lead_days": 7,
       "evaluation_type": "Practical exercise (6 tasks, including reviewed design document; GO/NO-GO)",
@@ -450,7 +450,7 @@
         "facilities": "Classroom, projector, whiteboard",
         "special": "None"
       },
-      "security_clearance": "None required (UNCLASSIFIED)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 1.0,
         "lab": 26.0,
@@ -615,16 +615,16 @@
         }
       ],
       "teo_tasks": [
-        "TM30-01: Build a Multi-Page Workshop with Variable Passing",
-        "TM30-02: Build an Advanced Pipeline (Multi-Source Join, Aggregation)",
-        "TM30-03: Design and Document an Ontology Schema",
-        "TM30-04: Build an Ontology from Approved Design",
-        "TM30-05: Configure AIP Logic with Human Review Queue",
-        "TM30-06: Execute Full Promotion Workflow"
+        "SL3-01: Build a Multi-Page Workshop with Variable Passing",
+        "SL3-02: Build an Advanced Pipeline (Multi-Source Join, Aggregation)",
+        "SL3-03: Design and Document an Ontology Schema",
+        "SL3-04: Build an Ontology from Approved Design",
+        "SL3-05: Configure AIP Logic with Human Review Queue",
+        "SL3-06: Execute Full Promotion Workflow"
       ]
     },
     {
-      "course_id": "TM-40A",
+      "course_id": "SL 4A",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Intelligence Warfighting Function",
       "tier": "WFF Functional",
@@ -632,18 +632,18 @@
       "duration_days": 3,
       "duration_hours": 24,
       "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30"
+        "SL 1",
+        "SL 2",
+        "SL 3"
       ],
-      "prerequisite_description": "TM-10, TM-20, and TM-30 Go on file (all required)",
+      "prerequisite_description": "SL 1, SL 2, and SL 3 Go on file (all required)",
       "audience": "G2/S2 staff, targeting officers, all-source analysts",
       "audience_mos": "35-series, FA30",
       "max_class_size": 12,
       "min_class_size": 4,
       "cadence": "Quarterly or as-needed (high demand)",
       "instructor_ratio": "8:1",
-      "instructor_qualification": "TM-40A certified; G2/S2 Intel functional background; TM-30 proficiency",
+      "instructor_qualification": "SL 4A certified; G2/S2 Intel functional background; SL 3 proficiency",
       "access_level": "Builder",
       "provisioning_lead_days": 5,
       "evaluation_type": "Practical exercise (GO/NO-GO)",
@@ -657,7 +657,7 @@
         "facilities": "Classroom, projector",
         "special": "None"
       },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 1.0,
         "lab": 15.0,
@@ -750,16 +750,16 @@
         }
       ],
       "teo_tasks": [
-        "TM40A-01: Configure Intelligence COP with Source Attribution",
-        "TM40A-02: Configure PIR Alerts with Correct Triggers",
-        "TM40A-03: Build Collection Status Dashboard",
-        "TM40A-04: Produce All-Source Intelligence Summary",
-        "TM40A-05: Build Targeting Support Product for TWG",
-        "TM40A-06: Apply OPSEC Procedures to Intelligence Products"
+        "SL4A-01: Configure Intelligence COP with Source Attribution",
+        "SL4A-02: Configure PIR Alerts with Correct Triggers",
+        "SL4A-03: Build Collection Status Dashboard",
+        "SL4A-04: Produce All-Source Intelligence Summary",
+        "SL4A-05: Build Targeting Support Product for TWG",
+        "SL4A-06: Apply OPSEC Procedures to Intelligence Products"
       ]
     },
     {
-      "course_id": "TM-40B",
+      "course_id": "SL 4B",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Fires Warfighting Function",
       "tier": "WFF Functional",
@@ -767,18 +767,18 @@
       "duration_days": 3,
       "duration_hours": 24,
       "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30"
+        "SL 1",
+        "SL 2",
+        "SL 3"
       ],
-      "prerequisite_description": "TM-10, TM-20, and TM-30 Go on file (all required)",
+      "prerequisite_description": "SL 1, SL 2, and SL 3 Go on file (all required)",
       "audience": "Fires/FSCOORD staff, fire support officers, targeting personnel",
       "audience_mos": "13-series, FA30",
       "max_class_size": 12,
       "min_class_size": 4,
       "cadence": "Quarterly or as-needed",
       "instructor_ratio": "8:1",
-      "instructor_qualification": "TM-40B certified; Fires/FSCOORD functional background; TM-30 proficiency",
+      "instructor_qualification": "SL 4B certified; Fires/FSCOORD functional background; SL 3 proficiency",
       "access_level": "Builder",
       "provisioning_lead_days": 5,
       "evaluation_type": "Practical exercise (GO/NO-GO)",
@@ -792,7 +792,7 @@
         "facilities": "Classroom, projector",
         "special": "None"
       },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 1.0,
         "lab": 15.0,
@@ -809,7 +809,7 @@
       "teo_tasks": []
     },
     {
-      "course_id": "TM-40C",
+      "course_id": "SL 4C",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Movement and Maneuver Warfighting Function",
       "tier": "WFF Functional",
@@ -817,18 +817,18 @@
       "duration_days": 3,
       "duration_hours": 24,
       "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30"
+        "SL 1",
+        "SL 2",
+        "SL 3"
       ],
-      "prerequisite_description": "TM-10, TM-20, and TM-30 Go on file (all required)",
+      "prerequisite_description": "SL 1, SL 2, and SL 3 Go on file (all required)",
       "audience": "G3/S3 movement and maneuver staff",
       "audience_mos": "Operations staff, maneuver planners",
       "max_class_size": 12,
       "min_class_size": 4,
       "cadence": "Quarterly or as-needed",
       "instructor_ratio": "8:1",
-      "instructor_qualification": "TM-40C certified; G3/S3 movement and maneuver background; TM-30 proficiency",
+      "instructor_qualification": "SL 4C certified; G3/S3 movement and maneuver background; SL 3 proficiency",
       "access_level": "Builder",
       "provisioning_lead_days": 5,
       "evaluation_type": "Practical exercise (GO/NO-GO)",
@@ -842,7 +842,7 @@
         "facilities": "Classroom, projector",
         "special": "None"
       },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 1.0,
         "lab": 15.0,
@@ -859,7 +859,7 @@
       "teo_tasks": []
     },
     {
-      "course_id": "TM-40D",
+      "course_id": "SL 4D",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Sustainment Warfighting Function",
       "tier": "WFF Functional",
@@ -867,18 +867,18 @@
       "duration_days": 3,
       "duration_hours": 24,
       "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30"
+        "SL 1",
+        "SL 2",
+        "SL 3"
       ],
-      "prerequisite_description": "TM-10, TM-20, and TM-30 Go on file (all required)",
+      "prerequisite_description": "SL 1, SL 2, and SL 3 Go on file (all required)",
       "audience": "G4/S4 sustainment staff",
       "audience_mos": "92-series, sustainment planners",
       "max_class_size": 12,
       "min_class_size": 4,
       "cadence": "Quarterly or as-needed",
       "instructor_ratio": "8:1",
-      "instructor_qualification": "TM-40D certified; G4/S4 sustainment background; TM-30 proficiency",
+      "instructor_qualification": "SL 4D certified; G4/S4 sustainment background; SL 3 proficiency",
       "access_level": "Builder",
       "provisioning_lead_days": 5,
       "evaluation_type": "Practical exercise (GO/NO-GO)",
@@ -892,7 +892,7 @@
         "facilities": "Classroom, projector",
         "special": "None"
       },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 1.0,
         "lab": 15.0,
@@ -909,7 +909,7 @@
       "teo_tasks": []
     },
     {
-      "course_id": "TM-40E",
+      "course_id": "SL 4E",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Protection Warfighting Function",
       "tier": "WFF Functional",
@@ -917,18 +917,18 @@
       "duration_days": 3,
       "duration_hours": 24,
       "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30"
+        "SL 1",
+        "SL 2",
+        "SL 3"
       ],
-      "prerequisite_description": "TM-10, TM-20, and TM-30 Go on file (all required)",
+      "prerequisite_description": "SL 1, SL 2, and SL 3 Go on file (all required)",
       "audience": "Protection staff",
       "audience_mos": "Protection cell, AT/FP, physical security",
       "max_class_size": 12,
       "min_class_size": 4,
       "cadence": "Quarterly or as-needed",
       "instructor_ratio": "8:1",
-      "instructor_qualification": "TM-40E certified; Protection functional background; TM-30 proficiency",
+      "instructor_qualification": "SL 4E certified; Protection functional background; SL 3 proficiency",
       "access_level": "Builder",
       "provisioning_lead_days": 5,
       "evaluation_type": "Practical exercise (GO/NO-GO)",
@@ -942,7 +942,7 @@
         "facilities": "Classroom, projector",
         "special": "None"
       },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 1.0,
         "lab": 15.0,
@@ -959,7 +959,7 @@
       "teo_tasks": []
     },
     {
-      "course_id": "TM-40F",
+      "course_id": "SL 4F",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Mission Command Warfighting Function",
       "tier": "WFF Functional",
@@ -967,18 +967,18 @@
       "duration_days": 3,
       "duration_hours": 24,
       "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30"
+        "SL 1",
+        "SL 2",
+        "SL 3"
       ],
-      "prerequisite_description": "TM-10, TM-20, and TM-30 Go on file (all required)",
+      "prerequisite_description": "SL 1, SL 2, and SL 3 Go on file (all required)",
       "audience": "MC/G6/S6 staff",
       "audience_mos": "25-series, signal officers, mission command planners",
       "max_class_size": 12,
       "min_class_size": 4,
       "cadence": "Quarterly or as-needed",
       "instructor_ratio": "8:1",
-      "instructor_qualification": "TM-40F certified; Mission Command/G6 background; TM-30 proficiency",
+      "instructor_qualification": "SL 4F certified; Mission Command/G6 background; SL 3 proficiency",
       "access_level": "Builder",
       "provisioning_lead_days": 5,
       "evaluation_type": "Practical exercise (GO/NO-GO)",
@@ -992,7 +992,7 @@
         "facilities": "Classroom, projector",
         "special": "None"
       },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 1.0,
         "lab": 15.0,
@@ -1009,7 +1009,7 @@
       "teo_tasks": []
     },
     {
-      "course_id": "TM-40G",
+      "course_id": "SL 4G",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "ORSA Specialist",
       "tier": "Specialist",
@@ -1017,18 +1017,18 @@
       "duration_days": 5,
       "duration_hours": 40,
       "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30"
+        "SL 1",
+        "SL 2",
+        "SL 3"
       ],
-      "prerequisite_description": "TM-10, TM-20, TM-30 Go on file (all required); quantitative background (statistics, linear algebra); Python or R proficiency",
+      "prerequisite_description": "SL 1, SL 2, SL 3 Go on file (all required); quantitative background (statistics, linear algebra); Python or R proficiency",
       "audience": "ORSA analysts",
       "audience_mos": "FA49, operations research analysts",
       "max_class_size": 6,
       "min_class_size": 2,
       "cadence": "Semi-annual or on demand",
       "instructor_ratio": "4:1",
-      "instructor_qualification": "FA49 or equivalent ORSA background; TM-40G certified or C2DAO SME designation",
+      "instructor_qualification": "FA49 or equivalent ORSA background; SL 4G certified or C2DAO SME designation",
       "access_level": "Code Workspace (CPU or GPU) + standard Editor",
       "provisioning_lead_days": 10,
       "evaluation_type": "Practical exercise (6 tasks); evaluated commander brief; GO/NO-GO",
@@ -1042,7 +1042,7 @@
         "facilities": "Lab with individual workstations",
         "special": "Code Workspace (CPU); IDE access"
       },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 2.0,
         "lab": 30.0,
@@ -1200,16 +1200,16 @@
         }
       ],
       "teo_tasks": [
-        "TM40G-01: Configure Code Workspace and Verify Foundry Connectivity",
-        "TM40G-02: Build Regression Model for Readiness Forecasting",
-        "TM40G-03: Build Time Series Model with Confidence Bounds",
-        "TM40G-04: Run Monte Carlo Simulation for COA Comparison",
-        "TM40G-05: Build ORSA Forecast Dashboard",
-        "TM40G-06: Deliver Commander Brief with Documented Uncertainty"
+        "SL4G-01: Configure Code Workspace and Verify Foundry Connectivity",
+        "SL4G-02: Build Regression Model for Readiness Forecasting",
+        "SL4G-03: Build Time Series Model with Confidence Bounds",
+        "SL4G-04: Run Monte Carlo Simulation for COA Comparison",
+        "SL4G-05: Build ORSA Forecast Dashboard",
+        "SL4G-06: Deliver Commander Brief with Documented Uncertainty"
       ]
     },
     {
-      "course_id": "TM-40H",
+      "course_id": "SL 4H",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "AI Engineer",
       "tier": "Specialist",
@@ -1217,18 +1217,18 @@
       "duration_days": 5,
       "duration_hours": 40,
       "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30"
+        "SL 1",
+        "SL 2",
+        "SL 3"
       ],
-      "prerequisite_description": "TM-10, TM-20, TM-30 Go on file (all required); Python proficiency; Data Literacy Technical Reference read",
+      "prerequisite_description": "SL 1, SL 2, SL 3 Go on file (all required); Python proficiency; Data Literacy Technical Reference read",
       "audience": "AI/ML specialists building AIP workflows",
       "audience_mos": "AI engineers, data scientists with AIP focus",
       "max_class_size": 6,
       "min_class_size": 2,
       "cadence": "Semi-annual or on demand",
       "instructor_ratio": "4:1",
-      "instructor_qualification": "AIP Logic authoring experience; C2DAO AI SME designation; TM-40H certified",
+      "instructor_qualification": "AIP Logic authoring experience; C2DAO AI SME designation; SL 4H certified",
       "access_level": "AIP Logic authoring + Agent Studio",
       "provisioning_lead_days": 10,
       "evaluation_type": "Practical exercise (7 tasks); AIP Authorization Checklist review; GO/NO-GO",
@@ -1242,7 +1242,7 @@
         "facilities": "Lab with individual workstations",
         "special": "AIP Logic authoring access; Agent Studio access; IDE"
       },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 3.75,
         "lab": 28.25,
@@ -1255,7 +1255,7 @@
       "teo_tasks": []
     },
     {
-      "course_id": "TM-40M",
+      "course_id": "SL 4M",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "ML Engineer",
       "tier": "Specialist",
@@ -1263,18 +1263,18 @@
       "duration_days": 5,
       "duration_hours": 40,
       "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30"
+        "SL 1",
+        "SL 2",
+        "SL 3"
       ],
-      "prerequisite_description": "TM-10, TM-20, TM-30 Go on file (all required); Python proficiency (pandas, scikit-learn, PyTorch or equivalent)",
+      "prerequisite_description": "SL 1, SL 2, SL 3 Go on file (all required); Python proficiency (pandas, scikit-learn, PyTorch or equivalent)",
       "audience": "ML engineers building/deploying models on Foundry",
       "audience_mos": "MLEs, data scientists with model deployment focus",
       "max_class_size": 6,
       "min_class_size": 2,
       "cadence": "Semi-annual or on demand",
       "instructor_ratio": "4:1",
-      "instructor_qualification": "ML production experience; TM-40M certified; C2DAO MLE SME designation",
+      "instructor_qualification": "ML production experience; SL 4M certified; C2DAO MLE SME designation",
       "access_level": "GPU-enabled Code Workspace",
       "provisioning_lead_days": 10,
       "evaluation_type": "Practical exercise (7 tasks); model card review; GO/NO-GO",
@@ -1288,7 +1288,7 @@
         "facilities": "Lab with individual workstations",
         "special": "GPU-enabled Code Workspace; IDE"
       },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 1.0,
         "lab": 31.0,
@@ -1300,7 +1300,7 @@
       "teo_tasks": []
     },
     {
-      "course_id": "TM-40J",
+      "course_id": "SL 4J",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Program Manager",
       "tier": "Specialist",
@@ -1308,18 +1308,18 @@
       "duration_days": 4,
       "duration_hours": 32,
       "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30"
+        "SL 1",
+        "SL 2",
+        "SL 3"
       ],
-      "prerequisite_description": "TM-10, TM-20, TM-30 Go on file (all required)",
+      "prerequisite_description": "SL 1, SL 2, SL 3 Go on file (all required)",
       "audience": "Program managers, G8/S8 resource managers",
       "audience_mos": "FA51, program/resource managers",
       "max_class_size": 8,
       "min_class_size": 3,
       "cadence": "Quarterly",
       "instructor_ratio": "6:1",
-      "instructor_qualification": "Program management background; TM-30 certified; GFEBS/IMS proficiency",
+      "instructor_qualification": "Program management background; SL 3 certified; GFEBS/IMS proficiency",
       "access_level": "Builder",
       "provisioning_lead_days": 5,
       "evaluation_type": "Practical exercise (7 tasks); PM Dashboard Standards Checklist review; GO/NO-GO",
@@ -1333,7 +1333,7 @@
         "facilities": "Lab with individual workstations",
         "special": "None"
       },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 0.5,
         "lab": 17.75,
@@ -1345,7 +1345,7 @@
       "teo_tasks": []
     },
     {
-      "course_id": "TM-40K",
+      "course_id": "SL 4K",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Knowledge Manager",
       "tier": "Specialist",
@@ -1353,18 +1353,18 @@
       "duration_days": 4,
       "duration_hours": 32,
       "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30"
+        "SL 1",
+        "SL 2",
+        "SL 3"
       ],
-      "prerequisite_description": "TM-10, TM-20, TM-30 Go on file (all required)",
+      "prerequisite_description": "SL 1, SL 2, SL 3 Go on file (all required)",
       "audience": "Knowledge managers, KMOs (37F)",
       "audience_mos": "37F, knowledge management officers",
       "max_class_size": 8,
       "min_class_size": 3,
       "cadence": "Quarterly",
       "instructor_ratio": "6:1",
-      "instructor_qualification": "Knowledge management background; TM-30 certified; AIP Logic configuration proficiency",
+      "instructor_qualification": "Knowledge management background; SL 3 certified; AIP Logic configuration proficiency",
       "access_level": "Builder + AIP Logic configuration",
       "provisioning_lead_days": 7,
       "evaluation_type": "Practical exercise (6 tasks); PCS package instructor review; GO/NO-GO",
@@ -1378,7 +1378,7 @@
         "facilities": "Lab with individual workstations",
         "special": "AIP Logic configuration access"
       },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 1.0,
         "lab": 14.25,
@@ -1390,7 +1390,7 @@
       "teo_tasks": []
     },
     {
-      "course_id": "TM-40L",
+      "course_id": "SL 4L",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Software Engineer",
       "tier": "Specialist",
@@ -1398,18 +1398,18 @@
       "duration_days": 5,
       "duration_hours": 40,
       "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30"
+        "SL 1",
+        "SL 2",
+        "SL 3"
       ],
-      "prerequisite_description": "TM-10, TM-20, TM-30 Go on file (all required); TypeScript or Python proficiency; REST API familiarity",
+      "prerequisite_description": "SL 1, SL 2, SL 3 Go on file (all required); TypeScript or Python proficiency; REST API familiarity",
       "audience": "Software engineers building Foundry integrations",
       "audience_mos": "SWEs, developers, 17-series with coding background",
       "max_class_size": 6,
       "min_class_size": 2,
       "cadence": "Semi-annual or on demand",
       "instructor_ratio": "4:1",
-      "instructor_qualification": "Software engineering background; OSDK/Platform SDK proficiency; TM-40L certified",
+      "instructor_qualification": "Software engineering background; OSDK/Platform SDK proficiency; SL 4L certified",
       "access_level": "OSDK developer access + developer token",
       "provisioning_lead_days": 10,
       "evaluation_type": "Practical exercise (6 tasks); validator test suite (8 test cases); deployment checklist review; GO/NO-GO",
@@ -1423,7 +1423,7 @@
         "facilities": "Lab with individual workstations",
         "special": "OSDK developer access; developer token; IDE"
       },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 2.0,
         "lab": 30.0,
@@ -1435,7 +1435,7 @@
       "teo_tasks": []
     },
     {
-      "course_id": "TM-50G",
+      "course_id": "SL 5G",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Advanced ORSA",
       "tier": "Advanced Specialist",
@@ -1443,19 +1443,19 @@
       "duration_days": 5,
       "duration_hours": 40,
       "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30",
-        "TM-40G"
+        "SL 1",
+        "SL 2",
+        "SL 3",
+        "SL 4G"
       ],
-      "prerequisite_description": "TM-40G Go on file (required); active ORSA role at theater level",
+      "prerequisite_description": "SL 4G Go on file (required); active ORSA role at theater level",
       "audience": "Senior ORSA analysts",
       "audience_mos": "FA49, senior operations research analysts",
       "max_class_size": 6,
       "min_class_size": 2,
       "cadence": "Annual or on demand",
       "instructor_ratio": "4:1",
-      "instructor_qualification": "FA49 O-4+ or equivalent; TM-50G certified or C2DAO Advanced ORSA SME; active analytical practice at theater level",
+      "instructor_qualification": "FA49 O-4+ or equivalent; SL 5G certified or C2DAO Advanced ORSA SME; active analytical practice at theater level",
       "access_level": "Code Workspace (CPU/GPU) + Editor",
       "provisioning_lead_days": 10,
       "evaluation_type": "Practical exercise; peer-reviewed analytical product; GO/NO-GO",
@@ -1469,7 +1469,7 @@
         "facilities": "Lab with individual workstations",
         "special": "Code Workspace (CPU/GPU); IDE"
       },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 2.0,
         "lab": 30.0,
@@ -1481,7 +1481,7 @@
       "teo_tasks": []
     },
     {
-      "course_id": "TM-50H",
+      "course_id": "SL 5H",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Advanced AI Engineer",
       "tier": "Advanced Specialist",
@@ -1489,19 +1489,19 @@
       "duration_days": 5,
       "duration_hours": 40,
       "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30",
-        "TM-40H"
+        "SL 1",
+        "SL 2",
+        "SL 3",
+        "SL 4H"
       ],
-      "prerequisite_description": "TM-40H Go on file (required)",
+      "prerequisite_description": "SL 4H Go on file (required)",
       "audience": "Senior AI engineers",
       "audience_mos": "AI engineers with production AIP experience",
       "max_class_size": 6,
       "min_class_size": 2,
       "cadence": "Annual or on demand",
       "instructor_ratio": "4:1",
-      "instructor_qualification": "TM-50H certified or C2DAO Advanced AI SME; production AIP/Agent Studio experience",
+      "instructor_qualification": "SL 5H certified or C2DAO Advanced AI SME; production AIP/Agent Studio experience",
       "access_level": "AIP Logic authoring + Agent Studio + Code Workspace",
       "provisioning_lead_days": 10,
       "evaluation_type": "Practical exercise; GO/NO-GO",
@@ -1515,7 +1515,7 @@
         "facilities": "Lab with individual workstations",
         "special": "AIP authoring; Agent Studio; Code Workspace; IDE"
       },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 2.0,
         "lab": 30.0,
@@ -1527,7 +1527,7 @@
       "teo_tasks": []
     },
     {
-      "course_id": "TM-50M",
+      "course_id": "SL 5M",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Advanced ML Engineer",
       "tier": "Advanced Specialist",
@@ -1535,19 +1535,19 @@
       "duration_days": 5,
       "duration_hours": 40,
       "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30",
-        "TM-40M"
+        "SL 1",
+        "SL 2",
+        "SL 3",
+        "SL 4M"
       ],
-      "prerequisite_description": "TM-40M Go on file (required)",
+      "prerequisite_description": "SL 4M Go on file (required)",
       "audience": "Senior ML engineers",
       "audience_mos": "MLEs with production model deployment experience",
       "max_class_size": 6,
       "min_class_size": 2,
       "cadence": "Annual or on demand",
       "instructor_ratio": "4:1",
-      "instructor_qualification": "TM-50M certified or C2DAO Advanced MLE SME; production ML pipeline experience",
+      "instructor_qualification": "SL 5M certified or C2DAO Advanced MLE SME; production ML pipeline experience",
       "access_level": "GPU-enabled Code Workspace + Editor",
       "provisioning_lead_days": 10,
       "evaluation_type": "Practical exercise; model governance review; GO/NO-GO",
@@ -1561,7 +1561,7 @@
         "facilities": "Lab with individual workstations",
         "special": "GPU-enabled Code Workspace; IDE"
       },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 1.0,
         "lab": 31.0,
@@ -1573,7 +1573,7 @@
       "teo_tasks": []
     },
     {
-      "course_id": "TM-50J",
+      "course_id": "SL 5J",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Advanced Program Manager",
       "tier": "Advanced Specialist",
@@ -1581,19 +1581,19 @@
       "duration_days": 3,
       "duration_hours": 24,
       "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30",
-        "TM-40J"
+        "SL 1",
+        "SL 2",
+        "SL 3",
+        "SL 4J"
       ],
-      "prerequisite_description": "TM-40J Go on file (required)",
+      "prerequisite_description": "SL 4J Go on file (required)",
       "audience": "Senior program managers",
       "audience_mos": "FA51, senior resource/program managers",
       "max_class_size": 8,
       "min_class_size": 3,
       "cadence": "Annual or on demand",
       "instructor_ratio": "6:1",
-      "instructor_qualification": "TM-50J certified or C2DAO Advanced PM SME; enterprise portfolio management experience",
+      "instructor_qualification": "SL 5J certified or C2DAO Advanced PM SME; enterprise portfolio management experience",
       "access_level": "Builder + Editor",
       "provisioning_lead_days": 7,
       "evaluation_type": "Practical exercise; GO/NO-GO",
@@ -1607,7 +1607,7 @@
         "facilities": "Lab with individual workstations",
         "special": "None"
       },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 1.0,
         "lab": 15.0,
@@ -1619,7 +1619,7 @@
       "teo_tasks": []
     },
     {
-      "course_id": "TM-50K",
+      "course_id": "SL 5K",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Advanced Knowledge Manager",
       "tier": "Advanced Specialist",
@@ -1627,19 +1627,19 @@
       "duration_days": 3,
       "duration_hours": 24,
       "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30",
-        "TM-40K"
+        "SL 1",
+        "SL 2",
+        "SL 3",
+        "SL 4K"
       ],
-      "prerequisite_description": "TM-40K Go on file (required)",
+      "prerequisite_description": "SL 4K Go on file (required)",
       "audience": "Senior knowledge managers",
       "audience_mos": "37F, senior KMOs",
       "max_class_size": 8,
       "min_class_size": 3,
       "cadence": "Annual or on demand",
       "instructor_ratio": "6:1",
-      "instructor_qualification": "TM-50K certified or C2DAO Advanced KM SME; enterprise KM architecture experience",
+      "instructor_qualification": "SL 5K certified or C2DAO Advanced KM SME; enterprise KM architecture experience",
       "access_level": "Builder + AIP Logic configuration + Editor",
       "provisioning_lead_days": 7,
       "evaluation_type": "Practical exercise; GO/NO-GO",
@@ -1653,7 +1653,7 @@
         "facilities": "Lab with individual workstations",
         "special": "AIP Logic configuration access"
       },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 1.0,
         "lab": 15.0,
@@ -1665,7 +1665,7 @@
       "teo_tasks": []
     },
     {
-      "course_id": "TM-50L",
+      "course_id": "SL 5L",
       "atis_number": "[TBD — assigned by ATIS upon registration]",
       "title": "Advanced Software Engineer",
       "tier": "Advanced Specialist",
@@ -1673,19 +1673,19 @@
       "duration_days": 5,
       "duration_hours": 40,
       "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30",
-        "TM-40L"
+        "SL 1",
+        "SL 2",
+        "SL 3",
+        "SL 4L"
       ],
-      "prerequisite_description": "TM-40L Go on file (required)",
+      "prerequisite_description": "SL 4L Go on file (required)",
       "audience": "Senior software engineers",
       "audience_mos": "SWEs, senior developers, 17-series with advanced coding",
       "max_class_size": 6,
       "min_class_size": 2,
       "cadence": "Annual or on demand",
       "instructor_ratio": "4:1",
-      "instructor_qualification": "TM-50L certified or C2DAO Advanced SWE SME; production Foundry integration experience",
+      "instructor_qualification": "SL 5L certified or C2DAO Advanced SWE SME; production Foundry integration experience",
       "access_level": "OSDK developer + Platform SDK + Code Workspace",
       "provisioning_lead_days": 10,
       "evaluation_type": "Practical exercise; CI/CD pipeline review; GO/NO-GO",
@@ -1699,7 +1699,7 @@
         "facilities": "Lab with individual workstations",
         "special": "OSDK developer access; Platform SDK; Code Workspace; IDE"
       },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
+      "security_clearance": "None required",
       "hours_by_method": {
         "lecture_brief": 2.0,
         "lab": 30.0,
@@ -1709,128 +1709,37 @@
       },
       "blocks": [],
       "teo_tasks": []
-    },
-    {
-      "course_id": "T3-I",
-      "atis_number": "[TBD — assigned by ATIS upon registration]",
-      "title": "Instructor Certification",
-      "tier": "Train-the-Trainer",
-      "tier_number": 6,
-      "duration_days": 5,
-      "duration_hours": 40,
-      "prerequisites": [
-        "TM-10",
-        "TM-20",
-        "TM-30"
-      ],
-      "prerequisite_description": "TM-30 Go on file (required) + C2DAO selection",
-      "audience": "C2DAO-selected instructor candidates",
-      "audience_mos": "All MOS; selected by C2DAO based on technical proficiency and teaching aptitude",
-      "max_class_size": 12,
-      "min_class_size": 4,
-      "cadence": "Semi-annual or as-needed",
-      "instructor_ratio": "6:1",
-      "instructor_qualification": "Certified Instructor (T3-I graduate) with 12+ months teaching experience; C2DAO Master Instructor designation",
-      "access_level": "Builder + training environment admin",
-      "provisioning_lead_days": 10,
-      "evaluation_type": "Practicum (teach-back evaluation, peer review, instructor panel); GO/NO-GO",
-      "evaluation_hours": 8.0,
-      "hard_nogo": "Failure to demonstrate safe learning environment; incorrect technical content delivery",
-      "remediation_hours": 8,
-      "remediation_method": "Supervised teach-back with mentor instructor; remediation practicum",
-      "equipment": {
-        "workstation": "Government workstation with CAC reader",
-        "network": "MSS training sandbox + production environment",
-        "facilities": "Classroom with projector, breakout rooms for practicum",
-        "special": "Training environment admin access; sample course materials"
-      },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
-      "hours_by_method": {
-        "lecture_brief": 4.0,
-        "lab": 12.0,
-        "discussion_review": 4.0,
-        "workshop_seminar": 12.0,
-        "evaluation": 8.0
-      },
-      "blocks": [],
-      "teo_tasks": []
-    },
-    {
-      "course_id": "T3-F",
-      "atis_number": "[TBD — assigned by ATIS upon registration]",
-      "title": "MSC Force Multiplier",
-      "tier": "Train-the-Trainer",
-      "tier_number": 6,
-      "duration_days": 3,
-      "duration_hours": 24,
-      "prerequisites": [
-        "TM-10",
-        "TM-20"
-      ],
-      "prerequisite_description": "TM-20 Go on file (required) + CDR nomination",
-      "audience": "CDR-nominated unit personnel designated as Unit Data Trainers (UDTs)",
-      "audience_mos": "All MOS; nominated by unit commander based on data proficiency and leadership potential",
-      "max_class_size": 16,
-      "min_class_size": 4,
-      "cadence": "Quarterly or as-needed",
-      "instructor_ratio": "8:1",
-      "instructor_qualification": "Certified Instructor (T3-I graduate); TM-30 certified",
-      "access_level": "Builder",
-      "provisioning_lead_days": 5,
-      "evaluation_type": "Practical exercise (UDT scenario execution, peer coaching demo); GO/NO-GO",
-      "evaluation_hours": 4.0,
-      "hard_nogo": "Failure to correctly execute TM-10 teach-back; inability to troubleshoot common user issues",
-      "remediation_hours": 4,
-      "remediation_method": "Supervised teach-back on failed tasks; paired coaching exercise",
-      "equipment": {
-        "workstation": "Government workstation with CAC reader",
-        "network": "MSS training sandbox",
-        "facilities": "Classroom with projector",
-        "special": "None"
-      },
-      "security_clearance": "None required (UNCLASSIFIED training environment)",
-      "hours_by_method": {
-        "lecture_brief": 2.0,
-        "lab": 10.0,
-        "discussion_review": 2.0,
-        "workshop_seminar": 6.0,
-        "evaluation": 4.0
-      },
-      "blocks": [],
-      "teo_tasks": []
     }
   ],
   "prerequisite_chain": {
-    "description": "TM-10 → TM-20 → TM-30 → ALL TM-40 (A-O) → TM-50 (G-O only)",
+    "description": "SL 1 → SL 2 → SL 3 → ALL SL 4 (A-M) → SL 5 (G-M only)",
     "tree": {
-      "TM-10": {
-        "TM-20": {
-          "T3-F": {},
-          "TM-30": {
-            "T3-I": {},
-            "TM-40A": {},
-            "TM-40B": {},
-            "TM-40C": {},
-            "TM-40D": {},
-            "TM-40E": {},
-            "TM-40F": {},
-            "TM-40G": {
-              "TM-50G": {}
+      "SL 1": {
+        "SL 2": {
+          "SL 3": {
+            "SL 4A": {},
+            "SL 4B": {},
+            "SL 4C": {},
+            "SL 4D": {},
+            "SL 4E": {},
+            "SL 4F": {},
+            "SL 4G": {
+              "SL 5G": {}
             },
-            "TM-40H": {
-              "TM-50H": {}
+            "SL 4H": {
+              "SL 5H": {}
             },
-            "TM-40M": {
-              "TM-50M": {}
+            "SL 4M": {
+              "SL 5M": {}
             },
-            "TM-40J": {
-              "TM-50J": {}
+            "SL 4J": {
+              "SL 5J": {}
             },
-            "TM-40K": {
-              "TM-50K": {}
+            "SL 4K": {
+              "SL 5K": {}
             },
-            "TM-40L": {
-              "TM-50L": {}
+            "SL 4L": {
+              "SL 5L": {}
             }
           }
         }

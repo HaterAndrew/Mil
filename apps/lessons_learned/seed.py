@@ -37,8 +37,8 @@ LESSON_DATA = [
         "FIELD_OBSERVATION", None,
     ),
     (
-        "TM-40K students lack prerequisite data modeling knowledge",
-        "Three of eight TM-40K students could not complete the entity resolution exercise within allotted time. Pre-assessment shows gap in relational data modeling fundamentals covered in TM-30.",
+        "SL 4K students lack prerequisite data modeling knowledge",
+        "Three of eight SL 4K students could not complete the entity resolution exercise within allotted time. Pre-assessment shows gap in relational data modeling fundamentals covered in SL 3.",
         "INSTRUCTOR_NOTE", "TM40K-CLS-003",
     ),
     (
@@ -57,7 +57,7 @@ LESSON_DATA = [
         "EXERCISE", "EX-COMBINED-RESOLVE-26",
     ),
     (
-        "Student feedback: TM-40H lab environment insufficient",
+        "Student feedback: SL 4H lab environment insufficient",
         "AI Engineer track students report that the provided lab VM has insufficient GPU memory for the transformer fine-tuning exercise. Four of six students could not complete Lab 3.",
         "STUDENT_FEEDBACK", "TM40H-EVAL-Q2",
     ),
@@ -83,17 +83,17 @@ LESSON_DATA = [
     ),
     (
         "Battalion S2 shops underutilize advanced builder capabilities",
-        "Observation across 5 BN S2 sections shows that TM-30 qualified analysts use less than 20% of available advanced builder features. Default to basic query/filter patterns from TM-10.",
+        "Observation across 5 BN S2 sections shows that SL 3 qualified analysts use less than 20% of available advanced builder features. Default to basic query/filter patterns from SL 1.",
         "FIELD_OBSERVATION", None,
     ),
     (
-        "TM-40G ORSA students excel at statistical methods but struggle with operational context",
+        "SL 4G ORSA students excel at statistical methods but struggle with operational context",
         "ORSA track students consistently score well on statistical methodology assessments but perform poorly when asked to translate analytical results into operationally relevant recommendations.",
         "INSTRUCTOR_NOTE", "TM40G-CLS-005",
     ),
     (
         "Successful rapid dashboard deployment for DEFENDER 26",
-        "Team deployed 4 custom operational dashboards within 72 hours of exercise STARTEX. Pre-built templates from TM-30 curriculum accelerated development. Recommend maintaining template library.",
+        "Team deployed 4 custom operational dashboards within 72 hours of exercise STARTEX. Pre-built templates from SL 3 curriculum accelerated development. Recommend maintaining template library.",
         "AAR", "AAR-2026-055",
     ),
     (
@@ -108,17 +108,17 @@ LESSON_DATA = [
     ),
     (
         "Instructor development gap in advanced ML concepts",
-        "Only 2 of 5 certified TM-40M instructors can effectively teach the ensemble methods module. Remaining instructors default to reading slides. Faculty development program needed.",
+        "Only 2 of 5 certified SL 4M instructors can effectively teach the ensemble methods module. Remaining instructors default to reading slides. Faculty development program needed.",
         "INSTRUCTOR_NOTE", "FACULTY-DEV-2026",
     ),
     (
         "Protection WFF dashboard successfully integrated CBRN sensor feeds",
-        "TM-40E qualified analyst successfully integrated real-time CBRN sensor data into protection dashboard during CBRN EXERCISE TOXIC LANCE. Reduced manual reporting time by 75%.",
+        "SL 4E qualified analyst successfully integrated real-time CBRN sensor data into protection dashboard during CBRN EXERCISE TOXIC LANCE. Reduced manual reporting time by 75%.",
         "AAR", "AAR-2026-063",
     ),
     (
-        "Student retention rates drop after TM-20 to TM-30 transition",
-        "Analysis of 6 cohorts shows 35% of TM-20 graduates do not enroll in TM-30 within 90 days. Primary reported reason: insufficient unit support for training time allocation.",
+        "Student retention rates drop after SL 2 to SL 3 transition",
+        "Analysis of 6 cohorts shows 35% of SL 2 graduates do not enroll in SL 3 within 90 days. Primary reported reason: insufficient unit support for training time allocation.",
         "STUDENT_FEEDBACK", "ENROLLMENT-ANALYSIS-Q1",
     ),
     (
@@ -133,11 +133,11 @@ LESSON_DATA = [
     ),
     (
         "Cross-WFF correlation analysis identifies movement-sustainment dependency",
-        "Novel analysis by TM-50G student identified strong correlation between movement tempo and sustainment demand signals 48 hours in advance. Potential predictive model for logistics planning.",
+        "Novel analysis by SL 5G student identified strong correlation between movement tempo and sustainment demand signals 48 hours in advance. Potential predictive model for logistics planning.",
         "EXERCISE", "EX-COMBINED-RESOLVE-26",
     ),
     (
-        "TM-40J program managers need more hands-on technical exposure",
+        "SL 4J program managers need more hands-on technical exposure",
         "Program manager track students consistently request more technical lab time. Current 60/40 lecture/lab split should shift to 40/60 based on end-of-course evaluations.",
         "STUDENT_FEEDBACK", "TM40J-EVAL-Q1",
     ),
@@ -148,12 +148,12 @@ LESSON_DATA = [
     ),
     (
         "Effective use of data quality scorecards at Division level",
-        "Division G2 implemented weekly data quality scorecard based on TM-40K curriculum. Improved source data completeness from 62% to 91% within 8 weeks.",
+        "Division G2 implemented weekly data quality scorecard based on SL 4K curriculum. Improved source data completeness from 62% to 91% within 8 weeks.",
         "AAR", "AAR-2026-072",
     ),
     (
         "Software engineer track needs updated API security module",
-        "TM-40L API security lab uses deprecated authentication patterns. Industry standard moved to OAuth 2.1 and PKCE flows; curriculum references OAuth 2.0 implicit grant.",
+        "SL 4L API security lab uses deprecated authentication patterns. Industry standard moved to OAuth 2.1 and PKCE flows; curriculum references OAuth 2.0 implicit grant.",
         "INSTRUCTOR_NOTE", "TM40L-REVIEW-Q2",
     ),
     (
@@ -167,18 +167,18 @@ LESSON_DATA = [
         "FIELD_OBSERVATION", None,
     ),
     (
-        "Student feedback: TM-40G statistics prerequisites insufficient",
+        "Student feedback: SL 4G statistics prerequisites insufficient",
         "ORSA students without undergraduate statistics background struggle in weeks 2-4. Recommend adding optional pre-course statistics refresher module.",
         "STUDENT_FEEDBACK", "TM40G-EVAL-Q2",
     ),
     (
         "Fires WFF data integration successful with JADOCS prototype",
-        "Prototype JADOCS integration developed during TM-40B demonstrated automated joint fires data flow. Reduced manual data entry from 45 minutes to 5 minutes per fire mission.",
+        "Prototype JADOCS integration developed during SL 4B demonstrated automated joint fires data flow. Reduced manual data entry from 45 minutes to 5 minutes per fire mission.",
         "EXERCISE", "EX-FIRES-FOCUS-26",
     ),
     (
         "Knowledge management taxonomy misaligned with operational vocabulary",
-        "TM-40K taxonomy uses academic data management terminology that field operators do not recognize. Recommend glossary alignment pass with operational SMEs.",
+        "SL 4K taxonomy uses academic data management terminology that field operators do not recognize. Recommend glossary alignment pass with operational SMEs.",
         "INSTRUCTOR_NOTE", "TM40K-CLS-004",
     ),
     (
@@ -192,8 +192,8 @@ LESSON_DATA = [
         "FIELD_OBSERVATION", None,
     ),
     (
-        "TM-50H advanced AI students produce deployment-ready models",
-        "Three of five TM-50H students produced ML models that passed operational testing and were deployed to production. Highest conversion rate of any advanced track cohort.",
+        "SL 5H advanced AI students produce deployment-ready models",
+        "Three of five SL 5H students produced ML models that passed operational testing and were deployed to production. Highest conversion rate of any advanced track cohort.",
         "INSTRUCTOR_NOTE", "TM50H-CLS-002",
     ),
     (
@@ -203,7 +203,7 @@ LESSON_DATA = [
     ),
     (
         "Quality control metrics dashboard adopted by 3 divisions",
-        "Data quality scorecard template developed in TM-40K now deployed at 3 USAREUR-AF divisions. Consistent metrics enable cross-division quality benchmarking for first time.",
+        "Data quality scorecard template developed in SL 4K now deployed at 3 USAREUR-AF divisions. Consistent metrics enable cross-division quality benchmarking for first time.",
         "AAR", "AAR-2026-089",
     ),
     (
@@ -218,12 +218,12 @@ LESSON_DATA = [
     ),
     (
         "Movement and maneuver tracker improves BDE battle rhythm",
-        "TM-40C qualified analyst built automated movement tracker that replaced 3 manual Excel trackers. BDE S3 reports 2-hour reduction in daily battle rhythm update cycle.",
+        "SL 4C qualified analyst built automated movement tracker that replaced 3 manual Excel trackers. BDE S3 reports 2-hour reduction in daily battle rhythm update cycle.",
         "AAR", "AAR-2026-094",
     ),
     (
         "Doctrine references in curriculum need annual review cycle",
-        "Multiple curriculum modules reference superseded doctrine publications. ADP 3-0 update (2025) not yet reflected in TM-40A through TM-40F course materials.",
+        "Multiple curriculum modules reference superseded doctrine publications. ADP 3-0 update (2025) not yet reflected in SL 4A through SL 4F course materials.",
         "INSTRUCTOR_NOTE", "CURRICULUM-REVIEW-2026",
     ),
 ]
@@ -245,7 +245,7 @@ COMMENTERS = [
 COMMENT_TEMPLATES = [
     "Concur with this observation. We saw similar issues during our last rotation.",
     "Recommend prioritizing this for the next curriculum review board.",
-    "This aligns with feedback from the TM-40K cohort. Cross-referencing with their AARs.",
+    "This aligns with feedback from the SL 4K cohort. Cross-referencing with their AARs.",
     "Action item assigned to S6 section for technical resolution.",
     "Validated by independent observation during EXERCISE COMBINED RESOLVE.",
     "Escalating to TRADOC POC for potential doctrine update.",
@@ -264,11 +264,11 @@ COMMENT_TEMPLATES = [
 ACTION_TEMPLATES = [
     "Update ETL pipeline to handle concurrent batch submissions",
     "Standardize dashboard color scales across all WFF views",
-    "Develop pre-assessment module for TM-40K prerequisites",
+    "Develop pre-assessment module for SL 4K prerequisites",
     "Implement query timeout scaling based on date range",
     "Add taxonomy fields to digital AAR collection form",
     "Create shared entity reference mapping between DCGS-A and AFATDS",
-    "Provision GPU-enabled lab VMs for TM-40H exercises",
+    "Provision GPU-enabled lab VMs for SL 4H exercises",
     "Audit and reconfigure schema validation rules",
     "Reduce BDE-to-BN dissemination pipeline to 2-hour SLA",
     "Implement individual service accounts per operator",
@@ -285,8 +285,8 @@ ACTION_TEMPLATES = [
     "Develop synthetic classified-equivalent training datasets",
     "Parallelize GEOINT spatial join processing",
     "Conduct annual doctrine reference alignment review",
-    "Shift TM-40J lab/lecture ratio to 40/60",
-    "Develop optional statistics refresher for TM-40G pre-course",
+    "Shift SL 4J lab/lecture ratio to 40/60",
+    "Develop optional statistics refresher for SL 4G pre-course",
 ]
 
 # Assignees for action items
@@ -351,9 +351,9 @@ def seed():
             lessons.append(lesson)
 
         # --- Tag each lesson (2-4 tags per lesson) ---
-        course_ids = ["TM-40G", "TM-40H", "TM-40M", "TM-40J", "TM-40K", "TM-40L",
-                       "TM-50G", "TM-50H", "TM-40A", "TM-40B", "TM-40C", "TM-40D",
-                       "TM-40E", "TM-40F", "TM-30"]
+        course_ids = ["SL 4G", "SL 4H", "SL 4M", "SL 4J", "SL 4K", "SL 4L",
+                       "SL 5G", "SL 5H", "SL 4A", "SL 4B", "SL 4C", "SL 4D",
+                       "SL 4E", "SL 4F", "SL 3"]
 
         for lesson in lessons:
             tags_added: set[tuple[str, str]] = set()

@@ -6,7 +6,7 @@
 | **Course** | T3-F: MSC Force Multiplier |
 | **Form** | Pre-Test |
 | **Level** | T3-F (Train the Trainer — Sustainment Chain) |
-| **Audience** | MSC-level personnel nominated for UDT designation; prerequisite: TM-20 (Go on file) |
+| **Audience** | MSC-level personnel nominated for UDT designation; prerequisite: SL 2 (Go on file) |
 | **Time Allowed** | 10 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
@@ -22,7 +22,7 @@ This diagnostic assessment establishes your baseline knowledge before training. 
 
 *Circle the letter of the best answer. (2 points each)*
 
-**1. What is the primary purpose of TM-10 (Maven User)?**
+**1. What is the primary purpose of SL 1 (Maven User)?**
 
 A. To qualify all USAREUR-AF personnel to navigate, view, and interpret data on the MSS platform
 B. To train data engineers to build pipelines on MSS
@@ -38,8 +38,8 @@ D. A student scored above average on the written exam
 
 **3. Which of the following is a Unit Data Trainer (UDT) authorized to do?**
 
-A. Deliver TM-20 initial certification
-B. Deliver TM-10 independently at their unit
+A. Deliver SL 2 initial certification
+B. Deliver SL 1 independently at their unit
 C. Modify lesson plans to better fit their unit's needs
 D. Waive prerequisites for personnel who need urgent MSS access
 
@@ -50,7 +50,7 @@ B. End the evaluation immediately and mark it as No-Go
 C. Tell them you cannot assist during the evaluation and they should try their best approach
 D. Ask another student to help them
 
-**5. You are preparing to deliver TM-10 next week. Which of the following should you verify before Day 1?**
+**5. You are preparing to deliver SL 1 next week. Which of the following should you verify before Day 1?**
 
 A. That all enrolled students have submitted a research paper on data analytics
 B. That the classroom has a whiteboard (projector is optional)
@@ -73,12 +73,12 @@ D. That all enrolled students have active MSS accounts and the training environm
 
 | Q | Answer | Reference |
 |---|---|---|
-| 1 | **A** — TM-10 qualifies all personnel for basic MSS navigation, viewing, and interpretation | TM-10 Course Content |
+| 1 | **A** — SL 1 qualifies all personnel for basic MSS navigation, viewing, and interpretation | SL 1 Course Content |
 | 2 | **A** — Go/No-Go = task performed to standard without assistance | T3-F Course Content §3-3 |
-| 3 | **B** — UDTs deliver TM-10 independently | T3-F Course Content §1-4 |
+| 3 | **B** — UDTs deliver SL 1 independently | T3-F Course Content §1-4 |
 | 4 | **C** — no assistance during evaluation; encourage them to try | T3-F Concepts Guide §2-1 |
 | 5 | **D** — verify accounts and environment access before Day 1 | T3-F Course Content §2-3 |
-| 6 | Can: any from [deliver TM-10, administer TM-10 Go/No-Go, proctor TM-10 exams, report status]. Cannot: any from [deliver TM-20+, modify curriculum, grant enrollment exceptions, certify instructors]. | T3-F Course Content §1-4 |
+| 6 | Can: any from [deliver SL 1, administer SL 1 Go/No-Go, proctor SL 1 exams, report status]. Cannot: any from [deliver SL 2+, modify curriculum, grant enrollment exceptions, certify instructors]. | T3-F Course Content §1-4 |
 
 ---
 

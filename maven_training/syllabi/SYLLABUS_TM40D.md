@@ -1,18 +1,18 @@
-# COURSE SYLLABUS — TM-40D: SUSTAINMENT WARFIGHTING FUNCTION
+# COURSE SYLLABUS — SL 4D: SUSTAINMENT WARFIGHTING FUNCTION
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Level** | TM-40D — Sustainment WFF Track |
+| **Level** | SL 4D — Sustainment WFF Track |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-10, TM-20, TM-30 (Go evaluations on file); CONCEPTS_GUIDE_TM40D_SUSTAINMENT (required reading before Day 1) |
+| **Prerequisites** | SL 1, SL 2, SL 3 (Go evaluations on file); CONCEPTS_GUIDE_TM40D_SUSTAINMENT (required reading before Day 1) |
 | **Audience** | G4/S4 staff, FSB/BSB logistics officers, supply chain managers, property book officers, and transportation officers at BCT echelon and below |
 | **Format** | Instructor-led seminar + demonstration + tabletop exercise + practical evaluation |
 | **Location** | MSS Training Environment (standard user access sufficient) |
 
 ---
 
-**BLUF:** TM-40D teaches G4/S4 staff to integrate MSS into sustainment workflows — maintaining logistics visibility, integrating LOGSTAT data, building supply chain analytics, and tracking readiness status. Course applies MSS capabilities to processes in ADP 4-0, FM 4-0, and ATP 4-0.1. No coding or pipeline experience required.
+**BLUF:** SL 4D teaches G4/S4 staff to integrate MSS into sustainment workflows — maintaining logistics visibility, integrating LOGSTAT data, building supply chain analytics, and tracking readiness status. Course applies MSS capabilities to processes in ADP 4-0, FM 4-0, and ATP 4-0.1. No coding or pipeline experience required.
 
 ---
 
@@ -162,20 +162,20 @@ Complete **5+ duty days before Day 1:**
 
 ## Related WFF Tracks
 
-TM-40D is one of six WFF tracks. All require TM-10, TM-20, and TM-30 as prerequisites.
+SL 4D is one of six WFF tracks. All require SL 1, SL 2, and SL 3 as prerequisites.
 
 | Track | WFF | Audience |
 |---|---|---|
-| TM-40A | Intelligence | G2/S2 staff, targeting officers, all-source analysts |
-| TM-40B | Fires | FSOs, FSEs, targeting officers, fires NCOs |
-| TM-40C | Movement & Maneuver | G3/S3 staff, operations officers, maneuver planners |
-| TM-40D | Sustainment | G4/S4 staff, logistics officers, supply chain managers |
-| TM-40E | Protection | FP officers, CBRN officers, provost marshal staff |
-| TM-40F | Mission Command | Battle captains, XOs, CDRs, MC-function staff |
+| SL 4A | Intelligence | G2/S2 staff, targeting officers, all-source analysts |
+| SL 4B | Fires | FSOs, FSEs, targeting officers, fires NCOs |
+| SL 4C | Movement & Maneuver | G3/S3 staff, operations officers, maneuver planners |
+| SL 4D | Sustainment | G4/S4 staff, logistics officers, supply chain managers |
+| SL 4E | Protection | FP officers, CBRN officers, provost marshal staff |
+| SL 4F | Mission Command | Battle captains, XOs, CDRs, MC-function staff |
 
-Personnel completing multiple WFF tracks do not repeat TM-10, TM-20, or TM-30. Enrollment is independent for each track.
+Personnel completing multiple WFF tracks do not repeat SL 1, SL 2, or SL 3. Enrollment is independent for each track.
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*Syllabus TM-40D | Version 1.0 | March 2026*
+*Syllabus SL 4D | Version 1.0 | March 2026*

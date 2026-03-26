@@ -494,14 +494,14 @@ def _compute_executive_summary(metrics: dict) -> dict:
     """
     scores = []
 
-    # Funnel progression — what % of trainees have completed at least TM-30
+    # Funnel progression — what % of trainees have completed at least SL 3
     funnel = metrics.get("funnel", [])
     total_trainees = metrics.get("total_trainees", 0)
     if funnel and total_trainees > 0:
-        # Find TM-30 stage
+        # Find SL 3 stage
         tm30_pct = 0
         for stage in funnel:
-            if "TM-30" in stage.get("stage", ""):
+            if "SL 3" in stage.get("stage", ""):
                 tm30_pct = stage.get("pct", 0)
                 break
         scores.append(("funnel", tm30_pct, 0.30))

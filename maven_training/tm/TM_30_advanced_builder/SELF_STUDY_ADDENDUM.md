@@ -1,12 +1,12 @@
-# SELF-STUDY ADDENDUM — TM-30: ADVANCED BUILDER
+# SELF-STUDY ADDENDUM — SL 3: ADVANCED BUILDER
 ## Palantir Developers External Reference Library
 ### Maven Smart System (MSS) — USAREUR-AF
 
-**Status:** Optional self-study. Not taught in TM-30 class time. Use after completing the associated TM chapter.
+**Status:** Optional self-study. Not taught in SL 3 class time. Use after completing the associated TM chapter.
 
-**Source:** All videos are available on the Palantir Developers YouTube channel (@PalantirDevelopers). These are official Palantir product deep-dives that extend the TM-30 curriculum. No account is required to view.
+**Source:** All videos are available on the Palantir Developers YouTube channel (@PalantirDevelopers). These are official Palantir product deep-dives that extend the SL 3 curriculum. No account is required to view.
 
-**Scope boundary:** TM-30 is entirely UI-based — no code required. All videos listed here use Palantir's graphical tools only (Workshop, Pipeline Builder, Contour, Quiver, AIP Logic configuration UI). Videos requiring Python, TypeScript, or CLI tools are NOT listed here — those belong to TM-40G–O.
+**Scope boundary:** SL 3 is entirely UI-based — no code required. All videos listed here use Palantir's graphical tools only (Workshop, Pipeline Builder, Contour, Quiver, AIP Logic configuration UI). Videos requiring Python, TypeScript, or CLI tools are NOT listed here — those belong to SL 4G–O.
 
 ---
 
@@ -25,7 +25,7 @@ These four videos cover the Workshop Scenarios feature — what-if / sensitivity
 
 ## Group 2 — Pipeline Builder: Scheduling and Monitoring (Day 2 / Ch 3 extension)
 
-These videos extend the Day 2 scheduled pipeline and monitoring content. Particularly useful for trainees who will own pipelines in production after TM-30.
+These videos extend the Day 2 scheduled pipeline and monitoring content. Particularly useful for trainees who will own pipelines in production after SL 3.
 
 | Video | What It Covers | Relevant TM Chapter |
 |---|---|---|
@@ -39,7 +39,7 @@ These videos extend the Day 2 scheduled pipeline and monitoring content. Particu
 
 ## Group 3 — Quiver: Advanced Views and Cross-Object Analysis (Day 4 / Ch 6 extension)
 
-Quiver linked views are the most common TM-30 practical exercise No-Go. These videos cover depth topics not fully addressed in the Day 4 lab.
+Quiver linked views are the most common SL 3 practical exercise No-Go. These videos cover depth topics not fully addressed in the Day 4 lab.
 
 | Video | What It Covers | Relevant TM Chapter |
 |---|---|---|
@@ -79,7 +79,7 @@ New doctrine sections added to TM-30 Chapter 1 cover foundational operational de
 
 ## Group 6 — Platform Governance and Security (Day 5 / Ch 7 extension)
 
-These two videos supplement the Day 5 governance content with practical security administration knowledge. Relevant for trainees who will act as MSS data stewards or project owners after TM-30.
+These two videos supplement the Day 5 governance content with practical security administration knowledge. Relevant for trainees who will act as MSS data stewards or project owners after SL 3.
 
 | Video | What It Covers | Relevant TM Chapter |
 |---|---|---|
@@ -98,15 +98,15 @@ These two videos supplement the Day 5 governance content with practical security
 
 **Before Day 1 reading** — Group 5 (DDOF and Operational Design Patterns) covers new Ch 1 doctrine sections. Review Sections 1-10a through 1-10e before Day 1 to understand the governance and design context for all subsequent lab work.
 
-**Post-TM-30 sustainment** — Groups 4 and 6 are most useful after course completion when you are operating MSS data products in a unit environment.
+**Post-SL 3 sustainment** — Groups 4 and 6 are most useful after course completion when you are operating MSS data products in a unit environment.
 
 ---
 
 ## Continuation
 
-Trainees proceeding to TM-40 tracks may access self-study addenda for those tracks, each of which contains a substantially larger Palantir Developers reference library covering code-level topics (OSDK, Python Transforms, TypeScript Functions, etc.) appropriate to specialist-level work.
+Trainees proceeding to SL 4 tracks may access self-study addenda for those tracks, each of which contains a substantially larger Palantir Developers reference library covering code-level topics (OSDK, Python Transforms, TypeScript Functions, etc.) appropriate to specialist-level work.
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*Self-Study Addendum | TM-30 | Palantir Developers External Reference Library | March 2026*
+*Self-Study Addendum | SL 3 | Palantir Developers External Reference Library | March 2026*

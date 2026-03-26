@@ -1,9 +1,9 @@
-# COURSE SYLLABUS — TM-10: MAVEN USER
+# COURSE SYLLABUS — SL 1: MAVEN USER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Level** | TM-10 (Foundational — all personnel) |
+| **Level** | SL 1 (Foundational — all personnel) |
 | **Duration** | 1 day (8 hours) |
 | **Prerequisite** | None |
 | **Audience** | All Soldiers, officers, and Civilians assigned to USAREUR-AF |
@@ -12,7 +12,7 @@
 
 ---
 
-**BLUF:** TM-10 produces a competent MSS operator. You will access MSS, navigate unit data products, consume and filter operational data, execute authorized status updates, and handle classification requirements for data exports. Building starts at TM-20. Every member of the data team completes TM-10 first. No waivers.
+**BLUF:** SL 1 produces a competent MSS operator. You will access MSS, navigate unit data products, consume and filter operational data, execute authorized status updates, and handle classification requirements for data exports. Building starts at SL 2. Every member of the data team completes SL 1 first. No waivers.
 
 ---
 
@@ -28,7 +28,7 @@
 | 6 | Access and interact with an AIP Logic or Agent interface |
 | 7 | Identify classification markings; state the authorized export procedure for a given dataset |
 | 8 | Bookmark a dashboard to the MSS home screen |
-| 9 | Troubleshoot two common access issues using TM-10 procedures |
+| 9 | Troubleshoot two common access issues using SL 1 procedures |
 
 ---
 
@@ -80,7 +80,7 @@ See **EX_10 — MSS Operator Basics** for the full task list, evaluator notes, a
 
 ## Assessment
 
-**Method:** Practical exercise (Go/No-Go) — there is no written exam for TM-10.
+**Method:** Practical exercise (Go/No-Go) — there is no written exam for SL 1.
 
 | Form | Description |
 |---|---|
@@ -88,7 +88,7 @@ See **EX_10 — MSS Operator Basics** for the full task list, evaluator notes, a
 | **End-of-course evaluation** | Practical exercise (6 tasks per EX_10). Evaluated using T&EO TM10-01 through TM10-06. |
 | **Passing standard** | Go on 5 of 6 tasks completed independently. Tasks 2 (filters), 4 (export/classification), and 6 (classification marking) are critical items — No-Go on any is an automatic overall No-Go. |
 
-*TM-10 does not use a written POST exam. The evaluation instrument is the practical exercise scored via T&EO.*
+*SL 1 does not use a written POST exam. The evaluation instrument is the practical exercise scored via T&EO.*
 
 ---
 
@@ -100,13 +100,13 @@ See **EX_10 — MSS Operator Basics** for the full task list, evaluator notes, a
 | **No-Go — Tasks 1, 3, or 5 only** | Targeted task retry. Instructor may authorize same-day retry on the specific failed task at their discretion. |
 | **No-Go — two or more non-critical tasks** | Full re-evaluation required. |
 
-Re-evaluation must be scheduled through the unit training coordinator. There is no self-certification option for TM-10.
+Re-evaluation must be scheduled through the unit training coordinator. There is no self-certification option for SL 1.
 
 ---
 
 ## Go Criteria
 
-Pass requires completing 5 of 6 tasks independently — no instructor hints, no external references beyond TM-10. Correct recovery from a wrong click counts. Watching the instructor or being talked through a step does not. Critical items (Tasks 2, 4, and 6) must all be Go for an overall Go.
+Pass requires completing 5 of 6 tasks independently — no instructor hints, no external references beyond SL 1. Correct recovery from a wrong click counts. Watching the instructor or being talked through a step does not. Critical items (Tasks 2, 4, and 6) must all be Go for an overall Go.
 
 ---
 
@@ -131,22 +131,22 @@ Request MSS account provisioning at least **5 duty days** before training. Arriv
 
 ## Continuation
 
-TM-10 is the entry point for the full MSS curriculum. After completing TM-10:
+SL 1 is the entry point for the full MSS curriculum. After completing SL 1:
 
 | Path | Next Step | Who |
 |---|---|---|
-| **All personnel** | TM-20 (Builder) | Required before any specialist or WFF track |
-| **WFF functional staff** (G2/S2, G3/S3, G4/S4, FSE, FP, MC) | TM-20 → TM-30 → TM-40A–F (WFF tracks) | TM-30 required before any WFF track |
-| **Data specialists** (analysts, 17/25-series, ORSA, AI/ML, PM, KM, SWE) | TM-20 → TM-30 → TM-40G–O | TM-30 required before any specialist track |
+| **All personnel** | SL 2 (Builder) | Required before any specialist or WFF track |
+| **WFF functional staff** (G2/S2, G3/S3, G4/S4, FSE, FP, MC) | SL 2 → SL 3 → SL 4A–F (WFF tracks) | SL 3 required before any WFF track |
+| **Data specialists** (analysts, 17/25-series, ORSA, AI/ML, PM, KM, SWE) | SL 2 → SL 3 → SL 4G–O | SL 3 required before any specialist track |
 
 **Full curriculum summary:**
-- TM-20 (Builder) — prerequisite for TM-30
-- TM-30 (Advanced Builder) — prerequisite for ALL TM-40 tracks (WFF and specialist)
-- WFF Tracks (TM-30 → TM-40A–F): Intelligence, Fires, Movement & Maneuver, Sustainment, Protection, Mission Command
-- Specialist Tracks (TM-30 → TM-40G–O): ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, Software Engineer, UX Designer, Platform Engineer
-- Advanced Specialist Tracks (TM-40G–O → TM-50G–O): advanced level for each specialist role
+- SL 2 (Builder) — prerequisite for SL 3
+- SL 3 (Advanced Builder) — prerequisite for ALL SL 4 tracks (WFF and specialist)
+- WFF Tracks (SL 3 → SL 4A–F): Intelligence, Fires, Movement & Maneuver, Sustainment, Protection, Mission Command
+- Specialist Tracks (SL 3 → SL 4G–O): ORSA, AI Engineer, ML Engineer, Program Manager, Knowledge Manager, Software Engineer, UX Designer, Platform Engineer
+- Advanced Specialist Tracks (SL 4G–O → SL 5G–O): advanced level for each specialist role
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*Syllabus TM-10 | Version 1.0 | March 2026*
+*Syllabus SL 1 | Version 1.0 | March 2026*

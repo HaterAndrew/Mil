@@ -1,12 +1,12 @@
-# POST-TEST — TM-50J: ADVANCED PROGRAM MANAGER
+# POST-TEST — SL 5J: ADVANCED PROGRAM MANAGER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-50J: Advanced Program Manager |
+| **Course** | SL 5J: Advanced Program Manager |
 | **Form** | Post-Test |
-| **Level** | TM-50J (Advanced Specialist) |
-| **Audience** | Senior program managers; prerequisite: TM-40J + full-lifecycle MSS project delivery |
+| **Level** | SL 5J (Advanced Specialist) |
+| **Audience** | Senior program managers; prerequisite: SL 4J + full-lifecycle MSS project delivery |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (42/60) |
 
@@ -36,21 +36,21 @@ B. Ensuring cross-team dependencies are identified, tracked, and resolved before
 C. Assigning all cross-team work to a single integration team
 D. Requiring all teams to share a single backlog to eliminate dependency conflicts
 
-**3. A data product in the portfolio has been in maintenance-only mode for 18 months and its original operational use case has shifted. The PM's recommended action per TM-50J is:**
+**3. A data product in the portfolio has been in maintenance-only mode for 18 months and its original operational use case has shifted. The PM's recommended action per SL 5J is:**
 
 A. Continue maintenance — operational data products should never be decommissioned without direct commander direction
 B. Archive the project and remove it from the portfolio dashboard
 C. Initiate a formal retirement review: assess current usage, identify remaining dependencies, develop a migration plan for dependent teams, create a decommission timeline, and obtain stakeholder approval
 D. Transfer ownership to the data steward to reduce PM workload
 
-**4. A TM-50J portfolio health dashboard must display program health at which granularity?**
+**4. A SL 5J portfolio health dashboard must display program health at which granularity?**
 
 A. Overall health only — individual program details clutter the portfolio view
 B. Financial health only — non-financial metrics are assessed in separate program reviews
 C. Overall composite health plus individual dimension ratings (schedule, cost, technical performance, risk, team health) per program, with trend direction
 D. RED programs only — GREEN programs do not require active monitoring
 
-**5. Per TM-50J, a Palantir task order deliverable that passes contractor-run acceptance tests but fails an independent technical review must be:**
+**5. Per SL 5J, a Palantir task order deliverable that passes contractor-run acceptance tests but fails an independent technical review must be:**
 
 A. Accepted — the contractor has met their contractual obligations
 B. Rejected or held pending contractor remediation — independent technical review is the binding quality gate, not contractor self-certification
@@ -71,7 +71,7 @@ B. By composite health status ascending — RED programs requiring most immediat
 C. By program budget descending — largest investments first
 D. By program age descending — oldest programs first
 
-**8. Per TM-50J standards, what is the PM's obligation when presenting a program status brief to a GO and the data shows the program is behind schedule with no credible recovery plan?**
+**8. Per SL 5J standards, what is the PM's obligation when presenting a program status brief to a GO and the data shows the program is behind schedule with no credible recovery plan?**
 
 A. Present the scheduled recovery plan even if the PM doubts its feasibility
 B. Coordinate with the G3 to ensure the brief language does not undermine command confidence
@@ -85,7 +85,7 @@ B. Team velocity becomes unreliable as a planning tool
 C. Engineers focus exclusively on high-complexity tasks to maximize story-point output
 D. Both story-point inflation AND reduced collaboration (engineers avoid helping teammates because it doesn't show up in their individual metrics)
 
-**10. An ML/AI portfolio governance requirement for TM-50J means a PM must track:**
+**10. An ML/AI portfolio governance requirement for SL 5J means a PM must track:**
 
 A. Model versions in production, their acceptance threshold compliance, monitoring status, retraining schedules, and compliance with Army CIO and DoD RAIMTF requirements — not just delivery milestones
 B. The compute cost and licensing fees for all AI models in the portfolio
@@ -113,7 +113,7 @@ B. A data product's data quality falls below the minimum threshold for use in op
 C. Organizational dependencies on a data product exceed the program's planned decommission date, or a product without a decommission plan has no owner to maintain it
 D. The program manager responsible for the data product PCSs without a replacement
 
-**14. "Program financial stewardship" at the TM-50J level requires the PM to:**
+**14. "Program financial stewardship" at the SL 5J level requires the PM to:**
 
 A. Monitor obligation and expenditure rates against quarterly targets, identify risks of year-end fund expiration or under-execution, and brief senior leaders on financial health with sufficient lead time to take corrective action
 B. Approve all task order invoices before payment
@@ -153,7 +153,7 @@ D. Any failure to deliver a committed objective requires a formal After-Action R
 
 &nbsp;
 
-**SA-3. A data product in your portfolio (a readiness prediction dashboard) has not been formally refreshed or maintained in 14 months. The G3 still references it in weekly battle rhythms. Describe the retirement risk this creates and walk through the TM-50J retirement review process you would initiate.**
+**SA-3. A data product in your portfolio (a readiness prediction dashboard) has not been formally refreshed or maintained in 14 months. The G3 still references it in weekly battle rhythms. Describe the retirement risk this creates and walk through the SL 5J retirement review process you would initiate.**
 
 &nbsp;
 
@@ -224,11 +224,11 @@ SA-1. Full credit: structure — 2-day PI Planning event; Day 1: briefings on vi
 
 SA-2. Full credit: brief structure — BLUF: "Portfolio status: 3 RED, 4 AMBER, 5 GREEN. Two RED programs have contractor performance issues requiring your decision."; present each RED program: what is RED, root cause, what recovery requires, and the resource or decision needed from the GO; present AMBER programs with risk flags; do NOT say "on track to improve" without a credible recovery plan; decision required: (1) authorize additional resources for Program X recovery; (2) issue cure notice to underperforming contractor; (3) accept schedule slip and inform higher HQ. GO must leave with a clear understanding of true status and the decision they need to make.
 
-SA-3. Full credit: retirement risk — the G3 is making operational decisions based on a 14-month stale product that may have incorrect data or broken pipelines; if the product breaks at a critical moment, there is no owner to fix it; the organization has created a dependency on a product with no maintenance plan; TM-50J retirement review process: (1) assess current usage (how often is it accessed, who uses it, for what decisions?); (2) audit technical health (are pipelines running? data current?); (3) identify dependencies (who would be affected if it went offline?); (4) develop migration/replacement plan for dependent users; (5) set decommission timeline with stakeholder approval; (6) communicate decommission date to G3 and offer alternatives.
+SA-3. Full credit: retirement risk — the G3 is making operational decisions based on a 14-month stale product that may have incorrect data or broken pipelines; if the product breaks at a critical moment, there is no owner to fix it; the organization has created a dependency on a product with no maintenance plan; SL 5J retirement review process: (1) assess current usage (how often is it accessed, who uses it, for what decisions?); (2) audit technical health (are pipelines running? data current?); (3) identify dependencies (who would be affected if it went offline?); (4) develop migration/replacement plan for dependent users; (5) set decommission timeline with stakeholder approval; (6) communicate decommission date to G3 and offer alternatives.
 
 SA-4. Full credit: governance artifacts — model registry (each system: version, acceptance status, monitoring status, compliance mapping); AI system inventory with ownership; model cards for each system; review cycle: quarterly spot-check (output quality metrics, PSI alerts, monitoring status); annual comprehensive review (acceptance thresholds, compliance mapping to Army CIO + RAIMTF, red-team results); compliance tracking: each system mapped to Army CIO Memo and DoD RAIMTF requirements with pass/fail status; governance review failure procedure: system placed on conditional status with 30-day remediation; if remediation fails, system suspended pending command AI governance board decision; no system deployed without a decommission plan.
 
-SA-5. Full credit: decision framework applied — (1) mission fit: does the standard Workshop/Pipeline Builder capability meet all theater sustainment dashboard requirements? (2) time-to-capability: Workshop/Pipeline Builder can be delivered faster; (3) maintainability: Workshop/Pipeline Builder requires TM-20/30 skills to maintain (widely available); OSDK requires TM-40L SWE skills (scarce); (4) vendor lock-in: both approaches use Foundry — configure approach stays on standard platform; build approach creates custom code dependency; (5) organizational competency: is there a TM-40L qualified SWE available to maintain custom code through PCS cycles?; recommendation: configure (Workshop + Pipeline Builder) unless there are specific capability requirements that cannot be met by the standard platform — custom code should be reserved for cases where the standard platform is insufficient, because it creates a long-term maintenance burden with scarce skills.
+SA-5. Full credit: decision framework applied — (1) mission fit: does the standard Workshop/Pipeline Builder capability meet all theater sustainment dashboard requirements? (2) time-to-capability: Workshop/Pipeline Builder can be delivered faster; (3) maintainability: Workshop/Pipeline Builder requires SL 2/30 skills to maintain (widely available); OSDK requires SL 4L SWE skills (scarce); (4) vendor lock-in: both approaches use Foundry — configure approach stays on standard platform; build approach creates custom code dependency; (5) organizational competency: is there a SL 4L qualified SWE available to maintain custom code through PCS cycles?; recommendation: configure (Workshop + Pipeline Builder) unless there are specific capability requirements that cannot be met by the standard platform — custom code should be reserved for cases where the standard platform is insufficient, because it creates a long-term maintenance burden with scarce skills.
 
 ---
 

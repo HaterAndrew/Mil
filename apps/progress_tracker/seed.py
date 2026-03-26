@@ -20,30 +20,30 @@ DODIDS = [f"{1000000000 + i}" for i in range(60)]
 # Course progression paths for milestone assignment — realistic training plans
 MILESTONE_PLANS: list[list[str]] = [
     # Foundation path
-    ["TM-10", "TM-20", "TM-30"],
-    ["TM-10", "TM-20"],
-    ["TM-10"],
+    ["SL 1", "SL 2", "SL 3"],
+    ["SL 1", "SL 2"],
+    ["SL 1"],
     # WFF tracks
-    ["TM-30", "TM-40A"],
-    ["TM-30", "TM-40B"],
-    ["TM-30", "TM-40C"],
-    ["TM-30", "TM-40D"],
-    ["TM-30", "TM-40E"],
-    ["TM-30", "TM-40F"],
+    ["SL 3", "SL 4A"],
+    ["SL 3", "SL 4B"],
+    ["SL 3", "SL 4C"],
+    ["SL 3", "SL 4D"],
+    ["SL 3", "SL 4E"],
+    ["SL 3", "SL 4F"],
     # Specialist tracks
-    ["TM-30", "TM-40G"],
-    ["TM-30", "TM-40H"],
-    ["TM-30", "TM-40M"],
-    ["TM-30", "TM-40J"],
-    ["TM-30", "TM-40K"],
-    ["TM-30", "TM-40L"],
+    ["SL 3", "SL 4G"],
+    ["SL 3", "SL 4H"],
+    ["SL 3", "SL 4M"],
+    ["SL 3", "SL 4J"],
+    ["SL 3", "SL 4K"],
+    ["SL 3", "SL 4L"],
     # Advanced tracks
-    ["TM-40G", "TM-50G"],
-    ["TM-40H", "TM-50H"],
-    ["TM-40L", "TM-50L"],
+    ["SL 4G", "SL 5G"],
+    ["SL 4H", "SL 5H"],
+    ["SL 4L", "SL 5L"],
     # Full pipeline
-    ["TM-10", "TM-20", "TM-30", "TM-40A", "TM-40G"],
-    ["TM-10", "TM-20", "TM-30", "TM-40B", "TM-40H"],
+    ["SL 1", "SL 2", "SL 3", "SL 4A", "SL 4G"],
+    ["SL 1", "SL 2", "SL 3", "SL 4B", "SL 4H"],
 ]
 
 # Notes for realistic milestone entries
@@ -62,9 +62,9 @@ NOTES = [
 
 # Goal target courses for soldiers who haven't reached them yet
 GOAL_COURSES = [
-    "TM-20", "TM-30", "TM-40A", "TM-40B", "TM-40C",
-    "TM-40G", "TM-40H", "TM-40M", "TM-40J", "TM-40K", "TM-40L",
-    "TM-50G", "TM-50H", "TM-50L",
+    "SL 2", "SL 3", "SL 4A", "SL 4B", "SL 4C",
+    "SL 4G", "SL 4H", "SL 4M", "SL 4J", "SL 4K", "SL 4L",
+    "SL 5G", "SL 5H", "SL 5L",
 ]
 
 

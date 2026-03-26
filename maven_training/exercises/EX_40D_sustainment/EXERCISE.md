@@ -1,10 +1,10 @@
 # EX_40D — Sustainment
-## Practical Exercise — TM-40D Proficiency
+## Practical Exercise — SL 4D Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-10, TM-20, TM-30 (required); TM-40D and CONCEPTS_GUIDE_TM40D_SUSTAINMENT (current track) |
+| **Prerequisite** | SL 1, SL 2, SL 3 (required); SL 4D and CONCEPTS_GUIDE_TM40D_SUSTAINMENT (current track) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS training instance, standard user access — see ENVIRONMENT_SETUP.md |
 | **Companion TM** | TM_40D_SUSTAINMENT.md |

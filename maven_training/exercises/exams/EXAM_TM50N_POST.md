@@ -1,12 +1,12 @@
-# POST-TEST — TM-50N: ADVANCED UI/UX DESIGNER
+# POST-TEST — SL 5N: ADVANCED UI/UX DESIGNER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-50N: Advanced UI/UX Designer |
+| **Course** | SL 5N: Advanced UI/UX Designer |
 | **Form** | Post-Test |
-| **Level** | TM-50N (Advanced Specialist) |
-| **Audience** | Experienced UI/UX designers completing TM-50N training |
+| **Level** | SL 5N (Advanced Specialist) |
+| **Audience** | Experienced UI/UX designers completing SL 5N training |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (32/45) |
 
@@ -14,7 +14,7 @@
 
 ## INSTRUCTIONS
 
-This assessment evaluates knowledge and skills gained during TM-50N training. Answer all questions. A score of 70% or higher is required for course credit.
+This assessment evaluates knowledge and skills gained during SL 5N training. Answer all questions. A score of 70% or higher is required for course credit.
 
 ---
 
@@ -75,7 +75,7 @@ D. To determine which WCAG criteria to comply with and which to ignore
 
 *Answer in 5–8 sentences. (10 points each)*
 
-**9. An application designer proposes a new component that does not exist in the MSS design system library. They want to build it as a one-off for their application. Using the TM-50N design governance framework, describe the process: what review happens, who decides, and what are the possible outcomes?**
+**9. An application designer proposes a new component that does not exist in the MSS design system library. They want to build it as a one-off for their application. Using the SL 5N design governance framework, describe the process: what review happens, who decides, and what are the possible outcomes?**
 
 **10. You are designing a DDIL-aware version of a readiness dashboard. The data source updates every 15 minutes when connected, but the user may be disconnected for up to 4 hours. Describe your design approach: what freshness indicators would you use, how would you handle stale data, and what interaction patterns would you use for user actions during disconnection?**
 
@@ -115,7 +115,7 @@ SA-8. Full credit: use an unambiguous date format that eliminates misinterpretat
 
 **Scenario Guidance:**
 
-S-9. Full credit (10 pts): the process follows TM-50N design governance: (1) the designer submits a component proposal to the design system team — documenting the use case, why no existing component meets the need, and the proposed specification; (2) the design system team reviews: does this need apply to one application or many? Could an existing component be extended?; (3) possible outcomes: (a) the proposal is adopted into the design system as a new shared component (if the need is broadly applicable); (b) the designer is directed to use or extend an existing component (if a suitable one exists); (c) an exception is granted for a one-off — but it must still follow design system tokens, accessibility standards, and documentation requirements, and it is flagged for future system inclusion if other teams need it. Must describe the review process, the decision criteria, and at least two possible outcomes. Partial credit (5 pts) for describing the process without decision criteria.
+S-9. Full credit (10 pts): the process follows SL 5N design governance: (1) the designer submits a component proposal to the design system team — documenting the use case, why no existing component meets the need, and the proposed specification; (2) the design system team reviews: does this need apply to one application or many? Could an existing component be extended?; (3) possible outcomes: (a) the proposal is adopted into the design system as a new shared component (if the need is broadly applicable); (b) the designer is directed to use or extend an existing component (if a suitable one exists); (c) an exception is granted for a one-off — but it must still follow design system tokens, accessibility standards, and documentation requirements, and it is flagged for future system inclusion if other teams need it. Must describe the review process, the decision criteria, and at least two possible outcomes. Partial credit (5 pts) for describing the process without decision criteria.
 
 S-10. Full credit (10 pts): freshness indicators: (1) a timestamp showing "Last updated: HH:MM DD MMM" in a fixed location; (2) a color-coded freshness badge (green = <15 min, amber = 15 min–1 hr, red = >1 hr, black = >4 hr / unknown); (3) a connectivity status indicator (connected/degraded/disconnected). Stale data handling: data remains visible but visually de-emphasized (reduced opacity or desaturated), with a prominent "STALE DATA" banner; critical values that may have changed significantly show a warning icon. Interaction patterns during disconnection: use the optimistic action pattern for low-risk actions (status updates, notes); use the blocked action pattern for high-risk actions (approvals, resource commitments) with a clear "Action queued — will submit when connected" message. Must address all three areas (freshness, stale data, interaction). Partial credit (5 pts) for two of three areas.
 

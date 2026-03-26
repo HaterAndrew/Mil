@@ -1,12 +1,12 @@
-# PRE-TEST — TM-40O: PLATFORM ENGINEER
+# PRE-TEST — SL 4O: PLATFORM ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40O: Platform Engineer |
+| **Course** | SL 4O: Platform Engineer |
 | **Form** | Pre-Test |
-| **Level** | TM-40O (Specialist) |
-| **Audience** | Platform engineers; prerequisite: TM-10+20+30 + Linux admin + containers + Git familiarity |
+| **Level** | SL 4O (Specialist) |
+| **Audience** | Platform engineers; prerequisite: SL 1+20+30 + Linux admin + containers + Git familiarity |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

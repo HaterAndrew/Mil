@@ -1,18 +1,18 @@
-# COURSE SYLLABUS — TM-40L: SOFTWARE ENGINEER
+# COURSE SYLLABUS — SL 4L: SOFTWARE ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Level** | TM-40L — Software Engineer Specialist Track |
+| **Level** | SL 4L — Software Engineer Specialist Track |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-10, TM-20, TM-30 (all Go evaluations on file — **REQUIRED**, not recommended); working TypeScript or Python proficiency; familiarity with REST APIs and async patterns |
+| **Prerequisites** | SL 1, SL 2, SL 3 (all Go evaluations on file — **REQUIRED**, not recommended); working TypeScript or Python proficiency; familiarity with REST APIs and async patterns |
 | **Audience** | Software engineers building external applications and platform integrations on MSS |
 | **Format** | Instructor-led lab + guided practice + practical exercise |
 | **Location** | MSS Training Environment (OSDK developer access required; external IDE permitted) |
 
 ---
 
-**BLUF:** TM-40L teaches software engineers to build production-quality applications on MSS — reading and writing the Foundry Ontology via OSDK, manipulating datasets via the Platform SDK, implementing computed properties as TypeScript Functions on Objects, writing Action validators with business logic, and delivering Slate applications integrated with the Foundry API. TM-40L is for developers who need to go beyond the MSS UI. If Workshop and Pipeline Builder cover the requirement, TM-30 is sufficient.
+**BLUF:** SL 4L teaches software engineers to build production-quality applications on MSS — reading and writing the Foundry Ontology via OSDK, manipulating datasets via the Platform SDK, implementing computed properties as TypeScript Functions on Objects, writing Action validators with business logic, and delivering Slate applications integrated with the Foundry API. SL 4L is for developers who need to go beyond the MSS UI. If Workshop and Pipeline Builder cover the requirement, SL 3 is sufficient.
 
 ---
 
@@ -184,7 +184,7 @@ Complete **10+ duty days before Day 1:**
 
 ## Continuation
 
-Graduates designing platform architecture or establishing development standards for a software engineering team may pursue **TM-50L (Advanced Software Engineering)**. TM-50L covers OSDK-first architecture patterns, enterprise CI/CD, TypeScript advanced patterns, security review processes, developer platform toolchain design, and evaluated platform architecture builds. Prerequisites: TM-40L Go evaluation on file; 18+ months active SWE experience on MSS or equivalent Foundry/OSDK platform.
+Graduates designing platform architecture or establishing development standards for a software engineering team may pursue **SL 5L (Advanced Software Engineering)**. SL 5L covers OSDK-first architecture patterns, enterprise CI/CD, TypeScript advanced patterns, security review processes, developer platform toolchain design, and evaluated platform architecture builds. Prerequisites: SL 4L Go evaluation on file; 18+ months active SWE experience on MSS or equivalent Foundry/OSDK platform.
 
 ---
 
@@ -200,9 +200,9 @@ Graduates designing platform architecture or establishing development standards 
 
 ## Relationship to WFF Tracks
 
-WFF track analysts (TM-40A through TM-40F) are the operational consumers of applications and integrations built in this course. Software engineers should understand how each WFF community uses MSS tooling: mission command analysts (TM-40F) use Slate applications for operational dashboards; intelligence analysts (TM-40A) rely on OSDK-backed applications for fused product displays; all WFF communities benefit from validated Action logic, reliable pipeline integrations, and Slate UIs that surface Foundry data without requiring analysts to write code.
+WFF track analysts (SL 4A through SL 4F) are the operational consumers of applications and integrations built in this course. Software engineers should understand how each WFF community uses MSS tooling: mission command analysts (SL 4F) use Slate applications for operational dashboards; intelligence analysts (SL 4A) rely on OSDK-backed applications for fused product displays; all WFF communities benefit from validated Action logic, reliable pipeline integrations, and Slate UIs that surface Foundry data without requiring analysts to write code.
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*Syllabus TM-40L | Version 2.0 | March 2026*
+*Syllabus SL 4L | Version 2.0 | March 2026*

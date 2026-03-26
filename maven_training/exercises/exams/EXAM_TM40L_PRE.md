@@ -1,12 +1,12 @@
-# PRE-TEST — TM-40L: SOFTWARE ENGINEER
+# PRE-TEST — SL 4L: SOFTWARE ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40L: Software Engineer |
+| **Course** | SL 4L: Software Engineer |
 | **Form** | Pre-Test |
-| **Level** | TM-40L (Specialist) |
-| **Audience** | Software engineers; prerequisite: TM-10+20+30 + TypeScript/Python + REST API familiarity |
+| **Level** | SL 4L (Specialist) |
+| **Audience** | Software engineers; prerequisite: SL 1+20+30 + TypeScript/Python + REST API familiarity |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

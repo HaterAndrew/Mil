@@ -289,7 +289,7 @@ Types: `feat`, `fix`, `refactor`, `docs`, `test`, `chore`
 **Examples:**
 - `feat: add fuel consumption forecast model (VCORPS-LOG)`
 - `fix: null handling in IPPS strength join (USAREUR-PERS)`
-- `docs: update TM-30 workshop chapter (maven-training)`
+- `docs: update SL 3 workshop chapter (maven-training)`
 
 ### 9-4. Security Rules (Non-Negotiable)
 
@@ -326,11 +326,11 @@ Types: `feat`, `fix`, `refactor`, `docs`, `test`, `chore`
 - [ ] Data Steward sign-off documented
 - [ ] Branch naming follows standard (Section 8)
 
-### 10-4. Before Deploying Code to Production (TM-40L / TM-40M)
+### 10-4. Before Deploying Code to Production (SL 4L / SL 4M)
 
 See the full governance checklist in the applicable TM appendix:
-- TM-40M Appendix A — Model Governance Checklist
-- TM-40L Appendix B — SWE Security Checklist
+- SL 4M Appendix A — Model Governance Checklist
+- SL 4L Appendix B — SWE Security Checklist
 
 ---
 
@@ -378,7 +378,7 @@ See the full governance checklist in the applicable TM appendix:
 [ ] No hardcoded credentials or connection strings
 [ ] All SQL parameterized
 [ ] Idempotency verified (for pipelines/transforms)
-[ ] TM-specific governance checklist completed (TM-40M App. A / TM-40L App. B)
+[ ] TM-specific governance checklist completed (SL 4M App. A / SL 4L App. B)
 ```
 
 ---

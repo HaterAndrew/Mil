@@ -1,4 +1,4 @@
-# Self-Study Addendum — TM-50H Advanced AI Engineer
+# Self-Study Addendum — SL 5H Advanced AI Engineer
 ## Palantir Developers Reference Library
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.
@@ -9,7 +9,7 @@
 
 ## How to Use This Addendum
 
-TM-50H builds on TM-40H. This addendum covers both the TM-40H foundational video library and the advanced TM-50H additions. If you have already reviewed the TM-40H addendum, start at Group 10 for content specific to this course. Videos marked in the TM with inline NOTE callouts are flagged here for easy cross-reference.
+SL 5H builds on SL 4H. This addendum covers both the SL 4H foundational video library and the advanced SL 5H additions. If you have already reviewed the SL 4H addendum, start at Group 10 for content specific to this course. Videos marked in the TM with inline NOTE callouts are flagged here for easy cross-reference.
 
 ---
 
@@ -39,7 +39,7 @@ The following doctrine sections were added to TM-50H this session. Review after 
 
 | Video | What it Covers | Relevant TM Chapter |
 |---|---|---|
-| *AIP with Jeg: Adding RAG to a Simple Notes Application* | Step-by-step RAG pipeline build — foundational reference from TM-40H | Ch 4 |
+| *AIP with Jeg: Adding RAG to a Simple Notes Application* | Step-by-step RAG pipeline build — foundational reference from SL 4H | Ch 4 |
 | *Building with Palantir AIP: Logic Tools for RAG/OAG* | AIP Logic tools for RAG and Ontology-Augmented Generation | Ch 4 |
 | *Building with Palantir AIP: Data Tools for RAG/OAG* | Data preparation and transform tools for RAG/OAG pipelines | Ch 4 |
 | *Build with AIP: Semantic Search* | Semantic search within AIP | Ch 4 |
@@ -129,7 +129,7 @@ The following doctrine sections were added to TM-50H this session. Review after 
 
 ---
 
-## Group 10 — Advanced Multi-Agent and Enterprise AI (TM-50H Additions)
+## Group 10 — Advanced Multi-Agent and Enterprise AI (SL 5H Additions)
 
 | Video | What it Covers | Relevant TM Chapter |
 |---|---|---|
@@ -143,7 +143,7 @@ The following doctrine sections were added to TM-50H this session. Review after 
 
 ---
 
-## Group 11 — Advanced Platform Architecture (TM-50H Additions)
+## Group 11 — Advanced Platform Architecture (SL 5H Additions)
 
 | Video | What it Covers | Relevant TM Chapter |
 |---|---|---|

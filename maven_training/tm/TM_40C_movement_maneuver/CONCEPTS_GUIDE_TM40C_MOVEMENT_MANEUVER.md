@@ -1,8 +1,8 @@
-# CONCEPTS GUIDE — TM-40C COMPANION — MOVEMENT AND MANEUVER WARFIGHTING FUNCTION · MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 4C COMPANION — MOVEMENT AND MANEUVER WARFIGHTING FUNCTION · MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** ADP 3-0's principles of combined arms operations, initiative, and tempo are not data concepts — but they all depend on data quality, currency, and shared access to execute. Understanding this relationship is the foundation for effective MSS use in M&M operations.
-> **Prereqs:** TM-10 (Maven User), TM-20 (Builder), and TM-30 (Advanced Builder). Read this Concepts Guide after completing TM-30 and before beginning TM-40C task instruction.
-> **Purpose:** This guide develops the operational mental models required to effectively integrate MSS into Movement and Maneuver warfighting function operations. It is a prerequisite companion to TM-40C and must be read before beginning TM-40C task instruction. This guide is conceptual — it develops understanding, not procedures. No step-by-step tasks appear here. The audience is S3/G3 officers, brigade and battalion commanders, and staff officers responsible for combined arms synchronization.
+> **Prereqs:** SL 1 (Maven User), SL 2 (Builder), and SL 3 (Advanced Builder). Read this Concepts Guide after completing SL 3 and before beginning SL 4C task instruction.
+> **Purpose:** This guide develops the operational mental models required to effectively integrate MSS into Movement and Maneuver warfighting function operations. It is a prerequisite companion to SL 4C and must be read before beginning SL 4C task instruction. This guide is conceptual — it develops understanding, not procedures. No step-by-step tasks appear here. The audience is S3/G3 officers, brigade and battalion commanders, and staff officers responsible for combined arms synchronization.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -407,7 +407,7 @@ The S3 section does not manage this alone. The S6 provides technical security. T
 
 > **NOTE: OPSEC for MSS is not a separate plan or annex. It is a continuous behavior integrated into every MSS operation. Checking access controls before sharing a workspace takes 30 seconds. The operational cost of a compromised COP is not recoverable.**
 
-ADP 3-0 provides the doctrinal framework. MSS provides the platform capability. TM-40C provides the procedural guidance. This Concepts Guide provides the "why" behind both. The unit's investment in training all three dimensions determines whether MSS becomes a genuine operational advantage or an expensive administrative layer.
+ADP 3-0 provides the doctrinal framework. MSS provides the platform capability. SL 4C provides the procedural guidance. This Concepts Guide provides the "why" behind both. The unit's investment in training all three dimensions determines whether MSS becomes a genuine operational advantage or an expensive administrative layer.
 
 ### A Note on the Peer Threat Context
 
@@ -471,7 +471,7 @@ Every S3 section in USAREUR-AF is capable of the discipline. The question is whe
 | ADP 3-07, Stability | Stability operations, lines of effort, civil considerations |
 | FM 3-96, Brigade Combat Team | BCT organization, combined arms integration at brigade |
 
-Practitioners are encouraged to read the doctrinal publications relevant to their primary duty position alongside TM-40C. Doctrine provides the why; TM-40C provides the how. Both are required for competent M&M MSS employment.
+Practitioners are encouraged to read the doctrinal publications relevant to their primary duty position alongside SL 4C. Doctrine provides the why; SL 4C provides the how. Both are required for competent M&M MSS employment.
 
 ---
 
@@ -479,37 +479,37 @@ Practitioners are encouraged to read the doctrinal publications relevant to thei
 
 ### WFF Peer Tracks
 
-All six WFF tracks are at the same tier. All six WFF tracks require TM-10, TM-20, and TM-30 as prerequisites. M&M practitioners are encouraged to develop working awareness of TM-40A (Intelligence) and TM-40F (Mission Command) — the two WFF tracks with the most intensive M&M data integration.
+All six WFF tracks are at the same tier. All six WFF tracks require SL 1, SL 2, and SL 3 as prerequisites. M&M practitioners are encouraged to develop working awareness of SL 4A (Intelligence) and SL 4F (Mission Command) — the two WFF tracks with the most intensive M&M data integration.
 
 | Track | Title | Prereq | Relationship to M&M WFF |
 |-------|-------|--------|------------------------|
-| TM-40A | Intelligence WFF | TM-10 + TM-20 + TM-30 | NAI/TAI overlays, PIR/IR supporting reconnaissance planning |
-| TM-40B | Fires WFF | TM-10 + TM-20 + TM-30 | FSCM management, airspace deconfliction, maneuver-fires synchronization |
-| TM-40C | Movement and Maneuver WFF | TM-10 + TM-20 + TM-30 | This track |
-| TM-40D | Sustainment WFF | TM-10 + TM-20 + TM-30 | Route capacity, maneuver unit readiness, supply constraints on COA |
-| TM-40E | Protection WFF | TM-10 + TM-20 + TM-30 | Physical security integration, NBC threat overlays |
-| TM-40F | Mission Command WFF | TM-10 + TM-20 + TM-30 | Combined arms COP, CCIR thresholds for maneuver decision points |
+| SL 4A | Intelligence WFF | SL 1 + SL 2 + SL 3 | NAI/TAI overlays, PIR/IR supporting reconnaissance planning |
+| SL 4B | Fires WFF | SL 1 + SL 2 + SL 3 | FSCM management, airspace deconfliction, maneuver-fires synchronization |
+| SL 4C | Movement and Maneuver WFF | SL 1 + SL 2 + SL 3 | This track |
+| SL 4D | Sustainment WFF | SL 1 + SL 2 + SL 3 | Route capacity, maneuver unit readiness, supply constraints on COA |
+| SL 4E | Protection WFF | SL 1 + SL 2 + SL 3 | Physical security integration, NBC threat overlays |
+| SL 4F | Mission Command WFF | SL 1 + SL 2 + SL 3 | Combined arms COP, CCIR thresholds for maneuver decision points |
 
-### Specialist Tracks (Prerequisite: TM-30)
+### Specialist Tracks (Prerequisite: SL 3)
 
-For personnel pursuing technical depth, specialist tracks (TM-40G–O, prereq TM-30) are available. Not required for M&M WFF employment.
+For personnel pursuing technical depth, specialist tracks (SL 4G–O, prereq SL 3) are available. Not required for M&M WFF employment.
 
 | Track | Title |
 |-------|-------|
-| TM-40G | ORSA (→ TM-50G) |
-| TM-40H | AI Engineer (→ TM-50H) |
-| TM-40M | ML Engineer (→ TM-50M) |
-| TM-40J | Program Manager (→ TM-50J) |
-| TM-40K | Knowledge Manager (→ TM-50K) |
-| TM-40L | Software Engineer (→ TM-50L) |
-| TM-40N | UI/UX Designer (→ TM-50N) |
-| TM-40O | Platform Engineer (→ TM-50O) |
+| SL 4G | ORSA (→ SL 5G) |
+| SL 4H | AI Engineer (→ SL 5H) |
+| SL 4M | ML Engineer (→ SL 5M) |
+| SL 4J | Program Manager (→ SL 5J) |
+| SL 4K | Knowledge Manager (→ SL 5K) |
+| SL 4L | Software Engineer (→ SL 5L) |
+| SL 4N | UI/UX Designer (→ SL 5N) |
+| SL 4O | Platform Engineer (→ SL 5O) |
 
 ---
 
-*CONCEPTS GUIDE — TM-40C COMPANION: MOVEMENT AND MANEUVER WARFIGHTING FUNCTION*
+*CONCEPTS GUIDE — SL 4C COMPANION: MOVEMENT AND MANEUVER WARFIGHTING FUNCTION*
 *Version 1.0 — March 2026*
-> **NOTE — New Doctrine Content in TM-40C:** TM-40C now includes PMESII-PT/METT-TC(I) data frameworks with the 2025 "I" (Informational) addition (section 2-1a), force ratio calculations with combat power CAUTION (section 8-4a), scheme of maneuver as geospatial data (section 5-2a), and reconnaissance as data collection (section 4-4a, FM 3-98). These sections ground M&M data management in their authoritative doctrinal sources.
+> **NOTE — New Doctrine Content in SL 4C:** SL 4C now includes PMESII-PT/METT-TC(I) data frameworks with the 2025 "I" (Informational) addition (section 2-1a), force ratio calculations with combat power CAUTION (section 8-4a), scheme of maneuver as geospatial data (section 5-2a), and reconnaissance as data collection (section 4-4a, FM 3-98). These sections ground M&M data management in their authoritative doctrinal sources.
 
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA — Wiesbaden, Germany*
 *DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*

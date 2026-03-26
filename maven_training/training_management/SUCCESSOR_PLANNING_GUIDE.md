@@ -86,10 +86,10 @@ When a Training OIC transition occurs (PCS, reassignment, retirement):
 The training program's resilience depends on instructor depth across courses. The cross-certification strategy ensures no course depends on a single instructor.
 
 **Priority order for cross-certification:**
-1. TM-10 and TM-20 — highest volume, most frequent delivery; every instructor should be certified for at least one of these
-2. TM-30 — gateway to all TM-40 tracks; at least 2 certified instructors at all times
-3. TM-40 WFF tracks (A-F) — cross-certify by adjacent WFF where domain expertise permits
-4. TM-40/TM-50 specialist tracks (G-M) — cross-certification limited by domain expertise; prioritize the most frequently delivered tracks
+1. SL 1 and SL 2 — highest volume, most frequent delivery; every instructor should be certified for at least one of these
+2. SL 3 — gateway to all SL 4 tracks; at least 2 certified instructors at all times
+3. SL 4 WFF tracks (A-F) — cross-certify by adjacent WFF where domain expertise permits
+4. SL 4/SL 5 specialist tracks (G-M) — cross-certification limited by domain expertise; prioritize the most frequently delivered tracks
 
 **Annual cross-certification target:** Each instructor adds at least 1 cross-certification per year until certified for 3+ courses.
 
@@ -132,8 +132,8 @@ Military units experience frequent personnel turnover (PCS, ETS, reassignment). 
 
 ### 4-2. Overlap Period
 
-When possible, the outgoing UDT and incoming UDT candidate should overlap for at least 1 TM-10 iteration:
-- Incoming candidate observes outgoing UDT deliver TM-10
+When possible, the outgoing UDT and incoming UDT candidate should overlap for at least 1 SL 1 iteration:
+- Incoming candidate observes outgoing UDT deliver SL 1
 - Outgoing UDT provides local knowledge transfer (classroom setup, access procedures, unit-specific scheduling)
 - This overlap does not replace T3-F certification — the incoming candidate must still complete T3-F
 

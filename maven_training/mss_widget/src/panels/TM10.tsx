@@ -7,14 +7,14 @@ export default function TM10({ showPanel }: Props) {
   return (
     <>
       <div className="section-header">
-        <span className="section-badge">TM-10</span>
+        <span className="section-badge">SL 1</span>
         <span className="section-title">Maven User Manual &mdash; All Personnel</span>
         <span className="section-subtitle">No technical background required &bull; Prerequisite: None</span>
       </div>
 
       <div className="callout bluf">
         <div className="callout-label">BLUF</div>
-        <div className="callout-body">TM-10 teaches you how to log in, navigate MSS, read dashboards, submit data through forms, use AI tools, and stay within authorized boundaries. Required for all USAREUR-AF personnel before operating MSS. <strong>Request your account before your first class &mdash; submit at <a href="https://mss.data.mil" target="_blank" rel="noreferrer" style={{color:'var(--navy-dark)'}}>mss.data.mil</a> or through your data steward. Provisioning generally completes within 24 hours.</strong></div>
+        <div className="callout-body">SL 1 teaches you how to log in, navigate MSS, read dashboards, submit data through forms, use AI tools, and stay within authorized boundaries. Required for all USAREUR-AF personnel before operating MSS. <strong>Request your account before your first class &mdash; submit at <a href="https://mss.data.mil" target="_blank" rel="noreferrer" style={{color:'var(--navy-dark)'}}>mss.data.mil</a> or through your data steward. Provisioning generally completes within 24 hours.</strong></div>
       </div>
 
       <div className="callout caution">
@@ -176,10 +176,11 @@ export default function TM10({ showPanel }: Props) {
       </div>
 
       <div className="training-section">
-        <h2><span className="training-icon">SCHED</span> UPCOMING TRAINING &mdash; TM-10</h2>
+        <h2><span className="training-icon">SCHED</span> UPCOMING TRAINING &mdash; SL 1</h2>
         <div className="callout note">
           <div className="callout-label">ENROLLMENT</div>
           <div className="callout-body">Contact the listed POC to reserve a seat. Bring your CAC and ensure your MSS account request is submitted at least 5 business days before the course start date. Virtual sessions require MS Teams access and a headset.</div>
+
         </div>
         <div className="table-wrap">
           <table>
@@ -234,12 +235,12 @@ export default function TM10({ showPanel }: Props) {
 
       <div className="specialist-cta" style={{marginTop:'32px'}}>
         <div className="specialist-cta-text">
-          <div className="specialist-cta-label">Next Level &mdash; After TM-10</div>
-          <div className="specialist-cta-title">TM-20 &mdash; No-Code Builder Manual</div>
+          <div className="specialist-cta-label">Next Level &mdash; After SL 1</div>
+          <div className="specialist-cta-title">SL 2 &mdash; No-Code Builder Manual</div>
           <div className="specialist-cta-sub">Learn to ingest data, build Workshop applications, create Object Types, and manage projects &mdash; all without coding. Required prereq for all builder roles.</div>
         </div>
-        <button className="specialist-cta-btn" onClick={() => showPanel('tm20')}>
-          Continue to TM-20 <span className="btn-arrow">&#8594;</span>
+        <button className="specialist-cta-btn" onClick={() => showPanel('sl2')}>
+          Continue to SL 2 <span className="btn-arrow">&#8594;</span>
         </button>
       </div>
 

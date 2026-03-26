@@ -3,7 +3,7 @@
 **Course:** T3-F MSC Force Multiplier (Unit Data Trainer Certification) | **Duration:** Half day (4 hours) | **Version:** 2.0 — March 2026
 
 > Abbreviated LP format. Expand using `LP_TEMPLATE.md` as needed.
-> Instructor prerequisite: Certified Instructor (T3-I or grandfathered) with TM-20+ certification. T:I ratio 8:1.
+> Instructor prerequisite: Certified Instructor (T3-I or grandfathered) with SL 2+ certification. T:I ratio 8:1.
 
 ---
 
@@ -19,13 +19,13 @@
 ### Block 1 — UDT Role, Authorities, and Limitations
 **Duration:** 30 min | **Method:** Brief | **Time:** 0800–0830
 
-**Purpose:** Set expectations. The UDT delivers TM-10 using published materials — nothing more, nothing less.
+**Purpose:** Set expectations. The UDT delivers SL 1 using published materials — nothing more, nothing less.
 
-**TLO:** The candidate will state the UDT's authorities (deliver TM-10, administer evaluations, proctor exams, report status) and limitations (no TM-20+, no curriculum modification, no enrollment exceptions).
+**TLO:** The candidate will state the UDT's authorities (deliver SL 1, administer evaluations, proctor exams, report status) and limitations (no SL 2+, no curriculum modification, no enrollment exceptions).
 
 **Key Delivery Notes:**
 - Walk through the authorities/limitations table from T3-F Course Content §1-4
-- Emphasize: "You deliver TM-10. That's your lane. Everything else goes to C2DAO."
+- Emphasize: "You deliver SL 1. That's your lane. Everything else goes to C2DAO."
 - Cover sustainment requirements: quarterly delivery, semi-annual PD, annual re-cert
 - Explain the escalation principle: knowing your limits is a strength, not a weakness
 
@@ -80,11 +80,11 @@
 
 **Purpose:** The teach-back is the Go/No-Go gate for T3-F.
 
-**TLO:** The candidate will deliver a 10–15 minute TM-10 block demonstrating satisfactory technical accuracy and lesson plan adherence.
+**TLO:** The candidate will deliver a 10–15 minute SL 1 block demonstrating satisfactory technical accuracy and lesson plan adherence.
 
 **Key Delivery Notes:**
-- Each candidate delivers 1 TM-10 block (assigned by instructor to avoid duplicates)
-- Other candidates role-play as TM-10 trainees
+- Each candidate delivers 1 SL 1 block (assigned by instructor to avoid duplicates)
+- Other candidates role-play as SL 1 trainees
 - Evaluator scores on: (1) Technical accuracy — content is correct; (2) Lesson plan adherence — follows the plan, uses check-on-learning questions
 - Schedule ~15 minutes per candidate (10-15 delivery + brief feedback); 5 candidates = 75 min
 
@@ -105,7 +105,7 @@
 - Sustainment review: quarterly delivery, semi-annual PD, annual re-cert
 - Reporting templates: Unit Training Status Report, No-Go report
 - C2DAO contact information
-- "Schedule your first TM-10 within 30 days."
+- "Schedule your first SL 1 within 30 days."
 
 **Student Activity:** Complete designation paperwork. Receive templates and contacts.
 

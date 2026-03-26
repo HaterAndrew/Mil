@@ -1,12 +1,12 @@
-# POST-TEST — TM-40D: SUSTAINMENT
+# POST-TEST — SL 4D: SUSTAINMENT
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40D: Sustainment WFF Track |
+| **Course** | SL 4D: Sustainment WFF Track |
 | **Form** | Post-Test |
-| **Level** | TM-40D (WFF Track) |
-| **Audience** | G4/S4 staff, FSB/BSB logistics officers, supply chain managers, property book officers; prerequisite: completion of TM-40D training |
+| **Level** | SL 4D (WFF Track) |
+| **Audience** | G4/S4 staff, FSB/BSB logistics officers, supply chain managers, property book officers; prerequisite: completion of SL 4D training |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | 80% (32/40 points) |
 
@@ -14,7 +14,7 @@
 
 ## INSTRUCTIONS
 
-This assessment confirms proficiency upon completion of TM-40D training. A score of 80% (32/40) is required for course completion certification. Results are recorded on the student training record.
+This assessment confirms proficiency upon completion of SL 4D training. A score of 80% (32/40) is required for course completion certification. Results are recorded on the student training record.
 
 ---
 
@@ -78,14 +78,14 @@ B. Distribution lists in MSS are public and cannot be restricted to authorized u
 C. An aggregated view of supply on hand, consumption rates, and resupply timelines reveals the unit's operational endurance — an adversary with this data can infer planned operational tempo and duration
 D. Sustainment data does not warrant OPSEC controls because it is administrative in nature
 
-**9. ADP 4-0 establishes eight principles of sustainment. Table 1-1A in TM-40D maps each principle to a data platform application. Which principle's data platform analog is described as "consumption rate modeling, predictive demand analytics, and trend dashboards that project DOS forward based on operational tempo"?**
+**9. ADP 4-0 establishes eight principles of sustainment. Table 1-1A in SL 4D maps each principle to a data platform application. Which principle's data platform analog is described as "consumption rate modeling, predictive demand analytics, and trend dashboards that project DOS forward based on operational tempo"?**
 
 A. Integration — combining all elements of sustainment into unified operations
 B. Anticipation — predicting future operational requirements based on current operations and historical data
 C. Responsiveness — providing the right support at the right time and place
 D. Simplicity — minimizing the complexity of sustainment operations
 
-**10. Table 2-1A in TM-40D maps all ten classes of supply to their data sources, MSS feeds, and update frequencies. A logistics officer needs to track repair parts requisition status. Which class of supply covers repair parts, and what is its minimum update frequency?**
+**10. Table 2-1A in SL 4D maps all ten classes of supply to their data sources, MSS feeds, and update frequencies. A logistics officer needs to track repair parts requisition status. Which class of supply covers repair parts, and what is its minimum update frequency?**
 
 A. Class VII — major end items; update daily and immediately upon battle loss
 B. Class V — ammunition; update daily and after every expenditure event

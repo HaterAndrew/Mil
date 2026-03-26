@@ -14,7 +14,7 @@
 
 ## INSTRUCTIONS
 
-This assessment measures your knowledge after training. While it does not directly determine your Go/No-Go result, your score is reported to C2DAO and indicates readiness for independent TM-10 delivery.
+This assessment measures your knowledge after training. While it does not directly determine your Go/No-Go result, your score is reported to C2DAO and indicates readiness for independent SL 1 delivery.
 
 ---
 
@@ -22,14 +22,14 @@ This assessment measures your knowledge after training. While it does not direct
 
 *Circle the letter of the best answer. (2 points each)*
 
-**1. Before delivering a TM-10 iteration, a UDT must:**
+**1. Before delivering a SL 1 iteration, a UDT must:**
 
 A. Obtain written approval from C2DAO for each individual course delivery
 B. Complete the UDT pre-course checklist: verify student accounts, test-login from workstations, print materials, and notify C2DAO
 C. Request a C2DAO instructor to co-teach the first block
 D. Submit a revised lesson plan for approval
 
-**2. The TM-10 lesson plan contains a "Check-on-Learning" section for each block. A UDT should:**
+**2. The SL 1 lesson plan contains a "Check-on-Learning" section for each block. A UDT should:**
 
 A. Skip these questions if the class is running behind schedule
 B. Save all check-on-learning questions for the end of the day
@@ -43,21 +43,21 @@ B. Failure on this measure is automatic No-Go regardless of performance on other
 C. Only a Senior Instructor can evaluate this measure
 D. The trainee gets two attempts on this measure before it counts
 
-**4. You are delivering TM-10. A student applies an incorrect classification marking during the export exercise. You should:**
+**4. You are delivering SL 1. A student applies an incorrect classification marking during the export exercise. You should:**
 
 A. Quietly fix it and move on — classification issues are embarrassing for the student
 B. Tell the student to review the classification rules during the break
 C. Note it for the evaluation but do not address it during instruction
 D. Stop the class, correct the error immediately, and re-brief the classification rules before proceeding
 
-**5. A unit commander asks you to deliver TM-20 to 5 soldiers. You should:**
+**5. A unit commander asks you to deliver SL 2 to 5 soldiers. You should:**
 
-A. Deliver the TM-20 course using the published materials
-B. Tell the commander that TM-20 does not exist
-C. Deliver a condensed version covering only the most important TM-20 blocks
-D. Explain that TM-20 is beyond UDT scope and coordinate with C2DAO for the next available iteration or MTT visit
+A. Deliver the SL 2 course using the published materials
+B. Tell the commander that SL 2 does not exist
+C. Deliver a condensed version covering only the most important SL 2 blocks
+D. Explain that SL 2 is beyond UDT scope and coordinate with C2DAO for the next available iteration or MTT visit
 
-**6. After delivering a TM-10 iteration, you must submit a Unit Training Status Report to C2DAO within:**
+**6. After delivering a SL 1 iteration, you must submit a Unit Training Status Report to C2DAO within:**
 
 A. 24 hours
 B. 30 calendar days
@@ -84,9 +84,9 @@ D. End the evaluation and start over
 
 *Answer in 1–3 sentences. (3 points each)*
 
-**9. A trainee receives a No-Go on the TM-10 practical exercise. Describe the steps you take after the evaluation.**
+**9. A trainee receives a No-Go on the SL 1 practical exercise. Describe the steps you take after the evaluation.**
 
-**10. You think a TM-10 lesson plan contains an error — a platform feature described in Block 3 no longer exists after a recent update. What do you do?**
+**10. You think a SL 1 lesson plan contains an error — a platform feature described in Block 3 no longer exists after a recent update. What do you do?**
 
 ---
 
@@ -100,7 +100,7 @@ D. End the evaluation and start over
 | 2 | **C** — verify comprehension before moving on | 2 | T3-F Course Content §2-2 |
 | 3 | **B** — critical item failure = automatic No-Go | 2 | T3-F Course Content §3-3 |
 | 4 | **D** — classification errors require immediate correction | 2 | T3-F Course Content §3-2 |
-| 5 | **D** — TM-20 is beyond UDT scope; escalate | 2 | T3-F Course Content §1-4 |
+| 5 | **D** — SL 2 is beyond UDT scope; escalate | 2 | T3-F Course Content §1-4 |
 | 6 | **C** — 5 duty days | 2 | T3-F Course Content §4-1 |
 | 7 | **B** — 24 hours | 2 | T3-F Course Content §3-3 |
 | 8 | **A** — check the T&EO condition statement for what references are authorized | 2 | T3-F Course Content §3-3 |

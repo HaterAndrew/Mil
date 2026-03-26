@@ -1,4 +1,4 @@
-# Self-Study Addendum — TM-40A: Intelligence Warfighting Function
+# Self-Study Addendum — SL 4A: Intelligence Warfighting Function
 ## Palantir Developers Reference Library
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.
@@ -31,7 +31,7 @@ The following doctrine sections were added to TM-40A this session. Review after 
 | *Foundry Reference Project \| Ontology* | Reference implementation of a Foundry Ontology — object types, property definitions, link rules. Relevant to understanding how intelligence object types (targets, SIGACTs, NAIs) are modeled. | Ch 1, Ch 2 |
 | *How Palantir Integrates with Your Current Data Systems* | Overview of how Foundry/MSS connects to existing data systems — relevant context for understanding how DCGS-A, SIGINT, and GEOINT feeds flow into the intelligence data layer. | Ch 1 |
 | *Foundry Reference Project \| Data Pipeline* | Walkthrough of a reference data pipeline — covers dataset structure and transform conventions that feed intelligence analytical workspaces. | Ch 1 |
-| *Deep Dive: Advanced Ontology \| DevCon 5* | Advanced Ontology patterns including object type hierarchies — relevant for intelligence analysts coordinating with TM-30 practitioners on multi-INT data models. | Ch 1, Ch 4 |
+| *Deep Dive: Advanced Ontology \| DevCon 5* | Advanced Ontology patterns including object type hierarchies — relevant for intelligence analysts coordinating with SL 3 practitioners on multi-INT data models. | Ch 1, Ch 4 |
 
 ---
 

@@ -1,12 +1,12 @@
-# PRE-TEST — TM-30: ADVANCED BUILDER
+# PRE-TEST — SL 3: ADVANCED BUILDER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-30: Advanced Builder |
+| **Course** | SL 3: Advanced Builder |
 | **Form** | Pre-Test |
-| **Level** | TM-30 (Advanced) |
-| **Audience** | Data-adjacent specialists — 17/25-series, S6/G6/G2; prerequisite: TM-10 + TM-20 |
+| **Level** | SL 3 (Advanced) |
+| **Audience** | Data-adjacent specialists — 17/25-series, S6/G6/G2; prerequisite: SL 1 + SL 2 |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

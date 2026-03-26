@@ -1,7 +1,7 @@
 """
 Single-slide MSS Training Program dep map for CG demo.
 Schema mirrors DEPENDENCY_MAP.html:
-  - Solid gold arrows  = prereq edges  (TM-10 → TM-20 → TM-30)
+  - Solid gold arrows  = prereq edges  (SL 1 → SL 2 → SL 3)
   - Dashed border box  = companion/parallel (FBC — not in prereq chain)
   - Companion boxes    = Syllabus / Exercise / Exams per row
 Output: maven_training/training_management/MSS_TRAINING_BRIEF.pptx
@@ -176,7 +176,7 @@ clear_shapes(s, preserve=PROTO_HEADER)
 update_shape_text(s, 'TextBox 2', 'MSS TRAINING PROGRAM — USAREUR-AF')
 
 txt(s,
-    "Operator training path  ·  prereq chain: TM-10 → TM-20 → TM-30  "
+    "Operator training path  ·  prereq chain: SL 1 → SL 2 → SL 3  "
     "·  FBC: quarterly parallel foundry bootcamp (dashed = not in prereq chain)",
     Inches(1.16), Inches(0.70), W - Inches(1.30), Inches(0.20),
     sz=Pt(8.5), italic=True, color=LGRAY)
@@ -197,7 +197,7 @@ C_EX  = C_SYL + DOC_W + ARR_GX
 C_EXM = C_EX  + DOC_W + ARR_GX
 MAIN_R = C_EXM + DOC_W   # right edge of main grid
 
-# FBC panel — to the right, spans TM-20 and TM-30 rows
+# FBC panel — to the right, spans SL 2 and SL 3 rows
 FBC_GAP = Inches(0.30)
 FBC_X   = MAIN_R + FBC_GAP
 FBC_W   = W - FBC_X - Inches(0.35)
@@ -208,14 +208,14 @@ R3_T = R2_T + BH + ROW_GAP
 TM_CX = LEFT_X + TM_W / 2
 
 FBC_T = R2_T
-FBC_H = BH + ROW_GAP + BH   # spans TM-20 and TM-30 rows
+FBC_H = BH + ROW_GAP + BH   # spans SL 2 and SL 3 rows
 
-# ── Row 1: TM-10 ──────────────────────────────────────────────────────────────
+# ── Row 1: SL 1 ───────────────────────────────────────────────────────────────
 tm_box(s, C_TM, R1_T, TM_W, BH,
-       "TM-10", "MAVEN USER", "8 hrs", "All Personnel",
+       "SL 1", "MAVEN USER", "8 hrs", "All Personnel",
        "No prereq  ·  New soldier in-processing", TM10C)
 h_arrow(s, C_SYL - ARR_GX, R1_T, ARR_GX, BH)
-doc_box(s, C_SYL, R1_T, DOC_W, BH, "SYLLABUS", "TM-10", COMP)
+doc_box(s, C_SYL, R1_T, DOC_W, BH, "SYLLABUS", "SL 1", COMP)
 h_arrow(s, C_EX - ARR_GX, R1_T, ARR_GX, BH)
 doc_box(s, C_EX,  R1_T, DOC_W, BH, "EXERCISE", "EX_10  Operator", COMP)
 h_arrow(s, C_EXM - ARR_GX, R1_T, ARR_GX, BH)
@@ -223,30 +223,30 @@ doc_box(s, C_EXM, R1_T, DOC_W, BH, "EXAMS", "Pre-assessment\nPost-assessment", C
 
 v_arrow(s, TM_CX, R1_T + BH, ROW_GAP)
 
-# ── Row 2: TM-20 ──────────────────────────────────────────────────────────────
+# ── Row 2: SL 2 ───────────────────────────────────────────────────────────────
 tm_box(s, C_TM, R2_T, TM_W, BH,
-       "TM-20", "BUILDER", "40 hrs", "Data-Adjacent Staff",
-       "Prereq: TM-10", TM20C)
+       "SL 2", "BUILDER", "40 hrs", "Data-Adjacent Staff",
+       "Prereq: SL 1", TM20C)
 h_arrow(s, C_SYL - ARR_GX, R2_T, ARR_GX, BH)
-doc_box(s, C_SYL, R2_T, DOC_W, BH, "SYLLABUS", "TM-20", COMP)
+doc_box(s, C_SYL, R2_T, DOC_W, BH, "SYLLABUS", "SL 2", COMP)
 h_arrow(s, C_EX - ARR_GX, R2_T, ARR_GX, BH)
 doc_box(s, C_EX,  R2_T, DOC_W, BH, "EXERCISE", "EX_20  No-Code Builder", COMP)
 h_arrow(s, C_EXM - ARR_GX, R2_T, ARR_GX, BH)
 doc_box(s, C_EXM, R2_T, DOC_W, BH, "EXAMS", "Pre-assessment\nPost-assessment", COMP)
 
-# Dashed companion edge: TM-20 right edge → FBC left edge (dep-map schema)
+# Dashed companion edge: SL 2 right edge → FBC left edge (dep-map schema)
 dashed_connector(s,
     C_TM + TM_W, R2_T + BH / 2,
     FBC_X,        R2_T + BH / 2)
 
 v_arrow(s, TM_CX, R2_T + BH, ROW_GAP)
 
-# ── Row 3: TM-30 ──────────────────────────────────────────────────────────────
+# ── Row 3: SL 3 ───────────────────────────────────────────────────────────────
 tm_box(s, C_TM, R3_T, TM_W, BH,
-       "TM-30", "ADVANCED BUILDER", "40 hrs", "Unit Data Leads",
-       "Prereq: TM-20", TM30C)
+       "SL 3", "ADVANCED BUILDER", "40 hrs", "Unit Data Leads",
+       "Prereq: SL 2", TM30C)
 h_arrow(s, C_SYL - ARR_GX, R3_T, ARR_GX, BH)
-doc_box(s, C_SYL, R3_T, DOC_W, BH, "SYLLABUS", "TM-30", COMP)
+doc_box(s, C_SYL, R3_T, DOC_W, BH, "SYLLABUS", "SL 3", COMP)
 h_arrow(s, C_EX - ARR_GX, R3_T, ARR_GX, BH)
 doc_box(s, C_EX,  R3_T, DOC_W, BH, "EXERCISE", "EX_30  Adv Builder", COMP)
 h_arrow(s, C_EXM - ARR_GX, R3_T, ARR_GX, BH)
@@ -269,8 +269,8 @@ txt(s, "FOUNDRY BOOTCAMP",
 
 txt(s,
     "Quarterly · 5-day supervised\nbuild event\n\n"
-    "Prereq: TM-20 Go\n+ command-validated project\n\n"
-    "Does NOT grant TM-30 credit\nDoes NOT unlock TM-40",
+    "Prereq: SL 2 Go\n+ command-validated project\n\n"
+    "Does NOT grant SL 3 credit\nDoes NOT unlock SL 4",
     FBC_X + Inches(0.12), FBC_T + Inches(0.65),
     FBC_W - Inches(0.24), FBC_H - Inches(0.75),
     sz=Pt(9), color=WHITE)
@@ -284,9 +284,9 @@ txt(s, "parallel track",
 # ── Depth note ─────────────────────────────────────────────────────────────────
 NOTE_T = R3_T + BH + Inches(0.16)
 txt(s,
-    "TM-40 / TM-50  —  21 specialist & advanced tracks published and ready  "
+    "SL 4 / SL 5  —  21 specialist & advanced tracks published and ready  "
     "(WFF: Intel · Fires · M&M · Sustainment · Protection · MC  |  "
-    "Technical: ORSA · AI · ML · PM · KM · SWE)  —  Execution follows TM-10/20/30 baseline",
+    "Technical: ORSA · AI · ML · PM · KM · SWE)  —  Execution follows SL 1/2/3 baseline",
     Inches(0.35), NOTE_T, MAIN_R - Inches(0.35), Inches(0.24),
     sz=Pt(8.5), italic=True, color=DGRAY, align=PP_ALIGN.CENTER)
 

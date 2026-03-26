@@ -1,14 +1,14 @@
 # EX_20 — No-Code Builder
-## Practical Exercise — TM-20 Proficiency
+## Practical Exercise — SL 2 Proficiency
 
 | | |
 |---|---|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-20 (and TM-10) |
+| **Prerequisite** | SL 2 (and SL 1) |
 | **Duration** | 90–120 min |
 | **Environment** | MSS training instance with Workshop build permissions — see ENVIRONMENT_SETUP.md |
 
-NOTE: EX_20 is a training exercise designed for practice and early skill validation. It covers a subset of TM-20 tasks (pipeline building and Workshop publication). The full capstone practical exercise — which includes Ontology creation, Action configuration, and the complete build-test-promote workflow — is administered on Day 5 of the TM-20 course per the syllabus. EX_20 does not replace the Day 5 evaluation.
+NOTE: EX_20 is a training exercise designed for practice and early skill validation. It covers a subset of SL 2 tasks (pipeline building and Workshop publication). The full capstone practical exercise — which includes Ontology creation, Action configuration, and the complete build-test-promote workflow — is administered on Day 5 of the SL 2 course per the syllabus. EX_20 does not replace the Day 5 evaluation.
 
 ## SCENARIO
 
@@ -78,17 +78,17 @@ Training dataset: synthetic vehicle readiness data, LOGSTAT-format, 90 days, 4 c
 
 Upon successful completion of EX_20, participants may branch based on role:
 
-**All paths require TM-30 before any TM-40 track.** Proceed to TM-30 — Advanced Builder next.
+**All paths require SL 3 before any SL 4 track.** Proceed to SL 3 — Advanced Builder next.
 
-After TM-30, branch based on role:
+After SL 3, branch based on role:
 
-**WFF tracks — Warfighting Function application (prereq: TM-30 required):**
-- TM-40A — Intelligence (G2/S2 staff, targeting officers, all-source analysts)
-- TM-40B — Fires (FSE, fire support officers, targeting teams)
-- TM-40C — Movement & Maneuver (G3/S3 maneuver staff, operations officers)
-- TM-40D — Sustainment (G4/S4, FSB/BSB logistics staff)
-- TM-40E — Protection (force protection, CBRN, provost marshal)
-- TM-40F — Mission Command (G3/S3 staff, battle captains, XOs, CDRs)
+**WFF tracks — Warfighting Function application (prereq: SL 3 required):**
+- SL 4A — Intelligence (G2/S2 staff, targeting officers, all-source analysts)
+- SL 4B — Fires (FSE, fire support officers, targeting teams)
+- SL 4C — Movement & Maneuver (G3/S3 maneuver staff, operations officers)
+- SL 4D — Sustainment (G4/S4, FSB/BSB logistics staff)
+- SL 4E — Protection (force protection, CBRN, provost marshal)
+- SL 4F — Mission Command (G3/S3 staff, battle captains, XOs, CDRs)
 
-**Specialist tracks — technical/analytical tracks (prereq: TM-30 required):**
-- TM-40G through TM-40O per specialist billet assignment
+**Specialist tracks — technical/analytical tracks (prereq: SL 3 required):**
+- SL 4G through SL 4O per specialist billet assignment

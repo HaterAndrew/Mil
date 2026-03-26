@@ -1,4 +1,4 @@
-# Self-Study Addendum — TM-40G: Operations Research and Systems Analysis
+# Self-Study Addendum — SL 4G: Operations Research and Systems Analysis
 ## Palantir Developers Reference Library
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.
@@ -52,7 +52,7 @@ The following doctrine sections were added to TM-40G this session. Review after 
 | *Palantir Ontology Overview* | High-level introduction to the Foundry Ontology: object types, links, and the operational data model that ORSA analytical products consume. | Ch 2 |
 | *Foundry Reference Project \| Data Pipeline* | Walkthrough of a reference data pipeline implementation in Foundry — covers Pipeline Builder patterns, dataset structure, and transform conventions that feed Code Workspace analysis. | Ch 2 |
 | *Foundry Reference Project \| Ontology* | Reference implementation of a Foundry Ontology — object types, property definitions, link rules, and how the Ontology connects to downstream Workshop and analytical products. | Ch 2 |
-| *Platform APIs x SLB for Digital Sustainability* | Demonstrates using Foundry Platform APIs to integrate external data systems and automate workflows — applicable to ORSA analysts coordinating with TM-40L/40H for productionizing analytical pipelines. | Ch 2 |
+| *Platform APIs x SLB for Digital Sustainability* | Demonstrates using Foundry Platform APIs to integrate external data systems and automate workflows — applicable to ORSA analysts coordinating with SL 4L/SL 4H for productionizing analytical pipelines. | Ch 2 |
 
 ---
 
@@ -62,7 +62,7 @@ The following doctrine sections were added to TM-40G this session. Review after 
 |---|---|---|
 | *Applied AI: Scaling AI Workflows and Task Execution with AIP* | How Palantir AIP orchestrates multi-step analytical workflows and integrates AI-generated outputs into operational decision products — relevant as ORSA products increasingly incorporate automated synthesis layers. | Ch 8 |
 | *Deep Dive: Optimizing Data Pipelines with Iceberg Tables and Lightweight Compute \| DevCon 4* | Foundry Iceberg table format and lightweight compute for high-volume pipeline optimization — applicable when the ORSA data layer grows to include high-frequency readiness or logistics feeds. | Ch 2 |
-| *Deep Dive: Advanced Ontology \| DevCon 5* | Advanced Ontology patterns including object type hierarchies and action types — relevant for ORSA analysts coordinating with TM-40H / TM-30 practitioners on the data model supporting cross-domain analysis. | Ch 2 |
+| *Deep Dive: Advanced Ontology \| DevCon 5* | Advanced Ontology patterns including object type hierarchies and action types — relevant for ORSA analysts coordinating with SL 4H / SL 3 practitioners on the data model supporting cross-domain analysis. | Ch 2 |
 | *Anduril: Ontology: Launchpad for Operations* | Case study on operationalizing the Palantir Ontology as the semantic layer for a complex operational environment — illustrates how a well-designed Ontology enables rapid analytical product development. | Ch 1, Ch 2 |
 
 ---

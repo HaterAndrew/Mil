@@ -63,7 +63,7 @@ class TraineeListItem(BaseModel):
 # ---------------------------------------------------------------------------
 class CompletionCreate(BaseModel):
     dodid: str = Field(..., pattern=r"^\d{10}$")
-    course_id: str = Field(..., pattern=r"^(TM-\d{2}[A-HJ-O]?|FBC)$")
+    course_id: str = Field(..., pattern=r"^(SL [1-5][A-HJ-O]?|EXEC|FBC|T3-[IF])$")
     result: Literal["GO", "NO_GO"]
     evaluation_date: date
     evaluator_name: str | None = None

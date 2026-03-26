@@ -10,10 +10,10 @@
 | **Proponent DSN** | [To be assigned] |
 | **Proponent Email** | usarmy.wiesbaden.usareur-af.list.c2dao-training@army.mil |
 | **Effective Date** | March 2026 |
-| **Classification** | — |
+| **Classification** |  |
 | **Review Cycle** | Annual or upon major platform update |
-| **Total Courses** | 23 |
-| **Total Program Hours** | 728 |
+| **Total Courses** | 21 |
+| **Total Program Hours** | 664 |
 | **Format** | TR 350-70 compliant; structured for ATIS registration |
 | **Phase 1** | USAREUR-AF G3/7 command training registration |
 | **Phase 2** | T2COM institutional registration (future) |
@@ -22,7 +22,7 @@
 
 ## REGISTRATION STATUS
 
-> **ATIS Course Numbers:** To be assigned upon registration. Internal designators (TM-10 through TM-50M and T3-F/T3-I) are used throughout this packet. Upon ATIS registration, each course will receive a formal ATIS course number which will be annotated in the ATIS Number field of each course record.
+> **ATIS Course Numbers:** To be assigned upon registration. Internal designators (SL 1 through SL 5L) are used throughout this packet. Upon ATIS registration, each course will receive a formal ATIS course number which will be annotated in the ATIS Number field of each course record.
 
 > **T2COM Note:** This packet is structured to TR 350-70 specification. When transitioning to T2COM institutional registration, the following additional elements will be required:
 > - Formal TRADOC school partnership (proponent alignment)
@@ -49,29 +49,24 @@
 ## PREREQUISITE CHAIN
 
 ```
-TM-10 (all personnel)
-  +-- TM-20 (builders)
-        +-- TM-30 (advanced builders / data-adjacent / WFF functional staff)
-              |-- TM-40A (Intelligence WFF)
-              |-- TM-40B (Fires WFF)
-              |-- TM-40C (Movement & Maneuver WFF)
-              |-- TM-40D (Sustainment WFF)
-              |-- TM-40E (Protection WFF)
-              |-- TM-40F (Mission Command WFF)
-              |-- TM-40G (ORSA) ----------> TM-50G (Advanced ORSA)
-              |-- TM-40H (AI Engineer) ---> TM-50H (Advanced AI Engineer)
-              |-- TM-40M (ML Engineer) ---> TM-50M (Advanced ML Engineer)
-              |-- TM-40J (Program Mgr) ---> TM-50J (Advanced PM)
-              |-- TM-40K (Knowledge Mgr) -> TM-50K (Advanced KM)
-              +-- TM-40L (Software Eng) --> TM-50L (Advanced SWE)
-        |
-        +-- T3-F (MSC Force Multiplier / Unit Data Trainer)
-        |
-        +-- TM-30
-              +-- T3-I (Instructor Certification — Phase 1)
+SL 1 (all personnel)
+  +-- SL 2 (builders)
+        +-- SL 3 (advanced builders / data-adjacent / WFF functional staff)
+              |-- SL 4A (Intelligence WFF)
+              |-- SL 4B (Fires WFF)
+              |-- SL 4C (Movement & Maneuver WFF)
+              |-- SL 4D (Sustainment WFF)
+              |-- SL 4E (Protection WFF)
+              |-- SL 4F (Mission Command WFF)
+              |-- SL 4G (ORSA) ----------> SL 5G (Advanced ORSA)
+              |-- SL 4H (AI Engineer) ---> SL 5H (Advanced AI Engineer)
+              |-- SL 4M (ML Engineer) ---> SL 5M (Advanced ML Engineer)
+              |-- SL 4J (Program Mgr) ---> SL 5J (Advanced PM)
+              |-- SL 4K (Knowledge Mgr) -> SL 5K (Advanced KM)
+              +-- SL 4L (Software Eng) --> SL 5L (Advanced SWE)
 ```
 
-> **NOTE:** TM-30 is a HARD prerequisite for ALL TM-40 tracks (WFF A-F and specialist G-O). There are NO TM-50A-F tracks.
+> **NOTE:** SL 3 is a HARD prerequisite for ALL SL 4 tracks (WFF A-F and specialist G-M). There are NO SL 5A-F tracks.
 
 ---
 
@@ -79,29 +74,27 @@ TM-10 (all personnel)
 
 | Course | Title | Tier | Days | Hours | Prereq | ATIS # |
 |---|---|---|---|---|---|---|
-| TM-10 | Maven User | Foundation | 1 | 8 | None | [TBD — assigned by ATIS upon registration] |
-| TM-20 | Builder | Builder | 5 | 40 | TM-10 | [TBD — assigned by ATIS upon registration] |
-| TM-30 | Advanced Builder | Advanced | 5 | 40 | TM-10, TM-20 | [TBD — assigned by ATIS upon registration] |
-| TM-40A | Intelligence Warfighting Function | WFF Functional | 3 | 24 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
-| TM-40B | Fires Warfighting Function | WFF Functional | 3 | 24 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
-| TM-40C | Movement and Maneuver Warfighting Function | WFF Functional | 3 | 24 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
-| TM-40D | Sustainment Warfighting Function | WFF Functional | 3 | 24 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
-| TM-40E | Protection Warfighting Function | WFF Functional | 3 | 24 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
-| TM-40F | Mission Command Warfighting Function | WFF Functional | 3 | 24 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
-| TM-40G | ORSA Specialist | Specialist | 5 | 40 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
-| TM-40H | AI Engineer | Specialist | 5 | 40 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
-| TM-40M | ML Engineer | Specialist | 5 | 40 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
-| TM-40J | Program Manager | Specialist | 4 | 32 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
-| TM-40K | Knowledge Manager | Specialist | 4 | 32 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
-| TM-40L | Software Engineer | Specialist | 5 | 40 | TM-10, TM-20, TM-30 | [TBD — assigned by ATIS upon registration] |
-| TM-50G | Advanced ORSA | Advanced Specialist | 5 | 40 | TM-10, TM-20, TM-30, TM-40G | [TBD — assigned by ATIS upon registration] |
-| TM-50H | Advanced AI Engineer | Advanced Specialist | 5 | 40 | TM-10, TM-20, TM-30, TM-40H | [TBD — assigned by ATIS upon registration] |
-| TM-50M | Advanced ML Engineer | Advanced Specialist | 5 | 40 | TM-10, TM-20, TM-30, TM-40M | [TBD — assigned by ATIS upon registration] |
-| TM-50J | Advanced Program Manager | Advanced Specialist | 3 | 24 | TM-10, TM-20, TM-30, TM-40J | [TBD — assigned by ATIS upon registration] |
-| TM-50K | Advanced Knowledge Manager | Advanced Specialist | 3 | 24 | TM-10, TM-20, TM-30, TM-40K | [TBD — assigned by ATIS upon registration] |
-| TM-50L | Advanced Software Engineer | Advanced Specialist | 5 | 40 | TM-10, TM-20, TM-30, TM-40L | [TBD — assigned by ATIS upon registration] |
-| T3-F | MSC Force Multiplier | Train-the-Trainer | 0.5 | 4 | TM-10, TM-20 + CDR nomination | [TBD — assigned by ATIS upon registration] |
-| T3-I | Instructor Certification (Phase 1) | Train-the-Trainer | 5 | 40 | TM-10, TM-20, TM-30 + C2DAO selection | [TBD — assigned by ATIS upon registration] |
+| SL 1 | Maven User | Foundation | 1 | 8 | None | [TBD — assigned by ATIS upon registration] |
+| SL 2 | Builder | Builder | 5 | 40 | SL 1 | [TBD — assigned by ATIS upon registration] |
+| SL 3 | Advanced Builder | Advanced | 5 | 40 | SL 1, SL 2 | [TBD — assigned by ATIS upon registration] |
+| SL 4A | Intelligence Warfighting Function | WFF Functional | 3 | 24 | SL 1, SL 2, SL 3 | [TBD — assigned by ATIS upon registration] |
+| SL 4B | Fires Warfighting Function | WFF Functional | 3 | 24 | SL 1, SL 2, SL 3 | [TBD — assigned by ATIS upon registration] |
+| SL 4C | Movement and Maneuver Warfighting Function | WFF Functional | 3 | 24 | SL 1, SL 2, SL 3 | [TBD — assigned by ATIS upon registration] |
+| SL 4D | Sustainment Warfighting Function | WFF Functional | 3 | 24 | SL 1, SL 2, SL 3 | [TBD — assigned by ATIS upon registration] |
+| SL 4E | Protection Warfighting Function | WFF Functional | 3 | 24 | SL 1, SL 2, SL 3 | [TBD — assigned by ATIS upon registration] |
+| SL 4F | Mission Command Warfighting Function | WFF Functional | 3 | 24 | SL 1, SL 2, SL 3 | [TBD — assigned by ATIS upon registration] |
+| SL 4G | ORSA Specialist | Specialist | 5 | 40 | SL 1, SL 2, SL 3 | [TBD — assigned by ATIS upon registration] |
+| SL 4H | AI Engineer | Specialist | 5 | 40 | SL 1, SL 2, SL 3 | [TBD — assigned by ATIS upon registration] |
+| SL 4M | ML Engineer | Specialist | 5 | 40 | SL 1, SL 2, SL 3 | [TBD — assigned by ATIS upon registration] |
+| SL 4J | Program Manager | Specialist | 4 | 32 | SL 1, SL 2, SL 3 | [TBD — assigned by ATIS upon registration] |
+| SL 4K | Knowledge Manager | Specialist | 4 | 32 | SL 1, SL 2, SL 3 | [TBD — assigned by ATIS upon registration] |
+| SL 4L | Software Engineer | Specialist | 5 | 40 | SL 1, SL 2, SL 3 | [TBD — assigned by ATIS upon registration] |
+| SL 5G | Advanced ORSA | Advanced Specialist | 5 | 40 | SL 1, SL 2, SL 3, SL 4G | [TBD — assigned by ATIS upon registration] |
+| SL 5H | Advanced AI Engineer | Advanced Specialist | 5 | 40 | SL 1, SL 2, SL 3, SL 4H | [TBD — assigned by ATIS upon registration] |
+| SL 5M | Advanced ML Engineer | Advanced Specialist | 5 | 40 | SL 1, SL 2, SL 3, SL 4M | [TBD — assigned by ATIS upon registration] |
+| SL 5J | Advanced Program Manager | Advanced Specialist | 3 | 24 | SL 1, SL 2, SL 3, SL 4J | [TBD — assigned by ATIS upon registration] |
+| SL 5K | Advanced Knowledge Manager | Advanced Specialist | 3 | 24 | SL 1, SL 2, SL 3, SL 4K | [TBD — assigned by ATIS upon registration] |
+| SL 5L | Advanced Software Engineer | Advanced Specialist | 5 | 40 | SL 1, SL 2, SL 3, SL 4L | [TBD — assigned by ATIS upon registration] |
 
 ---
 
@@ -111,12 +104,12 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-### TM-10: Maven User
+### SL 1: Maven User
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-10 |
+| **Internal Designator** | SL 1 |
 | **Course Title** | Maven User |
 | **Tier** | Foundation (Tier 1) |
 | **Duration** | 1 days (8 hours) |
@@ -128,7 +121,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 | **Min Class Size** | 4 |
 | **Scheduling Cadence** | Monthly or as-needed |
 | **Instructor Ratio** | 10:1 |
-| **Instructor Qualification** | TM-20 certified; 90 days active MSS use |
+| **Instructor Qualification** | SL 2 certified; 90 days active MSS use |
 | **Access Level Required** | Viewer (standard) |
 | **Provisioning Lead Time** | 5 duty days |
 | **Evaluation** | Practical exercise (6 tasks, GO/NO-GO) |
@@ -173,33 +166,33 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### T&EO Task Crosswalk
 
-- TM10-01: Log In and Navigate to Designated Application
-- TM10-02: Filter Table to Identify Missing Submissions
-- TM10-03: Execute an Authorized Action
-- TM10-04: Export Filtered Table to CSV
-- TM10-05: Build a Basic Contour Chart
-- TM10-06: Explore Object Types in Quiver
+- SL1-01: Log In and Navigate to Designated Application
+- SL1-02: Filter Table to Identify Missing Submissions
+- SL1-03: Execute an Authorized Action
+- SL1-04: Export Filtered Table to CSV
+- SL1-05: Build a Basic Contour Chart
+- SL1-06: Explore Object Types in Quiver
 
 ---
 
-### TM-20: Builder
+### SL 2: Builder
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-20 |
+| **Internal Designator** | SL 2 |
 | **Course Title** | Builder |
 | **Tier** | Builder (Tier 2) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-10 Go on file |
-| **Prerequisite Codes** | TM-10 |
+| **Prerequisites** | SL 1 Go on file |
+| **Prerequisite Codes** | SL 1 |
 | **Audience** | All staff assigned to build or maintain MSS data products |
 | **Target MOS/Branch** | All MOS with data product responsibilities |
 | **Max Class Size** | 12 |
 | **Min Class Size** | 4 |
 | **Scheduling Cadence** | Quarterly |
 | **Instructor Ratio** | 8:1 |
-| **Instructor Qualification** | TM-30 certified; 6+ months Foundry build experience; able to troubleshoot all TM-20 labs |
+| **Instructor Qualification** | SL 3 certified; 6+ months Foundry build experience; able to troubleshoot all SL 2 labs |
 | **Access Level Required** | Builder |
 | **Provisioning Lead Time** | 5 duty days |
 | **Evaluation** | Practical exercise (11 tasks, GO/NO-GO) |
@@ -261,38 +254,38 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### T&EO Task Crosswalk
 
-- TM20-01: Create a Foundry Project with Correct Naming and Structure
-- TM20-02: Ingest a File and Verify Data Quality
-- TM20-03: Build a Clean/Transform Pipeline
-- TM20-04: Build a Join Pipeline with Derived Columns
-- TM20-05: Create an Object Type with Properties and PK
-- TM20-06: Create a Link Type Between Object Types
-- TM20-07: Configure a Pipeline Ontology Write Step
-- TM20-08: Configure an Action with Parameter and Access Control
-- TM20-09: Build a Workshop Application with Table, Filter, Metric, Chart
-- TM20-10: Connect an Action Button to a Workshop Widget
-- TM20-11: Manage Access Control (Viewer/Editor) and Verify Role Behavior
+- SL2-01: Create a Foundry Project with Correct Naming and Structure
+- SL2-02: Ingest a File and Verify Data Quality
+- SL2-03: Build a Clean/Transform Pipeline
+- SL2-04: Build a Join Pipeline with Derived Columns
+- SL2-05: Create an Object Type with Properties and PK
+- SL2-06: Create a Link Type Between Object Types
+- SL2-07: Configure a Pipeline Ontology Write Step
+- SL2-08: Configure an Action with Parameter and Access Control
+- SL2-09: Build a Workshop Application with Table, Filter, Metric, Chart
+- SL2-10: Connect an Action Button to a Workshop Widget
+- SL2-11: Manage Access Control (Viewer/Editor) and Verify Role Behavior
 
 ---
 
-### TM-30: Advanced Builder
+### SL 3: Advanced Builder
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-30 |
+| **Internal Designator** | SL 3 |
 | **Course Title** | Advanced Builder |
 | **Tier** | Advanced (Tier 3) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-10 and TM-20 Go on file |
-| **Prerequisite Codes** | TM-10, TM-20 |
+| **Prerequisites** | SL 1 and SL 2 Go on file |
+| **Prerequisite Codes** | SL 1, SL 2 |
 | **Audience** | Data-adjacent specialists, unit data leads |
 | **Target MOS/Branch** | 17-series, 25-series, S6/G6, G2, unit data leads |
 | **Max Class Size** | 8 |
 | **Min Class Size** | 3 |
 | **Scheduling Cadence** | Quarterly |
 | **Instructor Ratio** | 6:1 |
-| **Instructor Qualification** | TM-40 (any track) or C2DAO SME designation; able to conduct design critiques |
+| **Instructor Qualification** | SL 4 (any track) or C2DAO SME designation; able to conduct design critiques |
 | **Access Level Required** | Editor + AIP Logic configuration |
 | **Provisioning Lead Time** | 7 duty days |
 | **Evaluation** | Practical exercise (6 tasks, including reviewed design document; GO/NO-GO) |
@@ -351,33 +344,33 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### T&EO Task Crosswalk
 
-- TM30-01: Build a Multi-Page Workshop with Variable Passing
-- TM30-02: Build an Advanced Pipeline (Multi-Source Join, Aggregation)
-- TM30-03: Design and Document an Ontology Schema
-- TM30-04: Build an Ontology from Approved Design
-- TM30-05: Configure AIP Logic with Human Review Queue
-- TM30-06: Execute Full Promotion Workflow
+- SL3-01: Build a Multi-Page Workshop with Variable Passing
+- SL3-02: Build an Advanced Pipeline (Multi-Source Join, Aggregation)
+- SL3-03: Design and Document an Ontology Schema
+- SL3-04: Build an Ontology from Approved Design
+- SL3-05: Configure AIP Logic with Human Review Queue
+- SL3-06: Execute Full Promotion Workflow
 
 ---
 
-### TM-40A: Intelligence Warfighting Function
+### SL 4A: Intelligence Warfighting Function
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-40A |
+| **Internal Designator** | SL 4A |
 | **Course Title** | Intelligence Warfighting Function |
 | **Tier** | WFF Functional (Tier 4) |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-10, TM-20, and TM-30 Go on file (all required) |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30 |
+| **Prerequisites** | SL 1, SL 2, and SL 3 Go on file (all required) |
+| **Prerequisite Codes** | SL 1, SL 2, SL 3 |
 | **Audience** | G2/S2 staff, targeting officers, all-source analysts |
 | **Target MOS/Branch** | 35-series, FA30 |
 | **Max Class Size** | 12 |
 | **Min Class Size** | 4 |
 | **Scheduling Cadence** | Quarterly or as-needed (high demand) |
 | **Instructor Ratio** | 8:1 |
-| **Instructor Qualification** | TM-40A certified; G2/S2 Intel functional background; TM-30 proficiency |
+| **Instructor Qualification** | SL 4A certified; G2/S2 Intel functional background; SL 3 proficiency |
 | **Access Level Required** | Builder |
 | **Provisioning Lead Time** | 5 duty days |
 | **Evaluation** | Practical exercise (GO/NO-GO) |
@@ -426,33 +419,33 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### T&EO Task Crosswalk
 
-- TM40A-01: Configure Intelligence COP with Source Attribution
-- TM40A-02: Configure PIR Alerts with Correct Triggers
-- TM40A-03: Build Collection Status Dashboard
-- TM40A-04: Produce All-Source Intelligence Summary
-- TM40A-05: Build Targeting Support Product for TWG
-- TM40A-06: Apply OPSEC Procedures to Intelligence Products
+- SL4A-01: Configure Intelligence COP with Source Attribution
+- SL4A-02: Configure PIR Alerts with Correct Triggers
+- SL4A-03: Build Collection Status Dashboard
+- SL4A-04: Produce All-Source Intelligence Summary
+- SL4A-05: Build Targeting Support Product for TWG
+- SL4A-06: Apply OPSEC Procedures to Intelligence Products
 
 ---
 
-### TM-40B: Fires Warfighting Function
+### SL 4B: Fires Warfighting Function
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-40B |
+| **Internal Designator** | SL 4B |
 | **Course Title** | Fires Warfighting Function |
 | **Tier** | WFF Functional (Tier 4) |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-10, TM-20, and TM-30 Go on file (all required) |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30 |
+| **Prerequisites** | SL 1, SL 2, and SL 3 Go on file (all required) |
+| **Prerequisite Codes** | SL 1, SL 2, SL 3 |
 | **Audience** | Fires/FSCOORD staff, fire support officers, targeting personnel |
 | **Target MOS/Branch** | 13-series, FA30 |
 | **Max Class Size** | 12 |
 | **Min Class Size** | 4 |
 | **Scheduling Cadence** | Quarterly or as-needed |
 | **Instructor Ratio** | 8:1 |
-| **Instructor Qualification** | TM-40B certified; Fires/FSCOORD functional background; TM-30 proficiency |
+| **Instructor Qualification** | SL 4B certified; Fires/FSCOORD functional background; SL 3 proficiency |
 | **Access Level Required** | Builder |
 | **Provisioning Lead Time** | 5 duty days |
 | **Evaluation** | Practical exercise (GO/NO-GO) |
@@ -485,7 +478,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### Blocks of Instruction
 
-> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (TM-40A–F) or TM-50 Advanced Lesson Plan Outlines.*
+> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (SL 4A–F) or SL 5 Advanced Lesson Plan Outlines.*
 
 
 #### T&EO Task Crosswalk
@@ -495,24 +488,24 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-### TM-40C: Movement and Maneuver Warfighting Function
+### SL 4C: Movement and Maneuver Warfighting Function
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-40C |
+| **Internal Designator** | SL 4C |
 | **Course Title** | Movement and Maneuver Warfighting Function |
 | **Tier** | WFF Functional (Tier 4) |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-10, TM-20, and TM-30 Go on file (all required) |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30 |
+| **Prerequisites** | SL 1, SL 2, and SL 3 Go on file (all required) |
+| **Prerequisite Codes** | SL 1, SL 2, SL 3 |
 | **Audience** | G3/S3 movement and maneuver staff |
 | **Target MOS/Branch** | Operations staff, maneuver planners |
 | **Max Class Size** | 12 |
 | **Min Class Size** | 4 |
 | **Scheduling Cadence** | Quarterly or as-needed |
 | **Instructor Ratio** | 8:1 |
-| **Instructor Qualification** | TM-40C certified; G3/S3 movement and maneuver background; TM-30 proficiency |
+| **Instructor Qualification** | SL 4C certified; G3/S3 movement and maneuver background; SL 3 proficiency |
 | **Access Level Required** | Builder |
 | **Provisioning Lead Time** | 5 duty days |
 | **Evaluation** | Practical exercise (GO/NO-GO) |
@@ -545,7 +538,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### Blocks of Instruction
 
-> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (TM-40A–F) or TM-50 Advanced Lesson Plan Outlines.*
+> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (SL 4A–F) or SL 5 Advanced Lesson Plan Outlines.*
 
 
 #### T&EO Task Crosswalk
@@ -555,24 +548,24 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-### TM-40D: Sustainment Warfighting Function
+### SL 4D: Sustainment Warfighting Function
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-40D |
+| **Internal Designator** | SL 4D |
 | **Course Title** | Sustainment Warfighting Function |
 | **Tier** | WFF Functional (Tier 4) |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-10, TM-20, and TM-30 Go on file (all required) |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30 |
+| **Prerequisites** | SL 1, SL 2, and SL 3 Go on file (all required) |
+| **Prerequisite Codes** | SL 1, SL 2, SL 3 |
 | **Audience** | G4/S4 sustainment staff |
 | **Target MOS/Branch** | 92-series, sustainment planners |
 | **Max Class Size** | 12 |
 | **Min Class Size** | 4 |
 | **Scheduling Cadence** | Quarterly or as-needed |
 | **Instructor Ratio** | 8:1 |
-| **Instructor Qualification** | TM-40D certified; G4/S4 sustainment background; TM-30 proficiency |
+| **Instructor Qualification** | SL 4D certified; G4/S4 sustainment background; SL 3 proficiency |
 | **Access Level Required** | Builder |
 | **Provisioning Lead Time** | 5 duty days |
 | **Evaluation** | Practical exercise (GO/NO-GO) |
@@ -605,7 +598,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### Blocks of Instruction
 
-> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (TM-40A–F) or TM-50 Advanced Lesson Plan Outlines.*
+> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (SL 4A–F) or SL 5 Advanced Lesson Plan Outlines.*
 
 
 #### T&EO Task Crosswalk
@@ -615,24 +608,24 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-### TM-40E: Protection Warfighting Function
+### SL 4E: Protection Warfighting Function
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-40E |
+| **Internal Designator** | SL 4E |
 | **Course Title** | Protection Warfighting Function |
 | **Tier** | WFF Functional (Tier 4) |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-10, TM-20, and TM-30 Go on file (all required) |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30 |
+| **Prerequisites** | SL 1, SL 2, and SL 3 Go on file (all required) |
+| **Prerequisite Codes** | SL 1, SL 2, SL 3 |
 | **Audience** | Protection staff |
 | **Target MOS/Branch** | Protection cell, AT/FP, physical security |
 | **Max Class Size** | 12 |
 | **Min Class Size** | 4 |
 | **Scheduling Cadence** | Quarterly or as-needed |
 | **Instructor Ratio** | 8:1 |
-| **Instructor Qualification** | TM-40E certified; Protection functional background; TM-30 proficiency |
+| **Instructor Qualification** | SL 4E certified; Protection functional background; SL 3 proficiency |
 | **Access Level Required** | Builder |
 | **Provisioning Lead Time** | 5 duty days |
 | **Evaluation** | Practical exercise (GO/NO-GO) |
@@ -665,7 +658,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### Blocks of Instruction
 
-> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (TM-40A–F) or TM-50 Advanced Lesson Plan Outlines.*
+> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (SL 4A–F) or SL 5 Advanced Lesson Plan Outlines.*
 
 
 #### T&EO Task Crosswalk
@@ -675,24 +668,24 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-### TM-40F: Mission Command Warfighting Function
+### SL 4F: Mission Command Warfighting Function
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-40F |
+| **Internal Designator** | SL 4F |
 | **Course Title** | Mission Command Warfighting Function |
 | **Tier** | WFF Functional (Tier 4) |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-10, TM-20, and TM-30 Go on file (all required) |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30 |
+| **Prerequisites** | SL 1, SL 2, and SL 3 Go on file (all required) |
+| **Prerequisite Codes** | SL 1, SL 2, SL 3 |
 | **Audience** | MC/G6/S6 staff |
 | **Target MOS/Branch** | 25-series, signal officers, mission command planners |
 | **Max Class Size** | 12 |
 | **Min Class Size** | 4 |
 | **Scheduling Cadence** | Quarterly or as-needed |
 | **Instructor Ratio** | 8:1 |
-| **Instructor Qualification** | TM-40F certified; Mission Command/G6 background; TM-30 proficiency |
+| **Instructor Qualification** | SL 4F certified; Mission Command/G6 background; SL 3 proficiency |
 | **Access Level Required** | Builder |
 | **Provisioning Lead Time** | 5 duty days |
 | **Evaluation** | Practical exercise (GO/NO-GO) |
@@ -725,7 +718,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### Blocks of Instruction
 
-> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (TM-40A–F) or TM-50 Advanced Lesson Plan Outlines.*
+> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (SL 4A–F) or SL 5 Advanced Lesson Plan Outlines.*
 
 
 #### T&EO Task Crosswalk
@@ -735,24 +728,24 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-### TM-40G: ORSA Specialist
+### SL 4G: ORSA Specialist
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-40G |
+| **Internal Designator** | SL 4G |
 | **Course Title** | ORSA Specialist |
 | **Tier** | Specialist (Tier 4) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-10, TM-20, TM-30 Go on file (all required); quantitative background (statistics, linear algebra); Python or R proficiency |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30 |
+| **Prerequisites** | SL 1, SL 2, SL 3 Go on file (all required); quantitative background (statistics, linear algebra); Python or R proficiency |
+| **Prerequisite Codes** | SL 1, SL 2, SL 3 |
 | **Audience** | ORSA analysts |
 | **Target MOS/Branch** | FA49, operations research analysts |
 | **Max Class Size** | 6 |
 | **Min Class Size** | 2 |
 | **Scheduling Cadence** | Semi-annual or on demand |
 | **Instructor Ratio** | 4:1 |
-| **Instructor Qualification** | FA49 or equivalent ORSA background; TM-40G certified or C2DAO SME designation |
+| **Instructor Qualification** | FA49 or equivalent ORSA background; SL 4G certified or C2DAO SME designation |
 | **Access Level Required** | Code Workspace (CPU or GPU) + standard Editor |
 | **Provisioning Lead Time** | 10 duty days |
 | **Evaluation** | Practical exercise (6 tasks); evaluated commander brief; GO/NO-GO |
@@ -810,33 +803,33 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### T&EO Task Crosswalk
 
-- TM40G-01: Configure Code Workspace and Verify Foundry Connectivity
-- TM40G-02: Build Regression Model for Readiness Forecasting
-- TM40G-03: Build Time Series Model with Confidence Bounds
-- TM40G-04: Run Monte Carlo Simulation for COA Comparison
-- TM40G-05: Build ORSA Forecast Dashboard
-- TM40G-06: Deliver Commander Brief with Documented Uncertainty
+- SL4G-01: Configure Code Workspace and Verify Foundry Connectivity
+- SL4G-02: Build Regression Model for Readiness Forecasting
+- SL4G-03: Build Time Series Model with Confidence Bounds
+- SL4G-04: Run Monte Carlo Simulation for COA Comparison
+- SL4G-05: Build ORSA Forecast Dashboard
+- SL4G-06: Deliver Commander Brief with Documented Uncertainty
 
 ---
 
-### TM-40H: AI Engineer
+### SL 4H: AI Engineer
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-40H |
+| **Internal Designator** | SL 4H |
 | **Course Title** | AI Engineer |
 | **Tier** | Specialist (Tier 4) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-10, TM-20, TM-30 Go on file (all required); Python proficiency; Data Literacy Technical Reference read |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30 |
+| **Prerequisites** | SL 1, SL 2, SL 3 Go on file (all required); Python proficiency; Data Literacy Technical Reference read |
+| **Prerequisite Codes** | SL 1, SL 2, SL 3 |
 | **Audience** | AI/ML specialists building AIP workflows |
 | **Target MOS/Branch** | AI engineers, data scientists with AIP focus |
 | **Max Class Size** | 6 |
 | **Min Class Size** | 2 |
 | **Scheduling Cadence** | Semi-annual or on demand |
 | **Instructor Ratio** | 4:1 |
-| **Instructor Qualification** | AIP Logic authoring experience; C2DAO AI SME designation; TM-40H certified |
+| **Instructor Qualification** | AIP Logic authoring experience; C2DAO AI SME designation; SL 4H certified |
 | **Access Level Required** | AIP Logic authoring + Agent Studio |
 | **Provisioning Lead Time** | 10 duty days |
 | **Evaluation** | Practical exercise (7 tasks); AIP Authorization Checklist review; GO/NO-GO |
@@ -870,7 +863,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### Blocks of Instruction
 
-> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (TM-40A–F) or TM-50 Advanced Lesson Plan Outlines.*
+> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (SL 4A–F) or SL 5 Advanced Lesson Plan Outlines.*
 
 
 #### T&EO Task Crosswalk
@@ -880,24 +873,24 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-### TM-40M: ML Engineer
+### SL 4M: ML Engineer
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-40M |
+| **Internal Designator** | SL 4M |
 | **Course Title** | ML Engineer |
 | **Tier** | Specialist (Tier 4) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-10, TM-20, TM-30 Go on file (all required); Python proficiency (pandas, scikit-learn, PyTorch or equivalent) |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30 |
+| **Prerequisites** | SL 1, SL 2, SL 3 Go on file (all required); Python proficiency (pandas, scikit-learn, PyTorch or equivalent) |
+| **Prerequisite Codes** | SL 1, SL 2, SL 3 |
 | **Audience** | ML engineers building/deploying models on Foundry |
 | **Target MOS/Branch** | MLEs, data scientists with model deployment focus |
 | **Max Class Size** | 6 |
 | **Min Class Size** | 2 |
 | **Scheduling Cadence** | Semi-annual or on demand |
 | **Instructor Ratio** | 4:1 |
-| **Instructor Qualification** | ML production experience; TM-40M certified; C2DAO MLE SME designation |
+| **Instructor Qualification** | ML production experience; SL 4M certified; C2DAO MLE SME designation |
 | **Access Level Required** | GPU-enabled Code Workspace |
 | **Provisioning Lead Time** | 10 duty days |
 | **Evaluation** | Practical exercise (7 tasks); model card review; GO/NO-GO |
@@ -929,7 +922,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### Blocks of Instruction
 
-> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (TM-40A–F) or TM-50 Advanced Lesson Plan Outlines.*
+> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (SL 4A–F) or SL 5 Advanced Lesson Plan Outlines.*
 
 
 #### T&EO Task Crosswalk
@@ -939,24 +932,24 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-### TM-40J: Program Manager
+### SL 4J: Program Manager
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-40J |
+| **Internal Designator** | SL 4J |
 | **Course Title** | Program Manager |
 | **Tier** | Specialist (Tier 4) |
 | **Duration** | 4 days (32 hours) |
-| **Prerequisites** | TM-10, TM-20, TM-30 Go on file (all required) |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30 |
+| **Prerequisites** | SL 1, SL 2, SL 3 Go on file (all required) |
+| **Prerequisite Codes** | SL 1, SL 2, SL 3 |
 | **Audience** | Program managers, G8/S8 resource managers |
 | **Target MOS/Branch** | FA51, program/resource managers |
 | **Max Class Size** | 8 |
 | **Min Class Size** | 3 |
 | **Scheduling Cadence** | Quarterly |
 | **Instructor Ratio** | 6:1 |
-| **Instructor Qualification** | Program management background; TM-30 certified; GFEBS/IMS proficiency |
+| **Instructor Qualification** | Program management background; SL 3 certified; GFEBS/IMS proficiency |
 | **Access Level Required** | Builder |
 | **Provisioning Lead Time** | 5 duty days |
 | **Evaluation** | Practical exercise (7 tasks); PM Dashboard Standards Checklist review; GO/NO-GO |
@@ -988,7 +981,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### Blocks of Instruction
 
-> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (TM-40A–F) or TM-50 Advanced Lesson Plan Outlines.*
+> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (SL 4A–F) or SL 5 Advanced Lesson Plan Outlines.*
 
 
 #### T&EO Task Crosswalk
@@ -998,24 +991,24 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-### TM-40K: Knowledge Manager
+### SL 4K: Knowledge Manager
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-40K |
+| **Internal Designator** | SL 4K |
 | **Course Title** | Knowledge Manager |
 | **Tier** | Specialist (Tier 4) |
 | **Duration** | 4 days (32 hours) |
-| **Prerequisites** | TM-10, TM-20, TM-30 Go on file (all required) |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30 |
+| **Prerequisites** | SL 1, SL 2, SL 3 Go on file (all required) |
+| **Prerequisite Codes** | SL 1, SL 2, SL 3 |
 | **Audience** | Knowledge managers, KMOs (37F) |
 | **Target MOS/Branch** | 37F, knowledge management officers |
 | **Max Class Size** | 8 |
 | **Min Class Size** | 3 |
 | **Scheduling Cadence** | Quarterly |
 | **Instructor Ratio** | 6:1 |
-| **Instructor Qualification** | Knowledge management background; TM-30 certified; AIP Logic configuration proficiency |
+| **Instructor Qualification** | Knowledge management background; SL 3 certified; AIP Logic configuration proficiency |
 | **Access Level Required** | Builder + AIP Logic configuration |
 | **Provisioning Lead Time** | 7 duty days |
 | **Evaluation** | Practical exercise (6 tasks); PCS package instructor review; GO/NO-GO |
@@ -1047,7 +1040,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### Blocks of Instruction
 
-> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (TM-40A–F) or TM-50 Advanced Lesson Plan Outlines.*
+> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (SL 4A–F) or SL 5 Advanced Lesson Plan Outlines.*
 
 
 #### T&EO Task Crosswalk
@@ -1057,24 +1050,24 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-### TM-40L: Software Engineer
+### SL 4L: Software Engineer
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-40L |
+| **Internal Designator** | SL 4L |
 | **Course Title** | Software Engineer |
 | **Tier** | Specialist (Tier 4) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-10, TM-20, TM-30 Go on file (all required); TypeScript or Python proficiency; REST API familiarity |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30 |
+| **Prerequisites** | SL 1, SL 2, SL 3 Go on file (all required); TypeScript or Python proficiency; REST API familiarity |
+| **Prerequisite Codes** | SL 1, SL 2, SL 3 |
 | **Audience** | Software engineers building Foundry integrations |
 | **Target MOS/Branch** | SWEs, developers, 17-series with coding background |
 | **Max Class Size** | 6 |
 | **Min Class Size** | 2 |
 | **Scheduling Cadence** | Semi-annual or on demand |
 | **Instructor Ratio** | 4:1 |
-| **Instructor Qualification** | Software engineering background; OSDK/Platform SDK proficiency; TM-40L certified |
+| **Instructor Qualification** | Software engineering background; OSDK/Platform SDK proficiency; SL 4L certified |
 | **Access Level Required** | OSDK developer access + developer token |
 | **Provisioning Lead Time** | 10 duty days |
 | **Evaluation** | Practical exercise (6 tasks); validator test suite (8 test cases); deployment checklist review; GO/NO-GO |
@@ -1106,7 +1099,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### Blocks of Instruction
 
-> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (TM-40A–F) or TM-50 Advanced Lesson Plan Outlines.*
+> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (SL 4A–F) or SL 5 Advanced Lesson Plan Outlines.*
 
 
 #### T&EO Task Crosswalk
@@ -1116,24 +1109,24 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-### TM-50G: Advanced ORSA
+### SL 5G: Advanced ORSA
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-50G |
+| **Internal Designator** | SL 5G |
 | **Course Title** | Advanced ORSA |
 | **Tier** | Advanced Specialist (Tier 5) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-40G Go on file (required); active ORSA role at theater level |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30, TM-40G |
+| **Prerequisites** | SL 4G Go on file (required); active ORSA role at theater level |
+| **Prerequisite Codes** | SL 1, SL 2, SL 3, SL 4G |
 | **Audience** | Senior ORSA analysts |
 | **Target MOS/Branch** | FA49, senior operations research analysts |
 | **Max Class Size** | 6 |
 | **Min Class Size** | 2 |
 | **Scheduling Cadence** | Annual or on demand |
 | **Instructor Ratio** | 4:1 |
-| **Instructor Qualification** | FA49 O-4+ or equivalent; TM-50G certified or C2DAO Advanced ORSA SME; active analytical practice at theater level |
+| **Instructor Qualification** | FA49 O-4+ or equivalent; SL 5G certified or C2DAO Advanced ORSA SME; active analytical practice at theater level |
 | **Access Level Required** | Code Workspace (CPU/GPU) + Editor |
 | **Provisioning Lead Time** | 10 duty days |
 | **Evaluation** | Practical exercise; peer-reviewed analytical product; GO/NO-GO |
@@ -1165,7 +1158,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### Blocks of Instruction
 
-> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (TM-40A–F) or TM-50 Advanced Lesson Plan Outlines.*
+> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (SL 4A–F) or SL 5 Advanced Lesson Plan Outlines.*
 
 
 #### T&EO Task Crosswalk
@@ -1175,24 +1168,24 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-### TM-50H: Advanced AI Engineer
+### SL 5H: Advanced AI Engineer
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-50H |
+| **Internal Designator** | SL 5H |
 | **Course Title** | Advanced AI Engineer |
 | **Tier** | Advanced Specialist (Tier 5) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-40H Go on file (required) |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30, TM-40H |
+| **Prerequisites** | SL 4H Go on file (required) |
+| **Prerequisite Codes** | SL 1, SL 2, SL 3, SL 4H |
 | **Audience** | Senior AI engineers |
 | **Target MOS/Branch** | AI engineers with production AIP experience |
 | **Max Class Size** | 6 |
 | **Min Class Size** | 2 |
 | **Scheduling Cadence** | Annual or on demand |
 | **Instructor Ratio** | 4:1 |
-| **Instructor Qualification** | TM-50H certified or C2DAO Advanced AI SME; production AIP/Agent Studio experience |
+| **Instructor Qualification** | SL 5H certified or C2DAO Advanced AI SME; production AIP/Agent Studio experience |
 | **Access Level Required** | AIP Logic authoring + Agent Studio + Code Workspace |
 | **Provisioning Lead Time** | 10 duty days |
 | **Evaluation** | Practical exercise; GO/NO-GO |
@@ -1224,7 +1217,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### Blocks of Instruction
 
-> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (TM-40A–F) or TM-50 Advanced Lesson Plan Outlines.*
+> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (SL 4A–F) or SL 5 Advanced Lesson Plan Outlines.*
 
 
 #### T&EO Task Crosswalk
@@ -1234,24 +1227,24 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-### TM-50M: Advanced ML Engineer
+### SL 5M: Advanced ML Engineer
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-50M |
+| **Internal Designator** | SL 5M |
 | **Course Title** | Advanced ML Engineer |
 | **Tier** | Advanced Specialist (Tier 5) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-40M Go on file (required) |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30, TM-40M |
+| **Prerequisites** | SL 4M Go on file (required) |
+| **Prerequisite Codes** | SL 1, SL 2, SL 3, SL 4M |
 | **Audience** | Senior ML engineers |
 | **Target MOS/Branch** | MLEs with production model deployment experience |
 | **Max Class Size** | 6 |
 | **Min Class Size** | 2 |
 | **Scheduling Cadence** | Annual or on demand |
 | **Instructor Ratio** | 4:1 |
-| **Instructor Qualification** | TM-50M certified or C2DAO Advanced MLE SME; production ML pipeline experience |
+| **Instructor Qualification** | SL 5M certified or C2DAO Advanced MLE SME; production ML pipeline experience |
 | **Access Level Required** | GPU-enabled Code Workspace + Editor |
 | **Provisioning Lead Time** | 10 duty days |
 | **Evaluation** | Practical exercise; model governance review; GO/NO-GO |
@@ -1283,7 +1276,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### Blocks of Instruction
 
-> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (TM-40A–F) or TM-50 Advanced Lesson Plan Outlines.*
+> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (SL 4A–F) or SL 5 Advanced Lesson Plan Outlines.*
 
 
 #### T&EO Task Crosswalk
@@ -1293,24 +1286,24 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-### TM-50J: Advanced Program Manager
+### SL 5J: Advanced Program Manager
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-50J |
+| **Internal Designator** | SL 5J |
 | **Course Title** | Advanced Program Manager |
 | **Tier** | Advanced Specialist (Tier 5) |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-40J Go on file (required) |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30, TM-40J |
+| **Prerequisites** | SL 4J Go on file (required) |
+| **Prerequisite Codes** | SL 1, SL 2, SL 3, SL 4J |
 | **Audience** | Senior program managers |
 | **Target MOS/Branch** | FA51, senior resource/program managers |
 | **Max Class Size** | 8 |
 | **Min Class Size** | 3 |
 | **Scheduling Cadence** | Annual or on demand |
 | **Instructor Ratio** | 6:1 |
-| **Instructor Qualification** | TM-50J certified or C2DAO Advanced PM SME; enterprise portfolio management experience |
+| **Instructor Qualification** | SL 5J certified or C2DAO Advanced PM SME; enterprise portfolio management experience |
 | **Access Level Required** | Builder + Editor |
 | **Provisioning Lead Time** | 7 duty days |
 | **Evaluation** | Practical exercise; GO/NO-GO |
@@ -1342,7 +1335,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### Blocks of Instruction
 
-> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (TM-40A–F) or TM-50 Advanced Lesson Plan Outlines.*
+> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (SL 4A–F) or SL 5 Advanced Lesson Plan Outlines.*
 
 
 #### T&EO Task Crosswalk
@@ -1352,24 +1345,24 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-### TM-50K: Advanced Knowledge Manager
+### SL 5K: Advanced Knowledge Manager
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-50K |
+| **Internal Designator** | SL 5K |
 | **Course Title** | Advanced Knowledge Manager |
 | **Tier** | Advanced Specialist (Tier 5) |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-40K Go on file (required) |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30, TM-40K |
+| **Prerequisites** | SL 4K Go on file (required) |
+| **Prerequisite Codes** | SL 1, SL 2, SL 3, SL 4K |
 | **Audience** | Senior knowledge managers |
 | **Target MOS/Branch** | 37F, senior KMOs |
 | **Max Class Size** | 8 |
 | **Min Class Size** | 3 |
 | **Scheduling Cadence** | Annual or on demand |
 | **Instructor Ratio** | 6:1 |
-| **Instructor Qualification** | TM-50K certified or C2DAO Advanced KM SME; enterprise KM architecture experience |
+| **Instructor Qualification** | SL 5K certified or C2DAO Advanced KM SME; enterprise KM architecture experience |
 | **Access Level Required** | Builder + AIP Logic configuration + Editor |
 | **Provisioning Lead Time** | 7 duty days |
 | **Evaluation** | Practical exercise; GO/NO-GO |
@@ -1401,7 +1394,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### Blocks of Instruction
 
-> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (TM-40A–F) or TM-50 Advanced Lesson Plan Outlines.*
+> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (SL 4A–F) or SL 5 Advanced Lesson Plan Outlines.*
 
 
 #### T&EO Task Crosswalk
@@ -1411,24 +1404,24 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-### TM-50L: Advanced Software Engineer
+### SL 5L: Advanced Software Engineer
 
 | Field | Value |
 |---|---|
 | **ATIS Course Number** | [TBD — assigned by ATIS upon registration] |
-| **Internal Designator** | TM-50L |
+| **Internal Designator** | SL 5L |
 | **Course Title** | Advanced Software Engineer |
 | **Tier** | Advanced Specialist (Tier 5) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-40L Go on file (required) |
-| **Prerequisite Codes** | TM-10, TM-20, TM-30, TM-40L |
+| **Prerequisites** | SL 4L Go on file (required) |
+| **Prerequisite Codes** | SL 1, SL 2, SL 3, SL 4L |
 | **Audience** | Senior software engineers |
 | **Target MOS/Branch** | SWEs, senior developers, 17-series with advanced coding |
 | **Max Class Size** | 6 |
 | **Min Class Size** | 2 |
 | **Scheduling Cadence** | Annual or on demand |
 | **Instructor Ratio** | 4:1 |
-| **Instructor Qualification** | TM-50L certified or C2DAO Advanced SWE SME; production Foundry integration experience |
+| **Instructor Qualification** | SL 5L certified or C2DAO Advanced SWE SME; production Foundry integration experience |
 | **Access Level Required** | OSDK developer + Platform SDK + Code Workspace |
 | **Provisioning Lead Time** | 10 duty days |
 | **Evaluation** | Practical exercise; CI/CD pipeline review; GO/NO-GO |
@@ -1460,7 +1453,7 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 #### Blocks of Instruction
 
-> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (TM-40A–F) or TM-50 Advanced Lesson Plan Outlines.*
+> *Detailed block-of-instruction tables are maintained in the applicable Lesson Plan Outlines and Syllabus. See WFF Lesson Plan Outlines (SL 4A–F) or SL 5 Advanced Lesson Plan Outlines.*
 
 
 #### T&EO Task Crosswalk
@@ -1479,6 +1472,6 @@ Each course record below contains all TR 350-70 required data elements for ATIS 
 
 ---
 
-*USAREUR-AF Operational Data Team*
+*USAREUR-AF Operational Data Team — *
 *ATIS Course Registration Packet | MSS-POI-001 | March 2026*
-*Generated: 2026-03-16 22:28 UTC by build_atis_packet.py*
+*Generated: 2026-03-26 12:51 UTC by build_atis_packet.py*

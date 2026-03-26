@@ -1,18 +1,18 @@
-# COURSE SYLLABUS — TM-40G: OPERATIONS RESEARCH/SYSTEMS ANALYSIS (ORSA)
+# COURSE SYLLABUS — SL 4G: OPERATIONS RESEARCH/SYSTEMS ANALYSIS (ORSA)
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Level** | TM-40G (ORSA Specialist Track) |
+| **Level** | SL 4G (ORSA Specialist Track) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-10, TM-20, TM-30 (all Go evaluations on file — **REQUIRED**, not recommended); Data Literacy Technical Reference (recommended); graduate-level quantitative background (statistics, linear algebra, optimization); working proficiency in Python or R |
+| **Prerequisites** | SL 1, SL 2, SL 3 (all Go evaluations on file — **REQUIRED**, not recommended); Data Literacy Technical Reference (recommended); graduate-level quantitative background (statistics, linear algebra, optimization); working proficiency in Python or R |
 | **Audience** | FA49 Operations Research officers, quantitative analysts, ORSA-assigned Civilians |
 | **Format** | Instructor-led lab + guided practice + commander brief practical |
 | **Location** | MSS Training Environment (Code Workspace provisioned) |
 
 ---
 
-**BLUF:** TM-40G teaches ORSA analysts to translate operational questions into models inside Foundry — connecting to operational data, building quantitative models, and delivering products commanders can use to allocate resources and compare COAs. Course does not teach statistics from scratch; it applies existing quantitative skills to MSS data and USAREUR-AF ORSA product standards.
+**BLUF:** SL 4G teaches ORSA analysts to translate operational questions into models inside Foundry — connecting to operational data, building quantitative models, and delivering products commanders can use to allocate resources and compare COAs. Course does not teach statistics from scratch; it applies existing quantitative skills to MSS data and USAREUR-AF ORSA product standards.
 
 ---
 
@@ -182,7 +182,7 @@ Complete **7–10+ duty days before Day 1:**
 
 ## Continuation
 
-Graduates who remain in active ORSA roles and require theater-level analytical capability may pursue **TM-50G (Advanced ORSA)**. TM-50G covers Bayesian inference, agent-based simulation, multi-objective optimization, network analysis, and GO/SES-standard analytical products. Prerequisites: TM-40G Go evaluation on file; 18+ months active ORSA experience or concurrent graduate enrollment.
+Graduates who remain in active ORSA roles and require theater-level analytical capability may pursue **SL 5G (Advanced ORSA)**. SL 5G covers Bayesian inference, agent-based simulation, multi-objective optimization, network analysis, and GO/SES-standard analytical products. Prerequisites: SL 4G Go evaluation on file; 18+ months active ORSA experience or concurrent graduate enrollment.
 
 ---
 
@@ -198,9 +198,9 @@ Graduates who remain in active ORSA roles and require theater-level analytical c
 
 ## Relationship to WFF Tracks
 
-WFF track analysts (TM-40A through TM-40F) are the operational consumers of ORSA products built in this course. ORSA practitioners should understand the analytical questions each WFF community brings to MSS: sustainment analysts (TM-40D) drive demand for logistics forecasts and resource allocation; intelligence analysts (TM-40A) consume risk and COA comparison products; movement and maneuver analysts (TM-40C) use optimization outputs for route and task organization analysis.
+WFF track analysts (SL 4A through SL 4F) are the operational consumers of ORSA products built in this course. ORSA practitioners should understand the analytical questions each WFF community brings to MSS: sustainment analysts (SL 4D) drive demand for logistics forecasts and resource allocation; intelligence analysts (SL 4A) consume risk and COA comparison products; movement and maneuver analysts (SL 4C) use optimization outputs for route and task organization analysis.
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*Syllabus TM-40G | Version 2.0 | March 2026*
+*Syllabus SL 4G | Version 2.0 | March 2026*

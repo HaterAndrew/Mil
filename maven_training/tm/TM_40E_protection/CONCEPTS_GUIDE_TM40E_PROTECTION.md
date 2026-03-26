@@ -1,6 +1,6 @@
-# CONCEPTS GUIDE — TM-40E — MAVEN SMART SYSTEM (MSS): PROTECTION WARFIGHTING FUNCTION · CONCEPTUAL COMPANION FOR SENIOR LEADERS AND STAFF
+# CONCEPTS GUIDE — SL 4E — MAVEN SMART SYSTEM (MSS): PROTECTION WARFIGHTING FUNCTION · CONCEPTUAL COMPANION FOR SENIOR LEADERS AND STAFF
 
-> **Prereqs:** TM-10 (Maven User), TM-20 (Builder), and TM-30 (Advanced Builder) — all required as prerequisites (Go evaluations on file) before beginning TM-40E. Read this Concepts Guide after completing TM-30 and before beginning TM-40E task instruction. Builder skills are not exercised in this track — protection WFF practitioners operate pre-built products.
+> **Prereqs:** SL 1 (Maven User), SL 2 (Builder), and SL 3 (Advanced Builder) — all required as prerequisites (Go evaluations on file) before beginning SL 4E. Read this Concepts Guide after completing SL 3 and before beginning SL 4E task instruction. Builder skills are not exercised in this track — protection WFF practitioners operate pre-built products.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -11,11 +11,11 @@ Protection is not a staff function — it is a command responsibility. Commander
 
 In USAREUR-AF, the Maven Smart System provides the data integration platform that can connect the protection WFF's multiple functional cells — CBRN, AT, PMO, AMD, engineer, legal — into a single, visible protection picture. Whether that picture is useful depends entirely on the discipline of the practitioners who maintain it.
 
-This guide explains the conceptual foundations that make that discipline worth pursuing. Read it with a focus on why the protection WFF needs integrated data — not what buttons to push in MSS. TM-40E covers the buttons. This guide covers the thinking behind them.
+This guide explains the conceptual foundations that make that discipline worth pursuing. Read it with a focus on why the protection WFF needs integrated data — not what buttons to push in MSS. SL 4E covers the buttons. This guide covers the thinking behind them.
 
 ## PURPOSE
 
-This guide explains the conceptual foundations of protection WFF data management in MSS. It does not teach procedures — TM-40E covers those. It explains the why: why protection data management matters, how doctrine aligns to data practice, and where protection leaders most commonly fail in the MSS environment. Read this guide before beginning TM-40E. Return to it when protection data problems arise.
+This guide explains the conceptual foundations of protection WFF data management in MSS. It does not teach procedures — SL 4E covers those. It explains the why: why protection data management matters, how doctrine aligns to data practice, and where protection leaders most commonly fail in the MSS environment. Read this guide before beginning SL 4E. Return to it when protection data problems arise.
 
 ---
 
@@ -398,8 +398,8 @@ Not all protection data has equal operational consequence if it degrades in qual
 The protection officer has two roles in MSS. The first is the operational role: running the PWG, coordinating protection tasks, advising the commander. The second is a role many protection officers undervalue — the data quality officer for the protection workspace.
 
 Data quality officer responsibilities include:
-- Establishing and enforcing naming conventions (Appendix A of TM-40E)
-- Conducting weekly data quality reviews (Appendix H of TM-40E)
+- Establishing and enforcing naming conventions (Appendix A of SL 4E)
+- Conducting weekly data quality reviews (Appendix H of SL 4E)
 - Resolving workspace access issues before they cause data silos
 - Identifying data entries that are technically present but operationally useless (generic hazard descriptions, unsigned risk assessments, incidents with no status updates)
 - Holding workspace contributors accountable for data currency at the PWG
@@ -470,36 +470,36 @@ The protection officer's most important MSS role is not data entry. It is data q
 
 ### WFF Peer Tracks
 
-All six WFF tracks are at the same tier. All six WFF tracks require TM-10, TM-20, and TM-30 as prerequisites.
+All six WFF tracks are at the same tier. All six WFF tracks require SL 1, SL 2, and SL 3 as prerequisites.
 
 | Track | Title | Prereq | Relationship to Protection WFF |
 |-------|-------|--------|-------------------------------|
-| TM-40A | Intelligence WFF | TM-10 + TM-20 + TM-30 | AT intelligence integration; threat data for AT assessments |
-| TM-40B | Fires WFF | TM-10 + TM-20 + TM-30 | AMD coordination — fires and protection share AMD data domain |
-| TM-40C | Movement and Maneuver WFF | TM-10 + TM-20 + TM-30 | Physical security integration with maneuver operations |
-| TM-40D | Sustainment WFF | TM-10 + TM-20 + TM-30 | CBRN resupply coordination; medical tracking for CBRN casualties |
-| TM-40E | Protection WFF | TM-10 + TM-20 + TM-30 | This track |
-| TM-40F | Mission Command WFF | TM-10 + TM-20 + TM-30 | COP integration; CCIR products consuming protection data |
+| SL 4A | Intelligence WFF | SL 1 + SL 2 + SL 3 | AT intelligence integration; threat data for AT assessments |
+| SL 4B | Fires WFF | SL 1 + SL 2 + SL 3 | AMD coordination — fires and protection share AMD data domain |
+| SL 4C | Movement and Maneuver WFF | SL 1 + SL 2 + SL 3 | Physical security integration with maneuver operations |
+| SL 4D | Sustainment WFF | SL 1 + SL 2 + SL 3 | CBRN resupply coordination; medical tracking for CBRN casualties |
+| SL 4E | Protection WFF | SL 1 + SL 2 + SL 3 | This track |
+| SL 4F | Mission Command WFF | SL 1 + SL 2 + SL 3 | COP integration; CCIR products consuming protection data |
 
-### Specialist Tracks (Prerequisite: TM-30)
+### Specialist Tracks (Prerequisite: SL 3)
 
-For personnel pursuing technical depth, specialist tracks (TM-40G–O, prereq TM-30) are available. Not required for protection WFF employment.
+For personnel pursuing technical depth, specialist tracks (SL 4G–O, prereq SL 3) are available. Not required for protection WFF employment.
 
 | Track | Title |
 |-------|-------|
-| TM-40G | ORSA (→ TM-50G) |
-| TM-40H | AI Engineer (→ TM-50H) |
-| TM-40M | ML Engineer (→ TM-50M) |
-| TM-40J | Program Manager (→ TM-50J) |
-| TM-40K | Knowledge Manager (→ TM-50K) |
-| TM-40L | Software Engineer (→ TM-50L) |
-| TM-40N | UI/UX Designer (→ TM-50N) |
-| TM-40O | Platform Engineer (→ TM-50O) |
+| SL 4G | ORSA (→ SL 5G) |
+| SL 4H | AI Engineer (→ SL 5H) |
+| SL 4M | ML Engineer (→ SL 5M) |
+| SL 4J | Program Manager (→ SL 5J) |
+| SL 4K | Knowledge Manager (→ SL 5K) |
+| SL 4L | Software Engineer (→ SL 5L) |
+| SL 4N | UI/UX Designer (→ SL 5N) |
+| SL 4O | Platform Engineer (→ SL 5O) |
 
 ---
 
 
-*CONCEPTS GUIDE — TM-40E: Maven Smart System, Protection Warfighting Function*
+*CONCEPTS GUIDE — SL 4E: Maven Smart System, Protection Warfighting Function*
 *Headquarters, United States Army Europe and Africa*
 *Wiesbaden, Germany — 2026*
 
@@ -510,7 +510,7 @@ For personnel pursuing technical depth, specialist tracks (TM-40G–O, prereq TM
 
 ## QUICK REFERENCE: SECTION-TO-CHAPTER MAPPING
 
-| Concepts Guide Section | TM-40E Chapter(s) |
+| Concepts Guide Section | SL 4E Chapter(s) |
 |---|---|
 | Section 1 — Protection WFF and Data | Chapter 1 |
 | Section 2 — Risk Management as a Data Discipline | Chapter 2 |
@@ -521,5 +521,5 @@ For personnel pursuing technical depth, specialist tracks (TM-40G–O, prereq TM
 | Section 7 — Protection Failure Modes in MSS | All chapters |
 | Section 8 — Protection Data Standards | Appendices G and H |
 
-> **NOTE — New Doctrine Content in TM-40E:** TM-40E now includes CVP (Criticality-Vulnerability-Probability) analysis from ADP 3-37 with a 5-step MSS procedure and data currency WARNING (section 4-2a), OPSEC 5-step process mapped to data security analogs (section 4-7), and the GMAD (Generate-Manage-Analyze-Disseminate) framework from FM 3-34 as a data lifecycle NOTE (Ch 8). These sections ground protection data management in their authoritative doctrinal sources.
+> **NOTE — New Doctrine Content in SL 4E:** SL 4E now includes CVP (Criticality-Vulnerability-Probability) analysis from ADP 3-37 with a 5-step MSS procedure and data currency WARNING (section 4-2a), OPSEC 5-step process mapped to data security analogs (section 4-7), and the GMAD (Generate-Manage-Analyze-Disseminate) framework from FM 3-34 as a data lifecycle NOTE (Ch 8). These sections ground protection data management in their authoritative doctrinal sources.
 | Section 9 — Protection Officer's Mental Model | Chapters 9–10 |

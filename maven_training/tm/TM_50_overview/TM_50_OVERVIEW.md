@@ -1,13 +1,13 @@
 # TM-50 — Advanced Specialist Track Overview
 
-**Prerequisite:** Corresponding TM-40 specialist track (G–O)
-**Track availability:** TM-50G, TM-50H, TM-50M, TM-50J, TM-50K, TM-50L, TM-50N, TM-50O only
+**Prerequisite:** Corresponding SL 4 specialist track (G–O)
+**Track availability:** SL 5G, SL 5H, SL 5M, SL 5J, SL 5K, SL 5L, SL 5N, SL 5O only
 
 ---
 
 ## Purpose
 
-TM-50 is the advanced tier of the Maven Skill Set (MSS) training program, available exclusively to graduates of the TM-40 specialist tracks (G–O). WFF track graduates (TM-40A through TM-40F) do not have a TM-50 continuation path. TM-50 develops senior technical proficiency and prepares graduates to serve as subject matter experts, platform leads, and instructors.
+SL 5 is the advanced tier of the Maven Skill Set (MSS) training program, available exclusively to graduates of the SL 4 specialist tracks (G–O). WFF track graduates (SL 4A through SL 4F) do not have a SL 5 continuation path. SL 5 develops senior technical proficiency and prepares graduates to serve as subject matter experts, platform leads, and instructors.
 
 ---
 
@@ -15,40 +15,40 @@ TM-50 is the advanced tier of the Maven Skill Set (MSS) training program, availa
 
 | Track | Specialization | Prerequisite |
 |-------|---------------|--------------|
-| TM-50G | Advanced ORSA | TM-40G |
-| TM-50H | Advanced AI Engineer | TM-40H |
-| TM-50M | Advanced ML Engineer | TM-40M |
-| TM-50J | Advanced Program Manager | TM-40J |
-| TM-50K | Advanced Knowledge Manager | TM-40K |
-| TM-50L | Advanced Software Engineer | TM-40L |
-| TM-50N | Advanced UI/UX Designer | TM-40N |
-| TM-50O | Advanced Platform Engineer | TM-40O |
+| SL 5G | Advanced ORSA | SL 4G |
+| SL 5H | Advanced AI Engineer | SL 4H |
+| SL 5M | Advanced ML Engineer | SL 4M |
+| SL 5J | Advanced Program Manager | SL 4J |
+| SL 5K | Advanced Knowledge Manager | SL 4K |
+| SL 5L | Advanced Software Engineer | SL 4L |
+| SL 5N | Advanced UI/UX Designer | SL 4N |
+| SL 5O | Advanced Platform Engineer | SL 4O |
 
 ---
 
-## What Changes at TM-50
+## What Changes at SL 5
 
-TM-50 extends TM-40 in three dimensions:
+SL 5 extends SL 4 in three dimensions:
 
-**Depth** — participants move from task execution to system design. Where TM-40 builds pipelines, TM-50 designs the architecture. Where TM-40 trains models, TM-50 evaluates and governs them.
+**Depth** — participants move from task execution to system design. Where SL 4 builds pipelines, SL 5 designs the architecture. Where SL 4 trains models, SL 5 evaluates and governs them.
 
-**Breadth** — cross-functional integration. TM-50 graduates must demonstrate how their specialty connects to adjacent tracks and to Army operational requirements at the enterprise level.
+**Breadth** — cross-functional integration. SL 5 graduates must demonstrate how their specialty connects to adjacent tracks and to Army operational requirements at the enterprise level.
 
-**Leadership** — each TM-50 track includes a faculty readiness component. Graduates are qualified to co-instruct TM-40 sessions and serve as technical mentors.
+**Leadership** — each SL 5 track includes a faculty readiness component. Graduates are qualified to co-instruct SL 4 sessions and serve as technical mentors.
 
 ---
 
 ## Common Standards
 
-All TM-50 tracks share the following completion criteria:
+All SL 5 tracks share the following completion criteria:
 
 - Design and deliver a capstone project at enterprise scope (multi-pipeline, multi-product, or multi-unit impact)
 - Demonstrate cross-track integration with at least one adjacent specialist domain
-- Pass the TM-50 post-assessment for the enrolled track
-- Complete the faculty readiness module and co-facilitate at least one TM-40 session
+- Pass the SL 5 post-assessment for the enrolled track
+- Complete the faculty readiness module and co-facilitate at least one SL 4 session
 
 ---
 
 ## Enrollment
 
-TM-50 enrollment requires G3 nomination and confirmed TM-40 completion in the corresponding track. Cohort sizes are limited. See ENROLLMENT_SOP for application procedures and FACULTY_DEVELOPMENT_PLAN for instructor qualification pathways.
+SL 5 enrollment requires G3 nomination and confirmed SL 4 completion in the corresponding track. Cohort sizes are limited. See ENROLLMENT_SOP for application procedures and FACULTY_DEVELOPMENT_PLAN for instructor qualification pathways.

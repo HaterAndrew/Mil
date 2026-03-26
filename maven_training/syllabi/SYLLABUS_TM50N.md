@@ -1,18 +1,18 @@
-# COURSE SYLLABUS — TM-50N: ADVANCED UI/UX DESIGNER
+# COURSE SYLLABUS — SL 5N: ADVANCED UI/UX DESIGNER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Level** | TM-50N — Advanced UI/UX Designer Specialist Track |
+| **Level** | SL 5N — Advanced UI/UX Designer Specialist Track |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-40N (Go evaluation on file — **REQUIRED**); demonstrated portfolio of 2+ MSS application designs |
+| **Prerequisites** | SL 4N (Go evaluation on file — **REQUIRED**); demonstrated portfolio of 2+ MSS application designs |
 | **Audience** | Experienced UI/UX designers leading design at portfolio scale on MSS |
 | **Format** | Instructor-led seminar + design studio + case study analysis |
 | **Location** | MSS Training Environment (Workshop access required; design tool licenses required) |
 
 ---
 
-**BLUF:** TM-50N extends TM-40N from individual application design to enterprise design leadership — building and governing design systems, designing for DDIL and cross-domain environments, establishing design operations, and leading coalition UI integration. TM-50N is for designers who define how all MSS applications look and behave, not just one.
+**BLUF:** SL 5N extends SL 4N from individual application design to enterprise design leadership — building and governing design systems, designing for DDIL and cross-domain environments, establishing design operations, and leading coalition UI integration. SL 5N is for designers who define how all MSS applications look and behave, not just one.
 
 ---
 
@@ -36,7 +36,7 @@ Complete **5+ duty days before Day 1:**
 
 - [ ] Read TM-50N, Chapter 2 (Design Systems at Scale) — focus on token architecture and component documentation standard
 - [ ] Read TM-50N, Chapter 3 (DDIL-Aware Design) — DDIL design tiers and freshness indicators
-- [ ] Review your TM-40N portfolio designs and identify inconsistencies that a design system would have prevented
+- [ ] Review your SL 4N portfolio designs and identify inconsistencies that a design system would have prevented
 
 ---
 

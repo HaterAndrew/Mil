@@ -191,7 +191,7 @@ def build_deck(deck_dir: Path, manifest: dict):
     also_supports = meta.get("maven_tm_also_supports", [])
     seq_order    = meta.get("sequence_order")
 
-    # Subtitle line: "TM-20  ·  Primer" + optional also-supports
+    # Subtitle line: "SL 2  ·  Primer" + optional also-supports
     parts = [p for p in [tm_level, track] if p]
     if also_supports:
         parts.append("also: " + ", ".join(also_supports))

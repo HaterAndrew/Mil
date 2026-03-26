@@ -9,7 +9,7 @@
 |---|---|
 | **MSS Access** | All candidates must have active MSS accounts with Builder-level access |
 | **Classroom** | Projector, instructor workstation, 1 workstation per candidate |
-| **Materials** | TM-10 lesson plans, TM-10 exercise packet, TM-10 pre/post tests (student version), T&EO scoring sheets |
+| **Materials** | SL 1 lesson plans, SL 1 exercise packet, SL 1 pre/post tests (student version), T&EO scoring sheets |
 | **Pre-staged Failures** | 5 environment failures configured for Day 2 practice + 3 additional for Day 3 exam |
 | **Role-Play Scripts** | Go/No-Go practicum scenarios (1 per candidate, mix of Go and No-Go outcomes) |
 
@@ -59,10 +59,10 @@ Prepare 1 scenario per candidate. Each scenario specifies:
 - [ ] Prepare Go/No-Go practicum scenarios (1 per candidate)
 - [ ] Train role-players on their scenarios
 - [ ] Print T&EO scoring sheets (multiple copies per candidate for practice + exam)
-- [ ] Print TM-10 lesson plans for teach-back
+- [ ] Print SL 1 lesson plans for teach-back
 - [ ] Print mock pre-test packets for Block 5 (Day 1)
 - [ ] Prepare sample Unit Training Status Report (completed example for Block 6)
-- [ ] Prepare the 15-topic sorting exercise for Block 2 (TM-20 scope)
+- [ ] Prepare the 15-topic sorting exercise for Block 2 (SL 2 scope)
 - [ ] Prepare 4 borderline scenarios for Block 8 (Go/No-Go decision exercise)
 - [ ] Prepare 6 escalation scenarios for Block 11
 - [ ] Secure exam answer keys in instructor binder

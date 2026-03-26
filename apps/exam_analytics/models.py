@@ -12,7 +12,7 @@ from pydantic import BaseModel, Field, field_validator, model_validator
 # Exam session
 # ---------------------------------------------------------------------------
 class ExamSessionCreate(BaseModel):
-    course_id: str = Field(..., pattern=r"^TM-\d{2}[A-HJ-O]?$")
+    course_id: str = Field(..., pattern=r"^(SL [1-5][A-HJ-O]?|EXEC|T3-[IF])$")
     form_type: Literal["PRE", "POST"]
     administration_date: date
     cohort_label: str = Field(..., min_length=1, max_length=100)

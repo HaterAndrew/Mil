@@ -14,13 +14,13 @@ Scans the `maven_training/` documentation corpus and validates all cross-referen
 ## Authoritative Prereq Chain
 
 ```
-TM-10 → TM-20 → TM-30 → ALL TM-40 (A–L)
-                       → FBC (parallel track off TM-20)
+SL 1 → SL 2 → SL 3 → ALL SL 4 (A–L)
+                    → FBC (parallel track off SL 2)
 
-TM-40G → TM-50G    TM-40H → TM-50H    TM-40M → TM-50M
-TM-40J → TM-50J    TM-40K → TM-50K    TM-40L → TM-50L
+SL 4G → SL 5G    SL 4H → SL 5H    SL 4M → SL 5M
+SL 4J → SL 5J    SL 4K → SL 5K    SL 4L → SL 5L
 
-NOTE: TM-50A through TM-50F do NOT exist.
+NOTE: SL 5A through SL 5F do NOT exist.
 ```
 
 ## Quick Start

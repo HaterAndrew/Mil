@@ -19,7 +19,7 @@ MilestoneStatus = Literal["ON_TRACK", "AT_RISK", "OVERDUE", "COMPLETE"]
 # ---------------------------------------------------------------------------
 class MilestoneCreate(BaseModel):
     dodid: str = Field(..., min_length=10, max_length=10, pattern=r"^\d{10}$")
-    course_id: str = Field(..., pattern=r"^(TM-\d{2}[A-HJ-O]?|FBC)$")
+    course_id: str = Field(..., pattern=r"^(SL [1-5][A-HJ-O]?|EXEC|FBC|T3-[IF])$")
     target_date: date
     notes: str | None = Field(None, max_length=500)
 
@@ -63,7 +63,7 @@ class TrainingRecordOut(BaseModel):
 # ---------------------------------------------------------------------------
 class GoalCreate(BaseModel):
     dodid: str = Field(..., min_length=10, max_length=10, pattern=r"^\d{10}$")
-    target_course: str = Field(..., pattern=r"^(TM-\d{2}[A-HJ-O]?|FBC)$")
+    target_course: str = Field(..., pattern=r"^(SL [1-5][A-HJ-O]?|EXEC|FBC|T3-[IF])$")
     target_date: date
 
 

@@ -1,18 +1,18 @@
-# COURSE SYLLABUS — TM-40N: UI/UX DESIGNER
+# COURSE SYLLABUS — SL 4N: UI/UX DESIGNER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Level** | TM-40N — UI/UX Designer Specialist Track |
+| **Level** | SL 4N — UI/UX Designer Specialist Track |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-10, TM-20, TM-30 (all Go evaluations on file — **REQUIRED**, not recommended); familiarity with visual design tools (Figma, Sketch, or equivalent) and user research methods |
+| **Prerequisites** | SL 1, SL 2, SL 3 (all Go evaluations on file — **REQUIRED**, not recommended); familiarity with visual design tools (Figma, Sketch, or equivalent) and user research methods |
 | **Audience** | UI/UX designers responsible for research, design, and usability validation of MSS applications |
 | **Format** | Instructor-led lecture + design studio + practical exercise |
 | **Location** | MSS Training Environment (Workshop access required; design tool licenses required) |
 
 ---
 
-**BLUF:** TM-40N teaches UI/UX designers to practice Soldier Centered Design on MSS — conducting user research in operational environments, building information architectures for data-dense military displays, designing accessible Workshop and Slate application interfaces, and validating designs through usability testing with representative users. TM-40N is for designers who translate user needs into implementable design specifications. If the requirement can be met with default Workshop layouts, TM-30 is sufficient.
+**BLUF:** SL 4N teaches UI/UX designers to practice Soldier Centered Design on MSS — conducting user research in operational environments, building information architectures for data-dense military displays, designing accessible Workshop and Slate application interfaces, and validating designs through usability testing with representative users. SL 4N is for designers who translate user needs into implementable design specifications. If the requirement can be met with default Workshop layouts, SL 3 is sufficient.
 
 ---
 
@@ -27,7 +27,7 @@
 | 5 | Apply MSS visual design standards including classification banners, status color conventions with redundant encoding, and WCAG 2.1 AA contrast ratios |
 | 6 | Design a complete interaction specification covering default, loading, empty, error, and success states for a data entry workflow |
 | 7 | Execute a usability test with 5+ representative users, documenting task completion rates, error patterns, and severity-rated findings |
-| 8 | Produce a design-to-development handoff package that a TM-40L SWE can implement without follow-up clarification |
+| 8 | Produce a design-to-development handoff package that a SL 4L SWE can implement without follow-up clarification |
 | 9 | Complete an accessibility checklist covering contrast, keyboard navigation, text alternatives, touch targets, and screen reader compatibility |
 
 ---
@@ -125,7 +125,7 @@ Complete **10+ duty days before Day 1:**
 | 1300–1500 | 21 | Exercise | EX_40N continued — usability validation and design refinement |
 | 1500–1515 | — | Break | |
 | 1515–1630 | 22 | Presentation | Design presentations: each trainee presents their design, research findings, and handoff package |
-| 1630–1700 | 23 | Evaluation | Post-test (EXAM_TM40N_POST); course evaluation; TM-50N pathway discussion |
+| 1630–1700 | 23 | Evaluation | Post-test (EXAM_TM40N_POST); course evaluation; SL 5N pathway discussion |
 
 ---
 
@@ -133,5 +133,5 @@ Complete **10+ duty days before Day 1:**
 
 - **Evaluation:** EXAM_TM40N_POST administered Day 5 (see schedule)
 - **Proficiency exercise:** EX_40N evaluated against Go/No-Go criteria
-- **Continuation:** TM-50N — Advanced UI/UX Designer (design systems, DDIL design, coalition UI, DesignOps)
-- **Cross-track recommendation:** Attend TM-40J (Program Manager) overview session to understand PM-Designer coordination; attend TM-40L (Software Engineer) overview session to understand implementation constraints
+- **Continuation:** SL 5N — Advanced UI/UX Designer (design systems, DDIL design, coalition UI, DesignOps)
+- **Cross-track recommendation:** Attend SL 4J (Program Manager) overview session to understand PM-Designer coordination; attend SL 4L (Software Engineer) overview session to understand implementation constraints

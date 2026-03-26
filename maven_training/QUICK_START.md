@@ -7,7 +7,7 @@ Wiesbaden, Germany | Version 1.0 | March 2026
 **APPLIES TO:** All USAREUR-AF military and Civilian personnel with MSS access.
 **DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, USAREUR-AF, C2DAO, Wiesbaden, Germany.
 
-> **BLUF:** Get operational in MSS in under 30 minutes. This guide does not replace TM-10 — read TM-10 when time permits.
+> **BLUF:** Get operational in MSS in under 30 minutes. This guide does not replace SL 1 — read SL 1 when time permits.
 
 ---
 
@@ -99,12 +99,12 @@ Wiesbaden, Germany | Version 1.0 | March 2026
 
 | Your Role | Next Step |
 |-----------|-----------|
-| All personnel — foundational data concepts | Read **Data Literacy Technical Reference** (recommended before TM-10) |
-| Consume data only | Read **TM-10** (full operator reference) |
-| Build dashboards or forms | Read **TM-20** after TM-10 |
-| 17/25-series, S6/G6, G2 | Read **TM-30** after TM-20 |
-| WFF functional staff (INT/FIRES/M2/SUST/PROT/MC) | See **TM-40A–F** after TM-30 |
-| ORSA, AI/ML engineer, PM, KM, or SWE | See **TM-40G–O** after TM-30 |
+| All personnel — foundational data concepts | Read **Data Literacy Technical Reference** (recommended before SL 1) |
+| Consume data only | Read **SL 1** (full operator reference) |
+| Build dashboards or forms | Read **SL 2** after SL 1 |
+| 17/25-series, S6/G6, G2 | Read **SL 3** after SL 2 |
+| WFF functional staff (INT/FIRES/M2/SUST/PROT/MC) | See **SL 4A–F** after SL 3 |
+| ORSA, AI/ML engineer, PM, KM, or SWE | See **SL 4G–O** after SL 3 |
 | O-5+ or CSM+ | Read **Data Literacy for Senior Leaders** |
 
 ---
@@ -116,10 +116,10 @@ Wiesbaden, Germany | Version 1.0 | March 2026
 | Can't log in | S6/G6 help desk |
 | Data looks wrong | Contact data steward listed on the product |
 | Need new access | Unit data steward → CDA portal request |
-| Full operator procedures | TM-10 |
+| Full operator procedures | SL 1 |
 | Foundry/data terminology | Glossary — Data & Foundry Terms |
 | Governance and naming rules | Naming and Governance Standards |
 
 ---
 
-*This quick start does not supersede TM-10. For authoritative operator procedures, reference TM-10, MAVEN SMART SYSTEM OPERATOR TECHNICAL MANUAL.*
+*This quick start does not supersede SL 1. For authoritative operator procedures, reference SL 1, MAVEN SMART SYSTEM OPERATOR TECHNICAL MANUAL.*

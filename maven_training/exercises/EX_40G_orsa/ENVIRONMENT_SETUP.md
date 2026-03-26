@@ -1,6 +1,6 @@
 # ENVIRONMENT SETUP — EX_40G ORSA
 
-**Track:** EX_40G — ORSA (TM-40G) | **Prerequisite:** TM-30 REQUIRED | **Continuation:** TM-50G — Advanced ORSA
+**Track:** EX_40G — ORSA (SL 4G) | **Prerequisite:** SL 3 REQUIRED | **Continuation:** SL 5G — Advanced ORSA
 **Companion exams:** EXAM_TM40G_PRE (administer before exercise), EXAM_TM40G_POST (administer after exercise)
 
 ## Environment Type

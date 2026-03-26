@@ -1,12 +1,12 @@
-# PRE-TEST — TM-50J: ADVANCED PROGRAM MANAGER
+# PRE-TEST — SL 5J: ADVANCED PROGRAM MANAGER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-50J: Advanced Program Manager |
+| **Course** | SL 5J: Advanced Program Manager |
 | **Form** | Pre-Test |
-| **Level** | TM-50J (Advanced Specialist) |
-| **Audience** | Senior program managers; prerequisite: TM-40J + full-lifecycle MSS project delivery |
+| **Level** | SL 5J (Advanced Specialist) |
+| **Audience** | Senior program managers; prerequisite: SL 4J + full-lifecycle MSS project delivery |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
@@ -104,7 +104,7 @@ D. Engineering metrics are not reliable enough to use for personnel decisions
 A. Evaluating each program across multiple dimensions: schedule, cost, technical performance, risk posture, and team health — and surfacing honest status to senior leaders
 B. Reviewing only the schedule performance of each sub-program
 C. Confirming each program has a passing score on its most recent data quality audit
-D. Ensuring each program has a TM-50J qualified PM assigned
+D. Ensuring each program has a SL 5J qualified PM assigned
 
 **13. A Palantir task order deliverable acceptance should include:**
 

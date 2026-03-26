@@ -1,18 +1,18 @@
-# COURSE SYLLABUS — TM-40M: MACHINE LEARNING ENGINEER
+# COURSE SYLLABUS — SL 4M: MACHINE LEARNING ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Level** | TM-40M (ML Engineer Specialist Track) |
+| **Level** | SL 4M (ML Engineer Specialist Track) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-10, TM-20, TM-30 (all Go evaluations on file — **REQUIRED**, not recommended); Data Literacy Technical Reference (recommended); working Python proficiency (pandas, scikit-learn, PyTorch or equivalent); statistics fundamentals |
+| **Prerequisites** | SL 1, SL 2, SL 3 (all Go evaluations on file — **REQUIRED**, not recommended); Data Literacy Technical Reference (recommended); working Python proficiency (pandas, scikit-learn, PyTorch or equivalent); statistics fundamentals |
 | **Audience** | ML engineers, data scientists building and deploying models on MSS |
 | **Format** | Instructor-led lab + guided practice + practical exercise |
 | **Location** | MSS Training Environment (GPU-enabled Code Workspace required) |
 
 ---
 
-**BLUF:** TM-40M teaches ML engineers to build a complete ML pipeline on MSS — from raw Foundry dataset through feature engineering, model training, evaluation, deployment, and production monitoring. Course focuses on operational implementation inside Foundry with the governance, monitoring, and documentation standards the Army requires. It does not teach ML theory; it assumes you can already train a model.
+**BLUF:** SL 4M teaches ML engineers to build a complete ML pipeline on MSS — from raw Foundry dataset through feature engineering, model training, evaluation, deployment, and production monitoring. Course focuses on operational implementation inside Foundry with the governance, monitoring, and documentation standards the Army requires. It does not teach ML theory; it assumes you can already train a model.
 
 ---
 
@@ -181,7 +181,7 @@ Complete **10+ duty days before Day 1:**
 
 ## Continuation
 
-Graduates managing production ML systems or building platform infrastructure used by other data scientists may pursue **TM-50M (Advanced ML Engineering)**. TM-50M covers enterprise drift detection, automated retraining pipelines, feature stores, ensemble architecture at scale, model governance documentation, and production model audits. Prerequisites: TM-40M Go evaluation on file; 12+ months active ML engineering experience in a production context.
+Graduates managing production ML systems or building platform infrastructure used by other data scientists may pursue **SL 5M (Advanced ML Engineering)**. SL 5M covers enterprise drift detection, automated retraining pipelines, feature stores, ensemble architecture at scale, model governance documentation, and production model audits. Prerequisites: SL 4M Go evaluation on file; 12+ months active ML engineering experience in a production context.
 
 ---
 
@@ -197,9 +197,9 @@ Graduates managing production ML systems or building platform infrastructure use
 
 ## Relationship to WFF Tracks
 
-WFF track analysts (TM-40A through TM-40F) are the operational consumers of predictive models built in this course. ML engineers should understand the prediction products each WFF community uses: sustainment analysts (TM-40D) consume equipment failure prediction and demand forecasting models; intelligence analysts (TM-40A) use anomaly detection outputs; protection analysts (TM-40E) rely on readiness prediction models for force protection resourcing.
+WFF track analysts (SL 4A through SL 4F) are the operational consumers of predictive models built in this course. ML engineers should understand the prediction products each WFF community uses: sustainment analysts (SL 4D) consume equipment failure prediction and demand forecasting models; intelligence analysts (SL 4A) use anomaly detection outputs; protection analysts (SL 4E) rely on readiness prediction models for force protection resourcing.
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*Syllabus TM-40M | Version 2.0 | March 2026*
+*Syllabus SL 4M | Version 2.0 | March 2026*

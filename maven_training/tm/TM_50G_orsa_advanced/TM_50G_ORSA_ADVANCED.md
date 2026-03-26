@@ -1,26 +1,26 @@
 # TM-50G — ADVANCED OPERATIONS RESEARCH AND SYSTEMS ANALYSIS
 
-> **Forward:** TM-50G prepares senior ORSA practitioners to lead advanced analytical programs on MSS, produce campaign-level decision support, and build persistent OR capability for USAREUR-AF. This is not a survey of methods — it is a practitioner guide for analysts who will own the analytical function at theater level.
-> **Prereqs:** TM-40G, Operations Research/Systems Analysis (required). Completion of, or concurrent enrollment in, a graduate-level OR/MS program or equivalent operational ORSA experience (18+ months) strongly recommended. For AI/ML integration topics, see TM-40H (AI Engineer) and TM-40M (ML Engineer); CONCEPTS_GUIDE_TM50G_ORSA_ADVANCED (read before this manual).
+> **Forward:** SL 5G prepares senior ORSA practitioners to lead advanced analytical programs on MSS, produce campaign-level decision support, and build persistent OR capability for USAREUR-AF. This is not a survey of methods — it is a practitioner guide for analysts who will own the analytical function at theater level.
+> **Prereqs:** SL 4G, Operations Research/Systems Analysis (required). Completion of, or concurrent enrollment in, a graduate-level OR/MS program or equivalent operational ORSA experience (18+ months) strongly recommended. For AI/ML integration topics, see SL 4H (AI Engineer) and SL 4M (ML Engineer); CONCEPTS_GUIDE_TM50G_ORSA_ADVANCED (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
-> **WARNING: Advanced OR products briefed at the GO/SES level without uncertainty quantification, assumption documentation, and peer review may contribute to decisions with theater-level consequences. These standards are not optional at TM-50G.**
+> **WARNING: Advanced OR products briefed at the GO/SES level without uncertainty quantification, assumption documentation, and peer review may contribute to decisions with theater-level consequences. These standards are not optional at SL 5G.**
 > **CAUTION: Agent-based models and stochastic optimization outputs are sensitive to parameter choices and boundary conditions. Small changes in calibration can produce qualitatively different recommendations. Validate all models against historical analogues before operational use.**
-> **NOTE: This manual assumes mastery of all TM-40G content. Procedures here build directly on Code Workspace configuration, time series methods, linear programming, Monte Carlo simulation, and wargame data architectures covered in TM-40G. Review TM-40G before proceeding if proficiency is uncertain.**
+> **NOTE: This manual assumes mastery of all SL 4G content. Procedures here build directly on Code Workspace configuration, time series methods, linear programming, Monte Carlo simulation, and wargame data architectures covered in SL 4G. Review SL 4G before proceeding if proficiency is uncertain.**
 
 ---
 
 ## CHAPTER 1 — INTRODUCTION AND SCOPE
 
-**BLUF:** TM-50G prepares senior ORSA practitioners to lead advanced analytical programs on MSS, produce campaign-level decision support, and build persistent OR capability for USAREUR-AF. This is not a survey of methods — it is a practitioner guide for analysts who will own the analytical function at theater level.
+**BLUF:** SL 5G prepares senior ORSA practitioners to lead advanced analytical programs on MSS, produce campaign-level decision support, and build persistent OR capability for USAREUR-AF. This is not a survey of methods — it is a practitioner guide for analysts who will own the analytical function at theater level.
 
 ### 1-1. Advanced ORSA Manual
 
-This manual provides advanced-level ORSA procedures for senior analysts, OR team leads, and section chiefs conducting operations research on the Maven Smart System (MSS) within USAREUR-AF and supporting EUCOM requirements. It extends TM-40G into methods, products, and leadership responsibilities appropriate for senior ORSA practitioners operating at the operational and theater-strategic level.
+This manual provides advanced-level ORSA procedures for senior analysts, OR team leads, and section chiefs conducting operations research on the Maven Smart System (MSS) within USAREUR-AF and supporting EUCOM requirements. It extends SL 4G into methods, products, and leadership responsibilities appropriate for senior ORSA practitioners operating at the operational and theater-strategic level.
 
-**TM-50G covers** advanced optimization (nonlinear programming, multi-objective optimization, stochastic programming, and metaheuristic methods applicable to EUCOM/USAREUR-AF logistics, force allocation, and planning problems); agent-based modeling and simulation (ABMS) for complex adaptive operational systems — urban terrain, logistics networks, and adversary behavior; Bayesian analysis and causal inference (Bayesian networks, DAGs, causal models for operational analysis, and updating prior assessments with operational data); advanced wargame and campaign analysis (designing OR support frameworks for multi-echelon wargames, campaign assessment architectures, and theater-level campaign analysis); decision analysis under deep uncertainty (DAUX) including robustness analysis, scenario-based planning, exploratory modeling, and decision-making when probability distributions cannot be reliably specified; advanced forecasting (ensemble methods, hierarchical models, state space models for multi-echelon readiness and logistics forecasting); OR products for GO/SES audiences; and building persistent OR capability including data architecture for standing analytical environments, team standards, and program management for ORSA on MSS.
+**SL 5G covers** advanced optimization (nonlinear programming, multi-objective optimization, stochastic programming, and metaheuristic methods applicable to EUCOM/USAREUR-AF logistics, force allocation, and planning problems); agent-based modeling and simulation (ABMS) for complex adaptive operational systems — urban terrain, logistics networks, and adversary behavior; Bayesian analysis and causal inference (Bayesian networks, DAGs, causal models for operational analysis, and updating prior assessments with operational data); advanced wargame and campaign analysis (designing OR support frameworks for multi-echelon wargames, campaign assessment architectures, and theater-level campaign analysis); decision analysis under deep uncertainty (DAUX) including robustness analysis, scenario-based planning, exploratory modeling, and decision-making when probability distributions cannot be reliably specified; advanced forecasting (ensemble methods, hierarchical models, state space models for multi-echelon readiness and logistics forecasting); OR products for GO/SES audiences; and building persistent OR capability including data architecture for standing analytical environments, team standards, and program management for ORSA on MSS.
 
-**TM-50G does NOT cover** foundation ORSA methods (regression, ARIMA, LP, Monte Carlo, wargame data collection) — see TM-40G; machine learning model development and deployment — see TM-40M; AI engineering and production pipeline architecture — see TM-40H; or Ontology design and Workshop application development — see TM-30.
+**SL 5G does NOT cover** foundation ORSA methods (regression, ARIMA, LP, Monte Carlo, wargame data collection) — see SL 4G; machine learning model development and deployment — see SL 4M; AI engineering and production pipeline architecture — see SL 4H; or Ontology design and Workshop application development — see SL 3.
 
 ### 1-2. Target Audience
 
@@ -28,23 +28,23 @@ This manual provides advanced-level ORSA procedures for senior analysts, OR team
 
 **Secondary audience:** S/G2 and J2 section chiefs who supervise ORSA cells; C2DAO senior analysts responsible for analytical product governance; senior program analysts (PM/PEO data offices) requiring advanced analytical methodology for Army modernization programs in EUCOM.
 
-**Prerequisites (all required before beginning TM-50G):**
+**Prerequisites (all required before beginning SL 5G):**
 
 | Prerequisite | Description | Verification |
 |---|---|---|
-| TM-40G complete | All chapters and task procedures complete | Team lead sign-off |
+| SL 4G complete | All chapters and task procedures complete | Team lead sign-off |
 | 18+ months operational ORSA experience | Demonstrated delivery of analytical products at O-4 or above level | Portfolio review |
 | Graduate-level quantitative training | Masters-level statistics, OR/MS, or equivalent | Transcript or demonstrated equivalency |
 | Python or R proficiency | Can independently build, validate, and document analytical models | Code review |
 | MSS Code Workspace access | Provisioned and functional | MSS Administrator confirmation |
 
-> **NOTE:** Analysts who do not meet all prerequisites should complete TM-40G and accumulate at least one full analytical cycle (readiness assessment, exercise support, or campaign analysis) before proceeding. TM-50G procedures applied without adequate foundation produce models that are technically sophisticated but operationally unreliable.
+> **NOTE:** Analysts who do not meet all prerequisites should complete SL 4G and accumulate at least one full analytical cycle (readiness assessment, exercise support, or campaign analysis) before proceeding. SL 5G procedures applied without adequate foundation produce models that are technically sophisticated but operationally unreliable.
 
 ### 1-3. Competency Framework
 
-TM-50G develops the following competencies. Use Table 1-1 to self-assess before beginning and again after completing each chapter.
+SL 5G develops the following competencies. Use Table 1-1 to self-assess before beginning and again after completing each chapter.
 
-**Table 1-1. TM-50G Competency Framework**
+**Table 1-1. SL 5G Competency Framework**
 
 | Competency | Chapter | Beginner Indicator | Practitioner Indicator | Expert Indicator |
 |---|---|---|---|---|
@@ -67,30 +67,30 @@ Each chapter provides:
 - **Operational examples** — USAREUR-AF and EUCOM contexts: Grafenwöhr, Hohenfels, Baltic flank, Suwałki Gap, V Corps AOR
 - **Code** — Python (primary) or R (where standard in the domain) examples suitable for MSS Code Workspaces
 
-Work chapters in order for initial training. Return to individual chapters as reference during operational application. Cross-references to TM-40G procedures are noted inline.
+Work chapters in order for initial training. Return to individual chapters as reference during operational application. Cross-references to SL 4G procedures are noted inline.
 
 ### 1-5. Relationship to Other TMs in the 40/50 Series
 
 **Table 1-2. TM Series Relationship**
 
-| Manual | Focus | Audience | Key Intersection with TM-50G |
+| Manual | Focus | Audience | Key Intersection with SL 5G |
 |---|---|---|---|
-| TM-40G | Foundation ORSA | ORSA officers, analysts | All methods — direct prerequisite |
-| TM-40H | AI Engineering | Data/AI engineers | Productionizing ORSA models to MSS pipelines |
-| TM-40M | ML Engineering | ML practitioners | ML methods for classification/prediction in ORSA products |
-| TM-40J | Program Management | PMs, APMs | OR support to program analysis and cost modeling |
-| TM-50G (this) | Advanced ORSA | Senior ORSA, FA49 leads | — |
-| TM-50H | Advanced AI Engineering | Senior AI engineers | Evaluation methodology; productionizing complex ORSA models |
-| TM-50M | Advanced ML Engineering | Senior MLEs | ML pipelines that feed ORSA analytical products |
-| TM-50J | Advanced Program Manager | Senior PMs | Portfolio-level OR program governance |
-| TM-50K | Advanced Knowledge Manager | Senior KMs | Capturing and surfacing ORSA-derived insights |
-| TM-50L | Advanced Software Engineer | Senior SWEs | Platform infrastructure supporting ORSA pipelines |
-| TM-50N | Advanced UI/UX Designer | Senior UX designers | Data visualization design; dashboard UX for ORSA outputs |
-| TM-50O | Advanced Platform Engineer | Senior platform engineers | Infrastructure for analytical workloads; compute scaling |
+| SL 4G | Foundation ORSA | ORSA officers, analysts | All methods — direct prerequisite |
+| SL 4H | AI Engineering | Data/AI engineers | Productionizing ORSA models to MSS pipelines |
+| SL 4M | ML Engineering | ML practitioners | ML methods for classification/prediction in ORSA products |
+| SL 4J | Program Management | PMs, APMs | OR support to program analysis and cost modeling |
+| SL 5G (this) | Advanced ORSA | Senior ORSA, FA49 leads | — |
+| SL 5H | Advanced AI Engineering | Senior AI engineers | Evaluation methodology; productionizing complex ORSA models |
+| SL 5M | Advanced ML Engineering | Senior MLEs | ML pipelines that feed ORSA analytical products |
+| SL 5J | Advanced Program Manager | Senior PMs | Portfolio-level OR program governance |
+| SL 5K | Advanced Knowledge Manager | Senior KMs | Capturing and surfacing ORSA-derived insights |
+| SL 5L | Advanced Software Engineer | Senior SWEs | Platform infrastructure supporting ORSA pipelines |
+| SL 5N | Advanced UI/UX Designer | Senior UX designers | Data visualization design; dashboard UX for ORSA outputs |
+| SL 5O | Advanced Platform Engineer | Senior platform engineers | Infrastructure for analytical workloads; compute scaling |
 
-Where TM-50G methods intersect with AI/ML (e.g., using neural networks in ensemble forecasts, or ML classifiers in agent behavior models), cross-references to TM-40H and TM-40M are provided. ORSA analysts are not expected to independently deploy ML models to production — coordinate with TM-40H/M-trained engineers for production integration.
+Where SL 5G methods intersect with AI/ML (e.g., using neural networks in ensemble forecasts, or ML classifiers in agent behavior models), cross-references to SL 4H and SL 4M are provided. ORSA analysts are not expected to independently deploy ML models to production — coordinate with SL 4H/M-trained engineers for production integration.
 
-**WFF Operational Consumer Note.** Advanced ORSA products ultimately serve the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). WFF practitioners are the primary operational consumers of ORSA-derived readiness analyses, campaign assessments, logistics optimizations, and decision support products. When designing analytical products, consider the WFF audience: what decision does this analysis support, and which functional staff section will act on it?
+**WFF Operational Consumer Note.** Advanced ORSA products ultimately serve the six Warfighting Function (WFF) tracks: Intelligence (SL 4A), Fires (SL 4B), Movement and Maneuver (SL 4C), Sustainment (SL 4D), Protection (SL 4E), and Mission Command (SL 4F). WFF practitioners are the primary operational consumers of ORSA-derived readiness analyses, campaign assessments, logistics optimizations, and decision support products. When designing analytical products, consider the WFF audience: what decision does this analysis support, and which functional staff section will act on it?
 
 ---
 
@@ -471,7 +471,7 @@ For combinatorial problems where LP/NLP formulations are impractical (complex co
 
 Assigning brigade-level enablers (aviation, engineer, fires, EW) to operational tasks at Grafenwöhr Exercise Area for a rotational training event. The assignment problem has integer variables (enablers are discrete), multiple objectives (maximize training realism, minimize transit time, balance workload), and non-linear compatibility constraints (certain enabler combinations are incompatible). A genetic algorithm is appropriate.
 
-For GA implementation on MSS, use the DEAP library within Code Workspaces. Consult TM-40H for library installation procedures if DEAP is not in the current approved package list.
+For GA implementation on MSS, use the DEAP library within Code Workspaces. Consult SL 4H for library installation procedures if DEAP is not in the current approved package list.
 
 ### 2-6. Task: Multi-Objective Optimization for COA Comparison
 
@@ -588,7 +588,7 @@ An ABMS consists of:
 
 2. **Environment:** The space in which agents operate. May be geographic (grid-based, network-based), abstract (market, information space), or hybrid.
 
-3. **Rules:** Agent decision rules specifying how agents act given their state and environment. Rules may be simple (if-then logic), probabilistic, or learned (using ML — see TM-40M for integration).
+3. **Rules:** Agent decision rules specifying how agents act given their state and environment. Rules may be simple (if-then logic), probabilistic, or learned (using ML — see SL 4M for integration).
 
 4. **Emergence:** Collective patterns that arise from individual interactions and cannot be predicted from agent rules alone.
 
@@ -1352,7 +1352,7 @@ Campaign assessment centers on Lines of Effort (LOEs) and their associated Measu
 **PROCEDURE:**
 
 1. Design the campaign metrics schema (collaborate with G3 and G5 before building)
-2. Build ETL pipelines for each data source (see TM-30 and TM-40H for pipeline architecture)
+2. Build ETL pipelines for each data source (see SL 3 and SL 4H for pipeline architecture)
 3. Build Contour analysis workbooks for each LOE trend analysis
 4. Build Workshop dashboard with LOE status cards, trend charts, and threshold alerts
 5. Schedule Code Workspace transform for monthly statistical assessment generation
@@ -1415,7 +1415,7 @@ for name, n_blue, n_red, a_red, a_blue in scenarios:
 
 ### 5-9. Advanced Operations Assessment on MSS (FM 5-0 Ch 8)
 
-**BLUF:** TM-40G introduced MOE/MOP frameworks and CARVER scoring. TM-50G extends these into multi-variable sensitivity analysis, Bayesian updating, and longitudinal campaign assessment — the quantitative methods that transform static assessments into living decision support products.
+**BLUF:** SL 4G introduced MOE/MOP frameworks and CARVER scoring. SL 5G extends these into multi-variable sensitivity analysis, Bayesian updating, and longitudinal campaign assessment — the quantitative methods that transform static assessments into living decision support products.
 
 #### 5-9a. Multi-Variable Sensitivity Analysis for MOE/MOP
 
@@ -1441,7 +1441,7 @@ Apply Bayesian updating to operations assessment as follows:
 
 #### 5-9c. Longitudinal Trend Analysis for Campaign Assessment
 
-Campaign assessment requires tracking MOE/MOP trajectories over time to distinguish signal from noise. Use time-series methods (covered in TM-40G) applied to assessment data: decompose trends, identify inflection points, and forecast trajectory under current operational approach.
+Campaign assessment requires tracking MOE/MOP trajectories over time to distinguish signal from noise. Use time-series methods (covered in SL 4G) applied to assessment data: decompose trends, identify inflection points, and forecast trajectory under current operational approach.
 
 Produce longitudinal assessment products at the following cadences: weekly for active operations, bi-weekly for shaping operations, monthly for steady-state theater posture.
 
@@ -1769,7 +1769,7 @@ plot_tornado_diagram(
 
 ### 7-4. Peer Review Standards
 
-No analytical product developed by a single analyst should be briefed at GO/SES level without independent peer review. Peer review at TM-50G level covers:
+No analytical product developed by a single analyst should be briefed at GO/SES level without independent peer review. Peer review at SL 5G level covers:
 
 **Table 7-3. Peer Review Checklist (Summary — see Appendix A for full)**
 
@@ -1831,7 +1831,7 @@ A persistent analytical environment (PAE) differs from an ad hoc analytical setu
 ORSA on MSS consumes data from operational systems (readiness feeds, logistics systems, training management) and produces analytical datasets (model outputs, assessment records, scenario results). Both layers must be managed.
 
 **Input data management:**
-- All input datasets ingested through documented ETL pipelines (see TM-40H for pipeline architecture)
+- All input datasets ingested through documented ETL pipelines (see SL 4H for pipeline architecture)
 - Data quality checks run at ingestion — automated alerts for anomalies (missing data, out-of-range values, schema changes)
 - Data lineage tracked through Foundry — every analytical dataset can be traced to source systems
 - Access controls enforced at dataset level — ORSA datasets are not accessible to all MSS users
@@ -2007,11 +2007,11 @@ Before any analyst departs:
 
 ### 8-5. Integrating ML and AI with ORSA
 
-As MSS evolves with AI capabilities under Army CIO Memorandum (April 2024), ORSA analysts will increasingly work alongside TM-40H (AI Engineers) and TM-40M (ML Engineers). Key integration principles:
+As MSS evolves with AI capabilities under Army CIO Memorandum (April 2024), ORSA analysts will increasingly work alongside SL 4H (AI Engineers) and SL 4M (ML Engineers). Key integration principles:
 
 **ORSA owns the question and the interpretation.** ML engineers build and deploy models. ORSA analysts define what question the model should answer, what data is analytically valid, what validation is required, and how the output translates to commander decisions.
 
-**ML outputs are model inputs, not final products.** A TM-40M ML model that classifies equipment maintenance risk is an input to an ORSA logistics analysis — not a standalone product for the G4. ORSA adds the analytical layer: uncertainty quantification, sensitivity analysis, decision framing.
+**ML outputs are model inputs, not final products.** A SL 4M ML model that classifies equipment maintenance risk is an input to an ORSA logistics analysis — not a standalone product for the G4. ORSA adds the analytical layer: uncertainty quantification, sensitivity analysis, decision framing.
 
 **Human-in-the-loop gates are the ORSA analyst's responsibility.** If an ML model feeds a semi-automated decision process (scheduling, prioritization), the ORSA analyst must design and document the review gate, specify the conditions under which automated recommendations are overridden, and brief those gates to the commander who approves the system.
 
@@ -2185,7 +2185,7 @@ For USAREUR-AF operational contexts, Table B-3 translates statistical effect siz
 
 ---
 
-*TM-50G — ADVANCED OPERATIONS RESEARCH AND SYSTEMS ANALYSIS — MAVEN SMART SYSTEM*
+*SL 5G — ADVANCED OPERATIONS RESEARCH AND SYSTEMS ANALYSIS — MAVEN SMART SYSTEM*
 
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA*
 *Wiesbaden, Germany*
@@ -2194,7 +2194,7 @@ For USAREUR-AF operational contexts, Table B-3 translates statistical effect siz
 
 *Implements: Army CIO Memorandum, Data and Analytics Policy (April 2024); Unified Data Reference Architecture (UDRA) v1.1 (February 2025)*
 *See: learn-data.armydev.com for current platform documentation*
-*Prerequisite: TM-40G, Operations Research/Systems Analysis*
+*Prerequisite: SL 4G, Operations Research/Systems Analysis*
 
 **ORSA-specific governing references:**
 
@@ -2219,9 +2219,9 @@ For USAREUR-AF operational contexts, Table B-3 translates statistical effect siz
 
 **Supplementary Reading — Advanced ODT Use Cases:**
 
-- **First Army ODT Mobilization Simulation (2026)** — First Army's 13-person ODT, partnering with Georgia Tech Research Institute, built a simulation modeling thousands of RC units simultaneously for LSCO mobilization planning on the Army Data Platform. Integrates CCMD requirements, unit status, training schedules, weapons platforms, range capacity, and transportation logistics. Enables planners to assess changes in minutes instead of weeks. This represents the most advanced publicly documented ODT analytical product — demonstrating campaign-level ORSA at echelon. Directly relevant to TM-50G competencies in advanced optimization, simulation, and decision analysis under deep uncertainty.
-- **Army Reserve ODT at Mojave Falcon (June 2025)** — First Army Reserve ODT deployment supporting 79th TSC/311th ESC. Used Palantir, Tableau, and Power BI for logistics optimization. Key finding for ORSA practitioners: data quality in simulations poorly mimicked real-world conditions — ammunition lacked granularity compared to actual TAMIS data; food and fuel information was oversimplified. Validates TM-50G emphasis on model calibration and validation against operational data.
+- **First Army ODT Mobilization Simulation (2026)** — First Army's 13-person ODT, partnering with Georgia Tech Research Institute, built a simulation modeling thousands of RC units simultaneously for LSCO mobilization planning on the Army Data Platform. Integrates CCMD requirements, unit status, training schedules, weapons platforms, range capacity, and transportation logistics. Enables planners to assess changes in minutes instead of weeks. This represents the most advanced publicly documented ODT analytical product — demonstrating campaign-level ORSA at echelon. Directly relevant to SL 5G competencies in advanced optimization, simulation, and decision analysis under deep uncertainty.
+- **Army Reserve ODT at Mojave Falcon (June 2025)** — First Army Reserve ODT deployment supporting 79th TSC/311th ESC. Used Palantir, Tableau, and Power BI for logistics optimization. Key finding for ORSA practitioners: data quality in simulations poorly mimicked real-world conditions — ammunition lacked granularity compared to actual TAMIS data; food and fuel information was oversimplified. Validates SL 5G emphasis on model calibration and validation against operational data.
 
 ---
 
-*End of TM-50G*
+*End of SL 5G*

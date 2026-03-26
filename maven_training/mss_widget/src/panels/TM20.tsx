@@ -7,14 +7,14 @@ export default function TM20({ showPanel }: Props) {
   return (
     <>
       <div className="section-header">
-        <span className="section-badge">TM-20</span>
+        <span className="section-badge">SL 2</span>
         <span className="section-title">No-Code Builder Manual &mdash; All Staff</span>
-        <span className="section-subtitle">Prerequisite: TM-10 &bull; No coding required</span>
+        <span className="section-subtitle">Prerequisite: SL 1 &bull; No coding required</span>
       </div>
 
       <div className="callout bluf">
         <div className="callout-label">BLUF</div>
-        <div className="callout-body">TM-20 teaches you how to ingest data, build Workshop applications, create Object Types and basic Actions, and manage projects &mdash; all using the graphical user interface. No coding required. Prerequisite: TM-10 complete.</div>
+        <div className="callout-body">SL 2 teaches you how to ingest data, build Workshop applications, create Object Types and basic Actions, and manage projects &mdash; all using the graphical user interface. No coding required. Prerequisite: SL 1 complete.</div>
       </div>
 
       <h2>COMPETENCIES UPON COMPLETION</h2>
@@ -76,7 +76,7 @@ export default function TM20({ showPanel }: Props) {
       </div>
 
       <h2>THE FOUNDRY DATA STACK</h2>
-      <p>Data flows through layers. As a TM-20 builder, you work in the middle layers using visual tools. Never modify raw data — report data errors to your data steward instead.</p>
+      <p>Data flows through layers. As an SL 2 builder, you work in the middle layers using visual tools. Never modify raw data — report data errors to your data steward instead.</p>
       <div className="stack-diagram">
         <div className="stack-layer layer-1">Workshop App / AIP Agent (consume)</div>
         <div className="stack-arrow">&#x25B2;</div>
@@ -137,10 +137,10 @@ export default function TM20({ showPanel }: Props) {
       </div>
 
       <div className="training-section">
-        <h2><span className="training-icon">SCHED</span> UPCOMING TRAINING &mdash; TM-20</h2>
+        <h2><span className="training-icon">SCHED</span> UPCOMING TRAINING &mdash; SL 2</h2>
         <div className="callout note">
           <div className="callout-label">ENROLLMENT</div>
-          <div className="callout-body">TM-10 must be complete before attending TM-20. Contact the listed POC to reserve a seat. Bring completion certificate from TM-10 on day one.</div>
+          <div className="callout-body">SL 1 must be complete before attending SL 2. Contact the listed POC to reserve a seat. Bring completion certificate from SL 1 on day one.</div>
         </div>
         <div className="table-wrap">
           <table>
@@ -190,17 +190,17 @@ export default function TM20({ showPanel }: Props) {
             </tbody>
           </table>
         </div>
-        <p style={{fontSize:'12px',color:'var(--gray-400)'}}>Duration: 5 days (40 hours). Course runs 0800&ndash;1700 each day. Prerequisite: TM-10 complete. All dates subject to change &mdash; confirm with POC 5 days prior.</p>
+        <p style={{fontSize:'12px',color:'var(--gray-400)'}}>Duration: 5 days (40 hours). Course runs 0800&ndash;1700 each day. Prerequisite: SL 1 complete. All dates subject to change &mdash; confirm with POC 5 days prior.</p>
       </div>
 
       <div className="specialist-cta" style={{marginTop:'32px'}}>
         <div className="specialist-cta-text">
-          <div className="specialist-cta-label">Next Level &mdash; After TM-20</div>
-          <div className="specialist-cta-title">TM-30 &mdash; Advanced Builder Manual</div>
-          <div className="specialist-cta-sub">For data-adjacent specialists: complex application design, advanced pipelines, Ontology architecture, AIP Logic, and C2DAO governance. Required prereq for all TM-40 tracks.</div>
+          <div className="specialist-cta-label">Next Level &mdash; After SL 2</div>
+          <div className="specialist-cta-title">SL 3 &mdash; Advanced Builder Manual</div>
+          <div className="specialist-cta-sub">For data-adjacent specialists: complex application design, advanced pipelines, Ontology architecture, AIP Logic, and C2DAO governance. Required prereq for all SL 4 tracks.</div>
         </div>
-        <button className="specialist-cta-btn" onClick={() => showPanel('tm30')}>
-          Continue to TM-30 <span className="btn-arrow">&#8594;</span>
+        <button className="specialist-cta-btn" onClick={() => showPanel('sl3')}>
+          Continue to SL 3 <span className="btn-arrow">&#8594;</span>
         </button>
       </div>
 

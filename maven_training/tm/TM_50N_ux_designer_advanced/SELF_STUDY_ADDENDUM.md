@@ -1,4 +1,4 @@
-# Self-Study Addendum — TM-50N: Advanced UI/UX Designer
+# Self-Study Addendum — SL 5N: Advanced UI/UX Designer
 ## Palantir Developers Reference Library
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.
@@ -7,7 +7,7 @@
 
 ## How to Use This Addendum
 
-TM-50N builds directly on TM-40N. The full TM-40N addendum (located at `../self_study/SELF_STUDY_TM40N_UX_DESIGNER.md`) remains relevant — all videos in that addendum apply at TM-50N level. This addendum adds videos specifically relevant to TM-50N's advanced and enterprise-level content: design systems at scale, DDIL-aware design, cross-domain and coalition UI, design operations governance, and accessibility at enterprise scale.
+SL 5N builds directly on SL 4N. The full SL 4N addendum (located at `../self_study/SELF_STUDY_TM40N_UX_DESIGNER.md`) remains relevant — all videos in that addendum apply at SL 5N level. This addendum adds videos specifically relevant to SL 5N's advanced and enterprise-level content: design systems at scale, DDIL-aware design, cross-domain and coalition UI, design operations governance, and accessibility at enterprise scale.
 
 Videos are grouped by topic. Within each group, content is ordered from foundational to advanced.
 
@@ -19,7 +19,7 @@ Videos are grouped by topic. Within each group, content is ordered from foundati
 |---|---|---|
 | *Foundry Reference Project \| Apps* | The application layer of the Foundry Reference Project — reference for understanding how design system components map to production application surfaces across the MSS portfolio. | Ch 2 (Design Systems at Scale) |
 | *Foundry Reference Project \| Ontology* | Reference Ontology implementation — design systems must account for how Ontology property types map to component variants. Understanding the Ontology at scale informs design token and component governance. | Ch 2 (Component Library Management) |
-| *Product Launch: Rapid Software Development with OSDK 2.0* | OSDK 2.0 developer experience improvements — relevant for Advanced Designers coordinating with TM-50L on design system implementation architecture and shared component libraries. | Ch 2 (Design Token Architecture) |
+| *Product Launch: Rapid Software Development with OSDK 2.0* | OSDK 2.0 developer experience improvements — relevant for Advanced Designers coordinating with SL 5L on design system implementation architecture and shared component libraries. | Ch 2 (Design Token Architecture) |
 | *Product Launch: Developer Experience \| DevCon 5* | Developer experience improvements from DevCon 5 — context for Advanced Designers aligning design system tooling with the platform toolchain that SWEs use. | Ch 5 (DesignOps) |
 
 ---
@@ -65,9 +65,9 @@ Videos are grouped by topic. Within each group, content is ordered from foundati
 
 ---
 
-## Full TM-40N Addendum Reference
+## Full SL 4N Addendum Reference
 
-All video groups from the TM-40N Self-Study Addendum remain applicable at TM-50N:
+All video groups from the SL 4N Self-Study Addendum remain applicable at SL 5N:
 
 - **Workshop and Application Surfaces** — foundational for Chapter 2 (Design Systems at Scale)
 - **Ontology and Data Model Context** — supports Chapter 2 (Component Library Management) and Chapter 3 (DDIL-Aware Design)

@@ -83,7 +83,7 @@ class AAR(Base, AuditMixin):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     date = Column(Date, nullable=False)
-    tm_levels = Column(JSON, nullable=False)          # ["TM-10", "TM-20"]
+    tm_levels = Column(JSON, nullable=False)          # ["SL 1", "SL 2"]
     exercises = Column(JSON, nullable=True)            # ["EX_10"]
     location = Column(String(200), nullable=False)
     student_count = Column(Integer, nullable=False)
@@ -489,12 +489,17 @@ def parse_aar_file(content: str) -> dict:
     event_lines = sections.get("EVENT_DETAILS", [])
     date_str = extract_field(event_lines, "date")
 
-    # Try to parse TM levels
+    # Try to parse course levels (SL X format, or legacy TM-XX)
     tm_levels = []
     for line in event_lines:
-        found = re.findall(r"TM-\d{2}[A-HJ-O]?", line, re.IGNORECASE)
+        found = re.findall(r"SL\s+[1-5][A-HJ-O]?|EXEC|T3-[IF]", line)
         tm_levels.extend(found)
-    tm_levels = list(set(tm_levels)) or ["TM-10"]
+        # Also catch legacy TM-XX references and convert
+        legacy = re.findall(r"TM-(\d{2})([A-HJ-O])?", line, re.IGNORECASE)
+        for num, letter in legacy:
+            level = str(int(num) // 10)
+            tm_levels.append(f"SL {level}{letter}")
+    tm_levels = list(set(tm_levels)) or ["SL 1"]
 
     # Exercises
     exercises = []

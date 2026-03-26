@@ -1,20 +1,20 @@
-# COURSE SYLLABUS — TM-50H: ADVANCED AI ENGINEERING
+# COURSE SYLLABUS — SL 5H: ADVANCED AI ENGINEERING
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Level** | TM-50H — Advanced AI Engineer Specialist Track |
+| **Level** | SL 5H — Advanced AI Engineer Specialist Track |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-40H complete (Go evaluation on file); 12+ months active AI engineering experience on MSS or equivalent; demonstrated proficiency with Python, LLM APIs, and vector retrieval systems; TM-40M (ML Engineer) recommended |
+| **Prerequisites** | SL 4H complete (Go evaluation on file); 12+ months active AI engineering experience on MSS or equivalent; demonstrated proficiency with Python, LLM APIs, and vector retrieval systems; SL 4M (ML Engineer) recommended |
 | **Audience** | Senior AI engineers, AI architects, AI capability leads assigned to enterprise-level AI development on MSS |
 | **Format** | Advanced lab + architecture review + evaluated system design |
 | **Location** | MSS Training Environment (AIP Logic, Agent Studio, Python Transforms enabled; advanced model access required) |
 
-> **PREREQUISITE WARNING:** TM-50H is not required for the majority of AI engineer billets. It is intended for personnel designing AI system architectures, retrieval infrastructure, or agent orchestration frameworks at enterprise scale. Consult your supervisor or C2DAO before enrolling.
+> **PREREQUISITE WARNING:** SL 5H is not required for the majority of AI engineer billets. It is intended for personnel designing AI system architectures, retrieval infrastructure, or agent orchestration frameworks at enterprise scale. Consult your supervisor or C2DAO before enrolling.
 
 ---
 
-**BLUF:** TM-50H addresses the architectural and governance challenges that arise when AI systems move from individual workflows to enterprise deployments — multi-agent orchestration, production RAG infrastructure, AI governance frameworks, and responsible deployment at scale. These techniques are for engineers building the systems that other analysts and staff will use.
+**BLUF:** SL 5H addresses the architectural and governance challenges that arise when AI systems move from individual workflows to enterprise deployments — multi-agent orchestration, production RAG infrastructure, AI governance frameworks, and responsible deployment at scale. These techniques are for engineers building the systems that other analysts and staff will use.
 
 ---
 
@@ -48,7 +48,7 @@ Complete **7+ duty days before Day 1:**
 
 | Time | Block | Method | Content |
 |---|---|---|---|
-| 0800–0900 | 1 | Seminar | TM-50H scope and standards; enterprise vs. prototype AI systems; the gap between "demo" and "production" |
+| 0800–0900 | 1 | Seminar | SL 5H scope and standards; enterprise vs. prototype AI systems; the gap between "demo" and "production" |
 | 0900–1100 | 2 | Lab | RAG pipeline architecture: document ingestion, chunking strategy tradeoffs (fixed vs. semantic), metadata schema design |
 | 1100–1115 | — | Break | |
 | 1115–1200 | 3 | Lab | Embedding model selection: criteria, trade-offs, OPSEC implications of external embedding APIs vs. on-premises models |
@@ -125,13 +125,13 @@ Complete **7+ duty days before Day 1:**
 
 ## Peer Advanced Tracks
 
-| Track | Relevance to TM-50H |
+| Track | Relevance to SL 5H |
 |---|---|
-| TM-50M (Advanced ML Eng) | ML model serving integration with AI pipelines; retraining triggers from AI output quality monitoring |
-| TM-50G (Advanced ORSA) | AI-assisted analytical products; grounding AI reasoning in quantitative ORSA outputs |
-| TM-50L (Advanced SWE) | OSDK-backed AI system integrations; platform security requirements for AI applications consuming sensitive Ontology data |
+| SL 5M (Advanced ML Eng) | ML model serving integration with AI pipelines; retraining triggers from AI output quality monitoring |
+| SL 5G (Advanced ORSA) | AI-assisted analytical products; grounding AI reasoning in quantitative ORSA outputs |
+| SL 5L (Advanced SWE) | OSDK-backed AI system integrations; platform security requirements for AI applications consuming sensitive Ontology data |
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*Syllabus TM-50H | Version 1.0 | March 2026*
+*Syllabus SL 5H | Version 1.0 | March 2026*

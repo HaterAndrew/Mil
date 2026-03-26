@@ -1,12 +1,12 @@
-# POST-TEST — TM-40K: KNOWLEDGE MANAGER
+# POST-TEST — SL 4K: KNOWLEDGE MANAGER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40K: Knowledge Manager |
+| **Course** | SL 4K: Knowledge Manager |
 | **Form** | Post-Test |
-| **Level** | TM-40K (Specialist) |
-| **Audience** | KMOs / 37F / knowledge officers; prerequisite: TM-10 + TM-20 + TM-30 (REQUIRED) |
+| **Level** | SL 4K (Specialist) |
+| **Audience** | KMOs / 37F / knowledge officers; prerequisite: SL 1 + SL 2 + SL 3 (REQUIRED) |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (46/66) |
 
@@ -22,7 +22,7 @@ This assessment evaluates mastery of course learning objectives. A passing score
 
 *Circle the letter of the best answer. (2 points each)*
 
-**1. The five Object Types required in a TM-40K knowledge architecture are:**
+**1. The five Object Types required in a SL 4K knowledge architecture are:**
 
 A. Report, Summary, Record, Document, Brief
 B. Document, Lesson, AAR, SOP, ExpertiseProfile
@@ -43,7 +43,7 @@ B. Archiving
 C. Tagging
 D. Knowledge validation
 
-**4. Per TM-40K, an AIP Logic summarization workflow that processes AAR text MUST include:**
+**4. Per SL 4K, an AIP Logic summarization workflow that processes AAR text MUST include:**
 
 A. A minimum of three AI inference steps to validate consistency
 B. Automatic publishing after a 24-hour review window if no feedback is received
@@ -64,7 +64,7 @@ B. Increasing the LLM temperature setting to produce more varied outputs
 C. Post-processing the outputs with a normalization script
 D. Adding explicit output format instructions and few-shot examples to the prompt, then testing against a sample set and iterating
 
-**7. A knowledge browser application must support which of the following capabilities per TM-40K?**
+**7. A knowledge browser application must support which of the following capabilities per SL 4K?**
 
 A. Full-text keyword search, filter by tag/unit/date, and drill-down to lesson detail page
 B. Browsing by document type only, with a single export-all function
@@ -92,7 +92,7 @@ B. Draft → KM Review → Published (with optional Archived terminal state)
 C. Open → In Progress → Closed
 D. Identified → Validated → Distributed → Closed
 
-**11. A new AAR submission comes in with the category field tagged as "LOGISTICS" but the content clearly relates to communications. Per TM-40K, the KM officer should:**
+**11. A new AAR submission comes in with the category field tagged as "LOGISTICS" but the content clearly relates to communications. Per SL 4K, the KM officer should:**
 
 A. Correct the category during the review step before approving and publishing
 B. Reject the AAR and require the submitter to resubmit with the correct category
@@ -104,7 +104,7 @@ D. Archive the AAR until the submitter confirms the correct category
 A. An AI-assisted pre-tagging step — tags are suggested automatically but must be reviewed and confirmed by the KM officer before the lesson is published
 B. A fully automated publish workflow requiring no human review
 C. A validated tagging approach that eliminates the need for human categorization review
-D. A prohibited use of AI for knowledge management per TM-40K
+D. A prohibited use of AI for knowledge management per SL 4K
 
 **13. Your brigade's knowledge browser displays lessons from 2019 prominently because they have the most views. Current personnel cannot easily find recent lessons. The MOST appropriate fix is:**
 
@@ -113,7 +113,7 @@ B. Create separate knowledge browser pages for each year
 C. Archive all lessons older than 2 years
 D. Add a date filter and configure the default sort order to show most recent lessons first
 
-**14. Per TM-40K Section 8-1, which of the following is required before aggregating individual Soldiers' ExpertiseProfiles into a searchable directory?**
+**14. Per SL 4K Section 8-1, which of the following is required before aggregating individual Soldiers' ExpertiseProfiles into a searchable directory?**
 
 A. Commander approval in a signed memorandum
 B. A Privacy Act review to ensure the data collection, storage, and distribution comply with Privacy Act requirements and authorized system of records notices
@@ -197,7 +197,7 @@ D. Mandates that KM officers serve as the sole data stewards for civil informati
 
 &nbsp;
 
-**SA-6. Describe how knowledge management capability supports two WFF functions. For each, identify the WFF track (TM-40A through TM-40F) and give a concrete example of a KM product or workflow that supports decision-making in that function.**
+**SA-6. Describe how knowledge management capability supports two WFF functions. For each, identify the WFF track (SL 4A through SL 4F) and give a concrete example of a KM product or workflow that supports decision-making in that function.**
 
 &nbsp;
 
@@ -226,7 +226,7 @@ Passing: 49/70 (70%) — Post-test only. Pre-test is diagnostic.
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — Document, Lesson, AAR, SOP, ExpertiseProfile are the five TM-40K required Object Types.
+1. B — Document, Lesson, AAR, SOP, ExpertiseProfile are the five SL 4K required Object Types.
 2. C — Required-field validation prevents submission with empty mandatory fields and displays an error.
 3. A — Distribution routing logic routes lessons by unit, classification, and echelon.
 4. C — AIP output stays Draft until KM officer reviews and approves — mandatory gate.
@@ -239,7 +239,7 @@ Passing: 49/70 (70%) — Post-test only. Pre-test is diagnostic.
 11. A — KM officer corrects category during review before approving and publishing.
 12. A — AI-suggested tags are a pre-tagging aid — KM officer must confirm before publishing.
 13. D — Date filter and recency-first default sort is the correct knowledge browser fix.
-14. B — Privacy Act review before aggregating individual Soldier profiles is required per TM-40K Section 8-1.
+14. B — Privacy Act review before aggregating individual Soldier profiles is required per SL 4K Section 8-1.
 15. C — Routing must address unit designation, classification level, and echelon at minimum.
 16. B — Design is the FM 6-0 KM process step where workspace structure, Object Type schema, and information flow are created.
 17. B — CKI establishes that integrating data from multiple civil and military sources into a unified operational picture is a doctrinal mission, not just a technical convenience.
@@ -256,7 +256,7 @@ SA-4. Full credit: revision process — (1) add explicit output format instructi
 
 SA-5. Full credit: Privacy Act concerns — name, rank, MOS, unit, contact info, skill specialties are PII; Soldiers may not expect their skills to be searchable by all brigade staff; access controls required: role-based access limiting who can view specific profile fields; need-to-know principle for skill-based searches; before activation: conduct Privacy Act review (consult Staff Judge Advocate or Privacy Officer); confirm the MSS project qualifies as an authorized system of records for this data; notify Soldiers that their data will be collected (Privacy Act Statement); limit data fields to mission-essential information only. Full credit requires identifying specific PII fields, access controls, and pre-activation Privacy Act review requirement.
 
-SA-6. Full credit: any two WFF tracks correctly identified with a KM example — TM-40A (Intelligence): KM system captures lessons learned from collection operations and maintains an ExpertiseProfile of Soldiers with specific intelligence analysis skills; TM-40B (Fires): KM system maintains SOPs for fires coordination procedures and lessons learned from fire support exercises; TM-40C (Movement & Maneuver): KM system captures route reconnaissance reports and vehicle movement best practices in a searchable lessons library; TM-40D (Sustainment): KM system documents supply chain workarounds and logistics contact networks for S4 continuity across PCS cycles; TM-40E (Protection): KM system maintains force protection lessons learned and tracks corrective action implementation; TM-40F (Mission Command): KM system stores battle rhythm SOPs, reporting templates, and command post setup procedures to ensure institutional continuity. Each response must identify the correct TM-40 letter (A–F) and provide a concrete KM product or workflow example for full credit.
+SA-6. Full credit: any two WFF tracks correctly identified with a KM example — SL 4A (Intelligence): KM system captures lessons learned from collection operations and maintains an ExpertiseProfile of Soldiers with specific intelligence analysis skills; SL 4B (Fires): KM system maintains SOPs for fires coordination procedures and lessons learned from fire support exercises; SL 4C (Movement & Maneuver): KM system captures route reconnaissance reports and vehicle movement best practices in a searchable lessons library; SL 4D (Sustainment): KM system documents supply chain workarounds and logistics contact networks for S4 continuity across PCS cycles; SL 4E (Protection): KM system maintains force protection lessons learned and tracks corrective action implementation; SL 4F (Mission Command): KM system stores battle rhythm SOPs, reporting templates, and command post setup procedures to ensure institutional continuity. Each response must identify the correct SL 4 letter (A–F) and provide a concrete KM product or workflow example for full credit.
 
 ---
 

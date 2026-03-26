@@ -1,7 +1,7 @@
 # CONCEPTS GUIDE — T3-F COMPANION — MSC FORCE MULTIPLIER · MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** This guide prepares you to deliver TM-10 at your unit. You already have platform skills from TM-20. T3-F gives you the lesson plan and makes sure you can deliver it.
-> **Purpose:** Read before T3-F. Return to individual sections as reference when delivering TM-10.
+> **Forward:** This guide prepares you to deliver SL 1 at your unit. You already have platform skills from SL 2. T3-F gives you the lesson plan and makes sure you can deliver it.
+> **Purpose:** Read before T3-F. Return to individual sections as reference when delivering SL 1.
 > *HQ USAREUR-AF · v2.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -10,7 +10,7 @@
 
 ### 1-1. The Geography Problem
 
-USAREUR-AF spans a theater. C2DAO's MTT rotates through MSCs quarterly. Between visits, new arrivals need TM-10 qualification but have no way to get it.
+USAREUR-AF spans a theater. C2DAO's MTT rotates through MSCs quarterly. Between visits, new arrivals need SL 1 qualification but have no way to get it.
 
 Without a UDT, these personnel:
 - Cannot access MSS data products they need for their jobs
@@ -20,10 +20,10 @@ Without a UDT, these personnel:
 ### 1-2. What You Solve
 
 A UDT at each MSC ensures:
-- New arrivals get TM-10 within their first 30 days
-- Training quality is consistent because it follows the same lesson plans, T&EOs, and Go/No-Go standards as C2DAO-delivered TM-10
+- New arrivals get SL 1 within their first 30 days
+- Training quality is consistent because it follows the same lesson plans, T&EOs, and Go/No-Go standards as C2DAO-delivered SL 1
 - Training records are reported to C2DAO, maintaining theater-wide visibility
-- The MTT can focus on TM-20+ courses during visits instead of running TM-10 catch-up
+- The MTT can focus on SL 2+ courses during visits instead of running SL 1 catch-up
 
 ---
 
@@ -54,7 +54,7 @@ The most important UDT skill is knowing when to say "this is beyond my scope."
 
 | Situation | UDT Action |
 |---|---|
-| Someone asks for TM-20+ training | "That requires a C2DAO instructor. Let me check the next MTT schedule." |
+| Someone asks for SL 2+ training | "That requires a C2DAO instructor. Let me check the next MTT schedule." |
 | A commander asks to waive a prerequisite | "I don't have that authority. Let me connect you with C2DAO Training Division." |
 | You think a lesson plan has an error | Deliver as written. Note the issue. Report to C2DAO after. |
 | An environment issue you can't resolve quickly | Escalate to C2DAO. Work around if possible (pair the affected student, use a demo). |

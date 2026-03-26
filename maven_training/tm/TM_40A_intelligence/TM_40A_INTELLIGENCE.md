@@ -1,14 +1,14 @@
 # TM-40A — MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** MSS integrates multi-INT data streams and intelligence cycle functions into a single enterprise environment. This chapter establishes how the Intelligence WFF operates within MSS, how MSS relates to legacy intel tools, and the access control framework governing intelligence workspaces.
-> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; CONCEPTS_GUIDE_TM40A_INTELLIGENCE (required before beginning this manual). Familiarity with MSS workspace navigation and basic data querying (TM-10 standard) is assumed. No pipeline development or code experience required.
+> **Prereqs:** SL 1, Maven User; SL 2, Builder; SL 3, Advanced Builder; CONCEPTS_GUIDE_TM40A_INTELLIGENCE (required before beginning this manual). Familiarity with MSS workspace navigation and basic data querying (SL 1 standard) is assumed. No pipeline development or code experience required.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Releasing MSS intelligence products — including dashboards, exported datasets, and workspace screenshots — outside the originating classification domain without IMO and security manager review is a potential unauthorized disclosure. Verify handling requirements before any distribution. Classification of a compiled MSS product may exceed the classification of any individual source.**
 > **CAUTION: MSS aggregates data from multiple sources with varying classification levels. Derived products combining SIGINT, HUMINT, and GEOINT data may be classified higher than any individual source. Do not determine product classification by the lowest-classified input. Apply derivative classification procedures (AR 380-5) before publishing or exporting any multi-source MSS product.**
 > **NOTE: MSS is an intelligence enabler. The Intelligence cycle — Direction, Collection, Processing and Exploitation, Production, Dissemination — remains the doctrinal framework (FM 2-0). MSS accelerates and integrates the data layer within that cycle. Analytical judgment, source evaluation, and product integrity remain irreducibly human functions.**
 
-> **NOTE: FM 2-0 (October 2023), para 1-50, states: "MI professionals must develop data literacy skills... Until institutional training is adjusted to incorporate data literacy, intelligence professionals must build those skills through self-development." This TM directly addresses that doctrinal requirement. The tasks, procedures, and standards in TM-40A equip intelligence professionals with the data literacy competencies FM 2-0 identifies as essential to the modern intelligence enterprise.**
+> **NOTE: FM 2-0 (October 2023), para 1-50, states: "MI professionals must develop data literacy skills... Until institutional training is adjusted to incorporate data literacy, intelligence professionals must build those skills through self-development." This TM directly addresses that doctrinal requirement. The tasks, procedures, and standards in SL 4A equip intelligence professionals with the data literacy competencies FM 2-0 identifies as essential to the modern intelligence enterprise.**
 
 ---
 
@@ -179,7 +179,7 @@ Step 1 establishes geographic boundaries, actors, and conditions defining the op
 ---
 **TASK BOX 2-1: Define Operational Environment in MSS**
 
-**Conditions:** The analyst has access to the unit's MSS IPOE workspace. Boundary datasets and AOR geospatial files have been received from higher headquarters in approved format (KML, KMZ, GeoJSON, or MGRS polygon). TM-10, TM-20, and TM-30 tasks are complete. MSS workspace has been established IAW Appendix E and the security manager has approved the classification level.
+**Conditions:** The analyst has access to the unit's MSS IPOE workspace. Boundary datasets and AOR geospatial files have been received from higher headquarters in approved format (KML, KMZ, GeoJSON, or MGRS polygon). SL 1, SL 2, and SL 3 tasks are complete. MSS workspace has been established IAW Appendix E and the security manager has approved the classification level.
 
 **Standards:** The analyst correctly loads and names the AOR boundary layer, identifies adjacent unit boundaries, and identifies all NAIs established in the current collection plan. All layers follow the naming convention in Appendix A. The Step 1 workspace structure is reviewable by the G2/S2 within 24 hours of workspace setup. Adjacent unit boundaries are confirmed against current operations order graphics.
 
@@ -293,7 +293,7 @@ MSS workspace access grants enable sharing IPOE products with adjacent S2 sectio
 
 PIRs are the commander's specific intelligence questions associated with CCIRs. IRs are additional requirements below the PIR threshold. Both are tracked in MSS.
 
-**PIR object structure.** Each PIR links to: the CCIR it supports (coordinated with the S3 CCIR workspace per TM-40F), NAIs and indicators in the IPOE workspace, collection tasks and assigned assets, and reporting received in satisfaction or partial satisfaction.
+**PIR object structure.** Each PIR links to: the CCIR it supports (coordinated with the S3 CCIR workspace per SL 4F), NAIs and indicators in the IPOE workspace, collection tasks and assigned assets, and reporting received in satisfaction or partial satisfaction.
 
 **PIR data entry requirements.** PIR number (sequential within current OPORD), PIR text (as a question), associated CCIR number, supporting PIR if applicable, date established, expiration date or condition, and assigned priority.
 
@@ -338,7 +338,7 @@ RFIs from subordinate or adjacent units are tracked in MSS to prevent duplicatio
 
 ### 3-4. CCIR Linkage to MSS Dashboards
 
-The intelligence section coordinates with the S3/Mission Command workspace (TM-40F) to ensure PIR-derived CCIR components appear on the commander's unified CCIR dashboard alongside FFIR components. Coordination requires: establishing a shared workspace or dashboard panel both sections can update, defining which intelligence products populate the CCIR display, and confirming data-as-of timestamps for each element.
+The intelligence section coordinates with the S3/Mission Command workspace (SL 4F) to ensure PIR-derived CCIR components appear on the commander's unified CCIR dashboard alongside FFIR components. Coordination requires: establishing a shared workspace or dashboard panel both sections can update, defining which intelligence products populate the CCIR display, and confirming data-as-of timestamps for each element.
 
 > **NOTE: The CCIR dashboard must display data-as-of timestamps for each CCIR element. A PIR displayed as "Not Observed" is only meaningful if the timestamp confirms the collection cycle is current. Brief the commander on the last collection update cycle before presenting CCIR status at any decision point. A PIR with no recent collection reporting is a gap — not a "Not Observed" finding.**
 
@@ -1633,7 +1633,7 @@ This appendix establishes minimum MSS training standards for intelligence person
 
 **Table J-1. MSS Training Requirements by Intelligence MOS**
 
-| MOS | TM-10 (Required) | TM-20 (Required) | TM-30 (Required) | TM-40A (Required) | Workspace Qualification | Verified By |
+| MOS | SL 1 (Required) | SL 2 (Required) | SL 3 (Required) | SL 4A (Required) | Workspace Qualification | Verified By |
 |---|---|---|---|---|---|---|
 | 35A (MI Officer) | Yes | Yes | Yes | Yes — full manual | All intelligence workspaces | 35X or S2 section chief |
 | 35D (All-Source Officer) | Yes | Yes | Yes | Yes — full manual | All intelligence workspaces | G2/S2 |
@@ -1663,7 +1663,7 @@ Qualification is verified by the 35X or G2/S2 through a direct observation check
 
 All intelligence personnel with MSS workspace access complete annual recertification:
 
-- Review of current version of TM-40A (verify no changes since initial qualification)
+- Review of current version of SL 4A (verify no changes since initial qualification)
 - Review of any workspace-specific updates or changes issued by the C2DAO
 - Confirmation of security and classification handling standards
 - Test of workspace proficiency for assigned workspaces
@@ -1717,7 +1717,7 @@ Sustainment access to intelligence MSS products is limited to: threat activity d
 
 ### K-4. Intelligence Support to Mission Command
 
-The intelligence section provides the S3 with the intelligence picture supporting the operations process. MSS integration with the Mission Command workspace (TM-40F):
+The intelligence section provides the S3 with the intelligence picture supporting the operations process. MSS integration with the Mission Command workspace (SL 4F):
 
 - CCIR dashboard: PIR-derived CCIR components appear on the S3's unified CCIR dashboard (coordinate with S3 for data sharing)
 - INTSUM: available for access by the S3 and XO (read-only)
@@ -1790,7 +1790,7 @@ Any battle rhythm change requires G2/S2 approval and coordination with the S3 to
 2. For each battle rhythm event requiring intelligence input, identify: the MSS product(s) required, who produces them, when they must be complete (work backward from the event time), and how they are delivered (briefed in person; available on MSS for review; exported and distributed).
 3. Enter each production task in the production tracker in the all-source analysis workspace: event name, product required, assigned analyst, completion suspense, delivery method.
 4. Brief the production plan to the section. Confirm each analyst understands their production tasks, suspense times, and MSS workspace procedures.
-5. Coordinate with the S3 to confirm which intelligence products will appear on the Mission Command workspace CCIR dashboard (TM-40F coordination).
+5. Coordinate with the S3 to confirm which intelligence products will appear on the Mission Command workspace CCIR dashboard (SL 4F coordination).
 6. Review the production plan after the first battle rhythm cycle. Adjust suspense times based on actual production experience.
 ---
 
@@ -1798,33 +1798,33 @@ Any battle rhythm change requires G2/S2 approval and coordination with the S3 to
 
 ### WFF Peer Tracks
 
-TM-40A is one of six Warfighting Function tracks at the same tier. All six WFF tracks require TM-10, TM-20, and TM-30 as prerequisites. Intelligence practitioners should develop working familiarity with TM-40B (Fires) and TM-40F (Mission Command) — the two WFF tracks with the most intensive intelligence data coordination requirements.
+SL 4A is one of six Warfighting Function tracks at the same tier. All six WFF tracks require SL 1, SL 2, and SL 3 as prerequisites. Intelligence practitioners should develop working familiarity with SL 4B (Fires) and SL 4F (Mission Command) — the two WFF tracks with the most intensive intelligence data coordination requirements.
 
 **Table F-1. WFF Peer Track Quick Reference**
 
 | Track | Title | Prerequisite | Primary Intel Coordination Point |
 |-------|-------|--------------|----------------------------------|
-| TM-40A | Intelligence WFF | TM-10 + TM-20 + TM-30 | This manual |
-| TM-40B | Fires WFF | TM-10 + TM-20 + TM-30 | Targeting workspace, AMD coordination |
-| TM-40C | Movement and Maneuver WFF | TM-10 + TM-20 + TM-30 | NAI/TAI overlays, reconnaissance reporting |
-| TM-40D | Sustainment WFF | TM-10 + TM-20 + TM-30 | LOC threat data, supply point security |
-| TM-40E | Protection WFF | TM-10 + TM-20 + TM-30 | AT intelligence integration |
-| TM-40F | Mission Command WFF | TM-10 + TM-20 + TM-30 | PIR-derived CCIR, INTSUM dissemination |
+| SL 4A | Intelligence WFF | SL 1 + SL 2 + SL 3 | This manual |
+| SL 4B | Fires WFF | SL 1 + SL 2 + SL 3 | Targeting workspace, AMD coordination |
+| SL 4C | Movement and Maneuver WFF | SL 1 + SL 2 + SL 3 | NAI/TAI overlays, reconnaissance reporting |
+| SL 4D | Sustainment WFF | SL 1 + SL 2 + SL 3 | LOC threat data, supply point security |
+| SL 4E | Protection WFF | SL 1 + SL 2 + SL 3 | AT intelligence integration |
+| SL 4F | Mission Command WFF | SL 1 + SL 2 + SL 3 | PIR-derived CCIR, INTSUM dissemination |
 
-### Specialist Tracks (Prerequisite: TM-30)
+### Specialist Tracks (Prerequisite: SL 3)
 
-For technical specialists pursuing advanced analytical or engineering capability, specialist tracks are available after completing TM-30 (Advanced Builder). These are not required for intelligence WFF employment.
+For technical specialists pursuing advanced analytical or engineering capability, specialist tracks are available after completing SL 3 (Advanced Builder). These are not required for intelligence WFF employment.
 
 **Table F-2. Specialist and Advanced Track Quick Reference**
 
 | Track | Title | Advanced Track |
 |-------|-------|----------------|
-| TM-40G | ORSA | TM-50G |
-| TM-40H | AI Engineer | TM-50H |
-| TM-40M | ML Engineer | TM-50M |
-| TM-40J | Program Manager | TM-50J |
-| TM-40K | Knowledge Manager | TM-50K |
-| TM-40L | Software Engineer | TM-50L |
+| SL 4G | ORSA | SL 5G |
+| SL 4H | AI Engineer | SL 5H |
+| SL 4M | ML Engineer | SL 5M |
+| SL 4J | Program Manager | SL 5J |
+| SL 4K | Knowledge Manager | SL 5K |
+| SL 4L | Software Engineer | SL 5L |
 
 ---
 
@@ -1844,7 +1844,7 @@ For technical specialists pursuing advanced analytical or engineering capability
 
 ---
 
-*This publication supersedes all previous TM-40A drafts.*
+*This publication supersedes all previous SL 4A drafts.*
 
 *Review date: 18 months from version date. Next review: September 2027.*
 

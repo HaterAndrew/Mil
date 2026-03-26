@@ -10,8 +10,8 @@ import pytest
 # ---------------------------------------------------------------------------
 def create_event(client, **overrides):
     payload = {
-        "name": "TM-20 MTT Wiesbaden",
-        "course_id": "TM-20",
+        "name": "SL 2 MTT Wiesbaden",
+        "course_id": "SL 2",
         "location": "Clay Kaserne",
         "start_date": "2026-04-01",
         "end_date": "2026-04-03",
@@ -28,7 +28,7 @@ def create_instructor(client, **overrides):
         "name": "SMITH",
         "rank": "SFC",
         "unit": "2-1 BN",
-        "qualifications": ["TM-20", "TM-30"],
+        "qualifications": ["SL 2", "SL 3"],
         "available_from": "2026-01-01",
         "available_to": "2026-12-31",
         **overrides,
@@ -68,7 +68,7 @@ class TestHealth:
 class TestEvents:
     def test_create_event(self, mtt_client):
         data = create_event(mtt_client)
-        assert data["name"] == "TM-20 MTT Wiesbaden"
+        assert data["name"] == "SL 2 MTT Wiesbaden"
         assert data["status"] == "PLANNED"
         assert data["enrolled_count"] == 0
 
@@ -94,7 +94,7 @@ class TestEvents:
         ev = create_event(mtt_client)
         payload = {
             "name": "Updated Event",
-            "course_id": "TM-30",
+            "course_id": "SL 3",
             "location": "Grafenwoehr",
             "start_date": "2026-05-01",
             "end_date": "2026-05-03",
@@ -261,7 +261,7 @@ class TestAnalytics:
         resp = mtt_client.get("/calendar")
         data = resp.json()
         assert len(data) == 1
-        assert data[0]["course_id"] == "TM-20"
+        assert data[0]["course_id"] == "SL 2"
 
     def test_conflicts_none(self, mtt_client):
         resp = mtt_client.get("/conflicts")

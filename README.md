@@ -24,14 +24,14 @@ Doctrine-aligned training for all USAREUR-AF personnel who access, build on, or 
 
 Full curriculum index: [maven_training/README.md](maven_training/README.md)
 
-#### TM-40 Track Selection (Quick Reference)
+#### SL 4 Track Selection (Quick Reference)
 
 | Your Role | Track |
 |---|---|
-| All personnel | TM-10 → TM-20 |
-| WFF functional staff (INT/FIRES/M2/SUST/PROT/MC) | TM-40A–F (after TM-30) |
-| Data-adjacent specialists (17/25-series, S6/G6, G2) | TM-30 → TM-40G–O |
-| Technical specialists (engineers, analysts, data pros) | TM-30 → TM-40G–O → TM-50G–O |
+| All personnel | SL 1 → SL 2 |
+| WFF functional staff (INT/FIRES/M2/SUST/PROT/MC) | SL 4A–F (after SL 3) |
+| Data-adjacent specialists (17/25-series, S6/G6, G2) | SL 3 → SL 4G–O |
+| Technical specialists (engineers, analysts, data pros) | SL 3 → SL 4G–O → SL 5G–O |
 | Senior leaders (O-5+, CSM+, senior civilians) | Data Literacy for Senior Leaders |
 
 #### Complete Publication Hierarchy
@@ -48,82 +48,82 @@ maven_training/
 │
 ├── tm/                                       ← Technical Manuals (platform-specific)
 │   │
-│   ├── TM_10_maven_user/                     ← TM-10: All personnel — access & consume data
+│   ├── TM_10_maven_user/                     ← SL 1: All personnel — access & consume data
 │   │   └── TM_10_MAVEN_USER.md
-│   ├── TM_20_builder/                        ← TM-20: All staff — no-code building
+│   ├── TM_20_builder/                        ← SL 2: All staff — no-code building
 │   │   └── TM_20_BUILDER.md
-│   ├── TM_30_advanced_builder/               ← TM-30: Data-adjacent specialists
+│   ├── TM_30_advanced_builder/               ← SL 3: Data-adjacent specialists
 │   │   └── TM_30_ADVANCED_BUILDER.md
 │   │
-│   │   ── TM-40A through TM-40F: Warfighting Function Tracks (prereq: TM-30) ──
-│   ├── TM_40A_intelligence/                  ← TM-40A: Intelligence (INT) WFF
+│   │   ── SL 4A through SL 4F: Warfighting Function Tracks (prereq: SL 3) ──
+│   ├── TM_40A_intelligence/                  ← SL 4A: Intelligence (INT) WFF
 │   │   ├── TM_40A_INTELLIGENCE.md
 │   │   └── CONCEPTS_GUIDE_TM40A_INTELLIGENCE.md
-│   ├── TM_40B_fires/                         ← TM-40B: Fires WFF
+│   ├── TM_40B_fires/                         ← SL 4B: Fires WFF
 │   │   ├── TM_40B_FIRES.md
 │   │   └── CONCEPTS_GUIDE_TM40B_FIRES.md
-│   ├── TM_40C_movement_maneuver/             ← TM-40C: Movement & Maneuver (M2) WFF
+│   ├── TM_40C_movement_maneuver/             ← SL 4C: Movement & Maneuver (M2) WFF
 │   │   ├── TM_40C_MOVEMENT_MANEUVER.md
 │   │   └── CONCEPTS_GUIDE_TM40C_MOVEMENT_MANEUVER.md
-│   ├── TM_40D_sustainment/                   ← TM-40D: Sustainment WFF
+│   ├── TM_40D_sustainment/                   ← SL 4D: Sustainment WFF
 │   │   ├── TM_40D_SUSTAINMENT.md
 │   │   └── CONCEPTS_GUIDE_TM40D_SUSTAINMENT.md
-│   ├── TM_40E_protection/                    ← TM-40E: Protection WFF
+│   ├── TM_40E_protection/                    ← SL 4E: Protection WFF
 │   │   ├── TM_40E_PROTECTION.md
 │   │   └── CONCEPTS_GUIDE_TM40E_PROTECTION.md
-│   ├── TM_40F_mission_command/               ← TM-40F: Mission Command (MC) WFF
+│   ├── TM_40F_mission_command/               ← SL 4F: Mission Command (MC) WFF
 │   │   ├── TM_40F_MISSION_COMMAND.md
 │   │   └── CONCEPTS_GUIDE_TM40F_MISSION_COMMAND.md
 │   │
-│   │   ── TM-40G through TM-40L: Technical Specialist Tracks (prereq: TM-30) ──
-│   ├── TM_40G_orsa/                          ← TM-40G: ORSA (FA49, quantitative analysts)
+│   │   ── SL 4G through SL 4L: Technical Specialist Tracks (prereq: SL 3) ──
+│   ├── TM_40G_orsa/                          ← SL 4G: ORSA (FA49, quantitative analysts)
 │   │   ├── TM_40G_ORSA.md
 │   │   └── CONCEPTS_GUIDE_TM40G_ORSA.md
-│   ├── TM_40H_ai_engineer/                   ← TM-40H: AI Engineer (AIP Logic, agents)
+│   ├── TM_40H_ai_engineer/                   ← SL 4H: AI Engineer (AIP Logic, agents)
 │   │   ├── TM_40H_AI_ENGINEER.md
 │   │   └── CONCEPTS_GUIDE_TM40H_AI_ENGINEER.md
-│   ├── TM_40M_ml_engineer/                   ← TM-40M: Machine Learning Engineer
+│   ├── TM_40M_ml_engineer/                   ← SL 4M: Machine Learning Engineer
 │   │   ├── TM_40M_ML_ENGINEER.md
 │   │   └── CONCEPTS_GUIDE_TM40M_ML_ENGINEER.md
-│   ├── TM_40J_program_manager/               ← TM-40J: Program Manager (G8/S8, tech PMs)
+│   ├── TM_40J_program_manager/               ← SL 4J: Program Manager (G8/S8, tech PMs)
 │   │   ├── TM_40J_PROGRAM_MANAGER.md
 │   │   └── CONCEPTS_GUIDE_TM40J_PROGRAM_MANAGER.md
-│   ├── TM_40K_knowledge_manager/             ← TM-40K: Knowledge Manager (KMO, 37F)
+│   ├── TM_40K_knowledge_manager/             ← SL 4K: Knowledge Manager (KMO, 37F)
 │   │   ├── TM_40K_KNOWLEDGE_MANAGER.md
 │   │   └── CONCEPTS_GUIDE_TM40K_KNOWLEDGE_MANAGER.md
-│   ├── TM_40L_software_engineer/             ← TM-40L: Software Engineer (OSDK, TypeScript)
+│   ├── TM_40L_software_engineer/             ← SL 4L: Software Engineer (OSDK, TypeScript)
 │   │   ├── TM_40L_SOFTWARE_ENGINEER.md
 │   │   └── CONCEPTS_GUIDE_TM40L_SOFTWARE_ENGINEER.md
-│   ├── TM_40N_ux_designer/                   ← TM-40N: UI/UX Designer (ASF role track)
+│   ├── TM_40N_ux_designer/                   ← SL 4N: UI/UX Designer (ASF role track)
 │   │   ├── TM_40N_UX_DESIGNER.md
 │   │   └── CONCEPTS_GUIDE_TM40N_UX_DESIGNER.md
-│   ├── TM_40O_platform_engineer/             ← TM-40O: Platform Engineer (ASF role track)
+│   ├── TM_40O_platform_engineer/             ← SL 4O: Platform Engineer (ASF role track)
 │   │   ├── TM_40O_PLATFORM_ENGINEER.md
 │   │   └── CONCEPTS_GUIDE_TM40O_PLATFORM_ENGINEER.md
 │   │
-│   │   ── TM-50G through TM-50O: Advanced Specialist Tracks (prereq: corresponding TM-40G–O) ──
-│   ├── TM_50G_orsa_advanced/                 ← TM-50G: Advanced ORSA (prereq: TM-40G)
+│   │   ── SL 5G through SL 5O: Advanced Specialist Tracks (prereq: corresponding SL 4G–O) ──
+│   ├── TM_50G_orsa_advanced/                 ← SL 5G: Advanced ORSA (prereq: SL 4G)
 │   │   ├── TM_50G_ORSA_ADVANCED.md
 │   │   └── CONCEPTS_GUIDE_TM50G_ORSA_ADVANCED.md
-│   ├── TM_50H_ai_engineer_advanced/          ← TM-50H: Advanced AI Engineer (prereq: TM-40H)
+│   ├── TM_50H_ai_engineer_advanced/          ← SL 5H: Advanced AI Engineer (prereq: SL 4H)
 │   │   ├── TM_50H_AI_ENGINEER_ADVANCED.md
 │   │   └── CONCEPTS_GUIDE_TM50H_AI_ENGINEER_ADVANCED.md
-│   ├── TM_50M_ml_engineer_advanced/          ← TM-50M: Advanced MLE (prereq: TM-40M)
+│   ├── TM_50M_ml_engineer_advanced/          ← SL 5M: Advanced MLE (prereq: SL 4M)
 │   │   ├── TM_50M_ML_ENGINEER_ADVANCED.md
 │   │   └── CONCEPTS_GUIDE_TM50M_ML_ENGINEER_ADVANCED.md
-│   ├── TM_50J_program_manager_advanced/      ← TM-50J: Advanced PM (prereq: TM-40J)
+│   ├── TM_50J_program_manager_advanced/      ← SL 5J: Advanced PM (prereq: SL 4J)
 │   │   ├── TM_50J_PROGRAM_MANAGER_ADVANCED.md
 │   │   └── CONCEPTS_GUIDE_TM50J_PROGRAM_MANAGER_ADVANCED.md
-│   ├── TM_50K_knowledge_manager_advanced/    ← TM-50K: Advanced KM (prereq: TM-40K)
+│   ├── TM_50K_knowledge_manager_advanced/    ← SL 5K: Advanced KM (prereq: SL 4K)
 │   │   ├── TM_50K_KNOWLEDGE_MANAGER_ADVANCED.md
 │   │   └── CONCEPTS_GUIDE_TM50K_KNOWLEDGE_MANAGER_ADVANCED.md
-│   ├── TM_50L_software_engineer_advanced/    ← TM-50L: Advanced SWE (prereq: TM-40L)
+│   ├── TM_50L_software_engineer_advanced/    ← SL 5L: Advanced SWE (prereq: SL 4L)
 │   │   ├── TM_50L_SOFTWARE_ENGINEER_ADVANCED.md
 │   │   └── CONCEPTS_GUIDE_TM50L_SOFTWARE_ENGINEER_ADVANCED.md
-│   ├── TM_50N_ux_designer_advanced/          ← TM-50N: Advanced UI/UX (prereq: TM-40N)
+│   ├── TM_50N_ux_designer_advanced/          ← SL 5N: Advanced UI/UX (prereq: SL 4N)
 │   │   ├── TM_50N_UX_DESIGNER_ADVANCED.md
 │   │   └── CONCEPTS_GUIDE_TM50N_UX_DESIGNER_ADVANCED.md
-│   └── TM_50O_platform_engineer_advanced/    ← TM-50O: Advanced Platform Eng (prereq: TM-40O)
+│   └── TM_50O_platform_engineer_advanced/    ← SL 5O: Advanced Platform Eng (prereq: SL 4O)
 │       ├── TM_50O_PLATFORM_ENGINEER_ADVANCED.md
 │       └── CONCEPTS_GUIDE_TM50O_PLATFORM_ENGINEER_ADVANCED.md
 │
@@ -183,25 +183,25 @@ maven_training/
 │   │   ├── EXAM_TM50N_PRE.md / POST.md       ← Advanced: UI/UX Designer
 │   │   └── EXAM_TM50O_PRE.md / POST.md       ← Advanced: Platform Engineer
 │   │
-│   ├── EX_10_operator_basics/                ← Practical exercise: TM-10
+│   ├── EX_10_operator_basics/                ← Practical exercise: SL 1
 │   │   ├── ENVIRONMENT_SETUP.md
 │   │   └── EXERCISE.md
-│   ├── EX_20_no_code_builder/                ← Practical exercise: TM-20
-│   ├── EX_30_advanced_builder/               ← Practical exercise: TM-30
-│   ├── EX_40A_intelligence/                  ← Practical exercise: TM-40A (WFF)
-│   ├── EX_40B_fires/                         ← Practical exercise: TM-40B (WFF)
-│   ├── EX_40C_movement_maneuver/             ← Practical exercise: TM-40C (WFF)
-│   ├── EX_40D_sustainment/                   ← Practical exercise: TM-40D (WFF)
-│   ├── EX_40E_protection/                    ← Practical exercise: TM-40E (WFF)
-│   ├── EX_40F_mission_command/               ← Practical exercise: TM-40F (WFF)
-│   ├── EX_40G_orsa/                          ← Practical exercise: TM-40G (Technical)
-│   ├── EX_40H_ai_engineer/                   ← Practical exercise: TM-40H (Technical)
-│   ├── EX_40M_ml_engineer/                   ← Practical exercise: TM-40M (Technical)
-│   ├── EX_40J_program_manager/               ← Practical exercise: TM-40J (Technical)
-│   ├── EX_40K_knowledge_manager/             ← Practical exercise: TM-40K (Technical)
-│   ├── EX_40L_software_engineer/             ← Practical exercise: TM-40L (Technical)
-│   ├── EX_40N_ux_designer/                  ← Practical exercise: TM-40N (Technical)
-│   └── EX_40O_platform_engineer/            ← Practical exercise: TM-40O (Technical)
+│   ├── EX_20_no_code_builder/                ← Practical exercise: SL 2
+│   ├── EX_30_advanced_builder/               ← Practical exercise: SL 3
+│   ├── EX_40A_intelligence/                  ← Practical exercise: SL 4A (WFF)
+│   ├── EX_40B_fires/                         ← Practical exercise: SL 4B (WFF)
+│   ├── EX_40C_movement_maneuver/             ← Practical exercise: SL 4C (WFF)
+│   ├── EX_40D_sustainment/                   ← Practical exercise: SL 4D (WFF)
+│   ├── EX_40E_protection/                    ← Practical exercise: SL 4E (WFF)
+│   ├── EX_40F_mission_command/               ← Practical exercise: SL 4F (WFF)
+│   ├── EX_40G_orsa/                          ← Practical exercise: SL 4G (Technical)
+│   ├── EX_40H_ai_engineer/                   ← Practical exercise: SL 4H (Technical)
+│   ├── EX_40M_ml_engineer/                   ← Practical exercise: SL 4M (Technical)
+│   ├── EX_40J_program_manager/               ← Practical exercise: SL 4J (Technical)
+│   ├── EX_40K_knowledge_manager/             ← Practical exercise: SL 4K (Technical)
+│   ├── EX_40L_software_engineer/             ← Practical exercise: SL 4L (Technical)
+│   ├── EX_40N_ux_designer/                  ← Practical exercise: SL 4N (Technical)
+│   └── EX_40O_platform_engineer/            ← Practical exercise: SL 4O (Technical)
 │
 ├── training_management/                      ← Administrative and instructor publications
 │   ├── MTP_MSS.md                            ← Mission Training Plan (TLOs/ELOs, Go/No-Go criteria)
@@ -240,22 +240,22 @@ maven_training/
     └── MAVEN_FIELD_MANUAL.md
 ```
 
-> **TM-40 Series Note:** The TM-40 series has two distinct sub-series. Do not assume a track based on letter alone.
-> - **TM-40A through TM-40F** — Warfighting Function (WFF) tracks. Audience: functional staff in the six WFFs. Prerequisite: TM-30.
-> - **TM-40G through TM-40L** — Technical Specialist tracks. Prerequisite: TM-30.
+> **SL 4 Series Note:** The SL 4 series has two distinct sub-series. Do not assume a track based on letter alone.
+> - **SL 4A through SL 4F** — Warfighting Function (WFF) tracks. Audience: functional staff in the six WFFs. Prerequisite: SL 3.
+> - **SL 4G through SL 4L** — Technical Specialist tracks. Prerequisite: SL 3.
 
-#### TM-40 WFF Tracks — What Each Track Covers
+#### SL 4 WFF Tracks — What Each Track Covers
 
-These tracks are for functional staff who work *within* a WFF and need MSS skills tailored to their operational domain. All six require TM-30 as a hard prerequisite (TM-10 → TM-20 → TM-30 complete, all Go evaluations on file).
+These tracks are for functional staff who work *within* a WFF and need MSS skills tailored to their operational domain. All six require SL 3 as a hard prerequisite (SL 1 → SL 2 → SL 3 complete, all Go evaluations on file).
 
 | Track | WFF | Primary Audience | MSS Focus |
 |---|---|---|---|
-| **TM-40A** | Intelligence (INT) | G2/S2, MI Officers, 35-series | PIR/CCIR management, INTSUM pipelines, threat pattern analysis, Named Area of Interest monitoring |
-| **TM-40B** | Fires | FA Officers, 13-series, FSO/FSCOORD | Target acquisition data, FSCM tracking, D3A confidence scoring, MOE/MOP for fires effects |
-| **TM-40C** | Movement & Maneuver | Maneuver Officers, 11/19-series, ALO | Route analysis, traffic/mobility data, unit position tracking, obstacle and gap assessment |
-| **TM-40D** | Sustainment | G4/S4, 88/92/25-series, BSB | Supply readiness dashboards, Class IX/fuel consumption, maintenance pipeline, distribution analysis |
-| **TM-40E** | Protection | G3/S3 protection cell, CBRN, 31-series | Force protection metrics, CCIR monitoring, threat/incident tracking, access control data |
-| **TM-40F** | Mission Command (MC) | G3/S3, XO/S3-shop, Battle Captains | Operations dashboard design, SITREP/SPOTREP pipelines, battle rhythm data, cross-WFF integration |
+| **SL 4A** | Intelligence (INT) | G2/S2, MI Officers, 35-series | PIR/CCIR management, INTSUM pipelines, threat pattern analysis, Named Area of Interest monitoring |
+| **SL 4B** | Fires | FA Officers, 13-series, FSO/FSCOORD | Target acquisition data, FSCM tracking, D3A confidence scoring, MOE/MOP for fires effects |
+| **SL 4C** | Movement & Maneuver | Maneuver Officers, 11/19-series, ALO | Route analysis, traffic/mobility data, unit position tracking, obstacle and gap assessment |
+| **SL 4D** | Sustainment | G4/S4, 88/92/25-series, BSB | Supply readiness dashboards, Class IX/fuel consumption, maintenance pipeline, distribution analysis |
+| **SL 4E** | Protection | G3/S3 protection cell, CBRN, 31-series | Force protection metrics, CCIR monitoring, threat/incident tracking, access control data |
+| **SL 4F** | Mission Command (MC) | G3/S3, XO/S3-shop, Battle Captains | Operations dashboard design, SITREP/SPOTREP pipelines, battle rhythm data, cross-WFF integration |
 
 Each WFF track pairs a Technical Manual (TM) with a Concepts Guide that explains the domain-specific data logic behind the MSS tasks. See [maven_training/README.md](maven_training/README.md) for full syllabi, exercises, and exam files per track.
 
@@ -263,7 +263,7 @@ Each WFF track pairs a Technical Manual (TM) with a Concepts Guide that explains
 
 ### [Data Skills Reference Library](skills/data_skills/)
 
-15-module Python curriculum covering the full data engineering and analytics stack. Used as a reference for TM-30/40-level technical work.
+15-module Python curriculum covering the full data engineering and analytics stack. Used as a reference for SL 3/40-level technical work.
 
 | Module | Topic |
 |---|---|
@@ -279,7 +279,7 @@ Activate venv: `source data_skills/.venv/bin/activate`
 
 ### [SITREP Tracker](sitrep_tracker/)
 
-Applied CLI project demonstrating SQLite, Click, Rich, and DTG utilities. Reference implementation for TM-20/30 pipeline and reporting patterns.
+Applied CLI project demonstrating SQLite, Click, Rich, and DTG utilities. Reference implementation for SL 2/30 pipeline and reporting patterns.
 
 **Install and run:**
 

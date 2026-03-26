@@ -23,7 +23,7 @@ def create_instructor(client, instructor_id="INS001", **overrides):
     return resp.json()
 
 
-def create_cert(client, instructor_id="INS001", course_id="TM-10", **overrides):
+def create_cert(client, instructor_id="INS001", course_id="SL 1", **overrides):
     today = date.today()
     payload = {
         "instructor_id": instructor_id,
@@ -89,13 +89,13 @@ class TestCertifications:
     def test_create_certification(self, instructor_client):
         create_instructor(instructor_client)
         data = create_cert(instructor_client)
-        assert data["course_id"] == "TM-10"
+        assert data["course_id"] == "SL 1"
         assert data["status"] == "CURRENT"
 
     def test_cert_requires_instructor(self, instructor_client):
         resp = instructor_client.post("/certifications", json={
             "instructor_id": "NONEXIST",
-            "course_id": "TM-10",
+            "course_id": "SL 1",
             "certified_date": "2026-01-01",
             "expiration_date": "2027-01-01",
         })
@@ -113,8 +113,8 @@ class TestCertifications:
 
     def test_list_certifications(self, instructor_client):
         create_instructor(instructor_client)
-        create_cert(instructor_client, course_id="TM-10")
-        create_cert(instructor_client, course_id="TM-20")
+        create_cert(instructor_client, course_id="SL 1")
+        create_cert(instructor_client, course_id="SL 2")
         resp = instructor_client.get("/certifications")
         assert len(resp.json()) == 2
 
@@ -163,7 +163,7 @@ class TestTeachingHistory:
         create_instructor(instructor_client)
         resp = instructor_client.post("/teaching-history", json={
             "instructor_id": "INS001",
-            "course_id": "TM-10",
+            "course_id": "SL 1",
             "event_date": "2026-03-01",
             "location": "Clay Kaserne",
             "students_count": 15,
@@ -174,7 +174,7 @@ class TestTeachingHistory:
     def test_teaching_requires_instructor(self, instructor_client):
         resp = instructor_client.post("/teaching-history", json={
             "instructor_id": "NONEXIST",
-            "course_id": "TM-10",
+            "course_id": "SL 1",
             "event_date": "2026-03-01",
         })
         assert resp.status_code == 404
@@ -186,12 +186,12 @@ class TestTeachingHistory:
 class TestCoverage:
     def test_coverage_matrix(self, instructor_client):
         create_instructor(instructor_client)
-        create_cert(instructor_client, course_id="TM-10")
+        create_cert(instructor_client, course_id="SL 1")
         resp = instructor_client.get("/coverage")
         assert resp.status_code == 200
         data = resp.json()
-        # Should have an entry for TM-10 with count >= 1
-        tm10 = [c for c in data if c["course_id"] == "TM-10"]
+        # Should have an entry for SL 1 with count >= 1
+        tm10 = [c for c in data if c["course_id"] == "SL 1"]
         assert len(tm10) == 1
         assert tm10[0]["certified_count"] >= 1
 

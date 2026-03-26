@@ -1,7 +1,7 @@
-# CONCEPTS GUIDE — TM-40M COMPANION — MACHINE LEARNING ENGINEER · MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 4M COMPANION — MACHINE LEARNING ENGINEER · MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** The ML Engineer builds, validates, and maintains production ML models that generate operationally useful predictions. The MLE owns the full model lifecycle — from raw feature engineering through deployed drift detection. That ownership does not end at deployment.
-> **Purpose:** Develops the mental models required to build, deploy, and maintain ML models on MSS effectively. Read before beginning TM-40M task instruction.
+> **Purpose:** Develops the mental models required to build, deploy, and maintain ML models on MSS effectively. Read before beginning SL 4M task instruction.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -18,9 +18,9 @@
 | **AI Engineer vs. MLE** | The AIE integrates LLMs, agent frameworks, and RAG into operational workflows. The MLE's tools are statistical learning, feature pipelines, and model validation. The MLE owns the predictive ML component; the AIE owns the orchestration layer around it. |
 | **Software Engineer vs. MLE** | The SWE writes application code: front-end logic, API services, data infrastructure. The MLE is accountable for the model artifact and its behavior in production — not the surrounding application code. |
 
-> **NOTE — DDOF Phases 4-5 for ML:** TM-40M now maps DDOF Phase 4 (Analyze) and Phase 5 (Disseminate) to the MLE lifecycle, establishing where model training, evaluation, and deployment of model-backed properties fit within the broader data operations framework.
+> **NOTE — DDOF Phases 4-5 for ML:** SL 4M now maps DDOF Phase 4 (Analyze) and Phase 5 (Disseminate) to the MLE lifecycle, establishing where model training, evaluation, and deployment of model-backed properties fit within the broader data operations framework.
 
-> **NOTE — VAULTIS-A Governance for ML Models:** TM-40M references the UDRA VAULTIS-A standard as the governance baseline for all ML model outputs written to the Ontology. Every model-backed property must satisfy VAULTIS-A criteria before production promotion.
+> **NOTE — VAULTIS-A Governance for ML Models:** SL 4M references the UDRA VAULTIS-A standard as the governance baseline for all ML model outputs written to the Ontology. Every model-backed property must satisfy VAULTIS-A criteria before production promotion.
 
 > **WARNING — ADP 3-13 Human-Machine Teaming:** Per ADP 3-13, ML model outputs informing operational decisions require explicit human-in-the-loop review. Automated actions triggered solely by model predictions without human approval are not authorized in USAREUR-AF operational workflows.
 
@@ -432,22 +432,22 @@ Bias mitigation is most effective during feature engineering and training, not a
 
 ## CURRICULUM NOTES
 
-**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED before beginning TM-40M or this guide. Python proficiency (scikit-learn, PyTorch or statsmodels, SQL) is separately required.
+**Prerequisite:** SL 3 (Advanced Builder) is REQUIRED before beginning SL 4M or this guide. Python proficiency (scikit-learn, PyTorch or statsmodels, SQL) is separately required.
 
-**Advanced track:** TM-40M graduates should pursue **TM-50M (Advanced ML Engineer)** as the next step in the specialist progression. TM-50M addresses neural architecture selection for operational data, large-scale feature stores, advanced MLOps patterns, and federated learning considerations for coalition environments.
+**Advanced track:** SL 4M graduates should pursue **SL 5M (Advanced ML Engineer)** as the next step in the specialist progression. SL 5M addresses neural architecture selection for operational data, large-scale feature stores, advanced MLOps patterns, and federated learning considerations for coalition environments.
 
 **Peer specialist cross-references:**
-- **TM-40H (AI Engineer):** The MLE owns the model artifact; the AI Engineer owns the orchestration layer around it. These roles meet at the model/workflow interface — coordinate before any production deployment where model outputs feed AIP Logic chains.
-- **TM-40G (ORSA):** The ORSA applies methods to one-time analytical questions; the MLE builds continuously-operating prediction systems. Coordinate when a recurring prediction requirement emerges from an ORSA analysis — the ORSA defines the analytical question and validates the model approach.
-- **TM-40L (Software Engineer):** Coordinate on production pipeline implementation when model complexity exceeds standard Foundry Transforms, and on OSDK application layers that surface model-backed properties.
+- **SL 4H (AI Engineer):** The MLE owns the model artifact; the AI Engineer owns the orchestration layer around it. These roles meet at the model/workflow interface — coordinate before any production deployment where model outputs feed AIP Logic chains.
+- **SL 4G (ORSA):** The ORSA applies methods to one-time analytical questions; the MLE builds continuously-operating prediction systems. Coordinate when a recurring prediction requirement emerges from an ORSA analysis — the ORSA defines the analytical question and validates the model approach.
+- **SL 4L (Software Engineer):** Coordinate on production pipeline implementation when model complexity exceeds standard Foundry Transforms, and on OSDK application layers that surface model-backed properties.
 
-**WFF awareness:** ML models deployed on MSS attach prediction properties to Ontology objects visible to WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). A readiness prediction score is seen by Sustainment (TM-40D) staff; a threat pattern model output is seen by Intelligence (TM-40A) staff. Design model outputs and explainability with the consuming WFF function's operational context and decision authority in mind.
+**WFF awareness:** ML models deployed on MSS attach prediction properties to Ontology objects visible to WFF-qualified users (SL 4A through SL 4F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). A readiness prediction score is seen by Sustainment (SL 4D) staff; a threat pattern model output is seen by Intelligence (SL 4A) staff. Design model outputs and explainability with the consuming WFF function's operational context and decision authority in mind.
 
-> **NOTE — New Doctrine Content in TM-40M:** TM-40M now includes DDOF Phases 4-5 mapped to ML development workflow, VAULTIS-A governance applied to ML model outputs as UDRA data products, and an ADP 3-13 human-machine teaming WARNING establishing that AI enables speed but humans provide judgment.
-*This document is a prerequisite companion to TM-40M (ML Engineer). Proceed to TM-40M task instruction upon completion.*
+> **NOTE — New Doctrine Content in SL 4M:** SL 4M now includes DDOF Phases 4-5 mapped to ML development workflow, VAULTIS-A governance applied to ML model outputs as UDRA data products, and an ADP 3-13 human-machine teaming WARNING establishing that AI enables speed but humans provide judgment.
+*This document is a prerequisite companion to SL 4M (ML Engineer). Proceed to SL 4M task instruction upon completion.*
 
 ---
 
 **DISTRIBUTION RESTRICTION:** Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.
 
-**Document Control:** Version 1.0 | 2026 | USAREUR-AF Operational Data Team | Associated Manual: TM-40M
+**Document Control:** Version 1.0 | 2026 | USAREUR-AF Operational Data Team | Associated Manual: SL 4M

@@ -80,8 +80,8 @@ def seed():
             line_number=1,
             issue_type="STALE_REF",
             severity="ERROR",
-            description="Mock issue: TM-50A does not exist (stale reference)",
-            suggested_fix="TM-50 is only G through L. Remove or update.",
+            description="Mock issue: SL 5A does not exist (stale reference)",
+            suggested_fix="SL 5 is only G through L. Remove or update.",
         ))
 
         db.commit()

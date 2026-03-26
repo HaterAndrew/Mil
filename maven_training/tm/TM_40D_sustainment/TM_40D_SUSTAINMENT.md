@@ -1,7 +1,7 @@
 # TM-40D — MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** TM-40D teaches sustainment practitioners — supply sergeants, maintenance NCOs, transportation coordinators, ammunition specialists, and HR professionals — how to use MSS in daily sustainment work. No coding or pipeline development. This is operational use of a data-enabled enterprise platform in direct support of the Sustainment warfighting function.
-> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; CONCEPTS_GUIDE_TM40D_SUSTAINMENT (required before beginning this manual).
+> **Forward:** SL 4D teaches sustainment practitioners — supply sergeants, maintenance NCOs, transportation coordinators, ammunition specialists, and HR professionals — how to use MSS in daily sustainment work. No coding or pipeline development. This is operational use of a data-enabled enterprise platform in direct support of the Sustainment warfighting function.
+> **Prereqs:** SL 1, Maven User; SL 2, Builder; SL 3, Advanced Builder; CONCEPTS_GUIDE_TM40D_SUSTAINMENT (required before beginning this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Presenting MSS sustainment data to a commander without verifying data currency and source reconciliation can lead to supply, maintenance, or readiness decisions based on false situational awareness. Always confirm data-as-of timestamp and GCSS-Army source feed status before any LOGSTAT brief or commander sustainment update.**
@@ -12,7 +12,7 @@
 
 ## CHAPTER 1 — OVERVIEW: THE SUSTAINMENT WFF AND MSS
 
-**BLUF:** TM-40D teaches sustainment practitioners — supply sergeants, maintenance NCOs, transportation coordinators, ammunition specialists, and HR professionals — how to use MSS in daily sustainment work. No coding or pipeline development. This is operational use of a data-enabled enterprise platform in direct support of the Sustainment warfighting function.
+**BLUF:** SL 4D teaches sustainment practitioners — supply sergeants, maintenance NCOs, transportation coordinators, ammunition specialists, and HR professionals — how to use MSS in daily sustainment work. No coding or pipeline development. This is operational use of a data-enabled enterprise platform in direct support of the Sustainment warfighting function.
 
 ### 1-1. Sustainment Specialist Manual
 
@@ -101,11 +101,11 @@ MSS organizes sustainment data in unit-level workspaces. Each workspace mirrors 
 
 ### 1-6. Doctrinal References
 
-TM-40D is written in alignment with the following doctrinal publications. These publications are not required reading before using this manual — but sustainment practitioners who are responsible for S4 functions or sustainment command positions should be familiar with them.
+SL 4D is written in alignment with the following doctrinal publications. These publications are not required reading before using this manual — but sustainment practitioners who are responsible for S4 functions or sustainment command positions should be familiar with them.
 
 **Table 1-3. Primary Doctrinal References**
 
-| Publication | Title | Relevance to TM-40D |
+| Publication | Title | Relevance to SL 4D |
 |---|---|---|
 | ADP 4-0 | Sustainment | Sustainment WFF definition, principles, and echelon roles |
 | FM 4-0 | Sustainment Operations (Aug 2024) | Detailed sustainment procedures; LOGSTAT format |
@@ -147,30 +147,30 @@ Workspace configuration varies by sustainment echelon.
 | TSC/ESC | Theater Sustainment Command / Expeditionary Sustainment Command | Theater-level distribution, HNS tracking, ASL status, strategic LOC monitoring |
 | CSSB | Combat Sustainment Support Battalion | Area sustainment, fuel points, water points, Class I–III distribution |
 
-### 1-7. Scope: What TM-40D Covers and Does Not Cover
+### 1-7. Scope: What SL 4D Covers and Does Not Cover
 
-**TM-40D covers** supply chain management and LOGSTAT procedures for 92A, 92Y, 90A, and S4 sections; maintenance management workflows for 91-series and 915A/914A warrant officers; transportation and distribution coordination for 88-series MOSs and 88N coordinators; ammunition management procedures for 89A and 89B specialists; petroleum and water operations for 92F and 92W specialists; HR and personnel accountability for 42A specialists; field services data management for 92G food service; echelon-specific procedures from company through TSC; and degraded operations and fallback procedures.
+**SL 4D covers** supply chain management and LOGSTAT procedures for 92A, 92Y, 90A, and S4 sections; maintenance management workflows for 91-series and 915A/914A warrant officers; transportation and distribution coordination for 88-series MOSs and 88N coordinators; ammunition management procedures for 89A and 89B specialists; petroleum and water operations for 92F and 92W specialists; HR and personnel accountability for 42A specialists; field services data management for 92G food service; echelon-specific procedures from company through TSC; and degraded operations and fallback procedures.
 
-**TM-40D does NOT cover** building MSS pipelines, transforms, or dashboards — see TM-20 and TM-30; ontology modification or dataset schema changes — see TM-30; machine learning models — see TM-40M (TM-50M); GCSS-Army transaction entry procedures — see GCSS-Army user documentation; SAMS-E work order entry — see SAMS-E user manuals; or IPPS-A personnel transactions — see IPPS-A user documentation.
+**SL 4D does NOT cover** building MSS pipelines, transforms, or dashboards — see SL 2 and SL 3; ontology modification or dataset schema changes — see SL 3; machine learning models — see SL 4M (SL 5M); GCSS-Army transaction entry procedures — see GCSS-Army user documentation; SAMS-E work order entry — see SAMS-E user manuals; or IPPS-A personnel transactions — see IPPS-A user documentation.
 
 ### 1-8. Relationship to Other TMs in the MSS Curriculum
 
 **Table 1-5. TM Curriculum Relationships**
 
-| TM | Title | Relationship to TM-40D |
+| TM | Title | Relationship to SL 4D |
 |---|---|---|
-| TM-10 | Maven User | Foundation prerequisite. Platform navigation, basic data access. Required before this manual. |
-| TM-20 | Builder | Required as prerequisite (Go evaluation on file). Builder skills are not exercised in this track — TM-40D practitioners consume pre-built products. The TM-20 cert is part of the progression chain to TM-30. |
-| TM-30 | Advanced Builder | Required prerequisite (Go evaluation on file). Advanced builder skills are not exercised in this track — TM-40D practitioners consume pre-built products. TM-30 completion certifies platform literacy at the level required before WFF track enrollment. |
-| TM-40A | Intelligence | Companion. Intel products feed threat data; sustainment data (LOC status, supply point security) feeds intel picture. |
-| TM-40B | Fires | Companion. Ammunition management (Ch. 5) requires coordination with fires WFF for CSR and expenditure data. |
-| TM-40C | Movement and Maneuver | Companion. Maneuver unit readiness and supply status feed the sustainment picture; sustainment constraints feed the maneuver plan. |
-| TM-40D | Sustainment | This manual. |
-| TM-40E | Protection | Complementary. Force protection data affects sustainment convoy routes and supply point security. |
-| TM-40F | Mission Command | Complementary. S4 sustainment products contribute to the COP (S3 product); LOGSTAT feeds commander FFIR monitoring. |
-| TM-50G–O | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq TM-30). Not applicable to operational sustainment practitioners. |
+| SL 1 | Maven User | Foundation prerequisite. Platform navigation, basic data access. Required before this manual. |
+| SL 2 | Builder | Required as prerequisite (Go evaluation on file). Builder skills are not exercised in this track — SL 4D practitioners consume pre-built products. The SL 2 cert is part of the progression chain to SL 3. |
+| SL 3 | Advanced Builder | Required prerequisite (Go evaluation on file). Advanced builder skills are not exercised in this track — SL 4D practitioners consume pre-built products. SL 3 completion certifies platform literacy at the level required before WFF track enrollment. |
+| SL 4A | Intelligence | Companion. Intel products feed threat data; sustainment data (LOC status, supply point security) feeds intel picture. |
+| SL 4B | Fires | Companion. Ammunition management (Ch. 5) requires coordination with fires WFF for CSR and expenditure data. |
+| SL 4C | Movement and Maneuver | Companion. Maneuver unit readiness and supply status feed the sustainment picture; sustainment constraints feed the maneuver plan. |
+| SL 4D | Sustainment | This manual. |
+| SL 4E | Protection | Complementary. Force protection data affects sustainment convoy routes and supply point security. |
+| SL 4F | Mission Command | Complementary. S4 sustainment products contribute to the COP (S3 product); LOGSTAT feeds commander FFIR monitoring. |
+| SL 5G–O | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq SL 3). Not applicable to operational sustainment practitioners. |
 
-> **NOTE: TM-20 and TM-30 are required as prerequisites (Go evaluations on file) but builder skills are not exercised in this manual. TM-40D assumes no ability to build pipelines or transforms. If you encounter a sustainment data product that does not exist and needs to be built, coordinate with your unit's designated MSS Builder (TM-30 qualified) or the C2DAO.**
+> **NOTE: SL 2 and SL 3 are required as prerequisites (Go evaluations on file) but builder skills are not exercised in this manual. SL 4D assumes no ability to build pipelines or transforms. If you encounter a sustainment data product that does not exist and needs to be built, coordinate with your unit's designated MSS Builder (SL 3 qualified) or the C2DAO.**
 
 ### 1-9. Audience and MOS Coverage
 
@@ -192,7 +192,7 @@ Workspace configuration varies by sustainment echelon.
 
 ### 1-10. How to Use This Manual
 
-TM-40D is organized by sustainment function. Read Chapter 1 in full before beginning any other chapter. Subsequent chapters are organized by supply class and functional area — read the chapters that apply to your MOS and duty position. Not every practitioner needs every chapter.
+SL 4D is organized by sustainment function. Read Chapter 1 in full before beginning any other chapter. Subsequent chapters are organized by supply class and functional area — read the chapters that apply to your MOS and duty position. Not every practitioner needs every chapter.
 
 **Reading guide by MOS/position:**
 
@@ -217,7 +217,7 @@ TM-40D is organized by sustainment function. Read Chapter 1 in full before begin
 Before beginning this manual, verify the following:
 
 **Platform prerequisites:**
-- [ ] TM-10 complete — can log into MSS, navigate Workshop, access assigned datasets, and use standard dashboard views
+- [ ] SL 1 complete — can log into MSS, navigate Workshop, access assigned datasets, and use standard dashboard views
 - [ ] CONCEPTS_GUIDE_TM40D complete — Sustainment doctrine/MSS integration mental models established
 - [ ] MSS account provisioned with appropriate role and permissions — coordinate with unit S6
 - [ ] GCSS-Army account active and current with appropriate role for your unit and function
@@ -1794,7 +1794,7 @@ Use this checklist before every distribution synchronization meeting or LOGSTAT 
 
 ---
 
-*TM-40D, Version 1.0, March 2026*
+*SL 4D, Version 1.0, March 2026*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 
 **DoD and Army Strategic References:**

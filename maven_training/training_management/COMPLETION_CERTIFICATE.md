@@ -8,7 +8,7 @@
 
 ---
 
-## CERTIFICATE — STANDARD FORMAT (TM-10 through TM-30)
+## CERTIFICATE — STANDARD FORMAT (SL 1 through SL 3)
 
 ```
 ╔══════════════════════════════════════════════════════════════════════════╗
@@ -27,7 +27,7 @@
 ║  has successfully completed                                              ║
 ║                                                                          ║
 ║  ___________________________________________________________________     ║
-║              (Course Title and Level, e.g., TM-20 Builder)              ║
+║              (Course Title and Level, e.g., SL 2 Builder)              ║
 ║                                                                          ║
 ║  Maven Smart System (MSS) Training                                      ║
 ║  USAREUR-AF Operational Data Team — C2DAO                               ║
@@ -50,7 +50,7 @@
 
 ---
 
-## CERTIFICATE — SPECIALIST TRACK FORMAT (TM-40 series)
+## CERTIFICATE — SPECIALIST TRACK FORMAT (SL 4 series)
 
 ```
 ╔══════════════════════════════════════════════════════════════════════════╗
@@ -68,15 +68,15 @@
 ║  has successfully completed                                              ║
 ║                                                                          ║
 ║  ___________________________________________________________________     ║
-║         (Course Title, e.g., TM-40G ORSA Specialist Track)              ║
+║         (Course Title, e.g., SL 4G ORSA Specialist Track)              ║
 ║                                                                          ║
 ║  Maven Smart System (MSS) Specialist Training                           ║
 ║  USAREUR-AF Operational Data Team — C2DAO                               ║
 ║                                                                          ║
 ║  Prerequisites Verified:                                                 ║
-║    TM-10 Go Date: _____________                                          ║
-║    TM-20 Go Date: _____________                                          ║
-║    TM-30 Go Date: _____________  (if applicable)                        ║
+║    SL 1 Go Date: ______________                                          ║
+║    SL 2 Go Date: ______________                                          ║
+║    SL 3 Go Date: ______________  (if applicable)                        ║
 ║                                                                          ║
 ║  Course Dates: ____________________                                      ║
 ║  Evaluation Date: _________________                                      ║
@@ -101,9 +101,9 @@
 
 ---
 
-## COMMANDER NOTIFICATION LETTER (TM-30 and above)
+## COMMANDER NOTIFICATION LETTER (SL 3 and above)
 
-For TM-30 and above completions, C2DAO sends a notification letter to the trainee's commander.
+For SL 3 and above completions, C2DAO sends a notification letter to the trainee's commander.
 
 ```
 DEPARTMENT OF THE ARMY
@@ -136,8 +136,8 @@ SUBJECT: Maven Smart System Training Completion Notification
    requirements specified in the MSS Mission Training Plan. Annual
    sustainment requirements include:
 
-   - Annual TM-10 refresher (all levels)
-   - Quarterly build exercises (TM-20 and above)
+   - Annual SL 1 refresher (all levels)
+   - Quarterly build exercises (SL 2 and above)
    - New feature familiarization training after major platform updates
 
 4. Questions regarding this certification should be directed to the C2DAO
@@ -157,7 +157,7 @@ Chief, C2DAO Training and Standards Division
 
 ## NO-GO NOTIFICATION LETTER
 
-For No-Go results requiring commander notification (TM-40 series):
+For No-Go results requiring commander notification (SL 4 series):
 
 ```
 DEPARTMENT OF THE ARMY
@@ -228,17 +228,17 @@ COURSE COMPLETION RECORD:
 
 Course       | Date    | Location | Evaluator     | Result
 -------------|---------|----------|---------------|-------
-TM-10        |         |          |               | GO
-TM-20        |         |          |               | GO
-TM-30        |         |          |               | GO
-TM-40_       |         |          |               | GO
+SL 1         |         |          |               | GO
+SL 2         |         |          |               | GO
+SL 3         |         |          |               | GO
+SL 4_        |         |          |               | GO
 
 SUSTAINMENT TRAINING:
 
 Event                           | Date    | Verified By
 --------------------------------|---------|-------------
-Annual TM-10 Refresher          |         |
-Annual TM-10 Refresher          |         |
+Annual SL 1 Refresher            |         |
+Annual SL 1 Refresher            |         |
 Quarterly Build Exercise        |         |
 New Feature Familiarization     |         |
 

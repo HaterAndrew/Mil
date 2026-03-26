@@ -1,12 +1,12 @@
-# PRE-TEST — TM-40F: MISSION COMMAND
+# PRE-TEST — SL 4F: MISSION COMMAND
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40F: Mission Command WFF Track |
+| **Course** | SL 4F: Mission Command WFF Track |
 | **Form** | Pre-Test |
-| **Level** | TM-40F (WFF Track) |
-| **Audience** | G3/S3 staff, battle captains, XOs, CDRs; prerequisite: TM-10 + TM-20 + TM-30 complete |
+| **Level** | SL 4F (WFF Track) |
+| **Audience** | G3/S3 staff, battle captains, XOs, CDRs; prerequisite: SL 1 + SL 2 + SL 3 complete |
 | **Time Allowed** | 20 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

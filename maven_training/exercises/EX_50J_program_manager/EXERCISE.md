@@ -1,11 +1,11 @@
 # EX_50J — Advanced Program Management
-## Practical Exercise — TM-50J Proficiency
+## Practical Exercise — SL 5J Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40J complete (Go on file); TM-50J course completion; Workshop access confirmed |
-| **Duration** | 4–5 hours (typically executed Day 3 of TM-50J) |
+| **Prerequisite** | SL 4J complete (Go on file); SL 5J course completion; Workshop access confirmed |
+| **Duration** | 4–5 hours (typically executed Day 3 of SL 5J) |
 | **Environment** | MSS Workshop (standard PM access); no Code Workspace or pipeline access required; see ENVIRONMENT_SETUP.md |
 | **Companion TM** | TM_50J_PROGRAM_MANAGER_ADVANCED.md |
 | **Syllabus** | SYLLABUS_TM50J |

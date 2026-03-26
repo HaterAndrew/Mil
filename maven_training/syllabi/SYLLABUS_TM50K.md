@@ -1,20 +1,20 @@
-# COURSE SYLLABUS — TM-50K: ADVANCED KNOWLEDGE MANAGEMENT
+# COURSE SYLLABUS — SL 5K: ADVANCED KNOWLEDGE MANAGEMENT
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Level** | TM-50K — Advanced Knowledge Manager Specialist Track |
+| **Level** | SL 5K — Advanced Knowledge Manager Specialist Track |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-40K complete (Go evaluation on file); 12+ months active KM practice in a military or large organizational context; demonstrated experience designing knowledge systems, not just operating them |
+| **Prerequisites** | SL 4K complete (Go evaluation on file); 12+ months active KM practice in a military or large organizational context; demonstrated experience designing knowledge systems, not just operating them |
 | **Audience** | Senior KMOs, organizational knowledge architects, KM leads managing enterprise-level institutional knowledge systems on MSS |
 | **Format** | Seminar + architecture workshop + evaluated knowledge system design |
 | **Location** | MSS Training Environment (Workshop, AIP Logic, Pipeline Builder access required) |
 
-> **PREREQUISITE WARNING:** TM-50K is not required for most KM billets. It is intended for KMOs designing enterprise knowledge architectures, integrating AI augmentation into institutional memory systems, or leading cross-organizational KM initiatives.
+> **PREREQUISITE WARNING:** SL 5K is not required for most KM billets. It is intended for KMOs designing enterprise knowledge architectures, integrating AI augmentation into institutional memory systems, or leading cross-organizational KM initiatives.
 
 ---
 
-**BLUF:** TM-50K moves beyond individual lessons-learned systems (TM-40K) to the design and governance of enterprise knowledge architectures — multi-domain taxonomies, AI-augmented synthesis and retrieval, knowledge system interoperability, and the organizational discipline required to prevent institutional memory from degrading over time. TM-50K practitioners design systems that outlast individual personnel.
+**BLUF:** SL 5K moves beyond individual lessons-learned systems (SL 4K) to the design and governance of enterprise knowledge architectures — multi-domain taxonomies, AI-augmented synthesis and retrieval, knowledge system interoperability, and the organizational discipline required to prevent institutional memory from degrading over time. SL 5K practitioners design systems that outlast individual personnel.
 
 ---
 
@@ -81,7 +81,7 @@ Complete **5+ duty days before Day 1:**
 
 | Time | Block | Method | Content |
 |---|---|---|---|
-| 0800–0900 | 10 | Workshop | Knowledge system health audit methodology: structured evaluation against TM-50K health checklist |
+| 0800–0900 | 10 | Workshop | Knowledge system health audit methodology: structured evaluation against SL 5K health checklist |
 | 0900–1030 | 11 | Workshop | Participant system audit: evaluate your pre-prepared knowledge system against the checklist; identify top 3 remediation priorities |
 | 1030–1045 | — | Break | |
 | 1045–1100 | 12 | Brief | Practical evaluation scenario brief |
@@ -95,13 +95,13 @@ Complete **5+ duty days before Day 1:**
 
 ## Peer Advanced Tracks
 
-| Track | Relevance to TM-50K |
+| Track | Relevance to SL 5K |
 |---|---|
-| TM-50H (Advanced AI Eng) | AI-augmented knowledge synthesis; enterprise RAG architecture for organizational knowledge retrieval |
-| TM-50J (Advanced PM) | Portfolio-level institutional memory; KM systems supporting multi-program delivery governance |
-| TM-50G (Advanced ORSA) | ORSA products as knowledge artifacts; versioning and retention requirements for analytical products and assumption registers |
+| SL 5H (Advanced AI Eng) | AI-augmented knowledge synthesis; enterprise RAG architecture for organizational knowledge retrieval |
+| SL 5J (Advanced PM) | Portfolio-level institutional memory; KM systems supporting multi-program delivery governance |
+| SL 5G (Advanced ORSA) | ORSA products as knowledge artifacts; versioning and retention requirements for analytical products and assumption registers |
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*Syllabus TM-50K | Version 1.0 | March 2026*
+*Syllabus SL 5K | Version 1.0 | March 2026*

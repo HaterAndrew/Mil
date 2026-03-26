@@ -19,7 +19,7 @@ The evaluator is the single point of accountability for Go/No-Go determinations.
 - Completes the Evaluation Record (Appendix A) for each participant
 - Forwards completed records to C2DAO Training Division for filing
 
-The evaluator does not provide platform instruction during the bootcamp. If a participant needs instruction rather than consultation, the evaluator flags this to the SME and, if warranted, documents a No-Go with a TM-30 redirect recommendation.
+The evaluator does not provide platform instruction during the bootcamp. If a participant needs instruction rather than consultation, the evaluator flags this to the SME and, if warranted, documents a No-Go with a SL 3 redirect recommendation.
 
 ---
 
@@ -31,7 +31,7 @@ SME duties:
 - Available throughout build days for 1:1 consultation
 - Runs or co-runs daily standup
 - Escalates blockers to the evaluator when scope changes are needed
-- Documents any projects that surface TM-40 requirements during the bootcamp (see Section 3)
+- Documents any projects that surface SL 4 requirements during the bootcamp (see Section 3)
 
 SME does not: instruct, build participant products, approve scope changes without evaluator coordination.
 
@@ -39,13 +39,13 @@ SME does not: instruct, build participant products, approve scope changes withou
 
 ## 3. SCOPE ESCALATION PROCEDURE
 
-When a participant's project turns out to require work beyond TM-20/30 scope (Python, TypeScript, OSDK, or code-level transforms), the SME and evaluator jointly:
+When a participant's project turns out to require work beyond SL 2/30 scope (Python, TypeScript, OSDK, or code-level transforms), the SME and evaluator jointly:
 
 1. Notify the participant on the day the code requirement surfaces
 2. Assess whether a no-code alternative can meet the validated problem statement
    - If yes: redirect to no-code approach, document the change in the evaluation record
-   - If no: issue a partial credit note — participant receives documentation credit for the Project Brief and Handoff Package, but No-Go on functional product; recommend appropriate TM-40 track for enrollment
-3. Document in the evaluation record: what was built, what could not be completed, what TM-40 track is recommended
+   - If no: issue a partial credit note — participant receives documentation credit for the Project Brief and Handoff Package, but No-Go on functional product; recommend appropriate SL 4 track for enrollment
+3. Document in the evaluation record: what was built, what could not be completed, what SL 4 track is recommended
 
 ---
 
@@ -95,7 +95,7 @@ Go when all four standards are met (see FBC_GUIDE.md Chapter 5):
 Within 5 duty days of bootcamp close:
 - [ ] Evaluation records filed with C2DAO Training Division
 - [ ] Go participants notified in writing; unit Training NCO/Officer copied
-- [ ] No-Go participants counseled; remediation plan documented (re-bootcamp or TM-30 redirect)
+- [ ] No-Go participants counseled; remediation plan documented (re-bootcamp or SL 3 redirect)
 - [ ] Any products requiring data steward coordination flagged to the unit Data Steward
 - [ ] Bootcamp after-action report drafted (see Appendix B)
 
@@ -121,7 +121,7 @@ Governance:                  GO / NO-GO
 OVERALL:                     GO / NO-GO
 
 NOTES:
-[Observations, partial completions, scope escalations, TM-40 recommendations]
+[Observations, partial completions, scope escalations, SL 4 recommendations]
 
 Evaluator signature: _________________ Date: _________
 ```
@@ -141,7 +141,7 @@ PARTICIPANTS: [Total enrolled / Total completed (Go) / Total No-Go]
 PRODUCTS BUILT:
 [List each product, participant, and Go/No-Go outcome]
 
-SCOPE ESCALATIONS (TM-40 redirects):
+SCOPE ESCALATIONS (SL 4 redirects):
 [List any projects that surfaced code requirements and recommended tracks]
 
 SME OBSERVATIONS:

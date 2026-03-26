@@ -1,12 +1,12 @@
-# POST-TEST — TM-50O: ADVANCED PLATFORM ENGINEER
+# POST-TEST — SL 5O: ADVANCED PLATFORM ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-50O: Advanced Platform Engineer |
+| **Course** | SL 5O: Advanced Platform Engineer |
 | **Form** | Post-Test |
-| **Level** | TM-50O (Advanced Specialist) |
-| **Audience** | Experienced platform engineers completing TM-50O training |
+| **Level** | SL 5O (Advanced Specialist) |
+| **Audience** | Experienced platform engineers completing SL 5O training |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (39/56) |
 
@@ -14,7 +14,7 @@
 
 ## INSTRUCTIONS
 
-This assessment evaluates knowledge and skills gained during TM-50O training. Answer all questions. A score of 70% or higher is required for course credit.
+This assessment evaluates knowledge and skills gained during SL 5O training. Answer all questions. A score of 70% or higher is required for course credit.
 
 ---
 
@@ -100,7 +100,7 @@ D. Only alert on hardware failures
 
 **13. You are responsible for the MSS fleet upgrade from Kubernetes 1.29 to 1.30. Your fleet has 3 dev/test clusters, 1 canary production cluster, 4 regional hub clusters, and 12 edge clusters. Describe your upgrade plan: wave structure, validation gates between waves, rollback criteria, and how you would handle an edge cluster that is disconnected during its upgrade window.**
 
-**14. The ISSM reports that the MSS ATO annual review is in 60 days and asks for compliance evidence across all clusters. Under the traditional process, this would take two engineers 4 weeks of manual evidence gathering. Describe how TM-50O continuous compliance automation addresses this: what evidence is already being generated, how is it stored, and how would you produce the ATO package.**
+**14. The ISSM reports that the MSS ATO annual review is in 60 days and asks for compliance evidence across all clusters. Under the traditional process, this would take two engineers 4 weeks of manual evidence gathering. Describe how SL 5O continuous compliance automation addresses this: what evidence is already being generated, how is it stored, and how would you produce the ATO package.**
 
 ---
 

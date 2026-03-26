@@ -411,7 +411,7 @@ elif page == "Record Sync":
 
     notes = st.text_area(
         "Sync notes (optional)",
-        placeholder="e.g., Deployed TM-40 updates to SharePoint + Cloudflare Pages",
+        placeholder="e.g., Deployed SL 4 updates to SharePoint + Cloudflare Pages",
         max_chars=500,
     )
 

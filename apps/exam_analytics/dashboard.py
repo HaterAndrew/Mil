@@ -151,10 +151,10 @@ def load_question_improvement(pre_id: int, post_id: int):
 # ---------------------------------------------------------------------------
 # Foundation / All course filter
 # ---------------------------------------------------------------------------
-FOUNDATION_COURSES = ["TM-10", "TM-20", "TM-30"]
+FOUNDATION_COURSES = ["SL 1", "SL 2", "SL 3"]
 
 TRACK_OPTIONS = {
-    "Foundation (TM-10/20/30)": FOUNDATION_COURSES,
+    "Foundation (SL 1/2/3)": FOUNDATION_COURSES,
     "All Courses": None,  # None = no filter
 }
 

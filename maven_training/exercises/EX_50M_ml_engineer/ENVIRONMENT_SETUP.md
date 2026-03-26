@@ -1,4 +1,4 @@
-# ENVIRONMENT SETUP — EX_50M Advanced ML Engineer (TM-50M)
+# ENVIRONMENT SETUP — EX_50M Advanced ML Engineer (SL 5M)
 
 **Companion resources:** TM_50M_ML_ENGINEER_ADVANCED.md | SYLLABUS_TM50M | EXAM_TM50M_POST
 

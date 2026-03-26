@@ -38,7 +38,7 @@ class ImproveItemOut(ImproveItemCreate):
 
 class StudentEvalCreate(BaseModel):
     trainee_name: str = Field(..., min_length=1)
-    tm_level: str = Field(..., pattern=r"^TM-\d{2}[A-HJ-O]?$")
+    tm_level: str = Field(..., pattern=r"^(SL [1-5][A-HJ-O]?|EXEC|T3-[IF])$")
     result: Literal["GO", "NO_GO"]
     notes: str | None = None
 

@@ -45,7 +45,7 @@ D. Instructors must circulate to at least 75% of student workstations per block
 
 **4. Which of the following correctly describes the relationship between TCS and T&EOs?**
 
-A. TCS applies only to TM-10; T&EOs apply to all courses
+A. TCS applies only to SL 1; T&EOs apply to all courses
 B. TCS is used for lectures; T&EOs are used for lab exercises
 C. TCS defines learning objectives; T&EOs translate those objectives into observable, scorable performance measures
 D. TCS and T&EOs are independent systems that serve different purposes
@@ -57,7 +57,7 @@ B. Move on to the next block and tell stuck students to catch up during the brea
 C. Stop individual assistance and do a group demonstration of the step everyone is stuck on
 D. Extend the lab by 30 minutes to give everyone more time
 
-**6. During a TM-20 Go/No-Go evaluation, a trainee builds a correct pipeline but uses a different transform sequence than the one taught in the course. The evaluator should:**
+**6. During a SL 2 Go/No-Go evaluation, a trainee builds a correct pipeline but uses a different transform sequence than the one taught in the course. The evaluator should:**
 
 A. Give No-Go — the trainee deviated from the taught procedure
 B. Give Go — the result meets the standard, and the T&EO does not specify a required method
@@ -104,9 +104,9 @@ D. To evaluate the instructor's performance against the 7 criteria
 
 **13. Describe the 4 steps of Phase 2 (Supervised Practicum) and the approximate timeline for completion.**
 
-**14. A TM-30 trainee builds an Ontology with a non-unique primary key. The trainee does not notice the problem during the build because no error is displayed. During the evaluation, you observe that duplicate Objects are being created. Is this a Go or No-Go? Explain your reasoning by reference to the T&EO.**
+**14. A SL 3 trainee builds an Ontology with a non-unique primary key. The trainee does not notice the problem during the build because no error is displayed. During the evaluation, you observe that duplicate Objects are being created. Is this a Go or No-Go? Explain your reasoning by reference to the T&EO.**
 
-**15. You are delivering TM-20. Three students finished the pipeline building exercise 20 minutes early. Five students are on pace. Two students are significantly behind and have stopped asking for help. Describe your plan for the next 20 minutes.**
+**15. You are delivering SL 2. Three students finished the pipeline building exercise 20 minutes early. Five students are on pace. Two students are significantly behind and have stopped asking for help. Describe your plan for the next 20 minutes.**
 
 ---
 
@@ -114,9 +114,9 @@ D. To evaluate the instructor's performance against the 7 criteria
 
 *Read the scenario and answer the question. (6 points)*
 
-**16. You are evaluating a TM-10 practical exercise. The trainee completes all tasks correctly except for one: when exporting data, the trainee applies the wrong classification marking. This performance measure is marked as a Critical Item in T&EO TM10-06.**
+**16. You are evaluating a SL 1 practical exercise. The trainee completes all tasks correctly except for one: when exporting data, the trainee applies the wrong classification marking. This performance measure is marked as a Critical Item in T&EO TM10-06.**
 
-**The trainee performed well on all other tasks and clearly understands the platform. The trainee's unit urgently needs them to have TM-10 qualification.**
+**The trainee performed well on all other tasks and clearly understands the platform. The trainee's unit urgently needs them to have SL 1 qualification.**
 
 **What is your evaluation decision? What actions do you take after the evaluation? Describe the counseling you would provide.**
 
@@ -141,7 +141,7 @@ D. To evaluate the instructor's performance against the 7 criteria
 | 11 | Redirect: "Let me walk you through the thinking. What are you trying to accomplish?" Guide them through the reasoning, not the clicks. During instruction you scaffold — you don't take the keyboard. This develops independence. If you solve it for them, they learn nothing. (Help gradient reference) | 4 | T3-I Course Content §5-2 |
 | 12 | During instruction: coach, help, unblock, scaffold. During evaluation: observe, score, document — no assistance. If you assist during evaluation, the result is void and the trainee must be re-evaluated. Blurring these roles either certifies unqualified personnel or denies help to trainees who need it. | 4 | T3-I Concepts Guide §3 |
 | 13 | P2-1: Co-teach (deliver 40%+ blocks, 1 iteration, within 90 days). P2-2: Lead observed (full course, observer 2+ blocks/day, within 60 days of P2-1). P2-3: Evaluator observation (optional, 1 complete Go/No-Go under observation). P2-4: Certification memo signed. | 4 | T3-I Course Content §7-2 |
-| 14 | No-Go. Primary key uniqueness is a T&EO performance measure (TM-30 Ontology design). Duplicate Objects being created means the PK selection failed the standard. The trainee did not notice the silent failure, which makes the error more dangerous — in production, this would corrupt downstream data. The standard is the arbiter, not the trainee's intent. | 4 | T3-I Course Content §6-2; TM-30 Syllabus Design Rubric |
+| 14 | No-Go. Primary key uniqueness is a T&EO performance measure (SL 3 Ontology design). Duplicate Objects being created means the PK selection failed the standard. The trainee did not notice the silent failure, which makes the error more dangerous — in production, this would corrupt downstream data. The standard is the arbiter, not the trainee's intent. | 4 | T3-I Course Content §6-2; SL 3 Syllabus Design Rubric |
 | 15 | (1) Assign early finishers a stretch task or pair them with the behind students. (2) Approach the two behind students proactively — they've stopped asking, which means they're disengaged. Ask "what step are you on?" and guide them. (3) Do not slow the class for 2 students; do not ignore them either. (4) Announce a time check for the class. | 4 | T3-I Course Content §5-1, §5-3, §5-4 |
 | 16 | **Decision: No-Go.** Classification marking is a Critical Item — failure is automatic No-Go regardless of all other performance. Unit urgency does not change the standard. **Actions:** (1) Document the No-Go on T&EO TM10-06 scoring sheet, marking the specific critical item failed. (2) Same-day counseling: "You performed well on all tasks except classification marking, which is a critical item. Here is what you need to do differently." (3) Draft remediation plan: review classification rules, practice export with correct markings. (4) Schedule re-evaluation within 10 duty days. (5) Report No-Go to C2DAO per standard procedure. | 6 | T3-I Course Content §6-2, §6-3 |
 

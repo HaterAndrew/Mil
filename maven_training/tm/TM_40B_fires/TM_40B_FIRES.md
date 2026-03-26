@@ -1,6 +1,6 @@
 # TM-40B — MAVEN SMART SYSTEM (MSS)
 
-> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; CONCEPTS_GUIDE_TM40B_FIRES (required before beginning this manual). No coding, pipeline development, or transform experience is required or assumed.
+> **Prereqs:** SL 1, Maven User; SL 2, Builder; SL 3, Advanced Builder; CONCEPTS_GUIDE_TM40B_FIRES (required before beginning this manual). No coding, pipeline development, or transform experience is required or assumed.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Using stale MSS target data or FSCM overlays to clear fires without cross-checking against the establishing authority can result in fratricide or violation of ROE. Always confirm FSCM publication date and data-as-of timestamp before clearing any fire mission near a coordination boundary.**
@@ -22,7 +22,7 @@
 
 1-3a. This manual is organized to move from the general to the specific: Chapter 1 provides orientation and context; Chapters 2 through 4 cover the core FA fires tasks (targeting, fire support planning, fire direction); Chapter 5 covers AMD operations; Chapter 6 covers sensor operations and C-RAM; Chapters 7 through 9 cover joint fires integration, assessment and reporting, and echelon-specific applications; Chapter 10 addresses degraded operations; and Chapter 11 addresses training and proficiency. Read the relevant chapters for your duty position. All fires personnel should read Chapters 1 and 10 regardless of MOS.
 
-1-3b. This manual does not address MSS system administration, data pipeline management, or technical platform architecture. Those topics are addressed in TM-30 (Advanced Builder) and TM-40L (Software Engineer). If a fires task in this manual cannot be executed because of a platform configuration issue, report the issue to the unit S6 and the USAREUR-AF C2DAO fires functional representative rather than attempting technical workarounds.
+1-3b. This manual does not address MSS system administration, data pipeline management, or technical platform architecture. Those topics are addressed in SL 3 (Advanced Builder) and SL 4L (Software Engineer). If a fires task in this manual cannot be executed because of a platform configuration issue, report the issue to the unit S6 and the USAREUR-AF C2DAO fires functional representative rather than attempting technical workarounds.
 
 ---
 
@@ -84,11 +84,11 @@
 
 ### 1-5. Doctrinal References
 
-TM-40B is written in alignment with the following doctrinal publications. These publications are not required reading before using this manual — but fires practitioners who are responsible for targeting, fire support coordination, or AMD functions should be familiar with them.
+SL 4B is written in alignment with the following doctrinal publications. These publications are not required reading before using this manual — but fires practitioners who are responsible for targeting, fire support coordination, or AMD functions should be familiar with them.
 
 **Table 1-1. Primary Doctrinal References**
 
-| Publication | Title | Relevance to TM-40B |
+| Publication | Title | Relevance to SL 4B |
 |---|---|---|
 | ADP 3-19 | Fires | Foundational fires warfighting function doctrine |
 | FM 3-09 | Fire Support and Field Artillery Operations | Capstone fires FM |
@@ -447,7 +447,7 @@ TM-40B is written in alignment with the following doctrinal publications. These 
 
 2-34. CARVER scoring in MSS supports the targeting working group (TWG) by providing a quantitative input to HPTL prioritization. The CARVER score does not replace the commander's judgment — it informs it. A target with a high CARVER score that the commander deprioritizes remains deprioritized. The score is an analytical tool, not an authority.
 
-2-35. To build a CARVER pipeline in MSS, the fires analyst configures a scoring model that pulls target attributes from the target library, computes preliminary CARVER scores based on standing criteria, and presents the scored target list to the targeting officer for validation before each TWG. See TM-40G (ORSA) for analytical pipeline construction techniques applicable to CARVER implementation.
+2-35. To build a CARVER pipeline in MSS, the fires analyst configures a scoring model that pulls target attributes from the target library, computes preliminary CARVER scores based on standing criteria, and presents the scored target list to the targeting officer for validation before each TWG. See SL 4G (ORSA) for analytical pipeline construction techniques applicable to CARVER implementation.
 
 > **NOTE: CARVER scores are perishable. A target scored as highly accessible (A=5) today may become inaccessible (A=1) tomorrow if OPFOR repositions AD assets or the weather degrades sensor coverage. Re-score CARVER at each targeting cycle, not once per operation.**
 
@@ -1594,9 +1594,9 @@ TM-40B is written in alignment with the following doctrinal publications. These 
 
 11-13. MSS onboarding sequence for fires personnel:
 
-1. Complete TM-10 (Maven User) self-paced training — navigate the MSS interface, understand workspace structure, complete basic user tasks.
-2. Complete TM-20 (Builder) self-paced training — understand MSS data objects, object sets, and basic workspace navigation.
-3. Complete TM-30 (Advanced Builder) self-paced training — advanced platform capabilities and data governance required for WFF track enrollment.
+1. Complete SL 1 (Maven User) self-paced training — navigate the MSS interface, understand workspace structure, complete basic user tasks.
+2. Complete SL 2 (Builder) self-paced training — understand MSS data objects, object sets, and basic workspace navigation.
+3. Complete SL 3 (Advanced Builder) self-paced training — advanced platform capabilities and data governance required for WFF track enrollment.
 4. Read CONCEPTS_GUIDE_TM40B_FIRES — understand the conceptual foundation before executing procedures.
 5. Read this manual (TM-40B) — focus on chapters relevant to their duty position.
 6. Observe a proficient fires team member execute each task in their MOS requirement list.
@@ -1879,38 +1879,38 @@ TM-40B is written in alignment with the following doctrinal publications. These 
 
 ### WFF Peer Tracks
 
-TM-40B is one of six Warfighting Function tracks at the same tier. All six WFF tracks require TM-10, TM-20, and TM-30 as prerequisites. Fires practitioners should develop working familiarity with TM-40A (Intelligence) and TM-40C (Movement and Maneuver) — the peer tracks with the most intensive fires coordination requirements.
+SL 4B is one of six Warfighting Function tracks at the same tier. All six WFF tracks require SL 1, SL 2, and SL 3 as prerequisites. Fires practitioners should develop working familiarity with SL 4A (Intelligence) and SL 4C (Movement and Maneuver) — the peer tracks with the most intensive fires coordination requirements.
 
 **Table. WFF Peer Track Quick Reference**
 
 | Track | Title | Prereq | Primary Fires Coordination Point |
 |-------|-------|--------|----------------------------------|
-| TM-40A | Intelligence WFF | TM-10 + TM-20 + TM-30 | Targeting workspace, ISR task/collect, BDA data |
-| TM-40B | Fires WFF | TM-10 + TM-20 + TM-30 | This manual |
-| TM-40C | Movement and Maneuver WFF | TM-10 + TM-20 + TM-30 | FSCM coordination, airspace deconfliction |
-| TM-40D | Sustainment WFF | TM-10 + TM-20 + TM-30 | CSR, ammunition status, LOGSTAT |
-| TM-40E | Protection WFF | TM-10 + TM-20 + TM-30 | AMD coordination — fires and protection share AMD data domain |
-| TM-40F | Mission Command WFF | TM-10 + TM-20 + TM-30 | CCIR monitoring, fires products to commander's COP |
+| SL 4A | Intelligence WFF | SL 1 + SL 2 + SL 3 | Targeting workspace, ISR task/collect, BDA data |
+| SL 4B | Fires WFF | SL 1 + SL 2 + SL 3 | This manual |
+| SL 4C | Movement and Maneuver WFF | SL 1 + SL 2 + SL 3 | FSCM coordination, airspace deconfliction |
+| SL 4D | Sustainment WFF | SL 1 + SL 2 + SL 3 | CSR, ammunition status, LOGSTAT |
+| SL 4E | Protection WFF | SL 1 + SL 2 + SL 3 | AMD coordination — fires and protection share AMD data domain |
+| SL 4F | Mission Command WFF | SL 1 + SL 2 + SL 3 | CCIR monitoring, fires products to commander's COP |
 
-### Specialist Tracks (Prerequisite: TM-30)
+### Specialist Tracks (Prerequisite: SL 3)
 
-For technical specialists pursuing advanced data engineering or analytical capability, specialist tracks are available after completing TM-30. Not required for fires WFF employment.
+For technical specialists pursuing advanced data engineering or analytical capability, specialist tracks are available after completing SL 3. Not required for fires WFF employment.
 
 **Table. Specialist and Advanced Track Quick Reference**
 
 | Track | Title | Advanced Track |
 |-------|-------|----------------|
-| TM-40G | ORSA | TM-50G |
-| TM-40H | AI Engineer | TM-50H |
-| TM-40M | ML Engineer | TM-50M |
-| TM-40J | Program Manager | TM-50J |
-| TM-40K | Knowledge Manager | TM-50K |
-| TM-40L | Software Engineer | TM-50L |
+| SL 4G | ORSA | SL 5G |
+| SL 4H | AI Engineer | SL 5H |
+| SL 4M | ML Engineer | SL 5M |
+| SL 4J | Program Manager | SL 5J |
+| SL 4K | Knowledge Manager | SL 5K |
+| SL 4L | Software Engineer | SL 5L |
 
 ---
 
 
-*TM-40B, Version 1.0, March 2026*
+*SL 4B, Version 1.0, March 2026*
 
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA, Wiesbaden, Germany*
 

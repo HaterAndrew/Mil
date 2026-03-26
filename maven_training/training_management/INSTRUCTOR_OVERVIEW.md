@@ -37,41 +37,41 @@ The MSS Training Program is a tiered, progressive curriculum that trains USAREUR
 ### Training Track Architecture
 
 ```
-TM-10 → TM-20 → TM-30 → TM-40 (all tracks) → TM-50 (specialist advanced only)
+SL 1 → SL 2 → SL 3 → SL 4 (all tracks) → SL 5 (specialist advanced only)
 
-T3-I (Instructor Certification)     ← prereq: TM-30 + C2DAO selection
-T3-F (MSC Force Multiplier)         ← prereq: TM-20 + CDR nomination
+T3-I (Instructor Certification)     ← prereq: SL 3 + C2DAO selection
+T3-F (MSC Force Multiplier)         ← prereq: SL 2 + CDR nomination
 ```
 
 | Level | Course | Duration | Audience | Prereq |
 |-------|--------|----------|----------|--------|
-| TM-10 | Maven User | 1 day | All MSS users | None |
-| TM-20 | Builder | 5 days | Analysts, data builders | TM-10 |
-| TM-30 | Advanced Builder | 5 days | Senior analysts, pipeline builders | TM-20 |
-| TM-40A | Intelligence WFF | 3 days | G2/S2 staff | TM-30 |
-| TM-40B | Fires WFF | 3 days | FSE, targeting teams | TM-30 |
-| TM-40C | Movement & Maneuver WFF | 3 days | G3/S3 maneuver staff | TM-30 |
-| TM-40D | Sustainment WFF | 3 days | G4/S4, FSB/BSB staff | TM-30 |
-| TM-40E | Protection WFF | 3 days | Force protection officers, CBRN | TM-30 |
-| TM-40F | Mission Command WFF | 3 days | G3/S3, battle captains, XOs | TM-30 |
-| TM-40G | ORSA | 5 days | FA49, data scientists | TM-30 |
-| TM-40H | AI Engineer | 5 days | AI engineers, AIP practitioners | TM-30 |
-| TM-40M | ML Engineer | 5 days | ML engineers | TM-30 |
-| TM-40J | Program Manager | 4 days | MSS program managers | TM-30 |
-| TM-40K | Knowledge Manager | 4 days | KMs, S6 data teams | TM-30 |
-| TM-40L | Software Engineer | 5 days | SWEs, Foundry developers | TM-30 |
-| TM-40N | UI/UX Designer | 5 days | UI/UX designers | TM-30 |
-| TM-40O | Platform Engineer | 5 days | Platform engineers | TM-30 |
-| TM-50G | Advanced ORSA | 5 days | Senior FA49, theater ORSA | TM-40G |
-| TM-50H | Advanced AI Engineer | 5 days | Senior AI engineers | TM-40H |
-| TM-50M | Advanced ML Engineer | 5 days | Senior ML engineers | TM-40M |
-| TM-50J | Advanced Program Manager | 3 days | Senior PMs | TM-40J |
-| TM-50K | Advanced Knowledge Manager | 3 days | Senior KMs | TM-40K |
-| TM-50L | Advanced Software Engineer | 5 days | Senior SWEs, platform leads | TM-40L |
-| TM-50N | Advanced UI/UX Designer | 3 days | Senior UI/UX designers | TM-40N |
-| TM-50O | Advanced Platform Engineer | 3 days | Senior platform engineers | TM-40O |
+| SL 1 | Maven User | 1 day | All MSS users | None |
+| SL 2 | Builder | 5 days | Analysts, data builders | SL 1 |
+| SL 3 | Advanced Builder | 5 days | Senior analysts, pipeline builders | SL 2 |
+| SL 4A | Intelligence WFF | 3 days | G2/S2 staff | SL 3 |
+| SL 4B | Fires WFF | 3 days | FSE, targeting teams | SL 3 |
+| SL 4C | Movement & Maneuver WFF | 3 days | G3/S3 maneuver staff | SL 3 |
+| SL 4D | Sustainment WFF | 3 days | G4/S4, FSB/BSB staff | SL 3 |
+| SL 4E | Protection WFF | 3 days | Force protection officers, CBRN | SL 3 |
+| SL 4F | Mission Command WFF | 3 days | G3/S3, battle captains, XOs | SL 3 |
+| SL 4G | ORSA | 5 days | FA49, data scientists | SL 3 |
+| SL 4H | AI Engineer | 5 days | AI engineers, AIP practitioners | SL 3 |
+| SL 4M | ML Engineer | 5 days | ML engineers | SL 3 |
+| SL 4J | Program Manager | 4 days | MSS program managers | SL 3 |
+| SL 4K | Knowledge Manager | 4 days | KMs, S6 data teams | SL 3 |
+| SL 4L | Software Engineer | 5 days | SWEs, Foundry developers | SL 3 |
+| SL 4N | UI/UX Designer | 5 days | UI/UX designers | SL 3 |
+| SL 4O | Platform Engineer | 5 days | Platform engineers | SL 3 |
+| SL 5G | Advanced ORSA | 5 days | Senior FA49, theater ORSA | SL 4G |
+| SL 5H | Advanced AI Engineer | 5 days | Senior AI engineers | SL 4H |
+| SL 5M | Advanced ML Engineer | 5 days | Senior ML engineers | SL 4M |
+| SL 5J | Advanced Program Manager | 3 days | Senior PMs | SL 4J |
+| SL 5K | Advanced Knowledge Manager | 3 days | Senior KMs | SL 4K |
+| SL 5L | Advanced Software Engineer | 5 days | Senior SWEs, platform leads | SL 4L |
+| SL 5N | Advanced UI/UX Designer | 3 days | Senior UI/UX designers | SL 4N |
+| SL 5O | Advanced Platform Engineer | 3 days | Senior platform engineers | SL 4O |
 
-**Critical note:** There is no TM-50A through TM-50F. TM-50 is specialist advanced only (G–O). All TM-40 WFF tracks (A–F) are terminal — graduates proceed to their operational role, not to a TM-50.
+**Critical note:** There is no SL 5A through SL 5F. SL 5 is specialist advanced only (G–O). All SL 4 WFF tracks (A–F) are terminal — graduates proceed to their operational role, not to a SL 5.
 
 ---
 
@@ -117,7 +117,7 @@ maven_training/
 │   ├── exams/                      ← all PRE and POST exams (with embedded answer keys)
 │   │   ├── EXAM_TM40A_PRE.md
 │   │   ├── EXAM_TM40A_POST.md
-│   │   └── ...                     ← complete for all TM-10 through TM-50 series
+│   │   └── ...                     ← complete for all SL 1 through SL 5 series
 │   ├── EX_10_operator_basics/
 │   │   ├── EXERCISE.md
 │   │   └── ENVIRONMENT_SETUP.md
@@ -139,9 +139,9 @@ maven_training/
 │       ├── TM10/TM10_LESSON_PLANS.md
 │       ├── TM20_LESSON_PLAN_OUTLINES.md
 │       ├── TM30_LESSON_PLAN_OUTLINES.md
-│       ├── TM40_WFF_LESSON_PLAN_OUTLINES.md     ← TM-40A through TM-40F
-│       ├── TM40_SPECIALIST_LESSON_PLAN_OUTLINES.md  ← TM-40G through TM-40O
-│       └── TM50_ADVANCED_LESSON_PLAN_OUTLINES.md   ← TM-50G through TM-50O
+│       ├── TM40_WFF_LESSON_PLAN_OUTLINES.md     ← SL 4A through SL 4F
+│       ├── TM40_SPECIALIST_LESSON_PLAN_OUTLINES.md  ← SL 4G through SL 4O
+│       └── TM50_ADVANCED_LESSON_PLAN_OUTLINES.md   ← SL 5G through SL 5O
 │
 ├── doctrine/                       ← Reference doctrine (not course-specific)
 │   ├── DATA_LITERACY_technical_reference.md
@@ -188,8 +188,8 @@ Complete these steps **no later than 5 duty days before Day 1** unless otherwise
 ### Training Environment (MSS Access)
 - [ ] Verify student training accounts are provisioned and accessible — have at least one student attempt login 2 days before Day 1
 - [ ] Load synthetic training data for the practical exercise — see `ENVIRONMENT_SETUP.md` for the specific course; do this yourself to verify before exercise day
-- [ ] For TM-50G/H/M/L: confirm Code Workspace with GPU allocation — **10 duty days minimum**; this is the most commonly missed lead time
-- [ ] For TM-50L: confirm CI/CD pipeline access — **10 duty days minimum**; separate from Code Workspace access
+- [ ] For SL 5G/H/M/L: confirm Code Workspace with GPU allocation — **10 duty days minimum**; this is the most commonly missed lead time
+- [ ] For SL 5L: confirm CI/CD pipeline access — **10 duty days minimum**; separate from Code Workspace access
 
 ### Evaluator
 - [ ] If you are not the evaluator for the Day 3/5 practical exercise, confirm your evaluator is briefed and has read the EXERCISE.md
@@ -217,7 +217,7 @@ Complete these steps **no later than 5 duty days before Day 1** unless otherwise
 
 ## 6. PRACTICAL EXERCISE EVALUATION
 
-The practical exercise is the primary evaluation for every TM-40 and TM-50 course. Key rules:
+The practical exercise is the primary evaluation for every SL 4 and SL 5 course. Key rules:
 
 1. **Go/No-Go is task-based.** Each task has explicit Go and No-Go criteria in EXERCISE.md. The evaluator scores each task independently; the overall course Go/No-Go is derived from the task scores per the scoring rule at the bottom of the exercise (e.g., "Go on 5 of 6 tasks = overall Go").
 
@@ -235,12 +235,12 @@ The practical exercise is the primary evaluation for every TM-40 and TM-50 cours
 
 | Level | Max Students | Min Instructors | Notes |
 |-------|-------------|-----------------|-------|
-| TM-10 | 24 | 1 | Lab sessions: 2 instructors recommended |
-| TM-20 | 18 | 1 | Day 4–5 labs: 2 instructors required |
-| TM-30 | 12 | 1 | Day 5 PE: dedicated evaluator required |
-| TM-40 (WFF A–F) | 12 | 1 | Day 3 PE: dedicated evaluator required; T:I ≤ 6:1 for PE |
-| TM-40 (Specialist G–O) | 10 | 1 | Day 3 PE: dedicated evaluator; technical depth requires T:I ≤ 5:1 |
-| TM-50 (all) | 8 | 1 | Day 5 PE: dedicated evaluator; peer review component requires instructor presence throughout |
+| SL 1 | 24 | 1 | Lab sessions: 2 instructors recommended |
+| SL 2 | 18 | 1 | Day 4–5 labs: 2 instructors required |
+| SL 3 | 12 | 1 | Day 5 PE: dedicated evaluator required |
+| SL 4 (WFF A–F) | 12 | 1 | Day 3 PE: dedicated evaluator required; T:I ≤ 6:1 for PE |
+| SL 4 (Specialist G–O) | 10 | 1 | Day 3 PE: dedicated evaluator; technical depth requires T:I ≤ 5:1 |
+| SL 5 (all) | 8 | 1 | Day 5 PE: dedicated evaluator; peer review component requires instructor presence throughout |
 
 If enrollment exceeds these caps, split sections. Do not exceed class maximums — the exercise environments are not designed for larger groups and evaluator attention cannot be maintained.
 
@@ -256,7 +256,7 @@ These are the most frequently recurring errors observed in MSS course delivery. 
 | Distributing the full exam file | Student receives the file with the answer key at the bottom | Print the student version only (everything above the "ANSWER KEY — INSTRUCTOR USE ONLY" divider); never share the file itself |
 | Coaching during the practical exercise | Telling a student what button to click when they're stuck | Observe and document; redirect environment questions; do not provide procedural hints |
 | Marking a student No-Go without evaluator form | Verbal Go/No-Go communicated; no written record | All Go/No-Go decisions require the evaluation form submitted to the training NCO; verbal is insufficient |
-| Teaching TM-40 WFF content to students without TM-30 prereq | Student enrolled "by exception" | The prereq is a hard requirement, not a recommendation; a student without TM-30 documented cannot be evaluated to the TM-40 standard; escalate to the training NCO before Day 1 |
+| Teaching SL 4 WFF content to students without SL 3 prereq | Student enrolled "by exception" | The prereq is a hard requirement, not a recommendation; a student without SL 3 documented cannot be evaluated to the SL 4 standard; escalate to the training NCO before Day 1 |
 | Conflating reported status and assessed status when demonstrating the COP | Instructor describes a data layer as "showing current status" without noting it is reported data from the last submission | Model the language explicitly: "This shows reported status as of [timestamp]. The commander's assessment may differ." This is a core distinction across all WFF tracks |
 | Skipping the PRE test | "We ran long on logistics; we'll just start the instruction" | The PRE is how you know what to emphasize on Day 1; administer it first, even if you don't have time to score it until break |
 
@@ -292,7 +292,7 @@ The USAREUR-AF C2DAO Training OIC is the certification authority for all MSS ins
 
 ### 9-4. Cross-Certification
 
-Instructors certified for one TM-40 specialist track (G–O) may cross-certify for additional tracks by completing Phases 1 and 3 for the new track. WFF tracks (A–F) require full certification pathway due to domain-specific content.
+Instructors certified for one SL 4 specialist track (G–O) may cross-certify for additional tracks by completing Phases 1 and 3 for the new track. WFF tracks (A–F) require full certification pathway due to domain-specific content.
 
 > **Reference:** TP 350-70-3, *Faculty and Staff Development Program* (TRADOC). See also `training_management/FACULTY_DEVELOPMENT_PLAN.md` for instructor qualification matrices and evaluator prerequisites.
 
@@ -317,7 +317,7 @@ For any given course, the complete instructor document set is:
 | Document | Location | Purpose |
 |----------|----------|---------|
 | TM | `tm/TM_XX_name/TM_XX_NAME.md` | Student and instructor primary reference |
-| Concepts Guide (TM-40+) | `tm/TM_XX_name/CONCEPTS_GUIDE_TMxx_NAME.md` | Supplemental background reading |
+| Concepts Guide (SL 4+) | `tm/TM_XX_name/CONCEPTS_GUIDE_TMxx_NAME.md` | Supplemental background reading |
 | Syllabus | `syllabi/SYLLABUS_TMxx.md` | Schedule and learning objectives |
 | Lesson Plan | `training_management/lesson_plans/[outline file]` | Block-by-block delivery guide |
 | PRE Exam | `exercises/exams/EXAM_TMxx_PRE.md` | Day 1 diagnostic (answer key embedded) |

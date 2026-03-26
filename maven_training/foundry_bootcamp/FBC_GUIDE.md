@@ -3,24 +3,24 @@
 ### USAREUR-AF Operational Data Team
 
 > **BLUF:** The Foundry Bootcamp is a quarterly 5-day supervised build event. You bring a validated operational problem. You build a solution. SMEs are in the room for consultation. Minimal instruction — this is not a course. You leave with a functional product and a handoff package.
-> **Prereq:** TM-20 (Builder) Go on file + command-approved project.
+> **Prereq:** SL 2 (Builder) Go on file + command-approved project.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 ---
 
 ## 1. WHAT THE FOUNDRY BOOTCAMP IS
 
-The Foundry Bootcamp is not part of the TM-10 through TM-50 training sequence. It does not grant TM-30 credit or unlock TM-40 enrollment. It is a separate, standalone event for personnel who:
+The Foundry Bootcamp is not part of the SL 1 through SL 5 training sequence. It does not grant SL 3 credit or unlock SL 4 enrollment. It is a separate, standalone event for personnel who:
 
-- Hold TM-20 qualification
+- Hold SL 2 qualification
 - Have a real operational problem that needs a Foundry solution
 - Have command approval to spend a week building it
 
-The bootcamp exists because the best learning often happens when someone has a problem they actually need to solve. The training environment, synthetic exercises, and structured curriculum of TM-20/30 are essential — but some people learn faster when their problem is on the line.
+The bootcamp exists because the best learning often happens when someone has a problem they actually need to solve. The training environment, synthetic exercises, and structured curriculum of SL 2/30 are essential — but some people learn faster when their problem is on the line.
 
 FBC is that opportunity. Build something real, with support, under a governance-aware environment.
 
-**The bootcamp does not replace TM-30.** If you need structured instruction on advanced platform skills, enroll in TM-30. FBC assumes you can already operate the platform at TM-20 level and supplements that by putting you in a room to apply those skills to a real problem.
+**The bootcamp does not replace SL 3.** If you need structured instruction on advanced platform skills, enroll in SL 3. FBC assumes you can already operate the platform at SL 2 level and supplements that by putting you in a room to apply those skills to a real problem.
 
 ---
 
@@ -28,11 +28,11 @@ FBC is that opportunity. Build something real, with support, under a governance-
 
 | Requirement | Detail |
 |---|---|
-| TM-20 Go on file | Hard requirement — no exceptions |
+| SL 2 Go on file | Hard requirement — no exceptions |
 | Command-approved project | Validated Project Brief approved by C2DAO coordinator ≥14 days before bootcamp Day 1 |
 | Command sponsorship | Supervisor signature on enrollment request |
 
-TM-30 qualification is not required and not necessary. Personnel who hold TM-30 may attend FBC if they have an operational project and want supervised build time — the bootcamp is open to any TM-20+ qualified builder with an approved project.
+SL 3 qualification is not required and not necessary. Personnel who hold SL 3 may attend FBC if they have an operational project and want supervised build time — the bootcamp is open to any SL 2+ qualified builder with an approved project.
 
 ---
 
@@ -50,7 +50,7 @@ A valid FBC project has:
 
 **Accessible data.** Before Day 1, you have confirmed access to every dataset the project needs. Bootcamp time is not spent waiting on permissions.
 
-**TM-20/30 scope.** The work does not require writing Python, TypeScript, or OSDK integrations. If it does, you need TM-40 specialist training, not FBC.
+**SL 2/30 scope.** The work does not require writing Python, TypeScript, or OSDK integrations. If it does, you need SL 4 specialist training, not FBC.
 
 **5-day feasibility.** A functional prototype can be built in five days. Not a complete production system — a functional prototype that demonstrates the solution and can be refined post-bootcamp.
 
@@ -72,9 +72,9 @@ C2DAO reviews and returns approval or feedback within 5 duty days.
 | Project | Status | Reason |
 |---|---|---|
 | Workshop readiness dashboard for G4 NCOIC from existing equipment Object Type | VALID | Clear output, named user, in-scope tools |
-| Python model to forecast maintenance demand | OUT OF SCOPE | Requires code — enroll in TM-40G or TM-40H |
+| Python model to forecast maintenance demand | OUT OF SCOPE | Requires code — enroll in SL 4G or SL 4H |
 | "Improve the data pipeline" | NOT VALID | No specific output, no named user |
-| Contour geospatial view of logistics nodes for S4, filtered by unit and date | VALID | Clear output, named user, TM-20/30 scope |
+| Contour geospatial view of logistics nodes for S4, filtered by unit and date | VALID | Clear output, named user, SL 2/30 scope |
 | Full ontology redesign for the brigade | OUT OF SCOPE | Too large; requires C2DAO Change Review before work begins |
 | Quiver personnel tracker replacing a manual SharePoint tracker | VALID | Clear output, named user, in-scope tools |
 
@@ -109,11 +109,11 @@ One SME per ≤8 participants. The SME consults — they do not teach and do not
 - Scope management when an approach is too complex
 
 **SME will not:**
-- Teach platform skills from scratch (that's TM-30)
+- Teach platform skills from scratch (that's SL 3)
 - Build any part of your product
 - Override your validated scope
 
-If your project turns out to require code-level work, the SME will document this and recommend the appropriate TM-40 track.
+If your project turns out to require code-level work, the SME will document this and recommend the appropriate SL 4 track.
 
 ---
 
@@ -155,11 +155,11 @@ Bootcamp products are subject to the same governance standards as any other Foun
 | Standard | Reference |
 |---|---|
 | Dataset and project naming | NAMING_AND_GOVERNANCE_STANDARDS.md |
-| Branching and promotion workflow | TM-30, Chapter 6 |
+| Branching and promotion workflow | SL 3, Chapter 6 |
 | C2DAO coordination for production | CDA_CONSTRAINTS_AND_DIRECTIVES.md |
-| Classification handling | TM-10, Chapter 7 |
+| Classification handling | SL 1, Chapter 7 |
 
-If you have not read TM-30's governance chapter, read it before Day 1. The SME will walk through governance basics at the Day 1 in-brief, but you are expected to arrive knowing the conventions.
+If you have not read SL 3's governance chapter, read it before Day 1. The SME will walk through governance basics at the Day 1 in-brief, but you are expected to arrive knowing the conventions.
 
 ---
 
@@ -168,7 +168,7 @@ If you have not read TM-30's governance chapter, read it before Day 1. The SME w
 Complete **at least 5 duty days before Day 1:**
 
 - [ ] Project Brief submitted and C2DAO approval received
-- [ ] TM-20 Go record submitted with enrollment request
+- [ ] SL 2 Go record submitted with enrollment request
 - [ ] Bootcamp workspace access provisioned and confirmed (log in and verify environment loads)
 - [ ] Data access confirmed: every dataset the project needs is accessible in your environment
 - [ ] Handoff package template downloaded (Appendix B) and participant sections pre-filled

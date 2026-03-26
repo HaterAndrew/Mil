@@ -8,7 +8,7 @@ Wiesbaden, Germany
 
 **Version 1.0 | March 2026**
 
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven User; TM-20, Builder; Data Literacy Technical Reference (all required).
+**PREREQUISITE PUBLICATIONS:** SL 1, Maven User; SL 2, Builder; Data Literacy Technical Reference (all required).
 **APPLIES TO:** Data-adjacent specialists (17/25-series, S6/G6/G2/G9, operational data analysts). Covers Foundry Workshop, Pipeline Builder, Contour, Quiver, AIP Logic (UI only).
 **DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
@@ -20,7 +20,7 @@ Advanced builders operate at the level where decisions directly affect productio
 shared across the USAREUR-AF formation. Errors at this level do not affect one application — they
 affect readiness reporting, operational picture, and coalition data sharing for the entire AOR.
 
-Before operating at TM-30 level:
+Before operating at SL 3 level:
 
 - Coordinate with the designated Data Steward before modifying any shared production resource
 - Never develop or test in the production environment — use a dedicated branch
@@ -57,38 +57,38 @@ building multi-source joins in production.
 
 # CHAPTER 1 — INTRODUCTION AND SCOPE
 
-**BLUF:** TM-30 qualifies data-adjacent specialists to build advanced no-code solutions on the
+**BLUF:** SL 3 qualifies data-adjacent specialists to build advanced no-code solutions on the
 Maven Smart System — complex Workshop applications, multi-source pipelines, well-designed ontology
 models, and advanced analytics — while operating within USAREUR-AF C2DAO governance requirements.
 
 ## 1-1. Scope and Purpose
 
 1-1. This manual qualifies advanced builders who operate entirely through the MSS platform user
-interface. No code is required at the TM-30 level. All tasks in this manual are accomplished
+interface. No code is required at the SL 3 level. All tasks in this manual are accomplished
 through Foundry's graphical tools: Workshop, Pipeline Builder, Ontology Manager, Contour, Quiver,
 and AIP Logic.
 
-1-2. TM-30 is the advanced tier for data-adjacent specialists — personnel who work deeply with
+1-2. SL 3 is the advanced tier for data-adjacent specialists — personnel who work deeply with
 data but whose primary role is operational, analytical, or systems-oriented rather than software
 development. This includes 17-series and 25-series signal soldiers, S6/G6 staff, G2 analysts,
 G9 civil affairs, and operational data analysts embedded in brigade and division staffs.
 
-1-3. TM-40 covers code-level development (Python transforms, TypeScript Functions on Objects,
-OSDK). If your task requires writing code, reference TM-40. TM-30 stops at the UI boundary.
+1-3. SL 4 covers code-level development (Python transforms, TypeScript Functions on Objects,
+OSDK). If your task requires writing code, reference SL 4. SL 3 stops at the UI boundary.
 
-> **NOTE:** All items above require a TM-40 developer. For TM-20 (no-code builder) capabilities, refer to TM-20, Chapter 1. TM-30 operates at the boundary between TM-20 no-code building and TM-40 code-based development. When in doubt whether a task is TM-20 or TM-30, refer to TM-20, Chapter 1-1 (Purpose and Scope) to assess scope before escalating.
+> **NOTE:** All items above require a SL 4 developer. For SL 2 (no-code builder) capabilities, refer to TM-20, Chapter 1. SL 3 operates at the boundary between SL 2 no-code building and SL 4 code-based development. When in doubt whether a task is SL 2 or SL 3, refer to TM-20, Chapter 1-1 (Purpose and Scope) to assess scope before escalating.
 
-1-4. Prerequisites. Before beginning TM-30 tasks, personnel must be qualified on:
-- TM-10 (Maven User): platform navigation, object search, consuming data products
-- TM-20 (Builder): basic Workshop, basic Pipeline Builder, basic Object Type configuration,
+1-4. Prerequisites. Before beginning SL 3 tasks, personnel must be qualified on:
+- SL 1 (Maven User): platform navigation, object search, consuming data products
+- SL 2 (Builder): basic Workshop, basic Pipeline Builder, basic Object Type configuration,
   basic Contour and Quiver
 - Data Literacy Technical Reference: data governance principles, Army data policy, command data authority
 
-Before beginning TM-30 design work, confirm you can independently perform — without manual reference — all TM-10 operator tasks (Chapters 2-7) and all TM-20 builder tasks including Workshop application building (TM-20, Chapter 5), Ontology configuration (TM-20, Chapter 4), pipeline management (TM-20, Chapter 3), and branching/governance (TM-20, Chapter 7). If you cannot confidently perform any of these tasks without reference, complete the relevant TM before advancing.
+Before beginning SL 3 design work, confirm you can independently perform — without manual reference — all SL 1 operator tasks (Chapters 2-7) and all SL 2 builder tasks including Workshop application building (TM-20, Chapter 5), Ontology configuration (TM-20, Chapter 4), pipeline management (TM-20, Chapter 3), and branching/governance (TM-20, Chapter 7). If you cannot confidently perform any of these tasks without reference, complete the relevant TM before advancing.
 
-## 1-2. What TM-30 Advances Beyond TM-20
+## 1-2. What SL 3 Advances Beyond SL 2
 
-| Capability Area | TM-20 Level | TM-30 Level |
+| Capability Area | SL 2 Level | SL 3 Level |
 |-----------------|-------------|-------------|
 | Workshop | Single-page apps, basic widgets | Multi-page apps, conditional logic, variable passing |
 | Pipeline Builder | Single-source transforms, basic filters | Multi-source joins, aggregations, calculated columns |
@@ -99,17 +99,17 @@ Before beginning TM-30 design work, confirm you can independently perform — wi
 | Governance | Follow naming conventions | Enforce them, review peers, coordinate with Data Stewards |
 | Environment Mgmt | Aware of branching | Execute branching, review, and promotion workflows |
 
-> **NOTE:** Advanced builders design solutions that TM-10 operators and TM-20 builders will use. Before designing at TM-30 level, understand the operator workflows from TM-10, Chapter 1 (Introduction and Overview) and TM-10, Chapter 4 (Using Workshop Applications). Your design decisions directly affect operator productivity and data quality at the operational level.
+> **NOTE:** Advanced builders design solutions that SL 1 operators and SL 2 builders will use. Before designing at SL 3 level, understand the operator workflows from TM-10, Chapter 1 (Introduction and Overview) and TM-10, Chapter 4 (Using Workshop Applications). Your design decisions directly affect operator productivity and data quality at the operational level.
 
 ## 1-3. USAREUR-AF Operational Context
 
 1-5. USAREUR-AF is the Army Service Component Command (ASCC) to United States European Command
 (USEUCOM) and United States Africa Command (USAFRICOM). Advanced builders operating in this theater support land operations across the European and African
-AOR and integration with NATO Allied command structures. The data products built at TM-30 level
+AOR and integration with NATO Allied command structures. The data products built at SL 3 level
 feed readiness reporting, logistics visibility, intelligence products, and operational dashboards
 used by commanders at brigade through theater level.
 
-1-6. Errors at TM-30 level have formation-wide impact. A broken Workshop application that
+1-6. Errors at SL 3 level have formation-wide impact. A broken Workshop application that
 misrepresents equipment readiness affects commanders' decisions. A poorly designed pipeline join
 that duplicates records inflates SITREP counts. A misconfigured Action that overwrites data without
 validation corrupts the operational picture. Build with the same discipline you apply to any
@@ -147,7 +147,7 @@ should consult the following CDA resources:
 
 ## 1-5. Design Principles for Advanced Builders
 
-**BLUF:** Advanced builders design systems that other people depend on. This section is not about Foundry features — it is about how to think before you use them. These principles apply across every TM-30 task.
+**BLUF:** Advanced builders design systems that other people depend on. This section is not about Foundry features — it is about how to think before you use them. These principles apply across every SL 3 task.
 
 ---
 
@@ -157,13 +157,13 @@ Foundry has many powerful tools. The most common advanced builder failure is sel
 
 > *What does a commander or staff officer need to decide, and what information do they need to make that decision correctly?*
 
-Every piece of TM-30 work — an Ontology design, a multi-source pipeline, an AIP Logic workflow — should be traceable back to an operational requirement. If you cannot trace it back, you are building something that may not be needed.
+Every piece of SL 3 work — an Ontology design, a multi-source pipeline, an AIP Logic workflow — should be traceable back to an operational requirement. If you cannot trace it back, you are building something that may not be needed.
 
 ---
 
 ### Principle 2: Ontology design is domain modeling, not database configuration.
 
-When you design Object Types and Link Types at TM-30 level, you are not configuring a database — you are modeling operational reality. The questions to ask:
+When you design Object Types and Link Types at SL 3 level, you are not configuring a database — you are modeling operational reality. The questions to ask:
 
 - **What are the real-world entities?** (A Soldier, a vehicle, a unit, a maintenance event — these are nouns. Object Types are nouns.)
 - **What are the real-world relationships?** (A Soldier *is assigned to* a unit. A vehicle *has* maintenance events. These are Links.)
@@ -175,7 +175,7 @@ If you cannot describe your Ontology design in plain operational language withou
 
 ### Principle 3: Every production change has downstream consequences.
 
-At TM-30 level, the resources you modify are shared. An Object Type you change is used by Workshop applications, Contour analyses, and Quiver dashboards you may not even know exist.
+At SL 3 level, the resources you modify are shared. An Object Type you change is used by Workshop applications, Contour analyses, and Quiver dashboards you may not even know exist.
 
 Before modifying any shared production resource:
 1. **Audit downstream dependencies** — Ontology Manager shows all downstream consumers of an Object Type. Run this audit before touching anything.
@@ -198,7 +198,7 @@ When building multi-source pipelines, the most common error is not getting wrong
 
 ### Principle 5: Your users are operators, not data scientists.
 
-The applications and analyses you build at TM-30 level will be used by TM-10 operators — Soldiers and staff officers who are not data experts. Design for them:
+The applications and analyses you build at SL 3 level will be used by SL 1 operators — Soldiers and staff officers who are not data experts. Design for them:
 
 - A dashboard that requires explanation to use has a design problem, not a user education problem.
 - Use plain language for labels, filters, and column names. Do not expose internal dataset field names to users.
@@ -216,7 +216,7 @@ that serve as the operational data interface for commanders and staff.
 
 ## 2-1. Overview of Advanced Workshop Capability
 
-2-1. Workshop applications built at TM-30 level go beyond single-page dashboards. They serve as
+2-1. Workshop applications built at SL 3 level go beyond single-page dashboards. They serve as
 the primary operational interface for staff sections — a G2 intelligence dashboard with linked
 pages for threat assessment, unit tracking, and historical trends; an S4 readiness tracker that
 lets commanders drill from fleet overview to individual equipment status; a G9 civil-military
@@ -228,7 +228,7 @@ that behave like purpose-built operational software — without writing a line o
 
 ## 2-2. Variables and State Management
 
-**CONDITIONS:** Access to a Workshop application in edit mode; TM-20 qualification.
+**CONDITIONS:** Access to a Workshop application in edit mode; SL 2 qualification.
 
 **STANDARDS:** Builder configures application variables correctly, demonstrates variable passing
 between widgets and pages, and verifies dynamic behavior through test interactions before
@@ -321,13 +321,13 @@ configure the brigade dropdown to auto-clear when the division variable changes.
 
 ## 2-3. Conditional Logic and Visibility
 
-**CONDITIONS:** Existing multi-widget Workshop application; TM-20 qualification.
+**CONDITIONS:** Existing multi-widget Workshop application; SL 2 qualification.
 
 **STANDARDS:** Builder correctly applies conditional visibility rules so that widgets and panels
 display or hide based on application state, without any visible layout breaks in the published
 application.
 
-> **NOTE:** Conditional layouts determine which panels or pages operators (TM-10) see based on their role or selected data state. Test your conditional layout logic against the operator workflows in TM-10, Chapter 4. Do not hide information from operators without a security or role-based justification. Refer to TM-10, Task 4-4 (Navigate Between Modules/Pages) and Task 4-3 (Apply Filters to a Dashboard) to validate layout behavior from the operator's perspective.
+> **NOTE:** Conditional layouts determine which panels or pages operators (SL 1) see based on their role or selected data state. Test your conditional layout logic against the operator workflows in TM-10, Chapter 4. Do not hide information from operators without a security or role-based justification. Refer to TM-10, Task 4-4 (Navigate Between Modules/Pages) and Task 4-3 (Apply Filters to a Dashboard) to validate layout behavior from the operator's perspective.
 
 ### 2-3a. Conditional Widget Visibility
 
@@ -390,7 +390,7 @@ error.
 
 ### 2-4a. Page Design Principles
 
-> **NOTE:** Decision framework — single-page vs. multi-page: If your application serves a single user role or a single operational workflow, design single-page (TM-20 scope — refer to TM-20, Chapter 5-3, Workshop Interface Overview). If your application serves multiple user roles simultaneously (e.g., G3 operations, G4 logistics, G6 data), or integrates multiple workflows into a unified interface, design multi-page (TM-30 scope). Multi-page application navigation is what operators experience via TM-10, Task 4-4 (Navigate Between Modules/Pages). Test your navigation design against that task.
+> **NOTE:** Decision framework — single-page vs. multi-page: If your application serves a single user role or a single operational workflow, design single-page (SL 2 scope — refer to TM-20, Chapter 5-3, Workshop Interface Overview). If your application serves multiple user roles simultaneously (e.g., G3 operations, G4 logistics, G6 data), or integrates multiple workflows into a unified interface, design multi-page (SL 3 scope). Multi-page application navigation is what operators experience via TM-10, Task 4-4 (Navigate Between Modules/Pages). Test your navigation design against that task.
 
 2-16. Before building a multi-page Workshop application, design the page structure on paper or
 a whiteboard. Define:
@@ -472,7 +472,7 @@ and store the result in a dataset.
 
 ### 2-5b. Nested Filters and Dynamic Object Sets
 
-2-23. An Object Set widget displays a collection of ontology objects. At TM-30 level, builders
+2-23. An Object Set widget displays a collection of ontology objects. At SL 3 level, builders
 configure Object Sets with compound filter logic — multiple conditions combined with AND/OR
 logic, including variable-driven conditions.
 
@@ -492,7 +492,7 @@ logic, including variable-driven conditions.
 
 ### 2-5c. Map Widgets — Advanced Configuration
 
-2-25. Workshop map widgets at TM-30 level support layered display, pop-up detail configuration,
+2-25. Workshop map widgets at SL 3 level support layered display, pop-up detail configuration,
 and variable-driven filtering. Operational maps in USAREUR-AF applications commonly display unit
 locations, equipment distribution, and event markers.
 
@@ -515,20 +515,20 @@ before designing a map-dependent application.
 
 # CHAPTER 3 — ADVANCED PIPELINE BUILDER
 
-**BLUF:** Advanced Pipeline Builder work at TM-30 level involves joining multiple source datasets,
+**BLUF:** Advanced Pipeline Builder work at SL 3 level involves joining multiple source datasets,
 applying complex transformations and aggregations, and producing analysis-ready outputs — all
 through the visual pipeline interface without writing code.
 
-## 3-1. Pipeline Builder Review and TM-30 Scope
+## 3-1. Pipeline Builder Review and SL 3 Scope
 
-> **NOTE:** TM-20, Chapter 3 covered single-source ingestion pipelines with basic transformations. TM-30 advances to multi-source joins, complex business logic transforms, error handling that prevents silent failures, and monitoring strategy. Before designing a TM-30 pipeline, confirm the requirement genuinely exceeds TM-20 pipeline capabilities (TM-20, Chapter 3-1). If the requirement can be met with a single-source pipeline and basic transforms, build it at TM-20 level and do not escalate unnecessarily.
+> **NOTE:** TM-20, Chapter 3 covered single-source ingestion pipelines with basic transformations. SL 3 advances to multi-source joins, complex business logic transforms, error handling that prevents silent failures, and monitoring strategy. Before designing a SL 3 pipeline, confirm the requirement genuinely exceeds SL 2 pipeline capabilities (TM-20, Chapter 3-1). If the requirement can be met with a single-source pipeline and basic transforms, build it at SL 2 level and do not escalate unnecessarily.
 
-3-1. TM-20 covered single-source Pipeline Builder work: reading a dataset, applying column
-selection, basic filters, and renaming. TM-30 advances to multi-source operations — joins,
+3-1. SL 2 covered single-source Pipeline Builder work: reading a dataset, applying column
+selection, basic filters, and renaming. SL 3 advances to multi-source operations — joins,
 unions, aggregations, and derived columns using Pipeline Builder's visual transform library.
 
 3-2. Pipeline Builder represents each transformation as a visual node connected by data flow
-edges. At TM-30 level, pipelines will include multiple input branches that merge, transform,
+edges. At SL 3 level, pipelines will include multiple input branches that merge, transform,
 and flow into one or more outputs. Readability of the pipeline graph is itself a quality
 standard — other builders must be able to read your pipeline diagram and understand what it does.
 
@@ -699,7 +699,7 @@ use. Apply null handling immediately after source input nodes.
 
 ### 3-4c. Dataset Partitioning Awareness
 
-3-17. Advanced builders do not configure partitioning in the UI — that is a TM-40 code-level
+3-17. Advanced builders do not configure partitioning in the UI — that is a SL 4 code-level
 task — but they must understand how partitioning affects their pipelines and must design with
 it in mind.
 
@@ -719,9 +719,9 @@ data than one that scans the full dataset.
 
 ## 3-5. Pipeline Naming and Documentation Standards
 
-> **NOTE:** When a TM-30 pipeline fails, the downstream impact is broad. Operators (TM-10, Task 5-1, View and Read a Dataset) see stale or missing data. Workshop applications fed by the pipeline display errors. Complex data products may serve dozens of operators or downstream pipelines. Refer to TM-10, Chapter 8-1 (Common Problems and Solutions) to understand the operator experience of a pipeline failure, then design your monitoring and alerting to detect failures before operators report them.
+> **NOTE:** When a SL 3 pipeline fails, the downstream impact is broad. Operators (TM-10, Task 5-1, View and Read a Dataset) see stale or missing data. Workshop applications fed by the pipeline display errors. Complex data products may serve dozens of operators or downstream pipelines. Refer to TM-10, Chapter 8-1 (Common Problems and Solutions) to understand the operator experience of a pipeline failure, then design your monitoring and alerting to detect failures before operators report them.
 
-3-20. Every pipeline produced at TM-30 level must conform to C2DAO naming and documentation
+3-20. Every pipeline produced at SL 3 level must conform to C2DAO naming and documentation
 standards. A pipeline that cannot be identified, understood, or maintained by another builder
 is a governance deficiency.
 
@@ -760,11 +760,11 @@ and AIP Logic workflow that touches operational data does so through the Ontolog
 Link Type, or restructuring an Object Type after other teams have built applications against it
 causes those applications to break. Design carefully. Review with Data Stewards before publishing.
 
-4-3. TM-30 scope: This chapter covers designing Object Types, Link Types, and Actions through
+4-3. SL 3 scope: This chapter covers designing Object Types, Link Types, and Actions through
 the Ontology Manager graphical interface. Writing TypeScript Functions on Objects (FOO) or
-code-level ontology configuration is TM-40 scope.
+code-level ontology configuration is SL 4 scope.
 
-> **NOTE:** TM-20 Ontology configuration (TM-20, Chapter 4) is limited to: (1) simple Object Types with straightforward properties; (2) one-to-one and one-to-many Link Types without junction complexity; (3) single-step Actions with direct form-to-field mapping. If a design requires multi-step Actions, conditional routing, derived properties with complex logic, or many-to-many Link Types beyond a simple junction, it is TM-30 scope. When assessing complexity, use TM-20, Chapter 4-2 (Ontology Manager Interface Overview) as the boundary reference.
+> **NOTE:** SL 2 Ontology configuration (TM-20, Chapter 4) is limited to: (1) simple Object Types with straightforward properties; (2) one-to-one and one-to-many Link Types without junction complexity; (3) single-step Actions with direct form-to-field mapping. If a design requires multi-step Actions, conditional routing, derived properties with complex logic, or many-to-many Link Types beyond a simple junction, it is SL 3 scope. When assessing complexity, use TM-20, Chapter 4-2 (Ontology Manager Interface Overview) as the boundary reference.
 
 ## 4-2. Object Type Design
 
@@ -819,7 +819,7 @@ data and lookup tables that are only consumed within pipelines do not need Objec
 
 ### 4-2c. Property Design Standards
 
-> **NOTE:** When designing properties for an Object Type, consider how operators (TM-10) will understand and use them. Refer to TM-10, Task 5-3 (Use Quiver to Explore Ontology Objects) and Task 4-3 (Apply Filters to a Dashboard) to see how operators interact with your property names and values. Use clear operational terminology. Avoid technical abbreviations operators will not recognize in their daily workflow.
+> **NOTE:** When designing properties for an Object Type, consider how operators (SL 1) will understand and use them. Refer to TM-10, Task 5-3 (Use Quiver to Explore Ontology Objects) and Task 4-3 (Apply Filters to a Dashboard) to see how operators interact with your property names and values. Use clear operational terminology. Avoid technical abbreviations operators will not recognize in their daily workflow.
 
 4-6. Properties are the most frequently misdesigned element of Object Types. Common errors:
 
@@ -882,7 +882,7 @@ before publishing.
 
 ## 4-4. Action Design
 
-> **NOTE:** Distinguish TM-20 Actions from TM-30 Actions: TM-20 Actions (TM-20, Chapter 4-2) are single-step — operator fills form, field is updated. TM-30 Actions support multi-step workflows, conditional routing, and approval chains. If an Action requires: (1) sequential submission steps; (2) conditional field visibility; (3) multi-record writes; (4) command authority approval — it is TM-30 scope, covered in Chapter 5 of this manual.
+> **NOTE:** Distinguish SL 2 Actions from SL 3 Actions: SL 2 Actions (TM-20, Chapter 4-2) are single-step — operator fills form, field is updated. SL 3 Actions support multi-step workflows, conditional routing, and approval chains. If an Action requires: (1) sequential submission steps; (2) conditional field visibility; (3) multi-record writes; (4) command authority approval — it is SL 3 scope, covered in Chapter 5 of this manual.
 
 **CONDITIONS:** Identified workflow where users need to create, update, or delete ontology object
 data through the platform UI; Data Steward authorization to create write-back capability.
@@ -893,7 +893,7 @@ tested end-to-end in a non-production environment before promotion.
 
 ### 4-4a. What Actions Do
 
-> **NOTE:** TM-20 Actions (TM-20, Chapter 4-2) are single-step: operator fills a form, clicks Submit, one Object property is updated. TM-30 expands this to multi-step submission processes, conditional routing between paths, and approval chains requiring authority sign-off. If a workflow can be expressed as a single form-to-field write, do not design it at TM-30 level — hand it back to a TM-20 builder. Reserve TM-30 Action design for workflows that genuinely require the additional complexity.
+> **NOTE:** SL 2 Actions (TM-20, Chapter 4-2) are single-step: operator fills a form, clicks Submit, one Object property is updated. SL 3 expands this to multi-step submission processes, conditional routing between paths, and approval chains requiring authority sign-off. If a workflow can be expressed as a single form-to-field write, do not design it at SL 3 level — hand it back to a SL 2 builder. Reserve SL 3 Action design for workflows that genuinely require the additional complexity.
 
 4-11. Actions are the write-back mechanism of the Ontology. They allow authorized users to
 create new object instances, update properties on existing objects, or delete objects — directly
@@ -960,13 +960,13 @@ validation rule is a data quality risk that will require remediation after the f
 
 # CHAPTER 5 — ADVANCED ANALYTICS: CONTOUR AND QUIVER
 
-**BLUF:** Advanced analytics at TM-30 level moves beyond basic charts into complex aggregations,
+**BLUF:** Advanced analytics at SL 3 level moves beyond basic charts into complex aggregations,
 cross-object analysis, and saved analytical views that become persistent operational intelligence
 products.
 
 ## 5-1. Advanced Contour
 
-> **NOTE:** Contour at TM-20 level (TM-20, Chapter 6) supports basic filtering, sorting, and simple aggregations. Operators use Contour via TM-10, Task 5-2 (Use Contour for No-Code Analysis). TM-30 Contour adds the formula editor for calculated columns, complex multi-table aggregations, and pivot analysis. Before designing at TM-30 level, confirm the analysis requirement exceeds TM-20 Contour capabilities (TM-20, Chapter 6-2). If TM-20 Contour can handle the requirement, build there first.
+> **NOTE:** Contour at SL 2 level (TM-20, Chapter 6) supports basic filtering, sorting, and simple aggregations. Operators use Contour via TM-10, Task 5-2 (Use Contour for No-Code Analysis). SL 3 Contour adds the formula editor for calculated columns, complex multi-table aggregations, and pivot analysis. Before designing at SL 3 level, confirm the analysis requirement exceeds SL 2 Contour capabilities (TM-20, Chapter 6-2). If SL 2 Contour can handle the requirement, build there first.
 
 **CONDITIONS:** Published dataset or Object Type with sufficient data for analysis; Contour access.
 
@@ -975,7 +975,7 @@ saved views configured for reuse, and shared appropriately with the intended aud
 
 ### 5-1a. Complex Aggregations in Contour
 
-5-1. Contour's aggregation capabilities extend beyond simple counts and sums. At TM-30 level,
+5-1. Contour's aggregation capabilities extend beyond simple counts and sums. At SL 3 level,
 builders use multi-level grouping, conditional aggregation, and window functions to produce
 sophisticated analytical outputs.
 
@@ -1061,7 +1061,7 @@ object sets, and produces shareable analytical modules that link correctly acros
 ### 5-2a. Object Set Analysis
 
 5-11. Quiver's fundamental unit is the object set — a filtered collection of objects from an
-Object Type. At TM-30 level, builders create precise, reusable object sets using compound
+Object Type. At SL 3 level, builders create precise, reusable object sets using compound
 filter logic and saved configurations.
 
 5-12. **PROCEDURE — Create a Compound Filter Object Set:**
@@ -1119,22 +1119,22 @@ from Workshop computed columns and Contour calculated columns.
 
 # CHAPTER 6 — AIP LOGIC CONFIGURATION
 
-**BLUF:** At TM-30 level, builders configure and manage AIP Logic workflows and their operational
+**BLUF:** At SL 3 level, builders configure and manage AIP Logic workflows and their operational
 parameters through the UI — activating, tuning, and monitoring AI-assisted processes without
 authoring underlying model logic.
 
 ## 6-1. AIP Logic Overview
 
-> **NOTE:** AIP Logic is TM-30 only. TM-20 builders do not configure AI workflows. TM-10 operators use AIP Logic workflows that TM-30 builders design — see TM-10, Task 6-1 (Use an AIP Logic Workflow) and Task 6-2 (Interact with an AIP Agent) for the operator's perspective. Operators must review and validate AI outputs before acting on them (emphasized in TM-10, Chapter 6). Design your AIP Logic workflows so outputs are easy for operators to validate quickly. Workflows that produce outputs requiring extensive operator review are operationally inefficient.
+> **NOTE:** AIP Logic is SL 3 only. SL 2 builders do not configure AI workflows. SL 1 operators use AIP Logic workflows that SL 3 builders design — see TM-10, Task 6-1 (Use an AIP Logic Workflow) and Task 6-2 (Interact with an AIP Agent) for the operator's perspective. Operators must review and validate AI outputs before acting on them (emphasized in TM-10, Chapter 6). Design your AIP Logic workflows so outputs are easy for operators to validate quickly. Workflows that produce outputs requiring extensive operator review are operationally inefficient.
 
 6-1. AIP Logic is the AI workflow layer of the platform. It enables AI-assisted analysis,
-automated reasoning, and natural language interfaces to operational data. At TM-30 level,
-builders do not author AIP Logic workflows — that is TM-40 scope. TM-30 builders:
+automated reasoning, and natural language interfaces to operational data. At SL 3 level,
+builders do not author AIP Logic workflows — that is SL 4 scope. SL 3 builders:
 - Configure the operational parameters of existing AIP Logic workflows
 - Connect workflows to appropriate data sources and Object Types
 - Activate and deactivate workflows in production
 - Monitor workflow health and output quality
-- Report configuration issues to TM-40-level developers
+- Report configuration issues to SL 4-level developers
 
 6-2. **CAUTION:** AIP Logic workflows that consume operational data can produce outputs that
 appear authoritative. Before activating an AIP Logic workflow in production:
@@ -1145,7 +1145,7 @@ appear authoritative. Before activating an AIP Logic workflow in production:
 
 ## 6-2. Configuring AIP Logic Workflows
 
-**CONDITIONS:** Existing AIP Logic workflow created by a TM-40 developer; appropriate
+**CONDITIONS:** Existing AIP Logic workflow created by a SL 4 developer; appropriate
 configuration access granted by Data Steward.
 
 **STANDARDS:** Builder correctly configures workflow parameters, connects data sources, tests
@@ -1156,7 +1156,7 @@ with representative sample data, and documents the configuration for future refe
 6-3. **PROCEDURE — Configure an AIP Logic Workflow:**
 1. Navigate to AIP Logic in the platform.
 2. Open the target workflow. Verify you have configuration access (not just view access).
-3. Review the workflow's purpose and expected behavior as documented by the TM-40 developer.
+3. Review the workflow's purpose and expected behavior as documented by the SL 4 developer.
 4. Under **Configuration**, review each configurable parameter:
    - Data source connections (which Object Types or datasets the workflow reads)
    - Output target (where the workflow writes its results)
@@ -1194,11 +1194,11 @@ first-line monitoring of workflows they have configured.
 | Review workflow execution logs | Weekly | Identify errors or failed executions |
 | Spot-check AI output quality | Bi-weekly | Compare AI outputs to known-correct answers on sample records |
 | Verify data source freshness | Weekly | Confirm source data is updating on schedule |
-| Review user feedback flags | As received | Investigate flagged outputs, report to TM-40 developer |
+| Review user feedback flags | As received | Investigate flagged outputs, report to SL 4 developer |
 | Check confidence score distribution | Monthly | Significant shift may indicate data drift |
 
 6-8. If monitoring reveals a workflow producing systematically incorrect outputs, deactivate
-it immediately and escalate to the TM-40 developer and Data Steward. Do not leave an incorrect
+it immediately and escalate to the SL 4 developer and Data Steward. Do not leave an incorrect
 AI workflow active in production while investigating — it will continue to surface bad outputs
 to users.
 
@@ -1232,7 +1232,7 @@ Advanced builders configure these interfaces and manage the scope of data they c
 lineage graphs, identify and report data quality issues, work with Data Stewards on resolution,
 and enforce governance standards in everything they build.
 
-> **NOTE:** TM-20 builders follow governance standards defined in TM-20, Chapter 8 (Builder Standards and Governance). TM-30 builders have additional stewardship responsibilities because your designs affect shared infrastructure and downstream systems. At TM-30 level you are responsible for: (1) understanding operator access expectations (TM-10, Chapter 7, Security, Classification, and Markings); (2) ensuring TM-20 builders can implement your designs without overstepping their scope; (3) coordinating with data stewards before modifying any shared production resource; (4) designing for the full downstream impact across all consumers, not only the immediate use case.
+> **NOTE:** SL 2 builders follow governance standards defined in TM-20, Chapter 8 (Builder Standards and Governance). SL 3 builders have additional stewardship responsibilities because your designs affect shared infrastructure and downstream systems. At SL 3 level you are responsible for: (1) understanding operator access expectations (TM-10, Chapter 7, Security, Classification, and Markings); (2) ensuring SL 2 builders can implement your designs without overstepping their scope; (3) coordinating with data stewards before modifying any shared production resource; (4) designing for the full downstream impact across all consumers, not only the immediate use case.
 
 ## 7-1. Data Lineage
 
@@ -1360,7 +1360,7 @@ coordination.
 
 ## 7-3. Access Control Management
 
-> **NOTE:** Before designing coalition-facing data products at TM-30 level, understand TM-10, Chapter 7 (Security, Classification, and Markings), especially Task 7-1 (Verify Markings and Access Level). Coalition data must be correctly marked and access-controlled from ingestion through final product. Errors in releasability markings can result in data shared with unauthorized coalition partners — this is a hard governance gate, not a best practice. Coordinate with the USAREUR-AF C2DAO before any coalition-facing design decision.
+> **NOTE:** Before designing coalition-facing data products at SL 3 level, understand TM-10, Chapter 7 (Security, Classification, and Markings), especially Task 7-1 (Verify Markings and Access Level). Coalition data must be correctly marked and access-controlled from ingestion through final product. Errors in releasability markings can result in data shared with unauthorized coalition partners — this is a hard governance gate, not a best practice. Coordinate with the USAREUR-AF C2DAO before any coalition-facing design decision.
 
 **CONDITIONS:** Workshop application, dataset, or Object Type requiring access configuration;
 appropriate administrative rights.
@@ -1412,7 +1412,7 @@ entirely through the platform UI without scripting or CI/CD configuration.
 
 ## 8-1. Branching and the Development Lifecycle
 
-> **NOTE:** TM-20 builders follow a development lifecycle defined in TM-20, Chapter 7 (Branching and Environment Management): develop on a branch, test, request merge, get approval, merge to main. TM-30 development follows the same pattern with more rigorous testing gates because your changes affect shared infrastructure. Operators (TM-10) only access the main/production branch. Every merge to main is a production release. Apply engineering discipline — test against TM-10 operator workflows (Chapter 4) before merging.
+> **NOTE:** SL 2 builders follow a development lifecycle defined in TM-20, Chapter 7 (Branching and Environment Management): develop on a branch, test, request merge, get approval, merge to main. SL 3 development follows the same pattern with more rigorous testing gates because your changes affect shared infrastructure. Operators (SL 1) only access the main/production branch. Every merge to main is a production release. Apply engineering discipline — test against SL 1 operator workflows (Chapter 4) before merging.
 
 8-1. The platform uses a branching model to separate development work from production. A branch
 is an isolated copy of the environment where changes can be made, tested, and reviewed without
@@ -1533,7 +1533,7 @@ they promote.
 
 **BLUF:** Consistent standards across all products built by USAREUR-AF advanced builders
 create a coherent, maintainable data environment. This chapter specifies the naming conventions,
-design patterns, and quality standards that apply to everything built at TM-30 level.
+design patterns, and quality standards that apply to everything built at SL 3 level.
 
 ## 9-1. Naming Conventions
 
@@ -1722,7 +1722,7 @@ environment for all users.
 
 # APPENDIX A — ADVANCED BUILDER CHECKLIST
 
-> **NOTE:** Before initiating a TM-40 handoff, confirm the requirement genuinely exceeds TM-30 capability. Use this checklist: (1) Can this be built using TM-20 no-code tools? If yes — hand back to TM-20 builder, do not escalate to TM-40. (2) Can this be designed using TM-30 UI tools (Workshop, Ontology Manager UI, Pipeline Builder UI, AIP Logic UI)? If yes — build at TM-30 level, do not escalate. (3) Does implementation require writing code (Python, PySpark, TypeScript, SQL)? If yes — use this template and initiate TM-40 handoff. Unnecessary TM-40 escalation consumes developer capacity and delays delivery.
+> **NOTE:** Before initiating a SL 4 handoff, confirm the requirement genuinely exceeds SL 3 capability. Use this checklist: (1) Can this be built using SL 2 no-code tools? If yes — hand back to SL 2 builder, do not escalate to SL 4. (2) Can this be designed using SL 3 UI tools (Workshop, Ontology Manager UI, Pipeline Builder UI, AIP Logic UI)? If yes — build at SL 3 level, do not escalate. (3) Does implementation require writing code (Python, PySpark, TypeScript, SQL)? If yes — use this template and initiate SL 4 handoff. Unnecessary SL 4 escalation consumes developer capacity and delays delivery.
 
 Use this checklist when delivering any new or significantly modified MSS data product.
 
@@ -1767,7 +1767,7 @@ Use this checklist when delivering any new or significantly modified MSS data pr
 
 # APPENDIX B — DESIGN PATTERNS REFERENCE
 
-> **NOTE:** This is the TM-30 checklist for advanced multi-page, cross-functional applications. If your application is single-page and purpose-specific, use the TM-20 checklist (TM-20, Appendix C, Workshop Application Pre-Publish Checklist) instead. Before publishing any application, test it against operator workflows in TM-10, Chapter 4 (Using Workshop Applications). An application that a trained operator cannot navigate using TM-10 procedures is not ready for publication.
+> **NOTE:** This is the SL 3 checklist for advanced multi-page, cross-functional applications. If your application is single-page and purpose-specific, use the SL 2 checklist (SL 2, Appendix C, Workshop Application Pre-Publish Checklist) instead. Before publishing any application, test it against operator workflows in TM-10, Chapter 4 (Using Workshop Applications). An application that a trained operator cannot navigate using SL 1 procedures is not ready for publication.
 
 ## Pattern 1: Commander's Dashboard
 
@@ -1872,8 +1872,8 @@ object data through the platform UI. Actions execute validation rules before wri
 
 **AIP Logic**
 The AI workflow layer of the MSS platform. Enables AI-assisted analysis, automated reasoning,
-and natural language query interfaces. TM-30 builders configure existing AIP Logic workflows;
-authoring is TM-40 scope.
+and natural language query interfaces. SL 3 builders configure existing AIP Logic workflows;
+authoring is SL 4 scope.
 
 **API Name**
 The machine-readable identifier for an Object Type, property, or Action. Distinct from the
@@ -2040,6 +2040,6 @@ data-driven operational interfaces using configurable widgets without writing co
 
 ---
 
-*TM-30 — Maven Smart System Advanced No-Code Builder Technical Manual*
+*SL 3 — Maven Smart System Advanced No-Code Builder Technical Manual*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026*
 *Distribution Restriction: DRAFT — Not yet approved for distribution.*

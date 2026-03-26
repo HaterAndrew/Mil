@@ -1,20 +1,20 @@
-# COURSE SYLLABUS — TM-50G: ADVANCED OPERATIONS RESEARCH/SYSTEMS ANALYSIS
+# COURSE SYLLABUS — SL 5G: ADVANCED OPERATIONS RESEARCH/SYSTEMS ANALYSIS
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Level** | TM-50G — Advanced ORSA Specialist Track |
+| **Level** | SL 5G — Advanced ORSA Specialist Track |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-40G complete (Go evaluation on file); 18+ months active ORSA experience or graduate-level OR/MS program (concurrent enrollment accepted); demonstrated proficiency with Python or R and validated quantitative models in an operational context |
+| **Prerequisites** | SL 4G complete (Go evaluation on file); 18+ months active ORSA experience or graduate-level OR/MS program (concurrent enrollment accepted); demonstrated proficiency with Python or R and validated quantitative models in an operational context |
 | **Audience** | Senior FA49 officers and analysts, theater-level ORSA practitioners, data scientists in advanced analytical roles |
 | **Format** | Seminar + advanced lab + peer-reviewed analytical product |
 | **Location** | MSS Training Environment (Code Workspace provisioned, GPU allocation confirmed) |
 
-> **PREREQUISITE WARNING:** TM-50G is not required for the majority of ORSA billets. It is intended for personnel actively assigned to advanced modeling, campaign analysis, or platform architecture roles at theater level. If uncertain whether this track applies to your billet, consult your supervisor or C2DAO before enrolling.
+> **PREREQUISITE WARNING:** SL 5G is not required for the majority of ORSA billets. It is intended for personnel actively assigned to advanced modeling, campaign analysis, or platform architecture roles at theater level. If uncertain whether this track applies to your billet, consult your supervisor or C2DAO before enrolling.
 
 ---
 
-**BLUF:** TM-50G moves beyond TM-40G's operational modeling toolkit to the methods and standards required for theater-strategic analytical products — campaign analysis, multi-echelon optimization, Bayesian inference under deep uncertainty, and agent-based simulation. Products from TM-50G analysts inform GO/SES decisions and alliance planning. The standard at this level is not just technical correctness — it is interpretability, peer reviewability, and honest uncertainty characterization.
+**BLUF:** SL 5G moves beyond SL 4G's operational modeling toolkit to the methods and standards required for theater-strategic analytical products — campaign analysis, multi-echelon optimization, Bayesian inference under deep uncertainty, and agent-based simulation. Products from SL 5G analysts inform GO/SES decisions and alliance planning. The standard at this level is not just technical correctness — it is interpretability, peer reviewability, and honest uncertainty characterization.
 
 ---
 
@@ -49,7 +49,7 @@ Complete **10+ duty days before Day 1:**
 
 | Time | Block | Method | Content |
 |---|---|---|---|
-| 0800–0900 | 1 | Seminar | TM-50G standards: peer review requirements, uncertainty documentation, GO/SES product expectations |
+| 0800–0900 | 1 | Seminar | SL 5G standards: peer review requirements, uncertainty documentation, GO/SES product expectations |
 | 0900–1100 | 2 | Lab | Bayesian inference: prior selection, likelihood functions, posterior estimation — operational examples (casualty estimation, readiness probability) |
 | 1100–1115 | — | Break | |
 | 1115–1200 | 3 | Lab | Conjugate priors; binomial/beta model for readiness probability; documenting prior assumptions |
@@ -105,7 +105,7 @@ Complete **10+ duty days before Day 1:**
 | 1100–1115 | — | Break | |
 | 1115–1200 | 16 | Workshop | Continue product development; instructor circulates for individual feedback |
 | 1200–1300 | — | Lunch | |
-| 1300–1500 | 17 | Peer Review | Structured peer review exercise: exchange draft products; apply the TM-50G peer review checklist |
+| 1300–1500 | 17 | Peer Review | Structured peer review exercise: exchange draft products; apply the SL 5G peer review checklist |
 | 1500–1515 | — | Break | |
 | 1515–1700 | 18 | Debrief | Peer review findings; common gaps; revise products based on feedback |
 
@@ -137,13 +137,13 @@ Complete **10+ duty days before Day 1:**
 
 ## Peer Advanced Tracks
 
-| Track | Relevance to TM-50G |
+| Track | Relevance to SL 5G |
 |---|---|
-| TM-50H (Advanced AI Eng) | AI-augmented analytical pipelines; LLM-assisted pattern recognition in ORSA products |
-| TM-50M (Advanced ML Eng) | Advanced model architectures (ensemble, Bayesian) used in ORSA modeling; drift detection for deployed ORSA models |
-| TM-50J (Advanced PM) | Communicating ORSA findings at portfolio level to GO/SES audiences; resource allocation analysis feeding PM dashboards |
+| SL 5H (Advanced AI Eng) | AI-augmented analytical pipelines; LLM-assisted pattern recognition in ORSA products |
+| SL 5M (Advanced ML Eng) | Advanced model architectures (ensemble, Bayesian) used in ORSA modeling; drift detection for deployed ORSA models |
+| SL 5J (Advanced PM) | Communicating ORSA findings at portfolio level to GO/SES audiences; resource allocation analysis feeding PM dashboards |
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*Syllabus TM-50G | Version 1.0 | March 2026*
+*Syllabus SL 5G | Version 1.0 | March 2026*

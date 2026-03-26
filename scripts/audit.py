@@ -7,8 +7,8 @@ Checks:
   2. Stale text refs    — old specialist-letter mappings still embedded in prose
   3. Stale PDFs         — old-scheme PDFs that should no longer exist
   4. Missing PDFs       — current-scheme PDFs that are absent
-  5. Prereq labels      — ALL TM-40 tracks (A–F WFF and G–O specialist) must say TM-30
-  6. No TM-50A–F refs   — those series were retired; only TM-50G–O is valid
+  5. Prereq labels      — ALL SL 4 tracks (A–F WFF and G–O specialist) must say SL 3
+  6. No SL 5A–F refs    — those series were retired; only SL 5G–O is valid
   7. HTML/JS ids        — task_index.html and mss_info_app/index.html checked for stale ids
 
 Run from repo root:
@@ -64,38 +64,45 @@ def fs_code(code):
     """Return the filesystem-level track code (identity — I→M rename is complete)."""
     return code
 
+def sl_label(code):
+    """Convert internal code like '40G' or '10' to display label like '4G' or '1'."""
+    if len(code) >= 2 and code[:2].isdigit():
+        level = str(int(code[:2]) // 10)
+        return level + code[2:]
+    return code
+
 # Old specialist labels that were re-lettered: old→new
-# TM-40A=ORSA, B=AIEng, C=MLE, D=PM, E=KM, F=SWE  →  now G–M
+# SL 4A=ORSA, B=AIEng, C=MLE, D=PM, E=KM, F=SWE  →  now G–M
 STALE_SPECIALIST_LABELS = {
     # Pattern: (old display, new correct)
-    r"TM[-\s]?40A\s*[=:–—(]\s*ORSA":           "TM-40G (ORSA)",
-    r"TM[-\s]?40B\s*[=:–—(]\s*AI\s*Eng":        "TM-40H (AI Engineer)",
-    r"TM[-\s]?40C\s*[=:–—(]\s*ML\s*Eng":        "TM-40M (ML Engineer)",
-    r"TM[-\s]?40D\s*[=:–—(]\s*Program":         "TM-40J (Program Manager)",
-    r"TM[-\s]?40E\s*[=:–—(]\s*Knowledge":       "TM-40K (Knowledge Manager)",
-    r"TM[-\s]?40F\s*[=:–—(]\s*Software":        "TM-40L (Software Engineer)",
+    r"SL\s?4A\s*[=:–—(]\s*ORSA":           "SL 4G (ORSA)",
+    r"SL\s?4B\s*[=:–—(]\s*AI\s*Eng":        "SL 4H (AI Engineer)",
+    r"SL\s?4C\s*[=:–—(]\s*ML\s*Eng":        "SL 4M (ML Engineer)",
+    r"SL\s?4D\s*[=:–—(]\s*Program":         "SL 4J (Program Manager)",
+    r"SL\s?4E\s*[=:–—(]\s*Knowledge":       "SL 4K (Knowledge Manager)",
+    r"SL\s?4F\s*[=:–—(]\s*Software":        "SL 4L (Software Engineer)",
 }
 
 # Patterns that are unambiguously wrong in prose (not in archive dirs)
 STALE_REF_PATTERNS = [
-    # TM-50A through TM-50F should not exist at all.
+    # SL 5A through SL 5F should not exist at all.
     # Exception: lines that explicitly state they don't exist (negative-context explanations)
     # are valid and should not be flagged. Supply a skip-if pattern as the 3rd tuple element.
-    (r"\bTM[-\s]?50[A-Fa-f]\b", "TM-50A–F series retired; only TM-50G–O valid",
+    (r"\bSL\s?5[A-Fa-f]\b", "SL 5A–F series retired; only SL 5G–O valid",
      r"\b(no|not|do not|don'?t)\b"),
-    # Old specialist mapping labels (prose like "TM-40A (ORSA)" or "TM-40A: ORSA")
+    # Old specialist mapping labels (prose like "SL 4A (ORSA)" or "SL 4A: ORSA")
     # Must be followed immediately by an ORSA/AI/ML/PM/KM/SWE label — not WFF labels
-    (r"\bTM[-\s]?40A\s*[\(\[:]?\s*ORSA",      "old specialist label: TM-40A=ORSA → now TM-40G"),
-    (r"\bTM[-\s]?40B\s*[\(\[:]?\s*AI\s*Eng",  "old specialist label: TM-40B=AI Eng → now TM-40H"),
-    (r"\bTM[-\s]?40C\s*[\(\[:]?\s*ML\s*Eng",  "old specialist label: TM-40C=ML Eng → now TM-40M"),
-    (r"\bTM[-\s]?40D\s*[\(\[:]?\s*Program\s*Manager", "old specialist label: TM-40D=PM → now TM-40J"),
-    (r"\bTM[-\s]?40E\s*[\(\[:]?\s*Knowledge\s*Manager", "old specialist label: TM-40E=KM → now TM-40K"),
-    (r"\bTM[-\s]?40F\s*[\(\[:]?\s*Software\s*Engineer", "old specialist label: TM-40F=SWE → now TM-40L"),
-    # WFF track prereq is TM-30 (policy change 2026-03-14 — all TM-40 require TM-30)
-    # Old rule (TM-20 for WFF) removed. No stale-prereq check for WFF here.
-    # Wrong prereq: specialist line that asserts TM-20 only (no TM-30 on same line)
-    (r"TM[-\s]?40[G-Og-o].*prerequisite[:\s]+TM[-\s]?20(?!.*TM[-\s]?30)",
-     "specialist track (G–O) prerequisite set to TM-20; should be TM-30"),
+    (r"\bSL\s?4A\s*[\(\[:]?\s*ORSA",      "old specialist label: SL 4A=ORSA → now SL 4G"),
+    (r"\bSL\s?4B\s*[\(\[:]?\s*AI\s*Eng",  "old specialist label: SL 4B=AI Eng → now SL 4H"),
+    (r"\bSL\s?4C\s*[\(\[:]?\s*ML\s*Eng",  "old specialist label: SL 4C=ML Eng → now SL 4M"),
+    (r"\bSL\s?4D\s*[\(\[:]?\s*Program\s*Manager", "old specialist label: SL 4D=PM → now SL 4J"),
+    (r"\bSL\s?4E\s*[\(\[:]?\s*Knowledge\s*Manager", "old specialist label: SL 4E=KM → now SL 4K"),
+    (r"\bSL\s?4F\s*[\(\[:]?\s*Software\s*Engineer", "old specialist label: SL 4F=SWE → now SL 4L"),
+    # WFF track prereq is SL 3 (policy change 2026-03-14 — all SL 4 require SL 3)
+    # Old rule (SL 2 for WFF) removed. No stale-prereq check for WFF here.
+    # Wrong prereq: specialist line that asserts SL 2 only (no SL 3 on same line)
+    (r"SL\s?4[G-Og-o].*prerequisite[:\s]+SL\s?2(?!.*SL\s?3)",
+     "specialist track (G–O) prerequisite set to SL 2; should be SL 3"),
 ]
 
 # PDFs that should NOT exist (stale naming scheme)
@@ -158,37 +165,37 @@ def check_completeness():
         tm_dir   = MT / "tm" / dir_name
         tm_file  = tm_dir / f"TM_{series}{letter}_{slug.upper()}.md"
         cg_file  = tm_dir / f"CONCEPTS_GUIDE_TM{series}{letter}_{slug.upper()}.md"
-        check_file_exists(tm_file,  f"TM source: TM-{code}")
-        check_file_exists(cg_file,  f"Concepts Guide: TM-{code}")
+        check_file_exists(tm_file,  f"TM source: SL {sl_label(code)}")
+        check_file_exists(cg_file,  f"Concepts Guide: SL {sl_label(code)}")
 
     # Base TM source files
     for code, slug in BASE_TRACKS.items():
         dir_name = f"TM_{code}_{slug}"
         tm_dir   = MT / "tm" / dir_name
         tm_file  = tm_dir / f"TM_{code}_{slug.upper()}.md"
-        check_file_exists(tm_file, f"TM source: TM-{code}")
+        check_file_exists(tm_file, f"TM source: SL {sl_label(code)}")
 
-    # Syllabi — TM10/20/30 + all 40 + all 50
+    # Syllabi — SL 1/2/3 + all 4x + all 5x
     for code in list(BASE_TRACKS) + list(WFF_TRACKS) + list(SPEC_TRACKS) + list(ADV_TRACKS):
         fc = fs_code(code)
         syl = MT / "syllabi" / f"SYLLABUS_TM{fc}.md"
-        check_file_exists(syl, f"Syllabus: TM-{code}")
+        check_file_exists(syl, f"Syllabus: SL {sl_label(code)}")
 
-    # Exams — all tracks get PRE + POST, except TM-10 which has PRE + SUPPLEMENTAL
+    # Exams — all tracks get PRE + POST, except SL 1 which has PRE + SUPPLEMENTAL
     for code in list(BASE_TRACKS) + list(WFF_TRACKS) + list(SPEC_TRACKS) + list(ADV_TRACKS):
         fc = fs_code(code)
         # PRE exam for all tracks
         exam_pre = MT / "exercises" / "exams" / f"EXAM_TM{fc}_PRE.md"
-        check_file_exists(exam_pre, f"Exam PRE: TM-{code}")
-        # POST exam for all tracks except TM-10 (which uses SUPPLEMENTAL)
+        check_file_exists(exam_pre, f"Exam PRE: SL {sl_label(code)}")
+        # POST exam for all tracks except SL 1 (which uses SUPPLEMENTAL)
         if code == "10":
             exam_supp = MT / "exercises" / "exams" / "EXAM_TM10_SUPPLEMENTAL.md"
-            check_file_exists(exam_supp, "Exam SUPPLEMENTAL: TM-10")
+            check_file_exists(exam_supp, "Exam SUPPLEMENTAL: SL 1")
         else:
             exam_post = MT / "exercises" / "exams" / f"EXAM_TM{fc}_POST.md"
-            check_file_exists(exam_post, f"Exam POST: TM-{code}")
+            check_file_exists(exam_post, f"Exam POST: SL {sl_label(code)}")
 
-    # Exercise dirs — TM10/20/30 + all TM-40 (not TM-50; no exercise dirs for advanced)
+    # Exercise dirs — SL 1/2/3 + all SL 4 (not SL 5; no exercise dirs for advanced)
     ex_tracks = {"10": "operator_basics", "20": "no_code_builder", "30": "advanced_builder",
                  **{k: v for k, v in WFF_TRACKS.items()},
                  **{k: v for k, v in SPEC_TRACKS.items()}}
@@ -220,7 +227,7 @@ def check_stale_refs():
 
     # Detects lines that compare/contrast WFF (A–F) vs specialist (G–M) tracks.
     # These are disambiguation lines; prereq mentions on them are intentional.
-    disambig_rx = re.compile(r'TM[-\s]?40[A-Fa-f].*TM[-\s]?40[G-Mg-m]', re.IGNORECASE)
+    disambig_rx = re.compile(r'SL\s?4[A-Fa-f].*SL\s?4[G-Mg-m]', re.IGNORECASE)
 
     # Meta-documents that intentionally describe retired/stale identifiers
     META_DOCS = {"DEPENDENCY_MAP.md"}
@@ -284,11 +291,11 @@ def check_missing_pdfs():
     for code, slug in BASE_TRACKS.items():
         want(f"TM_{code}_{slug.upper()}.pdf")
 
-    # Syllabi — only TM10/20/30 and TM-40 series (50 series syllabi not yet published = OK)
+    # Syllabi — only SL 1/2/3 and SL 4 series (SL 5 syllabi not yet published = OK)
     for code in list(BASE_TRACKS) + list(WFF_TRACKS) + list(SPEC_TRACKS):
         want(f"SYLLABUS_TM{code}.pdf")
 
-    # Exams — TM10/20/30 + TM-40 (50-series may be absent; flag as warning not error)
+    # Exams — SL 1/2/3 + SL 4 (SL 5 may be absent; flag as warning not error)
     for code in list(BASE_TRACKS) + list(WFF_TRACKS) + list(SPEC_TRACKS):
         want(f"EXAM_TM{code}_PRE.pdf")
         if code == "10":
@@ -296,7 +303,7 @@ def check_missing_pdfs():
         else:
             want(f"EXAM_TM{code}_POST.pdf")
 
-    # Exercises — TM10/20/30 + TM-40 (correct WFF names)
+    # Exercises — SL 1/2/3 + SL 4 (correct WFF names)
     wff_ex_names = {
         "40A": "INTELLIGENCE", "40B": "FIRES", "40C": "MOVEMENT_MANEUVER",
         "40D": "SUSTAINMENT",  "40E": "PROTECTION", "40F": "MISSION_COMMAND",
@@ -317,9 +324,9 @@ def check_missing_pdfs():
 def check_prereqs():
     print("[ 5 ] Checking prereq labels in TM source files...")
 
-    # WFF A–F: all TM-40 tracks (including WFF) require TM-30. No stale-prereq check needed here.
+    # WFF A–F: all SL 4 tracks (including WFF) require SL 3. No stale-prereq check needed here.
 
-    # Specialist G–O: prereq must be TM-30
+    # Specialist G–O: prereq must be SL 3
     for code, slug in SPEC_TRACKS.items():
         fc = fs_code(code)
         series = fc[:2]; letter = fc[2]
@@ -328,8 +335,8 @@ def check_prereqs():
             continue
         for lineno, line in scan_text(tm_file):
             if re.search(r"prereq|prerequisite", line, re.IGNORECASE):
-                if re.search(r"TM[-\s]?20\b", line, re.IGNORECASE) and not re.search(r"TM[-\s]?30", line, re.IGNORECASE):
-                    fail("PREREQ", f"TM-{code} specialist track shows TM-20 prereq; should be TM-30", tm_file, lineno)
+                if re.search(r"SL\s?2\b", line, re.IGNORECASE) and not re.search(r"SL\s?3", line, re.IGNORECASE):
+                    fail("PREREQ", f"SL {sl_label(code)} specialist track shows SL 2 prereq; should be SL 3", tm_file, lineno)
 
 
 # ══════════════════════════════════════════════════════════════════════════
@@ -347,9 +354,9 @@ def check_html():
     # Patterns that are wrong in HTML context
     html_patterns = [
         # Stale anchor/id slugs mapping old letters to specialist roles
-        (r'(?:id|href)=["\'].*tm-?40[a-f]-(?:orsa|ai-engineer|ml-engineer|program-manager|knowledge-manager|software-engineer)',
+        (r'(?:id|href)=["\'].*sl-?4[a-f]-(?:orsa|ai-engineer|ml-engineer|program-manager|knowledge-manager|software-engineer)',
          "old specialist slug in HTML id/href (A–F mapped to ORSA/AI/ML/PM/KM/SWE — should be G–L)"),
-        (r"\btm-?50[a-f]\b",            "TM-50A–F series retired; only TM-50G–O valid"),
+        (r"\bsl-?5[a-f]\b",            "SL 5A–F series retired; only SL 5G–O valid"),
     ]
     compiled = [(re.compile(pat, re.IGNORECASE), desc) for pat, desc in html_patterns]
 
@@ -368,7 +375,7 @@ def check_html():
 def check_syllabus_prereqs():
     print("[ 7 ] Checking syllabus prereq consistency...")
 
-    # WFF A–F syllabi: all TM-40 tracks require TM-30, so TM-30 in WFF syllabi is correct. No check needed.
+    # WFF A–F syllabi: all SL 4 tracks require SL 3, so SL 3 in WFF syllabi is correct. No check needed.
 
     for code in SPEC_TRACKS:
         syl = MT / "syllabi" / f"SYLLABUS_TM{fs_code(code)}.md"
@@ -376,8 +383,8 @@ def check_syllabus_prereqs():
             continue
         for lineno, line in scan_text(syl):
             if re.search(r"prereq|prerequisite", line, re.IGNORECASE):
-                if re.search(r"TM[-\s]?20\b", line, re.IGNORECASE) and not re.search(r"TM[-\s]?30", line, re.IGNORECASE):
-                    fail("SYLLABUS PREREQ", f"SYLLABUS_TM{code}: specialist track, prereq should be TM-30 not TM-20", syl, lineno)
+                if re.search(r"SL\s?2\b", line, re.IGNORECASE) and not re.search(r"SL\s?3", line, re.IGNORECASE):
+                    fail("SYLLABUS PREREQ", f"SYLLABUS_TM{code}: specialist track, prereq should be SL 3 not SL 2", syl, lineno)
 
 
 # ══════════════════════════════════════════════════════════════════════════

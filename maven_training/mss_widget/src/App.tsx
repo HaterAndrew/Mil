@@ -17,13 +17,13 @@ import PanelSupport from './panels/Support'
 import PanelSchedule from './panels/Schedule'
 import PanelDashboards from './panels/Dashboards'
 import PanelFBC from './panels/FBC'
-import PanelSL from './panels/SL'
+import PanelEXEC from './panels/EXEC'
 import PanelFindMyTrack from './panels/FindMyTrack'
 
 type PanelId =
   | 'quickref' | 'schedule' | 'dashboards' | 'findmytrack'
-  | 'tm10' | 'tm20' | 'tm30' | 'fbc' | 'sl'
-  | 'specialists' | 'tm40' | 'tm50'
+  | 'sl1' | 'sl2' | 'sl3' | 'fbc' | 'exec'
+  | 'specialists' | 'sl4' | 'sl5'
   | 'doctrine' | 'documents' | 'taskindex' | 'support'
 
 // ── Star Field ────────────────────────────────────────────────────────────────
@@ -115,7 +115,7 @@ export default function App() {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
   const [grpFoundationOpen, setGrpFoundationOpen] = useState(true)
   const [grpFbcOpen, setGrpFbcOpen] = useState(false)
-  const [grpSlOpen, setGrpSlOpen] = useState(false)
+  const [grpExecOpen, setGrpExecOpen] = useState(false)
   const [grpSpecialistsOpen, setGrpSpecialistsOpen] = useState(false)
   const [grpResourcesOpen, setGrpResourcesOpen] = useState(false)
 
@@ -150,14 +150,14 @@ export default function App() {
   function getPanelContent(id: PanelId) {
     switch (id) {
       case 'quickref':    return <PanelQuickRef    showPanel={showPanel} />
-      case 'tm10':        return <PanelTM10         showPanel={showPanel} />
-      case 'tm20':        return <PanelTM20         showPanel={showPanel} />
-      case 'tm30':        return <PanelTM30         showPanel={showPanel} />
+      case 'sl1':         return <PanelTM10         showPanel={showPanel} />
+      case 'sl2':         return <PanelTM20         showPanel={showPanel} />
+      case 'sl3':         return <PanelTM30         showPanel={showPanel} />
       case 'fbc':         return <PanelFBC          showPanel={showPanel} />
-      case 'sl':          return <PanelSL           showPanel={showPanel} />
+      case 'exec':        return <PanelEXEC         showPanel={showPanel} />
       case 'specialists': return <PanelSpecialists  showPanel={showPanel} />
-      case 'tm40':        return <PanelTM40         showPanel={showPanel} />
-      case 'tm50':        return <PanelTM50         showPanel={showPanel} />
+      case 'sl4':         return <PanelTM40         showPanel={showPanel} />
+      case 'sl5':         return <PanelTM50         showPanel={showPanel} />
       case 'doctrine':    return <PanelDoctrine     showPanel={showPanel} />
       case 'documents':   return <PanelDocuments    showPanel={showPanel} />
       case 'taskindex':   return <PanelTaskIndex    showPanel={showPanel} />
@@ -195,7 +195,7 @@ export default function App() {
           <div className="splash-data splash-data-tl">USAREUR-AF ODT<br/>EUCOM AOR</div>
           <div className="splash-data splash-data-tr">VER 3.1 / MAR 2026<br/>MSS TRAINING HUB</div>
           <div className="splash-data splash-data-bl">DIST: UNLIMITED</div>
-          <div className="splash-data splash-data-br">TM-10 THRU TM-50<br/>Data Lit (SL) · Data Literacy</div>
+          <div className="splash-data splash-data-br">SL 1 THRU SL 5<br/>EXEC · Data Literacy</div>
           <div className="splash-body">
             <div className="splash-content">
               <div className="splash-crest-wrap">
@@ -208,8 +208,8 @@ export default function App() {
               <div className="splash-sub">Training &amp; Information Hub</div>
               <div style={{marginTop:6,fontSize:10,letterSpacing:'.14em',color:'rgba(255,180,0,0.55)',textTransform:'uppercase'}}>alpha</div>
               <div className="splash-tms">
-                TM-10 &nbsp;&middot;&nbsp; TM-20 &nbsp;&middot;&nbsp; TM-30 &nbsp;&middot;&nbsp;
-                TM-40A&ndash;O &nbsp;&middot;&nbsp; TM-50G&ndash;O &nbsp;&middot;&nbsp; Data Lit (SL) &nbsp;&middot;&nbsp; Data Literacy
+                SL 1 &nbsp;&middot;&nbsp; SL 2 &nbsp;&middot;&nbsp; SL 3 &nbsp;&middot;&nbsp;
+                SL 4A&ndash;O &nbsp;&middot;&nbsp; SL 5G&ndash;O &nbsp;&middot;&nbsp; EXEC &nbsp;&middot;&nbsp; Data Literacy
               </div>
               <div className="splash-rule-sm" />
               <button className="splash-enter" onClick={enterHub}>
@@ -258,7 +258,7 @@ export default function App() {
 
       <div className="header-strip">
         <div className="header-strip-inner">
-          <span>TM-10 &bull; TM-20 &bull; TM-30 &bull; TM-40A&ndash;O &bull; TM-50G&ndash;O &bull; Data Lit (SL) &bull; Data Literacy</span>
+          <span>SL 1 &bull; SL 2 &bull; SL 3 &bull; SL 4A&ndash;O &bull; SL 5G&ndash;O &bull; EXEC &bull; Data Literacy</span>
           <span>DRAFT &mdash; NOT YET APPROVED FOR DISTRIBUTION &nbsp;&bull;&nbsp; alpha</span>
         </div>
       </div>
@@ -310,13 +310,13 @@ export default function App() {
                 style={{color:'var(--gold-light)',fontWeight:700}}
                 onClick={() => setGrpFoundationOpen(o => !o)}
               >
-                Foundation TMs
+                Foundation Courses
                 <span className="snav-group-arrow">&#8964;</span>
               </button>
               <div className="snav-group-items">
-                {navItem('tm10', 'TM-10 — Maven User', '◾')}
-                {navItem('tm20', 'TM-20 — Builder', '◾')}
-                {navItem('tm30', 'TM-30 — Advanced Builder', '◾')}
+                {navItem('sl1', 'SL 1 — Maven User', '◾')}
+                {navItem('sl2', 'SL 2 — Builder', '◾')}
+                {navItem('sl3', 'SL 3 — Advanced Builder', '◾')}
               </div>
             </div>
 
@@ -335,18 +335,18 @@ export default function App() {
               </div>
             </div>
 
-            {/* Senior Leader (TM-SL) group */}
-            <div className={`snav-group${grpSlOpen ? '' : ' collapsed'}`}>
+            {/* Senior Leader (EXEC) group */}
+            <div className={`snav-group${grpExecOpen ? '' : ' collapsed'}`}>
               <button
                 className="snav-group-hdr"
                 style={{color:'rgba(200,151,26,0.75)'}}
-                onClick={() => setGrpSlOpen(o => !o)}
+                onClick={() => setGrpExecOpen(o => !o)}
               >
-                Senior Leader (TM-SL)
+                Senior Leader (EXEC)
                 <span className="snav-group-arrow">&#8964;</span>
               </button>
               <div className="snav-group-items">
-                {navItem('sl', 'Exec Course — Overview', '◾')}
+                {navItem('exec', 'EXEC Course — Overview', '◾')}
               </div>
             </div>
 
@@ -362,8 +362,8 @@ export default function App() {
               </button>
               <div className="snav-group-items">
                 {navItem('specialists', 'Track Overview', '◾')}
-                {navItem('tm40', 'TM-40 Specialist', '◾')}
-                {navItem('tm50', 'TM-50 Advanced', '◾')}
+                {navItem('sl4', 'SL 4 Specialist', '◾')}
+                {navItem('sl5', 'SL 5 Advanced', '◾')}
               </div>
             </div>
 
@@ -414,14 +414,14 @@ export default function App() {
           <main>
             {panel('quickref')}
             {panel('schedule')}
-            {panel('tm10')}
-            {panel('tm20')}
-            {panel('tm30')}
+            {panel('sl1')}
+            {panel('sl2')}
+            {panel('sl3')}
             {panel('fbc')}
-            {panel('sl')}
+            {panel('exec')}
             {panel('specialists')}
-            {panel('tm40')}
-            {panel('tm50')}
+            {panel('sl4')}
+            {panel('sl5')}
             {panel('doctrine')}
             {panel('documents')}
             {panel('taskindex')}

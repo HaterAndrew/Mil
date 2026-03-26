@@ -1,11 +1,11 @@
-# PRE-TEST — TM-10: MAVEN USER
+# PRE-TEST — SL 1: MAVEN USER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-10: Maven User |
+| **Course** | SL 1: Maven User |
 | **Form** | Pre-Test |
-| **Level** | TM-10 (Foundational) |
+| **Level** | SL 1 (Foundational) |
 | **Audience** | All personnel — all MOS/branches, officer and enlisted |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |

@@ -1,12 +1,12 @@
-# PRE-TEST — TM-20: BUILDER
+# PRE-TEST — SL 2: BUILDER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-20: Builder |
+| **Course** | SL 2: Builder |
 | **Form** | Pre-Test |
-| **Level** | TM-20 (Intermediate) |
-| **Audience** | All staff — prerequisite: TM-10 |
+| **Level** | SL 2 (Intermediate) |
+| **Audience** | All staff — prerequisite: SL 1 |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

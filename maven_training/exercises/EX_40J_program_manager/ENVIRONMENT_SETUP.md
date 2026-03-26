@@ -1,6 +1,6 @@
 # ENVIRONMENT SETUP — EX_40J Program Manager (Technical)
 
-**Track:** EX_40J — Program Manager (Technical) (TM-40J) | **Prerequisite:** TM-30 REQUIRED | **Continuation:** TM-50J — Advanced Program Manager
+**Track:** EX_40J — Program Manager (Technical) (SL 4J) | **Prerequisite:** SL 3 REQUIRED | **Continuation:** SL 5J — Advanced Program Manager
 **Companion exams:** EXAM_TM40J_PRE (administer before exercise), EXAM_TM40J_POST (administer after exercise)
 **Training data:** `training_data/EX_40J_project_record_package/` — milestone_tracker.md, open_tickets.md, pipeline_definition.md, project_charter.md
 
@@ -52,6 +52,6 @@ See the evaluator role-play guidance in the EVALUATOR NOTES section of EXERCISE.
 
 ## Notes
 
-- This exercise has lower platform dependency than other TM-40 exercises
+- This exercise has lower platform dependency than other SL 4 exercises
 - The synthetic project record can be distributed as printed documents if the training environment is unavailable
 - Do not reveal the rate-limit workaround to participants before Task 4

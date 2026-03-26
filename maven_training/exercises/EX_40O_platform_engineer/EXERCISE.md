@@ -1,10 +1,10 @@
 # EX_40O — Platform Engineer
-## Practical Exercise — TM-40O Proficiency
+## Practical Exercise — SL 4O Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-30 REQUIRED; TM-40O — Platform Engineer Technical Manual (and TM-10 through TM-20) |
+| **Prerequisite** | SL 3 REQUIRED; SL 4O — Platform Engineer Technical Manual (and SL 1 through SL 2) |
 | **Duration** | 3–4 hours |
 | **Environment** | Kubernetes training cluster, container registry, CI/CD tooling, Git — see ENVIRONMENT_SETUP.md |
 
@@ -12,11 +12,11 @@
 
 | Resource | Reference |
 |----------|-----------|
-| Technical Manual | TM-40O — Platform Engineer |
+| Technical Manual | SL 4O — Platform Engineer |
 | Syllabus | SYLLABUS_TM40O |
 | Pre-Exercise Exam | EXAM_TM40O_PRE |
 | Post-Exercise Exam | EXAM_TM40O_POST |
-| Continuation Track | TM-50O — Advanced Platform Engineer |
+| Continuation Track | SL 5O — Advanced Platform Engineer |
 
 ## WFF AWARENESS
 
@@ -24,7 +24,7 @@ The platform environment built in this exercise provides the infrastructure laye
 
 ## SCENARIO
 
-The OPDATA team needs a new platform environment provisioned for an MSS application team. The environment must include namespace isolation, a CI/CD pipeline with security gates, container hardening, GitOps-based deployment, monitoring, and an air-gapped deployment package. The trainee will build this environment from the ground up, applying TM-40O principles.
+The OPDATA team needs a new platform environment provisioned for an MSS application team. The environment must include namespace isolation, a CI/CD pipeline with security gates, container hardening, GitOps-based deployment, monitoring, and an air-gapped deployment package. The trainee will build this environment from the ground up, applying SL 4O principles.
 
 **Training cluster:** A shared Kubernetes training cluster with namespace-admin privileges per trainee.
 

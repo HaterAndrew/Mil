@@ -1,17 +1,17 @@
-# LESSON PLAN OUTLINES — TM-40 SPECIALIST TRACKS
+# LESSON PLAN OUTLINES — SL 4 SPECIALIST TRACKS
 ## USAREUR-AF Operational Data Team — C2DAO
-**Covers:** TM-40G (ORSA) | TM-40H (AI Engineer) | TM-40M (MLE) | TM-40J (PM) | TM-40K (KM) | TM-40L (SWE) | TM-40N (UX Designer) | TM-40O (Platform Engineer)
-**Version:** 1.2 — March 2026 (updated: specialist tracks renumbered G–O; WFF tracks are TM-40A–F, prereq TM-30)
+**Covers:** SL 4G (ORSA) | SL 4H (AI Engineer) | SL 4M (MLE) | SL 4J (PM) | SL 4K (KM) | SL 4L (SWE) | SL 4N (UX Designer) | SL 4O (Platform Engineer)
+**Version:** 1.2 — March 2026 (updated: specialist tracks renumbered G–O; WFF tracks are SL 4A–F, prereq SL 3)
 
-> Abbreviated LP outlines for TM-40 specialist courses.
-> Instructors at TM-40 level must have deep domain SME background — these outlines supplement SME knowledge, not replace it.
+> Abbreviated LP outlines for SL 4 specialist courses.
+> Instructors at SL 4 level must have deep domain SME background — these outlines supplement SME knowledge, not replace it.
 > Expand using `LP_TEMPLATE.md` as needed.
 
 ---
 
-# PART G — TM-40G: ORSA SPECIALIST
+# PART G — SL 4G: ORSA SPECIALIST
 
-**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** FA49 or equivalent; TM-40G certified or C2DAO ORSA SME
+**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** FA49 or equivalent; SL 4G certified or C2DAO ORSA SME
 
 ---
 
@@ -53,7 +53,7 @@
 **Hours:** 0.75 | **Method:** Lab | **Day:** 1 | **Time:** 1115–1200
 
 **Key Delivery Notes:**
-- Three access patterns: Spark DataFrame (large datasets), pandas (smaller datasets via `.toPandas()`), direct Foundry REST API. For TM-40G, Spark → pandas conversion is the primary pattern.
+- Three access patterns: Spark DataFrame (large datasets), pandas (smaller datasets via `.toPandas()`), direct Foundry REST API. For SL 4G, Spark → pandas conversion is the primary pattern.
 - Schema inspection: `df.printSchema()` or `df.dtypes`. Confirm column names and types match the Ontology definition.
 
 ---
@@ -193,7 +193,7 @@
 
 ---
 
-# PART H — TM-40H: AI ENGINEER
+# PART H — SL 4H: AI ENGINEER
 
 **Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** AIP Logic authoring experience; C2DAO AI SME designation
 
@@ -286,7 +286,7 @@
 
 ---
 
-# PART C — TM-40M: ML ENGINEER
+# PART C — SL 4M: ML ENGINEER
 
 **Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** ML production experience; C2DAO MLE SME designation
 
@@ -358,9 +358,9 @@
 
 ---
 
-# PART J — TM-40J: PROGRAM MANAGER
+# PART J — SL 4J: PROGRAM MANAGER
 
-**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Program management background; TM-30 certified; GFEBS/IMS proficiency
+**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Program management background; SL 3 certified; GFEBS/IMS proficiency
 
 ---
 
@@ -438,9 +438,9 @@
 
 ---
 
-# PART K — TM-40K: KNOWLEDGE MANAGER
+# PART K — SL 4K: KNOWLEDGE MANAGER
 
-**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** KM background; TM-30 certified; AIP Logic configuration proficiency
+**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** KM background; SL 3 certified; AIP Logic configuration proficiency
 
 ---
 
@@ -523,16 +523,16 @@
 
 ---
 
-# PART L — TM-40L: SOFTWARE ENGINEER
+# PART L — SL 4L: SOFTWARE ENGINEER
 
-**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** OSDK/Platform SDK experience; TM-40L certified; C2DAO SWE SME designation
+**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** OSDK/Platform SDK experience; SL 4L certified; C2DAO SWE SME designation
 
 ---
 
 ### Block 1 — SWE Role and OSDK Architecture
 **Hours:** 1.0 | **Method:** Lecture | **Day:** 1
 
-**Purpose:** TM-40L SWEs are building production software on Foundry. Security must be established as a first principle before any code is written. Read TM-40L Chapter 9 (Security) before Day 1.
+**Purpose:** SL 4L SWEs are building production software on Foundry. Security must be established as a first principle before any code is written. Read TM-40L Chapter 9 (Security) before Day 1.
 
 **Key Delivery Notes:**
 - The 5-layer data stack: raw data → pipelines → Ontology → OSDK → applications. SWEs live at layer 4–5.
@@ -610,9 +610,9 @@
 
 ---
 
-# PART G — TM-40N: UI/UX DESIGNER
+# PART G — SL 4N: UI/UX DESIGNER
 
-**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** Soldier Centered Design practitioner; TM-40N certified or C2DAO UX SME designation
+**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** Soldier Centered Design practitioner; SL 4N certified or C2DAO UX SME designation
 
 ---
 
@@ -626,7 +626,7 @@
 **Key Delivery Notes:**
 - SCD is not commercial UX with a military skin. Operational tempo, classification constraints, DDIL, and cross-rank dynamics fundamentally change what "good design" means.
 - Balanced team model: PM owns the backlog, SWE owns the implementation, Designer owns user understanding and design specification. The boundary is about primary responsibility, not capability.
-- Designer boundaries: backlog prioritization → TM-40J; code implementation → TM-40L/TM-30; infrastructure → TM-40O; data modeling → TM-30/TM-40H.
+- Designer boundaries: backlog prioritization → SL 4J; code implementation → SL 4L/SL 3; infrastructure → SL 4O; data modeling → SL 3/SL 4H.
 
 **Assessment:** Role understanding evaluated during Practical Exercise design presentation (Day 5).
 
@@ -718,7 +718,7 @@
 **Key Delivery Notes:**
 - Workshop layout patterns: command dashboard (summary metrics with drill-down), data entry form (structured input with validation), drill-down explorer (list → detail view). Select the pattern that matches the user's decision workflow.
 - Widget catalog walkthrough: select widgets based on the information architecture, not based on visual appeal. A chart widget is appropriate when the user needs to see a trend. A table widget is appropriate when the user needs to compare specific values.
-- Data binding: document which Ontology Object properties bind to which widgets. This becomes the handoff spec for the TM-40L SWE or TM-30 builder.
+- Data binding: document which Ontology Object properties bind to which widgets. This becomes the handoff spec for the SL 4L SWE or SL 3 builder.
 
 ---
 
@@ -769,13 +769,13 @@
 ### Block 13 — Design Handoff Specifications
 **Hours:** 1.75 | **Method:** Studio | **Day:** 3 | **Time:** 1515–1700
 
-**Purpose:** A design that cannot be implemented without follow-up clarification is not a finished design. The handoff package is what the TM-40L SWE or TM-30 builder uses to build.
+**Purpose:** A design that cannot be implemented without follow-up clarification is not a finished design. The handoff package is what the SL 4L SWE or SL 3 builder uses to build.
 
 **TLO:** The trainee will produce a design-to-development handoff package including layout specification, data binding documentation, interaction specification, visual style reference, and accessibility requirements.
 
 **Key Delivery Notes:**
 - Handoff package contents: annotated mockups, widget-to-data binding map, interaction specification (all states), filter logic, responsive behavior notes, accessibility requirements.
-- The test: can a TM-40L SWE implement this without asking the Designer a single clarifying question? If not, the handoff is incomplete.
+- The test: can a SL 4L SWE implement this without asking the Designer a single clarifying question? If not, the handoff is incomplete.
 - Implementation-ready specification format: consistent layout across all projects. Use the C2DAO design handoff template.
 
 ---
@@ -853,15 +853,15 @@
 ### Block 23 — Post-Test and Course Evaluation
 **Hours:** 0.5 | **Method:** Evaluation | **Day:** 5 | **Time:** 1630–1700
 
-**Post-test:** EXAM_TM40N_POST administered. TM-50N pathway discussion for designers moving to enterprise design systems.
+**Post-test:** EXAM_TM40N_POST administered. SL 5N pathway discussion for designers moving to enterprise design systems.
 
 ---
 
 ---
 
-# PART H — TM-40O: PLATFORM ENGINEER
+# PART H — SL 4O: PLATFORM ENGINEER
 
-**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** Kubernetes operational experience; TM-40O certified or C2DAO Platform SME designation
+**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** Kubernetes operational experience; SL 4O certified or C2DAO Platform SME designation
 
 ---
 
@@ -873,7 +873,7 @@
 **TLO:** The trainee will describe the Platform Engineer's role on MSS, distinguish the platform-as-product mindset from the infrastructure mindset, and identify the platform services required to support MSS application teams.
 
 **Key Delivery Notes:**
-- Platform-as-product: "I configure servers" → "I build self-service capabilities for application teams." The Platform Engineer's primary users are application developers (TM-40L, TM-30), not end users.
+- Platform-as-product: "I configure servers" → "I build self-service capabilities for application teams." The Platform Engineer's primary users are application developers (SL 4L, SL 3), not end users.
 - Platform failures are simultaneous, cross-cutting, and high-blast-radius. A SWE's application failure affects one application. A platform failure affects every application.
 - Platform Engineer boundaries: owns infrastructure around Foundry (K8s clusters, CI/CD, container registries, monitoring stacks, deployment toolchain), NOT Foundry itself.
 - Read TM-40O Chapter 8 (Platform Security and Compliance) — security requirements affect every infrastructure decision. Read before the labs, not after.
@@ -1102,9 +1102,9 @@
 ### Block 23 — Post-Test and Course Evaluation
 **Hours:** 0.5 | **Method:** Evaluation | **Day:** 5 | **Time:** 1630–1700
 
-**Post-test:** EXAM_TM40O_POST administered. TM-50O pathway discussion for platform engineers moving to fleet management and SRE.
+**Post-test:** EXAM_TM40O_POST administered. SL 5O pathway discussion for platform engineers moving to fleet management and SRE.
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*TM-40 Specialist Lesson Plan Outlines | Version 1.2 | March 2026*
+*SL 4 Specialist Lesson Plan Outlines | Version 1.2 | March 2026*

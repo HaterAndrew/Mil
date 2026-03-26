@@ -1,12 +1,12 @@
-# PRE-TEST — TM-40H: AI ENGINEER
+# PRE-TEST — SL 4H: AI ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40H: AI Engineer |
+| **Course** | SL 4H: AI Engineer |
 | **Form** | Pre-Test |
-| **Level** | TM-40H (Specialist) |
-| **Audience** | AI/ML specialists; prerequisite: TM-10+20+30 + Python + prompt engineering familiarity |
+| **Level** | SL 4H (Specialist) |
+| **Audience** | AI/ML specialists; prerequisite: SL 1+20+30 + Python + prompt engineering familiarity |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

@@ -5,9 +5,9 @@ deep_audit.py — Full-spectrum pre-publication audit for USAREUR-AF Maven Train
 15 check groups (A–O):
 
   A  File completeness       — every expected TM/CG/SYL/EXAM/EX/training-mgmt file exists
-  B  Stale text references   — retired specialist labels, TM-50A–F series, wrong prereq claims
+  B  Stale text references   — retired specialist labels, SL 5A–F series, wrong prereq claims
   C  PDF inventory           — stale PDFs deleted; all current-scheme PDFs present
-  D  Prereq label accuracy   — all TM-40 (WFF+Specialist)=TM-30, Advanced=TM-40x
+  D  Prereq label accuracy   — all SL 4 (WFF+Specialist)=SL 3, Advanced=SL 4x
   E  Syllabus structure      — required sections present (Prereqs, Objectives, Assessment, Schedule)
   F  Exam structure          — PRE/POST exams have minimum detectable item count
   G  TM document structure   — H1 title, BLUF, Army WARNING/CAUTION/NOTE style, min word count
@@ -16,9 +16,9 @@ deep_audit.py — Full-spectrum pre-publication audit for USAREUR-AF Maven Train
   J  HTML correctness        — task_index.html and mss_info_app for stale track ids/prereq chips
   K  Duration consistency    — MTP table durations match SYLLABUS course-length fields
   L  CG ↔ TM bidirectional  — each TM references its CG; each CG references its TM
-  M  Valid track code refs   — all "TM-XX" mentions in prose are valid track codes
-  N  Training mgmt coverage  — TEO/POI/MTP/FDP cover every TM-40 track
-  O  Terminology & format    — key proper nouns capitalized; consistent TM-XX hyphen format
+  M  Valid track code refs   — all "SL X" mentions in prose are valid track codes
+  N  Training mgmt coverage  — TEO/POI/MTP/FDP cover every SL 4 track
+  O  Terminology & format    — key proper nouns capitalized; consistent SL X format
 
 Severity levels:
   ERROR  — must fix before publication
@@ -181,27 +181,27 @@ def check_A():
         d      = MT / "tm" / f"TM_{s}{l}_{slug}"
         tm_f   = d / f"TM_{s}{l}_{slug.upper()}.md"
         cg_f   = d / f"CONCEPTS_GUIDE_TM{s}{l}_{slug.upper()}.md"
-        need(tm_f, f"TM source TM-{code}")
-        need(cg_f, f"Concepts Guide TM-{code}")
+        need(tm_f, f"TM source SL {code}")
+        need(cg_f, f"Concepts Guide SL {code}")
 
-    # Base TMs (no CG for TM-10/20/30)
+    # Base TMs (no CG for SL 1/2/3)
     for code, slug in BASE_TRACKS.items():
         need(MT / "tm" / f"TM_{code}_{slug}" / f"TM_{code}_{slug.upper()}.md",
-             f"TM source TM-{code}")
+             f"TM source SL {code}")
 
     # Syllabi — all tracks
     for code in ALL_TRACKS:
-        need(MT / "syllabi" / f"SYLLABUS_TM{code}.md", f"Syllabus TM-{code}")
+        need(MT / "syllabi" / f"SYLLABUS_TM{code}.md", f"Syllabus SL {code}")
 
-    # Exams — PRE + POST for every track (TM-10 has no written POST; uses practical exercise)
+    # Exams — PRE + POST for every track (SL 1 has no written POST; uses practical exercise)
     for code in ALL_TRACKS:
         need(MT / "exercises" / "exams" / f"EXAM_TM{code}_PRE.md",
-             f"Exam PRE TM-{code}")
+             f"Exam PRE SL {code}")
         if code != "10":
             need(MT / "exercises" / "exams" / f"EXAM_TM{code}_POST.md",
-                 f"Exam POST TM-{code}")
+                 f"Exam POST SL {code}")
 
-    # Exercise dirs — TM-10/20/30 + all TM-40 (TM-50 has no exercise dirs)
+    # Exercise dirs — SL 1/2/3 + all SL 4 (SL 5 has no exercise dirs)
     ex_tracks = {"10": "operator_basics", "20": "no_code_builder", "30": "advanced_builder",
                  **WFF_TRACKS, **SPEC_TRACKS}
     for code, slug in ex_tracks.items():
@@ -229,38 +229,38 @@ def check_A():
 
 # Pattern, severity, category, human description
 _STALE = [
-    # Retired TM-50A–F series
-    (r"\bTM[-\s]?50[A-Fa-f]\b",
+    # Retired SL 5A–F series
+    (r"\bSL\s?5[A-Fa-f]\b",
      "ERROR", "B:STALE-REF",
-     "TM-50A–F series is retired; only TM-50G–M is valid"),
-    # Old specialist label mappings (TM-40A=ORSA was the OLD scheme; now TM-40G=ORSA)
-    (r"\bTM[-\s]?40A\s*[\(\[:]?\s*ORSA",
-     "ERROR", "B:STALE-REF", "old label TM-40A=ORSA → correct label is TM-40G"),
-    (r"\bTM[-\s]?40B\s*[\(\[:]?\s*AI\s*Eng(?:ineer)?",
-     "ERROR", "B:STALE-REF", "old label TM-40B=AI Eng → correct label is TM-40H"),
-    (r"\bTM[-\s]?40C\s*[\(\[:]?\s*ML\s*Eng(?:ineer)?",
-     "ERROR", "B:STALE-REF", "old label TM-40C=ML Eng → correct label is TM-40M"),
-    (r"\bTM[-\s]?40D\s*[\(\[:]?\s*Program\s*Manager",
-     "ERROR", "B:STALE-REF", "old label TM-40D=PM → correct label is TM-40J"),
-    (r"\bTM[-\s]?40E\s*[\(\[:]?\s*Knowledge\s*Manager",
-     "ERROR", "B:STALE-REF", "old label TM-40E=KM → correct label is TM-40K"),
-    (r"\bTM[-\s]?40F\s*[\(\[:]?\s*Software\s*Engineer",
-     "ERROR", "B:STALE-REF", "old label TM-40F=SWE → correct label is TM-40L"),
-    # Wrong prereq assertions — all TM-40 tracks (WFF + Specialist) require TM-30
-    (r"TM[-\s]?40[A-Fa-f].*prerequisite[:\s]+TM[-\s]?20(?!.*TM[-\s]?30)",
+     "SL 5A–F series is retired; only SL 5G–M is valid"),
+    # Old specialist label mappings (SL 4A=ORSA was the OLD scheme; now SL 4G=ORSA)
+    (r"\bSL\s?4A\s*[\(\[:]?\s*ORSA",
+     "ERROR", "B:STALE-REF", "old label SL 4A=ORSA → correct label is SL 4G"),
+    (r"\bSL\s?4B\s*[\(\[:]?\s*AI\s*Eng(?:ineer)?",
+     "ERROR", "B:STALE-REF", "old label SL 4B=AI Eng → correct label is SL 4H"),
+    (r"\bSL\s?4C\s*[\(\[:]?\s*ML\s*Eng(?:ineer)?",
+     "ERROR", "B:STALE-REF", "old label SL 4C=ML Eng → correct label is SL 4M"),
+    (r"\bSL\s?4D\s*[\(\[:]?\s*Program\s*Manager",
+     "ERROR", "B:STALE-REF", "old label SL 4D=PM → correct label is SL 4J"),
+    (r"\bSL\s?4E\s*[\(\[:]?\s*Knowledge\s*Manager",
+     "ERROR", "B:STALE-REF", "old label SL 4E=KM → correct label is SL 4K"),
+    (r"\bSL\s?4F\s*[\(\[:]?\s*Software\s*Engineer",
+     "ERROR", "B:STALE-REF", "old label SL 4F=SWE → correct label is SL 4L"),
+    # Wrong prereq assertions — all SL 4 tracks (WFF + Specialist) require SL 3
+    (r"SL\s?4[A-Fa-f].*prerequisite[:\s]+SL\s?2(?!.*SL\s?3)",
      "ERROR", "B:PREREQ",
-     "WFF track (A–F) claims TM-20-only prereq; correct prereq is TM-30"),
-    (r"TM[-\s]?40[G-Mg-m].*prerequisite[:\s]+TM[-\s]?20(?!.*TM[-\s]?30)",
+     "WFF track (A–F) claims SL 2-only prereq; correct prereq is SL 3"),
+    (r"SL\s?4[G-Mg-m].*prerequisite[:\s]+SL\s?2(?!.*SL\s?3)",
      "ERROR", "B:PREREQ",
-     "specialist track (G–M) claims TM-20-only prereq; correct prereq is TM-30"),
+     "specialist track (G–M) claims SL 2-only prereq; correct prereq is SL 3"),
 ]
 
-_DISAMBIG_RX = re.compile(r'TM[-\s]?40[A-Fa-f].*TM[-\s]?40[G-Mg-m]', re.IGNORECASE)
-# Lines that correctly state TM-50A–F do NOT exist (explanatory / negation)
+_DISAMBIG_RX = re.compile(r'SL\s?4[A-Fa-f].*SL\s?4[G-Mg-m]', re.IGNORECASE)
+# Lines that correctly state SL 5A–F do NOT exist (explanatory / negation)
 _NEGATION_50_RX = re.compile(
     r'(?:no|not|none|there\s+(?:is|are)\s+no|do\s+not\s+exist|does\s+not\s+exist)'
-    r'.*TM[-\s]?50[A-F]'
-    r'|TM[-\s]?50[A-F].*(?:do\s+not|does\s+not|not\s+applicable|no\s+such)',
+    r'.*SL\s?5[A-F]'
+    r'|SL\s?5[A-F].*(?:do\s+not|does\s+not|not\s+applicable|no\s+such)',
     re.IGNORECASE,
 )
 
@@ -277,7 +277,7 @@ def check_B():
             # Disambiguation lines intentionally mention both families — skip
             if _DISAMBIG_RX.search(line):
                 continue
-            # Correct negation statements ("No TM-50A–F tracks exist") — skip
+            # Correct negation statements ("No SL 5A–F tracks exist") — skip
             if _NEGATION_50_RX.search(line):
                 continue
             for rx, sev, cat, desc in compiled:
@@ -333,11 +333,11 @@ def check_C():
     for code, slug in BASE_TRACKS.items():
         want(f"TM_{code}_{slug.upper()}.pdf")
 
-    # Syllabi PDFs — 10/20/30 + all TM-40 (TM-50 syllabi not yet published = OK)
+    # Syllabi PDFs — SL 1/2/3 + all SL 4 (SL 5 syllabi not yet published = OK)
     for code in list(BASE_TRACKS) + list(WFF_TRACKS) + list(SPEC_TRACKS):
         want(f"SYLLABUS_TM{code}.pdf")
 
-    # Exam PDFs — TM-10/20/30 + TM-40 (TM-10 has no written POST exam)
+    # Exam PDFs — SL 1/2/3 + SL 4 (SL 1 has no written POST exam)
     for code in list(BASE_TRACKS) + list(WFF_TRACKS) + list(SPEC_TRACKS):
         want(f"EXAM_TM{code}_PRE.pdf")
         if code != "10":
@@ -363,8 +363,8 @@ def check_D():
     print("[D] Prereq label accuracy...")
 
     prereq_rx = re.compile(r"prereq|prerequisite", re.IGNORECASE)
-    tm20_rx   = re.compile(r"TM[-\s]?20\b", re.IGNORECASE)
-    tm30_rx   = re.compile(r"TM[-\s]?30\b", re.IGNORECASE)
+    sl2_rx    = re.compile(r"SL\s?2\b", re.IGNORECASE)
+    sl3_rx    = re.compile(r"SL\s?3\b", re.IGNORECASE)
 
     def check_file(fpath, code, expect_tm20=False, expect_tm30=False):
         """
@@ -376,7 +376,7 @@ def check_D():
         """
         if not fpath.exists():
             return
-        own_code_rx = re.compile(rf"TM[-\s]?{re.escape(code)}\b", re.IGNORECASE)
+        own_code_rx = re.compile(rf"SL\s?{re.escape(code)}\b", re.IGNORECASE)
         for lineno, line in scan_lines(fpath):
             if not prereq_rx.search(line):
                 continue
@@ -386,12 +386,12 @@ def check_D():
             # Lines beyond that are typically cross-reference tables about OTHER tracks.
             if lineno > 25:
                 continue
-            if expect_tm30 and tm20_rx.search(line) and not tm30_rx.search(line):
+            if expect_tm30 and sl2_rx.search(line) and not sl3_rx.search(line):
                 err("D:PREREQ",
-                    f"{fpath.name}: track shows TM-20-only prereq; should be TM-30",
+                    f"{fpath.name}: track shows SL 2-only prereq; should be SL 3",
                     fpath, lineno)
 
-    # WFF A–F: prereq = TM-30 (same as specialist tracks — design decision 2026-03-13)
+    # WFF A–F: prereq = SL 3 (same as specialist tracks — design decision 2026-03-13)
     for code, slug in WFF_TRACKS.items():
         s, l = code[:2], code[2]
         check_file(MT / "tm" / f"TM_{s}{l}_{slug}" / f"TM_{s}{l}_{slug.upper()}.md",
@@ -399,7 +399,7 @@ def check_D():
         check_file(MT / "syllabi" / f"SYLLABUS_TM{code}.md",
                    code, expect_tm30=True)
 
-    # Specialist G–M: prereq = TM-30
+    # Specialist G–M: prereq = SL 3
     for code, slug in SPEC_TRACKS.items():
         s, l = code[:2], code[2]
         check_file(MT / "tm" / f"TM_{s}{l}_{slug}" / f"TM_{s}{l}_{slug.upper()}.md",
@@ -407,17 +407,17 @@ def check_D():
         check_file(MT / "syllabi" / f"SYLLABUS_TM{code}.md",
                    code, expect_tm30=True)
 
-    # Advanced 50-series: each must mention its paired TM-40X
+    # Advanced 50-series: each must mention its paired SL 4X
     for code, slug in ADV_TRACKS.items():
         s, l = code[:2], code[2]
-        paired = f"40{l}"
+        paired = f"4{l}"
         fpath  = MT / "tm" / f"TM_{s}{l}_{slug}" / f"TM_{s}{l}_{slug.upper()}.md"
         if not fpath.exists():
             continue
         text = read_text(fpath)
-        if not re.search(rf"TM[-\s]?{paired}\b", text, re.IGNORECASE):
+        if not re.search(rf"SL\s?{paired}\b", text, re.IGNORECASE):
             warn("D:PREREQ",
-                 f"TM-{code} (advanced) does not reference its paired prereq TM-{paired}",
+                 f"SL {code} (advanced) does not reference its paired prereq SL {paired}",
                  fpath)
 
 
@@ -451,7 +451,7 @@ def check_E():
 
         # Track code appears in first 10 lines
         header_block = "\n".join(text.splitlines()[:10])
-        if f"TM-{code}" not in header_block and f"TM {code}" not in header_block:
+        if f"SL {code}" not in header_block and f"SL{code}" not in header_block:
             warn("E:HEADER",
                  f"SYLLABUS_TM{code}: track code not found in first 10 lines — check title",
                  syl)
@@ -534,31 +534,31 @@ def _check_tm_file(fpath: Path, code: str, tier: str):
 
     # H1 title
     if not re.search(r"^#\s+\S", text, re.MULTILINE):
-        err("G:STRUCTURE", f"TM-{code}: no H1 title", fpath)
+        err("G:STRUCTURE", f"SL {code}: no H1 title", fpath)
 
     # Required structural elements
     for rx, label in _TM_REQUIRED_SECTIONS:
         if not rx.search(text):
             sev = "INFO" if label in ("BLUF statement",) else "WARN"
             _issue(sev, "G:STRUCTURE",
-                   f"TM-{code}: '{label}' not found", fpath)
+                   f"SL {code}: '{label}' not found", fpath)
 
     # Minimum word count
     wc = word_count(text)
     min_w = _TM_MIN_WORDS[tier]
     if wc < min_w:
         warn("G:STUB",
-             f"TM-{code}: {wc} words — below expected minimum of {min_w} for {tier} tier",
+             f"SL {code}: {wc} words — below expected minimum of {min_w} for {tier} tier",
              fpath)
 
-    # Appendix check for 40/50-series (substantive TMs should have appendices)
+    # Appendix check for SL 4/5-series (substantive TMs should have appendices)
     if tier in ("spec", "adv") and not re.search(r"^#+\s*Appendix", text,
                                                    re.IGNORECASE | re.MULTILINE):
-        warn("G:STRUCTURE", f"TM-{code}: no Appendix section found (specialist/advanced TMs expected to have appendices)", fpath)
+        warn("G:STRUCTURE", f"SL {code}: no Appendix section found (specialist/advanced TMs expected to have appendices)", fpath)
 
     # TABLE OF CONTENTS check for longer TMs
     if wc > 2000 and not re.search(r"table\s+of\s+contents|TOC", text, re.IGNORECASE):
-        warn("G:STRUCTURE", f"TM-{code}: no Table of Contents found (document is {wc} words)", fpath)
+        warn("G:STRUCTURE", f"SL {code}: no Table of Contents found (document is {wc} words)", fpath)
 
 
 def check_G():
@@ -636,16 +636,16 @@ def check_I():
 # ─────────────────────────────────────────────────────────────────────────────
 
 _HTML_PATTERNS = [
-    # Old specialist slug: id/href uses tm-40a-orsa style (A–F mapped to ORSA/AI/etc.)
-    (re.compile(r'(?:id|href|data-[a-z]+)=["\'][^"\']*?tm-?40[a-f]-'
+    # Old specialist slug: id/href uses sl-4a-orsa style (A–F mapped to ORSA/AI/etc.)
+    (re.compile(r'(?:id|href|data-[a-z]+)=["\'][^"\']*?sl-?4[a-f]-'
                 r'(?:orsa|ai-engineer|ml-engineer|program-manager|knowledge-manager|software-engineer)',
                 re.IGNORECASE),
      "ERROR", "J:STALE-SLUG",
-     "old specialist HTML slug (TM-40A–F mapped to role names); should be TM-40G–M"),
-    # Retired TM-50A–F in any context
-    (re.compile(r"\btm-?50[a-f]\b", re.IGNORECASE),
+     "old specialist HTML slug (SL 4A–F mapped to role names); should be SL 4G–M"),
+    # Retired SL 5A–F in any context
+    (re.compile(r"\bsl-?5[a-f]\b", re.IGNORECASE),
      "ERROR", "J:STALE-REF",
-     "TM-50A–F retired; only TM-50G–M valid"),
+     "SL 5A–F retired; only SL 5G–M valid"),
 ]
 
 
@@ -671,27 +671,27 @@ def check_J():
     idx = MT / "mss_info_app" / "index.html"
     if idx.exists():
         text = read_text(idx)
-        wff_refs  = len(set(re.findall(r'tm-40[a-f]', text, re.IGNORECASE)))
-        spec_refs = len(set(re.findall(r'tm-40[g-o]', text, re.IGNORECASE)))
-        adv_refs  = len(set(re.findall(r'tm-50[g-o]', text, re.IGNORECASE)))
+        wff_refs  = len(set(re.findall(r'sl-?4[a-f]', text, re.IGNORECASE)))
+        spec_refs = len(set(re.findall(r'sl-?4[g-o]', text, re.IGNORECASE)))
+        adv_refs  = len(set(re.findall(r'sl-?5[g-o]', text, re.IGNORECASE)))
         if wff_refs < 6:
             warn("J:CARD-COUNT",
-                 f"mss_info_app/index.html: only {wff_refs}/6 WFF track codes (TM-40A–F) found")
+                 f"mss_info_app/index.html: only {wff_refs}/6 WFF track codes (SL 4A–F) found")
         if spec_refs < 8:
             warn("J:CARD-COUNT",
-                 f"mss_info_app/index.html: only {spec_refs}/8 specialist track codes (TM-40G–O) found")
+                 f"mss_info_app/index.html: only {spec_refs}/8 specialist track codes (SL 4G–O) found")
         if adv_refs < 8:
             warn("J:CARD-COUNT",
-                 f"mss_info_app/index.html: only {adv_refs}/8 advanced track codes (TM-50G–O) found")
+                 f"mss_info_app/index.html: only {adv_refs}/8 advanced track codes (SL 5G–O) found")
 
-        # All TM-40 tracks (WFF + Specialist) require TM-30
-        # Flag any WFF card that shows TM-20 prereq without TM-30
+        # All SL 4 tracks (WFF + Specialist) require SL 3
+        # Flag any WFF card that shows SL 2 prereq without SL 3
         for lineno, line in scan_lines(idx, skip_archive=False):
-            if re.search(r'tm-40[a-f]', line, re.IGNORECASE):
-                if re.search(r'\bTM-20\b', line, re.IGNORECASE) and \
-                   not re.search(r'\bTM-30\b', line, re.IGNORECASE):
+            if re.search(r'sl-?4[a-f]', line, re.IGNORECASE):
+                if re.search(r'\bSL\s?2\b', line, re.IGNORECASE) and \
+                   not re.search(r'\bSL\s?3\b', line, re.IGNORECASE):
                     warn("J:PREREQ-CHIP",
-                         "WFF track card (TM-40A–F) shows TM-20 chip — should be TM-30",
+                         "WFF track card (SL 4A–F) shows SL 2 chip — should be SL 3",
                          idx, lineno)
 
 
@@ -699,10 +699,10 @@ def check_J():
 # CHECK K — Course duration consistency (MTP vs Syllabi)
 # ─────────────────────────────────────────────────────────────────────────────
 
-# MTP table row format: | TM-40A | ... | 3 | TM-20 (Required) |
+# MTP table row format: | SL 4A | ... | 3 | SL 2 (Required) |
 # Column 4 (0-indexed col 3) is days.
 _MTP_ROW_RX = re.compile(
-    r'\|\s*TM[-\s]?(\d+[A-Ma-m]?)\s*\|[^|]*\|[^|]*\|\s*(\d+)\s*\|',
+    r'\|\s*SL\s?(\d+[A-Ma-m]?)\s*\|[^|]*\|[^|]*\|\s*(\d+)\s*\|',
     re.IGNORECASE,
 )
 
@@ -728,14 +728,14 @@ def check_K():
         if code in mtp_days:
             if mtp_days[code] != canonical:
                 err("K:DURATION",
-                    f"MTP_MSS: TM-{code} = {mtp_days[code]} days; "
+                    f"MTP_MSS: SL {code} = {mtp_days[code]} days; "
                     f"canonical is {canonical} days",
                     mtp)
         else:
-            # Only warn if TM-40/50 series (TM-10 duration is informal)
+            # Only warn if SL 4/5 series (SL 1 duration is informal)
             if code not in ("10",):
                 warn("K:DURATION",
-                     f"MTP_MSS: TM-{code} not found in duration table")
+                     f"MTP_MSS: SL {code} not found in duration table")
 
         # Check syllabus
         syl = MT / "syllabi" / f"SYLLABUS_TM{code}.md"
@@ -778,14 +778,14 @@ def check_L():
         cg_stem = f"CONCEPTS_GUIDE_TM{s}{l}"
         if cg_stem not in tm_text and "concepts guide" not in tm_text.lower():
             warn("L:TM-MISSING-CG-REF",
-                 f"TM-{code} source does not reference its Concepts Guide",
+                 f"SL {code} source does not reference its Concepts Guide",
                  tm_file)
 
         # CG should reference its TM (by track code or TM file stem)
         tm_stem = f"TM_{s}{l}_{slug.upper()}"
-        if tm_stem not in cg_text and f"TM-{code}" not in cg_text:
+        if tm_stem not in cg_text and f"SL {code}" not in cg_text:
             warn("L:CG-MISSING-TM-REF",
-                 f"Concepts Guide for TM-{code} does not reference its TM",
+                 f"Concepts Guide for SL {code} does not reference its TM",
                  cg_file)
 
 
@@ -793,13 +793,13 @@ def check_L():
 # CHECK M — Valid track code references in prose
 # ─────────────────────────────────────────────────────────────────────────────
 
-# Matches any TM-XX reference that is definitively NOT a valid track code
+# Matches any SL X reference that is definitively NOT a valid track code
 _INVALID_TRACK_RX = re.compile(
-    r"\bTM[-\s]?("
-    r"40[P-Zp-z]"        # TM-40 beyond O
-    r"|50[A-Fa-f]"       # TM-50A–F (retired)
-    r"|50[P-Zp-z]"       # TM-50 beyond O
-    r"|[6-9]\d[A-Z]?"    # TM-60+ (hypothetical future)
+    r"\bSL\s?("
+    r"4[P-Zp-z]"         # SL 4 beyond O
+    r"|5[A-Fa-f]"        # SL 5A–F (retired)
+    r"|5[P-Zp-z]"        # SL 5 beyond O
+    r"|[6-9][A-Z]?"      # SL 6+ (hypothetical future)
     r")\b",
     re.IGNORECASE,
 )
@@ -813,11 +813,11 @@ def check_M():
             # Skip negation statements that correctly explain retired codes
             if _NEGATION_50_RX.search(line):
                 continue
-            # Skip range notation in NOTES/disambiguation lines ("TM-50A–F do not exist")
-            if re.search(r'TM[-\s]?50[A-F][–—-]', line, re.IGNORECASE):
+            # Skip range notation in NOTES/disambiguation lines ("SL 5A–F do not exist")
+            if re.search(r'SL\s?5[A-F][–—-]', line, re.IGNORECASE):
                 continue
-            # Skip placeholder notation (TM-40X, TM-50X = "any track in series")
-            if re.search(r'TM[-\s]?[45]0X\b', line, re.IGNORECASE):
+            # Skip placeholder notation (SL 4X, SL 5X = "any track in series")
+            if re.search(r'SL\s?[45]X\b', line, re.IGNORECASE):
                 continue
             m = _INVALID_TRACK_RX.search(line)
             if m:
@@ -848,11 +848,12 @@ def check_N():
             continue
         text = read_text(fpath)
         for code in {**WFF_TRACKS, **SPEC_TRACKS}:
-            # Accept "TM-40G", "TM 40G", or bare "40G" in a table
-            if (f"TM-{code}" not in text and
-                    f"TM {code}" not in text and
-                    f"TM-{code[:-1]}{code[-1]}" not in text):
-                warn(cat, f"{fname}: no reference to TM-{code}", fpath)
+            # Accept "SL 4G", "SL4G", or bare "4G" in a table
+            sl_code = f"{code[0]}{code[2]}" if len(code) == 3 else code
+            if (f"SL {sl_code}" not in text and
+                    f"SL{sl_code}" not in text and
+                    sl_code not in text):
+                warn(cat, f"{fname}: no reference to SL {sl_code}", fpath)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -867,16 +868,14 @@ def check_O():
         if not text:
             continue
 
-        # ── "TM XX" vs "TM-XX" mixed usage within the same file ──────────────
-        # Army document identification numbers (e.g. "TM 20-MSS-BLD") use space format
-        # by regulation — exclude those (pattern: TM NN-word or TM NN-NN).
-        has_hyphen  = bool(re.search(r'\bTM-\d', text))
-        # Space format as a TRACK REFERENCE (TM 40G, TM 20, etc.), not a doc number
-        # Doc numbers: "TM 11-5820-890-10" style (digits-digits) — skip those
-        has_space_ref = bool(re.search(r'\bTM\s+\d+[A-M]?\b(?!\s*-)', text))
-        if has_hyphen and has_space_ref:
+        # ── "SLX" vs "SL X" mixed usage within the same file ──────────────
+        # Standard format is "SL X" with a space (SL 1, SL 4G, etc.)
+        has_space  = bool(re.search(r'\bSL\s+\d', text))
+        # Exclude task-code prefixes like SL1-01, SL4G-2026-1 (digit + optional letter + hyphen)
+        has_nospace = bool(re.search(r'\bSL\d[A-Za-z]?(?![\w-])', text))
+        if has_space and has_nospace:
             warn("O:FORMAT",
-                 "mixed 'TM-XX' and 'TM XX' formatting — standardize on 'TM-XX'",
+                 "mixed 'SL X' and 'SLX' formatting — standardize on 'SL X'",
                  fpath)
 
         # ── "pre-requisite" / "Pre-Requisite" should be "prerequisite" ────────

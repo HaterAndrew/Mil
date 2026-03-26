@@ -41,11 +41,11 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-# PART I — TM-10: MAVEN USER T&EOs
+# PART I — SL 1: MAVEN USER T&EOs
 
 ---
 
-## T&EO TM10-01: Log In and Navigate to Designated Application
+## T&EO SL1-01: Log In and Navigate to Designated Application
 
 **Task:** Authenticate to MSS Training Environment and navigate to a designated Workshop application.
 
@@ -64,7 +64,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM10-02: Filter Table to Identify Missing Submissions
+## T&EO SL1-02: Filter Table to Identify Missing Submissions
 
 **Task:** Apply a date filter to a SITREP submission table and identify units with missing submissions.
 
@@ -81,7 +81,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM10-03: Execute an Authorized Action
+## T&EO SL1-03: Execute an Authorized Action
 
 **Task:** Execute a status update Action on a specified record in a Workshop application.
 
@@ -100,7 +100,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM10-04: Export Filtered Table to CSV
+## T&EO SL1-04: Export Filtered Table to CSV
 
 **Task:** Export a filtered Workshop table to CSV with correct classification labeling.
 
@@ -118,7 +118,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM10-05: Build a Basic Contour Chart
+## T&EO SL1-05: Build a Basic Contour Chart
 
 **Task:** Build a bar chart in Contour from a provided dataset.
 
@@ -136,7 +136,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM10-06: Identify Classification Marking and State Authorized Export Procedure
+## T&EO SL1-06: Identify Classification Marking and State Authorized Export Procedure
 
 **Task:** Locate the classification marking of a specified dataset and state the authorized export procedure.
 
@@ -154,7 +154,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM10-07: Explore an Object Type in Quiver
+## T&EO SL1-07: Explore an Object Type in Quiver
 
 **Task:** Navigate to a specified Object Type in Quiver, apply a filter, and export the filtered view.
 
@@ -172,7 +172,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM10-08: Submit a Query to an AIP Interface
+## T&EO SL1-08: Submit a Query to an AIP Interface
 
 **Task:** Submit a natural language query to a designated AIP interface and assess the output.
 
@@ -190,11 +190,11 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM10-09: Troubleshoot Common Access Issues
+## T&EO SL1-09: Troubleshoot Common Access Issues
 
 **Task:** Diagnose and state the resolution for pre-staged MSS access failures.
 
-**Conditions:** The evaluator presents 2 access failure scenarios from the following set: wrong classification marking, no project access, dataset moved or renamed, certificate selection error, expired account. The trainee uses TM-10 troubleshooting procedures.
+**Conditions:** The evaluator presents 2 access failure scenarios from the following set: wrong classification marking, no project access, dataset moved or renamed, certificate selection error, expired account. The trainee uses SL 1 troubleshooting procedures.
 
 **Standards:** The trainee will correctly diagnose the root cause and state the correct resolution action for at least 2 of 2 scenarios — without reference to notes — within 5 minutes.
 
@@ -207,7 +207,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM10-10: Request Access to a Missing Resource
+## T&EO SL1-10: Request Access to a Missing Resource
 
 **Task:** Submit a correct access request for a resource the trainee cannot currently access.
 
@@ -223,11 +223,11 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-# PART II — TM-20: BUILDER T&EOs
+# PART II — SL 2: BUILDER T&EOs
 
 ---
 
-## T&EO TM20-01: Create a Foundry Project to Standard
+## T&EO SL2-01: Create a Foundry Project to Standard
 
 **Conditions:** Given the C2DAO Naming and Governance Standards; a specified project name, classification, and folder structure.
 
@@ -241,7 +241,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM20-02: Ingest Files and Verify Data Quality
+## T&EO SL2-02: Ingest Files and Verify Data Quality
 
 **Conditions:** Two provided files (CSV and XLSX); trainee's Foundry project.
 
@@ -255,7 +255,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM20-03: Build a Clean-and-Transform Pipeline
+## T&EO SL2-03: Build a Clean-and-Transform Pipeline
 
 **Conditions:** Two ingested datasets (equipment and unit lookup); trainee's project.
 
@@ -273,7 +273,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM20-04: Create an Object Type
+## T&EO SL2-04: Create an Object Type
 
 **Conditions:** Pipeline output dataset with at least 5 columns of different types.
 
@@ -289,7 +289,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM20-05: Create a Link Type
+## T&EO SL2-05: Create a Link Type
 
 **Conditions:** Two existing Object Types (Equipment and Unit).
 
@@ -303,7 +303,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM20-06: Configure Ontology Write Step
+## T&EO SL2-06: Configure Ontology Write Step
 
 **Conditions:** Existing Object Type; pipeline with output dataset.
 
@@ -318,7 +318,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM20-07: Configure an Action
+## T&EO SL2-07: Configure an Action
 
 **Conditions:** Existing Object Type (Equipment).
 
@@ -333,7 +333,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM20-08: Build a Workshop Application
+## T&EO SL2-08: Build a Workshop Application
 
 **Conditions:** Object Type with at least 5 properties; existing Action.
 
@@ -349,9 +349,9 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM20-09: Connect Action Button; Verify Execution
+## T&EO SL2-09: Connect Action Button; Verify Execution
 
-**Conditions:** Workshop application from T&EO TM20-08; Action from T&EO TM20-07.
+**Conditions:** Workshop application from T&EO SL2-08; Action from T&EO SL2-07.
 
 **Standards:** Add an Action button; execute from a selected row; verify table refreshes with updated value.
 
@@ -363,7 +363,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM20-10: Configure Access Control
+## T&EO SL2-10: Configure Access Control
 
 **Conditions:** Workshop application; test Viewer-role account provided by evaluator.
 
@@ -377,7 +377,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM20-11: Create Branch and Submit Promotion Request
+## T&EO SL2-11: Create Branch and Submit Promotion Request
 
 **Conditions:** Workshop application to modify (change application header text as the branch change).
 
@@ -392,11 +392,11 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-# PART III — TM-30: ADVANCED BUILDER T&EOs
+# PART III — SL 3: ADVANCED BUILDER T&EOs
 
 ---
 
-## T&EO TM30-01: Design Ontology Schema
+## T&EO SL3-01: Design Ontology Schema
 
 **Conditions:** A provided mission scenario description; 30 minutes design time before tool access; 6-item design rubric.
 
@@ -413,7 +413,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM30-02: Build Multi-Source Pipeline with Append Mode
+## T&EO SL3-02: Build Multi-Source Pipeline with Append Mode
 
 **Conditions:** Two or three provided datasets; pipeline requirements specified in scenario.
 
@@ -429,11 +429,11 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM30-03: Configure Append Mode Snapshot Pipeline — *included in TM30-02 above*
+## T&EO SL3-03: Configure Append Mode Snapshot Pipeline — *included in SL3-02 above*
 
 ---
 
-## T&EO TM30-04: Build Multi-Page Workshop Application
+## T&EO SL3-04: Build Multi-Page Workshop Application
 
 **Conditions:** Existing Object Types from scenario; scenario specifying two pages with variable passing.
 
@@ -448,7 +448,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM30-05: Build Contour Workbook with Calculated Deviation Column
+## T&EO SL3-05: Build Contour Workbook with Calculated Deviation Column
 
 **Standards:** Build a Contour workbook showing readiness by battalion with a calculated deviation-from-standard column.
 
@@ -460,7 +460,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM30-06: Execute Full C2DAO Promotion Workflow
+## T&EO SL3-06: Execute Full C2DAO Promotion Workflow
 
 **Standards:** Branch → change → complete description → submit → respond to steward feedback.
 
@@ -472,7 +472,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM30-07: Build a Multi-Object Quiver Dashboard
+## T&EO SL3-07: Build a Multi-Object Quiver Dashboard
 
 **Task:** Build a Quiver dashboard with linked views across multiple Object Types.
 
@@ -489,7 +489,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM30-08: Configure an AIP Logic Workflow
+## T&EO SL3-08: Configure an AIP Logic Workflow
 
 **Task:** Configure an AIP Logic workflow with triggers, inputs, and outputs connected to the Ontology.
 
@@ -507,7 +507,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO TM30-09: Interpret a Data Lineage Graph
+## T&EO SL3-09: Interpret a Data Lineage Graph
 
 **Task:** Read a data lineage graph for a provided dataset and identify upstream sources, transforms, and downstream consumers.
 
@@ -525,23 +525,23 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-# PART IIIA — TM-40 WFF FUNCTIONAL TRACK T&EOs (TM-40A through TM-40F)
+# PART IIIA — SL 4 WFF FUNCTIONAL TRACK T&EOs (SL 4A through SL 4F)
 
 > WFF tracks share a common T&EO task structure. Scenario content (Object Type names, dataset fields, mission context) is adapted per WFF. Evaluators select the scenario package for the applicable WFF track.
 >
-> **Prerequisite reminder:** TM-40A–F require TM-10, TM-20, and TM-30 (all required).
+> **Prerequisite reminder:** SL 4A–F require SL 1, SL 2, and SL 3 (all required).
 > Evaluation: 6 tasks, all must pass (Go/No-Go); 3-hour evaluation window.
 
 ### WFF Track Scenario Packages
 
 | Track | Course | Primary Domain Scenario | Key Object Types |
 |---|---|---|---|
-| TM-40A | Intelligence WFF | PMESII pattern analysis; ISR track management; threat object tagging | ThreatReport, ISRCollection, PMESIIObservation |
-| TM-40B | Fires WFF | Target tracking pipeline; fire mission status; effects dashboard; CSR coordination | Target, FireMission, EffectsAssessment |
-| TM-40C | Movement & Maneuver WFF | Maneuver unit readiness; route status; obstacle tracking; S3 planning dashboard | ManeuverUnit, Route, Obstacle, MovementOrder |
-| TM-40D | Sustainment WFF | Class I–IX supply status; LOGSTAT pipeline; requisition tracking; S4 COP products | SupplyRequest, EquipmentReadiness, LOGSTATSubmission |
-| TM-40E | Protection WFF | Force protection object types; AT data products; CBRN incident tracking; AMD status | ProtectionEvent, CBRNReport, FPStatusUpdate |
-| TM-40F | Mission Command WFF | COP object types; CCIR threshold monitoring; SITREP submission; commander dashboard | SITREPSubmission, CCIRThreshold, COPObject |
+| SL 4A | Intelligence WFF | PMESII pattern analysis; ISR track management; threat object tagging | ThreatReport, ISRCollection, PMESIIObservation |
+| SL 4B | Fires WFF | Target tracking pipeline; fire mission status; effects dashboard; CSR coordination | Target, FireMission, EffectsAssessment |
+| SL 4C | Movement & Maneuver WFF | Maneuver unit readiness; route status; obstacle tracking; S3 planning dashboard | ManeuverUnit, Route, Obstacle, MovementOrder |
+| SL 4D | Sustainment WFF | Class I–IX supply status; LOGSTAT pipeline; requisition tracking; S4 COP products | SupplyRequest, EquipmentReadiness, LOGSTATSubmission |
+| SL 4E | Protection WFF | Force protection object types; AT data products; CBRN incident tracking; AMD status | ProtectionEvent, CBRNReport, FPStatusUpdate |
+| SL 4F | Mission Command WFF | COP object types; CCIR threshold monitoring; SITREP submission; commander dashboard | SITREPSubmission, CCIRThreshold, COPObject |
 
 > **NOTE:** All six WFF track evaluations use T&EO tasks 40WFF-01 through 40WFF-06. Evaluator selects the scenario package column matching the trainee's track. Critical performance measures for WFF tracks apply uniformly across all six scenario packages.
 
@@ -655,11 +655,11 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-# PART IV — TM-40 SPECIALIST TRACK T&EOs
+# PART IV — SL 4 SPECIALIST TRACK T&EOs
 
 ---
 
-## TM-40G (ORSA) T&EOs
+## SL 4G (ORSA) T&EOs
 
 ---
 
@@ -771,7 +771,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-40H (AI Engineer) T&EOs
+## SL 4H (AI Engineer) T&EOs
 
 ---
 
@@ -880,7 +880,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-40M (ML Engineer) T&EOs
+## SL 4M (ML Engineer) T&EOs
 
 ---
 
@@ -977,7 +977,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 **Task:** Complete a model governance document (model card) meeting USAREUR-AF documentation standards.
 
-**Conditions:** Completed model from 40M-03 through 40M-05; TM-40M governance checklist.
+**Conditions:** Completed model from 40M-03 through 40M-05; SL 4M governance checklist.
 
 **Standards:** Model card addresses all required sections; limitations are realistic and specific.
 
@@ -990,7 +990,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-40J (Program Manager) T&EOs
+## SL 4J (Program Manager) T&EOs
 
 ---
 
@@ -1095,7 +1095,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-40K (Knowledge Manager) T&EOs
+## SL 4K (Knowledge Manager) T&EOs
 
 ---
 
@@ -1201,7 +1201,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-40L (Software Engineer) T&EOs
+## SL 4L (Software Engineer) T&EOs
 
 ---
 
@@ -1307,7 +1307,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-40N (UI/UX Designer) T&EOs
+## SL 4N (UI/UX Designer) T&EOs
 
 ---
 
@@ -1365,7 +1365,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ### T&EO 40N-04: Produce a Design Handoff Package
 
-**Task:** Produce a design-to-development handoff package for a TM-40L SWE or TM-30 builder.
+**Task:** Produce a design-to-development handoff package for a SL 4L SWE or SL 3 builder.
 
 **Conditions:** Completed prototype from 40N-03; handoff template provided.
 
@@ -1414,7 +1414,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-40O (Platform Engineer) T&EOs
+## SL 4O (Platform Engineer) T&EOs
 
 ---
 
@@ -1521,15 +1521,15 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-# PART V — TM-50 ADVANCED SPECIALIST TRACK T&EOs
+# PART V — SL 5 ADVANCED SPECIALIST TRACK T&EOs
 
-> TM-50 T&EOs evaluate advanced competencies building on the corresponding TM-40 track. All TM-50 practical exercises include multi-part evaluations with product review components.
+> SL 5 T&EOs evaluate advanced competencies building on the corresponding SL 4 track. All SL 5 practical exercises include multi-part evaluations with product review components.
 >
-> **Prerequisite reminder:** Each TM-50 track requires the corresponding TM-40 track (e.g., TM-50G requires TM-40G).
+> **Prerequisite reminder:** Each SL 5 track requires the corresponding SL 4 track (e.g., SL 5G requires SL 4G).
 
 ---
 
-## TM-50G (Advanced ORSA) T&EOs
+## SL 5G (Advanced ORSA) T&EOs
 
 ---
 
@@ -1586,9 +1586,9 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ### T&EO 50G-04: Produce a GO/SES-Ready Analytical Product
 
-**Task:** Produce a complete analytical product meeting TM-50G product standards for GO/SES audience.
+**Task:** Produce a complete analytical product meeting SL 5G product standards for GO/SES audience.
 
-**Conditions:** Results from 50G-01 through 50G-03; TM-50G product standards checklist.
+**Conditions:** Results from 50G-01 through 50G-03; SL 5G product standards checklist.
 
 **Standards:** Product includes BLUF, uncertainty quantification, assumption register, limitations, and peer review signature block.
 
@@ -1603,7 +1603,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-50H (Advanced AI Engineer) T&EOs
+## SL 5H (Advanced AI Engineer) T&EOs
 
 ---
 
@@ -1658,7 +1658,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-50M (Advanced ML Engineer) T&EOs
+## SL 5M (Advanced ML Engineer) T&EOs
 
 ---
 
@@ -1714,7 +1714,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-50J (Advanced Program Manager) T&EOs
+## SL 5J (Advanced Program Manager) T&EOs
 
 ---
 
@@ -1769,7 +1769,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-50K (Advanced Knowledge Manager) T&EOs
+## SL 5K (Advanced Knowledge Manager) T&EOs
 
 ---
 
@@ -1840,7 +1840,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-50L (Advanced Software Engineer) T&EOs
+## SL 5L (Advanced Software Engineer) T&EOs
 
 ---
 
@@ -1899,7 +1899,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 **Task:** Conduct a security review of a provided codebase and fix CRITICAL findings.
 
-**Conditions:** Given an MSS application codebase with seeded vulnerabilities; TM-50L security review checklist.
+**Conditions:** Given an MSS application codebase with seeded vulnerabilities; SL 5L security review checklist.
 
 **Standards:** Review covers all 5 checklist categories; CRITICAL findings identified and fixed.
 
@@ -1912,7 +1912,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-50N (Advanced UI/UX Designer) T&EOs
+## SL 5N (Advanced UI/UX Designer) T&EOs
 
 ---
 
@@ -1966,7 +1966,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## TM-50O (Advanced Platform Engineer) T&EOs
+## SL 5O (Advanced Platform Engineer) T&EOs
 
 ---
 
@@ -2044,7 +2044,7 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ## T&EO T3I-01: Deliver a Block of Instruction (Microteaching)
 
-**Task:** Deliver a 20-minute block of instruction from a TM-10, TM-20, or TM-30 lesson plan.
+**Task:** Deliver a 20-minute block of instruction from a SL 1, SL 2, or SL 3 lesson plan.
 
 **Conditions:** Given a classroom with projector and student workstations; published lesson plan for the selected block; classmates role-playing as trainees at the appropriate course level. The candidate has 20 minutes.
 
@@ -2082,11 +2082,11 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO T3F-01: Deliver a TM-10 Block (Teach-Back)
+## T&EO T3F-01: Deliver a SL 1 Block (Teach-Back)
 
-**Task:** Deliver a 15–20 minute block of instruction from the TM-10 lesson plans.
+**Task:** Deliver a 15–20 minute block of instruction from the SL 1 lesson plans.
 
-**Conditions:** Given a classroom with projector and workstations; published TM-10 lesson plan for the selected block; classmates role-playing as TM-10 trainees. The candidate has 15–20 minutes.
+**Conditions:** Given a classroom with projector and workstations; published SL 1 lesson plan for the selected block; classmates role-playing as SL 1 trainees. The candidate has 15–20 minutes.
 
 **Standards:** The candidate will deliver the block demonstrating satisfactory technical accuracy and materials use.
 
@@ -2099,9 +2099,9 @@ Each T&EO defines the conditions and standards for a specific evaluated task. Th
 
 ---
 
-## T&EO T3F-02: Administer a TM-10 Go/No-Go Evaluation
+## T&EO T3F-02: Administer a SL 1 Go/No-Go Evaluation
 
-**Task:** Administer 1 T&EO from TM10-01 through TM10-10 to a role-player and make the correct Go/No-Go decision.
+**Task:** Administer 1 T&EO from SL1-01 through SL1-10 to a role-player and make the correct Go/No-Go decision.
 
 **Conditions:** Given a T&EO scoring sheet, a role-player performing a predetermined scenario (Go or No-Go), and the candidate's instructor binder. The evaluator observes the candidate's administration.
 

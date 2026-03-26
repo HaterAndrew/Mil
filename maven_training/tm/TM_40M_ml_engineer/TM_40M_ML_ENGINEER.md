@@ -1,7 +1,7 @@
 # TM-40M — MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** TM-40M qualifies machine learning engineers to build, train, evaluate, deploy, and maintain ML models on the Maven Smart System (MSS) within USAREUR-AF. This manual covers the full ML lifecycle — from Code Workspace setup through production model governance.
-> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (required). Proficiency in Python, scikit-learn, PyTorch or statsmodels, and SQL is assumed. Readers who cannot independently write a training loop, build a feature pipeline, and interpret a confusion matrix should complete prerequisite training before beginning this manual; CONCEPTS_GUIDE_TM40M_ML_ENGINEER (read before this manual).
+> **Forward:** SL 4M qualifies machine learning engineers to build, train, evaluate, deploy, and maintain ML models on the Maven Smart System (MSS) within USAREUR-AF. This manual covers the full ML lifecycle — from Code Workspace setup through production model governance.
+> **Prereqs:** SL 1, Maven User; SL 2, Builder; SL 3, Advanced Builder; Data Literacy Technical Reference (required). Proficiency in Python, scikit-learn, PyTorch or statsmodels, and SQL is assumed. Readers who cannot independently write a training loop, build a feature pipeline, and interpret a confusion matrix should complete prerequisite training before beginning this manual; CONCEPTS_GUIDE_TM40M_ML_ENGINEER (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: MODEL OUTPUTS REQUIRE HUMAN VALIDATION BEFORE OPERATIONAL USE. MSS ML models are decision-support tools. Automated model outputs that trigger Actions, update Ontology properties, or feed into operational dashboards without human review in the loop are not authorized without explicit C2DAO architecture review and documented approval. Failure to comply with this requirement may result in incorrect operational decisions based on model error. The machine learning engineer is responsible for ensuring this constraint is enforced in every deployment.**
@@ -15,25 +15,25 @@
 
 ### 1-1. ML Engineer Specialist Manual
 
-**BLUF:** TM-40M qualifies machine learning engineers to build, train, evaluate, deploy, and maintain ML models on the Maven Smart System (MSS) within USAREUR-AF. This manual covers the full ML lifecycle — from Code Workspace setup through production model governance.
+**BLUF:** SL 4M qualifies machine learning engineers to build, train, evaluate, deploy, and maintain ML models on the Maven Smart System (MSS) within USAREUR-AF. This manual covers the full ML lifecycle — from Code Workspace setup through production model governance.
 
-This manual provides task-based instruction for machine learning engineers (MLEs) operating on MSS. MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. TM-40M qualified personnel design and implement predictive models, feature pipelines, and ML-backed data products that support operational decision-making across III Corps, V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, SETAF-AF, USAREUR-AF G2, and subordinate commands.
+This manual provides task-based instruction for machine learning engineers (MLEs) operating on MSS. MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. SL 4M qualified personnel design and implement predictive models, feature pipelines, and ML-backed data products that support operational decision-making across III Corps, V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, SETAF-AF, USAREUR-AF G2, and subordinate commands.
 
-**TM-40M covers** setting up and using Code Workspaces (JupyterLab/RStudio) on Foundry; reading Foundry datasets into notebooks and managing Python environments; building feature engineering pipelines that feed ML training workflows; training models using scikit-learn, PyTorch, statsmodels, and similar libraries; training models using Model Studio (Palantir's no-code model training workspace, GA February 2026); evaluating model performance with operationally appropriate metrics; conducting bias and fairness checks for models affecting personnel or readiness assessments; publishing trained models to the Ontology and implementing model-backed Object properties; implementing MLOps patterns: versioning, experiment tracking, retraining triggers, drift detection; building and maintaining feature pipelines using Foundry Transforms; applying ML to operational use cases: readiness prediction, logistics demand forecasting, anomaly detection in OPDATA; and completing model governance documentation and navigating the approval process before production deployment.
+**SL 4M covers** setting up and using Code Workspaces (JupyterLab/RStudio) on Foundry; reading Foundry datasets into notebooks and managing Python environments; building feature engineering pipelines that feed ML training workflows; training models using scikit-learn, PyTorch, statsmodels, and similar libraries; training models using Model Studio (Palantir's no-code model training workspace, GA February 2026); evaluating model performance with operationally appropriate metrics; conducting bias and fairness checks for models affecting personnel or readiness assessments; publishing trained models to the Ontology and implementing model-backed Object properties; implementing MLOps patterns: versioning, experiment tracking, retraining triggers, drift detection; building and maintaining feature pipelines using Foundry Transforms; applying ML to operational use cases: readiness prediction, logistics demand forecasting, anomaly detection in OPDATA; and completing model governance documentation and navigating the approval process before production deployment.
 
-**TM-40M does NOT cover** basic Python or data science fundamentals — see data_skills curriculum; no-code pipeline building — see TM-20 and TM-30 (no-code model training via Model Studio IS covered in Chapter 10); Workshop application design — see TM-30; Ontology design methodology — see TM-30 (consumed by MLE, not designed here); TypeScript Functions on Objects or OSDK application development — see TM-40L (Software Engineer); large language model fine-tuning or Agent Studio development — see TM-40H (AI Engineer); or operations research / statistical modeling for optimization — see TM-40G (ORSA).
+**SL 4M does NOT cover** basic Python or data science fundamentals — see data_skills curriculum; no-code pipeline building — see SL 2 and SL 3 (no-code model training via Model Studio IS covered in Chapter 10); Workshop application design — see SL 3; Ontology design methodology — see SL 3 (consumed by MLE, not designed here); TypeScript Functions on Objects or OSDK application development — see SL 4L (Software Engineer); large language model fine-tuning or Agent Studio development — see SL 4H (AI Engineer); or operations research / statistical modeling for optimization — see SL 4G (ORSA).
 
 ### 1-2. Curriculum Position, Advanced Track, and WFF Context
 
-> **NOTE:** The Army established the **49B AI/ML Officer Career Path** in 2025–26, creating the first dedicated uniformed career track for AI/ML expertise. TM-40M directly aligns to 49B qualification requirements. ML Engineers completing this course and TM-50M (Advanced) are positioned for assignment to 49B-coded billets across the force.
+> **NOTE:** The Army established the **49B AI/ML Officer Career Path** in 2025–26, creating the first dedicated uniformed career track for AI/ML expertise. SL 4M directly aligns to 49B qualification requirements. ML Engineers completing this course and SL 5M (Advanced) are positioned for assignment to 49B-coded billets across the force.
 
-**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED. Python proficiency (scikit-learn, PyTorch or statsmodels, SQL) is required independently of the TM series.
+**Prerequisite:** SL 3 (Advanced Builder) is REQUIRED. Python proficiency (scikit-learn, PyTorch or statsmodels, SQL) is required independently of the TM series.
 
-**Advanced track:** Upon completing TM-40M, qualified MLEs should pursue **TM-50M (Advanced ML Engineer)** for advanced topics including neural architecture selection, large-scale feature store design, advanced MLOps patterns, and federated learning considerations for coalition data environments.
+**Advanced track:** Upon completing SL 4M, qualified MLEs should pursue **SL 5M (Advanced ML Engineer)** for advanced topics including neural architecture selection, large-scale feature store design, advanced MLOps patterns, and federated learning considerations for coalition data environments.
 
-**Peer specialist tracks:** The ML Engineer coordinates closely with the AI Engineer (TM-40H). The MLE builds and validates the model artifact; the AI Engineer integrates that model into AIP Logic orchestration workflows and human-review-gated operational products. Neither role replaces the other — coordinate at the model/workflow interface. Coordinate with TM-40G (ORSA) when a commander's analytical question requires both a predictive model and a decision-grade quantitative product. Coordinate with TM-40L (Software Engineer) for production pipeline implementation when model complexity exceeds standard Foundry Transforms.
+**Peer specialist tracks:** The ML Engineer coordinates closely with the AI Engineer (SL 4H). The MLE builds and validates the model artifact; the AI Engineer integrates that model into AIP Logic orchestration workflows and human-review-gated operational products. Neither role replaces the other — coordinate at the model/workflow interface. Coordinate with SL 4G (ORSA) when a commander's analytical question requires both a predictive model and a decision-grade quantitative product. Coordinate with SL 4L (Software Engineer) for production pipeline implementation when model complexity exceeds standard Foundry Transforms.
 
-**WFF awareness:** ML models deployed on MSS generate Ontology-backed properties that appear on objects visible to WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). A readiness prediction score attached to a vehicle is seen by Sustainment (TM-40D) staff; a threat assessment feature is seen by Intelligence (TM-40A) staff. Design model outputs and their presentation with WFF end-users in mind: operational terminology, asymmetric error cost awareness, and explainability appropriate to the WFF function.
+**WFF awareness:** ML models deployed on MSS generate Ontology-backed properties that appear on objects visible to WFF-qualified users (SL 4A through SL 4F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). A readiness prediction score attached to a vehicle is seen by Sustainment (SL 4D) staff; a threat assessment feature is seen by Intelligence (SL 4A) staff. Design model outputs and their presentation with WFF end-users in mind: operational terminology, asymmetric error cost awareness, and explainability appropriate to the WFF function.
 
 ---
 
@@ -89,7 +89,7 @@ Verify the following prerequisites before beginning this manual. These are not r
 
 | Prerequisite | Verification Method |
 |---|---|
-| TM-30 completion | Certification on file |
+| SL 3 completion | Certification on file |
 | Python proficiency (intermediate+) | Can write a training loop, build a pipeline, debug a stack trace |
 | scikit-learn or PyTorch working knowledge | Can train, serialize, and load a model |
 | SQL proficiency | Can write JOIN, GROUP BY, window functions |
@@ -202,14 +202,14 @@ Code Workspaces are Foundry-managed development environments that execute code o
 | Environment | Language | Primary Use |
 |---|---|---|
 | JupyterLab | Python (3.10+) | ML training, EDA, feature engineering, pipeline development |
-| RStudio | R | Statistical analysis, ORSA workflows (see TM-40G) |
-| VS Code (Preview) | Python / TypeScript | Application development (see TM-40L) |
+| RStudio | R | Statistical analysis, ORSA workflows (see SL 4G) |
+| VS Code (Preview) | Python / TypeScript | Application development (see SL 4L) |
 
 ---
 
 ### 2-2. Task: Create and Configure a Code Workspace
 
-**CONDITIONS:** You have a Foundry project with appropriate permissions. You are assigned to an approved ML use case. You have TM-30 prerequisites satisfied.
+**CONDITIONS:** You have a Foundry project with appropriate permissions. You are assigned to an approved ML use case. You have SL 3 prerequisites satisfied.
 
 **STANDARDS:** A configured JupyterLab workspace that connects to at least one Foundry dataset, runs a Python environment with required libraries installed, and is committed to version control.
 
@@ -1334,7 +1334,7 @@ Model deployment is not the end of the MLE's responsibility — it is the start 
 
 Most USAREUR-AF operational use cases use the batch inference Transform pattern. The Ontology-backed Object property pattern provides the best user experience for Workshop application consumers.
 
-> **NOTE — Palantir Developers reference:** *Build with AIP: Compute Modules* — Covers Compute Modules, which allow custom code to be invoked within AIP Logic workflows. When a model deployed here needs to be called on-demand inside an AIP Logic action or agent workflow, Compute Modules are the integration pattern — coordinate with the TM-40H AI Engineer for this interface. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
+> **NOTE — Palantir Developers reference:** *Build with AIP: Compute Modules* — Covers Compute Modules, which allow custom code to be invoked within AIP Logic workflows. When a model deployed here needs to be called on-demand inside an AIP Logic action or agent workflow, Compute Modules are the integration pattern — coordinate with the SL 4H AI Engineer for this interface. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
 > **NOTE — Palantir Developers reference:** *AIP with Jeg: Building a Streaming Ingestor with Compute Modules* — Demonstrates how to build a streaming data ingestor using Compute Modules for real-time ingestion use cases. Relevant when the operational requirement calls for sub-minute data freshness feeding ML inference rather than scheduled batch transforms. Available on the Palantir Developers YouTube channel (@PalantirDevelopers).
 
@@ -2745,7 +2745,7 @@ def generate_evaluation_report(y_true, y_pred, y_proba,
 
 ---
 
-*TM-40M, Maven Smart System (MSS) Machine Learning Engineer Technical Manual*
+*SL 4M, Maven Smart System (MSS) Machine Learning Engineer Technical Manual*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 *Reference: learn-data.armydev.com*
 

@@ -355,12 +355,12 @@ class TestDepMapAdd:
 
     def test_add_preserves_clean_strings(self):
         self.gdm.NODES.clear()
-        self.gdm.add("TM10", "TM_10\nMAVEN USER", "tm/TM_10.md", "TM", 1, "TM-10")
+        self.gdm.add("TM10", "TM_10\nMAVEN USER", "tm/TM_10.md", "TM", 1, "SL 1")
         node = self.gdm.NODES[-1]
         assert node["label"] == "TM_10\nMAVEN USER"
         assert node["path"] == "tm/TM_10.md"
         assert node["type"] == "TM"
-        assert node["track"] == "TM-10"
+        assert node["track"] == "SL 1"
 
     def test_add_column_is_int_not_escaped(self):
         """Column is numeric — verify it passes through as-is."""

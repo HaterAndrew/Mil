@@ -22,7 +22,7 @@ This rubric formalizes the "C2DAO SME designation" referenced throughout the Fac
 ### 1-2. What SME Designation Is
 
 C2DAO SME designation certifies that a person has demonstrated domain expertise sufficient to:
-- Instruct or evaluate TM-40/TM-50 courses in their designated domain
+- Instruct or evaluate SL 4/SL 5 courses in their designated domain
 - Serve as a domain authority for curriculum development and course currency review
 - Provide technical review of lesson plans, exercises, and evaluation criteria within their domain
 
@@ -40,16 +40,16 @@ C2DAO SME designation certifies that a person has demonstrated domain expertise 
 
 | Domain | Abbreviation | Associated Courses | FDP Reference |
 |---|---|---|---|
-| Operations Research / Systems Analysis | ORSA SME | TM-40G, TM-50G | FDP §2-1 (TM-40G row) |
-| Artificial Intelligence / AIP | AI SME | TM-40H, TM-50H | FDP §2-1 (TM-40H row) |
-| Machine Learning Engineering | MLE SME | TM-40M, TM-50M | FDP §2-1 (TM-40M row) |
-| Software Engineering | SWE SME | TM-40L, TM-50L | FDP §2-1 (TM-40L row) |
-| Knowledge Management | KM SME | TM-40K, TM-50K | FDP §2-1 (TM-40K row) |
-| Program Management | PM SME | TM-40J, TM-50J | FDP §2-1 (TM-40J row) |
+| Operations Research / Systems Analysis | ORSA SME | SL 4G, SL 5G | FDP §2-1 (SL 4G row) |
+| Artificial Intelligence / AIP | AI SME | SL 4H, SL 5H | FDP §2-1 (SL 4H row) |
+| Machine Learning Engineering | MLE SME | SL 4M, SL 5M | FDP §2-1 (SL 4M row) |
+| Software Engineering | SWE SME | SL 4L, SL 5L | FDP §2-1 (SL 4L row) |
+| Knowledge Management | KM SME | SL 4K, SL 5K | FDP §2-1 (SL 4K row) |
+| Program Management | PM SME | SL 4J, SL 5J | FDP §2-1 (SL 4J row) |
 
 ### 2-2. General SME Designation
 
-For TM-30 instruction, FDP §2-1 allows "C2DAO SME designation" as an alternative to holding a TM-40 Go. General SME designation is earned by meeting the criteria for any one of the six domain-specific designations above.
+For SL 3 instruction, FDP §2-1 allows "C2DAO SME designation" as an alternative to holding a SL 4 Go. General SME designation is earned by meeting the criteria for any one of the six domain-specific designations above.
 
 ---
 
@@ -59,7 +59,7 @@ For TM-30 instruction, FDP §2-1 allows "C2DAO SME designation" as an alternativ
 
 | Criterion | Requirement |
 |---|---|
-| **Course Qualification** | TM-40G Go on file |
+| **Course Qualification** | SL 4G Go on file |
 | **Operational Experience** | 12+ months performing ORSA work on the MSS platform |
 | **Production Work** | 2+ production analytical products deployed on MSS (dashboards, models, or decision-support tools actively used by operational units) |
 | **Peer Review** | Technical review and endorsement by an FA49 officer, ORSA-designated Civilian, or existing C2DAO ORSA SME |
@@ -69,7 +69,7 @@ For TM-30 instruction, FDP §2-1 allows "C2DAO SME designation" as an alternativ
 
 | Criterion | Requirement |
 |---|---|
-| **Course Qualification** | TM-40H Go on file |
+| **Course Qualification** | SL 4H Go on file |
 | **Production Work** | 3+ production AIP Logic workflows deployed and actively used |
 | **Red Team Experience** | Documented red-team or adversarial evaluation of at least 1 AIP workflow (testing for hallucination, prompt injection, data leakage, or unintended behavior) |
 | **Peer Review** | Technical review and endorsement by an existing C2DAO AI SME or C2DAO AI team lead |
@@ -79,7 +79,7 @@ For TM-30 instruction, FDP §2-1 allows "C2DAO SME designation" as an alternativ
 
 | Criterion | Requirement |
 |---|---|
-| **Course Qualification** | TM-40M Go on file |
+| **Course Qualification** | SL 4M Go on file |
 | **Production Work** | 1+ ML model deployed to production on MSS with active monitoring |
 | **Governance Documentation** | Model card on file for at least 1 production model (documenting training data, performance metrics, limitations, and governance approvals) |
 | **Peer Review** | Technical review and endorsement by an existing C2DAO MLE SME or C2DAO MLE team lead |
@@ -89,7 +89,7 @@ For TM-30 instruction, FDP §2-1 allows "C2DAO SME designation" as an alternativ
 
 | Criterion | Requirement |
 |---|---|
-| **Course Qualification** | TM-40L Go on file |
+| **Course Qualification** | SL 4L Go on file |
 | **Production Work** | 2+ production OSDK or Platform SDK applications deployed on MSS |
 | **Security Review** | At least 1 production application has passed a C2DAO security review (no hardcoded credentials, no unauthorized data access, validator test suite passing) |
 | **Peer Review** | Technical review and endorsement by an existing C2DAO SWE SME or C2DAO SWE team lead |
@@ -99,7 +99,7 @@ For TM-30 instruction, FDP §2-1 allows "C2DAO SME designation" as an alternativ
 
 | Criterion | Requirement |
 |---|---|
-| **Course Qualification** | TM-40K Go on file |
+| **Course Qualification** | SL 4K Go on file |
 | **Production Work** | 1+ production KM system deployed on MSS (AIP-powered summarization, PCS continuity tool, or institutional knowledge base) |
 | **Operational Transfer** | Has executed at least 1 PCS or duty transition using the KM system, demonstrating operational continuity |
 | **Peer Review** | Technical review and endorsement by an existing C2DAO KM SME or C2DAO KM lead |
@@ -109,7 +109,7 @@ For TM-30 instruction, FDP §2-1 allows "C2DAO SME designation" as an alternativ
 
 | Criterion | Requirement |
 |---|---|
-| **Course Qualification** | TM-40J Go on file |
+| **Course Qualification** | SL 4J Go on file |
 | **Production Work** | 2+ production PM dashboards deployed on MSS (tracking program milestones, budget execution, or resource allocation) |
 | **Active Use** | 6+ months active use of PM tools on MSS for program oversight |
 | **Peer Review** | Technical review and endorsement by an existing C2DAO PM SME or C2DAO PM lead |
@@ -161,7 +161,7 @@ SME designation is automatically suspended if:
 ### 5-3. Revocation
 
 SME designation is revoked if:
-- The holder's course qualification (TM-40 Go) is invalidated
+- The holder's course qualification (SL 4 Go) is invalidated
 - Adverse performance findings related to the domain are substantiated
 - The holder voluntarily relinquishes the designation
 

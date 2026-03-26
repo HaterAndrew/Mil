@@ -1,7 +1,7 @@
-# CONCEPTS GUIDE — TM-40G COMPANION — OPERATIONS RESEARCH / SYSTEMS ANALYSIS (ORSA) · MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 4G COMPANION — OPERATIONS RESEARCH / SYSTEMS ANALYSIS (ORSA) · MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** The ORSA's primary output is a commander's decision product. Every other capability — modeling, visualization, data access — exists in service of that product.
-> **Purpose:** Develops the analytical mental models required to operate effectively as an ORSA on MSS. Read before beginning TM-40G task instruction.
+> **Purpose:** Develops the analytical mental models required to operate effectively as an ORSA on MSS. Read before beginning SL 4G task instruction.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -22,7 +22,7 @@ MSS supports several analyst roles. The boundaries are not organizational formal
 
 The platform does not enforce these boundaries. Foundry gives an ORSA access to datasets, notebooks, transforms, ontology objects, and dashboards. The fact that you can do everything does not mean you should. ORSA time is most valuable closest to the commander. Guard it accordingly.
 
-> **NOTE — Assessment Framework (TM-40G Section 1-7, Table 1-2):** TM-40G now includes a formal MOE/MOP/indicator assessment framework with worked examples. Review Table 1-2 for the standard indicator taxonomy before building any assessment product.
+> **NOTE — Assessment Framework (TM-40G Section 1-7, Table 1-2):** SL 4G now includes a formal MOE/MOP/indicator assessment framework with worked examples. Review Table 1-2 for the standard indicator taxonomy before building any assessment product.
 
 ### 1-2. What "Decision Product" Means
 
@@ -114,7 +114,7 @@ Do not begin analysis on an ambiguous tasker. Return for clarification when:
 
 **Prescriptive analysis requires explicit COA definition.** Optimization models optimize against defined constraints and objectives. If the commander has not defined the constraints and objectives, optimization produces a mathematically correct answer to the wrong question.
 
-> **NOTE — COA Evaluation and CARVER Scoring (TM-40G Sections 3-4 and 5-4):** TM-40G now provides a structured COA evaluation criteria schema (Section 3-4) and a CARVER target-value scoring methodology with Table 5-4 (Section 5-4). Use these frameworks when conducting prescriptive COA comparison analyses.
+> **NOTE — COA Evaluation and CARVER Scoring (SL 4G Sections 3-4 and 5-4):** SL 4G now provides a structured COA evaluation criteria schema (Section 3-4) and a CARVER target-value scoring methodology with Table 5-4 (Section 5-4). Use these frameworks when conducting prescriptive COA comparison analyses.
 
 ### 3-3. When Not to Model
 
@@ -327,16 +327,16 @@ Before delivering any analytical product, confirm each item.
 
 ## CURRICULUM NOTES
 
-**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED before beginning TM-40G or this guide. Graduate-level quantitative background (statistics, R or Python) is separately required.
+**Prerequisite:** SL 3 (Advanced Builder) is REQUIRED before beginning SL 4G or this guide. Graduate-level quantitative background (statistics, R or Python) is separately required.
 
-**Advanced track:** TM-40G graduates should pursue **TM-50G (Advanced ORSA)** as the next step in the specialist progression. TM-50G addresses Bayesian methods, complex simulation, multi-objective optimization, and campaign analysis support at theater level.
+**Advanced track:** SL 4G graduates should pursue **SL 5G (Advanced ORSA)** as the next step in the specialist progression. SL 5G addresses Bayesian methods, complex simulation, multi-objective optimization, and campaign analysis support at theater level.
 
 **Peer specialist cross-references:**
-- **TM-40M (ML Engineer):** Coordinate when a recurring prediction requirement exceeds one-time ORSA analysis — the MLE operationalizes the analytical approach as a production pipeline.
-- **TM-40H (AI Engineer):** Coordinate when ORSA decision products need to be wrapped in AI-assisted synthesis or automated SITREP generation workflows.
-- **TM-40L (Software Engineer):** Coordinate when ORSA products require production-grade pipeline implementation, OSDK delivery surfaces, or custom visualization logic.
+- **SL 4M (ML Engineer):** Coordinate when a recurring prediction requirement exceeds one-time ORSA analysis — the MLE operationalizes the analytical approach as a production pipeline.
+- **SL 4H (AI Engineer):** Coordinate when ORSA decision products need to be wrapped in AI-assisted synthesis or automated SITREP generation workflows.
+- **SL 4L (Software Engineer):** Coordinate when ORSA products require production-grade pipeline implementation, OSDK delivery surfaces, or custom visualization logic.
 
-**WFF awareness:** ORSA products serve all six Warfighting Functions. TM-40A (Intelligence), TM-40B (Fires), TM-40C (Movement and Maneuver), TM-40D (Sustainment), TM-40E (Protection), and TM-40F (Mission Command) personnel are the primary consumers of ORSA decision products. Apply the decomposition framework in Section 2 to every WFF tasker — the WFF function determines the decision, the information requirement, and the appropriate method.
+**WFF awareness:** ORSA products serve all six Warfighting Functions. SL 4A (Intelligence), SL 4B (Fires), SL 4C (Movement and Maneuver), SL 4D (Sustainment), SL 4E (Protection), and SL 4F (Mission Command) personnel are the primary consumers of ORSA decision products. Apply the decomposition framework in Section 2 to every WFF tasker — the WFF function determines the decision, the information requirement, and the appropriate method.
 
 **ORSA-specific governing references:**
 
@@ -347,9 +347,9 @@ Before delivering any analytical product, confirm each item.
 | DA PAM 5-11 | VV&A of Army Models and Simulations | Model credibility and accreditation standards |
 | ATP 5-0.3 | Multi-Service TTP for Operation Assessment | Assessment methodology, MOE/MOP analytical frameworks |
 
-> **NOTE — New Doctrine Content in TM-40G:** TM-40G now includes a formal assessment framework (MOE/MOP/indicators, Table 1-2) with the FM 5-0 COA evaluation criteria schema, a CARVER target value analysis scoring model (Table 5-4, FM 3-60 Appendix G), and force ratio/relative combat power calculations (section 7-0a, FM 5-0 Table 5-4). These sections provide the doctrinal grounding for the quantitative methods taught in this concepts guide.
+> **NOTE — New Doctrine Content in SL 4G:** SL 4G now includes a formal assessment framework (MOE/MOP/indicators, Table 1-2) with the FM 5-0 COA evaluation criteria schema, a CARVER target value analysis scoring model (Table 5-4, FM 3-60 Appendix G), and force ratio/relative combat power calculations (section 7-0a, FM 5-0 Table 5-4). These sections provide the doctrinal grounding for the quantitative methods taught in this concepts guide.
 
-*This guide is a prerequisite companion to TM-40G. Proceed to TM-40G for task-based instruction in statistical modeling, time series analysis, simulation, optimization, and decision product delivery on MSS/Foundry.*
+*This guide is a prerequisite companion to SL 4G. Proceed to SL 4G for task-based instruction in statistical modeling, time series analysis, simulation, optimization, and decision product delivery on MSS/Foundry.*
 
 ---
 

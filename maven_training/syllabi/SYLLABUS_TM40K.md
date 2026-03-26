@@ -1,12 +1,12 @@
 # COURSE SYLLABUS
-## TM-40K — KNOWLEDGE MANAGER
+## SL 4K — KNOWLEDGE MANAGER
 ### Maven Smart System (MSS) — USAREUR-AF
 
 | | |
 |---|---|
-| **Level** | TM-40K (Knowledge Manager Specialist Track) |
+| **Level** | SL 4K (Knowledge Manager Specialist Track) |
 | **Duration** | 4 days (32 hours) |
-| **Prerequisites** | TM-10, TM-20, and TM-30 (all Go evaluations on file, required). |
+| **Prerequisites** | SL 1, SL 2, and SL 3 (all Go evaluations on file, required). |
 | **Audience** | KMOs, 37F Psychological Operations, S2/S3/S6 knowledge officers, unit knowledge managers |
 | **Format** | Instructor-led lab + design workshop + practical exercise |
 | **Location** | MSS Training Environment (AIP Logic configuration access required) |
@@ -39,7 +39,7 @@ By the end of training, you will be able to:
 
 Complete **5+ duty days before Day 1:**
 - [ ] Request **Builder access** in the MSS Training Environment from your unit MSS Administrator
-- [ ] Request AIP Logic **configuration** access — this may require C2DAO coordination. Configuration access lets you set up triggers and connect inputs/outputs. If you have only the TM-30 level AIP Logic view, confirm with your MSS Administrator whether it is sufficient for this course's AIP lab. Confirm access is active before Day 1.
+- [ ] Request AIP Logic **configuration** access — this may require C2DAO coordination. Configuration access lets you set up triggers and connect inputs/outputs. If you have only the SL 3 level AIP Logic view, confirm with your MSS Administrator whether it is sufficient for this course's AIP lab. Confirm access is active before Day 1.
 - [ ] Read TM-40K, Chapter 1 (Introduction, Safety Summary) — 25 min
 - [ ] Read TM-40K, Chapter 2 (Knowledge Architecture Design) — domain analysis and Object Type design sections
 
@@ -163,7 +163,7 @@ The PCS transfer package is a real product, not a template. It must name the spe
 
 ## Continuation
 
-Graduates designing enterprise knowledge architectures or leading cross-organizational KM initiatives may pursue **TM-50K (Advanced Knowledge Management)**. TM-50K covers multi-domain taxonomy design, AI-augmented knowledge synthesis at scale, knowledge retrieval infrastructure, quality governance frameworks, and continuity systems that survive personnel turnover. Prerequisites: TM-40K Go evaluation on file; 12+ months active KM practice in a military or large organizational context.
+Graduates designing enterprise knowledge architectures or leading cross-organizational KM initiatives may pursue **SL 5K (Advanced Knowledge Management)**. SL 5K covers multi-domain taxonomy design, AI-augmented knowledge synthesis at scale, knowledge retrieval infrastructure, quality governance frameworks, and continuity systems that survive personnel turnover. Prerequisites: SL 4K Go evaluation on file; 12+ months active KM practice in a military or large organizational context.
 
 ---
 
@@ -179,9 +179,9 @@ Graduates designing enterprise knowledge architectures or leading cross-organiza
 
 ## Relationship to WFF Tracks
 
-WFF track analysts (TM-40A through TM-40F) are the operational consumers of lessons-learned systems, AAR pipelines, and knowledge repositories built in this course. Knowledge managers should understand the capture and retrieval needs of each WFF community: mission command analysts (TM-40F) consume commander decision logs and SOP repositories; intelligence analysts (TM-40A) use lessons-learned databases for pattern recognition; protection analysts (TM-40E) maintain TTPs and incident histories in KM-managed repositories.
+WFF track analysts (SL 4A through SL 4F) are the operational consumers of lessons-learned systems, AAR pipelines, and knowledge repositories built in this course. Knowledge managers should understand the capture and retrieval needs of each WFF community: mission command analysts (SL 4F) consume commander decision logs and SOP repositories; intelligence analysts (SL 4A) use lessons-learned databases for pattern recognition; protection analysts (SL 4E) maintain TTPs and incident histories in KM-managed repositories.
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*Syllabus TM-40K | Version 2.0 | March 2026*
+*Syllabus SL 4K | Version 2.0 | March 2026*

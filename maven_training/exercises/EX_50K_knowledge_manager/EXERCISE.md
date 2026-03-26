@@ -1,11 +1,11 @@
 # EX_50K — Advanced Knowledge Management
-## Practical Exercise — TM-50K Proficiency
+## Practical Exercise — SL 5K Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40K complete (Go on file); TM-50K course completion; Workshop and AIP Logic (AI-augmented tagging) access confirmed |
-| **Duration** | 4–5 hours (typically executed Day 3 of TM-50K) |
+| **Prerequisite** | SL 4K complete (Go on file); SL 5K course completion; Workshop and AIP Logic (AI-augmented tagging) access confirmed |
+| **Duration** | 4–5 hours (typically executed Day 3 of SL 5K) |
 | **Environment** | MSS Workshop, Ontology read, AIP Logic (for AI-augmented tagging task); see ENVIRONMENT_SETUP.md |
 | **Companion TM** | TM_50K_KNOWLEDGE_MANAGER_ADVANCED.md |
 | **Syllabus** | SYLLABUS_TM50K |
@@ -83,7 +83,7 @@ Produce the quarterly KM System Health Assessment for the brigade:
 
 ## EVALUATOR NOTES
 
-**Scoring:** 4 tasks. Go on 3 of 4 = overall Go. No-Go on Task 1 = automatic No-Go (taxonomy is the core KM competency at TM-50K level).
+**Scoring:** 4 tasks. Go on 3 of 4 = overall Go. No-Go on Task 1 = automatic No-Go (taxonomy is the core KM competency at SL 5K level).
 
 ### Pre-Exercise Checklist
 

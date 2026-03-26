@@ -1,4 +1,4 @@
-# ENVIRONMENT SETUP — EX_40C Movement & Maneuver (TM-40C)
+# ENVIRONMENT SETUP — EX_40C Movement & Maneuver (SL 4C)
 
 **Companion resources:** TM_40C_MOVEMENT_MANEUVER.md | SYLLABUS_TM40C | EXAM_TM40C_PRE / EXAM_TM40C_POST
 

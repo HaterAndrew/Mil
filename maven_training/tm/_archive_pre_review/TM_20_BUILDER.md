@@ -10,9 +10,9 @@ Wiesbaden, Germany
 
 **APPLIES TO:** All USAREUR-AF military and Civilian personnel who build applications, pipelines, and analyses on MSS without writing code.
 
-**PREREQUISITE PUBLICATIONS:** TM-10, Maven Smart System Operator Manual (required). Data Literacy Technical Reference (recommended).
+**PREREQUISITE PUBLICATIONS:** SL 1, Maven Smart System Operator Manual (required). Data Literacy Technical Reference (recommended).
 
-**RELATED MANUALS:** TM-30, Advanced Builder/Developer (Python, PySpark, TypeScript, OSDK).
+**RELATED MANUALS:** SL 3, Advanced Builder/Developer (Python, PySpark, TypeScript, OSDK).
 
 **DISTRIBUTION RESTRICTION:** DRAFT — Not yet approved for distribution.
 
@@ -56,9 +56,9 @@ Builders have elevated privileges on MSS. Errors in pipelines, Ontology configur
 
 **BLUF:** This manual teaches you to build applications, data pipelines, and analyses on MSS using only the graphical user interface -- no coding required.
 
-This Technical Manual (TM) provides task-level instruction for USAREUR-AF personnel who build on the Maven Smart System (MSS) using no-code tools. It is written for all staff -- officer, warrant, NCO, Civilian -- who completed TM-10 and have been granted builder access. No programming background is required. If you can use a web browser and fill out forms, you can do everything in this manual.
+This Technical Manual (TM) provides task-level instruction for USAREUR-AF personnel who build on the Maven Smart System (MSS) using no-code tools. It is written for all staff -- officer, warrant, NCO, Civilian -- who completed SL 1 and have been granted builder access. No programming background is required. If you can use a web browser and fill out forms, you can do everything in this manual.
 
-> **NOTE:** Before beginning TM-20 work, verify you can independently perform the following TM-10 tasks without referencing the manual: Task 2-1 through 2-4 (account setup, MFA, access); Task 3-1 through 3-3 (navigation and resource discovery); Task 5-1 (dataset viewing); Chapter 7 (security markings and access controls). Builders must understand operator-level data security requirements before building. If you are uncertain about any TM-10 task, review TM-10 before proceeding.
+> **NOTE:** Before beginning SL 2 work, verify you can independently perform the following SL 1 tasks without referencing the manual: Task 2-1 through 2-4 (account setup, MFA, access); Task 3-1 through 3-3 (navigation and resource discovery); Task 5-1 (dataset viewing); Chapter 7 (security markings and access controls). Builders must understand operator-level data security requirements before building. If you are uncertain about any SL 1 task, review SL 1 before proceeding.
 
 **This manual covers:**
 
@@ -84,7 +84,7 @@ This Technical Manual (TM) provides task-level instruction for USAREUR-AF person
 - AIP Logic configuration or Agent Studio
 - Any task requiring writing or reading code
 
-Those topics are in TM-30, Advanced Builder/Developer. If a task requires writing code, stop and contact your team's data engineer.
+Those topics are in SL 3, Advanced Builder/Developer. If a task requires writing code, stop and contact your team's data engineer.
 
 ---
 
@@ -102,7 +102,7 @@ As a builder, the tools you create directly affect readiness visibility and oper
 
 ## 1-3. The USAREUR-AF 5-Layer Data Stack
 
-MSS is built around a five-layer data architecture. Understanding where your work fits in this stack is essential. TM-20 builders primarily operate at Layers 2, 3, and 4.
+MSS is built around a five-layer data architecture. Understanding where your work fits in this stack is essential. SL 2 builders primarily operate at Layers 2, 3, and 4.
 
 ```
 +----------------------------------------------------------+
@@ -112,15 +112,15 @@ MSS is built around a five-layer data architecture. Understanding where your wor
 +----------------------------------------------------------+
 |  LAYER 4: ANALYTICS                                      |
 |  Workshop applications, Contour analyses, Quiver         |
-|  << TM-20 builds here (Workshop, Contour, Quiver)        |
+|  << SL 2 builds here (Workshop, Contour, Quiver)        |
 +----------------------------------------------------------+
 |  LAYER 3: SEMANTIC (ONTOLOGY)                            |
 |  Object Types, Link Types, Actions, Properties           |
-|  << TM-20 builds here (Ontology UI, no code)             |
+|  << SL 2 builds here (Ontology UI, no code)             |
 +----------------------------------------------------------+
 |  LAYER 2: INTEGRATION                                    |
 |  Pipeline Builder, connectors, ingestion pipelines       |
-|  << TM-20 builds here (Pipeline Builder, no code)        |
+|  << SL 2 builds here (Pipeline Builder, no code)        |
 +----------------------------------------------------------+
 |  LAYER 1: INFRASTRUCTURE                                 |
 |  Raw data storage, connectors, access controls           |
@@ -128,9 +128,9 @@ MSS is built around a five-layer data architecture. Understanding where your wor
 +----------------------------------------------------------+
 ```
 
-**TM-20 Activity to Layer Mapping:**
+**SL 2 Activity to Layer Mapping:**
 
-| TM-20 Activity | Stack Layer | Layer Name |
+| SL 2 Activity | Stack Layer | Layer Name |
 |---|---|---|
 | Connect data sources via Pipeline Builder connectors | Layer 2 | Integration |
 | Build visual ETL pipelines (Pipeline Builder) | Layer 2 | Integration |
@@ -143,7 +143,7 @@ MSS is built around a five-layer data architecture. Understanding where your wor
 | Build Quiver dashboards | Layer 4 | Analytics |
 | Publish Workshop apps, share with users | Layer 5 | Activation |
 
-NOTE: Advanced transform development (Python/PySpark), OSDK, TypeScript Functions, and AIP Logic operate at Layers 2-3 but require code. Those are TM-30 topics. TM-20 covers only the no-code paths through Layers 2-4.
+NOTE: Advanced transform development (Python/PySpark), OSDK, TypeScript Functions, and AIP Logic operate at Layers 2-3 but require code. Those are SL 3 topics. SL 2 covers only the no-code paths through Layers 2-4.
 
 ---
 
@@ -172,7 +172,7 @@ BUILDER (YOU)
 
 **Key policy references:**
 
-| Document | Governing Authority | Relevance to TM-20 Builders |
+| Document | Governing Authority | Relevance to SL 2 Builders |
 |---|---|---|
 | Army Data Plan (2022) | Army CIO | Framework for data management, governance, analytics |
 | DoD Data Strategy (2020) | OSD | VAUTI framework: Visible, Accessible, Understandable, Trustable, Interoperable |
@@ -189,7 +189,7 @@ Complete all of the following before beginning any build activity on MSS.
 
 **Access requirements:**
 
-- [ ] TM-10 (Maven User) completed
+- [ ] SL 1 (Maven User) completed
 - [ ] Builder access request submitted through chain of command and approved
 - [ ] Editor role granted on your team's project folder in Compass
 - [ ] Editor role granted on the Ontology branch for your team
@@ -394,7 +394,7 @@ NOTE: Do not create datasets or pipelines before folder structure and permission
 | Role | Can Do | Use For |
 |---|---|---|
 | **Viewer** | Read datasets, open Workshop apps | End users, consumers |
-| **Editor** | Modify pipelines, datasets, Workshop apps | TM-20 builders |
+| **Editor** | Modify pipelines, datasets, Workshop apps | SL 2 builders |
 | **Owner** | All Editor rights plus manage members, delete resources | Team leads |
 
 NOTE: Assign the minimum role required. If a team member only consumes data in Workshop apps, assign Viewer -- not Editor. Follow least-privilege principles per Army CIO policy.
@@ -445,7 +445,7 @@ Pipeline Builder is MSS's visual, no-code ETL (Extract, Transform, Load) tool. U
 - Deduplicate rows
 - Schedule automatic refreshes
 
-**What Pipeline Builder cannot do (requires TM-30/code):**
+**What Pipeline Builder cannot do (requires SL 3/code):**
 
 - Complex multi-step transformations
 - Custom business logic
@@ -624,15 +624,15 @@ NOTE: Schedule times are in UTC. USAREUR-AF is UTC+1 (CET) or UTC+2 (CEST in sum
 | Connection timeout | Source system unavailable | Check source system status; retry manually; alert Data Steward if persistent |
 | Authentication failure | Connector credentials expired | Contact Data Steward -- do not attempt to update credentials yourself |
 | Row count zero | Source has no data for this run | Investigate source; may be expected for some time windows |
-| Build timed out | Pipeline too large for scheduled window | Escalate to data engineer (TM-30) |
+| Build timed out | Pipeline too large for scheduled window | Escalate to data engineer (SL 3) |
 | Output dataset missing / stale | Operator impact: TM-10, Task 5-1 | Check schedule; fix broken node; notify data steward |
-| Schema mismatch after source change | Breaking change — operator impact | Escalate to TM-30 builder if multi-source; fix schema mapping |
+| Schema mismatch after source change | Breaking change — operator impact | Escalate to SL 3 builder if multi-source; fix schema mapping |
 
-> **NOTE:** When a pipeline fails, operators using TM-10, Task 5-1 see the failure in their data views and in Workshop applications. Fix pipeline issues promptly and document what failed and why. If the root cause is outside your TM-20 capability (e.g., requires @incremental logic, complex deduplication, Python transforms), escalate to a TM-30 builder or TM-40 developer.
+> **NOTE:** When a pipeline fails, operators using TM-10, Task 5-1 see the failure in their data views and in Workshop applications. Fix pipeline issues promptly and document what failed and why. If the root cause is outside your SL 2 capability (e.g., requires @incremental logic, complex deduplication, Python transforms), escalate to a SL 3 builder or SL 4 developer.
 
 7. After fixing the issue, click **Build Now** to confirm the fix resolves the failure.
 8. Document the failure and fix in the pipeline's description field (right panel, **Edit Description**).
-9. If the issue cannot be resolved at TM-20 level, escalate to your data engineer with the full error message, pipeline RID, and steps already attempted.
+9. If the issue cannot be resolved at SL 2 level, escalate to your data engineer with the full error message, pipeline RID, and steps already attempted.
 
 ---
 
@@ -785,7 +785,7 @@ NOTE: Renaming a property changes what Workshop apps display -- it does not chan
 8. Set the **Cardinality**:
    - **Many-to-One** -- many source objects link to one target (most common; e.g., many soldiers in one unit)
    - **One-to-One** -- each source links to exactly one target
-   - **Many-to-Many** -- requires a junction dataset; consult TM-30
+   - **Many-to-Many** -- requires a junction dataset; consult SL 3
 9. Click **Save Link Type**.
 10. Preview the source Object Type: click an individual object and verify linked objects appear in the Links section.
 
@@ -793,7 +793,7 @@ NOTE: If linked objects do not appear in preview, verify that foreign key values
 
 NOTE: For complex relationship modeling, consult your team lead or data steward before building. Incorrect link configurations are difficult to fix after they are in production use.
 
-> **NOTE:** If an Ontology design requires any of the following, it exceeds TM-20 scope and must be escalated to a TM-30 advanced builder: (1) Many-to-many Link Types with complex junction logic; (2) Multi-step Actions with conditional routing or approval chains; (3) Derived properties requiring formula logic beyond the basic UI; (4) Ontology models that feed coalition-facing or MPE data products. Refer to TM-30, Chapter 4 (Ontology Design Methodology) for the TM-30 design process, and to TM-30, Chapter 5 (Advanced Action Design via UI) for complex Action patterns.
+> **NOTE:** If an Ontology design requires any of the following, it exceeds SL 2 scope and must be escalated to a SL 3 advanced builder: (1) Many-to-many Link Types with complex junction logic; (2) Multi-step Actions with conditional routing or approval chains; (3) Derived properties requiring formula logic beyond the basic UI; (4) Ontology models that feed coalition-facing or MPE data products. Refer to TM-30, Chapter 4 (Ontology Design Methodology) for the SL 3 design process, and to TM-30, Chapter 5 (Advanced Action Design via UI) for complex Action patterns.
 
 ---
 
@@ -822,7 +822,7 @@ NOTE: For complex relationship modeling, consult your team lead or data steward 
 
 > CAUTION: Actions that write to datasets affect all downstream applications. Before enabling a write-back Action in production, test it on a development branch with test data -- not with live operational records.
 
-NOTE: Complex Action logic (conditional logic, computed fields, multi-step workflows, AIP integration) requires TypeScript and is covered in TM-30. If your Action needs more than a simple form-to-field write, escalate to your data engineer.
+NOTE: Complex Action logic (conditional logic, computed fields, multi-step workflows, AIP integration) requires TypeScript and is covered in SL 3. If your Action needs more than a simple form-to-field write, escalate to your data engineer.
 
 ---
 
@@ -840,7 +840,7 @@ Workshop applications read from the Ontology. They do not read directly from dat
 Data (Pipeline Builder) -> Ontology (Object Types, Links, Actions) -> Workshop App
 ```
 
-> **NOTE:** The Workshop applications you build are consumed by operators working from TM-10. Before building, read TM-10, Chapter 4 (Using Workshop Applications) — specifically Task 4-1 (Open and Orient to a Workshop Application), Task 4-3 (Apply Filters to a Dashboard), Task 4-4 (Navigate Between Modules/Pages), and Task 4-5 (Submit Data Using an Action Form). Build your application so an operator following those TM-10 tasks can use it without confusion.
+> **NOTE:** The Workshop applications you build are consumed by operators working from SL 1. Before building, read TM-10, Chapter 4 (Using Workshop Applications) — specifically Task 4-1 (Open and Orient to a Workshop Application), Task 4-3 (Apply Filters to a Dashboard), Task 4-4 (Navigate Between Modules/Pages), and Task 4-5 (Submit Data Using an Action Form). Build your application so an operator following those SL 1 tasks can use it without confusion.
 
 ---
 
@@ -1023,7 +1023,7 @@ NOTE: Test the application at 1920x1080 resolution -- the standard government wo
 
 **TASK 5-6. PUBLISH AND SHARE A WORKSHOP APPLICATION**
 
-> **CAUTION:** Before publishing, assess whether your application design is within TM-20 scope. If your design includes: multiple pages with conditional navigation between them; widgets that pass parameters to other widgets; role-based conditional layouts — your application is likely TM-30 scope. Refer to TM-30, Chapter 2 (Advanced Workshop Application Design), specifically Section 2-1 (The Multi-Page Application Model), to determine whether your design should be escalated to a TM-30 qualified builder before publication.
+> **CAUTION:** Before publishing, assess whether your application design is within SL 2 scope. If your design includes: multiple pages with conditional navigation between them; widgets that pass parameters to other widgets; role-based conditional layouts — your application is likely SL 3 scope. Refer to TM-30, Chapter 2 (Advanced Workshop Application Design), specifically Section 2-1 (The Multi-Page Application Model), to determine whether your design should be escalated to a SL 3 qualified builder before publication.
 
 **CONDITIONS:** Workshop application is complete; all widgets render correctly in Preview; branch has been merged (Chapter 7); Data Steward has reviewed and approved publication; access list is defined.
 
@@ -1056,7 +1056,7 @@ NOTE: Compass links to Workshop applications are permanent once published. Do no
 
 ## 6-1. Contour vs. Quiver -- When to Use Each
 
-| Tool | Purpose | Best For | TM-20 Scope |
+| Tool | Purpose | Best For | SL 2 Scope |
 |---|---|---|---|
 | **Contour** | Interactive analysis -- build and save views of data | Analysts exploring a dataset; saved analyses shared with a small audience | Build saved analyses using point-and-click interface |
 | **Quiver** | Dashboard builder -- assemble charts and metrics into a shareable page | Quick executive dashboards; simple multi-chart views | Build basic dashboards with charts and metric tiles |
@@ -1067,7 +1067,7 @@ Use Quiver when you need a simple, shareable dashboard with a few metrics and ch
 
 Use Workshop when you need a full interactive application with filters, forms, Actions, and complex layout.
 
-> **NOTE:** Operators interact with Contour and Quiver using TM-10, Task 5-2 (Use Contour for No-Code Analysis) and Task 5-3 (Use Quiver to Explore Ontology Objects). When building saved analyses or Quiver configurations, understand the operator's analysis workflow from TM-10. Build analyses that support workflows operators actually perform. For advanced Contour capabilities (formula editor, multi-table aggregations, pivot analysis), refer to TM-30, Chapter 7 (Advanced Contour and Quiver).
+> **NOTE:** Operators interact with Contour and Quiver using TM-10, Task 5-2 (Use Contour for No-Code Analysis) and Task 5-3 (Use Quiver to Explore Ontology Objects). When building saved analyses or Quiver configurations, understand the operator's analysis workflow from SL 1. Build analyses that support workflows operators actually perform. For advanced Contour capabilities (formula editor, multi-table aggregations, pivot analysis), refer to TM-30, Chapter 7 (Advanced Contour and Quiver).
 
 ---
 
@@ -1188,11 +1188,11 @@ NOTE: Quiver dashboards do not support Actions, complex filters, or form submiss
 
 Branching is how MSS protects production data and applications from work-in-progress changes. Every resource in Foundry -- datasets, Ontology configurations, Workshop apps -- lives on a branch. The `main` branch is what users see and depend on. Your development branch is where you build and test.
 
-**The rule: never edit main directly.** All TM-20 build work happens on a named development branch. When the work is tested and approved, you request a merge into main. A reviewer approves the merge and the changes go live.
+**The rule: never edit main directly.** All SL 2 build work happens on a named development branch. When the work is tested and approved, you request a merge into main. A reviewer approves the merge and the changes go live.
 
 Working without a branch is the equivalent of making changes to a live operational system without testing.
 
-> **NOTE:** Operators (TM-10) work only with the main/production branch of MSS resources. They do not see development branches. When you merge your development branch to main, operators immediately see the changes in their next refresh. A faulty merge directly affects operational users. Refer to TM-10, Chapter 8 (Troubleshooting and Support) to understand what operators experience when a bad merge breaks an application. Treat every merge to main as a production release.
+> **NOTE:** Operators (SL 1) work only with the main/production branch of MSS resources. They do not see development branches. When you merge your development branch to main, operators immediately see the changes in their next refresh. A faulty merge directly affects operational users. Refer to TM-10, Chapter 8 (Troubleshooting and Support) to understand what operators experience when a bad merge breaks an application. Treat every merge to main as a production release.
 
 ---
 
@@ -1293,7 +1293,7 @@ BREAKING CHANGES: [yes/no; if yes, describe impact on existing applications]
 5. Resolve the conflict:
    - If your change is correct: select **Keep My Version**.
    - If the incoming change is correct: select **Keep Incoming Version** and plan to redo your work.
-   - If both changes are needed: contact your team lead -- multi-field conflicts may require a data engineer (TM-30).
+   - If both changes are needed: contact your team lead -- multi-field conflicts may require a data engineer (SL 3).
 6. After all conflicts are resolved, click **Mark as Resolved**.
 7. Resubmit the merge request.
 
@@ -1305,9 +1305,9 @@ NOTE: When in doubt on a conflict, do not guess. Contact the team member whose b
 
 ## 8-1. Overview
 
-> **NOTE:** Builder standards exist because builders have elevated privileges that operators (TM-10) do not have. Before building, understand the security markings and access controls that govern operator data access (TM-10, Chapter 7, Security, Classification, and Markings). Your applications, pipelines, and Ontology configurations must respect those controls. For TM-30-level governance responsibilities on shared infrastructure, refer to TM-30, Chapter 8 (Data Governance and Stewardship).
+> **NOTE:** Builder standards exist because builders have elevated privileges that operators (SL 1) do not have. Before building, understand the security markings and access controls that govern operator data access (TM-10, Chapter 7, Security, Classification, and Markings). Your applications, pipelines, and Ontology configurations must respect those controls. For SL 3-level governance responsibilities on shared infrastructure, refer to TM-30, Chapter 8 (Data Governance and Stewardship).
 
-Builder standards are not optional. They exist to maintain data quality, operational reliability, and security across the USAREUR-AF MSS environment. All TM-20 builders are accountable for the quality and compliance of everything they publish.
+Builder standards are not optional. They exist to maintain data quality, operational reliability, and security across the USAREUR-AF MSS environment. All SL 2 builders are accountable for the quality and compliance of everything they publish.
 
 ---
 
@@ -1380,7 +1380,7 @@ Before publishing any pipeline, Ontology configuration, or Workshop application,
 
 ## 8-5. Builder Accountability
 
-As a TM-20 builder, you are personally accountable for:
+As a SL 2 builder, you are personally accountable for:
 
 1. **What you publish.** If your application shows incorrect data to a commander, that is a data quality failure. Test thoroughly.
 2. **Who you give access to.** If you assign permissions that allow unauthorized access to operational data, that is a security failure. Follow least-privilege principles.
@@ -1417,7 +1417,7 @@ Complete this checklist for every pipeline, Ontology change, and Workshop applic
 | 9 | Schedule is configured and tested (first run completed successfully) | [ ] |
 | 10 | On-failure notification configured (builder + team lead) | [ ] |
 
-- [ ] Pipeline complexity is within TM-20 scope (single data source, basic joins, standard transformations). If pipeline requires multi-source deduplication, @incremental patterns, custom Python transforms, or complex error-handling logic — escalate to TM-30 builder before proceeding (TM-30, Chapter 3).
+- [ ] Pipeline complexity is within SL 2 scope (single data source, basic joins, standard transformations). If pipeline requires multi-source deduplication, @incremental patterns, custom Python transforms, or complex error-handling logic — escalate to SL 3 builder before proceeding (TM-30, Chapter 3).
 
 ---
 
@@ -1437,7 +1437,7 @@ Complete this checklist for every pipeline, Ontology change, and Workshop applic
 | 10 | Merge request includes change description, test results, breaking changes noted | [ ] |
 | 11 | Merge request assigned to correct reviewer (not yourself) | [ ] |
 
-- [ ] Ontology design is within TM-20 scope (simple Object Types, one-to-one/one-to-many links, single-step Actions). If design requires many-to-many links, multi-step Actions, derived properties with complex logic, or coalition-facing access — escalate to TM-30 before proceeding (TM-30, Chapter 4).
+- [ ] Ontology design is within SL 2 scope (simple Object Types, one-to-one/one-to-many links, single-step Actions). If design requires many-to-many links, multi-step Actions, derived properties with complex logic, or coalition-facing access — escalate to SL 3 before proceeding (TM-30, Chapter 4).
 
 ---
 
@@ -1464,7 +1464,7 @@ Complete this checklist for every pipeline, Ontology change, and Workshop applic
 
 The following patterns address the most common USAREUR-AF data ingestion scenarios.
 
-> **NOTE:** The design patterns in this appendix are TM-20 level — they use Pipeline Builder, Ontology Manager, and Workshop without code. As your data products grow in complexity, some patterns will need to evolve into TM-30 designs. If a pattern requires multi-step Actions, complex Link Type logic, or advanced transform rules, refer to TM-30, Chapter 4 (Ontology Design Methodology) and TM-30, Chapter 3 (Advanced Pipeline Builder) to assess whether TM-30 or TM-40 resources are needed.
+> **NOTE:** The design patterns in this appendix are SL 2 level — they use Pipeline Builder, Ontology Manager, and Workshop without code. As your data products grow in complexity, some patterns will need to evolve into SL 3 designs. If a pattern requires multi-step Actions, complex Link Type logic, or advanced transform rules, refer to TM-30, Chapter 4 (Ontology Design Methodology) and TM-30, Chapter 3 (Advanced Pipeline Builder) to assess whether SL 3 or SL 4 resources are needed.
 
 ---
 
@@ -1590,7 +1590,7 @@ The following patterns address the most common USAREUR-AF data ingestion scenari
 
 **Link Type** -- A configured relationship between two Object Types in the Foundry Ontology (e.g., a SoldierReadiness object linked `assignedTo` a UnitStatus object). Configured in Ontology Manager.
 
-**Main Branch** -- The production branch of the Foundry Ontology. What all users see and depend on. TM-20 builders never edit main directly. All changes go through a development branch and merge request.
+**Main Branch** -- The production branch of the Foundry Ontology. What all users see and depend on. SL 2 builders never edit main directly. All changes go through a development branch and merge request.
 
 **Merge Request** -- A formal request to integrate changes from a development branch into the main branch. Requires a description of changes, test results, and approval from a designated reviewer.
 
@@ -1600,7 +1600,7 @@ The following patterns address the most common USAREUR-AF data ingestion scenari
 
 **Ontology** -- The semantic layer of Foundry. Defines what the data means: Object Types (what things exist), Link Types (how they relate), and Actions (what users can do). Workshop applications read from the Ontology, not directly from datasets.
 
-**Ontology Manager** -- The Foundry UI tool for creating and managing Object Types, Link Types, and Actions. No code required for TM-20-level configurations.
+**Ontology Manager** -- The Foundry UI tool for creating and managing Object Types, Link Types, and Actions. No code required for SL 2-level configurations.
 
 **Pipeline Builder** -- The Foundry visual, no-code ETL tool. Builders drag and drop source, transform, and output nodes onto a canvas to build data pipelines without writing code.
 
@@ -1624,7 +1624,7 @@ The following patterns address the most common USAREUR-AF data ingestion scenari
 
 **Widget** -- A UI component in Workshop. Examples: Table, Chart, Filter, Form, Metric Tile, Map. Drag widgets from the Widget Library onto the Workshop canvas and configure them in the Widget Properties panel.
 
-**Workshop** -- The Foundry drag-and-drop application builder. Builders assemble widgets into interactive applications for end users. Reads from the Ontology (Object Types). No code required for TM-20-level applications.
+**Workshop** -- The Foundry drag-and-drop application builder. Builders assemble widgets into interactive applications for end users. Reads from the Ontology (Object Types). No code required for SL 2-level applications.
 
 ---
 

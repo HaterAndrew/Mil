@@ -1,7 +1,7 @@
-# CONCEPTS GUIDE — TM-50L: ADVANCED SOFTWARE ENGINEER — MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 5L: ADVANCED SOFTWARE ENGINEER — MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** TM-50L is not about writing more complex code than TM-40L. It is about taking ownership of the platform's code health, architectural patterns, and engineering standards — and shaping how the entire team writes, reviews, tests, and deploys software.
-> **Purpose:** Extends mental models from TM-40L Concepts Guide to advanced software engineering on MSS. Prerequisite: TM-40L Concepts Guide and TM-40L qualification.
+> **Forward:** SL 5L is not about writing more complex code than SL 4L. It is about taking ownership of the platform's code health, architectural patterns, and engineering standards — and shaping how the entire team writes, reviews, tests, and deploys software.
+> **Purpose:** Extends mental models from TM-40L Concepts Guide to advanced software engineering on MSS. Prerequisite: TM-40L Concepts Guide and SL 4L qualification.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -10,11 +10,11 @@
 
 ### 1-1. The Transition
 
-**BLUF:** TM-50L is not about writing more complex code than TM-40L. It is about taking ownership of the platform's code health, architectural patterns, and engineering standards — and shaping how the entire team writes, reviews, tests, and deploys software.
+**BLUF:** SL 5L is not about writing more complex code than SL 4L. It is about taking ownership of the platform's code health, architectural patterns, and engineering standards — and shaping how the entire team writes, reviews, tests, and deploys software.
 
-At TM-40L, the measure of success is whether the code works. At TM-50L, the measure is different: does the code work in a way that makes the platform stronger over time?
+At SL 4L, the measure of success is whether the code works. At SL 5L, the measure is different: does the code work in a way that makes the platform stronger over time?
 
-| Dimension | TM-40L Focus | TM-50L Focus |
+| Dimension | SL 4L Focus | SL 5L Focus |
 |---|---|---|
 | Delivery | Build features that work | Build features that work sustainably |
 | Standards | Follow team standards | Define and enforce team standards |
@@ -22,15 +22,15 @@ At TM-40L, the measure of success is whether the code works. At TM-50L, the meas
 
 ### 1-2. Engineering Leadership Without the Title
 
-Most TM-50L engineers will not hold a positional leadership role in the traditional Army sense. They exercise engineering leadership through every interaction with the codebase and the team: the patterns they establish, the code reviews they conduct, the technical decisions they document and defend.
+Most SL 5L engineers will not hold a positional leadership role in the traditional Army sense. They exercise engineering leadership through every interaction with the codebase and the team: the patterns they establish, the code reviews they conduct, the technical decisions they document and defend.
 
-This is influence without authority. The TM-50L engineer cannot order a teammate to write better code. They must demonstrate through example, explain through review, and create systems (checklists, templates, CI gates) that make the right approach the path of least resistance.
+This is influence without authority. The SL 5L engineer cannot order a teammate to write better code. They must demonstrate through example, explain through review, and create systems (checklists, templates, CI gates) that make the right approach the path of least resistance.
 
-Engineering leadership at this level shapes the platform's trajectory. A TM-50L engineer who establishes a clean error-handling pattern creates a standard that dozens of future transforms will follow. One who lets bad patterns go in code review creates an equally durable standard — in the wrong direction.
+Engineering leadership at this level shapes the platform's trajectory. A SL 5L engineer who establishes a clean error-handling pattern creates a standard that dozens of future transforms will follow. One who lets bad patterns go in code review creates an equally durable standard — in the wrong direction.
 
 ### 1-3. The Floor-Raising Imperative
 
-**BLUF:** The TM-50L engineer's job is to raise the floor on quality across the team, not just to build excellent systems personally.
+**BLUF:** The SL 5L engineer's job is to raise the floor on quality across the team, not just to build excellent systems personally.
 
 A team with one excellent engineer and eight mediocre engineers produces mediocre outcomes at scale. The force multiplier is not individual output — it is the ability to make every engineer on the team more effective.
 
@@ -43,9 +43,9 @@ A team with one excellent engineer and eight mediocre engineers produces mediocr
 
 ### 1-4. Vignette — The New Transform Pattern
 
-A TM-50L SWE on the USAREUR-AF MSS platform team observes that four different engineers have independently implemented error handling in Foundry transforms in four different ways. None are wrong, but two lack adequate production logging, one suppresses exceptions silently, and the fourth is verbose but difficult to read.
+A SL 5L SWE on the USAREUR-AF MSS platform team observes that four different engineers have independently implemented error handling in Foundry transforms in four different ways. None are wrong, but two lack adequate production logging, one suppresses exceptions silently, and the fourth is verbose but difficult to read.
 
-The TM-40L response: fix your own transforms and move on. The TM-50L response: document all four approaches with tradeoffs, define a team standard, implement it as a shared utility or code template, and update the code review checklist. The one-time investment prevents the problem from recurring across the next fifty transforms the team writes.
+The SL 4L response: fix your own transforms and move on. The SL 5L response: document all four approaches with tradeoffs, define a team standard, implement it as a shared utility or code template, and update the code review checklist. The one-time investment prevents the problem from recurring across the next fifty transforms the team writes.
 
 ---
 
@@ -53,7 +53,7 @@ The TM-40L response: fix your own transforms and move on. The TM-50L response: d
 
 ### 2-1. The Spark Execution Model
 
-**BLUF:** TM-50L engineers understand not just how to write transforms but how the Foundry platform executes them: Spark execution, dataset partitioning, compute resource allocation, and performance reasoning at scale. The diagnostic skill — moving from symptoms to root cause — is the advanced competency.
+**BLUF:** SL 5L engineers understand not just how to write transforms but how the Foundry platform executes them: Spark execution, dataset partitioning, compute resource allocation, and performance reasoning at scale. The diagnostic skill — moving from symptoms to root cause — is the advanced competency.
 
 Spark processes data in two phases:
 
@@ -76,7 +76,7 @@ Bad partitioning — uneven partition sizes (skew) or partitioning along a dimen
 
 ### 2-3. Compute Resource Allocation
 
-TM-50L engineers understand when and how to configure resource allocation — and, more importantly, when resource configuration is the wrong solution. The common mistake: a transform fails with an out-of-memory (OOM) error and the engineer requests more memory. More often, OOM errors indicate a design problem that more memory will not permanently fix.
+SL 5L engineers understand when and how to configure resource allocation — and, more importantly, when resource configuration is the wrong solution. The common mistake: a transform fails with an out-of-memory (OOM) error and the engineer requests more memory. More often, OOM errors indicate a design problem that more memory will not permanently fix.
 
 **Diagnostic reasoning for OOM errors:**
 1. What is the dataset size? Is it growing? If the dataset doubled, would the transform fail again?
@@ -105,7 +105,7 @@ Apply this framework before changing resource configuration or requesting platfo
 
 The USAREUR-AF logistics integration team submits a new transform joining unit equipment readiness records against a theater-wide parts-availability dataset. At development scale (10K records), it runs in under two minutes. In production (40M equipment records × 800K parts records), it fails with an OOM error on the shuffle step.
 
-The TM-50L SWE reviewing the PR does not recommend increasing memory. They trace the execution plan: the transform performs a join without a preceding filter on the equipment dataset, resulting in a full 40M × 800K shuffle. The fix: filter equipment records to the relevant AOR and date range before the join, reducing shuffle input by ~95%. The revised transform passes at production scale without any resource configuration change. Root cause was design, not resources.
+The SL 5L SWE reviewing the PR does not recommend increasing memory. They trace the execution plan: the transform performs a join without a preceding filter on the equipment dataset, resulting in a full 40M × 800K shuffle. The fix: filter equipment records to the relevant AOR and date range before the join, reducing shuffle input by ~95%. The revised transform passes at production scale without any resource configuration change. Root cause was design, not resources.
 
 ---
 
@@ -113,7 +113,7 @@ The TM-50L SWE reviewing the PR does not recommend increasing memory. They trace
 
 ### 3-1. Why Ontology Design Is an Engineering Concern
 
-**BLUF:** At TM-50L level, the SWE contributes to Ontology design decisions that affect the entire platform. The critical competency is evaluating a design proposal for scalability before it is implemented — not after it fails under production load.
+**BLUF:** At SL 5L level, the SWE contributes to Ontology design decisions that affect the entire platform. The critical competency is evaluating a design proposal for scalability before it is implemented — not after it fails under production load.
 
 The Ontology is not a configuration exercise — it is a software architecture decision. Object Types, Properties, Links, and Actions define the data model that Workshop applications, OSDK integrations, and analytical pipelines consume. A design decision made today becomes a constraint on everything built on top of it. Retroactive changes are expensive: applications break, integrations require updates, and data must be migrated.
 
@@ -176,7 +176,7 @@ Before approving an Ontology design proposal, evaluate against:
 
 ### 4-1. The Architecture Decision That Precedes Everything
 
-**BLUF:** At TM-50L level, OSDK applications go beyond displaying Object data. Advanced patterns include caching strategies, real-time updates, multi-Object-Type design, and authentication/authorization for applications serving multiple roles with different access levels.
+**BLUF:** At SL 5L level, OSDK applications go beyond displaying Object data. Advanced patterns include caching strategies, real-time updates, multi-Object-Type design, and authentication/authorization for applications serving multiple roles with different access levels.
 
 Before designing any advanced pattern, answer: what is the access pattern? How many simultaneous users? Query frequency? Data volume per query? Acceptable staleness? These answers determine every architectural decision that follows. Building the near-real-time pattern for a daily-reporting use case wastes resources. Building the historical-analysis pattern for a near-real-time exercise application produces failure when it matters most.
 
@@ -221,11 +221,11 @@ Architecture considerations:
 
 ### 5-1. The Security Design Mindset
 
-> **NOTE:** TM-40L now addresses computational governance as code (Army Data Plan SO 7 DevSecOps), DDIL pipeline design for contested network environments, and zero trust architecture principles for MSS platform engineering. The security design patterns below assume familiarity with that foundation; review TM-40L Sections 1-5b and 1-7 before applying advanced security engineering at enterprise scale.
+> **NOTE:** SL 4L now addresses computational governance as code (Army Data Plan SO 7 DevSecOps), DDIL pipeline design for contested network environments, and zero trust architecture principles for MSS platform engineering. The security design patterns below assume familiarity with that foundation; review SL 4L Sections 1-5b and 1-7 before applying advanced security engineering at enterprise scale.
 
-**BLUF:** Security is a design constraint applied from the beginning of every system, not a feature added at the end. At TM-50L level, the engineer evaluates every component for its security model before writing the first line of code.
+**BLUF:** Security is a design constraint applied from the beginning of every system, not a feature added at the end. At SL 5L level, the engineer evaluates every component for its security model before writing the first line of code.
 
-TM-40L engineers learn to implement security controls: apply CBAC markings, use HTTPS, rotate credentials. TM-50L engineers design security in from the architecture phase. Before choosing a data storage pattern, integration approach, or application architecture, ask: what is the security model of this design, and does it satisfy the requirement?
+SL 4L engineers learn to implement security controls: apply CBAC markings, use HTTPS, rotate credentials. SL 5L engineers design security in from the architecture phase. Before choosing a data storage pattern, integration approach, or application architecture, ask: what is the security model of this design, and does it satisfy the requirement?
 
 Questions that precede every design decision:
 1. **Authentication:** Who is allowed to access this component? How is their identity verified? What happens when authentication fails?
@@ -262,7 +262,7 @@ Security engineering considerations:
 | Audit trail | Is Action execution logged with actor identity, timestamp, and parameters? | No forensic record of who changed what and when |
 | Scope limitation | Does the Action modify the minimum set of Objects required? | Over-scoped Action modifies objects outside the intended set |
 
-### 5-5. Security Review of a Code PR at TM-50L
+### 5-5. Security Review of a Code PR at SL 5L
 
 Security review is integrated into code review on every PR — not a separate audit. Mandatory checks:
 
@@ -280,7 +280,7 @@ Security review is integrated into code review on every PR — not a separate au
 
 ### 6-1. What CI/CD Enforces on MSS
 
-**BLUF:** The TM-50L engineer designs and maintains the automated pipeline moving code from development to production. An effective CI/CD pipeline enforces governance requirements without creating bottlenecks that slow the team.
+**BLUF:** The SL 5L engineer designs and maintains the automated pipeline moving code from development to production. An effective CI/CD pipeline enforces governance requirements without creating bottlenecks that slow the team.
 
 The MSS platform team's CI/CD pipeline enforces three categories:
 
@@ -310,7 +310,7 @@ The MSS platform team's CI/CD pipeline enforces three categories:
 
 Governance requirements are operationally necessary — and a common source of bottlenecks. When governance checks are manual, they create a queue. When the queue backs up, engineers find workarounds.
 
-TM-50L approach: automate everything that can be automated, and make automated checks informative rather than opaque. A naming convention check that tells the engineer "Dataset name 'unit_data_v2_final' violates USAREUR-AF naming standard — expected format: [domain]_[entity]_[version] (e.g., log_unit_readiness_v1)" enables immediate self-service correction. The automated check becomes a teaching tool.
+SL 5L approach: automate everything that can be automated, and make automated checks informative rather than opaque. A naming convention check that tells the engineer "Dataset name 'unit_data_v2_final' violates USAREUR-AF naming standard — expected format: [domain]_[entity]_[version] (e.g., log_unit_readiness_v1)" enables immediate self-service correction. The automated check becomes a teaching tool.
 
 Reserve manual governance review for decisions requiring human judgment: significant architecture changes, new external integrations, access control schema changes.
 
@@ -318,7 +318,7 @@ Reserve manual governance review for decisions requiring human judgment: signifi
 
 Recommended gate sequence:
 1. All CI checks pass (automated)
-2. PR approved by one TM-50L-qualified reviewer (human)
+2. PR approved by one SL 5L-qualified reviewer (human)
 3. Staging environment deployment and smoke test (automated)
 4. C2DAO sign-off for changes affecting production Ontology or CBAC policies (human)
 5. Production deployment with automated rollback on health check failure (automated)
@@ -331,7 +331,7 @@ Key principle: automate verification steps; reserve human review for approval de
 
 ### 7-1. The Four Dimensions of Code Review
 
-**BLUF:** TM-50L engineers lead code reviews. Effective code review evaluates correctness, design, maintainability, security, and operational risk — and delivers feedback in a way that improves the reviewer without demoralizing them.
+**BLUF:** SL 5L engineers lead code reviews. Effective code review evaluates correctness, design, maintainability, security, and operational risk — and delivers feedback in a way that improves the reviewer without demoralizing them.
 
 | Dimension | What It Asks |
 |---|---|
@@ -361,13 +361,13 @@ Changes with theater-level blast radius require additional review steps, coordin
 | Explain the why, not just the what | "Change this to X because it handles the empty-input case that Y silently drops" teaches the reviewer something they carry forward. "Change this to X" leaves them guessing. |
 | Distinguish blocking feedback from suggestions | Label explicitly: "Blocking: this creates a security vulnerability" versus "Suggestion: this could be simplified." Reviewers should not guess which feedback requires a change before merge. |
 | Acknowledge good work | When a reviewer implemented a complex pattern correctly or handled an edge case you would not have thought of, say so. Establishes the standard for what "good" looks like. |
-| Calibrate to the reviewer's level | A TM-30 engineer submitting their first complex transform needs different feedback than a TM-40L engineer who made an architectural misjudgment. |
+| Calibrate to the reviewer's level | A SL 3 engineer submitting their first complex transform needs different feedback than a SL 4L engineer who made an architectural misjudgment. |
 
 ### 7-4. The Reviewer Development Obligation
 
-TM-50L engineers have an obligation to develop the engineers whose code they review. Every code review is a mentorship opportunity. The cumulative effect of many well-executed code reviews is a team whose quality improves over time.
+SL 5L engineers have an obligation to develop the engineers whose code they review. Every code review is a mentorship opportunity. The cumulative effect of many well-executed code reviews is a team whose quality improves over time.
 
-In practice: when a reviewer makes a design mistake you have seen before, discuss why the pattern matters after the review — do not just correct it in the PR. When a reviewer's code reflects a misunderstanding of how the platform works, point them to the relevant TM-40L or TM-50L section. When a reviewer does something well you want to reinforce, be explicit about it.
+In practice: when a reviewer makes a design mistake you have seen before, discuss why the pattern matters after the review — do not just correct it in the PR. When a reviewer's code reflects a misunderstanding of how the platform works, point them to the relevant SL 4L or SL 5L section. When a reviewer does something well you want to reinforce, be explicit about it.
 
 ---
 
@@ -375,7 +375,7 @@ In practice: when a reviewer makes a design mistake you have seen before, discus
 
 ### 8-1. What Must Be Documented
 
-**BLUF:** At TM-50L level, documentation is an engineering artifact with the same lifecycle as code. Missing documentation is a defect. The operational cost becomes apparent when a system fails at 0300 and no one knows how to recover it.
+**BLUF:** At SL 5L level, documentation is an engineering artifact with the same lifecycle as code. Missing documentation is a defect. The operational cost becomes apparent when a system fails at 0300 and no one knows how to recover it.
 
 | Document Type | Content | Co-location |
 |---|---|---|
@@ -419,33 +419,33 @@ Documentation that makes the 0300 test possible:
 
 ---
 
-## SECTION 9 — ADVANCED FAILURE MODES — WHAT TM-50L ENGINEERS GET WRONG
+## SECTION 9 — ADVANCED FAILURE MODES — WHAT SL 5L ENGINEERS GET WRONG
 
-**BLUF:** The failure modes at TM-50L level are not beginner mistakes — they are predictable errors made by capable engineers who have access to powerful tools and face genuine operational pressures.
+**BLUF:** The failure modes at SL 5L level are not beginner mistakes — they are predictable errors made by capable engineers who have access to powerful tools and face genuine operational pressures.
 
 | Failure Mode | How It Manifests | Corrective Discipline |
 |---|---|---|
 | Over-engineering | Applying incremental processing, Ontology subscriptions, complex OSDK patterns, or multi-hop traversals when simpler approaches would serve the mission better. Causes: intellectual preference for elegant solutions, defensive engineering ("what if we need this later?"), status signaling. Systems become harder to understand, debug, and hand off. | Before adding complexity, ask what simpler approach was rejected and why. If the simpler approach has a concrete operational deficiency (too slow, too resource-intensive, too stale), complexity is justified. If it would have worked, refactor. |
 | Underinvesting in observability | Observability instrumentation is not immediately functional — the investment pays off only when something goes wrong. Result: production failures are discovered by users reporting them, not by the engineering team detecting them. | Treat observability requirements as functional requirements: define what healthy looks like (metrics), how to know something is wrong (alerting thresholds), and how to diagnose what went wrong (logging structure). A system not meeting these requirements is not ready for production. Minimum: transform build alerting, data freshness monitoring, output quality checks, OSDK error rate monitoring, Action execution failure alerting. |
-| Technical debt accumulation | Systems that "work" but are built on a fragile foundation accumulate debt silently. Failure point: a growth event — dataset doubles, new use case requires schema extension, or a new feature cannot be added without a rewrite. Even TM-50L engineers can build technically sophisticated systems with documentation gaps, hardcoded assumptions, or test coverage that exercises only happy paths. | Treat technical debt as an operational risk. Budget time for debt reduction each sprint. When building a new feature on top of an existing system, assess the system's debt first. Code review should explicitly identify debt created by a PR; the team decides whether to accept it or address it before merge. |
+| Technical debt accumulation | Systems that "work" but are built on a fragile foundation accumulate debt silently. Failure point: a growth event — dataset doubles, new use case requires schema extension, or a new feature cannot be added without a rewrite. Even SL 5L engineers can build technically sophisticated systems with documentation gaps, hardcoded assumptions, or test coverage that exercises only happy paths. | Treat technical debt as an operational risk. Budget time for debt reduction each sprint. When building a new feature on top of an existing system, assess the system's debt first. Code review should explicitly identify debt created by a PR; the team decides whether to accept it or address it before merge. |
 | Security as a compliance checkbox | Compliance mindset: goal is to pass the checklist, not to build a secure system. Engineers look for minimum evidence to satisfy each checklist item, not actual security assurance. A credential stored in an approved vault but never rotated, with overly broad permissions, shared across multiple systems, meets the "no hardcoded credentials" checklist requirement — and is still a security liability. | Security is a design constraint (Section 5), not a compliance requirement. The checklist verifies work that was already designed with security in mind — it is not a substitute for that design thinking. |
-| Failing to develop the next generation | Heavy operational workloads cause TM-50L engineers to deprioritize mentorship and code review quality because these activities feel less urgent than delivering the next system. Compounding failure: team capability stagnates, the TM-50L engineer becomes a quality bottleneck, and when they rotate out, institutional knowledge was never transferred. | At USAREUR-AF, operational data team personnel rotate. The team that built a system will not be the team that maintains it in two years. Treat engineer development as a mission requirement. Code review is a teaching opportunity — invest in it accordingly. The TM-50L engineer's measure of success is not the quality of systems they build alone — it is the quality of systems the team builds after they leave. |
+| Failing to develop the next generation | Heavy operational workloads cause SL 5L engineers to deprioritize mentorship and code review quality because these activities feel less urgent than delivering the next system. Compounding failure: team capability stagnates, the SL 5L engineer becomes a quality bottleneck, and when they rotate out, institutional knowledge was never transferred. | At USAREUR-AF, operational data team personnel rotate. The team that built a system will not be the team that maintains it in two years. Treat engineer development as a mission requirement. Code review is a teaching opportunity — invest in it accordingly. The SL 5L engineer's measure of success is not the quality of systems they build alone — it is the quality of systems the team builds after they leave. |
 
 ### Vignette — The V Corps G3 OSDK Application Review
 
-A TM-40L engineer submits a PR for a new OSDK application serving the V Corps G3 — a near-real-time force disposition display used during exercises. The application is functionally correct: it queries the right Object Types, displays the right data, and handles the primary use case correctly.
+A SL 4L engineer submits a PR for a new OSDK application serving the V Corps G3 — a near-real-time force disposition display used during exercises. The application is functionally correct: it queries the right Object Types, displays the right data, and handles the primary use case correctly.
 
-The TM-50L lead reviewing the PR identifies four issues not caught in functional testing:
+The SL 5L lead reviewing the PR identifies four issues not caught in functional testing:
 - The application loads all force disposition Objects at startup (4,200 at current exercise scale) rather than filtering to the G3's AOR. Long initial load times as exercise scale increases.
 - No cache invalidation logic — the application caches at load and never refreshes during a session. During a 12-hour exercise, displayed data will be up to 12 hours stale.
 - Actions available to the G3 are visible (though non-functional) to read-only roles due to UI logic that checks permissions server-side but renders the button before the check resolves.
 - No runbook for the application — no documentation of subscription TTL, how to force a refresh, or what to do if the Ontology subscription drops.
 
-The TM-50L lead does not reject the PR. They document each finding with its operational reasoning, assign severity (blocking vs. advisory), and provide specific remediation guidance. The conversation that follows raises the TM-40L engineer's understanding of OSDK caching, authorization patterns, and production documentation requirements — knowledge they carry into the next five applications they build.
+The SL 5L lead does not reject the PR. They document each finding with its operational reasoning, assign severity (blocking vs. advisory), and provide specific remediation guidance. The conversation that follows raises the SL 4L engineer's understanding of OSDK caching, authorization patterns, and production documentation requirements — knowledge they carry into the next five applications they build.
 
 ---
 
-## SUMMARY TABLE — TM-50L CONCEPTS AT A GLANCE
+## SUMMARY TABLE — SL 5L CONCEPTS AT A GLANCE
 
 | Section | Core Concept | Key Discipline |
 |---|---|---|
@@ -461,25 +461,25 @@ The TM-50L lead does not reject the PR. They document each finding with its oper
 
 ---
 
-## PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION
+## PEER SL 5 CROSS-REFERENCES AND WFF INTEGRATION
 
-**Peer TM-50 Publications.** Platform engineers build infrastructure consumed by all advanced specialist tracks. Coordinate with practitioners in these companion publications.
+**Peer SL 5 Publications.** Platform engineers build infrastructure consumed by all advanced specialist tracks. Coordinate with practitioners in these companion publications.
 
 | Publication | Track | Coordination Point |
 |---|---|---|
-| TM-50G | Advanced ORSA | Platform infrastructure supporting analytical pipelines |
-| TM-50H | Advanced AI Engineer | OSDK integration with AI systems |
-| TM-50M | Advanced ML Engineer | ML model-serving integrations; feature pipeline infrastructure |
-| TM-50J | Advanced Program Manager | Platform engineering program coordination; SWE team structure |
-| TM-50K | Advanced Knowledge Manager | Platform SDK patterns for enterprise KM system backends |
-| TM-50N | Advanced UI/UX Designer | Frontend design collaboration; design system implementation |
-| TM-50O | Advanced Platform Engineer | Platform/application boundary; DevOps collaboration; deployment targets |
+| SL 5G | Advanced ORSA | Platform infrastructure supporting analytical pipelines |
+| SL 5H | Advanced AI Engineer | OSDK integration with AI systems |
+| SL 5M | Advanced ML Engineer | ML model-serving integrations; feature pipeline infrastructure |
+| SL 5J | Advanced Program Manager | Platform engineering program coordination; SWE team structure |
+| SL 5K | Advanced Knowledge Manager | Platform SDK patterns for enterprise KM system backends |
+| SL 5N | Advanced UI/UX Designer | Frontend design collaboration; design system implementation |
+| SL 5O | Advanced Platform Engineer | Platform/application boundary; DevOps collaboration; deployment targets |
 
-**WFF Operational Consumer Note.** The software platform built and governed by TM-50L engineers is the delivery mechanism for all capabilities consumed by the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). Platform reliability, security, and performance are not engineering abstractions — they determine whether a G2 analyst can pull an intelligence synthesis at 0300, whether a G4 planner can access logistics forecasts before a decision brief, and whether the G3's force disposition display is current when the commander needs it. The failure modes addressed in this guide — over-engineering, observability debt, security as compliance — have direct operational consequences for WFF practitioners.
+**WFF Operational Consumer Note.** The software platform built and governed by SL 5L engineers is the delivery mechanism for all capabilities consumed by the six Warfighting Function (WFF) tracks: Intelligence (SL 4A), Fires (SL 4B), Movement and Maneuver (SL 4C), Sustainment (SL 4D), Protection (SL 4E), and Mission Command (SL 4F). Platform reliability, security, and performance are not engineering abstractions — they determine whether a G2 analyst can pull an intelligence synthesis at 0300, whether a G4 planner can access logistics forecasts before a decision brief, and whether the G3's force disposition display is current when the commander needs it. The failure modes addressed in this guide — over-engineering, observability debt, security as compliance — have direct operational consequences for WFF practitioners.
 
 ---
 
-*This guide is a conceptual companion to TM-50L. It does not replace task-based training. Qualification requires demonstrated performance of TM-50L tasks under the conditions and to the standards specified in TM-50L.*
+*This guide is a conceptual companion to SL 5L. It does not replace task-based training. Qualification requires demonstrated performance of SL 5L tasks under the conditions and to the standards specified in SL 5L.*
 
 *USAREUR-AF Operational Data Team — MSS Platform Engineering | Version 1.0 — 2026*
 

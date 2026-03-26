@@ -1,6 +1,6 @@
 # ENVIRONMENT SETUP — EX_40L Software Engineer
 
-**Track:** EX_40L — Software Engineer (TM-40L) | **Prerequisite:** TM-30 REQUIRED | **Continuation:** TM-50L — Advanced Software Engineer
+**Track:** EX_40L — Software Engineer (SL 4L) | **Prerequisite:** SL 3 REQUIRED | **Continuation:** SL 5L — Advanced Software Engineer
 **Companion exams:** EXAM_TM40L_PRE (administer before exercise), EXAM_TM40L_POST (administer after exercise)
 
 ## Environment Type

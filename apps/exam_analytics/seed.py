@@ -16,11 +16,11 @@ from .db import ExamResult, ExamSession, QuestionScore, SessionLocal, init_db
 # Course configurations — each has a distinct difficulty profile
 # ---------------------------------------------------------------------------
 COURSES = {
-    "TM-40G": {
+    "SL 4G": {
         "name": "ORSA",
         "cohorts": [
-            {"label": "TM-40G FY26 Q1", "pre_date": date(2025, 10, 14), "post_date": date(2025, 10, 18)},
-            {"label": "TM-40G FY26 Q2", "pre_date": date(2026, 1, 13), "post_date": date(2026, 1, 17)},
+            {"label": "SL 4G FY26 Q1", "pre_date": date(2025, 10, 14), "post_date": date(2025, 10, 18)},
+            {"label": "SL 4G FY26 Q2", "pre_date": date(2026, 1, 13), "post_date": date(2026, 1, 17)},
         ],
         # MC difficulty: probability of getting full marks per question (q1-q15)
         "mc_difficulty_pre": [0.4, 0.5, 0.3, 0.6, 0.2, 0.5, 0.3, 0.4, 0.5, 0.3, 0.4, 0.6, 0.2, 0.5, 0.4],
@@ -30,11 +30,11 @@ COURSES = {
         "sa_difficulty_post": [0.8, 0.7, 0.85, 0.6, 0.75],
         "n_students": [10, 12],
     },
-    "TM-40H": {
+    "SL 4H": {
         "name": "AI Engineer",
         "cohorts": [
-            {"label": "TM-40H FY26 Q1", "pre_date": date(2025, 11, 4), "post_date": date(2025, 11, 8)},
-            {"label": "TM-40H FY26 Q2", "pre_date": date(2026, 2, 10), "post_date": date(2026, 2, 14)},
+            {"label": "SL 4H FY26 Q1", "pre_date": date(2025, 11, 4), "post_date": date(2025, 11, 8)},
+            {"label": "SL 4H FY26 Q2", "pre_date": date(2026, 2, 10), "post_date": date(2026, 2, 14)},
         ],
         "mc_difficulty_pre": [0.3, 0.4, 0.2, 0.5, 0.3, 0.4, 0.2, 0.3, 0.4, 0.2, 0.3, 0.5, 0.2, 0.4, 0.3],
         "mc_difficulty_post": [0.7, 0.8, 0.6, 0.85, 0.7, 0.8, 0.55, 0.7, 0.75, 0.6, 0.7, 0.85, 0.5, 0.75, 0.65],
@@ -42,10 +42,10 @@ COURSES = {
         "sa_difficulty_post": [0.75, 0.65, 0.8, 0.55, 0.7],
         "n_students": [8, 10],
     },
-    "TM-40K": {
+    "SL 4K": {
         "name": "Knowledge Manager",
         "cohorts": [
-            {"label": "TM-40K FY26 Q1", "pre_date": date(2025, 10, 21), "post_date": date(2025, 10, 24)},
+            {"label": "SL 4K FY26 Q1", "pre_date": date(2025, 10, 21), "post_date": date(2025, 10, 24)},
         ],
         "mc_difficulty_pre": [0.5, 0.6, 0.4, 0.7, 0.3, 0.6, 0.4, 0.5, 0.6, 0.4, 0.5, 0.7, 0.3, 0.6, 0.5],
         "mc_difficulty_post": [0.85, 0.9, 0.8, 0.95, 0.7, 0.9, 0.75, 0.85, 0.9, 0.8, 0.85, 0.95, 0.65, 0.9, 0.85],
@@ -53,11 +53,11 @@ COURSES = {
         "sa_difficulty_post": [0.85, 0.8, 0.9, 0.7, 0.8],
         "n_students": [15],
     },
-    "TM-40L": {
+    "SL 4L": {
         "name": "Software Engineer",
         "cohorts": [
-            {"label": "TM-40L FY26 Q1", "pre_date": date(2025, 11, 18), "post_date": date(2025, 11, 22)},
-            {"label": "TM-40L FY26 Q2", "pre_date": date(2026, 2, 24), "post_date": date(2026, 2, 28)},
+            {"label": "SL 4L FY26 Q1", "pre_date": date(2025, 11, 18), "post_date": date(2025, 11, 22)},
+            {"label": "SL 4L FY26 Q2", "pre_date": date(2026, 2, 24), "post_date": date(2026, 2, 28)},
         ],
         # SWE: hardest exam — low pre scores, good but not great post
         "mc_difficulty_pre": [0.25, 0.3, 0.15, 0.4, 0.2, 0.3, 0.15, 0.25, 0.3, 0.15, 0.25, 0.4, 0.1, 0.3, 0.2],
@@ -66,10 +66,10 @@ COURSES = {
         "sa_difficulty_post": [0.65, 0.55, 0.7, 0.45, 0.6],
         "n_students": [8, 9],
     },
-    "TM-40A": {
+    "SL 4A": {
         "name": "Intelligence WFF",
         "cohorts": [
-            {"label": "TM-40A FY26 Q2", "pre_date": date(2026, 1, 27), "post_date": date(2026, 1, 30)},
+            {"label": "SL 4A FY26 Q2", "pre_date": date(2026, 1, 27), "post_date": date(2026, 1, 30)},
         ],
         "mc_difficulty_pre": [0.45, 0.55, 0.35, 0.65, 0.25, 0.55, 0.35, 0.45, 0.55, 0.35, 0.45, 0.65, 0.25, 0.55, 0.45],
         "mc_difficulty_post": [0.8, 0.88, 0.75, 0.92, 0.65, 0.88, 0.7, 0.82, 0.88, 0.75, 0.8, 0.92, 0.6, 0.85, 0.8],

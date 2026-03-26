@@ -1,12 +1,12 @@
-# PRE-TEST — TM-50N: ADVANCED UI/UX DESIGNER
+# PRE-TEST — SL 5N: ADVANCED UI/UX DESIGNER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-50N: Advanced UI/UX Designer |
+| **Course** | SL 5N: Advanced UI/UX Designer |
 | **Form** | Pre-Test |
-| **Level** | TM-50N (Advanced Specialist) |
-| **Audience** | Experienced UI/UX designers; prerequisite: TM-40N Go |
+| **Level** | SL 5N (Advanced Specialist) |
+| **Audience** | Experienced UI/UX designers; prerequisite: SL 4N Go |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

@@ -106,84 +106,84 @@ def seed():
         # duration_days: how long the cert is valid
         # status_override: None = auto-calculate, else force this status
         cert_specs = [
-            # INST-001 Morrison — certified TM-10, TM-20, TM-30, TM-40G (multi-course)
-            ("INST-001", "TM-10", 350, 730, None),
-            ("INST-001", "TM-20", 300, 730, None),
-            ("INST-001", "TM-30", 250, 730, None),
-            ("INST-001", "TM-40G", 180, 365, None),
+            # INST-001 Morrison — certified SL 1, SL 2, SL 3, SL 4G (multi-course)
+            ("INST-001", "SL 1", 350, 730, None),
+            ("INST-001", "SL 2", 300, 730, None),
+            ("INST-001", "SL 3", 250, 730, None),
+            ("INST-001", "SL 4G", 180, 365, None),
 
-            # INST-002 Chen — TM-10, TM-20, TM-40A; TM-40H expiring in 20 days
-            ("INST-002", "TM-10", 400, 730, None),
-            ("INST-002", "TM-20", 350, 730, None),
-            ("INST-002", "TM-40A", 200, 365, None),
-            ("INST-002", "TM-40H", 345, 365, None),  # expires ~20 days from ref
+            # INST-002 Chen — SL 1, SL 2, SL 4A; SL 4H expiring in 20 days
+            ("INST-002", "SL 1", 400, 730, None),
+            ("INST-002", "SL 2", 350, 730, None),
+            ("INST-002", "SL 4A", 200, 365, None),
+            ("INST-002", "SL 4H", 345, 365, None),  # expires ~20 days from ref
 
-            # INST-003 Brooks — TM-10 only, cert expiring in 15 days
-            ("INST-003", "TM-10", 350, 365, None),  # expires ~15 days from ref
+            # INST-003 Brooks — SL 1 only, cert expiring in 15 days
+            ("INST-003", "SL 1", 350, 365, None),  # expires ~15 days from ref
 
-            # INST-004 Tanaka — TM-10, TM-20, TM-30, TM-40H, TM-50H
-            ("INST-004", "TM-10", 500, 730, None),
-            ("INST-004", "TM-20", 400, 730, None),
-            ("INST-004", "TM-30", 300, 730, None),
-            ("INST-004", "TM-40H", 200, 365, None),
-            ("INST-004", "TM-50H", 100, 365, None),
+            # INST-004 Tanaka — SL 1, SL 2, SL 3, SL 4H, SL 5H
+            ("INST-004", "SL 1", 500, 730, None),
+            ("INST-004", "SL 2", 400, 730, None),
+            ("INST-004", "SL 3", 300, 730, None),
+            ("INST-004", "SL 4H", 200, 365, None),
+            ("INST-004", "SL 5H", 100, 365, None),
 
-            # INST-005 Williams — TM-10, TM-20, TM-40J; TM-30 expired
-            ("INST-005", "TM-10", 600, 730, None),
-            ("INST-005", "TM-20", 500, 730, None),
-            ("INST-005", "TM-30", 400, 365, "EXPIRED"),
-            ("INST-005", "TM-40J", 150, 365, None),
+            # INST-005 Williams — SL 1, SL 2, SL 4J; SL 3 expired
+            ("INST-005", "SL 1", 600, 730, None),
+            ("INST-005", "SL 2", 500, 730, None),
+            ("INST-005", "SL 3", 400, 365, "EXPIRED"),
+            ("INST-005", "SL 4J", 150, 365, None),
 
-            # INST-006 Henderson (TDY) — TM-10, TM-20
-            ("INST-006", "TM-10", 300, 730, None),
-            ("INST-006", "TM-20", 200, 730, None),
+            # INST-006 Henderson (TDY) — SL 1, SL 2
+            ("INST-006", "SL 1", 300, 730, None),
+            ("INST-006", "SL 2", 200, 730, None),
 
-            # INST-007 Petrov — TM-10, TM-20, TM-30, TM-40B (fires-focused)
-            ("INST-007", "TM-10", 500, 730, None),
-            ("INST-007", "TM-20", 400, 730, None),
-            ("INST-007", "TM-30", 300, 730, None),
-            ("INST-007", "TM-40B", 200, 365, None),
+            # INST-007 Petrov — SL 1, SL 2, SL 3, SL 4B (fires-focused)
+            ("INST-007", "SL 1", 500, 730, None),
+            ("INST-007", "SL 2", 400, 730, None),
+            ("INST-007", "SL 3", 300, 730, None),
+            ("INST-007", "SL 4B", 200, 365, None),
 
-            # INST-008 Garcia — TM-10, TM-40B; cert expiring in 25 days
-            ("INST-008", "TM-10", 340, 365, None),  # expires ~25 days from ref
-            ("INST-008", "TM-40B", 340, 365, None),  # also expiring soon
+            # INST-008 Garcia — SL 1, SL 4B; cert expiring in 25 days
+            ("INST-008", "SL 1", 340, 365, None),  # expires ~25 days from ref
+            ("INST-008", "SL 4B", 340, 365, None),  # also expiring soon
 
-            # INST-009 Taylor — TM-10, TM-20, TM-30, TM-40F
-            ("INST-009", "TM-10", 400, 730, None),
-            ("INST-009", "TM-20", 300, 730, None),
-            ("INST-009", "TM-30", 200, 730, None),
-            ("INST-009", "TM-40F", 150, 365, None),
+            # INST-009 Taylor — SL 1, SL 2, SL 3, SL 4F
+            ("INST-009", "SL 1", 400, 730, None),
+            ("INST-009", "SL 2", 300, 730, None),
+            ("INST-009", "SL 3", 200, 730, None),
+            ("INST-009", "SL 4F", 150, 365, None),
 
-            # INST-010 Okafor — TM-10, TM-20, TM-40D (sustainment)
-            ("INST-010", "TM-10", 400, 730, None),
-            ("INST-010", "TM-20", 300, 730, None),
-            ("INST-010", "TM-40D", 200, 365, None),
+            # INST-010 Okafor — SL 1, SL 2, SL 4D (sustainment)
+            ("INST-010", "SL 1", 400, 730, None),
+            ("INST-010", "SL 2", 300, 730, None),
+            ("INST-010", "SL 4D", 200, 365, None),
 
-            # INST-011 Davis — TM-10, TM-20, TM-30; pending TM-40K
-            ("INST-011", "TM-10", 500, 730, None),
-            ("INST-011", "TM-20", 400, 730, None),
-            ("INST-011", "TM-30", 300, 730, None),
-            ("INST-011", "TM-40K", 10, 365, "PENDING"),
+            # INST-011 Davis — SL 1, SL 2, SL 3; pending SL 4K
+            ("INST-011", "SL 1", 500, 730, None),
+            ("INST-011", "SL 2", 400, 730, None),
+            ("INST-011", "SL 3", 300, 730, None),
+            ("INST-011", "SL 4K", 10, 365, "PENDING"),
 
-            # INST-012 Martinez (INACTIVE) — TM-10 expired
-            ("INST-012", "TM-10", 500, 365, "EXPIRED"),
+            # INST-012 Martinez (INACTIVE) — SL 1 expired
+            ("INST-012", "SL 1", 500, 365, "EXPIRED"),
 
-            # INST-013 Nguyen — TM-10, TM-20, TM-30, TM-40L, TM-50L
-            ("INST-013", "TM-10", 600, 730, None),
-            ("INST-013", "TM-20", 500, 730, None),
-            ("INST-013", "TM-30", 400, 730, None),
-            ("INST-013", "TM-40L", 200, 365, None),
-            ("INST-013", "TM-50L", 100, 365, None),
+            # INST-013 Nguyen — SL 1, SL 2, SL 3, SL 4L, SL 5L
+            ("INST-013", "SL 1", 600, 730, None),
+            ("INST-013", "SL 2", 500, 730, None),
+            ("INST-013", "SL 3", 400, 730, None),
+            ("INST-013", "SL 4L", 200, 365, None),
+            ("INST-013", "SL 5L", 100, 365, None),
 
-            # INST-014 Jackson — TM-10, TM-20, TM-40J, TM-50J
-            ("INST-014", "TM-10", 500, 730, None),
-            ("INST-014", "TM-20", 400, 730, None),
-            ("INST-014", "TM-40J", 200, 365, None),
-            ("INST-014", "TM-50J", 100, 365, None),
+            # INST-014 Jackson — SL 1, SL 2, SL 4J, SL 5J
+            ("INST-014", "SL 1", 500, 730, None),
+            ("INST-014", "SL 2", 400, 730, None),
+            ("INST-014", "SL 4J", 200, 365, None),
+            ("INST-014", "SL 5J", 100, 365, None),
 
-            # INST-015 Kowalski — TM-10, TM-20; cert expiring in 10 days
-            ("INST-015", "TM-10", 355, 365, None),  # expires ~10 days from ref
-            ("INST-015", "TM-20", 200, 365, None),
+            # INST-015 Kowalski — SL 1, SL 2; cert expiring in 10 days
+            ("INST-015", "SL 1", 355, 365, None),  # expires ~10 days from ref
+            ("INST-015", "SL 2", 200, 365, None),
         ]
 
         total_certs = 0

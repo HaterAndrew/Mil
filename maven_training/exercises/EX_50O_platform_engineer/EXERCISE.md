@@ -1,10 +1,10 @@
 # EX_50O — Advanced Platform Engineer
-## Practical Exercise — TM-50O Proficiency
+## Practical Exercise — SL 5O Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-40O REQUIRED (Go evaluation on file); TM-50O — Advanced Platform Engineer Technical Manual |
+| **Prerequisite** | SL 4O REQUIRED (Go evaluation on file); SL 5O — Advanced Platform Engineer Technical Manual |
 | **Duration** | 3–4 hours |
 | **Environment** | Multi-cluster training environment with fleet management tooling — see EX_40O ENVIRONMENT_SETUP.md (extended environment) |
 
@@ -12,7 +12,7 @@
 
 | Resource | Reference |
 |----------|-----------|
-| Technical Manual | TM-50O — Advanced Platform Engineer |
+| Technical Manual | SL 5O — Advanced Platform Engineer |
 | Syllabus | SYLLABUS_TM50O |
 | Pre-Exercise Exam | EXAM_TM50O_PRE |
 | Post-Exercise Exam | EXAM_TM50O_POST |

@@ -1,12 +1,12 @@
-# PRE-TEST — TM-40C: MOVEMENT & MANEUVER
+# PRE-TEST — SL 4C: MOVEMENT & MANEUVER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40C: Movement & Maneuver WFF Track |
+| **Course** | SL 4C: Movement & Maneuver WFF Track |
 | **Form** | Pre-Test |
-| **Level** | TM-40C (WFF Track) |
-| **Audience** | G3/S3 maneuver staff, operations officers, S3 NCOs, maneuver planners; prerequisite: TM-10 + TM-20 + TM-30 complete |
+| **Level** | SL 4C (WFF Track) |
+| **Audience** | G3/S3 maneuver staff, operations officers, S3 NCOs, maneuver planners; prerequisite: SL 1 + SL 2 + SL 3 complete |
 | **Time Allowed** | 20 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

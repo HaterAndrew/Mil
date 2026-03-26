@@ -7,7 +7,7 @@
 | 0:00 | 0:30 | **Setup** | Handouts already on table | Place printed copies of HERMES overview, training pipeline, capacity projection, and POAM. Browser tabs pre-loaded. |
 | 0:00 | 1:00 | **A. CDA Overview** | `hermes_overview_sl.html` | "CDA defines what we do with data. HERMES is the people and project management system — training track feeds the project pipeline. Two tracks form a continuous loop: train the force, feed certified builders into the project pipeline. This is the now. Next: doctrine-backed ontology." |
 | 1:00 | 1:00 | **B. The Problem** | Stay on HERMES, zoom into training track | "The theater has a lack of skills. Two issues: adoption — units don't know what MSS can do. Training — no organic capability exists anywhere in the Army. Not at any echelon, not anywhere in the force. CG directed we get this into the hands of the NCOs. Solution: doctrinize Maven." |
-| 2:00 | 2:30 | **C. Training Pipeline** | `training_pipeline_sl.html` | "This is what we built. TM-10 through TM-50, Senior Leader course, Foundry Bootcamp. 272 published PDFs — concepts guides, syllabi, exercises, pre/post exams, governance docs. Full governance package complete and TRADOC-aligned. Coalition-ready — NATO data standards integrated." |
+| 2:00 | 2:30 | **C. Training Pipeline** | `training_pipeline_sl.html` | "This is what we built. SL 1 through SL 5, Executive course, Foundry Bootcamp. 272 published PDFs — concepts guides, syllabi, exercises, pre/post exams, governance docs. Full governance package complete and TRADOC-aligned. Coalition-ready — NATO data standards integrated." |
 | | | | Open Training Hub | (30 sec) Show the live site. Click into one course — show exercise + exam. "Every track has this: self-study, hands-on exercise, pre and post exam." |
 | 4:30 | 1:00 | **D. Capacity** | `handout_capacity.html` | "This is the throughput math. COA 1 MTT: ~450 personnel/year, 60 classes, 5 locations. COA 2 ODT continues: ~150/year. COA 3 quarterly only: ~90/year. The capacity gap widens every quarter we don't act." |
 | 5:30 | 2:00 | **E. COAs & POAM** | `POAM_FY27_IMPLEMENTATION.html` | "Three COAs. COA 1: 7ATC takes the training mission, ODT stays proponent — we maintain curriculum, certify instructors, update content. COA 2: ODT grows a training cell, but that competes with our build mission. COA 3: sister directorate like G37, longest standup." (30 sec) Walk the phased timeline — 4 phases, 28 weeks, MAR–OCT 2026. (30 sec) "Risk of inaction: without an owner, it stalls. ODT burns out. No one else is building this." |
@@ -28,7 +28,7 @@ That's COA 2. It works if we grow the team. Right now every class ODT teaches is
 G37 has the training authorities but not the technical depth. MSS training requires instructors who understand ontology architecture, pipeline engineering, and AIP Logic. G37 would need significant ramp-up time and would still depend on ODT for curriculum and instructor certification. It's possible but it's the longest standup.
 
 ### "Why can't units just do this themselves?"
-TM-10 is designed for unit-level execution — 8 hours, in-processing integration, no special instructor needed. That's already in the plan. But TM-20 and TM-30 require qualified instructors who understand ontology architecture, Pipeline Builder, governance standards, and AIP Logic. No unit has those people organic to their formation.
+SL 1 is designed for unit-level execution — 8 hours, in-processing integration, no special instructor needed. That's already in the plan. But SL 2 and SL 3 require qualified instructors who understand ontology architecture, Pipeline Builder, governance standards, and AIP Logic. No unit has those people organic to their formation.
 
 ### "Is this duplicating anything TRADOC already does?"
 No. TRADOC does not have an MSS-specific training program. Palantir offers product training but it doesn't cover data literacy, operational integration, or Army governance. No one else in the Army has built this. If it works, TRADOC can absorb it — the governance package is already TRADOC-formatted for exactly that reason.
@@ -61,9 +61,9 @@ Different problem, different depth, different outcome.
 | Governance alignment | No | TRADOC-formatted |
 | Instructor certification | No | Yes |
 | Coalition-ready | No | Yes — NATO standards |
-| Progression model | Flat | TM-10 → TM-50, feeds project pipeline |
+| Progression model | Flat | SL 1 → SL 5, feeds project pipeline |
 
-They're complementary, not competing. A Soldier who completes DIU is better prepared for TM-10. But DIU produces users — CDA training produces builders. That's the gap no one else is filling.
+They're complementary, not competing. A Soldier who completes DIU is better prepared for SL 1. But DIU produces users — CDA training produces builders. That's the gap no one else is filling.
 
 ### "Is any of this classified?"
 No. Course content teaches platform skills and data literacy — no operational data is included. This is why partner nation training is immediately executable with no releasability review required.
@@ -78,7 +78,7 @@ No. Course content teaches platform skills and data literacy — no operational 
 - [ ] Know the 3 COAs cold — 7ATC / ODT / Sister Directorate
 - [ ] Know the risk of inaction cold
 - [ ] Know current PDF count (**272**)
-- [ ] Know TM-40 = 14 tracks, TM-50 = 8 tracks
+- [ ] Know SL 4 = 14 tracks, SL 5 = 8 tracks
 - [ ] Have the partner nation demand signal ready — which nations, what context
 - [ ] Know the phased timeline: 4 phases, 28 weeks, MAR–OCT 2026
 - [ ] Rehearse to 10 minutes — 8 min talk, 2 min Q&A buffer

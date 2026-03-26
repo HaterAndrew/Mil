@@ -40,28 +40,28 @@ add("DOC_GLOSSARY", "GLOSSARY\nData Foundry",     "doctrine/GLOSSARY_data_foundr
 add("DOC_NAMING",   "NAMING &\nGOVERNANCE STD",   "standards/NAMING_AND_GOVERNANCE_STANDARDS.md",    "DOCTRINE", 0, "Standards")
 add("DOC_CHEAT",    "cheatsheet.md",              "quick_reference/cheatsheet.md",                   "DOCTRINE", 0, "Standards")
 
-# ---- TM-10 CLUSTER (column 1) ----
-add("TM10",         "TM_10\nMAVEN USER",    "tm/TM_10_maven_user/TM_10_MAVEN_USER.md",            "TM",   1, "TM-10")
-add("SYL10",        "SYLLABUS\nTM10",       "syllabi/SYLLABUS_TM10.md",                            "SYL",  1, "TM-10")
-add("EX10",         "EX-10\nOperator",      "exercises/EX_10_operator_basics/EXERCISE.md",          "EX",   1, "TM-10")
-add("EXAM10PRE",    "EXAM TM10\nPRE",       "exercises/exams/EXAM_TM10_PRE.md",                    "EXAM", 1, "TM-10")
-add("EXAM10SUPP",   "EXAM TM10\nSUPP",      "exercises/exams/EXAM_TM10_SUPPLEMENTAL.md",           "EXAM", 1, "TM-10")
+# ---- SL 1 CLUSTER (column 1) ----
+add("TM10",         "SL 1\nMAVEN USER",     "tm/TM_10_maven_user/TM_10_MAVEN_USER.md",            "TM",   1, "SL 1")
+add("SYL10",        "SYLLABUS\nSL 1",       "syllabi/SYLLABUS_TM10.md",                            "SYL",  1, "SL 1")
+add("EX10",         "EX-10\nOperator",      "exercises/EX_10_operator_basics/EXERCISE.md",          "EX",   1, "SL 1")
+add("EXAM10PRE",    "EXAM SL 1\nPRE",       "exercises/exams/EXAM_TM10_PRE.md",                    "EXAM", 1, "SL 1")
+add("EXAM10SUPP",   "EXAM SL 1\nSUPP",      "exercises/exams/EXAM_TM10_SUPPLEMENTAL.md",           "EXAM", 1, "SL 1")
 
-# ---- TM-20 CLUSTER (column 2) ----
-add("TM20",         "TM_20\nBUILDER",       "tm/TM_20_builder/TM_20_BUILDER.md",                  "TM",   2, "TM-20")
-add("SYL20",        "SYLLABUS\nTM20",       "syllabi/SYLLABUS_TM20.md",                            "SYL",  2, "TM-20")
-add("EX20",         "EX-20\nNo-Code Builder","exercises/EX_20_no_code_builder/EXERCISE.md",         "EX",   2, "TM-20")
-add("EXAM20PRE",    "EXAM TM20\nPRE",       "exercises/exams/EXAM_TM20_PRE.md",                    "EXAM", 2, "TM-20")
-add("EXAM20POST",   "EXAM TM20\nPOST",      "exercises/exams/EXAM_TM20_POST.md",                   "EXAM", 2, "TM-20")
+# ---- SL 2 CLUSTER (column 2) ----
+add("TM20",         "SL 2\nBUILDER",        "tm/TM_20_builder/TM_20_BUILDER.md",                  "TM",   2, "SL 2")
+add("SYL20",        "SYLLABUS\nSL 2",       "syllabi/SYLLABUS_TM20.md",                            "SYL",  2, "SL 2")
+add("EX20",         "EX-20\nNo-Code Builder","exercises/EX_20_no_code_builder/EXERCISE.md",         "EX",   2, "SL 2")
+add("EXAM20PRE",    "EXAM SL 2\nPRE",       "exercises/exams/EXAM_TM20_PRE.md",                    "EXAM", 2, "SL 2")
+add("EXAM20POST",   "EXAM SL 2\nPOST",      "exercises/exams/EXAM_TM20_POST.md",                   "EXAM", 2, "SL 2")
 
-# ---- TM-30 CLUSTER (column 3) ----
-add("TM30",         "TM_30\nADV BUILDER",   "tm/TM_30_advanced_builder/TM_30_ADVANCED_BUILDER.md","TM",   3, "TM-30")
-add("SYL30",        "SYLLABUS\nTM30",       "syllabi/SYLLABUS_TM30.md",                            "SYL",  3, "TM-30")
-add("EX30",         "EX-30\nAdv Builder",   "exercises/EX_30_advanced_builder/EXERCISE.md",         "EX",   3, "TM-30")
-add("EXAM30PRE",    "EXAM TM30\nPRE",       "exercises/exams/EXAM_TM30_PRE.md",                    "EXAM", 3, "TM-30")
-add("EXAM30POST",   "EXAM TM30\nPOST",      "exercises/exams/EXAM_TM30_POST.md",                   "EXAM", 3, "TM-30")
+# ---- SL 3 CLUSTER (column 3) ----
+add("TM30",         "SL 3\nADV BUILDER",    "tm/TM_30_advanced_builder/TM_30_ADVANCED_BUILDER.md","TM",   3, "SL 3")
+add("SYL30",        "SYLLABUS\nSL 3",       "syllabi/SYLLABUS_TM30.md",                            "SYL",  3, "SL 3")
+add("EX30",         "EX-30\nAdv Builder",   "exercises/EX_30_advanced_builder/EXERCISE.md",         "EX",   3, "SL 3")
+add("EXAM30PRE",    "EXAM SL 3\nPRE",       "exercises/exams/EXAM_TM30_PRE.md",                    "EXAM", 3, "SL 3")
+add("EXAM30POST",   "EXAM SL 3\nPOST",      "exercises/exams/EXAM_TM30_POST.md",                   "EXAM", 3, "SL 3")
 
-# ---- TM-40 WFF TRACKS (column 4) ----
+# ---- SL 4 WFF TRACKS (column 4) ----
 WFF_TRACKS = [
     ("A", "intelligence",     "Intelligence"),
     ("B", "fires",            "Fires"),
@@ -71,13 +71,13 @@ WFF_TRACKS = [
     ("F", "mission_command",  "Mission Cmd"),
 ]
 for letter, dirname, label in WFF_TRACKS:
-    t = f"TM-40{letter}"
-    add(f"TM40{letter}",       f"TM_40{letter}\n{label}",          f"tm/TM_40{letter}_{dirname}/TM_40{letter}_{dirname.upper()}.md",                               "TM",  4, t)
-    add(f"CG40{letter}",       f"CONCEPTS GUIDE\nTM40{letter}",    f"tm/TM_40{letter}_{dirname}/CONCEPTS_GUIDE_TM40{letter}_{dirname.upper()}.md",                 "CG",  4, t)
-    add(f"SYL40{letter}",      f"SYLLABUS\nTM40{letter}",          f"syllabi/SYLLABUS_TM40{letter}.md",                                                            "SYL", 4, t)
-    add(f"EX40{letter}",       f"EX-40{letter}\n{label}",          f"exercises/EX_40{letter}_{dirname}/EXERCISE.md",                                               "EX",  4, t)
-    add(f"EXAM40{letter}PRE",  f"EXAM TM40{letter}\nPRE",          f"exercises/exams/EXAM_TM40{letter}_PRE.md",                                                    "EXAM",4, t)
-    add(f"EXAM40{letter}POST", f"EXAM TM40{letter}\nPOST",         f"exercises/exams/EXAM_TM40{letter}_POST.md",                                                   "EXAM",4, t)
+    t = f"SL 4{letter}"
+    add(f"TM40{letter}",       f"SL 4{letter}\n{label}",           f"tm/TM_40{letter}_{dirname}/TM_40{letter}_{dirname.upper()}.md",                               "TM",  4, t)
+    add(f"CG40{letter}",       f"CONCEPTS GUIDE\nSL 4{letter}",    f"tm/TM_40{letter}_{dirname}/CONCEPTS_GUIDE_TM40{letter}_{dirname.upper()}.md",                 "CG",  4, t)
+    add(f"SYL40{letter}",      f"SYLLABUS\nSL 4{letter}",          f"syllabi/SYLLABUS_TM40{letter}.md",                                                            "SYL", 4, t)
+    add(f"EX40{letter}",       f"EX-4{letter}\n{label}",           f"exercises/EX_40{letter}_{dirname}/EXERCISE.md",                                               "EX",  4, t)
+    add(f"EXAM40{letter}PRE",  f"EXAM SL 4{letter}\nPRE",          f"exercises/exams/EXAM_TM40{letter}_PRE.md",                                                    "EXAM",4, t)
+    add(f"EXAM40{letter}POST", f"EXAM SL 4{letter}\nPOST",         f"exercises/exams/EXAM_TM40{letter}_POST.md",                                                   "EXAM",4, t)
 
 # Fix TM filenames for WFF (actual file uses uppercase dirname but some are mixed)
 # Override the TM and CG paths for WFF tracks to match actual filenames on disk
@@ -96,7 +96,7 @@ for node in NODES:
         elif node["id"] == f"CG40{letter}":
             node["path"] = f"tm/TM_40{letter}_{dirname}/CONCEPTS_GUIDE_TM40{letter}_{dirname.upper()}.md"
 
-# ---- TM-40 SPECIALIST TRACKS (column 4, lower half) ----
+# ---- SL 4 SPECIALIST TRACKS (column 4, lower half) ----
 SPEC_TRACKS = [
     ("G", "orsa",             "ORSA"),
     ("H", "ai_engineer",      "AI Engineer"),
@@ -106,15 +106,15 @@ SPEC_TRACKS = [
     ("L", "software_engineer","Software Engr"),
 ]
 for letter, dirname, label in SPEC_TRACKS:
-    t = f"TM-40{letter}"
-    add(f"TM40{letter}",       f"TM_40{letter}\n{label}",          f"tm/TM_40{letter}_{dirname}/TM_40{letter}_{dirname.upper()}.md",                               "TM",  4, t)
-    add(f"CG40{letter}",       f"CONCEPTS GUIDE\nTM40{letter}",    f"tm/TM_40{letter}_{dirname}/CONCEPTS_GUIDE_TM40{letter}_{dirname.upper()}.md",                 "CG",  4, t)
-    add(f"SYL40{letter}",      f"SYLLABUS\nTM40{letter}",          f"syllabi/SYLLABUS_TM40{letter}.md",                                                            "SYL", 4, t)
-    add(f"EX40{letter}",       f"EX-40{letter}\n{label}",          f"exercises/EX_40{letter}_{dirname}/EXERCISE.md",                                               "EX",  4, t)
-    add(f"EXAM40{letter}PRE",  f"EXAM TM40{letter}\nPRE",          f"exercises/exams/EXAM_TM40{letter}_PRE.md",                                                    "EXAM",4, t)
-    add(f"EXAM40{letter}POST", f"EXAM TM40{letter}\nPOST",         f"exercises/exams/EXAM_TM40{letter}_POST.md",                                                   "EXAM",4, t)
+    t = f"SL 4{letter}"
+    add(f"TM40{letter}",       f"SL 4{letter}\n{label}",           f"tm/TM_40{letter}_{dirname}/TM_40{letter}_{dirname.upper()}.md",                               "TM",  4, t)
+    add(f"CG40{letter}",       f"CONCEPTS GUIDE\nSL 4{letter}",    f"tm/TM_40{letter}_{dirname}/CONCEPTS_GUIDE_TM40{letter}_{dirname.upper()}.md",                 "CG",  4, t)
+    add(f"SYL40{letter}",      f"SYLLABUS\nSL 4{letter}",          f"syllabi/SYLLABUS_TM40{letter}.md",                                                            "SYL", 4, t)
+    add(f"EX40{letter}",       f"EX-4{letter}\n{label}",           f"exercises/EX_40{letter}_{dirname}/EXERCISE.md",                                               "EX",  4, t)
+    add(f"EXAM40{letter}PRE",  f"EXAM SL 4{letter}\nPRE",          f"exercises/exams/EXAM_TM40{letter}_PRE.md",                                                    "EXAM",4, t)
+    add(f"EXAM40{letter}POST", f"EXAM SL 4{letter}\nPOST",         f"exercises/exams/EXAM_TM40{letter}_POST.md",                                                   "EXAM",4, t)
 
-# ---- TM-50 ADVANCED TRACKS (column 5) ----
+# ---- SL 5 ADVANCED TRACKS (column 5) ----
 ADV_TRACKS = [
     ("G", "orsa_advanced",             "Adv ORSA"),
     ("H", "ai_engineer_advanced",      "Adv AI Engr"),
@@ -124,14 +124,14 @@ ADV_TRACKS = [
     ("L", "software_engineer_advanced","Adv SWE"),
 ]
 for letter, dirname, label in ADV_TRACKS:
-    t = f"TM-50{letter}"
+    t = f"SL 5{letter}"
     # TM filename
     base = dirname.upper()
-    add(f"TM50{letter}",       f"TM_50{letter}\n{label}",        f"tm/TM_50{letter}_{dirname}/TM_50{letter}_{base}.md",                              "TM",  5, t)
-    add(f"CG50{letter}",       f"CONCEPTS GUIDE\nTM50{letter}",  f"tm/TM_50{letter}_{dirname}/CONCEPTS_GUIDE_TM50{letter}_{base}.md",                "CG",  5, t)
-    add(f"SYL50{letter}",      f"SYLLABUS\nTM50{letter}",        f"syllabi/SYLLABUS_TM50{letter}.md",                                                "SYL", 5, t)
-    add(f"EXAM50{letter}PRE",  f"EXAM TM50{letter}\nPRE",        f"exercises/exams/EXAM_TM50{letter}_PRE.md",                                        "EXAM",5, t)
-    add(f"EXAM50{letter}POST", f"EXAM TM50{letter}\nPOST",       f"exercises/exams/EXAM_TM50{letter}_POST.md",                                       "EXAM",5, t)
+    add(f"TM50{letter}",       f"SL 5{letter}\n{label}",         f"tm/TM_50{letter}_{dirname}/TM_50{letter}_{base}.md",                              "TM",  5, t)
+    add(f"CG50{letter}",       f"CONCEPTS GUIDE\nSL 5{letter}",  f"tm/TM_50{letter}_{dirname}/CONCEPTS_GUIDE_TM50{letter}_{base}.md",                "CG",  5, t)
+    add(f"SYL50{letter}",      f"SYLLABUS\nSL 5{letter}",        f"syllabi/SYLLABUS_TM50{letter}.md",                                                "SYL", 5, t)
+    add(f"EXAM50{letter}PRE",  f"EXAM SL 5{letter}\nPRE",        f"exercises/exams/EXAM_TM50{letter}_PRE.md",                                        "EXAM",5, t)
+    add(f"EXAM50{letter}POST", f"EXAM SL 5{letter}\nPOST",       f"exercises/exams/EXAM_TM50{letter}_POST.md",                                       "EXAM",5, t)
 
 # ---- TRAINING MANAGEMENT (column 6) ----
 TMGMT_NODES = [
@@ -187,24 +187,24 @@ def edge(src, tgt, etype="prereq"):
     EDGES.append({"source": src, "target": tgt, "type": etype})
 
 
-# ---- TM-10/20/30 prereq chain ----
+# ---- SL 1/2/3 prereq chain ----
 edge("TM20", "TM10")
 edge("TM30", "TM10")
 edge("TM30", "TM20")
 
-# ---- TM-10/20/30 cluster internal ----
+# ---- SL 1/2/3 cluster internal ----
 for suffix, tm in [("10", "TM10"), ("20", "TM20"), ("30", "TM30")]:
     edge(f"SYL{suffix}",       tm)
     edge(f"EX{suffix}",        tm)
     edge(f"EXAM{suffix}PRE",   tm)
     edge(f"EXAM{suffix}POST",  tm)
 
-# ---- Syllabus prereqs for TM20/30 ----
+# ---- Syllabus prereqs for SL 2/3 ----
 edge("SYL20", "TM10")
 edge("SYL30", "TM10")
 edge("SYL30", "TM20")
 
-# ---- TM-40 WFF tracks ----
+# ---- SL 4 WFF tracks ----
 for letter, _, _ in WFF_TRACKS:
     # TM prereqs
     edge(f"TM40{letter}", "TM10")
@@ -219,7 +219,7 @@ for letter, _, _ in WFF_TRACKS:
     edge(f"EXAM40{letter}PRE",  f"TM40{letter}")
     edge(f"EXAM40{letter}POST", f"TM40{letter}")
 
-# ---- TM-40 Specialist tracks ----
+# ---- SL 4 Specialist tracks ----
 for letter, _, _ in SPEC_TRACKS:
     # TM prereqs
     edge(f"TM40{letter}", "TM10")
@@ -236,7 +236,7 @@ for letter, _, _ in SPEC_TRACKS:
     edge(f"EXAM40{letter}PRE",  f"TM40{letter}")
     edge(f"EXAM40{letter}POST", f"TM40{letter}")
 
-# ---- TM-50 Advanced tracks ----
+# ---- SL 5 Advanced tracks ----
 for letter, _, _ in ADV_TRACKS:
     edge(f"TM50{letter}", f"TM40{letter}")
     edge(f"TM50{letter}", f"CG50{letter}")
@@ -251,7 +251,7 @@ for nid in base_mgmt:
     edge(nid, "TM20")
     edge(nid, "TM30")
 
-# FACULTY_DEVELOPMENT_PLAN → all TM_40x and syllabi
+# FACULTY_DEVELOPMENT_PLAN → all SL 4x and syllabi
 for letter, _, _ in WFF_TRACKS + SPEC_TRACKS:
     edge("MGMT_FACULTY", f"TM40{letter}")
     edge("MGMT_FACULTY", f"SYL40{letter}")
@@ -268,7 +268,7 @@ edge("LP_TM30", "TM30")
 for letter, _, _ in SPEC_TRACKS:
     edge("LP_TM40SPEC", f"TM40{letter}")
 
-# ---- Doctrine referenced by TM10/20/30 ----
+# ---- Doctrine referenced by SL 1/2/3 ----
 edge("TM10", "DOC_TECHREF", "companion")
 edge("TM20", "DOC_TECHREF", "companion")
 edge("TM30", "DOC_TECHREF", "companion")
@@ -311,7 +311,7 @@ edge("TM50H", "TM50L", "companion")
 edge("TM50L", "TM50H", "companion")
 
 # ---- HTML app refs ----
-# mss_info_app/index.html → all TM_40x main + CG + syllabi + exams
+# mss_info_app/index.html → all SL 4x main + CG + syllabi + exams
 for letter, _, _ in WFF_TRACKS + SPEC_TRACKS:
     edge("HTML_MSS", f"TM40{letter}",      "companion")
     edge("HTML_MSS", f"CG40{letter}",      "companion")
@@ -319,20 +319,20 @@ for letter, _, _ in WFF_TRACKS + SPEC_TRACKS:
     edge("HTML_MSS", f"EXAM40{letter}PRE", "companion")
     edge("HTML_MSS", f"EXAM40{letter}POST","companion")
 
-# task_index.html → TM_40G-M, TM_50G-M
+# task_index.html → SL 4G-M, SL 5G-M
 for letter, _, _ in SPEC_TRACKS:
     edge("HTML_TASKIDX", f"TM40{letter}", "companion")
 for letter, _, _ in ADV_TRACKS:
     edge("HTML_TASKIDX", f"TM50{letter}", "companion")
 
 # ---- CDA companion edges (prereq layer → TM core) ----
-# Intro To Data decks are conceptual prereqs for TM-10 and TM-20
+# Intro To Data decks are conceptual prereqs for SL 1 and SL 2
 edge("CDA_INTRO", "TM10", "companion")
 edge("CDA_INTRO", "TM20", "companion")
-# Data 101 decks bridge TM-20 and TM-30
+# Data 101 decks bridge SL 2 and SL 3
 edge("CDA_101", "TM20", "companion")
 edge("CDA_101", "TM30", "companion")
-# Data 201 decks are prereqs for TM-30 and specialist TM-40 tracks
+# Data 201 decks are prereqs for SL 3 and specialist SL 4 tracks
 edge("CDA_201", "TM30", "companion")
 
 
@@ -347,7 +347,7 @@ NODE_X_GAP = 14  # horizontal gap between nodes within a track row
 
 def layout_nodes(nodes):
     """
-    Vertical layout: tiers stack top-to-bottom (Doctrine → TM-50).
+    Vertical layout: tiers stack top-to-bottom (Doctrine → SL 5).
     Within each tier, each TRACK is one horizontal row of nodes.
     Tracks within a tier stack vertically (one row per track).
     Training Mgmt / HTML / README go in a sidebar on the right.
@@ -427,11 +427,11 @@ NODES = layout_nodes(NODES)
 TIER_HEADER_LABELS = {
     -1: "CDA SLIDE LIBRARY — Conceptual Prerequisites",
      0: "DOCTRINE & STANDARDS",
-     1: "TM-10 — Foundry Basics  |  All Personnel",
-     2: "TM-20 — No-Code Builder  |  Operator / Analyst",
-     3: "TM-30 — Advanced Builder  |  Data Engineer",
-     4: "TM-40 — WFF Analyst Tracks (A–F)   ·   Specialist Roles (G–M)",
-     5: "TM-50 — Advanced Specialization  |  Expert Level",
+     1: "SL 1 — Foundry Basics  |  All Personnel",
+     2: "SL 2 — No-Code Builder  |  Operator / Analyst",
+     3: "SL 3 — Advanced Builder  |  Data Engineer",
+     4: "SL 4 — WFF Analyst Tracks (A–F)   ·   Specialist Roles (G–M)",
+     5: "SL 5 — Advanced Specialization  |  Expert Level",
 }
 tier_headers_json = json.dumps({str(k): v for k, v in TIER_HEADER_LABELS.items()})
 
@@ -439,10 +439,10 @@ tier_headers_json = json.dumps({str(k): v for k, v in TIER_HEADER_LABELS.items()
 # 3b. AUDIENCE TAGGING
 # ---------------------------------------------------------------------------
 # Tag each node with the audience(s) it is relevant to:
-#   user      = TM-10 level Maven user / end operator
+#   user      = SL 1 level Maven user / end operator
 #   trainer   = instructor / training management staff
-#   dev       = builder, developer, TM-20+ level
-#   specialist = TM-40G-M / TM-50G-M specialist tracks only
+#   dev       = builder, developer, SL 2+ level
+#   specialist = SL 4G-M / SL 5G-M specialist tracks only
 SPEC_LETTERS = {"G","H","I","J","K","L"}
 WFF_LETTERS  = {"A","B","C","D","E","F"}
 
@@ -454,13 +454,13 @@ for node in NODES:
 
     if ntype == "DOCTRINE":
         aud = ["user", "trainer", "dev"]
-    elif col == 1:          # TM-10 cluster
+    elif col == 1:          # SL 1 cluster
         aud = ["user", "trainer"]
-    elif col == 2:          # TM-20 cluster
+    elif col == 2:          # SL 2 cluster
         aud = ["dev", "trainer"]
-    elif col == 3:          # TM-30 cluster
+    elif col == 3:          # SL 3 cluster
         aud = ["dev", "trainer"]
-    elif col == 4:          # TM-40 — split WFF vs Specialist
+    elif col == 4:          # SL 4 — split WFF vs Specialist
         is_spec = any(f"40{l}" in nid for l in SPEC_LETTERS)
         is_wff  = any(f"40{l}" in nid for l in WFF_LETTERS)
         if is_spec:
@@ -469,7 +469,7 @@ for node in NODES:
             aud = ["user", "dev"]
         else:
             aud = ["dev"]
-    elif col == 5:          # TM-50 Advanced
+    elif col == 5:          # SL 5 Advanced
         aud = ["dev", "specialist"]
     elif col == 6:          # Training Mgmt / HTML / README
         if ntype == "TMGMT":

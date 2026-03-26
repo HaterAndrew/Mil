@@ -1,6 +1,6 @@
 <!-- MAVEN TRAINING CORPUS — CDA REFERENCE MATERIAL
      Source: odt_workspace/docs/architecture/cda/final-exam.md
-     Supports: TM-30, TM-40G (ORSA), TM-40H (AI Engineer), TM-40M (ML Engineer), TM-40J (Program Manager), TM-40K (Knowledge Manager), TM-40L (Software Engineer)
+     Supports: SL 3, SL 4G (ORSA), SL 4H (AI Engineer), SL 4M (ML Engineer), SL 4J (Program Manager), SL 4K (Knowledge Manager), SL 4L (Software Engineer)
      Type: Exam
 -->
 ---

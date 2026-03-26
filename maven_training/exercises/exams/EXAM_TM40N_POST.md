@@ -1,12 +1,12 @@
-# POST-TEST — TM-40N: UI/UX DESIGNER
+# POST-TEST — SL 4N: UI/UX DESIGNER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40N: UI/UX Designer |
+| **Course** | SL 4N: UI/UX Designer |
 | **Form** | Post-Test |
-| **Level** | TM-40N (Specialist) |
-| **Audience** | UI/UX designers completing TM-40N training |
+| **Level** | SL 4N (Specialist) |
+| **Audience** | UI/UX designers completing SL 4N training |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (39/56) |
 
@@ -14,7 +14,7 @@
 
 ## INSTRUCTIONS
 
-This assessment evaluates knowledge and skills gained during TM-40N training. Answer all questions. A score of 70% or higher is required for course credit.
+This assessment evaluates knowledge and skills gained during SL 4N training. Answer all questions. A score of 70% or higher is required for course credit.
 
 ---
 
@@ -50,7 +50,7 @@ B. Use icons alone to save screen space
 C. Use redundant encoding: color + icon + text, because color alone fails for colorblind users and in poor lighting
 D. Let each application team choose their own status encoding
 
-**5. A design handoff to a TM-40L Software Engineer should include:**
+**5. A design handoff to a SL 4L Software Engineer should include:**
 
 A. Only the final mockup image
 B. The mockup plus all states (default, loading, empty, error, success), interaction specification, data bindings, accessibility checklist, and edge case documentation
@@ -100,7 +100,7 @@ D. 100x100px
 
 **13. You have designed a Workshop dashboard for the G4 Sustainment section. During usability testing, 3 out of 5 users failed to notice a critical low-stock alert because it was displayed as a small red number in the bottom-right corner. Describe: (a) why this is a severity-rated usability finding, (b) what design principle it violates, (c) what you would change, and (d) how you would verify the fix.**
 
-**14. A TM-40L Software Engineer pushes back on your design, saying "Workshop can't do that — the widget you specified doesn't exist." Describe how you would handle this situation using the balanced team model. What are your options? Who else should be involved in the decision?**
+**14. A SL 4L Software Engineer pushes back on your design, saying "Workshop can't do that — the widget you specified doesn't exist." Describe how you would handle this situation using the balanced team model. What are your options? Who else should be involved in the decision?**
 
 ---
 
@@ -145,7 +145,7 @@ SA-12. Full credit: a happy-path-only handoff is missing: loading states (what d
 
 S-13. Full credit (10 pts): (a) severity: this is a high-severity finding — users failed to notice a critical alert, meaning the dashboard fails its primary purpose of surfacing urgent information; (b) violated principle: violates visual hierarchy / "glance-level" visibility — critical alerts must be at the top of the visual hierarchy, not buried in a corner; also violates redundant encoding — a small red number alone is insufficient (needs icon, animation, or prominent placement); (c) fix: move the alert to a prominent position (top of screen or modal overlay), increase size, add an icon and text label, use animation or pulse to draw attention; (d) verify: re-run usability test with 5 new users on the same task — success criterion: 5/5 users notice the alert within 5 seconds. Must address all four parts (a–d). Partial credit (5 pts) for addressing only two parts. Deduct 3 pts if the student does not include a verification method.
 
-S-14. Full credit (10 pts): in the balanced team model, the designer, engineer, and product manager are co-equals; when a technical constraint prevents the ideal design, the correct response is: (1) understand the constraint — ask the SWE to explain what Workshop can and cannot do; (2) explore alternatives together — can the design be achieved with a different widget combination? Is there a Workshop-supported pattern that achieves the same user goal?; (3) if no Workshop solution exists, involve the Product Manager to decide: accept a design compromise, request a new widget from the platform team (TM-40O), or de-scope the feature; (4) document the decision and rationale. Must demonstrate collaborative problem-solving, not either "override the SWE" or "just accept the limitation." Partial credit (5 pts) for collaborative approach without involving PM. Deduct 3 pts if student's answer implies designer authority over engineer.
+S-14. Full credit (10 pts): in the balanced team model, the designer, engineer, and product manager are co-equals; when a technical constraint prevents the ideal design, the correct response is: (1) understand the constraint — ask the SWE to explain what Workshop can and cannot do; (2) explore alternatives together — can the design be achieved with a different widget combination? Is there a Workshop-supported pattern that achieves the same user goal?; (3) if no Workshop solution exists, involve the Product Manager to decide: accept a design compromise, request a new widget from the platform team (SL 4O), or de-scope the feature; (4) document the decision and rationale. Must demonstrate collaborative problem-solving, not either "override the SWE" or "just accept the limitation." Partial credit (5 pts) for collaborative approach without involving PM. Deduct 3 pts if student's answer implies designer authority over engineer.
 
 ---
 

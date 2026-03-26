@@ -1,6 +1,6 @@
 # ENVIRONMENT SETUP — EX_40H AI Engineer
 
-**Track:** EX_40H — AI Engineer (TM-40H) | **Prerequisite:** TM-30 REQUIRED | **Continuation:** TM-50H — Advanced AI Engineer
+**Track:** EX_40H — AI Engineer (SL 4H) | **Prerequisite:** SL 3 REQUIRED | **Continuation:** SL 5H — Advanced AI Engineer
 **Companion exams:** EXAM_TM40H_PRE (administer before exercise), EXAM_TM40H_POST (administer after exercise)
 
 ## Environment Type

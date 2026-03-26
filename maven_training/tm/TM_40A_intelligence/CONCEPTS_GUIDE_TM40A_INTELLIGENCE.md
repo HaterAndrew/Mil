@@ -1,8 +1,8 @@
-# CONCEPTS GUIDE — TM-40A COMPANION — INTELLIGENCE WARFIGHTING FUNCTION · MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 4A COMPANION — INTELLIGENCE WARFIGHTING FUNCTION · MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** Intelligence has always been a data discipline. What MSS changes is the speed of integration and the visibility of gaps — not the analytical process itself. Intelligence practitioners who understand this distinction will use the platform effectively. Those who do not will either underuse it (treating it as just another database) or overuse it (letting the platform substitute for analytical judgment).
-> **Prereqs:** TM-10 (Maven User), TM-20 (Builder), and TM-30 (Advanced Builder). This guide assumes platform familiarity and focuses on conceptual integration — how intelligence doctrine, tradecraft, and the MSS data environment relate to each other. TM-30 is required before beginning TM-40A; read this Concepts Guide after TM-30 and before beginning the TM-40A task manual.
-> **Purpose:** This guide is a conceptual companion to TM-40A. It develops the mental models that intelligence practitioners need before operating MSS in an intelligence role. Read this guide before beginning TM-40A. It contains no step-by-step procedures — those are in the TM. This guide develops understanding. The TM develops skill.
+> **Prereqs:** SL 1 (Maven User), SL 2 (Builder), and SL 3 (Advanced Builder). This guide assumes platform familiarity and focuses on conceptual integration — how intelligence doctrine, tradecraft, and the MSS data environment relate to each other. SL 3 is required before beginning SL 4A; read this Concepts Guide after SL 3 and before beginning the SL 4A task manual.
+> **Purpose:** This guide is a conceptual companion to SL 4A. It develops the mental models that intelligence practitioners need before operating MSS in an intelligence role. Read this guide before beginning SL 4A. It contains no step-by-step procedures — those are in the TM. This guide develops understanding. The TM develops skill.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -357,7 +357,7 @@ The intelligence section's BDA discipline determines the quality of the targetin
 
 ### 8-3. Pre-Operation Integration Validation
 
-The Appendix D checklist in TM-40A exists because targeting workspace access failures are preventable. The most common access failure pattern: the unit has been using MSS for weeks, a time-sensitive targeting event occurs, and the fires cell does not have access to the target object that the intelligence section has been maintaining. The target exists in MSS; the fires cell cannot see it.
+The Appendix D checklist in SL 4A exists because targeting workspace access failures are preventable. The most common access failure pattern: the unit has been using MSS for weeks, a time-sensitive targeting event occurs, and the fires cell does not have access to the target object that the intelligence section has been maintaining. The target exists in MSS; the fires cell cannot see it.
 
 The antidote is a formal integration validation — every access point in the targeting workspace tested with actual personnel before operations begin. Not assumed. Not assigned. Tested. The targeting officer who validates the workspace access checklist before the first targeting event will not face an access gap during a time-sensitive targeting cycle.
 
@@ -489,7 +489,7 @@ This guide has established the conceptual framework for Intelligence WFF practit
 - All-source fusion is a human analytical function. Co-located data is a necessary but not sufficient condition for finished intelligence.
 - Classification and OPSEC discipline on MSS is a force protection function, not just a compliance function.
 
-When you encounter a difficult situation using MSS in an intelligence role — a product that does not exist, a data feed that is stale, a collection gap that cannot be filled — apply the doctrinal framework first. What phase of the intelligence process is affected? What product standard applies? What is the fallback procedure? The answers are in FM 2-0, ATP 2-01.3, ATP 2-01, and TM-40A. MSS is the tool. The doctrine and the tradecraft are the profession.
+When you encounter a difficult situation using MSS in an intelligence role — a product that does not exist, a data feed that is stale, a collection gap that cannot be filled — apply the doctrinal framework first. What phase of the intelligence process is affected? What product standard applies? What is the fallback procedure? The answers are in FM 2-0, ATP 2-01.3, ATP 2-01, and SL 4A. MSS is the tool. The doctrine and the tradecraft are the profession.
 
 ---
 
@@ -497,35 +497,35 @@ When you encounter a difficult situation using MSS in an intelligence role — a
 
 ### WFF Peer Tracks
 
-All six WFF tracks are at the same tier. All six WFF tracks require TM-10, TM-20, and TM-30 as prerequisites. Intelligence practitioners are encouraged to develop working awareness of peer WFF tracks, particularly fires and mission command, where data integration with intelligence is most intensive.
+All six WFF tracks are at the same tier. All six WFF tracks require SL 1, SL 2, and SL 3 as prerequisites. Intelligence practitioners are encouraged to develop working awareness of peer WFF tracks, particularly fires and mission command, where data integration with intelligence is most intensive.
 
 | Track | Title | Prereq | Relationship to Intelligence WFF |
 |-------|-------|--------|----------------------------------|
-| TM-40A | Intelligence WFF | TM-10 + TM-20 + TM-30 | This track |
-| TM-40B | Fires WFF | TM-10 + TM-20 + TM-30 | Targeting data, AMD coordination, fires-intel integration — see Section 8 of this guide |
-| TM-40C | Movement and Maneuver WFF | TM-10 + TM-20 + TM-30 | NAI/TAI overlays, reconnaissance data feed into M&M operations process |
-| TM-40D | Sustainment WFF | TM-10 + TM-20 + TM-30 | LOC threat data, supply point security — intelligence supports sustainment planning |
-| TM-40E | Protection WFF | TM-10 + TM-20 + TM-30 | AT intelligence integration; threat data for AT assessments |
-| TM-40F | Mission Command WFF | TM-10 + TM-20 + TM-30 | PIR-derived CCIR components feed commander's CCIR dashboard — primary coordination partner |
+| SL 4A | Intelligence WFF | SL 1 + SL 2 + SL 3 | This track |
+| SL 4B | Fires WFF | SL 1 + SL 2 + SL 3 | Targeting data, AMD coordination, fires-intel integration — see Section 8 of this guide |
+| SL 4C | Movement and Maneuver WFF | SL 1 + SL 2 + SL 3 | NAI/TAI overlays, reconnaissance data feed into M&M operations process |
+| SL 4D | Sustainment WFF | SL 1 + SL 2 + SL 3 | LOC threat data, supply point security — intelligence supports sustainment planning |
+| SL 4E | Protection WFF | SL 1 + SL 2 + SL 3 | AT intelligence integration; threat data for AT assessments |
+| SL 4F | Mission Command WFF | SL 1 + SL 2 + SL 3 | PIR-derived CCIR components feed commander's CCIR dashboard — primary coordination partner |
 
-### Specialist Tracks (Prerequisite: TM-30)
+### Specialist Tracks (Prerequisite: SL 3)
 
-For personnel pursuing technical depth beyond WFF employment, the specialist tracks (TM-40G–O, prereq TM-30) are available. GEOINT and SIGINT data management practitioners may find TM-40H (AI Engineer) and TM-40M (ML Engineer) relevant for advanced analytical capability development.
+For personnel pursuing technical depth beyond WFF employment, the specialist tracks (SL 4G–O, prereq SL 3) are available. GEOINT and SIGINT data management practitioners may find SL 4H (AI Engineer) and SL 4M (ML Engineer) relevant for advanced analytical capability development.
 
 | Track | Title |
 |-------|-------|
-| TM-40G | ORSA (→ TM-50G) |
-| TM-40H | AI Engineer (→ TM-50H) |
-| TM-40M | ML Engineer (→ TM-50M) |
-| TM-40J | Program Manager (→ TM-50J) |
-| TM-40K | Knowledge Manager (→ TM-50K) |
-| TM-40L | Software Engineer (→ TM-50L) |
-| TM-40N | UI/UX Designer (→ TM-50N) |
-| TM-40O | Platform Engineer (→ TM-50O) |
+| SL 4G | ORSA (→ SL 5G) |
+| SL 4H | AI Engineer (→ SL 5H) |
+| SL 4M | ML Engineer (→ SL 5M) |
+| SL 4J | Program Manager (→ SL 5J) |
+| SL 4K | Knowledge Manager (→ SL 5K) |
+| SL 4L | Software Engineer (→ SL 5L) |
+| SL 4N | UI/UX Designer (→ SL 5N) |
+| SL 4O | Platform Engineer (→ SL 5O) |
 
 ---
 
-> **NOTE — New Doctrine Content in TM-40A:** TM-40A now includes an FM 2-0 data literacy call-out validating this training, an intelligence process→data pipeline mapping table (Table 1-1a), and seven characteristics of effective intelligence as data quality standards (Table G-0a, FM 2-0). These sections ground the concepts in this guide in their authoritative doctrinal sources.
+> **NOTE — New Doctrine Content in SL 4A:** SL 4A now includes an FM 2-0 data literacy call-out validating this training, an intelligence process→data pipeline mapping table (Table 1-1a), and seven characteristics of effective intelligence as data quality standards (Table G-0a, FM 2-0). These sections ground the concepts in this guide in their authoritative doctrinal sources.
 
 *This publication supersedes all previous versions. The proponent agency for CONCEPTS_GUIDE_TM40A is the USAREUR-AF C2 Data and Analytics Office (C2DAO), Wiesbaden, Germany.*
 

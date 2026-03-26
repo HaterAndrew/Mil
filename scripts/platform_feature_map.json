@@ -1,182 +1,182 @@
 {
   "pipeline builder": [
-    "TM-20",
-    "TM-30"
+    "SL 2",
+    "SL 3"
   ],
   "pipeline": [
-    "TM-20",
-    "TM-30",
-    "TM-40L"
+    "SL 2",
+    "SL 3",
+    "SL 4L"
   ],
   "ontology": [
-    "TM-20",
-    "TM-30",
-    "TM-40K"
+    "SL 2",
+    "SL 3",
+    "SL 4K"
   ],
   "workshop": [
-    "TM-10",
-    "TM-20",
-    "TM-30"
+    "SL 1",
+    "SL 2",
+    "SL 3"
   ],
   "aip logic": [
-    "TM-30"
+    "SL 3"
   ],
   "aip": [
-    "TM-30",
-    "TM-40H"
+    "SL 3",
+    "SL 4H"
   ],
   "agent studio": [
-    "TM-30",
-    "TM-40H"
+    "SL 3",
+    "SL 4H"
   ],
   "quiver": [
-    "TM-20",
-    "TM-30"
+    "SL 2",
+    "SL 3"
   ],
   "contour": [
-    "TM-20",
-    "TM-30"
+    "SL 2",
+    "SL 3"
   ],
   "code repositories": [
-    "TM-40L",
-    "TM-40O"
+    "SL 4L",
+    "SL 4O"
   ],
   "code workbook": [
-    "TM-40G",
-    "TM-40L",
-    "TM-40M"
+    "SL 4G",
+    "SL 4L",
+    "SL 4M"
   ],
   "foundry ml": [
-    "TM-40M",
-    "TM-50M"
+    "SL 4M",
+    "SL 5M"
   ],
   "model studio": [
-    "TM-40M",
-    "TM-50M"
+    "SL 4M",
+    "SL 5M"
   ],
   "actions": [
-    "TM-20",
-    "TM-30"
+    "SL 2",
+    "SL 3"
   ],
   "object type": [
-    "TM-20",
-    "TM-30"
+    "SL 2",
+    "SL 3"
   ],
   "object views": [
-    "TM-20",
-    "TM-30"
+    "SL 2",
+    "SL 3"
   ],
   "writeback": [
-    "TM-20",
-    "TM-30"
+    "SL 2",
+    "SL 3"
   ],
   "automations": [
-    "TM-30"
+    "SL 3"
   ],
   "autopilot": [
-    "TM-30"
+    "SL 3"
   ],
   "machinery": [
-    "TM-30"
+    "SL 3"
   ],
   "data connection": [
-    "TM-40O"
+    "SL 4O"
   ],
   "data integration": [
-    "TM-40O"
+    "SL 4O"
   ],
   "magritte": [
-    "TM-40O"
+    "SL 4O"
   ],
   "slate": [
-    "TM-40L",
-    "TM-40N"
+    "SL 4L",
+    "SL 4N"
   ],
   "osdk": [
-    "TM-40L",
-    "TM-50L"
+    "SL 4L",
+    "SL 5L"
   ],
   "developer console": [
-    "TM-40L",
-    "TM-40O"
+    "SL 4L",
+    "SL 4O"
   ],
   "third-party": [
-    "TM-40O"
+    "SL 4O"
   ],
   "security": [
-    "TM-10",
-    "TM-30"
+    "SL 1",
+    "SL 3"
   ],
   "markings": [
-    "TM-10",
-    "TM-30"
+    "SL 1",
+    "SL 3"
   ],
   "permissions": [
-    "TM-10",
-    "TM-30"
+    "SL 1",
+    "SL 3"
   ],
   "sensitive data": [
-    "TM-10",
-    "TM-30"
+    "SL 1",
+    "SL 3"
   ],
   "gaia": [
-    "TM-10"
+    "SL 1"
   ],
   "compass": [
-    "TM-10"
+    "SL 1"
   ],
   "workflow lineage": [
-    "TM-30",
-    "TM-40J"
+    "SL 3",
+    "SL 4J"
   ],
   "scheduling": [
-    "TM-40J"
+    "SL 4J"
   ],
   "ci/cd": [
-    "TM-40O",
-    "TM-50O"
+    "SL 4O",
+    "SL 5O"
   ],
   "compute module": [
-    "TM-40O",
-    "TM-50O"
+    "SL 4O",
+    "SL 5O"
   ],
   "webhook": [
-    "TM-40O"
+    "SL 4O"
   ],
   "data health": [
-    "TM-30"
+    "SL 3"
   ],
   "data quality": [
-    "TM-30",
-    "TM-40G"
+    "SL 3",
+    "SL 4G"
   ],
   "typeclass": [
-    "TM-30"
+    "SL 3"
   ],
   "interface": [
-    "TM-30"
+    "SL 3"
   ],
   "transforms": [
-    "TM-40L",
-    "TM-40O"
+    "SL 4L",
+    "SL 4O"
   ],
   "functions": [
-    "TM-40L"
+    "SL 4L"
   ],
   "foundry branching": [
-    "TM-20",
-    "TM-30"
+    "SL 2",
+    "SL 3"
   ],
   "marketplace": [
-    "TM-40L",
-    "TM-40O"
+    "SL 4L",
+    "SL 4O"
   ],
   "document intelligence": [
-    "TM-40H",
-    "TM-40K"
+    "SL 4H",
+    "SL 4K"
   ],
   "notepad": [
-    "TM-10",
-    "TM-20"
+    "SL 1",
+    "SL 2"
   ]
 }

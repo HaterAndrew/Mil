@@ -1,36 +1,36 @@
-# LESSON PLAN OUTLINES — TM-50 ADVANCED SPECIALIST TRACKS
+# LESSON PLAN OUTLINES — SL 5 ADVANCED SPECIALIST TRACKS
 ## USAREUR-AF Operational Data Team — C2DAO
-**Covers:** TM-50G (Advanced ORSA) | TM-50H (Advanced AI Engineer) | TM-50M (Advanced ML Engineer) | TM-50J (Advanced PM) | TM-50K (Advanced KM) | TM-50L (Advanced SWE) | TM-50N (Advanced UX Designer) | TM-50O (Advanced Platform Engineer)
+**Covers:** SL 5G (Advanced ORSA) | SL 5H (Advanced AI Engineer) | SL 5M (Advanced ML Engineer) | SL 5J (Advanced PM) | SL 5K (Advanced KM) | SL 5L (Advanced SWE) | SL 5N (Advanced UX Designer) | SL 5O (Advanced Platform Engineer)
 **Version:** 1.0 — March 2026
 
-> Abbreviated LP outlines for TM-50 advanced courses.
-> TM-50 instructors must hold the corresponding TM-40 certification and active domain SME status at the advanced level. These outlines supplement deep domain expertise — they do not replace it.
+> Abbreviated LP outlines for SL 5 advanced courses.
+> SL 5 instructors must hold the corresponding SL 4 certification and active domain SME status at the advanced level. These outlines supplement deep domain expertise — they do not replace it.
 > Expand individual blocks using `LP_TEMPLATE.md` as needed. For full lesson plan format reference, see `TM10/TM10_LESSON_PLANS.md`.
 
 **Duration summary:**
-- TM-50G, H, M, L: 5 days (40 hours)
-- TM-50J, K, N, O: 3 days (24 hours)
+- SL 5G, H, M, L: 5 days (40 hours)
+- SL 5J, K, N, O: 3 days (24 hours)
 
-**Prerequisite note:** TM-50 courses are NOT required for the majority of specialist billets. Before confirming enrollment, verify the trainee is in an active role that requires TM-50-level work. Refer to each syllabus for the prerequisite warning.
-
----
-
-# PART G — TM-50G: ADVANCED ORSA
-
-**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** FA49 O-4+ or equivalent, TM-50G certified or C2DAO Advanced ORSA SME; active analytical practice at theater level
+**Prerequisite note:** SL 5 courses are NOT required for the majority of specialist billets. Before confirming enrollment, verify the trainee is in an active role that requires SL 5-level work. Refer to each syllabus for the prerequisite warning.
 
 ---
 
-### Block 1 — TM-50G Standards and Product Requirements
+# PART G — SL 5G: ADVANCED ORSA
+
+**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** FA49 O-4+ or equivalent, SL 5G certified or C2DAO Advanced ORSA SME; active analytical practice at theater level
+
+---
+
+### Block 1 — SL 5G Standards and Product Requirements
 **Hours:** 1.0 | **Method:** Seminar | **Day:** 1 | **Time:** 0800–0900
 
-**Purpose:** The product standard at TM-50G is not just technical correctness — it is interpretability, peer reviewability, and honest uncertainty characterization for GO/SES audiences. This block establishes that standard before any method is taught.
+**Purpose:** The product standard at SL 5G is not just technical correctness — it is interpretability, peer reviewability, and honest uncertainty characterization for GO/SES audiences. This block establishes that standard before any method is taught.
 
-**TLO:** The trainee will state the four non-negotiable TM-50G product standards: uncertainty quantification on all estimates, documented assumption register, peer review complete and on file, and full model reproducibility.
+**TLO:** The trainee will state the four non-negotiable SL 5G product standards: uncertainty quantification on all estimates, documented assumption register, peer review complete and on file, and full model reproducibility.
 
 **Key Delivery Notes:**
-- The difference between TM-40G products and TM-50G products: TM-40G products answer "what is the readiness?" TM-50G products answer "what is the readiness, how confident are we, under what assumptions, and what would change the answer?"
-- Peer review is not optional at TM-50G. Every product submitted for GO/SES use must have a peer review signature block.
+- The difference between SL 4G products and SL 5G products: SL 4G products answer "what is the readiness?" SL 5G products answer "what is the readiness, how confident are we, under what assumptions, and what would change the answer?"
+- Peer review is not optional at SL 5G. Every product submitted for GO/SES use must have a peer review signature block.
 - Reproducibility: set random seeds. Document package versions. A result that cannot be reproduced is not a result — it is a point estimate with no analytical foundation.
 
 **Assessment:** Standards are evaluated during the Day 5 practical exercise debrief. Evaluator will ask the trainee to point to each of the four non-negotiables in their submitted product.
@@ -223,7 +223,7 @@
 ### Block 14 — GO/SES ORSA Product Standards
 **Hours:** 1.0 | **Method:** Seminar | **Day:** 4 | **Time:** 0800–0900
 
-**Purpose:** TM-50G products are briefed to GO/SES audiences. The product format is not optional — it is the standard that makes the analysis actionable at that level.
+**Purpose:** SL 5G products are briefed to GO/SES audiences. The product format is not optional — it is the standard that makes the analysis actionable at that level.
 
 **Key Delivery Notes:**
 - Required sections: BLUF, methodology (1 paragraph, accessible), results with uncertainty quantification, assumption register, limitations, recommendation, and peer review signature block.
@@ -235,9 +235,9 @@
 ### Block 15 — Draft Analytical Product Workshop
 **Hours:** 2.0 | **Method:** Workshop | **Day:** 4 | **Time:** 0900–1100
 
-**Purpose:** Trainees apply the TM-50G product standard to an operational problem from their own experience. The product from this block is the basis for the Day 4 peer review.
+**Purpose:** Trainees apply the SL 5G product standard to an operational problem from their own experience. The product from this block is the basis for the Day 4 peer review.
 
-**TLO:** The trainee will produce a draft TM-50G-standard analytical product from their prepared operational problem — covering all required sections — for peer review.
+**TLO:** The trainee will produce a draft SL 5G-standard analytical product from their prepared operational problem — covering all required sections — for peer review.
 
 **Key Delivery Notes:**
 - Each trainee works on their own prepared problem (from pre-course checklist). Instructor circulates for individual guidance.
@@ -258,9 +258,9 @@
 ### Block 17 — Structured Peer Review
 **Hours:** 2.0 | **Method:** Peer Review | **Day:** 4 | **Time:** 1300–1500
 
-**Purpose:** Peer review at TM-50G is a professional practice, not a social courtesy. The reviewer's job is to find the methodological weaknesses before the product reaches a commander.
+**Purpose:** Peer review at SL 5G is a professional practice, not a social courtesy. The reviewer's job is to find the methodological weaknesses before the product reaches a commander.
 
-**TLO:** The trainee will review a peer's product using the TM-50G peer review checklist — identifying at least one methodological weakness and one limitation gap — and deliver the review in writing using the prescribed review format.
+**TLO:** The trainee will review a peer's product using the SL 5G peer review checklist — identifying at least one methodological weakness and one limitation gap — and deliver the review in writing using the prescribed review format.
 
 **Key Delivery Notes:**
 - Checklist items: (1) BLUF present and complete, (2) uncertainty quantified with bounds and basis, (3) assumption register complete (every assumption listed), (4) limitations register present and realistic, (5) reproducibility confirmed (code runs without modification), (6) recommendation does not exceed the analytical foundation.
@@ -324,17 +324,17 @@
 
 ---
 
-## TM-50G COURSE COMPLETION
+## SL 5G COURSE COMPLETION
 
-TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. No additional prerequisites beyond domain experience.
-
----
+SL 5G graduates are eligible to take SL 5H, SL 5M, or SL 5J as peer tracks. No additional prerequisites beyond domain experience.
 
 ---
 
-# PART H — TM-50H: ADVANCED AI ENGINEERING
+---
 
-**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** Senior AI engineer with enterprise production AI system experience; TM-50H certified or C2DAO AI Architecture SME
+# PART H — SL 5H: ADVANCED AI ENGINEERING
+
+**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** Senior AI engineer with enterprise production AI system experience; SL 5H certified or C2DAO AI Architecture SME
 **Advanced access required:** AIP Logic (multi-agent features), Python Transforms, embedding model access
 
 ---
@@ -535,7 +535,7 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 ### Block 17 — Architecture Review: Participant Systems
 **Hours:** 2.25 | **Method:** Workshop | **Day:** 4 | **Time:** 1415–1700
 
-**Purpose:** Each trainee presents the AI system they currently maintain (from the pre-course checklist) for structured architecture review against TM-50H standards.
+**Purpose:** Each trainee presents the AI system they currently maintain (from the pre-course checklist) for structured architecture review against SL 5H standards.
 
 **TLO:** The trainee will present their AI system architecture and receive a structured critique identifying governance gaps, retrieval quality risks, and failure recovery weaknesses.
 
@@ -573,9 +573,9 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 
 ---
 
-# PART M — TM-50M: ADVANCED ML ENGINEERING
+# PART M — SL 5M: ADVANCED ML ENGINEERING
 
-**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** Senior ML engineer with production MLOps experience; TM-50M certified or C2DAO ML Platform SME
+**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** Senior ML engineer with production MLOps experience; SL 5M certified or C2DAO ML Platform SME
 **Advanced access required:** Python Transforms, Model Integration (registry), Code Workspace GPU
 
 ---
@@ -805,17 +805,17 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 
 ---
 
-# PART J — TM-50J: ADVANCED PROGRAM MANAGEMENT (TECHNICAL)
+# PART J — SL 5J: ADVANCED PROGRAM MANAGEMENT (TECHNICAL)
 
-**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Senior PM with portfolio-level leadership experience; TM-50J certified or C2DAO PM SME at GO/SES interface
-**Note:** TM-50J is 3 days (24 hours), not 5 days.
+**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Senior PM with portfolio-level leadership experience; SL 5J certified or C2DAO PM SME at GO/SES interface
+**Note:** SL 5J is 3 days (24 hours), not 5 days.
 
 ---
 
 ### Block 1 — Portfolio Architecture and the Program-Project Distinction
 **Hours:** 1.0 | **Method:** Seminar | **Day:** 1 | **Time:** 0800–0900
 
-**TLO:** The trainee will distinguish program portfolio management from project management, describe the three structural differences in planning, governance, and risk management — and map their current portfolio against the TM-50J framework.
+**TLO:** The trainee will distinguish program portfolio management from project management, describe the three structural differences in planning, governance, and risk management — and map their current portfolio against the SL 5J framework.
 
 **Key Delivery Notes:**
 - Project = defined scope, schedule, cost. Program = a collection of interdependent projects sharing strategic objectives. Portfolio = a collection of programs managed for strategic value optimization.
@@ -917,8 +917,8 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 
 **Key Delivery Notes:**
 - Day 1–30: stakeholder mapping, CDR engagement, training enrollment kick-off, quick-win identification (one high-visibility product on MSS within 30 days).
-- Day 31–60: first cohort trained (TM-10), first MSS products in the battle rhythm, CCIR configuration reviewed by CDR.
-- Day 61–90: second cohort trained (TM-20 builders), first builder product promoted to production, adoption metrics reviewed with CDR.
+- Day 31–60: first cohort trained (SL 1), first MSS products in the battle rhythm, CCIR configuration reviewed by CDR.
+- Day 61–90: second cohort trained (SL 2 builders), first builder product promoted to production, adoption metrics reviewed with CDR.
 - Success metrics: number of trained personnel, number of MSS products in the battle rhythm, CCIR alert response time (did the alerts drive decisions?).
 
 ---
@@ -959,10 +959,10 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 
 ---
 
-# PART K — TM-50K: ADVANCED KNOWLEDGE MANAGEMENT
+# PART K — SL 5K: ADVANCED KNOWLEDGE MANAGEMENT
 
-**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Senior KMO or organizational knowledge architect; TM-50K certified or C2DAO KM SME
-**Note:** TM-50K is 3 days (24 hours), not 5 days.
+**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Senior KMO or organizational knowledge architect; SL 5K certified or C2DAO KM SME
+**Note:** SL 5K is 3 days (24 hours), not 5 days.
 
 ---
 
@@ -1114,9 +1114,9 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 
 ---
 
-# PART L — TM-50L: ADVANCED SOFTWARE ENGINEERING
+# PART L — SL 5L: ADVANCED SOFTWARE ENGINEERING
 
-**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** Senior SWE with platform engineering and enterprise CI/CD experience; TM-50L certified or C2DAO SWE Architecture SME
+**Duration:** 5 days (40 hours) | **T:I ratio:** 4:1 | **Instructor req:** Senior SWE with platform engineering and enterprise CI/CD experience; SL 5L certified or C2DAO SWE Architecture SME
 **Advanced access required:** OSDK TypeScript SDK (advanced), CI/CD pipeline access in training environment
 
 ---
@@ -1252,7 +1252,7 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 ### Block 12 — Security Review Process for MSS Applications
 **Hours:** 2.0 | **Method:** Lab | **Day:** 3 | **Time:** 1300–1500
 
-**TLO:** The trainee will conduct a security review of a provided MSS application codebase — using the TM-50L security review checklist — and produce a prioritized findings report.
+**TLO:** The trainee will conduct a security review of a provided MSS application codebase — using the SL 5L security review checklist — and produce a prioritized findings report.
 
 **Key Delivery Notes:**
 - Security checklist items: (1) input validation at all Action boundaries, (2) no hardcoded credentials or tokens, (3) OSDK credential handling (no credentials in client-side code), (4) output encoding (no unescaped user-controlled content in HTML), (5) access control verification (Actions restricted to appropriate roles).
@@ -1276,7 +1276,7 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 ### Block 14 — Architecture Review: Participant Systems
 **Hours:** 2.0 | **Method:** Workshop | **Day:** 4 | **Time:** 0800–1000
 
-**Purpose:** Each trainee presents an MSS application they built or maintain for structured peer architecture review — applying the TM-50L review criteria.
+**Purpose:** Each trainee presents an MSS application they built or maintain for structured peer architecture review — applying the SL 5L review criteria.
 
 **TLO:** The trainee will present their application architecture and receive a structured critique identifying scalability constraints, security gaps, and technical debt — with a recommended refactoring priority list.
 
@@ -1333,7 +1333,7 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 ### Block 20 — Practical Exercise Part 2: Security and Architecture Review
 **Hours:** 3.0 | **Method:** Evaluation | **Day:** 5 | **Time:** 1300–1600
 
-**Tasks:** (1) Conduct security review of provided codebase using the TM-50L checklist. Produce prioritized findings report. (2) Implement fix for any CRITICAL findings identified. (3) Present technical architecture document to evaluator in a 15-minute review.
+**Tasks:** (1) Conduct security review of provided codebase using the SL 5L checklist. Produce prioritized findings report. (2) Implement fix for any CRITICAL findings identified. (3) Present technical architecture document to evaluator in a 15-minute review.
 
 **Go standard:** Security review covers all 5 checklist categories. CRITICAL findings are fixed and verified. Architecture document covers all required sections. Hard No-Go: CRITICAL security finding not fixed; OSDK credentials present in client-side code.
 
@@ -1346,17 +1346,17 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 
 ---
 
-# PART N — TM-50N: ADVANCED UI/UX DESIGNER
+# PART N — SL 5N: ADVANCED UI/UX DESIGNER
 
-**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Senior Designer with design system and enterprise UX experience; TM-50N certified or C2DAO Advanced UX SME
-**Note:** TM-50N is 3 days (24 hours), not 5 days.
+**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Senior Designer with design system and enterprise UX experience; SL 5N certified or C2DAO Advanced UX SME
+**Note:** SL 5N is 3 days (24 hours), not 5 days.
 
 ---
 
 ### Block 1 — From Application Design to Design Systems
 **Hours:** 1.0 | **Method:** Seminar | **Day:** 1 | **Time:** 0800–0900
 
-**Purpose:** TM-50N moves from designing applications to designing the system that produces applications. The advanced Designer's output is not a single interface — it is the standards, patterns, and processes that make every interface better. This block establishes the scale shift before any system-level design work begins.
+**Purpose:** SL 5N moves from designing applications to designing the system that produces applications. The advanced Designer's output is not a single interface — it is the standards, patterns, and processes that make every interface better. This block establishes the scale shift before any system-level design work begins.
 
 **TLO:** The trainee will distinguish enterprise design system leadership from individual application design, describe the design system as a product with its own backlog and release cycle, and state the three principles that determine design system adoption: documentation quality, governance clarity, and developer integration.
 
@@ -1390,7 +1390,7 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 **Key Delivery Notes:**
 - Component documentation includes: description, variants (with visual examples), usage guidelines (do/don't), accessibility notes, data binding patterns, responsive behavior, and code examples.
 - Do/don't examples: show correct usage AND common misuse. "Do: use the status badge with redundant text label. Don't: use color alone to indicate status."
-- The documentation quality test: can a TM-40N designer or TM-40L developer use this component correctly without asking the design system team a question? If not, the documentation is incomplete.
+- The documentation quality test: can a SL 4N designer or SL 4L developer use this component correctly without asking the design system team a question? If not, the documentation is incomplete.
 
 ---
 
@@ -1527,7 +1527,7 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 
 **Key Delivery Notes:**
 - Each trainee presents their capstone: design system component, DDIL pattern, and governance proposal.
-- Peer review: structured critique using TM-50N review criteria. Focus on implementation feasibility, documentation completeness, and operational applicability.
+- Peer review: structured critique using SL 5N review criteria. Focus on implementation feasibility, documentation completeness, and operational applicability.
 - Evaluator debrief: feedback on design system thinking, DDIL awareness, and governance maturity.
 
 ---
@@ -1541,24 +1541,24 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 
 ---
 
-# PART O — TM-50O: ADVANCED PLATFORM ENGINEER
+# PART O — SL 5O: ADVANCED PLATFORM ENGINEER
 
-**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Senior Platform Engineer with multi-cluster fleet management and SRE experience; TM-50O certified or C2DAO Advanced Platform SME
-**Note:** TM-50O is 3 days (24 hours), not 5 days.
+**Duration:** 3 days (24 hours) | **T:I ratio:** 6:1 | **Instructor req:** Senior Platform Engineer with multi-cluster fleet management and SRE experience; SL 5O certified or C2DAO Advanced Platform SME
+**Note:** SL 5O is 3 days (24 hours), not 5 days.
 
 ---
 
 ### Block 1 — From Cluster Operations to Fleet Management
 **Hours:** 1.0 | **Method:** Seminar | **Day:** 1 | **Time:** 0800–0900
 
-**Purpose:** TM-50O moves from operating a single cluster to operating a fleet — and from building infrastructure to building the systems that build infrastructure. The same principle that made TM-40O treat pods as cattle applies at TM-50O to clusters themselves.
+**Purpose:** SL 5O moves from operating a single cluster to operating a fleet — and from building infrastructure to building the systems that build infrastructure. The same principle that made SL 4O treat pods as cattle applies at SL 5O to clusters themselves.
 
 **TLO:** The trainee will distinguish fleet management from single-cluster operations, describe the fleet topology model for MSS (hub and edge clusters across regions and classification levels), and state the Cluster API approach to declarative cluster lifecycle management.
 
 **Key Delivery Notes:**
 - Scale shift: "How do I deploy to this cluster?" → "How do I deploy to 20 clusters safely?" "Is this cluster healthy?" → "What is the fleet-wide health posture?" "How do I upgrade Kubernetes?" → "How do I upgrade the fleet without downtime?"
-- Fleet management is systems thinking: at TM-40O, you solve problems one cluster at a time. At TM-50O, you solve problems by building systems that solve them automatically across the fleet. Manual procedures that work for one cluster do not scale to twenty.
-- Cluster API: clusters are provisioned from templates, configured via GitOps, upgraded in waves, and decommissioned when no longer needed. Clusters are cattle, not pets — the same principle from TM-40O applied one level up.
+- Fleet management is systems thinking: at SL 4O, you solve problems one cluster at a time. At SL 5O, you solve problems by building systems that solve them automatically across the fleet. Manual procedures that work for one cluster do not scale to twenty.
+- Cluster API: clusters are provisioned from templates, configured via GitOps, upgraded in waves, and decommissioned when no longer needed. Clusters are cattle, not pets — the same principle from SL 4O applied one level up.
 
 **Assessment:** Fleet management approach evaluated throughout course; assessed in capstone (Day 3).
 
@@ -1695,7 +1695,7 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 **Key Delivery Notes:**
 - Multi-classification cluster management: separate clusters per classification level. Configuration replication through approved cross-domain solutions (data diodes, CDS). Never direct network connectivity between classification levels.
 - Data diode integration: one-way data transfer from lower to higher classification. Monitoring data from UNCLASSIFIED clusters can flow to SECRET monitoring aggregation. Not the reverse.
-- Cross-domain replication: application artifacts (container images, configuration) must be replicated to each classification level through approved transfer procedures. Air-gapped deployment procedures from TM-40O apply at fleet scale.
+- Cross-domain replication: application artifacts (container images, configuration) must be replicated to each classification level through approved transfer procedures. Air-gapped deployment procedures from SL 4O apply at fleet scale.
 
 ---
 
@@ -1722,7 +1722,7 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 
 **Key Delivery Notes:**
 - Each trainee presents their capstone: fleet topology, SLO framework, compliance pipeline, and observability architecture.
-- Peer review: structured critique using TM-50O review criteria. Focus on scalability, automation completeness, and operational feasibility.
+- Peer review: structured critique using SL 5O review criteria. Focus on scalability, automation completeness, and operational feasibility.
 - Evaluator debrief: feedback on fleet management thinking, SRE maturity, and compliance automation depth.
 
 ---
@@ -1736,26 +1736,26 @@ TM-50G graduates are eligible to take TM-50H, TM-50M, or TM-50J as peer tracks. 
 
 ---
 
-## TM-50 INSTRUCTOR NOTES — APPLICABLE TO ALL TRACKS
+## SL 5 INSTRUCTOR NOTES — APPLICABLE TO ALL TRACKS
 
-**Instructor qualification bar is high.** TM-50 instructors must be actively practicing at the level they teach. An instructor who completed TM-50G two years ago and has not done advanced ORSA work since is not qualified to teach TM-50G. Verify currency before assignment.
+**Instructor qualification bar is high.** SL 5 instructors must be actively practicing at the level they teach. An instructor who completed SL 5G two years ago and has not done advanced ORSA work since is not qualified to teach SL 5G. Verify currency before assignment.
 
-**Enrollment gatekeeping.** Before confirming any TM-50 enrollment, verify: (1) TM-40 Go evaluation is on file for the corresponding track, (2) the trainee is in a role that requires TM-50-level work, (3) prerequisite access has been confirmed (GPU, advanced AIP Logic, CI/CD, etc. — minimum 10 duty days lead time).
+**Enrollment gatekeeping.** Before confirming any SL 5 enrollment, verify: (1) SL 4 Go evaluation is on file for the corresponding track, (2) the trainee is in a role that requires SL 5-level work, (3) prerequisite access has been confirmed (GPU, advanced AIP Logic, CI/CD, etc. — minimum 10 duty days lead time).
 
 **Access lead times:**
 - Code Workspace GPU allocation: 7–10 duty days (C2DAO request)
 - AIP Logic multi-agent features: 7+ duty days (C2DAO request)
-- CI/CD pipeline access (TM-50L): 7+ duty days (C2DAO request)
-- Design tool licenses (TM-50N): 7+ duty days (coordinate with C2DAO)
-- Multi-cluster fleet access (TM-50O): 10+ duty days (C2DAO request; requires namespace-admin on training fleet)
+- CI/CD pipeline access (SL 5L): 7+ duty days (C2DAO request)
+- Design tool licenses (SL 5N): 7+ duty days (coordinate with C2DAO)
+- Multi-cluster fleet access (SL 5O): 10+ duty days (C2DAO request; requires namespace-admin on training fleet)
 
-**Peer review is a graded component.** For TM-50G and TM-50M, the peer review exercise (Day 4) is evaluated. A trainee who fails to conduct a substantive peer review does not receive credit for that block.
+**Peer review is a graded component.** For SL 5G and SL 5M, the peer review exercise (Day 4) is evaluated. A trainee who fails to conduct a substantive peer review does not receive credit for that block.
 
-**Evaluation format:** All TM-50 courses end with a multi-part practical evaluation. The evaluator does not answer technique questions during the evaluation. Go/No-Go is communicated at end of the final day.
+**Evaluation format:** All SL 5 courses end with a multi-part practical evaluation. The evaluator does not answer technique questions during the evaluation. Go/No-Go is communicated at end of the final day.
 
 **Hard No-Go conditions:** Each track has explicit Hard No-Go conditions stated in the practical exercise standard. These cannot be compensated by strong performance on other tasks.
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*TM-50 Advanced Track Lesson Plan Outlines | Version 1.1 | March 2026*
+*SL 5 Advanced Track Lesson Plan Outlines | Version 1.1 | March 2026*

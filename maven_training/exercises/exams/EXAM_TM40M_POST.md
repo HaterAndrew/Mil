@@ -1,12 +1,12 @@
-# POST-TEST — TM-40M: ML ENGINEER
+# POST-TEST — SL 4M: ML ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40M: ML Engineer |
+| **Course** | SL 4M: ML Engineer |
 | **Form** | Post-Test |
-| **Level** | TM-40M (Specialist) |
-| **Audience** | ML engineers / data scientists; prerequisite: TM-10+20+30 + Python + statistics |
+| **Level** | SL 4M (Specialist) |
+| **Audience** | ML engineers / data scientists; prerequisite: SL 1+20+30 + Python + statistics |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (46/66) |
 
@@ -71,7 +71,7 @@ B. A moderate shift that warrants investigation — likely a data collection or 
 C. A minor shift in the feature distribution — continue monitoring
 D. A pipeline error — PSI above 0.2 always indicates a data ingestion failure
 
-**8. Per TM-40M, the Foundry model registry is used to:**
+**8. Per SL 4M, the Foundry model registry is used to:**
 
 A. Store the model's Python source code in version control
 B. Monitor model output quality in real-time after deployment
@@ -113,14 +113,14 @@ B. Test whether feature importance rankings have shifted between model versions
 C. Compare the empirical distribution of a continuous feature between a reference period and a monitoring period
 D. Validate that the model's calibration curve has not degraded
 
-**14. Per TM-40M, a write transaction from Code Workspace to a Foundry dataset is the preferred method for committing model outputs because:**
+**14. Per SL 4M, a write transaction from Code Workspace to a Foundry dataset is the preferred method for committing model outputs because:**
 
 A. Write transactions bypass the Foundry access control layer, enabling faster writes
 B. Write transactions automatically trigger the downstream pipeline to refresh
 C. Transactions are atomic — either all records commit or none, preventing partial writes that could corrupt downstream pipelines
 D. Transactions encrypt the output data before writing to the dataset
 
-**15. A compressed (quantized) version of a model shows 2% lower accuracy than the full-precision version. Per TM-40M standards, this means:**
+**15. A compressed (quantized) version of a model shows 2% lower accuracy than the full-precision version. Per SL 4M standards, this means:**
 
 A. The compressed model must be evaluated against all acceptance thresholds independently — compression changes the model and prior approval does not transfer
 B. The compressed model can be deployed — 2% is within acceptable degradation tolerance
@@ -141,14 +141,14 @@ B. Full lineage is documented from training data through the feature pipeline th
 C. The model's predictions are linked to ground truth labels for continuous retraining
 D. The model artifact is linked to the model registry via a persistent URL
 
-**18. Per TM-40M Section 9-2a, DDOF Phase 4 (Development) maps to specific ML activities. The gate output required to exit Phase 4 is:**
+**18. Per SL 4M Section 9-2a, DDOF Phase 4 (Development) maps to specific ML activities. The gate output required to exit Phase 4 is:**
 
 A. A test report with accuracy, precision, and recall metrics plus sponsor sign-off
 B. A functional model with documented architecture
 C. A model card with all required sections populated and peer-reviewed
 D. A deployed serving endpoint with latency benchmarks
 
-**19. Per TM-40M Section 9-2b, VAULTIS-A compliance for ML models requires that the "Auditable" dimension be satisfied. For a deployed ML model, "Auditable" specifically means:**
+**19. Per SL 4M Section 9-2b, VAULTIS-A compliance for ML models requires that the "Auditable" dimension be satisfied. For a deployed ML model, "Auditable" specifically means:**
 
 A. The model's decision logic is fully explainable to non-technical stakeholders using SHAP values
 B. Full training and inference logs are retained and version history is maintained in the model registry
@@ -211,7 +211,7 @@ D. The model's hyperparameters are documented in the model card
 
 &nbsp;
 
-**SA-6. Describe how ML engineering capability supports two WFF functions. For each, identify the WFF track (TM-40A through TM-40F) and give a concrete example of an ML model or pipeline that supports decision-making in that function.**
+**SA-6. Describe how ML engineering capability supports two WFF functions. For each, identify the WFF track (SL 4A through SL 4F) and give a concrete example of an ML model or pipeline that supports decision-making in that function.**
 
 &nbsp;
 
@@ -257,8 +257,8 @@ Passing: 52/74 (70%) — Post-test only. Pre-test is diagnostic.
 15. A — Compressed model must be independently evaluated — compression changes the model.
 16. B — Escalate to C2DAO for scope reduction before cutting T&E — a model without holdout validation and sponsor sign-off is an unauthorized deployment.
 17. B — Full lineage documented from training data through feature pipeline through model to inference outputs satisfies the "Linked" dimension.
-18. B — A functional model with documented architecture is the Phase 4 (Development) gate output per TM-40M Section 9-2a.
-19. B — Full training and inference logs retained and version history maintained in the model registry satisfies the "Auditable" dimension per TM-40M Section 9-2b.
+18. B — A functional model with documented architecture is the Phase 4 (Development) gate output per SL 4M Section 9-2a.
+19. B — Full training and inference logs retained and version history maintained in the model registry satisfies the "Auditable" dimension per SL 4M Section 9-2b.
 
 **Short Answer Guidance:**
 
@@ -272,7 +272,7 @@ SA-4. Full credit sections and required content: (1) Model Overview — name, ve
 
 SA-5. Full credit: architecture — scheduled pipeline runs model (via API call to serving endpoint or batch inference); pipeline writes predicted failure risk scores to Foundry output dataset via write transaction; Ontology write step maps `vehicle_id` to the `predicted_failure_risk` property on the Vehicle Object Type (upsert on primary key); update frequency = pipeline schedule (daily, weekly); analyst access in Workshop — add a column for `predicted_failure_risk` to the vehicle table widget; configure conditional formatting to highlight high-risk vehicles; or build a sorted list filtered to vehicles above risk threshold. Full credit requires write transaction, Ontology property connection, and Workshop access method.
 
-SA-6. Full credit: any two WFF tracks correctly identified with an ML example — TM-40A (Intelligence): ML classifier categorizes incoming reports by topic and threat level to assist intel analysts; TM-40B (Fires): ML model predicts target re-acquisition probability to support fires prioritization; TM-40C (Movement & Maneuver): ML model predicts route traversability from sensor data to support maneuver planning; TM-40D (Sustainment): ML failure prediction model forecasts which vehicles require maintenance before the next mission to support G4 readiness management; TM-40E (Protection): ML anomaly detection model flags unusual patterns in force protection sensor data; TM-40F (Mission Command): ML model forecasts operational tempo changes to support commander decision cycle. Each response must identify the correct TM-40 letter (A–F) and provide a concrete ML model or pipeline example for full credit.
+SA-6. Full credit: any two WFF tracks correctly identified with an ML example — SL 4A (Intelligence): ML classifier categorizes incoming reports by topic and threat level to assist intel analysts; SL 4B (Fires): ML model predicts target re-acquisition probability to support fires prioritization; SL 4C (Movement & Maneuver): ML model predicts route traversability from sensor data to support maneuver planning; SL 4D (Sustainment): ML failure prediction model forecasts which vehicles require maintenance before the next mission to support G4 readiness management; SL 4E (Protection): ML anomaly detection model flags unusual patterns in force protection sensor data; SL 4F (Mission Command): ML model forecasts operational tempo changes to support commander decision cycle. Each response must identify the correct SL 4 letter (A–F) and provide a concrete ML model or pipeline example for full credit.
 
 ---
 

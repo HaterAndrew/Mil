@@ -1,7 +1,7 @@
-# CONCEPTS GUIDE — TM-50O COMPANION — ADVANCED PLATFORM ENGINEER · MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 5O COMPANION — ADVANCED PLATFORM ENGINEER · MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** TM-50O moves from operating a cluster to operating a fleet — and from building infrastructure to building the systems that build infrastructure. The advanced Platform Engineer's output is not a running cluster — it is the automation, reliability, and developer experience that lets every cluster run itself.
-> **Purpose:** Develops mental models required to manage fleet-scale infrastructure, implement SRE practices, and automate compliance on MSS. Read before beginning TM-50O task instruction.
+> **Forward:** SL 5O moves from operating a cluster to operating a fleet — and from building infrastructure to building the systems that build infrastructure. The advanced Platform Engineer's output is not a running cluster — it is the automation, reliability, and developer experience that lets every cluster run itself.
+> **Purpose:** Develops mental models required to manage fleet-scale infrastructure, implement SRE practices, and automate compliance on MSS. Read before beginning SL 5O task instruction.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -10,15 +10,15 @@
 
 ### 1-1. The Core Transition
 
-**BLUF:** The same principle that made TM-40O treat pods as cattle applies at TM-50O to clusters themselves. Clusters are provisioned from templates, configured via GitOps, upgraded in waves, and decommissioned when no longer needed.
+**BLUF:** The same principle that made SL 4O treat pods as cattle applies at SL 5O to clusters themselves. Clusters are provisioned from templates, configured via GitOps, upgraded in waves, and decommissioned when no longer needed.
 
-A TM-40O Platform Engineer who manages one cluster well is meeting the standard. A TM-50O Platform Engineer who manages one cluster well is underperforming. The advanced Platform Engineer's job is to build systems that manage clusters — automation that provisions, configures, monitors, upgrades, and decommissions clusters across the fleet without manual intervention on each one.
+A SL 4O Platform Engineer who manages one cluster well is meeting the standard. A SL 5O Platform Engineer who manages one cluster well is underperforming. The advanced Platform Engineer's job is to build systems that manage clusters — automation that provisions, configures, monitors, upgrades, and decommissions clusters across the fleet without manual intervention on each one.
 
-This is systems thinking applied to infrastructure. At TM-40O, you solve problems one cluster at a time. At TM-50O, you solve problems by building systems that solve them automatically across the fleet. Manual procedures that work for one cluster do not scale to twenty.
+This is systems thinking applied to infrastructure. At SL 4O, you solve problems one cluster at a time. At SL 5O, you solve problems by building systems that solve them automatically across the fleet. Manual procedures that work for one cluster do not scale to twenty.
 
 ### 1-2. The Scale Shift
 
-| TM-40O (Single Cluster) | TM-50O (Fleet Management) |
+| SL 4O (Single Cluster) | SL 5O (Fleet Management) |
 |-------------------------|--------------------------|
 | "How do I deploy to this cluster?" | "How do I deploy to 20 clusters safely?" |
 | "Is this cluster healthy?" | "What is the fleet-wide health posture?" |
@@ -183,7 +183,7 @@ Use DORA metrics (deployment frequency, lead time, change failure rate, time to 
 
 ### 4-3. The Self-Service Portal
 
-The self-service portal is the Platform Engineer's product UI. It should follow the same design principles (TM-40N/50N) as any MSS application.
+The self-service portal is the Platform Engineer's product UI. It should follow the same design principles (SL 4N/SL 5N) as any MSS application.
 
 **Portal capabilities:**
 - Environment provisioning (create/destroy dev/staging environments)
@@ -226,7 +226,7 @@ A single node failure in a 100-node fleet is a metric, not a page. A pattern of 
 
 ### 6-1. DR/BC at Fleet Scale
 
-**BLUF:** A fleet that cannot recover from catastrophic failure is a single point of failure at theater scale. DR/BC planning at TM-50O level addresses loss of entire clusters, regions, or data centers — not individual pod failures.
+**BLUF:** A fleet that cannot recover from catastrophic failure is a single point of failure at theater scale. DR/BC planning at SL 5O level addresses loss of entire clusters, regions, or data centers — not individual pod failures.
 
 **RTO/RPO targets by service tier:**
 
@@ -253,7 +253,7 @@ A single node failure in a 100-node fleet is a metric, not a page. A pattern of 
 
 ---
 
-## SECTION 7 — ADVANCED FAILURE MODES: WHAT TM-50O PLATFORM ENGINEERS GET WRONG
+## SECTION 7 — ADVANCED FAILURE MODES: WHAT SL 5O PLATFORM ENGINEERS GET WRONG
 
 ### 7-1. Overview
 
@@ -273,7 +273,7 @@ A single node failure in a 100-node fleet is a metric, not a page. A pattern of 
 
 ### 7-3. The Management Plane as Single Point of Failure
 
-The most dangerous TM-50O architecture error: building a fleet management plane whose failure takes down the fleet. Edge clusters must continue to serve users even when the management plane is unavailable. Management plane failure should mean "I cannot push updates or see federated metrics" — not "applications are down."
+The most dangerous SL 5O architecture error: building a fleet management plane whose failure takes down the fleet. Edge clusters must continue to serve users even when the management plane is unavailable. Management plane failure should mean "I cannot push updates or see federated metrics" — not "applications are down."
 
 Design for management plane unavailability the same way you design for network unavailability: degrade gracefully, continue serving cached state, and resume full operation when connectivity returns.
 
@@ -302,9 +302,9 @@ USAREUR-AF platform engineering billets turn over. A fleet management system bui
 
 ## APPENDIX A — CONCEPTS GUIDE SELF-ASSESSMENT
 
-Before proceeding to TM-50O task procedures, confirm you can answer the following from memory:
+Before proceeding to SL 5O task procedures, confirm you can answer the following from memory:
 
-1. What distinguishes TM-50O fleet management from TM-40O cluster operations, and why is managing one cluster well an underperformance at TM-50O?
+1. What distinguishes SL 5O fleet management from SL 4O cluster operations, and why is managing one cluster well an underperformance at SL 5O?
 2. What is an error budget, and how does the error budget policy change team behavior at each threshold?
 3. Name the six phases of the incident response framework and explain why blameless reviews are the standard.
 4. Why is continuous compliance an operational necessity for MSS, not just a best practice?
@@ -315,7 +315,7 @@ Before proceeding to TM-50O task procedures, confirm you can answer the followin
 
 ---
 
-## APPENDIX B — CROSS-REFERENCE TO TM-50O CHAPTERS
+## APPENDIX B — CROSS-REFERENCE TO SL 5O CHAPTERS
 
 | Concepts Guide Section | Corresponding TM-50O Chapter |
 |------------------------|------------------------------|
@@ -329,23 +329,23 @@ Before proceeding to TM-50O task procedures, confirm you can answer the followin
 
 ---
 
-## APPENDIX C — PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION
+## APPENDIX C — PEER SL 5 CROSS-REFERENCES AND WFF INTEGRATION
 
-**Peer TM-50 Publications.** Advanced Platform Engineers should coordinate with practitioners in these companion advanced-track publications.
+**Peer SL 5 Publications.** Advanced Platform Engineers should coordinate with practitioners in these companion advanced-track publications.
 
 | Publication | Track | Coordination Point |
 |---|---|---|
-| TM-50G | Advanced ORSA | Infrastructure for analytical workloads; compute scaling for simulation and optimization |
-| TM-50H | Advanced AI Engineer | GPU provisioning; AI/ML deployment pipelines; model serving infrastructure |
-| TM-50M | Advanced ML Engineer | ML training infrastructure; experiment tracking; model registry hosting |
-| TM-50J | Advanced Program Manager | Platform roadmap prioritization; infrastructure cost reporting for portfolio decisions |
-| TM-50K | Advanced Knowledge Manager | Knowledge system hosting; search infrastructure; content delivery at scale |
-| TM-50L | Advanced Software Engineer | Platform-application boundary; shared service infrastructure; CI/CD pipeline architecture |
-| TM-50N | Advanced UI/UX Designer | Platform portal design; performance budgets; design system hosting and CDN |
+| SL 5G | Advanced ORSA | Infrastructure for analytical workloads; compute scaling for simulation and optimization |
+| SL 5H | Advanced AI Engineer | GPU provisioning; AI/ML deployment pipelines; model serving infrastructure |
+| SL 5M | Advanced ML Engineer | ML training infrastructure; experiment tracking; model registry hosting |
+| SL 5J | Advanced Program Manager | Platform roadmap prioritization; infrastructure cost reporting for portfolio decisions |
+| SL 5K | Advanced Knowledge Manager | Knowledge system hosting; search infrastructure; content delivery at scale |
+| SL 5L | Advanced Software Engineer | Platform-application boundary; shared service infrastructure; CI/CD pipeline architecture |
+| SL 5N | Advanced UI/UX Designer | Platform portal design; performance budgets; design system hosting and CDN |
 
-**WFF Operational Consumer Note.** Platform infrastructure built by TM-50O engineers supports every application that serves the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). When a cluster goes down, a G2 intelligence dashboard goes dark. When a fleet-wide upgrade introduces a regression, every WFF track is affected simultaneously. The reliability questions addressed in this Concepts Guide — error budgets, staged rollouts, DR/BC planning, management plane resilience — must be answered in terms of the operational impact on WFF consumers who depend on platform availability to execute their missions.
+**WFF Operational Consumer Note.** Platform infrastructure built by SL 5O engineers supports every application that serves the six Warfighting Function (WFF) tracks: Intelligence (SL 4A), Fires (SL 4B), Movement and Maneuver (SL 4C), Sustainment (SL 4D), Protection (SL 4E), and Mission Command (SL 4F). When a cluster goes down, a G2 intelligence dashboard goes dark. When a fleet-wide upgrade introduces a regression, every WFF track is affected simultaneously. The reliability questions addressed in this Concepts Guide — error budgets, staged rollouts, DR/BC planning, management plane resilience — must be answered in terms of the operational impact on WFF consumers who depend on platform availability to execute their missions.
 
 ---
 
-*CONCEPTS GUIDE — TM-50O COMPANION // ADVANCED PLATFORM ENGINEER*
+*CONCEPTS GUIDE — SL 5O COMPANION // ADVANCED PLATFORM ENGINEER*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA // WIESBADEN, GERMANY // 2026*

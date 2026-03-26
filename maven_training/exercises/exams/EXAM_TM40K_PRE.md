@@ -1,12 +1,12 @@
-# PRE-TEST — TM-40K: KNOWLEDGE MANAGER
+# PRE-TEST — SL 4K: KNOWLEDGE MANAGER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40K: Knowledge Manager |
+| **Course** | SL 4K: Knowledge Manager |
 | **Form** | Pre-Test |
-| **Level** | TM-40K (Specialist) |
-| **Audience** | KMOs / 37F / knowledge officers; prerequisite: TM-10 + TM-20 + TM-30 (REQUIRED) |
+| **Level** | SL 4K (Specialist) |
+| **Audience** | KMOs / 37F / knowledge officers; prerequisite: SL 1 + SL 2 + SL 3 (REQUIRED) |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

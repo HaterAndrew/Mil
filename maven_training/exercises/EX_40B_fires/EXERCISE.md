@@ -1,10 +1,10 @@
 # EX_40B — Fires
-## Practical Exercise — TM-40B Proficiency
+## Practical Exercise — SL 4B Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-10, TM-20, TM-30 (required); TM-40B and CONCEPTS_GUIDE_TM40B_FIRES (current track) |
+| **Prerequisite** | SL 1, SL 2, SL 3 (required); SL 4B and CONCEPTS_GUIDE_TM40B_FIRES (current track) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS training instance, standard user access — see ENVIRONMENT_SETUP.md |
 | **Companion TM** | TM_40B_FIRES.md |

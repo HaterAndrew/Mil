@@ -1,10 +1,10 @@
 # EX_40K — Knowledge Manager
-## Practical Exercise — TM-40K Proficiency
+## Practical Exercise — SL 4K Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-30 REQUIRED; TM-40K — Knowledge Manager Technical Manual (and TM-10 through TM-20) |
+| **Prerequisite** | SL 3 REQUIRED; SL 4K — Knowledge Manager Technical Manual (and SL 1 through SL 2) |
 | **Duration** | 2–3 hours |
 | **Environment** | MSS with Workshop, form builder, and lessons learned dataset access — see ENVIRONMENT_SETUP.md |
 
@@ -12,11 +12,11 @@
 
 | Resource | Reference |
 |----------|-----------|
-| Technical Manual | TM-40K — Knowledge Manager |
+| Technical Manual | SL 4K — Knowledge Manager |
 | Syllabus | SYLLABUS_TM40K |
 | Pre-Exercise Exam | EXAM_TM40K_PRE |
 | Post-Exercise Exam | EXAM_TM40K_POST |
-| Continuation Track | TM-50K — Advanced Knowledge Manager |
+| Continuation Track | SL 5K — Advanced Knowledge Manager |
 
 ## WFF AWARENESS
 
@@ -39,7 +39,7 @@ Create a Workshop form with the following fields:
 | Date | Date | Required |
 | Unit | Text | Required |
 | Exercise Name | Text | Required |
-| Category | Dropdown | Required; constrained to the 6-category taxonomy from TM-40K |
+| Category | Dropdown | Required; constrained to the 6-category taxonomy from SL 4K |
 | Observation | Text (long) | Required |
 | Recommendation | Text (long) | Required |
 | OPR | Text | Required |
@@ -118,7 +118,7 @@ Create a Workshop dashboard with:
 
 ## NEXT STEPS
 
-Participants who receive an overall Go on EX_40K are eligible to enroll in **TM-50K — Advanced Knowledge Manager**. TM-50K extends into enterprise knowledge architecture, cross-command taxonomy alignment, and AI-assisted knowledge capture at scale. TM-50 is G–O (advanced specialist tracks).
+Participants who receive an overall Go on EX_40K are eligible to enroll in **SL 5K — Advanced Knowledge Manager**. SL 5K extends into enterprise knowledge architecture, cross-command taxonomy alignment, and AI-assisted knowledge capture at scale. SL 5 is G–O (advanced specialist tracks).
 
 ## Supplemental — Build with AIP Official Tutorials
 

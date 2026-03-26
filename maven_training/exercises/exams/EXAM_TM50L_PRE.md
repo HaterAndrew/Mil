@@ -1,12 +1,12 @@
-# PRE-TEST — TM-50L: ADVANCED SOFTWARE ENGINEER
+# PRE-TEST — SL 5L: ADVANCED SOFTWARE ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-50L: Advanced Software Engineer |
+| **Course** | SL 5L: Advanced Software Engineer |
 | **Form** | Pre-Test |
-| **Level** | TM-50L (Advanced Specialist) |
-| **Audience** | Senior SWEs / platform architects / tech leads; prerequisite: TM-40L + production MSS SWE experience |
+| **Level** | SL 5L (Advanced Specialist) |
+| **Audience** | Senior SWEs / platform architects / tech leads; prerequisite: SL 4L + production MSS SWE experience |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
@@ -120,9 +120,9 @@ B. Reads populate the cache on the first miss; subsequent reads serve from cache
 C. Writes update both the cache and the underlying database synchronously — the cache is always consistent with the database
 D. Writes bypass the cache and go directly to the database; the cache is invalidated on write
 
-**15. Platform governance at the TM-50L level includes which responsibility that is NOT present at TM-40L?**
+**15. Platform governance at the SL 5L level includes which responsibility that is NOT present at SL 4L?**
 
-A. Setting and enforcing platform-wide coding standards, conducting architecture reviews of other engineers' designs, and onboarding and developing junior engineers to TM-40L competency
+A. Setting and enforcing platform-wide coding standards, conducting architecture reviews of other engineers' designs, and onboarding and developing junior engineers to SL 4L competency
 B. Writing TypeScript code that passes Ontology CI checks
 C. Submitting pull requests that pass the standard code review checklist
 D. Ensuring personal work is covered by the minimum required test cases
@@ -163,7 +163,7 @@ D. Ensuring personal work is covered by the minimum required test cases
 
 &nbsp;
 
-**SA-4. A junior SWE on your team proposes bypassing CBAC in the staging environment "just for testing" to avoid setting up test data for each tenant. As the TM-50L platform lead, describe your response and explain why this is never acceptable even in non-production environments.**
+**SA-4. A junior SWE on your team proposes bypassing CBAC in the staging environment "just for testing" to avoid setting up test data for each tenant. As the SL 5L platform lead, describe your response and explain why this is never acceptable even in non-production environments.**
 
 &nbsp;
 
@@ -173,7 +173,7 @@ D. Ensuring personal work is covered by the minimum required test cases
 
 &nbsp;
 
-**SA-5. You are onboarding a new TM-40L qualified engineer to the USAREUR-AF MSS platform. Describe the four most important platform-specific concepts you would cover in their onboarding, and explain why each is critical to safe, effective work on the platform.**
+**SA-5. You are onboarding a new SL 4L qualified engineer to the USAREUR-AF MSS platform. Describe the four most important platform-specific concepts you would cover in their onboarding, and explain why each is critical to safe, effective work on the platform.**
 
 &nbsp;
 
@@ -216,7 +216,7 @@ Passing: N/A — Pre-test is diagnostic only.
 12. A — Injection vulnerabilities (unsanitized input in Ontology queries/Action parameters) are the primary OWASP concern for OSDK integrations.
 13. B — Batch writes reduce API call overhead and maintain transaction integrity.
 14. C — Write-through: writes update both cache and database synchronously; cache always consistent.
-15. A — Platform governance = setting standards, architecture reviews, onboarding/developing junior engineers — not present at TM-40L.
+15. A — Platform governance = setting standards, architecture reviews, onboarding/developing junior engineers — not present at SL 4L.
 
 **Short Answer Guidance:**
 

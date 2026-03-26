@@ -337,7 +337,7 @@ Multiple Army organizations are simultaneously developing data literacy training
 
 | Program | Proponent | Format | Audience | Relevance to MSS |
 |---|---|---|---|---|
-| **Signal School Data for Leaders Course** | U.S. Army Signal School (Fort Eisenhower) | 4-day MTT, Power BI focused | Senior military leaders | Establishes commander data literacy baseline. Complementary to TM-SL. Created by CPT Derek Koslowski, CDO at Signal School. First MTT delivered at Fort Cavazos, Nov 2024. Topics: data literacy, data governance, cloud fundamentals, storytelling with data, zero trust. |
+| **Signal School Data for Leaders Course** | U.S. Army Signal School (Fort Eisenhower) | 4-day MTT, Power BI focused | Senior military leaders | Establishes commander data literacy baseline. Complementary to TM-EXEC. Created by CPT Derek Koslowski, CDO at Signal School. First MTT delivered at Fort Cavazos, Nov 2024. Topics: data literacy, data governance, cloud fundamentals, storytelling with data, zero trust. |
 | **AKMP Data Immersion Course** | MCCoE/C2ID (AKMP) | 32-hour online | KMs at DIV+ level | Covers data governance, Army Data Catalog, data workforce roles, GenAI, Vantage. Aligns with TM-40K. |
 | **Data Literacy 101 (DL101-TTC)** | West Point CDAS | 5-day TTC, 10 hrs instruction | Train-the-Trainer | Foundational data literacy + teaching methodology. 140 attendees at Jun 2024 iteration. |
 | **TRADOC OCKO Data Literacy Portal** | TRADOC C2DAO | Online courses | TRADOC workforce | Central hub for data literacy training. Decision Optimization Branch targeting FOC Dec 2025. |

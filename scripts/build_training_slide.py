@@ -1,5 +1,5 @@
 """
-Build a single-slide PPT: Maven Training Progression (TM-10 → TM-30 focus).
+Build a single-slide PPT: Maven Training Progression (SL 1 → SL 3 focus).
 Output: maven_training/pdf/MSS_Training_Progression.pptx
 """
 
@@ -76,8 +76,8 @@ add_textbox(slide, 0.15, 0.58, 9.0, 0.35,
 add_rect(slide, 0, 1.0, 13.33, 0.06, fill_rgb=ARMY_GOLD)
 
 # ─────────────────────────────────────────────────────────────────────────────
-# MAIN CONTENT: three primary blocks (TM-10, TM-20, TM-30) + side note column
-# Layout:  [TM-10] → [TM-20] → [TM-30]  |  [TM-40/50 side note]
+# MAIN CONTENT: three primary blocks (SL 1, SL 2, SL 3) + side note column
+# Layout:  [SL 1] → [SL 2] → [SL 3]  |  [SL 4/5 side note]
 # ─────────────────────────────────────────────────────────────────────────────
 
 BLOCK_TOP   = 1.25
@@ -89,7 +89,7 @@ ARROW_Y     = BLOCK_TOP + BLOCK_H / 2 - 0.05   # vertical center of blocks
 
 blocks = [
     {
-        "label": "TM-10",
+        "label": "SL 1",
         "title": "MAVEN USER",
         "audience": "ALL PERSONNEL",
         "audience_detail": "Every Soldier, Officer & Civilian",
@@ -103,7 +103,7 @@ blocks = [
         "prereq": "None",
     },
     {
-        "label": "TM-20",
+        "label": "SL 2",
         "title": "BUILDER",
         "audience": "ALL STAFF",
         "audience_detail": "Light Builders (no coding required)",
@@ -114,10 +114,10 @@ blocks = [
             "Configure object views",
             "Publish products to unit portals",
         ],
-        "prereq": "Prereq: TM-10",
+        "prereq": "Prereq: SL 1",
     },
     {
-        "label": "TM-30",
+        "label": "SL 3",
         "title": "ADVANCED BUILDER",
         "audience": "DATA-ADJACENT SPECIALISTS",
         "audience_detail": "17/25-series, S6/G6, G2",
@@ -128,7 +128,7 @@ blocks = [
             "Performance-tune pipelines",
             "Govern datasets & lineage",
         ],
-        "prereq": "Prereq: TM-20",
+        "prereq": "Prereq: SL 2",
     },
 ]
 
@@ -181,7 +181,7 @@ for i, blk in enumerate(blocks):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# TM-40 / TM-50 SIDE NOTE PANEL
+# SL 4 / SL 5 SIDE NOTE PANEL
 # ─────────────────────────────────────────────────────────────────────────────
 NOTE_L = START_L + 3 * (BLOCK_W + GAP + 0.35) - 0.1
 NOTE_W = 13.33 - NOTE_L - 0.2
@@ -199,9 +199,9 @@ add_rect(slide, NOTE_L, NOTE_TOP, NOTE_W, 0.55,
 add_textbox(slide, NOTE_L, NOTE_TOP + 0.06, NOTE_W, 0.42,
             "SPECIALIST TRACKS", 9, bold=True, color=WHITE)
 
-# TM-40 block
+# SL 4 block
 add_textbox(slide, NOTE_L + 0.1, NOTE_TOP + 0.65, NOTE_W - 0.15, 0.28,
-            "TM-40 SERIES  (Prereq: TM-30)", 8, bold=True,
+            "SL 4 SERIES  (Prereq: SL 3)", 8, bold=True,
             color=DARK_GREEN, align=PP_ALIGN.LEFT)
 
 tracks_40 = [
@@ -224,12 +224,12 @@ for k, t in enumerate(tracks_40):
 add_rect(slide, NOTE_L + 0.1, NOTE_TOP + 3.20, NOTE_W - 0.2, 0.04,
          fill_rgb=MED_GRAY)
 
-# TM-50 block
+# SL 5 block
 add_textbox(slide, NOTE_L + 0.1, NOTE_TOP + 3.32, NOTE_W - 0.15, 0.28,
-            "TM-50 SERIES  (Prereq: TM-40)", 8, bold=True,
+            "SL 5 SERIES  (Prereq: SL 4)", 8, bold=True,
             color=DARK_GREEN, align=PP_ALIGN.LEFT)
 add_textbox(slide, NOTE_L + 0.1, NOTE_TOP + 3.62, NOTE_W - 0.15, 1.6,
-            "Advanced / expert-level continuation\nfor each TM-40G–M track.\n\nFocus: production pipelines,\nMLOps, AIP Agents, advanced\nOntology patterns.",
+            "Advanced / expert-level continuation\nfor each SL 4G–M track.\n\nFocus: production pipelines,\nMLOps, AIP Agents, advanced\nOntology patterns.",
             7.5, bold=False, color=DARK_GRAY, align=PP_ALIGN.LEFT)
 
 # ── Footer ────────────────────────────────────────────────────────────────────

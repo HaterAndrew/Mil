@@ -68,9 +68,9 @@ This Technical Manual (TM) provides operator-level instruction for the Maven Sma
 
 **This manual does NOT cover** building applications or dashboards; creating or modifying data pipelines; writing any code; configuring the platform in any way; or designing AI workflows.
 
-Those tasks are covered in TM-20 (Workshop Builder) and TM-30 (Advanced Builder). If a task you need to perform is not in this manual, contact your unit data steward before attempting it.
+Those tasks are covered in SL 2 (Workshop Builder) and SL 3 (Advanced Builder). If a task you need to perform is not in this manual, contact your unit data steward before attempting it.
 
-NOTE: If a task in this manual indicates it requires a builder or engineer, do not attempt it yourself. The escalation path is: (1) TM-10 operator attempt fails or is out of scope → (2) Contact your unit data steward → (3) Data steward routes to TM-20 builder (Workshop apps, basic pipelines, Ontology configuration) or TM-30 advanced builder (complex design, AIP Logic, enterprise Ontology) or TM-40 developer (code required). Chapter 7 of this manual contains the full escalation decision guide.
+NOTE: If a task in this manual indicates it requires a builder or engineer, do not attempt it yourself. The escalation path is: (1) SL 1 operator attempt fails or is out of scope → (2) Contact your unit data steward → (3) Data steward routes to SL 2 builder (Workshop apps, basic pipelines, Ontology configuration) or SL 3 advanced builder (complex design, AIP Logic, enterprise Ontology) or SL 4 developer (code required). Chapter 7 of this manual contains the full escalation decision guide.
 
 ---
 
@@ -172,11 +172,11 @@ The ODT concept was first piloted by XVIII Airborne Corps beginning in 2022. XVI
 
 **Why this matters to you as an MSS user:** The ODT is the team that builds the dashboards you read, the forms you submit, and the tools you use. When you encounter a data problem, a broken application, or a requirement for a new capability, the escalation path leads to the ODT. Understanding that these tools are built by a trained, organic team — not a vendor or a help desk — helps you route requests effectively and set realistic expectations for new capability delivery.
 
-USAREUR-AF's Operational Data Team operates under the C2DAO with direct alignment to theater strategy. The MSS training curriculum (TM-10 through TM-50) is the pipeline that produces the qualified personnel who staff ODTs at every echelon — from the Theater Army Operational Data Section down through subordinate Corps and Division ODTs.
+USAREUR-AF's Operational Data Team operates under the C2DAO with direct alignment to theater strategy. The MSS training curriculum (SL 1 through SL 5) is the pipeline that produces the qualified personnel who staff ODTs at every echelon — from the Theater Army Operational Data Section down through subordinate Corps and Division ODTs.
 
-> **NOTE:** The MSS specialist tracks (TM-40J through TM-40O) map directly to the ODT roles employed by XVIII ABC in their pilot: Product Manager (TM-40J), UX Designer (TM-40N), Software Engineer (TM-40L), Data Engineer (TM-30/TM-40K), and Data Scientist (TM-40G/TM-40M). If your career path leads toward one of these roles, the MSS training curriculum is your qualification pathway.
+> **NOTE:** The MSS specialist tracks (SL 4J through SL 4O) map directly to the ODT roles employed by XVIII ABC in their pilot: Product Manager (SL 4J), UX Designer (SL 4N), Software Engineer (SL 4L), Data Engineer (SL 3/SL 4K), and Data Scientist (SL 4G/SL 4M). If your career path leads toward one of these roles, the MSS training curriculum is your qualification pathway.
 
-In February 2026, the Combined Arms Command at Fort Leavenworth began formally integrating Maven into institutional training and professional military education. MCCoE senior instructors are developing a standardized 8-hour hands-on operator course; the Command and General Staff College is incorporating Maven into core curriculum for field grade officers; and the CAC Data Academy is offering a Low-Code/No-Code Builders Course. This means the institutional Army is now building toward the same competencies this training program delivers — the MSS curriculum (TM-10 through TM-50) prepares you for tools and skills the Army is scaling enterprise-wide.
+In February 2026, the Combined Arms Command at Fort Leavenworth began formally integrating Maven into institutional training and professional military education. MCCoE senior instructors are developing a standardized 8-hour hands-on operator course; the Command and General Staff College is incorporating Maven into core curriculum for field grade officers; and the CAC Data Academy is offering a Low-Code/No-Code Builders Course. This means the institutional Army is now building toward the same competencies this training program delivers — the MSS curriculum (SL 1 through SL 5) prepares you for tools and skills the Army is scaling enterprise-wide.
 
 *Sources: Forney, Herrmann, and Steele, "Fighting with Live Data," Military Review Online Exclusive, February 2026; MCCoE Decision Optimization CONOPS, Appendix B; "Army's Combined Arms Command to integrate Maven C2 smart system into training and education," army.mil, February 2026.*
 
@@ -326,33 +326,33 @@ NOTE: You are a data consumer, not a data validator. If something looks wrong, y
 
 ## 1-10. MSS Training Curriculum — Learning Path
 
-TM-10 is the entry point for the MSS training curriculum. After completing TM-10, personnel may advance along one of two tracks depending on their role and assigned duties.
+SL 1 is the entry point for the MSS training curriculum. After completing SL 1, personnel may advance along one of two tracks depending on their role and assigned duties.
 
 **Advancement path:**
 
 | Current Qualification | Next Step | Description |
 |---|---|---|
-| TM-10 (Operator) | TM-20 (Builder) | For personnel who have been granted builder access and will create pipelines, applications, or Ontology configurations. Prerequisite: TM-10. |
-| TM-20 (Builder) | TM-30 (Advanced Builder) | For personnel who will design complex multi-source pipelines, advanced Ontology models, and multi-page applications. Prerequisite: TM-20. |
-| TM-30 (Advanced Builder) | TM-40A — Intelligence WFF | For G2 / S2 staff applying MSS to intelligence workflows. Prerequisite: TM-30 (required). Duration: 3 days. |
-| TM-30 (Advanced Builder) | TM-40B — Fires WFF | For fire support personnel applying MSS to fires workflows. Prerequisite: TM-30 (required). Duration: 3 days. |
-| TM-30 (Advanced Builder) | TM-40C — Movement & Maneuver WFF | For G3 / S3 staff applying MSS to movement and maneuver workflows. Prerequisite: TM-30 (required). Duration: 3 days. |
-| TM-30 (Advanced Builder) | TM-40D — Sustainment WFF | For G4 / S4 staff applying MSS to logistics and sustainment workflows. Prerequisite: TM-30 (required). Duration: 3 days. |
-| TM-30 (Advanced Builder) | TM-40E — Protection WFF | For protection officers and NCOs applying MSS to force protection workflows. Prerequisite: TM-30 (required). Duration: 3 days. |
-| TM-30 (Advanced Builder) | TM-40F — Mission Command WFF | For G6 / S6 and command staff applying MSS to mission command workflows. Prerequisite: TM-30 (required). Duration: 3 days. |
-| TM-30 (Advanced Builder) | TM-40G — ORSA | For operational research and systems analysis specialists. Prerequisite: TM-30 (required). Duration: 5 days. |
-| TM-30 (Advanced Builder) | TM-40H — AI Engineer | For personnel building and maintaining AIP Logic workflows and AI-enabled products. Prerequisite: TM-30 (required). Duration: 5 days. |
-| TM-30 (Advanced Builder) | TM-40M — ML Engineer | For personnel developing machine learning pipelines and model integrations. Prerequisite: TM-30 (required). Duration: 5 days. |
-| TM-30 (Advanced Builder) | TM-40J — Program Manager | For data program managers coordinating MSS products and delivery. Prerequisite: TM-30 (required). Duration: 4 days. |
-| TM-30 (Advanced Builder) | TM-40K — Knowledge Manager | For knowledge managers structuring data products for organizational learning. Prerequisite: TM-30 (required). Duration: 4 days. |
-| TM-30 (Advanced Builder) | TM-40L — Software Engineer | For software engineers writing Python, PySpark, TypeScript, and OSDK integrations. Prerequisite: TM-30 (required). Duration: 5 days. |
-| TM-30 (Advanced Builder) | TM-40N — UI/UX Designer | For personnel designing user interfaces and user experience for MSS applications. Prerequisite: TM-30 (required). Duration: 5 days. |
-| TM-30 (Advanced Builder) | TM-40O — Platform Engineer | For personnel managing platform infrastructure, deployments, and environment configuration. Prerequisite: TM-30 (required). Duration: 5 days. |
-| TM-20 (Builder) | T3-F — MSC Force Multiplier | Half-day Unit Data Trainer certification. Prereq: TM-20 Go + commander nomination. Authorizes TM-10 delivery and TM-10 exam proctoring. |
-| TM-30 (Advanced Builder) | T3-I — Instructor Certification | 5-day instructor pipeline course. Prereq: TM-30 Go + C2DAO Training OIC selection. |
-| Any qualification level | TM-SL — Senior Leader | For senior leaders (O-5 / E-9+). Provides data-informed decision-making framework without technical prerequisites. Duration: 1 day. |
+| SL 1 (Operator) | SL 2 (Builder) | For personnel who have been granted builder access and will create pipelines, applications, or Ontology configurations. Prerequisite: SL 1. |
+| SL 2 (Builder) | SL 3 (Advanced Builder) | For personnel who will design complex multi-source pipelines, advanced Ontology models, and multi-page applications. Prerequisite: SL 2. |
+| SL 3 (Advanced Builder) | SL 4A — Intelligence WFF | For G2 / S2 staff applying MSS to intelligence workflows. Prerequisite: SL 3 (required). Duration: 3 days. |
+| SL 3 (Advanced Builder) | SL 4B — Fires WFF | For fire support personnel applying MSS to fires workflows. Prerequisite: SL 3 (required). Duration: 3 days. |
+| SL 3 (Advanced Builder) | SL 4C — Movement & Maneuver WFF | For G3 / S3 staff applying MSS to movement and maneuver workflows. Prerequisite: SL 3 (required). Duration: 3 days. |
+| SL 3 (Advanced Builder) | SL 4D — Sustainment WFF | For G4 / S4 staff applying MSS to logistics and sustainment workflows. Prerequisite: SL 3 (required). Duration: 3 days. |
+| SL 3 (Advanced Builder) | SL 4E — Protection WFF | For protection officers and NCOs applying MSS to force protection workflows. Prerequisite: SL 3 (required). Duration: 3 days. |
+| SL 3 (Advanced Builder) | SL 4F — Mission Command WFF | For G6 / S6 and command staff applying MSS to mission command workflows. Prerequisite: SL 3 (required). Duration: 3 days. |
+| SL 3 (Advanced Builder) | SL 4G — ORSA | For operational research and systems analysis specialists. Prerequisite: SL 3 (required). Duration: 5 days. |
+| SL 3 (Advanced Builder) | SL 4H — AI Engineer | For personnel building and maintaining AIP Logic workflows and AI-enabled products. Prerequisite: SL 3 (required). Duration: 5 days. |
+| SL 3 (Advanced Builder) | SL 4M — ML Engineer | For personnel developing machine learning pipelines and model integrations. Prerequisite: SL 3 (required). Duration: 5 days. |
+| SL 3 (Advanced Builder) | SL 4J — Program Manager | For data program managers coordinating MSS products and delivery. Prerequisite: SL 3 (required). Duration: 4 days. |
+| SL 3 (Advanced Builder) | SL 4K — Knowledge Manager | For knowledge managers structuring data products for organizational learning. Prerequisite: SL 3 (required). Duration: 4 days. |
+| SL 3 (Advanced Builder) | SL 4L — Software Engineer | For software engineers writing Python, PySpark, TypeScript, and OSDK integrations. Prerequisite: SL 3 (required). Duration: 5 days. |
+| SL 3 (Advanced Builder) | SL 4N — UI/UX Designer | For personnel designing user interfaces and user experience for MSS applications. Prerequisite: SL 3 (required). Duration: 5 days. |
+| SL 3 (Advanced Builder) | SL 4O — Platform Engineer | For personnel managing platform infrastructure, deployments, and environment configuration. Prerequisite: SL 3 (required). Duration: 5 days. |
+| SL 2 (Builder) | T3-F — MSC Force Multiplier | Half-day Unit Data Trainer certification. Prereq: SL 2 Go + commander nomination. Authorizes SL 1 delivery and SL 1 exam proctoring. |
+| SL 3 (Advanced Builder) | T3-I — Instructor Certification | 5-day instructor pipeline course. Prereq: SL 3 Go + C2DAO Training OIC selection. |
+| Any qualification level | EXEC — Senior Leader | For senior leaders (O-5 / E-9+). Provides data-informed decision-making framework without technical prerequisites. Duration: 1 day. |
 
-NOTE: Not every TM-10 graduate proceeds to TM-20. Most USAREUR-AF personnel require only TM-10 operator qualification to perform their duties. Builder access (TM-20 and above) is granted through chain-of-command request and requires explicit approval. If you believe your duties require builder access, speak with your unit data steward.
+NOTE: Not every SL 1 graduate proceeds to SL 2. Most USAREUR-AF personnel require only SL 1 operator qualification to perform their duties. Builder access (SL 2 and above) is granted through chain-of-command request and requires explicit approval. If you believe your duties require builder access, speak with your unit data steward.
 
 
 # CHAPTER 2 — ACCESSING MSS
@@ -497,7 +497,7 @@ EXAMPLE: SPC Caldwell in the 1st ABCT S4 shop needs the equipment readiness dash
 
 **BLUF:** Workshop is the main interface most MSS users will see every day. A developer in your unit or on the MSS team has built an application — a dashboard, a form, a report — and published it for your unit to use. You interact with it the same way you use any website: clicking, reading, filtering, and submitting forms. You do not need to understand how it was built.
 
-NOTE: You are using an application that a TM-20 builder created. If an application is missing a feature you need, is broken, or needs modification, do not attempt to edit it yourself. Contact your unit data steward and reference TM-20, Chapter 5 (Building Workshop Applications) as the appropriate level to address the issue.
+NOTE: You are using an application that a SL 2 builder created. If an application is missing a feature you need, is broken, or needs modification, do not attempt to edit it yourself. Contact your unit data steward and reference TM-20, Chapter 5 (Building Workshop Applications) as the appropriate level to address the issue.
 
 ---
 
@@ -673,7 +673,7 @@ WARNING: Do not submit data on behalf of another Soldier using your credentials 
 
 EXAMPLE: PFC Rodriguez is the readiness NCO for HHC, 2nd BCT in Vilseck. He submits the daily SITREP through the unit's Workshop SITREP application. He selects his unit from the dropdown, enters the readiness numbers for each status category, adds a remarks note, and clicks Submit. The green confirmation message "SITREP submitted successfully — 111845Z MAR 26" appears. He screenshots the confirmation for his records.
 
-NOTE: The action form you are submitting was configured by a TM-20 builder using the Ontology Manager. If an action is missing, not functioning correctly, or needs a new field, this is a TM-20 or TM-30 builder task. Report the issue to your data steward. Refer to TM-20, Chapter 4-2 (Ontology Manager Interface Overview) for builder-level action configuration. Complex multi-step action workflows are TM-30 level — refer to TM-30, Chapter 4, Section 4-4 (Action Design).
+NOTE: The action form you are submitting was configured by a SL 2 builder using the Ontology Manager. If an action is missing, not functioning correctly, or needs a new field, this is a SL 2 or SL 3 builder task. Report the issue to your data steward. Refer to TM-20, Chapter 4-2 (Ontology Manager Interface Overview) for builder-level action configuration. Complex multi-step action workflows are SL 3 level — refer to TM-30, Chapter 4, Section 4-4 (Action Design).
 
 ---
 
@@ -771,7 +771,7 @@ WARNING: AI-generated content in MSS is NOT authoritative and is NOT always corr
 
 **EQUIPMENT:** Active MSS session, Workshop application with AIP Logic workflow.
 
-NOTE: AIP Logic workflows are designed and configured by TM-30 advanced builders. You are using a workflow that has been built for you. If the workflow produces unexpected outputs, follow the human review steps in this task. If the workflow itself is broken or needs modification, report to your data steward — do not attempt to reconfigure it. For TM-30 builder reference, see TM-30, Chapter 6 (AIP Logic Configuration).
+NOTE: AIP Logic workflows are designed and configured by SL 3 advanced builders. You are using a workflow that has been built for you. If the workflow produces unexpected outputs, follow the human review steps in this task. If the workflow itself is broken or needs modification, report to your data steward — do not attempt to reconfigure it. For SL 3 builder reference, see TM-30, Chapter 6 (AIP Logic Configuration).
 
 **PROCEDURE:**
 
@@ -800,7 +800,7 @@ EXAMPLE: SGT Okonkwo is monitoring the readiness dashboard for 1-9 FA in Grafenw
 
 **EQUIPMENT:** Active MSS session, AIP Agent interface.
 
-NOTE: AIP Agents are AI interfaces designed for operator use, configured by TM-30 builders. Your role is to interact with the agent and validate its outputs before acting on them. If the agent produces consistently incorrect, outdated, or operationally unsound information, report to your data steward with screenshots or a summary of the issue. Do not alter the agent configuration. See TM-30, Chapter 6 for builder-level AIP configuration.
+NOTE: AIP Agents are AI interfaces designed for operator use, configured by SL 3 builders. Your role is to interact with the agent and validate its outputs before acting on them. If the agent produces consistently incorrect, outdated, or operationally unsound information, report to your data steward with screenshots or a summary of the issue. Do not alter the agent configuration. See TM-30, Chapter 6 for builder-level AIP configuration.
 
 **PROCEDURE:**
 
@@ -897,7 +897,7 @@ CAUTION: You are viewing a live preview of the dataset. Do not attempt to edit d
 6. Read the filtered result. The row count at the bottom of the table tells you how many records match.
 7. To clear a filter, click the "X" on the filter tag.
 
-NOTE: Contour is a read-only analysis tool — it does not modify the underlying dataset. For more advanced Contour analysis (aggregations, charts, saved analyses), see TM-20.
+NOTE: Contour is a read-only analysis tool — it does not modify the underlying dataset. For more advanced Contour analysis (aggregations, charts, saved analyses), see SL 2.
 
 CAUTION: Before sharing any Contour output, verify that the combined output does not reveal information at a higher classification than what you are authorized to share (see Aggregation Risk, Section 6-4).
 
@@ -921,7 +921,7 @@ EXAMPLE: SSG Kim at V Corps G4 needs to know how many Class IX parts requests ar
 4. To find a specific object, use the **filter panel**: click "Add Filter," select a property (e.g., "unit"), and enter the value (e.g., "1-7 CAV").
 5. Click any object in the list to open its **detail panel** on the right. Read the properties displayed.
 
-NOTE: Quiver shows data from the Ontology — the semantic layer of MSS that organizes data as real-world entities and their relationships. Objects in Quiver are the same records that power Workshop applications. For advanced Ontology exploration (link traversal, related objects, Object Type relationships), see TM-20.
+NOTE: Quiver shows data from the Ontology — the semantic layer of MSS that organizes data as real-world entities and their relationships. Objects in Quiver are the same records that power Workshop applications. For advanced Ontology exploration (link traversal, related objects, Object Type relationships), see SL 2.
 
 NOTE: Quiver is read-only for consumer users. You cannot edit properties or create objects from Quiver.
 
@@ -996,7 +996,7 @@ If you see data that appears incorrect — wrong unit, wrong number, a value tha
 
 CAUTION: Guessing at corrections, editing records outside of authorized interfaces, or working around incorrect data without reporting it degrades data integrity for everyone who uses that data downstream. One bad record can cascade into multiple bad reports.
 
-NOTE: Distinguish between data that looks wrong due to user error (operator-fixable) and systematic data quality problems (builder/engineer responsibility). Operator-fixable: wrong filter applied, stale view (refresh), user-level permissions issue. Escalate to data steward → TM-20 builder: pipeline configuration error, incorrect transform logic, broken data feed from a known source. Escalate to data steward → TM-30 advanced builder or TM-40 developer: systematic data corruption, incorrect schema mapping, validation failures at ingestion. Do not attempt to modify pipelines or datasets yourself. Refer to TM-30, Chapter 3 (Advanced Pipeline Builder) for builder-level pipeline diagnostic context.
+NOTE: Distinguish between data that looks wrong due to user error (operator-fixable) and systematic data quality problems (builder/engineer responsibility). Operator-fixable: wrong filter applied, stale view (refresh), user-level permissions issue. Escalate to data steward → SL 2 builder: pipeline configuration error, incorrect transform logic, broken data feed from a known source. Escalate to data steward → SL 3 advanced builder or SL 4 developer: systematic data corruption, incorrect schema mapping, validation failures at ingestion. Do not attempt to modify pipelines or datasets yourself. Refer to TM-30, Chapter 3 (Advanced Pipeline Builder) for builder-level pipeline diagnostic context.
 
 ---
 
@@ -1194,10 +1194,10 @@ NOTE: All actions you take in MSS — form submissions, data modifications, and 
 | "Access Denied" on a resource | You do not have permission for that resource | Contact data steward — do not attempt to access through alternate routes |
 | Session expired, kicked back to login | Normal session timeout | Log back in with your CAC — this is expected behavior |
 | Cannot see export button | Export not authorized for that application | Contact data steward — do not use other methods to extract data |
-| Application widget not displaying / action form broken | Workshop configuration error | Contact data steward → TM-20 builder (TM-20, Ch. 5) |
-| Data consistently wrong or missing across all users | Pipeline or transform issue | Contact data steward → TM-30 builder or TM-40 developer (TM-30, Ch. 3) |
-| AIP workflow producing wrong outputs | AIP Logic configuration | Contact data steward → TM-30 builder (TM-30, Ch. 6) |
-| Need new dataset, new Object Type, or new action | Build request | Contact data steward → TM-20 or TM-30 builder depending on complexity |
+| Application widget not displaying / action form broken | Workshop configuration error | Contact data steward → SL 2 builder (TM-20, Ch. 5) |
+| Data consistently wrong or missing across all users | Pipeline or transform issue | Contact data steward → SL 3 builder or SL 4 developer (TM-30, Ch. 3) |
+| AIP workflow producing wrong outputs | AIP Logic configuration | Contact data steward → SL 3 builder (TM-30, Ch. 6) |
+| Need new dataset, new Object Type, or new action | Build request | Contact data steward → SL 2 or SL 3 builder depending on complexity |
 
 ---
 
@@ -1287,7 +1287,7 @@ Collect the following before making contact:
 
 NOTE: Current phone numbers and email addresses for the USAREUR-AF MSS Help Desk and the C2DAO office are maintained by your unit S6/G6 and in your unit SOP. This manual does not list them because they change. Obtain current contact information before you need it.
 
-NOTE: The escalation path for MSS issues follows TM capability levels: (1) TM-10 (Operator) — self-diagnose using Chapter 7 of this manual; use the self-help checklist before escalating. (2) Data Steward — first point of escalation; the steward triages and routes. (3) TM-20 Builder — Workshop application issues, basic pipeline failures, Ontology configuration errors. (4) TM-30 Advanced Builder — complex pipeline design, Ontology architecture, AIP Logic configuration, multi-page application design. (5) TM-40 Developer (code required) — Python/PySpark transforms, TypeScript functions, OSDK development, Agent Studio. Refer to TM-20, Chapter 1 and TM-30, Chapter 1 for role descriptions at each level.
+NOTE: The escalation path for MSS issues follows TM capability levels: (1) SL 1 (Operator) — self-diagnose using Chapter 7 of this manual; use the self-help checklist before escalating. (2) Data Steward — first point of escalation; the steward triages and routes. (3) SL 2 Builder — Workshop application issues, basic pipeline failures, Ontology configuration errors. (4) SL 3 Advanced Builder — complex pipeline design, Ontology architecture, AIP Logic configuration, multi-page application design. (5) SL 4 Developer (code required) — Python/PySpark transforms, TypeScript functions, OSDK development, Agent Studio. Refer to TM-20, Chapter 1 and TM-30, Chapter 1 for role descriptions at each level.
 
 
 # APPENDIX A — QUICK REFERENCE CARD
@@ -1297,7 +1297,7 @@ NOTE: The escalation path for MSS issues follows TM capability levels: (1) TM-10
 ```
 ╔══════════════════════════════════════════════════════════════╗
 ║        MAVEN SMART SYSTEM (MSS) — OPERATOR QUICK REFERENCE        ║
-║                   TM-10 / USAREUR-AF                              ║
+║                   SL 1 / USAREUR-AF                              ║
 ╚══════════════════════════════════════════════════════════════╝
 
 ━━━ 1. LOG IN ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1395,7 +1395,7 @@ Policy questions → USAREUR-AF C2DAO (via chain of command)
 
 ---
 
-*TM-10 — Maven Smart System (MSS) Operator Technical Manual*
+*SL 1 — Maven Smart System (MSS) Operator Technical Manual*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA, Wiesbaden, Germany*
 *2026*
 *For corrections or updates, contact the USAREUR-AF Operational Data Team through your unit data steward or the C2DAO office.*

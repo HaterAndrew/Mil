@@ -1,18 +1,18 @@
-# COURSE SYLLABUS — TM-20: BUILDER
+# COURSE SYLLABUS — SL 2: BUILDER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Level** | TM-20 (Builder — all staff) |
+| **Level** | SL 2 (Builder — all staff) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisite** | TM-10 complete (Go evaluation on file) |
+| **Prerequisite** | SL 1 complete (Go evaluation on file) |
 | **Audience** | All staff assigned to build or maintain MSS data products |
 | **Format** | Instructor-led lab + practical exercise |
 | **Location** | MSS Training Environment |
 
 ---
 
-**BLUF:** TM-20 teaches you to build real, deployable data products — SITREP trackers, readiness dashboards, equipment status boards. After this course you can create Foundry projects, ingest data through Pipeline Builder, define Object Types and Link Types, configure Actions, and publish Workshop applications. By Day 5 you are building from memory, not following steps.
+**BLUF:** SL 2 teaches you to build real, deployable data products — SITREP trackers, readiness dashboards, equipment status boards. After this course you can create Foundry projects, ingest data through Pipeline Builder, define Object Types and Link Types, configure Actions, and publish Workshop applications. By Day 5 you are building from memory, not following steps.
 
 ---
 
@@ -39,7 +39,7 @@
 
 Complete **5+ duty days before Day 1:**
 
-- [ ] Request **Builder access** in the MSS Training Environment from your unit MSS Administrator (standard Viewer access from TM-10 is insufficient)
+- [ ] Request **Builder access** in the MSS Training Environment from your unit MSS Administrator (standard Viewer access from SL 1 is insufficient)
 - [ ] Confirm CAC and PIV PIN work on the MSS-connected workstation
 - [ ] Read TM-20, Chapter 1 (Introduction, Safety Summary, Prerequisite Review) — 20 min
 - [ ] Read TM-20, Chapter 2 (Project Setup and Naming Conventions) — 15 min
@@ -54,7 +54,7 @@ Complete **5+ duty days before Day 1:**
 
 | Time | Block | Method | Content |
 |---|---|---|---|
-| 0800–0830 | — | Brief | TM-20 overview; what you will build by Day 5; course standards and Go criteria |
+| 0800–0830 | — | Brief | SL 2 overview; what you will build by Day 5; course standards and Go criteria |
 | 0830–1000 | 1 | Lab | Project creation: naming conventions, classification markings, folder structure |
 | 1000–1015 | — | Break | |
 | 1015–1100 | 2 | Lab | File ingestion: upload a CSV; inspect schema, types, and row count |
@@ -190,7 +190,7 @@ Pipeline must run to completion. Workshop must load for a Viewer-role user with 
 | **No-Go — Viewer account can modify data** | Critical security finding. Review TM-20, Chapter 6 (access control). Must correct before any re-evaluation attempt. Report to unit data steward. |
 | **No-Go — missing promotion description** | Review TM-20, Chapter 7. Same-day retry authorized at instructor discretion for this item only. |
 
-Full re-evaluation requires scheduling through the unit training coordinator. Same-day retry on isolated items is at instructor discretion only — not automatic. TM-20 qualification cannot be self-certified.
+Full re-evaluation requires scheduling through the unit training coordinator. Same-day retry on isolated items is at instructor discretion only — not automatic. SL 2 qualification cannot be self-certified.
 
 ---
 
@@ -210,22 +210,22 @@ Full re-evaluation requires scheduling through the unit training coordinator. Sa
 
 ## Continuation
 
-TM-20 completion qualifies personnel to advance to TM-30 (Advanced Builder). **All TM-40 tracks — both WFF (A–F) and Specialist (G–O) — require TM-30 completion before enrollment.** TM-30 is a hard prerequisite — no waivers — for every TM-40 track. Confirm completion with your unit training coordinator before registering.
+SL 2 completion qualifies personnel to advance to SL 3 (Advanced Builder). **All SL 4 tracks — both WFF (A–F) and Specialist (G–O) — require SL 3 completion before enrollment.** SL 3 is a hard prerequisite — no waivers — for every SL 4 track. Confirm completion with your unit training coordinator before registering.
 
 | Path | Track | Prerequisite | Who |
 |---|---|---|---|
-| **Advanced Builder** | TM-30 | TM-20 (this course) — hard prerequisite, no waivers | All personnel proceeding to any TM-40 track |
-| **WFF — Intelligence** | TM-40A | TM-30 (required) | G2/S2 staff, targeting officers, all-source analysts |
-| **WFF — Fires** | TM-40B | TM-30 (required) | FSOs, FSEs, targeting officers, fires NCOs |
-| **WFF — Movement & Maneuver** | TM-40C | TM-30 (required) | G3/S3 staff, operations officers, maneuver planners |
-| **WFF — Sustainment** | TM-40D | TM-30 (required) | G4/S4 staff, logistics officers, supply chain managers |
-| **WFF — Protection** | TM-40E | TM-30 (required) | FP officers, CBRN officers, provost marshal staff |
-| **WFF — Mission Command** | TM-40F | TM-30 (required) | Battle captains, XOs, CDRs, MC-function staff |
-| **Specialist path** | TM-40G–O (via TM-30) | TM-30 (required) | Data analysts, 17/25-series, ORSA, AI/ML, PM, KM, SWE |
+| **Advanced Builder** | SL 3 | SL 2 (this course) — hard prerequisite, no waivers | All personnel proceeding to any SL 4 track |
+| **WFF — Intelligence** | SL 4A | SL 3 (required) | G2/S2 staff, targeting officers, all-source analysts |
+| **WFF — Fires** | SL 4B | SL 3 (required) | FSOs, FSEs, targeting officers, fires NCOs |
+| **WFF — Movement & Maneuver** | SL 4C | SL 3 (required) | G3/S3 staff, operations officers, maneuver planners |
+| **WFF — Sustainment** | SL 4D | SL 3 (required) | G4/S4 staff, logistics officers, supply chain managers |
+| **WFF — Protection** | SL 4E | SL 3 (required) | FP officers, CBRN officers, provost marshal staff |
+| **WFF — Mission Command** | SL 4F | SL 3 (required) | Battle captains, XOs, CDRs, MC-function staff |
+| **Specialist path** | SL 4G–O (via SL 3) | SL 3 (required) | Data analysts, 17/25-series, ORSA, AI/ML, PM, KM, SWE |
 
-All TM-40 tracks — WFF (TM-40A–F) and Specialist (TM-40G–O) — require **TM-30** as a hard prerequisite. Specialist tracks (TM-40G–O) additionally require code-level preparation per their individual syllabi.
+All SL 4 tracks — WFF (SL 4A–F) and Specialist (SL 4G–O) — require **SL 3** as a hard prerequisite. Specialist tracks (SL 4G–O) additionally require code-level preparation per their individual syllabi.
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*Syllabus TM-20 | Version 2.0 | March 2026*
+*Syllabus SL 2 | Version 2.0 | March 2026*

@@ -1,12 +1,12 @@
-# PRE-TEST — TM-50H: ADVANCED AI ENGINEER
+# PRE-TEST — SL 5H: ADVANCED AI ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-50H: Advanced AI Engineer |
+| **Course** | SL 5H: Advanced AI Engineer |
 | **Form** | Pre-Test |
-| **Level** | TM-50H (Advanced Specialist) |
-| **Audience** | Senior AI engineers; prerequisite: TM-40H + production AI experience |
+| **Level** | SL 5H (Advanced Specialist) |
+| **Audience** | Senior AI engineers; prerequisite: SL 4H + production AI experience |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
@@ -64,7 +64,7 @@ B. Re-running the embedding model to update document vectors
 C. A post-retrieval step that reorders candidate documents by relevance quality before injecting them into the prompt context
 D. The process of removing low-quality documents from the corpus
 
-**7. Adversarial prompt injection testing in TM-50H must be conducted:**
+**7. Adversarial prompt injection testing in SL 5H must be conducted:**
 
 A. In the production environment to test real-world resilience
 B. Only by red team personnel with SECRET clearance

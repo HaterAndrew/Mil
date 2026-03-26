@@ -1,10 +1,10 @@
 # TM-50O — MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** TM-50O qualifies advanced platform engineers to manage multi-cluster fleets, implement platform reliability engineering (SRE practices), automate RMF/ATO compliance, and design developer experience systems that accelerate application delivery across the MSS portfolio. This manual extends TM-40O from single-cluster operations to enterprise platform leadership.
-> **Prereqs:** TM-40O, Platform Engineer (required, Go evaluation on file); demonstrated operational experience managing MSS infrastructure from TM-40O practical exercise or operational assignment; CONCEPTS_GUIDE_TM50O_PLATFORM_ENGINEER_ADVANCED (read before this manual)
+> **Forward:** SL 5O qualifies advanced platform engineers to manage multi-cluster fleets, implement platform reliability engineering (SRE practices), automate RMF/ATO compliance, and design developer experience systems that accelerate application delivery across the MSS portfolio. This manual extends SL 4O from single-cluster operations to enterprise platform leadership.
+> **Prereqs:** SL 4O, Platform Engineer (required, Go evaluation on file); demonstrated operational experience managing MSS infrastructure from SL 4O practical exercise or operational assignment; CONCEPTS_GUIDE_TM50O_PLATFORM_ENGINEER_ADVANCED (read before this manual)
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
-> **WARNING: Fleet-level platform decisions at TM-50O level affect every cluster, every application, and every user across the MSS ecosystem simultaneously. A misconfigured fleet-wide policy, a botched cluster upgrade, or a broken cross-domain replication has theater-wide blast radius. Validate changes on canary clusters before fleet-wide rollout. Maintain rollback capability at every level.**
+> **WARNING: Fleet-level platform decisions at SL 5O level affect every cluster, every application, and every user across the MSS ecosystem simultaneously. A misconfigured fleet-wide policy, a botched cluster upgrade, or a broken cross-domain replication has theater-wide blast radius. Validate changes on canary clusters before fleet-wide rollout. Maintain rollback capability at every level.**
 > **CAUTION: Fleet management credentials and cross-domain replication keys are the highest-value secrets in the MSS infrastructure. Compromise enables access across classification boundaries. Store, rotate, and audit these credentials with extreme rigor. Report any suspected compromise immediately to ISSM, S6/G6, and C2DAO.**
 
 ## Table of Contents
@@ -16,7 +16,7 @@
 - [CHAPTER 5 — DEVELOPER EXPERIENCE ENGINEERING](#chapter-5--developer-experience-engineering)
 - [CHAPTER 6 — PLATFORM OBSERVABILITY AT SCALE](#chapter-6--platform-observability-at-scale)
 - [APPENDIX A — REFERENCES](#appendix-a--references)
-- [APPENDIX B — PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION](#appendix-b--peer-tm-50-cross-references-and-wff-integration)
+- [APPENDIX B — PEER SL 5 CROSS-REFERENCES AND WFF INTEGRATION](#appendix-b--peer-tm-50-cross-references-and-wff-integration)
 
 ---
 
@@ -24,19 +24,19 @@
 
 ### 1-1. Advanced Platform Engineer Manual
 
-**BLUF:** TM-50O extends TM-40O from building and operating individual clusters to managing the fleet — the collection of clusters, environments, and infrastructure services that constitute the MSS platform across the USAREUR-AF AOR.
+**BLUF:** SL 5O extends SL 4O from building and operating individual clusters to managing the fleet — the collection of clusters, environments, and infrastructure services that constitute the MSS platform across the USAREUR-AF AOR.
 
-This manual provides task-based instruction for advanced platform engineers operating on the Maven Smart System (MSS). TM-50O personnel architect multi-cluster topologies, define service level objectives, automate compliance, and engineer the developer experience that enables application teams to deliver at speed.
+This manual provides task-based instruction for advanced platform engineers operating on the Maven Smart System (MSS). SL 5O personnel architect multi-cluster topologies, define service level objectives, automate compliance, and engineer the developer experience that enables application teams to deliver at speed.
 
-**TM-50O covers** multi-cluster fleet management (Cluster API, fleet topology, lifecycle management, upgrade strategies); platform reliability engineering (SLOs, SLIs, error budgets, incident management, capacity planning); RMF/ATO automation (continuous compliance monitoring, automated evidence generation, STIG automation); developer experience engineering (golden paths, self-service portals, internal tooling, developer productivity measurement); cross-domain infrastructure (cross-domain solutions, data diode integration, multi-classification cluster management); and platform observability at scale (distributed tracing, log aggregation, metric federation, alerting strategy).
+**SL 5O covers** multi-cluster fleet management (Cluster API, fleet topology, lifecycle management, upgrade strategies); platform reliability engineering (SLOs, SLIs, error budgets, incident management, capacity planning); RMF/ATO automation (continuous compliance monitoring, automated evidence generation, STIG automation); developer experience engineering (golden paths, self-service portals, internal tooling, developer productivity measurement); cross-domain infrastructure (cross-domain solutions, data diode integration, multi-classification cluster management); and platform observability at scale (distributed tracing, log aggregation, metric federation, alerting strategy).
 
-**TM-50O does NOT cover** single-cluster Kubernetes fundamentals — see TM-40O; CI/CD pipeline basics — see TM-40O; application-level architecture — see TM-50L; or individual application design — see TM-40N, TM-50N.
+**SL 5O does NOT cover** single-cluster Kubernetes fundamentals — see SL 4O; CI/CD pipeline basics — see SL 4O; application-level architecture — see SL 5L; or individual application design — see SL 4N, SL 5N.
 
 ### 1-2. Curriculum Position
 
-**Prerequisite:** TM-40O (Platform Engineer) is REQUIRED with Go evaluation on file. Demonstrated operational experience managing MSS infrastructure (from TM-40O practical exercise or operational assignment).
+**Prerequisite:** SL 4O (Platform Engineer) is REQUIRED with Go evaluation on file. Demonstrated operational experience managing MSS infrastructure (from SL 4O practical exercise or operational assignment).
 
-**Peer advanced tracks:** Coordinate with TM-50L (Advanced SWE) on the platform-application boundary — where does the platform's responsibility end and the application's begin? Coordinate with TM-50J (Advanced PM) on platform roadmap prioritization. Coordinate with TM-50N (Advanced UI/UX) on platform-wide performance budgets and design system hosting.
+**Peer advanced tracks:** Coordinate with SL 5L (Advanced SWE) on the platform-application boundary — where does the platform's responsibility end and the application's begin? Coordinate with SL 5J (Advanced PM) on platform roadmap prioritization. Coordinate with SL 5N (Advanced UI/UX) on platform-wide performance budgets and design system hosting.
 
 ---
 
@@ -63,7 +63,7 @@ This manual provides task-based instruction for advanced platform engineers oper
 
 **Fleet management responsibilities:**
 
-| Responsibility | Single Cluster (TM-40O) | Fleet (TM-50O) |
+| Responsibility | Single Cluster (SL 4O) | Fleet (SL 5O) |
 |----------------|------------------------|-----------------|
 | Provisioning | Provision one cluster | Define cluster templates; provision fleets declaratively |
 | Upgrades | Upgrade one cluster | Rolling upgrade strategy across fleet; canary cluster validation |
@@ -105,7 +105,7 @@ Wave 4: High-sensitivity clusters (last, most cautious)
 
 ### 2-4. Disaster Recovery and Business Continuity (DR/BC)
 
-**BLUF:** A fleet that cannot recover from catastrophic failure is a single point of failure at theater scale. DR/BC planning at TM-50O level addresses loss of entire clusters, regions, or data centers — not individual pod failures.
+**BLUF:** A fleet that cannot recover from catastrophic failure is a single point of failure at theater scale. DR/BC planning at SL 5O level addresses loss of entire clusters, regions, or data centers — not individual pod failures.
 
 **RTO/RPO targets by service tier:**
 
@@ -298,7 +298,7 @@ STIG benchmark (DISA) → Policy-as-code (OPA/InSpec/SCAP) → Automated scan �
 
 ### 5-3. Self-Service Portal Design
 
-**BLUF:** The self-service portal is the Platform Engineer's product UI. It should follow the same design principles (TM-40N/50N) as any MSS application.
+**BLUF:** The self-service portal is the Platform Engineer's product UI. It should follow the same design principles (SL 4N/SL 5N) as any MSS application.
 
 **Portal capabilities:**
 - Environment provisioning (create/destroy dev/staging environments)
@@ -342,10 +342,10 @@ STIG benchmark (DISA) → Policy-as-code (OPA/InSpec/SCAP) → Automated scan �
 
 | Reference | Relevance |
 |-----------|-----------|
-| TM-40O — Platform Engineer | Prerequisite; single-cluster operations |
-| TM-50L — Advanced Software Engineer | Platform-application boundary coordination |
-| TM-50J — Advanced Program Manager | Platform roadmap prioritization |
-| TM-50N — Advanced UI/UX Designer | Platform portal design, performance budgets |
+| SL 4O — Platform Engineer | Prerequisite; single-cluster operations |
+| SL 5L — Advanced Software Engineer | Platform-application boundary coordination |
+| SL 5J — Advanced Program Manager | Platform roadmap prioritization |
+| SL 5N — Advanced UI/UX Designer | Platform portal design, performance budgets |
 | NIST SP 800-37 (RMF) | Risk Management Framework |
 | NIST SP 800-53 | Security and Privacy Controls |
 | DISA STIGs | Security hardening standards |
@@ -355,18 +355,18 @@ STIG benchmark (DISA) → Policy-as-code (OPA/InSpec/SCAP) → Automated scan �
 
 ---
 
-## APPENDIX B — PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION
+## APPENDIX B — PEER SL 5 CROSS-REFERENCES AND WFF INTEGRATION
 
-**Peer TM-50 Publications.** Advanced Platform Engineers should coordinate with practitioners in these companion advanced-track publications rather than operating in isolation.
+**Peer SL 5 Publications.** Advanced Platform Engineers should coordinate with practitioners in these companion advanced-track publications rather than operating in isolation.
 
 | Publication | Track | Coordination Point |
 |---|---|---|
-| TM-50G | Advanced ORSA | Infrastructure for analytical workloads; compute scaling for simulation and optimization pipelines |
-| TM-50H | Advanced AI Engineer | GPU provisioning; AI/ML deployment pipelines; model serving infrastructure; inference endpoint management |
-| TM-50M | Advanced ML Engineer | ML training infrastructure; experiment tracking hosting; model registry; feature store infrastructure |
-| TM-50J | Advanced Program Manager | Platform roadmap prioritization; infrastructure cost reporting for portfolio decisions; capacity planning |
-| TM-50K | Advanced Knowledge Manager | Knowledge system hosting; search infrastructure; content delivery and indexing at scale |
-| TM-50L | Advanced Software Engineer | Platform-application boundary; shared service infrastructure; CI/CD pipeline architecture; deployment tooling |
-| TM-50N | Advanced UI/UX Designer | Platform portal design; performance budgets affecting design patterns; design system hosting and CDN |
+| SL 5G | Advanced ORSA | Infrastructure for analytical workloads; compute scaling for simulation and optimization pipelines |
+| SL 5H | Advanced AI Engineer | GPU provisioning; AI/ML deployment pipelines; model serving infrastructure; inference endpoint management |
+| SL 5M | Advanced ML Engineer | ML training infrastructure; experiment tracking hosting; model registry; feature store infrastructure |
+| SL 5J | Advanced Program Manager | Platform roadmap prioritization; infrastructure cost reporting for portfolio decisions; capacity planning |
+| SL 5K | Advanced Knowledge Manager | Knowledge system hosting; search infrastructure; content delivery and indexing at scale |
+| SL 5L | Advanced Software Engineer | Platform-application boundary; shared service infrastructure; CI/CD pipeline architecture; deployment tooling |
+| SL 5N | Advanced UI/UX Designer | Platform portal design; performance budgets affecting design patterns; design system hosting and CDN |
 
-**WFF Operational Consumer Note.** Platform infrastructure built by TM-50O engineers supports every application that serves the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). When a cluster goes down, a G2 intelligence dashboard goes dark. When a fleet-wide upgrade introduces a regression, every WFF track is affected simultaneously. When compliance lapses and the ATO is suspended, the entire operational data environment goes offline. The reliability, compliance, and DR/BC questions addressed in TM-50O must be answered in terms of the operational impact on WFF consumers who depend on platform availability to execute their missions.
+**WFF Operational Consumer Note.** Platform infrastructure built by SL 5O engineers supports every application that serves the six Warfighting Function (WFF) tracks: Intelligence (SL 4A), Fires (SL 4B), Movement and Maneuver (SL 4C), Sustainment (SL 4D), Protection (SL 4E), and Mission Command (SL 4F). When a cluster goes down, a G2 intelligence dashboard goes dark. When a fleet-wide upgrade introduces a regression, every WFF track is affected simultaneously. When compliance lapses and the ATO is suspended, the entire operational data environment goes offline. The reliability, compliance, and DR/BC questions addressed in SL 5O must be answered in terms of the operational impact on WFF consumers who depend on platform availability to execute their missions.

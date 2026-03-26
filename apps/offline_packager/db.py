@@ -58,7 +58,7 @@ class PackageRecord(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     created_at = Column(DateTime, nullable=False, default=lambda: datetime.now(UTC))
-    selected_tms = Column(JSON, nullable=False)  # ["TM-10", "TM-20", ...]
+    selected_tms = Column(JSON, nullable=False)  # ["SL 1", "SL 2", ...]
     all_tms = Column(JSON, nullable=False)        # includes auto-resolved prereqs
     total_items = Column(Integer, nullable=False, default=0)
     size_kb = Column(Integer, nullable=False, default=0)

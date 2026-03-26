@@ -1,6 +1,6 @@
 # Training Readiness Tracker
 
-Track soldier/unit completion across the MSS TM-10 → TM-50L prereq chain.
+Track soldier/unit completion across the MSS SL 1 → SL 5L prereq chain.
 
 ## Quick Start
 
@@ -32,11 +32,11 @@ dodid,last_name,first_name,rank,unit,mos
 **Completions CSV:**
 ```
 dodid,course_id,result,evaluation_date,evaluator_name
-1234567890,TM-10,GO,2026-01-15,MAJ SMITH
+1234567890,SL 1,GO,2026-01-15,MAJ SMITH
 ```
 
 ## Notes
 
 - DODID is PII — the `.db` file is gitignored and never committed
-- Prereq enforcement is **hard**: cannot record a GO for TM-40 without TM-30 GO
-- FBC is a parallel track off TM-20; does NOT satisfy TM-30 prereq
+- Prereq enforcement is **hard**: cannot record a GO for SL 4 without SL 3 GO
+- FBC is a parallel track off SL 2; does NOT satisfy SL 3 prereq

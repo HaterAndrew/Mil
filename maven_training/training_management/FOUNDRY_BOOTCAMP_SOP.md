@@ -15,9 +15,9 @@
 
 ## OVERVIEW
 
-The Foundry Bootcamp (FBC) is a quarterly 5-day supervised build event. It operates **outside the TM-10 through TM-50 training sequence** — it is not a TM course, does not grant TM credit, and has no place in the TM prereq chain. It is a separate, optional program for personnel who hold TM-20 qualification and have a validated operational problem to build.
+The Foundry Bootcamp (FBC) is a quarterly 5-day supervised build event. It operates **outside the SL 1 through SL 5 training sequence** — it is not a TM course, does not grant TM credit, and has no place in the TM prereq chain. It is a separate, optional program for personnel who hold SL 2 qualification and have a validated operational problem to build.
 
-**FBC is not a substitute for TM-30.** Personnel who need structured instruction on advanced platform skills should enroll in TM-30. FBC assumes participants already operate at TM-20 level.
+**FBC is not a substitute for SL 3.** Personnel who need structured instruction on advanced platform skills should enroll in SL 3. FBC assumes participants already operate at SL 2 level.
 
 ---
 
@@ -40,11 +40,11 @@ Specific dates are published 90+ days in advance. Units plan Project Brief submi
 
 ### Step 1: Unit Identifies Candidate
 
-Unit commander or Training NCO/Officer identifies a TM-20 qualified Soldier or Civilian with an operational problem suitable for FBC. Confirm:
+Unit commander or Training NCO/Officer identifies a SL 2 qualified Soldier or Civilian with an operational problem suitable for FBC. Confirm:
 
-- TM-10 and TM-20 Go evaluations on file
+- SL 1 and SL 2 Go evaluations on file
 - An operational problem that produces a tangible Foundry product
-- No code required (Python, TypeScript, OSDK) — if yes, route to TM-40 specialist enrollment instead
+- No code required (Python, TypeScript, OSDK) — if yes, route to SL 4 specialist enrollment instead
 - Data access can be confirmed before bootcamp Day 1
 
 ### Step 2: Project Brief Preparation
@@ -64,7 +64,7 @@ Unit Training NCO/Officer submits to C2DAO Training Division:
 
 - Enrollment Request (standard enrollment form — CAD Appendix A)
 - Project Brief (FBC_GUIDE.md Appendix A)
-- TM-10 and TM-20 Go records
+- SL 1 and SL 2 Go records
 
 **Enrollment deadline:** T-21 days before bootcamp Day 1.
 
@@ -74,9 +74,9 @@ C2DAO Training Division reviews the Project Brief within 5 duty days of receipt:
 
 | Review criterion | Pass condition |
 |---|---|
-| TM-20 prereq verified | Go records on file |
+| SL 2 prereq verified | Go records on file |
 | Problem statement clear | Specific output and named consumer |
-| Scope feasible | Prototype achievable in 5 days at TM-20/30 skill level |
+| Scope feasible | Prototype achievable in 5 days at SL 2/30 skill level |
 | Data access confirmed | All sources listed as CONFIRMED by candidate |
 | No code requirements | No Python/TypeScript/OSDK work in scope |
 
@@ -137,7 +137,7 @@ Within 5 duty days of bootcamp close:
 | Evaluation records completed and filed | Evaluator → C2DAO Training Division |
 | Go notifications sent to participants and unit Training NCOs/Officers | C2DAO Training Division |
 | No-Go counseling and remediation documentation | Evaluator + Coordinator |
-| TM-40 redirect recommendations forwarded to unit Training NCOs/Officers | Evaluator |
+| SL 4 redirect recommendations forwarded to unit Training NCOs/Officers | Evaluator |
 | Bootcamp after-action report submitted | Coordinator |
 | Production promotion coordination for any bootcamp products ready for promotion | Coordinator + unit Data Steward |
 
@@ -157,9 +157,9 @@ Within 5 duty days of bootcamp close:
 
 ## WAIVERS
 
-**Waiver of TM-20 prereq:** Not granted. TM-20 is the floor. Personnel without TM-20 Go on file are not eligible for FBC and should be enrolled in TM-20 first.
+**Waiver of SL 2 prereq:** Not granted. SL 2 is the floor. Personnel without SL 2 Go on file are not eligible for FBC and should be enrolled in SL 2 first.
 
-**Waiver of Project Brief:** Not granted. FBC without a validated project is a TM-30 equivalency request — that is a different program. Route to TM-30 enrollment.
+**Waiver of Project Brief:** Not granted. FBC without a validated project is a SL 3 equivalency request — that is a different program. Route to SL 3 enrollment.
 
 **Waiver of T-14 day brief deadline:** May be granted at C2DAO discretion for cases where a validated operational problem emerges after the normal deadline. Requires evaluator confirmation that the project meets all scope criteria and data access is confirmed. Late briefs accepted no later than T-5 days.
 
@@ -169,11 +169,11 @@ Within 5 duty days of bootcamp close:
 
 | Question | Answer |
 |---|---|
-| Does FBC count toward TM-30 credit? | No |
-| Does FBC unlock TM-40 enrollment? | No |
+| Does FBC count toward SL 3 credit? | No |
+| Does FBC unlock SL 4 enrollment? | No |
 | Does FBC appear in a training record? | Yes — as a separate event type; not as a TM course completion |
-| Can a TM-30 graduate attend FBC? | Yes — TM-30 graduates with a validated project may attend |
-| Can a TM-40 graduate attend FBC? | Yes — any TM-20+ qualified builder with a validated project may attend |
+| Can a SL 3 graduate attend FBC? | Yes — SL 3 graduates with a validated project may attend |
+| Can a SL 4 graduate attend FBC? | Yes — any SL 2+ qualified builder with a validated project may attend |
 
 ---
 

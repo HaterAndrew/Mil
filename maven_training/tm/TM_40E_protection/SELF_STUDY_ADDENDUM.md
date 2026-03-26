@@ -1,4 +1,4 @@
-# Self-Study Addendum — TM-40E: Protection Warfighting Function
+# Self-Study Addendum — SL 4E: Protection Warfighting Function
 ## Palantir Developers Reference Library
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.

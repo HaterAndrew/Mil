@@ -23,8 +23,8 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 HTML_FILE = REPO_ROOT / "maven_training" / "mss_info_app" / "index.html"
 TSX_DIR = REPO_ROOT / "maven_training" / "mss_widget" / "src" / "panels"
 
-# Course code pattern (TM-10, TM-40G, FBC, TM-SL, etc.)
-_COURSE_RE = re.compile(r"\bTM[-\s]?\d{2}[A-O]?\b|\bFBC\b|\bTM[-\s]?SL\b")
+# Course code pattern (SL 1, SL 4G, FBC, EXEC, etc.)
+_COURSE_RE = re.compile(r"\bSL\s?\d[A-O]?\b|\bFBC\b|\bEXEC\b")
 
 # Classes that hold structural content (titles, badges — should match exactly)
 TITLE_CLASSES = {"section-badge", "section-title"}
@@ -133,7 +133,7 @@ def _norm(s: str) -> str:
     s = re.sub(r"&[a-zA-Z]+;|&#\d+;", " ", s)        # HTML entities
     s = re.sub(r"\{[^}]*\}", "", s)                     # JSX expressions
     s = re.sub(r"Open PDF\s*→?", "", s)                 # PDF link text
-    s = re.sub(r"View TM-\d+\s*Series", "", s)          # Nav link text
+    s = re.sub(r"View SL\s?\d\s*Series", "", s)           # Nav link text
     s = re.sub(r"[•·|→←]", " ", s)                      # bullet/arrow chars
     s = re.sub(r"\s+", " ", s).strip()
     return s
@@ -143,8 +143,8 @@ def _extract_courses(texts: list[str]) -> set[str]:
     """Pull all TM-XX course codes from a list of text strings."""
     codes: set[str] = set()
     for t in texts:
-        # Normalize TM 40G → TM-40G
-        normalized = re.sub(r"TM\s+", "TM-", t)
+        # Normalize SL 4G → SL 4G (already correct format)
+        normalized = t
         codes.update(m.replace(" ", "-") for m in _COURSE_RE.findall(normalized))
     return codes
 

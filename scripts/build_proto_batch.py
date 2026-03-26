@@ -225,7 +225,7 @@ def update_title_chrome(slide, title_lines: list[str], poc: str,
 
 PROGRESSION_CARDS = [
     {
-        "tm":       "TM-10",
+        "tm":       "SL 1",
         "title":    "MAVEN USER",
         "audience": "ALL PERSONNEL",
         "target":   "Every Soldier, Officer & Civilian",
@@ -239,11 +239,11 @@ PROGRESSION_CARDS = [
         ],
     },
     {
-        "tm":       "TM-20",
+        "tm":       "SL 2",
         "title":    "BUILDER",
         "audience": "ALL STAFF",
         "target":   "Light Builders  (no coding required)",
-        "prereq":   "Prereq: TM-10",
+        "prereq":   "Prereq: SL 1",
         "bullets":  [
             "Build Workshop dashboards",
             "Create no-code transforms",
@@ -253,11 +253,11 @@ PROGRESSION_CARDS = [
         ],
     },
     {
-        "tm":       "TM-30",
+        "tm":       "SL 3",
         "title":    "ADVANCED BUILDER",
         "audience": "DATA-ADJACENT SPECIALISTS",
         "target":   "17/25-series · S6/G6 · G2",
-        "prereq":   "Prereq: TM-20",
+        "prereq":   "Prereq: SL 2",
         "bullets":  [
             "Author Python/SQL transforms",
             "Model ontology object types",
@@ -282,9 +282,9 @@ def build_progression_content(slide):
     X_START = 0.20
 
     card_x = [
-        X_START,                        # TM-10
-        X_START + W_CARD + W_ARR,       # TM-20
-        X_START + 2*(W_CARD + W_ARR),   # TM-30
+        X_START,                        # SL 1
+        X_START + W_CARD + W_ARR,       # SL 2
+        X_START + 2*(W_CARD + W_ARR),   # SL 3
     ]
     x_spec = X_START + 3*W_CARD + 3*W_ARR  # specialist panel
 
@@ -347,27 +347,27 @@ def build_progression_content(slide):
              "SPECIALIST TRACKS", font_size=11, bold=True, color=WHITE,
              align=PP_ALIGN.CENTER, wrap=False)
 
-    # TM-40 section
+    # SL 4 section
     rect(slide, x + 0.06, Y0 + 0.56, W_SPEC - 0.12, 0.24, NAVY)
     text_box(slide, x + 0.10, Y0 + 0.58, W_SPEC - 0.20, 0.20,
-             "TM-40 SERIES  (Prereq: TM-30)", font_size=8, bold=True,
+             "SL 4 SERIES  (Prereq: SL 3)", font_size=8, bold=True,
              color=WHITE, wrap=False)
 
     wff_tracks = [
-        ("TM-40A", "Intelligence"),
-        ("TM-40B", "Fires"),
-        ("TM-40C", "Movement & Maneuver"),
-        ("TM-40D", "Sustainment"),
-        ("TM-40E", "Protection"),
-        ("TM-40F", "Mission Command"),
+        ("SL 4A", "Intelligence"),
+        ("SL 4B", "Fires"),
+        ("SL 4C", "Movement & Maneuver"),
+        ("SL 4D", "Sustainment"),
+        ("SL 4E", "Protection"),
+        ("SL 4F", "Mission Command"),
     ]
     spec_tracks = [
-        ("TM-40G", "ORSA"),
-        ("TM-40H", "AI Engineer"),
-        ("TM-40M", "ML Engineer"),
-        ("TM-40J", "Program Manager"),
-        ("TM-40K", "Knowledge Manager"),
-        ("TM-40L", "Software Engineer"),
+        ("SL 4G", "ORSA"),
+        ("SL 4H", "AI Engineer"),
+        ("SL 4M", "ML Engineer"),
+        ("SL 4J", "Program Manager"),
+        ("SL 4K", "Knowledge Manager"),
+        ("SL 4L", "Software Engineer"),
     ]
     all_tracks = wff_tracks + spec_tracks
     ty = Y0 + 0.84
@@ -381,13 +381,13 @@ def build_progression_content(slide):
     # Divider
     rect(slide, x + 0.06, ty + 0.02, W_SPEC - 0.12, 0.02, NAVY_MID)
 
-    # TM-50 section
+    # SL 5 section
     rect(slide, x + 0.06, ty + 0.08, W_SPEC - 0.12, 0.24, NAVY)
     text_box(slide, x + 0.10, ty + 0.10, W_SPEC - 0.20, 0.20,
-             "TM-50 SERIES  (Prereq: TM-40)", font_size=8, bold=True,
+             "SL 5 SERIES  (Prereq: SL 4)", font_size=8, bold=True,
              color=WHITE, wrap=False)
     text_box(slide, x + 0.10, ty + 0.36, W_SPEC - 0.20, 0.48,
-             "Advanced / expert continuation for\nTM-40G–M tracks only.",
+             "Advanced / expert continuation for\nSL 4G–M tracks only.",
              font_size=7.5, color=NAVY)
 
     # Footer
@@ -414,7 +414,7 @@ def build_progression():
 
 BASELINE_TIERS = [
     {
-        "tm": "TM-10",
+        "tm": "SL 1",
         "label": "ALL PERSONNEL",
         "sub":   "Every Soldier & Civilian",
         "why":   "WHY CRITICAL:  No access = no adoption.",
@@ -425,7 +425,7 @@ BASELINE_TIERS = [
         ),
     },
     {
-        "tm": "TM-20",
+        "tm": "SL 2",
         "label": "ALL STAFF",
         "sub":   "Light Builders — no coding",
         "why":   "WHY CRITICAL:  Units must own their data products.",
@@ -435,7 +435,7 @@ BASELINE_TIERS = [
         ),
     },
     {
-        "tm": "TM-30",
+        "tm": "SL 3",
         "label": "DATA-ADJACENT SPECIALISTS",
         "sub":   "17/25-series · S6 · G2",
         "why":   "WHY CRITICAL:  Maven's power is in complex, connected products.",
@@ -450,7 +450,7 @@ BASELINE_TIERS = [
 STATS = [
     ("3",      "Mandatory\nBaseline TMs"),
     ("100%",   "MOS\nCoverage"),
-    ("88 hrs", "TM-10→30\nInstruction"),
+    ("88 hrs", "SL 1→30\nInstruction"),
     ("3-tier", "Progression\nNo-Code→Code"),
     ("18",     "Courses\nPublished"),
     ("160+",   "PDFs\nPublished"),
@@ -523,26 +523,26 @@ def build_overview_content(slide):
     rx = 7.84
     rw = 5.29
 
-    # TM-40 panel
+    # SL 4 panel
     rect(slide, rx, Y2, rw, 1.62, NAVY2)
     text_box(slide, rx + 0.08, Y2 + 0.06, rw - 0.16, 0.22,
-             "TM-40 SERIES  —  12 Specialist Tracks  (Prereq: TM-30)",
+             "SL 4 SERIES  —  12 Specialist Tracks  (Prereq: SL 3)",
              font_size=8.5, bold=True, color=WHITE, wrap=False)
     text_box(slide, rx + 0.08, Y2 + 0.30, rw - 0.16, 1.28,
-             ("WFF Tracks: TM-40A Intelligence · TM-40B Fires · TM-40C Movement & Maneuver\n"
-              "TM-40D Sustainment · TM-40E Protection · TM-40F Mission Command\n"
-              "Specialist: TM-40G ORSA · TM-40H AI Engineer · TM-40M ML Engineer\n"
-              "TM-40J Program Manager · TM-40K Knowledge Manager · TM-40L Software Engineer"),
+             ("WFF Tracks: SL 4A Intelligence · SL 4B Fires · SL 4C Movement & Maneuver\n"
+              "SL 4D Sustainment · SL 4E Protection · SL 4F Mission Command\n"
+              "Specialist: SL 4G ORSA · SL 4H AI Engineer · SL 4M ML Engineer\n"
+              "SL 4J Program Manager · SL 4K Knowledge Manager · SL 4L Software Engineer"),
              font_size=8, color=GRAY_LT, wrap=True)
 
-    # TM-50 panel
+    # SL 5 panel
     rect(slide, rx, Y2 + 1.66, rw, 1.10, NAVY_MID)
     text_box(slide, rx + 0.08, Y2 + 1.72, rw - 0.16, 0.22,
-             "TM-50 SERIES  —  6 Advanced Tracks  (Prereq: TM-40G–M)",
+             "SL 5 SERIES  —  6 Advanced Tracks  (Prereq: SL 4G–M)",
              font_size=8.5, bold=True, color=WHITE, wrap=False)
     text_box(slide, rx + 0.08, Y2 + 1.96, rw - 0.16, 0.76,
-             "Expert-level continuation for each TM-40 specialist track.\n"
-             "TM-50G ORSA · TM-50H AI Eng · TM-50M MLE · TM-50J PM · TM-50K KM · TM-50L SWE",
+             "Expert-level continuation for each SL 4 specialist track.\n"
+             "SL 5G ORSA · SL 5H AI Eng · SL 5M MLE · SL 5J PM · SL 5K KM · SL 5L SWE",
              font_size=8, color=GRAY_LT, wrap=True)
 
     # Training management panel
@@ -644,9 +644,9 @@ def build_program_overview_content(slide):
     # ── Row 1: 3 summary panels ───────────────────────────────────────────────
     panel(slide, xs[0], Y0, CW, RH1,
           "WHAT IT IS",
-          ["A structured curriculum — three sequential core courses (TM-10/20/30) for "
-           "all personnel, followed by 12 functional specialist tracks (TM-40A–M) and "
-           "6 advanced tracks (TM-50G–M) for senior practitioners.",
+          ["A structured curriculum — three sequential core courses (SL 1/20/30) for "
+           "all personnel, followed by 12 functional specialist tracks (SL 4A–M) and "
+           "6 advanced tracks (SL 5G–M) for senior practitioners.",
            "",
            "All training delivered in a dedicated MSS Training Environment with "
            "synthetic OPDATA supporting hands-on lab exercises."])
@@ -662,7 +662,7 @@ def build_program_overview_content(slide):
 
     panel(slide, xs[2], Y0, CW, RH1,
           "SCOPE & SCALE",
-          ["▪  3 core courses (TM-10/20/30) + 18 specialty/advanced tracks",
+          ["▪  3 core courses (SL 1/20/30) + 18 specialty/advanced tracks",
            "▪  160+ published PDFs; Markdown source in version control",
            "▪  Dedicated exercises with hands-on labs per track",
            "▪  PRE + POST assessments for every course",
@@ -671,45 +671,45 @@ def build_program_overview_content(slide):
 
     Y1 = Y0 + RH1 + 0.08   # row 2 start
 
-    # ── Row 2: learning path, TM-40 grid, supporting publications ────────────
+    # ── Row 2: learning path, SL 4 grid, supporting publications ────────────
     panel(slide, xs[0], Y1, CW, RH2,
           "LEARNING PATH",
-          ["TM-10  MAVEN USER  —  All personnel",
+          ["SL 1  MAVEN USER  —  All personnel",
            "  Navigate MSS, read dashboards, verify data currency",
            "",
-           "TM-20  BUILDER  —  All staff  (Prereq: TM-10)",
+           "SL 2  BUILDER  —  All staff  (Prereq: SL 1)",
            "  No-code pipelines, Workshop dashboards, forms",
            "",
-           "TM-30  ADVANCED BUILDER  —  Data specialists  (Prereq: TM-20)",
+           "SL 3  ADVANCED BUILDER  —  Data specialists  (Prereq: SL 2)",
            "  Python/SQL transforms, ontology design, AIP Logic",
            "",
-           "TM-40 SERIES  —  WFF + Specialist tracks  (Prereq: TM-30)",
+           "SL 4 SERIES  —  WFF + Specialist tracks  (Prereq: SL 3)",
            "  WFF A–F: Intel, Fires, M&M, Sust, Prot, Msn Cmd",
            "  Specialist G–M: ORSA, AI Eng, MLE, PM, KM, SWE",
            "",
-           "TM-50 SERIES  —  Advanced specialist  (Prereq: TM-40 G–M)",
+           "SL 5 SERIES  —  Advanced specialist  (Prereq: SL 4 G–M)",
            "  50G–M: expert-level continuation per role"])
 
     panel(slide, xs[1], Y1, CW, RH2,
-          "TM-40 WFF FUNCTIONAL TRACKS  (A–F)",
-          ["Prereq: TM-30  ·  No coding required  ·  WFF functional staff",
+          "SL 4 WFF FUNCTIONAL TRACKS  (A–F)",
+          ["Prereq: SL 3  ·  No coding required  ·  WFF functional staff",
            "",
-           "TM-40A  Intelligence",
-           "TM-40B  Fires",
-           "TM-40C  Movement & Maneuver",
-           "TM-40D  Sustainment",
-           "TM-40E  Protection",
-           "TM-40F  Mission Command",
+           "SL 4A  Intelligence",
+           "SL 4B  Fires",
+           "SL 4C  Movement & Maneuver",
+           "SL 4D  Sustainment",
+           "SL 4E  Protection",
+           "SL 4F  Mission Command",
            "",
-           "TM-40 SPECIALIST TRACKS  (G–M)",
-           "Prereq: TM-30  ·  Role-specific technical depth",
+           "SL 4 SPECIALIST TRACKS  (G–M)",
+           "Prereq: SL 3  ·  Role-specific technical depth",
            "",
-           "TM-40G  ORSA",
-           "TM-40H  AI Engineer",
-           "TM-40M  ML Engineer",
-           "TM-40J  Program Manager",
-           "TM-40K  Knowledge Manager",
-           "TM-40L  Software Engineer"])
+           "SL 4G  ORSA",
+           "SL 4H  AI Engineer",
+           "SL 4M  ML Engineer",
+           "SL 4J  Program Manager",
+           "SL 4K  Knowledge Manager",
+           "SL 4L  Software Engineer"])
 
     panel(slide, xs[2], Y1, CW, RH2,
           "SUPPORTING PUBLICATIONS",
@@ -720,7 +720,7 @@ def build_program_overview_content(slide):
            "",
            "SYLLABI",
            "  Per-course objectives, tasks, evaluation criteria",
-           "  All 21 courses (TM-10 through TM-50L) published",
+           "  All 21 courses (SL 1 through SL 5L) published",
            "",
            "EXERCISES",
            "  Hands-on lab guides + environment setup per track",
@@ -729,7 +729,7 @@ def build_program_overview_content(slide):
            "TRAINING MANAGEMENT",
            "  POI · MTP · CAD · TEO · Enrollment SOP",
            "  Annual Schedule · Faculty Development Plan",
-           "  Lesson Plan Outlines (TM-10 through TM-50)"])
+           "  Lesson Plan Outlines (SL 1 through SL 5)"])
 
     # Footer
     text_box(slide, 0.10, 6.63, 13.13, 0.20,

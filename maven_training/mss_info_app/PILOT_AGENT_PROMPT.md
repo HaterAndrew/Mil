@@ -151,14 +151,14 @@ Header: `linear-gradient(155deg, navy-dark 0%, navy 50%, navy-light 100%)`. Gold
    TRAINING SCHEDULE
 
 ▼ CORE TRAINING
-   TM-10 — Maven User
-   TM-20 — Builder
-   TM-30 — Advanced Builder
+   SL 1 — Maven User
+   SL 2 — Builder
+   SL 3 — Advanced Builder
 
-▼ TM-40 & TM-50 SPECIALIST
+▼ SL 4 & SL 5 SPECIALIST
    ► WFF Tracks (A–F)
    ► Technical Tracks (G–O)
-   ► Advanced Tracks (TM-50)
+   ► Advanced Tracks (SL 5)
 
 ▼ REFERENCE
    Draft Publications
@@ -187,12 +187,12 @@ All panels are `<div id="panel-{id}" class="panel">`. CSS: `.panel { display:non
 |---------------|--------------------|-------------------------------------------------------|
 | `home`        | HOME               | MSS Training Curriculum — USAREUR-AF                  |
 | `schedule`    | SCHEDULE           | Upcoming Training — USAREUR-AF                        |
-| `tm10`        | TM-10              | Maven User Manual — All Personnel                     |
-| `tm20`        | TM-20              | No-Code Builder Manual — All Staff                    |
-| `tm30`        | TM-30              | Advanced Builder Manual — Data-Adjacent Specialists   |
-| `specialists` | SPECIALIST TRACKS  | TM-40 & TM-50 Series — WFF & Technical Tracks         |
-| `tm40`        | TM-40 / TM-50      | Technical Specialist Tracks — Developer Manuals       |
-| `tm50`        | TM-50 ADVANCED     | Advanced Developer Tracks                             |
+| `sl1`         | SL 1              | Maven User Manual — All Personnel                     |
+| `sl2`         | SL 2              | No-Code Builder Manual — All Staff                    |
+| `sl3`         | SL 3              | Advanced Builder Manual — Data-Adjacent Specialists   |
+| `specialists` | SPECIALIST TRACKS  | SL 4 & SL 5 Series — WFF & Technical Tracks         |
+| `sl4`         | SL 4 / SL 5      | Technical Specialist Tracks — Developer Manuals       |
+| `sl5`         | SL 5 ADVANCED     | Advanced Developer Tracks                             |
 | `doctrine`    | DRAFT PUBS         | Draft Data Literacy Publications                      |
 | `documents`   | ALL DOCUMENTS      | All Training Publications                             |
 | `taskindex`   | TASK INDEX         | What Do You Want To Do? (task-based index)            |
@@ -209,8 +209,8 @@ All panels are `<div id="panel-{id}" class="panel">`. CSS: `.panel { display:non
 - `info` callout: "New to MSS? Start with Quick Start guide"
 - `bluf` callout: find your level, follow the path
 - **Find Your Level table**: role description → recommended TM → clickable chip → navigate panel
-  - Rows: Any personnel (TM-10), All staff (TM-20), Data-adjacent (TM-30), Technical specialist (TM-40G–O), WFF specialist (TM-40A–F), Senior leader (Doctrine), Data literacy background
-- **Learning path diagram**: vertical chain TM-10 → TM-20 → TM-30 → branch to TM-40 WFF / TM-40 Specialist → TM-50
+  - Rows: Any personnel (SL 1), All staff (SL 2), Data-adjacent (SL 3), Technical specialist (SL 4G–O), WFF specialist (SL 4A–F), Senior leader (Doctrine), Data literacy background
+- **Learning path diagram**: vertical chain SL 1 → SL 2 → SL 3 → branch to SL 4 WFF / SL 4 Specialist → SL 5
 - `note` callout: "Not finding what you need? Contact data steward."
 
 ### SCHEDULE
@@ -218,7 +218,7 @@ All panels are `<div id="panel-{id}" class="panel">`. CSS: `.panel { display:non
 - Upcoming training table: TM code, Course Title, Dates, Location, Seats (color-coded), Register link
   - Seat counts: `.seat-open` (green), `.seat-low` (amber), `.seat-full` (red)
 
-### TM-10 (Maven User Manual)
+### SL 1 (Maven User Manual)
 - `bluf` + `caution` (request account first) callouts
 - Section 1: Getting Access (5-step numbered procedure)
 - `note` callout: What is a data steward?
@@ -226,34 +226,34 @@ All panels are `<div id="panel-{id}" class="panel">`. CSS: `.panel { display:non
 - Section 3: Security Responsibilities — `warning` callout (legal ref), numbered rules
 - Sections 4–6: Navigation, Data Consumption, Acceptable Use (prose + lists)
 
-### TM-20 (No-Code Builder)
+### SL 2 (No-Code Builder)
 - `bluf` callout
 - Stack diagram: Raw Data → Dataset → Pipeline → Application → User (navy → gold → gray layers)
 - Sections: Workshop basics, building dashboards, data connections, forms, publishing
 - PDF link card
 
-### TM-30 (Advanced Builder)
+### SL 3 (Advanced Builder)
 - `bluf` callout
 - Sections: Pipeline authoring, Foundry Transforms, ontology basics, advanced Workshop widgets
 - Code blocks: Python transform examples
 - PDF link card
 
 ### SPECIALIST TRACKS (panel: `specialists`)
-- `bluf` callout: explains WFF (A–F, TM-30 prereq) vs Technical (G–O, TM-30 prereq)
+- `bluf` callout: explains WFF (A–F, SL 3 prereq) vs Technical (G–O, SL 3 prereq)
 - **Role/MOS routing table**: role → recommended track → advanced track
   - Rows grouped by WFF / Technical with section dividers
-- **WFF Track cards grid** (TM-40A through TM-40F): each `.track-card` with navy header, gold left border, track title, audience, prereq chip "TM-30 Req.", PDF link
-- **Technical Track cards grid** (TM-40G through TM-40O): same pattern, chip "TM-30 Req."
-- CTA button → navigate to `tm40` panel
+- **WFF Track cards grid** (SL 4A through SL 4F): each `.track-card` with navy header, gold left border, track title, audience, prereq chip "SL 3 Req.", PDF link
+- **Technical Track cards grid** (SL 4G through SL 4O): same pattern, chip "SL 3 Req."
+- CTA button → navigate to `sl4` panel
 
-### TM-40 (Technical Specialist)
-- Track cards: TM-40G (ORSA), TM-40H (AI Engineer), TM-40M (ML Engineer), TM-40J (Program Manager), TM-40K (Knowledge Manager), TM-40L (Software Engineer)
-- Each card: description, audience, prereq (TM-30), PDF link
+### SL 4 (Technical Specialist)
+- Track cards: SL 4G (ORSA), SL 4H (AI Engineer), SL 4M (ML Engineer), SL 4J (Program Manager), SL 4K (Knowledge Manager), SL 4L (Software Engineer)
+- Each card: description, audience, prereq (SL 3), PDF link
 
-### TM-50 (Advanced Developer)
-- Same eight tracks as TM-40G–O but advanced level (TM-50G through TM-50O)
-- Prereq: corresponding TM-40 track
-- `note` callout: TM-50 is available only after completing corresponding TM-40
+### SL 5 (Advanced Developer)
+- Same eight tracks as SL 4G–O but advanced level (SL 5G through SL 5O)
+- Prereq: corresponding SL 4 track
+- `note` callout: SL 5 is available only after completing corresponding SL 4
 
 ### DOCTRINE (Draft Publications)
 - `warning` callout: DRAFT status, distribution restriction
@@ -329,18 +329,18 @@ Icons are added via CSS `::before` on `.callout-label`.
 Variants: `.card` (navy top), `.card.gold-top`, `.card.red-top`, `.card.slate-top`.
 Hover: `transform: translateY(-3px)`, deeper shadow, top border → gold.
 
-### Track Cards (TM-40/50 panels)
+### Track Cards (SL 4/SL 5 panels)
 ```html
 <div class="track-grid">
   <div class="track-card">
     <div class="track-card-hdr">
-      <span class="track-tm">TM-40A — Intelligence</span>
-      <span class="track-chip">TM-20 Req.</span>
+      <span class="track-tm">SL 4A — Intelligence</span>
+      <span class="track-chip">SL 2 Req.</span>
     </div>
     <div class="track-body">
       <div class="track-name">Intelligence Warfighting Function</div>
       <div class="track-audience">G2/S2 • MI units • ISR analysts</div>
-      <div class="track-prereq">Prereq: TM-20 • <a href="../pdf/TM_40A_INTELLIGENCE.pdf" target="_blank">Open PDF →</a></div>
+      <div class="track-prereq">Prereq: SL 2 • <a href="../pdf/TM_40A_INTELLIGENCE.pdf" target="_blank">Open PDF →</a></div>
     </div>
   </div>
 </div>
@@ -363,8 +363,8 @@ Alternating rows: even rows get `--navy-pale` bg. Hover: `--navy-pale`.
 
 ### Chips
 ```html
-<span class="chip chip-navy">TM-10</span>
-<span class="chip chip-gold">TM-30</span>
+<span class="chip chip-navy">SL 1</span>
+<span class="chip chip-gold">SL 3</span>
 <span class="chip chip-slate">PLANNED</span>
 <span class="chip chip-gray">DRAFT</span>
 ```
@@ -448,24 +448,24 @@ document.getElementById('splash-enter').addEventListener('click', () => {
 
 ---
 
-## TM-40 TRACK TABLE (authoritative)
+## SL 4 TRACK TABLE (authoritative)
 
 | Code   | Track Name               | Prereq | Panel        |
 |--------|--------------------------|--------|--------------|
-| TM-40A | Intelligence WFF         | TM-30  | `specialists`|
-| TM-40B | Fires WFF                | TM-30  | `specialists`|
-| TM-40C | Movement & Maneuver WFF  | TM-30  | `specialists`|
-| TM-40D | Sustainment WFF          | TM-30  | `specialists`|
-| TM-40E | Protection WFF           | TM-30  | `specialists`|
-| TM-40F | Mission Command WFF      | TM-30  | `specialists`|
-| TM-40G | ORSA                     | TM-30  | `tm40`       |
-| TM-40H | AI Engineer              | TM-30  | `tm40`       |
-| TM-40M | ML Engineer              | TM-30  | `tm40`       |
-| TM-40J | Program Manager          | TM-30  | `tm40`       |
-| TM-40K | Knowledge Manager        | TM-30  | `tm40`       |
-| TM-40L | Software Engineer        | TM-30  | `tm40`       |
+| SL 4A | Intelligence WFF         | SL 3  | `specialists`|
+| SL 4B | Fires WFF                | SL 3  | `specialists`|
+| SL 4C | Movement & Maneuver WFF  | SL 3  | `specialists`|
+| SL 4D | Sustainment WFF          | SL 3  | `specialists`|
+| SL 4E | Protection WFF           | SL 3  | `specialists`|
+| SL 4F | Mission Command WFF      | SL 3  | `specialists`|
+| SL 4G | ORSA                     | SL 3  | `sl4`        |
+| SL 4H | AI Engineer              | SL 3  | `sl4`        |
+| SL 4M | ML Engineer              | SL 3  | `sl4`        |
+| SL 4J | Program Manager          | SL 3  | `sl4`        |
+| SL 4K | Knowledge Manager        | SL 3  | `sl4`        |
+| SL 4L | Software Engineer        | SL 3  | `sl4`        |
 
-**TM-50 is G–O only. There is NO TM-50A through TM-50F.**
+**SL 5 is G–O only. There is NO SL 5A through SL 5F.**
 
 ---
 
@@ -490,7 +490,7 @@ TM_50K_KNOWLEDGE_MANAGER_ADVANCED.pdf  TM_50L_SOFTWARE_ENGINEER_ADVANCED.pdf
 SYLLABUS_TM10.pdf   SYLLABUS_TM20.pdf   SYLLABUS_TM30.pdf
 SYLLABUS_TM40A.pdf through SYLLABUS_TM40L.pdf
 SYLLABUS_TM50G.pdf through SYLLABUS_TM50L.pdf
-EXAM_TM10_PRE.pdf   EXAM_TM10_SUPPLEMENTAL.pdf  (TM-10 has optional supplemental only; TM-20+ have PRE + POST pattern)
+EXAM_TM10_PRE.pdf   EXAM_TM10_SUPPLEMENTAL.pdf  (SL 1 has optional supplemental only; SL 2+ have PRE + POST pattern)
 DATA_LITERACY_technical_reference.pdf
 DATA_LITERACY_senior_leaders.pdf
 GLOSSARY_data_foundry.pdf
@@ -527,8 +527,8 @@ If deploying in Foundry with PDFs hosted as Media Set items, replace `../pdf/` w
 3. Sidebar nav shell (structure + toggle + collapse)
 4. Panel system (`showPanel()`, active state, fade-in animation)
 5. HOME panel content (routing table, learning path)
-6. TM-10, TM-20, TM-30 panels (highest-traffic content)
-7. Specialist Tracks panel + TM-40 + TM-50 panels
+6. SL 1, SL 2, SL 3 panels (highest-traffic content)
+7. Specialist Tracks panel + SL 4 + SL 5 panels
 8. Remaining panels: Doctrine, Documents, Task Index, Quick Ref, Support, Schedule
 9. Splash screen (cosmetic, last — does not affect app functionality)
 
@@ -543,10 +543,10 @@ If deploying in Foundry with PDFs hosted as Media Set items, replace `../pdf/` w
 `id="panel-documents"` → add `<tr>` with: Document, Type, Format, PDF link.
 
 **Change a prerequisite on a track card:**
-Find the track card in `specialists` or `tm40` panel → update `.track-chip` text.
+Find the track card in `specialists` or `sl4` panel → update `.track-chip` text.
 
-**Add a new TM-40 track:**
-1. Add track card to `specialists` (WFF) or `tm40` (technical) panel.
+**Add a new SL 4 track:**
+1. Add track card to `specialists` (WFF) or `sl4` (technical) panel.
 2. Add PDF link entry.
 3. Add row to routing table in `home` panel.
 4. Add row to task index in `taskindex` panel.

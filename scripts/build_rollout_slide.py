@@ -111,15 +111,15 @@ rows = [
     ),
     (
         "2\nCADRE\nSTANDUP",
-        "Identify and assign 5 cadre: 1 OIC + 4 SMEs covering TM-10/20/30/40 tracks. Develop cadre SOP and instructor certification standard.",
+        "Identify and assign 5 cadre: 1 OIC + 4 SMEs covering SL 1/2/3/4 tracks. Develop cadre SOP and instructor certification standard.",
         "G6/G2/S6 nominations.\nOIC appointed by CDR.",
-        "Cadre certified; SOP signed; instructors completed TM-40 series."
+        "Cadre certified; SOP signed; instructors completed SL 4 series."
     ),
     (
         "3\nAUDIENCE\nSEQUENCING",
-        "Phase training: TM-10 (all staff) → TM-20/30 (data-adjacent billets) → TM-40 series (specialists by MOS).",
+        "Phase training: SL 1 (all staff) → SL 2/3 (data-adjacent billets) → SL 4 series (specialists by MOS).",
         "G3 decision: phased by echelon or MOS priority.\nUnit S3s build into ATP.",
-        "100% TM-10 completion; TM-40 track assignments published."
+        "100% SL 1 completion; SL 4 track assignments published."
     ),
     (
         "4\nRESOURCE\n& ACCESS",

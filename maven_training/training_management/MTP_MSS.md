@@ -15,11 +15,11 @@ Wiesbaden, Germany | 2026
 
 ### 1-1. Purpose
 
-This MTP provides the USAREUR-AF unit commander and training manager a structured framework to plan, resource, execute, and assess Maven Smart System (MSS) training across all personnel levels. It operationalizes the MSS training curriculum (TM-10 through TM-40 series) by defining tasks, conditions, standards, time requirements, and evaluation criteria.
+This MTP provides the USAREUR-AF unit commander and training manager a structured framework to plan, resource, execute, and assess Maven Smart System (MSS) training across all personnel levels. It operationalizes the MSS training curriculum (SL 1 through SL 4 series) by defining tasks, conditions, standards, time requirements, and evaluation criteria.
 
 ### 1-2. Training Philosophy
 
-MSS training is progressive and role-based. Bypassing foundational training (TM-10) to accelerate to TM-30 produces personnel who can operate tools without understanding what they are doing — a data governance and analytical risk.
+MSS training is progressive and role-based. Bypassing foundational training (SL 1) to accelerate to SL 3 produces personnel who can operate tools without understanding what they are doing — a data governance and analytical risk.
 
 | Principle | Implication |
 |---|---|
@@ -32,41 +32,41 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 
 | Level | Publication | Audience | Days | Prerequisite |
 |---|---|---|---|---|
-| TM-10 | Maven User | All personnel | 1 | None |
-| TM-20 | Builder | All staff | 5 | TM-10 |
-| TM-30 | Advanced Builder | Data-adjacent specialists | 5 | TM-20 |
-| TM-40A | Intelligence WFF | G2/S2 Intel staff | 3 | TM-30 (Required) |
-| TM-40B | Fires WFF | Fires/FSCOORD staff | 3 | TM-30 (Required) |
-| TM-40C | Movement & Maneuver WFF | G3/S3 M2 staff | 3 | TM-30 (Required) |
-| TM-40D | Sustainment WFF | G4/S4 SUST staff | 3 | TM-30 (Required) |
-| TM-40E | Protection WFF | Protection staff | 3 | TM-30 (Required) |
-| TM-40F | Mission Command WFF | MC/G6/S6 staff | 3 | TM-30 (Required) |
-| TM-40G | ORSA | ORSA analysts | 5 | TM-30 (Required) + quant background |
-| TM-40H | AI Engineer | AI/ML specialists | 5 | TM-30 (Required) + coding background |
-| TM-40M | ML Engineer | MLEs | 5 | TM-30 (Required) + coding background |
-| TM-40J | Program Manager | PMs, G8/S8 | 4 | TM-30 (Required) |
-| TM-40K | Knowledge Manager | KMOs, 37F | 4 | TM-30 (Required) |
-| TM-40L | Software Engineer | SWEs | 5 | TM-30 (Required) + coding background |
-| TM-40N | UI/UX Designer | UI/UX designers | 5 | TM-30 (Required) + design tool familiarity |
-| TM-40O | Platform Engineer | Platform engineers | 5 | TM-30 (Required) + Linux sysadmin + containers/Git |
-| TM-50G | Advanced ORSA | Senior ORSA analysts | 5 | TM-40G (Required) |
-| TM-50H | Advanced AI Engineer | Senior AI engineers | 5 | TM-40H (Required) |
-| TM-50M | Advanced ML Engineer | Senior MLEs | 5 | TM-40M (Required) |
-| TM-50J | Advanced Program Manager | Senior PMs | 3 | TM-40J (Required) |
-| TM-50K | Advanced Knowledge Manager | Senior KMOs | 3 | TM-40K (Required) |
-| TM-50L | Advanced Software Engineer | Senior SWEs | 5 | TM-40L (Required) |
-| TM-50N | Advanced UI/UX Designer | Senior UI/UX designers | 3 | TM-40N (Required) + 2+ MSS design portfolio |
-| TM-50O | Advanced Platform Engineer | Senior platform engineers | 3 | TM-40O (Required) + operational experience |
-| T3-I | Instructor Certification | C2DAO-selected instructor candidates | 5 + practicum | TM-30 (Required) + C2DAO selection |
-| T3-F | MSC Force Multiplier | MSC-level data NCOs, S6, UDT nominees | 0.5 | TM-20 (Required) + CDR nomination |
+| SL 1 | Maven User | All personnel | 1 | None |
+| SL 2 | Builder | All staff | 5 | SL 1 |
+| SL 3 | Advanced Builder | Data-adjacent specialists | 5 | SL 2 |
+| SL 4A | Intelligence WFF | G2/S2 Intel staff | 3 | SL 3 (Required) |
+| SL 4B | Fires WFF | Fires/FSCOORD staff | 3 | SL 3 (Required) |
+| SL 4C | Movement & Maneuver WFF | G3/S3 M2 staff | 3 | SL 3 (Required) |
+| SL 4D | Sustainment WFF | G4/S4 SUST staff | 3 | SL 3 (Required) |
+| SL 4E | Protection WFF | Protection staff | 3 | SL 3 (Required) |
+| SL 4F | Mission Command WFF | MC/G6/S6 staff | 3 | SL 3 (Required) |
+| SL 4G | ORSA | ORSA analysts | 5 | SL 3 (Required) + quant background |
+| SL 4H | AI Engineer | AI/ML specialists | 5 | SL 3 (Required) + coding background |
+| SL 4M | ML Engineer | MLEs | 5 | SL 3 (Required) + coding background |
+| SL 4J | Program Manager | PMs, G8/S8 | 4 | SL 3 (Required) |
+| SL 4K | Knowledge Manager | KMOs, 37F | 4 | SL 3 (Required) |
+| SL 4L | Software Engineer | SWEs | 5 | SL 3 (Required) + coding background |
+| SL 4N | UI/UX Designer | UI/UX designers | 5 | SL 3 (Required) + design tool familiarity |
+| SL 4O | Platform Engineer | Platform engineers | 5 | SL 3 (Required) + Linux sysadmin + containers/Git |
+| SL 5G | Advanced ORSA | Senior ORSA analysts | 5 | SL 4G (Required) |
+| SL 5H | Advanced AI Engineer | Senior AI engineers | 5 | SL 4H (Required) |
+| SL 5M | Advanced ML Engineer | Senior MLEs | 5 | SL 4M (Required) |
+| SL 5J | Advanced Program Manager | Senior PMs | 3 | SL 4J (Required) |
+| SL 5K | Advanced Knowledge Manager | Senior KMOs | 3 | SL 4K (Required) |
+| SL 5L | Advanced Software Engineer | Senior SWEs | 5 | SL 4L (Required) |
+| SL 5N | Advanced UI/UX Designer | Senior UI/UX designers | 3 | SL 4N (Required) + 2+ MSS design portfolio |
+| SL 5O | Advanced Platform Engineer | Senior platform engineers | 3 | SL 4O (Required) + operational experience |
+| T3-I | Instructor Certification | C2DAO-selected instructor candidates | 5 + practicum | SL 3 (Required) + C2DAO selection |
+| T3-F | MSC Force Multiplier | MSC-level data NCOs, S6, UDT nominees | 0.5 | SL 2 (Required) + CDR nomination |
 
-> **NOTE:** TM-40A–F (WFF functional tracks) require TM-10, TM-20, and TM-30 as hard prerequisites. TM-40G–O (specialist tracks) also require TM-30 as a hard prerequisite. TM-50G–O (advanced specialist tracks) require the corresponding TM-40G–O. There are NO TM-50A–F tracks.
+> **NOTE:** SL 4A–F (WFF functional tracks) require SL 1, SL 2, and SL 3 as hard prerequisites. SL 4G–O (specialist tracks) also require SL 3 as a hard prerequisite. SL 5G–O (advanced specialist tracks) require the corresponding SL 4G–O. There are NO SL 5A–F tracks.
 
 > **NOTE:** "Training days" reflects initial qualification training with instructor support. Self-paced completion may require more time. Refresher/sustainment training is shorter — see Section 11.
 
-> **FOUNDRY BOOTCAMP (FBC):** A quarterly 5-day applied build event that operates **outside** the TM-10 through TM-50 training chain. Prereq: TM-20 Go on file + command-validated project. Does not grant TM-30 credit. Does not unlock TM-40 enrollment. Governed by FBC-SOP-001 (training_management/FOUNDRY_BOOTCAMP_SOP.md). Appears in training records as a separate event type, not as a TM course completion.
+> **FOUNDRY BOOTCAMP (FBC):** A quarterly 5-day applied build event that operates **outside** the SL 1 through SL 5 training chain. Prereq: SL 2 Go on file + command-validated project. Does not grant SL 3 credit. Does not unlock SL 4 enrollment. Governed by FBC-SOP-001 (training_management/FOUNDRY_BOOTCAMP_SOP.md). Appears in training records as a separate event type, not as a TM course completion.
 
-> **TRAIN-THE-TRAINER (T3):** T3-I (Instructor Certification) and T3-F (MSC Force Multiplier) operate **outside** the TM-10 through TM-50 training chain. T3-I certifies C2DAO instructors; T3-F certifies Unit Data Trainers at the MSC level. T3-I is offered semi-annually; T3-F is offered quarterly aligned with MTT rotations. See Instructor Tier Definitions, Unit Data Trainer SOP, and MTT Operations SOP for employment and sustainment guidance.
+> **TRAIN-THE-TRAINER (T3):** T3-I (Instructor Certification) and T3-F (MSC Force Multiplier) operate **outside** the SL 1 through SL 5 training chain. T3-I certifies C2DAO instructors; T3-F certifies Unit Data Trainers at the MSC level. T3-I is offered semi-annually; T3-F is offered quarterly aligned with MTT rotations. See Instructor Tier Definitions, Unit Data Trainer SOP, and MTT Operations SOP for employment and sustainment guidance.
 
 ---
 
@@ -85,7 +85,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 
 ## 2. TRAINING OBJECTIVES BY LEVEL
 
-### 2-1. TM-10 — Maven User
+### 2-1. SL 1 — Maven User
 
 **TLO:** Access, navigate, and consume data products on MSS in support of operational requirements.
 
@@ -98,9 +98,9 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 10-05 | Use Quiver to explore an Object Type | Practical: navigate to assigned Object Type, apply filter, export view |
 | 10-06 | Access and interact with an AIP Logic workflow or Agent interface | Practical: submit query to designated AIP interface |
 | 10-07 | Identify classification markings and state authorized export procedures | Written/verbal: answer 3 of 4 classification scenario questions correctly |
-| 10-08 | Troubleshoot at least 2 common access issues using TM-10 procedures | Practical: diagnose seeded access problem from troubleshooting annex |
+| 10-08 | Troubleshoot at least 2 common access issues using SL 1 procedures | Practical: diagnose seeded access problem from troubleshooting annex |
 
-### 2-2. TM-20 — Builder
+### 2-2. SL 2 — Builder
 
 **TLO:** Build, configure, and publish Foundry data products on MSS using visual (no-code) platform tools.
 
@@ -115,7 +115,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 20-07 | Manage project access (grant Viewer role to test user) | Practical: test user confirms Viewer access; cannot edit |
 | 20-08 | Create a Foundry branch, make a change, and submit for promotion | Practical: branch created; change visible; promotion request submitted |
 
-### 2-3. TM-30 — Advanced Builder
+### 2-3. SL 3 — Advanced Builder
 
 **TLO:** Design and build complex, multi-source data products on MSS using advanced platform capabilities in accordance with C2DAO governance standards.
 
@@ -130,20 +130,20 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 30-07 | Interpret a data lineage graph for a provided dataset | Verbal/written: correctly identify upstream sources, transforms, and consumers |
 | 30-08 | Complete the full C2DAO promotion workflow: branch, test, submit, receive approval | Practical: evaluator plays data steward; trainee executes end-to-end |
 
-### 2-4. TM-40A through TM-40F — WFF Functional Tracks
+### 2-4. SL 4A through SL 4F — WFF Functional Tracks
 
 **TLO (common):** Apply MSS data products to support warfighting function mission requirements; build and operate WFF-specific dashboards, pipelines, and ontology-backed tracking systems.
 
-> Each WFF track shares a common task structure adapted to WFF-specific data and mission context. Prerequisite: TM-10, TM-20, and TM-30 (all required).
+> Each WFF track shares a common task structure adapted to WFF-specific data and mission context. Prerequisite: SL 1, SL 2, and SL 3 (all required).
 
 | Track | WFF | Audience | Key Focus Areas |
 |---|---|---|---|
-| TM-40A | Intelligence | G2/S2 Intel staff | PMESII analysis, ISR tracking, threat object ontology |
-| TM-40B | Fires | Fires/FSCOORD staff | Target tracking, fire mission pipelines, effects dashboards |
-| TM-40C | Movement & Maneuver | G3/S3 M2 staff | FRAGORD tracking, battle rhythm apps, unit disposition |
-| TM-40D | Sustainment | G4/S4 SUST staff | Class IX tracking, maintenance dashboards, logistics pipelines |
-| TM-40E | Protection | Protection staff | Risk assessment tracking, force protection dashboards |
-| TM-40F | Mission Command | MC/G6/S6 staff | Battle rhythm management, comms status, commander's dashboard |
+| SL 4A | Intelligence | G2/S2 Intel staff | PMESII analysis, ISR tracking, threat object ontology |
+| SL 4B | Fires | Fires/FSCOORD staff | Target tracking, fire mission pipelines, effects dashboards |
+| SL 4C | Movement & Maneuver | G3/S3 M2 staff | FRAGORD tracking, battle rhythm apps, unit disposition |
+| SL 4D | Sustainment | G4/S4 SUST staff | Class IX tracking, maintenance dashboards, logistics pipelines |
+| SL 4E | Protection | Protection staff | Risk assessment tracking, force protection dashboards |
+| SL 4F | Mission Command | MC/G6/S6 staff | Battle rhythm management, comms status, commander's dashboard |
 
 **Common ELOs for all WFF tracks:**
 
@@ -156,7 +156,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 40WFF-05 | Build a multi-page WFF dashboard (summary → unit detail) | Practical: variable passing works; Page 2 filters by Page 1 selection |
 | 40WFF-06 | Apply data governance: classification, naming, branching, and promotion workflow | Practical: product meets C2DAO naming and marking standards; promotion submitted |
 
-### 2-5. TM-40J — Program Manager
+### 2-5. SL 4J — Program Manager
 
 **TLO:** Design and operate program management data products on MSS that support commander decision-making for schedule, resource, and portfolio health.
 
@@ -169,7 +169,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 40J-05 | Configure a snapshot pipeline in Append mode for historical trend analysis | Practical: run pipeline 2× and verify cumulative records |
 | 40J-06 | Produce an IPR product from MSS meeting the PM Dashboard Standards Checklist | Product review: evaluated against TM-40J Appendix A |
 
-### 2-6. TM-40K — Knowledge Manager
+### 2-6. SL 4K — Knowledge Manager
 
 **TLO:** Design and operate knowledge management systems on MSS that capture, organize, and deliver institutional knowledge in support of unit continuity and mission effectiveness.
 
@@ -182,7 +182,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 40K-05 | Build a knowledge browser application with search, filter, and drill-down | Practical: evaluator submits 5 test queries; application returns correct results |
 | 40K-06 | Build and demonstrate a PCS knowledge transfer package for a specific role | Product review: package contains complete documentation per TM-40K Ch 9 |
 
-### 2-7. TM-40G — ORSA
+### 2-7. SL 4G — ORSA
 
 **TLO:** Conduct operations research and systems analysis on MSS, producing quantitatively rigorous decision support products meeting commander and ORSA product standards.
 
@@ -195,7 +195,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 40G-05 | Formulate and solve a linear programming resource allocation problem | Practical: LP solution reviewed; constraint formulation documented |
 | 40G-06 | Produce a commander brief including point estimates with uncertainty bounds | Product review: brief reviewed against ORSA product standards checklist |
 
-### 2-8. TM-40H — AI Engineer
+### 2-8. SL 4H — AI Engineer
 
 **TLO:** Author, test, and deploy AI-enabled capabilities on MSS using AIP Logic, Agent Studio, and LLM integration patterns in compliance with USAREUR-AF AI safety requirements.
 
@@ -208,7 +208,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 40H-05 | Write Python transforms that extract and format Ontology data for AIP Logic context | Practical: transform output matches expected schema; runs without error |
 | 40H-06 | Complete the AIP Authorization Checklist (TM-40H Appendix A) for a proposed workflow; identify prohibited use cases | Written review: evaluator scores checklist completion and prohibited-use identification |
 
-### 2-9. TM-40M — Machine Learning Engineer
+### 2-9. SL 4M — Machine Learning Engineer
 
 **TLO:** Build, evaluate, deploy, and govern machine learning models on MSS using Foundry Code Workspaces and MLOps tooling in compliance with USAREUR-AF model governance standards.
 
@@ -219,9 +219,9 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 40M-03 | Train and evaluate a supervised model meeting defined accuracy, precision/recall, and calibration thresholds | Practical: evaluation metrics reviewed by technical evaluator against acceptance criteria |
 | 40M-04 | Deploy a trained model to a Foundry model serving endpoint and verify live inference | Practical: inference endpoint returns predictions for 10 test records; latency within spec |
 | 40M-05 | Implement a model monitoring pipeline with drift detection and alert configuration | Practical: pipeline detects seeded drift event; alert routes correctly |
-| 40M-06 | Complete a model governance document meeting USAREUR-AF model documentation standards | Product review: document reviewed against TM-40M governance checklist |
+| 40M-06 | Complete a model governance document meeting USAREUR-AF model documentation standards | Product review: document reviewed against SL 4M governance checklist |
 
-### 2-10. TM-40L — Software Engineer
+### 2-10. SL 4L — Software Engineer
 
 **TLO:** Build, test, and deploy production-quality software applications and integrations on MSS using OSDK, Platform SDK, TypeScript Functions on Objects, and Slate, following USAREUR-AF code review and deployment standards.
 
@@ -234,9 +234,9 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 40L-05 | Build a Slate application integrated with the Foundry API displaying live ontology data | Practical: application renders correctly; data refreshes on state change |
 | 40L-06 | Complete a C2DAO code review and deployment workflow for a provided OSDK application | Practical: PR created, review comments addressed, deployment checklist completed end-to-end |
 
-> **NOTE:** Developer track evaluations (TM-40H, 40M, 40L, 50H, 50M, 50L) require a qualified technical reviewer: TM-40 certified instructor, C2DAO data engineer, or equivalent. Do not evaluate developer track ELOs using a non-technical observer.
+> **NOTE:** Developer track evaluations (SL 4H, 40M, 40L, 50H, 50M, 50L) require a qualified technical reviewer: SL 4 certified instructor, C2DAO data engineer, or equivalent. Do not evaluate developer track ELOs using a non-technical observer.
 
-### 2-11. TM-40N — UI/UX Designer
+### 2-11. SL 4N — UI/UX Designer
 
 **TLO:** Design, prototype, test, and deliver user-centered operational data product interfaces on MSS using Workshop design patterns, accessibility standards, and C2DAO design review processes.
 
@@ -249,7 +249,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | 40N-05 | Create a design system artifact (component library with documented patterns and naming conventions) | Product review: design system evaluated against completeness and developer handoff standards |
 | 40N-06 | Submit design deliverables through C2DAO design review process with accessibility compliance documentation | Practical: deliverables meet C2DAO standards; accessibility checklist completed |
 
-### 2-12. TM-40O — Platform Engineer
+### 2-12. SL 4O — Platform Engineer
 
 **TLO:** Deploy, monitor, secure, and maintain infrastructure supporting MSS operational data products using Kubernetes, CI/CD pipelines, and C2DAO infrastructure standards.
 
@@ -266,7 +266,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 
 ## 3. INDIVIDUAL TASK LIST
 
-### 3-1. TM-10 Tasks (All Personnel)
+### 3-1. SL 1 Tasks (All Personnel)
 
 | Task ID | Task | Go Standard |
 |---|---|---|
@@ -278,7 +278,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | MSS-10-T06 | Submit a basic Contour chart | Chart displays correct data per provided parameters |
 | MSS-10-T07 | Request access to a missing resource | Submits correct access request to unit MSS administrator |
 
-### 3-2. TM-20 Tasks (Builder Track)
+### 3-2. SL 2 Tasks (Builder Track)
 
 | Task ID | Task | Go Standard |
 |---|---|---|
@@ -290,7 +290,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | MSS-20-T06 | Manage project access roles | Viewer access confirmed; Editor cannot elevate to Owner |
 | MSS-20-T07 | Execute a branching workflow | Branch created; change made; promotion requested |
 
-### 3-3. TM-30 Tasks (Advanced Builder)
+### 3-3. SL 3 Tasks (Advanced Builder)
 
 | Task ID | Task | Go Standard |
 |---|---|---|
@@ -301,7 +301,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | MSS-30-T05 | Build a multi-object Quiver dashboard | Linked views filter correctly; evaluated by observer |
 | MSS-30-T06 | Manage the C2DAO promotion workflow | Workflow completed end-to-end with evaluator as data steward |
 
-### 3-4. TM-40A–F Tasks (WFF Functional Tracks — common task set, WFF-adapted scenarios)
+### 3-4. SL 4A–F Tasks (WFF Functional Tracks — common task set, WFF-adapted scenarios)
 
 | Task ID | Task | Go Standard |
 |---|---|---|
@@ -312,7 +312,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | MSS-40WFF-T05 | Build a multi-page WFF dashboard | Page 1 → Page 2 variable passing works; Page 2 data filtered by Page 1 selection |
 | MSS-40WFF-T06 | Apply C2DAO governance: naming, marking, branching, and promotion | Product meets naming standards; promotion request submitted with complete description |
 
-### 3-5. TM-40N Tasks (UI/UX Designer)
+### 3-5. SL 4N Tasks (UI/UX Designer)
 
 | Task ID | Task | Go Standard |
 |---|---|---|
@@ -323,7 +323,7 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 | MSS-40N-T05 | Create a design system component library with documentation | Component library contains all required elements; naming conventions followed |
 | MSS-40N-T06 | Submit deliverables through C2DAO design review with accessibility compliance | All deliverables submitted; accessibility checklist complete; no critical failures |
 
-### 3-6. TM-40O Tasks (Platform Engineer)
+### 3-6. SL 4O Tasks (Platform Engineer)
 
 | Task ID | Task | Go Standard |
 |---|---|---|
@@ -342,16 +342,16 @@ MSS training is progressive and role-based. Bypassing foundational training (TM-
 
 | Training Level | Go Standard |
 |---|---|
-| TM-10 | Pass 6 of 7 tasks (T01–T07); pass classification questions (3 of 4) |
-| TM-20 | Pass 6 of 7 tasks (T01–T07); Pipeline Builder pipeline runs without error |
-| TM-30 | Pass 5 of 6 tasks (T01–T06); Ontology design document reviewed and approved |
-| TM-40A–F (WFF) | Pass all 6 WFF tasks (T01–T06); WFF dashboard meets standard; data governance requirements met |
-| TM-40G | Pass 5 of 6 ELOs; ORSA product brief reviewed by qualified ORSA evaluator |
-| TM-40H/M/L | Pass developer track practical exercise; evaluated by TM-40 certified technical reviewer |
-| TM-40J | Pass 5 of 6 ELOs; IPR product meets all PM Dashboard Standards Checklist items |
-| TM-40K | Pass 5 of 6 ELOs; PCS transfer package reviewed and approved by instructor |
-| TM-40N | Pass 5 of 6 ELOs; design portfolio reviewed by qualified UX evaluator; accessibility checklist complete |
-| TM-40O | Pass 5 of 6 ELOs; deployment verified by qualified infrastructure evaluator; monitoring operational |
+| SL 1 | Pass 6 of 7 tasks (T01–T07); pass classification questions (3 of 4) |
+| SL 2 | Pass 6 of 7 tasks (T01–T07); Pipeline Builder pipeline runs without error |
+| SL 3 | Pass 5 of 6 tasks (T01–T06); Ontology design document reviewed and approved |
+| SL 4A–F (WFF) | Pass all 6 WFF tasks (T01–T06); WFF dashboard meets standard; data governance requirements met |
+| SL 4G | Pass 5 of 6 ELOs; ORSA product brief reviewed by qualified ORSA evaluator |
+| SL 4H/M/L | Pass developer track practical exercise; evaluated by SL 4 certified technical reviewer |
+| SL 4J | Pass 5 of 6 ELOs; IPR product meets all PM Dashboard Standards Checklist items |
+| SL 4K | Pass 5 of 6 ELOs; PCS transfer package reviewed and approved by instructor |
+| SL 4N | Pass 5 of 6 ELOs; design portfolio reviewed by qualified UX evaluator; accessibility checklist complete |
+| SL 4O | Pass 5 of 6 ELOs; deployment verified by qualified infrastructure evaluator; monitoring operational |
 
 ### 4-2. No-Go Actions
 
@@ -361,7 +361,7 @@ A trainee who does not meet the Go standard:
 3. Completes a re-evaluation on the failed task(s) within 5 duty days.
 4. May not advance to the next TM level until the current level Go standard is met.
 
-> **NOTE:** No-Go at TM-10 often indicates an access provisioning issue (CAC enrollment, account not created) — not a training failure. Distinguish between access failures and competency failures. Fix access issues before assessing competency.
+> **NOTE:** No-Go at SL 1 often indicates an access provisioning issue (CAC enrollment, account not created) — not a training failure. Distinguish between access failures and competency failures. Fix access issues before assessing competency.
 
 ### 4-3. Evaluation Documentation
 
@@ -380,7 +380,7 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 
 ## 5. BLOCKS OF INSTRUCTION — TIME REQUIREMENTS
 
-### 5-1. TM-10 — 1 Training Day (8 hours)
+### 5-1. SL 1 — 1 Training Day (8 hours)
 
 | Block | Time | Content | Method |
 |---|---|---|---|
@@ -395,13 +395,13 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | 8 | 1530–1600 | Classification markings and export procedures | Lecture/scenario |
 | 9 | 1600–1700 | Practical exercise (all tasks) | Evaluation |
 
-### 5-2. TM-20 — 5 Training Days (40 hours)
+### 5-2. SL 2 — 5 Training Days (40 hours)
 
 **Day 1 — Project Fundamentals and File Ingestion**
 
 | Block | Time | Content | Method |
 |---|---|---|---|
-| — | 0800–0830 | TM-20 overview; what trainees will build by Day 5; course standards and Go criteria | Brief |
+| — | 0800–0830 | SL 2 overview; what trainees will build by Day 5; course standards and Go criteria | Brief |
 | 1 | 0830–1000 | Project creation: naming conventions, classification markings, folder structure | Instructor-led lab |
 | — | 1000–1015 | Break | — |
 | 2 | 1015–1100 | File ingestion: upload a CSV; inspect schema, types, and row count | Instructor-led lab |
@@ -463,15 +463,15 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | 22 | 1015–1130 | Foundry branching: create, make change, submit for data steward promotion with complete description | Instructor-led lab |
 | — | 1130–1200 | Review: C2DAO governance standards and Go/No-Go criteria for practical exercise | Review |
 | — | 1200–1300 | Lunch | — |
-| 23 | 1300–1700 | Practical exercise (all TM-20 tasks) | Evaluation |
+| 23 | 1300–1700 | Practical exercise (all SL 2 tasks) | Evaluation |
 
-### 5-3. TM-30 — 5 Training Days (40 hours)
+### 5-3. SL 3 — 5 Training Days (40 hours)
 
 **Day 1 — Advanced Workshop**
 
 | Block | Time | Content | Method |
 |---|---|---|---|
-| — | 0800–0830 | TM-30 overview; what trainees will build by Day 5; design-first methodology | Brief |
+| — | 0800–0830 | SL 3 overview; what trainees will build by Day 5; design-first methodology | Brief |
 | 1 | 0830–1030 | Multi-page Workshop: page navigation, parameter configuration, URL deep links | Instructor-led lab |
 | — | 1030–1045 | Break | — |
 | 2 | 1045–1200 | Conditional logic: show/hide panels, conditional formatting on tables, dynamic widget visibility rules | Instructor-led lab |
@@ -532,9 +532,9 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | — | 1100–1130 | Design review: evaluator reviews Ontology design against 6-item rubric; trainees with fatal design flaws correct before proceeding | Evaluation |
 | — | 1130–1200 | Buffer: open lab — resolve any tool access or environment issues | Buffer |
 | — | 1200–1300 | Lunch | — |
-| 21 | 1300–1700 | Practical exercise (all TM-30 tasks) | Evaluation |
+| 21 | 1300–1700 | Practical exercise (all SL 3 tasks) | Evaluation |
 
-### 5-4. TM-40A–F — WFF Functional Tracks (3 Days each; prereq: TM-30)
+### 5-4. SL 4A–F — WFF Functional Tracks (3 Days each; prereq: SL 3)
 
 > Each WFF track runs 3 days (24 hours). The schedule below applies to all 6 tracks (A–F). Scenario content and Object Type design vary by WFF; the instructional sequence and evaluation structure are identical.
 
@@ -569,7 +569,7 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | 12 | 1300–1400 | Practical exercise scenario brief | BRF |
 | 13 | 1400–1700 | Practical exercise (all 6 tasks) | Evaluation |
 
-### 5-5. TM-40J — Program Manager (4 Days)
+### 5-5. SL 4J — Program Manager (4 Days)
 
 **Day 1 — Agile Fundamentals and User Story Craft**
 
@@ -622,7 +622,7 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | — | 1200–1300 | Lunch | — |
 | 17 | 1300–1700 | Practical exercise — Phase 2 (Tasks 5–7): dependency/risk register, production readiness brief, change management summary | Evaluation |
 
-### 5-6. TM-40K — Knowledge Manager (4 Days)
+### 5-6. SL 4K — Knowledge Manager (4 Days)
 
 **Day 1 — Knowledge Architecture, AAR Systems, and Lessons Learned**
 
@@ -674,7 +674,7 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | — | 1200–1300 | Lunch | — |
 | 15 | 1300–1700 | Practical exercise (evaluated) | Evaluation |
 
-### 5-7. TM-40G — ORSA (5 Days)
+### 5-7. SL 4G — ORSA (5 Days)
 
 **Day 1 — Environment Setup and Statistical Modeling**
 
@@ -727,7 +727,7 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | — | 1200–1300 | Lunch | — |
 | 18 | 1300–1700 | Practical exercise: regression + time series + commander brief | Evaluation |
 
-### 5-8. TM-40H — AI Engineer (5 Days)
+### 5-8. SL 4H — AI Engineer (5 Days)
 
 **Day 1 — Safety, Architecture, and AIP Logic Fundamentals** *(Block 1 mandatory — no exceptions)*
 
@@ -779,7 +779,7 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | — | 1200–1300 | Lunch | — |
 | 18 | 1300–1700 | Practical exercise: author → test → authorize → deploy AIP workflow | Evaluation |
 
-### 5-9. TM-40M — Machine Learning Engineer (5 Days)
+### 5-9. SL 4M — Machine Learning Engineer (5 Days)
 
 **Day 1 — Workspace and Feature Engineering**
 
@@ -830,7 +830,7 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | — | 1200–1300 | Lunch | — |
 | 18 | 1300–1700 | Practical exercise: feature pipeline → train → evaluate → deploy → monitor → governance | Evaluation |
 
-### 5-10. TM-40L — Software Engineer (5 Days)
+### 5-10. SL 4L — Software Engineer (5 Days)
 
 **Day 1 — OSDK Fundamentals**
 
@@ -882,7 +882,7 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | — | 1200–1300 | Lunch | — |
 | 18 | 1300–1700 | Practical exercise: OSDK → validator → Slate UI → deployment checklist | Evaluation |
 
-### 5-11. TM-40N — UI/UX Designer (5 Days)
+### 5-11. SL 4N — UI/UX Designer (5 Days)
 
 **Day 1 — User Research and Information Architecture**
 
@@ -936,7 +936,7 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 | — | 1200–1300 | Lunch | — |
 | 20 | 1300–1700 | Practical exercise: user research → wireframe → prototype → test → design system artifact | Evaluation |
 
-### 5-12. TM-40O — Platform Engineer (5 Days)
+### 5-12. SL 4O — Platform Engineer (5 Days)
 
 **Day 1 — Kubernetes and Container Fundamentals**
 
@@ -1000,15 +1000,15 @@ Training evaluations are documented in the Unit Training Status Matrix (Appendix
 
 | Day | Training | Location | Access Requirement |
 |---|---|---|---|
-| Mon | TM-10 (full day) | MSS training environment | Basic MSS account (provisioned before arrival) |
+| Mon | SL 1 (full day) | MSS training environment | Basic MSS account (provisioned before arrival) |
 | Tue | Supervised practice: unit operational MSS environment | G6/data team desk | Read-only access to unit projects |
-| Wed | TM-20 Day 1 (if builder role) OR continuation practice | Training environment | Builder access provisioned |
-| Thu | TM-20 Day 2 + evaluation | Training environment | Builder access |
+| Wed | SL 2 Day 1 (if builder role) OR continuation practice | Training environment | Builder access provisioned |
+| Thu | SL 2 Day 2 + evaluation | Training environment | Builder access |
 | Fri | Review evaluation feedback; remediation if needed | — | — |
 
 **Weeks 2–3 — Specialized Track (if applicable)**
 
-Continue with TM-30 or TM-40 track based on role. No more than one TM level per week for initial qualification.
+Continue with SL 3 or SL 4 track based on role. No more than one TM level per week for initial qualification.
 
 ### 6-2. Unit-Wide Training Event (S6 Shop or Data Team)
 
@@ -1017,47 +1017,47 @@ Continue with TM-30 or TM-40 track based on role. No more than one TM level per 
 | Day | Training | Audience |
 |---|---|---|
 | Mon | Commander brief: Data Literacy for Senior Leaders summary (2 hrs); unit data strategy overview | All O-5+, S6 leadership |
-| Tue | TM-10 (all staff) | All personnel |
-| Wed | TM-10 Evaluation (morning); TM-20 Day 1 (designated builders, afternoon) | Split: all / builders |
-| Thu | TM-20 Day 2 | Designated builders |
-| Fri | TM-20 Evaluation; TM-30 orientation brief | Builders |
+| Tue | SL 1 (all staff) | All personnel |
+| Wed | SL 1 Evaluation (morning); SL 2 Day 1 (designated builders, afternoon) | Split: all / builders |
+| Thu | SL 2 Day 2 | Designated builders |
+| Fri | SL 2 Evaluation; SL 3 orientation brief | Builders |
 
 **Week 2**
 
 | Day | Training | Audience |
 |---|---|---|
-| Mon | TM-30 Day 1 | Data-adjacent specialists |
-| Tue | TM-30 Day 2 | Data-adjacent specialists |
-| Wed | TM-30 Day 3 + Evaluation | Data-adjacent specialists |
-| Thu | Confirm all TM-40 enrollments; brief functional staff on WFF track options; brief specialists on G–O track options | Training NCO/Officer |
-| Fri | TM-40 scheduling coordination complete; access provisioning confirmed for all Week 3+ participants | Training NCO/Officer |
+| Mon | SL 3 Day 1 | Data-adjacent specialists |
+| Tue | SL 3 Day 2 | Data-adjacent specialists |
+| Wed | SL 3 Day 3 + Evaluation | Data-adjacent specialists |
+| Thu | Confirm all SL 4 enrollments; brief functional staff on WFF track options; brief specialists on G–O track options | Training NCO/Officer |
+| Fri | SL 4 scheduling coordination complete; access provisioning confirmed for all Week 3+ participants | Training NCO/Officer |
 
-**Week 3 (TM-40 WFF Tracks)**
+**Week 3 (SL 4 WFF Tracks)**
 
 | Day | Training | Audience |
 |---|---|---|
-| Mon–Wed | TM-40A (Intel WFF) — 3 days | G2/S2 Intel staff |
-| Mon–Wed | TM-40D (Sustainment WFF) — 3 days (parallel session if capacity allows) | G4/S4 staff |
+| Mon–Wed | SL 4A (Intel WFF) — 3 days | G2/S2 Intel staff |
+| Mon–Wed | SL 4D (Sustainment WFF) — 3 days (parallel session if capacity allows) | G4/S4 staff |
 | Thu–Fri or following week | Remaining WFF tracks (B, C, E, F) as scheduled | Applicable WFF functional staff |
 
-> **NOTE:** All TM-40 tracks (A–F WFF and G–O specialist) require TM-30 completion. Ensure all TM-40 participants have TM-30 on file before enrolling. WFF and specialist (G–O) training can run concurrently in separate sessions once TM-30 is complete.
+> **NOTE:** All SL 4 tracks (A–F WFF and G–O specialist) require SL 3 completion. Ensure all SL 4 participants have SL 3 on file before enrolling. WFF and specialist (G–O) training can run concurrently in separate sessions once SL 3 is complete.
 
-**Week 4 (TM-40 Specialist Tracks — 5-day courses)**
-
-| Day | Training | Audience |
-|---|---|---|
-| Mon–Fri | TM-40G (ORSA) — 5 days | ORSA personnel |
-| Mon–Fri | TM-40H (AI Engineer) — 5 days (parallel session if capacity allows) | AI Engineer personnel |
-| Following week | TM-40M (ML Engineer), TM-40L (Software Engineer) — 5 days each, as scheduled | ML Eng, SWE personnel |
-
-**Week 5 (TM-40 Specialist Tracks — 4-day courses)**
+**Week 4 (SL 4 Specialist Tracks — 5-day courses)**
 
 | Day | Training | Audience |
 |---|---|---|
-| Mon–Thu | TM-40J (Program Manager) — 4 days | G8/S8, Program Managers |
-| Mon–Thu | TM-40K (Knowledge Manager) — 4 days (parallel session if capacity allows) | Knowledge Managers, S6 |
+| Mon–Fri | SL 4G (ORSA) — 5 days | ORSA personnel |
+| Mon–Fri | SL 4H (AI Engineer) — 5 days (parallel session if capacity allows) | AI Engineer personnel |
+| Following week | SL 4M (ML Engineer), SL 4L (Software Engineer) — 5 days each, as scheduled | ML Eng, SWE personnel |
 
-> **NOTE:** TM-40J and TM-40K are 4-day courses (32 hours each). Access provisioning for TM-40H, TM-40M, and TM-40L requires 10–35 days (GPU workspaces, developer tokens) — initiate immediately after TM-30 enrollment is confirmed.
+**Week 5 (SL 4 Specialist Tracks — 4-day courses)**
+
+| Day | Training | Audience |
+|---|---|---|
+| Mon–Thu | SL 4J (Program Manager) — 4 days | G8/S8, Program Managers |
+| Mon–Thu | SL 4K (Knowledge Manager) — 4 days (parallel session if capacity allows) | Knowledge Managers, S6 |
+
+> **NOTE:** SL 4J and SL 4K are 4-day courses (32 hours each). Access provisioning for SL 4H, SL 4M, and SL 4L requires 10–35 days (GPU workspaces, developer tokens) — initiate immediately after SL 3 enrollment is confirmed.
 
 ---
 
@@ -1069,18 +1069,18 @@ Continue with TM-30 or TM-40 track based on role. No more than one TM level per 
 
 | Training Level | Access Required | Who Provisions | Lead Time |
 |---|---|---|---|
-| TM-10 | Standard MSS user account (Viewer in training project) | Unit MSS Administrator | 3–5 duty days |
-| TM-20 | Builder access in training project | Unit MSS Administrator | 3–5 duty days |
-| TM-30 | Editor access; AIP Logic configuration access | Unit MSS Admin + C2DAO | 5–7 duty days |
-| TM-40A–F (WFF) | Builder access | Unit MSS Administrator | 3–5 duty days |
-| TM-40G | Code Workspace (Python/R) | C2DAO | 7–10 duty days |
-| TM-40H | AIP Logic authoring + Agent Studio access | C2DAO | 7–10 duty days |
-| TM-40M | Code Workspace with GPU; model registry access | C2DAO | 10+ duty days |
-| TM-40J | Builder access + GFEBS training data export | Unit MSS Admin + G8 | 5–7 duty days |
-| TM-40K | Builder access + AIP Logic configuration | Unit MSS Admin + C2DAO | 5–7 duty days |
-| TM-40L | OSDK developer access; TypeScript environment | C2DAO | 10+ duty days |
-| TM-40N | Workshop design access (Editor + AIP Logic configuration) | C2DAO | 7–10 duty days |
-| TM-40O | Kubernetes cluster access + CI/CD pipeline access | C2DAO | 10+ duty days |
+| SL 1 | Standard MSS user account (Viewer in training project) | Unit MSS Administrator | 3–5 duty days |
+| SL 2 | Builder access in training project | Unit MSS Administrator | 3–5 duty days |
+| SL 3 | Editor access; AIP Logic configuration access | Unit MSS Admin + C2DAO | 5–7 duty days |
+| SL 4A–F (WFF) | Builder access | Unit MSS Administrator | 3–5 duty days |
+| SL 4G | Code Workspace (Python/R) | C2DAO | 7–10 duty days |
+| SL 4H | AIP Logic authoring + Agent Studio access | C2DAO | 7–10 duty days |
+| SL 4M | Code Workspace with GPU; model registry access | C2DAO | 10+ duty days |
+| SL 4J | Builder access + GFEBS training data export | Unit MSS Admin + G8 | 5–7 duty days |
+| SL 4K | Builder access + AIP Logic configuration | Unit MSS Admin + C2DAO | 5–7 duty days |
+| SL 4L | OSDK developer access; TypeScript environment | C2DAO | 10+ duty days |
+| SL 4N | Workshop design access (Editor + AIP Logic configuration) | C2DAO | 7–10 duty days |
+| SL 4O | Kubernetes cluster access + CI/CD pipeline access | C2DAO | 10+ duty days |
 
 ### 7-2. Training Environment Requirements
 
@@ -1102,25 +1102,25 @@ If the training environment is unavailable, coordinate with C2DAO for an approve
 | Trainee workstations | One per trainee; CAC-capable; network access to MSS |
 | Backup | Instructor maintains a pre-recorded demo video for each major task in case of MSS outage |
 
-### 7-4. TM-10 Throughput Risk — G-3 Action Required
+### 7-4. SL 1 Throughput Risk — G-3 Action Required
 
 > **RISK FLAG — FOR G-3 ACTION**
 
-TM-10 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 30 days of assignment. At current instructor capacity and training iteration frequency, the program cannot process the full formation at the rate required to meet this standard.
+SL 1 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 30 days of assignment. At current instructor capacity and training iteration frequency, the program cannot process the full formation at the rate required to meet this standard.
 
 **The gap:**
-- TM-10 required population: all USAREUR-AF military and Civilian personnel (theater-wide)
-- Current certified TM-10 instructor pool: insufficient to run concurrent iterations at scale
+- SL 1 required population: all USAREUR-AF military and Civilian personnel (theater-wide)
+- Current certified SL 1 instructor pool: insufficient to run concurrent iterations at scale
 - Current training frequency: insufficient to process new arrivals within the 30-day window during high-accession periods
 
-**Impact:** Portions of the formation are operating MSS without TM-10 qualification, creating data governance risk (unqualified users making classification and access decisions) and operational risk (untrained users misreading or mishandling MSS data products).
+**Impact:** Portions of the formation are operating MSS without SL 1 qualification, creating data governance risk (unqualified users making classification and access decisions) and operational risk (untrained users misreading or mishandling MSS data products).
 
 **Options for G-3 consideration:**
-1. **Instructor billet increase** — authorize additional C2DAO training billets or detail TM-20/30-certified personnel from units as TM-10 instructors on a rotational basis (qualification standard: Section 8-1)
-2. **eLearning conversion of TM-10** — convert TM-10 to a self-paced computer-based training (CBT) that can be completed asynchronously; reserve the practical evaluation (Tasks 4-1, 4-2, and Ch 6 security markings) as the only instructor-administered element; this is the highest-leverage option for throughput
-3. **Unit-embedded delivery** — certify one TM-20+ instructor per major subordinate command (MSC) to deliver TM-10 within their formation; C2DAO provides materials and certifies instructors; practical evaluation remains C2DAO-administered
+1. **Instructor billet increase** — authorize additional C2DAO training billets or detail SL 2/30-certified personnel from units as SL 1 instructors on a rotational basis (qualification standard: Section 8-1)
+2. **eLearning conversion of SL 1** — convert SL 1 to a self-paced computer-based training (CBT) that can be completed asynchronously; reserve the practical evaluation (Tasks 4-1, 4-2, and Ch 6 security markings) as the only instructor-administered element; this is the highest-leverage option for throughput
+3. **Unit-embedded delivery** — certify one SL 2+ instructor per major subordinate command (MSC) to deliver SL 1 within their formation; C2DAO provides materials and certifies instructors; practical evaluation remains C2DAO-administered
 
-**Recommended G-3 action:** Direct C2DAO to present options 2 and 3 with cost/risk analysis within 30 days. Until resolved, direct unit commanders to report TM-10 completion rates in the monthly Unit MSS Training Status Report (Section 10-2) and flag units below 70% completion for command attention.
+**Recommended G-3 action:** Direct C2DAO to present options 2 and 3 with cost/risk analysis within 30 days. Until resolved, direct unit commanders to report SL 1 completion rates in the monthly Unit MSS Training Status Report (Section 10-2) and flag units below 70% completion for command attention.
 
 ---
 
@@ -1130,27 +1130,27 @@ TM-10 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 3
 
 | TM Level | Instructor Requirement |
 |---|---|
-| TM-10 | TM-20 certified or higher; completed TM-10 evaluation as a trainee |
-| TM-20 | TM-30 certified or higher |
-| TM-30 | TM-40 certified in any track; or C2DAO-certified data engineer |
-| TM-40A (Intel WFF) | TM-40A certified; G2/S2 background or Intel functional familiarity; TM-30 proficiency |
-| TM-40B (Fires WFF) | TM-40B certified; Fires/FSCOORD background; TM-30 proficiency |
-| TM-40C (M2 WFF) | TM-40C certified; G3/S3 movement and maneuver background; TM-30 proficiency |
-| TM-40D (SUST WFF) | TM-40D certified; G4/S4 sustainment background; TM-30 proficiency |
-| TM-40E (PROT WFF) | TM-40E certified; Protection background; TM-30 proficiency |
-| TM-40F (MC WFF) | TM-40F certified; Mission Command/G6 background; TM-30 proficiency |
-| TM-40G (ORSA) | Active-duty ORSA (FA49) with Code Workspace proficiency OR C2DAO-approved contractor |
-| TM-40H (AI Eng) | C2DAO AI engineer or TM-40H certified individual |
-| TM-40M (MLE) | C2DAO ML engineer or TM-40M certified individual |
-| TM-40J (PM) | TM-40J certified; PM/resource management background |
-| TM-40K (KM) | TM-40K certified; KM background (37F or equivalent) |
-| TM-40L (SWE) | C2DAO software engineer or TM-40L certified; TypeScript/Python proficiency |
-| TM-40N (UI/UX) | TM-40N certified; UI/UX design background; Workshop design proficiency; C2DAO UX SME designation |
-| TM-40O (Platform) | TM-40O certified; Platform engineering background; Kubernetes/container proficiency; C2DAO infrastructure SME |
+| SL 1 | SL 2 certified or higher; completed SL 1 evaluation as a trainee |
+| SL 2 | SL 3 certified or higher |
+| SL 3 | SL 4 certified in any track; or C2DAO-certified data engineer |
+| SL 4A (Intel WFF) | SL 4A certified; G2/S2 background or Intel functional familiarity; SL 3 proficiency |
+| SL 4B (Fires WFF) | SL 4B certified; Fires/FSCOORD background; SL 3 proficiency |
+| SL 4C (M2 WFF) | SL 4C certified; G3/S3 movement and maneuver background; SL 3 proficiency |
+| SL 4D (SUST WFF) | SL 4D certified; G4/S4 sustainment background; SL 3 proficiency |
+| SL 4E (PROT WFF) | SL 4E certified; Protection background; SL 3 proficiency |
+| SL 4F (MC WFF) | SL 4F certified; Mission Command/G6 background; SL 3 proficiency |
+| SL 4G (ORSA) | Active-duty ORSA (FA49) with Code Workspace proficiency OR C2DAO-approved contractor |
+| SL 4H (AI Eng) | C2DAO AI engineer or SL 4H certified individual |
+| SL 4M (MLE) | C2DAO ML engineer or SL 4M certified individual |
+| SL 4J (PM) | SL 4J certified; PM/resource management background |
+| SL 4K (KM) | SL 4K certified; KM background (37F or equivalent) |
+| SL 4L (SWE) | C2DAO software engineer or SL 4L certified; TypeScript/Python proficiency |
+| SL 4N (UI/UX) | SL 4N certified; UI/UX design background; Workshop design proficiency; C2DAO UX SME designation |
+| SL 4O (Platform) | SL 4O certified; Platform engineering background; Kubernetes/container proficiency; C2DAO infrastructure SME |
 
 ### 8-2. Instructor Certification Process
 
-1. Complete the TM for the level you will instruct, plus one level above (or a TM-40 track for TM-30 instructors).
+1. Complete the TM for the level you will instruct, plus one level above (or a SL 4 track for SL 3 instructors).
 2. Pass the practical evaluation for the target level.
 3. Co-instruct one full training event at the target level, observed by a C2DAO data engineer or existing certified instructor.
 4. Receive written certification from C2DAO.
@@ -1160,18 +1160,18 @@ TM-10 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 3
 
 | TM Level | Maximum T:I Ratio |
 |---|---|
-| TM-10 | 20:1 (lecture); 10:1 (lab) |
-| TM-20 | 10:1 (all portions) |
-| TM-30 | 8:1 (all portions) |
-| TM-40A–F (WFF) | 10:1 (all portions — high-volume functional staff courses) |
-| TM-40G/H/M/L/N/O | 5:1 (intensive coding/modeling content) |
-| TM-40J/K | 10:1 (all portions) |
+| SL 1 | 20:1 (lecture); 10:1 (lab) |
+| SL 2 | 10:1 (all portions) |
+| SL 3 | 8:1 (all portions) |
+| SL 4A–F (WFF) | 10:1 (all portions — high-volume functional staff courses) |
+| SL 4G/H/M/L/N/O | 5:1 (intensive coding/modeling content) |
+| SL 4J/K | 10:1 (all portions) |
 
 ---
 
 ## 9. PRACTICAL EXERCISE DESIGNS
 
-### 9-1. TM-10 — "Unit SITREP Access"
+### 9-1. SL 1 — "Unit SITREP Access"
 
 **Scenario:** S3 NCO assigned to unit. Unit uses MSS to track SITREP submissions from subordinate elements. Access the SITREP dashboard, check for missing submissions, and submit a correction.
 
@@ -1186,7 +1186,7 @@ TM-10 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 3
 
 **Go standard:** All 7 tasks completed; classification question answered correctly.
 
-### 9-2. TM-20 — "Build a Unit Readiness Tracker"
+### 9-2. SL 2 — "Build a Unit Readiness Tracker"
 
 **Scenario:** S4 officer needs a simple equipment readiness tracker. Provided: Excel spreadsheet with equipment identifiers, assigned units, and current C-ratings.
 
@@ -1202,11 +1202,11 @@ TM-10 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 3
 
 **Go standard:** All 8 tasks completed without instructor assistance; pipeline runs without error.
 
-### 9-3. TM-40A–F — WFF Functional Track Practical Exercises
+### 9-3. SL 4A–F — WFF Functional Track Practical Exercises
 
-> Instructor selects from the applicable WFF track scenario bank. Scenarios below are representative for each track. All require TM-10, TM-20, and TM-30 completion.
+> Instructor selects from the applicable WFF track scenario bank. Scenarios below are representative for each track. All require SL 1, SL 2, and SL 3 completion.
 
-**TM-40A (Intel WFF) — "ISR Status Tracker"**
+**SL 4A (Intel WFF) — "ISR Status Tracker"**
 
 **Scenario:** G2 analyst requires a dashboard showing ISR asset status across the AOR. Provided: synthetic ISR asset tracking spreadsheet.
 
@@ -1222,7 +1222,7 @@ TM-10 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 3
 
 ---
 
-**TM-40B (Fires WFF) — "Target Tracking Dashboard"**
+**SL 4B (Fires WFF) — "Target Tracking Dashboard"**
 
 **Scenario:** FSCOORD requires a target status and engagement tracking application. Provided: synthetic target tracking dataset.
 
@@ -1230,7 +1230,7 @@ TM-10 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 3
 
 ---
 
-**TM-40C (Movement & Maneuver WFF) — "Unit Disposition Tracker"**
+**SL 4C (Movement & Maneuver WFF) — "Unit Disposition Tracker"**
 
 **Scenario:** S3 requires a unit disposition and FRAGORD compliance tracker. Provided: synthetic unit status dataset.
 
@@ -1238,7 +1238,7 @@ TM-10 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 3
 
 ---
 
-**TM-40D (Sustainment WFF) — "Class IX Readiness Dashboard"**
+**SL 4D (Sustainment WFF) — "Class IX Readiness Dashboard"**
 
 **Scenario:** S4 requires a Class IX on-hand vs. requirement dashboard with shortfall flagging.
 
@@ -1246,7 +1246,7 @@ TM-10 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 3
 
 ---
 
-**TM-40E (Protection WFF) — "Force Protection Status Tracker"**
+**SL 4E (Protection WFF) — "Force Protection Status Tracker"**
 
 **Scenario:** Protection officer requires a threat indicator and force protection measure tracking dashboard.
 
@@ -1254,7 +1254,7 @@ TM-10 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 3
 
 ---
 
-**TM-40F (Mission Command WFF) — "Battle Rhythm and Comms Status Dashboard"**
+**SL 4F (Mission Command WFF) — "Battle Rhythm and Comms Status Dashboard"**
 
 **Scenario:** G6 requires a battle rhythm event tracker and comms system status dashboard for the commander.
 
@@ -1262,7 +1262,7 @@ TM-10 (Maven User, 1 day) is mandatory for **all** USAREUR-AF personnel within 3
 
 ---
 
-### 9-4. TM-30 — "Multi-Source Operations Dashboard"
+### 9-4. SL 3 — "Multi-Source Operations Dashboard"
 
 **Scenario:** S3 requires a dashboard combining personnel readiness (one dataset) and equipment readiness (second dataset) at the unit level, with battalion filter and drill-down to individual unit status.
 
@@ -1290,11 +1290,11 @@ The Unit Training Status Matrix (Appendix A) is the primary tracking tool. Maint
 | Name | Last, First MI |
 | Rank/Grade | E/O/W/GS grade |
 | MOS/Position | Assigned role |
-| TM-10 Date | Date of Go evaluation (or N/A if not yet completed) |
-| TM-20 Date | Date of Go evaluation |
-| TM-30 Date | Date of Go evaluation |
-| TM-40 Track | Applicable track(s) |
-| TM-40 Date | Date of Go evaluation |
+| SL 1 Date | Date of Go evaluation (or N/A if not yet completed) |
+| SL 2 Date | Date of Go evaluation |
+| SL 3 Date | Date of Go evaluation |
+| SL 4 Track | Applicable track(s) |
+| SL 4 Date | Date of Go evaluation |
 | Refresher Due | Date of next sustainment evaluation |
 | Notes | Remediation status, access issues, special certifications |
 
@@ -1308,12 +1308,12 @@ Unit: [Unit Designation]          Date: [YYYYMMDD]
 Reporting Officer: [Name, Rank]   Contact: [Email]
 
 PERSONNEL SUMMARY:
-  Total personnel requiring TM-10: [#]     TM-10 Complete: [#] ([%])
-  Total personnel requiring TM-20: [#]     TM-20 Complete: [#] ([%])
-  Total personnel requiring TM-30: [#]     TM-30 Complete: [#] ([%])
-  Total WFF track assignments (TM-40A–F):  [#]  WFF Complete: [#] ([%])
+  Total personnel requiring SL 1: [#]     SL 1 Complete: [#] ([%])
+  Total personnel requiring SL 2: [#]     SL 2 Complete: [#] ([%])
+  Total personnel requiring SL 3: [#]     SL 3 Complete: [#] ([%])
+  Total WFF track assignments (SL 4A–F):  [#]  WFF Complete: [#] ([%])
     Breakdown: 40A[#] 40B[#] 40C[#] 40D[#] 40E[#] 40F[#]
-  Total specialist track assignments (TM-40G–O): [#]  Specialist Complete: [#] ([%])
+  Total specialist track assignments (SL 4G–O): [#]  Specialist Complete: [#] ([%])
     Breakdown: 40G[#] 40H[#] 40J[#] 40K[#] 40L[#] 40M[#] 40N[#] 40O[#]
 
 ISSUES / SHORTFALLS:
@@ -1337,7 +1337,7 @@ NEXT TRAINING EVENT: [Date, Level, # of trainees]
 | Occasional user (weekly to monthly) | Practical task evaluation every 12 months |
 | Infrequent user (<monthly) | Practical task evaluation every 6 months |
 | MSS access not used in 6+ months | Re-evaluate at current TM level before resuming independent work |
-| PCS arrival with prior MSS training | Re-evaluate TM-10 (access/navigation may differ by theater); waive with supervisor verification |
+| PCS arrival with prior MSS training | Re-evaluate SL 1 (access/navigation may differ by theater); waive with supervisor verification |
 
 ### 11-2. Sustainment Event Design
 
@@ -1345,15 +1345,15 @@ A sustainment event does not require a full-day class — design as a practical 
 
 | Level | Duration | Method |
 |---|---|---|
-| TM-10 | 1 hour | Complete one task scenario from the TM-10 practical exercise bank (Appendix C). Evaluated by immediate supervisor or unit MSS Administrator. |
-| TM-20/30 | 2–3 hours | Complete one of: build a new pipeline in a test project, modify an existing Workshop application, or complete a branch/promote workflow. Evaluated by TM-30+ certified individual. |
-| TM-40 | 4 hours | Complete a representative task from the relevant TM-40 track. TM-40J/K sustainment may include producing a real unit product (PM dashboard update, AAR pipeline run) observed by a supervisor. |
+| SL 1 | 1 hour | Complete one task scenario from the SL 1 practical exercise bank (Appendix C). Evaluated by immediate supervisor or unit MSS Administrator. |
+| SL 2/30 | 2–3 hours | Complete one of: build a new pipeline in a test project, modify an existing Workshop application, or complete a branch/promote workflow. Evaluated by SL 3+ certified individual. |
+| SL 4 | 4 hours | Complete a representative task from the relevant SL 4 track. SL 4J/K sustainment may include producing a real unit product (PM dashboard update, AAR pipeline run) observed by a supervisor. |
 
 ### 11-3. Access Deactivation Policy
 
 Personnel who have not accessed MSS in 90 days will have their access reviewed by the unit MSS Administrator. Access will be deactivated at 180 days of inactivity per USAREUR-AF access management policy. Reactivation requires:
 1. Supervisor endorsement of continued need
-2. Completion of TM-10 practical re-evaluation
+2. Completion of SL 1 practical re-evaluation
 3. MSS Administrator re-provisioning
 
 ---
@@ -1365,7 +1365,7 @@ UNIT MSS TRAINING STATUS MATRIX
 Unit: _______________________     As of: ___________
 Maintained by: _______________     Reviewed: ________
 
-NAME          | RANK | MOS  | TM-10  | TM-20  | TM-30  | TM-40  | REFRESH
+NAME          | RANK | MOS  | SL 1  | SL 2  | SL 3  | SL 4  | REFRESH
               |      |      | DATE   | DATE   | DATE   | TRK/DT | DUE
 --------------+------+------+--------+--------+--------+--------+--------
               |      |      |        |        |        |        |
@@ -1386,22 +1386,22 @@ MSS INDIVIDUAL TRAINING RECORD
 Name: ____________________  Rank/Grade: _______  MOS/Position: __________
 Unit: ____________________  Email: ________________________________
 
-TM-10 EVALUATION
+SL 1 EVALUATION
   Date: __________  Evaluator: ________________  Result: GO / NO-GO
   Tasks Failed (if any): _________________________________________
   Re-evaluation Date (if applicable): _____________  Result: ________
 
-TM-20 EVALUATION
+SL 2 EVALUATION
   Date: __________  Evaluator: ________________  Result: GO / NO-GO
   Tasks Failed: __________________________________________________
   Re-evaluation: _________________________________________________
 
-TM-30 EVALUATION
+SL 3 EVALUATION
   Date: __________  Evaluator: ________________  Result: GO / NO-GO
   Tasks Failed: __________________________________________________
   Re-evaluation: _________________________________________________
 
-TM-40 TRACK: _______
+SL 4 TRACK: _______
   Date: __________  Evaluator: ________________  Result: GO / NO-GO
   Tasks Failed: __________________________________________________
   Re-evaluation: _________________________________________________
@@ -1420,7 +1420,7 @@ INSTRUCTOR CERTIFICATIONS
 
 ## APPENDIX C — PRACTICAL EXERCISE SCENARIO BANK
 
-### TM-10 Scenarios (Instructor selects one per evaluation)
+### SL 1 Scenarios (Instructor selects one per evaluation)
 
 **Scenario 10-A:** Access the `[Unit]-Readiness-Dashboard` application. Identify which subordinate element has the lowest C-rating. Export the table filtered to that element. State the classification of the dataset.
 
@@ -1428,9 +1428,9 @@ INSTRUCTOR CERTIFICATIONS
 
 **Scenario 10-C:** Use Contour to build a bar chart showing count of personnel by rank from the provided personnel dataset. Apply a filter for a specific unit. Save the chart.
 
-**Scenario 10-D:** You receive an error message when trying to access a dataset. Using TM-10 troubleshooting procedures, identify the likely cause (one of three seeded scenarios: wrong marking, no project access, dataset moved). State the correct resolution action.
+**Scenario 10-D:** You receive an error message when trying to access a dataset. Using SL 1 troubleshooting procedures, identify the likely cause (one of three seeded scenarios: wrong marking, no project access, dataset moved). State the correct resolution action.
 
-### TM-20 Scenarios (Instructor selects one per evaluation)
+### SL 2 Scenarios (Instructor selects one per evaluation)
 
 **Scenario 20-A:** Readiness Tracker — see Section 9-2.
 
@@ -1438,7 +1438,7 @@ INSTRUCTOR CERTIFICATIONS
 
 **Scenario 20-C:** Given a logistics dataset (equipment, location, status), build a Pipeline Builder pipeline that filters to RED status items and a Workshop application displaying them with a mark-resolved Action.
 
-### TM-40J Scenarios (PM — Instructor selects one per evaluation)
+### SL 4J Scenarios (PM — Instructor selects one per evaluation)
 
 **Scenario 40J-A:** G8 data builder for a theater sustainment command program. Given a provided IMS spreadsheet (15 milestones) and a GFEBS obligation extract, build the full PM stack: Object Types, ingestion pipelines, milestone RAG dashboard, and obligation rate Quiver chart with a Q2 reference line. Application must display a data-as-of timestamp.
 
@@ -1446,7 +1446,7 @@ INSTRUCTOR CERTIFICATIONS
 
 **Scenario 40J-C:** An existing PM dashboard has no data-as-of date and uses hardcoded status values in the pipeline. Identify and fix both issues. Document the changes in pipeline description fields and re-run to verify.
 
-### TM-40K Scenarios (KM — Instructor selects one per evaluation)
+### SL 4K Scenarios (KM — Instructor selects one per evaluation)
 
 **Scenario 40K-A:** Brigade KMO needs an AAR capture system. Build the Object Type, Workshop submission form with required-field validation, and a knowledge browser showing submitted AARs filterable by unit and event type.
 
@@ -1454,7 +1454,7 @@ INSTRUCTOR CERTIFICATIONS
 
 **Scenario 40K-C:** Design a PCS knowledge transfer package for an outgoing S3 operations sergeant who has been the unit MSS builder for 18 months. Using TM-40K Ch 9 procedures, produce the complete transfer package: key person dependency analysis, knowledge transfer artifacts list, and Foundry project handoff documentation.
 
-### TM-40G Scenarios (ORSA — Evaluator selects one per evaluation)
+### SL 4G Scenarios (ORSA — Evaluator selects one per evaluation)
 
 **Scenario 40G-A:** Using a provided readiness dataset (12 months, C-ratings by battalion), build: (1) a linear regression to forecast C2-level probability at 6 months, (2) a time series forecast with 90% confidence intervals, (3) a commander brief showing the forecast with explicit uncertainty bounds. No point estimate without its confidence range.
 
@@ -1462,37 +1462,37 @@ INSTRUCTOR CERTIFICATIONS
 
 **Scenario 40G-C:** Given a maintenance schedule constraint problem (20 vehicles, 5 bay slots, maintenance windows, operational commitments), formulate and solve a linear program that maximizes vehicles available during a defined readiness window. Document all constraints; present the solution in language the S4 can brief.
 
-### TM-40H Scenarios (AI Engineer — Evaluator selects one per evaluation)
+### SL 4H Scenarios (AI Engineer — Evaluator selects one per evaluation)
 
 **Scenario 40H-A:** Build an AIP Logic workflow that accepts unstructured SITREP text, extracts structured fields (unit, date, activity, status, issues), maps them to a SITREP Object Type via an Action, and routes uncertain extractions to a human review queue. Complete the AIP Authorization Checklist.
 
 **Scenario 40H-B:** Configure an Agent Studio agent that answers natural language questions about unit readiness by querying the Readiness Object Type. The agent must refuse questions outside its defined scope and must not take any write Actions without an explicit confirmation step.
 
-### TM-40M Scenarios (ML Engineer — Evaluator selects one per evaluation)
+### SL 4M Scenarios (ML Engineer — Evaluator selects one per evaluation)
 
 **Scenario 40M-A:** Given a provided equipment failure dataset, build: feature engineering pipeline, binary classifier for failure prediction within 30 days, evaluation report against acceptance thresholds, and a deployed inference endpoint. Produce the model governance document.
 
 **Scenario 40M-B:** An existing model is deployed and showing data drift (evaluator seeds drift into the monitoring dataset). Diagnose the drift, characterize its type, and produce a written recommendation: retrain, adjust thresholds, or investigate data quality issue. Document the decision.
 
-### TM-40L Scenarios (SWE — Evaluator selects one per evaluation)
+### SL 4L Scenarios (SWE — Evaluator selects one per evaluation)
 
 **Scenario 40L-A:** Build a TypeScript application using OSDK that: (1) queries Unit objects filtered by readiness status, (2) paginates results into a Slate table view, (3) triggers a status update Action on user click with confirmation modal, and (4) handles error states with user-visible error messages. Complete the C2DAO deployment checklist.
 
 **Scenario 40L-B:** Given a provided Action that writes to a Personnel Object Type, write a TypeScript validator enforcing: required field presence, valid rank enumeration, date range validation (no future dates), and cross-field logic (if status = DEPLOYED, location must be non-null). Test with 8 provided test cases (4 valid, 4 invalid).
 
-### TM-40N Scenarios (UI/UX Designer — Evaluator selects one per evaluation)
+### SL 4N Scenarios (UI/UX Designer — Evaluator selects one per evaluation)
 
 **Scenario 40N-A:** A brigade S3 needs a redesigned operations dashboard. Conduct user research (interview the evaluator acting as S3), create wireframes for a 3-page Workshop application, build a high-fidelity prototype, conduct a user test with a peer, and produce a design system artifact documenting the component library.
 
 **Scenario 40N-B:** An existing readiness dashboard has been flagged for poor usability. Conduct a heuristic evaluation, document findings, redesign the information architecture, build an improved prototype with accessibility compliance, and submit through C2DAO design review.
 
-### TM-40O Scenarios (Platform Engineer — Evaluator selects one per evaluation)
+### SL 4O Scenarios (Platform Engineer — Evaluator selects one per evaluation)
 
 **Scenario 40O-A:** Deploy a provided application to a Kubernetes cluster. Configure namespace, resource quotas, rolling update strategy, monitoring dashboard with alerting, and network policies. Build a CI/CD pipeline that tests, scans, and deploys. Complete the deployment checklist.
 
 **Scenario 40O-B:** An existing deployment is experiencing intermittent failures (evaluator seeds issues). Diagnose using monitoring tools, implement alerting for the failure condition, apply security hardening, and produce a runbook documenting the incident response procedure.
 
-### TM-30 Scenario Design Rubric (Evaluator Reference)
+### SL 3 Scenario Design Rubric (Evaluator Reference)
 
 | Criterion | Description | Weight |
 |---|---|---|
@@ -1501,7 +1501,7 @@ INSTRUCTOR CERTIFICATIONS
 | Normalization | No property redundancy; proper use of links vs. embedded data | 15% |
 | Naming convention | Follows USAREUR-AF naming convention throughout | 15% |
 | Governance | Access model defined; data steward identified | 15% |
-| Feasibility | Design is buildable within TM-30 toolset | 15% |
+| Feasibility | Design is buildable within SL 3 toolset | 15% |
 
 **Go:** Score ≥75% with no zero-score on any criterion.
 

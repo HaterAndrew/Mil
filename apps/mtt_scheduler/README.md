@@ -51,7 +51,7 @@ streamlit run apps/mtt_scheduler/dashboard.py --server.port 8505
 `seed.py` generates realistic demo data (deterministic, `random.seed(42)`):
 
 - 5 venues: Grafenwoehr, Vilseck, Wiesbaden, Vicenza, Poznan
-- 8 instructors with varied TM-10 through TM-40 qualifications
+- 8 instructors with varied SL 1 through SL 4 qualifications
 - 12 events spanning Mar-Jun 2026 (COMPLETE, ACTIVE, PLANNED)
 - 5-15 enrolled soldiers per event
 

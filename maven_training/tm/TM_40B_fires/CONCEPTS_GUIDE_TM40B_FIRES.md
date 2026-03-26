@@ -1,6 +1,6 @@
-# CONCEPTS GUIDE — TM-40B COMPANION — Fires Warfighting Function — Maven Smart System (MSS)
+# CONCEPTS GUIDE — SL 4B COMPANION — Fires Warfighting Function — Maven Smart System (MSS)
 
-> **Purpose:** This guide is the conceptual companion to TM-40B. It explains the WHY behind fires operations in MSS — the doctrinal logic that makes certain data requirements non-negotiable, the mental models that separate effective fires practitioners from those who treat MSS as an expensive slide deck, and the failure patterns fires units must actively avoid.
+> **Purpose:** This guide is the conceptual companion to SL 4B. It explains the WHY behind fires operations in MSS — the doctrinal logic that makes certain data requirements non-negotiable, the mental models that separate effective fires practitioners from those who treat MSS as an expensive slide deck, and the failure patterns fires units must actively avoid.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -433,41 +433,41 @@ CAL/DAL management as a continuous process — not a planning product — is the
 
 ### WFF Peer Tracks
 
-All six WFF tracks are at the same tier. All six WFF tracks require TM-10, TM-20, and TM-30 as prerequisites. Fires practitioners are encouraged to develop working awareness of TM-40A (Intelligence) and TM-40E (Protection) — the two WFF tracks with the most intensive fires data coordination requirements.
+All six WFF tracks are at the same tier. All six WFF tracks require SL 1, SL 2, and SL 3 as prerequisites. Fires practitioners are encouraged to develop working awareness of SL 4A (Intelligence) and SL 4E (Protection) — the two WFF tracks with the most intensive fires data coordination requirements.
 
 | Track | Title | Prereq | Relationship to Fires WFF |
 |-------|-------|--------|--------------------------|
-| TM-40A | Intelligence WFF | TM-10 + TM-20 + TM-30 | Targeting data, BDA, ISR collection — the fires-intel integration that makes targeting lethal and discriminate |
-| TM-40B | Fires WFF | TM-10 + TM-20 + TM-30 | This track |
-| TM-40C | Movement and Maneuver WFF | TM-10 + TM-20 + TM-30 | FSCM coordination, airspace deconfliction, maneuver-fires synchronization |
-| TM-40D | Sustainment WFF | TM-10 + TM-20 + TM-30 | CSR, ammunition readiness |
-| TM-40E | Protection WFF | TM-10 + TM-20 + TM-30 | AMD coordination — fires and protection share AMD data domain |
-| TM-40F | Mission Command WFF | TM-10 + TM-20 + TM-30 | Fires products integrate into the commander's CCIR dashboard |
+| SL 4A | Intelligence WFF | SL 1 + SL 2 + SL 3 | Targeting data, BDA, ISR collection — the fires-intel integration that makes targeting lethal and discriminate |
+| SL 4B | Fires WFF | SL 1 + SL 2 + SL 3 | This track |
+| SL 4C | Movement and Maneuver WFF | SL 1 + SL 2 + SL 3 | FSCM coordination, airspace deconfliction, maneuver-fires synchronization |
+| SL 4D | Sustainment WFF | SL 1 + SL 2 + SL 3 | CSR, ammunition readiness |
+| SL 4E | Protection WFF | SL 1 + SL 2 + SL 3 | AMD coordination — fires and protection share AMD data domain |
+| SL 4F | Mission Command WFF | SL 1 + SL 2 + SL 3 | Fires products integrate into the commander's CCIR dashboard |
 
-### Specialist Tracks (Prerequisite: TM-30)
+### Specialist Tracks (Prerequisite: SL 3)
 
-For personnel pursuing technical depth, specialist tracks (TM-40G–O, prereq TM-30) are available. Not required for fires WFF employment.
+For personnel pursuing technical depth, specialist tracks (SL 4G–O, prereq SL 3) are available. Not required for fires WFF employment.
 
 | Track | Title |
 |-------|-------|
-| TM-40G | ORSA (→ TM-50G) |
-| TM-40H | AI Engineer (→ TM-50H) |
-| TM-40M | ML Engineer (→ TM-50M) |
-| TM-40J | Program Manager (→ TM-50J) |
-| TM-40K | Knowledge Manager (→ TM-50K) |
-| TM-40L | Software Engineer (→ TM-50L) |
-| TM-40N | UI/UX Designer (→ TM-50N) |
-| TM-40O | Platform Engineer (→ TM-50O) |
+| SL 4G | ORSA (→ SL 5G) |
+| SL 4H | AI Engineer (→ SL 5H) |
+| SL 4M | ML Engineer (→ SL 5M) |
+| SL 4J | Program Manager (→ SL 5J) |
+| SL 4K | Knowledge Manager (→ SL 5K) |
+| SL 4L | Software Engineer (→ SL 5L) |
+| SL 4N | UI/UX Designer (→ SL 5N) |
+| SL 4O | Platform Engineer (→ SL 5O) |
 
 ---
 
 
-*CONCEPTS GUIDE — TM-40B COMPANION, Version 1.0, March 2026*
+*CONCEPTS GUIDE — SL 4B COMPANION, Version 1.0, March 2026*
 
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA, Wiesbaden, Germany*
 
-> **NOTE — New Doctrine Content in TM-40B:** TM-40B now includes the D3A targeting cycle as a data lifecycle (Table 2-3), FIVE-O target taxonomy with MSS entity types (Table 2-4), TTLODAC fire mission data schema with ROE WARNING (Table 2-5), and CARVER scoring methodology with 1–5 factor ranges (Table 2-6, FM 3-60 App G). These sections ground fires data management in their authoritative doctrinal sources.
+> **NOTE — New Doctrine Content in SL 4B:** SL 4B now includes the D3A targeting cycle as a data lifecycle (Table 2-3), FIVE-O target taxonomy with MSS entity types (Table 2-4), TTLODAC fire mission data schema with ROE WARNING (Table 2-5), and CARVER scoring methodology with 1–5 factor ranges (Table 2-6, FM 3-60 App G). These sections ground fires data management in their authoritative doctrinal sources.
 
-*Read this guide before beginning TM-40B. The procedural knowledge in TM-40B is more durable when it rests on the conceptual foundation this guide provides.*
+*Read this guide before beginning SL 4B. The procedural knowledge in SL 4B is more durable when it rests on the conceptual foundation this guide provides.*
 
 *Questions and feedback on this guide should be directed to the USAREUR-AF C2DAO fires functional area representative. Doctrinal discrepancies between this guide and current Army doctrine will be resolved in favor of doctrine; report discrepancies for correction in the next revision.*

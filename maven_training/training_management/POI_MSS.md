@@ -25,42 +25,42 @@ Defines course content, instructional methods, evaluation criteria, and resource
 
 ### 1-3. Scope
 
-This POI covers twenty-five courses in six tiers, plus the Senior Leader course (TM-SL), the Foundry Bootcamp (FBC) event program, and two Train-the-Trainer (T3) courses:
+This POI covers twenty-five courses in six tiers, plus the Senior Leader course (EXEC), the Foundry Bootcamp (FBC) event program, and two Train-the-Trainer (T3) courses:
 
 | Tier | Courses | Notes |
 |---|---|---|
-| 1 — Foundation | TM-10 | Required for all USAREUR-AF personnel |
-| 2 — Builder | TM-20 | All staff building or maintaining data products |
-| 3 — Advanced Builder | TM-30 | Data-adjacent specialists and unit data leads |
-| 4a — WFF Functional | TM-40A through TM-40F | Warfighting function staff; prereq TM-30 |
-| 4b — Specialist | TM-40G through TM-40O | Role-specific specialist training; prereq TM-30 |
-| 5 — Advanced Specialist | TM-50G through TM-50O | Advanced role-specific training; prereq corresponding TM-40 |
-| — | TM-SL (Senior Leader) | **Outside TM chain.** 1 day; O-5/E-9+ personnel. Replaces TM-10 for senior leaders. No further progression. |
-| — | Foundry Bootcamp (FBC) | **Outside TM chain.** Quarterly applied build event; prereq TM-20 + validated project; no TM credit. See FBC-SOP-001. |
-| — | T3-I (Instructor Certification) | **Outside TM chain.** 5 days classroom + supervised practicum; prereq TM-30 + C2DAO selection. |
-| — | T3-F (MSC Force Multiplier) | **Outside TM chain.** Half day; prereq TM-20 + CDR nomination. Produces Unit Data Trainers. |
+| 1 — Foundation | SL 1 | Required for all USAREUR-AF personnel |
+| 2 — Builder | SL 2 | All staff building or maintaining data products |
+| 3 — Advanced Builder | SL 3 | Data-adjacent specialists and unit data leads |
+| 4a — WFF Functional | SL 4A through SL 4F | Warfighting function staff; prereq SL 3 |
+| 4b — Specialist | SL 4G through SL 4O | Role-specific specialist training; prereq SL 3 |
+| 5 — Advanced Specialist | SL 5G through SL 5O | Advanced role-specific training; prereq corresponding SL 4 |
+| — | EXEC (Senior Leader) | **Outside TM chain.** 1 day; O-5/E-9+ personnel. Replaces SL 1 for senior leaders. No further progression. |
+| — | Foundry Bootcamp (FBC) | **Outside TM chain.** Quarterly applied build event; prereq SL 2 + validated project; no TM credit. See FBC-SOP-001. |
+| — | T3-I (Instructor Certification) | **Outside TM chain.** 5 days classroom + supervised practicum; prereq SL 3 + C2DAO selection. |
+| — | T3-F (MSC Force Multiplier) | **Outside TM chain.** Half day; prereq SL 2 + CDR nomination. Produces Unit Data Trainers. |
 
 ### 1-4. Prerequisite Chain
 
 ```
-TM-SL (senior leaders — O-5/E-9+ — terminal, no further progression)
+EXEC (senior leaders — O-5/E-9+ — terminal, no further progression)
 
-TM-10 (all personnel)
-  └── TM-20 (builders)
+SL 1 (all personnel)
+  └── SL 2 (builders)
   │     └── T3-F (MSC Force Multiplier — Unit Data Trainer; + CDR nomination)
   │
-  └── TM-20 (builders)
-        └── TM-30 (advanced builders / data-adjacent / WFF functional staff)
+  └── SL 2 (builders)
+        └── SL 3 (advanced builders / data-adjacent / WFF functional staff)
               ├── T3-I (Instructor Certification; + C2DAO selection)
-              ├── TM-40A through TM-40F (WFF functional tracks — INT/FIRES/M2/SUST/PROT/MC staff)
-              ├── TM-40G (ORSA) → TM-50G (Advanced ORSA)
-              ├── TM-40H (AI Engineer) → TM-50H (Advanced AI Engineer)
-              ├── TM-40J (Program Manager) → TM-50J (Advanced Program Manager)
-              ├── TM-40K (Knowledge Manager) → TM-50K (Advanced Knowledge Manager)
-              ├── TM-40L (Software Engineer) → TM-50L (Advanced Software Engineer)
-              ├── TM-40M (ML Engineer) → TM-50M (Advanced ML Engineer)
-              ├── TM-40N (UI/UX Designer) → TM-50N (Advanced UI/UX Designer)
-              └── TM-40O (Platform Engineer) → TM-50O (Advanced Platform Engineer)
+              ├── SL 4A through SL 4F (WFF functional tracks — INT/FIRES/M2/SUST/PROT/MC staff)
+              ├── SL 4G (ORSA) → SL 5G (Advanced ORSA)
+              ├── SL 4H (AI Engineer) → SL 5H (Advanced AI Engineer)
+              ├── SL 4J (Program Manager) → SL 5J (Advanced Program Manager)
+              ├── SL 4K (Knowledge Manager) → SL 5K (Advanced Knowledge Manager)
+              ├── SL 4L (Software Engineer) → SL 5L (Advanced Software Engineer)
+              ├── SL 4M (ML Engineer) → SL 5M (Advanced ML Engineer)
+              ├── SL 4N (UI/UX Designer) → SL 5N (Advanced UI/UX Designer)
+              └── SL 4O (Platform Engineer) → SL 5O (Advanced Platform Engineer)
 ```
 
 ### 1-5. Security Clearance Requirements
@@ -96,36 +96,36 @@ All MSS training is conducted in the **MSS Training Environment** — a dedicate
 
 | Course | Title | Tier | Duration | Hours | Prerequisite |
 |---|---|---|---|---|---|
-| TM-10 | Maven User | Foundation | 1 day | 8 | None |
-| TM-20 | Builder | Builder | 5 days | 40 | TM-10 |
-| TM-30 | Advanced Builder | Advanced | 5 days | 40 | TM-10, TM-20 |
-| TM-40A | Intelligence WFF | WFF Functional | 3 days | 24 | TM-10, TM-20, TM-30 (Required) |
-| TM-40B | Fires WFF | WFF Functional | 3 days | 24 | TM-10, TM-20, TM-30 (Required) |
-| TM-40C | Movement & Maneuver WFF | WFF Functional | 3 days | 24 | TM-10, TM-20, TM-30 (Required) |
-| TM-40D | Sustainment WFF | WFF Functional | 3 days | 24 | TM-10, TM-20, TM-30 (Required) |
-| TM-40E | Protection WFF | WFF Functional | 3 days | 24 | TM-10, TM-20, TM-30 (Required) |
-| TM-40F | Mission Command WFF | WFF Functional | 3 days | 24 | TM-10, TM-20, TM-30 (Required) |
-| TM-40G | ORSA Specialist | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
-| TM-40H | AI Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
-| TM-40M | ML Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
-| TM-40J | Program Manager | Specialist | 4 days | 32 | TM-10, TM-20, TM-30 (Required) |
-| TM-40K | Knowledge Manager | Specialist | 4 days | 32 | TM-10, TM-20, TM-30 (Required) |
-| TM-40L | Software Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
-| TM-40N | UI/UX Designer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
-| TM-40O | Platform Engineer | Specialist | 5 days | 40 | TM-10, TM-20, TM-30 (Required) |
-| TM-50G | Advanced ORSA | Advanced Specialist | 5 days | 40 | TM-40G (Required) |
-| TM-50H | Advanced AI Engineer | Advanced Specialist | 5 days | 40 | TM-40H (Required) |
-| TM-50M | Advanced ML Engineer | Advanced Specialist | 5 days | 40 | TM-40M (Required) |
-| TM-50J | Advanced Program Manager | Advanced Specialist | 3 days | 24 | TM-40J (Required) |
-| TM-50K | Advanced Knowledge Manager | Advanced Specialist | 3 days | 24 | TM-40K (Required) |
-| TM-50L | Advanced Software Engineer | Advanced Specialist | 5 days | 40 | TM-40L (Required) |
-| TM-50N | Advanced UI/UX Designer | Advanced Specialist | 3 days | 24 | TM-40N (Required) |
-| TM-50O | Advanced Platform Engineer | Advanced Specialist | 3 days | 24 | TM-40O (Required) |
+| SL 1 | Maven User | Foundation | 1 day | 8 | None |
+| SL 2 | Builder | Builder | 5 days | 40 | SL 1 |
+| SL 3 | Advanced Builder | Advanced | 5 days | 40 | SL 1, SL 2 |
+| SL 4A | Intelligence WFF | WFF Functional | 3 days | 24 | SL 1, SL 2, SL 3 (Required) |
+| SL 4B | Fires WFF | WFF Functional | 3 days | 24 | SL 1, SL 2, SL 3 (Required) |
+| SL 4C | Movement & Maneuver WFF | WFF Functional | 3 days | 24 | SL 1, SL 2, SL 3 (Required) |
+| SL 4D | Sustainment WFF | WFF Functional | 3 days | 24 | SL 1, SL 2, SL 3 (Required) |
+| SL 4E | Protection WFF | WFF Functional | 3 days | 24 | SL 1, SL 2, SL 3 (Required) |
+| SL 4F | Mission Command WFF | WFF Functional | 3 days | 24 | SL 1, SL 2, SL 3 (Required) |
+| SL 4G | ORSA Specialist | Specialist | 5 days | 40 | SL 1, SL 2, SL 3 (Required) |
+| SL 4H | AI Engineer | Specialist | 5 days | 40 | SL 1, SL 2, SL 3 (Required) |
+| SL 4M | ML Engineer | Specialist | 5 days | 40 | SL 1, SL 2, SL 3 (Required) |
+| SL 4J | Program Manager | Specialist | 4 days | 32 | SL 1, SL 2, SL 3 (Required) |
+| SL 4K | Knowledge Manager | Specialist | 4 days | 32 | SL 1, SL 2, SL 3 (Required) |
+| SL 4L | Software Engineer | Specialist | 5 days | 40 | SL 1, SL 2, SL 3 (Required) |
+| SL 4N | UI/UX Designer | Specialist | 5 days | 40 | SL 1, SL 2, SL 3 (Required) |
+| SL 4O | Platform Engineer | Specialist | 5 days | 40 | SL 1, SL 2, SL 3 (Required) |
+| SL 5G | Advanced ORSA | Advanced Specialist | 5 days | 40 | SL 4G (Required) |
+| SL 5H | Advanced AI Engineer | Advanced Specialist | 5 days | 40 | SL 4H (Required) |
+| SL 5M | Advanced ML Engineer | Advanced Specialist | 5 days | 40 | SL 4M (Required) |
+| SL 5J | Advanced Program Manager | Advanced Specialist | 3 days | 24 | SL 4J (Required) |
+| SL 5K | Advanced Knowledge Manager | Advanced Specialist | 3 days | 24 | SL 4K (Required) |
+| SL 5L | Advanced Software Engineer | Advanced Specialist | 5 days | 40 | SL 4L (Required) |
+| SL 5N | Advanced UI/UX Designer | Advanced Specialist | 3 days | 24 | SL 4N (Required) |
+| SL 5O | Advanced Platform Engineer | Advanced Specialist | 3 days | 24 | SL 4O (Required) |
 
-> **NOTE:** TM-40A–F (WFF functional tracks) require TM-10, TM-20, and TM-30 as hard prerequisites. TM-40G–O (specialist tracks) and TM-50G–O (advanced specialist tracks) also require TM-30 as a hard prerequisite. There are NO TM-50A–F tracks.
+> **NOTE:** SL 4A–F (WFF functional tracks) require SL 1, SL 2, and SL 3 as hard prerequisites. SL 4G–O (specialist tracks) and SL 5G–O (advanced specialist tracks) also require SL 3 as a hard prerequisite. There are NO SL 5A–F tracks.
 
-**Total program hours (full progression to any single WFF or specialist track):** 128 hours (TM-10 through TM-40G–O); 112 hours (TM-10 through TM-40A–F)
-**Total program hours (full progression to any single advanced specialist track):** 168 hours (TM-10 through TM-50G–O)
+**Total program hours (full progression to any single WFF or specialist track):** 128 hours (SL 1 through SL 4G–O); 112 hours (SL 1 through SL 4A–F)
+**Total program hours (full progression to any single advanced specialist track):** 168 hours (SL 1 through SL 5G–O)
 
 ### 2-2. Training Philosophy
 
@@ -134,7 +134,7 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 | Principle | Description |
 |---|---|
 | Build, break, recover | Lab time includes structured error-recovery before evaluation |
-| Design before tool | TM-30+: trainees document design before opening the tool |
+| Design before tool | SL 3+: trainees document design before opening the tool |
 | Operational context | All scenarios use operationally plausible data and mission contexts |
 | Governed practice | Data governance, naming, and access control are integrated into every lab |
 
@@ -156,7 +156,7 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 
 ## CHAPTER 3 — BLOCKS OF INSTRUCTION
 
-### 3-1. TM-10: Maven User
+### 3-1. SL 1: Maven User
 
 **Course length:** 1 day (8 hours) | **Evaluation:** Practical exercise (6 tasks, Go/No-Go)
 
@@ -175,7 +175,7 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 
 ---
 
-### 3-2. TM-20: Builder
+### 3-2. SL 2: Builder
 
 **Course length:** 5 days (40 hours) | **Evaluation:** Practical exercise (11 tasks, Go/No-Go)
 
@@ -226,13 +226,13 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 | 21 | Workshop Publishing: Visibility, Viewer Access, Confirm Viewer Cannot Edit | 1.0 | LAB | TM-20 Ch 6 Sec 6-2 |
 | 22 | Branching: Create Branch, Make Change on Branch, Verify Branch-Only | 1.0 | LAB | TM-20 Ch 7 Sec 7-1 |
 | 23 | Promotion Workflow: Write Description, Submit to Steward, Respond to Rejection | 0.75 | LAB | TM-20 Ch 7 Sec 7-2 |
-| 24 | Full-Stack Review: Trace Product from Raw File to Access Control | 1.0 | REV | TM-20 All Chapters |
+| 24 | Full-Stack Review: Trace Product from Raw File to Access Control | 1.0 | REV | SL 2 All Chapters |
 | 25 | Practical Exercise (Evaluated) | 4.0 | EVAL | TM-20 Practical Exercise Guide |
-| | **TM-20 Total** | **40.0** | | |
+| | **SL 2 Total** | **40.0** | | |
 
 ---
 
-### 3-3. TM-30: Advanced Builder
+### 3-3. SL 3: Advanced Builder
 
 **Course length:** 5 days (40 hours) | **Evaluation:** Practical exercise (6 tasks, including reviewed design document; Go/No-Go)
 
@@ -261,7 +261,7 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 |---|---|---|---|---|
 | 10 | Ontology Design Methodology: Domain Analysis, Entity ID, Relationship Mapping, Action Design | 1.0 | LEC | TM-30 Ch 4 Sec 4-1 |
 | 11 | Individual Design Exercise: Mission Requirement → Documented Ontology Schema | 1.75 | LAB | TM-30 Ch 4 Sec 4-2 |
-| 12 | Design Critique: Peer Presentations, Class Review Against 6-Item Rubric | 2.0 | WKS | TM-30 Design Rubric |
+| 12 | Design Critique: Peer Presentations, Class Review Against 6-Item Rubric | 2.0 | WKS | SL 3 Design Rubric |
 | 13 | Build the Approved Design: Create Ontology, Connect Pipeline via Write Step | 2.25 | LAB | TM-30 Ch 4 Sec 4-3 |
 
 **Day 4 — Analytics Tools and AIP Logic**
@@ -279,14 +279,14 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 | Block | Title | Hours | Method | Reference |
 |---|---|---|---|---|
 | 19 | Full C2DAO Promotion Workflow: Branch → Change → Submit → Respond → Approval | 1.0 | LAB | TM-30 Ch 9 |
-| 20 | Full-Stack Review: Raw Source → Pipeline → Ontology → Workshop → Governance | 1.0 | REV | TM-30 All Chapters |
+| 20 | Full-Stack Review: Raw Source → Pipeline → Ontology → Workshop → Governance | 1.0 | REV | SL 3 All Chapters |
 | 21 | Practical Exercise Scenario Brief and Design Planning Time | 1.25 | BRF | — |
 | 22 | Practical Exercise (Evaluated) | 4.0 | EVAL | TM-30 Practical Exercise Guide |
-| | **TM-30 Total** | **40.0** | | |
+| | **SL 3 Total** | **40.0** | | |
 
 ---
 
-### 3-4. TM-40G: ORSA Specialist
+### 3-4. SL 4G: ORSA Specialist
 
 **Course length:** 5 days (40 hours) | **Evaluation:** Practical exercise (6 tasks); evaluated commander brief; Go/No-Go
 
@@ -313,11 +313,11 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 | 5 | 19 | Common ORSA Brief Failures: Point Estimates Without Bounds, Methods-Paper Language | 1.0 | DIS | TM-40G Ch 9 |
 | 5 | 20 | Practical Exercise Scenario Brief and ORSA Product Standards Review | 1.5 | BRF | — |
 | 5 | 21 | Practical Exercise (Evaluated): Regression + Time Series + Commander Brief | 4.0 | EVAL | TM-40G Practical Exercise Guide |
-| | | **TM-40G Total** | **40.0** | | |
+| | | **SL 4G Total** | **40.0** | | |
 
 ---
 
-### 3-5. TM-40H: AI Engineer
+### 3-5. SL 4H: AI Engineer
 
 **Course length:** 5 days (40 hours)
 
@@ -347,11 +347,11 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 | 5 | 18 | Practical Exercise Scenario Brief and Workflow Design Time | 1.0 | BRF | — |
 | 5 | 19 | Authorization Checklist Guidance; Evaluation Criteria Review | 1.5 | BRF | TM-40H Appendix A |
 | 5 | 20 | Practical Exercise (Evaluated): Author → Test → Authorize → Deploy AIP Workflow | 4.0 | EVAL | TM-40H Practical Exercise Guide |
-| | | **TM-40H Total** | **40.0** | | |
+| | | **SL 4H Total** | **40.0** | | |
 
 ---
 
-### 3-6. TM-40M: ML Engineer
+### 3-6. SL 4M: ML Engineer
 
 **Course length:** 5 days (40 hours) | **Evaluation:** Practical exercise (7 tasks); model card review; Go/No-Go
 
@@ -378,17 +378,17 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 | 5 | 19 | Deployment Approval and C2DAO Governance for Deployed Models | 1.0 | BRF | Standards Ch 4 |
 | 5 | 20 | Practical Exercise Scenario Brief; Planning Time | 1.5 | BRF | — |
 | 5 | 21 | Practical Exercise (Evaluated): Feature Pipeline → Train → Evaluate → Deploy → Monitor → Governance | 4.0 | EVAL | TM-40M Practical Exercise Guide |
-| | | **TM-40M Total** | **40.0** | | |
+| | | **SL 4M Total** | **40.0** | | |
 
 ---
 
-### 3-7. TM-40J: Program Manager
+### 3-7. SL 4J: Program Manager
 
 **Course length:** 4 days (32 hours) | **Evaluation:** Practical exercise (7 tasks); PM Dashboard Standards Checklist review; Go/No-Go
 
 | Day | Block | Title | Hours | Method | Reference |
 |---|---|---|---|---|---|
-| 1 | 1 | The Technical PM Role on MSS; How TM-40J Connects Operational Requirements to Technical Execution | 0.5 | BRF | TM-40J Ch 1 |
+| 1 | 1 | The Technical PM Role on MSS; How SL 4J Connects Operational Requirements to Technical Execution | 0.5 | BRF | TM-40J Ch 1 |
 | 1 | 2 | Agile for Data Projects: Scrum Framework, Sprint Cadence, Backlog Management; Applied Exercise: Story Sizing | 1.5 | LAB | TM-40J Ch 2 |
 | 1 | 3 | User Stories and Acceptance Criteria: Format, Quality Standards, Definition of Ready; Applied Exercise: Rewrite Requirements | 1.75 | LAB | TM-40J Ch 2 |
 | 1 | 4 | Kanban for Operational Support; Sprint Ceremonies — Military Data Team Execution Standards; Sprint Planning Exercise | 2.0 | LAB | TM-40J Ch 2 |
@@ -406,11 +406,11 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 | 4 | 16 | Practical Exercise Scenario Brief; Environment Check | 0.75 | BRF | — |
 | 4 | 17 | Practical Exercise — Phase 1 (Tasks 1–4): Requirements Document, User Stories, Sprint Board Spec, Dashboard Spec | 2.0 | EVAL | TM-40J Practical Exercise Guide |
 | 4 | 18 | Practical Exercise — Phase 2 (Tasks 5–7): Dependency/Risk Register, Production Readiness Brief, Change Management Summary | 4.0 | EVAL | TM-40J Practical Exercise Guide |
-| | | **TM-40J Total** | **32.0** | | |
+| | | **SL 4J Total** | **32.0** | | |
 
 ---
 
-### 3-8. TM-40K: Knowledge Manager
+### 3-8. SL 4K: Knowledge Manager
 
 **Course length:** 4 days (32 hours) | **Evaluation:** Practical exercise (6 tasks); PCS package instructor review (Day 4); Go/No-Go
 
@@ -432,11 +432,11 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 | 4 | 14 | PCS Package Instructor Review: Written Feedback; Individual Conferral; Revision Against Chapter 9 Criteria | 2.25 | WKS | TM-40K Ch 9 |
 | 4 | 15 | Practical Exercise Scenario Brief; Go Criteria Review for AIP Gate and PCS Package | 0.75 | BRF | — |
 | 4 | 16 | Practical Exercise (Evaluated) | 4.0 | EVAL | TM-40K Practical Exercise Guide |
-| | | **TM-40K Total** | **32.0** | | |
+| | | **SL 4K Total** | **32.0** | | |
 
 ---
 
-### 3-9. TM-40L: Software Engineer
+### 3-9. SL 4L: Software Engineer
 
 **Course length:** 5 days (40 hours) | **Evaluation:** Practical exercise (6 tasks); validator test suite (8 test cases); deployment checklist review; Go/No-Go
 
@@ -463,11 +463,11 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 | 5 | 19 | Security and Compliance: Token Handling, Input Sanitization, OPSEC for App Code | 1.0 | LEC | TM-40L Ch 9 |
 | 5 | 20 | Practical Exercise Scenario Brief; Planning Time | 1.5 | BRF | — |
 | 5 | 21 | Practical Exercise (Evaluated): OSDK → Validator → Slate UI → Deployment Checklist | 4.0 | EVAL | TM-40L Practical Exercise Guide |
-| | | **TM-40L Total** | **40.0** | | |
+| | | **SL 4L Total** | **40.0** | | |
 
 ---
 
-### 3-10. TM-40N: UI/UX Designer
+### 3-10. SL 4N: UI/UX Designer
 
 **Course length:** 5 days (40 hours) | **Evaluation:** Practical exercise (6 tasks); design portfolio review; Go/No-Go
 
@@ -493,11 +493,11 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 | 5 | 18 | Design Portfolio Standards: What Constitutes a Complete Operational UI/UX Deliverable | 1.0 | LEC | TM-40N Ch 10 |
 | 5 | 19 | Practical Exercise Scenario Brief and Design Planning Time | 1.5 | BRF | — |
 | 5 | 20 | Practical Exercise (Evaluated): User Research → Wireframe → Prototype → Test → Design System Artifact | 4.0 | EVAL | TM-40N Practical Exercise Guide |
-| | | **TM-40N Total** | **40.0** | | |
+| | | **SL 4N Total** | **40.0** | | |
 
 ---
 
-### 3-11. TM-40O: Platform Engineer
+### 3-11. SL 4O: Platform Engineer
 
 **Course length:** 5 days (40 hours) | **Evaluation:** Practical exercise (6 tasks); deployment checklist review; Go/No-Go
 
@@ -523,7 +523,7 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 | 5 | 18 | C2DAO Infrastructure Standards: Change Management, Deployment Approval, Documentation Requirements | 1.0 | LEC | TM-40O Ch 10 |
 | 5 | 19 | Practical Exercise Scenario Brief and Infrastructure Planning Time | 1.5 | BRF | — |
 | 5 | 20 | Practical Exercise (Evaluated): Deploy → Monitor → Alert → Secure → CI/CD Pipeline → Deployment Checklist | 4.0 | EVAL | TM-40O Practical Exercise Guide |
-| | | **TM-40O Total** | **40.0** | | |
+| | | **SL 4O Total** | **40.0** | | |
 
 ---
 
@@ -533,40 +533,40 @@ MSS training is competency-based, not time-based. Go/No-Go evaluation at the end
 
 | Course | Minimum Instructor Qualification | T:I Ratio |
 |---|---|---|
-| TM-10 | TM-20 certified; 90 days active MSS use | 10:1 |
-| TM-20 | TM-30 certified; 6+ months Foundry build experience; able to troubleshoot all TM-20 labs | 8:1 |
-| TM-30 | TM-40 (any track) or C2DAO SME designation; able to conduct design critiques | 6:1 |
-| TM-40A (Intel WFF) | TM-40A certified; G2/S2 Intel functional background; TM-30 proficiency | 8:1 |
-| TM-40B (Fires WFF) | TM-40B certified; Fires/FSCOORD functional background; TM-30 proficiency | 8:1 |
-| TM-40C (M2 WFF) | TM-40C certified; G3/S3 movement and maneuver background; TM-30 proficiency | 8:1 |
-| TM-40D (SUST WFF) | TM-40D certified; G4/S4 sustainment background; TM-30 proficiency | 8:1 |
-| TM-40E (PROT WFF) | TM-40E certified; Protection functional background; TM-30 proficiency | 8:1 |
-| TM-40F (MC WFF) | TM-40F certified; Mission Command/G6 background; TM-30 proficiency | 8:1 |
-| TM-40G | FA49 or equivalent ORSA background; TM-40G certified or C2DAO SME designation | 4:1 |
-| TM-40H | AIP Logic authoring experience; C2DAO AI SME designation; TM-40H certified | 4:1 |
-| TM-40M | ML production experience; TM-40M certified; C2DAO MLE SME designation | 4:1 |
-| TM-40J | Program management background; TM-30 certified; GFEBS/IMS proficiency | 6:1 |
-| TM-40K | Knowledge management background; TM-30 certified; AIP Logic configuration proficiency | 6:1 |
-| TM-40L | Software engineering background; OSDK/Platform SDK proficiency; TM-40L certified | 4:1 |
-| TM-40N | UI/UX design background; Workshop design proficiency; TM-40N certified or C2DAO UX SME designation | 4:1 |
-| TM-40O | Platform engineering background; Kubernetes/container proficiency; TM-40O certified or C2DAO infrastructure SME designation | 4:1 |
+| SL 1 | SL 2 certified; 90 days active MSS use | 10:1 |
+| SL 2 | SL 3 certified; 6+ months Foundry build experience; able to troubleshoot all SL 2 labs | 8:1 |
+| SL 3 | SL 4 (any track) or C2DAO SME designation; able to conduct design critiques | 6:1 |
+| SL 4A (Intel WFF) | SL 4A certified; G2/S2 Intel functional background; SL 3 proficiency | 8:1 |
+| SL 4B (Fires WFF) | SL 4B certified; Fires/FSCOORD functional background; SL 3 proficiency | 8:1 |
+| SL 4C (M2 WFF) | SL 4C certified; G3/S3 movement and maneuver background; SL 3 proficiency | 8:1 |
+| SL 4D (SUST WFF) | SL 4D certified; G4/S4 sustainment background; SL 3 proficiency | 8:1 |
+| SL 4E (PROT WFF) | SL 4E certified; Protection functional background; SL 3 proficiency | 8:1 |
+| SL 4F (MC WFF) | SL 4F certified; Mission Command/G6 background; SL 3 proficiency | 8:1 |
+| SL 4G | FA49 or equivalent ORSA background; SL 4G certified or C2DAO SME designation | 4:1 |
+| SL 4H | AIP Logic authoring experience; C2DAO AI SME designation; SL 4H certified | 4:1 |
+| SL 4M | ML production experience; SL 4M certified; C2DAO MLE SME designation | 4:1 |
+| SL 4J | Program management background; SL 3 certified; GFEBS/IMS proficiency | 6:1 |
+| SL 4K | Knowledge management background; SL 3 certified; AIP Logic configuration proficiency | 6:1 |
+| SL 4L | Software engineering background; OSDK/Platform SDK proficiency; SL 4L certified | 4:1 |
+| SL 4N | UI/UX design background; Workshop design proficiency; SL 4N certified or C2DAO UX SME designation | 4:1 |
+| SL 4O | Platform engineering background; Kubernetes/container proficiency; SL 4O certified or C2DAO infrastructure SME designation | 4:1 |
 
 ### 4-2. Training Environment Requirements
 
 | Course | Access Level Required | Provisioning Lead Time |
 |---|---|---|
-| TM-10 | MSS Viewer (standard) | 5 duty days |
-| TM-20 | MSS Builder | 5 duty days |
-| TM-30 | MSS Editor + AIP Logic configuration | 7 duty days |
-| TM-40A–F (WFF) | MSS Builder | 5 duty days |
-| TM-40G | Code Workspace (CPU or GPU) + standard Editor | 7–10 duty days |
-| TM-40H | AIP Logic authoring + Agent Studio | 7–10 duty days |
-| TM-40M | GPU-enabled Code Workspace | 10+ duty days |
-| TM-40J | MSS Builder | 5 duty days |
-| TM-40K | MSS Builder + AIP Logic configuration | 5–7 duty days |
-| TM-40L | OSDK developer access + developer token | 10+ duty days |
-| TM-40N | Workshop design access (Editor + AIP Logic configuration) | 7–10 duty days |
-| TM-40O | Kubernetes cluster access + CI/CD pipeline access | 10+ duty days |
+| SL 1 | MSS Viewer (standard) | 5 duty days |
+| SL 2 | MSS Builder | 5 duty days |
+| SL 3 | MSS Editor + AIP Logic configuration | 7 duty days |
+| SL 4A–F (WFF) | MSS Builder | 5 duty days |
+| SL 4G | Code Workspace (CPU or GPU) + standard Editor | 7–10 duty days |
+| SL 4H | AIP Logic authoring + Agent Studio | 7–10 duty days |
+| SL 4M | GPU-enabled Code Workspace | 10+ duty days |
+| SL 4J | MSS Builder | 5 duty days |
+| SL 4K | MSS Builder + AIP Logic configuration | 5–7 duty days |
+| SL 4L | OSDK developer access + developer token | 10+ duty days |
+| SL 4N | Workshop design access (Editor + AIP Logic configuration) | 7–10 duty days |
+| SL 4O | Kubernetes cluster access + CI/CD pipeline access | 10+ duty days |
 
 ### 4-3. Training Aids and Materials
 
@@ -591,23 +591,23 @@ Go requires all three:
 
 | Course | Hard No-Go Item |
 |---|---|
-| TM-10 | Incorrect classification marking or export procedure |
-| TM-20 | Viewer-role test account can trigger Action or modify data |
-| TM-30 | Fatally-flawed Ontology design not corrected before build; promotion submitted without description |
-| TM-40G | Commander brief presents point estimate without uncertainty bounds |
-| TM-40H | Any AIP workflow writes to production Objects without human checkpoint |
-| TM-40M | Model calibration not performed; governance document missing required sections |
-| TM-40J | Dashboard has no data-as-of timestamp |
-| TM-40K | AIP workflow auto-publishes without human review gate |
-| TM-40L | Hardcoded credential in application code; validator test suite not fully passing |
-| TM-40N | Design delivered without documented accessibility compliance or user testing plan |
-| TM-40O | Infrastructure deployed without monitoring or alerting configuration |
+| SL 1 | Incorrect classification marking or export procedure |
+| SL 2 | Viewer-role test account can trigger Action or modify data |
+| SL 3 | Fatally-flawed Ontology design not corrected before build; promotion submitted without description |
+| SL 4G | Commander brief presents point estimate without uncertainty bounds |
+| SL 4H | Any AIP workflow writes to production Objects without human checkpoint |
+| SL 4M | Model calibration not performed; governance document missing required sections |
+| SL 4J | Dashboard has no data-as-of timestamp |
+| SL 4K | AIP workflow auto-publishes without human review gate |
+| SL 4L | Hardcoded credential in application code; validator test suite not fully passing |
+| SL 4N | Design delivered without documented accessibility compliance or user testing plan |
+| SL 4O | Infrastructure deployed without monitoring or alerting configuration |
 
 ### 5-3. No-Go Remediation
 
 A trainee who receives No-Go must:
 1. Receive documented counseling within 1 duty day (DA Form 4856 or equivalent)
-2. Conduct remediation on failed tasks — minimum 4 hours for TM-10/20/40J/40K; minimum 8 hours for TM-30/40G/40H/40M/40L/40N/40O
+2. Conduct remediation on failed tasks — minimum 4 hours for SL 1/20/40J/40K; minimum 8 hours for SL 3/40G/40H/40M/40L/40N/40O
 3. Be re-evaluated within 10 duty days
 4. A second No-Go requires C2DAO approval before a third evaluation
 
@@ -618,7 +618,7 @@ All remediation events are documented on the Individual Training Record.
 Upon successful completion (Go):
 1. Instructor updates the Unit Training Status Matrix (Appendix A of MTP)
 2. Individual Training Record annotated with: course, date, evaluator name, Go/No-Go
-3. For TM-30 and above: trainee's commander receives a completion notification
+3. For SL 3 and above: trainee's commander receives a completion notification
 
 ---
 
@@ -626,22 +626,22 @@ Upon successful completion (Go):
 
 | Course | Lecture/Brief | Lab | Discussion/Review | Workshop/Seminar | Evaluation | Total |
 |---|---|---|---|---|---|---|
-| TM-10 | 1.5 | 5.5 | — | — | 1.0 | 8.0 |
-| TM-20 | — | 31.25 | 2.75 | — | 4.0 | 38.0* |
-| TM-30 | 1.0 | 26.0 | 1.0 | 4.75 | 4.0 | 36.75* |
-| TM-40A–F (each) | 1.0 | 15.0 | 1.0 | — | 3.0 | 20.0* |
-| TM-40G | 2.0 | 30.0 | 1.0 | — | 4.0 | 37.0* |
-| TM-40H | 3.75 | 28.25 | — | 2.0 | 4.0 | 38.0* |
-| TM-40M | 1.0 | 31.0 | — | — | 4.0 | 36.0* |
-| TM-40J | 0.5 | 17.75 | 0.5 | — | 4.0 | 22.75* |
-| TM-40K | 1.0 | 14.25 | — | 2.25 | 4.0 | 21.5* |
-| TM-40L | 2.0 | 30.0 | — | — | 4.0 | 36.0* |
-| TM-40N | 4.0 | 22.0 | 1.75 | 1.25 | 4.0 | 33.0* |
-| TM-40O | 2.5 | 30.0 | — | — | 4.0 | 36.5* |
+| SL 1 | 1.5 | 5.5 | — | — | 1.0 | 8.0 |
+| SL 2 | — | 31.25 | 2.75 | — | 4.0 | 38.0* |
+| SL 3 | 1.0 | 26.0 | 1.0 | 4.75 | 4.0 | 36.75* |
+| SL 4A–F (each) | 1.0 | 15.0 | 1.0 | — | 3.0 | 20.0* |
+| SL 4G | 2.0 | 30.0 | 1.0 | — | 4.0 | 37.0* |
+| SL 4H | 3.75 | 28.25 | — | 2.0 | 4.0 | 38.0* |
+| SL 4M | 1.0 | 31.0 | — | — | 4.0 | 36.0* |
+| SL 4J | 0.5 | 17.75 | 0.5 | — | 4.0 | 22.75* |
+| SL 4K | 1.0 | 14.25 | — | 2.25 | 4.0 | 21.5* |
+| SL 4L | 2.0 | 30.0 | — | — | 4.0 | 36.0* |
+| SL 4N | 4.0 | 22.0 | 1.75 | 1.25 | 4.0 | 33.0* |
+| SL 4O | 2.5 | 30.0 | — | — | 4.0 | 36.5* |
 
 *Remainder of scheduled hours are review periods and scenario briefs not separately categorized above.
 
-> **NOTE:** TM-40A–F are 3-day/24-hour courses requiring TM-30 as a prerequisite. The hours summary above reflects approximate method distribution; exact distribution varies by WFF track and is specified in the applicable WFF Syllabus. TM-50G–O course hour breakdowns are specified in the applicable advanced specialist Syllabi and are not reproduced here.
+> **NOTE:** SL 4A–F are 3-day/24-hour courses requiring SL 3 as a prerequisite. The hours summary above reflects approximate method distribution; exact distribution varies by WFF track and is specified in the applicable WFF Syllabus. SL 5G–O course hour breakdowns are specified in the applicable advanced specialist Syllabi and are not reproduced here.
 
 ---
 

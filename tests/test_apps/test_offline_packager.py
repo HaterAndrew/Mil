@@ -33,16 +33,16 @@ class TestPackages:
         """Seed package records directly and verify list endpoint."""
         session = packager_db()
         session.add(PackageRecord(
-            selected_tms=["TM-10", "TM-20"],
-            all_tms=["TM-10", "TM-20"],
+            selected_tms=["SL 1", "SL 2"],
+            all_tms=["SL 1", "SL 2"],
             total_items=25,
             size_kb=1024,
             include_pdfs=True,
             notes="Test package",
         ))
         session.add(PackageRecord(
-            selected_tms=["TM-30"],
-            all_tms=["TM-10", "TM-20", "TM-30"],
+            selected_tms=["SL 3"],
+            all_tms=["SL 1", "SL 2", "SL 3"],
             total_items=40,
             size_kb=2048,
             include_pdfs=False,
@@ -59,8 +59,8 @@ class TestPackages:
         session = packager_db()
         for i in range(5):
             session.add(PackageRecord(
-                selected_tms=[f"TM-{i}"],
-                all_tms=[f"TM-{i}"],
+                selected_tms=[f"SL {i}"],
+                all_tms=[f"SL {i}"],
                 total_items=10,
                 size_kb=100,
             ))

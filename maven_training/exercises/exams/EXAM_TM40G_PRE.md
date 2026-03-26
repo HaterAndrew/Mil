@@ -1,12 +1,12 @@
-# PRE-TEST — TM-40G: ORSA
+# PRE-TEST — SL 4G: ORSA
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40G: ORSA |
+| **Course** | SL 4G: ORSA |
 | **Form** | Pre-Test |
-| **Level** | TM-40G (Specialist) |
-| **Audience** | FA49 / ORSA analysts; prerequisite: TM-10+20+30 + graduate-level quantitative methods + Python or R proficiency |
+| **Level** | SL 4G (Specialist) |
+| **Audience** | FA49 / ORSA analysts; prerequisite: SL 1+20+30 + graduate-level quantitative methods + Python or R proficiency |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

@@ -1,6 +1,6 @@
 """Seed realistic demo data for the AAR Aggregator.
 
-Generates 18 AARs spanning 6 months across TM-10 through TM-40 training events
+Generates 18 AARs spanning 6 months across SL 1 through SL 4 training events
 with realistic sustains, improves (with recurring issues), evaluations,
 curriculum discrepancies, and environment issues.
 """
@@ -171,97 +171,97 @@ DISCREPANCY_TEMPLATES = [
 # AAR definitions — 18 training events across 6 months
 # ---------------------------------------------------------------------------
 AAR_EVENTS = [
-    # TM-10 events (foundation — high volume)
-    {"date": date(2025, 10, 6), "tm_levels": ["TM-10"], "exercises": ["EX_10"],
+    # SL 1 events (foundation — high volume)
+    {"date": date(2025, 10, 6), "tm_levels": ["SL 1"], "exercises": ["EX_10"],
      "location": 0, "students": 15, "instructors": [0, 9],
      "recurring_issues": ["env_access"], "unique_issues": [0],
      "discrepancies": [1], "env_issue": True, "go_rate": 0.87},
 
-    {"date": date(2025, 11, 3), "tm_levels": ["TM-10"], "exercises": ["EX_10"],
+    {"date": date(2025, 11, 3), "tm_levels": ["SL 1"], "exercises": ["EX_10"],
      "location": 0, "students": 12, "instructors": [0, 5],
      "recurring_issues": ["env_access_v2"], "unique_issues": [2],
      "discrepancies": [], "env_issue": True, "go_rate": 0.92},
 
-    {"date": date(2025, 12, 9), "tm_levels": ["TM-10"], "exercises": ["EX_10"],
+    {"date": date(2025, 12, 9), "tm_levels": ["SL 1"], "exercises": ["EX_10"],
      "location": 4, "students": 10, "instructors": [1, 9],
      "recurring_issues": ["bandwidth"], "unique_issues": [],
      "discrepancies": [1], "env_issue": True, "go_rate": 0.80},
 
-    {"date": date(2026, 1, 13), "tm_levels": ["TM-10"], "exercises": ["EX_10"],
+    {"date": date(2026, 1, 13), "tm_levels": ["SL 1"], "exercises": ["EX_10"],
      "location": 0, "students": 14, "instructors": [0, 5],
      "recurring_issues": ["env_access"], "unique_issues": [],
      "discrepancies": [], "env_issue": False, "go_rate": 0.93},
 
-    {"date": date(2026, 2, 10), "tm_levels": ["TM-10"], "exercises": ["EX_10"],
+    {"date": date(2026, 2, 10), "tm_levels": ["SL 1"], "exercises": ["EX_10"],
      "location": 0, "students": 11, "instructors": [7, 9],
      "recurring_issues": [], "unique_issues": [6],
      "discrepancies": [], "env_issue": False, "go_rate": 0.91},
 
-    # TM-20 events
-    {"date": date(2025, 10, 20), "tm_levels": ["TM-20"], "exercises": ["EX_20"],
+    # SL 2 events
+    {"date": date(2025, 10, 20), "tm_levels": ["SL 2"], "exercises": ["EX_20"],
      "location": 1, "students": 10, "instructors": [0, 2],
      "recurring_issues": ["tm_outdated"], "unique_issues": [4],
      "discrepancies": [2], "env_issue": False, "go_rate": 0.90},
 
-    {"date": date(2025, 12, 1), "tm_levels": ["TM-20"], "exercises": ["EX_20"],
+    {"date": date(2025, 12, 1), "tm_levels": ["SL 2"], "exercises": ["EX_20"],
      "location": 1, "students": 8, "instructors": [1, 2],
      "recurring_issues": ["tm_outdated", "bandwidth"], "unique_issues": [],
      "discrepancies": [7], "env_issue": True, "go_rate": 0.88},
 
-    {"date": date(2026, 2, 3), "tm_levels": ["TM-20"], "exercises": ["EX_20"],
+    {"date": date(2026, 2, 3), "tm_levels": ["SL 2"], "exercises": ["EX_20"],
      "location": 1, "students": 9, "instructors": [0, 3],
      "recurring_issues": ["aip_rushed"], "unique_issues": [3],
      "discrepancies": [2], "env_issue": False, "go_rate": 0.89},
 
-    # TM-30 events
-    {"date": date(2025, 11, 17), "tm_levels": ["TM-30"], "exercises": ["EX_30"],
+    # SL 3 events
+    {"date": date(2025, 11, 17), "tm_levels": ["SL 3"], "exercises": ["EX_30"],
      "location": 1, "students": 6, "instructors": [0, 2],
      "recurring_issues": ["time_governance", "env_access"], "unique_issues": [],
      "discrepancies": [0], "env_issue": True, "go_rate": 0.83},
 
-    {"date": date(2026, 1, 27), "tm_levels": ["TM-30"], "exercises": ["EX_30"],
+    {"date": date(2026, 1, 27), "tm_levels": ["SL 3"], "exercises": ["EX_30"],
      "location": 1, "students": 7, "instructors": [1, 3],
      "recurring_issues": ["time_governance", "data_quality"], "unique_issues": [1],
      "discrepancies": [0, 5], "env_issue": False, "go_rate": 0.86},
 
-    {"date": date(2026, 3, 3), "tm_levels": ["TM-30"], "exercises": ["EX_30"],
+    {"date": date(2026, 3, 3), "tm_levels": ["SL 3"], "exercises": ["EX_30"],
      "location": 1, "students": 8, "instructors": [0, 2, 3],
      "recurring_issues": ["time_governance"], "unique_issues": [],
      "discrepancies": [0], "env_issue": False, "go_rate": 0.88},
 
-    # TM-40 WFF events
-    {"date": date(2025, 12, 15), "tm_levels": ["TM-40A"], "exercises": ["EX_40A"],
+    # SL 4 WFF events
+    {"date": date(2025, 12, 15), "tm_levels": ["SL 4A"], "exercises": ["EX_40A"],
      "location": 3, "students": 8, "instructors": [0, 4],
      "recurring_issues": ["data_quality"], "unique_issues": [],
      "discrepancies": [3], "env_issue": False, "go_rate": 0.88},
 
-    {"date": date(2026, 1, 20), "tm_levels": ["TM-40B"], "exercises": ["EX_40B"],
+    {"date": date(2026, 1, 20), "tm_levels": ["SL 4B"], "exercises": ["EX_40B"],
      "location": 1, "students": 6, "instructors": [1, 4],
      "recurring_issues": [], "unique_issues": [5],
      "discrepancies": [6], "env_issue": False, "go_rate": 0.83},
 
-    {"date": date(2026, 2, 17), "tm_levels": ["TM-40E"], "exercises": ["EX_40E"],
+    {"date": date(2026, 2, 17), "tm_levels": ["SL 4E"], "exercises": ["EX_40E"],
      "location": 1, "students": 7, "instructors": [0, 5],
      "recurring_issues": ["bandwidth"], "unique_issues": [8],
      "discrepancies": [], "env_issue": True, "go_rate": 0.86},
 
-    # TM-40 Specialist events
-    {"date": date(2025, 11, 10), "tm_levels": ["TM-40G"], "exercises": ["EX_40G"],
+    # SL 4 Specialist events
+    {"date": date(2025, 11, 10), "tm_levels": ["SL 4G"], "exercises": ["EX_40G"],
      "location": 1, "students": 8, "instructors": [2, 6],
      "recurring_issues": ["aip_rushed"], "unique_issues": [],
      "discrepancies": [4], "env_issue": False, "go_rate": 0.88},
 
-    {"date": date(2026, 1, 6), "tm_levels": ["TM-40H"], "exercises": ["EX_40H"],
+    {"date": date(2026, 1, 6), "tm_levels": ["SL 4H"], "exercises": ["EX_40H"],
      "location": 1, "students": 6, "instructors": [2, 8],
      "recurring_issues": [], "unique_issues": [1, 9],
      "discrepancies": [], "env_issue": False, "go_rate": 0.83},
 
-    {"date": date(2026, 2, 24), "tm_levels": ["TM-40K"], "exercises": ["EX_40K"],
+    {"date": date(2026, 2, 24), "tm_levels": ["SL 4K"], "exercises": ["EX_40K"],
      "location": 1, "students": 10, "instructors": [0, 3, 6],
      "recurring_issues": ["data_quality"], "unique_issues": [7],
      "discrepancies": [], "env_issue": False, "go_rate": 0.90},
 
-    {"date": date(2026, 3, 10), "tm_levels": ["TM-40L"], "exercises": ["EX_40L"],
+    {"date": date(2026, 3, 10), "tm_levels": ["SL 4L"], "exercises": ["EX_40L"],
      "location": 1, "students": 7, "instructors": [2, 8],
      "recurring_issues": ["env_access"], "unique_issues": [3],
      "discrepancies": [], "env_issue": True, "go_rate": 0.86},
@@ -404,34 +404,34 @@ def seed():
 def _generate_objectives(tm_level: str) -> str:
     """Generate realistic planned objectives based on TM level."""
     objectives = {
-        "TM-10": ("Complete all TM-10 ELOs: navigate MSS interface, view datasets, "
+        "SL 1": ("Complete all SL 1 ELOs: navigate MSS interface, view datasets, "
                    "read/interpret dashboards, apply filters, verify data currency, "
                    "respond to misrouted data per AIP procedures."),
-        "TM-20": ("Complete all TM-20 ELOs: create data connections, build basic "
+        "SL 2": ("Complete all SL 2 ELOs: create data connections, build basic "
                    "pipelines, configure transforms, document pipeline changes, "
                    "complete data quality checklist."),
-        "TM-30": ("Complete all TM-30 ELOs: build complex pipelines, implement "
+        "SL 3": ("Complete all SL 3 ELOs: build complex pipelines, implement "
                    "governance controls, configure access management, promote "
                    "pipeline to production, complete C2DAO governance checklist."),
-        "TM-40A": ("Complete TM-40A ELOs: apply intelligence WFF concepts to MSS, "
+        "SL 4A": ("Complete SL 4A ELOs: apply intelligence WFF concepts to MSS, "
                     "build intelligence-focused dashboards, configure intel data flows, "
                     "demonstrate understanding of intel data governance."),
-        "TM-40B": ("Complete TM-40B ELOs: configure fire support data pipelines, "
+        "SL 4B": ("Complete SL 4B ELOs: configure fire support data pipelines, "
                     "build fires-specific dashboards, integrate targeting data, "
                     "demonstrate fires data quality assessment."),
-        "TM-40E": ("Complete TM-40E ELOs: configure protection data flows, build "
+        "SL 4E": ("Complete SL 4E ELOs: configure protection data flows, build "
                     "force protection dashboards, implement security classification "
                     "controls, demonstrate protection data governance."),
-        "TM-40G": ("Complete TM-40G ELOs: apply ORSA methods in MSS, build "
+        "SL 4G": ("Complete SL 4G ELOs: apply ORSA methods in MSS, build "
                     "analytical models, configure statistical pipelines, demonstrate "
                     "operational research data analysis techniques."),
-        "TM-40H": ("Complete TM-40H ELOs: implement AI/ML pipelines in MSS, "
+        "SL 4H": ("Complete SL 4H ELOs: implement AI/ML pipelines in MSS, "
                     "configure model training workflows, build AI-powered dashboards, "
                     "demonstrate responsible AI practices."),
-        "TM-40K": ("Complete TM-40K ELOs: build knowledge management systems in MSS, "
+        "SL 4K": ("Complete SL 4K ELOs: build knowledge management systems in MSS, "
                     "configure taxonomy structures, implement search and discovery, "
                     "demonstrate KM governance processes."),
-        "TM-40L": ("Complete TM-40L ELOs: use Platform SDK for MSS development, "
+        "SL 4L": ("Complete SL 4L ELOs: use Platform SDK for MSS development, "
                     "implement custom applications, configure CI/CD pipelines, "
                     "demonstrate software engineering best practices in MSS."),
     }

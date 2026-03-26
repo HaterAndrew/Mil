@@ -121,14 +121,31 @@ def get_db():
 # ---------------------------------------------------------------------------
 from readiness_tracker.db import PREREQ_CHAIN, ALL_COURSES  # noqa: E402
 
-# Valid TM identifiers
+# Valid course identifiers (now in SL format)
 VALID_TM_IDS = set(PREREQ_CHAIN.keys())
+
+
+def _tm_to_sl(tm_id: str) -> str:
+    """Convert a TM-XX document reference to the corresponding SL course code.
+
+    Used when validating TM references found in documents against the
+    authoritative course catalog (which now uses SL format).
+    """
+    _static = {"TM-10": "SL 1", "TM-20": "SL 2", "TM-30": "SL 3"}
+    if tm_id in _static:
+        return _static[tm_id]
+    m = re.match(r"TM-(\d{2})([A-O])", tm_id)
+    if m:
+        level = {"40": "4", "50": "5"}.get(m.group(1), m.group(1))
+        return f"SL {level}{m.group(2)}"
+    return tm_id
+
 
 # Stale TM-50 IDs (A-F never existed)
 STALE_TM50_PATTERN = re.compile(r"\bTM[-\s]?50\s*[A-F]\b", re.IGNORECASE)
 
-# Old scheme: TM-40A = ORSA (now TM-40A = Intelligence WFF, ORSA = TM-40G)
-# Only flag when TM-40A is directly equated to ORSA (e.g., "TM-40A (ORSA)",
+# Old scheme: TM-40A = ORSA (now SL 4A = Intelligence WFF, ORSA = SL 4G)
+# Only flag when SL 4A is directly equated to ORSA (e.g., "TM-40A (ORSA)",
 # "TM-40A=ORSA", "TM-40A ORSA"), NOT when both appear on the same line
 # in separate contexts (e.g., "TM-40A (Intelligence) supports ORSA products")
 OLD_40A_ORSA_PATTERN = re.compile(
@@ -152,7 +169,7 @@ CHAPTER_HEADING_PATTERN = re.compile(
 )
 
 # Prereq statement patterns — formal declarations only
-# Matches: "Prerequisite: TM-30", "Prerequisites: TM-10, TM-20",
+# Matches: "Prerequisite: TM-30", "Prerequisites: SL 1, SL 2",
 #           "Prereq TM-30 (Required)", table cells like "| TM-30 (Required) |"
 # Does NOT match body text like "builds on concepts from TM-10"
 PREREQ_STATEMENT_PATTERN = re.compile(
@@ -325,8 +342,8 @@ def scan_tm_refs(file_path: Path, root_path: Path) -> list[ValidationIssue]:
     """Find TM-XX references and validate against the known course catalog.
 
     Flags:
-    - TM-50A through TM-50F (these never existed)
-    - Old TM-40A=ORSA association (TM-40A is now Intelligence WFF)
+    - SL 5A through SL 5F (these never existed)
+    - Old TM-40A=ORSA association (SL 4A is now Intelligence WFF)
     - Any TM reference not in the PREREQ_CHAIN
     """
     issues: list[ValidationIssue] = []
@@ -334,7 +351,7 @@ def scan_tm_refs(file_path: Path, root_path: Path) -> list[ValidationIssue]:
     rel_path = str(file_path.relative_to(root_path))
 
     for line_num, line in enumerate(lines, start=1):
-        # Check for stale TM-50A through TM-50F
+        # Check for stale SL 5A through SL 5F
         for m in STALE_TM50_PATTERN.finditer(line):
             issues.append(ValidationIssue(
                 file_path=rel_path,
@@ -342,10 +359,10 @@ def scan_tm_refs(file_path: Path, root_path: Path) -> list[ValidationIssue]:
                 issue_type=IssueType.STALE_REF,
                 severity=Severity.ERROR,
                 description=(
-                    f"Stale reference: '{m.group()}' — TM-50A through TM-50F do not exist. "
-                    f"TM-50 is only G through M."
+                    f"Stale reference: '{m.group()}' — SL 5A through SL 5F do not exist. "
+                    f"SL 5 is only G through M."
                 ),
-                suggested_fix="Remove or replace with valid TM-50G through TM-50M",
+                suggested_fix="Remove or replace with valid SL 5G through SL 5M",
             ))
 
         # Check for old TM-40A=ORSA association
@@ -356,10 +373,10 @@ def scan_tm_refs(file_path: Path, root_path: Path) -> list[ValidationIssue]:
                 issue_type=IssueType.STALE_REF,
                 severity=Severity.ERROR,
                 description=(
-                    f"Stale reference: '{m.group()}' — TM-40A is now Intelligence WFF, "
-                    f"not ORSA. ORSA is TM-40G."
+                    f"Stale reference: '{m.group()}' — SL 4A is now Intelligence WFF, "
+                    f"not ORSA. ORSA is SL 4G."
                 ),
-                suggested_fix="Replace TM-40A (ORSA context) with TM-40G",
+                suggested_fix="Replace SL 4A (ORSA context) with SL 4G",
             ))
 
         # Check all TM-XX references against catalog
@@ -368,13 +385,15 @@ def scan_tm_refs(file_path: Path, root_path: Path) -> list[ValidationIssue]:
             suffix = (m.group(2) or "").upper()
             tm_id = f"TM-{number}{suffix}"
 
-            # Normalize: only check TM-10, TM-20, TM-30, TM-40X, TM-50X
+            # Normalize: only check SL 1, SL 2, SL 3, SL 4X, SL 5X
             if number in ("10", "20", "30") and not suffix:
                 continue  # These are always valid without suffix
             if number in ("40", "50") and not suffix:
-                # Bare TM-40 or TM-50 — acceptable as a series reference
+                # Bare SL 4 or SL 5 — acceptable as a series reference
                 continue
-            if tm_id in VALID_TM_IDS:
+            # Convert TM-XX to SL format for catalog lookup
+            sl_id = _tm_to_sl(tm_id)
+            if sl_id in VALID_TM_IDS:
                 continue
 
             # Unknown TM reference
@@ -413,9 +432,9 @@ def _get_transitive_prereqs(tm_id: str) -> set[str]:
 def scan_prereq_consistency(root_path: Path) -> list[ValidationIssue]:
     """Check that prereq statements in docs match the authoritative chain.
 
-    Looks for formal prereq declarations (e.g., "Prerequisites: TM-30") and
+    Looks for formal prereq declarations (e.g., "Prerequisites: SL 3") and
     validates they align with PREREQ_CHAIN. Accepts both direct and transitive
-    prereqs (e.g., TM-40G listing TM-10 is valid because TM-10→TM-20→TM-30→TM-40G).
+    prereqs (e.g., SL 4G listing SL 1 is valid because SL 1→SL 2→SL 3→SL 4G).
     Self-references (doc references its own TM) are also ignored.
     """
     issues: list[ValidationIssue] = []
@@ -431,9 +450,11 @@ def scan_prereq_consistency(root_path: Path) -> list[ValidationIssue]:
         rel_path = str(file_path.relative_to(root))
 
         # Determine which TM this file is about (from filename or path)
-        file_tm = _identify_file_tm(file_path)
+        # Convert from TM-XX (file path) to SL format (course catalog)
+        file_tm_raw = _identify_file_tm(file_path)
+        file_tm = _tm_to_sl(file_tm_raw) if file_tm_raw else None
 
-        # Pattern for exam answer choices (e.g., "A. TM-40G ...", "C. ...")
+        # Pattern for exam answer choices (e.g., "A. SL 4G ...", "C. ...")
         exam_answer_pattern = re.compile(r"^\s*[A-F][.)]\s+")
 
         for line_num, line in enumerate(lines, start=1):
@@ -444,8 +465,8 @@ def scan_prereq_consistency(root_path: Path) -> list[ValidationIssue]:
 
             for m in PREREQ_STATEMENT_PATTERN.finditer(line):
                 stated_prereq_raw = m.group(1).strip()
-                # Normalize TM reference
-                stated_prereq = _normalize_tm_ref(stated_prereq_raw)
+                # Normalize TM reference and convert to SL format
+                stated_prereq = _tm_to_sl(_normalize_tm_ref(stated_prereq_raw))
 
                 if not file_tm or file_tm not in PREREQ_CHAIN:
                     continue
@@ -460,8 +481,8 @@ def scan_prereq_consistency(root_path: Path) -> list[ValidationIssue]:
 
                 # If the stated prereq is not in the expected chain
                 if stated_prereq and stated_prereq not in all_valid_prereqs:
-                    # Only flag if the stated prereq is a valid TM
-                    if stated_prereq in VALID_TM_IDS or stated_prereq in ("TM-10", "TM-20", "TM-30"):
+                    # Only flag if the stated prereq is a valid course
+                    if stated_prereq in VALID_TM_IDS or stated_prereq in ("SL 1", "SL 2", "SL 3"):
                         issues.append(ValidationIssue(
                             file_path=rel_path,
                             line_number=line_num,

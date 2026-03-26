@@ -1,6 +1,6 @@
 """
 Build a single-slide PowerPoint summary of the USAREUR-AF Operational Data Team project.
-Focus: TM-10/20/30 baseline tiers and their criticality to command-wide Maven adoption.
+Focus: SL 1/2/3 baseline tiers and their criticality to command-wide Maven adoption.
 Output: maven_training/pdf/MSS_Project_Overview.pptx
 """
 
@@ -110,7 +110,7 @@ tb(slide, "USAREUR-AF  |  Maven Smart System — Command-Wide Adoption Strategy"
    0.15, 0.05, 10.0, 0.34,
    size=13, bold=True, color=OD_GREEN, align=PP_ALIGN.LEFT)
 
-tb(slide, "Training Infrastructure: TM-10 through TM-30  |  The Baseline That Makes Maven Work",
+tb(slide, "Training Infrastructure: SL 1 through SL 3  |  The Baseline That Makes Maven Work",
    0.15, 0.38, 10.0, 0.26,
    size=9, bold=False, color=DARK_GREEN, align=PP_ALIGN.LEFT)
 
@@ -128,7 +128,7 @@ tb(slide, "USAREUR-AF Operational Data Team  ·  Wiesbaden, Germany",
 add_rect(slide, 0.2, 0.76, 12.93, 0.38, DARK_GREEN, GOLD, 0.75)
 tb(slide,
    "BLUF:  Maven adoption fails at the unit level when personnel cannot access, navigate, or trust the platform. "
-   "TM-10/20/30 are the command's solution — doctrine-based, zero-prerequisite training that builds "
+   "SL 1/2/3 are the command's solution — doctrine-based, zero-prerequisite training that builds "
    "the data-literate formation Maven requires to deliver operational value.",
    0.36, 0.78, 12.6, 0.34,
    size=8.5, bold=False, color=GOLD, align=PP_ALIGN.LEFT)
@@ -145,9 +145,9 @@ tb(slide, "SPECIALIST / ADVANCED",
 # ── Divider line between sections ─────────────────────────────────────────────
 add_rect(slide, 7.7, 1.18, 0.04, 4.72, GOLD)
 
-# ── TM-10 tier box ────────────────────────────────────────────────────────────
+# ── SL 1 tier box ────────────────────────────────────────────────────────────
 tier_box(slide,
-    level="TM-10",
+    level="SL 1",
     audience="ALL personnel — every Soldier and civilian",
     headline="WHY IT'S CRITICAL:  No access = no adoption.",
     bullets=[
@@ -155,7 +155,7 @@ tier_box(slide,
         "  authorized Actions, Contour/Quiver, AIP interfaces",
         "  classification markings, export procedures",
         "",
-        "Without TM-10, personnel cannot use Maven at all.",
+        "Without SL 1, personnel cannot use Maven at all.",
         "Every unit-level use case begins here.",
         "Prerequisite to all other levels.",
         "",
@@ -165,9 +165,9 @@ tier_box(slide,
     left=0.2, top=1.46, width=2.44, height=3.84,
     header_color=MID_GREEN, header_text_color=OFF_WHITE)
 
-# ── TM-20 tier box ────────────────────────────────────────────────────────────
+# ── SL 2 tier box ────────────────────────────────────────────────────────────
 tier_box(slide,
-    level="TM-20",
+    level="SL 2",
     audience="ALL staff — light builders",
     headline="WHY IT'S CRITICAL:  Units must own their data products.",
     bullets=[
@@ -176,19 +176,19 @@ tier_box(slide,
         "  project organization, access management,",
         "  branching, USAREUR-AF naming standards",
         "",
-        "Without TM-20, the command depends on a small",
+        "Without SL 2, the command depends on a small",
         "specialist cadre for every dashboard and form.",
-        "TM-20 distributes capability to every staff section.",
+        "SL 2 distributes capability to every staff section.",
         "",
         "Go/No-Go: Build a functional pipeline + dashboard",
-        "Duration: 5 days (40 hours) | Prereq: TM-10",
+        "Duration: 5 days (40 hours) | Prereq: SL 1",
     ],
     left=2.74, top=1.46, width=2.44, height=3.84,
     header_color=MID_GREEN, header_text_color=OFF_WHITE)
 
-# ── TM-30 tier box ────────────────────────────────────────────────────────────
+# ── SL 3 tier box ────────────────────────────────────────────────────────────
 tier_box(slide,
-    level="TM-30",
+    level="SL 3",
     audience="Data-adjacent specialists (17/25-series, S6, G2)",
     headline="WHY IT'S CRITICAL:  Maven's power is in complex, connected products.",
     bullets=[
@@ -197,35 +197,35 @@ tier_box(slide,
         "  AIP Logic configuration, data lineage review,",
         "  governance + data steward workflows, C2DAO standards",
         "",
-        "Without TM-30, the command cannot build the",
+        "Without SL 3, the command cannot build the",
         "operational products that Maven was procured for:",
         "readiness tracking, logistics dashboards, ISR integration.",
         "",
         "Go/No-Go: Multi-source pipeline + integrated app",
-        "Duration: 5 days (40 hours) | Prereq: TM-10, TM-20",
+        "Duration: 5 days (40 hours) | Prereq: SL 1, SL 2",
     ],
     left=5.28, top=1.46, width=2.32, height=3.84,
     header_color=MID_GREEN, header_text_color=OFF_WHITE)
 
 # ── Specialist panel (right side) ─────────────────────────────────────────────
 add_rect(slide, 7.74, 1.46, 5.39, 1.72, BLUE_ACCENT, GOLD_DARK, 0.75)
-tb(slide, "TM-40 SERIES  —  12 Tracks (WFF A–F + Specialist G–M)",
+tb(slide, "SL 4 SERIES  —  12 Tracks (WFF A–F + Specialist G–M)",
    7.86, 1.50, 5.1, 0.22,
    size=8.5, bold=True, color=GOLD)
 tb(slide,
-   "WFF: 40A Intel  ·  40B Fires  ·  40C M&M  ·  40D Sust  ·  40E Prot  ·  40F MC\n"
-   "Specialist: 40G ORSA  ·  40H AI Eng  ·  40M MLE  ·  40J PM  ·  40K KM  ·  40L SWE\n\n"
-   "Prereq: TM-30. Role-assigned. Each track: Technical Manual + Concepts Guide + Syllabus.\n"
+   "WFF: 4A Intel  ·  4B Fires  ·  4C M&M  ·  4D Sust  ·  4E Prot  ·  4F MC\n"
+   "Specialist: 4G ORSA  ·  4H AI Eng  ·  4M MLE  ·  4J PM  ·  4K KM  ·  4L SWE\n\n"
+   "Prereq: SL 3. Role-assigned. Each track: Technical Manual + Concepts Guide + Syllabus.\n"
    "Produces the analysts, engineers, and PMs who build the platform's most capable products.",
    7.86, 1.74, 5.1, 1.38,
    size=7.5, bold=False, color=OFF_WHITE)
 
 add_rect(slide, 7.74, 3.26, 5.39, 1.30, BLUE_ACCENT, GOLD_DARK, 0.75)
-tb(slide, "TM-50 SERIES  —  6 Advanced Tracks",
+tb(slide, "SL 5 SERIES  —  6 Advanced Tracks",
    7.86, 3.30, 5.1, 0.22,
    size=8.5, bold=True, color=GOLD)
 tb(slide,
-   "Advanced mastery post-TM-40, per role. 6 tracks (ORSA, AI Eng, MLE, PM, KM, SWE).\n\n"
+   "Advanced mastery post-SL 4, per role. 6 tracks (ORSA, AI Eng, MLE, PM, KM, SWE).\n\n"
    "Produces the command's subject matter experts — the personnel who sustain, extend,\n"
    "and govern the platform long-term.",
    7.86, 3.54, 5.1, 0.96,
@@ -257,7 +257,7 @@ add_rect(slide, 0.2, 6.06, 7.44, 0.46, DARK_GREEN, GOLD, 0.5)
 metrics = [
     ("3", "Mandatory\nBaseline TMs"),
     ("100%", "MOS\nCoverage"),
-    ("88 hrs", "TM-10→30\nTotal Instruction"),
+    ("88 hrs", "SL 1→3\nTotal Instruction"),
     ("3-tier", "Progression\n(No-Code → Code)"),
     ("9", "Syllabi\nReady"),
     ("33", "PDFs\nPublished"),
@@ -280,8 +280,8 @@ tb(slide, "NEXT STEPS — COMMAND ACTION REQUIRED",
 tb(slide,
    "① Issue training policy letter (template ready)\n"
    "② Certify instructors per Faculty Development Plan\n"
-   "③ Provision MSS accounts — prerequisite to TM-10 execution\n"
-   "④ Execute first TM-10 cohort — all personnel, no exceptions",
+   "③ Provision MSS accounts — prerequisite to SL 1 execution\n"
+   "④ Execute first SL 1 cohort — all personnel, no exceptions",
    7.86, 5.62, 5.1, 0.84,
    size=8, bold=False, color=OFF_WHITE)
 

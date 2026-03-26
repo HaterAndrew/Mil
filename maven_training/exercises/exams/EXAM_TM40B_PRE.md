@@ -1,12 +1,12 @@
-# PRE-TEST — TM-40B: FIRES
+# PRE-TEST — SL 4B: FIRES
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40B: Fires WFF Track |
+| **Course** | SL 4B: Fires WFF Track |
 | **Form** | Pre-Test |
-| **Level** | TM-40B (WFF Track) |
-| **Audience** | FSE staff, fire support officers, targeting teams, artillery/mortar officers; prerequisite: TM-10 + TM-20 + TM-30 complete |
+| **Level** | SL 4B (WFF Track) |
+| **Audience** | FSE staff, fire support officers, targeting teams, artillery/mortar officers; prerequisite: SL 1 + SL 2 + SL 3 complete |
 | **Time Allowed** | 20 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

@@ -1,10 +1,10 @@
 # EX_40J — Program Manager (Technical)
-## Practical Exercise — TM-40J Proficiency
+## Practical Exercise — SL 4J Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-30 REQUIRED; TM-40J — Program Manager (Technical) Technical Manual (and TM-10 through TM-20) |
+| **Prerequisite** | SL 3 REQUIRED; SL 4J — Program Manager (Technical) Technical Manual (and SL 1 through SL 2) |
 | **Duration** | 2–3 hours |
 | **Environment** | MSS with project tracking access; access to a sample project record — see ENVIRONMENT_SETUP.md |
 
@@ -12,11 +12,11 @@
 
 | Resource | Reference |
 |----------|-----------|
-| Technical Manual | TM-40J — Program Manager (Technical) |
+| Technical Manual | SL 4J — Program Manager (Technical) |
 | Syllabus | SYLLABUS_TM40J |
 | Pre-Exercise Exam | EXAM_TM40J_PRE |
 | Post-Exercise Exam | EXAM_TM40J_POST |
-| Continuation Track | TM-50J — Advanced Program Manager |
+| Continuation Track | SL 5J — Advanced Program Manager |
 
 ## WFF AWARENESS
 
@@ -130,7 +130,7 @@ Draft a 5-sentence stakeholder update email. Required elements:
 
 ## NEXT STEPS
 
-Participants who receive an overall Go on EX_40J are eligible to enroll in **TM-50J — Advanced Program Manager**. TM-50J extends into portfolio-level program management, enterprise governance, and cross-functional delivery at scale. TM-50 is G–O (advanced specialist tracks).
+Participants who receive an overall Go on EX_40J are eligible to enroll in **SL 5J — Advanced Program Manager**. SL 5J extends into portfolio-level program management, enterprise governance, and cross-functional delivery at scale. SL 5 is G–O (advanced specialist tracks).
 
 ### Evaluator Role-Play Card (Task 4)
 

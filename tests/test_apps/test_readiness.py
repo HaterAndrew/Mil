@@ -84,8 +84,8 @@ class TestTrainees:
         resp = readiness_client.get("/trainees/1234567890")
         assert resp.status_code == 200
         data = resp.json()
-        # New trainee should be recommended TM-10
-        assert "TM-10" in data["next_recommended"]
+        # New trainee should be recommended SL 1
+        assert "SL 1" in data["next_recommended"]
 
 
 # ---------------------------------------------------------------------------
@@ -93,14 +93,14 @@ class TestTrainees:
 # ---------------------------------------------------------------------------
 class TestPrereqChain:
     @pytest.mark.parametrize("course,prereqs", [
-        ("TM-20", ["TM-10"]),
-        ("TM-30", ["TM-20"]),
-        ("TM-40A", ["TM-30"]),
-        ("TM-40G", ["TM-30"]),
-        ("TM-40L", ["TM-30"]),
-        ("TM-50G", ["TM-40G"]),
-        ("TM-50L", ["TM-40L"]),
-        ("FBC", ["TM-20"]),
+        ("SL 2", ["SL 1"]),
+        ("SL 3", ["SL 2"]),
+        ("SL 4A", ["SL 3"]),
+        ("SL 4G", ["SL 3"]),
+        ("SL 4L", ["SL 3"]),
+        ("SL 5G", ["SL 4G"]),
+        ("SL 5L", ["SL 4L"]),
+        ("FBC", ["SL 2"]),
     ])
     def test_prereq_blocks_without_completion(self, readiness_client, course, prereqs):
         """Cannot record GO without prereqs met."""
@@ -113,52 +113,52 @@ class TestPrereqChain:
 
     def test_tm10_has_no_prereqs(self, readiness_client):
         create_trainee(readiness_client)
-        resp = record_go(readiness_client, "1234567890", "TM-10")
+        resp = record_go(readiness_client, "1234567890", "SL 1")
         assert resp.status_code == 201
 
     def test_full_chain_tm10_to_tm40g(self, readiness_client):
-        """Walk the full chain: TM-10 → TM-20 → TM-30 → TM-40G."""
+        """Walk the full chain: SL 1 → SL 2 → SL 3 → SL 4G."""
         create_trainee(readiness_client)
-        assert record_go(readiness_client, "1234567890", "TM-10").status_code == 201
-        assert record_go(readiness_client, "1234567890", "TM-20").status_code == 201
-        assert record_go(readiness_client, "1234567890", "TM-30").status_code == 201
-        assert record_go(readiness_client, "1234567890", "TM-40G").status_code == 201
+        assert record_go(readiness_client, "1234567890", "SL 1").status_code == 201
+        assert record_go(readiness_client, "1234567890", "SL 2").status_code == 201
+        assert record_go(readiness_client, "1234567890", "SL 3").status_code == 201
+        assert record_go(readiness_client, "1234567890", "SL 4G").status_code == 201
 
     def test_full_chain_to_tm50g(self, readiness_client):
-        """Walk chain to advanced: TM-10 → TM-20 → TM-30 → TM-40G → TM-50G."""
+        """Walk chain to advanced: SL 1 → SL 2 → SL 3 → SL 4G → SL 5G."""
         create_trainee(readiness_client)
-        for course in ["TM-10", "TM-20", "TM-30", "TM-40G"]:
+        for course in ["SL 1", "SL 2", "SL 3", "SL 4G"]:
             assert record_go(readiness_client, "1234567890", course).status_code == 201
-        assert record_go(readiness_client, "1234567890", "TM-50G").status_code == 201
+        assert record_go(readiness_client, "1234567890", "SL 5G").status_code == 201
 
     def test_fbc_does_not_grant_tm30(self, readiness_client):
-        """FBC completion does NOT satisfy TM-30 prereq for TM-40."""
+        """FBC completion does NOT satisfy SL 3 prereq for SL 4."""
         create_trainee(readiness_client)
-        assert record_go(readiness_client, "1234567890", "TM-10").status_code == 201
-        assert record_go(readiness_client, "1234567890", "TM-20").status_code == 201
+        assert record_go(readiness_client, "1234567890", "SL 1").status_code == 201
+        assert record_go(readiness_client, "1234567890", "SL 2").status_code == 201
         assert record_go(readiness_client, "1234567890", "FBC").status_code == 201
-        # TM-40G requires TM-30, not FBC
-        resp = record_go(readiness_client, "1234567890", "TM-40G")
+        # SL 4G requires SL 3, not FBC
+        resp = record_go(readiness_client, "1234567890", "SL 4G")
         assert resp.status_code == 422
-        assert "TM-30" in resp.json()["detail"]
+        assert "SL 3" in resp.json()["detail"]
 
     def test_no_go_does_not_satisfy_prereq(self, readiness_client):
         """NO_GO result should not count as prereq completion."""
         create_trainee(readiness_client)
-        # Record TM-10 as NO_GO
+        # Record SL 1 as NO_GO
         resp = readiness_client.post("/completions", json={
-            "dodid": "1234567890", "course_id": "TM-10",
+            "dodid": "1234567890", "course_id": "SL 1",
             "result": "NO_GO", "evaluation_date": "2026-01-15",
         })
         assert resp.status_code == 201
-        # TM-20 should still be blocked
-        resp = record_go(readiness_client, "1234567890", "TM-20")
+        # SL 2 should still be blocked
+        resp = record_go(readiness_client, "1234567890", "SL 2")
         assert resp.status_code == 422
 
     def test_unknown_course_rejected(self, readiness_client):
-        """TM-50A through TM-50F do not exist."""
+        """SL 5A through SL 5F do not exist."""
         create_trainee(readiness_client)
-        resp = record_go(readiness_client, "1234567890", "TM-50A")
+        resp = record_go(readiness_client, "1234567890", "SL 5A")
         assert resp.status_code == 422
 
 
@@ -168,16 +168,16 @@ class TestPrereqChain:
 class TestEligibility:
     def test_eligible_for_tm10(self, readiness_client):
         create_trainee(readiness_client)
-        resp = readiness_client.get("/eligibility/1234567890/TM-10")
+        resp = readiness_client.get("/eligibility/1234567890/SL 1")
         assert resp.status_code == 200
         assert resp.json()["eligible"] is True
 
     def test_not_eligible_for_tm20(self, readiness_client):
         create_trainee(readiness_client)
-        resp = readiness_client.get("/eligibility/1234567890/TM-20")
+        resp = readiness_client.get("/eligibility/1234567890/SL 2")
         data = resp.json()
         assert data["eligible"] is False
-        assert "TM-10" in data["missing_prereqs"]
+        assert "SL 1" in data["missing_prereqs"]
 
 
 # ---------------------------------------------------------------------------
@@ -187,16 +187,16 @@ class TestRollup:
     def test_rollup_counts(self, readiness_client):
         create_trainee(readiness_client, dodid="1111111111", unit="2-1 BN")
         create_trainee(readiness_client, dodid="2222222222", unit="2-1 BN")
-        record_go(readiness_client, "1111111111", "TM-10")
-        record_go(readiness_client, "2222222222", "TM-10")
-        record_go(readiness_client, "1111111111", "TM-20")
+        record_go(readiness_client, "1111111111", "SL 1")
+        record_go(readiness_client, "2222222222", "SL 1")
+        record_go(readiness_client, "1111111111", "SL 2")
 
         resp = readiness_client.get("/rollup/2-1 BN")
         assert resp.status_code == 200
         data = resp.json()
         assert data["total_trainees"] == 2
-        assert data["course_counts"]["TM-10"] == 2
-        assert data["course_counts"]["TM-20"] == 1
+        assert data["course_counts"]["SL 1"] == 2
+        assert data["course_counts"]["SL 2"] == 1
 
 
 # ---------------------------------------------------------------------------
@@ -219,13 +219,13 @@ class TestCSVUpload:
 
     def test_completions_upload_with_prereq_check(self, readiness_client):
         create_trainee(readiness_client, dodid="1111111111")
-        record_go(readiness_client, "1111111111", "TM-10")
+        record_go(readiness_client, "1111111111", "SL 1")
 
-        # TM-20 should succeed (prereq TM-10 met), TM-30 should fail (prereq TM-20 not met)
+        # SL 2 should succeed (prereq SL 1 met), SL 3 should fail (prereq SL 2 not met)
         csv_content = (
             "dodid,course_id,result,evaluation_date,evaluator_name\n"
-            "1111111111,TM-20,GO,2026-02-01,MAJ SMITH\n"
-            "1111111111,TM-30,GO,2026-02-15,MAJ SMITH\n"
+            "1111111111,SL 2,GO,2026-02-01,MAJ SMITH\n"
+            "1111111111,SL 3,GO,2026-02-15,MAJ SMITH\n"
         )
         resp = readiness_client.post(
             "/upload/completions",
@@ -243,8 +243,8 @@ class TestCSVUpload:
 class TestExport:
     def test_csv_export(self, readiness_client):
         create_trainee(readiness_client)
-        record_go(readiness_client, "1234567890", "TM-10")
+        record_go(readiness_client, "1234567890", "SL 1")
         resp = readiness_client.get("/export/csv")
         assert resp.status_code == 200
         assert "text/csv" in resp.headers["content-type"]
-        assert "TM-10" in resp.text
+        assert "SL 1" in resp.text

@@ -1,7 +1,7 @@
 """
 build_tm10_decks.py
 -------------------
-Generates two TM-10 slide decks:
+Generates two SL 1 slide decks:
   1. mss_platform_overview.pptx  — new deck, 10 slides
   2. Patches army_data_orientation_v1 slides 12-14 (writes a new v2 PPTX)
 
@@ -41,7 +41,7 @@ FOOTER_COLOR = RGBColor(0x18, 0x33, 0x5F)
 
 SLIDE_W = Inches(13.33)
 SLIDE_H = Inches(7.50)
-FOOTER_TEXT = "USAREUR-AF  ·  C2DAO  ·  MSS-TM10  ·  MAR 2026"
+FOOTER_TEXT = "USAREUR-AF  ·  C2DAO  ·  MSS-SL1  ·  MAR 2026"
 CLASSIF = ""
 
 # ── Helper functions ──────────────────────────────────────────────────────────
@@ -157,7 +157,7 @@ def build_mss_platform_overview():
     add_textbox(s, int(Inches(1.5)), int(Inches(3.35)), int(Inches(10)), int(Inches(0.55)),
                 "Your Guide to Using MSS", 20, False, LGRAY, PP_ALIGN.CENTER)
     add_textbox(s, int(Inches(1.5)), int(Inches(4.05)), int(Inches(10)), int(Inches(0.4)),
-                "TM-10  ·  No Technical Background Required",
+                "SL 1  ·  No Technical Background Required",
                 12, False, GOLD, PP_ALIGN.CENTER)
     add_footer(s)
 
@@ -565,7 +565,7 @@ def build_mss_platform_overview():
     panel_h = int(Inches(4.7))
 
     header_bar(s, int(Inches(0.3)), panel_t, col_w, int(Inches(0.45)),
-               "WHAT A TM-10 USER DOES", NAVY)
+               "WHAT A SL 1 USER DOES", NAVY)
     content_panel(s, int(Inches(0.3)), panel_t + int(Inches(0.45)), col_w, panel_h - int(Inches(0.45)))
     add_multi(s, int(Inches(0.48)), panel_t + int(Inches(0.62)),
               col_w - int(Inches(0.3)), panel_h - int(Inches(0.75)),
@@ -634,7 +634,7 @@ def build_mss_platform_overview():
               ], 13, LGRAY, False, PP_ALIGN.LEFT)
 
     add_multi(s, int(Inches(1.8)), int(Inches(5.55)), int(Inches(9.5)), int(Inches(0.6)),
-              ["TM-10 Complete  ·  Next: TM-20 Builder Course"], 11, GOLD)
+              ["SL 1 Complete  ·  Next: SL 2 Builder Course"], 11, GOLD)
 
     add_footer(s)
 
@@ -651,7 +651,7 @@ def build_mss_platform_overview():
 def patch_army_data_orientation():
     """
     Opens Army_Data_Orientation_PROTO.pptx and rewrites slides 12-14
-    for a TM-10 end-user audience, saves as army_data_orientation_v2.pptx.
+    for a SL 1 end-user audience, saves as army_data_orientation_v2.pptx.
 
     Changes:
       Slide 12 (Where You Fit In): Move "YOU" marker to Applications/Decisions layer.
@@ -824,7 +824,7 @@ def patch_army_data_orientation():
 
 # ─────────────────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    print("Building TM-10 decks...")
+    print("Building SL 1 decks...")
     p1 = build_mss_platform_overview()
     p2 = patch_army_data_orientation()
     print("\nDone.")

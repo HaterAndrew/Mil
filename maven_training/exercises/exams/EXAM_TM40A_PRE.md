@@ -1,12 +1,12 @@
-# PRE-TEST — TM-40A: INTELLIGENCE
+# PRE-TEST — SL 4A: INTELLIGENCE
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40A: Intelligence WFF Track |
+| **Course** | SL 4A: Intelligence WFF Track |
 | **Form** | Pre-Test |
-| **Level** | TM-40A (WFF Track) |
-| **Audience** | G2/S2 staff, targeting officers, all-source analysts; prerequisite: TM-10 + TM-20 + TM-30 complete |
+| **Level** | SL 4A (WFF Track) |
+| **Audience** | G2/S2 staff, targeting officers, all-source analysts; prerequisite: SL 1 + SL 2 + SL 3 complete |
 | **Time Allowed** | 20 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
@@ -141,7 +141,7 @@ _______________________________________________
 4. C — MSS collection management lets the collection manager visualize coverage, task status, and gaps against PIRs; it does not auto-retask assets or replace the collection matrix.
 5. D — Threat and enemy disposition data changes rapidly; displaying stale intelligence without a caveat may drive decisions based on conditions that no longer exist; MSS does not auto-remove stale data.
 6. B — Targeting products must include designation, PIR/CCIR linkage, source attribution, and timestamps; unconfirmed targets must be clearly distinguished from confirmed — not hidden from view.
-7. A — MSS supports all-source analysis by displaying multiple layers simultaneously for analyst correlation; automated fusion without analyst review is not the TM-40A standard.
+7. A — MSS supports all-source analysis by displaying multiple layers simultaneously for analyst correlation; automated fusion without analyst review is not the SL 4A standard.
 8. C — Correct OPSEC: read-only sharing for authorized accounts; correct classification marking; no raw data layer export. Options A, B, and D are distribution control violations.
 
 **Short Answer Guidance:**

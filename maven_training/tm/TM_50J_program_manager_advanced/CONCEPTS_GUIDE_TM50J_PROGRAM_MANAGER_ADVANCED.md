@@ -1,7 +1,7 @@
-# CONCEPTS GUIDE — TM-50J: ADVANCED DATA PROGRAM MANAGER — MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 5J: ADVANCED DATA PROGRAM MANAGER — MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** TM-50J is not about managing more programs. It is about operating at a level where your decisions shape what the enterprise data architecture becomes — and advising senior leaders on portfolio strategy, not execution status.
-> **Purpose:** Extends mental models from TM-40J Concepts Guide to advanced data program management on MSS. Prerequisite: TM-40J Concepts Guide and TM-40J qualification.
+> **Forward:** SL 5J is not about managing more programs. It is about operating at a level where your decisions shape what the enterprise data architecture becomes — and advising senior leaders on portfolio strategy, not execution status.
+> **Purpose:** Extends mental models from TM-40J Concepts Guide to advanced data program management on MSS. Prerequisite: TM-40J Concepts Guide and SL 4J qualification.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -10,15 +10,15 @@
 
 ### 1-1. The Distinction That Matters
 
-**BLUF:** TM-50J is not about managing more programs. It is about operating at a level where your decisions shape what the enterprise data architecture becomes — and advising senior leaders on portfolio strategy, not execution status.
+**BLUF:** SL 5J is not about managing more programs. It is about operating at a level where your decisions shape what the enterprise data architecture becomes — and advising senior leaders on portfolio strategy, not execution status.
 
-TM-40J qualified you to run a project: define scope, manage a team, deliver a data product, hand it to operations. That is execution. Execution is necessary. It is not sufficient for TM-50J.
+SL 4J qualified you to run a project: define scope, manage a team, deliver a data product, hand it to operations. That is execution. Execution is necessary. It is not sufficient for SL 5J.
 
-At TM-50J, you are a data program leader. When you approve an Ontology schema, that schema becomes the foundation other products build on. When you accept a vendor deliverable, those technical choices become part of the enterprise. When you brief GO/SES leadership on portfolio strategy, your framing shapes what they fund, defer, and cancel. This is not executional authority extended upward — it is a qualitatively different function.
+At SL 5J, you are a data program leader. When you approve an Ontology schema, that schema becomes the foundation other products build on. When you accept a vendor deliverable, those technical choices become part of the enterprise. When you brief GO/SES leadership on portfolio strategy, your framing shapes what they fund, defer, and cancel. This is not executional authority extended upward — it is a qualitatively different function.
 
-### 1-2. What Changes at TM-50J
+### 1-2. What Changes at SL 5J
 
-| Dimension | TM-40J | TM-50J |
+| Dimension | SL 4J | SL 5J |
 |---|---|---|
 | Time horizon | Sprints and quarters | Program increments and fiscal years |
 | Unit of analysis | Tasks, features, team velocity | Programs, dependencies, organizational capacity |
@@ -27,7 +27,7 @@ At TM-50J, you are a data program leader. When you approve an Ontology schema, t
 
 ### 1-3. Developing the Analytical Perspective
 
-TM-50J PMs advise the C2DAO and senior leadership on portfolio strategy — synthesizing across programs, identifying patterns, and constructing a coherent strategic picture. This perspective must be built deliberately.
+SL 5J PMs advise the C2DAO and senior leadership on portfolio strategy — synthesizing across programs, identifying patterns, and constructing a coherent strategic picture. This perspective must be built deliberately.
 
 **Weekly practice:** Review the full portfolio and ask: (1) What is the most important thing we are not doing? (2) What are we doing that we should stop? (3) What dependency, if it breaks, takes down multiple programs?
 
@@ -88,7 +88,7 @@ Be honest about tradeoffs. If the strategic sequence requires deferring a capabi
 
 ### 3-1. What Architectural Debt Is
 
-**BLUF:** At enterprise scale, architectural debt — poor data models, uncoordinated Ontology growth, undocumented pipelines — is a readiness risk. TM-50J PMs must quantify and communicate it in terms leadership understands.
+**BLUF:** At enterprise scale, architectural debt — poor data models, uncoordinated Ontology growth, undocumented pipelines — is a readiness risk. SL 5J PMs must quantify and communicate it in terms leadership understands.
 
 Architectural debt accumulates when:
 
@@ -121,7 +121,7 @@ Frame the ask accordingly: "Investing one sprint per quarter in architectural cl
 
 ### 4-1. The Federated Command Structure Problem
 
-**BLUF:** Data programs spanning III Corps, V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, SETAF-AF, USAREUR-AF HQ, and coalition partners operate in a federated command structure where no single authority controls all stakeholders. Coordination without authority is the defining challenge of TM-50J data program leadership.
+**BLUF:** Data programs spanning III Corps, V Corps, 21st TSC, 10th AAMDC, 56th MDC-E, SETAF-AF, USAREUR-AF HQ, and coalition partners operate in a federated command structure where no single authority controls all stakeholders. Coordination without authority is the defining challenge of SL 5J data program leadership.
 
 USAREUR-AF cannot direct other organizations to comply with program requirements. V Corps has its own command authority, its own data priorities, and its own C2DAO relationship. 21st TSC operates under a different chain with different mission requirements. 10th AAMDC, 56th MDC-E, and SETAF-AF each have distinct mission sets — IAMD, multi-domain operations, and Africa AOR engagement respectively — with corresponding data requirements. Coalition partners are sovereign. This creates a coordination environment where requirements are negotiated, governance decisions require consensus, and a disagreement between two stakeholder organizations can stall a program indefinitely.
 
@@ -140,7 +140,7 @@ Organizations in a multi-stakeholder data program will not have the same governa
 
 Governance mismatches create data quality problems downstream: if an upstream producer does not validate against the agreed schema, every product that consumes that data inherits the quality problem.
 
-The TM-50J PM must assess governance maturity across stakeholder organizations at program initiation and design accordingly. Build a maturity development plan for lower-maturity organizations with specific milestones and data team support. A federated data program is only as strong as its weakest upstream contributor.
+The SL 5J PM must assess governance maturity across stakeholder organizations at program initiation and design accordingly. Build a maturity development plan for lower-maturity organizations with specific milestones and data team support. A federated data program is only as strong as its weakest upstream contributor.
 
 ---
 
@@ -181,7 +181,7 @@ Keep it to one page maximum. Attach a backup slide with technical detail for sta
 
 **BLUF:** A data product is not operational until users have changed their behavior. Technical delivery is the beginning of the PM's adoption work, not the end.
 
-At TM-40J, the job ends at deployment. At TM-50J, you own the organizational transition from old process to data-enabled workflow — because if users do not adopt the product, the operational impact promised in the resource case never materializes.
+At SL 4J, the job ends at deployment. At SL 5J, you own the organizational transition from old process to data-enabled workflow — because if users do not adopt the product, the operational impact promised in the resource case never materializes.
 
 Common adoption failure modes:
 
@@ -203,7 +203,7 @@ Common adoption failure modes:
 
 A G3 section at USAREUR-AF HQ has submitted readiness SITREPs by email for six years. The MSS readiness dashboard now covers the same information with better fidelity and reduced lag. Initial adoption is low — staff officers continue emailing SITREPs alongside the dashboard.
 
-TM-50J PM response: (1) Identify a champion in the G3 — a junior officer who sees the efficiency gain and is willing to advocate. (2) Coordinate with the G3 to include the dashboard in the next senior leader update brief, with the G3 explicitly referencing it. (3) Document two specific instances where the dashboard surfaced readiness data faster than the email report. (4) Propose a 60-day transition plan with a defined date after which the email SITREP is optional, then discontinued — get explicit leadership approval for the timeline.
+SL 5J PM response: (1) Identify a champion in the G3 — a junior officer who sees the efficiency gain and is willing to advocate. (2) Coordinate with the G3 to include the dashboard in the next senior leader update brief, with the G3 explicitly referencing it. (3) Document two specific instances where the dashboard surfaced readiness data faster than the email report. (4) Propose a 60-day transition plan with a defined date after which the email SITREP is optional, then discontinued — get explicit leadership approval for the timeline.
 
 At 60 days, if adoption metrics show 80% of stakeholders are using the dashboard, retire the email process. If below threshold, do not retire — investigate the barrier and address it before cutover.
 
@@ -268,9 +268,9 @@ This categorization prevents two failure modes: over-escalating (consuming senio
 
 ---
 
-## SECTION 9 — ADVANCED FAILURE MODES — WHAT TM-50J PMs GET WRONG
+## SECTION 9 — ADVANCED FAILURE MODES — WHAT SL 5J PMs GET WRONG
 
-> **NOTE:** TM-40J Section 9-6 now addresses dependency mapping mechanics, cascading friction from unmanaged inter-team dependencies, and enforcement standards for product retirement. The advanced failure modes below assume familiarity with that foundation; TM-50J PMs are expected to manage these dynamics at portfolio scale across organizations, not just within a single program.
+> **NOTE:** TM-40J Section 9-6 now addresses dependency mapping mechanics, cascading friction from unmanaged inter-team dependencies, and enforcement standards for product retirement. The advanced failure modes below assume familiarity with that foundation; SL 5J PMs are expected to manage these dynamics at portfolio scale across organizations, not just within a single program.
 
 | Failure Mode | What Happens | The Correct Approach |
 |---|---|---|
@@ -286,9 +286,9 @@ This categorization prevents two failure modes: over-escalating (consuming senio
 
 The five failure modes above share a common root: optimizing for the short term at the expense of the long term. Over-promising wins resources today and loses credibility tomorrow. Under-communicating risk avoids a difficult conversation today and creates a crisis tomorrow. Managing to schedule at the expense of quality meets the date today and creates architectural debt for the next PM.
 
-TM-50J program leadership is the discipline of making decisions with a long time horizon — accepting short-term friction in exchange for long-term health of the enterprise data architecture. This requires honesty with leadership, rigor in execution, and the professional confidence to surface bad news early and make resource cases based on fact rather than politics.
+SL 5J program leadership is the discipline of making decisions with a long time horizon — accepting short-term friction in exchange for long-term health of the enterprise data architecture. This requires honesty with leadership, rigor in execution, and the professional confidence to surface bad news early and make resource cases based on fact rather than politics.
 
-The theater data enterprise that supports DEFENDER 2027 and the operations that follow will be built, piece by piece, by TM-50J PMs making these decisions well. That is the standard.
+The theater data enterprise that supports DEFENDER 2027 and the operations that follow will be built, piece by piece, by SL 5J PMs making these decisions well. That is the standard.
 
 ---
 
@@ -306,21 +306,21 @@ The theater data enterprise that supports DEFENDER 2027 and the operations that 
 
 ---
 
-## PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION
+## PEER SL 5 CROSS-REFERENCES AND WFF INTEGRATION
 
-**Peer TM-50 Publications.** TM-50J program managers oversee work across all advanced specialist tracks. Understanding the conceptual challenges in each companion publication is essential for effective program leadership.
+**Peer SL 5 Publications.** SL 5J program managers oversee work across all advanced specialist tracks. Understanding the conceptual challenges in each companion publication is essential for effective program leadership.
 
 | Publication | Track | Coordination Point |
 |---|---|---|
-| TM-50G | Advanced ORSA | Portfolio-level analytical program governance; OR product review |
-| TM-50H | Advanced AI Engineer | AI program lifecycle; governance acquisition |
-| TM-50M | Advanced ML Engineer | ML program portfolio management; automated pipeline governance |
-| TM-50K | Advanced Knowledge Manager | KM system program oversight; knowledge program management |
-| TM-50L | Advanced Software Engineer | Platform engineering program coordination; SWE team structure |
-| TM-50N | Advanced UI/UX Designer | Design team coordination; UX requirements management |
-| TM-50O | Advanced Platform Engineer | Platform capacity planning; infrastructure program management |
+| SL 5G | Advanced ORSA | Portfolio-level analytical program governance; OR product review |
+| SL 5H | Advanced AI Engineer | AI program lifecycle; governance acquisition |
+| SL 5M | Advanced ML Engineer | ML program portfolio management; automated pipeline governance |
+| SL 5K | Advanced Knowledge Manager | KM system program oversight; knowledge program management |
+| SL 5L | Advanced Software Engineer | Platform engineering program coordination; SWE team structure |
+| SL 5N | Advanced UI/UX Designer | Design team coordination; UX requirements management |
+| SL 5O | Advanced Platform Engineer | Platform capacity planning; infrastructure program management |
 
-**WFF Operational Consumer Note.** All MSS data programs managed by TM-50J program managers ultimately serve the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). WFF staff sections define the demand signal for the portfolio. The program health questions addressed in this guide — adoption, architectural debt, resource cases, coalition coordination — must ultimately be evaluated against whether WFF practitioners are making better operational decisions as a result of the data program.
+**WFF Operational Consumer Note.** All MSS data programs managed by SL 5J program managers ultimately serve the six Warfighting Function (WFF) tracks: Intelligence (SL 4A), Fires (SL 4B), Movement and Maneuver (SL 4C), Sustainment (SL 4D), Protection (SL 4E), and Mission Command (SL 4F). WFF staff sections define the demand signal for the portfolio. The program health questions addressed in this guide — adoption, architectural debt, resource cases, coalition coordination — must ultimately be evaluated against whether WFF practitioners are making better operational decisions as a result of the data program.
 
 ---
 

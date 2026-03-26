@@ -1,20 +1,20 @@
-# COURSE SYLLABUS — TM-50L: ADVANCED SOFTWARE ENGINEERING
+# COURSE SYLLABUS — SL 5L: ADVANCED SOFTWARE ENGINEERING
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Level** | TM-50L — Advanced Software Engineer Specialist Track |
+| **Level** | SL 5L — Advanced Software Engineer Specialist Track |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-40L complete (Go evaluation on file); 18+ months active software engineering experience on MSS or equivalent Foundry/OSDK platform; demonstrated proficiency with TypeScript and Python in production; experience with CI/CD pipelines and code review processes |
+| **Prerequisites** | SL 4L complete (Go evaluation on file); 18+ months active software engineering experience on MSS or equivalent Foundry/OSDK platform; demonstrated proficiency with TypeScript and Python in production; experience with CI/CD pipelines and code review processes |
 | **Audience** | Senior SWEs, platform engineers, SWE leads building enterprise-scale MSS applications and platform infrastructure |
 | **Format** | Advanced lab + architecture design review + evaluated system build |
 | **Location** | MSS Training Environment (OSDK TypeScript/Python, CI/CD pipeline access, advanced Ontology permissions required) |
 
-> **PREREQUISITE WARNING:** TM-50L is not required for most SWE billets. It is intended for engineers designing MSS platform architecture, establishing development standards for a team, implementing enterprise CI/CD, or building OSDK-backed systems consumed by other applications.
+> **PREREQUISITE WARNING:** SL 5L is not required for most SWE billets. It is intended for engineers designing MSS platform architecture, establishing development standards for a team, implementing enterprise CI/CD, or building OSDK-backed systems consumed by other applications.
 
 ---
 
-**BLUF:** TM-50L addresses the platform engineering challenges that arise when MSS-backed applications move from individual development to team-scale production — OSDK-first architecture patterns, type-safe Action design, enterprise CI/CD pipelines, security review standards, and the technical governance that prevents a collection of individually correct code from becoming an unmaintainable system. TM-50L practitioners design the platform that other developers build on.
+**BLUF:** SL 5L addresses the platform engineering challenges that arise when MSS-backed applications move from individual development to team-scale production — OSDK-first architecture patterns, type-safe Action design, enterprise CI/CD pipelines, security review standards, and the technical governance that prevents a collection of individually correct code from becoming an unmaintainable system. SL 5L practitioners design the platform that other developers build on.
 
 ---
 
@@ -101,7 +101,7 @@ Complete **7+ duty days before Day 1:**
 | Time | Block | Method | Content |
 |---|---|---|---|
 | 0800–0900 | 14 | Seminar | Technical architecture review methodology: scalability, security, maintainability, and operational observability dimensions |
-| 0900–1100 | 15 | Workshop | Participant architecture review: present your prepared MSS application; peer and instructor critique using the TM-50L review checklist |
+| 0900–1100 | 15 | Workshop | Participant architecture review: present your prepared MSS application; peer and instructor critique using the SL 5L review checklist |
 | 1100–1115 | — | Break | |
 | 1115–1200 | 16 | Workshop | Refactoring roadmap: given a reviewed application, produce a prioritized technical debt remediation plan |
 | 1200–1300 | — | Lunch | |
@@ -123,13 +123,13 @@ Complete **7+ duty days before Day 1:**
 
 ## Peer Advanced Tracks
 
-| Track | Relevance to TM-50L |
+| Track | Relevance to SL 5L |
 |---|---|
-| TM-50H (Advanced AI Eng) | OSDK-backed AI system integrations; security patterns for AI applications on Foundry |
-| TM-50M (Advanced ML Eng) | ML model serving infrastructure built on OSDK; platform toolchain for data science workflows |
-| TM-50J (Advanced PM) | Delivery governance for SWE-led programs; technical debt and architecture debt in portfolio risk reporting |
+| SL 5H (Advanced AI Eng) | OSDK-backed AI system integrations; security patterns for AI applications on Foundry |
+| SL 5M (Advanced ML Eng) | ML model serving infrastructure built on OSDK; platform toolchain for data science workflows |
+| SL 5J (Advanced PM) | Delivery governance for SWE-led programs; technical debt and architecture debt in portfolio risk reporting |
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*Syllabus TM-50L | Version 1.0 | March 2026*
+*Syllabus SL 5L | Version 1.0 | March 2026*

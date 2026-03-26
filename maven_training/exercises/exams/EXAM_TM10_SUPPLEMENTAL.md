@@ -1,22 +1,22 @@
-# SUPPLEMENTAL KNOWLEDGE CHECK — TM-10: MAVEN USER
+# SUPPLEMENTAL KNOWLEDGE CHECK — SL 1: MAVEN USER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-10: Maven User |
+| **Course** | SL 1: Maven User |
 | **Form** | Supplemental Knowledge Check (Optional) |
-| **Level** | TM-10 (Foundational) |
+| **Level** | SL 1 (Foundational) |
 | **Audience** | All personnel — all MOS/branches, officer and enlisted |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | N/A — supplemental only |
 
-NOTE: This is an optional supplemental quiz for units that want additional knowledge reinforcement beyond the practical exercise (EX_10). **The TM-10 evaluation of record is the practical exercise (Go/No-Go), not this quiz.** Units may administer this quiz at their discretion for self-assessment or remedial training purposes. It does not affect TM-10 course completion status.
+NOTE: This is an optional supplemental quiz for units that want additional knowledge reinforcement beyond the practical exercise (EX_10). **The SL 1 evaluation of record is the practical exercise (Go/No-Go), not this quiz.** Units may administer this quiz at their discretion for self-assessment or remedial training purposes. It does not affect SL 1 course completion status.
 
 ---
 
 ## INSTRUCTIONS
 
-This optional knowledge check covers TM-10 course content. It is not required for course completion. Answer independently without reference to training materials.
+This optional knowledge check covers SL 1 course content. It is not required for course completion. Answer independently without reference to training materials.
 
 ---
 
@@ -24,7 +24,7 @@ This optional knowledge check covers TM-10 course content. It is not required fo
 
 *Circle the letter of the best answer. (2 points each)*
 
-**1. When logging in to MSS, you insert your CAC and are prompted for a PIN. You enter your PIN and receive an error. The FIRST step in TM-10 troubleshooting procedures is:**
+**1. When logging in to MSS, you insert your CAC and are prompted for a PIN. You enter your PIN and receive an error. The FIRST step in SL 1 troubleshooting procedures is:**
 
 A. Contact the MSS help desk and open a ticket
 B. Verify you are entering the correct PIV PIN (not your network password or email PIN)
@@ -87,14 +87,14 @@ B. Interact with AI-assisted workflows that process queries, generate draft outp
 C. Deploy new pipeline transforms to the production environment
 D. Manage user access permissions for the unit project
 
-**10. You receive a dataset marked "CUI — Not for Public Release." According to TM-10 authorized export procedures, you may:**
+**10. You receive a dataset marked "CUI — Not for Public Release." According to SL 1 authorized export procedures, you may:**
 
 A. Email the dataset to your personal email for offline analysis
 B. Export to an authorized government system on the appropriate network following the data handling instructions
 C. Post the data to a shared unclassified collaboration platform for your team
 D. Print the data and take it off-post for review at home
 
-**11. You attempt to access an MSS Workshop application and receive a "403 Forbidden" error. Per TM-10 procedures, the correct response is:**
+**11. You attempt to access an MSS Workshop application and receive a "403 Forbidden" error. Per SL 1 procedures, the correct response is:**
 
 A. The application is broken — submit a platform bug report
 B. Verify your project membership and role; contact your data steward if you believe access should be granted
@@ -122,7 +122,7 @@ B. Look for a confirmation message or status indicator in the application, and v
 C. Email your data steward and ask them to verify the record was created
 D. Re-submit the form a second time to ensure the first submission registered
 
-**15. You want to export a filtered view from a Quiver Object Type exploration to share with your commander. Per TM-10 procedures, before exporting you must:**
+**15. You want to export a filtered view from a Quiver Object Type exploration to share with your commander. Per SL 1 procedures, before exporting you must:**
 
 A. Convert the data to PDF format to prevent editing
 B. Verify the data's classification markings and confirm the export destination is authorized for that classification level
@@ -175,7 +175,7 @@ D. Remove all personally identifiable information before exporting any dataset
 
 &nbsp;
 
-**SA-5. Describe the two most common access issues a new MSS user encounters (per TM-10 procedures) and the correct resolution steps for each.**
+**SA-5. Describe the two most common access issues a new MSS user encounters (per SL 1 procedures) and the correct resolution steps for each.**
 
 &nbsp;
 
@@ -195,7 +195,7 @@ D. Remove all personally identifiable information before exporting any dataset
 | Short Answer | 5 | 6 | 30 |
 | **Total** | — | — | **60** |
 
-Scoring: N/A — Supplemental knowledge check. TM-10 evaluation of record is the practical exercise (EX_10).
+Scoring: N/A — Supplemental knowledge check. SL 1 evaluation of record is the practical exercise (EX_10).
 
 ---
 
@@ -204,12 +204,12 @@ Scoring: N/A — Supplemental knowledge check. TM-10 evaluation of record is the
 *Do not distribute to students.*
 
 **Multiple Choice:**
-1. B — PIV PIN verification is the first TM-10 troubleshooting step; common error is confusing PIN types.
-2. B — Projects module navigation by AOR designation is the correct TM-10 procedure.
+1. B — PIV PIN verification is the first SL 1 troubleshooting step; common error is confusing PIN types.
+2. B — Projects module navigation by AOR designation is the correct SL 1 procedure.
 3. B — Using the filter panel is the correct Workshop filter method; export/manual deletion is incorrect procedure.
 4. C — Action button/form is the correct MSS element for data submission.
 5. A — Metric widget displays a single calculated value; it does not export or configure pipelines.
-6. B — Opening Contour and selecting the dataset directly is the correct TM-10 user procedure.
+6. B — Opening Contour and selecting the dataset directly is the correct SL 1 user procedure.
 7. B — Object Type represents a category of real-world entity in the Ontology.
 8. C — Link Type traversal from the Object detail page is the correct Quiver navigation method.
 9. B — End users interact with AIP Logic for AI-assisted workflow outputs, not configuration.
@@ -218,7 +218,7 @@ Scoring: N/A — Supplemental knowledge check. TM-10 evaluation of record is the
 12. B — Pipeline last-run timestamp or data-as-of indicator is the correct data freshness check.
 13. B — Multiple filter criteria use AND logic — all conditions must match simultaneously.
 14. B — Confirmation message + record verification is the correct post-Action confirmation procedure.
-15. B — Classification verification before export is the mandatory TM-10 procedure.
+15. B — Classification verification before export is the mandatory SL 1 procedure.
 
 **Short Answer Guidance:**
 
@@ -230,7 +230,7 @@ SA-3. Full credit requires: submit a corrected Action with the right mileage; ex
 
 SA-4. Full credit requires: AI-generated outputs are drafts only and require human review before use as a final product; the output should be reviewed for accuracy by a qualified analyst before transmission to higher HQ; this is a non-negotiable human-in-the-loop requirement in MSS. Partial credit (3 pts) for "no, needs review" without explaining human-in-the-loop requirement.
 
-SA-5. Full credit requires two issues with resolutions: (1) Incorrect PIV PIN — resolution: verify you are using the PIV PIN, not network password or email PIN; reset via your local PKI office if forgotten. (2) 403 Forbidden / missing project access — resolution: contact your unit data steward to verify project membership and correct role assignment. Other valid TM-10 issues (browser compatibility, CAC reader not recognized) acceptable with correct resolution steps.
+SA-5. Full credit requires two issues with resolutions: (1) Incorrect PIV PIN — resolution: verify you are using the PIV PIN, not network password or email PIN; reset via your local PKI office if forgotten. (2) 403 Forbidden / missing project access — resolution: contact your unit data steward to verify project membership and correct role assignment. Other valid SL 1 issues (browser compatibility, CAC reader not recognized) acceptable with correct resolution steps.
 
 ---
 

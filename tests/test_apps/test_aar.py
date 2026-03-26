@@ -12,12 +12,12 @@ from apps.aar_aggregator.db import parse_aar_file
 # ---------------------------------------------------------------------------
 SAMPLE_AAR = {
     "date": "2026-01-27",
-    "tm_levels": ["TM-10"],
+    "tm_levels": ["SL 1"],
     "exercises": ["EX_10"],
     "location": "MSS sandbox",
     "student_count": 12,
     "instructor_names": ["MAJ SMITH"],
-    "planned_objectives": "Complete TM-10 ELOs.",
+    "planned_objectives": "Complete SL 1 ELOs.",
     "actual_execution": "All objectives completed on time.",
     "sustains": ["Dashboard walkthrough was effective", "Printed reference cards helped"],
     "improves": [
@@ -30,11 +30,11 @@ SAMPLE_AAR = {
         }
     ],
     "evaluations": [
-        {"trainee_name": "SGT JONES", "tm_level": "TM-10", "result": "GO", "notes": None}
+        {"trainee_name": "SGT JONES", "tm_level": "SL 1", "result": "GO", "notes": None}
     ],
     "discrepancies": [
         {
-            "document": "TM-10 Section 2.1",
+            "document": "SL 1 Section 2.1",
             "section_page": "p. 8",
             "issue_description": "Screenshot outdated",
             "severity": "M",
@@ -190,14 +190,14 @@ class TestFileParser:
 
 ## Section 1 — Event Details
 Date: 2026-01-27
-TM Levels: TM-10
+TM Levels: SL 1
 Exercises: EX_10
 Location: MSS sandbox
 Number of Students: 12
 Instructors: MAJ SMITH, SGT KELLY
 
 ## Section 2 — What Was Planned
-Complete all TM-10 ELOs.
+Complete all SL 1 ELOs.
 
 ## Section 3 — What Actually Happened
 All objectives completed on schedule.
@@ -217,7 +217,7 @@ Instructor: MAJ SMITH
 """
         result = parse_aar_file(content)
         assert result["date"] == "2026-01-27"
-        assert "TM-10" in result["tm_levels"]
+        assert "SL 1" in result["tm_levels"]
         assert result["location"] == "MSS sandbox"
         assert result["student_count"] == 12
         assert len(result["sustains"]) == 2
@@ -245,7 +245,7 @@ class TestFileUpload:
     def test_upload_parse(self, aar_client):
         content = """## Section 1 — Event Details
 Date: 2026-03-01
-TM Levels: TM-30
+TM Levels: SL 3
 Location: Live training
 Number of Students: 6
 Instructors: CW3 DAVIS

@@ -1,10 +1,10 @@
 # TM-50N — MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** TM-50N qualifies advanced UI/UX designers to build and govern design systems at scale, design for DDIL and cross-domain environments, lead coalition UI integration, and establish design operations that sustain quality across the MSS application portfolio. This manual extends TM-40N from individual application design to enterprise design leadership.
-> **Prereqs:** TM-40N, UI/UX Designer (required, Go evaluation on file); demonstrated portfolio of 2+ MSS application designs from TM-40N practical exercise or operational assignment; CONCEPTS_GUIDE_TM50N_UX_DESIGNER_ADVANCED (read before this manual)
+> **Forward:** SL 5N qualifies advanced UI/UX designers to build and govern design systems at scale, design for DDIL and cross-domain environments, lead coalition UI integration, and establish design operations that sustain quality across the MSS application portfolio. This manual extends SL 4N from individual application design to enterprise design leadership.
+> **Prereqs:** SL 4N, UI/UX Designer (required, Go evaluation on file); demonstrated portfolio of 2+ MSS application designs from SL 4N practical exercise or operational assignment; CONCEPTS_GUIDE_TM50N_UX_DESIGNER_ADVANCED (read before this manual)
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
-> **WARNING: Design system decisions at TM-50N level propagate across every MSS application. A poorly designed component, an inconsistent pattern, or a broken accessibility standard scales from one application to the entire portfolio. Validate design system changes across representative applications before publishing.**
+> **WARNING: Design system decisions at SL 5N level propagate across every MSS application. A poorly designed component, an inconsistent pattern, or a broken accessibility standard scales from one application to the entire portfolio. Validate design system changes across representative applications before publishing.**
 > **CAUTION: Cross-domain and coalition UI design involves classification boundary decisions. Designs that cross classification levels must be reviewed by the ISSM before implementation. Do not assume a design pattern valid at one classification level is valid at another.**
 
 ## Table of Contents
@@ -16,7 +16,7 @@
 - [CHAPTER 5 — DESIGN OPERATIONS (DESIGNOPS)](#chapter-5--design-operations-designops)
 - [CHAPTER 6 — ACCESSIBILITY AT ENTERPRISE SCALE](#chapter-6--accessibility-at-enterprise-scale)
 - [APPENDIX A — REFERENCES](#appendix-a--references)
-- [APPENDIX B — PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION](#appendix-b--peer-tm-50-cross-references-and-wff-integration)
+- [APPENDIX B — PEER SL 5 CROSS-REFERENCES AND WFF INTEGRATION](#appendix-b--peer-tm-50-cross-references-and-wff-integration)
 
 ---
 
@@ -24,19 +24,19 @@
 
 ### 1-1. Advanced UX Designer Manual
 
-**BLUF:** TM-50N extends TM-40N from designing individual applications to designing the design system itself — the patterns, components, governance, and operations that ensure consistency, accessibility, and quality across the MSS application portfolio.
+**BLUF:** SL 5N extends SL 4N from designing individual applications to designing the design system itself — the patterns, components, governance, and operations that ensure consistency, accessibility, and quality across the MSS application portfolio.
 
-This manual provides task-based instruction for advanced UI/UX designers operating on the Maven Smart System (MSS). TM-50N personnel define the design standards that all MSS application designers follow, lead design for complex multi-domain and coalition environments, and establish the operational processes that sustain design quality at scale.
+This manual provides task-based instruction for advanced UI/UX designers operating on the Maven Smart System (MSS). SL 5N personnel define the design standards that all MSS application designers follow, lead design for complex multi-domain and coalition environments, and establish the operational processes that sustain design quality at scale.
 
-**TM-50N covers** design systems at scale (building and maintaining reusable component libraries, pattern documentation, and design tokens across the MSS portfolio); DDIL-aware design (designing applications that function under denied, disrupted, intermittent, and limited bandwidth conditions); cross-domain and coalition UI (designing interfaces that operate across classification levels and serve multinational users in the USAREUR-AF AOR); design operations (DesignOps) including design review governance, quality metrics, design tooling, and onboarding new designers; accessibility at enterprise scale (automated accessibility testing, remediation prioritization, compliance reporting); and research operations (ResearchOps) including systematizing user research across the portfolio, maintaining a research repository, and preventing research duplication.
+**SL 5N covers** design systems at scale (building and maintaining reusable component libraries, pattern documentation, and design tokens across the MSS portfolio); DDIL-aware design (designing applications that function under denied, disrupted, intermittent, and limited bandwidth conditions); cross-domain and coalition UI (designing interfaces that operate across classification levels and serve multinational users in the USAREUR-AF AOR); design operations (DesignOps) including design review governance, quality metrics, design tooling, and onboarding new designers; accessibility at enterprise scale (automated accessibility testing, remediation prioritization, compliance reporting); and research operations (ResearchOps) including systematizing user research across the portfolio, maintaining a research repository, and preventing research duplication.
 
-**TM-50N does NOT cover** individual application design fundamentals — see TM-40N; custom widget implementation — see TM-40L, TM-50L; platform infrastructure — see TM-40O, TM-50O; or Foundry platform administration (vendor-managed).
+**SL 5N does NOT cover** individual application design fundamentals — see SL 4N; custom widget implementation — see SL 4L, SL 5L; platform infrastructure — see SL 4O, SL 5O; or Foundry platform administration (vendor-managed).
 
 ### 1-2. Curriculum Position
 
-**Prerequisite:** TM-40N (UI/UX Designer) is REQUIRED with Go evaluation on file. Demonstrated experience designing at least 2 MSS applications (from TM-40N practical exercise or operational assignment).
+**Prerequisite:** SL 4N (UI/UX Designer) is REQUIRED with Go evaluation on file. Demonstrated experience designing at least 2 MSS applications (from SL 4N practical exercise or operational assignment).
 
-**Peer advanced tracks:** Coordinate with TM-50J (Advanced PM) on portfolio-level product strategy. Coordinate with TM-50L (Advanced SWE) on design system implementation architecture and shared component libraries. Coordinate with TM-50O (Advanced Platform Engineer) on performance budgets and deployment constraints that affect design patterns.
+**Peer advanced tracks:** Coordinate with SL 5J (Advanced PM) on portfolio-level product strategy. Coordinate with SL 5L (Advanced SWE) on design system implementation architecture and shared component libraries. Coordinate with SL 5O (Advanced Platform Engineer) on performance budgets and deployment constraints that affect design patterns.
 
 ---
 
@@ -53,7 +53,7 @@ This manual provides task-based instruction for advanced UI/UX designers operati
 | Design tokens | Colors, typography, spacing, shadows — the atomic values | Designers + Developers |
 | Components | Buttons, tables, forms, status indicators, classification banners | Designers + Developers |
 | Patterns | Page layouts, navigation, data entry workflows, drill-down patterns | Designers |
-| Templates | Pre-built page templates for common MSS application types | Designers + Builders (TM-30) |
+| Templates | Pre-built page templates for common MSS application types | Designers + Builders (SL 3) |
 | Guidelines | Usage rules, accessibility requirements, when-to-use/when-not-to-use | Designers |
 
 ### 2-2. Component Library Management
@@ -270,28 +270,28 @@ Every data element displayed under DDIL conditions must indicate:
 
 | Reference | Relevance |
 |-----------|-----------|
-| TM-40N — UI/UX Designer | Prerequisite; individual application design |
-| TM-50J — Advanced Program Manager | Portfolio-level product strategy coordination |
-| TM-50L — Advanced Software Engineer | Design system implementation, shared component architecture |
-| TM-50O — Advanced Platform Engineer | Performance budgets, deployment constraints |
+| SL 4N — UI/UX Designer | Prerequisite; individual application design |
+| SL 5J — Advanced Program Manager | Portfolio-level product strategy coordination |
+| SL 5L — Advanced Software Engineer | Design system implementation, shared component architecture |
+| SL 5O — Advanced Platform Engineer | Performance budgets, deployment constraints |
 | WCAG 2.1 (W3C) | Accessibility technical standard |
 | IC/DoD Classification Marking Guide | Classification banner requirements |
 | NATO STANAG 4774/4778 | Coalition information exchange metadata |
 
 ---
 
-## APPENDIX B — PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION
+## APPENDIX B — PEER SL 5 CROSS-REFERENCES AND WFF INTEGRATION
 
-**Peer TM-50 Publications.** Advanced UI/UX Designers should coordinate with practitioners in these companion advanced-track publications rather than operating in isolation.
+**Peer SL 5 Publications.** Advanced UI/UX Designers should coordinate with practitioners in these companion advanced-track publications rather than operating in isolation.
 
 | Publication | Track | Coordination Point |
 |---|---|---|
-| TM-50G | Advanced ORSA | Data visualization design for analytical products; dashboard UX for ORSA outputs |
-| TM-50H | Advanced AI Engineer | UI/UX for AI-driven applications; model output presentation; automation bias mitigation through interface design |
-| TM-50M | Advanced ML Engineer | Visualization of ML model performance; feature importance displays; experiment tracking dashboards |
-| TM-50J | Advanced Program Manager | Portfolio-level product strategy; design system roadmap prioritization; resource allocation for UX research |
-| TM-50K | Advanced Knowledge Manager | Knowledge portal UX; search interface design; taxonomy visualization; glossary integration |
-| TM-50L | Advanced Software Engineer | Design system implementation architecture; shared component libraries; design token-to-code pipeline |
-| TM-50O | Advanced Platform Engineer | Platform portal design; performance budgets; deployment constraints affecting design patterns; CDN hosting for design assets |
+| SL 5G | Advanced ORSA | Data visualization design for analytical products; dashboard UX for ORSA outputs |
+| SL 5H | Advanced AI Engineer | UI/UX for AI-driven applications; model output presentation; automation bias mitigation through interface design |
+| SL 5M | Advanced ML Engineer | Visualization of ML model performance; feature importance displays; experiment tracking dashboards |
+| SL 5J | Advanced Program Manager | Portfolio-level product strategy; design system roadmap prioritization; resource allocation for UX research |
+| SL 5K | Advanced Knowledge Manager | Knowledge portal UX; search interface design; taxonomy visualization; glossary integration |
+| SL 5L | Advanced Software Engineer | Design system implementation architecture; shared component libraries; design token-to-code pipeline |
+| SL 5O | Advanced Platform Engineer | Platform portal design; performance budgets; deployment constraints affecting design patterns; CDN hosting for design assets |
 
-**WFF Operational Consumer Note.** Design systems, DDIL patterns, and accessibility standards built by TM-50N designers are consumed by the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). These practitioners are the operational users of every dashboard, COP layer, and decision support product in the MSS portfolio. A G2 intelligence dashboard has different layout priorities than a G4 sustainment status board; both must be accessible, DDIL-resilient, classification-explicit, and unambiguous about data freshness. Design system decisions at the TM-50N level propagate to every application these WFF operators depend on — design with their operational conditions, not garrison connectivity, as the baseline.
+**WFF Operational Consumer Note.** Design systems, DDIL patterns, and accessibility standards built by SL 5N designers are consumed by the six Warfighting Function (WFF) tracks: Intelligence (SL 4A), Fires (SL 4B), Movement and Maneuver (SL 4C), Sustainment (SL 4D), Protection (SL 4E), and Mission Command (SL 4F). These practitioners are the operational users of every dashboard, COP layer, and decision support product in the MSS portfolio. A G2 intelligence dashboard has different layout priorities than a G4 sustainment status board; both must be accessible, DDIL-resilient, classification-explicit, and unambiguous about data freshness. Design system decisions at the SL 5N level propagate to every application these WFF operators depend on — design with their operational conditions, not garrison connectivity, as the baseline.

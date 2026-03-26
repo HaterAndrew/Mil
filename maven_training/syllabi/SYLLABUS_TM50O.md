@@ -1,18 +1,18 @@
-# COURSE SYLLABUS — TM-50O: ADVANCED PLATFORM ENGINEER
+# COURSE SYLLABUS — SL 5O: ADVANCED PLATFORM ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Level** | TM-50O — Advanced Platform Engineer Specialist Track |
+| **Level** | SL 5O — Advanced Platform Engineer Specialist Track |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-40O (Go evaluation on file — **REQUIRED**); demonstrated operational experience managing MSS infrastructure |
+| **Prerequisites** | SL 4O (Go evaluation on file — **REQUIRED**); demonstrated operational experience managing MSS infrastructure |
 | **Audience** | Experienced platform engineers leading infrastructure at fleet scale on MSS |
 | **Format** | Instructor-led seminar + lab + practical exercise |
 | **Location** | MSS Training Environment (Multi-cluster access required; fleet management tooling) |
 
 ---
 
-**BLUF:** TM-50O extends TM-40O from single-cluster operations to fleet management — multi-cluster lifecycle management, platform reliability engineering (SLOs/SLIs/error budgets), RMF/ATO compliance automation, and developer experience engineering. TM-50O is for platform engineers who design the systems that manage systems, not just operate individual clusters.
+**BLUF:** SL 5O extends SL 4O from single-cluster operations to fleet management — multi-cluster lifecycle management, platform reliability engineering (SLOs/SLIs/error budgets), RMF/ATO compliance automation, and developer experience engineering. SL 5O is for platform engineers who design the systems that manage systems, not just operate individual clusters.
 
 ---
 
@@ -37,7 +37,7 @@ Complete **5+ duty days before Day 1:**
 
 - [ ] Read TM-50O, Chapter 2 (Multi-Cluster Fleet Management) — fleet topology and upgrade strategy
 - [ ] Read TM-50O, Chapter 3 (Platform Reliability Engineering) — SLO framework and error budgets
-- [ ] Review your TM-40O operational experience: identify incidents, scaling challenges, or compliance gaps that fleet-level tooling would have addressed
+- [ ] Review your SL 4O operational experience: identify incidents, scaling challenges, or compliance gaps that fleet-level tooling would have addressed
 
 ---
 

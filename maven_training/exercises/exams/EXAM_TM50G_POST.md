@@ -1,12 +1,12 @@
-# POST-TEST — TM-50G: ADVANCED ORSA
+# POST-TEST — SL 5G: ADVANCED ORSA
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-50G: Advanced ORSA |
+| **Course** | SL 5G: Advanced ORSA |
 | **Form** | Post-Test |
-| **Level** | TM-50G (Advanced Specialist) |
-| **Audience** | FA49 / senior ORSA analysts; prerequisite: TM-40G + 18 months ORSA experience + graduate quantitative methods |
+| **Level** | SL 5G (Advanced Specialist) |
+| **Audience** | FA49 / senior ORSA analysts; prerequisite: SL 4G + 18 months ORSA experience + graduate quantitative methods |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (42/60) |
 
@@ -85,7 +85,7 @@ B. Present both levels' forecasts to the commander and let the G4 decide which t
 C. Apply reconciliation (top-down, bottom-up, or optimal combination) to ensure coherent forecasts at all levels
 D. Use the higher of the two estimates to ensure no shortfall
 
-**10. The TM-50G standard for uncertainty communication to a GO audience requires that every analytical finding include:**
+**10. The SL 5G standard for uncertainty communication to a GO audience requires that every analytical finding include:**
 
 A. A p-value demonstrating statistical significance
 B. A plain-language characterization of uncertainty (e.g., scenario range, robustness score, or confidence bounds) alongside the point estimate or key finding
@@ -113,12 +113,12 @@ B. The time series has fewer than 30 data points
 C. The analyst needs a simpler model for GO-level briefing
 D. The time series has been differenced to achieve stationarity
 
-**14. TM-50G analytical product governance requires peer review by:**
+**14. SL 5G analytical product governance requires peer review by:**
 
 A. The MSS program office before delivery
 B. The G3 for operational relevance validation
 C. The unit's Staff Judge Advocate for legal and ethical review
-D. At least one other TM-50G qualified ORSA analyst before the product is delivered to the commander
+D. At least one other SL 5G qualified ORSA analyst before the product is delivered to the commander
 
 **15. "Building persistent OR capability" at the command level means:**
 
@@ -163,7 +163,7 @@ D. Maintaining a 24/7 ORSA duty roster to provide continuous analytical support
 
 &nbsp;
 
-**SA-4. You have been tasked to deliver a 5-minute analytical brief to a LTG on adversary sustainment capability. Your analysis has significant uncertainty. Apply the TM-50G GO/SES briefing standard: describe the structure of the brief, what you will state in the BLUF, how you will communicate uncertainty, and what backup slides you will have prepared.**
+**SA-4. You have been tasked to deliver a 5-minute analytical brief to a LTG on adversary sustainment capability. Your analysis has significant uncertainty. Apply the SL 5G GO/SES briefing standard: describe the structure of the brief, what you will state in the BLUF, how you will communicate uncertainty, and what backup slides you will have prepared.**
 
 &nbsp;
 
@@ -173,7 +173,7 @@ D. Maintaining a 24/7 ORSA duty roster to provide continuous analytical support
 
 &nbsp;
 
-**SA-5. Describe the TM-50G approach to building persistent OR capability in a command. What are the four key components of a persistent capability program, and what is the most significant risk if this program is not maintained?**
+**SA-5. Describe the SL 5G approach to building persistent OR capability in a command. What are the four key components of a persistent capability program, and what is the most significant risk if this program is not maintained?**
 
 &nbsp;
 
@@ -211,11 +211,11 @@ Passing: 42/60 (70%) — Post-test only. Pre-test is diagnostic.
 7. C — ORSA quantifies outcomes, characterizes risk distributions, and presents decision-relevant findings.
 8. A — Present robustness scores with scenario context, note probability weights not included, defer decision.
 9. C — Reconciliation (top-down, bottom-up, or optimal) ensures coherent forecasts at all levels.
-10. B — Plain-language uncertainty characterization alongside findings is the TM-50G GO standard.
+10. B — Plain-language uncertainty characterization alongside findings is the SL 5G GO standard.
 11. A — Ensemble is most valuable when individual models disagree, reducing reliance on any single model.
 12. D — Documentation must include methodology, assumptions, data sources, scenario parameters, limitations, and scenario-vs-prediction disclaimer.
 13. A — State space models handle explicit structural components that evolve over time.
-14. D — Peer review by at least one other TM-50G qualified ORSA is required before commander delivery.
+14. D — Peer review by at least one other SL 5G qualified ORSA is required before commander delivery.
 15. C — Persistent capability = documented methodology, trained junior ORSAs, reproducible models, institutionalized standards.
 
 **Short Answer Guidance:**
@@ -228,7 +228,7 @@ SA-3. Full credit: (1) draw a DAG of candidate causal factors (training hours, m
 
 SA-4. Full credit: BLUF (15 seconds): "Adversary sustainment capability is assessed as degraded. Key finding: [range]. Primary uncertainty: [variable]. Decision required: [specific action]"; uncertainty communication: present range estimate with explicit scenario assumptions (not a single point); note that the finding depends critically on [key assumption] — brief backup scenarios; structure: BLUF → key finding with range → top 2 supporting data points → what we don't know → decision required; backup slides: methodology, full scenario analysis, data sources, assumptions, sensitivity chart. 5-minute constraint means no technical detail in the main brief.
 
-SA-5. Full credit: four components — (1) documented methodology and reproducible models (code + data + random seeds archived); (2) junior ORSA training and mentorship program with progressive complexity; (3) institutional analytical standards (TM-50G product standards, peer review requirement); (4) model maintenance schedule (retraining, re-calibration as operational data changes); most significant risk of non-maintenance: analytical capability becomes resident in one or two senior ORSAs who PCS — command loses the capability entirely at a personnel transition, forcing rebuilding from scratch at the next critical decision point.
+SA-5. Full credit: four components — (1) documented methodology and reproducible models (code + data + random seeds archived); (2) junior ORSA training and mentorship program with progressive complexity; (3) institutional analytical standards (SL 5G product standards, peer review requirement); (4) model maintenance schedule (retraining, re-calibration as operational data changes); most significant risk of non-maintenance: analytical capability becomes resident in one or two senior ORSAs who PCS — command loses the capability entirely at a personnel transition, forcing rebuilding from scratch at the next critical decision point.
 
 ---
 

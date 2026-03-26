@@ -1,7 +1,7 @@
-# CONCEPTS GUIDE — TM-40J COMPANION — DATA PROGRAM MANAGER · MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 4J COMPANION — DATA PROGRAM MANAGER · MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** This guide is for data program managers accountable for a portfolio of data products on MSS. It does not teach Foundry mechanics. It develops the judgment to manage them.
-> **Purpose:** Develops the mental models required to manage data pipelines, programs, and portfolio health on MSS effectively. Read before beginning TM-40J task instruction.
+> **Purpose:** Develops the mental models required to manage data pipelines, programs, and portfolio health on MSS effectively. Read before beginning SL 4J task instruction.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -12,7 +12,7 @@
 
 Most failures on MSS data programs are not technical — they are organizational and conceptual: a PM who accepted a delivery timeline before confirming data access; a project shipped without governance sign-off that immediately generated downstream data quality complaints; a dashboard in production for eight months with no certain owner. These failures share a common root: the PM lacked a coherent mental model of what they were managing.
 
-Read this guide linearly before beginning TM-40J task instruction. Return to individual sections as needed when specific challenges arise.
+Read this guide linearly before beginning SL 4J task instruction. Return to individual sections as needed when specific challenges arise.
 
 ---
 
@@ -379,7 +379,7 @@ Update weekly. Brief to leadership monthly. This is the PM's primary portfolio m
 
 ---
 
-## TRANSITION TO TM-40J TASK INSTRUCTION
+## TRANSITION TO SL 4J TASK INSTRUCTION
 
 This guide has developed the conceptual foundation for data program management on MSS. You should now be able to:
 
@@ -393,13 +393,13 @@ This guide has developed the conceptual foundation for data program management o
 - Build portfolio visibility using native Foundry tooling supplemented by direct stakeholder engagement
 - Recognize and prevent the five most common data PM failure modes
 
-Proceed to TM-40J for task-based instruction on executing these responsibilities within the MSS environment.
+Proceed to SL 4J for task-based instruction on executing these responsibilities within the MSS environment.
 
 ---
 
 ## GOVERNING REFERENCES
 
-The following publications establish the policy, architectural, and governance framework within which TM-40J program managers operate.
+The following publications establish the policy, architectural, and governance framework within which SL 4J program managers operate.
 
 | Publication | Title | Relevance |
 |---|---|---|
@@ -415,21 +415,21 @@ The following publications establish the policy, architectural, and governance f
 
 ## CURRICULUM NOTES
 
-**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED — not recommended. The PM who has not built on MSS cannot accurately estimate effort, identify technical blockers, or write meaningful acceptance criteria for MSS deliverables.
+**Prerequisite:** SL 3 (Advanced Builder) is REQUIRED — not recommended. The PM who has not built on MSS cannot accurately estimate effort, identify technical blockers, or write meaningful acceptance criteria for MSS deliverables.
 
-**Advanced track:** TM-40J graduates should pursue **TM-50J (Advanced Program Manager)** for advanced topics including multi-program portfolio management, enterprise data governance leadership, cross-command integration coordination, and MSS capability roadmap ownership.
+**Advanced track:** SL 4J graduates should pursue **SL 5J (Advanced Program Manager)** for advanced topics including multi-program portfolio management, enterprise data governance leadership, cross-command integration coordination, and MSS capability roadmap ownership.
 
 **Peer specialist cross-references:** The PM coordinates delivery across all specialist tracks:
-- **TM-40G (ORSA):** ORSA analytical products have specific data quality, methodology review, and product delivery requirements that affect acceptance criteria and sprint scope.
-- **TM-40H (AI Engineer):** AI workflow projects require C2DAO governance milestones and human-review-gate design as non-negotiable project requirements.
-- **TM-40M (ML Engineer):** ML projects have model governance checkpoints (Training Data Card, Model Card, C2DAO review) that must be built into every project schedule.
-- **TM-40K (Knowledge Manager):** KM systems have retention policy, taxonomy governance, and workflow authority requirements that affect project scope and change management.
-- **TM-40L (Software Engineer):** Production code has CI gate, peer review, and branch-promotion requirements that affect delivery timelines and cannot be compressed without creating operational risk.
+- **SL 4G (ORSA):** ORSA analytical products have specific data quality, methodology review, and product delivery requirements that affect acceptance criteria and sprint scope.
+- **SL 4H (AI Engineer):** AI workflow projects require C2DAO governance milestones and human-review-gate design as non-negotiable project requirements.
+- **SL 4M (ML Engineer):** ML projects have model governance checkpoints (Training Data Card, Model Card, C2DAO review) that must be built into every project schedule.
+- **SL 4K (Knowledge Manager):** KM systems have retention policy, taxonomy governance, and workflow authority requirements that affect project scope and change management.
+- **SL 4L (Software Engineer):** Production code has CI gate, peer review, and branch-promotion requirements that affect delivery timelines and cannot be compressed without creating operational risk.
 
-> **NOTE — New Doctrine Content in TM-40J:** TM-40J now includes DDOF roles and PM oversight responsibilities (section 1-2a), the DDOF Configuration Management Friction Matrix (section 2-6) for identifying execution blockers, and data product portfolio health metrics (section 7-6) covering VAULTIS-A scores, gate rates, and retirement trigger monitoring.
+> **NOTE — New Doctrine Content in SL 4J:** SL 4J now includes DDOF roles and PM oversight responsibilities (section 1-2a), the DDOF Configuration Management Friction Matrix (section 2-6) for identifying execution blockers, and data product portfolio health metrics (section 7-6) covering VAULTIS-A scores, gate rates, and retirement trigger monitoring.
 
-**WFF awareness:** Data products managed by TM-40J PMs are consumed by WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). Every project schedule decision has a WFF operational consequence. Know which WFF function depends on each product and what the operational impact of degradation or delay is.
+**WFF awareness:** Data products managed by SL 4J PMs are consumed by WFF-qualified users (SL 4A through SL 4F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). Every project schedule decision has a WFF operational consequence. Know which WFF function depends on each product and what the operational impact of degradation or delay is.
 
-*CONCEPTS GUIDE — TM-40J COMPANION | DATA PROGRAM MANAGER | MAVEN SMART SYSTEM*
+*CONCEPTS GUIDE — SL 4J COMPANION | DATA PROGRAM MANAGER | MAVEN SMART SYSTEM*
 *HQ USAREUR-AF, Wiesbaden, Germany | 2026*
 *DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*

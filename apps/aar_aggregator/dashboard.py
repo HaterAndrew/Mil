@@ -193,10 +193,10 @@ def load_aars():
 # ---------------------------------------------------------------------------
 # Foundation / All course filter
 # ---------------------------------------------------------------------------
-FOUNDATION_COURSES = {"TM-10", "TM-20", "TM-30"}
+FOUNDATION_COURSES = {"SL 1", "SL 2", "SL 3"}
 
 TRACK_OPTIONS = {
-    "Foundation (TM-10/20/30)": FOUNDATION_COURSES,
+    "Foundation (SL 1/2/3)": FOUNDATION_COURSES,
     "All Courses": None,  # None = no filter
 }
 
@@ -741,7 +741,7 @@ elif active_tab == "AAR Entry":
             location = st.text_input("Location / Environment", placeholder="MSS sandbox")
             student_count = st.number_input("Number of Students", min_value=1, value=8)
         with col2:
-            tm_input = st.text_input("TM Levels (comma-separated)", placeholder="TM-10, TM-20")
+            tm_input = st.text_input("TM Levels (comma-separated)", placeholder="SL 1, SL 2")
             ex_input = st.text_input("Exercises (comma-separated)", placeholder="EX_10")
             instr_input = st.text_input("Instructor Names (comma-separated)", placeholder="MAJ SMITH, SGT KELLY")
 
@@ -793,7 +793,7 @@ elif active_tab == "AAR Entry":
 
             payload = {
                 "date": aar_date.isoformat(),
-                "tm_levels": tm_levels or ["TM-10"],
+                "tm_levels": tm_levels or ["SL 1"],
                 "exercises": exercises,
                 "location": location or "Unknown",
                 "student_count": student_count,

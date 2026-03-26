@@ -371,12 +371,12 @@ elif active_tab == "Event Manager":
         with st.form("create_event"):
             col1, col2 = st.columns(2)
             with col1:
-                ev_name = st.text_input("Event Name", placeholder="TM-10 Maven User — Location")
+                ev_name = st.text_input("Event Name", placeholder="SL 1 Maven User — Location")
                 ev_course = st.selectbox(
                     "Course",
-                    ["TM-10", "TM-20", "TM-30",
-                     "TM-40A", "TM-40B", "TM-40C", "TM-40D", "TM-40E", "TM-40F",
-                     "TM-40G", "TM-40H", "TM-40M", "TM-40J", "TM-40K", "TM-40L"],
+                    ["SL 1", "SL 2", "SL 3",
+                     "SL 4A", "SL 4B", "SL 4C", "SL 4D", "SL 4E", "SL 4F",
+                     "SL 4G", "SL 4H", "SL 4M", "SL 4J", "SL 4K", "SL 4L"],
                 )
                 ev_location = st.text_input("Location", placeholder="Grafenwoehr, Germany")
                 ev_venue = st.selectbox(
@@ -538,9 +538,9 @@ elif active_tab == "Instructor Pool":
             with col2:
                 inst_quals = st.multiselect(
                     "Qualifications",
-                    ["TM-10", "TM-20", "TM-30",
-                     "TM-40A", "TM-40B", "TM-40C", "TM-40D", "TM-40E", "TM-40F",
-                     "TM-40G", "TM-40H", "TM-40M", "TM-40J", "TM-40K", "TM-40L"],
+                    ["SL 1", "SL 2", "SL 3",
+                     "SL 4A", "SL 4B", "SL 4C", "SL 4D", "SL 4E", "SL 4F",
+                     "SL 4G", "SL 4H", "SL 4M", "SL 4J", "SL 4K", "SL 4L"],
                 )
                 inst_avail_from = st.date_input("Available From", value=date.today())
                 inst_avail_to = st.date_input("Available To", value=date.today() + timedelta(days=120))

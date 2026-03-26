@@ -1,7 +1,7 @@
 # TM-40E — MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** TM-40E teaches Protection WFF practitioners — CBRN officers, AT officers, Military Police, ADA officers, and support engineers — how to use MSS in daily protection work. The focus is operational use of MSS to accomplish protection tasks aligned to ADP 3-37 and subordinate doctrine. No coding, no pipeline development, no transform experience required.
-> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; CONCEPTS_GUIDE_TM40E_PROTECTION (required before beginning this manual).
+> **Forward:** SL 4E teaches Protection WFF practitioners — CBRN officers, AT officers, Military Police, ADA officers, and support engineers — how to use MSS in daily protection work. The focus is operational use of MSS to accomplish protection tasks aligned to ADP 3-37 and subordinate doctrine. No coding, no pipeline development, no transform experience required.
+> **Prereqs:** SL 1, Maven User; SL 2, Builder; SL 3, Advanced Builder; CONCEPTS_GUIDE_TM40E_PROTECTION (required before beginning this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: Presenting CBRN hazard data without verifying currency and source validation can direct Soldiers into contaminated areas. Always confirm CBRN overlay data-as-of timestamp and originating sensor or report before disseminating. A contamination overlay that is hours old may no longer reflect actual hazard boundaries.**
@@ -13,7 +13,7 @@
 
 ## CHAPTER 1 — OVERVIEW AND THE PROTECTION WARFIGHTING FUNCTION IN MSS
 
-**BLUF:** TM-40E teaches Protection WFF practitioners — CBRN officers, AT officers, Military Police, ADA officers, and support engineers — how to use MSS in daily protection work. The focus is operational use of MSS to accomplish protection tasks aligned to ADP 3-37 and subordinate doctrine. No coding, no pipeline development, no transform experience required.
+**BLUF:** SL 4E teaches Protection WFF practitioners — CBRN officers, AT officers, Military Police, ADA officers, and support engineers — how to use MSS in daily protection work. The focus is operational use of MSS to accomplish protection tasks aligned to ADP 3-37 and subordinate doctrine. No coding, no pipeline development, no transform experience required.
 
 ### 1-1. Protection Specialist Manual
 
@@ -96,7 +96,7 @@ The MSS protection workspace is organized around the Protection Working Group (P
 
 ### 1-4a. Doctrinal References Summary
 
-TM-40E aligns to multiple doctrinal publications. Table 1-4 provides a quick reference to the primary doctrinal sources for each protection domain covered in this manual.
+SL 4E aligns to multiple doctrinal publications. Table 1-4 provides a quick reference to the primary doctrinal sources for each protection domain covered in this manual.
 
 **Table 1-4. Doctrinal References by Protection Domain**
 
@@ -133,11 +133,11 @@ TM-40E aligns to multiple doctrinal publications. Table 1-4 provides a quick ref
 | NATO Digital Transformation Implementation Strategy (Oct 2024) | NATO | MDO interoperability context — frames protection data sharing in coalition operations |
 | DDOF Playbook v2.2 (December 2025) | T2COM C2DAO | VAULTIS-A quality framework (8 dimensions); 6-phase data product lifecycle; 85% quality gate; MVP mandate 30 days |
 
-### 1-5. Scope: What TM-40E Covers and Does Not Cover
+### 1-5. Scope: What SL 4E Covers and Does Not Cover
 
-**TM-40E covers** operational use of MSS for CBRN defense, AT, physical security, AMD coordination, EW awareness, survivability tracking, and CRM; Protection Working Group data management on MSS; FPCON management, RAM tracking, AT assessment data management; CBRN event reporting, contamination overlay management, detection equipment status tracking; echelon-specific guidance for company through division/corps protection cells; and degraded operations procedures and fallback products.
+**SL 4E covers** operational use of MSS for CBRN defense, AT, physical security, AMD coordination, EW awareness, survivability tracking, and CRM; Protection Working Group data management on MSS; FPCON management, RAM tracking, AT assessment data management; CBRN event reporting, contamination overlay management, detection equipment status tracking; echelon-specific guidance for company through division/corps protection cells; and degraded operations procedures and fallback products.
 
-**TM-40E does NOT cover** pipeline construction, data transforms, or code development — see TM-30 and TM-40L; building Workshop dashboards — see TM-20; intelligence analysis methods — see TM-40A; kinetic fires coordination — see TM-40B; information operations development — see IO officer / G7 coordination; or medical/CASEVAC tracking — see TM-40D (Sustainment).
+**SL 4E does NOT cover** pipeline construction, data transforms, or code development — see SL 3 and SL 4L; building Workshop dashboards — see SL 2; intelligence analysis methods — see SL 4A; kinetic fires coordination — see SL 4B; information operations development — see IO officer / G7 coordination; or medical/CASEVAC tracking — see SL 4D (Sustainment).
 
 ### 1-6. MOS Coverage and Audience
 
@@ -165,20 +165,20 @@ TM-40E aligns to multiple doctrinal publications. Table 1-4 provides a quick ref
 
 **Table 1-5. TM Curriculum Relationships**
 
-| TM | Title | Relationship to TM-40E |
+| TM | Title | Relationship to SL 4E |
 |---|---|---|
-| TM-10 | Maven User | Foundation prerequisite. Platform navigation, basic data access. Required before this manual. |
-| TM-20 | Builder | Required as prerequisite (Go evaluation on file). Builder skills are not exercised in this track — TM-40E practitioners consume pre-built products. The TM-20 cert is part of the progression chain to TM-30. |
-| TM-30 | Advanced Builder | Required prerequisite (Go evaluation on file). Advanced builder skills are not exercised in this track — TM-40E practitioners consume pre-built products. TM-30 completion certifies platform literacy at the level required before WFF track enrollment. |
-| TM-40A | Intelligence | Companion. Threat data from Intel feeds AT risk assessments; protection posture feeds intelligence picture. |
-| TM-40B | Fires | Companion. AMD coordination (Ch. 6) requires fires WFF integration; C-UAS engagement data crosses both domains. |
-| TM-40C | Movement and Maneuver | Companion. Route security and convoy protection integrate protection and maneuver data; survivability positions support maneuver units. |
-| TM-40D | Sustainment | Complementary. CBRN decontamination requires sustainment coordination; force protection affects supply route security. |
-| TM-40E | Protection | This manual. |
-| TM-40F | Mission Command | Complementary. Protection picture feeds the COP (S3 product); FPCON and SIR data feeds commander CCIR monitoring. |
-| TM-50G–O | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq TM-40G–O). Not applicable to operational protection practitioners. |
+| SL 1 | Maven User | Foundation prerequisite. Platform navigation, basic data access. Required before this manual. |
+| SL 2 | Builder | Required as prerequisite (Go evaluation on file). Builder skills are not exercised in this track — SL 4E practitioners consume pre-built products. The SL 2 cert is part of the progression chain to SL 3. |
+| SL 3 | Advanced Builder | Required prerequisite (Go evaluation on file). Advanced builder skills are not exercised in this track — SL 4E practitioners consume pre-built products. SL 3 completion certifies platform literacy at the level required before WFF track enrollment. |
+| SL 4A | Intelligence | Companion. Threat data from Intel feeds AT risk assessments; protection posture feeds intelligence picture. |
+| SL 4B | Fires | Companion. AMD coordination (Ch. 6) requires fires WFF integration; C-UAS engagement data crosses both domains. |
+| SL 4C | Movement and Maneuver | Companion. Route security and convoy protection integrate protection and maneuver data; survivability positions support maneuver units. |
+| SL 4D | Sustainment | Complementary. CBRN decontamination requires sustainment coordination; force protection affects supply route security. |
+| SL 4E | Protection | This manual. |
+| SL 4F | Mission Command | Complementary. Protection picture feeds the COP (S3 product); FPCON and SIR data feeds commander CCIR monitoring. |
+| SL 5G–O | Advanced Specialist Tracks | Post-graduate level for technical specialists (prereq SL 4G–O). Not applicable to operational protection practitioners. |
 
-> **NOTE: TM-20 and TM-30 are required as prerequisites (Go evaluations on file) but builder skills are not exercised in this manual. TM-40E assumes no ability to build pipelines or transforms. If you encounter a protection data product that does not exist and needs to be built, coordinate with your unit's designated MSS Builder (TM-30 qualified) or the C2DAO.**
+> **NOTE: SL 2 and SL 3 are required as prerequisites (Go evaluations on file) but builder skills are not exercised in this manual. SL 4E assumes no ability to build pipelines or transforms. If you encounter a protection data product that does not exist and needs to be built, coordinate with your unit's designated MSS Builder (SL 3 qualified) or the C2DAO.**
 
 ---
 
@@ -876,7 +876,7 @@ The Installation Security Plan (or Base Defense Plan) is a living document. MSS 
 
 ## CHAPTER 6 — AIR AND MISSILE DEFENSE (PROTECTION ASPECT)
 
-**BLUF:** AMD contributes to the protection WFF through management of the air threat picture, critical asset/defended asset list management, and coordination of AMD coverage with maneuver forces. ADA officers (14A) and operators (14E, 14P, 14S) use MSS to maintain AMD data and coordinate with the fires WFF. Cross-reference TM-40B (Fires) for AMD coordination from the Fires perspective.
+**BLUF:** AMD contributes to the protection WFF through management of the air threat picture, critical asset/defended asset list management, and coordination of AMD coverage with maneuver forces. ADA officers (14A) and operators (14E, 14P, 14S) use MSS to maintain AMD data and coordinate with the fires WFF. Cross-reference SL 4B (Fires) for AMD coordination from the Fires perspective.
 
 ### 6-1. AMD's Role in the Protection WFF
 
@@ -1010,7 +1010,7 @@ CI does not manage the protection workspace independently. The 311A/311B CI elem
 
 ## CHAPTER 7 — ELECTRONIC WARFARE AND SPECTRUM MANAGEMENT
 
-**BLUF:** EW functions as a protection enabler by denying adversaries the ability to detect, locate, or disrupt friendly forces through the electromagnetic spectrum. MSS supports EW as a protection function through spectrum management data, jamming threat reporting, and counter-UAS tracking. Cross-reference the S6 (TM-40F sections on signal) and the fires WFF for EW attack functions.
+**BLUF:** EW functions as a protection enabler by denying adversaries the ability to detect, locate, or disrupt friendly forces through the electromagnetic spectrum. MSS supports EW as a protection function through spectrum management data, jamming threat reporting, and counter-UAS tracking. Cross-reference the S6 (SL 4F sections on signal) and the fires WFF for EW attack functions.
 
 ### 7-1. EW as a Protection Enabler
 
@@ -1647,7 +1647,7 @@ Post-laboratory or technical analysis. Format:
 
 ## APPENDIX F — MOS DUTY POSITION CROSS-REFERENCE QUICK CARD
 
-**F-1. Purpose.** This card provides a rapid reference for each MOS covered by TM-40E. Use this card to identify which chapters apply to your duty position and what your primary MSS data responsibilities are.
+**F-1. Purpose.** This card provides a rapid reference for each MOS covered by SL 4E. Use this card to identify which chapters apply to your duty position and what your primary MSS data responsibilities are.
 
 ---
 
@@ -1678,20 +1678,20 @@ Post-laboratory or technical analysis. Format:
 
 | Related TM | Relevance to Protection WFF |
 |---|---|
-| TM-10 (Maven User) | Foundation prerequisite. Platform navigation, basic data access. Required before this manual. |
-| TM-20 (Builder) | Required as prerequisite (Go evaluation on file). Builder skills are not exercised in this track — TM-40E practitioners consume pre-built products. The TM-20 cert is part of the progression chain to TM-30. |
-| TM-30 (Advanced Builder) | Required prerequisite (Go evaluation on file). Advanced builder skills are not exercised in this track. TM-30 completion certifies platform literacy at the level required before WFF track enrollment. |
-| TM-40A (Intelligence) | AT intelligence integration; threat data for AT assessments |
-| TM-40B (Fires) | AMD coordination — fires and protection share AMD data domain |
-| TM-40C (Movement and Maneuver) | Physical security integration with maneuver operations; base camp siting |
-| TM-40D (Sustainment) | CBRN resupply coordination; medical tracking for CBRN casualties |
-| TM-40F (Mission Command) | COP integration; CCIR and decision support products that consume protection data |
-| TM-40G–O (Specialist Tracks) | Post-graduate technical tracks (prereq TM-30). Not required for protection WFF employment. |
-| TM-50G–O (Advanced Specialist Tracks) | Advanced technical tracks (prereq TM-40G–O). Not applicable to operational protection practitioners. |
+| SL 1 (Maven User) | Foundation prerequisite. Platform navigation, basic data access. Required before this manual. |
+| SL 2 (Builder) | Required as prerequisite (Go evaluation on file). Builder skills are not exercised in this track — SL 4E practitioners consume pre-built products. The SL 2 cert is part of the progression chain to SL 3. |
+| SL 3 (Advanced Builder) | Required prerequisite (Go evaluation on file). Advanced builder skills are not exercised in this track. SL 3 completion certifies platform literacy at the level required before WFF track enrollment. |
+| SL 4A (Intelligence) | AT intelligence integration; threat data for AT assessments |
+| SL 4B (Fires) | AMD coordination — fires and protection share AMD data domain |
+| SL 4C (Movement and Maneuver) | Physical security integration with maneuver operations; base camp siting |
+| SL 4D (Sustainment) | CBRN resupply coordination; medical tracking for CBRN casualties |
+| SL 4F (Mission Command) | COP integration; CCIR and decision support products that consume protection data |
+| SL 4G–O (Specialist Tracks) | Post-graduate technical tracks (prereq SL 3). Not required for protection WFF employment. |
+| SL 5G–O (Advanced Specialist Tracks) | Advanced technical tracks (prereq SL 4G–O). Not applicable to operational protection practitioners. |
 
 **F-2. New User Checklist.** Before using the MSS protection workspace for the first time, verify:
 
-- [ ] TM-10 complete — can log in, navigate Workshop, access assigned datasets
+- [ ] SL 1 complete — can log in, navigate Workshop, access assigned datasets
 - [ ] CONCEPTS_GUIDE_TM40E complete — protection WFF / MSS integration understood
 - [ ] MSS account provisioned with correct role for your workspace zone — coordinate with unit S6
 - [ ] Workspace zones identified — know which workspace zone corresponds to your MOS function
@@ -1836,7 +1836,7 @@ Complete the following in order. Note any data quality issue and assign correcti
 ---
 
 
-*TM-40E — Maven Smart System: Protection Warfighting Function*
+*SL 4E — Maven Smart System: Protection Warfighting Function*
 *Headquarters, United States Army Europe and Africa*
 *Wiesbaden, Germany — 2026*
 

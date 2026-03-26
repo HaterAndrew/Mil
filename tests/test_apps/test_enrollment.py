@@ -8,8 +8,8 @@ from __future__ import annotations
 # ---------------------------------------------------------------------------
 def create_class(client, **overrides):
     payload = {
-        "course_id": "TM-20",
-        "class_name": "TM-20 Cycle 1",
+        "course_id": "SL 2",
+        "class_name": "SL 2 Cycle 1",
         "start_date": "2026-04-01",
         "end_date": "2026-04-03",
         "location": "Clay Kaserne",
@@ -49,7 +49,7 @@ class TestHealth:
 class TestClasses:
     def test_create_class(self, enrollment_client):
         data = create_class(enrollment_client)
-        assert data["course_id"] == "TM-20"
+        assert data["course_id"] == "SL 2"
         assert data["status"] == "SCHEDULED"
 
     def test_list_classes(self, enrollment_client):

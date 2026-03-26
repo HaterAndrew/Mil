@@ -1,4 +1,4 @@
-# Self-Study Addendum — TM-40N: UI/UX Designer
+# Self-Study Addendum — SL 4N: UI/UX Designer
 ## Palantir Developers Reference Library
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.
@@ -17,7 +17,7 @@ Videos are grouped by topic and ordered from foundational to advanced. Start wit
 |---|---|---|
 | *Foundry Reference Project \| Apps* | The application layer of the Foundry Reference Project — current recommended patterns for Workshop-based and OSDK-backed apps. Essential context for understanding the platform surfaces Designers specify against. | Ch 3 (Workshop Layout Patterns) |
 | *Foundry Reference Project \| Ontology* | The Ontology layer — object types, computed properties, and how the data model drives widget data binding in Workshop applications. Designers must understand the Ontology to specify data-driven layouts. | Ch 3 (Information Architecture) |
-| *Foundry Reference Project \| Structure* | Canonical Foundry project structure — helps Designers understand how application artifacts are organized, which informs handoff specifications to SWEs (TM-40L). | Ch 8 (Cross-Track Coordination) |
+| *Foundry Reference Project \| Structure* | Canonical Foundry project structure — helps Designers understand how application artifacts are organized, which informs handoff specifications to SWEs (SL 4L). | Ch 8 (Cross-Track Coordination) |
 | *Product Launch: Build Operational Apps with Your Developer Toolkit of Choice* | Overview of Palantir's developer toolkit for building operational applications — provides Designers with vocabulary and context for the implementation platforms their designs target. | Ch 3 (Workshop Layout Patterns) |
 
 ---

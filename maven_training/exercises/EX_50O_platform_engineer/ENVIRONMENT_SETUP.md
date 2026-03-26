@@ -1,6 +1,6 @@
 # ENVIRONMENT SETUP — EX_50O Advanced Platform Engineer
 
-**Track:** EX_50O — Advanced Platform Engineer (TM-50O) | **Prerequisite:** TM-40O REQUIRED (Go evaluation on file) | **Base environment:** EX_40O (extended)
+**Track:** EX_50O — Advanced Platform Engineer (SL 5O) | **Prerequisite:** SL 4O REQUIRED (Go evaluation on file) | **Base environment:** EX_40O (extended)
 **Companion exams:** EXAM_TM50O_PRE (administer before exercise), EXAM_TM50O_POST (administer after exercise)
 
 ## Environment Type
@@ -18,7 +18,7 @@ Complete **all** EX_40O environment setup steps before proceeding:
 5. Training application (intentionally flawed Dockerfile and manifests)
 6. Monitoring stack (Prometheus, Grafana, AlertManager or equivalents)
 
-## TM-50O-Specific Extensions
+## SL 5O-Specific Extensions
 
 The following extend the EX_40O environment for fleet-level, advanced tasks.
 

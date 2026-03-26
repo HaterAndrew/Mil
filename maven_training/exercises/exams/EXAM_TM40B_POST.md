@@ -1,12 +1,12 @@
-# POST-TEST — TM-40B: FIRES
+# POST-TEST — SL 4B: FIRES
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40B: Fires WFF Track |
+| **Course** | SL 4B: Fires WFF Track |
 | **Form** | Post-Test |
-| **Level** | TM-40B (WFF Track) |
-| **Audience** | FSE staff, fire support officers, targeting teams, artillery/mortar officers; prerequisite: completion of TM-40B training |
+| **Level** | SL 4B (WFF Track) |
+| **Audience** | FSE staff, fire support officers, targeting teams, artillery/mortar officers; prerequisite: completion of SL 4B training |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | 80% (32/40 points) |
 
@@ -14,7 +14,7 @@
 
 ## INSTRUCTIONS
 
-This assessment confirms proficiency upon completion of TM-40B training. A score of 80% (32/40) is required for course completion certification. Results are recorded on the student training record.
+This assessment confirms proficiency upon completion of SL 4B training. A score of 80% (32/40) is required for course completion certification. Results are recorded on the student training record.
 
 ---
 
@@ -78,7 +78,7 @@ B. Use personal devices to access MSS through civilian network connectivity to m
 C. Transfer all targeting authority to higher headquarters until connectivity is restored
 D. Continue fires planning using manual targeting and fire support coordination procedures; maintain a manual record of FSCM locations and target status; identify which MSS-supported products are now stale and brief accordingly when connectivity is restored
 
-**9. Table 2-3 in TM-40B maps the D3A targeting cycle to data platform functions. Which of the following correctly pairs a D3A phase with its key data products?**
+**9. Table 2-3 in SL 4B maps the D3A targeting cycle to data platform functions. Which of the following correctly pairs a D3A phase with its key data products?**
 
 A. Decide — ICSM, NAI/TAI tracking, target confidence records
 B. Detect — HPTL, TSS, AGM

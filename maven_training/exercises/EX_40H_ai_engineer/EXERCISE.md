@@ -1,10 +1,10 @@
 # EX_40H — AI Engineer
-## Practical Exercise — TM-40H Proficiency
+## Practical Exercise — SL 4H Proficiency
 
 | | |
 |---|---|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-30 REQUIRED; TM-40H (and TM-10 through TM-20) |
+| **Prerequisite** | SL 3 REQUIRED; SL 4H (and SL 1 through SL 2) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS with AIP Logic, Agent Studio, Python Transforms — see ENVIRONMENT_SETUP.md |
 
@@ -12,11 +12,11 @@
 
 | Resource | Reference |
 |----------|-----------|
-| Technical Manual | TM-40H — AI Engineer |
+| Technical Manual | SL 4H — AI Engineer |
 | Syllabus | SYLLABUS_TM40H |
 | Pre-Exercise Exam | EXAM_TM40H_PRE |
 | Post-Exercise Exam | EXAM_TM40H_POST |
-| Continuation Track | TM-50H — Advanced AI Engineer |
+| Continuation Track | SL 5H — Advanced AI Engineer |
 
 ## WFF AWARENESS
 
@@ -92,7 +92,7 @@ Training dataset: ~200 synthetic INTSUM documents (plain text, unclassified).
 
 ## NEXT STEPS
 
-Participants who receive an overall Go on EX_40H are eligible to enroll in **TM-50H — Advanced AI Engineer**. TM-50H extends into multi-agent architectures, adversarial robustness, and production deployment governance. TM-50 is G–O (advanced specialist tracks).
+Participants who receive an overall Go on EX_40H are eligible to enroll in **SL 5H — Advanced AI Engineer**. SL 5H extends into multi-agent architectures, adversarial robustness, and production deployment governance. SL 5 is G–O (advanced specialist tracks).
 
 ## Supplemental — Build with AIP Official Tutorials
 

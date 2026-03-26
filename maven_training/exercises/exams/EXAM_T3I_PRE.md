@@ -6,7 +6,7 @@
 | **Course** | T3-I: Instructor Certification |
 | **Form** | Pre-Test |
 | **Level** | T3-I (Train the Trainer — Instructor Chain) |
-| **Audience** | C2DAO-selected instructor candidates; prerequisite: TM-30 (Go on file) |
+| **Audience** | C2DAO-selected instructor candidates; prerequisite: SL 3 (Go on file) |
 | **Time Allowed** | 20 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
@@ -47,7 +47,7 @@ D. Define learning objectives in measurable, observable terms
 
 A. A TLO describes the overall skill demonstrated at the end of a lesson; ELOs are sub-skills that build toward the TLO
 B. A TLO is always evaluated by written exam; an ELO is always evaluated by practical exercise
-C. A TLO applies only to TM-10; ELOs apply to TM-20 and above
+C. A TLO applies only to SL 1; ELOs apply to SL 2 and above
 D. There is no meaningful difference; the terms are interchangeable
 
 **5. In a T&EO (Training and Evaluation Outline), a "critical item" is:**

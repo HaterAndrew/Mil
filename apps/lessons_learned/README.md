@@ -38,7 +38,7 @@ With the API running: http://localhost:8014/docs
 | ECHELON | Squad, Battalion, Brigade, Division, Theater |
 | WFF | Intelligence, Fires, Movement & Maneuver, Sustainment |
 | DOCTRINE_REF | ADP 6-0, ADP 2-0, ATP 2-01.3 |
-| COURSE_ID | TM-40G, TM-40H, TM-40K |
+| COURSE_ID | SL 4G, SL 4H, SL 4K |
 | KEYWORD | Free-text keywords |
 
 ## Notes

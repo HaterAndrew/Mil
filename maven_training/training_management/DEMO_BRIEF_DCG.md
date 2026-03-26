@@ -24,11 +24,11 @@ Inform the DCG on MSS training program readiness and request endorsement to pres
 
 | Course | Hours | Audience | Status |
 |--------|-------|----------|--------|
-| TM-10 — Maven User | 8 hrs | All personnel (in-processing integration) | Published |
-| TM-20 — Builder | 40 hrs | Data-adjacent staff | Published |
-| TM-30 — Advanced Builder | 40 hrs | Unit data leads | Published |
-| TM-40 — Specialist (14 tracks) | 40 hrs ea | WfF analysts, engineers, PMs | Published |
-| TM-50 — Advanced Specialist (6 tracks) | 40 hrs ea | Senior practitioners | Published |
+| SL 1 — Maven User | 8 hrs | All personnel (in-processing integration) | Published |
+| SL 2 — Builder | 40 hrs | Data-adjacent staff | Published |
+| SL 3 — Advanced Builder | 40 hrs | Unit data leads | Published |
+| SL 4 — Specialist (14 tracks) | 40 hrs ea | WfF analysts, engineers, PMs | Published |
+| SL 5 — Advanced Specialist (6 tracks) | 40 hrs ea | Senior practitioners | Published |
 | T3 — Tier 3 (2 tracks) | T3-I: 40 hrs; T3-F: 4 hrs | MSC force multipliers, instructors | Published |
 
 **Total published artifacts:** 254 PDFs — TM documents, concepts guides, syllabi, exercises, pre/post exams, governance documents, and doctrine references.
@@ -39,8 +39,8 @@ Inform the DCG on MSS training program readiness and request endorsement to pres
 
 - **Training Hub:** mss-training-hub.pages.dev (migrating to network subdomain)
 - **Course Portal:** Interactive pathway visualization with self-enrollment
-- **Foundry Bootcamp Program (FBC):** Quarterly 5-day supervised build events for TM-20+ graduates
-- **Self-Study Packages:** Every TM-40/50 track includes a self-study addendum
+- **Foundry Bootcamp Program (FBC):** Quarterly 5-day supervised build events for SL 2+ graduates
+- **Self-Study Packages:** Every SL 4/5 track includes a self-study addendum
 - **Coalition-Ready:** Integrates NATO data standards (NAFv4, STANAGs)
 
 ---
@@ -80,7 +80,7 @@ Authorize TASKORD directing MSS MTT activation: 5-person permanent team (1 OIC +
 | Tie MSS completion to duty position requirements | G3 | D+60 |
 | Certify initial MTT cadre | ODT | D+75 |
 | Partner nation enrollment framework | G5 | D+90 |
-| MTT executes independently; first TM-20 cohort | MTT | D+150 |
+| MTT executes independently; first SL 2 cohort | MTT | D+150 |
 
 ---
 

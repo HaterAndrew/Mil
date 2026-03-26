@@ -35,7 +35,7 @@ MSS instruction is not vendor product training. It is not a conference demo. It 
 
 ### 1-2. The Mixed Classroom
 
-Every MSS course — especially TM-10 and TM-20 — contains trainees with wildly different backgrounds:
+Every MSS course — especially SL 1 and SL 2 — contains trainees with wildly different backgrounds:
 - The 25-series Soldier who has been building in Foundry for 6 months and is here for the formal certification
 - The O-5 who was directed to attend and has never opened a web application more complex than email
 - The contractor with 10 years of data engineering experience who has never used Foundry specifically
@@ -51,7 +51,7 @@ Every MSS course — especially TM-10 and TM-20 — contains trainees with wildl
 
 ### 1-3. The Time Constraint
 
-MSS courses are compressed. TM-10 is 1 day. TM-20 is 5 days. There is no slack in the schedule for extended discussions, repeated demonstrations, or off-topic exploration.
+MSS courses are compressed. SL 1 is 1 day. SL 2 is 5 days. There is no slack in the schedule for extended discussions, repeated demonstrations, or off-topic exploration.
 
 **Implication for instructors:** Every minute of instruction must be purposeful. The lesson plan is the contract. If a block is scheduled for 90 minutes, it runs 90 minutes. If the class is behind, the instructor adjusts within the block — not by cutting the next block.
 
@@ -127,15 +127,15 @@ Experienced instructors see the same errors across multiple course iterations. C
 
 | # | Course | Error | Root Cause | Intervention |
 |---|---|---|---|---|
-| 1 | TM-10 | Incorrect classification marking on export | Trainee does not understand classification applies to the data content, not the file format | Pre-brief classification rules before first export exercise; check every trainee's first export |
-| 2 | TM-10 | Navigating to production instead of training environment | Bookmarked wrong URL or followed a link from an email | Verify bookmarks during pre-course; announce the correct URL at start of every day |
-| 3 | TM-20 | Pipeline build failure — type mismatch | Trainee joined columns with different data types without casting | Teach "check column types before joining" as a mandatory pre-join step |
-| 4 | TM-20 | Workshop filter does not work | Trainee applied filter to wrong data source or used wrong column name | Teach the filter configuration pattern: source → column → operator → value |
-| 5 | TM-20 | Governance metadata omitted | Trainee did not add description and tags before promoting | Add governance check to the exercise checklist; use it as a check-on-learning question |
-| 6 | TM-30 | Ontology design — circular link types | Trainee created a bidirectional link instead of two unidirectional links | Use the design critique rubric; teach the "draw it on paper first" technique |
-| 7 | TM-30 | Ontology design — wrong primary key | Trainee used a non-unique column as PK, causing silent data loss on sync | Teach the PK uniqueness check before sync; show what happens when PK is not unique |
-| 8 | TM-30 | AIP Logic config error — wrong trigger condition | Trainee connected a continuous trigger instead of on-demand | Walk through trigger types before the config exercise; use a pre-built workflow with labeled triggers |
-| 9 | TM-30 | Quiver linked view — cross-object filter not propagating | Link type not configured for the filter direction | Teach the link direction concept before the Quiver exercise; use a diagram |
+| 1 | SL 1 | Incorrect classification marking on export | Trainee does not understand classification applies to the data content, not the file format | Pre-brief classification rules before first export exercise; check every trainee's first export |
+| 2 | SL 1 | Navigating to production instead of training environment | Bookmarked wrong URL or followed a link from an email | Verify bookmarks during pre-course; announce the correct URL at start of every day |
+| 3 | SL 2 | Pipeline build failure — type mismatch | Trainee joined columns with different data types without casting | Teach "check column types before joining" as a mandatory pre-join step |
+| 4 | SL 2 | Workshop filter does not work | Trainee applied filter to wrong data source or used wrong column name | Teach the filter configuration pattern: source → column → operator → value |
+| 5 | SL 2 | Governance metadata omitted | Trainee did not add description and tags before promoting | Add governance check to the exercise checklist; use it as a check-on-learning question |
+| 6 | SL 3 | Ontology design — circular link types | Trainee created a bidirectional link instead of two unidirectional links | Use the design critique rubric; teach the "draw it on paper first" technique |
+| 7 | SL 3 | Ontology design — wrong primary key | Trainee used a non-unique column as PK, causing silent data loss on sync | Teach the PK uniqueness check before sync; show what happens when PK is not unique |
+| 8 | SL 3 | AIP Logic config error — wrong trigger condition | Trainee connected a continuous trigger instead of on-demand | Walk through trigger types before the config exercise; use a pre-built workflow with labeled triggers |
+| 9 | SL 3 | Quiver linked view — cross-object filter not propagating | Link type not configured for the filter direction | Teach the link direction concept before the Quiver exercise; use a diagram |
 | 10 | All | Student falls behind and stops asking for help | Trainee disengages out of frustration or embarrassment | Instructor circulates and proactively checks quiet students; normalize asking for help in the course overview |
 
 ### 4-3. Using the Taxonomy
@@ -169,7 +169,7 @@ The following applies to every MSS course:
 
 ### 5-3. Course-Specific Additions
 
-Each course has additional pre-course requirements (e.g., TM-40M requires GPU Code Workspace provisioned 10+ days in advance; TM-40L requires OSDK developer access). See the course-specific syllabus for the complete pre-course checklist.
+Each course has additional pre-course requirements (e.g., SL 4M requires GPU Code Workspace provisioned 10+ days in advance; SL 4L requires OSDK developer access). See the course-specific syllabus for the complete pre-course checklist.
 
 ---
 

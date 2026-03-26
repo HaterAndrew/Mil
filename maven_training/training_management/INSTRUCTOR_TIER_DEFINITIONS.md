@@ -45,7 +45,7 @@ This document applies to:
 
 ### 2-1. Overview
 
-The MSS Training Program uses a four-tier instructor hierarchy. The first three tiers (Instructor, Senior Instructor, Master Instructor) apply to C2DAO-certified instructors who deliver the full TM-10 through TM-50 curriculum. The fourth tier (Unit Data Trainer) is a separate designation for MSC-level personnel who sustain TM-10 delivery locally.
+The MSS Training Program uses a four-tier instructor hierarchy. The first three tiers (Instructor, Senior Instructor, Master Instructor) apply to C2DAO-certified instructors who deliver the full SL 1 through SL 5 curriculum. The fourth tier (Unit Data Trainer) is a separate designation for MSC-level personnel who sustain SL 1 delivery locally.
 
 ```
                     ┌─────────────────────┐
@@ -62,7 +62,7 @@ The MSS Training Program uses a four-tier instructor hierarchy. The first three 
 
 
         ┌─────────────────────────┐
-        │   Unit Data Trainer     │  ← TM-10 delivery (MSC-level)
+        │   Unit Data Trainer     │  ← SL 1 delivery (MSC-level)
         └─────────────────────────┘
 ```
 
@@ -73,7 +73,7 @@ The MSS Training Program uses a four-tier instructor hierarchy. The first three 
 | Instructor | T3-I Go + domain quals per FDP §2-1 | Deliver assigned courses; conduct Go/No-Go evaluations for courses up to one level below own certification | C2DAO Training OIC |
 | Senior Instructor | Instructor + 12 months + 4 iterations + satisfactory annual observation + OIC recommendation | Observe and certify new instructors (Phases 1-3); approve lesson plan revisions; serve as evaluator for any course up to own tier | C2DAO Training OIC |
 | Master Instructor | Senior + 24 months as Senior + 2 cross-certifications + mentored 2 instructors to certification + OIC designation | Certify Senior Instructors; approve curriculum changes; serve as certification authority delegate when Training OIC is unavailable; evaluate instructor candidates for any course | C2DAO Training OIC |
-| Unit Data Trainer | T3-F Go + unit CDR nomination | Deliver TM-10 independently; administer TM-10 Go/No-Go evaluations; proctor TM-10 pre/post exams as standalone activity; report training status to C2DAO | C2DAO Training OIC (upon T3-F completion) |
+| Unit Data Trainer | T3-F Go + unit CDR nomination | Deliver SL 1 independently; administer SL 1 Go/No-Go evaluations; proctor SL 1 pre/post exams as standalone activity; report training status to C2DAO | C2DAO Training OIC (upon T3-F completion) |
 
 ---
 
@@ -164,32 +164,32 @@ The MSS Training Program uses a four-tier instructor hierarchy. The first three 
 
 **Prerequisites:**
 - T3-F Go (half-day MSC Force Multiplier course)
-- TM-20 Go on file (minimum)
+- SL 2 Go on file (minimum)
 - Unit commander nomination letter on file with C2DAO
 - Assignment to a billet or duty position with training responsibilities (data NCO, S6 staff, unit data steward, or equivalent)
 
 **Authorities:**
-- Deliver TM-10 (Maven User) independently at unit level
-- Administer TM-10 Go/No-Go evaluations using T&EO scoring sheets
-- Proctor TM-10 pre-test and post-test as standalone activity for self-study or remote personnel
+- Deliver SL 1 (Maven User) independently at unit level
+- Administer SL 1 Go/No-Go evaluations using T&EO scoring sheets
+- Proctor SL 1 pre-test and post-test as standalone activity for self-study or remote personnel
 - Report training completion status to C2DAO via Unit Training Status Report
 
 **Limitations:**
-- Cannot deliver TM-20 initial certification (requires C2DAO-certified instructor)
-- Cannot deliver TM-30 or any TM-40/TM-50 course
+- Cannot deliver SL 2 initial certification (requires C2DAO-certified instructor)
+- Cannot deliver SL 3 or any SL 4/SL 5 course
 - Cannot modify curriculum, lesson plans, or evaluation criteria
 - Cannot grant enrollment exceptions or waive prerequisites
 - Cannot certify other instructors or Unit Data Trainers
 - Cannot issue instructor certifications of any kind
 
 **Sustainment:**
-- Deliver at least 1 TM-10 iteration per quarter
+- Deliver at least 1 SL 1 iteration per quarter
 - Attend semi-annual C2DAO PD session (virtual attendance authorized for geographically separated UDTs)
 - Annual re-certification by C2DAO observation (virtual observation authorized)
-- Designation lapses after 6 months without delivering a TM-10 iteration; reinstatement requires re-observation by C2DAO
+- Designation lapses after 6 months without delivering an SL 1 iteration; reinstatement requires re-observation by C2DAO
 
 **Reporting:**
-- Submit Unit Training Status Report to C2DAO within 5 duty days of each TM-10 iteration
+- Submit Unit Training Status Report to C2DAO within 5 duty days of each SL 1 iteration
 - Report No-Go results to C2DAO within 24 hours (No-Go counseling and remediation scheduling remain the unit's responsibility)
 - Report environment or access issues that exceed UDT troubleshooting capability to C2DAO within 48 hours
 

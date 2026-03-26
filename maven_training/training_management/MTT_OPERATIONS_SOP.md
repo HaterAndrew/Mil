@@ -17,13 +17,13 @@
 
 ### 1-1. Purpose
 
-This SOP governs Mobile Training Team (MTT) operations for the MSS Training Program. The MTT is the primary mechanism for delivering TM-20, TM-30, and TM-40 courses outside the C2DAO home station, and for certifying Unit Data Trainers (T3-F) at MSC locations across the USAREUR-AF AOR.
+This SOP governs Mobile Training Team (MTT) operations for the MSS Training Program. The MTT is the primary mechanism for delivering SL 2, SL 3, and SL 4 courses outside the C2DAO home station, and for certifying Unit Data Trainers (T3-F) at MSC locations across the USAREUR-AF AOR.
 
 ### 1-2. Mission
 
 The MTT executes two concurrent missions at each MSC:
-1. **Deliver scheduled TM courses** (TM-20, TM-30, TM-40 as required) to MSC personnel
-2. **Certify Unit Data Trainers** (T3-F) to create a local TM-10 delivery capability that sustains training between MTT visits
+1. **Deliver scheduled courses** (SL 2, SL 3, SL 4 as required) to MSC personnel
+2. **Certify Unit Data Trainers** (T3-F) to create a local SL 1 delivery capability that sustains training between MTT visits
 
 ### 1-3. References
 
@@ -46,8 +46,8 @@ The MTT executes two concurrent missions at each MSC:
 | Billet | Qualification | Role |
 |---|---|---|
 | MTT Lead (1) | Senior or Master Instructor; T3-I certified; 2+ cross-certifications | Overall mission lead; coordinates with MSC; delivers T3-F; observes UDTs |
-| TM-20/30 Instructor (1-2) | Certified Instructor; TM-30 certified | Delivers TM-20 and TM-30 courses |
-| TM-40 Specialist Instructor (1-2) | Certified Instructor; domain SME for scheduled TM-40 tracks | Delivers TM-40 courses as scheduled |
+| SL 2/3 Instructor (1-2) | Certified Instructor; SL 3 certified | Delivers SL 2 and SL 3 courses |
+| SL 4 Specialist Instructor (1-2) | Certified Instructor; domain SME for scheduled SL 4 tracks | Delivers SL 4 courses as scheduled |
 | MSS Administrator (1) | MSS Admin access; account provisioning authority | Provisions accounts, troubleshoots access, manages training environment |
 
 Total: 4-6 personnel per MTT rotation.
@@ -67,8 +67,8 @@ The MTT rotates through MSCs on a quarterly cycle. Each rotation covers 1-3 MSC 
 ```
 Q3 FY26 (first rotation)
   └── MSC A — Week 1-2
-        ├── TM-20 (5 days)
-        ├── T3-F (half day, during TM-20 week 1)
+        ├── SL 2 (5 days)
+        ├── T3-F (half day, during SL 2 week 1)
         └── UDT observation (existing UDTs)
 
 Q4 FY26
@@ -101,7 +101,7 @@ MTT Lead contacts the MSC training POC (typically S3 training NCO) to confirm:
 
 - [ ] Classroom availability: room with projector, 1 workstation per student + instructor, network access to MSS Training Environment
 - [ ] Student roster: names, ranks, current MSS qualifications, courses enrolled
-- [ ] UDT nominations: commander nomination memorandums received by C2DAO; TM-20 Go verified
+- [ ] UDT nominations: commander nomination memorandums received by C2DAO; SL 2 Go verified
 - [ ] Existing UDT status: current UDTs identified for annual observation
 - [ ] Lodging and travel: TDY arrangements for MTT members
 - [ ] Network access: verify MSS Training Environment accessible from MSC classroom (some locations may require VPN or network exception)
@@ -126,8 +126,8 @@ A typical 2-week MTT rotation at a single MSC:
 
 | Week | Day | Course A | Course B |
 |---|---|---|---|
-| 1 | Mon-Fri | TM-20 (Class 1) | T3-F (Mon AM, if UDT candidates available) |
-| 2 | Mon-Fri | TM-30 or TM-40 (scheduled) | UDT observations (scheduled around course delivery) |
+| 1 | Mon-Fri | SL 2 (Class 1) | T3-F (Mon AM, if UDT candidates available) |
+| 2 | Mon-Fri | SL 3 or SL 4 (scheduled) | UDT observations (scheduled around course delivery) |
 
 The exact schedule varies by MSC training needs. The MTT Lead builds the schedule during the T-90 planning conference based on:
 - Number of personnel requiring each course level
@@ -138,14 +138,14 @@ The exact schedule varies by MSC training needs. The MTT Lead builds the schedul
 ### 5-2. T3-F Delivery During MTT Rotation
 
 T3-F is delivered concurrently with other courses when possible:
-- MTT Lead or designated instructor delivers T3-F (half day) while other MTT members deliver TM-20/30/40
+- MTT Lead or designated instructor delivers T3-F (half day) while other MTT members deliver SL 2/3/4
 - T3-F candidates must be available for the morning session without competing duties
 - If only 1-2 UDT candidates at a given MSC, consolidate with the next MSC on the rotation if geography permits
 
 ### 5-3. UDT Observation During MTT Rotation
 
 The MTT Lead observes existing UDTs during the rotation:
-- UDT delivers a TM-10 iteration during the MTT's visit (scheduled with the unit training NCO)
+- UDT delivers an SL 1 iteration during the MTT's visit (scheduled with the unit training NCO)
 - MTT Lead observes at least 2 blocks of instruction + 1 Go/No-Go evaluation
 - Observation documented on the Instructor Observation Report (FDP Appendix B, adapted for UDT)
 - If satisfactory: annual re-certification documented and reported to C2DAO

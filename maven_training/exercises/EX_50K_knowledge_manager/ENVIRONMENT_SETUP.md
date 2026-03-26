@@ -1,4 +1,4 @@
-# ENVIRONMENT SETUP — EX_50K Advanced Knowledge Manager (TM-50K)
+# ENVIRONMENT SETUP — EX_50K Advanced Knowledge Manager (SL 5K)
 
 **Companion resources:** TM_50K_KNOWLEDGE_MANAGER_ADVANCED.md | SYLLABUS_TM50K | EXAM_TM50K_POST
 

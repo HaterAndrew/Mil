@@ -1,24 +1,24 @@
-# CONCEPTS GUIDE — TM-50M COMPANION — ADVANCED MACHINE LEARNING ENGINEER — MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 5M COMPANION — ADVANCED MACHINE LEARNING ENGINEER — MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** TM-50M marks a professional transition. You are no longer primarily a model builder. You are an ML systems engineer — responsible for the infrastructure, processes, and standards that make reliable ML possible at scale.
-> **Purpose:** Extends the mental models of the TM-40M Concepts Guide to advanced ML engineering on MSS. Prerequisite: TM-40M Concepts Guide and TM-40M qualification.
+> **Forward:** SL 5M marks a professional transition. You are no longer primarily a model builder. You are an ML systems engineer — responsible for the infrastructure, processes, and standards that make reliable ML possible at scale.
+> **Purpose:** Extends the mental models of the TM-40M Concepts Guide to advanced ML engineering on MSS. Prerequisite: TM-40M Concepts Guide and SL 4M qualification.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
 
 ## SECTION 1 — FROM MODEL BUILDER TO ML SYSTEMS ENGINEER
 
-**BLUF:** TM-50M marks a professional transition. You are no longer primarily a model builder. You are an ML systems engineer — responsible for the infrastructure, processes, and standards that make reliable ML possible at scale.
+**BLUF:** SL 5M marks a professional transition. You are no longer primarily a model builder. You are an ML systems engineer — responsible for the infrastructure, processes, and standards that make reliable ML possible at scale.
 
 ### 1-1. The Distinction That Matters
 
 A model that works is not the same as an ML system that reliably serves operational decisions over time.
 
-A TM-40M MLE produces a model that achieves acceptable performance, deploys it to the Ontology, and it provides value. But that model will encounter data it was not trained on. It will be maintained by someone who did not build it. Its training data will become stale. Over 6-18 months, a carefully built TM-40M model will degrade in ways that are hard to detect — potentially invisible to operational users who have come to depend on it.
+A SL 4M MLE produces a model that achieves acceptable performance, deploys it to the Ontology, and it provides value. But that model will encounter data it was not trained on. It will be maintained by someone who did not build it. Its training data will become stale. Over 6-18 months, a carefully built SL 4M model will degrade in ways that are hard to detect — potentially invisible to operational users who have come to depend on it.
 
 An ML system is a model plus everything required to keep it reliable over time: the feature pipeline that feeds it, monitoring that detects drift, governance records enabling independent verification, retraining infrastructure that can update it without manual heroics, and human-in-the-loop gates ensuring someone accountable reviews its behavior before it continues influencing decisions.
 
-| TM-40M Definition of "Done" | TM-50M Definition of "Done" |
+| SL 4M Definition of "Done" | SL 5M Definition of "Done" |
 |---|---|
 | Model is in production and performing within acceptable bounds | Model is in production, performance is monitored, monitoring is connected to an alerting and response protocol, training pipeline is documented and reproducible, governance record is complete, and a plan exists for retraining or retirement |
 
@@ -32,11 +32,11 @@ An ML system is a model plus everything required to keep it reliable over time: 
 
 ### 1-3. Vignette: Theater-Level Readiness Prediction
 
-At TM-40M, a capable MLE could build a readiness prediction model for one BCT. At TM-50M, the challenge is different: twenty-plus subordinate formations each with slightly different data collection practices, feeding a corps-level prediction that must be coherent and comparable across formations.
+At SL 4M, a capable MLE could build a readiness prediction model for one BCT. At SL 5M, the challenge is different: twenty-plus subordinate formations each with slightly different data collection practices, feeding a corps-level prediction that must be coherent and comparable across formations.
 
 Features must be defined consistently. The model must retrain when readiness reporting practices change. When one formation's sensor data goes offline, the prediction for that formation must degrade gracefully, not silently. Someone must own the monitoring for all twenty-plus pipelines simultaneously.
 
-That is the problem TM-50M is designed to equip you to solve.
+That is the problem SL 5M is designed to equip you to solve.
 
 ---
 
@@ -85,7 +85,7 @@ Reusable features are designed differently from single-model features:
 
 ## SECTION 3 — ADVANCED MODEL EVALUATION: BEYOND ACCURACY
 
-**BLUF:** At TM-50M level, model evaluation is multi-dimensional. Statistical performance is necessary but not sufficient. A model with 92% accuracy may still be unsuitable for operational deployment if it is poorly calibrated, not robust to input perturbations, or accurate on average but unreliable in the specific cases that matter operationally.
+**BLUF:** At SL 5M level, model evaluation is multi-dimensional. Statistical performance is necessary but not sufficient. A model with 92% accuracy may still be unsuitable for operational deployment if it is poorly calibrated, not robust to input perturbations, or accurate on average but unreliable in the specific cases that matter operationally.
 
 ### 3-1. The Evaluation Dimensions
 
@@ -201,7 +201,7 @@ A parallel demand forecasting requirement from SETAF-AF introduces an additional
 
 ## SECTION 6 — EXPERIMENT TRACKING AS OPERATIONAL DISCIPLINE
 
-**BLUF:** An ML experiment record is an operational record. At TM-50M level, you are managing a portfolio of experiments across months and team members. The tracking system exists to make any result reproducible, enable cross-experiment comparison, and enable onboarding without institutional knowledge loss.
+**BLUF:** An ML experiment record is an operational record. At SL 5M level, you are managing a portfolio of experiments across months and team members. The tracking system exists to make any result reproducible, enable cross-experiment comparison, and enable onboarding without institutional knowledge loss.
 
 ### 6-1. The Minimum Experiment Record
 
@@ -237,7 +237,7 @@ If the answer is no, the tracking system is not serving its purpose. In USAREUR-
 
 ### 7-1. The Registry as Source of Truth
 
-> **NOTE:** TM-40M now maps DDOF Phase 6 (Govern) to model versioning, A/B testing protocols, retraining trigger definitions, and federated ML considerations for coalition environments. The portfolio-scale governance below assumes familiarity with those single-model governance foundations; review TM-40M Sections 1-1 through 1-3 before applying registry governance at enterprise scale.
+> **NOTE:** SL 4M now maps DDOF Phase 6 (Govern) to model versioning, A/B testing protocols, retraining trigger definitions, and federated ML considerations for coalition environments. The portfolio-scale governance below assumes familiarity with those single-model governance foundations; review SL 4M Sections 1-1 through 1-3 before applying registry governance at enterprise scale.
 
 The model registry must answer these questions for every production model:
 
@@ -271,7 +271,7 @@ Some events require immediate revalidation outside the normal review cycle:
 
 ## SECTION 8 — RESPONSIBLE ML: ADVANCED CONSIDERATIONS
 
-**BLUF:** Basic fairness checks at TM-40M level are necessary but not sufficient at TM-50M. Advanced responsible ML requires intersectional fairness analysis, temporal fairness monitoring, and feedback loop detection — with documentation that these analyses were performed for the governance record.
+**BLUF:** Basic fairness checks at SL 4M level are necessary but not sufficient at SL 5M. Advanced responsible ML requires intersectional fairness analysis, temporal fairness monitoring, and feedback loop detection — with documentation that these analyses were performed for the governance record.
 
 ### 8-1. Intersectional Fairness
 
@@ -309,9 +309,9 @@ Detection requires tracking intervention rates alongside model predictions — s
 
 ---
 
-## SECTION 9 — ADVANCED FAILURE MODES: WHAT TM-50M ENGINEERS GET WRONG
+## SECTION 9 — ADVANCED FAILURE MODES: WHAT SL 5M ENGINEERS GET WRONG
 
-**BLUF:** TM-50M failure modes are harder to detect than TM-40M failures because they are systemic, not local. They often manifest not as obvious errors but as degraded reliability over time, governance gaps discovered during audits, or operational users who quietly stop trusting the system.
+**BLUF:** SL 5M failure modes are harder to detect than SL 4M failures because they are systemic, not local. They often manifest not as obvious errors but as degraded reliability over time, governance gaps discovered during audits, or operational users who quietly stop trusting the system.
 
 | Failure Mode | Description | Prevention |
 |---|---|---|
@@ -328,9 +328,9 @@ Detecting skew requires comparing feature distributions during training against 
 
 ---
 
-## SUMMARY — THE TM-50M MENTAL MODEL
+## SUMMARY — THE SL 5M MENTAL MODEL
 
-| TM-40M Mental Model | TM-50M Extension |
+| SL 4M Mental Model | SL 5M Extension |
 |---|---|
 | Build a model | Design an ML system |
 | Train on current data | Design for data that will change |
@@ -340,30 +340,30 @@ Detecting skew requires comparing feature distributions during training against 
 | Record the model | Record the experiment, the decision rationale, and the governance lifecycle |
 | Governance at deployment | Governance as a continuous process |
 
-The ML systems built at TM-50M level inform readiness decisions for III Corps, V Corps, 10th AAMDC, 56th MDC-E, and SETAF-AF formations, logistics decisions for 21st TSC, and intelligence analysis for USAREUR-AF G2. The difference between a technically deployed ML model and an ML system that reliably supports those decisions over time is the difference between TM-40M and TM-50M work.
+The ML systems built at SL 5M level inform readiness decisions for III Corps, V Corps, 10th AAMDC, 56th MDC-E, and SETAF-AF formations, logistics decisions for 21st TSC, and intelligence analysis for USAREUR-AF G2. The difference between a technically deployed ML model and an ML system that reliably supports those decisions over time is the difference between SL 4M and SL 5M work.
 
 ---
 
 ---
 
-## APPENDIX — PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION
+## APPENDIX — PEER SL 5 CROSS-REFERENCES AND WFF INTEGRATION
 
-**Peer TM-50 Publications.** Senior MLEs should coordinate with practitioners in these companion advanced-track publications.
+**Peer SL 5 Publications.** Senior MLEs should coordinate with practitioners in these companion advanced-track publications.
 
 | Publication | Track | Coordination Point |
 |---|---|---|
-| TM-50G | Advanced ORSA | Statistical validation; uncertainty quantification for ML outputs |
-| TM-50H | Advanced AI Engineer | AIP Logic integration; fine-tuning infrastructure; adversarial robustness |
-| TM-50J | Advanced Program Manager | ML program lifecycle; governance documentation |
-| TM-50K | Advanced Knowledge Manager | Feature data governance; training corpus design |
-| TM-50L | Advanced Software Engineer | Platform SDK infrastructure; OSDK model-serving integrations |
-| TM-50N | Advanced UI/UX Designer | Feature engineering UI; model monitoring dashboards |
-| TM-50O | Advanced Platform Engineer | ML platform infrastructure; training pipeline orchestration |
+| SL 5G | Advanced ORSA | Statistical validation; uncertainty quantification for ML outputs |
+| SL 5H | Advanced AI Engineer | AIP Logic integration; fine-tuning infrastructure; adversarial robustness |
+| SL 5J | Advanced Program Manager | ML program lifecycle; governance documentation |
+| SL 5K | Advanced Knowledge Manager | Feature data governance; training corpus design |
+| SL 5L | Advanced Software Engineer | Platform SDK infrastructure; OSDK model-serving integrations |
+| SL 5N | Advanced UI/UX Designer | Feature engineering UI; model monitoring dashboards |
+| SL 5O | Advanced Platform Engineer | ML platform infrastructure; training pipeline orchestration |
 
-**WFF Operational Consumer Note.** ML models built and maintained by TM-50M engineers serve the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). Readiness prediction models serve G3 (Movement and Maneuver). Logistics demand forecasting serves G4 (Sustainment). Personnel risk models may serve G1 and G6. The mental model shift described in this guide — from model builder to ML systems engineer — must account for the diversity of WFF consumers: different latency requirements, different interpretability needs, and different consequences of model failure.
+**WFF Operational Consumer Note.** ML models built and maintained by SL 5M engineers serve the six Warfighting Function (WFF) tracks: Intelligence (SL 4A), Fires (SL 4B), Movement and Maneuver (SL 4C), Sustainment (SL 4D), Protection (SL 4E), and Mission Command (SL 4F). Readiness prediction models serve G3 (Movement and Maneuver). Logistics demand forecasting serves G4 (Sustainment). Personnel risk models may serve G1 and G6. The mental model shift described in this guide — from model builder to ML systems engineer — must account for the diversity of WFF consumers: different latency requirements, different interpretability needs, and different consequences of model failure.
 
 ---
 
-*CONCEPTS GUIDE — TM-50M COMPANION // ADVANCED MACHINE LEARNING ENGINEER*
+*CONCEPTS GUIDE — SL 5M COMPANION // ADVANCED MACHINE LEARNING ENGINEER*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA // WIESBADEN, GERMANY // 2026*
 *DISTRIBUTION RESTRICTION: Distribution authorized to U.S. Government agencies and their contractors only. Other requests must be referred to Headquarters, C2DAO, Wiesbaden, Germany.*

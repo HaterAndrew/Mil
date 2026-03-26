@@ -1,12 +1,12 @@
-# POST-TEST — TM-40F: MISSION COMMAND
+# POST-TEST — SL 4F: MISSION COMMAND
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40F: Mission Command WFF Track |
+| **Course** | SL 4F: Mission Command WFF Track |
 | **Form** | Post-Test |
-| **Level** | TM-40F (WFF Track) |
-| **Audience** | G3/S3 staff, battle captains, XOs, CDRs; prerequisite: completion of TM-40F training |
+| **Level** | SL 4F (WFF Track) |
+| **Audience** | G3/S3 staff, battle captains, XOs, CDRs; prerequisite: completion of SL 4F training |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | 80% (32/40 points) |
 
@@ -14,7 +14,7 @@
 
 ## INSTRUCTIONS
 
-This assessment confirms proficiency upon completion of TM-40F training. A score of 80% (32/40) is required for course completion certification. Results are recorded on the student training record.
+This assessment confirms proficiency upon completion of SL 4F training. A score of 80% (32/40) is required for course completion certification. Results are recorded on the student training record.
 
 ---
 
@@ -78,14 +78,14 @@ B. Execute manual information management procedures, maintain awareness of what 
 C. Continue to use MSS with reduced functionality by accessing it through personal devices on civilian networks
 D. Transfer all CCIR monitoring responsibilities to higher echelon until connectivity is restored
 
-**9. FM 6-0 defines information management (IM) as comprising six tasks. Table 1-3 in TM-40F maps each IM task to its MSS data platform implementation. Which of the following correctly lists all six FM 6-0 IM tasks?**
+**9. FM 6-0 defines information management (IM) as comprising six tasks. Table 1-3 in SL 4F maps each IM task to its MSS data platform implementation. Which of the following correctly lists all six FM 6-0 IM tasks?**
 
 A. Plan, Collect, Analyze, Brief, Archive, Secure
 B. Collect, Process, Store, Display, Disseminate, Protect
 C. Ingest, Transform, Model, Visualize, Share, Encrypt
 D. Receive, Validate, Catalog, Present, Distribute, Classify
 
-**10. Table 1-4 in TM-40F crosswalks FM 6-0 information relevance criteria to VAULTIS-A data quality dimensions. Which FM 6-0 criterion maps to the VAULTIS-A "Timeliness" dimension?**
+**10. Table 1-4 in SL 4F crosswalks FM 6-0 information relevance criteria to VAULTIS-A data quality dimensions. Which FM 6-0 criterion maps to the VAULTIS-A "Timeliness" dimension?**
 
 A. Accurate — free from error; faithful to the source
 B. Useable — in a format appropriate to the consumer

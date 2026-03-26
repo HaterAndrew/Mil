@@ -1,4 +1,4 @@
-# ENVIRONMENT SETUP — EX_50L Advanced Software Engineer (TM-50L)
+# ENVIRONMENT SETUP — EX_50L Advanced Software Engineer (SL 5L)
 
 **Companion resources:** TM_50L_SOFTWARE_ENGINEER_ADVANCED.md | SYLLABUS_TM50L | EXAM_TM50L_POST
 

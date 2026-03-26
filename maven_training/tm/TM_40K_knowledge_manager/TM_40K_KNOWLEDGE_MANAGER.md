@@ -1,7 +1,7 @@
 # TM-40K — MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** This manual trains Army Knowledge Managers (37F MOS) and staff officers in KM roles to design, build, and sustain knowledge management systems on the Maven Smart System (MSS). KMs are responsible for ensuring the formation's institutional knowledge is captured, organized, findable, and usable — not simply stored.
-> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder; Data Literacy Technical Reference (all required); CONCEPTS_GUIDE_TM40K_KNOWLEDGE_MANAGER (read before this manual).
+> **Prereqs:** SL 1, Maven User; SL 2, Builder; SL 3, Advanced Builder; Data Literacy Technical Reference (all required); CONCEPTS_GUIDE_TM40K_KNOWLEDGE_MANAGER (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING:** Knowledge management systems that fail silently are more dangerous than systems that fail loudly. A broken dashboard is obvious. A knowledge repository that captures incomplete lessons, routes to wrong audiences, or returns stale doctrine will not announce its failure — it will quietly degrade the formation's institutional memory over months and years. Build with validation checkpoints at every stage.
@@ -14,23 +14,23 @@
 
 **BLUF:** This manual trains Army Knowledge Managers (37F MOS) and staff officers in KM roles to design, build, and sustain knowledge management systems on the Maven Smart System (MSS). KMs are responsible for ensuring the formation's institutional knowledge is captured, organized, findable, and usable — not simply stored.
 
-This manual covers knowledge architecture design, AAR and lessons learned systems, AIP-assisted knowledge workflows, search and discovery interfaces, doctrine version management, personnel expertise mapping, and PCS/ETS knowledge transfer. It does not cover general Foundry platform operation (see TM-10 through TM-30) or developer-level coding (see TM-40G, TM-40H).
+This manual covers knowledge architecture design, AAR and lessons learned systems, AIP-assisted knowledge workflows, search and discovery interfaces, doctrine version management, personnel expertise mapping, and PCS/ETS knowledge transfer. It does not cover general Foundry platform operation (see SL 1 through SL 3) or developer-level coding (see SL 4G, SL 4H).
 
-**TM-40K covers** knowledge ontology design: Object Types for documents, lessons, AARs, SOPs, expertise profiles; AAR capture systems using Workshop forms and structured data pipelines; lessons learned ingestion, deduplication, tagging, and routing to relevant units; AIP Logic for document summarization, lesson extraction, content tagging, and knowledge Q&A; search and discovery: Quiver and Contour configurations, Workshop browse interfaces; doctrine and SOP currency tracking, change workflows, unit-level versioning; personnel expertise Object Types, SME identification, and expertise gap analysis; knowledge transfer workflows for PCS/ETS transitions, key person dependency mapping; and knowledge metrics: capture rates, access patterns, gap analysis.
+**SL 4K covers** knowledge ontology design: Object Types for documents, lessons, AARs, SOPs, expertise profiles; AAR capture systems using Workshop forms and structured data pipelines; lessons learned ingestion, deduplication, tagging, and routing to relevant units; AIP Logic for document summarization, lesson extraction, content tagging, and knowledge Q&A; search and discovery: Quiver and Contour configurations, Workshop browse interfaces; doctrine and SOP currency tracking, change workflows, unit-level versioning; personnel expertise Object Types, SME identification, and expertise gap analysis; knowledge transfer workflows for PCS/ETS transitions, key person dependency mapping; and knowledge metrics: capture rates, access patterns, gap analysis.
 
-**TM-40K does NOT cover** general Workshop application construction — see TM-20 and TM-30; Python or PySpark coding — see TM-40G, TM-40H; SQL query writing — see TM-40H; AIP Agent Studio development — see TM-40H; TypeScript or OSDK development — see TM-40L; or data pipeline construction from scratch — see TM-30 (UI) or TM-40L (code).
+**SL 4K does NOT cover** general Workshop application construction — see SL 2 and SL 3; Python or PySpark coding — see SL 4G, SL 4H; SQL query writing — see SL 4H; AIP Agent Studio development — see SL 4H; TypeScript or OSDK development — see SL 4L; or data pipeline construction from scratch — see SL 3 (UI) or SL 4L (code).
 
-> **NOTE:** TM-40K graduates design knowledge systems that outlast their assignments. Every architecture decision should be evaluated against the question: "Will the Soldier replacing me be able to understand, maintain, and extend this system after a two-week handoff?"
+> **NOTE:** SL 4K graduates design knowledge systems that outlast their assignments. Every architecture decision should be evaluated against the question: "Will the Soldier replacing me be able to understand, maintain, and extend this system after a two-week handoff?"
 
 ### 1-2. Curriculum Position, Advanced Track, and WFF Context
 
-**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED — not recommended. TM-10 and TM-20 are assumed complete.
+**Prerequisite:** SL 3 (Advanced Builder) is REQUIRED — not recommended. SL 1 and SL 2 are assumed complete.
 
-**Advanced track:** Upon completing TM-40K, qualified KMs should pursue **TM-50K (Advanced Knowledge Manager)** for advanced topics including enterprise-scale knowledge taxonomy design, cross-command knowledge federation, NATO LLDB integration, and AI-assisted knowledge synthesis at theater level.
+**Advanced track:** Upon completing SL 4K, qualified KMs should pursue **SL 5K (Advanced Knowledge Manager)** for advanced topics including enterprise-scale knowledge taxonomy design, cross-command knowledge federation, NATO LLDB integration, and AI-assisted knowledge synthesis at theater level.
 
-**Peer specialist tracks:** The KM has significant overlap with the Software Engineer (TM-40L) on knowledge ontology design and pipeline implementation. Coordinate with TM-40L when knowledge capture or routing workflows require custom code beyond Pipeline Builder's no-code capability. Coordinate with TM-40H (AI Engineer) when designing AIP-assisted knowledge extraction and summarization workflows — the KM defines the knowledge architecture and human review requirements; the AI Engineer implements the AIP Logic pipeline. Coordinate with TM-40G (ORSA) when knowledge metrics (capture rates, gap analysis, lesson implementation rates) require quantitative analysis products.
+**Peer specialist tracks:** The KM has significant overlap with the Software Engineer (SL 4L) on knowledge ontology design and pipeline implementation. Coordinate with SL 4L when knowledge capture or routing workflows require custom code beyond Pipeline Builder's no-code capability. Coordinate with SL 4H (AI Engineer) when designing AIP-assisted knowledge extraction and summarization workflows — the KM defines the knowledge architecture and human review requirements; the AI Engineer implements the AIP Logic pipeline. Coordinate with SL 4G (ORSA) when knowledge metrics (capture rates, gap analysis, lesson implementation rates) require quantitative analysis products.
 
-**WFF awareness:** KMs on MSS serve as institutional memory architects for WFF-qualified personnel (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). Each WFF function generates domain-specific lessons, TTPs, and SOPs requiring tailored ontology design and retrieval interfaces. Design knowledge taxonomies with WFF functional areas as primary filter dimensions. The WFF-aligned staff section is both a primary contributor to and a primary consumer of MSS knowledge products.
+**WFF awareness:** KMs on MSS serve as institutional memory architects for WFF-qualified personnel (SL 4A through SL 4F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). Each WFF function generates domain-specific lessons, TTPs, and SOPs requiring tailored ontology design and retrieval interfaces. Design knowledge taxonomies with WFF functional areas as primary filter dimensions. The WFF-aligned staff section is both a primary contributor to and a primary consumer of MSS knowledge products.
 
 ---
 
@@ -146,7 +146,7 @@ FM 6-0 defines knowledge management as a five-step continuous process:
 | 2 — Design | Define knowledge architecture, workflows, and governance | Ontology Manager — Object Types, Link Types, property schemas (Ch 2 of this manual) |
 | 3 — Develop | Build knowledge products, capture tools, and repositories | Pipeline Builder, Workshop forms, AIP Logic workflows (Chs 3–5) |
 | 4 — Pilot | Test with a limited user group; validate usability and accuracy | Staging environment deployment, user acceptance testing (Section 2-7) |
-| 5 — Implement | Field the system; train users; establish sustainment plan | Production deployment, user training via TM-10/20, sustainment SOPs (Ch 9) |
+| 5 — Implement | Field the system; train users; establish sustainment plan | Production deployment, user training via SL 1/SL 2, sustainment SOPs (Ch 9) |
 
 FM 6-0 further defines three core KM tasks:
 
@@ -163,9 +163,9 @@ FM 6-0 identifies six categories of KM tools. The table below maps each to MSS c
 | Data-Analysis Tools | Tools for examining data to extract meaning | Contour, Code Workbook, AIP Logic |
 | Search & Discovery Tools | Tools for locating knowledge products | Quiver, Contour filters, Workshop browse views |
 | Expertise-Location Tools | Tools for identifying who knows what | `ExpertiseProfile` Object Type, personnel search apps (Ch 8) |
-| Expertise-Development Tools | Tools for growing organizational knowledge | MSS training courses (TM-10 through TM-50), self-study addenda |
+| Expertise-Development Tools | Tools for growing organizational knowledge | MSS training courses (SL 1 through SL 5), self-study addenda |
 
-> **NOTE (FM 6-22 — Three Developmental Domains):** FM 6-22 (Leader Development) defines three domains in which leaders grow: **Institutional** (schoolhouse training), **Operational** (unit application and OJT), and **Self-Development** (individual study). MSS knowledge products must support all three. Instructor-led courses (TM-10 through TM-50) serve the institutional domain. Unit application of MSS during exercises and operations serves the operational domain. Self-study addenda and self-paced materials serve the self-development domain. A KM who designs knowledge products for only one domain leaves two-thirds of the force development model unsupported. Source: FM 6-22, Ch 1.
+> **NOTE (FM 6-22 — Three Developmental Domains):** FM 6-22 (Leader Development) defines three domains in which leaders grow: **Institutional** (schoolhouse training), **Operational** (unit application and OJT), and **Self-Development** (individual study). MSS knowledge products must support all three. Instructor-led courses (SL 1 through SL 5) serve the institutional domain. Unit application of MSS during exercises and operations serves the operational domain. Self-study addenda and self-paced materials serve the self-development domain. A KM who designs knowledge products for only one domain leaves two-thirds of the force development model unsupported. Source: FM 6-22, Ch 1.
 
 > **NOTE (FM 3-57 — Civil Knowledge Integration):** Civil Knowledge Integration (CKI) — the process of analyzing, evaluating, and organizing collected civil information for operational relevance — is a doctrinal validation of the KM function. CKI integrates through all five Army integrating processes: intelligence preparation of the operational environment (IPOE), information collection, targeting, risk management, and knowledge management (FM 3-57). KMs should recognize CKI as a peer discipline that validates the same organize-contextualize-disseminate pattern applied across the KM enterprise. Civil Affairs KM Coordinators (see Section 1-3, Table) use CKI methodology when building MSS knowledge products for civil information. Source: FM 3-57.
 
@@ -321,7 +321,7 @@ Knowledge systems in USAREUR-AF operate across a spectrum of classification and 
 
 **STANDARDS:** A complete knowledge ontology design package includes: domain map, Object Type definitions with all properties, Link Type map with cardinality, access control design, and a named owner for each domain.
 
-**EQUIPMENT:** Foundry Ontology Editor (TM-30 access required), C2DAO coordination memo, domain analysis worksheet.
+**EQUIPMENT:** Foundry Ontology Editor (SL 3 access required), C2DAO coordination memo, domain analysis worksheet.
 
 **PROCEDURE:**
 
@@ -436,7 +436,7 @@ Configure Workshop form validation to enforce data quality at the point of captu
 
 ### 3-5. AAR Pipeline: Submission to Object Creation
 
-When a Soldier submits an AAR form in Workshop, a Pipeline Builder workflow converts the form submission into structured Foundry objects. This pipeline is designed at TM-30 level and implemented at TM-40L level if custom logic is required.
+When a Soldier submits an AAR form in Workshop, a Pipeline Builder workflow converts the form submission into structured Foundry objects. This pipeline is designed at SL 3 level and implemented at SL 4L level if custom logic is required.
 
 **Standard AAR pipeline stages:**
 
@@ -489,14 +489,14 @@ USAREUR-AF generates lessons learned from multiple sources simultaneously. A mat
 | Source | Format | Volume | Ingestion Method |
 |---|---|---|---|
 | MSS AAR capture (Chapter 3) | Structured Foundry objects | Medium — exercise-driven | Native (pipeline stage 4) |
-| CALL (Center for Army Lessons Learned) | PDF reports, structured web exports | Medium — continuous | TM-40L pipeline required |
+| CALL (Center for Army Lessons Learned) | PDF reports, structured web exports | Medium — continuous | SL 4L pipeline required |
 | Unit-submitted lessons (email/form) | Unstructured text, email attachments | Variable | Workshop intake form + manual KM review |
 | Exercise observer/controller reports | Word/PDF documents, OC/T structured formats | High during exercises | Batch ingest pipeline |
 | NATO LLDB (Lessons Learned Database) | STANAG 4778 formatted records | Low — periodic | Coordinate with CA/POLAD for access |
-| JLLIS (Joint Lessons Learned Info System) | Structured web export | Medium | TM-40L pipeline required; coordinate with J7 |
+| JLLIS (Joint Lessons Learned Info System) | Structured web export | Medium | SL 4L pipeline required; coordinate with J7 |
 | Partner nation reports | Variable format, variable language | Variable | Manual ingest with AIP translation assist (Chapter 5) |
 
-> **NOTE:** CALL and JLLIS ingestion pipelines require TM-40L developer involvement for automated connectors. Until connectors are established, the KM uses a manual ingest workflow: download reports, use the AIP-assisted extraction workflow (Chapter 5) to structure content, submit via the Workshop intake form for KM review and approval.
+> **NOTE:** CALL and JLLIS ingestion pipelines require SL 4L developer involvement for automated connectors. Until connectors are established, the KM uses a manual ingest workflow: download reports, use the AIP-assisted extraction workflow (Chapter 5) to structure content, submit via the Workshop intake form for KM review and approval.
 
 ---
 
@@ -589,7 +589,7 @@ A lesson approved and published must reach the units and personnel for whom it i
 
 **STANDARDS:** All 40 lessons are reviewed, tagged, deduplicated where appropriate, and in Approved or Archived status within 5 business days of exercise completion. Distribution routing is configured for the next exercise cycle.
 
-**EQUIPMENT:** Foundry Ontology Editor, Pipeline Builder (TM-30 access), Workshop (TM-20 access), KM Review Queue Workshop application.
+**EQUIPMENT:** Foundry Ontology Editor, Pipeline Builder (SL 3 access), Workshop (SL 2 access), KM Review Queue Workshop application.
 
 **PROCEDURE:**
 
@@ -645,7 +645,7 @@ AIP Logic on MSS provides natural language AI capabilities connected to the Foun
 
 Use this configuration when you receive an unstructured document (CALL report, exercise report, partner nation after-action summary) and need to convert it to structured knowledge objects.
 
-**Prerequisites:** AIP Logic access (TM-30 qualified), uploaded document in Foundry Files or connected dataset, `Lesson` Object Type deployed.
+**Prerequisites:** AIP Logic access (SL 3 qualified), uploaded document in Foundry Files or connected dataset, `Lesson` Object Type deployed.
 
 **Configuration steps:**
 
@@ -734,7 +734,7 @@ Prompt quality directly determines AIP output quality. KMs are responsible for p
 
 ### 5-6a. Document Intelligence for Knowledge Extraction (GA Q1 2026)
 
-**BLUF:** AIP Document Intelligence — generally available as of Q1 2026 — automates the document parsing, chunking, and embedding pipeline that KMs previously configured manually or coordinated with AI engineers (TM-40H) to build. Document Intelligence allows KMs to ingest document collections into the knowledge repository with structured, searchable, AI-retrievable content without custom code.
+**BLUF:** AIP Document Intelligence — generally available as of Q1 2026 — automates the document parsing, chunking, and embedding pipeline that KMs previously configured manually or coordinated with AI engineers (SL 4H) to build. Document Intelligence allows KMs to ingest document collections into the knowledge repository with structured, searchable, AI-retrievable content without custom code.
 
 **What Document Intelligence provides to KMs:**
 
@@ -747,7 +747,7 @@ Prompt quality directly determines AIP output quality. KMs are responsible for p
 
 **Impact on KM knowledge workflows:**
 
-Document Intelligence changes the document ingestion phase of the lessons learned pipeline (Chapter 4) and the AIP-assisted knowledge workflows in this chapter. Previously, ingesting an unstructured document into the knowledge repository required either (a) manual extraction by a KM or (b) coordination with a TM-40H AI engineer to build a custom parsing and embedding pipeline. Document Intelligence reduces this to a configuration task.
+Document Intelligence changes the document ingestion phase of the lessons learned pipeline (Chapter 4) and the AIP-assisted knowledge workflows in this chapter. Previously, ingesting an unstructured document into the knowledge repository required either (a) manual extraction by a KM or (b) coordination with a SL 4H AI engineer to build a custom parsing and embedding pipeline. Document Intelligence reduces this to a configuration task.
 
 **Updated document ingestion pattern:**
 
@@ -955,7 +955,7 @@ Contour provides multi-dimensional analysis that Quiver's dashboard format canno
 
 ### 6-6. Task: Build a Knowledge Browser Application
 
-**CONDITIONS:** The `Lesson`, `AAR`, `Exercise`, `TTP`, and `SOP` Object Types are deployed. You have TM-20 Workshop builder qualifications and TM-30 advanced Workshop design qualifications.
+**CONDITIONS:** The `Lesson`, `AAR`, `Exercise`, `TTP`, and `SOP` Object Types are deployed. You have SL 2 Workshop builder qualifications and SL 3 advanced Workshop design qualifications.
 
 **STANDARDS:** A functional knowledge browser application with full filter panel, results list, and detail view. AIP Q&A widget integrated. Application published to the KM consumer user group.
 
@@ -1081,7 +1081,7 @@ USAREUR-AF units maintain SOPs across multiple functional areas. The MSS SOP rep
 
 **STANDARDS:** Automated notifications delivered to SOP owners 30 days before review date. Overdue notifications escalated to KMO at 7 days past due. KMO Quiver dashboard showing review compliance status.
 
-**EQUIPMENT:** Foundry Actions (TM-30 access), Workshop notification widgets, Quiver.
+**EQUIPMENT:** Foundry Actions (SL 3 access), Workshop notification widgets, Quiver.
 
 **PROCEDURE:**
 
@@ -1201,7 +1201,7 @@ Expertise gap analysis answers: "What skills does the formation lack? Where are 
 
 ### 8-6. Task: Build the SME Directory Application
 
-**CONDITIONS:** ExpertiseProfile Object Type is deployed with Privacy Act review complete. Initial profiles have been created for 75% of the unit's senior NCOs and officers (TM-20 qualified) and functional SMEs. Legal review complete.
+**CONDITIONS:** ExpertiseProfile Object Type is deployed with Privacy Act review complete. Initial profiles have been created for 75% of the unit's senior NCOs and officers (SL 2 qualified) and functional SMEs. Legal review complete.
 
 **STANDARDS:** A functional SME directory application accessible to KM-Consumer users that allows skill-based SME search and returns contact information for available advisors. Expertise gap dashboard accessible to KM-Admin.
 
@@ -1246,7 +1246,7 @@ Using the ExpertiseProfile and KnowledgeGap Object Types:
 | Role Type | Common Knowledge Gap | Mitigation |
 |---|---|---|
 | Senior KMO | Full knowledge architecture, AIP workflow configs, access control design | Knowledge transfer package; successor onboarding before departure |
-| S6 Data NCOIC | Pipeline configurations, data source contacts, error handling procedures | TM-40K qualified successor; documented pipeline runbook |
+| S6 Data NCOIC | Pipeline configurations, data source contacts, error handling procedures | SL 4K qualified successor; documented pipeline runbook |
 | G2/S2 All-Source | Analytical products, source network context, AOR-specific intelligence | Classified knowledge transfer; product handoff protocol |
 | Master Gunner | Equipment-specific TTPs, range procedures | TTP library in MSS; successor certification |
 | Language-qualified personnel | Native language proficiency for partner nation liaison | Language SME registry; DLPT requirements for replacements |
@@ -1632,7 +1632,7 @@ Return JSON with fields: assessment (Duplicate / Near-Duplicate / Distinct), con
 
 **Link Type.** A defined relationship between two Object Types in the Foundry Ontology. Link Types make knowledge navigable — the Exercise-to-AAR-to-Lesson-to-TTP link chain is the core navigation structure of the KM knowledge graph.
 
-**MSS (Maven Smart System).** The USAREUR-AF enterprise AI/data platform, built on Palantir Foundry. The deployment environment for all TM-40K knowledge management systems.
+**MSS (Maven Smart System).** The USAREUR-AF enterprise AI/data platform, built on Palantir Foundry. The deployment environment for all SL 4K knowledge management systems.
 
 **Object Type.** A defined entity class in the Foundry Ontology. Each Object Type has a schema (defined properties) and participates in Link Types. `Lesson`, `AAR`, `SOP`, and `ExpertiseProfile` are Object Types.
 
@@ -1668,7 +1668,7 @@ Return JSON with fields: assessment (Duplicate / Near-Duplicate / Distinct), con
 
 ---
 
-*TM-40K — Knowledge Manager Technical Manual*
+*SL 4K — Knowledge Manager Technical Manual*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*
 *2026*
 *Distribution authorized to U.S. Government agencies and their contractors only.*
@@ -1680,6 +1680,6 @@ Return JSON with fields: assessment (Duplicate / Near-Duplicate / Distinct), con
 
 **Supplementary Reading — MCCoE and Army Knowledge Management:**
 
-- **AKMP Data Immersion Course for Knowledge Managers (MCCoE/C2ID, February 2025)** — MCCoE's Command and Control Integration Directorate runs a 32-hour online course for operational knowledge managers at division level and above. Curriculum covers data governance, Army Data Catalog, data workforce roles, data-centric question triage, generative AI capabilities, and Vantage. Prerequisites: 2-hour Excel course and 2-hour Contour course. A September 2024 pilot demonstrated substantial post-course improvement across data governance, analysis, platform use, and product development. TM-40K graduates should be aware of this complementary MCCoE program — it validates the same competencies from the institutional training perspective.
-- **Knowledge Management Qualification Course (MCCoE/TRADOC)** — The Army's institutional KM course, administered by MCCoE. Maven instruction is being integrated into the KMQC curriculum as part of the CAC Maven C2 integration initiative (February 2026). TM-40K graduates are directly aligned to this career development pathway.
+- **AKMP Data Immersion Course for Knowledge Managers (MCCoE/C2ID, February 2025)** — MCCoE's Command and Control Integration Directorate runs a 32-hour online course for operational knowledge managers at division level and above. Curriculum covers data governance, Army Data Catalog, data workforce roles, data-centric question triage, generative AI capabilities, and Vantage. Prerequisites: 2-hour Excel course and 2-hour Contour course. A September 2024 pilot demonstrated substantial post-course improvement across data governance, analysis, platform use, and product development. SL 4K graduates should be aware of this complementary MCCoE program — it validates the same competencies from the institutional training perspective.
+- **Knowledge Management Qualification Course (MCCoE/TRADOC)** — The Army's institutional KM course, administered by MCCoE. Maven instruction is being integrated into the KMQC curriculum as part of the CAC Maven C2 integration initiative (February 2026). SL 4K graduates are directly aligned to this career development pathway.
 - **CALL 25-10, Commander and Staff Guide to Data Literacy (April 2025)** — CALL handbook covering data literacy for commanders and staff. Useful reference for KMs building products consumed by senior leaders.

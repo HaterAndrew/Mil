@@ -1,4 +1,4 @@
-# Self-Study Addendum — TM-40F: Mission Command Warfighting Function
+# Self-Study Addendum — SL 4F: Mission Command Warfighting Function
 ## Palantir Developers Reference Library
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.
@@ -60,7 +60,7 @@ The following doctrine sections were added to TM-40F this session. Review after 
 | *Why do I need Palantir if I already have a cloud data platform?* | What Foundry provides beyond standard data capabilities — useful framing for S3/XO officers understanding why MSS replaces slide-driven staff products. | Ch 1 |
 | *Anduril: Ontology: Launchpad for Operations* | Defense-sector case study on operationalizing the Ontology — illustrates how integrated data models enable the shared understanding that ADP 6-0 requires for Mission Command. | Ch 1, Ch 7 |
 | *Building Enterprise Autonomy with Shyam Sankar, CTO* | Strategic framing on enterprise AI autonomy — relevant context for Mission Command practitioners preparing for AI-augmented planning environments like Thunderforge. | Ch 1 |
-| *Deep Dive: Advanced Ontology \| DevCon 5* | Advanced Ontology patterns — useful for Mission Command practitioners coordinating with TM-30 builders on cross-staff COP data models. | Ch 7 |
+| *Deep Dive: Advanced Ontology \| DevCon 5* | Advanced Ontology patterns — useful for Mission Command practitioners coordinating with SL 3 builders on cross-staff COP data models. | Ch 7 |
 
 ---
 

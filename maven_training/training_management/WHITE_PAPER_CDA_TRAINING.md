@@ -17,12 +17,12 @@ ODT built a complete training program — 7 course levels, full draft publicatio
 
 | Level | Course | Hours | Audience |
 |-------|--------|-------|----------|
-| TM-10 | Maven User | 8 | All personnel |
-| TM-20 | Builder | 40 | Data-adjacent staff |
-| TM-30 | Advanced Builder | 40 | Unit data leads |
-| TM-40/50 | Specialist Tracks (20) | 40 ea | WFF analysts, engineers, PMs |
-| FBC | Foundry Bootcamp | 5 days | TM-20+ w/ approved projects |
-| TM-SL | Senior Leader | 1 day | O-5 / E-9+ executives |
+| SL 1 | Maven User | 8 | All personnel |
+| SL 2 | Builder | 40 | Data-adjacent staff |
+| SL 3 | Advanced Builder | 40 | Unit data leads |
+| SL 4/5 | Specialist Tracks (20) | 40 ea | WFF analysts, engineers, PMs |
+| FBC | Foundry Bootcamp | 5 days | SL 2+ w/ approved projects |
+| EXEC | Senior Leader | 1 day | O-5 / E-9+ executives |
 | T3 | Instructor Pipeline | varies | Future instructors |
 
 ## THE RECOMMENDATION

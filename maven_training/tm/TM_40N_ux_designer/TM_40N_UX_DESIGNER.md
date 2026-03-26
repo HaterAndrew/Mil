@@ -1,10 +1,10 @@
 # TM-40N — MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** TM-40N qualifies UI/UX designers to conduct user research, design information architectures, build interactive prototypes, and deliver production-ready Workshop and Slate application designs on the MSS platform. This is a design manual — it produces validated, implementable design artifacts, not just wireframes.
-> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); familiarity with user research methods and visual design principles; CONCEPTS_GUIDE_TM40N_UX_DESIGNER (read before this manual)
+> **Forward:** SL 4N qualifies UI/UX designers to conduct user research, design information architectures, build interactive prototypes, and deliver production-ready Workshop and Slate application designs on the MSS platform. This is a design manual — it produces validated, implementable design artifacts, not just wireframes.
+> **Prereqs:** SL 1, Maven User; SL 2, Builder; SL 3, Advanced Builder (required); familiarity with user research methods and visual design principles; CONCEPTS_GUIDE_TM40N_UX_DESIGNER (read before this manual)
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
-> **WARNING: Design decisions at TM-40N level directly shape how commanders and staff consume operational data. A poorly designed dashboard can obscure critical information, delay decisions, or create false confidence in incomplete data. Apply Soldier Centered Design discipline. Validate with users. Test in representative environments.**
+> **WARNING: Design decisions at SL 4N level directly shape how commanders and staff consume operational data. A poorly designed dashboard can obscure critical information, delay decisions, or create false confidence in incomplete data. Apply Soldier Centered Design discipline. Validate with users. Test in representative environments.**
 > **CAUTION: User research in operational and classified environments requires OPSEC awareness. Interview notes, usability recordings, and design artifacts may contain operationally sensitive information. Handle and store IAW unit classification guidance.**
 
 ---
@@ -13,15 +13,15 @@
 
 ### 1-1. UX Designer Specialist Manual
 
-**BLUF:** TM-40N qualifies UI/UX designers to conduct user research, design information architectures, build interactive prototypes, and deliver production-ready application designs on the MSS platform. The designer is the main conduit between the user and the product team.
+**BLUF:** SL 4N qualifies UI/UX designers to conduct user research, design information architectures, build interactive prototypes, and deliver production-ready application designs on the MSS platform. The designer is the main conduit between the user and the product team.
 
-This manual provides task-based instruction for UI/UX designers operating on the Maven Smart System (MSS). MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. TM-40N personnel translate operational requirements into usable, accessible interfaces that WFF-qualified users (TM-40A–F) and all MSS consumers interact with daily.
+This manual provides task-based instruction for UI/UX designers operating on the Maven Smart System (MSS). MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. SL 4N personnel translate operational requirements into usable, accessible interfaces that WFF-qualified users (SL 4A–F) and all MSS consumers interact with daily.
 
-**TM-40N covers** Soldier Centered Design (SCD): the Army adaptation of human-centered design methodology for operational environments; user research: interview techniques, contextual inquiry, usability testing in classified/OCONUS settings; information architecture: organizing data-dense displays for rapid decision-making under stress; visual design for military applications: color systems for tactical displays, classification marking in UI, contrast and readability in field conditions; Workshop application design: layout patterns, widget selection, dashboard hierarchy, responsive design within Foundry constraints; prototyping: low-fidelity sketches through high-fidelity interactive mockups; design-to-backlog handoff; accessibility: Section 508 compliance, WCAG 2.1 AA standards, assistive technology considerations; and design governance: pattern libraries, design review processes, consistency across MSS applications.
+**SL 4N covers** Soldier Centered Design (SCD): the Army adaptation of human-centered design methodology for operational environments; user research: interview techniques, contextual inquiry, usability testing in classified/OCONUS settings; information architecture: organizing data-dense displays for rapid decision-making under stress; visual design for military applications: color systems for tactical displays, classification marking in UI, contrast and readability in field conditions; Workshop application design: layout patterns, widget selection, dashboard hierarchy, responsive design within Foundry constraints; prototyping: low-fidelity sketches through high-fidelity interactive mockups; design-to-backlog handoff; accessibility: Section 508 compliance, WCAG 2.1 AA standards, assistive technology considerations; and design governance: pattern libraries, design review processes, consistency across MSS applications.
 
-**TM-40N does NOT cover** TypeScript/OSDK application development — see TM-40L (Software Engineer); custom React widget coding — see TM-40L; TM-40N defines the design, TM-40L implements; pipeline design or data modeling — see TM-30; AI/ML model interface design — see TM-40H (AI Engineer) for AIP Logic; TM-40N may design the surface; or program/project management — see TM-40J (Program Manager).
+**SL 4N does NOT cover** TypeScript/OSDK application development — see SL 4L (Software Engineer); custom React widget coding — see SL 4L; SL 4N defines the design, SL 4L implements; pipeline design or data modeling — see SL 3; AI/ML model interface design — see SL 4H (AI Engineer) for AIP Logic; SL 4N may design the surface; or program/project management — see SL 4J (Program Manager).
 
-> **NOTE:** TM-40N is peer to TM-40J (Program Manager) and TM-40L (Software Engineer). Together, these three tracks form the ASF-aligned "balanced team" triad: PM + Designer + Engineer. All specialist tracks require TM-30 as prerequisite. Coordinate across tracks — operational systems require all three disciplines working in concert.
+> **NOTE:** SL 4N is peer to SL 4J (Program Manager) and SL 4L (Software Engineer). Together, these three tracks form the ASF-aligned "balanced team" triad: PM + Designer + Engineer. All specialist tracks require SL 3 as prerequisite. Coordinate across tracks — operational systems require all three disciplines working in concert.
 
 ### 1-1a. The UX Designer in the ODT — Lessons from the XVIII ABC Pilot
 
@@ -36,46 +36,46 @@ The XVIII ABC problem-solution development methodology emphasizes **user feedbac
 - **MVP phase:** Designer validates the interface with real users, captures usability issues, and documents minor adjustments for post-exercise sprints
 - **Discovery/Framing phase:** Products are held stable — Designer gathers data and validates design assumptions for future iterations
 
-> **NOTE:** XVIII ABC's early organizational models separated software development from data science and lacked dedicated UX roles. The result: "applications did not maximize full capabilities" and coordination was "difficult across competing priorities." The unified ODT model — with embedded UX — resolved this. TM-40N graduates entering ODT assignments are expected to operate as the user's advocate within the team from day one.
+> **NOTE:** XVIII ABC's early organizational models separated software development from data science and lacked dedicated UX roles. The result: "applications did not maximize full capabilities" and coordination was "difficult across competing priorities." The unified ODT model — with embedded UX — resolved this. SL 4N graduates entering ODT assignments are expected to operate as the user's advocate within the team from day one.
 
 *Source: Forney, Herrmann, and Steele, "Fighting with Live Data," Military Review Online Exclusive, February 2026.*
 
-*Supplementary: Adkins, "Achieving Decision Dominance," Military Review, Jan-Feb 2025, defines "automated fighting products" (AFPs) as tools that must be "commonly accessible" and "connected to live, authoritative data sources." UX design directly determines whether an AFP meets the accessibility standard. TM-40N graduates design the interface layer that makes data actionable.*
+*Supplementary: Adkins, "Achieving Decision Dominance," Military Review, Jan-Feb 2025, defines "automated fighting products" (AFPs) as tools that must be "commonly accessible" and "connected to live, authoritative data sources." UX design directly determines whether an AFP meets the accessibility standard. SL 4N graduates design the interface layer that makes data actionable.*
 
 ---
 
 ### 1-2. Curriculum Position, Advanced Track, and WFF Context
 
-**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED. Familiarity with visual design tools (Figma, Sketch, or equivalent) and user research methods is recommended independently of the TM series.
+**Prerequisite:** SL 3 (Advanced Builder) is REQUIRED. Familiarity with visual design tools (Figma, Sketch, or equivalent) and user research methods is recommended independently of the TM series.
 
-**Advanced track:** Upon completing TM-40N, qualified UI/UX Designers should pursue **TM-50N (Advanced UI/UX Designer)** for advanced topics including design systems at scale, DDIL-aware design patterns, cross-domain and coalition UI challenges, and design operations governance.
+**Advanced track:** Upon completing SL 4N, qualified UI/UX Designers should pursue **SL 5N (Advanced UI/UX Designer)** for advanced topics including design systems at scale, DDIL-aware design patterns, cross-domain and coalition UI challenges, and design operations governance.
 
-**Peer specialist tracks:** The UI/UX Designer defines how users interact with every MSS application surface. Coordinate with TM-40J (Program Manager) on backlog prioritization — the PM owns the backlog, the Designer validates what goes into it based on user research. Coordinate with TM-40L (Software Engineer) on implementation feasibility — the SWE implements what the Designer specifies; the Designer-SWE interface is a high-frequency coordination point. Coordinate with TM-40H (AI Engineer) when AI-powered features require user-facing surfaces — AIP Logic outputs need designed interaction patterns.
+**Peer specialist tracks:** The UI/UX Designer defines how users interact with every MSS application surface. Coordinate with SL 4J (Program Manager) on backlog prioritization — the PM owns the backlog, the Designer validates what goes into it based on user research. Coordinate with SL 4L (Software Engineer) on implementation feasibility — the SWE implements what the Designer specifies; the Designer-SWE interface is a high-frequency coordination point. Coordinate with SL 4H (AI Engineer) when AI-powered features require user-facing surfaces — AIP Logic outputs need designed interaction patterns.
 
-**WFF awareness:** UI/UX Designers on MSS build the interaction layer that WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command) depend on for operational decision-making. A dashboard that buries critical readiness data, a form that introduces data entry errors, or a workflow that adds unnecessary steps to a time-sensitive process has direct operational impact. Design quality is a WFF readiness factor.
+**WFF awareness:** UI/UX Designers on MSS build the interaction layer that WFF-qualified users (SL 4A through SL 4F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command) depend on for operational decision-making. A dashboard that buries critical readiness data, a form that introduces data entry errors, or a workflow that adds unnecessary steps to a time-sensitive process has direct operational impact. Design quality is a WFF readiness factor.
 
 ---
 
 ### 1-3. The UI/UX Designer's Role in USAREUR-AF
 
-USAREUR-AF is the Army Service Component Command (ASCC) to USEUCOM and USAFRICOM. MSS supports theater land operations across the European and African AOR including III Corps, V Corps, 21st TSC, 7th ATC, 10th AAMDC, 56th MDC-E, SETAF-AF, G2 all-source, and multinational elements. UI/UX Designers at TM-40N level are the human-systems integrators of the USAREUR-AF data ecosystem.
+USAREUR-AF is the Army Service Component Command (ASCC) to USEUCOM and USAFRICOM. MSS supports theater land operations across the European and African AOR including III Corps, V Corps, 21st TSC, 7th ATC, 10th AAMDC, 56th MDC-E, SETAF-AF, G2 all-source, and multinational elements. UI/UX Designers at SL 4N level are the human-systems integrators of the USAREUR-AF data ecosystem.
 
-**The TM-40N role in the data chain:**
+**The SL 4N role in the data chain:**
 
 ```
 MISSION REQUIREMENT
         |
-   USER RESEARCH (TM-40N)
+   USER RESEARCH (SL 4N)
         |
-   DESIGN ARTIFACTS (TM-40N)
+   DESIGN ARTIFACTS (SL 4N)
         |
-   PM BACKLOG (TM-40J) ←→ DESIGN VALIDATION (TM-40N)
+   PM BACKLOG (SL 4J) ←→ DESIGN VALIDATION (SL 4N)
         |
-   IMPLEMENTATION (TM-40L / TM-30)
+   IMPLEMENTATION (SL 4L / SL 3)
         |
-   USABILITY TESTING (TM-40N)
+   USABILITY TESTING (SL 4N)
         |
-OPERATIONAL USE (TM-40A–F, TM-10)
+OPERATIONAL USE (SL 4A–F, SL 1)
 ```
 
 The Designer does not build in isolation. SCD requires continuous contact with the user population — observing how soldiers actually use the system in their operational context, not how the team assumes they use it. In USAREUR-AF, this means understanding that users may be operating across multiple classification levels, in austere field environments, on varying screen sizes, under time pressure, and potentially under degraded network conditions (DDIL).
@@ -107,7 +107,7 @@ SCD follows a four-phase iterative cycle:
 
 **Phase 3 — Develop:** Generate design solutions through sketching, wireframing, and prototyping. Evaluate against operational requirements, not just usability heuristics. A design that is "usable" but does not support the operational decision is a failed design.
 
-**Phase 4 — Deliver:** Test prototypes with representative users in representative environments. Iterate based on feedback. Hand off validated designs to the engineering team (TM-40L) with specifications sufficient for implementation.
+**Phase 4 — Deliver:** Test prototypes with representative users in representative environments. Iterate based on feedback. Hand off validated designs to the engineering team (SL 4L) with specifications sufficient for implementation.
 
 ### 2-2. User Research in Operational Environments
 
@@ -129,7 +129,7 @@ SCD follows a four-phase iterative cycle:
 
 ### 2-3. Design Artifacts and Handoff
 
-**BLUF:** Every design artifact must be specific enough for a TM-40L SWE to implement without guessing intent.
+**BLUF:** Every design artifact must be specific enough for a SL 4L SWE to implement without guessing intent.
 
 **Required artifacts for design-to-development handoff:**
 
@@ -240,7 +240,7 @@ Field environment design constraints:
 | 3. Interactive mockup | High | Figma prototyping, or HTML/CSS static | Visual design, interaction behavior, realistic data | Usability test with representative users |
 | 4. Workshop prototype | Production | Foundry Workshop | Actual platform with real/synthetic data | Go/No-Go evaluation |
 
-**Design-to-backlog handoff:** At Stage 3, the Designer produces a handoff package (see §2-3) for the PM (TM-40J) to write user stories and the SWE (TM-40L) to implement. The Designer reviews implementation against the specification during sprint review.
+**Design-to-backlog handoff:** At Stage 3, the Designer produces a handoff package (see §2-3) for the PM (SL 4J) to write user stories and the SWE (SL 4L) to implement. The Designer reviews implementation against the specification during sprint review.
 
 ### 5-2. Usability Testing on MSS
 
@@ -302,12 +302,12 @@ Before any MSS application design is approved for implementation:
 | Component | Standard | Owner |
 |-----------|----------|-------|
 | Classification banners | IC/DoD mandated colors and placement | Security; Designer verifies implementation |
-| Status indicators | Color + icon + text (§4-1) | TM-40N defines; TM-40L implements |
-| Navigation pattern | Left sidebar for app-level; top bar for global/MSS-level | TM-40N defines |
-| Data tables | Sortable, filterable, paginated; consistent column header styling | TM-40N defines; Workshop provides base |
-| Form patterns | Label position, validation timing, error message format | TM-40N defines |
-| Typography scale | Heading hierarchy, body text, data values, DTGs | TM-40N defines |
-| Color palette | Operational colors (§4-1), neutral palette, accent palette | TM-40N defines |
+| Status indicators | Color + icon + text (§4-1) | SL 4N defines; SL 4L implements |
+| Navigation pattern | Left sidebar for app-level; top bar for global/MSS-level | SL 4N defines |
+| Data tables | Sortable, filterable, paginated; consistent column header styling | SL 4N defines; Workshop provides base |
+| Form patterns | Label position, validation timing, error message format | SL 4N defines |
+| Typography scale | Heading hierarchy, body text, data values, DTGs | SL 4N defines |
+| Color palette | Operational colors (§4-1), neutral palette, accent palette | SL 4N defines |
 
 ### 7-2. Design Review Process
 
@@ -317,7 +317,7 @@ Before any MSS application design is approved for implementation:
 
 | Gate | Reviewer | Criteria |
 |------|----------|----------|
-| Concept review | PM (TM-40J) + SWE (TM-40L) | Problem framing, feasibility, scope |
+| Concept review | PM (SL 4J) + SWE (SL 4L) | Problem framing, feasibility, scope |
 | Design review | Peer Designer + PM | Pattern library compliance, accessibility checklist, information hierarchy |
 | Usability review | Representative users (5+) | Task completion, error rate, satisfaction |
 | Implementation review | Designer reviews SWE build | Fidelity to specification, accessibility in production |
@@ -334,9 +334,9 @@ The Army Software Factory (ASF) balanced team model places Designer, PM, and Eng
 
 | Role | TM Track | Primary Responsibility |
 |------|----------|----------------------|
-| Program Manager | TM-40J | Backlog, priorities, stakeholder management |
-| UI/UX Designer | TM-40N | User research, design specification, usability validation |
-| Software Engineer | TM-40L | Implementation, code quality, deployment |
+| Program Manager | SL 4J | Backlog, priorities, stakeholder management |
+| UI/UX Designer | SL 4N | User research, design specification, usability validation |
+| Software Engineer | SL 4L | Implementation, code quality, deployment |
 
 **Coordination cadence:**
 
@@ -359,7 +359,7 @@ The Designer-SWE interface requires explicit specification of:
 
 ### 8-3. Designer-Platform Engineer Coordination
 
-**BLUF:** The Platform Engineer (TM-40O) controls the environment where designs run. Coordinate on performance budgets, CDN configuration, and deployment constraints.
+**BLUF:** The Platform Engineer (SL 4O) controls the environment where designs run. Coordinate on performance budgets, CDN configuration, and deployment constraints.
 
 When designing applications that will be deployed across USAREUR-AF networks:
 
@@ -389,10 +389,10 @@ When designing applications that will be deployed across USAREUR-AF networks:
 
 | Reference | Relevance |
 |-----------|-----------|
-| TM-40J — Program Manager | Balanced team coordination, backlog management |
-| TM-40L — Software Engineer | Implementation partner, design handoff consumer |
-| TM-40O — Platform Engineer | Deployment environment, performance constraints |
-| TM-30 — Advanced Builder | Workshop configuration skills (prerequisite) |
+| SL 4J — Program Manager | Balanced team coordination, backlog management |
+| SL 4L — Software Engineer | Implementation partner, design handoff consumer |
+| SL 4O — Platform Engineer | Deployment environment, performance constraints |
+| SL 3 — Advanced Builder | Workshop configuration skills (prerequisite) |
 | WCAG 2.1 (W3C) | Accessibility technical standard |
 | DoD Software Modernization Strategy (Feb 2022) | Strategic context for software factory approach |
-| ASF Soldier Centered Design methodology | Foundation for SCD practice in TM-40N |
+| ASF Soldier Centered Design methodology | Foundation for SCD practice in SL 4N |

@@ -34,7 +34,7 @@ POC_LINE       = "USAREUR-AF Operational Data Team  |  C2DAO  |  MAR 2026"
 
 TIMELINE = (
     "RECOMMENDED TIMELINE:  Directive signed NLT D+30  |  Cadre designated NLT D+45  |  "
-    "First TM-10 cohort NLT D+60  |  Full TM-40 coverage NLT D+180"
+    "First SL 1 cohort NLT D+60  |  Full SL 4 coverage NLT D+180"
 )
 
 # ── Rollout content (6 phases) ─────────────────────────────────────────────────
@@ -47,15 +47,15 @@ PHASES = [
     ),
     (
         "2 | CADRE\nSTANDUP",
-        "Identify and assign 5 cadre: 1 OIC + 4 SMEs covering TM-10/20/30/40 tracks. Develop instructor SOP.",
+        "Identify and assign 5 cadre: 1 OIC + 4 SMEs covering SL 1/2/3/4 tracks. Develop instructor SOP.",
         "G6/G2/S6 nominations.\nOIC appointed by CDR.",
-        "Cadre certified; SOP signed; instructors completed TM-40 series.",
+        "Cadre certified; SOP signed; instructors completed SL 4 series.",
     ),
     (
         "3 | AUDIENCE\nSEQUENCING",
-        "Phase training: TM-10 (all staff) → TM-20/30 (data-adjacent billets) → TM-40 series by role.",
+        "Phase training: SL 1 (all staff) → SL 2/3 (data-adjacent billets) → SL 4 series by role.",
         "G3 decision: phased by echelon or MOS priority.\nUnit S3s build into ATP.",
-        "100% TM-10 completion; TM-40 track assignments published.",
+        "100% SL 1 completion; SL 4 track assignments published.",
     ),
     (
         "4 | RESOURCE\n& ACCESS",

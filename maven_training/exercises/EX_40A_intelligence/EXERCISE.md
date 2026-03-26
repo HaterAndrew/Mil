@@ -1,10 +1,10 @@
 # EX_40A — Intelligence
-## Practical Exercise — TM-40A Proficiency
+## Practical Exercise — SL 4A Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-10, TM-20, TM-30 (required); TM-40A and CONCEPTS_GUIDE_TM40A_INTELLIGENCE (current track) |
+| **Prerequisite** | SL 1, SL 2, SL 3 (required); SL 4A and CONCEPTS_GUIDE_TM40A_INTELLIGENCE (current track) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS training instance, standard user access — see ENVIRONMENT_SETUP.md |
 | **Companion TM** | TM_40A_INTELLIGENCE.md |

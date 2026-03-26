@@ -1,7 +1,7 @@
 # TM-40H — MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** The AI engineer builds and owns the technical AI pipeline — from raw ontology data through LLM inference to validated, human-reviewed output. This role requires platform fluency, software engineering discipline, and a thorough understanding of AI safety requirements specific to operational military environments.
-> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Data Literacy Technical Reference (required); CONCEPTS_GUIDE_TM40H_AI_ENGINEER (read before this manual).
+> **Prereqs:** SL 1, Maven User; SL 2, Builder; SL 3, Advanced Builder (required); Data Literacy Technical Reference (required); CONCEPTS_GUIDE_TM40H_AI_ENGINEER (read before this manual).
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
 > **WARNING: AI-GENERATED OUTPUTS ARE NOT AUTHORITATIVE. NO AIP LOGIC WORKFLOW OUTPUT, AGENT RESPONSE, OR LLM-GENERATED PRODUCT SHALL BE USED TO SUPPORT TARGETING, INTELLIGENCE ASSESSMENT, OR COMMAND DECISIONS WITHOUT DOCUMENTED HUMAN REVIEW BY A QUALIFIED ANALYST. FAILURE TO ENFORCE THIS REQUIREMENT CONSTITUTES A FAILURE OF PROFESSIONAL RESPONSIBILITY AND VIOLATES ARMY CIO POLICY (APRIL 2024).**
@@ -18,25 +18,25 @@
 
 This manual provides technical instruction for AI engineers building AI-enabled capabilities on the Maven Smart System (MSS). MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. AI capabilities on MSS are delivered through the AIP (Artificial Intelligence Platform) product suite — specifically AIP Logic, AIP Agent Studio, and Code Workspaces.
 
-**TM-40H covers** AIP Logic workflow authoring, prompt engineering, chain design, and output handling; AIP Agent Studio: agent architecture, tool configuration, memory, and orchestration; LLM integration patterns: connecting ontology data to LLM context, grounding, retrieval-augmented generation (RAG); AI safety and responsible use: human-in-the-loop requirements, output validation gates, OPSEC for AI-generated products; Python transforms that prepare data for AI consumption; ontology integration: connecting AIP Logic workflows to Object Types and Actions; testing, red-teaming, and evaluation of AI outputs; and production deployment and monitoring of AIP Logic workflows.
+**SL 4H covers** AIP Logic workflow authoring, prompt engineering, chain design, and output handling; AIP Agent Studio: agent architecture, tool configuration, memory, and orchestration; LLM integration patterns: connecting ontology data to LLM context, grounding, retrieval-augmented generation (RAG); AI safety and responsible use: human-in-the-loop requirements, output validation gates, OPSEC for AI-generated products; Python transforms that prepare data for AI consumption; ontology integration: connecting AIP Logic workflows to Object Types and Actions; testing, red-teaming, and evaluation of AI outputs; and production deployment and monitoring of AIP Logic workflows.
 
-**TM-40H does NOT cover** basic Workshop, Pipeline Builder, or Ontology configuration — see TM-20 and TM-30; TypeScript OSDK development — see TM-40L (Software Engineer); model training, fine-tuning, or MLOps infrastructure — see TM-40M (ML Engineer); statistical analysis or operational research methodology — see TM-40G (ORSA); or general Python transform development unrelated to AI pipelines — see TM-40L.
+**SL 4H does NOT cover** basic Workshop, Pipeline Builder, or Ontology configuration — see SL 2 and SL 3; TypeScript OSDK development — see SL 4L (Software Engineer); model training, fine-tuning, or MLOps infrastructure — see SL 4M (ML Engineer); statistical analysis or operational research methodology — see SL 4G (ORSA); or general Python transform development unrelated to AI pipelines — see SL 4L.
 
-> **NOTE:** TM-30 is a hard prerequisite. If you cannot independently design a Workshop application, configure an Ontology model, and specify an AIP Logic workflow configuration, complete TM-30 before proceeding. TM-40H assumes TM-30 competency and builds above it — not alongside it.
+> **NOTE:** SL 3 is a hard prerequisite. If you cannot independently design a Workshop application, configure an Ontology model, and specify an AIP Logic workflow configuration, complete SL 3 before proceeding. SL 4H assumes SL 3 competency and builds above it — not alongside it.
 
-> **NOTE — Doctrinal Grounding (ADP 3-13):** ADP 3-13, *Information* (November 2023), is the first Army Doctrine Publication to explicitly reference artificial intelligence and machine learning as tools for processing data into information at speed. ADP 3-13 recognizes AI and ML as means of processing data into information faster than adversaries. AI systems enable speed; humans provide judgment. TM-40H trains the workforce to build and govern these systems within the MSS platform. All AI capabilities developed under this course align to the ADP 3-13 principle that technology accelerates information processing while commanders and staff retain decision authority.
+> **NOTE — Doctrinal Grounding (ADP 3-13):** ADP 3-13, *Information* (November 2023), is the first Army Doctrine Publication to explicitly reference artificial intelligence and machine learning as tools for processing data into information at speed. ADP 3-13 recognizes AI and ML as means of processing data into information faster than adversaries. AI systems enable speed; humans provide judgment. SL 4H trains the workforce to build and govern these systems within the MSS platform. All AI capabilities developed under this course align to the ADP 3-13 principle that technology accelerates information processing while commanders and staff retain decision authority.
 
 ### 1-2. Curriculum Position, Advanced Track, and WFF Context
 
-> **NOTE:** The Army established the **49B AI/ML Officer Career Path** in 2025–26, creating the first dedicated uniformed career track for AI/ML expertise. TM-40H directly aligns to 49B qualification requirements. AI Engineers completing this course and TM-50H (Advanced) are positioned for assignment to 49B-coded billets across the force.
+> **NOTE:** The Army established the **49B AI/ML Officer Career Path** in 2025–26, creating the first dedicated uniformed career track for AI/ML expertise. SL 4H directly aligns to 49B qualification requirements. AI Engineers completing this course and SL 5H (Advanced) are positioned for assignment to 49B-coded billets across the force.
 
-**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED. No exception.
+**Prerequisite:** SL 3 (Advanced Builder) is REQUIRED. No exception.
 
-**Advanced track:** Upon completing TM-40H, qualified AI Engineers should pursue **TM-50H (Advanced AI Engineer)** for advanced topics including multi-agent orchestration, fine-tuning integration, production AI system design, and AI governance leadership on MSS.
+**Advanced track:** Upon completing SL 4H, qualified AI Engineers should pursue **SL 5H (Advanced AI Engineer)** for advanced topics including multi-agent orchestration, fine-tuning integration, production AI system design, and AI governance leadership on MSS.
 
-**Peer specialist tracks:** The AI Engineer works at the boundary with the ML Engineer (TM-40M). The MLE builds and owns the trained model artifact; the AI Engineer wraps that model in AIP Logic orchestration, grounding, and human-review workflow design. Coordinate with TM-40M before any deployment where AI workflows consume ML model outputs. Coordinate with TM-40L (Software Engineer) for OSDK application layers that surface AI-generated products to operational users.
+**Peer specialist tracks:** The AI Engineer works at the boundary with the ML Engineer (SL 4M). The MLE builds and owns the trained model artifact; the AI Engineer wraps that model in AIP Logic orchestration, grounding, and human-review workflow design. Coordinate with SL 4M before any deployment where AI workflows consume ML model outputs. Coordinate with SL 4L (Software Engineer) for OSDK application layers that surface AI-generated products to operational users.
 
-**WFF awareness:** WFF-qualified personnel (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command) are the primary end-users of AI-augmented workflows built by TM-40H engineers. A WFF staff officer using an AIP-generated LOGSTAT assessment or fires assessment draft is the operational consumer. Design AI workflows with that user in mind: clear sourcing, structured human-review gates, and output formats that match the WFF staff section's product requirements.
+**WFF awareness:** WFF-qualified personnel (SL 4A through SL 4F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command) are the primary end-users of AI-augmented workflows built by SL 4H engineers. A WFF staff officer using an AIP-generated LOGSTAT assessment or fires assessment draft is the operational consumer. Design AI workflows with that user in mind: clear sourcing, structured human-review gates, and output formats that match the WFF staff section's product requirements.
 
 ---
 
@@ -85,8 +85,8 @@ The PED framework (FM 2-0, *Intelligence*, October 2023) describes how raw colle
 | PED Phase | AI/ML Analog | MSS Implementation |
 |---|---|---|
 | **Processing** — converting collected information into a form suitable for analysis | Data preprocessing, cleaning, normalization, feature engineering | Pipeline transforms in Code Repositories; Foundry dataset transforms that structure raw feeds into model-ready datasets |
-| **Exploitation** — applying analytical methods to derive meaning from processed data | Model training, inference, prompt-based reasoning, pattern detection | AIP Logic workflows, Agent Studio agents, ML model inference endpoints (coordinate with TM-40M for trained models) |
-| **Dissemination** — delivering intelligence products to consumers in usable formats | Model output delivery, result formatting, product generation | Workshop dashboards, Contour reports, API endpoints via OSDK (coordinate with TM-40L), AIP-generated narrative products with human review |
+| **Exploitation** — applying analytical methods to derive meaning from processed data | Model training, inference, prompt-based reasoning, pattern detection | AIP Logic workflows, Agent Studio agents, ML model inference endpoints (coordinate with SL 4M for trained models) |
+| **Dissemination** — delivering intelligence products to consumers in usable formats | Model output delivery, result formatting, product generation | Workshop dashboards, Contour reports, API endpoints via OSDK (coordinate with SL 4L), AIP-generated narrative products with human review |
 
 > **NOTE:** This mapping is a training aid, not a doctrinal equivalence claim. AI/ML systems augment — they do not replace — the PED cycle. A trained analyst performs exploitation; an AI system accelerates portions of that work under analyst supervision. Every AI-generated output that enters the PED pipeline requires the same human review gate defined in Chapter 6.
 
@@ -162,13 +162,13 @@ See Appendix A for the complete authorization checklist.
 
 ### 1-7. Prerequisites and Environment Setup
 
-**Required access before beginning TM-40H tasks:**
+**Required access before beginning SL 4H tasks:**
 
 1. MSS Code Workspaces access (request via your unit data steward and CDA Portal)
 2. AIP Logic authoring permissions (separate from Code Workspaces — request explicitly)
 3. Agent Studio development permissions (request via C2DAO ticket)
 4. Development-environment dataset access (never start work in production)
-5. Completion and documentation of TM-30 competencies
+5. Completion and documentation of SL 3 competencies
 
 **Environment verification:**
 
@@ -295,7 +295,7 @@ Code Workspaces provides a managed JupyterLab and VS Code environment with direc
 - **Transform authoring** — write and test Python transforms before committing to pipeline
 - **Experiment notebooks** — iterate on prompts, evaluate outputs, document findings before formalizing in Logic
 
-> **NOTE:** Two distinct access patterns exist and must not be conflated. **Within Code Workspaces and Code Repositories (the transforms context):** use the Transforms API (`from transforms.api import transform_df, Input, Output`) for dataset access and the Foundry SDK for Ontology queries. **OSDK (Ontology SDK)** is designed for external applications built outside Foundry — React front-ends, external Python scripts, TypeScript applications. OSDK is not the standard access pattern inside Code Workspaces. If you are writing a transform or Code Workspace notebook, use the Transforms API and Foundry SDK. If you are building an external application that consumes Ontology data, coordinate with the Software Engineer (TM-40L) who owns OSDK integrations.
+> **NOTE:** Two distinct access patterns exist and must not be conflated. **Within Code Workspaces and Code Repositories (the transforms context):** use the Transforms API (`from transforms.api import transform_df, Input, Output`) for dataset access and the Foundry SDK for Ontology queries. **OSDK (Ontology SDK)** is designed for external applications built outside Foundry — React front-ends, external Python scripts, TypeScript applications. OSDK is not the standard access pattern inside Code Workspaces. If you are writing a transform or Code Workspace notebook, use the Transforms API and Foundry SDK. If you are building an external application that consumes Ontology data, coordinate with the Software Engineer (SL 4L) who owns OSDK integrations.
 
 **Standard Code Workspaces import pattern:**
 
@@ -1327,7 +1327,7 @@ No AIP Logic workflow or Agent Studio agent may be promoted to production withou
 > - AIP Logic execution in classified enclaves
 > - Edge deployment for tactical operations
 >
-> Verify current availability in your MSS environment before designing workflows that depend on local inference. For DDIL data operations (non-AI), see TM-30 § 1-10e.
+> Verify current availability in your MSS environment before designing workflows that depend on local inference. For DDIL data operations (non-AI), see SL 3 § 1-10e.
 >
 > *Source: Palantir Developer Community — [Local Inference for DDIL / Classified](https://community.palantir.com/t/local-inference-connector-for-aip-logic-ddil-classified-data-use-cases/6146) — feature may be beta; confirm with Palantir support.*
 
@@ -2215,7 +2215,7 @@ Track review dispositions over time. If rejection rate exceeds 15% over a 30-day
 
 **Evaluation framework** — The combination of test cases, automated checks, and human review criteria used to assess AI output quality.
 
-**Fine-tuning** — The process of additional training of an LLM on domain-specific data. Not addressed in TM-40H; see TM-40M (ML Engineer).
+**Fine-tuning** — The process of additional training of an LLM on domain-specific data. Not addressed in SL 4H; see SL 4M (ML Engineer).
 
 **Grounding** — The practice of providing LLM inference with specific source data to anchor responses in verifiable facts rather than model training data.
 
@@ -2247,7 +2247,7 @@ Track review dispositions over time. If rejection rate exceeds 15% over a 30-day
 
 **Prompt** — The text input to an LLM that includes role definition, instructions, data context, and output format requirements.
 
-**Prompt engineering** — The practice of designing and iterating on prompts to achieve consistent, high-quality LLM outputs. A primary engineering skill for TM-40H.
+**Prompt engineering** — The practice of designing and iterating on prompts to achieve consistent, high-quality LLM outputs. A primary engineering skill for SL 4H.
 
 **Prompt injection** — An attack in which malicious text embedded in data sources attempts to override the LLM's system prompt or instructions.
 
@@ -2279,7 +2279,7 @@ Track review dispositions over time. If rejection rate exceeds 15% over a 30-day
 
 ---
 
-*TM-40H — Maven Smart System AI Engineer Technical Manual*
+*SL 4H — Maven Smart System AI Engineer Technical Manual*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA, Wiesbaden, Germany*
 *2026*
 *Reference: Army CIO Memorandum (April 2, 2024); UDRA v1.1 (February 2025)*

@@ -1,8 +1,8 @@
-# CONCEPTS GUIDE — TM-40D COMPANION — SUSTAINMENT WARFIGHTING FUNCTION · MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 4D COMPANION — SUSTAINMENT WARFIGHTING FUNCTION · MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** ADP 4-0 defines sustainment through six functional elements and eight principles. Each element generates data. That data, historically fragmented across incompatible systems, is what MSS integrates. Understanding why MSS was built requires understanding the information problem that existed before it.
-> **Prereqs:** This guide must be read before beginning TM-40D. TM-10 (Maven User), TM-20 (Builder), and TM-30 (Advanced Builder) are required before beginning TM-40D. Reading this Concepts Guide does not require builder skills, but TM-30 certification must be complete before enrolling in TM-40D.
-> **Purpose:** This guide develops the operational mental models required to effectively integrate MSS into Sustainment warfighting function operations. It is a prerequisite companion to TM-40D and must be read before beginning TM-40D task instruction. This guide is conceptual — it develops understanding, not procedures. No step-by-step tasks appear here.
+> **Prereqs:** This guide must be read before beginning SL 4D. SL 1 (Maven User), SL 2 (Builder), and SL 3 (Advanced Builder) are required before beginning SL 4D. Reading this Concepts Guide does not require builder skills, but SL 3 certification must be complete before enrolling in SL 4D.
+> **Purpose:** This guide develops the operational mental models required to effectively integrate MSS into Sustainment warfighting function operations. It is a prerequisite companion to SL 4D and must be read before beginning SL 4D task instruction. This guide is conceptual — it develops understanding, not procedures. No step-by-step tasks appear here.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -200,7 +200,7 @@ A unit currently at C-2 with a downward trend — deadline count increasing, par
 
 The supported commander needs both data points: current status and projected status. MSS provides both when trend data is current. The S4 who brings the trend chart to the commander — "here is where we are, here is where we are going, here is what will change the trajectory" — is adding analytical value that no legacy slide product could provide.
 
-This is the sustainment data analysis standard that TM-40D supports. It is not about using the platform — it is about thinking analytically about what the platform shows.
+This is the sustainment data analysis standard that SL 4D supports. It is not about using the platform — it is about thinking analytically about what the platform shows.
 
 ---
 
@@ -265,7 +265,7 @@ Each mode has different data characteristics in MSS.
 
 **Rail** offers high throughput for bulk cargo and heavy equipment, but requires lead time, coordination with European rail authorities, and adherence to host nation rail schedules. MSS rail tracking includes rail request status, car assignment, departure and arrival data, and HNS coordination records. Rail is particularly important for USAREUR-AF retrograde and redeployment operations.
 
-**Inland waterway** (Rhine, Danube, and other European river systems) offers economical heavy lift for non-time-sensitive cargo. 88K/88L watercraft data in MSS (see TM-40D, paragraph 4-7) supports the theater distribution picture. Waterway status — draft clearance, bridge clearance, seasonal ice, flood risk — must be current in MSS for distribution planners to rely on it.
+**Inland waterway** (Rhine, Danube, and other European river systems) offers economical heavy lift for non-time-sensitive cargo. 88K/88L watercraft data in MSS (see SL 4D, paragraph 4-7) supports the theater distribution picture. Waterway status — draft clearance, bridge clearance, seasonal ice, flood risk — must be current in MSS for distribution planners to rely on it.
 
 **Road** remains the primary distribution mode for direct support to forward units. USAREUR-AF road distribution planning must account for HNS movement restrictions (convoy approvals required in many partner nations), bridge weight limits, and SOFA requirements.
 
@@ -281,7 +281,7 @@ The S4 and 88N who understand multi-modal distribution — and who use MSS to tr
 
 ### 5-1. Sustainment Data Belongs in the COP
 
-The Common Operating Picture (COP) in MSS integrates data from multiple warfighting functions. The Mission Command WFF (TM-40F) provides the doctrinal framework for COP management. From the sustainment perspective, the key question is: what logistics data must be in the COP for the supported commander to plan effectively?
+The Common Operating Picture (COP) in MSS integrates data from multiple warfighting functions. The Mission Command WFF (SL 4F) provides the doctrinal framework for COP management. From the sustainment perspective, the key question is: what logistics data must be in the COP for the supported commander to plan effectively?
 
 At a minimum, sustainment data in the COP must include:
 - Equipment readiness by unit (C-rating and breakdown)
@@ -305,7 +305,7 @@ This changes the nature of the sustainment brief in the battle rhythm. Instead o
 
 ### 5-4. The S4 as a Producer, Not Just a Consumer, of the COP
 
-The Mission Command COP (TM-40F) is built from contributions from every warfighting function. The S4 is a producer of COP data — not merely a consumer of it.
+The Mission Command COP (SL 4F) is built from contributions from every warfighting function. The S4 is a producer of COP data — not merely a consumer of it.
 
 This distinction matters because it defines the S4's relationship to the COP differently from how most S4 sections conceive of it. Many S4 sections view the COP as an S3 product that they occasionally receive information from. In reality, the sustainment data that the S4 maintains — readiness, supply status, distribution picture — is a layer of the COP that every other staff section relies on.
 
@@ -460,7 +460,7 @@ The S1 section that monitors for anomalies — unexpected strength changes, PERS
 
 The failure modes above are not hypothetical. They have been observed in units across USAREUR-AF and in exercises at JMRC (Joint Multinational Readiness Center). They reflect the predictable adaptation patterns of organizations learning a new information system — the workarounds, the shortcuts, the metric gaming that emerge when data is visible but data discipline is not enforced.
 
-The sustainment practitioner who reads this guide before beginning TM-40D task instruction will recognize these patterns when they appear — in their own unit, in adjacent units, and in their own habits. Recognition is the first step toward correction.
+The sustainment practitioner who reads this guide before beginning SL 4D task instruction will recognize these patterns when they appear — in their own unit, in adjacent units, and in their own habits. Recognition is the first step toward correction.
 
 Mastery of MSS in the sustainment context is not technical mastery — it is analytical mastery. It is the 92A who sees a supply trend and knows it means a resupply request must go out today, not next week. It is the 91Z who sees the parts pipeline report and knows which three work orders need a phone call to the ASP to accelerate. It is the 88N who sees two movement requests arriving from the same unit on the same day and picks up the phone before the convoy gets issued twice.
 
@@ -474,35 +474,35 @@ MSS provides the picture. The sustainment practitioner provides the judgment. Bo
 
 ### WFF Peer Tracks
 
-All six WFF tracks are at the same tier. All six WFF tracks require TM-10, TM-20, and TM-30 as prerequisites.
+All six WFF tracks are at the same tier. All six WFF tracks require SL 1, SL 2, and SL 3 as prerequisites.
 
 | Track | Title | Prereq | Relationship to Sustainment WFF |
 |-------|-------|--------|--------------------------------|
-| TM-40A | Intelligence WFF | TM-10 + TM-20 + TM-30 | LOC threat data, supply point security |
-| TM-40B | Fires WFF | TM-10 + TM-20 + TM-30 | CSR, ammunition management coordination |
-| TM-40C | Movement and Maneuver WFF | TM-10 + TM-20 + TM-30 | Route capacity, maneuver readiness, supply constraints |
-| TM-40D | Sustainment WFF | TM-10 + TM-20 + TM-30 | This track |
-| TM-40E | Protection WFF | TM-10 + TM-20 + TM-30 | CBRN resupply, convoy route protection |
-| TM-40F | Mission Command WFF | TM-10 + TM-20 + TM-30 | LOGSTAT feeds commander FFIR monitoring; S4 products to COP |
+| SL 4A | Intelligence WFF | SL 1 + SL 2 + SL 3 | LOC threat data, supply point security |
+| SL 4B | Fires WFF | SL 1 + SL 2 + SL 3 | CSR, ammunition management coordination |
+| SL 4C | Movement and Maneuver WFF | SL 1 + SL 2 + SL 3 | Route capacity, maneuver readiness, supply constraints |
+| SL 4D | Sustainment WFF | SL 1 + SL 2 + SL 3 | This track |
+| SL 4E | Protection WFF | SL 1 + SL 2 + SL 3 | CBRN resupply, convoy route protection |
+| SL 4F | Mission Command WFF | SL 1 + SL 2 + SL 3 | LOGSTAT feeds commander FFIR monitoring; S4 products to COP |
 
-### Specialist Tracks (Prerequisite: TM-30)
+### Specialist Tracks (Prerequisite: SL 3)
 
-For personnel pursuing technical depth, specialist tracks (TM-40G–O, prereq TM-30) are available. Not required for sustainment WFF employment.
+For personnel pursuing technical depth, specialist tracks (SL 4G–O, prereq SL 3) are available. Not required for sustainment WFF employment.
 
 | Track | Title |
 |-------|-------|
-| TM-40G | ORSA (→ TM-50G) |
-| TM-40H | AI Engineer (→ TM-50H) |
-| TM-40M | ML Engineer (→ TM-50M) |
-| TM-40J | Program Manager (→ TM-50J) |
-| TM-40K | Knowledge Manager (→ TM-50K) |
-| TM-40L | Software Engineer (→ TM-50L) |
-| TM-40N | UI/UX Designer (→ TM-50N) |
-| TM-40O | Platform Engineer (→ TM-50O) |
+| SL 4G | ORSA (→ SL 5G) |
+| SL 4H | AI Engineer (→ SL 5H) |
+| SL 4M | ML Engineer (→ SL 5M) |
+| SL 4J | Program Manager (→ SL 5J) |
+| SL 4K | Knowledge Manager (→ SL 5K) |
+| SL 4L | Software Engineer (→ SL 5L) |
+| SL 4N | UI/UX Designer (→ SL 5N) |
+| SL 4O | Platform Engineer (→ SL 5O) |
 
 ---
 
-*CONCEPTS GUIDE — TM-40D Companion, Version 1.0, March 2026*
-> **NOTE — New Doctrine Content in TM-40D:** TM-40D now includes the eight sustainment principles mapped to data platform analogs (Table 1-1A, ADP 4-0), ten classes of supply with source systems, data feeds, and update frequencies (Table 2-1A), and a running estimate NOTE tying battle rhythm data to commander decision support. These sections ground sustainment data management in their authoritative doctrinal sources.
+*CONCEPTS GUIDE — SL 4D Companion, Version 1.0, March 2026*
+> **NOTE — New Doctrine Content in SL 4D:** SL 4D now includes the eight sustainment principles mapped to data platform analogs (Table 1-1A, ADP 4-0), ten classes of supply with source systems, data feeds, and update frequencies (Table 2-1A), and a running estimate NOTE tying battle rhythm data to commander decision support. These sections ground sustainment data management in their authoritative doctrinal sources.
 
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany*

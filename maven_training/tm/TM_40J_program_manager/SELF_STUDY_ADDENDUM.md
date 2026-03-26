@@ -1,4 +1,4 @@
-# Self-Study Addendum — TM-40J Program Manager (Technical)
+# Self-Study Addendum — SL 4J Program Manager (Technical)
 ## Palantir Developers Reference Library
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.
@@ -9,7 +9,7 @@
 
 ## How to Use This Addendum
 
-Videos are grouped by topic and ordered from foundational to advanced. Start with the group most relevant to your current work. Inline NOTEs in the TM-40J manual identify the specific sections where several of these videos directly reinforce the text.
+Videos are grouped by topic and ordered from foundational to advanced. Start with the group most relevant to your current work. Inline NOTEs in the SL 4J manual identify the specific sections where several of these videos directly reinforce the text.
 
 ---
 

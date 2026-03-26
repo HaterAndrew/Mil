@@ -97,113 +97,113 @@ DODIDS = [f"{1000000000 + i}" for i in range(len(SOLDIERS))]
 def _build_classes(base_date: date) -> list[dict]:
     """Build a list of ~20 training class dicts.
 
-    Mix of TM-10 through TM-40 level courses with varying sizes.
+    Mix of SL 1 through SL 4 level courses with varying sizes.
     """
     classes = [
-        # --- TM-10 classes (large, foundational) ---
+        # --- SL 1 classes (large, foundational) ---
         {
-            "course_id": "TM-10", "class_name": "TM-10 Maven User (Wiesbaden Mar)",
+            "course_id": "SL 1", "class_name": "SL 1 Maven User (Wiesbaden Mar)",
             "start_date": base_date + timedelta(days=3),
             "end_date": base_date + timedelta(days=4),
             "location": "Wiesbaden", "max_seats": 40,
             "instructor": "MAJ SMITH", "status": "SCHEDULED",
         },
         {
-            "course_id": "TM-10", "class_name": "TM-10 Maven User (Grafenwoehr Apr)",
+            "course_id": "SL 1", "class_name": "SL 1 Maven User (Grafenwoehr Apr)",
             "start_date": base_date + timedelta(days=30),
             "end_date": base_date + timedelta(days=31),
             "location": "Grafenwoehr", "max_seats": 40,
             "instructor": "MAJ JOHNSON", "status": "SCHEDULED",
         },
         {
-            "course_id": "TM-10", "class_name": "TM-10 Maven User (Stuttgart May)",
+            "course_id": "SL 1", "class_name": "SL 1 Maven User (Stuttgart May)",
             "start_date": base_date + timedelta(days=60),
             "end_date": base_date + timedelta(days=61),
             "location": "Stuttgart", "max_seats": 30,
             "instructor": "SFC HENDERSON", "status": "SCHEDULED",
         },
-        # --- TM-20 classes ---
+        # --- SL 2 classes ---
         {
-            "course_id": "TM-20", "class_name": "TM-20 Builder (Wiesbaden Apr)",
+            "course_id": "SL 2", "class_name": "SL 2 Builder (Wiesbaden Apr)",
             "start_date": base_date + timedelta(days=14),
             "end_date": base_date + timedelta(days=18),
             "location": "Wiesbaden", "max_seats": 30,
             "instructor": "CW3 DAVIS", "status": "SCHEDULED",
         },
         {
-            "course_id": "TM-20", "class_name": "TM-20 Builder (Vilseck Apr)",
+            "course_id": "SL 2", "class_name": "SL 2 Builder (Vilseck Apr)",
             "start_date": base_date + timedelta(days=35),
             "end_date": base_date + timedelta(days=39),
             "location": "Vilseck", "max_seats": 20,
             "instructor": "CW3 WILLIAMS", "status": "SCHEDULED",
         },
         {
-            "course_id": "TM-20", "class_name": "TM-20 Builder (Sembach May)",
+            "course_id": "SL 2", "class_name": "SL 2 Builder (Sembach May)",
             "start_date": base_date + timedelta(days=65),
             "end_date": base_date + timedelta(days=69),
             "location": "Sembach", "max_seats": 30,
             "instructor": "MAJ SMITH", "status": "SCHEDULED",
         },
-        # --- TM-30 classes ---
+        # --- SL 3 classes ---
         {
-            "course_id": "TM-30", "class_name": "TM-30 Advanced Builder (Grafenwoehr Apr)",
+            "course_id": "SL 3", "class_name": "SL 3 Advanced Builder (Grafenwoehr Apr)",
             "start_date": base_date + timedelta(days=21),
             "end_date": base_date + timedelta(days=25),
             "location": "Grafenwoehr", "max_seats": 20,
             "instructor": "CW3 DAVIS", "status": "SCHEDULED",
         },
         {
-            "course_id": "TM-30", "class_name": "TM-30 Advanced Builder (Wiesbaden May)",
+            "course_id": "SL 3", "class_name": "SL 3 Advanced Builder (Wiesbaden May)",
             "start_date": base_date + timedelta(days=50),
             "end_date": base_date + timedelta(days=54),
             "location": "Wiesbaden", "max_seats": 20,
             "instructor": "MSG TAYLOR", "status": "SCHEDULED",
         },
-        # --- TM-40 specialist classes ---
+        # --- SL 4 specialist classes ---
         {
-            "course_id": "TM-40A", "class_name": "TM-40A Intelligence WFF (Wiesbaden Apr)",
+            "course_id": "SL 4A", "class_name": "SL 4A Intelligence WFF (Wiesbaden Apr)",
             "start_date": base_date + timedelta(days=28),
             "end_date": base_date + timedelta(days=31),
             "location": "Wiesbaden", "max_seats": 20,
             "instructor": "MAJ JOHNSON", "status": "SCHEDULED",
         },
         {
-            "course_id": "TM-40B", "class_name": "TM-40B Fires WFF (Grafenwoehr Apr)",
+            "course_id": "SL 4B", "class_name": "SL 4B Fires WFF (Grafenwoehr Apr)",
             "start_date": base_date + timedelta(days=35),
             "end_date": base_date + timedelta(days=38),
             "location": "Grafenwoehr", "max_seats": 20,
             "instructor": "1SG BROOKS", "status": "SCHEDULED",
         },
         {
-            "course_id": "TM-40D", "class_name": "TM-40D Sustainment WFF (Stuttgart May)",
+            "course_id": "SL 4D", "class_name": "SL 4D Sustainment WFF (Stuttgart May)",
             "start_date": base_date + timedelta(days=55),
             "end_date": base_date + timedelta(days=58),
             "location": "Stuttgart", "max_seats": 20,
             "instructor": "SFC HENDERSON", "status": "SCHEDULED",
         },
         {
-            "course_id": "TM-40G", "class_name": "TM-40G ORSA (Wiesbaden May)",
+            "course_id": "SL 4G", "class_name": "SL 4G ORSA (Wiesbaden May)",
             "start_date": base_date + timedelta(days=42),
             "end_date": base_date + timedelta(days=46),
             "location": "Wiesbaden", "max_seats": 20,
             "instructor": "CW3 WILLIAMS", "status": "SCHEDULED",
         },
         {
-            "course_id": "TM-40H", "class_name": "TM-40H AI Engineer (Sembach May)",
+            "course_id": "SL 4H", "class_name": "SL 4H AI Engineer (Sembach May)",
             "start_date": base_date + timedelta(days=48),
             "end_date": base_date + timedelta(days=52),
             "location": "Sembach", "max_seats": 20,
             "instructor": "CW3 DAVIS", "status": "SCHEDULED",
         },
         {
-            "course_id": "TM-40J", "class_name": "TM-40J Program Manager (Vilseck May)",
+            "course_id": "SL 4J", "class_name": "SL 4J Program Manager (Vilseck May)",
             "start_date": base_date + timedelta(days=70),
             "end_date": base_date + timedelta(days=73),
             "location": "Vilseck", "max_seats": 20,
             "instructor": "MAJ SMITH", "status": "SCHEDULED",
         },
         {
-            "course_id": "TM-40L", "class_name": "TM-40L Software Engineer (Wiesbaden Jun)",
+            "course_id": "SL 4L", "class_name": "SL 4L Software Engineer (Wiesbaden Jun)",
             "start_date": base_date + timedelta(days=75),
             "end_date": base_date + timedelta(days=79),
             "location": "Wiesbaden", "max_seats": 20,
@@ -217,9 +217,9 @@ def _build_classes(base_date: date) -> list[dict]:
             "location": "Grafenwoehr", "max_seats": 20,
             "instructor": "1SG BROOKS", "status": "SCHEDULED",
         },
-        # --- TM-40E (full class — will have waitlist) ---
+        # --- SL 4E (full class — will have waitlist) ---
         {
-            "course_id": "TM-40E", "class_name": "TM-40E Protection WFF (Vilseck Apr)",
+            "course_id": "SL 4E", "class_name": "SL 4E Protection WFF (Vilseck Apr)",
             "start_date": base_date + timedelta(days=32),
             "end_date": base_date + timedelta(days=35),
             "location": "Vilseck", "max_seats": 20,
@@ -227,7 +227,7 @@ def _build_classes(base_date: date) -> list[dict]:
         },
         # --- Completed class ---
         {
-            "course_id": "TM-10", "class_name": "TM-10 Maven User (Wiesbaden Feb — COMPLETED)",
+            "course_id": "SL 1", "class_name": "SL 1 Maven User (Wiesbaden Feb — COMPLETED)",
             "start_date": base_date - timedelta(days=30),
             "end_date": base_date - timedelta(days=29),
             "location": "Wiesbaden", "max_seats": 30,
@@ -235,15 +235,15 @@ def _build_classes(base_date: date) -> list[dict]:
         },
         # --- Cancelled class ---
         {
-            "course_id": "TM-30", "class_name": "TM-30 Advanced Builder (Stuttgart — CANCELLED)",
+            "course_id": "SL 3", "class_name": "SL 3 Advanced Builder (Stuttgart — CANCELLED)",
             "start_date": base_date + timedelta(days=40),
             "end_date": base_date + timedelta(days=44),
             "location": "Stuttgart", "max_seats": 20,
             "instructor": None, "status": "CANCELLED",
         },
-        # --- One more TM-40M class ---
+        # --- One more SL 4M class ---
         {
-            "course_id": "TM-40M", "class_name": "TM-40M ML Engineer (Wiesbaden Jun)",
+            "course_id": "SL 4M", "class_name": "SL 4M ML Engineer (Wiesbaden Jun)",
             "start_date": base_date + timedelta(days=80),
             "end_date": base_date + timedelta(days=84),
             "location": "Wiesbaden", "max_seats": 20,
@@ -288,49 +288,49 @@ def seed():
 
         # --- Enrollment assignments ---
         # Map class index to list of soldier indices to enroll
-        # Classes 0-2: TM-10 (large), 3-5: TM-20, 6-7: TM-30, 8-14: TM-40 variants,
-        # 15: FBC, 16: TM-40E (full+waitlist), 17: completed, 18: cancelled, 19: TM-40M
+        # Classes 0-2: SL 1 (large), 3-5: SL 2, 6-7: SL 3, 8-14: SL 4 variants,
+        # 15: FBC, 16: SL 4E (full+waitlist), 17: completed, 18: cancelled, 19: SL 4M
 
         enrollment_map: dict[int, list[int]] = {
-            # TM-10 Wiesbaden Mar — partially filled (~15 of 40)
+            # SL 1 Wiesbaden Mar — partially filled (~15 of 40)
             0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 34, 35, 36],
-            # TM-10 Grafenwoehr Apr — partially filled (~12 of 40)
+            # SL 1 Grafenwoehr Apr — partially filled (~12 of 40)
             1: [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
-            # TM-10 Stuttgart May — lightly filled (~8 of 30)
+            # SL 1 Stuttgart May — lightly filled (~8 of 30)
             2: [24, 25, 26, 27, 28, 29, 30, 31],
-            # TM-20 Wiesbaden Apr — nearly full (~18 of 30)
+            # SL 2 Wiesbaden Apr — nearly full (~18 of 30)
             3: list(range(0, 18)),
-            # TM-20 Vilseck Apr — full (20 of 20) — will trigger waitlist scenario
+            # SL 2 Vilseck Apr — full (20 of 20) — will trigger waitlist scenario
             4: list(range(0, 20)),
-            # TM-20 Sembach May — lightly filled (~6 of 30)
+            # SL 2 Sembach May — lightly filled (~6 of 30)
             5: [24, 25, 26, 34, 35, 36],
-            # TM-30 Grafenwoehr Apr — moderate (~10 of 20)
+            # SL 3 Grafenwoehr Apr — moderate (~10 of 20)
             6: [0, 1, 3, 4, 12, 13, 16, 24, 25, 34],
-            # TM-30 Wiesbaden May — light (~5 of 20)
+            # SL 3 Wiesbaden May — light (~5 of 20)
             7: [5, 6, 14, 15, 26],
-            # TM-40A Intelligence — light (~6 of 20)
+            # SL 4A Intelligence — light (~6 of 20)
             8: [0, 1, 4, 12, 13, 16],
-            # TM-40B Fires — light (~5 of 20)
+            # SL 4B Fires — light (~5 of 20)
             9: [24, 25, 26, 28, 30],
-            # TM-40D Sustainment — moderate (~8 of 20)
+            # SL 4D Sustainment — moderate (~8 of 20)
             10: [34, 35, 36, 37, 38, 39, 40, 41],
-            # TM-40G ORSA — moderate (~7 of 20)
+            # SL 4G ORSA — moderate (~7 of 20)
             11: [0, 3, 9, 12, 19, 24, 34],
-            # TM-40H AI Engineer — moderate (~6 of 20)
+            # SL 4H AI Engineer — moderate (~6 of 20)
             12: [1, 4, 13, 16, 25, 43],
-            # TM-40J Program Manager — light (~4 of 20)
+            # SL 4J Program Manager — light (~4 of 20)
             13: [3, 12, 35, 38],
-            # TM-40L Software Engineer — light (~5 of 20)
+            # SL 4L Software Engineer — light (~5 of 20)
             14: [0, 1, 13, 25, 44],
             # FBC Grafenwoehr — moderate (~8 of 20)
             15: [7, 8, 17, 18, 20, 21, 29, 30],
-            # TM-40E Protection Vilseck — FULL (20 of 20, will also get waitlist entries)
+            # SL 4E Protection Vilseck — FULL (20 of 20, will also get waitlist entries)
             16: list(range(0, 20)),
-            # Completed TM-10 — all enrolled marked COMPLETED
+            # Completed SL 1 — all enrolled marked COMPLETED
             17: [0, 1, 2, 3, 4, 5, 12, 13, 14, 24, 25, 34, 35, 42, 43],
             # Cancelled — no enrollments
             18: [],
-            # TM-40M ML Engineer — light (~4 of 20)
+            # SL 4M ML Engineer — light (~4 of 20)
             19: [1, 4, 25, 43],
         }
 
@@ -367,9 +367,9 @@ def seed():
         db.flush()
 
         # --- Waitlist entries ---
-        # Add waitlist entries for class 16 (TM-40E full) and class 4 (TM-20 Vilseck full)
+        # Add waitlist entries for class 16 (SL 4E full) and class 4 (SL 2 Vilseck full)
         waitlist_entries_data = [
-            # TM-40E waitlist — soldiers who didn't get a seat
+            # SL 4E waitlist — soldiers who didn't get a seat
             (16, 42, 2),  # BAILEY — high priority
             (16, 43, 1),  # RIVERA
             (16, 44, 0),  # COOPER
@@ -378,7 +378,7 @@ def seed():
             (16, 47, 0),  # HOWARD
             (16, 48, 0),  # WARD
             (16, 49, 2),  # TORRES — high priority
-            # TM-20 Vilseck waitlist
+            # SL 2 Vilseck waitlist
             (4, 32, 1),   # ROBERTS
             (4, 33, 0),   # TURNER
             (4, 37, 0),   # STEWART

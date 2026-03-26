@@ -1,7 +1,7 @@
-# CONCEPTS GUIDE — TM-40K COMPANION — KNOWLEDGE MANAGER · MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 4K COMPANION — KNOWLEDGE MANAGER · MAVEN SMART SYSTEM (MSS)
 
 > **Forward:** The KM on MSS builds the institutional memory of the formation. The primary output is structured, findable, usable knowledge — lessons learned, SOPs, decision records, after-action content — stored in MSS in a way that supports future operations. If that knowledge cannot be found, it was never really captured.
-> **Purpose:** Develops the mental models required to design, implement, and maintain knowledge management solutions on MSS effectively. Read before beginning TM-40K task instruction.
+> **Purpose:** Develops the mental models required to design, implement, and maintain knowledge management solutions on MSS effectively. Read before beginning SL 4K task instruction.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -14,12 +14,12 @@
 
 | Role | Primary Output | Works In | Key Skill |
 |---|---|---|---|
-| Maven User (TM-10/20) | Consumes and creates basic content | Workshop, Quiver | Navigation, basic data literacy |
-| Builder (TM-20/30) | Dashboards, views, basic transforms | Workshop, Pipeline Builder | Visual design, data connection |
-| ORSA (TM-40G) | Analysis products, commander briefs | Notepad, Contour, Python | Quantitative reasoning |
-| ML Engineer (TM-40M) | Models, predictions | Code Repos, Model Registry | Statistical methods |
-| SWE (TM-40L) | Integrated applications, OSDK | Code Repos, TypeScript | Software engineering |
-| **Knowledge Manager (TM-40K)** | **Institutional knowledge architecture** | **Ontology Manager, Workshop, AIP** | **Information architecture, governance** |
+| Maven User (SL 1/SL 2) | Consumes and creates basic content | Workshop, Quiver | Navigation, basic data literacy |
+| Builder (SL 2/SL 3) | Dashboards, views, basic transforms | Workshop, Pipeline Builder | Visual design, data connection |
+| ORSA (SL 4G) | Analysis products, commander briefs | Notepad, Contour, Python | Quantitative reasoning |
+| ML Engineer (SL 4M) | Models, predictions | Code Repos, Model Registry | Statistical methods |
+| SWE (SL 4L) | Integrated applications, OSDK | Code Repos, TypeScript | Software engineering |
+| **Knowledge Manager (SL 4K)** | **Institutional knowledge architecture** | **Ontology Manager, Workshop, AIP** | **Information architecture, governance** |
 
 The KM is unique in that the primary deliverable is organizational — a designed system for capturing, organizing, and retrieving knowledge — not a single dashboard or analysis. A KM who builds a beautiful lessons-learned form but designs no retrieval interface, no governance process, and no retention policy has built an input with no output.
 
@@ -27,9 +27,9 @@ The data steward role overlaps partially: both care about data quality and gover
 
 > **NOTE — FM 6-0 KM Process and Tools (TM-40K Section 1-5b):** TM-40K Section 1-5b codifies the FM 6-0 five-step KM process, three KM tasks, and six KM tool categories as the doctrinal foundation for all MSS knowledge management work. Review before beginning any KM architecture design.
 
-> **NOTE — FM 6-22 Developmental Domains:** TM-40K now references FM 6-22 (Army Leadership and the Profession) developmental domains as a framework for expertise profiling in MSS personnel knowledge systems.
+> **NOTE — FM 6-22 Developmental Domains:** SL 4K now references FM 6-22 (Army Leadership and the Profession) developmental domains as a framework for expertise profiling in MSS personnel knowledge systems.
 
-> **NOTE — FM 3-57 Civil Knowledge Integration (CKI):** TM-40K includes a note on FM 3-57 (Civil Affairs Operations) CKI methodology for capturing and structuring civil information within MSS knowledge architectures supporting civil-military operations.
+> **NOTE — FM 3-57 Civil Knowledge Integration (CKI):** SL 4K includes a note on FM 3-57 (Civil Affairs Operations) CKI methodology for capturing and structuring civil information within MSS knowledge architectures supporting civil-military operations.
 
 ### 1-2. MSS vs. SharePoint and AKO
 
@@ -407,16 +407,16 @@ Before beginning any MSS knowledge management build, verify:
 
 ## CURRICULUM NOTES
 
-**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED — not recommended. The KM who has not designed Ontology models and Workshop applications cannot effectively architect knowledge systems on MSS.
+**Prerequisite:** SL 3 (Advanced Builder) is REQUIRED — not recommended. The KM who has not designed Ontology models and Workshop applications cannot effectively architect knowledge systems on MSS.
 
-**Advanced track:** TM-40K graduates should pursue **TM-50K (Advanced Knowledge Manager)** for advanced topics including enterprise-scale knowledge taxonomy design, cross-command knowledge federation, NATO Lessons Learned Database (LLDB) integration, and AI-assisted knowledge synthesis at theater level.
+**Advanced track:** SL 4K graduates should pursue **SL 5K (Advanced Knowledge Manager)** for advanced topics including enterprise-scale knowledge taxonomy design, cross-command knowledge federation, NATO Lessons Learned Database (LLDB) integration, and AI-assisted knowledge synthesis at theater level.
 
 **Peer specialist cross-references:**
-- **TM-40L (Software Engineer):** High-frequency coordination point. The KM designs the knowledge ontology and pipeline architecture; the SWE implements pipelines requiring custom code. Review KM ontology design with TM-40L before build begins — ontology changes have direct impact on downstream pipeline code.
-- **TM-40H (AI Engineer):** Coordinate on AIP-assisted knowledge extraction and summarization workflows. The KM defines the knowledge architecture, human-review requirements, and taxonomy validation standards; the AI Engineer implements the AIP Logic pipeline. Every AIP-extracted knowledge output requires KM-defined SME review before Ontology write.
-- **TM-40G (ORSA):** Coordinate when knowledge metrics (capture rates, lesson implementation rates, gap analysis) require quantitative decision products rather than descriptive monitoring dashboards.
+- **SL 4L (Software Engineer):** High-frequency coordination point. The KM designs the knowledge ontology and pipeline architecture; the SWE implements pipelines requiring custom code. Review KM ontology design with SL 4L before build begins — ontology changes have direct impact on downstream pipeline code.
+- **SL 4H (AI Engineer):** Coordinate on AIP-assisted knowledge extraction and summarization workflows. The KM defines the knowledge architecture, human-review requirements, and taxonomy validation standards; the AI Engineer implements the AIP Logic pipeline. Every AIP-extracted knowledge output requires KM-defined SME review before Ontology write.
+- **SL 4G (ORSA):** Coordinate when knowledge metrics (capture rates, lesson implementation rates, gap analysis) require quantitative decision products rather than descriptive monitoring dashboards.
 
-**WFF awareness:** KMs on MSS build institutional memory systems for WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). Each WFF function generates domain-specific lessons, TTPs, and SOPs. Design knowledge ontology taxonomies with WFF functional areas as primary filter dimensions — a G3 (Operations/Mission Command, TM-40F) staff officer and a fires coordinator (TM-40B) have different knowledge retrieval needs that a single undifferentiated repository cannot serve.
+**WFF awareness:** KMs on MSS build institutional memory systems for WFF-qualified users (SL 4A through SL 4F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command). Each WFF function generates domain-specific lessons, TTPs, and SOPs. Design knowledge ontology taxonomies with WFF functional areas as primary filter dimensions — a G3 (Operations/Mission Command, SL 4F) staff officer and a fires coordinator (SL 4B) have different knowledge retrieval needs that a single undifferentiated repository cannot serve.
 
 **KM-specific governing references:**
 
@@ -428,8 +428,8 @@ Before beginning any MSS knowledge management build, verify:
 | NATO Core Metadata Specification / STANAG 5636 | Structured Metadata Standards | NATO-standard metadata schema — required for coalition-compatible knowledge products |
 | NATO ADatP-34 / NISP | C3 Interoperability Standards | Data cataloging and knowledge exchange standards for NATO interoperability |
 
-> **NOTE — New Doctrine Content in TM-40K:** TM-40K now includes FM 6-0 KM doctrine (5-step process, 3 KM tasks, 6 tool categories mapped to MSS, section 1-5b), FM 6-22 three developmental domains (Institutional/Operational/Self-Development), and FM 3-57 Civil Knowledge Integration as a doctrinal validation of the KM function.
+> **NOTE — New Doctrine Content in SL 4K:** SL 4K now includes FM 6-0 KM doctrine (5-step process, 3 KM tasks, 6 tool categories mapped to MSS, section 1-5b), FM 6-22 three developmental domains (Institutional/Operational/Self-Development), and FM 3-57 Civil Knowledge Integration as a doctrinal validation of the KM function.
 
-*This guide is a prerequisite companion to TM-40K. Read in full before beginning TM-40K task instruction. The mental models developed here underpin every task in TM-40K and are not repeated in the task manual.*
+*This guide is a prerequisite companion to SL 4K. Read in full before beginning SL 4K task instruction. The mental models developed here underpin every task in SL 4K and are not repeated in the task manual.*
 
 *For questions about this guide, contact C2DAO, Wiesbaden, Germany.*

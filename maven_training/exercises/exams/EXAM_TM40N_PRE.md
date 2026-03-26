@@ -1,12 +1,12 @@
-# PRE-TEST — TM-40N: UI/UX DESIGNER
+# PRE-TEST — SL 4N: UI/UX DESIGNER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40N: UI/UX Designer |
+| **Course** | SL 4N: UI/UX Designer |
 | **Form** | Pre-Test |
-| **Level** | TM-40N (Specialist) |
-| **Audience** | UI/UX designers; prerequisite: TM-10+20+30 + design tool familiarity + user research methods |
+| **Level** | SL 4N (Specialist) |
+| **Audience** | UI/UX designers; prerequisite: SL 1+20+30 + design tool familiarity + user research methods |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

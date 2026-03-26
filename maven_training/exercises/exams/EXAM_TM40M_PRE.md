@@ -1,12 +1,12 @@
-# PRE-TEST — TM-40M: ML ENGINEER
+# PRE-TEST — SL 4M: ML ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40M: ML Engineer |
+| **Course** | SL 4M: ML Engineer |
 | **Form** | Pre-Test |
-| **Level** | TM-40M (Specialist) |
-| **Audience** | ML engineers / data scientists; prerequisite: TM-10+20+30 + Python + statistics |
+| **Level** | SL 4M (Specialist) |
+| **Audience** | ML engineers / data scientists; prerequisite: SL 1+20+30 + Python + statistics |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 

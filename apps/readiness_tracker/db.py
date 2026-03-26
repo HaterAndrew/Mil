@@ -83,67 +83,67 @@ class Completion(Base, AuditMixin):
 # Prereq chain — authoritative source of truth
 # ---------------------------------------------------------------------------
 PREREQ_CHAIN: dict[str, list[str]] = {
-    "TM-10": [],
-    "TM-20": ["TM-10"],
-    "TM-30": ["TM-20"],
-    "FBC": ["TM-20"],  # parallel track; does NOT grant TM-30 credit
-    # WFF tracks (A–F) — all require TM-30
-    "TM-40A": ["TM-30"],
-    "TM-40B": ["TM-30"],
-    "TM-40C": ["TM-30"],
-    "TM-40D": ["TM-30"],
-    "TM-40E": ["TM-30"],
-    "TM-40F": ["TM-30"],
-    # Specialist tracks (G–O) — all require TM-30
-    "TM-40G": ["TM-30"],
-    "TM-40H": ["TM-30"],
-    "TM-40M": ["TM-30"],
-    "TM-40J": ["TM-30"],
-    "TM-40K": ["TM-30"],
-    "TM-40L": ["TM-30"],
-    "TM-40N": ["TM-30"],
-    "TM-40O": ["TM-30"],
-    # Advanced specialist (G–O only — NO TM-50A through TM-50F)
-    "TM-50G": ["TM-40G"],
-    "TM-50H": ["TM-40H"],
-    "TM-50M": ["TM-40M"],
-    "TM-50J": ["TM-40J"],
-    "TM-50K": ["TM-40K"],
-    "TM-50L": ["TM-40L"],
-    "TM-50N": ["TM-40N"],
-    "TM-50O": ["TM-40O"],
+    "SL 1": [],
+    "SL 2": ["SL 1"],
+    "SL 3": ["SL 2"],
+    "FBC": ["SL 2"],  # parallel track; does NOT grant SL 3 credit
+    # WFF tracks (A–F) — all require SL 3
+    "SL 4A": ["SL 3"],
+    "SL 4B": ["SL 3"],
+    "SL 4C": ["SL 3"],
+    "SL 4D": ["SL 3"],
+    "SL 4E": ["SL 3"],
+    "SL 4F": ["SL 3"],
+    # Specialist tracks (G–O) — all require SL 3
+    "SL 4G": ["SL 3"],
+    "SL 4H": ["SL 3"],
+    "SL 4M": ["SL 3"],
+    "SL 4J": ["SL 3"],
+    "SL 4K": ["SL 3"],
+    "SL 4L": ["SL 3"],
+    "SL 4N": ["SL 3"],
+    "SL 4O": ["SL 3"],
+    # Advanced specialist (G–O only — NO SL 5A through SL 5F)
+    "SL 5G": ["SL 4G"],
+    "SL 5H": ["SL 4H"],
+    "SL 5M": ["SL 4M"],
+    "SL 5J": ["SL 4J"],
+    "SL 5K": ["SL 4K"],
+    "SL 5L": ["SL 4L"],
+    "SL 5N": ["SL 4N"],
+    "SL 5O": ["SL 4O"],
 }
 
 ALL_COURSES = list(PREREQ_CHAIN.keys())
 
 # Course metadata (name, hours)
 COURSE_CATALOG: dict[str, tuple[str, int]] = {
-    "TM-10": ("Maven User", 8),
-    "TM-20": ("Builder", 40),
-    "TM-30": ("Advanced Builder", 40),
+    "SL 1": ("Maven User", 8),
+    "SL 2": ("Builder", 40),
+    "SL 3": ("Advanced Builder", 40),
     "FBC": ("Foundry Bootcamp", 40),
-    "TM-40A": ("Intelligence WFF", 24),
-    "TM-40B": ("Fires WFF", 24),
-    "TM-40C": ("Movement & Maneuver WFF", 24),
-    "TM-40D": ("Sustainment WFF", 24),
-    "TM-40E": ("Protection WFF", 24),
-    "TM-40F": ("Mission Command WFF", 24),
-    "TM-40G": ("ORSA", 40),
-    "TM-40H": ("AI Engineer", 40),
-    "TM-40M": ("ML Engineer", 40),
-    "TM-40J": ("Program Manager", 24),
-    "TM-40K": ("Knowledge Manager", 24),
-    "TM-40L": ("Software Engineer", 40),
-    "TM-40N": ("UI/UX Designer", 24),
-    "TM-40O": ("Platform Engineer", 40),
-    "TM-50G": ("Advanced ORSA", 40),
-    "TM-50H": ("Advanced AI Engineer", 40),
-    "TM-50M": ("Advanced ML Engineer", 40),
-    "TM-50J": ("Advanced Program Manager", 40),
-    "TM-50K": ("Advanced Knowledge Manager", 40),
-    "TM-50L": ("Advanced Software Engineer", 40),
-    "TM-50N": ("Advanced UI/UX Designer", 40),
-    "TM-50O": ("Advanced Platform Engineer", 40),
+    "SL 4A": ("Intelligence WFF", 24),
+    "SL 4B": ("Fires WFF", 24),
+    "SL 4C": ("Movement & Maneuver WFF", 24),
+    "SL 4D": ("Sustainment WFF", 24),
+    "SL 4E": ("Protection WFF", 24),
+    "SL 4F": ("Mission Command WFF", 24),
+    "SL 4G": ("ORSA", 40),
+    "SL 4H": ("AI Engineer", 40),
+    "SL 4M": ("ML Engineer", 40),
+    "SL 4J": ("Program Manager", 24),
+    "SL 4K": ("Knowledge Manager", 24),
+    "SL 4L": ("Software Engineer", 40),
+    "SL 4N": ("UI/UX Designer", 24),
+    "SL 4O": ("Platform Engineer", 40),
+    "SL 5G": ("Advanced ORSA", 40),
+    "SL 5H": ("Advanced AI Engineer", 40),
+    "SL 5M": ("Advanced ML Engineer", 40),
+    "SL 5J": ("Advanced Program Manager", 40),
+    "SL 5K": ("Advanced Knowledge Manager", 40),
+    "SL 5L": ("Advanced Software Engineer", 40),
+    "SL 5N": ("Advanced UI/UX Designer", 40),
+    "SL 5O": ("Advanced Platform Engineer", 40),
 }
 
 
@@ -253,10 +253,10 @@ def get_unit_rollup(db: Session, unit: str | None = None) -> list[dict]:
 
 # Course tier classification for RAG heatmap
 COURSE_TIERS = {
-    "Foundation": ["TM-10", "TM-20", "TM-30"],
-    "WFF (A-F)": ["TM-40A", "TM-40B", "TM-40C", "TM-40D", "TM-40E", "TM-40F"],
-    "Specialist (G-O)": ["TM-40G", "TM-40H", "TM-40M", "TM-40J", "TM-40K", "TM-40L", "TM-40N", "TM-40O"],
-    "Advanced (50)": ["TM-50G", "TM-50H", "TM-50J", "TM-50K", "TM-50L", "TM-50M", "TM-50N", "TM-50O"],
+    "Foundation": ["SL 1", "SL 2", "SL 3"],
+    "WFF (A-F)": ["SL 4A", "SL 4B", "SL 4C", "SL 4D", "SL 4E", "SL 4F"],
+    "Specialist (G-O)": ["SL 4G", "SL 4H", "SL 4M", "SL 4J", "SL 4K", "SL 4L", "SL 4N", "SL 4O"],
+    "Advanced (50)": ["SL 5G", "SL 5H", "SL 5J", "SL 5K", "SL 5L", "SL 5M", "SL 5N", "SL 5O"],
 }
 
 
@@ -373,9 +373,9 @@ def get_funnel_data(db: Session) -> list[dict]:
 
     # Foundation funnel stages
     stages = [
-        ("TM-10", "TM-10: Maven User"),
-        ("TM-20", "TM-20: Builder"),
-        ("TM-30", "TM-30: Advanced Builder"),
+        ("SL 1", "SL 1: Maven User"),
+        ("SL 2", "SL 2: Builder"),
+        ("SL 3", "SL 3: Advanced Builder"),
     ]
 
     results = []
@@ -388,28 +388,28 @@ def get_funnel_data(db: Session) -> list[dict]:
             "pct": round(count / total * 100, 1) if total else 0,
         })
 
-    # Any TM-40 completion
-    tm40_count = sum(
+    # Any SL 4 completion
+    sl4_count = sum(
         1 for go_courses in trainee_go.values()
-        if any(c.startswith("TM-40") for c in go_courses)
+        if any(c.startswith("SL 4") for c in go_courses)
     )
     results.append({
-        "stage": "TM-40: Any Specialization",
-        "count": tm40_count,
+        "stage": "SL 4: Any Specialization",
+        "count": sl4_count,
         "total": total,
-        "pct": round(tm40_count / total * 100, 1) if total else 0,
+        "pct": round(sl4_count / total * 100, 1) if total else 0,
     })
 
-    # Any TM-50 completion
-    tm50_count = sum(
+    # Any SL 5 completion
+    sl5_count = sum(
         1 for go_courses in trainee_go.values()
-        if any(c.startswith("TM-50") for c in go_courses)
+        if any(c.startswith("SL 5") for c in go_courses)
     )
     results.append({
-        "stage": "TM-50: Advanced",
-        "count": tm50_count,
+        "stage": "SL 5: Advanced",
+        "count": sl5_count,
         "total": total,
-        "pct": round(tm50_count / total * 100, 1) if total else 0,
+        "pct": round(sl5_count / total * 100, 1) if total else 0,
     })
 
     return results

@@ -1,12 +1,12 @@
-# POST-TEST — TM-40L: SOFTWARE ENGINEER
+# POST-TEST — SL 4L: SOFTWARE ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40L: Software Engineer |
+| **Course** | SL 4L: Software Engineer |
 | **Form** | Post-Test |
-| **Level** | TM-40L (Specialist) |
-| **Audience** | Software engineers; prerequisite: TM-10+20+30 + TypeScript/Python + REST API familiarity |
+| **Level** | SL 4L (Specialist) |
+| **Audience** | Software engineers; prerequisite: SL 1+20+30 + TypeScript/Python + REST API familiarity |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (46/66) |
 
@@ -106,7 +106,7 @@ B. Transactions encrypt data at rest as part of the write operation
 C. Transactions are atomic — either all records are written successfully or none are, preventing partial writes that could corrupt downstream consumers
 D. Transactions automatically trigger dependent pipeline refreshes
 
-**13. The minimum number of test cases required for a TypeScript Action validator under TM-40L standards is:**
+**13. The minimum number of test cases required for a TypeScript Action validator under SL 4L standards is:**
 
 A. 3 — one per validation condition
 B. 5 — standard unit test coverage minimum
@@ -197,7 +197,7 @@ D. Domain Owner, Quality Score, and Lineage Reference
 
 &nbsp;
 
-**SA-6. Describe how software engineering capability supports two WFF functions. For each, identify the WFF track (TM-40A through TM-40F) and give a concrete example of a custom TypeScript OSDK application or integration that supports decision-making in that function.**
+**SA-6. Describe how software engineering capability supports two WFF functions. For each, identify the WFF track (SL 4A through SL 4F) and give a concrete example of a custom TypeScript OSDK application or integration that supports decision-making in that function.**
 
 &nbsp;
 
@@ -238,7 +238,7 @@ Passing: 49/70 (70%) — Post-test only. Pre-test is diagnostic.
 10. A — No hardcoded credentials; all injected via environment variables or secrets management.
 11. B — New mileage vs. current mileage comparison is a single-field range validation (one field context).
 12. C — Transactions are atomic — all-or-nothing prevents partial writes.
-13. D — Minimum 8 test cases (per TM-40L standards).
+13. D — Minimum 8 test cases (per SL 4L standards).
 14. B — Hardcoded tenant IDs risk cross-tenant data access if deployed in different context.
 15. A — Strip/reject injection characters, validate length and format before using in queries or writes.
 16. B — The DDOF 30-day MVP mandate — SWEs build pipelines that deliver minimum viable products within 30 days per DDOF Phase 4.
@@ -256,7 +256,7 @@ SA-4. Full credit: fix — when the "Close Work Order" Action completes, set a s
 
 SA-5. Full credit: any six from — (1) no hardcoded credentials in source code; (2) all credentials injected via environment variables; (3) input sanitization applied to all user-supplied values; (4) no sensitive data logged to console or monitoring systems; (5) all OSDK queries use correct pagination (ResourceIterator fully consumed); (6) Action validators have minimum 8 test cases; (7) TypeScript strict mode enabled; (8) all async calls have error handling; (9) no N+1 query patterns; (10) C2DAO branch description written and submitted for data steward review. Two most common credential failures: (1) credentials hardcoded in source files; (2) credentials present in `.env` files committed to the repository.
 
-SA-6. Full credit: any two WFF tracks correctly identified with a SWE example — TM-40A (Intelligence): TypeScript Slate application built to display incoming OSINT entity extractions from the Intelligence Object Type; TM-40B (Fires): OSDK integration that queries Fires Object Types and pushes targeting data to a fires coordination Workshop application; TM-40C (Movement & Maneuver): custom TypeScript integration that reads vehicle position Object Types and renders a real-time maneuver tracking view; TM-40D (Sustainment): OSDK-based pipeline that ingests GCSS-Army supply data and writes to Sustainment Object Types for G4 Workshop dashboards; TM-40E (Protection): custom webhook integration that receives force protection sensor events and writes alerts to the Protection Ontology for analyst review; TM-40F (Mission Command): TypeScript Workshop widget that aggregates cross-WFF status indicators into a commander's common operating picture. Each response must identify the correct TM-40 letter (A–F) and provide a concrete software engineering deliverable for full credit.
+SA-6. Full credit: any two WFF tracks correctly identified with a SWE example — SL 4A (Intelligence): TypeScript Slate application built to display incoming OSINT entity extractions from the Intelligence Object Type; SL 4B (Fires): OSDK integration that queries Fires Object Types and pushes targeting data to a fires coordination Workshop application; SL 4C (Movement & Maneuver): custom TypeScript integration that reads vehicle position Object Types and renders a real-time maneuver tracking view; SL 4D (Sustainment): OSDK-based pipeline that ingests GCSS-Army supply data and writes to Sustainment Object Types for G4 Workshop dashboards; SL 4E (Protection): custom webhook integration that receives force protection sensor events and writes alerts to the Protection Ontology for analyst review; SL 4F (Mission Command): TypeScript Workshop widget that aggregates cross-WFF status indicators into a commander's common operating picture. Each response must identify the correct SL 4 letter (A–F) and provide a concrete software engineering deliverable for full credit.
 
 ---
 

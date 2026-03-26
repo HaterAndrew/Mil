@@ -1,20 +1,20 @@
-# COURSE SYLLABUS — TM-50J: ADVANCED PROGRAM MANAGEMENT (TECHNICAL)
+# COURSE SYLLABUS — SL 5J: ADVANCED PROGRAM MANAGEMENT (TECHNICAL)
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Level** | TM-50J — Advanced PM Specialist Track |
+| **Level** | SL 5J — Advanced PM Specialist Track |
 | **Duration** | 3 days (24 hours) |
-| **Prerequisites** | TM-40J complete (Go evaluation on file); 18+ months leading technical data, AI, or software delivery programs; demonstrated experience managing multi-team delivery with external dependencies and GO/SES stakeholders |
+| **Prerequisites** | SL 4J complete (Go evaluation on file); 18+ months leading technical data, AI, or software delivery programs; demonstrated experience managing multi-team delivery with external dependencies and GO/SES stakeholders |
 | **Audience** | Senior technical PMs, portfolio leads, capability program managers coordinating enterprise-level MSS programs |
 | **Format** | Seminar + case study workshop + evaluated stakeholder exercise |
 | **Location** | MSS Training Environment or classroom (minimal platform dependency) |
 
-> **PREREQUISITE WARNING:** TM-50J is not required for most PM billets. It is intended for personnel managing multi-program portfolios, theater-level data initiatives, or enterprise AI/ML capability development. If managing a single project or team, TM-40J is sufficient.
+> **PREREQUISITE WARNING:** SL 5J is not required for most PM billets. It is intended for personnel managing multi-program portfolios, theater-level data initiatives, or enterprise AI/ML capability development. If managing a single project or team, SL 4J is sufficient.
 
 ---
 
-**BLUF:** TM-50J addresses program leadership at scale — managing portfolios of interdependent data and AI programs, communicating complex technical tradeoffs to GO/SES audiences, structuring enterprise delivery governance, and leading organizational change when adopting MSS capabilities across a theater formation. TM-40J taught project management. TM-50J teaches program portfolio management and organizational data culture leadership.
+**BLUF:** SL 5J addresses program leadership at scale — managing portfolios of interdependent data and AI programs, communicating complex technical tradeoffs to GO/SES audiences, structuring enterprise delivery governance, and leading organizational change when adopting MSS capabilities across a theater formation. SL 4J taught project management. SL 5J teaches program portfolio management and organizational data culture leadership.
 
 ---
 
@@ -95,13 +95,13 @@ Complete **5+ duty days before Day 1:**
 
 ## Peer Advanced Tracks
 
-| Track | Relevance to TM-50J |
+| Track | Relevance to SL 5J |
 |---|---|
-| TM-50G (Advanced ORSA) | ORSA-driven cost/risk tradeoffs informing GO/SES investment decisions; campaign analysis supporting portfolio briefs |
-| TM-50K (Advanced KM) | Institutional knowledge governance for multi-program portfolios; lessons-learned integration into program management |
-| TM-50H (Advanced AI Eng) | AI capability program governance; managing AI system delivery programs with responsible deployment requirements |
+| SL 5G (Advanced ORSA) | ORSA-driven cost/risk tradeoffs informing GO/SES investment decisions; campaign analysis supporting portfolio briefs |
+| SL 5K (Advanced KM) | Institutional knowledge governance for multi-program portfolios; lessons-learned integration into program management |
+| SL 5H (Advanced AI Eng) | AI capability program governance; managing AI system delivery programs with responsible deployment requirements |
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*Syllabus TM-50J | Version 1.0 | March 2026*
+*Syllabus SL 5J | Version 1.0 | March 2026*

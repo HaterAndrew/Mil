@@ -11,12 +11,12 @@ export default function FBC({ showPanel }: Props) {
       <div className="section-header">
         <span className="section-badge" style={{background:'rgba(200,151,26,0.18)',color:'var(--gold)'}}>FBC</span>
         <span className="section-title">Foundry Bootcamp &mdash; Applied Build Event</span>
-        <span className="section-subtitle">Prerequisite: TM-20 + command-validated project &bull; Quarterly &bull; Outside TM chain &bull; No TM credit granted</span>
+        <span className="section-subtitle">Prerequisite: SL 2 + command-validated project &bull; Quarterly &bull; Outside SL chain &bull; No SL credit granted</span>
       </div>
 
       <div className="callout bluf">
         <div className="callout-label">BLUF</div>
-        <div className="callout-body">The Foundry Bootcamp is a quarterly 5-day supervised build event. You bring a validated operational problem; you build a solution; SMEs are available for consultation. Minimal instruction &mdash; this is not a course. You leave with a functional product and a handoff package. FBC does not replace TM-30 and does not grant credit toward TM-40 enrollment.</div>
+        <div className="callout-body">The Foundry Bootcamp is a quarterly 5-day supervised build event. You bring a validated operational problem; you build a solution; SMEs are available for consultation. Minimal instruction &mdash; this is not a course. You leave with a functional product and a handoff package. FBC does not replace SL 3 and does not grant credit toward SL 4 enrollment.</div>
       </div>
 
       <div className="callout info">
@@ -26,7 +26,7 @@ export default function FBC({ showPanel }: Props) {
 
       <div className="callout warning">
         <div className="callout-label">NOTE</div>
-        <div className="callout-body">FBC is <strong>outside the TM-10 through TM-50 training chain.</strong> Completion does not count as TM-30 or any other TM credit. If you need structured platform instruction, enroll in TM-30. FBC is for builders with TM-20 skills and a real problem to solve.</div>
+        <div className="callout-body">FBC is <strong>outside the SL 1 through SL 5 training chain.</strong> Completion does not count as SL 3 or any other SL credit. If you need structured platform instruction, enroll in SL 3. FBC is for builders with SL 2 skills and a real problem to solve.</div>
       </div>
 
       <h2>WHO ATTENDS</h2>
@@ -35,7 +35,7 @@ export default function FBC({ showPanel }: Props) {
           <div className="card-label">REQUIRED</div>
           <div className="card-body">
             <ul>
-              <li><strong>TM-20 Go on file</strong> &mdash; hard requirement, no exceptions</li>
+              <li><strong>SL 2 Go on file</strong> &mdash; hard requirement, no exceptions</li>
               <li><strong>Command-approved Project Brief</strong> &mdash; submitted to C2DAO &ge;14 days before Day 1</li>
               <li>Supervisor signature on enrollment request</li>
             </ul>
@@ -48,7 +48,7 @@ export default function FBC({ showPanel }: Props) {
               <li>Specific output: named dashboard, pipeline, Ontology type, or Quiver/Contour product</li>
               <li>Named consumer &mdash; a real person or role who will use the product</li>
               <li>All data sources accessible <em>before</em> Day 1</li>
-              <li>No code required &mdash; Python / TypeScript / OSDK = TM-40 track, not FBC</li>
+              <li>No code required &mdash; Python / TypeScript / OSDK = SL 4 track, not FBC</li>
               <li>5-day feasibility: functional prototype reachable within sprint</li>
             </ul>
           </div>

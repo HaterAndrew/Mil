@@ -1,12 +1,12 @@
-# POST-TEST — TM-40E: PROTECTION
+# POST-TEST — SL 4E: PROTECTION
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40E: Protection WFF Track |
+| **Course** | SL 4E: Protection WFF Track |
 | **Form** | Post-Test |
-| **Level** | TM-40E (WFF Track) |
-| **Audience** | Force protection officers, CBRN officers, provost marshal staff; prerequisite: completion of TM-40E training |
+| **Level** | SL 4E (WFF Track) |
+| **Audience** | Force protection officers, CBRN officers, provost marshal staff; prerequisite: completion of SL 4E training |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | 80% (32/40 points) |
 
@@ -14,7 +14,7 @@
 
 ## INSTRUCTIONS
 
-This assessment confirms proficiency upon completion of TM-40E training. A score of 80% (32/40) is required for course completion certification. Results are recorded on the student training record.
+This assessment confirms proficiency upon completion of SL 4E training. A score of 80% (32/40) is required for course completion certification. Results are recorded on the student training record.
 
 ---
 

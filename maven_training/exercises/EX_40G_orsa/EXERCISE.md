@@ -1,10 +1,10 @@
 # EX_40G — ORSA
-## Practical Exercise — TM-40G Proficiency
+## Practical Exercise — SL 4G Proficiency
 
 | | |
 |---|---|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-30 REQUIRED; TM-40G (and TM-10 through TM-20) |
+| **Prerequisite** | SL 3 REQUIRED; SL 4G (and SL 1 through SL 2) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS with Python Transforms enabled; Quiver and Contour access — see ENVIRONMENT_SETUP.md |
 
@@ -12,11 +12,11 @@
 
 | Resource | Reference |
 |----------|-----------|
-| Technical Manual | TM-40G — ORSA |
+| Technical Manual | SL 4G — ORSA |
 | Syllabus | SYLLABUS_TM40G |
 | Pre-Exercise Exam | EXAM_TM40G_PRE |
 | Post-Exercise Exam | EXAM_TM40G_POST |
-| Continuation Track | TM-50G — Advanced ORSA |
+| Continuation Track | SL 5G — Advanced ORSA |
 
 ## WFF AWARENESS
 
@@ -85,4 +85,4 @@ Training dataset: synthetic PMCS/maintenance cycle data, 180 days, 3 battalions,
 
 ## NEXT STEPS
 
-Participants who receive an overall Go on EX_40G are eligible to enroll in **TM-50G — Advanced ORSA**. TM-50G extends this exercise's competencies into time-series modeling, multi-source fusion, and senior-leader analytical support. TM-50 is G–O (advanced specialist tracks).
+Participants who receive an overall Go on EX_40G are eligible to enroll in **SL 5G — Advanced ORSA**. SL 5G extends this exercise's competencies into time-series modeling, multi-source fusion, and senior-leader analytical support. SL 5 is G–O (advanced specialist tracks).

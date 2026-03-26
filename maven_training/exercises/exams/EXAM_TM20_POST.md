@@ -1,12 +1,12 @@
-# POST-TEST — TM-20: BUILDER
+# POST-TEST — SL 2: BUILDER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-20: Builder |
+| **Course** | SL 2: Builder |
 | **Form** | Post-Test |
-| **Level** | TM-20 (Intermediate) |
-| **Audience** | All staff — prerequisite: TM-10 |
+| **Level** | SL 2 (Intermediate) |
+| **Audience** | All staff — prerequisite: SL 1 |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (42/60) |
 

@@ -1,18 +1,18 @@
-# COURSE SYLLABUS — TM-40O: PLATFORM ENGINEER
+# COURSE SYLLABUS — SL 4O: PLATFORM ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Level** | TM-40O — Platform Engineer Specialist Track |
+| **Level** | SL 4O — Platform Engineer Specialist Track |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisites** | TM-10, TM-20, TM-30 (all Go evaluations on file — **REQUIRED**, not recommended); Linux systems administration proficiency (intermediate or higher); familiarity with containers (Docker) and version control (Git) |
+| **Prerequisites** | SL 1, SL 2, SL 3 (all Go evaluations on file — **REQUIRED**, not recommended); Linux systems administration proficiency (intermediate or higher); familiarity with containers (Docker) and version control (Git) |
 | **Audience** | Platform engineers responsible for infrastructure, CI/CD, container security, and deployment operations on MSS |
 | **Format** | Instructor-led lecture + lab + practical exercise |
 | **Location** | MSS Training Environment (Kubernetes cluster access required; CLI tools: kubectl, helm, git) |
 
 ---
 
-**BLUF:** TM-40O teaches platform engineers to build, operate, and secure the infrastructure layer that MSS applications run on — Kubernetes cluster management, CI/CD pipeline design, container security and hardening, GitOps workflows, and air-gapped deployment. TM-40O is for engineers who build the platform that application developers (TM-40L) build on. If the requirement is application development, not infrastructure, TM-40L is the correct track.
+**BLUF:** SL 4O teaches platform engineers to build, operate, and secure the infrastructure layer that MSS applications run on — Kubernetes cluster management, CI/CD pipeline design, container security and hardening, GitOps workflows, and air-gapped deployment. SL 4O is for engineers who build the platform that application developers (SL 4L) build on. If the requirement is application development, not infrastructure, SL 4L is the correct track.
 
 ---
 
@@ -126,7 +126,7 @@ Complete **10+ duty days before Day 1:**
 | 1300–1500 | 21 | Exercise | EX_40O continued — air-gapped deployment and security validation |
 | 1500–1515 | — | Break | |
 | 1515–1630 | 22 | Presentation | Platform demonstrations: each trainee presents their environment, pipeline, and security posture |
-| 1630–1700 | 23 | Evaluation | Post-test (EXAM_TM40O_POST); course evaluation; TM-50O pathway discussion |
+| 1630–1700 | 23 | Evaluation | Post-test (EXAM_TM40O_POST); course evaluation; SL 5O pathway discussion |
 
 ---
 
@@ -134,5 +134,5 @@ Complete **10+ duty days before Day 1:**
 
 - **Evaluation:** EXAM_TM40O_POST administered Day 5 (see schedule)
 - **Proficiency exercise:** EX_40O evaluated against Go/No-Go criteria
-- **Continuation:** TM-50O — Advanced Platform Engineer (fleet management, SRE, RMF automation, DevEx engineering)
-- **Cross-track recommendation:** Attend TM-40L (Software Engineer) overview session to understand the application developer's perspective on platform services; review TM-50L Chapter 6 (DevSecOps) for the application-side view of CI/CD
+- **Continuation:** SL 5O — Advanced Platform Engineer (fleet management, SRE, RMF automation, DevEx engineering)
+- **Cross-track recommendation:** Attend SL 4L (Software Engineer) overview session to understand the application developer's perspective on platform services; review TM-50L Chapter 6 (DevSecOps) for the application-side view of CI/CD

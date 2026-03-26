@@ -30,10 +30,10 @@
 **Key Delivery Notes:**
 - Cover Knowles' six principles: Need to Know, Self-Concept, Experience, Readiness, Orientation, Motivation
 - Kolb experiential learning cycle: Concrete Experience → Reflective Observation → Abstract Conceptualization → Active Experimentation
-- Scaffolding: progressive removal of support structures. Demo the concept using the TM-20 pipeline building progression (follow-along → guided → independent → assessed)
+- Scaffolding: progressive removal of support structures. Demo the concept using the SL 2 pipeline building progression (follow-along → guided → independent → assessed)
 - Ask candidates to share their worst experience as a student in a military course. Connect their frustrations to violated adult learning principles.
 
-**Student Activity:** In pairs, analyze a provided TM-20 lesson plan block. Identify where each of Knowles' six principles is or is not addressed. Present findings to group (5 minutes per pair).
+**Student Activity:** In pairs, analyze a provided SL 2 lesson plan block. Identify where each of Knowles' six principles is or is not addressed. Present findings to group (5 minutes per pair).
 
 **Assessment:** Formative — instructor observes discussion quality and principle identification accuracy.
 
@@ -47,11 +47,11 @@
 **TLO:** The candidate will construct a TCS (Task-Condition-Standard) statement from a provided learning requirement and correctly identify the appropriate method of instruction for a given content type.
 
 **Key Delivery Notes:**
-- TCS framework: Task (action verb), Condition (circumstances), Standard (measurable criteria). Use a TM-20 pipeline building task as the worked example.
+- TCS framework: Task (action verb), Condition (circumstances), Standard (measurable criteria). Use a SL 2 pipeline building task as the worked example.
 - TLO vs. ELO hierarchy: TLO = what the trainee can do at lesson end; ELOs = sub-skills that build to TLO
 - Methods of instruction: LEC, DIS, SEM, LAB, WKS, BRF, EVAL — when each is appropriate. Emphasize: MSS courses are 60-70% LAB.
 
-**Student Activity:** Each candidate writes 1 TCS statement for a TM-10 task of their choice. Group reviews and critiques — does the standard pass the "two evaluators would agree" test?
+**Student Activity:** Each candidate writes 1 TCS statement for a SL 1 task of their choice. Group reviews and critiques — does the standard pass the "two evaluators would agree" test?
 
 **Assessment:** Formative — TCS quality reviewed by group.
 
@@ -67,10 +67,10 @@
 **Key Delivery Notes:**
 - The 75% rule: in any lab block, trainees should have hands on keyboard for at least 75% of the time
 - Demonstration-practice-feedback loop: Demonstrate (5 min) → Practice (15 min) → Feedback (5 min) → Repeat
-- Exercise design walkthrough: show how a TM-20 lab exercise is structured to follow this loop
+- Exercise design walkthrough: show how a SL 2 lab exercise is structured to follow this loop
 - Contrast effective vs. ineffective instruction: play a 3-minute video clip of an instructor lecturing over a lab exercise (ineffective) vs. instructor demonstrating then releasing to practice (effective)
 
-**Student Activity:** Each candidate maps a TM-10 or TM-20 lesson block to the demo-practice-feedback loop. Identify the demonstrate, practice, and feedback moments. Identify any block where the loop is incomplete.
+**Student Activity:** Each candidate maps a SL 1 or SL 2 lesson block to the demo-practice-feedback loop. Identify the demonstrate, practice, and feedback moments. Identify any block where the loop is incomplete.
 
 **Assessment:** Formative — instructor reviews mapping accuracy.
 
@@ -81,7 +81,7 @@
 
 **Purpose:** A failed pre-course setup wastes the first hours of Day 1 — hours that cannot be recovered.
 
-**TLO:** Given the universal pre-course checklist, the candidate will execute all steps for a simulated TM-20 course setup, identifying and resolving 2 deliberately planted setup issues.
+**TLO:** Given the universal pre-course checklist, the candidate will execute all steps for a simulated SL 2 course setup, identifying and resolving 2 deliberately planted setup issues.
 
 **Key Delivery Notes:**
 - Walk through the universal pre-course checklist from the Concepts Guide §5-2
@@ -89,7 +89,7 @@
 - Account provisioning coordination: who to contact, timelines, backup plans
 - 2 planted issues: one student account at wrong access level, one workstation with wrong environment URL bookmarked
 
-**Student Activity:** Execute the pre-course checklist on a simulated 6-student TM-20 class roster. Discover and resolve both planted issues.
+**Student Activity:** Execute the pre-course checklist on a simulated 6-student SL 2 class roster. Discover and resolve both planted issues.
 
 **Assessment:** Formative — both issues must be identified and resolved.
 
@@ -116,54 +116,54 @@
 
 ## DAY 2 — PLATFORM DEEP-DIVE FOR INSTRUCTION
 
-### Block 6 — TM-10 Instructor Walkthrough
+### Block 6 — SL 1 Instructor Walkthrough
 **Hours:** 2.0 | **Method:** Lab | **Time:** 0830–1030
 
-**Purpose:** Every TM-10 lab step from the instructor seat — expected outcomes and failure modes.
+**Purpose:** Every SL 1 lab step from the instructor seat — expected outcomes and failure modes.
 
-**TLO:** The candidate will execute every TM-10 lab exercise from the instructor account, identifying the expected outcome and at least one common failure mode for each step.
+**TLO:** The candidate will execute every SL 1 lab exercise from the instructor account, identifying the expected outcome and at least one common failure mode for each step.
 
 **Key Delivery Notes:**
-- Walk through every TM-10 lab exercise sequentially from the instructor MSS account
+- Walk through every SL 1 lab exercise sequentially from the instructor MSS account
 - For each step: what the trainee should see, what goes wrong most often, how to diagnose, how to resolve
 - Focus on Block 2 (navigation — where most students get lost) and Block 6 (classification — highest stakes)
 - Demonstrate the instructor's "second screen" technique: instructor shows their screen while trainees follow on theirs
 
-**Student Activity:** Candidates execute TM-10 labs in parallel with the walkthrough. Each candidate documents 1 failure mode per block that they identify independently.
+**Student Activity:** Candidates execute SL 1 labs in parallel with the walkthrough. Each candidate documents 1 failure mode per block that they identify independently.
 
 **Assessment:** Formative — failure mode documentation reviewed.
 
 ---
 
-### Block 7 — TM-20 Instructor Walkthrough
+### Block 7 — SL 2 Instructor Walkthrough
 **Hours:** 1.25 | **Method:** Lab | **Time:** 1045–1200
 
-**Purpose:** TM-20 has the highest failure rate at the pipeline building stage. Instructors must know every failure mode.
+**Purpose:** SL 2 has the highest failure rate at the pipeline building stage. Instructors must know every failure mode.
 
-**TLO:** The candidate will execute the TM-20 pipeline building, Workshop, and governance exercises from the instructor seat, diagnosing at least 2 pipeline build failures.
+**TLO:** The candidate will execute the SL 2 pipeline building, Workshop, and governance exercises from the instructor seat, diagnosing at least 2 pipeline build failures.
 
 **Key Delivery Notes:**
 - Focus on pipeline build failures: type mismatch on join, wrong join type (inner vs. left), missing column after schema change
 - Workshop: layout issues (widget overlap, filter on wrong data source)
-- Governance: metadata omission is the most common No-Go reason on TM-20 — the instructor must check governance before the trainee submits
+- Governance: metadata omission is the most common No-Go reason on SL 2 — the instructor must check governance before the trainee submits
 
-**Student Activity:** Candidates execute TM-20 pipeline lab. Instructor injects 2 pipeline failures during the exercise; candidates must diagnose without assistance.
+**Student Activity:** Candidates execute SL 2 pipeline lab. Instructor injects 2 pipeline failures during the exercise; candidates must diagnose without assistance.
 
 **Assessment:** Formative — both failures must be diagnosed.
 
 ---
 
-### Block 8 — TM-30 Instructor Walkthrough
+### Block 8 — SL 3 Instructor Walkthrough
 **Hours:** 2.0 | **Method:** Lab | **Time:** 1300–1500
 
-**Purpose:** TM-30 is design-centric. The instructor must facilitate design critiques, not just troubleshoot technical errors.
+**Purpose:** SL 3 is design-centric. The instructor must facilitate design critiques, not just troubleshoot technical errors.
 
-**TLO:** The candidate will walk through the TM-30 Ontology design critique exercise and AIP Logic configuration lab from the instructor seat, demonstrating the design critique facilitation approach.
+**TLO:** The candidate will walk through the SL 3 Ontology design critique exercise and AIP Logic configuration lab from the instructor seat, demonstrating the design critique facilitation approach.
 
 **Key Delivery Notes:**
 - Ontology design critique: how to facilitate without designing for the trainee; the 6-item rubric as the arbiter
 - AIP Logic configuration: common errors (wrong trigger type, input/output mismatch)
-- Quiver linked views: the most common No-Go on TM-30; ensure candidates understand the link direction concept
+- Quiver linked views: the most common No-Go on SL 3; ensure candidates understand the link direction concept
 
 **Student Activity:** Candidates review a deliberately flawed Ontology design and provide critique using the 6-item rubric. Compare critiques across the group.
 
@@ -237,7 +237,7 @@
 **TLO:** The candidate will facilitate a 15-minute lab segment with role-players of varying skill levels and receive peer/instructor feedback on facilitation technique.
 
 **Key Delivery Notes:**
-- Each candidate facilitates a 15-minute segment of a TM-10 or TM-20 lab
+- Each candidate facilitates a 15-minute segment of a SL 1 or SL 2 lab
 - Other candidates role-play trainees: one advanced (finishes early, asks stretch questions), one struggling (quiet, stuck, won't ask for help), one average
 - Instructor observes circulation, help gradient, time management, engagement of the struggling role-player
 
@@ -317,7 +317,7 @@
 - Analysis: "A trainee's pipeline produces 3x the expected rows after a join. What went wrong and why?" (analyze root cause)
 - Avoid yes/no questions — they don't verify comprehension
 
-**Student Activity:** Each candidate writes a 3-question set for a TM-20 lesson block. Group reviews: does each question test the intended level?
+**Student Activity:** Each candidate writes a 3-question set for a SL 2 lesson block. Group reviews: does each question test the intended level?
 
 **Assessment:** Formative — question set quality reviewed.
 
@@ -333,12 +333,12 @@
 **TLO:** The candidate will explain each T&EO component (task number, title, condition, standard, performance measures, critical items) and describe how a T&EO is constructed from a TCS objective.
 
 **Key Delivery Notes:**
-- Walk through a complete T&EO (TM20-03 recommended — pipeline building)
+- Walk through a complete T&EO (SL2-03 recommended — pipeline building)
 - Trace from TCS → TLO → T&EO: show how the standard becomes performance measures
 - Critical items: what makes an item critical (safety, security, operational consequence of failure)
 - Common T&EO design errors: standard too vague ("build a pipeline"), too specific ("click the blue button on the left")
 
-**Student Activity:** Deconstruct TM20-03: identify the TCS origin, trace to performance measures, identify critical items.
+**Student Activity:** Deconstruct SL2-03: identify the TCS origin, trace to performance measures, identify critical items.
 
 **Assessment:** Formative.
 
@@ -433,7 +433,7 @@
 **TLO:** The candidate will deliver a 20-minute block of instruction demonstrating satisfactory performance on at least 5 of 7 instructor observation criteria, with no unsatisfactory on Technical Accuracy or Evaluation Fidelity.
 
 **Key Delivery Notes:**
-- Each candidate delivers a 20-minute block selected from TM-10, TM-20, or TM-30
+- Each candidate delivers a 20-minute block selected from SL 1, SL 2, or SL 3
 - Evaluator (Senior or Master Instructor) scores all 7 criteria
 - Classmates serve as role-play trainees at the appropriate course level
 - After each microteaching: 5-minute peer feedback, then next candidate

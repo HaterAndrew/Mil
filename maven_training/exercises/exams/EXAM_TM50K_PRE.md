@@ -1,12 +1,12 @@
-# PRE-TEST — TM-50K: ADVANCED KNOWLEDGE MANAGER
+# PRE-TEST — SL 5K: ADVANCED KNOWLEDGE MANAGER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-50K: Advanced Knowledge Manager |
+| **Course** | SL 5K: Advanced Knowledge Manager |
 | **Form** | Pre-Test |
-| **Level** | TM-50K (Advanced Specialist) |
-| **Audience** | Senior knowledge managers / enterprise KMOs; prerequisite: TM-40K + enterprise KM experience |
+| **Level** | SL 5K (Advanced Specialist) |
+| **Audience** | Senior knowledge managers / enterprise KMOs; prerequisite: SL 4K + enterprise KM experience |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | N/A — diagnostic only |
 
@@ -43,7 +43,7 @@ B. A hierarchical taxonomy of document categories
 C. A visual flowchart of the KM process workflow
 D. A diagram of the KM system's database schema
 
-**4. "AI-assisted doctrine development" in a TM-50K context means:**
+**4. "AI-assisted doctrine development" in a SL 5K context means:**
 
 A. AI generates Draft summaries or proposed doctrine updates that are reviewed and revised by subject-matter experts before any publication or distribution
 B. AI automatically generates updated doctrine publications when new lessons are collected

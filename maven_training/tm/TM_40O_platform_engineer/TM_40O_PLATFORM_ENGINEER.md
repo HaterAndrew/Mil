@@ -1,10 +1,10 @@
 # TM-40O — MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** TM-40O qualifies platform engineers to design, deploy, secure, and operate the infrastructure layer that MSS applications run on — Kubernetes clusters, CI/CD pipelines, container registries, GitOps workflows, and the DevSecOps toolchain. This is an infrastructure manual — it contains architecture, configuration, and operational procedures, not application code.
-> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Linux systems administration proficiency; familiarity with containers and version control; CONCEPTS_GUIDE_TM40O_PLATFORM_ENGINEER (read before this manual)
+> **Forward:** SL 4O qualifies platform engineers to design, deploy, secure, and operate the infrastructure layer that MSS applications run on — Kubernetes clusters, CI/CD pipelines, container registries, GitOps workflows, and the DevSecOps toolchain. This is an infrastructure manual — it contains architecture, configuration, and operational procedures, not application code.
+> **Prereqs:** SL 1, Maven User; SL 2, Builder; SL 3, Advanced Builder (required); Linux systems administration proficiency; familiarity with containers and version control; CONCEPTS_GUIDE_TM40O_PLATFORM_ENGINEER (read before this manual)
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
-> **WARNING: Infrastructure errors at TM-40O level affect every application and every user on the platform simultaneously. A misconfigured cluster, a broken pipeline, or a compromised container image has blast radius across the entire MSS ecosystem. Apply defense-in-depth. Test changes in non-production first. Maintain rollback capability for every change.**
+> **WARNING: Infrastructure errors at SL 4O level affect every application and every user on the platform simultaneously. A misconfigured cluster, a broken pipeline, or a compromised container image has blast radius across the entire MSS ecosystem. Apply defense-in-depth. Test changes in non-production first. Maintain rollback capability for every change.**
 > **CAUTION: Platform credentials, service account tokens, cluster certificates, and container registry keys are high-value operational secrets. Compromise of platform-level credentials constitutes a critical security incident with potential access to all tenant data. Report immediately to unit S6/G6, C2DAO, and ISSM.**
 
 ## Table of Contents
@@ -28,53 +28,53 @@
 
 ### 1-1. Platform Engineer Specialist Manual
 
-**BLUF:** TM-40O qualifies platform engineers to build, operate, and secure the infrastructure that MSS runs on. The platform engineer builds the floor that every other track stands on.
+**BLUF:** SL 4O qualifies platform engineers to build, operate, and secure the infrastructure that MSS runs on. The platform engineer builds the floor that every other track stands on.
 
-This manual provides task-based instruction for platform engineers operating on the Maven Smart System (MSS). MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. TM-40O personnel design and maintain the infrastructure layer — the compute, networking, security, and delivery mechanisms that make application development possible.
+This manual provides task-based instruction for platform engineers operating on the Maven Smart System (MSS). MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. SL 4O personnel design and maintain the infrastructure layer — the compute, networking, security, and delivery mechanisms that make application development possible.
 
-**TM-40O covers** platform-as-product: designing internal developer platforms that serve application teams; Kubernetes: cluster architecture, workload scheduling, resource management, multi-cluster operations; Infrastructure as Code (IaC): declarative configuration, GitOps workflows, continuous reconciliation, environment parity; container security: DoD-hardened images (Iron Bank), vulnerability scanning, SHA256 digest pinning, supply chain security; CI/CD pipeline design: automated build, test, scan, and deploy workflows for MSS applications; release engineering: deployment orchestration, blue/green and canary strategies, rollback procedures; air-gapped and DDIL operations: deploying across classification boundaries, disconnected operations, edge cluster management; and platform security: RMF/ATO lifecycle from the infrastructure perspective, STIG compliance, continuous monitoring.
+**SL 4O covers** platform-as-product: designing internal developer platforms that serve application teams; Kubernetes: cluster architecture, workload scheduling, resource management, multi-cluster operations; Infrastructure as Code (IaC): declarative configuration, GitOps workflows, continuous reconciliation, environment parity; container security: DoD-hardened images (Iron Bank), vulnerability scanning, SHA256 digest pinning, supply chain security; CI/CD pipeline design: automated build, test, scan, and deploy workflows for MSS applications; release engineering: deployment orchestration, blue/green and canary strategies, rollback procedures; air-gapped and DDIL operations: deploying across classification boundaries, disconnected operations, edge cluster management; and platform security: RMF/ATO lifecycle from the infrastructure perspective, STIG compliance, continuous monitoring.
 
-**TM-40O does NOT cover** application code development (OSDK, TypeScript, Python transforms) — see TM-40L (Software Engineer); Workshop or Slate application design — see TM-40N (UI/UX Designer), TM-30; data pipeline design or Ontology modeling — see TM-30, TM-40H; ML model training or deployment — see TM-40M (ML Engineer); program/project management — see TM-40J (Program Manager); or Foundry platform administration (Foundry-native admin is managed by Palantir; TM-40O covers the surrounding infrastructure).
+**SL 4O does NOT cover** application code development (OSDK, TypeScript, Python transforms) — see SL 4L (Software Engineer); Workshop or Slate application design — see SL 4N (UI/UX Designer), SL 3; data pipeline design or Ontology modeling — see SL 3, SL 4H; ML model training or deployment — see SL 4M (ML Engineer); program/project management — see SL 4J (Program Manager); or Foundry platform administration (Foundry-native admin is managed by Palantir; SL 4O covers the surrounding infrastructure).
 
-> **NOTE:** TM-40O is peer to TM-40L (Software Engineer), TM-40N (UI/UX Designer), and TM-40J (Program Manager). The Platform Engineer supports all application teams by providing reliable, secure, and automated infrastructure. Coordinate across tracks — platform changes affect every downstream consumer.
+> **NOTE:** SL 4O is peer to SL 4L (Software Engineer), SL 4N (UI/UX Designer), and SL 4J (Program Manager). The Platform Engineer supports all application teams by providing reliable, secure, and automated infrastructure. Coordinate across tracks — platform changes affect every downstream consumer.
 
 ### 1-2. Curriculum Position, Advanced Track, and WFF Context
 
-**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED. Linux systems administration proficiency (intermediate or higher), familiarity with containers (Docker or equivalent), and version control (Git) are required independently of the TM series.
+**Prerequisite:** SL 3 (Advanced Builder) is REQUIRED. Linux systems administration proficiency (intermediate or higher), familiarity with containers (Docker or equivalent), and version control (Git) are required independently of the TM series.
 
-**Advanced track:** Upon completing TM-40O, qualified Platform Engineers should pursue **TM-50O (Advanced Platform Engineer)** for advanced topics including multi-cluster fleet management, platform reliability engineering (SLOs/SLIs), RMF/ATO automation, and developer experience engineering.
+**Advanced track:** Upon completing SL 4O, qualified Platform Engineers should pursue **SL 5O (Advanced Platform Engineer)** for advanced topics including multi-cluster fleet management, platform reliability engineering (SLOs/SLIs), RMF/ATO automation, and developer experience engineering.
 
-**Peer specialist tracks:** The Platform Engineer provides the infrastructure that all other tracks depend on. Coordinate with TM-40L (Software Engineer) on CI/CD pipeline requirements, deployment workflows, and development environment provisioning. Coordinate with TM-40H (AI Engineer) and TM-40M (ML Engineer) on compute resource requirements for model training and inference workloads. Coordinate with TM-40N (UI/UX Designer) on performance budgets and deployment constraints that affect application design. Coordinate with TM-40K (Knowledge Manager) on data pipeline infrastructure requirements.
+**Peer specialist tracks:** The Platform Engineer provides the infrastructure that all other tracks depend on. Coordinate with SL 4L (Software Engineer) on CI/CD pipeline requirements, deployment workflows, and development environment provisioning. Coordinate with SL 4H (AI Engineer) and SL 4M (ML Engineer) on compute resource requirements for model training and inference workloads. Coordinate with SL 4N (UI/UX Designer) on performance budgets and deployment constraints that affect application design. Coordinate with SL 4K (Knowledge Manager) on data pipeline infrastructure requirements.
 
-**WFF awareness:** Platform Engineers on MSS maintain the infrastructure that every WFF-qualified user (TM-40A through TM-40F) depends on. When the platform is down, every application is down. When the pipeline is broken, no code reaches production. When the security posture degrades, the ATO is at risk and the entire MSS capability may be suspended. Platform reliability is the foundational WFF readiness factor.
+**WFF awareness:** Platform Engineers on MSS maintain the infrastructure that every WFF-qualified user (SL 4A through SL 4F) depends on. When the platform is down, every application is down. When the pipeline is broken, no code reaches production. When the security posture degrades, the ATO is at risk and the entire MSS capability may be suspended. Platform reliability is the foundational WFF readiness factor.
 
 ---
 
 ### 1-3. The Platform Engineer's Role in USAREUR-AF
 
-USAREUR-AF is the Army Service Component Command (ASCC) to USEUCOM and USAFRICOM. MSS supports theater land operations across the European and African AOR including III Corps, V Corps, 21st TSC, 7th ATC, 10th AAMDC, 56th MDC-E, SETAF-AF, G2 all-source, and multinational elements. Platform Engineers at TM-40O level are the infrastructure architects and operators of the USAREUR-AF data ecosystem.
+USAREUR-AF is the Army Service Component Command (ASCC) to USEUCOM and USAFRICOM. MSS supports theater land operations across the European and African AOR including III Corps, V Corps, 21st TSC, 7th ATC, 10th AAMDC, 56th MDC-E, SETAF-AF, G2 all-source, and multinational elements. Platform Engineers at SL 4O level are the infrastructure architects and operators of the USAREUR-AF data ecosystem.
 
-**The TM-40O role in the data chain:**
+**The SL 4O role in the data chain:**
 
 ```
 MISSION REQUIREMENT
         |
-   APPLICATION DESIGN (TM-40N, TM-40J)
+   APPLICATION DESIGN (SL 4N, SL 4J)
         |
-   APPLICATION CODE (TM-40L, TM-40H, TM-40M)
+   APPLICATION CODE (SL 4L, SL 4H, SL 4M)
         |
-   CI/CD PIPELINE (TM-40O)
+   CI/CD PIPELINE (SL 4O)
         |
-   CONTAINER BUILD + SECURITY SCAN (TM-40O)
+   CONTAINER BUILD + SECURITY SCAN (SL 4O)
         |
-   DEPLOYMENT TO CLUSTER (TM-40O)
+   DEPLOYMENT TO CLUSTER (SL 4O)
         |
-   PLATFORM MONITORING (TM-40O)
+   PLATFORM MONITORING (SL 4O)
         |
 OPERATIONAL USE (all tracks, all users)
 ```
 
-The Platform Engineer operates at the base of the stack. Application developers (TM-40L) write code; the Platform Engineer ensures that code can be built, tested, scanned, deployed, monitored, and rolled back — automatically, securely, and repeatably. In USAREUR-AF, this means the platform must function across multiple classification domains, in OCONUS environments with variable network connectivity, and under the security requirements of a forward-deployed theater command.
+The Platform Engineer operates at the base of the stack. Application developers (SL 4L) write code; the Platform Engineer ensures that code can be built, tested, scanned, deployed, monitored, and rolled back — automatically, securely, and repeatably. In USAREUR-AF, this means the platform must function across multiple classification domains, in OCONUS environments with variable network connectivity, and under the security requirements of a forward-deployed theater command.
 
 ---
 
@@ -91,10 +91,10 @@ An Internal Developer Platform (IDP) provides self-service capabilities that app
 | Component | Purpose | Consumer |
 |-----------|---------|----------|
 | Service catalog | List of available platform services (databases, caches, message queues) | Application teams |
-| Golden paths | Opinionated, pre-configured project templates that embed best practices | New projects / TM-40L SWEs |
+| Golden paths | Opinionated, pre-configured project templates that embed best practices | New projects / SL 4L SWEs |
 | CI/CD pipelines | Automated build → test → scan → deploy workflows | All code-producing tracks |
 | Environment provisioning | Self-service creation of dev/staging/prod environments | Application teams |
-| Observability stack | Logging, metrics, tracing, alerting | All tracks (consumers); TM-40O (operators) |
+| Observability stack | Logging, metrics, tracing, alerting | All tracks (consumers); SL 4O (operators) |
 | Documentation portal | Platform usage guides, API references, runbooks | All tracks |
 
 ### 2-2. Developer Experience (DevEx)
@@ -675,11 +675,11 @@ Observability directly supports MSS operational readiness in three ways:
 
 | Reference | Relevance |
 |-----------|-----------|
-| TM-40L — Software Engineer | Primary platform consumer; CI/CD pipeline user |
-| TM-40N — UI/UX Designer | Application design constraints from platform capabilities |
-| TM-40J — Program Manager | Release planning, deployment scheduling |
-| TM-50L — Advanced Software Engineer, Chapter 6 | DevSecOps from the application perspective (companion reading) |
-| TM-50O — Advanced Platform Engineer | Advanced topics: fleet management, SRE, RMF automation |
+| SL 4L — Software Engineer | Primary platform consumer; CI/CD pipeline user |
+| SL 4N — UI/UX Designer | Application design constraints from platform capabilities |
+| SL 4J — Program Manager | Release planning, deployment scheduling |
+| SL 5L — Advanced Software Engineer, Chapter 6 | DevSecOps from the application perspective (companion reading) |
+| SL 5O — Advanced Platform Engineer | Advanced topics: fleet management, SRE, RMF automation |
 | DoD Software Modernization Strategy (Feb 2022) | Strategic context for DevSecOps and platform engineering |
 | NIST SP 800-37 (RMF) | Risk Management Framework |
 | DISA STIGs | Security hardening standards |

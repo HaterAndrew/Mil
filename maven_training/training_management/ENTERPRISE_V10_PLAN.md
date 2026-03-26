@@ -1,6 +1,6 @@
 <!-- MAVEN TRAINING CORPUS — PROJECT REFERENCE MATERIAL
      Source: odt_workspace/docs/enterprise-v10-plan.md
-     Supports: TM-40H (AI Engineer), TM-40M (ML Engineer), TM-40L (Software Engineer), TM-50H/I/L (Advanced)
+     Supports: SL 4H (AI Engineer), SL 4M (ML Engineer), SL 4L (Software Engineer), SL 5H/M/L (Advanced)
      Type: Project Reference — ODT Enterprise v10 Release Plan
 -->
 

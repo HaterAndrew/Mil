@@ -1,4 +1,4 @@
-# ENVIRONMENT SETUP — EX_50H Advanced AI Engineer (TM-50H)
+# ENVIRONMENT SETUP — EX_50H Advanced AI Engineer (SL 5H)
 
 **Companion resources:** TM_50H_AI_ENGINEER_ADVANCED.md | SYLLABUS_TM50H | EXAM_TM50H_POST
 

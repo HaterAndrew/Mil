@@ -15,7 +15,7 @@
 
 **MSS is a command system. Using it well is a trained skill. Training your formation on MSS is a command responsibility.**
 
-TM-10 is mandatory for every USAREUR-AF Soldier and Civilian. Higher-level training (TM-20 through TM-50) is required for personnel in data-adjacent and specialist roles. Untrained personnel cannot effectively use, build, or govern MSS — and an untrained formation cannot achieve the data readiness the CG has directed.
+SL 1 is mandatory for every USAREUR-AF Soldier and Civilian. Higher-level training (SL 2 through SL 5) is required for personnel in data-adjacent and specialist roles. Untrained personnel cannot effectively use, build, or govern MSS — and an untrained formation cannot achieve the data readiness the CG has directed.
 
 Your role: enforce training timelines, release personnel to attend, verify records are current, and hold subordinate leaders accountable for their sections' completion.
 
@@ -38,14 +38,14 @@ Your role: enforce training timelines, release personnel to attend, verify recor
 |---|---|---|
 | DoD Data Strategy | 2020 (OSD) | VAULTIS framework (7 dimensions) — DoD standard for data quality; supersedes AR 25-1 VAUTI |
 | DoD Data, Analytics & AI Adoption Strategy | Nov 2023 (CDAO) | AI Hierarchy of Needs; DoD framework for scaling data, analytics, and AI adoption |
-| Army Data Plan | 2022 (Army CIO) | 11 strategic objectives (SO1–SO11), 8 strategic efforts (SE01–SE08); SO 7 mandates cloud/data/DevSecOps workforce; SE05 (Talent) mandates technical skillsets at echelon; "citizen analyst" concept maps to TM-10–30 generalist track |
+| Army Data Plan | 2022 (Army CIO) | 11 strategic objectives (SO1–SO11), 8 strategic efforts (SE01–SE08); SO 7 mandates cloud/data/DevSecOps workforce; SE05 (Talent) mandates technical skillsets at echelon; "citizen analyst" concept maps to SL 1–30 generalist track |
 | DDOF Playbook v2.2 | Dec 2025 (T2COM C2DAO) | VAULTIS-A quality framework (8 dimensions, 85% gate); 6-phase data product lifecycle; MVP mandate (30 days); retirement criteria (90/180-day no-access triggers) |
 | UDRA v1.1 | Feb 2025 (Army CIO) | Data mesh architecture — distributed data domains, computational governance, data products as first-class artifacts; VAULTIS operationalized through automated policy enforcement |
-| "Fighting with Live Data" (Forney, Herrmann, Steele) | Feb 2026 (*Military Review*) | XVIII Airborne Corps' published experience building Operational Data Teams. Documents the multifunctional ODT model (PM + UX + SWE + DE + DS) aligned to long-range planning. XVIII ABC delivered a BDA visualization prototype in 3 months, MVP in 6, and handoff to a POR in 9 — demonstrating the operational impact of properly trained and organized data teams. The ODT manning structure maps directly to TM-40J–O specialist tracks. Commanders should understand: this is the best available pilot data for how data teams produce capability. |
+| "Fighting with Live Data" (Forney, Herrmann, Steele) | Feb 2026 (*Military Review*) | XVIII Airborne Corps' published experience building Operational Data Teams. Documents the multifunctional ODT model (PM + UX + SWE + DE + DS) aligned to long-range planning. XVIII ABC delivered a BDA visualization prototype in 3 months, MVP in 6, and handoff to a POR in 9 — demonstrating the operational impact of properly trained and organized data teams. The ODT manning structure maps directly to SL 4J–O specialist tracks. Commanders should understand: this is the best available pilot data for how data teams produce capability. |
 | MCCoE Decision Optimization CONOPS | 2025 (MCCoE) | Codifies ODT as the "action arm of decision optimization" at echelons above brigade. Echeloned employment concept: Theater Army ODS → Corps ODS → Division ODT. SEC ARMY directed experimentation under Transformation in Contact 2.0. |
-| CAC Maven C2 Integration | Feb 2026 (MCCoE/CGSC/CAC C2DAO) | Combined Arms Command is integrating Maven Smart System into institutional training and PME. MCCoE developing standardized 8-hour hands-on operator course; CGSC incorporating Maven into core curriculum for field grade officers; CAC Data Academy offering Low-Code/No-Code Builders Course. Train-the-trainer session held Feb 23–27, 2026. Validates USAREUR-AF MSS training design — institutional Army is now building toward the same competencies our TM-10 through TM-30 courses deliver. |
+| CAC Maven C2 Integration | Feb 2026 (MCCoE/CGSC/CAC C2DAO) | Combined Arms Command is integrating Maven Smart System into institutional training and PME. MCCoE developing standardized 8-hour hands-on operator course; CGSC incorporating Maven into core curriculum for field grade officers; CAC Data Academy offering Low-Code/No-Code Builders Course. Train-the-trainer session held Feb 23–27, 2026. Validates USAREUR-AF MSS training design — institutional Army is now building toward the same competencies our SL 1 through SL 3 courses deliver. |
 | CALL 25-10, Commander and Staff Guide to Data Literacy | Apr 2025 (CALL) | CALL handbook providing accessible data literacy introduction for commanders and staff. Covers interpretation, analytical pitfalls, and data tool use. Complements this guide's training requirements with institutional knowledge on evaluating data products. |
-| Army Reserve ODT Pilot (Mojave Falcon) | Jun 2025 (OCAR) | First Army Reserve ODT deployment, supporting 79th TSC/311th ESC at Fort Hunter Liggett. Key lesson: ODTs should deploy to units with existing data literacy baseline — validates the MSS prerequisite chain (TM-30 before specialist employment). |
+| Army Reserve ODT Pilot (Mojave Falcon) | Jun 2025 (OCAR) | First Army Reserve ODT deployment, supporting 79th TSC/311th ESC at Fort Hunter Liggett. Key lesson: ODTs should deploy to units with existing data literacy baseline — validates the MSS prerequisite chain (SL 3 before specialist employment). |
 | "Achieving Decision Dominance" (Adkins) | Jan-Feb 2025 (*Military Review*) | A thought piece by one officer proposing terminology for data team employment. Introduces useful shorthand: "operationalized data" and "Automated Fighting Products" (AFP). Names the Maven Smart System as an ASCC-level COP platform. Supplementary context — the Forney "Fighting with Live Data" article above documents the most relevant pilot experience for ODT employment. |
 
 ---
@@ -62,11 +62,11 @@ ADP 7-0 establishes nine principles of training that govern how the Army trains.
 |---|---|
 | **Train as you fight** | All exercises use operational data and realistic scenarios drawn from theater mission requirements — not sanitized training sets |
 | **Train to standard** | Go/No-Go certification against Task-Condition-Standard (TCS) criteria; every practical exercise has published standards evaluated by a certified C2DAO evaluator |
-| **Train to sustain** | Continuous proficiency maintenance through self-study addenda (TM-30, TM-40G–O, TM-50G–O); re-certification requirements prevent skill atrophy |
+| **Train to sustain** | Continuous proficiency maintenance through self-study addenda (SL 3, SL 4G–O, SL 5G–O); re-certification requirements prevent skill atrophy |
 | **Train to maintain** | Platform familiarity maintained through regular operational use; self-study addenda reinforce platform skills between formal training events |
-| **Train fundamentals first** | TM-10 → TM-20 → TM-30 prerequisite chain ensures foundational skills before specialization; no waivers to the prerequisite sequence |
+| **Train fundamentals first** | SL 1 → SL 2 → SL 3 prerequisite chain ensures foundational skills before specialization; no waivers to the prerequisite sequence |
 | **Train while operating** | MSS skills are applied immediately to the unit mission; OJT is integrated into daily operations, not deferred to a future training event |
-| **Train with partners** | WFF tracks (TM-40A–F) address joint and coalition interoperability; data-sharing and partner-nation considerations are embedded in exercises |
+| **Train with partners** | WFF tracks (SL 4A–F) address joint and coalition interoperability; data-sharing and partner-nation considerations are embedded in exercises |
 | **Train with realistic conditions** | Exercises use operational data under realistic time pressure and mission conditions — not classroom-only walkthroughs |
 | **Understand the OE** | PMESII-PT and METT-TC(I) frameworks are taught across all tracks; MSS training grounds every data task in the operational environment |
 
@@ -90,9 +90,9 @@ ADP 7-0 defines three training domains that together produce and sustain Soldier
 
 | Domain | ADP 7-0 Definition | MSS Implementation |
 |---|---|---|
-| **Institutional** | Formal classroom and schoolhouse training | TM-10 through TM-50 instructor-led courses; C2DAO-certified evaluators; published syllabi and lesson plans |
+| **Institutional** | Formal classroom and schoolhouse training | SL 1 through SL 5 instructor-led courses; C2DAO-certified evaluators; published syllabi and lesson plans |
 | **Operational** | Unit-level training and on-the-job application | MSS skills applied to unit mission immediately upon course completion; commanders enforce operational use |
-| **Self-Development** | Individual study and professional growth | Self-study addenda (TM-30, TM-40G–O, TM-50G–O); pre-course readings; continuous proficiency maintenance between formal training events |
+| **Self-Development** | Individual study and professional growth | Self-study addenda (SL 3, SL 4G–O, SL 5G–O); pre-course readings; continuous proficiency maintenance between formal training events |
 
 A training program that addresses only one domain will not produce lasting proficiency. Your role as a commander is to ensure all three domains are active for your MSS-trained personnel — formal courses alone are insufficient without operational application and self-development.
 
@@ -102,16 +102,16 @@ A training program that addresses only one domain will not produce lasting profi
 
 | Personnel Category | Required Training | Timeline |
 |---|---|---|
-| **All** newly assigned personnel | TM-10 (Maven User — 1 day) | Within 30 days of assignment |
-| Staff assigned to build or maintain data products | TM-20 (Builder — 5 days) + TM-10 | Within 90 days of data assignment |
-| Unit data leads; 17/25-series, S6/G6, G2 analysts | TM-30 (Advanced Builder — 5 days) + TM-10/20 | Within 90 days of data-lead assignment |
-| G2/S2, G3/S3, G4/S4, protection, fires, MC functional staff | TM-40 WFF track (3 days) — requires TM-30 | As directed by unit training plan |
-| ORSA, AI/ML, SWE, PM, KM specialists | TM-40 specialist track (3–5 days) — requires TM-30 | As directed by unit training plan |
-| Senior specialists with TM-40 certification | TM-50 advanced specialist track (3–5 days) — requires corresponding TM-40 | As directed by unit training plan |
+| **All** newly assigned personnel | SL 1 (Maven User — 1 day) | Within 30 days of assignment |
+| Staff assigned to build or maintain data products | SL 2 (Builder — 5 days) + SL 1 | Within 90 days of data assignment |
+| Unit data leads; 17/25-series, S6/G6, G2 analysts | SL 3 (Advanced Builder — 5 days) + SL 1/20 | Within 90 days of data-lead assignment |
+| G2/S2, G3/S3, G4/S4, protection, fires, MC functional staff | SL 4 WFF track (3 days) — requires SL 3 | As directed by unit training plan |
+| ORSA, AI/ML, SWE, PM, KM specialists | SL 4 specialist track (3–5 days) — requires SL 3 | As directed by unit training plan |
+| Senior specialists with SL 4 certification | SL 5 advanced specialist track (3–5 days) — requires corresponding SL 4 | As directed by unit training plan |
 
-**TM-30 is the gateway** to all TM-40 tracks. No waiver. Personnel cannot attend any TM-40 course without TM-30 on file.
+**SL 3 is the gateway** to all SL 4 tracks. No waiver. Personnel cannot attend any SL 4 course without SL 3 on file.
 
-**TM-10 is not optional.** Prior Foundry or Palantir experience does not substitute. TM-10 covers USAREUR-AF classification procedures and data governance requirements — these are command-specific, not platform-generic.
+**SL 1 is not optional.** Prior Foundry or Palantir experience does not substitute. SL 1 covers USAREUR-AF classification procedures and data governance requirements — these are command-specific, not platform-generic.
 
 ---
 
@@ -119,7 +119,7 @@ A training program that addresses only one domain will not produce lasting profi
 
 ### 1. Enforce Training Timelines
 
-TM-10 within 30 days of assignment is a command standard, not a suggestion. Track it the same way you track APFT, weapons qualification, and SHARP training. Your unit training NCO/Officer is accountable to you for completions.
+SL 1 within 30 days of assignment is a command standard, not a suggestion. Track it the same way you track APFT, weapons qualification, and SHARP training. Your unit training NCO/Officer is accountable to you for completions.
 
 ### 2. Release Personnel to Attend
 
@@ -145,7 +145,7 @@ A No-Go on a practical exercise requires:
 - Remediation plan established
 - Re-evaluation scheduled within 10 duty days
 
-C2DAO notifies you via Commander Notification Letter for all TM-30 and above No-Go results. A No-Go is not a disciplinary matter — it is a training gap that requires remediation. Treat it as such.
+C2DAO notifies you via Commander Notification Letter for all SL 3 and above No-Go results. A No-Go is not a disciplinary matter — it is a training gap that requires remediation. Treat it as such.
 
 ---
 
@@ -173,14 +173,14 @@ C2DAO notifies you via Commander Notification Letter for all TM-30 and above No-
 
 | Action | Lead Time |
 |---|---|
-| TM-10 enrollment | T-10 duty days minimum |
-| TM-20 enrollment | T-14 duty days minimum |
-| TM-30 enrollment | T-14 duty days minimum |
-| TM-40 WFF tracks (TM-40A–F) | T-14 duty days minimum |
-| TM-40 specialist tracks (TM-40G, H, M, L requiring elevated access) | T-21 to T-35 duty days — start access provisioning immediately |
+| SL 1 enrollment | T-10 duty days minimum |
+| SL 2 enrollment | T-14 duty days minimum |
+| SL 3 enrollment | T-14 duty days minimum |
+| SL 4 WFF tracks (SL 4A–F) | T-14 duty days minimum |
+| SL 4 specialist tracks (SL 4G, H, M, L requiring elevated access) | T-21 to T-35 duty days — start access provisioning immediately |
 | Confirm trainee access is active | T-3 duty days (trainee responsibility; MSS Admin confirms) |
 
-**Failure to initiate access provisioning early is the single most common cause of rescheduled training.** TM-40H, TM-40M, and TM-40L require GPU workspaces and developer tokens that take 10–35 days to provision. This is a planning responsibility.
+**Failure to initiate access provisioning early is the single most common cause of rescheduled training.** SL 4H, SL 4M, and SL 4L require GPU workspaces and developer tokens that take 10–35 days to provision. This is a planning responsibility.
 
 ---
 
@@ -191,9 +191,9 @@ The MSS Training Program operates within a broader EUCOM and Army-wide moderniza
 | Reference | Date | Relevance to MSS |
 |---|---|---|
 | **EUCOM BRAVO Hackathon Series** (BRAVO 100, BRAVO 101) | Mar–Summer 2024 | EUCOM Chief Data and AI Office innovation events where small teams build AI prototypes for theater warfighting challenges in 72–96 hours. 26 prototype solutions produced across two events. Demonstrates the operational demand for AI-capable personnel — MSS capstone exercises are modeled on this rapid-build approach. |
-| **EUCOM Thunderforge AI Planning Ecosystem** (DIU/Scale AI contract) | 2024–25 | AI agents simulate wargaming and planning scenarios for EUCOM, enabling AI-augmented MDMP at theater level and compressing planning timelines. Validates the AI/ML skills taught in TM-40H and TM-40M and the decision-support workflows in TM-40F and TM-40G. |
+| **EUCOM Thunderforge AI Planning Ecosystem** (DIU/Scale AI contract) | 2024–25 | AI agents simulate wargaming and planning scenarios for EUCOM, enabling AI-augmented MDMP at theater level and compressing planning timelines. Validates the AI/ML skills taught in SL 4H and SL 4M and the decision-support workflows in SL 4F and SL 4G. |
 | **EUCOM 2025 Posture Statement to Congress** | 2025 | Annual theater strategy document referencing digital modernization and data sharing with allies. Establishes the strategic context in which MSS training enables USAREUR-AF to meet EUCOM's data and AI readiness objectives. |
-| **Army 49B AI/ML Officer Career Path** | 2025–26 | First dedicated uniformed AI/ML career track in the Army. Validates the career relevance of TM-40H (AI Engineer) and TM-40M (ML Engineer) — MSS-trained personnel are directly aligned to this emerging career field. |
+| **Army 49B AI/ML Officer Career Path** | 2025–26 | First dedicated uniformed AI/ML career track in the Army. Validates the career relevance of SL 4H (AI Engineer) and SL 4M (ML Engineer) — MSS-trained personnel are directly aligned to this emerging career field. |
 
 ---
 
@@ -201,26 +201,26 @@ The MSS Training Program operates within a broader EUCOM and Army-wide moderniza
 
 ### What Is a Unit Data Trainer?
 
-A Unit Data Trainer (UDT) is a MSC-level person who has completed the T3-F (MSC Force Multiplier) course. UDTs sustain TM-10 training at your unit between MTT visits.
+A Unit Data Trainer (UDT) is a MSC-level person who has completed the T3-F (MSC Force Multiplier) course. UDTs sustain SL 1 training at your unit between MTT visits.
 
 ### Commander Responsibilities
 
 | Action | Timeline |
 |---|---|
-| **Nominate a UDT candidate** | Identify a TM-20-qualified person with training responsibilities (data NCO, S6, data steward). Submit nomination memorandum to C2DAO. |
+| **Nominate a UDT candidate** | Identify a SL 2-qualified person with training responsibilities (data NCO, S6, data steward). Submit nomination memorandum to C2DAO. |
 | **Support T3-F attendance** | Release the nominee for the half-day T3-F course (typically delivered during the MTT's rotation to your MSC). |
-| **Employ the UDT** | Direct the UDT to deliver TM-10 to new arrivals. Ensure classroom access and protected training time. |
+| **Employ the UDT** | Direct the UDT to deliver SL 1 to new arrivals. Ensure classroom access and protected training time. |
 | **Plan for succession** | When your UDT PCSs or changes duty, nominate a replacement NLT 60 days before departure. |
 
 ### What Your UDT Can Do
 
-- Deliver TM-10 (Maven User) independently — all 9 blocks, Go/No-Go evaluation, pre/post tests
-- Proctor TM-10 exams for self-study or remote personnel as a standalone activity
+- Deliver SL 1 (Maven User) independently — all 9 blocks, Go/No-Go evaluation, pre/post tests
+- Proctor SL 1 exams for self-study or remote personnel as a standalone activity
 - Report training status to C2DAO
 
 ### What Your UDT Cannot Do
 
-- Deliver TM-20 initial certification or any TM-30+ course
+- Deliver SL 2 initial certification or any SL 3+ course
 - Modify curriculum or evaluation criteria
 - Grant enrollment exceptions or waive prerequisites
 
@@ -228,12 +228,12 @@ A Unit Data Trainer (UDT) is a MSC-level person who has completed the T3-F (MSC 
 
 ```
 MTT visits your MSC (quarterly)
-  ├── Delivers TM-20, TM-30, TM-40 as scheduled
+  ├── Delivers SL 2, SL 3, SL 4 as scheduled
   ├── Certifies your nominated UDT candidate (T3-F)
   └── Observes your existing UDT for annual re-certification
 
 Between MTT visits:
-  └── Your UDT delivers TM-10 to new arrivals
+  └── Your UDT delivers SL 1 to new arrivals
       └── Reports completions to C2DAO within 5 duty days
 ```
 

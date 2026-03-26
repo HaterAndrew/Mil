@@ -44,14 +44,14 @@ _DEFAULT_ROOT = Path(__file__).resolve().parent.parent.parent / "maven_training"
 
 # Preset bundles
 PRESETS: dict[str, dict[str, list[str]]] = {
-    "Foundation Package (TM-10/20/30)": {
-        "tm": ["TM-10", "TM-20", "TM-30"],
+    "Foundation Package (SL 1/2/3)": {
+        "tm": ["SL 1", "SL 2", "SL 3"],
     },
-    "WFF Package (TM-40A-F)": {
-        "tm": ["TM-40A", "TM-40B", "TM-40C", "TM-40D", "TM-40E", "TM-40F"],
+    "WFF Package (SL 4A-F)": {
+        "tm": ["SL 4A", "SL 4B", "SL 4C", "SL 4D", "SL 4E", "SL 4F"],
     },
-    "Specialist Package (TM-40G-M)": {
-        "tm": ["TM-40G", "TM-40H", "TM-40M", "TM-40J", "TM-40K", "TM-40L"],
+    "Specialist Package (SL 4G-M)": {
+        "tm": ["SL 4G", "SL 4H", "SL 4M", "SL 4J", "SL 4K", "SL 4L"],
     },
     "Full Corpus": {
         "tm": list(PREREQ_CHAIN.keys()),
@@ -82,27 +82,27 @@ def _format_size(kb: int) -> str:
 def _tm_label(tm_id: str) -> str:
     """Friendly label for a TM identifier."""
     labels = {
-        "TM-10": "TM-10 Operator",
-        "TM-20": "TM-20 Builder",
-        "TM-30": "TM-30 Advanced Builder",
-        "TM-40A": "TM-40A Intelligence WFF",
-        "TM-40B": "TM-40B Fires WFF",
-        "TM-40C": "TM-40C Movement & Maneuver WFF",
-        "TM-40D": "TM-40D Sustainment WFF",
-        "TM-40E": "TM-40E Protection WFF",
-        "TM-40F": "TM-40F Mission Command WFF",
-        "TM-40G": "TM-40G ORSA",
-        "TM-40H": "TM-40H AI Engineer",
-        "TM-40M": "TM-40M ML Engineer",
-        "TM-40J": "TM-40J Program Manager",
-        "TM-40K": "TM-40K Knowledge Manager",
-        "TM-40L": "TM-40L Software Engineer",
-        "TM-50G": "TM-50G Advanced ORSA",
-        "TM-50H": "TM-50H Advanced AI Engineer",
-        "TM-50M": "TM-50M Advanced ML Engineer",
-        "TM-50J": "TM-50J Advanced PM",
-        "TM-50K": "TM-50K Advanced KM",
-        "TM-50L": "TM-50L Advanced SWE",
+        "SL 1": "SL 1 Operator",
+        "SL 2": "SL 2 Builder",
+        "SL 3": "SL 3 Advanced Builder",
+        "SL 4A": "SL 4A Intelligence WFF",
+        "SL 4B": "SL 4B Fires WFF",
+        "SL 4C": "SL 4C Movement & Maneuver WFF",
+        "SL 4D": "SL 4D Sustainment WFF",
+        "SL 4E": "SL 4E Protection WFF",
+        "SL 4F": "SL 4F Mission Command WFF",
+        "SL 4G": "SL 4G ORSA",
+        "SL 4H": "SL 4H AI Engineer",
+        "SL 4M": "SL 4M ML Engineer",
+        "SL 4J": "SL 4J Program Manager",
+        "SL 4K": "SL 4K Knowledge Manager",
+        "SL 4L": "SL 4L Software Engineer",
+        "SL 5G": "SL 5G Advanced ORSA",
+        "SL 5H": "SL 5H Advanced AI Engineer",
+        "SL 5M": "SL 5M Advanced ML Engineer",
+        "SL 5J": "SL 5J Advanced PM",
+        "SL 5K": "SL 5K Advanced KM",
+        "SL 5L": "SL 5L Advanced SWE",
     }
     return labels.get(tm_id, tm_id)
 
@@ -178,10 +178,10 @@ st.markdown("---")
 st.markdown("### Content Selection")
 
 # Split TMs into groups for display
-foundation_tms = ["TM-10", "TM-20", "TM-30"]
-wff_tms = ["TM-40A", "TM-40B", "TM-40C", "TM-40D", "TM-40E", "TM-40F"]
-specialist_tms = ["TM-40G", "TM-40H", "TM-40M", "TM-40J", "TM-40K", "TM-40L"]
-advanced_tms = ["TM-50G", "TM-50H", "TM-50M", "TM-50J", "TM-50K", "TM-50L"]
+foundation_tms = ["SL 1", "SL 2", "SL 3"]
+wff_tms = ["SL 4A", "SL 4B", "SL 4C", "SL 4D", "SL 4E", "SL 4F"]
+specialist_tms = ["SL 4G", "SL 4H", "SL 4M", "SL 4J", "SL 4K", "SL 4L"]
+advanced_tms = ["SL 5G", "SL 5H", "SL 5M", "SL 5J", "SL 5K", "SL 5L"]
 
 # Determine defaults from preset
 default_tms: list[str] = []

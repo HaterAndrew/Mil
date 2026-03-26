@@ -4,9 +4,9 @@
 Creates CSV datasets in maven_training/exercises/EX_*/training_data/ for
 exercises that are missing data.  Each exercise type gets domain-appropriate
 synthetic data scaled by TM level:
-  - TM-10/20/30: 10-20 records (foundational)
-  - TM-40:       50-100 records (intermediate)
-  - TM-50:       200-500 records (advanced)
+  - SL 1/2/3: 10-20 records (foundational)
+  - SL 4:     50-100 records (intermediate)
+  - SL 5:     200-500 records (advanced)
 
 Dependencies: stdlib only (csv, random, pathlib, datetime).
 """
@@ -188,7 +188,7 @@ def gen_specialist_generic(path: Path, n: int, domain: str):
 
 
 def gen_advanced(path: Path, n: int, domain: str):
-    """Larger, more complex dataset for TM-50 advanced exercises."""
+    """Larger, more complex dataset for SL 5 advanced exercises."""
     rows = []
     start = date(2025, 1, 1)
     for d in _date_range(start, n):
@@ -228,19 +228,19 @@ def _write_csv(filepath: Path, rows: list[dict]):
 # Exercise → generator mapping
 # ---------------------------------------------------------------------------
 EXERCISE_GENERATORS: dict[str, tuple] = {
-    # WFF tracks (TM-40A–F): 60-90 days of data
+    # WFF tracks (SL 4A–F): 60-90 days of data
     "EX_40A_intelligence":      (gen_wff_intelligence, 90),
     "EX_40B_fires":             (gen_wff_fires, 80),
     "EX_40C_movement_maneuver": (gen_wff_maneuver, 60),
     "EX_40D_sustainment":       (gen_wff_sustainment, 60),
     "EX_40E_protection":        (gen_wff_protection, 60),
     "EX_40F_mission_command":   (gen_wff_mission_command, 45),
-    # Specialist tracks missing data (TM-40)
+    # Specialist tracks missing data (SL 4)
     "EX_40J_program_manager":   (lambda p, n: gen_specialist_generic(p, n, "program_management"), 60),
     "EX_40K_knowledge_manager": (lambda p, n: gen_specialist_generic(p, n, "knowledge_management"), 60),
     "EX_40N_ux_designer":       (lambda p, n: gen_specialist_generic(p, n, "ux_design"), 60),
     "EX_40O_platform_engineer": (lambda p, n: gen_specialist_generic(p, n, "platform_engineering"), 60),
-    # Advanced tracks (TM-50): 180 days of data
+    # Advanced tracks (SL 5): 180 days of data
     "EX_50G_orsa":              (lambda p, n: gen_advanced(p, n, "orsa"), 180),
     "EX_50H_ai_engineer":       (lambda p, n: gen_advanced(p, n, "ai_engineering"), 180),
     "EX_50J_program_manager":   (lambda p, n: gen_advanced(p, n, "program_management"), 180),

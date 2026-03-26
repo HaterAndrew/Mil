@@ -1,7 +1,7 @@
-# CONCEPTS GUIDE — TM-50G COMPANION — ADVANCED OPERATIONS RESEARCH / SYSTEMS ANALYSIS (ORSA) — MAVEN SMART SYSTEM (MSS)
+# CONCEPTS GUIDE — SL 5G COMPANION — ADVANCED OPERATIONS RESEARCH / SYSTEMS ANALYSIS (ORSA) — MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** At TM-50G level, the ORSA is not just answering questions — they are shaping which questions get asked.
-> **Purpose:** Extends the analytical mental models of the TM-40G Concepts Guide to advanced ORSA practice on MSS. Prerequisite: TM-40G Concepts Guide and TM-40G qualification.
+> **Forward:** At SL 5G level, the ORSA is not just answering questions — they are shaping which questions get asked.
+> **Purpose:** Extends the analytical mental models of the TM-40G Concepts Guide to advanced ORSA practice on MSS. Prerequisite: TM-40G Concepts Guide and SL 4G qualification.
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only*
 
 ---
@@ -10,11 +10,11 @@
 
 ### 1-1. The Core Transition
 
-**BLUF:** At TM-50G level, the ORSA is not just answering questions — they are shaping which questions get asked.
+**BLUF:** At SL 5G level, the ORSA is not just answering questions — they are shaping which questions get asked.
 
-A TM-40G ORSA operates in reactive mode by design: receive a requirement, scope the analysis, execute the method, deliver the product. That discipline is correct at TM-40G. Staying in lane builds accuracy and respect for the decision chain.
+A SL 4G ORSA operates in reactive mode by design: receive a requirement, scope the analysis, execute the method, deliver the product. That discipline is correct at SL 4G. Staying in lane builds accuracy and respect for the decision chain.
 
-A TM-50G ORSA who operates only in reactive mode is failing. Senior leaders often know their operational problem but not which framing is analytically tractable, what data exists, or which methods produce reliable answers in their conditions. The TM-50G ORSA fills that gap. This is not overstepping — it is fulfilling the advisory function that distinguishes an ORSA from a data technician.
+A SL 5G ORSA who operates only in reactive mode is failing. Senior leaders often know their operational problem but not which framing is analytically tractable, what data exists, or which methods produce reliable answers in their conditions. The SL 5G ORSA fills that gap. This is not overstepping — it is fulfilling the advisory function that distinguishes an ORSA from a data technician.
 
 ### 1-2. Reactive vs. Proactive Analytical Advising
 
@@ -44,7 +44,7 @@ Analytical influence is built through a predictable pattern: be right more often
 
 **BLUF:** Most real operational problems require more than one analytical method. The risk is not in combining methods — it is in combining them poorly.
 
-A force-generation readiness problem is simultaneously descriptive (where are we now?), diagnostic (why are specific units lower?), predictive (where will we be in 30 days?), and prescriptive (what maintenance allocation produces the best collective outcome?). A single trend analysis answers one layer. The TM-50G ORSA understands all four layers and can engage any on demand.
+A force-generation readiness problem is simultaneously descriptive (where are we now?), diagnostic (why are specific units lower?), predictive (where will we be in 30 days?), and prescriptive (what maintenance allocation produces the best collective outcome?). A single trend analysis answers one layer. The SL 5G ORSA understands all four layers and can engage any on demand.
 
 ### 2-2. Designing a Multi-Method Analytical Campaign
 
@@ -93,11 +93,11 @@ This structure forces explicit documentation of the assumptions that drive the r
 
 ### 3-2. Sensitivity Analysis — The Most Important Quality Check
 
-> **NOTE:** TM-40G now covers advanced multi-variable sensitivity analysis for MOE/MOP, including simultaneous variation of multiple parameters and interaction effects. Review that material before applying the single-variable methods below to multi-criteria assessments.
+> **NOTE:** SL 4G now covers advanced multi-variable sensitivity analysis for MOE/MOP, including simultaneous variation of multiple parameters and interaction effects. Review that material before applying the single-variable methods below to multi-criteria assessments.
 
 Sensitivity analysis answers: which assumption, if wrong, would most change the recommendation?
 
-This is the TM-50G ORSA's most important quality check and is systematically underused. Most analysts run their model, check that results are sensible, and deliver. Sensitivity analysis requires deliberately breaking the model — varying one assumption at a time to the edge of plausible range.
+This is the SL 5G ORSA's most important quality check and is systematically underused. Most analysts run their model, check that results are sensible, and deliver. Sensitivity analysis requires deliberately breaking the model — varying one assumption at a time to the edge of plausible range.
 
 **The threshold question:** For each key assumption, ask: at what value does the recommendation change from one COA to another? That threshold is the analytically important number.
 
@@ -164,7 +164,7 @@ An analyst who produces a 40-page methodology report for a 48-hour decision has 
 
 ### 5-3. The Operations Assessment Working Group
 
-> **NOTE:** TM-40G now addresses the ORSA's role in the operations assessment working group (OAWG), including structured assessment frameworks and coordination with the G3/G5. The theater-level product guidance below assumes familiarity with that OAWG foundation; advanced ORSAs are expected to lead or advise the OAWG analytical methodology, not just contribute products to it.
+> **NOTE:** SL 4G now addresses the ORSA's role in the operations assessment working group (OAWG), including structured assessment frameworks and coordination with the G3/G5. The theater-level product guidance below assumes familiarity with that OAWG foundation; advanced ORSAs are expected to lead or advise the OAWG analytical methodology, not just contribute products to it.
 
 ### 5-4. Coalition Visibility Considerations
 
@@ -182,7 +182,7 @@ Theater-level products in USAREUR-AF frequently have coalition visibility. Key c
 
 ### 6-1. The Appeal and the Hazard
 
-> **NOTE:** TM-40G now covers structured MOE/MOP indicator frameworks and multi-variable sensitivity analysis that directly apply to cross-domain risk quantification. Ensure familiarity with the TM-40G assessment taxonomy (Section 1-7, Table 1-2) before designing cross-domain integration products at theater level.
+> **NOTE:** SL 4G now covers structured MOE/MOP indicator frameworks and multi-variable sensitivity analysis that directly apply to cross-domain risk quantification. Ensure familiarity with the SL 4G assessment taxonomy (Section 1-7, Table 1-2) before designing cross-domain integration products at theater level.
 
 **BLUF:** Cross-domain data integration is where the most analytically interesting theater-level insights live — and where the most analytically dangerous errors originate.
 
@@ -288,7 +288,7 @@ When ORSA methods are applied to personnel data — identifying high-risk indivi
 
 ---
 
-## SECTION 9 — ADVANCED FAILURE MODES: WHAT TM-50G ORSAs GET WRONG
+## SECTION 9 — ADVANCED FAILURE MODES: WHAT SL 5G ORSAs GET WRONG
 
 ### 9-1. Overview
 
@@ -307,7 +307,7 @@ When ORSA methods are applied to personnel data — identifying high-risk indivi
 
 ### 9-3. Anchoring to Prior Analysis
 
-> **NOTE:** TM-40G introduces Bayesian assessment updating as a formal method for incorporating new data into prior estimates. The anchoring failure described below is distinct from principled Bayesian updating — the former is cognitive bias; the latter is a disciplined framework for revising assessments. Understand the TM-40G Bayesian material before applying the diagnostic questions here.
+> **NOTE:** SL 4G introduces Bayesian assessment updating as a formal method for incorporating new data into prior estimates. The anchoring failure described below is distinct from principled Bayesian updating — the former is cognitive bias; the latter is a disciplined framework for revising assessments. Understand the SL 4G Bayesian material before applying the diagnostic questions here.
 
 The most common senior ORSA failure mode: rerunning a prior analysis with new data and treating prior conclusions as the baseline to defend rather than the hypothesis to test.
 
@@ -335,7 +335,7 @@ The fix is documentation discipline maintained throughout the build, not at the 
 
 ## APPENDIX A — CONCEPTS GUIDE SELF-ASSESSMENT
 
-Before proceeding to TM-50G task procedures, confirm you can answer the following from memory:
+Before proceeding to SL 5G task procedures, confirm you can answer the following from memory:
 
 1. What distinguishes reactive analysis from proactive analytical advising, and what conditions warrant each?
 2. Name three methods appropriate for different layers of a multi-method analytical campaign. What determines which layer each addresses?
@@ -343,13 +343,13 @@ Before proceeding to TM-50G task procedures, confirm you can answer the followin
 4. When is minimax regret more appropriate than expected utility for a theater-level decision? Give an operational example.
 5. How does a product for a theater commander differ from the same underlying analysis delivered to a brigade commander?
 6. What are the three primary failure modes in cross-domain data integration in small operational populations?
-7. What six elements constitute a transferable analytical pipeline under TM-50G standards?
+7. What six elements constitute a transferable analytical pipeline under SL 5G standards?
 8. What is the correct professional response when leadership requests a confidence level the data cannot support?
 9. Identify the most common senior-level failure mode and describe how to test whether you are exhibiting it.
 
 ---
 
-## APPENDIX B — CROSS-REFERENCE TO TM-50G CHAPTERS
+## APPENDIX B — CROSS-REFERENCE TO SL 5G CHAPTERS
 
 | Concepts Guide Section | Corresponding TM-50G Chapter |
 |------------------------|------------------------------|
@@ -365,23 +365,23 @@ Before proceeding to TM-50G task procedures, confirm you can answer the followin
 
 ---
 
-## APPENDIX C — PEER TM-50 CROSS-REFERENCES AND WFF INTEGRATION
+## APPENDIX C — PEER SL 5 CROSS-REFERENCES AND WFF INTEGRATION
 
-**Peer TM-50 Publications.** The following advanced-track publications share overlapping concerns with TM-50G ORSA practice. Coordinate with practitioners in these tracks rather than operating in isolation.
+**Peer SL 5 Publications.** The following advanced-track publications share overlapping concerns with SL 5G ORSA practice. Coordinate with practitioners in these tracks rather than operating in isolation.
 
 | Publication | Track | Coordination Point |
 |---|---|---|
-| TM-50H | Advanced AI Engineer | Productionizing ORSA models; evaluation methodology |
-| TM-50M | Advanced ML Engineer | ML methods feeding ORSA analytical products |
-| TM-50J | Advanced Program Manager | Portfolio-level OR program governance |
-| TM-50K | Advanced Knowledge Manager | Capturing and surfacing ORSA-derived insights |
-| TM-50L | Advanced Software Engineer | Platform infrastructure supporting ORSA pipelines |
-| TM-50N | Advanced UI/UX Designer | Data visualization design; dashboard UX for ORSA outputs |
-| TM-50O | Advanced Platform Engineer | Infrastructure for analytical workloads; compute scaling |
+| SL 5H | Advanced AI Engineer | Productionizing ORSA models; evaluation methodology |
+| SL 5M | Advanced ML Engineer | ML methods feeding ORSA analytical products |
+| SL 5J | Advanced Program Manager | Portfolio-level OR program governance |
+| SL 5K | Advanced Knowledge Manager | Capturing and surfacing ORSA-derived insights |
+| SL 5L | Advanced Software Engineer | Platform infrastructure supporting ORSA pipelines |
+| SL 5N | Advanced UI/UX Designer | Data visualization design; dashboard UX for ORSA outputs |
+| SL 5O | Advanced Platform Engineer | Infrastructure for analytical workloads; compute scaling |
 
-**WFF Operational Consumer Note.** Advanced ORSA analytical work ultimately supports the six Warfighting Function (WFF) tracks: Intelligence (TM-40A), Fires (TM-40B), Movement and Maneuver (TM-40C), Sustainment (TM-40D), Protection (TM-40E), and Mission Command (TM-40F). These practitioners are the operational consumers of readiness analyses, logistics optimizations, campaign assessments, and decision support products. The judgment questions addressed in this Concepts Guide — which method fits the problem, how to present uncertainty, when to advise a different question — are ultimately answered in terms of what a WFF staff section needs to make a decision.
+**WFF Operational Consumer Note.** Advanced ORSA analytical work ultimately supports the six Warfighting Function (WFF) tracks: Intelligence (SL 4A), Fires (SL 4B), Movement and Maneuver (SL 4C), Sustainment (SL 4D), Protection (SL 4E), and Mission Command (SL 4F). These practitioners are the operational consumers of readiness analyses, logistics optimizations, campaign assessments, and decision support products. The judgment questions addressed in this Concepts Guide — which method fits the problem, how to present uncertainty, when to advise a different question — are ultimately answered in terms of what a WFF staff section needs to make a decision.
 
 ---
 
-*CONCEPTS GUIDE — TM-50G COMPANION // ADVANCED ORSA*
+*CONCEPTS GUIDE — SL 5G COMPANION // ADVANCED ORSA*
 *HEADQUARTERS, UNITED STATES ARMY EUROPE AND AFRICA // WIESBADEN, GERMANY // 2026*

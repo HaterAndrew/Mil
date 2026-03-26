@@ -25,31 +25,31 @@ from readiness_tracker.db import PREREQ_CHAIN, ALL_COURSES  # noqa: E402
 
 # Map TM identifiers to their directory names under tm/
 _TM_DIR_MAP: dict[str, str] = {
-    "TM-10": "TM_10_maven_user",
-    "TM-20": "TM_20_builder",
-    "TM-30": "TM_30_advanced_builder",
-    "TM-40A": "TM_40A_intelligence",
-    "TM-40B": "TM_40B_fires",
-    "TM-40C": "TM_40C_movement_maneuver",
-    "TM-40D": "TM_40D_sustainment",
-    "TM-40E": "TM_40E_protection",
-    "TM-40F": "TM_40F_mission_command",
-    "TM-40G": "TM_40G_orsa",
-    "TM-40H": "TM_40H_ai_engineer",
-    "TM-40M": "TM_40M_ml_engineer",
-    "TM-40J": "TM_40J_program_manager",
-    "TM-40K": "TM_40K_knowledge_manager",
-    "TM-40L": "TM_40L_software_engineer",
-    "TM-40N": "TM_40N_ui_ux_designer",
-    "TM-40O": "TM_40O_platform_engineer",
-    "TM-50G": "TM_50G_orsa_advanced",
-    "TM-50H": "TM_50H_ai_engineer_advanced",
-    "TM-50M": "TM_50M_ml_engineer_advanced",
-    "TM-50J": "TM_50J_program_manager_advanced",
-    "TM-50K": "TM_50K_knowledge_manager_advanced",
-    "TM-50L": "TM_50L_software_engineer_advanced",
-    "TM-50N": "TM_50N_ui_ux_designer_advanced",
-    "TM-50O": "TM_50O_platform_engineer_advanced",
+    "SL 1": "TM_10_maven_user",
+    "SL 2": "TM_20_builder",
+    "SL 3": "TM_30_advanced_builder",
+    "SL 4A": "TM_40A_intelligence",
+    "SL 4B": "TM_40B_fires",
+    "SL 4C": "TM_40C_movement_maneuver",
+    "SL 4D": "TM_40D_sustainment",
+    "SL 4E": "TM_40E_protection",
+    "SL 4F": "TM_40F_mission_command",
+    "SL 4G": "TM_40G_orsa",
+    "SL 4H": "TM_40H_ai_engineer",
+    "SL 4M": "TM_40M_ml_engineer",
+    "SL 4J": "TM_40J_program_manager",
+    "SL 4K": "TM_40K_knowledge_manager",
+    "SL 4L": "TM_40L_software_engineer",
+    "SL 4N": "TM_40N_ui_ux_designer",
+    "SL 4O": "TM_40O_platform_engineer",
+    "SL 5G": "TM_50G_orsa_advanced",
+    "SL 5H": "TM_50H_ai_engineer_advanced",
+    "SL 5M": "TM_50M_ml_engineer_advanced",
+    "SL 5J": "TM_50J_program_manager_advanced",
+    "SL 5K": "TM_50K_knowledge_manager_advanced",
+    "SL 5L": "TM_50L_software_engineer_advanced",
+    "SL 5N": "TM_50N_ui_ux_designer_advanced",
+    "SL 5O": "TM_50O_platform_engineer_advanced",
 }
 
 # Map exercise identifiers to their directory names under exercises/
@@ -407,15 +407,15 @@ offline_package/
 1. Extract the ZIP to a local directory.
 2. Open markdown files with any text editor or markdown viewer.
 3. PDF versions are included for print or offline reading.
-4. Follow the TM progression: TM-10 → TM-20 → TM-30 → TM-40 → TM-50.
+4. Follow the TM progression: SL 1 → SL 2 → SL 3 → SL 4 → SL 5.
 
 ## Prereq Chain
-- **TM-10** (Operator) — no prerequisites
-- **TM-20** (Builder) — requires TM-10
-- **TM-30** (Advanced Builder) — requires TM-20
-- **TM-40A–F** (WFF tracks) — requires TM-30
-- **TM-40G–M** (Specialist tracks) — requires TM-30
-- **TM-50G–M** (Advanced specialist) — requires corresponding TM-40
+- **SL 1** (Operator) — no prerequisites
+- **SL 2** (Builder) — requires SL 1
+- **SL 3** (Advanced Builder) — requires SL 2
+- **SL 4A–F** (WFF tracks) — requires SL 3
+- **SL 4G–M** (Specialist tracks) — requires SL 3
+- **SL 5G–M** (Advanced specialist) — requires corresponding SL 4
 
 ## Notes
 - This is a point-in-time snapshot. Check the MSS Training Hub for updates.

@@ -1,10 +1,10 @@
 # TM-40L — MAVEN SMART SYSTEM (MSS)
 
-> **Forward:** TM-40L qualifies software engineers to build external applications, write integration code, develop TypeScript FOO logic, and deploy production-grade solutions on the MSS platform. This is a developer manual — it contains code, not just concepts.
-> **Prereqs:** TM-10, Maven User; TM-20, Builder; TM-30, Advanced Builder (required); Python proficiency (intermediate or higher); TypeScript proficiency (intermediate or higher)
+> **Forward:** SL 4L qualifies software engineers to build external applications, write integration code, develop TypeScript FOO logic, and deploy production-grade solutions on the MSS platform. This is a developer manual — it contains code, not just concepts.
+> **Prereqs:** SL 1, Maven User; SL 2, Builder; SL 3, Advanced Builder (required); Python proficiency (intermediate or higher); TypeScript proficiency (intermediate or higher)
 > *HQ USAREUR-AF · v1.0 · 2026 · DISTRIB: USG only · AUTH: C2DAO/UDRA v1.1*
 
-> **WARNING: Code errors at TM-40L level can corrupt shared Ontology state, break downstream pipelines, and produce incorrect data products consumed by commanders making operational decisions. Apply engineering discipline. Test thoroughly. Coordinate governance before deploying to production.**
+> **WARNING: Code errors at SL 4L level can corrupt shared Ontology state, break downstream pipelines, and produce incorrect data products consumed by commanders making operational decisions. Apply engineering discipline. Test thoroughly. Coordinate governance before deploying to production.**
 > **CAUTION: OSDK service account tokens and Foundry Platform SDK credentials are operational secrets. Loss or exposure of these credentials constitutes a security incident. Report immediately to unit S6/G6 and C2DAO.**
 
 ---
@@ -13,15 +13,15 @@
 
 ### 1-1. Software Engineer Specialist Manual
 
-**BLUF:** TM-40L qualifies software engineers to build external applications, write integration code, develop TypeScript FOO logic, and deploy production-grade solutions on the MSS platform. This is a developer manual — it contains code, not just concepts.
+**BLUF:** SL 4L qualifies software engineers to build external applications, write integration code, develop TypeScript FOO logic, and deploy production-grade solutions on the MSS platform. This is a developer manual — it contains code, not just concepts.
 
-This manual provides task-based instruction for software engineers operating on the Maven Smart System (MSS). MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. TM-40L personnel design and implement the technical components that advanced builders (TM-30) specify but cannot build without code.
+This manual provides task-based instruction for software engineers operating on the Maven Smart System (MSS). MSS is the USAREUR-AF enterprise AI/data platform built on Palantir Foundry. SL 4L personnel design and implement the technical components that advanced builders (SL 3) specify but cannot build without code.
 
-**TM-40L covers** OSDK (Ontology SDK): authenticating, querying objects, executing actions, subscribing to changes from external applications; OSDK Health Dialog for error visibility and debugging; temporary media uploads via OSDK and Functions; Pilot for AI-assisted OSDK application scaffolding; Model Context Protocol (MCP) for connecting AI agents to the Ontology; Foundry Platform SDK (Python): reading and writing datasets, managing transactions, accessing file resources; TypeScript Functions on Objects (FOO): computed properties, bulk query patterns, performance optimization; actions with complex validation: TypeScript validators, multi-step action flows, conditional logic; Slate: legacy custom HTML/CSS/JavaScript application development hosted on Foundry (documented for maintenance of existing Slate apps only — do not use for new development; see Chapter 7); CI/CD for Foundry: repository structure, automated testing, branch promotion workflows; security: CBAC in external apps, credential management, marking compliance in OSDK queries, audit trails; and integration patterns: REST APIs, webhooks, cross-system data flows connecting MSS to external Army systems.
+**SL 4L covers** OSDK (Ontology SDK): authenticating, querying objects, executing actions, subscribing to changes from external applications; OSDK Health Dialog for error visibility and debugging; temporary media uploads via OSDK and Functions; Pilot for AI-assisted OSDK application scaffolding; Model Context Protocol (MCP) for connecting AI agents to the Ontology; Foundry Platform SDK (Python): reading and writing datasets, managing transactions, accessing file resources; TypeScript Functions on Objects (FOO): computed properties, bulk query patterns, performance optimization; actions with complex validation: TypeScript validators, multi-step action flows, conditional logic; Slate: legacy custom HTML/CSS/JavaScript application development hosted on Foundry (documented for maintenance of existing Slate apps only — do not use for new development; see Chapter 7); CI/CD for Foundry: repository structure, automated testing, branch promotion workflows; security: CBAC in external apps, credential management, marking compliance in OSDK queries, audit trails; and integration patterns: REST APIs, webhooks, cross-system data flows connecting MSS to external Army systems.
 
-**TM-40L does NOT cover** Workshop application design (no-code/low-code) — see TM-20, TM-30; Pipeline Builder visual UI — see TM-20, TM-30; basic Ontology modeling (UI-based) — see TM-30; PySpark transforms — see TM-40H (AI Engineer) for AI pipelines; TM-30 for design; AIP Logic configuration — see TM-30; or Agent Studio development — see TM-40H.
+**SL 4L does NOT cover** Workshop application design (no-code/low-code) — see SL 2, SL 3; Pipeline Builder visual UI — see SL 2, SL 3; basic Ontology modeling (UI-based) — see SL 3; PySpark transforms — see SL 4H (AI Engineer) for AI pipelines; SL 3 for design; AIP Logic configuration — see SL 3; or Agent Studio development — see SL 4H.
 
-> **NOTE:** TM-40L is peer to TM-40H (AI Engineer), TM-40M (ML Engineer), and TM-40G (ORSA). All four tracks require TM-30 as prerequisite. Each track owns a distinct technical domain. Coordinate across tracks — operational systems frequently require all four disciplines.
+> **NOTE:** SL 4L is peer to SL 4H (AI Engineer), SL 4M (ML Engineer), and SL 4G (ORSA). All four tracks require SL 3 as prerequisite. Each track owns a distinct technical domain. Coordinate across tracks — operational systems frequently require all four disciplines.
 
 ### 1-1a. The ASWF Problem-Solution Development Methodology
 
@@ -41,31 +41,31 @@ XVIII Airborne Corps published their Operational Data Team problem-solution deve
 
 **During exercises:** SWEs on MVP-phase products execute bug fixes and minor adjustments based on user feedback only. No major changes. Products in discovery/framing are held stable — the SWE focuses on gathering data and validating technical assumptions for future iterations.
 
-> **NOTE:** The ASWF trains its students in this methodology. TM-40L graduates who enter ODT assignments are expected to operate within this framework from day one. The PM (TM-40J) owns the process cadence; the SWE owns the technical execution within each phase.
+> **NOTE:** The ASWF trains its students in this methodology. SL 4L graduates who enter ODT assignments are expected to operate within this framework from day one. The PM (SL 4J) owns the process cadence; the SWE owns the technical execution within each phase.
 
 *Source: Forney, Herrmann, and Steele, "Fighting with Live Data," Military Review Online Exclusive, February 2026.*
 
-*Supplementary: Adkins, "Achieving Decision Dominance," Military Review, Jan-Feb 2025, introduces the term "automated fighting products" (AFPs) — data visualization tools connected to live data pipelines that reduce staff burden. MSS applications built by TM-40L graduates are AFPs by this definition.*
+*Supplementary: Adkins, "Achieving Decision Dominance," Military Review, Jan-Feb 2025, introduces the term "automated fighting products" (AFPs) — data visualization tools connected to live data pipelines that reduce staff burden. MSS applications built by SL 4L graduates are AFPs by this definition.*
 
 ---
 
 ### 1-2. Curriculum Position, Advanced Track, and WFF Context
 
-**Prerequisite:** TM-30 (Advanced Builder) is REQUIRED. Python proficiency (intermediate or higher) and TypeScript proficiency (intermediate or higher) are required independently of the TM series.
+**Prerequisite:** SL 3 (Advanced Builder) is REQUIRED. Python proficiency (intermediate or higher) and TypeScript proficiency (intermediate or higher) are required independently of the TM series.
 
-**Advanced track:** Upon completing TM-40L, qualified Software Engineers should pursue **TM-50L (Advanced Software Engineer)** for advanced topics including large-scale OSDK application architecture, Foundry platform extension patterns, CI/CD pipeline hardening, coalition data integration (NAFv4), and security compliance for operational software systems.
+**Advanced track:** Upon completing SL 4L, qualified Software Engineers should pursue **SL 5L (Advanced Software Engineer)** for advanced topics including large-scale OSDK application architecture, Foundry platform extension patterns, CI/CD pipeline hardening, coalition data integration (NAFv4), and security compliance for operational software systems.
 
-**Peer specialist tracks:** The Software Engineer implements the production code layer that all other specialist tracks depend on. Coordinate with TM-40H (AI Engineer) when AI workflow outputs require OSDK application surfaces for staff-section delivery. Coordinate with TM-40M (ML Engineer) when model deployment requires custom inference infrastructure beyond standard Foundry Transforms. Coordinate with TM-40K (Knowledge Manager) on knowledge pipeline implementation — the KM defines the architecture; the SWE implements pipelines requiring custom logic. The KM-SWE interface is a high-frequency coordination point: knowledge ontology design changes have direct impact on downstream application code.
+**Peer specialist tracks:** The Software Engineer implements the production code layer that all other specialist tracks depend on. Coordinate with SL 4H (AI Engineer) when AI workflow outputs require OSDK application surfaces for staff-section delivery. Coordinate with SL 4M (ML Engineer) when model deployment requires custom inference infrastructure beyond standard Foundry Transforms. Coordinate with SL 4K (Knowledge Manager) on knowledge pipeline implementation — the KM defines the architecture; the SWE implements pipelines requiring custom logic. The KM-SWE interface is a high-frequency coordination point: knowledge ontology design changes have direct impact on downstream application code.
 
-**WFF awareness:** Software engineers on MSS build the application layer that WFF-qualified users (TM-40A through TM-40F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command) interact with daily. An OSDK application degrading for a Fires (TM-40B) targeting workflow or a Movement and Maneuver (TM-40C) tracking tool has direct operational impact. Code quality, test coverage, and rollback procedures are not abstract engineering standards — they are WFF readiness factors.
+**WFF awareness:** Software engineers on MSS build the application layer that WFF-qualified users (SL 4A through SL 4F — Intelligence, Fires, Movement and Maneuver, Sustainment, Protection, and Mission Command) interact with daily. An OSDK application degrading for a Fires (SL 4B) targeting workflow or a Movement and Maneuver (SL 4C) tracking tool has direct operational impact. Code quality, test coverage, and rollback procedures are not abstract engineering standards — they are WFF readiness factors.
 
 ---
 
 ### 1-3. The Software Engineer's Role in USAREUR-AF
 
-USAREUR-AF is the Army Service Component Command (ASCC) to USEUCOM and USAFRICOM. MSS supports theater land operations across the European and African AOR including III Corps, V Corps, 21st TSC, 7th ATC, 10th AAMDC, 56th MDC-E, SETAF-AF, G2 all-source, and multinational elements. Software engineers at TM-40L level are the technical implementers of the USAREUR-AF data ecosystem.
+USAREUR-AF is the Army Service Component Command (ASCC) to USEUCOM and USAFRICOM. MSS supports theater land operations across the European and African AOR including III Corps, V Corps, 21st TSC, 7th ATC, 10th AAMDC, 56th MDC-E, SETAF-AF, G2 all-source, and multinational elements. Software engineers at SL 4L level are the technical implementers of the USAREUR-AF data ecosystem.
 
-**The TM-40L role in the data chain:**
+**The SL 4L role in the data chain:**
 
 ```
 MISSION REQUIREMENT
@@ -93,7 +93,7 @@ MISSION REQUIREMENT
    (Consume + act on data)
 ```
 
-**Typical TM-40L deliverables in the USAREUR-AF context:**
+**Typical SL 4L deliverables in the USAREUR-AF context:**
 
 | Deliverable | Description | Example |
 |---|---|---|
@@ -112,9 +112,9 @@ Complete all of the following before beginning this manual:
 
 | Prerequisite | Verification |
 |---|---|
-| TM-10 (Maven User) | Can navigate MSS, consume data products, submit issues |
-| TM-20 (Builder) | Can build basic Workshop apps, configure Object Types, create Actions via UI |
-| TM-30 (Advanced Builder) | Can design full ontology models, advanced Pipeline Builder flows, multi-step Actions |
+| SL 1 (Maven User) | Can navigate MSS, consume data products, submit issues |
+| SL 2 (Builder) | Can build basic Workshop apps, configure Object Types, create Actions via UI |
+| SL 3 (Advanced Builder) | Can design full ontology models, advanced Pipeline Builder flows, multi-step Actions |
 | Python proficiency | Can write, test, and debug Python scripts; understands async patterns, exception handling, type hints |
 | TypeScript proficiency | Can write typed TypeScript; understands async/await, generics, module systems |
 | Git proficiency | Understands branching, merging, pull requests, rebase workflows |
@@ -158,7 +158,7 @@ Complete all of the following before beginning this manual:
 
 **BLUF:** Army Data Plan Strategic Objective 7 directs the Army to field a "Cloud, Data, DevSecOps Enabled Workforce & Leaders That Support Digital Operations." The DDOF Playbook mandates MVP delivery within 30 days. SWEs build the pipelines and applications that sustain this tempo.
 
-SO 7 establishes the expectation that every data professional — including software engineers — operates within a DevSecOps culture. For TM-40L personnel this means:
+SO 7 establishes the expectation that every data professional — including software engineers — operates within a DevSecOps culture. For SL 4L personnel this means:
 
 - **Speed to value.** DDOF's 30-day MVP window is the planning constraint. Design pipelines, OSDK applications, and integration services for incremental delivery, not waterfall release cycles.
 - **Shift-left security.** Embed automated security scanning and compliance checks in CI/CD pipelines (Chapter 8) before code reaches production.
@@ -182,27 +182,27 @@ SO 7 establishes the expectation that every data professional — including soft
 +---------------------------------------------------------------+
 |  LAYER 5: ACTIVATION                                          |
 |  External apps, SITREP automation, EUCOM integrations         |
-|  --> TM-40L primary operating layer                           |
+|  --> SL 4L primary operating layer                           |
 +---------------------------------------------------------------+
 |  LAYER 4: ANALYTICS                                           |
 |  External OSDK apps, custom dashboards, FOO-enriched objects  |
-|  --> TM-40L builds custom analytical applications             |
+|  --> SL 4L builds custom analytical applications             |
 +---------------------------------------------------------------+
 |  LAYER 3: SEMANTIC (ONTOLOGY)                                 |
 |  FOO computed properties, Action validators, OSDK queries     |
-|  --> TM-40L writes code executing against this layer          |
+|  --> SL 4L writes code executing against this layer          |
 +---------------------------------------------------------------+
 |  LAYER 2: INTEGRATION                                         |
 |  Platform SDK dataset operations, transaction management      |
-|  --> TM-40L manages programmatic dataset access               |
+|  --> SL 4L manages programmatic dataset access               |
 +---------------------------------------------------------------+
 |  LAYER 1: INFRASTRUCTURE                                      |
 |  CBAC, marking, credential provisioning                       |
-|  --> TM-40L consumes; C2DAO/G6 administers                    |
+|  --> SL 4L consumes; C2DAO/G6 administers                    |
 +---------------------------------------------------------------+
 ```
 
-TM-40L engineers are the primary implementers of Layers 4 and 5 technical components. They write code that executes at Layer 3 (Ontology) and Layer 2 (datasets) but coordinate with C2DAO for any Layer 1 changes.
+SL 4L engineers are the primary implementers of Layers 4 and 5 technical components. They write code that executes at Layer 3 (Ontology) and Layer 2 (datasets) but coordinate with C2DAO for any Layer 1 changes.
 
 ---
 
@@ -221,7 +221,7 @@ TM-40L engineers are the primary implementers of Layers 4 and 5 technical compon
 
 *Source: UDRA v1.1 (February 2025)*
 
-Every OSDK application, pipeline, or integration service a TM-40L engineer builds touches at least three of these services. Design reviews must identify which services a deliverable engages and confirm the implementation satisfies UDRA requirements for each.
+Every OSDK application, pipeline, or integration service a SL 4L engineer builds touches at least three of these services. Design reviews must identify which services a deliverable engages and confirm the implementation satisfies UDRA requirements for each.
 
 > **NOTE — UDRA Required Metadata (15 fields):** Every data product registered in the Army data ecosystem must carry these metadata fields per UDRA v1.1: `apiEndpoint`, `authorizationReference`, `creationDateTime`, `custodian`, `description`, `disclosureAndReleasability`, `format`, `handlingRestrictions`, `identifier` (UUID), `name`, `originator`, `securityClassification`, `version`. SWEs must ensure pipelines populate these fields automatically — missing metadata blocks promotion past the Computational Governance gate. Validate metadata completeness as a CI/CD check (see Chapter 8).
 
@@ -1876,7 +1876,7 @@ describe("ReadinessFunctions", () => {
 
 ### 6-1. Action Validation Architecture
 
-**BLUF:** Actions in Foundry can include TypeScript validation functions that run before the Action executes. Complex validation logic, multi-step workflows, and conditional action flows require TypeScript — this is a TM-40L responsibility, not TM-30.
+**BLUF:** Actions in Foundry can include TypeScript validation functions that run before the Action executes. Complex validation logic, multi-step workflows, and conditional action flows require TypeScript — this is a SL 4L responsibility, not SL 3.
 
 The three validation layers for complex Actions:
 
@@ -2168,7 +2168,7 @@ Slate applications (legacy characteristics):
 
 | Requirement | Current Approved Tool | Notes |
 |---|---|---|
-| Internal application for Foundry users | Workshop | No-code/low-code; see TM-20 and TM-30 |
+| Internal application for Foundry users | Workshop | No-code/low-code; see SL 2 and SL 3 |
 | Public-facing portal or app for non-Foundry users | External application backed by OSDK or Platform SDK | Hosted on external infrastructure with proper authentication (OAuth2, service account) |
 | Existing Slate app (maintenance only) | Slate | Do not extend Slate apps; plan migration to Workshop or OSDK external app |
 
@@ -2940,7 +2940,7 @@ def verify_webhook_signature(
 
 MCP defines a client-server architecture: the AI agent (client) discovers available tools from an MCP server, then invokes those tools during reasoning. In the Foundry context, the MCP server exposes Ontology Object Types, Actions, and Functions as tools that the agent can call. The agent does not access the Ontology directly — all access flows through the MCP server, which enforces CBAC and audit logging.
 
-**Why MCP matters for TM-40L engineers:**
+**Why MCP matters for SL 4L engineers:**
 
 | Without MCP | With MCP |
 |---|---|
@@ -2951,7 +2951,7 @@ MCP defines a client-server architecture: the AI agent (client) discovers availa
 
 **MCP is NOT a replacement for OSDK.** OSDK remains the approved SDK for building external applications that present data to human users (dashboards, forms, portals). MCP is specifically for enabling AI agents to interact with the Ontology programmatically during autonomous or semi-autonomous reasoning workflows. If the consumer is a human user, use OSDK. If the consumer is an AI agent, evaluate MCP.
 
-**Scope boundary:** MCP server configuration and Ontology exposure are application-level concerns owned by the TM-40L engineer. The AI agent logic itself (prompt engineering, reasoning chains, model selection) is owned by the TM-40H (AI Engineer). Coordinate across tracks when deploying MCP-enabled workflows.
+**Scope boundary:** MCP server configuration and Ontology exposure are application-level concerns owned by the SL 4L engineer. The AI agent logic itself (prompt engineering, reasoning chains, model selection) is owned by the SL 4H (AI Engineer). Coordinate across tracks when deploying MCP-enabled workflows.
 
 ---
 
@@ -3070,10 +3070,10 @@ CBAC Enforcement + Audit Log
 
 | Use Case | Agent Description | MCP Tools Exposed | Track Coordination |
 |---|---|---|---|
-| Readiness monitoring | Autonomous agent monitors unit readiness, flags anomalies | Unit (query), Equipment (query), FlagReadinessAnomaly (action) | TM-40H (agent logic), TM-40L (MCP config) |
-| SITREP analysis | Agent reads submitted SITREPs, extracts trends, generates summary | Sitrep (query), Unit (query), computeTrendScore (function) | TM-40H (analysis logic), TM-40L (MCP config), TM-40A (Intel validation) |
-| Data quality audit | Agent scans Object Types for data quality issues (missing fields, stale records) | Multiple Object Types (query), FlagDataQualityIssue (action) | TM-40H (audit logic), TM-40L (MCP config), TM-40K (KM oversight) |
-| Maintenance prediction | Agent analyzes equipment maintenance history, predicts upcoming failures | Equipment (query), MaintenanceRecord (query), computeFailureProbability (function) | TM-40H (model logic), TM-40M (ML model), TM-40L (MCP config) |
+| Readiness monitoring | Autonomous agent monitors unit readiness, flags anomalies | Unit (query), Equipment (query), FlagReadinessAnomaly (action) | SL 4H (agent logic), SL 4L (MCP config) |
+| SITREP analysis | Agent reads submitted SITREPs, extracts trends, generates summary | Sitrep (query), Unit (query), computeTrendScore (function) | SL 4H (analysis logic), SL 4L (MCP config), SL 4A (Intel validation) |
+| Data quality audit | Agent scans Object Types for data quality issues (missing fields, stale records) | Multiple Object Types (query), FlagDataQualityIssue (action) | SL 4H (audit logic), SL 4L (MCP config), SL 4K (KM oversight) |
+| Maintenance prediction | Agent analyzes equipment maintenance history, predicts upcoming failures | Equipment (query), MaintenanceRecord (query), computeFailureProbability (function) | SL 4H (model logic), SL 4M (ML model), SL 4L (MCP config) |
 
 **PROCEDURE — Connecting an AI agent to MCP (Python example using the MCP Python SDK):**
 
@@ -3344,7 +3344,7 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 
 **DTG (Date-Time Group)** — Military date-time format: DDHHMMZMMMYYYY (e.g., 101435ZMAR2026). Used in SITREP timestamps and operational records throughout MSS.
 
-**EUCOM (United States European Command)** — Geographic Combatant Command to which USAREUR-AF is the ASCC (along with USAFRICOM). MSS integrations with EUCOM systems are a primary TM-40L use case.
+**EUCOM (United States European Command)** — Geographic Combatant Command to which USAREUR-AF is the ASCC (along with USAFRICOM). MSS integrations with EUCOM systems are a primary SL 4L use case.
 
 **EXORD (Execute Order)** — A command directive executing a plan. Referenced in multi-step Action workflows that manage EXORD state machine transitions.
 
@@ -3364,7 +3364,7 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 
 **HMAC (Hash-based Message Authentication Code)** — Cryptographic signature mechanism used to verify webhook payload integrity and authenticity.
 
-**ISR (Intelligence, Surveillance, Reconnaissance)** — The collection, processing, and dissemination of information. ISR tracking applications are a common TM-40L deliverable.
+**ISR (Intelligence, Surveillance, Reconnaissance)** — The collection, processing, and dissemination of information. ISR tracking applications are a common SL 4L deliverable.
 
 **Link Type (Foundry Ontology)** — A defined relationship between two Object Types. Traversing link types from external applications requires additional OSDK calls — use bulk patterns to avoid N+1 performance issues.
 
@@ -3372,9 +3372,9 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 
 **MCP (Model Context Protocol)** — Open standard for connecting AI agents to external tools and data sources. Released as a Foundry application-level feature in January 2026. Enables AI agents to query the Ontology, execute Actions, and invoke Functions through a standardized protocol without custom OSDK integration code. See Chapter 10.
 
-**MPE (Mission Partner Environment)** — Network environment enabling data sharing between U.S. forces and coalition partners. Objects accessible on MPE require NAFv4 compliance review before TM-40L integration development.
+**MPE (Mission Partner Environment)** — Network environment enabling data sharing between U.S. forces and coalition partners. Objects accessible on MPE require NAFv4 compliance review before SL 4L integration development.
 
-**MSS (Maven Smart System)** — The USAREUR-AF enterprise AI/data platform built on Palantir Foundry. The platform against which all TM-40L development occurs.
+**MSS (Maven Smart System)** — The USAREUR-AF enterprise AI/data platform built on Palantir Foundry. The platform against which all SL 4L development occurs.
 
 **N+1 Query Problem** — A performance anti-pattern where an application executes one query to retrieve a list of objects, then one additional query per object to retrieve related data. Produces O(N) API calls. Solved with batch query patterns.
 
@@ -3392,7 +3392,7 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 
 **Pilot (Foundry)** — AI-powered tool for generating React OSDK application scaffolding, components, and integration code (launched March 2026). Accelerates initial development but does not replace engineering review. All Pilot-generated code must meet the same CI/CD and security standards as manually written code. See section 3-7.
 
-**Pipeline Builder** — Foundry's visual ETL tool for building data transformation workflows. TM-30 scope for design; Platform SDK provides programmatic access to datasets produced by pipelines.
+**Pipeline Builder** — Foundry's visual ETL tool for building data transformation workflows. SL 3 scope for design; Platform SDK provides programmatic access to datasets produced by pipelines.
 
 **PMC (Partially Mission Capable)** — Equipment status indicating the item can perform some but not all assigned missions.
 
@@ -3400,7 +3400,7 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 
 **Service Account** — A non-human identity provisioned for deployed applications. Service account tokens are the approved credential type for server-side external applications. Provisioned by C2DAO.
 
-**SITREP (Situation Report)** — A formatted report summarizing the current status of a unit or operation. SITREP automation (reading from MSS, formatting, pushing to external systems) is a primary TM-40L use case.
+**SITREP (Situation Report)** — A formatted report summarizing the current status of a unit or operation. SITREP automation (reading from MSS, formatting, pushing to external systems) is a primary SL 4L use case.
 
 **Slate** — A legacy Foundry environment for building custom HTML/CSS/JavaScript applications hosted within the Foundry platform. Applications inherit the user's Foundry session and CBAC. **Slate is deprecated — do not use for new development.** Use Workshop for internal Foundry applications. For public-facing portals, build an external application using the OSDK or Platform SDK.
 
@@ -3412,11 +3412,11 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 
 **Transaction (Foundry Platform SDK)** — An atomic unit of work for writing to a Foundry dataset. All writes must be wrapped in a transaction. Transactions are committed (visible) or aborted (rolled back) — there is no partial commit.
 
-**TypeScript** — A typed superset of JavaScript. The required language for FOO functions, Action validators, and Slate application logic. TM-40L prerequisite skill.
+**TypeScript** — A typed superset of JavaScript. The required language for FOO functions, Action validators, and Slate application logic. SL 4L prerequisite skill.
 
-**UDRA v1.1** — Unified Data Reference Architecture, version 1.1 (February 2025). Defines domain ownership, federated governance, and integration standards for MSS. All TM-40L integrations must align.
+**UDRA v1.1** — Unified Data Reference Architecture, version 1.1 (February 2025). Defines domain ownership, federated governance, and integration standards for MSS. All SL 4L integrations must align.
 
-**USAREUR-AF** — United States Army Europe and Africa. The Army Service Component Command to USEUCOM and USAFRICOM, headquartered in Wiesbaden, Germany. The operational context for all TM-40L development.
+**USAREUR-AF** — United States Army Europe and Africa. The Army Service Component Command to USEUCOM and USAFRICOM, headquartered in Wiesbaden, Germany. The operational context for all SL 4L development.
 
 **III Corps** — Third Corps, recently realigned under USAREUR-AF. Major consumer of MSS readiness data products.
 
@@ -3430,7 +3430,7 @@ MSS Ontology (Action) --> Webhook Endpoint --> External Alert System
 
 ---
 
-*TM-40L, Maven Smart System (MSS), Software Engineer Technical Manual*
+*SL 4L, Maven Smart System (MSS), Software Engineer Technical Manual*
 *Headquarters, United States Army Europe and Africa, Wiesbaden, Germany, 2026*
 *Distribution authorized to U.S. Government agencies and their contractors only.*
 

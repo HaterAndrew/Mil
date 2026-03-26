@@ -1,10 +1,10 @@
 # EX_40M — ML Engineer
-## Practical Exercise — TM-40M Proficiency
+## Practical Exercise — SL 4M Proficiency
 
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-30 REQUIRED; TM-40M — Machine Learning Engineer Technical Manual (and TM-10 through TM-20) |
+| **Prerequisite** | SL 3 REQUIRED; SL 4M — Machine Learning Engineer Technical Manual (and SL 1 through SL 2) |
 | **Duration** | 3–4 hours |
 | **Environment** | MSS with Python Transforms, Model Integration enabled — see ENVIRONMENT_SETUP.md |
 
@@ -12,15 +12,15 @@
 
 | Resource | Reference |
 |----------|-----------|
-| Technical Manual | TM-40M — ML Engineer |
+| Technical Manual | SL 4M — ML Engineer |
 | Syllabus | SYLLABUS_TM40M |
 | Pre-Exercise Exam | EXAM_TM40M_PRE |
 | Post-Exercise Exam | EXAM_TM40M_POST |
-| Continuation Track | TM-50M — Advanced ML Engineer |
+| Continuation Track | SL 5M — Advanced ML Engineer |
 
 ## WFF AWARENESS
 
-The NMC risk model produced in this exercise is an operational product consumed by WFF track personnel (TM-40D Sustainment in particular) as a readiness decision-support tool. Evaluators should verify that the model card (Task 5) is written for a non-MLE audience — sustainment officers and NCOs will be the primary consumers.
+The NMC risk model produced in this exercise is an operational product consumed by WFF track personnel (SL 4D Sustainment in particular) as a readiness decision-support tool. Evaluators should verify that the model card (Task 5) is written for a non-MLE audience — sustainment officers and NCOs will be the primary consumers.
 
 ## SCENARIO
 
@@ -113,7 +113,7 @@ Write a model card covering all six required sections: purpose, training data, f
 
 ## NEXT STEPS
 
-Participants who receive an overall Go on EX_40M are eligible to enroll in **TM-50M — Advanced ML Engineer**. TM-50M extends into model retraining pipelines, drift detection, and MLOps governance for production Foundry environments. No TM-50A–F tracks exist.
+Participants who receive an overall Go on EX_40M are eligible to enroll in **SL 5M — Advanced ML Engineer**. SL 5M extends into model retraining pipelines, drift detection, and MLOps governance for production Foundry environments. No TM-50A–F tracks exist.
 
 ## ENVIRONMENT SETUP
 

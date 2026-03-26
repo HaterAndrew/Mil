@@ -1,12 +1,12 @@
-# POST-TEST — TM-40H: AI ENGINEER
+# POST-TEST — SL 4H: AI ENGINEER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40H: AI Engineer |
+| **Course** | SL 4H: AI Engineer |
 | **Form** | Post-Test |
-| **Level** | TM-40H (Specialist) |
-| **Audience** | AI/ML specialists; prerequisite: TM-10+20+30 + Python + prompt engineering familiarity |
+| **Level** | SL 4H (Specialist) |
+| **Audience** | AI/ML specialists; prerequisite: SL 1+20+30 + Python + prompt engineering familiarity |
 | **Time Allowed** | 45 minutes |
 | **Passing Score** | 70% (46/66) |
 
@@ -57,7 +57,7 @@ B. Write to Ontology → Retrieval → LLM inference → Output
 C. LLM inference → Retrieval of supporting documents → Output rewrite → Write to Ontology
 D. Retrieval → Context injection into prompt → LLM inference → Output review → Write to Ontology
 
-**6. An AIP Logic workflow writes a summarized lesson learned to an Ontology Object upon completion. Per TM-40H standards, this write action must:**
+**6. An AIP Logic workflow writes a summarized lesson learned to an Ontology Object upon completion. Per SL 4H standards, this write action must:**
 
 A. Occur automatically after the LLM inference step to minimize latency
 B. Require data steward approval for every individual write operation
@@ -71,7 +71,7 @@ B. Prompt injection vulnerabilities, output hallucinations, classification bound
 C. Whether the workflow can be run by users without Editor access
 D. Whether the LLM's output matches expected results across 100 standard test cases
 
-**8. You are building an AIP Logic workflow to extract key entities (unit names, grid coordinates, equipment types) from field reports. The LLM is producing inconsistently formatted outputs. The correct iterative improvement approach per TM-40H is:**
+**8. You are building an AIP Logic workflow to extract key entities (unit names, grid coordinates, equipment types) from field reports. The LLM is producing inconsistently formatted outputs. The correct iterative improvement approach per SL 4H is:**
 
 A. Revise the prompt to explicitly specify the output schema, add few-shot examples, test against a sample set, score outputs, and iterate until the format is consistent
 B. Fine-tune the LLM on correctly-formatted examples to lock in the output format
@@ -157,7 +157,7 @@ D. Storing processed data in the Ontology for downstream retrieval
 
 &nbsp;
 
-**SA-2. A new AI engineer on your team argues that the human-in-the-loop requirement slows operations and proposes removing it for "low-risk" workflows. Write your response, citing TM-40H policy and the operational risk of removing the review gate.**
+**SA-2. A new AI engineer on your team argues that the human-in-the-loop requirement slows operations and proposes removing it for "low-risk" workflows. Write your response, citing SL 4H policy and the operational risk of removing the review gate.**
 
 &nbsp;
 
@@ -177,7 +177,7 @@ D. Storing processed data in the Ontology for downstream retrieval
 
 &nbsp;
 
-**SA-4. An Agent Studio agent with access to an Ontology query tool and a Workshop form submission tool is producing unexpected results — it is submitting Workshop forms without the user explicitly requesting form submission. Describe the root cause and the correct fix using TM-40H tool-use authorization controls.**
+**SA-4. An Agent Studio agent with access to an Ontology query tool and a Workshop form submission tool is producing unexpected results — it is submitting Workshop forms without the user explicitly requesting form submission. Describe the root cause and the correct fix using SL 4H tool-use authorization controls.**
 
 &nbsp;
 
@@ -197,7 +197,7 @@ D. Storing processed data in the Ontology for downstream retrieval
 
 &nbsp;
 
-**SA-6. Describe how AIP Logic AI engineering capability supports two WFF functions. For each, identify the WFF track (TM-40A through TM-40F) and give a concrete example of an AIP workflow that supports decision-making in that function.**
+**SA-6. Describe how AIP Logic AI engineering capability supports two WFF functions. For each, identify the WFF track (SL 4A through SL 4F) and give a concrete example of an AIP workflow that supports decision-making in that function.**
 
 &nbsp;
 
@@ -248,7 +248,7 @@ Passing: 49/70 (70%) — Post-test only. Pre-test is diagnostic.
 
 SA-1. Full credit: (1) incoming field reports retrieved from Ontology or dataset; (2) RAG: retrieve relevant reference documents (unit lists, equipment codes) from corpus to enrich context; (3) context injection: field report + retrieved reference context assembled into prompt; (4) LLM inference extracts entities in structured JSON; (5) output routed to analyst review queue (Draft status in Ontology); (6) analyst reviews, edits if needed, approves → status changes to Reviewed; (7) approved record written to Ontology Object. All six steps must be present for full credit; HITL gate is required.
 
-SA-2. Full credit: response must cite — HITL is NON-NEGOTIABLE per TM-40H policy (not "low-risk" configurable); operational risk: incorrect AI output without review could corrupt Ontology data, generate false operational reports, or trigger incorrect downstream actions; the time cost of review is deliberate — it ensures accountability and accuracy in operational data; the correct solution for speed is to optimize the review workflow, not remove it. Partial credit (3 pts) for citing policy without operational risk argument.
+SA-2. Full credit: response must cite — HITL is NON-NEGOTIABLE per SL 4H policy (not "low-risk" configurable); operational risk: incorrect AI output without review could corrupt Ontology data, generate false operational reports, or trigger incorrect downstream actions; the time cost of review is deliberate — it ensures accountability and accuracy in operational data; the correct solution for speed is to optimize the review workflow, not remove it. Partial credit (3 pts) for citing policy without operational risk argument.
 
 SA-3. Full credit: red-teaming tests: prompt injection (inject instructions in simulated user input or retrieved documents); hallucination probing (inputs designed to elicit fabricated facts); classification boundary violations (inputs that test whether the workflow handles CUI/SECRET content correctly); role-constraint bypass (attempt to make the workflow act outside its defined scope); minimum to pass before production: all critical failure modes resolved, no prompt injection vulnerabilities, output schema consistent across 100+ test cases, HITL gate confirmed functional. Partial credit (3 pts) for listing test types without minimum threshold requirement.
 
@@ -256,7 +256,7 @@ SA-4. Full credit: root cause — agent's tool-use authorization for the Worksho
 
 SA-5. Full credit: AIP Authorization Checklist steps — (1) check prohibited categories: autonomous lethal action (N/A), unchecked personnel evaluation (N/A — this is OSINT, not personnel), automated official release without review (applies — check: is there a human review gate? Yes — passes); (2) verify HITL gate exists (draft summaries to analyst queue = HITL present — passes); (3) verify classification handling (OSINT at what level? — confirm appropriate network and handling); (4) confirm use case complies with Army CIO Memo (April 2024); if use case fails any checklist item, it must be redesigned or formally waived through the command AI governance process — not deployed as-is. Full credit requires checking prohibited categories AND describing failure consequence.
 
-SA-6. Full credit: any two WFF tracks correctly identified with an AIP example — TM-40A (Intelligence): AIP Logic workflow extracts entities from OSINT reports to populate an intelligence Object Type for analyst review; TM-40B (Fires): AIP workflow processes battle damage assessment reports and classifies target status for fires coordination; TM-40C (Movement & Maneuver): AIP workflow summarizes route reconnaissance reports for maneuver planners; TM-40D (Sustainment): AIP workflow processes incoming supply requests and flags priority shortfalls for G4 review; TM-40E (Protection): AIP workflow analyzes threat reports and categorizes force protection advisories; TM-40F (Mission Command): AIP workflow drafts SITREP summaries from unit reports for commander review before distribution. Each response must identify the correct TM-40 letter (A–F) and provide a concrete AIP workflow example with HITL noted for full credit.
+SA-6. Full credit: any two WFF tracks correctly identified with an AIP example — SL 4A (Intelligence): AIP Logic workflow extracts entities from OSINT reports to populate an intelligence Object Type for analyst review; SL 4B (Fires): AIP workflow processes battle damage assessment reports and classifies target status for fires coordination; SL 4C (Movement & Maneuver): AIP workflow summarizes route reconnaissance reports for maneuver planners; SL 4D (Sustainment): AIP workflow processes incoming supply requests and flags priority shortfalls for G4 review; SL 4E (Protection): AIP workflow analyzes threat reports and categorizes force protection advisories; SL 4F (Mission Command): AIP workflow drafts SITREP summaries from unit reports for commander review before distribution. Each response must identify the correct SL 4 letter (A–F) and provide a concrete AIP workflow example with HITL noted for full credit.
 
 ---
 

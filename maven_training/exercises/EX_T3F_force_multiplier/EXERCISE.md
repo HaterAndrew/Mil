@@ -4,7 +4,7 @@
 | Field | Value |
 |-------|-------|
 | **Version** | 1.0 — March 2026 |
-| **Prerequisite** | TM-20 REQUIRED; unit commander nomination; CONCEPTS_GUIDE_T3F (read before course) |
+| **Prerequisite** | SL 2 REQUIRED; unit commander nomination; CONCEPTS_GUIDE_T3F (read before course) |
 | **Duration** | Day 3 — Teach-Back (15–20 min per candidate) + Go/No-Go Practicum (60 min total) + Troubleshooting Exam (30 min) |
 | **Environment** | MSS Training Environment; classroom with projector; student workstations for role-play |
 
@@ -22,7 +22,7 @@
 ## EXERCISE OVERVIEW
 
 T3-F Day 3 has three evaluated components:
-1. **Teach-Back** — deliver a 15–20 minute TM-10 block of instruction
+1. **Teach-Back** — deliver a 15–20 minute SL 1 block of instruction
 2. **Go/No-Go Practicum** — administer 1 T&EO to a role-player
 3. **Troubleshooting Exam** — resolve 2 of 3 pre-staged environment failures
 
@@ -33,7 +33,7 @@ All three components must be passed for T3-F Go.
 ## TASK 1 — TEACH-BACK (15–20 minutes)
 
 ### Preparation (Day 2 evening)
-- [ ] Select a TM-10 lesson block (instructor may direct to avoid duplicates)
+- [ ] Select a SL 1 lesson block (instructor may direct to avoid duplicates)
 - [ ] Review the published lesson plan for the selected block
 - [ ] Prepare to deliver the block using the lesson plan (including at least 1 check-on-learning question)
 
@@ -123,7 +123,7 @@ All three components must be passed for T3-F Go.
 | **T3-F Go** | Teach-Back Go **AND** Go/No-Go Practicum Go **AND** Troubleshooting Exam Go |
 | **T3-F No-Go** | Failure on any component — see SYLLABUS_T3F for remediation procedures |
 
-**T3-F Go authorizes the UDT designation. The candidate may begin delivering TM-10 independently at their unit.**
+**T3-F Go authorizes the UDT designation. The candidate may begin delivering SL 1 independently at their unit.**
 
 ---
 

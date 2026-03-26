@@ -1,4 +1,4 @@
-# Self-Study Addendum — TM-50G: Advanced Operations Research and Systems Analysis
+# Self-Study Addendum — SL 5G: Advanced Operations Research and Systems Analysis
 ## Palantir Developers Reference Library
 
 > **NOT REQUIRED FOR QUALIFICATION.** This addendum provides curated references from the Palantir Developers YouTube channel ([@PalantirDevelopers](https://www.youtube.com/@PalantirDevelopers)) for personnel who want to deepen their MSS technical skills beyond the core curriculum. All content is publicly available.
@@ -9,7 +9,7 @@
 
 ## How to Use This Addendum
 
-Videos are grouped by topic and ordered from foundational to advanced. TM-40G self-study references are included here for completeness — analysts who completed TM-40G recently may skip Group 1 and Group 2. Start with Groups 3 and 4 for content specific to TM-50G advanced topics.
+Videos are grouped by topic and ordered from foundational to advanced. SL 4G self-study references are included here for completeness — analysts who completed SL 4G recently may skip Group 1 and Group 2. Start with Groups 3 and 4 for content specific to SL 5G advanced topics.
 
 ---
 
@@ -23,7 +23,7 @@ The following doctrine sections were added to TM-50G this session. Review after 
 
 ---
 
-## Group 1 — Quiver: Building and Navigating Analyses (from TM-40G)
+## Group 1 — Quiver: Building and Navigating Analyses (from SL 4G)
 
 | Video | What it Covers | Relevant TM Chapter |
 |---|---|---|
@@ -35,7 +35,7 @@ The following doctrine sections were added to TM-50G this session. Review after 
 
 ---
 
-## Group 2 — Contour and Dashboard Construction (from TM-40G)
+## Group 2 — Contour and Dashboard Construction (from SL 4G)
 
 | Video | What it Covers | Relevant TM Chapter |
 |---|---|---|

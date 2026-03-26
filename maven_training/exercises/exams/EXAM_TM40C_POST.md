@@ -1,12 +1,12 @@
-# POST-TEST — TM-40C: MOVEMENT & MANEUVER
+# POST-TEST — SL 4C: MOVEMENT & MANEUVER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Course** | TM-40C: Movement & Maneuver WFF Track |
+| **Course** | SL 4C: Movement & Maneuver WFF Track |
 | **Form** | Post-Test |
-| **Level** | TM-40C (WFF Track) |
-| **Audience** | G3/S3 maneuver staff, operations officers, S3 NCOs, maneuver planners; prerequisite: completion of TM-40C training |
+| **Level** | SL 4C (WFF Track) |
+| **Audience** | G3/S3 maneuver staff, operations officers, S3 NCOs, maneuver planners; prerequisite: completion of SL 4C training |
 | **Time Allowed** | 30 minutes |
 | **Passing Score** | 80% (32/40 points) |
 
@@ -14,7 +14,7 @@
 
 ## INSTRUCTIONS
 
-This assessment confirms proficiency upon completion of TM-40C training. A score of 80% (32/40) is required for course completion certification. Results are recorded on the student training record.
+This assessment confirms proficiency upon completion of SL 4C training. A score of 80% (32/40) is required for course completion certification. Results are recorded on the student training record.
 
 ---
 
@@ -85,7 +85,7 @@ B. Information environment effects, OPSEC indicators, and adversary information 
 C. Terrain analysis, weather overlays, and light data
 D. Supply chain status and logistics node capacity
 
-**10. Section 8-4a of TM-40C establishes standard force ratios for planning purposes. According to FM 5-0 planning references, what is the minimum planning ratio (friendly:threat) for a deliberate attack at the point of penetration?**
+**10. Section 8-4a of SL 4C establishes standard force ratios for planning purposes. According to FM 5-0 planning references, what is the minimum planning ratio (friendly:threat) for a deliberate attack at the point of penetration?**
 
 A. 1:3 — the defender has the advantage in a deliberate attack
 B. 2:1 — numerical superiority is sufficient for a deliberate penetration

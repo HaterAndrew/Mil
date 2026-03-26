@@ -1,18 +1,18 @@
-# COURSE SYLLABUS — TM-30: ADVANCED BUILDER
+# COURSE SYLLABUS — SL 3: ADVANCED BUILDER
 ## Maven Smart System (MSS) — USAREUR-AF
 
 | Field | Detail |
 |---|---|
-| **Level** | TM-30 (Advanced Builder — data-adjacent specialists) |
+| **Level** | SL 3 (Advanced Builder — data-adjacent specialists) |
 | **Duration** | 5 days (40 hours) |
-| **Prerequisite** | TM-10 and TM-20 complete (both Go evaluations on file) |
+| **Prerequisite** | SL 1 and SL 2 complete (both Go evaluations on file) |
 | **Audience** | 17/25-series signal soldiers, S6/G6 staff, G2 intelligence analysts, operational data analysts |
 | **Format** | Instructor-led lab + design workshop + practical exercise |
 | **Location** | MSS Training Environment |
 
 ---
 
-**BLUF:** TM-30 moves you from building components to designing systems. After this course you can architect an Ontology model from a mission requirement, build multi-source pipelines with scheduled refresh, produce multi-page Workshop applications with conditional logic, conduct advanced analysis in Contour and Quiver, and own the full C2DAO governance cycle. TM-30 personnel are the data leads of their formation.
+**BLUF:** SL 3 moves you from building components to designing systems. After this course you can architect an Ontology model from a mission requirement, build multi-source pipelines with scheduled refresh, produce multi-page Workshop applications with conditional logic, conduct advanced analysis in Contour and Quiver, and own the full C2DAO governance cycle. SL 3 personnel are the data leads of their formation.
 
 ---
 
@@ -22,11 +22,11 @@
 |---|---|
 | 1 | Build a multi-page Workshop application with conditional logic (show/hide, branching), variable passing between pages, and URL-based deep linking |
 | 2 | Build a Pipeline Builder pipeline with multi-source joins, union transforms, group-by aggregations, and computed columns derived from multiple sources |
-| 3 | Design an Ontology schema (Object Types, Link Types, Actions) from a mission requirement — documented and reviewed against the TM-30 design rubric |
+| 3 | Design an Ontology schema (Object Types, Link Types, Actions) from a mission requirement — documented and reviewed against the SL 3 design rubric |
 | 4 | Configure a scheduled pipeline with email alerting on build failure |
 | 5 | Conduct advanced Contour analysis: pivot tables, calculated columns, parameter controls, saved analysis views |
 | 6 | Build a multi-object Quiver dashboard with linked views and cross-object filter propagation |
-| 7 | Configure (not author) an AIP Logic workflow — connect inputs, outputs, trigger conditions, and interpret lineage graphs. **Scope note:** TM-30 covers UI-based configuration of existing AIP Logic workflows only. Authoring AI models, writing prompts, or creating new Agent Studio workflows requires TM-40H (AI Engineer). |
+| 7 | Configure (not author) an AIP Logic workflow — connect inputs, outputs, trigger conditions, and interpret lineage graphs. **Scope note:** SL 3 covers UI-based configuration of existing AIP Logic workflows only. Authoring AI models, writing prompts, or creating new Agent Studio workflows requires SL 4H (AI Engineer). |
 | 8 | Execute the full C2DAO promotion workflow from branch creation through data steward approval, including responding to steward feedback |
 
 ---
@@ -35,7 +35,7 @@
 
 Complete **7+ duty days before Day 1:**
 
-- [ ] Confirm both TM-10 and TM-20 Go evaluations are on file with your unit training coordinator
+- [ ] Confirm both SL 1 and SL 2 Go evaluations are on file with your unit training coordinator
 - [ ] Request **Editor access** in the MSS Training Environment from your unit MSS Administrator
 - [ ] Request AIP Logic **configuration access** — may require C2DAO coordination; required for Day 4; confirm active before Day 1
 - [ ] Read TM-30, Chapter 1 (Introduction) and complete the prerequisite self-check — 30 min
@@ -49,7 +49,7 @@ Complete **7+ duty days before Day 1:**
 
 | Time | Block | Method | Content |
 |---|---|---|---|
-| 0800–0830 | — | Brief | TM-30 overview; what you will build by Day 5; design-first methodology |
+| 0800–0830 | — | Brief | SL 3 overview; what you will build by Day 5; design-first methodology |
 | 0830–1030 | 1 | Lab | Multi-page Workshop: page navigation, parameter configuration, URL deep links |
 | 1030–1045 | — | Break | |
 | 1045–1200 | 2 | Lab | Conditional logic: show/hide panels, conditional formatting on tables, dynamic widget visibility rules |
@@ -196,10 +196,10 @@ Your design document is reviewed before you build — a fatally-flawed schema mu
 | **No-Go — design rubric score below threshold or zero-score item** | Redesign required. Review TM-30, Chapter 4 (Ontology design methodology). Re-evaluation scheduled through unit training coordinator; full Day 5 re-run required. |
 | **No-Go — pipeline produces incorrect output** | Review TM-30, Chapter 3 (multi-source joins and append mode). Re-evaluation required. |
 | **No-Go — Workshop navigation or conditional logic fails** | Review TM-30, Chapter 2 (advanced Workshop). Re-evaluation required. |
-| **No-Go — Quiver linked views not configured** | Review TM-30, Chapter 5 (Quiver linked views). This is the most common single-task failure — complete the Quiver self-study exercise in TM-30 before rescheduling. |
+| **No-Go — Quiver linked views not configured** | Review TM-30, Chapter 5 (Quiver linked views). This is the most common single-task failure — complete the Quiver self-study exercise in SL 3 before rescheduling. |
 | **No-Go — promotion description incomplete** | Review TM-30, Chapter 7. Same-day retry authorized at evaluator discretion for this item only. |
 
-Re-evaluation requires full repetition of the practical exercise (all tasks), not just the failed tasks. Schedule through unit training coordinator. TM-30 qualification cannot be self-certified.
+Re-evaluation requires full repetition of the practical exercise (all tasks), not just the failed tasks. Schedule through unit training coordinator. SL 3 qualification cannot be self-certified.
 
 ---
 
@@ -212,45 +212,45 @@ Re-evaluation requires full repetition of the practical exercise (all tasks), no
 | Append mode | Configure Append mode **before** the first run. Running once in Overwrite then switching gives you 3 records after two Append runs, not 2 |
 | Contour pivot tables | Different from Excel — read TM-30, Section 5-2 before the Contour lab |
 | Quiver linked views | **Most common practical exercise No-Go.** Filter links must be explicitly configured — selecting an object does NOT automatically filter another view. Complete the Quiver self-study in TM-30, Chapter 5 the evening before Day 5. Do not skip this. |
-| AIP Logic scope | TM-30 covers configuration only — connecting triggers, inputs, outputs on existing workflows. If the scenario asks you to author a new AI model or write prompts, that is out of scope. Raise it immediately rather than attempting it. |
+| AIP Logic scope | SL 3 covers configuration only — connecting triggers, inputs, outputs on existing workflows. If the scenario asks you to author a new AI model or write prompts, that is out of scope. Raise it immediately rather than attempting it. |
 | Promotion description | "Updated Workshop application" fails. "Changed unit filter to include inactive units per S3 requirement dated 10MAR26" passes |
 
 ---
 
 ## Continuation
 
-TM-30 is the gateway to **all** TM-40 tracks — both WFF (TM-40A–F) and Specialist (TM-40G–O). TM-30 completion is a **hard prerequisite — no waivers** — for every track in the TM-40 series.
+SL 3 is the gateway to **all** SL 4 tracks — both WFF (SL 4A–F) and Specialist (SL 4G–O). SL 3 completion is a **hard prerequisite — no waivers** — for every track in the SL 4 series.
 
-**WFF Tracks (TM-40A–F) — prereq: TM-30 (required):**
+**WFF Tracks (SL 4A–F) — prereq: SL 3 (required):**
 
 | Track | WFF | Audience |
 |---|---|---|
-| TM-40A | Intelligence | G2/S2 staff, targeting officers, all-source analysts |
-| TM-40B | Fires | FSOs, FSEs, targeting officers, fires NCOs |
-| TM-40C | Movement & Maneuver | G3/S3 staff, operations officers, maneuver planners |
-| TM-40D | Sustainment | G4/S4 staff, logistics officers, supply chain managers |
-| TM-40E | Protection | FP officers, CBRN officers, provost marshal staff |
-| TM-40F | Mission Command | Battle captains, XOs, CDRs, MC-function staff |
+| SL 4A | Intelligence | G2/S2 staff, targeting officers, all-source analysts |
+| SL 4B | Fires | FSOs, FSEs, targeting officers, fires NCOs |
+| SL 4C | Movement & Maneuver | G3/S3 staff, operations officers, maneuver planners |
+| SL 4D | Sustainment | G4/S4 staff, logistics officers, supply chain managers |
+| SL 4E | Protection | FP officers, CBRN officers, provost marshal staff |
+| SL 4F | Mission Command | Battle captains, XOs, CDRs, MC-function staff |
 
-**Specialist Tracks (TM-40G–O) — prereq: TM-30 (required):**
+**Specialist Tracks (SL 4G–O) — prereq: SL 3 (required):**
 
 | Track | Specialist Role | Advanced Level |
 |---|---|---|
-| TM-40G | ORSA | TM-50G (Advanced ORSA) |
-| TM-40H | AI Engineer | TM-50H (Advanced AI Engineer) |
-| TM-40M | ML Engineer | TM-50M (Advanced ML Engineer) |
-| TM-40J | Program Manager | TM-50J (Advanced Program Manager) |
-| TM-40K | Knowledge Manager | TM-50K (Advanced Knowledge Manager) |
-| TM-40L | Software Engineer | TM-50L (Advanced Software Engineer) |
-| TM-40N | UX Designer | TM-50N (Advanced UX Designer) |
-| TM-40O | Platform Engineer | TM-50O (Advanced Platform Engineer) |
+| SL 4G | ORSA | SL 5G (Advanced ORSA) |
+| SL 4H | AI Engineer | SL 5H (Advanced AI Engineer) |
+| SL 4M | ML Engineer | SL 5M (Advanced ML Engineer) |
+| SL 4J | Program Manager | SL 5J (Advanced Program Manager) |
+| SL 4K | Knowledge Manager | SL 5K (Advanced Knowledge Manager) |
+| SL 4L | Software Engineer | SL 5L (Advanced Software Engineer) |
+| SL 4N | UX Designer | SL 5N (Advanced UX Designer) |
+| SL 4O | Platform Engineer | SL 5O (Advanced Platform Engineer) |
 
 **T3-I (Instructor Certification) — parallel path:**
-TM-30 graduates who demonstrate strong instructional aptitude may be nominated for T3-I (Instructor Certification). T3-I is a 5-day course that qualifies graduates to deliver TM-10, TM-20, and TM-30 as certified instructors. See SYLLABUS_T3I for details.
+SL 3 graduates who demonstrate strong instructional aptitude may be nominated for T3-I (Instructor Certification). T3-I is a 5-day course that qualifies graduates to deliver SL 1, SL 2, and SL 3 as certified instructors. See SYLLABUS_T3I for details.
 
-**TM-50A–F do not exist.** The advanced series is TM-50G–O only. Any reference to TM-50A through TM-50F is stale and incorrect.
+**TM-50A–F do not exist.** The advanced series is SL 5G–O only. Any reference to TM-50A through TM-50F is stale and incorrect.
 
 ---
 
 *USAREUR-AF Operational Data Team*
-*Syllabus TM-30 | Version 2.0 | March 2026*
+*Syllabus SL 3 | Version 2.0 | March 2026*

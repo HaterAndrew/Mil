@@ -37,31 +37,31 @@ All instructors must meet the following minimum qualifications before being assi
 
 | Course | Minimum Instructor Qualification | Domain Requirement |
 |---|---|---|
-| TM-10 | TM-20 Go on file; 90 days active MSS use | Foundry platform fundamentals |
-| TM-20 | TM-30 Go on file; 6+ months Foundry build experience; has built at least 2 production data products | Pipelines, Ontology, Workshop |
-| TM-30 | TM-40 (any track) Go on file or C2DAO SME designation; can conduct Ontology design critiques | Advanced pipeline, Ontology design, AIP Logic configuration |
-| TM-40A (INT) | Intelligence professional (35-series preferred); TM-20 Go on file; MSS COP and CCIR experience | INT WFF functions, COP management, CCIR configuration |
-| TM-40B (FIRES) | Fire support officer or NCO (FA preferred); TM-20 Go on file; MSS fires display experience | Fires WFF functions, targeting data, fire support coordination |
-| TM-40C (M2) | Maneuver officer or NCO (infantry/armor preferred); TM-20 Go on file | M2 WFF functions, unit position tracking, route analysis |
-| TM-40D (SUST) | Logistics officer or NCO (88/92-series preferred); TM-20 Go on file | Sustainment WFF functions, LOGSTAT, readiness data |
-| TM-40E (PROT) | Force protection officer or CBRN officer; TM-20 Go on file | Protection WFF functions, force protection CCIRs, PERSTAT |
-| TM-40F (MC) | Operations officer or XO (O-4 or above preferred); TM-20 Go on file | Mission command WFF, BUA products, synchronization matrices |
-| TM-40G | FA49 officer, ORSA-designated Civilian, or equivalent quantitative background; TM-40G Go on file or C2DAO ORSA SME designation | Statistical modeling, time series, Monte Carlo, LP |
-| TM-40H | AIP Logic authoring experience (minimum 3 production workflows deployed); C2DAO AI SME designation; TM-40H Go on file | AIP Logic, Agent Studio, RAG, AI safety |
-| TM-40M | ML model deployed to production (minimum 1); TM-40M Go on file; C2DAO MLE SME designation | Feature engineering, model training, MLOps, governance |
-| TM-40J | Program management background (PM-certified preferred); TM-30 Go on file; GFEBS/IMS proficiency | IMS, GFEBS, dashboard standards |
-| TM-40K | Knowledge management background (CKM or equivalent preferred); TM-30 Go on file | KM systems, AIP summarization, PCS continuity |
-| TM-40L | Software engineering background; OSDK/Platform SDK production experience; TM-40L Go on file | OSDK, Platform SDK, TypeScript FOO, Slate, security |
-| TM-40N | UI/UX design background; MSS dashboard design experience; TM-40N Go on file | Soldier Centered Design, design tokens, Workshop dashboards |
-| TM-40O | Platform engineering background; Foundry infrastructure/DevOps experience; TM-40O Go on file | Infrastructure provisioning, CI/CD, fleet management, security |
-| TM-50G | FA49 or equivalent; TM-50G Go on file; C2DAO Senior ORSA SME designation | Advanced optimization, wargaming models, campaign analysis |
-| TM-50H | C2DAO Senior AI SME; TM-50H Go on file; has deployed 5+ production AI workflows | Advanced AIP Logic, multi-agent orchestration, AI safety evaluation |
-| TM-50M | Senior MLE; TM-50M Go on file; C2DAO Senior MLE SME designation | Advanced MLOps, feature stores, adversarial robustness |
-| TM-50J | Senior PM background; TM-50J Go on file; portfolio-level program delivery experience | Portfolio governance, resource cases, coalition coordination |
-| TM-50K | Senior KM background; TM-50K Go on file; C2DAO Senior KM SME designation | Enterprise KM architecture, cross-domain knowledge systems |
-| TM-50L | Senior SWE; TM-50L Go on file; platform architecture production experience | Advanced OSDK, platform SDK patterns, security architecture |
-| TM-50N | Senior UI/UX designer; TM-50N Go on file; design system architecture experience | Design system governance, cross-platform UX, accessibility |
-| TM-50O | Senior platform engineer; TM-50O Go on file; fleet-scale infrastructure experience | Advanced fleet management, wave upgrades, platform reliability |
+| SL 1 | SL 2 Go on file; 90 days active MSS use | Foundry platform fundamentals |
+| SL 2 | SL 3 Go on file; 6+ months Foundry build experience; has built at least 2 production data products | Pipelines, Ontology, Workshop |
+| SL 3 | SL 4 (any track) Go on file or C2DAO SME designation; can conduct Ontology design critiques | Advanced pipeline, Ontology design, AIP Logic configuration |
+| SL 4A (INT) | Intelligence professional (35-series preferred); SL 2 Go on file; MSS COP and CCIR experience | INT WFF functions, COP management, CCIR configuration |
+| SL 4B (FIRES) | Fire support officer or NCO (FA preferred); SL 2 Go on file; MSS fires display experience | Fires WFF functions, targeting data, fire support coordination |
+| SL 4C (M2) | Maneuver officer or NCO (infantry/armor preferred); SL 2 Go on file | M2 WFF functions, unit position tracking, route analysis |
+| SL 4D (SUST) | Logistics officer or NCO (88/92-series preferred); SL 2 Go on file | Sustainment WFF functions, LOGSTAT, readiness data |
+| SL 4E (PROT) | Force protection officer or CBRN officer; SL 2 Go on file | Protection WFF functions, force protection CCIRs, PERSTAT |
+| SL 4F (MC) | Operations officer or XO (O-4 or above preferred); SL 2 Go on file | Mission command WFF, BUA products, synchronization matrices |
+| SL 4G | FA49 officer, ORSA-designated Civilian, or equivalent quantitative background; SL 4G Go on file or C2DAO ORSA SME designation | Statistical modeling, time series, Monte Carlo, LP |
+| SL 4H | AIP Logic authoring experience (minimum 3 production workflows deployed); C2DAO AI SME designation; SL 4H Go on file | AIP Logic, Agent Studio, RAG, AI safety |
+| SL 4M | ML model deployed to production (minimum 1); SL 4M Go on file; C2DAO MLE SME designation | Feature engineering, model training, MLOps, governance |
+| SL 4J | Program management background (PM-certified preferred); SL 3 Go on file; GFEBS/IMS proficiency | IMS, GFEBS, dashboard standards |
+| SL 4K | Knowledge management background (CKM or equivalent preferred); SL 3 Go on file | KM systems, AIP summarization, PCS continuity |
+| SL 4L | Software engineering background; OSDK/Platform SDK production experience; SL 4L Go on file | OSDK, Platform SDK, TypeScript FOO, Slate, security |
+| SL 4N | UI/UX design background; MSS dashboard design experience; SL 4N Go on file | Soldier Centered Design, design tokens, Workshop dashboards |
+| SL 4O | Platform engineering background; Foundry infrastructure/DevOps experience; SL 4O Go on file | Infrastructure provisioning, CI/CD, fleet management, security |
+| SL 5G | FA49 or equivalent; SL 5G Go on file; C2DAO Senior ORSA SME designation | Advanced optimization, wargaming models, campaign analysis |
+| SL 5H | C2DAO Senior AI SME; SL 5H Go on file; has deployed 5+ production AI workflows | Advanced AIP Logic, multi-agent orchestration, AI safety evaluation |
+| SL 5M | Senior MLE; SL 5M Go on file; C2DAO Senior MLE SME designation | Advanced MLOps, feature stores, adversarial robustness |
+| SL 5J | Senior PM background; SL 5J Go on file; portfolio-level program delivery experience | Portfolio governance, resource cases, coalition coordination |
+| SL 5K | Senior KM background; SL 5K Go on file; C2DAO Senior KM SME designation | Enterprise KM architecture, cross-domain knowledge systems |
+| SL 5L | Senior SWE; SL 5L Go on file; platform architecture production experience | Advanced OSDK, platform SDK patterns, security architecture |
+| SL 5N | Senior UI/UX designer; SL 5N Go on file; design system architecture experience | Design system governance, cross-platform UX, accessibility |
+| SL 5O | Senior platform engineer; SL 5O Go on file; fleet-scale infrastructure experience | Advanced fleet management, wave upgrades, platform reliability |
 
 ### 2-2. Evaluator Certification
 
@@ -69,31 +69,31 @@ Evaluators (instructors who conduct Go/No-Go evaluations) must hold a higher cer
 
 | Evaluator for Course | Minimum Evaluator Certification |
 |---|---|
-| TM-10 | TM-20 certified instructor |
-| TM-20 | TM-30 certified instructor |
-| TM-30 | TM-40 (any track) certified instructor |
-| TM-40A (INT) | INT professional (35-series preferred); MSS COP/CCIR proficiency |
-| TM-40B (FIRES) | Fire support professional (FA preferred); MSS fires display proficiency |
-| TM-40C (M2) | Maneuver officer or NCO; MSS position tracking proficiency |
-| TM-40D (SUST) | Logistics professional (88/92-series preferred); MSS LOGSTAT proficiency |
-| TM-40E (PROT) | Force protection or CBRN officer; MSS CCIR/PERSTAT proficiency |
-| TM-40F (MC) | Operations officer; MSS BUA/synchronization product proficiency |
-| TM-40G | FA49 or equivalent; C2DAO ORSA SME designation |
-| TM-40H | C2DAO AI SME; has deployed at least 3 production AIP workflows |
-| TM-40M | MLE with production deployment experience; C2DAO MLE SME designation |
-| TM-40J | PM background; has delivered production PM dashboards on MSS |
-| TM-40K | KM background; C2DAO-designated KM evaluator |
-| TM-40L | Senior SWE; OSDK/Slate production experience; security review background |
-| TM-40N | Senior UI/UX designer; MSS design system production experience |
-| TM-40O | Senior platform engineer; Foundry infrastructure production experience |
-| TM-50G | C2DAO Senior ORSA SME; TM-50G certified instructor |
-| TM-50H | C2DAO Senior AI SME; TM-50H certified instructor |
-| TM-50M | C2DAO Senior MLE SME; TM-50M certified instructor |
-| TM-50J | Senior PM; TM-50J certified instructor; portfolio delivery experience |
-| TM-50K | C2DAO Senior KM SME; TM-50K certified instructor |
-| TM-50L | Senior SWE; TM-50L certified instructor; platform architecture experience |
-| TM-50N | Senior UI/UX designer; TM-50N certified instructor; design system governance experience |
-| TM-50O | Senior platform engineer; TM-50O certified instructor; fleet-scale operations experience |
+| SL 1 | SL 2 certified instructor |
+| SL 2 | SL 3 certified instructor |
+| SL 3 | SL 4 (any track) certified instructor |
+| SL 4A (INT) | INT professional (35-series preferred); MSS COP/CCIR proficiency |
+| SL 4B (FIRES) | Fire support professional (FA preferred); MSS fires display proficiency |
+| SL 4C (M2) | Maneuver officer or NCO; MSS position tracking proficiency |
+| SL 4D (SUST) | Logistics professional (88/92-series preferred); MSS LOGSTAT proficiency |
+| SL 4E (PROT) | Force protection or CBRN officer; MSS CCIR/PERSTAT proficiency |
+| SL 4F (MC) | Operations officer; MSS BUA/synchronization product proficiency |
+| SL 4G | FA49 or equivalent; C2DAO ORSA SME designation |
+| SL 4H | C2DAO AI SME; has deployed at least 3 production AIP workflows |
+| SL 4M | MLE with production deployment experience; C2DAO MLE SME designation |
+| SL 4J | PM background; has delivered production PM dashboards on MSS |
+| SL 4K | KM background; C2DAO-designated KM evaluator |
+| SL 4L | Senior SWE; OSDK/Slate production experience; security review background |
+| SL 4N | Senior UI/UX designer; MSS design system production experience |
+| SL 4O | Senior platform engineer; Foundry infrastructure production experience |
+| SL 5G | C2DAO Senior ORSA SME; SL 5G certified instructor |
+| SL 5H | C2DAO Senior AI SME; SL 5H certified instructor |
+| SL 5M | C2DAO Senior MLE SME; SL 5M certified instructor |
+| SL 5J | Senior PM; SL 5J certified instructor; portfolio delivery experience |
+| SL 5K | C2DAO Senior KM SME; SL 5K certified instructor |
+| SL 5L | Senior SWE; SL 5L certified instructor; platform architecture experience |
+| SL 5N | Senior UI/UX designer; SL 5N certified instructor; design system governance experience |
+| SL 5O | Senior platform engineer; SL 5O certified instructor; fleet-scale operations experience |
 
 ---
 
@@ -130,7 +130,7 @@ T3-I formalizes a three-tier instructor hierarchy (plus the Unit Data Trainer ti
 | Instructor | T3-I Go + domain quals per §2-1 | Deliver assigned courses; conduct Go/No-Go evaluations |
 | Senior Instructor | Instructor + 12 months + 4 iterations + OIC recommendation | Certify new instructors; approve lesson plan revisions |
 | Master Instructor | Senior + 24 months + 2 cross-certs + 2 mentored candidates + OIC designation | Certify Senior Instructors; approve curriculum changes; delegation authority |
-| Unit Data Trainer | T3-F Go + CDR nomination | Deliver TM-10; administer TM-10 Go/No-Go evaluations; proctor TM-10 exams |
+| Unit Data Trainer | T3-F Go + CDR nomination | Deliver SL 1; administer SL 1 Go/No-Go evaluations; proctor SL 1 exams |
 
 ### 3-1b. C2DAO SME Designation
 
@@ -143,7 +143,7 @@ An instructor certified for one course level may be cross-certified for an adjac
 - Phase 2 (Assistant): 1 course iteration
 - Phase 3 (Lead, Observed): 1 course iteration
 
-An instructor certified for TM-30 who wishes to teach TM-40J or TM-40K may use the cross-certification path if they have the domain background requirement. Instructors teaching WFF tracks (TM-40A–F) require functional domain expertise (INT, FIRES, M2, SUST, PROT, or MC) in addition to TM-30 certification — the cross-certification path applies to all TM-40 instructors.
+An instructor certified for SL 3 who wishes to teach SL 4J or SL 4K may use the cross-certification path if they have the domain background requirement. Instructors teaching WFF tracks (SL 4A–F) require functional domain expertise (INT, FIRES, M2, SUST, PROT, or MC) in addition to SL 3 certification — the cross-certification path applies to all SL 4 instructors.
 
 ### 3-3. Phase Model Reconciliation (FDP ↔ T3-I)
 
@@ -216,7 +216,7 @@ Lesson plans must be reviewed and updated at minimum annually, or within 30 days
 
 ### 5-3. Guest Instructors and SME Blocks
 
-For specialist content requiring domain expertise not held by C2DAO staff (e.g., FA49 ORSA evaluators for TM-40G commander brief evaluation, security specialists for TM-40L security block), C2DAO may designate Guest Instructors who:
+For specialist content requiring domain expertise not held by C2DAO staff (e.g., FA49 ORSA evaluators for SL 4G commander brief evaluation, security specialists for SL 4L security block), C2DAO may designate Guest Instructors who:
 - Hold the relevant domain qualification
 - Are briefed by C2DAO Training OIC on course standards and evaluation criteria before their block
 - Receive an orientation to the T&EOs for any blocks they evaluate
@@ -381,14 +381,14 @@ As of: _______________
 =========================================================
 Name | Courses Certified | Eval Cert | Last Observed | Platform Currency
 -----|-------------------|-----------|---------------|------------------
-     | TM-10, TM-20      | Yes (TM-10/20) | MM/YYYY | Current
-     | TM-30, TM-40J     | Yes (TM-30)    | MM/YYYY | Current
-     | TM-40H            | Yes (TM-40H)   | MM/YYYY | Current
+     | SL 1, SL 2      | Yes (SL 1/20) | MM/YYYY | Current
+     | SL 3, SL 4J     | Yes (SL 3)    | MM/YYYY | Current
+     | SL 4H            | Yes (SL 4H)   | MM/YYYY | Current
 
 GUEST INSTRUCTORS:
 Name | Block(s) | Course | Qualification | Last Briefed
 -----|----------|--------|---------------|-------------
-     | ORSA Brief Eval | TM-40G | FA49 | MM/YYYY
+     | ORSA Brief Eval | SL 4G | FA49 | MM/YYYY
 
 Roster Maintained By: ____________________________
 Last Updated: ____________________________________

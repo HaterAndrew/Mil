@@ -101,37 +101,37 @@ EVALUATORS = [
 # Profile key: list of courses completed (in order). Prereqs enforced.
 PROFILES = {
     # Foundation only
-    "tm10_only": ["TM-10"],
-    "tm10_nogo": [],  # attempted TM-10, got NO_GO
-    "tm20": ["TM-10", "TM-20"],
-    "tm30": ["TM-10", "TM-20", "TM-30"],
-    "fbc": ["TM-10", "TM-20", "FBC"],
+    "tm10_only": ["SL 1"],
+    "tm10_nogo": [],  # attempted SL 1, got NO_GO
+    "tm20": ["SL 1", "SL 2"],
+    "tm30": ["SL 1", "SL 2", "SL 3"],
+    "fbc": ["SL 1", "SL 2", "FBC"],
 
     # WFF tracks (A-F)
-    "wff_a": ["TM-10", "TM-20", "TM-30", "TM-40A"],
-    "wff_b": ["TM-10", "TM-20", "TM-30", "TM-40B"],
-    "wff_c": ["TM-10", "TM-20", "TM-30", "TM-40C"],
-    "wff_d": ["TM-10", "TM-20", "TM-30", "TM-40D"],
-    "wff_e": ["TM-10", "TM-20", "TM-30", "TM-40E"],
-    "wff_f": ["TM-10", "TM-20", "TM-30", "TM-40F"],
+    "wff_a": ["SL 1", "SL 2", "SL 3", "SL 4A"],
+    "wff_b": ["SL 1", "SL 2", "SL 3", "SL 4B"],
+    "wff_c": ["SL 1", "SL 2", "SL 3", "SL 4C"],
+    "wff_d": ["SL 1", "SL 2", "SL 3", "SL 4D"],
+    "wff_e": ["SL 1", "SL 2", "SL 3", "SL 4E"],
+    "wff_f": ["SL 1", "SL 2", "SL 3", "SL 4F"],
 
     # Specialist tracks (G-O)
-    "spec_g": ["TM-10", "TM-20", "TM-30", "TM-40G"],
-    "spec_h": ["TM-10", "TM-20", "TM-30", "TM-40H"],
-    "spec_i": ["TM-10", "TM-20", "TM-30", "TM-40M"],
-    "spec_j": ["TM-10", "TM-20", "TM-30", "TM-40J"],
-    "spec_k": ["TM-10", "TM-20", "TM-30", "TM-40K"],
-    "spec_l": ["TM-10", "TM-20", "TM-30", "TM-40L"],
+    "spec_g": ["SL 1", "SL 2", "SL 3", "SL 4G"],
+    "spec_h": ["SL 1", "SL 2", "SL 3", "SL 4H"],
+    "spec_i": ["SL 1", "SL 2", "SL 3", "SL 4M"],
+    "spec_j": ["SL 1", "SL 2", "SL 3", "SL 4J"],
+    "spec_k": ["SL 1", "SL 2", "SL 3", "SL 4K"],
+    "spec_l": ["SL 1", "SL 2", "SL 3", "SL 4L"],
 
-    # Advanced (TM-50)
-    "adv_g": ["TM-10", "TM-20", "TM-30", "TM-40G", "TM-50G"],
-    "adv_h": ["TM-10", "TM-20", "TM-30", "TM-40H", "TM-50H"],
-    "adv_l": ["TM-10", "TM-20", "TM-30", "TM-40L", "TM-50L"],
+    # Advanced (SL 5)
+    "adv_g": ["SL 1", "SL 2", "SL 3", "SL 4G", "SL 5G"],
+    "adv_h": ["SL 1", "SL 2", "SL 3", "SL 4H", "SL 5H"],
+    "adv_l": ["SL 1", "SL 2", "SL 3", "SL 4L", "SL 5L"],
 
     # Multi-track (soldiers who took WFF + specialist)
-    "multi_ag": ["TM-10", "TM-20", "TM-30", "TM-40A", "TM-40G"],
-    "multi_bh": ["TM-10", "TM-20", "TM-30", "TM-40B", "TM-40H"],
-    "multi_fl": ["TM-10", "TM-20", "TM-30", "TM-40F", "TM-40L"],
+    "multi_ag": ["SL 1", "SL 2", "SL 3", "SL 4A", "SL 4G"],
+    "multi_bh": ["SL 1", "SL 2", "SL 3", "SL 4B", "SL 4H"],
+    "multi_fl": ["SL 1", "SL 2", "SL 3", "SL 4F", "SL 4L"],
 
     # Brand new — no courses yet
     "new": [],
@@ -152,7 +152,7 @@ ASSIGNMENTS = [
     "wff_b", "spec_g", "wff_b", "tm20", "wff_b", "tm10_only",
     "wff_f", "tm30", "tm10_only", "wff_e", "spec_j", "new",
 
-    # BSB 1BCT — sustainment-focused, good TM-40D/TM-40J representation
+    # BSB 1BCT — sustainment-focused, good SL 4D/SL 4J representation
     "wff_d", "spec_j", "wff_d", "tm20", "tm30", "tm10_only",
     "spec_k", "wff_d", "tm10_nogo", "fbc", "multi_bh", "new",
 
@@ -185,28 +185,28 @@ def seed():
         # Course timing offsets (days from soldier's start date)
         # Simulates realistic gaps between course completions
         COURSE_OFFSETS = {
-            "TM-10": (0, 5),       # day 0-5
-            "TM-20": (14, 30),     # 2-4 weeks later
-            "TM-30": (45, 75),     # 6-10 weeks after TM-20
-            "FBC": (30, 60),       # parallel to TM-30 timeline
-            "TM-40A": (80, 120),
-            "TM-40B": (80, 120),
-            "TM-40C": (80, 120),
-            "TM-40D": (80, 120),
-            "TM-40E": (80, 120),
-            "TM-40F": (80, 120),
-            "TM-40G": (90, 130),
-            "TM-40H": (90, 130),
-            "TM-40M": (90, 130),
-            "TM-40J": (80, 110),
-            "TM-40K": (80, 110),
-            "TM-40L": (90, 130),
-            "TM-50G": (140, 180),
-            "TM-50H": (140, 180),
-            "TM-50M": (140, 180),
-            "TM-50J": (120, 160),
-            "TM-50K": (120, 160),
-            "TM-50L": (140, 180),
+            "SL 1": (0, 5),       # day 0-5
+            "SL 2": (14, 30),     # 2-4 weeks later
+            "SL 3": (45, 75),     # 6-10 weeks after SL 2
+            "FBC": (30, 60),       # parallel to SL 3 timeline
+            "SL 4A": (80, 120),
+            "SL 4B": (80, 120),
+            "SL 4C": (80, 120),
+            "SL 4D": (80, 120),
+            "SL 4E": (80, 120),
+            "SL 4F": (80, 120),
+            "SL 4G": (90, 130),
+            "SL 4H": (90, 130),
+            "SL 4M": (90, 130),
+            "SL 4J": (80, 110),
+            "SL 4K": (80, 110),
+            "SL 4L": (90, 130),
+            "SL 5G": (140, 180),
+            "SL 5H": (140, 180),
+            "SL 5M": (140, 180),
+            "SL 5J": (120, 160),
+            "SL 5K": (120, 160),
+            "SL 5L": (140, 180),
         }
 
         # Create DODIDs deterministically
@@ -260,7 +260,7 @@ def seed():
                 eval_date = soldier_start + timedelta(days=random.randint(0, 5))
                 db.add(Completion(
                     dodid=dodid,
-                    course_id="TM-10",
+                    course_id="SL 1",
                     result="NO_GO",
                     evaluation_date=eval_date,
                     evaluator_name=random.choice(EVALUATORS),
