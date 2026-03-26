@@ -463,17 +463,18 @@ def build_html(body_html: str, pub_type: str, pub_number: str, title: str, subti
 # ── Metadata extraction ───────────────────────────────────────────────────────
 def extract_title(md_text: str):
     title = subtitle = ""
+    found_title = False
     for line in md_text.splitlines():
         line = line.strip()
-        if line.startswith("# ") and not title:
+        if line.startswith("# ") and not line.startswith("## ") and not title:
             title = line.lstrip("# ").strip()
-        elif title and (line == "---" or (line.startswith("# ") and not line.startswith("## "))):
-            # Hit a horizontal rule or another H1 — we're past front matter,
-            # so any ## beyond here is a section heading, not a subtitle.
-            break
-        elif line.startswith("## ") and title and not subtitle:
-            subtitle = line.lstrip("# ").strip()
-            break
+            found_title = True
+        elif found_title:
+            if not line:
+                continue  # skip blank lines immediately after title
+            if line.startswith("## "):
+                subtitle = line.lstrip("# ").strip()
+            break  # stop on first non-blank line after title
     return title or "PUBLICATION", subtitle
 
 
