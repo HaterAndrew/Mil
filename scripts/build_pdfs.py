@@ -464,6 +464,7 @@ def build_html(body_html: str, pub_type: str, pub_number: str, title: str, subti
 def extract_title(md_text: str):
     title = subtitle = ""
     found_title = False
+    saw_blank = False
     for line in md_text.splitlines():
         line = line.strip()
         if line.startswith("# ") and not line.startswith("## ") and not title:
@@ -471,10 +472,13 @@ def extract_title(md_text: str):
             found_title = True
         elif found_title:
             if not line:
-                continue  # skip blank lines immediately after title
-            if line.startswith("## "):
+                saw_blank = True
+                continue
+            # Only treat ## as subtitle if it immediately follows the title
+            # (no blank line between them) — otherwise it's a section heading
+            if line.startswith("## ") and not saw_blank:
                 subtitle = line.lstrip("# ").strip()
-            break  # stop on first non-blank line after title
+            break
     return title or "PUBLICATION", subtitle
 
 
