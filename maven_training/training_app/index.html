@@ -1,0 +1,2139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MSS Training Modules — USAREUR-AF</title>
+  <style>
+    :root {
+      --navy:          #0C2340;
+      --navy-dark:     #071628;
+      --navy-light:    #163A6C;
+      --navy-mid:      #1E4A88;
+      --navy-pale:     #EEF2FA;
+      --gold:          #C8971A;
+      --gold-light:    #E0B840;
+      --gold-dark:     #9A7010;
+      --gold-pale:     #FDF5DC;
+      --white:         #FFFFFF;
+      --off-white:     #F3F5FA;
+      --gray-50:       #EFF1F8;
+      --gray-100:      #E0E4EF;
+      --gray-200:      #C4CAE0;
+      --gray-400:      #7A88A8;
+      --gray-600:      #485878;
+      --gray-700:      #303C58;
+      --gray-900:      #0A1628;
+      --green:         #1E6B2A;
+      --green-light:   #D4EDDA;
+      --green-pale:    #E8F5E9;
+      --red:           #A83232;
+      --red-light:     #F8D7DA;
+      --amber:         #856404;
+      --amber-light:   #FFF3CD;
+      --teal:          #0C5460;
+      --teal-light:    #D1ECF1;
+      --radius:        4px;
+      --radius-lg:     8px;
+      --font-body:     'Segoe UI', Arial, Helvetica, sans-serif;
+      --font-mono:     'Courier New', Courier, monospace;
+      --font-ui:       'Segoe UI', Arial, Helvetica, sans-serif;
+      --shadow:        0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md:     0 4px 16px rgba(0,0,0,0.10);
+      --shadow-hdr:    0 3px 16px rgba(0,0,0,0.35);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--off-white);
+      color: var(--gray-900);
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .banner-unclass {
+      background: #1E6B2A;
+      color: #FFFFFF;
+      text-align: center;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 4px;
+      padding: 5px 0;
+      text-transform: uppercase;
+    }
+
+    header {
+      background: linear-gradient(155deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+      color: var(--white);
+      box-shadow: var(--shadow-hdr);
+      border-bottom: 3px solid var(--gold);
+      padding: 18px 28px 14px;
+    }
+
+    .hdr-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hdr-title { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; }
+    .hdr-subtitle { font-size: 11px; color: var(--gray-200); margin-top: 2px; }
+
+    .hdr-nav { display: flex; gap: 8px; align-items: center; position: relative; }
+
+    .hdr-search {
+      padding: 5px 12px;
+      border: 1px solid rgba(200,151,26,0.4);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      font-size: 12px;
+      font-family: var(--font-body);
+      width: 180px;
+      outline: none;
+      transition: border-color 0.15s, width 0.2s;
+    }
+    .hdr-search::placeholder { color: var(--gray-400); }
+    .hdr-search:focus { border-color: var(--gold); width: 240px; background: rgba(255,255,255,0.12); }
+
+    .search-results {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 360px;
+      max-height: 400px;
+      overflow-y: auto;
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      z-index: 500;
+      display: none;
+    }
+    .search-results.show { display: block; }
+    .search-result-item {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--gray-50);
+      cursor: pointer;
+      transition: background 0.1s;
+      font-size: 12px;
+    }
+    .search-result-item:hover { background: var(--navy-pale); }
+    .search-result-item:last-child { border-bottom: none; }
+    .search-result-item .sr-ref { font-weight: 700; color: var(--navy); }
+    .search-result-item .sr-title { color: var(--gray-700); }
+    .search-result-item .sr-module { font-size: 10px; color: var(--gray-400); }
+    .search-no-results { padding: 20px; text-align: center; font-size: 12px; color: var(--gray-400); }
+
+    .hdr-btn {
+      font-size: 11px;
+      padding: 5px 12px;
+      border: 1px solid var(--gold);
+      border-radius: var(--radius);
+      background: transparent;
+      color: var(--gold-light);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .hdr-btn:hover { background: rgba(200,151,26,0.15); }
+    .hdr-btn.active { background: var(--gold); color: var(--navy-dark); font-weight: 700; }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 28px 24px; }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb { font-size: 12px; color: var(--gray-400); margin-bottom: 20px; }
+    .breadcrumb a { color: var(--navy-mid); text-decoration: none; cursor: pointer; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb .sep { margin: 0 6px; }
+
+    /* ── Level 1: Home ── */
+    .resume-banner {
+      background: var(--gold-pale);
+      border: 1px solid var(--gold);
+      border-radius: var(--radius-lg);
+      padding: 12px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+    .resume-banner a { color: var(--navy); font-weight: 700; text-decoration: none; cursor: pointer; }
+    .resume-banner a:hover { text-decoration: underline; }
+
+    .prereq-chain { display: flex; align-items: center; justify-content: center; gap: 0; margin-bottom: 32px; }
+    .prereq-arrow { font-size: 20px; color: var(--gray-400); margin: 0 10px; }
+
+    .module-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+
+    .module-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-top: 4px solid var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .module-card:hover { border-top-color: var(--gold); box-shadow: var(--shadow-md); }
+
+    .mc-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+
+    .sl-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 3px 8px;
+      border-radius: var(--radius);
+      background: var(--navy);
+      color: var(--gold-light);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .mc-title { font-size: 16px; font-weight: 700; color: var(--navy); }
+    .mc-stats { font-size: 12px; color: var(--gray-600); margin-bottom: 12px; }
+
+    .mc-progress-bar { height: 6px; background: var(--gray-100); border-radius: 3px; overflow: hidden; }
+    .mc-progress-fill { height: 100%; background: var(--green); border-radius: 3px; transition: width 0.3s; }
+
+    .mc-prereq-warn { font-size: 11px; color: var(--amber); margin-top: 8px; }
+
+    /* ── Level 2: Module ── */
+    .module-header { margin-bottom: 24px; }
+    .module-header h2 { font-size: 22px; color: var(--navy); margin-bottom: 6px; }
+    .module-header .meta { font-size: 13px; color: var(--gray-600); }
+
+    .chapter-list { list-style: none; }
+    .chapter-item {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-left: 4px solid var(--navy);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .chapter-item:hover { border-left-color: var(--gold); box-shadow: var(--shadow); }
+    .chapter-item.complete { border-left-color: var(--green); }
+
+    .ch-badge {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: var(--radius);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .ch-badge.enabling { background: var(--navy-pale); color: var(--navy); }
+    .ch-badge.performance { background: var(--gold-pale); color: var(--gold-dark); }
+
+    .ch-info { flex: 1; }
+    .ch-title { font-size: 14px; font-weight: 600; color: var(--gray-900); }
+    .ch-stats { font-size: 11px; color: var(--gray-400); margin-top: 3px; }
+    .ch-check { font-size: 18px; color: var(--green); }
+
+    /* ── Level 3: Chapter View ── */
+    .chapter-view { display: flex; gap: 24px; }
+
+    .cv-sidebar {
+      width: 240px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 16px;
+      align-self: flex-start;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+    }
+    .cv-sidebar-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gray-600);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .cv-unit-list { list-style: none; }
+    .cv-unit-item {
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      color: var(--gray-600);
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.1s;
+    }
+    .cv-unit-item:hover { background: var(--gray-50); }
+    .cv-unit-item.active { background: var(--navy-pale); color: var(--navy); font-weight: 600; }
+    .cv-unit-item .check { color: var(--green); }
+
+    .cv-main { flex: 1; min-width: 0; }
+
+    /* Task nav */
+    .task-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      font-size: 12px;
+    }
+    .task-nav-btn {
+      padding: 6px 14px;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      background: var(--white);
+      color: var(--navy);
+      cursor: pointer;
+      font-size: 12px;
+      transition: background 0.1s;
+    }
+    .task-nav-btn:hover { background: var(--navy-pale); }
+    .task-nav-btn:disabled { opacity: 0.3; cursor: default; }
+    .task-nav-pos { color: var(--gray-600); font-weight: 600; }
+
+    /* Chapter intro */
+    .chapter-intro {
+      background: var(--navy-pale);
+      border-left: 3px solid var(--navy);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .chapter-intro p { margin-bottom: 10px; }
+    .chapter-intro p:last-child { margin-bottom: 0; }
+
+    /* ── Task Card (Interactive) ── */
+    .task-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    /* Task header with progress ring */
+    .task-header {
+      padding: 24px 28px 20px;
+      border-bottom: 1px solid var(--gray-100);
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .task-header-text { flex: 1; }
+    .task-ref {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: var(--radius);
+      background: var(--gold-pale);
+      color: var(--gold-dark);
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    .task-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+
+    /* Progress ring */
+    .progress-ring {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .progress-ring svg { transform: rotate(-90deg); }
+    .progress-ring .ring-bg { stroke: var(--gray-100); }
+    .progress-ring .ring-fill { stroke: var(--green); transition: stroke-dashoffset 0.4s ease; }
+    .progress-ring .ring-text {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gray-600);
+    }
+
+    /* Scenario card */
+    .scenario-card {
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+      color: var(--white);
+      padding: 20px 28px;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .scenario-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    /* Goal card */
+    .goal-card {
+      background: var(--gold-pale);
+      border-left: 4px solid var(--gold);
+      padding: 16px 28px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .goal-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 4px;
+    }
+
+    /* Equipment check */
+    .equip-section {
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .equip-toggle {
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      background: var(--gray-50);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray-700);
+      transition: background 0.1s;
+      user-select: none;
+    }
+    .equip-toggle:hover { background: var(--gray-100); }
+    .equip-toggle .arrow { transition: transform 0.2s; font-size: 14px; }
+    .equip-toggle.open .arrow { transform: rotate(180deg); }
+    .equip-body {
+      padding: 0 28px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      font-size: 13px;
+    }
+    .equip-body.open { max-height: 300px; padding: 14px 28px; }
+
+    /* Duration badge */
+    .duration-badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 10px;
+      border-radius: 12px;
+      background: var(--navy-pale);
+      color: var(--navy);
+      margin-left: 8px;
+    }
+
+    /* ── Step Cards ── */
+    .steps-section { padding: 20px 28px 8px; }
+    .steps-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 12px;
+    }
+
+    .step-card {
+      display: flex;
+      gap: 14px;
+      padding: 14px 16px;
+      margin-bottom: 8px;
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      transition: all 0.25s ease;
+      cursor: pointer;
+      align-items: flex-start;
+    }
+    .step-card.current {
+      border-color: var(--gold);
+      border-width: 2px;
+      background: var(--white);
+      box-shadow: 0 2px 12px rgba(200,151,26,0.15);
+    }
+    .step-card.completed {
+      border-color: var(--green-pale);
+      background: var(--green-pale);
+      opacity: 0.75;
+    }
+    .step-card.completed .step-text { text-decoration: none; }
+    .step-card.upcoming {
+      opacity: 0.35;
+      pointer-events: none;
+      border-color: var(--gray-50);
+    }
+    .step-card.upcoming .step-text {
+      max-height: 1.6em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .step-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+    .step-card.current .step-badge {
+      background: var(--gold);
+      color: var(--white);
+    }
+    .step-card.completed .step-badge {
+      background: var(--green);
+      color: var(--white);
+    }
+    .step-card.upcoming .step-badge {
+      background: var(--gray-100);
+      color: var(--gray-400);
+    }
+
+    .step-content { flex: 1; min-width: 0; }
+    .step-text {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--gray-900);
+    }
+    .step-action {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .step-done-btn {
+      padding: 6px 16px;
+      border: 1px solid var(--green);
+      border-radius: var(--radius);
+      background: var(--white);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .step-done-btn:hover { background: var(--green); color: var(--white); }
+
+    .step-hint {
+      font-size: 10px;
+      color: var(--gray-400);
+    }
+
+    /* Callouts */
+    .callout {
+      border-left: 3px solid;
+      border-radius: var(--radius);
+      padding: 10px 16px;
+      margin: 10px 0;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+    .callout-label {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 3px;
+    }
+    .callout.NOTE { border-color: var(--teal); background: var(--teal-light); }
+    .callout.NOTE .callout-label { color: var(--teal); }
+    .callout.CAUTION { border-color: var(--amber); background: var(--amber-light); }
+    .callout.CAUTION .callout-label { color: var(--amber); }
+    .callout.WARNING { border-color: var(--red); background: var(--red-light); }
+    .callout.WARNING .callout-label { color: var(--red); }
+    .callout.BLUF { border-color: var(--gold); background: var(--gold-pale); }
+    .callout.BLUF .callout-label { color: var(--gold-dark); }
+
+    .callout-inline {
+      margin: 4px 0 8px 0;
+      font-size: 11px;
+      padding: 8px 12px;
+    }
+
+    /* ── Go/No-Go ── */
+    .go-nogo-section {
+      padding: 24px 28px;
+      border-top: 2px solid var(--gray-100);
+      background: var(--gray-50);
+    }
+    .go-nogo-section.locked {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .go-nogo-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .go-nogo-subtitle { font-size: 11px; color: var(--gray-400); margin-bottom: 14px; }
+
+    .go-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .go-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .go-btn:hover { border-color: var(--green); }
+    .go-btn.checked { border-color: var(--green); background: var(--green-light); color: var(--green); }
+    .go-btn.nogo { border-color: var(--red); background: var(--red-light); color: var(--red); }
+
+    .verify-prompt {
+      margin-top: 16px;
+      padding: 16px;
+      background: var(--gold-pale);
+      border: 1px solid var(--gold);
+      border-radius: var(--radius-lg);
+      font-size: 13px;
+      display: none;
+    }
+    .verify-prompt.show { display: block; }
+    .verify-prompt p { margin-bottom: 10px; font-weight: 600; }
+    .verify-prompt .standards-reshow {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      font-size: 12px;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .verify-btns { display: flex; gap: 10px; }
+    .verify-btn {
+      padding: 8px 18px;
+      border: 1px solid;
+      border-radius: var(--radius);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .verify-btn.confirm { border-color: var(--green); background: var(--green); color: var(--white); }
+    .verify-btn.confirm:hover { background: #166320; }
+    .verify-btn.deny { border-color: var(--red); background: var(--white); color: var(--red); }
+    .verify-btn.deny:hover { background: var(--red-light); }
+
+    /* Concept card */
+    .unit-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+    .unit-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .unit-ref {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: var(--radius);
+    }
+    .unit-title { font-size: 16px; font-weight: 700; color: var(--navy); }
+
+    .concept-confirm {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--gray-100);
+    }
+    .concept-confirm label {
+      font-size: 12px;
+      color: var(--gray-600);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .concept-confirm input[type="checkbox"] { accent-color: var(--green); width: 16px; height: 16px; }
+
+    /* Retraining */
+    .retrain-section { margin-top: 28px; }
+    .retrain-title { font-size: 15px; font-weight: 700; color: var(--red); margin-bottom: 12px; }
+    .retrain-item {
+      background: var(--red-light);
+      border: 1px solid var(--red);
+      border-radius: var(--radius);
+      padding: 10px 16px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+    .retrain-item:hover { background: #f5c6cb; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .cv-sidebar { display: none; }
+      .chapter-view { flex-direction: column; }
+      .module-cards { grid-template-columns: 1fr; }
+      .scenario-card, .goal-card, .steps-section, .go-nogo-section { padding-left: 20px; padding-right: 20px; }
+      .task-header { padding: 20px; }
+    }
+
+    .hidden { display: none !important; }
+
+    /* Smooth transitions */
+    .fade-in { animation: fadeIn 0.2s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Slide transitions for unit navigation */
+    .slide-in-right { animation: slideRight 0.25s ease; }
+    .slide-in-left { animation: slideLeft 0.25s ease; }
+    @keyframes slideRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes slideLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+
+    /* ── Celebration ── */
+    .celebration-banner {
+      background: linear-gradient(135deg, var(--green), #2E8B3E);
+      color: var(--white);
+      padding: 20px 28px;
+      text-align: center;
+      animation: celebPulse 0.4s ease;
+    }
+    .celebration-banner .celeb-icon { font-size: 28px; margin-bottom: 6px; }
+    .celebration-banner .celeb-text { font-size: 15px; font-weight: 700; }
+    .celebration-banner .celeb-sub { font-size: 12px; opacity: 0.85; margin-top: 4px; }
+    .celebration-banner .celeb-next {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 8px 20px;
+      border: 2px solid var(--white);
+      border-radius: var(--radius);
+      background: transparent;
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .celebration-banner .celeb-next:hover { background: rgba(255,255,255,0.2); }
+    @keyframes celebPulse { 0% { transform: scale(0.97); opacity: 0; } 50% { transform: scale(1.01); } 100% { transform: scale(1); opacity: 1; } }
+
+    /* ── Chapter Progress Header ── */
+    .chapter-progress-header {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .cph-info { flex: 1; }
+    .cph-title { font-size: 15px; font-weight: 700; color: var(--navy); }
+    .cph-stats { font-size: 11px; color: var(--gray-400); margin-top: 3px; }
+    .cph-bar { flex: 0 0 140px; }
+    .cph-bar-track { height: 8px; background: var(--gray-100); border-radius: 4px; overflow: hidden; }
+    .cph-bar-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+    .cph-bar-fill.complete { background: var(--green); }
+    .cph-bar-fill.partial { background: var(--gold); }
+    .cph-bar-fill.empty { background: var(--gray-200); }
+    .cph-pct { font-size: 12px; font-weight: 700; color: var(--gray-600); text-align: right; margin-top: 3px; }
+
+    /* ── Modal Overlay ── */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10, 22, 40, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      animation: fadeIn 0.2s ease;
+    }
+    .modal {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      max-width: 480px;
+      width: 90%;
+      overflow: hidden;
+    }
+    .modal-header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 20px 24px;
+    }
+    .modal-header h3 { font-size: 16px; font-weight: 700; }
+    .modal-header p { font-size: 12px; color: var(--gray-200); margin-top: 4px; }
+    .modal-body { padding: 24px; }
+    .modal-body label { display: block; font-size: 12px; font-weight: 600; color: var(--gray-600); margin-bottom: 6px; }
+    .modal-body input[type="text"] {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-family: var(--font-body);
+      margin-bottom: 16px;
+    }
+    .modal-body input[type="text"]:focus { outline: none; border-color: var(--navy-mid); box-shadow: 0 0 0 3px rgba(30,74,136,0.1); }
+    .modal-footer { padding: 0 24px 24px; display: flex; gap: 10px; justify-content: flex-end; }
+    .modal-btn {
+      padding: 10px 22px;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--font-body);
+    }
+    .modal-btn.primary { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .modal-btn.primary:hover { background: var(--navy-light); }
+    .modal-btn.secondary { background: var(--white); color: var(--gray-600); }
+
+    /* ── Onboarding Steps ── */
+    .onboard-steps { display: flex; flex-direction: column; gap: 14px; margin-bottom: 8px; }
+    .onboard-step {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .onboard-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .onboard-desc { font-size: 13px; line-height: 1.5; color: var(--gray-700); }
+    .onboard-desc strong { color: var(--navy); }
+
+    /* ── Better Concept Sections ── */
+    .concept-takeaway {
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+      color: var(--white);
+      padding: 16px 20px;
+      border-radius: var(--radius);
+      margin-bottom: 14px;
+    }
+    .concept-takeaway-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+    }
+    .concept-takeaway-text { font-size: 13px; line-height: 1.6; }
+
+    .self-check {
+      background: var(--amber-light);
+      border: 1px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin-top: 14px;
+    }
+    .self-check-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 6px;
+    }
+    .self-check-prompt { font-size: 13px; color: var(--gray-700); line-height: 1.5; font-style: italic; }
+
+    .concept-confirm label {
+      font-size: 12px;
+      color: var(--gray-600);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ── NO-GO Remediation ── */
+    .nogo-remediation {
+      margin-top: 16px;
+      padding: 18px;
+      background: var(--red-light);
+      border: 1px solid var(--red);
+      border-radius: var(--radius-lg);
+      animation: fadeIn 0.2s ease;
+    }
+    .nogo-remediation-title { font-size: 13px; font-weight: 700; color: var(--red); margin-bottom: 8px; }
+    .nogo-remediation-list { font-size: 12px; color: var(--gray-700); line-height: 1.7; padding-left: 18px; }
+    .nogo-remediation-list li { margin-bottom: 4px; }
+    .nogo-retry-btn {
+      margin-top: 12px;
+      padding: 8px 18px;
+      border: 1px solid var(--navy);
+      border-radius: var(--radius);
+      background: var(--white);
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .nogo-retry-btn:hover { background: var(--navy-pale); }
+
+    /* Expanded completed step */
+    .step-card.completed { cursor: pointer; }
+    .step-card.completed .step-text {
+      max-height: 1.6em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .step-card.completed.expanded .step-text {
+      max-height: none;
+      white-space: normal;
+    }
+
+    /* All-steps-done banner within steps section */
+    .steps-complete-msg {
+      text-align: center;
+      padding: 12px;
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--green);
+      font-weight: 600;
+      animation: fadeIn 0.3s ease;
+    }
+
+    /* ── Inline code ── */
+    .inline-code {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      border-radius: 3px;
+      padding: 1px 5px;
+      font-family: var(--font-mono);
+      font-size: 0.9em;
+      color: var(--navy);
+    }
+
+    /* ── Step action icons ── */
+    .step-icon {
+      font-size: 13px;
+      width: 20px;
+      text-align: center;
+      flex-shrink: 0;
+      opacity: 0.6;
+      margin-top: 1px;
+    }
+
+    /* ── Step group divider ── */
+    .step-group-divider {
+      padding: 10px 16px;
+      margin: 12px 0 4px;
+      background: var(--navy-pale);
+      border-radius: var(--radius);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Equipment checklist ── */
+    .equip-checklist { list-style: none; }
+    .equip-checklist li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 0;
+      font-size: 13px;
+      border-bottom: 1px solid var(--gray-50);
+    }
+    .equip-checklist li:last-child { border-bottom: none; }
+    .equip-checklist input[type="checkbox"] {
+      accent-color: var(--green);
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+    .equip-all-checked {
+      text-align: center;
+      font-size: 11px;
+      color: var(--green);
+      font-weight: 600;
+      padding: 6px 0;
+      display: none;
+    }
+    .equip-all-checked.show { display: block; }
+
+    /* ── Concept content chunks ── */
+    .concept-chunk {
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .concept-more-btn {
+      display: inline-block;
+      padding: 6px 14px;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      background: var(--white);
+      color: var(--navy);
+      font-size: 12px;
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+    .concept-more-btn:hover { background: var(--navy-pale); }
+
+    /* ── Print stylesheet ── */
+    @media print {
+      .banner-unclass { padding: 2px 0; font-size: 9px; }
+      header { background: #0C2340 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 8px 16px; }
+      .hdr-nav, .hdr-search { display: none; }
+      main { padding: 10px; }
+      .cv-sidebar { display: none; }
+      .chapter-view { flex-direction: column; }
+      .task-nav { display: none; }
+      .step-card { break-inside: avoid; opacity: 1 !important; pointer-events: auto !important; }
+      .step-card.upcoming { opacity: 0.7 !important; }
+      .step-card.upcoming .step-text { max-height: none; white-space: normal; overflow: visible; }
+      .go-nogo-section { display: none; }
+      .celebration-banner { display: none; }
+      .modal-overlay { display: none; }
+      .step-done-btn, .step-hint, .concept-more-btn, .nogo-retry-btn { display: none; }
+      .concept-chunk { display: block; }
+      [id^="more-"] { display: block !important; }
+      .equip-body { max-height: none !important; padding: 10px 16px !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="banner-unclass">UNCLASSIFIED</div>
+
+<header>
+  <div class="hdr-row">
+    <div>
+      <div class="hdr-title">MSS Training Modules</div>
+      <div class="hdr-subtitle" id="hdr-sub">USAREUR-AF Operational Data Team &mdash; Self-Study</div>
+    </div>
+    <div class="hdr-nav">
+      <input type="text" id="search-input" class="hdr-search" placeholder="Search tasks..." oninput="handleSearch(this.value)" onfocus="handleSearch(this.value)" />
+      <a class="hdr-btn active" onclick="goHome()" id="nav-home">Home</a>
+      <a class="hdr-btn" onclick="showRetrain()" id="nav-retrain">Retraining</a>
+      <a class="hdr-btn" onclick="exportProgress()" id="nav-export">Export</a>
+    </div>
+  </div>
+</header>
+
+<main id="app">
+  <div id="loading" style="text-align:center;padding:60px;color:var(--gray-400);">Loading training data...</div>
+</main>
+
+<div class="banner-unclass">UNCLASSIFIED</div>
+
+<script>
+(function() {
+  'use strict';
+
+  const STORAGE_KEY = 'mss-training-progress';
+  let DATA = null;
+  let progress = loadProgress();
+
+  // Ephemeral step progress (resets each session — tracks "working through now")
+  const stepState = {}; // stepState[taskId] = { current: 0, completed: Set }
+
+  function getStepState(taskId, totalSteps) {
+    if (!stepState[taskId]) {
+      stepState[taskId] = { current: 0, completed: new Set() };
+    }
+    return stepState[taskId];
+  }
+
+  // Track slide direction for unit transitions
+  let slideDirection = '';
+
+  // ── Soldier ID + Onboarding ──
+
+  function showSoldierIdModal() {
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-overlay';
+    overlay.id = 'soldier-modal';
+    overlay.innerHTML = `<div class="modal">
+      <div class="modal-header">
+        <h3>Welcome to MSS Training</h3>
+        <p>USAREUR-AF Operational Data Team &mdash; Self-Study Platform</p>
+      </div>
+      <div class="modal-body">
+        <label for="sid-name">Your Name (for progress export)</label>
+        <input type="text" id="sid-name" placeholder="e.g., SSG Smith" />
+        <label for="sid-unit">Unit (optional)</label>
+        <input type="text" id="sid-unit" placeholder="e.g., 2-12 IN" />
+      </div>
+      <div class="modal-footer">
+        <button class="modal-btn secondary" onclick="closeSoldierId(true)">Skip</button>
+        <button class="modal-btn primary" onclick="closeSoldierId(false)">Get Started</button>
+      </div>
+    </div>`;
+    document.body.appendChild(overlay);
+    setTimeout(() => document.getElementById('sid-name').focus(), 100);
+  }
+
+  window.closeSoldierId = function(skipped) {
+    const name = document.getElementById('sid-name').value.trim();
+    const unit = document.getElementById('sid-unit').value.trim();
+    if (!skipped && name) {
+      progress.soldierId = name;
+      progress.unit = unit;
+      saveProgress();
+    }
+    document.getElementById('soldier-modal').remove();
+    if (!localStorage.getItem('mss-onboarded')) {
+      showOnboarding();
+    }
+  };
+
+  function showOnboarding() {
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-overlay';
+    overlay.id = 'onboard-modal';
+    overlay.innerHTML = `<div class="modal">
+      <div class="modal-header">
+        <h3>How This Works</h3>
+        <p>Three phases per task — read, do, self-assess</p>
+      </div>
+      <div class="modal-body">
+        <div class="onboard-steps">
+          <div class="onboard-step">
+            <div class="onboard-num">1</div>
+            <div class="onboard-desc"><strong>Read the scenario.</strong> Each task starts with your situation and objective — what you need to do and why.</div>
+          </div>
+          <div class="onboard-step">
+            <div class="onboard-num">2</div>
+            <div class="onboard-desc"><strong>Work through steps.</strong> Steps appear one at a time. Mark each done as you complete it. Use the button or press <strong>Enter</strong>.</div>
+          </div>
+          <div class="onboard-step">
+            <div class="onboard-num">3</div>
+            <div class="onboard-desc"><strong>Self-assess GO / NO-GO.</strong> After all steps, decide if you can perform the task to standard without help.</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-btn primary" onclick="closeOnboarding()">Got it — let\\'s go</button>
+      </div>
+    </div>`;
+    document.body.appendChild(overlay);
+  }
+
+  window.closeOnboarding = function() {
+    localStorage.setItem('mss-onboarded', '1');
+    document.getElementById('onboard-modal').remove();
+  };
+
+  // ── Progress persistence ──
+
+  function loadProgress() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) return JSON.parse(raw);
+    } catch(e) {}
+    return { soldierId: '', lastPosition: null, modules: {} };
+  }
+
+  function saveProgress() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+  }
+
+  function getTaskResult(moduleId, taskId) {
+    const m = progress.modules[moduleId];
+    if (!m || !m.tasks) return null;
+    return m.tasks[taskId] || null;
+  }
+
+  function setTaskResult(moduleId, taskId, result, verified) {
+    if (!progress.modules[moduleId]) {
+      progress.modules[moduleId] = { tasks: {}, concepts: {}, chaptersCompleted: {} };
+    }
+    progress.modules[moduleId].tasks[taskId] = {
+      result, date: new Date().toISOString().split('T')[0], verified: !!verified
+    };
+    saveProgress();
+  }
+
+  function getConceptConfirmed(moduleId, conceptId) {
+    const m = progress.modules[moduleId];
+    if (!m || !m.concepts) return false;
+    return m.concepts[conceptId] ? m.concepts[conceptId].confirmed : false;
+  }
+
+  function setConceptConfirmed(moduleId, conceptId, confirmed) {
+    if (!progress.modules[moduleId]) {
+      progress.modules[moduleId] = { tasks: {}, concepts: {}, chaptersCompleted: {} };
+    }
+    progress.modules[moduleId].concepts[conceptId] = {
+      confirmed, date: new Date().toISOString().split('T')[0]
+    };
+    saveProgress();
+  }
+
+  function getModuleProgress(moduleId) {
+    const mod = DATA.modules.find(m => m.id === moduleId);
+    if (!mod) return { done: 0, total: 0, pct: 0 };
+    let done = 0, total = 0;
+    for (const ch of mod.chapters) {
+      for (const u of ch.units) {
+        if (u.type === 'task') {
+          total++;
+          const r = getTaskResult(moduleId, u.id);
+          if (r && r.result === 'go' && r.verified) done++;
+        }
+      }
+    }
+    return { done, total, pct: total > 0 ? Math.round(done / total * 100) : 0 };
+  }
+
+  function getChapterProgress(moduleId, chapterId) {
+    const mod = DATA.modules.find(m => m.id === moduleId);
+    if (!mod) return { done: 0, total: 0 };
+    const ch = mod.chapters.find(c => c.id === chapterId);
+    if (!ch) return { done: 0, total: 0 };
+    let done = 0, total = 0;
+    for (const u of ch.units) {
+      if (u.type === 'task') {
+        total++;
+        const r = getTaskResult(moduleId, u.id);
+        if (r && r.result === 'go' && r.verified) done++;
+      }
+    }
+    return { done, total };
+  }
+
+  function setLastPosition(moduleId, chapterId, unitId) {
+    progress.lastPosition = { module: moduleId, chapter: chapterId, unit: unitId };
+    saveProgress();
+  }
+
+  // ── Scenario framing ──
+
+  function frameConditions(conditions) {
+    if (!conditions) return '';
+    let text = conditions;
+    // Convert third-person to second-person
+    text = text.replace(/\bOperator has\b/gi, "You've");
+    text = text.replace(/\bBuilder has\b/gi, "You've");
+    text = text.replace(/\bOperator is\b/gi, "You're");
+    text = text.replace(/\bBuilder is\b/gi, "You're");
+    text = text.replace(/\bOperator\b/g, "you");
+    text = text.replace(/\bBuilder\b/g, "you");
+    text = text.replace(/\byou has\b/gi, "you have");
+    text = text.replace(/\byou needs\b/gi, "you need");
+    // Clean up double spaces
+    text = text.replace(/\s+/g, ' ').trim();
+    return text;
+  }
+
+  // ── Navigation state ──
+  let currentView = 'home';
+  let currentModule = null;
+  let currentChapter = null;
+  let currentUnitIdx = 0;
+
+  // ── Rendering helpers ──
+
+  function esc(str) {
+    if (!str) return '';
+    const d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
+  // Rich text: convert **bold**, `code`, and highlight UI element names
+  function richText(str) {
+    if (!str) return '';
+    let t = esc(str);
+    // **bold** → <strong>
+    t = t.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    // `code` → <code>
+    t = t.replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>');
+    return t;
+  }
+
+  // Detect step action type from the verb for icon display
+  function stepIcon(stepText) {
+    const t = stepText.toLowerCase();
+    if (/^(click|tap|press|select|check|uncheck|toggle|enable|disable)\b/.test(t)) return '&#128433;'; // click
+    if (/^(navigate|go to|open|launch|browse|visit|access)\b/.test(t)) return '&#128279;'; // navigate
+    if (/^(type|enter|input|write|fill|set|name|rename)\b/.test(t)) return '&#9998;'; // edit
+    if (/^(drag|move|drop|reorder|rearrange)\b/.test(t)) return '&#8693;'; // drag
+    if (/^(verify|confirm|check|ensure|validate|review|inspect|preview)\b/.test(t)) return '&#128270;'; // verify
+    if (/^(connect|link|attach|join|wire)\b/.test(t)) return '&#128268;'; // connect
+    if (/^(save|export|download|publish|commit|submit)\b/.test(t)) return '&#128190;'; // save
+    if (/^(delete|remove|clear|drop|revoke)\b/.test(t)) return '&#128465;'; // delete
+    if (/^(wait|monitor|watch|observe)\b/.test(t)) return '&#9202;'; // wait
+    if (/^(note|remember|important)\b/.test(t)) return '&#128221;'; // note
+    if (/^(if |when |for |in the)\b/.test(t)) return '&#9670;'; // conditional
+    return '&#9654;'; // default: play/action
+  }
+
+  // Parse equipment string into individual items
+  function parseEquipment(equipStr) {
+    if (!equipStr) return [];
+    // Split on semicolons or commas (but not commas inside parentheses)
+    return equipStr
+      .split(/;\s*/)
+      .flatMap(s => s.split(/,\s*(?![^(]*\))/))
+      .map(s => s.trim())
+      .filter(s => s.length > 0 && s !== '.');
+  }
+
+  function progressRingSVG(done, total) {
+    const pct = total > 0 ? done / total : 0;
+    const r = 20;
+    const circ = 2 * Math.PI * r;
+    const offset = circ * (1 - pct);
+    return `<div class="progress-ring">
+      <svg width="52" height="52" viewBox="0 0 52 52">
+        <circle class="ring-bg" cx="26" cy="26" r="${r}" fill="none" stroke-width="5"/>
+        <circle class="ring-fill" cx="26" cy="26" r="${r}" fill="none" stroke-width="5"
+          stroke-dasharray="${circ}" stroke-dashoffset="${offset}" stroke-linecap="round"/>
+      </svg>
+      <span class="ring-text">${done}/${total}</span>
+    </div>`;
+  }
+
+  // ── Level 1: Home ──
+
+  function renderHome() {
+    currentView = 'home';
+    currentModule = null;
+    currentChapter = null;
+    setActiveNav('nav-home');
+
+    const app = document.getElementById('app');
+    let html = '';
+
+    if (progress.lastPosition) {
+      const lp = progress.lastPosition;
+      const mod = DATA.modules.find(m => m.id === lp.module);
+      const ch = mod ? mod.chapters.find(c => c.id === lp.chapter) : null;
+      if (mod && ch) {
+        html += `<div class="resume-banner">
+          <span>Continue where you left off: <strong>${esc(mod.code)} &mdash; Chapter ${ch.number}</strong></span>
+          <a onclick="resumePosition()">Resume &rarr;</a>
+        </div>`;
+      }
+    }
+
+    html += '<div class="prereq-chain">';
+    DATA.modules.forEach((mod, i) => {
+      if (i > 0) html += '<span class="prereq-arrow">&rarr;</span>';
+      html += `<span class="sl-badge">${esc(mod.slLevel)}</span>`;
+    });
+    html += '</div>';
+
+    html += '<div class="module-cards">';
+    for (const mod of DATA.modules) {
+      const prog = getModuleProgress(mod.id);
+      const taskCount = mod.chapters.reduce((s, c) => s + c.units.filter(u => u.type === 'task').length, 0);
+      const chCount = mod.chapters.length;
+      let prereqWarn = '';
+      for (const pid of mod.prereqs) {
+        const pp = getModuleProgress(pid);
+        if (pp.pct < 100) {
+          const pm = DATA.modules.find(m => m.id === pid);
+          prereqWarn = `Recommended: complete ${pm ? pm.code : pid} first`;
+          break;
+        }
+      }
+      html += `<div class="module-card" onclick="openModule('${mod.id}')">
+        <div class="mc-header">
+          <span class="sl-badge">${esc(mod.slLevel)}</span>
+          <span class="mc-title">${esc(mod.title)}</span>
+        </div>
+        <div class="mc-stats">${chCount} chapters &middot; ${taskCount} tasks &middot; ${prog.pct}% complete</div>
+        <div class="mc-progress-bar"><div class="mc-progress-fill" style="width:${prog.pct}%"></div></div>
+        ${prereqWarn ? `<div class="mc-prereq-warn">${esc(prereqWarn)}</div>` : ''}
+      </div>`;
+    }
+    html += '</div>';
+
+    const nogoItems = getAllNoGo();
+    if (nogoItems.length > 0) {
+      html += `<div class="retrain-section"><div class="retrain-title">Retraining Required (${nogoItems.length})</div>`;
+      for (const item of nogoItems.slice(0, 5)) {
+        html += `<div class="retrain-item" onclick="goToUnit('${item.moduleId}','${item.chapterId}','${item.unitId}')">
+          ${esc(item.moduleCode)} &mdash; ${esc(item.ref)}: ${esc(item.title)}</div>`;
+      }
+      if (nogoItems.length > 5) {
+        html += `<div style="text-align:center;margin-top:10px;font-size:12px;color:var(--gray-400);">
+          + ${nogoItems.length - 5} more &mdash; <a onclick="showRetrain()" style="color:var(--navy-mid);cursor:pointer;">View all</a></div>`;
+      }
+      html += '</div>';
+    }
+
+    app.innerHTML = html;
+  }
+
+  // ── Level 2: Module ──
+
+  function renderModule(moduleId) {
+    currentView = 'module';
+    const mod = DATA.modules.find(m => m.id === moduleId);
+    if (!mod) return renderHome();
+    currentModule = mod;
+    setActiveNav(null);
+
+    const app = document.getElementById('app');
+    let html = `<div class="breadcrumb">
+      <a onclick="goHome()">Home</a><span class="sep">&rsaquo;</span>
+      <span>${esc(mod.code)} &mdash; ${esc(mod.title)}</span></div>`;
+
+    const prog = getModuleProgress(mod.id);
+    const taskCount = mod.chapters.reduce((s, c) => s + c.units.filter(u => u.type === 'task').length, 0);
+    html += `<div class="module-header">
+      <h2><span class="sl-badge" style="font-size:12px;margin-right:10px;">${esc(mod.slLevel)}</span>${esc(mod.code)} &mdash; ${esc(mod.title)}</h2>
+      <div class="meta">${taskCount} tasks &middot; ${prog.done}/${prog.total} GO (${prog.pct}%)</div>
+      <div class="mc-progress-bar" style="margin-top:10px;max-width:400px;"><div class="mc-progress-fill" style="width:${prog.pct}%"></div></div>
+    </div>`;
+
+    html += '<ul class="chapter-list">';
+    for (const ch of mod.chapters) {
+      const chProg = getChapterProgress(mod.id, ch.id);
+      const chTaskCount = ch.units.filter(u => u.type === 'task').length;
+      const conceptCount = ch.units.filter(u => u.type === 'concept').length;
+      const isComplete = chProg.total > 0 && chProg.done === chProg.total;
+      let statsText = '';
+      if (chTaskCount > 0) statsText += `${chTaskCount} tasks`;
+      if (conceptCount > 0) statsText += (statsText ? ', ' : '') + `${conceptCount} sections`;
+      if (chProg.total > 0) statsText += ` &middot; ${chProg.done}/${chProg.total} GO`;
+      html += `<li class="chapter-item ${isComplete ? 'complete' : ''}" onclick="openChapter('${mod.id}','${ch.id}')">
+        <span class="ch-badge ${ch.chapterType}">${ch.chapterType === 'enabling' ? 'Background' : 'Tasks'}</span>
+        <div class="ch-info">
+          <div class="ch-title">Chapter ${ch.number}: ${esc(ch.title)}</div>
+          <div class="ch-stats">${statsText}</div>
+        </div>
+        ${isComplete ? '<span class="ch-check">&#10003;</span>' : ''}
+      </li>`;
+    }
+    html += '</ul>';
+    app.innerHTML = html;
+  }
+
+  // ── Level 3: Chapter ──
+
+  function renderChapter(moduleId, chapterId, unitIdx) {
+    currentView = 'chapter';
+    const mod = DATA.modules.find(m => m.id === moduleId);
+    if (!mod) return renderHome();
+    const ch = mod.chapters.find(c => c.id === chapterId);
+    if (!ch) return renderModule(moduleId);
+    currentModule = mod;
+    currentChapter = ch;
+    currentUnitIdx = unitIdx || 0;
+    if (currentUnitIdx < 0) currentUnitIdx = 0;
+    if (currentUnitIdx >= ch.units.length) currentUnitIdx = ch.units.length - 1;
+
+    const unit = ch.units[currentUnitIdx];
+    if (unit) setLastPosition(mod.id, ch.id, unit.id);
+    setActiveNav(null);
+
+    const app = document.getElementById('app');
+    let html = `<div class="breadcrumb">
+      <a onclick="goHome()">Home</a><span class="sep">&rsaquo;</span>
+      <a onclick="openModule('${mod.id}')">${esc(mod.code)}</a><span class="sep">&rsaquo;</span>
+      <span>Chapter ${ch.number}</span></div>`;
+
+    html += '<div class="chapter-view">';
+
+    // Sidebar
+    html += '<div class="cv-sidebar">';
+    html += `<div class="cv-sidebar-title">Ch ${ch.number}: ${esc(ch.title)}</div>`;
+    html += '<ul class="cv-unit-list">';
+    ch.units.forEach((u, i) => {
+      let checkMark = '';
+      if (u.type === 'task') {
+        const r = getTaskResult(mod.id, u.id);
+        if (r && r.result === 'go' && r.verified) checkMark = '<span class="check">&#10003;</span>';
+        else if (r && r.result === 'nogo') checkMark = '<span style="color:var(--red)">&#10007;</span>';
+      } else {
+        if (getConceptConfirmed(mod.id, u.id)) checkMark = '<span class="check">&#10003;</span>';
+      }
+      const label = u.type === 'task' ? u.ref : `\u00A7 ${u.ref}`;
+      html += `<li class="cv-unit-item ${i === currentUnitIdx ? 'active' : ''}" onclick="openUnit(${i})">
+        ${checkMark}<span>${esc(label)}</span></li>`;
+    });
+    html += '</ul></div>';
+
+    // Main
+    html += `<div class="cv-main ${slideDirection}">`;
+
+    // Chapter progress header
+    const chProg = getChapterProgress(mod.id, ch.id);
+    const chTasks = ch.units.filter(u => u.type === 'task').length;
+    const chConcepts = ch.units.filter(u => u.type === 'concept').length;
+    const chConceptsDone = ch.units.filter(u => u.type === 'concept' && getConceptConfirmed(mod.id, u.id)).length;
+    const chTotalItems = chTasks + chConcepts;
+    const chDoneItems = chProg.done + chConceptsDone;
+    const chPct = chTotalItems > 0 ? Math.round(chDoneItems / chTotalItems * 100) : 0;
+    const barClass = chPct >= 100 ? 'complete' : (chPct > 0 ? 'partial' : 'empty');
+    html += `<div class="chapter-progress-header">
+      <div class="cph-info">
+        <div class="cph-title">Chapter ${ch.number}: ${esc(ch.title)}</div>
+        <div class="cph-stats">${chTasks > 0 ? chProg.done + '/' + chTasks + ' tasks GO' : ''}${chTasks > 0 && chConcepts > 0 ? ' &middot; ' : ''}${chConcepts > 0 ? chConceptsDone + '/' + chConcepts + ' sections reviewed' : ''}</div>
+      </div>
+      <div class="cph-bar">
+        <div class="cph-bar-track"><div class="cph-bar-fill ${barClass}" style="width:${chPct}%"></div></div>
+        <div class="cph-pct">${chPct}%</div>
+      </div>
+    </div>`;
+
+    const totalUnits = ch.units.length;
+    html += `<div class="task-nav">
+      <button class="task-nav-btn" onclick="navUnit(${currentUnitIdx - 1},'left')" ${currentUnitIdx <= 0 ? 'disabled' : ''}>&larr; Prev</button>
+      <span class="task-nav-pos">${currentUnitIdx + 1} of ${totalUnits} &mdash; Chapter ${ch.number}</span>
+      <button class="task-nav-btn" onclick="navUnit(${currentUnitIdx + 1},'right')" ${currentUnitIdx >= totalUnits - 1 ? 'disabled' : ''}>Next &rarr;</button>
+    </div>`;
+
+    if (currentUnitIdx === 0 && ch.intro) {
+      html += '<div class="chapter-intro">';
+      ch.intro.split('\n\n').forEach(p => { html += `<p>${esc(p)}</p>`; });
+      html += '</div>';
+    }
+
+    if (unit) {
+      if (unit.type === 'task') {
+        html += renderTask(mod.id, unit);
+      } else {
+        html += renderConcept(mod.id, unit);
+      }
+    }
+
+    html += '</div></div>';
+    app.innerHTML = html;
+
+    // Keyboard handler
+    document.onkeydown = function(e) {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+      // Escape: go back one level
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        if (currentView === 'chapter' && currentModule) openModule(currentModule.id);
+        else if (currentView === 'module') goHome();
+        return;
+      }
+
+      if (currentView !== 'chapter') return;
+
+      // Enter/Space: complete current step
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const unit = currentChapter.units[currentUnitIdx];
+        if (unit && unit.type === 'task') {
+          completeCurrentStep(currentModule.id, unit.id, unit.steps ? unit.steps.length : 0);
+        }
+        return;
+      }
+
+      // Arrow keys: prev/next unit
+      if (e.key === 'ArrowLeft' && currentUnitIdx > 0) {
+        e.preventDefault();
+        navUnit(currentUnitIdx - 1, 'left');
+      } else if (e.key === 'ArrowRight' && currentUnitIdx < currentChapter.units.length - 1) {
+        e.preventDefault();
+        navUnit(currentUnitIdx + 1, 'right');
+      }
+    };
+  }
+
+  // ── Task rendering (interactive) ──
+
+  function renderTask(moduleId, task) {
+    const r = getTaskResult(moduleId, task.id);
+    const ss = getStepState(task.id, task.steps ? task.steps.length : 0);
+    const totalSteps = task.steps ? task.steps.length : 0;
+    const stepsCompleted = ss.completed.size;
+    const allStepsDone = stepsCompleted >= totalSteps;
+    const isGo = r && r.result === 'go' && r.verified;
+    const isNoGo = r && r.result === 'nogo';
+    const isPendingVerify = r && r.result === 'go' && !r.verified;
+
+    let html = '<div class="task-card fade-in">';
+
+    // Header with progress ring
+    html += '<div class="task-header">';
+    html += '<div class="task-header-text">';
+    html += `<div class="task-ref">${esc(task.ref)}</div>`;
+    html += `<div class="task-title">${esc(task.title)}</div>`;
+    if (task.duration) html += `<span class="duration-badge">${esc(task.duration)}</span>`;
+    html += '</div>';
+    if (totalSteps > 0) html += progressRingSVG(stepsCompleted, totalSteps);
+    html += '</div>';
+
+    // Scenario card (CONDITIONS → second person)
+    if (task.conditions) {
+      html += `<div class="scenario-card">
+        <div class="scenario-label">Scenario</div>
+        <div>${richText(frameConditions(task.conditions))}</div>
+      </div>`;
+    }
+
+    // Goal card (STANDARDS → "Your Goal")
+    if (task.standards) {
+      html += `<div class="goal-card">
+        <div class="goal-label">Your Goal</div>
+        <div>${richText(task.standards)}</div>
+      </div>`;
+    }
+
+    // Equipment check (interactive checklist)
+    if (task.equipment) {
+      const equipItems = parseEquipment(task.equipment);
+      html += `<div class="equip-section">
+        <div class="equip-toggle" onclick="toggleEquip(this)">
+          <span>Before you start &mdash; confirm your equipment (${equipItems.length} items)</span>
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="equip-body">
+          <ul class="equip-checklist">
+            ${equipItems.map((item, i) => `<li><input type="checkbox" onchange="checkEquipAll(this)" /><span>${richText(item)}</span></li>`).join('')}
+          </ul>
+          <div class="equip-all-checked" id="equip-done-${task.id}">&#10003; All equipment confirmed</div>
+        </div>
+      </div>`;
+    }
+
+    // Step cards
+    if (totalSteps > 0) {
+      // Count real steps (exclude group dividers)
+      const realStepCount = task.steps.filter(s => !s.startsWith('0. [[')).length;
+      const realCompleted = [...ss.completed].filter(i => !task.steps[i].startsWith('0. [[')).length;
+      html += '<div class="steps-section">';
+      html += `<div class="steps-label">Procedure &mdash; ${realCompleted} of ${realStepCount} steps</div>`;
+
+      let displayNum = 0; // visual step number (excludes group headers)
+      for (let i = 0; i < totalSteps; i++) {
+        const rawStep = task.steps[i];
+
+        // Step group header: "0. [[ Sub-title ]]"
+        if (rawStep.startsWith('0. [[')) {
+          const groupTitle = rawStep.replace(/^0\.\s*\[\[\s*/, '').replace(/\s*\]\]$/, '');
+          // Auto-complete group headers
+          if (!ss.completed.has(i)) { ss.completed.add(i); }
+          html += `<div class="step-group-divider">${esc(groupTitle)}</div>`;
+          continue;
+        }
+
+        displayNum++;
+        const stepText = rawStep.replace(/^\d+\.\s*/, '');
+        const isDone = ss.completed.has(i);
+        const isCurrent = i === ss.current && !isDone;
+        const isUpcoming = i > ss.current && !isDone;
+        let stateClass = isDone ? 'completed' : (isCurrent ? 'current' : 'upcoming');
+        if (allStepsDone) stateClass = 'completed';
+
+        const icon = stepIcon(stepText);
+
+        html += `<div class="step-card ${stateClass}" ${isDone ? `onclick="expandStep(${i})"` : ''}>
+          <div class="step-badge">${isDone ? '&#10003;' : displayNum}</div>
+          <div class="step-content">
+            <div class="step-text"><span class="step-icon">${icon}</span> ${richText(stepText)}</div>`;
+
+        // Show action button on current step
+        if (isCurrent && !allStepsDone) {
+          html += `<div class="step-action">
+            <button class="step-done-btn" onclick="completeStep('${moduleId}','${task.id}',${i},${totalSteps})">Done &mdash; Next Step</button>
+            <span class="step-hint">or press Enter</span>
+          </div>`;
+        }
+
+        html += '</div></div>';
+      }
+
+      // All steps done message
+      if (allStepsDone && !isGo && !isNoGo) {
+        html += '<div class="steps-complete-msg">All steps complete — scroll down to self-assess</div>';
+      }
+
+      html += '</div>';
+    }
+
+    // Callouts
+    if (task.callouts && task.callouts.length > 0) {
+      html += '<div style="padding:0 28px 8px;">';
+      for (const co of task.callouts) {
+        html += `<div class="callout ${esc(co.type)}">
+          <div class="callout-label">${esc(co.type)}</div>
+          <div>${richText(co.text)}</div>
+        </div>`;
+      }
+      html += '</div>';
+    }
+
+    // Celebration banner (after verified GO)
+    if (isGo) {
+      const hasNext = currentChapter && currentUnitIdx < currentChapter.units.length - 1;
+      html += `<div class="celebration-banner">
+        <div class="celeb-icon">&#10003;</div>
+        <div class="celeb-text">GO — Task Complete</div>
+        <div class="celeb-sub">You demonstrated this task to standard.</div>
+        ${hasNext ? `<button class="celeb-next" onclick="navUnit(${currentUnitIdx + 1},'right')">Continue to Next &rarr;</button>` : ''}
+      </div>`;
+    }
+
+    // Go/No-Go (locked until all steps done)
+    if (!isGo) {
+      html += `<div class="go-nogo-section ${!allStepsDone && !isNoGo ? 'locked' : ''}">`;
+      html += '<div class="go-nogo-title">Self-Assessment</div>';
+      html += `<div class="go-nogo-subtitle">${!allStepsDone && !isNoGo ? 'Complete all steps to unlock' : 'Self-assessed GO does not constitute instructor-evaluated qualification.'}</div>`;
+
+      html += `<div class="go-btns">
+        <button class="go-btn" onclick="markGo('${moduleId}','${task.id}')" id="go-btn-${task.id}">
+          GO &mdash; performed to standard
+        </button>
+        <button class="go-btn ${isNoGo ? 'nogo' : ''}" onclick="markNoGo('${moduleId}','${task.id}')" id="nogo-btn-${task.id}">
+          ${isNoGo ? '&#10007; ' : ''}NO-GO &mdash; need more practice
+        </button>
+      </div>`;
+
+      html += `<div class="verify-prompt ${isPendingVerify ? 'show' : ''}" id="verify-${task.id}">
+        <p>Can you perform this task to standard without referencing the procedure?</p>
+        <div class="standards-reshow">${esc(task.standards || '')}</div>
+        <div class="verify-btns">
+          <button class="verify-btn confirm" onclick="confirmVerify('${moduleId}','${task.id}')">Yes &mdash; Confirm GO</button>
+          <button class="verify-btn deny" onclick="denyVerify('${moduleId}','${task.id}')">No &mdash; Need More Practice</button>
+        </div>
+      </div>`;
+
+      // NO-GO remediation
+      if (isNoGo) {
+        html += `<div class="nogo-remediation">
+          <div class="nogo-remediation-title">Areas to Review</div>
+          <ul class="nogo-remediation-list">
+            <li><strong>Standard:</strong> ${esc(task.standards || 'Review the task standard above')}</li>
+            <li>Re-read the scenario and ensure you understand the starting conditions</li>
+            <li>Work through each step again, paying attention to details you may have rushed</li>
+            ${task.callouts && task.callouts.length > 0 ? '<li>Review the NOTEs and CAUTIONs — they highlight common mistakes</li>' : ''}
+          </ul>
+          <button class="nogo-retry-btn" onclick="retryTask('${moduleId}','${task.id}',${totalSteps})">Reset Steps &amp; Try Again</button>
+        </div>`;
+      }
+
+      html += '</div>'; // go-nogo-section
+    }
+
+    html += '</div>'; // task-card
+    return html;
+  }
+
+  // ── Concept rendering ──
+
+  function renderConcept(moduleId, concept) {
+    const confirmed = getConceptConfirmed(moduleId, concept.id);
+    let html = '<div class="unit-card fade-in">';
+
+    html += `<div class="unit-card-header">
+      <span class="unit-ref" style="background:var(--navy-pale);color:var(--navy);">&sect; ${esc(concept.ref)}</span>
+      <span class="unit-title">${esc(concept.title)}</span>
+    </div>`;
+
+    // Key Takeaway card (from BLUF) — styled prominently
+    if (concept.bluf) {
+      html += `<div class="concept-takeaway">
+        <div class="concept-takeaway-label">Key Takeaway</div>
+        <div class="concept-takeaway-text">${richText(concept.bluf)}</div>
+      </div>`;
+    }
+
+    // Progressive content: show first paragraph, reveal rest on click
+    if (concept.content) {
+      const paragraphs = concept.content.split('\n\n').filter(p => p.trim());
+      if (paragraphs.length > 0) {
+        html += `<div class="concept-chunk">${richText(paragraphs[0])}</div>`;
+      }
+      if (paragraphs.length > 1) {
+        const cid = concept.id.replace(/[^a-z0-9-]/g, '');
+        html += `<div id="more-${cid}" style="display:none;">`;
+        for (let i = 1; i < paragraphs.length; i++) {
+          html += `<div class="concept-chunk">${richText(paragraphs[i])}</div>`;
+        }
+        html += '</div>';
+        html += `<button class="concept-more-btn" id="morebtn-${cid}" onclick="toggleMore('${cid}')">Continue reading (${paragraphs.length - 1} more)</button>`;
+      }
+    }
+
+    if (concept.callouts && concept.callouts.length > 0) {
+      for (const co of concept.callouts) {
+        html += `<div class="callout ${esc(co.type)}"><div class="callout-label">${esc(co.type)}</div><div>${richText(co.text)}</div></div>`;
+      }
+    }
+
+    // Self-check prompt — active recall instead of passive checkbox
+    html += `<div class="self-check">
+      <div class="self-check-label">Self-Check</div>
+      <div class="self-check-prompt">Could you explain "${esc(concept.title)}" to a teammate without referencing this material?</div>
+    </div>`;
+
+    html += `<div class="concept-confirm" style="margin-top:14px;padding-top:14px;border-top:1px solid var(--gray-100);">
+      <label>
+        <input type="checkbox" ${confirmed ? 'checked' : ''} onchange="toggleConcept('${moduleId}','${concept.id}',this.checked)" />
+        Yes — I can explain this material
+      </label>
+    </div>`;
+
+    html += '</div>';
+    return html;
+  }
+
+  // ── Step interaction handlers ──
+
+  window.completeStep = function(moduleId, taskId, stepIdx, totalSteps) {
+    const ss = getStepState(taskId, totalSteps);
+    ss.completed.add(stepIdx);
+    // Advance current to next uncompleted
+    while (ss.current < totalSteps && ss.completed.has(ss.current)) {
+      ss.current++;
+    }
+    // Re-render
+    renderChapter(currentModule.id, currentChapter.id, currentUnitIdx);
+    // Scroll to next step or go-nogo if done
+    setTimeout(() => {
+      const next = document.querySelector('.step-card.current');
+      if (next) {
+        next.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        const gng = document.querySelector('.go-nogo-section');
+        if (gng) gng.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 50);
+  };
+
+  function completeCurrentStep(moduleId, taskId, totalSteps) {
+    const ss = getStepState(taskId, totalSteps);
+    if (ss.current < totalSteps && !ss.completed.has(ss.current)) {
+      window.completeStep(moduleId, taskId, ss.current, totalSteps);
+    }
+  }
+
+  window.expandStep = function(stepIdx) {
+    const cards = document.querySelectorAll('.step-card.completed');
+    cards.forEach(card => {
+      const badge = card.querySelector('.step-badge');
+      if (badge && badge.textContent.trim() === '✓') {
+        // Find by index from data attribute or position
+      }
+    });
+    // Toggle by finding the specific card
+    const allCards = document.querySelectorAll('.step-card');
+    if (allCards[stepIdx]) {
+      allCards[stepIdx].classList.toggle('expanded');
+    }
+  };
+
+  window.toggleEquip = function(el) {
+    el.classList.toggle('open');
+    const body = el.nextElementSibling;
+    body.classList.toggle('open');
+  };
+
+  window.checkEquipAll = function(checkbox) {
+    const list = checkbox.closest('.equip-checklist');
+    if (!list) return;
+    const boxes = list.querySelectorAll('input[type="checkbox"]');
+    const allChecked = [...boxes].every(b => b.checked);
+    const doneMsg = list.nextElementSibling;
+    if (doneMsg) doneMsg.classList.toggle('show', allChecked);
+  };
+
+  window.toggleMore = function(cid) {
+    const more = document.getElementById('more-' + cid);
+    const btn = document.getElementById('morebtn-' + cid);
+    if (!more) return;
+    if (more.style.display === 'none') {
+      more.style.display = 'block';
+      if (btn) btn.textContent = 'Show less';
+    } else {
+      more.style.display = 'none';
+      if (btn) btn.textContent = 'Continue reading';
+    }
+  };
+
+  // ── Go/No-Go handlers ──
+
+  window.markGo = function(moduleId, taskId) {
+    setTaskResult(moduleId, taskId, 'go', false);
+    renderChapter(currentModule.id, currentChapter.id, currentUnitIdx);
+    setTimeout(() => {
+      const vp = document.getElementById('verify-' + taskId);
+      if (vp) vp.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 50);
+  };
+
+  window.markNoGo = function(moduleId, taskId) {
+    setTaskResult(moduleId, taskId, 'nogo', false);
+    renderChapter(currentModule.id, currentChapter.id, currentUnitIdx);
+  };
+
+  window.confirmVerify = function(moduleId, taskId) {
+    setTaskResult(moduleId, taskId, 'go', true);
+    renderChapter(currentModule.id, currentChapter.id, currentUnitIdx);
+  };
+
+  window.denyVerify = function(moduleId, taskId) {
+    setTaskResult(moduleId, taskId, 'nogo', false);
+    renderChapter(currentModule.id, currentChapter.id, currentUnitIdx);
+  };
+
+  window.toggleConcept = function(moduleId, conceptId, checked) {
+    setConceptConfirmed(moduleId, conceptId, checked);
+  };
+
+  // ── Retry (reset steps for NO-GO redo) ──
+
+  window.retryTask = function(moduleId, taskId, totalSteps) {
+    // Reset ephemeral step state so they can redo the procedure
+    stepState[taskId] = { current: 0, completed: new Set() };
+    // Clear the NO-GO result so they get a fresh attempt
+    if (progress.modules[moduleId] && progress.modules[moduleId].tasks) {
+      delete progress.modules[moduleId].tasks[taskId];
+      saveProgress();
+    }
+    renderChapter(currentModule.id, currentChapter.id, currentUnitIdx);
+    // Scroll to top of task
+    setTimeout(() => {
+      const tc = document.querySelector('.task-card');
+      if (tc) tc.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+  };
+
+  // ── Navigation ──
+
+  window.goHome = function() { slideDirection = ''; renderHome(); };
+  window.openModule = function(id) { slideDirection = ''; renderModule(id); };
+  window.openChapter = function(mid, cid) { slideDirection = ''; renderChapter(mid, cid, 0); };
+  window.navUnit = function(idx, dir) {
+    if (!currentModule || !currentChapter) return;
+    if (idx < 0 || idx >= currentChapter.units.length) return;
+    slideDirection = dir === 'right' ? 'slide-in-right' : 'slide-in-left';
+    renderChapter(currentModule.id, currentChapter.id, idx);
+  };
+  window.openUnit = function(idx) {
+    if (!currentModule || !currentChapter) return;
+    if (idx < 0 || idx >= currentChapter.units.length) return;
+    slideDirection = '';
+    renderChapter(currentModule.id, currentChapter.id, idx);
+  };
+  window.goToUnit = function(mid, cid, uid) {
+    const mod = DATA.modules.find(m => m.id === mid);
+    if (!mod) return;
+    const ch = mod.chapters.find(c => c.id === cid);
+    if (!ch) return;
+    const idx = ch.units.findIndex(u => u.id === uid);
+    renderChapter(mid, cid, idx >= 0 ? idx : 0);
+  };
+  window.resumePosition = function() {
+    if (!progress.lastPosition) return;
+    const lp = progress.lastPosition;
+    const mod = DATA.modules.find(m => m.id === lp.module);
+    if (!mod) return;
+    const ch = mod.chapters.find(c => c.id === lp.chapter);
+    if (!ch) return;
+    const idx = ch.units.findIndex(u => u.id === lp.unit);
+    renderChapter(lp.module, lp.chapter, idx >= 0 ? idx : 0);
+  };
+
+  // ── Retraining ──
+
+  function getAllNoGo() {
+    const items = [];
+    if (!DATA) return items;
+    for (const mod of DATA.modules) {
+      const mp = progress.modules[mod.id];
+      if (!mp || !mp.tasks) continue;
+      for (const ch of mod.chapters) {
+        for (const u of ch.units) {
+          if (u.type !== 'task') continue;
+          const r = mp.tasks[u.id];
+          if (r && r.result === 'nogo') {
+            items.push({ moduleId: mod.id, moduleCode: mod.code, chapterId: ch.id, unitId: u.id, ref: u.ref, title: u.title });
+          }
+        }
+      }
+    }
+    return items;
+  }
+
+  window.showRetrain = function() {
+    currentView = 'retrain';
+    setActiveNav('nav-retrain');
+    const app = document.getElementById('app');
+    const items = getAllNoGo();
+    let html = `<div class="breadcrumb"><a onclick="goHome()">Home</a><span class="sep">&rsaquo;</span><span>Retraining Required</span></div>`;
+    if (items.length === 0) {
+      html += '<div style="text-align:center;padding:60px;color:var(--gray-400);">No NO-GO tasks. All tasks either GO or not yet attempted.</div>';
+    } else {
+      html += `<div class="retrain-title">${items.length} task${items.length !== 1 ? 's' : ''} require retraining</div>`;
+      for (const item of items) {
+        html += `<div class="retrain-item" onclick="goToUnit('${item.moduleId}','${item.chapterId}','${item.unitId}')">
+          <strong>${esc(item.moduleCode)}</strong> &mdash; ${esc(item.ref)}: ${esc(item.title)}</div>`;
+      }
+    }
+    app.innerHTML = html;
+  };
+
+  // ── Export ──
+
+  window.exportProgress = function() {
+    const exportData = {
+      soldierId: progress.soldierId || 'Anonymous',
+      unit: progress.unit || '',
+      exportDate: new Date().toISOString(),
+      lastPosition: progress.lastPosition,
+      modules: {}
+    };
+    for (const mod of DATA.modules) {
+      const mp = progress.modules[mod.id];
+      if (!mp) continue;
+      const tasks = [];
+      if (mp.tasks) {
+        for (const [id, r] of Object.entries(mp.tasks)) {
+          tasks.push({ id, result: r.result, date: r.date, verified: r.verified });
+        }
+      }
+      if (tasks.length > 0) exportData.modules[mod.id] = { code: mod.code, tasks };
+    }
+    const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `mss-training-progress-${new Date().toISOString().split('T')[0]}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  // ── Search ──
+
+  let searchDropdown = null;
+
+  window.handleSearch = function(query) {
+    if (!DATA || !query || query.length < 2) {
+      if (searchDropdown) { searchDropdown.remove(); searchDropdown = null; }
+      return;
+    }
+    const q = query.toLowerCase();
+    const results = [];
+    for (const mod of DATA.modules) {
+      for (const ch of mod.chapters) {
+        for (const u of ch.units) {
+          const match = (u.title && u.title.toLowerCase().includes(q))
+            || (u.ref && u.ref.toLowerCase().includes(q));
+          if (match) {
+            results.push({ mod, ch, unit: u, idx: ch.units.indexOf(u) });
+          }
+          if (results.length >= 15) break;
+        }
+        if (results.length >= 15) break;
+      }
+      if (results.length >= 15) break;
+    }
+
+    // Create or update dropdown
+    if (!searchDropdown) {
+      searchDropdown = document.createElement('div');
+      searchDropdown.className = 'search-results show';
+      document.querySelector('.hdr-nav').appendChild(searchDropdown);
+    }
+
+    if (results.length === 0) {
+      searchDropdown.innerHTML = '<div class="search-no-results">No matching tasks or sections</div>';
+    } else {
+      searchDropdown.innerHTML = results.map(r =>
+        `<div class="search-result-item" onmousedown="goToSearchResult('${r.mod.id}','${r.ch.id}',${r.idx})">
+          <span class="sr-ref">${esc(r.unit.ref || r.unit.id)}</span>
+          <span class="sr-title">${esc(r.unit.title)}</span><br>
+          <span class="sr-module">${esc(r.mod.code)} &mdash; Ch ${r.ch.number}</span>
+        </div>`
+      ).join('');
+    }
+  };
+
+  window.goToSearchResult = function(mid, cid, idx) {
+    if (searchDropdown) { searchDropdown.remove(); searchDropdown = null; }
+    document.getElementById('search-input').value = '';
+    renderChapter(mid, cid, idx);
+  };
+
+  // Close search on blur
+  document.addEventListener('click', function(e) {
+    if (searchDropdown && !e.target.closest('.hdr-nav')) {
+      searchDropdown.remove();
+      searchDropdown = null;
+    }
+  });
+
+  function setActiveNav(id) {
+    document.querySelectorAll('.hdr-btn').forEach(b => b.classList.remove('active'));
+    if (id) { const el = document.getElementById(id); if (el) el.classList.add('active'); }
+  }
+
+  // ── Init ──
+
+  async function init() {
+    try {
+      const resp = await fetch('data/modules.json');
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      DATA = await resp.json();
+      // Update header with soldier info
+      if (progress.soldierId) {
+        const sub = document.getElementById('hdr-sub');
+        if (sub) sub.textContent = progress.soldierId + (progress.unit ? ' — ' + progress.unit : '') + ' — Self-Study';
+      }
+      renderHome();
+      // First visit: show soldier ID modal, then onboarding
+      if (!progress.soldierId && !localStorage.getItem('mss-onboarded')) {
+        showSoldierIdModal();
+      }
+    } catch(e) {
+      document.getElementById('app').innerHTML = `<div style="text-align:center;padding:60px;color:var(--red);">
+        Failed to load training data: ${esc(e.message)}<br><small>Run: python3 scripts/build_training_app.py</small></div>`;
+    }
+  }
+
+  init();
+})();
+</script>
+
+</body>
+</html>
